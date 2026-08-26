@@ -1,20 +1,18 @@
 # Example shaders
 
-Six `.hook`-format GLSL shaders built on
+Five `.hook`-format GLSL shaders built on
 [frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage
--- see [README.md](README.md) for what that patch adds and why. Five are
-the interpolation shader family (one does real motion-compensated frame
-interpolation, three are diagnostic builds of that same algorithm, one
-is an unrelated smoke test for the patch's N-frame generalization);
-`motion-edges-dual.glsl` is the first entry toward what ROADMAP.md calls
-for as ongoing work: a *range* of simpler examples alongside the one
-complex flagship, not just the flagship itself. Expect more entries here
-over time, weighted toward the simple end.
+-- see [README.md](README.md) for what that patch adds and why. Three are
+diagnostic overlays of a bidirectional interpolation algorithm, one
+is a proof on concept for the patch's N-frame generalization;
+`motion-edges-dual.glsl` computes the edges in motion with a coloured
+overlay of the source edge and destination edge - particularly strong
+against animated content.
 
 ## Files
 
 - `bidirectional-interpolation.glsl` -- the production interpolator
-  (outlined below).
+  (outlined below). - Not included
 - `interpolate-debug-grid.glsl` -- diagnostic build (below): the same
   algorithm as a shrunk-down 3x2 grid of intermediate results.
 - `interpolate-debug-overlay.glsl` -- a second diagnostic build (below):
