@@ -1,5 +1,6 @@
-# N-Frame complex shader analysis via a patched libplacebo
+# N-Frame complex shader analysis via patched libplacebo
 
+[Examples and proof of concept on YouTube](https://www.youtube.com/channel/UCxqc7U1Uhpq1hwn5Q0Ol7Ug)
 
 ## What this is
 
