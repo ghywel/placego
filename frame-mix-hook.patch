@@ -1,0 +1,605 @@
+diff --git a/src/include/libplacebo/shaders/custom.h b/src/include/libplacebo/shaders/custom.h
+index a4eec69..d092c0c 100644
+--- a/src/include/libplacebo/shaders/custom.h
++++ b/src/include/libplacebo/shaders/custom.h
+@@ -126,8 +126,32 @@ enum pl_hook_stage {
+     PL_HOOK_SCALED          = 1 << 13, // After scaling, before color management
+     PL_HOOK_PRE_OUTPUT      = 1 << 14, // After color management, before blending/rotation
+     PL_HOOK_OUTPUT          = 1 << 15, // After blending/rotation, before dithering
++
++    // Fires once per output frame, in place of the builtin `frame_mixer`
++    // temporal blend, whenever `pl_render_image_mix` has exactly as many
++    // source frames available around the requested output timestamp as
++    // this hook declared it wants (see `pl_hook.frame_mix_count`, and
++    // `PL_FRAME_MIX_MAX` for the ceiling on how many that can be). Unlike
++    // every other stage, this hook receives *multiple* input textures --
++    // `tex`/`rect` plus `tex_mix`/`rect_mix`/`num_mix` -- and is expected
++    // to synthesize the full output frame itself (e.g. via motion-
++    // compensated warping, or temporal filtering across the whole window)
++    // rather than returning a delta to be blended further. Non-resizable;
++    // output must be exactly `dst_rect` in size. Requires `input`/`output`
++    // of `PL_HOOK_SIG_TEX`. If no attached hook declares this stage, or
++    // the mix doesn't have exactly as many contributing frames as some
++    // attached hook wants, the renderer falls back to the configured
++    // `frame_mixer` kernel as usual for the output frames that affects.
++    PL_HOOK_FRAME_MIX       = 1 << 16,
+ };
+ 
++// Upper bound on how many source frames a single `PL_HOOK_FRAME_MIX` hook
++// may request via `pl_hook.frame_mix_count`, and the array size of
++// `pl_hook_params.tex_mix`/`rect_mix`/`rts_mix`. Chosen as generous
++// headroom over realistic use (motion-compensated interpolation only
++// needs 2) while keeping those arrays small.
++#define PL_FRAME_MIX_MAX 8
++
+ // Returns true if a given hook stage is resizable
+ static inline bool pl_hook_stage_resizable(enum pl_hook_stage stage) {
+     switch (stage) {
+@@ -149,6 +173,7 @@ static inline bool pl_hook_stage_resizable(enum pl_hook_stage stage) {
+     case PL_HOOK_SCALED:
+     case PL_HOOK_PRE_OUTPUT:
+     case PL_HOOK_OUTPUT:
++    case PL_HOOK_FRAME_MIX:
+         return false;
+     }
+ 
+@@ -198,6 +223,52 @@ struct pl_hook_params {
+     // but the contents are lost in between frames.
+     pl_tex tex;
+ 
++    // All source frames contributing to this output, in ascending
++    // timestamp order, valid only when `stage == PL_HOOK_FRAME_MIX`.
++    // `num_mix` is always exactly the value this hook declared via
++    // `pl_hook.frame_mix_count` (see `PL_HOOK_FRAME_MIX`'s doc comment --
++    // the renderer only fires the hook at all when it can supply exactly
++    // that many). `tex_mix[0]`/`rect_mix[0]` are always the same texture
++    // as `tex`/`rect` above -- duplicated into the array purely so a hook
++    // can treat all contributing frames uniformly by index, without
++    // special-casing the first one. `rts_mix[i]` is frame `i`'s relative
++    // timestamp (same units as `pl_frame_mix.timestamps`, i.e. 1.0 = one
++    // nominal source frame duration; negative/zero for frames at or before
++    // the output timestamp, positive for frames after it). NULL/0 for all
++    // other stages.
++    pl_tex tex_mix[PL_FRAME_MIX_MAX];
++    pl_rect2df rect_mix[PL_FRAME_MIX_MAX];
++    float rts_mix[PL_FRAME_MIX_MAX];
++    int num_mix;
++
++    // Normalized position of the output timestamp between `tex_mix[0]`
++    // (0.0) and `tex_mix[1]` (1.0), i.e. `(0 - rts_mix[0]) /
++    // (rts_mix[1] - rts_mix[0])`. Only meaningful when `stage ==
++    // PL_HOOK_FRAME_MIX` *and* `num_mix == 2` -- provided as a convenience
++    // for the common two-frame case, since a single normalized position
++    // isn't well-defined for three or more points. Hooks that declared
++    // `frame_mix_count > 2` should work from `rts_mix[]`/`num_mix`
++    // directly instead; this is left at 0.0 and should be ignored for them.
++    float mix_t;
++
++    // True if `tex_mix[]` (up to `num_mix`) is a different set of source
++    // frames than the previous `PL_HOOK_FRAME_MIX` invocation on this same
++    // `pl_renderer` (i.e. a new `pl_frame` arrived on one or more sides, or
++    // `num_mix` itself changed); false if this is another output frame
++    // interpolated within the *same* window as last time (only relative
++    // positions like `mix_t`/`rts_mix` changed). Lets a hook maintain its
++    // own persistent (e.g. `//!STORAGE`-backed) cache of expensive
++    // per-window computations -- such as a motion vector field -- and skip
++    // recomputing it when the window hasn't changed. Only meaningful when
++    // `stage == PL_HOOK_FRAME_MIX`; always true for all other stages (i.e.
++    // safe to ignore if unused).
++    //
++    // Note: deliberately `int`, not `bool` -- this gets bound directly to
++    // a GLSL `int` uniform via `pl_var_int()`/`sh_var()`, which reads
++    // `sizeof(int)` bytes from this field's address; a 1-byte `bool` there
++    // would read 3 bytes of adjacent struct padding as garbage.
++    int pair_changed;
++
+     // The effective current rectangle of the image we're rendering in this
+     // shader, i.e. the effective rect of the content we're interested in,
+     // as a crop of either `sh` or `tex` (depending on the signature).
+@@ -307,6 +378,15 @@ struct pl_hook {
+     enum pl_hook_sig input;     // Which input signature this hook expects
+     void *priv;                 // Arbitrary user context
+ 
++    // Number of source frames this hook wants supplied via
++    // `pl_hook_params.tex_mix`/`rect_mix`/`rts_mix` when it fires at
++    // `PL_HOOK_FRAME_MIX` (see that stage's doc comment). Must be between
++    // 1 and `PL_FRAME_MIX_MAX` inclusive for a hook that declares
++    // `stages & PL_HOOK_FRAME_MIX`; ignored otherwise. Fixed for the
++    // lifetime of the hook -- it's a property of what the hook's shader
++    // code was written to consume, not something that varies per call.
++    int frame_mix_count;
++
+     // Custom tunable shader parameters exported by this hook. These may be
+     // updated at any time by the user, to influence the behavior of the hook.
+     // Contents are arbitrary and subject to the method of hook construction.
+diff --git a/src/renderer.c b/src/renderer.c
+index df206b2..0213ddb 100644
+--- a/src/renderer.c
++++ b/src/renderer.c
+@@ -86,6 +86,16 @@ struct pl_renderer_t {
+     PL_ARRAY(struct cached_frame) frames;
+     PL_ARRAY(pl_tex) frame_fbos;
+ 
++    // Signatures of the frames used in the most recent PL_HOOK_FRAME_MIX
++    // dispatch, so we can tell a hook whether its window of frames actually
++    // changed since last time (vs. just a different relative position
++    // within the same window). Zero-initialized; a real signature being
++    // exactly 0 is not a concern in practice (signatures are effectively
++    // random 64-bit values), and `fmix_num_sig` starting at 0 means the
++    // very first dispatch always sees `pair_changed = true` regardless.
++    uint64_t fmix_sig[PL_FRAME_MIX_MAX];
++    int fmix_num_sig;
++
+     // For debugging / logging purposes
+     int prev_dither;
+ 
+@@ -232,6 +242,22 @@ const struct pl_filter_preset pl_frame_mixers[] = {
+     { "oversample",     &pl_filter_oversample,      "Oversample (AKA SmoothMotion)" },
+     { "mitchell_clamp", &pl_filter_mitchell_clamp,  "Clamped Mitchell spline" },
+     { "hermite",        &pl_filter_hermite,         "Cubic spline (Hermite)" },
++    // Alias for a PL_HOOK_FRAME_MIX custom hook: only reuses
++    // mitchell_clamp's radius (2.0), to keep the candidate-frame queue
++    // wide enough that a hook's declared window can be satisfied -- the
++    // kernel itself (`.kernel`, shared with the real "mitchell_clamp"
++    // entry above) is never evaluated for frame mixing when a
++    // PL_HOOK_FRAME_MIX hook is attached and fires; `pl_render_image_mix`
++    // intercepts and bypasses it entirely in that case. Naming this
++    // "mitchell_clamp" from the caller's side, as every custom-shader
++    // frame-mixing user of this patch previously had to, was accurate
++    // about the radius but misleading about what's actually being used;
++    // this name says what's really happening instead. Deliberately just
++    // an alias for now (same pointer as "mitchell_clamp", not a new
++    // filter config) rather than its own tracked radius -- not worth a
++    // dedicated config until something other than "reuse mitchell_clamp's
++    // radius" is actually needed.
++    { "custom_n",       &pl_filter_mitchell_clamp,  "N-frame custom shader hook (PL_HOOK_FRAME_MIX)" },
+     {0}
+ };
+ 
+@@ -3793,6 +3819,89 @@ static struct params_info render_params_info(const struct pl_render_params *para
+ 
+ #define MAX_MIX_FRAMES 16
+ 
++// Invokes an attached `PL_HOOK_FRAME_MIX` hook to synthesize an entire
++// output frame from the `num_frames` frames making up its declared window
++// around the requested timestamp (e.g. via motion-compensated warping),
++// bypassing the builtin linear frame-mixing kernel entirely. `rts[i]` is
++// `frames[i]`'s original (unclamped) `pl_frame_mix.timestamps[]` value.
++// `num_frames` is always exactly `hook->frame_mix_count` -- the caller is
++// responsible for only invoking this once that many frames are available.
++static struct pl_hook_res pass_hook_frame_mix(struct pass_state *pass,
++                                              const struct pl_hook *hook,
++                                              const struct cached_frame *frames[],
++                                              const float rts[],
++                                              int num_frames)
++{
++    pl_renderer rr = pass->rr;
++    pl_assert(num_frames >= 1 && num_frames <= PL_FRAME_MIX_MAX);
++
++    // Only well-defined for exactly two frames -- see the doc comment on
++    // `pl_hook_params.mix_t`. Left at 0.0 (and unused) otherwise.
++    float mix_t = 0.0f;
++    if (num_frames == 2) {
++        float span = rts[1] - rts[0];
++        mix_t = span > 0.0f ? (0.0f - rts[0]) / span : 0.0f;
++        mix_t = PL_CLAMP(mix_t, 0.0f, 1.0f);
++    }
++
++    const pl_rect2df full = { 0, 0, frames[0]->tex->params.w, frames[0]->tex->params.h };
++
++    // Cached per-frame textures are always normalized to premultiplied RGB,
++    // full-range, before being cached (see the `inter_pass` rendering below)
++    // -- this is a fixed invariant of the cache, not per-frame metadata, so
++    // it's reconstructed here directly rather than read off `cached_frame`
++    // (whose exact fields have varied across libplacebo versions).
++    const struct pl_color_repr cache_repr = {
++        .sys    = PL_COLOR_SYSTEM_RGB,
++        .levels = PL_COLOR_LEVELS_PC,
++        .alpha  = PL_ALPHA_PREMULTIPLIED,
++    };
++
++    struct pl_hook_params hparams = {
++        .gpu        = rr->gpu,
++        .dispatch   = rr->dp,
++        .get_tex    = get_hook_tex,
++        .priv       = pass,
++        .stage      = PL_HOOK_FRAME_MIX,
++        .tex        = frames[0]->tex,
++        .mix_t      = mix_t,
++        .num_mix    = num_frames,
++        .rect       = full,
++        .repr       = cache_repr,
++        .color      = frames[0]->color,
++        .orig_repr  = &pass->image.repr,
++        .orig_color = &pass->image.color,
++        .src_rect   = pass->ref_rect,
++        .dst_rect   = pass->dst_rect,
++    };
++
++    // int, not bool: this gets bound directly as GLSL `int` uniform data
++    // by address (see hook_hook() in custom_mpv.c), which reads
++    // sizeof(int) bytes -- a bool field here would be read out of bounds.
++    int pair_changed = num_frames != rr->fmix_num_sig;
++    int comps = 0;
++    for (int i = 0; i < num_frames; i++) {
++        hparams.tex_mix[i]  = frames[i]->tex;
++        hparams.rect_mix[i] = full;
++        hparams.rts_mix[i]  = rts[i];
++        comps = PL_MAX(comps, frames[i]->comps);
++
++        if (frames[i]->signature != rr->fmix_sig[i])
++            pair_changed = true;
++        rr->fmix_sig[i] = frames[i]->signature;
++    }
++    rr->fmix_num_sig = num_frames;
++    hparams.components = comps;
++    hparams.pair_changed = pair_changed;
++
++    PL_TRACE(rr, "Dispatching PL_HOOK_FRAME_MIX hook, num_frames=%d, t=%f, "
++                 "pair_changed=%d", num_frames, mix_t, (int) pair_changed);
++    struct pl_hook_res res = hook->hook(hook->priv, &hparams);
++    if (res.failed)
++        PL_ERR(rr, "Failed executing PL_HOOK_FRAME_MIX hook");
++    return res;
++}
++
+ bool pl_render_image_mix(pl_renderer rr, const struct pl_frame_mix *images,
+                          const struct pl_frame *ptarget,
+                          const struct pl_render_params *params)
+@@ -3834,8 +3943,65 @@ bool pl_render_image_mix(pl_renderer rr, const struct pl_frame_mix *images,
+     int fidx = 0;
+     struct cached_frame frames[MAX_MIX_FRAMES];
+     float weights[MAX_MIX_FRAMES];
++    float rts_out[MAX_MIX_FRAMES];
+     float wsum = 0.0;
+ 
++    // Check for an attached PL_HOOK_FRAME_MIX hook, and if present, locate
++    // the window of frames (as many as it declared via `frame_mix_count`)
++    // immediately surrounding the output timestamp. These are the only
++    // frames the hook will be allowed to see.
++    const struct pl_hook *fmix_hook = NULL;
++    for (int i = 0; i < params->num_hooks; i++) {
++        if (params->hooks[i]->stages & PL_HOOK_FRAME_MIX) {
++            fmix_hook = params->hooks[i];
++            break;
++        }
++    }
++
++    int fmix_want = 0;
++    int fmix_sel[PL_FRAME_MIX_MAX];
++    int fmix_n = 0;
++    if (fmix_hook) {
++        fmix_want = PL_CLAMP(fmix_hook->frame_mix_count, 1, PL_FRAME_MIX_MAX);
++
++        int split = images->num_frames;
++        for (int i = 0; i < images->num_frames; i++) {
++            if (images->timestamps[i] > 0.0f) {
++                split = i;
++                break;
++            }
++        }
++
++        int lo = split - 1, hi = split;
++
++        // Guarantee at least one frame from each side first, when
++        // available -- this is what makes the first two selected frames
++        // always mean "nearest before"/"nearest after" (matching HOOKED/
++        // NEXT exactly for the common fmix_want == 2 case), rather than
++        // letting the greedy fill below possibly cluster both on the same
++        // side (which would leave `mix_t` extrapolating instead of
++        // interpolating).
++        if (lo >= 0 && fmix_n < fmix_want)
++            fmix_sel[fmix_n++] = lo--;
++        if (hi < images->num_frames && fmix_n < fmix_want)
++            fmix_sel[fmix_n++] = hi++;
++
++        // Remaining slots (fmix_want > 2) fill greedily from whichever
++        // side's next candidate sits closer to the output timestamp.
++        while (fmix_n < fmix_want && (lo >= 0 || hi < images->num_frames)) {
++            bool take_lo = lo >= 0 && (hi >= images->num_frames ||
++                            fabsf(images->timestamps[lo]) <= images->timestamps[hi]);
++            fmix_sel[fmix_n++] = take_lo ? lo-- : hi++;
++        }
++
++        // fmix_n may end up < fmix_want near a clip's start/end, when
++        // fewer real frames exist than the hook wants -- that's fine and
++        // expected: whatever subset was found still gets kept as normal
++        // weight=1.0 candidates below, but the dispatch gate further down
++        // only fires the hook when `fidx == fmix_want` exactly, so these
++        // boundary frames fall through to the builtin frame_mixer instead.
++    }
++
+     // Garbage collect the cache by evicting all frames from the cache that are
+     // not determined to still be required
+     for (int i = 0; i < rr->frames.num; i++)
+@@ -3884,6 +4050,21 @@ retry:
+                 continue;
+             }
+ 
++        } else if (fmix_hook) {
++
++            // Motion-compensated / N-frame mixing: only keep the frames
++            // selected into this hook's window above (fmix_sel). The
++            // FRAME_MIX hook synthesizes the entire output frame from
++            // just these, so every other candidate frame is irrelevant.
++            bool selected = false;
++            for (int j = 0; j < fmix_n; j++)
++                selected |= (fmix_sel[j] == i);
++            if (!selected) {
++                PL_TRACE(rr, "  -> Skipping: not part of frame_mix window");
++                continue;
++            }
++            weight = 1.0;
++
+         // For backwards compatibility, treat !kernel as oversample
+         } else if (!mixer.kernel || mixer.kernel == &pl_filter_function_oversample) {
+ 
+@@ -4078,6 +4259,7 @@ inter_pass_error:
+         pl_assert(fidx < MAX_MIX_FRAMES);
+         frames[fidx] = *f;
+         weights[fidx] = weight;
++        rts_out[fidx] = images->timestamps[i];
+         wsum += weight;
+         fidx++;
+     }
+@@ -4102,6 +4284,73 @@ inter_pass_error:
+         goto retry;
+     }
+ 
++    // Motion-compensated / N-frame mixing: hand off entirely to the user
++    // hook instead of running the builtin weighted-sum compositor below.
++    // `fidx == fmix_want` only holds when the full declared window was
++    // actually available (see the fmix_sel computation above) -- fewer
++    // frames near a clip boundary falls through to the compositor instead.
++    if (fmix_hook && fidx == fmix_want) {
++        // Must happen before invoking the hook: this is what allocates and
++        // zeroes `pass->fbos_used`, which `get_fbo()` (reached via the
++        // hook's own `//!SAVE` passes) indexes into unconditionally. Calling
++        // the hook before this leaves that array in whatever stale state
++        // `pass_init` left it in, which segfaults inside `get_fbo`.
++        pass_begin_frame(&pass);
++
++        const struct cached_frame *fmix_frames[PL_FRAME_MIX_MAX];
++        for (int i = 0; i < fidx; i++)
++            fmix_frames[i] = &frames[i];
++
++        struct pl_hook_res res = pass_hook_frame_mix(&pass, fmix_hook,
++                                                      fmix_frames, rts_out,
++                                                      fidx);
++        if (res.failed)
++            goto fail;
++
++        if (res.output != PL_HOOK_SIG_TEX || !res.tex) {
++            // Deliberately `goto fallback` rather than `goto fail`: `fail`
++            // logs its own generic "could not render" message and sets
++            // this same error bit, which would just duplicate the specific
++            // diagnostic already given here.
++            PL_ERR(rr, "PL_HOOK_FRAME_MIX hook must return a texture "
++                       "(PL_HOOK_SIG_TEX)! Disabling.");
++            rr->errors |= PL_RENDER_ERR_FRAME_MIXING;
++            goto fallback;
++        }
++
++        pl_shader sh = pl_dispatch_begin(rr->dp);
++        sh->output = PL_SHADER_SIG_COLOR;
++        sh->output_w = out_w;
++        sh->output_h = out_h;
++
++        ident_t pos, tex = sh_bind(sh, res.tex, PL_TEX_ADDRESS_CLAMP,
++                                   PL_TEX_SAMPLE_NEAREST, "frame_mix_out",
++                                   NULL, &pos, NULL);
++        GLSL("vec4 color = textureLod("$", "$", 0.0); \n", tex, pos);
++
++        pass.img = (struct img) {
++            .sh    = sh,
++            .w     = out_w,
++            .h     = out_h,
++            .comps = res.components,
++            .color = res.color,
++            .rect  = { 0, 0, out_w, out_h },
++            .repr  = res.repr,
++        };
++
++        if (!pl_color_space_equal(&target->color, &pass.img.color)) {
++            pl_shader_set_alpha(sh, &pass.img.repr, PL_ALPHA_INDEPENDENT);
++            pl_shader_color_map_ex(sh, NULL,
++                pl_color_map_args(pass.img.color, target->color));
++        }
++
++        if (!pass_output_target(&pass))
++            goto fallback;
++
++        pass_uninit(&pass);
++        return true;
++    }
++
+     // Sample and mix the output color
+     pass_begin_frame(&pass);
+     pass.info.count = fidx;
+diff --git a/src/shaders/custom_mpv.c b/src/shaders/custom_mpv.c
+index 1c93da5..ddc5df3 100644
+--- a/src/shaders/custom_mpv.c
++++ b/src/shaders/custom_mpv.c
+@@ -870,6 +870,9 @@ static enum pl_hook_stage mp_stage_to_pl(pl_str stage)
+     if (pl_str_equals0(stage, "OUTPUT"))
+         return PL_HOOK_OUTPUT;
+ 
++    if (pl_str_equals0(stage, "FRAME_MIX"))
++        return PL_HOOK_FRAME_MIX;
++
+     return 0;
+ }
+ 
+@@ -896,6 +899,7 @@ static pl_str pl_stage_to_mp(enum pl_hook_stage stage)
+     case PL_HOOK_SCALED:        return pl_str0("SCALED");
+     case PL_HOOK_PRE_OUTPUT:    return pl_str0("PREOUTPUT");
+     case PL_HOOK_OUTPUT:        return pl_str0("OUTPUT");
++    case PL_HOOK_FRAME_MIX:     return pl_str0("FRAME_MIX");
+     };
+ 
+     pl_unreachable();
+@@ -1230,6 +1234,28 @@ static void save_pass_tex(struct hook_priv *p, struct pass_tex ptex)
+     PL_ARRAY_APPEND(p->alloc, p->pass_textures, ptex);
+ }
+ 
++// Parses a `//!BIND` name as a `PL_HOOK_FRAME_MIX` frame index: "HOOKED"/
++// "NEXT" are the friendly aliases for indices 0/1 (matching every other
++// hook stage's HOOKED convention and the pre-existing two-frame design,
++// respectively), "FRAME<n>" spells out any index directly, including 0/1.
++// Returns -1 if `texname` doesn't match any of these forms.
++static int frame_mix_index(pl_str texname)
++{
++    if (pl_str_equals0(texname, "HOOKED"))
++        return 0;
++    if (pl_str_equals0(texname, "NEXT"))
++        return 1;
++
++    pl_str rest = texname;
++    if (pl_str_eatstart0(&rest, "FRAME")) {
++        int n;
++        if (pl_str_parse_int(rest, &n) && n >= 0 && n < PL_FRAME_MIX_MAX)
++            return n;
++    }
++
++    return -1;
++}
++
+ static struct pl_hook_res hook_hook(void *priv, const struct pl_hook_params *params)
+ {
+     struct hook_priv *p = priv;
+@@ -1279,6 +1305,64 @@ static struct pl_hook_res hook_hook(void *priv, const struct pl_hook_params *par
+         // Generate a new shader object
+         sh = pl_dispatch_begin(params->dispatch);
+ 
++        if (params->stage == PL_HOOK_FRAME_MIX) {
++            // Expose the temporal mix factor as a builtin, similar to how
++            // other stages expose e.g. `random`.
++            ident_t mix_t = sh_var(sh, (struct pl_shader_var) {
++                .var  = pl_var_float("mix_t"),
++                .data = &params->mix_t,
++                .dynamic = true,
++            });
++            GLSLH("#define mix_t "$" \n", mix_t);
++
++            // Raw relative timestamps `mix_t` was derived from -- a GLSL
++            // array uniform, indexed the same way as the FRAME<n> texture
++            // binds (rts_mix[0] is FRAME0/HOOKED's timestamp, etc.). See
++            // the `rts_mix` doc comment in custom.h. Sized to exactly this
++            // hook's own declared frame count (params->num_mix), not the
++            // full PL_FRAME_MIX_MAX ceiling -- consistent across every
++            // dispatch of a given hook, since that count is fixed per hook.
++            ident_t rts_mix = sh_var(sh, (struct pl_shader_var) {
++                .var = {
++                    .name  = "rts_mix",
++                    .type  = PL_VAR_FLOAT,
++                    .dim_v = 1,
++                    .dim_m = 1,
++                    .dim_a = params->num_mix,
++                },
++                .data    = params->rts_mix,
++                .dynamic = true,
++            });
++            GLSLH("#define rts_mix "$" \n", rts_mix);
++
++            // How many of tex_mix[]/rts_mix[] (via FRAME0../HOOKED/NEXT)
++            // are valid this call. In practice this is always exactly the
++            // number of distinct FRAME<n> binds this hook's own shader
++            // text declared -- the renderer only ever fires the hook once
++            // that many frames are available, never fewer -- so it's a
++            // fixed, shader-author-known value rather than something a
++            // single hook needs to branch on at runtime. Exposed mainly
++            // as a cheap self-check (e.g. a diagnostic overlay showing it
++            // directly, to confirm the plumbing is wired up as expected).
++            ident_t num_mix = sh_var(sh, (struct pl_shader_var) {
++                .var  = pl_var_int("num_mix"),
++                .data = &params->num_mix,
++                .dynamic = true,
++            });
++            GLSLH("#define num_mix "$" \n", num_mix);
++
++            // Lets the shader skip recomputing an expensive per-window
++            // cache (e.g. a motion vector field, held in a //!STORAGE
++            // texture) when this is just another output frame within the
++            // same window of source frames as last time.
++            ident_t pair_changed = sh_var(sh, (struct pl_shader_var) {
++                .var  = pl_var_int("pair_changed"),
++                .data = &params->pair_changed,
++                .dynamic = true,
++            });
++            GLSLH("#define pair_changed ("$" != 0) \n", pair_changed);
++        }
++
+         // Bind all necessary input textures
+         for (int i = 0; i < PL_ARRAY_SIZE(hook->bind_tex); i++) {
+             pl_str texname = hook->bind_tex[i];
+@@ -1305,6 +1389,33 @@ static struct pl_hook_res hook_hook(void *priv, const struct pl_hook_params *par
+                 mainpresub = true;
+             }
+ 
++            // Frames 1.. of a `PL_HOOK_FRAME_MIX` pass (index 0, i.e.
++            // HOOKED/FRAME0, is already covered by the generic `tex`/
++            // `rect` alias handling above -- it's the same texture).
++            // Bound directly from `params->tex_mix[]`, bypassing the
++            // saved-texture mechanism since these textures are only valid
++            // for this invocation.
++            int fmix_idx = params->stage == PL_HOOK_FRAME_MIX ?
++                           frame_mix_index(texname) : -1;
++            if (fmix_idx > 0 && fmix_idx < params->num_mix &&
++                params->tex_mix[fmix_idx])
++            {
++                struct pass_tex mix_ptex = {
++                    .name  = texname,
++                    .tex   = params->tex_mix[fmix_idx],
++                    .rect  = params->rect_mix[fmix_idx],
++                    .repr  = params->repr,
++                    .color = params->color,
++                    .comps = params->components,
++                };
++                if (!bind_pass_tex(sh, texname, &mix_ptex,
++                                   &params->rect_mix[fmix_idx], false, false))
++                {
++                    goto error;
++                }
++                goto next_bind;
++            }
++
+             for (int j = 0; j < p->descriptors.num; j++) {
+                 if (pl_str_equals0(texname, p->descriptors.elem[j].desc.name)) {
+                     // Directly bind this, no need to bother with all the
+@@ -1633,6 +1744,11 @@ const struct pl_hook *pl_mpv_user_shader_parse(pl_gpu gpu,
+     }
+     shader = pl_str_drop(shader, pos);
+ 
++    // Highest PL_HOOK_FRAME_MIX frame index seen bound anywhere in the
++    // shader (via HOOKED/NEXT/FRAME<n>, see frame_mix_index()), used
++    // below to set `hook->frame_mix_count`. -1 if none found.
++    int fmix_max = -1;
++
+     // Loop over the file
+     while (shader.len > 0)
+     {
+@@ -1682,6 +1798,9 @@ const struct pl_hook *pl_mpv_user_shader_parse(pl_gpu gpu,
+             p->save_stages |= mp_stage_to_pl(h.bind_tex[i]);
+             if (pl_str_equals0(h.bind_tex[i], "HOOKED"))
+                 p->save_stages |= pass.exec_stages;
++
++            int fidx = frame_mix_index(h.bind_tex[i]);
++            fmix_max = PL_MAX(fmix_max, fidx);
+         }
+ 
+         // As an extra precaution, this avoids errors when trying to run
+@@ -1718,6 +1837,14 @@ const struct pl_hook *pl_mpv_user_shader_parse(pl_gpu gpu,
+     hook->parameters = p->hook_params.elem;
+     hook->num_parameters = p->hook_params.num;
+ 
++    // See frame_mix_index()/PL_HOOK_FRAME_MIX. 0 if this shader never
++    // binds HOOKED/NEXT/FRAME<n> anywhere, which the renderer clamps up
++    // to 1 before using -- harmless, if unusual: such a hook still fires
++    // (with `tex`/`rect`, i.e. the single nearest frame, always populated
++    // regardless of whether the shader actually declared a bind for it),
++    // it just never gets more than one frame at a time.
++    hook->frame_mix_count = fmix_max + 1;
++
+     PL_MSG(gpu, PL_LOG_DEBUG, "Loaded user shader:");
+     pl_msg_source(gpu->log, PL_LOG_DEBUG, shader_text);
+ 

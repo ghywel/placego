@@ -1,0 +1,17 @@
+diff --git a/libavcodec/hw_base_encode.c b/libavcodec/hw_base_encode.c
+index 927aeb4..b2e1182 100644
+--- a/libavcodec/hw_base_encode.c
++++ b/libavcodec/hw_base_encode.c
+@@ -503,8 +503,10 @@ static int hw_base_encode_send_frame(AVCodecContext *avctx, FFHWBaseEncodeContex
+         ctx->end_of_stream = 1;
+ 
+         // Fix timestamps if we hit end-of-stream before the initial decode
+-        // delay has elapsed.
+-        if (ctx->input_order <= ctx->decode_delay)
++        // delay has elapsed. If no frame was ever sent (pic_end is still
++        // NULL), there is nothing to fix up -- and no packets will be
++        // produced either, so this is safe to skip entirely.
++        if (ctx->input_order <= ctx->decode_delay && ctx->pic_end)
+             ctx->dts_pts_diff = ctx->pic_end->pts - ctx->first_pts;
+     }
+ 
