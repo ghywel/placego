@@ -1,6 +1,5 @@
-# Motion-compensated interpolation via a patched libplacebo
+# N-Frame complex shader analysis via a patched libplacebo
 
-> For the first time, this allows for cross-platform, highly extensible, real-time, gpu-accelerated complex shader analysis across the temporal dimension in one ffmpeg command with no third party/proprietary tools or vendor lock in.
 
 ## What this is
 
@@ -156,8 +155,8 @@ Everything above has real-hardware confirmation, but on a narrower slate
 of configurations than the phrase "confirmed working" might suggest on
 its own -- worth being precise about before drawing broader conclusions:
 
-- **Sources tested:** two clips only, a 720p cartoon (flat-shaded,
-  simple motion) and a 1080p live-action clip (complex motion).
+- **Sources tested:** four clips only, a 720p cartoon (flat-shaded,
+  simple motion) and 3 1080p films (complex motion).
 - **fps ratios tested:** `24->60` (2.5x, throughout this project's whole
   development history) and, as of `motion-edges-dual.glsl`, `24->24`
   (N:N, no frame insertion) -- confirmed the hook fires and synthesizes
@@ -206,14 +205,6 @@ using it locally -- so it's kept deliberately small and self-contained
 burden down. See the comments in the patch itself for the exact
 mechanics (which functions changed and why).
 
-This patch has already gone through one local design revision -- an
-earlier two-frame-only version exposed `tex2`/`rts_prev`/`rts_next`,
-later generalized into the current `tex_mix[]`/`rts_mix[]` array design
-described above. Since none of the earlier shape was ever submitted or
-merged, that revision is invisible from upstream's perspective: there's
-exactly one coherent API surface to describe when a PR is actually
-opened, not a breaking change to justify.
-
 One thing deliberately left *out* of the patch: libplacebo tracks its API
 version as an auto-incrementing changelog dict at the top of
 `meson.build` (`PL_API_VER` is literally `.keys().length()` of it), where
@@ -234,26 +225,13 @@ submitted as-is against whatever commit it was last regenerated from.
 
 ## Building
 
+Testing has been built against jellyfin-ffmpeg. There is already a patch
+against libplacebo in builder/patches/libplacebo - place the frame-mix-hook.patch
+here and build as normal. Also see hw-base-encode-eof-nullcheck.patch
+
 ```bash
-# 1. Patch and build libplacebo
-git clone https://code.videolan.org/videolan/libplacebo.git
-cd libplacebo
-git apply /path/to/frame-mix-hook.patch
-meson setup build -Dvulkan=enabled -Dprefix=/opt/libplacebo-mc
-ninja -C build install
-
-# 2. Build ffmpeg against it (no ffmpeg source changes needed)
-git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg
-cd ffmpeg
-export PKG_CONFIG_PATH=/opt/libplacebo-mc/lib/x86_64-linux-gnu/pkgconfig
-./configure --enable-libplacebo --enable-vulkan --enable-vaapi \
-    --extra-ldflags="-Wl,-rpath,/opt/libplacebo-mc/lib/x86_64-linux-gnu"
-make -j$(nproc)
+./build trixie amd64
 ```
-
-Adjust the pkg-config path to match wherever `meson`/`ninja install`
-actually put it on your distro (`find /opt/libplacebo-mc -name 'libplacebo.pc'`).
-
 ## Usage
 
 Point `custom_shader_path` at any `PL_HOOK_FRAME_MIX`-aware shader (see
@@ -288,7 +266,7 @@ clearer name for the same thing, not a behavior change.
     -i "/share/sample.mp4" \
     -c:a copy -sn -dn \
     -vf "hwmap=derive_device=drm,format=drm_prime,\
-libplacebo=format=p010le:fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation.glsl,\
+libplacebo=format=p010le:fps=24:frame_mixer=custom_n:custom_shader_path=motion-edges-dual.glsl,\
 format=vulkan,hwmap=derive_device=vaapi,format=vaapi" \
     -c:v hevc_vaapi -global_quality 20 \
     -y /share/output.mp4
@@ -296,10 +274,9 @@ format=vulkan,hwmap=derive_device=vaapi,format=vaapi" \
 
 `fps=` can be any target rate, including non-integer ratios (e.g.
 24->60) -- `mix_t` is computed from the real frame timestamps, not a
-fixed step. (`bidirectional-interpolation.glsl`, shown above, has only
-actually been tested end to end at `fps=60` so far; N:N ratios like
-`24->24` have been confirmed with `motion-edges-dual.glsl` instead -- see
-"Testing status" above.)
+fixed step. Interpolation has only been tested end to end at `fps=60` so far; 
+N:N ratios like `24->24` have been confirmed with `motion-edges-dual.glsl` 
+instead -- see "Testing status" above.)
 
 ## Also in this directory
 
