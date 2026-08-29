@@ -1053,6 +1053,199 @@ sed 's/REFINE_REG_LAMBDA = 0.05/REFINE_REG_LAMBDA = 0.20/' \
 
 Baselines are cached per case, so re-running only re-measures the shader.
 
+## Scene cuts: choosing the gate threshold by measurement
+
+Interpolating across a hard cut superimposes two unrelated shots. The gate
+that prevents this needs a threshold, and picking one required measuring three
+statistics across three clips (13081 frame pairs: a dark night scene, bright
+fast action, and flat animation), with cuts located independently by ffmpeg's
+own scene filter.
+
+**Mean |A - B| over a sparse whole-frame sample -- chosen, at 0.125.**
+Scored against 134 cuts across 12986 non-cut pairs:
+
+| threshold | cuts caught | false | note |
+|---|---|---|---|
+| 0.120 | 100/134 (75%) | 21 | 9 of them on bright action |
+| **0.125** | **96/134 (72%)** | **12 (0.09%)** | none on bright action |
+| 0.150 | 88/134 (66%) | 9 | |
+
+The bright-action clip binds it: its highest non-cut reading is 0.1224, so
+anything below 0.125 starts snapping frames that should be interpolated, on
+material that is otherwise clean.
+
+**A correction worth recording.** The first calibration used only the ten
+strongest cuts as ground truth and appeared to catch all of them. Scoring
+against a fuller detector setting found 28 cuts in the same clip, and the gate
+catches 16. The apparent perfection was a property of the ground truth, not of
+the gate -- and it was only noticed because a visibly ghosted cut at 27.9s
+turned up during inspection that appeared in no list. **Recall is 72%, not
+100%.** Choose ground truth before measuring against it, and be suspicious of
+a detector that agrees with you completely.
+
+**Fraction of the frame changed beyond a per-pixel threshold -- rejected.**
+Sounds more robust, since a cut changes everything while motion changes only
+what moved. In practice grain in dark material trips the per-pixel threshold
+across most of the frame, and it separated worse: 23 false positives against
+the mean's 2 on the same clip.
+
+**Post-warp residual over raw difference -- rejected.** The most principled
+of the three: ask how much of the change motion actually explains, which
+should be scale-free. It failed outright. The coarse flow at 1/16 resolution
+explains too little for the ratio to separate anything -- non-cut pairs sat at
+0.77 against cuts at 0.85, with complete overlap on every clip.
+
+**What the numbers mean, and what they do not.** On the bright fast-action
+clip, cuts score *no higher than ordinary motion* (0.118 at cuts against a
+0.122 non-cut maximum). That is not the statistic failing. Those cuts are
+between visually similar shots, and blending across them does no visible harm
+-- that same clip, containing eleven cuts, was viewed as defect-free before
+the gate existed. So the gate measures "too different to blend", not "is there
+a cut", and that is the property worth gating on.
+
+Verified as inert where it should be: rendering five ladder cases against an
+otherwise identical build with the threshold raised beyond reach gives
+**bit-identical output**, so the gate provably never fires on synthetic
+content. On the real clip it changes 3 frames out of 36 around the cut.
+
+## The ripple: motion far beyond the search reach -- UNSOLVED
+
+Found on a 60-second Back to the Future clip, at 36.9s, by masking scene cuts
+out of the prospector ranking and then cross-checking against a second,
+temporal detector. It ranked in three independent measures while not being a
+cut, which is what made it worth zooming into.
+
+**What it looks like.** The DeLorean passes close to camera at speed. The
+shader melts its headlight and bodywork into rippling, dripping waves. Stock
+linear blending does *not* -- it produces a soft but coherent double image. So
+on this content the motion compensator is worse than doing almost nothing.
+
+**Why it happens.** The headlight crosses several hundred pixels between
+source frames. The surface is motion-blurred and low in texture. Adjacent
+blocks latch onto different wrong offsets, the flow field breaks into bands,
+and the warp drags the picture along them. The banding is directly visible in
+a flow visualiser render.
+
+**Four ways of detecting it, all refuted.** Each failed for a reason worth
+knowing, because each sounds correct until measured:
+
+*Post-warp residual.* Score the flow hypothesis by how much the two frames
+disagree under it, against how much they disagree assuming no motion. Use the
+warp only where it wins. Implemented and inert: on blurred low-texture content
+**any** displacement matches well, so the wrong flow explains the data
+perfectly. The ambiguity is the cause of the defect, not a symptom of it, and
+a residual test is blind to it by construction.
+
+*Flow coherence.* Mean disagreement between a flow vector and its neighbours.
+Measured 7.37 half-res texels at the ripple against 1.44 on clean content --
+but the coherence map fires along **every genuine motion boundary**, which is
+exactly where motion compensation earns its keep. Gating on it would disable
+the shader where it is most valuable, which is the trap the occlusion fallback
+fell into.
+
+*Flow magnitude against the search reach.* We know the estimator's competence
+limit, so distrust it when pinned there. Measured 0.92 of reach at the ripple
+-- and **0.92 at a nearby moment that renders acceptably**. Saturation is
+necessary but not sufficient. Note also that L4_trans_40px scores 33.75 dB
+against linear's 27.96 at 40px of motion, well past the coarse reach, so
+saturation plainly does not imply failure: the refinement levels extend the
+effective reach beyond what the coarse search alone suggests.
+
+*Saturation and incoherence together.* The most promising combination, and
+still too close to call: coherence peaks at 7.37 for the broken moment and
+5.27 for the acceptable one. A threshold in that gap would be fitted to one
+clip and would not survive contact with other material.
+
+**Where this leaves it.** The defect is diagnosed precisely and remains
+unfixed. Gating is treating a symptom: the underlying problem is that motion
+exceeds what the estimator can resolve, and at that speed the source is so
+blurred there may be little left to match even with more reach. If a fix
+exists it is more likely to be architectural -- more pyramid levels, or a
+genuinely different estimator for extreme motion -- than another threshold on
+the signals above. See [ROADMAP.md](../../ROADMAP.md).
+
+## Checking the harness itself
+
+```bash
+export FFMPEG=/path/to/ffmpeg FFPROBE=/path/to/ffprobe
+./smoke.sh
+```
+
+Runs every tool in this directory against generated material -- no source
+video needed -- and reports pass/fail for each. Use it after building, after
+changing a tool, and on any new platform.
+
+It exists because "the same harness works on Linux and Windows" is easy to
+claim and easy to get wrong: the first run under MSYS2 immediately found a
+hardcoded `/mnt/c/...` path in `gen_variational.py` that meant the generator
+only ever worked on one machine. It currently passes 10/10 on both.
+
+## Finding defects in new material
+
+Two detectors, deliberately different, because each is blind to what the other
+finds. Both take `--exclude` to mask scene cuts, which is not optional in
+practice: cuts are enormous, they dominate every ranking, and they inflate the
+robust deviation so that the threshold rises and everything smaller
+disappears. The ripple defect above was invisible until they were masked.
+
+Two tools support the workflow of hardening the shader against new sources,
+which is a different activity from benchmarking a change.
+
+```bash
+export FFMPEG=~/build/ffmpeg/ffmpeg FFPROBE=~/build/ffmpeg/ffprobe
+./prospect.sh <source> [start-seconds] [duration-seconds]
+```
+
+Renders the material through a flow-visualiser build of the production shader
+and ranks moments by how badly the flow field disagrees with itself, printing
+timestamps and a ready-to-run `clip.sh` line for each. It finds data
+perturbation, which correlates with visible defects without being the same
+thing, so **false positives are expected and correct** -- a human still
+decides whether a candidate is a real problem or noise. What it removes is
+the need to watch everything.
+
+Its threshold is relative to the scan (median plus k robust deviations),
+because what counts as a lot of outlier pixels depends completely on the
+material. It therefore finds the worst moments in what it is given, not
+moments bad in absolute terms, and on a uniformly poor scan it says so and
+declines to rank rather than inventing an order.
+
+Software Vulkan runs roughly 30x slower than real time at 1080p, so scan
+scenes rather than films, or leave it running. On a real GPU a 60-second 1080p
+clip takes about seven minutes, dominated by the analysis rather than the
+render.
+
+**Scans are saved, and can be re-ranked for free.** Every run writes its
+per-frame measurements alongside the work directory, because a scan costs
+minutes of GPU time and would otherwise exist only as text in a terminal.
+
+```bash
+./prospect.py --load <saved.scan> --k 2.5 --gap 12 --top 40
+```
+
+That re-ranks an existing scan with different parameters without rendering
+anything, which matters because the threshold, the clustering gap and the
+ranking depth are all judgement calls worth revisiting once you have seen the
+first answer. It also means two scans of the same material -- before and after
+a shader change -- can be compared directly rather than remembered.
+
+```bash
+./clip.sh <source> <time-or-#frame> [pad-frames] [output.mkv]
+```
+
+Cuts a frame-exact lossless clip, addressed by **time**, because a position
+read off the 60p interpolated output does not map to a source frame index --
+only time does. It also sidesteps the two ffmpeg traps that make hand-cutting
+unreliable: `-ss` with `-c copy` cannot be frame-accurate (a stream copy has
+to start at a keyframe), and frame numbers reset after a seek, so `n` in a
+`select` filter counts from the seek point rather than from the start of the
+file. Every cut is verified for exact frame count and a non-black first
+frame, and a contact sheet is written alongside.
+
+Proven frame-exact by cutting the same frames two ways -- once with the fast
+seek it uses, once by decoding from frame 0 with no seek at all -- and
+requiring the results to be bit-identical.
+
 ## Limitations
 
 **Synthetic scores are not a substitute for real footage.** These scenes

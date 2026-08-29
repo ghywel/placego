@@ -93,6 +93,69 @@ vec4 hook() {
     return vec4(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
 }
 
+
+// ---------------------------------------------------------------------
+// SCENE-CUT GATE: mean |A - B| over the whole frame, as a single number.
+//
+// WHAT IT IS FOR. Across a hard cut the two source frames are unrelated
+// images. There is no correspondence to find and no motion to compensate, so
+// interpolating between them superimposes two different shots -- a ghosted
+// double exposure lasting two or three output frames. Found on real footage:
+// a cut from a wide two-shot to a close-up rendered both at once, with the
+// close-up's detail bleeding through the wide shot.
+//
+// Stock libplacebo's builtin mixers do this too, visibly worse. Gating it
+// here makes this shader strictly better than the builtin blend rather than
+// merely different.
+//
+// WHY A HARD SWITCH IS RIGHT HERE, when it was wrong for occlusion. The
+// occlusion fallback was removed because at an occlusion boundary
+// correspondence DOES exist for most of the frame, so substituting an
+// unwarped frame threw away good information and produced a doubled contour.
+// At a cut nothing corresponds, and the original edit was itself a hard
+// switch: reproducing it is the correct output, not an approximation to it.
+//
+// WHAT THE STATISTIC ACTUALLY MEASURES, stated honestly: not "is there a
+// cut", but "are these two frames too different to blend". Those are not the
+// same thing and the difference matters. Measured across three very different
+// clips (13081 frame pairs: a dark night scene, bright fast action, and flat
+// animation), cuts between visually SIMILAR shots score no higher than
+// ordinary fast motion -- and interpolating across those does no visible
+// harm, which is why a 60-second clip containing eleven such cuts was viewed
+// as defect-free. The gate fires on the cases that look wrong, which is the
+// useful behaviour even though it is not cut detection.
+//
+// Two other statistics were tried and measured worse. The FRACTION of the
+// frame that changed beyond a per-pixel threshold is diluted by grain in dark
+// material. The ratio of post-warp residual to raw difference sounds better
+// -- it asks how much of the change motion explains -- but the coarse flow
+// explains too little at 1/16 resolution for the ratio to separate anything;
+// non-cut pairs sat at 0.77 against cuts at 0.85.
+//
+// Sampled on a sparse fixed grid rather than every texel: this is a global
+// statistic, so a few hundred samples is ample, and the sample count is the
+// whole cost of a pass that runs as a single invocation.
+// ---------------------------------------------------------------------
+//!HOOK FRAME_MIX
+//!BIND LUMA_A_S
+//!BIND LUMA_B_S
+//!SAVE SCENE_DIFF
+//!WIDTH 1
+//!HEIGHT 1
+//!COMPONENTS 1
+//!DESC [high] scene-cut statistic (whole-frame luma difference)
+vec4 hook() {
+    const int N = 24;
+    float acc = 0.0;
+    for (int y = 0; y < N; y++) {
+        for (int x = 0; x < N; x++) {
+            vec2 uv = (vec2(float(x), float(y)) + 0.5) / float(N);
+            acc += abs(LUMA_A_S_tex(uv).r - LUMA_B_S_tex(uv).r);
+        }
+    }
+    return vec4(acc / float(N * N), 0.0, 0.0, 0.0);
+}
+
 // ---------------------------------------------------------------------
 // Sixteenth-res coarse search, both directions: 5-step, 5x5 SAD window.
 // Cached across repeated output frames sharing the same source pair --
@@ -1301,6 +1364,7 @@ vec4 hook() {
 // ---------------------------------------------------------------------
 //!HOOK FRAME_MIX
 //!BIND HOOKED
+//!BIND SCENE_DIFF
 //!BIND NEXT
 //!BIND FLOW_H_AB
 //!BIND EDGE_A
@@ -1437,7 +1501,37 @@ vec4 warp_sample_b(vec2 uv) {
 // nothing else), which also saves a full-resolution texture fetch per pixel.
 // `interpolate-debug-grid.glsl` still VISUALISES that consistency error, which
 // remains diagnostically useful even though nothing acts on it now.
+// Chosen from measurement, and the number is a compromise rather than a
+// solution. Scored against 134 cuts across 12986 non-cut pairs on three clips
+// (dark night, bright action, flat animation):
+//
+//     0.120   100/134 caught (75%)   21 false -- but 9 of those on the
+//                                    bright-action clip, where a wrong fire
+//                                    snaps a frame that should be blended
+//     0.125    96/134 caught (72%)   12 false, NONE on bright action
+//     0.150    88/134 caught (66%)    9 false
+//
+// The bright-action clip binds it: its highest non-cut reading is 0.1224, so
+// anything below 0.125 starts snapping correctly-interpolable frames on
+// material that is otherwise clean. 0.125 sits just above that and buys eight
+// more cuts for three more false positives in thirteen thousand.
+//
+// Recall is 72%, not 100%. A first calibration used only the ten strongest
+// cuts as ground truth and appeared to catch all of them; scoring against a
+// fuller list showed that was an artefact of the ground truth, not a property
+// of the gate. Cuts between visually similar shots are missed, and one such
+// was confirmed by eye at 27.9s. Those are also the ones that do least visible
+// harm when blended, which is why this remains worth shipping -- but it is a
+// partial fix and should not be described otherwise.
+const float SCENE_CUT_DIFF = 0.125;
+
 vec4 hook() {
+    // Too different to blend: reproduce the cut instead of averaging across
+    // it. See the SCENE-CUT GATE note above for why a hard switch is correct
+    // here and was not for occlusion.
+    if (SCENE_DIFF_tex(vec2(0.5)).r > SCENE_CUT_DIFF)
+        return mix_t < 0.5 ? HOOKED_tex(HOOKED_pos) : NEXT_tex(NEXT_pos);
+
     // flow_ab = displacement from A's position to the matching position in B,
     // i.e. A(x) ~= B(x + flow_ab(x)). For output pixel p at time t, the
     // source position in A is p - flow_ab*t; in B it's p + flow_ab*(1-t).

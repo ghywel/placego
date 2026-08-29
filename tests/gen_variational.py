@@ -30,9 +30,16 @@ Iterations are uncached deliberately (they re-run every output frame). The
 coarse levels are too cheap for that to matter; the half-res ones are not, and
 caching them is the obvious optimisation once the approach earns its place.
 """
+import pathlib
 import sys
+import tempfile
 
-SRC = "/mnt/c/Users/loki/Documents/Novel-Interpolate/scripts/bidirectional-interpolation.glsl"
+# Resolved from this file's own location, not hardcoded. The previous absolute
+# path was both machine-specific and WSL-only (/mnt/c/...), so the generator
+# ran on exactly one host -- which the cross-platform smoke test caught the
+# moment it was run under MSYS2.
+HERE = pathlib.Path(__file__).resolve().parent
+SRC = str(HERE.parent / "bidirectional-interpolation.glsl")
 
 # level key -> (flow suffix, luma A, luma B, WIDTH/HEIGHT divisor, anchor)
 LEVELS = [
@@ -278,7 +285,10 @@ if __name__ == "__main__":
     spec = sys.argv[1] if len(sys.argv) > 1 else "16,12,8,6"
     alpha = sys.argv[2] if len(sys.argv) > 2 else "0.3"
     sigma = sys.argv[3] if len(sys.argv) > 3 else "0.08"
-    out = sys.argv[4] if len(sys.argv) > 4 else "/home/loki/build/shaders/casc.glsl"
+    # Defaults to a scratch file rather than the shipped shader: regenerating
+    # production should be a deliberate act with the path spelled out.
+    out = sys.argv[4] if len(sys.argv) > 4 else str(
+        pathlib.Path(tempfile.gettempdir()) / "casc.glsl")
     sigma_flow = sys.argv[5] if len(sys.argv) > 5 else "0"
     medspec = sys.argv[6] if len(sys.argv) > 6 else "2,2,2,0"
     s, e, q, h = (int(x) for x in spec.split(","))

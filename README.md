@@ -12,7 +12,8 @@ already support via `custom_shader_path`) simultaneous access to a whole
 declares it wants, from 1 up to 8), plus the exact timing relationship
 between them, instead of a single already-blended texture.
 
-[SHADERS.md](SHADERS.md) documents the shaders built on this patch,
+[BUILDANDUSAGE.md](BUILDANDUSAGE.md) is the build guide for Linux
+and Windows. [SHADERS.md](SHADERS.md) documents the shaders built on it,
 [tests/TESTING.md](tests/TESTING.md) the ground-truth harness, and
 [METHODOLOGY.md](METHODOLOGY.md) how the whole thing was actually
 developed and how to re-establish the loop that did it.
@@ -157,7 +158,27 @@ the patch.
 
 ## Testing status
 
-No known issues with the libplacebo patch at this time
+Verified configurations. Anything not listed here is untested rather than
+known-good -- treat it as a lead to confirm, not a claim.
+
+| CPU / GPU | OS and build | Vulkan driver | Status |
+|---|---|---|---|
+| Intel i5-9500, UHD Graphics 630 iGPU (Coffee Lake, gen9) + Intel Arc A310 dGPU (Alchemist, gen12) | Debian, compiled against jellyfin-ffmpeg | Mesa | patch and shaders tested |
+| Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, WSL2 Ubuntu | Mesa lavapipe (software) | patch and shaders tested |
+| Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary | patch and shaders tested; ladder matches Linux to 0.01 dB |
+| AMD Radeon RX 6600 eGPU (same machine) | -- | -- | **untested** -- not exposed as a Vulkan device by that machine's eGPU setup |
+| macOS | -- | -- | **untested** |
+| NVIDIA, any | -- | -- | **untested** |
+
+So the patch has run against three different Vulkan implementations -- Mesa on
+Intel, Mesa lavapipe in software, and AMD's proprietary Windows driver -- on
+two operating systems and two compilers. It has never run on NVIDIA hardware
+or on macOS.
+
+See [BUILDANDUSAGE.md](BUILDANDUSAGE.md) for how to build it on Linux or
+Windows, and [tests/TESTING.md](tests/TESTING.md) for what the measurements
+mean.
+
 
 ## Verifying the N-frame case
 
@@ -173,38 +194,6 @@ debug shader uses), so binding more than 2 frames from a real GPU
 dispatch is something you can actually look at rather than just trust.
 Point `custom_shader_path` at it the same way as any other shader here to
 check it before relying on a wider window for anything real.
-
-## Building
-
-In this project testing was performed against [jellyfin-ffmpeg 8.1](https://github.com/jellyfin/jellyfin-ffmpeg)
-There is already a patch against libplacebo in builder/patches/libplacebo
-place the frame-mix-hook.patch file in here and build as normal with
-./build trixie amd64 for example. For normal ffmpeg builds apply the patch
-and build as normal. It is also recommended to apply the
-hw-base-encode-eof-nullcheck.patch to src/libavcodec/hw_base_encode.c
-to fix an unpatched ffmpeg null pointer dereference bug that causes
-a segfault when seeking input with a fps= scaled output.
-
-Example ffmpeg build:
-```bash
-# 1. Patch and build libplacebo
-git clone https://code.videolan.org/videolan/libplacebo.git
-cd libplacebo
-git apply /path/to/frame-mix-hook.patch
-meson setup build -Dvulkan=enabled -Dprefix=/opt/libplacebo-mc
-ninja -C build install
-
-# 2. Build ffmpeg against it (no ffmpeg source changes needed)
-git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg
-cd ffmpeg
-export PKG_CONFIG_PATH=/opt/libplacebo-mc/lib/x86_64-linux-gnu/pkgconfig
-./configure --enable-libplacebo --enable-vulkan --enable-vaapi \
-    --extra-ldflags="-Wl,-rpath,/opt/libplacebo-mc/lib/x86_64-linux-gnu"
-make -j$(nproc)
-```
-
-Adjust the pkg-config path to match wherever `meson`/`ninja install`
-actually put it on your distro (`find /opt/libplacebo-mc -name 'libplacebo.pc'`).
 
 ## Usage
 

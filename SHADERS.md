@@ -10,7 +10,7 @@ algorithm that render what the estimator is thinking instead of the picture,
 and **two small examples** that exist to demonstrate the hook rather than to
 interpolate anything.
 
-For how any of this was arrived at, see [METHODOLOGY.md](../METHODOLOGY.md); for
+For how any of this was arrived at, see [METHODOLOGY.md](METHODOLOGY.md); for
 the measurements behind the claims, [tests/TESTING.md](tests/TESTING.md).
 
 ## Which one to use
@@ -112,6 +112,21 @@ still carry the occlusion fallback that was removed from the base, which is
 why they now measure worse than the base and, in one case, worse than stock
 linear blending. See "Why the diffuse variants measure so badly" below.
 
+### Known remaining weakness: motion beyond the search reach
+
+When an object crosses several hundred pixels between source frames -- a car
+passing close to camera, for instance -- the search cannot resolve it, the
+flow field breaks into bands, and the warp drags the picture into rippling,
+molten waves. On that content the shader is **worse than stock linear**, which
+stays coherent because blur hides its doubled contour.
+
+This is diagnosed and unfixed. Four detection criteria were implemented and
+measured, and each fails for a specific reason -- residual is blind to it,
+coherence fires at every motion boundary, magnitude fires on fast motion that
+renders fine, and the combination is too close to separate. The evidence is in
+tests/TESTING.md. A fix is more likely to be architectural than another
+threshold.
+
 ### Known remaining weakness: animation
 
 Flat-shaded animation is the hardest case for this design, and one class of
@@ -132,7 +147,7 @@ the way the original animation does. It is much improved and still visible
 on close inspection.
 
 Fixing this properly is judged to need a different class of shader rather
-than a change to this one -- see ROADMAP.md, "A shader class specific to
+than a change to this one -- see [ROADMAP.md](../ROADMAP.md), "A shader class specific to
 animation".
 
 ## Measured comparison
@@ -240,7 +255,32 @@ iterations and then a vector median, in that order, so the neighbourhood
 consensus is what seeds the next level rather than being re-dirtied by it.
 Per level the sequence is `refine -> variational -> median`.
 
-**5. Warp and blend.** The flow is read at half resolution and lifted to full:
+**5. Scene-cut gate.** Before warping anything, one number decides whether
+these two frames can be blended at all. Across a hard cut they are unrelated
+images: no correspondence exists, and interpolating superimposes two shots as
+a ghosted double exposure. The gate compares a sparse whole-frame sample of
+the 1/16 luma and, above a threshold, reproduces the cut instead:
+
+```glsl
+if (SCENE_DIFF_tex(vec2(0.5)).r > SCENE_CUT_DIFF)
+    return mix_t < 0.5 ? HOOKED_tex(HOOKED_pos) : NEXT_tex(NEXT_pos);
+```
+
+A hard switch is *correct* here, which is worth stating given the occlusion
+fallback was removed for being one. At an occlusion boundary correspondence
+exists for most of the frame, so substituting an unwarped frame threw away
+good information. At a cut nothing corresponds, and the original edit was
+itself a hard switch.
+
+Stated honestly, this measures "too different to blend", not "is there a cut",
+and it is a **partial fix**: measured recall is 72% of 134 cuts across three
+clips. Cuts between visually similar shots are missed -- but those are also
+the ones that do least visible harm when blended, which is why a 60-second
+clip containing twelve of them was viewed as defect-free before this existed.
+The gate fires on what looks wrong rather than on edit structure. Threshold,
+evidence, and a correction to an earlier over-claim are in tests/TESTING.md.
+
+**6. Warp and blend.** The flow is read at half resolution and lifted to full:
 
 ```glsl
 vec2 flow_ab = FLOW_H_AB_tex(HOOKED_pos).xy * 2.0 * HOOKED_pt;
@@ -349,7 +389,7 @@ interpolators do not exercise because they lean on `mix_t`.
 
 It is worth noting for future work that this shader produces a strikingly
 accurate outline of a character's before and after position -- see
-ROADMAP.md, where using that directly to warp a whole character or feature
+[ROADMAP.md](../ROADMAP.md), where using that directly to warp a whole character or feature
 as a template, rather than consulting a mostly-static whole-frame flow
 field, is parked under "A shader class specific to animation".
 

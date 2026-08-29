@@ -3,9 +3,9 @@
 How this project was actually built, and how to carry on building it.
 
 The shaders and the patch are documented elsewhere
-([scripts/README.md](scripts/README.md),
-[scripts/SHADERS.md](scripts/SHADERS.md),
-[scripts/tests/TESTING.md](scripts/tests/TESTING.md)). This document is about
+([README.md](README.md),
+[SHADERS.md](SHADERS.md),
+[tests/TESTING.md](tests/TESTING.md)). This document is about
 the *process*, because the process turned out to be the more transferable
 result. A working motion compensator is one artefact; a loop that can find
 and fix a defect in a GPU shader in an afternoon is a capability.
@@ -280,6 +280,11 @@ Vulkan and needs no GPU and, for the synthetic half, no source video at all.
 | `edgeerror.sh` / `.py` | Reports error at edges separately from everywhere else. |
 | `flowvis.py` | Turns any interpolator into a flow-field visualiser by rewriting only its final `hook()`, leaving all upstream passes untouched. |
 | `flowoutliers.py` | Measures isolated false-match islands in a flow field. Probes frame dimensions rather than assuming them. |
+| `prospect.py --load` | Re-ranks a saved scan without re-rendering. Scans are persisted by default: minutes of GPU time should not evaporate with the terminal, and comparing a scan before and after a shader change is how you tell whether a fix worked. |
+| `jitter.sh` / `jitter.py` | Measures the OUTPUT in time rather than the flow field in space: a five-frame phase profile that exposes judder, and per-frame anomalies scored within their own phase. The complement to prospect.sh, which is blind to flow that is uniform but wrong. Also takes `--exclude`. |
+| `smoke.sh` | Exercises every tool here and reports pass/fail per tool. Needs no source video. The check that the harness genuinely works on whatever platform it is run on -- it caught a WSL-only hardcoded path in the shader generator the first time it was run under MSYS2. |
+| `prospect.sh` / `prospect.py` | Scans source material and ranks moments most likely to hide a defect, so a human reviews a shortlist instead of a whole film. Emits a ready-to-run `clip.sh` line for each candidate. |
+| `clip.sh` | Cuts a frame-exact, lossless clip addressed by TIME rather than frame number, and verifies what it produced. |
 | `gen_variational.py` | Generates the production shader from the base. Takes iteration counts, median counts and parameters as arguments, which is what makes exhaustive variant sweeps affordable. |
 
 ### Outside the repository: the WSL working set
@@ -304,6 +309,65 @@ most of the actual work happened.
   directories, with baselines cached per case so a re-run only re-measures
   the shader under test.
 
+### Proving portability, not asserting it
+
+The patch's justification is that libplacebo is portable. That was an
+argument, not evidence, for as long as it only ever ran on one distribution.
+`scripts/build-windows.{ps1,sh}` build the same stack under MSYS2/mingw-w64
+against AMD's proprietary Windows Vulkan driver -- a different compiler, a
+different loader, a different driver, and non-POSIX paths.
+
+The verification stage is the point of it. Checking that ffmpeg runs proves
+almost nothing: with no shader loaded libplacebo silently falls back to its
+builtin blend and still emits 60fps output, so a plausible frame count is not
+evidence. Instead it compiles every shader, and re-runs part of the
+ground-truth ladder against the values measured on Linux. Because those scenes
+are pure functions of `t`, the correct answer is platform-independent, so the
+numbers are directly comparable and a discrepancy means something real.
+
+Worth noting for anyone repeating this: the patch was confirmed to still apply
+cleanly to current libplacebo master before the build was attempted, which is
+a five-minute check that avoids discovering a rebase is needed halfway through
+a toolchain install.
+
+**Result.** Same shaders, same patch, against a different compiler
+(mingw-w64), a different Vulkan loader, and a different driver (AMD's
+proprietary Windows ICD rather than Mesa lavapipe):
+
+| case | Linux | Windows |
+|---|---|---|
+| L1_trans_8px | 41.34 | 41.35 |
+| L2_trans_16px | 38.45 | 38.45 |
+| L9_occlusion | 38.31 | 38.32 |
+
+with `hold` and `linear` baselines matching exactly. A hundredth of a dB on
+two cases is last-digit float rounding between two entirely different shader
+compilers. All nine shaders compile and run.
+
+**What the exercise actually found** -- which is the argument for doing it at
+all, since none of these were visible from Linux:
+
+- An undocumented build dependency. libplacebo generates shader source with a
+  Python/Jinja2 template step; Debian supplies it transitively, MSYS2 does
+  not, and it fails partway through ninja as a bare `ModuleNotFoundError`
+  naming no package.
+- Absolute paths cannot appear in ffmpeg filter arguments on Windows, because
+  the drive-letter colon is ffmpeg's option separator. Escaping, quoting and
+  disabling path conversion were each measured and each fail.
+- Paths embedded in a filter string are not path-converted by MSYS2 at all,
+  so a POSIX path reaches a native binary that cannot open it. Between that
+  and the previous point, only a relative path works.
+- A relative path is not always enough either: MSYS2's POSIX root is
+  `C:\msys64` while `/c` is a virtual mount of `C:\`, so a POSIX relative
+  path spanning the two is meaningless to a native binary. `bench.sh` now
+  copies the shader beside its output and refers to it by bare name, removing
+  the path question entirely.
+- Windows has no rpath, so the libplacebo DLL has to be placed beside the
+  binary or loading fails with an unhelpful error.
+
+The harness changes for the last two are behaviour-preserving on Linux, and
+were re-verified there against the pre-change numbers before being kept.
+
 ### Generating your own inputs
 
 Nothing in the synthetic half needs source footage. Scenes are lavfi
@@ -311,6 +375,61 @@ expressions -- `color=`, `nullsrc`, `geq`, `overlay=x='384*t'` -- which means
 a new test case for a newly-suspected failure mode can be written in one
 line and benchmarked immediately, with exact ground truth. When a hypothesis
 needs a scene that does not exist, write the scene.
+
+### The defect-hunting loop
+
+The two-stage division from section 2 is now tooled, because the two halves
+fail differently and the pairing is what makes it work:
+
+> **Machine finds irregularities. Human confirms whether they are a problem
+> or statistical noise.**
+
+`prospect.sh` renders a scan through a flow-visualiser build of the
+production shader and ranks moments by how badly the flow field disagrees
+with itself. It is fast and literal: it detects data perturbation, which
+*correlates* with visible defects without being the same thing. False
+positives are expected and are the tool working correctly. What it removes is
+the need to watch everything -- it turns a film into a shortlist.
+
+A human then looks at the shortlist and decides. That judgement is not
+automatable here: the eye catches visual incoherence immediately and is not
+fooled by a number, which is precisely the failure mode the metrics in this
+project keep exhibiting.
+
+Its threshold is deliberately **relative** -- median plus k robust deviations
+across the scan -- because what counts as a lot of outlier pixels depends
+entirely on the material. Flat animation and grainy live action sit orders of
+magnitude apart, so a fixed count either floods on one or goes silent on the
+other. The consequence to understand: it finds the worst moments in what it
+is given, not moments bad in absolute terms. Given a uniformly poor scan it
+reports that and declines to rank, rather than inventing an order.
+
+Each candidate comes with a `clip.sh` line, which closes the loop: prospect,
+paste, get a verified clip, hand it over.
+
+### Cutting the clip: three traps that look like user error
+
+`clip.sh` exists because cutting a defect clip by hand fails for three
+non-obvious reasons, each of which cost real time here:
+
+1. **`-ss` with `-c copy` cannot be frame-accurate.** A stream copy must begin
+   at a keyframe, so it snaps to one regardless of `accurate_seek`. Frame-exact
+   cutting requires re-encoding, losslessly. This is the usual cause of "I
+   asked for frame 1234 and got something else".
+2. **Frame numbers reset after a seek.** In `select='between(n,...)'`, `n`
+   counts from the first frame decoded *after* the seek, not from the start of
+   the file, so a frame number read off a player does not survive being pasted
+   into a filter. `clip.sh` seeks with `-copyts` and selects on absolute
+   timestamps, which do survive.
+3. **You read the position off the 60p output but need the 24p source.** Frame
+   indices do not map between the two; time does. So the tool takes a time and
+   does the conversion, printing it so it can be checked.
+
+It verifies every cut -- exact frame count, non-black first frame, contact
+sheet -- and fails loudly rather than returning a plausible-looking clip.
+Proven frame-exact by cutting the same frames two ways, once with its fast
+seek and once by decoding from the start of the file with no seek at all, and
+requiring the results to be bit-identical.
 
 ### Building tools on demand
 
