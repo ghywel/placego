@@ -14,7 +14,7 @@ between them, instead of a single already-blended texture.
 
 [SHADERS.md](SHADERS.md) documents the shaders built on this patch,
 [tests/TESTING.md](tests/TESTING.md) the ground-truth harness, and
-[../METHODOLOGY.md](../METHODOLOGY.md) how the whole thing was actually
+[METHODOLOGY.md](METHODOLOGY.md) how the whole thing was actually
 developed and how to re-establish the loop that did it.
 
 Everything downstream of that -- motion-compensated interpolation,
