@@ -1283,9 +1283,13 @@ vec4 hook() {
     vec4 warped_b = warp_sample_b(NEXT_pos + flow_ab * (1.0 - mix_t));
     vec4 mc_result = mix(warped_a, warped_b, mix_t);
 
-    float occluded = smoothstep(4.0, 7.0, fb_error_px);
-    vec4 fallback = mix_t < 0.5 ? HOOKED_tex(HOOKED_pos) : NEXT_tex(NEXT_pos);
-    vec4 base = mix(mc_result, fallback, occluded);
+    // Kept in lockstep with bidirectional-interpolation.glsl, which no longer
+    // has an occlusion fallback: three versions of one were built and each
+    // measured worse than none, confirmed by direct viewing. See that file's
+    // warp pass. `fb_error_px` above is retained only because this shader is
+    // a diagnostic -- seeing where forward/backward consistency fails is
+    // still useful even though nothing acts on it now.
+    vec4 base = mc_result;
 
     // Diagnostics composited on top, additively, both sampled RAW at
     // this output pixel's own position (not motion-compensated) -- see

@@ -1,421 +1,416 @@
-# Example shaders
+# Shaders
 
-Five `.hook`-format GLSL shaders built on
-[frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage
--- see [README.md](README.md) for what that patch adds and why. Three are
-diagnostic overlays of a bidirectional interpolation algorithm, one
-is a proof on concept for the patch's N-frame generalization;
-`motion-edges-dual.glsl` computes the edges in motion with a coloured
-overlay of the source edge and destination edge - particularly strong
-against animated content.
+Nine `.hook`-format GLSL shaders built on
+[frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage --
+see [README.md](README.md) for what that patch adds and why.
 
-## Files
+They divide into three groups: **four interpolators** (one recommended, one
+cheap baseline, two superseded), **three diagnostic builds** of the same
+algorithm that render what the estimator is thinking instead of the picture,
+and **two small examples** that exist to demonstrate the hook rather than to
+interpolate anything.
 
-- `bidirectional-interpolation.glsl` -- the production interpolator
-  (outlined below). - Not included
-- `interpolate-debug-grid.glsl` -- diagnostic build (below): the same
-  algorithm as a shrunk-down 3x2 grid of intermediate results.
-- `interpolate-debug-overlay.glsl` -- a second diagnostic build (below):
-  the actual full-resolution output, with the flow field and edge masks
-  tinted on top of it in place, for inspecting a specific, localized
-  defect that a shrunk-down grid cell can't show clearly enough.
-- `interpolate-debug-warp-stages.glsl` -- a third diagnostic build
-  (below): outputs exactly one stage of the final warp/blend pipeline at
-  a time (single-direction warp, cross-blended, or fully composited),
-  selected by editing one constant, for isolating which specific stage
-  introduces a subtle warp defect. Both this and the overlay diagnostic
-  above were originally built during a 2026-08-26 real-hardware
-  investigation into a specific such defect -- see ROADMAP.md for what
-  was found and why that particular investigation is currently parked --
-  but the techniques themselves are general-purpose and kept in lockstep
-  with whichever pyramid the production shader currently runs, not tied
-  to that investigation.
-- `nframe-smoketest.glsl` -- unrelated smoke test for the
-  N-frame generalization described in README.md, not a companion to the
-  flow debug shader above. Binds 4 frames at once (`FRAME0`..`FRAME3`)
-  and renders them as a 2x2 grid with per-cell diagnostics (a distinct
-  color tag per index, each frame's `rts_mix[]` value as a small bar, a
-  `num_mix` readout, and the same red/green `pair_changed` indicator the
-  flow debug shader uses) -- see its own header comment for the full
-  layout. Not a production shader and not meant to demonstrate a useful
-  N-frame algorithm, just to make the plumbing directly checkable by eye
-  the same way the flow debug shader did for caching.
-- `motion-edges-dual.glsl` -- the first non-interpolation example
-  (outlined below): a plain 2-frame difference-and-threshold motion edge
-  outline, no motion estimation at all, with HOOKED's and NEXT's
-  contribution to the outline shown separately in contrasting colors.
+For how any of this was arrived at, see [METHODOLOGY.md](../METHODOLOGY.md); for
+the measurements behind the claims, [tests/TESTING.md](tests/TESTING.md).
 
-Each file is self-contained and uses the mpv/libplacebo custom shader
-hook DSL (`//!HOOK`, `//!BIND`, `//!SAVE`, `//!WIDTH`/`//!HEIGHT`),
-targeting the `FRAME_MIX` stage. Read the header comment in each file for
-the specific tuning knobs.
+## Which one to use
 
-## Interpolation shader: working outline
+**Use `bidirectional-interpolation-variational.glsl`.** It is the
+recommended production shader. On real footage it passes a 60-second
+real-hardware viewing with no noticeable or distracting defect. On animation
+it is clearly the best of the family and still not perfect, in one specific
+way described below.
 
-`bidirectional-interpolation.glsl` synthesizes each output frame from the
-two source frames the `PL_HOOK_FRAME_MIX` hook hands it (`HOOKED` =
-earlier, `NEXT` = later), in five stages. It's written against exactly 2
-frames and needed *no changes* for the N-frame generalization -- `HOOKED`
-and `NEXT` still mean exactly frame index 0 and 1, same as always; this
-shader is simply the N=2 case of the now-more-general mechanism:
+Use `bidirectional-interpolation.glsl` only if you have measured that the
+variational build does not fit your hardware budget. It is roughly a fifth
+of the passes and visibly worse -- on real footage it produces the edge
+fraying and non-rigid warping that the variational cascade exists to fix.
 
-1. **Downsample.** Both frames' luma is downsampled to four pyramid
-   levels (1/16, 1/8, 1/4, 1/2 resolution) for coarse-to-fine motion
-   search.
-2. **Bidirectional block-matching search**, at each pyramid level, in
-   both directions independently (A->B and B->A, not one derived from
-   the other by sign-flipping) -- a per-block SAD search refined level by
-   level, with a magnitude-regularization term biasing ambiguous/flat
-   regions toward small motion rather than spurious large jumps. Only the
-   coarsest level does this full iterative search from scratch (5
-   halving steps, currently capped at ~23px full-res reach -- confirmed
-   on real footage this avoids locking onto a spuriously-matching distant
-   candidate in repetitive texture like blurred bokeh); every finer level
-   nudges that result within a local +-2-texel neighborhood, biased
-   (distance-scaled, the same shape as the coarse level's own
-   regularization) toward staying at the seed unless a neighbor scores
-   clearly lower, rather than chasing a marginal, possibly
-   window-contamination-driven improvement. Reading each level's seed
-   from the one below it snaps to that coarser texture's exact texel
-   center rather than bilinear-sampling it -- an ordinary bilinear read
-   there would smooth a real per-texel value across many finer texels
-   when handing it down, independent of how correct that value is
-   (found and fixed on real hardware: it was smoothing away, not fixing,
-   an underlying defect). The coarsest level also gates on local contrast
-   before searching at all, to reject dark/noisy regions with no real
-   signal to match against -- the finer levels do not gate on contrast
-   (removing that gate at the finer levels, tested on real hardware, had
-   no effect: they were already finding nothing better to search for in
-   genuinely low-texture areas -- see ROADMAP.md's account of the
-   2026-08-26 investigation for what that turned out to mean).
-3. **Vector median filtering**, run twice per direction, to smooth out
-   individually-plausible-but-locally-inconsistent motion vectors (the
-   classic aperture-problem failure mode along straight edges).
-4. **Occlusion detection**, via a forward/backward consistency check: if
-   warping A->B and B->A round-trips back close to the starting point,
-   the flow is trusted; if not, that region falls back to the nearer
-   *unwarped* source frame instead of a warped sample that's more likely
-   wrong.
-5. **Warp and blend.** Each source frame is sampled at its
-   motion-compensated position and blended by `mix_t`. The sample itself
-   is a blend of texel-snapped (nearest-neighbor-equivalent, to avoid the
-   extra blur linear filtering would add at a fractional offset) and
-   plain linear filtering. Pure snapping alone is a *discontinuous*
-   function of the warp position -- even a clean, low-noise flow field
-   has enough sub-texel imprecision that adjacent output pixels can land
-   on opposite sides of a texel boundary purely by chance, which is
-   invisible on ordinary content but fragments thin, high-contrast
-   linework into a dashed-looking line (confirmed on real footage: a
-   cartoon's black outlines breaking up against the background, despite a
-   clean flow field in the debug visualization -- a sampling artifact
-   downstream of the flow, not a flow quality problem).
+Do not use the two `diffuse-*` variants for new work. They are a superseded
+branch, kept for the record (see below).
 
-   Rather than blend a fixed amount of linear filtering back in
-   everywhere (softening the whole frame to fix a problem that only
-   shows up in specific spots), the blend strength is decided per pixel
-   by an independent edge-consistency check. Two extra full-resolution
-   passes (`EDGE_A`/`EDGE_B`) compute a motion-gated spatial edge mask
-   for each source frame -- reusing the exact technique
-   `motion-edges-dual.glsl` already validates on real hardware: a pixel
-   only counts as an edge if it's both a genuine spatial edge within its
-   own frame and part of a temporally-moving region, so the vast
-   majority of any frame (its static edges) never registers at all. At
-   warp time, that mask is read twice: once at the true (unsnapped) warp
-   position -- smooth/bilinear, so a continuous "is a moving edge
-   expected here" signal -- and once at the snapped position, which
-   degenerates to the exact value of whichever single texel the snap
-   landed on. Where the two agree (both confidently edge, or both
-   confidently not) the snap is corroborated and gets trusted fully;
-   where they disagree, that's precisely the coin-flip case that
-   fragments a line, so that specific sample falls back toward linear
-   filtering instead. `SNAP_STRENGTH` is an overall damping multiplier on
-   top of that per-pixel signal rather than the sole knob it used to be.
+## The interpolator family
 
-   **Currently set to 0.0** (fully disabled -- pure bilinear at the
-   warped position, `EDGE_A`/`EDGE_B` still computed but unused by the
-   warp itself). Real-hardware isolation during the 2026-08-26
-   investigation (see ROADMAP.md) traced the actual reported defect
-   ("parts of the warp left behind" on real footage, most visible on
-   faces/skin in natural motion) to the flow field's own resolvable
-   precision in low-texture regions, not to this mechanism -- setting
-   this to 0.0 as a control confirmed the defect persisted identically
-   either way, and the investigation's eventual fix for that (an
-   edge-aware flow diffusion mechanism) was itself set aside as scope
-   creep beyond this project's current priorities, not carried forward
-   here. This mechanism's own original target (thin-outline
-   fragmentation on cartoon content) is a real, separate problem it was
-   never disproven for; re-enabling and re-verifying it is open,
-   unstarted follow-up work, not a decision made yet.
-
-**Where the patch's functionality actually earns its keep** (using just
-2 of the up-to-8 frames it can supply): every one of the five stages
-above needs *both* source frames and the true timing relationship
-between them -- none of it is expressible against the single composited
-texture a stock libplacebo custom shader would normally see.
-Blending by the real `mix_t` (rather than a fixed step) is also what
-makes this correct for non-integer fps ratios like 24->60 out of the box.
-
-And because a 2.5x ratio means several consecutive output frames share
-the same source pair (only `mix_t` moves between them), stages 1-3 are
-wrapped in `//!TEXTURE ... //!STORAGE` caches gated on `pair_changed`: on
-a cache hit, the shader `imageLoad`s a stored motion field instead of
-re-running the search, cutting genuinely repeated GPU work rather than
-just repeated output. See [README.md](README.md) for the fixed
-cache-texture-size ceiling this implies. Measured effect below.
-
-## Debug shader: embedding diagnostics in the output itself
-
-`interpolate-debug-grid.glsl` is the same algorithm, kept in lockstep
-pass-for-pass with the production shader, with one difference: instead
-of returning the final warped/blended picture, its last pass renders a
-3x2 diagnostic grid.
+All four share the same skeleton and are derived from the same base file.
+The lineage is strictly additive, and the two branches are alternatives to
+each other rather than steps in one line:
 
 ```
-+------------+------------+------------+
-|  source A  |  source B  | flow color |
-|  (HOOKED)  |  (NEXT)    | wheel [C][F]
-+------------+------------+------------+
-| flow magni-| occlusion  |  actual    |
-| tude heat- | (FB-error) |  warped    |
-| map (AB)   |  mask      |  result    |
-+------------+------------+------------+
+bidirectional-interpolation.glsl            23 passes   the base
+  |
+  +-- -diffuse-coarse.glsl                  31   base + coarse flow diffusion
+  |     |                                        (SUPERSEDED)
+  |     +-- -diffuse-dual.glsl              39   + fine diffusion
+  |                                              (SUPERSEDED)
+  |
+  +-- -variational.glsl                    115   base + variational cascade
+                                                 + coarse vector medians
+                                                 (RECOMMENDED, generated)
 ```
 
-- **Flow color wheel** -- hue = direction, brightness = magnitude of the
-  A->B motion vector at each point (the same visualization convention
-  the Middlebury/KITTI optical-flow benchmarks use). A rigid object
-  should read as one consistent color; a patchwork of colors across what
-  should be one object is a direct visual signal of a bad match.
-- **[C] cache indicator** (top-left corner) -- red when this output frame
-  recomputed the flow field, green when it was served from the
-  `pair_changed` storage cache. Confirms the caching described above is
-  actually engaging, frame by frame, without separate instrumentation.
-- **[F] fallback indicator** (top-right corner) -- black-to-yellow-to-red
-  based on how much of this frame is falling back to an unwarped source
-  frame (via the occlusion check) rather than being genuinely
-  motion-compensated -- a frame-level summary of the same decision the
-  occlusion mask below shows per-pixel.
-- **Magnitude heatmap** -- motion magnitude, clamped, with anything over
-  the clamp shown in magenta as a likely-runaway-vector signal rather
-  than just an under-tuned search.
-- **Occlusion mask** -- white where the forward/backward consistency
-  check distrusts the flow (and the final result falls back
-  accordingly); a direct predictor of where warping artifacts are most
-  likely to appear.
-- **Actual warped result** -- exactly what the production shader would
-  output for this frame.
+### `bidirectional-interpolation.glsl` -- the base, 23 passes
 
-**Why this matters:** normally, debugging a GPU motion-compensation
-shader means either reasoning blind from the final picture (is that
-blur a flow error, an occlusion fallback, or something else entirely?)
-or bolting on separate tooling to extract intermediate GPU state. Since
-this is just a shader, neither is necessary -- the diagnostic data is
-written directly into the same render pipeline and viewed as an ordinary
-video frame, or a single exported still. One screenshot shows the source
-frames, the computed flow, where it's trusted vs. not, and the actual
-result, all at once, on real hardware, without touching a debugger --
-which is how essentially every bug in the production shader (sign
-errors, bad coarse matches, aperture-problem edge artifacts, occlusion
-ghosting) actually got found during development.
+The hierarchical block-matching pyramid, and the file every other build in
+the family derives from. Edit this and the variational build inherits the
+change on regeneration; the diagnostic builds are kept in deliberate
+lockstep with it by hand.
 
-## Two further diagnostics: full-resolution overlay and warp-stage isolation
+Written against exactly 2 frames and needed *no changes* for the patch's
+N-frame generalisation -- `HOOKED` and `NEXT` still mean frame index 0 and
+1, so this shader is simply the N=2 case of the now-more-general mechanism.
 
-The 3x2 grid above has a real limit: shrinking the whole frame into a
-cell to fit six of them side by side loses exactly the fine spatial
-detail a subtle, localized defect needs to be judged properly. Two
-further diagnostic builds address that, kept in the same lockstep as
-the grid above -- both were originally built during a 2026-08-26
-real-hardware investigation into a specific warp defect (see ROADMAP.md
-for what was found and why that particular investigation is currently
-parked), but the techniques are general-purpose and independent of it.
+### `bidirectional-interpolation-variational.glsl` -- recommended, 115 passes
 
-`interpolate-debug-overlay.glsl` outputs the real warped/blended result
-at full resolution -- bit-identical to bidirectional-interpolation.glsl's
-own final pass -- with the flow-color wheel and both `EDGE_A`/`EDGE_B`
-edge masks (red/cyan, `motion-edges-dual.glsl`'s convention) composited
-additively on top in place. Additive, not alpha blend, because every
-diagnostic signal is exactly zero where it isn't firing -- black flow
-color, zero edge mask -- so a pixel with no measured motion and no
-detected edge passes through completely unaffected, still the real
-algorithm's actual output. Both overlays sample RAW/unwarped (at each
-output pixel's own position, not motion-compensated to the interpolated
-timestamp), independent of whether the flow field or warp mechanism
-under inspection is itself correct -- an independent reference to
-compare the visible result against.
+A strict superset of the base: every one of its 23 passes, plus 80
+variational-refinement passes and 12 vector-median passes distributed across
+the pyramid. Two things it adds, both of which turned out to matter more
+than any parameter tuning ever did:
 
-`interpolate-debug-warp-stages.glsl` isolates exactly ONE stage of the
-final warp/blend pipeline at a time, full resolution, with no tinting
-at all -- selected by editing `DEBUG_STAGE`: `0`/`1` output
-`warp_sample_a`/`warp_sample_b` alone (no cross-blend, no occlusion
-fallback), `2` is the two cross-blended by `mix_t` with no occlusion
-fallback yet, `3` is the actual production output. Comparing adjacent
-stages pairwise localizes a defect by exclusion: present already in `0`
-or `1` individually points at the per-direction warp sampling itself;
-absent there but present in `2` points at the two directions not
-agreeing on position; absent through `2` but present in `3` points at
-the occlusion/fallback blend triggering too broadly. No diagnostic
-tinting on any of the four views, on purpose -- comparing images against
-each other stage-by-stage is a fundamentally easier comparison than
-describing one complex, fully-composited image in words.
+- **Warped Horn-Schunck refinement at every pyramid level** (16/12/8/4
+  iterations at 1/16, 1/8, 1/4, 1/2 resolution). Coherence enters the
+  *objective* here rather than being imposed afterwards -- each iteration
+  jointly minimises brightness-constancy residual and deviation from the
+  neighbourhood, so neighbouring texels constrain each other instead of each
+  deciding alone. This is what fixed the edge fraying and the non-rigid
+  warping.
+- **Vector medians at the coarse levels** (2 passes per direction at 1/16,
+  1/8 and 1/4, on top of the 2 the base already runs at 1/2). These reject
+  isolated false-match islands -- the failure mode that wrecked cartoon
+  faces, where a redrawn eye or mouth gets confidently matched to the wrong
+  shape and returns a vector the whole surrounding face disagrees with.
 
-## motion-edges-dual.glsl: a simple, non-interpolation example
+**This file is generated.** It carries a `GENERATED FILE -- DO NOT EDIT BY
+HAND` banner recording the exact command that produced it. Change the
+variational stage by editing `tests/gen_variational.py` and regenerating;
+hand edits will be lost, and ~100 near-identical iteration passes are not
+maintainable by hand anyway:
 
-Where `bidirectional-interpolation.glsl` sits at the complex end of what
-`PL_HOOK_FRAME_MIX` enables, `motion-edges-dual.glsl` sits at the simple
-end, deliberately: a plain per-pixel frame difference and a threshold,
-no motion estimation, no warping, no pyramid, no caching. It outputs
-`HOOKED` (the current frame) with a colored trace drawn wherever
-something changed noticeably between `HOOKED` and `NEXT`. (Two other
-variants -- a single merged white outline, and a version showing only the
-edge that matches the displayed frame -- were tried and dropped after
-real-hardware comparison found this one clearly the most visually useful
-of the three; the name is a holdover from when it had siblings to be
-"dual" relative to, not a claim about the technique itself.)
-
-The algorithm has two parts, both operating directly on full-resolution
-luma with no downsampling:
-
-1. **Threshold a temporal frame difference**, to decide which pixels are
-   part of a moving region at all. `abs(luma(HOOKED) - luma(NEXT))` past
-   `MOTION_THRESHOLD` (0.08 by default) counts as "moving"; below it,
-   "static" -- ordinary sensor noise and static content routinely differ
-   by a few percent between two real frames even with zero actual
-   motion, so this threshold is what makes "static objects / small
-   motions / noise are irrelevant" true rather than aspirational.
-2. **Detect genuine spatial edges within HOOKED and within NEXT
-   independently** (`SPATIAL_EDGE_THRESHOLD` -- does a pixel's luma
-   differ from an immediate neighbor's, in the same frame; the
-   single-image analogue of the temporal threshold above), then keep
-   only the spatial edges that also fall inside the temporally-moving
-   region from step 1 -- filtering out the far more numerous static edges
-   elsewhere in the scene. A moving object's silhouette is a real
-   spatial edge in whichever frame you look at it in, so this cleanly
-   separates "HOOKED's edge" from "NEXT's edge" rather than merging them
-   into one undifferentiated trace.
-
-HOOKED's edge draws **red** (where it was), NEXT's edge draws **cyan**
-(where it's going) -- directly showing both where an edge currently is
-and roughly where it's heading, which is what made this variant more
-useful in practice than either single-color alternative. Where both
-fire at the same pixel (little relative motion at that specific point
-along the boundary), red and cyan add to white.
-
-Built for **N:N frame rate** (e.g. 24fps -> 24fps, no frame insertion --
-see ROADMAP.md's testing notes on this case): it never reads `mix_t` at
-all, since it isn't synthesizing an in-between frame -- every output
-frame is just "the current frame, with motion edges drawn on it," the
-natural shape for a `PL_HOOK_FRAME_MIX` use case where the hook fires
-and synthesizes every output frame but no actual rate conversion is
-happening.
-
-**Confirmed on real hardware** -- the most visually convincing of the
-three variants that were compared, which is why it's the one that
-remains. Not yet specifically tested against dark or noisy content -- if
-such a region flickers a trace where nothing is really moving, that's
-the same underlying failure mode `bidirectional-interpolation.glsl`'s
-`MIN_CONTRAST` gate was built for -- frame-to-frame noise in low-signal
-regions can itself exceed a magnitude threshold by chance. Try raising
-`MOTION_THRESHOLD` or `SPATIAL_EDGE_THRESHOLD` first; if that stops
-helping without also suppressing real motion/edges, a local-contrast
-pre-check like that gate is the next thing to add.
-
-## N-frame smoke test
-
-`nframe-smoketest.glsl` applies the same "embed the diagnostic
-data directly in the output" idea to a different question: not whether
-the interpolation algorithm is correct, but whether the underlying patch
-mechanism generalizes past 2 frames at all. It binds 4 frames at once
-(`FRAME0`..`FRAME3`) and renders a 2x2 grid, one cell per frame:
-
-```
-+------------+------------+
-|  FRAME0    |   FRAME1   |
-|  [P][N] ...|.........[1]|
-+------------+------------+
-|  FRAME2    |   FRAME3   |
-|.........[2]|.........[3]|
-+------------+------------+
+```bash
+./tests/gen_variational.py "16,12,8,4" 0.3 0.08 bidirectional-interpolation-variational.glsl 0 "2,2,2,0"
 ```
 
-- **[P] pair_changed indicator** (top-left corner, cell 0) -- same
-  red/green convention as the flow debug shader's cache indicator, now
-  tracking a 4-frame window instead of a pair.
-- **[N] num_mix readout** (top-right corner, cell 0) -- a row of lit
-  ticks, one per valid frame. This shader always declares exactly 4
-  binds, so a correct build always shows exactly 4 lit ticks; anything
-  else means the `frame_mix_count` plumbing is broken.
-- **Per-cell corner tag** (`[0]`-`[3]`, bottom-right of each cell) -- a
-  fixed color per index, so it's obvious at a glance which cell is which.
-  Two cells ever looking identical is the actual failure mode this
-  shader exists to catch: two different indices silently resolving to
-  the same texture instead of genuinely distinct ones.
-- **Per-cell timestamp bar** (thin strip along each cell's bottom edge)
-  -- visualizes that frame's `rts_mix[i]` directly: a center tick at the
-  output timestamp, the bar extending left (blue, before) or right
-  (orange, after), length proportional to magnitude. The two frames
-  nearest the center tick should have the shortest bars; a scrambled
-  ordering means frame selection picked a non-sensible window.
+The arguments are: variational iterations per level (S,E,Q,H), the smoothness
+weight `alpha`, the edge-aware luma sigma, the output path, an optional
+robust-flow sigma (0 = off, measured as no help), and median passes per level.
 
-Unlike the flow debug shader, this one isn't validating an algorithm --
-there's no "correct" picture to compare against, just internal
-consistency (distinct textures, sane timestamps, a correct count) that's
-otherwise invisible from C code alone. It exists because the alternative
--- trusting the N-frame plumbing without ever actually binding more than
-2 frames from a real GPU dispatch -- isn't good enough for a change this
-structural; see README.md's "Verifying the N-frame case" section for the
-rest of that reasoning.
+### `-diffuse-coarse.glsl` and `-diffuse-dual.glsl` -- superseded
 
-**Confirmed on real hardware:** 4 visually distinct frames, sane
-timestamp bars, a correct 4-tick `num_mix` readout, ~212fps, and no
-unexpected fallbacks across a full 60-second clip once past the startup
-window -- i.e. the 4-frame window found exactly 4 frames on every
-steady-state dispatch, reliably, for the whole clip. The startup window
-itself behaved as expected too: a black first output frame (nothing
-decoded yet), then the single-decoded-frame zero-order-hold from
-libplacebo's own builtin behavior for a few frames, before the grid
-takes over once 4 real frames exist. See README.md's "Costs and
-limitations" for why that startup hold is worth watching (a small
-possible A/V offset), and "Testing status" for what this test does and
-doesn't cover (one fps ratio, no source above 1080p).
+Base + flow diffusion at 1/16 resolution (coarse), and additionally at 1/2
+(dual). These were the first fix for correspondence ambiguity -- the failure
+where content repeating at roughly the distance it travels per frame makes
+"moved one full period" and "did not move" genuinely indistinguishable, so
+the regulariser breaks the tie toward zero and part of an object gets left
+behind.
+
+They worked, and the reasoning that produced them was sound and is worth
+reading. They are superseded because the variational cascade solves the same
+problem as a consequence of a more general mechanism, and does more besides.
+**Their file headers still contain stale claims** -- `diffuse-dual` describes
+itself as "the highest-quality variant measured", which was true when written
+and is not now. They are also stale in the code, not just the comments: both
+still carry the occlusion fallback that was removed from the base, which is
+why they now measure worse than the base and, in one case, worse than stock
+linear blending. See "Why the diffuse variants measure so badly" below.
+
+### Known remaining weakness: animation
+
+Flat-shaded animation is the hardest case for this design, and one class of
+defect in it is not fully solved.
+
+Small high-contrast facial features -- an eye, a mouth -- are frequently
+**redrawn between source frames rather than moved**, for lip-sync and
+expression. There is then no correspondence to find: the two drawings are
+different shapes, and no motion field maps one to the other. The coarse
+vector medians fix the visible *damage* this caused (the estimator used to
+return a confident vector to the wrong shape, dragging and tearing the
+feature), so the feature now travels with the face and the shape change
+resolves as a clean cross-fade in the right place.
+
+What remains is that cross-fade itself, which is inherent. A redrawn mouth
+passes through a brief soft blend rather than snapping between two drawings
+the way the original animation does. It is much improved and still visible
+on close inspection.
+
+Fixing this properly is judged to need a different class of shader rather
+than a change to this one -- see ROADMAP.md, "A shader class specific to
+animation".
+
+## Measured comparison
+
+All four measured in one sitting, on the same harness, so these numbers are
+comparable with each other -- unlike the figures in the shader file headers,
+which were taken at different times against different versions of the base.
+
+**Real footage** (`realbench.sh`, avengers clip, decimate-and-reconstruct at
+5/15/21/30/45s). SSIM is the column to read: PSNR systematically rewards blur,
+and will rank a smooth double-image above a sharp but slightly-misplaced
+motion-compensated frame.
+
+| | PSNR mean | SSIM mean |
+|---|---|---|
+| `linear` (stock libplacebo) | 31.90 | 0.9451 |
+| base | 34.34 | 0.9655 |
+| `-diffuse-coarse` | 30.71 | **0.9444** |
+| `-diffuse-dual` | 30.98 | 0.9503 |
+| **`-variational`** | **36.31** | **0.9750** |
+
+**Synthetic ladder** (`bench.sh all`, PSNR dB of genuinely interpolated
+frames):
+
+| case | hold | linear | base | coarse | dual | variational |
+|---|---|---|---|---|---|---|
+| L0_static | inf | 79.43 | 79.35 | 79.35 | 79.35 | 79.35 |
+| L1_trans_8px | 32.26 | 36.45 | 41.34 | 41.06 | 42.66 | 42.35 |
+| L2_trans_16px | 30.17 | 32.04 | 38.45 | 35.97 | 37.95 | **39.89** |
+| L3_trans_23px | 28.10 | 30.51 | 39.10 | 33.51 | 36.25 | **40.08** |
+| L4_trans_40px | 25.32 | 27.96 | 31.28 | 27.42 | 27.42 | **33.75** |
+| L5_lowcontrast | 56.15 | 57.37 | 60.66 | 60.51 | 60.61 | 59.95 |
+| L6_flat_large | 31.38 | 33.38 | 40.27 | 39.44 | 40.99 | 41.15 |
+| L7_textured_large | 21.30 | 21.47 | **24.36** | 22.22 | 22.26 | 23.34 |
+| L8_diagonal | 28.13 | 30.02 | 36.75 | 32.43 | 33.71 | **37.39** |
+| L9_occlusion | 29.45 | 32.07 | 38.31 | 36.08 | 37.38 | **40.18** |
+| M1_noise_large | 19.66 | 20.65 | 26.51 | 26.27 | 26.34 | **27.41** |
+| M2_period40 | 24.68 | 27.30 | 36.84 | 37.02 | 37.89 | **38.48** |
+| M3_period16_trap | 21.23 | 21.42 | 22.15 | 23.19 | **23.20** | 22.52 |
+| M4_belowgate | 62.66 | 60.54 | 60.53 | 60.53 | 60.53 | 60.54 |
+
+The variational build wins nearly everywhere, and wins by the most on exactly
+the cases that matter: fast translation, diagonal motion, occlusion, noise.
+
+### Why the diffuse variants measure so badly
+
+This deserves stating plainly, because their own headers claim the opposite.
+`-diffuse-coarse` scores **below stock linear blending** on real-footage SSIM
+(0.9444 against 0.9451), and both variants lose to the plain base shader
+across most of the ladder.
+
+They are **stale forks**. Both still contain the occlusion fallback that was
+removed from the base after every version of it measured worse than none:
+
+```glsl
+float occluded = smoothstep(4.0, 7.0, fb_error_px);
+vec4 fallback = mix_t < 0.5 ? HOOKED_tex(HOOKED_pos) : NEXT_tex(NEXT_pos);
+return mix(mc_result, fallback, occluded);
+```
+
+That is the original, most aggressive gate, blending toward an *unwarped*
+frame -- which at any moving edge means a translucent doubled contour, and
+does more damage on angled content, which is why L8_diagonal and the fast
+translation cases suffer most.
+
+So their headers were not dishonest when written: at that time the base
+carried the same fallback, and the comparison was fair. The base has since
+moved on and they have not. The one thing they still genuinely win is
+M3_period16_trap -- the correspondence-ambiguity case they were built for --
+which is a fair record of the idea being sound even though the files are not.
+
+Given they are superseded by a better mechanism and currently measure worse
+than doing nothing, the reasonable options are to delete them or to
+regenerate them from the current base. They are kept for now as a record of
+the reasoning, which remains worth reading.
+
+## How the interpolator works
+
+Each output frame is synthesised from the two source frames the hook hands
+it (`HOOKED` = earlier, `NEXT` = later) in five stages.
+
+**1. Downsample.** Both frames' luma is reduced to four pyramid levels --
+referred to throughout as S (1/16), E (1/8), Q (1/4) and H (1/2).
+
+**2. Coarse search.** At S only, a full iterative block-matching search from
+scratch: 5 halving steps, reaching about 23px at full resolution. Both
+directions are searched independently (A->B and B->A, not one derived from
+the other by sign-flipping), because occlusion makes them genuinely
+different problems. A magnitude-regularisation term biases ambiguous and flat
+regions toward small motion rather than spurious large jumps.
+
+The reach cap is deliberate. It is the single most-confirmed finding in this
+project: **one iteration propagates one texel, so a coarse level buys reach
+at a fraction of the cost.** At 1/16 resolution one texel is 16px, so a given
+iteration count reaches sixteen times further than the same work at full
+resolution, for 1/256 of the price. Nearly every fix in this shader is an
+application of that fact.
+
+**3. Refine, level by level.** E, Q and H each take the level above as a
+seed and search only a small neighbourhood around it. The fine levels supply
+detail; they cannot supply reach, which is why step 2 exists.
+
+**4. Regularise.** In the variational build, each level runs its Horn-Schunck
+iterations and then a vector median, in that order, so the neighbourhood
+consensus is what seeds the next level rather than being re-dirtied by it.
+Per level the sequence is `refine -> variational -> median`.
+
+**5. Warp and blend.** The flow is read at half resolution and lifted to full:
+
+```glsl
+vec2 flow_ab = FLOW_H_AB_tex(HOOKED_pos).xy * 2.0 * HOOKED_pt;
+vec4 warped_a = warp_sample_a(HOOKED_pos - flow_ab * mix_t);
+vec4 warped_b = warp_sample_b(NEXT_pos   + flow_ab * (1.0 - mix_t));
+return mix(warped_a, warped_b, mix_t);
+```
+
+Note what is *not* here: **there is no occlusion fallback.** Three versions
+of one were built and every single one measured worse than none -- a hard
+`mix_t` switch produced an 8.75x periodic jump, a continuous blend of two
+unwarped frames produced a translucent doubled contour at every moving edge,
+and directional per-side weighting was better than both and still worse than
+removing it. `tests/gen_variational.py` contains a guard that fails loudly if
+a fallback is ever reintroduced upstream, so generated builds cannot silently
+inherit a gate that was never measured for them.
+
+Removal works rather than merely being less bad because the blend degrades
+gracefully on its own: both samples use the same flow, so where that flow is
+wrong they are wrong *together and in the same direction*, which stays
+spatially coherent; and as `mix_t` approaches 0 or 1 the result converges on
+the unwarped nearest frame anyway, continuously.
+
+**Caching.** The expensive per-window work -- the flow search at all four
+levels, and both directions' second vector-median pass -- is cached in
+persistent `//!TEXTURE ... //!STORAGE` textures, keyed on the patch's
+`pair_changed` flag. At a non-integer fps ratio like 24->60, consecutive
+output frames share a source pair; without this the whole pyramid would be
+recomputed for each of them. Note the fixed-size ceiling this implies, and
+its consequence above 4K, documented in README.md's Costs and limitations.
+
+## The diagnostic shaders
+
+All three are the same algorithm as the base, kept in lockstep pass-for-pass,
+differing only in what the final pass returns. That lockstep is the point: a
+diagnostic that has drifted from the shader it is diagnosing is worse than no
+diagnostic. When the occlusion fallback was removed, all three were updated
+in the same commit.
+
+### `interpolate-debug-grid.glsl`
+
+Renders a 3x2 diagnostic grid instead of the final picture:
+
+```
++-------------+-------------+-------------+
+|  source A   |  source B   | flow colour |
+|  (HOOKED)   |   (NEXT)    |    wheel    |
++-------------+-------------+-------------+
+| flow magni- |  forward /  |   actual    |
+| tude heat-  |  backward   |   warped    |
+| map (A->B)  |  consistency|   result    |
++-------------+-------------+-------------+
+```
+
+The consistency panel still *visualises* forward/backward error even though
+nothing acts on it any more -- it remains diagnostically useful for seeing
+where the estimator disagrees with itself.
+
+### `interpolate-debug-overlay.glsl`
+
+The real warped result at full resolution with diagnostics drawn over it.
+The grid's limitation is that shrinking a frame into one of six cells
+destroys exactly the fine spatial detail a subtle localised defect needs in
+order to be judged. This one keeps full resolution.
+
+### `interpolate-debug-warp-stages.glsl`
+
+Isolates the individual warp stages so a defect can be attributed to one of
+them rather than to "the warp" as a whole.
+
+### Ad-hoc visualisers: `tests/flowvis.py`
+
+The three files above are permanent builds. For one-off questions there is a
+better approach, and it is the one that actually cracked the cartoon defect:
+
+```bash
+./tests/flowvis.py bidirectional-interpolation-variational.glsl /tmp/vis.glsl
+```
+
+This rewrites **only the final `hook()`** of any interpolator, leaving all
+114 passes upstream untouched, so what it renders is exactly what production
+computes rather than a re-implementation that could drift. The default
+replacement encodes the flow field as colour. Swapping in a different final
+pass -- three lines -- gives the post-warp residual `|warped_a - warped_b|`,
+which is the honest "did correspondence succeed" map, since after a *correct*
+warp the two samples should agree.
+
+Together those two views localised the cartoon face defect in a single pass:
+the flow view showed saturated islands sitting exactly on the eye and mouth,
+and the residual view showed filled blobs there rather than the thin outlines
+every other edge produces.
+
+## The two small examples
+
+### `motion-edges-dual.glsl` -- 1 pass
+
+Deliberately the opposite end of the complexity range from the flagship: a
+single pass, no motion estimation at all. It outlines moving edges in each of
+the two source frames and tints them differently, so the before-position and
+after-position of everything in motion are visible simultaneously.
+
+It exists because a hook stage whose only example is a 115-pass motion
+compensator is hard to learn from. It is also the shader that confirmed the
+hook fires correctly at N:N ratios (24->24, no frame insertion), which the
+interpolators do not exercise because they lean on `mix_t`.
+
+It is worth noting for future work that this shader produces a strikingly
+accurate outline of a character's before and after position -- see
+ROADMAP.md, where using that directly to warp a whole character or feature
+as a template, rather than consulting a mostly-static whole-frame flow
+field, is parked under "A shader class specific to animation".
+
+### `nframe-smoketest.glsl` -- 1 pass
+
+Binds 4 frames at once and renders each into its own grid cell with a colour
+tag per index, a frame-count readout, a per-frame timestamp bar, and a
+red/green `pair_changed` indicator. It has nothing to do with interpolation.
+
+Going from exactly-2-frames to a hook-declared N was a structural change to
+`pl_hook_params`, not an additive one, so it needed a real build-and-run
+cycle to trust rather than a clean `git apply`. This makes binding more than
+two frames from a real GPU dispatch something you can look at. The *absence*
+of the grid on the first few output frames of a clip is the visual
+confirmation that the boundary behaviour works as designed.
 
 ## Performance
 
-**End-to-end, real encode pipeline** (`hevc_vaapi -global_quality 20`,
-full command as in README.md's Usage section): confirmed on real
-hardware, a low-end discrete GPU renders 1080p through
-`bidirectional-interpolation.glsl` at ~138fps, comfortably inside
-real-time-streaming tolerance.
+Two separate things get measured here and they should not be confused: real
+hardware determines whether this is usable, and software rendering under
+lavapipe determines only whether one change costs more than another.
 
-**Isolated render cost, caching impact specifically** (output discarded
-via `-f null -` to remove encoding from the measurement, 1080p source):
+### Real hardware
+
+End-to-end through a full encode pipeline (`hevc_vaapi -global_quality 20`,
+the command in README.md's Usage section), on a low-end discrete GPU:
+
+| shader | source | rate |
+|---|---|---|
+| `-variational` | 720p animation | ~104 fps |
+| `-variational` | 1080p live action | ~77 fps |
+| base (older measurement) | 1080p | ~138 fps |
+
+The variational figures predate the coarse vector-median passes, which were
+measured under lavapipe at +8.6% (720p) and +6.1% (1080p) and confirmed on
+real hardware as still within tolerance.
+
+### What caching buys
+
+Measured on the base shader with output discarded (`-f null -`) to remove
+encoding from the measurement, 1080p:
 
 | | Low-end discrete GPU | Weaker iGPU |
 |---|---|---|
-| No caching (baseline) | 144 fps | 33 fps |
+| No caching | 144 fps | 33 fps |
 | + flow-search caching | 174 fps | 44 fps |
 | + median-filter caching | 184 fps | 48 fps |
 
-(Measured against a since-removed uncached variant of the shader --
-the numbers themselves remain valid as a baseline for what caching
-buys; the variant was dropped as an unneeded second file to maintain,
-not because the comparison stopped mattering.)
+The gain is smaller than per-pass cost would predict, most likely because of
+fixed per-dispatch overhead -- the shader issues its dispatches every output
+frame regardless of cache state -- and possible `PL_MEMORY_COHERENT`
+synchronisation cost on every storage access. Neither is something caching
+can remove.
 
-Smaller than a naive per-pass-cost estimate would predict, most likely
-because of fixed per-dispatch overhead (the shader issues ~23 dispatches
-every output frame regardless of cache state) and possible
-`PL_MEMORY_COHERENT` synchronization cost on every storage access --
-neither of which caching can remove.
+### Where to look if it is too slow
 
-All the numbers above predate the `EDGE_A`/`EDGE_B` edge-consistency
-passes (see "Warp and blend" above) -- two extra full-resolution,
-uncached dispatches added since this table was last measured (21 -> 23
-above is the one part of this already re-counted; the fps figures
-themselves are not yet re-measured). Expect some reduction until they're
-checked again on real hardware; per the project's working assumption
-there's headroom to spare on the target hardware, but that's an
-assumption, not a re-measurement.
-
-4K is untested; if it struggles, the coarse search levels (run at 1/16
-and 1/8 resolution, the most expensive part) are the first place to
-look -- e.g. dropping a pyramid level or reducing the SAD window at the
-coarsest level.
+4K is untested and is the known risk, both for speed and for the storage
+ceiling in README.md. If it struggles, the coarse levels are counter-
+intuitively *not* the place to cut -- they are 1/256 and 1/64 of full
+resolution and buy the reach the whole design depends on. Cut the H-level
+work first: the half-resolution variational iterations and the H median are
+the expensive part, and `gen_variational.py` takes both as parameters, so
+`"16,12,8,0"` or a reduced median spec can be measured without editing a
+shader.

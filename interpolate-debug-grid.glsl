@@ -1238,7 +1238,7 @@ float sample_occlusion(vec2 local) {
     vec2 fb_at_b = FLOW_H_BA_tex(local + flow_ab).xy * 2.0 * HOOKED_pt;
     vec2 round_trip = flow_ab + fb_at_b;
     float fb_error_px = length(round_trip) / HOOKED_pt.x;
-    return smoothstep(4.0, 7.0, fb_error_px);
+    return smoothstep(20.0, 30.0, fb_error_px);
 }
 
 // Amplifies the frame-average occlusion before colorizing the fallback
@@ -1368,24 +1368,26 @@ vec4 hook() {
     vec2 fb_at_b = FLOW_H_BA_tex(local + flow_ab).xy * 2.0 * HOOKED_pt;
     vec2 round_trip = flow_ab + fb_at_b;
     float fb_error_px = length(round_trip) / HOOKED_pt.x;
-    float occluded = smoothstep(4.0, 7.0, fb_error_px);
+    float occluded = smoothstep(20.0, 30.0, fb_error_px);
 
     vec4 warped_a = warp_sample_a(local - flow_ab * mix_t);
     vec4 warped_b = warp_sample_b(local + flow_ab * (1.0 - mix_t));
     vec4 mc_result = mix(warped_a, warped_b, mix_t);
 
     if (cell.x < 1.5)
-        return vec4(vec3(occluded), 1.0); // occlusion mask: white = unreliable
-                                          // flow here, blending toward the nearest
-                                          // unwarped frame; black = trusting the
-                                          // motion-compensated result fully
+        return vec4(vec3(occluded), 1.0); // forward/backward inconsistency:
+                                          // white = the two flow fields
+                                          // disagree here, usually genuine
+                                          // occlusion. PURELY INFORMATIONAL
+                                          // now -- see below.
 
-    // Actual result from the normal algorithm: where the flow is unreliable
-    // (white in the mask), snap to whichever unwarped source frame is
-    // temporally closer instead of committing to a (possibly wrong) warped
-    // sample -- NOT a cross-fade of both, since blending two substantially
-    // different frames together in a real-motion region just reintroduces
-    // ghosting under a different name.
-    vec4 fallback = mix_t < 0.5 ? HOOKED_tex(local) : NEXT_tex(local);
-    return mix(mc_result, fallback, occluded);
+    // Actual result from the normal algorithm. Nothing acts on the mask
+    // above any more: bidirectional-interpolation.glsl's occlusion fallback
+    // was removed after three versions of it each measured worse than none
+    // (a hard mix_t switch produced an 8.75x periodic jump; a continuous
+    // blend of two unwarped frames produced a translucent doubled contour at
+    // every moving edge; directional per-side weighting was better but still
+    // worse than removing it), confirmed by direct viewing. The mask is kept
+    // because seeing WHERE consistency fails remains diagnostically useful.
+    return mc_result;
 }

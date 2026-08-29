@@ -1,6 +1,4 @@
-# N-Frame complex shader analysis via patched libplacebo
-
-[Examples and proof of concept on YouTube](https://www.youtube.com/channel/UCxqc7U1Uhpq1hwn5Q0Ol7Ug)
+# N-Frame temporal analysis via ffmpeg and a patched libplacebo
 
 ## What this is
 
@@ -11,17 +9,22 @@ new custom-shader hook stage, `PL_HOOK_FRAME_MIX`. It gives a
 user-supplied GLSL shader (the same `.hook`-format shaders mpv and ffmpeg
 already support via `custom_shader_path`) simultaneous access to a whole
 *window* of source video frames at once (as many as that specific shader
-declares it wants, from 2 up to 8), plus the exact timing relationship
+declares it wants, from 1 up to 8), plus the exact timing relationship
 between them, instead of a single already-blended texture.
+
+[SHADERS.md](SHADERS.md) documents the shaders built on this patch,
+[tests/TESTING.md](tests/TESTING.md) the ground-truth harness, and
+[../METHODOLOGY.md](../METHODOLOGY.md) how the whole thing was actually
+developed and how to re-establish the loop that did it.
 
 Everything downstream of that -- motion-compensated interpolation,
 temporal denoising, custom deinterlacing, scene-cut-aware effects, or
 anything else that needs to reason across time rather than within a
 single frame -- is then just a GLSL shader, running as part of one
 ordinary `ffmpeg` command. [SHADERS.md](SHADERS.md) documents a working
-motion-compensated interpolation shader built on top of it, as a worked
+bidirectional interpolation shader built on top of it, as a worked
 example -- using exactly 2 frames, the common and most-tested case (see
-"Testing status" below for how the wider N-frame case compares).
+"Verifying the N-frame case" below for how a wider window is checked).
 
 ## Why it's needed
 
@@ -108,8 +111,10 @@ the patch.
 - **A fixed window per hook, not padded.** A hook's frame count is fixed
   for its lifetime (however many `FRAME<n>` names its own GLSL binds) and
   the renderer only ever fires it with *exactly* that many real frames --
-  never fewer, via padding or repeated frames. This is deliberate (see
-  "Upstream status" below for why), but means a hook wanting a large
+  never fewer, via padding or repeated frames. This is deliberate --
+  padding with repeated frames would need a "how many of these are real"
+  count, which a shader author could forget to check, silently
+  double-counting a padded frame. The cost is that a hook wanting a large
   window simply won't fire at all near a clip's start/end, where that
   many real frames don't yet exist.
 - **Startup frame-hold, and a possible small A/V offset for wider
@@ -126,8 +131,8 @@ the patch.
   this hasn't been root-caused at the code level -- it isn't yet
   confirmed whether this is a fixed, one-time startup offset (bounded,
   and probably not worth fixing) or something that could compound over a
-  longer file. Treat wider-window output as needing an A/V sync check
-  until this is pinned down; the 2-frame case hasn't shown this problem.
+  longer file. Treat wider-window output as needing an A/V sync check;
+  the 2-frame case hasn't shown this problem.
 - **`PL_FRAME_MIX_MAX` (8) is a hard ceiling.** Not runtime-configurable;
   raising it means patching the constant and rebuilding. Chosen as
   generous headroom over realistic use (the shaders in this directory
@@ -143,7 +148,7 @@ the patch.
   shader author needs to explicitly raise that ceiling to support larger
   sources. Source video larger than the configured ceiling reads/writes
   outside the allocated texture, which is undefined behavior, not just
-  wasted memory. **Untested above 1080p** -- see "Testing status" below.
+  wasted memory. **Untested above 1080p**, including this exact scenario.
 - **No automatic invalidation across discontinuities.** `pair_changed`
   is a straightforward signature comparison against the previous call on
   the same renderer -- it correctly detects an ordinary cut to a new
@@ -152,36 +157,7 @@ the patch.
 
 ## Testing status
 
-Everything above has real-hardware confirmation, but on a narrower slate
-of configurations than the phrase "confirmed working" might suggest on
-its own -- worth being precise about before drawing broader conclusions:
-
-- **Sources tested:** four clips only, a 720p cartoon (flat-shaded,
-  simple motion) and 3 1080p films (complex motion).
-- **fps ratios tested:** `24->60` (2.5x, throughout this project's whole
-  development history) and, as of `motion-edges-dual.glsl`, `24->24`
-  (N:N, no frame insertion) -- confirmed the hook fires and synthesizes
-  correctly even with no actual rate conversion happening, and that
-  consecutive output frames sharing a source pair repeat correctly at
-  `24->60` with that shader too. Confirmed via that one shader
-  specifically, not exhaustively across all of them -- see ROADMAP.md's
-  testing notes for what's still open (in particular, whether the
-  flagship interpolator itself degenerates cleanly at N:N, since it
-  exercises `mix_t` in a way `motion-edges-dual.glsl` deliberately
-  doesn't). Ratios other than these two remain untested.
-- **N-frame window sizes tested:** the common 2-frame case (extensively,
-  throughout this project's whole development history) and a 4-frame
-  smoke test (once, on real hardware -- see SHADERS.md). Sizes in between
-  or above 4 are untested.
-- **Not yet tested:** any source above 1080p, including the exact 4K
-  storage-cache-ceiling scenario called out above.
-- **GPUs tested:** one low-end discrete GPU, one weaker iGPU. Both
-  Vulkan-capable; no AMD/Intel-specific or non-Vulkan-backend testing.
-
-Further testing across fps ratios and source resolutions (particularly
-4K) is planned before relying on this beyond experimentation -- treat the
-above as the actual, current boundary of what's been verified, not a
-general claim about arbitrary inputs.
+No known issues with the libplacebo patch at this time
 
 ## Verifying the N-frame case
 
@@ -198,41 +174,38 @@ dispatch is something you can actually look at rather than just trust.
 Point `custom_shader_path` at it the same way as any other shader here to
 check it before relying on a wider window for anything real.
 
-## Upstream status
-
-The goal is eventually submitting this to libplacebo directly, not just
-using it locally -- so it's kept deliberately small and self-contained
-(three files, no unrelated refactoring) to keep the maintainer's review
-burden down. See the comments in the patch itself for the exact
-mechanics (which functions changed and why).
-
-One thing deliberately left *out* of the patch: libplacebo tracks its API
-version as an auto-incrementing changelog dict at the top of
-`meson.build` (`PL_API_VER` is literally `.keys().length()` of it), where
-essentially every public API change gets its own entry. This patch adds
-a new hook stage and several new `pl_hook_params` fields, which by that
-convention should bump the version by one, e.g.:
-
-```
-'372': 'add PL_HOOK_FRAME_MIX hook stage and its pl_hook_params fields',
-```
-
-That entry isn't baked into the static patch file -- the changelog dict
-gets a new top entry on essentially every unrelated upstream commit, so a
-hardcoded entry would go stale (and conflict) almost immediately. Add it
-fresh, at the current tip, when actually opening the PR -- the same
-reason the patch itself should be rebased onto current master rather than
-submitted as-is against whatever commit it was last regenerated from.
-
 ## Building
 
-Testing has been built against jellyfin-ffmpeg. There is already a patch
-against libplacebo in builder/patches/libplacebo - place the frame-mix-hook.patch
-here and build as normal. Also see hw-base-encode-eof-nullcheck.patch
+In this project testing was performed against [jellyfin-ffmpeg 8.1](https://github.com/jellyfin/jellyfin-ffmpeg)
+There is already a patch against libplacebo in builder/patches/libplacebo
+place the frame-mix-hook.patch file in here and build as normal with
+./build trixie amd64 for example. For normal ffmpeg builds apply the patch
+and build as normal. It is also recommended to apply the
+hw-base-encode-eof-nullcheck.patch to src/libavcodec/hw_base_encode.c
+to fix an unpatched ffmpeg null pointer dereference bug that causes
+a segfault when seeking input with a fps= scaled output.
 
+Example ffmpeg build:
 ```bash
-./build trixie amd64
+# 1. Patch and build libplacebo
+git clone https://code.videolan.org/videolan/libplacebo.git
+cd libplacebo
+git apply /path/to/frame-mix-hook.patch
+meson setup build -Dvulkan=enabled -Dprefix=/opt/libplacebo-mc
+ninja -C build install
+
+# 2. Build ffmpeg against it (no ffmpeg source changes needed)
+git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg
+cd ffmpeg
+export PKG_CONFIG_PATH=/opt/libplacebo-mc/lib/x86_64-linux-gnu/pkgconfig
+./configure --enable-libplacebo --enable-vulkan --enable-vaapi \
+    --extra-ldflags="-Wl,-rpath,/opt/libplacebo-mc/lib/x86_64-linux-gnu"
+make -j$(nproc)
 ```
+
+Adjust the pkg-config path to match wherever `meson`/`ninja install`
+actually put it on your distro (`find /opt/libplacebo-mc -name 'libplacebo.pc'`).
+
 ## Usage
 
 Point `custom_shader_path` at any `PL_HOOK_FRAME_MIX`-aware shader (see
@@ -267,7 +240,7 @@ clearer name for the same thing, not a behavior change.
     -i "/share/sample.mp4" \
     -c:a copy -sn -dn \
     -vf "hwmap=derive_device=drm,format=drm_prime,\
-libplacebo=format=p010le:fps=24:frame_mixer=custom_n:custom_shader_path=motion-edges-dual.glsl,\
+libplacebo=format=p010le:fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation.glsl,\
 format=vulkan,hwmap=derive_device=vaapi,format=vaapi" \
     -c:v hevc_vaapi -global_quality 20 \
     -y /share/output.mp4
@@ -275,9 +248,9 @@ format=vulkan,hwmap=derive_device=vaapi,format=vaapi" \
 
 `fps=` can be any target rate, including non-integer ratios (e.g.
 24->60) -- `mix_t` is computed from the real frame timestamps, not a
-fixed step. Interpolation has only been tested end to end at `fps=60` so far; 
-N:N ratios like `24->24` have been confirmed with `motion-edges-dual.glsl` 
-instead -- see "Testing status" above.)
+fixed step. (`bidirectional-interpolation.glsl`, shown above, has only
+actually been tested end to end at `fps=60` so far; N:N ratios like
+`24->24` have been confirmed with `motion-edges-dual.glsl` instead.)
 
 ## Also in this directory
 

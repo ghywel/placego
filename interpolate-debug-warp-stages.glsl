@@ -1273,7 +1273,14 @@ vec4 hook() {
     vec2 fb_at_b = FLOW_H_BA_tex(HOOKED_pos + flow_ab).xy * 2.0 * HOOKED_pt;
     vec2 round_trip = flow_ab + fb_at_b;
     float fb_error_px = length(round_trip) / HOOKED_pt.x;
-    float occluded = smoothstep(4.0, 7.0, fb_error_px);
-    vec4 fallback = mix_t < 0.5 ? HOOKED_tex(HOOKED_pos) : NEXT_tex(NEXT_pos);
-    return mix(mc_result, fallback, occluded);
+    // Kept in lockstep with bidirectional-interpolation.glsl: the gate was
+    // raised from (4.0, 7.0), which fired at ordinary object edges rather
+    // than only at genuine occlusion, and the fallback was made continuous
+    // in mix_t -- the old hard switch jumped by the full inter-frame
+    // displacement at the midpoint, an 8.75x periodic spike on real
+    // footage. See that file, and tests/TESTING.md, for the measurements.
+    // Lockstep with bidirectional-interpolation.glsl: the occlusion
+    // fallback was removed there after direct viewing showed every
+    // version of it worse than none. See that file's warp pass.
+    return mc_result;
 }
