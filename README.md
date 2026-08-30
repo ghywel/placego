@@ -166,17 +166,62 @@ known-good -- treat it as a lead to confirm, not a claim.
 | Intel i5-9500, UHD Graphics 630 iGPU (Coffee Lake, gen9) + Intel Arc A310 dGPU (Alchemist, gen12) | Debian, compiled against jellyfin-ffmpeg | Mesa | patch and shaders tested |
 | Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, WSL2 Ubuntu | Mesa lavapipe (software) | patch and shaders tested |
 | Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary | patch and shaders tested; ladder matches Linux to 0.01 dB |
-| AMD Radeon RX 6600 eGPU (same machine) | -- | -- | **untested** -- not exposed as a Vulkan device by that machine's eGPU setup |
-| macOS | -- | -- | **untested** |
+| AMD Radeon RX 6600 eGPU (same machine) | Windows 26H1 | -- | **not testable there** -- enumerated by the OS and driven by D3D12, but never appears as a Vulkan device |
+| AMD Radeon RX 6600 eGPU, Radeon Pro 560X, UHD 630 (same machine) | macOS 15.7.9, Intel | MoltenVK 1.4.2 | patch and all shaders build and run; harness 10/10. **Correctness target only -- output is not bit-reproducible run to run, for reasons upstream of this project.** Investigated and closed; see [BUILDANDUSAGE.md](BUILDANDUSAGE.md#macos) |
+| Apple Silicon (M-series) | -- | -- | **untested, and does not inherit the above** -- no eGPU support, unified memory, a different Metal driver |
 | NVIDIA, any | -- | -- | **untested** |
 
-So the patch has run against three different Vulkan implementations -- Mesa on
-Intel, Mesa lavapipe in software, and AMD's proprietary Windows driver -- on
-two operating systems and two compilers. It has never run on NVIDIA hardware
-or on macOS.
+So the patch has run against four different Vulkan implementations -- Mesa on
+Intel, Mesa lavapipe in software, AMD's proprietary Windows driver, and
+MoltenVK translating to Metal -- on three operating systems and three
+compilers. The MoltenVK case is the strongest portability evidence here,
+because a translation layer shares no code with the others. It has never run
+on NVIDIA hardware.
 
-See [BUILDANDUSAGE.md](BUILDANDUSAGE.md) for how to build it on Linux or
-Windows, and [tests/TESTING.md](tests/TESTING.md) for what the measurements
+### The macOS (Intel) case, closed
+
+Worth reading before anyone spends time on it, because the conclusion is not
+the obvious one.
+
+**The patch and shaders are portable to macOS.** Everything builds against
+MoltenVK, all nine shaders compile and run, the full harness passes 10/10, and
+the RX 6600 eGPU is enumerated and selected as a Vulkan device -- which is more
+than the same card manages under Windows on the same machine.
+`VK_KHR_push_descriptor`, long the suspected blocker, is supported and used
+without incident.
+
+**But macOS output is not bit-reproducible, and that is not this project's
+bug.** Repeated identical runs diverge. The cause was investigated and traced
+*upstream*: a baseline nondeterminism exists in the Vulkan/MoltenVK path
+itself, present even with stock `frame_mixer=linear` and no custom shader or
+storage images at all, while the identical CPU-only path is exactly
+reproducible. The interpolator amplifies it enormously because block matching
+selects an argmin -- one LSB at a tie flips a motion vector and ruins a whole
+frame group. Severity scales with how far the GPU's memory sits from the CPU:
+worst on a Thunderbolt eGPU, twenty times milder on the integrated GPU. The
+flow cache was ruled out by experiment; synchronization validation reports no
+hazards.
+
+**There is no way around it on macOS, because there is no other backend.**
+libplacebo's README advertises OpenGL and Direct3D 11 alongside Vulkan, but
+ffmpeg instantiates only the Vulkan backend -- `vf_libplacebo.c` has zero
+references to either -- and macOS OpenGL is frozen at 4.1, lacking both the
+image load/store (4.2) and compute shaders (4.3) that the `//!STORAGE` flow
+cache requires. Both were verified rather than assumed.
+
+**So: treat macOS as a portability and correctness target, not a measurement
+one.** A run there proves the shaders execute correctly under a translation
+layer, which is a genuinely strong portability claim. Do not tune parameters
+against its numbers, and do not compare one of its figures against Linux or
+Windows. If you must measure on macOS, select the integrated GPU -- it is
+twenty times better behaved, though still not clean.
+
+**This says nothing about Apple Silicon**, which shares neither the eGPU, the
+memory architecture, nor the GPU driver. All of the above is Intel-specific
+and would need re-measuring there.
+
+See [BUILDANDUSAGE.md](BUILDANDUSAGE.md) for how to build it on Linux,
+Windows or macOS, and [tests/TESTING.md](tests/TESTING.md) for what the measurements
 mean.
 
 
