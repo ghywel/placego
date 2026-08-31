@@ -285,6 +285,52 @@ vec4 hook() {
     }
 
     vec2 best_off = vec2(0.0);
+    // Deterministic tie-breaking. The search below is an argmin over
+    // candidate offsets, and a strict `<` against a fixed scan order already
+    // resolves an EXACT tie deterministically -- the incumbent wins. That is
+    // not the problem. The problem is the NEAR-tie: where the cost surface is
+    // flat, two candidates differ by less than the arithmetic noise between
+    // one evaluation and another, and which of them compares smaller stops
+    // being a property of the image at all. The chosen motion vector then
+    // flips on a rounding difference, and the whole warp for this source pair
+    // is built on it.
+    //
+    // Linux and Windows hide this completely by being bit-reproducible run to
+    // run -- the fragility is real, but nothing there ever perturbs it. macOS,
+    // whose MoltenVK path is not reproducible, amplified one wrong LSB into
+    // 9-14 ruined frames in 60. See BUILDANDUSAGE.md for those measurements.
+    //
+    // The fix is a MARGIN, not a tie rule. A rule for exact ties would have
+    // been a no-op, since those were already decided by scan order; what needs
+    // deciding is the near-tie. Requiring a candidate to beat the incumbent by
+    // a relative TIE_MARGIN moves the decision threshold off the plateau where
+    // the ambiguity lives: a flat cost surface sits at a cost ratio of ~1.0,
+    // nowhere near the threshold, so the outcome stops depending on the last
+    // bits. The margin is relative because floating-point error is relative --
+    // it then holds the same ratio to the noise whether the block matches well
+    // or badly.
+    //
+    // Preferring the incumbent is also the right bias on the merits, not just
+    // a convenient way to be deterministic. Here the incumbent is the previous
+    // iteration's estimate, seeded at zero motion; at the refine levels it is
+    // the coarse level's result. Both are the conservative answer REG_LAMBDA
+    // already argues for, so a genuine tie now resolves toward less motion
+    // rather than toward whichever candidate the loop happened to visit first.
+    //
+    // The value is measured, not assumed. tests/tieprobe.sh perturbs every cost
+    // by a relative epsilon and counts the output frames that then disagree.
+    // Without a margin, 56 of 240 frames flip at ANY perturbation large enough
+    // to survive float32 at all -- 1e-7 and 1e-5 do equal damage, which is what
+    // "no defence" looks like. At 1e-7, one ULP, the scale a differing
+    // summation order actually produces, this margin takes that to 0, and it
+    // costs at most 0.02 dB anywhere on the ground-truth ladder.
+    //
+    // Bigger is not better. A larger margin buys headroom against coarser
+    // perturbation but starts refusing genuine improvements where the cost
+    // surface is legitimately shallow: 1e-2 costs 0.12 dB at L3/L4 and 0.07 at
+    // M3 -- the velocity ceiling and the period-16 ambiguity trap, exactly the
+    // cases that are hardest already. Full sweep in tests/TESTING.md.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad5x5_s(uv_a, uv_a);
 
     // Starting step, halved each of the 5 iterations below: total reach is
@@ -311,7 +357,7 @@ vec4 hook() {
                 vec2 off = best_off + vec2(float(x), float(y)) * step_px * LUMA_A_S_pt;
                 float cost = sad5x5_s(uv_a, uv_a + off)
                            + REG_LAMBDA * length(off / LUMA_A_S_pt);
-                if (cost < best_cost) {
+                if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                     best_cost = cost;
                     cand_best = off;
                 }
@@ -387,6 +433,8 @@ vec4 hook() {
     }
 
     vec2 best_off = vec2(0.0);
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad5x5_s2(uv_b, uv_b);
 
     // See the A->B pass above for the reach/reasoning behind this value.
@@ -400,7 +448,7 @@ vec4 hook() {
                 vec2 off = best_off + vec2(float(x), float(y)) * step_px * LUMA_A_S_pt;
                 float cost = sad5x5_s2(uv_b, uv_b + off)
                            + REG_LAMBDA * length(off / LUMA_A_S_pt);
-                if (cost < best_cost) {
+                if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                     best_cost = cost;
                     cand_best = off;
                 }
@@ -1868,13 +1916,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -1902,13 +1958,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -1936,13 +2000,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -1970,13 +2042,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -2154,6 +2234,8 @@ vec4 hook() {
     const float REFINE_REG_LAMBDA = 0.05;
 
     vec2 best_off = base_off;
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad5x5_e(uv_a, uv_a + base_off);
 
     for (int y = -REFINE_SEARCH_RADIUS; y <= REFINE_SEARCH_RADIUS; y++) {
@@ -2163,7 +2245,7 @@ vec4 hook() {
             vec2 off = base_off + vec2(float(x), float(y)) * LUMA_A_E_pt;
             float cost = sad5x5_e(uv_a, uv_a + off)
                        + REFINE_REG_LAMBDA * length(vec2(float(x), float(y)));
-            if (cost < best_cost) {
+            if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                 best_cost = cost;
                 best_off = off;
             }
@@ -2244,6 +2326,8 @@ vec4 hook() {
     const float REFINE_REG_LAMBDA = 0.05;
 
     vec2 best_off = base_off;
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad5x5_e2(uv_b, uv_b + base_off);
 
     for (int y = -REFINE_SEARCH_RADIUS; y <= REFINE_SEARCH_RADIUS; y++) {
@@ -2253,7 +2337,7 @@ vec4 hook() {
             vec2 off = base_off + vec2(float(x), float(y)) * LUMA_A_E_pt;
             float cost = sad5x5_e2(uv_b, uv_b + off)
                        + REFINE_REG_LAMBDA * length(vec2(float(x), float(y)));
-            if (cost < best_cost) {
+            if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                 best_cost = cost;
                 best_off = off;
             }
@@ -3367,13 +3451,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -3401,13 +3493,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -3435,13 +3535,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -3469,13 +3577,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -3584,6 +3700,8 @@ vec4 hook() {
     const float REFINE_REG_LAMBDA = 0.05;
 
     vec2 best_off = base_off;
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad5x5_q(uv_a, uv_a + base_off);
 
     for (int y = -REFINE_SEARCH_RADIUS; y <= REFINE_SEARCH_RADIUS; y++) {
@@ -3593,7 +3711,7 @@ vec4 hook() {
             vec2 off = base_off + vec2(float(x), float(y)) * LUMA_A_Q_pt;
             float cost = sad5x5_q(uv_a, uv_a + off)
                        + REFINE_REG_LAMBDA * length(vec2(float(x), float(y)));
-            if (cost < best_cost) {
+            if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                 best_cost = cost;
                 best_off = off;
             }
@@ -3674,6 +3792,8 @@ vec4 hook() {
     const float REFINE_REG_LAMBDA = 0.05;
 
     vec2 best_off = base_off;
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad5x5_q2(uv_b, uv_b + base_off);
 
     for (int y = -REFINE_SEARCH_RADIUS; y <= REFINE_SEARCH_RADIUS; y++) {
@@ -3683,7 +3803,7 @@ vec4 hook() {
             vec2 off = base_off + vec2(float(x), float(y)) * LUMA_A_Q_pt;
             float cost = sad5x5_q2(uv_b, uv_b + off)
                        + REFINE_REG_LAMBDA * length(vec2(float(x), float(y)));
-            if (cost < best_cost) {
+            if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                 best_cost = cost;
                 best_off = off;
             }
@@ -4453,13 +4573,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -4487,13 +4615,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -4521,13 +4657,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -4555,13 +4699,21 @@ vec4 hook() {
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -4665,6 +4817,8 @@ vec4 hook() {
     const float REFINE_REG_LAMBDA = 0.05;
 
     vec2 best_off = base_off;
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad3x3_h(uv_a, uv_a + base_off);
 
     for (int y = -REFINE_SEARCH_RADIUS; y <= REFINE_SEARCH_RADIUS; y++) {
@@ -4674,7 +4828,7 @@ vec4 hook() {
             vec2 off = base_off + vec2(float(x), float(y)) * LUMA_A_H_pt;
             float cost = sad3x3_h(uv_a, uv_a + off)
                        + REFINE_REG_LAMBDA * length(vec2(float(x), float(y)));
-            if (cost < best_cost) {
+            if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                 best_cost = cost;
                 best_off = off;
             }
@@ -4752,6 +4906,8 @@ vec4 hook() {
     const float REFINE_REG_LAMBDA = 0.05;
 
     vec2 best_off = base_off;
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = sad3x3_h2(uv_b, uv_b + base_off);
 
     for (int y = -REFINE_SEARCH_RADIUS; y <= REFINE_SEARCH_RADIUS; y++) {
@@ -4761,7 +4917,7 @@ vec4 hook() {
             vec2 off = base_off + vec2(float(x), float(y)) * LUMA_A_H_pt;
             float cost = sad3x3_h2(uv_b, uv_b + off)
                        + REFINE_REG_LAMBDA * length(vec2(float(x), float(y)));
-            if (cost < best_cost) {
+            if (cost < best_cost * (1.0 - TIE_MARGIN)) {
                 best_cost = cost;
                 best_off = off;
             }
@@ -5167,13 +5323,20 @@ vec4 hook() {
         }
     }
 
+    // Deterministic tie-breaking, same mechanism and same reasoning as the
+    // block match's TIE_MARGIN -- see the coarse A->B search above. It matters
+    // here for the same reason: nine candidate vectors, and where several of
+    // them agree the totals are near-tied, so without a margin the median's
+    // choice between two disagreeing clusters of equal size can be decided by
+    // rounding. The incumbent is the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -5212,13 +5375,15 @@ vec4 hook() {
         }
     }
 
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -5249,13 +5414,15 @@ vec4 hook() {
         }
     }
 
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }
@@ -5294,13 +5461,15 @@ vec4 hook() {
         }
     }
 
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
             best_cost = cost;
             best = v[i];
         }

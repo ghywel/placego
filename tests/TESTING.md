@@ -70,6 +70,9 @@ warp or the blend.
 | `L6`/`L7`/`M1`/`M2`/`M3` | the texture series (below) |
 | `L8_diagonal` | axis asymmetry in the search |
 | `L9_occlusion` | two objects crossing -- forward/backward consistency |
+| `A1`/`A2`/`A3` | translational **acceleration** (below) |
+| `F1_fourier_edge` | an irregular, multi-frequency boundary (below) |
+| `R1`/`R2` | **rotation**, constant and accelerating (below) |
 
 The velocity ladder is calibrated against the shader's own arithmetic, not
 picked arbitrarily: the coarse search reaches `step_px * 1.9375` coarse
@@ -85,6 +88,122 @@ resolve from what merely looks difficult.
 
 Note `sin(X/k)` has spatial period `2*pi*k` px, so `k=2.546` gives a 16px
 period -- exactly the per-frame travel distance.
+
+### Acceleration, and why nothing tested it before
+
+Added 2026-08-31. Every case above this point moves at a **constant
+velocity**, which means the block match's central assumption -- that one
+offset describes the whole interval between two source frames -- is exactly
+true, and the linear lift of that flow to an intermediate time
+(`flow_ab * mix_t` in the warp) is exactly right. Neither holds for anything
+that speeds up, and the ladder had no case where they failed.
+
+Each acceleration case is twinned with a constant-velocity case above it.
+`x = c*t^2` covers the same distance in the same second as `x = c*t`, so the
+object, the start and end positions, and the mean velocity are **identical**
+to the twin; only the velocity profile differs, ramping `0 -> 2c` instead of
+holding at `c`.
+
+| case | twin | velocity | mid-frame error |
+|---|---|---|---|
+| `A1_accel_8mean` | `L1` | 0 -> 16 px/frame, mean 8 | 0.08 px |
+| `A2_accel_16mean` | `L2` | 0 -> 32 px/frame, mean 16 | 0.17 px |
+| `A3_accel_23mean` | `L3` | 0 -> 46 px/frame, mean 23 | 0.24 px |
+| `F2_fourier_accel` | `F1` | 0 -> 32 px/frame, mean 16 | 0.17 px |
+
+**That twinning is useful but not clean, and an early draft of this section
+claimed it was.** Two confounds, both found by running it rather than by
+thinking about it:
+
+1. **Equal mean velocity is not equal difficulty.** Error grows faster than
+   linearly with speed, and the ramp spends half its time below the mean and
+   half above, so the mean of the per-frame scores is not the score at the
+   mean speed. This can push the accelerating case either way, and it did:
+   `A2` scored *above* its twin. Reading that as "acceleration helps" would be
+   wrong.
+2. **`A1`-`A3` are overlay scenes**, so their ground truth is snapped to even
+   pixels (see the section below), and two different velocity profiles
+   accumulate that snapping error differently.
+
+`F2_fourier_accel` exists to remove the second confound: it is `F1`'s twin
+under acceleration, both analytic and both exact, so `F2` minus `F1` is the
+acceleration cost without a quantisation artifact underneath it. Read `A1`-`A3`
+as "does acceleration break anything dramatic, on the same object the velocity
+ladder uses", and `F2` minus `F1` as the actual number.
+
+"Mid-frame error" is the calibration that makes a result mean something: over
+one 24fps interval the true mid-frame position and the linear interpolation of
+the two endpoints differ by `a*dt^2/8 = a/4608` px. It is deliberately
+sub-pixel, because any acceleration large enough to make it a whole pixel also
+throws the object past the coarse search's reach within the second and would
+confound two failures. On a hard edge a tenth of a pixel is not nothing --
+roughly 10% of full contrast on the boundary texel.
+
+### Rotation
+
+Also added 2026-08-31, and a gap of a different kind: block matching searches
+over **translations**, so rotation is a motion it cannot represent exactly
+anywhere except instantaneously and locally. The true flow diverges across the
+object, and only a sufficiently local match can follow it.
+
+The rotating object has to be `F1`'s Fourier blob rather than a disc, because
+a rotating disc is indistinguishable from a stationary one -- there is no
+feature whose motion could be recovered. Both cases are calibrated on rim
+speed so they sit on the same scale as the velocity ladder: at `R=150` an
+angular rate of 2.56 rad/s is 384 px/s at the rim, i.e. `L2`'s 16px/frame.
+`R2_rot_accel` covers the same total rotation as `R1_rot_const` in the same
+second, ramping `0 -> 32 px/frame` at the rim -- the rotational twin of the
+A-series, and the only case here whose motion is both non-translational and
+changing.
+
+### First results from these cases
+
+Measured 2026-08-31 on the native Windows build, base shader against the
+production `-variational` build.
+
+| case | hold | linear | base | `-variational` | cascade gain |
+|---|---|---|---|---|---|
+| `F1_fourier_edge` | 27.33 | 30.31 | **46.91** | 47.26 | +0.35 |
+| `F2_fourier_accel` | 28.07 | 31.01 | **39.12** | 43.76 | **+4.64** |
+| `R1_rot_const` | 29.53 | 32.42 | 37.30 | 41.02 | **+3.72** |
+| `R2_rot_accel` | 30.35 | 33.20 | 37.58 | 41.16 | **+3.58** |
+| `A1_accel_8mean` | 32.18 | 35.47 | 40.73 | 42.12 | +1.39 |
+| `A2_accel_16mean` | 29.89 | 32.26 | 39.44 | 39.97 | +0.53 |
+| `A3_accel_23mean` | 28.00 | 30.84 | 36.62 | 38.02 | +1.40 |
+
+Three findings, none of which the ladder could previously have produced.
+
+**Translational acceleration is expensive: `F2` minus `F1` is -7.79 dB on the
+base shader.** That is the clean comparison -- same object, same mean
+velocity, same endpoints, both analytic and exact -- and it is far larger than
+the confounded `A`-series pairs suggested. The constant-velocity assumption
+inside a source pair is worth a lot more than the 0.17px mid-frame geometry
+error implies on its own.
+
+**Rotational acceleration is nearly free: `R2` is within 0.3 dB of `R1`, and
+slightly above it.** The contrast with the translation result is the
+interesting part, and it has a coherent explanation: block matching already
+cannot represent rotation, so `R1` is *already* in the estimator's degraded
+regime and adding acceleration finds little left to break. `F1`, by contrast,
+is a motion it handles well, and acceleration removes exactly the assumption
+that was earning it that score.
+
+**The variational cascade earns its cost specifically where the block-match
+model is wrong.** Its gain over the base is +0.35 dB on constant-velocity
+translation and around +1 dB across the original ladder, but +3.6 to +4.6 dB
+on rotation and on translational acceleration. It is not a uniform quality
+increment; it is a repair for motions the pyramid cannot express, which is
+what a smoothness-regularised variational objective ought to be and had not
+previously been shown to be.
+
+**A caution on `F1`'s 46.91 dB**, the highest score anywhere on this ladder:
+do not read it as the shader being unusually good on irregular boundaries. It
+is the only object-translation case whose ground truth is *not* pixel-quantised
+(next section), and its boundary is band-limited rather than a hard step, which
+is intrinsically easier. Both effects push the same way. `L6_flat_large`, the
+closest quantised equivalent, scores 40.26. Some of that 6.65 dB gap is the
+quantisation floor and some is the softer edge; this ladder cannot separate
+them, so do not attribute it.
 
 ## What this found
 
@@ -744,16 +863,110 @@ the previously committed shader.
 
 ### A known limitation of this whole ladder
 
-Every scene here is built from regular geometry: rectangles, checkerboards,
-sine products. Real edges are neither straight nor smoothly curved; they are
-irregular, closer to a stack of many spatial frequencies than to any simple
-formula, and they carry that irregularity along their whole length. A
-synthetic pattern can reproduce *an* angle, *a* frequency, or *a* motion, but
-not the joint irregularity of real content -- so passing this ladder is
-necessary, not sufficient. `blueyreduced.mp4` (source frames 29-40, the
-orange dog walking left) is the reference case for what the defect actually
-looks like on real material: a moving character whose dark outline frays into
-dashes while stationary characters in the same frame stay clean.
+Every scene here was, until 2026-08-31, built from regular geometry:
+rectangles, checkerboards, sine products. Real edges are neither straight nor
+smoothly curved; they are irregular, closer to a stack of many spatial
+frequencies than to any simple formula, and they carry that irregularity along
+their whole length -- so passing this ladder is necessary, not sufficient.
+`blueyreduced.mp4` (source frames 29-40, the orange dog walking left) is the
+reference case for what the defect actually looks like on real material: a
+moving character whose dark outline frays into dashes while stationary
+characters in the same frame stay clean.
+
+**This section used to go further and claim that a synthetic pattern could
+reproduce "*an* angle, *a* frequency, or *a* motion, but not the joint
+irregularity of real content". That was wrong, and it was wrong in a way worth
+recording, because it discouraged exactly the work that fixes it.** A Fourier
+series represents any shape. Irregularity is a matter of writing down enough
+terms, not a property only real content can possess -- you can draw the
+outline of a duck this way. The honest limitation was never expressive power;
+it was that nobody had built the tooling.
+
+`F1_fourier_edge` is the first scene that does. Its boundary is
+`r(phi) = R*(1 + SUM a_n cos(n*phi + psi_n))` with `a_n = 0.36/n` -- a 1/f
+amplitude spectrum, which is the spectrum of a fractal (fractional Brownian)
+boundary, carrying comparable detail at every scale it represents rather than
+one characteristic wiggle size. Harmonics 3, 5, 8, 13, 21, 34 are deliberately
+non-harmonic so none reinforce into a regular polygon. See `scenes.sh`.
+
+Two things it does **not** do, stated precisely so the claim is not
+over-corrected in the other direction:
+
+- It is the **radial** form, so the curve is single-valued in `phi` and
+  therefore star-shaped: it cannot produce a concavity that doubles back, like
+  a duck's beak. That needs the **parametric** form,
+  `z(s) = SUM c_n exp(i*n*s)`, which draws any closed curve at all -- but that
+  is a curve rather than an inside/outside test, and `geq` evaluates one pixel
+  at a time with no loops to run a crossing test in. The parametric form needs
+  a rasterisation step and an image input; the radial form needs nothing.
+  Whether the extra generality buys anything measurable is untested.
+- A synthetic scene still has no sensor noise, no compression artefacts, no
+  motion blur, and no deformation. Irregular geometry closes one gap, not the
+  rest.
+
+Fractals are a live candidate for the same reason and mostly the same
+tooling. A 1/f radial spectrum is already a fractal boundary; a genuine
+escape-time fractal would need iteration, which `geq` cannot express, so it
+would come in as a pre-rendered input and give up the "no source files"
+property. Worth doing only if the 1/f boundary turns out not to be irregular
+enough to find anything.
+
+### Ground truth is quantised where the scene uses overlay
+
+Found 2026-08-31 while building `scenecheck.sh` to validate the new scenes,
+and it applies to the fourteen original cases rather than the new ones.
+
+**`overlay` places its object at a whole, even pixel.** yuv420p chroma
+subsampling forces 2px alignment, so a true position of 3.2px is rendered at
+2, 6.4 at 6, and 9.6 at 8 -- measured directly, not inferred. The 60fps
+"ground truth" therefore advances in 2px steps where the motion it represents
+is smooth, and carries up to 1px of position error at every frame. A shader
+that interpolates *correctly* to a fractional position is marked down against
+it.
+
+That is an accuracy floor under every overlay-based case here, and it is a
+plausible part of why scores on this ladder plateau in the 30-40 dB range
+rather than near the ~79 dB round-trip ceiling. It does not invalidate any
+comparison **between** shaders or against the baselines, since all modes are
+scored against the same quantised target -- which is what the ladder is
+actually for. It does mean an absolute figure understates a good interpolator.
+
+`scenecheck.sh` detects this indirectly, and the indirection is worth
+understanding. It compares the frames where the two rates coincide in time,
+which must be identical. For an overlay scene the object sits *exactly* on an
+even-pixel boundary at those instants, so the snap is a knife edge -- and the
+two rates do not compute `t` identically. Worked through for `L1` at pair 7,
+where every case tips:
+
+```
+t = 7/12 s, reached as source frame 14 of 24 and output frame 35 of 60
+  14 * (1/24) = 0.58333333333333325932
+  35 * (1/60) = 0.58333333333333337034     one ULP apart
+x = 192 * t   = 111.99999999999998579  vs  112
+  truncated       111   vs   112
+  snapped to even 110   vs   112          <- a 2px disagreement
+```
+
+Multiplying by a rounded reciprocal is what does it: `1/24` and `1/60` are
+each inexact, and the two products land on opposite sides of the integer. Only
+some values tip, which is why it is one frame in twelve for most cases and
+three for `L3`/`L4`/`L8`, whose faster motion crosses more boundaries.
+
+So the check does not measure the quantisation directly; it detects that the
+scene *has a snapping knife edge at all*, which is the property that matters.
+
+Note what that is an instance of: an arithmetic difference far below any
+meaningful scale, amplified into a visible discrete jump by a hard decision
+boundary. It is structurally the same fault as the block match's argmin
+flipping on a near-tie, which `TIE_MARGIN` exists to stop.
+
+The six scenes added 2026-08-31 are built analytically in `geq` instead, and
+are **bit-identical** between the two rates. Their band-limited edge carries
+fractional position in its grey levels: tracked across frames as the object
+advances 6.4px, the edge ramp shifts by exactly 0.4px per frame and reproduces
+itself precisely after 2.0px. Prefer this construction for new scenes.
+Rewriting the original fourteen to match would change every historical number
+on the ladder and has deliberately not been done.
 
 ## Real footage: decimate-and-reconstruct
 
@@ -1178,7 +1391,7 @@ changing a tool, and on any new platform.
 It exists because "the same harness works on Linux and Windows" is easy to
 claim and easy to get wrong: the first run under MSYS2 immediately found a
 hardcoded `/mnt/c/...` path in `gen_variational.py` that meant the generator
-only ever worked on one machine. It currently passes 10/10 on both.
+only ever worked on one machine. It currently passes 12/12 on both.
 
 ## Finding defects in new material
 
@@ -1245,6 +1458,100 @@ frame, and a contact sheet is written alongside.
 Proven frame-exact by cutting the same frames two ways -- once with the fast
 seek it uses, once by decoding from frame 0 with no seek at all -- and
 requiring the results to be bit-identical.
+
+## Deterministic tie-breaking: measuring what noise decides
+
+```bash
+export FFMPEG=/path/to/ffmpeg
+./tieprobe.sh [shader] [case...]
+```
+
+The block match is an argmin over candidate offsets. Where the cost surface is
+flat, two candidates differ by less than the arithmetic noise between one
+evaluation and another, and which one wins stops being a property of the image.
+The chosen motion vector flips on a rounding difference and the whole warp for
+that source pair is built on it.
+
+**This is invisible on Linux and Windows, and re-running the benchmark there
+proves nothing** -- both are bit-reproducible, so nothing ever perturbs the
+comparison. macOS exposed it only because its MoltenVK path is not
+reproducible; see the nondeterminism section of
+[BUILDANDUSAGE.md](../BUILDANDUSAGE.md).
+
+`tieprobe.sh` supplies the perturbation deliberately, so the property can be
+measured where a baseline exists. It renders two builds whose every argmin cost
+is nudged by a relative epsilon -- `tieprobe.py` does the rewriting -- and
+compares them. Two numbers, because they answer different questions: `differ`
+counts frames that are not bit-identical, which is the determinism property
+itself; `worst` is the lowest per-frame PSNR between the two renders, which is
+whether it *matters*. A single flipped texel lands near 90 dB; a warp built on
+the wrong vector lands near 40.
+
+**Confirm the platform first.** Render the unprobed shader two or three times
+and compare `framemd5`. If those already differ, this measures the platform
+rather than the shader. Both build hosts here are clean: five identical runs,
+probed and unprobed, bit-identical every time.
+
+### What it found, and how TIE_MARGIN was chosen
+
+Without a margin, at one float32 ULP (`EPS=1e-7`) -- the scale a differing
+summation order actually produces:
+
+| shader | frames noise-decided / 240 | below 60 dB | worst |
+|---|---|---|---|
+| base | 56 | 44 | 55.7 dB |
+| `-variational` (production) | 138 | 52 | 41.4 dB |
+
+The production shader is the *worse* of the two, which is not obvious until
+measured: it adds twelve vector-median argmins at the coarse levels, and its
+80 Horn-Schunck passes carry any difference forward. Its 41.4 dB worst case is
+the same magnitude as the 39 dB seen on macOS.
+
+The defence is a **margin, not a tie rule**. A rule for exact ties would have
+been a no-op: a strict `<` against a fixed scan order already resolves those
+deterministically, with the incumbent winning. What needs deciding is the
+*near*-tie. Requiring a candidate to beat the incumbent by a relative
+`TIE_MARGIN` moves the decision threshold off the plateau where the ambiguity
+lives, so the outcome stops depending on the last bits.
+
+Sweeping the margin against `EPS=1e-6`, ten times more perturbation than
+float32 alone produces, on the base shader:
+
+| TIE_MARGIN | frames differ | below 60 dB | worst ladder regression |
+|---|---|---|---|
+| 0 (no margin) | 56 | 43 | -- |
+| 1e-5 | 8 | 4 | 0.01 dB |
+| **1e-4** | **3** | **2** | **0.02 dB** |
+| 1e-3 | 6 | 1 | 0.05 dB |
+| 1e-2 | 0 | 0 | 0.12 dB |
+
+**Bigger is not better**, which is the part worth knowing. A larger margin
+buys headroom against coarser perturbation, but it does so by refusing genuine
+improvements where the cost surface is legitimately shallow -- and those are
+the cases that are hardest already. At 1e-2 the cost falls on `L3`/`L4` (the
+velocity ceiling) and `M3` (the period-16 ambiguity trap), the three scenes
+built specifically to be ambiguous. 1e-3 is dominated outright: worse than
+1e-4 on determinism *and* on quality.
+
+1e-4 was chosen. At the perturbation float32 actually produces it is complete:
+
+| shader | before | after |
+|---|---|---|
+| base | 56 frames, 44 harmful | **0 frames** |
+| `-variational` | 138 frames, 52 harmful | **3 frames, 0 harmful**, worst 82.5 dB |
+
+The residual three frames are cosmetic -- 82.5 dB is a texel or two, against
+the 41.4 dB whole-warp failures it replaced. Ladder cost is at most 0.02 dB on
+any case, for either shader.
+
+**How far this goes, stated honestly.** The margin absorbs perturbation of
+roughly its own size divided by a thousand. It is measured to be complete at
+1e-7 and near-complete at 1e-6; at 1e-5 it barely helps, because no fixed
+margin can survive noise approaching the scale of real cost differences. So
+this fixes divergence of *arithmetic* origin -- summation order, contraction,
+a different compiler. Whether it fixes macOS depends on whether MoltenVK's
+nondeterminism is that small, which is not yet known: **that measurement is
+the outstanding stress test**, and it needs the machine.
 
 ## Limitations
 

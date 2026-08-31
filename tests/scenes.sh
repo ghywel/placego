@@ -26,6 +26,59 @@
 # frame is genuinely indistinguishable from no motion at all, using only
 # two frames and a local search. See TESTING.md.
 
+# ---------------------------------------------------------------------
+# FOURIER-BOUNDARY OBJECT.
+#
+# Every other object in this file is a rectangle, so every edge is straight
+# and axis-aligned. This one is bounded by a Fourier series in polar form:
+#
+#     r(phi) = R * (1 + SUM a_n cos(n*phi + psi_n))
+#
+# with a_n = 0.36/n -- a 1/f amplitude spectrum, which is the spectrum of a
+# fractal (fractional Brownian) boundary: comparable detail at every scale it
+# can represent, rather than one characteristic wiggle size. Harmonics are
+# 3, 5, 8, 13, 21, 34 -- deliberately non-harmonic, so no two reinforce into a
+# regular polygon, and spread over a decade so the boundary carries coarse
+# lobes and fine ripple at once. At R=150 the n=3 term is a 18px excursion
+# over a ~314px arc and the n=34 term a 1.6px excursion over a ~28px arc.
+#
+# This is the geometry the "known limitation" section of TESTING.md used to
+# say synthetic scenes could not have. That claim was wrong: a Fourier series
+# represents any shape, so irregularity is a matter of writing down enough
+# terms, not something only real content can possess.
+#
+# What it genuinely cannot do, stated precisely: this is the RADIAL form, so
+# the curve is single-valued in phi and therefore star-shaped. It cannot
+# produce a concavity that doubles back -- a duck's beak, say. That needs the
+# PARAMETRIC form, z(s) = SUM c_n exp(i*n*s), which draws any closed curve at
+# all but is a curve rather than an inside/outside test, and geq evaluates one
+# pixel at a time with no loops to run a crossing test in. So the parametric
+# form needs a rasterisation step and an image input; the radial form needs
+# nothing and still delivers multi-frequency edges at every orientation, which
+# is the property being tested here.
+#
+# The boundary is BAND-LIMITED, ~2px of soft transition, for the same reason
+# scene_rot's cells are: a hard threshold on a curve produces an aliased
+# staircase whose exact jagged pattern no resampling can reproduce, which
+# would penalise the case by construction rather than measure anything.
+#
+#   _blob <cx-expr> <cy-expr> <theta-expr> <radius> <rate>
+#
+# Rotation is inside the expression rather than an overlay, because an overlay
+# cannot rotate. Translation could be an overlay, but is kept in the
+# expression too so the background has no seam.
+# ---------------------------------------------------------------------
+_blob() {
+  local CX=$1 CY=$2 TH=$3 R=$4 r=$5
+  # st()/ld() bind the rotation and the object-frame coordinates once per
+  # pixel. Without them the boundary expression re-derives u and v about
+  # fourteen times each: measured at 47s against 11s for one 60fps second.
+  #   0=cos(theta) 1=sin(theta) 2=u 3=v 4=phi
+  local PRE="st(0\,cos($TH))\;st(1\,sin($TH))\;st(2\,(X-($CX))*ld(0)+(Y-($CY))*ld(1))\;st(3\,(0-(X-($CX)))*ld(1)+(Y-($CY))*ld(0))\;st(4\,atan2(ld(3)\,ld(2)))"
+  local E="$R*(1+0.1200*cos(3*ld(4)+0.7)+0.0720*cos(5*ld(4)+2.1)+0.0450*cos(8*ld(4)+4.3)+0.0277*cos(13*ld(4)+1.2)+0.0171*cos(21*ld(4)+5.6)+0.0106*cos(34*ld(4)+3.4))"
+  echo "nullsrc=s=1280x720:r=$r:d=1,format=gray,geq=lum='$PRE\;30+190*clip(($E-hypot(ld(2)\,ld(3)))/2\,0\,1)',format=yuv420p"
+}
+
 scene() {
   local CASE=$1 r=$2 W=1280 H=720 DUR=1
   local BG="color=c=black:s=${W}x${H}:r=$r:d=$DUR"
@@ -81,13 +134,118 @@ scene() {
     L9_occlusion)
       echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[b1];color=c=0xa0a0a0:s=100x100:r=$r:d=$DUR[b2];[bg][b1]overlay=x='300+300*t':y=310:shortest=1[s1];[s1][b2]overlay=x='900-300*t':y=310:shortest=1,format=yuv420p" ;;
 
+    # ---- A1-A3: ACCELERATION. Every case above moves at a constant
+    # velocity, so the block match's core assumption -- that one offset
+    # describes the whole interval between two source frames -- is exactly
+    # true, and the linear lift of the flow to an intermediate time
+    # (flow_ab * mix_t in the warp) is exactly right. Neither holds under
+    # acceleration, and nothing here tested that until now.
+    #
+    # Each pairs with a constant-velocity twin above: x = c*t^2 covers the
+    # same total distance in the same second as x = c*t, so mean velocity,
+    # object, and start and end positions are IDENTICAL to L1/L2/L3, and the
+    # velocity ramps 0 -> 2c instead of holding at c.
+    #
+    # That twinning is USEFUL BUT NOT CLEAN, and the difference matters when
+    # reading a result. Two confounds, both measured rather than suspected:
+    #
+    #   1. Equal mean velocity is not equal difficulty. Error grows faster
+    #      than linearly with speed, and the ramp spends half its time below
+    #      the mean and half above, so the average of the per-frame scores is
+    #      not the score at the average speed. This can push the accelerating
+    #      case either way and did: A2 scored ABOVE its twin.
+    #   2. These are overlay scenes, so their ground truth is snapped to even
+    #      pixels, and two different velocity profiles accumulate that
+    #      snapping error differently. See F2 below for the version without
+    #      this confound, and TESTING.md for the measurement.
+    #
+    # So read A1-A3 as "does acceleration break anything dramatic, on the same
+    # object the velocity ladder uses", and read F2 minus F1 as the actual
+    # cost of acceleration.
+    #
+    # Calibration, so a result maps onto a mechanism. Over one 24fps source
+    # interval the true mid-frame position and the linear interpolation of
+    # the endpoints differ by a*dt^2/8 = a/4608 px. That is 0.08px at A1,
+    # 0.17px at A2, 0.24px at A3 -- deliberately sub-pixel, because any
+    # acceleration large enough to make it a whole pixel also throws the
+    # object past the coarse search's reach within the second and would
+    # confound the two failures. On a hard edge a tenth of a pixel is not
+    # nothing: it is ~10% of full contrast on the boundary texel.
+    #
+    # Motion stays a pure function of t, so ground truth is exact as always.
+    A1_accel_8mean)   # ramps 0->16px/frame, mean 8   -- twin of L1
+      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='192*t*t':y=310:shortest=1,format=yuv420p" ;;
+    A2_accel_16mean)  # ramps 0->32px/frame, mean 16  -- twin of L2
+      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t*t':y=310:shortest=1,format=yuv420p" ;;
+    A3_accel_23mean)  # ramps 0->46px/frame, mean 23  -- twin of L3
+      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='552*t*t':y=310:shortest=1,format=yuv420p" ;;
+
+    # ---- F1: irregular boundary, otherwise L6. Same flat interior, same
+    # 16px/frame translation, same ~300px object -- only the boundary
+    # differs, straight and axis-aligned in L6 against a 1/f Fourier curve
+    # here. So F1 minus L6 isolates the cost of edge irregularity alone,
+    # the same way the L6/L7/M1/M2/M3 series isolates interior texture.
+    # Centred at 200, not L6's 150: the boundary reaches R*1.2924 = 194px at
+    # its furthest, so a centre of 150 would clip the object against the left
+    # frame edge and manufacture a straight edge in a case that exists to
+    # not have one.
+    F1_fourier_edge)
+      _blob '200+384*T' '360' '0' 150 "$r" ;;
+
+    # F2: F1's twin under acceleration -- same object, same mean velocity,
+    # same start and end position, velocity ramping 0 -> 32px/frame. This is
+    # the CLEAN acceleration measurement, and the reason it exists is that
+    # A1-A3 above are not: they are overlay scenes, so their ground truth is
+    # snapped to even pixels, and an accelerating object and a constant one
+    # accumulate that snapping error differently. F2 minus F1 has no such
+    # confound, since both are analytic and exact.
+    F2_fourier_accel)
+      _blob '200+384*T*T' '360' '0' 150 "$r" ;;
+
+    # ---- R1-R2: ROTATION AS THE MOTION. Not to be confused with scene_rot
+    # below, which rotates a pattern and its translation together by a fixed
+    # angle to probe grid alignment -- the motion there is still a pure
+    # translation. These are the only cases in this file where the scene
+    # actually turns.
+    #
+    # Block matching searches over TRANSLATIONS, so rotation is a motion the
+    # estimator cannot represent exactly anywhere except instantaneously and
+    # locally: the true flow diverges across the object, and only a
+    # sufficiently local match can follow it.
+    #
+    # The object has to be the Fourier blob rather than a disc, because a
+    # rotating disc is indistinguishable from a stationary one -- there is
+    # no feature whose motion could be recovered.
+    #
+    # Calibrated on rim speed, so it sits on the same scale as the velocity
+    # ladder: at R=150 an angular rate of 2.56 rad/s is 384 px/s at the rim,
+    # i.e. L2's 16px/frame. R2 covers the same total rotation as R1 in the
+    # same second, ramping 0 -> 32px/frame at the rim -- the rotational twin
+    # of the A-series, and the only case here with both a non-translational
+    # motion and a changing one.
+    R1_rot_const)
+      _blob '640' '360' '2.56*T' 150 "$r" ;;
+    R2_rot_accel)
+      _blob '640' '360' '2.56*T*T' 150 "$r" ;;
+
     *) echo "UNKNOWN_CASE"; return 1 ;;
   esac
 }
 
 ALL_CASES="L0_static L1_trans_8px L2_trans_16px L3_trans_23px L4_trans_40px \
 L5_lowcontrast L6_flat_large L7_textured_large M1_noise_large M2_period40 \
-M3_period16_trap M4_belowgate L8_diagonal L9_occlusion"
+M3_period16_trap M4_belowgate L8_diagonal L9_occlusion \
+A1_accel_8mean A2_accel_16mean A3_accel_23mean \
+F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel"
+
+# The six added 2026-08-31 are in ALL_CASES deliberately rather than in a
+# group of their own: a case that is not run by default is a case that rots.
+# They cost more than the rest -- the blob's boundary is evaluated per pixel
+# by geq, at roughly 11s per 60fps second against well under a second for a
+# rectangle overlay. Their rows are additive, so every historical number for
+# the fourteen cases above remains directly comparable.
+ACCEL_CASES="A1_accel_8mean A2_accel_16mean A3_accel_23mean"
+SHAPE_CASES="F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel"
 #
 # GAP THESE FILL: every scene in the original ladder puts the moving object
 # on a FLAT BLACK background. That hides exactly the failure real content

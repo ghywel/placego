@@ -174,5 +174,38 @@ else
 fi
 
 # ---------------------------------------------------------------------------
+head2 "10. tieprobe.py -- a probed build still compiles and runs"
+# Deliberately not a full tieprobe.sh run: that is eight renders and this is a
+# toolchain check, not a measurement. What can silently break per-platform is
+# the injected GLSL itself -- it uses floatBitsToUint and unsigned arithmetic,
+# which a different shader compiler could reject. So: generate one probed
+# build and put it through Vulkan.
+if $PY "$HERE/tieprobe.py" "$PROD" "$W/probed.glsl" 1 1e-6 >/dev/null 2>&1 &&
+   [ -s "$W/probed.glsl" ] && [ -s "$W/src.mkv" ] &&
+   ( cd "$W" && "$FFMPEG" -y -v error -init_hw_device vulkan=vk -filter_hw_device vk \
+       -i src.mkv -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=probed.glsl,format=yuv420p" \
+       -frames:v 6 -f null - ) 2>"$W/probe.err"; then
+  ok "probed build compiled and rendered"
+else
+  bad "probed build failed"; note "$(head -2 "$W/probe.err" 2>/dev/null)"
+fi
+
+# ---------------------------------------------------------------------------
+head2 "11. scenecheck.sh -- the ladder's ground-truth property holds"
+# Only the analytic scenes, and only a couple of them: this is a check that the
+# tool runs and that scenes which are supposed to be exact still are, not a
+# sweep of the whole ladder. The overlay-based cases are pixel-quantised by
+# construction (see TESTING.md) and would report as such, which is expected
+# rather than a failure, so they are not useful as a pass/fail signal here.
+if OUTROOT="$W" FFMPEG="$FFMPEG" bash "$HERE/scenecheck.sh" \
+     A1_accel_8mean F1_fourier_edge R1_rot_const >"$W/scenechk.log" 2>&1 &&
+   [ "$(grep -c 'exact -- bit-identical' "$W/scenechk.log")" = 3 ]; then
+  ok "analytic scenes are exact ground truth at both rates"
+else
+  bad "scenecheck.sh failed or a scene stopped being exact"
+  note "$(grep -E 'quantised|FAIL|NO OUTPUT' "$W/scenechk.log" | head -2)"
+fi
+
+# ---------------------------------------------------------------------------
 printf '\n\033[1m== %d passed, %d failed\033[0m\n' "$pass" "$fail"
 [ "$fail" = 0 ] || exit 1

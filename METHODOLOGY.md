@@ -286,6 +286,8 @@ Vulkan and needs no GPU and, for the synthetic half, no source video at all.
 | `prospect.sh` / `prospect.py` | Scans source material and ranks moments most likely to hide a defect, so a human reviews a shortlist instead of a whole film. Emits a ready-to-run `clip.sh` line for each candidate. |
 | `clip.sh` | Cuts a frame-exact, lossless clip addressed by TIME rather than frame number, and verifies what it produced. |
 | `gen_variational.py` | Generates the production shader from the base. Takes iteration counts, median counts and parameters as arguments, which is what makes exhaustive variant sweeps affordable. |
+| `tieprobe.sh` / `tieprobe.py` | Perturbs every argmin cost by a few ULP and counts the output frames that then disagree -- how much of the result is decided by arithmetic noise rather than by the image. Exists because a bit-reproducible platform cannot otherwise measure this at all: re-running proves nothing when nothing perturbs the comparison. Reports both frame counts and worst-case dB, because a single flipped texel and a wrongly-warped frame are not the same finding. |
+| `scenecheck.sh` | Asserts the property the whole synthetic ladder rests on: that a scene's 60fps render really is exact ground truth for its 24fps one. Nothing else enforces it -- a scene that quietly depends on frame index still renders happily and still yields a full table of confident, meaningless numbers. Run it after adding or editing a scene. It found that `overlay` snaps its object to an even pixel, which puts an accuracy floor under every scene built that way. |
 
 ### Outside the repository: the WSL working set
 

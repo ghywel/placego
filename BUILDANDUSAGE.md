@@ -345,10 +345,27 @@ check ordering with `vulkaninfo --summary`). It reduced the worst per-frame
 deviation from 39.11 dB to 1.80 dB -- twenty times better, though still not
 clean. It is slower, but this is a correctness instrument, not a timing one.
 
-The tie sensitivity itself is tracked as a roadmap item rather than as a
-macOS caveat, since it is a property of the search rather than of this
-platform -- see "Deterministic tie-breaking in the block match" in
-[ROADMAP.md](../ROADMAP.md).
+**The amplifier has since been fixed -- but not yet verified here.** The
+argmin now requires a candidate to beat the incumbent by a relative
+`TIE_MARGIN` before displacing it, which stops a near-tie being decided by the
+last bits. It was implemented and measured on Windows, where a reproducible
+baseline exists to verify against, using a deliberate perturbation in place of
+this platform's free one: `tests/tieprobe.sh`, documented in
+[tests/TESTING.md](tests/TESTING.md). At one float32 ULP it takes the base
+shader from 56 noise-decided frames in 240 to 0, and the production shader
+from 138 to 3 cosmetic ones, for at most 0.02 dB on the ground-truth ladder.
+
+**What that does NOT establish is the macOS result**, and the tables above
+have deliberately not been re-run or amended. The fix defends against
+perturbation of arithmetic size -- summation order, a different compiler. If
+MoltenVK's nondeterminism is that small, the 9--14 ruined frames above should
+collapse to roughly nothing; if it is coarser, they will not, and that is a
+genuinely useful thing to learn since it would rule out a whole class of
+cause. **Re-running the framemd5 tables on this platform is the outstanding
+stress test.** It is the only environment here that perturbs the inputs
+enough to exercise the tie-breaking at all, which is why it is worth doing
+rather than assuming. Until it has been run, treat the macOS numbers above as
+current.
 
 **Practical consequence:** do not tune a parameter against macOS numbers, and
 do not compare a macOS figure against a Linux or Windows one -- the difference

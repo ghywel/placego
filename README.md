@@ -121,10 +121,9 @@ the patch.
 - **Startup frame-hold.** Before enough real frames exist to fill a hook's declared
   window, output falls back to libplacebo's own zero-order-hold behavior
   -- the same single decoded frame held across several consecutive output
-  frames until the next one arrives. For the common 2-frame case this is
-  one or two held frames. A wider window needs proportionally more lead-in (confirmed on
-  real hardware: a 4-frame window held frames 2-4 of a clip before real
-  output took over on frame 5)
+  frames until the next one arrives. A wider window needs proportionally
+  more lead-in (confirmed on real hardware: a 4-frame window held frames
+  2-4 of a clip before real output took over on frame 5) 
 - **`PL_FRAME_MIX_MAX` (8) is a hard ceiling.** Not runtime-configurable;
   raising it means patching the constant and rebuilding. Chosen as
   generous headroom over realistic use (the shaders in this directory

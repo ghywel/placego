@@ -105,6 +105,12 @@ behind.
 They worked, and the reasoning that produced them was sound and is worth
 reading. They are superseded because the variational cascade solves the same
 problem as a consequence of a more general mechanism, and does more besides.
+
+They also did **not** get the `TIE_MARGIN` tie-breaking fix, deliberately:
+they are kept as a record of what was tried, not as builds anyone should run,
+and changing them would make them a worse record without making them useful.
+So their argmins can still be decided by arithmetic noise. That is one more
+reason not to use them, and it is not an oversight to fix.
 **Their file headers still contain stale claims** -- `diffuse-dual` describes
 itself as "the highest-quality variant measured", which was true when written
 and is not now. They are also stale in the code, not just the comments: both
@@ -249,6 +255,17 @@ application of that fact.
 **3. Refine, level by level.** E, Q and H each take the level above as a
 seed and search only a small neighbourhood around it. The fine levels supply
 detail; they cannot supply reach, which is why step 2 exists.
+
+Every one of these searches -- and every vector median below -- selects an
+**argmin**, and each requires a candidate to beat the incumbent by a relative
+`TIE_MARGIN` before displacing it. Without that, a near-tie on a flat cost
+surface is decided by whichever candidate rounds lower, so a motion vector can
+flip on arithmetic noise and take the whole warp with it. Preferring the
+incumbent is also the right answer on the merits: it is the coarse level's
+estimate at a refine level, and zero motion at the coarsest, which is the same
+conservative direction the magnitude regularisation already argues for. The
+value is measured rather than assumed, and larger is *not* safer -- see
+tests/TESTING.md, and `tests/tieprobe.sh` for how to re-measure it.
 
 **4. Regularise.** In the variational build, each level runs its Horn-Schunck
 iterations and then a vector median, in that order, so the neighbourhood

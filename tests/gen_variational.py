@@ -174,13 +174,21 @@ vec4 hook() {{
     // The vector median is the candidate minimising total distance to all the
     // others -- a joint choice over (x,y), not two independent scalar medians,
     // which could otherwise invent a vector no neighbour actually voted for.
+    //
+    // TIE_MARGIN: deterministic tie-breaking, the same mechanism and the same
+    // reasoning as the block match's -- see the base shader's coarse A->B
+    // search. It matters here too: where several of the nine candidates agree,
+    // their totals are near-tied, so without a margin a rounding difference
+    // decides between two equal-sized clusters that disagree. The incumbent is
+    // the first candidate in a fixed scan order.
+    const float TIE_MARGIN = 1.0e-4;
     float best_cost = 1e30;
     vec2 best = v[4];
     for (int i = 0; i < 9; i++) {{
         float cost = 0.0;
         for (int j = 0; j < 9; j++)
             cost += length(v[i] - v[j]);
-        if (cost < best_cost) {{
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {{
             best_cost = cost;
             best = v[i];
         }}
