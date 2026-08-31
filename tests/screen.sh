@@ -24,9 +24,23 @@ mkdir -p "$T"
 
 printf "%8s %10s %12s  %s\n" "start" "held/71" "median dB" "verdict"
 for s in $CANDS; do
-  "$FFMPEG" -y -hide_banner -loglevel error -ss "$s" -t 3 -i "$SRC" -map 0:v:0 \
-    -filter_complex "[0:v]split=2[x][y];[x]select='gte(n\,1)',setpts=N/TB,format=yuv420p[a];[y]select='lt(n\,71)',setpts=N/TB,format=yuv420p[b];[a][b]psnr=stats_file=$T/d_$s.log[o]" \
-    -map "[o]" -f null - 2>/dev/null || continue
+  # Run FROM $T with a BARE stats filename. stats_file= is a path inside a
+  # filter argument, and MSYS2 does not path-convert inside filter strings --
+  # so a POSIX path here reaches a native ffmpeg.exe that cannot open it, no
+  # log is written, and the reader below finds nothing and prints nothing.
+  # This script therefore emitted a header and zero rows for every input on
+  # Windows, which looks like "no segments qualified" rather than a failure.
+  # Same bug realbench.sh had in two places. Found 2026-08-31.
+  if ! ( cd "$T" && "$FFMPEG" -y -hide_banner -loglevel error -ss "$s" -t 3 -i "$SRC" -map 0:v:0 \
+      -filter_complex "[0:v]split=2[x][y];[x]select='gte(n\,1)',setpts=N/TB,format=yuv420p[a];[y]select='lt(n\,71)',setpts=N/TB,format=yuv420p[b];[a][b]psnr=stats_file=d_$s.log[o]" \
+      -map "[o]" -f null - ) 2>"$T/e_$s.txt"; then
+    printf "%8s %10s %12s  %s\n" "$s" "-" "-" "RENDER FAILED (see $T/e_$s.txt)"
+    continue
+  fi
+  if [ ! -s "$T/d_$s.log" ]; then
+    printf "%8s %10s %12s  %s\n" "$s" "-" "-" "NO STATS LOG -- check $T/e_$s.txt"
+    continue
+  fi
   python3 - "$s" "$T" <<'PY'
 import sys, os, re, statistics
 s, T = sys.argv[1], sys.argv[2]

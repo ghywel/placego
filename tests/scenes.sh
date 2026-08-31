@@ -79,60 +79,139 @@ _blob() {
   echo "nullsrc=s=1280x720:r=$r:d=1,format=gray,geq=lum='$PRE\;30+190*clip(($E-hypot(ld(2)\,ld(3)))/2\,0\,1)',format=yuv420p"
 }
 
+# The blob again, with a TEXTURED interior riding the body frame. _blob's
+# PRE already computes object-frame coordinates u = ld(2), v = ld(3), so a
+# texture written in them rotates and translates WITH the body -- which is
+# the whole point: R2 measured the field on a rotating FLAT blob at >130%
+# vector error, and that confounds two suspects (rotation itself vs the
+# aperture problem on its texture-free boundary). This interior is TEX_M2
+# in body coordinates; if the field reads well here, the aperture was the
+# killer and rotation per se is fine -- the same control-scene move that
+# separated jerk from magnitude.
+_blobt() {
+  local CX=$1 CY=$2 TH=$3 R=$4 r=$5
+  local PRE="st(0\,cos($TH))\;st(1\,sin($TH))\;st(2\,(X-($CX))*ld(0)+(Y-($CY))*ld(1))\;st(3\,(0-(X-($CX)))*ld(1)+(Y-($CY))*ld(0))\;st(4\,atan2(ld(3)\,ld(2)))"
+  local E="$R*(1+0.1200*cos(3*ld(4)+0.7)+0.0720*cos(5*ld(4)+2.1)+0.0450*cos(8*ld(4)+4.3)+0.0277*cos(13*ld(4)+1.2)+0.0171*cos(21*ld(4)+5.6)+0.0106*cos(34*ld(4)+3.4))"
+  local TEXB="128+110*sin(ld(2)/6.366)*sin(ld(3)/6.366)"
+  echo "nullsrc=s=1280x720:r=$r:d=1,format=gray,geq=lum='$PRE\;30+(($TEXB)-30)*clip(($E-hypot(ld(2)\,ld(3)))/2\,0\,1)',format=yuv420p"
+}
+
+# ---------------------------------------------------------------------
+# EXACT-COVERAGE RECTANGLES.
+#
+# Pixel X spans [X, X+1). A rectangle spanning [x0, x0+w) covers
+#
+#     clip(min(x0+w, X+1) - max(x0, X), 0, 1)
+#
+# of it, and the same in Y. That product is EXACT box-filter area sampling,
+# not a cosmetic soft edge, and the distinction is the whole point:
+#
+#   - At an INTEGER position it is 0 or 1 everywhere, so it reproduces a
+#     hard-edged rectangle exactly -- no softening, no anti-aliased fringe
+#     where there should not be one.
+#   - At a FRACTIONAL position it is what an ideal renderer would produce.
+#     The 60fps ground truth therefore stops being snapped to a whole even
+#     pixel, which is what it was doing until 2026-08-31.
+#
+# The 24fps SOURCE frames are almost unchanged by this, and where they do
+# change the new one is right. Verified frame by frame against the old
+# scenes: of 24 source frames, most are byte-identical, and the ones that
+# differ are the frames where the old scene put the object in the WRONG
+# PLACE. L1 frame 14 is the worked example -- the true left edge is
+# 8*14 = 112, the old scene rendered it at 110, this one renders it at 112.
+# The cause is in TESTING.md: 14*(1/24) lands a ULP below 7/12, 192*t comes
+# out at 111.99999999999998579, and overlay truncated and then snapped that
+# to an even pixel. So the old ladder had occasional wrong INPUTS as well as
+# a systematically wrong target, which is the full reason the numbers were
+# reset rather than merely improved.
+#
+# Two cases change more than that, both expected: L9, whose positions are
+# genuinely fractional at odd source frames and were being snapped, and M1,
+# whose texture had to be replaced (see below).
+#
+# Object-local coordinates are ld(0), ld(1) -- an interior texture must
+# translate WITH the object, so it is evaluated at (X-x0, Y-y0) and not at
+# (X, Y). Coverage is ld(2).
+# ---------------------------------------------------------------------
+_rect() {   # <x0> <y0> <w> <h> <bg-gray> <obj-expr using ld(0),ld(1)> <rate>
+  local X0=$1 Y0=$2 W=$3 H=$4 BG=$5 OBJ=$6 r=$7
+  local CX="clip(min(($X0)+$W\,X+1)-max(($X0)\,X)\,0\,1)"
+  local CY="clip(min(($Y0)+$H\,Y+1)-max(($Y0)\,Y)\,0\,1)"
+  local PRE="st(0\,X-($X0))\;st(1\,Y-($Y0))\;st(2\,$CX*$CY)"
+  echo "nullsrc=s=1280x720:r=$r:d=1,format=gray,geq=lum='$PRE\;($BG)+(($OBJ)-($BG))*ld(2)',format=yuv420p"
+}
+
+# Gray values are the ORIGINAL colours' RGB bytes, not invented ones: gray g
+# becomes Y = 16 + g*219/255 through format=yuv420p, so writing 255 here
+# gives the same Y=235 that color=c=white did, 128 gives 0x808080's Y=126,
+# and 48/60/51/160 give 0x303030/0x3c3c3c/0x333333/0xa0a0a0. Measured from
+# the pre-rewrite scenes rather than assumed.
+
 scene() {
-  local CASE=$1 r=$2 W=1280 H=720 DUR=1
-  local BG="color=c=black:s=${W}x${H}:r=$r:d=$DUR"
+  local CASE=$1 r=$2
+
+  # The texture cases share one object and one motion, so only the interior
+  # expression differs -- see "the texture series" in TESTING.md.
+  local TEX_L7='128+110*sin(ld(0)/2.5)*sin(ld(1)/2.5)'
+  local TEX_M2='128+110*sin(ld(0)/6.366)*sin(ld(1)/6.366)'
+  local TEX_M3='128+110*sin(ld(0)/2.546)*sin(ld(1)/2.546)'
+  # M1's texture was a floor()-quantised hash before this rewrite. It had to
+  # change, and it is the only content change here: a texture quantised to a
+  # 4px grid CANNOT be translated to a fractional position -- floor() would
+  # snap it back to whole pixels and reintroduce, inside the object, exactly
+  # the quantisation this rewrite removes from its boundary. Replaced with a
+  # sum of five sines at incommensurate frequencies: still aperiodic with no
+  # repeat, which is M1's actual job in the texture series, but band-limited
+  # (shortest period 4.6px, comfortably above Nyquist) so it translates
+  # exactly. Amplitude matches the old +-110 range.
+  local TEX_M1='128+22*(sin(0.15*ld(0)+0.09*ld(1))+sin(0.28*ld(0)-0.21*ld(1))+sin(0.51*ld(0)+0.44*ld(1))+sin(0.83*ld(0)-0.97*ld(1))+sin(1.21*ld(0)+0.64*ld(1)))'
+
   case "$CASE" in
 
     # ---- L0: no motion. Must be a perfect passthrough. -------------------
-    L0_static)
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x=400:y=310:shortest=1,format=yuv420p" ;;
+    L0_static)      _rect '400'     '310' 100 100 0 255 "$r" ;;
 
     # ---- L1-L4: pure horizontal translation, sharp high-contrast edges.
     # The velocity ladder: well under the search ceiling, one coarse texel,
     # at the ceiling, and deliberately past it. ---------------------------
-    L1_trans_8px)   # 8px/frame
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='192*t':y=310:shortest=1,format=yuv420p" ;;
-    L2_trans_16px)  # 16px/frame = exactly one coarse-level texel
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t':y=310:shortest=1,format=yuv420p" ;;
-    L3_trans_23px)  # 23px/frame = at the computed coarse-search ceiling
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='552*t':y=310:shortest=1,format=yuv420p" ;;
-    L4_trans_40px)  # 40px/frame = deliberately beyond it
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='960*t':y=310:shortest=1,format=yuv420p" ;;
+    L1_trans_8px)   _rect '192*T'   '310' 100 100 0 255 "$r" ;;   # 8px/frame
+    L2_trans_16px)  _rect '384*T'   '310' 100 100 0 255 "$r" ;;   # 16 = one coarse texel
+    L3_trans_23px)  _rect '552*T'   '310' 100 100 0 255 "$r" ;;   # 23 = the search ceiling
+    L4_trans_40px)  _rect '960*T'   '310' 100 100 0 255 "$r" ;;   # 40 = beyond it
 
     # ---- L5: L2's motion, but the object is barely brighter than the
     # background (12/255 = 0.047, above the shader's MIN_CONTRAST of 0.02).
-    L5_lowcontrast)
-      echo "color=c=0x303030:s=${W}x${H}:r=$r:d=$DUR[bg];color=c=0x3c3c3c:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t':y=310:shortest=1,format=yuv420p" ;;
+    L5_lowcontrast) _rect '384*T'   '310' 100 100 48 60 "$r" ;;
 
     # ---- L6-L7 / M1-M3: the texture series. IDENTICAL 300x300 object,
     # IDENTICAL 16px/frame motion -- only the interior texture differs.
     # This is the controlled experiment that isolates what the motion
     # search can and cannot resolve. --------------------------------------
-    L6_flat_large)      # no interior texture at all
-      echo "$BG[bg];color=c=0x808080:s=300x300:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
-    L7_textured_large)  # periodic, period 15.7px ~= the motion
-      echo "$BG[bg];nullsrc=s=300x300:r=$r:d=$DUR,format=gray,geq=lum='128+110*sin(X/2.5)*sin(Y/2.5)',format=yuv420p[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
-    M1_noise_large)     # aperiodic blocky noise: rich texture, no repeat
-      echo "$BG[bg];nullsrc=s=300x300:r=$r:d=$DUR,format=gray,geq=lum='mod(floor(abs(sin(floor(X/4)*12.9898+floor(Y/4)*78.233))*43758.5453),256)',format=yuv420p[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
-    M2_period40)        # periodic, period 40px: unambiguous
-      echo "$BG[bg];nullsrc=s=300x300:r=$r:d=$DUR,format=gray,geq=lum='128+110*sin(X/6.366)*sin(Y/6.366)',format=yuv420p[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
-    M3_period16_trap)   # periodic, period EXACTLY the motion: worst case
-      echo "$BG[bg];nullsrc=s=300x300:r=$r:d=$DUR,format=gray,geq=lum='128+110*sin(X/2.546)*sin(Y/2.546)',format=yuv420p[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
+    L6_flat_large)     _rect '384*T' '210' 300 300 0 128        "$r" ;;
+    L7_textured_large) _rect '384*T' '210' 300 300 0 "$TEX_L7"  "$r" ;;  # period 15.7px ~= motion
+    M1_noise_large)    _rect '384*T' '210' 300 300 0 "$TEX_M1"  "$r" ;;  # aperiodic, no repeat
+    M2_period40)       _rect '384*T' '210' 300 300 0 "$TEX_M2"  "$r" ;;  # period 40px: unambiguous
+    M3_period16_trap)  _rect '384*T' '210' 300 300 0 "$TEX_M3"  "$r" ;;  # period == motion: worst case
 
     # ---- M4: contrast BELOW the shader's MIN_CONTRAST gate (3/255 =
     # 0.0118), unlike L5 which sits above it. Tests the gate itself.
-    M4_belowgate)
-      echo "color=c=0x303030:s=${W}x${H}:r=$r:d=$DUR[bg];color=c=0x333333:s=300x300:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
+    M4_belowgate)   _rect '384*T'   '210' 300 300 48 51 "$r" ;;
 
     # ---- L8: diagonal motion, to catch axis asymmetry in the search. -----
-    L8_diagonal)
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t':y='216*t':shortest=1,format=yuv420p" ;;
+    L8_diagonal)    _rect '384*T'   '216*T' 100 100 0 255 "$r" ;;
 
     # ---- L9: two objects crossing in opposite directions -> genuine
     # occlusion, which the forward/backward consistency check must handle.
+    # Composited in the same order the old overlay pair used, so the grey
+    # box passes in front of the white one.
+    #
+    # Note this case's SOURCE frames change with the rewrite, unlike every
+    # other one: 300+300*t is not an integer at odd source frames, so the
+    # old scene was snapping them and the new one places them exactly.
     L9_occlusion)
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[b1];color=c=0xa0a0a0:s=100x100:r=$r:d=$DUR[b2];[bg][b1]overlay=x='300+300*t':y=310:shortest=1[s1];[s1][b2]overlay=x='900-300*t':y=310:shortest=1,format=yuv420p" ;;
+      local CA="clip(min((300+300*T)+100\,X+1)-max((300+300*T)\,X)\,0\,1)*clip(min(310+100\,Y+1)-max(310\,Y)\,0\,1)"
+      local CB="clip(min((900-300*T)+100\,X+1)-max((900-300*T)\,X)\,0\,1)*clip(min(310+100\,Y+1)-max(310\,Y)\,0\,1)"
+      echo "nullsrc=s=1280x720:r=$r:d=1,format=gray,geq=lum='st(0\,$CA)\;st(1\,$CB)\;st(2\,255*ld(0))\;ld(2)+(160-ld(2))*ld(1)',format=yuv420p" ;;
 
     # ---- A1-A3: ACCELERATION. Every case above moves at a constant
     # velocity, so the block match's core assumption -- that one offset
@@ -146,22 +225,13 @@ scene() {
     # object, and start and end positions are IDENTICAL to L1/L2/L3, and the
     # velocity ramps 0 -> 2c instead of holding at c.
     #
-    # That twinning is USEFUL BUT NOT CLEAN, and the difference matters when
-    # reading a result. Two confounds, both measured rather than suspected:
-    #
-    #   1. Equal mean velocity is not equal difficulty. Error grows faster
-    #      than linearly with speed, and the ramp spends half its time below
-    #      the mean and half above, so the average of the per-frame scores is
-    #      not the score at the average speed. This can push the accelerating
-    #      case either way and did: A2 scored ABOVE its twin.
-    #   2. These are overlay scenes, so their ground truth is snapped to even
-    #      pixels, and two different velocity profiles accumulate that
-    #      snapping error differently. See F2 below for the version without
-    #      this confound, and TESTING.md for the measurement.
-    #
-    # So read A1-A3 as "does acceleration break anything dramatic, on the same
-    # object the velocity ladder uses", and read F2 minus F1 as the actual
-    # cost of acceleration.
+    # One confound remains even now that these are exact-coverage scenes,
+    # and it is not removable by construction: equal mean velocity is not
+    # equal difficulty. Error grows faster than linearly with speed, and the
+    # ramp spends half its time below the mean and half above, so the mean of
+    # the per-frame scores is not the score at the mean speed. It can push
+    # the accelerating case either way. Read a twin difference as "what
+    # acceleration costs on this trajectory", not as an isolated coefficient.
     #
     # Calibration, so a result maps onto a mechanism. Over one 24fps source
     # interval the true mid-frame position and the linear interpolation of
@@ -173,12 +243,36 @@ scene() {
     # nothing: it is ~10% of full contrast on the boundary texel.
     #
     # Motion stays a pure function of t, so ground truth is exact as always.
-    A1_accel_8mean)   # ramps 0->16px/frame, mean 8   -- twin of L1
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='192*t*t':y=310:shortest=1,format=yuv420p" ;;
-    A2_accel_16mean)  # ramps 0->32px/frame, mean 16  -- twin of L2
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='384*t*t':y=310:shortest=1,format=yuv420p" ;;
-    A3_accel_23mean)  # ramps 0->46px/frame, mean 23  -- twin of L3
-      echo "$BG[bg];color=c=white:s=100x100:r=$r:d=$DUR[bx];[bg][bx]overlay=x='552*t*t':y=310:shortest=1,format=yuv420p" ;;
+    A1_accel_8mean)  _rect '192*T*T' '310' 100 100 0 255 "$r" ;;  # 0->16px/f, mean 8  -- twin of L1
+    A2_accel_16mean) _rect '384*T*T' '310' 100 100 0 255 "$r" ;;  # 0->32px/f, mean 16 -- twin of L2
+    A3_accel_23mean) _rect '552*T*T' '310' 100 100 0 255 "$r" ;;  # 0->46px/f, mean 23 -- twin of L3
+
+    # ---- A4-A7: CONSTANT ACCELERATION, TEXTURED, IN THE BAND REAL FOOTAGE
+    # OCCUPIES. A1-A3 above have exactly the right magnitudes but a FLAT
+    # interior, so the flow -- and therefore the acceleration field -- exists
+    # only on their perimeter: measured coverage 2-15%, with the readings that
+    # do appear saturating the encoding. They cannot calibrate the field, for
+    # the same reason O1-O3 could not and O5 had to be built.
+    #
+    # These are their textured twins, and they close the one real gap in the
+    # ground truth: real footage measures mean |a| 0.55-1.5 px/interval^2,
+    # which is precisely where the field is known to be least reliable and
+    # where, until these, nothing textured existed to measure it against.
+    #
+    # x = X0 - 24V*T + 24V*T^2, so velocity sweeps LINEARLY from -V to +V
+    # px/frame and acceleration is a constant 2C/fps^2 = V/12. Two properties
+    # that matter:
+    #   - peak |velocity| is V by construction, so V <= 20 keeps the whole
+    #     scene inside the coarse search's ~23px/frame reach. A1-A3 do not
+    #     have this property (A3 ends at 46px/f), so their later frames
+    #     confound a reach failure with an acceleration failure.
+    #   - velocity passes through ZERO mid-scene: a genuine reversal, which
+    #     is the case the round-trip trust gate exists to separate from
+    #     occlusion. These exercise it against known truth for the first time.
+    A4_accel_tex_a033) _rect '400-96*T+96*T*T'   '210' 300 300 0 "$TEX_M2" "$r" ;;  # a=0.333, v -4..+4
+    A5_accel_tex_a067) _rect '400-192*T+192*T*T' '210' 300 300 0 "$TEX_M2" "$r" ;;  # a=0.667, v -8..+8
+    A6_accel_tex_a133) _rect '400-384*T+384*T*T' '210' 300 300 0 "$TEX_M2" "$r" ;;  # a=1.333, v -16..+16
+    A7_accel_tex_a167) _rect '400-480*T+480*T*T' '210' 300 300 0 "$TEX_M2" "$r" ;;  # a=1.667, v -20..+20
 
     # ---- F1: irregular boundary, otherwise L6. Same flat interior, same
     # 16px/frame translation, same ~300px object -- only the boundary
@@ -228,15 +322,88 @@ scene() {
     R2_rot_accel)
       _blob '640' '360' '2.56*T*T' 150 "$r" ;;
 
+    # R3: R2's rotation exactly, textured interior. The discriminating
+    # control for the R2 failure -- see _blobt above.
+    R3_rot_tex)
+      _blobt '640' '360' '2.56*T*T' 150 "$r" ;;
+
+    # ---- O1-O3: OSCILLATION -- the tridirectional shader's test ladder.
+    #
+    # Why oscillation and not a stronger linear ramp: the quadratic
+    # correction a 3-frame shader can apply peaks at a/8 px mid-interval
+    # (a in px/interval^2), but a linear ramp changes velocity by a px/frame
+    # every frame, so any a big enough to matter (>= ~4, for half a pixel)
+    # drives the object past the ~23px/frame search reach within about
+    # three frames. It cannot be sustained. x = A*sin(w*t) sustains high
+    # acceleration indefinitely at bounded velocity -- and it is also the
+    # camera-vibration / pan-jitter regime, which is the real-world content
+    # class where constant-velocity placement is systematically wrong.
+    #
+    # Calibration (v_peak = A*w/24 px/frame, a_peak = A*w^2/576 px/int^2,
+    # mid-frame placement error = a_peak/8):
+    #
+    #   case  A(px)  f(Hz)  v_peak  a_peak  mid-err  quadratic validity
+    #   O1     40    1.0     10.5     2.7    0.34px  clean (cubic term ~0.1px)
+    #   O2     20    2.5     13.1     8.6    1.07px  partial (cubic ~0.9px)
+    #   O3     12    4.0     12.6    13.2    1.64px  model edge (cubic > 2px,
+    #                                               6 samples/period)
+    #
+    # All three keep v_peak comfortably under the search ceiling, so any
+    # failure is about PLACEMENT, not reach. O3 is deliberately at the edge
+    # of what a quadratic (constant-acceleration) model can represent: a
+    # win there was never promised by the hypothesis.
+    O1_osc_gentle) _rect '600+40*sin(6.2832*T)'  '310' 100 100 0 255 "$r" ;;
+    O2_osc_medium) _rect '600+20*sin(15.708*T)'  '310' 100 100 0 255 "$r" ;;
+    O3_osc_hard)   _rect '600+12*sin(25.133*T)'  '310' 100 100 0 255 "$r" ;;
+
+    # ---- O4/O5: the same oscillation on a LARGE object, flat and textured.
+    #
+    # O1-O3 are flat 100x100 boxes, which is the worst possible content for
+    # measuring acceleration and was chosen before that was understood. A
+    # flat object has no matchable texture in its interior, so the flow field
+    # is non-zero only at its edges -- and the edges are exactly where the
+    # anchor's two flows fail to cancel (occlusion), which is where an
+    # acceleration estimate is meaningless. All signal and all noise land in
+    # the same texels. See TRIDIRECTIONAL.md, "the current blocker".
+    #
+    # O5 puts interior texture 150px from the nearest boundary, so the
+    # estimate can be read somewhere occlusion cannot reach. O4 is its
+    # control: identical size and motion, flat fill, so O5 minus O4 isolates
+    # interior texture exactly the way L6/L7/M1/M2/M3 isolate it for the
+    # velocity ladder.
+    #
+    # Motion is O2's throughout (A=20px, 2.5Hz: v_peak 13.1 px/frame,
+    # a_peak 8.6 px/int^2, 1.07px mid-frame placement error), so O4/O5 are
+    # also directly comparable to O2 and differ from it only in object size.
+    # Texture is M2's period-40px sine product: unambiguous against a 13px
+    # travel distance, and band-limited so it translates exactly.
+    O4_osc_flat300)     _rect '600+20*sin(15.708*T)' '210' 300 300 0 128       "$r" ;;
+    O5_osc_textured)    _rect '600+20*sin(15.708*T)' '210' 300 300 0 "$TEX_M2" "$r" ;;
+
+    # ---- O6: the JERK CONTROL for O5, and the only way to separate two
+    # things a single sinusoid confounds by construction.
+    #
+    # In x = A*sin(w*t) the acceleration is -A*w^2*sin(w*t) and the jerk is
+    # -A*w^3*cos(w*t), so |a| is SMALL exactly where jerk is LARGEST (the zero
+    # crossing) and largest where jerk vanishes (the peak). Every low-|a|
+    # sample in O5 is therefore also a maximum-jerk sample, and the observed
+    # error there cannot be attributed to magnitude without a control.
+    #
+    # O6 has the same texture, same object size and same peak |a| band as O5's
+    # low samples, but A*w^3 is 7.8x smaller (40*6.2832^3 against
+    # 20*15.708^3). So at a MATCHED |a| ~ 2.2 the two scenes sit at opposite
+    # ends of the jerk range: O6 near its peak, O5 near its crossing. That is
+    # the controlled comparison.
+    #
+    # Peak |a| = 40*6.2832^2/576 = 2.74 px/interval^2; peak velocity 10.5px/f,
+    # comfortably inside the coarse search's reach.
+    O6_osc_tex_gentle)  _rect '600+40*sin(6.2832*T)' '210' 300 300 0 "$TEX_M2" "$r" ;;
+
     *) echo "UNKNOWN_CASE"; return 1 ;;
   esac
 }
 
-ALL_CASES="L0_static L1_trans_8px L2_trans_16px L3_trans_23px L4_trans_40px \
-L5_lowcontrast L6_flat_large L7_textured_large M1_noise_large M2_period40 \
-M3_period16_trap M4_belowgate L8_diagonal L9_occlusion \
-A1_accel_8mean A2_accel_16mean A3_accel_23mean \
-F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel"
+ALL_CASES="L0_static L1_trans_8px L2_trans_16px L3_trans_23px L4_trans_40px L5_lowcontrast L6_flat_large L7_textured_large M1_noise_large M2_period40 M3_period16_trap M4_belowgate L8_diagonal L9_occlusion A1_accel_8mean A2_accel_16mean A3_accel_23mean F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel O1_osc_gentle O2_osc_medium O3_osc_hard O4_osc_flat300 O5_osc_textured A4_accel_tex_a033 A5_accel_tex_a067 A6_accel_tex_a133 A7_accel_tex_a167 O6_osc_tex_gentle R3_rot_tex"
 
 # The six added 2026-08-31 are in ALL_CASES deliberately rather than in a
 # group of their own: a case that is not run by default is a case that rots.
@@ -245,7 +412,19 @@ F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel"
 # rectangle overlay. Their rows are additive, so every historical number for
 # the fourteen cases above remains directly comparable.
 ACCEL_CASES="A1_accel_8mean A2_accel_16mean A3_accel_23mean"
+# The textured constant-acceleration twins and the jerk control, added
+# 2026-08-31. A1-A3 carry the right magnitudes but a FLAT interior, so the
+# acceleration field exists only on their perimeter -- measured coverage
+# 2-15%, with the few readings saturating the encoding -- and they cannot
+# calibrate it. These carry TEX_M2, hold |velocity| inside the coarse search's
+# reach, and pass through a genuine reversal, which is the case the round-trip
+# trust gate exists to separate from occlusion. O6 is the JERK CONTROL for O5:
+# same texture, same object, same peak-|a| band, 7.8x less jerk -- the only way
+# to separate magnitude from rate-of-change, which one sinusoid welds together
+# by construction.
+FIELD_CASES="A4_accel_tex_a033 A5_accel_tex_a067 A6_accel_tex_a133 A7_accel_tex_a167 O6_osc_tex_gentle"
 SHAPE_CASES="F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel"
+OSC_CASES="O1_osc_gentle O2_osc_medium O3_osc_hard O4_osc_flat300 O5_osc_textured"
 #
 # GAP THESE FILL: every scene in the original ladder puts the moving object
 # on a FLAT BLACK background. That hides exactly the failure real content

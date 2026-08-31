@@ -10,6 +10,7 @@ algorithm that render what the estimator is thinking instead of the picture,
 and **two small examples** that exist to demonstrate the hook rather than to
 interpolate anything.
 
+For the tools that measure all this, start at [tests/TOOLS.md](tests/TOOLS.md).
 For how any of this was arrived at, see [METHODOLOGY.md](METHODOLOGY.md); for
 the measurements behind the claims, [tests/TESTING.md](tests/TESTING.md).
 
@@ -36,7 +37,7 @@ The lineage is strictly additive, and the two branches are alternatives to
 each other rather than steps in one line:
 
 ```
-bidirectional-interpolation.glsl            23 passes   the base
+bidirectional-interpolation.glsl            24 passes   the base (N = 2)
   |
   +-- -diffuse-coarse.glsl                  31   base + coarse flow diffusion
   |     |                                        (SUPERSEDED)
@@ -44,9 +45,27 @@ bidirectional-interpolation.glsl            23 passes   the base
   |                                              (SUPERSEDED)
   |
   +-- -variational.glsl                    115   base + variational cascade
-                                                 + coarse vector medians
-                                                 (RECOMMENDED, generated)
+  |                                              + coarse vector medians
+  |                                              (RECOMMENDED for viewing,
+  |                                              generated)
+  |
+  +-- tridirectional-interpolation.glsl     48   N = 3: + acceleration field
+  |                                              + quadratic placement
+  |                                              (EXPERIMENTAL, generated --
+  |                                              see TRIDIRECTIONAL.md)
+  |
+  +-- quaddirectional-interpolation.glsl    68   N = 4: + jerk field
+                                                 + cubic placement
+                                                 + measured confidence
+                                                 (EXPERIMENTAL, generated --
+                                                 see QUADDIRECTIONAL.md)
 ```
+
+The N = 3 and N = 4 builds are the *n-frame temporal analysis* line: their
+product is the per-texel motion field (velocity, acceleration and -- at
+N = 4 -- jerk), with interpolation as the corollary. Both regenerate from
+the base via `tests/gen_tridirectional.py` / `tests/gen_quaddirectional.py`
+and inherit every base fix on regeneration.
 
 ### `bidirectional-interpolation.glsl` -- the base, 23 passes
 
@@ -112,11 +131,16 @@ and changing them would make them a worse record without making them useful.
 So their argmins can still be decided by arithmetic noise. That is one more
 reason not to use them, and it is not an oversight to fix.
 **Their file headers still contain stale claims** -- `diffuse-dual` describes
-itself as "the highest-quality variant measured", which was true when written
-and is not now. They are also stale in the code, not just the comments: both
-still carry the occlusion fallback that was removed from the base, which is
-why they now measure worse than the base and, in one case, worse than stock
-linear blending. See "Why the diffuse variants measure so badly" below.
+itself as "the highest-quality variant measured", which was written before the
+variational build existed. They are also stale in the code, not just the
+comments: both still carry the occlusion fallback that was removed from the
+base, which is why they lose on angled and fast motion, and `-diffuse-coarse`
+measures below stock linear blending on real-footage SSIM.
+
+That said, `-diffuse-dual`'s header is closer to right than it looked until
+recently: on the reset ladder it is the **best of the whole family on clean
+rigid translation**, by a wide margin. See "Why the diffuse variants measure
+badly -- and where that turned out to be wrong" below.
 
 ### Known remaining weakness: motion beyond the search reach
 
@@ -176,34 +200,77 @@ motion-compensated frame.
 | **`-variational`** | **36.31** | **0.9750** |
 
 **Synthetic ladder** (`bench.sh all`, PSNR dB of genuinely interpolated
-frames):
+frames). Re-measured 2026-08-31 after the ladder reset -- these numbers are
+**not comparable** with any published before that date, because the ladder's
+ground truth was pixel-quantised until then and suppressed absolute scores
+substantially. See `tests/TESTING.md`, "The ladder reset". Windows figures;
+the WSL/lavapipe run agrees to within 0.05 dB everywhere.
 
 | case | hold | linear | base | coarse | dual | variational |
 |---|---|---|---|---|---|---|
-| L0_static | inf | 79.43 | 79.35 | 79.35 | 79.35 | 79.35 |
-| L1_trans_8px | 32.26 | 36.45 | 41.34 | 41.06 | 42.66 | 42.35 |
-| L2_trans_16px | 30.17 | 32.04 | 38.45 | 35.97 | 37.95 | **39.89** |
-| L3_trans_23px | 28.10 | 30.51 | 39.10 | 33.51 | 36.25 | **40.08** |
-| L4_trans_40px | 25.32 | 27.96 | 31.28 | 27.42 | 27.42 | **33.75** |
-| L5_lowcontrast | 56.15 | 57.37 | 60.66 | 60.51 | 60.61 | 59.95 |
-| L6_flat_large | 31.38 | 33.38 | 40.27 | 39.44 | 40.99 | 41.15 |
-| L7_textured_large | 21.30 | 21.47 | **24.36** | 22.22 | 22.26 | 23.34 |
-| L8_diagonal | 28.13 | 30.02 | 36.75 | 32.43 | 33.71 | **37.39** |
-| L9_occlusion | 29.45 | 32.07 | 38.31 | 36.08 | 37.38 | **40.18** |
-| M1_noise_large | 19.66 | 20.65 | 26.51 | 26.27 | 26.34 | **27.41** |
-| M2_period40 | 24.68 | 27.30 | 36.84 | 37.02 | 37.89 | **38.48** |
-| M3_period16_trap | 21.23 | 21.42 | 22.15 | 23.19 | **23.20** | 22.52 |
-| M4_belowgate | 62.66 | 60.54 | 60.53 | 60.53 | 60.53 | 60.54 |
+| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
+| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 |
+| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** |
+| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** |
+| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** |
+| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 |
+| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 |
+| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 |
+| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** |
+| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** |
+| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** |
+| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 |
+| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 |
+| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 |
+| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** |
+| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** |
+| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** |
+| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** |
+| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** |
+| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** |
+| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** |
 
-The variational build wins nearly everywhere, and wins by the most on exactly
-the cases that matter: fast translation, diagonal motion, occlusion, noise.
+Every build beats stock `linear` on every case, which is the bar this harness
+exists to enforce. Beyond that, **the reset removed the simple ordering these
+numbers used to show.** The variational build no longer wins nearly
+everywhere; it wins where the *block-match model is wrong* -- rotation,
+acceleration, diagonal motion, occlusion, motion past the search ceiling --
+and loses on clean rigid translation, where flow diffusion or no smoothing at
+all does better. `L1` is the extreme case: `-diffuse-dual` reaches 76.84 dB
+against the variational build's 54.24, within 2.6 dB of the round-trip
+ceiling.
 
-### Why the diffuse variants measure so badly
+Read that as a statement about *robustness across motion types*, which is what
+a production shader needs, rather than as accuracy on any one of them. And
+read it as a lead: `tests/TESTING.md` records two anomalies in this table that
+have no measured explanation, including a 19.5 dB collapse between `L1` and
+`L2` for the base shader that is not monotonic with speed.
 
-This deserves stating plainly, because their own headers claim the opposite.
+### Why the diffuse variants measure badly -- and where that turned out to be wrong
+
 `-diffuse-coarse` scores **below stock linear blending** on real-footage SSIM
-(0.9444 against 0.9451), and both variants lose to the plain base shader
-across most of the ladder.
+(0.9444 against 0.9451). That measurement is on real footage, is unaffected by
+anything below, and stands.
+
+**The synthetic-ladder half of this section was wrong, and the 2026-08-31
+ladder reset is what showed it.** It used to say both variants "lose to the
+plain base shader across most of the ladder" and that "the one thing they
+still genuinely win is M3_period16_trap". On the reset ladder that is false
+for `-diffuse-dual`, which wins on clean rigid translation and wins big:
+**76.84 dB on `L1` against the base's 61.26 and the variational build's
+54.24**, within 2.6 dB of the round-trip ceiling. It also takes `M2_period40`
+(60.04), `L6_flat_large` (56.03) and `L9_occlusion` (40.84).
+
+The old verdict was an artifact of the measurement. The ladder's ground truth
+was pixel-quantised to 2px, which capped exactly the sub-pixel accuracy
+diffusion buys on uniform flow, so the one thing these forks are good at was
+the one thing the ladder could not see.
+
+What the reset **confirms** is the diagnosis below. `-diffuse-dual` still
+loses, and loses hardest precisely where the occlusion fallback does its
+damage: `L8_diagonal` -4.4, `L4_trans_40px` -4.2, rotation -3.1,
+`F2_fourier_accel` -5.7 against the variational build. The mechanism was
+identified correctly; only the sweeping conclusion drawn from it was wrong.
 
 They are **stale forks**. Both still contain the occlusion fallback that was
 removed from the base after every version of it measured worse than none:
@@ -221,14 +288,26 @@ translation cases suffer most.
 
 So their headers were not dishonest when written: at that time the base
 carried the same fallback, and the comparison was fair. The base has since
-moved on and they have not. The one thing they still genuinely win is
-M3_period16_trap -- the correspondence-ambiguity case they were built for --
-which is a fair record of the idea being sound even though the files are not.
+moved on and they have not. They still win `M3_period16_trap`, the
+correspondence-ambiguity case they were built for, which was always a fair
+record of the idea being sound even though the files are not -- and since the
+reset, they win a good deal more than that.
 
-Given they are superseded by a better mechanism and currently measure worse
-than doing nothing, the reasonable options are to delete them or to
-regenerate them from the current base. They are kept for now as a record of
-the reasoning, which remains worth reading.
+**So the recommendation has changed.** Deleting them is no longer one of the
+reasonable options. Regenerating `-diffuse-dual` from the current base --
+keeping the diffusion, dropping the occlusion fallback the base already
+removed -- is now a well-motivated experiment with a specific prediction
+attached: it should keep the clean-translation wins that the fallback is not
+responsible for, and give up the angled- and fast-motion losses that it is.
+Whether diffusion and the variational cascade compose, or whether they are two
+answers to the same question, is unmeasured and is the more interesting
+version of the question.
+
+Until someone runs that, they remain **not for production use** -- stale
+forks, carrying a fallback measured worse than none, and without the
+`TIE_MARGIN` fix. What has changed is the reason to keep them: not merely as a
+record of reasoning, but because the mechanism in them measurably does
+something the current production shader does not.
 
 ## How the interpolator works
 

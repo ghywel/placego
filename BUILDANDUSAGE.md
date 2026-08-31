@@ -6,9 +6,24 @@ You need an `ffmpeg` linked against a **patched** libplacebo. The patch
 repository cannot run at all, because stock libplacebo never hands a custom
 shader more than one frame.
 
-No ffmpeg source changes are needed. `fps=`, frame pacing,
-`custom_shader_path` loading and `frame_mixer=` string lookup all already
-exist in `vf_libplacebo.c` unmodified. Only libplacebo is patched.
+`fps=`, frame pacing, `custom_shader_path` loading and `frame_mixer=` string
+lookup all already exist in `vf_libplacebo.c`, so for **frame-rate scaling**
+(24 -> 60 and similar) libplacebo is the only thing that needs patching.
+
+A **second, optional patch**
+([frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch)) is needed only
+for the **N:N flow-field** use case -- running the shader at the source's own
+rate to read the motion field out, rather than to insert frames. Without it
+the hook silently never fires at a matched rate: libplacebo's frame queue
+point-samples to a single frame whenever the output and input rates agree to
+within `interpolation_threshold` (default `1e-6`), and a one-frame mix cannot
+satisfy an N-frame hook. The patch lowers that threshold, and only when a
+`PL_HOOK_FRAME_MIX` hook is actually attached. See
+[TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) for the full diagnosis.
+
+Workaround if you would rather not patch ffmpeg: ask for `fps=24.0001`
+instead of `fps=24`. That clears the threshold while the two rates diverge by
+one frame only after ~240,000 frames.
 
 Three build guides follow, one per platform. They produce the same thing and
 the same shaders work on all of them -- verified by running the whole test
@@ -82,6 +97,12 @@ PKG_CONFIG_PATH="$HOME/libplacebo-install/lib/x86_64-linux-gnu/pkgconfig" \
 ./configure --enable-libplacebo --enable-vulkan --disable-doc \
     --extra-ldflags="-Wl,-rpath,$HOME/libplacebo-install/lib/x86_64-linux-gnu"
 make -j"$(nproc)"
+```
+
+For the N:N flow-field use case, apply the ffmpeg-side patch before building:
+
+```bash
+git apply /path/to/Novel-Interpolate/scripts/frame-mix-nn-threshold.patch
 ```
 
 The `-rpath` means the built binaries find `libplacebo.so` at run time without
@@ -271,6 +292,17 @@ nothing changed in between:
 | `L1_trans_8px` | 41.34, 40.16, 39.68, 38.93 | **2.41 dB** | 41.34 |
 | `L2_trans_16px` | 38.44, 38.44, 38.26, 37.48, 37.41, 37.41 | **1.03 dB** | 38.45 |
 | `L9_occlusion` | 38.31, 37.08, 36.98, 35.98 | **2.33 dB** | 38.31 |
+
+**These are PRE-RESET figures and will not reproduce.** The synthetic ladder's
+scenes were rewritten on 2026-08-31 because their ground truth was
+pixel-quantised, which moved every absolute score on the ladder substantially
+-- see "The ladder reset" in [tests/TESTING.md](tests/TESTING.md). The table
+above is kept because what it demonstrates is the *spread* between repeated
+identical runs, which is a property of the platform and remains valid. But do
+not compare a fresh macOS number against the "Linux/Windows" column here: on a
+re-run, measure a fresh Linux or Windows baseline with the current scenes and
+compare against that. The framemd5 tables further down are unaffected, since
+they compare renders to each other rather than to a ground truth.
 
 The cause was investigated on 2026-08-30. **It is not a defect in this
 project's patch or shaders**, and the flow cache -- the obvious suspect -- was

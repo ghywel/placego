@@ -267,6 +267,10 @@ even in the repository. This section is the inventory.
 
 A complete ground-truth benchmark harness. Everything here runs on software
 Vulkan and needs no GPU and, for the synthetic half, no source video at all.
+**Start at [tests/TOOLS.md](tests/TOOLS.md)** -- a one-screen index of every tool,
+the pipeline order they belong in, and the failure shape this directory keeps
+producing. The table below is the longer form.
+
 
 | file | what it does |
 |---|---|
@@ -287,6 +291,9 @@ Vulkan and needs no GPU and, for the synthetic half, no source video at all.
 | `clip.sh` | Cuts a frame-exact, lossless clip addressed by TIME rather than frame number, and verifies what it produced. |
 | `gen_variational.py` | Generates the production shader from the base. Takes iteration counts, median counts and parameters as arguments, which is what makes exhaustive variant sweeps affordable. |
 | `tieprobe.sh` / `tieprobe.py` | Perturbs every argmin cost by a few ULP and counts the output frames that then disagree -- how much of the result is decided by arithmetic noise rather than by the image. Exists because a bit-reproducible platform cannot otherwise measure this at all: re-running proves nothing when nothing perturbs the comparison. Reports both frame counts and worst-case dB, because a single flipped texel and a wrongly-warped frame are not the same finding. |
+| `gen_tridirectional.py` | Generates the experimental 3-frame `tridirectional-interpolation.glsl` from the bidirectional base -- the base pipeline plus an anchor->outer flow chain and a quadratic (constant-acceleration) warp. Generated rather than forked so base fixes propagate. See `../TRIDIRECTIONAL.md`. |
+| `accelcheck.py` | Calibrates the tridirectional shader's acceleration field against analytically known truth, in px/interval². Reads the `TRI_DIAG=2` render back at 16-bit, compares at the *fit's centre* rather than the output timestamp, and reports **coverage and conditional accuracy** rather than one average -- the field is legitimately sparse, and averaging over the texels that correctly read nothing calls a 6%-accurate field 100% wrong. |
+| `trivis.py` | Renders the tridirectional shader's velocity and acceleration fields, the placement correction in px, and the confidence gate, as four separable panels. Refuses to run on a 2-frame shader. Its own docstring argues why four panels and not an extended colour wheel. |
 | `scenecheck.sh` | Asserts the property the whole synthetic ladder rests on: that a scene's 60fps render really is exact ground truth for its 24fps one. Nothing else enforces it -- a scene that quietly depends on frame index still renders happily and still yields a full table of confident, meaningless numbers. Run it after adding or editing a scene. It found that `overlay` snaps its object to an even pixel, which puts an accuracy floor under every scene built that way. |
 
 ### Outside the repository: the WSL working set
@@ -336,15 +343,31 @@ a toolchain install.
 (mingw-w64), a different Vulkan loader, and a different driver (AMD's
 proprietary Windows ICD rather than Mesa lavapipe):
 
-| case | Linux | Windows |
-|---|---|---|
-| L1_trans_8px | 41.34 | 41.35 |
-| L2_trans_16px | 38.45 | 38.45 |
-| L9_occlusion | 38.31 | 38.32 |
+Re-measured 2026-08-31 after the ladder reset (see `tests/TESTING.md`), across
+the whole 21-case ladder and both the base and production shaders rather than
+the three cases spot-checked before:
 
-with `hold` and `linear` baselines matching exactly. A hundredth of a dB on
-two cases is last-digit float rounding between two entirely different shader
-compilers. All nine shaders compile and run.
+| case | Linux (lavapipe) | Windows (Radeon, AMD ICD) |
+|---|---|---|
+| L1_trans_8px | 61.29 | 61.26 |
+| L2_trans_16px | 41.78 | 41.78 |
+| L6_flat_large | 55.53 | 55.52 |
+| L9_occlusion | 39.83 | 39.83 |
+| R1_rot_const | 37.30 | 37.30 |
+
+**Maximum disagreement anywhere in the 42 measurements is 0.05 dB**, and the
+one case reaching 0.08 is `L0_static`, which is the GPU round-trip ceiling
+rather than an interpolation result. `hold` and `linear` baselines match
+exactly. That is two entirely different Vulkan implementations -- AMD's
+proprietary ICD against Mesa's software rasteriser -- two different compilers,
+and two operating systems, agreeing to the second decimal. All shaders compile
+and run on both.
+
+(The pre-reset version of this table read 41.34/38.45/38.31 for the same three
+cases it listed. Those numbers are not comparable with these: the ladder's
+ground truth was pixel-quantised until the reset, which suppressed absolute
+scores substantially. The *agreement* between platforms is the claim here, and
+it held before and after.)
 
 **What the exercise actually found** -- which is the argument for doing it at
 all, since none of these were visible from Linux:

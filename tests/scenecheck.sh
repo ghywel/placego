@@ -40,7 +40,7 @@ mkdir -p "$OUT" || exit 1
 printf "\n%-22s %8s   %s\n" case frames verdict
 printf -- "-----------------------------------------------------------\n"
 
-bad=0; quant=0
+bad=0; quant=0; round=0
 for CASE in $CASES; do
   S24="$(scene "$CASE" 24)"; S60="$(scene "$CASE" 60)"
   if [ "$S24" = "UNKNOWN_CASE" ]; then echo "unknown case: $CASE" >&2; bad=1; continue; fi
@@ -62,18 +62,26 @@ for CASE in $CASES; do
   elif cmp -s "$OUT/$CASE.a.raw" "$OUT/$CASE.b.raw"; then
     printf "%-22s %8d   exact -- bit-identical\n" "$CASE" "$n"
   else
-    # Per-FRAME, not per-byte: "1 of 12 frames differs" says what happened,
-    # where "88507 bytes differ" only says the object was textured.
-    which=""; nd=0
-    for i in $(seq 0 $((n - 1))); do
-      if ! cmp -s \
-          <(dd if="$OUT/$CASE.a.raw" bs="$FSZ" skip="$i" count=1 2>/dev/null) \
-          <(dd if="$OUT/$CASE.b.raw" bs="$FSZ" skip="$i" count=1 2>/dev/null); then
-        nd=$((nd + 1)); which="$which $i"
-      fi
-    done
-    printf "%-22s %8d   quantised -- %d of %d differ, at pair%s\n" "$CASE" "$n" "$nd" "$n" "$which"
-    quant=$((quant + 1))
+    # MAGNITUDE, not just presence. A 1-level difference on an anti-aliased
+    # edge texel is the last bit of a rounding and means nothing; a 2px
+    # displacement of the whole object is a broken scene. Both show up as
+    # "not identical", so the check has to tell them apart or it is useless.
+    #
+    # cmp -l prints values in OCTAL, hence strtonum("0"...). Getting that
+    # wrong reads 377 as 377 and quietly understates every delta.
+    read -r nb mx nf <<<"$(cmp -l "$OUT/$CASE.a.raw" "$OUT/$CASE.b.raw" 2>/dev/null | awk -v fsz="$FSZ" '
+      { d = strtonum("0"$2) - strtonum("0"$3); if (d < 0) d = -d
+        nb++; if (d > mx) mx = d; fr[int(($1 - 1) / fsz)] = 1 }
+      END { nf = 0; for (k in fr) nf++; printf "%d %d %d", nb+0, mx+0, nf }')"
+    if [ "${mx:-0}" -le 2 ]; then
+      printf "%-22s %8d   exact to rounding -- %s bytes, max delta %s, %s of %d frames\n" \
+        "$CASE" "$n" "$nb" "$mx" "$nf" "$n"
+      round=$((round + 1))
+    else
+      printf "%-22s %8d   *** POSITIONAL -- %s bytes, max delta %s, %s of %d frames ***\n" \
+        "$CASE" "$n" "$nb" "$mx" "$nf" "$n"
+      quant=$((quant + 1))
+    fi
   fi
   rm -f "$OUT/$CASE.a.raw" "$OUT/$CASE.b.raw"
 done
@@ -81,19 +89,23 @@ printf -- "-----------------------------------------------------------\n"
 if [ "$bad" != 0 ]; then
   echo "STRUCTURAL FAILURES above -- those scenes do not render as a matched"
   echo "pair at all, and no benchmark number for them means anything."
-elif [ "$quant" = 0 ]; then
-  echo "all scenes exact: the 60fps render is bit-identical ground truth"
-else
-  echo "$quant scene(s) PIXEL-QUANTISED, the rest exact."
+elif [ "$quant" != 0 ]; then
+  echo "$quant scene(s) POSITIONAL -- the object is in a different place at the"
+  echo "same instant depending on the frame rate, so the 60fps render is not"
+  echo "ground truth for the 24fps one. That is what a scene built with overlay"
+  echo "does: overlay snaps its object to a whole EVEN pixel (yuv420p chroma"
+  echo "alignment), so a true position of 3.2px is rendered at 2. Rebuild the"
+  echo "scene analytically with _rect or _blob. See TESTING.md."
+elif [ "$round" != 0 ]; then
+  echo "$round scene(s) exact to rounding, the rest bit-identical. Nothing to fix."
   echo
-  echo "Quantised is a real limitation, not a broken scene, and it is inherent"
-  echo "to any scene built with overlay: overlay places its object at a whole"
-  echo "even pixel (yuv420p chroma alignment), so a true position of 3.2px is"
-  echo "rendered at 2. The 60fps ground truth therefore steps in 2px jumps"
-  echo "where the motion is smooth, and a shader that interpolates correctly"
-  echo "to a fractional position is marked down against it. Scenes built"
-  echo "analytically in geq -- with a band-limited edge -- do not have this:"
-  echo "fractional position lives in the edge's grey levels. See TESTING.md,"
-  echo "'Ground truth is quantised where the scene uses overlay'."
+  echo "A max delta of 1 on an anti-aliased edge texel is the last bit of a"
+  echo "rounding, not a displacement: the two rates compute t a ULP apart, so a"
+  echo "coverage value sitting exactly on a rounding boundary can tip. It is"
+  echo "~89 dB of difference on one frame in twelve, far below anything this"
+  echo "ladder resolves. Contrast the overlay scenes it replaced, which put the"
+  echo "whole object 2px out."
+else
+  echo "all scenes exact: the 60fps render is bit-identical ground truth"
 fi
 exit "$bad"

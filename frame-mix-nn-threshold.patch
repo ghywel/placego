@@ -1,0 +1,35 @@
+diff --git a/libavfilter/vf_libplacebo.c b/libavfilter/vf_libplacebo.c
+index 5d3807e..402c70b 100644
+--- a/libavfilter/vf_libplacebo.c
++++ b/libavfilter/vf_libplacebo.c
+@@ -1232,10 +1232,30 @@ static int libplacebo_activate(AVFilterContext *ctx)
+                 continue;
+             }
+ 
++            /* A PL_HOOK_FRAME_MIX hook synthesizes each output frame from a
++             * whole window of source frames, and needs that window even when
++             * the output rate matches the input rate exactly -- an N:N flow
++             * field is a legitimate use, not a no-op resample. The queue's
++             * default behaviour is the opposite: `interpolate()` falls back to
++             * `nearest()` (a ONE-frame mix) whenever the fps/vsync ratio is
++             * within `interpolation_threshold` of 1.0, which for a matched
++             * rate is exactly 0. That single-frame mix then trips the
++             * renderer's `single_frame` path and the hook never fires at all.
++             * A negative threshold can never be met by a non-negative ratio,
++             * so this keeps the window intact at every rate. */
++            float ithresh = 1e-6f; /* pl_queue_params' own default */
++            for (int j = 0; j < s->num_hooks; j++) {
++                if (s->hooks[j]->stages & PL_HOOK_FRAME_MIX) {
++                    ithresh = -1.0f;
++                    break;
++                }
++            }
++
+             in->qstatus = pl_queue_update(in->queue, &in->mix, pl_queue_params(
+                 .pts            = TS2T(out_pts, outlink->time_base),
+                 .radius         = pl_frame_mix_radius(&s->opts->params),
+                 .vsync_duration = q2d_fallback(av_inv_q(l->frame_rate), 0.0),
++                .interpolation_threshold = ithresh,
+             ));
+ 
+             switch (in->qstatus) {

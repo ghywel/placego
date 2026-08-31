@@ -49,7 +49,21 @@ mkdir -p "$OUTROOT"
 case "$WHAT" in
   hold)   CHAIN="fps=$RATE"; HW="" ;;
   linear) CHAIN="libplacebo=fps=$RATE:frame_mixer=linear"; HW="-init_hw_device vulkan=vk -filter_hw_device vk" ;;
-  *)      CHAIN="libplacebo=fps=$RATE:frame_mixer=custom_n:custom_shader_path=$WHAT"
+  *)      # The shader is copied beside the output and referenced by BARE
+          # NAME. An absolute path inside a filter argument is unusable on
+          # Windows -- the drive-letter colon is ffmpeg's own option
+          # separator, so "custom_shader_path=E:/..." parses as an option
+          # named "E" and the error blames the NEXT filter in the chain. A
+          # POSIX path is no better: MSYS2 does not path-convert inside
+          # filter strings, so a native ffmpeg.exe cannot open it.
+          #
+          # bench.sh has done this since the ladder was built; this script
+          # did not, and therefore could not run a shader on Windows at all.
+          # Found by using it, 2026-08-31. Same reasoning at more length in
+          # bench.sh and TESTING.md's real-footage traps.
+          [ -f "$WHAT" ] || { echo "no such shader: $WHAT" >&2; exit 1; }
+          cp -f "$WHAT" "$OUTROOT/_shader.glsl" || exit 1
+          CHAIN="libplacebo=fps=$RATE:frame_mixer=custom_n:custom_shader_path=_shader.glsl"
           HW="-init_hw_device vulkan=vk -filter_hw_device vk" ;;
 esac
 
@@ -66,17 +80,25 @@ for s in $SEGS; do
 
   # Render NATURALLY -- no setpts, no -r. Either one makes the muxer re-time
   # and duplicate frames (a setpts here once turned 72 frames into 1725).
+  # Run FROM $OUTROOT so the bare shader filename above resolves. Every other
+  # path here is absolute, so the cd changes nothing else.
   # shellcheck disable=SC2086
-  "$FFMPEG" -y -hide_banner -loglevel error $HW -i "$OUTROOT/half_$s.mkv" \
-    -vf "${CHAIN},format=yuv420p" -c:v ffv1 "$OUTROOT/o_${LABEL}_$s.mkv" \
-    2>"$OUTROOT/${LABEL}_$s.err" || { echo "  seg $s FAILED"; continue; }
+  ( cd "$OUTROOT" && "$FFMPEG" -y -hide_banner -loglevel error $HW \
+      -i "$OUTROOT/half_$s.mkv" \
+      -vf "${CHAIN},format=yuv420p" -c:v ffv1 "$OUTROOT/o_${LABEL}_$s.mkv" \
+    ) 2>"$OUTROOT/${LABEL}_$s.err" || { echo "  seg $s FAILED"; continue; }
 
   # Compare with forced frame-index alignment.
+  # Also from $OUTROOT with a bare stats filename, and for the same reason as
+  # the render above: stats_file= is a path INSIDE a filter argument. With an
+  # absolute path here the log is simply never written and the run looks like
+  # it succeeded -- which is how this went unnoticed, since realanalyze.py
+  # then finds nothing and prints nothing rather than erroring.
   for metric in psnr ssim; do
-    "$FFMPEG" -y -hide_banner -loglevel error \
-      -i "$OUTROOT/o_${LABEL}_$s.mkv" -i "$OUTROOT/ref_$s.mkv" \
-      -filter_complex "[0:v]format=yuv420p,setpts=N/TB[a];[1:v]format=yuv420p,setpts=N/TB[b];[a][b]${metric}=stats_file=$OUTROOT/${metric}_${LABEL}_$s.log[o]" \
-      -map "[o]" -f null - 2>/dev/null
+    ( cd "$OUTROOT" && "$FFMPEG" -y -hide_banner -loglevel error \
+        -i "$OUTROOT/o_${LABEL}_$s.mkv" -i "$OUTROOT/ref_$s.mkv" \
+        -filter_complex "[0:v]format=yuv420p,setpts=N/TB[a];[1:v]format=yuv420p,setpts=N/TB[b];[a][b]${metric}=stats_file=${metric}_${LABEL}_$s.log[o]" \
+        -map "[o]" -f null - ) 2>/dev/null
   done
   echo "  seg $s done ($("$FFPROBE" -v error -count_frames -show_entries stream=nb_read_frames -of csv=p=0 "$OUTROOT/o_${LABEL}_$s.mkv") frames)"
 done
