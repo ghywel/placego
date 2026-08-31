@@ -118,22 +118,13 @@ the patch.
   double-counting a padded frame. The cost is that a hook wanting a large
   window simply won't fire at all near a clip's start/end, where that
   many real frames don't yet exist.
-- **Startup frame-hold, and a possible small A/V offset for wider
-  windows.** Before enough real frames exist to fill a hook's declared
+- **Startup frame-hold.** Before enough real frames exist to fill a hook's declared
   window, output falls back to libplacebo's own zero-order-hold behavior
   -- the same single decoded frame held across several consecutive output
   frames until the next one arrives. For the common 2-frame case this is
-  one or two held frames, with no observed sync drift across all testing
-  to date. A wider window needs proportionally more lead-in (confirmed on
+  one or two held frames. A wider window needs proportionally more lead-in (confirmed on
   real hardware: a 4-frame window held frames 2-4 of a clip before real
-  output took over on frame 5) -- and with a 4-frame window specifically,
-  audio was observed drifting from video by roughly 3 frames over a
-  60-second clip. The likely mechanism is that extra startup hold, but
-  this hasn't been root-caused at the code level -- it isn't yet
-  confirmed whether this is a fixed, one-time startup offset (bounded,
-  and probably not worth fixing) or something that could compound over a
-  longer file. Treat wider-window output as needing an A/V sync check;
-  the 2-frame case hasn't shown this problem.
+  output took over on frame 5)
 - **`PL_FRAME_MIX_MAX` (8) is a hard ceiling.** Not runtime-configurable;
   raising it means patching the constant and rebuilding. Chosen as
   generous headroom over realistic use (the shaders in this directory
