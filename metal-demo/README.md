@@ -58,8 +58,19 @@ swift run -c release QuadDemo -- --help-ish   # see main.swift header
 - **Scene**: three synthetic motion laws from the test ladder's own
   envelopes — constant velocity, constant acceleration, oscillation
   (the one that sweeps acceleration *and* jerk through their cycles).
-- **Show**: Picture / Acceleration field / Jerk field. The fields are
-  the product; the picture is the harness.
+- **Show**: Picture / Velocity field / Acceleration field / Jerk field.
+  The fields are the product; the picture is the harness. Velocity is
+  the straddle-pair flow itself — the intuitive one; acceleration and
+  jerk are its next two derivatives, read from the same 68 passes.
+- **Field**: Raw is the instrument's own signed encoding, noise floor
+  and all (R = x, G = y about mid-grey; nothing is composited in).
+  Reading decodes the same output into the optical-flow colour
+  convention — hue = direction, brightness = signal above the measured
+  noise floor, pooled ±48 px and averaged across window advances —
+  over the dimmed picture. The overlay slider blends either style over
+  the source picture: right replaces the content, left shows content
+  only, and the A/B wipe's field side follows. Display-side only; the
+  graphs are identical.
 - **View**: Interpolated / Hold (what 24p looks like) / A/B wipe.
 - **Open Video…**: mp4/mov, decoded in hardware and handed to the GPU
   zero-copy via `CVMetalTextureCache` — the path unified memory makes

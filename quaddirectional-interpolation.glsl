@@ -5572,17 +5572,35 @@ const float JERK_DEADBAND_HI = 6.0;
 //   5 = JERK field, px/interval^3, encoded like mode 2  (marker: magenta)
 //   6 = LSQ residual (QUAD_MODE 1) as linear luma -- measurement mode,
 //       no marker, in px against RESID_DIAG_FS. The confidence field.
+//   7 = VELOCITY field: the straddle-pair flow f_fwd, px/interval,
+//       encoded like mode 2 against VEL_DIAG_FS (marker: orange). The
+//       zeroth derivative the demo's display was missing -- "moving
+//       right" as a solid colour.
 const int TRI_DIAG = 0;
 
 const float ACCEL_DIAG_FS = 2.0;   // px/interval^2 full scale (modes 2, 3)
 const float CORR_DIAG_FS  = 0.25;  // px full scale (mode 1)
 const float JERK_DIAG_FS  = 2.0;   // px/interval^3 full scale (mode 5)
 const float RESID_DIAG_FS = 2.0;   // px full scale (mode 6)
+const float VEL_DIAG_FS   = 2.0;   // px/interval full scale (mode 7)
+
+// DIAG_HOLD_ANCHOR = 1 pins the diag modes' anchor to slot 1, so a
+// displayed field updates once per window advance (source cadence)
+// instead of re-anchoring as the output phase s crosses 0.5. The two
+// anchors' stencils sample different flow textures whose sub-pixel
+// noise is independent, so per-phase re-anchoring STROBES a live
+// display between two decorrelated noise fields (~36 Hz at 24->60,
+// measured 1.5 px rms background / 3-4 px mover on the jerk field).
+// Default 0 keeps the established instrument semantics -- accelcheck's
+// calibrations read the phase-dependent anchor -- and the warp path
+// never uses this either way. The demo's field graphs set 1 (gen.sh).
+const int DIAG_HOLD_ANCHOR = 0;
 
 vec4 tri_diag_marker() {
     if (TRI_DIAG == 1) return vec4(1.0, 0.2, 0.2, 1.0);   // red     -- correction
     if (TRI_DIAG == 2) return vec4(0.2, 0.6, 1.0, 1.0);   // blue    -- acceleration
     if (TRI_DIAG == 5) return vec4(1.0, 0.2, 1.0, 1.0);   // magenta -- jerk
+    if (TRI_DIAG == 7) return vec4(1.0, 0.6, 0.1, 1.0);   // orange  -- velocity
     return vec4(0.2, 1.0, 0.3, 1.0);                      // green   -- magnitude
 }
 
@@ -5627,6 +5645,7 @@ vec4 hook() {
     // or an s > 0.5 at p = 2 would name an outer slot; the interior
     // neighbour serves instead, still a straddler.)
     int anchor = clamp(s <= 0.5 ? p : p + 1, 1, 2);
+    if (TRI_DIAG != 0 && DIAG_HOLD_ANCHOR == 1) anchor = 1;
     bool anchor_is_A = (anchor == p);
 
     // Anchor's three displacements, their taus (interval units), their
@@ -5791,6 +5810,8 @@ vec4 hook() {
             return vec4(0.5 + (accel / HOOKED_pt) * (0.5 / ACCEL_DIAG_FS), 0.5, 1.0);
         if (TRI_DIAG == 5)
             return vec4(0.5 + (jerk / HOOKED_pt) * (0.5 / JERK_DIAG_FS), 0.5, 1.0);
+        if (TRI_DIAG == 7)
+            return vec4(0.5 + (f_fwd / HOOKED_pt) * (0.5 / VEL_DIAG_FS), 0.5, 1.0);
 
         float m = clamp(length(accel / HOOKED_pt) / ACCEL_DIAG_FS, 0.0, 1.0);
         vec3 c = m < 0.5 ? mix(vec3(0.0, 0.0, 0.25), vec3(0.0, 0.9, 0.9), m * 2.0)

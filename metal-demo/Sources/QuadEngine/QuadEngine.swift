@@ -51,6 +51,11 @@ public final class Engine {
     /// (any unorm format; caller keeps the 4 window textures alive).
     /// Takes precedence over fillFrame when set.
     public var provideFrame: ((Int) -> MTLTexture)?
+    /// Treat the source as a seamless loop: window indices wrap modulo
+    /// frameCount instead of collapsing to hold at the sequence ends.
+    /// Only correct when the content is seam-periodic — the synthetic
+    /// scenes built to close their loops — never for real video.
+    public var loops = false
 
     private let queue: MTLCommandQueue
     private var psos: [MTLComputePipelineState] = []
@@ -171,12 +176,19 @@ public final class Engine {
         let tSrc = Double(k) * srcFps / outFps
         let i = Int(tSrc.rounded(.down))
         let window = [i - 1, i, i + 1, i + 2]
-        let nearest = min(max(Int(tSrc.rounded()), 0), frameCount - 1)
-        guard window[0] >= 0, window[3] < frameCount else {
-            let h = sourceTexture(nearest)
-            return Output(image: h, hold: h, wasHold: true)
+        // rts and pair_changed stay in UNWRAPPED indices (relative times
+        // must keep their spacing); only the texture fetch wraps.
+        let looping = loops && frameCount >= 4
+        func wrap(_ n: Int) -> Int { ((n % frameCount) + frameCount) % frameCount }
+        let nearest = looping ? wrap(Int(tSrc.rounded()))
+                              : min(max(Int(tSrc.rounded()), 0), frameCount - 1)
+        if !looping {
+            guard window[0] >= 0, window[3] < frameCount else {
+                let h = sourceTexture(nearest)
+                return Output(image: h, hold: h, wasHold: true)
+            }
         }
-        let slotTex = window.map { sourceTexture($0) }
+        let slotTex = window.map { sourceTexture(looping ? wrap($0) : $0) }
         let pairChanged: Int32 = window == prevWindow ? 0 : 1
         prevWindow = window
         let rts = window.map { Float(Double($0) - tSrc) }
@@ -233,11 +245,27 @@ public final class Engine {
 // The synthetic scenes: rect-on-background in the ladder's style, with
 // motion laws that make the field overlays worth looking at. Multi-scale
 // texture keeps the coarse pyramid under Nyquist (the P2 aliasing lesson).
+//
+// Motion laws are in REAL pixels and REAL frames, and every scene
+// traverses the FULL frame width at every size (the demo's spec,
+// 2026-09-01): translate crosses from the left edge to the right wall;
+// accelerate rests at the left edge, accelerates rightward under
+// constant a, bounces elastically mid-loop when its right edge meets
+// the right wall (the impulse in full view), and returns — the loop
+// seam is the apex, where v = 0, so it closes smoothly; oscillate
+// swings about the centre until both edges kiss the walls. Peak speeds
+// are capped at the MEASURED envelope (PSNR vs analytic truth,
+// 2026-09-01: 40+ dB through 24 px/frame at 720p, through 16 at 360p;
+// 35 dB at 32) and the range is bought with loop length instead. The
+// trades that implies: constant-a field brightness falls as 8E/N², and
+// oscillate's peak jerk (v³/amp²) collapses at wall-to-wall amplitude
+// — the jerk overlay reads near-black there, a display-scale (FS)
+// matter, not the law's.
 public struct SyntheticScene {
     public enum Motion {
         case translate(vx: Double)                 // constant v: accel field dark
-        case accelerate(a: Double, v0: Double)     // constant a: accel lights up
-        case oscillate(amp: Double, period: Double)// sweeps accel AND jerk
+        case accelerate(a: Double, period: Double) // bouncing fall onto the right wall
+        case oscillate(amp: Double, period: Double)// sweeps accel (jerk dims with amp)
     }
     public let motion: Motion
     public let width: Int, height: Int
@@ -246,13 +274,20 @@ public struct SyntheticScene {
         self.motion = motion; self.width = width; self.height = height
     }
 
+    /// Rect left edge in REAL pixels; `t` in real (output-rate) frames.
     public func rectX(at t: Double) -> Double {
-        let cx = Double(width) / 2 - 150
         switch motion {
-        case .translate(let vx): return cx + vx * t - vx * 12
-        case .accelerate(let a, let v0): return cx + v0 * t + a * t * t / 2 - v0 * 12
+        case .translate(let vx):
+            return vx * t
+        case .accelerate(let a, let period):
+            // Constant a toward the right wall, apex (v = 0) at the seam,
+            // elastic bounce at t = period/2: x = a/2 · min(t, period−t)²,
+            // excursion a·period²/8.
+            let tp = t.truncatingRemainder(dividingBy: period)
+            let tm = min(tp, period - tp)
+            return a / 2 * tm * tm
         case .oscillate(let amp, let period):
-            return cx + amp * sin(2 * .pi * t / period)
+            return (Double(width) - 300) / 2 + amp * sin(2 * .pi * t / period)
         }
     }
 
@@ -262,6 +297,8 @@ public struct SyntheticScene {
             + 0.05 * sin(2 * .pi * x / 47.0 + 2.1)
     }
 
+    /// `x`,`y` in real pixels, `t` in real (output-rate source) frames.
+    /// The mover keeps its 300 px at every size; only trajectories grow.
     public func value(_ x: Double, _ y: Double, t: Double) -> Double {
         let rx = rectX(at: t), ry = Double(height) / 2 - 150
         if x >= rx && x < rx + 300 && y >= ry && y < ry + 300 {

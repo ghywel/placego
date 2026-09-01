@@ -38,6 +38,7 @@ public final class VideoSource {
     private let track: AVAssetTrack
     private var texCache: CVMetalTextureCache!
     private var live: [Int: (CVMetalTexture, MTLTexture)] = [:]
+    private var lastGood: (CVMetalTexture, MTLTexture)?   // survives seeks
     private var nextIndex = 0
 
     public init?(url: URL, device: MTLDevice) {
@@ -70,12 +71,20 @@ public final class VideoSource {
         Self.lastFailure = nil
     }
 
-    private func startReader() -> Bool {
+    private func startReader(fromFrame start: Int = 0) -> Bool {
         guard let r = try? AVAssetReader(asset: asset) else { return false }
         let settings: [String: Any] = [
             kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA,
             kCVPixelBufferMetalCompatibilityKey as String: true,
         ]
+        if start > 0 {
+            // Bias half a frame early so the first delivered sample is the
+            // one AT the target index, not the next; the reader handles
+            // keyframe preroll internally.
+            let t = CMTime(seconds: (Double(start) - 0.5) / fps,
+                           preferredTimescale: 60000)
+            r.timeRange = CMTimeRange(start: max(t, .zero), duration: .positiveInfinity)
+        }
         let o = AVAssetReaderTrackOutput(track: track, outputSettings: settings)
         o.alwaysCopiesSampleData = false
         guard r.canAdd(o) else {
@@ -101,14 +110,29 @@ public final class VideoSource {
         _ = startReader()
     }
 
+    /// Jump the sequential reader to `idx`: the next texture(for:) request
+    /// must be for `idx` or later (the engine calls reset() alongside, so
+    /// its window restarts cleanly). Scrubbing support — the reader is
+    /// rebuilt with a timeRange rather than decoding from zero.
+    public func seek(toFrame idx: Int) {
+        let target = min(max(idx, 0), frameCount - 1)
+        live.removeAll()
+        nextIndex = target
+        reader.cancelReading()
+        _ = startReader(fromFrame: target)
+    }
+
     /// Texture for source frame `idx`. Sequential-forward contract: the
     /// engine's window never moves backward except via reset().
     public func texture(for idx: Int) -> MTLTexture {
         while nextIndex <= idx {
             guard let sample = output.copyNextSampleBuffer(),
                   let pb = CMSampleBufferGetImageBuffer(sample) else {
-                // ran off the end (variable-rate tail): reuse the last frame
-                if let last = live[nextIndex - 1] { live[nextIndex] = last; nextIndex += 1; continue }
+                // ran off the end (variable-rate tail, or a seek landed
+                // past the last sync run): reuse the newest frame we have
+                if let last = live[nextIndex - 1] ?? lastGood {
+                    live[nextIndex] = last; nextIndex += 1; continue
+                }
                 fatalError("video decode ran dry at frame \(nextIndex)")
             }
             var cvTex: CVMetalTexture?
@@ -119,6 +143,7 @@ public final class VideoSource {
                 fatalError("CVMetalTexture creation failed at frame \(nextIndex)")
             }
             live[nextIndex] = (cv, mtl)     // the CVMetalTexture ref keeps the IOSurface alive
+            lastGood = live[nextIndex]
             live[nextIndex - 6] = nil       // window is 4 wide; keep a small margin
             nextIndex += 1
         }

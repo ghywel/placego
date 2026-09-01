@@ -17,10 +17,19 @@ python3 "$GEN" "$SRC" "$HERE/generated" --compile
 TMP="$(mktemp -d)"
 sed -e "s/const int TRI_DIAG = 0;/const int TRI_DIAG = 2;/" \
     -e "s/const float ACCEL_DIAG_FS = 2.0;/const float ACCEL_DIAG_FS = 4.0;/" \
+    -e "s/const int DIAG_HOLD_ANCHOR = 0;/const int DIAG_HOLD_ANCHOR = 1;/" \
     "$SRC" > "$TMP/accel.glsl"
 python3 "$GEN" "$TMP/accel.glsl" "$HERE/generated-accel" --compile
 sed -e "s/const int TRI_DIAG = 0;/const int TRI_DIAG = 5;/" \
     -e "s/const float JERK_DIAG_FS  = 2.0;/const float JERK_DIAG_FS  = 8.0;/" \
+    -e "s/const int DIAG_HOLD_ANCHOR = 0;/const int DIAG_HOLD_ANCHOR = 1;/" \
     "$SRC" > "$TMP/jerk.glsl"
 python3 "$GEN" "$TMP/jerk.glsl" "$HERE/generated-jerk" --compile
+# Velocity: FS=32 keeps the demo scenes' speeds (up to ~24 px/frame)
+# inside the encoding, so direction survives undistorted for the
+# Reading decode. No anchor pin needed -- f_fwd is straddle-pair-based.
+sed -e "s/const int TRI_DIAG = 0;/const int TRI_DIAG = 7;/" \
+    -e "s/const float VEL_DIAG_FS   = 2.0;/const float VEL_DIAG_FS   = 32.0;/" \
+    "$SRC" > "$TMP/vel.glsl"
+python3 "$GEN" "$TMP/vel.glsl" "$HERE/generated-vel" --compile
 rm -rf "$TMP"
