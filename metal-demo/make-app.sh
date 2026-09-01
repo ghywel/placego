@@ -37,4 +37,13 @@ PLIST
 # refuses to sign over them -- the drive's usual junk, new costume.
 find "$APP" -name '._*' -delete
 codesign --force --deep -s - "$APP"
+# The .app is a directory and stays out of git; the archive is the
+# single-file artifact for sharing or attaching to a release. ditto is
+# the canonical archiver here -- plain `zip -r` can mangle the signature
+# metadata inside a bundle.
+ditto -c -k --keepParent "$APP" QuadDemo-macos-$(uname -m).zip
+# The mirror ships the archive alongside the docs: refresh the copy at
+# scripts/ level so a rebuild never leaves a stale zip in the repo.
+cp -f "QuadDemo-macos-$(uname -m).zip" "$HERE/../QuadDemo-macos-$(uname -m).zip"
 echo "built $HERE/$APP -- double-click it, or: open $APP"
+echo "archive: QuadDemo-macos-$(uname -m).zip (recipients: right-click -> Open past Gatekeeper)"

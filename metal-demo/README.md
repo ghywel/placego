@@ -30,6 +30,13 @@ the machine that built it):
 open QuadDemo.app
 ```
 
+`make-app.sh` also emits `QuadDemo-macos-<arch>.zip` — the single-file
+archive of the bundle (the `.app` itself is a directory and stays out of
+git) — and refreshes the copy shipped at `scripts/` level, which is the
+one WHAT-WE-BUILT.md points readers at. Recipients of a
+downloaded copy use right-click → Open past Gatekeeper, or just build
+from source.
+
 **Terminal:**
 
 ```
