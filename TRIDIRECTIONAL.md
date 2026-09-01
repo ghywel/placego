@@ -13,7 +13,7 @@ rather than tidied into a conclusion it has not earned.
 
 **The interpolated frames are not the product. The flow field is.**
 
-That reframing came from Gareth after the first real-hardware run, and it is
+That reframing came from the human collaborator after the first real-hardware run, and it is
 worth stating before the rest of this document, because it changes what
 "success" means here. A motion field that encodes ACCELERATION as well as
 velocity is a measurement of the scene, and one that appears not to have
@@ -170,7 +170,7 @@ it.**
 
 ## Real-hardware confirmation
 
-First run on real hardware, 2026-08-31, by Gareth: **jellyfin-ffmpeg on Debian
+First run on real hardware, 2026-08-31, by the human collaborator: **jellyfin-ffmpeg on Debian
 Trixie, Intel Arc A310** -- the project's existing Linux test box (see the
 hardware table in README.md), not a new platform. Mesa, as the WSL loop is,
 but a real GPU rather than a software rasteriser.
