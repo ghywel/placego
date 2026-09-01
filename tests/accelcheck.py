@@ -134,13 +134,49 @@ k = math.floor(t_out * SRC_FPS)
 tau = t_out * SRC_FPS - k
 t_slot1 = ((k + 1) if tau > 0.5 else k) / SRC_FPS
 
-# True acceleration at that instant, converted to px per source interval^2.
-# For x = C*t^2 that is 2*C and does not depend on the instant at all.
+# True value at that instant, converted to px per source interval^N.
+# For x = C*t^2 the acceleration is 2*C, exact for ANY finite-difference
+# estimator and independent of the instant -- which is why the A-series
+# numbers never needed the correction below.
+#
+# THE ESTIMATOR MEASURES A DISCRETE DIFFERENCE, NOT A DERIVATIVE
+# (2026-09-01). The quadratic fit through 3 unit-spaced samples has second
+# derivative equal to the central second difference; the exact cubic
+# through 4 has third derivative equal to the third difference. On a
+# sinusoid those are NOT the continuous derivatives this tool originally
+# compared against:
+#
+#   D2[A sin](t1)  = -4 A sin^2(w/2) sin(w t1)          same phase,
+#                                                       (sin/x)^2 attenuated
+#   D3[A sin](tc)  = -8 A sin^3(w/2) cos(w tc)          centred at the
+#                                                       WINDOW CENTRE tc,
+#                                                       not at slot 1
+#
+# with w in rad/interval. Comparing the jerk field against the continuous
+# derivative at slot 1 manufactured an oscillating "error" of +-32% of
+# peak on O5 whose zero-crossing at f10 was mistaken for a 3.4% calibration
+# -- discovered when the native Metal port (METALPORT.md) disagreed with
+# the ffmpeg pipeline by a 1-frame phase and BOTH matched this discrete
+# model to <=0.5% (metal) / <=3% (ffmpeg). Against the discrete truth the
+# accel O-series also improves: O5's published 5.6% contained ~3.5pp of
+# pure attenuation.
+#
+# The window centre depends on which side of the output the host's 4-frame
+# window sits, and the two verified hosts differ AT EXACT N:N: the ffmpeg
+# queue supplies {k-2..k+1} (centre = t_slot1 - 0.5 intervals), the Metal
+# host {k-1..k+2} (centre = t_slot1 + 0.5). JERK_CENTRE (in source
+# intervals, relative to t_slot1) selects it; the default -0.5 describes
+# the ffmpeg pipeline, the instrument's historical subject. Set
+# JERK_CENTRE=0.5 for metal-demo exports. Fitted, not assumed: each host's
+# measured curve matches its centre to the residuals quoted above.
+theta = w_rad / (2.0 * SRC_FPS)
+JERK_CENTRE = float(os.environ.get("JERK_CENTRE", "-0.5"))
 if FIELD == "jerk":
     a_true_x = (0.0 if accel_c is not None else
-                -amp * w_rad ** 3 * math.cos(w_rad * t_slot1) / (SRC_FPS ** 3))
+                -8.0 * amp * math.sin(theta) ** 3
+                * math.cos(w_rad * (t_slot1 + JERK_CENTRE / SRC_FPS)))
 elif accel_c is None:
-    a_true_x = -amp * w_rad * w_rad * math.sin(w_rad * t_slot1) / (SRC_FPS ** 2)
+    a_true_x = -4.0 * amp * math.sin(theta) ** 2 * math.sin(w_rad * t_slot1)
 else:
     a_true_x = 2.0 * accel_c / (SRC_FPS ** 2)
 

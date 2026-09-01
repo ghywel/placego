@@ -223,6 +223,50 @@ The large-\|a\| null (`O5` f12, -1.73 -> -1.66) barely moved, confirming it
 is matching error at speed, not peak locking. The jerk field is now
 trustworthy above \|j\| ~ 1 at moderate acceleration.
 
+### CORRECTION, 2026-09-01: the jerk truth model was wrong, and the field
+### is far better than every number above
+
+Found by the native Metal port (METALPORT.md): its jerk readings
+disagreed with the ffmpeg pipeline's by a 1-frame phase, and probing
+adjacent frames showed BOTH pipelines' errors *oscillating* at ~±32% of
+peak — the quoted calibrations above were zero-crossing coincidences.
+The cause is the instrument, not the estimator. The exact cubic through
+four unit-spaced samples has third derivative equal to the **discrete
+third difference**, which for `x = A·sin(wt)` is
+
+    D3 = -8·A·sin³(w/2) · cos(w·t_centre)
+
+— amplitude-attenuated by (sin(w/2)/(w/2))³ (5.2% at `O5`'s w) and
+anchored at the **window centre**, not at slot 1. `accelcheck` compared
+against the *continuous* jerk at *slot 1*: an error term proportional to
+sin(w·t) was manufactured by the comparison itself. The two hosts'
+windows sit on opposite sides at exact N:N (ffmpeg queue: {k−2..k+1},
+centre −½; Metal host: {k−1..k+2}, centre +½ — fitted from the phase,
+residuals below), hence the 1-frame disagreement that exposed all of it.
+
+Against the corrected truth (accelcheck now computes it; `JERK_CENTRE`
+selects the host's window side):
+
+- **ffmpeg pipeline, `O5` f8–f12: absolute error 0.005–0.162
+  px/interval³ — ≤3% of the discrete peak on every frame** (previously
+  reported 3.4%–80.8% depending on which frame you asked).
+- **Metal port, same frames: 0.014–0.025 px/interval³, ≤0.5% of peak.**
+- Accel improves too — the quadratic estimator is the discrete second
+  difference, same phase but (sin/x)²-attenuated: `O5` f10 5.6% → 2.1%,
+  `O6` f4 → 1.3%. **The A-series numbers are exact under both models
+  and unchanged** (constant acceleration has no higher differences).
+
+Two claims above must be reread. The "acceleration-dependent jerk noise
+floor" rested on `O5` f12 reading −1.73 against a presumed null: the
+discrete truth at the ffmpeg window centre there is **−1.708** — that
+reading was accurate to ~1%, and the floor story largely evaporates
+with it. And "trustworthy above |j| ~ 1" was calibrated against the
+wrong reference; the honest current statement is that the jerk field
+reads the discrete third difference of the motion to within a few
+percent of peak across the cycle — sub-1% through the native host. The
+attenuation and centre are properties of ANY 4-point estimator, now
+documented in the instrument rather than mistaken for estimator error.
+
 ### Cost
 
 58 passes against tri's 41; measured render time 4.8 s against 4.3 s on the
@@ -256,6 +300,20 @@ Read this with the boundary drag in mind: the ctrl-vs-ctrl comparison puts
 clip and nothing of a film. Interior-adjusted, quad matches tri on smooth
 and constant-velocity content and wins where jerk lives, which is the
 pre-registered shape of the result exactly.
+
+**Update, 2026-09-01: the table above predates the full-resolution
+refinement level** (the shader is now 68 passes against tri's 48), and
+after that level shipped only the tri ladder had been re-run -- the
+quad-with-full-res ladder had never been run anywhere. It now has: the
+full 31-case ladder, on Apple Silicon (M2 via MoltenVK -- see
+BUILDANDUSAGE.md's Apple Silicon section for that platform's ~0.25 dB
+run-to-run wobble before reading fine differences). The shape holds:
+**O3 +1.04 over tri** against the +1.10 above, non-oscillation drag mostly
+inside the same 0.1-0.35 band, and one unpredicted outlier in quad's
+favour -- `L6_flat_large` **+3.18** (51.11 vs 47.93), with L1 (-0.82) and
+O6 (-0.85) slightly past the drag band on the other side. These are the
+first quad-with-full-res reference numbers; a Windows re-run to confirm
+them on a bit-reproducible platform is the natural cross-check.
 
 **When to use which.** For 24->60 viewing of ordinary content, tri remains
 the sensible default -- quad's picture gains are confined to violently

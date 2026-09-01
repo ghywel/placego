@@ -1,0 +1,27 @@
+#version 450
+// Miniature of the flow search: 5x5 candidate window, 8x8 SAD patch per
+// candidate, argmin with the production tie margin. 25*64*2 = 3200 image
+// loads per texel. Grid 1280x720, reads offset by +64 so all loads land
+// inside a 2048x1024 image.
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(binding = 0, r32f) uniform readonly image2D A;
+layout(binding = 1, r32f) uniform readonly image2D B;
+layout(binding = 2, r32f) uniform writeonly image2D O;
+
+void main() {
+    ivec2 p0 = ivec2(gl_GlobalInvocationID.xy) + ivec2(64, 64);
+    float best = 1e30;
+    int bestIdx = 0;
+    for (int dy = -2; dy <= 2; dy++)
+    for (int dx = -2; dx <= 2; dx++) {
+        float s = 0.0;
+        for (int j = 0; j < 8; j++)
+        for (int i = 0; i < 8; i++) {
+            float av = imageLoad(A, p0 + ivec2(i, j)).r;
+            float bv = imageLoad(B, p0 + ivec2(dx + i, dy + j)).r;
+            s += abs(av - bv);
+        }
+        if (s < best * (1.0 - 1.0e-4)) { best = s; bestIdx = (dy + 2) * 5 + (dx + 2); }
+    }
+    imageStore(O, ivec2(gl_GlobalInvocationID.xy), vec4(best + float(bestIdx) * 1e-3));
+}

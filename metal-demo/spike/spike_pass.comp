@@ -1,0 +1,208 @@
+#version 450
+// P0 spike shim: the coarse flow search A->B pass from
+// quaddirectional-interpolation.glsl, wrapped as a standalone compute
+// shader. Semantics approximate (P0 tests the toolchain, not the taus).
+layout(local_size_x = 16, local_size_y = 16) in;
+
+layout(binding = 0) uniform sampler2D LUMA_A_S_raw;
+layout(binding = 1) uniform sampler2D LUMA_B_S_raw;
+layout(binding = 2, rgba32f) uniform image2D FLOW_S_AB_CACHE;
+layout(binding = 3, rgba32f) uniform writeonly image2D OUT_TEX;
+layout(binding = 4, std140) uniform Params {
+    vec2 out_size;
+    vec2 luma_size;
+    int pair_changed_u;
+};
+
+vec2 LUMA_A_S_pt;
+vec2 LUMA_A_S_size;
+vec2 LUMA_A_S_pos;
+bool pair_changed;
+vec4 LUMA_A_S_tex(vec2 uv) { return texture(LUMA_A_S_raw, uv); }
+vec4 LUMA_B_S_tex(vec2 uv) { return texture(LUMA_B_S_raw, uv); }
+
+// Matching-window radius for the coarse SAD cost below, independent of
+// local_contrast_5x5_s()'s own fixed window further down (that one only
+// checks whether there's enough texture here to trust a match at all,
+// not how wide a match window to use). RE-TESTING at 1 (3x3, 48px
+// footprint, down from the original 5x5/80px). First tried before the
+// coarse-to-fine seed-snapping fix existed (see snap_texel() in the
+// refine passes below) and came back pixel-identical -- but real-
+// hardware testing after that fix confirmed the previously-smooth
+// "nebulous cloud" is actually a sharp-edged grid of ~16px blocks,
+// exactly this level's own native texel size (1/16 res), now visible
+// because the seed-snapping fix stopped smoothing it away. That means
+// the earlier null result may have been confounded by the very
+// smoothing this level's output was passing through at the time, not a
+// clean test of window size on its own. Re-testing now that the signal
+// is no longer masked -- not yet confirmed either way.
+const int COARSE_WINDOW_RADIUS = 1;
+
+float sad5x5_s(vec2 uv_a, vec2 uv_b) {
+    float s = 0.0;
+    for (int y = -COARSE_WINDOW_RADIUS; y <= COARSE_WINDOW_RADIUS; y++) {
+        for (int x = -COARSE_WINDOW_RADIUS; x <= COARSE_WINDOW_RADIUS; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_S_pt;
+            s += abs(LUMA_A_S_tex(uv_a + o).r - LUMA_B_S_tex(uv_b + o).r);
+        }
+    }
+    return s;
+}
+
+// Local contrast (max-min luma) of the reference block, sampled over its
+// own fixed 5x5 window -- independent of sad5x5_s's own (now
+// COARSE_WINDOW_RADIUS-controlled) matching window above; this checks
+// whether there's real texture here at all, not how wide a match window
+// to use. Below MIN_CONTRAST, this block has
+// essentially no real texture to match against -- dark/shadow sensor
+// noise, or a genuinely flat surface -- so whatever offset the search
+// below finds is closer to a random noise correlation than a real motion
+// estimate. This is a different problem than REG_LAMBDA below already
+// handles: REG_LAMBDA breaks near-ties toward zero when the cost surface
+// is flat, but pure noise produces a *jagged*, not flat, cost surface --
+// individual candidate offsets can score genuinely (if spuriously) lower
+// than the true zero-motion cost purely by chance, which a small
+// tie-breaking bias can't reliably outweigh. Confirmed on real dark-scene
+// footage: without this gate, low-signal background regions mis-fire as
+// incoherent, high-magnitude "motion" -- large patches of unrelated
+// colors in the flow visualization, not the isolated one-off jitter
+// REG_LAMBDA alone is meant to damp. Only applied at this coarsest level,
+// since every finer level just nudges this level's result by +-1px with
+// no search freedom of its own (see the refinement levels' comment
+// below) -- a correct zero here propagates cleanly downstream.
+//
+// If real low-contrast motion is being missed, lower this; if dark-noise
+// mis-firing persists, raise it -- and if raising it stops helping, the
+// noise likely has enough local contrast (e.g. from shadow-lifting in
+// the source grade) that this needs to also factor in absolute darkness
+// (mean luma), not just contrast, as the next thing to try.
+const float MIN_CONTRAST = 0.02;
+
+float local_contrast_5x5_s(vec2 uv_a) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++) {
+        for (int x = -2; x <= 2; x++) {
+            float v = LUMA_A_S_tex(uv_a + vec2(float(x), float(y)) * LUMA_A_S_pt).r;
+            lo = min(lo, v);
+            hi = max(hi, v);
+        }
+    }
+    return hi - lo;
+}
+
+// Small-magnitude bias: breaks near-ties in flat/low-texture regions
+// toward small/zero motion instead of letting the search wander onto an
+// arbitrary large offset (which produces coherent local "fisheye" bulges
+// rather than noise). Small enough that any genuinely stronger match wins.
+const float REG_LAMBDA = 0.06;
+
+vec4 hook() {
+    ivec2 coord = ivec2(LUMA_A_S_pos * LUMA_A_S_size);
+    if (!pair_changed)
+        return imageLoad(FLOW_S_AB_CACHE, coord);
+
+    vec2 uv_a = LUMA_A_S_pos;
+
+    if (local_contrast_5x5_s(uv_a) < MIN_CONTRAST) {
+        vec4 result = vec4(0.0);
+        imageStore(FLOW_S_AB_CACHE, coord, result);
+        return result;
+    }
+
+    vec2 best_off = vec2(0.0);
+    // Deterministic tie-breaking. The search below is an argmin over
+    // candidate offsets, and a strict `<` against a fixed scan order already
+    // resolves an EXACT tie deterministically -- the incumbent wins. That is
+    // not the problem. The problem is the NEAR-tie: where the cost surface is
+    // flat, two candidates differ by less than the arithmetic noise between
+    // one evaluation and another, and which of them compares smaller stops
+    // being a property of the image at all. The chosen motion vector then
+    // flips on a rounding difference, and the whole warp for this source pair
+    // is built on it.
+    //
+    // Linux and Windows hide this completely by being bit-reproducible run to
+    // run -- the fragility is real, but nothing there ever perturbs it. macOS,
+    // whose MoltenVK path is not reproducible, amplified one wrong LSB into
+    // 9-14 ruined frames in 60. See BUILDANDUSAGE.md for those measurements.
+    //
+    // The fix is a MARGIN, not a tie rule. A rule for exact ties would have
+    // been a no-op, since those were already decided by scan order; what needs
+    // deciding is the near-tie. Requiring a candidate to beat the incumbent by
+    // a relative TIE_MARGIN moves the decision threshold off the plateau where
+    // the ambiguity lives: a flat cost surface sits at a cost ratio of ~1.0,
+    // nowhere near the threshold, so the outcome stops depending on the last
+    // bits. The margin is relative because floating-point error is relative --
+    // it then holds the same ratio to the noise whether the block matches well
+    // or badly.
+    //
+    // Preferring the incumbent is also the right bias on the merits, not just
+    // a convenient way to be deterministic. Here the incumbent is the previous
+    // iteration's estimate, seeded at zero motion; at the refine levels it is
+    // the coarse level's result. Both are the conservative answer REG_LAMBDA
+    // already argues for, so a genuine tie now resolves toward less motion
+    // rather than toward whichever candidate the loop happened to visit first.
+    //
+    // The value is measured, not assumed. tests/tieprobe.sh perturbs every cost
+    // by a relative epsilon and counts the output frames that then disagree.
+    // Without a margin, 56 of 240 frames flip at ANY perturbation large enough
+    // to survive float32 at all -- 1e-7 and 1e-5 do equal damage, which is what
+    // "no defence" looks like. At 1e-7, one ULP, the scale a differing
+    // summation order actually produces, this margin takes that to 0, and it
+    // costs at most 0.02 dB anywhere on the ground-truth ladder.
+    //
+    // Bigger is not better. A larger margin buys headroom against coarser
+    // perturbation but starts refusing genuine improvements where the cost
+    // surface is legitimately shallow: 1e-2 costs 0.12 dB at L3/L4 and 0.07 at
+    // M3 -- the velocity ceiling and the period-16 ambiguity trap, exactly the
+    // cases that are hardest already. Full sweep in tests/TESTING.md.
+    const float TIE_MARGIN = 1.0e-4;
+    float best_cost = sad5x5_s(uv_a, uv_a);
+
+    // Starting step, halved each of the 5 iterations below: total reach is
+    // step_px * 1.9375 coarse-level pixels, i.e. * 16 again for full-res
+    // pixels (this level is 1/16 resolution). At the old 1.5 that's ~46px
+    // full-res -- comfortably past MAX_PX (30px, see the debug shader's
+    // magenta convention), meaning the search could reach and lock onto a
+    // spurious match well beyond what any real per-frame motion in typical
+    // content would need, given enough repetitive-looking texture to fool
+    // it (confirmed on real footage: a backlit hair/shoulder edge against
+    // blurred bokeh, which is exactly this kind of ambiguous, semi-
+    // repetitive content). 0.75 caps full-res reach at ~23px -- if
+    // genuinely fast motion is now being under-tracked, raise this back up
+    // gradually; if long-reach false matches persist, lower it further or
+    // strengthen REG_LAMBDA above instead (which biases against distant
+    // candidates without hard-capping reach the way this does).
+    float step_px = 0.75;
+    for (int iter = 0; iter < 5; iter++) {
+        vec2 cand_best = best_off;
+        for (int y = -1; y <= 1; y++) {
+            for (int x = -1; x <= 1; x++) {
+                if (x == 0 && y == 0)
+                    continue;
+                vec2 off = best_off + vec2(float(x), float(y)) * step_px * LUMA_A_S_pt;
+                float cost = sad5x5_s(uv_a, uv_a + off)
+                           + REG_LAMBDA * length(off / LUMA_A_S_pt);
+                if (cost < best_cost * (1.0 - TIE_MARGIN)) {
+                    best_cost = cost;
+                    cand_best = off;
+                }
+            }
+        }
+        best_off = cand_best;
+        step_px *= 0.5;
+    }
+
+    vec4 result = vec4(best_off / LUMA_A_S_pt, 0.0, 0.0);
+    imageStore(FLOW_S_AB_CACHE, coord, result);
+    return result;
+}
+
+void main() {
+    ivec2 gid = ivec2(gl_GlobalInvocationID.xy);
+    if (gid.x >= int(out_size.x) || gid.y >= int(out_size.y)) return;
+    LUMA_A_S_size = luma_size;
+    LUMA_A_S_pt = 1.0 / luma_size;
+    LUMA_A_S_pos = (vec2(gid) + 0.5) / out_size;
+    pair_changed = pair_changed_u != 0;
+    imageStore(OUT_TEX, gid, hook());
+}

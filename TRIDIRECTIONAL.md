@@ -783,6 +783,17 @@ level -- estimator only; the warp keeps the mediated half-res flows -- with
 a 5x5 aperture. See PLAN.md T1.2 for its three-step history.) The band real
 footage occupies (mean |a| 0.55-1.5) now calibrates at **2-7% typical**.
 
+**Correction to the O-series rows above (2026-09-01, from the Metal-port
+investigation -- full account in QUADDIRECTIONAL.md's CORRECTION
+section):** the quadratic estimator measures the discrete second
+difference, which on a sinusoid is (sin(w/2)/(w/2))²-attenuated against
+the continuous derivative accelcheck originally compared to. Under the
+corrected truth `O5` f10 reads **2.1%** (was 4.9-5.6) and `O6` f4
+**1.3%**. The A-series rows are exact under both models and stand
+unchanged -- so the 2-7% claim for the real-footage band tightens rather
+than loosens. The F2 and rotation limits below are untouched (measured
+against per-texel truth, not the sinusoid model).
+
 **And two content limits, measured the same day the numbers above were
 (PLAN.md, the Tier-0 proofs).** The 2-7% claim holds for TRANSLATION OF
 TEXTURED CONTENT. It does not hold for:

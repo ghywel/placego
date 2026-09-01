@@ -1,0 +1,18 @@
+#version 450
+// Fill A and B with a deterministic pseudo-random pattern on the GPU, so
+// neither harness needs a staging-upload path. Identical formula in the MSL
+// twin; content equality does not matter for throughput, determinism does.
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(binding = 0, r32f) uniform writeonly image2D A;
+layout(binding = 1, r32f) uniform writeonly image2D B;
+layout(binding = 2, r32f) uniform writeonly image2D O;
+
+void main() {
+    ivec2 p = ivec2(gl_GlobalInvocationID.xy);
+    vec2 fp = vec2(p);
+    float a = fract(sin(dot(fp, vec2(12.9898, 78.233))) * 43758.5453);
+    float b = fract(sin(dot(fp + vec2(3.7, 1.3), vec2(12.9898, 78.233))) * 43758.5453);
+    imageStore(A, p, vec4(a));
+    imageStore(B, p, vec4(b));
+    imageStore(O, p, vec4(0.0));
+}

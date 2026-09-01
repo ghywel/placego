@@ -465,7 +465,12 @@ QUADDIRECTIONAL.md. The measured summary: P1 held to the digit (the N:N
 acceleration field is IDENTICAL to tri's, every case, every frame -- the
 stencil algebra said the fourth frame cannot touch it, and it did not); the
 jerk field is real and calibrated (8.2% at the O5 jerk peak, 3.4% on O6,
-with an acceleration-dependent noise floor mapped on the nulls); placement
+with an acceleration-dependent noise floor mapped on the nulls) [2026-09-01:
+those jerk percentages and the noise-floor story were an INSTRUMENT
+artifact -- the truth model compared a discrete third difference against a
+continuous derivative at the wrong instant; the field is actually good to
+a few % of peak across the whole cycle, sub-1% via the Metal port. See
+QUADDIRECTIONAL.md's CORRECTION section]; placement
 gained +1.10 dB on O3_osc_hard exactly as pre-registered, after the jerk
 deadband was widened to 3.0/6.0 (the accel deadband lesson one order up --
 sqrt(11/2) noise amplification measured as 4.9 dB of L1 cost at the

@@ -1,0 +1,87 @@
+#version 450
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(binding = 0) uniform sampler2D HOOKED_raw;
+layout(binding = 1) uniform sampler2D FRAME1_raw;
+layout(binding = 2) uniform sampler2D FRAME2_raw;
+layout(binding = 3) uniform sampler2D FRAME3_raw;
+layout(binding = 4, rgba32f) uniform writeonly image2D OUT_TEX;
+layout(binding = 5, std140) uniform Params {
+    vec2 out_size;
+    float rts_mix[8];
+    int num_mix;
+    int pair_changed_u;
+};
+vec2 HOOKED_pos;
+bool pair_changed;
+vec4 HOOKED_tex(vec2 uv) { return texture(HOOKED_raw, uv); }
+vec4 FRAME1_tex(vec2 uv) { return texture(FRAME1_raw, uv); }
+vec4 FRAME2_tex(vec2 uv) { return texture(FRAME2_raw, uv); }
+vec4 FRAME3_tex(vec2 uv) { return texture(FRAME3_raw, uv); }
+
+const float BAR_MAX_RTS = 3.0; // rts magnitude that maxes out the bar
+
+vec3 index_color(int i) {
+    if (i == 0) return vec3(1.0, 0.2, 0.2); // red
+    if (i == 1) return vec3(1.0, 0.6, 0.1); // orange
+    if (i == 2) return vec3(0.9, 0.9, 0.1); // yellow
+    return vec3(0.2, 0.9, 0.3);             // green
+}
+
+vec4 frame_tex(int i, vec2 pos) {
+    if (i == 0) return HOOKED_tex(pos);
+    if (i == 1) return FRAME1_tex(pos);
+    if (i == 2) return FRAME2_tex(pos);
+    return FRAME3_tex(pos);
+}
+
+vec4 hook() {
+    vec2 uv = HOOKED_pos;
+    vec2 cell = floor(uv * 2.0);   // cell.x/y in {0, 1}
+    vec2 local = fract(uv * 2.0);  // 0..1 within the selected cell
+
+    int idx = int(cell.y) * 2 + int(cell.x); // 0=TL, 1=TR, 2=BL, 3=BR
+    float rts = rts_mix[idx];
+
+    // pair_changed indicator: top-left corner of cell 0 only.
+    if (idx == 0 && local.x < 0.06 && local.y < 0.06)
+        return pair_changed ? vec4(1.0, 0.0, 0.0, 1.0) : vec4(0.0, 1.0, 0.0, 1.0);
+
+    // num_mix readout: a row of ticks in the top-right corner of cell 0.
+    if (idx == 0 && local.y < 0.06 && local.x > 0.6) {
+        const int MAX_TICKS = 8; // == PL_FRAME_MIX_MAX
+        float slot = (local.x - 0.6) / 0.4 * float(MAX_TICKS);
+        int tick = int(slot);
+        bool gap = fract(slot) < 0.15; // thin gaps between ticks
+        if (!gap) {
+            return tick < num_mix ? vec4(1.0, 1.0, 1.0, 1.0)
+                                   : vec4(0.15, 0.15, 0.15, 1.0);
+        }
+    }
+
+    // Per-cell index tag: bottom-right corner.
+    if (local.x > 0.94 && local.y > 0.94)
+        return vec4(index_color(idx), 1.0);
+
+    // Per-cell rts_mix[] bar: thin strip along the bottom edge.
+    if (local.y > 0.9 && local.y < 0.94) {
+        if (abs(local.x - 0.5) < 0.003)
+            return vec4(1.0); // center tick at the output timestamp
+
+        float mag = clamp(abs(rts) / BAR_MAX_RTS, 0.0, 1.0);
+        float half_len = 0.45 * mag;
+        if (rts < 0.0 && local.x > 0.5 - half_len && local.x < 0.5)
+            return vec4(0.2, 0.5, 1.0, 1.0); // blue: before the output time
+        if (rts >= 0.0 && local.x > 0.5 && local.x < 0.5 + half_len)
+            return vec4(1.0, 0.6, 0.2, 1.0); // orange: after the output time
+    }
+
+    return frame_tex(idx, local);
+}
+
+void main() {
+    ivec2 gid = ivec2(gl_GlobalInvocationID.xy);
+    if (gid.x >= int(out_size.x) || gid.y >= int(out_size.y)) return;
+    HOOKED_pos = (vec2(gid) + 0.5) / out_size;
+    pair_changed = pair_changed_u != 0;
+    imageStore(OUT_TEX, gid, hook());
+}

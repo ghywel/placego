@@ -1,0 +1,23 @@
+#version 450
+// Pure-ALU throughput: 8 independent FMA chains, 2048 iterations, multiplier
+// taken from a texture read so nothing folds at compile time.
+// FLOPs per thread = 2048 * 8 * 2 = 32768.
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(binding = 0, r32f) uniform readonly image2D A;
+layout(binding = 1, r32f) uniform readonly image2D B;
+layout(binding = 2, r32f) uniform writeonly image2D O;
+
+void main() {
+    ivec2 p = ivec2(gl_GlobalInvocationID.xy);
+    float m = 0.999999 + imageLoad(A, p).r * 1e-9;
+    float c = imageLoad(B, p).r * 1e-9;
+    float a0 = float(p.x) * 1e-3 + 0.1, a1 = a0 + 0.11, a2 = a0 + 0.22, a3 = a0 + 0.33;
+    float a4 = float(p.y) * 1e-3 + 0.5, a5 = a4 + 0.11, a6 = a4 + 0.22, a7 = a4 + 0.33;
+    for (int i = 0; i < 2048; i++) {
+        a0 = fma(a0, m, c); a1 = fma(a1, m, c);
+        a2 = fma(a2, m, c); a3 = fma(a3, m, c);
+        a4 = fma(a4, m, c); a5 = fma(a5, m, c);
+        a6 = fma(a6, m, c); a7 = fma(a7, m, c);
+    }
+    imageStore(O, p, vec4(a0 + a1 + a2 + a3 + a4 + a5 + a6 + a7));
+}

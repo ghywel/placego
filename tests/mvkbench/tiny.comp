@@ -1,0 +1,14 @@
+#version 450
+// Near-empty dispatch: one 16x16 workgroup. Dispatched thousands of times
+// with barriers between, this measures per-dispatch fixed cost -- the
+// suspect that matters for a 48-68 pass-per-frame pipeline.
+layout(local_size_x = 16, local_size_y = 16) in;
+layout(binding = 0, r32f) uniform readonly image2D A;
+layout(binding = 1, r32f) uniform readonly image2D B;
+layout(binding = 2, r32f) uniform image2D O;
+
+void main() {
+    ivec2 p = ivec2(gl_GlobalInvocationID.xy);
+    float v = imageLoad(O, p).r;
+    imageStore(O, p, vec4(fma(v, 0.5, imageLoad(A, p).r)));
+}
