@@ -8,6 +8,10 @@ let package = Package(
     name: "QuadDemo",
     platforms: [.macOS(.v13)],
     targets: [
-        .executableTarget(name: "QuadDemo", path: "Sources/QuadDemo")
+        .target(name: "QuadEngine", path: "Sources/QuadEngine"),
+        .executableTarget(name: "QuadDemo", dependencies: ["QuadEngine"],
+                          path: "Sources/QuadDemo"),
+        .executableTarget(name: "QuadDemoUI", dependencies: ["QuadEngine"],
+                          path: "Sources/QuadDemoUI"),
     ]
 )

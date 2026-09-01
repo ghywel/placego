@@ -204,14 +204,47 @@ calibrations are the acceptance numbers, and they are ground truth, not
 our implementation's output. This repository holds the recipe and the
 proof that the recipe works. The kitchen was rented.
 
+## Try it in five minutes
+
+There is now a native Mac demonstration app, and it is the easiest way
+to see all of this with your own eyes — no ffmpeg, no patches, no
+command-line pipelines. On any reasonably recent Mac:
+
+```
+xcode-select --install                 # Apple's free build tools
+brew install shaderc spirv-cross       # the shader translation step
+cd metal-demo && ./make-app.sh         # builds QuadDemo.app
+open QuadDemo.app
+```
+
+(Prefer the terminal? `./gen.sh && swift run -c release QuadDemoUI`
+does the same thing.)
+
+What you will see: a textured block moving under known laws of motion,
+interpolated live from 24 to 60 frames per second. Drag the **A/B
+wipe** to compare against plain 24p. Then — the actual point — switch
+**Show** to the **acceleration field** or the **jerk field**: the same
+computation, read out as a measurement instead of a picture. The block
+glows with its own acceleration; the background, which isn't moving,
+stays dark. Open a video of your own (mp4/mov) and watch the instrument
+read real footage. The fps counter tells the truth about what your
+machine can do — this runs on the smallest GPU Apple sells, just not
+quickly at film sizes.
+
+The demo is itself the "Port it" invitation below, already accepted
+once: the shader machine-translated to Metal, verified against the same
+ground truth as the original, and measurably faster than the portable
+pipeline on the same hardware (metal-demo/, with the full plan and
+outcomes in METALPORT.md).
+
 ## What to do next with it
 
 For anyone picking this up:
 
-1. **Reproduce it.** The build guide (scripts/BUILDANDUSAGE.md) works on
+1. **Reproduce it.** The build guide (BUILDANDUSAGE.md) works on
    Linux, Windows, and macOS, and the test suite needs no GPU at all —
    a software renderer is enough to verify every correctness claim.
-2. **Break it.** The test ladder (scripts/tests/) is designed so failures
+2. **Break it.** The test ladder (tests/) is designed so failures
    localise themselves. The two known failures — rotation, and lone edges —
    are the most valuable places to dig. The rotation diagnosis is the top
    open problem: the measurements say the patch-tracking itself goes wrong
@@ -221,25 +254,29 @@ For anyone picking this up:
    fits over longer windows). The generator that builds the four-frame
    version from the three-frame one shows the pattern; going to N frames
    is mechanical.
-4. **Port it.** The section above is an invitation: take the method to a
-   native platform, delete the portability taxes, and verify the port
-   against the same ladder and calibrations this implementation had to
-   pass.
+4. **Port it.** Done once — the Metal demo above is the worked example,
+   built by machine-translating the GLSL and verifying against the same
+   ladder and calibrations, and it came out 30–46% faster than the
+   portable pipeline. CUDA, Direct3D, ROCm and the rest remain open, and
+   the translator (tests/gen_metal.py) is most of the work for any of
+   them.
 5. **Upstream the patch**, so any player using the engine can run these
    shaders — that was the project's founding goal and remains open.
 
 ## Where to look
 
-- `scripts/README.md` — the enabling patch, documented for upstream review
-- `scripts/METHODOLOGY.md` — how the work was actually done, including the
+- `README.md` — the enabling patch, documented for upstream review
+- `METHODOLOGY.md` — how the work was actually done, including the
   division of labour between the human and the AI
-- `scripts/TESTING.md` and `scripts/tests/` — the ground-truth test ladder
-- `scripts/TRIDIRECTIONAL.md` — the three-frame experiment: hypothesis,
+- `TESTING.md` and `tests/` — the ground-truth test ladder
+- `TRIDIRECTIONAL.md` — the three-frame experiment: hypothesis,
   algebra, calibration, failures and all
-- `scripts/QUADDIRECTIONAL.md` — the four-frame experiment, with its
+- `QUADDIRECTIONAL.md` — the four-frame experiment, with its
   pre-registered predictions and their outcomes
-- `scripts/PRIOR-ART.md` — where this sits in the scientific record
-- `scripts/PLAN.md` — the working research plan, kept honest
+- `PRIOR-ART.md` — where this sits in the scientific record
+- `PLAN.md` — the working research plan, kept honest
+- `metal-demo/` and `METALPORT.md` — the native Metal port and demo app:
+  the template claim, executed and measured
 
 ## Who did this
 

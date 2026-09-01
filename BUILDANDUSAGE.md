@@ -723,6 +723,17 @@ manifest (under `etc`, not `share`).
 | avengers 720p, + hevc_videotoolbox | 26 | 18 |
 | avengers native (1920×808), `-f null` | 13 | 8.7 |
 
+**Postscript, same day: the native Metal port beat this whole table.**
+The mpv-hook shader was machine-translated to Metal compute and run by a
+native Swift host (`metal-demo/`, plan and outcomes in METALPORT.md) —
+hardware decode, zero-copy frames, no translation layer. Same films,
+same machine, native resolution: **quad 12.7 fps vs 8.7 above (+46%),
+tri 16.9 vs 13 (+30%)** — and the port reproduces the ladder and the
+field calibrations through the project's own tools before its numbers
+count. The taxes measured individually in the section above compound to
+a third-to-half again of throughput at film sizes; "a vendor-native port
+should run faster" is now a measurement, not an expectation.
+
 Read this row as the bottom anchor of a compute-proportional line, not as
 "macOS is slow". The N=2/3/4 shader family is the scaling knob — cost
 tracks model order — and the hardware table now spans this 2.9-TFLOPS

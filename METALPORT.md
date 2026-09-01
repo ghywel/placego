@@ -208,12 +208,35 @@ jerk check produced a discovery instead of a pass/fail.**
 A/B wipe (hold vs interpolated); rate selector; field overlay toggle
 (TRI_DIAG modes — the field is the product, the demo shows the
 measurement, not just smooth pixels); performance HUD. *Outcome:*
-(pending)
+**DONE 2026-09-01.** QuadEngine extracted as a library (CLI parity
+exact); QuadDemoUI ships the synthetic scenes (ladder-envelope motion
+laws), A/B wipe, both field overlays live, honest-fps HUD, and
+zero-copy video via CVMetalTextureCache — plus make-app.sh for a
+double-clickable ad-hoc-signed .app and a README covering both run
+paths. Traps collected on the way, in the sources where they bite:
+AVAssetTrack.asset is weak (retain the asset); sync track accessors
+need loadValuesAsynchronously first; **AVFoundation refuses ffmpeg's
+default `hev1` HEVC tag** ("Cannot Decode", -11833) — remux
+`-c copy -tag:v hvc1`; Matroska unsupported; exFAT's AppleDouble files
+break codesign inside an .app bundle. First real use surfaced two more,
+both fixed same day: video-open failures fell back silently (now
+announced in the HUD — the marker-test principle applied to UX), and
+the fps meter averaged rates instead of time, letting cache-hit frames
+mask the true throughput. **User-confirmed 2026-09-01: output correct,
+features correct, no observed errors.**
 
 **P5 — the payoff measurement.** Native fps vs the 13/8.7 MoltenVK
 figures, same films, same machine — closing the loop on "vendor-native
 ports run faster" with a number in BUILDANDUSAGE.md. *Outcome:*
-(pending)
+**DONE 2026-09-01, prediction (quad 9–12, tri 13–17) held and quad beat
+it.** Avengers at native 1920×808, 24→60, hardware decode + zero-copy in,
+no readback: **quad 12.7 fps vs the ffmpeg/MoltenVK pipeline's 8.7
+(+46%); tri 16.9 vs 13 (+30%)**; bttf 1920×1038 quad 8.3 (new row, no
+ffmpeg native counterpart measured). The taxes the microbenchmarks
+priced individually — dispatch overhead, the structural round-trip,
+software decode — compound to a third-to-half again of throughput at
+film sizes. "Ports that lean into a vendor's own pipeline should expect
+to run faster" now cites a measurement.
 
 ## Out of scope, deliberately
 
