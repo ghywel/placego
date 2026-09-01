@@ -211,8 +211,8 @@ ffmpeg, no patches, no command-line pipelines — and it is the easiest
 way to see all of this with your own eyes.
 
 **The prebuilt app ships right here**: `QuadDemo-macos-arm64.zip`,
-alongside this document (Apple-silicon Macs; Intel Macs use the build
-path below). Unzip it and open `QuadDemo.app`. On a downloaded copy macOS will object once —
+alongside this document (Apple-silicon Macs). Unzip it and open
+`QuadDemo.app`. On a downloaded copy macOS will object once —
 right-click → Open, or System Settings → Privacy & Security → Open
 Anyway — and then it just runs.
 
