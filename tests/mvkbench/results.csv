@@ -1,0 +1,12 @@
+alu,metal,659.381,32.9691
+alu,metal,659.048,32.9524
+alu,vulkan,657.236,32.8618
+alu,vulkan,656.727,32.8363
+sad,metal,663.320,33.1660
+sad,metal,664.588,33.2294
+sad,vulkan,666.160,33.3080
+sad,vulkan,665.175,33.2588
+tiny,metal,2.567,0.0013
+tiny,metal,2.564,0.0013
+tiny,vulkan,64.184,0.0321
+tiny,vulkan,64.460,0.0322

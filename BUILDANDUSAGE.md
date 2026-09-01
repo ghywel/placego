@@ -567,8 +567,234 @@ machine should be expected to diverge:
 - **The build is architecture-specific.** This one is x86_64; `nasm` is in the
   dependency list for ffmpeg's x86 assembly and is simply unused on arm64.
 
-None of the above has been tested. It is reasoning about mechanisms, flagged
-as such so a future reader does not mistake it for a result.
+When that list was written none of it had been tested; it was reasoning
+about mechanisms, flagged as such. It has now been tested, and the section
+below scores each prediction against measurement. The reasoning is kept as
+written so the predictions stay honest.
+
+### Apple Silicon: measured (2026-09-01, M2)
+
+Tested on the smallest Apple Silicon GPU sold: a fanless MacBook Air, M2
+with the **8-core GPU** variant (`system_profiler` and `ioreg` agree on 8),
+8 GB of unified memory, macOS 26.6.2. By public architecture figures that
+is 1,024 FP32 ALUs at ~1.4 GHz — **~2.9 TFLOPS, almost exactly a Radeon
+Pro 560X's nominal compute**, which makes those two machines a matched
+pair for separating architecture from arithmetic. Toolchain: MoltenVK
+1.4.2 (driver 0.2.2210) under vulkan-loader 1.4.357, shaderc 2026.3,
+Apple clang 21, libplacebo 7.371.0, meson 1.12. MoltenVK reports subgroup
+width 32 (variable 4–32), 1024 max workgroup invocations, 32 KB shared
+memory.
+
+Scoring the predictions above: **unified memory — confirmed,
+emphatically** (measured below). **Nondeterminism — present but
+transformed**, in an interesting way (below). **eGPU, paths, nasm — as
+predicted**; `build-macos.sh` adapts via `brew --prefix` without edits.
+
+#### Build deltas from the Intel walk-through
+
+- `build-macos.sh` runs unmodified on arm64, but **predates
+  `frame-mix-nn-threshold.patch`**: apply that to the ffmpeg clone by hand
+  (`git apply`) and rebuild before trusting any N:N run. The marker test
+  catches the omission — a dark corner at exactly `fps=24` with
+  `TRI_DIAG=2` means the patch is missing.
+- The stage argument is a *starting* stage, not a selection:
+  `./build-macos.sh deps` runs deps, placebo, ffmpeg AND verify.
+- **The harness python trap, arm64 edition.** macOS puts `/usr/bin` ahead
+  of `/opt/homebrew/bin` on a stock PATH, so `python3` is the system 3.9
+  while the venv `ensure_python` builds (from meson's shebang) is Homebrew
+  3.14. The venv's numpy then fails under the wrong interpreter with
+  `No module named 'numpy._core._multiarray_umath'` — a version-mismatch
+  error that reads like a broken install. Fix: put `/opt/homebrew/bin`
+  first on PATH for any harness run, so `python3` matches the venv that
+  `PYTHONPATH` exposes.
+
+#### Correctness: agreement to hundredths of a dB
+
+The full tri ladder was run against the Windows (560X, native AMD driver)
+reference numbers. Five of seven agree to ≤0.03 dB — four essentially
+exact — across a translation layer onto a different GPU architecture:
+
+| case | Windows | M2 | Δ |
+|---|---|---|---|
+| `L1` | 61.39 | 61.38 | −0.01 |
+| `L2` | 42.10 | 42.10 | 0.00 |
+| `L9` | 40.13 | 40.13 | 0.00 |
+| `M3` | 21.92 | 21.92 | 0.00 |
+| `O2` | 45.99 | 45.76 | −0.23 |
+| `O4` | 47.42 | 47.17 | −0.25 |
+| `O5` | 34.03 | 34.06 | +0.03 |
+
+The two O-series deltas are the same order as this platform's own
+run-to-run spread (re-runs gave O2 45.69, O4 46.95), so they cannot be
+read as a cross-platform bias at n=2.
+
+The field calibrations transfer to the decimal: accel A4 f9 6.6%, A5
+2.5%, A6 2.4%, A7 1.8%, O6 0.7% — all identical to Windows; O5 5.6% vs
+4.9%; the A4 f6 blemish reproduces (18.3% vs 17.2%). The quad jerk field:
+O5 f10 3.6% vs 3.4%, nulls −0.028/−0.034 vs −0.020/−0.033. The measured
+failures also reproduce as failures — F2 26–73% (ref 24–74%), R2/R3
+median vector error 133–207% (ref 100–207%) — which is its own kind of
+confirmation. The **quad ladder with the full-resolution level** was run
+here in full for the first time anywhere: O3 came in at **+1.04 dB over
+tri** against a prediction of "about +1.1", non-oscillation drag mostly
+within the stated 0.1–0.35 dB band, with `L6_flat_large` an unpredicted
+**+3.18** outlier in quad's favour and L1/O6 slightly past the drag band
+(−0.82/−0.85).
+
+#### Reproducibility: transformed, not gone
+
+Measured with `framemd5` repeat pairs, the right instrument for this
+question:
+
+- stock `frame_mixer=linear`: **0/60 frames differ** — the first fully
+  bit-reproducible stock Vulkan render measured on any Mac in this
+  project (the Intel machine's best was 1/60).
+- tri: **60/60 frames differ** — but the worst between-run frame PSNR is
+  **52.9 dB**, and ladder scores move ≤0.25 dB. Nothing resembling the
+  Intel arrangement's ruined frames (whole frames swinging up to 39 dB).
+- quad: 16/60, same benign magnitude.
+
+60/60-but-bounded fits a specific mechanism: the flow cache carries state
+from frame to frame, so a single early one-LSB divergence propagates a
+bit-level difference into every subsequent frame — while `TIE_MARGIN`
+stops any of them from flipping an argmin and ruining the frame. Whether
+the credit belongs to `TIE_MARGIN` or to a tamer driver cannot be
+separated here; that is the Intel Mac's outstanding stress test, which
+this machine does not discharge. Practically: still do not tune a
+parameter against a single run here, but this platform is no longer the
+measurement write-off the eGPU arrangement was — it agreed with Windows
+to 0.03 dB on most of the ladder.
+
+#### Unified memory: the round-trip stops mattering
+
+The `ENOSYS` is still there, exactly as predicted — `videotoolbox` and
+`vulkan` remain underivable from each other, and every frame still makes
+the API-level round trip. What changed is what the round trip costs when
+the "copy" lands in the same physical DRAM instead of crossing
+Thunderbolt/PCIe. Same four chains as the Intel table, avengers clip at
+native resolution, 24→60:
+
+| chain | M2 8-core | Intel Mac, RX 6600 eGPU |
+|---|---|---|
+| tri shader, downloaded each frame | 13 | 65.3 (base shader) |
+| tri shader, kept in Vulkan | 12 | 100.5 |
+| linear, downloaded each frame | **182** | 103.9 |
+| linear, kept in Vulkan | 234 | 262.0 |
+
+Two readings. First, the readback penalty on the shader path went from
+**35% to zero within noise** (13 vs 12 is rounding, and the resident run
+came later on a passively-cooled machine), and on the linear path from
+**60% to 22%**. Second — the cleanest demonstration of the architecture —
+the base M2 **beats the RX 6600 eGPU rig outright on the downloading
+linear path** (182 vs 104 fps), the bus-bound case, while losing heavily
+on the compute-bound shader path to a GPU three times its size. Unified
+memory wins exactly where the mechanism says it should, and nowhere else.
+
+This also inverts the Intel measurement trap: there, the fixed readback
+flattered the shader (it looked 1.6× linear's cost; resident showed
+2.6×). Here the resident rows give the honest ratio directly, and it is
+~19× on this small GPU — the shader really is expensive relative to a
+blend; UMA just stops the pipeline hiding it.
+
+#### Throughput on the films, and the exact commands
+
+Every row below was produced by this command shape (all of them logged
+verbatim at measurement time; the fps is ffmpeg's own end-of-run average
+and includes software decode, matching how the Arc A310 figures were
+taken):
+
+```
+ffmpeg -init_hw_device vulkan=vk -filter_hw_device vk \
+  -i avengersclip.mp4 \
+  -vf "scale=1280:-2,libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=tri.glsl" \
+  -an -f null -
+```
+
+Variants: drop `scale=1280:-2,` for native resolution; append
+`,format=vulkan` after `libplacebo=...` for the resident rows; replace
+`-f null -` with `-c:v hevc_videotoolbox -b:v 6M -f null -` for the
+encode rows. `VK_ICD_FILENAMES` must point at Homebrew's MoltenVK
+manifest (under `etc`, not `share`).
+
+| run, 24→60 | tri (48 passes) | quad (68 passes) |
+|---|---|---|
+| avengers 720p, `-f null` | 30 | 18 |
+| back to the future 720p, `-f null` | 19 | 15 |
+| avengers 720p, + hevc_videotoolbox | 26 | 18 |
+| avengers native (1920×808), `-f null` | 13 | 8.7 |
+
+Read this row as the bottom anchor of a compute-proportional line, not as
+"macOS is slow". The N=2/3/4 shader family is the scaling knob — cost
+tracks model order — and the hardware table now spans this 2.9-TFLOPS
+fanless machine to an 8.9-TFLOPS discrete card running the same shaders
+and agreeing to hundredths of a dB. The hardware scales with the
+use-case.
+
+Two caveats on the absolute numbers, stated so nobody over-reads them.
+Per-FLOP this path delivers roughly a third of what the Arc A310 gets
+through Mesa (104 fps × 41 passes at ~3.1 TFLOPS there, 30 × 48 at ~2.9
+here) — candidates are MoltenVK translation overhead, 8 GB memory
+pressure, and thermal throttling, which the measurements cannot yet
+separate. And these runs came late in a ~30-minute sustained GPU load on
+a fanless chassis, so they are a conservative floor; the 560X, at
+near-identical nominal TFLOPS, is the controlled comparison worth running
+on the return trip.
+
+**Update, same day: the first caveat has now been decomposed — see the
+next section. Translation of kernels is exonerated; the deficit is
+delivered clock plus a real per-dispatch tax.**
+
+#### Is MoltenVK the bottleneck? Measured, and mostly no
+
+The obvious suspicion about any number on this platform is that the
+Vulkan→Metal translation layer is eating it. That is untestable at the
+pipeline level — there is no native-Metal libplacebo to race — but it is
+directly testable at the kernel level, and `tests/mvkbench/` now does:
+the same kernel logic written twice, GLSL dispatched through
+Vulkan/MoltenVK against MSL dispatched through Metal natively, same
+grids, same barrier policy, same wall-clock method, batches interleaved
+A/B so thermal drift cannot favour either side. Three kernels isolate
+three suspects — pure-FMA chains (`alu`, delivered FLOPS), a 5×5
+block-match with 8×8 SAD patches and the production tie margin (`sad`,
+the flow search in miniature), and near-empty dispatches (`tiny`,
+per-dispatch fixed cost).
+
+| kernel | Metal | Vulkan/MoltenVK | ratio |
+|---|---|---|---|
+| `alu` | 32.99 ms | 32.86 ms | 1.00 |
+| `sad` | 33.27 ms | 33.39 ms | 1.00 |
+| `tiny` | 1.3 µs | 36 µs | **~28×** |
+
+Three findings, in order of surprise:
+
+1. **Kernel execution is at parity to under half a percent**, for both
+   ALU-bound and texture-bound work. The GLSL → SPIR-V → (SPIRV-Cross)
+   → MSL path arrives at the same machine-code performance as
+   hand-written Metal. The translation layer is exonerated for what the
+   shaders spend almost all their time doing.
+2. **Per-dispatch overhead is ~28× native** (~36 µs vs ~1.3 µs — encoder
+   splits and fences where Metal's own barrier is nearly free). At 60
+   output frames/s × 48 passes ≈ 2,900 dispatches/s that is ~10% of
+   frame time from dispatch count alone, plausibly a few tens of percent
+   with libplacebo's real barrier and descriptor traffic. A real tax; not
+   a 3× explanation.
+3. **Delivered FLOPS is the machine's, not the API's: ~1.04 TFLOPS on
+   both sides** — 36% of the 8-core M2's ~2.9 nominal. A cool-down probe
+   (4 idle minutes, re-run) moved nothing by even 1%, so it is not
+   measurably thermal either: that is this chassis's steady-state compute
+   for a workload of this shape, and the honest denominator for any
+   per-FLOP comparison.
+
+So the macro deficit against the Arc re-assigns: mostly the delivered
+compute envelope, partly the dispatch tax, and essentially none of it
+kernel translation. Two follow-ups fall out. `vkbench` deliberately has
+no Metal dependency and now guards its portability-enumeration bits, so
+the **same binary measures delivered FLOPS on any Vulkan driver** — run
+`vkbench alu` on the 560X, the Arc and the RX 6600 to put *delivered*
+rather than nominal numbers in the scaling ledger (the Arc's 104 fps at
+an unknown delivered-FLOPS figure is the current gap in the per-FLOP
+comparison). And if the dispatch tax ever matters enough to chase,
+MoltenVK's barrier-to-fence mapping is where to look, not the shaders.
 
 ---
 

@@ -173,6 +173,37 @@ mathematics. The record of prior work, with citations, is in the
 repository (PRIOR-ART.md); if we have missed prior art, we would genuinely
 like to know.
 
+## The shader is a template, not the point
+
+The deliverable of this project is not a file of shader code. It is the
+concrete, tested method the file expresses: how to estimate a motion
+field carrying acceleration and jerk from N frames, deterministically,
+with its precision, calibration and failure modes stated. The
+ffmpeg/libplacebo/Vulkan pipeline it currently runs in was the
+*instrument* used to derive that method — chosen because it let one
+person and an AI assistant iterate at extraordinary speed on ordinary
+consumer hardware, with ground truth available at every step — not
+because it is the method's natural home.
+
+The specific shader is written in one dialect (the mpv "hook" flavour of
+GLSL) and runs today as a production candidate. But every pass in it is
+ordinary parallel arithmetic — block matching, weighted sums, small
+polynomial fits — and translates to any vendor's compute platform: CUDA,
+Metal, Direct3D, ROCm, whatever comes next. Part of that claim is
+measured rather than assumed: on Apple Silicon the identical kernel
+logic runs at the same speed through the portable path and through
+Apple's native API, to under half a percent. The mathematics survives
+translation untouched.
+
+Ports that lean into a vendor's own pipeline should expect to run
+*faster* than this reference, not slower: the portable path pays real
+taxes (on Apple, a measured ~28× per-dispatch overhead and a structural
+per-frame memory round-trip) that a native integration simply deletes.
+And any port can prove itself: the test ladder and the field
+calibrations are the acceptance numbers, and they are ground truth, not
+our implementation's output. This repository holds the recipe and the
+proof that the recipe works. The kitchen was rented.
+
 ## What to do next with it
 
 For anyone picking this up:
@@ -190,7 +221,11 @@ For anyone picking this up:
    fits over longer windows). The generator that builds the four-frame
    version from the three-frame one shows the pattern; going to N frames
    is mechanical.
-4. **Upstream the patch**, so any player using the engine can run these
+4. **Port it.** The section above is an invitation: take the method to a
+   native platform, delete the portability taxes, and verify the port
+   against the same ladder and calibrations this implementation had to
+   pass.
+5. **Upstream the patch**, so any player using the engine can run these
    shaders — that was the project's founding goal and remains open.
 
 ## Where to look
@@ -208,7 +243,7 @@ For anyone picking this up:
 
 ## Who did this
 
-This project is a collaboration between a human, who set the
+This project is a collaboration between **a human**, who set the
 direction, supplied the priors, the hardware, the eyes on real footage, and
 — repeatedly, and decisively — the scientific discipline ("even for a
 superintelligence, 'already correct' is well worth proving"; the proving

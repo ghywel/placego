@@ -158,14 +158,17 @@ known-good -- treat it as a lead to confirm, not a claim.
 | Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary | patch and shaders tested; ladder matches Linux to 0.01 dB |
 | AMD Radeon RX 6600 eGPU (same machine) | Windows 26H1 | -- | **not testable there** -- enumerated by the OS and driven by D3D12, but never appears as a Vulkan device |
 | AMD Radeon RX 6600 eGPU, Radeon Pro 560X, UHD 630 (same machine) | macOS 15.7.9, Intel | MoltenVK 1.4.2 | patch and all shaders build and run; harness 10/10. **Correctness target only -- output is not bit-reproducible run to run, for reasons upstream of this project.** Investigated and closed; see [BUILDANDUSAGE.md](BUILDANDUSAGE.md#macos) |
-| Apple Silicon (M-series) | -- | -- | **untested, and does not inherit the above** -- no eGPU support, unified memory, a different Metal driver |
+| Apple M2, 8-core GPU, unified memory | macOS 26.6.2, arm64 | MoltenVK 1.4.2 | patch and shaders tested; tri ladder matches the Windows numbers to ≤0.03 dB on five of seven reference cases; full quad ladder run here first; stock linear is bit-reproducible (0/60 frames differ) while the interpolator diverges at the bit level but bounded — ladder scores move ≤0.25 dB. See [BUILDANDUSAGE.md](BUILDANDUSAGE.md#apple-silicon-measured-2026-09-01-m2) |
 | NVIDIA, any | -- | -- | **untested** |
 
 So the patch has run against four different Vulkan implementations -- Mesa on
 Intel, Mesa lavapipe in software, AMD's proprietary Windows driver, and
-MoltenVK translating to Metal -- on three operating systems and three
-compilers. The MoltenVK case is the strongest portability evidence here,
-because a translation layer shares no code with the others. It has never run
+MoltenVK translating to Metal -- on three operating systems, three
+compilers, and now two CPU architectures. The MoltenVK case is the strongest
+portability evidence here, because a translation layer shares no code with
+the others -- and it has now been verified over two unrelated Metal stacks
+underneath (AMD silicon on the Intel Mac, Apple's own GPU on the M2), with
+the M2 matching the Windows ladder to hundredths of a dB. It has never run
 on NVIDIA hardware.
 
 ### The macOS (Intel) case, closed
