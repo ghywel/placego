@@ -370,11 +370,9 @@ test.
    texels. Its real use is as a per-texel flow-failure gate (27-40x contrast
    between failing and clean bands on R3 -- an analysis-session reading; the
    numbered E2 residual run covered R2 only).
-5. **Check the noise-amplification statement numerically** before touching
-   QUADDIRECTIONAL.md or the shader header: on the A6 null at N:N, the ratio
-   std(jerk field) / std(accel field - 1.333) over the gated interior is
-   sqrt(3) = 1.73 if the derivation here is right, sqrt(11/2) = 2.35 if the
-   record is.
+5. ~~**Verify the noise ratio.**~~ **ANSWERED 2026-09-03 -- see the section 8
+   addendum.** Measured 0.63-0.80 on A4, ungated, same flows: neither
+   sqrt(3) nor sqrt(11/2). The window's flows are correlated.
 6. **Re-label the rotation lead** in PLAN.md as three leads: aperture on
    edge-only blobs (structure-tensor gate), period locking on symmetric
    texture (tie-break under rotation), and pyramid aliasing (item 1).
@@ -526,3 +524,51 @@ exactly zero because the provenance gate zeroes them before the diagnostic is
 emitted, so the statistic measured the gate and not the stencil; sqrt(3)
 versus sqrt(11/2) needs the ungated fields and is re-queued that way. Neither
 number should be quoted from the first attempt.
+
+**Addendum, same day, after the trade-off sweep and the corrected re-runs.**
+
+*The filter approach is finished.* Five variants (full box, half-width box,
+tent, S-and-E only, S only) on the comb and the 16 px/frame control: every
+one drops M1 to 28.5-30.5 dB, and the best non-integer gain anywhere is +2.6
+(M5 under the full box). Touching only the coarsest level costs 17.6 dB on
+M1. The losses are not the contrast gate either: the S-level gate is an
+absolute MIN_CONTRAST = 0.02 on a 5x5 max-min, and a box-filtered TEX_M1
+still spans >= 0.125 at S (point-sampled: >= 0.315), while a filtered flat
+box passes MORE texels through the gate (380 against 304), not fewer. So the
+fine-texture mechanism is what section 8 says: SAD degeneracy on a near-flat
+level. The flat-content losses (L6 -11, L0 -15, L1 -9 dB) are explained by
+NEITHER the gate nor the filter width -- a correctly sized 16 px box barely
+softens a 300 px edge -- and are open. The one candidate: a softened edge
+broadens the S-level cost surface enough for the small-magnitude bias or a
+near-tie to pick a neighbouring coarse texel, a 16 px seed error the finer
+levels cannot reach back from. Untested.
+
+*sigma_f is measured: 0.070 px.* Robust std of the stock four-frame shader's
+N:N velocity field against analytic truth over M1's interior; p90 0.26,
+p99 0.34, no texel beyond 0.5 px, identical on every frame. That is the
+middle of the 0.02-0.12 bracket section 1 assumed, so the N = 3-or-4 verdict
+stands as written. L7 returned 8.2 px with 65% of texels gross -- not noise
+but the period-locking failure (texture period 15.7 px at 16 px/frame), so L7
+measures a failure, not sigma_f. One content class at one speed: fine
+aperiodic texture moving exactly one coarse texel per frame, the matcher at
+its best.
+
+*The jerk/acceleration noise ratio is neither sqrt(3) nor sqrt(11/2).* On A4
+(a = 0.333, every flow well inside reach) with the provenance gates disabled
+so both fields are the raw estimators, the four-frame shader's own
+acceleration and jerk fields over the SAME flows spread 0.375 / 0.298 px
+(std) and 0.285 / 0.179 (interquartile sigma): **jerk noise is 0.63-0.80 of
+acceleration noise**, not 1.73x and not 2.35x. Both independent-noise models
+are refuted by measurement. The likely reason is that a window's flows are
+not independent -- the far flows are seeded from the near ones, their errors
+are positively correlated, and differences cancel rather than add.
+Consequences: the C(2k-2, k-1) growth in section 1 is an upper bound the
+instrument does not reach at k = 3; the jerk SNR on real-footage motion is
+correspondingly better than section 1's table says; and whether the same
+correlation would help a fourth difference is unknown until one is built.
+Recommendation 5 is answered: neither. The sqrt(11/2) in QUADDIRECTIONAL.md
+and the shader header should become the measured 0.6-0.8 with its scene and
+conditions. On A6 (a = 1.333) the ungated fields are rail-dominated -- the
+composed far flow reaches ~35 px against a ~23 px reach by the late frames --
+and measure the reach limit, not the stencil; the first attempt on A6 is void
+for that reason.

@@ -89,3 +89,17 @@ notarisation, no App Store. A *downloaded* prebuilt `.app` hits
 Gatekeeper's unidentified-developer prompt (Apple's toll on binary
 distribution, not a defect here); recipients either build from source
 or use right-click → Open / System Settings → Open Anyway.
+
+## Keeping the folder small
+
+Nothing built here is tracked, but on the exFAT pool a SwiftPM build plus
+gen.sh's per-pass output is ~2,000 small files at 128 KB a cluster -- about
+half a gigabyte that every copy, sync and `git status` has to walk. When you
+are done on the Mac:
+
+    ./clean.sh            # deletes .build/ and ._ sidecars; moves the app,
+                          # the zip and generated*/ beside the repository
+    ./clean.sh --purge    # deletes them instead (the zip holds the app,
+                          # gen.sh remakes generated*/)
+
+Regenerate with `./gen.sh`, `swift build -c release`, `./make-app.sh`.
