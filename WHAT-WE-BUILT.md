@@ -162,14 +162,8 @@ frame count stops at four.
   independent replication yet, and the enabling patch has not yet been
   accepted upstream. The picture-smoothing use is a hair *worse* than
   simpler methods on a few sharp, steady scenes — measured, recorded, and
-  traded deliberately. The synthetic test ladder itself turned out to have a
-  blind spot — one speed for all its fine-textured moving scenes — which is
-  how the sampling defect above stayed hidden; it is recorded and the ladder
-  has to be widened. One oddity that was on this list has since been
-  solved: on large flat or repeating-pattern objects the three-frame version
-  scored well below the two-frame one, and the cause turned out to be the
-  acceleration term firing on surfaces that have nothing to measure. Switch
-  that term off on those scenes and almost the whole gap closes.
+  traded deliberately. The synthetic test ladder itself is an instrument
+  of continuous refinement - new tests find new problems. 
 
 ## Is this new? An honest answer
 
@@ -216,7 +210,7 @@ Apple's native API, to under half a percent. The mathematics survives
 translation untouched.
 
 Ports that lean into a vendor's own pipeline should expect to run
-*faster* than this reference, not slower: the portable path pays real
+*faster* than this reference: the portable path pays real
 taxes (on Apple, a measured ~28× per-dispatch overhead and a structural
 per-frame memory round-trip) that a native integration simply deletes.
 And any port can prove itself: the test ladder and the field
@@ -231,10 +225,12 @@ ffmpeg, no patches, no command-line pipelines — and it is the easiest
 way to see all of this with your own eyes.
 
 **The prebuilt app ships right here**: `QuadDemo-macos-arm64.zip`,
-alongside this document (Apple-silicon Macs; Intel Macs use the build
-path below). Unzip it and open `QuadDemo.app`. On a downloaded copy macOS will object once —
-right-click → Open, or System Settings → Privacy & Security → Open
-Anyway — and then it just runs.
+alongside this document (Apple-silicon Macs(tested); Intel Macs
+(untested) use the build path below). Unzip it and open `QuadDemo.app`.
+On a downloaded copy macOS will object once — right-click → Open, or
+System Settings → Privacy & Security → Open Anyway — and then it just
+runs. You can check the code yourself if you are worried about about
+doing this.
 
 **To build it yourself, once** — four commands on any reasonably recent
 Mac, and at the end you have the same double-clickable app forever
@@ -347,4 +343,5 @@ Human edit: This authors stream of consciousness can be directly accessed at the
 
 https://www.reddit.com/r/nframe
 
-This is not meant as an invitation to get to know me - leave me alone. It is a public record of what I did and how I did it in my own words without the AI.
+This is not meant as an invitation to get to know me - leave me alone. It is a public record of
+what I did and how I did it in my own words without the AI.
