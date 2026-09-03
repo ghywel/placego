@@ -268,9 +268,9 @@ number in the other documents was produced by.
   `build-macos.sh` build a patched ffmpeg end to end;
   [BUILDANDUSAGE.md](BUILDANDUSAGE.md) explains them.
 - **Shaders.** The two-, three- and four-frame interpolators, three
-  diagnostic builds that draw what the estimator is thinking instead of
+  human-reading views that paint what the estimator is thinking over
   the picture, and two small examples that exist to demonstrate the hook.
-  A `-twoseed` variant of each costs about a tenth more render time and
+  A `-seeded` variant of each costs about a tenth more render time and
   is up on most of the ladder; [SHADERS.md](SHADERS.md) says which to use
   and why;
   [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) and

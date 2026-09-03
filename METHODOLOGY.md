@@ -49,11 +49,14 @@ estimator is thinking rather than the final picture.
 
 Two habits started here and paid off repeatedly:
 
-- **Diagnostics are first-class.** `interpolate-debug-grid.glsl` and its two
-  siblings are maintained in deliberate lockstep with the production shader.
-  A diagnostic that has drifted from the thing it diagnoses is worse than
-  none, so when the occlusion fallback was removed, all three were updated in
-  the same commit.
+- **Diagnostics are first-class.** Three diagnostic builds were maintained
+  in deliberate lockstep with the production shader by hand for the
+  project's first weeks. A diagnostic that has drifted from the thing it
+  diagnoses is worse than none, so when the occlusion fallback was removed,
+  all three were updated in the same commit -- and when variants arrived
+  that lockstep could no longer be kept by hand, so they were retired
+  (2026-09-03) for human-reading views generated from whichever shader
+  they read (SHADERS.md).
 - **Make invisible state visible.** The red/green `pair_changed` indicator
   meant GPU-side cache behaviour could be *seen* rather than trusted. The
   same instinct later produced the flow-field and residual visualisers that

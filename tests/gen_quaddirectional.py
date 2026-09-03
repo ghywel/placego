@@ -154,7 +154,13 @@ def shift_pair(b, lvl, la, lb, tag, desc_pair):
     extra = "".join(f"\n//!BIND LUMA_{x}_{lvl}" for x in (la, lb)
                     if x not in ("A", "B"))
     nb = nb.replace(f"//!BIND LUMA_B_{lvl}", f"//!BIND LUMA_B_{lvl}{extra}")
-    nb = re.sub(r"FLOW_([SEQH])_(AB|BA)", rf"FLOW_\1_{tag}", nb)
+    # Same-direction flow references take the pair tag; a CROSS-direction
+    # reference (the reverse flow, used for a round-trip check) takes the
+    # reversed tag. The block's own direction is read from its //!SAVE line.
+    own = "BA" if re.search(r"^//!SAVE FLOW_[SEQH]_BA", nb, re.M) else "AB"
+    other = "BA" if own == "AB" else "AB"
+    nb = re.sub(rf"FLOW_([SEQH])_{other}", rf"FLOW_\1_{tag[::-1]}", nb)
+    nb = re.sub(rf"FLOW_([SEQH])_{own}", rf"FLOW_\1_{tag}", nb)
     a, b_ = desc_pair
     nb = nb.replace("flow search A->B", f"flow search slot{a}->slot{b_}")
     nb = nb.replace("flow search B->A", f"flow search slot{b_}->slot{a}")

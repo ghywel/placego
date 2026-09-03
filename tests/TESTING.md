@@ -1087,7 +1087,7 @@ confident, meaningless numbers before being caught.
   a mechanism from the decimated run alone will send you after a failure
   production does not have -- confirm anything structural at the real rate
   before acting on it (`visuals.sh` and
-  `interpolate-debug-warp-stages.glsl` both work on an undecimated source).
+  the human-reading views both work on an undecimated source).
 
 ### PSNR actively misranks these methods
 

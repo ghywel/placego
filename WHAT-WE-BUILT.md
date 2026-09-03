@@ -272,8 +272,8 @@ For anyone picking this up:
    a software renderer is enough to verify every correctness claim.
 2. **Break it** The test ladder (tests/) is designed so failures localise 
    themselves. The first repair to the tracker's coarsest step is now built,
-   as a separate variant that costs about a tenth more time: it weighs a
-   second candidate motion instead of following the first it finds, and on
+   as a separate variant that costs about a tenth more time: it weighs two
+   more candidate motions instead of following the first it finds, and on
    the test scenes that is worth a few decibels on most of them and costs
    nothing measurable on the rest; on real footage the difference is small
    but consistent. SHADERS.md says when to use it.

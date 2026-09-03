@@ -942,3 +942,45 @@ better choice among coarse basins cannot help there. The gate was
 predicted to fix the comb and instead fixed the edges, the integer-speed
 textures, the lattices and rotation; the comb waits for something that
 changes what the coarse level sees, not how it chooses.
+
+*The three-seed repair, measured (2026-09-03 evening).* The three-seed
+variant's A5 field hysteresis came from an ungated temporal seed: a wrong
+flow, once cached, re-seeded itself. Variant R keeps the three descents
+(zero, ring, temporal) but trusts the temporal seed only where the cached
+forward flow and the reverse flow at its landing point close a round trip
+within one E-texel (`SEED_RT_MAX = 1.0`), and adds a temporal prior at E
+(`SEED_TEMP_LAMBDA = 0.5`) only under the same trust. Against the
+pre-registration: A5 back to +1.02 over stock (asked: at least +0.9; the
+two-seed's +0.96), A6/O5/O6 at +3.30/+1.64/+2.38 (asked: keep the
+three-seed's +2.67/+1.07/+1.04), A7's field 37.5% gross at 66.7% coverage
+(asked: at most 40%), and no ladder case more than 0.10 dB below the shipped
+two-seed (M2) or 0.07 below stock (L4). Ladder mean over 32 cases: R +2.90
+over stock, against the two-seed's +2.43 and the ungated three-seed's
++2.71; eleven cases gain more than 0.1 over the two-seed, none loses more
+than 0.1, and the two-seed's one real ladder loss (L7, -0.52) is gone
+(+0.04). The ungated three-seed still beats R on L2 by 8 dB (70.5 against
+62.3, both far above stock's 41.8) and on A3 by 0.8: those were the cases
+its unguarded temporal seed happened to get right. Render time, median of
+three on the 1280x720 clip: bi-R 2.973 s against stock 2.691, two-seed
+3.035, three-seed 3.016; quad-R 4.531 against 4.110 / 4.454 / 4.283 -- the
+two-seed's cost, within the run-to-run spread. Real footage, same
+decimate-and-reconstruct on the five segments: R 34.74 dB / 0.9663 SSIM
+against the base's 34.29 / 0.9647 and the two-seed's 34.48 / 0.9651;
+quad-R 34.67 / 0.9651 against 34.22 / 0.9635 and 34.41 / 0.9639. That is
++0.45 dB over the base, more than double the two-seed's real-footage
+margin, on every segment. R passes every pre-registered criterion at the
+two-seed's cost; whether it replaces the shipped two-seed or joins it is
+the owner's call (the two-seed is stateless across frames, R is not --
+its temporal seed is gated, not absent). The call was replace and rename:
+R shipped the same evening as `bidirectional-interpolation-seeded.glsl`
+with its generated tri and quad, and the `-twoseed` files were removed.
+
+*Five more real segments, same evening.* Sampled at random from the owner's
+library (anime, film and a 30 fps show; 4-second segments, screened for
+full per-frame motion), decimate-and-reconstruct as above: `-seeded` above
+the base on all five by 0.17-0.67 dB with SSIM up on each, its quad above
+the stock quad by the same margins, the variational build ahead by 0.3-6.1
+dB. The table is in SHADERS.md. The 6.1 dB case is flat-shaded anime, the
+flat-content weakness of section 8 in numbers on real footage: block
+matching there is barely above `linear` (which beats it on SSIM), and the
+variational cascade's coherence is worth six decibels.

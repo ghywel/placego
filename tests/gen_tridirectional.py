@@ -406,7 +406,13 @@ def shift_slot(b, lvl, tag):
     # fell back to its builtin mixer and every case scored near `linear`.
     nb = nb.replace(f"//!BIND LUMA_B_{lvl}",
                     f"//!BIND LUMA_B_{lvl}\n//!BIND LUMA_C_{lvl}")
-    nb = re.sub(r"FLOW_([SEQH])_(AB|BA)", rf"FLOW_\1_{tag}", nb)
+    # Same-direction flow references take the pair tag; a CROSS-direction
+    # reference (the reverse flow, used for a round-trip check) takes the
+    # reversed tag. The block's own direction is read from its //!SAVE line.
+    own = "BA" if re.search(r"^//!SAVE FLOW_[SEQH]_BA", nb, re.M) else "AB"
+    other = "BA" if own == "AB" else "AB"
+    nb = re.sub(rf"FLOW_([SEQH])_{other}", rf"FLOW_\1_{tag[::-1]}", nb)
+    nb = re.sub(rf"FLOW_([SEQH])_{own}", rf"FLOW_\1_{tag}", nb)
     nb = nb.replace("flow A->B", "flow slot1->slot2")
     nb = nb.replace("flow B->A", "flow slot2->slot1")
     nb = nb.replace("flow search A->B", "flow search slot1->slot2")
