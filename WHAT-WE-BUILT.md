@@ -62,28 +62,6 @@ chip into a motion instrument. Possible applications — and we stress
 The instrument would be the *front end* of such systems — the sense organ,
 not the brain. Something else must decide what an acceleration means.
 
-**One case deserves singling out, because the usual conclusion reverses.**
-For ordinary film — where things move smoothly across many frames — each
-extra frame we add buys less than the one before, and four is about where it
-stops being worth it. But for motion that *repeats quickly* — something
-vibrating, resonating, or a small particle jiggling in a flow or a trap —
-that reasoning inverts. When a full cycle of the motion takes only about six
-frames to complete, the higher-order terms stop shrinking: each one carries
-as much signal as the last, and only noise decides when to stop. Our own test
-scenes show it plainly. Across thirty-two cases, the four-frame version beat
-the three-frame version clearly in exactly one — the fastest oscillation we
-test, six frames per cycle — and its jerk reading there is accurate to about
-one percent. Everywhere else the fourth frame is mostly noise.
-
-So a laboratory looking at fast, small, repetitive motion is in a different
-regime from a television set smoothing a film, and should expect a different
-answer: more frames may keep paying, and a fifth is worth trying. The
-practical advice is to choose a frame rate — or use every k-th frame — so
-that the motion of interest is captured **six to ten times per cycle**.
-Faster and the measurement drowns in noise; slower and the curve cannot be
-represented at all. We have not built the five-frame version; what we have
-established is which conditions would justify it.
-
 ## How it works, gently
 
 Film is a series of still frames. Two frames tell you where something was
@@ -320,38 +298,11 @@ For anyone picking this up:
 1. **Reproduce it.** The build guide (BUILDANDUSAGE.md) works on
    Linux, Windows, and macOS, and the test suite needs no GPU at all —
    a software renderer is enough to verify every correctness claim.
-2. **Break it — or rather, fix the break we found.** The test ladder
-   (tests/) is designed so failures localise themselves. The most valuable
-   thing to do next is no longer the one we expected: averaging instead of
-   sampling was the obvious fix, it was built, and it made matters worse for
-   the reason given above. The open problem is now sharper — teach the
-   tracker to judge, at each scale and each point, whether that scale holds
-   anything worth trusting, and to fall back when it does not. After that,
-   the lone-edge gate. (The speed sweep that exposed all this is not yet in
-   the test suite; NFRAME-LIMITS.md gives the one-line recipe.)
-3. **Extend it — but not to five frames for the fourth derivative, the
-   change in jerk.** That was our stated next step, and this week's analysis
-   and measurements say four is where it stops: by our arithmetic (not yet
-   checked numerically), each added frame nearly doubles the noise in the
-   next quantity up the chain (speed, acceleration, jerk, then the change in
-   jerk) while the true signal in that quantity shrinks, and on the gentle
-   motion we believe real footage mostly contains — its motion spectrum is not
-   yet measured, and that measurement is first on the technical list — even
-   the fourth frame is marginal: it pays only on fast oscillation, where the
-   test ladder shows it clearly. A fifth frame can still earn its place in
-   two other ways: as an independent cross-check of the acceleration reading,
-   or as a smoother fit over a longer window on slow content. The generator
-   that builds the four-frame version from the three-frame one makes the
-   plumbing mostly mechanical — though a fifth frame runs into a hard limit
-   on how many images the engine lets one pass read, and the generator has
-   drifted behind the hand-edited shader and must be re-synced first. Fix the
-   sampling first; it is worth more than any number of frames. One
-   caution for anyone with a fast camera: "four frames" means four frames
-   spanning the right amount of *time* — about a third of the quickest
-   movement's cycle. At 24 frames per second that is four neighbouring
-   frames; at 240 it is every tenth frame, because neighbouring frames at
-   that rate barely differ and their differences are noise. The rule for
-   choosing the spacing is written down in NFRAME-LIMITS.md.
+2. **Break it** The test ladder (tests/) is designed so failures localise 
+   themselves.
+3. **Extend it** The engine is designed to be N-frame extensible,
+   but more frames does not necessarily mean better output. See
+   NFRAME-LIMITS.md for more detail
 4. **Port it.** Done once — the Metal demo above is the worked example,
    built by machine-translating the GLSL and verifying against the same
    ladder and calibrations, and it came out 30–46% faster than the
@@ -360,6 +311,28 @@ For anyone picking this up:
    them.
 5. **Upstream the patch**, so any player using the engine can run these
    shaders — that was the project's founding goal and remains open.
+
+**One case deserves singling out, because the usual conclusion reverses.**
+For ordinary film — where things move smoothly across many frames — each
+extra frame we add buys less than the one before, and four is about where it
+stops being worth it. But for motion that *repeats quickly* — something
+vibrating, resonating, or a small particle jiggling in a flow or a trap —
+that reasoning inverts. When a full cycle of the motion takes only about six
+frames to complete, the higher-order terms stop shrinking: each one carries
+as much signal as the last, and only noise decides when to stop. Our own test
+scenes show it plainly. Across thirty-two cases, the four-frame version beat
+the three-frame version clearly in exactly one — the fastest oscillation we
+test, six frames per cycle — and its jerk reading there is accurate to about
+one percent. Everywhere else the fourth frame is mostly noise.
+
+So a laboratory looking at fast, small, repetitive motion is in a different
+regime from a television set smoothing a film, and should expect a different
+answer: more frames may keep paying, and a fifth is worth trying. The
+practical advice is to choose a frame rate — or use every k-th frame — so
+that the motion of interest is captured **six to ten times per cycle**.
+Faster and the measurement drowns in noise; slower and the curve cannot be
+represented at all. We have not built the five-frame version; what we have
+established is which conditions would justify it.
 
 ## Where to look
 
@@ -393,9 +366,3 @@ was neither the human's intuition nor the machine's speed alone, but the
 loop between them: hypotheses cheap enough to test, tests honest enough to
 fail, and a standing rule that every claim — including "already correct",
 and including everything in this document — is worth checking.
-
-Human edit: This authors stream of consciousness can be directly accessed at the subreddit here:
-
-https://www.reddit.com/r/nframe
-
-This is not meant as an invitation to get to know me - leave me alone. It is a public record of what I did and how I did it in my own words without the AI.
