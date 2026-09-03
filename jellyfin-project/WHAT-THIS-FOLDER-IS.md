@@ -19,7 +19,7 @@ Now the new shaders my crazy project has produced build in complexity from 2-fra
 The good news is the worked bidirectional-interpolation-variational.glsl shader still performs quite well on this low-end system, looks pretty good and does what i wanted. I'm still testing how it actually integrates, whether it actually produces the right output on a computer monitor vs an appletv for example. The current shell script is terrible and only supports limited use cases. Supplementary flags like subtitles, advanced video/audio codec mapping, get stripped. I'll probably next try to write a subtractive argument passer, which strips unnecessary arguments from an existing command, whilst injecting the relevant ones, instead of the current constructive one where it builds a new command and injects the important flags. 
 
 The really cool thing about this, and how it relates to testing shaders, is you can make an edit to the shader, play a file in jellyfin, force a transcode and see immediately what the changes to the shader did. A new student starting out? Write a simple inversion shader. It's so simple its on the [libplacebo manual page](https://libplacebo.org/custom-shaders/)
-
+```
 //!HOOK LUMA
 //!HOOK RGB
 //!BIND HOOKED
@@ -30,6 +30,7 @@ vec4 hook()
     color.rgb = vec3(1.0) - color.rgb;
     return color;
 }
+```
 
 That's it. Write it to a file, point libplacebo=fps=24:frame_mixer=custom_n:custom_shader_path=/path/to/shader , play the file in jellyfin. Boom, see for yourself what the shader does on live content.
 
