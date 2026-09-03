@@ -62,12 +62,37 @@ chip into a motion instrument. Possible applications — and we stress
 The instrument would be the *front end* of such systems — the sense organ,
 not the brain. Something else must decide what an acceleration means.
 
+**One case deserves singling out, because the usual conclusion reverses.**
+For ordinary film — where things move smoothly across many frames — each
+extra frame we add buys less than the one before, and four is about where it
+stops being worth it. But for motion that *repeats quickly* — something
+vibrating, resonating, or a small particle jiggling in a flow or a trap —
+that reasoning inverts. When a full cycle of the motion takes only about six
+frames to complete, the higher-order terms stop shrinking: each one carries
+as much signal as the last, and only noise decides when to stop. Our own test
+scenes show it plainly. Across thirty-two cases, the four-frame version beat
+the three-frame version clearly in exactly one — the fastest oscillation we
+test, six frames per cycle — and its jerk reading there is accurate to about
+one percent. Everywhere else the fourth frame is mostly noise.
+
+So a laboratory looking at fast, small, repetitive motion is in a different
+regime from a television set smoothing a film, and should expect a different
+answer: more frames may keep paying, and a fifth is worth trying. The
+practical advice is to choose a frame rate — or use every k-th frame — so
+that the motion of interest is captured **six to ten times per cycle**.
+Faster and the measurement drowns in noise; slower and the curve cannot be
+represented at all. We have not built the five-frame version; what we have
+established is which conditions would justify it.
+
 ## How it works, gently
 
 Film is a series of still frames. Two frames tell you where something was
 and where it is now — a straight line, which is speed. **Three** frames let
 you draw a curve — which is acceleration. **Four** frames let the curve
-itself bend — which is jerk. The program looks at small patches of the
+itself bend — which is jerk. (Five would let the bend itself bend; we have
+now worked out on paper, and checked against the test scenes as far as a
+four-frame build allows, why that is a frame too far — see "what to do
+next".) The program looks at small patches of the
 image, finds where each patch went from frame to frame (coarsely at first,
 then more and more finely, down to fractions of a single pixel), and fits
 that curve through each patch's positions. It does this for hundreds of
@@ -111,19 +136,52 @@ The headline calibration: at the start of this week, on the gentle motion
 that real footage mostly contains, the acceleration readings were wrong by
 **more than the value being measured** — an error above 100%. After three
 measured improvements (each one tested against the same truth), typical
-error in that range is now **2–7%**. The jerk readings — which to our
-knowledge no comparable real-time system produces at all — measure within
-about 3–8% at their strongest, with a known noise floor.
+error is now **a few percent** — one to two percent on a typical frame and
+five to ten on the worst, at accelerations of about a pixel per frame per
+frame; on our gentlest test, a third of that, it is still around 17%, because
+a smaller signal meets the same noise. The jerk readings — which to our
+knowledge no comparable real-time system produces at all — read within about
+1–3% of their peak on strongly oscillating motion (on gently oscillating
+motion the typical miss is about 7% of peak, and the last frames of the clip
+miss by up to 60% — a suspected end-of-clip effect, not yet tested), and
+their noise floor has now been measured directly, on a scene whose true jerk
+is exactly zero: between a twentieth and a tenth of a pixel per frame cubed.
+That is small, but on the gentle motion of everyday footage we expect the
+true jerk to be only a few to ten times larger — expect, because no real
+footage has yet been put through the jerk reading — which is the practical
+limit of the instrument and, as "what to do next" explains, the reason the
+frame count stops at four.
 
 ## What it cannot do — read this as carefully as the good news
 
-- **Rotation is currently unreliable.** A spinning object's acceleration
-  readings are wrong by large factors (often more than 100%, with the
-  direction off by tens of degrees). We found this by testing our own
-  instrument against rotating scenes; we then built a control to rule out
-  the easy explanation, and it failed too, so the fault is real and deeper
-  than first thought. The cause is not yet diagnosed. **A turning vehicle
-  is rotation. Nobody should attach this to anything safety-critical.**
+- **Rotation is currently unreliable — and we now have a three-part
+  diagnosis, the last part awaiting its fix to be confirmed.** A spinning
+  object's acceleration readings are wrong by large
+  factors (often more than 100%, with the direction off by tens of degrees).
+  We found this by testing against rotating scenes, and this week diagnosed
+  it with control scenes built to separate the possible causes. On a plain
+  spinning disc the instrument can only see motion *across* an edge, and a
+  spin-up is motion *along* it — the lone-edge limitation below in its
+  purest form. On a patterned disc the pattern repeats, and once the disc
+  has turned the tracker locks onto the wrong repeat. And — the finding that
+  matters most — the tracker's coarse first look at each frame is built by
+  sampling single pixels rather than averaging over the area they stand
+  for, so any fine pattern that moves by an "in-between" amount per frame
+  gets mis-tracked by many pixels — around twenty in our tests. Rotation is
+  simply the motion that does that everywhere at once. The same defect hits
+  ordinary sideways motion of fine texture at most speeds; our test scenes
+  never showed it because every fine-textured moving test happened to move by
+  exactly one coarse cell per frame, and the coarser pattern on our other
+  textured tests only trips it once rotated. **The obvious fix — average the
+  pixels instead of sampling one of them — was built the next day and made
+  things worse**, and understanding why was more useful than the fix would
+  have been: averaging removes the very detail the tracker was locking onto,
+  leaving it a nearly blank picture at that scale. Sampling one pixel keeps
+  plenty of detail but the wrong detail; averaging keeps the right detail but
+  almost none of it. So the answer is not a better filter, it is for the
+  tracker to notice when a scale has nothing trustworthy in it and stop
+  relying on it. That is not built. Until it is: **a turning vehicle is
+  rotation. Nobody should attach this to anything safety-critical.**
 - **It can only measure where there is visible pattern.** Blank walls,
   clear sky, smooth surfaces: no reading. This is a physical limit of
   tracking patches, not a bug — but it means the map is sparse, and its
@@ -140,7 +198,8 @@ about 3–8% at their strongest, with a known noise floor.
 - **Faster cameras make it harder, not easier.** Per-frame acceleration
   shrinks with the square of the frame rate, so at very high frame rates
   the signal sinks toward the noise floor. Higher rates need *more* frames
-  in the fit, not just faster ones.
+  in the fit, not just faster ones — or, more simply, more widely spaced
+  ones; the rule for the spacing is under "what to do next".
 - **Sudden events are excluded, not measured.** Scene cuts and moments
   where objects hide one another are detected and gated out; the reading
   there is deliberately withheld.
@@ -149,7 +208,14 @@ about 3–8% at their strongest, with a known noise floor.
   independent replication yet, and the enabling patch has not yet been
   accepted upstream. The picture-smoothing use is a hair *worse* than
   simpler methods on a few sharp, steady scenes — measured, recorded, and
-  traded deliberately.
+  traded deliberately. The synthetic test ladder itself turned out to have a
+  blind spot — one speed for all its fine-textured moving scenes — which is
+  how the sampling defect above stayed hidden; it is recorded and the ladder
+  has to be widened. One oddity that was on this list has since been
+  solved: on large flat or repeating-pattern objects the three-frame version
+  scored well below the two-frame one, and the cause turned out to be the
+  acceleration term firing on surfaces that have nothing to measure. Switch
+  that term off on those scenes and almost the whole gap closes.
 
 ## Is this new? An honest answer
 
@@ -211,8 +277,8 @@ ffmpeg, no patches, no command-line pipelines — and it is the easiest
 way to see all of this with your own eyes.
 
 **The prebuilt app ships right here**: `QuadDemo-macos-arm64.zip`,
-alongside this document (Apple-silicon Macs). Unzip it and open
-`QuadDemo.app`. On a downloaded copy macOS will object once —
+alongside this document (Apple-silicon Macs; Intel Macs use the build
+path below). Unzip it and open `QuadDemo.app`. On a downloaded copy macOS will object once —
 right-click → Open, or System Settings → Privacy & Security → Open
 Anyway — and then it just runs.
 
@@ -254,16 +320,38 @@ For anyone picking this up:
 1. **Reproduce it.** The build guide (BUILDANDUSAGE.md) works on
    Linux, Windows, and macOS, and the test suite needs no GPU at all —
    a software renderer is enough to verify every correctness claim.
-2. **Break it.** The test ladder (tests/) is designed so failures
-   localise themselves. The two known failures — rotation, and lone edges —
-   are the most valuable places to dig. The rotation diagnosis is the top
-   open problem: the measurements say the patch-tracking itself goes wrong
-   by whole pixels on rotating content, and we do not yet know why.
-3. **Extend it.** Five frames is the next step and has two argued payloads
-   waiting (an independent cross-check of the acceleration, and smoother
-   fits over longer windows). The generator that builds the four-frame
-   version from the three-frame one shows the pattern; going to N frames
-   is mechanical.
+2. **Break it — or rather, fix the break we found.** The test ladder
+   (tests/) is designed so failures localise themselves. The most valuable
+   thing to do next is no longer the one we expected: averaging instead of
+   sampling was the obvious fix, it was built, and it made matters worse for
+   the reason given above. The open problem is now sharper — teach the
+   tracker to judge, at each scale and each point, whether that scale holds
+   anything worth trusting, and to fall back when it does not. After that,
+   the lone-edge gate. (The speed sweep that exposed all this is not yet in
+   the test suite; NFRAME-LIMITS.md gives the one-line recipe.)
+3. **Extend it — but not to five frames for the fourth derivative, the
+   change in jerk.** That was our stated next step, and this week's analysis
+   and measurements say four is where it stops: by our arithmetic (not yet
+   checked numerically), each added frame nearly doubles the noise in the
+   next quantity up the chain (speed, acceleration, jerk, then the change in
+   jerk) while the true signal in that quantity shrinks, and on the gentle
+   motion we believe real footage mostly contains — its motion spectrum is not
+   yet measured, and that measurement is first on the technical list — even
+   the fourth frame is marginal: it pays only on fast oscillation, where the
+   test ladder shows it clearly. A fifth frame can still earn its place in
+   two other ways: as an independent cross-check of the acceleration reading,
+   or as a smoother fit over a longer window on slow content. The generator
+   that builds the four-frame version from the three-frame one makes the
+   plumbing mostly mechanical — though a fifth frame runs into a hard limit
+   on how many images the engine lets one pass read, and the generator has
+   drifted behind the hand-edited shader and must be re-synced first. Fix the
+   sampling first; it is worth more than any number of frames. One
+   caution for anyone with a fast camera: "four frames" means four frames
+   spanning the right amount of *time* — about a third of the quickest
+   movement's cycle. At 24 frames per second that is four neighbouring
+   frames; at 240 it is every tenth frame, because neighbouring frames at
+   that rate barely differ and their differences are noise. The rule for
+   choosing the spacing is written down in NFRAME-LIMITS.md.
 4. **Port it.** Done once — the Metal demo above is the worked example,
    built by machine-translating the GLSL and verifying against the same
    ladder and calibrations, and it came out 30–46% faster than the
@@ -278,11 +366,15 @@ For anyone picking this up:
 - `README.md` — the enabling patch, documented for upstream review
 - `METHODOLOGY.md` — how the work was actually done, including the
   division of labour between the human and the AI
-- `TESTING.md` and `tests/` — the ground-truth test ladder
+- `tests/TESTING.md` and `tests/` — the ground-truth test ladder
 - `TRIDIRECTIONAL.md` — the three-frame experiment: hypothesis,
   algebra, calibration, failures and all
 - `QUADDIRECTIONAL.md` — the four-frame experiment, with its
   pre-registered predictions and their outcomes
+- `NFRAME-LIMITS.md` — where the frame count stops paying and why, what
+  "wobble" (the acceleration itself changing within the few frames being
+  fitted) really costs, and the rotation diagnosis with its control scenes
+  and the sampling defect they uncovered
 - `PRIOR-ART.md` — where this sits in the scientific record
 - `PLAN.md` — the working research plan, kept honest
 - `metal-demo/` and `METALPORT.md` — the native Metal port and demo app:
@@ -302,7 +394,7 @@ loop between them: hypotheses cheap enough to test, tests honest enough to
 fail, and a standing rule that every claim — including "already correct",
 and including everything in this document — is worth checking.
 
-Human edit: This authors stream of consciousness can be directly accessed at the subreddit here: 
+Human edit: This authors stream of consciousness can be directly accessed at the subreddit here:
 
 https://www.reddit.com/r/nframe
 
