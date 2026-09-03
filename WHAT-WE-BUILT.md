@@ -132,34 +132,10 @@ frame count stops at four.
 
 ## What it cannot do — read this as carefully as the good news
 
-- **Rotation is currently unreliable — and we now have a three-part
-  diagnosis, the last part awaiting its fix to be confirmed.** A spinning
-  object's acceleration readings are wrong by large
-  factors (often more than 100%, with the direction off by tens of degrees).
-  We found this by testing against rotating scenes, and this week diagnosed
-  it with control scenes built to separate the possible causes. On a plain
-  spinning disc the instrument can only see motion *across* an edge, and a
-  spin-up is motion *along* it — the lone-edge limitation below in its
-  purest form. On a patterned disc the pattern repeats, and once the disc
-  has turned the tracker locks onto the wrong repeat. And — the finding that
-  matters most — the tracker's coarse first look at each frame is built by
-  sampling single pixels rather than averaging over the area they stand
-  for, so any fine pattern that moves by an "in-between" amount per frame
-  gets mis-tracked by many pixels — around twenty in our tests. Rotation is
-  simply the motion that does that everywhere at once. The same defect hits
-  ordinary sideways motion of fine texture at most speeds; our test scenes
-  never showed it because every fine-textured moving test happened to move by
-  exactly one coarse cell per frame, and the coarser pattern on our other
-  textured tests only trips it once rotated. **The obvious fix — average the
-  pixels instead of sampling one of them — was built the next day and made
-  things worse**, and understanding why was more useful than the fix would
-  have been: averaging removes the very detail the tracker was locking onto,
-  leaving it a nearly blank picture at that scale. Sampling one pixel keeps
-  plenty of detail but the wrong detail; averaging keeps the right detail but
-  almost none of it. So the answer is not a better filter, it is for the
-  tracker to notice when a scale has nothing trustworthy in it and stop
-  relying on it. That is not built. Until it is: **a turning vehicle is
-  rotation. Nobody should attach this to anything safety-critical.**
+- **Rotation is currently unreliable — but we now have a three-part
+  diagnosis, the last part awaiting its fix to be confirmed.**  Until it
+  is: **a turning vehicle is rotation. Nobody should attach this to
+  anything safety-critical.**
 - **It can only measure where there is visible pattern.** Blank walls,
   clear sky, smooth surfaces: no reading. This is a physical limit of
   tracking patches, not a bug — but it means the map is sparse, and its
