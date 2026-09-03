@@ -10,22 +10,27 @@ user-supplied GLSL shader (the same `.hook`-format shaders mpv and ffmpeg
 already support via `custom_shader_path`) simultaneous access to a whole
 *window* of source video frames at once (as many as that specific shader
 declares it wants, from 1 up to 8), plus the exact timing relationship
-between them, instead of a single already-blended texture.
-
-[BUILDANDUSAGE.md](BUILDANDUSAGE.md) is the build guide for Linux
-and Windows. [SHADERS.md](SHADERS.md) documents the shaders built on it,
-[tests/TESTING.md](tests/TESTING.md) the ground-truth harness, and
-[METHODOLOGY.md](METHODOLOGY.md) how the whole thing was actually
-developed and how to re-establish the loop that did it.
+between them, instead of a single already-blended texture. A companion
+one-hunk patch, [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch),
+lets the window fire when the output rate equals the input rate, which
+turns out to matter more than it sounds.
 
 Everything downstream of that -- motion-compensated interpolation,
 temporal denoising, custom deinterlacing, scene-cut-aware effects, or
 anything else that needs to reason across time rather than within a
 single frame -- is then just a GLSL shader, running as part of one
-ordinary `ffmpeg` command. [SHADERS.md](SHADERS.md) documents a working
-bidirectional interpolation shader built on top of it, as a worked
-example -- using exactly 2 frames, the common and most-tested case (see
-"Verifying the N-frame case" below for how a wider window is checked).
+ordinary `ffmpeg` command.
+
+What was built on it is the reason this repository exists, and it is not
+the frame-rate conversion. The shaders here look at three and four frames
+at once and write out, for every point on the screen and in real time,
+not just where things are moving but how that motion is changing -- and,
+because they run at the video's own frame rate as readily as at a higher
+one, what they produce can be a measurement rather than a picture.
+[WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) says in plain language what that
+turned out to be good for, where it fails, and what it was measured
+against. Start there if you want to know why. Start below if you want to
+know how.
 
 ## Why it's needed
 
@@ -53,19 +58,18 @@ motion-estimation pipeline -- can opt into it.
 - **N-frame access** -- a hook declares how many frames it wants (from 1
   up to `PL_FRAME_MIX_MAX`, currently 8) simply by which `FRAME<n>` names
   it binds in its GLSL (`HOOKED`/`NEXT` remain the friendly aliases for
-  `FRAME0`/`FRAME1`, the common 2-frame case). The renderer only fires
-  the hook once it can supply exactly that many frames -- fewer (e.g. the
-  first/last couple of output frames in a clip) fall back to the builtin
-  blend instead, needing proportionally more lead-in frames the larger
-  the window.
+  `FRAME0`/`FRAME1`, the two-frame case). The renderer only fires the hook
+  once it can supply exactly that many frames -- fewer (e.g. the first and
+  last few output frames of a clip) fall back to the builtin blend
+  instead, needing proportionally more lead-in the larger the window.
 - **`mix_t`** -- the output frame's normalized position between the first
   two frames (0.0 at `FRAME0`, 1.0 at `FRAME1`), provided as a convenience
-  for the common two-frame case. Not well-defined for three or more
-  points, so it's left unset for hooks wanting more than 2 frames.
+  for the two-frame case. Not well-defined for three or more points, so
+  it is left unset for hooks wanting more than 2 frames.
 - **`rts_mix[]`** -- the raw relative timestamps every frame in the
   window was selected at, for a shader that needs the actual frame
-  spacing (e.g. to detect a scene cut or VFR discontinuity) or wants to
-  build its own weighting across more than two frames.
+  spacing (to detect a scene cut or VFR discontinuity, or to fit a curve
+  through more than two points).
 - **`num_mix`** -- how many frames are actually in the window this call
   (always exactly what the hook declared, once it fires at all).
 - **`pair_changed`** -- true only when the whole window of source frames
@@ -73,28 +77,36 @@ motion-estimation pipeline -- can opt into it.
   another output frame within the *same* window (only relative position
   moved). Lets a shader maintain a persistent GPU-side cache (via the
   existing mpv-shader `//!TEXTURE ... //!STORAGE` directive) of expensive
-  per-window work -- e.g. a motion vector field -- and skip recomputing it
-  for every output frame at non-integer fps ratios.
+  per-window work -- a motion field, say -- and skip recomputing it for
+  every output frame at non-integer fps ratios.
 - **`frame_mixer=custom_n`** -- a new named entry in libplacebo's own
-  frame-mixer preset table specifically for this use case, so the ffmpeg
-  command line doesn't have to name an unrelated cubic kernel
-  (`mitchell_clamp`) to get the queue radius it happens to need (see
-  Usage below). Currently just an alias for `mitchell_clamp`'s existing
-  config, not a new filter.
+  frame-mixer preset table for this use case, so the ffmpeg command line
+  doesn't have to name an unrelated cubic kernel (`mitchell_clamp`) to
+  get the queue radius it happens to need (see Usage below). Currently an
+  alias for `mitchell_clamp`'s existing config, not a new filter.
+- **N:N operation** (the companion patch) -- libplacebo's frame queue
+  quietly collapses to a single-frame mix whenever the output rate is
+  within its interpolation threshold of the input rate, which for a
+  matched rate is exactly 0, and the hook never fires. The second patch
+  disables that collapse only while a `PL_HOOK_FRAME_MIX` hook is
+  attached, so a shader can see its full window at the source's own
+  frame rate. That is what makes the shaders usable as instruments
+  rather than only as interpolators.
 
 None of this requires any ffmpeg source changes -- `fps=`, frame pacing,
 `custom_shader_path` loading, and `frame_mixer=` string lookup all
 already existed in `vf_libplacebo.c` unmodified. Only libplacebo needs
-the patch.
+the patches.
 
 ## Benefits
 
 - **Real-time, GPU-native.** Runs as ordinary GLSL/compute shaders on
-  whatever GPU backend libplacebo already targets (Vulkan, OpenGL,
-  D3D11) -- no CPU round-trip, no separate motion-estimation pass.
+  whatever GPU backend libplacebo targets (Vulkan under ffmpeg; libplacebo
+  itself also speaks OpenGL and D3D11) -- no CPU round-trip, no separate
+  motion-estimation pass.
 - **Cross-platform, no vendor lock-in.** Not tied to a proprietary
   optical-flow SDK or a specific vendor's hardware interpolation block --
-  it's portable GLSL running through libplacebo's existing, already
+  portable GLSL running through libplacebo's existing, already
   cross-platform GPU abstraction.
 - **Single ffmpeg command.** No external tooling, no scripted multi-pass
   pipeline, no intermediate files -- this plugs directly into the same
@@ -102,13 +114,15 @@ the patch.
 - **Extensible.** The hook doesn't know or care what the shader does
   with the frames it's given -- motion compensation is one use, but
   temporal denoising, custom deinterlacing, or anything else that needs
-  "this frame vs. the last one (or several)" fits the same interface.
+  "this frame against the last one (or several)" fits the same interface.
 
 ## Costs and limitations
 
-- **Requires a patched libplacebo.** This isn't merged upstream (yet --
-  see below), so you're building against a patched library, not a stock
-  release.
+- **Requires a patched libplacebo.** This isn't merged upstream, so you
+  are building against a patched library, not a stock release.
+  [BUILDANDUSAGE.md](BUILDANDUSAGE.md) is the build guide for Linux,
+  Windows and macOS, and the three build scripts in this directory do
+  it end to end.
 - **A fixed window per hook, not padded.** A hook's frame count is fixed
   for its lifetime (however many `FRAME<n>` names its own GLSL binds) and
   the renderer only ever fires it with *exactly* that many real frames --
@@ -116,35 +130,43 @@ the patch.
   padding with repeated frames would need a "how many of these are real"
   count, which a shader author could forget to check, silently
   double-counting a padded frame. The cost is that a hook wanting a large
-  window simply won't fire at all near a clip's start/end, where that
+  window simply won't fire at all near a clip's start and end, where that
   many real frames don't yet exist.
-- **Startup frame-hold.** Before enough real frames exist to fill a hook's declared
-  window, output falls back to libplacebo's own zero-order-hold behavior
-  -- the same single decoded frame held across several consecutive output
-  frames until the next one arrives. A wider window needs proportionally
-  more lead-in (confirmed on real hardware: a 4-frame window held frames
-  2-4 of a clip before real output took over on frame 5) 
+- **Startup frame-hold.** Before enough real frames exist to fill a
+  hook's declared window, output falls back to libplacebo's own
+  zero-order-hold behaviour -- the same single decoded frame held across
+  several consecutive output frames until the next one arrives. A wider
+  window needs proportionally more lead-in (measured: a 4-frame window
+  held frames 2-4 of a clip before real output took over on frame 5).
 - **`PL_FRAME_MIX_MAX` (8) is a hard ceiling.** Not runtime-configurable;
-  raising it means patching the constant and rebuilding. Chosen as
-  generous headroom over realistic use (the shaders in this directory
-  only need 2) rather than tuned against any specific larger use case.
+  raising it means patching the constant and rebuilding. The shaders here
+  bind 2, 3 and 4 frames; what a fifth would buy, and what it would cost,
+  is worked out in [NFRAME-LIMITS.md](NFRAME-LIMITS.md).
 - **Storage-cache textures have a fixed size ceiling.** A shader that
   uses `pair_changed` to drive a persistent `//!STORAGE` cache (as the
-  example shader does) runs into an existing mpv-shader-format
+  interpolators here do) runs into an existing mpv-shader-format
   constraint, not something this patch adds: `//!TEXTURE`'s `//!SIZE`
   only accepts literal integers, unlike the `//!WIDTH`/`//!HEIGHT` on
   regular hook passes (which support expressions like `HOOKED.w 4 /`).
   So a cache texture can't size itself to the actual video resolution --
-  it has to be allocated at a fixed ceiling (e.g. 4K) up front, and a
-  shader author needs to explicitly raise that ceiling to support larger
-  sources. Source video larger than the configured ceiling reads/writes
-  outside the allocated texture, which is undefined behavior, not just
-  wasted memory. **Untested above 1080p**, including this exact scenario.
+  it has to be allocated at a fixed ceiling (4K in the shaders here) up
+  front, and a shader author needs to raise that ceiling explicitly to
+  support larger sources. Source video larger than the configured ceiling
+  reads and writes outside the allocated texture, which is undefined
+  behaviour, not just wasted memory. **Untested above 1280x720**, the
+  size everything in this repository has run at.
 - **No automatic invalidation across discontinuities.** `pair_changed`
   is a straightforward signature comparison against the previous call on
   the same renderer -- it correctly detects an ordinary cut to a new
   window of frames, but hasn't been stress-tested against seeks or
   stream discontinuities specifically.
+- **The shaders' own limits are documented with their results.** Where
+  the motion estimator fails -- and it does, on rotation, on certain
+  textures at certain speeds, and near the edges of its search reach --
+  is measured and written down in [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md),
+  [NFRAME-LIMITS.md](NFRAME-LIMITS.md) and [tests/TESTING.md](tests/TESTING.md),
+  with the same care as the successes. Nothing here should be attached
+  to anything safety-critical.
 
 ## Testing status
 
@@ -155,84 +177,37 @@ known-good -- treat it as a lead to confirm, not a claim.
 |---|---|---|---|
 | Intel i5-9500, UHD Graphics 630 iGPU (Coffee Lake, gen9) + Intel Arc A310 dGPU (Alchemist, gen12) | Debian, compiled against jellyfin-ffmpeg | Mesa | patch and shaders tested |
 | Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, WSL2 Ubuntu | Mesa lavapipe (software) | patch and shaders tested |
-| Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary | patch and shaders tested; ladder matches Linux to 0.01 dB |
-| AMD Radeon RX 6600 eGPU (same machine, over Thunderbolt) | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary, Adrenalin 26.8.1 | patch and shaders tested; **now the Windows workhorse.** Until 2026-09-02 it never appeared as a Vulkan device: the Boot Camp package bound it to a Polaris-era driver whose Vulkan ICD did not know the chip. Binding the current Adrenalin driver to the 6600 alone (the 560X keeps its Boot Camp driver) makes both GPUs enumerate under plain Vulkan. Bit-reproducible run to run, ~2.1x faster than the 560X, and its O5 acceleration field matches the 560X's to three decimals on 19 of 20 frames. Every measurement in [NFRAME-LIMITS.md](NFRAME-LIMITS.md) and [THREEDIMENSIONAL.md](THREEDIMENSIONAL.md) was taken on it |
-| AMD Radeon RX 6600 eGPU, Radeon Pro 560X, UHD 630 (same machine) | macOS 15.7.9, Intel | MoltenVK 1.4.2 | patch and all shaders build and run; harness 10/10. **Correctness target only -- output is not bit-reproducible run to run, for reasons upstream of this project.** Investigated and closed; see [BUILDANDUSAGE.md](BUILDANDUSAGE.md#macos) |
-| Apple M2, 8-core GPU, unified memory | macOS 26.6.2, arm64 | MoltenVK 1.4.2 | patch and shaders tested; tri ladder matches the Windows numbers to ≤0.03 dB on five of seven reference cases; full quad ladder run here first; stock linear is bit-reproducible (0/60 frames differ) while the interpolator diverges at the bit level but bounded — ladder scores move ≤0.25 dB. See [BUILDANDUSAGE.md](BUILDANDUSAGE.md#apple-silicon-measured-2026-09-01-m2) |
+| Intel i9-9880H, AMD Radeon Pro 560X dGPU | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary (Boot Camp) | patch and shaders tested; ladder matches Linux to 0.01 dB |
+| AMD Radeon RX 6600 eGPU (same machine, over Thunderbolt) | Windows 26H1, native MSYS2/mingw-w64 | AMD proprietary, Adrenalin 26.8.1 | patch and shaders tested; the Windows workhorse since 2026-09-02, when the eGPU's driver was replaced and it first appeared as a Vulkan device. Bit-reproducible run to run, ~2.1x the 560X, and field-matched to it. Every measurement in [NFRAME-LIMITS.md](NFRAME-LIMITS.md) and [THREEDIMENSIONAL.md](THREEDIMENSIONAL.md) was taken here |
+| AMD Radeon RX 6600 eGPU, Radeon Pro 560X, UHD 630 (same machine) | macOS 15.7.9, Intel | MoltenVK 1.4.2 | patch and all shaders build and run; harness 10/10. Correctness target only: output is not bit-reproducible run to run, and the cause is upstream of this project -- see [BUILDANDUSAGE.md](BUILDANDUSAGE.md#macos) |
+| Apple M2, 8-core GPU, unified memory | macOS 26.6.2, arm64 | MoltenVK 1.4.2 | patch and shaders tested; tri ladder matches the Windows numbers to 0.03 dB on five of seven reference cases; the interpolator diverges at the bit level but bounded (ladder scores move at most 0.25 dB). See [BUILDANDUSAGE.md](BUILDANDUSAGE.md#apple-silicon-measured-2026-09-01-m2) |
 | NVIDIA, any | -- | -- | **untested** |
 
-So the patch has run against four different Vulkan implementations -- Mesa on
-Intel, Mesa lavapipe in software, AMD's proprietary Windows driver (two
+So the patch has run against four different Vulkan implementations -- Mesa
+on Intel, Mesa lavapipe in software, AMD's proprietary Windows driver (two
 generations of it, on two GPU architectures), and MoltenVK translating to
-Metal -- on three operating systems, three compilers, and now two CPU
-architectures. The MoltenVK case is the strongest
-portability evidence here, because a translation layer shares no code with
-the others -- and it has now been verified over two unrelated Metal stacks
-underneath (AMD silicon on the Intel Mac, Apple's own GPU on the M2), with
-the M2 matching the Windows ladder to hundredths of a dB. It has never run
-on NVIDIA hardware.
-
-### The macOS (Intel) case, closed
-
-Worth reading before anyone spends time on it, because the conclusion is not
-the obvious one.
-
-**The patch and shaders are portable to macOS.** Everything builds against
-MoltenVK, all nine shaders compile and run, the full harness passes 10/10, and
-the RX 6600 eGPU is enumerated and selected as a Vulkan device -- which is more
-than the same card manages under Windows on the same machine.
-`VK_KHR_push_descriptor`, long the suspected blocker, is supported and used
-without incident.
-
-**But macOS output is not bit-reproducible, and that is not this project's
-bug.** Repeated identical runs diverge. The cause was investigated and traced
-*upstream*: a baseline nondeterminism exists in the Vulkan/MoltenVK path
-itself, present even with stock `frame_mixer=linear` and no custom shader or
-storage images at all, while the identical CPU-only path is exactly
-reproducible. The interpolator amplifies it enormously because block matching
-selects an argmin -- one LSB at a tie flips a motion vector and ruins a whole
-frame group. Severity scales with how far the GPU's memory sits from the CPU:
-worst on a Thunderbolt eGPU, twenty times milder on the integrated GPU. The
-flow cache was ruled out by experiment; synchronization validation reports no
-hazards.
-
-**There is no way around it on macOS, because there is no other backend.**
-libplacebo's README advertises OpenGL and Direct3D 11 alongside Vulkan, but
-ffmpeg instantiates only the Vulkan backend -- `vf_libplacebo.c` has zero
-references to either -- and macOS OpenGL is frozen at 4.1, lacking both the
-image load/store (4.2) and compute shaders (4.3) that the `//!STORAGE` flow
-cache requires. Both were verified rather than assumed.
-
-**So: treat macOS as a portability and correctness target, not a measurement
-one.** A run there proves the shaders execute correctly under a translation
-layer, which is a genuinely strong portability claim. Do not tune parameters
-against its numbers, and do not compare one of its figures against Linux or
-Windows. If you must measure on macOS, select the integrated GPU -- it is
-twenty times better behaved, though still not clean.
-
-**This says nothing about Apple Silicon**, which shares neither the eGPU, the
-memory architecture, nor the GPU driver. All of the above is Intel-specific
-and would need re-measuring there.
-
-See [BUILDANDUSAGE.md](BUILDANDUSAGE.md) for how to build it on Linux,
-Windows or macOS, and [tests/TESTING.md](tests/TESTING.md) for what the measurements
-mean.
-
+Metal -- on three operating systems, three compilers, and two CPU
+architectures. The MoltenVK case is the strongest portability evidence,
+because a translation layer shares no code with the others, and it has been
+verified over two unrelated Metal stacks underneath (AMD silicon on the
+Intel Mac, Apple's own GPU on the M2), with the M2 matching the Windows
+ladder to hundredths of a dB.
 
 ## Verifying the N-frame case
 
-Going from exactly-2-frames to a hook-declared N was a structural change
-to `pl_hook_params`' fields (not an additive one), so it needed an actual
+Going from exactly two frames to a hook-declared N was a structural change
+to `pl_hook_params`' fields, not an additive one, so it needed a real
 build-and-run cycle to trust, not just a clean `git apply`.
-[SHADERS.md](SHADERS.md) documents `nframe-smoketest.glsl`, a
-smoke-test shader built specifically for this: it binds 4 frames at once
-and renders each one into its own grid cell with a diagnostic overlay (a
-distinct color tag per index, a frame-count readout, a per-frame
-timestamp bar, the same red/green `pair_changed` indicator the flow
-debug shader uses), so binding more than 2 frames from a real GPU
-dispatch is something you can actually look at rather than just trust.
-Point `custom_shader_path` at it the same way as any other shader here to
-check it before relying on a wider window for anything real.
+[SHADERS.md](SHADERS.md) documents `nframe-smoketest.glsl`, a smoke-test
+shader built for exactly this: it binds 4 frames at once and renders each
+into its own grid cell with a diagnostic overlay (a distinct colour tag per
+index, a frame-count readout, a per-frame timestamp bar, and the same
+red/green `pair_changed` indicator the flow debug shader uses), so binding
+more than 2 frames from a real GPU dispatch is something you can look at
+rather than take on trust. Point `custom_shader_path` at it the same way as
+any other shader here before relying on a wider window for anything real.
+The three- and four-frame interpolators are the everyday users of the wider
+window now; the smoke test remains the quick check that a build is sound.
 
 ## Usage
 
@@ -240,23 +215,19 @@ Point `custom_shader_path` at any `PL_HOOK_FRAME_MIX`-aware shader (see
 [SHADERS.md](SHADERS.md)), and use `frame_mixer=custom_n` rather than
 `linear`.
 
-`custom_n` is a new named entry this patch adds to libplacebo's own
+`custom_n` is a named entry this patch adds to libplacebo's own
 `pl_frame_mixers[]` preset table (`src/renderer.c`) -- the same table
 `vf_libplacebo.c` already does a plain string lookup against for
-`frame_mixer=`, so no ffmpeg changes are needed for this either. For now
-it's a direct alias for the existing `mitchell_clamp` entry (identical
-`pl_filter_config`, radius 2.0), kept as a separate name specifically
-because `frame_mixer=mitchell_clamp` was accurate about the radius but
-misleading about what's actually happening: that kernel is *never*
-evaluated for the blend itself once a `PL_HOOK_FRAME_MIX` hook is
-attached and fires -- `pl_render_image_mix` intercepts and bypasses it
-entirely, and radius is the only thing about it that still matters (it's
-what determines how far libplacebo searches for candidate frames when
-building the queue; the hook always picks exactly the frames that
-bracket the target timestamp regardless of how many extra frames a wider
-radius pulls in, so there's no downside to the larger radius). Using
-`mitchell_clamp` directly still works identically -- `custom_n` is a
-clearer name for the same thing, not a behavior change.
+`frame_mixer=`, so no ffmpeg changes are needed for this either. It is a
+direct alias for the existing `mitchell_clamp` entry (identical
+`pl_filter_config`, radius 2.0), kept as a separate name because
+`frame_mixer=mitchell_clamp` was accurate about the radius but misleading
+about what happens: that kernel is *never* evaluated for the blend once a
+`PL_HOOK_FRAME_MIX` hook is attached and fires -- `pl_render_image_mix`
+intercepts and bypasses it -- and the radius is the only thing about it
+that still matters, because it sets how far libplacebo searches for
+candidate frames when building the queue. Using `mitchell_clamp` directly
+still works identically.
 
 ```bash
 ./ffmpeg/ffmpeg \
@@ -274,17 +245,48 @@ format=vulkan,hwmap=derive_device=vaapi,format=vaapi" \
     -y /share/output.mp4
 ```
 
-`fps=` can be any target rate, including non-integer ratios (e.g.
-24->60) -- `mix_t` is computed from the real frame timestamps, not a
-fixed step. (`bidirectional-interpolation.glsl`, shown above, has only
-actually been tested end to end at `fps=60` so far; N:N ratios like
-`24->24` have been confirmed with `motion-edges-dual.glsl` instead.)
+`fps=` can be any target rate, including non-integer ratios (24->60 is the
+one the ladder measures) -- `mix_t` and `rts_mix[]` come from the real frame
+timestamps, not a fixed step. Setting `fps=` equal to the source rate, with
+the companion patch applied, makes the shader run at N:N: no frames are
+invented, and its diagnostic outputs become the measurement the rest of
+this repository is about. [BUILDANDUSAGE.md](BUILDANDUSAGE.md) has the
+Windows and macOS forms of the command, and
+[tests/TESTING.md](tests/TESTING.md) the ground-truth harness that every
+number in the other documents was produced by.
 
 ## Also in this directory
 
-[hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch)
-is an unrelated one-line fix for a genuine upstream ffmpeg bug (a NULL
-pointer dereference in `libavcodec/hw_base_encode.c` on early EOF flush)
-found while testing this project -- see the patch file itself for
-details.
+- **Patches.** [frame-mix-hook.patch](frame-mix-hook.patch), the hook
+  stage above; [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch),
+  its N:N companion; and
+  [hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch),
+  an unrelated one-line fix for a genuine upstream ffmpeg bug (a NULL
+  pointer dereference in `libavcodec/hw_base_encode.c` on early EOF
+  flush) found while testing this project -- see the patch itself.
+- **Build scripts.** `build-windows.ps1`, `build-windows.sh` and
+  `build-macos.sh` build a patched ffmpeg end to end;
+  [BUILDANDUSAGE.md](BUILDANDUSAGE.md) explains them.
+- **Shaders.** The two-, three- and four-frame interpolators, three
+  diagnostic builds that draw what the estimator is thinking instead of
+  the picture, and two small examples that exist to demonstrate the hook.
+  [SHADERS.md](SHADERS.md) says which to use and why;
+  [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) and
+  [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) are the records of the
+  three- and four-frame experiments, hypotheses stated before the
+  results.
+- **What it found.** [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) in plain
+  language; [NFRAME-LIMITS.md](NFRAME-LIMITS.md) on where adding frames
+  stops paying and why; [THREEDIMENSIONAL.md](THREEDIMENSIONAL.md) on what
+  a two-dimensional field can and cannot say about motion in depth;
+  [PRIOR-ART.md](PRIOR-ART.md) on where all of it sits in the record.
+- **How it was done.** [METHODOLOGY.md](METHODOLOGY.md) on the working
+  method and how to re-establish it; [tests/TESTING.md](tests/TESTING.md)
+  and [tests/TOOLS.md](tests/TOOLS.md) on the harness and its
+  instruments; [PLAN.md](PLAN.md) on what is next and what was refuted on
+  the way.
+- **A native port.** [metal-demo/](metal-demo/) is the four-frame shader
+  machine-translated to Metal and wrapped in a small macOS app, with
+  [METALPORT.md](METALPORT.md) as its record and `QuadDemo-macos-arm64.zip`
+  as the built artefact.
 
