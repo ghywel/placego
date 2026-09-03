@@ -723,6 +723,173 @@ Nyquist crossing entered by scaling), D3's jerk with the anchor-corrected
 truth (P3D-7), and the PSNR arms (P3D-9); the next instrument step is the
 trust gate, which now has a second customer.
 
+### 9.6 Step 6: the wall, the jerk, and the Nyquist crossing -- 2026-09-03
+
+All scenes bit-identical under scenecheck. Every substituted shader constant
+asserted at render time (the rule learned in NFRAME-LIMITS.md section 8).
+
+**D2_wall_approach (P3D-2 with no boundary anywhere).** Whole-frame pooled
+divergence, 98% coverage: TTC = 2/div(v) reads -2.0% to 0.0% against tau_f
+at every frame 2-22, the pooled acceleration slope within -11..+10%, K
+between 0.63 and 1.17 with a median near 0.9. The cleanest surface in the
+family behaves as the cleanest. P3D-2 HOLDS.
+
+**D3_loom_accel jerk (P3D-7).** UNTESTABLE AS DESIGNED, for two reasons that
+compound. Where the composed link is in reach (t < 0.55 s) the true jerk at
+the rim is at most 0.04 px/interval^3, against a measured jerk noise of
+0.35-0.6 (section 8 of NFRAME-LIMITS.md: the ungated spread, not the gated
+median the "floor" figure came from); the pooled slope is noise with the
+right order of magnitude. From t = 0.55 s the *two-interval* backward link
+exceeds the ~23 px reach -- the scene's reach check used the single-interval
+speed -- and the provenance gate zeroes the jerk on most texels: the pooled
+slope reads exactly 0. Under the reach cap 2r/tau_f <= 20 px the looming
+jerk is bounded by j <= 60 (1 - q)/tau_f^2, which puts every in-reach
+constant-acceleration approach at or below the noise. The remedy is not a
+scene: it is the symmetric five-frame window's 2.8x lower jerk noise
+(NFRAME-LIMITS.md section 8), which now has a 3D customer. Per-texel H is
+noise here, as G was on D1.
+
+**D9_recede_alias (P3D-8).** REFUTED in its timing and confounded in its
+mechanism. The field is grossly wrong from frame 5 (texture period 36 px),
+not from the 32 px crossing at t = 0.5: median errors of 22-28 px, which is
+one texture period -- the matcher locks onto the wrong cycle of a PERIODIC
+texture, the R3/R6 mechanism, and 60% of texels are gross even at 38 px.
+A periodic texture cannot separate the Nyquist crossing from period
+locking.
+
+**D9b** -- my design error, void: doubling the recession rate and starting
+closer put the plate's corners at ~27 px/frame, beyond reach, so it failed
+on reach at every frame and says nothing about the crossing.
+
+**D9c_recede_slow (the isolate).** Aperiodic two-component texture, Z =
+7.5 + 3t, corner speed 12.6 -> 7.1 px/frame, patch dilation 0.08, fine
+period 37 -> 28 px crossing 32 at t = 0.5. Robust sigma_f 0.34-0.47 px and
+49-60% of texels beyond 0.5 px BEFORE the crossing; 0.46-0.65 and 55-63%
+after. A graded step of about a third, no cliff. So for aperiodic content
+the point-sampled pyramid degrades gracefully across its Nyquist boundary,
+and the per-texel field on a receding plate is floor-limited well above it,
+at speeds and periods that pass every criterion in section 4. Against D6
+(same texture, uniform 12.5 px/frame, fixed depth: 0.25 px, 35% gross) the
+receding plate is worse from the start; the spatially varying flow at
+non-integer coarse speeds is the suspect and the cause is open.
+
+Scored: P3D-2 holds (wall); P3D-7 untestable as designed; P3D-8 refuted.
+Two mechanisms the 2D speed comb had confounded are now separated by the
+3D scenes: **period locking** (periodic texture, catastrophic, errors of
+one period) and **coarse-level aliasing** (aperiodic texture, graded). That
+reframes the instrument's next step: the trust gate should key on
+periodicity -- a secondary autocorrelation peak inside the search window --
+rather than on contrast, which section 8 of NFRAME-LIMITS.md already showed
+is not the discriminator.
+
+**The locking criterion, checked against the frames.** A coarse search of
+reach R contains a second SAD minimum when the true displacement d is
+within reach of one texture period P: the alias at d - P lies inside the
+window iff P - |d| < R. With R ~ 23 px: on D9 the centre crosses that line
+at frame 10 (P - d = 22.8), the one frame measured 100% gross, and the
+plate's corners -- where |d| is larger by the radial contraction -- cross
+it from frame 2, matching 57-84% gross rising as the margin closes. On D9c
+the fine component's P - d_corner falls below 23 at frame 13 (22.8), and the
+measured step from ~50-55% to ~58-62% gross begins at frames 13-14. So the
+step I read as the Nyquist crossing is the fine period's alias entering the
+window at the corners; the criterion places it to within a frame on both
+scenes. It also retrodicts the record: R3/R6 (period 40, rim 16 px/frame)
+sit at the edge, P - d = 24; D6 (period 48, 12.5 px/frame) is clear at 35.5
+and measures the family's cleanest field. And it predicts something not yet
+measured: A7 (period 40, peaking near 20 px/frame) should lock on its
+fastest frames, hidden by the median that calibrates it to 2.3%. That test
+is queued. For the gate: distrust a coarse match when the local period,
+read from the level's autocorrelation, satisfies P - |d| < R.
+
+### 9.7 Step 7: the benchmark arms, and what the A-series was hiding -- 2026-09-03
+
+**P3D-9, the interpolation benchmark over the D-series.** REFUTED, in the
+simpler shader's favour:
+
+    case            hold   linear |    bi     tri    quad   quadlsq
+    D1_loom_const  29.10  32.97  |  42.64  42.27  42.01  41.95
+    D3_loom_accel  28.85  32.74  |  42.86  42.50  42.27  42.23
+    D4_loom_decel  29.71  33.72  |  43.82  43.51  43.21  43.14
+    D6_lateral     24.44  29.92  |  42.16  42.13  41.82  41.79
+
+The pre-registration allowed 0.1 dB of spread; bi wins by 0.3-0.7 on every
+scene. The mechanism is the one the day kept finding: the per-texel
+acceleration on these plates is at the floor (55-65% of texels read
+|a| > 0.5 px/interval^2 from noise), and the warp's acceleration deadband
+is an absolute magnitude threshold, so it admits noise as signal and
+injects ~0.1 px of spurious placement. It is NFRAME-LIMITS.md's L6/M2
+collapse in miniature, and the same repair applies: gate the warp's
+acceleration on trust, not on magnitude.
+
+**The locking criterion tested on A7 -- and replaced.** Prediction: A7
+(TEX_M2, period 40 px, peaking near 20 px/frame) locks on its fastest
+frames. Measured on its velocity field, gross fraction (error > 0.5 px)
+against the true displacement d:
+
+    |d| px/frame   ~16 (1.0 texel)   12-14    4-11 (0.25-0.7 texel)   0-2.5
+    gross           1-11%            23-24%   39-75%                  21-28%
+
+The fastest frames are the CLEANEST and the mid-speed frames the worst:
+the criterion as stated is refuted. The signed distribution of the gross
+readings says why. They are not blanks and not rails; they sit at d + L
+for a symmetry vector L of the texture: (+20, -20) at frame 9 (reading
++16, v_y ~ -10; 76% of the gross texels), (-20, -20) at frame 14 (80%),
+(+/-20, -/+20) at frames 6 and 18, and the axis period (-40, 0) at frame
+22. TEX_M2 = sin(x/6.366) sin(y/6.366) repeats under (20, 20) as well as
+(40, 0), and the coarse search window is a SQUARE of +/-23 px per axis, so
+a diagonal alias of up to ~33 px fits inside it. Which candidate wins
+follows one rule, checked on every frame: **the point-sampled coarse level
+prefers whichever candidate lies nearest an integer coarse-texel shift.**
+At |d| = 15.8 px (0.99 texel) the truth is the integer shift and wins; at
+|d| = 4.2 px (0.26 texel) the alias at (0.99, -1.25) texels is nearer an
+integer in x and wins; at |d| ~ 9 (0.57 texel) neither is, and a third of
+the texels go each way; near zero the truth is the integer shift and
+mostly wins. This is NFRAME-LIMITS.md section 3's "an aliased level is
+shift-invariant only for integer texel shifts", with the lattice added,
+and it accounts for the speed comb, for R3/R6 (rim texels at every
+sub-texel phase at once), for D9 (single period, alias always inside the
+window once P - |d| < R, which is where the earlier criterion came from --
+it is the one-dimensional special case), and for A7.
+
+**Why the A-series calibrations never saw it.** They are acceleration
+calibrations. The backward flow f_prev aliases by the mirror vector -L,
+and a = f_prev + f_next cancels the pair exactly, so the acceleration
+field reads correctly through a velocity field that is 60% wrong. That is
+right for the wrong reason, and it does not extend to jerk: with
+j = f_next + 3 f_prev - f_far the lattice parts sum to L - 3L - (-L + L'')
+= -L - L'', which cancels only by accident. Prediction: A7's jerk field is far worse than its acceleration field on
+the mid-speed frames, in proportion to the gross velocity fraction.
+
+**The prediction, scored the same evening.** A7's acceleration and jerk
+fields rendered with every constant asserted. On the mid-speed frames
+(|d| = 4-11 px/frame) the acceleration field reads exactly zero on 77-86%
+of texels: the round-trip provenance gate catches the alias whenever the
+reverse flow does not alias identically, and blanks the texel. So on those
+frames the acceleration is not right for the wrong reason, it is honestly
+absent (coverage 14-23%), and the A-series calibrations are medians over
+the surviving fraction. On the frames the gate passes (|d| >= 12.5 and
+|d| <= 2.5) the acceleration reads within -13% to +2% of 1.667 at the
+median, while the jerk -- true value zero -- reads a median |j| of
+0.10-0.65 px/interval^3 with 35-60% of texels above 0.5, worst on the
+near-static frames 11-13 where the acceleration is best. That is the
+un-cancelled lattice residue, in the jerk and not in the acceleration, as
+the stencil algebra said -- on different frames than predicted, because
+the composed link aliases on its own schedule and its self-consistent
+alias passes the gate. Scored: PARTIAL. Two instrument facts follow: the
+provenance gate is the reason the acceleration field survives lattice
+texture at all, at the price of coverage; and the jerk-null floor on a
+lattice texture is not the A6 clip's median of 0.035 but up to 0.65 on
+individual frames.
+
+**For the trust gate.** Contrast is not the discriminator (NFRAME-LIMITS.md
+section 8), the earlier one-dimensional period criterion is a special
+case, and a lattice-aware test is too texture-specific. The general repair
+is the classical one for coarse-to-fine ambiguity: carry the best TWO
+coarse minima down as seeds and let the finer levels, where the texture is
+resolved and the alias is 10+ texels away, arbitrate. That is a shader
+design item, pre-registered against A7's mid-speed velocity field (gross
+fraction from 39-75% toward D6's 35%), the comb, and R4/R5.
+
 ## 10. Method notes
 
 Derivations and reviews ran CPU-only while the GPU worked the instrument

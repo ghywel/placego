@@ -669,3 +669,276 @@ interpolator second. Pre-registered for when it is built: O3's N:N
 acceleration error falls from 2.7 to about 0.5 px RMS; the A6 jerk-null
 floor falls by 2.8x; L1 and the other slow cases lose nothing beyond 0.05
 dB. Scripts: the session scratch cov/n5.py and cov/n5sim.py.
+
+*Late the same day, from the 3D programme (THREEDIMENSIONAL.md section
+9.7): the point-sampled level's rule, and what the A-series was hiding.*
+A7's velocity field is 39-75% wrong on its mid-speed frames (4-11 px/frame)
+and 1-11% wrong at one coarse texel per frame. The wrong readings are the
+texture's lattice aliases d + L, with L = (+/-20, -/+20) or (+/-40, 0) for
+TEX_M2, and the winner on every frame is whichever candidate lies nearest
+an integer coarse-texel shift -- section 3's shift-invariance statement
+with the lattice added, and the mechanism behind the comb, R3/R6, D9 and
+A7 at once. The A-series acceleration calibrations pass through it because
+the backward flow aliases by the mirror vector and f_prev + f_next cancels
+the pair; the jerk stencil does not cancel it. Measured the same evening: on the
+mid-speed frames the round-trip gate blanks 77-86% of the acceleration
+texels (the alias fails to round-trip unless the reverse flow aliases
+identically), and on the frames the gate passes the acceleration reads
+within 2-13% while the jerk, truth zero, reads a median of up to 0.65
+px/interval^3 with 35-60% gross (THREEDIMENSIONAL.md section 9.7). The
+gate is why the acceleration field survives lattice texture at all; the
+jerk-null floor on such texture is frame-dependent and far above the A6
+clip median. Section 5's item 1 has a
+successor at last: carry the best two coarse minima down as seeds and let
+the resolved finer levels arbitrate. Pre-registered against A7's mid-speed
+field, the comb and R4/R5.
+
+How the alias is produced, from the search's own structure. The coarse
+level does not search a window; it descends -- five iterations of a 3x3
+probe from zero offset, step 0.75 then halving, on a 3x3 SAD plus a small
+magnitude prior, reach 1.45 texels. On a point-sampled lattice texture the
+descent lands on the nearest integer-texel minimum of the Moire, (1, -1)
+texels = (16, -16) px, which is what A7 reads; the next level's +/-2-texel
+refine (+/-16 px) then reaches the exact symmetry vector (20, -20), where
+the SAD is identically zero, so no finer level can reject it by SAD -- only
+the magnitude prior can. So the successor to the prefilter is two descents,
+not two minima from one window: one from zero and one from the best of a
+coarse +/-1-texel grid (or last frame's flow), both carried to the next
+level and arbitrated there by SAD plus the prior. Costed and pre-registered
+in the work queue; a shader change, so a proposal until agreed.
+
+*The two-descent gate, built and measured the same evening (agreed as the
+next shader step; the five-frame window deferred).* Implemented as a
+transform of the bidirectional base -- the generators build the three- and
+four-frame shaders from that base, so the change propagates on
+regeneration -- in scratch: each coarse pass runs a second descent from
+the best point of the +/-1-texel ring at least 0.75 texel from the first
+result and stores both seeds in the cache's unused .zw; each 1/8-res pass
+refines both and keeps the lower SAD plus a magnitude prior of 0.06 per
+texel toward zero. Scratch tri and quad regenerated from the variant with
+the machinery intact. Against the pre-registration, the verdict is split:
+
+    case                        stock   two-descent   pre-registered
+    L1_trans_8px (flat, edges)  61.24     75.01       "unchanged" -- +13.8
+    L6_flat_large               55.52     65.48       "unchanged" -- +10.0
+    M1_noise_large (16 px/f)    46.91     49.75       "unchanged" -- +2.8
+    comb M5/M6/M7/M8/M9      28-31   +0.2..+1.8 (M7 -0.3)   >= +6 dB: REFUTED
+    R4 / R5                  29.95/30.09  +0.2/+0.2          >= +3 dB: REFUTED
+    L0, R3                        --     unchanged           unchanged
+    L7                          25.25     24.85              -0.4, a wart
+    A7 mid-speed velocity, gross  ~46%    ~70%               <= 35%: REFUTED, harmful
+
+The three results say three different things. Where a correct basin
+exists at the coarse level and the descent from zero was missing it --
+edge-driven objects at sub-texel speeds, fine texture at exactly one
+texel -- the second descent finds it and the gain is large and
+unpredicted (and it propagates: the scratch tri and quad read 74.3 and
+74.0 on L1 against their stock 61.4 and 60.5). Where no correct basin
+exists -- aperiodic super-Nyquist texture at non-integer speeds, the comb
+-- a second wrong basin is no better than the first, which is the
+load-bearing-aliasing finding again from the other side. And where the
+competing basin is an exact symmetry of the texture, A7, the gate is
+harmful: the alias's SAD at the next level is identically zero, a prior
+of 0.06 per texel cannot outweigh any nonzero SAD at the true sub-texel
+displacement, so the second descent finds the alias more often and the
+arbitration keeps it. That was the design's own stated weak point, now
+with a number on it. The one knob that separates the two basins on an
+exact-symmetry texture is the prior's weight, and it trades directly
+against the velocity-ceiling cases L3 and L4, where a strong pull toward
+zero under-tracks genuine fast motion. Running: the full ladder for the
+variant, and a sweep of the prior at 0.3, 1.0 and 3.0 on A7 against L1,
+L3, L4, M1 and L6. Not shippable as it stands; the flat-and-edge gain is
+the thing to keep whatever the sweep says.
+
+The full ladder makes the split exact. Stock against the variant, 32
+cases: 12 gains above 0.5 dB, 10 losses, mean +1.49 dB. Every edge-driven
+or integer-speed case gains -- L1 +13.8, L6 +10.0, L2 +9.1, M2 +6.2, L8
++5.6, F1 +4.6, M1 +2.8, L9 +1.7, A1-A3 +0.9 to +1.7, L3 +1.6 -- and every
+case textured with the exact-symmetry sine product loses: A6 -2.6, O6
+-2.5, O5 -2.5, A7 -2.4, A5 -1.1, A4 -0.8, with R1 and L7 -0.4, L4 and R2
+-0.1, and the rest unchanged within 0.5. The losses are the A7 mechanism
+on the ladder's own calibration cases; the gains are the missed-basin
+mechanism on everything else; the arbitration is the whole question. A
+magnitude prior is the weakest tie-breaker there is against an alias whose
+SAD is exactly zero. The strongest cheap one is time: the previous
+window's flow at the same texel already sits in the storage cache and is
+read before it is overwritten, and on every ladder case the true flow is
+within about two pixels of last window's while the alias is twenty to
+thirty away. Two temporal variants -- a temporal prior at the arbitration,
+and a temporal second seed -- are queued behind the magnitude sweep on the
+loss cases, the big-gain cases and the velocity ceiling.
+
+The magnitude sweep finds a knee. Prior weight per E-texel against the
+five cases that bound the trade-off, and A7's mid-speed velocity field:
+
+    prior          0 (stock)   0.06    0.3     1.0     3.0
+    L1_trans_8px      61.24   75.01   75.01   76.55   61.25
+    L3_trans_23px     40.48   42.03   42.62   42.55   41.86
+    L4_trans_40px     31.57   31.47   31.51   31.48   31.46
+    L6_flat_large     55.52   65.48   65.48   63.58   55.26
+    M1_noise_large    46.91   49.75   49.82   47.75   45.52
+    A7 gross, mid     45.6%    70%    44.9%   44.7%   44.3%
+    A7 accel coverage 35.8%     --    49.7%   49.5%   50.2%
+
+At 0.3 every gain survives, the velocity ceiling is untouched (L4 within
+0.06 dB), and the lattice case returns to stock with fourteen points more
+acceleration coverage. At 3.0 the prior overrides the SAD outright and the
+shader reverts to stock to the hundredth on L1 and L6, which is the proof
+that the first descent is the stock path. No weight of magnitude prior
+beats stock on the lattice: the coarse Moire has no minimum at a
+non-integer true displacement, so no descent lands there, and whether the
+next level can reach it depends only on which basin the second seed fell
+in -- which is what the temporal seed is for. (Correction on the way: the
+stock coverage figure quoted above as 14-23% was inferred from the
+acceleration medians; measured with the same reader it is 35.8%.) What
+0.3 has not yet been measured on is the rest of the lattice cases, A4-A6
+and O5/O6, at -0.8 to -2.6 under 0.06; that measurement and its full
+ladder are the ship gate and are queued behind the temporal variants.
+
+The temporal variants split the cases complementarily, and that is the
+most useful thing the gate has said so far. Both at magnitude 0.06 with a
+temporal prior of 0.5 per E-texel on distance from the previous window's
+flow, read from the cache before it is overwritten:
+
+    case             stock   ring 0.06   T1 ring+temporal   T2 temporal seed
+    A6 (lattice)     36.18     33.60         34.99               37.70
+    A7 (lattice)     37.01     34.65         34.94               37.68
+    O5 (lattice)     33.09     30.61         32.25               33.83
+    O6 (lattice)     32.73     30.20         30.63               33.58
+    L1 (edge)        61.24     75.01         75.02               61.24
+    L2 (edge)        41.76     50.81         68.57               41.77
+    L6 (edge)        55.52     65.48         65.46               55.52
+    M2 (integer)     53.60     59.82         59.77               53.60
+    L3 / L4 (ceil)   40.48/31.57  42.03/31.47  42.69/31.50       40.60/32.10
+    A7 field, gross   45.6%     70%           53.4%               43.3%
+    A7 accel cover    35.8%      --           37.5%               57.4%
+
+The ring seed keeps every edge and integer gain and lifts L2 by a further
+eighteen decibels, and still loses on every exact-symmetry lattice. The
+temporal seed is the first variant to *beat* stock on every lattice case
+-- and on A7's field it is the best measured, 43% gross and 57%
+coverage -- and it gives up every edge gain to the hundredth of a
+decibel, because on those scenes the previous window's flow is the stock
+answer and the temporal prior then keeps it. The ring finds the better
+sub-texel basin the descent from zero misses on edges; the temporal seed
+finds the true basin on lattices; neither finds both. A three-descent
+variant -- zero, ring, previous flow, with the next level refining all
+three and arbitrating by SAD plus both priors -- is queued, with its
+render time, behind the timing of the two-seed variant. Cost is now part
+of every ship decision: a variant that costs time ships beside the stock
+shader as its own file, generated from its own base by the generators'
+new base argument, and the stock files stay byte-identical.
+
+*The ship gate: the two-seed variant at a magnitude prior of 0.3 on the
+full ladder.* Stock against the variant, 32 cases: **20 gains above 0.5
+dB, 2 losses, mean +2.43 dB.** Every lattice case that lost under 0.06 now
+gains -- A4 +0.9, A5 +1.0, A6 +0.7, A7 +0.8, O5 +0.4, O6 +0.3 -- the edge
+gains hold and grow (L2 +20.6 to 62.32, L1 +13.8, L6 +10.0, M2 +6.3, L8
++6.1, M1 +2.9, L3 +2.1, L9 +1.8, A1-A3 +1.1 to +2.3, F1/F2 +0.8/+1.1), and
+rotation improves for the first time in the record (R1 +0.6, R2 +0.5, R3
++1.4). Unchanged within 0.5: L0, L5, M3, M4, O1-O4. The two losses: L4 at
+-0.06 (the velocity ceiling, within noise) and L7 at -0.52 (the
+period-locking case, real and small). On the ten-case table the variant
+is at or above stock everywhere but L4, and it is beaten only by the
+temporal seed on A6 and O6 and by the ring-plus-temporal-prior on L2. The
+pre-registration is another matter and stays on the record as written:
+the comb was to rise by 6 dB, the rotation controls by 3, and A7's field
+was to fall to 35% gross; at 0.3 A7's field sits at stock's 45%, and the
+comb and controls have yet to be benched at 0.3 (queued). The gate does
+not do what it was predicted to do; it does something broader.
+
+The decision, under the rule that a change costing render time ships as
+its own file: this variant is shippable as a variant once its render time
+is measured (queued), and the stock bidirectional, tridirectional and
+quaddirectional shaders stay byte-identical. The three-seed variant is
+still being measured and may supersede it on the lattice cases.
+
+Render time, measured as the rule requires (O5, 60 output frames at
+24 -> 60, ffmpeg's own benchmark clock, median of three runs, whole
+process): bidirectional 2.69 s stock against 3.04 s with two seeds, +13%;
+quaddirectional 4.11 s against 4.45 s, +8%. The coarse pass doubles at
+1/16 resolution and the 1/8-resolution pass doubles its search; nothing
+finer changes. That is a cost, so the variant ships as its own file and
+the stock shaders stay as they are. Run-to-run spread on this machine is
+about +/- 10%, so the cost is known to about a third of itself; the
+ordering held in every run.
+
+*Three seeds, measured.* Zero, ring and previous flow as the three coarse
+descents, the third seed in a second storage cache per coarse pass (which
+exposed and fixed a generator assumption of one texture block per pass),
+priors 0.3 and 0.5, every seed refined at 1/8 resolution and arbitrated
+there. On the ten-case set against stock: A6 +2.7, A7 +0.8, L1 +13.8,
+L2 +28.8, L3 +2.3, L4 +0.4, L6 +9.2, M2 +6.2, O5 +1.1, O6 +1.0 -- every
+case up, the first variant for which that is true. Against the two-seed
+variant at 0.3 it adds A6 +1.9, L2 +8.2, L4 +0.5, O5 and O6 +0.7 and gives
+back L6 -0.75. A7's mid-speed field: 39.6% gross (stock 45.6%), acceleration
+coverage 64% (stock 36%) -- the coverage pre-registration met, the gross
+target (35%) not. Render time 3.02 s against stock 2.69, +12%: the third
+refine at 1/8 resolution costs nothing measurable over the second, so the
+three-seed variant sits in the same cost tier as the two-seed one. It is
+the variant to ship, subject to its full ladder, which is running.
+
+*Three seeds on the full ladder.* Stock against the three-seed variant,
+32 cases: **21 gains above 0.5 dB, one loss, mean +2.71 dB.** The two-seed
+variant's two small losses are gone (L7 -0.02, L4 +0.43); the comb gains
+0.3-1.6 and the rotation controls +0.5 to +1.3, still nowhere near the
+pre-registration; the quad generated from it costs +4% (4.28 s against
+4.11, the two-seed quad 4.45; all within the +/- 10% run-to-run spread of
+one another, so call the family +4 to +12%). The one loss is A5 at
+-2.91 dB, a lattice-textured calibration case the two-seed variant had at
++0.96. That has the signature of the temporal seed making an alias sticky
+across windows in one speed band -- the previous window's wrong flow
+seeding the next -- which is the hysteresis risk the temporal prior was
+noted to carry. Whether A5's *field* is corrupted, or only its warp, was
+measured before the ship decision, because the field is the variant's
+first customer. It is corrupted. Frame by frame on A5, three seeds
+against stock: velocity gross fraction 84 / 75 / 66 / 46 / 27 / 22% on
+frames 5-10 against 78 / 59 / 48 / 23 / 12 / 15%, and 64 / 65 / 79 / 56%
+on frames 18-21 against 57 / 46 / 76 / 43%; acceleration coverage on
+frames 8-10 falls from 76 / 100 / 100% to 42 / 65 / 84%. The alias chosen
+around frame 4-5, where stock is also mostly wrong, is carried forward
+by the temporal seed into frames where stock recovers. That is the
+hysteresis the temporal prior was noted to risk, now measured, and it
+disqualifies the three-seed variant as the field's shader. **Decision:
+the two-seed variant at prior 0.3 ships**, under the rule set before
+looking -- twenty gains, no loss beyond 0.52, A5 +0.96, +13% and +8% --
+and the three-seed variant stays a lead with this diagnosis. The obvious
+repair, for whoever picks it up: let the temporal seed compete only when
+the previous window's flow at that texel round-tripped, so a wrong flow
+cannot seed its own successor.
+
+*Real footage, the same evening.* The shipped two-seed variant through
+realbench.sh on the avengers clip at the record's five segments, six arms
+in one run. The run reproduces the record's own numbers (linear 31.90 /
+0.9451 exactly; base 34.29 / 0.9647 against the recorded 34.34 / 0.9655;
+variational 36.27 / 0.9741 against 36.31 / 0.9750), and its passthrough
+check sits where those runs' did (retained frames 55-62 dB, none bit-exact
+after the yuv420p round trip), so the comparison is on the published
+footing. Synthesised frames, means over the five segments:
+
+    arm            PSNR    SSIM      arm               PSNR    SSIM
+    linear         31.90   0.9451    quad (stock)      34.22   0.9635
+    base           34.29   0.9647    quad -twoseed     34.41   0.9639
+    -twoseed       34.48   0.9651    -variational      36.27   0.9741
+
+So on real footage the variant is +0.19 dB and +0.0004 SSIM over the base,
+every segment at or above it, and the same margin for its quad over the
+stock quad: a small, consistent gain, nothing like the ladder's +2.4 mean.
+The ladder's large gains are on content whose failures the coarse seed
+decides outright -- flat edges at sub-texel speed, integer-speed fine
+texture, exact lattices -- and real footage is decided by coherence, which
+is what the variational cascade adds and this variant does not. The
+recommendation in SHADERS.md is unchanged: the variational build for
+viewing, this variant for the fast tier and for the field.
+
+*The pre-registration, closed.* The two-seed variant at 0.3 on the cases
+the gate was built for: comb M5 +1.2, M6 +0.3, M7 +0.3, M8 +2.2, M9 +1.0
+against a pre-registered +6; R4 +0.5 and R5 +0.5 against +3; A7's
+mid-speed field 45% against 35% (39.6% with three seeds). All gains, none
+near the prediction, and the reason is now understood rather than
+guessed: on aperiodic super-Nyquist texture at non-integer coarse speeds
+there is no correct basin at the coarse level for any seed to find, so a
+better choice among coarse basins cannot help there. The gate was
+predicted to fix the comb and instead fixed the edges, the integer-speed
+textures, the lattices and rotation; the comb waits for something that
+changes what the coarse level sees, not how it chooses.

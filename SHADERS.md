@@ -1,14 +1,15 @@
 # Shaders
 
-Nine `.hook`-format GLSL shaders built on
+Twelve `.hook`-format GLSL shaders built on
 [frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage --
 see [README.md](README.md) for what that patch adds and why.
 
-They divide into three groups: **four interpolators** (one recommended, one
-cheap baseline, two superseded), **three diagnostic builds** of the same
-algorithm that render what the estimator is thinking instead of the picture,
-and **two small examples** that exist to demonstrate the hook rather than to
-interpolate anything.
+They divide into three groups: **seven interpolators** (one recommended for
+viewing, one cheap baseline, a two-seed variant of that baseline with the
+three- and four-frame shaders generated from each, and two superseded),
+**three diagnostic builds** of the same algorithm that render what the
+estimator is thinking instead of the picture, and **two small examples**
+that exist to demonstrate the hook rather than to interpolate anything.
 
 For the tools that measure all this, start at [tests/TOOLS.md](tests/TOOLS.md).
 For how any of this was arrived at, see [METHODOLOGY.md](METHODOLOGY.md); for
@@ -26,6 +27,28 @@ Use `bidirectional-interpolation.glsl` only if you have measured that the
 variational build does not fit your hardware budget. It is roughly a fifth
 of the passes and visibly worse -- on real footage it produces the edge
 fraying and non-rigid warping that the variational cascade exists to fix.
+
+If the fast tier is what you need and a 13% render-time cost is inside
+your budget, use `bidirectional-interpolation-twoseed.glsl` instead of the
+base, and the `-twoseed` tri and quad generated from it for the field. It
+is the base with the two coarsest levels choosing between two candidate
+motions instead of following one descent from zero (its file header says
+how and why), and on the synthetic ladder it is up on 20 of 32 cases by
+more than half a decibel and down on none by more than 0.52. On real
+footage the gain is small: +0.19 dB PSNR and +0.0004 SSIM over the base on
+the avengers clip, every segment at or above the base, and the same margin
+for its quad over the stock quad, while the variational build stays 1.8 dB
+and 0.009 SSIM ahead of both (table below). The ladder's large gains are on
+synthetic content whose failures the coarse seed decides outright; real
+footage is decided by coherence, which is the variational cascade's job.
+On the ladder each beats the other on different cases (the variational on
+A1-A3, L8, L9; this on L1, L2, L6, M2). Its first customer is the field instrument, whose acceleration and
+jerk readings inherit the coarse seeds: on the lattice-textured
+calibration cases the stock coarse search returns the texture's own
+symmetry vector instead of the motion on 40-75% of texels
+(NFRAME-LIMITS.md section 8), and this variant returns those cases to
+stock or better and lifts the acceleration field's coverage on A7's
+mid-speed frames from 36% to 50%.
 
 Do not use the two `diffuse-*` variants for new work. They are a superseded
 branch, kept for the record (see below).
@@ -48,6 +71,13 @@ bidirectional-interpolation.glsl            24 passes   the base (N = 2)
   |                                              + coarse vector medians
   |                                              (RECOMMENDED for viewing,
   |                                              generated)
+  |
+  +-- -twoseed.glsl                         23   base + a second coarse seed,
+  |     |                                        arbitrated at 1/8 res
+  |     |                                        (VARIANT: +13% time, up on
+  |     |                                        20 of 32 ladder cases)
+  |     +-- tri-/quaddirectional-…-twoseed  48/68 generated from it with the
+  |                                              generators' base argument
   |
   +-- tridirectional-interpolation.glsl     48   N = 3: + acceleration field
   |                                              + quadratic placement
@@ -77,6 +107,33 @@ lockstep with it by hand.
 Written against exactly 2 frames and needed *no changes* for the patch's
 N-frame generalisation -- `HOOKED` and `NEXT` still mean frame index 0 and
 1, so this shader is simply the N=2 case of the now-more-general mechanism.
+
+### `bidirectional-interpolation-twoseed.glsl` -- the base with two coarse seeds, 23 passes
+
+Same passes as the base and byte-identical from the quarter-resolution
+level down. Each 1/16-resolution search runs two descents -- from zero
+(the stock path) and from the best point of the +/-1-texel ring outside
+the first result's basin -- and stores both in the cache's four channels;
+each 1/8-resolution pass refines both and keeps the lower SAD plus a
+magnitude prior of 0.3 per texel toward zero. The weight is measured
+(NFRAME-LIMITS.md section 8: 0.06 loses on every lattice case, 3.0
+reverts to stock). No texture or binding is added. Cost: +13% on this
+shader, +8% on the quad generated from it (O5 at 24->60, median of
+three). The tri and quad variants are generated from it with the
+generators' base argument:
+
+    ./tests/gen_tridirectional.py  tridirectional-interpolation-twoseed.glsl  bidirectional-interpolation-twoseed.glsl
+    ./tests/gen_quaddirectional.py quaddirectional-interpolation-twoseed.glsl bidirectional-interpolation-twoseed.glsl
+
+What it was built for and did not do: the speed comb (fine aperiodic
+texture at non-integer coarse speeds) was pre-registered to rise by 6 dB
+and rose by 0.3-2.2, because no correct basin exists at the coarse level
+there for any seed to find. What it did instead: every edge-driven and
+integer-speed case up by 1-21 dB, every lattice-textured case up by
+0.3-1.0, rotation up by 0.5-1.4. A three-seed sibling that adds the
+previous window's flow as a third start is up on 21 of 32 but makes an
+alias sticky across windows on one calibration case and is not shipped;
+NFRAME-LIMITS.md section 8 has both ladders and the diagnosis.
 
 ### `bidirectional-interpolation-variational.glsl` -- recommended, 115 passes
 
@@ -198,6 +255,8 @@ motion-compensated frame.
 | `-diffuse-coarse` | 30.71 | **0.9444** |
 | `-diffuse-dual` | 30.98 | 0.9503 |
 | **`-variational`** | **36.31** | **0.9750** |
+| `-twoseed` (2026-09-03; same run: base 34.29 / 0.9647, `-variational` 36.27 / 0.9741) | 34.48 | 0.9651 |
+| quad stock / quad `-twoseed` (same run) | 34.22 / 34.41 | 0.9635 / 0.9639 |
 
 **Synthetic ladder** (`bench.sh all`, PSNR dB of genuinely interpolated
 frames). Re-measured 2026-08-31 after the ladder reset -- these numbers are
@@ -206,29 +265,34 @@ ground truth was pixel-quantised until then and suppressed absolute scores
 substantially. See `tests/TESTING.md`, "The ladder reset". Windows figures;
 the WSL/lavapipe run agrees to within 0.05 dB everywhere.
 
-| case | hold | linear | base | coarse | dual | variational |
-|---|---|---|---|---|---|---|
-| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
-| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 |
-| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** |
-| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** |
-| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** |
-| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 |
-| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 |
-| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 |
-| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** |
-| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** |
-| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** |
-| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 |
-| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 |
-| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 |
-| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** |
-| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** |
-| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** |
-| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** |
-| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** |
-| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** |
-| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** |
+| case | hold | linear | base | coarse | dual | variational | twoseed |
+|---|---|---|---|---|---|---|---|
+| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
+| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 | 75.01 |
+| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** | 62.32 |
+| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** | 42.62 |
+| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** | 31.51 |
+| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 | 62.27 |
+| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 | 65.48 |
+| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 | 24.73 |
+| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** | 46.13 |
+| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** | 41.58 |
+| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** | 49.82 |
+| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 | 59.87 |
+| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 | 21.91 |
+| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 | 60.58 |
+| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** | 47.93 |
+| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** | 44.88 |
+| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** | 39.91 |
+| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** | 47.71 |
+| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** | 40.23 |
+| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** | 37.87 |
+| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** | 38.09 |
+
+The `twoseed` column was measured 2026-09-03 on the RX 6600 against the same
+ladder; its stock-base column that day agrees with the `base` column above
+to within 0.04 dB on every case, so the columns are comparable. Its file
+header and NFRAME-LIMITS.md section 8 carry the full account.
 
 Every build beats stock `linear` on every case, which is the bar this harness
 exists to enforce. Beyond that, **the reset removed the simple ordering these
@@ -518,6 +582,7 @@ the command in README.md's Usage section), on a low-end discrete GPU:
 | `-variational` | 720p animation | ~104 fps |
 | `-variational` | 1080p live action | ~77 fps |
 | base (older measurement) | 1080p | ~138 fps |
+| `-twoseed` base / quad (2026-09-03, RX 6600, `-f null`) | 720p synthetic O5, 24->60 | stock 2.69 / 4.11 s per 60 frames -> 3.04 / 4.45 s (+13% / +8%) |
 
 The variational figures predate the coarse vector-median passes, which were
 measured under lavapipe at +8.6% (720p) and +6.1% (1080p) and confirmed on

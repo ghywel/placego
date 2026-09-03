@@ -271,7 +271,12 @@ For anyone picking this up:
    Linux, Windows, and macOS, and the test suite needs no GPU at all —
    a software renderer is enough to verify every correctness claim.
 2. **Break it** The test ladder (tests/) is designed so failures localise 
-   themselves.
+   themselves. The first repair to the tracker's coarsest step is now built,
+   as a separate variant that costs about a tenth more time: it weighs a
+   second candidate motion instead of following the first it finds, and on
+   the test scenes that is worth a few decibels on most of them and costs
+   nothing measurable on the rest; on real footage the difference is small
+   but consistent. SHADERS.md says when to use it.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
    NFRAME-LIMITS.md for more detail. One exception has since been found on

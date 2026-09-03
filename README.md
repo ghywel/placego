@@ -270,7 +270,9 @@ number in the other documents was produced by.
 - **Shaders.** The two-, three- and four-frame interpolators, three
   diagnostic builds that draw what the estimator is thinking instead of
   the picture, and two small examples that exist to demonstrate the hook.
-  [SHADERS.md](SHADERS.md) says which to use and why;
+  A `-twoseed` variant of each costs about a tenth more render time and
+  is up on most of the ladder; [SHADERS.md](SHADERS.md) says which to use
+  and why;
   [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) and
   [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) are the records of the
   three- and four-frame experiments, hypotheses stated before the
@@ -289,4 +291,3 @@ number in the other documents was produced by.
   machine-translated to Metal and wrapped in a small macOS app, with
   [METALPORT.md](METALPORT.md) as its record and `QuadDemo-macos-arm64.zip`
   as the built artefact.
-

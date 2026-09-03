@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the QUADDIRECTIONAL interpolation shader from the bidirectional base.
 
-    ./gen_quaddirectional.py [output.glsl]    (default: ../quaddirectional-interpolation.glsl)
+    ./gen_quaddirectional.py [output.glsl [base.glsl]]    (default: ../quaddirectional-interpolation.glsl)
 
 THE HYPOTHESIS THIS BUILDS -- and, unusually, what it is pre-registered NOT to
 do. Three frames determine a quadratic: velocity and acceleration, with
@@ -81,7 +81,12 @@ import sys
 import gen_tridirectional as T3
 
 HERE = pathlib.Path(__file__).resolve().parent
-SRC = HERE.parent / "bidirectional-interpolation.glsl"
+# The base to generate from. Default is the shipped bidirectional shader;
+# a second positional argument names a VARIANT base (e.g. a two-descent
+# bidirectional-interpolation-<variant>.glsl), so tri/quad variants can be
+# generated beside the stock files without overwriting them.
+SRC = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else \
+    HERE.parent / "bidirectional-interpolation.glsl"
 DST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else \
     HERE.parent / "quaddirectional-interpolation.glsl"
 
@@ -302,8 +307,12 @@ def main():
     parens = result.count("(") - result.count(")")
     assert hooks == 68, f"expected 68 passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
-
-    DST.write_text(HEADER + result, newline="\n")
+    header = HEADER
+    if SRC.name != "bidirectional-interpolation.glsl":
+        header = header.replace("bidirectional-interpolation.glsl", SRC.name)
+        header = header.replace("//   ./tests/gen_quaddirectional.py\n",
+                                f"//   ./tests/gen_quaddirectional.py {DST.name} {SRC.name}\n")
+    DST.write_text(header + result, newline="\n")
     print(f"  {DST.name}: {hooks} passes "
           f"(24 base + 8 slot-2/3 lumas + 2 cut stats + 24 pair flow "
           f"+ 4 full-res lumas + 6 full-res refines), braces/parens balanced  OK")

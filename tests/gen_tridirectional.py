@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the TRIDIRECTIONAL interpolation shader from the bidirectional base.
 
-    ./gen_tridirectional.py [output.glsl]     (default: ../tridirectional-interpolation.glsl)
+    ./gen_tridirectional.py [output.glsl [base.glsl]]     (default: ../tridirectional-interpolation.glsl)
 
 THE HYPOTHESIS THIS BUILDS. A 2-frame shader can only encode constant
 velocity: something was at A, it is at B, and an inserted frame places it on
@@ -79,7 +79,12 @@ import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
-SRC = HERE.parent / "bidirectional-interpolation.glsl"
+# The base to generate from. Default is the shipped bidirectional shader;
+# a second positional argument names a VARIANT base (e.g. a two-descent
+# bidirectional-interpolation-<variant>.glsl), so tri/quad variants can be
+# generated beside the stock files without overwriting them.
+SRC = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else \
+    HERE.parent / "bidirectional-interpolation.glsl"
 DST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else \
     HERE.parent / "tridirectional-interpolation.glsl"
 
@@ -136,12 +141,14 @@ def chunk(text):
         # A //!TEXTURE decl always starts a new block; a //!HOOK starts one
         # unless the current block already holds a //!TEXTURE decl but no
         # //!HOOK yet (then the HOOK belongs to that decl's block).
-        if ln.startswith("//!HOOK"):
+        # A //!HOOK or //!TEXTURE line starts a new block unless the current
+        # block holds //!TEXTURE decls and no //!HOOK yet: then a HOOK
+        # attaches to those decls, and a further TEXTURE joins them (a pass
+        # may own more than one storage texture).
+        if ln.startswith("//!HOOK") or ln.startswith("//!TEXTURE"):
             has_tex = any(l.startswith("//!TEXTURE") for l in cur)
             has_hook = any(l.startswith("//!HOOK") for l in cur)
             starts = not (has_tex and not has_hook)
-        elif ln.startswith("//!TEXTURE"):
-            starts = True
         else:
             starts = False
         if starts and cur:
@@ -322,8 +329,12 @@ vec4 hook() {
     parens = result.count("(") - result.count(")")
     assert hooks == 48, f"expected 48 passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
-
-    DST.write_text(HEADER + result, newline="\n")
+    header = HEADER
+    if SRC.name != "bidirectional-interpolation.glsl":
+        header = header.replace("bidirectional-interpolation.glsl", SRC.name)
+        header = header.replace("//   ./tests/gen_tridirectional.py\n",
+                                f"//   ./tests/gen_tridirectional.py {DST.name} {SRC.name}\n")
+    DST.write_text(header + result, newline="\n")
     print(f"  {DST.name}: {hooks} passes "
           f"(24 base + 4 slot-2 lumas + 1 cut stat + 12 slot1<->slot2 flow "
           f"+ 3 full-res lumas + 4 full-res refines), braces/parens balanced  OK")
