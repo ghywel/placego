@@ -366,3 +366,9 @@ was neither the human's intuition nor the machine's speed alone, but the
 loop between them: hypotheses cheap enough to test, tests honest enough to
 fail, and a standing rule that every claim — including "already correct",
 and including everything in this document — is worth checking.
+
+Human edit: This authors stream of consciousness can be directly accessed at the subreddit here:
+
+https://www.reddit.com/r/nframe
+
+This is not meant as an invitation to get to know me - leave me alone. It is a public record of what I did and how I did it in my own words without the AI.
