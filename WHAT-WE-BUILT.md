@@ -274,7 +274,11 @@ For anyone picking this up:
    themselves.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
-   NFRAME-LIMITS.md for more detail
+   NFRAME-LIMITS.md for more detail. One exception has since been found on
+   paper: a fifth frame placed *symmetrically* around the measurement removes
+   most of the acceleration error on fast repetitive motion and makes the jerk
+   reading two to three times cleaner on slow motion, so it is now worth
+   building.
 4. **Port it.** Done once — the Metal demo above is the worked example,
    built by machine-translating the GLSL and verifying against the same
    ladder and calibrations, and it came out 30–46% faster than the

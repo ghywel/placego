@@ -662,7 +662,14 @@ allow for; and D4's late K over-reads where it under-read before. A
 sub-pixel estimator biased toward the texture's own phase ("pixel
 locking", well known in particle image velocimetry) would produce a
 texture-dependent ripple in the radial velocity profile and hence a net
-bias in the fitted divergence; that is a candidate, not a finding.
+bias in the fitted divergence. Measured the same day on A4's raw flows,
+whose true displacement sweeps three full cycles of sub-pixel phase across
+the clip: the signed bias stays within +/- 0.063 px, largest exactly at the
+half-pixel phase, i.e. one quantum of the flow's 1/16 px sub-pixel grid and
+nothing beyond it. Across a plate whose displacement spans five to eleven
+whole pixels that averages away, so it cannot produce a bias of several
+percent in a pooled divergence. Candidate withdrawn; the texture-dependent
+pooled bias is unexplained.
 
 With texture largely excluded and no dilation on D6 (it translates at fixed
 depth), the one remaining difference from M1's 0.070 px is speed: D6 moves

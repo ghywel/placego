@@ -82,9 +82,11 @@ The measured ladder says the same thing in dB. Quad (exact cubic) against tri,
     everything else within +/-0.2
 
 Both were predicted (P1, P2): the jerk term pays only where the jerk is large,
-and costs noise everywhere else. A 5-frame exact quartic would add a term
-whose real-footage SNR is below 1 and whose stencil carries sqrt(20)/sqrt(6) =
-1.83x the jerk's noise. Do not build it.
+and costs noise everywhere else. A 5-frame exact quartic would add a SNAP
+term whose real-footage SNR is below 1; that part stands. "Do not build it"
+does not: the same window's acceleration and jerk rows are a different
+matter, and the section 8 addendum, written after the flow-error correlation
+had been measured, reverses the recommendation.
 
 ### The exception that matters: fast oscillation, where more frames keep paying
 
@@ -114,13 +116,21 @@ peak. Everywhere else the fourth frame is noise.
 component, a resonating structure, a particle oscillating in a trap or a
 flow. For that content the conclusion is the opposite of the film
 conclusion: N = 4 is not the ceiling, it is the point where the method
-starts to earn its keep, and a fifth frame is worth building and testing.
+starts to earn its keep, and a fifth frame is worth building -- for a reason
+found later the same day (section 8 addendum): not for snap, which stays
+noise, but because the four-frame acceleration is a plain second difference
+whose truncation is (2 sin(w/2)/w)^2 - 1, i.e. -8.8% at six samples per
+period, and a symmetric five-frame quartic removes it, cutting the
+acceleration error three- to sixfold there.
 The practical rule for anyone bringing such content to this instrument is to
 choose a frame rate (or a frame stride -- see below) that samples the motion
 of interest **six to ten times per period**. Faster than that and the
 derivatives sink into the noise; slower and the polynomial cannot represent
-the motion at all. Nothing at N = 5 has been built or measured; what is
-established is that this is the one band where building it is justified.
+the motion at all. Nothing at N = 5 has been built or measured. What is
+established, by simulation on the measured noise, is where it pays:
+acceleration at eight samples per period and fewer, and -- a second band
+nobody predicted -- jerk on slow motion, where the symmetric stencil's noise
+is 2.8x below the four-frame window's.
 
 **Frame rate: the invariant statement is in seconds.** Everything above is
 in per-frame units, and the camera rate is inside them: w = 2 pi f_motion /
@@ -359,11 +369,16 @@ test.
 2. **Add the comb to the ladder** (TEX_M1 and TEX_M2 boxes at 10 and 12
    px/frame) and keep F3 as the rotation-vs-texture control. A ladder whose
    only textured speed is one coarse texel cannot see this class of failure.
-3. **Do not build N = 5 as an exact quartic.** If a fifth frame is built,
-   build it as the disjoint-triple acceleration validator, or as a
-   fixed-degree fit -- and measure real-footage motion bandwidth first
-   (TRI_DIAG=7 velocity at 24:24 over a few seconds; N_max at fixed degree
-   is 1 + sqrt((12/w^2 + 7)/3): 3.4 at O3, 4.4 at O5, ~9 at O1).
+3. ~~**Do not build N = 5 as an exact quartic.**~~ **REVERSED 2026-09-03 --
+   see the section 8 addendum.** Build it as an exact quartic over a
+   SYMMETRIC window and ignore its snap row: acceleration error falls 3-6x at
+   <= 8 samples/period (truncation of the plain second difference) and jerk
+   noise 2.8x at >= 12 (stencil coefficients +/-0.5 against +1, +2, -1). The
+   fixed-degree fit halves acceleration noise only on very slow content and
+   is catastrophic below ~16 samples/period. Real-footage motion bandwidth
+   (TRI_DIAG=7 velocity at 24:24 over a few seconds) is still the first
+   measurement to make; N_max at fixed degree is 1 + sqrt((12/w^2 + 7)/3):
+   3.4 at O3, 4.4 at O5, ~9 at O1.
 4. **Retire "residual = measured confidence"** in QUADDIRECTIONAL.md:
    document resid = (3/11)|jerk|, the unit (length(HOOKED_pt)), the max-norm
    and the missing gate; report field statistics as medians over gated
@@ -371,8 +386,10 @@ test.
    between failing and clean bands on R3 -- an analysis-session reading; the
    numbered E2 residual run covered R2 only).
 5. ~~**Verify the noise ratio.**~~ **ANSWERED 2026-09-03 -- see the section 8
-   addendum.** Measured 0.63-0.80 on A4, ungated, same flows: neither
-   sqrt(3) nor sqrt(11/2). The window's flows are correlated.
+   addendum.** Measured from the solve's own flows: 1.40 on A4, 1.07 on M1
+   (robust 1.15 / 1.00). sqrt(3) is the independent-noise limit, reached by
+   neither; the window's flows are correlated (0.35 / 0.9). A first figure of
+   0.63-0.80 was a decode error and is retracted in the addendum.
 6. **Re-label the rotation lead** in PLAN.md as three leads: aperture on
    edge-only blobs (structure-tensor gate), period locking on symmetric
    texture (tie-break under rotation), and pyramid aliasing (item 1).
@@ -553,22 +570,102 @@ measures a failure, not sigma_f. One content class at one speed: fine
 aperiodic texture moving exactly one coarse texel per frame, the matcher at
 its best.
 
-*The jerk/acceleration noise ratio is neither sqrt(3) nor sqrt(11/2).* On A4
-(a = 0.333, every flow well inside reach) with the provenance gates disabled
-so both fields are the raw estimators, the four-frame shader's own
-acceleration and jerk fields over the SAME flows spread 0.375 / 0.298 px
-(std) and 0.285 / 0.179 (interquartile sigma): **jerk noise is 0.63-0.80 of
-acceleration noise**, not 1.73x and not 2.35x. Both independent-noise models
-are refuted by measurement. The likely reason is that a window's flows are
-not independent -- the far flows are seeded from the near ones, their errors
-are positively correlated, and differences cancel rather than add.
-Consequences: the C(2k-2, k-1) growth in section 1 is an upper bound the
-instrument does not reach at k = 3; the jerk SNR on real-footage motion is
-correspondingly better than section 1's table says; and whether the same
-correlation would help a fourth difference is unknown until one is built.
-Recommendation 5 is answered: neither. The sqrt(11/2) in QUADDIRECTIONAL.md
-and the shader header should become the measured 0.6-0.8 with its scene and
-conditions. On A6 (a = 1.333) the ungated fields are rail-dominated -- the
-composed far flow reaches ~35 px against a ~23 px reach by the late frames --
-and measure the reach limit, not the stencil; the first attempt on A6 is void
-for that reason.
+*The jerk/acceleration noise ratio, measured properly: 1.0 to 1.4, and the
+correlated model reproduces it.* The paragraph this replaces claimed
+0.63-0.80 and "both models refuted". That was a DECODE ERROR of mine: the
+two ungated jerk renders were meant to set JERK_DIAG_FS to 1.0 (A4) and 4.0
+(A6), but the sed pattern used one space where the shader's column-aligned
+constant has two, the substitution silently did not take, the fields were
+emitted at the default 2.0, and the reader decoded them at 1.0 -- every jerk
+reading halved. The acceleration sed had matched. The batch-1 job asserted
+every patched constant; batches 3-4 asserted only the trust gate. The third
+time today a column-aligned constant defeated an exact-match sed.
+
+The measurement that replaces it is stronger than the one it corrects. A
+scratch variant emits the solve's three inputs as diagnostic modes --
+f_prev (k -> k-1), f_next (k -> k+1) and the composed far flow -- on A4 and
+M1, and the jerk rebuilt from them through the shader's own stencil matches
+the directly emitted jerk field texel by texel (correlation 0.998-1.000 on
+every frame checked). At N:N on the ffmpeg host frame k is slot 2 and the
+composed link runs BACKWARD, taus (-1, +1, -2), so the stencil is
+a = f_prev + f_next and j = f_next + 3 f_prev - f_far -- the form
+QUADDIRECTIONAL.md already records for the N:N window; a first reconstruction
+with the 24->60 form disagreed by construction. With flow errors e_p, e_n and
+the link's own e_l:
+
+    e_a = e_p + e_n                 e_j = e_n + 2 e_p - e_l
+
+    scene  sigma_p sigma_n sigma_l  r_pn  r_nl  r_pl  a std/rob   j std/rob   j/a std/rob
+    A4      0.139   0.151   0.163   0.36  0.34  0.33  0.42/0.30   0.59/0.35   1.40/1.15
+    M1      0.093   0.093   0.093   0.90  0.89  0.96  0.15/0.19   0.16/0.19   1.07/1.00
+
+(rob = 1.4826 MAD; A4 medians over frames 4-19; M1 identical on every
+frame.) Put the measured covariance into the stencil algebra and it returns
+the measured spreads: at equal sigma,
+
+    var_j / var_a = (6 + 4 r_pn - 2 r_nl - 4 r_pl) / (2 + 2 r_pn)
+
+gives 1.41 for A4 (measured 1.40) and 1.02 for M1 (measured 1.07). So the
+ratio is not a constant of the stencil. It is sqrt(3) = 1.73 only when the
+three flow errors are independent; it falls to 1.4 when they are mildly
+correlated (A4, 0.35) and to 1.0 when they are almost entirely common-mode
+(M1, 0.9), because the stencil's coefficients (+1, +2, -1) cancel a shared
+error. Consequences: section 1's C(2k-2, k-1) growth is the independent-noise
+upper bound; on the matcher's best content the jerk field is no noisier than
+the acceleration field, and the jerk SNR on real-footage motion is up to
+1.7x better than section 1's table says. Whether the same correlation helps
+a fourth difference is unknown until one is built. sqrt(11/2) was never
+right for either host; recommendation 5 is answered. Also measured on the
+way: the F-level flows on M1 spread 0.093 px against 0.070 for the H-level
+straddle flow read through mode 7 -- two different estimators -- so
+sigma_f on the matcher's best content should be quoted as 0.07-0.09.
+
+*The fifth frame, re-examined with the measured correlation.* With the
+flow-error covariance in hand, the four-frame stencil and three five-frame
+candidates were run on x = A sin(w t) at A = 40 px with the A4 noise model
+(sigma 0.15, r 0.35; the M1 model gives the same shape), scoring total
+error -- truncation plus noise -- against the continuous derivative at each
+stencil's own centre. A symmetric five-frame window has displacements at
+taus (-2, -1, +1, +2), the composed ones built exactly as the quad builds
+its far flow. RMS error in px/interval^k:
+
+    samples/period   accel: 4-frame  5-quartic  5-cubic-LSQ | jerk: 4-frame  5-quartic
+        24 (O1)          0.25       0.30       0.12      |        0.34       0.12
+        12               0.30       0.30       0.66      |        0.37       0.30
+         8               0.91       0.31       3.2       |        1.08       2.0
+         6 (O3)          2.7        0.48       9.3       |        4.2        8.0
+         5               5.6        1.1       18         |       10.2       18.9
+       noise only        0.25       0.30       0.11      |        0.34       0.12
+
+Three things follow, and the first two reverse recommendation 3. (1) The
+four-frame acceleration is the plain second difference f_prev + f_next,
+whose truncation on a sinusoid is (2 sin(w/2)/w)^2 - 1: -8.8% at six samples
+per period, 2.7 px RMS against O3's 44 px peak. The symmetric quartic
+corrects it and is 3-6x better at eight samples per period and fewer. That
+is where the fast-oscillation regime of section 1 actually pays -- in
+acceleration, not in snap. (2) On slow motion the symmetric window's jerk
+stencil has coefficients of +/-0.5 on each flow against the asymmetric
+window's (+1, +2, -1), so its noise is 0.81 sigma_f against 2.30 at r = 0.35
+(0.32 against 2.05 at r = 0.9): 2.8x cleaner at 24 samples per period, 6x on
+the matcher's best content -- the floor-limited real-footage jerk band of
+section 4. (3) The compact four-frame stencil keeps winning jerk at eight
+samples per period and fewer, where the wider odd stencil's truncation
+dominates, and it edges the quartic's acceleration at 24 (0.25 against 0.30:
+the composed flows' lever arm costs noise when there is no truncation to
+buy back). The fixed-degree cubic fit halves the acceleration noise at 24
+samples per period and is catastrophic below about sixteen -- section 2's
+wobble finding, quantified. Snap is noise below five samples per period, as
+section 1 said.
+
+So the right fifth frame is an exact quartic over a symmetric window with
+its snap row ignored, chosen per regime; the fixed-degree fit recommended
+in section 5 is the wrong tool except on very slow content. Costs stated
+plainly: a symmetric window at N:N needs frame k+2 (two frames of latency
+instead of one); the 16-texture bind ceiling (a naive fifth slot needs 21)
+has to be met by packing four luma levels into one RGBA texture; the
+generator gains a slot; and at 24 -> 60 the output sits off the window's
+centre, so this is a gain for the field instrument first and the
+interpolator second. Pre-registered for when it is built: O3's N:N
+acceleration error falls from 2.7 to about 0.5 px RMS; the A6 jerk-null
+floor falls by 2.8x; L1 and the other slow cases lose nothing beyond 0.05
+dB. Scripts: the session scratch cov/n5.py and cov/n5sim.py.
