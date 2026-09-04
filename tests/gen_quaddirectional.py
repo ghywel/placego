@@ -156,14 +156,7 @@ def shift_pair(b, lvl, la, lb, tag, desc_pair):
     geometry identifiers, and removing the bind is the silent-fallback trap
     the tri generator documents.
     """
-    nb = b
-    nb = re.sub(rf"\bLUMA_B_{lvl}_tex\(", "__LB__(", nb)
-    nb = re.sub(rf"\bLUMA_A_{lvl}_tex\(", "__LA__(", nb)
-    nb = nb.replace("__LB__(", f"LUMA_{lb}_{lvl}_tex(")
-    nb = nb.replace("__LA__(", f"LUMA_{la}_{lvl}_tex(")
-    extra = "".join(f"\n//!BIND LUMA_{x}_{lvl}" for x in (la, lb)
-                    if x not in ("A", "B"))
-    nb = nb.replace(f"//!BIND LUMA_B_{lvl}", f"//!BIND LUMA_B_{lvl}{extra}")
+    nb = T3.shift_lumas(b, la, lb)
     # Same-direction flow references take the pair tag; a CROSS-direction
     # reference (the reverse flow, used for a round-trip check) takes the
     # reversed tag. The block's own direction is read from its //!SAVE line.
@@ -172,13 +165,46 @@ def shift_pair(b, lvl, la, lb, tag, desc_pair):
     nb = re.sub(rf"FLOW_([SEQH])_{other}", rf"FLOW_\1_{tag[::-1]}", nb)
     nb = re.sub(rf"FLOW_([SEQH])_{own}", rf"FLOW_\1_{tag}", nb)
     a, b_ = desc_pair
+    # the fused coarse pass names both directions in one description, so it
+    # must be rewritten before the single-direction forms below
+    nb = nb.replace("flow search A->B and B->A", f"flow search slot{a}->slot{b_} and slot{b_}->slot{a}")
     nb = nb.replace("flow search A->B", f"flow search slot{a}->slot{b_}")
     nb = nb.replace("flow search B->A", f"flow search slot{b_}->slot{a}")
     nb = nb.replace("flow A->B", f"flow slot{a}->slot{b_}")
     nb = nb.replace("flow B->A", f"flow slot{b_}->slot{a}")
+    nb = nb.replace("propagation AB", f"propagation slot{a}->slot{b_}")
+    nb = nb.replace("propagation BA", f"propagation slot{b_}->slot{a}")
+    nb = nb.replace("data check AB", f"data check slot{a}->slot{b_}")
+    nb = nb.replace("data check BA", f"data check slot{b_}->slot{a}")
     nb = nb.replace("[high]", "[quad]")
     nb = nb.replace("[tri]", "[quad]")
     return nb
+
+
+def pair_chain(blocks, la, lb, tag_ab, tag_ba, banner_ab, banner_ba):
+    """Both directions of one slot pair, in the base's own pass order.
+
+    For a FUSED base (one whose A->B passes carry their B->A twin, see
+    SHADERS.md): a block that saves an A->B name takes tag_ab, one that saves
+    a B->A name takes tag_ba, and shift_pair maps each block's cross-direction
+    references to the other tag exactly as it does in chain(). The order is
+    the base's, not one direction after the other, because a fused block
+    computes both directions in one dispatch: the passes that remain
+    single-direction (the 1/8 refines, which read the other direction's
+    coarse cache) must stay where the base puts them, between the fused
+    coarse search and the fused propagation.
+    """
+    parts = [banner_ab, banner_ba]
+    for b in blocks:
+        save, _ = T3.block_id(b)
+        m = re.match(r"FLOW_([SEQH])_(AB|BA)", save or "")
+        if not m:
+            continue
+        lvl, own = m.group(1), m.group(2)
+        tag = tag_ab if own == "AB" else tag_ba
+        parts.append(shift_pair(b, lvl, la, lb, tag,
+                                desc_pair=BANNER_PAIRS[tag]))
+    return "\n\n".join(parts)
 
 
 def chain(find, la, lb, tag, rev, banner):
@@ -259,7 +285,12 @@ def main():
     # A variant base may carry EXTRA passes inside a level's flow chain (see
     # gen_tridirectional.py); they are carried into every pair's chain.
     extra = len(hook_blocks) - 24
-    assert extra >= 0 and extra % 2 == 0, f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
+    # A FUSED base has FEWER passes than the unfused form (each fused pass
+    # carries its B->A twin), so its extras are negative and need not pair up;
+    # the pass count below is still exact, because every base flow pass is
+    # reproduced once per slot pair either way.
+    fused = any("[fused" in b for b in hook_blocks)
+    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
         cands = [b for b in blocks if T3.block_id(b)[0] == save and
@@ -310,10 +341,14 @@ def main():
         out.append(nb)
 
         if save == "FLOW_H_BA" and desc and "pass 2" in desc:
-            out.append(chain(find, "B", "C", "BC", rev=False, banner=BANNERS["BC"]))
-            out.append(chain(find, "B", "C", "CB", rev=True, banner=BANNERS["CB"]))
-            out.append(chain(find, "C", "D", "CD", rev=False, banner=BANNERS["CD"]))
-            out.append(chain(find, "C", "D", "DC", rev=True, banner=BANNERS["DC"]))
+            if fused:
+                out.append(pair_chain(blocks, "B", "C", "BC", "CB", BANNERS["BC"], BANNERS["CB"]))
+                out.append(pair_chain(blocks, "C", "D", "CD", "DC", BANNERS["CD"], BANNERS["DC"]))
+            else:
+                out.append(chain(find, "B", "C", "BC", rev=False, banner=BANNERS["BC"]))
+                out.append(chain(find, "B", "C", "CB", rev=True, banner=BANNERS["CB"]))
+                out.append(chain(find, "C", "D", "CD", rev=False, banner=BANNERS["CD"]))
+                out.append(chain(find, "C", "D", "DC", rev=True, banner=BANNERS["DC"]))
             # Full-res level (see gen_tridirectional.to_fullres): lumas for
             # all four slots, then one F pass per pair per direction, each
             # seeded from that pair's post-median H flow emitted above.

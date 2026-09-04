@@ -262,6 +262,13 @@ specific to three.
 
 ## The test ladder
 
+**The current full ladder for this shader is in SHADERS.md, "The N-frame
+lines, re-measured 2026-09-04"** -- all four lines in one sitting, after
+sub-pixel self-reference, the zero seed, pass fusion and the Moire-evidence
+fix. The tables in this file are the measurements of their own moment and
+are kept as the record of it; where they disagree with that one, that one is
+current.
+
 Sustained linear acceleration cannot be tested at interesting magnitudes: the
 correction scales as `a/8`, but a ramp changes velocity by `a` px/frame every
 frame, so any `a` big enough to matter drives the object past the ~23px/frame

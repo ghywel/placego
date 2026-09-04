@@ -1314,3 +1314,172 @@ the field is the product; the stock and variational lines have a
 single-seed 1/8 pass and are untouched. The fractional-1/8 diagonal of a
 perfectly periodic texture stays a limit of the record. Textured diagonal
 cases belong on the ladder and are queued.
+
+**Where the time goes (2026-09-04, evening), and a correction to every timing
+above.** Asked to move the engine to the GPU's compute path, the first proof
+converted the 1/8 refine to a `//!COMPUTE` pass with shared-memory tiles
+(correct within 0.05 dB; slower: +13% on the two-frame base, +9% on the
+quad), the second cut its texture taps 4.5x by fetching the 7x7 grid once
+(bit-identical; no change in time). Both were optimising a rounding error:
+stubbing every flow-pass family of the two-frame base to a passthrough moves
+its frame time by about two milliseconds of fifty-five. The split, O5 at
+24 -> 60, sixty output frames, RX 6600:
+
+| pipeline | seconds |
+|---|---|
+| the lavfi source alone, no libplacebo | 2.27 |
+| lavfi + the stock mixer, no hook | 2.99 |
+| lavfi + the shipped two-frame propagated | 3.23 |
+| file source + the stock mixer | 0.74 |
+| file + the then-shipped two-frame (32 passes, pre-fusion) | 1.42 |
+| file + the two-frame with all 14 flow passes trivial | 1.23 |
+| file + the then-shipped propagated quad (92 passes, pre-fusion) | 3.48 |
+| file + the quad with all 48 flow passes trivial | 2.21 |
+
+The synthetic source is a per-pixel expression evaluated on the CPU: 38 ms
+per frame, seventy percent of every "render time" quoted in this document
+before this paragraph. From a file the two-frame shader costs 11 ms per
+frame, of which about 8 ms is thirty-two pass dispatches at roughly 0.27 ms
+each and about 3 ms is arithmetic; the quad costs 46 ms, of which 24.5 ms
+is its 92 dispatches and 21 ms its flow arithmetic (six pairs, six times the
+two-frame's, as expected). The engine's time is pass count first and
+arithmetic second, and neither shared memory nor tap reuse touches either.
+
+Restated on the shader's own time (the lavfi constant removed): the
+self-referenced fit's "+2.4%" is about +4%; the zero seed's "+3.9%" about
++8%; the quint's "+18% over the quad" about +30%. The differences were
+measured correctly; the base they were divided by was mostly the source.
+From now on time from a pre-rendered file (`ffv1`), interleaved; `bench.sh`
+keeps `lavfi` for correctness, where it is exact.
+
+The move that pays is pass fusion, and it needs no compute: every A->B pass
+has a B->A twin doing identical work on swapped inputs, and a fragment pass
+can already write a second result into a storage image. Shipped the same
+evening. The twin's hook becomes `hook_ba()`, its returns store into a
+storage image at the same texel, its consumers read that image, and one
+dispatch does the work of two with the arithmetic untouched -- identical by
+construction, and the ladder agrees to the hundredth of a dB on the
+translation, acceleration and rotation cases.
+
+What fused: the coarse search (the B->A result into the cache image it
+already writes, the B->A refine reading its seed from that image at the
+texel it already snapped to), the three propagation iterations, the
+three-way check, the first vector median. Each propagation iteration needs
+its own storage image: a storage image cannot be double-buffered the way
+libplacebo re-saves a texture, and a Jacobi step must read the previous
+iteration while its neighbours are being written. What did not: the 1/8
+refines read the other direction's coarse cache, so their order is part of
+the algorithm; the 1/2 refines are the blocks the generators clone into the
+full-resolution passes, found by saved texture name; the second medians feed
+bilinear samplers, which an image read cannot replace. The generators learned
+the fused form -- a pair's passes are emitted in the base's own order with
+both directions interleaved, since a fused block computes both at once --
+and a base is recognised as fused by its descriptions, so an unfused base
+still regenerates byte for byte.
+
+| shader | passes | before | after | |
+|---|---|---|---|---|
+| two-frame propagated | 32 -> 26 | 1.387 s | 1.309 s | -5.6% |
+| tridirectional propagated | 64 -> 52 | 2.627 s | 2.484 s | -5.4% |
+| quaddirectional propagated | 92 -> 74 | 3.482 s | 3.340 s | -4.1% |
+| quintdirectional propagated | 127 -> 103 | 4.595 s | 4.203 s | -8.5% |
+
+The estimate in the paragraph above -- forty-two dispatches off the quad,
+about a quarter of its shader time -- assumed every pair could fuse,
+including the refines and the half-res passes whose consumers sample
+bilinearly. Eighteen came off, and the saving is 0.13-0.27 ms per removed
+dispatch: fusing a pass saves the dispatch, not the work. The remaining
+engine cost is the dispatch count that the algorithm genuinely needs, and
+the 21 ms of arithmetic on the quad is the searches themselves, which is a
+question of algorithm, not of engine.
+
+### The Moire gate was measuring frame difference, and that was worth something
+
+The zero seed's wide path -- where the coarse level looks aliased, the seed
+competes on score instead of having to beat the best coarse seed by ten
+percent -- is gated on `moire_s`: the point-sampled 1/16 luma's local
+contrast against the same footprint box-averaged from the 1/8 luma. Point
+contrast far above box contrast means texture above the coarse grid's
+Nyquist, which is where the coarse match is a Moire.
+
+The comparison only means anything within one frame. In every cloned pair it
+was between two: the generators renamed a pass's own level, so the 1/8 term
+became slot 1's or slot 2's luma while the 1/16 term stayed slot 0's. Pairs
+beyond the first were therefore scoring how much two frames differ, not
+whether the coarse level aliased -- and the shipped tri, quad and quint all
+have such pairs. Fixed 2026-09-04 (`shift_lumas` renames every level a pass
+reads and binds what it renames).
+
+The fix costs picture PSNR, which is the interesting part. Eight cases on the
+propagated line: A5 -0.14/-0.27/-0.52 dB (tri/quad/quint), A7 -0.18/-0.31/
+-0.16, L8 -0.07/-0.13/-0.13, O9_osc_tex_fast -0.41/-0.82/-0.83, and no change
+on translation, flat texture, gentle oscillation or rotation. The loss grows
+with the number of pairs and concentrates on fast textured motion -- which is
+exactly where two frames of a window differ most, so the broken term was
+large there and let the zero seed in. The accident was a motion-sensitive
+gate, and it was doing useful work.
+
+That is a lead about the gate rather than about the bug: the zero seed is
+being kept out of places where it would help. The threshold is the obvious
+first probe, and lowering `MOIRE_MIN` from 0.25 to 0.02 on the quad moves the
+whole 32-case ladder by +0.06 dB in the mean, with the gains where this
+project's known weaknesses are:
+
+| better | | worse | |
+|---|---|---|---|
+| R3_rot_tex | +0.64 | A2_accel_16mean | -0.15 |
+| A7_accel_tex_a167 | +0.48 | L3_trans_23px | -0.11 |
+| L8_diagonal | +0.45 | F2_fourier_accel | -0.10 |
+| O1_osc_gentle | +0.40 | L9, O5, M2, L2, O2 | -0.06 or less |
+| R1 +0.14, R2 +0.06, O3 +0.13 | | eight cases | unchanged |
+
+Every rotation case improves, which is the interesting part: the coarse
+level's Moire is what the rotation work of section 9 kept running into, and
+the gate was refusing the seed that answers it. What the looser threshold
+does NOT recover is O9_osc_tex_fast (+0.02 of the 0.82 the fix cost there),
+so the motion sensitivity is not a looser threshold in disguise: there is
+something in "these two frames differ here" that Moire evidence alone does
+not carry. Two candidates, untested: a deliberate inter-frame term beside the
+Moire one, and a per-pair rather than global threshold.
+
+Real footage says do not ship it. Five segments of the reference clip through
+the quad: PSNR mean 35.34 -> 35.27 dB and SSIM 0.9686 -> 0.9683, down on
+every segment, consistently and slightly. The zero seed at MOIRE_MIN 0.25 was
+measured as leaving footage unchanged; at 0.02 it costs a little. So the
+threshold stays at 0.25 in the shipped shaders and 0.02 is recorded here as
+what it buys and what it costs: a synthetic ladder that likes it, real
+footage that does not, and a hypothesis it does not explain.
+
+The deliberate term, tested the same night. `frame_diff_s`: the largest
+absolute difference of the two 1/16 lumas over the 3x3 coarse footprint, and
+the gate becomes `moire > MOIRE_MIN || fdiff > DIFF_MIN`. Both coarse lumas
+are bound in each 1/8 refine, so the generators carry the term to every slot
+pair correctly -- which the Moire fix is what made possible. On the quad,
+DIFF_MIN 0.10 against the shipped gate, all 32 cases:
+
+| better | | worse | |
+|---|---|---|---|
+| O1_osc_gentle | +1.17 | F2_fourier_accel | -0.36 |
+| R3_rot_tex | +1.07 | L3_trans_23px | -0.36 |
+| O4_osc_flat300 | +0.83 | A2_accel_16mean | -0.17 |
+| F1_fourier_edge | +0.71 | L9_occlusion | -0.11 |
+| A7_accel_tex_a167 | +0.50 | L2_trans_16px | -0.09 |
+| L1_trans_8px | +0.47 | L6, R1, A4 | -0.05 or less |
+| O2 +0.39, A1 +0.32, O6 +0.31, O3 +0.28, A6 +0.21 | | six cases | unchanged |
+
+Mean +0.18 dB, three times the threshold probe; every oscillation case up;
+pure translation up, which the threshold never touched. Real footage, five
+segments: PSNR 35.34 -> 35.24, SSIM 0.9686 -> 0.9682, down on every segment.
+File-source time unchanged (3.502 -> 3.506 s). It still does not recover
+O9_osc_tex_fast (+0.02), so whatever the broken comparison was scoring there
+is not the frame difference either; that one stays open.
+
+So the same trade as the threshold, larger on both sides, and the same
+answer for the shipped numbers: the term is in the three zero-seed bases
+behind `FRAME_DIFF_GATE`, off, beside `ZERO_SEED`, with the trade written
+into the shader at the switch. It costs nothing off, 18 taps per 1/8-refine
+texel on, and is a field-shader question throughout since ZERO_SEED is off in
+the picture bases. A field-only reading -- on in the generated tri/quad/quint,
+off in the two-frame picture shaders -- is one line in each generator, where
+ZERO_SEED and SUBPEL_SELFREF already flip; that is the owner's call, against
+a tenth of a decibel of footage.

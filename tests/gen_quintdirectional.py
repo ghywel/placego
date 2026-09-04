@@ -160,7 +160,11 @@ def main():
     blocks = T3.chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
     extra = len(hook_blocks) - 24
-    assert extra >= 0 and extra % 2 == 0, f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
+    # A FUSED base carries each B->A twin inside its A->B pass, so it has
+    # fewer passes and its extras are negative and unpaired; the count below
+    # stays exact (every base flow pass is reproduced once per slot pair).
+    fused = any("[fused" in b for b in hook_blocks)
+    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
         cands = [b for b in blocks if T3.block_id(b)[0] == save and
@@ -204,12 +208,17 @@ def main():
             nb = FINAL_PASS
         out.append(nb)
         if save == "FLOW_H_BA" and desc and "pass 2" in desc:
-            out.append(T4.chain(find, "B", "C", "BC", rev=False, banner=T4.BANNERS["BC"]).replace("[quad]", "[quint]"))
-            out.append(T4.chain(find, "B", "C", "CB", rev=True, banner=T4.BANNERS["CB"]).replace("[quad]", "[quint]"))
-            out.append(T4.chain(find, "C", "D", "CD", rev=False, banner=T4.BANNERS["CD"]).replace("[quad]", "[quint]"))
-            out.append(T4.chain(find, "C", "D", "DC", rev=True, banner=T4.BANNERS["DC"]).replace("[quad]", "[quint]"))
-            out.append(T4.chain(find, "D", "E", "DE", rev=False, banner=BANNER_DE).replace("[quad]", "[quint]"))
-            out.append(T4.chain(find, "D", "E", "ED", rev=True, banner=BANNER_ED).replace("[quad]", "[quint]"))
+            if fused:
+                out.append(T4.pair_chain(blocks, "B", "C", "BC", "CB", T4.BANNERS["BC"], T4.BANNERS["CB"]).replace("[quad]", "[quint]"))
+                out.append(T4.pair_chain(blocks, "C", "D", "CD", "DC", T4.BANNERS["CD"], T4.BANNERS["DC"]).replace("[quad]", "[quint]"))
+                out.append(T4.pair_chain(blocks, "D", "E", "DE", "ED", BANNER_DE, BANNER_ED).replace("[quad]", "[quint]"))
+            else:
+                out.append(T4.chain(find, "B", "C", "BC", rev=False, banner=T4.BANNERS["BC"]).replace("[quad]", "[quint]"))
+                out.append(T4.chain(find, "B", "C", "CB", rev=True, banner=T4.BANNERS["CB"]).replace("[quad]", "[quint]"))
+                out.append(T4.chain(find, "C", "D", "CD", rev=False, banner=T4.BANNERS["CD"]).replace("[quad]", "[quint]"))
+                out.append(T4.chain(find, "C", "D", "DC", rev=True, banner=T4.BANNERS["DC"]).replace("[quad]", "[quint]"))
+                out.append(T4.chain(find, "D", "E", "DE", rev=False, banner=BANNER_DE).replace("[quad]", "[quint]"))
+                out.append(T4.chain(find, "D", "E", "ED", rev=True, banner=BANNER_ED).replace("[quad]", "[quint]"))
             for letter, idx, frame in zip(SLOTS, range(5), FRAMES):
                 out.append(T3.fullres_luma(letter, idx, frame, FIVE_BINDS, "quint"))
             h_ab = find("FLOW_H_AB", "refine")

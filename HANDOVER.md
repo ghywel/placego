@@ -214,16 +214,20 @@ way in the same run.
 8. **Ports.** The Metal port exists (`METALPORT.md`, `tests/gen_metal.py`)
    and is the only native port the owner intends to make; the ladder and
    the field calibrations are the acceptance numbers for any other.
-9. **Compute passes inside the pipeline (under way).** The loader accepts
-   mpv's `//!COMPUTE bw bh` directive and none of the passes uses it. The
-   hot passes re-read the same texels hundreds of times per texel (the
-   1/8 refine: 25 candidates, four seeds, a 3x3 window); a workgroup that
-   loads its window into shared memory once should run them several
-   times faster on every host that runs the patch. The proof is the 1/8
-   refine converted alone: the ladder within 0.05 dB (the target tile is
-   read with a software bilinear, the shipped pass with the hardware's)
-   and interleaved time, before the coarse search, the half-res refine
-   and the propagation follow.
+9. **The engine's cost, and what is left of it.** The obvious move --
+   converting the hot passes to `//!COMPUTE` with shared-memory tiles --
+   was measured and refuted: correct within 0.05 dB and slower (+13% on
+   the two-frame base, +9% on the quad), and a 4.5x cut in texture taps
+   was bit-identical and no faster. The engine's time is dispatch count,
+   not taps. Pass fusion followed from that and shipped on 2026-09-04:
+   each A->B pass carries its B->A twin, one dispatch instead of two,
+   -4 to -8.5% across the family (`SHADERS.md`, "What fusion buys").
+   What is left is the search arithmetic -- about 21 ms per frame on the
+   quad, six pairs of it -- and that is an algorithm question. Two traps
+   are asserted in the tooling because both cost an evening: a bound name
+   that nothing saves or declares disables the whole hook at run time
+   with no compile error, and a storage image cannot stand in for a
+   texture the pipeline re-saves across a Jacobi iteration.
 10. **A scale-aware generator.** Every rule in the tracker is in pixels
    and frames; a 4K, 72 fps render of the rotating disc showed the
    consequences (`NFRAME-LIMITS.md` section 9, `WHAT-WE-BUILT.md`). A

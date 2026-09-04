@@ -8,6 +8,13 @@ the fifth frame was made from the measured flow-error covariance.*
 
 ## Why a fifth frame, and why now
 
+**The current full ladder for this shader is in SHADERS.md, "The N-frame
+lines, re-measured 2026-09-04"** -- all four lines in one sitting, after
+sub-pixel self-reference, the zero seed, pass fusion and the Moire-evidence
+fix. The tables in this file are the measurements of their own moment and
+are kept as the record of it; where they disagree with that one, that one is
+current.
+
 The four-frame shader's acceleration is, at uniform spacing, the plain
 second difference of the anchor's two adjacent displacements, and its jerk
 is the asymmetric stencil (+1, +3, -1) over one composed link. Two things

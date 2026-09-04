@@ -257,16 +257,28 @@ vec4 hook() {
 //!FORMAT rgba32f
 //!STORAGE
 
+//!TEXTURE FLOW_S_BA_CACHE
+//!SIZE 240 135
+//!FORMAT rgba32f
+//!STORAGE
+
+//!TEXTURE FLOW_S_BA_CACHE2
+//!SIZE 240 135
+//!FORMAT rgba32f
+//!STORAGE
+
 //!HOOK FRAME_MIX
 //!BIND FLOW_S_AB_CACHE
 //!BIND FLOW_S_AB_CACHE2
+//!BIND FLOW_S_BA_CACHE
+//!BIND FLOW_S_BA_CACHE2
 //!BIND LUMA_A_S
 //!BIND LUMA_B_S
 //!SAVE FLOW_S_AB
 //!WIDTH HOOKED.w 16 /
 //!HEIGHT HOOKED.h 16 /
 //!COMPONENTS 4
-//!DESC [high] coarse flow search A->B (1/16 res)
+//!DESC [high] coarse flow search A->B and B->A (1/16 res) [fused: one dispatch]
 
 // Matching-window radius for the coarse SAD cost below, independent of
 // local_contrast_5x5_s()'s own fixed window further down (that one only
@@ -427,72 +439,6 @@ vec2 descend_s(vec2 uv, vec2 start, out float best_cost) {
     }
     return best_off;
 }
-vec4 hook() {
-    ivec2 coord = ivec2(LUMA_A_S_pos * LUMA_A_S_size);
-    if (!pair_changed)
-        return imageLoad(FLOW_S_AB_CACHE, coord);
-
-    vec2 uv_a = LUMA_A_S_pos;
-    vec2 prev_s = imageLoad(FLOW_S_AB_CACHE, coord).xy * LUMA_A_S_pt;
-
-    if (local_contrast_5x5_s(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(0.0);
-        imageStore(FLOW_S_AB_CACHE, coord, result);
-        imageStore(FLOW_S_AB_CACHE2, coord, result);
-        return result;
-    }
-
-    // ---- three descents (scratch: twoseed4.py) ----
-    float cost_a, cost_b, cost_c;
-    vec2 off_a = descend_s(uv_a, vec2(0.0), cost_a);
-    vec2 start_b = vec2(0.0);
-    float best_ring = 1.0e30;
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * LUMA_A_S_pt;
-            if (length((o - off_a) / LUMA_A_S_pt) < 0.75)
-                continue;
-            float c = sad5x5_s(uv_a, uv_a + o) + REG_LAMBDA * length(o / LUMA_A_S_pt);
-            if (c < best_ring) {
-                best_ring = c;
-                start_b = o;
-            }
-        }
-    }
-    vec2 off_b = descend_s(uv_a, start_b, cost_b);
-    vec2 off_c = descend_s(uv_a, prev_s, cost_c);
-    imageStore(FLOW_S_AB_CACHE2, coord, vec4(off_c / LUMA_A_S_pt, 0.0, 0.0));
-    vec4 result = vec4(off_a / LUMA_A_S_pt, off_b / LUMA_A_S_pt);
-    imageStore(FLOW_S_AB_CACHE, coord, result);
-    return result;
-}
-
-//!TEXTURE FLOW_S_BA_CACHE
-//!SIZE 240 135
-//!FORMAT rgba32f
-//!STORAGE
-
-//!TEXTURE FLOW_S_BA_CACHE2
-//!SIZE 240 135
-//!FORMAT rgba32f
-//!STORAGE
-
-//!HOOK FRAME_MIX
-//!BIND FLOW_S_BA_CACHE
-//!BIND FLOW_S_BA_CACHE2
-//!BIND LUMA_A_S
-//!BIND LUMA_B_S
-//!SAVE FLOW_S_BA
-//!WIDTH HOOKED.w 16 /
-//!HEIGHT HOOKED.h 16 /
-//!COMPONENTS 4
-//!DESC [high] coarse flow search B->A (1/16 res)
-
-// See COARSE_WINDOW_RADIUS in the A->B pass above.
-const int COARSE_WINDOW_RADIUS = 1;
-
 float sad5x5_s2(vec2 uv_b, vec2 uv_a) {
     float s = 0.0;
     for (int y = -COARSE_WINDOW_RADIUS; y <= COARSE_WINDOW_RADIUS; y++) {
@@ -503,11 +449,6 @@ float sad5x5_s2(vec2 uv_b, vec2 uv_a) {
     }
     return s;
 }
-
-// See local_contrast_5x5_s()/MIN_CONTRAST in the A->B pass above for why
-// this exists -- same gate, mirrored for the B->A direction.
-const float MIN_CONTRAST = 0.02;
-
 float local_contrast_5x5_s2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
     for (int y = -2; y <= 2; y++) {
@@ -519,10 +460,7 @@ float local_contrast_5x5_s2(vec2 uv_b) {
     }
     return hi - lo;
 }
-
-const float REG_LAMBDA = 0.06;
-
-vec2 descend_s(vec2 uv, vec2 start, out float best_cost) {
+vec2 descend_s2(vec2 uv, vec2 start, out float best_cost) {
     // Deterministic tie-breaking. The search below is an argmin over
     // candidate offsets, and a strict `<` against a fixed scan order already
     // resolves an EXACT tie deterministically -- the incumbent wins. That is
@@ -606,24 +544,24 @@ vec2 descend_s(vec2 uv, vec2 start, out float best_cost) {
     }
     return best_off;
 }
-vec4 hook() {
-    ivec2 coord = ivec2(LUMA_B_S_pos * LUMA_B_S_size);
+void coarse_ba() {
+    ivec2 coord = ivec2(LUMA_A_S_pos * LUMA_A_S_size);
     if (!pair_changed)
-        return imageLoad(FLOW_S_BA_CACHE, coord);
+        return;
 
-    vec2 uv_b = LUMA_B_S_pos;
+    vec2 uv_b = LUMA_A_S_pos;
     vec2 prev_s = imageLoad(FLOW_S_BA_CACHE, coord).xy * LUMA_A_S_pt;
 
     if (local_contrast_5x5_s2(uv_b) < MIN_CONTRAST) {
         vec4 result = vec4(0.0);
         imageStore(FLOW_S_BA_CACHE, coord, result);
         imageStore(FLOW_S_BA_CACHE2, coord, result);
-        return result;
+        return;
     }
 
     // ---- three descents (scratch: twoseed4.py) ----
     float cost_a, cost_b, cost_c;
-    vec2 off_a = descend_s(uv_b, vec2(0.0), cost_a);
+    vec2 off_a = descend_s2(uv_b, vec2(0.0), cost_a);
     vec2 start_b = vec2(0.0);
     float best_ring = 1.0e30;
     for (int y = -1; y <= 1; y++) {
@@ -640,19 +578,54 @@ vec4 hook() {
             }
         }
     }
-    vec2 off_b = descend_s(uv_b, start_b, cost_b);
-    vec2 off_c = descend_s(uv_b, prev_s, cost_c);
+    vec2 off_b = descend_s2(uv_b, start_b, cost_b);
+    vec2 off_c = descend_s2(uv_b, prev_s, cost_c);
     imageStore(FLOW_S_BA_CACHE2, coord, vec4(off_c / LUMA_A_S_pt, 0.0, 0.0));
     vec4 result = vec4(off_a / LUMA_A_S_pt, off_b / LUMA_A_S_pt);
     imageStore(FLOW_S_BA_CACHE, coord, result);
+}
+vec4 hook() {
+    ivec2 coord = ivec2(LUMA_A_S_pos * LUMA_A_S_size);
+    if (!pair_changed)
+        return imageLoad(FLOW_S_AB_CACHE, coord);
+    coarse_ba();
+
+    vec2 uv_a = LUMA_A_S_pos;
+    vec2 prev_s = imageLoad(FLOW_S_AB_CACHE, coord).xy * LUMA_A_S_pt;
+
+    if (local_contrast_5x5_s(uv_a) < MIN_CONTRAST) {
+        vec4 result = vec4(0.0);
+        imageStore(FLOW_S_AB_CACHE, coord, result);
+        imageStore(FLOW_S_AB_CACHE2, coord, result);
+        return result;
+    }
+
+    // ---- three descents (scratch: twoseed4.py) ----
+    float cost_a, cost_b, cost_c;
+    vec2 off_a = descend_s(uv_a, vec2(0.0), cost_a);
+    vec2 start_b = vec2(0.0);
+    float best_ring = 1.0e30;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            if (x == 0 && y == 0)
+                continue;
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_S_pt;
+            if (length((o - off_a) / LUMA_A_S_pt) < 0.75)
+                continue;
+            float c = sad5x5_s(uv_a, uv_a + o) + REG_LAMBDA * length(o / LUMA_A_S_pt);
+            if (c < best_ring) {
+                best_ring = c;
+                start_b = o;
+            }
+        }
+    }
+    vec2 off_b = descend_s(uv_a, start_b, cost_b);
+    vec2 off_c = descend_s(uv_a, prev_s, cost_c);
+    imageStore(FLOW_S_AB_CACHE2, coord, vec4(off_c / LUMA_A_S_pt, 0.0, 0.0));
+    vec4 result = vec4(off_a / LUMA_A_S_pt, off_b / LUMA_A_S_pt);
+    imageStore(FLOW_S_AB_CACHE, coord, result);
     return result;
 }
-
-// ---------------------------------------------------------------------
-// Macro-generated refinement levels: eighth, quarter, half res.
-// Each level downsamples luma, then refines both AB and BA flow fields
-// from the previous (coarser) level with a 3x3, one-pixel-step search.
-// ---------------------------------------------------------------------
 
 //!HOOK FRAME_MIX
 //!BIND HOOKED
@@ -689,6 +662,7 @@ vec4 hook() {
 //!BIND FLOW_S_AB_CACHE2
 //!BIND LUMA_A_S
 //!BIND FLOW_E_BA_CACHE
+//!BIND LUMA_B_S
 //!SAVE FLOW_E_AB
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
@@ -781,6 +755,24 @@ const float REFINE_REG_LAMBDA = 0.05;
 // from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
 // far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
 // section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+// INTER-FRAME EVIDENCE for the coarse level at this texel: how much the two frames differ over the
+// footprint the coarse search matched on, as the largest absolute difference of the two 1/16 lumas
+// across the 3x3. The Moire evidence beside it asks whether the coarse grid could represent this
+// texture at all; this asks whether there was motion here to get wrong. Both lumas are read, so both
+// are bound, and the generators shift both to each slot pair (NFRAME-LIMITS.md section 9, the Moire
+// gate). Used only when FRAME_DIFF_GATE is on, below.
+float frame_diff_s(vec2 uv) {
+    float d = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_S_pt;
+            d = max(d, abs(LUMA_A_S_tex(c).r - LUMA_B_S_tex(c).r));
+        }
+    }
+    return d;
+}
+
+
 float moire_s(vec2 uv) {
     float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
     for (int j = -1; j <= 1; j++) {
@@ -912,7 +904,18 @@ vec4 hook() {
     const int ZERO_SEED = 0;
     const float ZERO_SEED_MARGIN = 0.1;
     const float MOIRE_MIN = 0.25;
-    float sad_d = 1.0e30, moire = 0.0;
+    // FRAME_DIFF_GATE (2026-09-04, off): also let the zero seed COMPETE where the two frames differ by
+    // more than DIFF_MIN over the coarse footprint. Found by accident -- the generated shaders' cloned
+    // pairs were comparing Moire evidence across two frames until de2b61a, which measured exactly this,
+    // and fixing it cost up to 0.8 dB on fast textured motion. Put back on purpose, on the quad's
+    // 32-case ladder: +0.18 dB mean, every oscillation case up (O1 +1.17, O4 +0.83), R3_rot_tex +1.07,
+    // L1 +0.47, F1 +0.71; worst F2 and L3 -0.36. Real footage: -0.10 dB PSNR and -0.0004 SSIM on every
+    // one of five segments. No time cost. That trade is the owner's to make; the switch ships off so
+    // the shipped numbers stand, and a field-only reading of it belongs with ZERO_SEED in the
+    // generators. Costs 18 taps per texel of this pass when on.
+    const int FRAME_DIFF_GATE = 0;
+    const float DIFF_MIN = 0.10;
+    float sad_d = 1.0e30, moire = 0.0, fdiff = 0.0;
     vec2 ref_d = vec2(0.0);
     bool d_ok = false;
     if (ZERO_SEED != 0) {
@@ -920,6 +923,7 @@ vec4 hook() {
         vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
         d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
         moire = moire_s(uv_a);
+        if (FRAME_DIFF_GATE != 0) fdiff = frame_diff_s(uv_a);
         d_ok = d_ok && aperture_ok(uv_a, ref_d);
     }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
@@ -932,7 +936,7 @@ vec4 hook() {
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
     float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
     if (d_ok) {
-        if (moire > MOIRE_MIN) {
+        if (moire > MOIRE_MIN || fdiff > DIFF_MIN) {
             float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
             if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
         } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
@@ -953,10 +957,11 @@ vec4 hook() {
 //!BIND FLOW_E_BA_CACHE
 //!BIND LUMA_A_E
 //!BIND LUMA_B_E
-//!BIND FLOW_S_BA
+//!BIND FLOW_S_BA_CACHE
 //!BIND FLOW_S_BA_CACHE2
 //!BIND LUMA_B_S
 //!BIND FLOW_E_AB_CACHE
+//!BIND LUMA_A_S
 //!SAVE FLOW_E_BA
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
@@ -1005,6 +1010,24 @@ const float REFINE_REG_LAMBDA = 0.05;
 // from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
 // far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
 // section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+// INTER-FRAME EVIDENCE for the coarse level at this texel: how much the two frames differ over the
+// footprint the coarse search matched on, as the largest absolute difference of the two 1/16 lumas
+// across the 3x3. The Moire evidence beside it asks whether the coarse grid could represent this
+// texture at all; this asks whether there was motion here to get wrong. Both lumas are read, so both
+// are bound, and the generators shift both to each slot pair (NFRAME-LIMITS.md section 9, the Moire
+// gate). Used only when FRAME_DIFF_GATE is on, below.
+float frame_diff_s(vec2 uv) {
+    float d = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_S_pt;
+            d = max(d, abs(LUMA_A_S_tex(c).r - LUMA_B_S_tex(c).r));
+        }
+    }
+    return d;
+}
+
+
 float moire_s(vec2 uv) {
     float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
     for (int j = -1; j <= 1; j++) {
@@ -1075,7 +1098,7 @@ vec4 hook() {
         return imageLoad(FLOW_E_BA_CACHE, coord);
 
     vec2 uv_b = LUMA_B_E_pos;
-    vec4 seeds = FLOW_S_BA_tex(snap_texel(uv_b, FLOW_S_BA_size));
+    vec4 seeds = imageLoad(FLOW_S_BA_CACHE, ivec2(snap_texel(uv_b, LUMA_B_S_size) * LUMA_B_S_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
 
@@ -1093,7 +1116,7 @@ vec4 hook() {
     float rt = length((prev_e + prev_rev) / LUMA_A_E_pt);
     bool trusted = rt < SEED_RT_MAX && length(prev_e) > 0.0;
     float tl = trusted ? SEED_TEMP_LAMBDA : 0.0;
-    ivec2 scoord = ivec2(snap_texel(uv_b, FLOW_S_BA_size) * FLOW_S_BA_size);
+    ivec2 scoord = ivec2(snap_texel(uv_b, LUMA_B_S_size) * LUMA_B_S_size);
     vec2 base_off3 = imageLoad(FLOW_S_BA_CACHE2, scoord).xy * 2.0 * LUMA_A_E_pt;
     float sad_a, sad_b, sad_c;
     vec2 ref_a = refine_e(uv_b, base_off, sad_a);
@@ -1121,7 +1144,18 @@ vec4 hook() {
     const int ZERO_SEED = 0;
     const float ZERO_SEED_MARGIN = 0.1;
     const float MOIRE_MIN = 0.25;
-    float sad_d = 1.0e30, moire = 0.0;
+    // FRAME_DIFF_GATE (2026-09-04, off): also let the zero seed COMPETE where the two frames differ by
+    // more than DIFF_MIN over the coarse footprint. Found by accident -- the generated shaders' cloned
+    // pairs were comparing Moire evidence across two frames until de2b61a, which measured exactly this,
+    // and fixing it cost up to 0.8 dB on fast textured motion. Put back on purpose, on the quad's
+    // 32-case ladder: +0.18 dB mean, every oscillation case up (O1 +1.17, O4 +0.83), R3_rot_tex +1.07,
+    // L1 +0.47, F1 +0.71; worst F2 and L3 -0.36. Real footage: -0.10 dB PSNR and -0.0004 SSIM on every
+    // one of five segments. No time cost. That trade is the owner's to make; the switch ships off so
+    // the shipped numbers stand, and a field-only reading of it belongs with ZERO_SEED in the
+    // generators. Costs 18 taps per texel of this pass when on.
+    const int FRAME_DIFF_GATE = 0;
+    const float DIFF_MIN = 0.10;
+    float sad_d = 1.0e30, moire = 0.0, fdiff = 0.0;
     vec2 ref_d = vec2(0.0);
     bool d_ok = false;
     if (ZERO_SEED != 0) {
@@ -1129,6 +1163,7 @@ vec4 hook() {
         vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
         d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
         moire = moire_s(uv_b);
+        if (FRAME_DIFF_GATE != 0) fdiff = frame_diff_s(uv_b);
         d_ok = d_ok && aperture_ok(uv_b, ref_d);
     }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
@@ -1141,7 +1176,7 @@ vec4 hook() {
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
     float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
     if (d_ok) {
-        if (moire > MOIRE_MIN) {
+        if (moire > MOIRE_MIN || fdiff > DIFF_MIN) {
             float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
             if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
         } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
@@ -1812,14 +1847,55 @@ vec4 hook() {
 // Pass 1's result only ever feeds pass 2 within this same dispatch, so it
 // has no cache of its own -- on a cache hit it returns a cheap dummy that
 // pass 2 will never look at, skipping the real 9x9-comparison cost.
+//!TEXTURE FLOW_H_BA_M1_ST
+//!SIZE 1920 1080
+//!FORMAT rgba32f
+//!STORAGE
+
 //!HOOK FRAME_MIX
 //!BIND FLOW_H_AB
+//!BIND FLOW_H_BA
+//!BIND FLOW_H_BA_M1_ST
 //!SAVE FLOW_H_AB
 //!WIDTH HOOKED.w 2 /
 //!HEIGHT HOOKED.h 2 /
 //!COMPONENTS 2
-//!DESC [high] vector median filter on flow A->B (pass 1)
+//!DESC [high] vector median filter on flow A->B (pass 1) [fused with its B->A twin: one dispatch]
+void hook_ba() {
+    if (!pair_changed)
+        { imageStore(FLOW_H_BA_M1_ST, ivec2(gl_FragCoord.xy), vec4(0.0)); return; }
+
+    vec2 v[9];
+    int n = 0;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            vec2 o = vec2(float(x), float(y)) * FLOW_H_BA_pt;
+            v[n++] = FLOW_H_BA_tex(FLOW_H_BA_pos + o).xy;
+        }
+    }
+
+    // See TIE_MARGIN in the coarse A->B search above.
+    const float TIE_MARGIN = 1.0e-4;
+    float best_cost = 1e30;
+    vec2 best = v[4];
+    for (int i = 0; i < 9; i++) {
+        float cost = 0.0;
+        for (int j = 0; j < 9; j++)
+            cost += length(v[i] - v[j]);
+        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
+            best_cost = cost;
+            best = v[i];
+        }
+    }
+
+    { imageStore(FLOW_H_BA_M1_ST, ivec2(gl_FragCoord.xy), vec4(best, 0.0, 0.0)); return; }
+}
+
+// Second pass: a single 3x3 vector median can be out-voted by a small cluster of neighboring cells that all agree with each other on the same wrong (but locally self-consistent) vector; running it twice extends its effective reach.
+// This one's result is what the final warp actually reads, so it gets a
+// real persistent cache (unlike pass 1 above).
 vec4 hook() {
+    hook_ba();
     if (!pair_changed)
         return vec4(0.0);
 
@@ -1903,46 +1979,6 @@ vec4 hook() {
     return result;
 }
 
-//!HOOK FRAME_MIX
-//!BIND FLOW_H_BA
-//!SAVE FLOW_H_BA
-//!WIDTH HOOKED.w 2 /
-//!HEIGHT HOOKED.h 2 /
-//!COMPONENTS 2
-//!DESC [high] vector median filter on flow B->A (pass 1)
-vec4 hook() {
-    if (!pair_changed)
-        return vec4(0.0);
-
-    vec2 v[9];
-    int n = 0;
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            vec2 o = vec2(float(x), float(y)) * FLOW_H_BA_pt;
-            v[n++] = FLOW_H_BA_tex(FLOW_H_BA_pos + o).xy;
-        }
-    }
-
-    // See TIE_MARGIN in the coarse A->B search above.
-    const float TIE_MARGIN = 1.0e-4;
-    float best_cost = 1e30;
-    vec2 best = v[4];
-    for (int i = 0; i < 9; i++) {
-        float cost = 0.0;
-        for (int j = 0; j < 9; j++)
-            cost += length(v[i] - v[j]);
-        if (cost < best_cost * (1.0 - TIE_MARGIN)) {
-            best_cost = cost;
-            best = v[i];
-        }
-    }
-
-    return vec4(best, 0.0, 0.0);
-}
-
-// Second pass: a single 3x3 vector median can be out-voted by a small cluster of neighboring cells that all agree with each other on the same wrong (but locally self-consistent) vector; running it twice extends its effective reach.
-// This one's result is what the final warp actually reads, so it gets a
-// real persistent cache (unlike pass 1 above).
 //!TEXTURE FLOW_H_BA_MEDIAN_CACHE
 //!SIZE 1920 1080
 //!FORMAT rgba32f
@@ -1950,14 +1986,15 @@ vec4 hook() {
 
 //!HOOK FRAME_MIX
 //!BIND FLOW_H_BA_MEDIAN_CACHE
-//!BIND FLOW_H_BA
+//!BIND FLOW_H_BA_M1_ST
+//!BIND FLOW_H_AB
 //!SAVE FLOW_H_BA
 //!WIDTH HOOKED.w 2 /
 //!HEIGHT HOOKED.h 2 /
 //!COMPONENTS 2
 //!DESC [high] vector median filter on flow B->A (pass 2)
 vec4 hook() {
-    ivec2 coord = ivec2(FLOW_H_BA_pos * FLOW_H_BA_size);
+    ivec2 coord = ivec2(FLOW_H_AB_pos * FLOW_H_AB_size);
     if (!pair_changed)
         return imageLoad(FLOW_H_BA_MEDIAN_CACHE, coord);
 
@@ -1965,8 +2002,8 @@ vec4 hook() {
     int n = 0;
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
-            vec2 o = vec2(float(x), float(y)) * FLOW_H_BA_pt;
-            v[n++] = FLOW_H_BA_tex(FLOW_H_BA_pos + o).xy;
+            vec2 o = vec2(float(x), float(y)) * FLOW_H_AB_pt;
+            v[n++] = imageLoad(FLOW_H_BA_M1_ST, ivec2(floor((FLOW_H_AB_size) * (FLOW_H_AB_pos + o)))).xy;
         }
     }
 

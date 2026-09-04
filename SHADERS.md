@@ -95,24 +95,24 @@ bidirectional-interpolation.glsl            24 passes   the base (N = 2)
   |                                              (RECOMMENDED for viewing,
   |                                              generated)
   |
-  +-- -seeded.glsl                          23   base + ring and gated
+  +-- -seeded.glsl                          22   base + ring and gated
   |     |                                        temporal seeds, arbitrated
   |     |                                        at 1/8 res (VARIANT: +10%
   |     |                                        time, up on 25 of 32 cases)
-  |     +-- tri-/quaddirectional-…-seeded   48/68 generated from it with the
+  |     +-- tri-/quaddirectional-…-seeded   44/62 generated from it with the
   |     |                                        generators' base argument
-  |     +-- -propagated.glsl                32   seeded + flow propagation at
+  |     +-- -propagated.glsl                26   seeded + flow propagation at
   |           |                                  1/8 res behind a two-frame
   |           |                                  check (VARIANT: +1-4% over
   |           |                                  seeded, +2.1 dB on the ladder)
-  |           |     +-- tri-/quad…-propagated    64/92 generated from it
-  |           |     +-- quintdirectional-…-propagated 127 N = 5: the symmetric
+  |           |     +-- tri-/quad…-propagated    52/74 generated from it
+  |           |     +-- quintdirectional-…-propagated 103 N = 5: the symmetric
   |           |                                        quartic field (the
   |           |                                        picture is the quad's)
-  |           +-- -animation.glsl           32   propagated with the finer
+  |           +-- -animation.glsl           26   propagated with the finer
   |                 |                            disagreement threshold
   |                 |                            (VARIANT for line art)
-  |                 +-- tri-/quad…-animation     64/92 generated from it
+  |                 +-- tri-/quad…-animation     52/74 generated from it
   |
   +-- tridirectional-interpolation.glsl     48   N = 3: + acceleration field
   |                                              + quadratic placement
@@ -143,10 +143,11 @@ Written against exactly 2 frames and needed *no changes* for the patch's
 N-frame generalisation -- `HOOKED` and `NEXT` still mean frame index 0 and
 1, so this shader is simply the N=2 case of the now-more-general mechanism.
 
-### `bidirectional-interpolation-seeded.glsl` -- the base with three coarse seeds, 23 passes
+### `bidirectional-interpolation-seeded.glsl` -- the base with three coarse seeds, 22 passes
 
-Same passes as the base and byte-identical from the quarter-resolution
-level down. Each 1/16-resolution search runs three descents -- from zero
+The same work as the base and byte-identical from the quarter-resolution
+level down (two passes fewer only because its coarse search and its first
+vector median are fused with their reverse-direction twins, below). Each 1/16-resolution search runs three descents -- from zero
 (the stock path), from the best point of the +/-1-texel ring outside the
 first result's basin, and from the previous window's flow at that texel --
 and each 1/8-resolution pass refines all three and keeps the lowest SAD
@@ -175,9 +176,10 @@ real loss (L7, -0.5) gone. It replaced that precursor (`-twoseed`, same
 day) at the same cost; NFRAME-LIMITS.md section 8 has all three ladders
 -- two seeds, three ungated, three gated -- and the diagnosis.
 
-### `bidirectional-interpolation-propagated.glsl` -- the seeded base plus flow propagation, 32 passes
+### `bidirectional-interpolation-propagated.glsl` -- the seeded base plus flow propagation, 26 passes
 
-The seeded base byte for byte, plus eight passes at the 1/8 level. Why:
+The seeded base byte for byte, plus four passes at the 1/8 level (eight
+before each was fused with its reverse-direction twin, below). Why:
 on flat-shaded line art the fast tier's loss against the variational build
 is on the edges, not in the fills (NFRAME-LIMITS.md section 8) -- an edge
 constrains one component of motion and the block matcher wanders along it.
@@ -219,7 +221,7 @@ less on L4, 0.2-0.3 less on live action; the check without the
 disagreement rule at all is 1.5 dB worse on the ladder mean and 2 on the
 anime. NFRAME-LIMITS.md section 8 has all of it.
 
-### `bidirectional-interpolation-animation.glsl` -- the propagated shader tuned for line art, 32 passes
+### `bidirectional-interpolation-animation.glsl` -- the propagated shader tuned for line art, 26 passes
 
 The propagated shader with one constant changed: the disagreement
 threshold at which a textured texel blends instead of trusting the refine's
@@ -241,7 +243,7 @@ are generated with the base argument:
     ./tests/gen_tridirectional.py  tridirectional-interpolation-animation.glsl  bidirectional-interpolation-animation.glsl
     ./tests/gen_quaddirectional.py quaddirectional-interpolation-animation.glsl bidirectional-interpolation-animation.glsl
 
-### `quintdirectional-interpolation-propagated.glsl` -- five frames, for the field, 127 passes
+### `quintdirectional-interpolation-propagated.glsl` -- five frames, for the field, 103 passes
 
 Generated from the propagated two-frame base by `tests/gen_quintdirectional.py`
 (any base works: `./tests/gen_quintdirectional.py <out> <base>`). Everything
@@ -410,6 +412,7 @@ motion-compensated frame.
 | `-animation` (2026-09-04, same segments) | 35.25 | 0.9694 |
 | quad stock / quad `-seeded` (same run) | 34.22 / 34.67 | 0.9635 / 0.9651 |
 | quad `-propagated` (2026-09-04, same segments) | 35.30 | 0.9685 |
+| quad `-propagated` again after pass fusion and the Moire fix (2026-09-04 night, same segments) | 35.34 | 0.9686 |
 
 **Five more real segments** (2026-09-03, RX 6600; 4-second segments sampled
 from the owner's library, screened for full per-frame motion with
@@ -489,6 +492,58 @@ a production shader needs, rather than as accuracy on any one of them. And
 read it as a lead: `tests/TESTING.md` records two anomalies in this table that
 have no measured explanation, including a 19.5 dB collapse between `L1` and
 `L2` for the base shader that is not monotonic with speed.
+
+**The N-frame lines, re-measured 2026-09-04** after sub-pixel self-reference,
+the zero seed, pass fusion and the Moire-evidence fix, all four in one sitting
+on the same harness (Windows, RX 6600). The propagated base and the tri, quad
+and quint generated from it. Fusion does not appear here at all: it is
+identical arithmetic, and that is the point of it.
+
+| case | hold | linear | two-frame | tri | quad | quint |
+|---|---|---|---|---|---|---|
+| `A1_accel_8mean` | 33.64 | 36.23 | 48.19 | 49.98 | 49.53 | 49.48 |
+| `A2_accel_16mean` | 30.25 | 32.68 | 45.24 | 46.24 | 46.03 | 45.97 |
+| `A3_accel_23mean` | 28.59 | 31.00 | 39.95 | 40.83 | 40.44 | 40.40 |
+| `A4_accel_tex_a033` | 41.84 | 47.95 | 53.96 | 54.89 | 54.48 | 54.40 |
+| `A5_accel_tex_a067` | 36.57 | 42.71 | 51.34 | 53.14 | 52.76 | 52.72 |
+| `A6_accel_tex_a133` | 31.33 | 36.64 | 49.28 | 52.16 | 52.12 | 52.12 |
+| `A7_accel_tex_a167` | 29.77 | 34.82 | 46.94 | 50.22 | 50.15 | 50.10 |
+| `F1_fourier_edge` | 27.33 | 30.31 | 54.02 | 52.54 | 52.25 | 52.18 |
+| `F2_fourier_accel` | 28.07 | 31.01 | 43.31 | 43.55 | 43.37 | 43.31 |
+| `L0_static` | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
+| `L1_trans_8px` | 32.78 | 35.44 | 74.80 | 70.02 | 69.80 | 69.74 |
+| `L2_trans_16px` | 29.59 | 32.16 | 62.30 | 59.78 | 61.44 | 61.39 |
+| `L3_trans_23px` | 27.98 | 30.53 | 44.40 | 43.65 | 43.44 | 43.39 |
+| `L4_trans_40px` | 25.48 | 27.96 | 30.49 | 30.49 | 30.29 | 30.25 |
+| `L5_lowcontrast` | 55.57 | 57.47 | 62.27 | 62.26 | 62.09 | 62.03 |
+| `L6_flat_large` | 30.81 | 33.50 | 65.45 | 65.29 | 65.13 | 65.07 |
+| `L7_textured_large` | 20.82 | 21.04 | 23.90 | 23.79 | 23.73 | 23.70 |
+| `L8_diagonal` | 27.83 | 30.25 | 47.53 | 49.53 | 49.32 | 49.27 |
+| `L9_occlusion` | 29.71 | 32.21 | 42.13 | 43.30 | 42.64 | 42.58 |
+| `M1_noise_large` | 24.19 | 25.51 | 49.91 | 49.63 | 49.61 | 49.58 |
+| `M2_period40` | 23.58 | 27.29 | 59.98 | 58.83 | 58.76 | 58.70 |
+| `M3_period16_trap` | 20.72 | 21.01 | 21.91 | 21.78 | 21.75 | 21.73 |
+| `M4_belowgate` | 62.06 | 60.58 | 60.58 | 60.67 | 60.56 | 60.50 |
+| `O1_osc_gentle` | 35.63 | 38.17 | 47.79 | 51.96 | 51.68 | 51.63 |
+| `O2_osc_medium` | 34.07 | 36.24 | 42.97 | 48.80 | 49.11 | 49.17 |
+| `O3_osc_hard` | 34.11 | 35.72 | 41.93 | 45.88 | 47.41 | 47.31 |
+| `O4_osc_flat300` | 35.29 | 37.58 | 44.30 | 49.53 | 49.81 | 49.88 |
+| `O5_osc_textured` | 31.33 | 33.90 | 41.72 | 48.18 | 48.44 | 48.52 |
+| `O6_osc_tex_gentle` | 31.88 | 37.17 | 46.95 | 51.88 | 51.59 | 51.59 |
+| `R1_rot_const` | 29.53 | 32.42 | 40.70 | 40.83 | 40.64 | 40.58 |
+| `R2_rot_accel` | 30.35 | 33.20 | 40.87 | 40.73 | 40.57 | 40.53 |
+| `R3_rot_tex` | 28.53 | 32.60 | 34.04 | 36.52 | 36.49 | 36.48 |
+
+Three things this table says. **Pure translation is the two-frame shader's**
+-- L1 74.80 against 70.02/69.80/69.74 -- and the gap is the sub-pixel warp
+cost documented in TRIDIRECTIONAL.md, not a defect in the higher lines.
+**Oscillation is what the extra frames buy**: O5_osc_textured 41.72 -> 48.18,
+O2 42.97 -> 48.80, O4 44.30 -> 49.53, which is the acceleration term doing
+exactly what it was built for. **The fourth and fifth frames add almost
+nothing to the picture** -- quad and quint sit within a few tenths of tri
+nearly everywhere, and below it on the oscillation cases -- which is the
+pre-registered result: their product is the jerk field and the measured
+confidence, not a better frame (QUADDIRECTIONAL.md, QUINTDIRECTIONAL.md).
 
 ### Why the diffuse variants measure badly -- and where that turned out to be wrong
 
@@ -820,6 +875,44 @@ fixed per-dispatch overhead -- the shader issues its dispatches every output
 frame regardless of cache state -- and possible `PL_MEMORY_COHERENT`
 synchronisation cost on every storage access. Neither is something caching
 can remove.
+
+### What fusion buys, and what a fused pass looks like
+
+Every flow pass in the two-frame family has a reverse-direction twin doing
+identical work on swapped inputs. Since 2026-09-04 the twin is not a pass of
+its own wherever it can be avoided: it lives inside its A->B partner as
+`hook_ba()`, which writes its result into a storage image at the same texel
+instead of returning it, and its consumers `imageLoad` that image instead of
+sampling a texture. The pass's `//!DESC` says so -- `[fused with its B->A
+twin: one dispatch]` -- and the effect is one dispatch where there were two,
+with the arithmetic unchanged. Values are identical by construction, and the
+ladder confirms it to the hundredth of a dB.
+
+Four twins do not fuse, for reasons that are part of the algorithm rather
+than of the engine: the 1/8 refines read the other direction's coarse cache,
+so their order matters; the 1/2 refines are the blocks the generators clone
+into the full-resolution passes, which they find by their saved texture name;
+the second vector medians feed bilinear samplers, which an image read cannot
+replace. Each of the three propagation iterations needs its own storage
+image -- a storage image cannot be double-buffered the way libplacebo
+re-saves a texture, and a Jacobi step must read the previous iteration while
+its neighbours are being written. The two bases without the coarse caches
+(the stock base and the variational build) are not fused at all.
+
+From a pre-rendered file, 61 frames of 1080p synthetic O5 at 24 -> 60 fps on
+an RX 6600, median of three interleaved pairs:
+
+| shader | passes | before | after | |
+|---|---|---|---|---|
+| two-frame `-propagated` | 32 -> 26 | 1.387 s | 1.309 s | -5.6% |
+| `tridirectional-…-propagated` | 64 -> 52 | 2.627 s | 2.484 s | -5.4% |
+| `quaddirectional-…-propagated` | 92 -> 74 | 3.482 s | 3.340 s | -4.1% |
+| `quintdirectional-…-propagated` | 127 -> 103 | 4.595 s | 4.203 s | -8.5% |
+
+That is 0.13-0.27 ms per dispatch removed, in line with the per-dispatch
+cost measured directly (NFRAME-LIMITS.md section 9). Fusing a pass saves the
+dispatch, not the work, so the ceiling here is the dispatch count and the
+remaining engine question is the search arithmetic, not the pipeline.
 
 ### Where to look if it is too slow
 

@@ -9,6 +9,13 @@ came back**. Where they fail, the failure is the finding.
 
 ## What the fourth frame is for -- the fork
 
+**The current full ladder for this shader is in SHADERS.md, "The N-frame
+lines, re-measured 2026-09-04"** -- all four lines in one sitting, after
+sub-pixel self-reference, the zero seed, pass fusion and the Moire-evidence
+fix. The tables in this file are the measurements of their own moment and
+are kept as the record of it; where they disagree with that one, that one is
+current.
+
 Three frames give two unknown displacements from three measurements: one
 redundancy, and the tri work proved it is spent constraining the *sum* of the
 flows, orthogonal to acceleration. A fourth frame adds a fourth measurement,

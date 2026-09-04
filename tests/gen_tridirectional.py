@@ -235,7 +235,12 @@ def main():
     # saving FLOW_E_AB / FLOW_E_AB_<suffix>). They are carried into every
     # generated chain in file order; only the count changes.
     extra = len(hook_blocks) - 24
-    assert extra >= 0 and extra % 2 == 0, f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
+    # A FUSED base has FEWER passes than the unfused form (each fused pass
+    # carries its B->A twin), so its extras are negative and need not pair up;
+    # the pass count below is still exact, because every base flow pass is
+    # reproduced once per slot pair either way.
+    fused = any("[fused" in b for b in hook_blocks)
+    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     out = []
 
@@ -333,8 +338,11 @@ vec4 hook() {
 
         # -- the two slot-1 <-> slot-2 chains, inserted after the base's --
         if save == "FLOW_H_BA" and desc and "pass 2" in desc:
-            out.append(bc_chain(blocks, find))
-            out.append(cb_chain(blocks, find))
+            if fused:
+                out.append(pair_walk(blocks))
+            else:
+                out.append(bc_chain(blocks, find))
+                out.append(cb_chain(blocks, find))
             # Full-res level: lumas, then one F pass per pair per direction,
             # each seeded from the post-median H flow emitted above.
             out.append(fullres_luma("A", 0, "HOOKED", THREE_BINDS, "tri"))
@@ -383,6 +391,36 @@ vec4 hook() {
 # two fixed slots is a pure function of the window, so `pair_changed` is
 # exactly the right invalidation signal for it.
 # ---------------------------------------------------------------------------
+def pair_walk(blocks):
+    """Slot 1 <-> slot 2, both directions, in the base's own pass order.
+
+    The fused-base counterpart of bc_chain + cb_chain (see SHADERS.md): a
+    block that saves an A->B name -- including a FUSED block, which carries
+    both directions in one dispatch -- takes the BC tag, a block that saves a
+    B->A name takes CB, and shift_slot maps each block's cross-direction
+    references to the other tag. Emitting them in the base's order matters
+    here: the passes that stay single-direction (the 1/8 refines, which read
+    the other direction's coarse cache) must run between the fused coarse
+    search and the fused propagation, where the base puts them.
+    """
+    parts = ["""\
+// =====================================================================
+// SLOT 1 <-> SLOT 2 flow chains ([tri], generated): the base's slot-0 <->
+// slot-1 passes with the luma pair shifted along by one, in the base's own
+// order. The forward chain is the anchor's forward flow; the reverse closes
+// a round trip on it (an unchecked flow is indistinguishable from real
+// acceleration).
+// ====================================================================="""]
+    for b in blocks:
+        save, _ = block_id(b)
+        m = re.match(r"FLOW_([SEQH])_(AB|BA)", save or "")
+        if not m:
+            continue
+        lvl, own = m.group(1), m.group(2)
+        parts.append(shift_slot(b, lvl, "BC" if own == "AB" else "CB"))
+    return "\n\n".join(parts)
+
+
 def bc_chain(blocks, find):
     """Slot 1 -> slot 2. The anchor's forward flow."""
     parts = ["""\
@@ -427,24 +465,67 @@ def cb_chain(blocks, find):
     return "\n\n".join(parts)
 
 
+def add_binds(nb, names):
+    """Add //!BIND lines for names the block does not already bind.
+
+    Inserted after the block's last //!BIND, which keeps the directive header
+    contiguous. A read of an unbound texture is not a compile error the loader
+    reports usefully: libplacebo disables the whole hook at run time and the
+    pipeline falls back to its own mixer, which the ladder sees as a score at
+    `linear` -- the silent-fallback trap this file documents twice.
+    """
+    for n in names:
+        if "//!BIND " + n + "\n" in nb:
+            continue
+        lines = nb.split("\n")
+        i = max(k for k, l in enumerate(lines) if l.startswith("//!BIND"))
+        lines.insert(i + 1, "//!BIND " + n)
+        nb = "\n".join(lines)
+    return nb
+
+
+def shift_lumas(nb, la, lb):
+    """Move every luma READ in a block onto the pair (la, lb), at EVERY level.
+
+    A pass is shifted by its own level, but the 1/8 refines also sample the
+    1/16 lumas (the Moire evidence behind the zero seed's gate), and until
+    2026-09-04 those reads were left pointing at slots 0 and 1: every cloned
+    pair gated its zero seed on the FIRST pair's texture. LUMA_B must be
+    rewritten before LUMA_A, or the first substitution's output is eaten by
+    the second. Geometry identifiers (_pos, _pt, _size) are deliberately NOT
+    rewritten -- every slot's pyramid has the same geometry at a given level,
+    and LUMA_A's bind stays for them.
+    """
+    for lv in ("S", "E", "Q", "H"):
+        touched = any(s % lv in nb for s in ("LUMA_A_%s_tex(", "LUMA_B_%s_tex(",
+                                             "//!BIND LUMA_A_%s\n", "//!BIND LUMA_B_%s\n"))
+        if not touched:
+            continue
+        nb = re.sub(r"\bLUMA_B_%s_tex\(" % lv, "__LB__(", nb)
+        nb = re.sub(r"\bLUMA_A_%s_tex\(" % lv, "__LA__(", nb)
+        nb = nb.replace("__LB__(", "LUMA_%s_%s_tex(" % (lb, lv))
+        nb = nb.replace("__LA__(", "LUMA_%s_%s_tex(" % (la, lv))
+        # BOTH lumas of a level the pass touches, whether or not its code reads
+        # both: the house rule for base passes (a pass binding one luma leaves
+        # the shifted copy with an unbound texture, the shader fails to load,
+        # and libplacebo silently falls back to its own mixer), applied to the
+        # shifted copies so their bind set is never smaller than the base's
+        nb = add_binds(nb, ["LUMA_%s_%s" % (x, lv) for x in (la, lb)])
+    return nb
+
+
 def shift_slot(b, lvl, tag):
     """Shift a base flow pass one slot later: A->B becomes B->C.
 
     LUMA_B must be rewritten before LUMA_A, or the first substitution's
     output is eaten by the second.
     """
-    nb = b
-    nb = re.sub(rf"\bLUMA_B_{lvl}_tex\(", "__C__(", nb)
-    nb = re.sub(rf"\bLUMA_A_{lvl}_tex\(", "__B__(", nb)
-    nb = nb.replace("__C__(", f"LUMA_C_{lvl}_tex(")
-    nb = nb.replace("__B__(", f"LUMA_B_{lvl}_tex(")
+    nb = shift_lumas(b, "B", "C")
     # LUMA_A's bind STAYS even though no _tex read of it survives: the pass
     # body still uses LUMA_A_*_pt / _pos / _size for texel geometry, and
     # those identifiers only exist if the texture is bound. Removing the bind
     # produced a shader that failed to load, whereupon libplacebo silently
     # fell back to its builtin mixer and every case scored near `linear`.
-    nb = nb.replace(f"//!BIND LUMA_B_{lvl}",
-                    f"//!BIND LUMA_B_{lvl}\n//!BIND LUMA_C_{lvl}")
     # Same-direction flow references take the pair tag; a CROSS-direction
     # reference (the reverse flow, used for a round-trip check) takes the
     # reversed tag. The block's own direction is read from its //!SAVE line.
@@ -452,7 +533,14 @@ def shift_slot(b, lvl, tag):
     other = "BA" if own == "AB" else "AB"
     nb = re.sub(rf"FLOW_([SEQH])_{other}", rf"FLOW_\1_{tag[::-1]}", nb)
     nb = re.sub(rf"FLOW_([SEQH])_{own}", rf"FLOW_\1_{tag}", nb)
+    # the fused coarse pass names both directions in one description, so it
+    # must be rewritten before the single-direction forms below
+    nb = nb.replace("flow search A->B and B->A", "flow search slot1->slot2 and slot2->slot1")
     nb = nb.replace("flow A->B", "flow slot1->slot2")
+    nb = nb.replace("propagation AB", "propagation slot1->slot2")
+    nb = nb.replace("propagation BA", "propagation slot2->slot1")
+    nb = nb.replace("data check AB", "data check slot1->slot2")
+    nb = nb.replace("data check BA", "data check slot2->slot1")
     nb = nb.replace("flow B->A", "flow slot2->slot1")
     nb = nb.replace("flow search A->B", "flow search slot1->slot2")
     nb = nb.replace("flow search B->A", "flow search slot2->slot1")

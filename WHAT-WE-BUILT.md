@@ -245,6 +245,17 @@ calibrations are the acceptance numbers, and they are ground truth, not
 our implementation's output. This repository holds the recipe and the
 proof that the recipe works. The kitchen was rented.
 
+That tax is visible from inside, too. Every measurement here is made
+twice, once in each direction, as a check — and until this week each
+direction was a separate trip through the graphics card. Merging each
+pair into a single trip, with the same arithmetic in the same order,
+took a fifth of the trips out of the five-frame build and made it about
+eight percent faster; the numbers it produces are unchanged to the
+hundredth of a decibel, because nothing was approximated. No cleverness
+was involved. Work simply stopped being scheduled twice. What remains is
+the arithmetic itself, which is the honest cost of the method, and the
+scheduling overhead that a native port deletes wholesale.
+
 ## Try it in five minutes
 
 There is now a native Mac demonstration app — a window with buttons, no
@@ -432,9 +443,3 @@ what I did and how I did it in my own words without the AI.
 
 Everybody - The proof is in the seeing - You won't believe your eyes. Go find a m-series apple
 computer, run the app, and see for yourselves if i'm making all of this up.
-
-Edit: The actual shader that is baked in to the app is now actually very old. It would
-probably be more awesome with an update. The first iteration probably took about 10 minutes
-to produce. The second iteration took a few eyeball glance-overs to check the UX worked
-properly. If you want an update I am not going to build it for you, you have to build it
-yourselves. Good luck.
