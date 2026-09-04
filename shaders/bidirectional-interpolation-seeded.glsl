@@ -1237,6 +1237,16 @@ vec2 snap_texel(vec2 uv, vec2 size) {
     return (floor(uv * size) + 0.5) / size;
 }
 
+float sad3x3_h_self(vec2 uv, vec2 o) {
+    float s = 0.0;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            vec2 d = vec2(float(x), float(y)) * LUMA_A_H_pt;
+            s += abs(LUMA_A_H_tex(uv + d).r - LUMA_A_H_tex(uv + o + d).r);
+        }
+    }
+    return s;
+}
 float sad3x3_h(vec2 uv_a, vec2 uv_b) {
     float s = 0.0;
     for (int y = -1; y <= 1; y++) {
@@ -1355,6 +1365,19 @@ vec4 hook() {
     // flow means marginally more resampling. Inert here while SUBPEL_REFINE
     // is 0; the field shaders inherit it live.
     const int SUBPEL_FIT = 1;
+
+    // SUBPEL_SELFREF: subtract the fit's own bias. For a PERFECT integer match the fit's vertex is
+    // not zero: the 3x3 costs at -1 and +1 texel differ whenever the block spans a fraction of a
+    // texture period, and the vertex moves with the block's phase -- a quarter-pixel floor locked
+    // to the texture, the same at every speed, integer or fractional (NFRAME-LIMITS.md section 9).
+    // That vertex is the fit of the reference block against ITSELF shifted, computable from one
+    // frame; subtracting it makes the fit exact at integer shifts. Measured through the four-frame
+    // shader: integer translation 0.33 -> 0.001 px median per-texel error, fractional 0.37 -> 0.13,
+    // aperiodic texture unchanged, A4's per-texel acceleration spread 2.3x tighter, ladder +0.54 dB
+    // mean over 32 cases with one loss (L1, the near-ceiling flat square, -4.7 dB at 74 dB), +2.4%
+    // time. OFF here like SUBPEL_REFINE, for the same reason: this shader has no field to sharpen.
+    // The generated field shaders turn both on.
+    const int SUBPEL_SELFREF = 0;
     if (SUBPEL_REFINE != 0) {
         float c0  = sad3x3_h(uv_a, uv_a + best_off);
         vec2  ex  = vec2(LUMA_A_H_pt.x, 0.0);
@@ -1384,6 +1407,15 @@ vec4 hook() {
         float dy = SUBPEL_FIT != 0 ? max(cym, cyp) - c0 : cym - 2.0 * c0 + cyp;
         vec2  sub = vec2(dx > 1.0e-6 ? clamp(0.5 * (cxm - cxp) / dx, -0.5, 0.5) : 0.0,
                          dy > 1.0e-6 ? clamp(0.5 * (cym - cyp) / dy, -0.5, 0.5) : 0.0);
+        if (SUBPEL_SELFREF != 0) {
+            float sxm = sad3x3_h_self(uv_a, -ex), sxp = sad3x3_h_self(uv_a, ex);
+            float sym = sad3x3_h_self(uv_a, -ey), syp = sad3x3_h_self(uv_a, ey);
+            float ddx = SUBPEL_FIT != 0 ? max(sxm, sxp) : sxm + sxp;
+            float ddy = SUBPEL_FIT != 0 ? max(sym, syp) : sym + syp;
+            vec2  bias0 = vec2(ddx > 1.0e-6 ? 0.5 * (sxm - sxp) / ddx : 0.0,
+                               ddy > 1.0e-6 ? 0.5 * (sym - syp) / ddy : 0.0);
+            sub = clamp(sub - bias0, -0.5, 0.5);
+        }
         best_off += sub * LUMA_A_H_pt;
     }
     vec4 result = vec4(best_off / LUMA_A_H_pt, 0.0, 0.0);
@@ -1412,6 +1444,16 @@ vec2 snap_texel(vec2 uv, vec2 size) {
     return (floor(uv * size) + 0.5) / size;
 }
 
+float sad3x3_h2_self(vec2 uv, vec2 o) {
+    float s = 0.0;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            vec2 d = vec2(float(x), float(y)) * LUMA_A_H_pt;
+            s += abs(LUMA_B_H_tex(uv + d).r - LUMA_B_H_tex(uv + o + d).r);
+        }
+    }
+    return s;
+}
 float sad3x3_h2(vec2 uv_b, vec2 uv_a) {
     float s = 0.0;
     for (int y = -1; y <= 1; y++) {
@@ -1527,6 +1569,19 @@ vec4 hook() {
     // flow means marginally more resampling. Inert here while SUBPEL_REFINE
     // is 0; the field shaders inherit it live.
     const int SUBPEL_FIT = 1;
+
+    // SUBPEL_SELFREF: subtract the fit's own bias. For a PERFECT integer match the fit's vertex is
+    // not zero: the 3x3 costs at -1 and +1 texel differ whenever the block spans a fraction of a
+    // texture period, and the vertex moves with the block's phase -- a quarter-pixel floor locked
+    // to the texture, the same at every speed, integer or fractional (NFRAME-LIMITS.md section 9).
+    // That vertex is the fit of the reference block against ITSELF shifted, computable from one
+    // frame; subtracting it makes the fit exact at integer shifts. Measured through the four-frame
+    // shader: integer translation 0.33 -> 0.001 px median per-texel error, fractional 0.37 -> 0.13,
+    // aperiodic texture unchanged, A4's per-texel acceleration spread 2.3x tighter, ladder +0.54 dB
+    // mean over 32 cases with one loss (L1, the near-ceiling flat square, -4.7 dB at 74 dB), +2.4%
+    // time. OFF here like SUBPEL_REFINE, for the same reason: this shader has no field to sharpen.
+    // The generated field shaders turn both on.
+    const int SUBPEL_SELFREF = 0;
     if (SUBPEL_REFINE != 0) {
         float c0  = sad3x3_h2(uv_b, uv_b + best_off);
         vec2  ex  = vec2(LUMA_A_H_pt.x, 0.0);
@@ -1556,6 +1611,15 @@ vec4 hook() {
         float dy = SUBPEL_FIT != 0 ? max(cym, cyp) - c0 : cym - 2.0 * c0 + cyp;
         vec2  sub = vec2(dx > 1.0e-6 ? clamp(0.5 * (cxm - cxp) / dx, -0.5, 0.5) : 0.0,
                          dy > 1.0e-6 ? clamp(0.5 * (cym - cyp) / dy, -0.5, 0.5) : 0.0);
+        if (SUBPEL_SELFREF != 0) {
+            float sxm = sad3x3_h2_self(uv_b, -ex), sxp = sad3x3_h2_self(uv_b, ex);
+            float sym = sad3x3_h2_self(uv_b, -ey), syp = sad3x3_h2_self(uv_b, ey);
+            float ddx = SUBPEL_FIT != 0 ? max(sxm, sxp) : sxm + sxp;
+            float ddy = SUBPEL_FIT != 0 ? max(sym, syp) : sym + syp;
+            vec2  bias0 = vec2(ddx > 1.0e-6 ? 0.5 * (sxm - sxp) / ddx : 0.0,
+                               ddy > 1.0e-6 ? 0.5 * (sym - syp) / ddy : 0.0);
+            sub = clamp(sub - bias0, -0.5, 0.5);
+        }
         best_off += sub * LUMA_A_H_pt;
     }
     vec4 result = vec4(best_off / LUMA_A_H_pt, 0.0, 0.0);

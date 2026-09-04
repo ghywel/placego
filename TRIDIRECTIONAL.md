@@ -764,6 +764,12 @@ high-jerk event.
 
 ## Field accuracy, current state (after sub-pixel + the equiangular fit)
 
+*2026-09-04: a third step, the self-referenced fit (`SUBPEL_SELFREF`, on in
+this shader), removes the equiangular fit's own texture-phase bias -- a
+quarter pixel per texel on any repeating texture, present even at integer
+speeds and invisible to every pooled calibration below. NFRAME-LIMITS.md
+section 9 has the measurement; the numbers below predate it.*
+
 Two estimator upgrades landed after the calibration sections above were
 written, and the field they describe is now substantially better than the
 text records. Sub-pixel refinement removed the integer-lattice collapse

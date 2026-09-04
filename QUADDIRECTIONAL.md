@@ -213,6 +213,18 @@ conservative trust gate ("large residual = do not trust"), not an error
 estimate. The pre-registration expected a specific predictor and got a
 blunter, still-useful instrument.
 
+### 2026-09-04: the self-referenced fit removes the fit's own texture-phase bias
+
+The equiangular fit below still carried a quarter-pixel bias on any repeating
+texture: the vertex it returns for a PERFECT match is not zero, because the
+costs at -1 and +1 texel differ whenever the 3x3 block spans a fraction of a
+period. Subtracting the reference block's own vertex (`SUBPEL_SELFREF`, on in
+this shader) takes the integer-translation per-texel error from 0.33 px to
+0.001, the fractional from 0.37 to 0.13, A4's per-texel acceleration spread
+2.3x tighter, the ladder +0.54 dB mean with one loss (L1 -4.7 dB at the
+near-ceiling), +2.4% time. The tables below predate it; NFRAME-LIMITS.md
+section 9 carries the measurement.
+
 ### Post-battery upgrade: the equiangular fit sharpens both fields
 
 The V-fit A/B (PLAN.md, run after this battery) replaced the sub-pixel

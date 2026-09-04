@@ -1159,3 +1159,145 @@ the propagated quad to the decimal** on both scenes (R3 71.0 / 58.9 / 47.2 /
 extra chains cost the field nothing -- and the quint's inner four slots
 produce the quad's flows bit for bit, a consistency check on the generator.
 The rotation warning stands as rewritten in WHAT-WE-BUILT.
+
+**The same morning, the riddle narrowed (scratch instruments `rotmap.py`,
+the painted views; all at N:N through the propagated quad).** The velocity
+field on R3 reads 6-12% inside the disc (median error 0.45-0.55 px at
+rim speeds 5-13 px/frame; the painted velocity and acceleration views are
+clean hue wheels). The per-texel acceleration error is zero-mean mottle
+locked to the texture lattice, not bias: pooled over 12 / 24 / 48 px
+windows it reads 20-27% / 14-18% / 10-18% with direction within 7 / 5 / 4
+deg (f6-f15). Two mechanisms refuted by measurement: peak locking (the
+fractional parts of the measured displacement are flat, and the signed
+error has no S-curve against the true fraction) and within-block shear
+(the error is 0.45 px at 1.8 deg/frame, 0.53 at 4.8, 1.02 at 7.9 -- a
+floor, not a proportion). A control built from the blob primitive itself,
+per-texel velocity noise (std per axis, gross excluded), same texture:
+
+| motion | noise |
+|---|---|
+| translating 8.3 px/frame, texture axis-aligned | 0.28-0.30 px |
+| translating 8.3 px/frame, texture at 0.36 rad (R3's f9 angle) | 0.35-0.42 px |
+| rotating (R3), propagated | 0.49-0.54 px, gross 7-8% at f5-f9, 35% at f13 |
+| rotating (R3), seeded, no propagation | 0.49-0.53 px, gross 30-62% |
+| A5 box accelerating, propagated | 0.25-0.36 px |
+
+Rotation's per-texel noise is 1.7x the translation floor on the same
+texture (orientation accounts for a third of that), not ten; propagation
+removes the gross lattice jumps below ~15 px/frame rim speed and none of
+the fine noise. And the comparison that produced "rotation is unreliable"
+was never fair: every calibration number in the record is a pooled
+median over the object and every rotation number a per-texel median
+against a per-texel truth; A4's per-texel spread (IQR +/-0.23 on 0.333) is
+of the same order as R3's. The honest statement is now: the acceleration
+of a turning textured body is a patch-resolution reading (24 px, ~15%),
+not a texel-resolution one; a flat turning body is unreadable; and the
+per-texel floor of ~0.3-0.5 px is the matcher's, on every motion. Where
+that floor comes from (0.29 px on the cleanest translation is far above
+the 0.02-0.07 px median flow error the record quotes, which is a pooled
+number too) is the open question that replaces the rotation riddle.
+
+**The per-texel floor, found and removed on periodic texture (2026-09-04,
+later the same morning).** The 0.27 px per-texel velocity noise on TEX_M2
+translating is the same at 8.33 px/frame, at the integer 8.00 and at 4.17,
+the same through stock, seeded and propagated, and a fixed function of the
+texture phase (+0.16 -0.15 -0.04 +0.17 -0.27 px over the 40 px period);
+TEX_M1, aperiodic, sits at 0.13 with a flat profile. That is not matching
+noise and not the sub-pixel step's quantisation: it is the refinement fit's
+own vertex for a PERFECT match. The equiangular fit reads the 3x3 costs at
+-1 and +1 texel around the minimum, and on any block spanning a fraction of
+a texture period those two costs differ, so the vertex moves with the
+block's phase even when the match is exact and c0 = 0. The vertex the fit
+would return for a perfect match is the fit of the reference block against
+ITSELF shifted by -1 and +1 -- computable from one frame -- and subtracting
+it makes the fit exact at integer shifts (`SUBPEL_SELFREF`, both half-res
+refine passes; four extra 3x3 SADs per texel). Measured through the
+propagated quad:
+
+| test | shipped | self-referenced |
+|---|---|---|
+| TEX_M2 translating 8.00 px/frame (integer), median per-texel error | 0.33 px | 0.001 px |
+| TEX_M2 translating 8.33, noise std x / y | 0.28 / 0.29 px | 0.12 / 0.22 px |
+| TEX_M1 (aperiodic) 8.33 | 0.13 / 0.14 px | 0.12 / 0.13 px |
+| TEX_M2 at 0.36 rad translating, median error | 0.40 px | 0.20 px |
+| R3 rotating, velocity std / per-texel accel f9 | 0.49 px / 59.5% | 0.46 px / 53.0% |
+| A4 accel, RMS of the box median over f4-20 / per-texel IQR at f10 | 0.036 (11%) / +/-0.21 | 0.026 (8%) / +/-0.09 |
+| 24->60 ladder, 32 cases | -- | mean +0.54 dB, 23 up by more than 0.3, 8 within 0.3, L1 -4.73 (73.94 -> 69.21, the near-ceiling flat square) |
+| O5 24->60 time, interleaved medians | 5.04 s | 5.16 s (+2.4%) |
+
+Real footage (avengers, the record's five segments): the propagated quad 35.30 dB / 0.9685 SSIM, the corrected quad 35.31 / 0.9686 -- unchanged to the second decimal on every segment (decimate-and-reconstruct at 5/15/21/30/45 s, synthesised frames only).
+
+Shipped as `SUBPEL_SELFREF`: off in every two-frame base, exactly as
+`SUBPEL_REFINE` is (the picture shaders are unchanged to the bit), on in
+every generated tri, quad and quint, whose ladders move by the table above.
+Rotation keeps its second mechanism: the oblique texture's residual (0.20 px
+median on the fixed-angle control after the fix, against 0.13 axis-aligned)
+and the spatially varying flow on top of it. The comb (M5-M9) and the
+integer-speed lattice cases are the natural next check: a bias that was
+invisible at integer speeds because every calibration pooled it away should
+now be gone there as well.
+
+**The matcher is blind on the diagonal, and every textured ladder case moves
+along x (2026-09-04, afternoon).** Found through the rotating disc's painted
+acceleration: its outline is a four-leaf clover fixed to the screen at the
+diagonal azimuths, where the round-trip trust gate zeroes 70-83% of texels
+against 17-40% on the axes. The control: the same textured box at the same
+8.33 px/frame, along x and along the diagonal.
+
+| motion at 8.33 px/frame | TEX_M2 (periodic) | TEX_M1 (aperiodic) |
+|---|---|---|
+| along x | 0.13 px median, 0-1% gross | 0.15 px, 1-2% gross |
+| along the diagonal, propagated quad | 94% locked to the lattice copy 28 px away | 0.27 px std, 13-17% gross |
+| along the diagonal, stock quad | 99% | 39% gross |
+
+The only diagonal ladder case, L8, is a flat square. Seeds, propagation and
+SUBPEL_SELFREF do not touch it. The speed ladder on the TEX_M2 diagonal
+convicts the point-sampled coarse pyramid (section 3, mechanism c) rather
+than the search geometry, which is identical at every row:
+
+| diagonal speed, px/frame per axis | in coarse texels | result |
+|---|---|---|
+| 16 | 1 (integer) | 0.10 px, 0% gross |
+| 8 | 1/2 | 61% locked, 21 px |
+| 4 | 1/4 | 98% locked, 28.3 px |
+| 2 | 1/8 | 0.25 px, 0.3% (the refine levels' own reach) |
+
+An aliased level is shift-invariant only for integer shifts of its own
+texels, and sin x sin y is two diagonal plane waves of period 28.3 px --
+above the 1/16 level's 32 px Nyquist -- whose 40 px axis period is their
+beat: along x the coarse level sees a clean sinusoid, along the diagonal a
+Moire. The fixed-angle texture (0.36 rad) moving along x is fine, so it is
+the motion's direction against the texture's structure, not the texture's
+orientation. Section 8's prefilter was judged along x only.
+
+**The zero seed, four passes, not yet shipped.** The 1/8 level resolves the
+28 px structure and searches +/-2 of its texels (+/-16 px) around each of
+its three seeds; a fourth seed at zero, refined like the others, finds the
+true match wherever the coarse seeds are Moire and the motion is within
+reach. Measured through the propagated quad, 32-case ladder, five avengers
+segments:
+
+| pass | rule | (8,8) diagonal | disc r 40-70 gross | ladder mean | worst | footage |
+|---|---|---|---|---|---|---|
+| shipped | -- | 21 px / 61% | 25% | -- | -- | 35.31 / 0.9686 |
+| 1 | competes with the magnitude prior | 0.03 px / 0% | 6% | +0.78 dB (L2 +8.5, L7 +3.5, L8 +3.5) | L3 -4.2, L6 -1.1 | 34.90 / 0.9659 (loss) |
+| 2 | + seeds scored at their sub-pixel-fitted SAD | same | 2.5% | -- | L3 -4.3, M2 -1.8 | -- |
+| 3 | + seeds scored at the V fit's vertex cost | same | 5% | -- | L1 -9.5, M2 -6.1 | -- |
+| 4 | wins on SAD alone (10% margin), boundary discount | same | 22% | +0.14 dB (R3 +2.2, O6 +1.3) | L3 -1.4, F1 -1.0 | 35.36 / 0.9687 |
+| 5 | pass 1 where the coarse level is Moire, pass 4 elsewhere | same | 14% | +0.15 dB (R3 +2.3, O6 +1.3, A5 +1.0) | L3 -1.4, F1 -1.0 | 35.32 / 0.9685 |
+
+Two facts fall out. The fractional-1/8 diagonals ((4,4) 98%, (5.9,5.9) 85%)
+stay locked under every pass, because the zero seed's own +/-2 texel window
+contains the periodic copy at (-16,-16) px -- an exact integer match at cost
+0 -- while the truth sits half a texel off every integer candidate at ~1.2
+amplitudes of cost; a 3x3-texel window (24 px) is smaller than the 28 px
+period and cannot tell copies apart, and no scoring after the integer search
+can undo its choice. That is period locking (section 3, mechanism b) with
+its condition stated: a matching window smaller than the texture period, at
+a fractional shift of that level. And the edge cases (L3, F1, L2, the
+footage) lose whenever the zero seed is allowed to win with the prior, and
+still lose a little on cost alone: on one-dimensional structure a zero seed
+that slides along the edge is a legitimately lower cost -- the aperture
+problem, whose gate (a structure tensor on the block) is the register's
+oldest open lead and the next pass. Textured diagonal cases belong on the
+ladder and are queued.

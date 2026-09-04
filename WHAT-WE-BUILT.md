@@ -146,10 +146,16 @@ next" explains, the reason the frame count stops at four for film.
   fraction of a coarse step confuses them; the obvious fix — smooth first —
   was built and refuted, because the detail it removes is exactly the
   contrast the tracker needs. The neighbour-borrowing repair halves the
-  error on a *textured* turning disc — median vector error about 50–70%
-  (was 60–120%), direction within about 20 degrees (was 25–60) — which is
-  still nowhere near a measurement. **A turning vehicle is rotation. Nobody
-  should attach this to anything safety-critical.**
+  error on a *textured* turning disc, and a closer look the same morning
+  changed what the remaining error is: point by point it is noise, not
+  bias — the same kind, and less than twice the size, as the noise on a
+  straight-moving object, which our calibrations never showed because they
+  always averaged over the object. Averaged over a patch 24 pixels across,
+  the acceleration of the turning disc reads within about 15% with its
+  direction within 6 degrees; point by point it does not. So a turning
+  object can be read at patch resolution, not pixel resolution, and a flat
+  one cannot be read at all. **A turning vehicle is rotation. Nobody should
+  attach this to anything safety-critical.**
 - **It can only measure where there is visible pattern.** Blank walls,
   clear sky, smooth surfaces: no reading. This is a physical limit of
   tracking patches, not a bug — but it means the map is sparse, and its
@@ -299,7 +305,15 @@ For anyone picking this up:
    borrow the motion of their textured neighbours, checked against both
    frames; on hand-drawn animation that is worth up to two decibels more, and a
    setting of it tuned for animation matches the recommended shader there
-   at a third of the work. SHADERS.md says when to use each.
+   at a third of the work. A third repair, found while chasing rotation,
+   removes a quarter-pixel bias the tracker's finest step had on any
+   repeating pattern; on such patterns the field readings are two to
+   three times steadier point by point, and the picture gains a little on
+   most test scenes. The turning disc's map then exposed a blind spot in the
+   tracker's coarsest step -- motion along the diagonal of a repeating
+   pattern -- and in our test scenes, every one of which had moved
+   horizontally; the repair is under test and diagonal scenes are joining
+   the ladder. SHADERS.md says when to use each.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
    NFRAME-LIMITS.md for more detail. One exception was found on paper and
@@ -344,6 +358,8 @@ nothing to the picture and costs a fifth more time.
 
 ## Where to look
 
+- `HANDOVER.md` — how to get up to speed and take one of the open leads,
+  for a person or for an assistant
 - `README.md` — the enabling patch, documented for upstream review
 - `METHODOLOGY.md` — how the work was actually done, including the
   division of labour between the human and the AI

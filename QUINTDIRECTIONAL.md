@@ -187,6 +187,25 @@ reproduces the propagated quad to the decimal, so the residue is the far
 links alone; a reading that wants the quad's acceleration on lattice
 texture has it in mode 8 at no extra cost.
 
+**The far links, resolved (09:30).** Two candidate mechanisms were built
+and measured. A snap-row alarm (the quartic's fourth coefficient is the
+fourth difference of the five positions: a few px at most on any motion the
+window can represent, lattice-sized when a composed link has jumped to a
+texture-period copy; past 8 px the estimate stays the cubic) recovered a
+third of the R3 loss and changed A4, O9 and O10 by nothing, so the far
+links are not making lattice jumps. A trust fallback (the far links'
+round trips now move the estimate between the cubic and the quartic
+instead of shrinking it toward zero) restored the quint's magnitude ratio
+on R3 to the quad's exactly (0.87 at f15, was 0.54) and changed nothing
+else. Both ship, at no measurable cost. What remains is the estimator's
+own noise gain, by construction: the cubic's acceleration from a symmetric
+near pair is d(+1) + d(-1) (the far link only sets the jerk), noise gain
+sqrt(2); the quartic's is (-d(-2) + 16 d(-1) + 16 d(+1) - d(+2)) / 12, noise
+gain 1.89 -- 34% more, for the truncation correction. A4 measured +22%, R3
++15%. So the pre-registered A7 miss is the price of the correction, paid
+everywhere the correction is not needed; mode 8 is the estimator for those
+regimes, and the two can be chosen per regime as section 8 said.
+
 **Time.** O5 at 24->60, 60 frames, median of three: quad 4.75 s, quint
 5.60 s, +18% (item 6 asked for 10%). The two extra flow chains are the
 cost and the packing passes are a small part of it. The shader is a field

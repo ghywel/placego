@@ -245,6 +245,10 @@ def main():
     assert n_sub == 2, f"expected 2 SUBPEL_REFINE sites in base, found {n_sub}"
     text = text.replace("const int SUBPEL_REFINE = 0;",
                         "const int SUBPEL_REFINE = 1;")
+    # the self-referenced fit rides with the refinement: on in every field shader, off in the picture bases
+    n_self = text.count("const int SUBPEL_SELFREF = 0;")
+    assert n_self == 2, f"expected 2 SUBPEL_SELFREF sites in base, found {n_self}"
+    text = text.replace("const int SUBPEL_SELFREF = 0;", "const int SUBPEL_SELFREF = 1;")
 
     blocks = T3.chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]

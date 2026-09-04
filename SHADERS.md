@@ -268,7 +268,10 @@ pre-registration and results: [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md).
 
 Regenerated on 2026-09-04 when the human-reading tail was added: the
 committed file had predated the sub-pixel refinement block the base gained
-on 2026-08-31 (inert in the interpolators at `SUBPEL_REFINE = 0`), and the
+on 2026-08-31 (inert in the interpolators at `SUBPEL_REFINE = 0`; since
+2026-09-04 the same is true of `SUBPEL_SELFREF`, the self-referenced fit that
+removes the refinement's own texture-phase bias -- off in every two-frame
+shader, on in every generated one, NFRAME-LIMITS.md section 9), and the
 fresh generation scores the same L1 figure, 54.24 dB, so `tests/smoke.sh`
 step 3 is green again.
 

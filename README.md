@@ -266,6 +266,9 @@ number in the other documents was produced by.
 
 ## Also in this directory
 
+- **Handover.** [HANDOVER.md](HANDOVER.md): how to get up to speed and
+  take one of the open leads -- for a person or for an assistant told to
+  read it and wait for a command.
 - **Patches.** [frame-mix-hook.patch](frame-mix-hook.patch), the hook
   stage above; [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch),
   its N:N companion; and

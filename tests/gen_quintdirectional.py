@@ -149,6 +149,10 @@ def main():
     n_sub = text.count("const int SUBPEL_REFINE = 0;")
     assert n_sub == 2, f"expected 2 SUBPEL_REFINE sites in base, found {n_sub}"
     text = text.replace("const int SUBPEL_REFINE = 0;", "const int SUBPEL_REFINE = 1;")
+    # the self-referenced fit rides with the refinement: on in every field shader, off in the picture bases
+    n_self = text.count("const int SUBPEL_SELFREF = 0;")
+    assert n_self == 2, f"expected 2 SUBPEL_SELFREF sites in base, found {n_self}"
+    text = text.replace("const int SUBPEL_SELFREF = 0;", "const int SUBPEL_SELFREF = 1;")
     blocks = T3.chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
     extra = len(hook_blocks) - 24
@@ -429,9 +433,20 @@ vec4 hook() {
             mat4 Mi = inverse(M);
             vec4 sx = Mi * vec4(f_far_p.x, f_prev.x, f_next.x, f_far_n.x);
             vec4 sy = Mi * vec4(f_far_p.y, f_prev.y, f_next.y, f_far_n.y);
-            float g4 = 1.0 - smoothstep(ACCEL_TRUST_LO, ACCEL_TRUST_HI, max(max(rt_prev, rt_next), max(rt_far_n, rt_far_p)));
-            accel = clamp(vec2(sx.y, sy.y) * g4, -amax, amax);
-            jerk  = clamp(vec2(sx.z, sy.z) * g4, -jmax, jmax);
+            // The snap row is the fourth difference of the five positions: a few px at most on any
+            // motion the window can represent, lattice-sized when a composed far link has jumped to a
+            // texture-period copy. Ignored as a signal, kept as the alarm: past SNAP_MAX_PX the far
+            // links are not believed and the estimate stays the quad's cubic (mode 8).
+            const float SNAP_MAX_PX = 8.0;
+            float snap_px = length(vec2(sx.w, sy.w) / HOOKED_pt);
+            // Trust per coefficient by the links that carry it. The near links' trust is already in the
+            // cubic (g2, g3); the far links' round trips decide only how far the estimate moves from the
+            // cubic toward the quartic -- never toward zero. Where the far links are not believed the
+            // field is the quad's, which is the degrade the design promised.
+            float g4 = 1.0 - smoothstep(ACCEL_TRUST_LO, ACCEL_TRUST_HI, max(rt_far_n, rt_far_p));
+            if (snap_px > SNAP_MAX_PX) g4 = 0.0;
+            accel = mix(accel_c, clamp(vec2(sx.y, sy.y) * g2, -amax, amax), g4);
+            jerk  = mix(jerk_c,  clamp(vec2(sx.z, sy.z) * g2, -jmax, jmax), g4);
         }
     }
     // ---- cubic placement: the quad's warp, unchanged ----
