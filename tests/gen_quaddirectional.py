@@ -79,6 +79,7 @@ import re
 import sys
 
 import gen_tridirectional as T3
+import add_human_reading as READING   # the human-reading tail every shipped shader carries (off by default)
 
 HERE = pathlib.Path(__file__).resolve().parent
 # The base to generate from. Default is the shipped bidirectional shader;
@@ -233,7 +234,7 @@ BANNERS = {
 
 
 def main():
-    text = SRC.read_text()
+    text = READING.strip_tail(SRC.read_text())   # the base's own tail is not carried; this shader gets its own
     assert "TIE_MARGIN" in text, "base shader lacks TIE_MARGIN -- wrong vintage?"
 
     first = text.index("//!")
@@ -343,7 +344,7 @@ def main():
         header = header.replace("bidirectional-interpolation.glsl", SRC.name)
         header = header.replace("//   ./tests/gen_quaddirectional.py\n",
                                 f"//   ./tests/gen_quaddirectional.py {DST.name} {SRC.name}\n")
-    DST.write_text(header + result, newline="\n")
+    DST.write_text(READING.add_tail(header + result), newline="\n")
     print(f"  {DST.name}: {hooks} passes "
           f"({24 + extra} base + 8 slot-2/3 lumas + 2 cut stats + {24 + 2 * extra} pair flow "
           f"+ 4 full-res lumas + 6 full-res refines), braces/parens balanced  OK")

@@ -355,6 +355,13 @@ scene() {
     O1_osc_gentle) _rect '600+40*sin(6.2832*T)'  '310' 100 100 0 255 "$r" ;;
     O2_osc_medium) _rect '600+20*sin(15.708*T)'  '310' 100 100 0 255 "$r" ;;
     O3_osc_hard)   _rect '600+12*sin(25.133*T)'  '310' 100 100 0 255 "$r" ;;
+    # Fast oscillation of a SMALL amplitude: the regime where more frames keep
+    # paying (NFRAME-LIMITS.md section 1) and where the four-frame second
+    # difference's truncation is the dominant error. O3's 12 px at 6 samples
+    # per period puts its +/-2-frame displacements beyond the search reach; these
+    # keep every displacement inside it. Field scenes, not ladder cases.
+    O7_osc_fast_small) _rect '600+6*sin(18.850*T)'  '310' 100 100 0 255 "$r" ;;   # 8 samples/period, peak 4.7 px/frame
+    O8_osc_fast_tiny)  _rect '600+4*sin(25.133*T)'  '310' 100 100 0 255 "$r" ;;   # 6 samples/period, peak 4.2 px/frame
 
     # ---- O4/O5: the same oscillation on a LARGE object, flat and textured.
     #
@@ -398,6 +405,11 @@ scene() {
     # Peak |a| = 40*6.2832^2/576 = 2.74 px/interval^2; peak velocity 10.5px/f,
     # comfortably inside the coarse search's reach.
     O6_osc_tex_gentle)  _rect '600+40*sin(6.2832*T)' '210' 300 300 0 "$TEX_M2" "$r" ;;
+    # Textured twins of O7/O8: a flat square's field lives on its two edges,
+    # which disagree at N:N (leading edge measures the object, trailing edge
+    # the background it uncovers), so the fast-small regime is scored on these.
+    O9_osc_tex_fast)    _rect '600+6*sin(18.850*T)' '210' 300 300 0 "$TEX_M2" "$r" ;;   # 8 samples/period
+    O10_osc_tex_tiny)   _rect '600+4*sin(25.133*T)' '210' 300 300 0 "$TEX_M2" "$r" ;;   # 6 samples/period
 
     *) echo "UNKNOWN_CASE"; return 1 ;;
   esac
@@ -422,9 +434,9 @@ ACCEL_CASES="A1_accel_8mean A2_accel_16mean A3_accel_23mean"
 # same texture, same object, same peak-|a| band, 7.8x less jerk -- the only way
 # to separate magnitude from rate-of-change, which one sinusoid welds together
 # by construction.
-FIELD_CASES="A4_accel_tex_a033 A5_accel_tex_a067 A6_accel_tex_a133 A7_accel_tex_a167 O6_osc_tex_gentle"
+FIELD_CASES="A4_accel_tex_a033 A5_accel_tex_a067 A6_accel_tex_a133 A7_accel_tex_a167 O6_osc_tex_gentle O9_osc_tex_fast O10_osc_tex_tiny"
 SHAPE_CASES="F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel"
-OSC_CASES="O1_osc_gentle O2_osc_medium O3_osc_hard O4_osc_flat300 O5_osc_textured"
+OSC_CASES="O1_osc_gentle O2_osc_medium O3_osc_hard O4_osc_flat300 O5_osc_textured O7_osc_fast_small O8_osc_fast_tiny"
 #
 # GAP THESE FILL: every scene in the original ladder puts the moving object
 # on a FLAT BLACK background. That hides exactly the failure real content

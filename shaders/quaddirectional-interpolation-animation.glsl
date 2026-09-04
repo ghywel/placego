@@ -1,22 +1,11 @@
-// human-reading-velocity.glsl
-//
-// HUMAN-READING VIEW -- not for production use. Generated from
-// quaddirectional-interpolation-seeded.glsl by
-//   tests/gen_human_reading.py quaddirectional-interpolation-seeded.glsl human-reading-velocity.glsl velocity
-// The base is byte-for-byte intact up to and including its final pass,
-// which is kept as the picture; the appended passes draw the velocity
-// field the way the Metal demo's "Reading" display does. Regenerate
-// rather than edit: the point is that this view can never drift from
-// the shader it is reading.
-//
 // =====================================================================
 // GENERATED FILE -- DO NOT EDIT BY HAND.
 //
 // Produced by scripts/tests/gen_quaddirectional.py from
-// bidirectional-interpolation-seeded.glsl. Edit the base (shared machinery) or
+// bidirectional-interpolation-animation.glsl. Edit the base (shared machinery) or
 // the generator (everything [quad]-tagged) and regenerate:
 //
-//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-seeded.glsl bidirectional-interpolation-seeded.glsl
+//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-animation.glsl bidirectional-interpolation-animation.glsl
 //
 // QUADDIRECTIONAL INTERPOLATION -- the four-frame experiment. Binds the
 // contiguous four-frame window around each output, computes all six
@@ -671,7 +660,7 @@ vec4 hook() {
 //!BIND FLOW_S_AB
 //!BIND FLOW_S_AB_CACHE2
 //!BIND FLOW_E_BA_CACHE
-//!SAVE FLOW_E_AB
+//!SAVE FLOW_E_AB_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -851,7 +840,7 @@ vec4 hook() {
 //!BIND FLOW_S_BA
 //!BIND FLOW_S_BA_CACHE2
 //!BIND FLOW_E_AB_CACHE
-//!SAVE FLOW_E_BA
+//!SAVE FLOW_E_BA_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -958,6 +947,406 @@ vec4 hook() {
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_BA_CACHE, coord, result);
     return result;
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_RAW_pos;
+    vec2 own = FLOW_E_AB_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 own = FLOW_E_AB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 own = FLOW_E_AB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_RAW
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check AB: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_E_pt;
+            s += abs(LUMA_A_E_tex(uv + o).r - LUMA_B_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 raw = FLOW_E_AB_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_AB_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_A_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_A_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_RAW_pos;
+    vec2 own = FLOW_E_BA_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 own = FLOW_E_BA_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 own = FLOW_E_BA_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_RAW
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_B_E
+//!BIND LUMA_A_E
+//!SAVE FLOW_E_BA
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check BA: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_B_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_B_E_pt;
+            s += abs(LUMA_B_E_tex(uv + o).r - LUMA_A_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 raw = FLOW_E_BA_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_BA_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_B_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_B_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 //!HOOK FRAME_MIX
@@ -2048,7 +2437,7 @@ vec4 hook() {
 //!BIND FLOW_S_BC
 //!BIND FLOW_S_BC_CACHE2
 //!BIND FLOW_E_CB_CACHE
-//!SAVE FLOW_E_BC
+//!SAVE FLOW_E_BC_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -2214,6 +2603,214 @@ vec4 hook() {
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_BC_CACHE, coord, result);
     return result;
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BC_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_BC_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BC_RAW_pos;
+    vec2 own = FLOW_E_BC_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BC_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BC_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BC_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_BC_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BC_PROP_pos;
+    vec2 own = FLOW_E_BC_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BC_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BC_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BC_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_BC_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BC_PROP_pos;
+    vec2 own = FLOW_E_BC_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BC_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BC_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BC_RAW
+//!BIND FLOW_E_BC_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_BC
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check AB: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_E_pt;
+            s += abs(LUMA_B_E_tex(uv + o).r - LUMA_C_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BC_PROP_pos;
+    vec2 raw = FLOW_E_BC_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_BC_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_A_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_A_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 
@@ -2800,7 +3397,7 @@ vec4 hook() {
 //!BIND FLOW_S_CB
 //!BIND FLOW_S_CB_CACHE2
 //!BIND FLOW_E_BC_CACHE
-//!SAVE FLOW_E_CB
+//!SAVE FLOW_E_CB_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -2907,6 +3504,214 @@ vec4 hook() {
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_CB_CACHE, coord, result);
     return result;
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CB_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_CB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CB_RAW_pos;
+    vec2 own = FLOW_E_CB_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_CB_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_CB_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_CB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CB_PROP_pos;
+    vec2 own = FLOW_E_CB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_CB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_CB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!SAVE FLOW_E_CB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CB_PROP_pos;
+    vec2 own = FLOW_E_CB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_CB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_CB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CB_RAW
+//!BIND FLOW_E_CB_PROP
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_A_E
+//!SAVE FLOW_E_CB
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check BA: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_B_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_B_E_pt;
+            s += abs(LUMA_C_E_tex(uv + o).r - LUMA_B_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CB_PROP_pos;
+    vec2 raw = FLOW_E_CB_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_CB_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_B_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_B_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 
@@ -3517,7 +4322,7 @@ vec4 hook() {
 //!BIND FLOW_S_CD
 //!BIND FLOW_S_CD_CACHE2
 //!BIND FLOW_E_DC_CACHE
-//!SAVE FLOW_E_CD
+//!SAVE FLOW_E_CD_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -3683,6 +4488,218 @@ vec4 hook() {
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_CD_CACHE, coord, result);
     return result;
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CD_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_CD_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CD_RAW_pos;
+    vec2 own = FLOW_E_CD_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_CD_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_CD_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CD_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_CD_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CD_PROP_pos;
+    vec2 own = FLOW_E_CD_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_CD_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_CD_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CD_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_CD_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CD_PROP_pos;
+    vec2 own = FLOW_E_CD_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_CD_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_CD_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_CD_RAW
+//!BIND FLOW_E_CD_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_CD
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check AB: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_E_pt;
+            s += abs(LUMA_C_E_tex(uv + o).r - LUMA_D_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_CD_PROP_pos;
+    vec2 raw = FLOW_E_CD_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_CD_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_A_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_A_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 
@@ -4274,7 +5291,7 @@ vec4 hook() {
 //!BIND FLOW_S_DC
 //!BIND FLOW_S_DC_CACHE2
 //!BIND FLOW_E_CD_CACHE
-//!SAVE FLOW_E_DC
+//!SAVE FLOW_E_DC_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -4381,6 +5398,218 @@ vec4 hook() {
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_DC_CACHE, coord, result);
     return result;
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_DC_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_DC_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_DC_RAW_pos;
+    vec2 own = FLOW_E_DC_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_DC_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_DC_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_DC_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_DC_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_DC_PROP_pos;
+    vec2 own = FLOW_E_DC_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_DC_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_DC_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_DC_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!SAVE FLOW_E_DC_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_C_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_DC_PROP_pos;
+    vec2 own = FLOW_E_DC_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_DC_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_DC_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_DC_RAW
+//!BIND FLOW_E_DC_PROP
+//!BIND LUMA_B_E
+//!BIND LUMA_C_E
+//!BIND LUMA_D_E
+//!BIND LUMA_A_E
+//!SAVE FLOW_E_DC
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check BA: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_D_E_tex(uv + vec2(float(x), float(y)) * LUMA_B_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_B_E_pt;
+            s += abs(LUMA_D_E_tex(uv + o).r - LUMA_C_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_DC_PROP_pos;
+    vec2 raw = FLOW_E_DC_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_DC_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_B_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_B_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 
@@ -5990,7 +7219,7 @@ vec4 hook() {
 //!BIND FLOW_F_CB
 //!BIND FLOW_F_CD
 //!BIND FLOW_F_DC
-//!SAVE READ_PICTURE
+//!SAVE FRAME_MIX
 //!WIDTH HOOKED.w
 //!HEIGHT HOOKED.h
 //!DESC [quad] motion-compensated warp (cubic placement)
@@ -6315,6 +7544,15 @@ vec4 hook() {
 
     return mix(sa, sb, s);
 }
+
+// ==== human-reading tail (generated by tests/add_human_reading.py; do not edit) ====
+//!PARAM read_view
+//!DESC 0 = normal output; 1/2/3 = velocity/acceleration/jerk painted for a human; 4/5/6 = the same fields raw, for a machine
+//!TYPE int
+//!MINIMUM 0
+//!MAXIMUM 6
+0
+
 //!HOOK FRAME_MIX
 //!BIND HOOKED
 //!BIND FRAME1
@@ -6335,7 +7573,8 @@ vec4 hook() {
 //!SAVE READ_FIELD
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
-//!DESC [reading] velocity field (px/interval) at 1/8 -- the base's own final pass in diag mode
+//!WHEN read_view 0 >
+//!DESC [reading] the chosen field in px at 1/8 res: this shader's own final pass in its diagnostic mode
 
 // WARP ON H, MEASURE ON F: the estimator reads the full-res flows, the
 // warp keeps the mediated half-res ones -- the first full-res build fed
@@ -6406,7 +7645,7 @@ const float JERK_DEADBAND_HI = 6.0;
 //       encoded like mode 2 against VEL_DIAG_FS (marker: orange). The
 //       zeroth derivative the demo's display was missing -- "moving
 //       right" as a solid colour.
-const int TRI_DIAG = 7;
+int TRI_DIAG = (read_view == 1 || read_view == 4) ? 7 : (read_view == 2 || read_view == 5) ? 2 : 5;
 
 const float ACCEL_DIAG_FS = 2.0;   // px/interval^2 full scale (modes 2, 3)
 const float CORR_DIAG_FS  = 0.25;  // px full scale (mode 1)
@@ -6655,6 +7894,7 @@ vec4 hook() {
 
     return mix(sa, sb, s);
 }
+
 //!TEXTURE READ_ACC
 //!SIZE 480 270
 //!FORMAT rgba32f
@@ -6667,16 +7907,16 @@ vec4 hook() {
 //!SAVE READ_POOL
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
-//!DESC [reading] 13x13 pool at 8 px spacing, then EMA across frames
+//!WHEN read_view 0 >
+//!DESC [reading] 13x13 pool at 8 px spacing, then an exponential memory across frames
 
 // Measured on the Metal demo (2026-09-01): pooling +/-48 px drops the
-// static-background p95 from 0.52 to 0.10 px; the EMA lifts a mover's
-// direction coherence from 0.74 to 0.92. Alpha is per OUTPUT frame, as
-// in the demo's 60 Hz present. Set READ_EMA_ALPHA to 1.0 for a
-// frame-by-frame reading (no memory) -- e.g. fast oscillators, whose
-// velocity averages toward zero under any EMA.
+// static-background p95 from 0.52 to 0.10 px; the memory lifts a mover's
+// direction coherence from 0.74 to 0.92. READ_EMA_ALPHA is per OUTPUT
+// frame; 1.0 = no memory (frame-by-frame reading: fast oscillators average
+// toward zero under any memory).
 const float READ_EMA_ALPHA = 0.12;
-const int   READ_POOL_R    = 6;      // 13x13 taps
+const int   READ_POOL_R    = 6;
 
 vec4 hook() {
     ivec2 coord = ivec2(READ_FIELD_pos * READ_FIELD_size);
@@ -6692,28 +7932,33 @@ vec4 hook() {
 }
 
 //!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND READ_PICTURE
+//!BIND FRAME_MIX
+//!BIND READ_FIELD
 //!BIND READ_POOL
-//!DESC (no dominant-motion pass)
 //!SAVE FRAME_MIX
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!DESC [reading] velocity painted over the picture: hue = direction, colour = magnitude above the floor
+//!WIDTH FRAME_MIX.w
+//!HEIGHT FRAME_MIX.h
+//!WHEN read_view 0 >
+//!DESC [reading] paint the field over the picture (modes 1-3) or emit it raw for a machine (modes 4-6)
 
-// Gates in px/interval: below READ_VIS_LO nothing is drawn, colour
-// reaches full saturation at READ_SAT_FULL. The demo's measured values
-// for this field.
-const float READ_VIS_LO   = 1.0;
-const float READ_VIS_HI   = 2.0;
-const float READ_SAT_FULL = 3.0;
-// 1.0 = the full reading (dimmed picture + colour), 0.0 = plain picture.
-const float READ_OPACITY  = 1.0;
+// three- and four-frame family: velocity, acceleration and jerk from this shader's own stencil
+// Gates in px per interval (velocity) or px per interval^2 / ^3
+// (acceleration, jerk): below _LO nothing is drawn, full colour at _SAT.
+// The demo's measured values at 1280 wide; at 1920 the acceleration and
+// jerk gates admit some speckle in foliage (doubling them clears most).
+const float READ_VEL_LO  = 1.0,  READ_VEL_HI  = 2.0,  READ_VEL_SAT  = 3.0;
+const float READ_ACC_LO  = 0.12, READ_ACC_HI  = 0.22, READ_ACC_SAT  = 0.30;
+// READ_GATE 1: visibility needs the UNPOOLED field to move within READ_GATE_R
+// texels of 1/8 res (2 = 16 px, the tracker's own reach), so the pool cannot
+// paint further than the tracker itself moved. Measured on a 100 px square:
+// painted area 4.05x the object without it, 2.86x with it, 94% covered.
+const int   READ_GATE     = 1;
+const int   READ_GATE_R   = 2;
 const float READ_PICTURE_LUMA = 0.35;
-// READ_RELATIVE 1 = motion relative to the frame's dominant motion (a
-// camera pan otherwise colours the whole frame); a generation-time choice
-// because it adds a pass. Informational here.
-const int   READ_RELATIVE = 0;
+// machine modes: 0.5 + px / (2 * FS), one full scale per field
+const float READ_MACHINE_FS_VEL = 32.0;
+const float READ_MACHINE_FS_ACC = 2.0;
+const float READ_MACHINE_FS_JERK = 2.0;
 
 vec3 read_hsv2rgb(vec3 c) {
     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
@@ -6722,26 +7967,39 @@ vec3 read_hsv2rgb(vec3 c) {
 }
 
 vec4 hook() {
-    // 4-tap soften: the pooled field keeps a faint per-texel checker
-    // from the raw field that would dither the gate.
+    bool vel = (read_view == 1 || read_view == 4);
+    if (read_view >= 4) {
+        float fs = (read_view == 4) ? READ_MACHINE_FS_VEL : (read_view == 5) ? READ_MACHINE_FS_ACC : READ_MACHINE_FS_JERK;
+        vec2 f = READ_FIELD_tex(FRAME_MIX_pos).xy;
+        return vec4(0.5 + f * (0.5 / fs), 0.5, 1.0);
+    }
+    float lo  = vel ? READ_VEL_LO  : READ_ACC_LO;
+    float hi  = vel ? READ_VEL_HI  : READ_ACC_HI;
+    float sat_full = vel ? READ_VEL_SAT : READ_ACC_SAT;
+    vec2 uv = FRAME_MIX_pos;
+    // 4-tap soften: the pooled field keeps a faint per-texel checker that would dither the gate
     vec2 fpx = vec2(0.0);
-    fpx += READ_POOL_tex(HOOKED_pos + vec2( 2.0,  2.0) * HOOKED_pt).xy;
-    fpx += READ_POOL_tex(HOOKED_pos + vec2(-2.0,  2.0) * HOOKED_pt).xy;
-    fpx += READ_POOL_tex(HOOKED_pos + vec2( 2.0, -2.0) * HOOKED_pt).xy;
-    fpx += READ_POOL_tex(HOOKED_pos + vec2(-2.0, -2.0) * HOOKED_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2( 2.0,  2.0) * FRAME_MIX_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2(-2.0,  2.0) * FRAME_MIX_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2( 2.0, -2.0) * FRAME_MIX_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2(-2.0, -2.0) * FRAME_MIX_pt).xy;
     fpx *= 0.25;
-    // (not relative to the camera: generate with the `relative` argument for that)
     float mag = length(fpx);
-    float vis = smoothstep(READ_VIS_LO, READ_VIS_HI, mag) * 0.9;
-    // borders: the pool clamps onto frame-edge flow garbage
-    vec2 bpx = min(HOOKED_pos, 1.0 - HOOKED_pos) * HOOKED_size;
+    float vis = smoothstep(lo, hi, mag) * 0.9;
+    if (READ_GATE == 1) {
+        float rawmag = 0.0;
+        for (int j = -READ_GATE_R; j <= READ_GATE_R; j++)
+            for (int i = -READ_GATE_R; i <= READ_GATE_R; i++)
+                rawmag = max(rawmag, length(READ_FIELD_tex(uv + vec2(float(i), float(j)) * READ_FIELD_pt).xy));
+        vis *= smoothstep(0.5 * lo, lo, rawmag);
+    }
+    vec2 bpx = min(uv, 1.0 - uv) * FRAME_MIX_size;
     vis *= smoothstep(4.0, 28.0, min(bpx.x, bpx.y));
-    float sat = 0.95 * smoothstep(READ_VIS_LO, READ_SAT_FULL, mag);
-    // screen space, +y down: red = moving right, cyan = left,
-    // purple/blue = down, yellow-green = up (the demo's convention)
+    float sat = 0.95 * smoothstep(lo, sat_full, mag);
+    // screen space, +y down: red = moving right, cyan = left, purple/blue = down, yellow-green = up
     float hue = fract(atan(fpx.y, fpx.x) / (2.0 * 3.14159265) + 1.0);
-    vec4 pic = READ_PICTURE_tex(HOOKED_pos);
+    vec4 pic = FRAME_MIX_tex(FRAME_MIX_pos);
     float lum = dot(pic.rgb, vec3(0.2126, 0.7152, 0.0722));
     vec3 reading = mix(vec3(lum * READ_PICTURE_LUMA), read_hsv2rgb(vec3(hue, sat, 1.0)), vis);
-    return vec4(mix(pic.rgb, reading, READ_OPACITY), pic.a);
+    return vec4(reading, pic.a);
 }

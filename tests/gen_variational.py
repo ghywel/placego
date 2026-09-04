@@ -34,6 +34,8 @@ import pathlib
 import sys
 import tempfile
 
+import add_human_reading as READING
+
 # Resolved from this file's own location, not hardcoded. The previous absolute
 # path was both machine-specific and WSL-only (/mnt/c/...), so the generator
 # ran on exactly one host -- which the cross-platform smoke test caught the
@@ -257,7 +259,7 @@ def build(iters, alpha, sigma, sigma_flow=0.0, medians=None):
     """iters:   dict level-key -> variational iteration count
        medians: dict level-key -> vector-median passes at that level"""
     medians = medians or {}
-    t = open(SRC).read()
+    t = READING.strip_tail(open(SRC).read())   # the base's own tail is not carried; this shader gets its own
     for lvl, flow, la, lb, div, anchor in LEVELS:
         n = iters.get(lvl, 0)
         m = medians.get(lvl, 0)
@@ -317,8 +319,9 @@ if __name__ == "__main__":
                          s=s, e=e, q=q, h=h, cost=cost,
                          ms=ms, me=me, mq=mq, mh=mh,
                          sigma_flow_doc=sigma_flow, medspec_doc=medspec) + text
-    open(out, "w", newline="\n").write(text)
     ok = text.count("{") == text.count("}") and text.count("(") == text.count(")")
+    text = READING.add_tail(text)   # the human-reading tail every shipped shader carries (off by default)
+    open(out, "w", newline="\n").write(text)
     print(f"{out}: S={s} E={e} Q={q} H={h} med={medspec}  "
           f"HOOK={text.count('//!HOOK')} "
           f"lines={text.count(chr(10))} braces {text.count('{')}/{text.count('}')} "

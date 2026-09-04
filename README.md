@@ -10,10 +10,19 @@ user-supplied GLSL shader (the same `.hook`-format shaders mpv and ffmpeg
 already support via `custom_shader_path`) simultaneous access to a whole
 *window* of source video frames at once (as many as that specific shader
 declares it wants, from 1 up to 8), plus the exact timing relationship
-between them, instead of a single already-blended texture. A companion
-one-hunk patch, [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch),
+between them, instead of a single already-blended texture. When the
+queue cannot fill the declared window (a clip's first and last frames,
+or a host fault), the hook is skipped and the builtin mixer draws the
+frame -- and the patch says so at error level on every such frame; set
+`PL_FRAME_MIX_STRICT` in the environment and it paints the frame magenta
+instead, so a miss can never pass for a result. A companion
+patch to ffmpeg's filter, [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch),
 lets the window fire when the output rate equals the input rate, which
-turns out to matter more than it sounds.
+turns out to matter more than it sounds, and sizes the frame queue's
+lookahead to the window the shader declares once it exceeds four frames
+(four fit the default radius, and keep it, so their published numbers
+stand; five need more, and without this a fifth-frame hook silently gets
+the builtin mixer on some frames).
 
 Everything downstream of that -- motion-compensated interpolation,
 temporal denoising, custom deinterlacing, scene-cut-aware effects, or
@@ -267,17 +276,18 @@ number in the other documents was produced by.
 - **Build scripts.** `build-windows.ps1`, `build-windows.sh` and
   `build-macos.sh` build a patched ffmpeg end to end;
   [BUILDANDUSAGE.md](BUILDANDUSAGE.md) explains them.
-- **Shaders** (in [shaders/](shaders/)). The two-, three- and four-frame interpolators, three
-  human-reading views that paint what the estimator is thinking over
-  the picture, and two small examples that exist to demonstrate the hook.
+- **Shaders** (in [shaders/](shaders/)). The two- to five-frame interpolators, each
+  carrying a human-reading view that paints what the estimator is
+  thinking over the picture (off by default, one shader parameter to
+  switch on; one demonstration file has it on), and two small examples that exist to demonstrate the hook.
   A `-seeded` variant of each costs about a tenth more render time and
   is up on most of the ladder, and a `-propagated` one on top of it costs
   a further 1-4% and is up on every real segment measured and 2 dB on
-  the ladder; [SHADERS.md](SHADERS.md) says which to use
+  the ladder, with an `-animation` setting of it for hand-drawn content; [SHADERS.md](SHADERS.md) says which to use
   and why;
-  [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) and
-  [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) are the records of the
-  three- and four-frame experiments, hypotheses stated before the
+  [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md), [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md)
+  and [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md) are the records of the
+  three-, four- and five-frame experiments, hypotheses stated before the
   results.
 - **What it found.** [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) in plain
   language; [NFRAME-LIMITS.md](NFRAME-LIMITS.md) on where adding frames

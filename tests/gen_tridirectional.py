@@ -78,6 +78,8 @@ import pathlib
 import re
 import sys
 
+import add_human_reading as READING   # the human-reading tail every shipped shader carries (off by default)
+
 HERE = pathlib.Path(__file__).resolve().parent
 # The base to generate from. Default is the shipped bidirectional shader;
 # a second positional argument names a VARIANT base (e.g. a two-descent
@@ -196,7 +198,7 @@ def inject_before_code(b, snippet):
 
 
 def main():
-    text = SRC.read_text()
+    text = READING.strip_tail(SRC.read_text())   # the base's own tail is not carried; this shader gets its own
     assert "TIE_MARGIN" in text, "base shader lacks TIE_MARGIN -- wrong vintage?"
 
     # Drop the base's file-header comment block. It documents 2-frame
@@ -357,7 +359,7 @@ vec4 hook() {
         header = header.replace("bidirectional-interpolation.glsl", SRC.name)
         header = header.replace("//   ./tests/gen_tridirectional.py\n",
                                 f"//   ./tests/gen_tridirectional.py {DST.name} {SRC.name}\n")
-    DST.write_text(header + result, newline="\n")
+    DST.write_text(READING.add_tail(header + result), newline="\n")
     print(f"  {DST.name}: {hooks} passes "
           f"({24 + extra} base + 4 slot-2 lumas + 1 cut stat + {12 + extra} slot1<->slot2 flow "
           f"+ 3 full-res lumas + 4 full-res refines), braces/parens balanced  OK")
@@ -491,7 +493,7 @@ def to_fullres(h_block, pair, tag):
     nb = h_block
     nb = nb.replace(f"FLOW_H_{pair}", f"FLOW_F_{pair}")   # save + cache + stores
     nb = nb.replace(f"FLOW_Q_{pair}", f"FLOW_H_{pair}")   # seed: one level up
-    nb = re.sub(r"\bLUMA_([A-D])_H", r"LUMA_\1_F", nb)
+    nb = re.sub(r"\bLUMA_([A-E])_H", r"LUMA_\1_F", nb)   # E: the five-frame shader's fifth slot
     nb = nb.replace("3x3_h", "3x3_f")
     # WIDEN THE SAD APERTURE to 5x5 at this level only. The first F build
     # kept the H pass's 3x3, and the field regressed exactly where the

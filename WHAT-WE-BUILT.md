@@ -278,15 +278,18 @@ For anyone picking this up:
    nothing measurable on the rest; on real footage the difference is small
    but consistent. A second repair on top of it lets featureless patches
    borrow the motion of their textured neighbours, checked against both
-   frames; on hand-drawn animation that is worth up to two decibels more.
-   SHADERS.md says when to use each.
+   frames; on hand-drawn animation that is worth up to two decibels more, and a
+   setting of it tuned for animation matches the recommended shader there
+   at a third of the work. SHADERS.md says when to use each.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
    NFRAME-LIMITS.md for more detail. One exception has since been found on
    paper: a fifth frame placed *symmetrically* around the measurement removes
    most of the acceleration error on fast repetitive motion and makes the jerk
    reading two to three times cleaner on slow motion, so it is now worth
-   building.
+   building. It has now been built and measured: on tiny fast oscillations
+   it reads the acceleration three to seven times more accurately, at the
+   cost of a fifth of the render time.
 4. **Port it.** Done once — the Metal demo above is the worked example,
    built by machine-translating the GLSL and verifying against the same
    ladder and calibrations, and it came out 30–46% faster than the

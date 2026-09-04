@@ -4,7 +4,12 @@ You need an `ffmpeg` linked against a **patched** libplacebo. The patch
 ([frame-mix-hook.patch](frame-mix-hook.patch)) adds the
 `PL_HOOK_FRAME_MIX` shader hook stage; without it the shaders in this
 repository cannot run at all, because stock libplacebo never hands a custom
-shader more than one frame.
+shader more than one frame. The patch also makes a skipped window loud:
+when the frame queue cannot fill the window a shader declares, libplacebo
+logs an error on that frame (expected at a clip's first and last frames
+only) and, with `PL_FRAME_MIX_STRICT` set in the environment, paints the
+frame magenta instead of falling back to the builtin mixer -- the bench
+scripts fail a run that shows more than the two boundary skips.
 
 `fps=`, frame pacing, `custom_shader_path` loading and `frame_mixer=` string
 lookup all already exist in `vf_libplacebo.c`, so for **frame-rate scaling**
@@ -99,7 +104,11 @@ PKG_CONFIG_PATH="$HOME/libplacebo-install/lib/x86_64-linux-gnu/pkgconfig" \
 make -j"$(nproc)"
 ```
 
-For the N:N flow-field use case, apply the ffmpeg-side patch before building:
+For the N:N flow-field use case, and for any shader declaring a window of
+five or more frames, apply the ffmpeg-side patch before building (it also
+sizes the frame queue's lookahead to a declared window of five or more
+frames; without it a five-frame hook is skipped on some frames in favour
+of the builtin mixer, with no error):
 
 ```bash
 git apply /path/to/Novel-Interpolate/scripts/frame-mix-nn-threshold.patch

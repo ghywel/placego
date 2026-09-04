@@ -1,8 +1,8 @@
 diff --git a/libavfilter/vf_libplacebo.c b/libavfilter/vf_libplacebo.c
-index 5d3807e..402c70b 100644
+index 5d3807e..b48005f 100644
 --- a/libavfilter/vf_libplacebo.c
 +++ b/libavfilter/vf_libplacebo.c
-@@ -1232,10 +1232,30 @@ static int libplacebo_activate(AVFilterContext *ctx)
+@@ -1232,10 +1232,43 @@ static int libplacebo_activate(AVFilterContext *ctx)
                  continue;
              }
  
@@ -18,16 +18,30 @@ index 5d3807e..402c70b 100644
 +             * A negative threshold can never be met by a non-negative ratio,
 +             * so this keeps the window intact at every rate. */
 +            float ithresh = 1e-6f; /* pl_queue_params' own default */
++            int fmix_count = 0;
 +            for (int j = 0; j < s->num_hooks; j++) {
 +                if (s->hooks[j]->stages & PL_HOOK_FRAME_MIX) {
 +                    ithresh = -1.0f;
++                    fmix_count = s->hooks[j]->frame_mix_count;
 +                    break;
 +                }
 +            }
++            /* The hook needs frame_mix_count frames around the output; the
++             * queue only offers what lies within the mixer's radius (2.0 for
++             * the default kernel), which is exactly enough for four and one
++             * short for five whenever a boundary frame rounds out. For five
++             * or more, ask for half the window plus a margin, so the renderer's
++             * own selection always has the nearest N to choose from; windows
++             * of four and fewer keep the radius their published numbers were
++             * measured under. */
++            float radius = pl_frame_mix_radius(&s->opts->params);
++            if (fmix_count > 4)   /* windows up to four fit the default radius exactly; leave them as measured */
++                radius = FFMAX(radius, 0.5f * fmix_count + 0.5f);
 +
              in->qstatus = pl_queue_update(in->queue, &in->mix, pl_queue_params(
                  .pts            = TS2T(out_pts, outlink->time_base),
-                 .radius         = pl_frame_mix_radius(&s->opts->params),
+-                .radius         = pl_frame_mix_radius(&s->opts->params),
++                .radius         = radius,
                  .vsync_duration = q2d_fallback(av_inv_q(l->frame_rate), 0.0),
 +                .interpolation_threshold = ithresh,
              ));

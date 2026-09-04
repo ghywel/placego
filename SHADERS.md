@@ -1,15 +1,18 @@
 # Shaders
 
-Seventeen `.hook`-format GLSL shaders built on
+Nineteen `.hook`-format GLSL shaders built on
 [frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage --
 see [README.md](README.md) for what that patch adds and why.
 
-They divide into three groups: **twelve interpolators** (one recommended for
-viewing, one cheap baseline, two variants of that baseline -- seeded, and
-seeded plus propagation -- each with the three- and four-frame shaders
-generated from it, and two superseded),
-**three human-reading views** generated from the four-frame shader that
-paint what the estimator is thinking over the picture, and **two small examples**
+They divide into three groups: **sixteen interpolators** (one recommended for
+viewing, one cheap baseline, three variants of that baseline -- seeded,
+seeded plus propagation, and an animation-tuned setting of that -- each
+with the three- and four-frame shaders generated from it, a five-frame
+shader generated from the propagated variant for the field, and two
+superseded),
+**one human-reading demonstration** (every interpolator carries the
+reading view inside it, off by default; this file is the four-frame
+propagated shader with it switched on), and **two small examples**
 that exist to demonstrate the hook rather than to interpolate anything.
 
 All of them live in [shaders/](shaders/). The generators and the test scripts
@@ -41,7 +44,12 @@ textured neighbours' motion, checked against the two frames, and blend
 where a flow's own neighbourhood contradicts it): above the seeded base on
 every real segment measured (+0.5 to +4.1 dB, six segments) and on 21 of
 32 ladder cases by +2.1 dB mean, with one case 1.4 dB down and one 1.0 dB
-down (a 40 px/frame translation). If a 10%
+down (a 40 px/frame translation). For hand-drawn or
+cel-shaded content use `bidirectional-interpolation-animation.glsl`, the same
+shader with a finer disagreement threshold: on flat-shaded anime it matches
+the variational build (42.50 against 42.48 dB) at a third of the passes,
+and costs a little on plain rotation and fast textured translations, which
+is the right trade there and the wrong one for live action. If a 10%
 cost is the limit, use `bidirectional-interpolation-seeded.glsl` instead of the
 base, and the `-seeded` tri and quad generated from it for the field. It
 is the base with the two coarsest levels choosing among three candidate
@@ -97,7 +105,14 @@ bidirectional-interpolation.glsl            24 passes   the base (N = 2)
   |           |                                  1/8 res behind a two-frame
   |           |                                  check (VARIANT: +1-4% over
   |           |                                  seeded, +2.1 dB on the ladder)
-  |           +-- tri-/quad…-propagated    64/92 generated from it
+  |           |     +-- tri-/quad…-propagated    64/92 generated from it
+  |           |     +-- quintdirectional-…-propagated 127 N = 5: the symmetric
+  |           |                                        quartic field (the
+  |           |                                        picture is the quad's)
+  |           +-- -animation.glsl           32   propagated with the finer
+  |                 |                            disagreement threshold
+  |                 |                            (VARIANT for line art)
+  |                 +-- tri-/quad…-animation     64/92 generated from it
   |
   +-- tridirectional-interpolation.glsl     48   N = 3: + acceleration field
   |                                              + quadratic placement
@@ -121,8 +136,8 @@ and inherit every base fix on regeneration.
 
 The hierarchical block-matching pyramid, and the file every other build in
 the family derives from. Edit this and the variational build inherits the
-change on regeneration; the human-reading views are generated from
-whichever shader they read, so they cannot drift from it.
+change on regeneration; the human-reading view is generated into every
+shader from that shader's own final pass, so it cannot drift from it.
 
 Written against exactly 2 frames and needed *no changes* for the patch's
 N-frame generalisation -- `HOOKED` and `NEXT` still mean frame index 0 and
@@ -204,12 +219,58 @@ less on L4, 0.2-0.3 less on live action; the check without the
 disagreement rule at all is 1.5 dB worse on the ladder mean and 2 on the
 anime. NFRAME-LIMITS.md section 8 has all of it.
 
+### `bidirectional-interpolation-animation.glsl` -- the propagated shader tuned for line art, 32 passes
+
+The propagated shader with one constant changed: the disagreement
+threshold at which a textured texel blends instead of trusting the refine's
+flow is 0.75 texels of the 1/8 level rather than 1.5 (the flow-scaled term
+stays, so a pan is not mistaken for an alias). Hand-drawn and cel-shaded
+content has flat fills, its information in the line art, and no natural
+depth; on it the tracker's wrong flows are small and scattered, and the
+finer threshold catches them. Measured on the flat-shaded anime segment:
+42.50 dB against the propagated shader's 40.98, the seeded base's 36.89 and
+the variational build's 42.48. Live action is a wash (within 0.1 dB on all
+four segments); the ladder mean against the seeded base is the same +2.14,
+with R3 +1.0 and A5 +0.2 more and R1 -0.6, L7 -0.4, L4 -0.3 less -- the
+trade that makes it the wrong general file and the right animation one.
+Same cost. A finer threshold still (0.5) changes nothing measurable; the
+fixed 0.75 without the flow-scaled term reaches 43.1 dB on the anime but
+loses 2 dB on plain translations and 0.8 on live action. The tri and quad
+are generated with the base argument:
+
+    ./tests/gen_tridirectional.py  tridirectional-interpolation-animation.glsl  bidirectional-interpolation-animation.glsl
+    ./tests/gen_quaddirectional.py quaddirectional-interpolation-animation.glsl bidirectional-interpolation-animation.glsl
+
+### `quintdirectional-interpolation-propagated.glsl` -- five frames, for the field, 127 passes
+
+Generated from the propagated two-frame base by `tests/gen_quintdirectional.py`
+(any base works: `./tests/gen_quintdirectional.py <out> <base>`). Everything
+the quad has plus the slot 3 <-> 4 flow chains and, at the exact N:N phase,
+the exact quartic through the anchor's four displacements over a symmetric
+window (taus -2, -1, +1, +2; the far two composed from adjacent links, each
+round-trip checked), read for acceleration and jerk with the snap row
+ignored, degrading to the quad's cubic and the tri's quadratic as links fall
+away. The picture is the quad's cubic on the four slots around the output,
+so the interpolation ladder is the quad's (within 0.06 dB); the fifth frame
+buys the field: on fast, small oscillations the four-frame acceleration is
+the discrete second difference and reads 0.14-0.28 px/interval^2 below the
+truth at eight and six samples per period, the quartic 0.04-0.05 (2.7x and
+6.7x); on the jerk null the noise floor is 2.9x lower. Costs: one more frame
+of latency at N:N, +18% render time over the quad, and the fifth slot only
+fits under libplacebo's 16-bind ceiling by packing (the cut statistics, the
+half-res and the full-res flows into RGBA textures). Diagnostic modes 8 and
+9 report the quad's cubic from the same anchor, so the two estimators can be
+chosen per regime. Needs the host to deliver five-frame windows: the N:N
+patch's queue lookahead, and the hook patch's loud skip. Design,
+pre-registration and results: [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md).
+
 ### `bidirectional-interpolation-variational.glsl` -- recommended, 115 passes
 
-As of 2026-09-03 the committed file differs from a fresh regeneration only by
-an 83-line comment block the base gained on 2026-08-31 (code identical, which
-is what `tests/smoke.sh` step 3 reports); regenerate it when it is next
-touched for a real change.
+Regenerated on 2026-09-04 when the human-reading tail was added: the
+committed file had predated the sub-pixel refinement block the base gained
+on 2026-08-31 (inert in the interpolators at `SUBPEL_REFINE = 0`), and the
+fresh generation scores the same L1 figure, 54.24 dB, so `tests/smoke.sh`
+step 3 is green again.
 
 A strict superset of the base: every one of its 23 passes, plus 80
 variational-refinement passes and 12 vector-median passes distributed across
@@ -307,6 +368,12 @@ passes through a brief soft blend rather than snapping between two drawings
 the way the original animation does. It is much improved and still visible
 on close inspection.
 
+(Since 2026-09-04 the fast tier has an animation-tuned file of its own,
+`bidirectional-interpolation-animation.glsl`, which matches this build's
+score on the flat-shaded anime segment at a third of the passes; the
+redrawn-feature cross-fade above is a correspondence-free case and is the
+same in both.)
+
 Fixing this properly is judged to need a different class of shader rather
 than a change to this one -- see [ROADMAP.md](../ROADMAP.md), "A shader class specific to
 animation".
@@ -331,6 +398,7 @@ motion-compensated frame.
 | **`-variational`** | **36.31** | **0.9750** |
 | `-seeded` (2026-09-03; same run: base 34.29 / 0.9647, `-variational` 36.27 / 0.9741) | 34.74 | 0.9663 |
 | `-propagated` (2026-09-04, same segments) | 35.28 | 0.9696 |
+| `-animation` (2026-09-04, same segments) | 35.25 | 0.9694 |
 | quad stock / quad `-seeded` (same run) | 34.22 / 34.67 | 0.9635 / 0.9651 |
 | quad `-propagated` (2026-09-04, same segments) | 35.30 | 0.9685 |
 
@@ -339,13 +407,13 @@ from the owner's library, screened for full per-frame motion with
 `screen.sh`, one 72-frame decimate-and-reconstruct window each; PSNR dB /
 SSIM of the synthesised frames):
 
-| segment | linear | base | `-seeded` | `-propagated` | `-variational` | quad | quad `-seeded` | quad `-propagated` |
-|---|---|---|---|---|---|---|---|---|
-| anime, 1080p24, moving shot | 43.03 / 0.9825 | 46.50 / 0.9887 | 46.67 / 0.9889 | **47.21 / 0.9897** | 46.83 / 0.9897 | 45.76 / 0.9870 | 45.94 / 0.9871 | 46.47 / 0.9879 |
-| anime, 1080p24, flat-shaded characters | 35.92 / 0.9739 | 36.38 / 0.9729 | 36.89 / 0.9742 | 40.98 / 0.9807 | **42.48 / 0.9817** | 36.12 / 0.9713 | 36.62 / 0.9727 | 40.58 / 0.9791 |
-| live action film, 1080p24 | 42.82 / 0.9937 | 45.25 / 0.9951 | 45.66 / 0.9953 | 46.58 / 0.9957 | **47.07 / 0.9960** | 45.00 / 0.9946 | 45.43 / 0.9948 | 46.42 / 0.9952 |
-| live action film, 1080p24, fast | 28.16 / 0.8617 | 31.91 / 0.9417 | 32.58 / 0.9461 | 33.39 / 0.9533 | **34.99 / 0.9639** | 31.74 / 0.9386 | 32.42 / 0.9430 | 33.30 / 0.9502 |
-| live action show, 1080p30 | 29.01 / 0.9260 | 31.55 / 0.9552 | 32.12 / 0.9580 | 33.30 / 0.9646 | **34.61 / 0.9714** | 31.47 / 0.9545 | 32.05 / 0.9573 | 33.22 / 0.9638 |
+| segment | linear | base | `-seeded` | `-propagated` | `-animation` | `-variational` | quad | quad `-seeded` | quad `-propagated` |
+|---|---|---|---|---|---|---|---|---|---|
+| anime, 1080p24, moving shot | 43.03 / 0.9825 | 46.50 / 0.9887 | 46.67 / 0.9889 | **47.21 / 0.9897** | 47.22 / 0.9897 | 46.83 / 0.9897 | 45.76 / 0.9870 | 45.94 / 0.9871 | 46.47 / 0.9879 |
+| anime, 1080p24, flat-shaded characters | 35.92 / 0.9739 | 36.38 / 0.9729 | 36.89 / 0.9742 | 40.98 / 0.9807 | **42.50 / 0.9817** | 42.48 / 0.9817 | 36.12 / 0.9713 | 36.62 / 0.9727 | 40.58 / 0.9791 |
+| live action film, 1080p24 | 42.82 / 0.9937 | 45.25 / 0.9951 | 45.66 / 0.9953 | 46.58 / 0.9957 | 46.62 / 0.9957 | **47.07 / 0.9960** | 45.00 / 0.9946 | 45.43 / 0.9948 | 46.42 / 0.9952 |
+| live action film, 1080p24, fast | 28.16 / 0.8617 | 31.91 / 0.9417 | 32.58 / 0.9461 | 33.39 / 0.9533 | 33.31 / 0.9525 | **34.99 / 0.9639** | 31.74 / 0.9386 | 32.42 / 0.9430 | 33.30 / 0.9502 |
+| live action show, 1080p30 | 29.01 / 0.9260 | 31.55 / 0.9552 | 32.12 / 0.9580 | 33.30 / 0.9646 | 33.33 / 0.9645 | **34.61 / 0.9714** | 31.47 / 0.9545 | 32.05 / 0.9573 | 33.22 / 0.9638 |
 
 The flat-shaded anime segment contains one cut inside its window; excluding
 that frame lifts every arm on it by about 0.7 dB and changes no ordering.
@@ -368,32 +436,32 @@ ground truth was pixel-quantised until then and suppressed absolute scores
 substantially. See `tests/TESTING.md`, "The ladder reset". Windows figures;
 the WSL/lavapipe run agrees to within 0.05 dB everywhere.
 
-| case | hold | linear | base | coarse | dual | variational | seeded | propagated |
-|---|---|---|---|---|---|---|---|---|
-| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
-| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 | 75.02 | 74.80 |
-| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** | 62.32 | 62.30 |
-| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** | 42.62 | 44.40 |
-| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** | 31.50 | 30.49 |
-| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 | 62.27 | 62.27 |
-| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 | 65.44 | 65.45 |
-| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 | 25.29 | 23.90 |
-| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** | 46.13 | 47.53 |
-| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** | 41.58 | 42.13 |
-| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** | 49.84 | 49.91 |
-| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 | 59.77 | 59.98 |
-| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 | 21.91 | 21.91 |
-| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 | 60.58 | 60.58 |
-| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** | 47.93 | 48.19 |
-| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** | 44.88 | 45.24 |
-| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** | 39.91 | 39.95 |
-| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** | 51.74 | 54.02 |
-| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** | 40.58 | 43.31 |
-| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** | 38.26 | 40.70 |
-| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** | 38.42 | 40.87 |
+| case | hold | linear | base | coarse | dual | variational | seeded | propagated | animation |
+|---|---|---|---|---|---|---|---|---|---|
+| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
+| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 | 75.02 | 74.80 | 74.80 |
+| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** | 62.32 | 62.30 | 62.30 |
+| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** | 42.62 | 44.40 | 44.39 |
+| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** | 31.50 | 30.49 | 30.21 |
+| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 | 62.27 | 62.27 | 62.27 |
+| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 | 65.44 | 65.45 | 65.45 |
+| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 | 25.29 | 23.90 | 23.46 |
+| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** | 46.13 | 47.53 | 47.51 |
+| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** | 41.58 | 42.13 | 42.13 |
+| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** | 49.84 | 49.91 | 49.91 |
+| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 | 59.77 | 59.98 | 59.98 |
+| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 | 21.91 | 21.91 | 21.91 |
+| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 | 60.58 | 60.58 | 60.58 |
+| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** | 47.93 | 48.19 | 48.19 |
+| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** | 44.88 | 45.24 | 45.17 |
+| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** | 39.91 | 39.95 | 39.86 |
+| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** | 51.74 | 54.02 | 54.02 |
+| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** | 40.58 | 43.31 | 43.47 |
+| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** | 38.26 | 40.70 | 40.14 |
+| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** | 38.42 | 40.87 | 40.87 |
 
-The `seeded` and `propagated` columns were measured 2026-09-03 on the RX 6600
-against the same ladder; its stock-base column that day agrees with the `base` column above
+The `seeded`, `propagated` and `animation` columns were measured 2026-09-03/04
+on the RX 6600 against the same ladder; its stock-base column that day agrees with the `base` column above
 to within 0.04 dB on every case, so the columns are comparable. Its file
 header and NFRAME-LIMITS.md section 8 carry the full account.
 
@@ -575,66 +643,78 @@ output frames share a source pair; without this the whole pyramid would be
 recomputed for each of them. Note the fixed-size ceiling this implies, and
 its consequence above 4K, documented in README.md's Costs and limitations.
 
-## The human-reading views
+## The human-reading view
 
 A motion field is meaningless to human eyes until it is transformed: raw
 per-texel vectors read as noise even where the estimator is right. The
 Metal demo's "Reading" display solved that (pool, remember, gate, then
-paint hue for direction and colour for magnitude), and these three files
-are that display ported to the hook, generated by
-`tests/gen_human_reading.py` from whichever shader you want to read:
+paint hue for direction and colour for magnitude), and every interpolator
+in `shaders/` now carries that display inside it, as a tail of passes
+behind its own final pass, switched by one shader parameter:
 
-    ./tests/gen_human_reading.py quaddirectional-interpolation-seeded.glsl human-reading-velocity.glsl     velocity
-    ./tests/gen_human_reading.py quaddirectional-interpolation-seeded.glsl human-reading-acceleration.glsl acceleration
-    ./tests/gen_human_reading.py quaddirectional-interpolation-seeded.glsl human-reading-jerk.glsl         jerk
+    read_view   0   normal output (the default; no reading pass runs)
+                1   velocity        painted for a human
+                2   acceleration    painted for a human      (three- and four-frame shaders)
+                3   jerk            painted for a human      (three- and four-frame shaders)
+                4   velocity        the raw field, for a machine
+                5   acceleration    the raw field, for a machine
+                6   jerk            the raw field, for a machine
 
-The base is left byte-for-byte intact up to and including its final pass,
-which becomes the picture; the generator appends its own passes: the base's
-final pass cloned at 1/8 resolution in its diagnostic mode (so the field is
-exactly what that shader computes, not a re-implementation), a 13x13 pool
-at 8 px spacing with an exponential memory across frames in a storage
-texture, and a present pass that paints hue = direction, visibility and
-saturation = magnitude above the demo's measured gates, over the picture
-at 35% luma. Cost: about one extra final pass. Any base works; the
-two-frame family exposes velocity only, the three- and four-frame family
-velocity, acceleration and jerk. Regenerate after any base change rather
-than editing the output -- the point of generating them is that they cannot
-drift from the shader they read, which is the failure the hand-kept
-diagnostic builds they replace could only promise to avoid.
+The two-frame family has one flow, so its modes all read velocity. In mpv
+the parameter is `--glsl-shader-opts=read_view=1`; ffmpeg's libplacebo
+filter exposes no shader parameters, so edit the default -- the bare
+number that ends the `//!PARAM read_view` block at the tail of the file --
+or regenerate with `./tests/add_human_reading.py <shader> --default 1`.
+`human-reading-quad.glsl` is that: the four-frame propagated shader with
+the default at 1, kept as the one named demonstration so anyone can plug
+it in and see what the estimator is thinking.
 
-Three constants at the top of the appended passes are worth knowing:
+Every tail pass carries `//!WHEN read_view 0 >`, so at the default nothing
+runs and the output is byte-for-byte the shader's own (verified on the
+ladder: identical frames). Switched on, the tail costs about one extra
+final pass: the shader's own final pass cloned at 1/8 resolution in its
+diagnostic mode (so the field is exactly what that shader computes, not a
+re-implementation), a 13x13 pool at 8 px spacing with an exponential memory
+across frames in a storage texture, and a present pass that paints hue =
+direction, visibility and saturation = magnitude above the field's gate,
+over the picture at 35% luma. The tail is generated, never edited:
+`tests/add_human_reading.py` appends it (idempotently) and the generators
+call it last, so regenerating any shader is always safe.
+
+Constants at the top of the tail's passes, for those who want to tune:
 
 - `READ_EMA_ALPHA` (0.12): the memory across output frames, the demo's
-  value for a live 60 Hz display. Set it to 1.0 for measurement or for
-  fast oscillators -- with memory on, an oscillating textured square
-  averages to nothing; with it off the square reads cleanly and the red
-  columns inside it are the coarse search's lattice aliases, visible to a
-  human for the first time.
-- `READ_VIS_LO / READ_VIS_HI / READ_SAT_FULL`: the gates, per field
-  (velocity 1/2/3 px, acceleration and jerk 0.12/0.22/0.30 px, the demo's
-  measured values at 1280 wide). On 1920-wide live action the
-  acceleration gates admit speckle in foliage; doubling them clears most
-  of it while a moving subject's silhouette stays coherent.
-- `READ_OPACITY` (1.0): 0 gives the plain picture back.
+  value for a live 60 Hz display. 1.0 gives a frame-by-frame reading: with
+  memory on, an oscillating textured square averages to nothing; with it
+  off the square reads cleanly and the red columns inside it are the coarse
+  search's lattice aliases, visible to a human for the first time.
+- `READ_VEL_*` / `READ_ACC_*`: the gates per field (velocity 1/2/3 px,
+  acceleration and jerk 0.12/0.22/0.30 px, the demo's measured values at
+  1280 wide; at 1920 the acceleration gates admit speckle in foliage, and
+  doubling them clears most of it).
+- `READ_GATE` (1): visibility needs the unpooled field to move within
+  `READ_GATE_R` texels of 1/8 resolution (2 = 16 px, the tracker's own
+  reach), so the pool cannot paint further than the tracker itself moved.
+  Measured on a 100 px moving square: painted area 4.05x the object without
+  it, 2.86x with it (halo median 32 -> 22 px), 94% of the square still
+  covered. The 22 px that remain are the block matcher's own spread.
+- `READ_MACHINE_FS_*`: full scales for the machine modes, which emit the
+  unpooled field as 0.5 + px / (2 * FS) in the red and green channels, the
+  same encoding the diagnostic modes use and the measurement scripts decode.
 
-An optional fourth argument, `relative`, adds a tiny pass that estimates
-the frame's dominant motion (a mean-shift mode of the pooled field on a
-16x9 grid) and subtracts it, so a camera pan does not colour the whole
-frame. On real footage it cancels the pan only partly -- a background is
-not one vector; it has parallax and a little rotation -- so a per-region
-camera model is the next step if that view is wanted.
-
-What they showed on first use: on live action the moving subject reads as
-one solid colour against the pan; on an anime shot with flat-shaded line
+What the view showed on first use: on live action the moving subject reads
+as one solid colour against the pan; on an anime shot with flat-shaded line
 art the field is scattered blobs of contradictory direction, which is the
 flat-content weakness (NFRAME-LIMITS.md) made visible.
 
 The three hand-kept diagnostic builds (`interpolate-debug-grid.glsl`,
-`-overlay`, `-warp-stages`) were removed on 2026-09-03: they mirrored the
-stock two-frame base only, by hand, and showed the wrong estimator for
-every variant. Comments in the shaders and the history in
-tests/TESTING.md still cite them where they describe how earlier defects
-were found; that history is accurate and was left as written.
+`-overlay`, `-warp-stages`) were removed on 2026-09-03 and three companion
+human-reading files replaced them for a day; packing the view into each
+shader replaced those on 2026-09-04, because a companion file reads one
+variant and a toggle reads the shader it is in. Comments in the shaders and
+the history in tests/TESTING.md still cite the old builds where they
+describe how earlier defects were found; that history is accurate and was
+left as written.
 
 ### Ad-hoc visualisers: `tests/flowvis.py`
 
@@ -709,6 +789,7 @@ the command in README.md's Usage section), on a low-end discrete GPU:
 | base (older measurement) | 1080p | ~138 fps |
 | `-seeded` base / quad (2026-09-03, RX 6600, `-f null`) | 720p synthetic O5, 24->60 | stock 2.69 / 4.11 s per 60 frames -> 2.97 / 4.53 s (+10% / +10%) |
 | `-propagated` base (2026-09-04, same method) | 720p synthetic O5, 24->60 | seeded 3.12-3.26 s -> 3.15-3.39 s (+1-4%; about +13% over stock) |
+| `-animation` base | same | the same passes as `-propagated`; one constant differs |
 
 The variational figures predate the coarse vector-median passes, which were
 measured under lavapipe at +8.6% (720p) and +6.1% (1080p) and confirmed on

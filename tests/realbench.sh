@@ -87,6 +87,7 @@ for s in $SEGS; do
       -i "$OUTROOT/half_$s.mkv" \
       -vf "${CHAIN},format=yuv420p" -c:v ffv1 "$OUTROOT/o_${LABEL}_$s.mkv" \
     ) 2>"$OUTROOT/${LABEL}_$s.err" || { echo "  seg $s FAILED"; continue; }
+  [ "$(grep -c "hook skipped" "$OUTROOT/${LABEL}_$s.err")" -le 2 ] || { echo "  seg $s FAILED: the hook was skipped beyond the two boundary frames (see the .err)"; continue; }
 
   # Compare with forced frame-index alignment.
   # Also from $OUTROOT with a bare stats filename, and for the same reason as

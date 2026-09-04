@@ -4834,6 +4834,89 @@ vec4 hook() {
             }
         }
     }
+
+    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
+    // three refine levels -- steps WHOLE texels of its own level, so without
+    // this the finest flow the estimator can express is one half-res texel,
+    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
+    // measured: it is bilinear interpolation of a half-res texture, which
+    // looks smooth and carries no extra information.
+    //
+    // That floor is invisible to the interpolator on fast motion and decisive
+    // for the acceleration field, which is a small residual of two such flows
+    // and inherits the floor twice. Below |a| ~ 0.5 px/interval^2 the readings
+    // pin to the resampling lattice instead of tracking the truth (A4 in
+    // tests/scenes.sh errs 69-125% there).
+    //
+    // A parabola through the SAD minimum and its two neighbours per axis
+    // recovers the sub-texel position of the true minimum -- standard block
+    // matching, four extra SAD evaluations against the 25 the search already
+    // does. The denominator is the valley's curvature: at or below zero the
+    // neighbourhood is flat or non-convex, the fit is meaningless, and the
+    // integer result is kept. Displacement is clamped to half a texel because
+    // a parabola fit cannot legitimately move the minimum outside the bracket
+    // it was fitted to.
+    //
+    // Deliberately at the HALF-RES level only. The coarser levels are each
+    // re-searched by the level below, so sub-texel precision there is
+    // discarded before it can be used.
+    //
+    // OFF in this shader, ON in the generated tridirectional one, and the
+    // asymmetry is measured rather than arbitrary. Fractional flow forces the
+    // warp to resample bilinearly where an integer half-res flow landed on
+    // pixel centres, and that costs real dB on a pure interpolator: measured
+    // -0.48 on L1_trans_8px, -0.66 on L2, -0.16 on O4_osc_flat300, with
+    // nothing to show for it here because this shader has no acceleration
+    // field to sharpen. The tridirectional shader pays the same cost and gets
+    // a 5x better field for it (60.6% -> 11.2% error at |a| = 2.2), so there
+    // the trade is worth taking. See tests/gen_tridirectional.py, which flips
+    // this, and PLAN.md T1.1.
+    const int SUBPEL_REFINE = 0;
+
+    // SUBPEL_FIT 1 (equiangular) is the DEFAULT, from a measured A/B on the
+    // acceleration calibration -- 15 of 18 paired samples improved, the low
+    // band most (A5 f12 32.0% -> 3.9%, A4 f6 25.4% -> 4.3%, A6 f12
+    // 15.3% -> 3.3%), the three losses all <= 0.7 points, and the quad
+    // shader's jerk NULLS fell ~3.7x (A6 f12 -0.263 -> -0.070
+    // px/interval^3). Exactly the peak-locking prediction from the stereo/
+    // PIV literature (PRIOR-ART.md): the V fit matches the SAD valley's
+    // piecewise-linear shape, the parabola does not. The interpolation-side
+    // cost is small and confined to the sharpest content (tri ladder:
+    // L1 -0.37, O2 -0.18, O4 -0.08, O5 -0.02 dB) -- more honest fractional
+    // flow means marginally more resampling. Inert here while SUBPEL_REFINE
+    // is 0; the field shaders inherit it live.
+    const int SUBPEL_FIT = 1;
+    if (SUBPEL_REFINE != 0) {
+        float c0  = sad3x3_h(uv_a, uv_a + best_off);
+        vec2  ex  = vec2(LUMA_A_H_pt.x, 0.0);
+        vec2  ey  = vec2(0.0, LUMA_A_H_pt.y);
+        float cxm = sad3x3_h(uv_a, uv_a + best_off - ex);
+        float cxp = sad3x3_h(uv_a, uv_a + best_off + ex);
+        float cym = sad3x3_h(uv_a, uv_a + best_off - ey);
+        float cyp = sad3x3_h(uv_a, uv_a + best_off + ey);
+        // TWO FITS, matched to two valley shapes -- and the choice is a
+        // measured one, not a style preference. A parabola is the matched
+        // estimator for an SSD valley (quadratic near its minimum); an SAD
+        // valley of a well-matched shifted pattern is PIECEWISE LINEAR, for
+        // which the matched estimator is the equiangular fit: two lines of
+        // equal slope meeting at the vertex (Shimizu & Okutomi; standard in
+        // stereo and PIV, where the parabola's mismatch is called PEAK
+        // LOCKING -- a bias toward integer positions, worst at small
+        // fractional displacements). Both share the same numerator; only
+        // the denominator differs:
+        //
+        //   parabola:    x0 = (c_m - c_p) / (2*(c_m - 2*c_0 + c_p))
+        //   equiangular: x0 = (c_m - c_p) / (2*(max(c_m, c_p) - c_0))
+        //
+        // A non-positive denominator means the neighbourhood is flat or
+        // non-convex, the fit is meaningless, and the integer result is
+        // kept. SUBPEL_FIT: 0 = parabola, 1 = equiangular.
+        float dx = SUBPEL_FIT != 0 ? max(cxm, cxp) - c0 : cxm - 2.0 * c0 + cxp;
+        float dy = SUBPEL_FIT != 0 ? max(cym, cyp) - c0 : cym - 2.0 * c0 + cyp;
+        vec2  sub = vec2(dx > 1.0e-6 ? clamp(0.5 * (cxm - cxp) / dx, -0.5, 0.5) : 0.0,
+                         dy > 1.0e-6 ? clamp(0.5 * (cym - cyp) / dy, -0.5, 0.5) : 0.0);
+        best_off += sub * LUMA_A_H_pt;
+    }
     vec4 result = vec4(best_off / LUMA_A_H_pt, 0.0, 0.0);
     imageStore(FLOW_H_AB_CACHE, coord, result);
     return result;
@@ -4922,6 +5005,89 @@ vec4 hook() {
                 best_off = off;
             }
         }
+    }
+
+    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
+    // three refine levels -- steps WHOLE texels of its own level, so without
+    // this the finest flow the estimator can express is one half-res texel,
+    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
+    // measured: it is bilinear interpolation of a half-res texture, which
+    // looks smooth and carries no extra information.
+    //
+    // That floor is invisible to the interpolator on fast motion and decisive
+    // for the acceleration field, which is a small residual of two such flows
+    // and inherits the floor twice. Below |a| ~ 0.5 px/interval^2 the readings
+    // pin to the resampling lattice instead of tracking the truth (A4 in
+    // tests/scenes.sh errs 69-125% there).
+    //
+    // A parabola through the SAD minimum and its two neighbours per axis
+    // recovers the sub-texel position of the true minimum -- standard block
+    // matching, four extra SAD evaluations against the 25 the search already
+    // does. The denominator is the valley's curvature: at or below zero the
+    // neighbourhood is flat or non-convex, the fit is meaningless, and the
+    // integer result is kept. Displacement is clamped to half a texel because
+    // a parabola fit cannot legitimately move the minimum outside the bracket
+    // it was fitted to.
+    //
+    // Deliberately at the HALF-RES level only. The coarser levels are each
+    // re-searched by the level below, so sub-texel precision there is
+    // discarded before it can be used.
+    //
+    // OFF in this shader, ON in the generated tridirectional one, and the
+    // asymmetry is measured rather than arbitrary. Fractional flow forces the
+    // warp to resample bilinearly where an integer half-res flow landed on
+    // pixel centres, and that costs real dB on a pure interpolator: measured
+    // -0.48 on L1_trans_8px, -0.66 on L2, -0.16 on O4_osc_flat300, with
+    // nothing to show for it here because this shader has no acceleration
+    // field to sharpen. The tridirectional shader pays the same cost and gets
+    // a 5x better field for it (60.6% -> 11.2% error at |a| = 2.2), so there
+    // the trade is worth taking. See tests/gen_tridirectional.py, which flips
+    // this, and PLAN.md T1.1.
+    const int SUBPEL_REFINE = 0;
+
+    // SUBPEL_FIT 1 (equiangular) is the DEFAULT, from a measured A/B on the
+    // acceleration calibration -- 15 of 18 paired samples improved, the low
+    // band most (A5 f12 32.0% -> 3.9%, A4 f6 25.4% -> 4.3%, A6 f12
+    // 15.3% -> 3.3%), the three losses all <= 0.7 points, and the quad
+    // shader's jerk NULLS fell ~3.7x (A6 f12 -0.263 -> -0.070
+    // px/interval^3). Exactly the peak-locking prediction from the stereo/
+    // PIV literature (PRIOR-ART.md): the V fit matches the SAD valley's
+    // piecewise-linear shape, the parabola does not. The interpolation-side
+    // cost is small and confined to the sharpest content (tri ladder:
+    // L1 -0.37, O2 -0.18, O4 -0.08, O5 -0.02 dB) -- more honest fractional
+    // flow means marginally more resampling. Inert here while SUBPEL_REFINE
+    // is 0; the field shaders inherit it live.
+    const int SUBPEL_FIT = 1;
+    if (SUBPEL_REFINE != 0) {
+        float c0  = sad3x3_h2(uv_b, uv_b + best_off);
+        vec2  ex  = vec2(LUMA_A_H_pt.x, 0.0);
+        vec2  ey  = vec2(0.0, LUMA_A_H_pt.y);
+        float cxm = sad3x3_h2(uv_b, uv_b + best_off - ex);
+        float cxp = sad3x3_h2(uv_b, uv_b + best_off + ex);
+        float cym = sad3x3_h2(uv_b, uv_b + best_off - ey);
+        float cyp = sad3x3_h2(uv_b, uv_b + best_off + ey);
+        // TWO FITS, matched to two valley shapes -- and the choice is a
+        // measured one, not a style preference. A parabola is the matched
+        // estimator for an SSD valley (quadratic near its minimum); an SAD
+        // valley of a well-matched shifted pattern is PIECEWISE LINEAR, for
+        // which the matched estimator is the equiangular fit: two lines of
+        // equal slope meeting at the vertex (Shimizu & Okutomi; standard in
+        // stereo and PIV, where the parabola's mismatch is called PEAK
+        // LOCKING -- a bias toward integer positions, worst at small
+        // fractional displacements). Both share the same numerator; only
+        // the denominator differs:
+        //
+        //   parabola:    x0 = (c_m - c_p) / (2*(c_m - 2*c_0 + c_p))
+        //   equiangular: x0 = (c_m - c_p) / (2*(max(c_m, c_p) - c_0))
+        //
+        // A non-positive denominator means the neighbourhood is flat or
+        // non-convex, the fit is meaningless, and the integer result is
+        // kept. SUBPEL_FIT: 0 = parabola, 1 = equiangular.
+        float dx = SUBPEL_FIT != 0 ? max(cxm, cxp) - c0 : cxm - 2.0 * c0 + cxp;
+        float dy = SUBPEL_FIT != 0 ? max(cym, cyp) - c0 : cym - 2.0 * c0 + cyp;
+        vec2  sub = vec2(dx > 1.0e-6 ? clamp(0.5 * (cxm - cxp) / dx, -0.5, 0.5) : 0.0,
+                         dy > 1.0e-6 ? clamp(0.5 * (cym - cyp) / dy, -0.5, 0.5) : 0.0);
+        best_off += sub * LUMA_A_H_pt;
     }
     vec4 result = vec4(best_off / LUMA_A_H_pt, 0.0, 0.0);
     imageStore(FLOW_H_BA_CACHE, coord, result);
@@ -5756,4 +5922,136 @@ vec4 hook() {
     vec4 warped_b = warp_sample_b(NEXT_pos + flow_ab * (1.0 - mix_t));
 
     return mix(warped_a, warped_b, mix_t);
+}
+
+// ==== human-reading tail (generated by tests/add_human_reading.py; do not edit) ====
+//!PARAM read_view
+//!DESC 0 = normal output; 1/2/3 = velocity/acceleration/jerk painted for a human; 4/5/6 = the same fields raw, for a machine
+//!TYPE int
+//!MINIMUM 0
+//!MAXIMUM 6
+0
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND FLOW_H_AB
+//!SAVE READ_FIELD
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!WHEN read_view 0 >
+//!DESC [reading] velocity field in px at 1/8 res: the half-res flow this shader warps with
+
+vec4 hook() {
+    // FLOW_H is stored in half-resolution texels; x2 gives full-res px. The
+    // two-frame family has one flow, so every mode reads velocity.
+    return vec4(FLOW_H_AB_tex(HOOKED_pos).xy * 2.0, 0.0, 1.0);
+}
+
+//!TEXTURE READ_ACC
+//!SIZE 480 270
+//!FORMAT rgba32f
+//!STORAGE
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND READ_FIELD
+//!BIND READ_ACC
+//!SAVE READ_POOL
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!WHEN read_view 0 >
+//!DESC [reading] 13x13 pool at 8 px spacing, then an exponential memory across frames
+
+// Measured on the Metal demo (2026-09-01): pooling +/-48 px drops the
+// static-background p95 from 0.52 to 0.10 px; the memory lifts a mover's
+// direction coherence from 0.74 to 0.92. READ_EMA_ALPHA is per OUTPUT
+// frame; 1.0 = no memory (frame-by-frame reading: fast oscillators average
+// toward zero under any memory).
+const float READ_EMA_ALPHA = 0.12;
+const int   READ_POOL_R    = 6;
+
+vec4 hook() {
+    ivec2 coord = ivec2(READ_FIELD_pos * READ_FIELD_size);
+    vec2 fpx = vec2(0.0);
+    for (int j = -READ_POOL_R; j <= READ_POOL_R; j++)
+        for (int i = -READ_POOL_R; i <= READ_POOL_R; i++)
+            fpx += READ_FIELD_tex(READ_FIELD_pos + vec2(float(i), float(j)) * READ_FIELD_pt).xy;
+    fpx /= float((2 * READ_POOL_R + 1) * (2 * READ_POOL_R + 1));
+    vec2 prev = imageLoad(READ_ACC, coord).xy;
+    vec2 acc = mix(prev, fpx, READ_EMA_ALPHA);
+    imageStore(READ_ACC, coord, vec4(acc, 0.0, 1.0));
+    return vec4(acc, 0.0, 1.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FRAME_MIX
+//!BIND READ_FIELD
+//!BIND READ_POOL
+//!SAVE FRAME_MIX
+//!WIDTH FRAME_MIX.w
+//!HEIGHT FRAME_MIX.h
+//!WHEN read_view 0 >
+//!DESC [reading] paint the field over the picture (modes 1-3) or emit it raw for a machine (modes 4-6)
+
+// two-frame family: one flow, so every mode reads velocity
+// Gates in px per interval (velocity) or px per interval^2 / ^3
+// (acceleration, jerk): below _LO nothing is drawn, full colour at _SAT.
+// The demo's measured values at 1280 wide; at 1920 the acceleration and
+// jerk gates admit some speckle in foliage (doubling them clears most).
+const float READ_VEL_LO  = 1.0,  READ_VEL_HI  = 2.0,  READ_VEL_SAT  = 3.0;
+const float READ_ACC_LO  = 0.12, READ_ACC_HI  = 0.22, READ_ACC_SAT  = 0.30;
+// READ_GATE 1: visibility needs the UNPOOLED field to move within READ_GATE_R
+// texels of 1/8 res (2 = 16 px, the tracker's own reach), so the pool cannot
+// paint further than the tracker itself moved. Measured on a 100 px square:
+// painted area 4.05x the object without it, 2.86x with it, 94% covered.
+const int   READ_GATE     = 1;
+const int   READ_GATE_R   = 2;
+const float READ_PICTURE_LUMA = 0.35;
+// machine modes: 0.5 + px / (2 * FS), one full scale per field
+const float READ_MACHINE_FS_VEL = 32.0;
+const float READ_MACHINE_FS_ACC = 2.0;
+const float READ_MACHINE_FS_JERK = 2.0;
+
+vec3 read_hsv2rgb(vec3 c) {
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+vec4 hook() {
+    bool vel = (read_view == 1 || read_view == 4);
+    if (read_view >= 4) {
+        float fs = (read_view == 4) ? READ_MACHINE_FS_VEL : (read_view == 5) ? READ_MACHINE_FS_ACC : READ_MACHINE_FS_JERK;
+        vec2 f = READ_FIELD_tex(FRAME_MIX_pos).xy;
+        return vec4(0.5 + f * (0.5 / fs), 0.5, 1.0);
+    }
+    float lo  = vel ? READ_VEL_LO  : READ_ACC_LO;
+    float hi  = vel ? READ_VEL_HI  : READ_ACC_HI;
+    float sat_full = vel ? READ_VEL_SAT : READ_ACC_SAT;
+    vec2 uv = FRAME_MIX_pos;
+    // 4-tap soften: the pooled field keeps a faint per-texel checker that would dither the gate
+    vec2 fpx = vec2(0.0);
+    fpx += READ_POOL_tex(uv + vec2( 2.0,  2.0) * FRAME_MIX_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2(-2.0,  2.0) * FRAME_MIX_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2( 2.0, -2.0) * FRAME_MIX_pt).xy;
+    fpx += READ_POOL_tex(uv + vec2(-2.0, -2.0) * FRAME_MIX_pt).xy;
+    fpx *= 0.25;
+    float mag = length(fpx);
+    float vis = smoothstep(lo, hi, mag) * 0.9;
+    if (READ_GATE == 1) {
+        float rawmag = 0.0;
+        for (int j = -READ_GATE_R; j <= READ_GATE_R; j++)
+            for (int i = -READ_GATE_R; i <= READ_GATE_R; i++)
+                rawmag = max(rawmag, length(READ_FIELD_tex(uv + vec2(float(i), float(j)) * READ_FIELD_pt).xy));
+        vis *= smoothstep(0.5 * lo, lo, rawmag);
+    }
+    vec2 bpx = min(uv, 1.0 - uv) * FRAME_MIX_size;
+    vis *= smoothstep(4.0, 28.0, min(bpx.x, bpx.y));
+    float sat = 0.95 * smoothstep(lo, sat_full, mag);
+    // screen space, +y down: red = moving right, cyan = left, purple/blue = down, yellow-green = up
+    float hue = fract(atan(fpx.y, fpx.x) / (2.0 * 3.14159265) + 1.0);
+    vec4 pic = FRAME_MIX_tex(FRAME_MIX_pos);
+    float lum = dot(pic.rgb, vec3(0.2126, 0.7152, 0.0722));
+    vec3 reading = mix(vec3(lum * READ_PICTURE_LUMA), read_hsv2rgb(vec3(hue, sat, 1.0)), vis);
+    return vec4(reading, pic.a);
 }

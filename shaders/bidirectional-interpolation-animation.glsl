@@ -1,4 +1,129 @@
-// bidirectional-interpolation-seeded.glsl
+// bidirectional-interpolation-animation.glsl
+//
+// A VARIANT of bidirectional-interpolation-propagated.glsl tuned for
+// ANIMATION: hand-drawn or cel-shaded content, where fills are flat, the
+// information is in the line art, and there is no natural depth -- the
+// camera may pan or push over a painted world, but shading defaults to
+// flat. Same passes as the propagated shader, same cost (about +13% over
+// the stock shader); one constant differs. Kept as its own file because
+// the setting that is best on flat-shaded line art gives up a little on
+// plain rotation and on fast textured translations, which is the wrong
+// trade for live action and the right one here. The three- and four-frame
+// shaders built on this base are generated with the base argument:
+//
+//   ./tests/gen_tridirectional.py  tridirectional-interpolation-animation.glsl  bidirectional-interpolation-animation.glsl
+//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-animation.glsl bidirectional-interpolation-animation.glsl
+//
+// WHAT DIFFERS. The propagated shader's check pass blends -- takes zero flow
+// instead of the refine's -- wherever a textured texel's propagated
+// consensus contradicts the refine's flow by more than PROP_DISAGREE texels
+// or PROP_DISAGREE_REL times the flow's own length: a flow its own
+// neighbourhood disagrees with is an alias suspect, and an alias scores the
+// same SAD as the truth. The general file sets PROP_DISAGREE to 1.5 texels
+// of the 1/8 level; this one sets 0.75. On line art the tracker's wrong
+// flows are small and scattered (the aperture problem along an edge, not a
+// lattice alias texels away), so the finer threshold catches them; the
+// relative term keeps a pan from being mistaken for one.
+//
+// WHAT WAS MEASURED, same harness, same day as the propagated shader.
+// Flat-shaded anime, decimate-and-reconstruct: 42.50 dB against the
+// propagated shader's 40.98, the seeded base's 36.89 and the 115-pass
+// variational build's 42.48 -- the fast tier matches the recommended
+// viewing shader on this content at a third of the passes. The other anime
+// segment 47.22 (propagated 47.21, variational 46.83). Live action is a
+// wash: 35.25 / 46.62 / 33.31 / 33.33 dB against the propagated shader's
+// 35.28 / 46.58 / 33.39 / 33.30. Ladder against the seeded base: +2.14 dB
+// mean, the same as the propagated shader, with R3 +1.0 and A5 +0.2 more
+// and R1 -0.6, L7 -0.4, L4 -0.3 less; the three cases below the seeded
+// base are L7 -1.8, L4 -1.3, L1 -0.2. A finer threshold still (0.5) changes
+// nothing measurable; the fixed 0.75 without the relative term reaches
+// 43.1 dB on the anime but loses 2 dB on plain translations and 0.8 on
+// live action, so it is not shipped. NFRAME-LIMITS.md section 8 has the
+// whole account.
+//
+// The propagated shader's header follows, then the seeded variant's;
+// everything they say applies unchanged here.
+//
+// ---- bidirectional-interpolation-propagated.glsl's header, kept verbatim ----
+//
+// A VARIANT of bidirectional-interpolation-seeded.glsl, which is itself a
+// variant of bidirectional-interpolation.glsl: the seeded base, byte for
+// byte, plus eight passes at the 1/8-resolution level. Kept as its own file
+// because it costs render time: measured +1-4% over the seeded base and
+// about +13% over the stock shader (O5 at 24->60, 60 output frames,
+// ffmpeg's benchmark clock, median of three; NFRAME-LIMITS.md section 8).
+// If that is inside your budget it is above the seeded base on every real
+// segment measured and on 21 of 32 ladder cases; if it is not, the seeded
+// base is the fast tier. The three- and four-frame shaders built on this
+// base are generated with the base argument the generators take (which
+// carry a base's extra passes into every pair's chain):
+//
+//   ./tests/gen_tridirectional.py  tridirectional-interpolation-propagated.glsl  bidirectional-interpolation-propagated.glsl
+//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-propagated.glsl bidirectional-interpolation-propagated.glsl
+//
+// WHAT IT IS FOR. On flat-shaded line art -- anime -- the fast tier's loss
+// against the variational build sits on the EDGES, not in the flat fills:
+// split by local texture, every build including plain blending scores
+// 46-47 dB on the flattest quartile of a real anime frame, and the whole
+// gap is in the most textured quartile (base 29.6, variational 36.0 dB).
+// An edge constrains one component of motion (the aperture problem), the
+// block matcher's descent wanders along it, and only coherence from the
+// corners and junctions along the edge fixes it -- which the variational
+// cascade buys with 80 Horn-Schunck passes. And on lattice-like textures
+// the coarse search returns an alias of the motion (NFRAME-LIMITS.md
+// section 3); where the neighbourhood disagrees with such a flow, a plain
+// blend beats warping on it.
+//
+// WHAT CHANGED. After the 1/8-level refine, three Jacobi passes per
+// direction: each texel takes the contrast-weighted mean of its 5x5
+// neighbours' flow (a neighbour votes in proportion to its own 5x5 luma
+// range, capped at PROP_CONF_FULL), mixed with its own flow in proportion to
+// PROP_SELF_WEIGHT times its contrast squared. A textured texel keeps its
+// flow; a flat one inherits its confident neighbours'. Reach: 16 px per
+// pass. Then one check pass per direction scores three candidates on the
+// 1/8-level luma over a 5x5 window -- the propagated flow, the refine's
+// own, and zero. For a textured texel: the propagated flow if it strictly
+// beats the others by PROP_CHECK_MARGIN; else ZERO (a blend) if the
+// consensus disagrees with the refine's flow by more than PROP_DISAGREE
+// texels or PROP_DISAGREE_REL times the flow's own length, whichever is
+// larger, because a flow its own neighbourhood contradicts is an alias
+// suspect and an alias scores the same SAD as the truth (the relative
+// term keeps a fast translation, whose consensus is diluted by background
+// votes near its edges, from being mistaken for one); else the propagated
+// flow if within the margin of the best, else the refine's own or zero.
+// For a flat texel: the propagated flow only if it strictly beats both
+// (the only evidence is an edge inside the window), else zero, which is
+// invisible in the warp and is the base's own prior. Without the check a
+// static flat background beside a moving object inherits the object's
+// flow and the ladder's clean translations lose 8-22 dB; with it they hold.
+//
+// WHAT WAS MEASURED, against the seeded base, same harness, same night.
+// Ladder, 32 cases: +2.14 dB mean, 21 cases up by more than 0.1, three
+// down: L7 -1.4, L4 -1.0 (a 40 px/frame translation; still 2.5 dB above
+// blending), L1 -0.2. Largest gains, the lattice-textured cases: O6 +11.8,
+// A5 +11.1, A6 +9.8, O5 +7.0, A7 +6.8, A4 +4.6, R3 +4.1; then F2 +2.7,
+// R2 +2.5, R1 +2.4, F1 +2.3, L3 +1.8. Real footage,
+// decimate-and-reconstruct, PSNR of the synthesised frames: the avengers
+// clip's five segments 34.74 -> 35.28 dB (SSIM 0.9663 -> 0.9696; the stock
+// base 34.29); five library segments, all up -- anime 46.67 -> 47.21
+// (above the variational's 46.83 there) and 36.89 -> 40.98 (the
+// variational: 42.48), film 45.66 -> 46.58 and 32.58 -> 33.39, a 30 fps
+// show 32.12 -> 33.30. SSIM up on all six.
+//
+// WHAT IT DOES NOT DO. The unchecked propagation reaches 41.6 dB on the
+// flat-shaded anime; a version that blends wherever a flow cannot prove
+// itself against zero beats the variational on both anime segments and
+// lifts the lattice cases further, but collapses every smooth case; a
+// fixed disagreement threshold of 0.75 texels reaches 43.1 dB on that
+// anime (above the variational) at the cost of 2 dB on the plain
+// translations and 0.6 on live action; a fixed 1.5 gives 0.1-0.4 dB more
+// on four lattice cases and 0.8 less on L4, 0.2-0.3 less on live action.
+// Those are the knobs; NFRAME-LIMITS.md section 8 has the whole account.
+//
+// The seeded variant's own header follows; everything it says about the
+// three coarse seeds and the round-trip gate applies unchanged here.
+//
+// ---- bidirectional-interpolation-seeded.glsl's header, kept verbatim ----
 //
 // A VARIANT of bidirectional-interpolation.glsl. Same pyramid, same passes,
 // same everything from the quarter-resolution level down; the difference is
@@ -688,7 +813,7 @@ vec4 hook() {
 //!BIND FLOW_S_AB
 //!BIND FLOW_S_AB_CACHE2
 //!BIND FLOW_E_BA_CACHE
-//!SAVE FLOW_E_AB
+//!SAVE FLOW_E_AB_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -868,7 +993,7 @@ vec4 hook() {
 //!BIND FLOW_S_BA
 //!BIND FLOW_S_BA_CACHE2
 //!BIND FLOW_E_AB_CACHE
-//!SAVE FLOW_E_BA
+//!SAVE FLOW_E_BA_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -975,6 +1100,406 @@ vec4 hook() {
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_BA_CACHE, coord, result);
     return result;
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_RAW_pos;
+    vec2 own = FLOW_E_AB_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 own = FLOW_E_AB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation AB (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 own = FLOW_E_AB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_RAW
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check AB: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_E_pt;
+            s += abs(LUMA_A_E_tex(uv + o).r - LUMA_B_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 raw = FLOW_E_AB_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_AB_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_A_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_A_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_RAW_pos;
+    vec2 own = FLOW_E_BA_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 own = FLOW_E_BA_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] contrast-weighted flow propagation BA (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 own = FLOW_E_BA_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_RAW
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_B_E
+//!BIND LUMA_A_E
+//!SAVE FLOW_E_BA
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop13] three-way data check BA: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 0.75;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_B_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_B_E_pt;
+            s += abs(LUMA_B_E_tex(uv + o).r - LUMA_A_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 raw = FLOW_E_BA_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_BA_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_B_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_B_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 //!HOOK FRAME_MIX

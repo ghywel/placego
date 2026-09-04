@@ -370,7 +370,9 @@ test.
    px/frame) and keep F3 as the rotation-vs-texture control. A ladder whose
    only textured speed is one coarse texel cannot see this class of failure.
 3. ~~**Do not build N = 5 as an exact quartic.**~~ **REVERSED 2026-09-03 --
-   see the section 8 addendum.** Build it as an exact quartic over a
+   see the section 8 addendum; BUILT AND MEASURED 2026-09-04, QUINTDIRECTIONAL.md:
+   2.7x and 6.7x on acceleration at eight and six samples per period, 2.9x on
+   the jerk floor, +18% time.** Build it as an exact quartic over a
    SYMMETRIC window and ignore its snap row: acceleration error falls 3-6x at
    <= 8 samples/period (truncation of the plain second difference) and jerk
    noise 2.8x at >= 12 (stencil coefficients +/-0.5 against +1, +2, -1). The
@@ -1096,3 +1098,20 @@ On real footage the propagated quad now matches the propagated two-frame
 shader on every segment (the avengers clip 35.30 against 35.28; the
 library 46.47, 40.58, 46.42, 33.30, 33.22), where the stock and seeded
 quads trailed their two-frame bases by 0.2-0.3 dB.
+
+*The animation fork (2026-09-04 morning).* The owner's call: hand-drawn
+content is its own application -- flat fills, information in the line
+art, no natural depth -- and deserves its own file. The finer disagreement
+threshold (0.75 texels, with the flow-scaled term kept) ships as
+`bidirectional-interpolation-animation.glsl` with its tri and quad: the
+flat-shaded anime 42.50 dB, matching the variational build's 42.48 at a
+third of the passes, the other anime segment 47.22, live action within
+0.1 dB of the general file, and on the ladder the same +2.14 mean with R3
++1.0 and A5 +0.2 more and R1 -0.6, L7 -0.4, L4 -0.3 less. Two more
+settings were measured and not shipped: 0.5 texels changes nothing the
+harness can see (every case within 0.05 dB, the anime 42.65), and 0.75
+without the flow-scaled term reaches 43.1 dB on the anime but loses 2 dB
+on plain translations and 0.8 on live action. So the relative term is what
+makes the finer threshold safe: below 1.5 texels of flow it is the fixed
+threshold that decides, above it the flow's own length, and a pan over a
+painted background stays a pan.

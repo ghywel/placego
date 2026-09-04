@@ -113,10 +113,18 @@ index a4eec69..d092c0c 100644
      // updated at any time by the user, to influence the behavior of the hook.
      // Contents are arbitrary and subject to the method of hook construction.
 diff --git a/src/renderer.c b/src/renderer.c
-index df206b2..0213ddb 100644
+index df206b2..0273336 100644
 --- a/src/renderer.c
 +++ b/src/renderer.c
-@@ -86,6 +86,16 @@ struct pl_renderer_t {
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include <math.h>
++#include <stdlib.h>
+ 
+ #include "common.h"
+ #include "filters.h"
+@@ -86,6 +87,16 @@ struct pl_renderer_t {
      PL_ARRAY(struct cached_frame) frames;
      PL_ARRAY(pl_tex) frame_fbos;
  
@@ -133,7 +141,7 @@ index df206b2..0213ddb 100644
      // For debugging / logging purposes
      int prev_dither;
  
-@@ -232,6 +242,22 @@ const struct pl_filter_preset pl_frame_mixers[] = {
+@@ -232,6 +243,22 @@ const struct pl_filter_preset pl_frame_mixers[] = {
      { "oversample",     &pl_filter_oversample,      "Oversample (AKA SmoothMotion)" },
      { "mitchell_clamp", &pl_filter_mitchell_clamp,  "Clamped Mitchell spline" },
      { "hermite",        &pl_filter_hermite,         "Cubic spline (Hermite)" },
@@ -156,7 +164,7 @@ index df206b2..0213ddb 100644
      {0}
  };
  
-@@ -3793,6 +3819,89 @@ static struct params_info render_params_info(const struct pl_render_params *para
+@@ -3793,6 +3820,89 @@ static struct params_info render_params_info(const struct pl_render_params *para
  
  #define MAX_MIX_FRAMES 16
  
@@ -246,7 +254,7 @@ index df206b2..0213ddb 100644
  bool pl_render_image_mix(pl_renderer rr, const struct pl_frame_mix *images,
                           const struct pl_frame *ptarget,
                           const struct pl_render_params *params)
-@@ -3834,8 +3943,65 @@ bool pl_render_image_mix(pl_renderer rr, const struct pl_frame_mix *images,
+@@ -3834,8 +3944,65 @@ bool pl_render_image_mix(pl_renderer rr, const struct pl_frame_mix *images,
      int fidx = 0;
      struct cached_frame frames[MAX_MIX_FRAMES];
      float weights[MAX_MIX_FRAMES];
@@ -312,7 +320,7 @@ index df206b2..0213ddb 100644
      // Garbage collect the cache by evicting all frames from the cache that are
      // not determined to still be required
      for (int i = 0; i < rr->frames.num; i++)
-@@ -3884,6 +4050,21 @@ retry:
+@@ -3884,6 +4051,21 @@ retry:
                  continue;
              }
  
@@ -334,7 +342,7 @@ index df206b2..0213ddb 100644
          // For backwards compatibility, treat !kernel as oversample
          } else if (!mixer.kernel || mixer.kernel == &pl_filter_function_oversample) {
  
-@@ -4078,6 +4259,7 @@ inter_pass_error:
+@@ -4078,6 +4260,7 @@ inter_pass_error:
          pl_assert(fidx < MAX_MIX_FRAMES);
          frames[fidx] = *f;
          weights[fidx] = weight;
@@ -342,7 +350,7 @@ index df206b2..0213ddb 100644
          wsum += weight;
          fidx++;
      }
-@@ -4102,6 +4284,73 @@ inter_pass_error:
+@@ -4102,6 +4285,105 @@ inter_pass_error:
          goto retry;
      }
  
@@ -411,6 +419,38 @@ index df206b2..0213ddb 100644
 +
 +        pass_uninit(&pass);
 +        return true;
++    } else if (fmix_hook) {
++        // The hook declared a window the queue could not fill on this
++        // frame. Falling through to the builtin compositor silently is the
++        // worst failure mode an instrument can have -- a blended picture
++        // decodes as a plausible field -- so say so, loudly, on every such
++        // frame (expected only at a clip's first and last frames), and with
++        // PL_FRAME_MIX_STRICT set in the environment paint the frame magenta
++        // instead of blending, so the miss is visible in any output.
++        PL_ERR(rr, "PL_HOOK_FRAME_MIX: window has %d of the %d frames the hook "
++                   "wants -- hook skipped, builtin mixer used for this frame",
++               fidx, fmix_want);
++        if (getenv("PL_FRAME_MIX_STRICT")) {
++            pass_begin_frame(&pass);
++            pl_shader sh = pl_dispatch_begin(rr->dp);
++            sh->output = PL_SHADER_SIG_COLOR;
++            sh->output_w = out_w;
++            sh->output_h = out_h;
++            GLSL("vec4 color = vec4(1.0, 0.0, 1.0, 1.0); \n");
++            pass.img = (struct img) {
++                .sh    = sh,
++                .w     = out_w,
++                .h     = out_h,
++                .comps = 4,
++                .color = target->color,
++                .rect  = { 0, 0, out_w, out_h },
++                .repr  = target->repr,
++            };
++            if (!pass_output_target(&pass))
++                goto fallback;
++            pass_uninit(&pass);
++            return true;
++        }
 +    }
 +
      // Sample and mix the output color

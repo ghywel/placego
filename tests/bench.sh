@@ -65,7 +65,8 @@ run_case() {
       -f lavfi -i "$S24" -f lavfi -i "$S60" \
       -filter_complex "[0:v]${chain}[ip];[ip]format=yuv420p[i2];[i2][1:v]psnr=stats_file=$mode.log[o]" \
       -map "[o]" -f null - ) 2>"$OUT/$mode.err" \
-      && echo "  $mode ok" || echo "  $mode FAILED (see $OUT/$mode.err)"
+      && [ "$(grep -c "hook skipped" "$OUT/$mode.err")" -le 2 ] \
+      && echo "  $mode ok" || echo "  $mode FAILED (see $OUT/$mode.err; more than the two boundary hook-skipped lines means the host did not deliver the window)"
   }
 
   # Baselines are properties of the content, not the shader, so only compute
