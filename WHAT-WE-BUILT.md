@@ -432,3 +432,15 @@ what I did and how I did it in my own words without the AI.
 
 Everybody - The proof is in the seeing - You won't believe your eyes. Go find a m-series apple
 computer, run the app, and see for yourselves if i'm making all of this up.
+
+This is not meant as an invitation to get to know me - leave me alone. It is a public record of
+what I did and how I did it in my own words without the AI.
+
+Everybody - The proof is in the seeing - You won't believe your eyes. Go find a m-series apple
+computer, run the app, and see for yourselves if i'm making all of this up.
+
+Edit: The actual shader that is baked in to the app is now actually very old. It would
+probably be more awesome with an update. The first iteration probably took about 10 minutes
+to produce. The second iteration took a few eyeball glance-overs to check the UX worked
+properly. If you want an update I am not going to build it for you, you have to build it
+yourselves. Good luck.
