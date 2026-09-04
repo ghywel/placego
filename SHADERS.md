@@ -268,7 +268,13 @@ pre-registration and results: [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md).
 
 Regenerated on 2026-09-04 when the human-reading tail was added: the
 committed file had predated the sub-pixel refinement block the base gained
-on 2026-08-31 (inert in the interpolators at `SUBPEL_REFINE = 0`; since
+on 2026-08-31 (inert in the interpolators at `SUBPEL_REFINE = 0`; the
+seeded family's 1/8 passes gained a fourth, zero seed on 2026-09-04 -- the
+coarse level's Moire on texture above its Nyquist made every diagonal
+motion a lattice jump, NFRAME-LIMITS.md section 9 -- as `ZERO_SEED`, off
+in the two-frame files, on in their generated tri/quad/quint, gated by
+Moire evidence, a cost margin and an aperture test, +0.23 dB ladder mean,
+footage unchanged, +3.9% time; since
 2026-09-04 the same is true of `SUBPEL_SELFREF`, the self-referenced fit that
 removes the refinement's own texture-phase bias -- off in every two-frame
 shader, on in every generated one, NFRAME-LIMITS.md section 9), and the

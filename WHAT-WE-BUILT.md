@@ -166,7 +166,9 @@ next" explains, the reason the frame count stops at four for film.
   reveals motion *across* itself, not along it (a known optical
   limitation), and the instrument does not yet flag those regions — it
   currently reports contaminated values there instead of "no measurement."
-  The fix is known and named, but not built.
+  The fix is known and named; its first piece, a gate that stops the
+  tracker's middle step from accepting a match that merely slides along an
+  edge, is now built, and the reading itself is not yet flagged.
 - **It is at least one frame late, always.** Measuring a curve through the
   present requires the next frame. At cinema rates that is 42 thousandths
   of a second; the five-frame version, which looks two frames ahead, is 83.
@@ -312,7 +314,12 @@ For anyone picking this up:
    most test scenes. The turning disc's map then exposed a blind spot in the
    tracker's coarsest step -- motion along the diagonal of a repeating
    pattern -- and in our test scenes, every one of which had moved
-   horizontally; the repair is under test and diagonal scenes are joining
+   horizontally. The repair is built into the measuring shaders: the
+   tracker's middle step now also tries "no motion" as a starting guess,
+   and keeps it only where the coarse guess was fooled by a pattern too
+   fine for it, or where it is plainly the better match and not merely
+   sliding along an edge -- that last test being the edge gate this
+   document had listed as known but unbuilt. Diagonal scenes are joining
    the ladder. SHADERS.md says when to use each.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
@@ -355,6 +362,29 @@ represented at all. The five-frame version now exists, and on the six- and
 eight-frames-per-cycle test scenes it reads acceleration three to seven
 times closer to the truth than the four-frame one; on ordinary film it adds
 nothing to the picture and costs a fifth more time.
+
+**The instrument's yardsticks are the pixel and the frame, and that has a
+consequence anyone changing camera should know.** Every rule inside it — how
+far it will look for a match, how big a patch it compares, how fine a pattern
+its coarsest glance can resolve, where the painted view starts to show a
+reading — is measured in pixels per frame, not in metres per second. So the
+same scene filmed at four times the resolution moves four times as many
+pixels per frame while the tracker's reach stays where it was, and a
+repeating pattern that was coarse enough to resolve becomes one it cannot;
+and the same scene filmed at three times the frame rate has one ninth the
+acceleration per frame while the noise per reading stays the same, so a
+reading that was clear at 24 frames per second sinks toward the noise at 72.
+We saw both at once when we rendered the turning disc at 4K: the velocity
+map grew four large wrong patches where the coarsest step was fooled, and
+the acceleration map dissolved into noise. Neither is a new failure; both
+are the old limits at a new scale. The practical advice joins the advice
+above: the tracker's yardsticks should be scaled with the frame — a deeper
+coarse step and a longer reach at 4K, thresholds in proportion — and the
+frame rate, or the stride through the frames, chosen so the motion of
+interest is sampled six to ten times per cycle rather than as fast as the
+camera allows. Shaders tuned to the resolution and rate of the camera are the
+same idea as shaders tuned to film or to the laboratory; that scaling has
+not been built yet, and the 4K disc is the test it will be judged on.
 
 ## Where to look
 

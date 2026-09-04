@@ -659,6 +659,7 @@ vec4 hook() {
 //!BIND LUMA_B_E
 //!BIND FLOW_S_AB
 //!BIND FLOW_S_AB_CACHE2
+//!BIND LUMA_A_S
 //!BIND FLOW_E_BA_CACHE
 //!SAVE FLOW_E_AB_RAW
 //!WIDTH HOOKED.w 8 /
@@ -747,6 +748,52 @@ float local_contrast_5x5_e(vec2 uv_a) {
 
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
+// MOIRE EVIDENCE for the coarse level at this texel. The coarse (1/16) level is point-sampled, so
+// texture above its Nyquist survives there as a Moire at full contrast; the same footprint averaged
+// from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
+// far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
+// section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+float moire_s(vec2 uv) {
+    float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_S_pt;
+            float p = LUMA_A_S_tex(c).r;
+            float b = 0.25 * (LUMA_A_E_tex(c + vec2(-0.25, -0.25) * LUMA_A_S_pt).r + LUMA_A_E_tex(c + vec2(0.25, -0.25) * LUMA_A_S_pt).r
+                            + LUMA_A_E_tex(c + vec2(-0.25, 0.25) * LUMA_A_S_pt).r + LUMA_A_E_tex(c + vec2(0.25, 0.25) * LUMA_A_S_pt).r);
+            plo = min(plo, p); phi = max(phi, p); blo = min(blo, b); bhi = max(bhi, b);
+        }
+    }
+    float cp = phi - plo, cb = bhi - blo;
+    return cp > 0.02 ? clamp(1.0 - cb / cp, 0.0, 1.0) : 0.0;
+}
+// APERTURE TEST for a candidate offset: the 3x3 structure tensor of the reference block at this level.
+// An edge-like block (smaller eigenvalue far below the larger) constrains motion only across the edge;
+// a candidate whose offset lies mostly along the edge was matched on nothing. Returns true when the
+// offset is trustworthy: the block is two-dimensional, or the offset is mostly across the edge.
+const float EDGE_RATIO = 0.1;
+bool aperture_ok(vec2 uv, vec2 off) {
+    float jxx = 0.0, jyy = 0.0, jxy = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_E_pt;
+            float gx = LUMA_A_E_tex(c + vec2(LUMA_A_E_pt.x, 0.0)).r - LUMA_A_E_tex(c - vec2(LUMA_A_E_pt.x, 0.0)).r;
+            float gy = LUMA_A_E_tex(c + vec2(0.0, LUMA_A_E_pt.y)).r - LUMA_A_E_tex(c - vec2(0.0, LUMA_A_E_pt.y)).r;
+            jxx += gx * gx; jyy += gy * gy; jxy += gx * gy;
+        }
+    }
+    float tr = jxx + jyy, det = jxx * jyy - jxy * jxy;
+    float disc = sqrt(max(0.25 * tr * tr - det, 0.0));
+    float lmax = 0.5 * tr + disc, lmin = 0.5 * tr - disc;
+    if (lmax <= 1.0e-8) return false;                       // flat: nothing to match on
+    if (lmin > EDGE_RATIO * lmax) return true;               // two-dimensional structure
+    // the edge's along direction is the eigenvector of lmin; measure the offset's share along it
+    vec2 e_across = normalize(abs(jxy) > 1.0e-8 ? vec2(lmax - jyy, jxy) : (jxx >= jyy ? vec2(1.0, 0.0) : vec2(0.0, 1.0)));
+    float len = length(off);
+    if (len <= 1.0e-8) return true;
+    float across = abs(dot(off / len, e_across));
+    return across > 0.5;                                     // mostly across the edge: constrained
+}
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     const float TIE_MARGIN = 1.0e-4;
     vec2 best_off = seed;
@@ -815,6 +862,38 @@ vec4 hook() {
     vec2 ref_a = refine_e(uv_a, base_off, sad_a);
     vec2 ref_b = refine_e(uv_a, base_off2, sad_b);
     vec2 ref_c = refine_e(uv_a, base_off3, sad_c);
+    // ZERO SEED (NFRAME-LIMITS.md section 9). The coarse level is point-sampled: on texture above its
+    // own Nyquist it matches a Moire that is right only at integer coarse-texel shifts (the diagonal
+    // speed ladder: (16,16) px/frame exact, (8,8) 61% locked to a texture-period copy, (4,4) 98%). This
+    // level resolves that texture and reaches +/-2 of its texels from any seed, so a fourth seed at
+    // ZERO finds the true match wherever the coarse seeds are Moire and the motion is within reach.
+    // Three guards, each measured: where the Moire evidence is high it competes like the other seeds
+    // (prior included); elsewhere it replaces the best coarse seed only when its SAD is
+    // ZERO_SEED_MARGIN lower, because with the prior in play a converged zero seed on an EDGE beat
+    // correct large motions (L3 -4.2 dB, real footage -0.4); a zero seed that ends on its own search
+    // boundary did not converge and is discounted; and one that slid along an edge-like block's edge
+    // (aperture_ok) was matched on nothing. Through the four-frame shader: (8,8) diagonal 21 px / 61%
+    // gross -> 0.03 px / 0%; the rotating textured disc's inner band 25% gross -> 14%; the 32-case
+    // ladder +0.23 dB mean (R3 +2.4, O6 +1.3, A5 +1.0; worst F1 -0.9); real footage unchanged.
+    // What it cannot do: a fractional shift of a perfectly periodic texture at this level, whose
+    // exact integer copy inside the search window is a better match than any integer neighbour of
+    // the truth (period locking, section 3).
+    // ZERO_SEED is OFF in this two-frame shader -- it costs +4% and the picture tier keeps its
+    // published numbers and time -- and ON in every generated tri/quad/quint, where the field is
+    // the product.
+    const int ZERO_SEED = 1;
+    const float ZERO_SEED_MARGIN = 0.1;
+    const float MOIRE_MIN = 0.25;
+    float sad_d = 1.0e30, moire = 0.0;
+    vec2 ref_d = vec2(0.0);
+    bool d_ok = false;
+    if (ZERO_SEED != 0) {
+        ref_d = refine_e(uv_a, vec2(0.0), sad_d);
+        vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
+        d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
+        moire = moire_s(uv_a);
+        d_ok = d_ok && aperture_ok(uv_a, ref_d);
+    }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
     float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
     float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
@@ -823,6 +902,15 @@ vec4 hook() {
     float best_score = score_a;
     if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
+    float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
+    if (d_ok) {
+        if (moire > MOIRE_MIN) {
+            float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
+            if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
+        } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
+            best_off = ref_d;
+        }
+    }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_AB_CACHE, coord, result);
     return result;
@@ -839,6 +927,7 @@ vec4 hook() {
 //!BIND LUMA_B_E
 //!BIND FLOW_S_BA
 //!BIND FLOW_S_BA_CACHE2
+//!BIND LUMA_B_S
 //!BIND FLOW_E_AB_CACHE
 //!SAVE FLOW_E_BA_RAW
 //!WIDTH HOOKED.w 8 /
@@ -883,6 +972,52 @@ float local_contrast_5x5_e2(vec2 uv_b) {
 
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
+// MOIRE EVIDENCE for the coarse level at this texel. The coarse (1/16) level is point-sampled, so
+// texture above its Nyquist survives there as a Moire at full contrast; the same footprint averaged
+// from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
+// far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
+// section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+float moire_s(vec2 uv) {
+    float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_B_S_pt;
+            float p = LUMA_B_S_tex(c).r;
+            float b = 0.25 * (LUMA_B_E_tex(c + vec2(-0.25, -0.25) * LUMA_B_S_pt).r + LUMA_B_E_tex(c + vec2(0.25, -0.25) * LUMA_B_S_pt).r
+                            + LUMA_B_E_tex(c + vec2(-0.25, 0.25) * LUMA_B_S_pt).r + LUMA_B_E_tex(c + vec2(0.25, 0.25) * LUMA_B_S_pt).r);
+            plo = min(plo, p); phi = max(phi, p); blo = min(blo, b); bhi = max(bhi, b);
+        }
+    }
+    float cp = phi - plo, cb = bhi - blo;
+    return cp > 0.02 ? clamp(1.0 - cb / cp, 0.0, 1.0) : 0.0;
+}
+// APERTURE TEST for a candidate offset: the 3x3 structure tensor of the reference block at this level.
+// An edge-like block (smaller eigenvalue far below the larger) constrains motion only across the edge;
+// a candidate whose offset lies mostly along the edge was matched on nothing. Returns true when the
+// offset is trustworthy: the block is two-dimensional, or the offset is mostly across the edge.
+const float EDGE_RATIO = 0.1;
+bool aperture_ok(vec2 uv, vec2 off) {
+    float jxx = 0.0, jyy = 0.0, jxy = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_E_pt;
+            float gx = LUMA_B_E_tex(c + vec2(LUMA_A_E_pt.x, 0.0)).r - LUMA_B_E_tex(c - vec2(LUMA_A_E_pt.x, 0.0)).r;
+            float gy = LUMA_B_E_tex(c + vec2(0.0, LUMA_A_E_pt.y)).r - LUMA_B_E_tex(c - vec2(0.0, LUMA_A_E_pt.y)).r;
+            jxx += gx * gx; jyy += gy * gy; jxy += gx * gy;
+        }
+    }
+    float tr = jxx + jyy, det = jxx * jyy - jxy * jxy;
+    float disc = sqrt(max(0.25 * tr * tr - det, 0.0));
+    float lmax = 0.5 * tr + disc, lmin = 0.5 * tr - disc;
+    if (lmax <= 1.0e-8) return false;                       // flat: nothing to match on
+    if (lmin > EDGE_RATIO * lmax) return true;               // two-dimensional structure
+    // the edge's along direction is the eigenvector of lmin; measure the offset's share along it
+    vec2 e_across = normalize(abs(jxy) > 1.0e-8 ? vec2(lmax - jyy, jxy) : (jxx >= jyy ? vec2(1.0, 0.0) : vec2(0.0, 1.0)));
+    float len = length(off);
+    if (len <= 1.0e-8) return true;
+    float across = abs(dot(off / len, e_across));
+    return across > 0.5;                                     // mostly across the edge: constrained
+}
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     const float TIE_MARGIN = 1.0e-4;
     vec2 best_off = seed;
@@ -936,6 +1071,38 @@ vec4 hook() {
     vec2 ref_a = refine_e(uv_b, base_off, sad_a);
     vec2 ref_b = refine_e(uv_b, base_off2, sad_b);
     vec2 ref_c = refine_e(uv_b, base_off3, sad_c);
+    // ZERO SEED (NFRAME-LIMITS.md section 9). The coarse level is point-sampled: on texture above its
+    // own Nyquist it matches a Moire that is right only at integer coarse-texel shifts (the diagonal
+    // speed ladder: (16,16) px/frame exact, (8,8) 61% locked to a texture-period copy, (4,4) 98%). This
+    // level resolves that texture and reaches +/-2 of its texels from any seed, so a fourth seed at
+    // ZERO finds the true match wherever the coarse seeds are Moire and the motion is within reach.
+    // Three guards, each measured: where the Moire evidence is high it competes like the other seeds
+    // (prior included); elsewhere it replaces the best coarse seed only when its SAD is
+    // ZERO_SEED_MARGIN lower, because with the prior in play a converged zero seed on an EDGE beat
+    // correct large motions (L3 -4.2 dB, real footage -0.4); a zero seed that ends on its own search
+    // boundary did not converge and is discounted; and one that slid along an edge-like block's edge
+    // (aperture_ok) was matched on nothing. Through the four-frame shader: (8,8) diagonal 21 px / 61%
+    // gross -> 0.03 px / 0%; the rotating textured disc's inner band 25% gross -> 14%; the 32-case
+    // ladder +0.23 dB mean (R3 +2.4, O6 +1.3, A5 +1.0; worst F1 -0.9); real footage unchanged.
+    // What it cannot do: a fractional shift of a perfectly periodic texture at this level, whose
+    // exact integer copy inside the search window is a better match than any integer neighbour of
+    // the truth (period locking, section 3).
+    // ZERO_SEED is OFF in this two-frame shader -- it costs +4% and the picture tier keeps its
+    // published numbers and time -- and ON in every generated tri/quad/quint, where the field is
+    // the product.
+    const int ZERO_SEED = 1;
+    const float ZERO_SEED_MARGIN = 0.1;
+    const float MOIRE_MIN = 0.25;
+    float sad_d = 1.0e30, moire = 0.0;
+    vec2 ref_d = vec2(0.0);
+    bool d_ok = false;
+    if (ZERO_SEED != 0) {
+        ref_d = refine_e(uv_b, vec2(0.0), sad_d);
+        vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
+        d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
+        moire = moire_s(uv_b);
+        d_ok = d_ok && aperture_ok(uv_b, ref_d);
+    }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
     float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
     float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
@@ -944,6 +1111,15 @@ vec4 hook() {
     float best_score = score_a;
     if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
+    float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
+    if (d_ok) {
+        if (moire > MOIRE_MIN) {
+            float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
+            if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
+        } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
+            best_off = ref_d;
+        }
+    }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_BA_CACHE, coord, result);
     return result;
@@ -2500,6 +2676,7 @@ vec4 hook() {
 //!BIND LUMA_C_E
 //!BIND FLOW_S_BC
 //!BIND FLOW_S_BC_CACHE2
+//!BIND LUMA_A_S
 //!BIND FLOW_E_CB_CACHE
 //!SAVE FLOW_E_BC_RAW
 //!WIDTH HOOKED.w 8 /
@@ -2588,6 +2765,52 @@ float local_contrast_5x5_e(vec2 uv_a) {
 
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
+// MOIRE EVIDENCE for the coarse level at this texel. The coarse (1/16) level is point-sampled, so
+// texture above its Nyquist survives there as a Moire at full contrast; the same footprint averaged
+// from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
+// far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
+// section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+float moire_s(vec2 uv) {
+    float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_S_pt;
+            float p = LUMA_A_S_tex(c).r;
+            float b = 0.25 * (LUMA_B_E_tex(c + vec2(-0.25, -0.25) * LUMA_A_S_pt).r + LUMA_B_E_tex(c + vec2(0.25, -0.25) * LUMA_A_S_pt).r
+                            + LUMA_B_E_tex(c + vec2(-0.25, 0.25) * LUMA_A_S_pt).r + LUMA_B_E_tex(c + vec2(0.25, 0.25) * LUMA_A_S_pt).r);
+            plo = min(plo, p); phi = max(phi, p); blo = min(blo, b); bhi = max(bhi, b);
+        }
+    }
+    float cp = phi - plo, cb = bhi - blo;
+    return cp > 0.02 ? clamp(1.0 - cb / cp, 0.0, 1.0) : 0.0;
+}
+// APERTURE TEST for a candidate offset: the 3x3 structure tensor of the reference block at this level.
+// An edge-like block (smaller eigenvalue far below the larger) constrains motion only across the edge;
+// a candidate whose offset lies mostly along the edge was matched on nothing. Returns true when the
+// offset is trustworthy: the block is two-dimensional, or the offset is mostly across the edge.
+const float EDGE_RATIO = 0.1;
+bool aperture_ok(vec2 uv, vec2 off) {
+    float jxx = 0.0, jyy = 0.0, jxy = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_E_pt;
+            float gx = LUMA_B_E_tex(c + vec2(LUMA_A_E_pt.x, 0.0)).r - LUMA_B_E_tex(c - vec2(LUMA_A_E_pt.x, 0.0)).r;
+            float gy = LUMA_B_E_tex(c + vec2(0.0, LUMA_A_E_pt.y)).r - LUMA_B_E_tex(c - vec2(0.0, LUMA_A_E_pt.y)).r;
+            jxx += gx * gx; jyy += gy * gy; jxy += gx * gy;
+        }
+    }
+    float tr = jxx + jyy, det = jxx * jyy - jxy * jxy;
+    float disc = sqrt(max(0.25 * tr * tr - det, 0.0));
+    float lmax = 0.5 * tr + disc, lmin = 0.5 * tr - disc;
+    if (lmax <= 1.0e-8) return false;                       // flat: nothing to match on
+    if (lmin > EDGE_RATIO * lmax) return true;               // two-dimensional structure
+    // the edge's along direction is the eigenvector of lmin; measure the offset's share along it
+    vec2 e_across = normalize(abs(jxy) > 1.0e-8 ? vec2(lmax - jyy, jxy) : (jxx >= jyy ? vec2(1.0, 0.0) : vec2(0.0, 1.0)));
+    float len = length(off);
+    if (len <= 1.0e-8) return true;
+    float across = abs(dot(off / len, e_across));
+    return across > 0.5;                                     // mostly across the edge: constrained
+}
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     const float TIE_MARGIN = 1.0e-4;
     vec2 best_off = seed;
@@ -2656,6 +2879,38 @@ vec4 hook() {
     vec2 ref_a = refine_e(uv_a, base_off, sad_a);
     vec2 ref_b = refine_e(uv_a, base_off2, sad_b);
     vec2 ref_c = refine_e(uv_a, base_off3, sad_c);
+    // ZERO SEED (NFRAME-LIMITS.md section 9). The coarse level is point-sampled: on texture above its
+    // own Nyquist it matches a Moire that is right only at integer coarse-texel shifts (the diagonal
+    // speed ladder: (16,16) px/frame exact, (8,8) 61% locked to a texture-period copy, (4,4) 98%). This
+    // level resolves that texture and reaches +/-2 of its texels from any seed, so a fourth seed at
+    // ZERO finds the true match wherever the coarse seeds are Moire and the motion is within reach.
+    // Three guards, each measured: where the Moire evidence is high it competes like the other seeds
+    // (prior included); elsewhere it replaces the best coarse seed only when its SAD is
+    // ZERO_SEED_MARGIN lower, because with the prior in play a converged zero seed on an EDGE beat
+    // correct large motions (L3 -4.2 dB, real footage -0.4); a zero seed that ends on its own search
+    // boundary did not converge and is discounted; and one that slid along an edge-like block's edge
+    // (aperture_ok) was matched on nothing. Through the four-frame shader: (8,8) diagonal 21 px / 61%
+    // gross -> 0.03 px / 0%; the rotating textured disc's inner band 25% gross -> 14%; the 32-case
+    // ladder +0.23 dB mean (R3 +2.4, O6 +1.3, A5 +1.0; worst F1 -0.9); real footage unchanged.
+    // What it cannot do: a fractional shift of a perfectly periodic texture at this level, whose
+    // exact integer copy inside the search window is a better match than any integer neighbour of
+    // the truth (period locking, section 3).
+    // ZERO_SEED is OFF in this two-frame shader -- it costs +4% and the picture tier keeps its
+    // published numbers and time -- and ON in every generated tri/quad/quint, where the field is
+    // the product.
+    const int ZERO_SEED = 1;
+    const float ZERO_SEED_MARGIN = 0.1;
+    const float MOIRE_MIN = 0.25;
+    float sad_d = 1.0e30, moire = 0.0;
+    vec2 ref_d = vec2(0.0);
+    bool d_ok = false;
+    if (ZERO_SEED != 0) {
+        ref_d = refine_e(uv_a, vec2(0.0), sad_d);
+        vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
+        d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
+        moire = moire_s(uv_a);
+        d_ok = d_ok && aperture_ok(uv_a, ref_d);
+    }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
     float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
     float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
@@ -2664,6 +2919,15 @@ vec4 hook() {
     float best_score = score_a;
     if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
+    float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
+    if (d_ok) {
+        if (moire > MOIRE_MIN) {
+            float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
+            if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
+        } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
+            best_off = ref_d;
+        }
+    }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_BC_CACHE, coord, result);
     return result;
@@ -3492,6 +3756,7 @@ vec4 hook() {
 //!BIND LUMA_C_E
 //!BIND FLOW_S_CB
 //!BIND FLOW_S_CB_CACHE2
+//!BIND LUMA_B_S
 //!BIND FLOW_E_BC_CACHE
 //!SAVE FLOW_E_CB_RAW
 //!WIDTH HOOKED.w 8 /
@@ -3536,6 +3801,52 @@ float local_contrast_5x5_e2(vec2 uv_b) {
 
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
+// MOIRE EVIDENCE for the coarse level at this texel. The coarse (1/16) level is point-sampled, so
+// texture above its Nyquist survives there as a Moire at full contrast; the same footprint averaged
+// from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
+// far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
+// section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+float moire_s(vec2 uv) {
+    float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_B_S_pt;
+            float p = LUMA_B_S_tex(c).r;
+            float b = 0.25 * (LUMA_C_E_tex(c + vec2(-0.25, -0.25) * LUMA_B_S_pt).r + LUMA_C_E_tex(c + vec2(0.25, -0.25) * LUMA_B_S_pt).r
+                            + LUMA_C_E_tex(c + vec2(-0.25, 0.25) * LUMA_B_S_pt).r + LUMA_C_E_tex(c + vec2(0.25, 0.25) * LUMA_B_S_pt).r);
+            plo = min(plo, p); phi = max(phi, p); blo = min(blo, b); bhi = max(bhi, b);
+        }
+    }
+    float cp = phi - plo, cb = bhi - blo;
+    return cp > 0.02 ? clamp(1.0 - cb / cp, 0.0, 1.0) : 0.0;
+}
+// APERTURE TEST for a candidate offset: the 3x3 structure tensor of the reference block at this level.
+// An edge-like block (smaller eigenvalue far below the larger) constrains motion only across the edge;
+// a candidate whose offset lies mostly along the edge was matched on nothing. Returns true when the
+// offset is trustworthy: the block is two-dimensional, or the offset is mostly across the edge.
+const float EDGE_RATIO = 0.1;
+bool aperture_ok(vec2 uv, vec2 off) {
+    float jxx = 0.0, jyy = 0.0, jxy = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_E_pt;
+            float gx = LUMA_C_E_tex(c + vec2(LUMA_A_E_pt.x, 0.0)).r - LUMA_C_E_tex(c - vec2(LUMA_A_E_pt.x, 0.0)).r;
+            float gy = LUMA_C_E_tex(c + vec2(0.0, LUMA_A_E_pt.y)).r - LUMA_C_E_tex(c - vec2(0.0, LUMA_A_E_pt.y)).r;
+            jxx += gx * gx; jyy += gy * gy; jxy += gx * gy;
+        }
+    }
+    float tr = jxx + jyy, det = jxx * jyy - jxy * jxy;
+    float disc = sqrt(max(0.25 * tr * tr - det, 0.0));
+    float lmax = 0.5 * tr + disc, lmin = 0.5 * tr - disc;
+    if (lmax <= 1.0e-8) return false;                       // flat: nothing to match on
+    if (lmin > EDGE_RATIO * lmax) return true;               // two-dimensional structure
+    // the edge's along direction is the eigenvector of lmin; measure the offset's share along it
+    vec2 e_across = normalize(abs(jxy) > 1.0e-8 ? vec2(lmax - jyy, jxy) : (jxx >= jyy ? vec2(1.0, 0.0) : vec2(0.0, 1.0)));
+    float len = length(off);
+    if (len <= 1.0e-8) return true;
+    float across = abs(dot(off / len, e_across));
+    return across > 0.5;                                     // mostly across the edge: constrained
+}
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     const float TIE_MARGIN = 1.0e-4;
     vec2 best_off = seed;
@@ -3589,6 +3900,38 @@ vec4 hook() {
     vec2 ref_a = refine_e(uv_b, base_off, sad_a);
     vec2 ref_b = refine_e(uv_b, base_off2, sad_b);
     vec2 ref_c = refine_e(uv_b, base_off3, sad_c);
+    // ZERO SEED (NFRAME-LIMITS.md section 9). The coarse level is point-sampled: on texture above its
+    // own Nyquist it matches a Moire that is right only at integer coarse-texel shifts (the diagonal
+    // speed ladder: (16,16) px/frame exact, (8,8) 61% locked to a texture-period copy, (4,4) 98%). This
+    // level resolves that texture and reaches +/-2 of its texels from any seed, so a fourth seed at
+    // ZERO finds the true match wherever the coarse seeds are Moire and the motion is within reach.
+    // Three guards, each measured: where the Moire evidence is high it competes like the other seeds
+    // (prior included); elsewhere it replaces the best coarse seed only when its SAD is
+    // ZERO_SEED_MARGIN lower, because with the prior in play a converged zero seed on an EDGE beat
+    // correct large motions (L3 -4.2 dB, real footage -0.4); a zero seed that ends on its own search
+    // boundary did not converge and is discounted; and one that slid along an edge-like block's edge
+    // (aperture_ok) was matched on nothing. Through the four-frame shader: (8,8) diagonal 21 px / 61%
+    // gross -> 0.03 px / 0%; the rotating textured disc's inner band 25% gross -> 14%; the 32-case
+    // ladder +0.23 dB mean (R3 +2.4, O6 +1.3, A5 +1.0; worst F1 -0.9); real footage unchanged.
+    // What it cannot do: a fractional shift of a perfectly periodic texture at this level, whose
+    // exact integer copy inside the search window is a better match than any integer neighbour of
+    // the truth (period locking, section 3).
+    // ZERO_SEED is OFF in this two-frame shader -- it costs +4% and the picture tier keeps its
+    // published numbers and time -- and ON in every generated tri/quad/quint, where the field is
+    // the product.
+    const int ZERO_SEED = 1;
+    const float ZERO_SEED_MARGIN = 0.1;
+    const float MOIRE_MIN = 0.25;
+    float sad_d = 1.0e30, moire = 0.0;
+    vec2 ref_d = vec2(0.0);
+    bool d_ok = false;
+    if (ZERO_SEED != 0) {
+        ref_d = refine_e(uv_b, vec2(0.0), sad_d);
+        vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
+        d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
+        moire = moire_s(uv_b);
+        d_ok = d_ok && aperture_ok(uv_b, ref_d);
+    }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
     float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
     float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
@@ -3597,6 +3940,15 @@ vec4 hook() {
     float best_score = score_a;
     if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
+    float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
+    if (d_ok) {
+        if (moire > MOIRE_MIN) {
+            float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
+            if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
+        } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
+            best_off = ref_d;
+        }
+    }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_CB_CACHE, coord, result);
     return result;
@@ -4449,6 +4801,7 @@ vec4 hook() {
 //!BIND LUMA_D_E
 //!BIND FLOW_S_CD
 //!BIND FLOW_S_CD_CACHE2
+//!BIND LUMA_A_S
 //!BIND FLOW_E_DC_CACHE
 //!SAVE FLOW_E_CD_RAW
 //!WIDTH HOOKED.w 8 /
@@ -4537,6 +4890,52 @@ float local_contrast_5x5_e(vec2 uv_a) {
 
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
+// MOIRE EVIDENCE for the coarse level at this texel. The coarse (1/16) level is point-sampled, so
+// texture above its Nyquist survives there as a Moire at full contrast; the same footprint averaged
+// from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
+// far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
+// section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+float moire_s(vec2 uv) {
+    float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_S_pt;
+            float p = LUMA_A_S_tex(c).r;
+            float b = 0.25 * (LUMA_C_E_tex(c + vec2(-0.25, -0.25) * LUMA_A_S_pt).r + LUMA_C_E_tex(c + vec2(0.25, -0.25) * LUMA_A_S_pt).r
+                            + LUMA_C_E_tex(c + vec2(-0.25, 0.25) * LUMA_A_S_pt).r + LUMA_C_E_tex(c + vec2(0.25, 0.25) * LUMA_A_S_pt).r);
+            plo = min(plo, p); phi = max(phi, p); blo = min(blo, b); bhi = max(bhi, b);
+        }
+    }
+    float cp = phi - plo, cb = bhi - blo;
+    return cp > 0.02 ? clamp(1.0 - cb / cp, 0.0, 1.0) : 0.0;
+}
+// APERTURE TEST for a candidate offset: the 3x3 structure tensor of the reference block at this level.
+// An edge-like block (smaller eigenvalue far below the larger) constrains motion only across the edge;
+// a candidate whose offset lies mostly along the edge was matched on nothing. Returns true when the
+// offset is trustworthy: the block is two-dimensional, or the offset is mostly across the edge.
+const float EDGE_RATIO = 0.1;
+bool aperture_ok(vec2 uv, vec2 off) {
+    float jxx = 0.0, jyy = 0.0, jxy = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_E_pt;
+            float gx = LUMA_C_E_tex(c + vec2(LUMA_A_E_pt.x, 0.0)).r - LUMA_C_E_tex(c - vec2(LUMA_A_E_pt.x, 0.0)).r;
+            float gy = LUMA_C_E_tex(c + vec2(0.0, LUMA_A_E_pt.y)).r - LUMA_C_E_tex(c - vec2(0.0, LUMA_A_E_pt.y)).r;
+            jxx += gx * gx; jyy += gy * gy; jxy += gx * gy;
+        }
+    }
+    float tr = jxx + jyy, det = jxx * jyy - jxy * jxy;
+    float disc = sqrt(max(0.25 * tr * tr - det, 0.0));
+    float lmax = 0.5 * tr + disc, lmin = 0.5 * tr - disc;
+    if (lmax <= 1.0e-8) return false;                       // flat: nothing to match on
+    if (lmin > EDGE_RATIO * lmax) return true;               // two-dimensional structure
+    // the edge's along direction is the eigenvector of lmin; measure the offset's share along it
+    vec2 e_across = normalize(abs(jxy) > 1.0e-8 ? vec2(lmax - jyy, jxy) : (jxx >= jyy ? vec2(1.0, 0.0) : vec2(0.0, 1.0)));
+    float len = length(off);
+    if (len <= 1.0e-8) return true;
+    float across = abs(dot(off / len, e_across));
+    return across > 0.5;                                     // mostly across the edge: constrained
+}
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     const float TIE_MARGIN = 1.0e-4;
     vec2 best_off = seed;
@@ -4605,6 +5004,38 @@ vec4 hook() {
     vec2 ref_a = refine_e(uv_a, base_off, sad_a);
     vec2 ref_b = refine_e(uv_a, base_off2, sad_b);
     vec2 ref_c = refine_e(uv_a, base_off3, sad_c);
+    // ZERO SEED (NFRAME-LIMITS.md section 9). The coarse level is point-sampled: on texture above its
+    // own Nyquist it matches a Moire that is right only at integer coarse-texel shifts (the diagonal
+    // speed ladder: (16,16) px/frame exact, (8,8) 61% locked to a texture-period copy, (4,4) 98%). This
+    // level resolves that texture and reaches +/-2 of its texels from any seed, so a fourth seed at
+    // ZERO finds the true match wherever the coarse seeds are Moire and the motion is within reach.
+    // Three guards, each measured: where the Moire evidence is high it competes like the other seeds
+    // (prior included); elsewhere it replaces the best coarse seed only when its SAD is
+    // ZERO_SEED_MARGIN lower, because with the prior in play a converged zero seed on an EDGE beat
+    // correct large motions (L3 -4.2 dB, real footage -0.4); a zero seed that ends on its own search
+    // boundary did not converge and is discounted; and one that slid along an edge-like block's edge
+    // (aperture_ok) was matched on nothing. Through the four-frame shader: (8,8) diagonal 21 px / 61%
+    // gross -> 0.03 px / 0%; the rotating textured disc's inner band 25% gross -> 14%; the 32-case
+    // ladder +0.23 dB mean (R3 +2.4, O6 +1.3, A5 +1.0; worst F1 -0.9); real footage unchanged.
+    // What it cannot do: a fractional shift of a perfectly periodic texture at this level, whose
+    // exact integer copy inside the search window is a better match than any integer neighbour of
+    // the truth (period locking, section 3).
+    // ZERO_SEED is OFF in this two-frame shader -- it costs +4% and the picture tier keeps its
+    // published numbers and time -- and ON in every generated tri/quad/quint, where the field is
+    // the product.
+    const int ZERO_SEED = 1;
+    const float ZERO_SEED_MARGIN = 0.1;
+    const float MOIRE_MIN = 0.25;
+    float sad_d = 1.0e30, moire = 0.0;
+    vec2 ref_d = vec2(0.0);
+    bool d_ok = false;
+    if (ZERO_SEED != 0) {
+        ref_d = refine_e(uv_a, vec2(0.0), sad_d);
+        vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
+        d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
+        moire = moire_s(uv_a);
+        d_ok = d_ok && aperture_ok(uv_a, ref_d);
+    }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
     float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
     float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
@@ -4613,6 +5044,15 @@ vec4 hook() {
     float best_score = score_a;
     if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
+    float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
+    if (d_ok) {
+        if (moire > MOIRE_MIN) {
+            float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
+            if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
+        } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
+            best_off = ref_d;
+        }
+    }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_CD_CACHE, coord, result);
     return result;
@@ -5450,6 +5890,7 @@ vec4 hook() {
 //!BIND LUMA_D_E
 //!BIND FLOW_S_DC
 //!BIND FLOW_S_DC_CACHE2
+//!BIND LUMA_B_S
 //!BIND FLOW_E_CD_CACHE
 //!SAVE FLOW_E_DC_RAW
 //!WIDTH HOOKED.w 8 /
@@ -5494,6 +5935,52 @@ float local_contrast_5x5_e2(vec2 uv_b) {
 
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
+// MOIRE EVIDENCE for the coarse level at this texel. The coarse (1/16) level is point-sampled, so
+// texture above its Nyquist survives there as a Moire at full contrast; the same footprint averaged
+// from this level's texels (a 2x2 box) keeps only what the coarse grid can represent. Point contrast
+// far above box contrast means the coarse seeds here were matched on a Moire (NFRAME-LIMITS.md
+// section 9: the diagonal speed ladder). Flat edges score near zero; textured diagonals high.
+float moire_s(vec2 uv) {
+    float plo = 1.0, phi = 0.0, blo = 1.0, bhi = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_B_S_pt;
+            float p = LUMA_B_S_tex(c).r;
+            float b = 0.25 * (LUMA_D_E_tex(c + vec2(-0.25, -0.25) * LUMA_B_S_pt).r + LUMA_D_E_tex(c + vec2(0.25, -0.25) * LUMA_B_S_pt).r
+                            + LUMA_D_E_tex(c + vec2(-0.25, 0.25) * LUMA_B_S_pt).r + LUMA_D_E_tex(c + vec2(0.25, 0.25) * LUMA_B_S_pt).r);
+            plo = min(plo, p); phi = max(phi, p); blo = min(blo, b); bhi = max(bhi, b);
+        }
+    }
+    float cp = phi - plo, cb = bhi - blo;
+    return cp > 0.02 ? clamp(1.0 - cb / cp, 0.0, 1.0) : 0.0;
+}
+// APERTURE TEST for a candidate offset: the 3x3 structure tensor of the reference block at this level.
+// An edge-like block (smaller eigenvalue far below the larger) constrains motion only across the edge;
+// a candidate whose offset lies mostly along the edge was matched on nothing. Returns true when the
+// offset is trustworthy: the block is two-dimensional, or the offset is mostly across the edge.
+const float EDGE_RATIO = 0.1;
+bool aperture_ok(vec2 uv, vec2 off) {
+    float jxx = 0.0, jyy = 0.0, jxy = 0.0;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            vec2 c = uv + vec2(float(i), float(j)) * LUMA_A_E_pt;
+            float gx = LUMA_D_E_tex(c + vec2(LUMA_A_E_pt.x, 0.0)).r - LUMA_D_E_tex(c - vec2(LUMA_A_E_pt.x, 0.0)).r;
+            float gy = LUMA_D_E_tex(c + vec2(0.0, LUMA_A_E_pt.y)).r - LUMA_D_E_tex(c - vec2(0.0, LUMA_A_E_pt.y)).r;
+            jxx += gx * gx; jyy += gy * gy; jxy += gx * gy;
+        }
+    }
+    float tr = jxx + jyy, det = jxx * jyy - jxy * jxy;
+    float disc = sqrt(max(0.25 * tr * tr - det, 0.0));
+    float lmax = 0.5 * tr + disc, lmin = 0.5 * tr - disc;
+    if (lmax <= 1.0e-8) return false;                       // flat: nothing to match on
+    if (lmin > EDGE_RATIO * lmax) return true;               // two-dimensional structure
+    // the edge's along direction is the eigenvector of lmin; measure the offset's share along it
+    vec2 e_across = normalize(abs(jxy) > 1.0e-8 ? vec2(lmax - jyy, jxy) : (jxx >= jyy ? vec2(1.0, 0.0) : vec2(0.0, 1.0)));
+    float len = length(off);
+    if (len <= 1.0e-8) return true;
+    float across = abs(dot(off / len, e_across));
+    return across > 0.5;                                     // mostly across the edge: constrained
+}
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     const float TIE_MARGIN = 1.0e-4;
     vec2 best_off = seed;
@@ -5547,6 +6034,38 @@ vec4 hook() {
     vec2 ref_a = refine_e(uv_b, base_off, sad_a);
     vec2 ref_b = refine_e(uv_b, base_off2, sad_b);
     vec2 ref_c = refine_e(uv_b, base_off3, sad_c);
+    // ZERO SEED (NFRAME-LIMITS.md section 9). The coarse level is point-sampled: on texture above its
+    // own Nyquist it matches a Moire that is right only at integer coarse-texel shifts (the diagonal
+    // speed ladder: (16,16) px/frame exact, (8,8) 61% locked to a texture-period copy, (4,4) 98%). This
+    // level resolves that texture and reaches +/-2 of its texels from any seed, so a fourth seed at
+    // ZERO finds the true match wherever the coarse seeds are Moire and the motion is within reach.
+    // Three guards, each measured: where the Moire evidence is high it competes like the other seeds
+    // (prior included); elsewhere it replaces the best coarse seed only when its SAD is
+    // ZERO_SEED_MARGIN lower, because with the prior in play a converged zero seed on an EDGE beat
+    // correct large motions (L3 -4.2 dB, real footage -0.4); a zero seed that ends on its own search
+    // boundary did not converge and is discounted; and one that slid along an edge-like block's edge
+    // (aperture_ok) was matched on nothing. Through the four-frame shader: (8,8) diagonal 21 px / 61%
+    // gross -> 0.03 px / 0%; the rotating textured disc's inner band 25% gross -> 14%; the 32-case
+    // ladder +0.23 dB mean (R3 +2.4, O6 +1.3, A5 +1.0; worst F1 -0.9); real footage unchanged.
+    // What it cannot do: a fractional shift of a perfectly periodic texture at this level, whose
+    // exact integer copy inside the search window is a better match than any integer neighbour of
+    // the truth (period locking, section 3).
+    // ZERO_SEED is OFF in this two-frame shader -- it costs +4% and the picture tier keeps its
+    // published numbers and time -- and ON in every generated tri/quad/quint, where the field is
+    // the product.
+    const int ZERO_SEED = 1;
+    const float ZERO_SEED_MARGIN = 0.1;
+    const float MOIRE_MIN = 0.25;
+    float sad_d = 1.0e30, moire = 0.0;
+    vec2 ref_d = vec2(0.0);
+    bool d_ok = false;
+    if (ZERO_SEED != 0) {
+        ref_d = refine_e(uv_b, vec2(0.0), sad_d);
+        vec2 ref_d_t = abs(ref_d / LUMA_A_E_pt);
+        d_ok = max(ref_d_t.x, ref_d_t.y) < float(REFINE_SEARCH_RADIUS) - 0.5;
+        moire = moire_s(uv_b);
+        d_ok = d_ok && aperture_ok(uv_b, ref_d);
+    }
     float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
     float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
     float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
@@ -5555,6 +6074,15 @@ vec4 hook() {
     float best_score = score_a;
     if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
     if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
+    float best_sad = (best_off == ref_a) ? sad_a : (best_off == ref_b) ? sad_b : sad_c;
+    if (d_ok) {
+        if (moire > MOIRE_MIN) {
+            float score_d = sad_d + SEED_MAG_LAMBDA * length(ref_d / LUMA_A_E_pt) + tl * length((ref_d - prev_e) / LUMA_A_E_pt);
+            if (score_d < best_score * (1.0 - TIE_MARGIN)) best_off = ref_d;
+        } else if (sad_d < best_sad * (1.0 - ZERO_SEED_MARGIN)) {
+            best_off = ref_d;
+        }
+    }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_DC_CACHE, coord, result);
     return result;

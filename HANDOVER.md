@@ -11,6 +11,19 @@ with a GPU that runs Vulkan, an afternoon, and the discipline described here
 can take one and bring back a number. That is the point of this document.
 Written 2026-09-04; run `git log --since=2026-09-04` to see what moved after.
 
+*What you do not receive, on purpose: the owner's memory files and scratch
+directories. They are one person's working notes and one assistant
+instance's accumulated context, and they are not part of this handover.
+Whether you are a person or an assistant, you build your own from the
+documents named below and from the runs you make: your own notes, your own
+scratch, your own record of what you confirmed. Do not ask for the owner's,
+do not copy them if you find them on a shared machine (a directory of
+handoff notes and memory mirrors exists outside this repository for the
+owner's own sessions), and do not import another assistant's memory as
+your own. The repository is the shared record; everything that matters is
+in it, and if something you need is not, that is a gap to report, not a
+reason to reach for someone else's notes.*
+
 ## 1. What this is, in one paragraph
 
 A patch to libplacebo (the GPU rendering library ffmpeg's `libplacebo`
@@ -81,8 +94,8 @@ produced without them are not comparable to the record and will be redone.
   new alternately after a warm-up; a first measurement of "+15%" this week
   was ordering and thermal, and vanished interleaved. A change that costs
   render time ships as its own variant file or behind a switch (see
-  `SUBPEL_REFINE` / `SUBPEL_SELFREF` in the bases), never as an overwrite of
-  the fast tier.
+  `SUBPEL_REFINE` / `SUBPEL_SELFREF` / `ZERO_SEED` in the bases), never as an
+  overwrite of the fast tier.
 - **The gate for a base change** is all three: the 32-case ladder (mean up,
   no loss beyond about a decibel), the real-footage segments (PSNR and SSIM
   not down), and interleaved time. Then every regenerated file is smoked.
@@ -110,7 +123,7 @@ patch says so at error level.
     ./add_human_reading.py --default 1 ../shaders/human-reading-quad.glsl   # the painted demonstration
 
 Bare names resolve in `shaders/`; paths work too. Each generated file flips
-the field-only switches on (`SUBPEL_REFINE`, `SUBPEL_SELFREF`) and appends
+the field-only switches on (`SUBPEL_REFINE`, `SUBPEL_SELFREF`, `ZERO_SEED`) and appends
 the human-reading tail: a `read_view` shader parameter, 0 = the picture,
 1/2/3 = velocity/acceleration/jerk painted for a person, 4/5/6 = the same
 fields raw for a machine.
@@ -170,13 +183,14 @@ way in the same run.
    check them with `scenecheck.sh`, run the family through them, and put
    the table in `TESTING.md`. Cheap, and it makes the harness see what the
    disc showed.
-2. **The zero seed's competition rule.** A fourth seed at zero in the 1/8
-   passes fixes the integer-1/8 diagonal exactly and the rotating disc's
-   inner band, but wins wrongly on edges when it competes with the
-   magnitude prior. Passes 1-5 and their gates are in section 9; the next
-   is an aperture gate (a structure tensor on the block) and it is the
-   register's oldest open lead. Whoever lands it should re-run the three
-   gates and time interleaved on a quiet GPU.
+2. **The zero seed shipped, as `ZERO_SEED`, with its aperture gate.** A
+   fourth seed at zero in the 1/8 passes, gated by Moire evidence, a cost
+   margin, a boundary discount and a structure-tensor aperture test (the
+   register's oldest open lead, now built): +0.23 dB ladder mean, footage
+   unchanged, +3.9% time, off in the two-frame bases and on in every
+   generated field shader. Six passes and their gates are in section 9.
+   What remains is items 3 and 4, and the disc's rim beyond the 1/8
+   level's 16 px reach.
 3. **The fractional-shift period lock.** A matching window smaller than the
    texture period cannot tell copies apart at a fractional shift of that
    level, and no scoring after the integer search can undo its choice. The
@@ -197,9 +211,31 @@ way in the same run.
    handful of clips. Any new platform's ladder and field calibrations are
    worth having; `tests/smoke.sh` first, then the ladder, then a table in
    `README.md`'s hardware section.
-8. **Ports.** The Metal port exists (`METALPORT.md`, `tests/gen_metal.py`);
-   CUDA, Direct3D and ROCm do not. The ladder and the field calibrations
-   are the acceptance numbers for any port.
+8. **Ports.** The Metal port exists (`METALPORT.md`, `tests/gen_metal.py`)
+   and is the only native port the owner intends to make; the ladder and
+   the field calibrations are the acceptance numbers for any other.
+9. **Compute passes inside the pipeline (under way).** The loader accepts
+   mpv's `//!COMPUTE bw bh` directive and none of the passes uses it. The
+   hot passes re-read the same texels hundreds of times per texel (the
+   1/8 refine: 25 candidates, four seeds, a 3x3 window); a workgroup that
+   loads its window into shared memory once should run them several
+   times faster on every host that runs the patch. The proof is the 1/8
+   refine converted alone: the ladder within 0.05 dB (the target tile is
+   read with a software bilinear, the shipped pass with the hardware's)
+   and interleaved time, before the coarse search, the half-res refine
+   and the propagation follow.
+10. **A scale-aware generator.** Every rule in the tracker is in pixels
+   and frames; a 4K, 72 fps render of the rotating disc showed the
+   consequences (`NFRAME-LIMITS.md` section 9, `WHAT-WE-BUILT.md`). A
+   generator that takes the frame size and rate and scales the pyramid
+   depth, the reach, the thresholds and the painting's floors, with a
+   frame stride for the field at high rates, is designed and unbuilt.
+11. **The second witness.** The GPU is the test base; a software Vulkan
+   implementation (Mesa lavapipe) is the cross-check that every ladder
+   number is arithmetic and not a driver: the 2026-08-31 ladders agreed to
+   0.05 dB. Today's shipped changes have not yet had that check; re-apply
+   the current hook patch there, rebuild, run the propagated line's ladder,
+   and record the agreement.
 
 ## 6. Bringing a result back
 

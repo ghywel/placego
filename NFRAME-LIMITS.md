@@ -1285,6 +1285,7 @@ segments:
 | 3 | + seeds scored at the V fit's vertex cost | same | 5% | -- | L1 -9.5, M2 -6.1 | -- |
 | 4 | wins on SAD alone (10% margin), boundary discount | same | 22% | +0.14 dB (R3 +2.2, O6 +1.3) | L3 -1.4, F1 -1.0 | 35.36 / 0.9687 |
 | 5 | pass 1 where the coarse level is Moire, pass 4 elsewhere | same | 14% | +0.15 dB (R3 +2.3, O6 +1.3, A5 +1.0) | L3 -1.4, F1 -1.0 | 35.32 / 0.9685 |
+| **6, shipped** | pass 5 + the aperture gate | same | 14% | **+0.23 dB** (R3 +2.4, O6 +1.3, A5 +1.0, A7 +0.8, L1 +0.6) | F1 -0.9, L3 -0.5 | 35.32 / 0.9685 |
 
 Two facts fall out. The fractional-1/8 diagonals ((4,4) 98%, (5.9,5.9) 85%)
 stay locked under every pass, because the zero seed's own +/-2 texel window
@@ -1299,5 +1300,17 @@ footage) lose whenever the zero seed is allowed to win with the prior, and
 still lose a little on cost alone: on one-dimensional structure a zero seed
 that slides along the edge is a legitimately lower cost -- the aperture
 problem, whose gate (a structure tensor on the block) is the register's
-oldest open lead and the next pass. Textured diagonal cases belong on the
-ladder and are queued.
+oldest open lead -- and pass 6 built it: a 3x3 structure tensor of the
+reference block at 1/8; where the smaller eigenvalue is below a tenth of
+the larger (an edge) and the zero seed's offset lies mostly along the edge,
+the seed slid and is discounted. It did what it was built for: L3's loss
+-1.4 -> -0.5, L2's -0.75 -> -0.1, everything else held, footage unchanged
+(35.32 / 0.9685 against 35.31 / 0.9686). Time +3.9% on the quad (5.34 ->
+5.55 s, interleaved on a quiet GPU). Shipped 2026-09-04 as `ZERO_SEED`:
+OFF in the seeded family's three two-frame bases (seeded, propagated,
+animation -- their time and numbers unchanged; the picture tier does not
+pay the 4%) and ON in every tri, quad and quint generated from them, where
+the field is the product; the stock and variational lines have a
+single-seed 1/8 pass and are untouched. The fractional-1/8 diagonal of a
+perfectly periodic texture stays a limit of the record. Textured diagonal
+cases belong on the ladder and are queued.

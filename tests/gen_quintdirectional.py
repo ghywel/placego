@@ -153,6 +153,10 @@ def main():
     n_self = text.count("const int SUBPEL_SELFREF = 0;")
     assert n_self == 2, f"expected 2 SUBPEL_SELFREF sites in base, found {n_self}"
     text = text.replace("const int SUBPEL_SELFREF = 0;", "const int SUBPEL_SELFREF = 1;")
+    # the zero seed rides with the field shaders too: on here, off in the picture bases (+4% time)
+    n_zs = text.count("const int ZERO_SEED = 0;")
+    assert n_zs in (0, 2), f"expected 0 or 2 ZERO_SEED sites in base, found {n_zs}"
+    text = text.replace("const int ZERO_SEED = 0;", "const int ZERO_SEED = 1;")
     blocks = T3.chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
     extra = len(hook_blocks) - 24
