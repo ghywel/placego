@@ -1044,7 +1044,7 @@ source material.
 export FFMPEG=~/build/ffmpeg/ffmpeg FFPROBE=~/build/ffmpeg/ffprobe
 ./screen.sh source.mkv                                   # find usable segments
 ./realbench.sh source.mkv linear linear      210 240 300
-./realbench.sh source.mkv gen1 ../bidirectional-interpolation.glsl 210 240 300
+./realbench.sh source.mkv gen1 ../shaders/bidirectional-interpolation.glsl 210 240 300
 ./realanalyze.py linear gen1
 ```
 

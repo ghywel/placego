@@ -933,7 +933,7 @@ Windows and macOS.
 For the full ground-truth ladder:
 
 ```bash
-./bench.sh all ../bidirectional-interpolation-variational.glsl mine
+./bench.sh all ../shaders/bidirectional-interpolation-variational.glsl mine
 ./analyze.py --variants
 ```
 

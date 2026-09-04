@@ -361,7 +361,7 @@ plus (mode 1) the misfit map, at ~12% more cost.
 ## Reproducing
 
     ./tests/gen_quaddirectional.py          # regenerate from the base
-    # ladder:      OUTROOT=... ./tests/bench.sh <case> quaddirectional-interpolation.glsl quad
+    # ladder:      OUTROOT=... ./tests/bench.sh <case> shaders/quaddirectional-interpolation.glsl quad
     # accel field: TRI_DIAG=2 via sed, render at fps=24, read with accelcheck.py
     # jerk field:  TRI_DIAG=5, FIELD=jerk accelcheck.py  (same readback, jerk truth)
     # confidence:  QUAD_MODE=1 + TRI_DIAG=6 (linear luma, px against RESID_DIAG_FS)

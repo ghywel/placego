@@ -9,7 +9,7 @@
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export PATH="/opt/homebrew/bin:$PATH"
-SRC="$HERE/../quaddirectional-interpolation.glsl"
+SRC="$HERE/../shaders/quaddirectional-interpolation.glsl"
 GEN="$HERE/../tests/gen_metal.py"
 
 python3 "$GEN" "$SRC" "$HERE/generated" --compile

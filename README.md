@@ -267,11 +267,13 @@ number in the other documents was produced by.
 - **Build scripts.** `build-windows.ps1`, `build-windows.sh` and
   `build-macos.sh` build a patched ffmpeg end to end;
   [BUILDANDUSAGE.md](BUILDANDUSAGE.md) explains them.
-- **Shaders.** The two-, three- and four-frame interpolators, three
+- **Shaders** (in [shaders/](shaders/)). The two-, three- and four-frame interpolators, three
   human-reading views that paint what the estimator is thinking over
   the picture, and two small examples that exist to demonstrate the hook.
   A `-seeded` variant of each costs about a tenth more render time and
-  is up on most of the ladder; [SHADERS.md](SHADERS.md) says which to use
+  is up on most of the ladder, and a `-propagated` one on top of it costs
+  a further 1-4% and is up on every real segment measured and 2 dB on
+  the ladder; [SHADERS.md](SHADERS.md) says which to use
   and why;
   [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) and
   [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) are the records of the

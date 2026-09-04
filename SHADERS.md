@@ -1,15 +1,21 @@
 # Shaders
 
-Twelve `.hook`-format GLSL shaders built on
+Seventeen `.hook`-format GLSL shaders built on
 [frame-mix-hook.patch](frame-mix-hook.patch)'s `PL_HOOK_FRAME_MIX` stage --
 see [README.md](README.md) for what that patch adds and why.
 
-They divide into three groups: **seven interpolators** (one recommended for
-viewing, one cheap baseline, a seeded variant of that baseline with the
-three- and four-frame shaders generated from each, and two superseded),
+They divide into three groups: **twelve interpolators** (one recommended for
+viewing, one cheap baseline, two variants of that baseline -- seeded, and
+seeded plus propagation -- each with the three- and four-frame shaders
+generated from it, and two superseded),
 **three human-reading views** generated from the four-frame shader that
 paint what the estimator is thinking over the picture, and **two small examples**
 that exist to demonstrate the hook rather than to interpolate anything.
+
+All of them live in [shaders/](shaders/). The generators and the test scripts
+resolve a bare shader name there, so every command quoted in this file works
+unchanged from `scripts/` or `scripts/tests/`; a name with a directory in it
+is used as given.
 
 For the tools that measure all this, start at [tests/TOOLS.md](tests/TOOLS.md).
 For how any of this was arrived at, see [METHODOLOGY.md](METHODOLOGY.md); for
@@ -28,8 +34,15 @@ variational build does not fit your hardware budget. It is roughly a fifth
 of the passes and visibly worse -- on real footage it produces the edge
 fraying and non-rigid warping that the variational cascade exists to fix.
 
-If the fast tier is what you need and a 10% render-time cost is inside
-your budget, use `bidirectional-interpolation-seeded.glsl` instead of the
+If the fast tier is what you need and a 13% render-time cost is inside
+your budget, use `bidirectional-interpolation-propagated.glsl` (the seeded
+base plus eight 1/8-level passes that let flat texels inherit their
+textured neighbours' motion, checked against the two frames, and blend
+where a flow's own neighbourhood contradicts it): above the seeded base on
+every real segment measured (+0.5 to +4.1 dB, six segments) and on 21 of
+32 ladder cases by +2.1 dB mean, with one case 1.4 dB down and one 1.0 dB
+down (a 40 px/frame translation). If a 10%
+cost is the limit, use `bidirectional-interpolation-seeded.glsl` instead of the
 base, and the `-seeded` tri and quad generated from it for the field. It
 is the base with the two coarsest levels choosing among three candidate
 motions -- from zero, from the neighbouring ring, and from the previous
@@ -79,7 +92,12 @@ bidirectional-interpolation.glsl            24 passes   the base (N = 2)
   |     |                                        at 1/8 res (VARIANT: +10%
   |     |                                        time, up on 25 of 32 cases)
   |     +-- tri-/quaddirectional-…-seeded   48/68 generated from it with the
-  |                                              generators' base argument
+  |     |                                        generators' base argument
+  |     +-- -propagated.glsl                32   seeded + flow propagation at
+  |           |                                  1/8 res behind a two-frame
+  |           |                                  check (VARIANT: +1-4% over
+  |           |                                  seeded, +2.1 dB on the ladder)
+  |           +-- tri-/quad…-propagated    64/92 generated from it
   |
   +-- tridirectional-interpolation.glsl     48   N = 3: + acceleration field
   |                                              + quadratic placement
@@ -142,7 +160,56 @@ real loss (L7, -0.5) gone. It replaced that precursor (`-twoseed`, same
 day) at the same cost; NFRAME-LIMITS.md section 8 has all three ladders
 -- two seeds, three ungated, three gated -- and the diagnosis.
 
+### `bidirectional-interpolation-propagated.glsl` -- the seeded base plus flow propagation, 32 passes
+
+The seeded base byte for byte, plus eight passes at the 1/8 level. Why:
+on flat-shaded line art the fast tier's loss against the variational build
+is on the edges, not in the fills (NFRAME-LIMITS.md section 8) -- an edge
+constrains one component of motion and the block matcher wanders along it.
+Three Jacobi passes per direction let each texel take the contrast-weighted
+mean of its 5x5 neighbours' flow (neighbours vote by their own local
+contrast; a textured texel keeps its own), reaching 16 px per pass; then
+one check pass per direction scores the propagated flow, the refine's own
+and zero on the two frames' 1/8-level luma. A textured texel keeps the
+propagated flow where it strictly wins; where instead the consensus
+contradicts the refine's flow by more than 1.5 texels, or half the flow's
+own length if that is larger, it takes zero -- a blend -- because a flow
+its own neighbourhood disagrees with is an alias suspect, and an alias
+scores the same SAD as the truth (this is what lifts the lattice-textured
+cases by 4-12 dB; the relative term keeps a fast translation from being
+mistaken for one); otherwise the three-way rule within 10%. A flat texel keeps the propagated flow only where it is
+strictly best, else zero. Without the check a static flat background
+beside a moving object inherits the object's flow and the clean
+translations lose 8-22 dB; with it they hold. Cost: +1-4% over the seeded
+base, about +13% over stock. Against the seeded base: +2.14 dB ladder
+mean, 21 cases up, three down (L7 -1.4, L4 -1.0, L1 -0.2); real footage
+up on all six segments measured (tables below), above the variational
+build on one of them and within 1.5 dB of it on the flat-shaded anime. For the field instrument
+the quad's A7 velocity field is 26.9% gross on the mid-speed frames
+(the seeded quad 37.5%, stock 39-75%) with the acceleration field at 100%
+coverage. The tri and quad are generated with the base argument (the
+generators carry the extra passes into every pair's chain):
+
+    ./tests/gen_tridirectional.py  tridirectional-interpolation-propagated.glsl  bidirectional-interpolation-propagated.glsl
+    ./tests/gen_quaddirectional.py quaddirectional-interpolation-propagated.glsl bidirectional-interpolation-propagated.glsl
+
+The knobs, for the record: without the check the propagation reaches
+41.6 dB on the anime segment but drags static backgrounds; blending
+wherever a flow cannot prove itself against zero beats the variational on
+both anime segments but collapses every smooth case; a fixed disagreement
+threshold of 0.75 texels reaches 43.1 dB on the anime (above the
+variational) at the cost of 2 dB on the plain translations and 0.6 on live
+action; a fixed 1.5 gives 0.1-0.4 dB more on four lattice cases and 0.8
+less on L4, 0.2-0.3 less on live action; the check without the
+disagreement rule at all is 1.5 dB worse on the ladder mean and 2 on the
+anime. NFRAME-LIMITS.md section 8 has all of it.
+
 ### `bidirectional-interpolation-variational.glsl` -- recommended, 115 passes
+
+As of 2026-09-03 the committed file differs from a fresh regeneration only by
+an 83-line comment block the base gained on 2026-08-31 (code identical, which
+is what `tests/smoke.sh` step 3 reports); regenerate it when it is next
+touched for a real change.
 
 A strict superset of the base: every one of its 23 passes, plus 80
 variational-refinement passes and 12 vector-median passes distributed across
@@ -263,20 +330,29 @@ motion-compensated frame.
 | `-diffuse-dual` | 30.98 | 0.9503 |
 | **`-variational`** | **36.31** | **0.9750** |
 | `-seeded` (2026-09-03; same run: base 34.29 / 0.9647, `-variational` 36.27 / 0.9741) | 34.74 | 0.9663 |
+| `-propagated` (2026-09-04, same segments) | 35.28 | 0.9696 |
 | quad stock / quad `-seeded` (same run) | 34.22 / 34.67 | 0.9635 / 0.9651 |
+| quad `-propagated` (2026-09-04, same segments) | 35.30 | 0.9685 |
 
 **Five more real segments** (2026-09-03, RX 6600; 4-second segments sampled
 from the owner's library, screened for full per-frame motion with
 `screen.sh`, one 72-frame decimate-and-reconstruct window each; PSNR dB /
 SSIM of the synthesised frames):
 
-| segment | linear | base | `-seeded` | `-variational` | quad | quad `-seeded` |
-|---|---|---|---|---|---|---|
-| anime, 1080p24, moving shot | 43.03 / 0.9825 | 46.50 / 0.9887 | 46.67 / 0.9889 | **46.83 / 0.9897** | 45.76 / 0.9870 | 45.94 / 0.9871 |
-| anime, 1080p24, flat-shaded characters | 35.92 / 0.9739 | 36.38 / 0.9729 | 36.89 / 0.9742 | **42.48 / 0.9817** | 36.12 / 0.9713 | 36.62 / 0.9727 |
-| live action film, 1080p24 | 42.82 / 0.9937 | 45.25 / 0.9951 | 45.66 / 0.9953 | **47.07 / 0.9960** | 45.00 / 0.9946 | 45.43 / 0.9948 |
-| live action film, 1080p24, fast | 28.16 / 0.8617 | 31.91 / 0.9417 | 32.58 / 0.9461 | **34.99 / 0.9639** | 31.74 / 0.9386 | 32.42 / 0.9430 |
-| live action show, 1080p30 | 29.01 / 0.9260 | 31.55 / 0.9552 | 32.12 / 0.9580 | **34.61 / 0.9714** | 31.47 / 0.9545 | 32.05 / 0.9573 |
+| segment | linear | base | `-seeded` | `-propagated` | `-variational` | quad | quad `-seeded` | quad `-propagated` |
+|---|---|---|---|---|---|---|---|---|
+| anime, 1080p24, moving shot | 43.03 / 0.9825 | 46.50 / 0.9887 | 46.67 / 0.9889 | **47.21 / 0.9897** | 46.83 / 0.9897 | 45.76 / 0.9870 | 45.94 / 0.9871 | 46.47 / 0.9879 |
+| anime, 1080p24, flat-shaded characters | 35.92 / 0.9739 | 36.38 / 0.9729 | 36.89 / 0.9742 | 40.98 / 0.9807 | **42.48 / 0.9817** | 36.12 / 0.9713 | 36.62 / 0.9727 | 40.58 / 0.9791 |
+| live action film, 1080p24 | 42.82 / 0.9937 | 45.25 / 0.9951 | 45.66 / 0.9953 | 46.58 / 0.9957 | **47.07 / 0.9960** | 45.00 / 0.9946 | 45.43 / 0.9948 | 46.42 / 0.9952 |
+| live action film, 1080p24, fast | 28.16 / 0.8617 | 31.91 / 0.9417 | 32.58 / 0.9461 | 33.39 / 0.9533 | **34.99 / 0.9639** | 31.74 / 0.9386 | 32.42 / 0.9430 | 33.30 / 0.9502 |
+| live action show, 1080p30 | 29.01 / 0.9260 | 31.55 / 0.9552 | 32.12 / 0.9580 | 33.30 / 0.9646 | **34.61 / 0.9714** | 31.47 / 0.9545 | 32.05 / 0.9573 | 33.22 / 0.9638 |
+
+The flat-shaded anime segment contains one cut inside its window; excluding
+that frame lifts every arm on it by about 0.7 dB and changes no ordering.
+
+The propagated quad matches the propagated two-frame shader on every
+segment (it used to trail the two-frame base by 0.2-0.3 dB), so the field
+instrument no longer pays for its window on real footage.
 
 The ordering the one clip above gave holds on all five: `-seeded` above the
 base on every segment (+0.17 to +0.67 dB, SSIM up on each), the seeded quad
@@ -292,32 +368,32 @@ ground truth was pixel-quantised until then and suppressed absolute scores
 substantially. See `tests/TESTING.md`, "The ladder reset". Windows figures;
 the WSL/lavapipe run agrees to within 0.05 dB everywhere.
 
-| case | hold | linear | base | coarse | dual | variational | seeded |
-|---|---|---|---|---|---|---|---|
-| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
-| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 | 75.02 |
-| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** | 62.32 |
-| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** | 42.62 |
-| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** | 31.50 |
-| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 | 62.27 |
-| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 | 65.44 |
-| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 | 25.29 |
-| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** | 46.13 |
-| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** | 41.58 |
-| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** | 49.84 |
-| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 | 59.77 |
-| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 | 21.91 |
-| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 | 60.58 |
-| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** | 47.93 |
-| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** | 44.88 |
-| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** | 39.91 |
-| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** | 51.74 |
-| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** | 40.58 |
-| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** | 38.26 |
-| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** | 38.42 |
+| case | hold | linear | base | coarse | dual | variational | seeded | propagated |
+|---|---|---|---|---|---|---|---|---|
+| L0_static | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
+| L1_trans_8px | 32.78 | 35.44 | 61.26 | 61.10 | **76.84** | 54.24 | 75.02 | 74.80 |
+| L2_trans_16px | 29.59 | 32.16 | 41.78 | 39.04 | 48.68 | **50.15** | 62.32 | 62.30 |
+| L3_trans_23px | 27.98 | 30.53 | 40.49 | 32.62 | 38.02 | **41.60** | 42.62 | 44.40 |
+| L4_trans_40px | 25.48 | 27.96 | 31.57 | 27.39 | 27.39 | **33.96** | 31.50 | 30.49 |
+| L5_lowcontrast | 55.57 | 57.47 | **62.27** | 62.27 | 62.27 | 60.54 | 62.27 | 62.27 |
+| L6_flat_large | 30.81 | 33.50 | 55.52 | 45.71 | **56.03** | 52.21 | 65.44 | 65.45 |
+| L7_textured_large | 20.82 | 21.04 | **25.30** | 22.11 | 22.16 | 23.41 | 25.29 | 23.90 |
+| L8_diagonal | 27.83 | 30.25 | 40.09 | 33.50 | 35.65 | **45.77** | 46.13 | 47.53 |
+| L9_occlusion | 29.71 | 32.21 | 39.83 | 36.55 | 40.84 | **44.39** | 41.58 | 42.13 |
+| M1_noise_large | 24.19 | 25.51 | 46.93 | 43.61 | 46.90 | **48.04** | 49.84 | 49.91 |
+| M2_period40 | 23.58 | 27.29 | 53.64 | 53.64 | **60.04** | 54.40 | 59.77 | 59.98 |
+| M3_period16_trap | 20.72 | 21.01 | 21.90 | 23.48 | **23.49** | 22.06 | 21.91 | 21.91 |
+| M4_belowgate | 62.06 | 60.58 | 60.58 | 60.58 | 60.58 | 60.59 | 60.58 | 60.58 |
+| A1_accel_8mean | 33.64 | 36.23 | 46.81 | 44.51 | 49.46 | **51.24** | 47.93 | 48.19 |
+| A2_accel_16mean | 30.25 | 32.68 | 42.54 | 37.85 | 41.11 | **45.16** | 44.88 | 45.24 |
+| A3_accel_23mean | 28.59 | 31.00 | 38.03 | 34.12 | 37.17 | **41.69** | 39.91 | 39.95 |
+| F1_fourier_edge | 27.33 | 30.31 | 46.91 | 42.78 | 46.12 | **47.26** | 51.74 | 54.02 |
+| F2_fourier_accel | 28.07 | 31.01 | 39.12 | 32.55 | 33.41 | **43.76** | 40.58 | 43.31 |
+| R1_rot_const | 29.53 | 32.42 | 37.30 | 33.40 | 34.23 | **41.02** | 38.26 | 40.70 |
+| R2_rot_accel | 30.35 | 33.20 | 37.58 | 34.13 | 34.72 | **41.16** | 38.42 | 40.87 |
 
-The `seeded` column was measured 2026-09-03 on the RX 6600 against the same
-ladder; its stock-base column that day agrees with the `base` column above
+The `seeded` and `propagated` columns were measured 2026-09-03 on the RX 6600
+against the same ladder; its stock-base column that day agrees with the `base` column above
 to within 0.04 dB on every case, so the columns are comparable. Its file
 header and NFRAME-LIMITS.md section 8 carry the full account.
 
@@ -632,6 +708,7 @@ the command in README.md's Usage section), on a low-end discrete GPU:
 | `-variational` | 1080p live action | ~77 fps |
 | base (older measurement) | 1080p | ~138 fps |
 | `-seeded` base / quad (2026-09-03, RX 6600, `-f null`) | 720p synthetic O5, 24->60 | stock 2.69 / 4.11 s per 60 frames -> 2.97 / 4.53 s (+10% / +10%) |
+| `-propagated` base (2026-09-04, same method) | 720p synthetic O5, 24->60 | seeded 3.12-3.26 s -> 3.15-3.39 s (+1-4%; about +13% over stock) |
 
 The variational figures predate the coarse vector-median passes, which were
 measured under lavapipe at +8.6% (720p) and +6.1% (1080p) and confirmed on

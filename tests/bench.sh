@@ -26,7 +26,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 FFMPEG="${FFMPEG:-ffmpeg}"
 OUTROOT="${OUTROOT:-${TMPDIR:-/tmp}/interp-bench}"
-SHADER_DEFAULT="$HERE/../bidirectional-interpolation.glsl"
+SHADER_DEFAULT="$HERE/../shaders/bidirectional-interpolation.glsl"
 
 run_case() {
   local CASE="$1" SHADER="$2" LABEL="$3"

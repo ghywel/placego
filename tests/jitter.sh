@@ -24,7 +24,7 @@ WORK="${WORK:-${TMPDIR:-/tmp}/interp-jitter}"
 SRC="${1:?usage: jitter.sh <source> [start-seconds] [duration-seconds] [shader]}"
 START="${2:-0}"
 DUR="${3:-}"
-SHADER="${4:-$HERE/../bidirectional-interpolation-variational.glsl}"
+SHADER="${4:-$HERE/../shaders/bidirectional-interpolation-variational.glsl}"
 
 [ -f "$SRC" ] || { echo "no such file: $SRC" >&2; exit 1; }
 [ -f "$SHADER" ] || { echo "no such shader: $SHADER" >&2; exit 1; }

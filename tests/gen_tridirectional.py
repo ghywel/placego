@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the TRIDIRECTIONAL interpolation shader from the bidirectional base.
 
-    ./gen_tridirectional.py [output.glsl [base.glsl]]     (default: ../tridirectional-interpolation.glsl)
+    ./gen_tridirectional.py [output.glsl [base.glsl]]     (default: ../shaders/tridirectional-interpolation.glsl)
 
 THE HYPOTHESIS THIS BUILDS. A 2-frame shader can only encode constant
 velocity: something was at A, it is at B, and an inserted frame places it on
@@ -83,10 +83,19 @@ HERE = pathlib.Path(__file__).resolve().parent
 # a second positional argument names a VARIANT base (e.g. a two-descent
 # bidirectional-interpolation-<variant>.glsl), so tri/quad variants can be
 # generated beside the stock files without overwriting them.
-SRC = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else \
-    HERE.parent / "bidirectional-interpolation.glsl"
-DST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else \
-    HERE.parent / "tridirectional-interpolation.glsl"
+SHADERS = HERE.parent / "shaders"
+
+
+def shader_arg(s):
+    """A bare file name means a shader in shaders/; a path with a directory is used as given."""
+    p = pathlib.Path(s)
+    return p if p.parent != pathlib.Path(".") else SHADERS / p
+
+
+SRC = shader_arg(sys.argv[2]) if len(sys.argv) > 2 else \
+    SHADERS / "bidirectional-interpolation.glsl"
+DST = shader_arg(sys.argv[1]) if len(sys.argv) > 1 else \
+    SHADERS / "tridirectional-interpolation.glsl"
 
 LEVELS = [("S", 16), ("E", 8), ("Q", 4), ("H", 2)]
 
@@ -211,7 +220,12 @@ def main():
 
     blocks = chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
-    assert len(hook_blocks) == 24, f"expected 24 base passes, found {len(hook_blocks)}"
+    # A variant base may carry EXTRA passes inside a level's flow chain (e.g.
+    # propagation passes between the 1/8-level refine and the 1/4 level, all
+    # saving FLOW_E_AB / FLOW_E_AB_<suffix>). They are carried into every
+    # generated chain in file order; only the count changes.
+    extra = len(hook_blocks) - 24
+    assert extra >= 0 and extra % 2 == 0, f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     out = []
 
@@ -220,6 +234,15 @@ def main():
                  (desc_frag is None or desc_frag in (block_id(b)[1] or ""))]
         assert len(cands) == 1, f"lookup {save}/{desc_frag}: {len(cands)} matches"
         return cands[0]
+
+    def find_all(save):
+        """Every block of a level's flow chain, in file order: the pass saving
+        `save` itself plus any saving `save_<suffix>` (a variant's extra passes)."""
+        cands = [b for b in blocks if block_id(b)[0] == save or
+                 (block_id(b)[0] or "").startswith(save + "_")]
+        assert cands, f"lookup {save}*: no matches"
+        return cands
+    find.all = find_all   # carried alongside find so the chain builders need no new argument
 
     # -- per-block transforms, applied as we stream the file through --------
     for b in blocks:
@@ -327,7 +350,7 @@ vec4 hook() {
     hooks = result.count("//!HOOK")
     braces = result.count("{") - result.count("}")
     parens = result.count("(") - result.count(")")
-    assert hooks == 48, f"expected 48 passes, got {hooks}"
+    assert hooks == 48 + 2 * extra, f"expected {48 + 2 * extra} passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     header = HEADER
     if SRC.name != "bidirectional-interpolation.glsl":
@@ -336,7 +359,7 @@ vec4 hook() {
                                 f"//   ./tests/gen_tridirectional.py {DST.name} {SRC.name}\n")
     DST.write_text(header + result, newline="\n")
     print(f"  {DST.name}: {hooks} passes "
-          f"(24 base + 4 slot-2 lumas + 1 cut stat + 12 slot1<->slot2 flow "
+          f"({24 + extra} base + 4 slot-2 lumas + 1 cut stat + {12 + extra} slot1<->slot2 flow "
           f"+ 3 full-res lumas + 4 full-res refines), braces/parens balanced  OK")
 
 
@@ -361,8 +384,11 @@ def bc_chain(blocks, find):
 // and anchor roles for a given output frame.
 // ====================================================================="""]
     for lvl, _ in LEVELS:
-        b = find(f"FLOW_{lvl}_AB", None if lvl != "H" else "refine")
-        parts.append(shift_slot(b, lvl, "BC"))
+        if lvl == "H":
+            parts.append(shift_slot(find("FLOW_H_AB", "refine"), "H", "BC"))
+        else:
+            for b in find.all(f"FLOW_{lvl}_AB"):
+                parts.append(shift_slot(b, lvl, "BC"))
     for pn in ("pass 1", "pass 2"):
         b = find("FLOW_H_AB", pn)
         parts.append(shift_slot(b, "H", "BC"))
@@ -380,8 +406,11 @@ def cb_chain(blocks, find):
 // acceleration -- which is how constant-velocity content was being warped.
 // ====================================================================="""]
     for lvl, _ in LEVELS:
-        b = find(f"FLOW_{lvl}_BA", None if lvl != "H" else "refine")
-        parts.append(shift_slot(b, lvl, "CB"))
+        if lvl == "H":
+            parts.append(shift_slot(find("FLOW_H_BA", "refine"), "H", "CB"))
+        else:
+            for b in find.all(f"FLOW_{lvl}_BA"):
+                parts.append(shift_slot(b, lvl, "CB"))
     for pn in ("pass 1", "pass 2"):
         b = find("FLOW_H_BA", pn)
         parts.append(shift_slot(b, "H", "CB"))

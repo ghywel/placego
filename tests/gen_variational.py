@@ -39,7 +39,16 @@ import tempfile
 # ran on exactly one host -- which the cross-platform smoke test caught the
 # moment it was run under MSYS2.
 HERE = pathlib.Path(__file__).resolve().parent
-SRC = str(HERE.parent / "bidirectional-interpolation.glsl")
+SHADERS = HERE.parent / "shaders"
+
+
+def shader_arg(s):
+    """A bare file name means a shader in shaders/; a path with a directory is used as given."""
+    p = pathlib.Path(s)
+    return p if p.parent != pathlib.Path(".") else SHADERS / p
+
+
+SRC = str(SHADERS / "bidirectional-interpolation.glsl")
 
 # level key -> (flow suffix, luma A, luma B, WIDTH/HEIGHT divisor, anchor)
 LEVELS = [
@@ -295,7 +304,7 @@ if __name__ == "__main__":
     sigma = sys.argv[3] if len(sys.argv) > 3 else "0.08"
     # Defaults to a scratch file rather than the shipped shader: regenerating
     # production should be a deliberate act with the path spelled out.
-    out = sys.argv[4] if len(sys.argv) > 4 else str(
+    out = str(shader_arg(sys.argv[4])) if len(sys.argv) > 4 else str(
         pathlib.Path(tempfile.gettempdir()) / "casc.glsl")
     sigma_flow = sys.argv[5] if len(sys.argv) > 5 else "0"
     medspec = sys.argv[6] if len(sys.argv) > 6 else "2,2,2,0"

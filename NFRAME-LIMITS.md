@@ -984,3 +984,115 @@ dB. The table is in SHADERS.md. The 6.1 dB case is flat-shaded anime, the
 flat-content weakness of section 8 in numbers on real footage: block
 matching there is barely above `linear` (which beats it on SSIM), and the
 variational cascade's coherence is worth six decibels.
+
+*The flat-content weakness, diagnosed on real footage (2026-09-03 night).*
+On the flat-shaded anime segment the loss is not where the name says. Split
+by local texture (mean gradient over 15x15 of the truth frame, quartiles;
+per-frame dB, the segment's one cut frame excluded), every arm including
+`linear` sits at 46-47 dB on the flattest quartile and the base only trails
+by 0.5-2 dB on the middle two; the whole gap is in the most textured
+quartile -- the line art -- where the base scores 29.6, the seeded 30.1 and
+the variational 36.0 dB. Line art is edges with flat fills either side, and
+an edge constrains one component of motion (the aperture problem); the
+block matcher's coarse descent wanders on it, and only coherence from
+corners and junctions along the edge -- what the variational cascade adds
+-- fixes it. The segment's global motion is a slow pan of about 4 px per
+interval (phase correlation), so reach is not the issue.
+
+*A cheap coherence step.* Three Jacobi passes per direction at the 1/8
+level, inserted after that level's refine: each texel takes the
+contrast-weighted mean of its 5x5 neighbours' flow (a neighbour votes in
+proportion to its own 5x5 luma range), mixed with its own flow by 8 x its
+contrast squared. Six tiny passes. On the seeded base, real footage: the
+anime segment 36.89 -> 41.60 dB (variational 42.48), a fast live-action
+film segment 32.58 -> 33.96 (34.99), the 30 fps show 32.12 -> 33.65
+(34.61) -- more than half the gap to the 115-pass build closed. Ladder
+subset: A5 +10.1, A7 +6.9, O6 +10.3, R3 +3.1 over the seeded (the
+consensus overrules the lattice aliases), but L1 -22, L2 -8, L6 -9: the
+static flat background next to a moving square inherits its flow, because
+nothing in one image tells a flat texel which side of an edge it belongs
+to. Variants tried the same night: a luma-similarity (bilateral) kernel
+suppresses votes inside textures and gives the gains back while only half
+restoring the translations (wrong knob); a check against zero flow alone
+reverts the wrong texels (the far band is harmless, the near band lies
+inside the block window where SAD sides with the object); requiring every
+texel to hold evidence proves the far band is harmless. What works is a
+three-way SAD check per texel -- propagated, raw, zero -- with texture
+keeping the consensus within 10% of the best and flat texels needing
+strict evidence: L1/L2/L6 return to the seeded's figures, the real-footage
+gains keep 45-70% of the unchecked version's (anime +2.0, film +1.1, show
++1.1 over the seeded), and the textured cases fall back to the seeded's
+level, because the raw flow is by construction the 1/8-level SAD minimum
+and a SAD check re-trusts the landscape that misled it. So two prizes sit
+on the same mechanism: the checked version is a candidate for the fast tier
+now; the unchecked version's +10 dB on lattice textures waits for a way to
+arbitrate the near-edge band that does not use the 1/8-level SAD -- the
+occlusion-boundary problem, which is the variational build's fine-level
+data term in disguise.
+
+*Shipped.* The checked version is `bidirectional-interpolation-propagated.glsl`
+with its generated tri and quad (the generators now carry a base's extra
+per-level passes into every pair's chain). Full ladder against the seeded
+base: +0.66 dB mean over 32 cases, 22 up by more than 0.1, three down (L7
+-1.3, L1 -0.2, L4 -0.15); largest gains F1/F2 +2.3, L3/O5 +2.0, A4 +1.9,
+R2 +1.7, A7 +1.6, A6/L8 +1.5, R1 +1.4. Render time on O5 at 24->60: seeded
+3.19 s, propagated 3.28 s per 60 frames (+3%; the stock 2.9-3.2 s across
+the night's runs). Real footage, all six segments up: the avengers clip
+34.74 -> 35.24 dB / 0.9663 -> 0.9694; the library's anime 46.67 -> 47.09
+(the variational's 46.83) and 36.89 -> 38.91, film 45.66 -> 46.41 and
+32.58 -> 33.42, the 30 fps show 32.12 -> 33.19. A sibling that keeps the
+raw flow whenever it beats zero by 10% and prefers the propagated one when
+it also beats the raw (prop8 in the scratch record) scores the same ladder
+mean (+0.67) with one loss instead of three but is 0.1-0.3 dB behind on
+every real segment and costs +8% instead of +3%; the shipped one is the
+one that wins where the fast tier is used. The prove-it-or-zero sibling's
+numbers, for the record: A4 54.5, A5 53.5, A6 47.1, O5 40.0, O6 47.3,
+R3 37.8 (the seeded: 49.4, 40.2, 39.5, 34.7, 35.1, 30.0) and both anime
+segments above the variational (48.25 and 44.20) -- against L2 34.7, L3
+33.6, L6 36.2, M1 29.4, M2 28.2 and live action below the stock base.
+
+*Replaced the same night.* A disagreement rule on top of the check --
+a textured texel whose consensus contradicts the refine's flow by more than
+1.5 texels of the 1/8 level, with neither proven, takes zero (a blend)
+instead of trusting the refine -- lifts the lattice-textured cases by 4-12
+dB (O6 +12.2, A5 +11.2, A6 +9.8, O5 +7.2, A7 +7.2, A4 +4.7, R3 +4.1 over
+the seeded base) with the translations intact, because it keys on the one
+signal an alias cannot fake: its own neighbourhood. Against the seeded
+base the shipped file is now +2.14 dB ladder mean, 21 up, four down (L4
+-1.8, L7 -1.4, A3 -0.2, L1 -0.2); render time 3.15 against 3.12 s; real
+footage the avengers clip 35.15 dB / 0.9690, the library 47.27, 40.99,
+46.61, 33.21 and 33.02 dB, all above the seeded base, the flat-shaded
+anime up 4.1 dB and within 1.5 of the variational. The threshold is the
+knob between applications: at 0.75 texels the anime reaches 43.1 dB, above
+the variational, and O6/R3 gain another 0.1/3.2, but L3/L4/L7/L8 lose 2 dB
+and live action 0.6; without the rule at all (the file shipped an hour
+earlier) live action is 0.1-0.2 dB better on three segments and L4 1.6 dB
+better, and the ladder mean 1.5 dB worse. 1.5 texels was chosen as the
+setting that keeps live action within 0.2 dB of the best while taking most
+of the lattice prize. The near-edge band and the true occlusion-boundary
+problem remain open; both prizes above are now in the shipped file except
+the last 2 dB on the flat-shaded anime.
+
+*And once more, for the fast translations.* With a fixed 1.5-texel
+threshold a 40 px/frame translation (L4) lost 1.8 dB: near the object's
+edges the consensus is diluted by background votes, disagrees with the
+refine's (correct) flow by more than 1.5 texels, and the texel blends.
+Scaling the threshold with the flow -- max(1.5 texels, half the flow's own
+length) -- keeps that: L4 -1.0 instead of -1.8, A2/A3 +0.2/+0.3, live
+action +0.1 to +0.3 on every segment (the avengers clip 35.28, film 33.39,
+the show 33.30), against 0.1-0.4 dB less on four lattice cases (O6 46.95,
+A7 46.94) and the same ladder mean, +2.14. That is the shipped file.
+
+*The field instrument, its first customer.* The quad generated from the
+shipped file, on A7's mid-speed frames with the same instrument as before:
+velocity field 26.9% gross (the seeded quad 37.5%, stock 39-75%; the
+target set on 2026-09-03 was 35% and this is the first build under it),
+acceleration field 33.9% gross (57.6%) at 100% coverage (66.7%; stock
+14-23%). The disagreement blend is what does it: on a lattice texture the
+texels whose neighbourhood contradicts their alias no longer carry it into
+the acceleration stencil.
+
+On real footage the propagated quad now matches the propagated two-frame
+shader on every segment (the avengers clip 35.30 against 35.28; the
+library 46.47, 40.58, 46.42, 33.30, 33.22), where the stock and seeded
+quads trailed their two-frame bases by 0.2-0.3 dB.

@@ -245,7 +245,7 @@ fi
 # a POSIX path with conversion disabled cannot be opened by a native binary.
 # A relative path is the only form that works, and it behaves identically on
 # Linux.
-if ! ( cd "$REPO/scripts" && "$FFMPEG" -y -hide_banner -loglevel error \
+if ! ( cd "$REPO/scripts/shaders" && "$FFMPEG" -y -hide_banner -loglevel error \
     -init_hw_device vulkan=vk -filter_hw_device vk \
     -f lavfi -i "$GRAPH" \
     -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation.glsl,format=yuv420p" \
@@ -258,13 +258,13 @@ N=$("$FFPROBE" -v error -count_frames -select_streams v:0 \
     -show_entries stream=nb_read_frames -of default=noprint_wrappers=1:nokey=1 "$OUT")
 info "rendered $N frames through bidirectional-interpolation.glsl"
 
-info "--- do all nine shaders compile on this platform?"
+info "--- do all the shaders compile on this platform?"
 # Same relative-path requirement as above, so this runs from inside the shader
 # directory and refers to each file by bare name.
 fail=0
-for f in "$REPO"/scripts/*.glsl; do
+for f in "$REPO"/scripts/shaders/*.glsl; do
   n="$(basename "$f")"
-  if ( cd "$REPO/scripts" && "$FFMPEG" -y -hide_banner -loglevel error \
+  if ( cd "$REPO/scripts/shaders" && "$FFMPEG" -y -hide_banner -loglevel error \
       -init_hw_device vulkan=vk -filter_hw_device vk \
       -f lavfi -i "color=c=blue:s=320x180:r=24:d=0.5" \
       -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=$n,format=yuv420p" \
@@ -292,7 +292,7 @@ if [ -f "$REPO/scripts/tests/bench.sh" ]; then
   # bench.sh does not change directory, so a relative shader path resolves
   # from here -- which is required on Windows for the reason above.
   ( cd "$REPO/scripts/tests" || exit 1
-    SH=../bidirectional-interpolation.glsl
+    SH=../shaders/bidirectional-interpolation.glsl
     export FFMPEG FFPROBE
     export OUTROOT="$ROOT/bench"
     for c in L1_trans_8px L2_trans_16px L9_occlusion; do

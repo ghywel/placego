@@ -40,7 +40,7 @@ WORK="${WORK:-${TMPDIR:-/tmp}/interp-prospect}"
 SRC="${1:?usage: prospect.sh <source> [start-seconds] [duration-seconds] [shader]}"
 START="${2:-0}"
 DUR="${3:-}"
-SHADER="${4:-$HERE/../bidirectional-interpolation-variational.glsl}"
+SHADER="${4:-$HERE/../shaders/bidirectional-interpolation-variational.glsl}"
 
 [ -f "$SRC" ] || { echo "no such file: $SRC" >&2; exit 1; }
 [ -f "$SHADER" ] || { echo "no such shader: $SHADER" >&2; exit 1; }

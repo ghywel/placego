@@ -35,7 +35,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 FFMPEG="${FFMPEG:-ffmpeg}"
 PYTHON="${PYTHON:-python3}"
-SHADER="${1:-$HERE/../bidirectional-interpolation.glsl}"
+SHADER="${1:-$HERE/../shaders/bidirectional-interpolation.glsl}"
 shift 2>/dev/null || true
 OUT="${OUTROOT:-${TMPDIR:-/tmp}}/tieprobe"
 EPS="${EPS:-1e-6}"

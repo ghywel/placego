@@ -1,76 +1,162 @@
-// bidirectional-interpolation-twoseed.glsl
+// bidirectional-interpolation-propagated.glsl
+//
+// A VARIANT of bidirectional-interpolation-seeded.glsl, which is itself a
+// variant of bidirectional-interpolation.glsl: the seeded base, byte for
+// byte, plus eight passes at the 1/8-resolution level. Kept as its own file
+// because it costs render time: measured +1-4% over the seeded base and
+// about +13% over the stock shader (O5 at 24->60, 60 output frames,
+// ffmpeg's benchmark clock, median of three; NFRAME-LIMITS.md section 8).
+// If that is inside your budget it is above the seeded base on every real
+// segment measured and on 21 of 32 ladder cases; if it is not, the seeded
+// base is the fast tier. The three- and four-frame shaders built on this
+// base are generated with the base argument the generators take (which
+// carry a base's extra passes into every pair's chain):
+//
+//   ./tests/gen_tridirectional.py  tridirectional-interpolation-propagated.glsl  bidirectional-interpolation-propagated.glsl
+//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-propagated.glsl bidirectional-interpolation-propagated.glsl
+//
+// WHAT IT IS FOR. On flat-shaded line art -- anime -- the fast tier's loss
+// against the variational build sits on the EDGES, not in the flat fills:
+// split by local texture, every build including plain blending scores
+// 46-47 dB on the flattest quartile of a real anime frame, and the whole
+// gap is in the most textured quartile (base 29.6, variational 36.0 dB).
+// An edge constrains one component of motion (the aperture problem), the
+// block matcher's descent wanders along it, and only coherence from the
+// corners and junctions along the edge fixes it -- which the variational
+// cascade buys with 80 Horn-Schunck passes. And on lattice-like textures
+// the coarse search returns an alias of the motion (NFRAME-LIMITS.md
+// section 3); where the neighbourhood disagrees with such a flow, a plain
+// blend beats warping on it.
+//
+// WHAT CHANGED. After the 1/8-level refine, three Jacobi passes per
+// direction: each texel takes the contrast-weighted mean of its 5x5
+// neighbours' flow (a neighbour votes in proportion to its own 5x5 luma
+// range, capped at PROP_CONF_FULL), mixed with its own flow in proportion to
+// PROP_SELF_WEIGHT times its contrast squared. A textured texel keeps its
+// flow; a flat one inherits its confident neighbours'. Reach: 16 px per
+// pass. Then one check pass per direction scores three candidates on the
+// 1/8-level luma over a 5x5 window -- the propagated flow, the refine's
+// own, and zero. For a textured texel: the propagated flow if it strictly
+// beats the others by PROP_CHECK_MARGIN; else ZERO (a blend) if the
+// consensus disagrees with the refine's flow by more than PROP_DISAGREE
+// texels or PROP_DISAGREE_REL times the flow's own length, whichever is
+// larger, because a flow its own neighbourhood contradicts is an alias
+// suspect and an alias scores the same SAD as the truth (the relative
+// term keeps a fast translation, whose consensus is diluted by background
+// votes near its edges, from being mistaken for one); else the propagated
+// flow if within the margin of the best, else the refine's own or zero.
+// For a flat texel: the propagated flow only if it strictly beats both
+// (the only evidence is an edge inside the window), else zero, which is
+// invisible in the warp and is the base's own prior. Without the check a
+// static flat background beside a moving object inherits the object's
+// flow and the ladder's clean translations lose 8-22 dB; with it they hold.
+//
+// WHAT WAS MEASURED, against the seeded base, same harness, same night.
+// Ladder, 32 cases: +2.14 dB mean, 21 cases up by more than 0.1, three
+// down: L7 -1.4, L4 -1.0 (a 40 px/frame translation; still 2.5 dB above
+// blending), L1 -0.2. Largest gains, the lattice-textured cases: O6 +11.8,
+// A5 +11.1, A6 +9.8, O5 +7.0, A7 +6.8, A4 +4.6, R3 +4.1; then F2 +2.7,
+// R2 +2.5, R1 +2.4, F1 +2.3, L3 +1.8. Real footage,
+// decimate-and-reconstruct, PSNR of the synthesised frames: the avengers
+// clip's five segments 34.74 -> 35.28 dB (SSIM 0.9663 -> 0.9696; the stock
+// base 34.29); five library segments, all up -- anime 46.67 -> 47.21
+// (above the variational's 46.83 there) and 36.89 -> 40.98 (the
+// variational: 42.48), film 45.66 -> 46.58 and 32.58 -> 33.39, a 30 fps
+// show 32.12 -> 33.30. SSIM up on all six.
+//
+// WHAT IT DOES NOT DO. The unchecked propagation reaches 41.6 dB on the
+// flat-shaded anime; a version that blends wherever a flow cannot prove
+// itself against zero beats the variational on both anime segments and
+// lifts the lattice cases further, but collapses every smooth case; a
+// fixed disagreement threshold of 0.75 texels reaches 43.1 dB on that
+// anime (above the variational) at the cost of 2 dB on the plain
+// translations and 0.6 on live action; a fixed 1.5 gives 0.1-0.4 dB more
+// on four lattice cases and 0.8 less on L4, 0.2-0.3 less on live action.
+// Those are the knobs; NFRAME-LIMITS.md section 8 has the whole account.
+//
+// The seeded variant's own header follows; everything it says about the
+// three coarse seeds and the round-trip gate applies unchanged here.
+//
+// ---- bidirectional-interpolation-seeded.glsl's header, kept verbatim ----
 //
 // A VARIANT of bidirectional-interpolation.glsl. Same pyramid, same passes,
-// byte-identical from the quarter-resolution level down; the difference is
+// same everything from the quarter-resolution level down; the difference is
 // how the two coarsest levels choose the motion they hand to the finer ones.
-// Kept as its own file, with the stock shader untouched, because it costs
-// render time: measured +13% on this shader and +8% on the four-frame shader
-// generated from it (O5 at 24->60, 60 output frames, ffmpeg's benchmark
-// clock, median of three runs; NFRAME-LIMITS.md section 8). If that is inside
-// your budget it is up on 20 of the 32 ladder cases by more than half a
-// decibel and down on none by more than 0.52; if it is not, the stock file is
-// the fast tier. The three- and four-frame shaders built on this base are
-// generated with the base argument the generators take:
+// Kept as its own file, and the stock shader left byte-identical, because it
+// costs render time: measured +10% on the bidirectional shader and +10% on
+// the four-frame shader generated from it (O5 at 24->60, 60 output frames,
+// ffmpeg's benchmark clock, median of three runs; NFRAME-LIMITS.md section 8).
+// If that is inside your budget it is a strict improvement on the synthetic
+// ladder and a small, consistent one on real footage; if it is not, the stock
+// file is a fifth of the variational build's passes and still the fast tier.
+// The three- and four-frame shaders built on this base are generated with the
+// base argument the generators take:
 //
-//   ./tests/gen_tridirectional.py  tridirectional-interpolation-twoseed.glsl  bidirectional-interpolation-twoseed.glsl
-//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-twoseed.glsl bidirectional-interpolation-twoseed.glsl
+//   ./tests/gen_tridirectional.py  tridirectional-interpolation-seeded.glsl  bidirectional-interpolation-seeded.glsl
+//   ./tests/gen_quaddirectional.py quaddirectional-interpolation-seeded.glsl bidirectional-interpolation-seeded.glsl
+//
+// This file replaced the `-twoseed` variant of the same day (two descents, no
+// temporal seed); that one is in the git history, and its numbers stay in
+// NFRAME-LIMITS.md section 8 as the record of how this one was arrived at.
 //
 // WHAT CHANGED. The stock coarse search is not a window search: it is a
 // five-iteration 3x3 descent from zero offset, on a luma pyramid that is
 // point-sampled. On any texture with a repeat, that descent lands on the
 // nearest integer-texel minimum of the aliased pattern, the next level's
 // +/-2-texel refine then reaches the texture's own symmetry vector, and no
-// finer level can reject that alias by SAD because its SAD there is
-// identically zero. Measured on the ladder's A7 (a sine-product texture,
-// period 40 px): 39-75% of the velocity field wrong on mid-speed frames,
-// the readings sitting exactly at d + (20, -20) and d + (40, 0). And on
-// edge-driven objects at sub-texel speeds the descent from zero simply
-// settles in a worse basin than the one next to it. The full account is
+// finer level can reject that alias by SAD because its SAD is identically
+// zero. Measured on the ladder's A7 (a sine-product texture, period 40 px):
+// 39-75% of the velocity field wrong on mid-speed frames, the readings
+// sitting exactly at d + (20, -20) and d + (40, 0). The full account is
 // NFRAME-LIMITS.md section 8 and THREEDIMENSIONAL.md section 9.7.
 //
-// So each coarse pass now runs TWO descents and stores both seeds:
+// So each coarse pass now runs THREE descents and stores three seeds:
 //   A  from zero                       -- the stock path, unchanged;
 //   B  from the best point of the +/-1-texel ring that lies at least 0.75
-//      texel from A, so it cannot fall into A's basin.
-// They ride in the existing rgba32f cache (.xy and .zw; the stock shader
-// used only .xy), so no texture or binding is added. Each 1/8-resolution
-// pass refines both with its unchanged 5x5 search and keeps the one with
-// the lower  SAD + SEED_MAG_LAMBDA * |offset|  in that level's texels. The
-// magnitude prior is the only thing that can prefer a true displacement
-// over an exact-symmetry alias, and its weight is measured, not chosen:
-// 0.06 loses 1-2.6 dB on every lattice-textured case, 0.3 keeps every gain
-// and returns those cases to stock or better, 1.0 starts costing the
-// fine-texture cases, 3.0 overrides the SAD and reverts to stock to the
-// hundredth (which is also the proof that descent A is the stock path).
+//      texel from A, so it cannot fall into A's basin;
+//   C  from the previous window's coarse flow at this texel, read from the
+//      storage cache before this pass overwrites it.
+// A and B ride in the existing rgba32f cache (.xy and .zw; the stock shader
+// used only .xy); C lives in a second storage cache per coarse pass. Each
+// 1/8-resolution pass refines all three with its unchanged 5x5 search and
+// keeps the one with the lowest
+//     SAD + SEED_MAG_LAMBDA * |offset| + SEED_TEMP_LAMBDA * |offset - previous flow|
+// in that level's texels.
 //
-// WHAT WAS MEASURED, against the stock shader, same harness, same day
-// (NFRAME-LIMITS.md section 8 has the full table). Full 32-case ladder:
-// 20 gains above 0.5 dB, 2 losses (L4 -0.06, L7 -0.52), mean +2.43. Every
-// edge-driven and integer-speed case up -- L2 +20.6, L1 +13.8, L6 +10.0,
-// M2 +6.3, L8 +6.1, M1 +2.9 -- every lattice-textured case up by 0.3-1.0,
-// and rotation up for the first time in the record (R1 +0.6, R2 +0.5,
-// R3 +1.4). The four-frame shader's acceleration coverage on A7's
-// mid-speed frames rises from 36% to 50%; its gross velocity fraction there
-// stays at stock's 45%. The speed comb -- fine aperiodic texture at
-// non-integer coarse speeds -- gains only 0.3-2.2 against a pre-registered
-// 6, because no correct basin exists at the coarse level there for any
-// seed to find; that failure is unchanged and documented.
+// The temporal seed is GATED. An ungated version of C re-seeded its own
+// mistakes: a wrong flow, once cached, was found again next window, and the
+// accelerating-texture case A5 fell 2.9 dB below stock with a field that
+// lagged the motion (hysteresis). So C and its prior are used only where
+// the cached forward flow and the reverse flow at its landing point close a
+// round trip within SEED_RT_MAX (1.0 texel at the 1/8 level); elsewhere C
+// scores as infinitely bad and SEED_TEMP_LAMBDA is zero, and the pass is
+// exactly the two-seed variant. With the gate, A5 reads frame by frame like
+// stock and scores above it. The two priors' weights are measured, not
+// chosen: the magnitude prior has a knee at 0.3 (0.06 loses 1-2.6 dB on every
+// lattice case, 1.0 starts costing the fine-texture cases, 3.0 reverts to
+// stock to the hundredth); the temporal seed is what turns the lattice cases
+// from losses into gains, and the ring seed is what finds the better
+// sub-texel basin the stock descent misses on edges. Neither alone does
+// both; that is why there are three.
 //
-// A three-seed sibling that adds the previous window's flow as a third
-// start gains more on most cases and is up on 21 of 32, but it makes an
-// alias sticky across windows on one calibration case (A5, -2.9 dB, with
-// its field's coverage falling) and is therefore not shipped; it is kept
-// as a lead in the work record with that diagnosis.
+// WHAT WAS MEASURED, against the stock shader, same harness, same day.
+// Ladder, 32 cases: +2.90 dB mean, 25 cases up by more than 0.1, none down
+// by more than 0.1 (L4 -0.07 is the worst). Cases the seeds were built for
+// (dB): A6 +3.3, A7 +3.1, L1 +13.8, L2 +20.6, L3 +2.1, L6 +9.9, M2 +6.2,
+// O5 +1.6, O6 +2.4; the accelerating textures A4/A5 +1.9/+1.0. A7's velocity
+// field on its mid-speed frames: 37.5% of texels gross against 45.6% stock,
+// and the acceleration field's coverage there 67% against 36%. Real footage
+// (decimate-and-reconstruct on five segments of a live-action clip, PSNR /
+// SSIM of the synthesised frames): 34.74 / 0.9663 against the stock base's
+// 34.29 / 0.9647, and 34.67 / 0.9651 for the four-frame shader against its
+// stock's 34.22 / 0.9635 -- every segment up. The variational build
+// (bidirectional-interpolation-variational.glsl) is still ahead on footage
+// (36.27 / 0.9741) and remains the recommended interpolator for viewing.
+// The speed comb -- fine aperiodic texture at non-integer coarse speeds --
+// barely moves under any seeding, because no correct basin exists at the
+// coarse level there; that failure is unchanged and documented.
 //
-// REAL FOOTAGE. Measured the same day (realbench.sh, avengers clip, five
-// segments): +0.19 dB PSNR and +0.0004 SSIM over the base, every segment at
-// or above it, and the same margin for the quad generated from this over
-// the stock quad. Small and consistent, nothing like the ladder's mean --
-// real footage is decided by coherence, which the variational cascade adds
-// and this does not. The variational build
-// (bidirectional-interpolation-variational.glsl) remains the recommended
-// interpolator for viewing, 1.8 dB and 0.009 SSIM ahead of both. This
-// variant's first customer is the FIELD -- the three- and four-frame
+// This variant's first customer is the FIELD -- the three- and four-frame
 // shaders' acceleration and jerk readings at N:N, which inherit the coarse
 // seeds -- and the fast interpolation tier second.
 //
@@ -245,8 +331,14 @@ vec4 hook() {
 //!FORMAT rgba32f
 //!STORAGE
 
+//!TEXTURE FLOW_S_AB_CACHE2
+//!SIZE 240 135
+//!FORMAT rgba32f
+//!STORAGE
+
 //!HOOK FRAME_MIX
 //!BIND FLOW_S_AB_CACHE
+//!BIND FLOW_S_AB_CACHE2
 //!BIND LUMA_A_S
 //!BIND LUMA_B_S
 //!SAVE FLOW_S_AB
@@ -330,9 +422,6 @@ float local_contrast_5x5_s(vec2 uv_a) {
 // rather than noise). Small enough that any genuinely stronger match wins.
 const float REG_LAMBDA = 0.06;
 
-// One coarse descent from `start` (scratch experiment: see twoseed.py).
-// Identical to the original loop: five 3x3 probes, step 0.75 texel halving,
-// cost = 3x3 SAD + REG_LAMBDA * |offset|, strict TIE_MARGIN improvement.
 vec2 descend_s(vec2 uv, vec2 start, out float best_cost) {
     // Deterministic tie-breaking. The search below is an argmin over
     // candidate offsets, and a strict `<` against a fixed scan order already
@@ -423,19 +512,18 @@ vec4 hook() {
         return imageLoad(FLOW_S_AB_CACHE, coord);
 
     vec2 uv_a = LUMA_A_S_pos;
+    vec2 prev_s = imageLoad(FLOW_S_AB_CACHE, coord).xy * LUMA_A_S_pt;
 
     if (local_contrast_5x5_s(uv_a) < MIN_CONTRAST) {
         vec4 result = vec4(0.0);
         imageStore(FLOW_S_AB_CACHE, coord, result);
+        imageStore(FLOW_S_AB_CACHE2, coord, result);
         return result;
     }
 
-    // ---- two descents (scratch experiment: see twoseed.py) ----
-    float cost_a;
+    // ---- three descents (scratch: twoseed4.py) ----
+    float cost_a, cost_b, cost_c;
     vec2 off_a = descend_s(uv_a, vec2(0.0), cost_a);
-    // Second start: the best of the +/-1-texel ring at least 0.75 texel
-    // from the first result, so the two descents cannot converge on the
-    // same basin.
     vec2 start_b = vec2(0.0);
     float best_ring = 1.0e30;
     for (int y = -1; y <= 1; y++) {
@@ -452,8 +540,9 @@ vec4 hook() {
             }
         }
     }
-    float cost_b;
     vec2 off_b = descend_s(uv_a, start_b, cost_b);
+    vec2 off_c = descend_s(uv_a, prev_s, cost_c);
+    imageStore(FLOW_S_AB_CACHE2, coord, vec4(off_c / LUMA_A_S_pt, 0.0, 0.0));
     vec4 result = vec4(off_a / LUMA_A_S_pt, off_b / LUMA_A_S_pt);
     imageStore(FLOW_S_AB_CACHE, coord, result);
     return result;
@@ -464,8 +553,14 @@ vec4 hook() {
 //!FORMAT rgba32f
 //!STORAGE
 
+//!TEXTURE FLOW_S_BA_CACHE2
+//!SIZE 240 135
+//!FORMAT rgba32f
+//!STORAGE
+
 //!HOOK FRAME_MIX
 //!BIND FLOW_S_BA_CACHE
+//!BIND FLOW_S_BA_CACHE2
 //!BIND LUMA_A_S
 //!BIND LUMA_B_S
 //!SAVE FLOW_S_BA
@@ -506,9 +601,6 @@ float local_contrast_5x5_s2(vec2 uv_b) {
 
 const float REG_LAMBDA = 0.06;
 
-// One coarse descent from `start` (scratch experiment: see twoseed.py).
-// Identical to the original loop: five 3x3 probes, step 0.75 texel halving,
-// cost = 3x3 SAD + REG_LAMBDA * |offset|, strict TIE_MARGIN improvement.
 vec2 descend_s(vec2 uv, vec2 start, out float best_cost) {
     // Deterministic tie-breaking. The search below is an argmin over
     // candidate offsets, and a strict `<` against a fixed scan order already
@@ -599,19 +691,18 @@ vec4 hook() {
         return imageLoad(FLOW_S_BA_CACHE, coord);
 
     vec2 uv_b = LUMA_B_S_pos;
+    vec2 prev_s = imageLoad(FLOW_S_BA_CACHE, coord).xy * LUMA_A_S_pt;
 
     if (local_contrast_5x5_s2(uv_b) < MIN_CONTRAST) {
         vec4 result = vec4(0.0);
         imageStore(FLOW_S_BA_CACHE, coord, result);
+        imageStore(FLOW_S_BA_CACHE2, coord, result);
         return result;
     }
 
-    // ---- two descents (scratch experiment: see twoseed.py) ----
-    float cost_a;
+    // ---- three descents (scratch: twoseed4.py) ----
+    float cost_a, cost_b, cost_c;
     vec2 off_a = descend_s(uv_b, vec2(0.0), cost_a);
-    // Second start: the best of the +/-1-texel ring at least 0.75 texel
-    // from the first result, so the two descents cannot converge on the
-    // same basin.
     vec2 start_b = vec2(0.0);
     float best_ring = 1.0e30;
     for (int y = -1; y <= 1; y++) {
@@ -628,8 +719,9 @@ vec4 hook() {
             }
         }
     }
-    float cost_b;
     vec2 off_b = descend_s(uv_b, start_b, cost_b);
+    vec2 off_c = descend_s(uv_b, prev_s, cost_c);
+    imageStore(FLOW_S_BA_CACHE2, coord, vec4(off_c / LUMA_A_S_pt, 0.0, 0.0));
     vec4 result = vec4(off_a / LUMA_A_S_pt, off_b / LUMA_A_S_pt);
     imageStore(FLOW_S_BA_CACHE, coord, result);
     return result;
@@ -673,7 +765,9 @@ vec4 hook() {
 //!BIND LUMA_A_E
 //!BIND LUMA_B_E
 //!BIND FLOW_S_AB
-//!SAVE FLOW_E_AB
+//!BIND FLOW_S_AB_CACHE2
+//!BIND FLOW_E_BA_CACHE
+//!SAVE FLOW_E_AB_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -758,9 +852,6 @@ float local_contrast_5x5_e(vec2 uv_a) {
     return hi - lo;
 }
 
-// One 1/8-res refine around `seed` (scratch experiment: see twoseed.py).
-// Identical to the original loop. Returns the refined offset; sad_out is
-// the raw 3x3 SAD there (no regulariser), for arbitration between seeds.
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
@@ -783,10 +874,9 @@ vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     sad_out = sad5x5_e(uv, uv + best_off);
     return best_off;
 }
-// Magnitude prior for choosing between the two refined seeds, per E-texel:
-// the only thing that can prefer a true displacement over an exact-symmetry
-// alias, whose SAD is identically zero.
 const float SEED_MAG_LAMBDA = 0.3;
+const float SEED_TEMP_LAMBDA = 0.5;
+const float SEED_RT_MAX = 1.0;   // E-texels; the previous flow must round-trip within this to be trusted
 vec4 hook() {
     ivec2 coord = ivec2(LUMA_A_E_pos * LUMA_A_E_size);
     if (!pair_changed)
@@ -819,14 +909,27 @@ vec4 hook() {
     // motion get found at all), but the refine levels exist specifically
     // to add detail on top of that coarse answer, and a 1-texel nudge may
     // simply not be enough room for them to do that job.
-    // ---- refine both coarse seeds, keep the better (scratch: twoseed.py) ----
-    float sad_a, sad_b;
+    // ---- refine three seeds; the temporal seed and prior only where the previous flow round-trips ----
+    vec2 prev_e = imageLoad(FLOW_E_AB_CACHE, coord).xy * LUMA_A_E_pt;
+    ivec2 rcoord = clamp(ivec2((uv_a + prev_e) * LUMA_A_E_size), ivec2(0), ivec2(LUMA_A_E_size) - 1);
+    vec2 prev_rev = imageLoad(FLOW_E_BA_CACHE, rcoord).xy * LUMA_A_E_pt;
+    float rt = length((prev_e + prev_rev) / LUMA_A_E_pt);
+    bool trusted = rt < SEED_RT_MAX && length(prev_e) > 0.0;
+    float tl = trusted ? SEED_TEMP_LAMBDA : 0.0;
+    ivec2 scoord = ivec2(snap_texel(uv_a, FLOW_S_AB_size) * FLOW_S_AB_size);
+    vec2 base_off3 = imageLoad(FLOW_S_AB_CACHE2, scoord).xy * 2.0 * LUMA_A_E_pt;
+    float sad_a, sad_b, sad_c;
     vec2 ref_a = refine_e(uv_a, base_off, sad_a);
     vec2 ref_b = refine_e(uv_a, base_off2, sad_b);
-    float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt);
-    float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt);
+    vec2 ref_c = refine_e(uv_a, base_off3, sad_c);
+    float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
+    float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
+    float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
     const float TIE_MARGIN = 1.0e-4;
-    vec2 best_off = (score_b < score_a * (1.0 - TIE_MARGIN)) ? ref_b : ref_a;
+    vec2 best_off = ref_a;
+    float best_score = score_a;
+    if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
+    if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_AB_CACHE, coord, result);
     return result;
@@ -842,7 +945,9 @@ vec4 hook() {
 //!BIND LUMA_A_E
 //!BIND LUMA_B_E
 //!BIND FLOW_S_BA
-//!SAVE FLOW_E_BA
+//!BIND FLOW_S_BA_CACHE2
+//!BIND FLOW_E_AB_CACHE
+//!SAVE FLOW_E_BA_RAW
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 2
@@ -883,9 +988,6 @@ float local_contrast_5x5_e2(vec2 uv_b) {
     return hi - lo;
 }
 
-// One 1/8-res refine around `seed` (scratch experiment: see twoseed.py).
-// Identical to the original loop. Returns the refined offset; sad_out is
-// the raw 3x3 SAD there (no regulariser), for arbitration between seeds.
 const int REFINE_SEARCH_RADIUS = 2;
 const float REFINE_REG_LAMBDA = 0.05;
 vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
@@ -908,10 +1010,9 @@ vec2 refine_e(vec2 uv, vec2 seed, out float sad_out) {
     sad_out = sad5x5_e2(uv, uv + best_off);
     return best_off;
 }
-// Magnitude prior for choosing between the two refined seeds, per E-texel:
-// the only thing that can prefer a true displacement over an exact-symmetry
-// alias, whose SAD is identically zero.
 const float SEED_MAG_LAMBDA = 0.3;
+const float SEED_TEMP_LAMBDA = 0.5;
+const float SEED_RT_MAX = 1.0;   // E-texels; the previous flow must round-trip within this to be trusted
 vec4 hook() {
     ivec2 coord = ivec2(LUMA_B_E_pos * LUMA_B_E_size);
     if (!pair_changed)
@@ -929,17 +1030,430 @@ vec4 hook() {
     }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
-    // ---- refine both coarse seeds, keep the better (scratch: twoseed.py) ----
-    float sad_a, sad_b;
+    // ---- refine three seeds; the temporal seed and prior only where the previous flow round-trips ----
+    vec2 prev_e = imageLoad(FLOW_E_BA_CACHE, coord).xy * LUMA_A_E_pt;
+    ivec2 rcoord = clamp(ivec2((uv_b + prev_e) * LUMA_A_E_size), ivec2(0), ivec2(LUMA_A_E_size) - 1);
+    vec2 prev_rev = imageLoad(FLOW_E_AB_CACHE, rcoord).xy * LUMA_A_E_pt;
+    float rt = length((prev_e + prev_rev) / LUMA_A_E_pt);
+    bool trusted = rt < SEED_RT_MAX && length(prev_e) > 0.0;
+    float tl = trusted ? SEED_TEMP_LAMBDA : 0.0;
+    ivec2 scoord = ivec2(snap_texel(uv_b, FLOW_S_BA_size) * FLOW_S_BA_size);
+    vec2 base_off3 = imageLoad(FLOW_S_BA_CACHE2, scoord).xy * 2.0 * LUMA_A_E_pt;
+    float sad_a, sad_b, sad_c;
     vec2 ref_a = refine_e(uv_b, base_off, sad_a);
     vec2 ref_b = refine_e(uv_b, base_off2, sad_b);
-    float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt);
-    float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt);
+    vec2 ref_c = refine_e(uv_b, base_off3, sad_c);
+    float score_a = sad_a + SEED_MAG_LAMBDA * length(ref_a / LUMA_A_E_pt) + tl * length((ref_a - prev_e) / LUMA_A_E_pt);
+    float score_b = sad_b + SEED_MAG_LAMBDA * length(ref_b / LUMA_A_E_pt) + tl * length((ref_b - prev_e) / LUMA_A_E_pt);
+    float score_c = trusted ? sad_c + SEED_MAG_LAMBDA * length(ref_c / LUMA_A_E_pt) + tl * length((ref_c - prev_e) / LUMA_A_E_pt) : 1.0e30;
     const float TIE_MARGIN = 1.0e-4;
-    vec2 best_off = (score_b < score_a * (1.0 - TIE_MARGIN)) ? ref_b : ref_a;
+    vec2 best_off = ref_a;
+    float best_score = score_a;
+    if (score_b < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_b; best_score = score_b; }
+    if (score_c < best_score * (1.0 - TIE_MARGIN)) { best_off = ref_c; best_score = score_c; }
     vec4 result = vec4(best_off / LUMA_A_E_pt, 0.0, 0.0);
     imageStore(FLOW_E_BA_CACHE, coord, result);
     return result;
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] contrast-weighted flow propagation AB (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_RAW_pos;
+    vec2 own = FLOW_E_AB_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] contrast-weighted flow propagation AB (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 own = FLOW_E_AB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] contrast-weighted flow propagation AB (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 own = FLOW_E_AB_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_AB_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_AB_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_AB_RAW
+//!BIND FLOW_E_AB_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_AB
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] three-way data check AB: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 1.5;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_A_E_pt;
+            s += abs(LUMA_A_E_tex(uv + o).r - LUMA_B_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_AB_PROP_pos;
+    vec2 raw = FLOW_E_AB_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_AB_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_A_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_A_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_RAW
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] contrast-weighted flow propagation BA (pass 1 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_RAW_pos;
+    vec2 own = FLOW_E_BA_RAW_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_RAW_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_RAW_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] contrast-weighted flow propagation BA (pass 2 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 own = FLOW_E_BA_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_A_E
+//!BIND LUMA_B_E
+//!SAVE FLOW_E_BA_PROP
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] contrast-weighted flow propagation BA (pass 3 of 3)
+
+const float PROP_SELF_WEIGHT = 8.0;
+const float PROP_CONF_FULL   = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_A_E_tex(uv + vec2(float(x), float(y)) * LUMA_A_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 own = FLOW_E_BA_PROP_tex(uv).xy;
+    float c_own = prop_conf(uv);
+    vec2 acc = vec2(0.0);
+    float wsum = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            if (x == 0 && y == 0) continue;
+            vec2 o = vec2(float(x), float(y)) * FLOW_E_BA_PROP_pt;
+            float w = prop_conf(uv + o) / (1.0 + 0.5 * float(abs(x) + abs(y)));
+            acc += w * FLOW_E_BA_PROP_tex(uv + o).xy;
+            wsum += w;
+        }
+    float w_own = PROP_SELF_WEIGHT * c_own * c_own;
+    if (wsum + w_own <= 0.0)
+        return vec4(own, 0.0, 0.0);
+    return vec4((w_own * own + acc) / (w_own + wsum), 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND FLOW_E_BA_RAW
+//!BIND FLOW_E_BA_PROP
+//!BIND LUMA_B_E
+//!BIND LUMA_A_E
+//!SAVE FLOW_E_BA
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+//!COMPONENTS 2
+//!DESC [prop12] three-way data check BA: propagated vs raw vs zero, ties to consensus on texture only
+
+const float PROP_CHECK_MARGIN = 0.1;
+const float PROP_FLAT_CONF    = 0.25;
+const float PROP_DISAGREE     = 1.5;
+const float PROP_DISAGREE_REL = 0.5;   // 1/8-level texels (6 px)
+const float PROP_CONF_FULL    = 0.08;
+
+float prop_conf(vec2 uv) {
+    float lo = 1.0, hi = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            float l = LUMA_B_E_tex(uv + vec2(float(x), float(y)) * LUMA_B_E_pt).r;
+            lo = min(lo, l); hi = max(hi, l);
+        }
+    return clamp((hi - lo) / PROP_CONF_FULL, 0.0, 1.0);
+}
+
+float sad5(vec2 uv, vec2 flow_uv) {
+    float s = 0.0;
+    for (int y = -2; y <= 2; y++)
+        for (int x = -2; x <= 2; x++) {
+            vec2 o = vec2(float(x), float(y)) * LUMA_B_E_pt;
+            s += abs(LUMA_B_E_tex(uv + o).r - LUMA_A_E_tex(uv + o + flow_uv).r);
+        }
+    return s;
+}
+
+vec4 hook() {
+    vec2 uv = FLOW_E_BA_PROP_pos;
+    vec2 raw = FLOW_E_BA_RAW_tex(uv).xy;
+    vec2 prop = FLOW_E_BA_PROP_tex(uv).xy;
+    if (prop == raw)
+        return vec4(raw, 0.0, 0.0);
+    float s_prop = sad5(uv, prop * LUMA_B_E_pt);
+    float s_raw  = sad5(uv, raw * LUMA_B_E_pt);
+    float s_zero = sad5(uv, vec2(0.0));
+    float best = min(s_raw, s_zero);
+    bool textured = prop_conf(uv) >= PROP_FLAT_CONF;
+    if (textured) {
+        // prop9: a proven consensus wins outright; where the neighbourhood
+        // DISAGREES with the raw flow and neither is proven, the raw flow is
+        // an alias suspect and a blend (zero) beats trusting it; otherwise
+        // the three-way rule as before.
+        if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        // prop12: the disagreement threshold scales with the flow, so a fast
+        // translation whose consensus is diluted by background votes near its
+        // edges is not mistaken for an alias (aliases sit texels apart at
+        // speeds of a texel or two).
+        if (length(prop - raw) > max(PROP_DISAGREE, PROP_DISAGREE_REL * length(raw)))
+            return vec4(0.0);
+        if (s_prop <= best * (1.0 + PROP_CHECK_MARGIN) + 1e-4)
+            return vec4(prop, 0.0, 0.0);
+        return s_raw <= s_zero ? vec4(raw, 0.0, 0.0) : vec4(0.0);
+    }
+    // flat: evidence required
+    if (s_prop < best * (1.0 - PROP_CHECK_MARGIN) - 1e-4)
+        return vec4(prop, 0.0, 0.0);
+    return vec4(0.0);
 }
 
 //!HOOK FRAME_MIX

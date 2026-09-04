@@ -47,7 +47,7 @@ SRC="${1:?usage: accelprospect.sh <source> [start] [duration] [segment]}"
 START="${2:-0}"
 DUR="${3:-300}"
 SEG="${4:-10}"
-SHADER="${SHADER:-$HERE/../tridirectional-interpolation.glsl}"
+SHADER="${SHADER:-$HERE/../shaders/tridirectional-interpolation.glsl}"
 FS="${ACCEL_DIAG_FS:-2.0}"
 WORK="${WORK:-${TMPDIR:-/tmp}}/accelprospect"
 

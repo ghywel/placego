@@ -21,7 +21,7 @@ FFMPEG="${FFMPEG:-ffmpeg}"
 OUTROOT="${OUTROOT:-${TMPDIR:-/tmp}/interp-bench}"
 
 CASE="${1:?usage: visuals.sh <case> [shader] [frame-n]}"
-SHADER="${2:-$HERE/../bidirectional-interpolation.glsl}"
+SHADER="${2:-$HERE/../shaders/bidirectional-interpolation.glsl}"
 N="${3:-23}"
 OUT="$OUTROOT/$CASE"
 mkdir -p "$OUT"

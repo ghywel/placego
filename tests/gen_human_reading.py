@@ -35,7 +35,17 @@ FIELDS = {
 
 if len(sys.argv) not in (4, 5) or sys.argv[3] not in FIELDS or (len(sys.argv) == 5 and sys.argv[4] != "relative"):
     sys.exit(__doc__ + "\nOptional 4th argument `relative`: read motion relative to the frame's dominant motion.\n")
-SRC, DST, FIELD = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2]), sys.argv[3]
+HERE = pathlib.Path(__file__).resolve().parent
+SHADERS = HERE.parent / "shaders"
+
+
+def shader_arg(s):
+    """A bare file name means a shader in shaders/; a path with a directory is used as given."""
+    p = pathlib.Path(s)
+    return p if p.parent != pathlib.Path(".") else SHADERS / p
+
+
+SRC, DST, FIELD = shader_arg(sys.argv[1]), shader_arg(sys.argv[2]), sys.argv[3]
 relative = 1 if len(sys.argv) == 5 else 0
 spec = FIELDS[FIELD]
 text = SRC.read_text(encoding="utf-8")

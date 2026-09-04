@@ -87,7 +87,7 @@ fi
 head2 "3. gen_variational.py -- generated shader is byte-identical here"
 # A strong portability check: the production shader is generated, so if this
 # platform produces the same bytes, the generator and its inputs agree.
-PROD="$HERE/../bidirectional-interpolation-variational.glsl"
+PROD="$HERE/../shaders/bidirectional-interpolation-variational.glsl"
 if $PY "$HERE/gen_variational.py" "16,12,8,4" 0.3 0.08 "$W/regen.glsl" 0 "2,2,2,0" >/dev/null 2>&1; then
   strip() { awk 'p{print} /^\/\/ =====/{c++} c==2 && !p{p=1}' "$1"; }
   if diff -q <(strip "$W/regen.glsl") <(strip "$PROD") >/dev/null 2>&1; then

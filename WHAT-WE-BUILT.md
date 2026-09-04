@@ -276,7 +276,10 @@ For anyone picking this up:
    more candidate motions instead of following the first it finds, and on
    the test scenes that is worth a few decibels on most of them and costs
    nothing measurable on the rest; on real footage the difference is small
-   but consistent. SHADERS.md says when to use it.
+   but consistent. A second repair on top of it lets featureless patches
+   borrow the motion of their textured neighbours, checked against both
+   frames; on hand-drawn animation that is worth up to two decibels more.
+   SHADERS.md says when to use each.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
    NFRAME-LIMITS.md for more detail. One exception has since been found on

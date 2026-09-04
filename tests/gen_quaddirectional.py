@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the QUADDIRECTIONAL interpolation shader from the bidirectional base.
 
-    ./gen_quaddirectional.py [output.glsl [base.glsl]]    (default: ../quaddirectional-interpolation.glsl)
+    ./gen_quaddirectional.py [output.glsl [base.glsl]]    (default: ../shaders/quaddirectional-interpolation.glsl)
 
 THE HYPOTHESIS THIS BUILDS -- and, unusually, what it is pre-registered NOT to
 do. Three frames determine a quadratic: velocity and acceleration, with
@@ -85,10 +85,19 @@ HERE = pathlib.Path(__file__).resolve().parent
 # a second positional argument names a VARIANT base (e.g. a two-descent
 # bidirectional-interpolation-<variant>.glsl), so tri/quad variants can be
 # generated beside the stock files without overwriting them.
-SRC = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else \
-    HERE.parent / "bidirectional-interpolation.glsl"
-DST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else \
-    HERE.parent / "quaddirectional-interpolation.glsl"
+SHADERS = HERE.parent / "shaders"
+
+
+def shader_arg(s):
+    """A bare file name means a shader in shaders/; a path with a directory is used as given."""
+    p = pathlib.Path(s)
+    return p if p.parent != pathlib.Path(".") else SHADERS / p
+
+
+SRC = shader_arg(sys.argv[2]) if len(sys.argv) > 2 else \
+    SHADERS / "bidirectional-interpolation.glsl"
+DST = shader_arg(sys.argv[1]) if len(sys.argv) > 1 else \
+    SHADERS / "quaddirectional-interpolation.glsl"
 
 LEVELS = T3.LEVELS
 
@@ -176,9 +185,13 @@ def chain(find, la, lb, tag, rev, banner):
     parts = [banner]
     src = "BA" if rev else "AB"
     for lvl, _ in LEVELS:
-        b = find(f"FLOW_{lvl}_{src}", None if lvl != "H" else "refine")
-        parts.append(shift_pair(b, lvl, la, lb, tag,
-                                desc_pair=BANNER_PAIRS[tag]))
+        if lvl == "H":
+            lvl_blocks = [find(f"FLOW_H_{src}", "refine")]
+        else:
+            lvl_blocks = find.all(f"FLOW_{lvl}_{src}")
+        for b in lvl_blocks:
+            parts.append(shift_pair(b, lvl, la, lb, tag,
+                                    desc_pair=BANNER_PAIRS[tag]))
     for pn in ("pass 1", "pass 2"):
         b = find(f"FLOW_H_{src}", pn)
         parts.append(shift_pair(b, "H", la, lb, tag,
@@ -234,13 +247,25 @@ def main():
 
     blocks = T3.chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
-    assert len(hook_blocks) == 24, f"expected 24 base passes, found {len(hook_blocks)}"
+    # A variant base may carry EXTRA passes inside a level's flow chain (see
+    # gen_tridirectional.py); they are carried into every pair's chain.
+    extra = len(hook_blocks) - 24
+    assert extra >= 0 and extra % 2 == 0, f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
         cands = [b for b in blocks if T3.block_id(b)[0] == save and
                  (desc_frag is None or desc_frag in (T3.block_id(b)[1] or ""))]
         assert len(cands) == 1, f"lookup {save}/{desc_frag}: {len(cands)} matches"
         return cands[0]
+
+    def find_all(save):
+        """Every block of a level's flow chain, in file order: the pass saving
+        `save` itself plus any saving `save_<suffix>` (a variant's extra passes)."""
+        cands = [b for b in blocks if T3.block_id(b)[0] == save or
+                 (T3.block_id(b)[0] or "").startswith(save + "_")]
+        assert cands, f"lookup {save}*: no matches"
+        return cands
+    find.all = find_all   # carried alongside find so chain() needs no new argument
 
     out = []
     for b in blocks:
@@ -311,7 +336,7 @@ def main():
     hooks = result.count("//!HOOK")
     braces = result.count("{") - result.count("}")
     parens = result.count("(") - result.count(")")
-    assert hooks == 68, f"expected 68 passes, got {hooks}"
+    assert hooks == 68 + 3 * extra, f"expected {68 + 3 * extra} passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     header = HEADER
     if SRC.name != "bidirectional-interpolation.glsl":
@@ -320,7 +345,7 @@ def main():
                                 f"//   ./tests/gen_quaddirectional.py {DST.name} {SRC.name}\n")
     DST.write_text(header + result, newline="\n")
     print(f"  {DST.name}: {hooks} passes "
-          f"(24 base + 8 slot-2/3 lumas + 2 cut stats + 24 pair flow "
+          f"({24 + extra} base + 8 slot-2/3 lumas + 2 cut stats + {24 + 2 * extra} pair flow "
           f"+ 4 full-res lumas + 6 full-res refines), braces/parens balanced  OK")
 
 
