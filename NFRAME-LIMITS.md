@@ -1115,3 +1115,47 @@ on plain translations and 0.8 on live action. So the relative term is what
 makes the finer threshold safe: below 1.5 texels of flow it is the fixed
 threshold that decides, above it the flow's own length, and a pan over a
 painted background stays a pan.
+
+## 9. 2026-09-04: the rotation field and A4 re-measured on the shipped family
+
+Section 3's rotation numbers were taken on the stock tri/quad before the
+seeded and propagated variants existed; WHAT-WE-BUILT's rotation warning
+rested on them. Re-measured at N:N (24 -> 24, TRI_DIAG 2, ACCEL_DIAG_FS 2.0,
+16-bit) with `rotcheck.py` on frames 6/9/12/15 (rim inside the search reach)
+and `accelcheck.py` on A4 over frames 4-20; RX 6600, the quint under the
+fixed host (section 8 of QUINTDIRECTIONAL.md). Coverage is the annulus
+fraction carrying a reading at f6 -> f15; errors are medians over live texels.
+
+| case | shader | coverage | vector error f6 / f9 / f12 / f15 | angular error (deg) |
+|---|---|---|---|---|
+| R2 flat | quad stock | 11 -> 6% | 118 / 138 / 100 / 112% | 61 / 78 / 62 / 96 |
+| R2 flat | quad propagated | 25 -> 11% | 121 / 122 / 109 / 103% | 62 / 78 / 76 / 84 |
+| R2 flat | quint propagated | 29 -> 14% | 113 / 107 / 101 / 102% | 69 / 74 / 77 / 85 |
+| R3 textured | quad stock | 17 -> 15% | 106 / 89 / 119 / 58% | 52 / 41 / 63 / 25 |
+| R3 textured | quad propagated | 45 -> 22% | 71 / 59 / 47 / 49% | 26 / 22 / 19 / 21 |
+| R3 textured | quint propagated | 47 -> 23% | 86 / 71 / 62 / 62% | 31 / 26 / 23 / 26 |
+
+A4 (a = 0.333 px/interval^2), RMS of the box-median error over frames 4-20:
+quad stock 0.055 (17% of the value, the figure WHAT-WE-BUILT carried), quad
+propagated 0.036 (11%), quint 0.044 (13%); on frame 10 all three read within
+1.4%, coverage 98-100% throughout.
+
+Reading. **R2 is unchanged and will stay unchanged**: the flat blob's field
+is the aperture floor of section 3 (54-94% vector error at zero noise, the
+tangential spin-up unobservable on an isolated edge); propagation doubles
+the coverage with borrowed vectors that are exactly as wrong as the rim's,
+which is the register's "a guess there, not a measurement" in numbers.
+**R3 is halved by propagation** (vector error 58-119% -> 47-71%, angle
+25-63 -> 19-26 deg), the first movement on rotation in the record, and what
+remains is the period-locking and pyramid-alias residue of section 3, which
+the prefilter could not remove (section 8). **The quint is 10-15 points
+worse than the quad on R3 and 2 points on A4**, the A7 pattern of
+QUINTDIRECTIONAL.md: the composed +/-2 links carry the alias into the
+quartic. Whether that is the far links or the extra chains was a one-render
+question, answered the same morning: **the quint's cubic mode 8 reproduces
+the propagated quad to the decimal** on both scenes (R3 71.0 / 58.9 / 47.2 /
+49.0% and 26.1 / 22.1 / 18.9 / 20.6 deg at identical coverage; A4 0.036,
+11%), so the loss is entirely the quartic's composed +/-2 links and the two
+extra chains cost the field nothing -- and the quint's inner four slots
+produce the quad's flows bit for bit, a consistency check on the generator.
+The rotation warning stands as rewritten in WHAT-WE-BUILT.

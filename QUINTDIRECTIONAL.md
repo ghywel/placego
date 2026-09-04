@@ -181,7 +181,11 @@ over the interior, median over frames 4-20 -- quad 0.592, quint quartic
 the propagated quad (item 5 met for velocity); the acceleration field 40%
 gross against the quad's 34%, with 100% coverage in both -- the quartic's
 composed +/-2 links carry the lattice residue into the acceleration on
-that texture. Not met for acceleration; recorded.
+that texture. Not met for acceleration; recorded. Confirmed the same
+morning on R3 and A4 (NFRAME-LIMITS.md section 9): the quint's cubic mode 8
+reproduces the propagated quad to the decimal, so the residue is the far
+links alone; a reading that wants the quad's acceleration on lattice
+texture has it in mode 8 at no extra cost.
 
 **Time.** O5 at 24->60, 60 frames, median of three: quad 4.75 s, quint
 5.60 s, +18% (item 6 asked for 10%). The two extra flow chains are the
