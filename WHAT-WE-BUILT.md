@@ -360,3 +360,6 @@ https://www.reddit.com/r/nframe
 
 This is not meant as an invitation to get to know me - leave me alone. It is a public record of
 what I did and how I did it in my own words without the AI.
+
+Everybody - The proof is in the seeing - You won't believe your eyes. Go find a m-series Apple
+computer, run the app, and see for yourselves if i'm making all of this up.
