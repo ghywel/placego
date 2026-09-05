@@ -284,24 +284,562 @@
 // ---------------------------------------------------------------------
 //!HOOK FRAME_MIX
 //!BIND HOOKED
+//!SAVE LINE_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!COMPONENTS 1
+//!DESC [lineart] the line art of frame A at half res: where the luma gradient exceeds LINE_TAU
+const float LINE_TAU = 0.10;
+float lum(vec2 p) { return dot(HOOKED_tex(p).rgb, vec3(0.299, 0.587, 0.114)); }
+vec4 hook() {
+    vec2 p = HOOKED_pos; vec2 d = HOOKED_pt;
+    float gx = lum(p + vec2(d.x, 0.0)) - lum(p - vec2(d.x, 0.0));
+    float gy = lum(p + vec2(0.0, d.y)) - lum(p - vec2(0.0, d.y));
+    return vec4(length(vec2(gx, gy)) > LINE_TAU ? 1.0 : 0.0, 0.0, 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND NEXT
+//!SAVE LINE_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!COMPONENTS 1
+//!DESC [lineart] the line art of frame B at half res: where the luma gradient exceeds LINE_TAU
+const float LINE_TAU = 0.10;
+float lum(vec2 p) { return dot(NEXT_tex(p).rgb, vec3(0.299, 0.587, 0.114)); }
+vec4 hook() {
+    vec2 p = NEXT_pos; vec2 d = NEXT_pt;
+    float gx = lum(p + vec2(d.x, 0.0)) - lum(p - vec2(d.x, 0.0));
+    float gy = lum(p + vec2(0.0, d.y)) - lum(p - vec2(0.0, d.y));
+    return vec4(length(vec2(gx, gy)) > LINE_TAU ? 1.0 : 0.0, 0.0, 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND LINE_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding seed for frame A: a line texel is its own nearest seed
+vec4 hook() {
+    vec2 tex = floor(LINE_A_pos * LINE_A_size);
+    bool line = LINE_A_tex(LINE_A_pos).r > 0.5;
+    return line ? vec4(tex, 1.0, 0.0) : vec4(-1.0, -1.0, 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 512
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 512.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 256
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 256.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 128
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 128.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 64
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 64.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 32
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 32.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 16
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 16.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 8
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 8.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 4
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 4.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE JF_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 2
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 2.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_A
+//!SAVE DT_A
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame A, stride 1 (and the distance)
+vec4 hook() {
+    vec2 size = JF_A_size; vec2 tex = floor(JF_A_pos * size);
+    vec4 best = JF_A_tex(JF_A_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 1.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_A_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return vec4(min(bd, 1.0e4), best.xy, best.z);
+}
+
+//!HOOK FRAME_MIX
+//!BIND LINE_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding seed for frame B: a line texel is its own nearest seed
+vec4 hook() {
+    vec2 tex = floor(LINE_B_pos * LINE_B_size);
+    bool line = LINE_B_tex(LINE_B_pos).r > 0.5;
+    return line ? vec4(tex, 1.0, 0.0) : vec4(-1.0, -1.0, 0.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 512
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 512.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 256
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 256.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 128
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 128.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 64
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 64.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 32
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 32.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 16
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 16.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 8
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 8.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 4
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 4.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE JF_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 2
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 2.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return best;
+}
+
+//!HOOK FRAME_MIX
+//!BIND JF_B
+//!SAVE DT_B
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [lineart] jump flooding for frame B, stride 1 (and the distance)
+vec4 hook() {
+    vec2 size = JF_B_size; vec2 tex = floor(JF_B_pos * size);
+    vec4 best = JF_B_tex(JF_B_pos);
+    float bd = best.z > 0.5 ? length(best.xy - tex) : 1.0e9;
+    for (int j = -1; j <= 1; j++) {
+        for (int i = -1; i <= 1; i++) {
+            if (i == 0 && j == 0) continue;
+            vec2 q = tex + vec2(float(i), float(j)) * 1.0;
+            if (q.x < 0.0 || q.y < 0.0 || q.x >= size.x || q.y >= size.y) continue;
+            vec4 c = JF_B_tex((q + 0.5) / size);
+            if (c.z < 0.5) continue;
+            float d = length(c.xy - tex);
+            if (d < bd) { bd = d; best = c; }
+        }
+    }
+    return vec4(min(bd, 1.0e4), best.xy, best.z);
+}
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND DT_A
 //!SAVE LUMA_A_S
 //!WIDTH HOOKED.w 16 /
 //!HEIGHT HOOKED.h 16 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame A to 1/16 res (luma)
 vec4 hook() {
-    return vec4(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_A_tex(HOOKED_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!HOOK FRAME_MIX
 //!BIND NEXT
+//!BIND DT_B
 //!SAVE LUMA_B_S
 //!WIDTH HOOKED.w 16 /
 //!HEIGHT HOOKED.h 16 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame B to 1/16 res (luma)
 vec4 hook() {
-    return vec4(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_B_tex(NEXT_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 
@@ -754,24 +1292,26 @@ vec4 hook() {
 
 //!HOOK FRAME_MIX
 //!BIND HOOKED
+//!BIND DT_A
 //!SAVE LUMA_A_E
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame A to 1/8 res (luma)
 vec4 hook() {
-    return vec4(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_A_tex(HOOKED_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!HOOK FRAME_MIX
 //!BIND NEXT
+//!BIND DT_B
 //!SAVE LUMA_B_E
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame B to 1/8 res (luma)
 vec4 hook() {
-    return vec4(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_B_tex(NEXT_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!TEXTURE FLOW_E_AB_CACHE
@@ -1658,24 +2198,26 @@ vec4 hook() {
 
 //!HOOK FRAME_MIX
 //!BIND HOOKED
+//!BIND DT_A
 //!SAVE LUMA_A_Q
 //!WIDTH HOOKED.w 4 /
 //!HEIGHT HOOKED.h 4 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame A to 1/4 res (luma)
 vec4 hook() {
-    return vec4(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_A_tex(HOOKED_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!HOOK FRAME_MIX
 //!BIND NEXT
+//!BIND DT_B
 //!SAVE LUMA_B_Q
 //!WIDTH HOOKED.w 4 /
 //!HEIGHT HOOKED.h 4 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame B to 1/4 res (luma)
 vec4 hook() {
-    return vec4(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_B_tex(NEXT_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!TEXTURE FLOW_Q_AB_CACHE
@@ -1873,24 +2415,26 @@ vec4 hook() {
 
 //!HOOK FRAME_MIX
 //!BIND HOOKED
+//!BIND DT_A
 //!SAVE LUMA_A_H
 //!WIDTH HOOKED.w 2 /
 //!HEIGHT HOOKED.h 2 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame A to half res (luma)
 vec4 hook() {
-    return vec4(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_A_tex(HOOKED_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!HOOK FRAME_MIX
 //!BIND NEXT
+//!BIND DT_B
 //!SAVE LUMA_B_H
 //!WIDTH HOOKED.w 2 /
 //!HEIGHT HOOKED.h 2 /
 //!COMPONENTS 1
 //!DESC [high] downsample frame B to half res (luma)
 vec4 hook() {
-    return vec4(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), 0, 0, 0);
+    return vec4(mix(dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114)), clamp(DT_B_tex(NEXT_pos).r / 24.0, 0.0, 1.0), 0.5), 0, 0, 0);
 }
 
 //!TEXTURE FLOW_H_AB_CACHE
@@ -2592,11 +3136,108 @@ vec4 hook() {
 // Final pass: bidirectional warp with forward/backward consistency-based
 // occlusion detection, full resolution
 // ---------------------------------------------------------------------
+//!TEXTURE PLATE
+//!SIZE 1920 1080
+//!FORMAT rgba32f
+//!STORAGE
+
 //!HOOK FRAME_MIX
 //!BIND HOOKED
+//!BIND NEXT
+//!BIND SCENE_DIFF
+//!BIND PLATE
+//!SAVE PLATE_TEX
+//!WIDTH HOOKED.w
+//!HEIGHT HOOKED.h
+//!DESC [plate] background plate: what this texel showed when it was last still, and how many windows confirm it
+const float PLATE_STATIC_TAU = 0.03;      // a texel whose A/B colour differs less than this is still
+const float PLATE_AGREE_TAU = 0.06;     // agreement with the plate's stored colour
+const float PLATE_CONF_MAX = 16.0;
+const float PLATE_CUT_DIFF = 0.125;     // the warp's SCENE_CUT_DIFF
+vec4 hook() {
+    ivec2 c = ivec2(gl_FragCoord.xy);
+    vec4 p = imageLoad(PLATE, c);
+    if (SCENE_DIFF_tex(vec2(0.5)).r > PLATE_CUT_DIFF)
+        p = vec4(0.0);
+    if (pair_changed) {
+        vec3 a = HOOKED_tex(HOOKED_pos).rgb;
+        vec3 b = NEXT_tex(NEXT_pos).rgb;
+        bool still = length(a - b) < PLATE_STATIC_TAU;
+        if (still) {
+            if (p.a > 0.0 && length(a - p.rgb) < PLATE_AGREE_TAU)
+                p = vec4(mix(p.rgb, a, 0.25), min(p.a + 1.0, PLATE_CONF_MAX));
+            else
+                p = vec4(a, 1.0);
+        }
+        imageStore(PLATE, c, p);
+    }
+    return p;
+}
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND NEXT
+//!BIND LUMA_A_H
+//!BIND LUMA_B_H
+//!BIND FLOW_H_AB
+//!BIND PLATE_TEX
+//!SAVE FLOW_C
+//!WIDTH HOOKED.w 2 /
+//!HEIGHT HOOKED.h 2 /
+//!DESC [coherent] one motion per moving thing: the trimmed mean of the dense flow over the character texels around this one
+const int COH_R = 32;                 // half-res texels: the vote's radius (a character-sized window)
+const float COH_MOVING_TAU = 0.08;      // A/B luma difference that marks the moving region
+const float COH_CHAR_TAU = 0.03;        // a texel further than this from a confident plate is character
+const float COH_MINFLOW = 0.5;         // half-res texels; a texel whose dense flow is smaller found nothing and does not vote
+bool is_char(vec2 p, vec3 c) {
+    vec4 pl = PLATE_TEX_tex(p);
+    return pl.a < 2.0 || length(c - pl.rgb) > COH_CHAR_TAU;
+}
+vec4 hook() {
+    vec2 uv = FLOW_H_AB_pos;
+    vec2 f0 = FLOW_H_AB_tex(uv).xy;
+    bool moving = abs(LUMA_A_H_tex(uv).r - LUMA_B_H_tex(uv).r) > COH_MOVING_TAU;
+    bool char_a = is_char(uv, HOOKED_tex(uv).rgb);
+    bool char_b = is_char(uv, NEXT_tex(uv).rgb);
+    if (!moving || !(char_a || char_b))
+        return vec4(f0, 0.0, 0.0);
+    vec2 sum = vec2(0.0); float n = 0.0;
+    for (int j = -COH_R; j <= COH_R; j += 4) {
+        for (int i = -COH_R; i <= COH_R; i += 4) {
+            vec2 p = uv + vec2(float(i), float(j)) * FLOW_H_AB_pt;
+            if (abs(LUMA_A_H_tex(p).r - LUMA_B_H_tex(p).r) <= COH_MOVING_TAU) continue;
+            if (!is_char(p, HOOKED_tex(p).rgb)) continue;              // only a texel that is character IN A carries the A->B motion
+            vec2 f = FLOW_H_AB_tex(p).xy;
+            if (length(f) < COH_MINFLOW) continue;
+            sum += f; n += 1.0;
+        }
+    }
+    if (n < 6.0) return vec4(f0, 0.0, 0.0);
+    vec2 m = sum / n;
+    sum = vec2(0.0); n = 0.0;
+    for (int j = -COH_R; j <= COH_R; j += 4) {
+        for (int i = -COH_R; i <= COH_R; i += 4) {
+            vec2 p = uv + vec2(float(i), float(j)) * FLOW_H_AB_pt;
+            if (abs(LUMA_A_H_tex(p).r - LUMA_B_H_tex(p).r) <= COH_MOVING_TAU) continue;
+            if (!is_char(p, HOOKED_tex(p).rgb)) continue;
+            vec2 f = FLOW_H_AB_tex(p).xy;
+            if (length(f) < COH_MINFLOW || length(f - m) > 2.0) continue;
+            sum += f; n += 1.0;
+        }
+    }
+    if (n < 6.0) return vec4(f0, 0.0, 0.0);
+    return vec4(sum / n, 1.0, 0.0);
+}
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND DT_A
+//!BIND DT_B
+//!BIND PLATE_TEX
 //!BIND SCENE_DIFF
 //!BIND NEXT
 //!BIND FLOW_H_AB
+//!BIND FLOW_C
 //!BIND EDGE_A
 //!BIND EDGE_B
 //!SAVE FRAME_MIX
@@ -2765,12 +3406,53 @@ vec4 hook() {
     // flow_ab = displacement from A's position to the matching position in B,
     // i.e. A(x) ~= B(x + flow_ab(x)). For output pixel p at time t, the
     // source position in A is p - flow_ab*t; in B it's p + flow_ab*(1-t).
-    vec2 flow_ab = FLOW_H_AB_tex(HOOKED_pos).xy * 2.0 * HOOKED_pt;
+    vec2 flow_ab = FLOW_C_tex(HOOKED_pos).xy * 2.0 * HOOKED_pt;     // [coherent] one motion per moving thing
 
     vec4 warped_a = warp_sample_a(HOOKED_pos - flow_ab * mix_t);
     vec4 warped_b = warp_sample_b(NEXT_pos + flow_ab * (1.0 - mix_t));
 
-    return mix(warped_a, warped_b, mix_t);
+    // THE PLATE ARBITRATES (scratch experiment, see build_plate.py). Where the two candidates disagree,
+    // the shipped shader blends them into a ghost; if the plate is confident here, the candidate closer to
+    // the plate wins outright when it is within reach of it. The plate chooses, it never invents.
+    const float PLATE_DISAGREE_TAU = 0.12;
+    const float PLATE_MIN_CONF = 2.0;
+    vec4 plate = PLATE_TEX_tex(HOOKED_pos);
+    // A candidate whose SOURCE texel is background (it agrees with the plate there) is background, and the
+    // true background at THIS texel is the plate here -- not the other cell of a patterned backdrop that a
+    // character's flow dragged in. Measured without this: a halo of smeared background around every
+    // moving character on a detailed backdrop.
+    if (plate.a >= PLATE_MIN_CONF) {
+        vec4 pa = PLATE_TEX_tex(HOOKED_pos - flow_ab * mix_t);
+        if (pa.a >= PLATE_MIN_CONF && length(warped_a.rgb - pa.rgb) < 0.06) warped_a = vec4(plate.rgb, warped_a.a);
+        vec4 pb = PLATE_TEX_tex(NEXT_pos + flow_ab * (1.0 - mix_t));
+        if (pb.a >= PLATE_MIN_CONF && length(warped_b.rgb - pb.rgb) < 0.06) warped_b = vec4(plate.rgb, warped_b.a);
+    }
+    if (plate.a >= PLATE_MIN_CONF && length(warped_a.rgb - warped_b.rgb) > PLATE_DISAGREE_TAU) {
+        float da = length(warped_a.rgb - plate.rgb), db = length(warped_b.rgb - plate.rgb);
+        if (min(da, db) < PLATE_DISAGREE_TAU) {
+            vec4 pick = (da < db) ? warped_a : warped_b;
+            warped_a = pick; warped_b = pick;
+        }
+    }
+    vec4 fill = mix(warped_a, warped_b, mix_t);
+    // THE LEVEL-SET MORPH ([lineart]): the two distance fields, each read where the warp reads its frame,
+    // blended by time; the in-between line is where the blend is within LINE_W of zero. One curve between
+    // two drawings, never two superimposed. Ink is the darker of the two warped samples.
+    const float LINE_W = 0.7;
+    // Only where something moves: a still texel's two candidates agree and its fill is already exact;
+    // morphing there would paint every edge of a detailed static background as a line (measured: -6.5 dB
+    // outside the moving band on a checkered backdrop). And only ink that is ink: the darker candidate
+    // must actually be dark, or the level set of a fill boundary would be inked.
+    bool moving = length(flow_ab) > 0.25 * HOOKED_pt.x
+               || abs(dot(HOOKED_tex(HOOKED_pos).rgb, vec3(0.299, 0.587, 0.114)) - dot(NEXT_tex(NEXT_pos).rgb, vec3(0.299, 0.587, 0.114))) > 0.08;
+    if (!moving) return fill;
+    float da = DT_A_tex(HOOKED_pos - flow_ab * mix_t).r;
+    float db = DT_B_tex(NEXT_pos + flow_ab * (1.0 - mix_t)).r;
+    float dt = mix(da, db, mix_t);
+    vec4 ink = min(warped_a, warped_b);
+    float dark = 1.0 - smoothstep(0.25, 0.45, dot(ink.rgb, vec3(0.299, 0.587, 0.114)));
+    float line = (1.0 - smoothstep(LINE_W - 0.4, LINE_W + 0.6, dt)) * dark;
+    return mix(fill, ink, line);
 }
 
 // ==== human-reading tail (generated by tests/add_human_reading.py; do not edit) ====

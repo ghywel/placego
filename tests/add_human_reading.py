@@ -10,6 +10,9 @@ is byte-for-byte the shader's own. Set it and the picture becomes a reading:
 
     read_view  1 velocity   2 acceleration   3 jerk      -- painted for a human
                4 velocity   5 acceleration   6 jerk      -- raw field for a machine
+               7 the pooled reading, raw (what the painting shows, whichever memory)
+               8 the per-cell mode memory, raw (velocity)
+               9 the velocity gradient tensor, raw: divergence, curl, shear (1/frame)
 
 In mpv: `--glsl-shader-opts=read_view=1`. ffmpeg's libplacebo filter has no
 option for shader parameters, so edit the default (the bare number line that
@@ -25,6 +28,32 @@ per-field gate, painted over the dimmed picture; visibility is gated on the
 unpooled field within the tracker's own reach (READ_GATE), which is what
 keeps the paint from spreading ~48 px past a mover. The machine view is the
 unpooled field, encoded like the diagnostic modes: 0.5 + px / (2 * FS).
+
+THE MEMORY IS A SWITCH (READ_MEMORY in the pool pass; 2026-09-05, NFRAME-LIMITS.md
+"Lead G"). 0, the default, is the pool-then-exponential-mean above. 1 is a
+per-cell MODE: K candidate readings per 1/8-res cell in a storage image, each
+frame's raw reading joining the nearest within MODE_R px or replacing the
+weakest, weights decaying by MODE_DECAY, the heaviest reported; the pool then
+weights each cell's mode by its support over MODE_POOL_R cells (0 = none). On
+a steady field (the torus loop, tests/loop.sh) the mean shrinks toward zero
+wherever the tracker aliases and the mode does not: 8.6 px against 1.7, with
+the static backdrop's speckle 0.25 px against 0.03. On transient motion a
+long horizon (MODE_DECAY 0.97, about 33 frames) holds stale zeros, and a
+short one loses the consensus (0.90: 3.1 px on the loop; 0.80: 5.1), which is
+why the mean stays the default and the mode is the choice for a steady
+field. MODE_MISS / MODE_FAST is the middle way, an ADAPTIVE horizon: a cell
+whose readings keep missing its candidates fades them fast (2 misses, x0.5
+a frame: 2.4-3.8 px on the loop, and a walking figure paints again on live
+action); off by default. The tracker always runs (+0.1% at 1080p) so read_view 8 is always
+there; only what the painting shows follows the switch.
+
+THE GRADIENT TENSOR (read_view 9; 2026-09-05, NFRAME-LIMITS.md "Lead E"): central
+differences of the raw 1/8-res field over neighbouring cells give divergence
+du/dx + dv/dy, curl dv/dx - du/dy and the shears per frame, emitted as
+0.5 + x / (2 * READ_MACHINE_FS_DERIV) with FS 0.5. On the rotating disc the
+curl reads within 5% of 2 omega / fps over the inner 70% of the radius; the
+divergence of a 0.6%-a-frame expansion reads 30-80% (the small-flow floor,
+differentiated). The pooled field is the wrong source: its window damps curl.
 
 Generated, never hand-edited: the generators call this last, and it is
 idempotent (an existing tail is replaced), so regenerating is always safe.
@@ -63,10 +92,10 @@ def build_tail(text, default):
     when = "//!WHEN read_view 0 >\n"
 
     param = f"""//!PARAM read_view
-//!DESC 0 = normal output; 1/2/3 = velocity/acceleration/jerk painted for a human; 4/5/6 = the same fields raw, for a machine
+//!DESC 0 = normal output; 1/2/3 = velocity/acceleration/jerk painted for a human; 4/5/6 = the same fields raw, for a machine; 7 = the pooled reading raw; 8 = the per-cell mode memory raw; 9 = divergence, curl, shear raw
 //!TYPE int
 //!MINIMUM 0
-//!MAXIMUM 6
+//!MAXIMUM 9
 {default}
 
 """
@@ -88,7 +117,7 @@ def build_tail(text, default):
         has_vel = "VEL_DIAG_FS" in field
         jerk_mode = "5" if has_jerk else "2"
         field = must_sub(r"^const int TRI_DIAG = 0;",
-                         f"int TRI_DIAG = (read_view == 1 || read_view == 4) ? 7 : (read_view == 2 || read_view == 5) ? 2 : {jerk_mode};",
+                         f"int TRI_DIAG = (read_view == 1 || read_view == 4 || read_view >= 7) ? 7 : (read_view == 2 || read_view == 5) ? 2 : {jerk_mode};",
                          field, 1, re.M)
         if not has_vel:
             field = must_sub(r"^(        if \(TRI_DIAG == 2\)\n)",
@@ -122,6 +151,62 @@ vec4 hook() {{
 """
         family_note = "// two-frame family: one flow, so every mode reads velocity"
 
+    mode = f"""//!TEXTURE MODE_MEM
+//!SIZE 1440 270
+//!FORMAT rgba32f
+//!STORAGE
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND READ_FIELD
+//!BIND MODE_MEM
+//!SAVE READ_MODE
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+{when}//!DESC [reading] the per-cell mode memory: K candidate readings across frames, the heaviest reported with its support
+
+// Lead G (NFRAME-LIMITS.md, 2026-09-05): on a field the tracker aliases, a mean of its readings across
+// frames shrinks toward zero and the mode of them does not (the torus loop: 8.6 px against 1.7). Each
+// cell keeps MODE_K candidates (mean vx, vy, weight): the frame's raw reading joins the nearest within
+// MODE_R px (mean <- mix(mean, r, MODE_ALPHA), weight += 1) or replaces the weakest; weights decay by
+// MODE_DECAY per frame, so the horizon is about 1 / (1 - MODE_DECAY) frames -- 33 at 0.97, which the
+// steady field needs (0.90 reads 3.1 px, 0.80 5.1) and which holds stale zeros on transient motion.
+// The storage holds 480 x MODE_K cells wide: a 4K frame's cells at MODE_K = 3.
+// MODE_MISS / MODE_FAST: the ADAPTIVE horizon. A cell counts consecutive frames whose reading joined no
+// candidate; past MODE_MISS of them every weight also decays by MODE_FAST, so what the cell learned while
+// still fades within a few frames of new motion, while a cell whose readings keep agreeing keeps the long
+// horizon. Measured: on the noisy torus loop the fixed horizon reads 1.7 px, MISS 3 / FAST 0.7 2.2, MISS 2 /
+// FAST 0.5 2.4-3.8, MISS 1 / FAST 0.3 4-5 (the shipped mean 8.6); on live action only MISS 2 / FAST 0.5 and
+// below paint a walking figure. Off (MISS huge) by default: the fixed horizon is the steady-field setting.
+const int   MODE_K = 3;
+const float MODE_R = 1.5, MODE_DECAY = 0.97, MODE_ALPHA = 0.3;
+const float MODE_MISS = 1.0e9, MODE_FAST = 0.5;
+
+vec4 hook() {{
+    ivec2 coord = ivec2(READ_FIELD_pos * READ_FIELD_size);
+    vec2 r = READ_FIELD_tex(READ_FIELD_pos).xy;
+    vec4 cand[3];
+    int best = 0, weakest = 0, hit = -1; float dbest = 1.0e9;
+    for (int k = 0; k < MODE_K; k++) {{
+        cand[k] = imageLoad(MODE_MEM, ivec2(coord.x * MODE_K + k, coord.y));
+        cand[k].z *= MODE_DECAY;
+        float d = length(cand[k].xy - r);
+        if (cand[k].z > 0.0 && d < MODE_R && d < dbest) {{ dbest = d; hit = k; }}
+        if (cand[k].z < cand[weakest].z) weakest = k;
+    }}
+    float miss = (hit >= 0) ? 0.0 : cand[0].w + 1.0;        // consecutive misses, kept in candidate 0's spare component
+    if (miss > MODE_MISS) for (int k = 0; k < MODE_K; k++) cand[k].z *= MODE_FAST;
+    if (hit >= 0) {{ cand[hit].xy = mix(cand[hit].xy, r, MODE_ALPHA); cand[hit].z += 1.0; }}
+    else {{ cand[weakest] = vec4(r, 1.0, 0.0); }}
+    cand[0].w = miss;
+    for (int k = 0; k < MODE_K; k++) {{
+        imageStore(MODE_MEM, ivec2(coord.x * MODE_K + k, coord.y), cand[k]);
+        if (cand[k].z > cand[best].z) best = k;
+    }}
+    return vec4(cand[best].xy, cand[best].z, 1.0);
+}}
+"""
+
     pool = f"""//!TEXTURE READ_ACC
 //!SIZE 480 270
 //!FORMAT rgba32f
@@ -131,10 +216,11 @@ vec4 hook() {{
 //!BIND HOOKED
 //!BIND READ_FIELD
 //!BIND READ_ACC
+//!BIND READ_MODE
 //!SAVE READ_POOL
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
-{when}//!DESC [reading] 13x13 pool at 8 px spacing, then an exponential memory across frames
+{when}//!DESC [reading] the reading's memory: 13x13 pool then an exponential mean (READ_MEMORY 0), or the per-cell mode with a support-weighted pool (1)
 
 // Measured on the Metal demo (2026-09-01): pooling +/-48 px drops the
 // static-background p95 from 0.52 to 0.10 px; the memory lifts a mover's
@@ -143,9 +229,24 @@ vec4 hook() {{
 // toward zero under any memory).
 const float READ_EMA_ALPHA = 0.12;
 const int   READ_POOL_R    = 6;
+// READ_MEMORY 1: the per-cell mode (the pass above) pooled over MODE_POOL_R cells, each weighted by its
+// support, and no exponential mean (the mode is the memory). Measured on the noisy torus loop
+// (tests/loop.sh bg=tex noise=3): radius 0 reads 1.70 px and a backdrop speckle p95 of 0.029, radius 1
+// 1.70 and 0.021, radius 6 5.5 px (the pool's mean over aliasing cells shrinks like the mean over frames).
+const int   READ_MEMORY    = 0;
+const int   MODE_POOL_R    = 1;
 
 vec4 hook() {{
     ivec2 coord = ivec2(READ_FIELD_pos * READ_FIELD_size);
+    if (READ_MEMORY == 1) {{
+        vec2 fpx = vec2(0.0); float wsum = 0.0;
+        for (int j = -MODE_POOL_R; j <= MODE_POOL_R; j++)
+            for (int i = -MODE_POOL_R; i <= MODE_POOL_R; i++) {{
+                vec3 c = READ_MODE_tex(READ_FIELD_pos + vec2(float(i), float(j)) * READ_FIELD_pt).xyz;
+                fpx += c.xy * c.z; wsum += c.z;
+            }}
+        return vec4(fpx / max(wsum, 1.0e-6), 0.0, 1.0);
+    }}
     vec2 fpx = vec2(0.0);
     for (int j = -READ_POOL_R; j <= READ_POOL_R; j++)
         for (int i = -READ_POOL_R; i <= READ_POOL_R; i++)
@@ -158,6 +259,25 @@ vec4 hook() {{
 }}
 """
 
+    deriv = f"""//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND READ_FIELD
+//!SAVE READ_DERIV
+//!WIDTH HOOKED.w 8 /
+//!HEIGHT HOOKED.h 8 /
+{when}//!DESC [reading] the velocity gradient tensor by central differences over neighbouring cells: divergence, curl, the two shears (1/frame)
+
+// Lead E, the half that needs no new match (NFRAME-LIMITS.md, 2026-09-05): the field's own spatial
+// derivatives. Cells are 8 px apart, so a central difference spans 16 px; units are 1/frame. Read the
+// RAW field, not the pooled one: on the disc the pool's window damps the curl (0.26 -> 0.13 at 0.5 R).
+vec4 hook() {{
+    vec2 uv = READ_FIELD_pos; vec2 pt = READ_FIELD_pt;
+    vec2 dfdx = (READ_FIELD_tex(uv + vec2(pt.x, 0.0)).xy - READ_FIELD_tex(uv - vec2(pt.x, 0.0)).xy) / 16.0;
+    vec2 dfdy = (READ_FIELD_tex(uv + vec2(0.0, pt.y)).xy - READ_FIELD_tex(uv - vec2(0.0, pt.y)).xy) / 16.0;
+    return vec4(dfdx.x + dfdy.y, dfdx.y - dfdy.x, dfdx.x - dfdy.y, dfdy.x + dfdx.y);
+}}
+"""
+
     # NB: in a FRAME_MIX hook the hooked texture is also aliased as FRAME_MIX, so
     # this pass binds FRAME_MIX (the picture the final pass just saved) and NOT
     # HOOKED -- binding both redefines the FRAME_MIX_raw macro and the pass
@@ -166,10 +286,12 @@ vec4 hook() {{
 //!BIND FRAME_MIX
 //!BIND READ_FIELD
 //!BIND READ_POOL
+//!BIND READ_MODE
+//!BIND READ_DERIV
 //!SAVE FRAME_MIX
 //!WIDTH FRAME_MIX.w
 //!HEIGHT FRAME_MIX.h
-{when}//!DESC [reading] paint the field over the picture (modes 1-3) or emit it raw for a machine (modes 4-6)
+{when}//!DESC [reading] paint the field over the picture (modes 1-3) or emit it raw for a machine (modes 4-9)
 
 {family_note}
 // Gates in px per interval (velocity) or px per interval^2 / ^3
@@ -189,6 +311,7 @@ const float READ_PICTURE_LUMA = 0.35;
 const float READ_MACHINE_FS_VEL = 32.0;
 const float READ_MACHINE_FS_ACC = 2.0;
 const float READ_MACHINE_FS_JERK = 2.0;
+const float READ_MACHINE_FS_DERIV = 0.5;    // 1/frame: divergence, curl, shear
 
 vec3 read_hsv2rgb(vec3 c) {{
     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
@@ -197,7 +320,13 @@ vec3 read_hsv2rgb(vec3 c) {{
 }}
 
 vec4 hook() {{
-    bool vel = (read_view == 1 || read_view == 4);
+    bool vel = (read_view == 1 || read_view == 4 || read_view >= 7);
+    if (read_view == 7)      // the pooled reading, raw: what the painting shows, whichever memory
+        return vec4(0.5 + READ_POOL_tex(FRAME_MIX_pos).xy * (0.5 / READ_MACHINE_FS_VEL), 0.5, 1.0);
+    if (read_view == 9)      // the velocity gradient tensor, raw: divergence (R), curl (G), the first shear (B)
+        return vec4(0.5 + READ_DERIV_tex(FRAME_MIX_pos).xyz * (0.5 / READ_MACHINE_FS_DERIV), 1.0);
+    if (read_view == 8)      // the per-cell mode memory, raw
+        return vec4(0.5 + READ_MODE_tex(FRAME_MIX_pos).xy * (0.5 / READ_MACHINE_FS_VEL), 0.5, 1.0);
     if (read_view >= 4) {{
         float fs = (read_view == 4) ? READ_MACHINE_FS_VEL : (read_view == 5) ? READ_MACHINE_FS_ACC : READ_MACHINE_FS_JERK;
         vec2 f = READ_FIELD_tex(FRAME_MIX_pos).xy;
@@ -234,7 +363,7 @@ vec4 hook() {{
     return vec4(reading, pic.a);
 }}
 """
-    return "\n" + MARKER + "\n" + param + field + "\n" + pool + "\n" + present
+    return "\n" + MARKER + "\n" + param + field + "\n" + mode + "\n" + pool + "\n" + deriv + "\n" + present
 
 
 def add_tail(text, default=0):

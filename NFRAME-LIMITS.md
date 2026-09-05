@@ -1538,6 +1538,16 @@ folder; the scaled quad is not shipped as a file (one command makes it:
 `./scale_shader.py ../shaders/quaddirectional-interpolation-propagated.glsl
 <out> 2`), because a field shader at 4K owes a ladder at 4K first.
 
+*Dated note, 2026-09-05 (Lead B, below): the exact read disagrees with the
+eye here. Through `tests/discaccel.py`, the scaled quad's velocity on the 4K
+disc at 72 fps is exact inside 0.3 R and REVERSED over 0.3-0.7 R (along
+the truth -0.97 and -0.56), which the pooled, remembered painting smoothed
+into a wheel whose sides turn the wrong way. The disc's 40-px texture is
+1.25 texels at the scaled pyramid's coarsest level, below its Nyquist, so
+that level matches one period away; the resolution half repaired the
+constants and the scene defeated the pyramid. "The hue wheel back" stands
+only for the inner third.*
+
 ### Weird geometry, and the six-frame line
 
 `tests/manifolds.py` renders four deterministic scenes with the exact 2D
@@ -1561,8 +1571,8 @@ problem by construction. Two cautions on the torus: an early texture with
 with 5 px components aliased against the render's own sample lattice; the
 texture that stands is the ladder's M1 recipe band-limited to 12-42 px in
 surface arc length, which foreshortening still compresses toward the coarse
-levels' Nyquist near the rim. The 19% low reading on the band is the lead:
-the rotating disc's 15% pooled error may be the same thing.
+levels' Nyquist near the rim. The 19% low reading on the band was the
+read path, withdrawn below.
 
 The six-frame shader (`SEXTDIRECTIONAL.md`) is the night's other result:
 built from the quint's generator, a weighted least-squares quartic with a
@@ -1576,25 +1586,392 @@ polynomial field estimator, the stencil's symmetry about the instant it
 reports at is worth more than its length, and an even frame count buys
 symmetry only by reporting half an interval off the anchor.
 
-### The pipeline is not time-symmetric, and nobody knows why yet
+### The time asymmetry was the instrument: a retraction, and what the exact read shows
 
-A test that costs nothing: play a scene backwards, negate its truth, and
-score again. The steadily spinning torus reads the same either way (45%
-against 42% pooled, both poor). The tumbling band does not: forward, the
-quad reads its velocity 19% low with 30% pooled error and 13 degrees off;
-backwards, the same frames at the same phase read the right magnitude, 8%
-pooled and 5 degrees. The two-frame propagated base shows the same thing
-(33% forward, 10% backwards), so it is the flow pipeline, not the
-four-frame window. One hypothesis was tested and did not survive: that a
-texture component above a level's Nyquist (the band's 12 px one, above the
-1/8 level's 16 px) moves with a different aliased velocity in each
-direction, since reversal flips the velocity and not the wave vector.
-Removing that component made both directions worse in a new way
-(magnitudes high, the backwards run's 90th percentile at 11 px) -- but it
-also left a two-sine, near-periodic texture, so what that run measured was
-the period lock, not the hypothesis. The asymmetry stands as a real,
-reproducible property with no explanation; the next test is a texture that
-is aperiodic AND band-limited below 16 px (more sines, none above the
-limit), then the two directions again. The fast-oscillation riddle (O9)
-also stands: the accident put back on purpose as an OR term recovers
-nothing there.
+The finding above of 2026-09-05's small hours -- that the tumbling band
+played backwards is measured three times better -- is withdrawn. It was the
+read path. A machine field written with `-pix_fmt rgb48le` on ffmpeg's
+OUTPUT passes through an 8-bit limited-range YUV frame after libplacebo:
+every value is scaled by 219/255 and shifted by about half a pixel, the two
+channels differently through the chroma path, with quarter-pixel steps.
+Decoded as the full-range field it never was, that produced a uniform 25%
+"underestimation", fixed offsets that followed the pipeline's axes, and a
+run in which the two happened to cancel. A rigid translation reading 0.80
+of itself a hundred pixels from any edge was the tell; the acceleration
+comparison in the previous section used raw video and was exact, which is
+why it reproduced the quint's published number. With `format=rgb48le`
+inside the filter graph the field is exact, `tests/fieldcheck.py` now
+refuses a frame whose off-object zero level is not 0.5, and the memory of
+this project carries the rule: calibrate a read on a translation the ladder
+already knows before scoring anything new.
+
+Through the exact path, the same scenes, the quad's velocity at frame 48:
+
+| scene | median error | gross (> 2 px) | direction | magnitude along the truth |
+|---|---|---|---|---|
+| Mobius band, forward | 0.19 px on 3.4 | 5.9% | 1.9 deg | 0.97 |
+| Mobius band, reversed | 0.18 | 4.5% | 1.8 deg | 0.98 |
+| Mobius band, mirrored | 0.19 | 5.9% | 1.9 deg | 0.98 |
+| aperture (rigid translation behind a static rim) | 0.55 on 4.3 | 20.8% | 6.0 deg | see below |
+| zoom (pure expansion; contraction the same) | 0.52 on 1.3 | 0.4% | 14 deg | see below |
+| torus, tilted, spinning (either direction) | 1.7-2.0 on 5.8 | 47-50% | 7-9 deg | see below |
+| tesseract, Hopf (tubes) | 1.9-3.0 | 49-73% | 30-34 deg | aperture-limited by design |
+
+The band is tracked to a fifth of a pixel, forward, backward and mirrored
+alike, on a surface that twists, tumbles and occludes itself. Three things
+survive the correction, each with its profile against distance from the
+object's outline (ratio of the measurement along the truth; the rows are
+3-8, 8-16, 16-24, 24-32, 32-48, 48-64, 64-96 and 96-131 px):
+
+- **Silhouette capture is real, and local.** The aperture: 0.80, 0.94,
+  0.96, 0.92, 0.89, 0.93, 1.00, 1.03. A rigid translation of texture behind
+  a rim that does not move reads a fifth low within eight pixels of the rim,
+  five to ten percent low out to about sixty, and exactly beyond. The
+  coarse levels' windows (80 and 40 px) contain the outline, the outline's
+  contrast dominates a sum of absolute differences, and the outline's motion
+  is zero; the refines recover most of it but not within the window's
+  reach of the edge. The torus shows the same rim: 0.67, 0.87, 0.94, 0.97,
+  0.98, 0.95, 0.94.
+- **Small flows read low.** The zoom's field grows with radius, so distance
+  from its rim is distance toward slow flow: 1.00 at the rim where the flow
+  is 1.9 px, then 0.84, 0.85, 0.90, 0.84, 0.81, 0.77, 0.76 toward the centre
+  where it is half a pixel. Flows above about 1.5 px read exactly; flows of
+  half a pixel read about three quarters. Expansion and contraction are the
+  same. This is the small-signal floor of the sub-texel fit and the seeds'
+  priors, and it is what the reading's own floors were set to hide.
+- **The torus interior is a real hard case.** Along the truth it reads
+  0.94-0.98 beyond sixteen pixels from the rim, but the error there is 1.3
+  to 2.9 px on a 5.8 px field: cross-flow, a direction error on a surface
+  whose flow curves and shears strongly under foreshortening, with the far
+  half hidden. Nothing above explains it yet.
+
+The night's other retraction is smaller: the band reading "19% low even
+pooled" in the weird-geometry section above was the same read path, and
+the disc's 15% pooled error, which that was offered as an explanation for,
+stands on its own measurement through the tools that were always exact.
+
+### The phase-locked consensus: a loop reads a field the mean of its frames cannot
+
+The owner's isometric torus (`tests/loop_torus.py`: symmetry axis 54.7
+degrees from the line of sight, one turn per 80 frames, the outer rim at
+19.6 px/frame) was rendered to be looped, and looking at the painted
+reading over the loop he saw it flicker and cover different parts of the
+torus at different times, and asked whether the average over a full turn
+would shade it exactly. It is the right object for that question: a torus
+spinning about its own symmetry axis presents the same surface, silhouette
+and shading at every frame with only the texture sliding, so the velocity
+field under every pixel is stationary and the truth computed at frame 80
+differs from frame 120 by zero pixels. Every frame of the turn is a fresh
+reading of one field.
+
+**The mean does not converge, at any speed.** The machine field (mode 4,
+the exact read) of the middle turn, scored at its own 8-px cells:
+
+| torus | single frame | mean of the turn | mode of the turn | oracle | tracker right |
+|---|---|---|---|---|---|
+| as rendered (shaded, 19.6 px/frame) | 9.3 px, 0.77 of magnitude | 7.8 px, 0.34 | **1.29 px, 0.95** | 0.43 px | 1 frame in 5 |
+| the same without shading | 8.7, 0.77 | 7.8, 0.34 | 1.28, 0.95 | 0.45 | 1 in 5 |
+| broadband texture (84 and 170 px periods added) | 3.2, 0.87 | 4.0, 0.68 | 1.05, 0.99 | 0.33 | 2 in 5 |
+| half speed (one turn per 160 frames, 9.8 px/frame) | 1.2, 1.05 | 2.2, 0.67 | **0.47, 1.00** | 0.085 | 1 in 2 |
+
+Median absolute error per cell and the median ratio of the estimate's
+magnitude to the truth's; "oracle" is the reading closest to the truth
+among the turn's frames, the floor no estimator can beat; "tracker right"
+is the median over cells of the fraction of frames whose reading is within
+2 px of the truth. Averaging the turn makes the error worse than a single
+frame in three of the four rows and shrinks the magnitude to a third or two
+thirds in all of them, and the running mean never turns around: on the
+torus as rendered it goes 6.9, 7.3, 7.4, 7.6, 7.5, 8.0, 8.2 px at 1, 2, 4,
+8, 16, 40 and 80 frames while the magnitude falls from 0.73 to 0.37.
+
+**Because the tracker is not noisy about the truth; it is right some of
+the time and reads an alias the rest.** The hit map (`hit.png`) is the
+picture of it: the tracker is right in nearly every frame across the front
+band, where the ring's texture slides horizontally and unforeshortened, and
+in a stripe at the top, and right one frame in ten at the sides, where the
+tilt compresses the same texture along the direction of motion by
+cos 54.7 = 0.58. The texture's longest period is 42 px in arc length; at the
+sides that is 24 px on screen against an 11 px shift, and at the coarse
+levels of the pyramid, which are all that can see a shift that size, a
+texture with one period left in it matches itself equally well one period
+away. The aliases are not symmetric about the truth, so no mean of them
+converges. Three controls say which ingredient it is: removing the shading
+changes nothing (row two), so the static pattern the spin leaves under the
+sliding texture is not the cause; long periods the coarse levels can hold
+halve the single-frame error and double the hit fraction (row three); and
+halving the shift makes the tracker right in half its frames (row four).
+This is also the explanation the weird-geometry section above did not have
+for "the torus interior is a real hard case": the manifold torus moves its
+rim at 9.4 px/frame on the same texture, and its 1.7 px median with 47%
+gross is the same alias problem at the half-speed row's strength.
+
+**The mode of the turn is the estimator, and it shades the torus.** Per
+cell, a 1-px histogram of the turn's readings, its peak refined by mean
+shift, recovers the field wherever the truth is the most common reading:
+1.3 px on the torus as rendered (two thirds of its cells; the rest are the
+sides, where the hit fraction is below a tenth and the most common reading
+is an alias), 1.05 px with broadband texture, and 0.47 px with a 1.0-px
+90th percentile and the exact magnitude at half speed. Pooling the
+histogram over the cell's eight neighbours changes little. The median and
+the trimmed mean sit between the mean and the mode, as they must for a
+mixture. `tests/loopfield.py` computes all of it and paints it with the
+shader's own palette (`tests/fieldpaint.py`), and `tests/loop.sh` runs the
+render, the exact read and the scoring.
+
+Two consequences. The painted reading's memory (`READ_EMA_ALPHA`, an
+exponential mean across frames) is a mean, and on content like this it
+shrinks toward zero exactly as the turn average does; a histogram memory in
+a storage image, reporting the peak, would report the consensus instead,
+and that is on the lead list. And the per-frame error metric this document
+has used throughout, a median over cells, cannot see a bimodal reading: the
+hit fraction, or the oracle-to-single gap (0.43 against 9.3 px here), is
+the measure of a tracker on texture it cannot hold.
+
+### Lead A: the two rim biases have mechanisms and fixes, and each fix is a trade
+
+The geometry ladder's two biases (section 9, the retraction): SILHOUETTE
+CAPTURE, a rigid translation seen through a static rim reading a fifth low
+within eight pixels of the rim and five to ten percent low out to sixty
+(`tests/rimprofile.py`), and the SMALL-FLOW FLOOR, flows under two pixels
+reading about three quarters (`tests/smallflow.py`, the zoom scene). Both
+were taken apart on 2026-09-05 with scratch variants of the four-frame
+shader, scored on the aperture and the zoom, on the other weird geometries,
+on a fourteen-case subset of the picture ladder, on cel and live-action
+footage by decimate-and-reconstruct, and for time.
+
+**Silhouette capture: a hard cap on the cost kills the search's basin; a
+weight by each texel's own temporal change does not.** The coarse levels
+(1/16 and 1/8) match a 3x3 window of block-averaged luma by a plain sum of
+absolute differences, and a static rim inside the window dominates the sum
+at every candidate but zero. Two robust costs were tried at those levels
+only (at the finer levels either one collapses the torus):
+
+- A truncated sum, min(|a - b|, tau). At tau 0.15 nothing changes: a
+  rim's coarse-level differences are 0.05 to 0.15. At 0.03 the aperture
+  is exact (gross 20.8% to 3.0%, magnitude 4.33 against a true 4.27, the
+  8 to 64 px rim bands 0.90-0.95 to 0.99-1.03) and the manifold torus
+  halves its error (median 1.73 to 1.03 px, pooled 2.01 to 0.77). And the
+  ladder refutes it: the 23-px translation 43.4 to 33.3 dB, the flat
+  large block 65.1 to 56.5, the noise texture 49.6 to 35.2, live action
+  -0.3 dB. A texture's own coarse-level differences are on the same scale
+  as a rim's, so a cap that removes the rim's dominance also flattens the
+  basin a 23-px search descends. The two cannot be separated by size.
+- A weight by temporal change, w = clamp(|a(x) - b(x)| / 0.10, 0.25, 1)
+  on each window texel: a texel that shows the same luma in both frames
+  at its own position -- a static rim, a static background -- counts a
+  quarter. That separates them by a different property and keeps the
+  basin. Aperture gross 20.8% to 9.1%, the rim bands exact beyond 8 px,
+  magnitude 4.98 to 4.40; the torus -0.1 px; Mobius, zoom and Hopf
+  unchanged; +1.1% render time at 1080p. The ladder subset is a trade:
+  diagonal +1.3 dB, the textured trap -1.0, low contrast -0.5, the 23-px
+  case -0.35, the rest within 0.2; cel footage 35.24 to 35.21 dB and live
+  action 46.70 to 46.62. The floor is load-bearing: at 0.50 the aperture
+  is only half fixed, at a tau of 0.20 low contrast loses 3.6 dB, and
+  NORMALISING the weighted sum by the window's mean weight (so the
+  regulariser sees the same scale) overshoots everywhere (aperture 6.3
+  against 4.27, zoom 1.8 against 1.28): the raw weights' pull toward zero
+  where evidence is weak is doing work of its own.
+
+**The small-flow floor is a fifth the finest level's regulariser, and not
+the fit.** On the zoom the reading is exact at 0.5-0.75 px and 0.74-0.83
+of the truth below and above that; the parabola fit is worse (peak
+locking, as the equiangular fit's comment predicted), the self-reference
+is neutral, and a walk when the fit lands on its half-texel clamp changes
+nothing. Setting the half-res level's REFINE_REG_LAMBDA (0.05, a penalty
+per texel step away from the seed) to zero at that level only lifts flows
+of 1-2 px from 0.74-0.77 to 0.83-0.86 of the truth, the zoom's pooled
+error 0.41 to 0.31 px, and the Hopf reading 3.00 to 2.81 px, with the
+aperture, torus, Mobius and tesseract unchanged and no gross error added.
+The picture ladder refuses it outright: the flat large block 65.1 to 49.6
+dB, the noise texture 49.6 to 44.6, the 8-px square 69.8 to 65.0, the
+oscillation 49.1 to 45.0. The fine level's search wanders without it on
+content whose finest level carries no signal, and the picture pays; the
+field on a textured surface would rather it did not hold. The zoom's
+remaining floor is anisotropic (vertical flows read 0.72-0.77 where
+horizontal read 0.86-0.87) and it is not the frame border (a 96-px margin
+does not move it); the texture's own gradient energy is the candidate.
+
+**What ships.** Nothing as a default. The weight is the right fix for
+silhouette capture and costs a decibel on one ladder case; the regulariser
+is the right knob for small flows and costs fifteen on another. Both are
+field-tier trades, described above precisely enough to rebuild, and the
+right home for either is a switch in the reading's generator when a use
+asks for it. The instruments that measure them are in `tests/`.
+
+### Lead G: the reading's memory as a mode, and where that helps
+
+The painted reading remembers its field with an exponential mean across
+frames, and the phase-locked consensus above says what a mean does on a
+field the tracker aliases: it shrinks toward zero. The shader form of the
+consensus is an online mode: per 1/8-res cell, three candidate readings
+(mean, weight) in a storage image; each frame's raw reading joins the
+nearest candidate within 1.5 px or replaces the weakest; weights decay by
+0.97 a frame; the heaviest is the cell's reading. It is now a switch in
+the reading tail every shipped shader carries (`tests/add_human_reading.py`,
+READ_MEMORY: 0 the mean, the default; 1 the mode), with read_view 7 and 8
+exporting the pooled reading and the per-cell mode raw so `tests/loop.sh`
+can score a memory frame by frame; the tracker always runs, at +0.1%.
+
+**Order matters: the consensus must come before the pool.** The first
+build put the mode after the shipped 13x13 pool and read 9.7 px on the
+torus loop, worse than the mean's 8.4: a spatial mean over 169 cells whose
+readings are aliases in different directions is as small as a temporal
+mean of them, and no memory downstream of it can recover the field. Per
+cell, on the raw field, the mode reads 1.6 px at every frame of the turn
+(the offline mode of the same readings was 1.29), with 58% of cells right
+more than half the time against 16% for the raw field. Pooling the modes
+13x13 with each weighted by its support still shrinks to 5.5 px; 3x3 reads
+1.70. On a torus loop with a static textured backdrop and sensor noise
+(`loop_torus.py bg=tex noise=3`, `loopfield.py`'s backdrop score) the
+per-cell mode also does the pool's other job: the backdrop's speckle p95
+is 0.029 px against the raw field's 0.145 and the shipped pooled
+reading's 0.246, which is the 13x13 pool smearing the torus's motion 48 px
+into the backdrop.
+
+**The horizon is one knob with two answers.** The steady field needs a
+long one: decay 0.97 (about 33 frames) reads 1.7 px, 0.90 reads 3.1, 0.80
+reads 5.1. On five seconds of live action a long horizon holds the zeros
+each cell learned while still, so a walking figure is missed and a pan
+paints grainier than the pooled mean, and a short one gives the consensus
+away. That is why the mean stays the default: it is the right memory for
+transient motion, and the mode is the right one for a steady field, which
+is what the reading is pointed at when it is used as an instrument.
+
+**An adaptive horizon is the middle way, and it is a dial, not a fix.** A
+cell that counts consecutive frames whose reading joined no candidate,
+and past a threshold fades every candidate by an extra factor a frame,
+re-anchors on new motion while a cell whose readings keep agreeing keeps
+the long horizon (MODE_MISS, MODE_FAST in the mode pass; off by default).
+On the noisy loop: 3 misses and x0.7 reads 2.2 px, 2 and x0.5 reads
+2.4-3.8, 1 and x0.3 reads 4-5, against 1.7 for the fixed horizon and 8.6
+for the mean; on the live clip only 2 and x0.5 and below paint the
+walking figure again, grainier than the pooled mean because every cell
+shows its own mode. The loop's alias cells miss as often as the true
+cells hit, so whatever shortens the memory on a transient shortens it
+on the consensus too; the three settings are three uses, and the eye
+decides the painted one.
+
+### Lead B: the frame-rate half is a decimation stage, and the 4K disc could not have shown it
+
+The record above says the acceleration at 72 fps is the frame-rate limit
+(a ninth of the acceleration per interval against the same noise per
+reading) and that the answer is a stride through the frames. Measured on
+2026-09-05 with `tests/discaccel.py` on the 720p disc of `scenes.sh`
+(R 150, pi rad/s, the shipped four-frame shader, the exact read, frame
+100), the reading along the centripetal truth and the angle to it by
+radius band, 0.1-0.3 / 0.3-0.5 / 0.5-0.7 / 0.7-0.85 / 0.85-0.97 R:
+
+| disc | velocity along truth | acceleration along truth | acceleration angle |
+|---|---|---|---|
+| 24 fps (rim 19.6 px/frame, a 2.6 px/frame^2) | 0.97 1.00 0.99 0.89 0.47 | 1.11 0.93 0.89 0.25 0.00 | 16 14 12 26 71 deg |
+| 72 fps native (rim 6.5, a 0.29) | 0.88 0.99 0.99 0.99 0.98 | 1.74 0.92 0.90 0.63 0.50 | 61 59 54 52 65 deg |
+| 72 fps, `fps=24` in front of the hook | | 1.22 0.94 0.90 0.22 0.03 | 16 12 12 32 73 deg |
+
+At 72 fps the velocity is exact to the rim (the shift is small enough for
+the 40-px texture everywhere) and the acceleration is noise: the ratio
+looks fair in the middle bands and the angle says it is not a field. With
+every third frame handed to the shader by one filter the acceleration map
+is back, band for band the 24-fps reading, in units of the decimated
+interval. For a measurement pipeline that is the frame-rate half, and it
+needs no shader: choose the stride so the motion of interest moves 5-20 px
+per interval it sees, and scale by the stride. The two rims say what the
+stride costs: at 24 fps the rim's 19.6-px shift is half the texture's
+period and the velocity reads 0.47 there, so a stride is bounded above by
+the reach and the texture as well as below by the noise.
+
+The 4K disc that motivated the lead cannot show it. Decimated to 24 its
+rim moves 59 px, past any reach, so its velocity reads zero everywhere
+and its acceleration with it; and at 72 native its velocity is reversed
+over the middle radii (the dated note above), so its acceleration was
+never going to be a field there. A fair 4K scene carries texture with
+periods the scaled coarse level can hold (above 64 px) and a stride that
+keeps the rim inside the reach; `loop_torus.py`'s broad texture at a high
+turn count is the shape of it.
+
+What remains is the real-time form: a stride inside the mixer's window,
+so the picture path interpolates at the source rate while the field passes
+read frames 0, 3 and 6 of an eight-frame window (`PL_FRAME_MIX_MAX` is 8:
+a three-frame shader at stride 3, a four-frame at stride 2). That is a
+generator change to the slot-to-frame mapping and the final pass's roles,
+gated by the table above reproduced from a 72-fps source with the shader
+striding instead of the filter.
+
+### Lead C: a number beside the project that nobody here chose
+
+The Middlebury optical-flow benchmark (Baker, Scharstein, Lewis, Roth,
+Black and Szeliski, IJCV 2011) publishes dense ground-truth flow for the
+frame10 to frame11 pair of eight short colour sequences, 584x388 to
+640x480 px, with hidden-texture, synthetic and real content. Fed to the
+shipped shaders as eight-frame videos at N:N and read through the exact
+path (`tests/middlebury.py`), the field's average endpoint error in px, the
+benchmark's own measure, at the better of the two output frames that
+bracket the pair, and the zero field's floor:
+
+| sequence | four-frame reading | two-frame reading | zero field |
+|---|---|---|---|
+| RubberWhale (real, small motions) | **0.67** (84% within 1 px) | 1.09 | 1.26 |
+| Hydrangea (real) | **0.85** (75%) | 1.39 | 3.73 |
+| Grove2 (synthetic foliage) | 1.33 | 1.69 | 3.09 |
+| Grove3 | 1.73 | 2.08 | 3.91 |
+| Dimetrodon (two frames only) | - | 1.73 | 2.06 |
+| Venus (two frames only) | - | 2.30 | 3.80 |
+| Urban2 (synthetic city, motions to 30 px) | 4.03 | 4.17 | 8.39 |
+| Urban3 | 4.16 | 4.43 | 7.31 |
+
+What the number is: a field at 1/8 resolution, upsampled bilinearly by
+the shader, scored per pixel against a per-pixel truth, so it carries the
+resolution's own error at every edge; the benchmark's published methods
+are per-pixel and an order finer, and the table is not a claim on them.
+It is the honest external number for a real-time coarse field, and two
+things in it are the project's own findings seen from outside. The Urban
+pair's motions run past the tracker's 23-px reach, and the reading there
+is a third of the way from the zero field to the truth. And the four-frame
+reading beats the two-frame one on every sequence by 0.2-0.5 px even
+though the truth is a single pair's flow: its estimate is centred at its
+anchor, so the truth's chord is half a frame off it either way, and which
+of the bracketing output frames wins (frame10 on Hydrangea, 0.85 against
+1.54; frame11 on Grove2) depends on the sequence's own acceleration. The
+two-frame reading at output frame 10 IS the pair's flow and is still
+worse: the extra frames are worth more than the half-frame offset costs.
+
+Particle image velocimetry, the other external measure the lead named:
+the Cai, Liang, Zhou, Xu and Wei 2019 set (256x256 pairs with .flo truth,
+research use) is on Google Drive and needs a browser download; the
+Synthetic Particle Image Dataset (Zenodo 7935215, CC-BY-4.0, 665x630
+pairs with exact flow, six flow families, noise and particle-size sweeps)
+is one 16.7 GB file, a direct download when there is a reason to spend
+the disk. Both score with `middlebury.py`'s reader once their flows are
+in .flo form.
+
+### Lead E, the half that needs no new match: the velocity gradient tensor
+
+The lead asks for an affine block match at the fine level, which would
+measure the local gradient of the flow directly and repair the direction
+error on sheared surfaces. The tensor itself is available now from the
+field the reading already has: central differences of the raw 1/8-res
+field over neighbouring cells give divergence du/dx + dv/dy, curl
+dv/dx - du/dy and the two shears, per frame, and read_view 9 emits them
+raw (`tests/add_human_reading.py`; `tests/tensorcheck.py` scores them).
+Two scenes are exact gates: the zoom, a flat disc expanding 0.6% a frame
+(divergence 0.012, curl 0), and the rotating disc at 24 fps (curl
+2 omega / fps = 0.262, divergence 0). Medians by radius band, 0.1-0.4 /
+0.4-0.7 / 0.7-0.85 R:
+
+| scene | divergence | curl |
+|---|---|---|
+| zoom (truth 0.012, 0) | 0.0098 0.0063 0.0034 | -0.002 -0.001 +0.001 |
+| disc (truth 0, 0.262) | -0.022 -0.018 -0.018 | **0.260 0.249** 0.068 |
+
+The curl of a rigid rotation reads within one to five percent over the
+inner seventy percent of the disc and dies at the rim with the velocity
+it is made of (the 40-px texture's alias band). The divergence of the
+zoom reads 30-80 percent because it is the derivative of a field the
+small-flow floor already under-reads, most where the flow is smallest,
+and it comes with the per-cell noise differentiated (the 10th-90th
+percentile spread is 0.05 a frame against a truth of 0.012). The pooled
+field is the wrong source: its 13x13 window is a third of this disc's
+radius and damps the curl to 0.21, 0.13 and 0.03. So the reading now
+reports curl to the precision of its velocity and divergence to the
+precision of its small-flow floor, and both improve with the floor; the
+affine match is still the way to measure shear where the field itself
+is a blur of two motions.

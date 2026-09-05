@@ -1,6 +1,14 @@
 """Deterministic weird geometry with ANALYTIC per-pixel motion, for the field shaders.
 
-    manifolds.py <scene> <outdir> [frames] [fps]      scene: torus | mobius | tesseract | hopf
+    manifolds.py <scene> <outdir> [frames] [fps]
+        scene: torus | mobius | tesseract | hopf | mobius_bl | zoom | aperture
+
+READ THE FIELD EXACTLY. A machine-mode frame must come out of ffmpeg with `format=rgb48le` INSIDE the
+filter graph (or as rawvideo); `-pix_fmt rgb48le` on the output passes through an 8-bit limited-range
+intermediate and corrupts every value (NFRAME-LIMITS.md section 9, the retraction). fieldcheck.py refuses
+such a frame. The three later scenes: mobius_bl is the band with a texture band-limited above the coarsest
+level's Nyquist; zoom is a flat disc expanding 0.6% per frame (pure divergence, no rotation); aperture is
+a rigid translation seen through a static rim -- the calibration control and the silhouette-capture test.
 
 Every scene is a rigid or 4D-rigid motion of a textured object rendered orthographically at 1280x720 by
 forward splatting with a z-buffer at 2x supersampling. Each rendered sample carries the 2D velocity of the
@@ -168,12 +176,66 @@ def hopf_scene():
     return at
 
 
-SCENES = {"torus": torus_scene, "mobius": mobius_scene, "tesseract": tesseract_scene, "hopf": hopf_scene}
+def texture_bl(sa, sb):
+    """Aperiodic and band-limited ABOVE the coarsest level's Nyquist: four incommensurate sines at 32, 36,
+    48 and 65 px periods (the 1/16 level's texels are 16 px, so nothing here aliases at any level)."""
+    return 0.5 + 0.11 * (np.sin(0.185 * sa + 0.07 * sb) + np.sin(0.137 * sa - 0.11 * sb)
+                         + np.sin(0.103 * sa + 0.081 * sb) + np.sin(0.076 * sa - 0.059 * sb))
+
+
+def mobius_bl_scene():
+    """The band with the band-limited texture: the time-asymmetry test without a component the coarse
+    levels alias (NFRAME-LIMITS.md section 9, 'The pipeline is not time-symmetric')."""
+    R, w = 170.0, 55.0
+    u = np.linspace(0, 2 * np.pi, 2600, endpoint=False); v = np.linspace(-w, w, 260)
+    U, V = np.meshgrid(u, v, indexing="ij"); U = U.ravel(); V = V.ravel()
+    P = np.stack([(R + V * np.cos(U / 2)) * np.cos(U), (R + V * np.cos(U / 2)) * np.sin(U), V * np.sin(U / 2)], -1)
+    lum = texture_bl(R * U, V)
+    base = rot3([1, 0, 0], math.radians(60))
+    def at(t):
+        return P @ base.T @ rot3([0, 1, 0], 0.6 * t).T, lum
+    return at
+
+
+def zoom_scene():
+    """A flat textured disc in the image plane scaling about the frame's centre by 0.6% per frame at 24 fps
+    (radial flow, 1.9 px/frame at the rim): pure expansion forward, pure contraction backwards, no rotation
+    and no occlusion. The translation-only matcher's response to a scale change, each way."""
+    r = np.sqrt(np.linspace(0, 1, 900)) * 320.0; th = np.linspace(0, 2 * np.pi, 2400, endpoint=False)
+    Rr, T = np.meshgrid(r, th, indexing="ij"); Rr = Rr.ravel(); T = T.ravel()
+    P = np.stack([Rr * np.cos(T), Rr * np.sin(T), np.zeros_like(Rr)], -1)
+    lum = texture(P[:, 0] + 5000.0, P[:, 1] + 5000.0)        # the texture is fixed to the surface, in its own pixels
+    def at(t):
+        return P * (1.0 + 0.144 * t), lum                         # 0.144/s = 0.6% per frame at 24 fps
+    return at
+
+
+def aperture_scene():
+    """SILHOUETTE CAPTURE, isolated: a textured plane translating rigidly at (4.0, 1.5) px per frame, seen
+    through a STATIC circular aperture of radius 250 px. Inside the aperture the truth is one constant
+    vector; the aperture's edge is a high-contrast outline that does not move. If the coarse levels'
+    windows are captured by the outline, the flow near it reads low and recovers with distance."""
+    n = 1400; xs = np.linspace(-700, 700, n); ys = np.linspace(-420, 420, 840)
+    X, Y = np.meshgrid(xs, ys, indexing="ij"); X = X.ravel(); Y = Y.ravel()
+    lum = texture(X + 3000.0, Y + 3000.0)
+    vel = np.array([4.0, -1.5, 0.0]) * 24.0               # px/s: (4.0, 1.5) px/frame on screen (y down)
+    def at(t):
+        P = np.stack([X, Y, np.zeros_like(X)], -1) + vel * t
+        return P, lum, np.hypot(P[:, 0], P[:, 1]) < 250.0      # the same points every frame; visibility is the aperture
+    return at
+
+
+SCENES = {"torus": torus_scene, "mobius": mobius_scene, "tesseract": tesseract_scene, "hopf": hopf_scene,
+          "mobius_bl": mobius_bl_scene, "zoom": zoom_scene, "aperture": aperture_scene}
 at = SCENES[scene]()
 
 frames = []
 for n in range(NF):
-    P0, lum = at(n * DT); P1, _ = at((n + 1) * DT)
+    r0 = at(n * DT); r1 = at((n + 1) * DT)
+    P0, lum = r0[0], r0[1]; P1 = r1[0]
+    if len(r0) > 2:                          # a scene with a visibility flag (an aperture): the points are
+        vis = r0[2]                          # the same set every frame, and only those visible at t are drawn
+        P0, P1, lum = P0[vis], P1[vis], lum[vis]
     p2a, z = project(P0); p2b, _ = project(P1)
     vel = p2b - p2a                                              # one-interval chord in px
     img, V, mask = splat(p2a, z, lum, vel)

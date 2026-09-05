@@ -120,7 +120,9 @@ patch says so at error level.
     ./gen_tridirectional.py  tridirectional-interpolation-propagated.glsl  bidirectional-interpolation-propagated.glsl
     ./gen_quaddirectional.py quaddirectional-interpolation-propagated.glsl bidirectional-interpolation-propagated.glsl
     ./gen_quintdirectional.py quintdirectional-interpolation-propagated.glsl bidirectional-interpolation-propagated.glsl
+    ./gen_sextdirectional.py  sextdirectional-interpolation-propagated.glsl  bidirectional-interpolation-propagated.glsl
     ./add_human_reading.py --default 1 ../shaders/human-reading-quad.glsl   # the painted demonstration
+    ./add_human_reading.py ../shaders/bidirectional-interpolation.glsl      # a base's own tail (paths, not bare names)
 
 Bare names resolve in `shaders/`; paths work too. Each generated file flips
 the field-only switches on (`SUBPEL_REFINE`, `SUBPEL_SELFREF`, `ZERO_SEED`) and appends
@@ -248,6 +250,77 @@ way in the same run.
    the current hook patch there, rebuild, run the propagated line's ladder,
    and record the agreement.
 
+12. **The geometry ladder, and the two biases it found.** `tests/manifolds.py`
+   scenes with exact per-pixel truth, read through the exact path
+   (`tests/fieldcheck.py`), published as named cases with numbers over
+   several frames, like the synthetic ladder. Two of its findings come with
+   a mechanism and a gate: SILHOUETTE CAPTURE (a coarse window locks onto an
+   outline that moves slower than its texture: 0.80 within 8 px of a static
+   rim, exact beyond 64) -- a match that down-weights texels whose luma
+   changes between the frames, gated by the aperture scene reading 1.00 to
+   the rim; and the SMALL-FLOW FLOOR (flows under a pixel read three
+   quarters), gated by the zoom. NFRAME-LIMITS.md section 9, the retraction.
+   The third bias, the ladder torus's 1.7 px interior, is now explained
+   (NFRAME-LIMITS.md, "The phase-locked consensus"; `tests/loop.sh`): on
+   texture whose periods the coarse levels cannot hold against the shift,
+   the tracker reads aliases, and the mean of a loop never converges while
+   the mode of it shades the torus.
+13. **The frame-rate half of the scale-aware generator (half done,
+   2026-09-05).** For a measurement pipeline it is a decimation stage in
+   front of the hook (`fps=24` on a 72-fps disc restores the acceleration
+   map band for band; `tests/discaccel.py` is the gate; NFRAME-LIMITS.md
+   "Lead B"). The 4K disc that motivated it is confounded by its own
+   texture (the dated note in section 9). What remains is the real-time
+   form: a stride inside the eight-frame window (a three-frame shader at
+   stride 3, a four-frame at stride 2), a generator change to the
+   slot-to-frame mapping and the final pass's roles, gated by the same
+   table from a 72-fps source. Item 10 has the resolution half.
+14. **An external benchmark (half done, 2026-09-05).** The Middlebury
+   "other" set is scored (`tests/middlebury.py`; NFRAME-LIMITS.md "Lead
+   C"): the four-frame field reads 0.67 px average endpoint error on
+   RubberWhale and 0.85 on Hydrangea, 4 px on the Urban pair whose
+   motions pass the reach. Particle image velocimetry sets remain: the
+   Cai et al. 2019 set is on Google Drive (a browser download), the
+   Synthetic Particle Image Dataset on Zenodo is one 16.7 GB file (CC-BY);
+   both score with the same reader once their flows are .flo.
+15. **A soak.** Hours of footage through the machine modes with
+   `accelprospect.sh`'s ranking, human eyes only on the worst segments: cuts,
+   flashes, fades, rolling shutter and fast pans, which the ladder cannot
+   find.
+16. **An affine match at the fine level, and the velocity gradient tensor
+   (the tensor in hand, 2026-09-05).** read_view 9 emits divergence, curl
+   and shear per frame from central differences of the raw field
+   (`tests/tensorcheck.py` gates it on the zoom and the disc: curl within
+   5% over the inner 70% of the disc, divergence 30-80% because the
+   small-flow floor is differentiated). NFRAME-LIMITS.md "Lead E". The
+   affine block match remains: shear where the field is a blur of two
+   motions, and the floor itself. A fortnight. (The torus's direction
+   error is since known to be the alias problem, item 12, not shear.)
+17. **Film a known motion.** A dropped ball against a scale bar reads g; a
+   turntable reads rpm. The calibration script (scale bar, fps, px/frame^2
+   to m/s^2) is an afternoon; the footage needs the owner's camera.
+18. **The cel-animation idea, from the beginning of the project (in hand,
+   2026-09-05).** `motion-edges-dual.glsl` draws the current and next
+   outlines of whatever moved on cel-animated content; the idea is to warp
+   the moved content between its outlines directly, and, on a non-panning
+   shot, to keep a static-background model across the window and fill what
+   a character uncovers from it instead of inventing it -- the ghosting
+   fix. Done as far as the metrics reach: `shaders/animation/` (the
+   line-art shader is the version to carry; ANIMATION.md has the table on
+   `tests/cel_scenes.py`, exact in-betweens); what is left is there too.
+19. **The reading's memory as a mode, not a mean (in hand, 2026-09-05).**
+   Shipped as a switch in the reading tail (`tests/add_human_reading.py`,
+   READ_MEMORY 0 = the exponential mean, default; 1 = a per-cell online
+   mode, three candidates in a storage image), with read_view 7 and 8
+   exporting the pooled reading and the per-cell mode raw. On the torus
+   loop the mode reads 1.7 px where the mean reads 8.6 and quiets a noisy
+   static backdrop 8x, but its 33-frame horizon misses transient movers on
+   live action, so the mean stays the default. NFRAME-LIMITS.md, "Lead G".
+   The adaptive horizon is in as a dial (MODE_MISS / MODE_FAST, off by
+   default): 2 misses and x0.5 paints the walker again at 2.4-3.8 px on
+   the loop. Whether the grainier per-cell painting is the reading to
+   look at is the owner's eye; the loop and the live clip are the two
+   gates either way.
 ## 6. Bringing a result back
 
 One experiment per commit. The message states the prediction, the numbers

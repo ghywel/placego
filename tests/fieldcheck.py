@@ -31,6 +31,21 @@ W, H = int(wh[0]), int(wh[1])
 raw = subprocess.run([FF, "-v", "error", "-i", str(png), "-f", "rawvideo", "-pix_fmt", "rgb48le", "-"], capture_output=True, check=True).stdout
 im = np.frombuffer(raw, np.uint16).reshape(H, W, 3).astype(np.float64) / 65535.0
 meas = np.stack([(im[..., 0] - 0.5) * 2 * fs, (im[..., 1] - 0.5) * 2 * fs], -1)
+# THE INSTRUMENT CHECK. Off the object the field is exactly zero, encoded as exactly 0.5. A read path that
+# went through an 8-bit or limited-range intermediate (`-pix_fmt rgb48le` on the OUTPUT does, after
+# libplacebo; `format=rgb48le` INSIDE the filter graph does not) scales every value by 219/255 and shifts it
+# by about half a pixel, and every number downstream is wrong by that much. Found 2026-09-05 after a night
+# of provisional numbers; refuse to score such a frame.
+_bg = np.load(tdir / ("mask_%03d.npy" % frame))
+_bg = ~_bg
+for _dy in (-8, 8):
+    for _dx in (-8, 8):
+        _bg &= ~np.roll(np.roll(np.load(tdir / ("mask_%03d.npy" % frame)), _dy, 0), _dx, 1)
+if _bg.sum() > 1000:
+    _zero = np.median(im[_bg][:, :2], axis=0)
+    if np.any(np.abs(_zero - 0.5) > 0.0005):
+        sys.exit("  READ PATH BROKEN: the zero level off the object reads (%.4f, %.4f) instead of 0.5 -- an 8-bit or "
+                 "limited-range intermediate; render with format=rgb48le inside the filter graph" % tuple(_zero))
 
 
 def erode(m, r):
