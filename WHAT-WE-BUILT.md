@@ -394,8 +394,13 @@ coarse step and a longer reach at 4K, thresholds in proportion — and the
 frame rate, or the stride through the frames, chosen so the motion of
 interest is sampled six to ten times per cycle rather than as fast as the
 camera allows. Shaders tuned to the resolution and rate of the camera are the
-same idea as shaders tuned to film or to the laboratory; that scaling has
-not been built yet, and the 4K disc is the test it will be judged on.
+same idea as shaders tuned to film or to the laboratory. The resolution
+half of that scaling is now built for the viewing shader: a 4K version
+whose every step is twice as coarse in pixels and therefore exactly as
+coarse as before in fractions of the screen, which on 4K footage beats the
+unscaled shader on every segment and runs faster. The frame-rate half, and
+the same treatment for the measuring shaders, are next, and the 4K disc is
+the test they will be judged on.
 
 ## Where to look
 

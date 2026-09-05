@@ -100,6 +100,21 @@ else
   bad "gen_variational.py failed"
 fi
 
+head2 "3b. scale_shader.py -- the 4K shader is what the tool makes from the variational build"
+# The 4K file is generated from the committed variational build; its header carries the date, which
+# strip() skips along with the rest of the first banner block.
+PROD4K="$HERE/../shaders/bidirectional-interpolation-variational-4k.glsl"
+if $PY "$HERE/scale_shader.py" "$PROD" "$W/regen4k.glsl" 2 >/dev/null 2>&1; then
+  if diff -q <(strip "$W/regen4k.glsl") <(strip "$PROD4K") >/dev/null 2>&1; then
+    ok "regenerated 4K shader body is byte-identical to the committed one"
+  else
+    bad "regenerated 4K shader differs from the committed one"
+    note "$(diff <(strip "$W/regen4k.glsl") <(strip "$PROD4K") | head -3)"
+  fi
+else
+  bad "scale_shader.py failed"
+fi
+
 # ---------------------------------------------------------------------------
 head2 "4. flowvis.py -- build a flow visualiser from the production shader"
 if $PY "$HERE/flowvis.py" "$PROD" "$W/vis.glsl" >/dev/null 2>&1 && [ -s "$W/vis.glsl" ]; then

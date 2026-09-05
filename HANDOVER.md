@@ -48,7 +48,7 @@ and the failures stay on the record next to the successes.
 5. `NFRAME-LIMITS.md` -- the front line. Section 9 is the current one.
 6. `PLAN.md` and `../ROADMAP.md` (repository root) -- the working plan and the
    current focus.
-7. `TRIDIRECTIONAL.md`, `QUADDIRECTIONAL.md`, `QUINTDIRECTIONAL.md` -- the
+7. `TRIDIRECTIONAL.md`, `QUADDIRECTIONAL.md`, `QUINTDIRECTIONAL.md`, `SEXTDIRECTIONAL.md` -- the
    three-, four- and five-frame experiments, hypotheses stated before the
    results. `THREEDIMENSIONAL.md` is the design record for depth from
    motion. `METALPORT.md` is the native port.
@@ -228,12 +228,19 @@ way in the same run.
    that nothing saves or declares disables the whole hook at run time
    with no compile error, and a storage image cannot stand in for a
    texture the pipeline re-saves across a Jacobi iteration.
-10. **A scale-aware generator.** Every rule in the tracker is in pixels
-   and frames; a 4K, 72 fps render of the rotating disc showed the
-   consequences (`NFRAME-LIMITS.md` section 9, `WHAT-WE-BUILT.md`). A
-   generator that takes the frame size and rate and scales the pyramid
-   depth, the reach, the thresholds and the painting's floors, with a
-   frame stride for the field at high rates, is designed and unbuilt.
+10. **A scale-aware generator: the resolution half exists.** Every rule
+   in the tracker is in pixels and frames; a 4K, 72 fps render of the
+   rotating disc showed the consequences (`NFRAME-LIMITS.md` section 9,
+   `WHAT-WE-BUILT.md`). `tests/scale_shader.py` scales a two-frame picture
+   shader's pyramid to a larger frame, and
+   `bidirectional-interpolation-variational-4k.glsl` is its product,
+   measured (SHADERS.md, "the 4K shader"). The tool takes the field
+   shaders too, and the 4K disc through the scaled quad gets its velocity
+   map back (NFRAME-LIMITS.md section 9). Not done: a ladder at 4K for a
+   field shader before one ships, and the frame-RATE half -- a stride
+   through the frames for the field at high rates, so the motion of
+   interest is sampled six to ten times per cycle; the disc's acceleration
+   at 72 fps is what that half is for.
 11. **The second witness.** The GPU is the test base; a software Vulkan
    implementation (Mesa lavapipe) is the cross-check that every ladder
    number is arithmetic and not a driver: the 2026-08-31 ladders agreed to

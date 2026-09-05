@@ -1483,3 +1483,118 @@ the picture bases. A field-only reading -- on in the generated tri/quad/quint,
 off in the two-frame picture shaders -- is one line in each generator, where
 ZERO_SEED and SUBPEL_SELFREF already flip; that is the owner's call, against
 a tenth of a decibel of footage.
+
+### The resolution half of the scale-aware generator, and what the 4K test really measured
+
+`tests/scale_shader.py` doubles every pyramid divisor of a two-frame picture
+shader, rewrites the three hand-offs between levels and the warp's
+conversion, and refuses anything with a pixel constant it does not know. The
+variational build so scaled, at twice the ladder's size, reproduces the
+shipped build at native size case for case (SHADERS.md, "the 4K shader"),
+which is the design working; on 2x footage it is 1.5 dB and 0.0036 SSIM
+above the shipped build run at that size, and 11% faster.
+
+Two things worth keeping. First, a test that upscales content with lanczos
+is a test of band-limited content: the shipped build at 2x scored 12 dB
+higher on A5 and 6 dB on R3 than at native, because with no energy above
+half Nyquist the fine levels' sub-texel fits are unusually clean. That is
+not 4K's fineness paying off, it is the resampler's; footage, which carries
+detail to its own Nyquist, showed the opposite ordering. Any 4K claim needs
+native 4K content or a source rendered at that size, not an upscale.
+Second, keeping the finest level at its native fineness while doubling the
+coarse three (2,2,2,1) bought nothing on the textured cases and cost a
+little reach, so the fineness that helped the shipped build at 2x lives in
+the coarse and middle levels, where it was the resampler's gift, not in the
+warp's resolution. The general design for a larger frame is therefore the
+whole pyramid shifted, not a deeper one -- until native 4K content says
+otherwise.
+
+The field shaders followed the same night. The tool now takes the generated
+tri/quad/quint: their hand-offs between slots beyond A and B, the fused
+propagated lineage's coarse-cache image loads (the seeds it converts on the
+next line), the full-resolution flow level below the half-resolution one
+(the ratio becomes four), the two half-resolution-to-frame conversions (the
+warp and the reading tail's copy of the final pass), the seven constants in
+the frame's pixels (the acceleration and jerk caps, the diagnostic and
+machine-read full scales, the residual's) and the corner marker -- and it
+still refuses any pixel use it does not know. The quad so scaled loads and
+runs at 3840x2160 with no skipped window.
+
+The judged test, then: the textured disc at 3840x2160, 72 fps, three times
+the 720p scene, frame 100, painted velocity and acceleration through the
+shipped quad and through the scaled one, beside the 720p scene through the
+shipped quad at 24 and at 72 fps (the frame-rate effect on its own). The
+velocity map: the shipped quad at 4K is wrong across the whole disc, in
+large patches; the scaled quad gives the hue wheel back, with a few wrong
+patches left near the rim. The acceleration map: the scaled quad at 4K and
+72 fps is still wrong, in coherent blobs, and the 720p reference at 72 fps
+mostly declines to paint. So the resolution half repairs the velocity field,
+as the register predicted, and the acceleration at 72 fps is the frame-rate
+limit -- one ninth of the acceleration per frame, the same noise per reading
+-- which no resolution scaling touches. That half is a stride through the
+frames, so the motion of interest is sampled six to ten times per cycle,
+and it is the next thing to build. The montages are in the owner's renders
+folder; the scaled quad is not shipped as a file (one command makes it:
+`./scale_shader.py ../shaders/quaddirectional-interpolation-propagated.glsl
+<out> 2`), because a field shader at 4K owes a ladder at 4K first.
+
+### Weird geometry, and the six-frame line
+
+`tests/manifolds.py` renders four deterministic scenes with the exact 2D
+velocity of every visible pixel: a textured torus spinning about an axis
+tilted 55 degrees from the line of sight, a Mobius band tumbling, a
+tesseract rotating in two 4D planes drawn as tubes, and the Hopf
+fibration of the 3-sphere rotating along its own fibres. `tests/fieldcheck.py`
+scores a machine-read velocity frame against them, per texel and pooled
+over 24 px, and against the two neighbouring truth frames -- which is how
+the window rule showed itself: at the exact N:N phase the output sits at
+the end of its straddle interval, so output frame n reports the chord
+from n-1 to n, and a checker that assumed the chord out of n would call a
+correct field one frame wrong.
+
+The quad's velocity on them, frame 48: the torus reads 2.0 px median on a
+5.8 px field and 45% pooled, the band 1.1 px on 3.3 and 30% pooled with
+the magnitude 19% LOW even pooled -- a bias, not noise, on a foreshortened
+surface; the tubes 40 degrees off in direction, which is the aperture
+problem by construction. Two cautions on the torus: an early texture with
+50-100 px periods made the whole surface aperture-limited, and a later one
+with 5 px components aliased against the render's own sample lattice; the
+texture that stands is the ladder's M1 recipe band-limited to 12-42 px in
+surface arc length, which foreshortening still compresses toward the coarse
+levels' Nyquist near the rim. The 19% low reading on the band is the lead:
+the rotating disc's 15% pooled error may be the same thing.
+
+The six-frame shader (`SEXTDIRECTIONAL.md`) is the night's other result:
+built from the quint's generator, a weighted least-squares quartic with a
+residual. Fitted at the anchor its lopsided stencil (three links behind,
+two ahead) carries an odd-order truncation bias of 0.2 px/interval^2 at
+every zero crossing of O9's acceleration, three times the quint's RMS;
+fitted about the centre of its point set the bias cancels (0.066 against
+the quint's 0.051) and the noise is half the quint's. The general lesson
+is the one the quint's symmetric window already embodied: for a
+polynomial field estimator, the stencil's symmetry about the instant it
+reports at is worth more than its length, and an even frame count buys
+symmetry only by reporting half an interval off the anchor.
+
+### The pipeline is not time-symmetric, and nobody knows why yet
+
+A test that costs nothing: play a scene backwards, negate its truth, and
+score again. The steadily spinning torus reads the same either way (45%
+against 42% pooled, both poor). The tumbling band does not: forward, the
+quad reads its velocity 19% low with 30% pooled error and 13 degrees off;
+backwards, the same frames at the same phase read the right magnitude, 8%
+pooled and 5 degrees. The two-frame propagated base shows the same thing
+(33% forward, 10% backwards), so it is the flow pipeline, not the
+four-frame window. One hypothesis was tested and did not survive: that a
+texture component above a level's Nyquist (the band's 12 px one, above the
+1/8 level's 16 px) moves with a different aliased velocity in each
+direction, since reversal flips the velocity and not the wave vector.
+Removing that component made both directions worse in a new way
+(magnitudes high, the backwards run's 90th percentile at 11 px) -- but it
+also left a two-sine, near-periodic texture, so what that run measured was
+the period lock, not the hypothesis. The asymmetry stands as a real,
+reproducible property with no explanation; the next test is a texture that
+is aperiodic AND band-limited below 16 px (more sines, none above the
+limit), then the two directions again. The fast-oscillation riddle (O9)
+also stands: the accident put back on purpose as an OR term recovers
+nothing there.
