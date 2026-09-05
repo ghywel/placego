@@ -40,7 +40,7 @@ There are lot's of online communities (such as https://www.shadertoy.com) where 
 
 Where this all fit's in here is I discovered that Claude Code Opus 5 / Fable 5 is extremely good at writing them.
 
-Human languages are messy. They weren't "made" they evolve naturally over time. Words come and go, meanings change, people make up new words, there are many languages. All human language are filled with exceptions, logical inconsistencies, deviations from the rule, slang, memes and esoteric idioms that don't make any sense to anybody not in-the-know or out-of-the-loop.
+Human languages are messy. They weren't "made" they evolve naturally over time. Words come and go, meanings change, people make up new words, there are many languages. All human languages are filled with exceptions, logical inconsistencies, deviations from the rule, slang, memes and esoteric idioms that don't make any sense to anybody not in-the-know or out-of-the-loop.
 
 Computer languages are mathematical, logical and wholly and completely consistent (except when they break down) because we intentionally designed them that way. Nature gets evolution which works but is messy. Computers get raw math. All a CPU/GPU really is, is a machine that counts very quickly, remembers what it has already calculated, and can be 'programmed' to do something useful with the math it is working on.
 
