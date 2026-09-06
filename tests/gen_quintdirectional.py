@@ -164,6 +164,7 @@ def main():
     # fewer passes and its extras are negative and unpaired; the count below
     # stays exact (every base flow pass is reproduced once per slot pair).
     fused = any("[fused" in b for b in hook_blocks)
+    foresight = fused and T4.FORESIGHT_SEED and T4.FORE.applies(text)
     assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
@@ -208,7 +209,11 @@ def main():
             nb = FINAL_PASS
         out.append(nb)
         if save == "FLOW_H_BA" and desc and "pass 2" in desc:
-            if fused:
+            if foresight:   # later pairs first: CD reads DE's caches, BC reads CD's
+                out.append(T4.pair_chain(blocks, "D", "E", "DE", "ED", BANNER_DE, BANNER_ED).replace("[quad]", "[quint]"))
+                out.append(T4.pair_chain(blocks, "C", "D", "CD", "DC", T4.BANNERS["CD"], T4.BANNERS["DC"], fut=("DE", "ED")).replace("[quad]", "[quint]"))
+                out.append(T4.pair_chain(blocks, "B", "C", "BC", "CB", T4.BANNERS["BC"], T4.BANNERS["CB"], fut=("CD", "DC")).replace("[quad]", "[quint]"))
+            elif fused:
                 out.append(T4.pair_chain(blocks, "B", "C", "BC", "CB", T4.BANNERS["BC"], T4.BANNERS["CB"]).replace("[quad]", "[quint]"))
                 out.append(T4.pair_chain(blocks, "C", "D", "CD", "DC", T4.BANNERS["CD"], T4.BANNERS["DC"]).replace("[quad]", "[quint]"))
                 out.append(T4.pair_chain(blocks, "D", "E", "DE", "ED", BANNER_DE, BANNER_ED).replace("[quad]", "[quint]"))
@@ -518,6 +523,9 @@ HEADER = """\
 // through the anchor's four displacements over a symmetric window (taus
 // -2, -1, +1, +2; the far two composed from adjacent links, each round-
 // trip checked), reading acceleration and jerk and ignoring the snap row.
+// From a seeded base the slot 1 <-> 2 and 2 <-> 3 pairs carry the
+// FORESIGHT seed from their later neighbour (2026-09-06; NFRAME-LIMITS.md,
+// "The foresight seed"; FORESIGHT=0 regenerates without it).
 // Pre-registered to cut the acceleration error on fast oscillation 3-6x
 // (the four-frame second difference's truncation) and the jerk noise on
 // slow motion ~2.8x (the symmetric stencil's coefficients), and to change

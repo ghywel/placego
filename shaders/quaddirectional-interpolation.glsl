@@ -19,6 +19,13 @@
 // field, and cubic placement at 24->60. With zero acceleration and jerk
 // it degenerates exactly to the bidirectional shader. Hypothesis,
 // algebra, pre-registrations and results: QUADDIRECTIONAL.md.
+//
+// From a seeded base, the slot 1 <-> 2 pair also carries the FORESIGHT
+// seed (2026-09-06): a coarse descent and a 1/8 candidate-plus-prior
+// from the slot 2 <-> 3 flow, the temporal seed mirrored in time, so
+// that pair's chain is emitted after slot 2 <-> 3's. Passes that carry
+// it say [foresight ...] in their description. NFRAME-LIMITS.md, "The
+// foresight seed"; FORESIGHT=0 regenerates without it.
 // =====================================================================
 
 //!HOOK FRAME_MIX

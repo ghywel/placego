@@ -110,3 +110,22 @@ that keeps the motion inside reach.
 - Stroke Correspondence by Labeling Closed Areas, 2021: https://arxiv.org/pdf/2108.04393
 - CACANi: https://cacani.sg/
 - LinkTo-Anime, 2025: https://arxiv.org/html/2506.02733v2
+
+## Surveyed 2026-09-05, at the owner's suggestion: the Anime4K line shaders
+
+bloc97, *Anime4K* (github.com/bloc97/Anime4K), MIT licence, copyright 2019-2021 bloc97. A family of
+mpv GLSL hook shaders for anime, spatial only (no frame mixing): CNN restore and upscale, deblur,
+denoise, and two line effects in `glsl/Experimental-Effects` that bear on this folder's line-art shader:
+
+- **Darken (difference of Gaussians).** Luma, then a Gaussian blur sized to the frame, then
+  `min(luma - blur, 0)` isolates the dark lines and nothing else, smoothed again and added back with a
+  strength. That is a line DETECTOR that answers only to ink: this folder's line pass thresholds the
+  luma gradient and so fires on every boundary between two fills as well. The DoG is the candidate
+  replacement for the line pass wherever the ink is darker than its surroundings, which on cel it is.
+- **Thin (advection along the gradient).** Luma, Sobel gradient with a 0.7 power curve, Gaussian
+  smoothing, the smoothed gradient's derivatives, and a warp that moves each texel along the gradient
+  by `strength * iterations`, so lines contract toward their centres. A candidate post-pass for the
+  morphed in-between line, which comes out of the level-set morph slightly wider than either drawing's.
+
+Nothing of theirs is in the shaders yet. If either idea goes in, the pass carries this credit and the
+licence notice, and this entry says which and where.

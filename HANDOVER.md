@@ -308,6 +308,11 @@ way in the same run.
    fix. Done as far as the metrics reach: `shaders/animation/` (the
    line-art shader is the version to carry; ANIMATION.md has the table on
    `tests/cel_scenes.py`, exact in-betweens); what is left is there too.
+   The plate and the line art were separated on the owner's question: the
+   plate is neutral alone and repairs the backdrop the line art alone
+   smears; the walking figure's remaining defects are the line art's, at
+   the redrawn legs. Anime4K's line shaders are surveyed and credited in
+   ANI-PRIOR-ART.md (a difference-of-Gaussians ink detector, a thinning).
 19. **The reading's memory as a mode, not a mean (in hand, 2026-09-05).**
    Shipped as a switch in the reading tail (`tests/add_human_reading.py`,
    READ_MEMORY 0 = the exponential mean, default; 1 = a per-cell online
@@ -321,6 +326,37 @@ way in the same run.
    the loop. Whether the grainier per-cell painting is the reading to
    look at is the owner's eye; the loop and the live clip are the two
    gates either way.
+20. **Depth from motion parallax (the owner's question, 2026-09-05).** For
+   a translating camera the image motion of a static point is inversely
+   proportional to its depth, so the field's residual after a global fit
+   of the camera's own motion (a homography or an affine model of the
+   dominant plane) is a relative depth map, and the divergence the reading
+   already emits (read_view 9) is looming: time to contact is 2 over the
+   divergence for a surface approached head-on. Rotation carries no depth
+   and must be fitted out first. Gate: a synthetic camera translating over
+   a depth map with exact per-pixel depth (a `manifolds.py` scene), scored
+   as depth ordering and as time to contact. A week for the synthetic
+   gate and the global fit; real footage after.
+21. **The foresight seed (shipped 2026-09-06).** The owner's wife restated
+   the five-frame window independently and her question exposed the last
+   asymmetry: the coarse search's seeds looked only backwards. A generated
+   pair now also descends from the NEXT pair's flow (`tests/foresight.py`,
+   on by default in the quad and quint generators, `FORESIGHT=0` for the
+   old form). Never worse on the ladder, up to a decibel where motion
+   changes inside the window, a few hundredths on footage (a tenth with
+   its prior at 0.5, which ships at 0: it costs 2.3 dB on flat fills), about
+   a percent of time. What it is not:
+   a field result (at N:N the machine reads the window's LAST pair, which
+   has no future -- an instrument fact corrected in TOOLS.md that day), and
+   the fully symmetric form (the base pair seeded too) buys nothing. The
+   prior toward the future flow was found to break sub-texel ties at a
+   moving edge (the 16-px box's leading edge a fraction of a pixel along);
+   a half-texel deadband repairs it and keeps the prior's tenth on live
+   action for a few tenths on the rotating texture: a trade, shipped as
+   the knob pair SEED_FUT_LAMBDA 0.5 / FUT_PRIOR_DEADBAND 0.5, default off,
+   the owner's call. Open: the temporal prior has the same form and may
+   carry the same sub-texel bias somewhere; a deadband on it is one run.
+   NFRAME-LIMITS.md, "The foresight seed" and the subsection after it.
 ## 6. Bringing a result back
 
 One experiment per commit. The message states the prediction, the numbers

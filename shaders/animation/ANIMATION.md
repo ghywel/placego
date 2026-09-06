@@ -32,6 +32,20 @@ PSNR inside the moving band, and the chamfer line distance in pixels:
 | swinging legs, detailed backdrop | 32.32 / 0.9826, band 16.08, chamfer 0.74 | 32.30 / 0.9833, 16.05, 0.80 | **33.77 / 0.9884, 17.52, 0.42** | 33.30 / 0.9877, 17.11, 0.41 |
 | swinging legs, flat sky | 33.14 / 0.9863, band 16.98, chamfer 0.78 | 33.19 / 0.9877, 17.03, 0.86 | **34.95 / 0.9931, 18.77, 0.27** | 34.05 / 0.9915, 17.90, 0.31 |
 
+**The two ideas separated (the owner's question, 2026-09-05 evening).** The
+plate alone is neutral on every scene (31.22 against 31.23 dB on the rigid
+scene). The line art alone wins the moving band exactly as the pair does
+(18.24 against 18.35 dB) and SMEARS THE STATIC BACKDROP: outside the band
+48.3 to 42.1 dB on the rigid scene and 53.4 to 42.0 on the walk, which is
+the halo of backdrop a character's flow drags along; the plate's background
+rule is what repairs it (50.4 and 51.9). On the flat sky, where there is no
+backdrop to drag, the line art alone is the pair (34.89 against 34.95 dB,
+chamfer 0.255 against 0.271). So the defects that remain in the walking
+figure belong to the line art, not to the plate: they are where the two
+drawings' distance fields disagree, at the redrawn legs, and the morph
+inks a fragment of each. `build_lineart.py` now takes the plain base as
+well as the plate variant, so either can be tested alone.
+
 The line-art shader gains 1.5 to 3.3 dB whole-frame and halves the chamfer
 distance or better on every scene; the moving band gains 1.4 to 3.4 dB; on
 the detailed backdrop the region outside the band also improves (48.3 to

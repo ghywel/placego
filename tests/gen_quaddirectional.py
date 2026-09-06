@@ -74,12 +74,22 @@ With s in [0,1] across the straddle and the anchor at one end,
 which reduces to tri's s*(1-s)*a/2 at j = 0 and to the bidirectional warp at
 a = j = 0 -- the null-hypothesis ladder ctrl tests ride on.
 """
+import os
 import pathlib
 import re
 import sys
 
 import gen_tridirectional as T3
 import add_human_reading as READING   # the human-reading tail every shipped shader carries (off by default)
+import foresight as FORE
+
+# THE FORESIGHT SEED (2026-09-06; NFRAME-LIMITS.md "The foresight seed", tests/foresight.py): a generated pair
+# that has a later neighbour in the window takes a coarse descent and a 1/8 candidate-plus-prior from that
+# neighbour's flow -- the temporal seed mirrored in time -- and the later pair is emitted first so its caches
+# hold this window's values. Applies only to a base that carries the temporal seed; the stock and variational
+# bases regenerate unchanged. FORESIGHT=0 in the environment regenerates the pre-foresight form (the
+# regression path; the reorder alone is bit-identical, the seed is the measured trade in NFRAME-LIMITS.md).
+FORESIGHT_SEED = os.environ.get("FORESIGHT", "1") == "1"
 
 HERE = pathlib.Path(__file__).resolve().parent
 # The base to generate from. Default is the shipped bidirectional shader;
@@ -181,7 +191,7 @@ def shift_pair(b, lvl, la, lb, tag, desc_pair):
     return nb
 
 
-def pair_chain(blocks, la, lb, tag_ab, tag_ba, banner_ab, banner_ba):
+def pair_chain(blocks, la, lb, tag_ab, tag_ba, banner_ab, banner_ba, fut=None):
     """Both directions of one slot pair, in the base's own pass order.
 
     For a FUSED base (one whose A->B passes carry their B->A twin, see
@@ -192,7 +202,9 @@ def pair_chain(blocks, la, lb, tag_ab, tag_ba, banner_ab, banner_ba):
     computes both directions in one dispatch: the passes that remain
     single-direction (the 1/8 refines, which read the other direction's
     coarse cache) must stay where the base puts them, between the fused
-    coarse search and the fused propagation.
+    coarse search and the fused propagation. With fut = (fwd, bwd) tags of
+    the pair's LATER neighbour, the coarse and 1/8 passes take the foresight
+    seed from it (tests/foresight.py); that neighbour must be emitted first.
     """
     parts = [banner_ab, banner_ba]
     for b in blocks:
@@ -202,8 +214,10 @@ def pair_chain(blocks, la, lb, tag_ab, tag_ba, banner_ab, banner_ba):
             continue
         lvl, own = m.group(1), m.group(2)
         tag = tag_ab if own == "AB" else tag_ba
-        parts.append(shift_pair(b, lvl, la, lb, tag,
-                                desc_pair=BANNER_PAIRS[tag]))
+        nb = shift_pair(b, lvl, la, lb, tag, desc_pair=BANNER_PAIRS[tag])
+        if fut is not None:
+            nb = FORE.foresight(nb, tag_ab, tag_ba, fut[0], fut[1])
+        parts.append(nb)
     return "\n\n".join(parts)
 
 
@@ -290,6 +304,7 @@ def main():
     # the pass count below is still exact, because every base flow pass is
     # reproduced once per slot pair either way.
     fused = any("[fused" in b for b in hook_blocks)
+    foresight = fused and FORESIGHT_SEED and FORE.applies(text)
     assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
@@ -341,7 +356,10 @@ def main():
         out.append(nb)
 
         if save == "FLOW_H_BA" and desc and "pass 2" in desc:
-            if fused:
+            if foresight:   # the later pair first: BC reads CD's caches
+                out.append(pair_chain(blocks, "C", "D", "CD", "DC", BANNERS["CD"], BANNERS["DC"]))
+                out.append(pair_chain(blocks, "B", "C", "BC", "CB", BANNERS["BC"], BANNERS["CB"], fut=("CD", "DC")))
+            elif fused:
                 out.append(pair_chain(blocks, "B", "C", "BC", "CB", BANNERS["BC"], BANNERS["CB"]))
                 out.append(pair_chain(blocks, "C", "D", "CD", "DC", BANNERS["CD"], BANNERS["DC"]))
             else:
@@ -788,6 +806,13 @@ HEADER = """\
 // field, and cubic placement at 24->60. With zero acceleration and jerk
 // it degenerates exactly to the bidirectional shader. Hypothesis,
 // algebra, pre-registrations and results: QUADDIRECTIONAL.md.
+//
+// From a seeded base, the slot 1 <-> 2 pair also carries the FORESIGHT
+// seed (2026-09-06): a coarse descent and a 1/8 candidate-plus-prior
+// from the slot 2 <-> 3 flow, the temporal seed mirrored in time, so
+// that pair's chain is emitted after slot 2 <-> 3's. Passes that carry
+// it say [foresight ...] in their description. NFRAME-LIMITS.md, "The
+// foresight seed"; FORESIGHT=0 regenerates without it.
 // =====================================================================
 
 """

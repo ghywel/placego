@@ -1975,3 +1975,260 @@ reports curl to the precision of its velocity and divergence to the
 precision of its small-flow floor, and both improve with the floor; the
 affine match is still the way to measure shear where the field itself
 is a blur of two motions.
+
+### The foresight seed: the window's other half, at the search (2026-09-06)
+
+The question came from outside the project. The owner's wife, who is not
+named here, described the five-frame window in her own words without
+having read its design: render on the middle frame, two past and two
+future, and let the front frame run out of sync (QUINTDIRECTIONAL.md,
+"Convergent restatement"). Checking that against the code showed where
+the window's symmetry stopped. The fit is symmetric and the picture's
+straddle sits between two frames each side, but the SEARCH still looked
+only backwards: in the seeded family every pair's coarse search starts
+one of its descents from the previous window's flow for that pair, which
+is the past-adjacent pair's motion at that texel, and its 1/8 arbitration
+adds a prior toward it; nothing reads the next pair's flow, although that
+flow is computed in the same window. Every pass of the generated quad's
+slot 1 -> 2 chain binds its own caches and the lumas and never a
+neighbour's flow.
+
+**What was built.** The temporal seed mirrored in time, as a generator
+transform (`tests/foresight.py`, applied by `gen_quaddirectional.py` and
+`gen_quintdirectional.py`; `FORESIGHT=0` regenerates without it): a
+generated pair that has a later neighbour in the window gets, at 1/16, a
+fourth descent from the neighbour's arbitrated 1/8 flow at the same texel
+(stored in the spare half of the temporal cache) and, at 1/8, a fifth
+refined candidate, plus a prior of `SEED_FUT_LAMBDA` per texel toward
+that flow under the same round-trip trust the temporal prior uses: the
+neighbour's forward flow against its reverse at the landing point, within
+one 1/8 texel. Forward flows take the neighbour's forward flow, backward
+flows the neighbour's backward flow. For the neighbour's caches to hold
+this window's values the generator emits the later pair first; that
+reorder alone is bit-identical on every case (the pairs share no
+texture), and it was the gate before any number was read. No new pass, no
+new texture, two more binds on three passes per seeded pair. A base
+without the temporal seed regenerates unchanged. The two-frame shaders
+have no neighbour and are untouched; the tri's one generated pair is the
+window's last and has no future either.
+
+**Two instrument facts first.** (1) At the source rate the final pass's
+rule, p = the last slot at or before the output, puts the output ON the
+first frame of its straddle pair, so the velocity a machine reads at
+output n is the FORWARD chord n -> n+1 of the window's LAST pair. Measured
+on A5 at N:N: the median reading sits within 0.05 px of the forward chord
+on every frame and 0.67 px from the backward one. Two places in the record
+said the backward chord and are corrected (`tests/TOOLS.md`,
+`tests/loop_torus.py`; that loop's field is stationary, so its numbers
+stand). Consequence here: the quad's N:N velocity read comes from the one
+pair that has no future in the window and cannot see the seed; the
+quint's last-but-one pair can. (2) `accelcheck` at full scale 2.0 rails on
+O9 (3.70 px per interval squared) and O5 (8.57), and a railed field reads
+the same RMS for every shader; those rows were taken at 8 and 16.
+
+**Pre-registered, then measured** (the predictions were written before
+the first table was read; the scratch file is quoted in the commit).
+The prior at 0.5, the mirror of the temporal prior:
+
+| | predicted | measured |
+|---|---|---|
+| reorder alone | bit-identical | identical to the hundredth on every case |
+| picture, 32-case ladder mean | within +/-0.10 dB | +0.02 dB |
+| L1, L2, M2 (constant velocity, period lock) | unchanged within 0.05 | L1, M2 unchanged; **L2 -2.28** |
+| A6, A7, O2-O5 | up 0.1-0.5 | A7 +0.98, A5 +1.23, O1 +0.36, O6 +0.21; A6, O2-O5 within 0.05 |
+| L9 occlusion | at least +0.2 | +0.05 |
+| aperture, mobius, zoom fields (quad) | unchanged within 0.02 px | identical (the read is the last pair's) |
+| torus gross fraction (quad) | down 2-7 points | identical (same reason) |
+| time, O5 from a file | quad +2 to +4%, quint +3 to +5% | quad +0.6%, quint +2.2% |
+| footage, five segments | within +/-0.10 dB, sign positive | **+0.13 dB, +0.0005 SSIM, every segment up** |
+
+**The ladder was a trade with a shape.** Every textured case whose motion
+changes inside the window gained, and four fast flat-edge cases lost:
+
+| case | shipped quad | prior 0.5 | candidate only |
+|---|---|---|---|
+| A5_accel_tex_a067 | 52.76 | 53.99 | 53.98 |
+| A7_accel_tex_a167 | 50.15 | 51.13 | 51.04 |
+| R3_rot_tex | 36.49 | 37.28 | 37.49 |
+| O1_osc_gentle | 51.68 | 52.04 | |
+| F2_fourier_accel | 43.37 | 43.73 | |
+| R1_rot_const | 40.64 | 40.93 | |
+| R2_rot_accel | 40.57 | 40.79 | |
+| O6_osc_tex_gentle | 51.59 | 51.80 | |
+| L8_diagonal | 49.32 | 49.42 | |
+| A3_accel_23mean | 40.44 | 40.13 | 40.42 |
+| L6_flat_large | 65.13 | 64.67 | 65.13 |
+| L3_trans_23px | 43.44 | 42.70 | 43.52 |
+| L2_trans_16px | 61.44 | 59.16 | 61.44 |
+
+The other nineteen cases moved by 0.06 dB or less. The quint reproduces
+the quad's picture as it must (A5 +1.25, R3 +1.00 on the smoke cases).
+
+**The ablation separated the two halves.** The same seed with the prior
+zeroed, the candidate alone competing on SAD and the existing priors
+(third column): every gain stays, R3 gains more, and every loss goes back
+to the shipped number to the hundredth. So the gains are the CANDIDATE's,
+a fourth basin where the past and the future disagree: on accelerating
+texture the descent from the next pair's flow lands in the basin the
+descent from the previous pair's flow misses, and on the rotating disc
+and the slow oscillations the second opinion breaks alias ties the first
+could not. The losses were the PRIOR's, and the mechanism is the flat
+interior at 16-23 px per frame: a flow there is defined only at edges and
+a round trip closes anywhere, so the trust gate is vacuous and the prior
+pulls an edge texel toward a neighbour's value that belongs to other
+content. The temporal prior survives the same gate because the flow it
+pulls toward is one interval behind the same content; the mirrored prior
+pulls toward what will be there next. `SEED_FUT_LAMBDA` ships at 0 and
+stays as the documented knob.
+
+**Real footage.** Five segments of the 720p live-action clip,
+decimate-and-reconstruct, the quad, the prior at 0.5:
+
+| segment | shipped PSNR | foresight | shipped SSIM | foresight |
+|---|---|---|---|---|
+| 5 | 30.38 | 30.51 | 0.9510 | 0.9519 |
+| 15 | 31.80 | 31.85 | 0.9627 | 0.9629 |
+| 21 | 38.64 | 38.78 | 0.9768 | 0.9771 |
+| 30 | 39.07 | 39.21 | 0.9752 | 0.9756 |
+| 45 | 36.82 | 36.99 | 0.9776 | 0.9779 |
+| mean | 35.34 | 35.47 | 0.9686 | 0.9691 |
+
+Every segment up on both metrics, for +0.6% of the quad's time. For
+comparison the temporal seed itself was worth +0.45 dB over the base on
+these segments, the zero seed nothing and the Moire fix nothing. The
+candidate-only form, the one that ships, on the same five segments:
+35.34 -> 35.37 dB, 0.9686 -> 0.9687 SSIM, every segment up on both. A
+second clip, the 60-second film excerpt at 24 fps, five segments, the
+same method:
+
+| segment | shipped PSNR | foresight | shipped SSIM | foresight |
+|---|---|---|---|---|
+| 5 | 41.87 | 41.87 | 0.9887 | 0.9887 |
+| 15 | 34.11 | 34.11 | 0.9692 | 0.9693 |
+| 25 | 37.96 | 38.03 | 0.9718 | 0.9719 |
+| 35 | 29.80 | 29.83 | 0.9448 | 0.9449 |
+| 45 | 24.44 | 24.44 | 0.9335 | 0.9336 |
+| mean | 33.64 | 33.66 | 0.9616 | 0.9617 |
+
+Every segment up on both metrics there too.
+
+**The field.** On the manifolds at N:N the quad cannot show the seed
+(fact 1). The quint, whose read comes from a seeded pair, moved a little
+the wrong way with the prior at 0.5: aperture gross 18.0 -> 19.6% and the
+over-read of the rigid translation 4.92 -> 5.08 px on 4.27; torus gross
+46.9 -> 48.2%; mobius median 0.192 -> 0.200 px; zoom unchanged. The
+acceleration field at N:N by `accelcheck` (the discrete truth, so the
+quint's quartic is penalised by its own truncation correction here and
+only each shader's own delta is meaningful), RMS over frames 4-20:
+
+| case (full scale) | quad shipped | quad foresight | quint shipped | quint foresight |
+|---|---|---|---|---|
+| O9_osc_tex_fast (8) | 0.028 | 0.028 | 0.107 | 0.106 |
+| O5_osc_textured (16) | 0.040 | 0.036 | 0.198 | 0.204 |
+| A5_accel_tex_a067 (2) | 0.039 | 0.038 | 0.043 | 0.042 |
+| A6_accel_tex_a133 (2) | 0.070 | 0.072 | 0.087 | 0.091 |
+
+Coverage up by one to two points on every row. So the seed is a picture
+result, not a field result: what it buys is a better choice among coarse
+basins for the pair the picture is warped across, and the field's own
+estimator sees a wash.
+
+**The fully symmetric form, built and not shipped.** Deferring the base
+pair's own chain until after the generated pairs and seeding it from
+slot 1 <-> 2 too, so that every pair but the last is seeded from both
+sides, changes the 32-case ladder by 0.03 dB or less against the partial
+form (L2 a further -0.15 with the prior on), the footage by nothing, the
+manifolds by nothing, and costs +5.0% on the quad and +3.2% on the quint.
+The picture is warped across the middle pair and the base pair only feeds
+the far link, so there was nothing for it to buy. Recorded so it is not
+rebuilt.
+
+**Shipped, in place, on by default.** The ship gate was the candidate-
+only form against the shipped files in one sitting: the quad's 32-case
+ladder must lose nowhere by more than 0.10 dB, the quint's likewise,
+both real clips must not fall, and the time must stay within the run-to-
+run spread. Measured: the quad's ladder mean +0.13 dB, worst case
+A4_accel_tex_a033 -0.06, up by more than 0.1 on 5 cases
+(A5_accel_tex_a067 +1.22, R3_rot_tex +1.00, A7_accel_tex_a167 +0.89,
+O1_osc_gentle +0.35, O6_osc_tex_gentle +0.32), down by more than 0.1 on
+0 (none); the quint's ladder mean +0.14 dB, worst A4_accel_tex_a033
+-0.07; time quad +1.3%, quint +3.0% from a file. That is the one class
+of change the variants rule lets replace a shipped file in place (free
+within the spread, never worse on the ladder), and the owner's rule for
+switches puts the default on the pole that works best in most uses: both
+clips are up or level on every segment. The prior's extra tenth on the
+live-action clip was the prior's own (the candidate alone gains a few
+hundredths there), and it came with the 2.3 dB loss on a flat 16-px
+translation, which is exactly the content of title cards and cel fills;
+so the candidate ships and `SEED_FUT_LAMBDA` stays at 0 as the knob for
+a live-action-only pipeline that wants the tenth. So `FORESIGHT` is on
+by default in the two generators, the generated quad and quint files
+from the seeded, propagated and animation bases are regenerated with it
+(SHADERS.md's N-frame table carries the new quad and quint columns), and
+`FORESIGHT=0` regenerates the 2026-09-04 form for a regression check.
+The two-frame shaders and the tri are byte-identical. What the seed does
+not do is on the record above: the field at N:N is unchanged in the quad
+by construction and a wash in the quint, and the fully symmetric form
+buys nothing. What remains open is the same question one level up: the
+temporal seed reads the previous WINDOW; a reading that wanted the past
+and the future of the LAST pair too would need the window to grow, which
+is the quint's business, not a generator's.
+
+#### The prior's loss, located and repaired: a deadband (2026-09-06, later)
+
+The story above blamed the prior's 2.3 dB loss on the flat box on a trust
+gate that a flat interior satisfies by accident. That was the first thing
+tested, and it was wrong. Trusting the next pair's flow only where the
+next pair's first frame has texture at the texel (`FUT_TRUST_CONTRAST` in
+`tests/foresight.py`, off) changed nothing: with the prior at 0.5 every
+one of the seven ablation cases and the live-action clip reproduced the
+prior form to the hundredth (L2 59.16, L3 42.70, L6 64.67; 35.47 dB), and
+the candidate-only form with the same trust reproduced the shipped file.
+The flow the prior trusted had been matched on texture: at 1/8 res the
+5x5 window reaches sixteen pixels, which is the edge.
+
+The loss was then located in the picture. On the 16-px box the frames
+that lose are one phase in five, the output two tenths past a source
+frame, by one to two and a half decibels from a 63 dB level; the picture
+pair's own flow, read through `read_view 4` at 24->60, is exact on both
+edges for both forms; and a texel-by-texel difference against the truth
+puts the whole of the extra error in the one to three columns of the
+LEADING edge, where the prior form renders the anti-aliased edge a
+fraction of a pixel further along (the edge column reads 240 against a
+truth of 204, which the shipped form gets exactly). So the prior was not
+choosing a wrong basin. It was breaking a sub-texel near-tie: the
+candidates refined from different seeds land at slightly different
+sub-texel positions inside the same basin, and a prior toward the next
+pair's flow prefers the one nearest that flow over the SAD minimum. The
+temporal prior has the same form and survives because the flow it pulls
+toward was itself the previous window's SAD choice on the same content.
+
+The repair follows from the mechanism: let the prior pull only beyond
+half a 1/8 texel (`FUT_PRIOR_DEADBAND`), so it can break a basin tie
+(aliases sit two or more texels apart) and never a sub-texel one.
+Pre-registered before the run: L2 back to at least 61.3, L3/L6/A3 within
+0.10 of the shipped file, A5/A7/R3 within 0.10 of the prior form, the
+clip at least 35.44 dB. Measured, the prior at 0.5 with the deadband:
+L2 61.44 (the shipped number), L3 43.51, L6 65.08, A3 40.35; A5 54.00,
+A7 51.10, R3 37.33; the clip 35.47 dB and 0.9691 SSIM, the prior form's
+full tenth, every segment above the shipped file. Every line met.
+
+**The full gate, same sitting, against the committed files.** The quad's
+32-case ladder: mean +0.02 dB against the shipped candidate-only form,
+down by more than 0.1 on R3_rot_tex -0.16, up by more than 0.1 on R2_rot_accel +0.19, R1_rot_const +0.28, F2_fourier_accel +0.32; the
+quint's mean +0.03, down by more than 0.1 on A6_accel_tex_a133 -0.14. Footage: the
+live-action clip 35.37 -> 35.47 dB, 0.9687 -> 0.9691
+(every segment up on both); the film
+excerpt 33.66 -> 33.71, 0.9617 -> 0.9619
+(every segment up on both). Time from a
+file: quad +0.1%, quint -0.9%.
+
+**What ships.** The deadband prior is a TRADE against the committed
+candidate-only form: a tenth on live action for a few tenths on the
+rotating texture and a hundredth or two on the flat cases. The variants
+rule keeps a trade out of a shipped file, so the committed default
+stays the candidate only (`SEED_FUT_LAMBDA` 0) and the prior with its
+deadband is the documented pair of knobs, `SEED_FUT_LAMBDA` 0.5 with
+`FUT_PRIOR_DEADBAND` 0.5, generated through `tests/foresight.py`. Whether
+the live-action tenth is worth the rotating disc's loss is the owner's
+call, and the numbers to make it with are the two paragraphs above.

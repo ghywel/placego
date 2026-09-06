@@ -331,7 +331,13 @@ For anyone picking this up:
    fine for it, or where it is plainly the better match and not merely
    sliding along an edge -- that last test being the edge gate this
    document had listed as known but unbuilt. Diagonal scenes are joining
-   the ladder. SHADERS.md says when to use each.
+   the ladder. A further repair came from a question asked from outside the
+   project: the tracker had only ever started its search from where the
+   previous pair of frames said things had been, never from where the next
+   pair says they are going, and now it does both; on scenes whose motion
+   changes that is worth up to a decibel, it never costs on any test scene,
+   real footage gains a little, and the price is about a percent of the
+   work. SHADERS.md says when to use each.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
    NFRAME-LIMITS.md for more detail. One exception was found on paper and

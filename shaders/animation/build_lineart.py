@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The line-art shader: distance transforms under the matcher and a level-set morph in the warp.
 
-    ./build_lineart.py <out.glsl> <plate-variant.glsl> [LINE_TAU=0.10] [DT_SCALE=24] [DT_MIX=0.5] [LINE_W=0.7]
+    ./build_lineart.py <out.glsl> <plate-variant-or-plain-base.glsl> [LINE_TAU=0.10] [DT_SCALE=24] [DT_MIX=0.5] [LINE_W=0.7]
 
 Prior art and credit: ANI-PRIOR-ART.md in this folder (Narita/Hirakawa/Aizawa 2019 for the distance
 transform under the flow; Rong/Tan 2006 for jump flooding; Cohen-Or/Solomovici/Levin 1998 for the
@@ -30,7 +30,7 @@ DT_SCALE = sys.argv[4] if len(sys.argv) > 4 else "24.0"
 DT_MIX = sys.argv[5] if len(sys.argv) > 5 else "0.5"
 LINE_W = sys.argv[6] if len(sys.argv) > 6 else "0.7"
 t = BASE.read_text(encoding="utf-8")
-assert "[plate]" in t, "input must be the plate variant (build_plate.py)"
+HAS_PLATE = "[plate]" in t          # the plate variant or the plain animation base: the line art works on either
 
 
 def sub(text, old, new, n=1, what=""):
@@ -161,9 +161,10 @@ t = sub(t, old, """    vec4 fill = mix(warped_a, warped_b, mix_t);
     return mix(fill, ink, line);
 }""" % LINE_W, what="warp return")
 # the plate's arbitration returns before the blend; it must also paint the line -- route it through the same tail
-t = sub(t, "        if (min(da, db) < PLATE_DISAGREE_TAU)\n            return (da < db) ? warped_a : warped_b;\n",
-        "        if (min(da, db) < PLATE_DISAGREE_TAU) {\n            vec4 pick = (da < db) ? warped_a : warped_b;\n"
-        "            warped_a = pick; warped_b = pick;\n        }\n", what="plate arbitration")
+if HAS_PLATE:
+    t = sub(t, "        if (min(da, db) < PLATE_DISAGREE_TAU)\n            return (da < db) ? warped_a : warped_b;\n",
+            "        if (min(da, db) < PLATE_DISAGREE_TAU) {\n            vec4 pick = (da < db) ? warped_a : warped_b;\n"
+            "            warped_a = pick; warped_b = pick;\n        }\n", what="plate arbitration")
 OUT.write_text(t, encoding="utf-8", newline="\n")
 n = t.count("//!HOOK")
 print("%s: line passes 2, jump flooding 2 x 11, matcher fed luma+dt (scale %s, mix %s), level-set warp (LINE_W %s); %d passes" % (OUT.name, DT_SCALE, DT_MIX, LINE_W, n))

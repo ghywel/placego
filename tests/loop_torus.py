@@ -24,8 +24,10 @@ speckle is a real test of a reading's memory, not of a matcher on a noiseless pi
 Output:
   <outdir>/src.mkv               3 x <turn> frames, ffv1, 8-bit gray, 24 fps
   <outdir>/truth/truth_bwd.npy   float32 [720, 1280, 2] px/frame, x right, y down: the chord n-1 -> n of the
-                                 point visible at n -- what the shaders report at output frame n at N:N
-  <outdir>/truth/truth_fwd.npy   the chord n -> n+1 (manifolds.py's convention)
+                                 point visible at n
+  <outdir>/truth/truth_fwd.npy   the chord n -> n+1 (manifolds.py's convention) -- what the shaders report
+                                 at output frame n at N:N (the straddle pair's forward flow; measured on
+                                 A5, 2026-09-06). On this loop's stationary field the two chords coincide.
   <outdir>/truth/truth_ctr.npy   their mean, the instantaneous velocity to second order
   <outdir>/truth/truth_acc.npy   fwd - bwd: the one-interval acceleration, px/frame^2
   <outdir>/truth/mask.npy        bool [720, 1280], the visible surface

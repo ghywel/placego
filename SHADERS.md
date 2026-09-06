@@ -194,6 +194,23 @@ real loss (L7, -0.5) gone. It replaced that precursor (`-twoseed`, same
 day) at the same cost; NFRAME-LIMITS.md section 8 has all three ladders
 -- two seeds, three ungated, three gated -- and the diagnosis.
 
+The generated quad and quint from this base and its descendants carry a
+FOURTH coarse seed the two-frame file cannot: the next pair's flow at the
+same texel, the temporal seed mirrored in time (`tests/foresight.py`,
+2026-09-06). The generator emits the later pair first so its caches hold
+the current window's values, adds one descent at 1/16 and one refined
+candidate at 1/8 to the slot 1 <-> 2 pair (and 2 <-> 3 in the quint), and
+arbitrates it on the same score as the others; its prior weight
+`SEED_FUT_LAMBDA` ships at 0: at 0.5 it broke sub-texel ties at moving
+edges (2.3 dB on a 16-px flat box); with `FUT_PRIOR_DEADBAND` 0.5 it
+keeps its tenth on live action without that loss and costs a few tenths
+on the rotating texture instead -- a trade, the owner's knob (NFRAME-
+LIMITS.md, "The prior's loss, located and repaired"). Never worse on the ladder, up to a
+decibel on accelerating and rotating texture, a few hundredths on real
+footage, about a percent of time on the quad. `FORESIGHT=0`
+in the environment regenerates without it. NFRAME-LIMITS.md, "The
+foresight seed".
+
 ### `bidirectional-interpolation-propagated.glsl` -- the seeded base plus flow propagation, 26 passes
 
 The seeded base byte for byte, plus four passes at the 1/8 level (eight
@@ -587,38 +604,38 @@ identical arithmetic, and that is the point of it.
 
 | case | hold | linear | two-frame | tri | quad | quint |
 |---|---|---|---|---|---|---|
-| `A1_accel_8mean` | 33.64 | 36.23 | 48.19 | 49.98 | 49.53 | 49.48 |
-| `A2_accel_16mean` | 30.25 | 32.68 | 45.24 | 46.24 | 46.03 | 45.97 |
-| `A3_accel_23mean` | 28.59 | 31.00 | 39.95 | 40.83 | 40.44 | 40.40 |
-| `A4_accel_tex_a033` | 41.84 | 47.95 | 53.96 | 54.89 | 54.48 | 54.40 |
-| `A5_accel_tex_a067` | 36.57 | 42.71 | 51.34 | 53.14 | 52.76 | 52.72 |
-| `A6_accel_tex_a133` | 31.33 | 36.64 | 49.28 | 52.16 | 52.12 | 52.12 |
-| `A7_accel_tex_a167` | 29.77 | 34.82 | 46.94 | 50.22 | 50.15 | 50.10 |
-| `F1_fourier_edge` | 27.33 | 30.31 | 54.02 | 52.54 | 52.25 | 52.18 |
-| `F2_fourier_accel` | 28.07 | 31.01 | 43.31 | 43.55 | 43.37 | 43.31 |
+| `A1_accel_8mean` | 33.64 | 36.23 | 48.19 | 49.98 | 49.59 | 49.55 |
+| `A2_accel_16mean` | 30.25 | 32.68 | 45.24 | 46.24 | 46.06 | 45.99 |
+| `A3_accel_23mean` | 28.59 | 31.00 | 39.95 | 40.83 | 40.42 | 40.38 |
+| `A4_accel_tex_a033` | 41.84 | 47.95 | 53.96 | 54.89 | 54.42 | 54.33 |
+| `A5_accel_tex_a067` | 36.57 | 42.71 | 51.34 | 53.14 | 53.98 | 53.95 |
+| `A6_accel_tex_a133` | 31.33 | 36.64 | 49.28 | 52.16 | 52.17 | 52.18 |
+| `A7_accel_tex_a167` | 29.77 | 34.82 | 46.94 | 50.22 | 51.04 | 50.99 |
+| `F1_fourier_edge` | 27.33 | 30.31 | 54.02 | 52.54 | 52.27 | 52.19 |
+| `F2_fourier_accel` | 28.07 | 31.01 | 43.31 | 43.55 | 43.40 | 43.35 |
 | `L0_static` | inf | 79.43 | 79.43 | 79.43 | 79.43 | 79.43 |
 | `L1_trans_8px` | 32.78 | 35.44 | 74.80 | 70.02 | 69.80 | 69.74 |
 | `L2_trans_16px` | 29.59 | 32.16 | 62.30 | 59.78 | 61.44 | 61.39 |
-| `L3_trans_23px` | 27.98 | 30.53 | 44.40 | 43.65 | 43.44 | 43.39 |
-| `L4_trans_40px` | 25.48 | 27.96 | 30.49 | 30.49 | 30.29 | 30.25 |
+| `L3_trans_23px` | 27.98 | 30.53 | 44.40 | 43.65 | 43.52 | 43.50 |
+| `L4_trans_40px` | 25.48 | 27.96 | 30.49 | 30.49 | 30.31 | 30.27 |
 | `L5_lowcontrast` | 55.57 | 57.47 | 62.27 | 62.26 | 62.09 | 62.03 |
-| `L6_flat_large` | 30.81 | 33.50 | 65.45 | 65.29 | 65.13 | 65.07 |
-| `L7_textured_large` | 20.82 | 21.04 | 23.90 | 23.79 | 23.73 | 23.70 |
-| `L8_diagonal` | 27.83 | 30.25 | 47.53 | 49.53 | 49.32 | 49.27 |
-| `L9_occlusion` | 29.71 | 32.21 | 42.13 | 43.30 | 42.64 | 42.58 |
-| `M1_noise_large` | 24.19 | 25.51 | 49.91 | 49.63 | 49.61 | 49.58 |
-| `M2_period40` | 23.58 | 27.29 | 59.98 | 58.83 | 58.76 | 58.70 |
+| `L6_flat_large` | 30.81 | 33.50 | 65.45 | 65.29 | 65.13 | 65.10 |
+| `L7_textured_large` | 20.82 | 21.04 | 23.90 | 23.79 | 23.70 | 23.68 |
+| `L8_diagonal` | 27.83 | 30.25 | 47.53 | 49.53 | 49.39 | 49.33 |
+| `L9_occlusion` | 29.71 | 32.21 | 42.13 | 43.30 | 42.68 | 42.62 |
+| `M1_noise_large` | 24.19 | 25.51 | 49.91 | 49.63 | 49.61 | 49.59 |
+| `M2_period40` | 23.58 | 27.29 | 59.98 | 58.83 | 58.76 | 58.71 |
 | `M3_period16_trap` | 20.72 | 21.01 | 21.91 | 21.78 | 21.75 | 21.73 |
 | `M4_belowgate` | 62.06 | 60.58 | 60.58 | 60.67 | 60.56 | 60.50 |
-| `O1_osc_gentle` | 35.63 | 38.17 | 47.79 | 51.96 | 51.68 | 51.63 |
-| `O2_osc_medium` | 34.07 | 36.24 | 42.97 | 48.80 | 49.11 | 49.17 |
+| `O1_osc_gentle` | 35.63 | 38.17 | 47.79 | 51.96 | 52.03 | 52.03 |
+| `O2_osc_medium` | 34.07 | 36.24 | 42.97 | 48.80 | 49.12 | 49.18 |
 | `O3_osc_hard` | 34.11 | 35.72 | 41.93 | 45.88 | 47.41 | 47.31 |
-| `O4_osc_flat300` | 35.29 | 37.58 | 44.30 | 49.53 | 49.81 | 49.88 |
-| `O5_osc_textured` | 31.33 | 33.90 | 41.72 | 48.18 | 48.44 | 48.52 |
-| `O6_osc_tex_gentle` | 31.88 | 37.17 | 46.95 | 51.88 | 51.59 | 51.59 |
-| `R1_rot_const` | 29.53 | 32.42 | 40.70 | 40.83 | 40.64 | 40.58 |
-| `R2_rot_accel` | 30.35 | 33.20 | 40.87 | 40.73 | 40.57 | 40.53 |
-| `R3_rot_tex` | 28.53 | 32.60 | 34.04 | 36.52 | 36.49 | 36.48 |
+| `O4_osc_flat300` | 35.29 | 37.58 | 44.30 | 49.53 | 49.77 | 49.88 |
+| `O5_osc_textured` | 31.33 | 33.90 | 41.72 | 48.18 | 48.46 | 48.54 |
+| `O6_osc_tex_gentle` | 31.88 | 37.17 | 46.95 | 51.88 | 51.91 | 51.94 |
+| `R1_rot_const` | 29.53 | 32.42 | 40.70 | 40.83 | 40.66 | 40.60 |
+| `R2_rot_accel` | 30.35 | 33.20 | 40.87 | 40.73 | 40.61 | 40.58 |
+| `R3_rot_tex` | 28.53 | 32.60 | 34.04 | 36.52 | 37.49 | 37.48 |
 
 Three things this table says. **Pure translation is the two-frame shader's**
 -- L1 74.80 against 70.02/69.80/69.74 -- and the gap is the sub-pixel warp
@@ -630,6 +647,13 @@ nothing to the picture** -- quad and quint sit within a few tenths of tri
 nearly everywhere, and below it on the oscillation cases -- which is the
 pre-registered result: their product is the jerk field and the measured
 confidence, not a better frame (QUADDIRECTIONAL.md, QUINTDIRECTIONAL.md).
+**The quad and quint columns are the 2026-09-06 re-measurement with the
+foresight seed** (the other columns do not carry it and stand from
+2026-09-04): a fourth coarse descent from the NEXT pair's flow, the
+temporal seed mirrored in time, which on this ladder is never worse and
+is worth up to +1.22 dB (A5_accel_tex_a067) where the motion changes inside the
+window, and on real footage up or level on every segment of two clips by
+a few hundredths (NFRAME-LIMITS.md, "The foresight seed").
 
 ### Why the diffuse variants measure badly -- and where that turned out to be wrong
 
