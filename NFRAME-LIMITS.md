@@ -2682,6 +2682,103 @@ on paper until the GPU is free.
 allocate memory" and libplacebo with vkAllocateMemory failures: two 4K bench segments aborted and one
 rendered corrupt frames that scored a plausible 39 dB the alarm did not catch. 4K work runs alone from
 now on, chained on the previous job's DONE line, and every bench's .err files are grepped for allocation
-failures before a number is trusted (the memory carries the rule). The reading's plate under the painting
-is now the COLOUR picture dimmed to 35%, the owner's intent for a film (it was the luma alone, inherited
-from the Metal demo's display).
+failures before a number is trusted (the memory carries the rule). The reading's plate under the
+painting, the luma alone at 35% inherited from the Metal demo's display, read as black and white on his
+clips; a colour plate at the same 35% read the same to his eyes, and the measurement said why: the chroma
+was there in proportion (2.8 on a luma of 14 where the source had 7.3 on 38) and invisible, because a
+dimmed plate of a dark film shows no colour. The plate's brightness is now a parameter of the tail,
+`read_plate`, default 1 (the picture as it is, the field painted over it), 0.35 the old look, verified on
+a mid-brightness frame beside the source before the clips were rendered again. The lesson is recorded
+against the author, not the shader: the first fix was confirmed by its mechanism and a dark frame, not by
+the outcome the owner would see.
+
+**And a third time: the film is HDR.** With the plate at full brightness his eyes still saw a washed-out
+picture in the wrong palette and suspected the overlay's blend. The blend was innocent. The second 4K
+film is HDR10 (BT.2020 primaries, PQ transfer; the first film was BT.709 and needed nothing), the clips
+were rendered without tone mapping and written as 8-bit files with no colour tags, so every player showed
+PQ code values as SDR gamma. The verification of the plate had compared the clip to a source frame decoded
+the same naive way, which is why it passed: a reference is only a reference when it comes from an
+independent correct path. Fixed on the GPU: the shader's own libplacebo instance outputs BT.709 SDR
+(`colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv`, the default tone mapping) and the
+file is tagged; measured against libplacebo's own tone map without the shader, the unpainted pixels
+agree to 2.2 levels (luma 80.7 against 80.3, chroma 20.2 against 17.1, the difference the paint's soft
+edges), and a two-instance path (tone map first, then the shader) gives the same to 2.4. `watch.sh` and
+the clips script probe the transfer and do this for any PQ or HLG source from now on. The reading's
+hues over a bright SDR plate read pastel where they read saturated over the dark one; `read_plate` is
+the knob if the owner wants them stronger.
+
+### The cube, the manifolds through the reading, and a black hole (2026-09-08)
+
+The owner, out of ideas for the moment, asked for a look at the stairs work, some 3D human-reading
+renders, and, unprompted by anything but curiosity, a black hole.
+
+**The stairs work, for his eyes.** Two aperture-series cases as half-speed three-ways and as readings
+(`hot-drops/stairs-ladder-P4-crosser-*`, `stairs-ladder-P5-alias-*`, each scene extended to 2.5 s and
+played three times). On P5's reading the alias shows itself: the stairs paint red for their rightward
+motion with dark holes where the pool averages the true +8 against the alias's -5.8 and falls under
+the gate.
+
+**The manifolds through the reading** (`hot-drops/manifold-<torus|mobius|tesseract|hopf>-picture-velocity-acceleration.mp4`,
+`manifolds-four-velocity-readings.mp4`). The torus and the band paint; the tesseract and the Hopf
+fibres barely do. That is the reading's honest answer on thin tubes, which the record already knew
+from the field checker: the aperture problem everywhere, and a pooled field under the gate.
+
+**The cube** (`tests/manifolds.py`, scenes `cube` and `cubet`; half-side 150 px; the M1 texture in
+each face's own coordinates with a Lambert shade; hidden faces removed by the splat's depth buffer;
+`cube` rotates in place about a tilted axis at 0.5 rad/s, `cubet` also translates in a 220 px circle
+every 8 s). It adds what the planar ladder lacks: per-face affine flow, edges as aperture on the
+object, and self-occlusion as faces turn in and out. First numbers, decimate-and-reconstruct on 3 s
+of each (PSNR / SSIM), and the quad's raw field against the analytic truth at frame 48:
+
+    cube  (rotating, |v| ~2 px)  hold 30.42  linear 34.36  base 31.92  quad 31.87  vari 30.78  vp 33.55
+                                 SSIM .9711  .9832  .9770  .9758  .9722  .9822
+    cubet (+ translating, ~6 px) hold 24.63  linear 26.71  base 27.79  quad 27.77  vari 27.42  vp 28.45
+                                 SSIM .9128  .9178  .9442  .9435  .9486  .9454
+    field, cube  frame 48: median 0.44 px, p90 2.3, gross (>2 px) 11%, angle 3.6 deg, |v| 2.14 true / 2.24 read
+    field, cubet frame 48: median 0.41 px, p90 6.4, gross 17%, angle 3.3 deg, |v| 5.99 true / 6.77 read
+
+The rotating cube is the first synthetic case where LINEAR BEATS EVERY SHADER, by 0.8 dB over the
+recommendation and 2.4 over the two-frame base. The field says why: the median is fine but a tenth of
+the pixels are gross, at the turning edges where a face's affine motion is not one vector per block and
+where faces appear and disappear with no correspondence to find; warping a high-contrast lattice
+texture on a wrong vector costs more than a blend's blur at 2 px per frame. With translation added the
+shaders win again (+1.7 dB for the recommendation over linear) because the translation dominates, but
+the gross fraction rises to 17%. This is the case the outline list's "affine match" item was waiting
+for: a matcher that fits a per-block affine (or at least a divergence and shear) would be gated here,
+and the self-occlusion half would need occlusion reasoning the family does not have. Both stay on
+paper; the cube now measures them.
+
+**A black hole** (`np-scratch/eyes/blackhole/blackhole.py`, not a test: the owner's curiosity). A
+Schwarzschild black hole in geometric units with a thin, opaque, glowing dust disc from the innermost
+stable orbit at 6 M to 18 M, seen from 40 M at 78 degrees from the disc's axis. Every pixel's null
+geodesic is integrated once in its own orbital plane (the Binet equation u'' = -u + 3 u^2, fourth-order
+Runge-Kutta, 921,600 rays) until it falls in, escapes to a lensed star field, or crosses the disc; the
+crossing's radius, azimuth and redshift factor g = sqrt(1 - 3/r) / (1 + Omega b_z) (gravitational and
+Doppler together, a Keplerian emitter) are kept, and each frame is then a lookup of a multi-octave dust
+pattern winding up under differential rotation, weighted g^4 and coloured by the observed temperature.
+The picture has what the famous ones have because the physics puts it there: the shadow, the disc in
+front, its far side lensed into an arch above and a lobe below, the approaching side beamed bright,
+and the thin photon ring inside the shadow. `hot-drops/blackhole-disc-10s.mp4`, and the same through
+the human reading (`blackhole-disc-picture-velocityreading.mp4`): the field of a warped, differentially
+rotating disc as the shader reads it.
+
+**Black holes that are not Schwarzschild** (the owner's challenge, the same evening: every exact solution sets
+something to zero; render one that is not the Schwarzschild metric). There is no general solution to
+render: the general case exists only in numerical relativity, and even there as two holes merging. What
+can be done is two steps out. `scripts/blackhole/geodesic_disc.py` (the owner's choice for the repository;
+it began as np-scratch/eyes/blackhole/kerr.py) is a second, metric-agnostic tracer:
+Hamilton's equations for a null geodesic in the full four dimensions, the metric entering only as its
+five covariant components g_tt, g_tphi, g_rr, g_thetatheta, g_phiphi as functions of (r, theta), the
+inverse taken numerically and the derivatives by central differences, fourth-order Runge-Kutta with the
+step shrinking toward the horizon and toward the coordinate poles (a seam at the top of the shadow until
+it did). The disc's innermost stable orbit, orbital frequency and u^t are found numerically from the
+metric, so nothing about the spacetime is derived by hand; the redshift is Cunningham's
+g = 1 / (u^t (1 - Omega p_phi)). Three metrics from one camera (40 M, 78 degrees off the axis): the
+Schwarzschild control, which the general tracer reproduces (horizon 2, ISCO 6.00); Kerr at a = 0.9
+(horizon 1.436, ISCO 2.321, the D-shaped shadow flattened on the prograde side, the disc reaching in to a
+third of the radius, frame dragging in the light); and the Johannsen-Psaltis deformation of that Kerr
+metric with eps3 = 3, which solves NO vacuum field equation, the kind of parametrised non-Kerr black hole
+astronomers test the no-hair theorem against (ISCO 1.465, the image visibly different: a smaller, dimmer
+disc that reaches almost to the horizon). Files: `hot-drops/blackhole-<schwarzschild|kerr|jp>-5s.mp4`,
+`blackhole-triptych-schwarzschild-kerr09-johannsenpsaltis-5s.mp4`, `blackhole-triptych-frame60.png`, and
+the triptych through the human reading.

@@ -3414,6 +3414,13 @@ vec4 hook() {
 //!MAXIMUM 256.0
 0.0
 
+//!PARAM read_plate
+//!DESC the brightness of the picture under the painting, 1 = the picture as it is (the default since 2026-09-07: the owner's clips at 0.35 read as black and white, a dimmed plate of a dark film shows no colour to the eye), 0.35 = the Metal demo's dimmed plate, 0 = the field on black
+//!TYPE float
+//!MINIMUM 0.0
+//!MAXIMUM 1.0
+1.0
+
 //!HOOK FRAME_MIX
 //!BIND HOOKED
 //!BIND FLOW_H_AB
@@ -3639,7 +3646,7 @@ const float READ_ACC_LO  = 0.12, READ_ACC_HI  = 0.22, READ_ACC_SAT  = 0.30;
 // painted area 4.05x the object without it, 2.86x with it, 94% covered.
 const int   READ_GATE     = 1;
 const int   READ_GATE_R   = 2;
-const float READ_PICTURE_LUMA = 0.35;
+const float READ_PICTURE_LUMA = 0.35;   // the Metal demo's plate; superseded by the read_plate parameter (kept for the record)
 // machine modes: 0.5 + px / (2 * FS), one full scale per field
 const float READ_MACHINE_FS_VEL = 32.0;
 const float READ_MACHINE_FS_ACC = 2.0;
@@ -3702,8 +3709,9 @@ vec4 hook() {
     float hue = fract(atan(fpx.y, fpx.x) / (2.0 * 3.14159265) + 1.0);
     vec4 pic = FRAME_MIX_tex(FRAME_MIX_pos);
     float lum = dot(pic.rgb, vec3(0.2126, 0.7152, 0.0722));
-    // the picture under the painting keeps its COLOUR, dimmed to READ_PICTURE_LUMA (the owner, 2026-09-07:
-    // the luma-only plate of the Metal demo's display read as black and white on a film; the intent was colour)
-    vec3 reading = mix(pic.rgb * READ_PICTURE_LUMA, read_hsv2rgb(vec3(hue, sat, 1.0)), vis);
+    // the picture under the painting keeps its COLOUR at read_plate of its brightness (the owner, 2026-09-07:
+    // the Metal demo's luma plate at 35% read as black and white on a film, and so did a colour plate at 35%
+    // -- a dimmed plate of a dark film shows no colour to the eye; the intent is the picture with the field on it)
+    vec3 reading = mix(pic.rgb * read_plate, read_hsv2rgb(vec3(hue, sat, 1.0)), vis);
     return vec4(reading, pic.a);
 }

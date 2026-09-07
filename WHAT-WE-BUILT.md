@@ -437,6 +437,8 @@ the test they will be judged on.
 - `PLAN.md` — the working research plan, kept honest
 - `metal-demo/` and `METALPORT.md` — the native Metal port and demo app:
   the template claim, executed and measured
+- `blackhole/` — nothing to do with any of the above; one small script from
+  an evening's curiosity
 
 ## Who did this
 

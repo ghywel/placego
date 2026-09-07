@@ -959,8 +959,10 @@ diagnostic mode (so the field is exactly what that shader computes, not a
 re-implementation), a 13x13 pool at 8 px spacing with an exponential memory
 across frames in a storage texture, and a present pass that paints hue =
 direction, visibility and saturation = magnitude above the field's gate,
-over the colour picture dimmed to 35% (luma-only until 2026-09-07; the owner's
-intent for a film was colour). The tail is generated, never edited:
+over the colour picture at `read_plate` of its brightness (default 1, the
+picture as it is; 0.35 was the Metal demo's dimmed plate, and until 2026-09-07
+it was the luma alone: on a film both read as black and white, because a
+dimmed plate of a dark picture shows no colour to the eye). The tail is generated, never edited:
 `tests/add_human_reading.py` appends it (idempotently) and the generators
 call it last, so regenerating any shader is always safe.
 

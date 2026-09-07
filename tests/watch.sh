@@ -11,6 +11,7 @@
 # so the file never carries the source's title. Full source resolution, H.264, at a bitrate that scales
 # with the frame: 12 Mbit/s at 1080p, four times that at 4K, capped at 48 (BITRATE_M overrides, in Mbit/s).
 # Ten-bit sources are rendered at ten bits and delivered at eight (the encoder's format).
+# HDR sources (PQ/HLG) are tone-mapped to BT.709 SDR on the GPU and the output is tagged BT.709.
 #
 # Paths with brackets ([TGx] and the like) defeat the MSYS shell's path conversion, so the source is
 # passed to ffmpeg in Windows form via cygpath when that is available.
@@ -28,12 +29,18 @@ cp -f "$SHADER" "$W/_watch.glsl" || exit 1
 command -v cygpath >/dev/null 2>&1 && SRCW="$(cygpath -w "$SRC")" || SRCW="$SRC"
 DUR=$(awk -v m="$MIN" 'BEGIN{printf "%.0f", m * 60}')
 DIMS=$("$FFPROBE" -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$SRCW" 2>/dev/null | head -1)
+# HDR sources (PQ or HLG transfer) are tone-mapped to BT.709 SDR by libplacebo itself and the file is tagged.
+# Without this the PQ code values land untagged in an 8-bit file and every player shows them washed out with
+# the wrong palette (the second 4K film, 2026-09-07; the first was BT.709 and needed nothing).
+TRC=$("$FFPROBE" -v error -select_streams v:0 -show_entries stream=color_transfer -of csv=p=0 "$SRCW" 2>/dev/null | head -1)
+SDR=""; TAGS=""
+case "$TRC" in smpte2084|arib-std-b67) SDR=":colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv"; TAGS="-color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv";; esac
 PW="${DIMS%%,*}"; PH="${DIMS##*,}"
 BR="${BITRATE_M:-$(awk -v w="${PW:-1920}" -v h="${PH:-1080}" 'BEGIN{b = 12 * w * h / 2073600; if (b < 12) b = 12; if (b > 48) b = 48; printf "%d", b}')}"
 MAXR=$(awk -v b="$BR" 'BEGIN{printf "%d", b * 4 / 3}')
-echo "watch: ${MIN} min from ${START}s through $(basename "$SHADER") at ${PW:-?}x${PH:-?}, ${BR} Mbit/s -> $OUT/watch-$LABEL-60fps.mp4"
+echo "watch: ${MIN} min from ${START}s through $(basename "$SHADER") at ${PW:-?}x${PH:-?}, ${BR} Mbit/s${SDR:+, HDR ($TRC) tone-mapped to BT.709} -> $OUT/watch-$LABEL-60fps.mp4"
 ( cd "$W" && "$FFMPEG" -y -hide_banner -loglevel error -stats -init_hw_device vulkan=vk -filter_hw_device vk \
     -ss "$START" -t "$DUR" -i "$SRCW" -sn \
-    -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=_watch.glsl,format=yuv420p" \
-    -c:v h264_mf -b:v "${BR}M" -maxrate "${MAXR}M" -c:a aac -b:a 192k -movflags +faststart "$OUT/watch-$LABEL-60fps.mp4" ) 2>"$W/watch.err" \
+    -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=_watch.glsl$SDR,format=yuv420p" \
+    -c:v h264_mf -b:v "${BR}M" -maxrate "${MAXR}M" $TAGS -c:a aac -b:a 192k -movflags "+faststart${TAGS:++write_colr}" "$OUT/watch-$LABEL-60fps.mp4" ) 2>"$W/watch.err" \
   && echo "done: $(stat -c %s "$OUT/watch-$LABEL-60fps.mp4") bytes" || { echo "failed:"; tail -3 "$W/watch.err"; exit 1; }

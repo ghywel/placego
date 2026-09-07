@@ -1,7 +1,7 @@
 """Deterministic weird geometry with ANALYTIC per-pixel motion, for the field shaders.
 
     manifolds.py <scene> <outdir> [frames] [fps]
-        scene: torus | mobius | tesseract | hopf | mobius_bl | zoom | aperture
+        scene: torus | mobius | tesseract | hopf | mobius_bl | zoom | aperture | cube | cubet
 
 READ THE FIELD EXACTLY. A machine-mode frame must come out of ffmpeg with `format=rgb48le` INSIDE the
 filter graph (or as rawvideo); `-pix_fmt rgb48le` on the output passes through an 8-bit limited-range
@@ -9,6 +9,8 @@ intermediate and corrupts every value (NFRAME-LIMITS.md section 9, the retractio
 such a frame. The three later scenes: mobius_bl is the band with a texture band-limited above the coarsest
 level's Nyquist; zoom is a flat disc expanding 0.6% per frame (pure divergence, no rotation); aperture is
 a rigid translation seen through a static rim -- the calibration control and the silhouette-capture test.
+cube is a textured cube (half-side 150) rotating about a tilted axis, cubet the same cube also translating in a
+circle: per-face affine flow, edges as aperture on the object, self-occlusion at its own silhouette (2026-09-08).
 
 Every scene is a rigid or 4D-rigid motion of a textured object rendered orthographically at 1280x720 by
 forward splatting with a z-buffer at 2x supersampling. Each rendered sample carries the 2D velocity of the
@@ -197,6 +199,52 @@ def mobius_bl_scene():
     return at
 
 
+def cube_scene(translate=False):
+    """A textured cube, half-side 150 px, rotating about a tilted axis at 0.5 rad/s (and, for `cubet`, also
+    translating in a circle of radius 220 px about the frame's centre every 8 s). The owner's 3D question
+    (2026-09-08): a cube adds what the ladder lacks -- each face moves as a planar homography, so its flow has
+    divergence and shear; its edges are lines, the aperture on the object itself; and faces appear and
+    disappear at its own silhouette as it turns, which is self-occlusion. Faces carry the M1 texture in their
+    own coordinates with a different phase each, and a flat Lambert shade from the face normal, so the edges
+    between faces are luminance steps. Hidden faces are removed by the splat's depth buffer."""
+    s = 150.0
+    n = 640                                                  # samples per face edge: 0.47 px at 2x supersampling
+    a = np.linspace(-s, s, n)
+    U, V = np.meshgrid(a, a, indexing="ij"); U = U.ravel(); V = V.ravel()
+    faces = []
+    normals = []
+    for k, (axis, sign) in enumerate([(0, 1), (0, -1), (1, 1), (1, -1), (2, 1), (2, -1)]):
+        P = np.zeros((U.size, 3))
+        others = [i for i in range(3) if i != axis]
+        P[:, axis] = sign * s
+        P[:, others[0]] = U
+        P[:, others[1]] = V
+        faces.append(P)
+        nrm = np.zeros(3); nrm[axis] = sign
+        normals.append(np.repeat(nrm[None, :], U.size, axis=0))
+    P = np.concatenate(faces)
+    N = np.concatenate(normals)
+    phase = np.repeat(np.arange(6) * 1000.0, U.size)
+    tex = texture(np.tile(U, 6) + phase, np.tile(V, 6) + 0.37 * phase)
+    axis = np.array([1.0, 1.0, 0.35])
+    base = rot3([1, 0, 0], math.radians(28)) @ rot3([0, 1, 0], math.radians(35))   # three faces in view from the start
+    L = np.array([0.3, 0.5, 0.81])                            # the light, toward the viewer and up-right
+    L /= np.linalg.norm(L)
+    def at(t):
+        R = base @ rot3(axis, 0.5 * t)
+        Pt = P @ R.T
+        Nt = N @ R.T
+        shade = 0.55 + 0.45 * np.clip(Nt @ L, 0.0, 1.0)
+        if translate:
+            Pt = Pt + np.array([220.0 * math.cos(2 * math.pi * t / 8.0), 220.0 * math.sin(2 * math.pi * t / 8.0), 0.0])
+        return Pt, tex * shade
+    return at
+
+
+def cubet_scene():
+    return cube_scene(translate=True)
+
+
 def zoom_scene():
     """A flat textured disc in the image plane scaling about the frame's centre by 0.6% per frame at 24 fps
     (radial flow, 1.9 px/frame at the rim): pure expansion forward, pure contraction backwards, no rotation
@@ -226,7 +274,8 @@ def aperture_scene():
 
 
 SCENES = {"torus": torus_scene, "mobius": mobius_scene, "tesseract": tesseract_scene, "hopf": hopf_scene,
-          "mobius_bl": mobius_bl_scene, "zoom": zoom_scene, "aperture": aperture_scene}
+          "mobius_bl": mobius_bl_scene, "zoom": zoom_scene, "aperture": aperture_scene,
+          "cube": cube_scene, "cubet": cubet_scene}
 at = SCENES[scene]()
 
 frames = []
