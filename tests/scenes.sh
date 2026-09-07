@@ -155,6 +155,27 @@ scene() {
   local TEX_L7='128+110*sin(ld(0)/2.5)*sin(ld(1)/2.5)'
   local TEX_M2='128+110*sin(ld(0)/6.366)*sin(ld(1)/6.366)'
   local TEX_M3='128+110*sin(ld(0)/2.546)*sin(ld(1)/2.546)'
+  # The vertical periodic series (2026-09-06, from the owner's eyes on a film: horizontal stairs panning
+  # vertically 'alias'). Horizontal bars attached to the object, the object panning along the bars'
+  # period axis: the same period lock as M2/M3, in the direction the ladder never moved.
+  local TEX_V1='128+110*sin(ld(1)/3.8197)'                 # soft bars, period 24 px
+  local TEX_V2='18+220*gt(sin(ld(1)/3.8197),0)'            # hard-edged bars (stairs), period 24 px
+  local TEX_H1='128+110*sin(ld(0)/3.8197)'                 # the same bars turned vertical, panning horizontally
+  local TEX_H2='18+220*gt(sin(ld(0)/3.8197),0)'
+  # The aperture series (2026-09-07, from the owner's eyes on the film's stairs under a horizontal pan:
+  # "lensing, like a drop of water"). The V2 stairs again, but panning ALONG the bars, the direction the
+  # bars cannot see; a weak fine speckle (contrast 12, periods 14 x 11 px) rides on them so that a wrong
+  # horizontal component warps something visible. The bars constrain only the vertical component; the
+  # horizontal one must come from the box's ends, the speckle, or -- as on the film -- the nearest other
+  # structure. P4 puts a crosser in front, moving the other way, which is what the stairs borrowed from.
+  # Two speckles: the fine one (period 13.8 x 11.3 px) aliases at 8 px per frame (8 - 13.8 = -5.8; measured
+  # 2026-09-07: 39% of the stairs' cells locked on it, and ALL of them on the second alias at 12), so it is
+  # the trap P5 and the slow P1; the coarse one (period 40 x 30 px, above the coarse level's Nyquist and
+  # beyond any alias at these speeds) makes P2-P4 the aperture alone. The picture metric is nearly blind
+  # to a wrong horizontal component on bars (the bars warp onto themselves); the field's spread across
+  # the stairs (claude-handoff/d3/reading-alpha/aperture/pspread.py) is the instrument for these cases.
+  local TEX_P='18+220*gt(sin(ld(1)/3.8197),0)+12*sin(ld(0)/2.2)*sin(ld(1)/1.8)'
+  local TEX_PC='18+220*gt(sin(ld(1)/3.8197),0)+12*sin(ld(0)/6.366)*sin(ld(1)/4.775)'
   # M1's texture was a floor()-quantised hash before this rewrite. It had to
   # change, and it is the only content change here: a texture quantised to a
   # 4px grid CANNOT be translated to a fractional position -- floor() would
@@ -192,6 +213,21 @@ scene() {
     M1_noise_large)    _rect '384*T' '210' 300 300 0 "$TEX_M1"  "$r" ;;  # aperiodic, no repeat
     M2_period40)       _rect '384*T' '210' 300 300 0 "$TEX_M2"  "$r" ;;  # period 40px: unambiguous
     M3_period16_trap)  _rect '384*T' '210' 300 300 0 "$TEX_M3"  "$r" ;;  # period == motion: worst case
+    V1_bars_sine24_v6)  _rect '490' '100+144*T' 300 300 0 "$TEX_V1" "$r" ;;  # soft bars, period 24, panning DOWN 6 px/frame
+    V2_stairs_sq24_v6)  _rect '490' '100+144*T' 300 300 0 "$TEX_V2" "$r" ;;  # hard bars (stairs), period 24, 6 px/frame
+    V3_stairs_sq24_v12) _rect '490' '100+288*T' 300 300 0 "$TEX_V2" "$r" ;;  # hard bars at HALF A PERIOD per frame: the alias
+    H1_bars_sine24_h6)  _rect '100+144*T' '210' 300 300 0 "$TEX_H1" "$r" ;;  # V1 turned 90 degrees: is it the period or the direction
+    H2_stairs_sq24_h6)  _rect '100+144*T' '210' 300 300 0 "$TEX_H2" "$r" ;;  # V2 turned 90 degrees
+    P1_stairs_along_v4)  _rect '100+96*T'  '210' 600 300 0 "$TEX_P" "$r" ;;  # stairs panning along their bars, 4 px/frame
+    P2_stairs_along_v8)  _rect '100+192*T' '210' 600 300 0 "$TEX_PC" "$r" ;;  # 8 px/frame, coarse speckle: the aperture alone
+    P3_stairs_along_v12) _rect '100+288*T' '210' 600 300 0 "$TEX_PC" "$r" ;;  # 12 px/frame, the film's fast end
+    P5_stairs_along_v8_alias) _rect '100+192*T' '210' 600 300 0 "$TEX_P" "$r" ;;  # 8 px/frame on the FINE speckle: the alias trap
+    P4_stairs_along_v8_crosser)   # the stairs at 8 px/frame right, a textured crosser (160x400) at 8 px/frame left in front
+      local PA="st(0\,X-(100+192*T))\;st(1\,Y-210)\;st(2\,clip(min((100+192*T)+600\,X+1)-max((100+192*T)\,X)\,0\,1)*clip(min(210+300\,Y+1)-max(210\,Y)\,0\,1))"
+      local PB="st(3\,X-(900-192*T))\;st(4\,Y-160)\;st(5\,clip(min((900-192*T)+160\,X+1)-max((900-192*T)\,X)\,0\,1)*clip(min(160+400\,Y+1)-max(160\,Y)\,0\,1))"
+      local TA="18+220*gt(sin(ld(1)/3.8197)\,0)+12*sin(ld(0)/6.366)*sin(ld(1)/4.775)"
+      local TB="128+100*sin(ld(3)/4.1)*sin(ld(4)/3.7)"
+      echo "nullsrc=s=1280x720:r=$r:d=1,format=gray,geq=lum='$PA\;$PB\;st(6\,($TA)*ld(2))\;ld(6)+(($TB)-ld(6))*ld(5)',format=yuv420p" ;;
 
     # ---- M4: contrast BELOW the shader's MIN_CONTRAST gate (3/255 =
     # 0.0118), unlike L5 which sits above it. Tests the gate itself.
@@ -415,7 +451,7 @@ scene() {
   esac
 }
 
-ALL_CASES="L0_static L1_trans_8px L2_trans_16px L3_trans_23px L4_trans_40px L5_lowcontrast L6_flat_large L7_textured_large M1_noise_large M2_period40 M3_period16_trap M4_belowgate L8_diagonal L9_occlusion A1_accel_8mean A2_accel_16mean A3_accel_23mean F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel O1_osc_gentle O2_osc_medium O3_osc_hard O4_osc_flat300 O5_osc_textured A4_accel_tex_a033 A5_accel_tex_a067 A6_accel_tex_a133 A7_accel_tex_a167 O6_osc_tex_gentle R3_rot_tex"
+ALL_CASES="L0_static L1_trans_8px L2_trans_16px L3_trans_23px L4_trans_40px L5_lowcontrast L6_flat_large L7_textured_large M1_noise_large M2_period40 M3_period16_trap M4_belowgate L8_diagonal L9_occlusion A1_accel_8mean A2_accel_16mean A3_accel_23mean F1_fourier_edge F2_fourier_accel R1_rot_const R2_rot_accel O1_osc_gentle O2_osc_medium O3_osc_hard O4_osc_flat300 O5_osc_textured A4_accel_tex_a033 A5_accel_tex_a067 A6_accel_tex_a133 A7_accel_tex_a167 O6_osc_tex_gentle R3_rot_tex V1_bars_sine24_v6 V2_stairs_sq24_v6 V3_stairs_sq24_v12 H1_bars_sine24_h6 H2_stairs_sq24_h6 P1_stairs_along_v4 P2_stairs_along_v8 P3_stairs_along_v12 P4_stairs_along_v8_crosser P5_stairs_along_v8_alias"
 
 # The six added 2026-08-31 are in ALL_CASES deliberately rather than in a
 # group of their own: a case that is not run by default is a case that rots.

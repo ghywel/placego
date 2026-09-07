@@ -14,6 +14,20 @@ is byte-for-byte the shader's own. Set it and the picture becomes a reading:
                8 the per-cell mode memory, raw (velocity)
                9 the velocity gradient tensor, raw: divergence, curl, shear (1/frame)
 
+A second parameter, read_alpha (default 0 = unchanged), makes the painting's
+opacity follow the field's magnitude, full at that many px per frame (a tenth
+of it for acceleration and jerk): a rotating disc then fades from a solid rim
+to a clear axis instead of saturating into one wheel, and a pan reads its
+speed by its density. The owner's idea, 2026-09-06; his call on 2026-09-07:
+0 = AUTO (the default; the frame's running maximum, an exposure with attack,
+decay and a floor at the gate), above 0 = MANUAL px per frame for fine tuning,
+below 0 = the flat painting of before.
+
+Apply this to the BASES and the generated field shaders only. The -4k files are
+scale_shader.py's output (their tail carries scaled constants and 1/16 passes):
+re-tail their base, then regenerate them with scale_shader.py, or the smoke
+gate's byte-compare fails, as it did on 2026-09-06.
+
 In mpv: `--glsl-shader-opts=read_view=1`. ffmpeg's libplacebo filter has no
 option for shader parameters, so edit the default (the bare number line that
 ends the `//!PARAM read_view` block) or use --default here. The two-frame
@@ -97,6 +111,13 @@ def build_tail(text, default):
 //!MINIMUM 0
 //!MAXIMUM 9
 {default}
+
+//!PARAM read_alpha
+//!DESC the painting's opacity follows the field's magnitude (the owner's idea, 2026-09-06). 0 = auto (the default): full at the frame's running maximum of the pooled field (attack, decay and floor in the READ_MAX pass), so the fastest thing in view is opaque and the rest in proportion on any content; above 0 = manual: full at this many px per interval (velocity; a tenth of it for acceleration and jerk), a measurement like the hue, for fine tuning; below 0 = the flat painting of before, saturating just above the gate
+//!TYPE float
+//!MINIMUM -1.0
+//!MAXIMUM 256.0
+0.0
 
 """
 
@@ -278,6 +299,62 @@ vec4 hook() {{
 }}
 """
 
+    autoscale = f"""//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND READ_POOL
+//!SAVE READ_MAX1
+//!WIDTH HOOKED.w 64 /
+//!HEIGHT HOOKED.h 64 /
+{when}//!DESC [reading] the pooled field's largest magnitude in each 8x8 block of cells: the first stage of the frame's maximum
+
+vec4 hook() {{
+    ivec2 base = ivec2(floor(HOOKED_pos * READ_POOL_size / 8.0)) * 8;
+    float m = 0.0;
+    for (int j = 0; j < 8; j++)
+        for (int i = 0; i < 8; i++)
+            m = max(m, length(READ_POOL_tex((vec2(base + ivec2(i, j)) + 0.5) * READ_POOL_pt).xy));
+    return vec4(m, 0.0, 0.0, 1.0);
+}}
+
+//!TEXTURE READ_SCALE
+//!SIZE 1 1
+//!FORMAT rgba32f
+//!STORAGE
+
+//!HOOK FRAME_MIX
+//!BIND HOOKED
+//!BIND READ_MAX1
+//!BIND READ_SCALE
+//!SAVE READ_MAX
+//!WIDTH HOOKED.w HOOKED.w /
+//!HEIGHT HOOKED.h HOOKED.h /
+{when}//!DESC [reading] the frame's maximum of the pooled field with a memory: the auto scale of the painting's opacity (read_alpha 0). One texel.
+
+// The auto scale is an exposure: a rising maximum is followed at READ_AUTO_ATTACK per output frame (70% in
+// three frames), a falling one decays at READ_AUTO_DECAY (half-life 69 frames, ~3 s at 24 fps), so a
+// slowing scene fades rather than staying opaque, and it never drops below the HI gate of the field it
+// reads (a still scene amplifies nothing). The manual scale (read_alpha > 0) bypasses all of this.
+const float READ_AUTO_ATTACK    = 0.3;
+const float READ_AUTO_DECAY     = 0.99;
+const float READ_AUTO_FLOOR_VEL = 2.0;     // = READ_VEL_HI
+const float READ_AUTO_FLOOR_ACC = 0.22;    // = READ_ACC_HI
+
+vec4 hook() {{
+    ivec2 n = ivec2(READ_MAX1_size);
+    float m = 0.0;
+    for (int j = 0; j < n.y; j++)
+        for (int i = 0; i < n.x; i++)
+            m = max(m, READ_MAX1_tex((vec2(i, j) + 0.5) * READ_MAX1_pt).x);
+    bool vel = (read_view == 1 || read_view == 4 || read_view >= 7);
+    float fl = vel ? READ_AUTO_FLOOR_VEL : READ_AUTO_FLOOR_ACC;
+    float prev = imageLoad(READ_SCALE, ivec2(0)).x;
+    float s = (m > prev) ? mix(prev, m, READ_AUTO_ATTACK) : max(m, prev * READ_AUTO_DECAY);
+    s = max(s, fl);
+    imageStore(READ_SCALE, ivec2(0), vec4(s, m, 0.0, 1.0));
+    return vec4(s, m, 0.0, 1.0);
+}}
+"""
+
     # NB: in a FRAME_MIX hook the hooked texture is also aliased as FRAME_MIX, so
     # this pass binds FRAME_MIX (the picture the final pass just saved) and NOT
     # HOOKED -- binding both redefines the FRAME_MIX_raw macro and the pass
@@ -288,6 +365,7 @@ vec4 hook() {{
 //!BIND READ_POOL
 //!BIND READ_MODE
 //!BIND READ_DERIV
+//!BIND READ_MAX
 //!SAVE FRAME_MIX
 //!WIDTH FRAME_MIX.w
 //!HEIGHT FRAME_MIX.h
@@ -345,6 +423,16 @@ vec4 hook() {{
     fpx *= 0.25;
     float mag = length(fpx);
     float vis = smoothstep(lo, hi, mag) * 0.9;
+    if (read_alpha >= 0.0) {{
+        // opacity as magnitude (the owner's idea, 2026-09-06): the gate above decides WHETHER a texel is
+        // painted, this decides HOW MUCH, so v = omega r shows on a disc as a wheel fading to its axis instead
+        // of a wheel saturated everywhere past 3 px. read_alpha > 0: a manual full scale in px per interval
+        // (a tenth of it per interval^2 or ^3). read_alpha == 0, the default: the frame's running maximum
+        // of the pooled field from the READ_MAX pass (his call, 2026-09-07: auto by default, manual to tune).
+        float afs = (read_alpha > 0.0) ? (vel ? read_alpha : read_alpha * (READ_ACC_SAT / READ_VEL_SAT))
+                                       : READ_MAX_tex(vec2(0.5)).x;
+        vis *= clamp(mag / afs, 0.0, 1.0);
+    }}
     if (READ_GATE == 1) {{
         float rawmag = 0.0;
         for (int j = -READ_GATE_R; j <= READ_GATE_R; j++)
@@ -359,18 +447,20 @@ vec4 hook() {{
     float hue = fract(atan(fpx.y, fpx.x) / (2.0 * 3.14159265) + 1.0);
     vec4 pic = FRAME_MIX_tex(FRAME_MIX_pos);
     float lum = dot(pic.rgb, vec3(0.2126, 0.7152, 0.0722));
-    vec3 reading = mix(vec3(lum * READ_PICTURE_LUMA), read_hsv2rgb(vec3(hue, sat, 1.0)), vis);
+    // the picture under the painting keeps its COLOUR, dimmed to READ_PICTURE_LUMA (the owner, 2026-09-07:
+    // the luma-only plate of the Metal demo's display read as black and white on a film; the intent was colour)
+    vec3 reading = mix(pic.rgb * READ_PICTURE_LUMA, read_hsv2rgb(vec3(hue, sat, 1.0)), vis);
     return vec4(reading, pic.a);
 }}
 """
-    return "\n" + MARKER + "\n" + param + field + "\n" + mode + "\n" + pool + "\n" + deriv + "\n" + present
+    return "\n" + MARKER + "\n" + param + field + "\n" + mode + "\n" + pool + "\n" + deriv + "\n" + autoscale + "\n" + present
 
 
 def add_tail(text, default=0):
     """Return the shader text with the human-reading tail appended (replacing any existing one)."""
     base = strip_tail(text)
     out = base + build_tail(base, default)
-    assert out.count("//!SAVE FRAME_MIX") == 2 and out.count("//!PARAM read_view") == 1
+    assert out.count("//!SAVE FRAME_MIX") == 2 and out.count("//!PARAM read_view") == 1 and out.count("//!PARAM read_alpha") == 1
     return out
 
 

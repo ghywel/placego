@@ -162,8 +162,12 @@ the patches.
   front, and a shader author needs to raise that ceiling explicitly to
   support larger sources. Source video larger than the configured ceiling
   reads and writes outside the allocated texture, which is undefined
-  behaviour, not just wasted memory. **Untested above 1280x720**, the
-  size everything in this repository has run at.
+  behaviour, not just wasted memory. The ceilings as shipped: the
+  unscaled shaders' caches fit sources up to 3840 wide (a 4096-wide DCI
+  master would overrun them); `bidirectional-interpolation-variational-4k.glsl`
+  halves every level's texel count and its caches fit 7680 wide, so UHD
+  and DCI are both inside it. Measured at 3840x2160 and, from 2026-09-06,
+  on a real 3840x2076 ten-bit film; nothing wider has been run.
 - **No automatic invalidation across discontinuities.** `pair_changed`
   is a straightforward signature comparison against the previous call on
   the same renderer -- it correctly detects an ordinary cut to a new

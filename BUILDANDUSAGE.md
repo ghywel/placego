@@ -822,7 +822,8 @@ MoltenVK's barrier-to-fence mapping is where to look, not the shaders.
 
 Point `custom_shader_path` at a shader and set `frame_mixer=custom_n`. See
 [SHADERS.md](SHADERS.md) for which shader to choose --
-`bidirectional-interpolation-variational.glsl` is the recommended one.
+`bidirectional-interpolation-variational-propagated.glsl` is the recommended one
+(since 2026-09-06; `-variational.glsl` before that), `-variational-propagated-4k.glsl` for 4K.
 
 Simplest form, software decode:
 

@@ -73,6 +73,8 @@ warp or the blend.
 | `A1`/`A2`/`A3` | translational **acceleration** (below) |
 | `F1_fourier_edge` | an irregular, multi-frequency boundary (below) |
 | `R1`/`R2` | **rotation**, constant and accelerating (below) |
+| `V1`/`V2`/`V3`/`H1`/`H2` | periodic structure **below the coarse level's Nyquist**, panning along its own period (below) |
+| `P1`-`P5` | horizontal stairs panning **along their bars** (the aperture) with a weak speckle riding on them; `P4` with a crosser in front, `P5` on a fine speckle that aliases (below) |
 
 The velocity ladder is calibrated against the shader's own arithmetic, not
 picked arbitrarily: the coarse search reaches `step_px * 1.9375` coarse
@@ -156,6 +158,44 @@ angular rate of 2.56 rad/s is 384 px/s at the rim, i.e. `L2`'s 16px/frame.
 second, ramping `0 -> 32 px/frame` at the rim -- the rotational twin of the
 A-series, and the only case here whose motion is both non-translational and
 changing.
+
+### The aperture series
+
+Added 2026-09-07 from the owner's eyes on the film's stairs under a
+horizontal pan ("lensing, like a drop of water"): the V2 stairs, 600 x 300,
+panning ALONG their bars, the direction the bars cannot see, with a weak
+speckle (contrast 12) so that a wrong horizontal component warps something
+visible. `P1` at 4 px per frame on a fine speckle (period 13.8 x 11.3 px),
+`P2`/`P3` at 8 and 12 on a coarse one (40 x 30 px, beyond any alias at these
+speeds), `P4` at 8 with a textured crosser moving the other way in front
+(the film's geometry), `P5` at 8 on the fine speckle: the alias trap (8 minus
+13.8 is -5.8, and 39% of the stairs' cells take it). Two things to know
+before reading their numbers. The picture metric is nearly blind to a wrong
+horizontal component on bars, because bars warped along themselves look the
+same, so the FIELD's spread across the stairs is the instrument (the raw
+field, `read_view 4`, at N:N; `claude-handoff/d3/reading-alpha/aperture/
+pspread.py`). And what they found is in NFRAME-LIMITS.md, "The aperture
+series": the propagated family handles the aperture wherever a resolvable
+texture constrains it (60 dB at 8 px per frame), the old variational
+collapses on the crosser to 26.9 dB, below linear, and nothing fixes P5.
+
+### The period-24 series
+
+Added 2026-09-06 from the owner's eyes on a film: a flight of horizontal
+stairs mid-frame, panning vertically, whose steps "aliased". Every periodic
+case above moves along x, and both have periods the coarse level can
+resolve (M2 at 40 px against the 1/16 level's 32-px Nyquist) or that equal
+the motion (M3). These are bars of period 24 px, below that Nyquist,
+attached to a 300-px box that pans along the bars' own period: `V1` soft
+(a sine), `V2` hard-edged like stairs, both at 6 px per frame downward;
+`V3` the hard bars at 12 px per frame, half a period, where no matcher
+can tell the copies apart; `H1`/`H2` are the first two turned ninety
+degrees and panning horizontally, so period and direction can be told
+apart. All five pass `scenecheck.sh` bit-identical. What they found is in
+NFRAME-LIMITS.md, "The owner's eyes on three renders": every two-frame
+file, the recommended variational build included, collapses on V1 to five
+decibels below frame duplication with its whole field on the alias, while
+the four-frame propagated quad reads 50 dB on the same bars.
 
 ### Results on the reset ladder
 
@@ -1088,6 +1128,24 @@ confident, meaningless numbers before being caught.
   production does not have -- confirm anything structural at the real rate
   before acting on it (`visuals.sh` and
   the human-reading views both work on an undecimated source).
+- **The source's own encoding is a floor under every number.** Measured
+  2026-09-06 on a 1080p film shot with the clean frames kept as the truth
+  and only the interpolator's INPUT re-encoded (H.264 at about 8, 4 and
+  2 Mbit/s): a good rip costs the recommended shader 1.4 dB and a poor
+  stream 2.3, and most of that is the encode degrading the picture itself
+  -- frame duplication loses 1.0 and 1.4 from the same inputs -- so the
+  interpolator's own extra loss is 0.4 and 0.9 dB, and the order of the
+  modes never changes. A number from a lossy source is a number about
+  that source; compare methods on the same file, never across files of
+  different bitrate (NFRAME-LIMITS.md, "The owner's eyes on three
+  renders").
+- **A file source is not a lavfi source.** `bench.sh` feeds the shader from
+  lavfi; feed the same scene from a lossless gray file and the propagated
+  quad reads 61 dB on L1 instead of 70, from an H.264 file 67 -- the pixel
+  format on the way into libplacebo shifts the number on its own. And the
+  synthetic scenes are too simple for an encoder to degrade: the encoder
+  wrote the same five-kilobyte file at every bitrate, so an encoding
+  experiment on the ladder is void. Measure encoding loss on real content.
 
 ### PSNR actively misranks these methods
 

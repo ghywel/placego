@@ -2232,3 +2232,456 @@ deadband is the documented pair of knobs, `SEED_FUT_LAMBDA` 0.5 with
 `FUT_PRIOR_DEADBAND` 0.5, generated through `tests/foresight.py`. Whether
 the live-action tenth is worth the rotating disc's loss is the owner's
 call, and the numbers to make it with are the two paragraphs above.
+
+### The owner's eyes on three renders, and what they found (2026-09-06, evening)
+
+The owner watched the day's drops and reported by timecode: on the film
+through the four-frame propagated shader, panning shots of texture and of
+edges defect, and worst of all a flight of horizontal stairs mid-frame,
+panning vertically, whose steps "alias"; on the cel episode through the
+animation quad, a badly warped character at one instant and, throughout,
+the loss of edge definition that has followed the cartoon content from the
+start; on the 4K film through the 4K shader, nothing to fault and no
+visible difference from the unscaled file. And a question: how much is
+lost to the lossy encoding every source has been through. Each was taken
+as a lead and measured.
+
+**The stairs are a ladder gap, and the ladder had it coming.** Horizontal
+edges at a regular spacing panning along their own period is the period
+lock of section 3 in a direction the ladder never moved: every periodic
+case moves along x. Three vertical cases were added and pass
+`scenecheck.sh` bit-identical: soft bars of period 24 px on a box panning
+down 6 px per frame (V1), the same bars hard-edged like stairs (V2), and
+the hard bars at half a period per frame (V3, the alias by construction);
+two horizontal twins of the first two (H1, H2) settle period against
+direction. The family on them, PSNR at 24->60:
+
+| case | hold | linear | variational | propagated quad | the same without the foresight seed |
+|---|---|---|---|---|---|
+| M2_period40 (horizontal, for reference) | 23.58 | 27.29 | 54.43 | 58.76 | 58.76 |
+| V1_bars_sine24_v6 | 24.50 | 30.03 | **19.33** | 50.36 | 50.59 |
+| V2_stairs_sq24_v6 | 18.19 | 21.48 | **16.60** | 27.21 | 27.15 |
+| V3_stairs_sq24_v12 | 15.64 | 18.63 | 15.92 | 16.42 | 16.37 |
+
+The recommended picture shader, the variational build, collapses on the
+soft bars to five decibels BELOW frame duplication, and a frame shows
+why: its bars are all present and sharp, and displaced against the truth
+by a fraction of the period, the whole field on the alias, with the
+box's top and bottom smeared where that flow meets the edge. To an eye
+that is bars flowing at the wrong speed, which is what blinds, railings
+and stairs do. The four-frame propagated quad reads 50 dB on the same
+bars, and the day's foresight seed changes nothing there (50.36 against
+50.59). On the hard-edged stairs both are poor and the variational is
+again below hold; at half a period per frame nothing can tell the copies
+apart, as section 3 says. Then every two-frame file was run on the soft
+bars, vertical and horizontal: stock 19.21, seeded 19.22, propagated
+19.26, animation 19.40, the variational 19.33, the 4K variational 19.62,
+and the variational cascade rebuilt on the seeded base 19.28 and on the
+propagated base 19.29, against the quad's 51.78 and 50.36. The direction
+is irrelevant and so are the coarse seeds and the cascade: every two-
+frame file collapses and the only four-frame file does not. What the
+quad has and no two-frame file has is the ZERO SEED at the 1/8 level
+(section 9), which the generators switch on for every field shader and
+every picture base ships with off, and whose job is exactly this: a
+coarse level that is Moire and a motion inside the 1/8 level's reach.
+Pre-registered and then measured: with ZERO_SEED on, the propagated two-
+frame file goes from 19.26 to 49.55 on the vertical bars and 51.81 on
+the horizontal, level with the quad's 50.36 and 51.78; the cascade
+rebuilt on the propagated base from 19.29 to 52.72 and 55.86, the best
+of all; the hard stairs reach 27.43 and 26.96 (the quad's 27.21) and
+29.03 and 28.64 for the cascade; the seeded file without the propagation
+stage gains only to 36.8, so the propagation carries the basin the seed
+finds. The references did not merely hold, as pre-registered, but rose:
+the propagated file L1 74.80 to 76.37, A5 51.34 to 52.11, R3 34.04 to
+36.37, O5 41.72 to 41.86; the rebuilt cascade A5 53.06 to 54.24 and R3
+35.72 to 38.21 with L1 66.21 to 65.25. Time from a file: the propagated
+file 1.270 against 1.260 s with the seed on, nothing. On real footage
+the shipped variational still leads: clip 1 over five segments 36.27 dB
+and 0.9741 against the rebuilt cascade's 35.70 and 0.9720 with or
+without the seed, and the propagated file with the seed at 35.30 and
+0.9696; on the stairs shot 40.36 against 40.09. The rebuilt cascade is a
+quarter faster (1.618 against 2.134 s). So the collapse has a one-
+constant fix in every base that carries the zero-seed code, its ship
+gate is the full ladder and two clips (in flight as this is written),
+and the cascade on the propagated base is a variant that trades half a
+decibel on live action for immunity to this class, a quarter of the time
+and ten decibels on the synthetic references; the variational build as
+shipped cannot take the seed, since it is built on the stock base which
+has no zero-seed code, and its 4K sibling shares the fault.
+
+**The stairs the owner saw are not that.** The shot itself, eight seconds
+around the timecode at 1080p, decimate-and-reconstruct on two windows: the
+variational 40.36 dB and 0.9736 SSIM, the propagated quad he watched 39.19
+and 0.9669, the same quad without the foresight seed 39.18 and 0.9668,
+linear 37.15, hold 34.99; in the moving band, on the window holding the
+stairs, 27.56 for the variational against 26.57 for the quad; at edges
+(`edgeerror.sh`, mean luma error per edge pixel) 4.06 against 4.41. The
+field on those frames, read exactly, pans at one pixel per frame with its
+modes half a pixel apart and no second mode a period away. So the shot is
+a slow pan of sharp edges, the defect is sub-pixel edge shimmer at the
+interpolated phases, and the watch went through the field tier: the
+picture tier does better on it by a decibel, and a three-way half-speed
+crop of the stairs (blend, quad, variational) is in the owner's renders
+folder for his eyes to confirm. The foresight seed neither helped nor hurt
+there, to the hundredth.
+
+**The cel shot cannot be scored.** Eight seconds around the warped dog
+screen as drawn on twos (22 of 71 frames held at the start, holds
+throughout), which the record says invalidates decimate-and-reconstruct:
+frame duplication tops every metric there, as it must. The 360p excerpt
+the animation work was measured on was screened for full motion; this one
+was not, and the numbers are recorded only as a caution. What the owner
+asked for is the line: the whole two minutes through the line-art shader,
+the version the animation record says to carry and which had never been
+in front of his eyes, is in his renders folder beside a three-way of the
+dog shot (blend, animation quad, line-art). His eyes are the instrument
+for that one.
+
+**What lossy encoding of the source costs, measured on the stairs shot.**
+The clean reference stays the truth while the decimated INPUT is taken
+from an H.264 encode of the same frames; the retained frames then read
+the encode's own loss and the synthesised frames the interpolator's from a
+degraded input. Targets 20, 4 and 1.5 Mbit/s came out at about 8, 4 and 2
+Mbit/s from the Media Foundation encoder:
+
+| input | retained frames | hold | linear | variational | propagated quad |
+|---|---|---|---|---|---|
+| clean | exact | 34.99 | 37.15 | 40.36 | 39.19 |
+| about 8 Mbit/s | 48-49 dB | 34.00 | 35.84 | 38.94 | 37.95 |
+| about 4 Mbit/s | 45-47 dB | 33.82 | 35.59 | 38.61 | 37.65 |
+| about 2 Mbit/s | 43-45 dB | 33.57 | 35.23 | 38.08 | 37.22 |
+
+A good rip costs the variational 1.4 dB, a poor stream 2.3, and most of
+that is the encode degrading the picture itself: frame duplication loses
+1.0 and 1.4 from the same inputs, so the interpolator's own extra loss is
+0.4 dB at a good bitrate and 0.9 at a poor one. The order never changes
+and the variational keeps three decibels over the blend at every bitrate.
+The owner's intuition holds, and its size is about a decibel and a half
+at the bitrates his library carries. The same experiment on the synthetic
+ladder is void and says why: the scenes are so simple that the encoder
+wrote the same five-kilobyte file at every target, and a file source with
+a different pixel format shifts the shaders' numbers on its own (L1 61 dB
+from a lossless gray file against 70 from the lavfi source), which is an
+instrument caveat for anyone who benches from files.
+
+**The zero seed's gate, and what ships (later the same evening).** The
+propagated two-frame file with the zero seed on against the same file
+with it off, the ladder's 37 cases in one sitting: mean +2.48 dB, down
+by more than 0.1 on F1_fourier_edge -1.19, L3_trans_23px -0.56,
+R2_rot_accel -0.28, M2_period40 -0.19, L7_textured_large -0.15,
+M3_period16_trap -0.13, up by more than 0.1 on 17 cases (L1_trans_8px
++1.57, R3_rot_tex +2.33, H2_stairs_sq24_h6 +11.23, V2_stairs_sq24_v6
++11.70, V1_bars_sine24_v6 +30.29, H1_bars_sine24_h6 +32.55). Real
+footage, the live-action clip: 35.28 -> 35.30 dB, 0.9696 -> 0.9696; the
+film excerpt: 33.74 -> 33.79, 0.9629 -> 0.9629. Time from a file 1.270
+-> 1.260 s. Not clean: the seed stays off in the bases and the trade is
+recorded here for the owner. The cascade rebuilt on the propagated base
+with the seed, against the shipped variational on the same ladder: mean
++3.71 dB, down by more than 0.1 on L6_flat_large -3.49, L4_trans_40px
+-3.39, M2_period40 -2.43, A3_accel_23mean -1.73, M1_noise_large -1.12,
+O4_osc_flat300 -0.37, L3_trans_23px -0.33, O2_osc_medium -0.33,
+M3_period16_trap -0.29, O1_osc_gentle -0.19, O3_osc_hard -0.18,
+L2_trans_16px -0.16, L9_occlusion -0.15, up by more than 0.1 on 21
+cases; on the film excerpt 34.44 -> 34.10 dB and 0.9662 -> 0.9645, on
+the live-action clip 36.27 -> 35.70 (job P). It ships as `bidirectional-
+interpolation-variational-propagated.glsl`, generated by
+`gen_variational.py` with its new base argument, a variant beside the
+recommended file: a quarter faster, immune to the collapse, half a
+decibel behind on live action. Which of the two the picture
+recommendation names is the owner's, as it always was.
+
+**The owner's two decisions (2026-09-06, late).** On the picture recommendation, in
+substance: quality matters more than performance, the gain on the
+cascade-on-propagated is significant, and a GPU that cannot run the
+better shader needs upgrading rather than the shader shrinking. So
+`bidirectional-interpolation-variational-propagated.glsl` is the recommended
+file, and its scaling the 4K one: on the real 4K film 35.01 dB and
+0.9646 SSIM over the five segments against the previous 4K file's
+35.62 and 0.9665, 53.5 dB on the period-24 bars at twice the
+ladder's size where the previous file reads 19.3, time 7.46 against
+8.73 s. On the zero seed: the Fourier-edge case under rotation is a
+scientific interest, a particle jiggling in a trap; film is panning,
+zooming and translation, and the switch depends on what the use case
+asks for. So the seed is on by default in the propagated, seeded and
+animation bases (their generated field shaders had it already and are
+byte-identical), and the switch stays for the laboratory.
+
+### The owner's eyes, second day: the opacity switch, a pendulum, the stairs' aperture, and an idea for animation (2026-09-07)
+
+**The reading's opacity as magnitude, and the switch.** The owner asked (2026-09-06) whether the
+painting's transparency could carry what its hue cannot: a rotating disc is fastest at its rim and still
+at its axis, and the painting saturated everything past 3 px. It can, and it shipped as `read_alpha`
+(4278d2c): opacity = magnitude / scale. His first look was "absolutely brilliant", his second question
+was the right one: with a fixed scale "the middle 0 and the outside 1 would look very good, but it would
+only scale for this particular image." So the parameter became a three-pole switch on his call (669cd9c):
+0 = auto (the default; full at the frame's running maximum of the pooled field, an exposure with attack
+0.3, decay 0.99 per frame, floored at the field's HI gate), above 0 = manual px per frame for fine
+tuning, below 0 = the flat painting of before. Measured on his large ordinary disc (radius 480 px, plain
+edge, rim 8.0 px per frame): the estimator reads omega r at 0.93-1.03 in every band from r 30 to the
+rim; the pooled field the painting shows is 0.89-1.00 out to r 430 and falls only inside its last half
+window (0.84 at r 430-460, 0.61 at 460-478), so on a disc larger than a few windows the manual scale at
+the rim's speed paints opacity r / R. The auto scale's limit sits beside its point: a disc slowing to a
+stop stays dense until the decay catches up, so the physics of a deceleration is the manual scale's to
+show. Renders: `hot-drops/bigdisc-*`, `oscdisc-*`, `disc-*` (not in the repo).
+
+**The pendulum.** He asked for the disc swinging: from a stop, accelerating to the rim's 8 px per frame,
+decelerating to a stop, and back (theta = A (1 - cos 2 pi t / P), P = 6 s, A = 0.382 rad), with the
+velocity and acceleration readings beside the picture. The velocity panel reads the physics: dim and
+hollow while accelerating, a full wheel at the peak, fading toward the stop, nothing at the stop, the
+hues reversed on the way back. The acceleration panel shows the tangential ring at the stops (r alpha,
+0.35 px per frame^2 at the rim, above the SAT gate) and only sparse patches at the peak, where the
+tangential part is zero and the centripetal omega^2 r = 0.13 px per frame^2 sits at the LO gate; the
+ring fades toward the axis exactly as the velocity did, because the acceleration is r alpha.
+
+**The hole.** He finds the gate's hole at the axis "fascinating": not a circle but "a loop of string".
+It is where the speed is below the 1-2 px gate, and its shape is the estimator's: at r 30-150 the raw
+magnitude ratio is 0.77-0.85 in two 30-degree sectors aligned with the texture's lattice and 1.0-1.08
+elsewhere, so the under-read along the lattice pushes more of the disc under the gate in that direction
+and the hole is a tilted ellipse that grows as the disc slows (frames 18 and 60 of the pendulum).
+Observed, not explained; the test is to turn the texture 45 degrees and watch the ellipse turn with it.
+
+**The stairs' "lensing".** On `stairs-3way-linear-quad-variational-halfspeed.mp4` he saw the variational
+(right) get the stairs perfectly right for stretches and then lose it for moments, "like the lensing of
+a drop of water where a bit of the shader has lost cohesion", while the quad's defect ran throughout.
+Measured (np-scratch/eyes/stairs-loss; the field at N:N, mode 4, every frame of the 8 s clip, for the
+old variational and the recommendation): the shot is a horizontal pan that accelerates from 1 px per
+frame (frames 96-106) to 20 (frame 128) across a flight of horizontal steps (period 27 px along y) with
+a dancing man in front, and the watched window (frames 60-132) covers the whole acceleration. No
+whole-frame moment exists: the consecutive-frame difference of the three renders has no spike beyond
+the shared onset at frames 7-10, and the local incoherence (cells more than 1 px from their 5x5
+neighbourhood's median) rises smoothly with the pan, 0.01 at 0.5 px per frame, 0.05 at 2, 0.12 at 3.5,
+0.2-0.37 at 13. The events are local and late: of the 40x40-px blocks whose frame-to-frame change
+exceeds linear's by more than the 99.5th percentile, 201 (variational) and 220 (recommendation) fall in
+the last watch second against at most 46 in any other, and the two shaders' top events coincide in
+block and time. On the stairs alone, clear of the man (crop x 480-720, y 0-180), the spread of the
+horizontal component across a rigid background (p90 - p10, which a camera pan should leave near zero)
+is 1.2 px at a 1 px per frame pan, 2.6-3.3 at 1.5-2, 6-8 at 3.5-4, and 8-18 at 11-20, the recommendation
+wider at the fast end (p10 4-6 px against the variational's 10-12). The mechanism is the aperture: the
+steps are horizontal lines, which cannot see horizontal motion, so their horizontal component comes
+from whatever structure is nearest, the man's (-12 to -17 px per frame, the cells that read backwards
+at frames 118-136 are his figure, x 250-700 of the crop) or the background's (+17 to +22), and the
+picture warps blob by blob. The propagated base carries the man's vector further into the steps, which
+is its cost here. The ladder has no case for it: its period-24 series pans ALONG the bars' period (the
+constrained direction); this shot pans ACROSS horizontal lines with sparse vertical features, and a
+case for that is the next instrument. A fix would be an aperture-aware fill: where the structure tensor
+is one-dimensional, take the along-line component from the nearest two-dimensional structure rather
+than from the nearest cell.
+
+**The reading segments the mover.** At the same moment (`stairs-3way-picture-variationalreading-variationalpropagatedreading-halfspeed.mp4`
+at 5.0 s) the painted field shows the man as one green figure on a red background: the reading already
+separates the object in motion from the pan.
+
+**The owner's idea for animation, recorded.** `watch-cel-lineart-60fps.mp4` is "interesting but still
+not viable, heavily defective"; on `dog-3way-linear-animquad-lineart-halfspeed.mp4` the linear is the
+most watchable, and the linears are flawed because a damaged frame in motion does not look nice played
+back. His proposal: an image classifier as a pre-processing step to identify objects in motion and the
+sub-parts of objects (the full body of the dog, the legs, the arms, the ears, the mouth on the head),
+tracing every coherent feature, so that the two approaches strengthen each other. He does not think it
+can be solved here, and the standing rule remains that no tweak on animation has yielded a significant
+result. It is on the outline list beside the depth-from-parallax and known-motion items, with the note
+above that the reading's own field already segments a mover on live action.
+
+### The hole, tested; the stairs, seen again; the tri's root; a second 4K film (2026-09-07, afternoon)
+
+**His eyes on the stairs renders.** On `stairs-3way-linear-variational-variationalpropagated-halfspeed.mp4`
+the recommendation's effect over the variational is that the lensing defect is now "in small blobs rather
+than fully eliminated": a noticeable change, the defect remaining over the sequence, which is what the
+aperture measurement above predicts (the steps borrow their horizontal component blob by blob; the
+propagated base changes the blobs, not the borrowing). On the readings file the recommendation's reading
+is the cleaner: where the variational's shows "a substantial yellow hot spot on the stairs which is a
+miss-fire", the recommendation's shows "a reasonable clean plate on the same frame".
+
+**The hole's size scales with the derivative order** (his observation on the pendulum: the acceleration
+panel's hole is larger). A field on a disc grows linearly with radius, so the hole's radius is the gate
+over the field's rate per pixel of radius: velocity at the peak, rate 1/60 px per frame, gate 1/2 px,
+hole r 60-120; acceleration at a stop, rate 7.3e-4 px per frame^2, gate 0.12/0.22, hole r 165-303.
+Measured at the 10% and 50% chroma crossings: velocity r 140/230, acceleration r 280/340, the excess
+over the prediction from the gate's smoothstep, the pool's window cancelling opposite vectors across the
+axis, and the memory's lag; the ratio of the two holes is the predicted two. Each time derivative of a
+swing divides the signal by the swing's angular frequency (a factor of 23 per order at this period)
+while the gates fall a decade, so the unreadable core grows with every order; the jerk would show
+nothing at all here (0.015 px per frame^3 at the rim against a gate of 0.12).
+
+**The hole's shape, tested cheaply** (`claude-handoff/d3/reading-alpha/hole/`). Five spinning variants
+of the large disc, the raw field (mode 4) at 1080p, the magnitude ratio to omega r binned by the
+MEASURED vector's direction (so no sign convention enters), r 60-300; then pure translation of the
+same lattice disc at 1.0, 1.5 and 2.5 px per frame in eight directions; then a control with band-limited
+isotropic noise (periods 30-80 px, random phases, bilinear-sampled so it is rigidly attached).
+
+- Not the estimator's sign bias: the translation test's direction dependence is 180-degree periodic
+  (45 and 225 read 1.13 and 1.16, 135 and 315 read 0.66 and 0.63, with 26-degree angle errors).
+- Not peak locking: the same ratios at 1.0, 1.5 and 2.5 px per frame, integer or not.
+- The texture's aperture: the weak direction turns with the texture (spin +, frame 4 with the texture
+  near 0 degrees: weakest at 90-150; frame 47 with the texture at 45: weakest at 30-60; spin -: 90
+  then 150; the texture pre-turned 45: 60 then 0). The lattice is a product of sines, two diagonal
+  gratings, and one diagonal is weak across; the isotropic noise reads 0.90-0.99 in every direction
+  (spread 0.05-0.09 against the lattice's 0.21 at frame 4) and its hole is round
+  (`hot-drops/hole-lattice-vs-isotropic-frame40.png`). The translating noise disc reads 0.91 at 18
+  degrees where the lattice read 0.63 at 26.
+- The anisotropy is strongest early and under acceleration: the lattice's spread falls from 0.21 at
+  frame 4 to 0.05-0.07 by frame 40 of a steady spin, so it depends on the temporal seed having a good
+  previous flow; the pendulum, accelerating continuously, keeps the seed stale, which is why its hole is
+  the long string and the steady disc's is a lumpy square. Suggestive, not separately verified.
+- Twice the texture period: spread 0.08 at frame 4 in the folded-direction binning, flat by frame 47.
+
+So the conundrum resolves into three parts, none mysterious and none insurmountable: the hole's SIZE is
+the gate over the signal (a display choice); its SHAPE is the texture's aperture, a property of the
+picture that any local matcher shares, worst under acceleration where the temporal seed lags; and the
+estimator's own contribution is a direction-independent 5-10% under-read in the sub-2 px regime. The
+open item is the aperture-aware fill already named for the stairs: it is the same physics at a smaller
+scale.
+
+**The tri's root** (his question: it was made before much was known; is it symmetric, and should it be
+rooted in the middle frame?). It is, where three frames allow. The generator is slot-keyed: the window
+is {prev2, prev, next} while the output sits in the first half of a source interval and {prev, next,
+next2} in the second, the anchor is always slot 1 (the middle frame), and the acceleration solve is
+centred on it (a = F10 + F12). At N:N the output is on frame n, the straddling pair is (n, n+1) and the
+nearest third is n-1, so the window is {n-1, n, n+1} with the output on the anchor: one back, one
+forward, exactly his prescription. Between frames a three-frame window is necessarily lopsided by one;
+the quad's 2+2 and the quint's 2+3 are the symmetric straddles for interpolation, which is why the
+family moved there.
+
+**A second 4K film.** Supplied 2026-09-07 (3840x2160 ten-bit HEVC, 23.976 fps, 156 min, 19 Mbit/s; never
+the title in this record). For his eyes: ten random non-overlapping 60 s clips at the source's own
+rate with the velocity reading painted over the picture (read_view 1, the auto scale), through the 4K
+recommendation, native size: `hot-drops/4k2-01.mp4` to `4k2-10.mp4` in time order, starts in
+`4k2-clips.txt`. Each 60 s clip rendered in 60-160 s. His note on the fields: the velocity is the one
+humans read, "because the muscles of our eyes are used to tracking at a constant rate, not an
+accelerating one". The decimate-and-reconstruct bench, nine 3 s segments spread over the film (900 to
+8100 s at 900 s steps), five modes, PSNR / SSIM means over the segments:
+
+    hold 39.78 / 0.9769   linear 41.35 / 0.9795   variational-4k 43.45 / 0.9828
+    variational-propagated-4k (the recommendation) 43.34 / 0.9827   its unscaled form 42.93 / 0.9822
+
+The recommendation and the variational-4k are equal on this film (0.1 dB on the mean, the same SSIM),
+both two decibels over linear; the scaling is worth 0.4 dB on the mean and 2.0 on the fastest segment
+(900 s: 44.66 against 42.68 unscaled), so the 4K recommendation stands. The hardest segment is 5400 s
+(36.9 dB, all modes within 0.5 of each other), the easiest 6300 s (46.1, where linear is within 0.15
+of every shader). The source is much cleaner than the first 4K film (its means were in the mid
+thirties): the numbers here are the pipeline's, not the grain's. Passthrough on this ten-bit source
+reads 54 dB with no retained frame bit-exact, the known ten-bit floor of the render path, not a
+misalignment (hold reads infinite on the same frames).
+
+**The seven-frame question** (the owner, 2026-09-07: "is it worth building the 7-frame symmetrical rooted
+in frame 4 looking 3 back and 3 forward, or would this be a wobble too far?"). Section 2's analysis,
+extended to seven points: a centred least-squares fit's fraction of the true acceleration on the O series
+(periods 23.4, 9.6 and 6.0 frames, recovered from the three-point attenuations) and its noise gain for
+unit noise per sample.
+
+    window, degree             O1      O2      O3    noise gain
+    3 frames, degree 2        0.994   0.965   0.912    2.45      (the tri)
+    5 frames, degree 2        0.974   0.852   0.652    0.54
+    5 frames, degree 4        1.000   0.998   0.988    3.13      (the quint)
+    7 frames, degree 2        0.944   0.701   0.370    0.22
+    7 frames, degree 4        0.999   0.982   0.898    0.93
+    7 frames, degree 6        1.000   1.000   0.998    3.46
+
+For the picture, no: the ladder's quint column is the quad's within a tenth of a decibel on every case,
+the picture's information being in the straddle pair and the next frame out, and the sext measured the
+cost of going further. For the field, seven at degree 2 is the wobble too far (a third of O3's
+acceleration), seven at degree 6 gains nothing over the quint and is noisier, and seven at degree 4 is
+the one configuration worth a line: the tri's fidelity on the fastest case, better on the rest, at less
+than a third of the quint's noise. Its use would be the machine's acceleration field on slow motion,
+inside the window rule (a third of the fastest period); it does nothing for velocity, which the straddle
+pair already gives exactly, and nothing for the hole. Caveat from P6: the far flows are the noisy
+samples, so the realised gain is smaller than the equal-noise table. Left on the outline list; the
+generators are general in N, so it is a day from the sext's.
+
+**Four more renders for his eyes, and what they show** (`hot-drops/orbitdisc-*`, `sqdisc-*`, `sqorbit-*`;
+scripts in `claude-handoff/d3/reading-alpha/`). The pendulum disc whose centre also circles its origin
+(50 px radius every 4 s, so 3.3 px per frame of translation under a rim speed of 8): the instantaneous
+centre of rotation wanders, the velocity hole leaves the disc's centre at peak spin (to 3.3 / omega, about
+200 px) and vanishes at the stops, where the motion is pure translation and the whole disc paints one
+hue. At those stops a dark patch appears where the translation runs along the lattice's weak diagonal:
+the translation test's 0.63 under-read, seen in the painting. The same two motions with a rotating
+square (half-side 340 px, corners at the disc's radius): the corners paint strongest, the hole is a
+diamond stretched along the square's diagonal and larger than the disc's, because the straight edges add
+their own aperture to the lattice's, and the orbiting square shows the same wandering and the same dark
+patch at the stops. Nothing in the four contradicts the hole's account above; the square adds the
+edge-aperture to it.
+
+### The aperture series, the tensor fill refuted, and the alias behind the fast end (2026-09-07, afternoon)
+
+The owner left the afternoon open ("dive into the previous leads, be chaotically random sometimes"). The
+lead was the one his stairs opened: build the ladder case that pans ACROSS lines, measure, and try the
+aperture-aware fill named above.
+
+**The series** (`tests/scenes.sh`, P1-P5; all bit-identical at both rates). The V2 stairs again, 600 x 300,
+panning ALONG their bars with a weak speckle riding on them (contrast 12) so a wrong horizontal component
+warps something visible: P1 at 4 px per frame on a fine speckle (period 13.8 x 11.3 px), P2 and P3 at 8
+and 12 on a coarse one (40 x 30 px), P4 at 8 with a textured crosser moving the other way in front (the
+film's geometry), P5 at 8 on the fine speckle. The first form put the fine speckle on all of them, and the
+raw field said why that was wrong: at 8 px per frame 39% of the stairs' cells read -5.8, which is 8 minus
+the period, and at 12 every cell read -15, the second alias, while the picture still scored 37 dB because
+bars warped along themselves look the same. Two lessons: the picture metric is nearly blind to a wrong
+horizontal component on bars, so the field's spread across the stairs (`claude-handoff/d3/reading-alpha/
+aperture/pspread.py`) is the instrument for these cases; and a fine texture under a fast pan is an alias
+trap, not an aperture test. Hence the two speckles.
+
+**What the clean cases show** (picture; the field's p90 - p10 of the horizontal component across the
+stairs at frame 16, truth uniform):
+
+    case                 hold  linear   base   quad   vari    vp  |  spread: quad   vp
+    P1 fine, 4 px        34.1   37.4   43.4   43.2   37.2  45.3  |
+    P2 coarse, 8 px      31.3   34.1   60.1   58.3   55.6  58.6  |          0.81  2.03
+    P3 coarse, 12 px     29.4   32.1   47.9   48.0   52.4  53.7  |          1.16  2.13
+    P4 crosser, 8 px     26.1   30.1   52.2   50.7   26.9  51.6  |          0.81  2.09
+    P5 alias, 8 px       30.7   33.4   42.0   42.0   37.7  41.9  |         13.84 13.23
+
+With a resolvable texture the propagated family handles the aperture: 60 dB at 8 px per frame against a
+plain translation's 62, the quad's field within 0.8 px across the whole flight. The old variational
+COLLAPSES on the crosser to 26.9 dB, below linear: the man's vector diffused into the stairs, which is the
+film's failure in one number, and the recommendation holds 51.6 there, which is what his eyes reported
+(the lensing "in small blobs rather than fully eliminated"). At 12 px the two-frame base falls to 48 and
+the cascade lifts it to 54 with a wider field (2.1 px against the quad's 1.2): the cascade's picture wins
+at the fast end though its field is looser.
+
+**The tensor fill, refuted twice** (`tests/gen_aperture.py`, behind PROP_TENSOR, off = byte-identical to
+the base). Form 1: each neighbour votes through its trace-normalised structure tensor over a radius-8
+window, the own vote as the base's, the check's disagreement projected through the cell's tensor. The
+41-case gate: mean -0.70 dB, 17 cases down by more than 0.1 (A5 -6.1, R3 -4.5, L1 -3.5, A4 -3.2, O6 -2.8,
+L2 -1.8, M2 -1.5), 6 up (V1 +1.6, L8 +0.7). Two faults, both diagnosable from the table: trace
+normalisation makes an isotropic cell half the identity, so the projected disagreement is halved and the
+alias rejection the base earned its keep with (M2, O6, A5) is defeated; and a radius-8 window carries
+twelve times the base's neighbour votes against the same self weight, so constrained components are
+smoothed too (L1, L2, R3). Form 2 fixes both (largest-eigenvalue normalisation; self weight scaled to the
+window) and on the seven deciding cases reads A5 +0.9, M2 and O6 flat, L1 -1.9, R3 -0.45, P2 and P4
++0.0 at either radius. The gains it was built for do not exist, because the base already fills the
+aperture where a resolvable texture constrains it, and it still costs a plain translation two decibels.
+REFUTED; the generator stays as the record of the design point and ships no shader.
+
+**The alias behind the fast end.** P5 is the ladder's proxy for the film's stairs at 11-20 px per frame
+with their fine sequin texture: 39-46% of the cells on the alias for every shader, spread 13-14 px, and no
+shader fixes it. The mechanism is the period-24 lesson's other half: for a periodic texture of period p
+moving at v > p / 2 the alias v - p is NEARER ZERO than the truth, the coarse level is blind to the texture
+(below its Nyquist) and to the motion along the bars (the aperture), and the arbitration's magnitude
+prior (SEED_MAG_LAMBDA) then prefers the alias in a SAD tie; the temporal seed perpetuates whichever won
+at the window's start. The disambiguator has to come from outside the texture: the box's own motion at
+the coarse level (its ends), or continuity across frames. An open lead, with the case to gate it.
+
+**The chaos he asked for: twelve random segments of the second 4K film.** Seed from the clock (1788786914),
+3 s each, decimate-and-reconstruct, the three broken by GPU contention re-run alone. PSNR / SSIM means:
+linear 41.01 / 0.9765, variational-4k 42.27 / 0.9836, the recommendation 42.93 / 0.9853. The random draw
+found what the nine fixed segments had not: two segments of fast action at 9029 and 9090 s where linear
+reads 23 dB, the variational-4k 28.5 and 27.7, and the recommendation 31.0 and 31.1, a gain of 2.6 and 3.4
+decibels on the hardest footage in the film; and one segment (3545 s) where the variational-4k loses to
+linear (44.2 against 45.2) and the recommendation does not (46.5). The recommendation is never below
+the variational-4k by more than 0.3 on any of the twelve. The 4K recommendation stands, more firmly than
+the fixed segments said.
+
+**The owner's 3D question** ("are we neglecting 3D shapes, translating and rotating spheres and cubes?").
+The ladder is planar; the manifold renderer has the 3D work on the field side (torus, band, tesseract,
+Hopf) and taught the limb and the aperture lessons. A sphere would repeat the torus's; a CUBE would add
+what the ladder lacks: per-face affine flow (divergence and shear, no affine case exists), edges as
+aperture on the object, and self-occlusion at its own silhouette as faces turn in and out, which is what
+buildings, vehicles and turning faces do on film. The path is cheap, six textured quads with hidden-face
+removal in the renderer and the decimate-and-reconstruct bench on the rendered clip. On the outline list,
+on paper until the GPU is free.
+
+**Housekeeping from the same afternoon.** Running five GPU jobs at once made h264_mf fail with "Cannot
+allocate memory" and libplacebo with vkAllocateMemory failures: two 4K bench segments aborted and one
+rendered corrupt frames that scored a plausible 39 dB the alarm did not catch. 4K work runs alone from
+now on, chained on the previous job's DONE line, and every bench's .err files are grepped for allocation
+failures before a number is trusted (the memory carries the rule). The reading's plate under the painting
+is now the COLOUR picture dimmed to 35%, the owner's intent for a film (it was the luma alone, inherited
+from the Metal demo's display).

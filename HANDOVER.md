@@ -357,6 +357,20 @@ way in the same run.
    the owner's call. Open: the temporal prior has the same form and may
    carry the same sub-texel bias somewhere; a deadband on it is one run.
    NFRAME-LIMITS.md, "The foresight seed" and the subsection after it.
+22. **The variational build on periodic structure below the coarse Nyquist
+   (found 2026-09-06 by the owner's eyes).** The recommended picture
+   shader collapses to 19 dB, below frame duplication, on bars of period
+   24 px panning along their own period (`V1_bars_sine24_v6`), its whole
+   field on the alias, and so does every two-frame file, while the
+   four-frame quad reads 50. The ladder now carries five such cases
+   (`tests/TESTING.md`, the period-24 series).
+   DECIDED by the owner the same evening: the recommendation IS the
+   cascade on the propagated base (quality over performance; immunity
+   over half a decibel), its 4K scaling the 4K recommendation (gated on
+   the real film), and the zero seed is ON by default in the picture
+   bases (the Fourier-edge loss is a laboratory case; the switch stays).
+   NFRAME-LIMITS.md, "The owner's two decisions".
+   NFRAME-LIMITS.md, "The owner's eyes on three renders".
 ## 6. Bringing a result back
 
 One experiment per commit. The message states the prediction, the numbers

@@ -337,7 +337,14 @@ For anyone picking this up:
    pair says they are going, and now it does both; on scenes whose motion
    changes that is worth up to a decibel, it never costs on any test scene,
    real footage gains a little, and the price is about a percent of the
-   work. SHADERS.md says when to use each.
+   work. Then a human watching the results found something the whole test
+   suite had missed: a flight of stairs panning up the screen, which every
+   two-frame shader here, the recommended one included, turned into bars
+   flowing at the wrong speed; the suite now carries that case, and the
+   one-line repair, a fourth starting guess at "no motion" that only the
+   measuring shaders had, is now the default in the fast tier, and the
+   recommended shader is a new build that carries it. SHADERS.md says
+   when to use each.
 3. **Extend it** The engine is designed to be N-frame extensible,
    but more frames does not necessarily mean better output. See
    NFRAME-LIMITS.md for more detail. One exception was found on paper and

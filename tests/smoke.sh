@@ -115,6 +115,34 @@ else
   bad "scale_shader.py failed"
 fi
 
+head2 "3c. gen_variational.py with a base -- the propagated-base variant is what the generator makes"
+# The variant on the propagated base (2026-09-06) is the cascade from the 1/4 level down with the zero seed
+# on; it regenerates from the committed propagated base with the generator's base argument.
+PRODVP="$HERE/../shaders/bidirectional-interpolation-variational-propagated.glsl"
+if ZERO_SEED=1 $PY "$HERE/gen_variational.py" "0,0,8,4" 0.3 0.08 "$W/regenvp.glsl" 0 "0,0,2,0" bidirectional-interpolation-propagated.glsl >/dev/null 2>&1; then
+  if diff -q <(strip "$W/regenvp.glsl") <(strip "$PRODVP") >/dev/null 2>&1; then
+    ok "regenerated propagated-base variant body is byte-identical to the committed one"
+  else
+    bad "regenerated propagated-base variant differs from the committed one"
+    note "$(diff <(strip "$W/regenvp.glsl") <(strip "$PRODVP") | head -3)"
+  fi
+else
+  bad "gen_variational.py with a base failed"
+fi
+
+head2 "3d. scale_shader.py -- the recommended file's 4K scaling is what the tool makes"
+PRODVP4="$HERE/../shaders/bidirectional-interpolation-variational-propagated-4k.glsl"
+if $PY "$HERE/scale_shader.py" "$PRODVP" "$W/regenvp4.glsl" 2 >/dev/null 2>&1; then
+  if diff -q <(strip "$W/regenvp4.glsl") <(strip "$PRODVP4") >/dev/null 2>&1; then
+    ok "regenerated 4K scaling of the recommended file is byte-identical to the committed one"
+  else
+    bad "regenerated 4K scaling of the recommended file differs from the committed one"
+    note "$(diff <(strip "$W/regenvp4.glsl") <(strip "$PRODVP4") | head -3)"
+  fi
+else
+  bad "scale_shader.py on the recommended file failed"
+fi
+
 # ---------------------------------------------------------------------------
 head2 "4. flowvis.py -- build a flow visualiser from the production shader"
 if $PY "$HERE/flowvis.py" "$PROD" "$W/vis.glsl" >/dev/null 2>&1 && [ -s "$W/vis.glsl" ]; then

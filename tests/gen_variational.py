@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate a MULTI-LEVEL variational build: iterate at every pyramid level.
 
+    ./gen_variational.py [S,E,Q,H iterations] [alpha] [sigma] [out.glsl] [sigma_flow] [S,E,Q,H medians] [base.glsl]
+
 Milestone 1 put warped Horn-Schunck refinement only at the finest (half-res)
 level, as a post-process. That validated the mechanism -- +5 to +7 dB on the
 rotation ladder -- but did not transfer to real footage, for a reason already
@@ -30,6 +32,7 @@ Iterations are uncached deliberately (they re-run every output frame). The
 coarse levels are too cheap for that to matter; the half-res ones are not, and
 caching them is the obvious optimisation once the approach earns its place.
 """
+import os
 import pathlib
 import sys
 import tempfile
@@ -310,10 +313,26 @@ if __name__ == "__main__":
         pathlib.Path(tempfile.gettempdir()) / "casc.glsl")
     sigma_flow = sys.argv[5] if len(sys.argv) > 5 else "0"
     medspec = sys.argv[6] if len(sys.argv) > 6 else "2,2,2,0"
+    # A seventh argument names the base (2026-09-06): the cascade rebuilt on the propagated base is a
+    # variant of its own. A FUSED base saves its reverse coarse flow only in a storage image and its
+    # reverse 1/8 flow only in the check pass twin, so on such a base iterate and take medians only from
+    # the levels where both directions are saved textures: "0,0,8,4" with medians "0,0,2,0" on the
+    # propagated base ("0,12,8,4" / "0,2,2,0" on the seeded one); check_binds finds a later-save bind
+    # otherwise.
+    if len(sys.argv) > 7:
+        SRC = str(shader_arg(sys.argv[7]))
+    # ZERO_SEED=1 in the environment switches the base's zero seed on in the output (both sites, asserted):
+    # the variant on the propagated base ships with it on, its gate being a trade the base itself does not
+    # take in place (NFRAME-LIMITS.md, "The owner's eyes", the gate).
+    zero_seed = os.environ.get("ZERO_SEED", "0") == "1"
     s, e, q, h = (int(x) for x in spec.split(","))
     ms, me, mq, mh = (int(x) for x in medspec.split(","))
     text = build({"S": s, "E": e, "Q": q, "H": h}, alpha, sigma, sigma_flow,
                  {"S": ms, "E": me, "Q": mq, "H": mh})
+    if zero_seed:
+        n0 = text.count("const int ZERO_SEED = 0;"); n1 = text.count("const int ZERO_SEED = 1;")
+        assert (n0, n1) in ((2, 0), (0, 2)), f"ZERO_SEED=1 asked but the base has {n0} sites off and {n1} on (a base without the seed code cannot take it)"
+        text = text.replace("const int ZERO_SEED = 0;", "const int ZERO_SEED = 1;")
     cost = 2 * (s / 256 + e / 64 + q / 16 + h / 4)
     text = BANNER.format(spec=spec, alpha=alpha, sigma=sigma,
                          s=s, e=e, q=q, h=h, cost=cost,
