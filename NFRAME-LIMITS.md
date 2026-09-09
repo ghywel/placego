@@ -2782,3 +2782,175 @@ astronomers test the no-hair theorem against (ISCO 1.465, the image visibly diff
 disc that reaches almost to the horizon). Files: `hot-drops/blackhole-<schwarzschild|kerr|jp>-5s.mp4`,
 `blackhole-triptych-schwarzschild-kerr09-johannsenpsaltis-5s.mp4`, `blackhole-triptych-frame60.png`, and
 the triptych through the human reading.
+
+**Hawking radiation, rendered as far as the mathematics allows** (the owner, the next morning: Hawking
+radiation is undetectable in nature because it is fainter than the cosmic background, but our synthetic
+space has no background; can a black hole be rendered close enough to visualise the never-seen glow?).
+The answer has a negative half, computed rather than quoted, and two honest pictures.
+
+The negative half. `np-scratch/eyes/blackhole/greybody.py` integrates the electromagnetic Regge-Wheeler
+equation for the horizon-born photon modes at 260 frequencies and eight multipoles (fourth-order
+Runge-Kutta in the tortoise coordinate from r = 3000 M in to r - 2M = 1e-7; the outgoing/ingoing
+decomposition at the horizon end gives the transmission). Checks: Gamma -> 1 at high frequency, Gamma_1
+goes as w^4.1 at low (theory 4), the multipole sum tends to the capture cross-section 27 w^2 above
+w ~ 1/M, and the total photon power comes out 3.364e-5 hbar c^6 / G^2 M^2 against Page's 1976 value
+3.36e-5. The photon spectrum peaks at w M = 0.243 = 6.1 T_H (a blackbody peaks at 2.8 T_H: the potential
+barrier at r = 3M throws the long wavelengths back in), which is a wavelength of 25.8 M = 12.9 horizon
+radii FOR ANY MASS, and 98% of the power is in l = 1 (Gamma_1 = 0.415 at the peak, Gamma_2 = 0.0004). A
+black hole radiating at its own peak is a pure dipole. Its light carries no image of it, at any distance,
+in any instrument: an emitter thirteen times smaller than its light is a point, and going closer never
+changes that. The wished-for render of "the hole lit by its own Hawking glow" does not exist, not for
+lack of signal but for lack of wavelength. The mass ladder (`hawkchart.py`): a hole glowing at the Sun's
+colour has M = 2e19 kg, a 30-nanometre horizon and 1.4 microwatts; the film's 2000 K hole is 6.1e19 kg
+(a 35-km asteroid), a 91-nm horizon, 150 nanowatts, at arm's length a faint orange star; above 4.5e22 kg
+(T_H = 2.73 K) a hole absorbs more background than it emits, which is the observation problem in one line.
+
+The two pictures. (1) `hawkapproach.py` -> `hot-drops/hawking-approach-hover-40M-to-2.02M-10s.mp4` and the
+stills `hawking-approach-r{40,10,4,2.5,2.1,2.02}M.png`: ray optics, honest for the short-wavelength tail
+of the spectrum and stated as such. A static (hovering) observer descends from 40 M to 2.02 M looking
+straight down and straight up. Every direction traced backwards either came from the horizon, carrying the
+Hawking glow (uniform: a blackbody at T_H / sqrt(1 - 2M/r), the same in every direction for a static
+observer), or from infinity, carrying nothing but starlight, lensed and blueshifted (the Unruh state, an
+evaporating hole in empty space: exactly the owner's "no background"). The border is the escape cone,
+sin(psi_e) = (3 sqrt3 M / r) sqrt(1 - 2M/r), analytic and confirmed by the tracer on every frame. So THE
+GLOW IS THE SHADOW: the disc that is black under external light is precisely the set of directions that
+carry Hawking flux, 7 degrees across at 40 M, half the sky at 3 M, and at 2.02 M everything but a 15-degree
+cone straight up into which the whole universe is compressed, Einstein rings at its rim. The colour runs
+orange-red (2000 K) through white (4900 K at 2.4 M) to blue-white (20,100 K at 2.02 M) while the camera's
+exposure drops 17 stops (the caption counts them; the stars are drawn at fixed brightness with their true
+colour shift, or they would vanish within a few M). The thrust to hover ends at 2.46 c^4/GM, 5e23 g, and
+there the glow's temperature T_H / sqrt(1 - 2M/r) tends to a / 2 pi: the hovering observer's thermometer
+reads the Unruh temperature of its own acceleration; at the horizon Hawking's radiation and Unruh's are one
+thing. The glow is a blackbody, not the greybody spectrum: the filter is the barrier at 3 M (a hoverer
+inside it sees the unfiltered flux) and the filter is the wave effect that forbids the picture's sharp
+edge; the blackbody is the one spectrum consistent with ray optics. Not rendered: the free-falling
+observer (what a falling detector clicks is a literature of its own; the naive Doppler bookkeeping gives a
+finite mild temperature and is not the whole answer). (2) `hawkmode.py` ->
+`hawking-mode-dipole-quadrupole-10s.mp4` and `hawking-mode-frame120.png`: the thing ray optics cannot draw,
+the mode itself. The l = m = 1 photon mode at the peak frequency in the equatorial plane,
+Re[psi(r*) exp(i(phi - w t))], flux-normalised, born at the horizon with unit amplitude, 41% transmitted
+through the barrier and 59% reflected (a near-standing wave inside 3 M), a spiral wave outside with a
+wavelength thirteen times the horizon; beside it l = m = 2 at the same frequency, trapped (Gamma = 0.0004).
+Near the horizon the crests pile up (r* -> -infinity) and peel off at the coordinate speed 1 - 2M/r: the
+trans-Planckian side of Hawking's derivation, to scale. `hawking-spectrum-chart.png` has the greybody
+factors and the spectrum against the blackbody it is usually drawn as. Scripts and logs in
+`claude-handoff/d3/reading-alpha/blackhole/`; numpy only, minutes on one CPU.
+
+### Snap is readable, and the family's derivative ceiling is snap (2026-09-08)
+
+Preparing the Metal demo's next round, the owner asked for "human-reading fields for any relevant fields
+missing (jerk - snap - crackle - pop - whatever)". Two answers, one structural and one measured.
+
+**The ceiling is degree four, and it is not where the window sizes suggest.** N frames give N-1 links and a
+polynomial with N-1 coefficients, so five frames could carry snap and six crackle. The quint does fit an
+exact quartic through its four links and solves the snap row, using it only as an alarm. The sext does NOT
+fit a quintic: it fits a quartic again, by weighted least squares over up to seven points (six links plus
+the anchor), spending its sixth frame on overdetermination rather than another order, and the leftover
+becomes the fit's per-texel RESIDUAL. That was the deliberate choice the seven-frame analysis argued on
+paper. So crackle and pop exist nowhere in this family and cannot be read without a new estimator, while
+snap is already computed twice and discarded, and the sext's residual is a confidence map that is already
+computed and never shown.
+
+**Snap reads far better than the noise model predicts.** Pre-registered
+(`np-scratch/metal-prep/snap/PREDICTION.md`): each order should cost about 2.9x in signal-to-noise (the
+signal falls by the per-frame angular frequency, 0.65 on the test scene, while the fourth difference
+amplifies independent link noise by sqrt(70)), putting snap at 2-5 where jerk sits near 10. Measured on
+O5_osc_textured, the field-calibration scene, through the quint's machine modes at N:N, against the analytic
+derivatives (a scratch variant hoists the snap row out of the solver and paints it as mode 10):
+
+    acceleration  FS 16  gain 0.996  correlation 1.000  residual 0.071 px/frame^2   peak/residual 121
+    jerk          FS 8   gain 0.895  correlation 1.000  residual 0.047 px/frame^3   peak/residual 118
+    snap          FS 8   gain 0.927  correlation 0.997  residual 0.179 px/frame^4   peak/residual  20
+
+The acceleration row is the instrument checking itself against a field the record calibrates independently.
+Snap comes in at 20:1, not 2-5. THE PREDICTION'S ERROR IS THE INTERESTING PART: it assumed each link's error
+was independent. On a large, well-textured object in smooth motion the estimator's sub-pixel bias is
+phase-locked to the texture and travels WITH the object, so it is common to every link and CANCELS in the
+differences instead of adding — the same peak-locking bias that ADDS in the even orders on a static scene
+(the Metal demo's measured 0.52 px acceleration floor). Snap costs about 6x jerk's signal-to-noise here, not
+the 8-30x an independent model gives. The caveat stands: 20:1 is a strong, smooth, well-textured motion, and
+ordinary content will sit far closer to the noise.
+
+A first attempt measured on O2_osc_medium, a FLAT square, and read the acceleration field at gain 0.035 —
+a flat interior has no features, so the field inside it is whatever propagation fills in. Field measurements
+go on the textured scenes, at a full scale above the peak truth, and with the noise taken as the residual
+after fitting a gain (on a flat background the floor measures exactly zero).
+
+**What each shader costs, measured on one machine in one pass** (720p, 24 -> 60, 120 output frames, an ffv1
+file source interleaved over three rounds, `-f null`, RX 6600; the first such table for the whole family):
+
+    linear 14.1 ms/frame (1.00x)   base2 22.2 (1.57)   prop2 24.7 (1.75)   vp2 29.9 (2.11)
+    tri 39.6 (2.80)   quad 45.5 (3.22)   quadp 53.1 (3.76)   quint 66.6 (4.71)   sext 79.2 (5.60)
+
+And an eight-shader reference ladder over all 42 synthetic cases is in
+`np-scratch/metal-prep/ladder-refs-table.txt`. Two things in it are new: the two-frame shaders collapse
+BELOW HOLD on structure crossed by motion (V1/H1/V2 at 15-19 dB against hold's 18-24), which the aperture
+series predicted and no table had shown side by side; and the recommendation is not uniformly best, losing
+to the propagated four-frame family across the oscillation set while winning on the translation and stairs
+cases. Both are arguments for the demo's shader drop-down: they are visible only by switching shaders on one
+clip.
+
+### The held anchor: where the reading was standing, and a control that could not be used (2026-09-09)
+
+The M-series trip left one defect open, and it is the best specimen of a silent error this project has
+produced. The diagnostic field is built about an ANCHOR slot, naturally the straddling frame nearer the
+output; that flips within one window as the phase crosses 0.5, and the two slots carry flow stencils with
+independent sub-pixel noise, so a live display strobes between two decorrelated fields. `DIAG_HOLD_ANCHOR`,
+which the reading tail sets, stops the strobe by pinning the anchor to a LITERAL slot index. A literal is
+only correct for the window it was chosen against, and the window rule was corrected on the Mac.
+
+**Where the reading was actually standing**, found by a probe that reads none of that logic and so cannot
+inherit its assumption (`np-scratch/anchor/phaseprobe.py`): render an oscillation, decode the field over the
+object, sweep an assumed measurement offset and correlate against the analytic derivative. The offset of
+maximum correlation is the instant the reading reports.
+
+    shader   rate      acceleration delta, before -> after      velocity delta (control)
+    quad     24 -> 24      -1.00  ->  -0.00                        +0.50  (unchanged)
+    quad     24 -> 60      -0.60  ->  -0.40                        +0.10  (unchanged)
+    quint    24 -> 24      -0.00  ->  -0.00                        +0.50  (unchanged)
+    quint    24 -> 60      -0.00  ->  -0.00                        +0.10  (unchanged)
+    sext     24 -> 24      -0.50  ->  -0.50                        +0.50  (unchanged)
+    sext     24 -> 60      -0.15  ->  -0.15                        +0.10  (unchanged)
+
+The arithmetic reproduces the quad's two numbers exactly, which is why the diagnosis is believed rather than
+guessed. At 24 -> 60 the phase cycles through {0, 0.4, 0.8, 0.2, 0.6}; at every interior phase the window is
+[-1, 0, +1, +2] so the lower straddler is slot 1 and the held anchor sits at -phase, but at phase 0 the
+window shifts to [-2, -1, 0, +1] and the lower straddler becomes slot 2 while the anchor stays pinned to 1 —
+a whole interval early. The mean over the five phases is -0.60, and at N:N every frame is phase 0, so -1.00.
+The fix names the lower straddler from the window instead of by a literal, `anchor = clamp(p, 1, 2)`, which
+is still a function of the window alone and so still cannot flip within one.
+
+**The commit's proposed scope was too wide, and measurement is why.** It proposed pinning to the lower
+straddler in all 25 shaders. Only the four-frame family needs it. The QUINT already reads at 0.00 at both
+rates: its own window shifts at phase 0.5, so a fixed slot IS the nearer straddler at every phase and the
+switch happens on a window advance rather than within a window — pinning it to `p` would have made it worse,
+about -0.40. The SEXT's -0.50 at N:N is not a defect either but its own documented definition, the centred
+fit reporting at the weighted centre of its points, "half an interval before the anchor at N:N" in the
+shader's own words. Five shaders changed, two occurrences each; the quint and sext untouched.
+
+**The residual is the price of not strobing, and is stated rather than hidden.** -0.40 at 24 -> 60 remains
+because the lower straddler is behind the output by the phase, and no window-constant slot can track the
+nearer straddler when the window does not itself shift at 0.5 — the four-frame family's situation, not the
+quint's. Two honest options: accept a known lag on a display, or evaluate the fitted cubic at the output
+instant rather than at the anchor (`a_out = a_anchor + jerk * (-rts_mix[anchor])`), which would remove the
+offset using a quantity the shader already computes. The second changes what the field MEANS across three
+families and is left on paper.
+
+**A CONTROL THAT COULD NOT BE USED, which is the wider lesson.** The plan was to prove the picture path
+untouched by rendering it before and after and comparing bytes: the edited line is guarded by
+`TRI_DIAG != 0`, so an ordinary interpolated render cannot reach it. The bytes differed. Two runs of the
+SAME shader are byte-identical, so the comparison was sound; and then a SEMANTICALLY NULL edit — writing the
+original behaviour as `clamp(1, 1, 2)` instead of `1`, still dead code — produced the identical difference:
+2 samples out of 110,592,000, one frame, at most 16 parts in 65535. So the picture path is not byte-stable
+against recompilation at all, and a byte-compare is not available as a control for any shader edit here. The
+cause is the near-tie sensitivity the macOS investigation identified as platform-independent: the block match
+selects an argmin, and one bit of difference in a cost comparison flips a vector outright. On this platform
+it surfaces as two texels rather than the fourteen frames it caused there. The usable control is a magnitude
+bound, not equality.
+
+Verified besides: all four quad shaders and `human-reading-quad.glsl` regenerate byte-identical from the
+edited generator, and `tests/smoke.sh` passes 15 of 15. For his eyes:
+`hot-drops/reading-anchor-before-after-24fps.mp4`, the painted acceleration at N:N with the old anchor on the
+left and the new on the right.
+
+The Metal app picks this up whenever its Metal shaders are regenerated from this GLSL; nothing in the app's own code changes.

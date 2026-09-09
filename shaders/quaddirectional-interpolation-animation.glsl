@@ -8253,7 +8253,11 @@ vec4 hook() {
     // or an s > 0.5 at p = 2 would name an outer slot; the interior
     // neighbour serves instead, still a straddler.)
     int anchor = clamp(s <= 0.5 ? p : p + 1, 1, 2);
-    if (TRI_DIAG != 0 && DIAG_HOLD_ANCHOR == 1) anchor = 1;
+    // The lower straddler, named from the window rather than by a literal slot: at phase 0 the
+    // window shifts one place left and slot 1 is no longer in the straddling pair at all, which
+    // read a whole interval early at N:N (2026-09-09). `p` depends on the window alone, so the
+    // anchor still cannot flip within one window -- the strobe this hold exists to prevent.
+    if (TRI_DIAG != 0 && DIAG_HOLD_ANCHOR == 1) anchor = clamp(p, 1, 2);
     bool anchor_is_A = (anchor == p);
 
     // Anchor's three displacements, their taus (interval units), their
@@ -8619,7 +8623,11 @@ vec4 hook() {
     // or an s > 0.5 at p = 2 would name an outer slot; the interior
     // neighbour serves instead, still a straddler.)
     int anchor = clamp(s <= 0.5 ? p : p + 1, 1, 2);
-    if (TRI_DIAG != 0 && DIAG_HOLD_ANCHOR == 1) anchor = 1;
+    // The lower straddler, named from the window rather than by a literal slot: at phase 0 the
+    // window shifts one place left and slot 1 is no longer in the straddling pair at all, which
+    // read a whole interval early at N:N (2026-09-09). `p` depends on the window alone, so the
+    // anchor still cannot flip within one window -- the strobe this hold exists to prevent.
+    if (TRI_DIAG != 0 && DIAG_HOLD_ANCHOR == 1) anchor = clamp(p, 1, 2);
     bool anchor_is_A = (anchor == p);
 
     // Anchor's three displacements, their taus (interval units), their
