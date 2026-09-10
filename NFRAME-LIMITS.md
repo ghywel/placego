@@ -2954,3 +2954,275 @@ edited generator, and `tests/smoke.sh` passes 15 of 15. For his eyes:
 left and the new on the right.
 
 The Metal app picks this up whenever its Metal shaders are regenerated from this GLSL; nothing in the app's own code changes.
+
+### Has animation work polluted the general shaders? Audited and measured (2026-09-09)
+
+The owner's question: a great deal of work went into animation before it was split into its own class, so
+have fixes meant for the cartoon case been left applied to film, where they are wrong? Audited through the
+history and then measured. **The answer is no, and in the one place the suspect feature is fully present it
+is load-bearing for content that has nothing to do with animation.**
+
+**Four things entered the general path from animation work.** Traced to their commits and to what each was
+gated on at the time.
+
+- FLOW PROPAGATION (`ea0c725`) was motivated by "the fast tier's loss on flat-shaded line art is on the
+  edges (aperture), not in the fills" -- and shipped measured up on everything: ladder mean +0.66, the
+  avengers clip 34.74 -> 35.24, five library segments +0.4 to +2.0. An animation problem that produced a
+  general improvement. It is the base of the current recommendation.
+- THE COARSE VECTOR MEDIANS (`bd92eea`) were added explicitly to fix a cartoon face defect. The marginal
+  case, and the subject of the measurement below.
+- THE SNAP CHECK'S EDGE GATING was found on a cartoon (Bluey's ear outlines fragmenting) and the design
+  consciously avoided this very trap: rather than blending globally, "which softens this everywhere to fix
+  a problem that only happens in specific spots", the fix is gated to edges by EDGE_A/EDGE_B.
+- THE SCENE-CUT THRESHOLD (0.125) was chosen across three clips including flat animation, but the BINDING
+  constraint was the bright-action clip, whose highest non-cut reading is 0.1224. Film set the number.
+
+The `-animation` fork itself is clean: it differs from the general propagated base by one constant
+(`PROP_DISAGREE` 0.75 against 1.5).
+
+**The medians are barely in the recommendation.** `bd92eea` added them at S, E and Q. The recommendation
+(`-variational-propagated`) is generated with `0,0,2,0` -- the Q pair only -- because its cascade starts at
+Q. Regenerating it with `0,0,0,0` and rendering the flow field through `flowvis.py`: **2 pixels out of
+104,140,800 differ, by one quantisation step, on the cartoon; ZERO on live action.** That is consistent with
+the commit's own argument, which is that the mouth island is 11 texels at H, 5.5 at Q, 2.8 at E and 1.4 at S
+and that a 3x3 median cannot remove an island bigger than itself: the two levels that did the work are the
+ones the recommendation does not carry. On the ladder the pair is worth +0.025 dB mean (helps 14, hurts 9),
+and on film nothing at all: avengers 42.47 / 42.46, back to the future 34.30 / 34.28, the cartoon
+30.04 / 30.01.
+
+CAVEAT ON THAT FLOW COMPARISON: `flowvis.py` encodes +-10 px in 8 bits, so one step is 0.078 px -- the same
+scale as the flow differences that move a 65 dB ladder case by a decibel. It can say the flow is unchanged
+at its resolution; it cannot say the picture is.
+
+**In the full variational, where the feature lives, it is load-bearing and not for animation.** `2,2,2,0`
+against `0,0,0,0` (123 passes against 111), whole ladder and both content types:
+
+    ladder mean, removing the medians          -0.841 dB   (helps 16, hurts 17, neutral 9)
+    what removing them COSTS      A4_accel_tex_a033 -7.88   A6_accel_tex_a133 -5.63
+                                  P3_stairs_along_v12 -4.52  P5_stairs_along_v8_alias -4.52
+                                  O6_osc_tex_gentle -3.53   P2_stairs_along_v8 -3.49
+    what removing them GAINS      L6_flat_large +2.16   L3_trans_23px +1.36   L4_trans_40px +0.95
+                                  L2_trans_16px +0.73   A2_accel_16mean +0.60
+    cartoon (bluey, 5 segments)   29.94 -> 29.58 dB, SSIM 0.9688 -> 0.9677
+    live action (avengers, 5)     42.63 -> 42.61 dB
+
+So the medians are worth +0.84 dB mean on the ladder, +0.36 on the cartoon they were built for, and +0.02 on
+film. THE LARGE GAINS ARE ON TEXTURED ACCELERATION AND THE APERTURE SERIES, neither of which is animation
+content and neither of which existed as a ladder case when the feature was gated. A fix motivated by a
+cartoon turned out to be general, and by a wide margin.
+
+**The cost is real and is where the original commit said it would be.** The medians lose on flat, large and
+fast: L6_flat_large -2.16, L3 -1.36, L4 -0.95, exactly the "clean trend with speed" `bd92eea` reported
+(a median erodes a genuine motion boundary by a texel or two per pass, and the faster the object the more of
+its area is boundary rather than interior). Those losses are larger than the -0.86 measured then, because
+the trend was measured on a ladder that stopped at 40 px translation and did not yet contain the flat-large
+or aperture cases. Render cost was not measured cleanly here (the first run of a fresh ladder pays for the
+hold and linear baselines); the figure on record is +8.6% at 720p for twelve passes.
+
+**Left open, deliberately.** The recommendation's cascade starts at Q, so it cannot carry S or E medians as
+the variational does; whether an equivalent exists for it, and whether it would bring any of that +0.84, is
+a question this audit raises and does not answer. Nothing was changed: the audit found nothing to undo.
+
+### Jerk is not noise-limited, it is truncation-limited, and no sinusoid can show that (2026-09-09)
+
+The owner's question: have we dug deep into jerk, given it sits barely above the noise floor? The answer is
+that we have never isolated it at all, and that the thing limiting it is not the noise floor.
+
+**No case in the ladder has a cubic term.** Every one of the 42 motion laws is a constant, a straight line,
+a quadratic or a sinusoid. A quadratic has jerk of exactly zero. A sinusoid has jerk, but welded to
+acceleration through one parameter: for x = A sin(w t), the derivatives are A w, A w^2, A w^3, so raising
+jerk by raising w raises acceleration by w^2 and velocity by w. **Jerk has never been varied in this project
+with anything else held still**, and the case that would do it -- a constant non-zero jerk, x = j t^3 / 6 --
+does not exist.
+
+**The sweep, on cases that already exist.** Four textured oscillations share their geometry exactly (a
+300x300 TEX_M2 square at y = 210) and differ only in amplitude and frequency, which spans jerk about eight
+to one for free. The reading tail's machine jerk and acceleration were scored against the analytic
+derivatives at N:N, full scales raised so nothing clips (`np-scratch/jerk/jerksweep.sh`):
+
+    case                 jerk px/f^3   gain    resid    jerk/resid   resid/jerk    accel jerk/resid
+    O6_osc_tex_gentle       0.72       0.987   0.197       3.64         0.274         25.2
+    O9_osc_tex_fast         2.91       0.805   0.731       3.98         0.251        123.2
+    O10_osc_tex_tiny        4.59       0.761   1.460       3.15         0.318        171.6
+    O5_osc_textured         5.61       0.898   1.201       4.67         0.214        102.9
+
+**The signal-to-residual is FLAT at 3.1 to 4.7 across an eightfold range of jerk.** More jerk does not buy a
+better reading. The residual instead scales WITH the jerk -- resid/jerk stays at 0.21 to 0.32 throughout --
+and that is the signature of a systematic error proportional to the signal, not of an additive noise floor
+that a larger signal would climb above. Acceleration on the identical clips reads at 25 to 172 to one,
+twenty to fifty times better.
+
+**The mechanism is finite-difference truncation, and the numbers say so.** A cubic through four equally
+spaced samples estimates the third derivative by the third difference, which attenuates a sinusoid's true
+third derivative by [2 sin(w/2) / w]^3 -- pure sampling arithmetic, no noise term. Predicted against
+measured gain: 0.991 / 0.987 on O6, 0.948 / 0.898 on O5, 0.925 / 0.805 on O9, 0.871 / 0.761 on O10. The
+slowest case matches to four thousandths; the faster ones fall further below the prediction, which is the
+estimator's own trust gates and clamps adding to the arithmetic. The ordering and the direction are the
+sampling's.
+
+**So every jerk figure this project has ever measured is contaminated by the sinusoid's own higher
+derivatives, and no oscillation case can ever separate the two.** That is what makes the missing cubic
+decisive rather than merely absent. On x = j t^3 / 6 every derivative above the third is identically zero,
+so a cubic fit is EXACT and the truncation term vanishes by construction: any residual measured there is
+pure noise. It also sweeps acceleration linearly through zero inside the clip,
+which isolates jerk at full strength with acceleration momentarily absent -- something no sinusoid does
+except at an instant.
+
+CORRECTED THE SAME EVENING, and the correction matters. The paragraph above first claimed that one such case
+would decompose the 3-to-5 into truncation and noise. It cannot, and the reason is a design ceiling nobody
+had noticed: with acceleration zero at mid-clip over 23 intervals the velocity swing is 72j, so j = 0.25
+already runs velocity from 22 down to 4 px per frame and anything above about 0.28 reverses it. A constant-
+jerk scene that stays inside the ~23 px coarse reach therefore cannot deliver more than a quarter of a pixel
+per interval cubed -- twenty-one times BELOW O5's actual discrete jerk peak of 5.31, and nearly three times
+below O6's 0.712. So the cubic is a third data point at a NEW and much lower jerk level rather than a
+matched comparison, and at that level its own signal-to-floor is 2.5 to 5, the thinnest on the ladder. What
+it can still do is test the complementary half of the truncation claim -- that a cubic fit to a cubic has
+gain exactly 1.0, no attenuation at all -- against the sinusoids' measured 0.76 to 0.99. That is worth
+having. It is not the decomposition that was claimed.
+
+The same case was proposed independently by two of the eight angles of the 2026-09-09 case-design sweep
+(clustered as "constant jerk, acceleration through zero"), before this measurement was made.
+
+### The synthetic pool: 43 gaps found, and the bottleneck is not the scenes (2026-09-09)
+
+The owner's argument, after the median audit: the value is in the synthetic cases because that is where the
+answer is known exactly, and the risk is not that synthetic differs from real but that the space of possible
+cases is unbounded while the pool is 42. A sweep was run to map it -- five parallel surveys of what the 42
+isolate, what fails with no case exposing it, what the construction machinery can express, what real footage
+does that the pool does not, and where the estimator must fail by design; then eight independent taxonomies
+proposing cases against those surveys; then one agent per surviving mechanism required to write the ACTUAL
+pasteable scenes.sh line, the closed form proving exact ground truth, and the closest existing case.
+
+Sixty candidates, clustering to 43 distinct mechanisms. **Fourteen were reached independently by more than
+one taxonomy**, which is the useful signal in the run: three separate angles arrived at divergence and zoom,
+three at pure shear, three at acceleration perpendicular to velocity, and two each at parallax, constant
+jerk, sustained sub-pixel velocity, a flash firing the cut gate, a static occluder, and opposed motion
+without occlusion. Of the 39 fully build-checked, **39 pass: all buildable, all with exact ground truth, all
+genuinely distinct** -- 33 as a single geq expression, 6 needing a second layer, and NONE needing
+manifolds.py. One checker went as far as running scenecheck.sh on its proposed cubic and reported it
+bit-identical over all twelve coincident frames.
+
+**The finding is not the case list. It is that building a case takes minutes and READING it is the work.**
+The checkers were asked for the strongest objection to building each case, and the same objection came back
+in different words for most of them: the ladder's own instrument cannot see the mechanism. Whole-frame PSNR
+over an object occupying a fraction of the frame will not show a parallax boundary, a superposed second
+motion, a swarm's median erosion, a moat's propagation limit, or an intermediate-angle aperture. Several
+cases would print a confidently wrong row if dropped into ALL_CASES as-is, because analyze.py's assumptions
+about the rate do not hold for them. Others were shown to be already measured, or to confound the mechanism
+they name with a second one moving at the same time, or -- in two instances -- to be arithmetically
+degenerate on their own constants: a proposed highlight case works out to a null, and a proposed cut case
+has the gate's statistic already above threshold on content that is not a cut.
+
+That is the same lesson this project has now learned three times, most recently on the vector median: a
+metric that cannot see the thing being judged does not get to judge it. It changes the shape of the work
+from "write 43 scenes" to "for each mechanism, decide what reads it, and build that first". The scenes are
+cheap and will keep; the instruments are the schedule.
+
+**What follows for how the pool grows.** Cases whose mechanism the existing instruments already read --
+whole-frame PSNR against exact truth, or the field checkers against an analytic field -- can be added
+immediately and cost almost nothing. Cases needing a new statistic should wait for it, because a case that
+cannot be read is worse than no case: it occupies render time on every future regression run and reports a
+number that means nothing. And a case earns its place permanently, so the survivors shown to duplicate an
+existing case or to confound their own mechanism should not be built at all, whatever their proposer claimed.
+
+The material is in `np-scratch/cases/` and `claude-handoff/d3/cases/`: the five surveys, all sixty raw
+proposals, the 43 clustered mechanisms with their vote counts, and the build-checks, each carrying its
+pasteable line, its closed form, and its objection.
+
+### The gradient tensor's third component, and why its first two numbers were unfair (2026-09-10)
+
+Lead E scored the velocity gradient tensor (read_view 9) against two exact gates: a flat disc expanding
+0.6% a frame for divergence, and the rotating disc for curl. It never scored the FIRST SHEAR
+(du/dx - dv/dy), and could not have: a rigid rotation has no shear and neither does a pure zoom, so the one
+component that distinguishes a DEFORMING subject from a rigid one had no scene on the ladder that produces
+it.
+
+**A hyperbolic strain isolates it exactly.** Every point moves at u = K(x - cx), v = -K(y - cy), so the field
+stretches in x and compresses in y at matched rates: divergence and curl are identically zero and the first
+shear is 2K/fps everywhere. The forward map x(t) = cx + (x0 - cx) e^{Kt} is a closed form in t, so geq
+samples its inverse and the ground-truth property holds. Scored on a textured field at K = 0.48/s, 24 fps
+(shear 0.04 per frame, 7.6 px/frame at the edge of the scored region): **the first shear reads 0.0386 against
+a truth of 0.0400 -- 96.4%, frame-to-frame spread 2.6%** -- with divergence and curl reading +0.0010 and
+-0.0002, near enough zero, which is the built-in leakage control.
+
+**The recorded 30-80% for divergence was a property of the SCENE, not of divergence.** That gate was a FLAT
+disc with flows of well under a pixel a frame -- no texture to match and the smallest flows the estimator
+will ever be handed, which is the hardest case for a small-flow floor. Putting all three components on ONE
+construction -- the same 40 px texture, the same tensor magnitude of 0.04 per frame, the same 7.6 px/frame at
+the region's edge, differing only in which component is non-zero -- gives the first comparable reading:
+
+    scene       live component     truth      read    % of truth   frame sd   leakage into the other two
+    expand      divergence        0.0400    0.0371       92.8%      0.0008    curl 0.0000, shear +0.0007
+    rotate      curl              0.0400    0.0381       95.2%      0.0014    div -0.0037, shear -0.0002
+    strain      first shear       0.0400    0.0386       96.4%      0.0010    div +0.0010, curl -0.0002
+
+**All three read within 93 to 96% of truth, and cross-talk is under 10% of the live component in the worst
+case and under 3% in five of the six.** The tensor is a working three-component instrument on content that
+has texture and enough motion, which is a considerably stronger statement than the record carried before, and
+it comes with the honest condition attached: the flat, sub-pixel case that produced the 30-80% figure is still
+the flat, sub-pixel case, and nothing here repairs it.
+
+What this opens is the class of DEFORMING subjects. One vector per block cannot say whether a plate of jelly
+is wobbling or sliding; divergence, curl and shear can, and now all three are known to read to about five
+percent. The scenes are `np-scratch/shear/shear.sh` and `matched.sh`, kept out of ALL_CASES deliberately --
+they were built as gates for an instrument, and a case earns a permanent place on the regression ladder only
+by informing a decision that recurs.
+
+A note on the control, because it did not quite agree and that was useful. Scored on the rotating disc the
+same scorer read curl at 85% where Lead E's inner bands read 95-99%. The record's own banding explains it:
+the reading falls with radius and collapses past 0.7 R, so a single wide annulus is the area-weighted mean of
+a declining profile. What the control established firmly is that the channels are not transposed -- the
+rotation showed curl and essentially zero shear -- which is the failure that would have made the shear number
+meaningless.
+
+### Verb-object pairs generate cases a taxonomy cannot, and the rolling wheel proves it (2026-09-10)
+
+The owner's suggestion, offered as a throwaway after the jelly: name a VERB and an OBJECT and see what falls
+out. "Wobbling jelly." "Spinning dinnerplate" -- which resembles a disc but is concave. "Flapping bird" --
+features that narrow to a line and yet definable wings.
+
+Tested against the 43 mechanisms the eight analytic taxonomies produced the day before. **Five verb-object
+pairs fall outside all 43:**
+
+- ROLLING WHEEL -- rotation and translation LOCKED at omega = v/R, so one rigid body contains every speed
+  from zero at the contact to 2v at the top, simultaneously.
+- FLAPPING BIRD -- articulation: rigid parts hinged on a shared pivot, sharing a boundary. The list has
+  several movers, and it has a crease, but nothing hinged.
+- SPINNING DINNERPLATE -- the owner's own point: a flat plane turning gives AFFINE flow, which the list has;
+  a concave one gives flow quadratic in position, which it does not.
+- RIPPLING FLAG -- a wave whose phase velocity and material velocity are both non-zero and different. The
+  list has a shadow over a static surface, the degenerate case where the material velocity is zero.
+- WOBBLING JELLY -- a gradient tensor that VARIES IN TIME. Everything measured on the tensor the same
+  morning was constant.
+
+**Why the frame works, which is worth more than the five cases.** An analytic taxonomy decomposes along
+independent axes -- motion type, structure, photometry, time -- and enumerates points in that space. A
+physical object BUNDLES those axes into constrained combinations. Rolling is not a point in the space of
+motions; it is a curve through it, defined by a lock between two axes that no axis-wise enumeration proposes,
+because the enumeration has no notion that two axes might be tied. Taxonomy supplies dimensions. Physics
+supplies constraints. That is the whole of it, and it is why an exasperated throwaway produced what a careful
+eight-way sweep did not.
+
+**The rolling wheel, built and measured** (`np-scratch/verbs/rolling.sh`). R = 150 px, v = 8 px/frame, so the
+contact is at rest and the top runs at 16. The forward map is a rotation matrix in t composed with a linear
+translation, so the ground-truth property holds. Truth along the vertical diameter is a straight line,
+u = v - (v/R) dy, and the machine velocity reads:
+
+    dy from centre    -120    -80    -40      0    +40    +80   +120
+    truth px/frame   14.40  12.27  10.13   8.00   5.87   3.73   1.60
+    read             14.47  12.08  10.16   7.94   5.83   3.64   1.39
+    % of truth      100.5%  98.5% 100.2%  99.2%  99.3%  97.5%  86.9%
+
+Leakage into the perpendicular component, which is exactly zero on this diameter, stays within 0.18 px/frame
+throughout.
+
+**So the reading holds between 97 and 100 percent of truth from 16 px/frame down to about 3.7, and has lost
+13 percent by 1.6.** That is the small-flow floor, measured for the first time as a CURVE along a gradient
+inside one rigid object, at one instant, with the same texture and the same body throughout -- no confound
+from comparing separate scenes at separate speeds, which is how every previous statement about small flows
+was arrived at.
+
+It also explains a number recorded the same morning. The divergence gate reads only 30-80% of truth, and that
+gate is a flat disc expanding 0.6% a frame: its flows sit well under a pixel a frame, deep inside the falling
+region this profile maps. The gate's poor figure was never a property of divergence; it is this curve, seen
+end-on.

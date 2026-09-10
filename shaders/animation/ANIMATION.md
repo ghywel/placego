@@ -1,5 +1,54 @@
 # The animation shaders: a class for cel content
 
+## The limit this whole class is up against, first
+
+Read this before the tables, because the measurements below are all made inside a boundary this design
+does not cross.
+
+**The failure has no correspondence to find.** In cel animation a small high-contrast feature -- an eye, a
+mouth, a hand -- is frequently REDRAWN between source frames rather than moved, for lip-sync and
+expression. The two drawings are different shapes. No motion field maps one to the other, because there is
+no "one to the other": nothing travelled. Every shader in this repository, this class included, estimates
+motion per texel and then warps. A per-texel estimator asked for a vector that does not exist returns
+either a confident wrong one (which tore features, before the coarse vector medians) or nothing, and the
+honest remainder is a cross-fade through a soft blend where the original snaps between two drawings.
+
+**The speculated answer is the owner's, and it is to stop estimating motion and start identifying things.** An
+image classifier as a pre-processing step, identifying the objects in motion AND THE OBJECTS WITHIN THOSE
+OBJECTS -- the whole body of a dog, then its legs, its ears, the mouth on its head -- tracing every
+coherent feature, so that a cohesive object is transformed as one whole object rather than as a field of
+independent texels that are merely hoped to travel together. The hierarchy is the substance of it, not a
+detail: a mouth moves with the head, which moves with the body, and each carries its own motion on top of
+the one below. A template has an IDENTITY that survives a redraw, which is exactly the thing a per-texel
+correspondence does not have.
+
+**It is judged a dead end here, and that is not the same as a dead idea.** It is very likely the right
+answer, and it is out of reach for this design: a classifier is a different class of machine from a block
+matcher, and it belongs beside a shader rather than inside one. The owner does not think it can be solved
+in this project. Nothing below should be read as approaching it.
+
+**What HAS been reached from that direction, which is why the end is alive.** Three pieces of the idea are
+built and measured in this file:
+
+- the plate identifies which texels belong to a moving character and which to the background, which is a
+  crude two-class segmentation and is what removes the halo of dragged backdrop;
+- `-coherent.glsl` and then `-template.glsl` give ONE MOTION PER MOVING THING by construction -- a trimmed
+  mean over the character texels, then an exhaustive template match of a character-sized window -- which is
+  the "transform the object as a whole" half, without the classifier;
+- on live action the human reading's own field already separates a mover from its background unaided
+  (`NFRAME-LIMITS.md`, the stairs renders: the man paints as one green figure on a red pan).
+
+So the class reaches the whole-object transform for ONE object it can find by motion alone. What it does not
+reach is the hierarchy, and it does not identify anything by what the thing IS. The template match's own
+remaining limit, in "What is left" below, is exactly this: it needs a per-character window, which needs a
+segmentation, and connected components of the moving region is the crude stand-in for a classifier.
+
+**One idea, three names.** It is called an image classifier in `NFRAME-LIMITS.md` (the owner's proposal,
+2026-09-07), feature-template warping in `ROADMAP.md` ("A shader class specific to animation"), and a
+segmentation in this file. They are the same thing. `SHADERS.md`, "Known remaining weakness: animation",
+describes the failure and says it needs a different class of shader, without naming the suspected answer.
+
+
 The owner's idea from the project's first week (`ROADMAP.md`, "A shader
 class specific to animation"), built on 2026-09-05 on other people's
 results, credited in `ANI-PRIOR-ART.md`. Everything here is a variant of
@@ -46,8 +95,9 @@ drawings' distance fields disagree, at the redrawn legs, and the morph
 inks a fragment of each. `build_lineart.py` now takes the plain base as
 well as the plate variant, so either can be tested alone.
 
-The line-art shader gains 1.5 to 3.3 dB whole-frame and halves the chamfer
-distance or better on every scene; the moving band gains 1.4 to 3.4 dB; on
+The line-art shader gains 1.5 to 3.3 dB whole-frame and cuts the chamfer
+distance by 43 to 65 per cent -- halving it or better on two of the three
+scenes, 0.74 to 0.42 on the third; the moving band gains 1.4 to 3.4 dB; on
 the detailed backdrop the region outside the band also improves (48.3 to
 50.4 dB on the rigid scene), which is the plate's background rule removing
 the halo of smeared backdrop a character's flow drags in. The plate alone is

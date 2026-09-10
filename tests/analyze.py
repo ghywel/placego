@@ -18,6 +18,21 @@ Also note the ceiling: 'hold' can reach infinite PSNR on a static scene
 because it copies frames byte-for-byte, while anything going through
 libplacebo tops out around 79 dB from the GPU round-trip alone. Do not read
 that gap as a shader defect.
+
+AND DO NOT AVERAGE THE RAW COLUMN. A decibel is not the same quantity at both
+ends of this table. Found 2026-09-10 while ablating the shipped components:
+removing the whole variational cascade IMPROVED the plain ladder mean by 1.29
+dB, which read as the cascade being a liability -- but the gain was
+L2_trans_16px moving 50.01 -> 71.08 and L6_flat_large 48.72 -> 65.55, two
+cases that are already far past any visible error, while its losses were on
+the aperture series where error is visible. Restricted to the regime that can
+matter the cascade is a positive, not a liability. The same averaging had the
+zero seed, which rescues H1 from 19.28 to 55.86 dB, contributing no more per
+case than a change nobody could see. So the summary below CAPS each case
+before averaging: improvements above the cap contribute nothing, differences
+below it count in full. The cap is a convention (see CAP_DB), not a
+perceptual measurement -- it is there to stop the arithmetic being nonsense,
+not to claim a threshold of visibility.
 """
 import os
 import re
@@ -39,6 +54,13 @@ def parse(path):
             v = m.group(2)
             out[int(m.group(1))] = float("inf") if v == "inf" else float(v)
     return out
+
+
+# Above this, a difference is not a difference anyone can see, and averaging it
+# against a case sitting at 19 dB is arithmetic on two different quantities.
+# 40 dB is the usual convention for visually lossless 8-bit; it is a
+# convention and the honest way to place it is the owner's eyes on a render.
+CAP_DB = float(os.environ.get("CAP_DB", "40"))
 
 
 def mean_interp(d):
@@ -85,10 +107,12 @@ print()
 print(head)
 print("-" * len(head))
 
+table = {}
 for c in cases:
     d = os.path.join(OUTROOT, c)
     vals = {m: mean_interp(parse(os.path.join(d, m + ".log")))
             for m in list(BASELINES) + labels}
+    table[c] = vals
     row = f"{c:<{w}}{fmt(vals['hold'])}{fmt(vals['linear'])} |"
     row += "".join(fmt(vals[l]) for l in labels)
     if not show_variants and labels:
@@ -98,6 +122,29 @@ for c in cases:
         else:
             row += f"{s - h:>+9.2f}{s - l:>+11.2f}"
     print(row)
+
+
+if labels:
+    usable = [c for c in cases
+              if all(table[c].get(l) not in (None, float("inf")) for l in labels)]
+    if usable:
+        capped = {l: sum(min(table[c][l], CAP_DB) for c in usable) / len(usable)
+                  for l in labels}
+        raw = {l: sum(table[c][l] for c in usable) / len(usable) for l in labels}
+        binding = [c for c in usable if min(table[c][l] for l in labels) < CAP_DB]
+        ref = labels[0]
+        print()
+        print(f"{'summary over ' + str(len(usable)) + ' scoreable cases':<{w}}"
+              f"{'raw mean':>12}{'capped at ' + str(int(CAP_DB)):>14}"
+              f"{'vs ' + ref:>12}")
+        print("-" * (w + 38))
+        for l in labels:
+            print(f"{l:<{w}}{raw[l]:12.2f}{capped[l]:14.2f}{capped[l] - capped[ref]:+12.2f}")
+        print()
+        print(f"{len(binding)} of {len(usable)} cases have any variant below {CAP_DB:g} dB; only those can")
+        print("move the capped mean. The raw mean is kept because the record quotes it,")
+        print("but prefer the capped column: it does not average a decibel at 19 dB")
+        print("against a decibel at 71 dB as though they were the same quantity.")
 
 print()
 print("PSNR of genuinely interpolated frames only, dB, higher is better.")
