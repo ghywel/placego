@@ -283,10 +283,11 @@ info "--- same answers as Linux? (ground-truth ladder)"
 # Small deviations are normal (different driver, different shader compiler);
 # large ones mean something is genuinely behaving differently.
 cat <<'REF'
-   Linux reference, PSNR dB, base shader / variational:
-     L1_trans_8px     41.34 / 42.35
-     L2_trans_16px    38.45 / 39.89
-     L9_occlusion     38.31 / 40.18
+   Reference, PSNR dB, bidirectional-interpolation.glsl on the RX 6600 (2026-09-11): the 2026-09-04 build and
+   upstream tip (ffmpeg 5b614ef, libplacebo 3330a51) agree on these to the hundredth:
+     L1_trans_8px     61.24
+     L2_trans_16px    41.76
+     L9_occlusion     39.83
 REF
 if [ -f "$REPO/scripts/tests/bench.sh" ]; then
   # bench.sh does not change directory, so a relative shader path resolves

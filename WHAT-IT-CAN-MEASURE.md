@@ -71,7 +71,13 @@ them.
   component") and read 93, 95 and 96 percent of truth, with cross-talk under 10% at worst and under 3% in
   five cases of six. The condition is texture and enough motion: the earlier 30-80% figure for divergence
   came from a flat disc moving under a pixel a frame, and that case is still hard. So a deforming subject is
-  supported by evidence, provided it has surface detail to match.
+  supported by evidence, provided it has surface detail to match -- with the boundary drawn the same
+  afternoon (NFRAME-LIMITS.md, "Weird geometry"): articulation, transverse waves and similarity motion read
+  to a few percent; smooth NON-AFFINE deformation does too, at gain 0.96 and correlation 0.99 on a jelly at three times
+  the strain rate that first failed -- provided the content has structure above the coarse level's Nyquist,
+  about 40 px at this frame size. Content dominated by a period near that scale, stretched or sheared by more
+  than about one percent per frame, reverses in the coarse search and one pixel in five stays wrong
+  (NFRAME-LIMITS.md, "The non-affine failure: a cliff", demonstrated by moving the texture's period).
 
 - **The field has never been measured on real content.** Every figure in the table above comes from a
   synthetic scene with an analytic answer. That is the only place an exact answer exists, and it is the right

@@ -28,3 +28,27 @@ hole that is not the Schwarzschild metric", and it stays because the tracer is
 general and small. There is no general solution to render: that is numerical
 relativity on a supercomputer. This is two steps beyond Schwarzschild, the second of
 them beyond any exact solution.
+
+## The rest of this directory
+
+Moved beside the tracer on 2026-09-11 from the scratch tree, so the record's scripts are in the record's
+repository. Each line is the script's own first docstring line. They write renders and logs outside the tree
+under `NP_SCRATCH/eyes/blackhole/` and drops under `HOT_DROPS`; `build_site.py` packs the lot into the
+static site and its zip.
+
+- `bhrender.sh` -- The black hole: encode the traced frames to an mp4 for the eyes, then put it through the human reading
+- `blackhole.py` -- A Schwarzschild black hole with a thin, opaque, glowing dust disc, seen from a camera near the disc's plane
+- `build_site.py` -- Pack the black-hole series (2026-09-07/08) into a dependency-free static website for external hosting:
+- `glome.py` -- Fly through the 3-sphere: an honest render from INSIDE (2026-09-10).
+- `greybody.py` -- Hawking radiation of a Schwarzschild black hole in photons: the greybody factors, the spectrum, the power, and
+- `hawkapproach.py` -- The approach: a static (hovering) observer descends toward a Schwarzschild black hole that is radiating Hawking
+- `hawkchart.py` -- The chart: photon greybody factors and the Hawking photon spectrum against the blackbody it is usually drawn as,
+- `hawkcolor.py` -- Shared pieces for the Hawking renders (2026-09-08): colour from a spectrum, the Hawking spectrum from greybody.npz,
+- `hawkmode.py` -- The Hawking mode itself, at the wavelength it is actually emitted at (2026-09-08).
+- `hawkrender.sh` -- Hawking radiation, rendered as far as the mathematics honestly allows (2026-09-08): the hovering approach film,
+- `kerr.py` -- Black holes that are NOT Schwarzschild, rendered from the same camera by one metric-agnostic geodesic tracer
+- `kerr4k.py` -- THE 4K FORM of kerr.py (the owner, 2026-09-08: "a 4K render of the Johannsen-Psaltis by itself, regardless of
+- `kerr4krender.sh` -- 
+- `kerrrender.sh` -- Encode the three metrics' frames: one mp4 each, a triptych video (Schwarzschild | Kerr 0.9 | Johannsen-Psaltis),
+- `nball.py` -- The volume of the unit ball in n dimensions, drawn in numpy with the Hawking caption font (2026-09-10).
+- `run4k.sh` -- 

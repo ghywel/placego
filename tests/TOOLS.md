@@ -95,7 +95,7 @@ accelprospect.sh ──> ranks by ACCELERATION   (where a 2-frame model is wrong
 
 | `tieprobe.sh` / `.py` | Perturbs every argmin cost by a few ULP to expose tie-breaking fragility. Needed because a bit-reproducible platform cannot otherwise measure this at all. |
 | `mvkbench/run.sh` | macOS only. Twin-kernel microbenchmark: the same kernel logic as GLSL-through-MoltenVK and as native MSL, interleaved, to test "the translation layer is the bottleneck" directly instead of asserting it. The trap it encodes: comparing *systems* conflates kernel speed, dispatch overhead, clocks and thermals -- only twin kernels separate them. Not in smoke.sh (needs Metal + swiftc; answers a platform question, not a correctness one). |
-| `gen_metal.py` | Translates an mpv-hook shader into per-pass standalone GLSL + `graph.json` for the native Metal port (METALPORT.md); `--compile` drives glslc + spirv-cross to MSL. Gen-family: output is generated material, regenerated after any shader edit, never hand-edited. Asserts the SAVE/STORAGE no-overlap property its shim depends on. Verified 68/68 quad passes to working Metal pipelines. EXTENDED 2026-09-08 for the whole family: `//!PARAM` blocks become live uniforms (so read_view/read_alpha/read_plate are host-settable and one graph serves the picture and every reading), `//!WHEN` is carried as `when_rpn` for the host to skip a pass on, the window (2-6 frames) and each bind's frame index are declared, and `gl_FragCoord` and `num_mix` are shimmed. All 23 shaders translate; the invariants are asserted by np-scratch/metal-prep/verify_graphs.py. |
+| `gen_metal.py` | Translates an mpv-hook shader into per-pass standalone GLSL + `graph.json` for the native Metal port (METALPORT.md); `--compile` drives glslc + spirv-cross to MSL. Gen-family: output is generated material, regenerated after any shader edit, never hand-edited. Asserts the SAVE/STORAGE no-overlap property its shim depends on. Verified 68/68 quad passes to working Metal pipelines. EXTENDED 2026-09-08 for the whole family: `//!PARAM` blocks become live uniforms (so read_view/read_alpha/read_plate are host-settable and one graph serves the picture and every reading), `//!WHEN` is carried as `when_rpn` for the host to skip a pass on, the window (2-6 frames) and each bind's frame index are declared, and `gl_FragCoord` and `num_mix` are shimmed. All 23 shaders translate; the invariants are asserted by prep/verify_graphs.py beside the live Metal app (not in this tree). |
 | `smoke.sh` | Exercises every tool here and reports pass/fail per tool. Run after building, after changing a tool, and on any new platform. |
 
 ---
@@ -179,3 +179,7 @@ extend it when adding a tool.
    thresholding, `realbench.sh`'s passthrough assertion — and will rediscover
    the need for each of them the hard way.
 3. Add it to `smoke.sh` and to this table.
+
+## Probes
+
+`probes/` holds the one-off measurements the record quotes -- one directory per finding, the driver, its docstring and any pre-registered prediction -- indexed in [probes/PROBES.md](probes/PROBES.md). They read and write their data outside the tree (`NP_SCRATCH`), derive the repo from their own location, and find ffmpeg the way everything here does. Not run by `bench.sh`.

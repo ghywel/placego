@@ -164,6 +164,12 @@ It is resumable -- `-Stage deps|placebo|ffmpeg|verify` -- and asserts its
 preconditions rather than assuming them. The final stage compiles every shader
 and runs part of the ground-truth ladder against the Linux reference numbers.
 
+**Last verified against upstream tip: 2026-09-11.** ffmpeg 5b614ef (2026-09-08) and libplacebo 3330a51
+(2026-09-03), shallow-cloned and built by this script into a separate root with all three patches applied: every
+patch applies cleanly, all 23 shaders compile, the hook fires, and the ladder's L1/L2/L9 agree with the
+2026-09-04 production build to the hundredth of a decibel (61.24 / 41.76 / 39.83). The production build stays at
+ffmpeg df48dc6 + libplacebo 41ac298 until its owner chooses to move it.
+
 ### By hand
 
 From the **MINGW64** shell specifically (`C:\msys64\mingw64.exe`) -- not the

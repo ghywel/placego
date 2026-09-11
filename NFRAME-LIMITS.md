@@ -2748,7 +2748,7 @@ for: a matcher that fits a per-block affine (or at least a divergence and shear)
 and the self-occlusion half would need occlusion reasoning the family does not have. Both stay on
 paper; the cube now measures them.
 
-**A black hole** (`np-scratch/eyes/blackhole/blackhole.py`, not a test: the owner's curiosity). A
+**A black hole** (`blackhole/blackhole.py`, not a test: the owner's curiosity). A
 Schwarzschild black hole in geometric units with a thin, opaque, glowing dust disc from the innermost
 stable orbit at 6 M to 18 M, seen from 40 M at 78 degrees from the disc's axis. Every pixel's null
 geodesic is integrated once in its own orbital plane (the Binet equation u'' = -u + 3 u^2, fourth-order
@@ -2766,7 +2766,7 @@ rotating disc as the shader reads it.
 something to zero; render one that is not the Schwarzschild metric). There is no general solution to
 render: the general case exists only in numerical relativity, and even there as two holes merging. What
 can be done is two steps out. `scripts/blackhole/geodesic_disc.py` (the owner's choice for the repository;
-it began as np-scratch/eyes/blackhole/kerr.py) is a second, metric-agnostic tracer:
+it began as blackhole/kerr.py) is a second, metric-agnostic tracer:
 Hamilton's equations for a null geodesic in the full four dimensions, the metric entering only as its
 five covariant components g_tt, g_tphi, g_rr, g_thetatheta, g_phiphi as functions of (r, theta), the
 inverse taken numerically and the derivatives by central differences, fourth-order Runge-Kutta with the
@@ -2788,7 +2788,7 @@ radiation is undetectable in nature because it is fainter than the cosmic backgr
 space has no background; can a black hole be rendered close enough to visualise the never-seen glow?).
 The answer has a negative half, computed rather than quoted, and two honest pictures.
 
-The negative half. `np-scratch/eyes/blackhole/greybody.py` integrates the electromagnetic Regge-Wheeler
+The negative half. `blackhole/greybody.py` integrates the electromagnetic Regge-Wheeler
 equation for the horizon-born photon modes at 260 frequencies and eight multipoles (fourth-order
 Runge-Kutta in the tortoise coordinate from r = 3000 M in to r - 2M = 1e-7; the outgoing/ingoing
 decomposition at the horizon end gives the transmission). Checks: Gamma -> 1 at high frequency, Gamma_1
@@ -2852,7 +2852,7 @@ snap is already computed twice and discarded, and the sext's residual is a confi
 computed and never shown.
 
 **Snap reads far better than the noise model predicts.** Pre-registered
-(`np-scratch/metal-prep/snap/PREDICTION.md`): each order should cost about 2.9x in signal-to-noise (the
+(`tests/probes/snap/PREDICTION.md`): each order should cost about 2.9x in signal-to-noise (the
 signal falls by the per-frame angular frequency, 0.65 on the test scene, while the fourth difference
 amplifies independent link noise by sqrt(70)), putting snap at 2-5 where jerk sits near 10. Measured on
 O5_osc_textured, the field-calibration scene, through the quint's machine modes at N:N, against the analytic
@@ -2900,7 +2900,7 @@ which the reading tail sets, stops the strobe by pinning the anchor to a LITERAL
 only correct for the window it was chosen against, and the window rule was corrected on the Mac.
 
 **Where the reading was actually standing**, found by a probe that reads none of that logic and so cannot
-inherit its assumption (`np-scratch/anchor/phaseprobe.py`): render an oscillation, decode the field over the
+inherit its assumption (`tests/probes/anchor/phaseprobe.py`): render an oscillation, decode the field over the
 object, sweep an assumed measurement offset and correlate against the analytic derivative. The offset of
 maximum correlation is the instant the reading reports.
 
@@ -3038,7 +3038,7 @@ does not exist.
 **The sweep, on cases that already exist.** Four textured oscillations share their geometry exactly (a
 300x300 TEX_M2 square at y = 210) and differ only in amplitude and frequency, which spans jerk about eight
 to one for free. The reading tail's machine jerk and acceleration were scored against the analytic
-derivatives at N:N, full scales raised so nothing clips (`np-scratch/jerk/jerksweep.sh`):
+derivatives at N:N, full scales raised so nothing clips (`tests/probes/jerk/jerksweep.sh`):
 
     case                 jerk px/f^3   gain    resid    jerk/resid   resid/jerk    accel jerk/resid
     O6_osc_tex_gentle       0.72       0.987   0.197       3.64         0.274         25.2
@@ -3125,7 +3125,7 @@ cannot be read is worse than no case: it occupies render time on every future re
 number that means nothing. And a case earns its place permanently, so the survivors shown to duplicate an
 existing case or to confound their own mechanism should not be built at all, whatever their proposer claimed.
 
-The material is in `np-scratch/cases/` and `claude-handoff/d3/cases/`: the five surveys, all sixty raw
+The material is in `np-scratch/cases/` (the surveys and JSON; the clustering is `tests/probes/cases/cluster.py`): the five surveys, all sixty raw
 proposals, the 43 clustered mechanisms with their vote counts, and the build-checks, each carrying its
 pasteable line, its closed form, and its objection.
 
@@ -3164,7 +3164,7 @@ the flat, sub-pixel case, and nothing here repairs it.
 
 What this opens is the class of DEFORMING subjects. One vector per block cannot say whether a plate of jelly
 is wobbling or sliding; divergence, curl and shear can, and now all three are known to read to about five
-percent. The scenes are `np-scratch/shear/shear.sh` and `matched.sh`, kept out of ALL_CASES deliberately --
+percent. The scenes are `tests/probes/shear/shear.sh` and `matched.sh`, kept out of ALL_CASES deliberately --
 they were built as gates for an instrument, and a case earns a permanent place on the regression ladder only
 by informing a decision that recurs.
 
@@ -3203,7 +3203,7 @@ because the enumeration has no notion that two axes might be tied. Taxonomy supp
 supplies constraints. That is the whole of it, and it is why an exasperated throwaway produced what a careful
 eight-way sweep did not.
 
-**The rolling wheel, built and measured** (`np-scratch/verbs/rolling.sh`). R = 150 px, v = 8 px/frame, so the
+**The rolling wheel, built and measured** (`tests/probes/verbs/rolling.sh`). R = 150 px, v = 8 px/frame, so the
 contact is at rest and the top runs at 16. The forward map is a rotation matrix in t composed with a linear
 translation, so the ground-truth property holds. Truth along the vertical diameter is a straight line,
 u = v - (v/R) dy, and the machine velocity reads:
@@ -3226,3 +3226,191 @@ It also explains a number recorded the same morning. The divergence gate reads o
 gate is a flat disc expanding 0.6% a frame: its flows sit well under a pixel a frame, deep inside the falling
 region this profile maps. The gate's poor figure was never a property of divergence; it is this curve, seen
 end-on.
+
+### Weird geometry: what the readers make of fields that are not constant (2026-09-10)
+
+The owner's request: "really weird forms of synthetic geometry". The morning's tensor gates were all constant
+fields, one component live at a time, and the case survey's lesson was that a scene is worthless without a
+reader that can see its mechanism. So the useful weirdness is scenes whose velocity AND gradient-tensor
+fields are analytic and NOT constant, scored by the two readers that exist (read_view 4 velocity, read_view 9
+divergence / curl / first shear). Five verb-object scenes, each a closed-form inverse map in T so the
+ground-truth property holds (`tests/probes/weird/weird.py`, 1280x720, N:N at 24 fps, 48 frames, the first
+20 skipped -- see below):
+
+    spiral   z(t) = z0 e^{(a+ib)t}                       divergence and curl live at once, constant
+    vortex   theta = theta0 + w(r) t, w Gaussian in r      curl and shear varying smoothly in space
+    flag     y = y0 + A sin(kx - Wt), five wavelengths     a curl field sinusoidal in x; the crest moves at
+                                                           W/k while the material moves at AW
+    jelly    x = x0 e^{K(1-cos Wt)/W}, y = y0 e^{-...}     the first shear oscillating in time
+    bird     two wings hinged on a static body             a curl that flips sign across a hinge
+
+**What reads well.**
+
+- THE BIRD'S CREASE IS RESOLVED TO ONE CELL. Along the wings' centre line the curl goes from -0.13 to 0 within
+  16 px of the left hinge and from 0 to +0.13 within 16 px of the right one, with the body reading 0.000
+  between. Median curl per wing 0.105-0.117 against a truth of 0.121-0.131 (85-90%), correct sign on each
+  wing, and the wing velocities read at gain 0.95 / 1.00, correlation 0.93 / 0.99. Articulation -- rigid
+  parts sharing a pivot -- is read at the instrument's native resolution.
+- THE FLAG SETTLES PHASE VERSUS MATERIAL. At a wavelength of 640 px the crest crosses the frame at 27 px/frame
+  while the material moves at 4. The estimator follows the material, gain 0.98, and never the crest, at every
+  wavelength down to 80 px. The curl's spatial transfer function -- the first bandwidth figure the tensor
+  instrument has had -- is flat to within ten percent:
+
+      wavelength px    1280    640    320    160     80
+      v gain          0.983  0.976  0.972  0.950  0.956
+      curl gain       0.985  0.977  0.971  0.935  0.895
+
+  The curl channel's per-pixel noise floor is 0.02-0.03 per frame; its correlation rises from 0.58 to 0.98
+  across the sweep only because the truth grows against that fixed floor.
+- THE JELLY'S TIME-VARYING SHEAR TRACKS AT 0.9995. Per-frame median first shear against 2K sin(Wt)/fps:
+  correlation 0.9995, gain 0.968, with a lag of +0.60 frames -- the same measurement-instant offset the phase
+  probe found for velocity at N:N.
+- THE READING TAKES TWENTY FRAMES TO SETTLE on a field that changes everywhere. The spiral's velocity
+  residual falls from 12 px/frame at frame 8 to 0.6 at frame 20 and stays there; skipping only 8 frames had
+  polluted every score. All figures here skip 20.
+
+**What fails, and the shape of the failure.**
+
+The vortex and the jelly fail PER PIXEL: velocity gain 0.4-0.65, correlation 0.3-0.5, residual 4-6 px/frame
+on truths of 3-5. The failure has a shape. The median pixel is right -- direction error under 5 degrees,
+speed error under 0.4 px/frame -- and a minority of ten to twenty-five percent lock onto a wrong vector,
+often reversed (the 90th percentile of direction error is 106 degrees on the vortex and 146 on the jelly)
+and up to ten px/frame too fast, with none reading zero. The jelly's failure tracks its instantaneous strain
+rate: 0.5 px/frame residual where the strain passes through zero, 9 at its peak. The vortex fails outside
+r = 80 from the first settled frame regardless of how far the texture has wound; the core, at 2.5 px/frame,
+reads to 0.5. Because the per-frame MEDIAN of the tensor is right while the per-pixel field is wrong, the
+jelly's time-tracking figure above is real and its per-pixel shear correlation (0.15-0.22) is also real.
+
+**The texture was not the mechanism, and the test that showed it caught a silent failure first.** The scenes
+were rerun on the ladder's aperiodic five-sinusoid texture to separate "deformation defeats the matcher"
+from "a periodic lattice aliases under deformation". The first pass returned numbers identical to four
+decimals to the periodic run -- 0.988 / 0.995 / 0.4283 on the spiral in both -- which is not a coincidence
+but a scorer that had rendered the new frames and then loaded the old ones: the texture suffix was applied
+in the render path and not in the load path. Caught by the identical-numbers rule, fixed, rescored:
+
+                      periodic lattice (40 px)          aperiodic five-sinusoid
+      spiral   u/v    gain 0.99 / 1.00, corr 0.995     gain 0.44 / 0.83, corr 0.30 / 0.81
+      vortex   u/v    gain 0.59 / 0.58, corr 0.37      gain 0.61 / 0.66, corr 0.48 / 0.53
+      jelly    u/v    gain 0.38 / 0.38, corr 0.28      gain 0.51 / 0.56, corr 0.48 / 0.35
+
+So the non-affine scenes fail on both textures, and texture shifts them by a tenth. The spiral is the
+surprise: a uniform rotation-and-dilation reads to one percent on the coarse lattice and to 0.44 on the
+fine aperiodic texture, whose components are 5-8 px wavelengths that the coarse pyramid levels barely see
+and that the dilation moves through the aliasing band. Texture scale and deformation interact, and that
+interaction is unmeasured beyond these two points.
+
+**The mechanism of the non-affine failure is open.** What is established: it is not the texture's period;
+it is not winding (the vortex fails before it winds); it scales with the strain rate; it is a minority of
+pixels locked to wrong vectors, not a broad scatter. Candidates in order of cheapness to test: which pyramid
+level the wrong vectors come from (a raw per-level debug view scored against the same truth); a strain-rate
+ladder of the jelly, K swept, to get the failing fraction as a curve; a shallower vortex; and the
+texture-scale by deformation cross. The harness is written and each of those is a parameter change.
+
+What follows for the family: articulation, transverse waves, and a similarity motion on coarse texture are
+in reach of the estimator as shipped, and the tensor reads them to within a few percent; smooth non-affine
+deformation -- a real jelly, a real vortex -- is not, and a picture that looks plausible on such content is
+carrying a field that is wrong at one pixel in five. That is the honest boundary of "deforming subjects are
+supported", drawn one day after the sentence was written.
+
+### The non-affine failure: a cliff at a fixed velocity gradient, entering at the coarse search (2026-09-10)
+
+The three cheap tests named in the previous section, run the same afternoon. Two of them are one design.
+
+**The strain-rate ladder.** The jelly's K and the vortex's core rate each halved four times from the
+failing values (`tests/probes/weird/weird.py`, LADDER=1). Expressed as the peak velocity gradient per frame
+-- K/24 for the jelly, w0/24 for the vortex -- the two geometries agree on where the cliff is:
+
+    scene            gradient /frame   failing   gain (u)   corr (u)
+    jelly  K 0.045       0.002            0        0.91       0.98
+    jelly  K 0.09        0.004          0.000      0.93       0.99
+    jelly  K 0.18        0.008          0.003      0.94       0.975
+    jelly  K 0.36        0.015          0.165     -0.76      -0.31
+    jelly  K 0.72        0.030          0.143      0.38       0.28
+    vortex w 0.15        0.006            0        0.91       0.95
+    vortex w 0.3         0.013          0.042      0.83       0.59
+    vortex w 0.6         0.025          0.104      0.84       0.34
+    vortex w 1.2         0.050          0.213      0.59       0.37
+
+("failing" is the fraction of samples whose read direction is more than 45 degrees off the truth, among
+truth speeds above 1 px/frame.) Below a gradient of about 0.008 per frame both read at gain 0.9 and
+correlation 0.95 or better. Above about 0.013 both fail. The jelly goes from 0.3% failing to 16.5% between
+K = 0.18 and 0.36 with nothing in between, and at K = 0.36 the whole field reads REVERSED on average, gain
+-0.76: at that rate it is not a minority locking to a wrong vector, it is the majority. A hard threshold at
+a fixed gradient with a reversal at its onset is a much stronger constraint than the previous section had.
+
+**Which level it enters at.** `levels.py` exposes the shader's own flow at each pyramid level by the flowvis
+trick (the final pass rewritten to dump FLOW_S_AB, FLOW_E_AB_RAW, FLOW_E_AB, FLOW_Q_AB or FLOW_H_AB, scaled to
+full-resolution px), scored against the same truth. The spiral is the units check and the control:
+
+    scene          level     gain u/v        corr u/v      failing
+    spiral         S (1/16)  0.83 / 0.94     0.91 / 0.95    0.056
+                   E raw     0.93 / 0.98     0.95 / 0.98    0.031
+                   E         0.94 / 0.98     0.98 / 0.99    0.003
+                   Q         0.95 / 0.99     0.98 / 0.99    0.006
+                   H (1/2)   0.99 / 1.00     0.99 / 1.00    0.005
+    jelly K 0.72   S        -0.22 / -0.30   -0.14 / -0.13   0.623
+                   E raw     0.11 / 0.29     0.07 / 0.11    0.413
+                   E         0.24 / 0.34     0.19 / 0.17    0.291
+                   Q         0.48 / 0.58     0.35 / 0.28    0.203
+                   H         0.52 / 0.60     0.36 / 0.29    0.168
+    vortex w 1.2   S        -0.13 / -0.15   -0.07 / -0.08   0.805
+                   E raw     0.37 / 0.36     0.18 / 0.17    0.453
+                   E         0.41 / 0.40     0.26 / 0.26    0.347
+                   Q         0.59 / 0.59     0.35 / 0.35    0.230
+                   H         0.59 / 0.59     0.35 / 0.35    0.202
+
+On the similarity motion the pyramid does what a pyramid should: each level refines the one above, 0.83 at
+the coarsest to 0.99 at the finest, failing fraction 5.6% down to 0.5%. On the non-affine scenes **the
+coarsest level is already wrong, and wrong in sign**: FLOW_S_AB reads with negative gain and 62-80% of
+its vectors more than 45 degrees off. Every finer level repairs part of that -- 62 to 41 to 29 to 20 to
+17% on the jelly, 80 to 45 to 35 to 23 to 20% on the vortex -- and the last fifth is never recovered. So
+the mechanism is located: **the failure enters at the coarse search at 1/16 resolution and the fine levels
+cannot climb out of it**, because a reversed coarse seed is further from the truth than any refinement
+radius reaches. The zero seed, which exists precisely to let the fine levels also try from rest, is what
+lifts the recovery from wherever it would otherwise stop to the 80% seen here; it cannot lift it further.
+
+**Why the coarse level reverses, and why the aperiodic texture reversed the spiral's fortune.** At 1/16
+resolution the ladder's 40 px lattice is 2.5 texels, at the edge of Nyquist, and the aperiodic texture's
+components (5 to 36 px) are all at or below it. A rigid or similarity motion moves an aliased pattern
+consistently, and the coarse match, though aliased, seeds the fine levels near enough; a strain changes
+the pattern's period between frames, and a periodic pattern near Nyquist whose period changes appears to
+move the wrong way -- the wagon-wheel effect, in the coarse search. That is consistent with everything
+measured (the threshold at a fixed gradient, the reversal at onset, the coarse level's sign, the fine
+levels' partial recovery, the spiral reading to 1% on the lattice and 0.44 on the fine texture whose
+components the coarse level cannot see at all). It is a mechanism consistent with the data, not yet a
+demonstrated one. The demonstration is cheap and named: the same ladder on a texture whose period stays
+above the coarse level's Nyquist under the largest stretch (80-160 px), which should move the cliff, and
+the coarse search's window against the gradient, which should set where.
+
+What follows for the family stands as written a section earlier, now with a number on it: a smooth
+deformation whose velocity gradient exceeds about one percent per frame puts the coarse search into a
+regime it cannot report, and the picture path is carrying a field wrong at one pixel in five from that
+point on. Below that gradient, deforming subjects are read as well as rigid ones.
+
+**Demonstrated, the same evening.** The same ladder on the same lattice at a 120 px period -- 7.5 texels at
+the coarse level, above its Nyquist even under the jelly's full 1.58 compression -- with nothing else
+changed (`TEX=M2W LADDER=1`):
+
+    scene            40 px lattice: failing / gain u / corr u     120 px lattice: failing / gain u / corr u
+    jelly  K 0.18         0.003 / 0.94 / 0.975                        0.005 / 0.96 / 0.97
+    jelly  K 0.36         0.165 / -0.76 / -0.31                       0.003 / 0.96 / 0.99
+    jelly  K 0.72         0.143 / 0.38 / 0.28                         0.005 / 0.96 / 0.99
+    vortex w 0.3          0.042 / 0.83 / 0.59                         0.028 / 0.93 / 0.95
+    vortex w 0.6          0.104 / 0.84 / 0.34                         0.015 / 0.89 / 0.95
+    vortex w 1.2          0.213 / 0.59 / 0.37                         0.052 / 0.85 / 0.92
+
+The cliff is not moved; it is gone. The jelly at K = 0.36, which read reversed on the 40 px lattice, reads at
+gain 0.96 and correlation 0.99 on the 120 px one, and at twice that rate the same. The vortex at its
+harshest goes from a fifth of its vectors wrong to a twentieth. So the mechanism is the coarse level's
+wagon-wheel reversal of a near-Nyquist lattice whose period a strain changes between frames -- and the
+"practical number" three paragraphs up must be restated, because it was a property of the test texture,
+not of deformation:
+
+**A deforming subject is read as well as a rigid one, at three times the gradient that failed before,
+provided the content has structure the coarse level can see.** What fails is content whose dominant
+period sits near the coarse level's Nyquist -- about 40 px at this frame size -- when it is stretched or
+sheared by more than about one percent per frame. That is the ladder's M2 texture, which was chosen for
+the period-40 case precisely because it is a trap: today's non-affine failure is the period-collapse family
+that the zero seed was built against, met on content the seed can rescue for rigid motion and cannot for a
+strain. Real footage carries structure at every scale and the coarse level locks to its coarsest, so the
+one-pixel-in-five figure belongs to single-frequency content near 40 px, not to jelly.
