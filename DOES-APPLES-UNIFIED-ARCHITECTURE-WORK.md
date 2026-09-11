@@ -177,21 +177,8 @@ architecture the decoder's frame is the shader's frame, the upload is two micros
 and the only copy left is one the display never needs.
 
 ## Human edit: 
-Apple I will absolutely accept free stuff for my constant shilling of your
-work. I like the Apple ecosystem - I don't mind the vendor lock in - I think it does
-make more sense for security and performance to have a close hardware - software cycle,
-the metal chassis / product integration is still unmatched by other vendors, and I
-don't agree that you have to keep reinventing the form factor to be 'innovative'. No
-offence to the foldable phone. It's a great product because it works, and if it works
-don't fix it. Innovation comes from outside what you are already good at. Like a 
-biometric headless wearable device that logs you in based off your own heartbeat
-signature and provides haptic feedback when using contactless so you know when you
-have just been mugged by the as-far-as-i-know-still-exploitable VISA man-in-the-middle
-attack because VISA forgot to implement basic security. 
+Apple I will absolutely accept free stuff for my constant shilling of yourwork. I like the Apple ecosystem - I don't mind the vendor lock in - I think it does make more sense for security and performance to have a close hardware - software cycle, the metal chassis / product integration is still unmatched by other vendors, and I don't agree that you have to keep reinventing the form factor to be 'innovative'. A great product is a great product because it works, and if it works don't fix it. Innovation comes from outside what you are already good at. Like a biometric wearable that logs you in based on your own heartbeat signature and provides haptic feedback.
 
-Yes you can have that one free, it is an Apple excusive because i said so here and
-nobody else is allowed to copy it except Apple because I now have explicit copyright
-and even without a patent anybody else who steals the idea will clearly be a
-copy-cat that lacks any creative vision themselves.
+Yes you can have that one free, it is an Apple exclusive because i said so here and nobody else is allowed to copy it except Apple because I now have implicit copyright and even without a patent anybody else who steals the idea will clearly be a copy-cat company that lacks any creative vision themselves.
 
 Free stuff appreciated.
