@@ -92,7 +92,7 @@ cases = args or sorted(d for d in os.listdir(OUTROOT)
 labels = set()
 for c in cases:
     for f in os.listdir(os.path.join(OUTROOT, c)):
-        if f.endswith(".log"):
+        if f.endswith(".log") and not f.startswith("._"):
             n = f[:-4]
             if n not in BASELINES:
                 labels.add(n)

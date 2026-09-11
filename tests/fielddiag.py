@@ -19,7 +19,10 @@ TESTS = pathlib.Path(__file__).resolve().parent
 REPO = TESTS.parent.parent                      # .../nframe
 SRC = REPO / "scripts/shaders/quaddirectional-interpolation.glsl"
 GEN = TESTS / "gen_metal.py"
-QUAD = REPO / "scripts/metal-demo/.build/release/QuadDemo"
+# The published tree's app by default; QUADDEMO overrides it (a private build of
+# the app elsewhere would otherwise be measured through the published binary,
+# silently, which is the shape of error this instrument exists to catch).
+QUAD = pathlib.Path(os.environ.get("QUADDEMO", str(REPO / "scripts/metal-demo/.build/release/QuadDemo")))
 # Working root: big scratch never goes on the system disk (the raws are
 # 130-330 MB apiece). Override with FIELDDIAG_OUT.
 W = pathlib.Path(os.environ.get(
@@ -66,7 +69,7 @@ def scene(case, fps):
 
 def render(graph, case, out):
     src = W / "src.raw"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", scene(case, 24),
+    subprocess.run([os.environ.get("FFMPEG", "ffmpeg"), "-y", "-v", "error", "-f", "lavfi", "-i", scene(case, 24),
                     "-pix_fmt", "rgb48le", "-f", "rawvideo", str(src)], env=ENV, check=True)
     cmd = [str(QUAD), "--graph", str(graph), "--param", "read_view=0",
            "--input", str(src), "--export", str(W / out),

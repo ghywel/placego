@@ -15,6 +15,17 @@ scripts fail a run that shows more than the two boundary skips.
 lookup all already exist in `vf_libplacebo.c`, so for **frame-rate scaling**
 (24 -> 60 and similar) libplacebo is the only thing that needs patching.
 
+The scaling runs **downward as well**: `fps=` below the source rate resamples at the
+sparser output instants through the same hook, with no change to any shader. Measured
+2026-09-11 (`tests/probes/decimate/`): from a 60 fps render of the ladder's L1 and O5
+scenes, `fps=30` (an integer ratio) lands every output on a source frame and reads at the
+passthrough level (79.4 / 68.9 dB), while `fps=24` (a ratio of 2.5) passes the even
+outputs through at that level and synthesises the odd ones, which sit half way between
+two source frames, at the shader's own interpolation quality for the case (45.8 / 52.6 dB
+for the recommended shader, 47.6 / 54.3 for the quad-propagated). ffmpeg's own `fps=`
+filter, dropping frames, lands on none of the 2.5-ratio instants (33-37 dB), and the
+stock linear mixer blends at every instant (33-36 dB).
+
 A **second, optional patch**
 ([frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch)) is needed only
 for the **N:N flow-field** use case -- running the shader at the source's own
@@ -607,11 +618,17 @@ predicted**; `build-macos.sh` adapts via `brew --prefix` without edits.
 
 #### Build deltas from the Intel walk-through
 
-- `build-macos.sh` runs unmodified on arm64, but **predates
-  `frame-mix-nn-threshold.patch`**: apply that to the ffmpeg clone by hand
-  (`git apply`) and rebuild before trusting any N:N run. The marker test
-  catches the omission — a dark corner at exactly `fps=24` with
-  `TRI_DIAG=2` means the patch is missing.
+- `build-macos.sh` runs unmodified on arm64. Until 2026-09-11 it **predated
+  `frame-mix-nn-threshold.patch`** and the patch had to be applied to the
+  ffmpeg clone by hand; it now applies both ffmpeg-side patches itself and
+  refuses a reused clone that lacks the N:N one. The marker test still
+  catches an unpatched build — a dark corner at exactly `fps=24` with
+  `TRI_DIAG=2`.
+- **Verified 2026-09-11 on an Apple M5** (macOS 26.6.2, MoltenVK from
+  Homebrew, ffmpeg upstream tip 5b614ef, libplacebo 7.371.0): smoke.sh
+  15/15, and the base shader's L1/L2/L9 read **61.26 / 41.78 / 39.83**
+  against the RX 6600's 61.24 / 41.76 / 39.83 on the same tip. Three
+  Vulkan implementations agree to the hundredth.
 - The stage argument is a *starting* stage, not a selection:
   `./build-macos.sh deps` runs deps, placebo, ffmpeg AND verify.
 - **The harness python trap, arm64 edition.** macOS puts `/usr/bin` ahead
@@ -689,12 +706,22 @@ the "copy" lands in the same physical DRAM instead of crossing
 Thunderbolt/PCIe. Same four chains as the Intel table, avengers clip at
 native resolution, 24→60:
 
-| chain | M2 8-core | Intel Mac, RX 6600 eGPU |
-|---|---|---|
-| tri shader, downloaded each frame | 13 | 65.3 (base shader) |
-| tri shader, kept in Vulkan | 12 | 100.5 |
-| linear, downloaded each frame | **182** | 103.9 |
-| linear, kept in Vulkan | 234 | 262.0 |
+| chain | M2 8-core | M5 (2026-09-11)† | Intel Mac, RX 6600 eGPU |
+|---|---|---|---|
+| tri shader, downloaded each frame | 13 | 24.0 | 65.3 (base shader) |
+| tri shader, kept in Vulkan | 12 | 24.5 | 100.5 |
+| linear, downloaded each frame | **182** | **651** | 103.9 |
+| linear, kept in Vulkan | 234 | 1052 | 262.0 |
+
+† `tests/probes/uma/readback.sh`, the same four chains as a script: the
+tridirectional-propagated shader of that date (59 passes, against the 48-pass
+tri the M2 ran), 20 s of the clip, two interleaved rounds, medians. The shader
+path's readback penalty is +2 % — inside the round-to-round spread, the M2's
+"zero within noise" again — and the linear path's is 38 %: at a thousand
+frames a second resident, a DRAM copy of a 5.9 MiB frame is a large share of a
+one-millisecond frame time, which is the same mechanism the M2 showed at 22 %,
+not a bus. The M5 beats the eGPU rig on the downloading linear path by six to
+one.
 
 Two readings. First, the readback penalty on the shader path went from
 **35% to zero within noise** (13 vs 12 is rounding, and the resident run

@@ -237,8 +237,26 @@ if stage_wanted ffmpeg; then
 say "3/4  ffmpeg against it"
 FF="$ROOT/ffmpeg"
 [ "$FORCE" = 1 ] && rm -rf "$FF"
-[ -d "$FF" ] || git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git "$FF" \
-  || die "clone failed"
+if [ ! -d "$FF" ]; then
+  git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git "$FF" || die "clone failed"
+  # Two ffmpeg-side patches this script used to leave to the reader (the M2
+  # notes in BUILDANDUSAGE.md say "apply by hand"; folded in 2026-09-11):
+  #   frame-mix-nn-threshold.patch -- without it the frame-mix hook silently
+  #     never fires at N:N (the queue point-samples one frame), and a window
+  #     of five or more is short a frame at the boundary, with no error.
+  #   hw-base-encode-eof-nullcheck.patch -- an upstream NULL dereference on
+  #     seek with an fps=-scaled output, the command shape used everywhere here.
+  for p in frame-mix-nn-threshold.patch hw-base-encode-eof-nullcheck.patch; do
+    info "applying $p"
+    ( cd "$FF" && git apply --verbose "$HERE/$p" ) ||
+      die "$p did not apply -- upstream may have moved; rebase it"
+  done
+fi
+# A reused clone must already carry the N:N patch. An unpatched ffmpeg builds
+# and runs without a word; only the marker test (a dark corner at fps=24 with
+# TRI_DIAG=2) would ever show it, so check the source, not the build.
+grep -q 'ithresh = -1.0f' "$FF/libavfilter/vf_libplacebo.c" ||
+  die "$FF lacks frame-mix-nn-threshold.patch (FORCE=1 re-clones and re-applies)"
 
 if [ "$FORCE" = 1 ] || [ ! -x "$FF/ffmpeg" ]; then
   ( cd "$FF" &&
@@ -322,9 +340,31 @@ else
 fi
 
 say "done"
-info "Linux reference for the ladder, base shader / variational:"
-info "  L1_trans_8px 41.34 / 42.35   L2_trans_16px 38.45 / 39.89"
-info "  L9_occlusion 38.31 / 40.18"
-info "Windows reproduced these to 0.01 dB. If macOS does too, the patch is"
-info "portable across three Vulkan implementations."
+# The real portability test, as build-windows.sh runs it. These scenes are pure
+# functions of t, so the 60 fps render is the exact answer for a 24->60
+# interpolation of the 24 fps render, and the numbers are platform-independent
+# up to driver and compiler noise in the second decimal.
+cat <<'REF'
+   Reference, PSNR dB, bidirectional-interpolation.glsl (the base shader), 24->60:
+     RX 6600 / Windows, 2026-09-11 (production build and upstream tip 5b614ef agree):
+       L1_trans_8px 61.24   L2_trans_16px 41.76   L9_occlusion 39.83
+     Apple M5 through MoltenVK, 2026-09-11, upstream tip 5b614ef:
+       L1_trans_8px 61.26   L2_trans_16px 41.78   L9_occlusion 39.83
+REF
+if [ -f "$REPO/scripts/tests/bench.sh" ]; then
+  # bench.sh does not change directory, so the shader path is relative to tests/.
+  # OUTROOT stays on the internal disk: an exFAT root scatters ._ sidecars beside
+  # every log (analyze.py skips them, other readers may not).
+  ( cd "$REPO/scripts/tests" || exit 1
+    SH=../shaders/bidirectional-interpolation.glsl
+    export FFMPEG FFPROBE
+    export OUTROOT="$ROOT/bench"
+    for c in L1_trans_8px L2_trans_16px L9_occlusion; do
+      bash ./bench.sh "$c" "$SH" mac_v0 || exit 1
+    done
+    python3 ./analyze.py --variants
+  ) || info "ladder did not complete -- the build itself is still good; run it by hand"
+else
+  info "harness not found at $REPO/scripts/tests -- skipping the ladder"
+fi
 fi

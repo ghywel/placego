@@ -24,6 +24,8 @@ a machine without that data renders it afresh; one that only scores expects it t
 | `weird/` | weird.py, levels.py | five non-constant fields (spiral, vortex, flag sweep, jelly, bird) read by the velocity and tensor views; the strain-rate ladder (LADDER=1, TEX=); the per-pyramid-level view that located the coarse-search wagon wheel | Weird geometry; The non-affine failure | `np-scratch/weird/` |
 | `cost/` | timing.sh | the per-frame cost of every shader in the family from a file source, 720p 24->60 | the cost table | `np-scratch/metal-prep/timing/` |
 | `window/` | window_rule.py | the frame-mix hook's window rule at N=3/4/5, phase by phase, the reason the N=4 window sits at [-2,-1,0,+1] | the window rule | `np-scratch/metal-prep/` |
+| `decimate/` | decimate.sh | the hook with the output rate BELOW the source: 60->24 (ratio 2.5) and 60->30 (integer) on L1 and O5 through the recommended two-frame and the quad-propagated shaders, scored against the analytic render at the output instants; hold and linear beside | reverse interpolation | `np-scratch/decimate/` |
+| `uma/` | readback.sh | the unified-memory round-trip in the record's own four chains (shader and linear, downloaded each frame against kept in Vulkan), 24->60 at a clip's native size, interleaved; the readback penalty per machine | Unified memory: the round-trip stops mattering | `np-scratch/uma/` |
 
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,
 the Metal graph verifier, the Mac-side field acceptance) live beside that app, outside this tree, because the

@@ -176,9 +176,10 @@ paying a round trip the native port does not. It claims what it measured: on thi
 architecture the decoder's frame is the shader's frame, the upload is two microseconds,
 and the only copy left is one the display never needs.
 
-## Human edit: 
-Apple I will absolutely accept free stuff for my constant shilling of yourwork. I like the Apple ecosystem - I don't mind the vendor lock in - I think it does make more sense for security and performance to have a close hardware - software cycle, the metal chassis / product integration is still unmatched by other vendors, and I don't agree that you have to keep reinventing the form factor to be 'innovative'. A great product is a great product because it works, and if it works don't fix it. Innovation comes from outside what you are already good at. Like a biometric wearable that logs you in based on your own heartbeat signature and provides haptic feedback.
+## Human edit:
 
-Yes you can have that one free, it is an Apple exclusive because i said so here and nobody else is allowed to copy it except Apple because I now have implicit copyright and even without a patent anybody else who steals the idea will clearly be a copy-cat company that lacks any creative vision themselves.
+Apple I will absolutely accept free stuff for my constant shilling of your work. I like the Apple ecosystem - I don't mind the vendor lock in - I think it does make more sense for security and performance to have a close hardware / software cycle, the metal chassis / product integration is still unmatched by other vendors, and I don't agree that you have to keep reinventing the form factor to be 'innovative'. A great product is a great product because it works, and if it works don't fix it. Innovation comes from outside what you are already good at. Like a biometric wearable that logs you in based on your own heartbeat signature and provides haptic feedback - if that's even possible.
+
+Yes you can have that one free, it is an Apple exclusive because i said so here and nobody else is allowed to copy it except Apple because I now have implicit copyright and even without a patent (assuming it isn't already a patent) anybody else who steals the idea will clearly be a copy-cat company that lacks any creative vision themselves.
 
 Free stuff appreciated.
