@@ -306,7 +306,7 @@ number in the other documents was produced by.
   and [tests/TOOLS.md](tests/TOOLS.md) on the harness and its
   instruments; [PLAN.md](PLAN.md) on what is next and what was refuted on
   the way.
-- **A native port.** [metal-demo/](metal-demo/) is the four-frame shader
+- **A native port.** The Metal app, shipped as `NFrameDemo-macos-arm64-v<N>.zip` beside this file (its source is not published), is the four-frame shader
   machine-translated to Metal and wrapped in a small macOS app, with
-  [METALPORT.md](METALPORT.md) as its record and `QuadDemo-macos-arm64.zip`
+  [METALPORT.md](METALPORT.md) as its record and `NFrameDemo-macos-arm64-v<N>.zip`
   as the built artefact.

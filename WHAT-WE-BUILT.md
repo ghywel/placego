@@ -262,27 +262,13 @@ There is now a native Mac demonstration app — a window with buttons, no
 ffmpeg, no patches, no command-line pipelines — and it is the easiest
 way to see all of this with your own eyes.
 
-**The prebuilt app ships right here**: `QuadDemo-macos-arm64-v3.zip`,
+**The prebuilt app ships right here**: `NFrameDemo-macos-arm64-v5.zip`,
 alongside this document (Apple-silicon Macs(tested); Intel Macs
-(untested) use the build path below). Unzip it and open `QuadDemo.app`.
-On a downloaded copy macOS will object once — right-click → Open, or
-System Settings → Privacy & Security → Open Anyway — and then it just
-runs. You can check the code yourself if you are worried about about
-doing this.
-
-**To build it yourself, once** — four commands on any reasonably recent
-Mac, and at the end you have the same double-clickable app forever
-after:
-
-```
-xcode-select --install                 # Apple's free build tools
-brew install shaderc spirv-cross       # the shader translation step
-cd metal-demo && ./make-app.sh         # builds QuadDemo.app + its zip
-open QuadDemo.app
-```
-
-(Terminal folk: `./gen.sh && swift run -c release QuadDemoUI` runs the
-same thing without the bundle.)
+(untested) use the build path below). Unzip it and open
+`NFrameDemo.app`. On a downloaded copy macOS will object once —
+right-click → Open, or System Settings → Privacy & Security → Open
+Anyway — and then it just runs. The auther is awaiting developer status
+pending to code-sign the app properly.
 
 What you will see: a textured block moving under known laws of motion,
 interpolated live from 24 to 60 frames per second. Drag the **A/B

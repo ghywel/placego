@@ -19,10 +19,13 @@ TESTS = pathlib.Path(__file__).resolve().parent
 REPO = TESTS.parent.parent                      # .../nframe
 SRC = REPO / "scripts/shaders/quaddirectional-interpolation.glsl"
 GEN = TESTS / "gen_metal.py"
-# The published tree's app by default; QUADDEMO overrides it (a private build of
-# the app elsewhere would otherwise be measured through the published binary,
-# silently, which is the shape of error this instrument exists to catch).
-QUAD = pathlib.Path(os.environ.get("QUADDEMO", str(REPO / "scripts/metal-demo/.build/release/QuadDemo")))
+# The demo's CLI comes from QUADDEMO, always: the app's source is not in this tree
+# (the tracked copy went on 2026-09-12), so there is no default that could be right,
+# and a wrong default would measure the wrong binary silently -- the shape of
+# error this instrument exists to catch.
+if "QUADDEMO" not in os.environ:
+    sys.exit("fielddiag.py: set QUADDEMO to the Metal demo's CLI (.build/release/QuadDemo of the private app)")
+QUAD = pathlib.Path(os.environ["QUADDEMO"])
 # Working root: big scratch never goes on the system disk (the raws are
 # 130-330 MB apiece). Override with FIELDDIAG_OUT.
 W = pathlib.Path(os.environ.get(

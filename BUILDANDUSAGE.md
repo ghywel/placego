@@ -767,7 +767,7 @@ manifest (under `etc`, not `share`).
 
 **Postscript, same day: the native Metal port beat this whole table.**
 The mpv-hook shader was machine-translated to Metal compute and run by a
-native Swift host (`metal-demo/`, plan and outcomes in METALPORT.md) —
+native Swift host (shipped as `NFrameDemo-macos-arm64-v<N>.zip` beside this file; its source is not published; plan and outcomes in METALPORT.md) —
 hardware decode, zero-copy frames, no translation layer. Same films,
 same machine, native resolution: **quad 12.7 fps vs 8.7 above (+46%),
 tri 16.9 vs 13 (+30%)** — and the port reproduces the ladder and the

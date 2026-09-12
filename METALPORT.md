@@ -248,6 +248,5 @@ getting one working colourspace honestly, App Store anything.
 - This plan: `scripts/METALPORT.md`
 - Translator: with the other generators under `scripts/tests/`
   (gen-family; TOOLS.md gets an entry when it exists)
-- The app: `scripts/metal-demo/` as a SwiftPM package — `swift build`
-  and `swift run`, no Xcode; MSL is generated output and never edited
-  by hand.
+- The app: NFrameDemo-macos-arm64-v{version}.zip only - source is not
+  provided
