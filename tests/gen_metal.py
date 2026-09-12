@@ -236,7 +236,12 @@ def check_when(rpn):
 for p in passes:
     check_when(p["when"])
 
-graph = {"source": src_path.name, "window": window,
+import hashlib as _hashlib
+graph = {"source": src_path.name,
+         # the GLSL this graph was made from, so a host can tell a stale graph from a fresh one
+         # (the lockstep check, 2026-09-12: the app once ran old graphs after a re-tail, silently)
+         "source_sha256": _hashlib.sha256(src_path.read_bytes()).hexdigest(),
+         "window": window,
          "frames": sorted(frames_used, key=lambda b: FRAME_BINDS[b]),
          "textures": [], "passes": [],
          "uniforms": [{"name": "mix_t", "type": "float"}] +

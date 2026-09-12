@@ -290,6 +290,250 @@ translation than anyone could see before. Regenerating `-diffuse-dual` from
 the current base, with the diffusion and without the fallback, is now a
 well-motivated experiment rather than housekeeping.
 
+## The master tier
+
+The ladder above is small on purpose: sub-pixel calibrated, inside the search's reach, off the edges, eight-bit
+exact, so that a number from it means one mechanism. Its smallness is also its limit. It cannot speak to a mover
+that uses the whole frame, to a reversal against a wall, to rotation and translation in one body, to a texture
+aliasing at the source rate, or to what a clip does when the source rate changes. Those are the scenes the Metal
+demo grew during 2026-09-11 for the eye -- a rectangle bouncing off all four walls under five speed laws, a disc
+breathing (pure divergence) with and without spin, a disc spinning under three laws, a spoked wheel rolling
+without slipping, including the wagon-wheel profile whose spokes advance exactly one pitch per source frame.
+Until now their truth lived only in that demo's engine, so nothing here could quote them.
+
+`tests/masters.py` is that engine's master family ported line for line to numpy, with the same exports the demo's
+CLI makes (rgb48le, the source at one rate and the exact truth at another from one law), and `probes/masters/`
+holds it to the engine and scores it:
+
+* **Identity.** `identity.sh` renders every scene from both and compares to the last 16-bit level. On 2026-09-12
+  every one of the fourteen scenes was bit-identical, source and truth, at 640x360 and at 1280x720, on flat and
+  textured ground, under every procedural texture (the integer hash ported exactly). So the engine is not the
+  truth; this file is, and anyone with python3, numpy and ffmpeg regenerates it.
+* **The picture.** `check.sh` runs every scene through every shader in `shaders/` on ffmpeg + libplacebo (the
+  source of truth) and, where the Metal demo's CLI and a graph are at hand, on the native engine, with hold and
+  linear beside, and reads each with analyze.py's own rule; `table.py` lays it out. Ninety-six source frames at
+  24 fps, the truth at 60, flat ground (black: the demo's default and the instrument -- a textured ground lowers
+  every mover by adding an occlusion at every edge, and is the showing, not the gate).
+* **The field.** `fieldtier.sh` reads the machine velocity of each scene against the closed-form chord that
+  `masters.py --export-field` writes (the one-interval displacement of the material point under each pixel, in
+  manifolds.py's format, so `fieldcheck.py` scores it), through the picture path's own diagnostic (TRI_DIAG 7 at
+  full resolution, its full scale set for the fast wheel's 38 px rim) -- the instrument fielddiag.py calibrated
+  -- on both hosts.
+
+Two instrument facts, learned making it. The diagnostic modes are anchored per phase, so only at exact N:N does
+the field sit on the source frame's own pixels: at 24->60 the constant bounce read zero inside the mover's mask
+at every interior phase, and 19.12 px against a 19.20 chord at N:N (libplacebo runs the hook at N:N as well,
+skipping only the boundary frames). And the demo's own reading tail (read_view 4, pooled at an eighth of the
+resolution) reads the same translation at 19.13, so the two instruments agree where the record says they should.
+
+Time, for every scene here: the law is written in frames at 24 fps and that is its clock at any source rate
+(source frame k is law time k * 24 / fps), so a scene lasts the same at 60 as at 24 with finer steps, and the
+truth at the output rate samples law time j * 24 / outFps. The laws' loop lengths, speeds (80 % of the search
+envelope, 19.2 px per frame at 720p) and every constant are the demo's, listed by `masters.py --list`.
+
+### The field, first cut (2026-09-12)
+
+The quad shader's velocity diagnostic against the closed-form chord, three frames per scene (12, 48, 84 of 96),
+both hosts, flat ground; median and 90th-percentile |error| in px over the mover's interior (the mask eroded by
+3 px), the fraction over 2 px, the median angular error where |v| > 1 px, and the gain |v| read / |v| true:
+
+```
+scene              median px      p90 px   gross %   angle    gain
+                   metal placebo  m / p    m / p     m / p    metal placebo
+bounce-constant    0.47  0.48     2.3/2.3  14 / 15   1.3/1.3  0.986 0.984
+bounce-gravity     0.90  0.92     2.9/2.9  25 / 26   2.9/2.9  0.951 0.951
+breathe            0.19  0.19     1.1/1.1   2 /  2   3.3/3.2  0.983 0.983
+spin-constant      1.01  0.99     3.9/3.8  30 / 30   3.7/3.7  0.931 0.930
+spin-pendulum      0.85  0.87     2.9/3.0  22 / 23   8.5/8.8  0.904 0.901
+roll-12            1.31  1.28     6.1/6.1  43 / 43   5.5/5.6  0.950 0.954
+roll-wagon         9.27  9.24    29.9/29.7 82 / 81  22.1/21.7 0.604 0.608
+```
+
+Read: the two hosts agree to a few hundredths of a pixel on every scene, so this is one instrument. A translation
+reads at 0.99 of the truth with a half-pixel median, which is the calibration the record already had. Divergence
+(breathe) reads at 0.98 with a 0.2 px median and 2 % gross -- better than the 0.93-0.96 the manifolds gave it.
+Curl (spin) reads at 0.93, where the record put it. The pendulum reads at 0.90 with an 8-degree angle: a straddle
+flow averages across the direction reversals. The rolling wheel reads at 0.95 in the median but 43 % gross: the
+spokes and hub are ink without texture, an aperture inside the body, and the field between them is the disc's.
+The wagon wheel is the demonstration: gain 0.60, 22 degrees, 82 % gross -- the search locks on to a spoke pattern
+that advances exactly one pitch per frame and reads the rim as nearly still while the hub travels; the aliasing
+is the measurement, on both hosts alike. Where fieldcheck.py reports a neighbouring truth frame fitting better,
+it is not an offset in the read: on the constant spin all three neighbours tie exactly, and elsewhere the better
+neighbour is whichever has the smaller speed, the same few-percent-low gain seen from another side.
+
+The pendulum's 8 degrees, read frame by frame over one period (2026-09-12): it is not the turns. The median error in
+pixels sits near 0.9 px at the swing's fastest (12 px per frame) and 0.35 px near the turns, and the angle is that
+error over a shorter vector -- 4-5 degrees at 12 px per frame, 10 at 6, 13 at 2.6, 17-18 at 1.3 -- with the gain
+0.86-0.92 throughout. A straddle flow does not average across the reversal; the field is as good on the pendulum as
+on anything, and an angle figure on slow motion is a pixel figure in disguise. The wheel's 43 % gross inside the
+ink is a different question -- whether the shader's own confidence knows those pixels -- and its residual
+diagnostic (mode 6) reads flat in the shipped build, which runs QUAD_MODE 0; that needs the least-squares variant.
+
+### The picture, batch 1 (2026-09-12)
+
+Flat ground, 96 source frames at 24 fps, the truth at 60, 1280x720; every stem in `shaders/` on libplacebo, the
+eleven with Metal graphs on the native engine; ladder means by analyze.py's rule. Three blocks first -- the
+recommended build, the quad and the quint -- with linear and hold beside and the host gap on the right; then
+every stem's index. The whole table, every stem's block and the raw readings are under np-scratch/ladder2
+(RESULTS.md, batch1/flat/results.tsv).
+
+```
+== bidirectional-interpolation-variational-propagated
+scene                  metal placebo  linear    hold   metal-placebo
+static                66.22  62.39  62.94  99.00   +3.83
+bounce-constant       47.20  46.47  31.65  28.54   +0.73
+bounce-oscillating    49.68  49.29  34.28  31.19   +0.39
+bounce-hardjerk       49.87  48.99  34.02  30.91   +0.88
+bounce-gravity        50.08  49.57  33.57  30.63   +0.51
+bounce-masses         47.71  47.01  31.59  28.54   +0.70
+breathe               52.40  51.59  36.70  33.37   +0.81
+breathe-spin          52.39  51.77  36.63  33.04   +0.62
+spin-constant         47.56  46.65  46.26  34.39   +0.91
+spin-accelerating     55.72  53.00  57.29  49.12   +2.72
+spin-pendulum         52.16  50.26  54.81  43.42   +1.90
+roll-12               43.01  42.83  28.66  25.85   +0.18
+roll-12-fast          33.78  33.88  26.01  23.49   -0.10
+roll-wagon            22.89  22.87  22.08  20.85   +0.02
+
+== quaddirectional-interpolation-propagated
+scene                  metal placebo  linear    hold   metal-placebo
+static                66.17  62.71  62.94  99.00   +3.46
+bounce-constant       46.54  45.50  31.65  28.54   +1.04
+bounce-oscillating    48.56  47.88  34.28  31.19   +0.68
+bounce-hardjerk       49.07  47.94  34.02  30.91   +1.13
+bounce-gravity        48.62  47.80  33.57  30.63   +0.82
+bounce-masses         46.87  45.63  31.59  28.54   +1.24
+breathe               51.33  50.50  36.70  33.37   +0.83
+breathe-spin          51.32  50.15  36.63  33.04   +1.17
+spin-constant         50.83  49.62  46.26  34.39   +1.21
+spin-accelerating     60.46  55.52  57.29  49.12   +4.94
+spin-pendulum         56.15  53.25  54.81  43.42   +2.90
+roll-12               41.08  40.55  28.66  25.85   +0.53
+roll-12-fast          33.47  33.35  26.01  23.49   +0.12
+roll-wagon            22.76  22.76  22.08  20.85   +0.00
+
+== quintdirectional-interpolation-propagated
+scene                  metal placebo  linear    hold   metal-placebo
+static                66.17  62.92  62.94  99.00   +3.25
+bounce-constant       46.55  46.28  31.65  28.54   +0.27
+bounce-oscillating    48.56  48.13  34.28  31.19   +0.43
+bounce-hardjerk       49.07  48.57  34.02  30.91   +0.50
+bounce-gravity        48.62  48.27  33.57  30.63   +0.35
+bounce-masses         46.88  46.51  31.59  28.54   +0.37
+breathe               51.33  50.79  36.70  33.37   +0.54
+breathe-spin          51.32  50.70  36.63  33.04   +0.62
+spin-constant         50.82  49.75  46.26  34.39   +1.07
+spin-accelerating     60.47  55.42  57.29  49.12   +5.05
+spin-pendulum         56.15  53.37  54.81  43.42   +2.78
+roll-12               41.08  40.92  28.66  25.85   +0.16
+roll-12-fast          33.48  33.38  26.01  23.49   +0.10
+roll-wagon            22.76  22.76  22.08  20.85   +0.00
+
+summary (mean of the reading capped at 40 dB over 14 scenes; beats = scenes where placebo > linear)
+stem                                         placebo   metal  beats     gap
+bidirectional-interpolation-animation         38.19      -  11/14 -
+bidirectional-interpolation-diffuse-coarse    35.65      -  10/14 -
+bidirectional-interpolation-diffuse-dual      36.11      -  10/14 -
+bidirectional-interpolation-propagated        38.26  38.28  11/14 +1.30
+bidirectional-interpolation-seeded            38.05      -  12/14 -
+bidirectional-interpolation-variational-4k    38.70  38.71  12/14 +0.79
+bidirectional-interpolation-variational-propagated-4k  38.62  38.72  10/14 +1.12
+bidirectional-interpolation-variational-propagated  38.34  38.33  11/14 +1.01
+bidirectional-interpolation-variational       38.63  38.67  12/14 +0.77
+bidirectional-interpolation                   37.78  37.78  11/14 +0.88
+human-reading-quad                            26.10      -   0/14 -
+motion-edges-dual                             29.67      -   1/14 -
+nframe-smoketest                              13.14      -   0/14 -
+quaddirectional-interpolation-animation       38.26      -  11/14 -
+quaddirectional-interpolation-propagated      38.29  38.30  11/14 +1.43
+quaddirectional-interpolation-seeded          38.05      -  11/14 -
+quaddirectional-interpolation                 37.77  37.79  11/14 +1.00
+quintdirectional-interpolation-propagated     38.30  38.30  11/14 +1.11
+sextdirectional-interpolation-propagated      38.27  38.28  11/14 +1.34
+tridirectional-interpolation-animation        38.11      -  11/14 -
+tridirectional-interpolation-propagated       38.21  38.29  11/14 +1.82
+tridirectional-interpolation-seeded           37.95      -  11/14 -
+tridirectional-interpolation                  37.74      -  11/14 -
+linear                                        33.94   (hold  31.49)
+```
+
+What it says, scene by scene rather than by the index, which the 40 dB cap flattens:
+
+* **Every interpolation build beats linear on ten to twelve of the fourteen scenes**, by 10-15 dB on the bounces
+  and the breathing disc -- full-frame movers on a black ground, every edge an occlusion -- and by about 4 dB on
+  the constant spin. The exceptions are the same on every build: the accelerating spin and the pendulum, where
+  linear is within a decibel or ahead on libplacebo (the record already knew this from the manifold cube:
+  rotation from rest is where a block match has least to add), and the wagon wheel, where every method reads
+  22 dB -- the source rate aliased the rim to a standstill before any interpolator saw it, and the 60 fps
+  truth has the spokes where nothing downstream can put them. The fast wheel, its rim beyond the search's
+  reach, sits at 33 dB for everyone, 7 dB over linear.
+* **The hosts agree within about a decibel on translation and scaling** (bounces 0.3-1.2, breathe 0.5-1.2) and
+  disagree by 3-5 dB on the rotation scenes, Metal ahead, on every build; the static scene shows the same
+  order (66 against 62.5-62.9). The control (`hostgap.sh`, 2026-09-12) settles what it is: fed the same
+  8-bit-exact source libplacebo sees (every 16-bit sample rounded to a multiple of 257, no yuv step), Metal
+  drops toward libplacebo on every scene -- static 66.2 to 58.8 against 57.4, the accelerating spin 60.5 to
+  58.2 against 55.2, the pendulum 56.2 to 55.2 against 53.1, the constant bounce 46.5 to 46.5 against 45.5.
+  So the gap is the source's eight bits for its larger part and libplacebo's own fp16 mixing for the rest,
+  one to three decibels, and none of it the shader; and libplacebo fed the 16-bit source directly reads
+  lower still (54.4, 53.0, 51.7), which is the dither trap the chain's format=yuv420p exists to avoid. The
+  table's placebo column is therefore the ffmpeg pipeline's honest number, not the shader's ceiling.
+* **The instrument caught itself.** Eight libplacebo readings taken while another job shared the GPU were
+  wrong -- the recommended build read 41.25 on the oscillating bounce, sixty-one frames at 21-28 dB, below
+  hold, and no hook skip logged; rerun alone it read 49.29 against Metal's 49.68, twice. Every placebo reading
+  more than 1.5 dB behind its Metal twin was rerun on a quiet GPU; the eight that moved by over a decibel were
+  replaced and both readings kept (reruns.tsv). The rotation gap stood on rerun. Rule: one GPU job at a time
+  during a batch, and rerun any reading that trails its twin before quoting it.
+* **The textured ground, three builds, run alone on the GPU** (the showing: the dim field under the mover, so
+  every reading is higher than on black -- less edge contrast -- while the static floors are lower, 63.6 and
+  60.0). The quad block, with the same columns:
+
+```
+== quaddirectional-interpolation-propagated (textured ground)
+scene                  metal placebo  linear    hold   metal-placebo
+static                63.62  60.00  60.01  99.00   +3.62
+bounce-constant       49.46  48.43  37.32  32.74   +1.03
+bounce-oscillating    52.78  51.25  40.30  35.72   +1.53
+bounce-hardjerk       52.75  51.18  40.00  35.38   +1.57
+bounce-gravity        52.89  51.13  39.68  35.27   +1.76
+bounce-masses         49.98  48.80  37.33  32.86   +1.18
+breathe               55.43  53.44  42.23  37.86   +1.99
+breathe-spin          55.50  53.49  42.16  37.24   +2.01
+spin-constant         54.22  51.73  46.16  34.39   +2.49
+spin-accelerating     60.71  55.04  56.24  49.12   +5.67
+spin-pendulum         58.07  54.09  54.11  43.42   +3.98
+roll-12               40.75  40.13  28.45  25.63   +0.62
+roll-12-fast          33.09  32.92  25.85  23.36   +0.17
+roll-wagon            22.72  22.72  22.01  20.76   +0.00
+```
+
+  The Metal column reproduces the 2026-09-11 scene check to the hundredth (that night's exports came from the
+  demo engine, tonight's from `masters.py`: the same bytes, the same scores -- the chain confirmed end to end),
+  and the host gap keeps its shape on a quiet GPU: under two decibels on the bounces and the breathing disc,
+  four to six on the rotation scenes, growing with the level of the reading.
+* **The recommendation, re-examined (2026-09-12).** Scene by scene the tier says where the recommended build's
+  variational cascade earns its cost and where it does not: it leads the plain propagated build by 1.2-2.5 dB on
+  every bounce, by 1.4 on the breathing disc and by 2.2 on the rolling wheel, and trails it by 3.3-5.6 dB on the
+  constant spin, rotation from rest and the pendulum, on both hosts; the plain propagated build costs 1.75x linear
+  against the recommended's 2.11x. On the real 4K film (decimate-and-reconstruct, the record's five segments, both
+  builds scaled for 4K, this machine's libplacebo) the two are equivalent -- 34.40 / 0.9619 against 34.49 / 0.9616,
+  the recommended ahead on four segments by a few tenths and behind on one by 1.4 dB -- with hold and linear
+  reproducing the RX 6600's numbers to the hundredth. So the recommendation stands, and the propagated build is
+  the cheaper alternative for rotation-heavy material. One host fact from the same run: the recommended 4K build
+  reads 1.2 dB lower on this machine than on the RX 6600 (34.40 against 35.62), on two of the five segments
+  mostly, while hold and linear do not move: the same GLSL through MoltenVK and native Vulkan differ on real
+  footage by more than the ladder's 0.1-0.8 dB.
+* **Rotation and linear, read by speed.** Binned by the rim's speed at each output instant, the quad on Metal
+  beats linear on rotation from rest at every speed (+6.6 dB below 2 px per frame, +3.1 at 2-5, +0.2 at 5-10) and
+  on the pendulum at every speed but 5-10 px, where it trails by 0.4; the libplacebo column's losses to linear on
+  those scenes are that path's own loss, which the host-gap control shows growing with the level like a noise
+  floor near 60 dB (the fit is rough: the static scene sits 1.3 dB off it). The field's 8 degrees at the
+  pendulum's turns is the reading's own limit, not the picture's.
+* **Not in this batch:** the reading tail's jerk change, which regenerates shaders this batch was reading.
+
+The ladder stays what it is: the regression gate every shader passes before it ships. This tier is where the
+record's claims about full-frame motion, reversals, rotation and aliasing get their numbers, on both hosts, from
+a truth anyone can regenerate.
+
 ## What this found
 
 Running the ladder produced results that corrected a previously-held

@@ -2888,6 +2888,12 @@ vec4 hook() {
 // frame; 1.0 = no memory (frame-by-frame reading: fast oscillators average
 // toward zero under any memory).
 const float READ_EMA_ALPHA = 0.12;
+// JERK reads with NO memory. A jerk is an impulse, and the memory took a
+// 2.8 px/frame^3 step down to a 0.3 pooled peak against a 0.1 floor, so the
+// painting could not modulate (measured on the demo's bounce-hardjerk,
+// 2026-09-11; prototyped in the demo's present pass first, confirmed by eye
+// on the quint -- "reading hot" -- and brought back here, 2026-09-12).
+const float READ_EMA_ALPHA_JERK = 1.0;
 const int   READ_POOL_R    = 6;
 // READ_MEMORY 1: the per-cell mode (the pass above) pooled over MODE_POOL_R cells, each weighted by its
 // support, and no exponential mean (the mode is the memory). Measured on the noisy torus loop
@@ -2913,7 +2919,8 @@ vec4 hook() {
             fpx += READ_FIELD_tex(READ_FIELD_pos + vec2(float(i), float(j)) * READ_FIELD_pt).xy;
     fpx /= float((2 * READ_POOL_R + 1) * (2 * READ_POOL_R + 1));
     vec2 prev = imageLoad(READ_ACC, coord).xy;
-    vec2 acc = mix(prev, fpx, READ_EMA_ALPHA);
+    float alpha = (read_view == 3 || read_view == 6) ? READ_EMA_ALPHA_JERK : READ_EMA_ALPHA;
+    vec2 acc = mix(prev, fpx, alpha);
     imageStore(READ_ACC, coord, vec4(acc, 0.0, 1.0));
     return vec4(acc, 0.0, 1.0);
 }
@@ -2978,6 +2985,7 @@ const float READ_AUTO_ATTACK    = 0.3;
 const float READ_AUTO_DECAY     = 0.99;
 const float READ_AUTO_FLOOR_VEL = 2.0;     // = READ_VEL_HI
 const float READ_AUTO_FLOOR_ACC = 0.22;    // = READ_ACC_HI
+const float READ_AUTO_FLOOR_JERK = 0.9;    // = READ_JERK_HI
 
 vec4 hook() {
     ivec2 n = ivec2(READ_MAX1_size);
@@ -2986,7 +2994,7 @@ vec4 hook() {
         for (int i = 0; i < n.x; i++)
             m = max(m, READ_MAX1_tex((vec2(i, j) + 0.5) * READ_MAX1_pt).x);
     bool vel = (read_view == 1 || read_view == 4 || read_view >= 7);
-    float fl = vel ? READ_AUTO_FLOOR_VEL : READ_AUTO_FLOOR_ACC;
+    float fl = vel ? READ_AUTO_FLOOR_VEL : (read_view == 3 ? READ_AUTO_FLOOR_JERK : READ_AUTO_FLOOR_ACC);
     float prev = imageLoad(READ_SCALE, ivec2(0)).x;
     float s = (m > prev) ? mix(prev, m, READ_AUTO_ATTACK) : max(m, prev * READ_AUTO_DECAY);
     s = max(s, fl);
@@ -3014,6 +3022,10 @@ vec4 hook() {
 // jerk gates admit some speckle in foliage (doubling them clears most).
 const float READ_VEL_LO  = 1.0,  READ_VEL_HI  = 2.0,  READ_VEL_SAT  = 3.0;
 const float READ_ACC_LO  = 0.12, READ_ACC_HI  = 0.22, READ_ACC_SAT  = 0.30;
+// Jerk, read without memory, has its own gates: its pooled floor is 0.32 px/frame^3
+// (p95 on the hard-jerk bounce) and an impulse reads 1.8-2.1, so the gates sit at
+// 1.5x, 3x and 4.5x the floor (measured 2026-09-11, the demo's prototype).
+const float READ_JERK_LO = 0.5,  READ_JERK_HI = 0.9,  READ_JERK_SAT = 1.4;
 // READ_GATE 1: visibility needs the UNPOOLED field to move within READ_GATE_R
 // texels of 1/8 res (2 = 16 px, the tracker's own reach), so the pool cannot
 // paint further than the tracker itself moved. Measured on a 100 px square:
@@ -3046,9 +3058,10 @@ vec4 hook() {
         vec2 f = READ_FIELD_tex(FRAME_MIX_pos).xy;
         return vec4(0.5 + f * (0.5 / fs), 0.5, 1.0);
     }
-    float lo  = vel ? READ_VEL_LO  : READ_ACC_LO;
-    float hi  = vel ? READ_VEL_HI  : READ_ACC_HI;
-    float sat_full = vel ? READ_VEL_SAT : READ_ACC_SAT;
+    bool jerk = (read_view == 3);
+    float lo  = vel ? READ_VEL_LO  : (jerk ? READ_JERK_LO  : READ_ACC_LO);
+    float hi  = vel ? READ_VEL_HI  : (jerk ? READ_JERK_HI  : READ_ACC_HI);
+    float sat_full = vel ? READ_VEL_SAT : (jerk ? READ_JERK_SAT : READ_ACC_SAT);
     vec2 uv = FRAME_MIX_pos;
     // 4-tap soften: the pooled field keeps a faint per-texel checker that would dither the gate
     vec2 fpx = vec2(0.0);

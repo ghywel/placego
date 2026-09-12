@@ -1,7 +1,7 @@
 """Deterministic weird geometry with ANALYTIC per-pixel motion, for the field shaders.
 
     manifolds.py <scene> <outdir> [frames] [fps]
-        scene: torus | mobius | tesseract | hopf | mobius_bl | zoom | aperture | cube | cubet
+        scene: torus | mobius | tesseract | hopf | mobius_bl | zoom | aperture | cube | cubet | mobius_flow
 
 READ THE FIELD EXACTLY. A machine-mode frame must come out of ffmpeg with `format=rgb48le` INSIDE the
 filter graph (or as rawvideo); `-pix_fmt rgb48le` on the output passes through an 8-bit limited-range
@@ -35,6 +35,12 @@ mobius    the half-twist band (R=170, half-width 55) rotating about the vertical
 tesseract the 16-vertex hypercube rotating in the xw plane at 0.5 rad/s and the yz plane at 0.35 rad/s,
           projected 4D->3D by perspective (w) and 3D->2D orthographically, drawn as 10 px tubes: thin
           structures crossing each other, with the aperture problem everywhere.
+mobius_flow  the band held STILL (R=220, half-width 70, seen open: 45 deg tilt, 20 deg turn), its texture
+          walking along the one surface at 2pi/5 rad/s (11.5 px per frame on the centreline, 15 at the
+          edge): a material point that passes the seam comes back on the other edge,
+          so one trip round returns the picture to itself and the clip loops seamlessly at 120 frames.
+          The texture is L-periodic along and even across -- the identification a half-twist demands.
+          The silhouette never moves: every field on it is the texture's alone (2026-09-11).
 hopf      fibres of the Hopf fibration of S^3, stereographically projected to R^3 and drawn as tubes; the
           3-sphere rotates by the Hopf action (equal angles in the xy and zw planes, 0.7 rad/s), under
           which every fibre slides along ITSELF: the flow is tangent to every tube. Fibres that pass near
@@ -185,6 +191,35 @@ def texture_bl(sa, sb):
                          + np.sin(0.103 * sa + 0.081 * sb) + np.sin(0.076 * sa - 0.059 * sb))
 
 
+def texture_even(sa, sb, L):
+    """A texture consistent on a one-sided surface: L-periodic along and even across, so that
+    T(sa + L, sb) = T(sa, -sb), which is what the half-twist identifies. The M1 periods rounded to divide L
+    (41.9, 22.1 and 12.0 px at L = 2 pi 220), each crossed with an even cosine across the band; a product
+    of sines is the mirror pair of two oblique sines, so nothing here is above M1's band."""
+    k = [2 * np.pi * n / L for n in (round(L / 42), round(L / 22), round(L / 12))]
+    return 0.5 + 0.16 * (np.sin(k[0] * sa) * np.cos(0.09 * sb) + np.sin(k[1] * sa + 1.3) * np.cos(0.21 * sb)
+                         + np.sin(k[2] * sa + 0.4) * np.cos(0.44 * sb))
+
+
+def mobius_flow_scene():
+    """The band still, its texture walking the surface (the owner, 2026-09-11: "It would look cool if the
+    texture translated along the surface without rotating it spatially"). The point set is the MATERIAL:
+    each sample keeps its luma and slides in u at a constant rate, and P(u + 2 pi, v) = P(u, -v) carries it
+    round the seam on to the other edge without a step. The truth is each material point's surface chord."""
+    R, w = 220.0, 70.0                             # bigger than the tumbling band: it has the frame to itself
+    L = 2 * np.pi * R
+    u = np.linspace(0, 2 * np.pi, 3400, endpoint=False); v = np.linspace(-w, w, 330)
+    U, V = np.meshgrid(u, v, indexing="ij"); U = U.ravel(); V = V.ravel()
+    lum = texture_even(R * U, V, L)
+    pose = rot3([0, 1, 0], math.radians(20)) @ rot3([1, 0, 0], math.radians(45))
+    omega = 2 * np.pi / 5.0                          # one trip round in 5 s: 120 frames at 24 fps, a closed loop
+    def at(t):
+        Ut = U + omega * t
+        P = np.stack([(R + V * np.cos(Ut / 2)) * np.cos(Ut), (R + V * np.cos(Ut / 2)) * np.sin(Ut), V * np.sin(Ut / 2)], -1)
+        return P @ pose.T, lum
+    return at
+
+
 def mobius_bl_scene():
     """The band with the band-limited texture: the time-asymmetry test without a component the coarse
     levels alias (NFRAME-LIMITS.md section 9, 'The pipeline is not time-symmetric')."""
@@ -275,7 +310,7 @@ def aperture_scene():
 
 SCENES = {"torus": torus_scene, "mobius": mobius_scene, "tesseract": tesseract_scene, "hopf": hopf_scene,
           "mobius_bl": mobius_bl_scene, "zoom": zoom_scene, "aperture": aperture_scene,
-          "cube": cube_scene, "cubet": cubet_scene}
+          "cube": cube_scene, "cubet": cubet_scene, "mobius_flow": mobius_flow_scene}
 at = SCENES[scene]()
 
 frames = []
