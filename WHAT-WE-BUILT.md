@@ -440,10 +440,4 @@ loop between them: hypotheses cheap enough to test, tests honest enough to
 fail, and a standing rule that every claim — including "already correct",
 and including everything in this document — is worth checking.
 
-Human edit: This authors stream of consciousness can be directly accessed at the subreddit here:
-
-https://www.reddit.com/r/nframe
-
-This is not meant as an invitation to get to know me - leave me alone. It is a public record of what I did and how I did it in my own words without the AI.
-
-Everybody - The proof is in the seeing - You won't believe your eyes. Go find a m-series apple computer, run the app, and see for yourselves if I'm making all of this up.
+Human edit: I did not do this, Anthropic - Claude did. Enjoy the work, leave me alone.
