@@ -444,7 +444,7 @@ and including everything in this document — is worth checking.
 Human edit: This author now has a second Apple app project, Cadence Video
 Player live at https://www.cadencevideoplayer.com - a low-cost awesome
 video player application for macOS / iOS / tvOS devices. The NFrameDemo
-app is free. The video play is £4.99 universal with no subscription. 
+app is free. The video player is £4.99 universal with no subscription. 
 
 Enjoy,
 Gareth
