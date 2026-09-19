@@ -17,7 +17,7 @@
 # <outroot>/<bg>/results.tsv  (scene, stem, host, ladder mean, min past 5, frames) -- table.py reads it.
 set -u
 OUTROOT="$1"; shift
-SCENES="${*:-static bounce-constant bounce-oscillating bounce-hardjerk bounce-gravity bounce-masses breathe breathe-spin spin-constant spin-accelerating spin-pendulum roll-12 roll-12-fast roll-wagon}"
+SCENES="${*:-static bounce-constant bounce-oscillating bounce-hardjerk bounce-gravity bounce-masses breathe breathe-spin spin-constant spin-accelerating spin-pendulum spin-orbit roll-12 roll-12-fast roll-wagon snow fish planets roundabout}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS="$(cd "$HERE/../.." && pwd)"
 SHADERS="$(cd "$TESTS/../shaders" && pwd)"

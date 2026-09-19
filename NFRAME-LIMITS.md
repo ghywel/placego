@@ -3414,3 +3414,282 @@ the period-40 case precisely because it is a trap: today's non-affine failure is
 that the zero seed was built against, met on content the seed can rescue for rigid motion and cannot for a
 strain. Real footage carries structure at every scale and the coarse level locks to its coarsest, so the
 one-pixel-in-five figure belongs to single-frequency content near 40 px, not to jelly.
+
+### Content drawn on twos: the family collapses to a hold, and the cadence is the prize (2026-09-19)
+
+**The question.** The owner, returning to the shaders after the player shipped: *"We have shelved the animation
+interpolation project as being too difficult, however my gut says it must be possible because I know apps like
+SVP can do it. So it must be possible and we must be missing something - or our shaders are alien to their
+closed-source methodology. The key question is how are other player apps able to generate varied interpolated
+content including cartoon/anime whereas ours struggles."* And the method he set: sample varied content, find
+sequences with detectable error that are not cuts, and *"when trying to fix a fault reductively crystallise it
+in to a synthetic test and solve on the deterministic synthetic data before working on the real source."*
+
+**What the record already knew** (`shaders/animation/ANIMATION.md`): the redrawn feature has no correspondence,
+and that limit is not crossed here. What it had not measured is the other thing anime does: it is drawn at
+twelve (or eight) drawings a second and delivered at twenty-four, every drawing held for two or three frames.
+`screen.sh` has always screened such segments OUT of the decimate-and-reconstruct bench, because a deleted
+duplicate is reconstructed perfectly by hold and the bench cannot score it. The ladder can: its truth is the
+scene's motion, and the native 60 fps render of a continuous motion is the exact answer for ANY source of it.
+
+**The instrument: `tests/probes/twos/twos.sh`.** One scene, one 60 fps truth, three sources -- the scene at 24 fps
+(the ladder as it is), the scene at 12 fps with every frame doubled to 24 (what an on-twos file does to us),
+and the scene at 12 fps (the ceiling a perfect duplicate remover would hand the shader, 5x with doubled
+motion) -- through hold, linear, the recommendation and the quad-propagated. Then two more: the doubled source
+with ffmpeg's own duplicate dropper in front (`select` on its scene score; this build has no `mpdecimate`), on
+exact duplicates and on a real encoder's near-duplicates (an H.264 file of the doubled source). PSNR Y, the
+hook's passthrough instants excluded as `analyze.py` excludes them.
+
+    L1_trans_8px                    ones 24->60   twos (12x2)->60   dedup 12->60   dropper   lossy   lossy+dropper
+    hold                                 32.78            29.59          29.59       29.59   29.59          29.59
+    linear                               35.44            31.18          31.99       31.99   31.18          31.99
+    variational-propagated (rec.)        63.99            31.82          49.79       49.00   31.98          49.08
+    quad-propagated                      67.06            32.58          57.83       59.48   32.42          55.15
+
+    A5_accel_tex_a067
+    hold                                 36.57            31.42          31.42       31.42   31.00          30.99
+    linear                               42.71            33.92          36.10       36.10   33.54          35.81
+    variational-propagated (rec.)        53.24            34.61          46.10       46.10   34.19          45.42
+    quad-propagated                      52.82            35.29          50.10       50.16   35.08          46.92
+
+    (ones / twos / dedup only)      V2_stairs_sq24_v6        R3_rot_tex            O5_osc_textured
+    hold                            18.19 / 15.64 / 15.64    28.53 / 25.20 / 25.20  31.33 / 27.71 / 27.71
+    linear                          21.48 / 17.29 / 18.44    32.60 / 26.65 / 27.38  33.90 / 27.48 / 26.78
+    variational-propagated (rec.)   28.82 / 16.68 / 26.59    37.83 / 26.47 / 28.01  42.27 / 28.12 / 27.05
+    quad-propagated                 27.67 / 17.57 / 17.73    37.30 / 26.38 / 27.84  48.69 / 26.93 / 26.66
+
+    (a verifier's own runs, the same afternoon; rec. = variational-propagated)
+                                    ones 24->60   twos (12x2)->60   dedup 12->60   dropper
+    L2_trans_16px   rec. / linear     49.64 / 32.16   29.02 / 28.09     35.07 / 28.88   35.90
+    L3_trans_23px   rec. / linear     40.89 / 30.53   26.75 / 26.48     28.61 / 27.26   28.62
+    A6_accel_a133   rec. / linear     50.23 / 36.64   29.36 / 28.65     35.58 / 29.89   35.65
+
+**The finding.** On content drawn on twos every shader in the family collapses to within a decibel of a frame
+hold: the recommendation reads 63.99 dB on the 8 px translation delivered on ones and 31.82 on the same motion
+delivered on twos, against hold's 29.59 and linear's 31.18. The estimator is not at fault -- the same shader
+handed the twelve distinct frames reads 49.79, the quad 57.83 -- the SHADER IS INTERPOLATING BETWEEN TWO COPIES
+OF ONE DRAWING (a hold) AND THEN ACROSS THE DRAWING CHANGE IN THE NEXT PAIR, so the output judders at twelve
+holds and twelve moves a second however good the vectors. The prize of handling the cadence is 16.5 dB on the
+translation (the quad 25), 11.5 on textured acceleration (the quad 15), 9.9 on the period-24 stairs for the
+recommendation (the quad only 0.2: at the doubled 12 px/frame the quad locks onto the bars' alias, the
+period-collapse family; the recommendation is immune, as shipped). The prize falls with speed as the doubled
+motion passes the coarse search's reach (about 23 px/frame): 6.1 dB at 16 px/frame delivered on twos (32 at
+12 fps), 1.9 at 23 (46 at 12 fps), 6.2 on the fast textured acceleration. Where the doubled motion is beyond the
+family regardless -- the textured oscillation at twice its speed, the textured rotation -- there is nothing to
+win (O5: dedup no better than twos). A duplicate dropper in front of the interpolator, with no change to any
+shader, recovers essentially all of it: 49.00 against the 49.79 ceiling on exact duplicates, 49.08 on the
+encoder's near-duplicates (a threshold of 0.002 on the scene score separates the synthetic file's duplicates,
+0.000000-0.000004, from its moves, 0.0076).
+
+**What the other players do, from the research of the same day** (sources in `shaders/animation/ANI-PRIOR-ART.md`,
+"SVP and the cadence"): SVP's classical engine is a refactored MVTools2, the same hierarchical block matcher as
+this family; its anime recipe is policy, not estimation (no blending, a search coarsened until only global
+motion survives, retreat to original frames when the vectors are bad, SAD-masked overlay of originals), and
+for content on twos it decimates UNCONDITIONALLY before interpolating ("Remove every other frame", a
+`SelectEvery(2,0)`; its developer: "only for the simplest case", no cadence detection). Every offline anime
+tool removes duplicates before interpolating (Flowframes' de-duplication, DAIN-App's `mpdecimate` modes,
+Topaz's "Replace Duplicate Frames"). The television MEMC lineage detects the cadence from the pattern of frame
+differences or the motion estimator's own statistics and interpolates across the true frame period. Nobody
+solves the redraw inside the estimator; SVP's own developers say the anime artefacts can only be hidden.
+So the answer to the key question, for the part of it that is measurable here: the gap is a CADENCE STEP we
+lack, and behind it a fallback policy, not an estimation mechanism.
+
+**Two things the real source taught, the same afternoon, before anything else is built.**
+(1) On a real encode of real anime an absolute threshold is not the detector: in the on-twos stretches of the
+    episode to hand the held drawings score 0.0056 on the scene statistic after the encoder and the small
+    moves 0.0126, a ratio of two; and the pattern there is period THREE (a large change, a small one, a
+    near-zero one), drifting in phase across cuts. The detector must read the cadence pattern, as the pulldown
+    detectors do, and it must be bounded: a global dropper also drops every frame of a long static hold, and a
+    blink after two seconds of stillness would then be smeared across those two seconds. A four-frame window is
+    bounded by construction -- it can only re-time a duplicate run that ends inside it.
+(2) On the libplacebo route the dropper cannot be a filter in front: libplacebo's frame queue builds each
+    output's mix from the source frames within a radius of a RUNNING ESTIMATE of the source interval, and any
+    interval deviating from that estimate by more than thirty per cent resets it (`frame_queue.c`,
+    `update_estimate`, `max_delta = 0.3`). Regular spacing after the dropper (the probe's 12 fps) is fine;
+    the irregular spacing of real cadence starves the window and the queue falls back to the nearest frame --
+    a hold. A twenty-second render of the anime with a bounded dropper in front came out with MORE exact
+    duplicate output frames than the untouched render (35 per cent against 15). So, for the hook: the re-timing
+    goes INSIDE the window (the quad's window holds both copies and the next drawing; a hold pair warps slot 1
+    to slot 3 at half the phase, a move pair at the other half), which is the next build, and `twos.sh` is its
+    exact test. For the player, whose engine takes frames by index and computes the window's relative times
+    itself (`QuadEngine.render`, `rts`), the cadence stage is a duplicate detector in the frame feed with true
+    timestamps carried into `rts`, the same bound applied.
+
+**The funnel, `tests/probes/dig/dig.sh`**, built the same day for the other half of his method: `prospect.sh`
+finds estimator disagreement, which is not a visible fault; so each candidate is cut, decimated and
+reconstructed, and ranked by the shader's margin over linear. Its first three windows: the anime opening's
+credits over a dense cityscape pan -- 16 per cent of every frame a flow outlier, sustained for the whole shot
+-- reconstructs 3.7 dB AHEAD of linear (41.57 against 37.84, SSIM 0.9896 against 0.9804, the lowest edge
+error): a hard field, not a defect; the Pixar film's pointillist end credits -- linear ahead by 0.9 dB on
+PSNR, the shader ahead on SSIM (0.9597 against 0.9345) and at edges (4.08 against 4.84): stipple punishes
+any sub-pixel displacement and the blend of a near-static painting is nearly perfect, an instrument note, not
+a defect; two windows of the live-action film uniform to the metric. The material needs the NAS: the one anime
+episode to hand is a copy cut off at five and a half minutes.
+
+**The pool, the same midday (the NAS mounted; `tests/probes/twos/cadence.py`).** How much of real animation is on
+twos or threes, read from ffmpeg's frame-difference series with a RELATIVE rule (a frame is held when its score
+is below 0.08 of the local level of change, the 80th percentile over two seconds; static shots reported apart),
+four minutes from the middle of one episode per title:
+
+    title (24 fps unless said)          static   of moving intervals: ones / twos / threes / longer   frames in twos-threes runs
+    twelve anime titles                  14-87%   31-71% / 14-30% / 7-44% / 3-9%                    33-71% of moving frames
+       (typical: Death Note, Re Zero,    34-40%   57-63% / 22-23% / 10-13% / 5-7%                   43-44%
+        SAO, Violet Evergarden)
+    Western TV animation (Avatar,        3-39%    37-63% / 20-44% / 7-20% / 9-12%                    33-53%
+        Family Guy, Bluey)
+    a 30 fps NTSC cartoon (Futurama)     6%       30% / 38% / 21% / 12%                              56%   (the telecine's own pattern on top)
+    LIVE ACTION (Firefly), the control   0%       68% / 19% / 7% / 6%  at ratio 0.35;  91 / 8 / 1 / 0 at 0.08     16% at 0.08
+
+A live-action episode holds nothing, so what the rule reads on it is its false floor: 27 per cent of moving
+frames at a ratio of 0.15, 16 at 0.08, while two anime episodes read 50-53 and 44-45 -- the anime figure is
+stable where the control falls, so 0.08 is the tool's default and 16 per cent the floor to read every figure
+against. Read against it, roughly HALF of the moving frames of a typical anime episode, and a third to a half
+of a Western cartoon's, sit inside a twos or threes run: the population the cadence step acts on. The tool is
+the survey instrument, not the detector; the detector reads the pattern (periodicity), which is what takes it
+below the floor.
+
+**The funnel on the pool.** A live-action episode's most active minute (screened first) gave five candidates,
+all reconstructed AHEAD of linear by 1.6-3.2 dB; two were behind at edges. The first is a hand-held pan across a
+perforated lamp panel -- a periodic dot grid under camera motion, the period-collapse family in live action,
+which the ladder holds as its M and V series (edge error 42.0 against linear's 40.1, PSNR 23.4 against 21.6 on
+a scene that decimation puts beyond reach). The other straddles two cuts inside the clip's padding, and its
+deficit (SSIM 0.9668 against 0.9741) is the cut frames, where the shader's cut gate holds and a blend half
+matches: a bench artefact, not a fault -- the funnel should score away from cuts, which it does not yet. An
+anime episode's middle minute was uniform to the prospector. The picture that emerges from three films and two
+shows is the record's own: on film and live television the family is mature, and the mechanisms that show are
+the ones the ladder already names; the material where it is not mature is animation, and there the largest
+term is the cadence.
+
+### The cadence branch: the prize taken inside the window, and the two things it cannot know (2026-09-19, afternoon)
+
+The morning's finding was that content drawn on twos collapses every shader to a hold and that a duplicate
+dropper in front recovers 16-25 dB; the afternoon put the step where the libplacebo route can have it, inside
+the quad's window, and then into the player's engine ahead of any shader. The two are one idea measured twice.
+
+**The branch.** `tests/gen_quaddirectional.py` with `CADENCE=1` in the environment emits
+`shaders/quaddirectional-interpolation-propagated-cadence.glsl`: the quad with one branch in its final pass
+(the shipped quad regenerates byte-identical without the variable). Interior windows only. Case A: the
+straddling pair (slots 1, 2) is a held copy and slot 3 is the new drawing -- the output belongs to the span
+from the first copy in the window (slot 0 if it too is a copy, else slot 1) to slot 3, and is warped plainly
+between slot 2 and slot 3 with that pair's flow. Case B: the straddling pair is the change and slot 0 was a
+copy of slot 1 -- the span began a slot earlier. Plain warps (a = j = 0), because the cubic assumes uniform
+sampling of a continuous motion, which held copies break; never across a cut. The held-copy test is a new
+statistic without a new bind: the three pair statistics the quad already carries (mean |A - B| over a sparse
+24 x 24 grid of the coarse level, the cut gate's number) gain a second channel, the LARGEST |A - B| over every
+texel of the coarse level (one bilinear tap per 16 x 16 cell), and a pair is a copy when that is under 0.02.
+
+The first cut was refuted the same hour and is worth a sentence. It tested the mean statistic with a relative
+rule (a pair is a copy when its mean is under 0.15 of the window's largest, and under 0.02): on the plain
+8-px translation ON ONES it cost 14 dB (54.97 against 68.74), because the mean of a sparse grid fluctuates
+pair to pair on a small moving object (0.0000, 0.0035, 0.0069 for the same motion, `tests/probes/twos/dupstat.py`)
+and a ratio between fluctuations reads as a copy. The maximum over the whole level does not fluctuate (0.5 and
+1.0 for the same pairs), and it survives the encoder: on the lossy file of the probe held pairs read 0.000-0.002
+and moves 1.0.
+
+**The gate, `tests/probes/twos/twos.sh`, twelve cases** (the quad, then the quad with the branch; PSNR Y against
+the native 60 fps render; the threes source and the edge series added to the probe today):
+
+    case                  ones            twos            threes          dedup           mpd (dropper)   lossy
+    L1_trans_8px        67.29 -> 64.98*  32.77 -> 59.77  30.76 -> 36.99  57.62 -> 57.63  57.63 -> 57.61  32.49 -> 58.78
+    L2_trans_16px       58.42 -> 61.35*  29.18 -> 35.43  26.90 -> 28.94  35.11 -> 35.46  35.46 -> 35.46  29.06 -> 35.15
+    L3_trans_23px       43.21 -> 43.26   26.62 -> 28.56  25.42 -> 27.15  28.30 -> 28.30  28.30 -> 28.30  26.63 -> 28.69
+    L9_occlusion        42.58 -> 42.65   28.97 -> 36.98  27.11 -> 30.01  35.93 -> 36.90* 36.87 -> 36.84  28.99 -> 37.17
+    A5_accel_tex_a067   53.82 -> 53.66   35.23 -> 45.09  32.63 -> 38.12  50.10 -> 50.13  50.10 -> 50.10  35.08 -> 41.72
+    V2_stairs_sq24_v6   27.70 -> 27.70   17.62 -> 22.15  16.20 -> 16.89  17.19 -> 17.73  17.73 -> 17.73  17.48 -> 20.59
+    O5_osc_textured     48.72 -> 48.72   26.91 -> 26.75  25.29 -> 26.02  26.75 -> 26.75  26.67 -> 26.67  26.92 -> 27.11
+    R3_rot_tex          37.28 -> 37.27   26.38 -> 27.21  26.17 -> 27.24  27.82 -> 27.81  27.81 -> 27.83  26.39 -> 26.94
+    E1_edge_on_texture  25.52 -> 25.39   19.31 -> 20.46  19.52 -> 19.77  20.80 -> 20.80  20.80 -> 20.81  19.32 -> 20.45
+    E2_cartoon_edge     38.83 -> 38.53   30.39 -> 34.95  30.64 -> 31.40  34.93 -> 34.37* 34.94 -> 34.94  30.40 -> 34.79
+    E4_thin_lines       31.01 -> 31.03   26.74 -> 27.10  26.81 -> 26.86  27.22 -> 27.22  27.22 -> 27.22  26.76 -> 27.02
+    O8_osc_fast_tiny    50.54 -> 43.86   39.73 -> 41.98  34.85 -> 34.84  41.95 -> 41.95  36.42 -> 36.42  39.58 -> 42.09
+    (* the Mac ladder's own noise, below)
+
+Read across: the twos column reaches the dropper row wherever the doubled motion is in reach (L1 59.8 against
+the row's 57.6 -- above it, because the plain warp between two distinct frames beats the cubic's guess on a
+12 fps source; L9 37.0 against 36.9; E2 34.95 against 34.94; L2 35.4 against 35.5), is short of it on the
+accelerating object (A5 45.1 against 50.1: the branch warps plainly and the cubic's acceleration is not to be
+had across a copy), is nil where the doubled motion is out of reach (O5, R3, E4, within 0.4 dB either way),
+and the lossy column tracks the twos column everywhere, which is the statistic surviving a real encoder. The
+threes column gains 0.7 to 6 dB, not the prize: the window's bound (case B sees the run's last two copies and
+starts its span a slot late). The dedup and dropper rows do not move (no false fire under doubled motion), and
+the ones column does not move beyond the ladder's noise -- except O8, which is the second thing below.
+
+**The Mac ladder is not deterministic, and the propagation is where.** The ones control moved 2.3 dB under the
+branch on L1, and the offline statistic said the branch never fires there (every pair 0.5-1.0 against 0.02). Three
+runs of the PLAIN quad on the same source: 68.39, 68.67, 69.84 -- and frame by frame the difference is pairs of
+consecutive output frames, the first two after a passthrough, falling from 64-78 dB to 45-49, at different
+windows each run (frames 12-13 and 19; 17-18; none). The non-propagated quad and the plain variational are
+deterministic to 0.02 dB and show the same pairs at 45-49 on EVERY window: the propagated family lifts them
+and, at random windows, does not. So the noise is the propagation's -- the storage-cached flow read stale or
+unwritten for that window, on the MoltenVK route -- and the Metal engine, which drives the same graphs with
+its own command buffers, is deterministic to the hundredth (66.00 and 66.00; 68.71 and 68.71). Two consequences.
+A control on the Mac ladder is read frame by frame or as the best of three runs, never as one run's mean to the
+hundredth (best of three: quad 69.84, quad with the branch 69.81 on L1's ones). And the mechanism is an open
+item on the Vulkan side, for a day with time: the "hook skipped" count is the same in every run, so it is not
+the window; it is in the cache.
+
+**The turning point sampled twice.** O8's ones column falls from 50.5 to 43.9, and that is not noise: the scene
+is a sinusoid with six samples a period, and sin 60 = sin 120, so every third pair of its frames is an EXACT copy
+by construction (8 of 23, `dupstat.py`: max 0.0000). Two identical frames are either a drawing held or a motion
+that came back to the same place, and no statistic on the pair can tell them apart; nor can a pattern detector,
+since O8's copies are periodic. The cost is bounded by the motion inside the re-timed span (here 1.4 px at the
+peak instead of 0.5), and the coincidence is constructed: in the pool's live action exact copies occur only at
+clip ends, and the nearest real thing -- the duplicate a 25-to-24 or 30-to-24 conversion leaves once a second
+-- is a held frame, where the re-timing is right. Recorded as the branch's known cost, not fixed.
+
+**The statistic on real encodes** (`dupstat.py`, the pool's clips; the value is the largest coarse-level
+difference of each pair, the verdict at 0.02):
+
+    anime, on twos (Fruits Basket)    the pattern H.H.H.H. through the second half; held 0.005-0.008, moves 0.03-0.3
+    anime, on threes (Attack on Titan)   HH.HH.HH. and long holds; held 0.003-0.011, moves 0.81-0.87
+    two anime clips on ones              no pair under 0.03 (a pan, a fight)
+    six live-action clips                0.03-0.9; exact copies only at the clips' last frames; one clean static
+                                         shot (a digital film, no grain) at 0.016-0.019 -- read as copies, harmless,
+                                         since nothing moves across the span either way
+
+The separation on animation is a factor of three to a hundred; the one place 0.02 is a near thing is a static
+shot, where a wrong verdict changes nothing.
+
+**The engine's stage.** The player's engine takes frames by index and computes the window's relative times
+itself, so the cadence step there is not a branch in a shader but a stage in the frame feed: a frame that is a
+copy of the one before it (the same statistic, one small kernel per new source frame, the maximum reduced on the
+CPU), in a run of at most two copies, is left out of the window, and the window is chosen among the frames
+that remain with their true times in rts -- the two-frame family then warps across the real span, and the
+quad's window is four distinct drawings. Runs longer than two are holds and stay (the blink after two seconds
+of stillness). Built into the private NFrameDemo tree's engine and the player's copy the same afternoon, with
+the demo's `--cadence` flag and a checkbox, and the player's Settings toggle, on by default. Its exact test is
+the probe's chain run through the engine (the private tree's `prep/cadence-check.sh`; ones, twos, threes
+through the recommendation and the quad, stage off and on):
+
+    case                  recommendation, stage off -> on          quad, stage off -> on                   ones (either, unchanged)
+                          twos            threes                   twos            threes
+    L1_trans_8px          31.79 -> 50.32  30.15 -> 41.28           32.83 -> 59.35  30.80 -> 43.31          66.00 / 68.71
+    L2_trans_16px         29.21 -> 35.81  27.11 -> 29.40           29.27 -> 35.87  26.96 -> 29.46          51.16 / 61.48
+    L3_trans_23px         26.81 -> 28.72  25.50 -> 27.59           26.69 -> 28.83  25.43 -> 27.60          41.88 / 44.04
+    L9_occlusion          28.79 -> 37.57  27.41 -> 31.16           29.16 -> 37.45  27.12 -> 31.12          44.53 / 43.07
+    A5_accel_tex_a067     34.59 -> 46.15  31.57 -> 40.67           35.30 -> 50.69  32.56 -> 47.99          53.72 / 54.44
+    V2_stairs_sq24_v6     16.65 -> 26.37  16.07 -> 17.93           17.39 -> 17.57  16.17 -> 17.54          27.39 / 26.69
+    O5_osc_textured       28.20 -> 26.85  25.47 -> 26.14           26.82 -> 26.56  25.28 -> 26.22          42.41 / 49.00
+    R3_rot_tex            26.39 -> 28.06  26.14 -> 27.66           26.30 -> 27.70  26.11 -> 27.47          37.87 / 37.26
+    E2_cartoon_edge       31.12 -> 34.05  30.71 -> 31.16           30.33 -> 34.89  30.63 -> 31.39          39.19 / 38.69
+    O8_osc_fast_tiny      39.59 -> 43.13  34.87 -> 34.87           39.94 -> 42.71  34.87 -> 34.87          48.85 -> 43.70 / 50.18 -> 48.14
+
+The ones column is unchanged to the hundredth on every case but the turning-point scene (no frame of a ones
+source is a copy; O8's are, by construction, and the stage pays the same bounded cost the branch does), the
+twos column lands on the Vulkan probe's dropper row or above it (L1: the recommendation 50.3 against the row's
+49.0, the quad 59.4 against 57.6; A5: 46.2 and 50.7 against 46.1 and 50.1 -- the acceleration the branch
+could not have, the stage gives the quad, because its window is four distinct drawings), nil on O5 (the
+doubled motion out of reach either way; the recommendation loses 1.3 dB there, the one case the stage costs
+anything on a twos source), and threes gain the whole prize where the branch got the window's share (L1 41.3
+and 43.3 against the branch's 37.0; A5's quad 48.0 against 38.1), because the stage drops both copies of a
+threes run. On the on-twos anime clip the stage left out 26 of
+132 frames: exactly the pairs the offline statistic reads as copies, which is the count that says the kernel
+and the instrument agree. Throughput unchanged within the run-to-run noise (37-45 fps at 1080p either way).
+
+**What this settles.** The question of the morning -- what the players that interpolate anime do that we do
+not -- has its answer measured: the cadence step, worth 16-27 dB on the ladder's on-twos sources and nil on
+ones, available on the libplacebo route inside the quad's window (`-cadence`) and on the player's route ahead
+of every shader. What it does not settle: the redrawn feature (unchanged, correspondence-free), the branch's
+short measure on accelerating motion (a cubic across the re-timed span would need the flows of the distinct
+frames, which the engine's stage gives the quad and the branch cannot), and the look of it on real anime by eye,
+which is the next thing and is the demo's.

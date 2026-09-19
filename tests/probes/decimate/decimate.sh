@@ -10,8 +10,8 @@
 # a window of source frames around each output time with their relative times, and never the ratio, so nothing
 # in the shader knows whether the output is denser or sparser than the source. What has to be TESTED is the
 # host: whether libplacebo's queue delivers the window when vsyncs are sparser than frames, and what the
-# picture reads. The Metal host has the same question (metal-demo/prep/decimate_check.sh); this is the
-# libplacebo side, which is the source of truth.
+# picture reads. The Metal host has the same question (prep/decimate_check.sh in the private NFrameDemo
+# tree); this is the libplacebo side, which is the source of truth.
 #
 # Method, bench.sh's own: the 60 fps and 24 fps (or 30 fps) renders of one scene from tests/scenes.sh are the
 # same function of t sampled at two rates, so output frame k of a 60 -> 24 run sits at t = k/24 s, which IS

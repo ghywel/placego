@@ -756,7 +756,12 @@ Variants: drop `scale=1280:-2,` for native resolution; append
 `,format=vulkan` after `libplacebo=...` for the resident rows; replace
 `-f null -` with `-c:v hevc_videotoolbox -b:v 6M -f null -` for the
 encode rows. `VK_ICD_FILENAMES` must point at Homebrew's MoltenVK
-manifest (under `etc`, not `share`).
+manifest (under `etc`, not `share`). The inputs: `avengersclip.mp4` and
+the other small clips (`backtothefuture60sec24fps.mp4`, `bttf-hvc1.mp4`,
+`bluey.mkv`, `streetpeople*.mp4`) remain in np-scratch; the full films it
+held (and the video inside np-scratch/film4k and film4k2) were purged on
+2026-09-19 and must be re-extracted from the NAS before a full-film row
+is rerun.
 
 | run, 24→60 | tri (48 passes) | quad (68 passes) |
 |---|---|---|
@@ -767,7 +772,7 @@ manifest (under `etc`, not `share`).
 
 **Postscript, same day: the native Metal port beat this whole table.**
 The mpv-hook shader was machine-translated to Metal compute and run by a
-native Swift host (shipped as `NFrameDemo-macos-arm64-v<N>.zip` beside this file; its source is not published; plan and outcomes in METALPORT.md) —
+native Swift host (published by the owner as a signed and notarized `NFrameDemo-macos-arm64-v<N>.zip`; its source is not published; plan and outcomes in METALPORT.md) —
 hardware decode, zero-copy frames, no translation layer. Same films,
 same machine, native resolution: **quad 12.7 fps vs 8.7 above (+46%),
 tri 16.9 vs 13 (+30%)** — and the port reproduces the ladder and the

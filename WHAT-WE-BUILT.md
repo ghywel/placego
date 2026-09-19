@@ -262,13 +262,14 @@ There is now a native Mac demonstration app — a window with buttons, no
 ffmpeg, no patches, no command-line pipelines — and it is the easiest
 way to see all of this with your own eyes.
 
-**The prebuilt app ships right here**: `NFrameDemo-macos-arm64-v5.zip`,
-alongside this document (Apple-silicon Macs(tested); Intel Macs
-(untested) use the build path below). Unzip it and open
-`NFrameDemo.app`. On a downloaded copy macOS will object once —
-right-click → Open, or System Settings → Privacy & Security → Open
-Anyway — and then it just runs. The auther is awaiting developer status
-pending to code-sign the app properly.
+**The prebuilt app is a direct download**:
+[NFrameDemo-macos-arm64-v11.zip](https://www.blackholeexplorationswithclaude.com/NFrameDemo-macos-arm64-v11.zip)
+(Apple-silicon Macs, macOS 13 or later; about 180 MB, the synthetic
+clip pack included). Unzip it and open
+`NFrameDemo.app` — it is signed with the author's Developer ID and
+notarized by Apple, so macOS opens it without objection. The app is
+closed-source and lives off this repository; this document and the
+shaders it demonstrates are what the repository holds.
 
 What you will see: a textured block moving under known laws of motion,
 interpolated live from 24 to 60 frames per second. Drag the **A/B
@@ -440,4 +441,10 @@ loop between them: hypotheses cheap enough to test, tests honest enough to
 fail, and a standing rule that every claim — including "already correct",
 and including everything in this document — is worth checking.
 
-Human edit: I did not do this, Anthropic - Claude did. Enjoy the work, leave me alone.
+Human edit: This author now has a second Apple app project, Cadence Video
+Player live at https://www.cadencevideoplayer.com - a low-cost awesome
+video player application for macOS / iOS / tvOS devices. The NFrameDemo
+app is free. The video play is £4.99 universal with no subscription. 
+
+Enjoy,
+Gareth

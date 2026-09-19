@@ -304,6 +304,28 @@ less on L4, 0.2-0.3 less on live action; the check without the
 disagreement rule at all is 1.5 dB worse on the ladder mean and 2 on the
 anime. NFRAME-LIMITS.md section 8 has all of it.
 
+### `quaddirectional-interpolation-propagated-cadence.glsl` -- the quad with the cadence branch, 74 passes
+
+The same file with one branch in its final pass, emitted by the generator with
+`CADENCE=1` in the environment (`CADENCE=1 ./tests/gen_quaddirectional.py ...`;
+without it the shipped quad regenerates byte-identical). Animation drawn on twos or
+threes reaches the window as held copies of one drawing, and the plain quad
+interpolates between the copies (a hold) and then across the change -- twelve
+holds and twelve moves a second, whatever its vectors. The branch reads each
+pair's held-copy statistic (the LARGEST coarse-level difference, carried in the
+second channel of the three cut statistics: no new bind, the final pass sits at
+the sixteen-bind ceiling), and when the straddling pair is a copy and the next
+slot the new drawing it re-times the output onto the span from the first copy to
+that drawing, warped plainly between the two distinct frames. On the ladder's
+on-twos sources it lifts the quad from 32.8 to 59.8 dB on the 8-px translation,
+29.0 to 37.0 on the occlusion, 30.4 to 35.0 on the cartoon edge -- the dropper
+row of the probe, reached inside the window -- and leaves every on-ones column
+where it was, the dedup and dropper rows too. Its bound is the window: a threes
+run gains 0.7 to 6 dB, not the whole prize. NFRAME-LIMITS.md, "The cadence
+branch" (2026-09-19), has the tables, the refuted first cut (a mean statistic
+that fired on genuine motion), and the one ambiguity no pair statistic can
+resolve (a turning point sampled twice). Test: `tests/probes/twos/twos.sh`.
+
 ### `bidirectional-interpolation-animation.glsl` -- the propagated shader tuned for line art, 26 passes
 
 The propagated shader with one constant changed: the disagreement
@@ -574,6 +596,20 @@ What remains is that cross-fade itself, which is inherent. A redrawn mouth
 passes through a brief soft blend rather than snapping between two drawings
 the way the original animation does. It is much improved and still visible
 on close inspection.
+
+The larger term, found 2026-09-19 when the question was put as "what do the
+players that interpolate anime do that we do not": the CADENCE. Animation is
+drawn at twelve or eight drawings a second and delivered at twenty-four, each
+drawing held for two or three frames, and roughly half the moving frames of a
+typical anime episode sit inside such a run (the pool survey in
+NFRAME-LIMITS.md). Every shader here sees the pair (A, A) and outputs a hold,
+then moves across (A, B): the on-twos probe scores the recommendation at 31.8 dB
+where the same motion on ones scores 64, and the hold scores 29.6. No estimator
+change touches that; a cadence step does -- the quad's `-cadence` variant above
+inside the window, or a duplicate-aware frame feed ahead of any shader (the
+player's engine has one). What the other players do is the same step, applied
+blind (SVP drops every second frame of anime unconditionally) or by a cadence
+detector (the television MEMC chips); none of them solves the redrawn feature.
 
 (Since 2026-09-04 the fast tier has an animation-tuned file of its own,
 `bidirectional-interpolation-animation.glsl`, which matches this build's

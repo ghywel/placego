@@ -12,7 +12,7 @@
 # 16 bits sometimes lands either side); anything more is a law that does not match.
 set -u
 OUT="$1"; SIZE="${2:-640x360}"; shift; shift 2>/dev/null || true
-SCENES="${*:-bounce-constant bounce-oscillating bounce-hardjerk bounce-gravity bounce-masses breathe breathe-spin spin-constant spin-accelerating spin-pendulum roll-12 roll-12-fast roll-wagon static}"
+SCENES="${*:-bounce-constant bounce-oscillating bounce-hardjerk bounce-gravity bounce-masses breathe breathe-spin spin-constant spin-accelerating spin-pendulum spin-orbit roll-12 roll-12-fast roll-wagon snow fish planets roundabout static}"
 QUAD="${QUADDEMO:?set QUADDEMO to the demo CLI}"
 PY="${PYTHON:-python3}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

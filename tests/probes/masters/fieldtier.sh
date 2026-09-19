@@ -14,7 +14,7 @@
 #     reaches 38)   FRAMES="12 48 84"   N=96   BG=flat   FFMPEG PYTHON QUADDEMO (the Metal side; optional)
 set -u
 OUT="$1"; shift
-SCENES="${*:-bounce-constant bounce-gravity breathe spin-constant spin-pendulum roll-12 roll-wagon}"
+SCENES="${*:-bounce-constant bounce-gravity breathe spin-constant spin-pendulum spin-orbit roll-12 roll-wagon snow fish planets roundabout}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS="$(cd "$HERE/../.." && pwd)"
 SHADERS="$(cd "$TESTS/../shaders" && pwd)"

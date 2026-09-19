@@ -167,7 +167,8 @@ t_slot1 = ((k + 1) if tau > 0.5 else k) / SRC_FPS
 # host {k-1..k+2} (centre = t_slot1 + 0.5). JERK_CENTRE (in source
 # intervals, relative to t_slot1) selects it; the default -0.5 describes
 # the ffmpeg pipeline, the instrument's historical subject. Set
-# JERK_CENTRE=0.5 for metal-demo exports. Fitted, not assumed: each host's
+# JERK_CENTRE=0.5 for the NFrameDemo app's exports (a private tree, not
+# published). Fitted, not assumed: each host's
 # measured curve matches its centre to the residuals quoted above.
 theta = w_rad / (2.0 * SRC_FPS)
 JERK_CENTRE = float(os.environ.get("JERK_CENTRE", "-0.5"))

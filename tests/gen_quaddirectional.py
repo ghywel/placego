@@ -90,6 +90,15 @@ import foresight as FORE
 # bases regenerate unchanged. FORESIGHT=0 in the environment regenerates the pre-foresight form (the
 # regression path; the reorder alone is bit-identical, the seed is the measured trade in NFRAME-LIMITS.md).
 FORESIGHT_SEED = os.environ.get("FORESIGHT", "1") == "1"
+# THE CADENCE BRANCH (2026-09-19; NFRAME-LIMITS.md "Content drawn on twos", tests/probes/twos/twos.sh): content
+# drawn on twos or threes reaches the window as held copies of one drawing, and the plain quad interpolates
+# between the copies (a hold) and then across the change -- twelve holds and twelve moves a second, whatever
+# the vectors. With CADENCE=1 the final pass re-times: when the straddling pair is a held copy and the next
+# slot is the new drawing, the output belongs to the span from the first copy in the window to that drawing,
+# warped plainly between the two distinct frames; when the straddling pair is the change and the slot before
+# it was a held copy, the span began a slot earlier. A branch of the final pass alone; every cached field is
+# unchanged. Off by default: the shipped quad regenerates byte-identical without the variable.
+CADENCE_BRANCH = os.environ.get("CADENCE", "0") == "1"
 
 HERE = pathlib.Path(__file__).resolve().parent
 # The base to generate from. Default is the shipped bidirectional shader;
@@ -133,6 +142,8 @@ vec4 hook() {{
 
 
 def cut_block(la, lb, save, pair):
+    if CADENCE_BRANCH:
+        return dup_block(la, lb, save, pair)
     return f"""
 
 //!HOOK FRAME_MIX
@@ -153,6 +164,43 @@ vec4 hook() {{
         }}
     }}
     return vec4(acc / float(N * N), 0.0, 0.0, 0.0);
+}}"""
+
+
+def dup_block(la, lb, save, pair):
+    """The pair statistic with the cadence branch on: .r the cut statistic exactly as before (the sparse
+    grid's mean), .g the MAXIMUM |A - B| over every texel of the coarse level -- zero for a held copy, the
+    moved edge's contrast for any move. The mean of a sparse grid fluctuates pair to pair on a small moving
+    object (a ratio test on it fired on genuine motion and cost the ones case 14 dB, 2026-09-19); the
+    maximum over the whole level does not."""
+    return f"""
+
+//!HOOK FRAME_MIX
+//!BIND LUMA_{la}_S
+//!BIND LUMA_{lb}_S
+//!SAVE {save}
+//!WIDTH 1
+//!HEIGHT 1
+//!COMPONENTS 2
+//!DESC [quad] scene-cut statistic (.r) and held-copy statistic (.g), slots {pair}
+vec4 hook() {{
+    const int N = 24;
+    float acc = 0.0;
+    for (int y = 0; y < N; y++) {{
+        for (int x = 0; x < N; x++) {{
+            vec2 uv = (vec2(float(x), float(y)) + 0.5) / float(N);
+            acc += abs(LUMA_{la}_S_tex(uv).r - LUMA_{lb}_S_tex(uv).r);
+        }}
+    }}
+    float peak = 0.0;
+    ivec2 n = ivec2(1.0 / LUMA_{la}_S_pt + 0.5);
+    for (int y = 0; y < n.y; y++) {{
+        for (int x = 0; x < n.x; x++) {{
+            vec2 uv = (vec2(float(x), float(y)) + 0.5) * LUMA_{la}_S_pt;
+            peak = max(peak, abs(LUMA_{la}_S_tex(uv).r - LUMA_{lb}_S_tex(uv).r));
+        }}
+    }}
+    return vec4(acc / float(N * N), peak, 0.0, 0.0);
 }}"""
 
 
@@ -340,6 +388,8 @@ def main():
             nb += luma_block("D", 3, "FRAME3", lvl)
 
         elif save == "SCENE_DIFF":
+            if CADENCE_BRANCH:
+                nb = dup_block("A", "B", "SCENE_DIFF", "0-1").lstrip("\n")
             nb = nb.replace("[high] scene-cut statistic (whole-frame luma difference)",
                             "[quad] scene-cut statistic, slots 0-1")
             nb += cut_block("B", "C", "SCENE_DIFF_BC", "1-2")
@@ -351,7 +401,8 @@ def main():
             nb = nb.replace("NEXT_pos", "HOOKED_pos")
 
         elif save == "FRAME_MIX":
-            nb = FINAL_PASS
+            nb = FINAL_PASS.replace("@@CADENCE_CONSTANTS@@", CADENCE_CONSTANTS if CADENCE_BRANCH else "") \
+                           .replace("@@CADENCE_BRANCH@@", CADENCE_BRANCH_CODE if CADENCE_BRANCH else "")
 
         out.append(nb)
 
@@ -401,6 +452,8 @@ def main():
     assert hooks == 68 + 3 * extra, f"expected {68 + 3 * extra} passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     header = HEADER
+    if CADENCE_BRANCH:
+        header = header.replace("//   ./tests/gen_quaddirectional.py\n", "//   CADENCE=1 ./tests/gen_quaddirectional.py\n")
     if SRC.name != "bidirectional-interpolation.glsl":
         header = header.replace("bidirectional-interpolation.glsl", SRC.name)
         header = header.replace("//   ./tests/gen_quaddirectional.py\n",
@@ -410,6 +463,54 @@ def main():
           f"({24 + extra} base + 8 slot-2/3 lumas + 2 cut stats + {24 + 2 * extra} pair flow "
           f"+ 4 full-res lumas + 6 full-res refines), braces/parens balanced  OK")
 
+
+CADENCE_CONSTANTS = '''
+// ---- the cadence branch (2026-09-19; CADENCE=1 at generation) ----
+// A pair is a HELD COPY when the LARGEST |A - B| over every texel of the
+// coarse level (the .g channel of the pair statistic) is below
+// CADENCE_DUP_MAX: zero for a copy, and for a real encoder's held drawing
+// the residual of one 16 x 16 block averaged, well under the contrast a
+// moved edge leaves in the box it crossed. The mean of a sparse grid was
+// tried first and fired on genuine motion (a small object's pairs
+// fluctuate); the maximum over the whole level does not. A window of
+// three held copies is a static shot and falls through to the plain path,
+// which holds it: harmless.
+const int   CADENCE_RETIME  = 1;
+const float CADENCE_DUP_MAX = 0.02;
+'''
+
+CADENCE_BRANCH_CODE = '''    // ---- the cadence: the drawing changes less often than the frame ----
+    // Interior windows only (p == 1: two frames each side). Case A: the
+    // straddling pair (1, 2) is one drawing held and slot 3 is the new
+    // drawing -- the output belongs to the span from the first copy in the
+    // window (slot 0 if it too is a copy, else slot 1) to slot 3, warped
+    // between slot 2 (the copy) and slot 3 with that pair's flow. Case B:
+    // the straddling pair is the change and slot 0 was a copy of slot 1 --
+    // the span began at slot 0. Both warp plainly (a = j = 0): the cubic
+    // assumes uniform sampling of a continuous motion, which held copies
+    // break. A window that holds only twos is exact; on threes case B sees
+    // the run's last two copies only and starts its span a slot late (the
+    // window's bound); the branch never fires across a cut.
+    if (CADENCE_RETIME == 1 && p == 1) {
+        bool dup01 = SCENE_DIFF_tex(vec2(0.5)).g    < CADENCE_DUP_MAX;
+        bool dup12 = SCENE_DIFF_BC_tex(vec2(0.5)).g < CADENCE_DUP_MAX;
+        bool dup23 = SCENE_DIFF_CD_tex(vec2(0.5)).g < CADENCE_DUP_MAX;
+        if (dup12 && !dup23 && cut23 <= SCENE_CUT_DIFF) {
+            float t0 = dup01 ? rts_mix[0] : rts_mix[1];
+            float sr = clamp((0.0 - t0) / (rts_mix[3] - t0), 0.0, 1.0);
+            vec2 f = FLOW_H_CD_tex(HOOKED_pos).xy * 2.0 * HOOKED_pt;
+            return mix(FRAME2_tex(HOOKED_pos - f * sr),
+                       FRAME3_tex(HOOKED_pos + f * (1.0 - sr)), sr);
+        }
+        if (!dup12 && dup01 && cut12 <= SCENE_CUT_DIFF) {
+            float sr = clamp((0.0 - rts_mix[0]) / (rts_mix[2] - rts_mix[0]), 0.0, 1.0);
+            vec2 f = FLOW_H_BC_tex(HOOKED_pos).xy * 2.0 * HOOKED_pt;
+            return mix(FRAME1_tex(HOOKED_pos - f * sr),
+                       FRAME2_tex(HOOKED_pos + f * (1.0 - sr)), sr);
+        }
+    }
+
+'''
 
 # ---------------------------------------------------------------------------
 FINAL_PASS = """\
@@ -477,7 +578,7 @@ FINAL_PASS = """\
 
 // Same value and reasoning as the base shader's gate.
 const float SCENE_CUT_DIFF = 0.125;
-
+@@CADENCE_CONSTANTS@@
 // 0 = exact cubic (jerk modelled), 1 = least-squares quadratic (residual
 // read as confidence). See the pass banner; both are the experiment.
 const int QUAD_MODE = 0;
@@ -595,7 +696,7 @@ vec4 hook() {
     if (cut_straddle > SCENE_CUT_DIFF)
         return s < 0.5 ? slot_tex(p, HOOKED_pos) : slot_tex(p + 1, HOOKED_pos);
 
-    // ---- anchor: the straddling frame nearer the output ----
+@@CADENCE_BRANCH@@    // ---- anchor: the straddling frame nearer the output ----
     // Clamped to the interior slots {1, 2}: both have adjacent flows on
     // both sides, so the cubic needs at most ONE composed link. (p = 0
     // or an s > 0.5 at p = 2 would name an outer slot; the interior

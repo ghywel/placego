@@ -19,11 +19,12 @@ mpv API shimmed, and emits:
 
 The GLSL source stays the single source of truth (METALPORT.md): the
 output of this tool is generated material, regenerated after any shader
-edit, never hand-edited. Proven by the P0 spike (metal-demo/spike/):
-this road preserves semantics, not just syntax -- the real coarse-flow
-pass recovered a known motion on 99.3% of texels after translation.
+edit, never hand-edited. Proven by the P0 spike (spike/ in the NFrameDemo
+tree, which is private and not published): this road preserves
+semantics, not just syntax -- the real coarse-flow pass recovered a known
+motion on 99.3% of texels after translation.
 
-Shim contract (must match the host in metal-demo/):
+Shim contract (must match the host in the private NFrameDemo tree):
   - buffer(0), std140: vec2 out_size; vec2 <NAME>_size_u per sampled
     bind in bind order; vec4 rts_pack[2] (rts_mix packed to dodge the
     std140 float-array stride trap -- P0 lesson 2); int pair_changed;

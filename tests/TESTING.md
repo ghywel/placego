@@ -331,6 +331,23 @@ Time, for every scene here: the law is written in frames at 24 fps and that is i
 truth at the output rate samples law time j * 24 / outFps. The laws' loop lengths, speeds (80 % of the search
 envelope, 19.2 px per frame at 720p) and every constant are the demo's, listed by `masters.py --list`.
 
+**The complex scenes (2026-09-12).** The masters above are one body each. Real scenes are not, so the tier
+gained four scenes of many rigid bodies over a still ground, each body its own closed-form law, drawn far to
+near, every edge a one-pixel ramp, every law closing in 360 law frames (fifteen seconds, seamless): **snow**
+(96 flakes at 1280x720 in four depth layers, the nearer the larger and the faster, each its own sway, slow turn
+and brightness, a common wind), **fish** (seven in alternate lanes, left or right, horizontal only, each its own
+length and speed, a bob, a tail beating about its root), **planets** (a turning sun; five planets on Kepler
+orbits, whole orbits per loop as a^3/2, two eccentric so their speed varies along the orbit; each spinning and
+lit from the sun; a moon; rings) and a **roundabout** from above (a ring road with four arms; vehicles come up an
+arm, take a transition arc into the ring lane, circulate clockwise, take an arc out along another arm and leave
+the frame: straights and arcs at one speed, so the acceleration steps at every change of curvature and the jerk
+is an impulse there). The bodies' numbers come from the engine's integer hash, so both sides draw the same
+scene: identity held to the last level on all four at both sizes, both grounds, under a texture. The field truth
+is per body, part by part (a translation with the body's turn; the fish's tail turns about its root; rings do not
+turn; the nearer overwrites the farther; the ground is zero). One rule surfaced: the export rounds half up, as
+the engine's `.rounded()` does -- the roundabout's flat 0.30 tarmac is a tie at sixteen bits, and numpy's `rint`
+rounds ties to even; nothing before it had landed on one.
+
 ### The field, first cut (2026-09-12)
 
 The quad shader's velocity diagnostic against the closed-form chord, three frames per scene (12, 48, 84 of 96),
@@ -368,6 +385,32 @@ error over a shorter vector -- 4-5 degrees at 12 px per frame, 10 at 6, 13 at 2.
 on anything, and an angle figure on slow motion is a pixel figure in disguise. The wheel's 43 % gross inside the
 ink is a different question -- whether the shader's own confidence knows those pixels -- and its residual
 diagnostic (mode 6) reads flat in the shipped build, which runs QUAD_MODE 0; that needs the least-squares variant.
+
+### The field on the complex scenes (2026-09-12)
+
+The same instrument (TRI_DIAG 7 at full scale 48, flat ground, output frames 12, 48 and 84 of 96 at 24 -> 24)
+on the four complex scenes, the truth per body part:
+
+| scene | host | median px (k = 12 / 48 / 84) | gross > 2 px | angle | gain |v| meas / true |
+|---|---|---|---|---|---|
+| snow | metal | 0.25 / 0.28 / 0.29 | 25% / 29% / 21% | 0.5 / 0.5 / 0.7° | 0.91 / 0.83 / 0.89 |
+| snow | placebo | 0.26 / 0.28 / 0.29 | 25% / 29% / 21% | 0.5 / 0.5 / 0.7° | 0.91 / 0.83 / 0.89 |
+| fish | metal | 1.39 / 0.42 / 0.59 | 18% / 15% / 15% | 1.7 / 1.1 / 1.5° | 0.96 / 0.95 / 0.99 |
+| fish | placebo | 1.41 / 0.42 / 0.65 | 19% / 15% / 15% | 1.7 / 1.1 / 1.5° | 0.95 / 0.95 / 0.99 |
+| planets | metal | 0.27 / 0.38 / 0.25 | 6% / 7% / 3% | 3.5 / 2.5 / 2.6° | 0.97 / 0.95 / 0.94 |
+| planets | placebo | 0.30 / 0.39 / 0.21 | 6% / 6% / 3% | 3.5 / 2.5 / 2.6° | 0.97 / 0.95 / 0.94 |
+| roundabout | metal | 1.57 / 0.56 / 0.94 | 44% / 26% / 29% | 4.9 / 1.2 / 2.7° | 0.91 / 0.90 / 0.90 |
+| roundabout | placebo | 1.58 / 0.54 / 0.89 | 43% / 26% / 29% | 5.0 / 1.1 / 2.7° | 0.91 / 0.90 / 0.90 |
+
+Read against the one-body scenes above: the hosts agree to a few hundredths of a pixel everywhere, so the tier
+is sound on these; the median error stays under a pixel wherever the bodies are bigger than the block (the fish,
+the planets); the gross share is what the scenes were built to expose -- a quarter of the snow's pixels and up
+to two fifths of the roundabout's read more than 2 px off, because a 3-11 px flake and a 23 px car on a flat
+tarmac are at or under the scale the coarse search matches at, and the flakes occlude one another at every
+crossing. The gain (measured over true speed) is 0.85-0.91 on the snow, 0.95-0.99 on the fish, 0.94-0.97 on
+the planets and 0.90 on the roundabout: the reading is fair even where it is coarse. Two roundabout frames on
+libplacebo fit the next truth frame better than their own (fieldcheck's off-by-one note), the vehicles being
+small and the arcs short; the Metal rows do not. These are the numbers to beat when the scenes are used.
 
 ### The picture, batch 1 (2026-09-12)
 
@@ -521,7 +564,8 @@ roll-wagon            22.72  22.72  22.01  20.76   +0.00
   the cheaper alternative for rotation-heavy material. One host fact from the same run: the recommended 4K build
   reads 1.2 dB lower on this machine than on the RX 6600 (34.40 against 35.62), on two of the five segments
   mostly, while hold and linear do not move: the same GLSL through MoltenVK and native Vulkan differ on real
-  footage by more than the ladder's 0.1-0.8 dB.
+  footage by more than the ladder's 0.1-0.8 dB. (To rerun this: the 4K film's video under np-scratch/film4k and
+  film4k2 was purged on 2026-09-19 and must be re-extracted from the NAS; the logs and results there stay.)
 * **Rotation and linear, read by speed.** Binned by the rim's speed at each output instant, the quad on Metal
   beats linear on rotation from rest at every speed (+6.6 dB below 2 px per frame, +3.1 at 2-5, +0.2 at 5-10) and
   on the pendulum at every speed but 5-10 px, where it trails by 0.4; the libplacebo column's losses to linear on
@@ -529,6 +573,11 @@ roll-wagon            22.72  22.72  22.01  20.76   +0.00
   floor near 60 dB (the fit is rough: the static scene sits 1.3 dB off it). The field's 8 degrees at the
   pendulum's turns is the reading's own limit, not the picture's.
 * **Not in this batch:** the reading tail's jerk change, which regenerates shaders this batch was reading.
+* **A law changed after batch 1** (2026-09-12, later): every master now runs at least fifteen seconds, in whole
+  periods, and for `spin-accelerating` that meant its angular acceleration becoming omega/360 instead of omega/240,
+  so the rim reaches 0.9 of the envelope at the end of the longer clip. The batch-1 row for that scene was made
+  under the old law; the others are unchanged (the batch renders 96 frames of each, which the longer loops do not
+  touch), and `spin-orbit` joined the family after the batch. Identity holds on all of them.
 
 The ladder stays what it is: the regression gate every shader passes before it ships. This tier is where the
 record's claims about full-frame motion, reversals, rotation and aliasing get their numbers, on both hosts, from
@@ -1331,6 +1380,12 @@ export FFMPEG=~/build/ffmpeg/ffmpeg FFPROBE=~/build/ffmpeg/ffprobe
 ./realbench.sh source.mkv gen1 ../shaders/bidirectional-interpolation.glsl 210 240 300
 ./realanalyze.py linear gen1
 ```
+
+Where `source.mkv` came from: the full films np-scratch held (and the video
+inside np-scratch/film4k and film4k2) were purged on 2026-09-19 and must be
+re-extracted from the NAS before a film run; the small clips remain there
+(`avengersclip*.mp4`, `bluey.mkv`, `backtothefuture60sec24fps.mp4`,
+`bttf-hvc1.mp4`, `streetpeople*.mp4`), and every run's logs and results stay.
 
 ### Real-footage traps
 

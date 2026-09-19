@@ -129,3 +129,68 @@ denoise, and two line effects in `glsl/Experimental-Effects` that bear on this f
 
 Nothing of theirs is in the shaders yet. If either idea goes in, the pass carries this credit and the
 licence notice, and this entry says which and where.
+
+## Surveyed 2026-09-19, at the owner's question: SVP and the cadence
+
+The owner: *"I know apps like SVP can do it. So it must be possible and we must be missing something - or our
+shaders are alien to their closed-source methodology."* Four research angles were run the same day (SVP and
+SVPflow; the learned route; the television MEMC lineage; the free-player ecosystem), each sourced, then audited
+against this repository and adversarially checked. What follows is the documented part; the measurement it led
+to is `NFRAME-LIMITS.md`, "Content drawn on twos" (2026-09-19). D = documented at the source, I = inferred.
+
+**SVPflow is not alien (D).** SVP 3.1 and 4 are built on SVPflow: svpflow1, the motion search, is "a deeply
+refactored and modified version of MVTools2", the same hierarchical block matcher with SAD, penalties and
+overlapping blocks as this family; svpflow2, the renderer, is closed. https://www.svp-team.com/wiki/Manual:SVPflow
+The pipeline is a "super" pyramid, a block search with penalties (lambda, pnew, pzero, pglobal, pnbour),
+per-level refinement, and a frame renderer with cover/uncover masks, a bad-area mask from block SAD, and a
+scene-change module. Nothing in its parameter set or manual identifies, tracks or transforms objects.
+
+**What SVP does for anime is policy, not estimation (D).** The manual's own caveat: "Greater smoothness always
+results in more noticeable artifacts ... There is no perfect set of options that gives maximum smoothness
+without artifacts." https://www.svp-team.com/wiki/Manual:FRC The Animation preset is "optimized for hand-drawn
+animations (cartoons), which are characterized by sharp contrasting borders of objects and a static
+background" (same page). The developer-prescribed anime settings (MAG79, 2012): the "Sharp" shader, which
+"makes interpolated frames from only one source frame ... to avoid blended frames and double contours"; a
+32-pixel block with 8-pixel overlap, "sensitive enough to detect global pan and zoom and not detect little
+motions"; the smallest search radius, "best choice to detect global motions only"; two-pixel precision, which
+"disable[s] search at finest level". https://www.svp-team.com/forum/viewtopic.php?id=2173 So SVP's anime
+recipe deliberately coarsens the estimator until only global motion survives and renders each output from
+one source frame, and it retreats to original frames per frame when the vector field is judged bad
+("Adaptive ... In the scenes which are difficult to analyze, the smoothness will decrease") and overlays
+original pixels where block SAD is high ("Artifacts masking ... The stronger the masking is, the blurrier
+image and the worse smoothness"). Its developers say the anime "wave" artefact on thin contrast lines cannot
+be repaired, only hidden (https://www.svp-team.com/wiki/SVP3:Watching_anime). This repository's `-snap.glsl`
+is the single-source warp; the retreat and the SAD overlay have no shipped equivalent here (the occlusion
+fallback was removed for doubling contours; see the scene-cut gate's comment in the recommendation).
+
+**SVP and content on twos (D).** The only handling is a toggle, "Duplicate frames removal -> Remove every other
+frame", implemented as an unconditional `SelectEvery(2,0)` with the rate doubled
+(https://www.svp-team.com/wiki/SVP:Technical_insights; https://www.svp-team.com/forum/viewtopic.php?id=7310).
+The developer, 2022: "this is only for the simplest case now, when every other frame is a duplicate"
+(https://www.svp-team.com/forum/viewtopic.php?id=6598); a 2020 request for TDecimate-style detection of
+triple and partial duplicates went unanswered (https://www.svp-team.com/forum/viewtopic.php?id=5793). No
+cadence detection exists in SVP; its RIFE path likewise interpolates between two adjacent frames and does
+nothing across duplicates (https://www.svp-team.com/wiki/RIFE_AI_interpolation).
+
+**The rest of the ecosystem dedupes first (D).** Flowframes: "Frame De-Duplication: This is meant for 2D
+animation. Removing duplicates makes a smooth interpolation possible ... These have to be removed before
+interpolation to avoid choppy outputs", with `mpdecimate` as one of its two detectors, and the documented
+failure mode of a threshold set too high ("very choppy, especially in dark (or low-contrast) scenes")
+(https://github.com/n00mkrad/flowframes). DAIN-App's modes 2-4 remove duplicates with `mpdecimate`, mode 3
+"record timestamps then remove duplicate frames (won't alter animation speed)". The television lineage
+(Philips Natural Motion, de Haan's 3-D recursive search) detects the source cadence from the alternation of
+frame differences or the estimator's own vector statistics and interpolates across the true frame period
+(Philips AN97058, https://tvsat.com.pl/PDF/S/saa4991_ph.pdf; the per-region cadence of US6937655B2 and
+US8004607B2, where a panning background on ones and a character on twos take different phases).
+
+**The learned route (D).** RIFE and its anime-tuned models are what SVP now recommends for anime; their
+documented margin on ATD-12K over the classical engines is one to two decibels, they do nothing across
+duplicates either, and their prior over drawings is the one thing no deterministic method has. Not testable
+here; ATD-12K remains the number that would place this family against that line.
+
+**The answer to the question, as far as it is measurable here (I from the D above).** SVP's methodology is
+not alien: it is this family's lineage with a policy of hiding failure -- retreat, mask, single-source warp,
+global-only search -- and, for content on twos, an unconditional decimation in front. The measurement of the
+same day (`NFRAME-LIMITS.md`) put the cadence step at 16 to 25 dB on the exact ladder, larger than every
+estimator mechanism in this record, and found that nothing solves the redraw: the limit stated at the top of
+`ANIMATION.md` stands.
