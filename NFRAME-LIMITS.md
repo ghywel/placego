@@ -2748,6 +2748,10 @@ for: a matcher that fits a per-block affine (or at least a divergence and shear)
 and the self-occlusion half would need occlusion reasoning the family does not have. Both stay on
 paper; the cube now measures them.
 
+*(2026-09-28: the `scripts/blackhole/` folder was removed from the repository at the owner's word, as superfluous to
+the scripts. Every script named below is in git history, last at `111cb2f`, and is published with its renders at
+cadencevideoplayer.com/blackholes/.)*
+
 **A black hole** (`blackhole/blackhole.py`, not a test: the owner's curiosity). A
 Schwarzschild black hole in geometric units with a thin, opaque, glowing dust disc from the innermost
 stable orbit at 6 M to 18 M, seen from 40 M at 78 degrees from the disc's axis. Every pixel's null
@@ -3693,3 +3697,1129 @@ of every shader. What it does not settle: the redrawn feature (unchanged, corres
 short measure on accelerating motion (a cubic across the re-timed span would need the flows of the distinct
 frames, which the engine's stage gives the quad and the branch cannot), and the look of it on real anime by eye,
 which is the next thing and is the demo's.
+
+*His eyes, the same evening (2026-09-19).* Real content through the player with the stage on -- not full films
+yet, a first pass: *"interpolation is looking brilliant on animated as well as live action content --
+significant improvements."* The first time the animation side has had that verdict from him; the full-film
+tests are his next.
+
+### The fast pan over fine texture: crystallised, its knee measured, the mechanism half-found (2026-09-19, evening)
+
+His report, from a full film through the player: *"The problem remains relatively fast panning shots or
+character translations, particularly upon texture dense surfaces. In the given film between 6:29 and 6:34
+there is a panning shot across a sandstone textured wall that displays the error. It is jarring to the eye
+because the pan goes from 'smooth' to 'weird' in the uncanny valley."* The method is his own: measure it on
+the source, crystallise it into a synthetic case, solve on the synthetic, then back to the film.
+
+**The source, measured.** The shot is a tracking shot: the subject walks left along a sandstone wall, the
+camera tracking her, so the SUBJECT is near-static in the frame and the WALL crosses it -- `tests/probes/dig/
+panspeed.py` (phase correlation at quarter size) reads the wall at 12 px per source frame rising to 38 and
+falling to 16 over the five seconds, a cut to a static interior after. The decimate-and-reconstruct bench on
+the clip (181 frames; the bench doubles the motion, so read its speeds as half of what the shader saw):
+
+    wall speed (px per source frame)   hold   linear   recommendation   margin over linear
+    0-8                                21.6   23.9     26.3             +2.4
+    8-16                               21.8   24.2     27.2             +3.0
+    16-24                              19.9   22.2     23.7             +1.5
+    24-32                              19.4   21.6     22.6             +1.0
+    32-40                              20.3   22.7     23.3             +0.7
+    (and two frames at 21 px, doubled to 42, where the recommendation fell to the hold's level: -2.2)
+
+The margin shrinks with the speed and the picture becomes linear's -- the ghosted double wall -- which is the
+"weird". The subject stays right throughout, which is why it jars: half the frame smooth, half not.
+
+**The synthetic cases** (`tests/scenes.sh`, the edge series; `tests/probes/pan/pan.sh` scores them by speed
+band against the native 60 fps render): W1_wall_pan_ramp, a textured ground panning 8 -> 40 px per source
+frame over two seconds (x = 192 t + 192 t^2) under a static textured subject, the ground the ladder's 4-px
+noise; W2, the same with a ground that has structure at every scale as sandstone has (128-px blocks, 32-px
+grain, 4-px noise, summed); W3, W2's wall alone, no subject. The recommendation, PSNR Y by band:
+
+    band px/frame     W1 (fine noise)          W2 (multiscale, subject)   W3 (multiscale, alone)     linear (W3)
+    8-12              20.8                     32.8                       33.5                       19.0
+    12-16             17.0                     26.2                       24.2                       18.5
+    16-20             16.0                     26.3                       27.0                       17.9
+    20-24             11.5                     25.0                       24.1                       17.3
+    24-28             10.9                     21.8                       22.4                       17.2
+    28-32             10.7                     22.3                       22.4                       17.1
+    32-36             10.8                     20.6                       20.3                       17.0
+    36-41             10.5                     18.1                       17.6                       16.6
+
+Three things read off it. On pure fine noise (W1) the family has no coarse basin at all -- the record's speed
+comb -- and holds only to 16-20 px, the reach of the fine levels alone; that is not the film's wall, which
+has structure. On the structured wall the loss is GRADUAL from 12 px and the collapse comes at 36 px, with
+or without the subject (W2 and W3 agree within a decibel), so the disocclusion at the subject's edges is not
+the term; the wall itself is. And linear is flat at 17 whatever the speed: the ghost.
+
+**The field, read** (`read_view 4`, the machine velocity, W3 at N:N): the fraction of the wall's texels whose
+flow is within 1.5 px of the pan is 100% at 12 and 20 px, 58% at 16 (one coarse texel exactly: a phase
+signature), 86% at 24, 81% at 28, 66% at 32 -- the gradual loss is a growing minority of texels on the wrong
+flow -- and 0% at 36 and 39 px, where the median flow is -2.3 px and -6.6: the field has snapped to near
+zero. The collapse, not a blur.
+
+**Two mechanisms tested, one refuted, one half-confirmed.** (1) The temporal seed does not carry the pan
+because it chains from the previous pair's ZERO-seeded descent (`prev_s` reads the cache's `.xy`, which is
+off_a); seeding it from the previous temporal descent instead (off_c, the cache's second texture): 36-41
+band 18.1 -> 18.4, 32-36 20.6 -> 21.6. Refuted as the term. (2) The coarse descent's reach: a first step of
+0.75 texel halving over five iterations reaches 1.45 texels = 23 px from any seed; doubling the first step
+(1.5, six iterations) lifts 32-36 by three decibels (20.3 -> 23.3) and moves the collapse from 34 to 37 px,
+and no further: the field read with the doubled reach is 99% right at 32 px, 46-53% at 35-36, 11-13% at
+37-39 with the median at -2.5 px. That last number is the clue. 37 px is 2.3 coarse texels, and the wall's
+32-px grain is a 2-texel period at the coarse level -- its Nyquist: a shift of 2.3 texels and a shift of 0.3
+are the same to the 32-px component there, and the search takes the nearer, which REG_LAMBDA also prefers.
+At 32 px (2.0 texels, one whole period) the alias and the truth coincide, which is why that band is the
+best in the run. This is the period-collapse family of 2026-09-06 (the stairs, the zero seed) wearing the
+fast pan's face: mid-scale texture at the coarse level's Nyquist, and real sandstone has grain at exactly
+that scale.
+
+**What follows** (not built tonight). The estimator cannot resolve the alias at the coarse level per texel,
+because per texel there is nothing to resolve; the frame as a whole can -- the phase correlation that
+measured the film's pan reads 38 px exactly off the same images, because it uses every texel at once and
+the 128-px blocks break the tie. So the candidate is a GLOBAL-MOTION SEED: one small pass over the coarse
+level that finds the frame's dominant shift (a search over a few texels of shift, scored on a sparse grid,
+the 24 x 24 of the cut statistic), handed to every texel's coarse search as a fourth seed beside zero, the
+ring and the temporal one, for the finer levels' three-way check to accept or refuse as they do the others.
+A pan is then always in the candidate set whatever its speed. A variant behind a switch, the full ladder
+its gate (it must not touch a single case that has no global motion), W2/W3 its measure, the film its
+proof. The animation synthesis of the morning refused a global candidate for anime's redraws; this is
+live action's pan, a different question with the same word in it.
+
+### The global-motion seed: the pan resolved where the texel cannot resolve it (2026-09-20)
+
+The sequel to the evening's finding. The candidate was a whole-frame shift handed to every texel's search;
+it was built as an experiment on a copy of the recommendation, measured on W3 and the film, and then put into
+the generator behind a switch. Three steps, the third the one that mattered.
+
+**The seed.** Two small passes before the coarse search: GLOBAL_COST, one texel per candidate shift (17 x 9,
+half-texel steps over +-4 x +-2 coarse texels, 64 x 32 px at 1080p), each the SAD of A against B shifted on a
+16 x 16 sparse grid of the central frame, computed in parallel; then GLOBAL_SHIFT, one texel, the argmin with
+a small pull toward zero so a blank frame picks nothing. Offline, the same cost surface on W3's fast frames
+puts the minimum at the truth (-2.25 texels, cost 0.012) against 0.08-0.09 at zero and at the alias: the
+frame as a whole is never in doubt, as the phase correlation that measured the film's pan had said. The
+coarse search descends from it as a fourth seed beside zero, the ring and the temporal one (kept in the
+second cache's free .zw), and the 1/8 level refines it as a fifth candidate scored like the others.
+
+That alone: W3 36-41 px 17.6 -> 18.2, 32-36 20.3 -> 22.1, and the field read at 37-39 px still 4-8% right
+with the median at -17 and -8 px -- the 1/8 level was refusing the true candidate. The reason is in its
+score: `sad + SEED_MAG_LAMBDA * |flow| + ...`, a prior toward SMALL motion (0.3 per 1/8-texel, put there
+against fisheye bulges on flat ground). At 4.6 texels of true motion that term is 1.4, the size of the whole
+SAD of a good match, and no correct candidate could pay it.
+
+**The term that mattered.** The prior is now measured from the frame's own shift: `SEED_MAG_LAMBDA * |flow -
+g|` with g the global shift at the 1/8 level (its negative in the B -> A direction). With no global motion g
+is zero and every scored term is exactly what it was; on a pan the prior pulls toward the pan, which is
+what a small-motion prior was always for -- toward the motion the frame is making, not toward nothing.
+
+    W3_wall_pan_ramp_alone, PSNR Y by band     recommendation   + seed only   + seed, prior from the shift   gated (-global)
+    8-12                                       33.5             36.0          35.8                           35.9
+    12-16                                      24.2             26.2          26.3                           26.2
+    16-20                                      27.0             27.0          26.7                           26.3
+    20-24                                      24.1             25.1          26.7                           25.6
+    24-28                                      22.4             23.4          24.9                           22.6
+    28-32                                      22.4             25.2          29.1                           30.1
+    32-36                                      20.3             22.1          25.6                           22.4
+    36-41                                      17.6             18.2          22.5                           21.4      (linear 16.6, hold 15.2)
+
+The collapse is gone: 22.5 dB at 36-41 where the recommendation had 17.6 and linear 16.6. The remaining
+decline from 36 dB is real and is the next question (a fraction of texels still wrong at the fastest
+speeds; the field read will say which).
+
+**The film.** The wall shot through the decimate-and-reconstruct bench (the bench doubles the motion):
+
+    wall speed (px per source frame)   hold   linear   recommendation   ungated seed   gated (-global)
+    0-8                                21.6   23.9     26.3             26.7           26.6
+    8-16                               21.8   24.2     27.2             28.6           27.4
+    16-24                              19.9   22.2     23.7             26.6           26.1
+    24-32                              19.4   21.6     22.6             27.0           26.0
+    32-40                              20.3   22.7     23.3             28.2           28.3
+    the whole shot                                      24.78            27.31          26.67
+
+Nothing lost where the pan is slow; the fast half of the shot lifted two to five decibels (the gates give back
+half a decibel of the ungated gain over the shot, none of it at the fastest speeds), which is the difference
+between the ghosted wall and the wall. The side-by-side at 60 fps is in hot-drops
+(`wall-pan-recommendation-left-global-seed-right-60fps.mp4`).
+
+**The gate: the full ladder, and the gates the ladder taught.** The seed with the prior, ungated, on all 42
+cases: the reach cases up (L4 40-px 30.6 -> 33.9, L7 textured large 23.6 -> 27.3, F2 43.4 -> 46.1, A3 +1.2,
+V3 +1.2, M1 +1.3) and the PERIODIC family destroyed -- H2 stairs 28.7 -> 17.3, V2 29.0 -> 16.5, P1 45.3 ->
+37.0, V1 -4.5, P4 -3.2 -- the capped mean 38.04 -> 37.59. Read at the shift itself (a debug tail that paints
+the pass's own output): on the stairs the coarse level's picture is a Moire, and what moves at 1/16 is the
+Moire at its own speed -- H2's motion is 0.375 texel and the frame's best shift read +0.4, -1.0, +1.8, -0.6
+pair by pair. Four gates were tried against it, in order. A margin over the runner-up more than a texel away:
+refused V2 and nothing else, and on the film -- whose still subject makes every frame's cost surface
+two-valued -- it refused the pan on every other frame and the prior flickered, worse than either state;
+dropped. Consistency with the last pair (a pan persists, the Moire's picks jump): P1 39.6, V2 28.9, but
+consecutive wrong picks can agree. Engagement only for a fast pan, faded in between one and two texels
+(within 24 px the per-texel search reaches the motion on its own): H2 back to 28.66. And the frame's MOIRE
+EVIDENCE, the per-texel statistic the zero seed's gate already uses, taken as a mean over the sparse grid
+(the 1/8 lumas moved ahead of the coarse search for it): above 0.25 the coarse level cannot see the frame
+and the shift is refused -- the film reads 0.108, the stairs 0.107-0.182, W3 0.207, so it separates little on
+its own but holds the line with the other two. With the three (`-global.glsl`, GLOBAL_SEED=1), the ladder:
+
+    up:   F2 fourier accel +2.33   V3 stairs v12 +1.91   L4 40-px +1.34   V1 bars +1.27   O2/O6 +0.93   M1/M2 +0.87
+    down: P1 stairs along v4 -4.13   P3 -0.56   F1/R1 -0.50   L3 -0.42   H2 -0.35   V2/L6 -0.31
+    the rest within +-0.2;  capped mean 38.04 -> 38.11
+
+Everything within half a decibel is inside the Mac ladder's own noise for the propagated family (the
+2026-09-19 note); the two real terms are P1 down four and the reach cases up one to two. P1 is the pure
+periodic print moving along its steps at 4 px, whose frame-wide picks (+1.4, +1.8, +2.0 texels) pass every
+gate when three of them agree; there is nothing else in that frame to break the tie, which is what the
+synthetic case is for and what a real wall has (the 128-px blocks, a window, a door).
+
+**Where it lives.** `tests/gen_variational.py` with `GLOBAL_SEED=1` in the environment emits it (the banner
+line names the variable); without the variable the recommendation regenerates byte-identical (checked, zero
+lines of difference), so it is a switch in the sense the project means: the old form is one regeneration
+away. It ships as `shaders/bidirectional-interpolation-variational-propagated-global.glsl` (63 hook passes
+against the recommendation's 61), and the recommendation is UNCHANGED: the ladder reads the seed as a trade
+-- the tracking shot and the reach cases against one synthetic periodic print -- and a trade is his call, as
+the zero seed's was. The demo's family can offer it beside the recommendation for his eyes.
+
+**Time.** The film's clip from its lossless file, 181 frames at 1080p to 60 fps, three interleaved pairs, the
+median: the recommendation 3.39 s, the variant 3.52 s -- +3.8 per cent on the whole run, of which the decode
+is a part, so about five per cent of the shader's own time: two small passes, a fourth coarse descent and a
+fifth candidate at 1/8.
+
+**And the question of the night, from him:** *"Is there any benefit from testing with higher frame-rate
+conversions, ie 24p -> 120p -- in theory high conversions have to invent more frames so the error is more
+likely to be more pronounced?"* No new frames, as it happens: 120/24 is exactly five, so every output sits at
+a phase of 0, 0.2, 0.4, 0.6 or 0.8 between two source frames -- and 60/24 is 2.5, whose phases step by 0.4
+and land, over two source frames, on the same five. The 60 fps ladder already invents every frame 120 would;
+120 renders each of them once per source pair instead of once per two, and the eye sees the same errors
+twice as often. What WOULD show more: a ratio that lands a phase at 0.5, the furthest point from both
+frames (24 -> 48 is nothing but that phase), and the ladder's 0.4 and 0.6 sit close enough to it that the
+figures would move little. The conversions that differ in kind are the downward ones and the odd ones (25
+-> 60, whose phases never repeat), which the engine's window test covers.
+
+
+### The cage: a fine periodic print under a sub-pixel drift, where every warp loses to the blend (2026-09-21)
+
+His second report from the same film: *"A problem that remains is the aliasing problem ... a short book-end
+around 10:16 ... some sort of white cage or grid with vertical lines (we previously worked on horizontal steps
+with the aliasing issue, but I don't think we worked on verticals)."* A screenshot circled it: the white
+railing of the market cross behind the crowd, and in the interpolation its bars bend, fork and break.
+
+**Measured on the source** (`tests/probes/dig/`: the clip, a 4x crop, `panspeed.py` on the railing's rectangle
+alone). The bars are 9 px apart, 3 px wide, 80 levels over the wall; the railing drifts a fraction of a pixel a
+frame sideways (0.2-0.7 px), moves down 3-4 px a frame at the shot's start, and the crowd crosses it at 6-16.
+The recommendation's output at 60 fps, tiled: bars bowed, joined in Y's, one zigzagging -- a flow field that
+varies across the railing by fractions of a bar period, not a ghost.
+
+**Crystallised** (`tests/scenes.sh`, `tests/probes/cage/cage.sh`, scored on the whole frame and on the cage's own
+rectangle, because a small region's fault vanishes in a frame mean -- which is how his eye found what the
+ladder's mean had not): C1_cage_drift, soft-edged bars of that period and contrast on a wall with the ladder's
+32-px grain, the whole scene drifting 0.5 px a frame; C2, the same with a dark figure crossing at 6 px a frame.
+
+    C1_cage_drift, PSNR Y          frame    cage's rectangle        C2 (occluded)   frame    cage
+    hold                           36.6     31.0                                    35.8     30.0
+    linear (the blend)             47.4     43.2                                    39.5     34.1
+    the base                       28.6     21.8
+    propagated                     29.0     22.2
+    variational                    30.3     23.5
+    variational-propagated (rec)   31.6     24.9                                    32.4     25.8
+    -global                        31.6     24.8                                    32.3     25.7
+    the quad                       28.7     21.9
+
+Every member of the family is 6 dB below a HOLD and 18 below the plain blend on the cage, and worse than the
+hold on the whole frame, which the cage's fifth dominates. The field, read (`read_view 4`): on the cage 54 per
+cent of texels within 0.3 px of the drift, 22 per cent at zero (the small-flow floor), and 20 per cent at -3 to
+-10 px -- a bar period away, and those are the bends. The mechanism is the period-collapse family at a finer
+scale than the record had it: bars 9 px apart are a MOIRE to the 1/8 level (8-px sampling), the Moire moves
+at its own speed, the 1/8 flow is the Moire's, and the quarter level refines from a seed a period out into the
+match one period along, which is as good as the true one. The block matcher cannot tell them apart; only a
+prior can.
+
+**The ceiling, and what it says.** The family's own warp with the TRUE flow forced (0.5 px, uniform; an oracle
+variant): 37.4 on the cage against the blend's 43.2. A warp of half a pixel moves nothing the eye can see and
+resamples every bar it touches; on fine detail under sub-pixel motion the blend is the better interpolator
+whatever the estimator does. That sets the target: not a better flow here, but knowing when not to warp.
+
+**Four remedies, measured.**
+(1) The quarter level refining from ZERO where the 1/8 level's picture is a Moire (`moire_e`, the coarse
+    level's own statistic one level down; the 1/8 lumas bound): cage 24.9 -> 30.5 -- and the ladder wrecked
+    (L1 -5, L2 -6, M1 -10: the ladder's 4-px noise reads as Moire at 1/8 everywhere, and a good 1/8 flow was
+    thrown away for a zero descent that cannot reach 8 px). Refined to a COMPETITION: the zero descent wins
+    only as the smaller of two GOOD matches (within 0.3 of the local contrast per tap) with a RIDGE between
+    them (the match half way between two minima of a periodic print is at its worst; a flat interior -- L1's
+    white block, whose edge the Moire test reads as Moire -- matches everywhere and has no ridge, and there
+    the seed stands: without that test L1 lost 6 dB with the gate barely opening). Cage 24.9 -> 27.9, C2 25.8
+    -> 27.7; the film's railing 25.5 -> 26.3; the ladder within its noise (L1 +1.1, V3 +1.2, P4 +1.1 / M1 -1.75,
+    F1 -1.3, L2 -1.2, the rest under a decibel). In the generator as `QZERO_MOIRE=1`.
+(2) A PERIODIC FALLBACK in the final pass: a half-level pass asking whether the final flow is one of several
+    equally good matches (its match, the zero offset's match, the ridge between), and blending the frames
+    unwarped where it is: cage 28.6, C2 28.2 alone; stacked on (1), with the small-motion blend, 31.2 / 29.9
+    -- the hold's level, the wrong texels that remain being sub-period errors no gate names.
+(3) The SMALL-MOTION BLEND: blend unwarped under a pixel of flow. Nothing on the cage by itself (the wrong
+    texels' flows are not small), a component of the stack.
+(4) REFUTED: blending wherever the two frames AGREE locally (the zero offset's match within a fraction of the
+    contrast). It gives the cage the blend's own score -- 43.3 at half the contrast, the film's railing 25.5 ->
+    29.4 -- and it wrecks the ladder: at half the contrast M1 -17, P2 -11, L1 -9, F1 -7; at three tenths M1
+    -9, F1 -4, P3 -3. Random texture and a periodic print in MOTION "agree" to that degree at a wrong offset
+    as readily as a sub-pixel drift does at the right one; local agreement cannot tell the two apart, and the
+    warp of a moving texture is exactly what the blend then ghosts. The record's old occlusion fallback died
+    the same death for the same reason.
+
+**Where it stands.** The cage is a case now (C1, C2, the probe), the mechanism is named, and the honest measure
+of the family on it is 6 dB below a hold with the ceiling 6 dB below the blend. (1) is a switch worth three
+decibels and no more; the answer the ceiling asks for -- warp where the flow is trusted, blend where it is
+not, decided by something that separates a sub-pixel drift of bars from a moving texture -- is not built. The
+cue that separates them is not local agreement (refuted) and not the flow's magnitude (the wrong flows are
+large); it may be the field's own coherence (a periodic print's wrong flows come in patches at one period's
+offset from their neighbours, a moving texture's do not), which is the next thing to measure.
+
+### The field's coherence: the cue that separates, and the gate it makes (2026-09-21, later)
+
+The measure the cage left open: is there anything in the FLOW FIELD itself that tells a periodic print's wrong
+flows from a moving texture's right ones, where the frames' local agreement could not? The final half-res
+flow painted for a machine (a tail pass, one texel per 2 x 2 block), read on twelve pairs of C1, of the new
+C3 (below), and of three ladder controls the agreement blend had wrecked (M1's noise, P2's speckle, L1's white
+square), each texel scored against its case's truth, and six cues of the field computed per texel: the
+distance from the 9 x 9 median, the 9 x 9 spread, the SUPPORT (the share of the 9 x 9 neighbours within
+0.75 px of the texel's own flow), the 5 x 5 range, the forward/backward mismatch, and the change since the
+last pair.
+
+    at the threshold that catches 75% of the cage's wrong flows, the share of each population flagged
+    cue            thr    C1 wrong  C1 right  C1 wall  |  M1 right  M1 wrong  P2 right  P2 wrong  L1 wrong
+    1 - support    0.47      76%        2%       0%    |      0%       98%        0%        1%       51%
+    range 5x5      2.44      75%       13%       0%    |      0%       89%        0%        1%       15%
+    spread 9x9     1.85      75%       20%       0%    |      0%       12%        0%        0%        0%
+    fwd/bwd        1.92      75%       18%       0%    |      0%       90%        2%       42%        5%
+    dt             1.73      75%       16%       0%    |      0%       99%        0%        2%       31%
+
+The support separates: three quarters of the cage's wrong flows have under 53 per cent of their neighbours
+with them, 98 per cent of its right flows have more, and a moving texture's right flows are NEVER below it
+(M1 and P2 0 per cent, against the agreement blend that flagged M1 wholesale). It even catches M1's own
+wrong texels (98 per cent). So the cue is real -- and the gate it makes was measured next: a pass at the half
+level (81 taps of the flow), and in the final pass the two frames blended UNWARPED where the support is low,
+faded between two supports.
+
+**C3, his case: the bars at every angle.** *"Construct a grid of parallel bars, then have that grid both rotate
+and translate about its origin -- this avoids thinking in terms of horizontal or vertical bars but the more
+general case at any angle."* C3_bars_spin_drift: the same bars and wall as C1, rigidly rotating about the
+grid's origin at 0.15 rad/s (17 degrees over the two seconds) while the origin translates at 1 x 0.5 px a
+frame; the motion is a different vector at every texel, sub-pixel near the origin and two pixels at the rim of
+the 300-px disc the bars fill; scored on the disc. Harder than the cage by every measure: the family's flow is
+wrong on 88 per cent of the disc (median error 8.8 px), half of the wrong flows mostly ALONG the bars (the
+aperture: a 1-D print cannot say how far it slid along itself, and the grain beneath is too faint to say for
+it), and of the across-bar errors 48 per cent are one period out and 9 per cent two. The disc: hold 24.4,
+blend 28.9, the recommendation 21.9, -global 21.8, QZERO_MOIRE 21.9 -- the quarter level's zero descent does
+nothing here, because its ridge test wants two minima with a worse match between them and the ambiguity along
+a bar is a valley, not a second minimum. The whole frame (the rotating wall) 25.4 against the hold's 27.3,
+the wall's own flow smoothed short of the rotation (median error 1.2 px at the corners' 4 px).
+
+**The gate alone (support 0.5-0.7): the cage's best number and the ladder's worst.** C1's cage 24.9 -> 33.4
+(above the hold's 31.0), C2 25.8 -> 31.6, C3's disc 21.9 -> 26.8; and the ladder: L1 -24, L2 -17, F1 -17,
+L8 -15, P3 -15, L6 -14, A1 -12, M1 -11, the capped mean 38.0 -> 35.5. Why, when the cue never flagged a
+moving texture's interior: the interior is not where a moving OBJECT lives. At the object's boundary the
+window straddles two motions and every texel's support is near a half; inside a flat object the flow is
+whatever the propagation left, incoherent and harmless -- until the blend puts the object's edge down twice,
+eight pixels apart. The support says where the field disagrees with itself; it does not say the blend is
+right there, and at a moving edge it never is.
+
+**The second condition: the frames must agree unmoved.** What the cage has that a moving edge has not: the
+two frames, laid over each other with NO shift, nearly agree (a sub-pixel drift moves a bar's edge a
+quarter of its contrast; a 5 x 5 mean of |A - B| a tenth to a quarter of the local contrast), where an edge
+that moved eight pixels disagrees by the whole contrast across the band. Not the refuted agreement gate: that
+blended WHEREVER the frames agreed; here the agreement is required together with the field's own
+incoherence, and a coherent field never blends. The pass gains the 5 x 5 agreement at zero as a share of the
+local contrast, the blend is the product of two fades -- and the ladder's losses shrink from twenty decibels
+to five (agreement 0.25-0.40: L1 -5.0, F1 -5.9, M1 -4.7, H1 -3.3, V1 -2.5; capped mean -0.08) but do not go:
+M1's random texture agrees with itself unmoved to a THIRD of its contrast at any offset (the mean |x - y| of
+two uniform draws), which sits inside the fade, and no absolute threshold separates a third from the cage's
+quarter. The same fragility that refuted the agreement blend, one condition down.
+
+**The third: zero must match as well as the flow does.** A periodic print a period out matches at zero
+exactly as well as at its flow -- they are the same match; a random texture in motion matches at zero to a
+third of its contrast and at its flow to nothing. So the RELATIVE agreement, |A - B| at zero against |A - B|
+at the texel's own flow (with a tenth of the contrast in the denominator so a flat patch reads as agreeing):
+under one, zero is as good as the flow; M1's interior reads three, L1's band ten. The product of the three
+fades (support 0.5-0.7, absolute agreement 0.40-0.55, relative 0.8-1.3):
+
+    the ladder, propagated-family Mac noise +-1.8   M1 -2.3  F1 -1.6  H1 -1.4  L8 -0.9  F2 -0.8  L7 -0.7  R1/R2 -0.6
+                                                    P1 +7.4  L1 +2.2  M2 +1.3  P5 +1.3  L0 +1.3  P3 +1.2  P2 +1.1
+                                                    capped mean 38.02 -> 38.02, raw 46.15 -> 46.35
+    the cage    C1 24.9 -> 33.2 (hold 31.0)   C2 25.8 -> 31.1 (hold 30.0)   C3 21.9 -> 23.2 (hold 24.4)
+    the film    the railing 25.5 -> 27.9 (hold 25.3, blend 29.4); the whole frame 28.67 -> 28.84
+    time        +2.8% (720p, 24 -> 60, ffv1 source, three rounds interleaved)
+
+Stacked on QZERO_MOIRE (the zero descent mends the flows it can, the gate blends the rest): C1's cage 35.8,
+C2 32.2, the railing 27.5, +0.6% time; the ladder M1 -3.6, F1 -2.2, H1 -1.8, L8 -1.6, L3 -1.3 / P1 +7.5, P4
++1.4, L0 +1.3, M2 +1.2, the capped mean 38.02 -> 38.00 -- the two switches' M1 losses add, and the stack is
+the one to read best-of-3 on M1 before anything else.
+
+**Where it stands.** The cue was the measure and it held: the field's own support is the first statistic
+that tells the cage's wrong flows from a moving texture's right ones, and it needs the two agreement tests
+beside it before the blend it gates is safe at a moving edge. In the generator as `COHERENCE_GATE=1` (off:
+the recommendation byte-identical; on: the tested file to a run's wander), stacking with `QZERO_MOIRE=1`; the
+recommendation UNCHANGED -- a ship is the full ladder's call and his, and the ladder's M1 -2.3 is at the
+edge of the family's noise on this Mac (best-of-3 before any ship decision). C3 is not solved by any of it:
+the aperture along a bar is not a period-out match, and its gate would be the flow's variance along the
+bar's own direction, unmeasured. The ceiling stands (the blend beats the true-flow warp on such content);
+what the gate buys is the part of that ceiling the family can reach without knowing the truth.
+
+**The gate's M1, best-of-3, and the retune.** M1 x3: the recommendation 45.7 / 46.7 / 47.0, the zero descent
+46.4 / 46.0 / 45.9 (noise), the gate 44.6 / 44.4 / 43.2 -- a real 2.3 dB. Not the halo of the support window
+(the relative test closes a right texel whatever its support): the wrong flows of a random texture in fast
+motion match badly at their own offset too, so zero matches "as well" (rel 0.77) and the blend opens where
+the warp was no better -- and the fade's partials around them are where the decibels went. The relative
+fade tightened to 0.5-1.0: M1 45.9 / 45.5 (within the noise), the cage 32.4 (+7.5); the support fade
+tightened instead (0.4-0.6) gives M1 46.0 but the cage 31.5; the absolute agreement tightened (0.30) gives
+nothing. 0.5-1.0 is the generator's default.
+
+**The three together, and the player's rule.** His rule for the Cadence player, the same day: *"the best
+possible shader that works in most use-cases regardless of performance -- so long as performance stays
+within a real-time tolerance ... where a switch-toggle provides some tangible benefit for a specific content
+type but might be detrimental to say film, this determines the shader used."* The three switches in one
+file, the full ladder, one run each against the recommendation:
+
+    within +-1.7 everywhere: M1 -1.2, L2 -1.4, L0 -1.6 (at 78 dB)  /  V3 +3.0, P4 +1.7, L4 +1.5, M2 +1.2, L1 +1.2, P2 +1.1, P3 +1.0
+    capped mean 38.02 -> 38.10, raw 46.15 -> 46.36
+    the cage C1 24.9 -> 34.6, C2 25.8 -> 31.6, C3 21.9 -> 22.7; the railing 25.5 -> 27.1; the wall's pan as -global (+1.9, +5 at the fastest)
+    time +6.4% at 720p (the seed +2.5, the gate +2.8, the descent +0.6)
+
+The seed's P1 -4 is gone (the gate's P1 +7 covers it: the two answer the same periodic print from two sides).
+Ships as `shaders/bidirectional-interpolation-variational-propagated-global-cage.glsl` with a `-4k` form
+(`scale_shader.py` taught the global shift's coarse-to-1/8 hand-off; the recommendation's 4K file still
+regenerates byte-identical), and by his rule it is the player's default graph from today; the recommendation
+stands as the science's reference. One thing to watch: on C1 the combined file's third pair dips (frames 12-13
+of the cage at 20-21 dB against the run's 30s), which `-global` alone also does there -- the seed's first
+engagements before its consistency memory has a history; two frames in a hundred, and the mean carries it,
+but it is the seed's, not the gate's.
+
+**C3's aperture, measured, and the normal flow that could not matter.** The measure taken at leisure: on C3's
+disc the wrong flows' along-bar error is COHERENT (correlation 0.98 with its own 9 x 9 mean -- the regulariser's
+guess, smoothed into patches, not texel noise; 9 x 9 spread 1.2 px against the right flows' 0.3), so no local
+variance cue sees it; and it does not matter: the along-bar component of a flow on a one-dimensional print
+moves nothing the picture can see, by the same aperture that made it unobservable. Tried anyway, as the one
+cheap thing -- the final pass warping by the flow's projection onto the structure tensor's gradient where the
+5 x 5 patch is one-dimensional (lambda2 / lambda1 under 0.15) -- and C3's disc is unchanged to the hundredth
+(21.93 -> 21.93 on the recommendation, 22.69 -> 22.64 on the three-switch file), C1 +0.2. What costs on C3 is
+the ACROSS error (7.4 px median on the wrong texels, a period or two out) at a motion of one to two pixels,
+where the zero descent has no ridge along a bar and the gate's agreement test is rightly closed: the bars have
+moved. The remedy for a rotating print would have to resolve the period ambiguity at two pixels of motion, and
+nothing measured does; C3 stays open with its number, hold 24.4, blend 28.9, the family 22.7.
+
+### The field on real bodies: two hours of children, scored against a skeleton it shares nothing with (2026-09-27)
+
+WHAT-IT-CAN-MEASURE.md closed on the gap that mattered most: every number the family has was taken on a synthetic
+scene with an analytic answer, and the transfer to real footage was assumed, not shown. This is the first real
+content with an independent answer key.
+
+**The data.** A live camera (an iPhone 12 Pro's 1x lens via Continuity Camera, 1920x1440 scaled to 1280x960, 30
+fps) watched children play for about two hours twenty (2026-09-27, four sessions, 251,527 frames). The recording is
+NUMBERS ONLY: no picture was kept, because the players are other families' children. It holds:
+- the recommendation's field on every frame, from a Metal host. This is the party app's copy of the plain
+  recommendation, without the global seed or the coherence gate: FLOW_H_AB, the two-frame forward flow at half
+  resolution, 2-px cells, in field-only mode;
+- every 2-px cell once a second, and every frame through a crossing; every frame at 8-px cells;
+- Apple Vision's 2D body pose on the same frames: 19 joints per person with confidences.
+
+Vision is a neural detector with no block matching in it, so where the two agree it is not by a shared failure. The
+recorder and the formats are in the party app's tree (PartyApp/Recorder.swift); the loaders, the drivers and the
+pre-registered predictions are in tests/probes/party/. Data: np-scratch/lillys/party-2026-09-27 and
+np-scratch/party-analysis.
+
+**The instrument, first.**
+- **The answer key's noise.** Vision's frame-to-frame jitter where the field says the body is still has a median of
+  0.8-1.1 px and a p90 of 2.4-3.2 px, with a heavy tail: left/right swaps and lost detections.
+- **Midpoints, not joints.** A joint sits at a limb's END or EDGE, where a field window is half background.
+  Scoring moved to BONE MIDPOINTS: a rigid segment's midpoint moves by exactly the mean of its ends, and its window
+  lies inside the limb. On still bodies the midpoints' noise floor is 0.4 px.
+- **The alignment check** (the PSNR-alignment trap, applied first). The field against Vision shifted by -1, 0, +1
+  and +2 frames, on identical records, correlates 0.448 / 0.502 / 0.461 / 0.352. The pairing is right.
+  - A smaller subset had put +1 first. The rerun on identical records is what overturned it.
+- **The control with exact truth.** The party app's own fieldcheck scores the same field against Blender's exact
+  flow on rendered children: the bench clips, with every 2-px cell of the actor scored.
+
+**1. Velocity: the middle transfers, and the reach cliff is on real bodies.**
+Arms, the unbiased once-a-second records (gain = the field projected on Vision's displacement, median; "zero" =
+the share with gain under 0.25):
+
+    px/frame      8-12  12-16  16-20  20-24  24-28  28-32  32-36  36-42  42-50  50-64  64-90
+    gain p50      0.71   0.75   0.74   0.71   0.62   0.55   0.50   0.38   0.31   0.15   0.03
+    zero          18%    15%    16%    14%    22%    24%    32%    40%    42%    67%    84%
+
+The crossing runs agree band for band, on 10-30 times the samples.
+
+- **The middle band.** The bench's exact truth reads 0.86-0.90 at 4-12 and 12-24 px/frame on rendered children. The
+  gap to 0.71-0.75 is about 0.05 from Vision's noise (the attenuation of a projection gain at these speeds) and
+  the rest from real content.
+- **The cliff starts at 24 px/frame and is half-way by about 40.** It is not a uniform shrink: the median declines
+  while a growing share snaps to near zero. That is the fast pan's signature, on bodies against a still room.
+- **The cliff moves with the BACKGROUND.** The bench collapses at 24-36 px/frame in its textured room (star jump
+  -0.03, dance 0.07) and only past 36 in its dark room (0.53 at 24-36). The still texture behind a limb is what
+  wins the search.
+- **The global-motion seed cannot reach it:** the frame's dominant shift is zero when only the children move.
+- **Size is not the cause** (the hypothesis that a child's limb is one texel at the coarse search: refuted). At
+  8-32 px/frame the gain is 0.60-0.74 for body rulers from 90 to 2000 px, with no trend.
+- **Direction barely matters.** Vertical motion reads 0.06 lower than horizontal.
+- **Legs read worst** (thighs 0.27-0.49, shins 0.36-0.51): party dresses, whose fabric the field follows and the
+  skeleton does not.
+
+**How often real children pass the cliff.** Frame-to-frame speeds of 308k frames of Vision bone midpoints, Vision
+glitches dropped:
+
+    share of frames over    24 px/frame  36 px/frame  | the same motion at 1080p24 (x1.875): over 24  over 36
+    forearms                    8.7%        3.1%      |                                      24.1%    13.3%
+    upper arms                  3.3%        0.8%      |                                      14.0%     6.0%
+    torso                       1.5%        0.2%      |                                       8.6%     3.2%
+
+Filmed at 1080p24 with the same framing, a quarter of a playing child's forearm frames would be past the cliff and
+one in eight deep in it. The fix it asks for is a LOCAL reach: a candidate the coarse search cannot miss where one
+region moves fast against a still one. The frame-global seed does not provide that. It is the next lead, and it has
+a real-content gate: this data.
+
+**2. The halo, measured on real limbs.** 4,644 profiles across the moving arm bones of children standing alone (no
+one within two rulers, so the background's true field is zero). The field is sampled perpendicular to the bone
+and projected on the bone's own displacement (Vision's), in units of the limb's motion. +s is the side the limb
+moves toward.
+
+    offset px          -64  -48  -32  -16    0  +16  +32  +48  +64
+    8-16 across       0.06 0.19 0.49 0.77 0.84 0.81 0.66 0.37 0.14
+    16-24 across      0.06 0.16 0.47 0.77 0.84 0.83 0.70 0.42 0.16
+    8-16 along        0.05 0.10 0.24 0.45 0.54 0.47 0.30 0.13 0.06
+
+The field falls to half the limb's motion 32 px from the bone's centre-line on the side the limb is LEAVING, where
+the background is visible in both frames and its true field is exactly zero. On the side it moves TOWARD it falls
+to half at 44 px. It reaches a tenth only at 60 / 72 px. A child's forearm here is 30-45 px wide, so the field's
+moving region is about twice the limb.
+
+This is the interpolator's halo, from real content: the synthetic bench's "bleeds 12-32 px" (the party app's
+research/01), confirmed. The along-bone rows are the APERTURE on real limbs. An arm moving along its own length (a
+push, a reach) reads 0.44-0.54 of its motion at its centre, against 0.84 moving across.
+
+**3. The tensor on real bodies, and depth (THREEDIMENSIONAL.md section 9.8).**
+- Divergence and curl both read at the right SIGN on real children.
+- Divergence reads at about 0.6 of its magnitude; curl at about 0.9 once the raw field is fitted directly.
+- The detail, and the refutation of P4's magnitude, are there.
+
+**4. At an occlusion the field follows the front surface.** 2,347 overlaps of two children's torsos whose motions
+differ by 3 px or more. The front child is taken as the larger body ruler (at least 1.15x; a proxy that
+misorders a small child in front of a tall one, so the true figure is higher).
+- The field's median vector in the overlap is nearer the front child's motion 69.9% of the time (median 3.96 px to
+  the front, 6.49 px to the back).
+- That rises to 73% with a clearer size order or a larger motion difference.
+- It is NOT "the faster motion wins": the faster child wins only 35-41%.
+- For the picture this is the right answer. For a skeleton it is P3's warning: the covered child's joints read the
+  front child's motion.
+
+**5. Real motion, as the interpolators' input** (Vision bone midpoints at 30 fps, the truth; its floor on still
+bodies is 0.4 px).
+- **Persistence.** Arms moving at >= 8 px/frame in consecutive frames turn a median 15.5 deg per frame; 17% turn
+  more than 45 deg, and **6-7% reverse** (over 90 deg). The rate holds from 8 to 20+ px/frame, so it is motion, not
+  noise. The temporal seed's premise holds in the median and fails one moving frame in fifteen.
+- **The order question, as path error.** Decimate to 15 fps and rebuild the dropped frames: the straight line (the
+  two-frame family) against the cubic through four kept frames (the quad's order). Arms, 15 -> 30:
+
+      local speed at 30 fps   still (floor)   4-8 px/f     8-16 px/f    16-32 px/f
+      linear p50 / p90         0.42 / 1.38   2.05 / 5.69  2.97 / 8.15  4.38 / 13.09
+      cubic  p50 / p90         0.41 / 1.34   1.83 / 5.17  2.51 / 7.40  3.57 / 12.28
+      cubic wins                  53%           58%          61%          63%
+
+  The four-frame order puts a moving limb 11-19% closer to where it really was, and about 20% closer at 10 -> 30.
+  Past 32 px/frame both fail alike (p90 about 41 px). This is the benefit the whole-frame picture test could not
+  see (per-segment selection worth 0.04 dB): it lives on the moving limbs, a small share of any frame.
+
+**6. The live camera's floor.**
+- In an empty room the whole-frame median |f| is 0.01-0.02 px/frame, with a p99 of about 1 (bumps and exposure
+  steps). The first session read 0.31 (its setup).
+- A 10 Hz line stands 6-9x above the spectrum's median in every session: 100 Hz mains flicker beating against 30
+  fps capture. The bench named it and never modelled it. It is present, and tiny.
+
+**Caveats.**
+- Vision's joints are kinematic points, not material ones. Bone midpoints mitigate this; they do not remove it.
+- The front order at crossings is a size proxy.
+- In the last session someone pressed the field's key at 14:58, and 45% of that session's frames have no field
+  (the analyses read only the records that exist).
+- Every figure is at 1280x960 and 30 fps, on this camera, in this room.
+
+**Predictions (tests/probes/party/PREDICTION.md, written before any score).**
+- **P0, Vision's jitter 1-3 px: MET** in the median (0.8-1.1, p90 2.4-3.2), with a heavy tail.
+- **P1 (the middle band).**
+  - Torso 0.85-1.0: REFUTED, 0.69-0.72 (the bench's exact truth reads 0.86-0.90; the gap is real content plus the
+    answer key's noise).
+  - Wrists and forearms 0.6-0.9: MET, 0.71-0.75.
+- **P2, the gain under 0.6 at 24-48 px/frame, gradual, no snap:** MET on the gain (0.62 -> 0.31); REFUTED on the
+  mechanism. The loss is a growing share snapping to near zero (22% -> 42%), as on the fast pan, not a uniform
+  shrink.
+- **P3, occlusion: RE-POSED and measured.** At an overlap the field follows the front surface 70-73% of the time.
+  The joint-level 2x ratio was not scored; the party app's bench had already shown it (12 px against 0.09 at
+  visible joints).
+- **P4, depth.** Sign: MET (divergence 79%, curl 90% at clear motion). Magnitude, gain 0.7-1.1: REFUTED for
+  divergence (0.55-0.64 on the raw field), MET for curl (0.89-0.91 on the raw field).
+
+**The limb on the ladder, and its two mechanisms (2026-09-27, the same evening; tests/probes/limb/).** The cliff is
+crystallised as three edge cases (scenes.sh). K1 is a textured limb (48 x 200, the object grain) sweeping a STILL
+wall with W2's multiscale texture, at 12 -> 60 px per source frame over the second. K2 is the same limb over a flat
+dark wall. K3 is K1 with only the limb's mean brightness raised. All are scored in a box that follows the limb
+(limb.sh: whole-frame PSNR would be the still wall's), five runs each, because the propagated family wanders here.
+
+- **K1 reproduces the real cliff.** The recommendation leads linear by 5.4 dB at 12-18 px/frame, 1.1 at 18-24 and
+  0.2 at 24-30, and sits at or below it from 30. `-global-cage` and the quad do the same: the global seed cannot
+  see a lone limb.
+- **K2 holds.** The shaders stay 5-10 dB above linear to 36 px/frame, so the background decides.
+
+The per-level view (limblevels.py, levels.py's trick on the recommendation, scored inside the limb; the pairing
+checked both ways) separates two mechanisms.
+
+**(1) The coarse level is point-sampled** (one bilinear tap per 16 x 16 footprint; section 8). A fine grain moving by
+anything but a multiple of 16 px is tapped at different grain cells in A and B, so the limb's coarse picture is
+scrambled while the still wall's taps match exactly at zero.
+- The coarse search reads K1's limb at gain 0.26 at 18-24 px/frame.
+- It reads K3's (the same grain, a brighter mean, so the limb stands out whatever the taps catch) at 0.87, and the
+  final field then holds 1.03 / 0.94 / 0.91 to 36 px/frame.
+- So what fails is not speed and not the wall's texture: it is **a finely textured object whose coarse taps
+  scramble against a background whose taps do not.**
+
+**(2) The 1/8 propagation is a contrast-weighted mean**, and a textured still background is all high-contrast zeros.
+- K1: the fresh 1/8 search reads 0.67 at 18-24, and after propagation 0.29.
+- K3: 0.62 -> 0.29 at 36-42.
+- A flat wall's zeros carry no weight, which is why K2 never showed it.
+
+**Two remedies, prototyped and gated (the full 42-case ladder, best-of-3 on the Mac, against the committed control
+reproduced byte-for-byte).**
+
+- **EDGE_PROP** (gen_variational.py, a switch; each propagation neighbour weighted by its flow's agreement with the
+  texel's own, by the texel's confidence). The limb: +1.07 dB at 18-24 px/frame. The ladder: REFUTED.
+  - Capped mean -0.36 dB, 21 cases down.
+  - The period family collapses: H1 and V1 -11.6, H2 and V2 -5.8, R3 -4.6, A5 -4.0.
+  - In the period cases a texel's raw match is confidently wrong, and the mean across disagreeing neighbours is what
+    carries the right basin over it. The agreement weight protects exactly the confident, disagreeing texel: right
+    at a motion edge, fatal at an alias, and disagreement alone cannot tell the two apart.
+  - Kept as the design record.
+- **A coarse texture-energy channel** (energyvariant.py, a prototype patch). Beside the point-sampled luma, each 1/16
+  texel carries its footprint's mean 2-px gradient magnitude, and the coarse SAD adds W |dE|. This is NOT section
+  8's prefilter, which replaced the taps and lost the load-bearing aliased contrast.
+  - The limb: the coarse gain at 18-24 px/frame on K1 goes 0.26 -> 0.44 / 0.60 / 0.64 / 0.72 at W 1 / 2 / 4 / 8. The
+    final field on K1 improves little, because the 1/8 level aliases the same grain and propagation dilutes (the
+    mechanisms stack).
+  - On K2 the reach extends: the final field reads 0.87 at 36-42 px/frame and 0.69-0.73 at 42-48 (committed: 0.52
+    and 0.15).
+  - The ladder: A TRADE. Capped mean -0.11 (W 4) and -0.12 (W 8).
+    - Down: the period family (V1 and H1 -2.1 to -2.3; V3 -6.8 at W 8; H2 and V2 -2.2 at W 4) and P5 -1.0/-1.1. The
+      pre-registered risk: energy has its own structure where a print's period sits near the coarse texel.
+    - Up: L7 +1.7/+2.0, L1 +1.6, M1 +0.6, A5 +0.4/+0.6.
+    - L0_static unchanged, as predicted.
+  - Real footage (real.sh; realbench's decimate-and-reconstruct, three segments per clip; on this Mac the
+    passthrough frames return at ~60 dB, not bit-exact: the known floor of the MoltenVK libplacebo path, not a
+    misalignment, which reads 20-30):
+
+        PSNR mean      street (people)   avengers   bttf    bluey
+        committed          26.47           36.87    32.53   30.48
+        W 4                26.48           37.22    32.19   30.50
+        W 8                26.48           37.08    32.53   30.50
+
+  - W 8 is level to slightly positive on real footage, and the street clip does not move at all.
+  - **So the channel is a real reach extension for a fast object over a background that does not compete, bought
+    with 2-7 dB on the period family** -- the family the zero seed was built to rescue. By the rule it could only
+    ship as a switch, off, and the owner's call. It is kept as the prototype (energyvariant.py) and not in the
+    generator.
+  - **What would make it more than a trade:** keep the energy term out of texels whose coarse luma is a periodic
+    print. The QZERO_MOIRE and coherence cues already say where those are. Carry it to the 1/8 level too, where
+    the same grain aliases. Both are open.
+
+**The energy channel, second form: smoothed, dense, and at two levels (2026-09-27, evening; energyvariant2.py).**
+The first form's losses were read as the energy aliasing: a 24-px print's gradient energy averaged over a 16-px box
+ripples with the print's phase.
+
+- **Step 1 (a refutation).** A Gaussian footprint (sigma 12 px) with taps sigma/2 apart made the period family WORSE
+  (V1 -19 to -27, H1 to -24). The TAPS aliased: a sine print's |gradient| repeats every 12 px, and a 6-px lattice
+  samples it at one phase. Smoothing a statistic does not help if the statistic is sampled below its own Nyquist.
+- **Step 2.** Taps every 2 px (25 x 25 out to 2 sigma), at both the coarse level (W_S 8) and the 1/8 level (W_E 1).
+  The 1/8 level's post-propagation data check must score the same way, or it rejects the energy-chosen vector by
+  luma alone. (Found: the dark-wall limb's raw 1/8 search read 0.95 while its final field fell to 0.2.)
+
+**The result (dense, W_S 8, W_E 1), full ladder best-of-3:**
+- **26 cases up by more than 0.3 dB:** L1 +7.2, L2 +5.0, L8 +3.8, F1 +2.7, L3 +2.6, M2 +2.4, M1 +2.3, L4 +2.3,
+  R3 +2.3, P3 +2.3, F2, A3 and A2 +1.8 to +2.0, L7 +1.6, L9 +1.2, O1 +1.0, ...
+- **7 down:** V3 -8.26, V1 -2.29, H1 -1.89, V2 -1.56, P1 -0.44, H2 -0.41, A5 -0.32.
+- **The capped mean reads -0.10** only because most gains sit on cases already above the 40 dB cap, while V3 (26 dB)
+  counts in full.
+- **The limb, five runs:** K1 +4.6 / +2.9 / +3.2 / +1.1 dB at 18-24 / 24-30 / 30-36 / 36-42 px/frame; K2 +2.5 to
+  +3.3 to 48 px/frame.
+- **Real footage:** street +0.03, avengers +0.17, bttf +0.34, bluey (the cartoon) -0.14.
+- **Cost: x4.0 the recommendation on this Mac** (5.07 s against 1.27 for 3 s of 720p 24 -> 60, interleaved, the cost
+  probe's method). The prototype computes each texel's energy from 625 taps at both levels. The engineering form is
+  one half-resolution gradient-energy pass per frame, blurred separably and sampled by both levels.
+
+**Open.**
+- The cost, by that engineering form.
+- **V3, the half-period alias** (square stairs moving 12 px a frame on a 24-px period), which the channel costs 8 dB.
+  Its patch moves over black, so the energy blob's edges carry the true motion. The loss is not the obvious one,
+  and the per-level view on V3 is the next measurement.
+- The sine bars' -2.
+
+**The lead is real:** a phase-free coarse cue beside the point-sampled taps lifts most of the ladder's movers and the
+limb that started it.
+
+**The engineering form, the weights, and V3 (2026-09-27, late evening; coarse_energy.py, gen_variational.py
+COARSE_ENERGY=1).** The dense prototype's cost (625 taps per texel) was removed by computing the same statistic once
+per frame. Each 4 x 4 block's 2-px gradient magnitude on dense taps, at quarter resolution, is blurred separably
+(sigma 12 px), and both levels take one sample of it.
+- **Cost:** x1.07 the recommendation, against the prototype's x4.04, interleaved on this Mac.
+- **Equivalence:** it matches the prototype on the limb (K1 22.90 / 19.96 / 19.32 dB at 18-36 px/frame, against
+  22.45 / 19.62 / 19.63).
+
+**Four weightings on the full ladder, best-of-3:**
+
+    W_S / W_E    capped    up / down >0.3    V3      the rest of the losses
+    8 / 1        -0.065      23 / 6          -7.90   V1 -1.82, H1 -1.49, V2 -1.05, L0 -0.56, P1 -0.45
+    8 / 0        -0.021      16 / 9          -4.97   V1 -3.29, H1 -3.22, L1 -2.38, V2 -1.26
+    4 / 1        -0.206      23 / 7          -7.44   H2 -3.18, V2 -1.76, V1 -1.17
+    4 / 0        -0.218      12 / 9          -6.56   H2 -3.67, V2 -2.22, L1 -2.02, L0 -1.71
+
+- 8 / 1 is the best form. Real footage: street +0.01, avengers +0.66, bttf +0.12, bluey -0.11.
+- **V3 is lost at every weight.** The per-level view (rectlevels.py) shows why:
+  - On the committed file the coarse level falls for V3's half-period alias (49% of the patch reversed), and the
+    1/8 level's fresh luma search RESCUES it (gain 1.05, 8% reversed), which holds to the end (1.00).
+  - With the energy term the coarse seed moves (median gain 1.52: it overshoots), and the 1/8 search then settles on
+    the alias (-0.54, 56% reversed).
+  - With the energy at the coarse level only, the 1/8 search rescues part of it (31% reversed at the end).
+- **So the rescue the base performs on V3 is fragile to ANY change in the coarse cost.** A fix would have to keep the
+  1/8 level's alias rescue independent of the coarse seed.
+- It ships as the switch COARSE_ENERGY=1 (off; byte-identical when off; SHADERS.md): a trade, and the owner's call.
+
+**Three steps before any leap (2026-09-27, late; the owner's call: "the steps may provide insight into how we leap").**
+Three depth leads in the party data that had not been looked at: Apple's 3D pose, the ground plane, and the arm
+pointed at the camera. The drivers are pose3d.py, groundplane.py and pointing.py (tests/probes/party/).
+
+**1. Apple's 3D pose is a scale reading, not a depth sensor** (5,260 results at 2 Hz, the first two sessions).
+- **It assumes f = 731 px at 1280 wide (82 deg across).** Its own joints, camera pose and image points fit that
+  projection to 0.2 px. That is Apple's default; the 12 Pro's 1x lens is about 67 deg (f ~ 962).
+- **Its distance is the 2D skeleton's size.** 1/distance correlates 0.85 with the body ruler, with a 13% spread
+  (distance x ruler p10-p90 283-365 m px). It adds no metric depth, and its 1.8-m reference body makes a child's
+  distance wrong by a factor of about 0.73 H.
+- **Its limb tilt out of the picture agrees only moderately with the 2D bone-length rule** (correlation 0.42). The
+  2D rule's median tilt is 29 / 38 / 52 / 60 deg where Apple's is 0-20 / 20-40 / 40-60 / 60-90: monotonic, and
+  over-reading small tilts.
+- **As a teacher for the field's depth it gives the sign and relative scale, which the skeleton already gives.**
+- **Re-test on every macOS / Vision update** (the owner: "updates literally update what was previously impossible;
+  if Apple fix 3D pose and we aren't paying attention, we can be blind to it for ever after"). pose3d.py runs in
+  seconds on any recording made with the 3D pose on. The verdict above is for macOS 27.0, 2026-09-27; what would
+  change it is an assumed focal length that matches the camera, a bodyHeight that is measured rather than the 1.8-m
+  reference, or a distance no longer explained by the 2D size.
+
+**2. The ground plane is there per child, and the camera's pose is not identifiable from it.**
+- For a standing child a pinhole camera gives y_foot - cy = (h_c / cH) s - f theta: one slope per child, one
+  intercept per camera.
+- On 74,531 standing frames of 103 children (upright, knees straight, both feet in the picture), each child's foot
+  row follows its size with a median R^2 of 0.68.
+- **The shared intercept (the camera's tilt) is NOT identifiable.** Fitted per session it reads +11.5 / +6.0 / +3.2
+  / -2.2 deg. Fitted per half-session it moves as much within a session (+7.5 then -8.7) as between them. Each
+  child's range of sizes is too narrow, so the intercept trades against the slopes.
+- **One measured quantity would anchor it:** the tripod's height and pitch, or one person of known height standing
+  at two marked distances. Then every standing body in the room has a metric depth.
+- A cheap thing to capture at the next home session.
+
+**3. The arm pointed at the camera: an arm LOST, not an arm seen short.**
+- **Detection:** the shoulder confident while the arm's 2D length falls under 0.35 of that child's own typical
+  length, for 3 or more frames.
+- **4,148 such episodes, 10.4 per child-arm-minute,** median 0.13 s (p90 0.43 s): puppet 3,024, free draw 781,
+  shape draw 343.
+- **Vision loses the wrist, not shortens it:** median confidence 0.10, kept in 12% of the frames. This is the owner's
+  "no arm bones visible", measured. The same loss comes from an arm behind the back, another child in front, or
+  blur, and 2D cannot tell those from pointing.
+- **The field shows the fold, not an approach.** At the shoulder (a 40-px window on the 8-px field) the divergence
+  entering an episode is -2.54%/frame (51% of frames below -1%), and leaving it is +0.53%. It is the 2D image of an
+  arm folding onto the shoulder. No looming signature separates "toward the camera" from the rest at this scale.
+- **Apple's 3D pose does not separate them either** (inside an episode the wrist is more than 0.25 m nearer the
+  camera than the shoulder in 21% of samples, 17% outside).
+- **For the app:** hold the last good wrist through the median 0.13-s loss.
+- **For the shaders:** a limb along the viewing axis is where every cue to depth motion (the field's divergence, the
+  2D bone rule and a learned 3D model) goes quiet or misleads: the field reads a fold as contraction.
+
+**What the three say before the leap.**
+- Relative depth from scale is all a single camera gives here. The field's divergence (sign right 79-90%, magnitude
+  about 0.6) and the skeleton's scale are the two readings of it.
+- Metric depth needs one calibration.
+- The energy channel's open problem (V3) is a matching problem, not a depth problem; nothing here bears on it. It
+  stays documented where it is.
+
+**V3 reopened (2026-09-27, night): the half-period alias is a basin the committed shader holds by luck of phase.**
+
+**The per-frame, per-level view** (V3's in-patch gain every frame) shows how the committed shader gets V3 right:
+- The coarse level flips every frame between +1.93 and -1.94 (the alias).
+- The 1/8 level wanders (0.66 / 1.33, even -1.3).
+- The quarter level recovers the true motion (1.00) almost every frame, and the half level holds it.
+- Inside the patch the two answers are the SAME picture: a 24-px period moved 12 px up or down. Only the patch's top
+  and bottom edges say which. So the interior's right answer is held from frame to frame, not re-derived.
+
+With COARSE_ENERGY (8/1) the 1/8 level declines over the clip (0.66 -> 0.58 -> 0). The quarter level fails for three
+frames (9-13). The half level flips into the alias at frame 11 and STAYS there (-0.74 to -0.97), even when the
+quarter level recovers at frames 14-18: a flip made permanent by persistence.
+
+**The start sweep (v3phase.sh):** V3 started at six offsets against the coarse grid (y0 = 100..120 in 4-px steps),
+three runs each, whole-frame PSNR as bench.sh scores it.
+- **The committed shader is BIMODAL:** about 26 dB where it holds the basin, 19-20 where it flips.
+  - It holds at 100 and 108, flips at 104, 112 and 120, and does both at 116, on different runs. On a second sweep
+    it flipped once even at the ladder's own start (25.8 / 19.5 / 26.1).
+  - Averaged over starts and runs it reads about 22.3. **The ladder's 25.97 is a fortunate phase.**
+- **The energy channel never holds the basin:** 8/1 reads about 18.2 at every start, coarse-only about 19.6.
+- **So its true V3 cost is about -4 dB (8/1) or -2.7 (coarse-only), not -7.9.**
+
+**The other period cases are NOT phase-fragile** (the same sweep: stable to about 1 dB across starts, rare outliers):
+
+    phase-averaged      committed   COARSE_ENERGY 8/1
+    V1 (sine, 6 px)       ~55.1        ~53.8   (above 40 dB: invisible)
+    H1 (sine, 6 px)       ~55.3        ~53.4   (invisible)
+    V2 (square, 6 px)     ~29.0        ~27.7   -1.3, visible
+    H2 (square, 6 px)     ~28.4        ~29.3   +0.9, and steadier
+
+**What this changes.**
+- **The energy channel's cost in the visible regime** is V3 (about -4, from a baseline that is itself about 22 on
+  average) and V2 (-1.3), against 23 cases up.
+- **The ladder's V3 is not a stable measurement.** Any gate that moves it by a few dB may be reading the phase, not
+  the change. A phase-averaged V3 (six starts x three runs, about 2 minutes) is the honest form.
+- **V3's real problem, for every shader:** a periodic interior's motion is decided at the patch's EDGES and held
+  inward and forward by propagation and persistence, and nothing re-derives it when it is lost. That is the leap,
+  now well defined: carry an edge's evidence into an ambiguous interior every frame. It stays documented here.
+
+**Where V3's answer lives, band by band (v3edges.py, 2026-09-27, night).** The last paragraph's "nothing re-derives it"
+was too strong. Per frame and per pyramid level, the field's vertical gain in each of the patch's 13 bar-bands (24 px
+each, top edge to bottom). Two starts: 108 (held in 3 of 3 sweep runs) and 112 (flipped in 3 of 3).
+- **The coarse level knows nothing.** Its whole-patch gain alternates +1.93 / -1.94 every frame, and in the committed
+  shader the finer levels ignore it.
+- **The 1/8 level cannot even say 12.** Its flow is in whole texels of 8 px, so in a periodic interior +8, +16, -8 and
+  -16 all score alike (each is 4 px from +12 or from -12): a four-way tie, decided by the seeds and by the Mac's own
+  run-to-run noise. The quarter level (12 px = 3 texels) is a clean two-way tie.
+- **Held start (108), two runs.** The 1/8 search before propagation is right in all 13 bands on every frame, in both
+  runs. After the propagation and its data check (a contrast-weighted MEAN of vectors, whose ties go to the
+  consensus), one run carried the alias in the interior and grew the right answer back from the BOTTOM edge at
+  about one band (24 px) per frame; the other stayed right until frame 19. The quarter and half levels held the right
+  answer in both. The propagation's outcome on a tie is a coin the hardware tosses.
+- **Flipped start (112), three runs, alike to the band.** Every level starts in the alias. The right answer grows from
+  the bottom edge at about one band per frame, at every level from the raw 1/8 search down, and fills the patch by
+  about frame 20. **So the
+  committed shader does re-derive V3 from an edge -- slowly, and from one edge only.** The flipped start's 19-20 dB is
+  eighteen frames of healing in a 24-frame clip.
+- **Why one edge.** The 1/8 level's temporal seed is the previous frame's flow at the SAME cell. It is gated by a round
+  trip but not motion-compensated. The patch moves down 12 px a frame, so a cell's seed carries the answer of the
+  content 12 px below it. A correction at the bottom edge therefore rides up into the patch, and one at the top edge
+  rides out of it. The search's reach adds the rest of the band per frame.
+- **COARSE_ENERGY 8/1 pins a domain wall.** Its coarse level is now right at both edges and COHERENTLY wrong inside
+  (`+.+--------.+`), where the committed coarse level was incoherent and so ignored. The right answer holds two or three
+  bands in from each edge and never spreads. From the held start, the alias grows out of the lower interior, band by band, until the
+  quarter and half levels follow it (frame 10-13) and only the edge bands stay right. Two runs each, alike. A weak but coherent wrong preference inside, and the boundary loses its grip:
+  the 2-D random-field result of statistical physics (Imry and Ma; Aizenman and Wehr) in miniature (PRIOR-ART.md).
+
+**The ambiguity flag, offline (ambiguity.py; the survey's first step, PRIOR-ART.md).** The 1/8 level is emulated in
+numpy: luma at each texel's centre, 5 x 5 SAD, every integer shift within +-3 texels.
+- **The test.** A cell is AMBIGUOUS when a second BASIN scores near its best. That means a shift at least 2 texels away
+  whose straight path back crosses a ridge above both ends by a quarter of the curve's typical rise (the cage's zero
+  descent uses the same logic). The margin is the second basin's cost over the best, in units of that rise.
+- **The rejected first form.** "Any low cost two texels away" flagged 60-70% of plain translations: it could not tell
+  the alias from a stripe's aperture valley.
+- **V3 (A -> B; each band spans 24 px from the top edge down):**
+  - Bands 2-11 are flagged at 100%, at both starts.
+  - The top end (band 0) is flagged at 0%, and all of its confident cells give the RIGHT answer at both starts. **The
+    anchors exist, and the flag finds them.**
+  - The bottom end is flagged at 33%, and its confident cells are right.
+  - One trap: at the flipped start, band 1's confident cells give the ALIAS. The 1/8 level's whole 8-px texels cannot
+    say 12, so near the end the quantisation can favour a wrong integer shift. The lift belongs at the quarter level
+    (12 px = 3 texels) or needs sub-texel costs.
+- **The ladder, share of textured cells flagged at margin < 0.05:**
+  - Every non-periodic case (translations, accelerations, oscillations, occlusion, noise, static): 0-1.8%.
+  - The textured-motion cases (O5, A5-A7, O6, R3): 1-22%.
+  - The periodic prints (L7, M2, M3, V1-V3, H1-H2, P1-P5): 65-93%.
+- **Real footage (the three standard clips and the street, 12 segments), share flagged:**
+  - 0.1-2.6% at margin < 0.05;
+  - 1-7% at margin < 0.15.
+- **So the trigger is clean:** rare on real content, and nearly total on a periodic print. It is the gate any
+  per-hypothesis carry would open.
+
+**The carry, offline (carry.py; the survey's leap, tried in numpy before any GLSL).** At the QUARTER level, emulated as
+the shader builds it, because 12 px is exactly 3 of its texels.
+- **The model:**
+  - Every textured cell keeps two hypotheses, its best shift and its rival basin (ambiguity.py's ridge test, within
+    +-5 texels). The best costs 0 and the rival costs its margin, EXACTLY 0 when the cell is flagged (the Imry-Ma rule).
+  - A cell with no rival is a hard anchor, and flat cells break the paths.
+  - Four scans of SGM's min-sum run with a small penalty for a one-texel step and P2 beyond. The four are summed, and
+    each cell takes its cheaper hypothesis.
+  - A small magnitude prior stands in for the shader's own (SEED_MAG_LAMBDA). Without it a stripe's aperture valley
+    picks a wild horizontal shift.
+- **The first form failed instructively.** Every unflagged cell was a hard anchor. The cells beside a pattern's END
+  half-see it and come out confidently WRONG at small margins (0.1-0.2); as hard anchors they won every path through
+  them, and V1 fell from 96% to 35%. With the rival's margin as a soft data cost, the run of right cells behind them
+  outvotes them.
+- **Inside the rectangle, share of textured cells within 0.75 texel of the truth, winner-takes-all -> carry:**
+  - V3, at all six starts: 8% -> 100%. (Winner-takes-all breaks the exact tie toward the alias.)
+  - V1, V2, H1, H2: 96-97% -> 97%.
+  - M3, the period-equals-motion trap: 49% -> 58%.
+  - Unchanged: L7, M1, M2, P1-P5, L1-L3, L8. The flat squares score only their edges at this level.
+- **Real footage** (street, avengers, bttf, bluey; one segment each):
+  - flagged: 0.5-1.9% of textured cells;
+  - changed by the carry: 0.02-1.86%.
+- **So the leap works on paper:** V3 is re-derived from its ends in every frame, at every start, and nothing else moves.
+  The GLSL form still needs to be built:
+  - a quarter-level rival search (the full +-5 curve is 121 SADs a cell; the rival of a periodic print sits a period
+    away, so a sparse search may do);
+  - four sequential scan passes (one invocation per row or column);
+  - a combine pass;
+  - then the gate, v3phase.sh and the Mac clock.
+
+**COARSE_ENERGY on the player's default, the cage (2026-09-27, night; gateset.sh with the cage as the control, three runs;
+v3phase.sh; real.sh; timing.sh).**
+- **The ladder:** 26 cases up and 4 down, capped mean +0.10.
+  - Down: H1 -2.1 and V1 -1.6 (both at 55 dB), P1 -1.2 (at 47 dB), V3 -0.5 (single start). All above 40 dB.
+  - Up: L1 +6.4, L2 +4.3, L8 +3.6, L3 +3.2, M2 +3.0, F1 +2.7, R3 +2.4, P3 +2.2, A2 +2.0, M1 +1.9, and 16 more.
+- **V3, phase-averaged (six starts x three runs):**
+
+      recommendation 22.9 (19.3-26.5, bimodal)   + energy 18.0
+      cage           27.4 (26.5-28.9, STABLE)    + energy 26.2 (24.8-27.7, stable)
+
+  The cage is not phase-fragile, and on it the energy costs V3 about -1.2, where on the bare recommendation it costs -5.
+- **Real footage (the cage -> the cage with energy):**
+
+      clip        PSNR    SSIM
+      avengers    +0.30   +0.0011
+      bttf        +0.31   +0.0020
+      street      -0.06   -0.0005
+      bluey       -0.02   +0.0006
+
+  The films are up; the street and the cartoon are level.
+- **Time:** +5.3% over the cage (720p, 24 -> 60, interleaved), and +6.4% on the bare recommendation.
+- **By the owner's rule for the player,** this is a default: it gains on real content, and its losses are above 40 dB.
+  It ships as `-global-cage-energy` beside the cage. Changing the Cadence default is his call (2026-09-27): he approved
+  the channel as a player VARIANT.
+
+**Which of the cage's switches holds V3 (v3phase.sh, each switch alone on the recommendation).** Phase-averaged:
+- the recommendation: 22.4 (18.1-26.7);
+- QZERO_MOIRE alone: 22.9. No effect: its zero descent wins only as the SMALLER of two good matches, and V3's two
+  aliases are the same size;
+- COHERENCE_GATE alone: 23.0. No effect: V3's frames do not agree unmoved;
+- **GLOBAL_SEED alone: 27.0 (25.2-28.8), stable at every start.**
+
+The global-motion seed's frame shift on V3 (dumped per pair): **+12 px moving down, -12 moving up**. Its pair-to-pair
+gate zeroes it on some pairs. The shift follows the patch because the patch is the only mover, and the 1/8 level's
+small-motion prior is centred on it, so the right alias is the cheaper one. Mirrored V3 (UP=1 in v3phase.sh), the
+switch alone reads 28.1-29.1 at every start, and so does the cage; the recommendation reads 17-23.
+
+**B1, the case built to take the frame's anchor away** (scenes.sh `B1_alias_over_pan`: V3's bars in a 200-px patch over a
+smooth background panning left 8 px a frame). Its first form panned fine noise, tripped the scene-cut gate, and read
+10.18 dB for every shader. That reading is void; the case was rebuilt before any valid run (PREDICTION.md). Phase-
+averaged:
+
+    B1, patch moving DOWN:  recommendation 21.3   cage 24.4   global seed alone 24.6   cage + energy 26.4
+    B1, patch moving UP:    recommendation 23.0   cage 20.6   global seed alone 20.5
+
+- **The global shift on B1 is (+24, +24) px**, wrong for the background (-8, 0) and for the patch (0, +/-12). It is
+  probably a coarse-level Moire of the background: its 40-px component sits near the 1/16 level's Nyquist. It passes
+  every gate.
+- The 1/8 prior, centred on it, favours whichever alias points DOWN. So the cage "holds" the downward patch by
+  coincidence and LOSES the upward one, 2.4 dB below the recommendation.
+- **This is the Imry-Ma warning at the scale of the frame:** a coherent wrong preference, from a global estimate that is
+  confidently wrong, decides every local tie the same way.
+
+**What this changes:**
+- **The player's default has a failure the ladder never showed:** a periodic region moving against a background whose
+  coarse picture is a Moire. The global seed's gates (Moire evidence over the whole frame, agreement with the last pair,
+  a fade below a texel and a half) did not catch it.
+- **The leap's target is confirmed:** a LOCAL carry from the pattern's own ends. B1 up and down is its test. Offline
+  (carry.py), the quarter-level carry holds B1's patch at 95% of cells against winner-takes-all's 24%.
+- **A step before the leap:** the global prior should not decide a local tie between aliases. In a flagged cell,
+  measure the prior from zero, or leave it out.
+
+### The half-period alias in the shader: the prior gate and the carry (2026-09-28)
+
+Steps 1 to 3 of the survey's order (PRIOR-ART.md, the periodic-interior survey), built as two generator switches in
+`tests/alias_carry.py`. Both are byte-identical when off.
+- **The 1/8 basins pass (either switch adds it).** Each cell's cost curve over +-3 texels. The best shift, the rival
+  behind a ridge, and the margin between them (the offline ambiguity flag, in a pass).
+- **`ALIAS_PRIOR=1` (with GLOBAL_SEED).** Where a cell's two basins tie, the frame's shift may break the tie only if
+  it IS one of them.
+- **`ALIAS_CARRY=1`.** At the quarter level:
+  - each cell keeps its own two basins, both refined there, with soft data costs (exactly flat on a tie);
+  - four scans of semi-global matching's min-sum, one invocation per line per direction;
+  - each TIED cell whose own flow lies in one of its basins takes the cheaper one.
+
+**Four builds, three of them teaching.**
+1. **The level's own flow as the first hypothesis.** Scored between texels while the rival sat on the lattice: a
+   coherent faint preference, and the cage's V3 went to the alias. The Imry-Ma warning, reproduced in our own
+   shader.
+2. **Both hypotheses scored on the lattice.** V3 down was fixed, but the level's flow at a pattern's SIDES is junk,
+   and side cells anchored on it along every row. The cage's B->A flipped every fourth frame, and V3 up stayed at
+   21-22.
+3. **Junk cells made breakers.** That lost the decisive END's evidence too.
+4. **Each cell carries its OWN two basins** (the 1/8 curve's best and rival) and maps the choice back to the level's
+   flow only for output. Build 3 also replaced flows in cells whose basins were both wrong, near a pattern's ends,
+   which cost V1 and H1 20 dB on the ladder's first run. Build 4 changes only a tied cell whose flow lies in one of
+   its basins.
+
+**Build 4, measured (six starts x three runs; the ladder three runs; real.sh; the Mac clock).**
+
+    phase-averaged        recommendation   + carry     cage   + prior   + prior + carry
+    V3 down                    22.6          28.6      27.6     27.2         28.7
+    V3 up                      19.7          28.0      28.3     28.5         28.6
+    B1 down                    21.4          24.2      24.5     23.1         25.3
+    B1 up                      23.0          22.4      20.6     21.3         21.8
+
+- **On the player's default (the cage + prior + carry, against the cage):**
+  - the ladder: capped +0.09, 14 up and 1 down (P5 -0.47 at 43 dB). Up: P1 +5.1, V2 +1.2, V1 +1.1, L2 +1.1,
+    R3 +0.9, V3 +0.8;
+  - real footage: PSNR 0 / -0.06 / -0.15 / 0, SSIM level;
+  - time: +5% at 720p.
+  - **Clean: V3 right both ways at every start, B1 better both ways, nothing visible lost.**
+- **On the bare recommendation (+ carry): a trade.**
+  - V3 +6 / +8, V2 +1.4, M3 +1.0, M1 +1.0, and real films +0.12 / +0.28;
+  - against 13 ladder cases down 0.3-0.8 (F2, P3, R3, M2, P1, F1 among them);
+  - +15% time.
+- **The prior alone** is neutral on the ladder (capped +0.01; P1 +6.3, V1 +1.4 / L0 -1.0 at 79 dB, V3 -0.5). It
+  removes the cage's lucky tilt on B1 (down 24.5 -> 23.1, up 20.6 -> 21.3).
+
+**What remains:**
+- **B1.** Moving up, the carry holds 21.8 on the cage against the recommendation's 23.0. The patch's ends sit against a
+  background moving otherwise, and the cells straddling that edge make mixed anchors. The perception survey's rule
+  (a boundary votes only if it moves with the pattern) is the next step, and B1 up and down is its test.
+- **The carry on the energy variant**, the party app's default, is unmeasured.
+- **The Metal side.** The carry compiles for Metal (gen_metal: 70/70 and 67/67 passes); the lockstep has not been run
+  with it.
+
+### The aperture in the carry: B1 moving up, and the energy channel on rendered children (2026-09-28, later)
+
+**B1 moving up, read cell by cell.** `tests/probes/limb/ownerdump.py` dumps the carry's own inputs per quarter-level
+cell of a carry shader: the two basins, their data costs, which basin the four scans prefer, the level's flow before
+the pick, and the flow after it. On the cage with prior and carry, B1 moving up, frame 8:
+- **The interior split in half.** The upper half's scans chose the wrong alias ("down") and the lower half's chose
+  the right one.
+- **The top end was not the "mixed anchor" the survey predicted.** Its cells held the RIGHT vertical motion (-3
+  quarter texels) in their best basin, with a margin, but with a junk horizontal part: (-4, -3), (-8, -3), (+4, -3).
+  Their rival, the wrong alias, sat at exactly (0, +3).
+- **Why.** Inside horizontal stripes x cannot be measured (the aperture). Under the right alias the background in a
+  window near the end maps onto background, which pulls x toward the background's own motion. Under the wrong alias
+  it maps onto bars, which do not care about x, so x stays at the magnitude prior's zero. The same happens for cells
+  within the 1/8 level's reach of the ends, whose basins are refined from that level.
+- **What the carry did with it.** Its penalty compared whole vectors, so the right chain paid P2 at every junk step
+  and the clean wrong chain paid nothing. The scans carried "down" in from the top.
+- **Moving down, the same bias was hidden.** There the 1/8 level already held "down" across the patch, so the carry
+  had little to do.
+
+**The rule: a cell vouches only for what it can see** (Wallach 1935; Adelson & Movshon 1982's intersection of
+constraints; the normal-flow view). The penalty between two hypotheses, and the pick's tests, ignore the component
+of their difference along the cell's stripes. The stripe direction is the structure tensor's minor axis over the 5 x 5
+window, weighted by sqrt(smoothstep(0.5, 0.9, coherence)), so it is zero on isotropic texture. Of the two cells in a
+step, the more coherent decides. A switched flow keeps the level's own component along the stripes.
+- **This is not the refuted structure-tensor FILL** (gen_aperture.py, which rewrote flows along bars), **nor the
+  normal-flow projection of the output on C3** (which changed nothing). It changes only which of a tied cell's two
+  aliases the carry picks.
+- **Offline first** (`apcarry.py`, carry.py's quarter-level emulation):
+  - B1 up 83% -> 99% of cells right, B1 down 95% -> 100%, M3 58% -> 61%;
+  - V3 at three starts both ways and the period family unchanged (V3 100%);
+  - real footage: 0.02-1.82% of cells changed, against 0.05-1.86% for the carry without the rule.
+- **In the shader:** `alias_carry.py` build 5, on by default under ALIAS_CARRY. `ALIAS_APERTURE=0` stores a zero
+  stripe direction, which behaves exactly as build 4. The rule adds a 7 x 7 luma read per quarter cell to the
+  hypotheses pass.
+
+**Build 5 against build 4** (v3phase.sh, six starts x three runs; predictions B5.1-B5.7 in PREDICTION.md, written
+before these readings except two of B1 up's starts):
+
+    phase-averaged       vp     cage+prior+carry (b4)   cage+prior+carry (b5)   vp+carry (b5)
+    B1 up              22.8          21.8                     23.7                  24.3
+    B1 down            21.1          25.3                     27.0                  26.1
+    V3 up              20.0          28.3                     28.6                  27.8
+    V3 down            22.3          28.6                     28.6                  28.5
+
+Every build-5 start reads above build 4's mean on B1 (up: lowest 23.1; down: lowest 26.0). V3 is unchanged, as the
+offline emulation said (V3's patch sits on black, so nothing pulls its x).
+
+**With the energy channel** (the same chain, a second session):
+
+    phase-averaged       vp     cage+energy   cage+energy+prior+carry (b5)
+    V3 down            22.5        25.9               29.1
+    V3 up              19.9        29.1               29.1
+    B1 down            21.4        26.5               27.4
+    B1 up              23.0        21.0               24.5
+
+The carry repairs the energy channel's V3 loss (25.9 -> 29.1 moving down), and the combination is the best shader
+measured on all four readings; every one of its starts reads 23.9 or more.
+
+**The same carry on Metal** (`tests/probes/limb/metalcarry.sh`). The lockstep's own checks run the recommendation,
+where the carry never engages, so this renders the cases where it does through the demo's engine and through
+libplacebo (median of three runs):
+
+    Metal | libplacebo      cage            cage+energy     cage+prior+carry   cage+energy+prior+carry
+    V3 down             28.89 | 27.91   28.35 | 27.36   29.33 | 29.28      29.44 | 29.45
+    V3 up               28.87 | 29.11   29.22 | 29.36   29.13 | 28.85      29.41 | 29.36
+    B1 down             24.81 | 24.41   26.96 | 26.48   27.09 | 26.85      27.29 | 26.85
+    B1 up               19.51 | 19.83   20.08 | 20.33   23.48 | 23.53      24.36 | 24.38
+    L1 (control)        66.15 | 65.03   71.26 | 72.03   66.15 | 65.74      71.26 | 70.62
+    O5 (control)        42.41 | 42.23   42.61 | 42.13   42.19 | 41.62      42.38 | 41.66
+    V1 (control)        51.25 | 56.04   53.76 | 54.08   55.37 | 55.31      53.76 | 54.44
+    M3 (control)        21.51 | 21.54   21.69 | 21.71   21.70 | 21.81      21.87 | 21.99
+
+- The carry's scans do on Metal what they do on libplacebo: on the alias cases every carry reading agrees within
+  0.3 dB, and within 0.7 dB on the controls. The one larger gap is the plain cage's V1 (4.8 dB, above 50), with no
+  carry in it.
+- On Metal the carry leaves L1 exactly where it was (66.15, 71.26): it does not engage on a plain translation.
+- The combination (energy with prior and carry) is the best of the four on all four readings, on both hosts.
+
+**The energy channel on rendered children: the party app's default, measured.** The party recording holds numbers
+only, so no other shader can be run on it. The exact-truth instrument is the party app's own bench: fieldcheck
+scores the engine's field against Blender's flow on rendered children. `fieldcheck bench --graph <folder>` (new) runs
+the bench through any graph, rendering every pass. Gain per band of true speed, the recommendation -> with the
+energy channel:
+
+    px/frame                       12-24          24-36          36+
+    star jump 30 fps, textured     0.59 -> 0.96   -0.03 -> 0.86  -0.02 -> 0.33
+    star jump 60 fps, textured     0.68 -> 0.97    0.01 -> 0.83     --
+    dance 30 fps, textured         0.61 -> 0.89    0.07 -> 0.81  -0.01 -> 0.27
+    star jump 30 fps, dark         0.96 -> 0.97    0.53 -> 0.97   0.00 -> 0.69
+
+- **The reach cliff moves from 24 to past 36 px/frame** on bodies, in both rooms. On the party's real children, 8.7%
+  of forearm frames at 30 fps (24% at 1080p24) are past 24.
+- **Nothing is lost for it.** The slow bands are level (the dance's 1-4 px/frame 0.75 -> 0.72); the joints are level
+  or better (median 0.826 -> 0.752 px on the wave); the still-actor control reads exactly zero.
+- **The party app's field-only skip holds on the new graph.** FLOW_H_AB is bit-identical with and without the skip,
+  and the field dispatches 40 of 67 passes (the recommendation's 34 plus the six energy passes).
+- **So the energy graph is the party app's default** (his call of 2026-09-27, now measured on the instrument the app
+  has): `LiveField.graphName`, LillysParty.
+
+**Build 5's ladder gate refuted its prediction, and build 6 is the repair.** Against the cage, build 5's carry lost
+four non-periodic cases, stable to the hundredth over three runs: A6 -1.21, A7 -0.65, O5 -0.58, R1 -0.32.
+- **Found by switching parts off** (`tests/probes/limb/cases.sh`): A6, A7 and O5 carry the ladder's M2 texture,
+  sin x sin y with a 40-px period. Build 5's tensor window was the quarter level's 5 x 5, 20 px, half that period.
+  Near the texture's zero lines half a period reads as stripes, so the rule discarded a component those cells could
+  measure. A strict coherence threshold and a scans-only form both kept the loss.
+- **Build 6 reads the tensor over the 1/8 level's 5 x 5 window (40 px).** One period of M2 reads isotropic there,
+  and V3's and B1's bars still read as stripes.
+
+**Build 6, gated** (three runs, the cage the control; PREDICTION.md B6.1-B6.4):
+
+    against                          capped   up / down   down
+    cage + energy + prior + carry
+      vs the cage                    +0.17    26 / 3      H1 -1.61, V1 -0.47 (55 dB), L0 -0.48 (79 dB)
+      vs the cage + energy           +0.08     9 / 6      P2 -0.63, H1 -0.61, P3 -0.58 (54+ dB); L3 -0.35, A1 -0.32, A3 -0.32
+    cage + prior + carry
+      vs the cage                    +0.07    11 / 4      M1 -0.62, M2 -0.51, L0 -0.49, L5 -0.33
+
+- **The M2 cases are back:** A6 -0.16, O5 +0.04, A7 +0.54 against the cage + energy.
+- **V3 and B1 kept build 5's gains.** With energy: V3 29.1 / 29.2, B1 27.4 / 24.4. On the cage alone: V3 28.7 / 28.6,
+  B1 26.9 / 23.6.
+- **Real footage, against the cage:** street level, avengers +0.47, bttf +0.09, the cartoon +0.07. Against the
+  cage + energy: within 0.10 on every clip.
+- **Time:** x1.29 of the recommendation, +20% over the cage.
+
+**Build 6 on Metal** (metalcarry.sh, the demo's family graph against libplacebo, median of three):
+
+    Metal | libplacebo     cage + energy     cage + energy + prior + carry (b6)
+    V3 down               28.35 | 27.92     29.44 | 29.44
+    V3 up                 29.22 | 29.23     29.41 | 29.35
+    B1 down               26.96 | 26.84     27.32 | 27.23
+    B1 up                 20.08 | 20.56     24.38 | 24.55
+    A6                    50.38 | 50.39     50.38 | 50.27
+    O5                    42.61 | 42.43     42.61 | 42.56
+    L1                    71.26 | 72.27     71.26 | 71.30
+    M3                    21.69 | 21.71     21.70 | 21.80
+
+On Metal A6, O5 and L1 read exactly as without the carry. The lockstep with the new graph in the demo's family:
+PASS, 15 of 15 (graphs by hash, the engine's self-tests, scenes, painting, constants, picture, ladder).
+
+**So the player's default moves** to `bidirectional-interpolation-variational-propagated-global-cage-energy-carry`
+(and its -4k form), by his rule: the best shader for most content within real time. That is Cadence 1.0.3. On
+Metal, the carry does what it does on libplacebo (the table above); the demo's family offers it, and the lockstep
+was run with it in the family.
+
+**What remains.**
+- **The half-period alias when the pattern is drifting behind a still window** (the survey's undecidable case). It
+  was never built as a scene.
+- **A6's residual, about 0.2.** It belongs to the carry itself, with or without the aperture rule, and moves run to
+  run.
+- **The carry on the bare recommendation stays a trade** (build 4's gate). It was not re-gated at build 6, and it is
+  in no app.

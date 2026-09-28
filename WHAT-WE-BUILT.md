@@ -264,14 +264,11 @@ way to see all of this with your own eyes.
 
 **The prebuilt app is on the Mac App Store**:
 [N-frame Temporal Shader Analysis](https://apps.apple.com/app/n-frame-temporal-analysis/id6811415839)
-(free; Apple-silicon Macs, macOS 13 or later). The same build is also a
-direct download,
-[NFrameDemo-macos-arm64-v11.zip](https://www.blackholeexplorationswithclaude.com/NFrameDemo-macos-arm64-v11.zip)
-(about 180 MB, the synthetic clip pack included): unzip it and open
-`NFrameDemo.app` — signed with the author's Developer ID and notarized by
-Apple, so macOS opens it without objection. The app is closed-source and
-lives off this repository; this document and the shaders it demonstrates
-are what the repository holds.
+(free; Apple-silicon Macs, macOS 13 or later). The App Store is the only
+place to get it; its support page is
+[cadencevideoplayer.com/NFrameDemo](https://cadencevideoplayer.com/NFrameDemo/).
+The app is closed-source and lives off this repository; this document and
+the shaders it demonstrates are what the repository holds.
 
 What you will see: a textured block moving under known laws of motion,
 interpolated live from 24 to 60 frames per second. Drag the **A/B

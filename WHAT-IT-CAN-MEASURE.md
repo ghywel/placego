@@ -79,9 +79,17 @@ them.
   than about one percent per frame, reverses in the coarse search and one pixel in five stays wrong
   (NFRAME-LIMITS.md, "The non-affine failure: a cliff", demonstrated by moving the texture's period).
 
-- **The field has never been measured on real content.** Every figure in the table above comes from a
-  synthetic scene with an analytic answer. That is the only place an exact answer exists, and it is the right
-  place to calibrate — but it means the transfer to real footage is assumed, not shown.
+- **The field on real content: measured once, 2026-09-27** (NFRAME-LIMITS.md, "The field on real bodies";
+  THREEDIMENSIONAL.md 9.8). Two hours of children at play from a live camera, the recommendation's field against
+  Apple Vision's skeleton (an independent answer key; its floor 0.4 px).
+  - **Velocity.** It transfers in the middle band: gain 0.71-0.75, against 0.86-0.90 on rendered children with exact
+    truth. It FAILS past 24 px/frame at 1280x960, half-way by about 40, with a growing share snapping to zero. That
+    is the fast pan's cliff, on bodies against a still room, where the global seed cannot help.
+  - **The halo.** The moving region is about twice a limb's width: half strength 32-44 px from the bone.
+  - **The aperture.** A limb moving along itself reads 0.5.
+  - **The tensor.** Its sign transfers (79% divergence, 90% curl on clear motion). Its magnitude transfers for curl
+    (0.9 on the raw field) and not for divergence (about 0.6).
+  - **Occlusion.** At an overlap the field follows the front surface 70-73% of the time.
 
 ## What follows
 
@@ -94,7 +102,11 @@ An application does not select a shader. It selects a derivative order, and the 
 - anything wanting deformation is supported: all three tensor components read to about five percent on
   textured content that moves.
 
-The shear gap is closed. The one that remains is the larger of the two: no derivative of any order, and no
-component of the tensor, has ever been measured on real content. Every number above comes from a synthetic
-scene with an analytic answer, which is the only place an exact answer exists and the right place to
-calibrate — but the transfer to real footage is assumed, not shown.
+The shear gap is closed, and so, once, is the larger one: velocity and two tensor components have now been
+measured on real content against an independent answer. They transfer, with three real-world losses the synthetic
+scenes did not show:
+- a reach cliff past 24 px/frame against a textured still background;
+- a halo about the width of a limb;
+- divergence at about 0.6.
+Acceleration and jerk on real content are still unmeasured. The answer key (a 30 fps skeleton, 0.4 px floor) cannot
+resolve them yet.

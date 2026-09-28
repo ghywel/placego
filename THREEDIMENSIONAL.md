@@ -890,6 +890,76 @@ resolved and the alias is 10+ texels away, arbitrate. That is a shader
 design item, pre-registered against A7's mid-speed velocity field (gross
 fraction from 39-75% toward D6's 35%), the comb, and R4/R5.
 
+### 9.8 Real content: children at play, the field's divergence and curl against a rigid skeleton fit -- 2026-09-27
+
+The first measurement of any tensor component on real footage (NFRAME-LIMITS.md, "The field on real bodies", has the
+data and the velocity results). The field is the recommendation's FLOW_H_AB at 1280x960 and 30 fps, from a live
+iPhone camera. The truth is independent of it: Apple Vision's 2D skeleton of each child on the same frames.
+
+**The truth, rebuilt once.** A child's size in the skeleton moves with depth, but it also moves when an arm rises:
+the party app's own body ruler (the third-longest of eleven segments) read the field's divergence at correlation
+0.2-0.4, and that was the ruler's fault. So the truth became a SIMILARITY fit (scale s, rotation theta, shift):
+- It uses the head-and-torso joints only (nose, eyes, ears, neck, shoulders, root, hips: no limbs), between the
+  frames k - 4 and k + 4.
+- It is kept only where the fit is near rigid (residual under 4% of the body ruler).
+- There a change of scale is depth, not pose:
+  - truth divergence = 2 ln(s) / span (2.2: div = 2 sigma, sigma = -Z'/Z = d ln s / dt);
+  - truth curl = 2 theta / span (a rigid image-plane turn at omega has curl 2 omega).
+- 66,556 near-rigid windows.
+
+**Two estimators on the field side.**
+- (a) The party app's pooled fit: a robust affine fit (Huber, then Tukey) over the child's core cells, every frame,
+  averaged over the same nine frames.
+- (b) A plain least-squares affine fit of the RAW 2-px field over the inner 60% of the shoulder-hip quadrilateral,
+  from one frame. No cell is on the body's edge.
+
+    |truth| >= 0.8 /s           corr   gain   sign agreement
+    divergence, (a) pooled      0.60   0.54      79%          (0.4/s: 0.42, 0.45, 70%)
+    divergence, (b) raw torso   0.22-0.30  0.55-0.64  70-72%  (inner 0.4 / 0.6 / 0.8 of the torso)
+    curl, (a) pooled            0.57   0.31      81%          (1.6/s: 0.77, 0.31, 90%)
+    curl, (b) raw torso         0.29-0.48  0.89-0.91  68-76%
+
+**Read together.**
+- **The sign transfers.** For a child moving in depth at 0.8/s or more (a time to contact under about 2.5 s) the
+  field's divergence says "approaching" or "receding" correctly four times in five, and its curl says which way the
+  child is turning nine times in ten at the strongest turns.
+- **The magnitude transfers for curl, not for divergence.**
+  - On the raw field curl reads 0.9 of truth.
+  - Divergence reads about 0.6 on every torso size tried, where the synthetic tensor read 0.93 (NFRAME-LIMITS.md,
+    "The gradient tensor's third component").
+  - The pooled robust fit trades magnitude for stability: its correlation is higher (one frame is noisy) and its
+    gains lower. Its Tukey weights discount exactly the outer cells, where a divergence shows most.
+- **Body size is not the cause.** By body ruler the pooled divergence gain is 0.17 under 110 px, then 0.43 / 0.46 /
+  0.47 at 110-140 / 140-180 / 180-250 px, and curl is flat. So a halo of fixed width dilutes only the smallest
+  bodies. The candidates left:
+  - a child's torso is plain clothing, whose interior field is propagated from its edges and so flattened;
+  - and the head, which the truth includes, can nod against the torso.
+  The mechanism is open.
+
+**For the shaders' depth perception** (the owner's question: the skeleton gets smaller as the body goes away; can
+that teach the field depth?).
+- It can, as a teacher. A time to contact taken from a body's field divergence reads about 1/0.6 = 1.7x too long on
+  real torsos, and is right in sign.
+- A skeleton, where there is one, calibrates that factor per scene.
+- The pooled estimator is the one to trust for the sign, and the raw fit for curl's size.
+
+**P4 scored.**
+- Correlation >= 0.5: met only for the clearest motion (0.60 at 0.8/s, pooled).
+- Gain 0.7-1.1: REFUTED for divergence (0.55-0.64 raw, 0.54 pooled); met for curl on the raw field (0.89-0.91).
+- Driver: tests/probes/party/depth2.py (the pooled fit) and torso_fit.py (the raw fit).
+- The first attempt, depth.py (the ruler's log rate), is kept as the instrument that failed and why.
+
+**9.8, continued: what else the party data says about depth** (NFRAME-LIMITS.md, "Three steps before any leap").
+- **Apple's 3D pose assumes f = 731 px (82 deg)**, and its distance is the 2D skeleton's size (correlation 0.85): a
+  scale reading, not depth.
+- **The ground plane holds per child** (foot row linear in size, median R^2 0.68). The camera's tilt is not
+  identifiable without one measured quantity.
+- **An arm pointed along the viewing axis is LOST by Vision** (wrist confidence 0.10). The field reads the 2D fold
+  as contraction at the shoulder (-2.5%/frame), not as an approach.
+
+The field's divergence remains the one per-region depth-motion signal. It is right in sign, about 0.6 in magnitude
+on bodies, and blind to motion along the line of sight when the limb's image folds instead of growing.
+
 ## 10. Method notes
 
 Derivations and reviews ran CPU-only while the GPU worked the instrument

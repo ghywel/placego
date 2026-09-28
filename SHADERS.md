@@ -304,6 +304,152 @@ less on L4, 0.2-0.3 less on live action; the check without the
 disagreement rule at all is 1.5 dB worse on the ladder mean and 2 on the
 anime. NFRAME-LIMITS.md section 8 has all of it.
 
+### `bidirectional-interpolation-variational-propagated-global.glsl` -- the recommendation with the global-motion seed, 63 passes
+
+The recommendation regenerated with `GLOBAL_SEED=1` (without the variable it
+regenerates byte-identical). A fast tracking shot -- a subject followed along
+a textured wall, the wall crossing the frame at 30-40 px per source frame --
+collapses the recommendation to the linear blend's ghosted wall, because at the
+coarse level a shift of 2.3 texels and one of 0.3 look the same to grain whose
+period is two texels there, and the per-texel search takes the nearer. The
+frame as a whole is not in doubt: two small passes find its dominant shift
+(every candidate shift's cost on a sparse grid, then the argmin), the coarse
+search descends from it as a fourth seed, the 1/8 level refines it as a fifth
+candidate, and -- the term that mattered -- the 1/8 level's small-motion prior
+is measured from the frame's shift instead of from zero. Gated three ways, each
+learned from the ladder: the frame's Moire evidence (a coarse level that cannot
+see the frame reads its Moire's motion), agreement with the last pair, and
+engagement only for a fast pan (faded in between one and two texels). On the
+film's wall +1.9 dB over the shot and +5 at its fastest; on the ladder the
+reach cases up one to two (L4, F2, V3, V1) and one pure periodic print down
+four (P1); +3.8 per cent time. A trade, so the recommendation stands and this
+is the file to try; NFRAME-LIMITS.md, "The global-motion seed" (2026-09-20),
+has the whole road including the gate that was dropped.
+
+A second switch on the same generator ships no file: `QZERO_MOIRE=1` (it
+stacks with `GLOBAL_SEED=1`; the banner names both). Where the 1/8 level's
+picture of a texel is a Moire -- bars nine pixels apart under eight-pixel
+sampling, a film's white railing -- the quarter level runs a second descent
+from zero and lets it win only as the smaller of two GOOD matches with a RIDGE
+between them, which is what a periodic print gives and a flat interior does
+not. Three decibels on the synthetic cage, +0.8 on the film's railing, the
+ladder within its noise; but on such content every warp of the family,
+including one with the TRUE flow forced, scores six decibels below a plain
+blend, so the switch is a partial and the honest number is in NFRAME-LIMITS.md,
+"The cage" (2026-09-21).
+
+A third switch, `COHERENCE_GATE=1` (stacks with both): one pass at the half
+level reads the field's own SUPPORT (the share of each texel's 9 x 9
+neighbours within 0.75 px of its flow) and the frames' agreement unmoved,
+absolute and relative to the flow's own match, and the final pass blends the
+frames unwarped where all three say the warp is wrong -- a periodic print
+matched a period out, and nothing else measured. The synthetic cage +8.4 (+10.9
+stacked on the zero descent), the film's railing +2.3, the ladder within its
+noise (M1 -2.3 at the edge of it, P1 +7.4), +2.8 per cent time.
+NFRAME-LIMITS.md, "The field's coherence" (2026-09-21).
+
+A fourth switch, `COARSE_ENERGY=1` (2026-09-27): beside the coarse and 1/8 levels' point-sampled luma, a smoothed
+TEXTURE ENERGY per frame, scored in their searches and in the 1/8 data check. Each 4 x 4 block's 2-px gradient
+magnitude, blurred separably at sigma 12 px, is a statistic of the grain rather than a sample of it, so a finely
+textured mover does not scramble at the coarse level the way its taps do. It came from the party recording:
+children's arms against a still room lose the field past 24 px/frame.
+- **Up:** 23 of 42 ladder cases (L1 +6.2, L2 +4.7, L8 +3.4, L3 +2.8, L4 +2.1); the limb that started it +3 to +5 dB;
+  real footage level to +0.66 (street +0.01, avengers +0.66, bttf +0.12, the cartoon -0.11).
+- **Cost:** +7 per cent time.
+- **Against:** pure periodic prints at half a period. V3, phase-averaged over six starts (`tests/probes/limb/v3phase.sh`),
+  about -4 dB (the ladder's single start said -7.9, but the committed shader's 25.97 there is a fortunate phase), and
+  V2 -1.3. The sine bars' -1.5 / -1.8 sit above 50 dB. Mechanism: the energy makes the coarse level's picture of a
+  periodic interior coherently wrong where it was incoherent and ignored, and that pins the wrong answer between the
+  patch's edges (NFRAME-LIMITS.md, "Where V3's answer lives").
+
+`COARSE_ENERGY_WS` / `_WE` set the two weights (8 / 1, the best of four). NFRAME-LIMITS.md, "The field on real
+bodies" and its limb sections.
+
+Two more switches, `ALIAS_PRIOR=1` (with `GLOBAL_SEED=1`) and `ALIAS_CARRY=1` (2026-09-28; `tests/alias_carry.py`;
+ship no file). They target the half-period alias: a periodic print moving exactly half a period a frame, whose
+interior cannot tell one answer from the other.
+- **`ALIAS_PRIOR`:** a tied cell's tie may be broken by the frame's shift only when that shift is one of its two
+  basins.
+- **`ALIAS_CARRY`:** carries the pattern's ends into its tied interior every frame. Semi-global matching's min-sum over
+  each quarter-level cell's two basins switches only tied cells, and only between their aliases.
+
+Measured together, on the player's default (the cage):
+- the ladder +0.09 capped (14 up / 1 down, the down P5 -0.47 at 43 dB);
+- V3 right both ways at every start (28.6-28.7 phase-averaged, against 27.6 / 28.3);
+- B1 up both ways;
+- real footage level (SSIM);
+- +5% time.
+
+On the bare recommendation the carry is a trade: +6 / +8 on V3 and up on films, against 13 ladder cases down
+0.3-0.8, and +15% time. NFRAME-LIMITS.md, "The half-period alias in the shader".
+
+### `bidirectional-interpolation-variational-propagated-energy.glsl` -- the recommendation with the texture energy, 67 passes
+
+`COARSE_ENERGY=1` on the recommendation's generator (`ZERO_SEED=1 COARSE_ENERGY=1 ./gen_variational.py "0,0,8,4" 0.3
+0.08 <out> 0 "0,0,2,0" shaders/bidirectional-interpolation-propagated.glsl`); `-4k` is its scaled form
+(`scale_shader.py 2`, which now scales the energy taps of both frames and checks `NEXT_pt` as well as `HOOKED_pt`).
+The trade above, shipped as a variant file by the owner's call (2026-09-27): *"The synthetic tests are essential,
+but they also trap extreme edge cases which are unlikely to be present in real data. This is a specific case where
+the real use-case overrules the synthetic data tests."* It is the party app's default from 2026-09-28, and in the
+demo's family as a choice. On the Cadence player's own default (the cage) it is gated separately:
+`tests/probes/limb/gateset.sh` with the cage as the control.
+
+### `bidirectional-interpolation-variational-propagated-global-cage.glsl` -- the three switches together: the Cadence player's default, 64 passes
+
+`GLOBAL_SEED=1 QZERO_MOIRE=1 COHERENCE_GATE=1` on the same generator: the
+global-motion seed (the fast pan), the quarter level's zero descent under
+Moire and the coherence gate (the cage) in one file, with the gate's relative
+fade at 0.5-1.0 (its first setting cost M1 a real 2.3 dB, best-of-3; this one
+is within the noise). The full ladder against the recommendation, one run
+each: every case within +-1.7 (M1 -1.2, L2 -1.4, L0 -1.6 at 78 dB / V3 +3.0,
+P4 +1.7, L4 +1.5, M2 +1.2, L1 +1.2, P2 +1.1, P3 +1.0), the capped mean 38.02 ->
+38.10, the raw 46.15 -> 46.36 -- the first variant that beats the
+recommendation on the ladder AND on both film defects: the wall's pan +1.9 dB
+over the shot (+5 at its fastest), the railing 25.5 -> 27.1, the synthetic cage
++9.7 (C1) / +5.8 (C2); +6.4 per cent time at 720p. `-4k` is its scaled form
+(`scale_shader.py`, which now knows the global shift's hand-off; 4K smoked).
+This is the file the Cadence player bundles as its default from 2026-09-21,
+by the owner's rule for the player: the best shader for most content within
+real time, trades between content types decided by the rule and not case by
+case. The recommendation above stands as the science's reference and the
+demo's; the two regenerate from one generator with the switches off and on.
+
+### `bidirectional-interpolation-variational-propagated-global-cage-energy.glsl` -- the cage with the texture energy, 70 passes
+
+`GLOBAL_SEED=1 QZERO_MOIRE=1 COHERENCE_GATE=1 COARSE_ENERGY=1` on the same generator; `-4k` is its scaled form. It is
+the player's default with the fourth switch, gated against the cage itself (2026-09-27, three runs each,
+`tests/probes/limb/gateset.sh` with `CONTROL=cage`).
+- **Up:** 26 of 42 cases, capped mean +0.10. The films are up on real footage (avengers +0.30, bttf +0.31); the street
+  and the cartoon are level.
+- **Down:** 4 cases, all above 40 dB (H1 -2.1, V1 -1.6, P1 -1.2, and V3 -0.5 at the ladder's start).
+- **V3, phase-averaged:** 26.2 against the cage's 27.4. The cage is not phase-fragile, and the energy costs it far
+  less than the bare recommendation's -5.
+- **Cost:** +5.3 per cent time over the cage.
+
+By the owner's rule for the player it qualifies as the default; whether it replaces the cage is his call.
+NFRAME-LIMITS.md, "COARSE_ENERGY on the player's default".
+
+### `bidirectional-interpolation-variational-propagated-global-cage-energy-carry.glsl` -- the Cadence player's default from 1.0.3, 76 passes
+
+`GLOBAL_SEED=1 QZERO_MOIRE=1 COHERENCE_GATE=1 COARSE_ENERGY=1 ALIAS_PRIOR=1 ALIAS_CARRY=1` on the same generator
+(ZERO_SEED=1 and the propagated base, as the recommendation). `-4k` is its scaled form (`scale_shader.py 2`, which
+carries the alias passes: their level sizes double, the scans' four invocations per line do not). It is the cage
+with the texture energy, and the half-period alias carry at build 6. The carry's penalty ignores what a cell cannot
+see along its stripes, read over 40 px (`tests/alias_carry.py`).
+
+Gated against the cage (2026-09-28, three runs each, `tests/probes/limb/gateset.sh` with `CONTROL=cage`):
+- **The ladder:** capped +0.17, 26 up / 3 down. The three losers are all high: H1 -1.6 and V1 -0.5 at 55 dB, L0 -0.5
+  at 79 dB.
+- **Against the cage + energy:** +0.08, 9 up / 6 down, every loser within 0.63.
+- **The half-period alias, phase-averaged:** V3 29.1 / 29.2 both ways, and B1 (the alias over a panning background)
+  27.4 / 24.4. The cage reads 27.6 / 28.3 and 24.5 / 20.6.
+- **Real footage:** level or up (avengers +0.47).
+- **On Metal** the carry agrees with libplacebo within 0.3 dB on V3 and B1 (`tests/probes/limb/metalcarry.sh`).
+- **Cost:** +20 per cent time over the cage.
+
+The player bundles it from 1.0.3 by his rule (the best shader for most content within real time). The demo offers it
+as a choice. NFRAME-LIMITS.md, "The aperture in the carry".
+
 ### `quaddirectional-interpolation-propagated-cadence.glsl` -- the quad with the cadence branch, 74 passes
 
 The same file with one branch in its final pass, emitted by the generator with

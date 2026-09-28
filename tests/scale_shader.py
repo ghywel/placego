@@ -90,7 +90,9 @@ for coarse, fine in (("S", "E"), ("E", "Q"), ("Q", "H"), ("H", "F")):
         for b in t.split("//!HOOK FRAME_MIX"):
             if "seeds.xy * 2.0 * LUMA_" in b:
                 assert re.search(r"vec4 seeds = (?:imageLoad\()?FLOW_S_", b), "a pass converts `seeds` it did not load from the coarse level"
-        src_forms = r"(?:%s|seeds\.(?:xy|zw))" % src_forms
+        # the global-motion seed (2026-09-20): the frame's shift, found at the coarse level, handed to the
+        # 1/8 level's prior -- a coarse-to-1/8 hand-off like any other
+        src_forms = r"(?:%s|seeds\.(?:xy|zw)|GLOBAL_SHIFT_tex\(vec2\(0\.5\)\)\.xy)" % src_forms
     pat = re.compile(r"(%s) \* 2\.0 \* (LUMA_[A-E]_%s_pt)" % (src_forms, fine))
     t, n = pat.subn(lambda m: "%s * %.1f * %s" % (m.group(1), ratio, m.group(2)), t)
     n_hand[coarse + fine] = n
@@ -129,6 +131,26 @@ def reg(m):
 t = re.sub(r"\b(\d+\.\d+) \* HOOKED_pt\.([xy])\b", reg, t)
 if n_reg:
     report.append("px regions x%d: %s" % (FRAME, ", ".join(sorted(set(n_reg)))))
+# ... and the texture-energy passes (COARSE_ENERGY, tests/coarse_energy.py), one per frame: each block's four taps sit
+# 1 px from its centre and its gradient steps 2 px, both in the frame's pixels, so both scale with the frame (the pass
+# itself is a 1/4-resolution level and took Q's factor in step 1). The second frame's pass reads NEXT_pt, which no
+# other pass of the family uses -- step 5 checks it too, or a scaled A beside an unscaled B would bias every score.
+n_en = 0
+for fr in ("HOOKED", "NEXT"):
+    tap = "(vec2(float(i), float(j)) * 2.0 - 1.0) * %s_pt;" % fr
+    grad = "abs(lum_q(p + vec2(2.0, 0.0) * %s_pt) - c) + abs(lum_q(p + vec2(0.0, 2.0) * %s_pt) - c)" % (fr, fr)
+    lum = "float lum_q(vec2 p) { return dot(%s_tex(p).rgb" % fr
+    assert t.count(tap) == t.count(grad) == t.count(lum) <= 1, "an energy pass for %s not in its known form" % fr
+    if t.count(tap):
+        t = t.replace(tap, "(vec2(float(i), float(j)) * 2.0 - 1.0) * ENERGY_FRAME_PX * %s_pt;" % fr)
+        t = t.replace(grad, "abs(lum_q(p + vec2(2.0, 0.0) * ENERGY_FRAME_PX * %s_pt) - c) + "
+                            "abs(lum_q(p + vec2(0.0, 2.0) * ENERGY_FRAME_PX * %s_pt) - c)" % (fr, fr))
+        t = t.replace(lum, "const float ENERGY_FRAME_PX = %.1f;   // (scale_shader) the frame's pixels per original pixel\n%s"
+                      % (FRAME, lum))
+        n_en += 1
+assert n_en in (0, 2), "one frame's energy pass without the other's"
+if n_en:
+    report.append("energy taps x%d (both frames)" % FRAME)
 
 # 5. nothing else may carry the frame's own scale. Every remaining HOOKED_pt use must be one the tool
 #    knows to be right as it stands.
@@ -136,13 +158,13 @@ KNOWN = (
     re.compile(r"vec2 o = vec2\(float\(x\), float\(y\)\) \* HOOKED_pt;"),   # the edge masks' 1-px neighbourhood
     re.compile(r"FLOW_F_[A-E]{2}\w*_tex\([^;]*\)\.xy \* HOOKED_pt"),        # full-res flow, one texel per pixel
     re.compile(r"/ (?:length\()?HOOKED_pt\)?"),                              # pixels out of a full-res quantity
-    re.compile(r"\w+_PX \* HOOKED_pt"),                                     # a scaled cap in pixels
+    re.compile(r"\w+_PX \* (?:HOOKED|NEXT)_pt"),                            # a scaled cap or tap in pixels
     re.compile(r"\d+\.\d+ \* HOOKED_pt\.[xy]\b"),                            # a scaled region in pixels
     re.compile(re.escape(conv)),
 )
 other = [l.strip() for l in t.split("\n")
-         if "HOOKED_pt" in l and not l.strip().startswith("//") and not any(k.search(l) for k in KNOWN)]
-assert not other, ("unexpected HOOKED_pt use, decide how it scales: " + str(other[:3]))
+         if ("HOOKED_pt" in l or "NEXT_pt" in l) and not l.strip().startswith("//") and not any(k.search(l) for k in KNOWN)]
+assert not other, ("unexpected HOOKED_pt / NEXT_pt use, decide how it scales: " + str(other[:3]))
 
 # 6. the header
 levels = ", ".join("%s x%d" % (lv, F[lv]) for lv in LEVELS)

@@ -514,6 +514,95 @@ scene_edge() {
     E4_thin_lines)
       echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='150',format=yuv420p[bg];nullsrc=s=300x300:r=$r:d=$DUR,format=gray,geq=lum='if(lt(mod(X\,40)\,3)+lt(mod(Y\,40)\,3)\,30\,150)',format=yuv420p[bx];[bg][bx]overlay=x='384*t':y=210:shortest=1,format=yuv420p" ;;
 
+    # W1: the tracking shot (2026-09-19, from a film: a subject walking along a sandstone wall, the camera
+    # tracking her, the wall's fine texture crossing the frame faster and faster -- "smooth to weird"). A
+    # textured GROUND panning with a speed ramp, 8 to 40 px per source frame over two seconds (x = 192 t +
+    # 192 t^2 px), under a STATIC textured subject that occludes it. Two seconds, not the ladder's one: the
+    # ramp is the point, and every speed the reach question turns on is inside it.
+    W1_wall_pan_ramp)
+      DUR=2
+      echo "nullsrc=s=3200x${H}:r=$r:d=$DUR,format=gray,$NOISE,format=yuv420p[wall];nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='0',format=yuv420p[black];[black][wall]overlay=x='-(192*t+192*t*t)':y=0:shortest=1[bg];nullsrc=s=300x420:r=$r:d=$DUR,format=gray,$NOISE2,format=yuv420p[bx];[bg][bx]overlay=x=490:y=150:shortest=1,format=yuv420p" ;;
+
+    # W2: the same shot on a wall with STRUCTURE AT EVERY SCALE, as sandstone has -- blocks (128-px cells),
+    # grain (32-px cells) and the fine 4-px noise, summed -- so the coarse levels of the pyramid have
+    # something to lock on to, which the pure 4-px noise of W1 denies them. The two together separate the
+    # search's reach (W2) from the fine-texture basin question (W1).
+    W2_wall_pan_ramp_multiscale)
+      DUR=2
+      local MS="geq=lum='0.25*mod(floor(abs(sin(floor(X/128)*12.9898+floor(Y/128)*78.233))*43758.5453),256)+0.35*mod(floor(abs(sin(floor(X/32)*39.3468+floor(Y/32)*11.135))*24634.6345),256)+0.40*mod(floor(abs(sin(floor(X/4)*12.9898+floor(Y/4)*78.233))*43758.5453),256)'"
+      echo "nullsrc=s=3200x${H}:r=$r:d=$DUR,format=gray,$MS,format=yuv420p[wall];nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='0',format=yuv420p[black];[black][wall]overlay=x='-(192*t+192*t*t)':y=0:shortest=1[bg];nullsrc=s=300x420:r=$r:d=$DUR,format=gray,$NOISE2,format=yuv420p[bx];[bg][bx]overlay=x=490:y=150:shortest=1,format=yuv420p" ;;
+
+    # W3: W2's wall alone, no subject in front -- the pure pan. Against W2 it separates the search's reach
+    # (what the wall costs by itself) from the disocclusion at the subject's edges (what the subject adds),
+    # which grow together with the speed and cannot be told apart in W2's number.
+    W3_wall_pan_ramp_alone)
+      DUR=2
+      local MS="geq=lum='0.25*mod(floor(abs(sin(floor(X/128)*12.9898+floor(Y/128)*78.233))*43758.5453),256)+0.35*mod(floor(abs(sin(floor(X/32)*39.3468+floor(Y/32)*11.135))*24634.6345),256)+0.40*mod(floor(abs(sin(floor(X/4)*12.9898+floor(Y/4)*78.233))*43758.5453),256)'"
+      echo "nullsrc=s=3200x${H}:r=$r:d=$DUR,format=gray,$MS,format=yuv420p[wall];nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='0',format=yuv420p[black];[black][wall]overlay=x='-(192*t+192*t*t)':y=0:shortest=1,format=yuv420p" ;;
+
+    # K1: a child's arm, from real content (2026-09-27, the party recording; NFRAME-LIMITS.md "The field on real
+    # bodies"). There, arms moving against a still room read at gain 0.7 up to 24 px/frame and fall away past it:
+    # 0.50 at 32-36, 0.15 at 50-64, a growing share snapping to zero. That is the coarse search's reach (~23 px, the
+    # constants at the top of this file), for LOCAL motion. The global seed cannot help: the frame's dominant motion
+    # is zero. A textured limb (48 x 200, the object grain) sweeps across a STATIC wall with W2's multiscale texture,
+    # its speed ramping 12 -> 60 px per source frame over the second (x = 100 + 288 t + 576 t^2 px).
+    # Scored inside a box that follows the limb (tests/probes/limb/limb.sh).
+    K1_limb_sweep_wall)
+      local MS="geq=lum='0.25*mod(floor(abs(sin(floor(X/128)*12.9898+floor(Y/128)*78.233))*43758.5453),256)+0.35*mod(floor(abs(sin(floor(X/32)*39.3468+floor(Y/32)*11.135))*24634.6345),256)+0.40*mod(floor(abs(sin(floor(X/4)*12.9898+floor(Y/4)*78.233))*43758.5453),256)'"
+      echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,$MS,format=yuv420p[bg];nullsrc=s=48x200:r=$r:d=$DUR,format=gray,$NOISE2,format=yuv420p[limb];[bg][limb]overlay=x='100+288*t+576*t*t':y=260:shortest=1,format=yuv420p" ;;
+    # K2: the same limb over a FLAT DARK wall -- the control. The party app's bench read the same field on rendered
+    # children past 36 px/frame in a dark room, but only to 24 in a textured one, so the still background's texture
+    # decides where the cliff falls.
+    K2_limb_sweep_dark)
+      echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='30',format=yuv420p[bg];nullsrc=s=48x200:r=$r:d=$DUR,format=gray,$NOISE2,format=yuv420p[limb];[bg][limb]overlay=x='100+288*t+576*t*t':y=260:shortest=1,format=yuv420p" ;;
+
+    # K3: K1 with ONE change, the limb's mean luma: 0.4 x its grain + 150 (mean ~200) instead of the grain alone
+    # (mean ~128, the wall's own mean). At the coarse search (1/16) the 5-px grain averages to its mean, so K1's
+    # limb is a patch of the wall's own grey there -- invisible -- and K3's is a bright blob. If the coarse search
+    # then holds the limb inside its reach, K1's loss at 1/16 is the mean-luma match, not the speed.
+    K3_limb_sweep_wall_bright)
+      local MS="geq=lum='0.25*mod(floor(abs(sin(floor(X/128)*12.9898+floor(Y/128)*78.233))*43758.5453),256)+0.35*mod(floor(abs(sin(floor(X/32)*39.3468+floor(Y/32)*11.135))*24634.6345),256)+0.40*mod(floor(abs(sin(floor(X/4)*12.9898+floor(Y/4)*78.233))*43758.5453),256)'"
+      local BRIGHT="geq=lum='150+0.4*mod(floor(abs(sin(floor(X/5)*39.3468+floor(Y/5)*11.135))*24634.6345),256)'"
+      echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,$MS,format=yuv420p[bg];nullsrc=s=48x200:r=$r:d=$DUR,format=gray,$BRIGHT,format=yuv420p[limb];[bg][limb]overlay=x='100+288*t+576*t*t':y=260:shortest=1,format=yuv420p" ;;
+
+    # B1: V3's half-period alias where the FRAME cannot anchor it (2026-09-27, night). V3's bars (hard, period 24, 12 px
+    # a source frame DOWN) in a 200 x 200 patch, over a smooth texture (periods 40-140 px, amplitude 24 x ~2.6) panning
+    # LEFT at 8 px a frame. On V3 the patch is the only mover, so the global-motion seed's frame-wide cost sum is the
+    # patch's own and its ends break the tie: the cage holds V3 at every start. Here the frame-wide sum is lowest at the
+    # background's motion (0.045 against 0.068 at the patch's, full-res mean |A - B(shift)|), and the patch's two
+    # aliases are equidistant from it, so only a LOCAL carry from the patch's ends can decide (NFRAME-LIMITS.md, "Which
+    # of the cage's switches holds V3"). The background is smooth ON PURPOSE: the first form panned the fine 4-px noise,
+    # whose frames differ by a mean 0.33 -- over the scene-cut gate's 0.125 -- and every shader held frames (10.18 dB,
+    # identical to the hundredth). This one reads 0.09.
+    B1_alias_over_pan)
+      local SMOOTH="geq=lum='128+24*(sin(X/9.5+0.3)*sin(Y/11.0)+sin(X/15.0-Y/13.0+1.1)+0.6*sin(X/6.3+Y/21.0))'"
+      echo "nullsrc=s=3200x${H}:r=$r:d=$DUR,format=gray,$SMOOTH,format=yuv420p[wall];nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='0',format=yuv420p[black];[black][wall]overlay=x='-(192*t)':y=0:shortest=1[bg];nullsrc=s=200x200:r=$r:d=$DUR,format=gray,geq=lum='18+220*gt(sin(Y/3.8197)\\,0)',format=yuv420p[bx];[bg][bx]overlay=x=490:y='100+288*t':shortest=1,format=yuv420p" ;;
+
+    # C1: the cage (2026-09-21, from the same film at 10:16: a white railing of thin vertical bars behind a
+    # crowd, its bars bending and breaking in the interpolation -- "some sort of white cage or grid with
+    # vertical lines"). Measured there: bars 9 px apart, 3 px wide, 80 levels over the wall, the camera drifting
+    # a fraction of a pixel a frame. Here: soft-edged bars of that period and contrast, on a wall with the
+    # ladder's mid-scale grain, the whole scene drifting 0.5 px per source frame (a rigid camera drift), so the
+    # right answer is one small uniform flow and any bar-to-bar match is 9 px wrong.
+    C1_cage_drift)
+      DUR=2
+      echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='70+0.25*mod(floor(abs(sin(floor((X-12*T)/32)*39.3468+floor(Y/32)*11.135))*24634.6345),256)+(gt(X-12*T\,400)*lt(X-12*T\,900)*gt(Y\,150)*lt(Y\,500))*100*pow(max(cos(2*PI*(X-12*T)/9)\,0)\,3)',format=yuv420p" ;;
+    # C2: the same cage with a dark figure crossing in front at 6 px a frame, as the crowd does.
+    C2_cage_drift_occluded)
+      DUR=2
+      echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='70+0.25*mod(floor(abs(sin(floor((X-12*T)/32)*39.3468+floor(Y/32)*11.135))*24634.6345),256)+(gt(X-12*T\,400)*lt(X-12*T\,900)*gt(Y\,150)*lt(Y\,500))*100*pow(max(cos(2*PI*(X-12*T)/9)\,0)\,3)',format=yuv420p[bg];nullsrc=s=120x360:r=$r:d=$DUR,format=gray,geq=lum='40+30*mod(floor(abs(sin(floor(X/6)*12.9898+floor(Y/6)*78.233))*43758.5453),2)',format=yuv420p[fig];[bg][fig]overlay=x='300+144*t':y=200:shortest=1,format=yuv420p" ;;
+
+    # C3: the bars at any angle (2026-09-21, his suggestion: "construct a grid of parallel bars, then have that
+    # grid both rotate and translate about its origin -- this avoids thinking in terms of horizontal or vertical
+    # bars but the more general case at any angle"). The same bars and the same wall, rigidly rotating about the
+    # grid's origin at 0.15 rad/s (17 degrees over the two seconds) while the origin translates at 1 x 0.5 px a
+    # frame: the bars' angle sweeps continuously, and the motion is a different vector at every texel -- the
+    # translation plus omega x r, sub-pixel near the origin and two pixels at the rim of the 300-px disc the bars
+    # fill. Truth per texel: v = (1, 0.5) + (0.15 / 24) * (-(Y - cy), X - cx) px per source frame.
+    C3_bars_spin_drift)
+      DUR=2
+      echo "nullsrc=s=${W}x${H}:r=$r:d=$DUR,format=gray,geq=lum='st(0\,(X-640-24*T)*cos(0.15*T)+(Y-360-12*T)*sin(0.15*T));st(1\,(Y-360-12*T)*cos(0.15*T)-(X-640-24*T)*sin(0.15*T));70+0.25*mod(floor(abs(sin(floor(ld(0)/32)*39.3468+floor(ld(1)/32)*11.135))*24634.6345),256)+lt(ld(0)*ld(0)+ld(1)*ld(1)\,90000)*100*pow(max(cos(2*PI*ld(0)/9)\,0)\,3)',format=yuv420p" ;;
+
     *) echo UNKNOWN_CASE; return 1 ;;
   esac
 }
