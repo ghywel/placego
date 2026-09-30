@@ -1,6 +1,7 @@
 # Prior art: where this work sits in the record
 
-(A second survey, before the periodic-interior leap of 2026-09-27, is the last section.)
+(A second survey, before the periodic-interior leap of 2026-09-27, follows the first; a third, before the
+energy-transfer investigations of 2026-09-30 (ENERGY-TRANSFER.md), is the last section.)
 
 Surveyed 2026-08-31, before the four-frame leap, to answer one question
 honestly: are we treading new ground or old footsteps? The answer splits
@@ -360,3 +361,118 @@ Vision science
 - Pack & Born, *Temporal dynamics of a neural solution to the aperture problem in visual area MT*, Nature 409, 2001 — https://www.nature.com/articles/35059085
 - Lidén & Pack, Vision Res. 39, 1999 — https://pubmed.ncbi.nlm.nih.gov/10615497/ ; Chey, Grossberg & Mingolla, JOSA A 14, 1997 ; Tlapale, Masson & Kornprobst, Vision Res. 50, 2010
 - Weiss, Simoncelli & Adelson, *Motion illusions as optimal percepts*, Nat. Neurosci. 5, 2002 — https://www.nature.com/articles/nn858
+
+## Before the energy-transfer investigations (surveyed 2026-09-30)
+
+The owner's rule: survey before designing any leap. ENERGY-TRANSFER.md parks five investigations that ask the field
+what energy it cannot see. This is their survey, done the day they were written: a web search per topic, preferring
+primary sources. The document's own bibliography was checked the same day and is kept there. The newest arXiv items
+below (2025-2026) were found by that search and have not been re-read individually.
+
+### What the survey changed, in order of weight
+
+1. **At an impact, split; do not smooth through it.** Every working system fits each side of an impact and
+   intersects the fits:
+   - Hawk-Eye-class line calling. The ITF protocol asks each system how many images it uses before and after the
+     bounce.
+   - Tracking by Deblatting, which finds the bounces by dynamic programming and fits a polynomial to each piece in
+     continuous time.
+   - FBDepth, which fits straight lines per pixel to three frames each side and takes the collision time from their
+     intersection, pooled over the object. It reaches a few milliseconds from 30 fps video.
+
+   FBDepth's authors state that frame interpolation cannot interpolate across a collision. Our step 3.1 measures
+   exactly that for our family. The derivative kernels need a one-sided mode, triggered by a jerk spike.
+2. **Rolling shutter is both a bias and a clock.** It skews a fast mover (the g-test must timestamp each row). It
+   also samples time finer than the frame rate: the visual microphone got 8-9x the frame rate from a 60 fps rolling
+   shutter, and Smid and Matas synchronise cameras to 0.3-0.5 ms with it. Measure each camera's readout time once,
+   with a flash.
+3. **Ground truth on real footage fails on geometry first.** Teaching labs measure errors of up to 40 percent from a
+   scale reference at the wrong depth, or a throw that is not square to the camera. Frame rate barely matters. A
+   parabola in a tilted plane is a general conic in image space. The better witnesses:
+   - fit in the throw's plane through a homography;
+   - use a unit-free two-drop ratio (t1^2 / t2^2 = h1 / h2) that needs no g, scale or frame rate.
+
+   **Scoring optical flow by physical constancy on real video appears unclaimed**: nothing was found. The nearest
+   discipline is uncertainty quantification in particle image velocimetry (PIV).
+4. **Curl alone cannot recover a ball's spin.** A 2-D field's curl sees only spin about the line of sight. Spin
+   about an axis in the image plane appears as a depth-weighted shear, so a sphere fit is needed (omega x r with
+   z = sqrt(R^2 - x^2 - y^2)). Spin along the direction of travel (gyrospin) never shows in a trajectory. Spin above
+   half the frame rate aliases.
+5. **A held object is the textbook case where JPDA merges tracks.** So hand and ball should not be tracked as
+   rivals matched by position. They belong together when their relative velocity and acceleration stay near zero
+   over a window. A release is an impulse event, as in finding 1.
+6. **The cradle's middle balls are an open measurement.** Nothing was found measuring them, or the click's timing,
+   with a high-speed camera. The realistic sub-pixel floor for phase-based methods is about 0.01 px. The 0.001 px
+   figures needed high-speed, controlled scenes. Timing an impact by sound needs ~2.9 ms per metre of travel and
+   each device's audio-video offset (~1 ms on an iPhone, per FBDepth).
+
+### Two finds that bear on the record beyond this document
+
+- **Koenderink and van Doorn (1976)** split a flow field into divergence, curl and two deformation parts. They are
+  the pioneers of the velocity gradient tensor the reading has emitted since Lead E (read_view 9), and the record
+  never cited them.
+- **Zhang, Pintea and van Gemert, "Video Acceleration Magnification" (CVPR 2017)** magnifies the second derivative
+  in time and ignores linear motion. It is the closest published relative of the acceleration field, which the first
+  survey found no footsteps for. It magnifies acceleration; it does not measure or calibrate it, so the first
+  survey's claim (b), the calibrated per-texel acceleration field as the product, stands.
+
+### Rigid and affine motion as one: the production precedent (added 2026-09-30, late evening, with 2.5's result)
+
+- **Video coding already moves rotation as one.** VVC (H.266) carries block-based affine motion compensation,
+  4-parameter (translation, one rotation, one zoom) and 6-parameter. The motion of each 4x4 sub-block is derived
+  from two or three control-point vectors. The 4-parameter model is Li et al., "An Efficient Four-Parameter Affine
+  Motion Model for Video Coding", IEEE TCSVT 28(8), 1934-1948 (2018). Earlier, rotational block matching against
+  an interpolated reference was published in EURASIP J. Adv. Signal Process. (2010).
+- **What that means for 2.5.** A codec chooses the affine model per block by rate-distortion cost, with the
+  original frame in hand. An interpolator has no original to test against. So the codec's model is the precedent,
+  but not its selection rule: the region has to be found from the field. 2.5 measured the model's worth with the
+  region given (a repair of 8-28 dB where the family fails, little where it works). The selection is the open part.
+- **Kept for the lead:** the control-point form (two vectors define a block's rotation and zoom) is the natural way
+  to carry a rigid fit into a per-block shader, and it is cheap to evaluate per pixel.
+
+### Sources (the energy-transfer sweep)
+
+Conservation laws as truth
+- D. Brown, Tracker (Open Source Physics) — https://opensourcephysics.github.io/tracker-website/
+- Echiburu Fuenzalida and Fernandez Astudillo, "Does a Higher Frame Rate Improve the Measurement of g?", arXiv 2609.16243 (2026)
+- Martin, Frisch and Zwart, "Systematic Errors in Video Analysis", Phys. Teach. 58, 195 (2020) ; Stephens, Bostjancic and Koskulitz, "A Study on Parallax Error in Video Analysis", Phys. Teach. 57, 193 (2019), doi:10.1119/1.5092485
+- Webering, Seeger, Rother and Blume, IEEE ICCE 2021 (scale from a fall's parabola) — https://ieeexplore.ieee.org/document/9427685/
+- Thozhiyoor, Tripathi, Babu and Bhattad, arXiv 2512.02016 (2025): the unit-free two-drop test
+- Rozumnyi, Kotera, Sroubek and Matas, "Non-Causal Tracking by Deblatting", GCPR 2019, arXiv 1909.06894
+- Sciacchitano, "Uncertainty quantification in PIV", Meas. Sci. Technol. (2019)
+- Shrbeny et al., arXiv 2608.28304 (2026): per-row rolling-shutter correction of meteor video
+
+Spin
+- Tamaki, Sugino and Yamamoto, "Measuring ball spin by image registration", FCV 2004 ; Ijiri et al., SIViP 11, 1197 (2017), doi:10.1007/s11760-017-1075-x
+- Gossard et al., CVPRW 2024, arXiv 2404.09870 ; Xue et al., arXiv 2606.31760 (2026): spin from one rolling-shutter frame
+- A. M. Nathan, "Determining the 3D Spin Axis from Statcast Data" — https://baseball.physics.illinois.edu/trackman/spinaxis.pdf
+- Kienzle, Schoen, Lienhart and Satoh, CVPRW 2025, arXiv 2504.19863
+- J. J. Koenderink and A. J. van Doorn, JOSA 66, 717 (1976)
+- Alciatore, the 90 and 30 degree rules and TP A.4 (the post-contact parabola, ~0.75 s) — https://drdavepoolinfo.com/technical-proof/ ; Mathavan, Jackson and Parkin, Am. J. Phys. 77, 788 (2009)
+
+Impacts
+- Owens, Harris and Stennett, "Hawk-Eye tennis system", VIE 2003, doi:10.1049/cp:20030517 ; ITF Electronic Line-Calling evaluation, rev. 26 (2020)
+- Collins and Evans, Public Underst. Sci. (2008) ; Whitney et al., Curr. Biol. (2008), doi:10.1016/j.cub.2008.08.021
+- Rozumnyi et al., "Tracking by Deblatting", IJCV (2021), doi:10.1007/s11263-021-01480-w ; DeFMO, CVPR 2021
+- Sun and Qiu, FBDepth, arXiv 2207.03074
+- Shechtman, Caspi and Irani, "Space-Time Super-Resolution", TPAMI 27, 531 (2005)
+- Xu et al., "Quadratic Video Interpolation", NeurIPS 2019 (already in the first survey)
+- Scholl and Tremoulet, TICS 4, 299 (2000) ; CLEVRER (Yi et al., ICLR 2020) ; Physion (Bear et al., NeurIPS 2021) ; Galileo (Wu et al., NeurIPS 2015)
+
+Held objects
+- Kellman and Spelke, Cogn. Psychol. 15, 483 (1983) ; Brox and Malik, ECCV 2010 ; Tangemann, Kuemmerer and Bethge, NeurIPS 2024, arXiv 2411.01505
+- Shan, Geng, Shu and Fouhey, CVPR 2020 ; EPIC-KITCHENS VISOR (NeurIPS 2022) ; EgoHOS (ECCV 2022)
+- Fortmann, Bar-Shalom and Scheffe, IEEE J. Ocean. Eng. 8, 173 (1983) ; Kropfreiter et al., arXiv 2308.06326
+
+Sub-pixel and sub-frame
+- Wadhwa et al., "Motion microscopy for visualizing and quantifying small motions", PNAS 114, 11639 (2017), doi:10.1073/pnas.1703715114
+- Zhang, Pintea and van Gemert, "Video Acceleration Magnification", CVPR 2017, arXiv 1704.04186
+- Hinch and Saint-Jean, Proc. R. Soc. A 455, 3201 (1999) ; Cross and Gauld, Phys. Educ. 56, 025002 (2021) ; Pal et al., Phys. Teach. 64, 72 (2026)
+- Smid and Matas, VISAPP 2017, arXiv 1902.11084
+
+Cosmography
+- Blandford et al., "Cosmokinetics", arXiv astro-ph/0408279 ; Rodrigues, de Souza and Alcaniz, arXiv 2506.22373 (model-independent j0 with DESI DR2: consistent with 1 alone, 3.4-5.4 sigma from 1 with supernova catalogues) ; Worsley, Chakraborty and Dunsby, arXiv 2607.20348 (model-based fits with Planck hold j0 ~ 1)
+
+Rigid and affine motion (2.5)
+- Li, Li, Li, Lu, Yang, Lin, Chen, Wu, "An Efficient Four-Parameter Affine Motion Model for Video Coding", IEEE TCSVT 28(8), 1934-1948 (2018), dblp journals/tcsv/LiLLLYLCW18
+- "Block-Matching Translational and Rotational Motion Compensated Prediction Using Interpolated Reference Frame", EURASIP J. Adv. Signal Process. (2010), doi 10.1155/2010/385631

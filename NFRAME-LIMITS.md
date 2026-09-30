@@ -4823,3 +4823,229 @@ was run with it in the family.
   run.
 - **The carry on the bare recommendation stays a trade** (build 4's gate). It was not re-gated at build 6, and it is
   in no app.
+
+### The weave: a two-dimensional periodic print, where the field locks one period away and the family sits at the blend (2026-09-30, late evening)
+
+Found by ENERGY-TRANSFER.md 2.5 (moving a rigid rotation as one), then checked in translation, where it was not
+expected. The masters' `weave` texture is a woven-fabric pattern: sinusoidal threads of period 14 px in x and y,
+with an over-under checker of period 28 px and fine noise at about 3 px. The master tier had only ever been scored
+on `sines`.
+
+**The master tier, textured ground, ladder mean over 240 frames** (`masters/check.sh`, TEXTURE=weave against
+TEXTURE=noise; the Cadence default against linear):
+
+    scene                 noise: default / linear    weave: default / linear
+    bounce-constant       51.15 / 39.16              26.42 / 25.26
+    bounce-oscillating    53.89 / 42.10              27.47 / 28.82   (below linear)
+    spin-constant         52.76 / 42.80              20.39 / 21.16   (below linear)
+    roll-12               45.42 / 30.08              29.49 / 24.78
+
+On aperiodic texture the default beats the blend by 12-15 dB. On the weave it gains about a decibel, and falls below
+the blend on two scenes.
+
+**The whole family, not the default's gates** (`bounce-constant`, weave):
+
+    member          plain   variational   var-propagated   -global   -global-cage   -energy   quad-propagated
+    ladder mean     26.64   26.94         26.68            26.68     26.18          27.17     26.50    (linear 25.26)
+
+**The field, read** (the field tier's instrument, the quad at N:N; `fieldtier.sh` now takes TEXTURE):
+- **On noise:** median error 0.54-0.62 px, 12-16 percent gross.
+- **On the weave:** median error 26.6-27.8 px, 96 percent gross, at an angle 82 degrees off, but with the right SPEED
+  (19.0 against 19.2 px/frame).
+- The weave maps onto itself under a shift of (0, 28) px, the checker's period. The true motion, (15.8, 10.8), minus
+  that period is (15.8, -17.2), at -47.3 degrees. The measured angle error of 81.8 degrees puts the reading at -47.4.
+- **So the field matched the print one full period away, where it looks the same.** It is the record's period
+  locking (the cage, V3) in two dimensions and at full speed, not at a sub-pixel drift.
+- The gates then do what they were built for. The coherence cue and the cage see a field they cannot trust and
+  fall back towards the blend, which is why the default lands at linear's level rather than below it. At 19 px a
+  frame the blend is a poor answer, not the right one: the cage's ceiling (the blend beats any warp) was measured
+  on a sub-pixel drift.
+
+**What the right answer is worth, and the cue that could find it.**
+- In rotation (ENERGY-TRANSFER 2.5), a warp driven by the TRUE rigid motion scores 34.6-37.9 dB on the weave
+  against the default's 13.8-19.6: 15-24 dB.
+- Registration seeded by a field that is wrong but not blind finds the truth. Seeded by a blind one, it does not.
+- The cue that is NOT periodic is the object's outline. A body's boundary moves with its true motion, and its
+  interior's match is ambiguous up to a period. A region-level prior, "the interior moves with its boundary", is the
+  disambiguation the record's cage section said only a prior could give.
+- It is the same shape as ENERGY-TRANSFER's two leads (the impact placer and the rigid-region mode): a model of
+  the body, found from the field and finished at the pixel level. 2.5c measures the pixel-level finish.
+
+**Where it stands.** A case class the ladder does not contain, measured on the masters: fine two-dimensional
+periodic texture in fast motion (woven fabric, checked cloth, grilles and tiles) puts the whole family at the
+blend. It is not yet crystallised as a ladder case, and not yet looked for in real footage. The next measurements:
+- a weave ladder case at several speeds and periods (where the lock begins);
+- whether the outline cue can seed the interior;
+- a real clip of checked cloth.
+
+**Pre-registered (2026-09-30, night, before it ran): where the lock begins.** `tests/probes/weave/weavesweep.py`: a
+320 x 202 box translating horizontally at 2-24 px/frame over a flat ground, the weave against noise. For each speed,
+the field (the quad at N:N) against the true velocity over the eroded box (median error, gross fraction), and the
+Cadence default's PSNR on the box region against the closed form, with linear beside.
+- Horizontally the weave repeats every 28 px, and also along the diagonal (14, 14).
+- For a horizontal motion v, the alias (v - 14, -14) is SHORTER than the truth once v > 14, as is v - 28.
+- **Prediction W1:** the field reads the weave as well as noise below about 12 px/frame, and locks (gross above 50
+  percent) from 14-16 px/frame up. The default falls to linear's level where it locks.
+- If it locks well below 14, the matcher's preference is not for the shortest vector, and the mechanism is
+  elsewhere: the coarse levels' aliasing, which starts wherever the texture's period is under two coarse texels.
+
+**Results (2026-09-30, night, the M5): W1 REFUTED, and the lock is a comb in speed, period 8 px.**
+`weavesweep.py`, horizontal translation, 48 source frames. The speeds were 3-19: 24 does not fit the frame in 48
+frames, as the pre-registration's "2-24" had assumed.
+
+    v px/f   noise: field gross / default - linear      weave: field gross / measured vx / default - linear
+     3         0.5%  +20.6                                 71.9%   +15.67   -6.47   (below the blend)
+     5         0.6%  +16.1                                 63.4%   +14.31   -5.10   (below the blend)
+     7         0.0%  +23.3                                  0.0%    +7.00  +21.99
+     8         0.0%  +28.0                                  0.0%    +8.00  +23.29
+     9         0.0%  +26.2                                  0.0%    +8.97  +24.32
+    11         0.9%  +23.3                                 94.7%   -16.91   +2.08   (v - 28)
+    13         0.9%  +20.7                                 96.8%   -14.05   +2.09
+    15         0.0%  +16.4                                 28.4%   +14.94  +13.45
+    16         0.0%  +17.1                                  0.0%   +15.94  +23.89
+    17         0.1%  +16.0                                 15.3%   +16.97  +19.50
+    19         1.6%  +20.4                                 97.7%    -8.97   +1.34   (v - 28)
+    (field: the four-frame shader's raw velocity, gross = |error| > 2 px over the eroded box; the default against
+    linear, PSNR-Y on the box region, equal footing)
+
+- **Not a threshold.** The weave reads exactly at 7, 8, 9 and 16 px/frame, mostly at 15 and 17, and locks at 3, 5,
+  11, 13 and 19.
+- **The locked vectors are the print's periods, and not the shortest.** At 11 and 19 the field reads exactly
+  v - 28 (-17 and -9). At 3 and 5 it reads about +15, far longer than the truth. The matcher does not prefer the
+  shortest vector, so W1's premise was wrong.
+- **The fit is the alternative the pre-registration named: the coarse levels' aliasing.** The immune speeds sit
+  within one pixel of 8 and 16, the 1/8 level's texel and its double. This is the record's point-sampled pyramid
+  (section 3). An aliased level is shift-invariant only for whole shifts of its own texels, and the weave's
+  14 / 28-px print is aliased at 1/8 and 1/16. The prefilter that would stop it was built and refuted on 09-03
+  (section 8), so the pyramid is still point-sampled.
+- **The costliest band is SLOW motion, the commonest in footage.** At 3-5 px/frame the field locks to a vector
+  three to five times too long, the gates do not catch it, and the default falls 5-6.5 dB BELOW the blend. The
+  coherence gate and the cage were built for a sub-pixel drift, and a slow lock is outside what they see.
+- **What the translating masters showed earlier fits.** Their bounce runs at 19.2 px/frame along a diagonal: a
+  locked speed.
+- **This comb is not new: section 8 measured it on 09-03.** On TEX_M1 at 6-14 px/frame the stock scored 28-31 dB
+  against 46.9 at the immune 16. The prefilter that would stop the aliasing was refuted there: a box keeps the
+  motion right but leaves nothing to match on, and costs the fine ladder 8-20 dB. Section 8's replacement lead was
+  a PER-LEVEL TRUST GATE: decide per texel and level whether that level's honestly filtered contrast can seed the
+  search. That is the answer this section should have named; nothing later in the record builds it.
+- **What the weave adds to section 8:**
+  - a two-dimensional print;
+  - the SLOW speeds, which section 8 did not measure, where the current default falls BELOW the blend;
+  - the fact that every gate added since (the coarse energy, the cage, the coherence cue, the global seed) leaves
+    the comb open on it.
+- **Next:**
+  - the period test (W2, W3, below) to pin the level;
+  - the per-level trust gate, section 8's lead, never built;
+  - a real clip of checked cloth moving slowly.
+
+**Pre-registered (before it ran): the period test, which separates the mechanism.** The same sweep with the weave's
+thread period P set to 10 and to 20 (the checker 2P), at 3-19 px/frame.
+- **W2:** P = 10 shows the same comb (immune near 8 and 16, locked between), since 10 is aliased at 1/8 as 14 is.
+- **W3:** P = 20 reads at EVERY speed (gross under 5 percent). 20 is above the 1/8 level's Nyquist period (16 px),
+  so that level sees the print unaliased. P = 14 read correctly near 8 px/frame although the 1/16 level also aliases
+  it, so the 1/16 level's aliasing alone should not lock.
+- If P = 20 also locks, the mechanism is not the 1/8 level's aliasing alone.
+
+**Results (the M5): W2 PASSED, W3 MISSED as worded; the comb follows the finest level that aliases the print.**
+
+    v px/f   P = 10: gross / measured vx / default - linear     P = 20: gross / measured vx / default - linear
+     3        95.5%  -16.95  -6.15                                0.1%   +3.00  +13.66
+     5        94.8%  -15.00  -1.62                                1.4%   +4.94  +17.53
+     7         1.5%   +7.00 +24.82                                0.0%   +7.03  +20.81
+     8         0.0%   +8.00 +28.95                                0.0%   +8.00  +21.88
+     9         1.1%   +8.97 +22.28                                0.0%   +8.94  +22.71
+    11        99.1%   -8.97  +2.25                               18.7%  +10.91  +20.99
+    13        99.7%   -7.02  +1.70                               17.5%  +12.94  +17.90
+    15         2.7%  +15.00 +25.94                                0.0%  +15.00  +28.68
+    16         0.0%  +15.91 +20.42                                0.0%  +15.94  +24.68
+    17         1.0%  +16.97 +21.03                                0.5%  +16.97  +24.55
+    19        98.3%   -0.97  +0.36                               71.7%   +8.72   +4.79
+
+- **W2 PASSED:** P = 10 has the same comb as P = 14. Every lock is exactly v - 20, the 20-px checker period. At 3
+  px/frame the default is again 6 dB below the blend.
+- **W3 MISSED as worded, and it is the more useful half.** P = 20 removes the 8-px comb: every speed from 3 to 9
+  reads cleanly. What is left is a weaker disturbance at 11-13 (18 percent gross) and a lock at 19.
+- **The reading:** P = 10 and 14 are aliased at the 1/8 level (Nyquist period 16 px), and they carry a comb of
+  period 8. P = 20 escapes the 1/8 level but is still aliased at 1/16 (Nyquist period 32 px). That leaves a weaker
+  comb, felt far from multiples of 16. **The comb's period is the texel of the finest level that aliases the
+  print.** This is section 8's mechanism, now with its level identified by a controlled change of period.
+- **For the trust gate:** it has to act per level. A print aliased at 1/8 only needs 1/8 distrusted; a print
+  aliased at 1/16 only needs 1/16 distrusted.
+- **The Linux witness (the NAS's Arc, Mesa):** the P = 14 comb reproduces on the other platform. The same speeds
+  lock; gross fractions agree within 2 points and the default's PSNR within 0.2 dB at every speed. The comb is the
+  shader's, not MoltenVK's.
+
+**Pre-registered (before it ran): is the outline cue already in the field?** The coherence gate cannot see this
+lock: at a locked speed the whole box reads ONE wrong vector, which is coherent. The record's cue for a periodic
+interior is the body's outline, which moves with the true motion. `weavesweep.py --rings` splits the box into an
+edge ring (within 16 px inside the boundary) and a core (more than 32 px inside), at the locked speeds on the NAS.
+- **W4:** where the core is locked (gross above 90 percent), the edge ring reads the true velocity on most of its
+  texels (gross under 40 percent). The outline cue is then already in the field, and a fix needs only to carry it
+  inward.
+- If the ring is locked as badly as the core, the lock enters at the coarse level before the edge can speak, and a
+  fix has to act at the level itself (the per-level trust gate).
+
+**Results (the NAS's Arc): W4 MISSED where it was registered, and the split by speed is the finding.**
+
+    v px/f   whole box gross   edge ring (0-16 px inside)   core (32+ px inside)   default - linear
+     3        71.2%             19.0%                        80.6%                  -6.34
+     5        65.6%             16.4%                        73.7%                  -5.16
+     8         0.0%              1.9%                         0.0%                 +23.27
+    11        94.9%             67.1%                        99.8%                  +2.09
+    13        96.7%             73.7%                       100.0%                  +2.12
+    19        97.8%             79.3%                       100.0%                  +1.31
+
+- **W4 MISSED as registered.** Where the core is locked above 90 percent (11, 13, 19 px/frame), the edge ring is
+  locked too (67-79 percent gross). At those speeds the lock enters at the coarse level before the edge can
+  speak, and the fix has to act at the level: the per-level trust gate.
+- **But at the SLOW speeds the outline cue is already in the field.** At 3 and 5 px/frame the edge ring reads the
+  true motion (16-19 percent gross) while the core is 74-81 percent locked. This is the costliest band, where the
+  default falls 5-6 dB below the blend. There, carrying the edge's motion inward (the region-level prior "the
+  interior moves with its outline") could fix the lock without touching the pyramid.
+- **Two fixes, not one:** a propagation of the outline's motion for slow prints, and a per-level trust gate for
+  fast ones.
+
+**Pre-registered (before it ran): the outline carried inward, on the slow weave.** `tests/probes/weave/weaveedge.py`
+keeps the box region GIVEN, as ENERGY-TRANSFER 2.5 did, to isolate the one question. It takes the region's motion as
+the median of the field over its EDGE RING (0-16 px inside the boundary), then warps the region by that motion from
+source frames k and k + 1 (equal footing, bilinear). A RANSAC consensus would pick the locked vector: the locked
+core outnumbers the edge. Scored on the box against the default.
+- **E1:** at 3 and 5 px/frame the edge ring's median is within 0.5 px of the truth, and the edge-driven warp beats
+  the default by at least 10 dB on the box (the default is at 16-20 dB; a correct warp should reach about 40).
+- **E2 (the control):** at 11, 13 and 19 px/frame the ring is locked (67-79 percent gross), so its median is wrong
+  and the warp does not help.
+- noise at the same speeds as a second control: the edge warp is at least as good as the default there.
+
+**Results (the M5): E1 and E2 PASSED. On a slow print, the outline's motion carried inward is a 22-30 dB repair.**
+
+    tex     v px/f   edge-ring motion (truth v)   ring gross   default   edge warp   linear   edge - default
+    weave    3        +3.03                         18.8%       20.27     42.31      26.74    +22.04
+    weave    5        +5.00                         15.3%       16.23     45.84      21.33    +29.60
+    weave   11       -12.77                         68.3%       15.94     15.08      13.86     -0.86
+    weave   13        -3.45                         74.3%       15.18     15.16      13.09     -0.03
+    weave   19        -8.37                         78.9%       15.66     14.87      14.32     -0.79
+    noise    3        +2.84                          3.4%       51.06     52.80      30.46     +1.74
+    noise    5        +4.91                          5.7%       43.37     45.53      27.31     +2.15
+    noise   11       +10.66                         12.4%       48.44     50.78      25.17     +2.34
+    noise   13       +12.91                         11.9%       45.44     48.24      24.76     +2.80
+    noise   19       +18.72                         14.2%       44.48     46.84      24.08     +2.36
+    (PSNR-Y on the box, dB; the region given, the motion from the field's edge ring alone)
+
+- **E1 PASSED:** at 3 and 5 px/frame the edge ring's median is the truth to 0.03 px. Drawing the region with it
+  lifts the box from 16-20 dB to 42-46: +22 and +30 dB, over the default AND over the blend. This is the band where
+  the default falls below the blend.
+- **E2 PASSED:** at the fast locks the ring is locked too (its median -12.8, -3.5 and -8.4 against +11, +13 and
+  +19), and the edge warp does nothing.
+- **The noise control PASSED:** the edge warp never loses to the default. Its +1.7 to +2.8 dB there is the given
+  region's exact boundary, the caveat ENERGY-TRANSFER 2.5 recorded.
+
+**Where the weave stands, in one paragraph.** A fine two-dimensional print locks the field one period away at every
+speed that is not near a whole texel of the finest level that aliases it (a comb; section 8's mechanism, both
+platforms). Two different repairs fit two bands:
+- **SLOW prints:** the outline already reads the truth, so a region-level prior carried inward repairs them by
+  22-30 dB. It needs the region found, which ENERGY-TRANSFER 2.5b-2.5d measure for rigid bodies.
+- **FAST prints:** the lock enters at the coarse level before the edge can speak, so the per-level trust gate is
+  the only candidate (section 8, never built).
+
+Neither is built. Both would be variants behind a switch, gated on the Arc.
+

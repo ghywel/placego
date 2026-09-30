@@ -17,10 +17,12 @@ OUT="$1"; shift
 SCENES="${*:-bounce-constant bounce-gravity breathe spin-constant spin-pendulum spin-orbit roll-12 roll-wagon snow fish planets roundabout}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS="$(cd "$HERE/../.." && pwd)"
+. "$TESTS/mvk-env.sh"     # MoltenVK determinism on macOS (MVK_DETERMINISTIC=0 opts out)
 SHADERS="$(cd "$TESTS/../shaders" && pwd)"
 FFMPEG="${FFMPEG:-ffmpeg}"; PY="${PYTHON:-python3}"; QUAD="${QUADDEMO:-}"
 export FFMPEG FFPROBE="${FFPROBE:-$(dirname "$FFMPEG")/ffprobe}"     # fieldcheck.py reads frames through them
 STEM="${STEM:-quaddirectional-interpolation-propagated}"; FS="${FS:-48}"; FRAMES="${FRAMES:-12 48 84}"; N="${N:-96}"; BG="${BG:-flat}"
+TEXTURE="${TEXTURE:-sines}"     # the mover's texture (masters.py's default; 2026-09-30: the weave's field read)
 W=1280; H=720
 mkdir -p "$OUT/graphs"
 VAR="$OUT/graphs/${STEM}_vel_fs$FS"
@@ -30,11 +32,11 @@ if [ -n "$QUAD" ] && [ ! -f "$VAR/graph.json" ]; then
     || { echo "graph build failed: $(tail -2 "$VAR.gen.log")"; exit 1; }
 fi
 TSV="$OUT/field.tsv"; [ -f "$TSV" ] || printf 'scene\thost\tk\tmedian_px\tp90_px\tgross_pct\tangle_deg\tv_true\tv_meas\tnote\n' > "$TSV"
-echo "field tier: $STEM TRI_DIAG 7 at FS $FS, $BG ground, frames $FRAMES of $N"
+echo "field tier: $STEM TRI_DIAG 7 at FS $FS, $BG ground, texture $TEXTURE, frames $FRAMES of $N"
 for sc in $SCENES; do
   dir="$OUT/$sc"; mkdir -p "$dir"
   echo "== $sc"
-  [ -f "$dir/src24.raw" ] || "$PY" "$TESTS/masters.py" "$sc" --size ${W}x${H} --frames "$N" --src-fps 24 --settle 0 --bg "$BG" \
+  [ -f "$dir/src24.raw" ] || "$PY" "$TESTS/masters.py" "$sc" --size ${W}x${H} --frames "$N" --src-fps 24 --settle 0 --bg "$BG" --texture "$TEXTURE" \
       --export-source "$dir/src24.raw" --export-field "$dir/truth" > "$dir/export.log" 2>&1 || { echo "  export failed"; continue; }
   hosts=""
   if [ -n "$QUAD" ] && [ ! -f "$dir/metal.done" ]; then

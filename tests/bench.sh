@@ -26,6 +26,8 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 FFMPEG="${FFMPEG:-ffmpeg}"
 OUTROOT="${OUTROOT:-${TMPDIR:-/tmp}/interp-bench}"
+
+. "$HERE/mvk-env.sh"      # MoltenVK determinism on macOS (MVK_DETERMINISTIC=0 opts out)
 SHADER_DEFAULT="$HERE/../shaders/bidirectional-interpolation.glsl"
 
 run_case() {

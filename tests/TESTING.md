@@ -50,7 +50,11 @@ good its output looks in isolation.
 - **~79 dB is the practical ceiling, not infinity.** `hold` can hit infinite
   PSNR on a static scene because it copies frames byte-for-byte. Anything
   going through libplacebo tops out near 79 dB from the GPU round-trip
-  alone. That gap is not a shader defect.
+  alone. That gap is not a shader defect. (**81 dB since 2026-09-30**:
+  libplacebo c42968d rounds its output to the pixel grid and clips it to the
+  legal range, and L0_static rose from 79.41 to 81.08 -- see "The research
+  build updated" at the end. Compare a ceiling-bound number only with one
+  from the same build.)
 - **Absolute scores are not comparable across cases.** High-frequency
   content punishes a half-pixel error far more than flat content does. Only
   compare *within* a case, or compare the deltas.
@@ -2003,3 +2007,231 @@ median of at least three pairs. On the RX 6600 that gives the stock mixer
 3.48 s. NFRAME-LIMITS.md's closing section has the split between dispatch
 count and arithmetic; `bench.sh` keeps `lavfi` for correctness, where it is
 exact.
+
+## The research build updated (2026-09-30)
+
+The owner, the same day: FFmpeg -- and libplacebo on the Vulkan side -- are kept
+current ("Bringing ffmpeg up to date in any of our apps is critical"). The pins
+moved from ffmpeg master 5b614ef (09-08) to ff2059a (09-30), and from
+libplacebo 3330a51 (09-03, 7.371) to c42968d (09-23, 7.372). The three patches
+applied unchanged (`frame-mix-hook.patch`, `frame-mix-nn-threshold.patch`,
+`hw-base-encode-eof-nullcheck.patch`). The previous libraries are kept in
+`~/np-build/prev-20260908/`.
+
+**The gate.** The full ladder, all 42 cases, on the M5 through MoltenVK, each
+build against the other. The recommended variational-propagated shader ran
+three times on each build (best of three); the plain bidirectional ran once,
+then its moved cases twice more.
+
+- **The recommended shader:** every case within the runs' own spread, except
+  L0_static. No regression.
+- **The ceiling:** L0_static, linear and every shader, 79.41 -> 81.08 dB.
+  libplacebo's renderer now force-rounds output to the pixel grid and clips it
+  to the legal signal range: the GPU round trip is more exact. It is not a
+  change in any shader.
+- **The plain bidirectional:** L1_trans_8px gains 0.66 dB (26.48 over linear
+  against 25.82, the same on every run of each build). Nothing else moved
+  beyond noise.
+- **The Mac wanders outside the propagated family too.** O6_osc_tex_gentle
+  flips between two values (-4.44 and -3.43 over linear) on BOTH builds, and
+  M2_period40 and R3_rot_tex wander by up to 0.3 dB. On the Mac, take the best
+  of three for every shader, not only the propagated ones. A single-run
+  comparison flagged M2 at -1.14: that was one low sample.
+
+
+## The Linux witness on the Arc (2026-09-30)
+
+The owner's NAS became pooled compute: TrueNAS with an Intel Arc A310. The research build runs there in a
+container (`scripts/linux/`: Debian trixie plus Mesa, Vulkan-Headers 1.4.357 built in). It has the same pins as
+the Mac gate (ffmpeg ff2059a, libplacebo c42968d) and the same three patches. Mesa's device select
+(`MESA_VK_DEVICE_SELECT=8086:56a6`) puts the Arc first, since the UHD 630 and llvmpipe are also listed. Smoke:
+15 passed, 0 failed. A full ladder run takes about 10.5 minutes per shader.
+
+**The Arc is DETERMINISTIC in the propagated family.** Two runs of the recommendation are identical to the
+hundredth on all 42 cases, and so are two runs of the plain bidirectional. The Mac, through MoltenVK, wanders in the same family, which is why every Mac
+comparison needs best of three and still carries a spread. So the Arc is where a shader variant can be gated in a
+single run, to the hundredth.
+
+**Against the Mac gate** (the Arc's single run; the Mac's best of three for the recommendation, a single run for
+the plain bidirectional):
+- **The scenes are bit-identical across the two platforms:** hold reads the same on every case.
+- **The plain bidirectional agrees:** a median difference of 0.000 dB, 35 of 42 cases within 0.05 dB and 39
+  within 0.3.
+- **The recommendation agrees within 0.3 dB on 32 of 42 cases, with a median difference of +0.02.** It is higher
+  on the Arc on L1/L2 (+1.6, where the Mac spreads 1.2 over its own runs), P2 (+0.9), L6 (+0.7) and L9 (+0.6). It
+  is lower on R3 (-0.9) and H1 (-0.4).
+- **V3_stairs_sq24_v12 is BISTABLE:** 12 px/frame on a 24 px period, exactly half, where both directions match.
+  The Arc lands on the bad branch for both shaders (16.35, 16.15), deterministically. The Mac's three runs spread
+  6.1 dB over the two branches (19.8-25.9). It is not a platform bug. It is the period-24 ambiguity the record
+  already names, and the Arc's determinism makes it visible as a fixed choice rather than noise.
+
+**The third host: the Intel Mac's RX 6600 through MoltenVK (the same day, the same pins; smoke 15 of 15).** Two
+runs of the recommendation:
+- **They agree to the hundredth on only 3 of 42 cases,** and differ by up to 3.8 dB (M2_period40), a wider wander
+  than the M5's.
+- **So the run-to-run wander belongs to the MoltenVK path, on an AMD GPU as on Apple's,** and Linux on the Arc
+  (Mesa) is the deterministic host of the three.
+- **The scenes are bit-identical on all three:** hold matches on 42 of 42.
+- **The RX 6600's best of two sits a median 0.34 dB under the Arc,** within 0.3 dB on 21 of 42, and 3-4 dB under it
+  on the translations L1/L2. The M5 was 1.6 dB under there too, so both MoltenVK hosts read the plain translations
+  lower than Linux does.
+- **The float-atomics lead is REFUTED by inspection,** the same hour: no shader in the family uses an atomic
+  (ffmpeg enables VK_EXT_shader_atomic_float on the device, but nothing calls it).
+- **The standing lead** fits the record's own 'propagated-only' nondeterminism on the M5. The propagated family keeps
+  flow in storage images that persist across frames, and writes and reads them across passes. How MoltenVK
+  translates the synchronisation between those passes into Metal is where a race would live.
+- **The test:** the plain bidirectional on the RX 6600, twice. If it holds still while the propagated family
+  wanders, the persistence is the suspect.
+- **RESULT, the same afternoon:** the plain bidirectional ALSO wanders on the RX 6600 (identical on 5 of 42, up to
+  1.0 dB, less than the propagated's 3.8). Persistence may amplify the wander, but it is not its cause.
+
+**What else is ruled out, by audit of the shaders (the same hour):**
+- **Shared memory and barriers:** none. Every pass is a fragment pass.
+- **In-pass races:** 13 passes (plain) and 12 (propagated) both imageStore and imageLoad the same storage image,
+  but every such read is at the invocation's OWN coordinate. There is no cross-texel read-after-write inside a pass.
+- **Uninitialised caches:** the skip caches are guarded by `pair_changed`, which the FRAME_MIX hook computes on the
+  host, true on the first call and on every change of source pair. So a cache is never read before it is written.
+
+**A clue, the same evening (ENERGY-TRANSFER 1.4):** a 120 px pendulum bob at 14-18 px/frame, read through the same
+RGB path, had NINE speed dropouts on the M5 (6-8 px/frame for 14-17), on different frames each run, and NONE on the
+Arc. The wander is intermittent gross failures of the match on a fast body, not a small perturbation.
+Three more M5 runs of the same frames dropped out on 3, 3 and 6 frames. The frames DIFFERED run to run (only k 13
+twice), always on fast frames (13.8-18 px/frame), always at 35-60 percent of the truth. Random in time, gross in
+size, speed-gated: the signature of a race, most plausibly a coarse-level pass reading a storage image before the
+previous pass's writes are visible under MoltenVK's translation. The cheap next test is a variant with an extra
+barrier-forcing pass between the coarse levels (or libplacebo's pass-level barriers made explicit), run five
+times on the M5 against this pendulum: zero dropouts on all five would name it.
+
+**What is left is below the shaders.** It is either how MoltenVK orders or synchronises storage-image writes between
+passes, or driver-level floating-point differences in Metal on AMD. The workaround is in hand and exact: gate on the
+Arc. The root cause is PARKED, documented rather than chased (the owner's steps-before-leaps rule).
+
+**The first deterministic family table (the Arc, 2026-09-30):** 22 shaders plus the two gated, each one run
+(`np-scratch/ladder-arc/family-2026-09-30.txt`; 41 cases, L0 excluded; "vs rec" against the variational-propagated
+recommendation, case by case).
+
+    shader                                              mean dB   median vs rec   better/worse (0.3)   best on
+    ...variational-propagated-global-cage-energy-carry   46.93        +0.67             28 / 2            11
+    quaddirectional-interpolation-animation              46.89        +0.24             20 / 14            4
+    tridirectional-interpolation-animation               46.89        +0.57             22 / 14            4
+    tridirectional-interpolation-propagated              46.77        +0.41             21 / 14            0
+    quaddirectional-interpolation-propagated             46.77        +0.07             19 / 15            0
+    quintdirectional-interpolation-propagated            46.73        +0.11             18 / 15            3
+    ...variational-propagated-global-cage-energy         46.70        +0.48             27 / 3             0
+    ...variational-propagated-energy                     46.37        +0.53             24 / 4             6
+    quaddirectional-interpolation-propagated-cadence     46.19        -0.03             16 / 18            0
+    bidirectional-interpolation-animation                46.15        -0.49             14 / 21            3
+    sextdirectional-interpolation-propagated             46.15        -0.11             16 / 17            0
+    bidirectional-interpolation-propagated               46.02        -0.21             12 / 20            1
+    ...variational-propagated-global-cage                45.78        +0.01              7 / 5             2
+    ...variational-propagated-global                     45.71        +0.00              4 / 2             0
+    bidirectional-interpolation-variational-propagated   45.50         0                 -                 0
+    quaddirectional-interpolation-seeded                 44.24        -0.25             14 / 20            0
+    tridirectional-interpolation-seeded                  43.86        -0.11             16 / 20            0
+    bidirectional-interpolation-seeded                   43.37        -1.07             12 / 24            4
+    bidirectional-interpolation-variational              40.98        -1.16              6 / 26            1
+    bidirectional-interpolation-diffuse-dual             40.41        -3.29              6 / 32            2
+    tridirectional-interpolation                         38.86        -4.05              7 / 30            0
+    quaddirectional-interpolation                        38.82        -4.36              8 / 30            0
+    bidirectional-interpolation                          38.52        -4.66              6 / 31            0
+    bidirectional-interpolation-diffuse-coarse           37.91        -6.81              5 / 35            0
+
+- **The Cadence 1.0.3 default leads the synthetic ladder, now measured exactly:** the highest mean, +0.67 median
+  over the recommendation, better on 28 cases and worse on 2.
+- **Each switch adds in order:** global, then cage, then energy, then carry. Energy is the largest single step
+  (+0.9 mean over global-cage).
+- **The animation variants sit near the top on synthetic content,** a reminder that the ladder has no cel content to
+  punish them.
+
+**Pre-registered, the MoltenVK settings sweep (2026-09-30 evening, before it ran).** The pendulum field read
+(pendulumfit.py) is repeated 4 times per setting, on the M5 and on the Intel Mac's RX 6600, counting the speed
+dropouts per run. The settings are MoltenVK's own environment switches: default; MVK_CONFIG_SYNCHRONOUS_QUEUE_SUBMITS=1;
+MVK_CONFIG_USE_MTLHEAP=0; MVK_CONFIG_USE_MTLHEAP=1; MVK_CONFIG_FAST_MATH_ENABLED=0;
+MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0.
+- **M1:** one synchronisation-related setting (synchronous submits, or the heap switch) takes the dropouts to zero in
+  all 4 runs on BOTH GPUs, naming the mechanism.
+- **M2:** fast math off does not change them: precision is not the cause.
+
+**The sweep's first result (4 runs a setting, dropouts per run):**
+
+    setting                  M5           RX 6600
+    default                  5 2 6 3      3 0 3 3
+    synchronous submits      5 4 6 6      2 0 2 0
+    heaps off / on           1 2 5 1 /    2 0 1 0 /
+                             5 5 3 5      0 4 2 1
+    fast math off            0 1 0 0      1 0 2 1
+    argument buffers off     0 0 0 0      3 1 0 2
+
+- **M1 MISSED:** no synchronisation setting fixes both GPUs; synchronous submits changes nothing.
+- **M2 MISSED on the M5:** fast math off nearly removes the dropouts there (1 in 4 runs against a mean of 4 per run),
+  so precision matters on the Apple GPU.
+- **The finding: on the M5, MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0 removes them (0 in 4 runs).** By chance that
+  would be about 1e-7. Argument buffers are how MoltenVK binds resources on Apple GPUs, which points at a
+  binding/residency hazard, not queue synchronisation.
+- **Neither setting helps the RX 6600 at these small counts.** Its wander may have another cause, or MoltenVK may not
+  use argument buffers there the same way.
+- **Next:** more runs, the two settings combined, and the ladder twice on the M5 with argument buffers off. If that
+  makes the M5 deterministic, the Mac's wander is one environment variable.
+
+**The follow-up, 8 runs a setting (the same evening):**
+
+    setting                               M5                  RX 6600
+    default                               6 6 7 6 5 5 6 4     0 1 2 2 0 0 1 2
+    fast math off                         1 2 1 0 0 0 0 1     0 1 0 1 1 1 4 0
+    argument buffers off                  0 0 0 0 0 0 0 0     1 1 1 0 1 0 0 2
+    argument buffers off + fast math off  0 0 0 0 0 0 2 0     --
+
+- **On the M5, argument buffers off gives ZERO dropouts in all 12 runs** (4 plus 8), against a mean of 5.6 per run
+  by default. The M5's gross dropouts live in MoltenVK's Metal-argument-buffer path: resource binding and residency,
+  not queue synchronisation. Fast math off cuts them to a mean of 0.6 but does not end them. The combination had one
+  run with 2, so argument buffers off alone is the clean switch.
+- **The RX 6600's smaller wander (about 1 per run) is untouched by either:** a separate cause.
+- **Next:** the ladder twice on the M5 with argument buffers off. If it repeats exactly, the Mac's research runs get
+  determinism from `MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0`.
+
+**The RX 6600's own switch (the same evening, 8 runs a setting):**
+
+    default                                                  0 1 2 1 2 2 0 1
+    MVK_CONFIG_PREFILL_METAL_COMMAND_BUFFERS=1               0 1 2 1 4 2 2 0
+    MVK_CONFIG_MAX_ACTIVE_METAL_COMMAND_BUFFERS_PER_QUEUE=1  0 0 0 0 0 0 0 0
+    MVK_CONFIG_USE_COMMAND_POOLING=0                         0 1 1 0 0 2 7 0
+    MVK_CONFIG_SHOULD_MAXIMIZE_CONCURRENT_COMPILATION=0      1 1 0 0 2 1 2 3
+
+- **ONE active command buffer per queue ends the RX 6600's dropouts:** 0 in 8 runs against 10 in 8 by default, about
+  5e-5 by chance. The AMD path races across command buffers in flight at once, and serialising them removes it.
+- **So the two GPUs fail through different MoltenVK paths:** the Apple GPU through argument buffers, the AMD one through
+  concurrent command buffers.
+- **Next:** each switch on the other GPU, and each ladder twice with its switch for determinism.
+
+**The M5 ladder with argument buffers off (twice, the recommendation):**
+- **Identical on 29 of 42 cases, max 1.59 dB** (L3). The M5's DEFAULT runs of the morning gate agree on only 2-4 of
+  42, differing by up to 3-6 dB.
+- The switch removes most of the wander but not all: 13 cases still move, so there is a second source.
+- **Against the Arc:** 20 of 42 within 0.05 dB and 33 within 0.3. V3 lands on its good branch on the M5 (26.46),
+  where the Arc lands on the bad one.
+- **Next:** both switches together (argument buffers off AND one active command buffer, the RX 6600's switch), twice.
+
+**SOLVED: the Mac wander is two MoltenVK switches (the same evening; each ladder run twice, the recommendation):**
+
+    host      switches                                        identical r1/r2   max |r2 - r1|
+    M5        default (the morning gate)                      2-4 of 42         3.1-6.1 dB
+    M5        argument buffers off                            29 of 42          1.59
+    M5        argument buffers off + one command buffer       40 of 42          0.01  (all 42 within 0.05)
+    RX 6600   default                                         3 of 42           3.80
+    RX 6600   one command buffer                              41 of 42          0.90  (P2 only)
+    Arc       (Linux, Mesa; nothing to set)                   42 of 42          0
+
+- **The Intel UHD 630 agrees** (the pendulum sweep, 8 runs each): default 1.1 dropouts per run; one command buffer
+  0 in 8; prefill, no-pooling and serial compile no better. The AMD mechanism, on a second non-Apple GPU.
+- **The cost is 1-2 percent of a ladder run** (M5 6:24 against 6:15; RX 6600 8:37 against 8:27).
+- **Both switches are now the default on macOS** in one file, tests/mvk-env.sh. It is sourced by bench.sh (and so by
+  gate.sh, smoke.sh and realbench.sh) and by the field tier (masters/fieldtier.sh, check.sh); the ten
+  energy probes that call ffmpeg carry the same two lines. MVK_DETERMINISTIC=0 opts out (a timing run;
+  energy/mvksweep.sh sets it, so its 'default' row stays MoltenVK's default). A value already set wins.
+- **The best-of-three practice for Mac numbers is RETIRED wherever the switches are set.**
+- **The older probes that call ffmpeg directly** (about 35, from before today) do not source it. Export the two
+  variables, or source tests/mvk-env.sh, before trusting a hundredth from them on a Mac.
+- **Across platforms the numbers still differ a little:** M5 against the Arc, 24 of 42 within 0.05 dB, 37 within
+  0.3; the V3 branch differs. That is different compilers on different GPUs, now each self-consistent.
+- **The mechanism, in short:** on the Apple GPU a resource-binding hazard in the argument-buffer path; on AMD a race
+  between command buffers in flight. Neither is in our shaders (the audit above), and neither on Linux.

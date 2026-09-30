@@ -20,6 +20,7 @@ OUTROOT="$1"; shift
 SCENES="${*:-static bounce-constant bounce-oscillating bounce-hardjerk bounce-gravity bounce-masses breathe breathe-spin spin-constant spin-accelerating spin-pendulum spin-orbit roll-12 roll-12-fast roll-wagon snow fish planets roundabout}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS="$(cd "$HERE/../.." && pwd)"
+. "$TESTS/mvk-env.sh"     # MoltenVK determinism on macOS (MVK_DETERMINISTIC=0 opts out)
 SHADERS="$(cd "$TESTS/../shaders" && pwd)"
 FFMPEG="${FFMPEG:-ffmpeg}"; PY="${PYTHON:-python3}"
 SRC_FRAMES="${SRC_FRAMES:-96}"; BG="${BG:-flat}"; TEXTURE="${TEXTURE:-sines}"

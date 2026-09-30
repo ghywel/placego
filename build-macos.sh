@@ -49,6 +49,16 @@ set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$HERE/.." && pwd)"
 ROOT="${ROOT:-$HOME/np-build}"
+# PINS (2026-09-30). By default each clone is upstream's master of the day. For numbers comparable across
+# hosts, build the exact commits another host was gated on: FFMPEG_REF=<full sha> PLACEBO_REF=<full sha>. A
+# shallow clone cannot check out an arbitrary commit, so the pin is fetched by its sha (both hosts allow it)
+# and checked out detached; the patches then apply to it as to master.
+pin() {   # pin <clone dir> <ref or empty>
+  [ -n "$2" ] || return 0
+  ( cd "$1" && git fetch --depth 1 origin "$2" && git checkout -q FETCH_HEAD ) \
+    || die "could not pin $1 to $2"
+  info "pinned $(basename "$1") to $(cd "$1" && git rev-parse --short HEAD)"
+}
 PREFIX="$ROOT/libplacebo-install"
 JOBS="${JOBS:-$(sysctl -n hw.ncpu 2>/dev/null || echo 4)}"
 FORCE="${FORCE:-0}"
@@ -62,6 +72,17 @@ ensure_python() {
   MESONPY="$(sed -n '1s/^#!//p' "$(command -v meson)" 2>/dev/null)"
   [ -n "$MESONPY" ] && [ -x "$MESONPY" ] || MESONPY="$(command -v python3)"
   VENV="$ROOT/venv"
+  # A venv from another interpreter is rebuilt, the old one kept aside (2026-09-30). The Intel Mac's was made
+  # from Apple's python 3.9 before Homebrew existed there; reused, it put 3.9's site-packages on meson's 3.14
+  # PYTHONPATH, and scale_shader.py (write_text(newline=), 3.10+) failed two smoke tests.
+  if [ -x "$VENV/bin/python3" ]; then
+    have="$("$VENV/bin/python3" -c 'import sys; print("%d.%d" % sys.version_info[:2])')"
+    want="$("$MESONPY" -c 'import sys; print("%d.%d" % sys.version_info[:2])')"
+    if [ "$have" != "$want" ]; then
+      info "venv is python $have, meson's interpreter is $want: rebuilding it (the old one kept as venv.py$have)"
+      mv "$VENV" "$VENV.py$have" || die "could not move the old venv aside"
+    fi
+  fi
   if [ ! -x "$VENV/bin/pip" ]; then
     info "creating $VENV using $MESONPY"
     "$MESONPY" -m venv "$VENV" || die "could not create the venv at $VENV"
@@ -72,6 +93,10 @@ ensure_python() {
   SITE="$(echo "$VENV"/lib/python*/site-packages)"
   [ -d "$SITE" ] || die "venv site-packages not found under $VENV"
   export PYTHONPATH="$SITE${PYTHONPATH:+:$PYTHONPATH}"
+  # ...and the venv's own interpreter first on PATH (2026-09-30): the harness's tools start with `env python3`,
+  # and a python3 that is not the one this site-packages was built for fails to import numpy's C core
+  # ("No module named 'numpy._core._multiarray_umath'") -- four smoke tests failed so in a fresh ROOT.
+  export PATH="$VENV/bin:$PATH"
   "$MESONPY" -c "import jinja2, sys; print('   jinja2   %s (via %s)' % (jinja2.__version__, sys.executable))" ||
     die "meson's interpreter still cannot import jinja2 (PYTHONPATH=$PYTHONPATH)"
 }
@@ -167,6 +192,7 @@ if [ "$FORCE" = 1 ] || [ ! -d "$SRC" ]; then
   rm -rf "$SRC"
   git clone --depth 1 https://code.videolan.org/videolan/libplacebo.git "$SRC" \
     || die "clone failed"
+  pin "$SRC" "${PLACEBO_REF:-}"
   ( cd "$SRC" && git apply --verbose "$HERE/frame-mix-hook.patch" ) \
     || die "patch did not apply -- upstream may have moved; rebase it"
 
@@ -239,6 +265,7 @@ FF="$ROOT/ffmpeg"
 [ "$FORCE" = 1 ] && rm -rf "$FF"
 if [ ! -d "$FF" ]; then
   git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git "$FF" || die "clone failed"
+  pin "$FF" "${FFMPEG_REF:-}"
   # Two ffmpeg-side patches this script used to leave to the reader (the M2
   # notes in BUILDANDUSAGE.md say "apply by hand"; folded in 2026-09-11):
   #   frame-mix-nn-threshold.patch -- without it the frame-mix hook silently
