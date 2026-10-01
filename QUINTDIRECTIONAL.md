@@ -1,5 +1,15 @@
 # The fifth frame: a symmetric window for the field
 
+> **Status (2026-10-01).** Built and measured on 2026-09-04 (the pre-registration below, then
+> [the results](#results-2026-09-04-rx-6600-the-propagated-base-unless-stated)); the shipped file is
+> `shaders/quintdirectional-interpolation-propagated.glsl` ([SHADERS.md](SHADERS.md)). Against the pre-registration:
+> the truncation correction holds on the two textured scenes that replaced O3 (2.7x at eight samples per period,
+> 6.7x at six); the jerk floor falls 2.93x; the picture equals the quad's within 0.06 dB on the five cases checked;
+> A7's acceleration field (40% gross against the quad's 34%) and the time limit (+18% against 10%) missed. It is a
+> field instrument; for the picture the quad is the file. The six-frame line that followed is
+> [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md); the estimator background (Savitzky-Golay fits for N > 4) is in
+> [PRIOR-ART.md](PRIOR-ART.md).
+
 *Design and pre-registration, written 2026-09-04 before any code. The
 numbers to beat are stated here so the result cannot be graded after the
 fact. Companion to [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md), which this
@@ -80,6 +90,9 @@ libplacebo's ceiling of eight). Everything the quad has, plus:
   that remain; an adjacent link unproven -> the tri's quadratic; both ->
   zero, with the same round-trip thresholds and deadbands as the quad.
 
+*2026-10-01: there is no file of that name in `shaders/`. The quint ships as
+`quintdirectional-interpolation-propagated.glsl`, the propagated base the results below use ([SHADERS.md](SHADERS.md)).*
+
 **The picture does not change.** The 24->60 warp keeps the quad's cubic
 placement on the four slots around the output; the fifth frame contributes
 to the field, not the picture. That is a regression check, not a
@@ -141,6 +154,8 @@ propagated base unless stated:
 What is NOT claimed: any improvement to the picture; any improvement to
 jerk below eight samples per period (the compact stencil keeps that);
 anything about six frames, which waits on these numbers.
+
+*2026-10-01: the six-frame line was built the next night: [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md).*
 
 ## Costs stated plainly
 

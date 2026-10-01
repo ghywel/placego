@@ -1,5 +1,13 @@
 # Methodology
 
+> **History of the method's first phase, 2026-08-23 to 2026-09-03.** Sections 1 and 2 (how the loop was built, who
+> did what) stand as written. The working environment they describe -- a WSL2 lavapipe loop and a scratch set
+> outside the repository -- no longer exists: every tool is now in [tests/](tests/) and
+> [tests/probes/](tests/probes/PROBES.md), and the work runs on several GPU hosts with a deterministic Linux host
+> for gating. The rules the project works by now, including pre-registered predictions, a survey of prior art
+> before each leap, changes behind switches and the full-ladder gate, are in
+> [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md).
+
 How this project was actually built, and how to carry on building it.
 
 The shaders and the patch are documented elsewhere

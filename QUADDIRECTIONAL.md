@@ -1,5 +1,16 @@
 # Quaddirectional interpolation: the four-frame experiment
 
+> **Status (2026-10-01).** Built after [PRIOR-ART.md](PRIOR-ART.md)'s first survey (2026-08-31). Against its
+> pre-registration: P1 confirmed to the digit; P2 confirmed (the jerk truth was corrected on 2026-09-01 to the
+> discrete third difference at the window centre, against which the field reads within a few percent of peak); P3
+> confirmed; P4 partly (`QUAD_MODE 0` is the default, and the residual is a trust gate, not an error estimate:
+> [NFRAME-LIMITS.md section 2](NFRAME-LIMITS.md#2-wobble-it-is-real-it-is-quantified-and-it-cuts-against-wide-windows) shows it
+> equals (3/11)|jerk| per texel); P5 holds. The current ladder for this shader is in
+> [SHADERS.md, "Measured comparison"](SHADERS.md#measured-comparison) ("The N-frame lines, re-measured 2026-09-04");
+> which shader to use for pictures is [SHADERS.md, "Which one to use"](SHADERS.md#which-one-to-use). The fifth frame
+> it argued for is [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md). Later field work reads this shader as its instrument
+> ([NFRAME-LIMITS.md](NFRAME-LIMITS.md), [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md)).
+
 The tridirectional shader proved that three frames buy a per-texel
 acceleration field and quadratic placement. This is the leap it argued for:
 **four frames**, one degree higher, built after the prior-art survey
@@ -32,6 +43,10 @@ builds both, switched by `QUAD_MODE`:
   **residual read out per texel** -- a *measured* confidence signal in px,
   replacing heuristic trust. The arm nobody in the record took further than
   fitting.
+
+*2026-10-01: P4 below found the residual a conservative trust gate rather than an error estimate, and
+[NFRAME-LIMITS.md section 2](NFRAME-LIMITS.md#2-wobble-it-is-real-it-is-quantified-and-it-cuts-against-wide-windows)
+shows it equals (3/11)|jerk| per texel: the same information as the cubic's jerk term, useful as a flow-failure gate.*
 
 ## Architecture: what tri proved, kept; what four frames force, added
 
@@ -334,11 +349,22 @@ O6 (-0.85) slightly past the drag band on the other side. These are the
 first quad-with-full-res reference numbers; a Windows re-run to confirm
 them on a bit-reproducible platform is the natural cross-check.
 
+*2026-10-01: the Windows re-run was made on 2026-09-02. L6 reads +3.64 there, a tri collapse that the quad half
+recovers rather than a quad gain
+([NFRAME-LIMITS.md section 4](NFRAME-LIMITS.md#4-two-ladder-findings-that-were-not-on-the-agenda)); its cause, the
+acceleration term firing on flat and periodic interiors, is in
+[section 8](NFRAME-LIMITS.md#8-2026-09-03-the-prefilter-built-and-refuted-and-two-leads-closed). Run-to-run wander
+through MoltenVK is the subject of
+[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md) (measured on the M5 and the
+Intel Mac, not on this M2).*
+
 **When to use which.** For 24->60 viewing of ordinary content, tri remains
 the sensible default -- quad's picture gains are confined to violently
 non-smooth motion. For the FIELD use case the quad shader is now strictly
 the better instrument: the identical acceleration field plus the jerk field
 plus (mode 1) the misfit map, at ~12% more cost.
+
+*2026-10-01: for pictures, the current statement is [SHADERS.md, "Which one to use"](SHADERS.md#which-one-to-use).*
 
 ## What this opens
 
@@ -352,6 +378,10 @@ plus (mode 1) the misfit map, at ~12% more cost.
 - **Snap (d^4) is not worth a frame yet.** The jerk field's own noise floor
   at moderate acceleration is ~0.1-0.3 px/interval^3; a snap stencil
   amplifies flow noise by another ~3x. Measure a real use for jerk first.
+
+  *2026-10-01: the quint solves a snap row ([QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md)), and
+  [NFRAME-LIMITS.md, "Snap is readable"](NFRAME-LIMITS.md#snap-is-readable-and-the-familys-derivative-ceiling-is-snap-2026-09-08)
+  reads snap at 20:1 on O5_osc_textured.*
 - **The adjacent-anchor validator collapses -- a proof, in the family of
   the spanning-flow and causal-window proofs.** The obvious next
   confidence signal was: compute the acceleration at BOTH interior slots
@@ -376,6 +406,9 @@ plus (mode 1) the misfit map, at ~12% more cost.
   `2j` form the first validator that is not already a gate. That is now
   the concrete reason N = 5 earns its cost, alongside Savitzky-Golay
   smoothing.
+
+  *2026-10-01: the fifth frame was built ([QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md)) for the symmetric quartic;
+  the disjoint-triple validator itself is not recorded as built.*
 
 ## Reproducing
 

@@ -143,10 +143,47 @@ else
   bad "scale_shader.py on the recommended file failed"
 fi
 
+head2 "3e. the Cadence player's default (2026-10-01) and its 4K twin are what the generator and scale_shader.py make"
+# The player bundles these two (OUTLINE_ADOPT on the 1.0.3 recipe); a generator edit that moved either would ship
+# unmeasured on the next bundle regeneration
+PRODCD="$HERE/../shaders/bidirectional-interpolation-variational-propagated-global-cage-energy-carry-adopt.glsl"
+if env GLOBAL_SEED=1 QZERO_MOIRE=1 COHERENCE_GATE=1 COARSE_ENERGY=1 COARSE_ENERGY_WS=8 COARSE_ENERGY_WE=1 ALIAS_PRIOR=1 \
+     ALIAS_CARRY=1 OUTLINE_ADOPT=1 $PY "$HERE/gen_variational.py" "0,0,8,4" 0.3 0.08 "$W/regencd.glsl" 0 "0,0,2,0" \
+     bidirectional-interpolation-propagated.glsl >/dev/null 2>&1 \
+   && $PY "$HERE/scale_shader.py" "$W/regencd.glsl" "$W/regencd4.glsl" 2 >/dev/null 2>&1; then
+  if diff -q <(strip "$W/regencd.glsl") <(strip "$PRODCD") >/dev/null 2>&1 \
+     && diff -q <(strip "$W/regencd4.glsl") <(strip "${PRODCD%.glsl}-4k.glsl") >/dev/null 2>&1; then
+    ok "the player's default and its 4K twin regenerate byte-identical"
+  else
+    bad "the player's default or its 4K twin differs from the committed one"
+  fi
+else
+  bad "gen_variational.py or scale_shader.py failed on the player's default"
+fi
+# ... and the lattice candidate (PRINT_LATTICE on the default, 2026-10-01) with its 4K twin
+PRODLT="$HERE/../shaders/bidirectional-interpolation-variational-propagated-global-cage-energy-carry-adopt-lattice.glsl"
+if env GLOBAL_SEED=1 QZERO_MOIRE=1 COHERENCE_GATE=1 COARSE_ENERGY=1 COARSE_ENERGY_WS=8 COARSE_ENERGY_WE=1 ALIAS_PRIOR=1 \
+     ALIAS_CARRY=1 OUTLINE_ADOPT=1 PRINT_LATTICE=1 $PY "$HERE/gen_variational.py" "0,0,8,4" 0.3 0.08 "$W/regenlt.glsl" 0 \
+     "0,0,2,0" bidirectional-interpolation-propagated.glsl >/dev/null 2>&1 \
+   && $PY "$HERE/scale_shader.py" "$W/regenlt.glsl" "$W/regenlt4.glsl" 2 >/dev/null 2>&1; then
+  if diff -q <(strip "$W/regenlt.glsl") <(strip "$PRODLT") >/dev/null 2>&1 \
+     && diff -q <(strip "$W/regenlt4.glsl") <(strip "${PRODLT%.glsl}-4k.glsl") >/dev/null 2>&1; then
+    ok "the lattice candidate and its 4K twin regenerate byte-identical"
+  else
+    bad "the lattice candidate or its 4K twin differs from the committed one"
+  fi
+else
+  bad "gen_variational.py or scale_shader.py failed on the lattice candidate"
+fi
+
 # ---------------------------------------------------------------------------
 head2 "4. flowvis.py -- build a flow visualiser from the production shader"
-if $PY "$HERE/flowvis.py" "$PROD" "$W/vis.glsl" >/dev/null 2>&1 && [ -s "$W/vis.glsl" ]; then
-  ok "flowvis.py rewrote the final hook()"
+# The visualiser must have replaced the WARP's hook(), outside the human-reading tail. Until 2026-10-01 it replaced
+# the tail's paint pass, which never runs at read_view 0: the "visualiser" rendered the plain picture, with no error,
+# and both this step and the render below passed.
+if $PY "$HERE/flowvis.py" "$PROD" "$W/vis.glsl" >/dev/null 2>&1 && [ -s "$W/vis.glsl" ] &&
+   ! grep -q "human-reading tail" "$W/vis.glsl" && grep -q "FLOW_H_AB_tex(HOOKED_pos)" "$W/vis.glsl"; then
+  ok "flowvis.py rewrote the warp's final hook()"
 else
   bad "flowvis.py failed"
 fi
@@ -158,7 +195,10 @@ head2 "5. the shader actually runs here"
 if [ -s "$W/vis.glsl" ] && [ -s "$W/src.mkv" ] &&
    ( cd "$W" && "$FFMPEG" -y -v error -init_hw_device vulkan=vk -filter_hw_device vk \
        -i src.mkv -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=vis.glsl,format=yuv420p" \
-       -c:v ffv1 flow.mkv ) 2>"$W/vis.err"; then
+       -c:v ffv1 flow.mkv ) 2>"$W/vis.err" &&
+   ! grep -q "compile status .error" "$W/vis.err"; then
+  # (The compile check, 2026-10-01: a visualiser that fails to compile still renders, because libplacebo then
+  # draws every frame with its own mixer; step 4 guards the other way this step could pass on the wrong picture.)
   N=$("$FFPROBE" -v error -count_frames -select_streams v:0 \
       -show_entries stream=nb_read_frames -of default=noprint_wrappers=1:nokey=1 "$W/flow.mkv")
   ok "flow visualiser rendered $N frames through Vulkan"

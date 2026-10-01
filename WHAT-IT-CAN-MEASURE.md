@@ -10,6 +10,13 @@ outright and wins on all three sources separately. For the picture, on real cont
 this family is very nearly a matter of indifference — so a shader cannot be "for cinema" in any sense that
 distinguishes it from the others.
 
+(Note, 2026-10-01: measured 2026-09-10, before the player line in SHADERS.md. That line targets defects seen
+in films: a fast pan across a textured wall (+1.9 dB over the shot, +5 at its fastest; the global-motion seed)
+and fine periodic prints such as a railing (25.5 to 27.1 dB; the cage), with synthetic cases built from them
+gaining up to 19.4 dB. On ordinary footage each step moves the average by hundredths to tenths of a decibel
+(the outline adoption: mean +0.06 dB over 40 film extracts). The 0.04 dB above holds for averages over
+ordinary footage, not for those shots.)
+
 There are also indefinitely many applications, as there are indefinitely many synthetic test cases, so a
 table indexed by application would never be finished and would not be a specification of anything.
 
@@ -96,7 +103,7 @@ them.
 An application does not select a shader. It selects a derivative order, and the order selects the shader:
 
 - anything wanting the picture or velocity is served by the two-frame recommendation, and the rest of the
-  family is wasted cost;
+  family is wasted cost (for a video player, the two-frame player tiers in SHADERS.md; note of 2026-10-01);
 - anything wanting acceleration wants three frames and gets a solid reading;
 - anything wanting jerk wants FIVE, not four, and the difference is twenty-five times;
 - anything wanting deformation is supported: all three tensor components read to about five percent on

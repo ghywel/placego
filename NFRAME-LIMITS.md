@@ -1,5 +1,72 @@
 # Where the N-frame line stops, what "wobble" really costs, and what the rotation failure actually is
 
+> **Status (2026-10-01).** The running record of the field's limits. Sections 1-8 are 2026-09-02 and 09-03; every
+> later entry is a dated subsection of section 9, newest last ("The weave", 2026-09-30 to 10-01). Standing conclusions:
+> - On the assumed real-footage band the exact-degree line stops at three or four frames (section 1; sigma_f was
+>   measured at 0.070 px in section 8 and the verdict stands). On fast oscillation more frames keep paying, and the
+>   five-frame quartic is built ([QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md)).
+> - The coarse pyramid is point-sampled and the prefilter was refuted (section 8), so a fine periodic texture locks in
+>   a comb of speeds whose period is the texel of the finest level that aliases it ("The weave").
+> - The slow-print repair (`OUTLINE_ADOPT`) and the capped lattice re-score for fast prints (`PRINT_LATTICE`, carried
+>   on in [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md)) are both in the Cadence player; the per-level trust gate is parked
+>   and has never been built.
+>
+> Which shader to use: [SHADERS.md, "Which one to use"](SHADERS.md#which-one-to-use). Mac readings taken before
+> 2026-09-30 carry MoltenVK's run-to-run wander, and their best-of-three practice is retired ([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md)). In section
+> 8 and section 9's first entry, "M5" to "M9" are scratch comb scenes; in "The weave", "the M5" is a Mac with an Apple M5. Where "PREDICTION.md"
+> appears without a path (2026-09-27 and 09-28), it is `tests/probes/limb/PREDICTION.md`. Paths under `np-scratch/`,
+> `hot-drops/` and `claude-handoff/`, and the private app trees named here (the demo's and the party app's), are
+> private working folders, not part of this repository.
+
+**Contents**
+
+- [1. The stopping point is a signal-to-noise crossing, not a fixed N](#1-the-stopping-point-is-a-signal-to-noise-crossing-not-a-fixed-n) (2026-09-02)
+  - [The exception that matters: fast oscillation, where more frames keep paying](#the-exception-that-matters-fast-oscillation-where-more-frames-keep-paying)
+- [2. Wobble: it is real, it is quantified, and it cuts against wide windows](#2-wobble-it-is-real-it-is-quantified-and-it-cuts-against-wide-windows)
+- [3. Rotation is not wobble, not order, and mostly not rotation](#3-rotation-is-not-wobble-not-order-and-mostly-not-rotation)
+- [4. Two ladder findings that were not on the agenda](#4-two-ladder-findings-that-were-not-on-the-agenda)
+- [5. Recommendations, in order](#5-recommendations-in-order)
+- [6. Predictions vs outcomes](#6-predictions-vs-outcomes)
+- [7. Method notes](#7-method-notes)
+- [8. 2026-09-03: the prefilter built and refuted, and two leads closed](#8-2026-09-03-the-prefilter-built-and-refuted-and-two-leads-closed)
+- [9. 2026-09-04: the rotation field and A4 re-measured on the shipped family](#9-2026-09-04-the-rotation-field-and-a4-re-measured-on-the-shipped-family); every later entry is a subsection of section 9:
+  - [The Moire gate was measuring frame difference](#the-moire-gate-was-measuring-frame-difference-and-that-was-worth-something) (2026-09-04/05)
+  - [The resolution half of the scale-aware generator](#the-resolution-half-of-the-scale-aware-generator-and-what-the-4k-test-really-measured)
+  - [Weird geometry, and the six-frame line](#weird-geometry-and-the-six-frame-line)
+  - [The time asymmetry was the instrument: a retraction](#the-time-asymmetry-was-the-instrument-a-retraction-and-what-the-exact-read-shows)
+  - [The phase-locked consensus](#the-phase-locked-consensus-a-loop-reads-a-field-the-mean-of-its-frames-cannot)
+  - [Lead A: the two rim biases](#lead-a-the-two-rim-biases-have-mechanisms-and-fixes-and-each-fix-is-a-trade)
+  - [Lead G: the reading's memory as a mode](#lead-g-the-readings-memory-as-a-mode-and-where-that-helps)
+  - [Lead B: the frame-rate half is a decimation stage](#lead-b-the-frame-rate-half-is-a-decimation-stage-and-the-4k-disc-could-not-have-shown-it)
+  - [Lead C: a number beside the project that nobody here chose](#lead-c-a-number-beside-the-project-that-nobody-here-chose)
+  - [Lead E: the velocity gradient tensor](#lead-e-the-half-that-needs-no-new-match-the-velocity-gradient-tensor)
+  - [The foresight seed (2026-09-06)](#the-foresight-seed-the-windows-other-half-at-the-search-2026-09-06)
+    - [The prior's loss, located and repaired: a deadband (2026-09-06, later)](#the-priors-loss-located-and-repaired-a-deadband-2026-09-06-later)
+  - [The owner's eyes on three renders (2026-09-06, evening)](#the-owners-eyes-on-three-renders-and-what-they-found-2026-09-06-evening)
+  - [The owner's eyes, second day (2026-09-07)](#the-owners-eyes-second-day-the-opacity-switch-a-pendulum-the-stairs-aperture-and-an-idea-for-animation-2026-09-07)
+  - [The hole, tested; the stairs, seen again; the tri's root; a second 4K film (2026-09-07, afternoon)](#the-hole-tested-the-stairs-seen-again-the-tris-root-a-second-4k-film-2026-09-07-afternoon)
+  - [The aperture series, the tensor fill refuted, and the alias behind the fast end (2026-09-07, afternoon)](#the-aperture-series-the-tensor-fill-refuted-and-the-alias-behind-the-fast-end-2026-09-07-afternoon)
+  - [The cube, the manifolds through the reading, and a black hole (2026-09-08)](#the-cube-the-manifolds-through-the-reading-and-a-black-hole-2026-09-08)
+  - [Snap is readable, and the family's derivative ceiling is snap (2026-09-08)](#snap-is-readable-and-the-familys-derivative-ceiling-is-snap-2026-09-08)
+  - [The held anchor (2026-09-09)](#the-held-anchor-where-the-reading-was-standing-and-a-control-that-could-not-be-used-2026-09-09)
+  - [Has animation work polluted the general shaders? (2026-09-09)](#has-animation-work-polluted-the-general-shaders-audited-and-measured-2026-09-09)
+  - [Jerk is not noise-limited, it is truncation-limited (2026-09-09)](#jerk-is-not-noise-limited-it-is-truncation-limited-and-no-sinusoid-can-show-that-2026-09-09)
+  - [The synthetic pool: 43 gaps found (2026-09-09)](#the-synthetic-pool-43-gaps-found-and-the-bottleneck-is-not-the-scenes-2026-09-09)
+  - [The gradient tensor's third component (2026-09-10)](#the-gradient-tensors-third-component-and-why-its-first-two-numbers-were-unfair-2026-09-10)
+  - [Verb-object pairs, and the rolling wheel (2026-09-10)](#verb-object-pairs-generate-cases-a-taxonomy-cannot-and-the-rolling-wheel-proves-it-2026-09-10)
+  - [Weird geometry: fields that are not constant (2026-09-10)](#weird-geometry-what-the-readers-make-of-fields-that-are-not-constant-2026-09-10)
+  - [The non-affine failure (2026-09-10)](#the-non-affine-failure-a-cliff-at-a-fixed-velocity-gradient-entering-at-the-coarse-search-2026-09-10)
+  - [Content drawn on twos (2026-09-19)](#content-drawn-on-twos-the-family-collapses-to-a-hold-and-the-cadence-is-the-prize-2026-09-19)
+  - [The cadence branch (2026-09-19, afternoon)](#the-cadence-branch-the-prize-taken-inside-the-window-and-the-two-things-it-cannot-know-2026-09-19-afternoon)
+  - [The fast pan over fine texture (2026-09-19, evening)](#the-fast-pan-over-fine-texture-crystallised-its-knee-measured-the-mechanism-half-found-2026-09-19-evening)
+  - [The global-motion seed (2026-09-20)](#the-global-motion-seed-the-pan-resolved-where-the-texel-cannot-resolve-it-2026-09-20)
+  - [The cage (2026-09-21)](#the-cage-a-fine-periodic-print-under-a-sub-pixel-drift-where-every-warp-loses-to-the-blend-2026-09-21)
+  - [The field's coherence (2026-09-21, later)](#the-fields-coherence-the-cue-that-separates-and-the-gate-it-makes-2026-09-21-later)
+  - [The field on real bodies (2026-09-27)](#the-field-on-real-bodies-two-hours-of-children-scored-against-a-skeleton-it-shares-nothing-with-2026-09-27)
+  - [The half-period alias in the shader: the prior gate and the carry (2026-09-28)](#the-half-period-alias-in-the-shader-the-prior-gate-and-the-carry-2026-09-28)
+  - [The aperture in the carry (2026-09-28, later)](#the-aperture-in-the-carry-b1-moving-up-and-the-energy-channel-on-rendered-children-2026-09-28-later)
+  - [The weave (2026-09-30 to 2026-10-01)](#the-weave-a-two-dimensional-periodic-print-where-the-field-locks-one-period-away-and-the-family-sits-at-the-blend-2026-09-30-late-evening)
+
 Research log, 2026-09-02. Windows, RX 6600 (Vulkan device 0, bit-reproducible
 platform). One field -- the O5 tri acceleration sweep -- was re-rendered on
 the Radeon Pro 560X and agrees to three decimals on 19 of 20 frames (section
@@ -360,6 +427,8 @@ test.
    deadband on constant-velocity content (the tail the record priced at 0.35
    dB on L1 from a jerk-off run on the other platform; the Windows quad-tri
    gap on L1 is -0.90 and has not been decomposed into drag and tail).
+
+   *2026-10-01: answered in section 8: sigma_f = 0.070 px (robust std over M1's interior); the N = 3-or-4 verdict stands.*
 1. ~~**Prefilter the pyramid.**~~ **BUILT AND REFUTED 2026-09-03 -- see
    section 8.** The pre-registration was: the speed comb rises from 28-31 dB
    to >= 40; R4/R5 to >= 34; R3/R6 and the 16 px/frame cases unchanged.
@@ -369,6 +438,8 @@ test.
 2. **Add the comb to the ladder** (TEX_M1 and TEX_M2 boxes at 10 and 12
    px/frame) and keep F3 as the rotation-vs-texture control. A ladder whose
    only textured speed is one coarse texel cannot see this class of failure.
+
+   *2026-10-01: not done as of this date: no comb case is in `tests/scenes.sh`. "The weave" (2026-09-30) meets the same comb on a two-dimensional print.*
 3. ~~**Do not build N = 5 as an exact quartic.**~~ **REVERSED 2026-09-03 --
    see the section 8 addendum; BUILT AND MEASURED 2026-09-04, QUINTDIRECTIONAL.md:
    2.7x and 6.7x on acceleration at eight and six samples per period, 2.9x on
@@ -387,6 +458,8 @@ test.
    texels. Its real use is as a per-texel flow-failure gate (27-40x contrast
    between failing and clean bands on R3 -- an analysis-session reading; the
    numbered E2 residual run covered R2 only).
+
+   *2026-10-01: not done in QUADDIRECTIONAL.md's own text; a dated note there now points to section 2.*
 5. ~~**Verify the noise ratio.**~~ **ANSWERED 2026-09-03 -- see the section 8
    addendum.** Measured from the solve's own flows: 1.40 on A4, 1.07 on M1
    (robust 1.15 / 1.00). sqrt(3) is the independent-noise limit, reached by
@@ -395,6 +468,8 @@ test.
 6. **Re-label the rotation lead** in PLAN.md as three leads: aperture on
    edge-only blobs (structure-tensor gate), period locking on symmetric
    texture (tie-break under rotation), and pyramid aliasing (item 1).
+
+   *2026-10-01: not done as of this date; PLAN.md was not relabelled.*
 7. ~~**Explain the tri collapse on L6 and M2.**~~ **ANSWERED 2026-09-03 --
    see section 8.** With the acceleration deadband raised until the term is
    off, L6 goes 47.95 -> 54.76 and M2 49.48 -> 52.46, recovering 6.81 of the
@@ -404,6 +479,8 @@ test.
    anchor side swapped (JERK_CENTRE=+0.5) and on a clip padded by four frames.
    If the 0.18-0.44 misses move to frames 2-6 or vanish, they are a window
    artefact, not the floor.
+
+   *2026-10-01: partly run on 2026-09-03 (section 8): swapping the anchor side made every frame worse and did not move the asymmetry; the padded-clip test was not run.*
 
 ## 6. Predictions vs outcomes
 
@@ -3632,6 +3709,8 @@ hundredth (best of three: quad 69.84, quad with the branch 69.81 on L1's ones). 
 item on the Vulkan side, for a day with time: the "hook skipped" count is the same in every run, so it is not
 the window; it is in the cache.
 
+*2026-10-01: superseded: the Mac wander is two MoltenVK hazards rather than the cache, and with MoltenVK's two switches set one Mac run is a measurement again ([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md), sections 2, 5-6 and 8).*
+
 **The turning point sampled twice.** O8's ones column falls from 50.5 to 43.9, and that is not noise: the scene
 is a sinusoid with six samples a period, and sin 60 = sin 120, so every third pair of its frames is an EXACT copy
 by construction (8 of 23, `dupstat.py`: max 0.0000). Two identical frames are either a drawing held or a motion
@@ -4045,6 +4124,8 @@ C2 32.2, the railing 27.5, +0.6% time; the ladder M1 -3.6, F1 -2.2, H1 -1.8, L8 
 +1.4, L0 +1.3, M2 +1.2, the capped mean 38.02 -> 38.00 -- the two switches' M1 losses add, and the stack is
 the one to read best-of-3 on M1 before anything else.
 
+*2026-10-01: the best-of-3 readings in this entry predate MoltenVK's two switches; with them set, one Mac run is a measurement again ([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md), section 8).*
+
 **Where it stands.** The cue was the measure and it held: the field's own support is the first statistic
 that tells the cage's wrong flows from a moving texture's right ones, and it needs the two agreement tests
 beside it before the blend it gates is safe at a moving edge. In the generator as `COHERENCE_GATE=1` (off:
@@ -4167,6 +4248,8 @@ one in eight deep in it. The fix it asks for is a LOCAL reach: a candidate the c
 region moves fast against a still one. The frame-global seed does not provide that. It is the next lead, and it has
 a real-content gate: this data.
 
+*2026-10-01: answered in part below: the coarse texture-energy channel (prototyped in this entry) moves the reach cliff on rendered bodies from 24 to past 36 px/frame ([The aperture in the carry](#the-aperture-in-the-carry-b1-moving-up-and-the-energy-channel-on-rendered-children-2026-09-28-later)).*
+
 **2. The halo, measured on real limbs.** 4,644 profiles across the moving arm bones of children standing alone (no
 one within two rulers, so the background's true field is zero). The field is sampled perpendicular to the bone
 and projected on the bone's own displacement (Vision's), in units of the limb's motion. +s is the side the limb
@@ -4252,6 +4335,8 @@ wall with W2's multiscale texture, at 12 -> 60 px per source frame over the seco
 dark wall. K3 is K1 with only the limb's mean brightness raised. All are scored in a box that follows the limb
 (limb.sh: whole-frame PSNR would be the still wall's), five runs each, because the propagated family wanders here.
 
+*2026-10-01: the propagated family's wander on the Mac was MoltenVK's; with its two switches set one run is a measurement again ([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md)).*
+
 - **K1 reproduces the real cliff.** The recommendation leads linear by 5.4 dB at 12-18 px/frame, 1.1 at 18-24 and
   0.2 at 24-30, and sits at or below it from 30. `-global-cage` and the quad do the same: the global seed cannot
   see a lone limb.
@@ -4276,6 +4361,8 @@ scrambled while the still wall's taps match exactly at zero.
 
 **Two remedies, prototyped and gated (the full 42-case ladder, best-of-3 on the Mac, against the committed control
 reproduced byte-for-byte).**
+
+*2026-10-01: best-of-3 here and below predates MoltenVK's two switches; with them set, one Mac run is a measurement again ([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md), section 8).*
 
 - **EDGE_PROP** (gen_variational.py, a switch; each propagation neighbour weighted by its flow's agreement with the
   texel's own, by the texel's confidence). The limb: +1.07 dB at 18-24 px/frame. The ladder: REFUTED.
@@ -4672,6 +4759,8 @@ Steps 1 to 3 of the survey's order (PRIOR-ART.md, the periodic-interior survey),
 - **The Metal side.** The carry compiles for Metal (gen_metal: 70/70 and 67/67 passes); the lockstep has not been run
   with it.
 
+*2026-10-01: all three are taken up in the next entry: build 5's aperture rule for B1 moving up, the carry measured with the energy channel, and the lockstep run with the carry in the demo's family (15 of 15).*
+
 ### The aperture in the carry: B1 moving up, and the energy channel on rendered children (2026-09-28, later)
 
 **B1 moving up, read cell by cell.** `tests/probes/limb/ownerdump.py` dumps the carry's own inputs per quarter-level
@@ -4815,6 +4904,8 @@ PASS, 15 of 15 (graphs by hash, the engine's self-tests, scenes, painting, const
 (and its -4k form), by his rule: the best shader for most content within real time. That is Cadence 1.0.3. On
 Metal, the carry does what it does on libplacebo (the table above); the demo's family offers it, and the lockstep
 was run with it in the family.
+
+*2026-10-01: superseded on 2026-10-01: the outline adoption (`-adopt`) and then the capped lattice (`-adopt-lattice`) followed; see the end of "The weave" and [SHADERS.md, "Which one to use"](SHADERS.md#which-one-to-use).*
 
 **What remains.**
 - **The half-period alias when the pattern is drifting behind a still window** (the survey's undecidable case). It
@@ -5049,3 +5140,118 @@ platforms). Two different repairs fit two bands:
 
 Neither is built. Both would be variants behind a switch, gated on the Arc.
 
+*2026-10-01: both bands have since been taken further: the slow-print repair is in the player (the end of this entry), and fast prints got the lattice re-score (`PRINT_LATTICE`, [ENERGY-TRANSFER.md, lead 4](ENERGY-TRANSFER.md#the-glsl-form-built-testsprint_latticepy-print_lattice1-and-a-second-instrument-fault-found-by-g1)) in place of the per-level trust gate, which was [parked on 2026-10-01](ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours) and has never been built.*
+
+**Pre-registered (before it ran): lead 4's step 0, is there a margin to re-score on?** PRIOR-ART's lead-4 survey
+ranks first "carry the aliases down, re-score at a fine level". The weave is not exactly periodic: its 3-px value
+noise differs between v and its aliases. `tests/probes/weave/rescore0.py` takes 16 x 16 blocks of the translating
+box's core (32+ px inside), frames 10-30, at FULL resolution and at 1/2. It compares the mean |S_k - S_k+1(shifted)|
+at the truth (v, 0) against the aliases (v +- 28, 0), (v +- 14, +-14) and (v, +-28).
+- **S1:** on the fast weave (11, 13, 19 px/frame) the truth has the lowest cost of the set on over 90 percent of the
+  core's blocks at full resolution, and over 80 percent at 1/2, with a median margin (the nearest alias minus the
+  truth) of at least 0.01 luma.
+- **The control:** noise at the same speeds, the truth lowest on 100 percent with a large margin.
+- **If S1 fails,** the synthetic print is too exactly periodic for re-scoring, and the lead must bring a reference
+  from outside (the trust gate, time). Real cloth, less regular, would be untested.
+
+**Results (the M5): S1 PASSED at full resolution; the fast weave's lock is not a lack of information.**
+
+    tex     v px/f         full resolution: truth lowest / median margin    1/2: truth lowest / median margin
+    weave   5, 11, 13, 19  100.0% / +0.0190 luma (2520 blocks)             100.0% / +0.0066
+    noise   5, 11, 13, 19  100.0% / +0.0273                                100.0% / +0.0258
+
+- **The numbers are the same at every speed, and they should be.** For a rigidly translating texture, the cost at an
+  alias is the texture compared with itself one lattice vector away, which does not depend on the speed.
+- **At full resolution the frames prefer the truth on every block**, by about 5/255 (the survey estimated about
+  0.02). At 1/2 the margin is thin (about 1.7/255), a level where camera noise could flip it.
+- **What it means:** the lock is not in the data. The pyramid never asks the question. The finer levels search a
+  small window seeded by the aliased coarse level, and the truth, 28 px away, is outside it.
+- **The fix, as PRIOR-ART's lead-4 survey ranks first:** carry the aliases (the seed plus and minus the print's
+  lattice vectors) down, and re-score them at full resolution. The margin is there to re-score on, at least for the
+  synthetic print; real cloth is untested. Its detection of the lattice per cell, and a lossless fallback where the
+  margin is under the noise, are the design's open parts.
+
+**Pre-registered (before it ran): lead 4's step 1, the fine re-score offline on the default's own flow.**
+`tests/probes/weave/rescore1.py`, on the default's quarter flow after the carry (flowtap T2), per 1/8 cell of the
+translating box:
+- the candidates are the cell's own flow w and w plus and minus the print's lattice vectors;
+- the lattice is found PER CELL by a deterministic self-match: the two lowest-cost non-collinear shifts of the cell's
+  own 32 x 32 neighbourhood against itself, over 8-40 px, kept only if their cost is under 0.3 of the neighbourhood's
+  mean absolute deviation;
+- each candidate is refined +-1 px (half-pixel steps), then scored by a 16 x 16 full-resolution SAD;
+- the best replaces w only if it beats w by at least 0.004 luma (1/255: the fallback where the margin is under the
+  noise).
+
+The predictions:
+- **F1:** the fast weave's core gross (11, 13, 19 px/frame) falls from 94-100 percent to under 20 percent.
+- **F2 (noise, the control):** no lattice is found, and under 1 percent of the box's cells change.
+- **F3:** the slow weave (3, 5) is not made worse than the default's own flow (the stage's switch handles it; the two
+  must not fight).
+
+**Results (the M5): lead 4's step 1, the fine re-score offline, in three forms; F1 MISSED with large gains, F2
+MISSED in an informative way, F3 PASSED.**
+- **The first form** (the candidates w +- the per-cell basis): weave 11 px/frame core 98.2 -> 70.0 percent.
+- **With the lattice's nearest points** (combinations +-1): 67.8. Two cells' anatomy showed why that was not enough:
+  - a valid basis, (14, 14) and (0, -28), needs 2 p1 + p2 for the fix (28, 0);
+  - some locked cells read about ZERO, which is no lattice step from the truth, while the frames still preferred
+    the truth decisively (a cost of 0.0000 against 0.143).
+- **Step 1b (labelled):** every lattice point within 45 px, plus a MENU of the 3 x 3 neighbours' flows and their
+  lattice points (the BBC's menu, PRIOR-ART lead 4):
+
+    case        core gross before -> after   box before -> after   cells changed   lattice found
+    weave 11    98.2% -> 36.7%               89.2% -> 31.9%        77.5%           98.8%
+    weave 13    99.5% -> 42.2%               87.5% -> 31.6%        77.1%           98.8%
+    weave 19    97.6% -> 46.4%               86.9% -> 37.2%        68.4%           98.8%
+    weave  3    70.8% -> 35.0%               52.4% -> 25.0%        56.9%           98.8%
+    weave  5    91.5% -> 61.4%               77.5% -> 46.2%        58.3%           98.8%
+    noise 11     3.5% ->  2.4%               14.8% ->  6.0%        10.9%           69.2%
+    noise 19     3.2% ->  2.2%               12.0% ->  5.9%         8.4%           69.2%
+
+- **F1 MISSED:** the fast lock falls from 98-99 percent to 37-46, short of the 20 line. The re-score works; what
+  stays wrong is next (the same taxonomy that ended stage 1a's loop).
+- **F2 MISSED:** the per-cell self-match finds a "lattice" in 69 percent of noise's moving cells (a smooth texture's
+  self-match is low at 8 px), and 8-11 percent of noise's cells change. But they change for the BETTER: the noise
+  box's gross falls from 14.8 to 6.0 percent. The menu re-score is acting as a general full-resolution refinement of
+  the field, with the frames choosing. Whether that is a feature or a hazard is for the ladder to say; as a switch
+  for prints, it needs the stage's specific gate (the 1/8 rival basins).
+- **F3 PASSED:** the slow weave improves (3 px/frame 71 -> 35, 5 px/frame 92 -> 61) rather than worsening, so it
+  will not fight OUTLINE_ADOPT.
+
+**Lead 4, step 1c (after a taxonomy, labelled): the fine re-score takes the fast lock to 5-13 percent.** The
+taxonomy of step 1b's remaining errors: 95 percent had the truth IN the menu, cut by an integer ranking. A candidate
+built from a neighbour's fractional flow rounds up to 0.5 px off, which on the print's steep gradients costs as much
+as an alias. This is stage 1a's lesson again. Step 1c ranks every candidate after a small refine (+-0.5 px):
+
+    case        core gross before -> after   box before -> after   cells changed
+    weave 11    98.2% ->  4.9%               89.2% ->  7.2%        87.3%
+    weave 13    99.5% -> 13.3%               87.5% -> 12.0%        83.1%
+    weave 19    97.6% ->  8.4%               86.9% ->  7.9%        86.1%
+    weave  3    70.8% ->  9.4%               52.4% ->  7.0%        59.9%
+    weave  5    91.5% -> 24.1%               77.5% -> 19.9%        69.3%
+    noise 11     3.5% ->  2.9%               14.8% ->  8.5%         7.3%
+    noise 19     3.2% ->  2.6%               12.0% ->  7.2%         5.8%
+
+- **F1 PASSED (on this post-hoc form):** the fast weave's core is under 20 percent at every fast speed (4.9, 13.3
+  and 8.4). What stays wrong is now split between the truth missing from the menu and ranking cuts.
+- **F3 PASSED:** the slow weave improves as well (3 px/frame 71 -> 9.4 percent).
+- **F2 still MISSED as worded:** 6-7 percent of noise's cells change, again for the better (its box 14.8 -> 8.5).
+- **So lead 4 has an offline mechanism:** the aliases carried down as a menu (the cell's and its neighbours' flows
+  plus the print's lattice points) and re-scored at FULL resolution, each candidate refined before it is ranked.
+- **The GLSL form's open parts:**
+  - the lattice in a shader (a per-cell self-match is too dear; a coarse-cell self-match over a sparse set of
+    shifts, or ALIAS_E's rival basin, are the candidates);
+  - its gate (the 1/8 rival basins, for specificity);
+  - its cost.
+
+*2026-10-01: all three were taken up in ENERGY-TRANSFER.md, lead 4: steps 1d to 1r, [the GLSL form `PRINT_LATTICE`](ENERGY-TRANSFER.md#the-glsl-form-built-testsprint_latticepy-print_lattice1-and-a-second-instrument-fault-found-by-g1), its gates and its cost cap.*
+
+
+**The slow weave's fix is the player's default (2026-10-01).** The owner adopted OUTLINE_ADOPT for Cadence:
+`shaders/...-global-cage-energy-carry-adopt.glsl` and its `-4k` (SHADERS.md). The 4K twin reproduces the 720p
+file's gains at twice the size (+21.2 / +7.7 dB), and the Metal port agrees with libplacebo on the same frames.
+The 5-px gain shrinks on Metal's input path (+2.8 against +9.8), because it is a tie-break that sub-LSB differences
+flip (ENERGY-TRANSFER.md, "OUTLINE_ADOPT adopted for the player"). Lead 4's lattice, for the FAST weave, continues
+in ENERGY-TRANSFER.md (steps 1h onward: the 1/8 rival basins give true lattice vectors, but long ones and too few
+directions).
+
+*2026-10-01: lead 4 was carried through in ENERGY-TRANSFER.md: the GLSL form (`PRINT_LATTICE`), its ladder and real-footage gates, fusion and a cost cap. It is the Cadence player's default (High) quality tier, with `OUTLINE_ADOPT` alone as Standard ([SHADERS.md, "Which one to use"](SHADERS.md#which-one-to-use)).*

@@ -5,6 +5,10 @@
 # reproduce the committed recommendation byte-for-byte below its banner, or every delta is against the wrong file.
 #
 #   ./gate.sh [runs]        -> $NP_SCRATCH/limb/gate/run{1..N}/..., gate-table.txt
+#
+# 2026-09-30: bench.sh now sources tests/mvk-env.sh, whose two MoltenVK switches make a Mac ladder repeat within
+# 0.01 dB (TESTING.md, the end), so a single run is a valid gate there, as on Linux: give 1 as [runs]. The three-run
+# reasoning above is kept as it was written. probes/limb/gateset.sh is the general form of this gate.
 set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS="$(cd "$HERE/../.." && pwd)"

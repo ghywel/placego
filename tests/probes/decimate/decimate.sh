@@ -29,7 +29,7 @@
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS="$(cd "$HERE/../.." && pwd)"
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX:-/opt/homebrew}/bin:$PATH"
 FFDIR="${FFDIR:-$HOME/np-build/ffmpeg}"
 FFMPEG="${FFMPEG:-$([ -x "$FFDIR/ffmpeg" ] && echo "$FFDIR/ffmpeg" || echo ffmpeg)}"
 NP_SCRATCH="${NP_SCRATCH:-$(cd "$TESTS/../.." && pwd)/../np-scratch}"

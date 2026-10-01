@@ -10,6 +10,11 @@
 # Reads greyscale at reduced size: temporal artefacts are about how the whole
 # frame advances, not about fine detail, and it keeps the pipe cheap.
 #
+# The default shader is bidirectional-interpolation-variational.glsl, the
+# production shader when this was written; the recommendation since 2026-09-06
+# is bidirectional-interpolation-variational-propagated.glsl (SHADERS.md). Pass
+# it as [shader]; the default is kept so earlier runs stay comparable.
+#
 # Set FFMPEG/FFPROBE to point at the patched build.
 
 set -u

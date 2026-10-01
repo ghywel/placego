@@ -48,7 +48,7 @@
 // so no FRAME2+/rts_mix/num_mix machinery is used here at all.
 //
 // Designed for N:N frame rate (e.g. 24fps -> 24fps, no frame insertion --
-// see ROADMAP.md's "N:N scaling" note under current-focus testing). This
+// see the development roadmap's "N:N scaling" note, not in this directory). This
 // shader has no interpolation semantics whatsoever and never reads
 // `mix_t` -- every output frame is just "the current frame, with motion
 // edges drawn on it," which is exactly the shape of filter an N:N,

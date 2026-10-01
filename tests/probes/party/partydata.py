@@ -19,7 +19,8 @@ Layout of one session folder (party-<date>-<time>-<pid>/, NNN the ten-minute seg
 A field record: a 32-byte header (magic LPF1, w u16, h u16, cell f32, interval f32, t f64, seq u32, pad u32) and
 w*h*(u, v) float16, the displacement of the content at each cell centre from frame A (t - interval) to B (t).
 
-Data root: $PARTY_DIR, else $NP_SCRATCH/lillys/party-2026-09-27 (NP_SCRATCH defaults to this Mac's np-scratch)."""
+Data root: $PARTY_DIR, else $NP_SCRATCH/lillys/party-2026-09-27 (NP_SCRATCH defaults to np-scratch beside the
+repository checkout)."""
 import glob
 import json
 import os
@@ -27,7 +28,7 @@ import pathlib
 
 import numpy as np
 
-NP = pathlib.Path(os.environ.get("NP_SCRATCH", "/Volumes/extnvme/nframe-project/np-scratch"))
+NP = pathlib.Path(os.environ.get("NP_SCRATCH", str(pathlib.Path(__file__).resolve().parents[5] / "np-scratch")))
 ROOT = pathlib.Path(os.environ.get("PARTY_DIR", NP / "lillys" / "party-2026-09-27"))
 
 JOINTS = ["nose", "leftEye", "rightEye", "leftEar", "rightEar", "neck", "leftShoulder", "rightShoulder", "leftElbow",

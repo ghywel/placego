@@ -4,16 +4,18 @@
 #   ./build-macos.sh [stage]        deps|placebo|ffmpeg|verify
 #   FORCE=1 ./build-macos.sh        rebuild even where outputs exist
 #
-# VERIFIED 2026-08-30 on macOS 15.7.9 (Intel), MoltenVK 1.4.2, against an
-# AMD Radeon RX 6600 eGPU. It was written blind on Windows before that machine
-# had been booted, and took five fixes to get there -- each is commented at
-# the point it matters. The full harness passes: 10 of 10 in smoke.sh.
+# VERIFIED 2026-10-01 on an Apple M5 (macOS 27.0.1) and 2026-09-30 on an Intel MacBook Pro (macOS 15.8, RX 6600
+# eGPU), MoltenVK 1.4.2, at ffmpeg ff2059a + libplacebo c42968d (BUILDANDUSAGE.md, "Status and pins"): smoke.sh 17
+# of 17 on the M5, 15 of 15 on the Intel Mac (before two checks were added). First walked 2026-08-30 on the Intel
+# Mac; it had been written blind on Windows and took five fixes, each commented at the point it matters.
 #
-# Read the accuracy caveat in BUILDANDUSAGE.md before trusting a NUMBER from
-# this platform. The shaders run correctly here, but the ground-truth ladder
-# does not reproduce from run to run while the baselines through the same
-# harness are bit-identical -- so this is a portability target, not a
-# measurement one.
+# MEASURING HERE: the ground-truth ladder wandered from run to run until two MoltenVK switches were found that end
+# it (tests/mvk-env.sh, which bench.sh sources; MOLTENVK-NONDETERMINISM-INVESTIGATED.md). With them a Mac is a
+# measurement host too.
+#
+# HISTORY: the rest of this header was written on 2026-08-30, before the first run, and is kept as the record of
+# what was expected. Both suspects below turned out not to be the problem; since 2026-09-02 the RX 6600 is also a
+# Vulkan device on Windows.
 #
 # WHY MACOS IS A DIFFERENT PROPOSITION. There is no native Vulkan here.
 # Everything runs through MoltenVK, which translates Vulkan to Metal. That is
@@ -46,8 +48,10 @@
 
 set -uo pipefail
 
+# Everything is found from this script's own directory (the patches, shaders/ and tests/ sit beside it), so the same
+# script works in the repository, where it is scripts/build-*.sh, and in a copy whose root IS scripts/ (2026-10-01:
+# it used to look for "$HERE/tests", which a copy without the scripts/ level does not have).
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO="$(cd "$HERE/.." && pwd)"
 ROOT="${ROOT:-$HOME/np-build}"
 # PINS (2026-09-30). By default each clone is upstream's master of the day. For numbers comparable across
 # hosts, build the exact commits another host was gated on: FFMPEG_REF=<full sha> PLACEBO_REF=<full sha>. A
@@ -58,6 +62,16 @@ pin() {   # pin <clone dir> <ref or empty>
   ( cd "$1" && git fetch --depth 1 origin "$2" && git checkout -q FETCH_HEAD ) \
     || die "could not pin $1 to $2"
   info "pinned $(basename "$1") to $(cd "$1" && git rev-parse --short HEAD)"
+}
+# A pin asked for on a REUSED clone used to be ignored without a word (2026-10-01): the build carried on at whatever
+# commit the clone held. Now a set REF must match the clone's commit, or the stage stops and says how to redo it.
+check_pin() {   # check_pin <clone dir> <ref or empty>
+  [ -n "$2" ] || return 0
+  local head; head="$(cd "$1" && git rev-parse HEAD)" || die "cannot read $1's commit"
+  case "$head" in
+    "$2"*) info "$(basename "$1") is at the pin $2" ;;
+    *) die "$1 is at $head, not the pin $2 (re-clone it: FORCE=1, or delete $1)" ;;
+  esac
 }
 PREFIX="$ROOT/libplacebo-install"
 JOBS="${JOBS:-$(sysctl -n hw.ncpu 2>/dev/null || echo 4)}"
@@ -121,7 +135,7 @@ say "environment"
 info "macOS    $(sw_vers -productVersion 2>/dev/null || echo unknown)"
 info "arch     $(uname -m)"
 info "brew     $BREW"
-info "repo     $REPO"
+info "scripts  $HERE"
 info "build    $ROOT"
 info "jobs     $JOBS"
 
@@ -215,6 +229,7 @@ if [ "$FORCE" = 1 ] || [ ! -d "$SRC" ]; then
   info "fast_float submodule present"
 else
   info "reusing existing clone (FORCE=1 to redo)"
+  check_pin "$SRC" "${PLACEBO_REF:-}"
 fi
 
 if [ "$FORCE" = 1 ] || [ ! -f "$PREFIX/lib/pkgconfig/libplacebo.pc" ]; then
@@ -278,6 +293,8 @@ if [ ! -d "$FF" ]; then
     ( cd "$FF" && git apply --verbose "$HERE/$p" ) ||
       die "$p did not apply -- upstream may have moved; rebase it"
   done
+else
+  check_pin "$FF" "${FFMPEG_REF:-}"
 fi
 # A reused clone must already carry the N:N patch. An unpatched ffmpeg builds
 # and runs without a word; only the marker test (a dark corner at fps=24 with
@@ -360,10 +377,10 @@ info "--- the harness, which is the real test"
 # smoke.sh exercises every tool and, importantly, compiles the shaders and
 # runs part of the ground-truth ladder. If MoltenVK is missing something the
 # shaders need, it fails here with the actual error rather than vaguely.
-if [ -f "$REPO/scripts/tests/smoke.sh" ]; then
-  ( cd "$REPO/scripts/tests" && bash ./smoke.sh )
+if [ -f "$HERE/tests/smoke.sh" ]; then
+  ( cd "$HERE/tests" && bash ./smoke.sh )
 else
-  die "harness not found at $REPO/scripts/tests"
+  die "harness not found at $HERE/tests"
 fi
 
 say "done"
@@ -372,17 +389,20 @@ say "done"
 # interpolation of the 24 fps render, and the numbers are platform-independent
 # up to driver and compiler noise in the second decimal.
 cat <<'REF'
-   Reference, PSNR dB, bidirectional-interpolation.glsl (the base shader), 24->60:
-     RX 6600 / Windows, 2026-09-11 (production build and upstream tip 5b614ef agree):
-       L1_trans_8px 61.24   L2_trans_16px 41.76   L9_occlusion 39.83
-     Apple M5 through MoltenVK, 2026-09-11, upstream tip 5b614ef:
-       L1_trans_8px 61.26   L2_trans_16px 41.78   L9_occlusion 39.83
+   Reference, PSNR dB, bidirectional-interpolation.glsl (the base shader), 24->60. Compare with the row
+   for YOUR pins: the pins move L1 by most of a decibel.
+     Apple M5 through MoltenVK (tests/mvk-env.sh's switches), 2026-10-01,
+     ffmpeg ff2059a + libplacebo c42968d (BUILDANDUSAGE.md, "Pins"):
+       L1_trans_8px 61.92   L2_trans_16px 41.77   L9_occlusion 39.83
+     Earlier pins, ffmpeg 5b614ef + libplacebo 3330a51, 2026-09-11:
+       RX 6600 / Windows:              L1_trans_8px 61.24   L2_trans_16px 41.76   L9_occlusion 39.83
+       Apple M5 through MoltenVK:      L1_trans_8px 61.26   L2_trans_16px 41.78   L9_occlusion 39.83
 REF
-if [ -f "$REPO/scripts/tests/bench.sh" ]; then
+if [ -f "$HERE/tests/bench.sh" ]; then
   # bench.sh does not change directory, so the shader path is relative to tests/.
   # OUTROOT stays on the internal disk: an exFAT root scatters ._ sidecars beside
   # every log (analyze.py skips them, other readers may not).
-  ( cd "$REPO/scripts/tests" || exit 1
+  ( cd "$HERE/tests" || exit 1
     SH=../shaders/bidirectional-interpolation.glsl
     export FFMPEG FFPROBE
     export OUTROOT="$ROOT/bench"
@@ -392,6 +412,6 @@ if [ -f "$REPO/scripts/tests/bench.sh" ]; then
     python3 ./analyze.py --variants
   ) || info "ladder did not complete -- the build itself is still good; run it by hand"
 else
-  info "harness not found at $REPO/scripts/tests -- skipping the ladder"
+  info "harness not found at $HERE/tests -- skipping the ladder"
 fi
 fi

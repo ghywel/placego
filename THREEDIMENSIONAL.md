@@ -1,12 +1,24 @@
 # Three dimensions: what a 2D motion field says about 3D motion
 
-Status: **DESIGN, written 2026-09-03 before any 3D scene had been rendered.**
-Everything in sections 1-3 is derivation, checked numerically on the CPU and
-then adversarially reviewed; section 4 is a scene family drafted to the
-ladder's rules but not yet through scenecheck; section 5 is a set of
-pre-registered predictions; section 9 holds measurements as they arrived on the same day (steps 1-5,
-with their predictions scored, several refuted). Read sections 1-8 as the
-plan and section 9 as what happened to it.
+> **Status (2026-10-01).** Sections 0-8 are the design of 2026-09-03: the derivation, the D-series and the
+> predictions P3D-1 to P3D-9. [Section 9](#9-measurements) is what happened: steps 1-7 the same day (9.1-9.7; the
+> scenes passed scenecheck, P3D-9 was refuted in the two-frame shader's favour, and 9.7 states the coarse level's
+> lattice-alias rule), and [9.8](#98-real-content-children-at-play-the-fields-divergence-and-curl-against-a-rigid-skeleton-fit----2026-09-27)
+> (2026-09-27), the first real footage: on children's torsos the field's divergence is right in sign and about 0.6
+> of truth in size, its curl about 0.9 on the raw field. The repair proposed at the end of 9.7 was built that evening
+> as two descents and measured in [NFRAME-LIMITS.md section 8](NFRAME-LIMITS.md#8-2026-09-03-the-prefilter-built-and-refuted-and-two-leads-closed). Section 9.2 reads the stock four-frame
+> shader ([QUADDIRECTIONAL.md](QUADDIRECTIONAL.md)); 9.7 benches the two-, three- and four-frame arms; 9.8 reads the
+> recommendation's two-frame field ([SHADERS.md](SHADERS.md)). [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md#results-23-a-tilted-axis-and-a-perspective-camera-2026-09-30)
+> fits a sphere's spin under a perspective camera. The D-series scene file `scenes-3d.sh` (sections 4 and 10) is not
+> in this repository, and the `d3/` scratch folder of section 10 is a private working folder.
+>
+> *Originally:* Status: **DESIGN, written 2026-09-03 before any 3D scene had been rendered.**
+> Everything in sections 1-3 is derivation, checked numerically on the CPU and
+> then adversarially reviewed; section 4 is a scene family drafted to the
+> ladder's rules but not yet through scenecheck; section 5 is a set of
+> pre-registered predictions; section 9 holds measurements as they arrived on the same day (steps 1-5,
+> with their predictions scored, several refuted). Read sections 1-8 as the
+> plan and section 9 as what happened to it.
 
 The question, as the project owner put it: a camera or an eye takes a 2D
 plate of a 3D scene; the motion it encodes is purely two-dimensional, but the
@@ -339,6 +351,9 @@ the scale and image rectangle once per pixel, as `_blob` binds its rotation.
 The full file is `scenes-3d.sh` (kept outside `tests/` until it has been
 through scenecheck).
 
+*2026-10-01: the D-series passed scenecheck on 2026-09-03 (9.1, 9.3). `scenes-3d.sh` was never added to this
+repository; the scenes are defined here only by the `_plate` description above and the table below.*
+
     case               Z(t) m               q            tau s        corner v px/f   corner a px/i^2   j px/i^3   discriminates
     D0_loom_flat       7.2 - 2.4t           0            3.00->2.00   5.0->11.3       +0.14->+0.47      (below)    flat control for D1 (PSNR only; no interior field)
     D1_loom_const      7.2 - 2.4t           0            3.00->2.00   5.0->11.3       +0.14->+0.47      +0.006->+0.029   THE LOOMING DISCRIMINATOR: zero 3D accel, non-zero image accel
@@ -479,6 +494,10 @@ calibration (1.4-2.7%). The D-series is designed sub-Nyquist throughout, so
 it runs on the current build. What *is* blocked is 3D measurement on real
 footage with fine texture -- the trust gate comes before that, not before
 this.
+
+*2026-10-01: the first real footage was children at play (9.8), read for divergence and curl on their bodies. The
+dash-cam and thrown-object cases of section 6, step 9, are not recorded; a thrown ball is ENERGY-TRANSFER.md's
+investigation 1, which waits for a camera.*
 
 ## 8. Refuted on review, kept on the record
 
@@ -890,6 +909,10 @@ resolved and the alias is 10+ texels away, arbitrate. That is a shader
 design item, pre-registered against A7's mid-speed velocity field (gross
 fraction from 39-75% toward D6's 35%), the comb, and R4/R5.
 
+*2026-10-01: built that evening as two descents rather than two minima from one window, and measured in
+[NFRAME-LIMITS.md section 8](NFRAME-LIMITS.md#8-2026-09-03-the-prefilter-built-and-refuted-and-two-leads-closed): large gains on edge-driven translation (L1 +13.8, L6 +10.0 dB), refuted on the
+comb and on R4/R5, and harmful on A7's mid-speed velocity field.*
+
 ### 9.8 Real content: children at play, the field's divergence and curl against a rigid skeleton fit -- 2026-09-27
 
 The first measurement of any tensor component on real footage (NFRAME-LIMITS.md, "The field on real bodies", has the
@@ -973,3 +996,5 @@ they assumed something about the instrument. The scripts are in the session
 scratch `d3/` folder and are not part of the repository; the scene file is
 the one durable artefact and is kept beside this document until scenecheck
 passes.
+
+*2026-10-01: neither the scene file nor the `d3/` scripts are in this repository; `d3/` is a private working folder.*

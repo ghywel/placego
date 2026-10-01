@@ -3,9 +3,13 @@
 #
 #   ./prospect.sh <source> [start-seconds] [duration-seconds] [shader]
 #
-# Renders the source through a flow visualiser build of the production shader
-# and ranks moments by how badly the flow field disagrees with itself. Prints
-# a shortlist of timestamps and a ready-to-run clip.sh line for each.
+# Renders the source through a flow visualiser build of a shader and ranks
+# moments by how badly the flow field disagrees with itself. Prints a shortlist
+# of timestamps and a ready-to-run clip.sh line for each. The default shader is
+# bidirectional-interpolation-variational.glsl, the production shader when this
+# was written; the recommendation since 2026-09-06 is
+# bidirectional-interpolation-variational-propagated.glsl (SHADERS.md). Pass it
+# as [shader] to scan with it; the default is kept so earlier scans stay comparable.
 #
 # This is the fast-and-literal half of a two-stage process. It finds data
 # perturbation, which correlates with visible defects but is not the same

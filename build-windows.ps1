@@ -25,10 +25,12 @@ function Say  { param($m) Write-Host "`n== $m" -ForegroundColor Cyan }
 function Info { param($m) Write-Host "   $m" }
 function Die  { param($m) Write-Host "`nFAILED: $m" -ForegroundColor Red; exit 1 }
 
-$repo = Split-Path -Parent $PSScriptRoot
-Say "repository"
-Info $repo
-if (-not (Test-Path "$repo\scripts\frame-mix-hook.patch")) {
+# Found from this script's own directory, so it works in the repository (scripts\build-windows.ps1) and in a copy
+# whose root IS scripts\ (2026-10-01).
+$here = $PSScriptRoot
+Say "scripts"
+Info $here
+if (-not (Test-Path "$here\frame-mix-hook.patch")) {
     Die "frame-mix-hook.patch not found -- is this the right repository?"
 }
 
@@ -81,10 +83,10 @@ if (-not $SkipUpdate) {
 # --- hand off --------------------------------------------------------------
 Say "handing off to build-windows.sh"
 # Translate the Windows repo path into the MSYS2 view: C:\x\y -> /c/x/y
-$drive  = $repo.Substring(0, 1).ToLower()
-$rest   = $repo.Substring(2) -replace '\\', '/'
+$drive  = $here.Substring(0, 1).ToLower()
+$rest   = $here.Substring(2) -replace '\\', '/'
 $posix  = "/$drive$rest"
-$script = "$posix/scripts/build-windows.sh"
+$script = "$posix/build-windows.sh"
 Info "script  $script"
 Info "stage   $Stage"
 

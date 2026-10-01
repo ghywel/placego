@@ -5,6 +5,9 @@
 #
 #   ./loop.sh <name> [shade=0.25] [turn=80] [tex=m1|broad] [shader=../shaders/quaddirectional-interpolation-propagated.glsl]
 #
+# The default shader is found from this script's own directory; a shader given as an argument is read
+# relative to the directory you run from.
+#
 # Output under $OUTROOT/<name> (default ${TMPDIR:-/tmp}/interp-loop/<name>): src.mkv, truth/, rv4/ (the
 # machine frames, 16-bit PNG), loopfield/ (scores as printed, .npy fields, pictures). Set FFMPEG= to the
 # patched build (the libplacebo FRAME_MIX hook). Requires a Vulkan device.
@@ -12,11 +15,11 @@
 # A turn of 80 frames takes about two minutes on an RX 6600: ten seconds to render, eighty to read, fifteen
 # to score. NFRAME-LIMITS.md, "The phase-locked consensus", has the numbers this reproduces.
 set -u
+HERE="$(cd "$(dirname "$0")" && pwd)"
 NAME="${1:?name}"; SHADE="${2:-0.25}"; TURN="${3:-80}"; TEX="${4:-m1}"
-SHADER="${5:-../shaders/quaddirectional-interpolation-propagated.glsl}"
+SHADER="${5:-$HERE/../shaders/quaddirectional-interpolation-propagated.glsl}"
 FFMPEG="${FFMPEG:-ffmpeg}"
 OUTROOT="${OUTROOT:-${TMPDIR:-/tmp}/interp-loop}"
-HERE="$(cd "$(dirname "$0")" && pwd)"
 T="$OUTROOT/$NAME"; mkdir -p "$T/rv4"
 N0=$TURN; N1=$((2 * TURN - 1))
 

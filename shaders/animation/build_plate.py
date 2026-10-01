@@ -1,4 +1,4 @@
-"""The background-plate variant of the animation shader (the owner's 2026-08 idea, ROADMAP.md
+"""The background-plate variant of the animation shader (the owner's 2026-08 idea, in the development roadmap, not in this directory
 'A shader class specific to animation', second half).
 
     build_plate.py <out.glsl> <base.glsl> [STATIC_TAU=0.03] [DISAGREE_TAU=0.12] [MIN_CONF=2]

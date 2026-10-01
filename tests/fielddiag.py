@@ -27,13 +27,16 @@ if "QUADDEMO" not in os.environ:
     sys.exit("fielddiag.py: set QUADDEMO to the Metal demo's CLI (.build/release/QuadDemo of the private app)")
 QUAD = pathlib.Path(os.environ["QUADDEMO"])
 # Working root: big scratch never goes on the system disk (the raws are
-# 130-330 MB apiece). Override with FIELDDIAG_OUT.
+# 130-330 MB apiece). Override with FIELDDIAG_OUT; otherwise $NP_SCRATCH/fielddiag,
+# NP_SCRATCH defaulting to np-scratch beside the repository checkout.
 W = pathlib.Path(os.environ.get(
     "FIELDDIAG_OUT",
-    str(REPO.parent / "np-scratch/fielddiag")))
+    str(pathlib.Path(os.environ.get("NP_SCRATCH", str(REPO.parent / "np-scratch"))) / "fielddiag")))
 G = W / "graphs"
 G.mkdir(parents=True, exist_ok=True)
-ENV = dict(os.environ, PATH="/opt/homebrew/bin:" + os.environ.get("PATH", ""))
+# Homebrew's bin first (glslc and spirv-cross for gen_metal.py --compile, ffmpeg when FFMPEG is unset);
+# HOMEBREW_PREFIX, as `brew shellenv` sets it, else /opt/homebrew (Apple silicon; an Intel Mac's is /usr/local).
+ENV = dict(os.environ, PATH=os.environ.get("HOMEBREW_PREFIX", "/opt/homebrew") + "/bin:" + os.environ.get("PATH", ""))
 LEGACY = "--legacy" in sys.argv
 
 base = SRC.read_text()

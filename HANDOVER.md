@@ -5,6 +5,14 @@ assistant: read this file and the documents it names in the order given,
 confirm the toolchain with the checklist at the end, then stop and wait for
 the human's command. Do not start an experiment you were not asked for.*
 
+> **Dated: written 2026-09-04, last updated 2026-09-06, with corrections on 2026-10-01.** The reading order and the
+> machinery below are kept current where a reader following them would otherwise go wrong; section 5, "the front
+> line", is history. Since 2026-09-06 the ladder has 42 cases, the regression gate runs on a deterministic Linux
+> host (`tests/TESTING.md`, "The Linux witness on the Arc"), macOS runs need the MoltenVK switches in
+> `tests/mvk-env.sh`, and shader changes ship behind generator switches (`SHADERS.md`). For the current front line,
+> read the newest dated entries of `NFRAME-LIMITS.md` section 9 and `ENERGY-TRANSFER.md`; for the working rules,
+> `WORKFLOW-SAVED-MEMORY.md`; for every document, the map at the end of `WHAT-WE-BUILT.md`.
+
 This project is CPU- and GPU-bound, not idea-bound. The open leads at the end
 of this file are real, measurable, and independent of one another; anyone
 with a GPU that runs Vulkan, an afternoon, and the discipline described here
@@ -23,6 +31,10 @@ owner's own sessions), and do not import another assistant's memory as
 your own. The repository is the shared record; everything that matters is
 in it, and if something you need is not, that is a gap to report, not a
 reason to reach for someone else's notes.*
+
+*The one exception is published: the working RULES from that memory, edited for reading, are in
+`WORKFLOW-SAVED-MEMORY.md` (2026-10-01), and those are meant to be read and adopted. The notes and context stay
+private.*
 
 ## 1. What this is, in one paragraph
 
@@ -45,11 +57,13 @@ and the failures stay on the record next to the successes.
 3. `SHADERS.md` -- every shader, what it is for, its numbers, its lineage.
 4. `tests/TESTING.md` and `tests/TOOLS.md` -- the ground-truth ladder, the
    real-footage method and its traps, and every instrument.
-5. `NFRAME-LIMITS.md` -- the front line. Section 9 is the current one.
-6. `PLAN.md` and `../ROADMAP.md` (repository root) -- the working plan and the
-   current focus.
+5. `NFRAME-LIMITS.md` -- the record of the field's limits; the newest dated
+   entries in section 9 are the front line, with `ENERGY-TRANSFER.md` after it.
+6. `PLAN.md` -- the working plan of 2026-08-31 to 09-03, now history.
+   (The repository's development copy also has a `ROADMAP.md` above this
+   directory; it is not part of this directory.)
 7. `TRIDIRECTIONAL.md`, `QUADDIRECTIONAL.md`, `QUINTDIRECTIONAL.md`, `SEXTDIRECTIONAL.md` -- the
-   three-, four- and five-frame experiments, hypotheses stated before the
+   three-, four-, five- and six-frame experiments, hypotheses stated before the
    results. `THREEDIMENSIONAL.md` is the design record for depth from
    motion. `METALPORT.md` is the native port.
 8. `METHODOLOGY.md` -- how the work was actually done, including the division
@@ -99,6 +113,10 @@ produced without them are not comparable to the record and will be redone.
 - **The gate for a base change** is all three: the 32-case ladder (mean up,
   no loss beyond about a decibel), the real-footage segments (PSNR and SSIM
   not down), and interleaved time. Then every regenerated file is smoked.
+  *(2026-10-01: the ladder is 42 cases, run on a host that repeats itself; an
+  in-place change may lose no case by more than 0.10 dB, else it ships as a
+  variant; real footage is 40 film extracts. The current form is the
+  `regression-gate` rule in `WORKFLOW-SAVED-MEMORY.md`.)*
 - **No personal data, no absolute paths, no binaries in the repository.**
   Filter strings must not contain drive-letter paths (`tests/smoke.sh`
   explains why). Scratch work lives outside the tree or is not staged.
@@ -124,11 +142,13 @@ patch says so at error level.
     ./add_human_reading.py --default 1 ../shaders/human-reading-quad.glsl   # the painted demonstration
     ./add_human_reading.py ../shaders/bidirectional-interpolation.glsl      # a base's own tail (paths, not bare names)
 
-Bare names resolve in `shaders/`; paths work too. Each generated file flips
-the field-only switches on (`SUBPEL_REFINE`, `SUBPEL_SELFREF`, `ZERO_SEED`) and appends
+Bare names resolve in `shaders/`; paths work too. Each generated file turns
+the field-only switches on (`SUBPEL_REFINE`, `SUBPEL_SELFREF`; `ZERO_SEED` is
+already on in the seeded, propagated, animation and recommended bases) and appends
 the human-reading tail: a `read_view` shader parameter, 0 = the picture,
 1/2/3 = velocity/acceleration/jerk painted for a person, 4/5/6 = the same
-fields raw for a machine.
+fields raw for a machine, 7 = the pooled reading raw, 8 = the per-cell mode
+memory raw, 9 = divergence, curl and shear raw.
 
 **The ladder.** `tests/scenes.sh` defines every case as an ffmpeg `lavfi`
 expression; `tests/scenecheck.sh` proves each case's rendered frames match
@@ -155,8 +175,13 @@ and G, px per source interval (squared, cubed):
            -e 's/const float ACCEL_DIAG_FS +?= 2\.0;/const float ACCEL_DIAG_FS = 2.0;/' shader.glsl > c.glsl
     grep -q 'TRI_DIAG = 2;' c.glsl || echo "PATCH FAILED"      # always assert a sed on a shader constant
     ffmpeg -init_hw_device vulkan=vk -filter_hw_device vk -f lavfi -i "$(source tests/scenes.sh; scene A5_accel_tex_a067 24)" \
-           -vf "libplacebo=fps=24:frame_mixer=custom_n:custom_shader_path=c.glsl" -pix_fmt rgb48le -f rawvideo seq.raw
+           -vf "format=rgb48le,libplacebo=fps=24:frame_mixer=custom_n:custom_shader_path=c.glsl,format=rgb48le" -f rawvideo seq.raw
     OUT_FPS=24 SRC_FPS=24 tests/accelcheck.py A5_accel_tex_a067 seq.raw 10 2.0
+
+*(Corrected 2026-10-01: the conversion to `rgb48le` is made inside the graph, and libplacebo is fed RGB. Setting
+`-pix_fmt rgb48le` on the output instead passes the field through an 8-bit limited-range frame, and on Linux even a
+YUV input comes back limited-range; `tests/fieldcheck.py` refuses such a frame. On macOS, `. tests/mvk-env.sh`
+first.)*
 
 `tests/rotcheck.py` scores rotation against a vector truth, `fieldexport.py`
 writes a field with its units and an audit for handover to other software

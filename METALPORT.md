@@ -1,5 +1,20 @@
 # The Metal port: a native Swift demo of the quaddirectional shader
 
+> **Status, 2026-10-01.** This is the record of the port's first day
+> (phases P0-P5, 2026-09-01), kept as it was written then. Changed since:
+> the app line (2026-09-12), and on 2026-10-01 this note, the translator's
+> name, the spike's location, one window-rule note and the "Where things
+> live" list. The app it describes has since grown beyond
+> the quad shader and is published, closed-source, on the Mac App Store
+> (since 2026-09-20; WHAT-WE-BUILT.md, "Try it in five minutes"). Its
+> source and its later port record are kept outside this repository and
+> are not published. From this repository you can run the translator,
+> `tests/gen_metal.py` (extended on 2026-09-08 to the whole shader family;
+> see `tests/TOOLS.md`), and the field checker, `tests/accelcheck.py`. The
+> other files named below (`metal-demo/spike/`, `accept.sh`,
+> `fieldaccept.sh`, `make-app.sh`, the `DUMP=1` dump, the engine and UI
+> sources) are with the app, not here.
+
 Started 2026-09-01 on the M2. This document is the referable template for
 the work — if a long debug session drifts, come back here. It is the
 first execution of WHAT-WE-BUILT.md's "Port it" invitation, and it is
@@ -51,7 +66,8 @@ Nobody hand-ports ~5,600 lines of generated GLSL, and nobody should:
 the GLSL stays the single source of truth, exactly as the base shader is
 for the tri/quad generators.
 
-1. A translator tool (gen-family, lives with the generators) parses the
+1. A translator tool, `tests/gen_metal.py` (gen-family, beside the
+   generators), parses the
    hook directives — `//!HOOK`, `//!BIND`, `//!SAVE`, `//!WIDTH/HEIGHT`,
    `//!WHEN`, `//!TEXTURE` blocks with `//!STORAGE` — into a pass-graph
    description, and wraps each `vec4 hook()` body as a standalone
@@ -91,8 +107,8 @@ argmin with TIE_MARGIN, contrast gate, `imageStore` to the rgba32f
 cache) went GLSL → SPIR-V → MSL → Metal runtime compile, and on a
 known 1-texel translation of smooth texture recovered **(1,0) on 99.3%
 of texels**. The smoketest (4-frame binds + `rts_mix`/`num_mix`
-surface) compiles through the same road. Spike artifacts kept under
-`metal-demo/spike/`. Three lessons for P1: (1) spirv-cross's generated
+surface) compiles through the same road. Spike artifacts kept with the
+app (`metal-demo/spike/` then; not in this repository). Three lessons for P1: (1) spirv-cross's generated
 entry is `main0` and the binding map is readable straight off its
 signature — the translator can emit the Swift binding table from it;
 (2) **std140 makes `float rts_mix[8]` a 16-byte-stride array** — the
@@ -185,7 +201,9 @@ jerk check produced a discovery instead of a pass/fail.**
   Metal {k−1..k+2} — fitted from the error curves with the residuals
   above; both legitimate, the shader is slot-keyed and indifferent.
   accelcheck now computes discrete truths and takes `JERK_CENTRE`
-  (−0.5 ffmpeg default, +0.5 metal). Corrections propagated to
+  (−0.5 ffmpeg default, +0.5 metal). (The app's host later adopted the
+  patch's own window rule, on 2026-09-08; +0.5 describes the 2026-09-01
+  host only.) Corrections propagated to
   QUADDIRECTIONAL.md (including withdrawing the "acceleration-
   dependent jerk noise floor" — O5 f12's "−1.73 null failure" was the
   discrete truth −1.708 read to ~1%), TRIDIRECTIONAL.md and PLAN.md.
@@ -245,8 +263,10 @@ getting one working colourspace honestly, App Store anything.
 
 ## Where things live
 
-- This plan: `scripts/METALPORT.md`
-- Translator: with the other generators under `scripts/tests/`
-  (gen-family; TOOLS.md gets an entry when it exists)
-- The app: NFrameDemo-macos-arm64-v{version}.zip only - source is not
-  provided
+- This plan: `scripts/METALPORT.md` (the 2026-09-01 record; see the
+  status note at the top)
+- Translator: `scripts/tests/gen_metal.py`, beside the other generators
+  (gen-family); its entry is in `tests/TOOLS.md`
+- The app: binary only; the source is not published. On 2026-09-12 it was
+  distributed as NFrameDemo-macos-arm64-v{version}.zip; since 2026-09-20
+  it is on the Mac App Store

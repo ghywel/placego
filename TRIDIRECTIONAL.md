@@ -1,10 +1,22 @@
 # Tridirectional interpolation: encoding acceleration, not just velocity
 
-**Status: hypothesis CONFIRMED -- up to +4.45 dB over the bidirectional
-shader, winning on eight of nine benchmark cases, with the gain rising as
-acceleration rises exactly as the model predicts. Caching now works. One
-regression remains (3.8 dB on L1_trans_8px) and is PROVED unfixable at three
-frames. A demonstration that the hypothesis is true, not yet production code.**
+> **Status (2026-10-01).** The three-frame experiment (first run on real hardware on 2026-08-31), kept in the order
+> the results arrived. The hypothesis holds: up to +4.45 dB over the bidirectional shader on the first nine-case run,
+> with the gain rising with acceleration. The 3.8 dB loss on `L1_trans_8px` in the original status line below is the
+> first build's; after sub-pixel refinement and the correction deadband it is -0.49 dB
+> ([Re-measured after sub-pixel refinement and the correction deadband](#re-measured-after-sub-pixel-refinement-and-the-correction-deadband)). The current ladder for this shader
+> is in [SHADERS.md, "Measured comparison"](SHADERS.md#measured-comparison) ("The N-frame lines, re-measured
+> 2026-09-04"); the field's accuracy is [Field accuracy, current state](#field-accuracy-current-state-after-sub-pixel--the-equiangular-fit) here and
+> [NFRAME-LIMITS.md section 9](NFRAME-LIMITS.md#9-2026-09-04-the-rotation-field-and-a4-re-measured-on-the-shipped-family). The four-frame window argued for below is
+> [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md), which proves that four frames give no independent acceleration check
+> (that needs five); the five- and six-frame lines are [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md) and
+> [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md). Statements below that later work superseded carry dated notes.
+>
+> *Originally:* **Status: hypothesis CONFIRMED -- up to +4.45 dB over the bidirectional
+> shader, winning on eight of nine benchmark cases, with the gain rising as
+> acceleration rises exactly as the model predicts. Caching now works. One
+> regression remains (3.8 dB on L1_trans_8px) and is PROVED unfixable at three
+> frames. A demonstration that the hypothesis is true, not yet production code.**
 
 This is a research log, kept in the shape the result actually arrived in
 rather than tidied into a conclusion it has not earned.
@@ -143,6 +155,8 @@ and noisier estimator (extrapolation amplifies the same quantisation the
 calibration already shows dominating the low end) and it has not been built or
 measured. It is the obvious next thing to try for that use case.
 
+*2026-10-01: closed by argument later in this file: [A causal window buys nothing at three frames](#a-causal-window-buys-nothing-at-three-frames----a-proof-not-a-measurement).*
+
 ### High frame rates make acceleration HARDER, not easier
 
 This follows from the calibration and is worth stating before anyone reaches
@@ -167,6 +181,10 @@ relative to a fixed quantisation floor. Two ways out, neither tested:
 
 Either way, **high-rate input is an argument FOR N-frame, not a substitute for
 it.**
+
+*2026-10-01: both have since been measured. Accumulating over more frames is [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md),
+[QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md) and [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md); a stride through the frames
+is [NFRAME-LIMITS.md, "Lead B"](NFRAME-LIMITS.md#lead-b-the-frame-rate-half-is-a-decimation-stage-and-the-4k-disc-could-not-have-shown-it).*
 
 ## Real-hardware confirmation
 
@@ -206,6 +224,8 @@ So the hypothesis: **a 3-frame shader can encode acceleration as well as
 velocity, and place content at its correct position on the curve.** By
 extension a 4-frame shader could encode jerk, and so on -- untested, and
 deliberately out of scope here.
+
+*2026-10-01: the four-frame shader was built: [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md).*
 
 ## The algebra
 
@@ -546,6 +566,10 @@ shader recorded in TESTING.md.
 
 The next section is why this cannot be fixed at three frames.
 
+*2026-10-01: the figures in this section and the next are the first build's; after sub-pixel refinement and the
+correction deadband the L1 loss is -0.49 dB ([Re-measured after sub-pixel refinement and the correction
+deadband](#re-measured-after-sub-pixel-refinement-and-the-correction-deadband), above). The argument below, that three frames cannot validate acceleration, still stands.*
+
 ## Acceleration cannot be validated from three frames -- a proof, not a guess
 
 `L1_trans_8px` still regresses 3.80 dB. It is pure constant velocity, the true
@@ -616,6 +640,11 @@ stencil, no mid-interval anchor flip) into the **necessary next step**, and it
 is now the top open lead. Note what gates it: `pair_changed` is already
 insufficient at three frames, and a 4-frame window has more phases still, so
 the cache-keying fix above is a prerequisite rather than a nicety.
+
+*2026-10-01: the four-frame shader was built ([QUADDIRECTIONAL.md](QUADDIRECTIONAL.md)), and its
+["What this opens"](QUADDIRECTIONAL.md#what-this-opens) proves that the two four-frame estimates of `a` are not
+independent: comparing them reduces to the round-trip residual the shader already computes. The first independent
+check needs a fifth frame ([NFRAME-LIMITS.md section 2](NFRAME-LIMITS.md#2-wobble-it-is-real-it-is-quantified-and-it-cuts-against-wide-windows)).*
 
 It also bounds what the current 3-frame shader can ever be. It wins where
 acceleration is real and it cannot be made safe where acceleration is
@@ -825,6 +854,11 @@ A consumer of this field should treat readings on texture-poor regions and
 on rotating structure as unreliable until the structure-tensor gate (open
 lead) exists to mask the former and the rotation failure is diagnosed. The earlier sections are kept as the record of how it got here.
 
+*2026-10-01: the rotation failure is diagnosed in
+[NFRAME-LIMITS.md section 3](NFRAME-LIMITS.md#3-rotation-is-not-wobble-not-order-and-mostly-not-rotation) and
+re-measured in [section 9](NFRAME-LIMITS.md#9-2026-09-04-the-rotation-field-and-a4-re-measured-on-the-shipped-family). A 3x3 structure tensor now discounts the coarse zero seed where it slides along an
+edge (`ZERO_SEED`, shipped 2026-09-04, NFRAME-LIMITS.md section 9).*
+
 ## Reading the fields: TRI_DIAG
 
 Set `TRI_DIAG` at the top of the final pass. No rebuild, no separate file.
@@ -972,6 +1006,10 @@ order of expected value.
    through a video path is the weakest link in treating this as an instrument.
    A direct export -- flow and acceleration as float data, per frame, with
    units attached -- is what turns a picture into a measurement.
+
+   *2026-10-01: item 0 is closed by argument above: [A causal window buys nothing at three
+   frames](#a-causal-window-buys-nothing-at-three-frames----a-proof-not-a-measurement). Item 0b is partly addressed: `tests/fieldexport.py` writes the field as float32 data with its units and a
+   saturation audit, decoded from a 16-bit render (the shader still writes the field through the video path).*
 1. **The low end is quantisation-limited, and that is now measured.** The field
    is accurate to under 1% above |a| ~ 6 and under-reads by 33-66% below |a| ~ 2,
    because acceleration is 2*(f10 + f12) and inherits twice the flow field's
@@ -980,6 +1018,9 @@ order of expected value.
    the cause. Improving it needs a finer flow estimate, not a coefficient.
    TIE_MARGIN is a second zero-bias in the same path and has NOT been swept
    against the calibration; that is the cheap next check.
+
+   *2026-10-01: corrected in this file: [CORRECTION: the low end is jerk-limited, not quantisation-limited](#correction-the-low-end-is-jerk-limited-not-quantisation-limited),
+   where `TIE_MARGIN` was swept and is not implicated.*
 2. **Coverage is 41-79% and inversely related to acceleration** -- the field
    is sparsest exactly where its values are most accurate, because the trust
    gate discards more when motion is hard. Worth understanding whether that
@@ -995,6 +1036,10 @@ order of expected value.
    rather than a quadratic through three jagged points. Cost grows with the
    number of chains, so measure whether degree 3 buys anything before
    assuming degree 4 does.
+
+   *2026-10-01: built as [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md), [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md) and
+   [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md). QUADDIRECTIONAL.md, "What this opens", proves that the two four-frame
+   estimates of `a` are not independent; an independent check needs five frames.*
 4. **The caching is solved and generalises.** Slot-keyed fields are pure
    functions of the window, so `pair_changed` is the correct invalidation
    signal at any N and needs no patch change. This was the blocker; it is
@@ -1008,6 +1053,8 @@ order of expected value.
    untried.
 
 **Turned up incidentally and not chased:**
+
+*2026-10-01 note: items 5 and 6 of this list repeat the numbers of items 5 and 6 above; they are separate items.*
 
 5. **`bi` loses to stock `linear` on `O5_osc_textured`** (33.09 against
    33.90). A textured object oscillating at 13px/frame peak, with a
@@ -1026,6 +1073,10 @@ order of expected value.
    outright (76.84 dB on `L1`, within 2.6 dB of the ceiling) while losing
    exactly where its stale fallback does damage. Specific prediction attached.
    This is the strongest dangling lead in the whole project.
+
+   *2026-10-01: [SHADERS.md](SHADERS.md) ("`-diffuse-coarse.glsl` and `-diffuse-dual.glsl` -- superseded") marks the
+   diffuse variants superseded by the variational cascade, and the two-descent variant later reached 75.01 dB on L1
+   (NFRAME-LIMITS.md section 8) against the 76.84 here. PLAN.md T3.3 still lists the regeneration.*
 8. **The `L1`/`L2` anomaly.** The base shader collapses 19.5 dB between
    8px/frame and 16px/frame, non-monotonically, and the base-vs-variational
    sign flips across the same step. No measured explanation.
@@ -1037,3 +1088,7 @@ order of expected value.
 10. **The macOS tie-breaking stress test** needs the Intel Mac specifically --
     an M-series machine is predicted to be too clean to exercise it. See
     `BUILDANDUSAGE.md`.
+
+    *2026-10-01: answered on that machine and on the M5: the macOS perturbation is not of arithmetic size, so the tie
+    margin cannot absorb it, and two MoltenVK switches remove it
+    ([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md), sections 1 and 5-6).*

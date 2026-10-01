@@ -29,7 +29,8 @@ import sys
 import numpy as np
 
 # run from a shell with the project's ffmpeg build and mingw64/bin on PATH, as every tool in tests/ does
-NP = pathlib.Path(os.environ.get("NP_SCRATCH", "E:/nframe-project/np-scratch"))   # data, renders, logs live here
+# data, renders, logs live here: $NP_SCRATCH, default np-scratch beside the repository checkout
+NP = pathlib.Path(os.environ.get("NP_SCRATCH", str(pathlib.Path(__file__).resolve().parents[5] / "np-scratch")))
 G = NP / "weird"
 SC = pathlib.Path(__file__).resolve().parents[3]                                  # scripts/
 W, H, FPS = 1280, 720, 24.0

@@ -69,7 +69,9 @@ def pick(root, n, seed):                                        # the census dri
     return out
 
 
-paths = {p.stem: p for p in pick("/footage/Movies", 12, 20260930) + pick("/footage/Anime", 4, 20260930) + pick("/footage/Shows", 4, 20260930)}
+FOOTAGE = os.environ.get("FOOTAGE", "/footage")                 # the footage pool, read-only (the container's mount)
+paths = {p.stem: p for p in pick(f"{FOOTAGE}/Movies", 12, 20260930) + pick(f"{FOOTAGE}/Anime", 4, 20260930)
+         + pick(f"{FOOTAGE}/Shows", 4, 20260930)}
 
 
 def ystream(cmd, fb):

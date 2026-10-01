@@ -28,7 +28,7 @@ mkdir -p "$OUT/graphs"
 VAR="$OUT/graphs/${STEM}_vel_fs$FS"
 [ -f "$VAR.glsl" ] || "$PY" "$HERE/diagvariant.py" "$SHADERS/$STEM.glsl" 7 VEL_DIAG_FS "$FS" "$VAR.glsl" || exit 1
 if [ -n "$QUAD" ] && [ ! -f "$VAR/graph.json" ]; then
-  PATH="/opt/homebrew/bin:$PATH" "$PY" "$TESTS/gen_metal.py" "$VAR.glsl" "$VAR" --compile > "$VAR.gen.log" 2>&1 \
+  PATH="${HOMEBREW_PREFIX:-/opt/homebrew}/bin:$PATH" "$PY" "$TESTS/gen_metal.py" "$VAR.glsl" "$VAR" --compile > "$VAR.gen.log" 2>&1 \
     || { echo "graph build failed: $(tail -2 "$VAR.gen.log")"; exit 1; }
 fi
 TSV="$OUT/field.tsv"; [ -f "$TSV" ] || printf 'scene\thost\tk\tmedian_px\tp90_px\tgross_pct\tangle_deg\tv_true\tv_meas\tnote\n' > "$TSV"

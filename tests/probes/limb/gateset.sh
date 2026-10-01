@@ -7,6 +7,12 @@
 #   CONTROL=cage TAG=cage-energy ./gateset.sh "cage:<path> cagee:<path> ..." [runs]
 #       -> $NP_SCRATCH/limb/gate-<TAG>/run{1..N}/..., run{N}-all.txt, gate-table.txt
 #
+# Give the shader paths as absolute paths: they are checked from the directory you run in, then used from tests/.
+#
+# 2026-09-30: bench.sh now sources tests/mvk-env.sh, whose two MoltenVK switches make a Mac ladder repeat within
+# 0.01 dB (TESTING.md, the end), so a single run is a valid gate there, as on Linux: give 1 as [runs]. The three-run
+# reasoning above is kept as it was written.
+#
 # Copy the files somewhere nothing regenerates them first: a bench that reads a file being rewritten measures a
 # mixture.
 set -u

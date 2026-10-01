@@ -1,5 +1,91 @@
 # Ground-truth testing for the interpolation shader
 
+**Contents.** Running it: [How to run it today](#how-to-run-it-today) ·
+[The idea](#the-idea) · [Why three modes, always](#why-three-modes-always) ·
+[Reading the numbers honestly](#reading-the-numbers-honestly) ·
+[The complexity ladder](#the-complexity-ladder) · [Usage](#usage) ·
+[Checking the harness itself](#checking-the-harness-itself) ·
+[Finding defects in new material](#finding-defects-in-new-material) ·
+[Deterministic tie-breaking](#deterministic-tie-breaking-measuring-what-noise-decides) ·
+[Limitations](#limitations) · [Timing basis](#timing-basis-2026-09-04).
+The dated record: [Results on the reset ladder](#results-on-the-reset-ladder) ·
+[The master tier](#the-master-tier) · [What this found](#what-this-found) ·
+[What the flow-diffusion generation ("gen2") actually does](#what-the-flow-diffusion-generation-gen2-actually-does) ·
+[Fixing it: what actually worked](#fixing-it-what-actually-worked) ·
+[The remaining defect: edges](#the-remaining-defect-edges) ·
+[Grid alignment](#grid-alignment----mostly-explained-see-the-correction-below) ·
+[Variational refinement: milestone 1](#variational-refinement-milestone-1) ·
+[Milestone 2](#milestone-2-iterate-at-every-pyramid-level----this-is-the-fix) ·
+[The occlusion fallback](#the-occlusion-fallback-two-independent-defects) ·
+[The residual fast-object artifact](#the-residual-fast-object-artifact-three-remedies-none-of-them-helped) ·
+[Real footage: decimate-and-reconstruct](#real-footage-decimate-and-reconstruct) ·
+[Cartoon faces](#cartoon-faces-false-match-islands-in-the-flow-field) ·
+[Scene cuts](#scene-cuts-choosing-the-gate-threshold-by-measurement) ·
+[The ripple](#the-ripple-motion-far-beyond-the-search-reach----unsolved) ·
+[The research build updated (2026-09-30)](#the-research-build-updated-2026-09-30) ·
+[The Linux witness on the Arc (2026-09-30)](#the-linux-witness-on-the-arc-2026-09-30) ·
+[The Mac wander solved (2026-09-30)](#the-mac-wander-solved-two-moltenvk-switches-2026-09-30).
+
+## How to run it today
+
+*Current as of 2026-10-01. Everything after this section is the dated record, kept as written; where it
+disagrees with this section about how to run something, this section is current.* The tools are indexed in
+[TOOLS.md](TOOLS.md), the one-off measurements in [probes/PROBES.md](probes/PROBES.md).
+
+You need the research build -- ffmpeg on a libplacebo carrying `../frame-mix-hook.patch`,
+`../frame-mix-nn-threshold.patch` and `../hw-base-encode-eof-nullcheck.patch` (`../build-macos.sh`,
+`../linux/build-linux.sh` and `../build-windows.sh` apply all three) -- a Vulkan device (any GPU; Mesa lavapipe
+is enough for correctness), and python3 with numpy. Every tool takes the build from the environment and runs
+from this directory:
+
+    cd tests
+    export FFMPEG=/path/to/ffmpeg FFPROBE=/path/to/ffprobe
+
+| host | FFMPEG | also |
+|---|---|---|
+| macOS (`../build-macos.sh`) | `$HOME/np-build/ffmpeg/ffmpeg` | `export PATH="$HOME/np-build/venv/bin:$PATH"` (numpy); `. ./mvk-env.sh` (below) |
+| Linux container (`../linux/`) | `/work/ffmpeg/ffmpeg` | `MESA_VK_DEVICE_SELECT=<vendor:device>` when several Vulkan devices are listed |
+| Windows, MSYS2 | `$HOME/np-build/ffmpeg/ffmpeg.exe` | the MSYS2 bash, with `/mingw64/bin` on `PATH` ([TOOLS.md](TOOLS.md#running-any-of-this-on-windows----the-shell-matters)) |
+
+1. **Smoke, on any new machine or build:** `./smoke.sh`. 17 checks over 12 tools; no video needed; exits
+   non-zero on any failure. It also regenerates `-variational`, the recommendation, the player's default and
+   the lattice candidate, with their 4K twins, and checks each against the committed file byte for byte.
+2. **The ladder:** `./bench.sh all ../shaders/<shader>.glsl <label>` (42 cases; hold and linear are cached per
+   case), then `./analyze.py --variants`, and read the CAPPED mean. `./bench.sh <case> ...` runs one case; the
+   cases outside the default ladder (see the ladder table below) run only by name. Results go to `$OUTROOT`
+   (default `$TMPDIR/interp-bench`); use a fresh one per experiment. bench.sh's default shader is the plain
+   base; the recommendation is `bidirectional-interpolation-variational-propagated.glsl` (../SHADERS.md).
+   After any edit to scenes.sh: `./scenecheck.sh [case...]`.
+3. **Gating a variant:** `CONTROL=<label> TAG=<name> probes/limb/gateset.sh "<label>:<absolute path> ..." [runs]`
+   runs every shader in the set over the whole ladder and tables the per-case means against the control (set
+   `PY=python3` where there is no `$HOME/np-build/venv`). Regenerate the control first and confirm it matches the
+   committed file. On Linux (Mesa) and on macOS with mvk-env.sh, one run is a valid gate.
+4. **Real footage:** `./screen.sh <video>` (find segments on ones), then
+   `./realbench.sh <video> <label> <shader|linear|hold> [seconds...]`, `./realanalyze.py [labels...]` (trust
+   SSIM) and `./edgeerror.sh <segment> [labels...]`. Read "Real-footage traps" first.
+5. **The master tier:** `probes/masters/check.sh <outroot> [scenes...]`, then
+   `probes/masters/table.py <outroot>/flat/results.tsv`; `probes/masters/fieldtier.sh` for the field.
+6. **After editing any document:** `./linkcheck.py`. It checks that every relative link and `#anchor` resolves
+   inside this tree, as the public copy sees it, and exits 1 on any bad link.
+
+**macOS: MoltenVK determinism.** `mvk-env.sh` sets `MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0` and
+`MVK_CONFIG_MAX_ACTIVE_METAL_COMMAND_BUFFERS_PER_QUEUE=1` (a value already set wins; `MVK_DETERMINISTIC=0` opts
+out, for timing runs). bench.sh and the master tier source it. realbench.sh, visuals.sh, scenecheck.sh, loop.sh,
+watch.sh, prospect.sh, jitter.sh, tieprobe.sh, smoke.sh's own renders and the older probes do not: run
+`. ./mvk-env.sh` in the shell first. With it a Mac ladder repeats within 0.01 dB, and the best-of-three practice
+in the record below is retired. For bit-exact renders add libplacebo's `dithering=ordered_fixed`
+([MOLTENVK-NONDETERMINISM-INVESTIGATED.md](../MOLTENVK-NONDETERMINISM-INVESTIGATED.md)).
+
+**Linux, in a container** (the deterministic host). The image and volume names are arbitrary; `<tree>` is this
+tree's checkout inside the volume:
+
+    docker build -t nframe-build - < linux/Dockerfile          # from the top of this tree
+    docker run --rm --device /dev/dri -v nframe-vol:/work nframe-build \
+      bash /work/<tree>/linux/build-linux.sh                   # builds under /work, then runs smoke.sh
+    docker run --rm --device /dev/dri -v nframe-vol:/work nframe-build bash -c \
+      'cd /work/<tree>/tests && FFMPEG=/work/ffmpeg/ffmpeg FFPROBE=/work/ffmpeg/ffprobe \
+       ./bench.sh all ../shaders/<shader>.glsl <label> && ./analyze.py --variants'
+
 ## The idea
 
 Real footage is a bad first debugging surface. It is complex, it has no
@@ -79,6 +165,14 @@ warp or the blend.
 | `R1`/`R2` | **rotation**, constant and accelerating (below) |
 | `V1`/`V2`/`V3`/`H1`/`H2` | periodic structure **below the coarse level's Nyquist**, panning along its own period (below) |
 | `P1`-`P5` | horizontal stairs panning **along their bars** (the aperture) with a weak speckle riding on them; `P4` with a crosser in front, `P5` on a fine speckle that aliases (below) |
+
+(2026-10-01: the default ladder, `ALL_CASES` in scenes.sh, is 42 cases. Besides
+those above it runs `F2_fourier_accel` (F1's boundary, accelerating),
+`R3_rot_tex` (R2's rotation with a textured interior), `O1`-`O6` (oscillating
+squares; O5 the field-calibration scene, O6 its jerk control) and `A4`-`A7`
+(textured constant acceleration). The cases outside `ALL_CASES` -- `O7`-`O10`,
+`E1`-`E4`, `W1`-`W3`, `K1`-`K3`, `B1`, `C1`-`C3` -- run only by name, e.g.
+`./bench.sh K1_limb_sweep_wall <shader> <label>`.)
 
 The velocity ladder is calibrated against the shader's own arithmetic, not
 picked arbitrarily: the coarse search reaches `step_px * 1.9375` coarse
@@ -395,7 +489,7 @@ diagnostic (mode 6) reads flat in the shipped build, which runs QUAD_MODE 0; tha
 The same instrument (TRI_DIAG 7 at full scale 48, flat ground, output frames 12, 48 and 84 of 96 at 24 -> 24)
 on the four complex scenes, the truth per body part:
 
-| scene | host | median px (k = 12 / 48 / 84) | gross > 2 px | angle | gain |v| meas / true |
+| scene | host | median px (k = 12 / 48 / 84) | gross > 2 px | angle | gain \|v\| meas / true |
 |---|---|---|---|---|---|
 | snow | metal | 0.25 / 0.28 / 0.29 | 25% / 29% / 21% | 0.5 / 0.5 / 0.7° | 0.91 / 0.83 / 0.89 |
 | snow | placebo | 0.26 / 0.28 / 0.29 | 25% / 29% / 21% | 0.5 / 0.5 / 0.7° | 0.91 / 0.83 / 0.89 |
@@ -1378,7 +1472,7 @@ the standard frame-interpolation benchmark method and needs no special
 source material.
 
 ```bash
-export FFMPEG=~/build/ffmpeg/ffmpeg FFPROBE=~/build/ffmpeg/ffprobe
+export FFMPEG=/path/to/ffmpeg FFPROBE=/path/to/ffprobe   # the research build; see How to run it today
 ./screen.sh source.mkv                                   # find usable segments
 ./realbench.sh source.mkv linear linear      210 240 300
 ./realbench.sh source.mkv gen1 ../shaders/bidirectional-interpolation.glsl 210 240 300
@@ -1671,10 +1765,12 @@ needs deciding in one place rather than both.
 Requires an `ffmpeg` built against a libplacebo carrying
 `frame-mix-hook.patch` (see [README.md](../README.md)). Software Vulkan
 (Mesa lavapipe) is entirely sufficient -- this measures correctness, not
-speed, and needs no GPU.
+speed, and needs no GPU. (2026-10-01: the commands per host -- macOS, the
+Linux container, MSYS2 -- are in [How to run it today](#how-to-run-it-today)
+at the top.)
 
 ```bash
-export FFMPEG=~/build/ffmpeg/ffmpeg
+export FFMPEG=/path/to/ffmpeg FFPROBE=/path/to/ffprobe   # e.g. $HOME/np-build/ffmpeg/ffmpeg (build-macos.sh)
 ./bench.sh all              # run the whole ladder
 ./analyze.py                # summarise
 ```
@@ -1683,7 +1779,7 @@ Testing a change without touching the shipped shader:
 
 ```bash
 sed 's/REFINE_REG_LAMBDA = 0.05/REFINE_REG_LAMBDA = 0.20/' \
-    ../bidirectional-interpolation.glsl > /tmp/variant.glsl
+    ../shaders/bidirectional-interpolation.glsl > /tmp/variant.glsl
 ./bench.sh all /tmp/variant.glsl reg20
 ./analyze.py --variants     # columns side by side
 ```
@@ -1799,7 +1895,11 @@ exceeds what the estimator can resolve, and at that speed the source is so
 blurred there may be little left to match even with more reach. If a fix
 exists it is more likely to be architectural -- more pyramid levels, or a
 genuinely different estimator for extreme motion -- than another threshold on
-the signals above. See [ROADMAP.md](../../ROADMAP.md).
+the signals above. See ROADMAP.md (in the development repository, not in this
+copy). (2026-10-01: the later work on motion beyond the search's reach is in
+[NFRAME-LIMITS.md](../NFRAME-LIMITS.md), section 9: "The fast pan over fine
+texture" (2026-09-19), "The global-motion seed" (2026-09-20) and "The field on
+real bodies" (2026-09-27).)
 
 ## Checking the harness itself
 
@@ -1816,6 +1916,8 @@ It exists because "the same harness works on Linux and Windows" is easy to
 claim and easy to get wrong: the first run under MSYS2 immediately found a
 hardcoded `/mnt/c/...` path in `gen_variational.py` that meant the generator
 only ever worked on one machine. It currently passes 12/12 on both.
+(2026-10-01: smoke.sh now runs 17 checks over 12 of the tools here, not every
+tool; TOOLS.md's smoke.sh row lists them.)
 
 ## Finding defects in new material
 
@@ -1829,7 +1931,7 @@ Two tools support the workflow of hardening the shader against new sources,
 which is a different activity from benchmarking a change.
 
 ```bash
-export FFMPEG=~/build/ffmpeg/ffmpeg FFPROBE=~/build/ffmpeg/ffprobe
+export FFMPEG=/path/to/ffmpeg FFPROBE=/path/to/ffprobe   # the research build; see How to run it today
 ./prospect.sh <source> [start-seconds] [duration-seconds]
 ```
 
@@ -1900,7 +2002,9 @@ that source pair is built on it.
 proves nothing** -- both are bit-reproducible, so nothing ever perturbs the
 comparison. macOS exposed it only because its MoltenVK path is not
 reproducible; see the nondeterminism section of
-[BUILDANDUSAGE.md](../BUILDANDUSAGE.md).
+[BUILDANDUSAGE.md](../BUILDANDUSAGE.md). (2026-09-30: with `mvk-env.sh`'s two
+switches the macOS path is reproducible too, so `tieprobe.sh` is the way to
+expose this on every platform; see the end of this file.)
 
 `tieprobe.sh` supplies the perturbation deliberately, so the property can be
 measured where a baseline exists. It renders two builds whose every argmin cost
@@ -1986,7 +2090,10 @@ can easily be overfitted to that. Treat a result as a *lead to confirm on
 real content*, not a conclusion.
 
 **Nothing here measures performance.** These runs are software-rendered on
-purpose. Frame rate still has to be measured on real hardware.
+purpose. Frame rate still has to be measured on real hardware. (2026-10-01: the
+ladder now runs on GPUs as well, and render time is measured by the method in
+"Timing basis" below, `probes/cost/timing.sh` and `probes/cost/tiers.sh`;
+`bench.sh` itself still measures correctness only.)
 
 ## Timing basis (2026-09-04)
 
@@ -2036,7 +2143,9 @@ then its moved cases twice more.
   flips between two values (-4.44 and -3.43 over linear) on BOTH builds, and
   M2_period40 and R3_rot_tex wander by up to 0.3 dB. On the Mac, take the best
   of three for every shader, not only the propagated ones. A single-run
-  comparison flagged M2 at -1.14: that was one low sample.
+  comparison flagged M2 at -1.14: that was one low sample. (Superseded the
+  same evening: with `mvk-env.sh`'s switches a single Mac run repeats within
+  0.01 dB and best of three is retired; see the end of this file.)
 
 
 ## The Linux witness on the Arc (2026-09-30)
@@ -2143,6 +2252,12 @@ recommendation, case by case).
 - **The animation variants sit near the top on synthetic content,** a reminder that the ladder has no cel content to
   punish them.
 
+### The Mac wander solved: two MoltenVK switches (2026-09-30)
+
+The full account, with the bit-level follow-up of 2026-10-01, is
+[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](../MOLTENVK-NONDETERMINISM-INVESTIGATED.md); the instruments are
+`probes/energy/mvksweep.sh` and `probes/mvk/`.
+
 **Pre-registered, the MoltenVK settings sweep (2026-09-30 evening, before it ran).** The pendulum field read
 (pendulumfit.py) is repeated 4 times per setting, on the M5 and on the Intel Mac's RX 6600, counting the speed
 dropouts per run. The settings are MoltenVK's own environment switches: default; MVK_CONFIG_SYNCHRONOUS_QUEUE_SUBMITS=1;
@@ -2228,6 +2343,12 @@ MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0.
   gate.sh, smoke.sh and realbench.sh) and by the field tier (masters/fieldtier.sh, check.sh); the ten
   energy probes that call ffmpeg carry the same two lines. MVK_DETERMINISTIC=0 opts out (a timing run;
   energy/mvksweep.sh sets it, so its 'default' row stays MoltenVK's default). A value already set wins.
+- **Correction (2026-10-01) to the bullet above:** realbench.sh does not call bench.sh and does not source
+  mvk-env.sh; smoke.sh gets the switches only in its bench.sh step (8); gate.sh is probes/limb/gate.sh (with
+  gateset.sh, through bench.sh). Among the tools at this level only bench.sh sources it: realbench.sh, visuals.sh,
+  scenecheck.sh, loop.sh, watch.sh, prospect.sh, jitter.sh, tieprobe.sh and smoke.sh's own renders do not, so on a
+  Mac source it in the shell first (`. ./mvk-env.sh`). The python probes that carry the two lines are twelve in
+  energy/ and four in weave/ (weavesweep.py, weaveedge.py, unwrap.py, rescore1.py); probes/mvk/ sources the file.
 - **The best-of-three practice for Mac numbers is RETIRED wherever the switches are set.**
 - **The older probes that call ffmpeg directly** (about 35, from before today) do not source it. Export the two
   variables, or source tests/mvk-env.sh, before trusting a hundredth from them on a Mac.

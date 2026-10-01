@@ -2,7 +2,7 @@
 
     build_coherent.py <out.glsl> <plate-variant.glsl> [RADIUS_H=32] [MOVING_TAU=0.08] [CHAR_TAU=0.06] [MINFLOW_H=0.5]
 
-The owner's first cel-animation idea (ROADMAP.md, 'Feature-template warping'): a cel character is redrawn
+The owner's first cel-animation idea (the development roadmap's 'Feature-template warping', not in this directory): a cel character is redrawn
 between frames, so a dense per-texel flow tears it into pieces that warp to different places; but the
 character has an identity and one motion. Here: a pass at the half-res flow level takes, for every texel
 that is CHARACTER in either frame (not the confident plate's colour there), a trimmed mean of the dense

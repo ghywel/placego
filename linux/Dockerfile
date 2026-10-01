@@ -8,7 +8,7 @@
 #   zlib1g-dev      -- without it ffmpeg's configure drops the PNG encoder, and the field reads are PNGs
 #   python3-numpy   -- the harness's analysis
 #
-#   docker build -t claude-research - < Dockerfile
+#   docker build -t nframe-build - < Dockerfile
 FROM debian:trixie
 RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates git build-essential meson ninja-build pkg-config nasm \

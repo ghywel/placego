@@ -40,7 +40,7 @@ often the thing worth knowing.
 **The modest use: smoother video.** TVs and video players invent in-between
 frames to make 24-frames-per-second film play smoothly at 60. They place
 moving objects on straight lines, which is wrong whenever something is
-accelerating. Ours places them on the curve. Measured on test scenes, this
+accelerating. Our three- and four-frame versions place them on the curve. Measured on test scenes, this
 gives real but modest picture improvements — up to about 4 dB (a solid,
 visible gain) on strongly accelerating motion, and essentially no change on
 steady motion, which is most of what films contain. This use works today.
@@ -132,7 +132,10 @@ true jerk to be only a few to ten times larger — expect, because real
 footage has been viewed through the jerk reading (the demo app below) but
 cannot be calibrated against it: no real scene comes with its true jerk
 known — which is the practical limit of the instrument and, as "what to do
-next" explains, the reason the frame count stops at four for film.
+next" explains, the reason the frame count stops at four for film. (For the
+jerk reading itself, a later measurement found the four-frame version limited
+by its own approximation rather than by noise; the five-frame version reads
+jerk about twenty-five times more cleanly. See WHAT-IT-CAN-MEASURE.md.)
 
 ## What it cannot do — read this as carefully as the good news
 
@@ -160,8 +163,9 @@ next" explains, the reason the frame count stops at four for film.
   clear sky, smooth surfaces: no reading. This is a physical limit of
   tracking patches, not a bug — but it means the map is sparse, and its
   coverage varies from around 15% to nearly 100% depending on the content.
-  The newest variant lets a blank patch borrow the motion of its textured
-  neighbours, which fills the map but is a guess there, not a measurement.
+  One variant (the "propagated" one) lets a blank patch borrow the motion of
+  its textured neighbours, which fills the map but is a guess there, not a
+  measurement.
 - **Lone edges give confidently wrong readings.** An isolated edge only
   reveals motion *across* itself, not along it (a known optical
   limitation), and the instrument does not yet flag those regions — it
@@ -182,14 +186,18 @@ next" explains, the reason the frame count stops at four for film.
 - **Sudden events are excluded, not measured.** Scene cuts and moments
   where objects hide one another are detected and gated out; the reading
   there is deliberately withheld.
-- **Testing is narrow.** Synthetic scenes plus a small amount of real
-  footage; five consumer GPUs (two Intel, two AMD, one Apple); 720p and
-  1080p. No peer review, no independent replication yet, and the enabling
-  patch has not yet been accepted upstream. For picture smoothing, every one
-  of our current shaders beats or matches the standard straight-line method
-  on every test scene; on one — motion too small to detect — simply
-  repeating frames scores a little better than any of them: measured,
-  recorded, and traded deliberately. The synthetic test ladder itself is an
+- **Testing is narrow.** Synthetic scenes plus real footage (forty film
+  extracts, and some live-camera recordings); six consumer GPUs (two Intel,
+  two AMD, two Apple); 720p, 1080p and 4K. No peer review, no independent
+  replication yet, and the enabling patch has not yet been accepted upstream.
+  For picture smoothing, the recommended shader beats or matches the standard
+  straight-line method on forty-one of the forty-two test scenes. The
+  exceptions are recorded: on stripes moving exactly half their own spacing
+  each frame, where two answers fit equally well, it scores below that method;
+  on motion too small to detect, simply repeating frames scores a little better
+  than any shader; and on fine, evenly spaced bars like a railing moving across
+  a pattern (a hard case kept beside the ladder), every motion-based method here
+  scores below a plain blend. Measured, recorded, and traded deliberately. The synthetic test ladder itself is an
   instrument of continuous refinement - new tests find new problems. 
 
 ## Is this new? An honest answer
@@ -200,8 +208,8 @@ between frames, and later work extended it to four frames — all of it
 inside large neural networks, offline, judged on picture quality. Fluid
 dynamicists have measured velocity-and-acceleration fields from image
 sequences for decades (a field called particle image velocimetry), using
-pulsed lasers and laboratory rigs. We searched the record before the final
-work and wrote down what we found.
+pulsed lasers and laboratory rigs. We searched the record before each major
+step and wrote down what we found.
 
 **What appears to be new** — as far as our search of the record shows — is
 the combination: doing it *deterministically* (the same input always gives
@@ -227,7 +235,8 @@ consumer hardware, with ground truth available at every step — not
 because it is the method's natural home.
 
 The specific shader is written in one dialect (the mpv "hook" flavour of
-GLSL) and runs today as a production candidate. But every pass in it is
+GLSL), and the family now runs in a shipping video player through the
+Metal port. But every pass in it is
 ordinary parallel arithmetic — block matching, weighted sums, small
 polynomial fits — and translates to any vendor's compute platform: CUDA,
 Metal, Direct3D, ROCm, whatever comes next. Part of that claim is
@@ -246,7 +255,7 @@ our implementation's output. This repository holds the recipe and the
 proof that the recipe works. The kitchen was rented.
 
 That tax is visible from inside, too. Every measurement here is made
-twice, once in each direction, as a check — and until this week each
+twice, once in each direction, as a check — and until early September each
 direction was a separate trip through the graphics card. Merging each
 pair into a single trip, with the same arithmetic in the same order,
 took a fifth of the trips out of the five-frame build and made it about
@@ -284,8 +293,8 @@ quickly at film sizes.
 The demo is itself the "Port it" invitation below, already accepted
 once: the shader machine-translated to Metal, verified against the same
 ground truth as the original, and measurably faster than the portable
-pipeline on the same hardware (metal-demo/, with the full plan and
-outcomes in METALPORT.md).
+pipeline on the same hardware (the app's source is not in this
+repository; the first day's plan and outcomes are in METALPORT.md).
 
 ## What to do next with it
 
@@ -316,7 +325,7 @@ For anyone picking this up:
    and keeps it only where the coarse guess was fooled by a pattern too
    fine for it, or where it is plainly the better match and not merely
    sliding along an edge -- that last test being the edge gate this
-   document had listed as known but unbuilt. Diagonal scenes are joining
+   document had listed as known but unbuilt. Diagonal scenes are queued for
    the ladder. A further repair came from a question asked from outside the
    project: the tracker had only ever started its search from where the
    previous pair of frames said things had been, never from where the next
@@ -357,7 +366,7 @@ vibrating, resonating, or a small particle jiggling in a flow or a trap —
 that reasoning inverts. When a full cycle of the motion takes only about six
 frames to complete, the higher-order terms stop shrinking: each one carries
 as much signal as the last, and only noise decides when to stop. Our own test
-scenes show it plainly. Across thirty-two cases, the four-frame version beat
+scenes show it plainly. Across the thirty-two cases the ladder had then, the four-frame version beat
 the three-frame version clearly in exactly one — the fastest oscillation we
 test, six frames per cycle — and its jerk reading there is accurate to about
 one percent. Everywhere else the fourth frame is mostly noise.
@@ -397,34 +406,77 @@ same idea as shaders tuned to film or to the laboratory. The resolution
 half of that scaling is now built for the viewing shader: a 4K version
 whose every step is twice as coarse in pixels and therefore exactly as
 coarse as before in fractions of the screen, which on 4K footage beats the
-unscaled shader on every segment and runs faster. The frame-rate half, and
-the same treatment for the measuring shaders, are next, and the 4K disc is
-the test they will be judged on.
+unscaled shader on every segment and runs faster. The same scaling now
+applies to the measuring shaders. For measurement, the frame-rate half turned
+out to be simply a matter of feeding the instrument every k-th frame; a form
+of it that runs live is still open.
 
 ## Where to look
 
-- `HANDOVER.md` — how to get up to speed and take one of the open leads,
-  for a person or for an assistant
-- `README.md` — the enabling patch, documented for upstream review
-- `METHODOLOGY.md` — how the work was actually done, including the
-  division of labour between the human and the AI
-- `tests/TESTING.md` and `tests/` — the ground-truth test ladder
-- `TRIDIRECTIONAL.md` — the three-frame experiment: hypothesis,
-  algebra, calibration, failures and all
-- `QUADDIRECTIONAL.md` — the four-frame experiment, with its
-  pre-registered predictions and their outcomes
-- `QUINTDIRECTIONAL.md` — the five-frame experiment: where a fifth frame
-  pays and where it does not
-- `NFRAME-LIMITS.md` — where the frame count stops paying and why, what
-  "wobble" (the acceleration itself changing within the few frames being
-  fitted) really costs, and the rotation diagnosis with its control scenes
-  and the sampling defect they uncovered
-- `PRIOR-ART.md` — where this sits in the scientific record
-- `PLAN.md` — the working research plan, kept honest
-- `metal-demo/` and `METALPORT.md` — the native Metal port and demo app:
-  the template claim, executed and measured
-- `blackhole/` — nothing to do with any of the above; one small script from
-  an evening's curiosity
+Every document in this directory, grouped by what you are looking for. With no
+background, start with the first group. To build or review the patch, the
+second, then the instruments. For the science, WHAT-IT-CAN-MEASURE.md, then
+the research record, the scientific record and the instruments.
+
+**Start here**
+- [WHAT-WE-BUILT.md](WHAT-WE-BUILT.md) — this document.
+- [WHAT-IS-ACTUALLY-HAPPENING-HERE.md](WHAT-IS-ACTUALLY-HAPPENING-HERE.md) — what a shader is and why this
+  matters, written by the human collaborator for readers with no background.
+- [WHAT-IT-CAN-MEASURE.md](WHAT-IT-CAN-MEASURE.md) — what each shader reads, how well, and at what cost.
+- [README.md](README.md) — the enabling patch, where it has run, and how to try it.
+
+**Building and running it**
+- [BUILDANDUSAGE.md](BUILDANDUSAGE.md) — the build on Linux, Windows and macOS, the exact versions verified,
+  and the commands.
+- [SHADERS.md](SHADERS.md) — every shader: which one to use, what each is for, its numbers and its lineage.
+
+**The experiments, by number of frames**
+- [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) — three frames: acceleration. Hypothesis, algebra, calibration,
+  failures and all.
+- [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md) — four frames: jerk, with pre-registered predictions and their
+  outcomes.
+- [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md) — five frames: where a fifth frame pays and where it does not.
+- [SEXTDIRECTIONAL.md](SEXTDIRECTIONAL.md) — six frames: a fit that checks itself.
+
+**The research record**
+- [NFRAME-LIMITS.md](NFRAME-LIMITS.md) — where the frame count stops paying and why, the rotation diagnosis,
+  and the running log of the field's limits since.
+- [THREEDIMENSIONAL.md](THREEDIMENSIONAL.md) — what a flat field can and cannot say about motion in depth.
+- [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md) — can the field infer motion and energy it cannot see directly;
+  and the repairs to the tracker that came out of asking.
+
+**Animation**
+- [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
+  content.
+- [shaders/animation/ANI-PRIOR-ART.md](shaders/animation/ANI-PRIOR-ART.md) — the work on animation that this
+  leaned on.
+
+**Where it sits in the scientific record**
+- [PRIOR-ART.md](PRIOR-ART.md) — the published science surveyed before each leap, and what was taken from it.
+
+**Platforms and the native port**
+- [MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md) — why macOS results
+  wandered from run to run, and the fix.
+- [DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md](DOES-APPLES-UNIFIED-ARCHITECTURE-WORK.md) — whether frames really
+  stay in one copy on Apple silicon.
+- [METALPORT.md](METALPORT.md) — the first day of the native Metal port.
+
+**The instruments**
+- [tests/TESTING.md](tests/TESTING.md) — the ground-truth test ladder, how to run it, and its dated record.
+- [tests/TOOLS.md](tests/TOOLS.md) — every tool in the harness and the trap it exists to avoid.
+- [tests/probes/PROBES.md](tests/probes/PROBES.md) — every one-off measurement the record quotes, and where
+  it is recorded. Some carry their predictions, written before the run:
+  [anchor](tests/probes/anchor/PREDICTION.md), [limb](tests/probes/limb/PREDICTION.md),
+  [party](tests/probes/party/PREDICTION.md), [snap](tests/probes/snap/PREDICTION.md).
+
+**How the work is done**
+- [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md) — the rules the work follows, from the assistant's
+  saved memory, edited for reading and for import into your own.
+- [METHODOLOGY.md](METHODOLOGY.md) — how the method began, including the division of labour between the
+  human and the AI (history of the first phase).
+- [HANDOVER.md](HANDOVER.md) — how to get up to speed and take one of the open leads, for a person or for an
+  assistant (dated 2026-09-06).
+- [PLAN.md](PLAN.md) — the research plan of early September, kept as history.
 
 ## Who did this
 

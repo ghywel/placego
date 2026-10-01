@@ -273,3 +273,7 @@ quarter level's (20 px). Seen before this was written (cases.sh, two runs each, 
   cartoon -0.07. The cage's carry against the cage: -0.01, +0.08, -0.10, +0.08.
 - **B6.4, time: MET.** -0.6% and -0.2% against build 5. The combination is x1.29 of the recommendation, +20% over the
   cage, +12% over the cage + energy.
+
+2026-10-01: alias-chain.sh, b5-chain.sh, gate5-chain.sh and gate6-chain.sh, cited above as the runs behind the build
+4, 5 and 6 scores, were not committed and are not in this repository. Each citation lists the steps its wrapper ran;
+the drivers named there (v3phase.sh, real.sh, timing.sh) are in this folder.

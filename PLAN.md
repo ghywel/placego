@@ -1,5 +1,12 @@
 # Where this goes next
 
+> **History, frozen 2026-09-03.** This was the working plan for the three- and four-frame line from 2026-08-31 to
+> 2026-09-03. Everything it ranks has since been done, closed or overtaken (T3.1, four frames, is
+> [QUADDIRECTIONAL.md](QUADDIRECTIONAL.md)). It is kept unedited because its reversals are part of the record. For
+> what is open now, read the newest dated entries of [NFRAME-LIMITS.md](NFRAME-LIMITS.md) section 9 and
+> [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md); for which shader to use, [SHADERS.md](SHADERS.md); for how the work is
+> done now, [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md).
+
 A reassessment, because the leads had gone vague rather than dead. Most of
 them were real questions with no attached *prediction* and no *stopping rule*,
 which is what makes a path feel stale: you cannot tell whether pulling on it

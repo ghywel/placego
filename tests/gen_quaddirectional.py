@@ -452,12 +452,15 @@ def main():
     assert hooks == 68 + 3 * extra, f"expected {68 + 3 * extra} passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     header = HEADER
-    if CADENCE_BRANCH:
-        header = header.replace("//   ./tests/gen_quaddirectional.py\n", "//   CADENCE=1 ./tests/gen_quaddirectional.py\n")
     if SRC.name != "bidirectional-interpolation.glsl":
         header = header.replace("bidirectional-interpolation.glsl", SRC.name)
         header = header.replace("//   ./tests/gen_quaddirectional.py\n",
                                 f"//   ./tests/gen_quaddirectional.py {DST.name} {SRC.name}\n")
+    # The CADENCE prefix goes on AFTER the arguments: done first (until 2026-10-01) it stopped the line above from
+    # matching, and the cadence file's banner said "CADENCE=1 ./tests/gen_quaddirectional.py" with no arguments --
+    # which, followed, overwrites the stock quad.
+    if CADENCE_BRANCH:
+        header = header.replace("//   ./tests/gen_quaddirectional.py", "//   CADENCE=1 ./tests/gen_quaddirectional.py", 1)
     DST.write_text(READING.add_tail(header + result), newline="\n")
     print(f"  {DST.name}: {hooks} passes "
           f"({24 + extra} base + 8 slot-2/3 lumas + 2 cut stats + {24 + 2 * extra} pair flow "

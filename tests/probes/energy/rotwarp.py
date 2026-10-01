@@ -142,6 +142,11 @@ rad = geom(0.0)[2]
 
 # the field at N:N and the rigid fit per source frame
 fld, nf = run("format=yuv420p,libplacebo=fps=24:frame_mixer=custom_n:custom_shader_path=_vel.glsl", 24, src, channels=2)
+# 2.5e: the DEFAULT's own flow (its read_view 4: the final half-level flow it warps with), for the family's matching cost
+_rt = (SHADERS / f"{REC}.glsl").read_text()
+_rs, _rn = re.subn(r"(//!PARAM read_view\n(?://!.*\n)+)0\n", r"\g<1>4\n", _rt); assert _rn == 1
+(work / "_recvel.glsl").write_text(_rs)
+recfld = None
 cy_, cx_ = np.mgrid[4:H:8, 4:W:8].astype(np.float64) + 0.5
 wfit = np.full(N, np.nan)
 for k in range(min(N, nf)):
@@ -343,11 +348,56 @@ def warp_found(n, ring=False, repair=False, thr=1.0, grow=True):
 
 
 if found: VARIANTS = VARIANTS + ("found", "found2", "found3", "found4")
+
+
+def warp_found5(n):
+    """2.5e: found2's candidate pixels; the rigid draw replaces rec where it is clearly cheaper by its matching cost, or
+    on a TIE where the pixel is on a print (the 1/8 rival-basin gate) and the two motions differ by more than 2 px"""
+    global recfld
+    if recfld is None:
+        recfld, _ = run("format=yuv420p,libplacebo=fps=24:frame_mixer=custom_n:custom_shader_path=_recvel.glsl", 24, src, channels=2)
+    t = tt(n); k = int(math.floor(t)); a = t - k
+    if k not in found or k + 1 not in found or k + 1 not in recfld: return rec[n]
+    core = found[k][0]; sol = found[k + 1][1]
+    big = ndi.binary_dilation(core, np.ones((3, 3)), iterations=RING)
+    vx, vy, w, s = sol; dth = math.atan2(w, 1 + s)
+    p = np.array([cx_[core].mean(), cy_[core].mean()])
+    vp = np.array([vx - w * (p[1] - REF[1]) + s * (p[0] - REF[0]), vy + w * (p[0] - REF[0]) + s * (p[1] - REF[1])])
+    qx, qy = XX - p[0] - a * vp[0], YY - p[1] - a * vp[1]
+    kx, ky = R(-a * dth, qx, qy); kx, ky = kx + p[0], ky + p[1]
+    fx, fy = R((1 - a) * dth, qx, qy); fx, fy = fx + p[0] + vp[0], fy + p[1] + vp[1]
+    ci, cj = np.floor(ky / 8).astype(int), np.floor(kx / 8).astype(int)
+    ok = (ci >= 0) & (ci < big.shape[0]) & (cj >= 0) & (cj < big.shape[1])
+    m = np.zeros((H, W), bool); m[ok] = big[ci[ok], cj[ok]]
+    inc = np.zeros((H, W), bool); inc[ok] = core[ci[ok], cj[ok]]
+    v0 = np.zeros((H, W)); v1 = np.zeros((H, W))
+    v0[m] = sample(S(k), kx[m], ky[m]); v1[m] = sample(S(k + 1), fx[m], fy[m])
+    cand = m & (inc | (np.abs(v0 - v1) < TAU))                       # found2's pixels
+    d = (recfld[k + 1][..., :2].astype(np.float64) - 0.5) * 64.0     # the default's flow, px (the k + 1 convention)
+    r0 = np.zeros((H, W)); r1 = np.zeros((H, W))
+    r0[cand] = sample(S(k), XX[cand] - a * d[..., 0][cand], YY[cand] - a * d[..., 1][cand])
+    r1[cand] = sample(S(k + 1), XX[cand] + (1 - a) * d[..., 0][cand], YY[cand] + (1 - a) * d[..., 1][cand])
+    box = lambda z: ndi.uniform_filter(np.where(cand, z, 0.0), 5) / np.maximum(ndi.uniform_filter(cand.astype(float), 5), 1e-6)
+    c_rig = box(np.abs(v0 - v1)); c_rec = box(np.abs(r0 - r1))
+    sys.path.insert(0, str(HERE.parents[1] / "limb")); import ambiguity as AM
+    mg, rg8, _, _ = AM.analyse(np.stack([S(k), S(k + 1)]), 0)
+    gate8 = ndi.binary_dilation((mg < 0.3) & (rg8 >= 0.02), np.ones((3, 3)))
+    gate = np.repeat(np.repeat(gate8, 8, 0), 8, 1)[:H, :W]
+    dis = np.hypot(fx - kx - d[..., 0], fy - ky - d[..., 1]) > 2.0    # the two motions over the interval differ
+    # ONLY WHERE THE MOTIONS DISAGREE, in both branches (changed before the batch, after two smoke cases): where the two
+    # agree, rec's drawing is the better one (2.5: rec beat even the TRUE rigid warp on the slow pendulum)
+    pick = cand & dis & ((c_rig < c_rec - 0.005) | ((np.abs(c_rig - c_rec) <= 0.005) & gate))
+    img = rec[n].copy(); img[pick] = ((1 - a) * v0 + a * v1)[pick]
+    return img
+
+
+if found: VARIANTS = VARIANTS + ("found5",)
 rows = {"rec": []} | {v: [] for v in VARIANTS}; full = {k: [] for k in rows}
 for n in interp:
     m = disc(geom(tt(n))[0], rad, 2.0)
     for how in VARIANTS:
-        img = (warp_found(n, how in ("found2", "found3", "found4"), how in ("found3", "found4"),
+        img = (warp_found5(n) if how == "found5" else
+               warp_found(n, how in ("found2", "found3", "found4"), how in ("found3", "found4"),
                           2.0 if how == "found4" else 1.0, how != "found4") if how.startswith("found") else warp(n, how)[0])   # outside the region, exactly rec's frame
         rows[how].append(psnr(img, truth[n], m)); full[how].append(psnr(img, truth[n]))
     rows["rec"].append(psnr(rec[n], truth[n], m)); full["rec"].append(psnr(rec[n], truth[n]))

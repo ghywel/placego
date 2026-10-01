@@ -1,10 +1,12 @@
 """Score a machine-read velocity frame against a manifolds.py truth field.
 
-    fieldcheck.py <v.png (rgb48le, mode 4)> <truthdir> <frame> [fs=32] [outprefix]
+    fieldcheck.py <v.png (rgb48le, mode 4)> <truthdir> <frame> [fs=32] [outprefix] [erode=3]
+
+    (outprefix "" writes no images; erode is the boundary margin in px, 1-2 for tube scenes)
 
 Decodes 0.5 + px / (2 fs) from R and G (the PNG is read through ffmpeg as raw rgb48le: no image library
-on this Python), compares with truth_<frame>.npy over the visible mask eroded by 6 px so the boundary's own
-ambiguity is not scored, and prints: median and 90th-percentile |error|, the gross fraction (|error| >
+on this Python), compares with truth_<frame>.npy over the visible mask eroded by ERODE px (default 3) so the
+boundary's own ambiguity is not scored, and prints: median and 90th-percentile |error|, the gross fraction (|error| >
 2 px), the median angular error where |v| > 1 px, and the same against the two neighbouring truth frames so
 a one-frame misalignment shows itself. Optional images (PPM): <outprefix>-meas / -true / -err, hue =
 direction, brightness = magnitude / (fs/4) (err: |err| / 4 px).

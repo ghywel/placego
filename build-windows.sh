@@ -30,8 +30,10 @@
 
 set -uo pipefail
 
+# Everything is found from this script's own directory (the patches, shaders/ and tests/ sit beside it), so the same
+# script works in the repository, where it is scripts/build-*.sh, and in a copy whose root IS scripts/ (2026-10-01:
+# it used to look for "$HERE/tests", which a copy without the scripts/ level does not have).
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO="$(cd "$HERE/.." && pwd)"
 ROOT="${ROOT:-$HOME/np-build}"
 PREFIX="$ROOT/libplacebo-install"
 JOBS="${JOBS:-$(nproc)}"
@@ -41,6 +43,22 @@ FROM="${1:-deps}"
 say()  { printf '\n\033[1m== %s\033[0m\n' "$*"; }
 info() { printf '   %s\n' "$*"; }
 die()  { printf '\n\033[31mFAILED: %s\033[0m\n' "$*" >&2; exit 1; }
+# PINS, as build-macos.sh (ported 2026-10-01): FFMPEG_REF=<full sha> PLACEBO_REF=<full sha> builds the exact
+# commits another host was gated on (BUILDANDUSAGE.md, "Pins"). A fresh clone is pinned; a reused clone must already
+# be at the pin, or the stage stops (a pin on a reused clone used to be ignored without a word).
+pin() {   # pin <clone dir> <ref or empty>
+  [ -n "$2" ] || return 0
+  ( cd "$1" && git fetch --depth 1 origin "$2" && git checkout -q FETCH_HEAD ) || die "could not pin $1 to $2"
+  info "pinned $(basename "$1") to $(cd "$1" && git rev-parse --short HEAD)"
+}
+check_pin() {   # check_pin <clone dir> <ref or empty>
+  [ -n "$2" ] || return 0
+  local head; head="$(cd "$1" && git rev-parse HEAD)" || die "cannot read $1's commit"
+  case "$head" in
+    "$2"*) info "$(basename "$1") is at the pin $2" ;;
+    *) die "$1 is at $head, not the pin $2 (re-clone it: FORCE=1, or delete $1)" ;;
+  esac
+}
 
 # ---------------------------------------------------------------------------
 # Preconditions
@@ -68,7 +86,7 @@ stage_wanted() {  # ordered stage gate, so `./build-windows.sh ffmpeg` resumes
 # ---------------------------------------------------------------------------
 say "environment"
 info "MSYSTEM  $MSYSTEM"
-info "repo     $REPO"
+info "scripts  $HERE"
 info "build    $ROOT"
 info "jobs     $JOBS"
 
@@ -96,6 +114,8 @@ PKGS=(
   # python-jinja, not python-jinja2.
   mingw-w64-x86_64-python
   mingw-w64-x86_64-python-jinja
+  # the test harness's python tools (smoke.sh, analyze.py) need numpy; without it smoke.sh fails after a clean build
+  mingw-w64-x86_64-python-numpy
 )
 info "pacman -S --needed ${#PKGS[@]} packages (this can take a while)"
 pacman -S --needed --noconfirm "${PKGS[@]}" || die "package install failed"
@@ -127,6 +147,7 @@ if [ "$FORCE" = 1 ] || [ ! -d "$SRC" ]; then
   info "shallow clone"
   git clone --depth 1 https://code.videolan.org/videolan/libplacebo.git "$SRC" \
     || die "clone failed"
+  pin "$SRC" "${PLACEBO_REF:-}"
   # A shallow clone has no submodules, so the opengl backend's glad dependency
   # is absent and that backend hard-fails. Vulkan is all this needs.
   info "applying frame-mix-hook.patch"
@@ -134,6 +155,7 @@ if [ "$FORCE" = 1 ] || [ ! -d "$SRC" ]; then
     || die "patch did not apply -- upstream may have moved; rebase it"
 else
   info "reusing existing clone (FORCE=1 to redo)"
+  check_pin "$SRC" "${PLACEBO_REF:-}"
 fi
 
 if [ "$FORCE" = 1 ] || [ ! -f "$PREFIX/lib/pkgconfig/libplacebo.pc" ]; then
@@ -168,12 +190,26 @@ if [ "$FORCE" = 1 ] || [ ! -d "$FF" ]; then
   rm -rf "$FF"
   info "shallow clone"
   git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git "$FF" || die "clone failed"
+  pin "$FF" "${FFMPEG_REF:-}"
+  # The two ffmpeg-side patches, as build-macos.sh and linux/build-linux.sh apply them (ported 2026-10-01; this
+  # script used to patch libplacebo only):
+  #   frame-mix-nn-threshold.patch -- without it the frame-mix hook never fires at N:N and a window of five or more
+  #     is short a frame at the boundary, with no error;
+  #   hw-base-encode-eof-nullcheck.patch -- an upstream NULL dereference on seek with an fps=-scaled output.
+  for p in frame-mix-nn-threshold.patch hw-base-encode-eof-nullcheck.patch; do
+    info "applying $p"
+    ( cd "$FF" && git apply --verbose "$HERE/$p" ) || die "$p did not apply -- upstream may have moved; rebase it"
+  done
+else
+  check_pin "$FF" "${FFMPEG_REF:-}"
 fi
+# A reused clone must already carry the N:N patch: an unpatched ffmpeg builds and runs without a word.
+grep -q 'ithresh = -1.0f' "$FF/libavfilter/vf_libplacebo.c" ||
+  die "$FF lacks frame-mix-nn-threshold.patch (FORCE=1 re-clones and re-applies)"
 
 if [ "$FORCE" = 1 ] || [ ! -x "$FF/ffmpeg.exe" ]; then
-  # No ffmpeg source changes are needed -- fps=, frame pacing,
-  # custom_shader_path and frame_mixer= string lookup all already exist in
-  # vf_libplacebo.c. Only libplacebo is patched.
+  # ffmpeg carries the two small patches applied at the clone above; everything else the hook needs (fps=, frame
+  # pacing, custom_shader_path, frame_mixer= string lookup) already exists in vf_libplacebo.c.
   ( cd "$FF" &&
     PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig" ./configure \
       --enable-libplacebo --enable-vulkan \
@@ -205,8 +241,10 @@ FFPROBE="$FF/ffprobe.exe"
 [ -x "$FFMPEG" ] || die "no ffmpeg.exe -- run the ffmpeg stage first"
 
 info "--- filter present?"
-"$FFMPEG" -hide_banner -filters 2>/dev/null | grep -q libplacebo \
-  || die "libplacebo filter missing from this ffmpeg"
+# Captured first rather than piped into grep -q: under pipefail, grep -q's early exit SIGPIPEs ffmpeg and fails the
+# pipeline on success (found on macOS 2026-08-30; build-macos.sh and build-linux.sh do the same).
+FILTERS="$("$FFMPEG" -hide_banner -filters 2>/dev/null)" || true
+case "$FILTERS" in *libplacebo*) ;; *) die "libplacebo filter missing from this ffmpeg" ;; esac
 info "libplacebo filter present"
 
 info "--- which GPU does Vulkan give us?"
@@ -227,9 +265,9 @@ info "--- does the frame-mix hook actually fire?"
 # Reusing the definitions that the ladder already exercises removes the
 # duplicate that could drift in the first place.
 OUT="$ROOT/verify.mkv"
-if [ -f "$REPO/scripts/tests/scenes.sh" ]; then
+if [ -f "$HERE/tests/scenes.sh" ]; then
   # shellcheck disable=SC1091
-  . "$REPO/scripts/tests/scenes.sh"
+  . "$HERE/tests/scenes.sh"
   GRAPH="$(scene L1_trans_8px 24)"
   [ -n "$GRAPH" ] && [ "$GRAPH" != "UNKNOWN_CASE" ] || die "scenes.sh gave no scene"
 else
@@ -245,7 +283,7 @@ fi
 # a POSIX path with conversion disabled cannot be opened by a native binary.
 # A relative path is the only form that works, and it behaves identically on
 # Linux.
-if ! ( cd "$REPO/scripts/shaders" && "$FFMPEG" -y -hide_banner -loglevel error \
+if ! ( cd "$HERE/shaders" && "$FFMPEG" -y -hide_banner -loglevel error \
     -init_hw_device vulkan=vk -filter_hw_device vk \
     -f lavfi -i "$GRAPH" \
     -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation.glsl,format=yuv420p" \
@@ -262,9 +300,9 @@ info "--- do all the shaders compile on this platform?"
 # Same relative-path requirement as above, so this runs from inside the shader
 # directory and refers to each file by bare name.
 fail=0
-for f in "$REPO"/scripts/shaders/*.glsl; do
+for f in "$HERE"/shaders/*.glsl; do
   n="$(basename "$f")"
-  if ( cd "$REPO/scripts/shaders" && "$FFMPEG" -y -hide_banner -loglevel error \
+  if ( cd "$HERE/shaders" && "$FFMPEG" -y -hide_banner -loglevel error \
       -init_hw_device vulkan=vk -filter_hw_device vk \
       -f lavfi -i "color=c=blue:s=320x180:r=24:d=0.5" \
       -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=$n,format=yuv420p" \
@@ -289,10 +327,10 @@ cat <<'REF'
      L2_trans_16px    41.76
      L9_occlusion     39.83
 REF
-if [ -f "$REPO/scripts/tests/bench.sh" ]; then
+if [ -f "$HERE/tests/bench.sh" ]; then
   # bench.sh does not change directory, so a relative shader path resolves
   # from here -- which is required on Windows for the reason above.
-  ( cd "$REPO/scripts/tests" || exit 1
+  ( cd "$HERE/tests" || exit 1
     SH=../shaders/bidirectional-interpolation.glsl
     export FFMPEG FFPROBE
     export OUTROOT="$ROOT/bench"
@@ -302,7 +340,7 @@ if [ -f "$REPO/scripts/tests/bench.sh" ]; then
     python ./analyze.py --variants 2>/dev/null || python3 ./analyze.py --variants
   ) || info "ladder did not complete -- the build itself is still good; run it by hand"
 else
-  info "harness not found at $REPO/scripts/tests -- skipping"
+  info "harness not found at $HERE/tests -- skipping"
 fi
 
 say "done"

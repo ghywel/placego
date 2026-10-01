@@ -13,7 +13,9 @@ scripts fail a run that shows more than the two boundary skips.
 
 `fps=`, frame pacing, `custom_shader_path` loading and `frame_mixer=` string
 lookup all already exist in `vf_libplacebo.c`, so for **frame-rate scaling**
-(24 -> 60 and similar) libplacebo is the only thing that needs patching.
+(24 -> 60 and similar) with a window of up to four frames, libplacebo is the
+only thing that needs patching. The N:N case and windows of five or more frames
+need the ffmpeg-side patch as well (below).
 
 The scaling runs **downward as well**: `fps=` below the source rate resamples at the
 sparser output instants through the same hook, with no change to any shader. Measured
@@ -26,42 +28,107 @@ for the recommended shader, 47.6 / 54.3 for the quad-propagated). ffmpeg's own `
 filter, dropping frames, lands on none of the 2.5-ratio instants (33-37 dB), and the
 stock linear mixer blends at every instant (33-36 dB).
 
-A **second, optional patch**
-([frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch)) is needed only
-for the **N:N flow-field** use case -- running the shader at the source's own
-rate to read the motion field out, rather than to insert frames. Without it
-the hook silently never fires at a matched rate: libplacebo's frame queue
-point-samples to a single frame whenever the output and input rates agree to
-within `interpolation_threshold` (default `1e-6`), and a one-frame mix cannot
-satisfy an N-frame hook. The patch lowers that threshold, and only when a
-`PL_HOOK_FRAME_MIX` hook is actually attached. See
+There are three patches. The build scripts apply all three; apply all three by hand too.
+
+| patch | applies to | needed for |
+|---|---|---|
+| [frame-mix-hook.patch](frame-mix-hook.patch) | libplacebo | everything: the `PL_HOOK_FRAME_MIX` stage itself |
+| [frame-mix-nn-threshold.patch](frame-mix-nn-threshold.patch) | ffmpeg, `libavfilter/vf_libplacebo.c` | the **N:N** use case, and any shader declaring a window of **five or more** frames |
+| [hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch) | ffmpeg, `libavcodec/hw_base_encode.c` | an upstream NULL dereference on seek with an `fps=`-scaled hardware encode |
+
+The **N:N** use case runs the shader at the source's own rate to read the motion field out, rather than to insert
+frames. Without the second patch the hook silently never fires at a matched rate: libplacebo's frame queue
+point-samples to a single frame whenever the output and input rates agree to within `interpolation_threshold`
+(default `1e-6`), and a one-frame mix cannot satisfy an N-frame hook. The patch lowers that threshold, only when a
+`PL_HOOK_FRAME_MIX` hook is attached, and sizes the queue's lookahead to a declared window of five or more frames;
+without it a five-frame hook is skipped on some frames in favour of the builtin mixer, with no error. See
 [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) for the full diagnosis.
 
 Workaround if you would rather not patch ffmpeg: ask for `fps=24.0001`
 instead of `fps=24`. That clears the threshold while the two rates diverge by
 one frame only after ~240,000 frames.
 
-Three build guides follow, one per platform. They produce the same thing and
-the same shaders work on all of them -- verified by running the whole test
-harness on each (see "Verifying the build" below). Linux and Windows agree on
-the ladder numbers to 0.01 dB; macOS runs everything but does not reproduce
-its own numbers from run to run, which is documented in the macOS section and
-is a real finding rather than a caveat to skim.
+Three build guides follow, one per platform. They produce the same thing and the same shaders work on all of them,
+verified by running the test harness on each (see "Verifying the build"). Linux on Mesa repeats itself exactly from
+run to run, and is the place to gate a change in a single run. macOS, through MoltenVK, repeats to 0.01 dB once two
+MoltenVK switches are set, which the harness does (`tests/mvk-env.sh`; see
+[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md)). Different platforms still
+differ a little from each other, so compare a change on one host.
 
+- [Status and pins](#status-and-pins)
 - [Linux](#linux)
 - [Windows](#windows)
 - [macOS](#macos)
 - [Using it](#using-it)
+- [Verifying the build](#verifying-the-build)
+
+---
+
+## Status and pins
+
+*As of 2026-10-01.* Where each build was last verified, at which commits:
+
+| host | OS | Vulkan | route | last verified | run to run |
+|---|---|---|---|---|---|
+| Apple M5 | macOS 27.0.1, arm64 | MoltenVK 1.4.2 | [build-macos.sh](build-macos.sh) | 2026-10-01, at the pins below: `smoke.sh` 17 of 17 | 40 of 42 ladder cases identical, all within 0.01 dB, with the switches |
+| Intel MacBook Pro, Radeon RX 6600 eGPU (also a Radeon Pro 560X and a UHD 630) | macOS 15.8 | MoltenVK 1.4.2 | [build-macos.sh](build-macos.sh) | 2026-09-30, at the pins below: `smoke.sh` 15 of 15 | 41 of 42 identical with the switches |
+| Intel Arc A310 | Debian trixie in a container | Mesa (ANV) | [linux/](linux/) | 2026-09-30, at the pins below: `smoke.sh` 15 of 15 | 42 of 42 identical |
+| Radeon RX 6600 | Windows, MSYS2 / mingw-w64 | AMD Adrenalin 26.8.1 | [build-windows.ps1](build-windows.ps1) | 2026-09-11, at ffmpeg 5b614ef + libplacebo 3330a51; not yet built at the pins below | exact |
+
+`smoke.sh` gained two checks on 2026-10-01 (17 in all). The Windows script was brought into line with the other two
+the same day (it now applies all three patches and takes pins); that version has not been run on Windows yet.
+
+### Pins
+
+Numbers recorded from 2026-09-30 on were measured on:
+
+- ffmpeg `ff2059afd90c46d7e1b0f92542b204accb408ffb` (2026-09-30)
+- libplacebo `c42968d8616a1d1c8ad5f4f1a8d6f5a9cb396e56` (2026-09-23)
+
+with the three patches above. By default the scripts clone upstream's master of the day. To build the pinned
+commits, pass the full hashes:
+
+```bash
+FFMPEG_REF=ff2059afd90c46d7e1b0f92542b204accb408ffb \
+PLACEBO_REF=c42968d8616a1d1c8ad5f4f1a8d6f5a9cb396e56 ./build-macos.sh
+```
+
+The same two variables work for `linux/build-linux.sh` and `build-windows.sh`. A pin applies to a fresh clone; on a
+reused clone the scripts check that it is already at the pin and stop if it is not (`FORCE=1` re-clones on macOS
+and Windows; on Linux, delete the clone).
+
+Earlier pins: ffmpeg df48dc6 + libplacebo 41ac298 (the 2026-09-04 production build), then ffmpeg 5b614ef +
+libplacebo 3330a51 (verified 2026-09-11).
 
 ---
 
 ## Linux
 
+### In a container
+
+[linux/Dockerfile](linux/Dockerfile) is a Debian trixie image with everything below installed, and
+[linux/build-linux.sh](linux/build-linux.sh) is the by-hand recipe as a script (it also runs on a plain Debian
+host: `ROOT=$HOME/np-build linux/build-linux.sh`). The repository has to be inside the volume the container
+mounts:
+
+```bash
+docker build -t nframe-build - < linux/Dockerfile
+docker run --rm -v nframe-vol:/work nframe-build git clone <this repository> /work/nframe
+docker run --rm --device /dev/dri -v nframe-vol:/work nframe-build \
+    bash /work/nframe/scripts/linux/build-linux.sh          # builds, then runs smoke.sh
+```
+
+(Adjust the script's path if your copy of the repository has no `scripts/` level.) The stage argument selects:
+`placebo`, `ffmpeg`, `verify` or `all`. On a host with several GPUs, pass
+`-e MESA_VK_DEVICE_SELECT=<vendor:device>` (the Arc A310 is `8086:56a6`). The image has no `libva-dev`, so its
+ffmpeg cannot run the VAAPI command in "Using it".
+
 ### Dependencies
 
 ```bash
-sudo apt install -y git meson ninja-build pkg-config \
-    libvulkan-dev libshaderc-dev glslang-tools python3-jinja2
+sudo apt install -y git build-essential meson ninja-build pkg-config nasm cmake \
+    libvulkan-dev libshaderc-dev glslang-tools vulkan-tools mesa-vulkan-drivers \
+    python3-jinja2 python3-numpy zlib1g-dev libdrm-dev
 ```
 
 Two of these matter more than they look:
@@ -76,20 +143,35 @@ Two of these matter more than they look:
 
 For a GPU you also need working Vulkan drivers (`mesa-vulkan-drivers` on
 Intel/AMD). For correctness testing you do not need a GPU at all -- Mesa's
-software Vulkan device (**lavapipe**) is sufficient, and is what most of this
-project's measurements were taken on.
+software Vulkan device (**lavapipe**, in `mesa-vulkan-drivers`) is sufficient.
+This project's early measurements were taken on it; most later ones were taken
+on GPUs (the RX 6600, the M5 and the Arc A310).
+
+libplacebo's current master needs **newer Vulkan headers than Debian trixie ships** (1.4.309): it uses names
+that arrived later, and fails to compile against the older headers. Install the headers it was verified with, and
+point libplacebo's build at their registry (below):
+
+```bash
+git clone --depth 1 -b v1.4.357 https://github.com/KhronosGroup/Vulkan-Headers.git
+cmake -S Vulkan-Headers -B Vulkan-Headers/build -DCMAKE_INSTALL_PREFIX=/usr/local
+sudo cmake --install Vulkan-Headers/build
+```
 
 ### libplacebo, patched
 
 ```bash
 git clone --depth 1 https://code.videolan.org/videolan/libplacebo.git
 cd libplacebo
-git apply /path/to/Novel-Interpolate/scripts/frame-mix-hook.patch
+# optional, the pin: git fetch --depth 1 origin <sha> && git checkout FETCH_HEAD
+git apply <checkout>/scripts/frame-mix-hook.patch
 meson setup build --buildtype=release \
     -Dvulkan=enabled -Dopengl=disabled -Ddemos=false \
+    -Dvulkan-registry=/usr/local/share/vulkan/registry/vk.xml \
     -Dprefix="$HOME/libplacebo-install"
 ninja -C build && ninja -C build install
 ```
+
+(`<checkout>/scripts/` is wherever this directory is in your copy.)
 
 **`-Dopengl=disabled` is required, not optional,** with a shallow clone.
 `--depth 1` does not fetch submodules, so the `glad` dependency the OpenGL
@@ -98,7 +180,7 @@ backend needs is absent and that backend hard-fails. Nothing here uses OpenGL.
 Before building, confirm meson actually found shaderc:
 
 ```bash
-grep -i "shaderc" build/meson-logs/meson-log.txt | head -3
+grep 'Run-time dependency shaderc found: YES' build/meson-logs/meson-log.txt
 ```
 
 You want `YES`. If it says `NO`, stop and fix that first -- everything will
@@ -106,29 +188,24 @@ appear to build and then no shader will load.
 
 ### ffmpeg against it
 
+Patch first, then configure and build:
+
 ```bash
 git clone --depth 1 https://github.com/FFmpeg/FFmpeg.git ffmpeg
 cd ffmpeg
-PKG_CONFIG_PATH="$HOME/libplacebo-install/lib/x86_64-linux-gnu/pkgconfig" \
+# optional, the pin: git fetch --depth 1 origin <sha> && git checkout FETCH_HEAD
+git apply <checkout>/scripts/frame-mix-nn-threshold.patch
+git apply <checkout>/scripts/hw-base-encode-eof-nullcheck.patch
+PC="$(dirname "$(find "$HOME/libplacebo-install" -name libplacebo.pc | head -1)")"
+PKG_CONFIG_PATH="$PC" \
 ./configure --enable-libplacebo --enable-vulkan --disable-doc \
-    --extra-ldflags="-Wl,-rpath,$HOME/libplacebo-install/lib/x86_64-linux-gnu"
+    --extra-ldflags="-Wl,-rpath,$(dirname "$PC")"
 make -j"$(nproc)"
 ```
 
-For the N:N flow-field use case, and for any shader declaring a window of
-five or more frames, apply the ffmpeg-side patch before building (it also
-sizes the frame queue's lookahead to a declared window of five or more
-frames; without it a five-frame hook is skipped on some frames in favour
-of the builtin mixer, with no error):
-
-```bash
-git apply /path/to/Novel-Interpolate/scripts/frame-mix-nn-threshold.patch
-```
-
 The `-rpath` means the built binaries find `libplacebo.so` at run time without
-`LD_LIBRARY_PATH`. Adjust the pkg-config path to wherever `ninja install`
-actually put it (`find "$HOME/libplacebo-install" -name 'libplacebo.pc'`) --
-the multiarch directory name varies by distribution.
+`LD_LIBRARY_PATH`. The `find` locates the pkg-config file wherever `ninja install`
+put it -- the multiarch directory name varies by distribution.
 
 ### Alternative: jellyfin-ffmpeg
 
@@ -141,9 +218,12 @@ libplacebo patch directory:
 
 Also worth applying
 [hw-base-encode-eof-nullcheck.patch](hw-base-encode-eof-nullcheck.patch)
-to `src/libavcodec/hw_base_encode.c`. It fixes an upstream ffmpeg NULL pointer
-dereference that segfaults when seeking input with an `fps=`-scaled output --
-which is exactly the shape of command this project uses everywhere.
+in jellyfin-ffmpeg's ffmpeg source root (it patches `libavcodec/hw_base_encode.c`).
+It fixes an upstream ffmpeg NULL pointer dereference that segfaults when seeking
+input with an `fps=`-scaled output -- which is exactly the shape of command this
+project uses everywhere. This route as described does not carry
+`frame-mix-nn-threshold.patch`, so it has no N:N and no windows of five or more
+frames unless you add that patch to jellyfin-ffmpeg's ffmpeg source as well.
 
 ### Linux caveats
 
@@ -152,8 +232,9 @@ which is exactly the shape of command this project uses everywhere.
   install zlib and reconfigure.
 - **`--disable-x86asm`** avoids needing nasm/yasm if you do not have them, at
   some decoding speed cost. Fine for correctness work, not for production.
-- **Software Vulkan is slow but correct.** Roughly 30x real time at 1080p.
-  That is a fine way to verify behaviour and a poor way to measure speed.
+- **Software Vulkan is slow but correct.** Roughly 30 times slower than real
+  time at 1080p. That is a fine way to verify behaviour and a poor way to
+  measure speed.
 
 ---
 
@@ -165,21 +246,23 @@ produce the same numbers on it.
 
 ### Scripted
 
-```bash
-powershell -ExecutionPolicy Bypass -File scripts\build-windows.ps1
+```powershell
+powershell -ExecutionPolicy Bypass -File build-windows.ps1
 ```
 
 That installs MSYS2 if absent, updates its package database, and hands off to
 [build-windows.sh](build-windows.sh) inside the MINGW64 shell.
 It is resumable -- `-Stage deps|placebo|ffmpeg|verify` -- and asserts its
 preconditions rather than assuming them. The final stage compiles every shader
-and runs part of the ground-truth ladder against the Linux reference numbers.
+and runs part of the ground-truth ladder, printing reference numbers for you to
+compare by eye; nothing is compared automatically.
 
-**Last verified against upstream tip: 2026-09-11.** ffmpeg 5b614ef (2026-09-08) and libplacebo 3330a51
-(2026-09-03), shallow-cloned and built by this script into a separate root with all three patches applied: every
-patch applies cleanly, all 23 shaders compile, the hook fires, and the ladder's L1/L2/L9 agree with the
-2026-09-04 production build to the hundredth of a decibel (61.24 / 41.76 / 39.83). The production build stays at
-ffmpeg df48dc6 + libplacebo 41ac298 until its owner chooses to move it.
+**Status.** Last verified 2026-09-11, at ffmpeg 5b614ef (2026-09-08) + libplacebo 3330a51 (2026-09-03), on the RX
+6600 with Adrenalin 26.8.1. The ffmpeg patches were applied by hand at the time: the script then applied only
+`frame-mix-hook.patch`. Every patch applied cleanly, all 23 shaders of the day compiled, the hook fired, and the
+ladder's L1/L2/L9 agreed with the 2026-09-04 production build to the hundredth of a decibel (61.24 / 41.76 /
+39.83). Since 2026-10-01 the script applies all three patches, takes pins (see "Pins") and installs numpy for the
+harness; that version has not yet been run on Windows, and the build has not been made at the 2026-09-30 pins.
 
 ### By hand
 
@@ -196,8 +279,9 @@ pacman -S --needed --noconfirm git make diffutils \
     mingw-w64-x86_64-python-jinja mingw-w64-x86_64-python-numpy
 ```
 
-Then the same libplacebo and ffmpeg steps as Linux above, minus the `-rpath`
-flag, which Windows does not have. Afterwards:
+Then the same libplacebo and ffmpeg steps as Linux above (all three patches),
+minus the `-rpath` flag, which Windows does not have, and with
+`-Dd3d11=disabled` added to libplacebo's `meson setup`. Afterwards:
 
 ```bash
 cp "$HOME/libplacebo-install/bin/"libplacebo*.dll ffmpeg/
@@ -248,7 +332,8 @@ Linux never notices; here it fails partway through `ninja` as a bare
 **No rpath.** `libplacebo-*.dll` must sit beside `ffmpeg.exe` or be on `PATH`,
 or the binary fails at load with an unhelpful error.
 
-**WSL2 cannot give you Vulkan on a real GPU.** WSL exposes `/dev/dxg`, a D3D12
+**WSL2 cannot give you Vulkan on a real GPU** (measured August 2026; this project's WSL2 lavapipe setup was
+retired on 2026-09-19). WSL exposes `/dev/dxg`, a D3D12
 paravirtualisation interface, but no `/dev/dri` render node -- which Mesa's
 RADV/ANV drivers require. Vulkan there sees only lavapipe (software). Use WSL
 for correctness and a native Windows or Linux build for anything involving a
@@ -258,20 +343,25 @@ GPU.
 
 ## macOS
 
-**Builds and runs, verified 2026-08-30** on macOS 15.7.9 (Intel), against
-MoltenVK 1.4.2 and vulkan-loader 1.4.357, driving an AMD Radeon RX 6600 eGPU.
-[build-macos.sh](build-macos.sh) took five fixes to get there; it is no longer
-a considered starting point but a path that has been walked.
+**Status (2026-10-01).** Builds and runs on an Apple M5 (macOS 27.0.1, arm64) and an Intel MacBook Pro (macOS
+15.8; RX 6600 eGPU, Radeon Pro 560X, UHD 630), with MoltenVK 1.4.2 and vulkan-loader 1.4.357 from Homebrew. At the
+pins above: `smoke.sh` 17 of 17 on the M5 (2026-10-01), 15 of 15 on the Intel Mac (2026-09-30).
 
 ```bash
 ./build-macos.sh                 # deps | placebo | ffmpeg | verify
 ```
 
-The whole harness passes: `10 passed, 0 failed` from
-[tests/smoke.sh](tests/smoke.sh), including shader compilation, a 60-frame
-Vulkan render, and the ground-truth ladder against both baselines.
+The stage argument is a *starting* stage: `./build-macos.sh placebo` runs placebo, ffmpeg and verify. Environment:
+`ROOT` (default `~/np-build`), `JOBS`, `FORCE=1` (re-clone and rebuild), `FFMPEG_REF`, `PLACEBO_REF` (see "Pins").
+The result is `$ROOT/ffmpeg/ffmpeg`. The verify stage runs [tests/smoke.sh](tests/smoke.sh) and three ladder cases.
 
-**Read the accuracy caveat below before trusting a number from this platform.**
+**For measurement:** the harness sets two MoltenVK switches,
+`MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0` and `MVK_CONFIG_MAX_ACTIVE_METAL_COMMAND_BUFFERS_PER_QUEUE=1`
+(`tests/mvk-env.sh`; `MVK_DETERMINISTIC=0` opts out, for a timing run). Without them a Mac's results wander from run
+to run, by up to 6 dB on the ladder. An ffmpeg you run by hand does not get them: `. tests/mvk-env.sh` first. For a
+bit-exact render, also pass libplacebo's `dithering=ordered_fixed`. The whole story is in
+[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md); the record of 2026-08-30 below
+is kept as it was found.
 
 ### What is different here
 
@@ -281,9 +371,10 @@ to Metal. That makes macOS a genuinely third Vulkan implementation after Mesa
 and AMD's Windows driver -- and a translation layer rather than a driver, so
 it is a harder portability test than Windows was.
 
-The loader will not find a device unless it is told where the ICD manifest is.
-Note Homebrew installs the manifest under `etc`, not `share`, despite what
-most documentation says:
+With Homebrew's vulkan-loader 1.4.357 on Apple silicon, the loader finds MoltenVK without help (checked on the M5,
+2026-10-01). On the Intel Mac on 2026-08-30 it did not: the loader found no device unless told where the ICD
+manifest was. If `vulkaninfo --summary` lists no device, set it. Note Homebrew installs the manifest under `etc`,
+not `share`, despite what most documentation says:
 
 ```bash
 export VK_ICD_FILENAMES="$(brew --prefix)/etc/vulkan/icd.d/MoltenVK_icd.json"
@@ -300,6 +391,9 @@ by accident of which `bash` is first on `PATH`.
 
 ### The two things most likely to break -- one resolved, one confirmed
 
+*History, 2026-08-30 (the Intel Mac). The storage-image suspicion below was wrong; the cause and the fix are in
+MOLTENVK-NONDETERMINISM-INVESTIGATED.md.*
+
 - **`VK_KHR_push_descriptor` -- fine.** MoltenVK 1.4.2 advertises it and
   ffmpeg uses it (`Using device extension VK_KHR_push_descriptor`). This was
   the top suspect and it is a non-issue on current versions.
@@ -309,6 +403,15 @@ by accident of which `bash` is first on `PATH`.
   for reasons that turn out not to be about storage images at all; see below.
 
 ### The accuracy caveat: results here are nondeterministic
+
+**SOLVED (2026-09-30, the bit level 2026-10-01): see
+[MOLTENVK-NONDETERMINISM-INVESTIGATED.md](MOLTENVK-NONDETERMINISM-INVESTIGATED.md).** Two of MoltenVK's own
+switches remove it: `MVK_CONFIG_USE_METAL_ARGUMENT_BUFFERS=0` (Apple GPUs) and
+`MVK_CONFIG_MAX_ACTIVE_METAL_COMMAND_BUFFERS_PER_QUEUE=1` (AMD and Intel GPUs). The harness sets both on macOS
+(`tests/mvk-env.sh`). With them the M5 ladder repeats within 0.01 dB, and with libplacebo's
+`dithering=ordered_fixed` as well, the interpolators are bit-exact run to run. The outstanding framemd5 stress test
+named below has been run; that document has the tables. What follows is the original record of 2026-08-30, kept as
+it was written.
 
 Repeated runs of an identical case with an identical shader, same binary,
 nothing changed in between:
@@ -432,6 +535,9 @@ under a translation layer, which is what the platform is genuinely good for.
 
 ### GPU expectations
 
+*History, 2026-08-30. Superseded: since 2026-09-02 the RX 6600 is a Vulkan device on Windows too (Adrenalin 26.8.1),
+and the Apple M5 is a second modern GPU behind MoltenVK.*
+
 Apple added RDNA2 support for the Radeon RX 6000 series on Intel Macs in
 macOS 12 Monterey, and this is confirmed in practice: MoltenVK enumerates an
 RX 6600 eGPU as a Vulkan device and ffmpeg selects it
@@ -480,7 +586,7 @@ ffmpeg \
   -hwaccel videotoolbox -hwaccel_output_format videotoolbox_vld \
   -i input.mkv -c:a copy \
   -vf "hwdownload,format=nv12,\
-libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation-variational.glsl" \
+libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation-variational-propagated.glsl" \
   -c:v hevc_videotoolbox output.mkv
 ```
 
@@ -568,6 +674,8 @@ unreachable through ffmpeg.
 
 ### This is an Intel Mac -- Apple Silicon will differ, probably a lot
 
+*History: predictions of 2026-08-30, scored in the next section.*
+
 Everything in this section was measured on an **Intel** MacBook Pro (x86_64,
 macOS 15.7.9) with an AMD RX 6600 in a Thunderbolt enclosure. Several findings
 here are properties of that arrangement rather than of macOS, and an M-series
@@ -599,6 +707,8 @@ below scores each prediction against measurement. The reasoning is kept as
 written so the predictions stay honest.
 
 ### Apple Silicon: measured (2026-09-01, M2)
+
+*History, 2026-09-01 to 09-11. The current macOS status is at the top of this section.*
 
 Tested on the smallest Apple Silicon GPU sold: a fanless MacBook Air, M2
 with the **8-core GPU** variant (`system_profiler` and `ioreg` agree on 8),
@@ -638,7 +748,8 @@ predicted**; `build-macos.sh` adapts via `brew --prefix` without edits.
   `No module named 'numpy._core._multiarray_umath'` — a version-mismatch
   error that reads like a broken install. Fix: put `/opt/homebrew/bin`
   first on PATH for any harness run, so `python3` matches the venv that
-  `PYTHONPATH` exposes.
+  `PYTHONPATH` exposes. (Since 2026-09-30 the script puts its own venv first
+  on PATH; for a harness run by hand, `export PATH="$HOME/np-build/venv/bin:$PATH"`.)
 
 #### Correctness: agreement to hundredths of a dB
 
@@ -758,10 +869,8 @@ Variants: drop `scale=1280:-2,` for native resolution; append
 encode rows. `VK_ICD_FILENAMES` must point at Homebrew's MoltenVK
 manifest (under `etc`, not `share`). The inputs: `avengersclip.mp4` and
 the other small clips (`backtothefuture60sec24fps.mp4`, `bttf-hvc1.mp4`,
-`bluey.mkv`, `streetpeople*.mp4`) remain in np-scratch; the full films it
-held (and the video inside np-scratch/film4k and film4k2) were purged on
-2026-09-19 and must be re-extracted from the NAS before a full-film row
-is rerun.
+`bluey.mkv`, `streetpeople*.mp4`) and the films are not distributed with
+the repository.
 
 | run, 24→60 | tri (48 passes) | quad (68 passes) |
 |---|---|---|
@@ -867,21 +976,23 @@ Simplest form, software decode:
 
 ```bash
 ffmpeg -init_hw_device vulkan=vk -filter_hw_device vk -i input.mkv \
-  -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation-variational.glsl,format=yuv420p" \
+  -vf "libplacebo=fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation-variational-propagated.glsl,format=yuv420p" \
   -c:v libx264 -crf 18 output.mkv
 ```
 
-With hardware decode and encode, as used in production here:
+With hardware decode and encode, as used in production here (Linux; it needs an
+ffmpeg built with VAAPI, such as jellyfin-ffmpeg, or one configured with libva and
+libdrm, and your own render node from `ls -l /dev/dri/by-path`):
 
 ```bash
 ffmpeg \
-  -init_hw_device drm=dr:/dev/dri/renderD129 \
+  -init_hw_device drm=dr:/dev/dri/renderD128 \
   -init_hw_device vaapi=va@dr -init_hw_device vulkan=vk@dr \
   -filter_hw_device vk \
   -hwaccel vaapi -hwaccel_output_format vaapi \
   -i input.mkv -c:a copy -sn -dn \
   -vf "hwmap=derive_device=drm,format=drm_prime,\
-libplacebo=format=p010le:fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation-variational.glsl,\
+libplacebo=format=p010le:fps=60:frame_mixer=custom_n:custom_shader_path=bidirectional-interpolation-variational-propagated.glsl,\
 format=vulkan,hwmap=derive_device=vaapi,format=vaapi" \
   -c:v hevc_vaapi -global_quality 20 output.mkv
 ```
@@ -968,20 +1079,23 @@ Do not assume it works because it built. Run the harness:
 
 ```bash
 export FFMPEG=/path/to/your/ffmpeg FFPROBE=/path/to/your/ffprobe
-cd scripts/tests
+cd tests            # this directory's tests/
 ./smoke.sh
 ```
 
-That exercises every tool in the harness -- scene generation, frame-exact
-clipping, shader generation, the flow visualiser, the numpy metrics, the
-ground-truth ladder and the visual diff -- and reports pass/fail per tool. It
-needs no source video; everything is generated. It passes 10/10 on Linux,
-Windows and macOS.
+That exercises the harness's core tools -- scene generation, frame-exact
+clipping, shader generation and scaling, the flow visualiser, the numpy metrics,
+the ground-truth ladder and the visual diff -- and proves that every committed
+generated shader regenerates byte for byte. It needs no source video; everything
+is generated. It must end `17 passed, 0 failed` (17 checks as of 2026-10-01; 15
+on the M5, the Intel Mac and the Arc at the 2026-09-30 pins, before two were
+added). The build scripts' `verify` stage runs it for you. On macOS, the
+MoltenVK switches apply to the ladder (bench.sh sets them); see the macOS section.
 
 For the full ground-truth ladder:
 
 ```bash
-./bench.sh all ../shaders/bidirectional-interpolation-variational.glsl mine
+./bench.sh all ../shaders/bidirectional-interpolation-variational-propagated.glsl mine
 ./analyze.py --variants
 ```
 

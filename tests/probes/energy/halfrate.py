@@ -8,7 +8,8 @@ output frame against the REAL frame, PSNR-Y (ffmpeg's psnr, 1280 wide). An odd f
   short  -- the census flagged n - 1 or n inside a run of <= 4 frames (impact-like)
   long   -- ... inside a longer run (oscillation, flicker, alias)
   none   -- neither
-Numbers only; runs in the claude-research container with the footage mounted read-only at /footage.
+Numbers only; runs in the research container with the footage mounted read-only at /footage (FOOTAGE names
+another root).
 """
 import json
 import os
@@ -29,7 +30,7 @@ if sys.platform == "darwin" and os.environ.get("MVK_DETERMINISTIC", "1") != "0":
 WORK = pathlib.Path(os.environ.get("CENSUS_WORK", "/tmp/census")); WORK.mkdir(parents=True, exist_ok=True)
 log = sys.argv[1]
 stem = sys.argv[2] if len(sys.argv) > 2 else "bidirectional-interpolation-variational-propagated-global-cage-energy-carry"
-(WORK / "_interp.glsl").write_text((SHADERS / f"{stem}.glsl").read_text())
+(WORK / "_interp.glsl").write_text((pathlib.Path(stem) if stem.endswith(".glsl") else SHADERS / f"{stem}.glsl").read_text())   # a path, or a stem
 V = (".mkv", ".mp4", ".m4v", ".avi", ".mov")
 
 
@@ -42,7 +43,9 @@ def pick(root, n, seed):                                   # the census driver's
     return out
 
 
-paths = {p.stem: p for p in pick("/footage/Movies", 12, 20260930) + pick("/footage/Anime", 4, 20260930) + pick("/footage/Shows", 4, 20260930)}
+FOOTAGE = os.environ.get("FOOTAGE", "/footage")                 # the footage pool, read-only (the container's mount)
+paths = {p.stem: p for p in pick(f"{FOOTAGE}/Movies", 12, 20260930) + pick(f"{FOOTAGE}/Anime", 4, 20260930)
+         + pick(f"{FOOTAGE}/Shows", 4, 20260930)}
 
 
 def runs(frames):

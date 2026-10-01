@@ -33,8 +33,11 @@ ALIAS_CARRY=1 -- carry each pattern's END into its tied interior, every frame (t
     alias_carry.add_alias_e(t)      the 1/8-level basins pass (either switch adds it, once)
     alias_carry.add_alias_prior(t)  the gate in the two 1/8 refine passes
     alias_carry.add_alias_carry(t)  the five quarter-level passes"""
+import os
 
 TAU = 0.05
+# the CARRY's own tie threshold (stage 0c, 2026-09-30): an override that moves the carry alone; the prior's gate keeps TAU
+TAU_CARRY = float(os.environ.get("ALIAS_TAU_CARRY", TAU))
 LAMBDA = 0.001
 M_MAX = 1.0
 P1, P2 = 0.1, 1.0
@@ -479,7 +482,7 @@ def add_alias_carry(t, aperture=True):
     j = t.index("\n}\n", t.index("vec4 hook() {", i)) + 3
     k = t.index("//!HOOK FRAME_MIX", i)
     assert k >= j - 3, "alias carry: the B->A refine's hook() is not the pass's last function"
-    body = HYP.format(LAMBDA=LAMBDA, BIG=f"{BIG:.1f}", M_MAX=f"{M_MAX:.2f}", TAU=f"{TAU:.2f}", HALF=f"{BIG / 2:.1f}",
+    body = HYP.format(LAMBDA=LAMBDA, BIG=f"{BIG:.1f}", M_MAX=f"{M_MAX:.2f}", TAU=f"{TAU_CARRY:.2f}", HALF=f"{BIG / 2:.1f}",
                       APERTURE="1.0" if aperture else "0.0")
     body += SCAN.format(AX="H", W="4", H="HOOKED.h 4 /", WHAT="along the rows", LINE="row",
                         CELL="ivec2(i, line)", LC="y", WC="x", NC="x", P1=P1, P2=P2, BIG=f"{BIG:.1f}")

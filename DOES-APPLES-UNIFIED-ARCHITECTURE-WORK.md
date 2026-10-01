@@ -132,6 +132,9 @@ scripts pay it, and they can be made not to (§ 6).
   frames rendered through the shader with `getBytes` timed around each read. The 4K
   clip is a 30 s piece of a 4K HEVC film remuxed with `-c copy -tag:v hvc1`
   (AVFoundation refuses ffmpeg's default `hev1` tag; see the port's `VideoSource`).
+  (Note, 2026-10-01: the port's CLI and `VideoSource` are part of the app's source,
+  which is not published, so § 1, 2 and 4 cannot be re-run from this repository;
+  § 3 can.)
 - **§ 3** is `tests/probes/uma/readback.sh`: the four chains as a script, 20 s of the
   clip, interleaved (never A-then-B), two rounds after a warm-up, medians. The Intel
   and M2 columns are BUILDANDUSAGE.md's, measured by hand with the same commands.

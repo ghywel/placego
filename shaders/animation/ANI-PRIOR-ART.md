@@ -3,8 +3,9 @@
 The shaders in this folder are built on other people's results, and this file
 says whose, in the same spirit as `../../PRIOR-ART.md`: what was taken, what
 was independently re-derived, and what is ours. Surveyed 2026-09-05, when the
-owner's idea from the project's first week (`ROADMAP.md`, "A shader class
-specific to animation") was picked up again.
+owner's idea from the project's first week (the project roadmap's "A shader
+class specific to animation"; the roadmap is not part of this published
+folder, and the next section gives the idea) was picked up again.
 
 ## The idea's origin, and what the record already knew
 
@@ -84,7 +85,8 @@ free from raster; the level-set route sidesteps explicit strokes.
 **Ground-truth flow for animation.** *LinkTo-Anime: A 2D Animation Optical
 Flow Dataset from 3D Model Rendering* (2025) renders animation-style frames
 from 3D models with the true flow. It is the external benchmark for the field
-shaders on cel content, listed on the front line with the PIV datasets.
+shaders on cel content. It has not been run here, and no other document in
+this repository lists it yet.
 
 ## Ours, as far as the record shows
 

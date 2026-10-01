@@ -5,6 +5,11 @@ before its first run). The owner asked for "human-reading fields for any relevan
 snap - crackle - pop - whatever)". Snap is the fourth derivative of position; the quint already computes
 it and throws it away.
 
+Scored the same day in NFRAME-LIMITS.md, "Snap is readable, and the family's derivative ceiling is snap
+(2026-09-08)": on O5_osc_textured, correlation 0.997 and gain 0.927 (1 and 2 met); residual 0.179 px/frame^4
+against jerk's 0.047 (3: about four times, not twice); peak to residual 20:1 (4 missed, above 5: the link errors
+were not independent).
+
 ## What each window can carry
 
 A window of N frames gives N-1 displacement links, and a polynomial through them has N-1 coefficients.

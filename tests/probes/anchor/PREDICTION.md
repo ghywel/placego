@@ -3,6 +3,10 @@
 Written 2026-09-09 BEFORE the change, from the before-measurement and the code, so the after-measurement can
 falsify it rather than confirm whatever happens.
 
+Scored the same day in NFRAME-LIMITS.md, "The held anchor: where the reading was standing, and a control that
+could not be used (2026-09-09)": predictions 1-4 met as written; 5 (the picture path byte-identical) missed, and
+a semantically null edit gave the same 2-sample difference, so a byte compare is not usable as a control here.
+
 ## The mechanism
 
 The diagnostic field is built about an ANCHOR slot. Naturally the anchor is the straddling frame nearer the

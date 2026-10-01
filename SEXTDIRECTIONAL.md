@@ -1,5 +1,15 @@
 # SEXTDIRECTIONAL -- six frames, for the field
 
+> **Status (2026-10-01).** Built 2026-09-05 and calibrated once, without a pre-registration (below). The file is
+> `shaders/sextdirectional-interpolation-propagated.glsl` ([SHADERS.md](SHADERS.md)). On O9 the quint is a third more
+> accurate and this line half as noisy; the centred fit (the default) reports half an interval before the anchor.
+> It has since run the full ladder (see the note under "Owed"); the other owed items are not recorded as done.
+> Related: [QUINTDIRECTIONAL.md](QUINTDIRECTIONAL.md), the line it extends;
+> [NFRAME-LIMITS.md, "Weird geometry, and the six-frame line"](NFRAME-LIMITS.md#weird-geometry-and-the-six-frame-line);
+> [NFRAME-LIMITS.md, "Snap is readable"](NFRAME-LIMITS.md#snap-is-readable-and-the-familys-derivative-ceiling-is-snap-2026-09-08),
+> which records that this line spends its sixth frame on overdetermination rather than another order, and that its
+> residual is computed but never shown.
+
 Built on the night of 2026-09-05 at the owner's request, from the quint's
 generator by asserted substitution (`tests/gen_sextdirectional.py`), and
 calibrated once. Everything here is that one night's measurement; the
@@ -78,3 +88,7 @@ The field on O6 and O10 and the rest of the field cases; the full
 signal (mode 6 exists and is unmeasured); a host lookahead sized for six
 frames so the tail skips go; and a pre-registration written before any
 of that, which this line never had.
+
+*2026-10-01: the full ladder has since run (41 cases, L0 excluded, on the NAS's Arc):
+[tests/TESTING.md, "The Linux witness on the Arc (2026-09-30)"](tests/TESTING.md#the-linux-witness-on-the-arc-2026-09-30),
+the first deterministic family table.*

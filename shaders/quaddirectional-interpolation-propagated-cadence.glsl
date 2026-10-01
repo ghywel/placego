@@ -5,7 +5,7 @@
 // bidirectional-interpolation-propagated.glsl. Edit the base (shared machinery) or
 // the generator (everything [quad]-tagged) and regenerate:
 //
-//   CADENCE=1 ./tests/gen_quaddirectional.py
+//   CADENCE=1 ./tests/gen_quaddirectional.py quaddirectional-interpolation-propagated-cadence.glsl bidirectional-interpolation-propagated.glsl
 //
 // QUADDIRECTIONAL INTERPOLATION -- the four-frame experiment. Binds the
 // contiguous four-frame window around each output, computes all six

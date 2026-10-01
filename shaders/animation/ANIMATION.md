@@ -44,16 +44,24 @@ remaining limit, in "What is left" below, is exactly this: it needs a per-charac
 segmentation, and connected components of the moving region is the crude stand-in for a classifier.
 
 **One idea, three names.** It is called an image classifier in `NFRAME-LIMITS.md` (the owner's proposal,
-2026-09-07), feature-template warping in `ROADMAP.md` ("A shader class specific to animation"), and a
-segmentation in this file. They are the same thing. `SHADERS.md`, "Known remaining weakness: animation",
-describes the failure and says it needs a different class of shader, without naming the suspected answer.
+2026-09-07), feature-template warping in the project roadmap's "A shader class specific to animation" (the
+roadmap is not part of this published folder; the note is summarised in `ANI-PRIOR-ART.md`, "The idea's
+origin"), and a segmentation in this file. They are the same thing. `SHADERS.md`, "Known remaining weakness:
+animation", describes the failure, says it needs a different class of shader, and since 2026-09-09 also names
+this suspected answer and points here.
 
 
-The owner's idea from the project's first week (`ROADMAP.md`, "A shader
-class specific to animation"), built on 2026-09-05 on other people's
-results, credited in `ANI-PRIOR-ART.md`. Everything here is a variant of
-`bidirectional-interpolation-animation.glsl`, made from it by a builder
-script, each builder taking the previous variant as its input:
+The owner's idea from the project's first week (the roadmap's "A shader
+class specific to animation"; `ANI-PRIOR-ART.md`, "The idea's origin"),
+built on 2026-09-05 on other people's results, credited in
+`ANI-PRIOR-ART.md`. Everything here is a variant of
+`../bidirectional-interpolation-animation.glsl` as that file stood on
+2026-09-05, made from it by a builder script, each builder taking the
+previous variant as its input. The variants have not been rebuilt since:
+later commits replaced only their human-reading tails. So they carry
+`ZERO_SEED = 0`, where the animation base has had the zero seed on since
+2026-09-06. Each file opens with the base's own header comment; the table
+says which builder made it:
 
 | file | builder | what it adds |
 |---|---|---|
@@ -62,8 +70,14 @@ script, each builder taking the previous variant as its input:
 | `-snap.glsl` | (hand edit of the coherent warp) | a coherent character texel shows the nearer drawing, no blend |
 | `-lineart.glsl` | `build_lineart.py` | the line art of each frame at half res, a distance transform of it by jump flooding (eleven passes per frame), the matcher's pyramid fed luma and distance together, and a warp that morphs the two fields under the flow and paints ink at the level set, only where something moves and only where the ink is dark |
 | `-template.glsl` | `build_template.py` | on the line-art shader: an exhaustive template match of a character-sized window at 1/8 res, one rigid shift per moving thing by construction, used by the warp for character texels |
+| `-lineart-coherent.glsl` | `build_coherent.py`, run on `-lineart.glsl` | the line-art shader plus the coherent pass: the warp takes the trimmed-mean character motion instead of the dense flow. No measurement of this combination is recorded in this file |
 
-**Use `-lineart.glsl`.** It is the version to carry. The instruments are
+**Within this class, use `-lineart.glsl`.** It is the version to carry.
+The class is experimental: on real cel footage (below) it scores a little
+under the shipped animation shader, and by eye it was judged interesting
+and not yet viable. For watching hand-drawn content, the family's file is
+`../bidirectional-interpolation-animation.glsl`, and for the field its
+generated tri and quad (`-animation`); see `../../SHADERS.md`. The instruments are
 `tests/cel_scenes.py` (synthetic cel scenes with an exact in-between at
 every instant), `tests/bandmetric.py` (the error split into the moving band
 and the rest) and `tests/chamfer.py` (the chamfer line distance, the
@@ -115,8 +129,9 @@ is a third drawing that exists in neither source frame, so a crossfade and a
 morph both miss it and the metrics reward the hedge (Chen and Zwicker,
 ECCV 2022, say the same). In the frames the small walking characters are
 single, readable poses on the line-art and template shaders where the
-shipped shader shows two blended. The four-way half-speed videos are in the
-owner's renders folder; the ATD-12K benchmark (12,000 triplets with the
+shipped shader shows two blended. The four-way half-speed comparison
+videos were rendered for viewing and are not part of this repository; the
+ATD-12K benchmark (12,000 triplets with the
 middle frame as truth) is the external measure and needs a browser download
 from the AnimeInterp repository's Google Drive link.
 
@@ -131,3 +146,12 @@ from the AnimeInterp repository's Google Drive link.
   would want it at quarter res, and the jump-flood stride list is sized for
   a 2K source.
 - ATD-12K, with LPIPS beside the chamfer distance, once downloaded.
+- Content drawn on twos or threes (found 2026-09-19, after this class was
+  built). Each drawing is held for two or three frames, and every shader
+  here outputs a hold between the held copies and then moves across the
+  change. A cadence step in front of the shader recovers 16-25 dB on the
+  exact ladder, more than any estimator mechanism in this record
+  (`../../NFRAME-LIMITS.md`, "Content drawn on twos" and "The cadence
+  branch"; `ANI-PRIOR-ART.md`, the SVP survey). The family's step inside the window is
+  `../quaddirectional-interpolation-propagated-cadence.glsl`; no shader in
+  this folder has one.

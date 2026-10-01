@@ -509,6 +509,12 @@ COARSE_ENERGY_WE = float(os.environ.get("COARSE_ENERGY_WE", "1"))
 # ---------------------------------------------------------------------------
 ALIAS_PRIOR = os.environ.get("ALIAS_PRIOR", "0") == "1"
 ALIAS_CARRY = os.environ.get("ALIAS_CARRY", "0") == "1"
+# OUTLINE_ADOPT=1 (2026-09-30; tests/outline_adopt.py, ENERGY-TRANSFER.md "The shared stage"): a locked print adopts its
+# outline's motion at the quarter level, after the carry's pick. Needs ALIAS_CARRY=1.
+OUTLINE_ADOPT = os.environ.get("OUTLINE_ADOPT", "0") == "1"
+# PRINT_LATTICE=1 (2026-10-01; tests/print_lattice.py, ENERGY-TRANSFER.md lead 4): a fast periodic print re-scored at full
+# resolution among the aliases of its own lattice, after the carry's pick (and the adoption). Needs ALIAS_CARRY=1.
+PRINT_LATTICE = os.environ.get("PRINT_LATTICE", "0") == "1"
 ALIAS_APERTURE = os.environ.get("ALIAS_APERTURE", "1") == "1"    # the carry's aperture rule (build 5); 0 = build 4
 
 
@@ -805,7 +811,8 @@ if __name__ == "__main__":
     if GLOBAL_SEED:
         text = add_global_seed(text)
     if QZERO_MOIRE:
-        text = add_qzero_moire(text)
+        # QZERO_MOIRE_MIN (stage 0e, 2026-09-30): the Moire score that opens the zero descent; 0.25 unless overridden
+        text = add_qzero_moire(text, moire_min=float(os.environ.get("QZERO_MOIRE_MIN", "0.25")))
     if COHERENCE_GATE:
         text = add_coherence_gate(text)
     if EDGE_PROP:
@@ -819,11 +826,21 @@ if __name__ == "__main__":
             text = alias_carry.add_alias_prior(text)
         if ALIAS_CARRY:
             text = alias_carry.add_alias_carry(text, aperture=ALIAS_APERTURE)
+    if OUTLINE_ADOPT:
+        assert ALIAS_CARRY, "OUTLINE_ADOPT sits after the carry's pick: it needs ALIAS_CARRY=1"
+        import outline_adopt
+        text = outline_adopt.add_outline_adopt(text)
+    if PRINT_LATTICE:
+        assert ALIAS_CARRY, "PRINT_LATTICE reads the 1/8 basins and sits after the carry's pick: it needs ALIAS_CARRY=1"
+        import print_lattice
+        text = print_lattice.add_print_lattice(text)
     cost = 2 * (s / 256 + e / 64 + q / 16 + h / 4)
     env = ("GLOBAL_SEED=1 " if GLOBAL_SEED else "") + ("QZERO_MOIRE=1 " if QZERO_MOIRE else "") + ("COHERENCE_GATE=1 " if COHERENCE_GATE else "") \
         + (f"EDGE_PROP=1 EDGE_PROP_TAU={EDGE_PROP_TAU:g} " if EDGE_PROP else "") \
         + (f"COARSE_ENERGY=1 COARSE_ENERGY_WS={COARSE_ENERGY_WS:g} COARSE_ENERGY_WE={COARSE_ENERGY_WE:g} " if COARSE_ENERGY else "") \
         + ("ALIAS_PRIOR=1 " if ALIAS_PRIOR else "") + ("ALIAS_CARRY=1 " if ALIAS_CARRY else "") \
+        + ("OUTLINE_ADOPT=1 " if OUTLINE_ADOPT else "") \
+        + ("PRINT_LATTICE=1 " if PRINT_LATTICE else "") \
         + ("ALIAS_APERTURE=0 " if ALIAS_CARRY and not ALIAS_APERTURE else "")     # the zero seed is the recommendation's standing state and the line never named it
     text = BANNER.format(env=env, spec=spec, alpha=alpha, sigma=sigma,
                          s=s, e=e, q=q, h=h, cost=cost,

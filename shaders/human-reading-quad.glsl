@@ -3,9 +3,14 @@
 //
 // Produced by scripts/tests/gen_quaddirectional.py from
 // bidirectional-interpolation-propagated.glsl. Edit the base (shared machinery) or
-// the generator (everything [quad]-tagged) and regenerate:
+// the generator (everything [quad]-tagged) and regenerate in two steps, from scripts/:
 //
 //   ./tests/gen_quaddirectional.py human-reading-quad.glsl bidirectional-interpolation-propagated.glsl
+//   ./tests/add_human_reading.py shaders/human-reading-quad.glsl --default 1
+//
+// The second step sets read_view's default to 1 (the velocity field painted over the
+// picture). It and these banner lines are the only differences from
+// quaddirectional-interpolation-propagated.glsl. Without it the file is that shader.
 //
 // QUADDIRECTIONAL INTERPOLATION -- the four-frame experiment. Binds the
 // contiguous four-frame window around each output, computes all six
@@ -8446,7 +8451,7 @@ vec4 hook() {
 //!TYPE int
 //!MINIMUM 0
 //!MAXIMUM 9
-0
+1
 
 //!PARAM read_alpha
 //!DESC the painting's opacity follows the field's magnitude (the owner's idea, 2026-09-06). 0 = auto (the default): full at the frame's running maximum of the pooled field (attack, decay and floor in the READ_MAX pass), so the fastest thing in view is opaque and the rest in proportion on any content; above 0 = manual: full at this many px per interval (velocity; a tenth of it for acceleration and jerk), a measurement like the hue, for fine tuning; below 0 = the flat painting of before, saturating just above the gate

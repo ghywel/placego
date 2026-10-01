@@ -76,6 +76,24 @@ def div(m):
 t = re.sub(r"^(//!(?:WIDTH|HEIGHT) HOOKED\.[wh] )(16|8|4|2) /$", div, t, flags=re.M)
 assert set(n_div) == set(LEVELS), "levels found: %s" % sorted(n_div)
 report.append("divisors " + " ".join("%s:%d" % (lv, n_div[lv]) for lv in LEVELS))
+# ... and the outline adoption's coarse grid (OUTLINE_ADOPT, tests/outline_adopt.py): a cell is 8 quarter texels, sized
+# `HOOKED.w 31 + 32 /` (a ceiling), so it takes Q's factor; left alone it would be correct but four times too large
+n_grid = [0]
+def grid(m):
+    n_grid[0] += 1; c = 32 * F["Q"]
+    return "%s%d + %d /" % (m.group(1), c - 1, c)
+t = re.sub(r"^(//!(?:WIDTH|HEIGHT) HOOKED\.[wh] )31 \+ 32 /", grid, t, flags=re.M)
+if n_grid[0]:
+    report.append("adopt grid %d -> %d px" % (n_grid[0], 32 * F["Q"]))
+# ... and PRINT_LATTICE's 1/8-level grids (tests/print_lattice.py): a fused pass is two halves of N cells' slots each,
+# `HOOKED.w 8 / N * 2 *`, so its divisor takes E's factor like the level itself
+n_pgrid = [0]
+def pgrid(m):
+    n_pgrid[0] += 1
+    return "%s%d /%s" % (m.group(1), 8 * F["E"], m.group(2))
+t = re.sub(r"^(//!WIDTH HOOKED\.w )8 /((?: \d+ \*)? 2 \*)$", pgrid, t, flags=re.M)
+if n_pgrid[0]:
+    report.append("print grids %d" % n_pgrid[0])
 
 # 2. the hand-offs between levels: counted before rewriting, since a hand-off whose two factors are
 #    equal still reads 2.0 afterwards
@@ -152,6 +170,25 @@ assert n_en in (0, 2), "one frame's energy pass without the other's"
 if n_en:
     report.append("energy taps x%d (both frames)" % FRAME)
 
+# 4b. PRINT_LATTICE's luma samplers (tests/print_lattice.py): the passes work in TUNED pixels (8 per 1/8 cell, 4 per quarter
+#     texel, which the factors keep), so only the reading of the frame scales: a tuned pixel p is the frame's
+#     (p + 0.5) * FRAME, the corner of its FRAME x FRAME block, where bilinear averages the block
+n_ps = len(re.findall(r"_tex\(\(p \+ 0\.5\) \* (?:HOOKED|NEXT)_pt\)", t))
+assert n_ps in (0, 16, 20), "PRINT_LATTICE's samplers not in their known form: %d" % n_ps   # 20 with the cost cap's borrowing
+t = re.sub(r"_tex\(\(p \+ 0\.5\) \* (HOOKED|NEXT)_pt\)", lambda m: "_tex(((p + 0.5) * %.1f) * %s_pt)" % (FRAME, m.group(1)), t)
+if n_ps:
+    report.append("print samplers %d x%d" % (n_ps, FRAME))
+# ... and its cost cap's budget (opened cells per direction): the grid keeps its cell count, but a cell's samples lie
+# FRAME times further apart and cost about FRAME times as much (cache locality; measured 2026-10-01 on the M5: the
+# full-frame print pan at 4K runs in 19.7 ms with half the budget, 24.8 with the same), so the budget divides by FRAME
+n_bud = [0]
+def bud(m):
+    n_bud[0] += 1
+    return "/ %.1f, 1.0)" % (float(m.group(1)) / FRAME)
+t = re.sub(r"/ (\d+\.\d), 1\.0\)", bud, t)
+if n_bud[0]:
+    report.append("print budget %d sites /%d" % (n_bud[0], FRAME))
+
 # 5. nothing else may carry the frame's own scale. Every remaining HOOKED_pt use must be one the tool
 #    knows to be right as it stands.
 KNOWN = (
@@ -161,6 +198,7 @@ KNOWN = (
     re.compile(r"\w+_PX \* (?:HOOKED|NEXT)_pt"),                            # a scaled cap or tap in pixels
     re.compile(r"\d+\.\d+ \* HOOKED_pt\.[xy]\b"),                            # a scaled region in pixels
     re.compile(re.escape(conv)),
+    re.compile(r"_tex\(\(\(p \+ 0\.5\) \* \d+\.\d\) \* (?:HOOKED|NEXT)_pt\)"),   # a scaled print sampler
 )
 other = [l.strip() for l in t.split("\n")
          if ("HOOKED_pt" in l or "NEXT_pt" in l) and not l.strip().startswith("//") and not any(k.search(l) for k in KNOWN)]
