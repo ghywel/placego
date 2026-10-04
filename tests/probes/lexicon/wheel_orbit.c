@@ -32,6 +32,14 @@
  * certificate independently in 84 s: the state after mu steps is not zero, lambda steps return, no lambda / p returns
  * for p = 2, 7, 17, 1433, 5501, and the state after mu - 1 steps is not on the cycle. The verifier's counterfactuals,
  * lambda = 727, mu = 1 and lambda = 1456 for U2, are all rejected.
+ *
+ * PREDICTION O3, written 2026-10-05 before its run (the random-chaos step of that session): the wheel out of step.
+ *   U delayed by an odd number of steps breaks Lemma 3, so no right half can produce it. Conjecture LR covers every
+ *   column 1, possible or not, so: for U at odd phases the left half is still never eventually zero, and the orbit
+ *   cycles within 2 x 10^11 steps. The same symmetry makes all 28 odd phases one orbit; phases 1 and 3 are run, and
+ *   they must agree.
+ *   COMMAND: ./wheel_orbit U 1 200000000000 && ./wheel_orbit U 3 200000000000
+ *   REFUTED-BY: a cycle equal to the zero fixed point (that would refute LR), or no cycle within the budget.
  */
 #include <stdint.h>
 #include <stdio.h>
