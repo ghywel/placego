@@ -429,6 +429,8 @@ the research record, the scientific record and the instruments.
 - [BUILDANDUSAGE.md](BUILDANDUSAGE.md) — the build on Linux, Windows and macOS, the exact versions verified,
   and the commands.
 - [SHADERS.md](SHADERS.md) — every shader: which one to use, what each is for, its numbers and its lineage.
+- [BIDIRECTIONAL-AS-MATHEMATICS.md](BIDIRECTIONAL-AS-MATHEMATICS.md) — the base shader written out as equations,
+  pass by pass, and what writing it out showed.
 
 **The experiments, by number of frames**
 - [TRIDIRECTIONAL.md](TRIDIRECTIONAL.md) — three frames: acceleration. Hypothesis, algebra, calibration,
@@ -444,6 +446,8 @@ the research record, the scientific record and the instruments.
 - [THREEDIMENSIONAL.md](THREEDIMENSIONAL.md) — what a flat field can and cannot say about motion in depth.
 - [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md) — can the field infer motion and energy it cannot see directly;
   and the repairs to the tracker that came out of asking.
+- [REPAIRS.md](REPAIRS.md) — dated repairs to the shaders and tools: what was found, how it was fixed and checked,
+  and the open leads each round left.
 
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn

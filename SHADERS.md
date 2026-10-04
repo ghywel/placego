@@ -199,12 +199,39 @@ N = 4 -- jerk), with interpolation as the corollary. Both regenerate from
 the base via `tests/gen_tridirectional.py` / `tests/gen_quaddirectional.py`
 and inherit every base fix on regeneration.
 
+### How each file is made: hand-maintained or generated
+
+"Derives from the base" covers two different relationships, and they decide how far an edit reaches. A
+**generated** file is rebuilt from its source by a generator, so it picks up a change to that source on
+regeneration. A **hand-maintained fork** began as a copy and is edited directly, so a fix to the base reaches it only
+if it is made there too. The generated files of a fork come from the fork, not from the base. Checked on 2026-10-04:
+all 29 generated files rebuild byte-identical from the recipes below ([REPAIRS.md](REPAIRS.md)).
+
+| How it is made | Files | Source |
+|---|---|---|
+| Hand-maintained | `bidirectional-interpolation.glsl` (the base) | — |
+| Hand-maintained forks | `-seeded`, `-propagated`, `-animation`, `-diffuse-coarse`, `-diffuse-dual`, the six files in `shaders/animation/` | a copy of their parent in the tree above |
+| Hand-maintained examples | `motion-edges-dual.glsl`, `nframe-smoketest.glsl` | — |
+| `tests/gen_variational.py` | `-variational` | the base |
+| `tests/gen_variational.py`, `ZERO_SEED=1` plus the player-line switches | `-variational-propagated` and every `-variational-propagated-*` file | `-propagated` |
+| `tests/gen_tridirectional.py`, `tests/gen_quaddirectional.py` | the stock, `-seeded`, `-propagated` and `-animation` tri and quad files; `-propagated-cadence` with `CADENCE=1` | the base, or the fork of the same name |
+| `tests/gen_quintdirectional.py`, `tests/gen_sextdirectional.py` | `quintdirectional-interpolation-propagated`, `sextdirectional-interpolation-propagated` | `-propagated` |
+| `tests/gen_quaddirectional.py`, then `tests/add_human_reading.py --default 1` | `human-reading-quad.glsl` (the banner is edited by hand) | `-propagated` |
+| `tests/scale_shader.py ... 2` | every `-4k` file | its unscaled twin |
+
+The recipes for the variational line are in `tests/smoke.sh` (sections 3-3e) and in each file's section below.
+[BIDIRECTIONAL-AS-MATHEMATICS.md](BIDIRECTIONAL-AS-MATHEMATICS.md) writes the base out as equations, pass by pass.
+
 ### `bidirectional-interpolation.glsl` -- the base, 24 passes
 
 The hierarchical block-matching pyramid, and the file every other build in
-the family derives from. Edit this and the variational build inherits the
-change on regeneration; the human-reading view is generated into every
-shader from that shader's own final pass, so it cannot drift from it.
+the family derives from. Edit this and the stock variational, tri and quad
+builds inherit the change on regeneration; the forks (`-seeded`,
+`-propagated`, `-animation` and the rest) and everything generated from them
+need the edit made in the fork too (the table above). The human-reading view
+is generated into every shader from that shader's own final pass, so it
+cannot drift from it. Its equations, pass by pass, are in
+[BIDIRECTIONAL-AS-MATHEMATICS.md](BIDIRECTIONAL-AS-MATHEMATICS.md).
 
 Written against exactly 2 frames and needed *no changes* for the patch's
 N-frame generalisation -- `HOOKED` and `NEXT` still mean frame index 0 and

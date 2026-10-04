@@ -390,8 +390,9 @@ vec4 hook() {{
 
 """
     a = """// ---------------------------------------------------------------------
-// Final pass: bidirectional warp with forward/backward consistency-based
-// occlusion detection, full resolution
+// Final pass: motion-compensated warp and blend, full resolution (the
+// forward/backward occlusion fallback once here is gone: see NO OCCLUSION
+// FALLBACK below)
 // ---------------------------------------------------------------------
 //!HOOK FRAME_MIX
 //!BIND HOOKED
