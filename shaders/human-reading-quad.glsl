@@ -1921,12 +1921,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -1944,8 +1949,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -2125,12 +2132,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -2148,8 +2160,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -4031,12 +4045,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -4054,8 +4073,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -4238,12 +4259,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -4261,8 +4287,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -6168,12 +6196,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -6191,8 +6224,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -6374,12 +6409,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -6397,8 +6437,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -6827,12 +6869,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -6850,8 +6897,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -7031,12 +7080,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -7054,8 +7108,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -7242,12 +7298,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -7265,8 +7326,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -7447,12 +7510,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -7470,8 +7538,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -7659,12 +7729,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -7682,8 +7757,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
@@ -7865,12 +7942,17 @@ vec4 hook() {
         }
     }
 
-    // SUB-PIXEL REFINEMENT. Every search in this pipeline -- coarse and all
-    // three refine levels -- steps WHOLE texels of its own level, so without
-    // this the finest flow the estimator can express is one half-res texel,
-    // i.e. 2 full-res px per interval. Nothing finer in the sampled field is
-    // measured: it is bilinear interpolation of a half-res texture, which
-    // looks smooth and carries no extra information.
+    // SUB-PIXEL REFINEMENT. The three refine levels step WHOLE texels of
+    // their own level, added to the seed handed down, so without this no
+    // search after the coarse one can move the flow by less than one texel
+    // of this level (2 full-res px per interval in the unscaled shaders).
+    // The coarse search is not whole-texel: it steps 0.75, 0.375, ...,
+    // 0.046875 of its own texels, so its result is generally fractional, and
+    // the refine levels pass that fraction down as it is, never correcting
+    // it (BIDIRECTIONAL-AS-MATHEMATICS.md, section 12.4; until 2026-10-04
+    // this note said every search stepped whole texels). Nothing finer in
+    // the sampled field is measured: it is bilinear interpolation of a
+    // half-res texture, which looks smooth and carries no extra information.
     //
     // That floor is invisible to the interpolator on fast motion and decisive
     // for the acceleration field, which is a small residual of two such flows
@@ -7888,8 +7970,10 @@ vec4 hook() {
     // it was fitted to.
     //
     // Deliberately at the HALF-RES level only. The coarser levels are each
-    // re-searched by the level below, so sub-texel precision there is
-    // discarded before it can be used.
+    // re-searched by the level below, but only in whole texels around their
+    // result: a sub-texel fraction found there is not discarded by that
+    // search, it passes down uncorrected, as the coarse search's own fraction
+    // does (until 2026-10-04 this note said it was discarded).
     //
     // OFF in this shader, ON in the generated tridirectional one, and the
     // asymmetry is measured rather than arbitrary. Fractional flow forces the
