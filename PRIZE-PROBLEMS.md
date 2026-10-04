@@ -555,3 +555,132 @@ demand. The other half is the right side's: which right halves produce the
 template, and what in them decides that bit. If every long run passes through a template that the right side can
 only extend in a few ways, the weak form of B ("every run ends") becomes a statement about a growing but describable
 family. Then the X3 runs of 24 and 26 should show up as later members of the same family.
+
+### 8.3 What was already known, Rule 30's siblings, and the owner's harmonics (2026-10-04)
+
+**What was already known.** Before taking the next step, the field was surveyed (PRIOR-ART.md, "Before rung 2's
+leap"). Several of this project's results had been reached independently:
+
+| Here | Already known as |
+|---|---|
+| The forced left half (§5) | Condrey's Lemma 1, "triangular uniqueness" (arXiv:2609.09431) |
+| No constant bound for period two (X3, §8) | Condrey's conclusion: "At p=2 no bounded law can exist"; it uses a different statistic, but the fact is of the same kind |
+| Conjecture B, weak form (§8) | The "remaining inference" named by public period-two work (a bounded search to support radius 14) |
+| Rung 1's search (§5) | That bounded search; ours covers more (right halves to 18 cells, depth 256) |
+
+The survey found none of these anywhere: the two-sided measurements, the four arms, Lemmas 3 and 4, and the
+templates. It also brought in Rowland's "local restart": at row $2^n$ part of the starting row reappears and Rule 30
+"begins again" locally, because its right diagonals have periods $2^\alpha$.
+
+**The siblings (the random-chaos step).** The memory file asks for one step the plan did not call for. Rung 1 found no
+counterexample in 27 million cases, but a search that finds nothing must be shown able to find something. Rule 30 is
+$x' = l \oplus (c \vee r)$, and there are 16 rules of the form $x' = l \oplus g(c, r)$, all with the same left inverse.
+`rule30_siblings.py` runs the instrument unchanged on all 16, with every right half up to 14 cells and depth 128. A
+witness found by the inverse construction is confirmed by running the finite row forward. The instrument passes
+three checks:
+- Rule 30 has no witness.
+- Rule 60 ($g = c$) has the known one: a single 1 at depth 1.
+- For every rule, the forced left half, run forward, reproduces the trace (0 mismatches).
+
+Of the 8 rules that keep the empty row empty:
+
+| Rule | $g(c, r)$ | Witnesses, traces 01 / 10 | Longest zero run, 01 / 10 |
+|---|---|---|---|
+| 60 | $c$ | every right half / every right half | – |
+| 30 | $c \vee r$ | 0 / 0 | 17 / 16 |
+| 90 | $r$ | 0 / 0 | 16 / 15 |
+| 210 | $\bar c \wedge r$ | 0 / 0 | 16 / 15 |
+| 150 | $c \oplus r$ | 0 / 0 | 14 / 14 |
+| 120 | $c \wedge r$ | 0 / 0 | 9 / 10 |
+| 180 | $c \wedge \bar r$ | 0 / 0 | 1 / 1 |
+| 240 | $0$ | 0 / 0 | 1 / 1 |
+
+I predicted that only Rule 30 and the shift (240) would be witness-free (S4). **Refuted:** every one of them is,
+except Rule 60, the one rule whose left half ignores column 1. So, in this search, a period-two column never occurs
+once the right side can reach the left half. Rule 30 shares that property with its siblings, and its run lengths are
+much like those of Rule 90 and Rule 210.
+
+**Proposition 5 (Rule 90 has no finite configuration with a period-two column).** Under Rule 90, $x' = l \oplus r$,
+let a finite row have its support in $[-w, w]$. Then column 0 is 0 at time $2^n$ and at time $2^n + 1$ whenever
+$2^n > w + 1$.
+
+*Proof.* Rule 90 is linear, and a single 1 at position $j$ reaches $(0, t)$ with the value
+$\binom{t}{(t-j)/2} \bmod 2$. By Lucas' theorem, $\binom{2^n}{k}$ is odd only for $k \in \{0, 2^n\}$, and
+$\binom{2^n+1}{k}$ only for $k \in \{0, 1, 2^n, 2^n+1\}$. These need $|j| \in \{2^n - 1, 2^n, 2^n + 1\}$, outside the
+support. $\square$
+
+So column 0 is 0 infinitely often at even times and at odd times, and an eventually 2-periodic column has the word
+00. *Checked:* `rule30_sibling_proofs.py` covers every row with $w \le 6$ and every $n \le 8$ (65,530 cases, no
+violation). The counterfactual, the same claim at time $2^n + 2$, is caught. The proposition is almost certainly known
+(Lucas' theorem on Rule 90 is classical), but tonight's survey did not find it stated. It is Rowland's restart in
+its global form: at row $2^n$ Rule 90 holds two far-apart copies of the start, with nothing in between. It does not
+transfer: under Rule 30, column 0 is not 0 at those times (false in 49,001 of the 65,530 cases). Rule 30's restart is
+only local.
+
+**The owner's harmonics.** The owner's lead: "the right side changes nothing alone, the left side alone is close to
+random, and together they produce sharp, quantised behaviour ... this sounds very much like harmonics."
+`rule30_harmonics.py` tested the first form of it, blind on five words of period 3 and 4: the interaction's structure
+should sit at multiples of the trace's period $p$. **Refuted** for all five words (H1 and H2). The interaction is
+real, 20 to 200 times the noise floor, but it peaks at a lag of 7 for all three words of period 4. That points to a
+different kind of harmonic. Rule 30 on a ring of 7 cells has 4-cycles, and their columns are exactly 0001, 0011 and
+0111. So the left half resonates with Rule 30's own ring orbits, not with $p$.
+
+`rule30_resonance.py` (pre-registered, with a covariance that removes a flaw found in the first statistic) tested that
+on 15 words not yet looked at. Largest excess covariance between the arms, at any lag 1 to 12:
+
+| Words | Ring orbits with this column (rings up to 15 cells) | Largest excess covariance |
+|---|---|---|
+| 0001, 0011, 0111 | 7, 14 | **0.139, 0.191, 0.220, all at lag 7** |
+| 01, 10 | 7, 14 | 0.027, 0.015 |
+| 001, 011 | 12 | 0.023, 0.020 |
+| 01011 | 5, 10, 15 | 0.020 (predicted strong at lag 5 or 10: **refuted**) |
+| 00001, 01111 | 15 | 0.014, 0.025 |
+| the other 3 words of period 5, and all 9 of period 6 | none | 0.012 to 0.043 (predicted weak: **held**, 12 of 12) |
+
+The noise floor is 0.0007. So a word with no ring orbit never resonated (14 words; 00001 and 01111 have orbits only on
+the 15-cell ring, beyond the lags measured). A ring orbit is not enough on its own, though: 01, 001, 011 and 01011 have
+one and do not resonate at this statistic's sensitivity (the spectrum below finds 0101… ringing weakly). The strong
+resonance is the 7-cell ring's 4-cycle, and only that.
+
+**The owner's Fourier lead** (after Rowland's pyramid and triangle): "are we able to lean on ... the Fourier transform
+here to find frequency spikes?" Yes. The covariance above is half of a Fourier pair, and the power spectrum is its
+transform (Wiener–Khinchin). `rule30_spectrum.py` computes it from exact bit counts, with two controls that passed:
+coin flips give a flat spectrum (within 0.021), and a planted 7-periodic signal shows its spike at 1/7. Three results:
+
+- **The left half rings at sevenths.** For every word of period 4, the excess spectrum (both sides against left alone)
+  is a harmonic series of the 7-cell ring: lines at 1/7, 2/7 and 3/7, with the 14-cell ring's 1/14, 3/14 and 5/14
+  below them. The highest line is +2.4 for 0001 and 0011 and **+7.7 for 0111** (F0 held, 3 of 3). It was not blind: a
+  dry run of the code at a tiny size had shown it. The spectrum also sees what the lag statistic missed: **0101…
+  rings at sevenths too**, with its highest excess line at 2/7 (+0.52), and 1/7 and 3/7 present. That is about 15
+  times weaker than 0111.
+- **Column 1 is not made of octaves.** I predicted, blind, that column 1's spectrum for 0101… would show Rowland's
+  powers of 2: at least three of its five highest spikes at multiples of 1/32. **Refuted**: one of five (1/4). For
+  0001, column 1 is almost purely 4-periodic, a line at 1/4 of power 122 against 0.1 elsewhere. The right side nearly
+  locks column 1 into the 7-ring's 4-cycle, and that is why period 4 resonates so strongly.
+- **For 0101…, column 1 has a line of its own.** Its spectrum is dominated by a line at $f \approx 0.3036$ (power 65),
+  with its mirror at $1/2 - f$. Multiplying by the alternating trace maps $f$ to $1/2 - f$.
+  `rule30_spectrum_fine.py` pins the line at $f = 0.30365$ over 4096 steps; the strongest autocovariance lags are 10,
+  20, 36 and 56. That is within 0.0001 of $17/56$, and it rules out $3/10$, $7/23$ and $4/13$. Whether it is exactly
+  rational needs longer runs. It is not a ring orbit's line. Up to 18 cells, only the 7- and 14-cell rings have an
+  orbit with a 0101… column, and there the next column has period 4.
+
+What this means for the prize. **Period two resonates only weakly.** No ring up to 15 cells has a 2-cycle. The 7-ring
+orbits that do hold a 0101… column need a 4-periodic column 1, and the right side does not supply one. Instead it
+supplies a column 1 dominated by its own line near 17/56. That fits the period-two left halves being aperiodic (§6,
+`rule30_rings.py`), and a proof for period two cannot rest on the left half settling into a ring orbit. The line near
+17/56 is new and unexplained. If column 1 for 0101… is close to a rotation or substitution sequence with that
+frequency, column 1 has a finite description after all. T6 ruled out only automata in base 2.
+
+**A reformulation that the templates step will use.** Under Rule 30, a zero segment loses at most one cell from each
+end per step. So a zero run of $n$ cells at time 0 is the base of a white triangle of height $\lceil n/2 \rceil$, and a
+finite configuration is one whose forced spacetime contains an infinite white wedge on the left: its leftmost 1 moves
+left exactly one cell per step. The weak form of B says the forced spacetime contains only finite white triangles on
+the left. The templates are then the boundaries of the large triangles.
+
+**Next.**
+1. Identify column 1's line near 17/56 for 0101…: compare column 1 with rotation sequences of that frequency, and with
+   substitution sequences. A finite description of column 1 would turn the weak form of B into a question about two
+   finite descriptions.
+2. Name the templates as triangle boundaries.
+3. A sibling ladder, steps before the leap: prove period-two exclusion for Rules 180, 120, 210 and 150 without using
+   linearity, and see which argument survives for Rule 30. Rule 210 is the most Rule 30-like (runs of 16 / 15).

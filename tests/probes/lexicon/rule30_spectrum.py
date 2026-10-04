@@ -26,6 +26,13 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
      has its highest spike within 1/512 of a multiple of 1/7.
 REFUTED-BY: C1 or C2 failing (the instrument); F0 or F1 failing.
 (The tolerances are coded as 1/K and 1/T, which are the 1/192 and 1/512 above at the default sizes.)
+
+OUTCOME of the first run, 2026-10-04 (W = 14, K = 192, T = 512): C1 passed (largest |S - 1| = 0.0206), and so did C2
+(spike at 0.1426). F0 HELD for 0001, 0011 and 0111 (highest excess lines 1/7, 2/7, 2/7). It was not blind: a dry run
+at a tiny size had already shown 0001 and 0011. The excess spectra are harmonic series of the 7-cell ring (1/7, 2/7,
+3/7) with the 14-cell ring's 1/14, 3/14, 5/14; 01's highest excess line is 2/7 too (+0.52). F1 was REFUTED (1 of 5
+spikes dyadic). Column 1 for 0101... is dominated by a line near 0.303 and its mirror 0.197 = 1/2 - 0.303, pinned by
+rule30_spectrum_fine.py at 0.30365. Column 1 for 0001 is a line at 1/4 of power 122, against 0.1 elsewhere.
 """
 import math, random, sys, pathlib
 from fractions import Fraction

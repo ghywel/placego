@@ -452,7 +452,8 @@ the research record, the scientific record and the instruments.
   digits, every program as a matrix, and the machine's own arithmetic, each checked against the shader.
 - [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked, and the
   Rule 30 work: periodic columns, left-side rigidity, the right side as a complement, the four arms, and the
-  templates behind the run lengths (why 13 was missing, and where Fibonacci really is).
+  templates behind the run lengths (why 13 was missing, and where Fibonacci really is), Rule 30's siblings, and the
+  ring resonance its spectra show.
 
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
