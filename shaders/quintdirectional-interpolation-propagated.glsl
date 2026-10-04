@@ -762,7 +762,10 @@ float sad5x5_e(vec2 uv_a, vec2 uv_b) {
 // runs at all for most content -- no radius, however wide, matters if
 // the code path it's in never executes. At 0.0, `< MIN_CONTRAST` can
 // never be true, so this level's search always runs. Not yet confirmed.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -874,12 +877,6 @@ vec4 hook() {
     vec4 seeds = FLOW_S_AB_tex(snap_texel(uv_a, FLOW_S_AB_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_AB_CACHE, coord, result);
-        return result;
-    }
 
     // How far this level's own local search can stray from the inherited
     // seed, in this level's own texels. TESTING at 2 (was effectively 1,
@@ -1017,7 +1014,10 @@ float sad5x5_e2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the A->B pass above.
 // See the A->B pass above.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -1129,12 +1129,6 @@ vec4 hook() {
     vec4 seeds = imageLoad(FLOW_S_BA_CACHE, ivec2(snap_texel(uv_b, LUMA_B_S_size) * LUMA_B_S_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_BA_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     // ---- refine three seeds; the temporal seed and prior only where the previous flow round-trips ----
@@ -1674,7 +1668,10 @@ float sad5x5_q(vec2 uv_a, vec2 uv_b) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -1695,12 +1692,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_Q_pos;
     vec2 base_off = FLOW_E_AB_tex(snap_texel(uv_a, FLOW_E_AB_size)).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_AB_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E level
     // above -- see bidirectional-interpolation.glsl's E-level A->B pass for
@@ -1769,7 +1760,10 @@ float sad5x5_q2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -1790,12 +1784,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_Q_pos;
     vec2 base_off = imageLoad(FLOW_E_BA_ST, ivec2(floor((FLOW_E_AB_size) * (snap_texel(uv_b, FLOW_E_AB_size))))).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_BA_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -1944,7 +1932,10 @@ float sad3x3_h(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -1965,12 +1956,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_H_pos;
     vec2 base_off = FLOW_Q_AB_tex(snap_texel(uv_a, FLOW_Q_AB_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_AB_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -2157,7 +2142,10 @@ float sad3x3_h2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -2178,12 +2166,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_H_pos;
     vec2 base_off = FLOW_Q_BA_tex(snap_texel(uv_b, FLOW_Q_BA_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_BA_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -3000,7 +2982,10 @@ float sad5x5_e(vec2 uv_a, vec2 uv_b) {
 // runs at all for most content -- no radius, however wide, matters if
 // the code path it's in never executes. At 0.0, `< MIN_CONTRAST` can
 // never be true, so this level's search always runs. Not yet confirmed.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -3112,12 +3097,6 @@ vec4 hook() {
     vec4 seeds = FLOW_S_DE_tex(snap_texel(uv_a, FLOW_S_DE_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_DE_CACHE, coord, result);
-        return result;
-    }
 
     // How far this level's own local search can stray from the inherited
     // seed, in this level's own texels. TESTING at 2 (was effectively 1,
@@ -3260,7 +3239,10 @@ float sad5x5_e2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the A->B pass above.
 // See the A->B pass above.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -3372,12 +3354,6 @@ vec4 hook() {
     vec4 seeds = imageLoad(FLOW_S_ED_CACHE, ivec2(snap_texel(uv_b, LUMA_B_S_size) * LUMA_B_S_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_ED_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     // ---- refine three seeds; the temporal seed and prior only where the previous flow round-trips ----
@@ -3860,7 +3836,10 @@ float sad5x5_q(vec2 uv_a, vec2 uv_b) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -3881,12 +3860,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_Q_pos;
     vec2 base_off = FLOW_E_DE_tex(snap_texel(uv_a, FLOW_E_DE_size)).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_DE_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E level
     // above -- see bidirectional-interpolation.glsl's E-level A->B pass for
@@ -3958,7 +3931,10 @@ float sad5x5_q2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -3979,12 +3955,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_Q_pos;
     vec2 base_off = imageLoad(FLOW_E_ED_ST, ivec2(floor((FLOW_E_DE_size) * (snap_texel(uv_b, FLOW_E_DE_size))))).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_ED_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -4064,7 +4034,10 @@ float sad3x3_h(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -4085,12 +4058,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_H_pos;
     vec2 base_off = FLOW_Q_DE_tex(snap_texel(uv_a, FLOW_Q_DE_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_DE_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -4280,7 +4247,10 @@ float sad3x3_h2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -4301,12 +4271,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_H_pos;
     vec2 base_off = FLOW_Q_ED_tex(snap_texel(uv_b, FLOW_Q_ED_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_ED_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -5140,7 +5104,10 @@ float sad5x5_e(vec2 uv_a, vec2 uv_b) {
 // runs at all for most content -- no radius, however wide, matters if
 // the code path it's in never executes. At 0.0, `< MIN_CONTRAST` can
 // never be true, so this level's search always runs. Not yet confirmed.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -5253,12 +5220,6 @@ vec4 hook() {
     vec4 seeds = FLOW_S_CD_tex(snap_texel(uv_a, FLOW_S_CD_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_CD_CACHE, coord, result);
-        return result;
-    }
 
     // How far this level's own local search can stray from the inherited
     // seed, in this level's own texels. TESTING at 2 (was effectively 1,
@@ -5414,7 +5375,10 @@ float sad5x5_e2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the A->B pass above.
 // See the A->B pass above.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -5527,12 +5491,6 @@ vec4 hook() {
     vec4 seeds = imageLoad(FLOW_S_DC_CACHE, ivec2(snap_texel(uv_b, LUMA_B_S_size) * LUMA_B_S_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_DC_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     // ---- refine three seeds; the temporal seed and prior only where the previous flow round-trips ----
@@ -6026,7 +5984,10 @@ float sad5x5_q(vec2 uv_a, vec2 uv_b) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -6047,12 +6008,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_Q_pos;
     vec2 base_off = FLOW_E_CD_tex(snap_texel(uv_a, FLOW_E_CD_size)).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_CD_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E level
     // above -- see bidirectional-interpolation.glsl's E-level A->B pass for
@@ -6124,7 +6079,10 @@ float sad5x5_q2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -6145,12 +6103,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_Q_pos;
     vec2 base_off = imageLoad(FLOW_E_DC_ST, ivec2(floor((FLOW_E_CD_size) * (snap_texel(uv_b, FLOW_E_CD_size))))).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_DC_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -6230,7 +6182,10 @@ float sad3x3_h(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -6251,12 +6206,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_H_pos;
     vec2 base_off = FLOW_Q_CD_tex(snap_texel(uv_a, FLOW_Q_CD_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_CD_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -6446,7 +6395,10 @@ float sad3x3_h2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -6467,12 +6419,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_H_pos;
     vec2 base_off = FLOW_Q_DC_tex(snap_texel(uv_b, FLOW_Q_DC_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_DC_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -7300,7 +7246,10 @@ float sad5x5_e(vec2 uv_a, vec2 uv_b) {
 // runs at all for most content -- no radius, however wide, matters if
 // the code path it's in never executes. At 0.0, `< MIN_CONTRAST` can
 // never be true, so this level's search always runs. Not yet confirmed.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -7413,12 +7362,6 @@ vec4 hook() {
     vec4 seeds = FLOW_S_BC_tex(snap_texel(uv_a, FLOW_S_BC_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_BC_CACHE, coord, result);
-        return result;
-    }
 
     // How far this level's own local search can stray from the inherited
     // seed, in this level's own texels. TESTING at 2 (was effectively 1,
@@ -7572,7 +7515,10 @@ float sad5x5_e2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the A->B pass above.
 // See the A->B pass above.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_e2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -7685,12 +7631,6 @@ vec4 hook() {
     vec4 seeds = imageLoad(FLOW_S_CB_CACHE, ivec2(snap_texel(uv_b, LUMA_B_S_size) * LUMA_B_S_size));
     vec2 base_off = seeds.xy * 2.0 * LUMA_A_E_pt;
     vec2 base_off2 = seeds.zw * 2.0 * LUMA_A_E_pt;
-
-    if (local_contrast_5x5_e2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_E_pt, 0.0, 0.0);
-        imageStore(FLOW_E_CB_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     // ---- refine three seeds; the temporal seed and prior only where the previous flow round-trips ----
@@ -8179,7 +8119,10 @@ float sad5x5_q(vec2 uv_a, vec2 uv_b) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -8200,12 +8143,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_Q_pos;
     vec2 base_off = FLOW_E_BC_tex(snap_texel(uv_a, FLOW_E_BC_size)).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_BC_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E level
     // above -- see bidirectional-interpolation.glsl's E-level A->B pass for
@@ -8276,7 +8213,10 @@ float sad5x5_q2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_5x5_q2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -8297,12 +8237,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_Q_pos;
     vec2 base_off = imageLoad(FLOW_E_CB_ST, ivec2(floor((FLOW_E_BC_size) * (snap_texel(uv_b, FLOW_E_BC_size))))).xy * 2.0 * LUMA_A_Q_pt;
-
-    if (local_contrast_5x5_q2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_Q_pt, 0.0, 0.0);
-        imageStore(FLOW_Q_CB_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -8381,7 +8315,10 @@ float sad3x3_h(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -8402,12 +8339,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_H_pos;
     vec2 base_off = FLOW_Q_BC_tex(snap_texel(uv_a, FLOW_Q_BC_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_BC_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -8596,7 +8527,10 @@ float sad3x3_h2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_h2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -8617,12 +8551,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_H_pos;
     vec2 base_off = FLOW_Q_CB_tex(snap_texel(uv_b, FLOW_Q_CB_size)).xy * 2.0 * LUMA_A_H_pt;
-
-    if (local_contrast_3x3_h2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_H_pt, 0.0, 0.0);
-        imageStore(FLOW_H_CB_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -9072,7 +9000,10 @@ float sad5x5_f(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -9093,12 +9024,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_F_pos;
     vec2 base_off = FLOW_H_AB_tex(snap_texel(uv_a, FLOW_H_AB_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_AB_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -9285,7 +9210,10 @@ float sad5x5_f2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -9306,12 +9234,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_F_pos;
     vec2 base_off = FLOW_H_BA_tex(snap_texel(uv_b, FLOW_H_BA_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_BA_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -9501,7 +9423,10 @@ float sad5x5_f(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -9522,12 +9447,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_F_pos;
     vec2 base_off = FLOW_H_BC_tex(snap_texel(uv_a, FLOW_H_BC_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_BC_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -9715,7 +9634,10 @@ float sad5x5_f2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -9736,12 +9658,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_F_pos;
     vec2 base_off = FLOW_H_CB_tex(snap_texel(uv_b, FLOW_H_CB_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_CB_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -9932,7 +9848,10 @@ float sad5x5_f(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -9953,12 +9872,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_F_pos;
     vec2 base_off = FLOW_H_CD_tex(snap_texel(uv_a, FLOW_H_CD_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_CD_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -10147,7 +10060,10 @@ float sad5x5_f2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -10168,12 +10084,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_F_pos;
     vec2 base_off = FLOW_H_DC_tex(snap_texel(uv_b, FLOW_H_DC_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_DC_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -10364,7 +10274,10 @@ float sad5x5_f(vec2 uv_a, vec2 uv_b) {
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass --
 // same reasoning, over the 3x3 window this level's own SAD uses.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f(vec2 uv_a) {
     float lo = 1.0, hi = 0.0;
@@ -10385,12 +10298,6 @@ vec4 hook() {
 
     vec2 uv_a = LUMA_A_F_pos;
     vec2 base_off = FLOW_H_DE_tex(snap_texel(uv_a, FLOW_H_DE_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f(uv_a) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_DE_CACHE, coord, result);
-        return result;
-    }
 
     // Same refine-level search radius and regularization as the E/Q
     // levels above -- see bidirectional-interpolation.glsl's E-level A->B
@@ -10579,7 +10486,10 @@ float sad5x5_f2(vec2 uv_b, vec2 uv_a) {
 
 // See local_contrast_5x5_e()/MIN_CONTRAST in the 1/8-res A->B pass.
 // See the E-level A->B pass for the full reasoning.
-const float MIN_CONTRAST = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L3): at 0.0 this level's gate could never
+// fire (a contrast is never negative, and the test was a strict <), yet its
+// contrast window was read for every texel. The early exit is gone; the
+// 1/16 level keeps its gate at 0.02.
 
 float local_contrast_3x3_f2(vec2 uv_b) {
     float lo = 1.0, hi = 0.0;
@@ -10600,12 +10510,6 @@ vec4 hook() {
 
     vec2 uv_b = LUMA_B_F_pos;
     vec2 base_off = FLOW_H_ED_tex(snap_texel(uv_b, FLOW_H_ED_size)).xy * 2.0 * LUMA_A_F_pt;
-
-    if (local_contrast_3x3_f2(uv_b) < MIN_CONTRAST) {
-        vec4 result = vec4(base_off / LUMA_A_F_pt, 0.0, 0.0);
-        imageStore(FLOW_F_ED_CACHE, coord, result);
-        return result;
-    }
 
     // See REFINE_SEARCH_RADIUS/REFINE_REG_LAMBDA in the A->B pass above.
     const int REFINE_SEARCH_RADIUS = 2;
@@ -10833,105 +10737,6 @@ vec4 hook() {
 //!DESC [quint] pack the full-res flows slot3->slot4 (rg) and slot4->slot3 (ba)
 vec4 hook() {
     return vec4(FLOW_F_DE_tex(FLOW_F_DE_pos).xy, FLOW_F_ED_tex(FLOW_F_ED_pos).xy);
-}
-
-// ---------------------------------------------------------------------
-// Edge-consistency reference (see the final warp pass below for how this
-// gets used): per-frame motion-gated spatial edge masks, full
-// resolution, one per source frame. Reuses the exact technique
-// motion-edges-dual.glsl already validated on real hardware -- a pixel
-// counts as "edge" only if it's both a genuine spatial edge within its
-// own frame AND part of a temporally-moving region, so static scene
-// edges (the vast majority of any frame) never register at all.
-// Deliberately uncached: this is a new, unverified mechanism, so it
-// starts as simply as possible. If real-hardware testing shows the
-// extra full-res compute actually matters, caching this the same way
-// the flow search is cached is the natural next step -- deferred rather
-// than pre-optimized, since there's compute headroom to spare on the
-// target hardware for now.
-// ---------------------------------------------------------------------
-//!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND FRAME1
-//!BIND FRAME2
-//!BIND FRAME3
-//!BIND FRAME4
-//!SAVE EDGE_A
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!COMPONENTS 1
-//!DESC [high] motion-gated spatial edge mask (frame A)
-
-const float MOTION_THRESHOLD = 0.08;
-const float SPATIAL_EDGE_THRESHOLD = 0.1;
-
-float luma(vec4 c) {
-    return dot(c.rgb, vec3(0.299, 0.587, 0.114));
-}
-
-bool moving(vec2 pos) {
-    return abs(luma(HOOKED_tex(pos)) - luma(FRAME1_tex(pos))) > MOTION_THRESHOLD;
-}
-
-bool spatial_edge_a(vec2 pos) {
-    float center = luma(HOOKED_tex(pos));
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * HOOKED_pt;
-            if (abs(luma(HOOKED_tex(pos + o)) - center) > SPATIAL_EDGE_THRESHOLD)
-                return true;
-        }
-    }
-    return false;
-}
-
-vec4 hook() {
-    bool edge = moving(HOOKED_pos) && spatial_edge_a(HOOKED_pos);
-    return vec4(edge ? 1.0 : 0.0, 0.0, 0.0, 0.0);
-}
-
-//!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND FRAME1
-//!BIND FRAME2
-//!BIND FRAME3
-//!BIND FRAME4
-//!SAVE EDGE_B
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!COMPONENTS 1
-//!DESC [high] motion-gated spatial edge mask (frame B)
-
-const float MOTION_THRESHOLD = 0.08;
-const float SPATIAL_EDGE_THRESHOLD = 0.1;
-
-float luma(vec4 c) {
-    return dot(c.rgb, vec3(0.299, 0.587, 0.114));
-}
-
-bool moving(vec2 pos) {
-    return abs(luma(HOOKED_tex(pos)) - luma(FRAME1_tex(pos))) > MOTION_THRESHOLD;
-}
-
-bool spatial_edge_b(vec2 pos) {
-    float center = luma(FRAME1_tex(pos));
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * HOOKED_pt;
-            if (abs(luma(FRAME1_tex(pos + o)) - center) > SPATIAL_EDGE_THRESHOLD)
-                return true;
-        }
-    }
-    return false;
-}
-
-vec4 hook() {
-    bool edge = moving(HOOKED_pos) && spatial_edge_b(HOOKED_pos);
-    return vec4(edge ? 1.0 : 0.0, 0.0, 0.0, 0.0);
 }
 // ---------------------------------------------------------------------
 // Final pass: QUINTDIRECTIONAL -- the picture is the quad's cubic

@@ -589,7 +589,10 @@ def to_fullres(h_block, pair, tag):
     nb = h_block
     nb = nb.replace(f"FLOW_H_{pair}", f"FLOW_F_{pair}")   # save + cache + stores
     nb = nb.replace(f"FLOW_Q_{pair}", f"FLOW_H_{pair}")   # seed: one level up
-    nb = re.sub(r"\bLUMA_([A-E])_H", r"LUMA_\1_F", nb)   # E: the five-frame shader's fifth slot
+    # A-F: E is the five-frame shader's fifth slot, F the six-frame shader's sixth. It read A-E until 2026-10-04, so
+    # the six-frame shader's slot 4 <-> 5 full-resolution refines read slot 5's HALF-resolution luma (LUMA_F_H) while
+    # LUMA_F_F was made and never read (found by tests/probes/repairs/dead_passes.py; REPAIRS.md L1).
+    nb = re.sub(r"\bLUMA_([A-F])_H", r"LUMA_\1_F", nb)
     nb = nb.replace("3x3_h", "3x3_f")
     # WIDEN THE SAD APERTURE to 5x5 at this level only. The first F build
     # kept the H pass's 3x3, and the field regressed exactly where the

@@ -396,9 +396,9 @@ def main():
             nb += cut_block("C", "D", "SCENE_DIFF_CD", "2-3")
 
         elif save in ("EDGE_A", "EDGE_B"):
-            nb = nb.replace("//!BIND HOOKED\n//!BIND NEXT", FOUR_BINDS)
-            nb = re.sub(r"\bNEXT_tex\(", "FRAME1_tex(", nb)
-            nb = nb.replace("NEXT_pos", "HOOKED_pos")
+            # Not carried (REPAIRS.md L1, 2026-10-04): no pass here binds the edge masks, and libplacebo runs
+            # every pass it is given, bound or not, so two full-resolution passes a frame went for nothing.
+            continue
 
         elif save == "FRAME_MIX":
             nb = FINAL_PASS.replace("@@CADENCE_CONSTANTS@@", CADENCE_CONSTANTS if CADENCE_BRANCH else "") \
@@ -449,7 +449,7 @@ def main():
     hooks = result.count("//!HOOK")
     braces = result.count("{") - result.count("}")
     parens = result.count("(") - result.count(")")
-    assert hooks == 68 + 3 * extra, f"expected {68 + 3 * extra} passes, got {hooks}"
+    assert hooks == 66 + 3 * extra, f"expected {66 + 3 * extra} passes, got {hooks}"   # 68 until the edge masks went
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     header = HEADER
     if SRC.name != "bidirectional-interpolation.glsl":
@@ -577,7 +577,8 @@ FINAL_PASS = """\
 // The base's texel-snap gate is NOT carried here: its EDGE_A/EDGE_B binds
 // no longer fit under libplacebo's 16-bind ceiling once both flow levels
 // are bound, and SNAP_STRENGTH has been 0.0 for the gate's entire life.
-// If the snap experiment is ever revived, it must earn a bind budget.
+// If the snap experiment is ever revived, it must earn a bind budget. The
+// EDGE_A/EDGE_B passes themselves are not emitted either (2026-10-04).
 
 // Same value and reasoning as the base shader's gate.
 const float SCENE_CUT_DIFF = 0.125;

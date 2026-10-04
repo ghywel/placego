@@ -6,6 +6,115 @@ prediction written before the run, and what would refute it.
 
 ---
 
+## 2026-10-04, second round: the four leads, run on the local machines
+
+The leads of the round below, run on this Mac (M5) and the NAS's Arc A310 (the deterministic witness, TESTING.md "The
+Linux witness on the Arc"). New tools, all in `tests/probes/repairs/`: `dead_passes.py` (liveness from the end),
+`regen_nframe.sh` and `rebuild_generated.py` (rebuild every generated file; control: all byte-identical on unchanged
+sources), `retire_dead_gates.py`, `identity.sh` (framemd5 of two shaders on four ladder scenes; run each against
+itself first), `compile_all.sh` (three frames through every shader), `timepair.sh` (time from a file, interleaved),
+`l4_coarse_fraction.py` and `l4_variant.py`.
+
+**The assumption under L1 and L2 is settled, from libplacebo's source:** `pass_hook` (src/renderer.c) dispatches every
+hook at its stage, and the user shader's `hook_hook` (src/shaders/custom_mpv.c) skips a pass only on its stage or its
+`//!WHEN`. Nothing asks whether a pass's output is read, so every dead pass is dispatched every frame.
+
+### L1: edge masks nothing reads, and the six-frame bug they hid
+
+- **Done.** `gen_quaddirectional.py`, `gen_quintdirectional.py` and `gen_sextdirectional.py` no longer emit `EDGE_A`
+  and `EDGE_B` (their asserted pass counts lowered by two). The eight files rebuilt; `dead_passes.py` finds none left.
+- **A bug found on the way.** In the six-frame shader `LUMA_F_F` was made and never read because the slot 4 <-> 5
+  full-resolution refines read slot 5's HALF-resolution luma, `LUMA_F_H`: `to_fullres` in `gen_tridirectional.py`
+  rewrote `LUMA_[A-E]_H` to full resolution, widened from A-D for the five-frame shader and never to F. Now `[A-F]`.
+- **Checked.** Byte-identical renders before and after on the Arc for the quad, the quint and the reading quad (three
+  scenes each are conclusive; see L8 for the fourth), the six-frame shader differing on 2-3 frames a scene (the fix,
+  and the counterfactual that shows the check can see a change). Time, the quad from a file, five interleaved pairs on
+  the M5: 3.242 -> 3.213 s per 60 frames (-0.9%). The six-frame ladder before and after the fix (the Arc,
+  one sitting, `SKIPS_ALLOWED=3` as SEXTDIRECTIONAL.md asks): L1_trans_8px 68.63 -> 69.29 dB, P2 57.41 -> 57.47, no other
+  case moved by more than 0.05; mean 46.98 -> 47.00. The fix is free and never worse.
+- **lockstep: PASS** (graphs regenerated; every figure as before).
+
+### L3: the contrast gates that could not fire
+
+- **Done.** 72 gates in the 12 hand-maintained files (`retire_dead_gates.py`, counted and asserted), every generated
+  file rebuilt from them: 490 dead gates gone in 47 files; the 140 live ones (0.02, the 1/16 level) kept. Every changed
+  file loses code and gains none. The contrast FUNCTIONS stay: the global-seed cage calls `local_contrast_5x5_q` and
+  `_q2` itself. The first cut deleted them and 14 generated files (Cadence's High and Standard graphs among them)
+  stopped compiling; the generators do not compile GLSL, so the rebuild looked clean and only an impossible -83% render
+  time showed it. Never pushed; `compile_all.sh` now builds all 49 shaders.
+- **Checked.** Byte-identical on the Arc on all four scenes for the base, propagated, variational-propagated, tri,
+  quad, quint and reading shaders, and the five cage-line files (Cadence's High graph against itself first: identical).
+  Time from a file, five pairs: base -0.2%, variational-propagated -0.3%, Cadence High -0.3%, Standard -0.3%: free,
+  not faster. **lockstep: PASS.**
+
+### L2: the snap experiment, measured
+
+- **Measured** (the open question in the source, "Not yet confirmed either way"): the base with `SNAP_STRENGTH` at 1.0
+  against 0.0, the full 42-case ladder on the Arc in one sitting: mean 39.53 -> 38.54 dB (capped at 40: 34.81 -> 34.69);
+  L1_trans_8px 61.92 -> 49.52, L6 -4.2, P2 -4.2, M2 -4.1, M1 -2.9, A4 -1.9, P3 -1.9, F1 -1.5; up on three cases, the
+  most P5 +0.84. As the gate's own comment predicted, it snaps ordinary content, not only edges.
+- **Decision: retire it.** At 0.0 it changes nothing, but its two full-resolution passes (EDGE_A, EDGE_B) run every
+  frame in the base, its forks and the whole variational line, Cadence's graphs included (the generators copy them).
+- **Not yet done, and why.** `retire_snap.py` makes the edit in the 12 hand-maintained files (asserted: two passes, two
+  binds, warp_sample_a/b reading their frame straight, which is byte-identical because mix(x, y, 0.0) is x). The rebuild
+  then fails in two generators, so nothing was installed and the files were restored:
+  - `gen_variational.py` places the coherence gate by an anchor beside the snap code ("coherence gate: anchor found 0
+    times"): seven cage-line recipes, Cadence's among them;
+  - the N-frame generators count the base's passes with the edge masks in them (24 base passes), and the reading quad's
+    count then comes out wrong ("expected 66 passes, got 72").
+  Next: move that anchor and teach the counts, then run `retire_snap.py`, `rebuild_generated.py --install`,
+  `compile_all.sh`, `identity.sh` on the Arc and `timepair.sh`. *Prediction:* byte-identical everywhere, and two
+  full-resolution dispatches fewer a frame (L1's two in the quad bought -0.9%).
+
+### L4: the coarse search sets the flow's fraction
+
+- **The prediction holds.** Read raw (`l4_coarse_fraction.py`; units checked: every value within one quantum of the
+  3/64-coarse-texel lattice), the base's 1/16 search returns m = 21 (15.75 px) on 50-96% of the moving cells of the
+  four 16 px/frame cases and m = 22 (16.5) on most of the rest; m = 0 (mod 8), the only values from which 16 px is
+  reachable, on 0-1.7%. The finest flow keeps the fraction: on M2, 15.75 px on 94% of moving texels, 16 on none.
+- **The experiment, as a variant** (`l4_variant.py`: the 1/8 level's seed rounded to 1/8 coarse texel): exactly 16 px
+  on 100% of M2's moving texels, 99% of M1, 84% of L7. The full 42-case ladder on the Arc, one sitting, base -> variant:
+  mean 39.53 -> 42.35 (capped at 40: 34.81 -> 34.93); L2_trans_16px 41.75 -> 77.95, L1_trans_8px 61.92 -> 78.13, L6
+  +10.2, P2 +9.0, L8 +8.0, L3_trans_23px +7.8, F1 +7.1, M2 +6.4, M1 +2.2, L7 +1.4, M3 +0.0; down by more than 0.10 on
+  six: O3 -0.44, V3 -0.44, L4_trans_40px -0.36, A6 -0.30, A5 -0.16, P4 -0.14. Against the prediction: the gains it
+  named, except M3 (the period-16 trap); the losses fall on fast, varying and oscillating motion, not on odd speeds
+  (23 px gained 7.8 dB).
+- **Real footage, the four clips (M5, three segments each), base -> variant:** street 26.19 -> 26.18 dB (SSIM 0.9258
+  both), avengers 35.74 -> 35.84 (0.9551 -> 0.9548), bttf 31.92 -> 31.92, bluey 29.65 -> 29.60 (0.9581 -> 0.9583).
+  Neutral: real motion is almost never a whole even number of px a frame.
+- **Verdict: not shipped.** It fails the in-place gate (six cases down by more than 0.10 dB) and buys nothing on real
+  footage. What it does show: on the ladder's constant-speed translations the base is scored on its lattice, not on its
+  matching, which is worth knowing when a variant "gains" there. Whether the variational line shares the property is
+  still not checked.
+
+### New leads
+
+**L7. More dead passes than L1 named (`dead_passes.py`, 177 in 49 files before this round).** In every two-frame
+shader the B->A flow ends unread: the whole chain in the base and its forks (six passes of 31 in the base: four
+searches and two medians), `FLOW_H_BA` alone in the variational line, and in the carry line also `ALIAS_E_AB` and
+`ALIAS_Q_AB` (three of Cadence High's 101 passes). The generators clone the base's B->A chain for the N-frame shaders,
+so it cannot simply be deleted from the base; a prune step at the end of each generator, and a pruned shipped copy of
+the hand-maintained files, would remove it. *Prediction:* byte-identical, and time from a file falls by about the
+dispatch share (the base: up to a fifth). *Refuted by:* any differing frame, or no fall.
+
+**L8. The quad is not deterministic on L7_textured_large, even on the Arc.** Its 1 October file against itself:
+60 of 60 frames differ on L7, identical on the other three scenes (both runs on the Arc, 2026-10-04). Cadence's High
+graph is identical against itself there. Something in the four-frame path races or reads uninitialised storage on
+large textured motion. *Cheap step:* the same control on the tri and the quint, and on L7 at N:N.
+
+**L9. A generated file's header cannot rebuild it.** The variational line records its command without the base
+argument (the `-variational-propagated` files are built on `bidirectional-interpolation-propagated.glsl`, not the base
+the header names) and without the `ZERO_SEED=1` smoke.sh passes. `rebuild_generated.py` supplies both; the generators
+should record their full command.
+
+**L10. Every machine readback through the reading tail passes an fp16 stage.** The final pass's output is rounded to
+1/2048 near 0.5, so a field encoded as 0.5 + f * 0.5/32 (read_view 4, +-32 px) is read to about 1/32 px. Found when
+`l4_coarse_fraction.py`'s units check failed at a +-32 coarse-texel scale. Sub-pixel results read that way (the field
+studies, the turning-point ambiguity) carry that floor. *Cheap step:* read a known sub-pixel translation through
+read_view 4 and look for the 1/32 px steps.
+
+---
+
 ## 2026-10-04: wrong comments across the family, one stale generated file, one generator anchor
 
 **How it was found.** Writing [shaders/bidirectional-interpolation.glsl](shaders/bidirectional-interpolation.glsl)

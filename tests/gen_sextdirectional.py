@@ -320,9 +320,9 @@ def main():
             nb += cut_block("D", "E", "SCENE_DIFF_DE", "3-4")
             nb += cut_block("E", "F", "SCENE_DIFF_EF", "4-5")
         elif save in ("EDGE_A", "EDGE_B"):
-            nb = nb.replace("//!BIND HOOKED\n//!BIND NEXT", SIX_BINDS)
-            nb = re.sub(r"\bNEXT_tex\(", "FRAME1_tex(", nb)
-            nb = nb.replace("NEXT_pos", "HOOKED_pos")
+            # Not carried (REPAIRS.md L1, 2026-10-04): no pass here binds the edge masks, and libplacebo runs
+            # every pass it is given, bound or not, so two full-resolution passes a frame went for nothing.
+            continue
         elif save == "FRAME_MIX":
             nb = FINAL_PASS
         out.append(nb)
@@ -357,7 +357,7 @@ def main():
     parens = result.count("(") - result.count(")")
     # 24 base + 16 lumas (4 slots x 4 levels) + 4 cuts + 48 pair flow (4 pairs x 12) + 6 full-res lumas
     # + 10 full-res refines + 9 packing (CUTS, 3 HP, 5 FP) = 117, plus the base's extras once per pair
-    expected = 117 + 5 * extra
+    expected = 115 + 5 * extra         # 117 until the edge masks went (REPAIRS.md L1)
     assert hooks == expected, f"expected {expected} passes, got {hooks}"
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     marker = "//!DESC [sext] motion-compensated warp"
