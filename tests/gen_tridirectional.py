@@ -234,13 +234,15 @@ def main():
     # propagation passes between the 1/8-level refine and the 1/4 level, all
     # saving FLOW_E_AB / FLOW_E_AB_<suffix>). They are carried into every
     # generated chain in file order; only the count changes.
-    extra = len(hook_blocks) - 24
+    # 22 base passes; a base from before 2026-10-04 also carries the two edge masks (REPAIRS.md L2), never carried
+    n_edge = sum(1 for b in hook_blocks if block_id(b)[0] in ("EDGE_A", "EDGE_B"))
+    extra = len(hook_blocks) - 22 - n_edge
     # A FUSED base has FEWER passes than the unfused form (each fused pass
     # carries its B->A twin), so its extras are negative and need not pair up;
     # the pass count below is still exact, because every base flow pass is
     # reproduced once per slot pair either way.
     fused = any("[fused" in b for b in hook_blocks)
-    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
+    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 22 base passes (+ any edge masks, + an even number of extras), found {len(hook_blocks)}"
 
     out = []
 
@@ -322,14 +324,10 @@ vec4 hook() {
     return vec4(acc / float(N * N), 0.0, 0.0, 0.0);
 }"""
 
-        # EDGE_A/EDGE_B feed the texel-snap gate, which is inert while
-        # SNAP_STRENGTH is 0.0. Kept in lockstep with the base and pinned to
-        # slots 0-1 rather than made phase-dependent, since nothing reads
-        # their output at present.
         elif save in ("EDGE_A", "EDGE_B"):
-            nb = nb.replace("//!BIND HOOKED\n//!BIND NEXT", THREE_BINDS)
-            nb = re.sub(r"\bNEXT_tex\(", "FRAME1_tex(", nb)
-            nb = nb.replace("NEXT_pos", "HOOKED_pos")
+            # Not carried (REPAIRS.md L2, 2026-10-04): the texel snap they fed is retired, and the base no longer
+            # has them; an older base's masks are dropped here.
+            continue
 
         elif save == "FRAME_MIX":
             nb = FINAL_PASS  # replaced wholesale, banner included
@@ -368,7 +366,7 @@ vec4 hook() {
     hooks = result.count("//!HOOK")
     braces = result.count("{") - result.count("}")
     parens = result.count("(") - result.count(")")
-    assert hooks == 48 + 2 * extra, f"expected {48 + 2 * extra} passes, got {hooks}"
+    assert hooks == 46 + 2 * extra, f"expected {46 + 2 * extra} passes, got {hooks}"   # 48 until the edge masks went (REPAIRS.md L2)
     assert braces == 0 and parens == 0, f"unbalanced: braces {braces}, parens {parens}"
     header = HEADER
     if SRC.name != "bidirectional-interpolation.glsl":
@@ -377,7 +375,7 @@ vec4 hook() {
                                 f"//   ./tests/gen_tridirectional.py {DST.name} {SRC.name}\n")
     DST.write_text(READING.add_tail(header + result), newline="\n")
     print(f"  {DST.name}: {hooks} passes "
-          f"({24 + extra} base + 4 slot-2 lumas + 1 cut stat + {12 + extra} slot1<->slot2 flow "
+          f"({22 + extra} base + 4 slot-2 lumas + 1 cut stat + {12 + extra} slot1<->slot2 flow "
           f"+ 3 full-res lumas + 4 full-res refines), braces/parens balanced  OK")
 
 
@@ -676,26 +674,14 @@ FINAL_PASS = """\
 //!BIND FLOW_F_BA
 //!BIND FLOW_F_BC
 //!BIND FLOW_F_CB
-//!BIND EDGE_A
-//!BIND EDGE_B
 //!SAVE FRAME_MIX
 //!WIDTH HOOKED.w
 //!HEIGHT HOOKED.h
 //!DESC [tri] motion-compensated warp (quadratic placement)
 
-// Texel snap and its edge-consistency gate: carried over from the base
-// final pass unchanged (SNAP_STRENGTH is 0.0 there and stays 0.0 here, so
-// both warps currently degenerate to plain bilinear -- kept for lockstep,
-// see the base shader for the full history of this mechanism).
-vec2 snap_texel(vec2 uv, vec2 size) {
-    return (floor(uv * size) + 0.5) / size;
-}
-
-float edge_consistency(float expected, float snapped) {
-    return 1.0 - abs(expected - snapped);
-}
-
-const float SNAP_STRENGTH = 0.0;
+// The base's texel snap and its edge-consistency gate, inert here at 0.0 for
+// their whole life, were retired on 2026-10-04 (REPAIRS.md L2): both warps
+// were plain bilinear and stay so.
 
 // Same value and reasoning as the base shader's gate (see its final pass).
 const float SCENE_CUT_DIFF = 0.125;
@@ -941,17 +927,6 @@ vec4 hook() {
 
     vec4 sa = first_half ? HOOKED_tex(uv_a) : FRAME1_tex(uv_a);
     vec4 sb = first_half ? FRAME1_tex(uv_b) : FRAME2_tex(uv_b);
-
-    // Snap gate, inert at SNAP_STRENGTH 0.0 but kept in lockstep with the
-    // base. EDGE_A/EDGE_B are pinned to slots 0-1 (see their passes).
-    vec2 sa_uv = snap_texel(uv_a, HOOKED_size);
-    vec2 sb_uv = snap_texel(uv_b, HOOKED_size);
-    float ea = edge_consistency(EDGE_A_tex(uv_a).r, EDGE_A_tex(sa_uv).r);
-    float eb = edge_consistency(EDGE_B_tex(uv_b).r, EDGE_B_tex(sb_uv).r);
-    sa = mix(sa, first_half ? HOOKED_tex(sa_uv) : FRAME1_tex(sa_uv),
-             SNAP_STRENGTH * ea);
-    sb = mix(sb, first_half ? FRAME1_tex(sb_uv) : FRAME2_tex(sb_uv),
-             SNAP_STRENGTH * eb);
 
     return mix(sa, sb, s);
 }"""

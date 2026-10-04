@@ -1597,99 +1597,6 @@ vec4 hook() {
 }
 
 // ---------------------------------------------------------------------
-// Edge-consistency reference (see the final warp pass below for how this
-// gets used): per-frame motion-gated spatial edge masks, full
-// resolution, one per source frame. Reuses the exact technique
-// motion-edges-dual.glsl already validated on real hardware -- a pixel
-// counts as "edge" only if it's both a genuine spatial edge within its
-// own frame AND part of a temporally-moving region, so static scene
-// edges (the vast majority of any frame) never register at all.
-// Deliberately uncached: this is a new, unverified mechanism, so it
-// starts as simply as possible. If real-hardware testing shows the
-// extra full-res compute actually matters, caching this the same way
-// the flow search is cached is the natural next step -- deferred rather
-// than pre-optimized, since there's compute headroom to spare on the
-// target hardware for now.
-// ---------------------------------------------------------------------
-//!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND NEXT
-//!SAVE EDGE_A
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!COMPONENTS 1
-//!DESC [high] motion-gated spatial edge mask (frame A)
-
-const float MOTION_THRESHOLD = 0.08;
-const float SPATIAL_EDGE_THRESHOLD = 0.1;
-
-float luma(vec4 c) {
-    return dot(c.rgb, vec3(0.299, 0.587, 0.114));
-}
-
-bool moving(vec2 pos) {
-    return abs(luma(HOOKED_tex(pos)) - luma(NEXT_tex(pos))) > MOTION_THRESHOLD;
-}
-
-bool spatial_edge_a(vec2 pos) {
-    float center = luma(HOOKED_tex(pos));
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * HOOKED_pt;
-            if (abs(luma(HOOKED_tex(pos + o)) - center) > SPATIAL_EDGE_THRESHOLD)
-                return true;
-        }
-    }
-    return false;
-}
-
-vec4 hook() {
-    bool edge = moving(HOOKED_pos) && spatial_edge_a(HOOKED_pos);
-    return vec4(edge ? 1.0 : 0.0, 0.0, 0.0, 0.0);
-}
-
-//!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND NEXT
-//!SAVE EDGE_B
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!COMPONENTS 1
-//!DESC [high] motion-gated spatial edge mask (frame B)
-
-const float MOTION_THRESHOLD = 0.08;
-const float SPATIAL_EDGE_THRESHOLD = 0.1;
-
-float luma(vec4 c) {
-    return dot(c.rgb, vec3(0.299, 0.587, 0.114));
-}
-
-bool moving(vec2 pos) {
-    return abs(luma(HOOKED_tex(pos)) - luma(NEXT_tex(pos))) > MOTION_THRESHOLD;
-}
-
-bool spatial_edge_b(vec2 pos) {
-    float center = luma(NEXT_tex(pos));
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * HOOKED_pt;
-            if (abs(luma(NEXT_tex(pos + o)) - center) > SPATIAL_EDGE_THRESHOLD)
-                return true;
-        }
-    }
-    return false;
-}
-
-vec4 hook() {
-    bool edge = moving(HOOKED_pos) && spatial_edge_b(HOOKED_pos);
-    return vec4(edge ? 1.0 : 0.0, 0.0, 0.0, 0.0);
-}
-
-// ---------------------------------------------------------------------
 // Final pass: bidirectional warp with forward/backward consistency-based
 // occlusion detection, full resolution
 // ---------------------------------------------------------------------
@@ -1698,8 +1605,6 @@ vec4 hook() {
 //!BIND NEXT
 //!BIND FLOW_H_AB
 //!BIND FLOW_H_BA
-//!BIND EDGE_A
-//!BIND EDGE_B
 //!SAVE FRAME_MIX
 //!WIDTH HOOKED.w
 //!HEIGHT HOOKED.h
@@ -1715,81 +1620,21 @@ vec2 snap_texel(vec2 uv, vec2 size) {
     return (floor(uv * size) + 0.5) / size;
 }
 
-// snap_texel() is a *discontinuous* function of the warp position: it
-// jumps to a different source texel the instant the true (unsnapped)
-// position crosses a texel boundary. flow_ab itself varies smoothly
-// across output pixels (it's a bilinear read of a half-res flow field),
-// but any real flow estimate still carries some sub-texel imprecision on
-// top of that smooth variation -- invisible on ordinary content, since
-// neighboring texels usually look similar anyway, but for a source
-// texture with thin, high-contrast linework (e.g. a cartoon's black
-// outlines), that sub-texel noise is enough to make adjacent output
-// pixels land on opposite sides of a boundary purely by chance: one
-// hits the outline texel, its neighbor misses onto the background one
-// instead, producing a crisp but *fragmented*, dashed-looking line
-// (confirmed on real footage: Bluey's ear outlines breaking up against
-// the background, despite a clean, low-noise flow field in the debug
-// visualization -- this is a sampling artifact downstream of the flow,
-// not a flow quality problem).
-//
-// Rather than a single global blend toward bilinear (which softens this
-// everywhere to fix a problem that only happens in specific spots), use
-// EDGE_A/EDGE_B (above) as an independent check on whether the snap
-// actually landed where an edge was expected. EDGE_A_tex(uv) at the
-// *unsnapped* position is a smooth (bilinearly filtered, so continuous,
-// unlike the snap itself) "is a moving edge expected here" signal;
-// EDGE_A_tex(snapped_uv) is the exact value of whichever single texel
-// the snap landed on (sampling a stored texture exactly at a texel
-// center degenerates to reading that texel, the same trick snap_texel
-// itself relies on). Where they agree -- both near 0 (no edge expected
-// or found) or both near 1 (an edge was expected and the snap found
-// one) -- the snap is confirmed correct and gets trusted fully. Where
-// they disagree -- an edge was confidently expected but the snap missed
-// onto background, or vice versa -- that is precisely the coin-flip case
-// that fragments a line, so fall back toward bilinear only for that
-// specific sample.
-float edge_consistency(float expected, float snapped) {
-    return 1.0 - abs(expected - snapped);
-}
-
-// TESTING at 0.0 (was 1.0). Real-hardware isolation via
-// interpolate-debug-warp-stages.glsl found the reported "smudge tool,
-// parts left behind" defect already present -- exaggerated, even -- in
-// warp_sample_a/b's own output alone, before any cross-direction blend
-// or occlusion fallback runs at all. That points at this mechanism: the
-// per-pixel edge_consistency() check above reads as "confirmed correct,
-// trust the snap fully" whenever `expected` and `snapped_edge` AGREE --
-// but they agree just as strongly when both correctly read "no edge
-// here" (true for most of any real frame -- flat regions, smooth
-// gradients, anything that never crosses SPATIAL_EDGE_THRESHOLD) as when
-// both correctly confirm a genuine edge, which is the only case this
-// mechanism was actually designed to trust. With SNAP_STRENGTH at 1.0,
-// that means ordinary non-edge content gets snapped to nearest-neighbor
-// too, not just genuine hard edges -- and nearest-neighbor sampling
-// through a smooth gradient during motion produces a stepped, quantized
-// look rather than a smooth pull, plausibly exactly the reported defect.
-// At 0.0 this reduces to pure bilinear at the warped position (the
-// mechanism fully disabled) -- if the defect clears up, that confirms
-// this is the cause; if it's completely unchanged even at 0.0, that
-// rules this whole mechanism out and points back at the flow field's
-// actual values (not just its visual smoothness) or the base warp
-// position math instead. Not yet confirmed either way.
-const float SNAP_STRENGTH = 0.0;
+// RETIRED 2026-10-04 (REPAIRS.md L2): the texel snap and its edge-consistency
+// gate. Its strength sat at 0.0 for the gate's whole life ('Not yet confirmed
+// either way'). Measured at 1.0 against 0.0 on the full ladder (the Arc, one
+// sitting): mean -0.99 dB, L1_trans_8px -12.4, up on three cases at most +0.84:
+// as the old note here predicted, it snapped ordinary content, not only edges.
+// At 0.0 it changed nothing, but its two full-resolution edge-mask passes
+// (EDGE_A/EDGE_B) ran every frame. They are gone, and warp_sample_a/b read
+// their frame straight. snap_texel() above stays: it has another caller.
 
 vec4 warp_sample_a(vec2 uv) {
-    vec2 snapped_uv = snap_texel(uv, HOOKED_size);
-    float expected = EDGE_A_tex(uv).r;
-    float snapped_edge = EDGE_A_tex(snapped_uv).r;
-    float strength = SNAP_STRENGTH * edge_consistency(expected, snapped_edge);
-    return mix(HOOKED_tex(uv), HOOKED_tex(snapped_uv), strength);
+    return HOOKED_tex(uv);
 }
 
 vec4 warp_sample_b(vec2 uv) {
-    vec2 snapped_uv = snap_texel(uv, NEXT_size);
-    float expected = EDGE_B_tex(uv).r;
-    float snapped_edge = EDGE_B_tex(snapped_uv).r;
-    float strength = SNAP_STRENGTH * edge_consistency(expected, snapped_edge);
-    return mix(NEXT_tex(uv), NEXT_tex(snapped_uv), strength);
+    return NEXT_tex(uv);
 }
 
 vec4 hook() {

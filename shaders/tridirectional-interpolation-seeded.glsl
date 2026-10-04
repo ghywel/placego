@@ -4595,101 +4595,6 @@ vec4 hook() {
     imageStore(FLOW_F_CB_CACHE, coord, result);
     return result;
 }
-
-// ---------------------------------------------------------------------
-// Edge-consistency reference (see the final warp pass below for how this
-// gets used): per-frame motion-gated spatial edge masks, full
-// resolution, one per source frame. Reuses the exact technique
-// motion-edges-dual.glsl already validated on real hardware -- a pixel
-// counts as "edge" only if it's both a genuine spatial edge within its
-// own frame AND part of a temporally-moving region, so static scene
-// edges (the vast majority of any frame) never register at all.
-// Deliberately uncached: this is a new, unverified mechanism, so it
-// starts as simply as possible. If real-hardware testing shows the
-// extra full-res compute actually matters, caching this the same way
-// the flow search is cached is the natural next step -- deferred rather
-// than pre-optimized, since there's compute headroom to spare on the
-// target hardware for now.
-// ---------------------------------------------------------------------
-//!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND FRAME1
-//!BIND FRAME2
-//!SAVE EDGE_A
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!COMPONENTS 1
-//!DESC [high] motion-gated spatial edge mask (frame A)
-
-const float MOTION_THRESHOLD = 0.08;
-const float SPATIAL_EDGE_THRESHOLD = 0.1;
-
-float luma(vec4 c) {
-    return dot(c.rgb, vec3(0.299, 0.587, 0.114));
-}
-
-bool moving(vec2 pos) {
-    return abs(luma(HOOKED_tex(pos)) - luma(FRAME1_tex(pos))) > MOTION_THRESHOLD;
-}
-
-bool spatial_edge_a(vec2 pos) {
-    float center = luma(HOOKED_tex(pos));
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * HOOKED_pt;
-            if (abs(luma(HOOKED_tex(pos + o)) - center) > SPATIAL_EDGE_THRESHOLD)
-                return true;
-        }
-    }
-    return false;
-}
-
-vec4 hook() {
-    bool edge = moving(HOOKED_pos) && spatial_edge_a(HOOKED_pos);
-    return vec4(edge ? 1.0 : 0.0, 0.0, 0.0, 0.0);
-}
-
-//!HOOK FRAME_MIX
-//!BIND HOOKED
-//!BIND FRAME1
-//!BIND FRAME2
-//!SAVE EDGE_B
-//!WIDTH HOOKED.w
-//!HEIGHT HOOKED.h
-//!COMPONENTS 1
-//!DESC [high] motion-gated spatial edge mask (frame B)
-
-const float MOTION_THRESHOLD = 0.08;
-const float SPATIAL_EDGE_THRESHOLD = 0.1;
-
-float luma(vec4 c) {
-    return dot(c.rgb, vec3(0.299, 0.587, 0.114));
-}
-
-bool moving(vec2 pos) {
-    return abs(luma(HOOKED_tex(pos)) - luma(FRAME1_tex(pos))) > MOTION_THRESHOLD;
-}
-
-bool spatial_edge_b(vec2 pos) {
-    float center = luma(FRAME1_tex(pos));
-    for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0)
-                continue;
-            vec2 o = vec2(float(x), float(y)) * HOOKED_pt;
-            if (abs(luma(FRAME1_tex(pos + o)) - center) > SPATIAL_EDGE_THRESHOLD)
-                return true;
-        }
-    }
-    return false;
-}
-
-vec4 hook() {
-    bool edge = moving(HOOKED_pos) && spatial_edge_b(HOOKED_pos);
-    return vec4(edge ? 1.0 : 0.0, 0.0, 0.0, 0.0);
-}
 // ---------------------------------------------------------------------
 // Final pass: TRIDIRECTIONAL warp -- quadratic (constant-acceleration)
 // placement, full resolution.
@@ -4734,26 +4639,14 @@ vec4 hook() {
 //!BIND FLOW_F_BA
 //!BIND FLOW_F_BC
 //!BIND FLOW_F_CB
-//!BIND EDGE_A
-//!BIND EDGE_B
 //!SAVE FRAME_MIX
 //!WIDTH HOOKED.w
 //!HEIGHT HOOKED.h
 //!DESC [tri] motion-compensated warp (quadratic placement)
 
-// Texel snap and its edge-consistency gate: carried over from the base
-// final pass unchanged (SNAP_STRENGTH is 0.0 there and stays 0.0 here, so
-// both warps currently degenerate to plain bilinear -- kept for lockstep,
-// see the base shader for the full history of this mechanism).
-vec2 snap_texel(vec2 uv, vec2 size) {
-    return (floor(uv * size) + 0.5) / size;
-}
-
-float edge_consistency(float expected, float snapped) {
-    return 1.0 - abs(expected - snapped);
-}
-
-const float SNAP_STRENGTH = 0.0;
+// The base's texel snap and its edge-consistency gate, inert here at 0.0 for
+// their whole life, were retired on 2026-10-04 (REPAIRS.md L2): both warps
+// were plain bilinear and stay so.
 
 // Same value and reasoning as the base shader's gate (see its final pass).
 const float SCENE_CUT_DIFF = 0.125;
@@ -5000,17 +4893,6 @@ vec4 hook() {
     vec4 sa = first_half ? HOOKED_tex(uv_a) : FRAME1_tex(uv_a);
     vec4 sb = first_half ? FRAME1_tex(uv_b) : FRAME2_tex(uv_b);
 
-    // Snap gate, inert at SNAP_STRENGTH 0.0 but kept in lockstep with the
-    // base. EDGE_A/EDGE_B are pinned to slots 0-1 (see their passes).
-    vec2 sa_uv = snap_texel(uv_a, HOOKED_size);
-    vec2 sb_uv = snap_texel(uv_b, HOOKED_size);
-    float ea = edge_consistency(EDGE_A_tex(uv_a).r, EDGE_A_tex(sa_uv).r);
-    float eb = edge_consistency(EDGE_B_tex(uv_b).r, EDGE_B_tex(sb_uv).r);
-    sa = mix(sa, first_half ? HOOKED_tex(sa_uv) : FRAME1_tex(sa_uv),
-             SNAP_STRENGTH * ea);
-    sb = mix(sb, first_half ? FRAME1_tex(sb_uv) : FRAME2_tex(sb_uv),
-             SNAP_STRENGTH * eb);
-
     return mix(sa, sb, s);
 }
 
@@ -5048,27 +4930,15 @@ vec4 hook() {
 //!BIND FLOW_F_BA
 //!BIND FLOW_F_BC
 //!BIND FLOW_F_CB
-//!BIND EDGE_A
-//!BIND EDGE_B
 //!SAVE READ_FIELD
 //!WIDTH HOOKED.w 8 /
 //!HEIGHT HOOKED.h 8 /
 //!WHEN read_view 0 >
 //!DESC [reading] the chosen field in px at 1/8 res: this shader's own final pass in its diagnostic mode
 
-// Texel snap and its edge-consistency gate: carried over from the base
-// final pass unchanged (SNAP_STRENGTH is 0.0 there and stays 0.0 here, so
-// both warps currently degenerate to plain bilinear -- kept for lockstep,
-// see the base shader for the full history of this mechanism).
-vec2 snap_texel(vec2 uv, vec2 size) {
-    return (floor(uv * size) + 0.5) / size;
-}
-
-float edge_consistency(float expected, float snapped) {
-    return 1.0 - abs(expected - snapped);
-}
-
-const float SNAP_STRENGTH = 0.0;
+// The base's texel snap and its edge-consistency gate, inert here at 0.0 for
+// their whole life, were retired on 2026-10-04 (REPAIRS.md L2): both warps
+// were plain bilinear and stay so.
 
 // Same value and reasoning as the base shader's gate (see its final pass).
 const float SCENE_CUT_DIFF = 0.125;
@@ -5314,17 +5184,6 @@ vec4 hook() {
 
     vec4 sa = first_half ? HOOKED_tex(uv_a) : FRAME1_tex(uv_a);
     vec4 sb = first_half ? FRAME1_tex(uv_b) : FRAME2_tex(uv_b);
-
-    // Snap gate, inert at SNAP_STRENGTH 0.0 but kept in lockstep with the
-    // base. EDGE_A/EDGE_B are pinned to slots 0-1 (see their passes).
-    vec2 sa_uv = snap_texel(uv_a, HOOKED_size);
-    vec2 sb_uv = snap_texel(uv_b, HOOKED_size);
-    float ea = edge_consistency(EDGE_A_tex(uv_a).r, EDGE_A_tex(sa_uv).r);
-    float eb = edge_consistency(EDGE_B_tex(uv_b).r, EDGE_B_tex(sb_uv).r);
-    sa = mix(sa, first_half ? HOOKED_tex(sa_uv) : FRAME1_tex(sa_uv),
-             SNAP_STRENGTH * ea);
-    sb = mix(sb, first_half ? FRAME1_tex(sb_uv) : FRAME2_tex(sb_uv),
-             SNAP_STRENGTH * eb);
 
     return mix(sa, sb, s);
 }

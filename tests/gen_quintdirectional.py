@@ -159,13 +159,15 @@ def main():
     text = text.replace("const int ZERO_SEED = 0;", "const int ZERO_SEED = 1;")
     blocks = T3.chunk(text)
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
-    extra = len(hook_blocks) - 24
+    # 22 base passes; a base from before 2026-10-04 also carries the two edge masks (REPAIRS.md L2), never carried
+    n_edge = sum(1 for b in hook_blocks if T3.block_id(b)[0] in ("EDGE_A", "EDGE_B"))
+    extra = len(hook_blocks) - 22 - n_edge
     # A FUSED base carries each B->A twin inside its A->B pass, so it has
     # fewer passes and its extras are negative and unpaired; the count below
     # stays exact (every base flow pass is reproduced once per slot pair).
     fused = any("[fused" in b for b in hook_blocks)
     foresight = fused and T4.FORESIGHT_SEED and T4.FORE.applies(text)
-    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
+    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 22 base passes (+ any edge masks, + an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
         cands = [b for b in blocks if T3.block_id(b)[0] == save and
@@ -258,7 +260,7 @@ def main():
         header = header.replace("//   ./tests/gen_quintdirectional.py\n",
                                 f"//   ./tests/gen_quintdirectional.py {DST.name} {SRC.name}\n")
     DST.write_text(READING.add_tail(header + result), newline="\n")
-    print(f"  {DST.name}: {hooks} passes ({24 + extra} base + 12 slot-2/3/4 lumas + 3 cut stats + "
+    print(f"  {DST.name}: {hooks} passes ({22 + extra} base + 12 slot-2/3/4 lumas + 3 cut stats + "
           f"{36 + 3 * extra} pair flow + 5 full-res lumas + 8 full-res refines + 7 packing), "
           f"final pass binds {fp_binds}, braces/parens balanced  OK")
 

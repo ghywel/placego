@@ -399,12 +399,14 @@ vec4 hook() {{
 //!BIND SCENE_DIFF
 //!BIND NEXT
 //!BIND FLOW_H_AB
-//!BIND EDGE_A
-//!BIND EDGE_B
-//!SAVE FRAME_MIX
 """
+    # the base bound its edge masks here until the texel snap was retired (2026-10-04, REPAIRS.md L2)
+    edge = "//!BIND EDGE_A\n//!BIND EDGE_B\n"
+    if a + edge + "//!SAVE FRAME_MIX\n" in t:
+        a += edge
+    a += "//!SAVE FRAME_MIX\n"
     once(a)
-    t = t.replace(a, PASS + a.replace("//!BIND EDGE_B\n", "//!BIND EDGE_B\n//!BIND SUPPORT\n"))
+    t = t.replace(a, PASS + a.replace("//!SAVE FRAME_MIX\n", "//!BIND SUPPORT\n//!SAVE FRAME_MIX\n"))
     a = """    vec4 warped_a = warp_sample_a(HOOKED_pos - flow_ab * mix_t);
     vec4 warped_b = warp_sample_b(NEXT_pos + flow_ab * (1.0 - mix_t));
 

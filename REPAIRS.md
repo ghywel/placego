@@ -55,16 +55,23 @@ hook at its stage, and the user shader's `hook_hook` (src/shaders/custom_mpv.c) 
   most P5 +0.84. As the gate's own comment predicted, it snaps ordinary content, not only edges.
 - **Decision: retire it.** At 0.0 it changes nothing, but its two full-resolution passes (EDGE_A, EDGE_B) run every
   frame in the base, its forks and the whole variational line, Cadence's graphs included (the generators copy them).
-- **Not yet done, and why.** `retire_snap.py` makes the edit in the 12 hand-maintained files (asserted: two passes, two
-  binds, warp_sample_a/b reading their frame straight, which is byte-identical because mix(x, y, 0.0) is x). The rebuild
-  then fails in two generators, so nothing was installed and the files were restored:
-  - `gen_variational.py` places the coherence gate by an anchor beside the snap code ("coherence gate: anchor found 0
-    times"): seven cage-line recipes, Cadence's among them;
-  - the N-frame generators count the base's passes with the edge masks in them (24 base passes), and the reading quad's
-    count then comes out wrong ("expected 66 passes, got 72").
-  Next: move that anchor and teach the counts, then run `retire_snap.py`, `rebuild_generated.py --install`,
-  `compile_all.sh`, `identity.sh` on the Arc and `timepair.sh`. *Prediction:* byte-identical everywhere, and two
-  full-resolution dispatches fewer a frame (L1's two in the quad bought -0.9%).
+- **Done, the same evening (696cd46, 33a63f5).** The first attempt failed in two generators: `gen_variational.py`
+  anchored the coherence gate on the EDGE binds, and the N-frame generators counted 24 base passes with the masks in
+  them. Both now take a base with or without the masks, and `gen_tridirectional.py` drops its own copy of the gate (46
+  passes, was 48). The control came first: unchanged sources through the patched generators, 31 of 35 identical, and
+  the four three-frame files differing only by the dropped masks. `retire_snap.py` then edited the 12 hand-maintained
+  files (six bases, six cel-animation shaders). Its second slip, fixed: the final pass's banner rode at the tail of the
+  second mask's block and went with it. `rebuild_generated.py --install` rebuilt 27 files; `compile_all.sh` 49 of 49 and
+  6 of 6. **Identity on the Arc**, before (c89411f) against after: the base, the propagated base, the variational
+  line, Cadence's Standard and High graphs and the three-frame line, four scenes each, **24 of 24 byte-identical**;
+  the six cel-animation shaders, **24 of 24** (their control identical).
+  The counterfactual (the base against Cadence High) differs. The check's first run was void: the NAS clone's checkout
+  aborted on leftover edits, so "after" was the old commit, and the job went on. The job now forces the checkout and
+  asserts the commit. **Time from a file** (M5, five interleaved pairs, medians): base -6.3%, Cadence High -2.1%,
+  Standard -1.5%. The prediction held.
+- **Cadence:** its nine graphs were regenerated from the new GLSL (High 101 -> 99 passes, Standard 89 -> 87, Low
+  62 -> 60), with metallibs for all three platforms. They had not been regenerated after L3 either, so they now carry
+  both.
 
 ### L4: the coarse search sets the flow's fraction
 
@@ -99,8 +106,16 @@ dispatch share (the base: up to a fifth). *Refuted by:* any differing frame, or 
 
 **L8. The quad is not deterministic on L7_textured_large, even on the Arc.** Its 1 October file against itself:
 60 of 60 frames differ on L7, identical on the other three scenes (both runs on the Arc, 2026-10-04). Cadence's High
-graph is identical against itself there. Something in the four-frame path races or reads uninitialised storage on
-large textured motion. *Cheap step:* the same control on the tri and the quint, and on L7 at N:N.
+graph was identical against itself there in that job, but **not in the next two** (L2's identity jobs, the same
+evening): 60 of 60 differ on L7, each time in the job's first comparison, identical on the other three scenes. Its
+comparisons later in the same jobs (before L2 against after) were identical on L7. So it is not the four-frame path
+alone. *Hypothesis:* a pass reads a persistent or storage texture before its first write, such as the carry's
+history on frame 1. What it reads is whatever the GPU memory held, which differs between the first render in a
+fresh container and later ones. **First step, run (the Arc, 19:45):** the control three times in a row in one
+job differed on the first comparison (60 of 60) and was identical on the second and third. It is a first-render
+effect, not a race that strikes at random. *Next:* read the carry and the quad for reads that come before the first
+write; the reasoning suits Cloud ([CLOUD-LOCAL.md](CLOUD-LOCAL.md)). Until it is found, an identity check on the Arc
+renders one warm-up first, or takes its control from a second run.
 
 **L9. A generated file's header cannot rebuild it.** The variational line records its command without the base
 argument (the `-variational-propagated` files are built on `bidirectional-interpolation-propagated.glsl`, not the base

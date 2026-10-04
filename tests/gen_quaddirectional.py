@@ -346,14 +346,16 @@ def main():
     hook_blocks = [b for b in blocks if "//!HOOK" in b]
     # A variant base may carry EXTRA passes inside a level's flow chain (see
     # gen_tridirectional.py); they are carried into every pair's chain.
-    extra = len(hook_blocks) - 24
+    # 22 base passes; a base from before 2026-10-04 also carries the two edge masks (REPAIRS.md L2), never carried
+    n_edge = sum(1 for b in hook_blocks if T3.block_id(b)[0] in ("EDGE_A", "EDGE_B"))
+    extra = len(hook_blocks) - 22 - n_edge
     # A FUSED base has FEWER passes than the unfused form (each fused pass
     # carries its B->A twin), so its extras are negative and need not pair up;
     # the pass count below is still exact, because every base flow pass is
     # reproduced once per slot pair either way.
     fused = any("[fused" in b for b in hook_blocks)
     foresight = fused and FORESIGHT_SEED and FORE.applies(text)
-    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 24 base passes (+ an even number of extras), found {len(hook_blocks)}"
+    assert fused or (extra >= 0 and extra % 2 == 0), f"expected 22 base passes (+ any edge masks, + an even number of extras), found {len(hook_blocks)}"
 
     def find(save, desc_frag=None):
         cands = [b for b in blocks if T3.block_id(b)[0] == save and
@@ -463,7 +465,7 @@ def main():
         header = header.replace("//   ./tests/gen_quaddirectional.py", "//   CADENCE=1 ./tests/gen_quaddirectional.py", 1)
     DST.write_text(READING.add_tail(header + result), newline="\n")
     print(f"  {DST.name}: {hooks} passes "
-          f"({24 + extra} base + 8 slot-2/3 lumas + 2 cut stats + {24 + 2 * extra} pair flow "
+          f"({22 + extra} base + 8 slot-2/3 lumas + 2 cut stats + {24 + 2 * extra} pair flow "
           f"+ 4 full-res lumas + 6 full-res refines), braces/parens balanced  OK")
 
 
