@@ -836,3 +836,90 @@ Neither is a proof. But both are finite objects, and before this section the rig
    a few 56-bit operations, so a compiled loop does about a billion a second. The orbit is sequential, so this is a
    Local CPU job, not a GPU one.
 2. Catalogue the slips: which shifts follow which phases, and whether the slip sequence is itself simple.
+
+### 8.6 Order in, noise out: the left side churns the wheel (2026-10-04)
+
+The owner: "Does it hold that the left is still mostly random and the wheel churns the noise?" Under the pure wheel no
+noise goes in. Columns 0 and 1 are exactly periodic, and the left half is a deterministic function of them. So the
+question is whether the left side manufactures noise from a regular input. `rule30_churn.py` tested it, with every
+prediction written first:
+
+| | Coin flips | Left half under the pure wheel | The wheel $U$ itself |
+|---|---|---|---|
+| Block entropy, bits per cell, blocks of 12 | 0.9999 | **0.9999** | 0.3165 |
+| Largest departure of the spectrum from flat | 0.041 | **0.034** | a line at 113 |
+| Share of ones | 0.50 | **0.5000** | 0.41 |
+
+- **N1 and N2 held.** Fed a perfectly regular wheel, the left side puts out a sequence that these tests cannot tell
+  from coin flips, over 2.8 million cells. This is Rule 30 as a random-number generator, run sideways.
+- **N3 held: the churn is an avalanche.** Flipping one bit of the wheel at an even time changes 50.5% of the next
+  1,000 left cells. A flip at an odd time changes none, exactly as Lemma 1 requires (control C0).
+- **The arms.** Block entropy for blocks of 8, within depth 192: coin flips 1.0000, left alone 0.9997, both sides
+  exact **0.9971**. The pure-wheel row (0.9920) is not comparable here, because its 28 sequences give too few blocks
+  (bias of about 0.004). Of the comparable arms, the real two-sided left half is the least random. Its order (the
+  quantised runs and templates of §8.2) sits next to the wheel's slips (§8.5, Q4).
+
+So the answer is yes, with a twist: **order in, noise out**. The wheel is churned into noise. The slips, which are the
+right side's own disorder, are where the left half shows structure.
+
+**What this does to the proof route.** It cuts both ways.
+- **Bad news.** Proving that a pseudorandom stream never settles to all zeros is the same kind of problem as the prize
+  itself. A random-looking left half has zero runs that grow like $\log_2$ of the depth, but are never infinite.
+- **Good news.** The pure wheel's stream comes from a finite-state map on pairs of 56-bit columns,
+  $F(b, c) = \big(c,\ \mathrm{rot}(c) \oplus (c \vee b)\big)$.
+  Its orbit must end in a cycle, and $(0, 0)$ is a fixed point. If the cycle is found and it is not $(0, 0)$, then
+  "the pure wheel's left half is never eventually zero" is a computed theorem. Anyone can re-check it from the tail
+  and cycle lengths. `wheel_orbit.c` (Brent's algorithm, lead M2) does this. Its self-tests reproduce the Python
+  results exactly, and it runs at about 470 million steps a second. It was run on all 28 phases, with O1 and O2
+  pre-registered in its header.
+
+**Proposition 6 (computed): the pure wheel cannot make a finite left half.** Let column 0 be 0101… and column 1 the
+universal wheel $U$, at any of its 28 even phases. Then the forced left half is never eventually zero. The orbit of the
+column pair enters a cycle after
+
+```math
+\mu = 32\,896\,298 \text{ steps}, \qquad \lambda = 15\,009\,104\,432 = 2^4 \cdot 7 \cdot 17 \cdot 1433 \cdot 5501 ,
+```
+
+and the cycle is not the zero fixed point. So the left half is eventually periodic in depth, with period dividing
+$\lambda$, and it has infinitely many ones.
+
+*Proof.* The certificate $(\mu, \lambda)$ was found by Brent's algorithm in about $4.7 \times 10^{10}$ steps per phase
+(O1 and O2 held). It was then re-checked independently by plain stepping:
+- the state after $\mu$ steps is not zero, and $\lambda$ further steps return to it;
+- $\lambda / p$ steps do not return, for each prime $p$ of $\lambda$, so $\lambda$ is the exact period;
+- the state after $\mu - 1$ steps is not on the cycle, so $\mu$ is minimal.
+
+The verifier rejects false certificates (its counterfactuals). Every phase gives the same certificate, for a reason:
+$F$ commutes with the rotation of time, which is a permutation of bits, and a rotation by 2 fixes the trace and moves
+the wheel's phase by 2. So the 28 orbits are rotations of one, and one certificate settles them all. All 28 were run
+anyway and agree. $\square$
+
+Proposition 6 is not about a finite configuration: the pure wheel is an idealisation, a right side that never slips.
+What it shows is that **the wheel alone cannot make the left half finite**. A finite configuration would need the
+right side's slips to steer the left half to zero and keep it there.
+
+**The random-chaos step: can any periodic column 1 kill the left half?** Conjecture LR (§7) says that no column 1 at
+all, made by a right half or not, lets the forced left half become zero. For a periodic column 1 that is an exact
+finite question. `periodic_kill.c` asked it of every word up to period 18 with column 0 = 0101…, and up to period
+14 with column 0 = 0001… Its control, the zero trace with the zero column, is found as a kill, as it must be.
+
+| Column 0 | Words | Kills | Decided | Undecided within $10^6$ steps |
+|---|---|---|---|---|
+| 0101…, periods 1–18 | 524,286 | **0** | 394,848 | 129,438 (all of period 17) |
+| 0001…, periods 1–14 | 32,766 | **0** | 22,162 | 10,604 (periods 9, 11, 13) |
+
+So **LR holds exactly for each of the 417,010 periodic columns 1 that were decided** (K1 and K2 held as worded). The
+undecided ones are not settled. Their orbits are longer than the budget, and the same rotation symmetry cuts the
+129,438 words of period 17 to about 7,600 classes.
+
+**Where this leaves the proof.** The route now has three parts. The first is measured, the second is done, and
+the third is open:
+1. **The right side is a wheel with slips.** This is §8.5, measured on every right half up to 12 cells. It is not yet
+   proved.
+2. **The wheel alone cannot make a finite left half.** This is Proposition 6, computed and verified.
+3. **The slips cannot conspire to.** This is open. A heuristic says why it should hold. A right half of $W$ cells
+   carries $W$ bits, while a zero run of $n$ cells needs about $n/2$ coincidences at the linear cells (Lemma 4). So the
+   longest run should grow like the width plus a logarithm of the depth, and never become infinite. The measured runs
+   (24 at width 24, X3) fit that budget. Turning the heuristic into a proof needs the slips' own structure, which is
+   the next target.

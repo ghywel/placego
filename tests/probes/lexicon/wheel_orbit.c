@@ -4,6 +4,7 @@
  * BUILD:      cc -O2 -o wheel_orbit tests/probes/lexicon/wheel_orbit.c
  * COMMAND:    ./wheel_orbit WORD PHASE MAXSTEPS        e.g. ./wheel_orbit U 0 200000000000
  *             ./wheel_orbit selftest                    the known answers below
+ *             ./wheel_orbit verify U PHASE MU LAMBDA P1 P2 ...   re-check a certificate (P1.. = primes of LAMBDA)
  * COST:       about a billion steps a second; MAXSTEPS bounds the work.
  *
  * Column 0 = 0101... and column 1 = WORD delayed by PHASE (both exactly periodic, period P) force every left column to
@@ -23,6 +24,14 @@
  *   SELFTEST (known answers, from rule30_wheel_left.py): U2 at phase 0 has mu = 0 and lambda = 728; the 7-ring's
  *     4-cycle (P = 4, column 1 = 0011) has mu = 0 and lambda = 7; U at phases 0 and 2 has longest zero runs 8 by
  *     depth 192 and 14 and 17 by depth 200,000.
+ *
+ * OUTCOME of the first run, 2026-10-04: SELFTEST passed. O1 HELD and O2 HELD. All 28 phases of U cycle with
+ * mu = 32,896,298 and lambda = 15,009,104,432 = 2^4 x 7 x 17 x 1433 x 5501 (about 4.7 x 10^10 steps each), and the
+ * cycle is not zero. The phases agree because F commutes with rot, and a rotation of time by 2 fixes the trace and
+ * moves the phase by 2, so the 28 orbits are rotations of one. The verify mode, added after the run, re-checked the
+ * certificate independently in 84 s: the state after mu steps is not zero, lambda steps return, no lambda / p returns
+ * for p = 2, 7, 17, 1433, 5501, and the state after mu - 1 steps is not on the cycle. The verifier's counterfactuals,
+ * lambda = 727, mu = 1 and lambda = 1456 for U2, are all rejected.
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -114,8 +123,44 @@ static int selftest(void) {
     return fails ? 1 : 0;
 }
 
+/* Independent check of a certificate (mu, lambda): step exactly, without Brent's bookkeeping. Confirms that the state
+ * s after mu steps is not (0, 0), that lambda steps return to s, that no proper divisor of lambda returns (so lambda
+ * is the exact period up to the divisors tested: lambda/p for each prime p of lambda given on the command line), and
+ * that the state after mu - 1 steps is not on the cycle (so mu is minimal). */
+static int verify(const char *word, int phase, uint64_t mu, uint64_t lam, int nprimes, char **primes) {
+    state s = start(word, phase), prev = s;
+    for (uint64_t i = 0; i < mu; i++) { prev = s; s = F(s); }
+    int ok = !(s.b == 0 && s.c == 0);
+    printf("state after mu steps is %s\n", ok ? "not zero" : "ZERO");
+    state x = s;
+    for (uint64_t i = 0; i < lam; i++) x = F(x);
+    int back = eq(x, s);
+    printf("lambda steps %s to it\n", back ? "return" : "do NOT return");
+    ok &= back;
+    for (int j = 0; j < nprimes; j++) {
+        uint64_t p = strtoull(primes[j], NULL, 10), d = lam / p;
+        x = s;
+        for (uint64_t i = 0; i < d; i++) x = F(x);
+        int early = eq(x, s);
+        printf("lambda / %llu steps %s\n", (unsigned long long)p, early ? "RETURN (lambda not minimal)" : "do not return");
+        ok &= !early;
+    }
+    if (mu > 0) {
+        x = prev;
+        for (uint64_t i = 0; i < lam; i++) x = F(x);
+        int on = eq(x, prev);
+        printf("the state after mu - 1 steps is %s the cycle\n", on ? "ON (mu not minimal)" : "not on");
+        ok &= !on;
+    }
+    printf(ok ? "CERTIFICATE VERIFIED\n" : "CERTIFICATE FAILED\n");
+    return ok ? 0 : 1;
+}
+
 int main(int argc, char **argv) {
     if (argc >= 2 && strcmp(argv[1], "selftest") == 0) return selftest();
+    if (argc >= 6 && strcmp(argv[1], "verify") == 0)
+        return verify(strcmp(argv[2], "U2") == 0 ? U2 : U, atoi(argv[3]), strtoull(argv[4], NULL, 10),
+                      strtoull(argv[5], NULL, 10), argc - 6, argv + 6);
     if (argc < 4) { fprintf(stderr, "usage: wheel_orbit U|U2 PHASE MAXSTEPS | selftest\n"); return 2; }
     const char *word = strcmp(argv[1], "U2") == 0 ? U2 : U;
     int phase = atoi(argv[2]);

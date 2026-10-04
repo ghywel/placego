@@ -18,6 +18,14 @@
  *   K2 (blind): the same for column 0 = 0001... with q <= 14.
  *   C  (known answer, must be found): with column 0 = 000... (TRACE 0), column 1 = 000... kills (the zero row), and
  *      that is the only kill for q = 1 (column 1 = 111... with the zero trace is Condrey's case: not a kill).
+ *
+ * OUTCOME of the first run, 2026-10-04 (BUDGET 10^6): C passed (for TRACE 0 and q = 1..4 the only kill is the zero
+ * column; column 1 = 111... gives the alternating tail, a cycle of 2). K1 HELD as worded: with column 0 = 0101..., 0
+ * kills among 524,286 words of period 1..18. 394,848 were decided; the other 129,438 (all of period 17, P = 34) did
+ * not cycle within the budget. K2 HELD as worded: with column 0 = 0001..., 0 kills among 32,766 words of period 1..14;
+ * 22,162 were decided, and 10,604 (periods 9, 11, 13; P = 36, 44, 52) were undecided. The longest cycles found were
+ * 396,525 (0101..., q = 15) and 363,832 (0001..., q = 7 and 14). Undecided words are not settled. Since rotating
+ * column 1 together with the trace leaves the outcome unchanged, about 7,600 rotation classes would settle q = 17.
  */
 #include <stdint.h>
 #include <stdio.h>

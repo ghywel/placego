@@ -27,6 +27,13 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
   CF (counterfactual): the wheel U itself, read as a sequence, has H_12 / 12 <= 0.5 and a spectral line above 2; so
      the instrument sees structure where there is some.
 REFUTED-BY: C0, C1 or CF failing (the instrument); N1, N2 or N3 failing.
+
+OUTCOME of the first run, 2026-10-04 (D = 100,000, W = 14, K = 192): C0 (0 cells changed), C1 (lowest H_m/m 0.9999,
+largest |S - 1| 0.0407) and CF (H_12/12 0.3165, a line at 113.3) passed. N1 HELD (lowest H_m/m 0.9999; share of ones
+0.5000). N2 HELD (largest |S - 1| 0.0341). N3 HELD (0.5046 of cells changed). The arms, H_8/8 within depth 192: coin
+flips 1.0000, left alone 0.9997, both sides exact 0.9971, pure wheel 0.9920. The last is not comparable: its 28
+sequences give only about 5,000 blocks, so the estimate is biased low by about 0.004; the other arms have about
+3 million blocks each.
 """
 import math, random, sys, pathlib
 from collections import Counter
