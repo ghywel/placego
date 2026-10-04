@@ -1,14 +1,15 @@
 # bidirectional-interpolation.glsl, written as mathematics
 
 This document restates [shaders/bidirectional-interpolation.glsl](shaders/bidirectional-interpolation.glsl), the
-base shader the rest of the family derives from, as equations. It covers all 24 passes, in pass order, and then the
+base shader the rest of the family derives from, as equations. It covers all 22 passes, in pass order, and then the
 seven passes of the optional reading view. Each equation cites the source lines it comes from, so it can be checked
 against the code. The constants are the ones the file ships with.
 
 Transcribed on 2026-10-04 from the file at commit `87f43f3`. It was written by reading the code, not by running it, and
 has not been checked numerically against the shader's output. The same day, writing it out exposed four wrong comments
-in the shader, which were repaired ([REPAIRS.md](REPAIRS.md)). The repair changed no code, but it moved some lines, so
-the line numbers here refer to the repaired file. GitHub renders the equations; a plain-text viewer shows the LaTeX
+in the shader, which were repaired ([REPAIRS.md](REPAIRS.md)). Later that day Local retired the dead contrast gates and
+the edge-snap mechanism (L2 and L3), and this document was brought up to date. The line numbers here refer to the
+file at commit `be6fd30`. GitHub renders the equations; a plain-text viewer shows the LaTeX
 source.
 
 ## Contents
@@ -22,7 +23,7 @@ source.
 6. [Refinement at the eighth, quarter and half levels](#6-refinement-at-the-eighth-quarter-and-half-levels)
 7. [Sub-pixel fit (present, switched off)](#7-sub-pixel-fit-present-switched-off)
 8. [Vector median filter](#8-vector-median-filter)
-9. [Motion-gated edge masks (present, no effect)](#9-motion-gated-edge-masks-present-no-effect)
+9. [Motion-gated edge masks (retired)](#9-motion-gated-edge-masks-retired)
 10. [The output frame](#10-the-output-frame)
 11. [The reading view (off by default)](#11-the-reading-view-off-by-default)
 12. [What writing it out shows](#12-what-writing-it-out-shows)
@@ -132,14 +133,11 @@ contradiction.
 | $\lambda_S$ | $0.06$ | `REG_LAMBDA` | 250 |
 | $h_0$ | $0.75$ | `step_px` | 328 |
 | $\kappa_S$ | $0.02$ | `MIN_CONTRAST`, coarse level | 232 |
-| $\kappa_E = \kappa_Q = \kappa_H$ | $0$ | `MIN_CONTRAST`, refinement levels | 553, 798, 1017 |
-| matching window radius | $1$ | `COARSE_WINDOW_RADIUS`, and the fixed $3 \times 3$ at H | 192, 523, 783, 1003 |
-| refinement search radius | $2$ | `REFINE_SEARCH_RADIUS` | 597, 829, 1048 |
-| $\lambda_R$ | $0.05$ | `REFINE_REG_LAMBDA` | 616, 830, 1049 |
-| $D_{\text{cut}}$ | $0.125$ | `SCENE_CUT_DIFF` | 1842 |
-| $\theta_m$, $\theta_e$ | $0.08$, $0.1$ | `MOTION_THRESHOLD`, `SPATIAL_EDGE_THRESHOLD` | 1607-1608 |
-| $\sigma$ | $0$ | `SNAP_STRENGTH` | 1762 |
-| sub-pixel fit | off | `SUBPEL_REFINE = 0` | 1113, 1324 |
+| matching window radius | $1$ | `COARSE_WINDOW_RADIUS`, and the fixed $3 \times 3$ at H | 192, 523, 777, 991 |
+| refinement search radius | $2$ | `REFINE_SEARCH_RADIUS` | 594, 820, 1033 |
+| $\lambda_R$ | $0.05$ | `REFINE_REG_LAMBDA` | 613, 821, 1034 |
+| $D_{\text{cut}}$ | $0.125$ | `SCENE_CUT_DIFF` | 1669 |
+| sub-pixel fit | off | `SUBPEL_REFINE = 0` | 1098, 1306 |
 
 ---
 
@@ -149,14 +147,13 @@ Read the table top to bottom. Each pass reads only symbols defined in rows above
 
 | Lines | Pass | Result | Section |
 |---|---|---|---|
-| 72-92, 450-470, 733-753, 947-967 | luma at $\tfrac1{16}$, $\tfrac18$, $\tfrac14$, $\tfrac12$ resolution | $Y^A_\ell$, $Y^B_\ell$ | §3 |
+| 72-92, 450-470, 727-747, 935-955 | luma at $\tfrac1{16}$, $\tfrac18$, $\tfrac14$, $\tfrac12$ resolution | $Y^A_\ell$, $Y^B_\ell$ | §3 |
 | 137-155 | scene-cut statistic | $D$ (one number) | §4 |
 | 167-351, 358-442 | coarse search, both directions | $F^{AB}_S$, $F^{BA}_S$ | §5 |
-| 477-731, 760-945, 974-1395 | refinement at E, Q, H, both directions | $F^{AB}_\ell$, $F^{BA}_\ell$ | §6, §7 |
-| 1406-1581 | vector median, twice, both directions | $\bar F^{AB}_H$, $\bar F^{BA}_H$ | §8 |
-| 1598-1674 | motion-gated edge masks | $E_A$, $E_B$ | §9 |
-| 1681-1860 | warp and blend | the output frame $O$ | §10 |
-| 1862-2190 | reading view, only when `read_view` $> 0$ | $\mathbf v$, $\mathbf a_n$, $\nabla\mathbf v$, ... | §11 |
+| 477-725, 754-933, 962-1377 | refinement at E, Q, H, both directions | $F^{AB}_\ell$, $F^{BA}_\ell$ | §6, §7 |
+| 1388-1563 | vector median, twice, both directions | $\bar F^{AB}_H$, $\bar F^{BA}_H$ | §8 |
+| 1570-1687 | warp and blend | the output frame $O$ | §10 |
+| 1689-2017 | reading view, only when `read_view` $> 0$ | $\mathbf v$, $\mathbf a_n$, $\nabla\mathbf v$, ... | §11 |
 
 All flows $F$ are stored in texels of their own level and mean "where this point of the first frame is found in the
 second". They are measured per source-frame interval.
@@ -165,7 +162,7 @@ second". They are measured per source-frame interval.
 
 ## 3. Luma pyramid
 
-*Lines 79-81 and 90-92 ($\tfrac1{16}$); 457-459 and 468-470 ($\tfrac18$); 740-742 and 751-753 ($\tfrac14$); 954-956 and 965-967 ($\tfrac12$).*
+*Lines 79-81 and 90-92 ($\tfrac1{16}$); 457-459 and 468-470 ($\tfrac18$); 734-736 and 745-747 ($\tfrac14$); 942-944 and 953-955 ($\tfrac12$).*
 
 Full-resolution luma uses the BT.601 weights $\mathbf w = (0.299,\ 0.587,\ 0.114)^\top$:
 
@@ -268,18 +265,18 @@ $F^{BA}_S$ is the same with $A \leftrightarrow B$ throughout, including the gate
 
 ## 6. Refinement at the eighth, quarter and half levels
 
-*E: lines 477-639 and 646-731. Q: lines 760-853 and 860-945. H: lines 974-1184 and 1191-1395.*
+*E: lines 477-636 and 643-725. Q: lines 754-844 and 851-933. H: lines 962-1169 and 1176-1377.*
 
 **Seed.** The parent's flow is read at the parent texel that contains $\mathbf u$. `snap_texel` (lines 510-512) turns
 the bilinear read into an exact texel read, which is nearest-neighbour upsampling. The read value is doubled into the
-finer level's texels (lines 573, 818, 1037):
+finer level's texels (lines 576, 815, 1028):
 
 ```math
 \hat{\mathbf d}_\ell(\mathbf u) = 2\, F^{AB}_{p(\ell)}\Big[\big\lfloor \mathbf N_{p(\ell)} \odot \mathbf u \big\rfloor\Big].
 ```
 
 **Search.** One pass over the $5 \times 5$ block of whole-texel offsets around the seed. The penalty is on the
-distance from the seed (lines 618-635):
+distance from the seed (lines 615-632):
 
 ```math
 J_\ell(\hat{\mathbf d}_\ell + \boldsymbol\delta) = C^{AB}_\ell\big(\mathbf u,\ \hat{\mathbf d}_\ell + \boldsymbol\delta\big) + \lambda_R \lVert \boldsymbol\delta \rVert_2,
@@ -293,15 +290,15 @@ J_\ell(\hat{\mathbf d}_\ell + \boldsymbol\delta) = C^{AB}_\ell\big(\mathbf u,\ \
 The window is $3 \times 3$ at all three levels. Each level can move the seed by up to $\pm 2$ of its own texels:
 $\pm 16$, $\pm 8$ and $\pm 4$ full-resolution pixels at E, Q and H.
 
-**The gate here can never fire.** Each refinement pass keeps a contrast test,
-$\kappa^A_{\ell,r}(\mathbf u) < \kappa_\ell$ with $r = 2$ at E and Q and $r = 1$ at H (lines 575, 820, 1039). But
-$\kappa_\ell = 0$, and
+**The gate retired here.** Until 2026-10-04 each refinement pass also kept a contrast test,
+$\kappa^A_{\ell,r}(\mathbf u) < \kappa_\ell$, with $\kappa_\ell = 0$. Since
 
 ```math
 \max(0, \max) \;\ge\; \max \;\ge\; \min \;\ge\; \min(1, \min) \quad\Longrightarrow\quad \kappa^A_{\ell, r}(\mathbf u) \ge 0,
 ```
 
-so the strict inequality is never true. The search above always runs.
+the strict inequality could never be true, and the test was dead code. It was retired across the family, byte-identical
+on the Arc ([REPAIRS.md](REPAIRS.md), lead L3). The search above always runs; only the coarse level keeps its gate.
 
 $F^{BA}_\ell$ is the same with $A \leftrightarrow B$, seeded from $F^{BA}_{p(\ell)}$.
 
@@ -309,9 +306,9 @@ $F^{BA}_\ell$ is the same with $A \leftrightarrow B$, seeded from $F^{BA}_{p(\el
 
 ## 7. Sub-pixel fit (present, switched off)
 
-*Lines 1141-1180 ($A \to B$) and 1352-1391 ($B \to A$).* The whole block sits behind the constant `SUBPEL_REFINE = 0`, so in this
+*Lines 1126-1165 ($A \to B$) and 1334-1373 ($B \to A$).* The whole block sits behind the constant `SUBPEL_REFINE = 0`, so in this
 file $F^{AB}_H$ is exactly the result of §6. It is written out here because the generated field shaders switch it on
-(lines 1103-1112).
+(lines 1088-1097).
 
 Let $\mathbf d^\ast = F^{AB}_H(\mathbf u)$ from §6, and let $\mathbf e_x = (1, 0)$, $\mathbf e_y = (0, 1)$. Take the
 cost at the minimum and its four neighbours:
@@ -364,7 +361,7 @@ F^{AB}_H(\mathbf u) \;\leftarrow\; \mathbf d^\ast + \operatorname{clamp}\big(\bo
 
 ## 8. Vector median filter
 
-*$A \to B$: lines 1413-1446 (pass 1) and 1464-1495 (pass 2). $B \to A$: lines 1504-1532 and 1550-1581.*
+*$A \to B$: lines 1395-1428 (pass 1) and 1446-1477 (pass 2). $B \to A$: lines 1486-1514 and 1532-1563.*
 
 The filter takes the nine flow vectors of the $3 \times 3$ neighbourhood, in the order of $\mathcal W_1$, so
 $\mathbf v_4$ is the centre:
@@ -391,10 +388,11 @@ That is the vector median filter (Astola, Haavisto and Neuvo, 1990; [PRIOR-ART.m
 
 ---
 
-## 9. Motion-gated edge masks (present, no effect)
+## 9. Motion-gated edge masks (retired)
 
-*Lines 1598-1635 ($E_A$) and 1637-1674 ($E_B$).* These are binary masks at full resolution. A pixel is marked if its
-luma changed between the frames and it sits on a spatial edge in its own frame:
+Until 2026-10-04 the base computed two binary masks at full resolution, for a texel-snapping sampler in the warp. A
+pixel was marked if its luma changed between the frames and it sat on a spatial edge in its own frame, with thresholds
+$\theta_m = 0.08$ and $\theta_e = 0.1$:
 
 ```math
 E_A[\mathbf k] = \mathbf 1\Big[\, \big\lvert Y_A[\mathbf k] - Y_B[\mathbf k] \big\rvert > \theta_m \Big]
@@ -406,18 +404,21 @@ E_B[\mathbf k] = \mathbf 1\Big[\, \big\lvert Y_A[\mathbf k] - Y_B[\mathbf k] \bi
 \cdot \mathbf 1\Big[\, \max_{\boldsymbol\delta \in \mathcal R_1} \big\lvert Y_B[\mathbf k + \boldsymbol\delta] - Y_B[\mathbf k] \big\rvert > \theta_e \Big].
 ```
 
-They enter §10 only multiplied by $\sigma = 0$, so they do not change the output.
+They entered §10 only multiplied by the snap strength $\sigma = 0$, so they could not change the output. Measured at
+$\sigma = 1$, the snap cost $-0.99$ dB on the ladder's mean. The mechanism was retired, both passes went from the
+bases, and the generators were fixed to build without them ([REPAIRS.md](REPAIRS.md), lead L2: byte-identical on the
+Arc, and the base renders $6.3\%$ faster from a file).
 
 ---
 
 ## 10. The output frame
 
-*Lines 1681-1860.*
+*Lines 1570-1687.*
 
 ### 10.1 The equation
 
 The displacement is read from the twice-filtered half-resolution flow by a bilinear sample at the output pixel. It is
-converted to full-resolution pixels (a factor of $2$) and then to normalised units (line 1854):
+converted to full-resolution pixels (a factor of $2$) and then to normalised units (line 1681):
 
 ```math
 \mathbf f(\mathbf u) = 2\, \bar F^{AB}_H(\mathbf u) \quad \text{(full-resolution pixels)},
@@ -425,34 +426,26 @@ converted to full-resolution pixels (a factor of $2$) and then to normalised uni
 \boldsymbol\Delta(\mathbf u) = \boldsymbol\eta \odot \mathbf f(\mathbf u) .
 ```
 
-The output at each full-resolution texel centre $\mathbf u_{\mathbf k}$ is then (lines 1848-1859):
+The output at each full-resolution texel centre $\mathbf u_{\mathbf k}$ is then (lines 1675-1686):
 
 ```math
 O(\mathbf u_{\mathbf k}) =
 \begin{cases}
 A[\mathbf k] & \text{if } D > D_{\text{cut}} \text{ and } t < \tfrac12,\\[4pt]
 B[\mathbf k] & \text{if } D > D_{\text{cut}} \text{ and } t \ge \tfrac12,\\[4pt]
-(1 - t)\; \tilde A\big(\mathbf u_{\mathbf k} - t\, \boldsymbol\Delta(\mathbf u_{\mathbf k})\big)
-\;+\; t\; \tilde B\big(\mathbf u_{\mathbf k} + (1 - t)\, \boldsymbol\Delta(\mathbf u_{\mathbf k})\big) & \text{otherwise.}
+(1 - t)\; A\big(\mathbf u_{\mathbf k} - t\, \boldsymbol\Delta(\mathbf u_{\mathbf k})\big)
+\;+\; t\; B\big(\mathbf u_{\mathbf k} + (1 - t)\, \boldsymbol\Delta(\mathbf u_{\mathbf k})\big) & \text{otherwise,}
 \end{cases}
 ```
 
-$\tilde A$ is the edge-confirmed snapping sampler (lines 1699-1701, 1736-1738, 1764-1770). It blends the bilinear sample
-toward the nearest texel where the edge mask agrees with itself:
-
-```math
-\tilde A(\mathbf x) = \big(1 - \sigma\,\gamma_A(\mathbf x)\big)\, A(\mathbf x) + \sigma\,\gamma_A(\mathbf x)\, A\big(\operatorname{snap}(\mathbf x)\big),
-\qquad
-\gamma_A(\mathbf x) = 1 - \Big\lvert E_A(\mathbf x) - E_A\big(\operatorname{snap}(\mathbf x)\big) \Big\rvert,
-```
-
-with $\operatorname{snap}(\mathbf x) = \big(\lfloor \mathbf N \odot \mathbf x \rfloor + \tfrac12 \mathbf 1\big) \oslash \mathbf N$.
-$\tilde B$ is the same with $B$ and $E_B$. The file sets $\sigma = 0$, so $\tilde A = A$ and $\tilde B = B$. Away from
-a cut the output is therefore exactly:
+where $A(\cdot)$ and $B(\cdot)$ are the plain bilinear samplers of §1, so away from a cut the output is:
 
 ```math
 O(\mathbf u) = (1 - t)\; A\big(\mathbf u - t\, \boldsymbol\Delta(\mathbf u)\big) \;+\; t\; B\big(\mathbf u + (1 - t)\, \boldsymbol\Delta(\mathbf u)\big).
 ```
+
+Until 2026-10-04 each sample went through an edge-confirmed snapping sampler, weighted by a snap strength
+$\sigma = 0$, which reduced it to the plain sampler. It was retired with the masks of §9.
 
 ### 10.2 The same thing as matrices
 
@@ -487,18 +480,18 @@ inputs. It is linear in the pixel values only once the motion has been decided.
 
 ## 11. The reading view (off by default)
 
-*Lines 1862-2190, generated by `tests/add_human_reading.py`.* These passes run only when `read_view` $> 0$ (the default
+*Lines 1689-2017, generated by `tests/add_human_reading.py`.* These passes run only when `read_view` $> 0$ (the default
 is $0$). They work on cells at one eighth of the resolution, with pitch $\boldsymbol\eta_R$, at centres $\mathbf c$.
 The two-frame shader has one flow, so every mode reads velocity. Any per-frame memory updates once per **output**
 frame, indexed $n$.
 
-**Velocity** (lines 1893-1897), in full-resolution pixels per source interval:
+**Velocity** (lines 1720-1724), in full-resolution pixels per source interval:
 
 ```math
 \mathbf v(\mathbf c) = 2\, \bar F^{AB}_H(\mathbf c).
 ```
 
-**Mode memory** (lines 1927-1953). Each cell keeps $K = 3$ candidates $(\boldsymbol\mu_k, w_k)$ and a miss counter $m$.
+**Mode memory** (lines 1754-1780). Each cell keeps $K = 3$ candidates $(\boldsymbol\mu_k, w_k)$ and a miss counter $m$.
 With $\mathbf r = \mathbf v(\mathbf c)$, one output frame does:
 
 ```math
@@ -513,9 +506,9 @@ With $\mathbf r = \mathbf v(\mathbf c)$, one output frame does:
 ```
 
 and the pass outputs $(\boldsymbol\mu_b, w_b)$ with $b = \arg\max_k w_k$. Every $\arg\min$ and $\arg\max$ takes the
-lowest index on a tie. The threshold $10^9$ means the faster decay never runs (line 1926).
+lowest index on a tie. The threshold $10^9$ means the faster decay never runs (line 1753).
 
-**Pooled reading** (lines 1991-2012, `READ_MEMORY = 0`). This is a $13 \times 13$ box mean followed by an exponential
+**Pooled reading** (lines 1818-1839, `READ_MEMORY = 0`). This is a $13 \times 13$ box mean followed by an exponential
 moving average:
 
 ```math
@@ -528,7 +521,7 @@ with $\alpha = 0.12$, or $\alpha = 1$ (no memory) when `read_view` $\in \lbrace 
 is off, replaces both with
 $\mathbf a(\mathbf c) = \sum_{\mathcal W_1} w_b \boldsymbol\mu_b \big/ \max\big(\sum_{\mathcal W_1} w_b,\ 10^{-6}\big)$.
 
-**Velocity gradient tensor** (lines 2026-2031). These are central differences across neighbouring cells. Cells are $8$ px
+**Velocity gradient tensor** (lines 1853-1858). These are central differences across neighbouring cells. Cells are $8$ px
 apart, so each difference spans $16$ px:
 
 ```math
@@ -563,7 +556,7 @@ Together they rebuild the tensor exactly:
 
 Screen $y$ points down, so a positive curl is clockwise on screen.
 
-**Frame maximum with memory** (lines 2042-2049 and 2076-2089). This is the largest pooled magnitude in the frame,
+**Frame maximum with memory** (lines 1869-1876 and 1903-1916). This is the largest pooled magnitude in the frame,
 taken in two stages through $8 \times 8$ blocks of cells, which gives the same result as one global max:
 
 ```math
@@ -575,7 +568,7 @@ s_n = \max\!\left( \phi,\ \begin{cases} s_{n-1} + 0.3\, (M_n - s_{n-1}) & \text{
 with floor $\phi = 2.0$ when `read_view` $\in \lbrace 1, 4, 7, 8, 9 \rbrace$, $\phi = 0.9$ when it is $3$, and $\phi = 0.22$ when it
 is $2$, $5$ or $6$.
 
-**What is drawn** (lines 2134-2190). Let $P = O$ be the interpolated frame from §10.
+**What is drawn** (lines 1961-2017). Let $P = O$ be the interpolated frame from §10.
 
 *Machine modes* write the field as a colour around mid-grey, with full scale $\Gamma$:
 
@@ -654,7 +647,6 @@ and saturation from the magnitude. The painting is laid over the picture at brig
 | Coarse search and refinement (§5, §6) | discrete minimisation over candidate displacements | no |
 | Contrast gate (§5) | $\max - \min$, then a threshold | no |
 | Vector median (§8) | sums of Euclidean norms, then a selection | no |
-| Edge masks (§9) | thresholds | no |
 | Cut gate (§10) | threshold that picks a branch | no |
 | Warp and blend, for a given flow (§10) | a sparse, row-stochastic matrix | yes |
 | Reading: pooling and derivatives (§11) | convolution stencils | yes |
@@ -670,7 +662,7 @@ file's flow cache needs: output frames that share a source pair share the flow (
 
 At $t = 0$, the equation of §10.1 gives $O(\mathbf u_{\mathbf k}) = A(\mathbf u_{\mathbf k}) = A[\mathbf k]$. At $t = 1$ it
 gives $B[\mathbf k]$. This holds whatever the flow, and the cut branch agrees. A wrong flow can only show up strictly
-between the two source frames, and its effect grows from zero at either end. The note at lines 1809-1814 makes the same
+between the two source frames, and its effect grows from zero at either end. The note at lines 1636-1641 makes the same
 point in words.
 
 ### 12.4 The values the flow can take
@@ -708,28 +700,30 @@ the warp uses lies between them. Four consequences follow for the stored values:
 
 Until 2026-10-04 the note above the sub-pixel fit said the finest flow the estimator could express was one
 half-resolution texel ($2$ px). That is true of the refinement steps but not of the total, because the coarse steps,
-$h_i = 0.75 \cdot 2^{-i}$ coarse texels, are fractional. The note now says so (lines 1070-1080; [REPAIRS.md](REPAIRS.md)).
+$h_i = 0.75 \cdot 2^{-i}$ coarse texels, are fractional. The note now says so (lines 1055-1065; [REPAIRS.md](REPAIRS.md)).
 Whether the quarter-pixel fraction helps or hurts on real footage has not been measured.
 
 ### 12.5 What runs without changing the output
 
-With the shipped constants, four parts of the file compute without affecting $O$:
+With the shipped constants, two parts of the file compute without affecting $O$:
 
 - **The $B \to A$ chain.** $F^{BA}_S \to F^{BA}_E \to F^{BA}_Q \to F^{BA}_H \to \bar F^{BA}_H$ is computed and median-filtered,
   and no later pass in this file reads $\bar F^{BA}_H$. The generators (for example `tests/gen_tridirectional.py`)
   copy these passes into the shaders they build, where they are used. Until 2026-10-04 the file header described a
-  forward/backward occlusion check fed by this chain. The note at lines 1780-1819 records that check's removal, and
+  forward/backward occlusion check fed by this chain. The note at lines 1607-1646 records that check's removal, and
   the header now does too (lines 13-20; [REPAIRS.md](REPAIRS.md)).
-- **The refinement contrast gates** (§6). They can never fire.
-- **The edge masks** (§9). They are read only through $\sigma = 0$.
 - **The sub-pixel fit** (§7). It sits behind a constant $0$.
 
-What actually determines the output frame is therefore: §3, §4, the $A \to B$ half of §5 and §6, the $A \to B$ half of §8, and
-§10 with $\sigma = 0$. (In the reading view, `lum` at line 2184 is computed and never used.)
+Two more did until 2026-10-04: the refinement contrast gates, which could never fire (§6), and the edge masks, which
+were read only through $\sigma = 0$ (§9). Both were retired by Local the same day ([REPAIRS.md](REPAIRS.md), L2 and
+L3), byte-identical on the Arc. The $B \to A$ chain is lead L7, awaiting the owner's go.
+
+What actually determines the output frame is therefore: §3, §4, the $A \to B$ half of §5 and §6, the $A \to B$ half
+of §8, and §10. (In the reading view, `lum` at line 2011 is computed and never used.)
 
 ### 12.6 The approximation in the warp
 
-Line 1851 defines the flow by $A(\mathbf x) \approx B(\mathbf x + \mathbf f(\mathbf x))$, a flow attached to positions in
+Line 1678 defines the flow by $A(\mathbf x) \approx B(\mathbf x + \mathbf f(\mathbf x))$, a flow attached to positions in
 $A$. A point that shows up at output position $\mathbf p$ at time $t$ started at the $\mathbf x_A$ that solves
 $\mathbf x_A + t\, \mathbf f(\mathbf x_A) = \mathbf p$. The shader uses $\mathbf f(\mathbf p)$ in place of
 $\mathbf f(\mathbf x_A)$. This is the usual backward-warping shortcut. It is exact where the flow is locally uniform.
@@ -750,7 +744,7 @@ and by the same expression with $1 - t$ in place of $t$ on the $B$ side.
 - **Filtering.** Texture units compute bilinear weights at reduced precision (commonly $8$ fractional bits), so
   $\Lambda$ is an idealisation.
 - **Assumptions about libplacebo.** Textures are taken to be sampled bilinearly with clamp-to-edge addressing,
-  which is what the file's own comments assume (lines 1693-1698, 1703-1706). Intermediate textures are stored at
+  which is what the file's own comments assume (lines 1580-1585, 1590-1597). Intermediate textures are stored at
   whatever precision libplacebo allocates for them.
 - **Level sizes.** Where a frame dimension is not a multiple of $16$, $\mathbf N_\ell$ is rounded. The factor $2$ in each
   seed (§6) and in the final flow (§10) is then not an exact change of scale between levels. The equations follow the

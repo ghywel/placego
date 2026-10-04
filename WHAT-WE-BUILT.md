@@ -448,6 +448,10 @@ the research record, the scientific record and the instruments.
   and the repairs to the tracker that came out of asking.
 - [REPAIRS.md](REPAIRS.md) — dated repairs to the shaders and tools: what was found, how it was fixed and checked,
   and the open leads each round left.
+- [LEXICON.md](LEXICON.md) — a lexicon for writing programs as mathematics: four arithmetics, the margin fold, spin
+  digits, every program as a matrix, and the machine's own arithmetic, each checked against the shader.
+- [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked, and the
+  first experiment: periodic columns in Rule 30.
 
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
