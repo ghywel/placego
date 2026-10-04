@@ -4,6 +4,7 @@
  * RUN-ON:     cpu (C99, one core)
  * BUILD:      cc -O2 -o periodic_kill tests/probes/lexicon/periodic_kill.c
  * COMMAND:    ./periodic_kill TRACE QMAX BUDGET      e.g. ./periodic_kill 01 18 1000000
+ *             ./periodic_kill classes TRACE Q BUDGET SHARD NSHARDS   one period, one word per rotation class
  * COST:       seconds to minutes.
  *
  * Column 0 = TRACE repeated, column 1 = every word of length q (q = 1..QMAX) repeated; P = lcm(|TRACE|, q) <= 62.
@@ -26,6 +27,29 @@
  * 22,162 were decided, and 10,604 (periods 9, 11, 13; P = 36, 44, 52) were undecided. The longest cycles found were
  * 396,525 (0101..., q = 15) and 363,832 (0001..., q = 7 and 14). Undecided words are not settled. Since rotating
  * column 1 together with the trace leaves the outcome unchanged, about 7,600 rotation classes would settle q = 17.
+ *
+ * ---------------------------------------------------------------------------------------------------------------
+ * JOB M2 (Cloud wrote, 2026-10-05; Local runs it; CLOUD-LOCAL.md lead M2). Settle the words the first run left
+ * undecided, one representative per rotation class (the classes mode below).
+ * RUN-ON:     cpu (the M5 or the NAS; 8 cores assumed; no GPU, the orbits are sequential)
+ * COMMAND:    cc -O2 -o /tmp/periodic_kill tests/probes/lexicon/periodic_kill.c && (for s in 0 1 2 3 4 5 6 7; do /tmp/periodic_kill classes 01 17 1000000000 $s 8 > /tmp/m2_01_q17_$s.txt & done; for q in 9 11 13; do /tmp/periodic_kill classes 0001 $q 1000000000 0 1 > /tmp/m2_0001_q$q.txt & done; wait) && grep -h -E "KILL|CLASSES" /tmp/m2_*.txt
+ * PREDICTION (written 2026-10-05 before any run of this job):
+ *   K3 (blind): with column 0 = 0101... and q = 17, no class kills (no KILL line), and at least 99% of the 129,438
+ *      words (by class weight) decide within 10^9 steps.
+ *   K4 (blind): with column 0 = 0001... and q = 9, 11, 13, no class kills, and at least 99% of the 10,604 words (858
+ *      classes) decide.
+ * REFUTED-BY: any KILL line (that would refute conjecture LR itself: stop and hand back at once, with the word); or
+ *   a decided share below 99% (then the budget, not the mathematics, is the limit).
+ * COST: at most 7,712 + 880 classes (all classes are run) x 10^9 steps, about 8.6 x 10^12 steps. At about 5 x 10^8 steps a second per core,
+ *   that is under 40 minutes on 8 cores at worst, and less if the orbits close sooner.
+ * VALIDATION (Cloud, 2026-10-05): the classes mode reproduces the first run exactly. With column 0 = 0101... and a
+ *   budget of 10^6: q = 15 gives 32,768 words decided and a longest cycle of 396,525; q = 16 gives 65,536 decided and
+ *   2,032; q = 17 gives 129,438 undecided words in 7,614 classes, 1,634 decided, and a longest cycle of 148,750. So the
+ *   rotation symmetry holds, and so does the class weighting. With column 0 = 0001... at 10^6: q = 9, 11, 13 give 414,
+ *   2,013 and 8,177 undecided words (46, 183 and 629 of 60, 188 and 632 classes), as in the first run.
+ * HAND BACK to Cloud when every output file holds its CLASSES line and Local has recorded the verdict (K3 and K4
+ *   HELD or REFUTED, with the counts) here and in PRIZE-PROBLEMS.md section 8.6, added a ledger line ("Local ran"),
+ *   and pushed main. Hand back AT ONCE, without finishing, on any KILL line, or if the run passes 3 x COST.
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -56,8 +80,58 @@ static int decide(uint64_t col0, uint64_t col1, uint64_t budget, uint64_t *lam_o
     return (hb == 0 && hc == 0) ? 1 : 0;
 }
 
+/* Rotating column 1 by |TRACE| time steps, together with column 0, leaves column 0 unchanged; F commutes with the
+ * rotation, so the orbit is rotated and its fate (kill, cycle, undecided) is unchanged. On the q-word this is a rotation
+ * by |TRACE| mod q, which generates the rotations by multiples of d = gcd(|TRACE|, q). So one representative per class
+ * (the least word among its rotations by multiples of d) decides the whole class; its class size is the weight. */
+static uint64_t rotq(uint64_t w, int q, int k) { k %= q; return ((w >> k) | (w << (q - k))) & ((1ULL << q) - 1); }
+
+static int classes(const char *trace, int q, uint64_t budget, int shard, int nshards) {
+    int tl = (int)strlen(trace), d = gcd(tl, q);
+    P = tl / gcd(tl, q) * q;
+    if (P > 62) { printf("P = %d too large\n", P); return 2; }
+    MASK = (1ULL << P) - 1;
+    uint64_t col0 = 0;
+    for (int t = 0; t < P; t++) if (trace[t % tl] == '1') col0 |= 1ULL << t;
+    uint64_t reps = 0, idx = 0, w_kill = 0, w_undec = 0, w_dec = 0, c_undec = 0, maxlam = 0;
+    for (uint64_t w = 0; w < (1ULL << q); w++) {
+        uint64_t size = 0, least = w;
+        int canon = 1;
+        for (int k = d; k <= q; k += d) {                  /* the class: rotations by d, 2d, ..., q */
+            uint64_t r = rotq(w, q, k);
+            if (r < least) { canon = 0; break; }
+            size++;
+            if (r == w) break;                             /* the orbit closed: size is the class size */
+        }
+        if (!canon) continue;
+        if ((idx++ % (uint64_t)nshards) != (uint64_t)shard) continue;
+        reps++;
+        uint64_t col1 = 0, lam = 0;
+        for (int t = 0; t < P; t++) if ((w >> (t % q)) & 1) col1 |= 1ULL << t;
+        int r = decide(col0, col1, budget, &lam);
+        if (r == 1) {
+            w_kill += size;
+            printf("KILL  column 1 = ");
+            for (int t = 0; t < q; t++) putchar(((w >> t) & 1) ? '1' : '0');
+            printf(" repeated\n");
+        } else if (r < 0) {
+            w_undec += size; c_undec++;
+            printf("UNDECIDED  column 1 = ");
+            for (int t = 0; t < q; t++) putchar(((w >> t) & 1) ? '1' : '0');
+            printf("\n");
+        } else { w_dec += size; if (lam > maxlam) maxlam = lam; }
+    }
+    printf("CLASSES trace %s q %d (P %d) shard %d/%d: %llu classes; words kill %llu, decided %llu, undecided %llu "
+           "(%llu classes); longest cycle %llu\n", trace, q, P, shard, nshards, (unsigned long long)reps,
+           (unsigned long long)w_kill, (unsigned long long)w_dec, (unsigned long long)w_undec,
+           (unsigned long long)c_undec, (unsigned long long)maxlam);
+    return 0;
+}
+
 int main(int argc, char **argv) {
-    if (argc < 4) { fprintf(stderr, "usage: periodic_kill TRACE QMAX BUDGET\n"); return 2; }
+    if (argc >= 7 && strcmp(argv[1], "classes") == 0)
+        return classes(argv[2], atoi(argv[3]), strtoull(argv[4], NULL, 10), atoi(argv[5]), atoi(argv[6]));
+    if (argc < 4) { fprintf(stderr, "usage: periodic_kill TRACE QMAX BUDGET | classes TRACE Q BUDGET SHARD NSHARDS\n"); return 2; }
     const char *trace = argv[1];
     int tl = (int)strlen(trace), qmax = atoi(argv[2]);
     uint64_t budget = strtoull(argv[3], NULL, 10);

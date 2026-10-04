@@ -35,6 +35,16 @@ the ledger at the end.*
    full-ladder regression gate before adoption, and adoption is the owner's call
    ([WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md)).
 
+4. **Hand back.** Local hands the work back to Cloud at one of two defined points.
+   - **Finished.** Every output named by the job's COMMAND exists and is complete. The verdict (each prediction HELD
+     or REFUTED, with its numbers) is recorded where the job's header says. A ledger line "Local ran" is added, and
+     `main` is pushed.
+   - **Stopped early.** At once, on any result the job's header names as a stop (a refutation that changes the
+     direction), or if the run passes three times its COST.
+
+   Then the owner tells Cloud "Local ran <lead>". Cloud starts by fetching `main` and reading the ledger and the
+   recorded verdict, never from memory, because a Cloud container does not keep its state between sessions.
+
 ## Rules for both
 
 - **Generated shaders are never edited by hand.** Change the source or the generator. Then run
@@ -71,7 +81,7 @@ work is exact bit arithmetic and needs no GPU at these sizes.
 | Lead | What | Mostly | Cloud's part | Local's part |
 |---|---|---|---|---|
 | **M1** | Rule 30: prove that every zero run in the forced left half ends, with column 1 free (PRIZE-PROBLEMS.md §7, conjecture LR) or made by a finite right half (§8, conjecture B, weak form since X3), which would imply Prize Problem 1; next, name the templates as white-triangle boundaries (§8.2, §8.3), and a sibling ladder: period two for Rules 180, 120, 210, 150 without linearity (Rule 90 done, Proposition 5) | **Cloud** | all of it | none |
-| **M2** | Rule 30: the pure-wheel orbit is DONE on Cloud (Proposition 6, PRIZE-PROBLEMS.md §8.6: mu = 32,896,298, lambda = 15,009,104,432, not zero; certificate verified). Remaining for Local: settle the periodic columns 1 that `periodic_kill.c` left undecided (period 17 with 0101..., about 7,600 rotation classes; periods 9, 11, 13 with 0001...) with a larger budget | **Local** | the job is written (`periodic_kill.c`) | run it (CPU, hours) |
+| **M2** | Rule 30: the pure-wheel orbit is DONE on Cloud (Proposition 6, PRIZE-PROBLEMS.md §8.6: mu = 32,896,298, lambda = 15,009,104,432, not zero; certificate verified). Remaining for Local: settle the periodic columns 1 that `periodic_kill.c` left undecided (period 17 with 0101..., 7,614 rotation classes; periods 9, 11, 13 with 0001..., 858 undecided of 880 classes), budget 10^9, predictions K3 and K4. The job, its COMMAND, COST and hand-back point are in the header of `tests/probes/lexicon/periodic_kill.c` ("JOB M2") | **Local** | written and validated (the classes mode reproduces the first run exactly) | run it (CPU, 8 cores, under 40 minutes at worst), record, hand back |
 | **G1** | Do error-free transformations (TwoSum, FMA TwoProd) survive each GPU's compiler? The prerequisite for any float-based proof on a GPU | **Local** | write the job and its prediction | run it on the Arc and the M5 (minutes) |
 
 ## Ledger
@@ -102,3 +112,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-04 23:44 | Cloud | CPU | The owner's complex-number lead (PRIZE-PROBLEMS.md §8.4): column 1 for 0101... is locally a coding of a circle rotation e^(2 pi i f t), f = 0.30365 (about 17/56), with the trace's half-turn (error 0.082 at 64 steps against an instrument floor of 0.049; R1 and R2 held, R3 refuted 4 of 8, the misses being the broadened second overtone). The first run was void: its controls caught two bugs (phase sign, a non-periodic planted control). One control (C1) missed its threshold by 0.009, recorded as a failure, with a calibration. 42 of 1,024 right halves lock column 1 exactly (28 to period 4, 14 to period 14); the other 982 are a wheel that slowly loses phase (81% agreement at lag 56, 39-40% at 55 and 57). Quaternions: not needed so far; one complex plane holds every line | (this commit) |
 | 2026-10-04 23:56 | Cloud | CPU | The universal wheel (PRIZE-PROBLEMS.md §8.5): between slips, column 1 for 0101... is one universal word U (96.6% of stretches, Q3 held), an exact two-arc coding of the rotation t -> 17t mod 56 (five blocks 0001001101 and one 001101; 17/56 = [0; 3, 3, 2, 2]); 95% of slips are shifts in time (Q2 held); exact windows are rarer than predicted (8.4%, Q1 refuted); long zero runs sit next to slips, never inside exact stretches (Q4 refuted, 0 of 40); no sibling turns the wheel (S held). Under the pure wheel the forced left half is never eventually zero within 200,000 depths (W1 held), but its runs grow like log2 of the depth, 23 by 200,000 (W2 refuted); at depth 192 they are at most 10. Two control failures caught and fixed (C1 compared 21 cells against 8). New lead M2 for Local | (this commit) |
 | 2026-10-05 00:25 | Cloud | CPU | The owner's question, 'does the left churn the wheel into noise?' (PRIZE-PROBLEMS.md §8.6): yes. Under the pure wheel the left half passes block entropy (0.9999 for blocks to 12), a flat spectrum and a 50% avalanche; order in, noise out (N1-N3 held). Proposition 6 (computed): the pure wheel's left half is never eventually zero; the pair orbit has tail 32,896,298 and cycle 15,009,104,432 (not zero), one certificate for all 28 phases by symmetry, verified independently (wheel_orbit.c, O1 and O2 held). The random-chaos step: LR holds for every decided periodic column 1 (0 kills in 417,010 words; 140,042 undecided, counted) (periodic_kill.c) | (this commit) |
+| 2026-10-05 00:33 | Cloud | CPU | Cloud wrote job M2 for Local (`periodic_kill.c`, "JOB M2" in its header): the undecided periodic columns 1, one word per rotation class (7,712 classes for 0101... q = 17; 880 for 0001... q = 9, 11, 13), budget 10^9, predictions K3 and K4, under 40 minutes on 8 cores at worst. Validated: the classes mode reproduces the first run's counts exactly. The protocol gains step 4, the hand-back point | (this commit) |
