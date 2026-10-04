@@ -670,6 +670,8 @@ search tonight. "(abstract)" means only the abstract or a summary was seen; UNVE
 lead 4 through the cost cap) and is the Cadence player's default (High) quality tier; item 2 is
 [parked](ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours); items 3 and 4 are not recorded as tried.*
 
+*2026-10-01, evening: item 2 is built as `TRUST_GATE` ([ENERGY-TRANSFER.md](ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)). Its flag needed BOTH terms: the level's aliasing (the box against the point samples, as here) and the level's ambiguity (the second-minimum margin, Anandan's caveat above). The first honest level offers, and full resolution decides, with item 1's uniqueness test. The survey's risk (the interior ties at 1/4) was met by letting full resolution decide rather than the quarter level.*
+
 ### 4. Not to import
 - **Mean, box or Gaussian pyramids** (any prefilter): refuted on 09-03, 8-20 dB on fine texture.
 - **The non-MC fallback** (US8223831): the gates already fall to the blend, which is poor at 11-19 px/frame.

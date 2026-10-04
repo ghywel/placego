@@ -49,9 +49,11 @@ any two members of this family and is not a picture difference at all.**
 | Shader | What it is for | Status (2026-10-01) | Passes\* |
 |---|---|---|---|
 | **Watching: two frames** | | | |
-| `bidirectional-interpolation-variational-propagated.glsl` (4K) | General viewing and the velocity field; the reference the science is measured against | **Recommended** since 2026-09-06; the Cadence player's Low tier | 54 |
-| `…-global-cage-energy-carry-adopt-lattice.glsl` (4K) | A video player: the recommendation plus the global-motion seed, the cage, the texture energy, the half-period alias carry, the outline adoption, and the print lattice with its cost cap | **A video player's default**: the Cadence player's High tier from 1.0.4 | 93 |
-| `…-global-cage-energy-carry-adopt.glsl` (4K) | The same without the print lattice; cheaper where a moving print fills the frame | The Cadence player's Standard tier from 1.0.4 | 81 |
+| `bidirectional-interpolation-variational-propagated.glsl` (4K) | General viewing and the velocity field; the reference the science is measured against | **Recommended** since 2026-09-06; the reference for the science | 54 |
+| `…-global-cage-energy-carry-adopt-lattice-cut.glsl` (4K) | A video player: the recommendation plus the global-motion seed, the cage, the texture energy, the half-period alias carry, the outline adoption, the print lattice with its cost cap, and the motion-aware cut gate | **A video player's default**: the Cadence player's High tier from the 1.0.4 rebuild (2026-10-01, evening) | 94 |
+| `…-global-cage-energy-carry-adopt-cut.glsl` (4K) | The same without the print lattice; cheaper where a moving print fills the frame | The Cadence player's Standard tier from the 1.0.4 rebuild | 82 |
+| `bidirectional-interpolation-variational-propagated-cut.glsl` (4K) | The recommendation with the motion-aware cut gate | The Cadence player's Low tier from the 1.0.4 rebuild | 55 |
+| `…-global-cage-energy-carry-adopt-lattice.glsl`, `…-adopt.glsl` (4K) | The two upper tiers without the cut gate | The High and Standard tiers of 1.0.4's first build; superseded by their `-cut` forms | 93 / 81 |
 | `bidirectional-interpolation-animation.glsl` | Hand-drawn and cel-shaded content | **Recommended for animation** | 26 |
 | `bidirectional-interpolation-propagated.glsl` | The fast tier, when the cascade does not fit (about +13% over the base) | Variant | 26 |
 | `bidirectional-interpolation-seeded.glsl` | A cheaper fast tier (+10% over the base) | Variant | 22 |
@@ -93,7 +95,11 @@ In short:
   A video player uses the High tier, or the Standard tier where the High
   tier's cost does not fit. The tiers are the Cadence player's from 1.0.4
   (2026-10-01); "The player line" below gives the rule that chose them, and
-  each file's section its measurements.
+  each file's section its measurements. Since the 1.0.4 rebuild every tier
+  is a `-cut` file: its scene-cut gate holds a frame only when the final flow
+  also fails to explain the frames' difference (`CUT_MOTION`;
+  [ENERGY-TRANSFER.md](ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)),
+  so a fine print panning by half its period is interpolated, not held.
 - **Hand-drawn content.** Use `bidirectional-interpolation-animation.glsl`.
   Content drawn on twos or threes gains more from a cadence step than from
   any estimator ("Known remaining weakness: animation"); the quad's

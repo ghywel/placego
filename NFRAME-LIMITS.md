@@ -5142,6 +5142,8 @@ Neither is built. Both would be variants behind a switch, gated on the Arc.
 
 *2026-10-01: both bands have since been taken further: the slow-print repair is in the player (the end of this entry), and fast prints got the lattice re-score (`PRINT_LATTICE`, [ENERGY-TRANSFER.md, lead 4](ENERGY-TRANSFER.md#the-glsl-form-built-testsprint_latticepy-print_lattice1-and-a-second-instrument-fault-found-by-g1)) in place of the per-level trust gate, which was [parked on 2026-10-01](ENERGY-TRANSFER.md#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours) and has never been built.*
 
+*2026-10-01, evening: the per-level trust gate is built (`TRUST_GATE=1` with its aliasing flag and lead 4's uniqueness test): the quarter level, the first that sees a 10-16 px print unaliased, offers its best minima within +-24 px and full resolution decides, only where the 1/8 level is both ambiguous and aliased. The fast weave +3 to +10 dB, the ladder clean (L7 +8.7), real footage passed. [ENERGY-TRANSFER.md, where it stands](ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening).*
+
 **Pre-registered (before it ran): lead 4's step 0, is there a margin to re-score on?** PRIOR-ART's lead-4 survey
 ranks first "carry the aliases down, re-score at a fine level". The weave is not exactly periodic: its 3-px value
 noise differs between v and its aliases. `tests/probes/weave/rescore0.py` takes 16 x 16 blocks of the translating

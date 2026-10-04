@@ -47,9 +47,9 @@ from this directory:
 | Linux container (`../linux/`) | `/work/ffmpeg/ffmpeg` | `MESA_VK_DEVICE_SELECT=<vendor:device>` when several Vulkan devices are listed |
 | Windows, MSYS2 | `$HOME/np-build/ffmpeg/ffmpeg.exe` | the MSYS2 bash, with `/mingw64/bin` on `PATH` ([TOOLS.md](TOOLS.md#running-any-of-this-on-windows----the-shell-matters)) |
 
-1. **Smoke, on any new machine or build:** `./smoke.sh`. 17 checks over 12 tools; no video needed; exits
-   non-zero on any failure. It also regenerates `-variational`, the recommendation, the player's default and
-   the lattice candidate, with their 4K twins, and checks each against the committed file byte for byte.
+1. **Smoke, on any new machine or build:** `./smoke.sh`. 18 checks over 12 tools; no video needed; exits
+   non-zero on any failure. It also regenerates `-variational`, the recommendation, the player's default,
+   the lattice candidate and the three `-cut` tiers, with their 4K twins, and checks each against the committed file byte for byte.
 2. **The ladder:** `./bench.sh all ../shaders/<shader>.glsl <label>` (42 cases; hold and linear are cached per
    case), then `./analyze.py --variants`, and read the CAPPED mean. `./bench.sh <case> ...` runs one case; the
    cases outside the default ladder (see the ladder table below) run only by name. Results go to `$OUTROOT`
@@ -1828,6 +1828,12 @@ should be scale-free. It failed outright. The coarse flow at 1/16 resolution
 explains too little for the ratio to separate anything -- non-cut pairs sat at
 0.77 against cuts at 0.85, with complete overlap on every clip.
 
+*2026-10-01, evening: the player's tiers now carry a motion-aware form of this gate (`CUT_MOTION`, the `-cut` files).
+A pair over 0.125 is still held only if the FINAL flow, not the coarse one, also leaves more than 0.3 of the
+difference unexplained. Measured on 58,080 real pairs: every real cut read 0.37 or more, and every frame-filling print
+pan 0.26 or less. The rejection above used the 1/16 level's flow; the final half-level flow separates the two
+([ENERGY-TRANSFER.md, C2a](../ENERGY-TRANSFER.md#where-the-per-level-trust-gate-stands-2026-10-01-evening)).*
+
 **What the numbers mean, and what they do not.** On the bright fast-action
 clip, cuts score *no higher than ordinary motion* (0.118 at cuts against a
 0.122 non-cut maximum). That is not the statistic failing. Those cuts are
@@ -1916,7 +1922,7 @@ It exists because "the same harness works on Linux and Windows" is easy to
 claim and easy to get wrong: the first run under MSYS2 immediately found a
 hardcoded `/mnt/c/...` path in `gen_variational.py` that meant the generator
 only ever worked on one machine. It currently passes 12/12 on both.
-(2026-10-01: smoke.sh now runs 17 checks over 12 of the tools here, not every
+(2026-10-01: smoke.sh now runs 18 checks over 12 of the tools here, not every
 tool; TOOLS.md's smoke.sh row lists them.)
 
 ## Finding defects in new material

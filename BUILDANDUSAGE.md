@@ -1087,7 +1087,7 @@ That exercises the harness's core tools -- scene generation, frame-exact
 clipping, shader generation and scaling, the flow visualiser, the numpy metrics,
 the ground-truth ladder and the visual diff -- and proves that every committed
 generated shader regenerates byte for byte. It needs no source video; everything
-is generated. It must end `17 passed, 0 failed` (17 checks as of 2026-10-01; 15
+is generated. It must end `18 passed, 0 failed` (18 checks as of 2026-10-01, evening; 15
 on the M5, the Intel Mac and the Arc at the 2026-09-30 pins, before two were
 added). The build scripts' `verify` stage runs it for you. On macOS, the
 MoltenVK switches apply to the ladder (bench.sh sets them); see the macOS section.

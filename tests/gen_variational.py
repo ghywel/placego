@@ -515,6 +515,13 @@ OUTLINE_ADOPT = os.environ.get("OUTLINE_ADOPT", "0") == "1"
 # PRINT_LATTICE=1 (2026-10-01; tests/print_lattice.py, ENERGY-TRANSFER.md lead 4): a fast periodic print re-scored at full
 # resolution among the aliases of its own lattice, after the carry's pick (and the adoption). Needs ALIAS_CARRY=1.
 PRINT_LATTICE = os.environ.get("PRINT_LATTICE", "0") == "1"
+# TRUST_GATE=1 (2026-10-01; tests/trust_gate.py, ENERGY-TRANSFER.md "The per-level trust gate, returned to"): where the 1/8
+# level is ambiguous, the quarter level offers its best minima within +-24 px and full resolution decides, after the
+# carry's pick and before the adoption. Needs ALIAS_CARRY=1.
+TRUST_GATE = os.environ.get("TRUST_GATE", "0") == "1"
+# CUT_MOTION=1 (2026-10-01; tests/cut_motion.py, ENERGY-TRANSFER.md C1 and C2): the warp's cut gate holds a frame only if the
+# frames' difference is over its threshold AND the final flow leaves more than CUT_EXPLAINED of it unexplained.
+CUT_MOTION = os.environ.get("CUT_MOTION", "0") == "1"
 ALIAS_APERTURE = os.environ.get("ALIAS_APERTURE", "1") == "1"    # the carry's aperture rule (build 5); 0 = build 4
 
 
@@ -834,6 +841,13 @@ if __name__ == "__main__":
         assert ALIAS_CARRY, "PRINT_LATTICE reads the 1/8 basins and sits after the carry's pick: it needs ALIAS_CARRY=1"
         import print_lattice
         text = print_lattice.add_print_lattice(text)
+    if TRUST_GATE:
+        assert ALIAS_CARRY, "TRUST_GATE reads the 1/8 basins' margins and sits after the carry's pick: it needs ALIAS_CARRY=1"
+        import trust_gate
+        text = trust_gate.add_trust_gate(text)
+    if CUT_MOTION:
+        import cut_motion
+        text = cut_motion.add_cut_motion(text, float(os.environ.get("CUT_EXPLAINED", cut_motion.CUT_EXPLAINED)))
     cost = 2 * (s / 256 + e / 64 + q / 16 + h / 4)
     env = ("GLOBAL_SEED=1 " if GLOBAL_SEED else "") + ("QZERO_MOIRE=1 " if QZERO_MOIRE else "") + ("COHERENCE_GATE=1 " if COHERENCE_GATE else "") \
         + (f"EDGE_PROP=1 EDGE_PROP_TAU={EDGE_PROP_TAU:g} " if EDGE_PROP else "") \
@@ -841,6 +855,8 @@ if __name__ == "__main__":
         + ("ALIAS_PRIOR=1 " if ALIAS_PRIOR else "") + ("ALIAS_CARRY=1 " if ALIAS_CARRY else "") \
         + ("OUTLINE_ADOPT=1 " if OUTLINE_ADOPT else "") \
         + ("PRINT_LATTICE=1 " if PRINT_LATTICE else "") \
+        + ("TRUST_GATE=1 " if TRUST_GATE else "") \
+        + ("CUT_MOTION=1 " if CUT_MOTION else "") \
         + ("ALIAS_APERTURE=0 " if ALIAS_CARRY and not ALIAS_APERTURE else "")     # the zero seed is the recommendation's standing state and the line never named it
     text = BANNER.format(env=env, spec=spec, alpha=alpha, sigma=sigma,
                          s=s, e=e, q=q, h=h, cost=cost,

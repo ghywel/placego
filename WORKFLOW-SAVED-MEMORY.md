@@ -291,6 +291,33 @@ One afternoon re-derived, badly, four things those headers already solved.
 **How to apply.** Read the headers of `tests/*.sh` and `tests/*.py`, and the probe index
 [tests/probes/PROBES.md](tests/probes/PROBES.md). Extend a tool that nearly fits rather than starting a new one.
 
+### knowns-must-be-proven
+
+**Rule.** Always check that a "known" is actually proven. A known needs its proof (a measurement, a source that was
+opened and read, a test), with the date and the conditions it was made under. Without proof, it is an assumption: say
+so, and find the cheapest test that would settle it.
+
+**Why.** The human called it "an important one we established very early", and restated it on 2026-10-02 about the
+iPhone used as the party app's camera. Its "known flaws" were no wide 0.5x lens, a low frame rate and a long delay.
+Checked one by one, they came apart:
+- **The lens:** proven, and more firmly than believed. The Mac's own camera interface has no zoom or lens controls at
+  all, so it is the computer's limit, not the phone's.
+- **The frame rate:** proven, but only for that phone on that macOS.
+- **The delay:** measured over a USB cable only. Wi-Fi, other phones and other cameras had never been measured.
+
+Beliefs repeated across sessions harden into facts without anyone re-checking them. They steer decisions (buy a camera
+or not, keep a feature or not) as firmly as measured ones do.
+
+**How to apply.**
+- Before building on a known, or repeating it, find its proof and note its date and conditions. A measurement on one
+  device, one OS version or one setup covers that and nothing more.
+- If there is no proof, label it as an assumption and propose the cheapest test. A tool that makes the test a
+  one-minute job is often worth building: the party app's latency meter turned each untested camera route into a
+  single key press.
+- In written records, tag claims so their status shows: measured here, a source opened, or judgement.
+- When the conditions change (an update, a new device, a different route), re-test. This rule is the general case of
+  the next one.
+
 ### retest-closed-doors
 
 **Rule.** A negative result about a vendor's capability is dated. Keep the cheap instrument that re-tests it, and

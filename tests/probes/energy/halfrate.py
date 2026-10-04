@@ -9,7 +9,9 @@ output frame against the REAL frame, PSNR-Y (ffmpeg's psnr, 1280 wide). An odd f
   long   -- ... inside a longer run (oscillation, flicker, alias)
   none   -- neither
 Numbers only; runs in the research container with the footage mounted read-only at /footage (FOOTAGE names
-another root).
+another root). PER_FRAME=<file> (2026-10-01) also writes every odd frame's PSNR-Y, one row per frame (source, t0, k,
+label, PSNR), so two shaders can be compared frame by frame: a change that touches a few frames (a cut gate) does
+not move a median.
 """
 import json
 import os
@@ -60,6 +62,7 @@ def runs(frames):
 
 
 tot = {"none": [], "short": [], "long": []}
+PF = open(os.environ["PER_FRAME"], "w") if os.environ.get("PER_FRAME") else None
 ALLF = []                                                   # (motion proxy, label, psnr) for the matched comparison
 print(f"{'source':50s} {'t0':>6s} | {'none':>13s} {'short':>13s} {'long':>13s}   median PSNR-Y dB (count)")
 for line in open(log):
@@ -98,6 +101,7 @@ for line in open(log):
             if k % 2 == 0 or k < 6 or k > n - 6: continue       # odd frames only: the interpolated ones
             lab = "long" if (k - 1 in long_ or k in long_) else "short" if (k - 1 in short or k in short) else "none"
             groups[lab].append(v)
+            if PF: PF.write(f"{d['video'][:48]}\t{t0:.0f}\t{k}\t{lab}\t{v:.3f}\n")
             if 0 < k < len(th) - 1: ALLF.append((float(np.abs(th[k + 1] - th[k - 1]).mean()), lab, v))
         for g in groups: tot[g] += groups[g]
         cell = lambda g: f"{np.median(groups[g]):6.2f} ({len(groups[g]):3d})" if groups[g] else "     --      "

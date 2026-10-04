@@ -176,6 +176,25 @@ else
   bad "gen_variational.py or scale_shader.py failed on the lattice candidate"
 fi
 
+# ... and the three tiers with the motion-aware cut gate (CUT_MOTION, adopted for the player 2026-10-01) with their 4K
+# twins: the player bundles all six
+CUTOK=1
+PLC="GLOBAL_SEED=1 QZERO_MOIRE=1 COHERENCE_GATE=1 COARSE_ENERGY=1 COARSE_ENERGY_WS=8 COARSE_ENERGY_WE=1 ALIAS_PRIOR=1 ALIAS_CARRY=1 OUTLINE_ADOPT=1"
+for spec in "ZERO_SEED=1|bidirectional-interpolation-variational-propagated-cut" \
+            "$PLC|bidirectional-interpolation-variational-propagated-global-cage-energy-carry-adopt-cut" \
+            "$PLC PRINT_LATTICE=1|bidirectional-interpolation-variational-propagated-global-cage-energy-carry-adopt-lattice-cut"; do
+  vars="${spec%%|*}"; stem="${spec#*|}"
+  # shellcheck disable=SC2086
+  if env $vars CUT_MOTION=1 $PY "$HERE/gen_variational.py" "0,0,8,4" 0.3 0.08 "$W/regen-$stem.glsl" 0 "0,0,2,0" \
+       bidirectional-interpolation-propagated.glsl >/dev/null 2>&1 \
+     && $PY "$HERE/scale_shader.py" "$W/regen-$stem.glsl" "$W/regen-$stem-4k.glsl" 2 >/dev/null 2>&1 \
+     && diff -q <(strip "$W/regen-$stem.glsl") <(strip "$HERE/../shaders/$stem.glsl") >/dev/null 2>&1 \
+     && diff -q <(strip "$W/regen-$stem-4k.glsl") <(strip "$HERE/../shaders/$stem-4k.glsl") >/dev/null 2>&1; then :
+  else CUTOK=0; echo "    differs or failed: $stem"; fi
+done
+[ "$CUTOK" = 1 ] && ok "the three cut tiers and their 4K twins regenerate byte-identical" \
+                 || bad "a cut tier or its 4K twin differs from the committed one"
+
 # ---------------------------------------------------------------------------
 head2 "4. flowvis.py -- build a flow visualiser from the production shader"
 # The visualiser must have replaced the WARP's hook(), outside the human-reading tail. Until 2026-10-01 it replaced

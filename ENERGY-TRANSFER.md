@@ -54,6 +54,7 @@ mean further afield, from astrophysics to quantum mechanics? And how do we detec
   - [The owner's two decisions (2026-10-01), and the tiers' costs](#the-owners-two-decisions-2026-10-01-morning-and-the-tiers-costs)
   - [The lattice's cost cap](#pre-registered-the-lattices-cost-cap-the-owners-go-2026-10-01-before-it-ran)
   - [The per-level trust gate, parked](#parked-by-the-owner-2026-10-01-morning-the-per-level-trust-gate-to-return-to-within-hours)
+  - [The per-level trust gate, returned to: the cut gate found, the gate built](#the-per-level-trust-gate-returned-to-2026-10-01-afternoon-t0-the-diagnosis-before-the-build), and [where it stands](#where-the-per-level-trust-gate-stands-2026-10-01-evening)
 - [Sources](#sources)
 
 ## The short answer, kept for reference
@@ -3336,6 +3337,8 @@ The predictions:
 
   - **A side finding:** on a print filling the frame, the lattice repairs 11 px/frame but not 5 or 19, where the
     default stays below the blend. Recorded as open.
+    *2026-10-01, afternoon: explained. It was not the field: at 5 and 19 px/frame the scene-cut gate held a frame on
+    every pair, so nothing the lattice computed was drawn ([C1](#the-per-level-trust-gate-returned-to-2026-10-01-afternoon-t0-the-diagnosis-before-the-build)).*
 - **The first capped build was 20.0 ms (full-frame pan, 1080p) against the uncapped 37.2.** The profile found the
   borrowing pass cheap (0.6 ms) and the subset itself expensive: 3,400 cells scattered on a stride grid cost 8.4 ms,
   where the weave box's 2,300 contiguous cells cost 1.8. A stride grid puts a few busy lanes into almost every SIMD
@@ -3396,6 +3399,485 @@ lattice gains nothing. Its design is in PRIOR-ART.md "Before lead 4", item 2:
 - the first unflagged level searches wide.
 Its risk: the interior still ties at the quarter level, so the lattice or the outline carry would follow it. Lead 3
 (the rigid repair) stays parked for its own reason (the in-shader comparison).
+
+*2026-10-01, evening: returned to and built ([below](#the-per-level-trust-gate-returned-to-2026-10-01-afternoon-t0-the-diagnosis-before-the-build)). The frame-filling pan turned out to be the scene-cut gate's; the trust gate, with its aliasing flag and lead 4's uniqueness test, passes the ladder and real footage ([where it stands](#where-the-per-level-trust-gate-stands-2026-10-01-evening)).*
+
+### The per-level trust gate, returned to (2026-10-01, afternoon): T0, the diagnosis before the build
+
+The owner's word on his return: continue the per-level trust gate "to its natural conclusion", using the three
+machines.
+
+**T0, a diagnostic.** No prediction was registered; it reads, it does not decide. `tests/probes/trust/leveltap.py`
+taps the player's default (the High tier, `...-carry-adopt-lattice.glsl`) right after each stage: the global shift,
+the four 1/16 seeds, the 1/8 level's two basins and margin, the 1/8 refine and its check, the quarter refine, the
+carry's pick, the adoption, the lattice's gate and apply, and the final half-level field in both directions. Each
+quantity is copied by an exact texel fetch at the 1/8 grid and read through the reading tail at N:N, on
+weavesweep.py's scene (the box, or with `WEAVE_FULL=1` the frame-filling pan).
+
+**What it found first, on the parked target (the frame-filling weave pan, the M5):**
+
+    v px/f   final field A->B: exact / gross   B->A: exact / gross   the scene-cut statistic (per frame)
+     5        66.3% / 21.0%                    69.9% / 18.6%         0.15-0.17
+    11        61.6% / 22.3%                    62.8% / 21.4%         0.11-0.13 (median 0.118)
+    19        73.5% / 12.5%                    76.0% / 11.0%         0.15-0.17
+    (exact: the cell reads the true vector to the nearest pixel; gross: more than 2 px off)
+
+- **The field on a frame-filling print is mostly RIGHT at 5 and 19 px/frame,** as right as at 11 px/frame, where the
+  lattice's picture gained 6.6 dB.
+- **The scene-cut statistic reads 0.15-0.17 there.** It is the mean |A - B| on a sparse grid of the 1/16 level, and
+  above 0.125 the warp is a hard switch to the nearer source frame (TESTING.md, "Scene cuts"): a HOLD. At 11 px/frame
+  the print moves only 3 px out of phase (14 - 11), the statistic sits around 0.118, and the warp runs.
+- **So the parked target is not a lock of the field: it is the cut gate.** The gate measures how different two frames
+  are, not whether motion explains the difference, and a high-contrast print panning by about half its period looks
+  like a cut. The lattice "gained nothing" at 5 and 19 because nothing it computed was drawn.
+
+**Pre-registered: C1, the counterfactual (before it ran).** The same shader with the cut gate out of reach (the one
+constant `SCENE_CUT_DIFF` set to 1e9, asserted), `weavesweep.py` with `WEAVE_FULL=1`, the weave and noise at 5, 11
+and 19 px/frame, on the NAS's Arc (deterministic), against the unchanged shader in the same sitting:
+- **C1a:** at 5 and 19 px/frame the picture rises from below the blend to at least 3 dB above it.
+- **C1b (the control):** at 11 px/frame it moves by less than 0.5 dB. Most frames' statistic is under the threshold,
+  and only the few above it can move.
+- **C1c:** noise is unchanged wherever its statistic stays under 0.125 (T0 reads it on the same frames).
+- **If C1a fails,** the field's 12-21 percent gross is enough to sink the warp, and the trust gate's target stands as
+  parked.
+
+**Results: C1 PASSED on all three (the NAS's Arc, one sitting).**
+
+    full-frame pan, PSNR-Y over the frame (dB)   linear   the default   the cut gate out of reach   change
+    weave  5                                     22.28    19.18         25.81                       +6.63
+    weave 11                                     13.97    21.71         21.72                       +0.01
+    weave 19                                     14.69    12.36         23.23                      +10.87
+    noise 5 / 11 / 19                            44.92 / 37.07 / 32.17   54.73 / 53.47 / 51.82   identical   0.00
+
+- **C1a PASSED:** at 5 and 19 px/frame the picture goes from 3.1 and 2.3 dB below the blend to 3.5 and 8.5 dB above it.
+- **C1b PASSED:** at 11 px/frame it moves by 0.01 dB.
+- **C1c PASSED:** noise is identical.
+- **The finding:** the side finding recorded under the cost cap ("on a print filling the frame, the lattice repairs
+  11 px/frame but not 5 or 19") was not the field. The field was right, and the warp never drew it: the cut gate
+  held a frame. Its fix is a cut gate that asks whether motion explains the difference (C2, below), not a trust gate.
+
+**T0 on the box (the M5), while C1 ran: the lock enters at the coarsest level, at every speed.** On the weave box the
+four 1/16 seeds are wrong at every speed: +18 to +32 px at 3 and 5 px/frame (the moire's own motion, not a period of
+the print) and v - 28 at 11 and 13. The 1/8 level's best basin is wrong too (-24 or -16 px, with every margin low).
+Only the adoption (the outline, at 3 and 5) and the lattice (at 11) pull the field back, and the half level loses
+some of the lattice's gain again (weave 11: 20.8 percent gross after the lattice, 31.7 in the final field).
+
+**Pre-registered: T1, which flag says "this level is aliased here" (offline, before it ran).**
+`tests/probes/trust/flag.py` builds each level as the shader does (the point sample) and beside it the box over the
+texel's footprint, and computes three candidate flags per texel over the level's 5 x 5 window: A, the range of the
+box against the range of the point samples; B, the same for variances; C, the window's rms frequency (Rice's mean
+frequency, from the full-resolution gradient) against the level's Nyquist. Each is reported as the share of textured
+texels it fires on, per level, on the ladder's and the masters' textures (the Intel Mac's CPU) and on 8 frames from
+each of the census's 20 real sources (the NAS).
+- **F1:** flag C at kappa 1 fires on at least 80 percent of the weave's textured texels at the levels W2 and W3
+  located (P = 10 and 14: 1/8 and 1/16; P = 20: 1/16 only) and on at most 20 percent elsewhere (P = 20 at 1/8; every
+  P at 1/4).
+- **F2:** flags A and B separate those levels less cleanly. A box 8 px wide keeps about half of a 14-px thread's
+  amplitude, so at 1/8 the weave P = 14 is not far from unaliased content on these two.
+- **F3:** on the masters' noise, cells and wood (aperiodic, broadband) flag C fires on at most 20 percent at 1/8.
+- **F4, real footage (no confident number):** natural images put much of their gradient energy at fine scales, so
+  flag C may fire widely: over 50 percent of textured texels at 1/16, between 30 and 60 at 1/8. If it does, a flag
+  of fine detail is not a flag of a misleading level, since an aperiodic texture aliases into a decorrelated coarse
+  image, not a coherent moire. The gate would then need a second, periodicity term before it is specific.
+
+**Pre-registered: T2 offline, the first honest level's wide search (before it ran).** For P = 14 the quarter level is
+the first that sees the weave unaliased (T1). `tests/probes/trust/wide.py` emulates what the gate would do there on
+the weave box's core: every whole-texel offset within +-24 px, the 5 x 5 window's mean absolute difference plus a
+small-motion prior lambda per px, the best refined by a parabola. At 1/4 the print's aliases still tie up to its fine
+noise, so the search cannot be asked for the truth everywhere; it is asked for a TRUE ALIAS (the truth plus a lattice
+vector), which the lattice's full-resolution re-score can then resolve, and for the truth where the truth is the
+shortest alias.
+- **W1:** with a small lambda, the truth (within 2 px) on at least 90 percent of the core at 3, 5, 11 and 13 px/frame,
+  where the truth is the shortest alias.
+- **W2:** at 15, 16, 17 and 19 px/frame, a true alias (the truth or another) on at least 90 percent. There a shorter
+  alias exists ((v - 14, +-14), or -9 at 19), so the prior will pick it and the lattice must turn it back.
+- **W3 (the control):** noise read right on at least 95 percent at every speed and every lambda.
+- **If the share on true aliases is low,** the quarter level cannot even separate the lattice from the garbage between
+  it, and the gate in this form is dead.
+
+**Results: T1 (the Intel Mac's CPU and the NAS): F1 and F3 PASSED, F2 half, F4 as feared.**
+
+    share of textured texels flagged      1/16                      1/8                       1/4
+                                          C>1     A<0.7   B<0.5     C>1     A<0.7   B<0.5     C>1     A<0.7
+    weave P = 10                          100     100     100       100     100     100         0       0
+    weave P = 14                          100     100     100       100     100     100         0       0
+    weave P = 20                          100     100     100         0       0.9     0         0       0
+    noise / cells / wood                    0 / 0 / 0  (A, B: 0-2)    0 / 0 / 0                 0       0
+    TEX_M1 (five sines)                   100     100     100       100      97     100        69      23
+    TEX_L7, TEX_M3 (periods 15.7, 16)     100     100     100       100     100     100         0       0
+    real film, 20 sources x 8 frames
+      median (largest)                    62 (88) 21 (39) 19 (32)   32 (63) 14 (36) 12 (30)   3 (20)  3 (15)
+
+- **F1 PASSED:** the rms-frequency flag fires exactly at the levels W2 and W3 located (P = 10 and 14 at 1/8 and 1/16;
+  P = 20 at 1/16 only) and nowhere else on the weave.
+- **F2 half:** the box flags separate the same levels, but only at looser thresholds than registered: at 1/8 the
+  weave P = 14 keeps 50-70 percent of its range in the box (A between 0.5 and 0.7), close to where unaliased content
+  sits.
+- **F3 PASSED:** none fires on the aperiodic broadband textures at 1/8.
+- **F4, as feared:** on real film the frequency flag fires on a median 32 percent of textured texels at 1/8 and 62 at
+  1/16; the box flag on 14 at 1/8. **No image-only flag is specific to a print.** It flags fine detail, which a real
+  frame is full of, and fine aperiodic detail aliases into a decorrelated coarse image, not a coherent moire. The
+  specificity has to come from the level's own AMBIGUITY: T0 shows the 1/8 level's rival-basin margin at 0.25 on the
+  weave at every speed and at its ceiling (30) on noise. That is the lattice's own gate (5 of the 25 cells under 0.3),
+  and it rarely opens on film.
+
+**Results: T2 offline (the M5's CPU): W1 and W2 PASSED, W3 MISSED as worded; the prior must stay light.**
+
+    the weave box's core: the truth / a true alias (the truth plus a lattice vector) / neither, percent
+    v px/f    lambda 0           lambda 0.0005      lambda 0.002       lambda 0.008
+     3        81 / 19 /  0       100 /  0 /  0      100 /  0 /  0      100 /  0 /  0
+     5        80 / 20 /  0       100 /  0 /  0      100 /  0 /  0      100 /  0 /  0
+    11        81 / 19 /  0        90 / 10 /  0       99 /  1 /  0       34 /  0 / 66
+    13        80 / 20 /  0        90 / 10 /  0       99 /  1 /  0        0 /  0 /100
+    15        81 / 19 /  0        68 / 32 /  0       22 / 78 /  0        0 /  0 /100
+    16       100 /  0 /  0       100 /  0 /  0      100 /  0 /  0        0 / 76 / 24
+    17        80 / 20 /  0        65 / 35 /  0       19 / 81 /  0        0 / 21 / 79
+    19        81 / 19 /  0        36 / 64 /  0        1 / 99 /  0        0 / 98 /  2
+    noise, read right at 3-19 px/f:  100 (lambda 0)   99.8-100 (0.0005)   52-99 (0.002)   0-13 (0.008)
+
+- **W1 PASSED** (lambda 0.002: the truth on 99-100 percent at 3, 5, 11 and 13) and **W2 PASSED** (a true alias on
+  100 percent at 15-19). At the quarter level the print's aliases are separated from everything between them on
+  every texel: the first honest level is honest.
+- **W3 MISSED as worded:** at 0.002 the prior drags noise towards small vectors (52-99 percent right), and at 0.008
+  it collapses both. At 0.0005 noise is right on 99.8-100 percent and the weave lands on the truth or a true alias on
+  100 percent at every speed. **The design value is 0.0005.** The prior does not decide between aliases there (the
+  truth on 36-100 percent); the lattice's full-resolution re-score does.
+- Unflagged at lambda 0 the search falls on the print's long alias (v - 28) a fifth of the time, so some prior is
+  needed even on the weave.
+
+**What the gate should do with the search, and T2b (pre-registered before it ran).** Replacing the flow with the wide
+search's best would hand 11-13 px/frame the truth but hand 15-17, which read right today, a shorter alias for the
+lattice to undo. Keeping the flow unless it is off the lattice would fix only the slow band's moire. The third way
+is the record's own: the quarter level OFFERS, full resolution DECIDES (step 0: at full resolution the truth beats
+every alias on 100 percent of blocks). `wide.py RANK=full`: the three best distinct minima of the quarter level's
+13 x 13 surface (lambda 0.0005), each ranked by the 16 x 16 block's mean absolute difference at full resolution over
++-0.5 px.
+- **W4:** the truth (within 2 px) on at least 95 percent of the weave box's core at every speed from 3 to 19.
+- **W5 (the control):** noise right on at least 99.5 percent.
+
+**Results: T2b (the M5's CPU): W4 and W5 PASSED.** The quarter level offering its three best distinct minima, full
+resolution deciding: the truth (within 2 px) on 98.2-100 percent of the weave box's core at every speed from 3 to 19,
+15-17 included; noise 99.9-100. The default's final field there is 0-34 percent gross.
+
+**The GLSL form: `TRUST_GATE=1` (`tests/trust_gate.py`), two passes per direction,** after the carry's pick and before
+the adoption and the lattice:
+1. **the offer and the decision** (the 1/8 grid, one thread per cell, cached per source pair):
+   - the gate: at least 5 of the 5 x 5 cells' rival-basin margins under 0.3 (the lattice's own gate);
+   - the offer: every whole quarter texel within +-24 px, the 5 x 5 window's mean absolute difference plus 0.0005 per
+     px, and its three best distinct local minima;
+   - the decision: the 16 x 16 block centred on the cell at full resolution, each minimum and the cell's own flow over
+     +-0.5 px; the best replaces the flow only if it beats the flow by 1/255 a pixel (the lossless fallback);
+2. **apply** (the quarter level): the cell's 2 x 2 quarter texels take the decided vector.
+
+With the switch off the default regenerates byte-identical. A first tap on the weave box at 11 px/frame: the gate
+decides on about three quarters of the core's cells and leaves 29.5 percent gross; the adoption then takes it to 9.3
+and the lattice to 0.4. The final field is 0.3 percent gross, against the default's 31.7.
+
+**Pre-registered: T3, the picture and the gates (before they ran), `trust1` against the default in the same sitting.**
+- **T3a (the field):** the weave box's final field at most 5 percent gross at every speed from 3 to 19.
+- **T3b (the picture, weavesweep.py, the M5):** the weave box up at least 3 dB at 5, 11, 13 and 19 px/frame, and
+  within 0.5 dB at 3, 15, 16 and 17, which read right today. Noise identical (its margins are high, so the gate never
+  opens).
+- **T3c (the frame-filling pan, the Intel Mac's RX 6600):** up at least 3 dB at 13 px/frame, where the warp runs; 5 and
+  19 unchanged, since the cut gate still holds those frames.
+- **L1 (the ladder, the NAS's Arc):** the capped mean within 0.1 of the default or above, and no case down more than 1 dB.
+- **L2 (real footage, the 40 extracts' half-rate test):** no extract's unflagged median down more than 0.3 dB.
+- **L3 (time, the M5):** reported on real footage, the weave box and the frame-filling pan. The gate opens only where
+  the 1/8 level is ambiguous, so real footage should cost little; a frame-filling print is the worst case, and a cost
+  cap like the lattice's would follow.
+
+**Pre-registered: C2a, does the final flow explain the difference where the cut gate fires? (before the study ran)**
+`tests/cut_motion.py` adds one pass before the warp: on the cut statistic's own 24 x 24 grid, the mean |A(x) - B(x +
+f(x))| with the final flow f, over the mean |A(x) - B(x)| (the share of the difference the motion leaves). The switch
+`CUT_MOTION=1` would hold a frame only when the statistic is over 0.125 AND that ratio is over a threshold.
+`tests/probes/trust/cutstat.py` reads the statistic, the ratio and ffmpeg's scdet score (a cut at 10 or more) for every
+pair of the census's 40 real extracts (the NAS), the three local clips (the M5) and the weave pans.
+- **C2a:** on real cuts the ratio stays high, with a median near 0.7 and at least 90 percent of them above 0.45. On the
+  frame-filling weave pans it is at most 0.3. A threshold between them separates the two.
+- **If cuts reach down into the pans' range,** the final flow "explains" a cut by chance matches, and a motion veto is
+  unsafe: the fix would then need another cue (the scdet-like score, or the field's coherence).
+- A smoke run (8 s of one clip, its one cut) read 0.61 on the cut and at most 0.21 on any other pair.
+
+**Interim (the M5 and the Intel Mac), recorded as they came in:**
+
+    weave box, PSNR-Y (dB)   3       5       11      13      15      16      17      19
+    the default              39.80   37.69   20.15   19.46   30.48   37.34   36.74   23.25
+    TRUST_GATE (trust1)      42.69   45.58   32.08   31.98   36.74   37.34   38.60   31.89
+    change                   +2.89   +7.89  +11.93  +12.52   +6.26    0.00   +1.86   +8.64
+    final field, gross       0.0     0.0     0.3     0.0     0.0     0.0     0.0     0.6 percent (the default: 0-34)
+    noise                    identical at 7 of 8 speeds; -0.03 dB at 17
+
+- **T3a PASSED:** the final field is at most 0.6 percent gross at every speed.
+- **T3b PASSED where gains were registered** (+7.9 to +12.5 dB at 5, 11, 13 and 19), and **MISSED "within 0.5 dB" in
+  the good direction** at 3, 15 and 17 (+1.9 to +6.3; 16 unchanged). Noise moves by 0.03 dB at one speed: the gate
+  opened on a few of its cells.
+- **The frame-filling pan at 3 px/frame** (the Intel Mac's RX 6600, a speed the cut gate does not hold): 27.82 ->
+  39.08 dB.
+- **L3, time (the M5, 720p, 24 -> 60, ms per output frame, the default -> trust1):** a real clip 12.40 -> 13.92
+  (+12 percent), O5 12.77 -> 15.67 (+23), the weave box 12.29 -> 14.65 (+19), the frame-filling weave 27.16 -> 29.22
+  (+8: the frame is dominated by the lattice there).
+- **Where the gate opens on film** (a tap of its own condition, 3 s of each clip): 5.7, 16.7 and 6.0 percent of the
+  cells (an action clip, a 1985 film, a cartoon), and it replaces the flow on 0.7-1.3 percent. The cost is the
+  full-resolution decision on every opened cell.
+
+**Pre-registered: a cost cut, `TRUST_DECIDE=two` (trust2), one change.** The decision scores every candidate at its
+own position first, and refines only the best and the cell's own flow over +-0.5 px: 5,120 samples a cell against
+9,216.
+- **K1:** the weave box's picture within 0.1 dB of trust1 at every speed; noise identical to trust1.
+- **K2:** the gate's cost on the real clip (trust minus the default) at least 30 percent lower than trust1's.
+
+**K1 MISSED by 5 dB (trust2, the M5):** the weave box at 11 and 13 px/frame reads 26.60 and 27.09 against trust1's
+32.08 and 31.98 (3, 5 and 15 within 0.7). The offered minima sit on the quarter level's 4-px grid, so scoring them at
+their own positions puts a candidate up to 2 px off the motion it stands for. On a 14-px print with 3-px noise, that
+error decides the ranking. trust1's +-0.5 px refine of EVERY candidate was hiding the offer's coarseness. The two-stage
+form is rejected as built.
+
+**Pre-registered (one change each): the offer made sub-texel, `TRUST_OFFER=parab`.** Each offered minimum carries its
+parabola's position in x and y (from its neighbours' costs, clipped to half a texel), as the offline emulation's did.
+- **P1 (trust1p = trust1 + the parabola):** the weave box within 0.1 dB of trust1 or above at every speed; noise
+  identical to trust1.
+- **K1' (trust3 = the parabola + the two-stage decision):** within 0.1 dB of trust1 at every speed (K1 again), and
+  **K2'**: its cost on the real clip at least 30 percent under trust1's.
+
+**K2 MISSED too (trust2's time):** interleaved against trust1, trust2 saves 0.39 ms on the real clip and 1.1 ms on the
+weave box. The full-resolution decision is not where most of the gate's cost lives (below).
+
+**Results: L1 MISSED (trust1, the full ladder, the NAS's Arc, against the default in the same sitting):**
+- **The capped mean is 38.219 against 38.336 (-0.117).** 11 cases are down more than 0.3 dB, 4 up.
+- **Down, on EXACT prints and rotating texture:** V3_stairs_sq24_v12 -10.97, R3_rot_tex -8.89, A6 -3.58, A5 -2.07, O6
+  -1.86, A7 -1.28, A4 -1.22, P4 -1.01, O5 -0.77, R1 -0.62, H2 -0.35.
+- **Up:** L7_textured_large **+20.44** (25.53 -> 45.97: the exact 15.7-px print at 16 px/frame, the record's open trap,
+  "lead 3's territory"), P5 +4.32, P1 +4.19, P3 +0.41.
+- **The mechanism, by design reading:** on an exact print the aliases tie at full resolution, and trust1's decision
+  only asks the winner to beat the cell's own flow. A candidate whose sub-pixel fit happens to be a little better wins
+  by more than 1/255 and replaces a right flow with an alias. **Lead 4 learned this at step 1d** (the uniqueness test:
+  beat the runner-up of a different basin too), and trust1 left it out: my omission, caught by the ladder.
+
+**Pre-registered: the uniqueness test, `TRUST_UNIQUE=1` (trust4 = trust1 + that one change).** The winner must also
+beat the best candidate more than 2 px from it by 1/255; on a tie the cell keeps its flow. The ladder on the M5
+(deterministic with tests/mvk-env.sh), trust4 and trust1 against the default in one sitting:
+- **U1:** the cases trust1 lost come back within 0.3 dB of the default, the capped mean within 0.1 of it or above, and
+  no case down more than 1 dB.
+- **U2:** the weave box keeps trust1's gains within 0.5 dB. The weave is not an exact print: its truth wins by 0.019 a
+  pixel at full resolution, almost five times the margin.
+- **U3:** L7's +20 shrinks: an exact print's aliases tie, so it should keep less than half of it.
+
+**Results: U1 MISSED on one case, U3 MISSED in the good direction (trust4, the ladder on the M5, one sitting):**
+- **The capped mean is +0.131 over the default** (trust1 in the same sitting: -0.147). V3 is back (+0.09), A4-A7, O5
+  and O6 within 0.03, R1 -0.26.
+- **Still down:** R3_rot_tex **-7.33**, P4 -0.64, H2 -0.33.
+- **Up:** L7 **+12.35** (U3 predicted less than half of trust1's +20.7; it kept 60 percent), P1 +0.62, P3 +0.36.
+
+**R3, diagnosed (`tests/probes/trust/r3diag.py`, the M5).** R3 is a disc with an EXACT sin x sin print of period 40
+px, its rotation ramping the rim from 0 to 32 px/frame. Against the exact rotation, by radius:
+
+    radius     replaced   the flow it replaced   its replacement   final field gross: trust4 / the default
+    0-50       35%        1.7 px                 25.3 px           39.6% /  2.1%
+    50-90      44%        2.0                    26.0              65.8% / 13.2%
+    90-130     48%        2.4                    25.7              66.3% / 25.7%
+    (median errors over the replaced cells)
+
+- **The gate opens on a third to a half of the disc and replaces a right flow with one 25 px wrong.** The print's
+  alias (20, 20) lies inside the offer's +-24 px, and on an exact print it ties the truth at full resolution. The
+  offered minima sit on the quarter level's 4-px grid and are refined only in half-pixel steps, so the "tie" is broken
+  by sub-pixel quantisation (and the block's own rotation), by more than 1/255, and the uniqueness test cannot see a
+  tie that quantisation has turned into a margin. The weave survives only because its truth wins by a real margin
+  (0.019 a pixel).
+- **What a sound guard looks like:** a RELATIVE margin. A difference is significant only against the size of the scores
+  themselves; quantisation and rotation add to every candidate's score alike.
+
+**Pre-registered: U5, offline (`tests/probes/trust/decide.py`, before it ran).** The GLSL decision emulated per cell
+(whole-texel offers, half-pixel refinement), the ratio winner / runner-up of a different basin, on the weave box at
+3-19 px/frame and on R3.
+- **U5:** there is a ratio threshold that keeps at least 90 percent of the weave's right winners and refuses at least
+  90 percent of R3's wrong ones: the weave's right winners at a median ratio under 0.6, R3's wrong winners over 0.85.
+- **If no threshold separates them,** the decision has to compare candidates on an equal footing (a finer common
+  refinement) before any margin can mean anything.
+
+**Results: U5 MISSED: no ratio separates them** (the M5's CPU, 2,151 cells a weave speed, 1,442 on R3):
+
+    winner / runner-up of a different basin, percentiles 5 / 25 / 50 / 75 / 95
+    weave (every speed but 16)   right winners (98-100% of cells)   0.57 0.67 0.74 0.80 0.91
+    R3                           right winners (34% of cells)       0.21 0.48 0.70 0.90 0.98
+                                 wrong winners                      0.36 0.61 0.80 0.92 0.99
+    a threshold of 0.8 keeps 70-74 percent of the weave's right decisions and refuses only 51 percent of R3's wrong ones
+
+- **The weave's right wins are not large in ratio** (a median 0.74: the truth's own residual, from quantisation, is
+  most of the score), **and R3's decision is close to a coin toss** (34 percent right) whose wrong winners spread over
+  the same range. A relative margin cannot rescue a decision that has no business being made.
+- **The parked design already said where it has no business:** the gate is a PER-LEVEL trust gate. R3's print
+  (period 40; 28 px along its diagonal) and V3's stairs (period 24) are ambiguous at 1/8 but NOT aliased there (T1:
+  the box flag fires on 0 percent of them at 1/8), so the 1/8 level measures them honestly and its seed should stand.
+  trust1 dropped the aliasing flag because T1 found it non-specific on film; the ladder shows ambiguity alone is not
+  specific to a misleading level either. **The gate needs both:** aliasing (is this level dishonest here?) and
+  ambiguity (is this a print, not film detail?).
+
+**Pre-registered: trust5 = trust4 + the aliasing flag (`TRUST_ALIAS=0.7`), one change.** The gate opens only where the
+1/8 level's 5 x 5 window around the cell is also ALIASED: the range of its box-filtered values (the mean over each
+texel's 8 x 8 footprint, a new pass per frame) is under 0.7 of the range of its point samples (T1's flag A, at 1/8).
+The ladder on the M5 against the default and trust4, one sitting:
+- **A1:** R3, V3, P4 and H2 within 0.3 dB of the default (the gate shut: unaliased at 1/8), the capped mean at or above
+  the default's, no case down more than 0.3 dB.
+- **A2:** L7 keeps trust4's gain within 1 dB (its print is aliased at 1/8: T1, 100 percent), and the weave box keeps
+  trust1's gains within 0.5 dB (100 percent aliased).
+- **A3:** P1 and P5 lose trust1's gains (their stairs are not aliased at 1/8).
+
+**Results: trust5 on the ladder (the M5, one sitting with the default): A1 and A3 PASSED, A2's L7 half MISSED.**
+- **Every case but L7 is within 0.01 dB of the default** (R3, V3, P4, H2 +0.00; M4, P1, P3 +0.01). The capped mean is
+  +0.208 over the default.
+- **L7 +8.73** (trust4 kept +12.35: A2 asked for its gain within 1 dB). The aliasing flag shuts the gate on part of
+  L7's print.
+- **P1 and P5 lose trust1's gains** (A3), as their stairs are not aliased at 1/8.
+- **trust5 is the first form to pass the ladder.**
+
+**Results: C2a PASSED (the census's 40 extracts on the NAS and the three local clips on the Intel Mac; 58,080 pairs).**
+
+    the share of the difference the final flow leaves (where the cut gate fires), percentiles 0 / 10 / 50 / 90 / 100
+    real cuts (scdet 10 or more; 474 of 517 fired on: recall 92 percent)   0.37 0.54 0.64 0.78 0.99
+    non-cuts it fires on (64)                                              0.17 0.30 0.56 0.67 0.97
+    the frame-filling weave pans at 5 and 19 px/frame (93)                 0.14 0.17 0.20 0.24 0.26
+
+- **The cuts' median is 0.64** (registered: near 0.7) and 90 percent of them are above 0.54 (registered: above 0.45).
+- **Every real cut reads 0.37 or more and every pan 0.26 or less.** A threshold of 0.3 holds all 474 cuts the gate fires
+  on, releases the pans, and releases 7 of the 64 non-cut firings. `CUT_EXPLAINED` is set to 0.3.
+
+**Pre-registered: the cut gate's switch, `CUT_MOTION=1` (before its gates ran).**
+- **CM1 (the frame-filling pan, the Intel Mac, one sitting with the default):** weave 5 and 19 px/frame at least 3 dB
+  above the blend (C1's counterfactual gave +3.5 and +8.5); 3, 11, 13 and noise within 0.5 dB of the default.
+- **CM2 (the ladder, the M5):** every case within 0.01 dB of the default. No ladder pair should cross the cut gate.
+- **CM3 (real footage, the 40 extracts' half-rate test with every frame's PSNR, against the default in the same
+  queue):** the output changes on under 1 percent of the frames, never on a frame whose bridged pair holds a real cut,
+  and the changed frames' median PSNR does not fall.
+
+**Results: trust5 on the weave box (the M5): noise identical at every speed; A2's weave half MISSED (about half of
+trust1's gain kept).**
+
+    weave box, PSNR-Y (dB)   3       5       11      13      15      16      17      19
+    the default              39.80   37.69   20.15   19.46   30.48   37.34   36.74   23.25
+    trust1                   42.69   45.58   32.08   31.98   36.74   37.34   38.60   31.89
+    trust5                   39.80   40.73   25.88   29.81   36.75   37.34   36.89   28.34
+    trust5 - the default      0.00   +3.04   +5.73  +10.35   +6.27    0.00   +0.15   +5.09
+
+- The uniqueness test and the aliasing flag, which made the gate safe on the ladder, cost about half of the weave's gain
+  (trust4, the uniqueness test alone: 29.79 at 11). trust5 still lifts the fast weave by 5-10 dB and never moves noise.
+
+**Results: CM2 PASSED (the cut gate's switch on the ladder, the M5):** every case within 0.01 dB of the default
+(H1 +0.01; M2, P3, R3 -0.01); the capped mean identical.
+
+**Results: CM3 (the cut switch on real footage, the NAS's Arc, every odd frame of the 40 extracts against the default
+in the same queue; `tests/probes/trust/framediff.py`):**
+- **88 of 21,678 frames change (0.41 percent; registered: under 1)**, and **none bridges a real cut** (scdet's ground
+  truth from C2a's census).
+- **Most changes are rounding-level** (the median -0.01 dB: the extra pass recompiles the warp). The decision flips are
+  the large ones: +8 to +11.5 dB where a non-cut the old gate held is now interpolated, and one frame at -0.77.
+- **The changes sum to +117.9 dB; no extract's unflagged median moves by more than 0.01 dB.**
+- CM3 PASSED on its count and its cuts. Its third clause (the changed frames' median does not fall) is MISSED by 0.01
+  dB, which is rounding, not a decision.
+
+**Results: CM1 PASSED, and the two switches together (the frame-filling weave pan, the Intel Mac's RX 6600, one
+sitting):**
+
+    PSNR-Y over the frame (dB)   3       5       11      13      19      noise 3-19
+    linear                       28.73   22.28   13.97   13.17   14.69
+    the default                  27.82   19.18   21.54   16.74   12.36   54.76 53.47 ... identical in every column
+    CUT_MOTION                   27.82   25.57   21.54   16.74   23.21
+    trust5                       39.09   19.18   29.27   29.85   12.36
+    both                         39.09   31.99   29.27   29.85   26.03
+    both - the default          +11.27  +12.81   +7.73  +13.11  +13.67
+
+- **CM1 PASSED:** the cut switch lifts 5 and 19 px/frame to 3.3 and 8.5 dB above the blend and changes nothing else.
+- **The two compose.** Once the cut gate lets the frames be drawn, the trust gate adds 6.4 and 2.8 dB more at 5 and 19.
+  Together they take every speed of the frame-filling print from at or below the blend to 7-17 dB above it.
+
+**Results: L2 PASSED as registered for trust5 (the NAS's Arc, the 40 extracts against the default in the same queue),
+and the frame-by-frame view shows what the medians hide.**
+- **The registered gate:** the unflagged medians move -0.04 to +0.10 dB, and no extract falls 0.3.
+- **Frame by frame** (framediff.py; not a registered gate, the instrument is new today):
+  - 6,876 of 21,678 frames change by more than 0.01 dB: the gate opens on 6-17 percent of a film frame's cells and
+    decides on about 1 percent, so most frames move a little;
+  - the changes are mostly small (10th to 90th percentile -0.08 to +0.12 dB), up on 3,658 frames and down on 3,218, with
+    a net +90.3 dB;
+  - **the local extremes are real:** +3.14 at best, and **-3.26 at worst**, with **a run of frames in one extract
+    (Sonic the Hedgehog @4341, frames 815-833) at -2.4 to -3.0 dB**;
+  - 6 changed frames bridge a real cut, all within 0.02 dB.
+- The lattice was adopted on medians alone; nobody has looked at its frames this way.
+
+### Where the per-level trust gate stands (2026-10-01, evening)
+
+**Built, gated, and two findings beside it.** In the order the evidence came:
+1. **The parked target was not the trust gate's (T0, C1).** On a frame-filling print at 5 and 19 px/frame the field was
+   mostly right and the scene-cut gate held a frame: the gate measures how different two frames are, not whether
+   motion explains the difference.
+2. **The cut gate fixed: `CUT_MOTION=1` (`tests/cut_motion.py`).** It holds a frame only if the final flow also leaves
+   more than 0.3 of the difference unexplained. That threshold was set on 58,080 real pairs: every one of 474 real cuts
+   read 0.37 or more, every pan 0.26 or less.
+   - **Its gates:** the pans +3.3 and +8.5 dB above the blend (CM1); the ladder within 0.01 (CM2); real footage, 88 of
+     21,678 frames changed, none on a cut, with flips of up to +11.5 dB (CM3).
+   - **Its cost:** +0.4 ms a frame at 720p on the M5 (+3 percent), in one single-invocation pass that could be spread
+     over threads.
+3. **The per-level trust gate: `TRUST_GATE=1 TRUST_UNIQUE=1 TRUST_ALIAS=0.7` (`tests/trust_gate.py`, the form
+   "trust5").** Where the 1/8 level is both AMBIGUOUS (the lattice's margin gate) and ALIASED (the parked design's own
+   flag: the box keeps under 0.7 of the point samples' range), the quarter level offers its three best minima within
+   +-24 px and full resolution decides, with lead 4's uniqueness test.
+   - **The way there:**
+     - ambiguity alone opened the gate on exact prints the 1/8 level sees honestly (the ladder: V3 -11, R3 -8.9);
+     - the uniqueness test alone could not stop a tie that quantisation had turned into a margin (R3 -7.3; no ratio
+       separates them, U5);
+     - the aliasing flag, the parked design's own term, did.
+   - **Its gates:**
+     - the ladder: +0.21 capped, no case down, L7 +8.7 (the record's period-16 trap);
+     - the weave box: +3 to +10 dB at 5-19 px/frame, noise identical;
+     - the frame-filling pan: +7.7 to +13.1 dB where the warp runs;
+     - real footage: L2 passed, with the frame-level swings above.
+   - **Its cost:** +1.0 ms a frame on film at 720p (+8 percent), +2-3 ms where a print fills the region: about half
+     fixed (the passes and the gate), half the decision on opened cells.
+   - **The price of its safety:** trust1, without the two guards, had about twice the weave gain and failed the ladder.
+
+**The owner's decisions, and what each would need:**
+- **`CUT_MOTION` for the player** (every tier: the cut gate is in every shader): the 4K twin (scale_shader.py's frame
+  conversion rule covers its one flow read), the Metal port and the lockstep.
+- **`TRUST_GATE` (trust5) as a tier, or inside High:** the same three, plus a look at the Sonic frames first.
+
+**Open:**
+- the Sonic run (@4341, frames 815-833);
+- the half of the weave gain the guards cost;
+- the gate's time (its fixed half, and the decision);
+- the cut pass spread over threads.
+
+### The decisions (2026-10-01, evening): CUT_MOTION adopted for every tier; the trust gate held
+
+**The owner's word:** *"Adopt cut-fix - it looks to me supported by the data but i am still less convinced by
+trust-gate - that one is your decision."*
+
+**CUT_MOTION is adopted in every tier of the player.** There are three new files, each its tier plus `CUT_MOTION=1`,
+with their 4K twins; `smoke.sh` checks that all six regenerate byte-identical:
+- `bidirectional-interpolation-variational-propagated-global-cage-energy-carry-adopt-lattice-cut.glsl`, High. It is
+  md5-identical to the file CM1-CM3 gated.
+- `…-carry-adopt-cut.glsl`, Standard.
+- `bidirectional-interpolation-variational-propagated-cut.glsl`, Low.
+
+The plain recommendation stays as it was, the reference the science is measured against.
+- **The ladder needs no new run for the other tiers.** The cut decision changes only on pairs whose cut statistic is
+  over 0.125. That statistic is the same pass in every tier, and CM2 found no ladder pair over it.
+- **The tiers' own flows on real cuts** (the three local clips, 110 cuts, the M5):
+  - the Low tier holds all 104 cuts its gate fires on (the lowest ratio 0.47, the median 0.67);
+  - the Standard tier holds all 104 (the lowest 0.49).
+  - The threshold is 0.3, so each tier's cuts stay above it by a wide margin, as the High tier's did in C2a.
+- **The 4K twin** (the High tier's, on the frame-filling weave pan at twice the size, the M5):
+  - 5 px/frame 19.17 -> 23.19 (+4.0, now 0.9 above the blend);
+  - 19 px/frame 12.38 -> 23.09 (+10.7);
+  - 11 px/frame and noise identical.
+- **The Metal port** (NFrameDemo's engine, the frame-filling pan): 5 px/frame 19.17 -> 25.14, 19 px/frame
+  12.36 -> 23.29, 11 identical. libplacebo gives 25.6 and 23.2: the engines agree within 0.7 dB.
+- **The cost** on the demo's Metal engine is within its 0.1 ms resolution at 720p (8.2 ms either way) and +0.7 ms
+  at 4K. Through libplacebo it is +0.4 ms at 720p, its pass being one invocation.
+
+**The trust gate (`TRUST_GATE`, trust5) is held, not adopted (the assistant's decision, delegated by the owner):**
+- **It costs about 8 percent on film for gains on content rare in film.** The gains are fine prints in fast motion.
+- **It has one unexplained real-footage harm:** the Sonic run (@4341, frames 815-833, -2.4 to -3.0 dB).
+- **The cut fix answers most of the frame-filling case on its own.**
+- It stays built behind its switch, gated and recorded. It comes back to the owner if the Sonic run is explained and
+  its cost comes down.
 
 ## Sources
 
