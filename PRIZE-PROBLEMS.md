@@ -23,7 +23,7 @@ The problem where this project's tools fit best is **Rule 30 Problem 1** ($10,00
 - Its frontier moved one step on 2026-09-08, to exactly the case this document's first experiment examines.
 
 That experiment ran today. Its controls reproduce the published theorem exactly. It found no finite configuration
-with a periodic column for periods 2 to 6, over every right half up to 14 cells (1,703,936 cases, §5). That is
+with a periodic column for periods 2 to 6, over every right half up to 18 cells (27,262,976 cases, §5 and §6). That is
 evidence, not a proof, and a proof is what the prize pays for.
 
 ---
@@ -181,7 +181,7 @@ Each rung is a result on its own, whether or not the next one succeeds.
 | Rung | What | Who | Status |
 |---|---|---|---|
 | 0 | The lexicon, machine-checked (LEXICON.md, `lexicon_check.py`) | Cloud, CPU | done 2026-10-04 |
-| 1 | Rule 30, periods 2 to 6, exhaustive over small right halves, with the published control | Cloud, CPU | done to right support 14 at depth 192. At right support 18 and depth 256: the control holds to $w = 8$ (256 maximisers), and periods 2 to 4 are clean (5,242,880 cases); periods 5 and 6 running |
+| 1 | Rule 30, periods 2 to 6, exhaustive over small right halves, with the published control | Cloud, CPU | done: right support 14 at depth 192 (1,703,936 cases, 4m38s on one core), then right support 18 at depth 256 (27,262,976 cases, 4 cores); the control holds to $w = 8$ (256 maximisers); no eventually-zero left half anywhere |
 | 2 | **The $p = 2$ structure.** The 7-periodic tails are explained (§5: 7-ring orbits). Next: find the forced left half's form for both period-2 traces, as Condrey did for constant traces; whether every forced left half eventually settles into some ring orbit was asked first and answered no: at depth 768, 1,999 of 2,048 period-2 right halves up to 10 cells show no period up to 128 over their last 256 cells, and the other 49 have periods 7, 14 or 28 (`rule30_rings.py`). So the argument must handle aperiodic left halves, and prove from their form that they are never eventually zero. Formalise in Lean. | Cloud | next |
 | 3 | Periods $3$ to $6$ the same way, then look for the pattern across $p$: the uniform argument, which is the prize | Cloud | open |
 | G1 | Does an error-free transformation (TwoSum, FMA-based TwoProd) survive each GPU's compiler? The prerequisite for any float-based proof on the GPU. Prediction to be written with the job. | Local, Arc and M5, minutes | to be written |
