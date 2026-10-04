@@ -756,3 +756,83 @@ stretch where the wheel happens to meet the demands.
 1. Track the phase over time. Do slips come as discrete jumps of a fixed size, perhaps $1/56$ of a turn, or as
    diffusion?
 2. Read the left half's long runs against the wheel's phase. Do the templates of §8.2 sit at one phase?
+
+### 8.5 The universal wheel (2026-10-04)
+
+`rule30_wheel.py` looked at the wheel up close. It cut column 1 (trace 0101…, every right half up to 12 cells, 2048
+steps) into windows of 56 steps. Its controls passed: a synthetic wheel with planted slips (every slip recovered as a
+shift, one word found), Rule 30's own line (0.3036), and windows of 55 steps (0.0000 exact copies). Of 4,096 right
+halves, 166 lock into an exact period; the other 3,930 were studied.
+
+| Prediction (blind) | Result |
+|---|---|
+| Q1: at least 30% of windows are exact copies of the one before | **refuted**: 8.4%. The wheel is coherent, but rarely exact for a whole period |
+| Q2: at least 70% of slips are shifts in time | **held**: 5,430 of 5,714 (95%). The commonest shifts, 16, 36, 52, 0, 30, 20, 40, 26 steps, are all even, in step with the trace |
+| Q3: one domain word covers at least 90% of the exact stretches | **held**: 96.6%. There are only 2 words |
+| Q4: the long zero runs sit inside exact stretches | **refuted, the other way round**: 0 of 40, against a base rate of 39%. Long runs sit next to slips |
+| S (the random-chaos step): the siblings 90, 120, 150, 210 do not turn this wheel | **held**: they sit at 1/2 or 1/3. The wheel is Rule 30's own |
+
+**The wheel is exactly a circle rotation.** The universal word is
+
+```math
+U = 0001001101\;0001001101\;0001001101\;0001001101\;0001001101\;001101 ,
+```
+
+five blocks of 10 cells, each making 3 turns, and one block of 6 making 2: $5 \cdot 3 + 2 = 17$ turns in 56 steps.
+That is how a rotation is spelt in the alphabet of its continued fraction,
+$17/56 = [0; 3, 3, 2, 2]$, with convergents $1/3$, $3/10$, $7/23$, $17/56$. It is why lags 10 and 20 were so strong
+(§8.3), and why $7/23$ was a near miss for the line. The exact statement, checked over all 56 points
+(`rule30_wheel_left.py`, C3):
+
+```math
+\sigma_U(t) = 1 \iff (17\,t \bmod 56) \in
+\begin{cases}
+[43, 56) & t \text{ even},\\
+[39, 56) \cup [0, 16) & t \text{ odd},
+\end{cases}
+```
+
+one arc of the 56-point circle for each parity of $t$. In the owner's terms, column 1 is a point
+$z(t) = e^{2\pi i \cdot 17 t / 56}$ turning around the circle, and the trace's half-turn $(-1)^t$ chooses which arc
+lights it. The left side sees only the even times (Lemma 1). There the wheel is a single-arc coding of a rotation by
+$17/28$, with 6 of the 28 points lit, and so it never shows two 1s in a row, as Lemma 3 requires. The rare second word
+$U_2$ (3.4%) is not a simple rotation coding: it needs 4 arcs per parity.
+
+**The left half under the pure wheel** (`rule30_wheel_left.py`). Clamp column 0 to 0101… and column 1 to $U$, both
+exactly periodic. Then every forced column is 56-periodic in time, the pairs of columns move through a finite set,
+and the forced left half is eventually periodic in depth. Its controls passed: the 7-ring's 4-cycle continues the
+ring (period 7), and two zero columns give zero. Results, over all 28 phases of $U$:
+
+| Depth searched | 192 | 1,000 | 10,000 | 200,000 |
+|---|---|---|---|---|
+| Longest zero run under the pure wheel $U$ | 5 to 10 | 5 to 14 | 10 to 17 | 14 to 23 |
+| $\log_2$ of the depth (the law of coin flips) | 7.6 | 10.0 | 13.3 | 17.6 |
+
+- W1 **held**: no phase of $U$ or $U_2$ gives an eventually zero left half within 200,000 depths. Under $U$ no pair of
+  columns repeats there. Under $U_2$ the left half is exactly periodic, period $728 = 56 \cdot 13$, and its zero runs
+  never exceed 9.
+- W2 **refuted**: I predicted runs of at most 12 under the pure wheel. They reach 23 by depth 200,000. The first run of
+  14 ends at depth 599 at the earliest, usually thousands, and the longest run grows like $\log_2$ of the depth, as for
+  random bits.
+- Together with Q4: **within the two-sided search's depth (192), the pure wheel gives runs of at most 10**. The
+  two-sided runs of 14 to 20 found there sit next to slips. A slip, not the wheel, makes a long run early. Deep down,
+  the wheel alone makes long runs too, slowly.
+
+**What this means for the prize.** The right side's output now has a finite description to first order. It is a
+universal wheel $U$, an exact coding of the rotation by 17/56, interrupted by slips that are, 95% of the time,
+shifts in time. In this picture, conjecture B's weak form ("every two-sided run ends") splits into two questions:
+
+1. **The pure wheel.** Is the left half forced by (0101…, $U$) never eventually zero? This is one deterministic orbit
+   of a finite-state map, on pairs of 56-bit columns, so it is decidable in principle. No repeat within 200,000 depths
+   means a long orbit, and W1 held throughout.
+2. **The slips.** Can slips conspire to keep the left half at zero forever? 95% of slips are shifts in time, from an
+   alphabet of at most 56 shifts (the commonest eight are all even). So, to first order, this is a question about a
+   finite alphabet of moves.
+
+Neither is a proof. But both are finite objects, and before this section the right side had no description at all.
+
+**Next.**
+1. Follow the pure-wheel orbit much further, and look for an invariant that keeps it away from (0, 0). Each step is
+   a few 56-bit operations, so a compiled loop does about a billion a second. The orbit is sequential, so this is a
+   Local CPU job, not a GPU one.
+2. Catalogue the slips: which shifts follow which phases, and whether the slip sequence is itself simple.

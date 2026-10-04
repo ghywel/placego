@@ -27,6 +27,19 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
      its right, forces a left half of period 7 (the ring itself, continued).
   C2 (known answer): column 0 = column 1 = all zeros forces the zero left half (the detection of "eventually zero").
 REFUTED-BY: C1 or C2 failing (the instrument); W1 or W2 failing.
+
+FIRST RUN, 2026-10-04: W1 HELD, W2 REFUTED (longest run 23 under the pure universal wheel). C1 FAILED, and the fault was
+the control's: forced() stops at the first repeated state, so for the 7-ring it returns 8 cells (10000001, which match
+the ring), and the check compared them with 21. Fixed by comparing over the cells returned. The second run adds, as a
+measurement, the longest run by depth (192, 1000, 10000, all) and the depth of the first run of 14.
+
+SECOND RUN, 2026-10-04: C1 and C2 passed. W1 HELD (no rotation of U or U2 gives a left half that is eventually zero).
+W2 REFUTED. Under the pure universal wheel the longest zero run, over the 28 phases, is 5 to 10 by depth 192, 5 to 14 by
+1,000, 10 to 17 by 10,000 and 14 to 23 by 200,000, close to log2 of the depth, the law of coin flips. The first run
+of 14 ends at depth 599 at the earliest, usually thousands. No pair of columns repeats within 200,000 depths. U2 forces
+a left half of exact period 728 = 56 x 13, with runs of at most 9. So within the two-sided search's depth (192) the
+pure wheel gives runs of at most 10, and the two-sided runs of 14 to 20 there need the slips (rule30_wheel.py, Q4).
+C3 was added after this run, as an exhaustive fact: U is the two-arc coding of the rotation t -> 17t mod 56.
 """
 import sys
 
@@ -110,11 +123,29 @@ def ring_columns(n=7):
     return None
 
 
+def rotation_coding(word, a=17, P=56):
+    """Lay the word on the circle of P points by t -> a t mod P (a bijection when gcd(a, P) = 1; it keeps parity, as
+    a is odd and P even). Return, for each parity of t, the number of arcs of 1s among that parity's points."""
+    circle = {}
+    for t in range(P):
+        circle[(a * t) % P] = int(word[t])
+    out = []
+    for par in (0, 1):
+        pts = [j for j in range(P) if j % 2 == par]
+        out.append(sum(1 for i, j in enumerate(pts) if circle[j] == 1 and circle[pts[i - 1]] == 0))
+    return out, "".join(str(circle[j]) for j in range(P))
+
+
 def main():
+    arcs, laid = rotation_coding(U)
+    report("C3 (a fact, exhaustive over the 56 points) U is a two-arc coding of the rotation by 17/56: one arc of 1s"
+           " for each parity of t", arcs == [1, 1], f"arcs (even t, odd t) = {arcs}; on the circle {laid}")
+    arcs2, _ = rotation_coding(U2)
+    print(f"   U2 on the same circle: arcs (even t, odd t) = {arcs2}", flush=True)
     col, right, left = ring_columns()
     L, k0, per, zero = forced(col, right, 1000)
     report("C1 the 7-ring's 4-cycle forces a left half of period 7, the ring continued",
-           per is not None and 7 % per == 0 and not zero and L[:21] == [x[0] for x in left],
+           per is not None and 7 % per == 0 and not zero and L == [x[0] for x in left][:len(L)],
            f"preperiod {k0}, period {per}")
     L, k0, per, zero = forced([0] * 56, [0] * 56, 10)
     report("C2 two zero columns force the zero left half", zero and not any(L), f"period {per}, zero {zero}")
@@ -133,9 +164,11 @@ def main():
             any_zero |= zero
             if name == "U":
                 worst = max(worst, run)
+            first14 = next((k for k in range(len(L)) if k >= 13 and not any(L[k - 13:k + 1])), None)
+            grow = ", ".join(f"{d}: {longest_zero_run(L[:d])}" for d in (192, 1000, 10000, len(L)) if d <= len(L))
             print(f"   {name} delayed by {r:>2}: left half {'EVENTUALLY ZERO' if zero else 'not eventually zero'}, "
-                  f"preperiod {k0}, period {per}, longest zero run {run}, first cells "
-                  + "".join(map(str, L[:40])), flush=True)
+                  f"preperiod {k0}, period {per}, longest zero run {run}; by depth {grow}; "
+                  f"first run of 14 ends at depth {None if first14 is None else first14 + 1}", flush=True)
         print(f"   {name}: {kept} of 28 even rotations obey Lemma 3", flush=True)
     verdict("W1 no kept rotation's left half is eventually zero", not any_zero)
     verdict("W2 under the pure universal wheel the longest zero run is at most 12", worst <= 12, f"longest {worst}")

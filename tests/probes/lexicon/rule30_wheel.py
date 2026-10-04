@@ -30,6 +30,19 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
   K2 (known answer): the same line-finder on Rule 30 itself puts the highest column-1 line within 0.002 of 0.3036.
   CF (counterfactual): with windows of 55 steps instead of 56, at most 2% of windows are exact copies.
 REFUTED-BY: K1, K2 or CF failing (the instrument); Q1 to Q4 or S failing.
+
+OUTCOME of the first run, 2026-10-04 (W = 12, T = 2048, K = 192): K1 (exact share 0.667, 668/668 slips are shifts, one
+word), K2 (0.3036) and CF (0.0000) passed. 166 of 4,096 right halves were locked; 3,930 were unlocked.
+  Q1 REFUTED: only 8.4% of windows are exact copies. The wheel is coherent but rarely exact for a whole period.
+  Q2 HELD: 5,430 of 5,714 slips (95.0%) are shifts in time. The commonest shifts (steps, mod 56) are 16, 36, 52, 0,
+     30, 20, 40 and 26, all even, in step with the trace.
+  Q3 HELD: one word covers 96.6% of stretches, and there are only 2 words:
+     U  = 00010011010001001101000100110100010011010001001101001101 (23 ones; five blocks 0001001101 and one 001101)
+     U2 = 00010011001101000100110011010001001100110100010011001101 (24 ones), 3.4%.
+  Q4 REFUTED, the other way round: 0 of 40 long runs lie inside an exact stretch, against a base rate of 0.389. The
+     long zero runs sit next to slips.
+  S HELD: Rules 90, 120 and 210 have their highest column-1 line at 1/2 and Rule 150 at 1/3; only Rule 30 turns the
+     wheel (0.3036).
 """
 import math, random, sys, pathlib
 
