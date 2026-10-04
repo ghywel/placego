@@ -913,6 +913,21 @@ So **LR holds exactly for each of the 417,010 periodic columns 1 that were decid
 undecided ones are not settled. Their orbits are longer than the budget, and the same rotation symmetry cuts the
 129,438 words of period 17 to about 7,600 classes.
 
+**Job M2 (Local ran it, 2026-10-05, on the M5, 12 minutes): one word per rotation class, a budget of $10^9$ steps.**
+
+| Column 0 | Period | Classes | Words decided | Undecided within $10^9$ | Kills | Longest cycle |
+|---|---|---|---|---|---|---|
+| 0101… | 17 | 7,712 | 131,072 (all) | 0 | **0** | 5,224,661 |
+| 0001… | 9 | 60 | 512 (all) | 0 | **0** | 3,602,016 |
+| 0001… | 11 | 188 | 2,048 (all) | 0 | **0** | 18,702,068 |
+| 0001… | 13 | 632 | 1,341 | 6,851 (527 classes) | **0** | 452,150,348 |
+
+**K3 held:** every word of period 17 with column 0 = 0101… is decided, and none kills. **K4 is half refuted:** no
+class kills, but only 3,753 of the 10,604 words decided (35.4%; 331 of 858 classes), against the 99% predicted. The
+whole shortfall is at period 13 with column 0 = 0001… (P = 52), where the orbits outrun $10^9$ steps. That is a limit
+of the budget, not a result. In all, **LR holds exactly for each of the 550,201 periodic columns 1 now decided**, and
+6,851 words (527 classes, all at that one period) remain open.
+
 **Where this leaves the proof.** The route now has three parts. The first is measured, the second is done, and
 the third is open:
 1. **The right side is a wheel with slips.** This is §8.5, measured on every right half up to 12 cells. It is not yet

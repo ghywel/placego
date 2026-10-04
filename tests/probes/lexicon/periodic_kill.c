@@ -50,6 +50,18 @@
  * HAND BACK to Cloud when every output file holds its CLASSES line and Local has recorded the verdict (K3 and K4
  *   HELD or REFUTED, with the counts) here and in PRIZE-PROBLEMS.md section 8.6, added a ledger line ("Local ran"),
  *   and pushed main. Hand back AT ONCE, without finishing, on any KILL line, or if the run passes 3 x COST.
+ * OUTCOME of JOB M2 (Local ran it exactly as written, 2026-10-05 00:35:12-00:47:26 BST, 12 min 14 s, on the M5: 10 cores,
+ *   11 processes). No KILL line in any output.
+ *   - 0101..., q = 17: 7,712 classes, all 131,072 words decided (the 129,438 left undecided included), 0 kills, longest
+ *     cycle 5,224,661. K3 HELD (100% decided).
+ *   - 0001..., q = 9: 60 classes, all 512 words decided, longest cycle 3,602,016. q = 11: 188 classes, all 2,048
+ *     decided, longest cycle 18,702,068. q = 13: 632 classes, 1,341 words decided, 6,851 UNDECIDED (527 classes)
+ *     within 10^9 steps; longest cycle found 452,150,348.
+ *   K4: its no-kill half held; its decided share is REFUTED. Of the 10,604 words, 3,753 decided (35.4%); of the 858
+ *     classes, 331 (38.6%). All of the shortfall is at q = 13 (P = 52), so the budget, not the mathematics, is the
+ *     limit there, as REFUTED-BY foresaw.
+ *   Overall: 0 kills among 550,201 decided periodic columns 1 (417,010 before M2, 133,191 settled by it); 6,851 words
+ *   (527 classes, all 0001... with q = 13) remain undecided.
  */
 #include <stdint.h>
 #include <stdio.h>
