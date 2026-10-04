@@ -29,6 +29,14 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
   S4 (uncertain, blind): of the 8 rules that keep the all-zero row fixed (g(0, 0) = 0), exactly two have no witness
      for either period-two trace: the shift (Rule 240, g = 0) and Rule 30.
 REFUTED-BY: S1, S2 or S3 failing (the instrument is wrong); for S4, any other set of witness-free rules.
+
+OUTCOME of the first run, 2026-10-04 (W = 14, K = 128): S1, S2 and S3 held (Rule 30: no witness; Rule 60: the
+single-cell witness, and in fact every right half is a witness, because g = c makes the left half ignore column 1;
+S3: 0 mismatches). S4 was REFUTED: the witness-free rules that fix the zero row are 30, 90, 120, 150, 180, 210 and 240,
+that is all of them except Rule 60. Among the rules that do not fix the zero row, 105 and 15 have witnesses everywhere
+(their zero row is already alternating), and 75 and 45 have one each (the empty right half, trace 01). Longest zero
+run without a witness, traces 01 / 10: Rule 30 17 / 16, Rule 90 16 / 15, Rule 210 16 / 15, Rule 150 14 / 14,
+Rule 120 9 / 10, Rule 180 1 / 1, Rule 240 1 / 1.
 """
 import random, sys
 from multiprocessing import Pool

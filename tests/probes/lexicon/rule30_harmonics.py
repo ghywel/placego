@@ -25,6 +25,14 @@ PREDICTIONS, written 2026-10-04 before this script's first run (blind for the fi
   C (control, the noise floor): two independent left-alone samples of the same size differ by at most 0.01 in every
       D(q) and at most 0.005 in every X(j), so that the effects above are not sampling noise.
 REFUTED-BY: C failing (the instrument cannot see the effect size); H1 or H2 failing for any of the five words.
+
+OUTCOME of the first run, 2026-10-04 (W = 16, K = 192): C passed (largest gaps 0.0043 in D, 0.0008 in X). H1 and H2
+were REFUTED for all five words. The interaction is real (up to 0.27 in D and 0.23 in X, against a floor of 0.004 and
+0.001), but it does not sit at multiples of p. The strongest lag is 7 for all three words of period 4 (X(7) = +0.139,
++0.197, +0.227), 5 for 001, 11 for 011; for 01 and 10, 5 and 2, and weak. Lag 7 is the 7-cell ring, whose 4-cycles
+have columns 0001, 0011 and 0111 (section 5): a resonance with Rule 30's own ring orbits, followed up in
+rule30_resonance.py. A flaw found on reading: X(j) includes the squared mean of s, so a density difference between
+the arms raises every lag (visible for 0011); the follow-up subtracts it.
 """
 import random, sys, pathlib
 from collections import Counter
