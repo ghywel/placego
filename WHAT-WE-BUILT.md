@@ -451,7 +451,8 @@ the research record, the scientific record and the instruments.
 - [LEXICON.md](LEXICON.md) — a lexicon for writing programs as mathematics: four arithmetics, the margin fold, spin
   digits, every program as a matrix, and the machine's own arithmetic, each checked against the shader.
 - [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked, and the
-  first experiment: periodic columns in Rule 30.
+  Rule 30 work: periodic columns, left-side rigidity, the right side as a complement, the four arms, and the
+  templates behind the run lengths (why 13 was missing, and where Fibonacci really is).
 
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn

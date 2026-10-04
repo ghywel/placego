@@ -4,8 +4,9 @@ alone; the cells around each long run (templates); and the Fibonacci and Pell co
 
 RUN-ON:     cpu (pure Python 3, standard library; exact)
 COMMAND:    python3 tests/probes/lexicon/rule30_runlengths.py [W=18] [K=192] [JOBS=4]
-PREDICTION: none for the histograms and templates (a measurement, after the owner asked on 2026-10-04 why runs of 13
-            were missing). P1 is a theorem, checked: for the trace 0101..., the column-1 sequences that Lemma 3's two rules
+PREDICTION: none for the histograms, templates and end parities (a measurement, after the owner asked on 2026-10-04
+            why runs of 13 were missing; the parity table was added after an ad-hoc look suggested that long runs for
+            0101... end at even depth, so it is a record, not a blind test). P1 is a theorem, checked: for the trace 0101..., the column-1 sequences that Lemma 3's two rules
             allow number S(m) for length 2m, with S(1) = 3, S(2) = 7, S(m+1) = 2 S(m) + S(m-1) (the half-companion Pell
             numbers); restricted to the zero times, they are the words with no "11", counted by Fibonacci F(m+2).
 COST:       about a minute and a half on 4 cores.
@@ -55,14 +56,15 @@ def runs_of(L):
 def both_chunk(args):
     word, lo, hi = args
     tau = [word[t % len(word)] for t in range(K + 1)]
-    hist, ctx = Counter(), defaultdict(Counter)
+    hist, ctx, par = Counter(), defaultdict(Counter), Counter()
     for R in range(lo, hi):
         L = r30.forced_left(R, tau, K)
         for n, s in runs_of(L):
             hist[n] += 1
+            par[(n, (s + n - 1) % 2)] += 1                  # the parity of the depth of the run's last zero
             if 11 <= n <= 20 and s - 1 - F >= 0 and s + n - 1 + F <= K:
                 ctx[n][("".join(map(str, L[s - 1 - F:s - 1])), "".join(map(str, L[s + n - 1:s + n + F])))] += 1
-    return hist, ctx
+    return hist, ctx, par
 
 
 def left_chunk(args):
@@ -106,9 +108,10 @@ def main():
     with Pool(JOBS) as pool:
         for word in [(0, 1), (1, 0)]:
             name = "".join(map(str, word))
-            H, C = Counter(), defaultdict(Counter)
-            for h, c in pool.map(both_chunk, [(word, lo, min(lo + 4096, 1 << W)) for lo in range(0, 1 << W, 4096)]):
+            H, C, P = Counter(), defaultdict(Counter), Counter()
+            for h, c, q in pool.map(both_chunk, [(word, lo, min(lo + 4096, 1 << W)) for lo in range(0, 1 << W, 4096)]):
                 H.update(h)
+                P.update(q)
                 for n, cc in c.items():
                     C[n].update(cc)
             Lh = Counter()
@@ -117,6 +120,8 @@ def main():
             print(f"\ntrace {name}...: zero runs in the forced left half, depth <= {K}, by length")
             print(f"   both, every right half up to {W} cells: " + ", ".join(f"{n}: {H[n]}" for n in range(8, 22)))
             print(f"   left alone, {1 << W} random columns 1:  " + ", ".join(f"{n}: {Lh[n]}" for n in range(8, 22)))
+            print("   both, the depth of each run's last zero, even/odd: "
+                  + ", ".join(f"{n}: {P[(n, 0)]}/{P[(n, 1)]}" for n in range(8, 22)))
             print(f"   templates (the {F} cells either side of each run, both sides exact):")
             for n in sorted(C):
                 cc, total = C[n], sum(C[n].values())

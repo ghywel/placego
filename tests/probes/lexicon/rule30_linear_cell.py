@@ -34,6 +34,13 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
      linear cell (the 1 that ends the run sits at a linear depth). The shares of linear cells in these words are
      2/3, 1/3, 3/4, 1/2 and 1/4.
 REFUTED-BY: P2 or C failing, or CF not caught (the instrument is wrong); P3 below 90% for any of the five words.
+
+OUTCOME of the first run, 2026-10-04: P2 held (0 violations), CF was caught (33,344 times), C passed (largest gap
+0.0038). P3 was REFUTED for all five words. Share of zero runs of 10 or more ending at a linear cell, against the
+share of linear cells: 001 85.4% (67%), 011 24.2% (33%), 0001 82.4% (75%), 0011 30.6% (50%), 0111 26.4% (25%); and,
+not blind, 01 77.5% (50%), 10 71.1% (50%). Words with a single 1 lean towards ending at linear cells, the others do
+not, and 011 and 0011 lean the other way. So the 99% for the longest runs of 0101... is a property of that word, not
+a consequence of Lemma 4.
 """
 import random, sys, pathlib
 from multiprocessing import Pool
