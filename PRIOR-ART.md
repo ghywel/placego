@@ -999,3 +999,87 @@ Deblatting (Rozumnyi et al., IJCV 2021); Hawk-Eye/ITF. Seen only through citing 
 "Tackling occlusion in scan rate conversion systems" (ICCE 2003).
 
 **Checked on filing:** the algebra was re-derived independently (positions -v, 0, v(2 tau - 1), v(2 tau - 2); the third difference -2v(2 tau - 1), zero at tau = 1/2; the parabola through the four samples draws v/8 at t = 1/2). Three citations were re-read at their sources: US 6,005,639 (four fields, three pair errors, obscured regions from preceding fields only, revealed from following); US 8,953,687 (the working time instance shifted toward the nearest input frame, globally or per block); Dutta et al. (CVPRW 2022, soft switching between linear and quadratic models; its abstract does not state the four input frames, which the survey read in the paper's text).
+
+## Before rung 2's leap: periodic columns of Rule 30 (surveyed 2026-10-04, 23:15, by Cloud)
+
+Scope: what is known about a column of a finite Rule 30 configuration being eventually periodic, and especially
+about period two, before PRIZE-PROBLEMS.md §8.2's next step (naming the templates). Sources were checked tonight by
+web search and by reading them. "(abstract)" means only an abstract or a summary was read.
+
+### Summary
+
+Period one is closed (Condrey, 2026-09-08). Period two is open and is being worked on in public: a bounded search
+like our rung 1, and the same "remaining inference" as our Conjecture B in its weak form. Two of this project's results
+were already known: the forced left half (Condrey's "triangular uniqueness", by left-permutivity) and the fact that
+no constant bound governs period two. Our two-sided measurements, the four arms, Lemmas 3 and 4 and the templates
+were not found in any source. The new import is Rowland's "local restart", which is the first concrete hypothesis
+for what a template is.
+
+### Core field
+
+- **Condrey, "Finite Configurations Cannot Generate a Constant Trace in Rule 30"**, arXiv:2609.09431 (2026-09-08).
+  - For each right half, a unique left half gives a constant centre trace. For trace 0 it is an alternating tail
+    after the right half's first one; for trace 1 it is one universal checkerboard. Both are infinite, so no finite
+    configuration has an eventually constant column.
+  - The tool is Lemma 1, "triangular uniqueness", by left-permutivity. It is the same forced left half as our
+    `rule30_periodic.py`. Lean proofs ship with the paper.
+  - Conclusion, quoted: "The next unresolved case is eventual period two ... At p=2 no bounded law can exist ...
+    H(2,w) ≥ w for every w ... a structural account of period-two exclusion remains open."
+  - $H(p, w)$ is the longest $p$-periodic prefix of the trace over rows of support radius $w$. That differs from
+    our X3 statistic (zero runs of the infinite forced left half, for a finite right half), but it is the same kind
+    of fact: no constant bound.
+- **Public period-two work**, GitHub woahwhattheheck/commons, issue 15314 and PR 15318 (read 2026-10-04).
+  - A "bounded fiber engine" for support radius 1 to 14 examined 65,532 candidates. All escape, and the longest
+    horizon is 19.
+  - It states "period_two_infinite_theorem=false". Its named next inference is "every eventually-zero positive right
+    half forces completion obstruction or infinitely many ones in the alternating trace". That is our Conjecture B in
+    its weak form.
+  - Our rung 1 (right halves up to 18 cells, left half forced to depth 256, 27,262,976 cases) covers more. The
+    issue quotes Jen as "a finite Rule 30 orbit has at most one eventually periodic column".
+- **Jen, E., "Aperiodicity in one-dimensional cellular automata"**, Physica D 45:3-18 (1990) (summary via MathWorld
+  and a search snippet; the scan at OSTI was not read).
+  - From a single black cell, the sequence attained by any two adjacent cells is not periodic.
+  - Rule 30's right diagonals are periodic with periods $2^\alpha$.
+  - The commons issue's stronger phrasing, "at most one eventually periodic column", is UNVERIFIED against the paper.
+    PRIZE-PROBLEMS.md §5 keeps the weaker, adjacent-columns form.
+- **Rowland, E. S., "Local nested structure in rule 30"**, Complex Systems 16(3) (read, pages 1 to 4).
+  - At row $2^n$ a region of the initial condition reappears on the right side, and the automaton "begins again"
+    locally. This follows from left bijectivity (our left-permutivity) and from the right diagonals' periods
+    $2^\alpha$.
+  - The diagonal periods are characterised by $a(n)$ = 1, 3, 4, 6, 7, 9, 15, 16, 24, ... (no known fast formula).
+  - The left diagonals are only eventually periodic. Their period doubling is proved in §5.
+- **"Rapid left expansivity, a commonality between Wolfram's Rule 30 and powers of p/q"**, Theoretical Computer
+  Science (2022), ScienceDirect pii S0304397522007502: the page refused access (403). UNVERIFIED and not read;
+  listed so it is not forgotten.
+
+### What to import, ranked
+
+1. **Rowland's restart as the hypothesis for a template.** With column 0 clamped, every diagonal that starts at
+   position 1 or more at time 0 never meets column 0 (each diagonal is computed from the two on its right). So that
+   wedge is ordinary Rule 30 with its power-of-2 periods, and only the region between it and column 0 is driven by the
+   trace. A long two-sided run may be the left side's echo of a local restart. Test: whether column 1, or the long
+   runs, recur at times related to powers of 2.
+2. **Octaves as the owner's "harmonics".** Period doubling is a harmonic series in octaves: diagonal $k$ from the
+   edge repeats every $2^{\alpha(k)}$ steps. The run lengths' steps of 2 (§8.2) are the trace's own period, so two
+   kinds of "harmonic" are on the table: multiples of $p$ (from column 0) and powers of 2 (from the right side). The
+   probe for §8.3 separates them.
+3. **Lean, as Condrey did.** Not yet: there is no theorem to formalise.
+
+### Not to import
+
+- Condrey's explicit fibres. For period two the forced left half is aperiodic (`rule30_rings.py`: 1,999 of 2,048
+  right halves show no period up to 128), and Condrey's conclusion says no bounded law exists there either.
+- Condrey's support-radius horizon $H(p, w)$, as the target statistic. It grows trivially, by truncation, so it
+  cannot separate a proof route from a dead end.
+
+### Sources
+
+- Condrey, D. L., arXiv:2609.09431 — https://arxiv.org/abs/2609.09431 (abstract, conclusion and Lemma 1 read via
+  the HTML version)
+- woahwhattheheck/commons issue 15314 — https://github.com/woahwhattheheck/commons/issues/15314 ; PR 15318 —
+  https://github.com/woahwhattheheck/commons/pull/15318 (claims summary)
+- Jen, E., Physica D 45:3-18, 1990 — summary at https://mathworld.wolfram.com/Rule30.html ; scan at
+  https://www.osti.gov/servlets/purl/7230855 (not read)
+- Rowland, E. S., "Local nested structure in rule 30", Complex Systems 16(3) —
+  https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf
+- "Rapid left expansivity ..." — https://www.sciencedirect.com/science/article/pii/S0304397522007502 (403; not read)
