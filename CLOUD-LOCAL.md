@@ -70,7 +70,7 @@ work is exact bit arithmetic and needs no GPU at these sizes.
 
 | Lead | What | Mostly | Cloud's part | Local's part |
 |---|---|---|---|---|
-| **M1** | Rule 30, period 2: the forced left half's form, and a proof that it is never eventually zero (PRIZE-PROBLEMS.md rung 2) | **Cloud** | all of it | none |
+| **M1** | Rule 30: prove left-side rigidity (PRIZE-PROBLEMS.md §7, conjecture LR), which would imply Prize Problem 1; first, a growth bound on zero runs for one cyclic word | **Cloud** | all of it | none |
 | **G1** | Do error-free transformations (TwoSum, FMA TwoProd) survive each GPU's compiler? The prerequisite for any float-based proof on a GPU | **Local** | write the job and its prediction | run it on the Arc and the M5 (minutes) |
 
 ## Ledger
@@ -92,3 +92,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-04 19:40 | Local | - | This file | 0c52d5d |
 | 2026-10-04 20:01 | Local | M5 + devices | L2 carried into Cadence: nine graphs regenerated, lockstep PASS (19:36-19:41), mac-tests 57/57, build 202610042001 on the Mac, the Intel Mac, the iPhone and the Apple TV (the iPad asleep) | (Cadence's tree) |
 | 2026-10-04 21:15 | Cloud | CPU | LEXICON.md (checked by `lexicon_check.py`: 7 claims, 5 counterfactuals caught) and PRIZE-PROBLEMS.md (the prizes as of today, ranked; Rule 30 Problem 1 first). The Rule 30 periodic-column probe: Condrey's published period-1 maxima reproduced exactly to w = 8; no finite configuration has a periodic column of period 2-6 with right half up to 18 cells (27,262,976 cases, depth 256); the 7-periodic tails explained by the 7-ring's 4-cycles. BIDIRECTIONAL-AS-MATHEMATICS.md brought up to date with L2/L3. No Local job this round | (this commit) |
+| 2026-10-04 22:10 | Cloud | CPU | Rung 2 first progress (PRIZE-PROBLEMS.md §7): the left half depends on column 1 only where the trace is 0 (checked 880 of 880); rotations of a periodic word are equivalent; conjecture LR (left-side rigidity) would imply Prize Problem 1. Evidence: exhaustive over every column 1 for all 26 primitive words of period 2-4, every zero run ends; the pre-registered bound 3d+12 refuted for two words. No Local job | (this commit) |

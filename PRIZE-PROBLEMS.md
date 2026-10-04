@@ -190,3 +190,64 @@ Each rung is a result on its own, whether or not the next one succeeds.
 The GPU is not needed for rungs 1 to 3 at these sizes. A CPU does them exactly in minutes. It enters if the search
 must go much further, or for G1 and rung 4. The project's real advantage is not the hardware. It is the method: a
 prediction before every run, a known answer beside every new one, and a counterfactual that must fail.
+
+---
+
+## 7. Rung 2, first progress: left-side rigidity (2026-10-04)
+
+Working the period-2 case turned up a reduction that covers every period at once. Its proof needs an idea that has
+not been found yet. Its evidence is exhaustive but finite.
+
+**Lemma 1 (where column 1 is invisible).** With column 0's trace $\tau$ fixed, the forced left half depends on column
+1 only at the times $t$ with $\tau(t) = 0$.
+
+*Proof.* The only place column 1 enters is
+$x_t(-1) = \tau(t+1) + \big(\tau(t) \vee x_t(1)\big) \bmod 2$. Where $\tau(t) = 1$, the "or" is 1 whatever $x_t(1)$
+is. Every further left column is built from columns $-1$ and $0$ and those to their left. $\square$
+
+*Checked:* `rule30_rigidity.py`, check R1: 880 of 880 random cases. For the alternating trace it gives explicit
+columns (check R0, 2,000 random columns 1): column $-1$ is 1 at every odd time and $\lnot\sigma(2s)$ at time $2s$; column $-2$ is $\sigma(2s)$ at times
+$2s$ and $\sigma(2s+2)$ at times $2s+1$. Here $\sigma$ is column 1. So $x_0(-1) + x_0(-2) = 1$, always.
+
+**Lemma 2 (rotations are equivalent).** A finite configuration whose column is exactly periodic from $t = 0$, with
+word $w$, is still finite one step later, and its column is then periodic with $w$ rotated by one place. So a finite
+configuration exists for one rotation of a cyclic word exactly when it exists for all of them, and ruling out one
+rotation per class is enough. $\square$
+
+**Conjecture LR (left-side rigidity).** For every primitive word of period $p \ge 2$ and *every* column 1, not only
+one made by a finite right half, the forced left half contains infinitely many ones.
+
+**What LR would prove.** Suppose a finite configuration has a column that is eventually $p$-periodic. Shifting time
+makes it exactly periodic, and the configuration stays finite, so its left half must be eventually zero. For
+$p \ge 2$ that contradicts LR, and Condrey's theorem covers $p = 1$. So no column of any nonzero finite configuration
+is eventually periodic, and in particular not the centre column from a single black cell. **LR implies Rule 30 Prize
+Problem 1.** It is a statement about the left side alone, and it is stronger than the problem needs.
+
+**Why it might be true: counting.** A word with $z$ zeros in its period leaves $z/p$ free bits of column 1 per left
+cell (Lemma 1), and $z/p < 1$ for every primitive word with $p \ge 2$. The two extremes match what is known:
+- the word "1" has no free bits, and its left half is Condrey's universal fibre;
+- the word "0" has one free bit per cell, and column 1 $= 000\ldots$ gives the zero configuration, which is why
+  Condrey's proof needed the right half for it.
+
+Counting alone cannot prove LR. A single special column 1 could still make the left half vanish.
+
+**Evidence** (`rule30_rigidity.py`, exhaustive over every column 1, from each starting depth whose earlier free bits
+number at most 10; predictions written before the run):
+
+| Check | Result |
+|---|---|
+| R1 control: column 1 is invisible where $\tau = 1$ | 880 of 880 |
+| R2 control: for $\tau = 000\ldots$ the search reaches its cap from every depth, so it can see an infinite run | depths 1 to 11 |
+| R3 control: for $\tau = 111\ldots$ the longest zero run is 1 | 1 |
+| R4, main claim: every zero run ends (none reaches 400 cells), for all 26 primitive words of period 2 to 4 | **held**, every word, every depth tested (up to 44) |
+| R4, bound: every run ends before depth $3d + 12$ | **refuted** for 0010 and 0100: a run from depth 14 ends at 62 |
+| R5 (post hoc): longest run per word | grows with the starting depth for every word, peaking at the deepest depths tested (14 to 49) |
+
+So the zero runs are not uniformly bounded. A run starting deeper can last longer: for the alternating trace, runs
+from depth $d$ end near twice $d$. A proof of LR therefore needs a growth argument, of the form "a run from depth $d$
+ends by $c \cdot d$". A local identity forbidding a fixed window of zeros is not enough. The self-similar endpoints
+(runs ending near 16, 28-30, 64-68) suggest a renormalisation, mapping a long run at depth $d$ to a shorter one at
+depth about $d/2$. That is the next thing to look for.
+
+**What is open.** LR for any single word, as a theorem. Whether LR holds for long words that are mostly zeros
+($0\ldots01$), which leave column 1 almost free. Whether the right half must be used after all, for some words.
