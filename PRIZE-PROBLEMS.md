@@ -359,3 +359,53 @@ result). The zero runs are local events, though, and so are column 1's constrain
 
 **Next.** Describe column 1's *local* language: the set of patterns it can contain, of each length. Then find whether
 the forced left half's zero runs depend only on that local language. If they do, B becomes a finite check.
+
+### 8.1 The four arms (the owner's design, 2026-10-04)
+
+The owner pushed back on §8's framing: the left-only exploration was not wasted. It was the control arm that §8 is
+measured against. And a factorial design needs its fourth arm. Column 1 is shared by both sides. The left side either
+forces the left half or leaves it free, and the right side either produces column 1 or leaves it free.
+`rule30_factorial.py` measures one statistic in all four arms: the longest zero run in the left half, depth 1 to 64,
+over 100,000 samples per arm, with fixed seeds (predictions in its header, written first).
+
+Trace 0101…, probability that the longest zero run is at least $B$:
+
+| $B$ | coin flips (exact) | neither | right alone | left alone | both |
+|---|---|---|---|---|---|
+| 5 | 0.648 | 0.647 | 0.648 | 0.655 | 0.734 |
+| 7 | 0.211 | 0.210 | 0.209 | 0.184 | 0.134 |
+| 11 | 0.0134 | 0.0139 | 0.0134 | 0.0126 | **0.0213** |
+| 12 | 0.0066 | 0.0073 | 0.0065 | 0.0063 | **0.0212** |
+| 13 | 0.0032 | 0.0039 | 0.0032 | 0.0032 | **0.0119** |
+| 14 | 0.0016 | 0.0018 | 0.0016 | 0.0018 | **0.0119** |
+| 15 | 0.0008 | 0.0009 | 0.0008 | 0.0008 | **0** |
+
+What the four arms show:
+
+1. **Right alone is the same as neither** (proved, and measured: every tail probability within 0.0022). Once column 0 is fixed, the right side
+   never depends on the left. Any finite right half works with any periodic column 0, because column 0's own update
+   is met by choosing column $-1$, and that choice is exactly what the left side forces. So **on its own the right
+   side never forbids a finite configuration**.
+2. **Left alone is close to coin flips.** With column 1 random, the forced left half is statistically almost random,
+   with small but real deviations: runs of 7 or more occur 18.4% of the time against 21.1% for coin flips. The long
+   runs that make left-only rigidity hard (§7) come only from rare special columns 1, which exhaustive search finds
+   and sampling never meets.
+3. **Both is neither random nor merely cut short.** Runs of 12 to 14 are three to seven times *more* common than for
+   coin flips, and they come at quantised lengths. The longest run is exactly 12 (0.93% of right halves) or exactly
+   14 (1.19%); never 13, almost never 11, and never more than 14 in 100,000 random right halves at this depth. Trace
+   0001… shows the same signature: exactly 11 in 2.1% of right halves, then almost nothing beyond 12.
+4. **Pre-registered F2 is refuted.** I predicted that the right side matters only in the extreme tail. It reshapes the
+   middle of the distribution too.
+
+So all the structure lives in the **interaction**. Neither side alone does anything unusual: the right side alone
+changes nothing, and the left side alone is close to random. Together they produce the quantised run lengths and the
+short ceiling. Those run lengths are a fingerprint of specific structure. Finding what makes runs of exactly 12 and
+14 (the 7- and 14-ring orbits of §5 are the first suspects) is the next step.
+
+**Is pseudorandom enough?** (The owner's question.) The record runs and the bounds in §5 to §8 use no randomness:
+they enumerate every case. Only this section samples. Sampling needs representative choices, not unpredictable ones;
+unpredictability is what cryptography needs, and what Cloudflare's lava-lamp wall supplies. Fixed seeds also let
+Local re-run the exact numbers. One worry is real: Python's Mersenne Twister is linear over the same arithmetic as
+Rule 30. So control F4 re-ran every arm with the operating system's entropy source, which is non-linear and unseeded.
+Across all 152 comparisons the largest disagreement was 3.43 standard errors, in the coin-flip arm, which is ordinary
+sampling noise: **F4 held** (`rule30_factorial_compare.py`).
