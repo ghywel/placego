@@ -21,7 +21,7 @@ lie on multiples of 1/56.
 Method.
   Phase prediction. Each sequence is cut into windows of w steps. In each window the phase phi of the line is read
   from the complex amplitude A = sum_t s(t) e^{-2 pi i f t} (s = 2 sigma - 1), and each step gets the rotation's
-  position theta(t) = (f t - arg(A) / 2 pi) mod 1, in 16 bins, together with t mod 2: 32 cells. The error is the
+  position theta(t) = (f t + arg(A) / 2 pi) mod 1, in 16 bins, together with t mod 2: 32 cells. The error is the
   share of steps that the best rule "sigma = the majority value of its cell" gets wrong, pooled over windows and
   sequences. 0 means column 1 is exactly a coding of the rotation; about 0.5 means the rotation says nothing.
   Lines. The spectrum is the Wiener-Khinchin estimate of rule30_spectrum_fine.py (M = T/4 lags, Hann window), on a
@@ -40,6 +40,14 @@ PREDICTIONS, written 2026-10-04 before this script's first run:
   C3 (control): a planted 56-periodic random word, 10% of bits flipped, has its 8 highest lines within 0.0005 of
      multiples of 1/56.
 REFUTED-BY: C1, C2, CF or C3 failing (the instrument); R1, R2 or R3 failing.
+
+FIRST RUN, 2026-10-04: VOID. The instrument failed its controls: C1 (a planted rotation gave an error of 0.340), C3
+and CF, and every window and frequency gave the same error, 0.314. Two bugs, both fixed before the second run: the
+phase was subtracted instead of added (theta = f t - arg(A)/2 pi, which scrambles the alignment from window to window,
+so only the parity carried information), and C3's planted word drew its random offset at every step instead of once
+per sequence. R1 and R2 stay blind (no correct phase error had been seen). R3's spectrum code was not affected; that
+run's lines were 0.3037 (17/56), 0.2500 (14/56), 0.1963 (11/56), 0.1094, 0.2857 (16/56), 0.1058, 0.3905, 0.1038, 4 of 8
+on the lattice.
 """
 import cmath, math, random, sys, pathlib
 
@@ -74,7 +82,7 @@ def phase_error(seqs, f, w):
             A = sum((2 * b[t] - 1) * cmath.exp(-2j * math.pi * f * t) for t in range(a, a + w))
             phi = cmath.phase(A) / (2 * math.pi)
             for t in range(a, a + w):
-                k = int(((f * t - phi) % 1.0) * BINS) % BINS
+                k = int(((f * t + phi) % 1.0) * BINS) % BINS
                 ones[k][t % 2] += b[t]
                 tot[k][t % 2] += 1
     wrong = sum(min(ones[k][p], tot[k][p] - ones[k][p]) for k in range(BINS) for p in range(2))
@@ -120,7 +128,10 @@ def main():
     e = phase_error(coin, F, 64)
     report("C2 coin flips are not", e >= 0.40, f"error {e:.3f}")
     word = [rng.getrandbits(1) for _ in range(56)]
-    p56 = [[word[(t + rng.randrange(56)) % 56] ^ (rng.random() < 0.1) for t in range(T)] for _ in range(40)]
+    p56 = []
+    for _ in range(40):
+        off = rng.randrange(56)
+        p56.append([word[(t + off) % 56] ^ (rng.random() < 0.1) for t in range(T)])
     ln = lines(autocov(p56))
     report("C3 a planted 56-periodic word: its 8 highest lines on multiples of 1/56",
            all(off56(f) <= 0.0005 for f, _ in ln), "largest offset " + f"{max(off56(f) for f, _ in ln):.5f}")
