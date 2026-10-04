@@ -252,6 +252,11 @@ The deeper run (14 free bits, periods 2 to 5, the same predictions, Cloud on 4 c
 | R4, bound $3d + 12$ | **refuted** for 10 words: every rotation of 0001 and of 00001, and 100 |
 | R5 (post hoc) | words with one zero per period are the most rigid. The longest runs of 01, 011, 0111 and 01111 stay between 17 and 23, even from depth 72. Words with mostly zeros allow the longest: 54 to 58 for the rotations of 0001, 45 to 66 for those of 00001. Rigidity grows as column 1's freedom $z/p$ falls, as the counting argument suggests. |
 
+A first look for the rescaling found nothing yet (`rule30_witness.py`, recorded as a null result). The record runs
+for the alternating trace from depths 9, 13 and 33 are 9, 17 and 33 cells long. Each is set by roughly the last
+$d/2$ bits of column 1, and the earlier bits do not matter: 1, 3 and 21 prefixes reach the record. No substitution
+mapping one depth's record column 1 to the next is visible by eye.
+
 The single-zero words may not stay bounded either: the alternating trace's longest run jumps to 32 at depth 33
 (exploration with 18 free bits, beyond this run's range). The words with mostly zeros are where LR is most at risk.
 
