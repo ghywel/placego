@@ -4,6 +4,8 @@ the lattice of multiples of 1/56?
 
 RUN-ON:     cpu (pure Python 3, standard library)
 COMMAND:    python3 tests/probes/lexicon/rule30_rotation.py [T=4096] [SAMPLES=200]
+            python3 tests/probes/lexicon/rule30_rotation.py 4096 200 calibrate   (the instrument's floor only)
+            python3 tests/probes/lexicon/rule30_rotation.py 4096 200 domain      (the 56-step domain, a measurement)
 COST:       several minutes on one core.
 
 Where this comes from. Column 1 for 0101... has a strong spectral line at f = 0.30365 (rule30_spectrum_fine.py), and
@@ -48,6 +50,15 @@ so only the parity carried information), and C3's planted word drew its random o
 per sequence. R1 and R2 stay blind (no correct phase error had been seen). R3's spectrum code was not affected; that
 run's lines were 0.3037 (17/56), 0.2500 (14/56), 0.1963 (11/56), 0.1094, 0.2857 (16/56), 0.1058, 0.3905, 0.1038, 4 of 8
 on the lattice.
+
+SECOND RUN, 2026-10-04 (bugs fixed): C2, C3 and CF passed (CF: 0.311 against 0.082). C1 FAILED its threshold by 0.009
+(0.139 against 0.13): the threshold was set too tight, as the calibration mode then showed (planted codings: error 0.049
+with no flips, 0.094 with 5%, 0.140 with 10%, the same at w = 64 and w = 1024). R1 HELD (0.082: about 3% of bits off
+the rotation, against the floor of 0.049). R2 HELD (0.082, 0.185, 0.269 at w = 64, 256, 1024), and the planted codings
+show the instrument itself does not decay with w. R3 was REFUTED (4 of 8). The four misses are the rotation's second
+harmonic, broadened (0.3905 near 2f folded, and 0.1038 to 0.1094 near 2f + 1/2 folded). The domain mode: 42 of the 1,024
+right halves up to 10 cells lock column 1 exactly (28 to period 4, 14 to period 14). The other 982 match themselves 56
+steps later 81.3% of the time, against 39.0% and 40.0% at lags 55 and 57.
 """
 import cmath, math, random, sys, pathlib
 
@@ -116,7 +127,60 @@ def off56(f):
     return abs(f * 56 - round(f * 56)) / 56
 
 
+def calibrate():
+    """Added after the second run, where C1 missed its threshold (0.139 against 0.13): the instrument's own floor.
+    Planted rotation codings at f = F with 0%, 5% and 10% of bits flipped, at w = 64 and w = 1024. A measurement, not a
+    prediction."""
+    rng = random.Random(9)
+    for flip in (0.0, 0.05, 0.10):
+        seqs = []
+        for _ in range(40):
+            ph = rng.random()
+            seqs.append([int(((F * t + ph) % 1.0) < 0.3) ^ (rng.random() < flip) for t in range(T)])
+        print(f"   calibration: planted rotation coding, {flip:.0%} flipped: error at w = 64 "
+              f"{phase_error(seqs, F, 64):.3f}, at w = 1024 {phase_error(seqs, F, 1024):.3f}", flush=True)
+
+
+def domain(steps=2000, lag=56, wmax=10):
+    """A measurement. For every right half up to `wmax` cells: is column 1 eventually exactly periodic with a period
+    dividing 56 (and with which minimal period), and, for the others, how often does column i (1..6) equal itself 56
+    steps later? Lags 55 and 57 are the control (off the period)."""
+    locked, share, n_free = {}, [0.0] * 7, 0
+    off = {55: 0.0, 57: 0.0}
+    for R in range(1 << wmax):
+        mask = (1 << (R.bit_length() + steps + 3)) - 1
+        row, cols = R << 1, [[] for _ in range(7)]
+        for t in range(steps):
+            for i in range(1, 7):
+                cols[i].append((row >> i) & 1)
+            row = (((row << 1) ^ (row | (row >> 1))) & mask & ~1) | ((t + 1) % 2)
+        c = cols[1]
+        last_bad = max([t for t in range(steps - lag) if c[t] != c[t + lag]], default=-1)
+        if last_bad < steps - lag - 400:
+            tail = c[last_bad + 1:]
+            per = next(q for q in range(1, lag + 1) if all(tail[t] == tail[t + q] for t in range(len(tail) - q)))
+            locked[per] = locked.get(per, 0) + 1
+            continue
+        n_free += 1
+        for i in range(1, 7):
+            share[i] += sum(cols[i][t] == cols[i][t + lag] for t in range(steps - lag)) / (steps - lag)
+        for q in off:
+            off[q] += sum(c[t] == c[t + q] for t in range(steps - q)) / (steps - q)
+    print(f"   domain, every right half up to {wmax} cells, {steps} steps:")
+    print(f"      column 1 eventually exactly periodic (period dividing {lag}), by minimal period: {dict(sorted(locked.items()))}"
+          f" of {1 << wmax}")
+    print(f"      the other {n_free}: column i equal to itself {lag} steps later: "
+          + ", ".join(f"col {i}: {share[i] / n_free:.3f}" for i in range(1, 7)))
+    print(f"      control, column 1 at lags 55 and 57: {off[55] / n_free:.3f}, {off[57] / n_free:.3f}", flush=True)
+
+
 def main():
+    if len(sys.argv) > 3 and sys.argv[3] == "calibrate":
+        calibrate()
+        return
+    if len(sys.argv) > 3 and sys.argv[3] == "domain":
+        domain()
+        return
     rng = random.Random(7)
     planted = []
     for _ in range(40):

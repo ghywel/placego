@@ -684,3 +684,75 @@ the left. The templates are then the boundaries of the large triangles.
 2. Name the templates as triangle boundaries.
 3. A sibling ladder, steps before the leap: prove period-two exclusion for Rules 180, 120, 210 and 150 without using
    linearity, and see which argument survives for Rule 30. Rule 210 is the most Rule 30-like (runs of 16 / 15).
+
+### 8.4 Column 1 is a turning wheel: the owner's complex-number lead (2026-10-04)
+
+The owner: "Anytime someone mentions rotation I think quaternions. Extending the number line with i has interesting
+properties." The complex numbers were already doing the work. A spectral line at $f$ means the sequence follows a
+point that turns by $f$ of a turn per step on the unit circle, $z(t) = e^{2\pi i f t}$. The mirror line at $1/2 - f$
+is the trace's half-turn per step, $(-1)^t = e^{i\pi t}$, which is $i^2 = -1$ applied once per step. So the precise
+question is whether column 1 is a **coding of a circle rotation**: is its bit at time $t$ decided by where $z(t)$ is?
+
+`rule30_rotation.py` asks this directly. In each window of $w$ steps, the phase of the line at $f = 0.30365$ is read
+from the complex amplitude $A = \sum_t s(t)\, e^{-2\pi i f t}$. Each step is then placed on the circle at
+$\theta(t) = \big(f t + \arg A / 2\pi\big) \bmod 1$ (16 bins, with the parity of $t$), and column 1 is predicted by the
+majority bit of its cell. The first run was void: its controls caught two bugs, a sign error in the phase and a
+planted control that was not periodic. Both were fixed and the run repeated. Its prediction errors:
+
+| | $w = 64$ | $w = 256$ | $w = 1024$ |
+|---|---|---|---|
+| column 1, trace 0101… | **0.082** | 0.185 | 0.269 |
+| planted rotation coding, no bits flipped (the instrument's floor) | 0.049 | | 0.050 |
+| planted rotation coding, 10% flipped | 0.140 | | 0.139 |
+| coin flips | 0.431 | | |
+| column 1 with the wrong frequency, $f = 0.27$ | 0.311 | | |
+
+- **Locally, column 1 is a rotation coding.** Over 64 steps, only about 3% of its bits are off the rotation (0.082
+  against the floor of 0.049). This beats a planted rotation with 10% of its bits flipped (R1 held).
+- **Globally, the phase wanders.** The error grows with the window, while a planted rotation's does not (R2 held).
+  The wheel turns at a steady rate but slips.
+- **One control failed its threshold.** C1, the planted rotation with 10% flipped, missed its pre-set threshold by
+  0.009 (0.139 against 0.13). The threshold was set too tight, and the calibration rows above show by how much. It is
+  recorded as a failure, not moved.
+
+**Every strong line is one wheel, its overtones, or a root of unity.** Column 1's 8 highest lines over 4096 steps:
+
+| Line | What it is | Width |
+|---|---|---|
+| 0.3037 | the wheel, $f \approx 17/56$ | sharp (within 0.0001 of $17/56$) |
+| 0.2500 | $i^t$: a quarter-turn per step, literally multiplication by $i$ | exact |
+| 0.1963 | $1/2 - f$: the wheel times the trace's half-turn $(-1)^t$ | sharp |
+| 0.2857 | $e^{2\pi i \cdot 2t/7}$: the 7-cell ring | exact |
+| 0.3905 | the second overtone $2f$, folded | broadened |
+| 0.1094, 0.1058, 0.1038 | the second overtone times the half-turn, $2f + 1/2$, folded | broadened, split |
+
+The pre-registered R3 asked all 8 to sit within 0.0005 of a multiple of 1/56: **refuted**, 4 of 8. The misses are
+exactly the overtones. When the phase wanders, an overtone of order $k$ is $k^2$ times broader than the wheel, so the
+second overtone is the one to blur.
+
+**Quaternions, honestly.** Every line found is a rotation of one complex plane: the wheel $e^{2\pi i f}$, and the
+roots of unity $-1$, $i$ and $e^{2\pi i/7}$. They commute, so there is no second independent turn among the top
+lines, no torus, and so far no need for quaternions. The quaternions' extra power is that rotations need not commute,
+as in three dimensions. A single bit sequence cannot show that. If it appears anywhere here, it will be in the
+two-dimensional spacetime, with space and time turning differently, and that is worth looking for.
+
+**The right side next to column 0 is a rotating domain.** Of the 1,024 right halves up to 10 cells, 42 lock column 1
+exactly:
+- 28 lock it to period 4, the period of the 7-ring's 4-cycle. These are presumably the source of §5's 7-periodic
+  tails (not checked here).
+- 14 lock it to period 14.
+
+The other 982 never lock. Their column 1 equals itself 56 steps later 81% of the time, against 39% and 40% at lags 55
+and 57. The match fades with distance from column 0, from 0.81 in column 1 to 0.60 in column 6. So the generic right
+side is a coherent wheel, 17 turns in 56 steps, that slowly loses phase. The locked cases are the exceptions.
+
+**What it means for the prize.** This is the first candidate for a finite description of what the right side
+supplies: *a rotation by $f$ with phase slips*, an approximately Sturmian sequence. T6 ruled out only automata in base
+2. If the slips can be described (where they happen, and by how much the phase jumps), then the weak form of B
+becomes a question about the left side's demands (Lemma 4) against a slipping wheel. Each run of zeros would be a
+stretch where the wheel happens to meet the demands.
+
+**Next.**
+1. Track the phase over time. Do slips come as discrete jumps of a fixed size, perhaps $1/56$ of a turn, or as
+   diffusion?
+2. Read the left half's long runs against the wheel's phase. Do the templates of §8.2 sit at one phase?
