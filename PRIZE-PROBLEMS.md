@@ -243,6 +243,18 @@ number at most 10; predictions written before the run):
 | R4, bound: every run ends before depth $3d + 12$ | **refuted** for 0010 and 0100: a run from depth 14 ends at 62 |
 | R5 (post hoc): longest run per word | grows with the starting depth for every word, peaking at the deepest depths tested (14 to 49) |
 
+The deeper run (14 free bits, periods 2 to 5, the same predictions, Cloud on 4 cores) gives:
+
+| Check | Result |
+|---|---|
+| R1 to R3 controls | all pass (R2 from depths 1 to 15) |
+| R4, main claim: every zero run ends | **held for all 50 primitive words of period 2 to 5**, at every depth tested (up to 72) |
+| R4, bound $3d + 12$ | **refuted** for 10 words: every rotation of 0001 and of 00001, and 100 |
+| R5 (post hoc) | words with one zero per period are the most rigid. The longest runs of 01, 011, 0111 and 01111 stay between 17 and 23, even from depth 72. Words with mostly zeros allow the longest: 54 to 58 for the rotations of 0001, 45 to 66 for those of 00001. Rigidity grows as column 1's freedom $z/p$ falls, as the counting argument suggests. |
+
+The single-zero words may not stay bounded either: the alternating trace's longest run jumps to 32 at depth 33
+(exploration with 18 free bits, beyond this run's range). The words with mostly zeros are where LR is most at risk.
+
 So the zero runs are not uniformly bounded. A run starting deeper can last longer: for the alternating trace, runs
 from depth $d$ end near twice $d$. A proof of LR therefore needs a growth argument, of the form "a run from depth $d$
 ends by $c \cdot d$". A local identity forbidding a fixed window of zeros is not enough. The self-similar endpoints
