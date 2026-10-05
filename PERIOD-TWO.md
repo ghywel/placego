@@ -170,11 +170,15 @@ prize needs a statement about every single finite configuration. The questions a
    permutive automata under conditions on the neighbourhood's ends. Whether Rule 30's neighbourhood (-1, 0, +1)
    meets them was settled from his thesis (Warwick, 1992, Theorem 1.3.3, read): a left-permutative rule whose
    neighbourhood reaches left of the cell ($l < 0$) is $k$-mixing for every $k$ for the uniform measure. Rule 30
-   qualifies. So Kari and Kopra's hypotheses of ergodicity and mixing hold; the adaptation is what remains.
+   qualifies. So Kari and Kopra's hypotheses of ergodicity and mixing hold.
+   **Closed (§8.55).** Their argument was read in full. It applies to Rule 30 at once, but it is about windows of a
+   row; for centre columns it is true and empty. It cannot separate a finite seed from any other configuration.
 5. **A weaker theorem about every single seed.** Langton's ant's highway is unproved, but every trajectory is
    proved unbounded, by reversibility and an extremal cell. Rule 30 is not reversible, but left-permutivity solves
    it sideways. Is there a statement weaker than B, about every single finite configuration with a 0101 centre,
    that an extremal argument proves?
+   **One found (§8.54, Theorem A).** Two adjacent columns cannot both be $P$-periodic on a time window $[a, b]$
+   unless $b \le 2a + L + 2P - 1$, where $L$ is the distance to the left edge. Jen's theorem is $b = \infty$.
 6. **LR by construction.** A system strong at construction and search could try to refute Conjecture LR: a column
    1, not necessarily from a finite right half, whose forced left half is eventually zero. The exact records make
    it unlikely ($R(d)$ is finite at every depth computed, about $0.8\,d$). A refutation would still teach
@@ -183,6 +187,9 @@ prize needs a statement about every single finite configuration. The questions a
    but ever more rarely. Does the forced walk's law stay bounded, as next to a white wall, or grow like the
    logarithm of the number of histories, as the coin says? This separates "zero entropy" from "finiteness" in this
    problem (the correction to §8.45).
+   **Partly answered (§8.54).** Kicks cannot thin out faster than geometrically: with $P$-periodic stretches
+   between kicks at times $\tau_n$, a finite left half needs $\tau_{n+1} \le 2\tau_n + L + 2P + 2$. Slower thinning,
+   and the steady rate of real right halves, stay open.
 8. **The fourth game** (§8.49, from the tetralemma). Count the seeds that survive the black, white, both and
    neither games, and measure $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$. A ratio near 1
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
@@ -228,6 +235,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `ladder.c`, `rule30_ladder_deep.py` | the ladder R(m, s) | minutes |
 | `entropy.c`, `entropy2.c` | the channel bound | minutes to hours by width |
 | `wheel_orbit.c` | Proposition 6's certificate for the pure wheel | minutes per phase |
+| `rule30_jenclock.py`, `jenclock.c` | Jen's theorem with a clock (§8.54): Theorems A and B, checked | seconds |
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |
 
 **The math check.** After any edit of a document with TeX in it, run `python3 tests/probes/mathcheck/check.py

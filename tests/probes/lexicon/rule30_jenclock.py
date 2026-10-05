@@ -29,6 +29,17 @@ PREDICTIONS, written 2026-10-05 before this script's first run.
       reached only by columns with L <= 3 (next to the left edge).
   CF (counterfactual, must fail): the same check against the bound without its 2P term, b <= 2a + L - 1, is violated.
 REFUTED-BY: JC0, JC1, JC3 or CF failing (the proof or the instrument); JC2 or JC4 the other way.
+
+OUTCOME of the first run, 2026-10-05 (QMAX 10, WMAX 10, 6 seconds on the M5):
+  JC0 PASSED. JC1 PASSED: longest zero runs 1, 6, 5, 6, 9, 10, 10, 17, 14, 17 for q = 1 .. 10 against the bounds
+  2, 6, 10, .., 38; the bound is attained at q = 2; no word infinite or undecided (longest depth cycle 25,000).
+  JC2 HELD (about 1.7 q for q >= 3). JC3 PASSED: 5,254,135 complete windows, 0 violations. CF PASSED: 17,500
+  violations of the bound without its 2P term. JC4 REFUTED as worded: the least slack is 0 (seed 101, L = 0, P = 1,
+  window [0, 1]), but windows with slack <= 2 reach L = 12, not L <= 3. Post hoc: all 1,734 of them start at a <= 3
+  (the latest at a = 3), and the long ones are zeros waiting for an edge (the single cell seen from L cells to its
+  right). So Theorem A is sharp at the start and loose later.
+  A correction made while writing section 8.54: Theorem B needs P >= 2 (for P = 1 the bound is 1, the stripes).
+  Every case run here has P = 2q >= 2.
 """
 import pathlib, subprocess, sys, tempfile
 import numpy as np

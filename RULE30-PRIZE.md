@@ -3159,3 +3159,126 @@ predicted first). At right width 20:
 
 So the bounded-debt statement holds in the measured range with a constant of about 3.5 at $\alpha = 0.5$, flat in
 width to $b = 24$ and in depth to 230.
+
+### 8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)
+
+*Local's first section as lead (the owner, 2026-10-05, evening: Cloud's budget is spent; "carry on the good work
+here"). Probe `rule30_jenclock.py` with `jenclock.c`; predictions were committed before the first run.*
+
+Jen's theorem (§8.13) is about columns that are periodic for ever. Its proof has a clock in it, and reading the clock
+gives two quantitative statements. Both hold for every configuration whose left half is eventually zero, whatever
+its right half. Neither is in the sources read so far (Jen 1990 as restated by Kopra; PRIOR-ART). The argument is
+short enough that they may be folklore.
+
+Say that columns $i$ and $i+1$ are *$P$-periodic on the window $[a, b]$* when the pair at time $t$ equals the pair at
+time $t + P$ whenever $a \le t$ and $t + P \le b$.
+
+**Theorem A (a window cannot outlast the edge).** Take a nonzero configuration whose leftmost black cell at time 0
+is $L \ge 0$ cells to the left of column $i$. If columns $i$ and $i + 1$ are $P$-periodic on $[a, b]$, then
+
+```math
+b \le 2a + L + 2P - 1 .
+```
+
+At time $a$ the left edge is $L + a$ cells away. So the window's length $b - a$ is less than that distance plus $2P$.
+
+*Proof.* Three facts, each one line of Rule 30.
+1. **Periodicity moves left and loses one step.** $x_t(k-1) = x_{t+1}(k) \oplus (x_t(k) \vee x_t(k+1))$. So if columns
+   $k$ and $k+1$ are $P$-periodic on $[a, b]$, column $k - 1$ is $P$-periodic on $[a, b - 1]$. After $j$ steps to the
+   left, column $i - j$ is $P$-periodic on $[a, b - j]$.
+2. **The edge moves left one cell a step.** The leftmost black cell has two white cells to its left, and $001 \to 1$.
+   So column $i - j$ is white before time $j - L$ and black at time $j - L$ (for $j \ge L$).
+3. **The two meet.** Take $j = a + P + L$. Column $i - j$ turns black for the first time at $e = a + P$. If
+   $b \ge 2a + L + 2P$, then $e \le b - j$. So both $e - P = a$ and $e$ lie in the window where column $i - j$ is
+   $P$-periodic. It is white at one and black at the other, a contradiction. $\square$
+
+Jen's theorem is the case $b = \infty$.
+
+**Theorem B (a zero run cannot outlast two periods).** Let columns 0 and 1 be $P$-periodic from time 0, with
+$P \ge 2$ and column 0 not zero. Then every run of zeros in row 0 of the forced left half has length at most
+$2P - 2$. (For $P = 1$ the same proof gives 1, which is attained by the stripes $0101\dots$ in space.)
+
+*Proof.* Every column of the left half is $P$-periodic (fact 1, with an unbounded window). Let row 0 be zero at
+depths $d$ to $d + R - 1$. A cell is white when the three cells above it are. So column $-k$ is white at times 0 to
+$\min(k - d,\ d + R - 1 - k)$, which is a triangle of zeros under the run. If $R \ge 2P - 1$, the column at
+$k = d + P - 1$ is white for $P$ steps in a row, and so for ever. With column $-k$ zero, the rule for the column to
+its right reads $x_{t+1}(-k+1) = x_t(-k+1) \vee x_t(-k+2)$. That column never turns from black to white. It is
+periodic, so it is constant. Its depth $d + P - 2$ lies in the run because $P \ge 2$, so it is white at time 0, and
+zero for ever. Two adjacent zero columns force zeros to
+the right, as in §8.13, as far as column 0, which is not zero. $\square$
+
+For column 0 = 0101… and a column 1 whose visible bits have least period $q$, $P = 2q$, and the bound is $4q - 2$.
+
+**Measured** (predictions JC0 to JC4 and a counterfactual):
+
+| Visible period $q$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Longest zero run, over every word and every depth | 1 | **6** | 5 | 6 | 9 | 10 | 10 | 17 | 14 | 17 |
+| Theorem B's bound $4q - 2$ | 2 | **6** | 10 | 14 | 18 | 22 | 26 | 30 | 34 | 38 |
+
+- **Theorem B holds, and is sharp at $q = 2$** (JC1). Every word was followed in depth over its whole tail and
+  twice round its cycle, so each entry is that word's longest run at any depth. The control, two zero columns,
+  reports an infinite run (JC0).
+- **Above $q = 2$ the longest runs are about $1.7\,q$**, well inside the bound (JC2 held: between $q$ and
+  $2.5\,q + 4$).
+- **Theorem A holds on every window tested** (JC3): 5,254,135 complete windows, over every seed up to 10 cells, every
+  column pair from the seed's left end to 12 cells past its right end, every $P$ up to 8, and 400 steps. The
+  counterfactual, the same bound without its $2P$ term, is violated 17,500 times.
+- **Theorem A is sharp only at the start** (JC4 refuted as I worded it). The slack is 0 for the seed 101 with
+  $P = 1$. But windows within 2 of the bound occur out to $L = 12$, not only next to the left edge as I had
+  predicted. Every one of them starts at $a \le 3$, and most are a run of zeros waiting for an edge to arrive. Later
+  windows in a chaotic interior are a few steps long, far below a bound that grows with time.
+
+**What it gives.**
+- **A weaker theorem about every single seed** (PERIOD-TWO.md §7, question 5), by an extremal argument on the edge.
+- **Part of question 7, the regime between.** Suppose column 1 runs as some $P$-periodic word between kicks, at
+  times $\tau_1 < \tau_2 < \dots$, and the left half is finite with its edge $L$ cells out. Then Theorem A, on the
+  window between two kicks, gives $\tau_{n+1} \le 2\,\tau_n + L + 2P + 2$. **Kicks cannot thin out faster than
+  geometrically.** A column 1 whose kicks come at times $3^n$, or at any rate that more than doubles, cannot go with
+  a finite left half. That is a theorem, not a coin model. It leaves open the kicks that thin out more slowly, and
+  the real case, where they come at a steady rate.
+- **The wheel's own runs are capped.** The pure wheel $U$ has period 56 in time (§8.5), so by Theorem B with
+  $P = 56$ its forced left half has no zero run longer than 110 cells at any depth. §8.5 saw the wheel's runs grow like $\log_2$ of the depth to 23 at
+  depth 200,000 (W2). The growth must stop below 110, and the cycle of length $1.5 \times 10^{10}$ (Proposition 6)
+  suggests about 34.
+- **It does not reach the doubling conjecture.** A zero run of length $R$ from depth $d$ depends on column 1 up to
+  time $d + R$. Theorem B forbids only that this stretch of column 1 has a period below about $R/2$. A proof of
+  $R(d) \le d + 4$ would need the bound $2P - 2$ to fall below $P$, and it cannot: at $q = 2$ it is attained.
+
+**Why the method stops here.** The proof transports a property of the column pair to the left and tests it
+against the edge. The only property the edge refutes is periodicity: a column that begins with a long run of
+zeros and then a one is compatible with any complexity above Morse and Hedlund's bound. The transport also costs one
+step of window for each column, while the edge retreats one column a step. So a window must be as long as the time
+elapsed before it says anything. That factor of 2 is the same geometry as the doubling law.
+
+**The Collatz twin has the same theorem** (PRIZE-PROBLEMS.md §7). If the parity sequence of $n$ is $P$-periodic on a
+window, the window pins $n$ 2-adically to a rational cycle point, by Terras's bijection. So unless $n$ lies on a
+cycle, a window can last about as many steps as the current iterate has bits, plus a term in $P$. The number of bits there plays the part of the
+distance $L$ to the left edge here.
+
+### 8.55 Question 4, closed: what Kari and Kopra's argument gives for Rule 30 (2026-10-05)
+
+PERIOD-TWO.md §7, question 4, asked for a Rule 30 analogue of Kari and Kopra's partial result on Mahler's problem
+(arXiv:1710.05737, Theorem 4.9), and §8.47 recorded that its hypotheses hold. Their Section 4 was read in full
+today. The adaptation is immediate, and it does not touch the prize.
+
+**Their argument.** It is their Lemma 4.4, and it uses only ergodicity and compactness. Take a small cylinder $C$.
+The set of configurations whose orbit never enters $C$ is closed and has measure zero. So finitely many cylinders
+of small total measure cover it. Every configuration therefore enters $C$ or starts in one of those cylinders.
+
+**For Rule 30.** Rule 30 is mixing for the uniform measure (Shereshevsky, §8.47), so the lemma applies as it stands:
+
+> For every $\varepsilon > 0$ there are a width $k$ and a set $K$ of more than $(1 - \varepsilon)\,2^k$ words of
+> length $k$ such that no configuration keeps cells 1 to $k$ of its row inside $K$ at every time.
+
+**Why it says nothing about a column.** The words here are windows of a *row*. In Mahler's problem that is the right
+object: the fractional part of $\xi (p/q)^n$ is the right half of the row at time $n$. The prize is about a *column*.
+Applying the same lemma to the system of centre columns gives a statement that is true and empty. Every binary
+sequence is some configuration's centre column (left-permutivity), so the centre columns are the full shift, and
+the lemma becomes: every sequence contains a given word or begins with a word avoiding it. The statement also
+covers the zero configuration and every infinite one, so it cannot separate finite seeds from the rest.
+
+**So question 4 is closed as a route.** The compactness argument proves that a *measure-zero closed set* of
+configurations can be covered cheaply. The set of configurations with a period-2 centre column is such a set: it is
+the graph of the forced left half over the right halves. The prize asks whether that set contains a finite
+configuration, which is a question about single points, as §8.47 found for every other soft method.
