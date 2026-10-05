@@ -3,7 +3,7 @@
 8.52; the cost side of PERIOD-TWO.md section 7, question 1).
 
 RUN-ON:     cpu (Python 3 and a C compiler; count_j.c counts; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows]
+COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep]
 COST:       under a minute on one core.
 
 Background (section 8.51). N_{w,j}(T) counts the configurations of exact hull width w whose column 0, at distance j
@@ -47,6 +47,13 @@ OUTCOME of windows, 2026-10-05 (2 seconds):
   CW2 HELD: log2 of the worst k-step ratio, k = 1 .. 10: 0, 0, 0, -1.30, -2.35, -2.85, -3.79, -8.35, -9.00, -inf.
      Any 4 consecutive right-paid conditions cost at least 1.3 bits, and any 8 at least 8.3, at every position
      and width measured (counts of 256 or more). The debt is bounded, as far as it can be counted.
+
+MODE deep. The same at widths 16 .. 26, and the constant of the bounded-debt form: for alpha = 0.5,
+c(w) = max over right-paid windows (T >= j, every count N_{w,j}(T) >= 1, k >= 1) of log2(N(T+k) / N(T)) + 0.5 k,
+where windows that reach a zero count are left out (they satisfy any bound).
+PREDICTIONS for deep, written 2026-10-05 after the windows outcome and before deep's first run:
+  CD1 (blind): the longest run of free steps (counts >= 256) stays at most 3 at every w from 23 to 26.
+  CD2 (blind; the constant): c(w) is at most 6 at every w from 16 to 26, and c(26) - c(16) is at most 1.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -113,9 +120,36 @@ def windows(exe):
                       if worst[k] > 0 and math.log2(worst[k]) > 3 - 0.5 * k) or "all within")
 
 
+def deep(exe):
+    J, _ = run(exe, 16, 26, "01" * 200, 2)
+    longest, cw = {}, {}
+    for (w, j, T), n in J.items():
+        if T < max(j, 1):
+            continue
+        if n >= 256:
+            k = 0
+            while J.get((w, j, T + k), 0) >= 256 and J.get((w, j, T + k + 1), 0) / J[(w, j, T + k)] >= 0.95:
+                k += 1
+            longest[w] = max(longest.get(w, 0), k)
+        k = 1
+        while J.get((w, j, T + k), 0) >= 1:
+            cw[w] = max(cw.get(w, -99.0), math.log2(J[(w, j, T + k)] / n) + 0.5 * k)
+            k += 1
+    print("   longest run of free steps by w: " + ", ".join(f"{w}: {k}" for w, k in sorted(longest.items())))
+    print("   c(w) for alpha = 0.5: " + ", ".join(f"{w}: {c:.2f}" for w, c in sorted(cw.items())))
+    verdict("CD1 at most 3 free steps in a row at w = 23 .. 26", all(longest.get(w, 0) <= 3 for w in range(23, 27)),
+            ", ".join(f"{w}: {longest.get(w, 0)}" for w in range(23, 27)))
+    verdict("CD2 c(w) <= 6 at every w, and c(26) - c(16) <= 1",
+            all(c <= 6 for c in cw.values()) and cw[26] - cw[16] <= 1, f"c(16) {cw[16]:.2f}, c(26) {cw[26]:.2f}, "
+            f"largest {max(cw.values()):.2f}")
+
+
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_cost_c"
     subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "count_j.c")], check=True)
+    if len(sys.argv) > 2 and sys.argv[2] == "deep":
+        deep(exe)
+        return
     if len(sys.argv) > 2 and sys.argv[2] == "windows":
         windows(exe)
         return
