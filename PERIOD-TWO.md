@@ -140,7 +140,9 @@ prize needs a statement about every single finite configuration. The questions a
    none, so this exact count over a finite family would close period 2. Counting crosses the gap here because the
    seeds are finite. The measured horizon, about $w$ plus a logarithm (§8.24, §8.42), is what $\alpha = 1$
    predicts. Measured (§8.51, `rule30_count.py`): to $w = 24$ the count falls by about $2^{1.05}$ per step, so
-   $\alpha$ is near 1 and the bound looks true. The bound cannot hold for every centre word: a word
+   $\alpha$ is near 1 and the bound looks true. Proved there: the conditions paid by the seed's left part halve
+   the count exactly; only those paid by the right part, after the left part runs out, are open. The bound
+   cannot hold for every centre word: a word
    that is some configuration's own centre column has $N_w(T) \ge 1$ for every $T$. So a proof must use the
    periodicity of 0101, as §5 says.
 2. **Flatto, Lagarias and Pollington's move** (§8.45, §8.47). Their partial result on Mahler's problem never beats

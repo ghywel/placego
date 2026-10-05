@@ -3014,3 +3014,19 @@ by the words that have a theorem, and it would close period 2 if proved, because
 measurement also rules out a cheap route: the tetralemma's ratio shows no obstruction between black and white
 conditions. A proof must explain why each step halves the count, exactly. That is the cost side, now in the form
 of a number that can be watched as $w$ grows.
+
+**A lemma behind the slope** (proved, 2026-10-05). Split the count by the position $j$ of column 0 inside the hull,
+counted from the hull's left end (the left end cell is black). Then for $1 \le T \le j$ the count for position $j$
+halves exactly at every step: $N_{w,j}(T) = N_{w,j}(1) / 2^{T-1}$.
+
+*Proof.* Rule 30 is permutive in its left input, so after $t$ steps $x_t(0) = x_0(-t) \oplus g_t$, where $g_t$
+depends only on the cells $-t+1$ to $t$ at time 0 (induction on $t$, from
+$x_t(0) = x_{t-1}(-1) \oplus (x_{t-1}(0) \lor x_{t-1}(1))$). For $1 \le t \le j - 1$, cell $-t$ is a free cell of the
+hull, and no earlier value of column 0 depends on it. So exactly half of the patterns that met the word up to time
+$t - 1$ meet it at time $t$, whatever the other cells are. $\square$
+
+So the first $j$ conditions are paid exactly, one bit each, by the left part of the seed. From time $j$ on, the
+cell entering on the left is the black end and then white cells, and every further condition must be paid by the
+right part's bits, through column 1. That is where the measured slope of about $-1.05$ has no proof. Question 1 of
+PERIOD-TWO.md §7 is therefore exactly the cost side: a bound of the form $2^{-\alpha}$ per condition paid by the
+right part, after the left part's bits run out.
