@@ -3107,3 +3107,40 @@ predicted the white conditions, through column 1, would carry most of the cost (
 about a bit. The black conditions involve the left half alone and pay through collapses of whole positions. So
 half the cost side is a statement about the forced left half by itself, the side where Condrey's and Jen's methods
 work, and the other half goes through column 1's narrow channel.
+
+### 8.53 The debt, at total widths beyond 100: flat, and paid at the wheel's formation (2026-10-05)
+
+`rule30_debt.py` (with `forced.c`; predictions written before each run) carries §8.52's count past the hull widths
+that exact enumeration reaches.
+
+**The count past the left part is a count of right parts** (proved by §8.51's argument, and checked exactly: DB0).
+For $T \ge j + 1$, a configuration with column 0 at distance $j$ from its left end survives exactly when the forced
+left half $F$ of its right part (width $b = w - j - 1$) has $F_{-j} = 1$ and a zero run of length at least
+$T - 1 - j$ after it. This is §8.42's instrument, counted instead of maximised. It needs only $2^{b-1}$ right
+parts, so depths to 100, total widths beyond 100, are in reach.
+
+| Measured, $b$ up to 24, depths to 100 | Result |
+|---|---|
+| Pooled cost per condition, $b$ = 11 to 24 | **1.001 to 1.004 bits** (DB3 held) |
+| The same, depths 50 and beyond against shallower | 1.003 against 1.001 bits (DB4 held) |
+| Longest run of free steps | 5, at every $b$ from 15 to 24 (DB1 refuted: I said 3) |
+| $c_b$ at $\alpha$ = 0.5, 0.8, 0.9, 1.0 ($b \ge 12$) | 4.2, 7.8, 9.0, 10.2: **flat in $b$** (DB2 held; DA1, DA2 refuted) |
+| The same at $\alpha = 1.0$, depths 40 to 80 only, $b = 24$ | **4.45** (post hoc) |
+| A random word, $c_{20}$ at $\alpha = 0.9$ | 8.52, against 8.96 (DA3 held) |
+
+- **One bit per condition, almost exactly.** Pooled over every depth, the right part pays 1.002 bits per
+  condition at every width from 11 to 24.
+- **The debt does not grow with width,** even at the full rate $\alpha = 1$, where I predicted luck would accumulate
+  (DA2 refuted).
+- **The debt sits in one place** (post hoc). At $b = 24$ the largest constant, 10.16, comes from a crowded window,
+  not a lucky survivor. At depth 19, twelve conditions cost only 1.84 bits for over 100,000 right parts. Below
+  depth 40 the constant is 4.45. §8.6 found the left half's order in the same place: where the wheel forms.
+
+**What it means.** The bounded-debt statement of §8.52 holds in its strongest form across the whole measured range:
+$N_{b,j}(\tau + k) \le 2^{c - k} N_{b,j}(\tau)$, at the true rate, with $c \approx 10$ flat in $b$. And it splits in
+two:
+- a **one-time debt at the wheel's formation**, shallow and structured, a finite object one could hope to compute
+  exactly, as Proposition 6 computed the pure wheel;
+- after it, **payment at the full rate** with a constant near 4.5.
+A proof could treat the formation as a finite computation and the rest as the steady state. The steady state is
+still the coin, and still the open part, but it is now a statement about one regime with a small constant.

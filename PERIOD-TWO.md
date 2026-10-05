@@ -144,7 +144,10 @@ prize needs a statement about every single finite configuration. The questions a
    the count exactly; only those paid by the right part, after the left part runs out, are open. The right part
    pays in lumps, with at most 3 free steps in a row and any 8 steps costing 8.3 bits or more (§8.52), so the
    form to prove is a bounded debt: $N_{w,j}(T+k) \le 2^{c(w) - \alpha k} N_{w,j}(T)$, with $c(w)$ allowed to grow
-   like $\log w$ (measured to $w = 26$: at most 5 for $\alpha = 0.5$). The bound
+   like $\log w$ (measured to $w = 26$: at most 5 for $\alpha = 0.5$). Past the hull widths that enumeration
+   reaches, §8.53 counts right parts instead (an exact identity) to total widths beyond 100. There the constant
+   is flat in width even at $\alpha = 1$ (about 10), and it comes from one shallow, structured window where the
+   wheel forms; deeper it is about 4.5. The bound
    cannot hold for every centre word: a word
    that is some configuration's own centre column has $N_w(T) \ge 1$ for every $T$. So a proof must use the
    periodicity of 0101, as §5 says.

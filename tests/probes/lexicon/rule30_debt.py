@@ -42,6 +42,19 @@ PREDICTIONS for alpha, written 2026-10-05 after the outcome above and before alp
   DA1 (blind): for alpha = 0.9, c_b <= 10 for every b up to BMAX, and c_BMAX - c_12 <= 2.
   DA2 (blind): for alpha = 1.0, c_BMAX - c_12 >= 2 (at the true rate, luck accumulates).
   DA3 (random-chaos): a random word (seed 1940) has c_20 for alpha = 0.9 within 2 of 0101's.
+
+OUTCOME of alpha, 2026-10-05 (33 seconds). c_b for b = 8 .. 24 at each alpha:
+  0.5: 4.7, then 4.1 to 4.2 throughout;  0.8: 8.3, then 7.0 to 7.8;  0.9: 9.5, then 8.2 to 9.0;
+  1.0: 10.7, then 9.4 to 10.2. Flat in b at every rate, from b = 12 on.
+  DA1 REFUTED, narrowly: the largest c_b at alpha 0.9 is 10.04 (a small b); its second clause held (c_24 - c_12 =
+     -0.02).
+  DA2 REFUTED: even at alpha 1.0 the constant does not grow with b (c_24 - c_12 = -0.02).
+  DA3 HELD: the random word's c_20 at alpha 0.9 is 8.52, against 8.96 for 0101.
+  Post hoc (no prediction): at b = 24 the alpha 1.0 maximum, 10.16, is a shallow, crowded window: depth j = 19,
+  tau = 4, k = 12, counts 365,424 to 102,090 (12 conditions for 1.84 bits). Over depths 40 to 80 alone the maximum
+  is 4.45. The debt is a structure near the wall at shallow depth, not luck; deeper down the conditions are paid at
+  the full rate with a small constant. Section 8.6 found the left half's order in the same place: the wheel's
+  formation.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -109,6 +122,27 @@ def alpha_mode():
     c = cvals(H, (0.5, 0.8, 0.9, 1.0), BMAX)
     for a in (0.5, 0.8, 0.9, 1.0):
         print(f"   alpha {a}: c_b for b = 8 .. {BMAX}: " + " ".join(f"{c[a][b]:.1f}" for b in range(8, BMAX + 1)))
+    # Post hoc (added after alpha's first outcome, no prediction): where the alpha = 1 maximum sits at b = BMAX.
+    best = None
+    for (b, j), hist in H.items():
+        if b != BMAX or j > D - 20:
+            continue
+        N = tail(hist, D - j)
+        for tau in range(len(N)):
+            if N[tau] < 1:
+                break
+            for k in range(1, len(N) - tau):
+                if N[tau + k] < 1:
+                    break
+                v = math.log2(N[tau + k] / N[tau]) + k
+                if best is None or v > best[0]:
+                    best = (v, j, tau, k, N[tau], N[tau + k])
+    print(f"   post hoc: the alpha 1.0 maximum at b = {BMAX} is {best[0]:.2f}, at depth j = {best[1]}, tau = {best[2]},"
+          f" k = {best[3]} (counts {best[4]} to {best[5]})")
+    deep_c = max((math.log2(Nk / N0) + k for (b, j), hist in H.items() if b == BMAX and 40 <= j <= D - 20
+                  for N in [tail(hist, D - j)] for tau, N0 in enumerate(N) if N0 >= 1
+                  for k, Nk in enumerate(N[tau + 1:], 1) if Nk >= 1), default=float("nan"))
+    print(f"   post hoc: the alpha 1.0 maximum over depths j = 40 .. {D - 20} alone is {deep_c:.2f}")
     verdict("DA1 alpha 0.9: c_b <= 10 for every b, and c_BMAX - c_12 <= 2",
             all(v <= 10 for v in c[0.9].values()) and c[0.9][BMAX] - c[0.9][12] <= 2,
             f"largest {max(c[0.9].values()):.2f}; c_BMAX - c_12 = {c[0.9][BMAX] - c[0.9][12]:.2f}")
