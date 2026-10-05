@@ -1660,8 +1660,9 @@ equation of the forced left half (§5), read in time instead of space. `rule30_m
 - **No finite parent.** A finite nonzero row's image is two cells wider, so a single 1 has no finite past (and none
   of the $2^{14} - 1$ rows of at most 14 cells maps to it).
 - **Exactly two parents, both infinite to the left:** …1111│0000… and …1111 0 1111….
-- **The past piles up on the left.** Two and three generations up the left tails have period 3, four up period 6,
-  while the right ends stay all 0, all 1 or period 3.
+- **The past piles up on the left.** Two generations up, every left tail has period 3 (checked, M1). An exploratory
+  look further up, with right tails of period at most 6 and the branching capped, found period 3 again three
+  generations up and period 6 four up, while the right ends stayed all 0, all 1 or period 3.
 
 So the "sign flip" matters only in the reversible XOR part; the OR makes the upward pyramid infinite and one-sided.
 
