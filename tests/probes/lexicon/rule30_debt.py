@@ -2,7 +2,7 @@
 """rule30_debt.py: the bounded-debt statement at total widths beyond 100 (RULE30-PRIZE.md section 8.53).
 
 RUN-ON:     cpu (Python 3 and a C compiler; forced.c and count_j.c; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_debt.py [BMAX=24] [D=100] [alpha | depth]
+COMMAND:    python3 tests/probes/lexicon/rule30_debt.py [BMAX=24] [D=100] [alpha | depth | depthalpha]
 COST:       a few minutes on one core.
 
 Background (sections 8.51, 8.52). N_{w,j}(T) counts configurations of hull width w whose column 0, at distance j
@@ -63,6 +63,20 @@ PREDICTIONS for depth, written 2026-10-05 before depth's first run:
   DD1 (blind): at b = 20 the alpha 1.0 constant over windows starting at depths 40 .. 99, 100 .. 159 and 160 .. 229
       is at most 7 in each band, and the last band's minus the first's is at most 1.5.
   DD2 (blind): the pooled cost per condition in each band is within 0.02 of 1 bit.
+
+OUTCOME of depth, 2026-10-05 (19 seconds):
+  DD0 PASSED: forced_deep.c equals forced.c.
+  DD1 REFUTED: at the full rate alpha = 1 the constant grows with depth: 5.32 (depths 40 .. 99), 7.94 (100 .. 159),
+     8.12 (160 .. 229).
+  DD2 HELD: the pooled cost is 1.0000, 0.9966 and 1.0002 bits per condition in the three bands. One bit, at every
+     depth to 230.
+  At the critical rate the coin's luck accumulates, as a random walk's maximum does. Mode depthalpha asks about rates
+  below it, which are all a proof needs.
+
+MODE depthalpha. The same bands at alpha = 0.5 and 0.8 (b = 20, D = 250).
+PREDICTIONS for depthalpha, written 2026-10-05 after depth's outcome and before depthalpha's first run:
+  DE1 (blind): at alpha = 0.8, the last band's constant minus the first's is at most 1.
+  DE2 (blind): at alpha = 0.5, every band's constant is at most 5.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -169,6 +183,40 @@ def alpha_mode():
             f"{cr[0.9][20]:.2f} against {c[0.9][20]:.2f}")
 
 
+def depthalpha_mode():
+    dexe = build("rule30_debt_deep", "forced_deep.c")
+    out = subprocess.run([str(dexe), "20", "20", "250", "01" * 300, "2"], check=True, capture_output=True,
+                         text=True).stdout
+    H = {}
+    for line in out.split("\n"):
+        f = line.split()
+        if f and f[0] == "H":
+            H.setdefault(int(f[2]), {})[int(f[3])] = int(f[4])
+    bands = ((40, 100), (100, 160), (160, 230))
+    cb = {a: {} for a in (0.5, 0.8)}
+    for lo, hi in bands:
+        best = {a: -99.0 for a in cb}
+        for j in range(lo, hi):
+            N = tail(H.get(j, {}), 250 - j)
+            for tau in range(len(N)):
+                if N[tau] < 1:
+                    break
+                for k in range(1, len(N) - tau):
+                    if N[tau + k] < 1:
+                        break
+                    r = math.log2(N[tau + k] / N[tau])
+                    for a in cb:
+                        best[a] = max(best[a], r + a * k)
+        for a in cb:
+            cb[a][(lo, hi)] = best[a]
+    for a in cb:
+        print(f"   b = 20, alpha {a} constant by band: " + ", ".join(f"{lo}-{hi - 1}: {c:.2f}"
+                                                                    for (lo, hi), c in cb[a].items()))
+    v8, v5 = list(cb[0.8].values()), list(cb[0.5].values())
+    verdict("DE1 alpha 0.8: last band minus first <= 1", v8[-1] - v8[0] <= 1, f"{v8[-1] - v8[0]:.2f}")
+    verdict("DE2 alpha 0.5: every band <= 5", all(x <= 5 for x in v5), ", ".join(f"{x:.2f}" for x in v5))
+
+
 def depth_mode():
     fexe, dexe = build("rule30_debt_forced", "forced.c"), build("rule30_debt_deep", "forced_deep.c")
     w = "01" * 300
@@ -208,6 +256,9 @@ def depth_mode():
 
 
 def main():
+    if len(sys.argv) > 3 and sys.argv[3] == "depthalpha":
+        depthalpha_mode()
+        return
     if len(sys.argv) > 3 and sys.argv[3] == "depth":
         depth_mode()
         return
