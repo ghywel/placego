@@ -22,7 +22,11 @@ PREDICTIONS, written 2026-10-05 before this script's first run.
       for most r.
 REFUTED-BY: CR0, CR1 or CF failing (the proof or the instrument); CR2 the other way.
 
-OUTCOME: (written after the first run, below)
+OUTCOME of the first run, 2026-10-05 (KMAX 18, 4 seconds): CR0, CR1 and CF PASSED (modulo 3^(a+1) the statement
+is true for 87,381 of 262,143 numbers, one third, as it must be). CR2 HELD, and the truth is stronger than the guess:
+the share with y = rho + 3^a is exactly 0 at every k. The reason, found after the run: r - 2^k is negative and has
+the same first k parities, T keeps negative integers negative, and T^k(r - 2^k) = T^k(r) - 3^a. So T^k(r) < 3^a
+always, and y is exactly the least residue. Section 7.4 states it that way.
 """
 import sys
 

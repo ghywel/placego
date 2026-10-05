@@ -203,6 +203,9 @@ prize needs a statement about every single finite configuration. The questions a
    question becomes bounding exponential sums $\sum_v e(h\,y_v / 2^j)$ over the parity vectors that stay up (the
    2-adic counterpart of Tao's 2019 estimate). The measured Fourier structure fades with width. A proof there would
    show what a Rule 30 proof must replace.
+   **Sharpened (PRIZE-PROBLEMS.md §7.4).** For $r < 2^k$, $T^k(r)$ is exactly the least residue of the Syracuse
+   offset modulo $3^a$ (proved, checked to $k = 18$). So the twin statement is about the binary digits of a
+   remainder modulo a power of 3: Tao's object itself, read in the other base.
 
 ## 8. Reading order
 
