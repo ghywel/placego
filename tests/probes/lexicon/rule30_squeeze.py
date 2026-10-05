@@ -2,7 +2,7 @@
 """rule30_squeeze.py: the entropy squeeze. Next to a period-2 column, every column to its left is almost frozen.
 
 RUN-ON:     cpu (C99 via cc for the automata, Python 3 standard library for the exact checks)
-COMMAND:    python3 tests/probes/lexicon/rule30_squeeze.py [M list, default 8,12,16,20,24,26]
+COMMAND:    python3 tests/probes/lexicon/rule30_squeeze.py [M list, default 8,12,16,20,24,26] | ... seen
 COST:       about ten minutes on one core, most of it building the m = 26 automaton (several GB of memory).
 
 THE LEMMA (PRIZE-PROBLEMS.md section 8.33). For a sequence s, p_s(n) counts its distinct factors of length n and
@@ -54,12 +54,25 @@ states and the constant w_start / min w: m = 8 0.3577 (0.3562), 56, 18; m = 12 0
 0.0646 bits per step, now proved (the computation exact, the reasoning in the header). SQ2 HELD (every 64-bit visible
 factor of 100 real right halves, from every even start, accepted at m = 8, 12, 16 and 20). SQ3 HELD (0 of 10,000
 random words accepted at m = 12).
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_squeeze.py seen): the lemma
+seen.
+It holds for ANY configuration with column 0 = 0101..., including the forced left halves of section 5, built backwards
+from column 0 and a real column 1 (they are infinite, never finite in any case found). So their columns must be nearly
+frozen, while the left side of a finite seed runs at about 0.99 bits per step (rule30_core.py, CR3). A counterexample
+would have to be both.
+  SQ4 (blind): for the forced left halves of 30 real right halves (1 to 40 cells, 2^16 steps), every one of columns
+      -1, -2, -4, -8, -16 and -32 has its number of distinct factors growing, between lengths 32 and 64, at no more
+      than 0.0646 bits per step, and far from saturation (at most a quarter of the positions at length 64).
+  SQ5 (the contrast, blind): the same columns of the left half-line driven by 0101... from 30 random finite seeds grow
+      at 0.9 bits per step or more between lengths 8 and 13.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction
 
 HERE = pathlib.Path(__file__).resolve().parent
-MS = [int(a) for a in sys.argv[1].split(",")] if len(sys.argv) > 1 else [8, 12, 16, 20, 24, 26]
+_nums = [a for a in sys.argv[1:] if a != "seen"]
+MS = [int(a) for a in _nums[0].split(",")] if _nums else [8, 12, 16, 20, 24, 26]
 RECORDED = {8: 0.356, 12: 0.258, 16: 0.212, 20: 0.1519, 24: 0.1327, 26: 0.1277}
 FAILS = 0
 
@@ -197,5 +210,56 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def factors(col, n, start):
+    """Distinct factors of length n of the sequence held in int col (bit t = time t), over positions >= start."""
+    m = (1 << n) - 1
+    L = col.bit_length()
+    return len({(col >> i) & m for i in range(start, max(start, L - n))})
+
+
+def seen():
+    rng = random.Random(1987)
+    T = 1 << 16
+    COLS = (1, 2, 4, 8, 16, 32)
+    worst, sat = 0.0, 0.0
+    for _ in range(30):
+        R = rng.getrandbits(rng.randrange(1, 41)) | 1
+        c1 = right_column1(R, T)
+        b = sum(v << t for t, v in enumerate(c1)) | (1 << T)      # a top marker bit keeps bit_length fixed
+        a = sum((t % 2) << t for t in range(T)) | (1 << T)
+        cols, j = {}, 1
+        while 2 - j <= max(COLS):                       # col j-2 from col j-1 (a) and col j (b)
+            n = a.bit_length() - 1
+            c = (((a >> 1) ^ (a | b)) & ((1 << (n - 1)) - 1)) | (1 << (n - 1))
+            b, a = a, c
+            j -= 1
+            cols[1 - j] = c                             # keyed by depth k: column -k
+        for k in COLS:
+            col = cols[k]
+            f32, f64 = factors(col, 32, T // 4), factors(col, 64, T // 4)
+            worst = max(worst, (math.log2(f64) - math.log2(f32)) / 32)
+            sat = max(sat, f64 / (col.bit_length() - T // 4))
+    verdict("SQ4 forced left halves of real right halves: every column's factors grow at <= 0.0646 bits per step, "
+            "unsaturated", worst <= 0.0646 and sat <= 0.25, f"fastest growth {worst:.4f} bits per step; most "
+            f"saturated {sat:.4f} of positions")
+    low = 9.0
+    for _ in range(30):
+        w = rng.randrange(1, 65)
+        N = T + w + 4
+        row = (rng.getrandbits(w) << (N - w)) & ((1 << N) - 1)
+        maskN = (1 << (N + 1)) - 1
+        seqs = {k: [] for k in COLS}
+        for t in range(T):
+            for k in COLS:
+                seqs[k].append("1" if (row >> (N - k)) & 1 else "0")
+            row = ((row << 1) ^ (row | (row >> 1))) & maskN
+            row = (row & ~(1 << N)) | (((t + 1) % 2) << N)
+        for k in COLS:
+            col = int("1" + "".join(reversed(seqs[k])), 2)    # bit t = time t, with the marker bit at T
+            low = min(low, (math.log2(factors(col, 13, T // 4)) - math.log2(factors(col, 8, T // 4))) / 5)
+    verdict("SQ5 the driven left half-line from finite seeds grows at >= 0.9 bits per step", low >= 0.9,
+            f"slowest {low:.4f} bits per step")
+
+
 if __name__ == "__main__":
-    main()
+    seen() if "seen" in sys.argv[1:] else main()
