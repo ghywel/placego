@@ -30,6 +30,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
   TI2 (blind; no tilt beyond chance): at N = 2^LOGN the single seed's excess, in units of the controls' standard
       deviation of the excess at N, lies within +-2.5.
 REFUTED-BY: TI0 failing (the instrument); TI1 or TI2 failing.
+
+OUTCOME of the first run, 2026-10-05 (LOGN = 21, 8 controls, 4 minutes 47 seconds): TI0 PASSED (7, 52, 481, 5,032,
+50,098, 500,768, exactly Wolfram's). The single seed's excess of black over white at 2^10, 2^11, .., 2^21: -44, -44,
+-40, +16, +170, +282, +218, -138, +634, +738, +1,376, +1,224. TI1 HELD: DFA exponent 0.5045 against the controls'
+0.4905 to 0.5092 (mean 0.4992). TI2 HELD: the excess at 2^21 is +1,224 (+0.85 coin standard deviations; +0.85 of the
+controls' RMS of 1,439, whose own excesses run from -2,224 to +1,558). The centre column's colour count is a fair
+random walk, crossing zero and with no long memory. Wolfram's positive checkpoints from 10^4 to 10^9 are what such a
+walk does when it happens to sit on one side. No tilt is seen, at the precision a walk of 2 million steps allows.
 """
 import math, pathlib, subprocess, sys, tempfile
 from concurrent.futures import ThreadPoolExecutor
