@@ -59,6 +59,13 @@ multiples of 56, so that consecutive exact windows are close and no single chang
       0.0001 of the spectral line 0.30365 (V0 holds once the alias is removed).
   U2 (blind): alias events exist: in at least one aligned gap in 200, the carried change over the same stretch differs
       from the aligned wrapped change by a whole turn (28 notches).
+OUTCOME of the addendum's first run, 2026-10-05 (W = 12, T = 4096, 16 seconds): U0 PASSED (aligned -0.0457 notches
+per window, as before; 0 odd shifts among the sliding windows). U1 REFUTED: with the carry the excess speed is -0.0407
+notches per window, still backward, and the rotation number 0.303545 (aligned 0.303542), 0.000105 from the spectral
+line. U2 REFUTED: 22 of 205,955 aligned gaps (0.011%) were aliased by a whole turn. So the owner's alias is real (the
+half-turn ambiguity does wrap some long gaps) but far too rare to matter: it moves the wheel's speed by 3 x 10^-6.
+V0's 10^-4 gap between the drift and the spectral line is not the alias. The other recorded candidate stands: a
+spectral peak need not sit at the mean rate when the kicks are asymmetric.
 """
 import math, sys, pathlib
 
