@@ -54,6 +54,12 @@ where windows that reach a zero count are left out (they satisfy any bound).
 PREDICTIONS for deep, written 2026-10-05 after the windows outcome and before deep's first run:
   CD1 (blind): the longest run of free steps (counts >= 256) stays at most 3 at every w from 23 to 26.
   CD2 (blind; the constant): c(w) is at most 6 at every w from 16 to 26, and c(26) - c(16) is at most 1.
+
+OUTCOME of deep, 2026-10-05 (15 seconds):
+  CD1 HELD: the longest run of free steps is 3 at every w from 16 to 26.
+  CD2 REFUTED: c(w) = 1.50 at most widths, but 3.00 at w = 17, 2.00 at 24 and 5.00 at 26 (c <= 6 held; the growth
+     limit did not). The jumps come from small counts: a few survivors passing many conditions intact, the luck the
+     coin model puts in a logarithm. At large counts the debt is bounded (CD1); at small counts it grows slowly with w.
 """
 import math, pathlib, subprocess, sys, tempfile
 

@@ -3060,3 +3060,10 @@ hold literally down to one, because a lone survivor passes every condition it me
 the bounded-debt form with a constant: $N_{w,j}(T + k) \le 2^{c - \alpha k} N_{w,j}(T)$ for all $T \ge j$. Its
 constant $c$ is the horizon's excess, measured at most +5 (§8.51). The amortised analysis of algorithms is the
 toolbox for statements of this shape: a potential that free steps raise and collapses spend.
+
+**To width 26** (mode `deep`, predictions written first). Free steps still never come more than 3 in a row, at
+every width from 16 to 26 (CD1 held). But the debt's constant is not fixed (CD2 refuted): with $\alpha = 0.5$, the
+least $c$ that bounds every window is 1.5 at most widths, and 3.0, 2.0 and 5.0 at widths 17, 24 and 26. The jumps
+come from small counts, where a few survivors pass many conditions intact. So the form to prove is
+$N_{w,j}(T+k) \le 2^{c(w) - \alpha k} N_{w,j}(T)$ with $c(w)$ growing at most like $\log w$, the coin's luck.
+That still suffices: the count falls below one once $T > (w + c(w)) / \alpha$, so every horizon is finite.

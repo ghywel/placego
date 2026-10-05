@@ -143,7 +143,8 @@ prize needs a statement about every single finite configuration. The questions a
    $\alpha$ is near 1 and the bound looks true. Proved there: the conditions paid by the seed's left part halve
    the count exactly; only those paid by the right part, after the left part runs out, are open. The right part
    pays in lumps, with at most 3 free steps in a row and any 8 steps costing 8.3 bits or more (§8.52), so the
-   form to prove is a bounded debt: $N_{w,j}(T+k) \le 2^{c - \alpha k} N_{w,j}(T)$. The bound
+   form to prove is a bounded debt: $N_{w,j}(T+k) \le 2^{c(w) - \alpha k} N_{w,j}(T)$, with $c(w)$ allowed to grow
+   like $\log w$ (measured to $w = 26$: at most 5 for $\alpha = 0.5$). The bound
    cannot hold for every centre word: a word
    that is some configuration's own centre column has $N_w(T) \ge 1$ for every $T$. So a proof must use the
    periodicity of 0101, as §5 says.
