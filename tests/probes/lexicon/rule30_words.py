@@ -45,6 +45,32 @@ random wall of 4096 bits as the chaos step; "two-colour words" are 01 .. 0111):
   WD6 (random-chaos: does periodicity matter?): the random wall obeys WD1 and WD2 like 01, whose black fraction it
       shares, so left rigidity would not need a periodic centre at all.
 REFUTED-BY: WD0 failing (the instruments); WD1 to WD6 failing.
+
+OUTCOME, 2026-10-05 (the first run, about 25 minutes; then the white0 addendum and one post-hoc check):
+  WD0 PASSED: (a) R(d) for 01 equals records.c's at 3 .. 33; (b) T_B(s) = s + R_w(s + 1) for every word and s, two
+     instruments; (c) both never outlasted either game alone; (d) R_1(d) = d mod 2 at every depth to 41.
+  A flaw in the instrument: for w = 0 the games admitted the all-white pair of seeds, which keeps every white
+     condition for ever, so w = 0 reached the time cap (T = 15 s + 31) in W and BW. Condrey's theorem concerns
+     nonzero configurations. The addendum (mode white0) leaves that one pair out; its WZ0 control passed (nothing
+     then reaches the cap). The predictions were not changed; w = 0's verdicts come from the addendum.
+  WD1 HELD: lambda per free bit = 1.771 (01), 1.734 (001), 1.797 (011), 1.716 (0001), 1.764 (0011), 1.785 (0111).
+  WD2 REFUTED by 001 alone (+4.45, from one long run ending at depth 88 that serves the depths from 25 to 36). The
+     other mean residuals: 01 -0.80, 011 +0.43, 0001 +2.12, 0011 -0.74, 0111 +1.37.
+  WD3 REFUTED (3 of 6). At the largest common s, (T_B, T_W, T_BW) = 01 (17, 40, 16) at 11; 001 (29, 24, 16) at 12;
+     011 (16, 45, 16) at 10; 0001 (47, 26, 19) at 13; 0011 (22, 29, 15) at 11; 0111 (11, 56, 11) at 9. Both binds
+     strictly where white alone is the tighter game or close to it (001, 0001, 0011). Where black alone is the
+     tighter (01, 011, 0111), both equals black alone at these small s, although for 01 the gap opens by s = 16
+     (T_B = 31, T_BW = 25).
+  WD4 REFUTED: white alone is not coin-like. Slopes (measured / coin): 01 4.26 / 3.46, 001 2.23 / 2.64, 011 1.93 /
+     5.10, 0001 1.78 / 2.37, 0011 1.90 / 3.46, 0111 6.86 / 6.74, and w = 0 (addendum) 1.00 / 1.82. For the all-white
+     wall the longest time is exactly s + (s mod 2): an excess of at most one step beyond the seed, Condrey's
+     structure, with no coin in it.
+  WD5 HELD with the addendum's w = 0 (the first run's 15.00 was the all-white pair). Both-game slopes: w = 0 1.00,
+     w = 1 1.00 (T = s + 1 - (s mod 2), the stripes), 01 1.34, 001 1.37, 011 1.27, 0001 1.07, 0011 1.09, 0111 1.27.
+  WD6 REFUTED: the random wall merges less. Lambda per free bit is 1.934 at depth 41, and 1.94 over depths 21 to 41
+     (post hoc, after the run: 13 free steps), against 1.72 to 1.80 for every periodic word. Its residual (+2.65)
+     is within WD2's window. Per step, the periodic words keep 0.89 (0001) to 0.97 (0111) of their walks and the
+     random wall 0.98.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
 
@@ -161,8 +187,9 @@ def first_failure(lrow, s, W, game, col1, tmax):
     return tmax + 1
 
 
-def game_value(W, s, game, tmax):
-    """max over seeds of the first failing time; left cells at depths 1 .. s are forced where a condition is kept."""
+def game_value(W, s, game, tmax, skip_zero=False):
+    """max over seeds of the first failing time; left cells at depths 1 .. s are forced where a condition is kept.
+    skip_zero leaves out the all-white pair of seeds (for w = 0 it keeps every condition for ever)."""
     p = len(W)
     best = -1
     rights = [0] if game == "B" else range(1 << s)
@@ -172,7 +199,8 @@ def game_value(W, s, game, tmax):
         while stack:
             t, lrow = stack.pop()
             if t == s:
-                best = max(best, first_failure(lrow, s, W, game, col1, tmax))
+                if not (skip_zero and rr == 0 and lrow == 0):
+                    best = max(best, first_failure(lrow, s, W, game, col1, tmax))
                 continue
             if kept(game, W[t % p]):
                 x = left_x1(lrow, t, W, t + 2)                 # depth t + 1 is 0 in lrow so far
@@ -283,5 +311,21 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def white0():
+    """The addendum: w = 0 without the all-white configuration (Condrey's period 1, white)."""
+    W = [0]
+    vals = {}
+    for s in range(2, 17):
+        vals[s] = game_value(W, s, "W", 15 * s + 30, skip_zero=True)
+        print(f"   0 W (nonzero): s {s}: {vals[s]}", flush=True)
+    capped = [s for s, v in vals.items() if v == 15 * s + 31]
+    ss = [s for s in vals if s >= 4]
+    sl = slope(ss, [vals[s] for s in ss])
+    report("WZ0 without the all-white pair no seed reaches the horizon (Condrey: no nonzero finite configuration keeps "
+           "column 0 white for ever)", not capped, f"capped at {capped}")
+    verdict("WD4 for w = 0: slope within 35% of 1.82", abs(sl / 1.82 - 1) <= 0.35, f"slope {sl:.2f}")
+    verdict("WD5 for w = 0: slope between 1.0 and 2.0", 1.0 <= sl <= 2.0, f"slope {sl:.2f}")
+
+
 if __name__ == "__main__":
-    main()
+    white0() if sys.argv[1:] == ["white0"] else main()

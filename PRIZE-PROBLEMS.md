@@ -2589,3 +2589,61 @@ This is a question about Rule 30 alone: a finite pattern growing beside a period
 analogue (arXiv:2609.09431): there the wall is constant, and the forced left half has an explicit structure. Here
 the left half is Rule 30's ordinary chaos, and the condition at the wall is one coin per two time steps.
 
+### 8.40 Black, white, both: the owner's three games, for every word up to period 4 (2026-10-05)
+
+The owner's lead: we learned from the left half alone, from the right half alone, and from both together. In the
+same way, white by itself matters as much as black. The wall form (§8.39) splits along exactly those lines. Let
+$w$ be any repeating centre word. At a time when the wall is black, the centre update gives a condition on the left
+half alone: $x_t(-1) = 1 - w_{t+1}$. At a time when the wall is white, it couples the two halves:
+$x_t(-1) \oplus x_t(1) = w_{t+1}$. A finite configuration whose centre column is $w$ must keep both kinds. So there are
+three games, each played from left and right seeds of width $s$ and scored by the longest time $T$ the conditions
+survive (`rule30_words.py`, predictions written first):
+- **Black alone** ($T_B$): left rigidity, Conjecture LR for $w$.
+- **White alone** ($T_W$): the coupling only.
+- **Both** ($T_{BW}$): the real problem.
+
+The words are the eight centre words of period up to 4, and the chaos step is a random wall.
+
+| Centre word | Black share | Walks per free bit | $s$ | $T_B$ | $T_W$ | $T_{BW}$ | Slope of $T_{BW}$ |
+|---|---|---|---|---|---|---|---|
+| 0 | 0 | none | 16 | never fails | 16 | 16 | 1.00 |
+| 1 | 1 | none | 16 | 17 | never fails | 17 | 1.00 |
+| 01 | 1/2 | 1.77 | 11 | 17 | 40 | 16 | 1.34 |
+| 001 | 1/3 | 1.73 | 12 | 29 | 24 | 16 | 1.37 |
+| 011 | 2/3 | 1.80 | 10 | 16 | 45 | 16 | 1.27 |
+| 0001 | 1/4 | 1.72 | 13 | 47 | 26 | 19 | 1.07 |
+| 0011 | 1/2 | 1.76 | 11 | 22 | 29 | 15 | 1.09 |
+| 0111 | 3/4 | 1.79 | 9 | 11 | 56 | 11 | 1.27 |
+
+**The controls held.** The census reproduces `records.c` for 01, and the wall's black game agrees with the census for
+every word, two instruments. Both never outlasts either game alone. For $w = 1$ the forced left half is vertical
+stripes, Condrey's known answer. One flaw was found and fixed in the open. For the all-white wall, the games first
+admitted the all-white configuration, which keeps every condition for ever. Condrey's theorem concerns nonzero
+configurations, so a corrected run leaves that one configuration out.
+
+What the three games show:
+- **One colour has a bounded law, two colours do not.** The two period-1 walls are the solved case, and both are
+  exact. The best configuration of width $s$ keeps the column constant for at most $s + 1$ steps, an excess of at
+  most one beyond its seed, with no coin anywhere. That is the structure Condrey's proof uses. Every two-colour word
+  instead has an excess that grows with $s$, as Condrey said no bounded law can exist at period 2.
+- **Both binds hardest, and slowly.** For every two-colour word $T_{BW}$ grows with slope 1.07 to 1.37 (WD5). The
+  right seed buys only 0.07 to 0.37 extra steps per cell. That fits the narrow channel of §8.17, through which its
+  bits must reach the wall (not tested here). Where the black game is long, both cuts it down: for 0001 at
+  $s = 13$, from 47 to 19.
+- **Black alone merges the same way for every word** (WD1). Each free bit multiplies the distinct walks by 1.72 to
+  1.80, and for five of the six words the records follow the coin's best over those walks to within 2.1 cells.
+  The sixth, 001, is off by 4.5 (WD2 refuted), because one long run ending at depth 88 serves twelve starting
+  depths.
+- **White alone is not a coin game** (WD4 refuted). Its growth is irregular from word to word. On the all-white wall
+  it is exact: $s + (s \bmod 2)$.
+- **The chaos step: periodicity helps** (WD6 refuted). A random wall merges less, 1.94 walks per free bit against
+  1.72 to 1.80 for every periodic word. A repeating centre makes more walks coincide, and so leaves fewer to search.
+
+**What it means for the proof.** The owner's split puts the solved case and the open one side by side. With one
+colour, the wall's conditions are exact and leave no slack, which gives a bounded law, proved. With two colours, a
+coin enters at every time. The left half alone (black) is then a coin game over merged walks. The combined game
+(both) stays near $T \approx s$, which fits the narrow channel. Turning that into a proof brings back lead 2's
+squeeze (§8.33). The channel bound is a theorem (§8.20: at most 0.064 bits per step next to 0101). The other half,
+that keeping the wall's conditions costs more information than the channel delivers, is the lower bound nobody
+has. That is the ouroboros the owner named. Every form of the problem leads back to one statement: the conditions
+at the wall cost real information.
