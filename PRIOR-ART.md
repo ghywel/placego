@@ -1687,3 +1687,18 @@ Sources opened for the Rule 30 statements: Kopra (two papers), the Kari-Kopra ab
 post and bibliography, the NKS Rule 30 note, Jen's OSTI abstract. Queries: Rule 30 with adjacent columns, window,
 quantitative, Jen; left-permutive trace complexity from a finite configuration; Rule 30 Sturmian; Brunnbauer 2019
 (diagonals only).
+
+
+### GPT proof-audit reading (2026-10-06)
+
+Read Rowland, [Local nested structure in rule 30, §5](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf),
+pages 15–17, including the reset lemma and period-doubling proof. It discusses loss of seed information and the
+first possible split at column 53209 (our zero-based diagonal 53208). The all-seed finite certificate in
+RULE30-GPT.md G2 applies that mechanism; the branch construction was already in RULE30-PRIZE.md §8.31.
+Unboundedness of diagonal periods was not found in this section; this is not a claim it is absent elsewhere.
+Jen 1986 remains owed a full reading.
+
+Checked the continued-fraction best-approximation input against Theorem 27 of the
+[UNCG ergodic-theory lecture notes](https://uncg.edu/~cdsmyth/UNCG_Ergodic_Theory_Summer_School_2020_Final_Lecture_Notes.pdf).
+G2 supplies a finite-offset argument for E Step 4. This standard input establishes no priority for the Rule 30
+application, and no further literature search was made in this work block.
