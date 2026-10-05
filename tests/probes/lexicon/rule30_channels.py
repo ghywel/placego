@@ -2,7 +2,7 @@
 """rule30_channels.py: the owner's question about the lightning. Do the walks gravitate to certain paths?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact propagation, no sampling)
-COMMAND:    python3 tests/probes/lexicon/rule30_channels.py [T=2048]
+COMMAND:    python3 tests/probes/lexicon/rule30_channels.py [T=2048] | rule30_channels.py cause [T=2048]
 COST:       about two minutes on one core. Writes rule30_channels.png next to this script.
 
 The owner (2026-10-05): "Given current follows the path(s) of least resistance distributed throughout the material
@@ -52,11 +52,46 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
       the flicker. Comparing the landing laws at depth T before and after (cosine similarity), the polymer's is below
       0.5 and the flicker's above 0.9.
 REFUTED-BY: CH0 failing (the instrument); CH1 to CH5 failing.
+
+OUTCOME of the first run, 2026-10-05 (T = 2048, one minute): CH0 PASSED (gaps 3e-17 and 4e-17; the free walk's
+L(2048) = 0.0076 and Ibar(2048) = 0.0150). Rule 30's interior density 0.5017; the random pyramids' 0.5003.
+  The flicker: L(2048) / L(128) = 0.245 on Rule 30 and 0.20 to 0.32 on the random pyramids (free 0.249); L(2048) is
+      1.52 times the free walk's on Rule 30, 1.63 to 1.75 on random. CH1 HELD: the flicker spreads like a free walk on
+      every substrate, with a little sharing. Its mean landing point on Rule 30 is -140.5 (random -1.0 to +1.5).
+  The polymer on the random pyramids: Ibar(2048) = 0.104 to 0.128, Ibar(2048) / Ibar(128) = 0.74 to 1.01 (free 0.26),
+      R = 0.160 to 0.221, largest landing cell 0.07 to 0.28. As theory says, it channels: two bolts end on the same
+      cell about one time in eight at every depth, and share a fifth of their route.
+  The polymer on Rule 30: Ibar(2048) = 0.037, ratio 0.467, R = 0.069, largest landing cell 0.037. CH2 REFUTED (on
+      Rule 30, and on R for two random pyramids, 0.160 and 0.190). CH3 REFUTED: the flicker's L(2048), 0.0116, is in
+      the random band (0.0124 to 0.0134), but the polymer's Ibar is three times lower than the random pyramids' and R
+      2.3 to 3.2 times lower. Rule 30 spreads the current out: its lightning forms fewer and weaker channels than a
+      random substrate's. This is the first measure in this family that tells Rule 30 from coin flips beyond its
+      handedness.
+  CH4 HELD: the polymer lands at -179.3 on Rule 30 (-0.088 T), left of the flicker's -140.5; random polymers -37 to
+      +34. CH5 REFUTED: 1% flips leave the polymer's landing law at cosine 0.671 (the flicker's 0.992); the flipped
+      Rule 30 keeps Rule 30's weak channels (Ibar 0.044, R 0.072). The weak channelling survives 1% noise.
+  The figure: the flicker is one smooth beam; the polymer is a braid of thin filaments inside a beam leaning left.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_channels.py cause): why does Rule
+30 channel less? Rule 30 is surjective, so from an initial row of fair coins every row is again fair coins: what differs
+from a random pyramid is only how the cells are tied across rows. Two substrates separate the seed from the rule: Rule
+30 run from a random initial row (the pyramid is the cone below one cell of row 0), and Rule 90 from a random row
+(rows of fair coins as well, tied by a linear rule). And one candidate mechanism: a polymer channels when its paths'
+resistances differ a lot, so the spread of the white count W along uniform random paths (no preference for black),
+Var(W) / T over 2,000 paths, measures how much the substrate offers to choose from.
+  CH6 (blind): Rule 30 from a random row channels like Rule 30 from a single 1: polymer Ibar(T) within a factor 1.5
+      of the single seed's, and below 0.67 times the smallest of three new random pyramids'. The weak channels belong
+      to the rule, not to the seed.
+  CH7 (blind): the mechanism is a smaller spread of path resistances: Var(W) / T on Rule 30 (single seed and both
+      random-row runs) is below 0.8 times every random pyramid's.
+  CH8 (blind, uncertain): Rule 90 from a random row channels like the random pyramids (Ibar(T) within [0.67 min,
+      1.5 max] of theirs).
 """
 import array, math, pathlib, random, struct, sys, zlib
 
 HERE = pathlib.Path(__file__).resolve().parent
-T = int(sys.argv[1]) if len(sys.argv) > 1 else 2048
+_nums = [a for a in sys.argv[1:] if a != "cause"]
+T = int(_nums[0]) if _nums else 2048
 EPS = 0.1
 NRAND = 4
 N = 2 * T + 3                                          # index i = x + T + 1, one padding cell at each end
@@ -299,8 +334,8 @@ def main():
     panels = (Panel(), Panel())
     r30 = run("Rule 30", r30rows, panels)
     figure(r30rows, panels)
-    print("   wrote rule30_channels.png: Rule 30's pyramid (black cells grey), the flicker's path density (left) and the "
-          "polymer's (right), yellow to red on a log scale from 1e-6 to 1", flush=True)
+    print("   wrote rule30_channels.png: Rule 30's pyramid (black cells grey), the flicker's path density (left) and "
+          "the polymer's (right), yellow to red on a log scale from 1e-6 to 1", flush=True)
     del panels
     rnd = [run(f"random pyramid {k + 1} (density {density:.4f})", random_rows(density, rng)) for k in range(NRAND)]
     pert = run("Rule 30 with 1% of its interior flipped (the chaos step)", flipped(r30rows, 0.01, rng))
@@ -336,5 +371,67 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def ca_rows(rule, rng):
+    """Rows 0 .. T-1 of an elementary rule (30 or 90) run from a row of fair coins; the pyramid is the cone below cell
+    0 of row 0 (row t's cells -t .. t depend only on row 0's cells -2t .. 2t)."""
+    W = 4 * T + 1
+    row, mask = rng.getrandbits(W), (1 << W) - 1        # bit x + 2T holds cell x
+    rows = []
+    for t in range(T):
+        r = bytearray(N)
+        cells = format(row >> (2 * T - t), f"0{2 * t + 1}b")[-(2 * t + 1):][::-1].encode().translate(TO01)
+        r[T + 1 - t:T + 2 + t] = cells
+        rows.append(r)
+        l, rr = row << 1, row >> 1
+        row = ((l ^ (row | rr)) if rule == 30 else (l ^ rr)) & mask
+    return rows
+
+
+def path_spread(rows, rng, n=2000):
+    """Var(W) / T for the white count W along n uniform random paths from the apex."""
+    ws = []
+    for _ in range(n):
+        x, w = T + 1, 0
+        for t in range(1, T):
+            x += rng.randrange(-1, 2)
+            w += not rows[t][x]
+        ws.append(w)
+    m = sum(ws) / n
+    return sum((v - m) ** 2 for v in ws) / (n - 1) / T
+
+
+def cause():
+    rng = random.Random(1883)
+    D = DEPTHS[-1]
+    subs = [("Rule 30 from a single 1", rule30_rows())]
+    subs += [(f"Rule 30 from a random row {k + 1}", ca_rows(30, rng)) for k in range(2)]
+    subs += [(f"Rule 90 from a random row {k + 1}", ca_rows(90, rng)) for k in range(2)]
+    density = 0.5017
+    subs += [(f"random pyramid {k + 1}", random_rows(density, rng)) for k in range(3)]
+    res = {}
+    for name, rows in subs:
+        cone = sum(sum(rows[t][T + 1 - t:T + 2 + t]) for t in range(T)) / (T * T)
+        ps, _, R, pwhite, _ = polymer(rows)
+        v = path_spread(rows, rng)
+        res[name] = dict(I=ibar(ps, D), R=R, V=v)
+        print(f"   {name}: density {cone:.4f}; polymer Ibar({D}) {res[name]['I']:.4f}, R {R:.3f}, white share "
+              f"{pwhite:.3f}; path spread Var(W)/T {v:.4f}", flush=True)
+    rnd = [res[f"random pyramid {k + 1}"] for k in range(3)]
+    seed = res["Rule 30 from a single 1"]
+    r30r = [res[f"Rule 30 from a random row {k + 1}"] for k in range(2)]
+    r90r = [res[f"Rule 90 from a random row {k + 1}"] for k in range(2)]
+    lo, hi = min(r["I"] for r in rnd), max(r["I"] for r in rnd)
+    show = lambda rs, k: ", ".join(f"{r[k]:.4f}" for r in rs)
+    verdict("CH6 Rule 30 from a random row channels like from a single 1 (within 1.5x) and below 0.67 x random",
+            all(seed["I"] / 1.5 <= r["I"] <= 1.5 * seed["I"] and r["I"] < 0.67 * lo for r in r30r),
+            f"single seed {seed['I']:.4f}; random rows {show(r30r, 'I')}; random {lo:.4f} to {hi:.4f}")
+    vmin = min(r["V"] for r in rnd)
+    verdict("CH7 the path spread Var(W)/T on Rule 30 is below 0.8 x every random pyramid's",
+            all(r["V"] < 0.8 * vmin for r in [seed] + r30r),
+            f"Rule 30 {show([seed] + r30r, 'V')}; random from {vmin:.4f}")
+    verdict("CH8 Rule 90 from a random row channels like the random pyramids",
+            all(0.67 * lo <= r["I"] <= 1.5 * hi for r in r90r), f"Rule 90 {show(r90r, 'I')}")
+
+
 if __name__ == "__main__":
-    main()
+    cause() if "cause" in sys.argv[1:] else main()
