@@ -21,6 +21,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   W2 (blind; the counterfactual): the same far band mirrored to the other slope (cells a = 1 + (t - t1 + 80) / 2,
       which no wall arriving at t1 travels) shows no excess for forward kicks: ratio within 0.9 to 1.1.
 REFUTED-BY: KC or W0 failing (the instrument); W1 or W2 failing.
+
+OUTCOME of the first run, 2026-10-05 (N = 1200, T = 3000, fresh seeds): KC passed (34,711 of 35,177). W0 passed:
+forward 1.389, backward 1.042 on the near path. W1 REFUTED: on the far path the forward ratio is 1.019 (backward
+1.061): large triangles do not foretell a forward kick 20 to 60 steps ahead along its wall's line. W2 REFUTED, which is
+the interesting part: the "mirrored" band shows 1.186 for forward kicks. That band is a line moving right at half a
+cell per step from column 1 at t1 - 80, which is where a disturbance sent outwards by an earlier kick, about 80 steps
+before, would travel. So forward kicks may follow earlier events that send a triangle-carrying wake into the interior:
+kicks correlated in time. Not tested here; a lead (PRIZE-PROBLEMS.md section 8.18).
 """
 import pathlib, random, sys
 

@@ -1642,7 +1642,11 @@ predicted fewer for both). A blind follow-up split the kicks by direction instea
 class-32 kick turns the wheel forward and 92.5% of class-52 kicks turn it back or not at all. Along the wall's path,
 large triangles are 1.40 times as dense before forward kicks and 1.03 times before backward ones (K2 held), but
 bigger forward kicks carry no more than small ones (K3 refuted). **So the triangles show which way a wall will kick
-the wheel, not how far.** `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
+the wheel, not how far.** Followed further back along the wall's line, 20 to 60 steps before the kick, the excess is gone
+(`rule30_worldline.py`, W1 refuted: 1.02): the triangles do not foretell a kick from far away. Its counterfactual
+band did show something (W2 refuted: 1.19 for forward kicks). That band is a line moving outwards at half a cell per
+step from column 1 about 80 steps before the kick, the path of a wake sent out by an earlier event. So forward kicks
+may be correlated with earlier ones, as §8.10 hinted. That is a lead, not yet tested. `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
 - on the left, the lattice in the wheel's frame, 56 phases down and columns 0 to 16 across;
 - on the right, a space-time around a kick, with a margin strip that is green while column 1 runs the wheel and red
   at departures.
