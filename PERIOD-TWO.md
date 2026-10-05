@@ -150,7 +150,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Q2, the move to a finite window | **OPEN**, not started | Nothing direct. Theorems E and E″ (§8.57) exclude classes of column 1. They do not force periodicity. | A condition that is not local in column 1. |
 | Q3, a machine-found certificate | **OPEN**, not started | Only the SAT crib (§8.37), which answered a different question. | An encoding of the forced walk as string rewriting, then the search. |
 | Q6, LR refuted by construction | **PART** | The exact records cover every column 1: no left half is zero from any depth up to 85 onwards (§8.36, §8.37). | Depths beyond the records. Nothing constructive has been tried. |
-| Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). Every column 1 that begins with near-squares at unbounded periods is excluded: period-doubling, Chacon, substitution fixed points starting with a double letter (Corollary F, §8.59). Thue–Morse and paperfolding are excluded for every left edge up to 15,868 cells (Theorem A⁗). | Thue–Morse and paperfolding for every left edge: reduced to the settling rate of the universal left side (§8.59). Rudin–Shapiro. Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Kicked wheels. |
+| Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). Every column 1 that begins with near-squares at unbounded periods is excluded: period-doubling, Chacon, substitution fixed points starting with a double letter (Corollary F, §8.59). Thue–Morse and paperfolding are excluded for every left edge up to 15,868 cells (Theorem A⁗). | Thue–Morse and paperfolding for every left edge: settling-time and period control on every admissible branched left side (§8.59; GPT audit, RULE30-GPT.md G2). Rudin–Shapiro. Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Kicked wheels. |
 | Q9, the Collatz twin | **PART** | The least-residue lemma (PRIZE-PROBLEMS.md §7.4). The window principle on both sides, W1 to W3 (§7.5). Exponential sums cannot reach a single case. | The literature check (below). A Collatz statement beyond complexity $1.71\,n$. |
 | Rung 3, periods 3 to 6 (RULE30-PRIZE.md §6) | **PART** | Horizons measured for every word up to period 4 (§8.42). Theorems A, A′, B and E hold for every period. | Nothing specific to periods 3 to 6 has been tried since. |
 
@@ -188,6 +188,11 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2 | Balance holds in a region with no randomness. | Not looked at since. |
 
 *Owed checks.*
+
+| Check | Status | What has been done | What is left |
+|---|---|---|---|
+| GPT independent audit of A, B, A′, E, E″ and §8.59 | **DONE**, first pass | RULE30-GPT.md G2: core arguments checked; E Step 4 expanded; growth and branch/period qualifications stated; all-seed prefix certified through 53207, two first-branch cycles certified. Half-line birth check changed conservative reset bounds by one and refuted GB1. | Formal verification; unbounded branch-wise bounds remain open under Q7. |
+
 
 | Check | Status | What has been done | What is left |
 |---|---|---|---|

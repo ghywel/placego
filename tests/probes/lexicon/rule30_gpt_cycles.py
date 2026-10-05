@@ -49,7 +49,12 @@ Use the worst valid L, namely 1, and start every extension no earlier than k-1.
       parents a=0, b=1 and initial state 0, claiming settling at 1 is invalid;
       the birth-aware reset bound 101 is valid and attained.
 REFUTED-BY: GB0 failing, GB1 changing either value, or GB2 not rejected.
-OUTCOME of birth: not yet run.
+OUTCOME of birth, 2026-10-06: GB0 PASSED; GB1 REFUTED; GB2 PASSED.
+  Original bounds [107294, 107312]; birth-aware [107295, 107313].
+  The command printed FAILURES and exited 1, because the blind prediction
+  of unchanged bounds failed. These are conservative upper bounds, not
+  attained settling times or a counterexample to the original full-line bound.
+  Keep this failure visible; do not change the prediction to fit it.
 """
 
 
