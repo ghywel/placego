@@ -2647,3 +2647,33 @@ squeeze (§8.33). The channel bound is a theorem (§8.20: at most 0.064 bits per
 that keeping the wall's conditions costs more information than the channel delivers, is the lower bound nobody
 has. That is the ouroboros the owner named. Every form of the problem leads back to one statement: the conditions
 at the wall cost real information.
+
+### 8.41 The information race, counted (2026-10-05)
+
+Every form of the problem has led back to one statement: keeping the wall's conditions costs real information.
+The combined game of §8.40 can be counted exactly (`rule30_race.py`, predictions written first). Take a finite
+configuration with seeds of width $s$. The left seed can meet every condition before time $s$, so all $2^s$ right
+seeds survive to $s$. After that, each time step brings a condition, and the only new information is what the right
+seed delivers to column 1. Survival depends only on column 1's word, so the count that matters is $M(s, T)$: the
+distinct column-1 words among the survivors.
+
+- **The right seed delivers about a third of a bit per cell** (RA2). By time $s$ the $2^s$ right seeds of width $s$
+  produce only $2^{0.37 s}$ distinct column-1 words: 26 at $s = 12$, 49 at $s = 16$. This is the bottleneck again.
+- **Beyond the seed, the conditions destroy it** (RA1): 0.5 to 0.95 bits per step, net of what still arrives.
+- **The race roughly balances** (RA3, held at four of five sizes). The time a configuration wins beyond its seed is
+  about the information delivered divided by the net cost per step.
+- **No Chebyshev-type identity is visible** (RA4, the null held). The exact survivor counts obey no short recurrence,
+  and their divisibility by powers of 2 shows no pattern.
+- **The solved case shows what the missing half looks like** (RA5). Next to a white wall, column 1 obeys
+  $x_{t+1}(1) = x_t(1) \lor x_t(2)$: once black it stays black. So the right seed can deliver only the time of the
+  first black cell, exactly $s$ different words, and the conditions destroy all of that within one step. There, the
+  cost of a condition is not a coin but a certainty, and that exact structure is what Condrey's proof uses.
+
+**What it means for the proof.** The race has two halves:
+1. **The delivery side has a theorem:** the channel bound of §8.20.
+2. **The cost side has a theorem only next to a white wall,** where column 1 is monotone.
+
+Next to 0101, column 1 is the wheel with its kicks (§8.10 to §8.20), and nothing yet says what a condition costs
+there. The precise target is the 0101 version of RA5: an exact property of column 1 next to 0101 that makes the
+forced walk's demands too costly, as monotonicity does next to a white wall.
+

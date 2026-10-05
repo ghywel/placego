@@ -36,6 +36,21 @@ PREDICTIONS, written 2026-10-05 before this script's first run (w = 01 unless na
       addendum) while log2 M(s, s) / b exceeds 2 at s = 16 (blind). Next to a white wall a condition costs more than a
       coin.
 REFUTED-BY: RA0 failing (the instrument); RA1 to RA5 failing.
+
+OUTCOME, 2026-10-05 (the first run, 5 seconds):
+  RA0 PASSED (N(s, s) = 2^s, and every T_BW(s) as rule30_words.py found).
+  RA1 HELD: beyond the seed the distinct column-1 words lose 0.50, 0.91, 0.83, 0.95 and 0.50 bits per step at s = 12
+     to 16 (fits over 2 to 7 steps, so rough).
+  RA2 HELD: log2 M(s, s) = 4.70, 5.00, 5.17, 5.46, 5.61 at s = 12 .. 16, about 0.37 s and falling slowly (0.39 s to
+     0.35 s). By time s a right seed of width s has delivered about a third of a bit per cell to column 1.
+  RA3 REFUTED at s = 12 only (excess 4 against 9.4, where RA1's fit has three points). At s = 13 .. 16 the excess and
+     log2 M(s, s) / b agree within 2.5 (3 vs 5.5, 5 vs 6.3, 6 vs 5.7, 9 vs 11.2). The race roughly balances: the
+     time won beyond the seed is about the information delivered, divided by the net cost per step.
+  RA4 HELD (the null): no recurrence of order 5 or less in any of the four sequences N(s, s + e), and their 2-adic
+     valuations (0 to 8) show no pattern. No Chebyshev-type identity is visible in these counts.
+  RA5 control PASSED, and exactly: next to a white wall, M(s, s) = s (column 1 turns black at one of times 0 .. s - 1
+     and stays black). The blind half HELD: the excess is at most 1 while log2 M(s, s) / b reaches 4.0 at s = 16.
+     There, about log2 s bits are delivered and destroyed within one step.
 """
 import math, statistics, sys
 from fractions import Fraction
