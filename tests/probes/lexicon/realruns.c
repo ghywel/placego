@@ -7,6 +7,8 @@
  *          with column 0 clamped), the forced left half L(1..126) by ladder.c's anti-diagonal recursion, and for each
  *          depth s the zero run L(s), L(s+1), ... (capped at depth 126). Prints "Z W s length count" for every run
  *          length that occurs, so the shards' histograms can be added.
+ *          ./realruns random W N SEED s1 s2 ...   the same for N random right halves of exactly W cells (W <= 64,
+ *          splitmix64 from SEED; the top cell is set), lines "Z W s length count".
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -29,16 +31,30 @@ static inline u128 left_step(u128 a1, u128 a2, int t, int sigma) {     /* as in 
     return prefix_xor(G | b1) & mask & ~(u128)1;
 }
 
+static uint64_t sm_state;
+static uint64_t splitmix64(void) {
+    uint64_t z = (sm_state += 0x9E3779B97F4A7C15ULL);
+    z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9ULL; z = (z ^ (z >> 27)) * 0x94D049BB133111EBULL;
+    return z ^ (z >> 31);
+}
+
 int main(int argc, char **argv) {
-    if (argc < 5) { fprintf(stderr, "usage: realruns W SHARD NSHARDS s1 s2 ...\n"); return 2; }
-    int W = atoi(argv[1]), shard = atoi(argv[2]), nsh = atoi(argv[3]), ns = argc - 4;
+    if (argc < 5) { fprintf(stderr, "usage: realruns W SHARD NSHARDS s1 s2 ... | realruns random W N SEED s1 ...\n"); return 2; }
+    int rnd = strcmp(argv[1], "random") == 0, o = rnd ? 1 : 0;
+    int W = atoi(argv[1 + o]), shard = rnd ? 0 : atoi(argv[2]), nsh = rnd ? 1 : atoi(argv[3]);
+    uint64_t N = rnd ? strtoull(argv[3], 0, 10) : 0;
+    if (rnd) sm_state = strtoull(argv[4], 0, 10);
+    int ns = argc - 4 - o;
     int S[16];
-    for (int i = 0; i < ns && i < 16; i++) S[i] = atoi(argv[4 + i]);
+    for (int i = 0; i < ns && i < 16; i++) S[i] = atoi(argv[4 + o + i]);
     static long long H[16][CAP + 2];
     const int NW = (W + CAP + 66) / 64;
     uint64_t row[8], nr[8];
-    for (uint64_t R = 1; R < (1ULL << W); R++) {
-        if ((int)(R % (uint64_t)nsh) != shard) continue;
+    uint64_t lim = rnd ? N : ((1ULL << W) - 1);
+    for (uint64_t it = 1; it <= lim; it++) {
+        uint64_t R = it;
+        if (rnd) { R = splitmix64(); if (W < 64) R &= (1ULL << W) - 1; R |= 1ULL << (W - 1); }
+        else if ((int)(R % (uint64_t)nsh) != shard) continue;
         memset(row, 0, sizeof row);
         row[0] = R << 1;
         if (W >= 63) row[1] = R >> 63;
