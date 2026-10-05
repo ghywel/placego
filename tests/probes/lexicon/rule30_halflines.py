@@ -12,7 +12,7 @@ column 0 as their left boundary). Column 0 itself must also obey Rule 30: tau(t+
 x_t(1)). For tau = 0101..., that says x_t(-1) = 1 at every odd t, and x_t(1) = NOT x_t(-1) at every even t. So a
 finite configuration with column 0 = 0101... for ever is a pair of finite seeds, one on each side, whose driven
 half-lines produce columns -1 and 1 meeting those two conditions. All night the right half-line was studied (column 1:
-the wheel and its kicks, about 0.04 bits per step, PRIZE-PROBLEMS.md section 8.20). This looks at the left one.
+the wheel and its kicks, about 0.04 bits per step, RULE30-PRIZE.md section 8.20). This looks at the left one.
 
 An exploratory look (2026-10-05, 300 random 40-cell left seeds, not recorded): column -1 of the left half-line driven
 by 0101... has conditional block entropy 1.000 bits per step for blocks up to 8 (0.996 at 12), and half of its

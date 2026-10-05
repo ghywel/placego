@@ -6,7 +6,7 @@ RUN-ON:     cpu (pure Python 3, standard library; exact, with seeded random colu
 COMMAND:    python3 tests/probes/lexicon/rule30_linear_cell.py [W=16] [K=192] [JOBS=4]
 COST:       a few minutes on 4 cores.
 
-Lemma 4 (PRIZE-PROBLEMS.md section 8.2). Write L(k) for the cell at depth k of the forced left half (column -k at
+Lemma 4 (RULE30-PRIZE.md section 8.2). Write L(k) for the cell at depth k of the forced left half (column -k at
 time 0), tau for column 0 and sigma for column 1. Then L(k) depends on sigma(0), ..., sigma(k-1) only, and on the
 newest of them like this:
     tau(k-1) = 0:  L(k) = sigma(k-1) XOR g_k(sigma(0), ..., sigma(k-2))      (call depth k a linear cell)

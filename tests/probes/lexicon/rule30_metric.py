@@ -6,7 +6,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_metric.py [N=240] [T=4200]
 COST:       about five minutes on one core.
 
 rule30_entropy.py bounds the topological entropy of column 1's visible bits (every sequence any right side can make)
-at 0.128 bits per visible bit, levelling off near 0.12 (PRIZE-PROBLEMS.md section 8.20). The entropy rate of the
+at 0.128 bits per visible bit, levelling off near 0.12 (RULE30-PRIZE.md section 8.20). The entropy rate of the
 sequences that typical right sides make (random cells, each 0 or 1 with probability one half) is a different number,
 at most the topological one. It is estimated here from long visible sequences of column 1 (even times only, Lemma 1),
 with the first 600 steps dropped (the wheel's formation): the conditional block entropy

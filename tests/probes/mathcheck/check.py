@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""check.py: the math check run after every edit of a document with TeX in it (PRIZE-PROBLEMS.md and others).
+"""check.py: the math check run after every edit of a document with TeX in it (RULE30-PRIZE.md, PRIZE-PROBLEMS.md and others).
 
-COMMAND:    python3 tests/probes/mathcheck/check.py PRIZE-PROBLEMS.md
+COMMAND:    python3 tests/probes/mathcheck/check.py RULE30-PRIZE.md
 SETUP:      once, in this folder: npm install. A Chromium is needed for the PDF; set CHROME to its executable if
             Playwright cannot find one (in the cloud container: /opt/pw-browsers/chromium-1194/chrome-linux/chrome).
 PASSES when render.js reports 0 TeX errors (MathJax with GitHub's packages: base, ams, boldsymbol) and the typeset

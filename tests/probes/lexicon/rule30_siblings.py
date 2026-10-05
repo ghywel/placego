@@ -19,7 +19,7 @@ A witness here is exact for K steps. The forced left half is zero beyond some de
 of the inverse construction, and column 0 must equal the trace at every step.
 
 PREDICTIONS, written 2026-10-04 before this script's first run:
-  S1 (control, known answer): Rule 30 has no witness for 01 or 10 (rung 1, PRIZE-PROBLEMS.md section 5).
+  S1 (control, known answer): Rule 30 has no witness for 01 or 10 (rung 1, RULE30-PRIZE.md section 5).
   S2 (counterfactual, known answer): Rule 60 has a witness for trace 01 with an empty right half (a single 1 at
      depth 1), and the forward run confirms it. If S2 fails, rung 1 could not have seen a counterexample.
   S3 (instrument): for every rule, 200 seeded random right halves (100 per trace), the forced left half cut at

@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; exact)
 COMMAND:    python3 tests/probes/lexicon/rule30_leftband.py [LOGT=13] [EMAX=2048] | rule30_leftband.py front
 COST:       about a minute on one core.
 
-rule30_diagonals.py (PRIZE-PROBLEMS.md section 8.27) found that the left diagonals E_e(t) = c(t, e - t), the lines
+rule30_diagonals.py (RULE30-PRIZE.md section 8.27) found that the left diagonals E_e(t) = c(t, e - t), the lines
 parallel to the pyramid's left edge at distance e from it, are eventually periodic with tiny periods: at most 8 up to
 e = 63. A left period can grow only just after an eventually-zero left diagonal (proved there), and those were at
 e = 2, 7 and 28 only. Each diagonal becomes periodic after a transient of m_e steps, so the region left of the line
@@ -41,7 +41,7 @@ diagonals with periods at most 16 and THE SAME eventually-zero diagonals, 2, 7, 
 
 ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_leftband.py front): is the band
 the part of the pyramid that the seed's information has not reached? Its boundary speed, 0.233, is close to the
-leftward speeds of information found before (PRIZE-PROBLEMS.md section 8.17, 0.21 cells per step next to a clamped
+leftward speeds of information found before (RULE30-PRIZE.md section 8.17, 0.21 cells per step next to a clamped
 column; section 8.19, 0.28 for a second seed on the open line).
   LB4 (blind): Rule 30 from 1 and from 11 (the extra cell on the right, so the left edge is the same) differ only
       right of a front that moves left at a speed within 0.02 of 0.233 (least squares over t from T/4 to T).

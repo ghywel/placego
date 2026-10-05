@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; seeded random right halves, fr
 COMMAND:    python3 tests/probes/lexicon/rule30_wallkind.py [N=1200] [T=3000]
 COST:       about five minutes on one core.
 
-rule30_triangles.py (PRIZE-PROBLEMS.md section 8.18) found the two wall species different: along the wall's path,
+rule30_triangles.py (RULE30-PRIZE.md section 8.18) found the two wall species different: along the wall's path,
 large triangles (size >= 4) are 1.47 times as dense as at random times for class-32 walls, and of normal density for
 class-52 walls. An exploratory look (2026-10-05, 300 seeds, not recorded) then split kicks by direction: class-32
 kicks were forward in 100% of 4,561 (commonest +4 notches), class-52 kicks backward or zero in 92.7% of 4,125

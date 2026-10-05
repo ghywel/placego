@@ -119,7 +119,7 @@ def depths_for(word):
 def main():
     import random
     rng = random.Random(4)
-    # R0: the explicit columns for tau = 0101... (PRIZE-PROBLEMS.md section 7, Lemma 1), from the column recurrence
+    # R0: the explicit columns for tau = 0101... (RULE30-PRIZE.md section 7, Lemma 1), from the column recurrence
     K, okc, okp = 41, 0, 0
     T = tau_int((0, 1), K)
     for _ in range(2000):

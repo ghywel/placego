@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library)
 COMMAND:    python3 tests/probes/lexicon/rule30_race.py
 COST:       about a minute.
 
-Background (PRIZE-PROBLEMS.md sections 8.39, 8.40; PRIOR-ART, the owner's zeta note). Every form of the problem has
+Background (RULE30-PRIZE.md sections 8.39, 8.40; PRIOR-ART, the owner's zeta note). Every form of the problem has
 led back to one statement: keeping the wall's conditions costs real information. The combined game makes that a
 race that can be counted exactly. A finite configuration has a left seed and a right seed of width s. Its centre
 column is the word w as long as the wall's conditions hold. Before time s every condition can be met by the left

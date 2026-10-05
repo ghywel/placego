@@ -1,5 +1,5 @@
 /* records.c: the longest zero run of the forced left half from depth d, over EVERY column 1, for column 0 = 0101...
- * (Conjecture LR for the word 01; PRIZE-PROBLEMS.md sections 7 and 8.14, lead 1 of 2026-10-05).
+ * (Conjecture LR for the word 01; RULE30-PRIZE.md sections 7 and 8.14, lead 1 of 2026-10-05).
  *
  * BUILD:   cc -O2 -fopenmp -o records tests/probes/lexicon/records.c      (driven by rule30_records.py)
  * USAGE:   ./records D [THREADS] [SPLIT]

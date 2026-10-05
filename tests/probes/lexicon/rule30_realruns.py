@@ -5,7 +5,7 @@ RUN-ON:     cpu (C99 via cc, driven from Python 3 with the standard library; 4 p
 COMMAND:    python3 tests/probes/lexicon/rule30_realruns.py
 COST:       about five minutes on 4 cores.
 
-The picture so far (PRIZE-PROBLEMS.md sections 8.14 and 8.16, rule30_bottleneck.py). A zero run of the forced left half
+The picture so far (RULE30-PRIZE.md sections 8.14 and 8.16, rule30_bottleneck.py). A zero run of the forced left half
 costs about one bit per cell, paid from the distinct visible histories of column 1. A right half's bits reach column
 1 slowly: D(W, t), the number of distinct histories over every right half of at most W cells, stops depending on W
 early on (the channel limits it) and keeps growing with W later (the seed limits it). If the picture is right, the

@@ -7,7 +7,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_merge.py [DMAX=45]
 COST:       about a minute and under 1 GB at DMAX = 45 (the depth 65 witnesses: records.c, minutes, if not cached);
             recur: a few minutes and about 2 GB at KMAX = 53.
 
-Background (PRIZE-PROBLEMS.md sections 8.36 to 8.38; rule30_influence.py). For column 0 = 0101..., a prefix of
+Background (RULE30-PRIZE.md sections 8.36 to 8.38; rule30_influence.py). For column 0 = 0101..., a prefix of
 column 1 (its free bits at times 0, 2, .., d - 3) fixes one forced walk from depth d. The record R(d) is the longest
 zero run over every prefix. Under the coin model 2^(d/2) independent walks give R ~ d; the records give 0.8 d.
 rule30_influence.py found single late bits re-randomise the run (influence 2/3, the coin value), and only a few early

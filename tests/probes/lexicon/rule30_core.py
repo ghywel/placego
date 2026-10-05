@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; exact simulation, seeded)
 COMMAND:    python3 tests/probes/lexicon/rule30_core.py | rule30_core.py balance
 COST:       about two minutes on one core.
 
-Background. The entropy squeeze (rule30_squeeze.py, PRIZE-PROBLEMS.md section 8.33) says that in a period-2
+Background. The entropy squeeze (rule30_squeeze.py, RULE30-PRIZE.md section 8.33) says that in a period-2
 counterexample every column left of column 0 carries at most about 0.064 bits per step. Problem 2 asks whether the
 centre column's black and white each average 1/2, which follows if its block statistics are those of a fair coin
 (entropy 1). So both questions are about how random Rule 30's columns are: period 2 needs a weak lower bound (above

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rule30_night_figure.py: one picture of the night of 2026-10-05 (PRIZE-PROBLEMS.md sections 8.14 to 8.20).
+"""rule30_night_figure.py: one picture of the night of 2026-10-05 (RULE30-PRIZE.md sections 8.14 to 8.20).
 
 RUN-ON:     cpu (pure Python 3, standard library)
 COMMAND:    python3 tests/probes/lexicon/rule30_night_figure.py

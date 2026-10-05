@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; records.c for the control)
 COMMAND:    python3 tests/probes/lexicon/rule30_wall.py
 COST:       about a minute.
 
-The claim, derived by hand (2026-10-05, PRIZE-PROBLEMS.md section 8.39). Column 0 = t mod 2. The left-parent rule at
+The claim, derived by hand (2026-10-05, RULE30-PRIZE.md section 8.39). Column 0 = t mod 2. The left-parent rule at
 column 0, x_{t+1}(0) = x_t(-1) XOR (x_t(0) OR x_t(1)), says two things. At even t it fixes column 1: x_t(1) = 1 XOR
 x_t(-1). At odd t, x_t(0) = 1, and it says x_t(-1) = 1. Meanwhile the left half evolves forward by Rule 30 using only
 column 0: x_{t+1}(-1) = x_t(-2) XOR (x_t(-1) OR x_t(0)). So the forced left halves for 0101 are exactly the

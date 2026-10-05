@@ -11,7 +11,7 @@ PREDICTION: none for the histograms, templates and end parities (a measurement, 
             numbers); restricted to the zero times, they are the words with no "11", counted by Fibonacci F(m+2).
 COST:       about a minute and a half on 4 cores.
 
-Proof of P1. Lemma 3 (PRIZE-PROBLEMS.md section 8) forbids the pair (sigma(2s), sigma(2s+1)) = (1, 0), and forbids a pair
+Proof of P1. Lemma 3 (RULE30-PRIZE.md section 8) forbids the pair (sigma(2s), sigma(2s+1)) = (1, 0), and forbids a pair
 ending in 1 followed by a pair starting with 1. So the pairs are 00, 01, 11, and with a, b, c the numbers of words of m
 pairs ending in 00, 01, 11: a' = b' = a + b + c, c' = a. Then S = a + b + c satisfies S(m+1) = 2 S(m) + S(m-1). At the
 zero times alone, e(s) = 1 forces e(s-1) = 0, and any word with no "11" extends to a full column 1 (choose sigma(2s+1)

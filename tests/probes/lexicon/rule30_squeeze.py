@@ -5,7 +5,7 @@ RUN-ON:     cpu (C99 via cc for the automata, Python 3 standard library for the 
 COMMAND:    python3 tests/probes/lexicon/rule30_squeeze.py [M list, default 8,12,16,20,24,26] | ... seen
 COST:       about ten minutes on one core, most of it building the m = 26 automaton (several GB of memory).
 
-THE LEMMA (PRIZE-PROBLEMS.md section 8.33). For a sequence s, p_s(n) counts its distinct factors of length n and
+THE LEMMA (RULE30-PRIZE.md section 8.33). For a sequence s, p_s(n) counts its distinct factors of length n and
 h(s) = lim (1/n) log2 p_s(n) is its topological entropy. Let x be any configuration of Rule 30 with x_t(0) = t mod 2
 for all t >= 0. Then for every layer width m, every column -k (k >= 1) has h <= (1/2) log2 lambda_m bits per step,
 and at most 2^((h + o(1)) j) distinct patterns of width j ever appear just left of column 0. Here lambda_m is the
@@ -76,7 +76,7 @@ REVIEW, 2026-10-05: an independent session, given only the lemma and the sources
 the automata for m = 1 to 10 and checked the identities and bounds on 60 forced configurations. It also found that the
 reduction first stated with the lemma restates the problem, since every configuration with column 0 = 0101...
 satisfies the bound. The useful left-only form is LR restricted to producible columns 1 (section 8.14's ladder), and
-any proof must use the finite left half (PRIZE-PROBLEMS.md section 8.33).
+any proof must use the finite left half (RULE30-PRIZE.md section 8.33).
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction

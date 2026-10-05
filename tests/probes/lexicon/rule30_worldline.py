@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; seeded, fresh seeds)
 COMMAND:    python3 tests/probes/lexicon/rule30_worldline.py [N=1200] [T=3000]
 COST:       about five minutes on one core.
 
-rule30_wallkind.py (PRIZE-PROBLEMS.md section 8.18) found that along the last part of a wall's path (t from t1 - 20 to
+rule30_wallkind.py (RULE30-PRIZE.md section 8.18) found that along the last part of a wall's path (t from t1 - 20 to
 t1 - 4, cells a = 1 + (t1 - t) / 2 +- 1, the wall moving at half a cell per step), large white triangles (size >= 4)
 are 1.40 times as dense as at random times before forward kicks and 1.03 times before backward ones.
 rule30_triangles.py's TK1 found no foretelling in a box of the interior (columns 12 to 30, t1 - 48 .. t1 - 13), but
@@ -28,7 +28,7 @@ forward 1.389, backward 1.042 on the near path. W1 REFUTED: on the far path the 
 the interesting part: the "mirrored" band shows 1.186 for forward kicks. That band is a line moving right at half a
 cell per step from column 1 at t1 - 80, which is where a disturbance sent outwards by an earlier kick, about 80 steps
 before, would travel. So forward kicks may follow earlier events that send a triangle-carrying wake into the interior:
-kicks correlated in time. Not tested here; a lead (PRIZE-PROBLEMS.md section 8.18).
+kicks correlated in time. Not tested here; a lead (RULE30-PRIZE.md section 8.18).
 """
 import pathlib, random, sys
 

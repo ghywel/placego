@@ -7,7 +7,7 @@ COST:       several minutes on one core, under 2 GB.
 
 The owner's lead (2026-10-05): "just as we found studying the left by itself, the right by itself and both yielded
 results, considering white by itself is just as important. Black, Both, White."
-The wall form (rule30_wall.py, PRIZE-PROBLEMS.md section 8.39), for any centre word w (column 0 = w_t, repeating).
+The wall form (rule30_wall.py, RULE30-PRIZE.md section 8.39), for any centre word w (column 0 = w_t, repeating).
 Both halves evolve forward by Rule 30 against the wall, each from its own row 0, and the centre update
 x_{t+1}(0) = x_t(-1) XOR (w_t OR x_t(1)) must give w_{t+1}. That splits by the wall's colour at time t:
   - black (w_t = 1): x_t(-1) = NOT w_{t+1}, a condition on the left half alone;

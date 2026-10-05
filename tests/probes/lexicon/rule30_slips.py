@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rule30_slips.py: the wheel's slips as particles. Part 3 of the proof route (PRIZE-PROBLEMS.md section 8.6): can
+"""rule30_slips.py: the wheel's slips as particles. Part 3 of the proof route (RULE30-PRIZE.md section 8.6): can
 the slips conspire? First, what is a slip?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact)

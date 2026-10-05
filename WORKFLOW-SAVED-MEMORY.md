@@ -102,7 +102,7 @@ reading: read the statements, then ask what each one decides.
 
 **Check the project's own record too.** Before proposing a next step, search the project's own results for it,
 not only the outside literature. On 2026-10-05 Cloud proposed, as the next step for lead 1, testing whether column
-1's local rules next to 0101 bound the zero runs. The ladder of PRIZE-PROBLEMS.md §8.12 to §8.14 had already
+1's local rules next to 0101 bound the zero runs. The ladder of RULE30-PRIZE.md §8.12 to §8.14 had already
 answered it the same day: they do not, at any width up to 16. The proposal was caught before any code was written,
 by reading those sections first.
 

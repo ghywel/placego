@@ -1,4 +1,4 @@
-/* wheel_orbit.c: the pure wheel's left half as one exact orbit (PRIZE-PROBLEMS.md section 8.5, lead M2).
+/* wheel_orbit.c: the pure wheel's left half as one exact orbit (RULE30-PRIZE.md section 8.5, lead M2).
  *
  * RUN-ON:     cpu (C99; one core per process; the orbit is sequential, so a GPU does not help)
  * BUILD:      cc -O2 -o wheel_orbit tests/probes/lexicon/wheel_orbit.c
@@ -18,7 +18,7 @@
  * The program also reports the longest zero run of L within the first 200,000 depths (to cross-check against
  * rule30_wheel_left.py) and over every depth it visits.
  *
- * PREDICTIONS, written 2026-10-04 before this program's first run (results go into PRIZE-PROBLEMS.md section 8.6):
+ * PREDICTIONS, written 2026-10-04 before this program's first run (results go into RULE30-PRIZE.md section 8.6):
  *   O1 (uncertain): for at least one of the 28 phases of U, the orbit cycles within 2 x 10^11 steps.
  *   O2 (blind): every cycle found for a phase of U is not the zero fixed point.
  *   SELFTEST (known answers, from rule30_wheel_left.py): U2 at phase 0 has mu = 0 and lambda = 728; the 7-ring's

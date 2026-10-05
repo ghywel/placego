@@ -6,7 +6,7 @@ RUN-ON:     cpu (pure Python 3, standard library; exact)
 COMMAND:    python3 tests/probes/lexicon/rule30_sibling_proofs.py [WMAX=6] [NMAX=8]
 COST:       seconds.
 
-Proposition 5 (PRIZE-PROBLEMS.md section 8.3). Under Rule 90, x' = l XOR r, let a finite row have support in [-w, w].
+Proposition 5 (RULE30-PRIZE.md section 8.3). Under Rule 90, x' = l XOR r, let a finite row have support in [-w, w].
 Then column 0 is 0 at time 2^n and at time 2^n + 1 whenever 2^n > w + 1.
 Proof. A single 1 at position j reaches (0, t) with the value C(t, (t - j)/2) mod 2 (zero if t - j is odd or
 |j| > t), and Rule 90 is linear, so column 0 is the XOR of these over the row's ones. By Lucas' theorem C(2^n, k) is

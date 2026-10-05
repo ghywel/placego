@@ -1003,7 +1003,7 @@ Deblatting (Rozumnyi et al., IJCV 2021); Hawk-Eye/ITF. Seen only through citing 
 ## Before rung 2's leap: periodic columns of Rule 30 (surveyed 2026-10-04, 23:15, by Cloud)
 
 Scope: what is known about a column of a finite Rule 30 configuration being eventually periodic, and especially
-about period two, before PRIZE-PROBLEMS.md §8.2's next step (naming the templates). Sources were checked tonight by
+about period two, before RULE30-PRIZE.md §8.2's next step (naming the templates). Sources were checked tonight by
 web search and by reading them. "(abstract)" means only an abstract or a summary was read.
 
 ### Summary
@@ -1041,10 +1041,10 @@ for what a template is.
   - From a single black cell, the sequence attained by any two adjacent cells is not periodic.
   - Rule 30's right diagonals are periodic with periods $2^\alpha$.
   - The commons issue's stronger phrasing, "at most one eventually periodic column", is UNVERIFIED against the paper.
-    PRIZE-PROBLEMS.md §5 keeps the weaker, adjacent-columns form.
+    RULE30-PRIZE.md §5 keeps the weaker, adjacent-columns form.
   - (Added 2026-10-05.) Kopra's Corollary 3.7 states the adjacent-columns form for every configuration with an
     eventually zero left half, not only the single seed. It decides conjecture LR for every eventually periodic
-    column 1 (PRIZE-PROBLEMS.md §8.13), which this entry should have prompted before §8.6's search was designed.
+    column 1 (RULE30-PRIZE.md §8.13), which this entry should have prompted before §8.6's search was designed.
 - **Rowland, E. S., "Local nested structure in rule 30"**, Complex Systems 16(3) (read, pages 1 to 4; §5, pages 15
   to 17, read 2026-10-05 after rule30_diagonals.py and rule30_leftband.py had run: see the entry at the end).
   - At row $2^n$ a region of the initial condition reappears on the right side, and the automaton "begins again"
@@ -1090,7 +1090,7 @@ for what a template is.
 
 ## Before the particle step: domains and particles (surveyed 2026-10-05, by Cloud)
 
-Scope: the slips of the wheel (PRIZE-PROBLEMS.md section 8.7) turned out to be defects of a domain that travel as
+Scope: the slips of the wheel (RULE30-PRIZE.md section 8.7) turned out to be defects of a domain that travel as
 particles. That is the subject of computational mechanics.
 
 - **Hanson, J. E. and Crutchfield, J. P., "Computational mechanics of cellular automata: an example"**, Physica D
@@ -1104,7 +1104,7 @@ particles. That is the subject of computational mechanics.
 
 ## Before the kick-game step: the wheel, phase locking, and recent Rule 30 work (surveyed 2026-10-05, by Cloud)
 
-Scope: is the wheel of PRIZE-PROBLEMS.md sections 8.5 to 8.8 (a 17/56 rotation next to a column clamped to 0101...,
+Scope: is the wheel of RULE30-PRIZE.md sections 8.5 to 8.8 (a 17/56 rotation next to a column clamped to 0101...,
 kicked in notches by domain walls) already known, and what mathematics is closest? Checked tonight by search and by
 reading abstracts; "(abstract)" means no more than that was read.
 
@@ -1139,7 +1139,7 @@ locking (Arnold tongues).
     returns exactly to its start only finitely often. Corollary 4.9: the sequence of right halves has infinitely many
     limit points. These generalise Pisot's and Dubickas' results on the fractional parts of $\xi (p/q)^n$; Theorem 4.7
     generalises Morse and Hedlund.
-  - **Imported (PRIZE-PROBLEMS.md §8.13).** Jen's theorem decides conjecture LR for every eventually periodic column
+  - **Imported (RULE30-PRIZE.md §8.13).** Jen's theorem decides conjecture LR for every eventually periodic column
     1, so §8.6's periodic-column search and job M2 had a known answer. Its proof is our left recursion (Lemma 3.2 with
     h = 0) plus the light cone. The work had cited Jen in §5 without applying it, which is a failure of method,
     recorded. A consequence: in a finite configuration with column 0 eventually 0101..., column 1 is never eventually
@@ -1183,7 +1183,7 @@ it for random integers for years. Its default today is a different cellular auto
 five-neighbour rule. Sipper and Tomassini used every cell of a small ring as a parallel stream, which is a different
 generator, and `rule30_prng.py` shows two flaws of that use. The real break was cryptographic. Meier and Staffelbach
 (1991) recovered the key from the centre column using Rule 30's left-toggle property. That is this project's forced
-left half (§5 of PRIZE-PROBLEMS.md, and Lemma 3 onwards).
+left half (§5 of RULE30-PRIZE.md, and Lemma 3 onwards).
 
 ### Sources and what to import
 
@@ -1233,7 +1233,7 @@ https://reference.wolfram.com/language/tutorial/RandomNumberGeneration.html ; ht
 
 ## Before the bottleneck and entropy steps: information flow in Rule 30 (surveyed 2026-10-05, by Cloud)
 
-Scope: are the leftward information speed (PRIZE-PROBLEMS.md §8.17, §8.19) and the entropy of a column next to a
+Scope: are the leftward information speed (RULE30-PRIZE.md §8.17, §8.19) and the entropy of a column next to a
 clamped periodic column (§8.20) known? Checked by search, abstracts only.
 
 - **Shereshevsky, M. A., "Lyapunov exponents for one-dimensional cellular automata"**, J. Nonlinear Sci. 2 (1992)
@@ -1255,7 +1255,7 @@ https://www.sciencedirect.com/science/article/pii/S0304397522007502
 
 ## The owner's lightning, channels and maze: directed polymers and directed percolation (surveyed 2026-10-05, by Cloud)
 
-Scope: before rule30_channels.py and rule30_maze.py (PRIZE-PROBLEMS.md §8.28, §8.29), is it known whether paths of
+Scope: before rule30_channels.py and rule30_maze.py (RULE30-PRIZE.md §8.28, §8.29), is it known whether paths of
 least resistance through a random two-dimensional substrate form channels, and when a random pattern's black cells
 connect? Checked by search, abstracts and summaries only.
 
@@ -1315,7 +1315,7 @@ and Wolfram's prize announcement had been read. Both cover much of the ground.
   describes the running excess as random-walk-like. rule30_tilt.py reproduces the counts to 10^6 exactly. (A first
   summary of the page gave a wrong ratio, 0.9999998, corrected from the table before any use.)
 - Searches for a later answer to Rowland's question ("rule 30" "left side", 53209) found nothing.
-- **Our answer** (rule30_leftsides.py, PRIZE-PROBLEMS.md §8.31). Rowland's indexing is confirmed (his column 53209 is
+- **Our answer** (rule30_leftsides.py, RULE30-PRIZE.md §8.31). Rowland's indexing is confirmed (his column 53209 is
   our diagonal 53208). The other continuations occur for constructed finite seeds: at least 4 certified left sides by
   diagonal 160,000, with branch points 53208 and 58287 on the universal side and 53208 and 72576 on the other, as he
   found. But all 60 generic rows tried share one left side, and the split's decision is phase-locked to the left
@@ -1326,7 +1326,7 @@ https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/
 
 ## Before and after the entropy squeeze: column entropy (surveyed 2026-10-05, by an independent review session)
 
-Scope: is PRIZE-PROBLEMS.md §8.33's lemma known? Every left column of a Rule 30 configuration whose column 0 is 0101...
+Scope: is RULE30-PRIZE.md §8.33's lemma known? Every left column of a Rule 30 configuration whose column 0 is 0101...
 has topological entropy at most (1/2) log2 lambda_m. Does anything give a lower bound on a column's entropy? A
 separate session, given only the lemma and the sources, reviewed it adversarially and searched. Its findings:
 - **Milnor, J., "On the entropy geometry of cellular automata"**, Complex Systems 2 (1988), Example 6.2 (read via text
@@ -1352,7 +1352,7 @@ separate session, given only the lemma and the sources, reviewed it adversariall
 
 ## After the merging census: merging walks and the coin's maximum (surveyed 2026-10-05, by Cloud, after the runs)
 
-Scope: PRIZE-PROBLEMS.md §8.38 (rule30_influence.py, rule30_merge.py). Is the count of distinct forced walks known,
+Scope: RULE30-PRIZE.md §8.38 (rule30_influence.py, rule30_merge.py). Is the count of distinct forced walks known,
 and are the two outside facts it leans on stated correctly? The survey came after the runs. The predictions did not
 depend on it, but they used both facts from memory, so this is recorded as late.
 - **Milnor's directional entropy** (already listed above, in the column-entropy survey). It measures the whole
@@ -1373,7 +1373,7 @@ depend on it, but they used both facts from memory, so this is recorded as late.
 
 Scope: the owner compared lead 1's returns to zero with the Riemann zeta function's zeros. The precise parallel is
 the probabilistic model of the primes and its maximal gaps. That model is to the primes what the coin model is to
-Rule 30's forced walks. The survey came after the merging census of PRIZE-PROBLEMS.md §8.38 and changed none of its
+Rule 30's forced walks. The survey came after the merging census of RULE30-PRIZE.md §8.38 and changed none of its
 predictions.
 - **Cramer's model and conjecture** (H. Cramer, 1936): treat each n as prime with probability 1/log n,
   independently. The model predicts maximal prime gaps of about (log p)^2. Statement and history checked via

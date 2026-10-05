@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; records.c for the control)
 COMMAND:    python3 tests/probes/lexicon/rule30_influence.py [SAMPLES=2000]
 COST:       a few minutes on one core.
 
-Background (PRIZE-PROBLEMS.md sections 8.36, 8.37). For column 0 = 0101..., the record R(d) is the longest zero run
+Background (RULE30-PRIZE.md sections 8.36, 8.37). For column 0 = 0101..., the record R(d) is the longest zero run
 of the forced left half from depth d over every column 1. Inside a run each free bit of column 1 is forced (the two
 choices give complementary cells), so a prefix p of column 1 (its free bits at times 0, 2, .., d-2) determines one
 forced walk, and its run length L(p). R(d) = max over p of L(p). The records follow R(d) ~ 0.8 d from depth 49 to 81.

@@ -7,7 +7,7 @@ RUN-ON:     cpu (pure Python 3, standard library; exact arithmetic, Monte Carlo 
 COMMAND:    python3 tests/probes/lexicon/rule30_factorial.py [K=64] [SAMPLES=100000] [WORDS=01,0001]
 COST:       about a minute.
 
-The owner's design (2026-10-04): left alone (PRIZE-PROBLEMS.md section 7) and both (section 8) had been measured;
+The owner's design (2026-10-04): left alone (RULE30-PRIZE.md section 7) and both (section 8) had been measured;
 right alone had not.
 
   neither       left half free, column 1 free: the left half is K random bits.
@@ -32,7 +32,7 @@ REFUTED-BY: F1 or F1b failing (the instrument is wrong); F2 failing at any run l
   shortens typical runs too, not only the extreme ones).
 
 OUTCOME of the first runs, 2026-10-04: F1 and F1b held. F2 was REFUTED for both words: the right side reshapes the
-middle of the distribution too (see PRIZE-PROBLEMS.md section 8).
+middle of the distribution too (see RULE30-PRIZE.md section 8).
 
 F4 (control, added after those runs at the owner's question "is pseudorandom enough?", written before its run): the
 sampling generator is Python's seeded Mersenne Twister, which is linear over GF(2), the arithmetic Rule 30 lives in.

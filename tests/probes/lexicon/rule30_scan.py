@@ -5,7 +5,7 @@ RUN-ON:     cpu (C99 via cc, driven from Python 3 with the standard library; 3 p
 COMMAND:    python3 tests/probes/lexicon/rule30_scan.py [WMAX=32] [NPROC=3]
 COST:       about an hour on 3 cores for WMAX = 32 (4.3 billion right halves); minutes for WMAX = 28.
 
-Rung 1 (PRIZE-PROBLEMS.md sections 5 and 6) searched every right half up to 18 cells. A finite configuration with
+Rung 1 (RULE30-PRIZE.md sections 5 and 6) searched every right half up to 18 cells. A finite configuration with
 column 0 = 0101... would be a right half whose forced left half is eventually zero. realruns.c's scan mode forces the
 left half to depth 126 for every right half of at most W cells, records the longest zero run anywhere in L(1..126),
 and lists as candidates the halves whose left half ends in at least 30 zeros at depth 126. Each candidate is then

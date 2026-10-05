@@ -9,7 +9,7 @@ COST:       about five minutes on one core.
 The owner (2026-10-05): "I wonder if a rational number can have a complementary pair, such that two related irrational
 numbers combine to form a rational one."
 
-The pair (PRIZE-PROBLEMS.md section 8.22). Rule 30 at column 0 reads tau(t+1) = x_t(-1) XOR (tau(t) OR x_t(1)). With
+The pair (RULE30-PRIZE.md section 8.22). Rule 30 at column 0 reads tau(t+1) = x_t(-1) XOR (tau(t) OR x_t(1)). With
 tau = 0101... it forces x_t(-1) = 1 at odd t and x_t(1) = NOT x_t(-1) at even t. Read the even-time bits of column -1
 as a binary number A and those of column 1 as B: complementary bits add without carries, so A + B = 0.111... = 1, and
 the odd-time bits of column -1 make the number 1 as well. By Jen's theorem B cannot be eventually periodic in a

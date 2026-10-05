@@ -3,7 +3,7 @@
 
 RUN-ON:     cpu (pure Python 3, standard library; exact)
 COMMAND:    python3 tests/probes/lexicon/rule30_witness.py [WORD=01] [DEPTHS=9,13,33] [JOBS=4]
-PREDICTION: none: an exploration, recorded in PRIZE-PROBLEMS.md section 7 (2026-10-04). It looks for a rescaling
+PREDICTION: none: an exploration, recorded in RULE30-PRIZE.md section 7 (2026-10-04). It looks for a rescaling
             (a substitution mapping the record-setting column 1 at one depth to the next).
 COST:       seconds at the defaults.
 

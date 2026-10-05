@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rule30_ladder.py: the first rungs of the LR_m ladder (PRIZE-PROBLEMS.md section 8.11), the "kick game" done
+"""rule30_ladder.py: the first rungs of the LR_m ladder (RULE30-PRIZE.md section 8.11), the "kick game" done
 properly. How long can a layer of width m next to column 0 = 0101..., fed the most adversarial input, hold the
 forced left half at zero, starting at depth s?
 

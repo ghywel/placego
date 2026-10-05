@@ -1,4 +1,4 @@
-/* periodic_kill.c: can a periodic column 1 kill the left half? Conjecture LR (PRIZE-PROBLEMS.md section 7) says no
+/* periodic_kill.c: can a periodic column 1 kill the left half? Conjecture LR (RULE30-PRIZE.md section 7) says no
  * column 1 at all lets the forced left half become zero. For periodic columns 1 this is an exact finite question.
  *
  * RUN-ON:     cpu (C99, one core)
@@ -48,7 +48,7 @@
  *   rotation symmetry holds, and so does the class weighting. With column 0 = 0001... at 10^6: q = 9, 11, 13 give 414,
  *   2,013 and 8,177 undecided words (46, 183 and 629 of 60, 188 and 632 classes), as in the first run.
  * HAND BACK to Cloud when every output file holds its CLASSES line and Local has recorded the verdict (K3 and K4
- *   HELD or REFUTED, with the counts) here and in PRIZE-PROBLEMS.md section 8.6, added a ledger line ("Local ran"),
+ *   HELD or REFUTED, with the counts) here and in RULE30-PRIZE.md section 8.6, added a ledger line ("Local ran"),
  *   and pushed main. Hand back AT ONCE, without finishing, on any KILL line, or if the run passes 3 x COST.
  * OUTCOME of JOB M2 (Local ran it exactly as written, 2026-10-05 00:35:12-00:47:26 BST, 12 min 14 s, on the M5: 10 cores,
  *   11 processes). No KILL line in any output.

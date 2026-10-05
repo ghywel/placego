@@ -17,11 +17,11 @@ stronger than the prize needs.
 
 Rule 30 is $x_{t+1}(i) = x_t(i-1) \oplus (x_t(i) \lor x_t(i+1))$. It is permutive in its left neighbour, so it can be
 run sideways: given columns 0 and 1 for all times, every column to the left is determined (the *forced left half*,
-PRIZE-PROBLEMS.md §5).
+RULE30-PRIZE.md §5).
 
 ## 2. The chain of statements
 
-Each line implies the one above it. Section numbers are in PRIZE-PROBLEMS.md.
+Each line implies the one above it. Section numbers are in RULE30-PRIZE.md.
 
 | Statement | Where |
 |---|---|
@@ -114,7 +114,7 @@ proof of Bertrand's postulate, and not a proof that Rule 30 is random.
    prior art is surveyed before leaps, and every script that produced a recorded number is kept.
 3. `CLOUD-LOCAL.md`: how Cloud and Local split work, and the ledger (start from main and the ledger, never from
    memory).
-4. `PRIZE-PROBLEMS.md`: the honest summary at the top, then §5, §7, §8.4 to §8.14, §8.20, §8.36 to §8.42.
+4. `RULE30-PRIZE.md`: the honest summary at the top, then §5, §7, §8.4 to §8.14, §8.20, §8.36 to §8.42.
 5. `PRIOR-ART.md`: the dated surveys, especially Condrey, Jen and Kopra, Rowland, and the prime-gap parallel.
 6. `tests/probes/PROBES.md`: the index of every probe (row `lexicon/`).
 
@@ -139,7 +139,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |
 
 **The math check.** After any edit of a document with TeX in it, run `python3 tests/probes/mathcheck/check.py
-PRIZE-PROBLEMS.md` once `npm install` has been run in that folder. It must report 0 TeX errors and no stray dollar
+RULE30-PRIZE.md` once `npm install` has been run in that folder. It must report 0 TeX errors and no stray dollar
 signs.
 
 ## 9. Checks before you start

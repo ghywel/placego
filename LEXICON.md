@@ -222,7 +222,7 @@ x'_i = x_{i-1} + x_i + x_{i+1} + x_i\, x_{i+1} \pmod 2 .
 
 *Checked:* C6 (equal to the rule's table on all 8 neighbourhoods; Rule 90, $x_{i-1} + x_{i+1}$, is caught as
 different; and the simulator reproduces the published centre column, OEIS A051023, 102 of 102 terms). The equation
-is linear in $x_{i-1}$. That is the property called left-permutivity, which [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md)
+is linear in $x_{i-1}$. That is the property called left-permutivity, which [RULE30-PRIZE.md](RULE30-PRIZE.md)
 builds on.
 
 ### 3.6 The lift: every program is a matrix

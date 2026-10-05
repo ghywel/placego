@@ -450,10 +450,13 @@ the research record, the scientific record and the instruments.
   and the open leads each round left.
 - [LEXICON.md](LEXICON.md) — a lexicon for writing programs as mathematics: four arithmetics, the margin fold, spin
   digits, every program as a matrix, and the machine's own arithmetic, each checked against the shader.
-- [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked, and the
-  Rule 30 work: periodic columns, left-side rigidity, the right side as a complement, the four arms, and the
-  templates behind the run lengths (why 13 was missing, and where Fibonacci really is), Rule 30's siblings, and the
-  ring resonance its spectra show.
+- [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked: the
+  prizes, the two ways a computer can win one, the ranking for this project, and the tricks that let a computer take
+  part in a proof.
+- [RULE30-PRIZE.md](RULE30-PRIZE.md) — the Rule 30 Prize Problem 1 work, split out of PRIZE-PROBLEMS.md on
+  2026-10-05 with its section numbers unchanged: periodic columns, left-side rigidity, the right side as a
+  complement, the wheel and its kicks, the ladder, the channel bound, the records, the wall form, and the owner's
+  leads along the way.
 - [PERIOD-TWO.md](PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
   what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
 

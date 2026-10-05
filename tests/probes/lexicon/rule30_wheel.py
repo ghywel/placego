@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rule30_wheel.py: the wheel of PRIZE-PROBLEMS.md section 8.4 up close. Between its slips, is column 1 an exact copy
+"""rule30_wheel.py: the wheel of RULE30-PRIZE.md section 8.4 up close. Between its slips, is column 1 an exact copy
 of itself every 56 steps? Is the repeating word the same for every right half? Is a slip only a shift in time? Do the
 left half's long zero runs sit inside the coherent stretches? And (the random-chaos step) do Rule 30's siblings turn a
 wheel too?

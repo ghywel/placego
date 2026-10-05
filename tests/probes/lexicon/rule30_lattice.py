@@ -6,7 +6,7 @@ RUN-ON:     cpu (pure Python 3, standard library; seeded random right halves)
 COMMAND:    python3 tests/probes/lexicon/rule30_lattice.py [N=800] [T=3000]
 COST:       about five minutes on one core. Writes rule30_lattice.png next to this script.
 
-rule30_triangles.py (PRIZE-PROBLEMS.md section 8.18) fixed the objects (every white triangle is exact, set by its
+rule30_triangles.py (RULE30-PRIZE.md section 8.18) fixed the objects (every white triangle is exact, set by its
 birth) and the kicks (departures of column 1 from the wheel U, absolute phase D). Its lattice test TK3 compared whole
 56-step windows next to a kick and was spoiled by the walls themselves. Here the lattice is learned first and the
 test uses only births clear of the wall.

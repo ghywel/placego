@@ -6,7 +6,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_kickgaps.py [N=1500] [T=3000]
 COST:       about three minutes on one core.
 
 rule30_worldline.py's W2 found large white triangles 1.19 times as dense as usual on a line moving outwards at half a
-cell per step from column 1 about 80 steps before a forward kick (PRIZE-PROBLEMS.md section 8.18): perhaps a wake
+cell per step from column 1 about 80 steps before a forward kick (RULE30-PRIZE.md section 8.18): perhaps a wake
 sent out by an earlier event. If so, departures should be correlated in time. rule30_chaos.py's D3 found consecutive
 kicks' sizes nearly memoryless; their timing was not looked at.
 

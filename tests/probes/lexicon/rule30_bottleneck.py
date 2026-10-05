@@ -6,7 +6,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_bottleneck.py
 COST:       about five minutes on one core, 1.6 GB of memory at W = 24.
 
 rule30_merge.py found that the 65,535 right halves of at most 16 cells give only 2^12.2 to 2^13.6 distinct visible
-histories of column 1 by times 80 to 144 (PRIZE-PROBLEMS.md section 8.16): most of their bits have not arrived.
+histories of column 1 by times 80 to 144 (RULE30-PRIZE.md section 8.16): most of their bits have not arrived.
 bottleneck.c counts D(W, t), the distinct visible histories (column 1 at even times below t) over every right half
 of at most W cells; I(W, t) = log2 D(W, t) is the information the left side can have received by time t. The ladder
 gives an exact ceiling: a layer of width m fed any input can produce every visible prefix a real right half can, so

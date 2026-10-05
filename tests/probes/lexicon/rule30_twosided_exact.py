@@ -32,7 +32,7 @@ OUTCOME of the first full run, 2026-10-04: X1 and X2 passed (X2: 33 cells for 01
 ending at depth 71). X3 was REFUTED for both words. At depth up to 384 the longest runs are, for W = 8, 10, ..., 24:
     word 01:   15, 15, 18, 20, 20, 20, 22, 24, 24
     word 0001: 13, 14, 17, 17, 19, 26, 26, 26, 26
-The depth-192 plateau was an artefact of the depth. The runs keep growing, slowly (PRIZE-PROBLEMS.md section 8).
+The depth-192 plateau was an artefact of the depth. The runs keep growing, slowly (RULE30-PRIZE.md section 8).
 """
 import pathlib, sys
 from multiprocessing import Pool

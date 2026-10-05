@@ -12,7 +12,7 @@ COST:       about a second for the rings; seconds for the tails and the deep tai
 
 A spatially n-periodic Rule 30 configuration is Rule 30 on a ring of n cells: a finite program, whose loops are its
 spectrum (LEXICON.md 3.6). A column of such an orbit is periodic with a period dividing the cycle length. Recorded in
-PRIZE-PROBLEMS.md section 5.
+RULE30-PRIZE.md section 5.
 """
 import importlib.util, pathlib, sys
 from collections import Counter

@@ -8,7 +8,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_records.py [DMAX=61] [THREADS=al
 COST:       Cloud: about an hour on 4 cores (depths 60, 61 and 65 dominate: 2^30, 2^30 and 2^32 prefixes, at 1.7 us
             each per core).
 
-Lead 1 (PRIZE-PROBLEMS.md, open leads of 2026-10-05). Conjecture LR for the word 01 (section 7) says that for every
+Lead 1 (RULE30-PRIZE.md, open leads of 2026-10-05). Conjecture LR for the word 01 (section 7) says that for every
 column 1 the forced left half has infinitely many ones; it alone implies period 2 for every finite configuration.
 A proof needs a growth bound: a run of zeros starting at depth d ends by about 2d. The record runs known so far, with
 column 1 free (rule30_witness.py, rule30_ladder_deep.py's R(0, s)): 9 cells from depth 9, 17 from 13, 33 from 33,

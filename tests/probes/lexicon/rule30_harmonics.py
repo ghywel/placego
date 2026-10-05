@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """rule30_harmonics.py: the owner's "harmonics" lead (2026-10-04). Are the quantised two-sided run lengths of
-PRIZE-PROBLEMS.md section 8.2 harmonics of column 0's period p?
+RULE30-PRIZE.md section 8.2 harmonics of column 0's period p?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact for the two-sided arm, seeded for the left-alone arm)
 COMMAND:    python3 tests/probes/lexicon/rule30_harmonics.py [W=16] [K=192] [JOBS=4]

@@ -5,7 +5,7 @@ RUN-ON:     cpu (pure Python 3, standard library; exact)
 COMMAND:    python3 tests/probes/lexicon/rule30_uniform.py [WMAX=16]
 COST:       about fifteen minutes on one core.
 
-Background (PRIZE-PROBLEMS.md sections 8.24, 8.40, 8.41). rule30_complement.py measured, for the centre word 0101...,
+Background (RULE30-PRIZE.md sections 8.24, 8.40, 8.41). rule30_complement.py measured, for the centre word 0101...,
 how long a finite seed keeps its centre column on the word. Take a right half R of exact width W and its forced left
 half (rule30_periodic.forced_left), and cut the left half at depth d. That makes a seed of w = d + 1 + W cells whose
 centre column follows the word until time P, the depth of the first 1 beyond the cut. The excess E = P - w,
