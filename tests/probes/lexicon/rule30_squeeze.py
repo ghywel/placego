@@ -66,6 +66,12 @@ would have to be both.
       than 0.0646 bits per step, and far from saturation (at most a quarter of the positions at length 64).
   SQ5 (the contrast, blind): the same columns of the left half-line driven by 0101... from 30 random finite seeds grow
       at 0.9 bits per step or more between lengths 8 and 13.
+OUTCOME of the second run, 2026-10-05 (python3 rule30_squeeze.py seen, 1 minute 14 seconds): SQ4 HELD. Over the
+forced left halves of 30 real right halves, the fastest growth of any measured column's factors between lengths 32
+and 64 is 0.0625 bits per step, under the proved 0.0646, and no count reaches 1% of the positions. SQ5 HELD: the
+slowest of the driven half-lines' columns grows at 0.9987 bits per step. Two worlds: left halves consistent with a
+right side are nearly frozen (and infinite, in every case found), and left sides of finite seeds are coin-like. A
+period-2 counterexample would be a finite seed in the first world.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction
