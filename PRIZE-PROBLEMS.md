@@ -1646,7 +1646,9 @@ the wheel, not how far.** Followed further back along the wall's line, 20 to 60 
 (`rule30_worldline.py`, W1 refuted: 1.02): the triangles do not foretell a kick from far away. Its counterfactual
 band did show something (W2 refuted: 1.19 for forward kicks). That band is a line moving outwards at half a cell per
 step from column 1 about 80 steps before the kick, the path of a wake sent out by an earlier event. So forward kicks
-may be correlated with earlier ones, as §8.10 hinted. That is a lead, not yet tested. `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
+may be correlated with earlier ones, as §8.10 hinted. A first test (`rule30_kickgaps.py`) "held" but proved
+nothing: kicks happen at fixed wheel phases, so the gaps between them are quantised and their residues already encode
+the next kick's class. The wake is a lead, still untested. `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
 - on the left, the lattice in the wheel's frame, 56 phases down and columns 0 to 16 across;
 - on the right, a space-time around a kick, with a margin strip that is green while column 1 runs the wheel and red
   at departures.

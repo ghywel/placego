@@ -19,6 +19,18 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   CF (counterfactual): with the departure times of each seed shuffled among that seed's own gaps (same gaps, random
       order), the class sequence loses any link to the gap: G2's difference falls within 0.03 of zero.
 REFUTED-BY: KC or CF failing (the instrument); G1 or G2 failing.
+
+OUTCOME of the first run, 2026-10-05 (N = 1500): KC passed (43,665 of 44,219). G1 HELD and G2 HELD (difference +0.340
+over 42,776 consecutive pairs), and CF passed (+0.019). BUT NEITHER TESTS THE WAKE, on reflection after the run:
+  - G1: no gap below about 60 steps can be seen at all, because re-locking needs a clean 56-step window, and
+    departures happen at fixed wheel phases (classes 32 and 52), so gaps come in quantised values. The peaks (60, 66,
+    72, 76, 86, 92) are that bookkeeping.
+  - G2: for the same reason, a gap's residue mod 56 already encodes the next kick's class: g = delta + c' - c (mod 56),
+    with delta the previous kick's shift and c, c' the classes. The +0.34 is largely that arithmetic. The shuffle of
+    CF breaks the arithmetic too, so it cannot separate bookkeeping from physics.
+  So the predictions were badly posed, and the wake of rule30_worldline.py's W2 remains an untested lead. A fair test
+  needs a statistic that the phase bookkeeping cannot produce, for example the wake's triangles against the previous
+  kick's own time and class.
 """
 import pathlib, random, sys
 from collections import Counter
