@@ -22,9 +22,30 @@ The problem where this project's tools fit best is **Rule 30 Problem 1** ($10,00
 - Its evolution is literally a shader.
 - Its frontier moved one step on 2026-09-08, to exactly the case this document's first experiment examines.
 
-That experiment ran today. Its controls reproduce the published theorem exactly. It found no finite configuration
-with a periodic column for periods 2 to 6, over every right half up to 18 cells (27,262,976 cases, §5 and §6). That is
-evidence, not a proof, and a proof is what the prize pays for.
+That experiment ran on 2026-10-04. Its controls reproduce the published theorem exactly. It found no finite
+configuration with a periodic column for periods 2 to 6, over every right half up to 18 cells (27,262,976 cases, §5
+and §6). That is evidence, not a proof, and a proof is what the prize pays for.
+
+**Where the work stands (2026-10-05).** There is no proof and nothing to submit. Period 1 was closed by Condrey;
+period 2 is the open case, and the work concentrates there. What exists:
+
+- **Evidence.**
+  - No counterexample over 27 million cases.
+  - The search is shown able to see one where one exists: in Rule 60, a sibling rule (§8.3).
+  - Conjecture LR (§7) holds exactly for all 550,201 periodic columns 1 that were decided (§8.6).
+- **Small proved results.**
+  - Lemmas 1 to 4, about where the right side's bits enter the left half.
+  - Proposition 5: in the sibling Rule 90, no period-2 column is possible, by Lucas' theorem.
+- **A description of the right side.** Next to a period-2 column, the right side runs a universal *wheel*: an exact
+  coding of a rotation by 17/56 of a turn per step (§8.5). Domain walls interrupt it, arriving from the interior at
+  half a cell per step and kicking its angle by whole notches of 1/28 of a turn (§8.7, §8.8).
+- **One computed theorem.** Proposition 6: the wheel alone cannot make the left half finite. An exact cycle certificate
+  was found and verified (§8.6).
+- **The gap.** Could the walls' kicks steer the left half to zero and keep it there? That is part 3 of the route
+  (§8.6) and it is open. A proof would have to be made there.
+
+Several of these results had been reached by others first: Condrey's triangular uniqueness, his "no bounded law" at
+period 2, and Hanson and Crutchfield's domain filter. PRIOR-ART.md records them.
 
 ---
 
@@ -769,7 +790,7 @@ halves, 166 lock into an exact period; the other 3,930 were studied.
 | Q1: at least 30% of windows are exact copies of the one before | **refuted**: 8.4%. The wheel is coherent, but rarely exact for a whole period |
 | Q2: at least 70% of slips are shifts in time | **held**: 5,430 of 5,714 (95%). The commonest shifts, 16, 36, 52, 0, 30, 20, 40, 26 steps, are all even, in step with the trace |
 | Q3: one domain word covers at least 90% of the exact stretches | **held**: 96.6%. There are only 2 words, and the second is the period-14 lock (see the correction below) |
-| Q4: the long zero runs sit inside exact stretches | **refuted, the other way round**: 0 of 40, against a base rate of 39%. Long runs sit next to slips |
+| Q4: the long zero runs sit inside exact stretches | **refuted, the other way round**: 0 of 40, against a base rate of 39%. (Read at first as "long runs sit next to slips"; corrected in §8.9: early long runs come mostly from the wheel's formation) |
 | S (the random-chaos step): the siblings 90, 120, 150, 210 do not turn this wheel | **held**: they sit at 1/2 or 1/3. The wheel is Rule 30's own |
 
 **The wheel is exactly a circle rotation.** The universal word is
@@ -821,7 +842,8 @@ ring (period 7), and two zero columns give zero. Results, over all 28 phases of 
   14 ends at depth 599 at the earliest, usually thousands, and the longest run grows like $\log_2$ of the depth, as for
   random bits.
 - Together with Q4: **within the two-sided search's depth (192), the pure wheel gives runs of at most 10**. The
-  two-sided runs of 14 to 20 found there sit next to slips. A slip, not the wheel, makes a long run early. Deep down,
+  two-sided runs of 14 to 20 found there come from where the wheel is not running cleanly: mostly from its formation,
+  some from its slips (corrected in §8.9; first read as "next to slips"). Deep down,
   the wheel alone makes long runs too, slowly.
 
 **What this means for the prize.** The right side's output now has a finite description to first order. It is a
@@ -863,10 +885,11 @@ prediction written first:
 - **The arms.** Block entropy for blocks of 8, within depth 192: coin flips 1.0000, left alone 0.9997, both sides
   exact **0.9971**. The pure-wheel row (0.9920) is not comparable here, because its 28 sequences give too few blocks
   (bias of about 0.004). Of the comparable arms, the real two-sided left half is the least random. Its order (the
-  quantised runs and templates of §8.2) sits next to the wheel's slips (§8.5, Q4).
+  quantised runs and templates of §8.2) sits where the wheel is not running cleanly: its formation early on, its
+  slips deeper down (§8.9).
 
 So the answer is yes, with a twist: **order in, noise out**. The wheel is churned into noise. The slips, which are the
-right side's own disorder, are where the left half shows structure.
+right side's own disorder, are where the left half shows structure, together with the wheel's formation (§8.9).
 
 **What this does to the proof route.** It cuts both ways.
 - **Bad news.** Proving that a pseudorandom stream never settles to all zeros is the same kind of problem as the prize
@@ -1085,7 +1108,49 @@ fixed phases. A finite configuration would need those kicks to steer the left ha
 
 **Next.**
 1. What sets a wall's size: its width, or the gap to the next wall?
-2. The left half's response to a single kick. The long runs sit next to slips (§8.5, Q4), so is a long run the left
+2. The left half's response to a single kick. Deep long runs sit in slip episodes (§8.9), so is a long run the left
    side's echo of one kick, of a given size and sign?
 3. The kick game. Within the two-sided search's depth, can any sequence of kicks from this alphabet hold the left half
    at zero longer than the runs seen? If the alphabet's best is bounded, the heuristic of §8.6 has a finite form.
+
+### 8.9 Where the long runs come from, and kicking the drive (2026-10-05)
+
+**A correction first.** Sections 8.5, 8.6 and 8.8 said "the long zero runs sit next to slips". That came from Q4 of
+`rule30_wheel.py`, and it over-read it. Q4 showed only that no run of 14 or more lies wholly inside a stretch where
+the wheel runs exactly. An exploratory look found that most of the early long runs come instead from the wheel's
+*formation*, the transient before it first locks. `rule30_formation.py` makes that a measurement:
+
+| Runs | Before the wheel forms | In a slip episode | Overlapping an exact window |
+|---|---|---|---|
+| 14 or more, depth up to 192, right halves up to 12 cells (F1, seen first) | **51** | 20 | 16 |
+| 16 or more, depth up to 384, right halves up to 13 cells (F2, blind) | 0 | **6** | 1 |
+
+So the early long runs (within the first two or three windows) come from the wheel forming, and the deep ones from its
+slips. Both held, and the three sections above now say so.
+
+**What does not set a kick.** Over 10,994 slips, the gap since the previous slip does not fix the kick: the commonest
+kick at any gap is at most 32% (N, recorded as seen). What fixes a kick's size is still unknown.
+
+**The random-chaos step: kick the drive.** Column 0 runs 0101… with one bit flipped at step 503, inside the wheel's
+coherent running. The causality control passed: nothing changes before the glitch, and every right half feels it
+after.
+
+| Prediction | Result |
+|---|---|
+| G1: the wheel is exact again within 10 windows in at least 90% of right halves | **refuted, narrowly**: 2,566 of 2,886 (88.9%) |
+| G2: in at least half of those, it returns at the phase it would have had without the glitch | **refuted**: 91 of 2,566 (3.5%) |
+
+The wheel re-forms after a glitch, but almost never at its old phase. It keeps a lasting kick of many sizes, from −9 to
++11 notches (+6 in 100 cases, +5 in 84, −9 in 82, +3 in 81, +11 in 79, ...), a wider range than the walls give. **The
+wheel's phase has no restoring force.** Any phase is as good as any other, so a knock moves it for good, like a free
+rotor's angle. That fits the walls' kicks adding up as a walk of the angle, with nothing pulling it back.
+
+**What this means for the route.** The left side's demands (Lemma 4) are met by the wheel at a given phase, and the
+phase drifts by kicks and is never restored. A finite configuration would need that walk to land the left half on zero
+and keep it there. The early long runs show the most dangerous moment is the wheel's formation. A proof attempt should
+look there first: at the first few windows, while column 1 is still settling, and not deep down.
+
+**Next.**
+1. The formation transient: how the wheel forms from a finite right half, and whether it, rather than the slips, is
+   what bounds the early runs.
+2. The kick game, now with the formation transient included.

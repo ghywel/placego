@@ -35,6 +35,20 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
      and differs from it somewhere after t0 in at least one right half (the glitch is felt, and only afterwards).
 REFUTED-BY: C failing (the harness); F1 failing (the exploratory look misled); F2, G1 or G2 failing; N failing (then a
   feature does set the kick).
+
+OUTCOME of the first run, 2026-10-05: C passed (0 right halves changed before t0, and all 4,096 changed after it).
+  F1 HELD (seen): of 87 runs of 14 or more at depth <= 192, 51 come before formation, 20 in a slip episode and 16
+     overlapping an exact window; none lies wholly inside an exact stretch.
+  F2 HELD: at depth <= 384 with right halves up to 13 cells there are only 7 runs of 16 or more, 6 in slip episodes
+     and 1 overlapping, none before formation. The early long runs come from the wheel's formation, and the deep ones
+     from its slips.
+  N HELD (seen): over 10,994 slips that re-lock within 2 windows, the commonest kick at any gap is at most 32% (+6
+     notches is commonest at every gap).
+  G1 REFUTED, narrowly: after a glitch in the drive the wheel is exact again within 10 windows in 2,566 of 2,886 right
+     halves (88.9%, against 90%).
+  G2 REFUTED: only 91 of the 2,566 (3.5%) return at the unglitched phase. A glitch leaves a lasting kick, of many sizes:
+     +6 (100), +5 (84), -9 (82), +3 (81), +11 (79), -1 (76), +8 (74), -6 (74) notches. The wheel's phase has no
+     restoring force.
 """
 import sys, pathlib
 from collections import Counter, defaultdict
