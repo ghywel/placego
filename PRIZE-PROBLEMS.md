@@ -67,6 +67,11 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - Jen's leftward flow of periodicity;
   - the bottleneck and its exact bound.
 
+The night's three main measurements are drawn in one figure, [rule30_night.svg](tests/probes/lexicon/rule30_night.svg):
+- the adversary's runs against depth;
+- the channel bound against layer width;
+- the real runs against seed width.
+
 Several of these results had been reached by others first: Condrey's triangular uniqueness, his "no bounded law" at
 period 2, Hanson and Crutchfield's domain filter, Jen's theorem for periodic columns 1, and Meier and Staffelbach's
 reconstruction of the left half from two columns (1991, §8.15). PRIOR-ART.md records them.
@@ -1693,9 +1698,10 @@ case.
 (the extension to $m = 19, 20$, EN4, held), which is 0.076 bits per step. A random sequence carries 1. This is the
 bottleneck of §8.17 as a theorem rather than a measurement, up to the convergence of the power iteration (9 digits).
 The bound is still falling, by about 0.016 bits per extra cell of layer, with no sign yet of levelling off, and
-whether it reaches zero is open. A rough estimate from the kicks (about one every 90 steps, a few bits each) says it
-should level off near 0.05 to 0.1 bits per visible bit; if it does not, column 1 would carry almost no information
-at all, which would be a structural fact worth a proof of its own.
+whether it reaches zero is open. A rough estimate from the kicks (about one every 90 steps, each carrying its size
+and some timing, a few bits in all) says it should level off somewhere near 0.05 to 0.15 bits per visible bit. If it
+does not, column 1 would carry almost no information at all, which would be a structural fact worth a proof of its
+own.
 
 **A census of traces** (the random-chaos step: six seeded random words besides the short ones). At $m = 10$ every
 periodic column 0 except the constant 0 leaves column 1 more than 0.1 bits per visible bit (EN3 held). The trace 01
