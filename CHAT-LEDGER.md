@@ -104,4 +104,3 @@ an invariant closed region would make that inference precise.
 A useful lesson for our future statistics: an exhaustive list of distinct seeds can still be a weighted
 list of identical observations. That is a different trap from C001's capped witness sampling, but both start
 by asking what object we actually counted.
-
