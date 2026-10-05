@@ -235,3 +235,27 @@ and Weiss's stochastic models, 1992). What carries over from Rule 30 is the fram
 objects, split into the part that pays exactly and the part that pays on average. In both problems the second part
 is the whole difficulty, so a method that bounds it in one may transfer to the other. That is the most concrete
 cross-prize lead this work has produced.
+
+### 7.2 The avenue Collatz has and Rule 30 lacks: the state after the free bits is an explicit integer
+
+The owner: "As a different problem it should yield an avenue of attack that wasn't possible on the Rule 30 side." It
+does: arithmetic. For $n = 2^{w-1} + r$, Terras's affine formula gives, after the $w - 1$ free steps,
+$T^{w-1}(n) = 3^a + T^{w-1}(r)$, with $a$ the number of odd steps. This $y$ is an explicit integer. Its low $j$ bits
+fix the next $j$ parities, by Terras again. So "past the free bits the count follows the coin" (§7.1) is exactly
+the statement that $y \bmod 2^j$ is close to uniform over the numbers still above their start. That is an
+equidistribution question about explicit integers, which exponential sums can attack. Tao (2019) proved "almost
+all orbits attain almost bounded values" from the 3-adic analogue, the near-uniformity of the Syracuse offsets
+modulo $3^n$. Rule 30's right part has no formula of this kind: its bits enter through OR gates.
+
+`tests/probes/prizes/collatz_blocks.py` (with `collatz_blocks.c`; predictions written before the run) measured it
+at $w = 26$, on 573,162 survivors among $2^{25}$ numbers:
+- **The affine formula holds for every $n$** (CB0, the control), and the counterfactual $y \bmod 3$ is far from
+  uniform (CB4), so the instrument sees arithmetic where it exists.
+- **Uniform at the level of sampling noise** in total variation, at every $j$ to 12 (CB2 held).
+- **But not perfectly** (post hoc). The largest odd Fourier coefficients at $j$ = 12 and 13 are about 0.012:
+  small, yet far beyond noise. There is fine 2-adic structure in the survivors' state. It is smaller at $w = 26$
+  than at $w = 24$.
+
+So the Collatz twin of the bounded-debt statement reduces, block by block, to bounding exponential sums
+$\sum_v e(h\,y_v / 2^j)$ over the parity vectors that stay up. That is a concrete analytic target of the kind
+Tao's method addresses. Whether the structure fades as $w$ grows is the next measurement (§7.3).

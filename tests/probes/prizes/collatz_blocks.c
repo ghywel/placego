@@ -55,5 +55,21 @@ int main(int argc, char **argv) {
     double t3a = 0, t3s = 0;
     for (int i = 0; i < 3; i++) { t3a += fabs((double)h3a[i] / Ma - 1.0 / 3); t3s += fabs((double)h3s[i] / Ms - 1.0 / 3); }
     printf("M3 %.6g %.6g\nAFFINE %s\n", t3a / 2, t3s / 2, ok ? "ok" : "BROKEN");
+    if (argc > 3) {                     /* post hoc: the three largest odd Fourier coefficients over survivors */
+        for (int j = 10; j <= JMAX; j++) {
+            int K = 1 << j; long long *c = calloc(K, sizeof(long long)), M = 0;
+            for (int i = 0; i < (1 << JMAX); i++) c[i & (K - 1)] += hs[i];
+            for (int i = 0; i < K; i++) M += c[i];
+            double bv[3] = {0}; int bh[3] = {0};
+            for (int hh = 1; hh < K; hh += 2) {
+                double re = 0, im = 0;
+                for (int i = 0; i < K; i++) if (c[i]) { double ang = 2 * M_PI * (double)hh * i / K; re += c[i] * cos(ang); im += c[i] * sin(ang); }
+                double m = sqrt(re * re + im * im) / M;
+                for (int q = 0; q < 3; q++) if (m > bv[q]) { for (int z = 2; z > q; z--) { bv[z] = bv[z - 1]; bh[z] = bh[z - 1]; } bv[q] = m; bh[q] = hh; break; }
+            }
+            printf("TOP %d %d %.5g %d %.5g %d %.5g\n", j, bh[0], bv[0], bh[1], bv[1], bh[2], bv[2]);
+            free(c);
+        }
+    }
     return 0;
 }

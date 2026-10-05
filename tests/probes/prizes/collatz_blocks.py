@@ -24,6 +24,18 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   CB4 (counterfactual, must fail to be uniform): y mod 3 over the survivors has TV distance above 0.1 (every odd
       step lands on 2 mod 3, so the arithmetic must show).
 REFUTED-BY: CB0 failing (the instrument); CB1 to CB3 failing; CB4 coming out uniform (the instrument blind).
+
+OUTCOME, 2026-10-05 (the first run, 10 seconds, W = 26: 33,554,432 numbers, 573,162 survivors after 25 steps):
+  CB0 PASSED: the affine formula holds for every n at w = 20, 22, 24, 26.
+  CB1 REFUTED: over all n the TV distance reaches 3.18 times the baseline at j = 12 (TV 0.014). A size effect: the
+     orbits that dropped have small y, and small numbers are not uniform mod 2^12.
+  CB2 HELD: over the survivors, TV is 0.41 to 1.09 times the random baseline at every j to 12.
+  CB3 HELD: the largest odd Fourier coefficient is within 4 times the baseline (3.49 at j = 12).
+  CB4 HELD: y mod 3 has TV 0.333 (it is never 0 mod 3).
+  Post hoc (the binary run with a third argument "top", no prediction): the j = 12 and 13 coefficients are real
+  structure, not noise. At w = 26, |F| = 0.0133 at h = 753 (j = 12) and 0.0116 at h = 6355 (j = 13), where random
+  samples would give |F| that large with probability about e^-100. The frequency 1837 recurs (w = 24, j = 11; w = 26,
+  j = 12 and 13). At w = 24 the same scales give 0.0166 and 0.0186: smaller at the larger width.
 """
 import math, pathlib, subprocess, sys, tempfile
 
