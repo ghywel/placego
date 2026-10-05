@@ -8,6 +8,21 @@ with its reading order and how to reproduce it, see [PERIOD-TWO.md](PERIOD-TWO.m
 
 ## The honest summary
 
+**Update, 2026-10-05, evening (read this first).** Still no proof and nothing to submit. The day's work moved
+the problem to one precise statement:
+- **Where it sits** (§8.45, §8.47, §8.49). Period 2 has the structure of Mahler's 3/2 problem: a free left side, a
+  thin constrained right side (the wheel and its kicks), agreement at the wall for ever. A survey of eight fields
+  found the same gap everywhere: theorems that holding a chaotic system costs information are about sets of cases,
+  never one case. Here the gap can be crossed by an exact count, because seeds are finite.
+- **The counting form** (§8.51). The number of configurations on $w$ cells whose centre follows 0101 for $T$ steps
+  falls by about $2^{1.05}$ per step, exactly counted to $w = 24$. Proved: the conditions paid by the seed's left
+  part halve the count exactly (left-permutivity).
+- **The open part** (§8.52). The right part pays in lumps, never more than 3 free steps in a row to $w = 26$. The
+  statement that would close period 2: $N_{w,j}(T+k) \le 2^{c(w) - \alpha k} N_{w,j}(T)$ for some $\alpha > 0$, with
+  $c(w) = O(\log w)$. PERIOD-TWO.md §7 lists it with the other questions for whoever continues.
+- **Local's records**: $R(85) = 73$, as predicted blind from the merging census (§8.38); no right half up to 34
+  cells is a counterexample.
+
 **Where the work stands (2026-10-05, early morning).** There is no proof and nothing to submit. Period 1 was closed
 by Condrey; period 2 is the open case, and the work concentrates there. What exists:
 
