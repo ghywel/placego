@@ -1721,3 +1721,29 @@ periodic column 0 except the constant 0 leaves column 1 more than 0.1 bits per v
 is not the most constraining (EN2 refuted): 0001 allows 0.159 and 001 0.190, against 0.316 for 01. Per step the
 traces range from 0.09 to 0.18 bits. The wheel, which only 01 turns, does not make its column 1 unusually poor in
 information. It makes it orderly, a different thing.
+
+### 8.21 The search widened: every right half up to 32 cells (2026-10-05)
+
+Rung 1 (§5, §6) searched every right half up to 18 cells. `rule30_scan.py` (with `realruns.c`'s scan mode, predictions
+written first) forces the left half to depth 126 for every right half up to 32 cells and records the longest zero run
+anywhere in it. Any half whose left half ends in 30 or more zeros would be followed to depth 2,000. Its control
+agrees exactly with an independent Python computation (SC0).
+
+| Right halves of at most | 18 cells | 20 | 22 | 24 | 26 | 28 | 30 | 32 |
+|---|---|---|---|---|---|---|---|---|
+| Number | 262,143 | 1,048,575 | 4,194,303 | 16,777,215 | 67,108,863 | 268,435,455 | running | running |
+| Longest zero run in $L(1..126)$ | 17 | 17 | 17 | 17 | 17 | 17 | | |
+| Candidates ending in 30 or more zeros | 0 | 0 | 0 | 0 | 0 | 0 | | |
+
+(Results so far. The 30- and 32-cell scans were still running when this was written; the statements below cover the
+widths in the table, and will be extended when they finish.)
+
+**What it excludes.** A counterexample is a finite configuration whose column 0 is 0101… from some time on. Shifted
+in time, its column 0 is 0101… from $t = 0$ (or 1010…, one step later). If its right half has at most 32 cells and
+its left half ends at depth $d$, the forced left half is zero from depth $d + 1$ to 126. A zero run of $126 - d$
+cells would have to occur, and none longer than 17 does. **So no finite configuration whose right half has at
+most 28 cells (so far) and whose left half has at most 108 cells keeps a column at 0101… for ever.** Rung 1 covered longer
+left halves (to about 240 cells) but only right halves up to 18 cells.
+
+**The plateau.** The longest run to depth 126 is 17 at every width from 18 cells on, although the number of right
+halves grows 1,000-fold by 28 cells. It is the bottleneck of §8.17 again: at a fixed depth, wider seeds buy nothing.
