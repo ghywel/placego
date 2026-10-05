@@ -4,7 +4,7 @@ for column 0 = 0101..., deeper than before; and the record witnesses, for a reno
 
 RUN-ON:     cpu (records.c, C99 with OpenMP, driven from Python 3)
 COMMAND:    python3 tests/probes/lexicon/rule30_records.py [DMAX=61] [THREADS=all]   (Cloud: depths 1 .. DMAX, and 65)
-            python3 tests/probes/lexicon/rule30_records.py local [THREADS=all]           (JOB M4, below)
+            python3 tests/probes/lexicon/rule30_records.py local [THREADS=all] [DEPTHS=69,73,77]   (JOB M4, below)
 COST:       Cloud: about an hour on 4 cores (depths 60, 61 and 65 dominate: 2^30, 2^30 and 2^32 prefixes, at 1.7 us
             each per core).
 
@@ -39,17 +39,20 @@ REFUTED-BY: RC0 failing (the instrument); RC1 to RC5 failing.
 JOB M4 (Cloud wrote, 2026-10-05; for Local; CLOUD-LOCAL.md lead M4). The records at depths 69, 73 and 77 (and, if the
 machine can be left for two days, 81), beyond what Cloud's four cores can do in a session.
 RUN-ON:     cpu, the machine with the most cores (records.c is OpenMP; it scales linearly)
-COMMAND:    python3 tests/probes/lexicon/rule30_records.py local [THREADS]
-            (or by hand: cc -O2 -fopenmp -o /tmp/records tests/probes/lexicon/records.c && /tmp/records 73 10)
+COMMAND:    python3 tests/probes/lexicon/rule30_records.py local 10          (depths 69, 73, 77 on 10 threads; about
+            17 hours on 10 cores. Add a fourth argument 69,73,77,81 to include 81, two more days.)
 COST:       per core, about 2 hours at depth 65, then 16 times more every 8 depths: about 8 h at 69, 32 h at 73,
             128 h at 77 and 21 days at 81, divided by the number of cores. Depth 89 needs a GPU port (about 16
             times 81).
 PREDICTIONS (written 2026-10-05 before any run of this job, and before Cloud's own run of depths 42 to 65):
   M4a (blind): RC1 and RC2 hold at every depth run: 0.75 d <= R(d) <= 1.35 d, and 1.75 d <= d + R(d) <= 2.35 d.
   M4b (blind): the record never falls by more than 6 cells from one depth run to the next one run.
-HAND-BACK: commit the printed "R", "H" and "W" lines for each depth to tests/probes/lexicon/rule30_records_local.txt
-(the script writes it), add a row to CLOUD-LOCAL.md's ledger with the machine, cores and wall time, and push to main as
-CLOUD-LOCAL step 4 says. Cloud will record the verdicts in this header.
+STOP EARLY (CLOUD-LOCAL step 4): if a depth's run passes three times its COST, or if M4a fails at depth 69 (that
+would change the direction), stop and hand back at once with what exists.
+HAND-BACK (finished): the script writes the "R", "H" and "W" lines of every depth run to
+tests/probes/lexicon/rule30_records_local.txt; commit it. Record M4a and M4b as HELD or REFUTED, with the records,
+in an "OUTCOME of JOB M4" block directly below this paragraph. Add a "Local ran M4" ledger line to CLOUD-LOCAL.md
+(machine, cores, wall time per depth) and push main. The owner then tells Cloud "Local ran M4".
 """
 import importlib.util, math, os, pathlib, subprocess, sys, tempfile
 from multiprocessing import Pool
@@ -57,8 +60,13 @@ from multiprocessing import Pool
 HERE = pathlib.Path(__file__).resolve().parent
 LOCAL = len(sys.argv) > 1 and sys.argv[1] == "local"
 _nums = [a for a in sys.argv[1:] if a != "local"]
-DMAX = int(_nums[0]) if _nums and not LOCAL else 61
-THREADS = int(_nums[-1]) if (LOCAL and _nums) or len(_nums) > 1 else (os.cpu_count() or 1)
+if LOCAL:
+    THREADS = int(_nums[0]) if _nums else (os.cpu_count() or 1)
+    LOCAL_DEPTHS = [int(x) for x in _nums[1].split(",")] if len(_nums) > 1 else [69, 73, 77]
+    DMAX = 61
+else:
+    DMAX = int(_nums[0]) if _nums else 61
+    THREADS = int(_nums[1]) if len(_nums) > 1 else (os.cpu_count() or 1)
 FAILS = 0
 
 
@@ -154,7 +162,7 @@ def main():
     exe = build()
     if LOCAL:
         lines = []
-        for d in (69, 73, 77, 81):
+        for d in LOCAL_DEPTHS:
             R, count, hist, wits, out = run(exe, d)
             print(f"   depth {d}: record {R} (ends at {d + R}), {count} record prefixes", flush=True)
             lines.append(out)
