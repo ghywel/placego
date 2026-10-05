@@ -1396,3 +1396,23 @@ predictions.
   Rule 30, any finite bound on R(d), not only d + 4, settles Conjecture LR for 0101... (König's lemma turns
   unbounded runs into an infinite one). So the target has Bertrand's shape, not Cramer's.
 
+## After the wheel dig: Rule 30's siblings in arithmetic (surveyed 2026-10-05, by Cloud)
+
+Scope: RULE30-PRIZE.md §8.43 and §8.44 leave the cost side of period 2 open: why a condition at the 0101 wall
+costs a bit. Does any sibling problem have a proved size argument of the kind PRIOR-ART's prime-gap parallel
+points to?
+- **Kopra, J., "A natural class of cellular automata containing fractional multiplication automata, Rule 30, and
+  others"**, arXiv:2202.13809 (abstract read). It defines rapidly left expansive cellular automata, a class
+  containing Rule 30 and the automata that multiply by a fraction p/q in a suitable base. Jen's proposition on
+  aperiodic columns generalises to the class. Rule 30 is in the class; it is not a multiplication automaton.
+- **Mahler's 3/2 problem** (1968; checked via https://en.wikipedia.org/wiki/Mahler%27s_3/2_problem). It asks whether
+  any xi > 0 keeps every fractional part of xi (3/2)^n below 1/2 (a "Z-number"). It is open.
+- **Flatto, L., Lagarias, J. C. and Pollington, A. D., "On the range of fractional parts {xi (p/q)^n}"**, Acta
+  Arithmetica 70 (1995), 125-147 (statement checked through the search summary; the paper not read). For coprime
+  p > q >= 2, any interval holding every {xi (p/q)^n} has length at least 1/p. This is a proved size argument on
+  the multiplication side of Kopra's class, partial, as Mahler's conjecture needs 1/2.
+- **What it means here.** In the same class as Rule 30, the question of the same shape is also open, and the best
+  known result is a size bound. Its proof uses the arithmetic of p/q (integers and residues), which Rule 30 lacks.
+  A Rule 30 analogue would need a substitute for that arithmetic. It is recorded as the nearest proved size
+  argument, not as a route.
+
