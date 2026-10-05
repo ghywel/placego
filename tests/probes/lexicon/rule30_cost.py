@@ -79,6 +79,11 @@ MODE exact. PREDICTION, written 2026-10-05 after phases' outcome and before exac
 phase alone, right-paid steps with N >= 256):
   CP3 (blind; bold): after a black cell the step is exactly all or nothing: rho is exactly 0 or exactly 1 at every
       such step. After a white cell, rho is exactly 0 or 1 at fewer than half the steps.
+
+OUTCOME of exact, 2026-10-05 (seconds): after a black cell, 208 of 313 steps are exactly 0 or 1; the other 105 are
+  mostly small (0.023, 0.057, 0.11, 0.125, ...). After a white cell, 54 of 271.
+  CP3 REFUTED: the black conditions are mostly, not exactly, all or nothing (66% against 20% after white). No exact
+     lemma here; the two-part picture stands as a tendency.
 """
 import math, pathlib, subprocess, sys, tempfile
 

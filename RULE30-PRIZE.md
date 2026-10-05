@@ -3080,3 +3080,8 @@ So the bounded-debt statement has a natural two-part form for a proof. The black
 test on the forced left half. The white conditions are paid through column 1, the channel that §8.20 bounds at
 about 0.13 bits per visible bit. A proof would show that the white conditions cannot keep passing a positive
 fraction of survivors while the black tests keep passing, and the count says they do not, beyond about 3 steps.
+
+**Not exactly** (mode `exact`, predicted first). I predicted that after a black cell the step is always exactly
+all or nothing. It is not (CP3 refuted). 208 of 313 such steps are exactly 0 or 1, against 54 of 271 after a white
+cell, and the rest are mostly small fractions (0.02 to 0.13). The two-part picture is a strong tendency, not a
+lemma.
