@@ -38,7 +38,18 @@ PREDICTIONS, written 2026-10-06 before this script's first run.
 REFUTED-BY: W0, W1, W2 or CF failing (the engine or the harness); W3 failing is the result of the year (a column 1
   that keeps the left half zero: follow it deeper before anything else); W4 to W6 the other way.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-06 (8 threads, 32 minutes beside two other jobs; results in rule30_records_word.txt):
+  W0 PASSED (62 depths). W1 FAILED on its wording: the word 1 gives the universal fibre, R = 1 from odd depths and
+  0 from even ones (rigidity's R3 says "the longest run is 1", which is the maximum over depths; my control said "1 at
+  every depth"). CF PASSED (the word 0 caps). W2 FAILED by 2 for one rotation: 0001: 54, 0010: 52, 0100: 58, 1000: 56
+  (the prose said 54 to 58); 00001: 45, 66, 64, 48, 53 (the prose's 45 to 66). A rerun of rule30_rigidity.py (14 free
+  bits, 4 jobs, 12 minutes) gave exactly 54, 52, 58, 56 for the rotations of 0001: the two implementations agree.
+  R(0001, d) at d = 8, 12, ..., 44: 24, 28, 32, 52, 52, 80, 76, 84, 96, 100 (from 2^33 prefixes at 44).
+  R(00001, d) at d = 10, 15, ..., 45: 35, 45, 50, 85, 85, 105, 115, 130 (from 2^36 prefixes at 45).
+  W3 HELD: no cap. W4 HELD (R/d at 44 is 2.27 against 2.17 at 24; at 45 is 2.89 against 3.40 at 25). W5 REFUTED: the
+  slopes are 2.11 (0001) and 2.40 (00001), below the bands [2.3, 3.1] and [3.0, 4.2]: the record's share of the coin's
+  slope falls with freedom (0.83 for 0101, 0.70, 0.60). W6 HELD. The histograms show every forced cell halving the
+  survivors exactly (from depth 45 with 00001: 34,359,738,788 of 2^36 end at run 0, 17,175,829,450 at run 5, ...).
 """
 import pathlib, subprocess, sys, tempfile
 from ompflags import OMP

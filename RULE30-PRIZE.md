@@ -2149,7 +2149,8 @@ diagonal 60000 for instance, is erased by the resets (LS11 held).
   by a clock that belongs to the left side itself.
 
 Whether branch points go on for ever, giving infinitely many left sides, is open. Below diagonal 160,000 there are two
-on each side. None of this bears directly on the centre column, which lies in the chaotic core, far from the band.
+on each side. (Note, 2026-10-06: the probe's recorded list also has a doubling at diagonal 87,866, period 16 to 32,
+which this prose omitted; §8.60 took the strip to a million diagonals and found nothing more.) None of this bears directly on the centre column, which lies in the chaotic core, far from the band.
 What it shows is a place where Rule 30's chaos is forgotten completely and provably.
 
 ### 8.32 The wheel on the grid: the owner's square peg (2026-10-05)
@@ -3740,3 +3741,78 @@ open.
 let alone A⁗. Nothing for the counting form. The left half's edge is where Rule 30 is most orderly, and the prize
 lives in the chaotic core, so a method that lives on the edge was always going to reach only the columns 1 that
 echo their own beginnings.
+
+
+### 8.60 The small items: the wall never sees the far end, the mostly-zero words, and the left side to a million (2026-10-06)
+
+The board in PERIOD-TWO.md §6 listed eight items found in this file that had never been leads. The owner asked for
+them. Three took runs, each with predictions written first; two (why the forced cells inside a long run stay 0,
+§8.2; whether a structural reason for balance reaches the core, §8.34) went to GPT by the split agreed in the
+messages table of CLOUD-LOCAL.md on 2026-10-06 at 00:17. The runs are `rule30_sync.py` (five runs),
+`rule30_records_word.py` with the engine `records_word.c`, and `rule30_leftside_million.py`.
+
+**1. Are the walls synchronised in time across right halves? (§8.10's untested hint.)** They are, and the reason
+is not a clock. The first run measured the Fano factor of the number of halves slipping at each window, over the
+3,936 unlocked right halves of up to 12 cells: 5.8 in the formation (windows 2 to 11), 2.7 in the middle, 3.1 late
+(windows 40 to 72), where independent halves give 0.5, 0.86 and 0.92 (the value $1 - \sum p_h^2 / \sum p_h$, which
+the shifted control reproduces; my counterfactual's band had assumed rare slips and missed it). I predicted the
+synchrony would fade; it did not (S2 refuted). Four more pre-registered runs found why:
+- The excess does not grow with the population (SA1 refuted: 2.05 at 15,744 halves against 2.42 at 3,936), so it
+  is not a modulation shared by all halves but clusters.
+- Grouping the halves by their six cells nearest the wall, the 64 groups' slip counts are uncorrelated (0.009);
+  within groups the excess is 1.24 (SB3 held). No common clock. The alternative that would have survived a
+  refutation, the wall's parity clock (every wheel's phase is even, and the phases favour 4, 6 and 8), is out.
+- **The synchrony is duplication.** Among the 3,936 unlocked halves there are only 1,968 distinct columns 1 (983
+  traces come from one half, 495 from two, 241 from three, up to one from twelve; SC1 missed by 32). Keeping one
+  half per trace, the late Fano factor is 0.75 against an independence value of 0.73 (SC2 held).
+- **Where the duplicates come from: the wall often never sees the far end of its right half.** A half $R$ and its
+  sister $R + 2^{12}$ (one more black cell at position 13) have the *same* column 1 for all 4,096 steps in 1,479
+  of 3,936 cases (37.6%). The rest first differ at a median of 34 steps (quartiles 26 and 50; SB1's second half
+  refuted). Sisters that differ at all are uncorrelated afterwards (0.001; SB2 refuted). In all 1,479 identical
+  pairs the two space-time patterns still differ at time 4,096, but only within 60 cells of the right edge (SC3
+  held, 1,479 of 1,479), and 200 of 200 stay identical to 16,384 steps (SC4 held).
+
+The mechanism, stated as an observation: a change in Rule 30 always travels right at speed 1, because the next
+value is the XOR of the left neighbour, so a change at the far end rides with the right edge for ever. It reaches
+the wall only if its left front escapes into the chaotic core, and the escape is decided in the first few dozen
+steps: either within about 50 steps or never. The decision is made at the far end: grouping all 4,096 halves by
+their outermost six cells, the share of identical sisters is 0 or 1 in 56 of the 64 groups (exploratory, no
+predictions written). Not proved: that a change confined to the right edge's band (the thin strip of §8.30) can
+never re-enter the core. Not explained: the 37.6%. Both are in the messages to GPT. For
+the prize this is a fact about the instrument, not the problem: the counterexample searches over right halves
+(§8.21) have been testing fewer distinct columns 1 than halves, about half as many at width 12.
+
+**2. LR for the words that leave column 1 almost free (§7's "mostly zeros").** `records_word.c` computes the exact
+record $R_w(d)$ for any periodic wall word $w$, by the anti-diagonal recurrence of §8.36 generalised: a free bit
+branches below depth $d$ and is forced above it. Its controls: $R(d)$ for the 0101 wall equals the record file at
+every depth 1 to 61 (W0); the word 0 reaches the cap from every depth, the word 1 gives the universal fibre
+(0 from even depths, 1 from odd; my control W1 had said "1 at every depth", a wrong statement of the fibre, and
+failed on that wording). W2, a cross-check against `rule30_rigidity.py`'s 14-free-bit maxima, gave per rotation 54, 52, 58, 56 for 0001 and 45, 66, 64, 48, 53 for 00001, against the recorded ranges "54 to 58" and "45 to 66": one rotation, 0010, lies 2 below the prose's range. Rerun here, `rule30_rigidity.py` itself (14 free bits, four jobs) gives exactly 54, 52, 58, 56, so the two implementations agree and the prose's lower end was imprecise.
+
+| $d$ | 8 | 12 | 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| $R_{0001}(d)$ | 24 | 28 | 32 | 52 | 52 | 80 | 76 | 84 | 96 | 100 |
+
+| $d$ | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 |
+|---|---|---|---|---|---|---|---|---|
+| $R_{00001}(d)$ | 35 | 45 | 50 | 85 | 85 | 105 | 115 | 130 |
+
+No run reaches the cap at any depth (W3 held: LR holds to 36 free bits for these words). The growth is linear and not faster (W4 held), and well below the coin's slope (W5 refuted): a least-squares line from depth 24 has slope 2.11 for 0001 against the coin's 3, and from depth 25 slope 2.40 for 00001 against the coin's 4; for 0101 the measured law is 0.83 against 1. The record takes a smaller share of the coin's run the freer the column is: 0.83, 0.70, 0.60. The histograms printed by the engine (`rule30_records_word.txt`) show why the bulk is exactly a coin: from depth 45 with 00001, of the $2^{36}$ prefixes exactly half end at the first forced cell (run 0), a quarter at the next (run 5), an eighth at run 10, and so on down to the 314 that reach 130; every forced cell halves the survivors to the last digit, as left-permutivity says it must. The record is the tail of that halving, and the tail is shorter than independent halvings would give (the merging of §8.38), more so the more free bits there are. $R < 4d$ and $R < 5d$ held throughout (W6).
+
+**3. Do branch points go on for ever? (§8.31.)** Lemma B2 (§8.59) says the eventually white diagonals never stop,
+and each is a doubling or a branch; its proof also gives an explicit if weak bound: while the period is $P$, the
+pairs of consecutive diagonals' regimes are all distinct, so the period must grow within $4^P$ diagonals.
+`rule30_leftside_million.py` ran the single cell's strip of $10^6$ diagonals for $2.2 \times 10^6$ steps (253 s)
+and certified it periodic with period 32. Its eventually white diagonals: 2, 7, 28, 399 (doublings, periods 1 to
+16), 53,207 and 58,286 (branches), 87,866 (a doubling, 16 to 32), and **none between 87,867 and 1,000,000**. The
+list to 160,000 was already in `rule30_leftsides.py`'s recorded outcome; §8.31's prose had not repeated the
+doubling at 87,866, and my predictions M0 to M2, built on the prose, missed it (M0 failed on that, M1 and M2
+refuted). The worst-phase settling front of §8.59 has slope 2.0057 at a million (M3 held). The counterfactual
+("not yet periodic 1,000 steps before the end") was ill set: the strip settles at about 2.006 steps per diagonal
+and had 190,000 steps to spare. What the run adds: the gaps between eventually white diagonals, 5, 21, 371,
+52,808, 5,079, 29,580, and then more than 912,000, follow no pattern seen; whether the branches among them go on
+for ever stays open, and the next white diagonal lies beyond a million.
+
+**What the three items give the prize.** Nothing directly, as expected of small items. Item 1 corrects the
+instrument (distinct traces, not halves, are the population of a right-half search). Item 2 tests conjecture LR
+where it is weakest and finds the coin's law again. Item 3 settles a number and sharpens a question.

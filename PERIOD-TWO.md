@@ -181,11 +181,11 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | A renormalisation from depth $d$ to $d/2$ (§7) | **CLOSED** | §8.36, RC5: none beyond chance. | nothing |
 | What makes runs of exactly 12 and 14 (§8.1) | **DONE** | The templates (§8.2), then the wheel (§8.5, §8.9). | nothing |
 | The three remains of the entropy squeeze (§8.33) | **DONE** | The constant is certified (0.1292), the two worlds are measured, and the uniform bound on patterns stands. | The uniform bound has found no use yet. |
-| Are the walls synchronised in time across right halves? (§8.10) | **OPEN**, never tested | A hint only: the window speeds swing more than independent right halves would give. | One cheap run. |
-| Why the forced cells inside a long run stay 0 (§8.2) | **OPEN**, minor | Lemma 4 says where the right side's bit enters, not where runs end. | Not looked at since. |
-| LR for long words that are mostly zeros (§7) | **OPEN**, outside period 2 | Explored with 18 free bits only. | Not looked at since. |
-| Do branch points go on for ever? (§8.31) | **OPEN**, off the centre column | Two on each side below diagonal 160,000. Proved since (§8.59, Lemma B2): the diagonals' periods are unbounded, so eventually white diagonals, each a doubling or a branch, go on for ever. | Whether the branches among them go on for ever. |
-| Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2 | Balance holds in a region with no randomness. | Not looked at since. |
+| Are the walls synchronised in time across right halves? (§8.10) | **DONE** | Yes, and it is duplication: only 1,968 distinct columns 1 among 3,936 unlocked halves; a half and its sister with one more far cell give the same column 1 in 37.6% of cases for ever, because a far change rides the right edge (§8.60, `rule30_sync.py`, five runs). | Why the escape into the core is decided in the first 50 steps or never; the 37.6% (to GPT). |
+| Why the forced cells inside a long run stay 0 (§8.2) | **OPEN**, with GPT | Lemma 4 says where the right side's bit enters, not where runs end. Taken by GPT (messages table, 2026-10-06 00:17). | A reasoning item. |
+| LR for long words that are mostly zeros (§7) | **DONE** to 35 free bits | `records_word.c`: exact records for 0001 to depth 44 and 00001 to depth 45 (§8.60). No run reaches the cap; the growth is linear, below the coin's slope. | Nothing; a run deeper is only more of the same. |
+| Do branch points go on for ever? (§8.31) | **PART** | Lemma B2 (§8.59): eventually white diagonals never stop, each a doubling or a branch. To a million diagonals (§8.60): 2, 7, 28, 399, 87,866 double; 53,207 and 58,286 branch; none between 87,867 and 1,000,000. | Whether the branches go on; the next white diagonal is beyond a million. |
+| Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2, with GPT | Balance holds in a region with no randomness. Taken by GPT (messages table, 2026-10-06 00:17). | A reasoning item. |
 
 *Owed checks.*
 
@@ -338,6 +338,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `rule30_jenclock.py`, `jenclock.c` | Jen's theorem with a clock (§8.54): Theorems A and B, checked | seconds |
 | `rule30_sturmian.py` | Theorem E (§8.57): every Sturmian column 1 is excluded | 2 minutes |
 | `rule30_window.py` | Theorem A′ (§8.58): the window principle | 20 seconds |
+| `rule30_sync.py`, `rule30_records_word.py` + `records_word.c`, `rule30_leftside_million.py` | the small items (§8.60): the slips' synchrony is duplication; exact records for any wall word; the left side to a million diagonals | a minute; 15 minutes; 5 minutes |
 | `rule30_band.py` | Lemmas B1 to B3, Theorems A‴ and A⁗, Corollary F (§8.59): the band of stripes meets the window principle; the universal strip to 53,200 diagonals with a certificate | a minute |
 | `ladder_deep.c`, `rule30_ladder_local.py` | the layer ladder to depth 318, in parallel (§8.56) | minutes to hours |
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |
