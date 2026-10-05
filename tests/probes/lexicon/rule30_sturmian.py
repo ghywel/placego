@@ -63,7 +63,8 @@ SECOND ADDENDUM, written 2026-10-05 (22:35) before the third run: any arcs, for 
   CF3 (counterfactual, must fail): the same test at the scale q = 461 (followed by the partial quotient 1) does not
       fail for every sample.
 
-OUTCOME of the third run: (below)
+OUTCOME of the third run, 2026-10-05: ALL CHECKS PASS. SP5 PASSED: all 20,000 samples fail the conditions, at
+  q = 483 and at q = 10604 alike. CF3 PASSED: at q = 461 only 54 of 20,000 fail.
 """
 import pathlib, random, subprocess, sys, tempfile
 import numpy as np

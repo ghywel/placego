@@ -3451,9 +3451,26 @@ disagree once $q_{n-1} > 2C + 8$. $\square$
   starts at time $s_a$ to last only about $2s_a + q$. Real right halves kick the wheel at a steady rate (§8.11),
   so their periodic stretches are short and $(\ast)$ never binds.
 
-**Not covered.** Codings by an arc whose ends are not on one orbit (a length outside $\mathbb{Z}\alpha + \mathbb{Z}$):
-the two ends then break the period at unrelated times, and Step 1's gap of $q_{n+1}$ between breaks is lost. Rotations
-on more than one circle. Any kicked wheel.
+**Theorem E″ (any arcs, for a typical rotation number; added the same night).** Let $c_s = f(\theta + s\alpha)$,
+where $f$ is 1 on a finite union of arcs with $r$ end points in all, and 0 elsewhere. If $\alpha$ has infinitely
+many partial quotients larger than $2^{r+1}$, the forced left half is not eventually zero, for every $\theta$.
+Almost every $\alpha$ has unbounded partial quotients, so for almost every rotation number **no coding by arcs at
+all** can go with a finite left half. These sequences have complexity up to $r\,n$.
+
+*Proof.* $c$ breaks period $q_n$ at time $s$ exactly when $x_s$ lies in one of $r$ arcs of length $|\delta_n|$, one at
+each end point. Let $d_1 < d_2 < \dots$ be the break times. Step 0 on the stretch before $d_1$ and on each stretch
+between consecutive breaks gives $d_1 \le q_n + C + 1$ and $d_{k+1} \le 2 d_k + q_n + C + 3$, so
+$d_k < 2^k (q_n + C + 2)$. Two of the first $r + 1$ breaks belong to the same end point, and returns to an arc of
+length $|\delta_n|$ are at least $q_{n+1}$ apart. So $q_{n+1} \le d_{r+1} < 2^{r+1}(q_n + C + 2)$, which fails
+when $a_{n+1} > 2^{r+1}$ and $q_n$ is large. $\square$
+
+Checked (SP5, predicted first): with partial quotients 1, 20, 1, 20, … and one arc with unrelated ends, all 20,000
+random arcs and phases fail the conditions at both scales that precede a quotient of 20. At a scale that precedes
+a quotient of 1 only 54 fail (the counterfactual).
+
+**Not covered.** Arcs with unrelated ends when the partial quotients of $\alpha$ stay small: Step 1's gap of
+$q_{n+1}$ between breaks is then not enough by itself, and the three-scale argument of Step 4 would have to follow
+two end points at once. Rotations on more than one circle. Any kicked wheel.
 
 **The general form of the condition, and where it has no grip.** Step 0 holds for every column 1: if the left
 half is zero beyond depth $L$, then for every $q$ the times at which $c$ breaks period $q$ start by $q + C + 1$ and
