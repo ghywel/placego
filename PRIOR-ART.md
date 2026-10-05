@@ -1600,3 +1600,38 @@ admissible column 1 is eventually periodic (Morse and Hedlund's criterion, Kopra
   adjacent ones (Singh, Historia Math. 12 (1985)).
 - Euclid and Erdős's proof of Bertrand (a gap between two exponents), Kirkwood gaps (long quiet behaviour proves
   nothing), KAM's golden torus, satin weaves, Huygens's gear ratios. Strength 3 to 1.
+
+**Philosophy and logic** (the owner's note: "We should not discount philosophical sources as irrelevant just because
+they contain no concrete math. Their math is logic, truth, gates." An eighth survey agent; sources not checked by
+Cloud):
+- **Eternal recurrence and Simmel's wheels.** Nietzsche argued that finitely many centres of force must pass through
+  finitely many combinations and repeat (https://www.gutenberg.org/files/52915/52915-h/52915-h.htm). Simmel replied
+  with three wheels on one axle, one turning at 1/pi the speed of another, which never line up again
+  (https://schwitzsplinters.blogspot.com/2012/10/nietzsches-eternal-recurrence-scrambled.html). The pigeonhole case
+  and the open case, in one argument: a wheel with eventually periodic kicks gives a periodic column 1, closed by
+  Jen; the open case is exactly kicks that never become periodic, Simmel's 1/pi. Strength 4, as a picture.
+- **Potential infinity** (Euclid IX.20 says "more than any assigned multitude", never "infinite"; Aristotle;
+  Archytas's staff at the edge of the world; https://plato.stanford.edu/entries/infinity/). The form of the missing
+  statement: for every width w, a bound B(w) by which every configuration on w cells breaks the 0101 centre. Each
+  B(w) is a finite check; the proof needed is a formula for B or a step from w to w + 1. This is PERIOD-TWO.md §7,
+  question 1. Strength 4.
+- **Hume, Popper and Carroll's Tortoise** (https://plato.stanford.edu/entries/induction-problem/;
+  https://en.wikipedia.org/wiki/What_the_Tortoise_Said_to_Achilles). The coin model is a uniformity principle, so
+  more runs that confirm it go round Hume's circle; each restatement hands the Tortoise one more premise, and what
+  is missing is a rule of inference. "Eventually 0101" has the form "there is a T such that for every t", which no
+  finite run can verify or refute. The answer to the owner's ouroboros, from philosophy. Strength 4.
+- **Kripke's quus and Goodman's grue** (https://iep.utm.edu/kripkes-wittgenstein/). Finitely many observations fit
+  infinitely many rules. Here: every finite stretch of 0101 is realised by some seed, so an argument from windows of
+  time cannot work, and a proof must use the finiteness of the seed. Strength 3.
+- **The tetralemma** (Nagarjuna's catuskoti: A, not A, both, neither; Belnap's four-valued logic;
+  https://en.wikipedia.org/wiki/Tetralemma). It names the fourth game that RULE30-PRIZE.md §8.40 lacked: neither,
+  no conditions, the baseline. It suggests a measurement: with $N$ the count of seeds that survive each game,
+  $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$ near 1 says the black and white conditions are
+  independent, as the coin model assumes; a ratio falling towards 0 would be a measurable obstruction. Strength 3.
+- **Boole and Jevons** (https://plato.stanford.edu/entries/boole/). Boole defined x + y only for disjoint classes
+  (exclusive or), and refused Jevons's inclusive or. Since $c \lor r = c \oplus r \oplus cr$, Rule 30 is the linear
+  Rule 150 plus the single term $cr$: all its nonlinearity is the overlap Boole would not interpret. Strength 3.
+- Llull's rotating discs, Leibniz's binary columns (01, 0011, 00001111...), Cusanus's infinite circle as a line,
+  Dante's 3-sphere (two balls glued along a sphere, like two halves glued at a wall; Peterson, Am. J. Phys. 1979),
+  Borges's Library and forking paths, Zeno: pictures, strength 2 to 1. No tether was found for Kant, the Liar or
+  Funes.

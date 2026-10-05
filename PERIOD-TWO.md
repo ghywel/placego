@@ -169,6 +169,9 @@ prize needs a statement about every single finite configuration. The questions a
    but ever more rarely. Does the forced walk's law stay bounded, as next to a white wall, or grow like the
    logarithm of the number of histories, as the coin says? This separates "zero entropy" from "finiteness" in this
    problem (the correction to §8.45).
+8. **The fourth game** (§8.49, from the tetralemma). Count the seeds that survive the black, white, both and
+   neither games, and measure $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$. A ratio near 1
+   confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
 
 ## 8. Reading order
 

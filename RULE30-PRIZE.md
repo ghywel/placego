@@ -2921,3 +2921,29 @@ Bell's theorem limits what local hidden variables can reproduce, and 't Hooft's 
 of that bears on whether one finite configuration can keep a periodic centre: Rule 30's question is about a single
 deterministic orbit, with no measurement and no statistics. The likeness is real as a picture, of a hidden
 variable that decides an outcome; it is not a route.
+
+### 8.49 Addendum to §8.47: philosophy and logic (2026-10-05)
+
+The owner: "Many great theorems were devised without even the language of maths. As we found with the 3-sphere,
+Dante had a visualisation with absolutely no maths. ... Their math is logic, truth, gates." An eighth survey agent
+covered philosophy and logic (PRIOR-ART, the end of "The owner's wide survey"). Four things came back that the
+mathematical surveys did not give:
+- **The open case, in one picture.** Nietzsche argued that finitely many states must recur. Simmel answered with
+  wheels turning at an irrational ratio, which never line up again. Kicks that become periodic make column 1
+  periodic, and Jen closes that case. So the open case is exactly a wheel whose kicks never settle into a period,
+  Simmel's irrational wheel.
+- **The ouroboros, answered from philosophy.** The coin model is a uniformity principle, and more confirming runs
+  cannot prove it (Hume). Each restatement adds a premise, and what is missing is a rule of inference (Carroll's
+  Tortoise). And by Kripke's quus, finitely many observations fit infinitely many rules: every finite stretch of
+  0101 is realised by some seed. A proof must use the finiteness of the seed, as PERIOD-TWO.md §7, question 1 does.
+- **The fourth game.** The tetralemma (A, not A, both, neither) names the game §8.40 left out: neither, no
+  conditions at all. It gives a measurable test of the coin model's independence:
+  $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$, from counts of surviving seeds. Near 1, the
+  black and white conditions are independent; well below 1, they obstruct each other, which a proof could use. Not
+  yet measured.
+- **Where the nonlinearity lives.** Boole's "or" was exclusive, and he refused Jevons's inclusive one. Since
+  $c \lor r = c \oplus r \oplus cr$, Rule 30 is the linear Rule 150 plus the one term $cr$: everything that makes
+  Rule 30 hard is the overlap Boole would not interpret. A hypothesis, untested: the kicks are born where that term
+  fires near the wall.
+None of these is a proof. Two of them are tests that could be run: the independence ratio and the hypothesis about
+where kicks are born.
