@@ -36,6 +36,22 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       between two domains carries a fixed phase difference however far it travels.
   KK3 (blind): the width tells at least 0.3 bits beyond the class.
 REFUTED-BY: KK0 failing (the instrument); KK1 to KK3 failing.
+
+OUTCOME, 2026-10-05 (the first run, W = 11, T = 2048, 18 seconds; 11,437 test slips with a clean kick):
+  KK0 PASSED: (a) class 32 kicks +3 x3431, +4 x1269, +5 x753, +2 x346, +6 x255; class 52 kicks -3 x1837, -5 x1454,
+     -1 x987, -4 x435, -6 x305, -2 x146; (b) shuffled features stay within 0.002 bits of H(kick | class) = 1.929.
+  KK1 REFUTED: the outer phase is read cleanly for 93% of slips, but gives the kick exactly in only 19.8%. It is off by
+     +1 notch in 32% of them, and within 2 notches in 85%. So the kick is roughly carried in, not exactly.
+  KK2 REFUTED as stated, with a real signal: the origin column tells 0.208 bits beyond the class. In class 32, walls
+     traced to column 12 kick +6 in 218 of 304 cases, against +3 for those traced to 10 or 11. Distance travelled
+     matters somewhat; it does not set the kick.
+  KK3 VOID, not evidence: the width was 0 for every slip. Column 1 takes up its new phase at once, at the first step
+     it leaves the old one, so this measure could not carry information.
+  An exploratory look after the run (not a test; scratchpad, not kept as a probe). The domain behind a wall is not
+  rigid. Read in bands of two columns (1-2, 3-4, .., 9-10) over the same windows after the arrival, the phase
+  differs between bands by whole notches. The steps between bands move toward column 0 over the next 30 steps (in
+  the commonest pattern, from columns 7-8 at t1 + 2 to columns 1-2 at t1 + 32). The probe's next mode tests that
+  phase field, with predictions written first.
 """
 import math, random, sys, pathlib
 from collections import Counter, defaultdict
