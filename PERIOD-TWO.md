@@ -5,6 +5,9 @@ person, or for an assistant given this file: read it, then the documents it name
 checks at the end, and stop. Do not start an experiment you were not asked for. Run `git log --since=2026-10-05` to
 see what moved after this was written.*
 
+*What is open, running, done or closed: the status board in §6. It is kept current; the rest of this file is the
+record.*
+
 ## 1. The question
 
 Wolfram's Rule 30 Prize Problem 1 asks whether the centre column of Rule 30, started from one black cell, ever
@@ -122,30 +125,96 @@ It found the same gap everywhere: theorems that holding a chaotic system costs i
 cases, and the prize is about every single case. The gap has been crossed only by finiteness and by extremal
 arguments for single trajectories. §7 turns that into questions.
 
-## 6. Live leads (2026-10-05)
+## 6. Leads and their status
 
-1. **The wheel's kicks** (§8.43, §8.44). A kick's size comes from the interior, not from the wall's origin, its
+**The status board** (updated 2026-10-05 23:06; the time is from the shell). Every lead in this file, in RULE30-PRIZE.md and
+in the mathematics table of CLOUD-LOCAL.md has one row here. When a lead moves, its row here and the tag at its
+item change in the same commit. Nothing is deleted: a finished item keeps its text, and its title is struck
+through.
+
+The tags. **OPEN**: nothing settles it, and work can start. **PART**: part is settled, and the rest is named.
+**RUNNING**: a job is on a machine. **DONE**: acted on, and the result is recorded. **CLOSED**: a dead route, or
+settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be done with what is here.
+
+*The prize, and the routes to it.*
+
+| Lead | Status | What has been done | What is left |
+|---|---|---|---|
+| Q1, the counting form (§5's missing statement; M1 in CLOUD-LOCAL.md) | **OPEN** | Measured to width 26, and by right parts beyond width 100 (§8.51 to §8.53). Restated as a count of window contents (§8.58). | The proof. No known method reaches it. |
+| 6.1, the wheel's kicks | **OPEN** | Narrowed to a kicked rotation (§8.43). The wheel's rigidity alone is refuted as a bound (§8.44). | A statement about the kicks' sizes, which come from the interior. |
+| Q2, the move to a finite window | **OPEN**, not started | Nothing direct. Theorems E and E″ (§8.57) exclude classes of column 1. They do not force periodicity. | A condition that is not local in column 1. |
+| Q3, a machine-found certificate | **OPEN**, not started | Only the SAT crib (§8.37), which answered a different question. | An encoding of the forced walk as string rewriting, then the search. |
+| Q6, LR refuted by construction | **PART** | The exact records cover every column 1: no left half is zero from any depth up to 85 onwards (§8.36, §8.37). | Depths beyond the records. Nothing constructive has been tried. |
+| Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). | Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Toeplitz and automatic sequences (Thue–Morse has no long repetitions, so the method has no grip on it). Kicked wheels. |
+| Q9, the Collatz twin | **PART** | The least-residue lemma (PRIZE-PROBLEMS.md §7.4). The window principle on both sides, W1 to W3 (§7.5). Exponential sums cannot reach a single case. | The literature check (below). A Collatz statement beyond complexity $1.71\,n$. |
+| Rung 3, periods 3 to 6 (RULE30-PRIZE.md §6) | **PART** | Horizons measured for every word up to period 4 (§8.42). Theorems A, A′, B and E hold for every period. | Nothing specific to periods 3 to 6 has been tried since. |
+
+*Finished or closed.*
+
+| Lead | Status | What settled it | What is left |
+|---|---|---|---|
+| Q4, Kari and Kopra's partial result | **CLOSED** | §8.55: true and empty for centre columns. | nothing |
+| Q5, a weaker theorem for every seed | **DONE** | Theorems A and B (§8.54), Theorem A′ (§8.58). | nothing |
+| Q8, the fourth game | **DONE** | §8.51: independent up to a constant factor. | nothing |
+| 6.4, the survey's imports | **DONE** as a list | They became Q2, Q3 and Q5. | see those rows |
+| M2, the undecided periodic columns | **CLOSED** | Jen's theorem (§8.13). The run is recorded in `periodic_kill.c`. | nothing |
+| The ten routes of §4 | **CLOSED** | Each names its section. | nothing |
+
+*Runs.*
+
+| Lead | Status | What is in | What is left |
+|---|---|---|---|
+| 6.2 and M4, the exact records | **RUNNING** | Depths 69, 73, 77, 81 and 85: R = 55, 59, 63, 65 and 73. All three predictions held at each. | Depth 89, started 2026-10-05 16:27. |
+| The deep ladder (§8.56) | **RUNNING** | R(24, S) = 19, 22 and 21 at S = 153, 185 and 217. So no counterexample has its left edge within 216 cells. | Depth 249, started 2026-10-05 19:31. Depth 265 was dropped (the owner's decision). |
+| 6.3 and M3b, the search to 34 cells | **DONE** | No candidate. The longest run is still 17 (`rule30_scan.py`). | nothing |
+| 6.3 and M3a, the channel bound at widths 27 and 28 | **BLOCKED** | Not run. | It needs 16 and 32 GB of memory. The Mac has 16 GB in all. |
+
+*Small items in RULE30-PRIZE.md that were never listed as leads* (found by reading every "open" and "next" in it).
+
+| Item | Status | What has been done | What is left |
+|---|---|---|---|
+| A renormalisation from depth $d$ to $d/2$ (§7) | **CLOSED** | §8.36, RC5: none beyond chance. | nothing |
+| What makes runs of exactly 12 and 14 (§8.1) | **DONE** | The templates (§8.2), then the wheel (§8.5, §8.9). | nothing |
+| The three remains of the entropy squeeze (§8.33) | **DONE** | The constant is certified (0.1292), the two worlds are measured, and the uniform bound on patterns stands. | The uniform bound has found no use yet. |
+| Are the walls synchronised in time across right halves? (§8.10) | **OPEN**, never tested | A hint only: the window speeds swing more than independent right halves would give. | One cheap run. |
+| Why the forced cells inside a long run stay 0 (§8.2) | **OPEN**, minor | Lemma 4 says where the right side's bit enters, not where runs end. | Not looked at since. |
+| LR for long words that are mostly zeros (§7) | **OPEN**, outside period 2 | Explored with 18 free bits only. | Not looked at since. |
+| Do branch points go on for ever? (§8.31) | **OPEN**, off the centre column | Two on each side below diagonal 160,000. | Not looked at since. |
+| Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2 | Balance holds in a region with no randomness. | Not looked at since. |
+
+*Owed checks.*
+
+| Check | Status | What has been done | What is left |
+|---|---|---|---|
+| The literature for W3 (PRIZE-PROBLEMS.md §7.5) and for Theorems A, A′ and E | **RUNNING** | Three sources read for W3. None states it. | A proper search, started 2026-10-05 23:06. |
+| The math check (§9) on every document edited since Local took the lead | **BLOCKED** | Not run: the Mac has no Node. | Installing Node and the check's packages is a download, which needs the owner's yes. |
+| G1, error-free transformations on each GPU (PRIZE-PROBLEMS.md §6) | **OPEN**, not written | Nothing. It is outside Rule 30. | The job and its prediction. |
+
+**The items**, as first written, with their tags.
+
+1. **[OPEN]** **The wheel's kicks** (§8.43, §8.44). A kick's size comes from the interior, not from the wall's origin, its
    width, or the cells at arrival. Its timing and alphabet are rigid. The kick game, a wheel kicked only at its
    arrival phases, still has the coin's growing runs. So the wheel narrows the cost-side statement to a kicked
    rotation, but does not prove it.
-2. **Local's depths 85 and 89** (CLOUD-LOCAL.md, lead M4). Depth 85 is in: R(85) = 73, and the blind prediction
+2. **[RUNNING]** **Local's depths 85 and 89** (CLOUD-LOCAL.md, lead M4). Depth 85 is in: R(85) = 73, and the blind prediction
    (65 to 75, MG8 in `rule30_merge.py`) held. Depth 89 is pending, predicted between 69 and 79.
-3. **Job M3** (CLOUD-LOCAL.md): the channel bound at layer widths 27 and 28, and the counterexample search to 34
-   cells.
-4. **The wide survey's imports** (§8.47): Flatto, Lagarias and Pollington's move to a finite window, a
+3. **[DONE in part, BLOCKED in part]** **Job M3** (CLOUD-LOCAL.md): the channel bound at layer widths 27 and 28, and the counterexample search to 34
+   cells. The search is done: no candidate. The channel bound needs more memory than the Mac has.
+4. **[DONE]** ~~**The wide survey's imports**~~ (§8.47): Flatto, Lagarias and Pollington's move to a finite window, a
    machine-found certificate, and a weaker single-seed theorem by an extremal argument. They are written
    out as questions in §7.
 
 ## 7. Questions for fresh eyes (2026-10-05)
 
 Written after the wide survey (RULE30-PRIZE.md §8.47), for a person or a system meeting the problem for the first
-time. Each question is precise enough to start on, and none is known to be easy.
+time. Each question is precise enough to start on, and none is known to be easy. Each now carries a tag; the
+status board in §6 says what the tags mean and what is left of each.
 
 The survey's one finding frames them. Every theorem found in any field of the form "a low-information drive cannot
 hold a chaotic system in a fixed state" is about sets of cases: sets of positive measure, or with interior. The
 prize needs a statement about every single finite configuration. The questions are ways across that gap.
 
-1. **The counting form of the uniform law.** Let $N_w(T)$ be the number of configurations supported on $w$ cells
+1. **[OPEN]** **The counting form of the uniform law.** Let $N_w(T)$ be the number of configurations supported on $w$ cells
    whose centre column reads 0101... (either phase) at times $0$ to $T - 1$. Prove that
    $N_w(T) \le 2^{w - \alpha T} \cdot \mathrm{poly}(w, T)$ for some $\alpha > 0$. Fewer than one configuration is
    none, so this exact count over a finite family would close period 2. Counting crosses the gap here because the
@@ -162,17 +231,17 @@ prize needs a statement about every single finite configuration. The questions a
    cannot hold for every centre word: a word
    that is some configuration's own centre column has $N_w(T) \ge 1$ for every $T$. So a proof must use the
    periodicity of 0101, as §5 says.
-2. **Flatto, Lagarias and Pollington's move** (§8.45, §8.47). Their partial result on Mahler's problem never beats
+2. **[OPEN, not started]** **Flatto, Lagarias and Pollington's move** (§8.45, §8.47). Their partial result on Mahler's problem never beats
    positive entropy. It moves to a nearby window where the constrained side is finite, and then uses pigeonhole.
    Find a condition implied by the 0101 wall under which every admissible column 1 is eventually periodic, then
    apply Jen's theorem. Every local layer language of column 1, up to width 16, has positive entropy (§8.14, §8.20).
    So such a condition, if it exists, is not local in column 1.
-3. **A machine-found certificate.** Encode the forced walk inside a zero run as a string rewriting system, and
+3. **[OPEN, not started]** **A machine-found certificate.** Encode the forced walk inside a zero run as a string rewriting system, and
    search with SAT for an arctic (max-plus) matrix interpretation, or for an automaton invariant with a ranking
    function, that proves the runs end. That is how Yolcu, Aaronson and Heule proved weakenings of Collatz. The
    encoding decides whether a proof exists. Condrey's $H(2, w) \ge w$ rules out any fixed-depth induction, so the
    certificate must scale with the seed's width.
-4. **Kari and Kopra's partial result, for Rule 30.** For the automata that multiply by $p/q$ they prove, without
+4. **[CLOSED, §8.55]** ~~**Kari and Kopra's partial result, for Rule 30.**~~ For the automata that multiply by $p/q$ they prove, without
    constructing it, that some set of windows covering almost everything holds no Z-number orbit. The analogue
    would be a set of centre-column words, of measure near 1, that no nonzero finite configuration's centre column
    keeps to for ever. That would be a new theorem about Rule 30's centre columns, short of the prize. It needs
@@ -184,17 +253,17 @@ prize needs a statement about every single finite configuration. The questions a
    qualifies. So Kari and Kopra's hypotheses of ergodicity and mixing hold.
    **Closed (§8.55).** Their argument was read in full. It applies to Rule 30 at once, but it is about windows of a
    row; for centre columns it is true and empty. It cannot separate a finite seed from any other configuration.
-5. **A weaker theorem about every single seed.** Langton's ant's highway is unproved, but every trajectory is
+5. **[DONE, §8.54 and §8.58]** ~~**A weaker theorem about every single seed.**~~ Langton's ant's highway is unproved, but every trajectory is
    proved unbounded, by reversibility and an extremal cell. Rule 30 is not reversible, but left-permutivity solves
    it sideways. Is there a statement weaker than B, about every single finite configuration with a 0101 centre,
    that an extremal argument proves?
    **One found (§8.54, Theorem A).** Two adjacent columns cannot both be $P$-periodic on a time window $[a, b]$
    unless $b \le 2a + L + 2P - 1$, where $L$ is the distance to the left edge. Jen's theorem is $b = \infty$.
-6. **LR by construction.** A system strong at construction and search could try to refute Conjecture LR: a column
+6. **[PART]** **LR by construction.** A system strong at construction and search could try to refute Conjecture LR: a column
    1, not necessarily from a finite right half, whose forced left half is eventually zero. The exact records make
    it unlikely ($R(d)$ is finite at every depth computed, about $0.8\,d$). A refutation would still teach
    something: any proof of B would have to use the right half's finiteness.
-7. **The regime between.** Columns 1 with zero entropy that are not eventually periodic: kicks that come for ever,
+7. **[PART]** **The regime between.** Columns 1 with zero entropy that are not eventually periodic: kicks that come for ever,
    but ever more rarely. Does the forced walk's law stay bounded, as next to a white wall, or grow like the
    logarithm of the number of histories, as the coin says? This separates "zero entropy" from "finiteness" in this
    problem (the correction to §8.45).
@@ -204,12 +273,12 @@ prize needs a statement about every single finite configuration. The questions a
    **Answered for one class (§8.57, Theorem E).** Every Sturmian column 1 has zero entropy and is never eventually
    periodic, and for every one of them the left half is never finite. Open next: codings by an arc whose ends are
    not on one orbit, rotations of a torus, and Toeplitz sequences.
-8. **The fourth game** (§8.49, from the tetralemma). Count the seeds that survive the black, white, both and
+8. **[DONE, §8.51]** ~~**The fourth game**~~ (§8.49, from the tetralemma). Count the seeds that survive the black, white, both and
    neither games, and measure $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$. A ratio near 1
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
    Measured (§8.51): between 0.66 and 1.34 at $w = 24$, with no trend. Independent up to a constant factor.
 
-9. **The Collatz twin** (PRIZE-PROBLEMS.md §7.1 to §7.3). Through Bernstein and Lagarias's conjugacy, Collatz asks
+9. **[PART]** **The Collatz twin** (PRIZE-PROBLEMS.md §7.1 to §7.3). Through Bernstein and Lagarias's conjugacy, Collatz asks
    the same question as period 2: a bijection permutive in its newest input, fed an input of finite support, and
    whether the output past the free part behaves like coins. Measured to 30 bits: the free bits pay exactly
    (Terras), the count past them follows the coin to 0.5%, and the excess stays below 3.7 bits. Collatz has what
