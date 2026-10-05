@@ -26,31 +26,46 @@ That experiment ran on 2026-10-04. Its controls reproduce the published theorem 
 configuration with a periodic column for periods 2 to 6, over every right half up to 18 cells (27,262,976 cases, §5
 and §6). That is evidence, not a proof, and a proof is what the prize pays for.
 
-**Where the work stands (2026-10-05).** There is no proof and nothing to submit. Period 1 was closed by Condrey;
-period 2 is the open case, and the work concentrates there. What exists:
+**Where the work stands (2026-10-05, early morning).** There is no proof and nothing to submit. Period 1 was closed
+by Condrey; period 2 is the open case, and the work concentrates there. What exists:
 
 - **Evidence.**
-  - No counterexample over 27 million cases.
-  - The search is shown able to see one where one exists: in Rule 60, a sibling rule (§8.3).
-  - Conjecture LR (§7) holds for every eventually periodic column 1. This is Jen's theorem (1990), restated with a
-    short proof as Proposition 7 (§8.13). The 550,201 periodic columns computed in §8.6 agree with it: that is a
-    check of the instrument, not new evidence.
-- **Small proved results.**
+  - No counterexample: every right half up to 18 cells for periods 2 to 6 (27 million cases, §5, §6), and for period
+    2 every right half up to 28 cells, 268 million (§8.21; the 30- and 32-cell scans are still running).
+  - The search can see a counterexample where one exists: in Rule 60, a sibling rule (§8.3).
+- **Proved, or known and restated.**
   - Lemmas 1 to 4, about where the right side's bits enter the left half.
   - Proposition 5: in the sibling Rule 90, no period-2 column is possible, by Lucas' theorem.
-- **A description of the right side.** Next to a period-2 column, the right side runs a universal *wheel*: an exact
-  coding of a rotation by 17/56 of a turn per step (§8.5). Domain walls interrupt it, arriving from the interior at
-  half a cell per step and kicking its angle by whole notches of 1/28 of a turn (§8.7, §8.8).
-- **One computed fact.** Proposition 6 gives the exact depth period of the pure wheel's left half, by a verified
-  cycle certificate (§8.6). That this left half is not finite follows from Jen's theorem, which the work had cited
-  but not applied until §8.13.
-- **One consequence of Jen's theorem for the wheel.** In a finite configuration with column 0 eventually 0101…,
-  column 1 is never eventually periodic, so the wheel must slip infinitely often (§8.13).
-- **The adversary, measured.** An input fed through a layer of $m$ cells, however adversarial, holds the left half at
-  zero for about one cell per bit of choice it has, so its runs grow with depth at every width up to 16. Real right
-  halves are far poorer: 16 cells give at most 11 (§8.12, §8.14).
-- **The gap.** Could the walls' kicks steer the left half to zero and keep it there? That is part 3 of the route
-  (§8.6) and it is open. A proof would have to be made there.
+  - Proposition 7 (Jen, 1990): no eventually periodic column 1 can make the left half finite. So in a finite
+    configuration with column 0 eventually 0101…, column 1 is never eventually periodic, and the wheel must slip
+    for ever (§8.13).
+  - Every white triangle of Rule 30 is exact (§8.18). Run backwards, the pyramid is infinite and one-sided, and
+    the backward step is the forced-left-half equation read in time (§8.19).
+- **Computed facts.**
+  - Proposition 6: the pure wheel's left half has an exact tail and period in depth (§8.6).
+  - **The channel bound:** next to 0101…, column 1 carries at most 0.152 bits per visible bit, whatever the right
+    side, from an exact automaton (§8.20). A random sequence carries 1.
+- **The picture.**
+  - The right side runs a universal wheel, a rotation by 17/56 of a turn per step, kicked in whole notches by
+    domain walls (§8.5 to §8.11). Next to column 0 the white triangles form a lattice in the wheel's frame, and a kick
+    moves it rigidly (§8.18).
+  - Every zero run of the left half costs about one bit per cell, paid from the distinct histories of column 1: the
+    adversary does no better than coin flips (§8.14, §8.16).
+  - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
+    real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
+    (§8.17).
+- **Routes closed.**
+  - Bounded runs at any finite layer width (§8.14).
+  - Periodic columns 1, already a theorem (§8.13).
+  - "Structured families" beating chance: they were luck (§8.16).
+- **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
+  keep it there. Every statistic says they cannot: coin flips paid through a narrow channel. Nothing structural
+  yet says why. The structural levers found so far are listed in §8.15:
+  - the tie between neighbouring columns;
+  - the wheel;
+  - the notched kicks;
+  - Jen's leftward flow of periodicity;
+  - the bottleneck and its exact bound.
 
 Several of these results had been reached by others first: Condrey's triangular uniqueness, his "no bounded law" at
 period 2, Hanson and Crutchfield's domain filter, Jen's theorem for periodic columns 1, and Meier and Staffelbach's
@@ -1618,7 +1633,11 @@ longest in column 3 and shorten outwards (LT4 refuted: I had predicted column 2 
 density of large triangles near kicks is that at random times: ratios 1.02 and 1.00 for the two wall species (TK1
 held). **The two wall species differ in what they carry:** along the wall's own path, class-32 walls have 1.47
 times the usual density of large triangles, while class-52 walls have the usual density (TK2 refuted: I had
-predicted fewer for both). `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
+predicted fewer for both). A blind follow-up split the kicks by direction instead (`rule30_wallkind.py`): every
+class-32 kick turns the wheel forward and 92.5% of class-52 kicks turn it back or not at all. Along the wall's path,
+large triangles are 1.40 times as dense before forward kicks and 1.03 times before backward ones (K2 held), but
+bigger forward kicks carry no more than small ones (K3 refuted). **So the triangles show which way a wall will kick
+the wheel, not how far.** `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
 - on the left, the lattice in the wheel's frame, 56 phases down and columns 0 to 16 across;
 - on the right, a space-time around a kick, with a margin strip that is green while column 1 runs the wheel and red
   at departures.

@@ -25,6 +25,12 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   K3 (blind; size): among forward kicks, those of 4 notches or more have a higher strip density of large triangles
       than those of 1 or 2 notches.
 REFUTED-BY: KC failing (the instrument); K1, K2 or K3 failing.
+
+OUTCOME of the first run, 2026-10-05 (N = 1200, T = 3000, fresh seeds): KC passed (35,048 of 35,571). K1 HELD: class
+32 forward 100.0%, class 52 backward or zero 92.5%. K2 HELD: along the wall's path, large triangles are 1.396 times
+as dense as at random times before forward kicks (20,210) and 1.032 times before backward kicks (13,466). K3 REFUTED:
+1.369 for forward kicks of 4 notches or more (11,236), 1.409 for 1 or 2 notches (8,158). The walls that kick the
+wheel forward carry the large triangles; how far they kick does not show in them.
 """
 import pathlib, random, sys
 from collections import Counter
