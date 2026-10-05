@@ -5,7 +5,7 @@ section 8.31; Lemma B2 of section 8.59 says the eventually white diagonals never
 points go on for ever" on PERIOD-TWO.md's board. (Local, 2026-10-06; section 8.60.)
 
 RUN-ON:     cpu, one core (pure Python 3, big integers; about 150 MB)
-COMMAND:    python3 tests/probes/lexicon/rule30_leftside_million.py [K=1000000] [STEPS=2200000]
+COMMAND:    python3 tests/probes/lexicon/rule30_leftside_million.py [K=1000000] [STEPS=2200000]  |  ... sides
 COST:       about ten minutes.
 
 METHOD (section 8.31). The strip of the first K left diagonals, held as a K-bit integer V (bit k = diagonal k), is
@@ -46,6 +46,9 @@ OUTCOME of the first run, 2026-10-06 (K = 1,000,000, 2,200,000 steps in 253 s): 
 import sys, time
 import numpy as np
 
+SIDES = "sides" in sys.argv[1:]
+sys.argv = [a for a in sys.argv if a != "sides"]
+
 K = int(sys.argv[1]) if len(sys.argv) > 1 else 1000000
 STEPS = int(sys.argv[2]) if len(sys.argv) > 2 else 2200000
 KEEP = 128
@@ -61,6 +64,19 @@ def report(name, ok, detail=""):
 def verdict(name, held, detail=""):
     print(f"{'HELD' if held else 'REFUTED'}  prediction {name}" + (f"  ({detail})" if detail else ""), flush=True)
 
+
+# ADDENDUM, written 2026-10-06 before the second run (python3 rule30_leftside_million.py sides), after GPT's C004:
+# the four left sides that section 8.31 realised, each to a million diagonals. The generic side (the single cell);
+# the flip of diagonal 53208 in its settled strip; the generic side's second split, the flip at 58287; and the
+# flipped side's own split, the flip at 72576 in ITS settled strip. A settled strip is itself a finite row, so each
+# flipped strip is a finite seed of a million cells.
+#   L0 (control, must hold): each side's strip certifies with a power-of-two period; the flipped sides differ from
+#       their parent side at the flipped diagonal in the certified cycle, and agree with it (up to phase) below it.
+#   L1 (blind): every side's period at a million is 32.
+#   L2 (blind): the doubling at 87,866 occurs on all four sides.
+#   L3 (blind): no side has an eventually white diagonal between 160,000 and a million.
+#   L4 (blind): the four worst-phase settling slopes at a million lie within 0.01 of one another.
+# REFUTED-BY: L0 failing (the construction); L1 to L4 the other way.
 
 def run(v, mask, steps, keep):
     hist = []
@@ -83,7 +99,79 @@ def minimal_period(seq):
     return n
 
 
+def analyse(name, hist):
+    period = next((p for p in range(1, KEEP) if hist[-1] == hist[-1 - p]), None)
+    cyc = hist[-period:] if period else hist[-16:]
+    U = np.array([to_bits(v) for v in cyc], dtype=np.uint8)
+    anyk = U.any(axis=0)
+    white = [int(k) for k in np.nonzero(~anyk)[0]]
+    kinds = {}
+    for j in white:
+        if 1 <= j < K - 1:
+            before = U[:, j - 1].tolist(); pb = minimal_period(before); w = sum(before[:pb])
+            after = U[:, j + 1].tolist(); pa = minimal_period(after)
+            kinds[j] = ("doubling" if w % 2 else "branch", pb, pa)
+    P = len(cyc)
+    worst = np.zeros(K, dtype=np.int64)
+    for phi in range(P):
+        tau = np.zeros(K, dtype=np.int64); prev = 0
+        for k in range(K - 1):
+            start = max(int(tau[k]), prev)
+            if not anyk[k]:
+                nxt = start
+            else:
+                tt = start
+                while not U[(tt + phi) % P, k]:
+                    tt += 1
+                nxt = tt + 1
+            prev = int(tau[k]); tau[k + 1] = nxt
+        worst = np.maximum(worst, tau)
+    slope = int(np.maximum.accumulate(worst)[K - 1]) / (K - 1)
+    print(f"   {name}: period {period}; white " + ", ".join(f"{j} ({kinds[j][0]}, {kinds[j][1]} -> {kinds[j][2]})"
+                                                             for j in white if j in kinds)
+          + f"; slope {slope:.4f}", flush=True)
+    return period, cyc, white, kinds, slope
+
+
+def sides():
+    mask = (1 << K) - 1
+    t0 = time.time()
+    generic = run(1, mask, STEPS, KEEP)
+    res = {"generic": analyse("generic", generic)}
+    seedA = res["generic"][1][0] ^ (1 << 53208)
+    res["flip 53208"] = analyse("flip 53208", run(seedA, mask, STEPS, KEEP))
+    seedB = res["generic"][1][0] ^ (1 << 58287)
+    res["flip 58287"] = analyse("flip 58287", run(seedB, mask, STEPS, KEEP))
+    seedC = res["flip 53208"][1][0] ^ (1 << 72576)
+    res["flip 53208 and 72576"] = analyse("flip 53208 and 72576", run(seedC, mask, STEPS, KEEP))
+    print(f"   four sides in {time.time() - t0:.0f} s", flush=True)
+    ok0 = all(r[0] is not None and r[0] & (r[0] - 1) == 0 for r in res.values())
+    for child, parent, flip in (("flip 53208", "generic", 53208), ("flip 58287", "generic", 58287),
+                                ("flip 53208 and 72576", "flip 53208", 72576)):
+        cp, cc = res[parent][1], res[child][1]
+        low = (1 << flip) - 1
+        same_below = any((cc[0] & low) == (v & low) for v in cp)        # agree below the flip, up to phase
+        bit = (1 << flip)
+        differ_at = all(((cc[0] & bit) != (v & bit)) for v in cp if (cc[0] & low) == (v & low))
+        ok0 &= same_below and differ_at
+    report("L0 every side certifies; each flipped side agrees with its parent below the flip and differs at it", ok0,
+           "; ".join(f"{k}: period {v[0]}" for k, v in res.items()))
+    verdict("L1 every side's period at a million is 32", all(v[0] == 32 for v in res.values()))
+    verdict("L2 the doubling at 87,866 occurs on all four sides",
+            all(87866 in v[3] and v[3][87866][0] == "doubling" for v in res.values()),
+            "; ".join(f"{k}: {[j for j in v[2] if j > 60000]}" for k, v in res.items()))
+    verdict("L3 no side has an eventually white diagonal between 160,000 and a million",
+            all(not any(160000 <= j < K for j in v[2]) for v in res.values()))
+    slopes = [v[4] for v in res.values()]
+    verdict("L4 the four worst-phase slopes lie within 0.01 of one another", max(slopes) - min(slopes) <= 0.01,
+            ", ".join(f"{s:.4f}" for s in slopes))
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if SIDES:
+        sides()
+        return
     mask = (1 << K) - 1
     t0 = time.time()
     hist = run(1, mask, STEPS, KEEP)
