@@ -1975,6 +1975,13 @@ same diagonal, but it enters through the OR. Wherever the neighbouring diagonal 
 whatever the old one was: a reset. So a left diagonal settles into a period no longer than its neighbours', unless
 the diagonal before it is eventually all 0. Only then can the period double.
 
+**This half is known, and was re-derived here before the source was read** (a failure of method, recorded in
+PRIOR-ART.md). Each left diagonal is eventually periodic with a power-of-2 period by Jen's Theorem 4 (J. Stat. Phys.
+43, 1986). Rowland's §5 lists the same sequence of periods measured below (1, 1, 1, 2, 1, 2, 2, 1, 4, …) and proves an
+observation of Wolfram's (*A New Kind of Science*, p. 871). A period doubles exactly when a diagonal is eventually white
+**and** the diagonal before it has an odd number of black cells in each period. The argument above gives only the
+first half.
+
 **Measured** (`rule30_diagonals.py`, $2^{18}$ = 262,144 steps, predictions written first):
 
 | Distance from the edge | 9 | 29 | 42 | 63 |
@@ -2115,6 +2122,17 @@ made by causes, and every black cell has a cause above it. Climbing towards the 
 
 §8.27 found the left diagonals periodic with tiny periods after a transient. `rule30_leftband.py` follows them to
 distance 2,047 from the left edge (8,192 steps, predictions written first).
+
+**Most of this is known**, which the survey, done after the runs (a failure of method), found:
+- Wolfram's prize announcement (2019) describes the regular striped left side. Over the first 100,000 or so steps its
+  boundary "seems to move on average about 0.252 steps to the left at each step", with random fluctuations. That is
+  an observation, not a theorem.
+- Rowland's §5 proves when the periods double (§8.27).
+- Rowland also asks whether there is only one "left side", the same for every seed. He expects the answer is no: the
+  first place two left sides can split is his column 53209 (§8.31).
+
+The parts not found in the sources are the match of the boundary's speed with the speed at which a single change
+spreads left on a random background, and the measured transients and eventually-white diagonals below.
 - **The periods stay tiny.** They double only just after an eventually-zero left diagonal, as proved in §8.27. Those
   are at distances 2, 7, 28 and 399, so the period is only 16 at distance 2,047. I predicted the zero diagonals would
   come at a steady ratio near 4 (LB1, refuted): the gaps grow faster.

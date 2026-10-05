@@ -1045,7 +1045,8 @@ for what a template is.
   - (Added 2026-10-05.) Kopra's Corollary 3.7 states the adjacent-columns form for every configuration with an
     eventually zero left half, not only the single seed. It decides conjecture LR for every eventually periodic
     column 1 (PRIZE-PROBLEMS.md §8.13), which this entry should have prompted before §8.6's search was designed.
-- **Rowland, E. S., "Local nested structure in rule 30"**, Complex Systems 16(3) (read, pages 1 to 4).
+- **Rowland, E. S., "Local nested structure in rule 30"**, Complex Systems 16(3) (read, pages 1 to 4; §5, pages 15
+  to 17, read 2026-10-05 after rule30_diagonals.py and rule30_leftband.py had run: see the entry at the end).
   - At row $2^n$ a region of the initial condition reappears on the right side, and the automaton "begins again"
     locally. This follows from left bijectivity (our left-permutivity) and from the right diagonals' periods
     $2^\alpha$.
@@ -1281,3 +1282,34 @@ connect? Checked by search, abstracts and summaries only.
 Links: https://projecteuclid.org/journals/bernoulli/volume-9/issue-4/Directed-polymers-in-a-random-environment--path-localization-and/10.3150/bj/1066223275.full ;
 https://link.springer.com/article/10.1007/s00220-019-03533-1 ;
 https://link.springer.com/article/10.1007/s00220-006-0036-y ; https://arxiv.org/html/cond-mat/0503408
+
+## After the diagonals and the band: what was already known (surveyed 2026-10-05, by Cloud, after the runs)
+
+A failure of method: rule30_diagonals.py (left half) and rule30_leftband.py were designed and run before Rowland's §5
+and Wolfram's prize announcement had been read. Both cover much of the ground.
+- **Rowland, "Local nested structure in rule 30", §5 "The left side of rule 30"** (read). Left diagonals are eventually
+  periodic with power-of-2 periods, a consequence of Jen's Theorem 4 (E. Jen, "Global properties of cellular
+  automata", J. Stat. Phys. 43 (1986) 219-242). The eventual periods from the left edge begin 1, 1, 1, 2, 1, 2, 2, 1,
+  4, 1, 4, ..., exactly as rule30_diagonals.py measured. Proposition 2 is Wolfram's observation (NKS p. 871), proved
+  for any rightful initial row. Each period doubling occurs exactly when a diagonal is eventually white and the
+  diagonal to its left has an odd number of black cells in each period. When a diagonal is eventually white and the
+  next has a black cell in its period, the one after is eventually black.
+  - Rowland's open question. Is the eventual left side independent of the initial condition? Rowland expects not. An
+    eventually white diagonal whose left neighbour has an even number of black cells per period leaves two possible
+    periods for the next diagonal, complements of each other. That first happens at his column 53209: column 53208
+    is eventually white, and column 53207 has period 16. Each of those continuations splits again, at columns 58288
+    and 72577, "and one surmises that in fact there are infinitely many possible left sides". Whether both
+    possibilities are realised by actual initial conditions is left open ("if in fact they do occur").
+  - **Import:** the credit for §8.27's left-side statements and for LB0, and the open question, tested by
+    rule30_leftsides.py (§8.31). His columns are numbered from 1 at the left edge, so his column m is our diagonal
+    e = m - 1, if his period list is aligned as it appears to be (checked there).
+- **Wolfram, S., "Announcing the Rule 30 Prizes"** (writings.stephenwolfram.com, 2019) (read in summary). There is
+  "some regularity over on the left". "At least over the first 100,000 or so steps, the boundary seems to move on
+  average about 0.252 steps to the left at each step, with roughly random fluctuations." It is presented as an
+  observation. **Import:** the credit for §8.30's band and its speed. Our 0.245 to 0.257 (from the transients)
+  brackets it; the damage front on a random background, 0.246 with a standard error near 0.003, is close but about
+  two standard errors below it.
+- Searches for a later answer to Rowland's question ("rule 30" "left side", 53209) found nothing.
+
+Links: https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf ;
+https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/
