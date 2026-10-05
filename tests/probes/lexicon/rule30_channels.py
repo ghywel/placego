@@ -17,11 +17,12 @@ Two kinds of lightning, on pyramids of depth T (black weight 1, white weight EPS
     paths through each cell come from exact forward and backward sums (transfer matrices).
 What is known, for an environment of independent random cells (PRIOR-ART.md): the directed polymer in 1 + 1 dimensions
 is in strong disorder at every temperature (Comets, Shiga and Yoshida, Bernoulli 9, 2003; Comets and Vargas, ALEA 2,
-2006), and strong disorder is equivalent to path localisation: the chance that two polymers in the same environment
-end at the same point does not die out (Comets, Shiga and Yoshida; Bates and Chatterjee, CMP 2020). A walk that sees
-only its next step, in a random space-time environment, instead obeys an ordinary central limit theorem (Balazs,
-Rassoul-Agha and Seppalainen, CMP 266, 2006). So for random substrates theory says the polymer channels and the
-flicker spreads. Whether Rule 30's substrate does the same, or has paths of its own, is the question here.
+2006), and strong disorder is equivalent to path localisation: the chance that two polymers in the same environment end
+at the same point does not die out (Comets, Shiga and Yoshida; Chatterjee, CMP 370, 2019; citation corrected after the
+first run). A walk that sees only its next step, in a random space-time environment, instead obeys an ordinary central
+limit theorem (Balazs, Rassoul-Agha and Seppalainen, CMP 266, 2006). So for random substrates theory says the polymer
+channels and the flicker spreads. Whether Rule 30's substrate does the same, or has paths of its own, is the question
+here.
 
 The measures, at depths 128, 256, ..., T:
   L(t): the same-landing chance. Two bolts, drawn independently on the same pyramid, end on the same cell of row t.

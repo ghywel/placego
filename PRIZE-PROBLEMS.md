@@ -57,6 +57,12 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
+  - The owner's morning questions (§8.22 to §8.29). Read as a binary number, a column is rational exactly when it
+    repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
+    numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
+    pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. As a conductor Rule 30
+    channels lightning three times less than a random material, because of its handedness. As a maze it has no dead
+    ends going up.
 - **Routes closed.**
   - Bounded runs, at every layer width computed (up to 16): the adversary's runs keep growing with depth (§8.14).
   - Periodic columns 1, already a theorem (§8.13).
@@ -2004,3 +2010,103 @@ the diagonal before it is eventually all 0. Only then can the period double.
   proof here would need something else: that the digits the centre column takes from all these rational numbers
   can never line up into a repeating pattern. That is a statement about how the periods and transients of the
   diagonals interact, not only about how fast they grow. It is recorded as a lead, not a result.
+
+### 8.28 Does the lightning gravitate to certain paths? (2026-10-05)
+
+The owner: "Given current follows the path(s) of least resistance distributed throughout the material substrate, do
+the lightning walks tend to gravitate towards certain paths or patterns?" It depends on how the lightning sees the
+substrate, and Rule 30's answer differs from randomness's. `rule30_channels.py` computes everything exactly, row by
+row, without sampling, on pyramids 2,048 rows deep. Predictions were written first.
+- **The flicker** (§8.25) sees only the next row and picks one step at a time.
+- **The polymer** is the current spread through the whole substrate. Every path from the apex counts, weighted by
+  the product of its cells' conductances (black 1, white 0.1). It is statistical physics' model of a path of least
+  resistance with fluctuations.
+
+Channelling is measured by the **same-landing chance**, the probability that two independent bolts end on the same
+cell. For a free random walk it falls like $1/\sqrt{\text{depth}}$. On a random substrate, theory (PRIOR-ART.md) says
+the polymer's stays positive in this dimension at every temperature: it localises into channels. The flicker's falls
+like a free walk's.
+
+| | Free walk | Random pyramids | Rule 30 | Rule 30 from a random row | Rule 90 from a random row |
+|---|---|---|---|---|---|
+| Flicker: same-landing chance at depth 2048 | 0.0076 | 0.012 to 0.013 | 0.012 | | |
+| Polymer: same-landing chance, averaged over depth | 0.015 | 0.10 to 0.13 | **0.037** | 0.033 to 0.036 | 0.070 |
+| Polymer: share of rows two bolts share | | 0.16 to 0.22 | **0.069** | 0.05 to 0.06 | 0.11 to 0.16 |
+| Spread of resistance along random routes, per row | | 0.25 | **0.18** | 0.17 to 0.18 | 0.24 |
+
+- **The flicker gravitates nowhere in particular.** On every substrate it spreads like a free random walk, sharing
+  only slightly more (CH1 held).
+- **On a random substrate the polymer forms channels,** as theory says. Two bolts end on the same cell about one time
+  in eight, at every depth, and share a fifth of their route. The figure shows a braid of thin filaments.
+- **On Rule 30 the channels are three times weaker** (CH2 and CH3 refuted). Two bolts land together one time in 27,
+  falling with depth, and share 7% of their route. **Rule 30 spreads its current more evenly than a random material
+  does.** This is the first measure of the lightning that tells Rule 30 from coin flips beyond its leftward pull.
+- **It is the rule, not the seed** (CH6 held): Rule 30 run from a random row channels just as weakly.
+- **The cause is the handedness again** (CH7 held). Below a black cell, Rule 30 makes the lower-right child black only
+  a quarter of the time (below a white cell, three quarters). The other two children are uncorrelated with it. So
+  along any route a black cell tends to be followed by a white one on a third of the steps, and routes differ less in
+  total resistance. To first order the spread per row is $\tfrac14 - 2 \cdot \tfrac13 \cdot \tfrac18 \approx 0.167$
+  against $\tfrac14$ for independent cells. With less to choose between, the current does not concentrate.
+- **Rule 90 is in between** (CH8 held, at the edge of its band). Its rows are as random as Rule 30's and its path
+  spread is nearly random, yet it channels only 0.6 times as much as a random material. Something longer-range matters
+  there too, perhaps its nested triangles; it was not identified.
+- **The channels lean left**, as the flicker does (CH4 held: the polymer lands at −0.088 of the depth).
+- **The chaos step:** flipping 1% of the cells keeps Rule 30's weak channels (CH5 refuted: I expected them to move
+  much more than they did).
+
+**So on Rule 30 the lightning gravitates to no special paths. It concentrates less than it would in a random
+material, and the only pattern it follows is the lean that the rule's handedness gives it.**
+`tests/probes/lexicon/rule30_channels.png` shows the flicker (left, one smooth beam) and the polymer (right, a braid of
+filaments leaning left). Along the pyramid's left flank the band of short-period stripes of §8.27 is visible.
+
+### 8.29 The pyramid as a maze (2026-10-05)
+
+The owner: "Given some random initial starting position in the pyramid, and without knowledge about the structure the
+walker is in, what is the most efficient way to trace a path to the origin single point, as if the structure were a
+maze?" Black cells are corridors and white cells are walls. The walker climbs to one of the three cells above and sees
+a cell only by looking at it. Every move climbs one row, so no route from row $t$ is shorter than $t$ moves.
+
+**A theorem makes the maze easy going up.** Rule 30 keeps white-white-white white, so every black cell below the apex
+has a black parent: three white parents would have made it white. A walker on black can therefore always climb onto
+black. It cannot leave the pyramid, since everything outside is white. And the only black cell of row 0 is the apex.
+**So every climb on black reaches the origin in exactly $t$ moves, the shortest possible, with no map, no memory and
+no backtracking.** It takes at most two looks per row: if two parents are white, the third is black without looking.
+The same holds for every rule that keeps white-white-white white, grown from one seed.
+
+**Going down, the same maze has dead ends.** A black cell has no black child 3/16 of the time (measured 0.187, MZ2
+held). Lightning works this way too. The stepped leader branches downwards and most branches die; the return stroke
+climbs back up the one channel that connected. In the pyramid every black cell connects to the origin, but only the
+climb up is sure to find the way.
+
+**A random pattern of the same density is a real maze, and mostly a broken one.** On a random pyramid, a black cell
+connects to the apex only if a chain of black cells leads up to it, which is directed percolation. Measured at depth
+2048 (`rule30_maze.py`, predictions written first):
+- Only 1.5% of a random pyramid's interior black cells connect, against 100% of Rule 30's (MZ0, MZ3).
+- The threshold, where random patterns begin to connect, is near density 0.53 (MZ4 and MZ7 held). The connected
+  share is 3% at 0.50, 13% at 0.53 and 65% at 0.56. Rule 30 sits just below the threshold, at 0.502, yet it is
+  connected everywhere.
+- On the random pyramid a greedy climber sticks from 76% of the connected starts. A depth-first search that marks
+  where it has been (Trémaux's method) always gets through, reading 3 cells per row on the median.
+
+**The most efficient walker.** With the theorem, a row costs $2 - q$ looks, where $q$ is the chance that the first look
+finds black. Only the first look matters.
+
+| Walker | Looks per row |
+|---|---|
+| all three parents looked at, middle first (without the theorem) | 2.11 |
+| middle first, then left, the third deduced | 1.73 |
+| left first | 1.65 |
+| right first | 1.54 |
+| adaptive: first look chosen by its last move and what it saw | **1.29** |
+
+Over all black cells, Rule 30's parent patterns are exactly the coin model's, which predicts 1.5 for middle first.
+Along a climber's own path they are not: its history biases what lies above it (MZ1 refuted). The adaptive walker
+(MZ6 held, scored on starts it was not trained on) learns to **follow the grain**. After climbing up-right, up-right
+again is black 89% of the time. So it rides the lines parallel to the pyramid's left edge, the left diagonals of
+§8.27. A 1% random corruption leaves 92.6% of the black cells connected (MZ5 held): the maze is robust, but no longer
+perfect.
+
+**The general answer.** In an unknown maze the efficient methods are a depth-first search with marks (Trémaux's
+method, which walks no corridor more than twice), or following one wall when the maze has no loops. In the worst case
+any method must explore most of the maze. A pyramid grown by a rule from one seed is not such a maze: its walls are
+made by causes, and every black cell has a cause above it. Climbing towards the cause is always right.

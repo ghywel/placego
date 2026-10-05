@@ -1251,3 +1251,33 @@ clamped periodic column (§8.20) known? Checked by search, abstracts only.
 
 Links: https://arxiv.org/abs/math/0312136 ; https://arxiv.org/abs/1406.5553 ;
 https://www.sciencedirect.com/science/article/pii/S0304397522007502
+
+## The owner's lightning, channels and maze: directed polymers and directed percolation (surveyed 2026-10-05, by Cloud)
+
+Scope: before rule30_channels.py and rule30_maze.py (PRIZE-PROBLEMS.md §8.28, §8.29), is it known whether paths of
+least resistance through a random two-dimensional substrate form channels, and when a random pattern's black cells
+connect? Checked by search, abstracts and summaries only.
+
+- **Comets, F., Shiga, T. and Yoshida, N., "Directed polymers in a random environment: path localization and strong
+  disorder"**, Bernoulli 9(4) (2003) (abstract). The decay rate of the partition function is equivalent to
+  localisation of the path. Their approach relates the partition function to the probability that two polymers in
+  the same environment end at the same point, our same-landing chance L. Quantitative decay estimates in one or two
+  dimensions. **Imported:** L and its time average as the measure of channelling.
+- **Comets, F. and Vargas, V., "Majorizing multiplicative cascades for directed polymers in random media"**, ALEA 2
+  (2006) (summary): sharper free-energy estimates in dimension 1 + 1 and very strong disorder at every temperature
+  there. So a polymer on a random pyramid should localise at any temperature: the theory behind CH2.
+- **Chatterjee, S., "Proof of the path localization conjecture for directed polymers"**, Comm. Math. Phys. 370
+  (2019) 703-717, arXiv:1806.04220 (title and summary only, not read).
+- **Balazs, M., Rassoul-Agha, F. and Seppalainen, T., "The random average process and random walk in a space-time
+  random environment in one dimension"**, Comm. Math. Phys. 266 (2006) 499-545 (summary): a walk choosing each step
+  from a fresh random environment obeys a quenched central limit theorem; the quenched mean fluctuates on the scale
+  $n^{1/4}$. The theory behind CH1 (the flicker spreads like a free walk).
+- **Directed site percolation** in 1 + 1 dimensions has threshold 0.70548522 on the square lattice, with two parents
+  per site (search summary). No published value was found for the lattice with three parents per site (x - 1, x,
+  x + 1), the one the maze uses; rule30_maze.py measures it near 0.53 at depth 2048.
+- Not found: any study of polymers or percolation on a cellular automaton's space-time pattern. The comparison of
+  Rule 30 with random substrates (§8.28, §8.29) appears to be new, and simple enough that it may exist unfound.
+
+Links: https://projecteuclid.org/journals/bernoulli/volume-9/issue-4/Directed-polymers-in-a-random-environment--path-localization-and/10.3150/bj/1066223275.full ;
+https://link.springer.com/article/10.1007/s00220-019-03533-1 ;
+https://link.springer.com/article/10.1007/s00220-006-0036-y ; https://arxiv.org/html/cond-mat/0503408
