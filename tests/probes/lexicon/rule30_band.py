@@ -98,7 +98,19 @@ SEEN BEFORE the addendum's predictions: the first run above. Nothing of the stri
 REFUTED-BY: BF0, BF1's bound, BF3, CF2 or BF4's control failing (a proof or the instrument); the blind parts the
   other way.
 
-OUTCOME of the second run: (to be recorded)
+OUTCOME of the second run, 2026-10-05 (11 seconds; a third run after fixing a print that crashed on an empty
+  result, same numbers):
+  BF0 PASSED: one cycle of period 16 to 53,200 diagonals, white diagonals 2, 7, 28, 399, reached by the single cell
+  and three random seeds.
+  BF1 PASSED its bound (longest white run 17 <= 32); its blind half REFUTED by one (17, not 5 to 16).
+  BF2 REFUTED: the worst-phase front's slope is 2.0168 at diagonal 53,199 (1.992 at 1,000; 2.018 at 10,000).
+  BF3 PASSED (S(200) = 97, S(1600) = 804).
+  CF2 FAILED by design: 2 of 120 rows (seeds of width 21 and 6, at t = 200) agree with the cycle below 2 S(t).
+  Post hoc: the actual settled width over t at t = 200 ranges from 0.76 to 1.01 over the 30 seeds, median 0.82;
+  at t = 1600 from 0.76 to 0.81, median 0.78. The counterfactual assumed the average rate for every row.
+  BF4: control PASSED (period-doubling to 53,165). Thue-Morse L* = 15,870 HELD (pair i = 0, i' = 49,152,
+  common length 32,768). Rudin-Shapiro: no pair excludes any L; paperfolding L* = 15,868 (i = 16,384,
+  i' = 49,152, common length 32,767): the joint prediction REFUTED by Rudin-Shapiro.
 """
 import random, sys
 import numpy as np
@@ -411,11 +423,12 @@ def part_front(K=53200, P=16):
     def settled(t):
         return int(np.searchsorted(worst, t - P, side="right"))
 
-    ok3, cf_fail, cases = True, 0, 0
+    ok3, cf_fail, cases, agree = True, 0, 0, []
     KK = 3400
     mask = (1 << KK) - 1
     for _ in range(30):
         v = (rng.getrandbits(rng.randint(1, 39)) << 1) | 1
+        width = v.bit_length()
         t = 0
         for T in (200, 400, 800, 1600):
             while t < T:
@@ -424,11 +437,14 @@ def part_front(K=53200, P=16):
             m1, m2 = (1 << S) - 1, (1 << min(2 * S, KK)) - 1
             ok3 &= any((v ^ u) & m1 == 0 for u in cyc)
             cases += 1
-            cf_fail += not any((v ^ u) & m2 == 0 for u in cyc)
+            if any((v ^ u) & m2 == 0 for u in cyc):
+                agree.append((width, T))              # post hoc: which rows are settled that far
+            else:
+                cf_fail += 1
     report("BF3 every row agrees with a phase of the cycle on the diagonals below S(t)", ok3,
            f"S(200), S(1600) = {settled(200)}, {settled(1600)}")
     report("CF2 no row agrees with a phase of the cycle on the diagonals below 2 S(t)", cf_fail == cases,
-           f"{cf_fail} of {cases} disagree")
+           f"{cf_fail} of {cases} disagree; agreeing (seed width, time): {agree}")
 
     N = 1 << 18
     W = words(N)
@@ -449,7 +465,8 @@ def part_front(K=53200, P=16):
             if int(lmax[j]) > best:
                 best, arg = int(lmax[j]), (j, j + d, int(l[j]))
         lstar[name] = best
-        print(f"   L* for {name}: {best}  (pair i = {arg[0]}, i' = {arg[1]}, common length {arg[2]})", flush=True)
+        where = f"(pair i = {arg[0]}, i' = {arg[1]}, common length {arg[2]})" if arg else "(no pair excludes any L)"
+        print(f"   L* for {name}: {best}  {where}", flush=True)
     report("BF4 control: Theorem A'''' excludes every left edge to 50,000 for the period-doubling word",
            lstar["period-doubling"] >= 50000)
     verdict("BF4 L* >= 8,000 for Thue-Morse", lstar["Thue-Morse"] >= 8000, f"{lstar['Thue-Morse']}")

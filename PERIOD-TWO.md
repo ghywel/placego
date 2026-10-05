@@ -63,6 +63,11 @@ Proved here (2026-10-05, Local; each is elementary and has a pre-registered chec
 - **Theorem A′, the window principle** (§8.58). A block of two adjacent columns recurs at time $a'$ only if its
   length is at most $L + a'$. It contains Theorem A and has a two-line proof. Its Collatz twin is Terras's
   bijection (PRIZE-PROBLEMS.md §7.5).
+- **Lemmas B1 to B3, Theorems A‴ and A⁗, Corollary F** (§8.59). The left diagonals' periods are unbounded, so
+  infinitely many diagonals are black for ever; a repeat of the trace, being a white run in the later row, stays
+  a growing distance below Theorem A′; a column 1 that begins with near-squares at unbounded periods is excluded
+  with any left half; the settled band has no white run longer than twice its period, so a repeat's white run
+  cannot lie in it.
 
 ## 3. What has been measured
 
@@ -145,7 +150,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Q2, the move to a finite window | **OPEN**, not started | Nothing direct. Theorems E and E″ (§8.57) exclude classes of column 1. They do not force periodicity. | A condition that is not local in column 1. |
 | Q3, a machine-found certificate | **OPEN**, not started | Only the SAT crib (§8.37), which answered a different question. | An encoding of the forced walk as string rewriting, then the search. |
 | Q6, LR refuted by construction | **PART** | The exact records cover every column 1: no left half is zero from any depth up to 85 onwards (§8.36, §8.37). | Depths beyond the records. Nothing constructive has been tried. |
-| Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). | Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Toeplitz and automatic sequences (Thue–Morse has no long repetitions, so the method has no grip on it). Kicked wheels. |
+| Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). Every column 1 that begins with near-squares at unbounded periods is excluded: period-doubling, Chacon, substitution fixed points starting with a double letter (Corollary F, §8.59). Thue–Morse and paperfolding are excluded for every left edge up to 15,868 cells (Theorem A⁗). | Thue–Morse and paperfolding for every left edge: reduced to the settling rate of the universal left side (§8.59). Rudin–Shapiro. Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Kicked wheels. |
 | Q9, the Collatz twin | **PART** | The least-residue lemma (PRIZE-PROBLEMS.md §7.4). The window principle on both sides, W1 to W3 (§7.5). Exponential sums cannot reach a single case. | The literature check (below). A Collatz statement beyond complexity $1.71\,n$. |
 | Rung 3, periods 3 to 6 (RULE30-PRIZE.md §6) | **PART** | Horizons measured for every word up to period 4 (§8.42). Theorems A, A′, B and E hold for every period. | Nothing specific to periods 3 to 6 has been tried since. |
 
@@ -165,7 +170,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Lead | Status | What is in | What is left |
 |---|---|---|---|
 | 6.2 and M4, the exact records | **RUNNING** | Depths 69, 73, 77, 81 and 85: R = 55, 59, 63, 65 and 73. All three predictions held at each. | Depth 89, started 2026-10-05 16:27. |
-| The deep ladder (§8.56) | **RUNNING** | R(24, S) = 19, 22 and 21 at S = 153, 185 and 217. So no counterexample has its left edge within 216 cells. | Depth 249, started 2026-10-05 19:31. Depth 265 was dropped (the owner's decision). |
+| The deep ladder (§8.56) | **DONE** | R(24, S) = 19, 22, 21 and 26 at S = 153, 185, 217 and 249 (LL1 to LL4 held). So no counterexample has its left edge within 248 cells, whatever its right half. | Depth 265 was dropped (the owner's decision). |
 | 6.3 and M3b, the search to 34 cells | **DONE** | No candidate. The longest run is still 17 (`rule30_scan.py`). | nothing |
 | 6.3 and M3a, the channel bound at widths 27 and 28 | **BLOCKED** | Not run. | It needs 16 and 32 GB of memory. The Mac has 16 GB in all. |
 
@@ -179,15 +184,15 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Are the walls synchronised in time across right halves? (§8.10) | **OPEN**, never tested | A hint only: the window speeds swing more than independent right halves would give. | One cheap run. |
 | Why the forced cells inside a long run stay 0 (§8.2) | **OPEN**, minor | Lemma 4 says where the right side's bit enters, not where runs end. | Not looked at since. |
 | LR for long words that are mostly zeros (§7) | **OPEN**, outside period 2 | Explored with 18 free bits only. | Not looked at since. |
-| Do branch points go on for ever? (§8.31) | **OPEN**, off the centre column | Two on each side below diagonal 160,000. | Not looked at since. |
+| Do branch points go on for ever? (§8.31) | **OPEN**, off the centre column | Two on each side below diagonal 160,000. Proved since (§8.59, Lemma B2): the diagonals' periods are unbounded, so eventually white diagonals, each a doubling or a branch, go on for ever. | Whether the branches among them go on for ever. |
 | Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2 | Balance holds in a region with no randomness. | Not looked at since. |
 
 *Owed checks.*
 
 | Check | Status | What has been done | What is left |
 |---|---|---|---|
-| The literature for W3 (PRIZE-PROBLEMS.md §7.5) and for Theorems A, A′ and E | **RUNNING** | Three sources read for W3. None states it. | A proper search, started 2026-10-05 23:06. |
-| The math check (§9) on every document edited since Local took the lead | **BLOCKED** | Not run: the Mac has no Node. | Installing Node and the check's packages is a download, which needs the owner's yes. |
+| The literature for W3 (PRIZE-PROBLEMS.md §7.5) and for Theorems A, A′ and E | **DONE** | Searched 2026-10-05 (PRIOR-ART.md, last entry): W2 is Dubickas 2009, W1 and W3 are in three 2026 notes; the Rule 30 theorems were not found (Kopra and Condrey are the nearest). | Read Dubickas 2009 in full; check Lemma B2 (§8.59) against Jen 1986 and Rowland 2006. |
+| The math check (§9) on every document edited since Local took the lead | **DONE** | Node installed by the owner 2026-10-05; the check passes on RULE30-PRIZE.md, PRIZE-PROBLEMS.md, PERIOD-TWO.md and CLOUD-LOCAL.md. | Run it after every edit. |
 | G1, error-free transformations on each GPU (PRIZE-PROBLEMS.md §6) | **OPEN**, not written | Nothing. It is outside Rule 30. | The job and its prediction. |
 
 **The items**, as first written, with their tags.
@@ -303,8 +308,9 @@ prize needs a statement about every single finite configuration. The questions a
 1. This file.
 2. `WORKFLOW-SAVED-MEMORY.md`: the working rules. Predictions are written before runs, failures are recorded,
    prior art is surveyed before leaps, and every script that produced a recorded number is kept.
-3. `CLOUD-LOCAL.md`: how Cloud and Local split work, and the ledger (start from main and the ledger, never from
-   memory).
+3. `CLOUD-LOCAL.md`: how Cloud and Local split work, the messages table, and the ledger (start from main and the
+   ledger, never from memory). A model new to this record, of any make, reads `WORKING-TOGETHER.md` first: the
+   lanes in the repository, the method, and what to do in the first hour.
 4. `RULE30-PRIZE.md`: the honest summary at the top, then §5, §7, §8.4 to §8.14, §8.20, §8.36 to §8.42, and
    §8.45 to §8.47 (where the problem sits among its relatives).
 5. `PRIOR-ART.md`: the dated surveys, especially Condrey, Jen and Kopra, Rowland, the prime-gap parallel, the
@@ -332,6 +338,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `rule30_jenclock.py`, `jenclock.c` | Jen's theorem with a clock (§8.54): Theorems A and B, checked | seconds |
 | `rule30_sturmian.py` | Theorem E (§8.57): every Sturmian column 1 is excluded | 2 minutes |
 | `rule30_window.py` | Theorem A′ (§8.58): the window principle | 20 seconds |
+| `rule30_band.py` | Lemmas B1 to B3, Theorems A‴ and A⁗, Corollary F (§8.59): the band of stripes meets the window principle; the universal strip to 53,200 diagonals with a certificate | a minute |
 | `ladder_deep.c`, `rule30_ladder_local.py` | the layer ladder to depth 318, in parallel (§8.56) | minutes to hours |
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |
 

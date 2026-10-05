@@ -27,7 +27,13 @@ M = 10 to 24, to measure its cost (R(24, 105) = 13, R(24, 121) = 12, with 58,281
 REFUTED-BY: LL0 failing (the engine). LL1 failing would be a run that never ends within the cap: a candidate for a
   column 1 that keeps the left half zero, to be followed deeper before anything else. LL2 to LL4 the other way.
 
-OUTCOME: (recorded below as the depths finish)
+OUTCOME, 2026-10-05 (M = 24, six threads; started 18:28, depth 249 finished 23:49; 265 not run, the owner's
+  decision, so the driver was stopped after 249 and the verdicts below were computed from the recorded lines):
+  LL0 PASSED (mode check, 15 points). R(24, 153) = 19, R(24, 185) = 22, R(24, 217) = 21, R(24, 249) = 26, with
+  774,437; 4,031,417; 20,270,334; 99,485,847 start groups (5, 9, 55, 33 of them reaching R).
+  LL1 HELD (every run finite): no counterexample with any right half has its left edge within 248 cells.
+  LL2 HELD: R / log2 G = 0.971, 1.003, 0.865, 0.979.  LL3 HELD: G grows by 1.510, 1.497, 1.488 per 8 depths.
+  LL4 HELD: R <= 40 at every depth run. The results are appended to rule30_ladder_local.txt.
 """
 import math, pathlib, subprocess, sys, tempfile
 from ompflags import OMP

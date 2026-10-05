@@ -23,9 +23,19 @@ state after the free bits is exactly a least residue modulo a power of 3 (PRIZE-
 reaches the real case, where kicks come at a steady rate. §8.54 explains why the method stops there.
 - **The Collatz transfer (§8.58, PRIZE-PROBLEMS.md §7.5).** Both problems obey one exact statement, the window
   principle: a block of the trace can repeat only if it is no longer than the state is large. It gives Theorem A′
-  here and, on the Collatz side, that no rational has a Sturmian parity sequence. It also names what is missing
+  here and, on the Collatz side, that no rational has a Sturmian parity sequence (found afterwards to be known:
+  Dubickas 2009 for integer orbits, and three 2026 notes; PRIZE-PROBLEMS.md §7.5). It also names what is missing
   here: a counterexample must keep the $2n$ cells beside its centre within $2^{0.13\,n}$ contents for ever, and
   the edge certifies only about $n$.
+- **The band of stripes, brought in (§8.59).** The left end of every row has infinitely many diagonals that are
+  black for ever (Lemma B2: the diagonals' periods are unbounded), so a repeat of the trace, which is a white run
+  in the later row, must stay a growing distance below Theorem A′ (Theorem A‴). Corollary F: a column 1 that
+  begins with near-squares at larger and larger periods is excluded with any left half (the period-doubling
+  word, Chacon's word, every substitution fixed point starting with a double letter). The settled band has no
+  white run longer than twice its period (Lemma B3), so a repeat's white run cannot lie in it (Theorem A⁗):
+  with the universal strip certified to 53,200 diagonals, Thue–Morse and paperfolding are excluded for every
+  left edge up to about 15,870 cells. For every left edge, their case reduces to one question about the left
+  side of Rule 30 alone: does it settle at a bounded rate.
 
 **Update, 2026-10-05, evening.** Still no proof and nothing to submit. The day's work moved
 the problem to one precise statement:
@@ -3302,10 +3312,10 @@ configurations can be covered cheaply. The set of configurations with a period-2
 the graph of the forced left half over the right halves. The prize asks whether that set contains a finite
 configuration, which is a question about single points, as §8.47 found for every other soft method.
 
-### 8.56 What is excluded outright: the left edge is at least 217 cells away (2026-10-05)
+### 8.56 What is excluded outright: the left edge is at least 249 cells away (2026-10-05)
 
-*Local. Engine `ladder_deep.c`, driver `rule30_ladder_local.py`; predictions committed before the deep run. The run
-is still going (depths 249 and 265); this section will be completed when it ends.*
+*Local. Engine `ladder_deep.c`, driver `rule30_ladder_local.py`; predictions committed before the deep run. Depth 249
+finished at 23:49 on 2026-10-05 after about 4.3 hours on six threads; depth 265 was dropped on the owner's decision.*
 
 **A corollary of §8.12 that had not been stated.** $R(m, S)$ is the longest zero run of the forced left half from
 depth $S$, over every start of a width-$m$ layer and every input to it. A layer fed any input can show every column
@@ -3326,20 +3336,22 @@ depth-first walk holds one branch at a time. `ladder_deep.c` does that, on 320-b
 prints exactly `ladder.c`'s histograms and values at 15 points (LL0), and takes 0.2 s where `ladder.c` took 19 s
 ($m = 12$, $S = 105$).
 
-**Measured so far** ($m = 24$, six threads):
+**Measured** ($m = 24$, six threads; 265 not run):
 
-| Depth $S$ | 153 | 185 | 217 | 249 | 265 |
-|---|---|---|---|---|---|
-| $R(24, S)$ | 19 | 22 | 21 | running | queued |
-| Start groups $G$ | 774,437 | 4,031,417 | 20,270,334 | | |
-| $R / \log_2 G$ | 0.97 | 1.00 | 0.87 | | |
+| Depth $S$ | 153 | 185 | 217 | 249 |
+|---|---|---|---|---|
+| $R(24, S)$ | 19 | 22 | 21 | 26 |
+| Start groups $G$ | 774,437 | 4,031,417 | 20,270,334 | 99,485,847 |
+| $R / \log_2 G$ | 0.97 | 1.00 | 0.87 | 0.98 |
+| Groups reaching $R$ | 5 | 9 | 55 | 33 |
 
-- **Every run is finite** (LL1, so far). With $R(24, 217) = 21$: **no period-2 counterexample has its left edge
-  within 216 cells of the centre when its period starts, whatever its right half.**
-- **The coin law of §8.14 holds at twice the depth** (LL2, so far): the longest run is 0.87 to 1.00 times
-  $\log_2 G$.
-- **The start groups grow by 1.51 and 1.50 for every 8 depths** (LL3, so far), which is 0.148 bits per visible
-  bit, against the channel bound's 0.129 at $m = 26$ (§8.33).
+- **Every run is finite** (LL1 held). With $R(24, 249) = 26$: **no period-2 counterexample has its left edge
+  within 248 cells of the centre when its period starts, whatever its right half.**
+- **The coin law of §8.14 holds at twice the depth** (LL2 held): the longest run is 0.87 to 1.00 times
+  $\log_2 G$ at every depth.
+- **The start groups grow by 1.51, 1.50 and 1.49 for every 8 depths** (LL3 held), which is 0.148 bits per
+  visible bit, against the channel bound's 0.129 at $m = 26$ (§8.33).
+- **$R \le 40$ throughout** (LL4 held). The deepest run took 2.1 billion tree nodes and 4.0 trillion group members.
 
 This is a finite check and not a step toward a proof: §8.14 already showed the runs grow with depth at every layer
 width. What it gives is the firmest statement so far about *every* finite configuration, with no condition on the
@@ -3567,10 +3579,164 @@ of length $2n - L - 2i$ starting at depth $L + 2i + 1$. Zero runs are what the r
 §8.56 bound. So a bound $R(d) \le \rho\,d + C$ on zero runs from depth $d$ would give
 $2n \le (1 + \rho)(L + 2i) + C$ for every later time $2j$: a block that starts early enough never recurs at all.
 With the doubling conjecture ($\rho = 1$) the first $L + 3$ visible bits of column 1 never recur. This is
-conditional, and the computed range of $R$ (depths to 217) lies below the depths $L + 2i + 1 \ge 218$ where a
+conditional, and the computed range of $R$ (depths to 249) lies below the depths $L + 2i + 1 \ge 250$ where a
 counterexample would need it. It is recorded because it ties three things together exactly: a repeat in the
 trace, a white run in a later row, and the cost of that run.
 
 **What it does not give.** Theorem A′ is sharper than Theorem A and not stronger in its reach. Real right halves
 have no long early repeats, so it does not bind them. The squeeze sentence above is a restatement, as §8.33 was.
 Its use is the comparison: it says exactly which number a proof must move, and from where to where.
+
+
+### 8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)
+
+Question 7 of PERIOD-TWO.md asked which columns 1 of zero entropy are excluded. Theorem E (§8.57) excluded the
+Sturmian ones, by their long early repetitions. §8.57 also said where that method has no grip: a sequence with
+no repetition longer than two periods, Thue–Morse for one, passes the condition $(\ast)$ untouched. This section
+takes the other half of the picture, the left end of the rows, and gets a grip on part of that class. Everything
+here is elementary, and `rule30_band.py` checked each statement with predictions written first. Two of its blind
+predictions and one counterfactual missed; they are recorded below.
+
+**The idea in one line.** §8.58 showed that a repeat of the trace is a white run in the later row. The later row's
+left end is the band of stripes (§8.27, §8.30): eventually periodic diagonals with tiny periods. A band like that
+is never white for long. So a repeat must stay below Theorem A′'s bound by the black in the band, and the band's
+black is a universal, computable object.
+
+**Notation.** Diagonal $k$ of a row is the cell $k$ places right of the row's leftmost black cell, and $D_k(t)$ is
+its colour at time $t$. From Rule 30, $D_k(t+1) = D_{k-2}(t) \oplus (D_{k-1}(t) \lor D_k(t))$, with $D_{-1} = D_{-2} = 0$.
+So diagonal $k$ depends only on diagonals nearer the edge, and by induction each is eventually periodic in time,
+with a period that is a power of two (§8.27). "Eventually white" and "eventually black" mean constant from some
+time on. In the wall form (§8.39) the same holds: diagonal $k$ exists from time $k - L$, when it is at the wall,
+and obeys the recurrence from then on.
+
+**Lemma B1 (white, then black).** If diagonal $j$ is eventually white, diagonal $j + 2$ is eventually black. No two
+adjacent diagonals are both eventually white. A diagonal other than 0 and 1 is eventually black only if the one two
+before it is eventually white.
+
+*Proof.* Once $D_j \equiv 0$, $D_{j+2}(t+1) = D_{j+1}(t) \lor D_{j+2}(t)$, which never falls, so $D_{j+2}$ is eventually
+constant, and it is 1 unless $D_{j+1} \equiv D_{j+2} \equiv 0$ as well. If $D_j \equiv D_{j+1} \equiv 0$ then
+$D_{j+1}(t+1) = D_{j-1}(t) \oplus (D_j \lor D_{j+1}) = D_{j-1}(t)$ forces $D_{j-1} \equiv 0$, and so on down to
+$D_0 \equiv 0$, which is false ($D_0 \equiv 1$). That proves the first two claims. For the third: if $D_k \equiv 1$
+then $D_k(t+1) = D_{k-2}(t) \oplus 1$ forces $D_{k-2} \equiv 0$. $\square$
+
+**Lemma B2 (the clock never stops).** The eventual periods of the diagonals are unbounded. So there are infinitely
+many eventually white diagonals, and infinitely many eventually black ones.
+
+*Proof.* Suppose every diagonal had eventual period dividing $P$. Write $V_k \in \{0,1\}^{\mathbb{Z}/P}$ for the
+periodic regime of diagonal $k$, indexed by time modulo $P$, so that $V_k(s+1) = V_{k-2}(s) \oplus (V_{k-1}(s) \lor V_k(s))$
+for every $k \ge 0$, with $V_{-1} = V_{-2} = 0$. The pairs $(V_{k-1}, V_k)$ take finitely many values, so
+$(V_{k_1 - 1}, V_{k_1}) = (V_{k_2 - 1}, V_{k_2})$ for some $k_1 < k_2$. The recurrence can be read backwards,
+$V_{k-2}(s) = V_k(s+1) \oplus (V_{k-1}(s) \lor V_k(s))$, so $V_{k_1 - j} = V_{k_2 - j}$ for every $j \ge 0$, and the
+backward reading continues into the negative indices, where everything is 0. With $q = k_2 - k_1$ this gives
+$V_0 = V_{-q} = 0$, against $V_0 \equiv 1$. So the periods are unbounded. A diagonal's period exceeds the periods
+of the two before it only when the one before it is eventually white: otherwise a time with $D_{k-1}(t) = 1$ resets
+$D_k(t+1) = \lnot D_{k-2}(t)$, after which $D_k$ follows its inputs' period. Infinitely many doublings need infinitely
+many eventually white diagonals, and Lemma B1 turns each into an eventually black one. $\square$
+
+Rowland (2006, §5) proves when the periods double, and §8.31 found the first branch point of the left side, which
+is an eventually white diagonal too. Whether the unboundedness itself is in the literature was not checked (owed:
+Jen 1986, Rowland 2006). Measured: below diagonal 53,200 the eventually white diagonals are exactly 2, 7, 28 and
+399, the eventually black ones exactly 0, 1, 4, 9, 30 and 401, the period 16 (BF0, with a certificate $V_t = V_{t+16}$
+for the strip of 53,200 diagonals; one cycle, reached by the single cell and by random seeds). Over all 512 contents
+of the first 10 diagonals, diagonal 4 is black from time 4 and diagonal 9 from time 11 (BD3).
+
+**Theorem A‴ (the window principle, with the band).** Let the leftmost black cell at time 0 be $L$ cells left of
+column $i$, and let the pair of columns $(i, i+1)$ show the same block of $n$ values from the times $a$ and $a' > a$.
+Then row $a'$ is white on its diagonals $L + a' - n + 1$ to $a' - a - 1$. Hence, if diagonal $b$ is black at time $a'$
+and $b < a' - a$, then $n \le L + a' - b$.
+
+*Proof.* By §8.58 the rows at $a$ and $a'$ agree on the $n - 1$ cells left of column $i$. Row $a$ is white beyond
+distance $L + a$, so row $a'$ is white at the distances $L + a + 1$ to $n - 1$. Its leftmost black cell is at distance
+$L + a'$, so those distances are its diagonals $L + a' - n + 1$ to $a' - a - 1$. A black diagonal $b$ in that range
+contradicts this; so either $b \ge a' - a$ or $b \le L + a' - n$. $\square$
+
+With $b = 0$ this is Theorem A′. With $b = 1, 4, 9$ (universal from times 1, 4, 11) it is checked on every seed of
+width up to 9 (BD4, 0 violations), and the bound with $b = 9$ is sharp: 166 pairs attain $n = L + a' - 9$ (BD5).
+
+**Corollary F (near-squares at the start are fatal).** Let $c$ be the visible bits of column 1, and write
+$\ell(i, i')$ for the length of the common future of $c$ at the indices $i < i'$. If there is a constant $K$ and pairs
+$i_j < i'_j$ with $i'_j - i_j \to \infty$ and $\ell(i_j, i'_j) \ge i'_j - K$, then the forced left half is never finite.
+In words: a column 1 that starts with a square, or misses one by a bounded amount, at larger and larger periods,
+is excluded, with any left half.
+
+*Proof.* Suppose the left half were finite, its leftmost black cell at depth $L$. By Lemma B2 there is an eventually
+black diagonal $b \ge L + 2K$, black from some time $t_b$. The pair of columns $(-1, 0)$ repeats its block of length
+$2\ell$ from the times $2i_j$ and $2i'_j$ (column 0 is periodic and column $-1$ at the odd times is constant). Take
+$j$ with $2(i'_j - i_j) > b$ and $2i'_j \ge t_b$. Theorem A‴ with the distance $L - 1$ to column $-1$ gives
+$2\ell \le L - 1 + 2i'_j - b \le 2i'_j - 2K - 1$, against $\ell \ge i'_j - K$. $\square$
+
+What it reaches, with the slack $i' - \ell(i, i')$ measured over all pairs with $i' - i \ge 64$ and $i' \le 4096$
+(BD8, all held): the period-doubling word (fixed by $0 \to 01$, $1 \to 00$) has slack 1 for ever, since its first
+$2^k$ symbols recur at $2^k$ for exactly $2^k - 1$ symbols (BD7). Chacon's word (fixed by $0 \to 0010$, $1 \to 1$)
+has slack 0: it begins with the squares $\sigma^k(0)\sigma^k(0)$ (BD7). So does every fixed point of a substitution
+whose first two letters are equal, and so does the Fibonacci word (slack $-1595$ in the range measured; Theorem E
+already covers it). For a Sturmian word with partial quotient $a_{n+1} \ge 2$, the first break of period $q_n$ at
+$h$ and the next, at least $q_{n+1}$ later, give one repetition of slack at most 1 at each such scale, so Corollary F
+gives that case of Theorem E in two lines; the case of eventually all $a_n = 1$ still needs §8.57's three scales.
+Not reached: Thue–Morse, Rudin–Shapiro and paperfolding, whose slack grows with the period (32, 32 and 33 in the
+range measured; for Thue–Morse the squares of period $d$ sit at positions $\ge d$, so the slack is at least $d/3$).
+As column 1, the period-doubling word, Chacon's word and their complements give forced rows that look like coin
+flips to depth 6000 (longest zero run 11 to 13, ones 0.497 to 0.510; BD9).
+
+**Lemma B3 (the settled band has no long white run).** Suppose that at time $t$ the diagonals $0$ to $M$ have been
+in their periodic regime, with a common period $P$, for at least $P$ steps. Then no white run of the row inside
+diagonals $0$ to $M$ is longer than $2P$.
+
+*Proof.* Let the row be white on $[g+1, M']$ with $M' \le M$ and $D_g(t) = 1$ (diagonals 0 and 1 are black, so such a
+$g \ge 1$ exists). One step back, the constraint $D_{k-2} = D_{k-1} \lor D_k$ for $k \in [g+1, M']$ leaves two cases:
+either the row at $t - 1$ is white on $[g-1, M']$ with $D_{g-2}(t-1) = 1$ (the run is older and two cells wider),
+or it is black on $[g-1, M'-2]$ (the run is born here, under a black run). Repeating, the run is older for $s_0$
+steps and born at time $t - s_0 - 1$. At time $t - P$ the row is the same as at $t$, white exactly from $g+1$, so
+$s_0 < P$. Forward from time $t - P$, a white run only loses two cells a step at its edge side:
+$D_k(\tau+1) = 0$ whenever $k-2$, $k-1$, $k$ are all white. So at time $t - s_0 - 1$ the row is white on
+$[g + 1 + 2(P - s_0 - 1), M']$ and black on $[g - 2s_0 - 1, M' - 2]$. The two ranges are disjoint only if
+$M' - g \le 2P - 2s_0 \le 2P$. $\square$
+
+Measured on the universal strip (16 phases, 53,200 diagonals): the longest white run is 17 (BF1 held its bound,
+32; its blind half, "between 5 and 16", missed by one).
+
+**Theorem A⁗ (a repeat's white run cannot lie in the settled band).** In the setting of Theorem A‴, if the diagonals
+$0$ to $M$ are settled in the sense of Lemma B3 at time $a'$ and $M < a' - a$, then $n \le L + a' - M + 2P$.
+
+*Proof.* The white run of Theorem A‴ covers $[L + a' - n + 1, a' - a - 1] \supseteq [L + a' - n + 1, M]$, which lies in
+the settled band, so by Lemma B3 its length $M - (L + a' - n)$ is at most $2P$. $\square$
+
+**The settling front.** When does diagonal $M$ settle? A diagonal in its regime settles the next one at the first
+black cell it shows afterwards: $D_{k+1}(t+1) = \lnot D_{k-1}(t)$ when $D_k(t) = 1$, and from then on $D_{k+1}$ follows
+its inputs. After an eventually white diagonal the next one settles at once. So
+$\tau_{k+1} = 1 + \min\{t \ge \max(\tau_k, \tau_{k-1}) : D_k(t) = 1\}$ (or $\max(\tau_k, \tau_{k-1})$ after a white
+diagonal) is an upper bound on the settling time of diagonal $k+1$, for every row with a white left tail, whatever
+its seed and whatever its phase, once the regime values $D_k(t)$ are taken from the universal cycle at the worst
+of its 16 phases. Measured (BF2): the worst-phase front reaches diagonal 53,199 at time 107,294, a slope of 2.017
+(1.992 at diagonal 1,000; I had predicted 1.5 to 2.0). The actual rows settle faster: the median row is in its
+regime to diagonal $0.78\,t$ at $t = 1600$ (the 0.25 cells per step of §8.30), but at $t = 200$ single rows ranged
+from $0.76\,t$ to $1.01\,t$, which is why the counterfactual CF2 ("no row agrees with the cycle below $2S(t)$")
+failed in 2 of 120 cases: it assumed the average rate for every row. BF3 held: every row agrees with a phase of the
+cycle on every diagonal below the front's $S(t)$ ($S(200) = 97$, $S(1600) = 804$).
+
+**What Theorem A⁗ reaches** (BF4). A pair $i < i'$ of column 1 with common future $\ell$ excludes every left edge
+$L$ for which $L + 2i' - 2\ell + 32 \le \min(2(i'-i) - 1,\, 53199)$ and $\tau_{L + 2i' - 2\ell + 32} \le 2i' - 16$.
+The front's slope is just above 2, so a repetition is fatal, at depths the certified strip covers, when
+$\ell > i'/2 + L/2 + O(1)$, roughly: when the future at $i'$ repeats more than half of the time before it.
+- Period-doubling (the control): excluded to $L = 53{,}165$, the strip's cap; Corollary F excludes every $L$.
+- **Thue–Morse: excluded for every $L \le 15{,}870$**, by the pair $i = 0$, $i' = 49{,}152$, $\ell = 32{,}768$ (the
+  prefix of length $2^{k+1}$ recurs at $3 \cdot 2^k$).
+- **Paperfolding: excluded for every $L \le 15{,}868$**, by $i = 16{,}384$, $i' = 49{,}152$, $\ell = 32{,}767$ (the
+  block starting at $2^{k-1}$ has period $2^k$ for $2^k - 1$ symbols).
+- Rudin–Shapiro: nothing. Its best repeats have $\ell$ near $i'/2$, which the slope 2.017 just fails to reach.
+The records (§8.36) exclude every column 1 for $L \le 84$ ($R(85)$ is finite); this is the same kind of
+statement, about 190 times deeper, for two named sequences.
+
+**What it reduces to.** For Thue–Morse and every $L$, the argument needs, at infinitely many scales $k$, that
+diagonal $L + 2^{k+1} + 33$ has settled by time $6 \cdot 2^k - 16$: that the front's slope stays below 3 and the
+band's period stays small against its depth. Those are statements about one object, the universal left side of
+Rule 30 (§8.31), not about seeds. Below diagonal 53,200 the slope is 2.017 and the period 16. Beyond 160,000
+diagonals nothing has been computed, and Lemma B2 says the period keeps doubling, each doubling at an eventually
+white diagonal whose position no one can predict. So the Thue–Morse case of question 7 is now: *prove that the
+left side of Rule 30 settles at a bounded rate*. That is a cleaner question than the one it replaces, and still
+open.
+
+**What this does not do.** Nothing for real right halves: their repeats are short and late, far below Theorem A′,
+let alone A⁗. Nothing for the counting form. The left half's edge is where Rule 30 is most orderly, and the prize
+lives in the chaotic core, so a method that lives on the edge was always going to reach only the columns 1 that
+echo their own beginnings.

@@ -1650,3 +1650,40 @@ Cloud):
     not ergodic, so the condition $l < 0$ matters.
   So Kari and Kopra's hypotheses of ergodicity and strong mixing hold for Rule 30. What their argument would still
   need is a Rule 30 analogue of the step from Z-numbers to configurations; that is not done.
+
+## After the window principle: the Collatz complexity bound is Dubickas's (checked 2026-10-05, by Local through a search agent)
+
+Checked after the proofs of PRIZE-PROBLEMS.md §7.5 and RULE30-PRIZE.md §8.54, §8.57, §8.58 were written.
+Pages and abstracts were read; no PDF could be opened, so Dubickas 2009, Jen 1990, Monks-Yazinski 2004,
+López-Stoll 2009, Bernstein-Lagarias 1996 and Terras 1976 were seen only in abstract or through citing papers.
+
+- **Collatz, W2 (complexity at least 1.71 n): FOUND, refereed.** Dubickas, Glasgow Math. J. 51 (2009) 243-252,
+  Theorem 5 by citing papers (arXiv:2510.11723 §3.3; arXiv:2609.19007): the same constant $\log 2/\log(3/2)$ for
+  divergent integer trajectories, conditional on their existence. To read in full: it decides the credit.
+- **Collatz, W1 and W3: FOUND three times in 2026, all unrefereed** (GitHub notes of 2026-07-22 and 2026-09-22, a
+  Zenodo record of 2026-10-02). Implied for integer orbits by Dubickas's Theorem 5; for slopes below $\log_3 2$ by
+  Monks and Yazinski (2004), Theorem 2.7(b) (secondary account).
+- **The lemma of PRIZE-PROBLEMS.md §7.4**: the identity is Terras (1976) and Lagarias (1985, Theorem B), verbatim as
+  Lemma 2.3 of arXiv:2602.10466; the least-residue bound is Kontorovich and Sinai's structure theorem, part two
+  (arXiv:0910.1944, Theorem 5.2), in the odd-to-odd form.
+- **arXiv:2101.12747** (López and Stoll, 2021): no refereed criticism, correction or confirmation found. The gap at
+  its equations 15 and 16 (a real limit taken for a 2-adic one) is raised, with counterexamples and unanswered, in
+  a public issue of 2026-09-30; a 2026 note calls it "an apparent gap".
+- **Rule 30, Theorem A (Jen with a clock): NOT FOUND; NEAR.** Kopra (arXiv:2202.13809) Lemma 3.2 tracks the
+  preperiod and Theorem 3.5 is the case $b = \infty$; Condrey (arXiv:2609.09431) Theorems 6, 7 and Corollary 8 bound
+  the constant prefix of one column by $w + 2$ (period 1, from time 0, sharp). Nothing for period $P$, later windows,
+  or pairs of columns.
+- **Rule 30, Theorem A′ (the window principle): NOT FOUND; NEAR.** The mechanism is standard (Wolfram's prize post;
+  Kopra, Definition 3.1). Its corollary $p(n) \ge n - L$ is weaker than Jen plus Morse-Hedlund. Dubickas's Theorem 3
+  is the same count for the times-$p/q$ automata, which share Kopra's class with Rule 30; no common statement found.
+  Kopra arXiv:2005.05112 computes the complexity of the whole trace subshift, not of one orbit.
+- **Rule 30, Theorem E (Sturmian columns excluded): NOT FOUND.** Context: Rowland and Yassawi (arXiv:1209.6008),
+  columns of linear automata are $p$-automatic, hence never Sturmian; Dolce and Tahay (DLT 2022, snippet only):
+  Sturmian columns of quadratic slope exist in purpose-built automata.
+- **Still to check:** whether the unboundedness of the left diagonals' periods (RULE30-PRIZE.md §8.59, Lemma B2) is
+  in Jen (1986) or Rowland (2006, §5).
+
+Sources opened for the Rule 30 statements: Kopra (two papers), the Kari-Kopra abstract, Condrey, Wolfram's prize
+post and bibliography, the NKS Rule 30 note, Jen's OSTI abstract. Queries: Rule 30 with adjacent columns, window,
+quantitative, Jen; left-permutive trace complexity from a finite configuration; Rule 30 Sturmian; Brunnbauer 2019
+(diagonals only).
