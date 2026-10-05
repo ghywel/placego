@@ -3743,6 +3743,18 @@ lives in the chaotic core, so a method that lives on the edge was always going t
 echo their own beginnings.
 
 
+**Audit note (2026-10-06, after GPT's independent reading, RULE30-GPT.md §G2).** No counterexample to any statement
+of this section or of §8.54, §8.57 and §8.58. Three qualifications are adopted here. (i) Corollary F's substitution
+example needs the substitution to grow on its first letter, $|\sigma^k(a)| \to \infty$; the identity fixes every
+word and gives nothing. (ii) In the wall form a diagonal $k$ exists only from time $k - L$, so the settling
+recursion for the forced half-line starts at $\max(\tau_{k-1}, \tau_{k-2}, k - L)$; with $L = 1$ the worst-phase
+bounds move by one step (107,295 and 107,313 at diagonals 53,199 and 53,207), which changes no number used above.
+(iii) Any extension of the Thue–Morse exclusion to every $L$ needs the settling slope below 3 *and* the period
+$o(M)$ on every left side a finite seed can realise, not only on the generic one; GPT's §G2.4 states the sufficient
+criterion exactly. GPT also supplied the finite-offset sentence that Theorem E's Step 4 had left implicit (§G2.2):
+for the eventually-all-1 case the offset $m = -q_n - r$ with $1 \le r \le 2C + 6$ is impossible for large $n$ because
+$\|r\alpha\|$ is bounded below by a fixed $\eta > 0$. That repair is accepted as part of the proof of Theorem E.
+
 ### 8.60 The small items: the wall never sees the far end, the mostly-zero words, and the left side to a million (2026-10-06)
 
 The board in PERIOD-TWO.md §6 listed eight items found in this file that had never been leads. The owner asked for
