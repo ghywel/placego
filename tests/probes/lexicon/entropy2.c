@@ -2,6 +2,13 @@
  *
  * BUILD:   cc -O2 -o entropy2 tests/probes/lexicon/entropy2.c -lm      (driven by rule30_entropy.py, deep2 mode)
  * USAGE:   ./entropy2 M ITER       prints "S M states meanpop" and "E M lambda"
+ *          ./entropy2 M ITER cert DELTA FILE
+ *                                  also certifies the growth rate (rule30_squeeze.py checks it exactly): with
+ *                                  lambda' = lambda (1 + DELTA), iterate t <- A t / lambda' from t = 1, summing
+ *                                  w = t_0 + t_1 + ..., until every entry of t is below 1/4. Then
+ *                                  A w = lambda' (w - 1 + t_last) < lambda' w, a Collatz-Wielandt certificate that the
+ *                                  spectral radius is below lambda'. Prints "C M lambda' rounds maxt" and writes FILE,
+ *                                  one line per state: "i succ0 succ1 w_i" (succ -1 for a dead branch).
  *
  * Same automaton as entropy.c (a state is the set of layer states consistent with the visible bits so far, at an
  * even time; reading visible bit b keeps the states whose cell 1 is b, then steps with column 0 = 0 and then 1, each
@@ -118,5 +125,29 @@ int main(int argc, char **argv) {
         for (size_t i = 0; i < N; i++) v[i] = w[i] / s;
     }
     printf("E %d %.9f\n", M, lam);
+    if (argc >= 6 && strcmp(argv[3], "cert") == 0) {
+        double lp = lam * (1.0 + atof(argv[4])), maxt = 1.0;
+        double *t = malloc(sizeof(double) * N), *t2 = malloc(sizeof(double) * N), *ws = calloc(N, sizeof(double));
+        for (size_t i = 0; i < N; i++) t[i] = 1.0;
+        long rounds = 0;
+        while (maxt >= 0.25 && rounds < 100000000L) {
+            for (size_t i = 0; i < N; i++) ws[i] += t[i];
+            maxt = 0;
+            for (size_t i = 0; i < N; i++) {
+                double a = 0;
+                for (int bit = 0; bit < 2; bit++) { int64_t j = succ[2 * i + bit]; if (j >= 0) a += t[j]; }
+                t2[i] = a / lp;
+                if (t2[i] > maxt) maxt = t2[i];
+            }
+            double *sw = t; t = t2; t2 = sw;
+            rounds++;
+        }
+        printf("C %d %.17g %ld %.6g\n", M, lp, rounds, maxt);
+        FILE *f = fopen(argv[5], "w");
+        if (!f) { fprintf(stderr, "cannot write %s\n", argv[5]); return 4; }
+        for (size_t i = 0; i < N; i++)
+            fprintf(f, "%zu %lld %lld %.17g\n", i, (long long)succ[2 * i], (long long)succ[2 * i + 1], ws[i]);
+        fclose(f);
+    }
     return 0;
 }
