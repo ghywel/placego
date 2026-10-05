@@ -34,6 +34,10 @@ only (the known values: 9, 17, 33, 37; 1, 3 and 21 record prefixes at 9, 13, 33;
       common factor of the first record witnesses at d and at 2d (lengths m and n, in visible bits) is at most
       log2(m n) + 6, which two random words exceed about one time in 64.
 REFUTED-BY: RC0 failing (the instrument); RC1 to RC5 failing.
+A first attempt (2026-10-05) was stopped by the session's 30-minute limit on background jobs during depth 65. Its
+partial printout, seen after these predictions were committed, gave depths 1, 9, 17, 25, 33, 41, 49 and 54 to 61. The
+script now caches each depth's raw output (in the system's temporary directory), and the full run is the second
+attempt.
 
 ---------------------------------------------------------------------------------------------------------------
 JOB M4 (Cloud wrote, 2026-10-05; for Local; CLOUD-LOCAL.md lead M4). The records at depths 69, 73 and 77 (and, if the
@@ -86,8 +90,18 @@ def build():
     return exe
 
 
+CACHE = pathlib.Path(tempfile.gettempdir()) / "rule30_records_cache"
+
+
 def run(exe, d):
-    out = subprocess.run([str(exe), str(d), str(THREADS)], check=True, capture_output=True, text=True).stdout
+    """records.c at depth d; each depth's raw output is cached, so a stopped run resumes where it stopped."""
+    CACHE.mkdir(exist_ok=True)
+    f = CACHE / f"d{d}.txt"
+    if f.exists():
+        out = f.read_text()
+    else:
+        out = subprocess.run([str(exe), str(d), str(THREADS)], check=True, capture_output=True, text=True).stdout
+        f.write_text(out)
     R = count = None
     hist, wits = {}, []
     for line in out.split("\n"):
@@ -173,8 +187,7 @@ def main():
     for d in list(range(1, DMAX + 1)) + [65]:
         R, count, hist, wits, _ = run(exe, d)
         res[d] = (R, count, hist, wits)
-        if d % 8 == 1 or d > DMAX - 8:
-            print(f"   depth {d}: record {R} (ends at {d + R}), {count} record prefixes", flush=True)
+        print(f"   depth {d}: record {R} (ends at {d + R}), {count} record prefixes", flush=True)
     with Pool(THREADS) as pool:
         py = {d: (m, c) for d, m, c in pool.map(py_record, range(1, 30))}
     ok_known = all(res[d][0] == R and (c is None or res[d][1] == c) for d, (R, c) in known.items())
