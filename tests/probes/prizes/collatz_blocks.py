@@ -3,7 +3,7 @@
 (PRIZE-PROBLEMS.md section 7.2).
 
 RUN-ON:     cpu (Python 3 and a C compiler; collatz_blocks.c; exact)
-COMMAND:    python3 tests/probes/prizes/collatz_blocks.py [W=26] [JMAX=12]
+COMMAND:    python3 tests/probes/prizes/collatz_blocks.py [W=26] [JMAX=12]   or   ... collatz_blocks.py scaling
 COST:       under a minute on one core.
 
 Background (section 7.1). For a w-bit number n = 2^(w-1) + r, Terras's affine formula gives, after the w - 1 free
@@ -36,11 +36,20 @@ OUTCOME, 2026-10-05 (the first run, 10 seconds, W = 26: 33,554,432 numbers, 573,
   structure, not noise. At w = 26, |F| = 0.0133 at h = 753 (j = 12) and 0.0116 at h = 6355 (j = 13), where random
   samples would give |F| that large with probability about e^-100. The frequency 1837 recurs (w = 24, j = 11; w = 26,
   j = 12 and 13). At w = 24 the same scales give 0.0166 and 0.0186: smaller at the larger width.
+
+MODE scaling. The largest odd Fourier coefficient over survivors, F(w, j), at j = 10, 12, 14 for w = 20, 22, 24, 26,
+28. The sampling-noise floor falls by about 0.5 in log2 per bit of w (the survivors double with each bit), so a
+slope of log2 F near -0.5 means noise, near 0 a persistent structure, and between them a structure that fades.
+PREDICTIONS for scaling, written 2026-10-05 before scaling's first run:
+  CS0 (control, must hold): the affine formula holds at w = 28.
+  CS1 (blind): at j = 12 and j = 14 the least-squares slope of log2 F against w (w = 20 .. 28) lies between -0.5
+      and -0.1: a real structure that fades with width.
+  CS2 (blind): at w = 28 and j = 12, F is more than 2 times the noise baseline sqrt(ln 2^j / M).
 """
 import math, pathlib, subprocess, sys, tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
-W = int(sys.argv[1]) if len(sys.argv) > 1 else 26
+W = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 26
 JMAX = int(sys.argv[2]) if len(sys.argv) > 2 else 12
 FAILS = 0
 
@@ -69,9 +78,38 @@ def run(exe, w):
     return B, m3, ok
 
 
+def scaling(exe):
+    global JMAX
+    JMAX = 14
+    F, ok28, M = {}, False, {}
+    for w in (20, 22, 24, 26, 28):
+        B, _, ok = run(exe, w)
+        if w == 28:
+            ok28 = ok
+        for j in (10, 12, 14):
+            F[(w, j)], M[w] = B[j][5], B[j][3]
+        print(f"   w = {w}: survivors {M[w]}; F at j = 10, 12, 14: "
+              + ", ".join(f"{F[(w, j)]:.5f}" for j in (10, 12, 14)), flush=True)
+    report("CS0 the affine formula holds at w = 28", ok28)
+    ws = (20, 22, 24, 26, 28)
+    sl = {}
+    for j in (12, 14):
+        ys = [math.log2(F[(w, j)]) for w in ws]
+        mx, my = sum(ws) / 5, sum(ys) / 5
+        sl[j] = sum((w - mx) * (y - my) for w, y in zip(ws, ys)) / sum((w - mx) ** 2 for w in ws)
+    print("   slope of log2 F per bit of w: " + ", ".join(f"j = {j}: {v:.3f}" for j, v in sl.items()))
+    verdict("CS1 slope between -0.5 and -0.1 at j = 12 and 14", all(-0.5 <= v <= -0.1 for v in sl.values()),
+            ", ".join(f"{v:.3f}" for v in sl.values()))
+    ratio = F[(28, 12)] / math.sqrt(math.log(2 ** 12) / M[28])
+    verdict("CS2 at w = 28, j = 12, F above 2 times the noise baseline", ratio > 2, f"{ratio:.2f} times")
+
+
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "collatz_blocks_c"
     subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "collatz_blocks.c"), "-lm"], check=True)
+    if len(sys.argv) > 1 and sys.argv[1] == "scaling":
+        scaling(exe)
+        return
     oks = []
     for w in (20, 22, 24):
         oks.append(run(exe, w)[2])
