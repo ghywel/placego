@@ -39,6 +39,10 @@ OUTCOME, 2026-10-05 (the first run, 21 seconds, w = 16 .. 30, every number):
      the coin (the random walk of Terras's parity vectors). The high bits pay the coin's rate, as Rule 30's right
      part pays 1.002 bits per condition.
   CZ4 HELD: the excess over the coin, e_w, is 0.2 to 3.7 and does not grow (1.93 at w = 16, 0.43 at w = 30).
+
+ADDENDUM, WMAX = 32. PREDICTIONS written 2026-10-05 before the run with WMAX = 32:
+  CZ5 (blind): at w = 32, the slope of log2 S past the free bits (T from w to 0.8 H_w) is within 0.01 of the coin's.
+  CZ6 (blind): e_31 and e_32 are both at most 4.
 """
 import math, pathlib, subprocess, sys, tempfile
 
