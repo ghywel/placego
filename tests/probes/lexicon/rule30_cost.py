@@ -67,6 +67,13 @@ cell the condition involves the left half alone (section 8.40), and the newest r
 PREDICTIONS for phases, written 2026-10-05 before phases' first run:
   CP1 (blind): at least 80% of the free steps (rho >= 0.95) are after a black cell.
   CP2 (blind): at least 60% of the collapses (rho < 0.05) are after a white cell.
+
+OUTCOME of phases, 2026-10-05 (seconds): free steps 113 after black, 28 after white; collapses 108 after black, 26
+  after white.
+  CP1 HELD, just (80%).
+  CP2 REFUTED (19%): collapses come after black cells too. After a black cell the condition is all or nothing: the
+     left half, which is the same for the survivors of one position, decides it for all of them at once. The
+     conditions after a white cell, which couple column 1 to the left half, are the ones that split the survivors.
 """
 import math, pathlib, subprocess, sys, tempfile
 

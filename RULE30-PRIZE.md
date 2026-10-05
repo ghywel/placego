@@ -3067,3 +3067,16 @@ least $c$ that bounds every window is 1.5 at most widths, and 3.0, 2.0 and 5.0 a
 come from small counts, where a few survivors pass many conditions intact. So the form to prove is
 $N_{w,j}(T+k) \le 2^{c(w) - \alpha k} N_{w,j}(T)$ with $c(w)$ growing at most like $\log w$, the coin's luck.
 That still suffices: the count falls below one once $T > (w + c(w)) / \alpha$, so every horizon is finite.
+
+**Which conditions pay** (mode `phases`, predictions written first). Counting each phase of 0101 alone ($w$ = 16
+to 24): free steps come after a black cell 113 times and after a white cell 28 times (CP1 held, at 80%). But the
+collapses also come after black cells, 108 times against 26 (CP2 refuted). So the two kinds of condition of §8.40
+behave differently in the count:
+- **after a black cell**, the condition involves the left half alone. It is all or nothing: it passes every
+  survivor of a position or almost none of them;
+- **after a white cell**, the condition couples column 1 to the left half. Those are the conditions that split the
+  survivors, the coin flips that pay.
+So the bounded-debt statement has a natural two-part form for a proof. The black conditions are a deterministic
+test on the forced left half. The white conditions are paid through column 1, the channel that §8.20 bounds at
+about 0.13 bits per visible bit. A proof would show that the white conditions cannot keep passing a positive
+fraction of survivors while the black tests keep passing, and the count says they do not, beyond about 3 steps.
