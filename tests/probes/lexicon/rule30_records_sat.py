@@ -31,6 +31,19 @@ PREDICTIONS, written 2026-10-05 before this script's first run. Known: R(d) from
   S2 (blind): proving the record (the UNSAT call at R(d) + 1) is SLOWER than records.c's core-seconds from depth 65 on:
      the crib finds keys fast, but proving that no key exists is still a search of the space.
 REFUTED-BY: S0 failing (the encoding); S1 or S2 the other way round.
+
+OUTCOME, 2026-10-05 (Local, the M5, with records.c's M4 run loading the machine):
+  S0 PASSED with kissat 4.0.4: at all 20 odd depths 3 .. 41 the call at R(d) is SAT with a witness the independent
+     simulator confirms, and the call at R(d) + 1 is UNSAT. Spot checks with CaDiCaL 3.0.1 (33, 37, 41) agree.
+  S1 REFUTED: the solvers are slower, not faster. At depth 41 a record witness takes kissat 117 s and CaDiCaL 58 s,
+     against records.c's 3 core-seconds for the whole depth; at depth 53 kissat found none in 600 s (records.c:
+     9 core-seconds). The times grow about 2x per two depths, enumeration's own rate.
+  S2 HELD, trivially: the UNSAT proofs are slower still (41: kissat 142 s, CaDiCaL 127 s).
+  Why the crib fails here, unlike at Bletchley. An Enigma crib letter gave about 4.7 bits through a one-step wiring,
+  and a stecker hypothesis propagated as definite implications round a menu's loops. Here the crib gives one bit per
+  two cells through a circuit about d steps deep, and every OR gate stops backward propagation unless its other input
+  is already known. The solver cannot push the crib into the prefix, so it searches, with more overhead per node.
+  The Bombe's other lesson did transfer: records_bits.c tests 64 prefixes at once and is about 12x records.c.
 """
 import os, re, subprocess, sys, tempfile, time
 

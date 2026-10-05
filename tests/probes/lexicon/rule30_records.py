@@ -76,6 +76,28 @@ HAND-BACK (finished): the script writes the "R", "H" and "W" lines of every dept
 tests/probes/lexicon/rule30_records_local.txt; commit it. Record M4a and M4b as HELD or REFUTED, with the records,
 in an "OUTCOME of JOB M4" block directly below this paragraph. Add a "Local ran M4" ledger line to CLOUD-LOCAL.md
 (machine, cores, wall time per depth) and push main. The owner then tells Cloud "Local ran M4".
+OUTCOME of JOB M4 (Local, 2026-10-05, the M5: 10 cores, 16 GB). Finished, with depth 81; no stop rule fired.
+  | depth | R(d) | ends at d + R | R / d | R - d | record prefixes | engine, wall time on 10 threads           |
+  | 69    | 55   | 124           | 0.797 | -14   | 18              | records.c, 3 min 55 s                     |
+  | 73    | 59   | 132           | 0.808 | -14   | 48              | records.c, 16 min 46 s (machine shared)    |
+  | 77    | 63   | 140           | 0.818 | -14   | 64              | records.c, 67 min 20 s (machine shared)    |
+  | 81    | 65   | 146           | 0.802 | -16   | 16              | records_bits.c, 41 min 1 s                 |
+  M4a HELD at every depth run (0.75 d <= R(d) <= 1.35 d; the ends at 1.80 d to 1.82 d). M4b HELD: the record never
+  fell (55, 59, 63, 65). M4c HELD: R(d) <= d + 4 at every depth run, with 18 to 20 cells to spare; R(d) - d is -14
+  at 69, 73 and 77 and -16 at 81 (Cloud's mean over depths 20 to 65 is -7.3). M4c was committed at 10:25, before
+  this run began (10:27:17), and nothing from the run was shared before this block.
+  How it ran. As written, with one build fix: Apple's clang has no -fopenmp, so build() takes Homebrew's libomp on
+  macOS (the computation is unchanged). Depths 69, 73 and 77 are records.c's. Depth 81 is records_bits.c's, Local's
+  bit-sliced engine (the owner's Enigma lead: inside a zero run every free bit is forced (Lemma 4), so a prefix's run
+  is one forced walk and 64 prefixes walk at once in a machine word). It is records.c's search exactly: R, every H
+  line and the witness sets agree at every depth 1 .. 57, and R and every H line agree with this job's records.c
+  output at 69, 73 and 77 (the 77 cross-check took 9 min 42 s against records.c's 67 min). The engine switch was
+  made after depth 77 because records.c's estimate for 81 was about 4 hours on this machine.
+  Outside the job, also on the M5: records.c gives R(53) = 45 (20 prefixes), R(61) = 49 (192) and R(65) = 57 (100),
+  exactly as rule30_records_cloud.txt; a second machine agrees with Cloud's run. Every R, H and W line of 69 to 81 is
+  in rule30_records_local.txt (records.c's lines for 69 to 77, records_bits.c's for 81; the 16 witnesses at 81 are
+  all its record prefixes).
+  Still running on Local, to be handed back separately: records_bits.c at 85 and 89, and JOB M3b.
 """
 import importlib.util, math, os, pathlib, subprocess, sys, tempfile
 from multiprocessing import Pool
