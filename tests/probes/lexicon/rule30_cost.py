@@ -41,6 +41,12 @@ N_{w,j}(T) >= 256, w = 16 .. WMAX), and the longest run of consecutive free step
 PREDICTIONS for windows, written 2026-10-05 after the outcome above and before windows' first run:
   CW1 (blind): the longest run of consecutive free steps is at most 4, at every w from 16 to WMAX.
   CW2 (blind; bounded debt): log2 of the worst k-step ratio is at most 3 - 0.5 k for every k from 1 to 10.
+
+OUTCOME of windows, 2026-10-05 (2 seconds):
+  CW1 HELD: the longest run of consecutive free steps is 3 at every w from 16 to 22. It does not grow with w.
+  CW2 HELD: log2 of the worst k-step ratio, k = 1 .. 10: 0, 0, 0, -1.30, -2.35, -2.85, -3.79, -8.35, -9.00, -inf.
+     Any 4 consecutive right-paid conditions cost at least 1.3 bits, and any 8 at least 8.3, at every position
+     and width measured (counts of 256 or more). The debt is bounded, as far as it can be counted.
 """
 import math, pathlib, subprocess, sys, tempfile
 

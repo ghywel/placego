@@ -3030,3 +3030,33 @@ cell entering on the left is the black end and then white cells, and every furth
 right part's bits, through column 1. That is where the measured slope of about $-1.05$ has no proof. Question 1 of
 PERIOD-TWO.md §7 is therefore exactly the cost side: a bound of the form $2^{-\alpha}$ per condition paid by the
 right part, after the left part's bits run out.
+
+### 8.52 What the right part pays: in lumps, with bounded debt (2026-10-05)
+
+`rule30_cost.py` (with `count_j.c`; predictions written before each of two runs) splits §8.51's count by the position
+$j$ of column 0 in the hull. For $T \le j$ the count halves exactly, as §8.51's lemma says (CJ0, checked at every
+$w$ up to 22). After that, every condition must be paid by the right part. The step ratio
+$\rho = N_{w,j}(T+1) / N_{w,j}(T)$ is what it pays.
+- **Not per step** (CJ1 refuted). Of 276 right-paid steps ($w$ = 16 to 22, counts of 256 or more), 42 are free
+  ($\rho$ near or exactly 1: the condition is implied by the earlier ones), and 46 collapse ($\rho < 0.05$).
+- **A bit on average** (CJ2 held): the mean of $\log_2 \rho$ is $-1.04$. The word 0, which has a theorem, pays more:
+  $-1.63$.
+- **Bounded debt** (CW1, CW2 held). Free steps never come more than 3 in a row, at every width from 16 to 22. Any
+  4 consecutive right-paid conditions cost at least 1.3 bits, and any 8 at least 8.3.
+
+**Why no pairing proof works on the right** (reasoning, not measured). The left part pays by pairing: flip the
+newest cell on the left, and exactly one of the pair meets the new condition (§8.51). On the right, the newest cell
+$x_0(t)$ is also outside every earlier condition's reach. But it reaches $x_t(0)$ only along the edge of the light
+cone, through $t$ OR gates, and it gets through only if each gate's other input is white. The last of those inputs
+is $x_{t-1}(0)$ itself. So after a black time the newest right cell never pays: that is §8.40's black game, which
+involves the left half alone. After a white time it pays only if a whole diagonal of $t - 1$ cells is white, which
+in the chaotic interior happens about once in $2^{t-1}$. So the right part's bits are not paid when they arrive.
+They are paid later, by older bits re-entering through the interior, which is why the cost comes in lumps.
+
+**What it means.** The measurement gives the cost side a precise and more provable shape than the average slope:
+*after the left part's bits run out, any 4 consecutive conditions remove a fixed fraction of the survivors.* That
+would give $\alpha \ge 1.3 / 4$ and close period 2, if it held at every width and down to counts of one. It cannot
+hold literally down to one, because a lone survivor passes every condition it meets. So the statement to prove is
+the bounded-debt form with a constant: $N_{w,j}(T + k) \le 2^{c - \alpha k} N_{w,j}(T)$ for all $T \ge j$. Its
+constant $c$ is the horizon's excess, measured at most +5 (§8.51). The amortised analysis of algorithms is the
+toolbox for statements of this shape: a potential that free steps raise and collapses spend.
