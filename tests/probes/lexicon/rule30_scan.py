@@ -2,7 +2,7 @@
 """rule30_scan.py: the counterexample search for period two, widened: every right half up to 32 cells.
 
 RUN-ON:     cpu (C99 via cc, driven from Python 3 with the standard library; 3 processes)
-COMMAND:    python3 tests/probes/lexicon/rule30_scan.py [WMAX=32]
+COMMAND:    python3 tests/probes/lexicon/rule30_scan.py [WMAX=32] [NPROC=3]
 COST:       about an hour on 3 cores for WMAX = 32 (4.3 billion right halves); minutes for WMAX = 28.
 
 Rung 1 (PRIZE-PROBLEMS.md sections 5 and 6) searched every right half up to 18 cells. A finite configuration with
@@ -33,7 +33,8 @@ import rule30_periodic as r30                          # noqa: E402
 sys.argv = _argv
 WMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 32
 WS = list(range(18, WMAX + 1, 2))
-NPROC, TAILMIN = 3, 30
+NPROC = int(sys.argv[2]) if len(sys.argv) > 2 else 3
+TAILMIN = 30
 FAILS = 0
 
 

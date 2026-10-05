@@ -74,35 +74,42 @@
 <text x="130.0" y="294" text-anchor="middle" font-size="12">layer width m</text>
 <text x="-40" y="130.0" text-anchor="middle" font-size="12" transform="rotate(-90 -40 130.0)">bits per visible bit (random = 1)</text>
 <line x1="0.0" y1="260" x2="0.0" y2="264" stroke="#555"/><text x="0.0" y="277" text-anchor="middle" font-size="11">1</text>
-<line x1="54.7" y1="260" x2="54.7" y2="264" stroke="#555"/><text x="54.7" y="277" text-anchor="middle" font-size="11">5</text>
-<line x1="123.2" y1="260" x2="123.2" y2="264" stroke="#555"/><text x="123.2" y="277" text-anchor="middle" font-size="11">10</text>
-<line x1="191.6" y1="260" x2="191.6" y2="264" stroke="#555"/><text x="191.6" y="277" text-anchor="middle" font-size="11">15</text>
-<line x1="260.0" y1="260" x2="260.0" y2="264" stroke="#555"/><text x="260.0" y="277" text-anchor="middle" font-size="11">20</text>
+<line x1="52.0" y1="260" x2="52.0" y2="264" stroke="#555"/><text x="52.0" y="277" text-anchor="middle" font-size="11">6</text>
+<line x1="104.0" y1="260" x2="104.0" y2="264" stroke="#555"/><text x="104.0" y="277" text-anchor="middle" font-size="11">11</text>
+<line x1="156.0" y1="260" x2="156.0" y2="264" stroke="#555"/><text x="156.0" y="277" text-anchor="middle" font-size="11">16</text>
+<line x1="208.0" y1="260" x2="208.0" y2="264" stroke="#555"/><text x="208.0" y="277" text-anchor="middle" font-size="11">21</text>
+<line x1="260.0" y1="260" x2="260.0" y2="264" stroke="#555"/><text x="260.0" y="277" text-anchor="middle" font-size="11">26</text>
 <line x1="-4" y1="260.0" x2="0" y2="260.0" stroke="#555"/><text x="-8" y="264.0" text-anchor="end" font-size="11">0</text><line x1="0" y1="260.0" x2="260" y2="260.0" stroke="#eee"/>
 <line x1="-4" y1="173.3" x2="0" y2="173.3" stroke="#555"/><text x="-8" y="177.3" text-anchor="end" font-size="11">0.25</text><line x1="0" y1="173.3" x2="260" y2="173.3" stroke="#eee"/>
 <line x1="-4" y1="86.7" x2="0" y2="86.7" stroke="#555"/><text x="-8" y="90.7" text-anchor="end" font-size="11">0.5</text><line x1="0" y1="86.7" x2="260" y2="86.7" stroke="#eee"/>
 <line x1="-4" y1="0.0" x2="0" y2="0.0" stroke="#555"/><text x="-8" y="4.0" text-anchor="end" font-size="11">0.75</text><line x1="0" y1="0.0" x2="260" y2="0.0" stroke="#eee"/>
-<polyline points="0.0,19.3 13.7,19.3 27.4,19.3 41.1,46.0 54.7,83.5 68.4,106.9 82.1,129.2 95.8,136.5 109.5,148.3 123.2,150.4 136.8,161.1 150.5,170.6 164.2,171.7 177.9,175.3 191.6,180.3 205.3,186.6 218.9,192.3 232.6,196.0 246.3,201.9 260.0,207.3" fill="none" stroke="#d1495b" stroke-width="2"/>
+<polyline points="0.0,19.3 10.4,19.3 20.8,19.3 31.2,46.0 41.6,83.5 52.0,106.9 62.4,129.2 72.8,136.5 83.2,148.3 93.6,150.4 104.0,161.1 114.4,170.6 124.8,171.7 135.2,175.3 145.6,180.3 156.0,186.6 166.4,192.3 176.8,196.0 187.2,201.9 197.6,207.3 208.0,210.9 218.4,212.4 228.8,213.0 239.2,214.0 249.6,214.7 260.0,215.7" fill="none" stroke="#d1495b" stroke-width="2"/>
 <circle cx="0.0" cy="19.3" r="3" fill="#d1495b"/>
-<circle cx="13.7" cy="19.3" r="3" fill="#d1495b"/>
-<circle cx="27.4" cy="19.3" r="3" fill="#d1495b"/>
-<circle cx="41.1" cy="46.0" r="3" fill="#d1495b"/>
-<circle cx="54.7" cy="83.5" r="3" fill="#d1495b"/>
-<circle cx="68.4" cy="106.9" r="3" fill="#d1495b"/>
-<circle cx="82.1" cy="129.2" r="3" fill="#d1495b"/>
-<circle cx="95.8" cy="136.5" r="3" fill="#d1495b"/>
-<circle cx="109.5" cy="148.3" r="3" fill="#d1495b"/>
-<circle cx="123.2" cy="150.4" r="3" fill="#d1495b"/>
-<circle cx="136.8" cy="161.1" r="3" fill="#d1495b"/>
-<circle cx="150.5" cy="170.6" r="3" fill="#d1495b"/>
-<circle cx="164.2" cy="171.7" r="3" fill="#d1495b"/>
-<circle cx="177.9" cy="175.3" r="3" fill="#d1495b"/>
-<circle cx="191.6" cy="180.3" r="3" fill="#d1495b"/>
-<circle cx="205.3" cy="186.6" r="3" fill="#d1495b"/>
-<circle cx="218.9" cy="192.3" r="3" fill="#d1495b"/>
-<circle cx="232.6" cy="196.0" r="3" fill="#d1495b"/>
-<circle cx="246.3" cy="201.9" r="3" fill="#d1495b"/>
-<circle cx="260.0" cy="207.3" r="3" fill="#d1495b"/>
+<circle cx="10.4" cy="19.3" r="3" fill="#d1495b"/>
+<circle cx="20.8" cy="19.3" r="3" fill="#d1495b"/>
+<circle cx="31.2" cy="46.0" r="3" fill="#d1495b"/>
+<circle cx="41.6" cy="83.5" r="3" fill="#d1495b"/>
+<circle cx="52.0" cy="106.9" r="3" fill="#d1495b"/>
+<circle cx="62.4" cy="129.2" r="3" fill="#d1495b"/>
+<circle cx="72.8" cy="136.5" r="3" fill="#d1495b"/>
+<circle cx="83.2" cy="148.3" r="3" fill="#d1495b"/>
+<circle cx="93.6" cy="150.4" r="3" fill="#d1495b"/>
+<circle cx="104.0" cy="161.1" r="3" fill="#d1495b"/>
+<circle cx="114.4" cy="170.6" r="3" fill="#d1495b"/>
+<circle cx="124.8" cy="171.7" r="3" fill="#d1495b"/>
+<circle cx="135.2" cy="175.3" r="3" fill="#d1495b"/>
+<circle cx="145.6" cy="180.3" r="3" fill="#d1495b"/>
+<circle cx="156.0" cy="186.6" r="3" fill="#d1495b"/>
+<circle cx="166.4" cy="192.3" r="3" fill="#d1495b"/>
+<circle cx="176.8" cy="196.0" r="3" fill="#d1495b"/>
+<circle cx="187.2" cy="201.9" r="3" fill="#d1495b"/>
+<circle cx="197.6" cy="207.3" r="3" fill="#d1495b"/>
+<circle cx="208.0" cy="210.9" r="3" fill="#d1495b"/>
+<circle cx="218.4" cy="212.4" r="3" fill="#d1495b"/>
+<circle cx="228.8" cy="213.0" r="3" fill="#d1495b"/>
+<circle cx="239.2" cy="214.0" r="3" fill="#d1495b"/>
+<circle cx="249.6" cy="214.7" r="3" fill="#d1495b"/>
+<circle cx="260.0" cy="215.7" r="3" fill="#d1495b"/>
 <text x="254" y="8" text-anchor="end" font-size="11" fill="#d1495b">next to 0101...</text>
 </g>
 <g transform="translate(790,50)">

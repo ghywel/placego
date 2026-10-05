@@ -43,8 +43,8 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
     the backward step is the forced-left-half equation read in time (§8.19).
 - **Computed facts.**
   - Proposition 6: the pure wheel's left half has an exact tail and period in depth (§8.6).
-  - **The channel bound:** next to 0101…, column 1 carries at most 0.152 bits per visible bit, whatever the right
-    side, from an exact automaton (§8.20). A random sequence carries 1.
+  - **The channel bound:** next to 0101…, column 1 carries at most 0.128 bits per visible bit, whatever the right
+    side, from an exact automaton (§8.20). The bound is levelling off near 0.12. A random sequence carries 1.
 - **The picture.**
   - The right side runs a universal wheel, a rotation by 17/56 of a turn per step, kicked in whole notches by
     domain walls (§8.5 to §8.11). Next to column 0 the white triangles form a lattice in the wheel's frame, and a kick
@@ -1692,23 +1692,23 @@ languages. So
 h(\text{column 1 next to } 0101\ldots) \;\le\; \log_2 \lambda_m \quad \text{bits per visible bit, for every } m .
 ```
 
-| Layer width $m$ | 1 to 3 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 19 | 20 |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| Bound, bits per visible bit | 0.694 | 0.617 | 0.442 | 0.356 | 0.316 | 0.258 | 0.244 | 0.212 | 0.185 | 0.168 | **0.152** |
+| Layer width $m$ | 1 to 3 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 26 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Bound, bits per visible bit | 0.694 | 0.617 | 0.442 | 0.356 | 0.316 | 0.258 | 0.244 | 0.212 | 0.185 | 0.152 | 0.137 | 0.133 | **0.128** |
 
 The controls held. $m = 1$ gives exactly the golden ratio, Lemma 3's Fibonacci count. Each $\lambda_m$ matches the
 ladder's independently counted start groups within 0.05%. Wider layers never raise the bound (a theorem, checked).
 With column 0 unclamped the instrument reads exactly 1 bit, and with column 0 constant at 0 it reads 0, Condrey's
 case.
 
-**So next to a period-2 column, column 1 carries at most 0.152 bits per visible bit, whatever the right side**
-(the extension to $m = 19, 20$, EN4, held), which is 0.076 bits per step. A random sequence carries 1. This is the
-bottleneck of §8.17 as a theorem rather than a measurement, up to the convergence of the power iteration (9 digits).
-The bound is still falling, by about 0.016 bits per extra cell of layer, with no sign yet of levelling off, and
-whether it reaches zero is open. A rough estimate from the kicks (about one every 90 steps, each carrying its size
-and some timing, a few bits in all) says it should level off somewhere near 0.05 to 0.15 bits per visible bit. If it
-does not, column 1 would carry almost no information at all, which would be a structural fact worth a proof of its
-own.
+**So next to a period-2 column, column 1 carries at most 0.128 bits per visible bit, whatever the right side**,
+which is 0.064 bits per step. A random sequence carries 1. This is the bottleneck of §8.17 as a theorem rather than
+a measurement, up to the convergence of the power iteration (9 digits). Beyond $m = 20$ a sparse version of the
+automaton (`entropy2.c`, which reproduced every earlier value exactly) took the bound to $m = 26$. The fall per cell
+slowed from 0.015 to 0.004 (EN4 and EN5 held). **The bound is levelling off, near 0.12 bits per visible bit**,
+inside the range a rough estimate from the kicks gives (about one kick every 90 steps, each carrying its size and
+some timing). That fits the picture: the wheel carries no information, and the kicks carry all of it. Whether the
+limit is exactly positive is not proved; the trend says it is.
 
 **A census of traces** (the random-chaos step: six seeded random words besides the short ones). At $m = 10$ every
 periodic column 0 except the constant 0 leaves column 1 more than 0.1 bits per visible bit (EN3 held). The trace 01

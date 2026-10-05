@@ -47,6 +47,9 @@ entropy.c for m = 4, 6, 10, 14, 18, 20 exactly, before this prediction was writt
   EN5 (blind; does the bound level off?): from m = 20 to m = 26 the bound falls by less per cell, on average, than the
       0.0154 per cell from m = 14 to m = 20, and at m = 26 it lies between 0.07 and 0.14 bits per visible bit. (The
       kick estimate says the true value is near 0.05 to 0.15.)
+OUTCOME of extension 2, 2026-10-05: EN5 HELD. m = 21 .. 26: 0.1416, 0.1372, 0.1356, 0.1327, 0.1308, 0.1277 bits per
+visible bit (automaton states 18,926 to 179,181; mean subset 1,374 to 7,862 layer states). The mean fall per cell from
+m = 20 to 26 is 0.0040, a quarter of the 0.0154 before: the bound is levelling off, near 0.12.
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 

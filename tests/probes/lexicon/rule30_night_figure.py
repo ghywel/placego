@@ -8,8 +8,8 @@ COST:       instant. Writes rule30_night.svg next to this script.
 It draws numbers already recorded in the OUTCOME blocks of other probes, copied here with their sources:
   A. The adversary: R(m, s), the longest zero run a width-m layer fed any input can hold the left half to from depth
      s (rule30_ladder.py, rule30_ladder_deep.py), and the real right halves up to 12 cells (their DL5 / LD3 lines).
-  B. The channel bound: bits per visible bit that column 1 can carry next to 0101..., for layer width m = 1 .. 20
-     (rule30_entropy.py, its first run and extension).
+  B. The channel bound: bits per visible bit that column 1 can carry next to 0101..., for layer width m = 1 .. 26
+     (rule30_entropy.py, its first run and both extensions).
   C. The bottleneck: the longest real zero run from depths 41 and 105 against the right half's width
      (rule30_realruns.py).
 """
@@ -25,7 +25,7 @@ A = {
     "real right halves": {17: 9, 25: 10, 33: 6, 41: 6, 49: 9, 57: 10, 65: 10, 73: 8, 81: 8, 89: 9, 97: 9, 105: 10},
 }
 B = [0.6942, 0.6942, 0.6942, 0.6174, 0.5090, 0.4415, 0.3773, 0.3562, 0.3223, 0.3161, 0.2852, 0.2578, 0.2546, 0.2442,
-     0.2298, 0.2116, 0.1953, 0.1846, 0.1675, 0.1519]
+     0.2298, 0.2116, 0.1953, 0.1846, 0.1675, 0.1519, 0.1416, 0.1372, 0.1356, 0.1327, 0.1308, 0.1277]
 C = {41: {16: 8, 18: 8, 20: 8, 22: 8, 24: 8, 26: 8, 28: 8}, 105: {16: 10, 18: 11, 20: 11, 22: 11, 24: 11, 26: 12, 28: 12}}
 COL = ["#d1495b", "#edae49", "#00798c", "#30638e", "#222222"]
 
@@ -63,9 +63,9 @@ def main():
     svg += panel(70, 50, 260, 260, (15, 107), (0, 40), "A. The adversary's runs grow",
                  "start depth s", "longest zero run R(m, s)",
                  [(n, sorted(d.items())) for n, d in A.items()], [17, 41, 73, 105], [0, 10, 20, 30, 40])
-    svg += panel(430, 50, 260, 260, (1, 20), (0, 0.75), "B. Column 1's channel, exact bound",
+    svg += panel(430, 50, 260, 260, (1, 26), (0, 0.75), "B. Column 1's channel, exact bound",
                  "layer width m", "bits per visible bit (random = 1)",
-                 [("next to 0101...", list(zip(range(1, 21), B)))], [1, 5, 10, 15, 20], [0, 0.25, 0.5, 0.75])
+                 [("next to 0101...", list(zip(range(1, 27), B)))], [1, 6, 11, 16, 21, 26], [0, 0.25, 0.5, 0.75])
     svg += panel(790, 50, 260, 260, (16, 28), (0, 16), "C. A wider seed buys almost nothing",
                  "right half's width (cells)", "longest real zero run",
                  [(f"from depth {s}", sorted(d.items())) for s, d in C.items()], [16, 20, 24, 28], [0, 4, 8, 12, 16])
