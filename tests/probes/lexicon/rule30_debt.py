@@ -2,7 +2,7 @@
 """rule30_debt.py: the bounded-debt statement at total widths beyond 100 (RULE30-PRIZE.md section 8.53).
 
 RUN-ON:     cpu (Python 3 and a C compiler; forced.c and count_j.c; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_debt.py [BMAX=24] [D=100]
+COMMAND:    python3 tests/probes/lexicon/rule30_debt.py [BMAX=24] [D=100] [alpha]
 COST:       a few minutes on one core.
 
 Background (sections 8.51, 8.52). N_{w,j}(T) counts configurations of hull width w whose column 0, at distance j
@@ -27,6 +27,21 @@ PREDICTIONS, written 2026-10-05 before this script's first run (word 0101..., bo
   DB4 (blind; depth does not help the adversary): for b = BMAX the pooled cost over depths j >= 50 is within 0.2
       bits of the pooled cost over j < 50.
 REFUTED-BY: DB0 failing (the instrument); DB1 to DB4 failing.
+
+OUTCOME, 2026-10-05 (the first run, 32 seconds, b = 0 .. 24, depths to 100):
+  DB0 PASSED: forced.c reproduces count_j.c exactly. The count past the left part is a count of right parts.
+  DB1 REFUTED: free steps come up to 5 in a row (from b = 15 on; 3 at b = 12 .. 14). The longest run is 5 at every b
+     from 15 to 24: still bounded, at a larger value than at the shallow depths of section 8.52.
+  DB2 HELD: c_b for alpha = 0.5 is at most 5.00 (b = 6, 7), and 4.08 to 4.22 for every b from 9 to 24. It does not
+     grow with b, at total widths beyond 100.
+  DB3 HELD: the pooled cost is 1.001 to 1.004 bits per condition for every b from 11 to 24 (0.94 at b = 9).
+  DB4 HELD: 1.003 bits at depths 50 and beyond, 1.001 before.
+
+MODE alpha. The debt constant at rates nearer the true one, and a random-chaos control.
+PREDICTIONS for alpha, written 2026-10-05 after the outcome above and before alpha's first run:
+  DA1 (blind): for alpha = 0.9, c_b <= 10 for every b up to BMAX, and c_BMAX - c_12 <= 2.
+  DA2 (blind): for alpha = 1.0, c_BMAX - c_12 >= 2 (at the true rate, luck accumulates).
+  DA3 (random-chaos): a random word (seed 1940) has c_20 for alpha = 0.9 within 2 of 0101's.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -69,7 +84,53 @@ def tail(hist, depth_left):
     return [sum(c for L, c in hist.items() if L >= tau) for tau in range(depth_left)]
 
 
+def cvals(H, alphas, bmax):
+    c = {a: {} for a in alphas}
+    for (b, j), hist in H.items():
+        if j > D - 20 or b > bmax:
+            continue
+        N = tail(hist, D - j)
+        for tau in range(len(N)):
+            if N[tau] < 1:
+                break
+            for k in range(1, len(N) - tau):
+                if N[tau + k] < 1:
+                    break
+                r = math.log2(N[tau + k] / N[tau])
+                for a in alphas:
+                    c[a][b] = max(c[a].get(b, -99.0), r + a * k)
+    return c
+
+
+def alpha_mode():
+    import random
+    fexe = build("rule30_debt_forced", "forced.c")
+    H = forced(fexe, 0, BMAX, D)
+    c = cvals(H, (0.5, 0.8, 0.9, 1.0), BMAX)
+    for a in (0.5, 0.8, 0.9, 1.0):
+        print(f"   alpha {a}: c_b for b = 8 .. {BMAX}: " + " ".join(f"{c[a][b]:.1f}" for b in range(8, BMAX + 1)))
+    verdict("DA1 alpha 0.9: c_b <= 10 for every b, and c_BMAX - c_12 <= 2",
+            all(v <= 10 for v in c[0.9].values()) and c[0.9][BMAX] - c[0.9][12] <= 2,
+            f"largest {max(c[0.9].values()):.2f}; c_BMAX - c_12 = {c[0.9][BMAX] - c[0.9][12]:.2f}")
+    verdict("DA2 alpha 1.0: c_BMAX - c_12 >= 2", c[1.0][BMAX] - c[1.0][12] >= 2,
+            f"{c[1.0][BMAX] - c[1.0][12]:.2f}")
+    rnd = random.Random(1940)
+    wr = "".join(rnd.choice("01") for _ in range(400))
+    out = subprocess.run([str(fexe), "20", "20", str(D), wr, "1"], check=True, capture_output=True, text=True).stdout
+    Hr = {}
+    for line in out.split("\n"):
+        f = line.split()
+        if f and f[0] == "H":
+            Hr.setdefault((int(f[1]), int(f[2])), {})[int(f[3])] = int(f[4])
+    cr = cvals(Hr, (0.9,), 20)
+    verdict("DA3 the random word's c_20 (alpha 0.9) within 2 of 0101's", abs(cr[0.9][20] - c[0.9][20]) <= 2,
+            f"{cr[0.9][20]:.2f} against {c[0.9][20]:.2f}")
+
+
 def main():
+    if len(sys.argv) > 3 and sys.argv[3] == "alpha":
+        alpha_mode()
+        return
     fexe, jexe = build("rule30_debt_forced", "forced.c"), build("rule30_debt_countj", "count_j.c")
     out = subprocess.run([str(jexe), "1", "16", "31", W01, "2"], check=True, capture_output=True, text=True).stdout
     J = {}
