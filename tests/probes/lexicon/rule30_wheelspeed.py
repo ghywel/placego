@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""rule30_wheelspeed.py: does the wheel turn at a constant rate? Its angle's velocity, acceleration and diffusion.
+
+RUN-ON:     cpu (pure Python 3, standard library; exact)
+COMMAND:    python3 tests/probes/lexicon/rule30_wheelspeed.py [W=12] [T=4096]
+COST:       a few minutes on one core.
+
+The owner's lead (2026-10-05): "We have looked at motion field concepts such as velocity, acceleration, jerk, snap,
+crackle ... A wheel may turn at a non-constant rate." Within an exact stretch the wheel turns at exactly 17/56 of a
+turn per step. The walls kick its angle by whole notches (1/28 of a turn, section 8.8), so its long-run rate is
+17/56 plus the walls' net kick per step. rule30_spectrum_fine.py put column 1's line at 0.30365, slightly above
+17/56 = 0.303571, which would be a net forward drift of about 0.12 notches per 56-step window.
+
+Method. For each unlocked right half up to W cells, over T steps, the wheel's phase d_k is read at each exact
+window k (column 1 equal to U delayed by d_k). Between consecutive exact windows the angle changes by a whole number
+of notches, n = ((-17 (d_k' - d_k)) mod 56) / 2, taken in [-14, 13]. Summing them gives the angle A(k), unwrapped
+(beyond the steady 17/56 per step), at every exact window. The excess speed v(k) is the mean of A's change per
+window, over all right halves, as a function of the window index k (the time).
+
+PREDICTIONS, written 2026-10-05 before this script's first run:
+  V0 (cross-instrument, blind): the mean excess speed, as a rotation number 17/56 + v / (28 x 56), lies within
+     0.0001 of the spectral line 0.30365 of rule30_spectrum_fine.py, an independent instrument.
+  A1 (blind; the owner's acceleration): the wheel's speed is not constant in time. The mean excess speed over windows
+     2..10 and over windows 40..70 differ by at least 25% of the larger.
+  A2 (blind): the angle diffuses normally. The variance of A(k + L) - A(k) grows as L^g with g in [0.8, 1.2] for lags
+     L = 1..32 windows (not ballistic, g near 2, and not trapped, g near 0).
+  C  (control): every phase change between exact windows is an even time shift (the trace's parity is kept), so every
+     angle change is a whole number of notches. It is checked, not assumed.
+REFUTED-BY: C failing (the harness); V0, A1 or A2 failing.
+"""
+import math, sys, pathlib
+
+W = int(sys.argv[1]) if len(sys.argv) > 1 else 12
+T = int(sys.argv[2]) if len(sys.argv) > 2 else 4096
+P = 56
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+_argv, sys.argv = sys.argv, sys.argv[:1]
+import rule30_wheel_left as wl                         # noqa: E402
+sys.argv = _argv
+U = [int(c) for c in wl.U]
+ROT = {tuple(U[(t - d) % P] for t in range(P)): d for d in range(P)}
+FAILS = 0
+
+
+def report(name, ok, detail=""):
+    global FAILS
+    FAILS += not ok
+    print(f"{'PASS' if ok else 'FAIL'}  {name}" + (f"  ({detail})" if detail else ""), flush=True)
+
+
+def verdict(name, held, detail=""):
+    print(f"{'HELD' if held else 'REFUTED'}  prediction {name}" + (f"  ({detail})" if detail else ""), flush=True)
+
+
+def column1(R, n):
+    mask = (1 << (R.bit_length() + n + 3)) - 1
+    row, out = R << 1, []
+    for t in range(n):
+        out.append((row >> 1) & 1)
+        row = (((row << 1) ^ (row | (row >> 1))) & mask & ~1) | ((t + 1) % 2)
+    return out
+
+
+def main():
+    nwin = T // P
+    sums = [0.0] * nwin                                   # summed angle change per window index (spread over gaps)
+    counts = [0] * nwin
+    odd = 0
+    traj = []                                             # per right half: angle at each exact window
+    for R in range(1 << W):
+        c = column1(R, T)
+        last_bad = max([t for t in range(T - P) if c[t] != c[t + P]], default=-1)
+        if last_bad < T - P - 400:
+            continue                                      # locked
+        ph = [ROT.get(tuple(c[k * P:(k + 1) * P])) for k in range(nwin)]
+        ex = [(k, d) for k, d in enumerate(ph) if d is not None]
+        A, angle = {}, 0
+        for (k, d), (k2, d2) in zip(ex, ex[1:]):
+            delta = (d2 - d) % P
+            odd += delta % 2
+            nn = ((-17 * delta) % P)
+            nn = nn - P if nn > P // 2 else nn
+            nn //= 2
+            A.setdefault(k, angle)
+            angle += nn
+            A[k2] = angle
+            for j in range(k, k2):                        # spread the change evenly over the windows it spans
+                sums[j] += nn / (k2 - k)
+                counts[j] += 1
+        if ex:
+            A.setdefault(ex[0][0], 0)
+        traj.append(A)
+    report("C every phase change between exact windows is an even time shift", odd == 0, f"{odd} odd shifts")
+    v = [sums[k] / counts[k] if counts[k] else float("nan") for k in range(nwin)]
+    tot = sum(sums[k] for k in range(nwin) if counts[k])
+    n_all = sum(counts[k] for k in range(nwin) if counts[k])
+    vbar = tot / n_all
+    rot = 17 / 56 + vbar / (28 * 56)
+    verdict("V0 the kicks' net drift reproduces the spectral line 0.30365 within 0.0001", abs(rot - 0.30365) <= 0.0001,
+            f"mean excess speed {vbar:+.4f} notches per window, rotation number {rot:.6f}")
+    early = [v[k] for k in range(2, 11) if counts[k]]
+    late = [v[k] for k in range(40, min(71, nwin)) if counts[k]]
+    ve, vl = sum(early) / len(early), sum(late) / len(late)
+    diff = abs(ve - vl) / max(abs(ve), abs(vl))
+    verdict("A1 the wheel's speed changes with time (windows 2..10 against 40..70 differ by at least 25%)", diff >= 0.25,
+            f"early {ve:+.4f}, late {vl:+.4f} notches per window; difference {diff:.0%} of the larger")
+    print("   excess speed by window (notches per window, mean over right halves): "
+          + " ".join(f"{k}:{v[k]:+.3f}" for k in range(1, nwin, 4) if counts[k]), flush=True)
+    lags, var = [], []
+    for L in (1, 2, 4, 8, 16, 32):
+        xs = [A[k + L] - A[k] for A in traj for k in A if k + L in A]
+        if len(xs) > 100:
+            m = sum(xs) / len(xs)
+            lags.append(L)
+            var.append(sum((x - m) ** 2 for x in xs) / len(xs))
+    lx = [math.log(x) for x in lags]
+    ly = [math.log(y) for y in var]
+    mx, my = sum(lx) / len(lx), sum(ly) / len(ly)
+    g = sum((a - mx) * (b - my) for a, b in zip(lx, ly)) / sum((a - mx) ** 2 for a in lx)
+    verdict("A2 the angle diffuses normally: variance grows as L^g, g in [0.8, 1.2]", 0.8 <= g <= 1.2,
+            f"g = {g:.2f}; variance by lag " + ", ".join(f"{L}: {x:.2f}" for L, x in zip(lags, var)))
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+    sys.exit(1 if FAILS else 0)
+
+
+if __name__ == "__main__":
+    main()
