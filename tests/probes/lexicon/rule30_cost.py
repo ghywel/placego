@@ -3,7 +3,7 @@
 8.52; the cost side of PERIOD-TWO.md section 7, question 1).
 
 RUN-ON:     cpu (Python 3 and a C compiler; count_j.c counts; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep | phases]
+COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep | phases | exact]
 COST:       under a minute on one core.
 
 Background (section 8.51). N_{w,j}(T) counts the configurations of exact hull width w whose column 0, at distance j
@@ -74,6 +74,11 @@ OUTCOME of phases, 2026-10-05 (seconds): free steps 113 after black, 28 after wh
   CP2 REFUTED (19%): collapses come after black cells too. After a black cell the condition is all or nothing: the
      left half, which is the same for the survivors of one position, decides it for all of them at once. The
      conditions after a white cell, which couple column 1 to the left half, are the ones that split the survivors.
+
+MODE exact. PREDICTION, written 2026-10-05 after phases' outcome and before exact's first run (w = 16 .. 24, each
+phase alone, right-paid steps with N >= 256):
+  CP3 (blind; bold): after a black cell the step is exactly all or nothing: rho is exactly 0 or exactly 1 at every
+      such step. After a white cell, rho is exactly 0 or 1 at fewer than half the steps.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -140,6 +145,27 @@ def windows(exe):
                       if worst[k] > 0 and math.log2(worst[k]) > 3 - 0.5 * k) or "all within")
 
 
+def exact(exe):
+    tot = {"black": [0, 0], "white": [0, 0]}
+    other = []
+    for word in ("01" * 200, "10" * 200):
+        J, _ = run(exe, 16, 24, word, 1)
+        for (w, j, T), n in J.items():
+            if T >= max(j, 1) and n >= 256:
+                m = J.get((w, j, T + 1), 0)
+                kind = "black" if word[T - 1] == "1" else "white"
+                tot[kind][0] += 1
+                tot[kind][1] += m in (0, n)
+                if kind == "black" and m not in (0, n):
+                    other.append(round(m / n, 3))
+    print(f"   after black: {tot['black'][1]} of {tot['black'][0]} steps exactly 0 or 1; after white: "
+          f"{tot['white'][1]} of {tot['white'][0]}")
+    print(f"   after black, the other ratios: {sorted(other)[:20]}{' ...' if len(other) > 20 else ''}")
+    verdict("CP3 after black always exactly 0 or 1; after white fewer than half",
+            tot["black"][1] == tot["black"][0] and tot["white"][1] < tot["white"][0] / 2,
+            f"black {tot['black'][1]}/{tot['black'][0]}, white {tot['white'][1]}/{tot['white'][0]}")
+
+
 def phases(exe):
     tally = {("free", "black"): 0, ("free", "white"): 0, ("collapse", "black"): 0, ("collapse", "white"): 0}
     for word in ("01" * 200, "10" * 200):
@@ -186,6 +212,9 @@ def deep(exe):
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_cost_c"
     subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "count_j.c")], check=True)
+    if len(sys.argv) > 2 and sys.argv[2] == "exact":
+        exact(exe)
+        return
     if len(sys.argv) > 2 and sys.argv[2] == "phases":
         phases(exe)
         return
