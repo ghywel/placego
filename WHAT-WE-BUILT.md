@@ -453,6 +453,7 @@ the research record, the scientific record and the instruments.
 - [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked: the
   prizes, the two ways a computer can win one, the ranking for this project, and the tricks that let a computer take
   part in a proof.
+  Its §7 carries the Rule 30 method to the other prizes; the Collatz twin's probes are in `tests/probes/prizes/`.
 - [RULE30-PRIZE.md](RULE30-PRIZE.md) — the Rule 30 Prize Problem 1 work, split out of PRIZE-PROBLEMS.md on
   2026-10-05 with its section numbers unchanged: periodic columns, left-side rigidity, the right side as a
   complement, the wheel and its kicks, the ladder, the channel bound, the records, the wall form, and the owner's
