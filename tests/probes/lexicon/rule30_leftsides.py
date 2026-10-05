@@ -2,7 +2,7 @@
 """rule30_leftsides.py: Rowland's question. Does Rule 30 have one left side, or several, depending on the seed?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact, with certificates)
-COMMAND:    python3 tests/probes/lexicon/rule30_leftsides.py [LOGT=18] [K=160000] [SEEDS=40] | ... deeper
+COMMAND:    python3 tests/probes/lexicon/rule30_leftsides.py [LOGT=18] [K=160000] [SEEDS=40] | ... deeper | ... relphase
 COST:       about three minutes on one core.
 
 The question (Rowland, "Local nested structure in rule 30", Complex Systems 16, section 5; PRIOR-ART.md). Read from a
@@ -63,10 +63,24 @@ diagonal 53207 (after it, 53208 is a running XOR of 53206), so the lock predicts
   LS6 (blind): the universality includes the phase: at time 2^LOGT - 1 every one of these seeds and five more small
       random seeds has exactly the single seed's strip.
   LS7 (blind; the mechanism): the last black cell of diagonal 53207 falls at the same phase mod 16 for all of them.
+OUTCOME of the second run, 2026-10-05 (python3 rule30_leftsides.py deeper, 1 minute 45 seconds): every strip certified
+(cycles of 32). At every width up to 160,000, all 20 rows share the single seed's left side: five small seeds, four
+wide seeds (10,000 to 150,000 cells), and ten random rightful rows. LS4 HELD (10 of 10) and LS5 HELD (4 of 4): the
+left side is one cycle even for Rowland's general case of an arbitrary right part. LS6 REFUTED: only the single seed
+itself matches the single seed's strip at the same time. The rows sit at different phases of the one cycle. LS7
+REFUTED, and ill-posed: the last black cell of diagonal 53207 falls at t = 70,960 to 71,169, with 12 different phases
+mod 16. Because the rows sit at different phases of the cycle, the phase that matters is relative to each row's own
+cycle, not absolute time. LS8 asks that.
+
+ADDENDUM, written 2026-10-05 after the second run and before the third (python3 rule30_leftsides.py relphase): the
+mechanism, measured relative to each row's own phase. For each row find the shift j with its strip at time T - 1
+equal to the single seed's at time T - 1 - j (along the single seed's cycle), so the row runs j steps behind.
+  LS8 (blind): the last black cell of diagonal 53207, less j, has the same phase mod 16 for all 20 rows: the decision
+      at the split is locked to the cycle, whatever the row.
 """
 import random, sys
 
-_nums = [a for a in sys.argv[1:] if a != "deeper"]
+_nums = [a for a in sys.argv[1:] if a not in ("deeper", "relphase")]
 LOGT = int(_nums[0]) if len(_nums) > 0 else 18
 K = int(_nums[1]) if len(_nums) > 1 else 160000
 SEEDS = int(_nums[2]) if len(_nums) > 2 else 40
@@ -289,5 +303,33 @@ def deeper():
             f"phases {sorted(ph)}")
 
 
+def relphase():
+    rng = random.Random(2007)                          # the same rows as deeper()
+    z = 53207
+    rows = [("the single 1", 1)]
+    for k in range(5):
+        w = rng.randrange(2, 65)
+        rows.append((f"small seed {k + 1} ({w} cells)", 1 | (rng.getrandbits(w - 1) << 1)))
+    for w in (10000, 50000, 100000, 150000):
+        rows.append((f"wide seed of {w} cells", 1 | (rng.getrandbits(w - 1) << 1)))
+    for k in range(10):
+        rows.append((f"random rightful row {k + 1}", 1 | (rng.getrandbits(K - 1) << 1)))
+    ref_tail, ref_last = run_tracked(rows[0][1], z)
+    ref_cyc = certify(ref_tail)
+    n = len(ref_cyc)
+    phases = []
+    for name, V0 in rows:
+        tail, last = run_tracked(V0, z)
+        v = tail[-1]
+        j = next((j for j in range(n) if ref_cyc[(n - 1 - j) % n] == v), None)
+        rel = (last - j) % 16 if j is not None and last is not None else None
+        phases.append(rel)
+        print(f"   {name}: last black of diagonal {z} at t = {last}; runs {j} steps behind the single seed; relative "
+              f"phase {rel} mod 16", flush=True)
+    verdict("LS8 the decision at the split is locked to the cycle (one relative phase mod 16)",
+            None not in phases and len(set(phases)) == 1,
+            f"relative phases {sorted(set(p for p in phases if p is not None))}")
+
+
 if __name__ == "__main__":
-    deeper() if "deeper" in sys.argv[1:] else main()
+    relphase() if "relphase" in sys.argv[1:] else deeper() if "deeper" in sys.argv[1:] else main()
