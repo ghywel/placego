@@ -5,6 +5,12 @@
  *                                  depth S, over every start of cells 1..M and every input sequence in column M + 1
  *          ./ladder hist M S       as run, and also the number of start groups whose run has each length
  *                                  (lines "H M S length groups"; used by rule30_ladder_budget.py)
+ *          ./ladder keys M S MIN   as run, and also every start group whose run is at least MIN cells
+ *                                  (lines "K M S key length"; bit j of key is column 1 at time 2j)
+ *          ./ladder merge M S      as run, and also the number of distinct left-side states (a_{S-2}, a_{S-3}) the
+ *                                  start groups lead to, and the run-length histogram over distinct states
+ *                                  (lines "D M S distinct N", "DH M S length states", "DX M S conflicts N": at M = 0
+ *                                  equal states must give equal runs, so conflicts must be 0)
  *          ./ladder left BITS      the forced left half L(1..n) for a given column 1 (a self-test of the recursion)
  *
  * The left half without columns. The cells x(-j, i) with j + i = t + 1 form an anti-diagonal a_t, a_t[j] =
@@ -45,6 +51,24 @@ static inline u128 left_step(u128 a1, u128 a2, int t, int sigma) {
 
 static int M;
 static int HIST;                              /* print the run-length histogram as well */
+static int KEYMIN = -1;                       /* print the start groups whose run is at least this long */
+static int MERGE;                             /* count distinct left-side states */
+typedef struct { u128 a1, a2; int run; char used; } mslot;
+static mslot *MS; static size_t MCAP, MN; static long long MCONFLICT;
+static void m_add(u128 a1, u128 a2, int run) {
+    if (2 * (MN + 1) > MCAP) {                 /* grow */
+        size_t oc = MCAP; mslot *old = MS;
+        MCAP = MCAP ? 2 * MCAP : 1024; MS = calloc(MCAP, sizeof(mslot)); MN = 0;
+        if (!MS) { fprintf(stderr, "out of memory\n"); exit(3); }
+        for (size_t i = 0; i < oc; i++) if (old[i].used) m_add(old[i].a1, old[i].a2, old[i].run);
+        free(old);
+    }
+    uint64_t k = (uint64_t)a1 ^ (uint64_t)(a1 >> 64) * 31 ^ (uint64_t)a2 * 0x9E3779B97F4A7C15ULL ^ (uint64_t)(a2 >> 64);
+    size_t h = (size_t)((k * 0x9E3779B97F4A7C15ULL) >> 11) & (MCAP - 1);
+    while (MS[h].used && !(MS[h].a1 == a1 && MS[h].a2 == a2)) h = (h + 1) & (MCAP - 1);
+    if (!MS[h].used) { MS[h].used = 1; MS[h].a1 = a1; MS[h].a2 = a2; MS[h].run = run; MN++; }
+    else if (MS[h].run != run) { MCONFLICT++; if (run > MS[h].run) MS[h].run = run; }
+}
 static int *NXT;                              /* NXT[(s*2 + tau)*2 + u] */
 
 static void build_layer(void) {
@@ -135,6 +159,7 @@ static int run(int S) {
             a2 = a1; a1 = a;
         }
         memcpy(set, cur.sets + i * WORDS, WORDS * 8);
+        u128 s1 = a1, s2 = a2;
         int runlen = 0;
         for (int t = S - 1; t + 1 <= CAP; t++) {
             int sg = 0;
@@ -171,8 +196,17 @@ static int run(int S) {
         if (runlen > best) { best = runlen; at_best = 0; }
         if (runlen == best) at_best++;
         hist[runlen]++;
+        if (MERGE) m_add(s1, s2, runlen);
+        if (KEYMIN >= 0 && runlen >= KEYMIN) printf("K %d %d %llx %d\n", M, S, (unsigned long long)p, runlen);
     }
     if (HIST) for (int k = 0; k <= best; k++) printf("H %d %d %d %lld\n", M, S, k, hist[k]);
+    if (MERGE) {
+        static long long dh[CAP + 2];
+        for (size_t i = 0; i < MCAP; i++) if (MS[i].used) dh[MS[i].run]++;
+        printf("D %d %d distinct %zu\n", M, S, MN);
+        for (int k = 0; k <= best; k++) if (dh[k]) printf("DH %d %d %d %lld\n", M, S, k, dh[k]);
+        printf("DX %d %d conflicts %lld\n", M, S, MCONFLICT);
+    }
     printf("R M %d S %d = %d%s (%lld of %lld start groups reach it)\n", M, S, best,
            (S - 1 + best >= CAP) ? " CAPPED" : "", at_best, groups);
     t_free(&cur);
@@ -192,7 +226,9 @@ int main(int argc, char **argv) {
         putchar('\n');
         return 0;
     }
-    if (argc >= 4 && (strcmp(argv[1], "run") == 0 || strcmp(argv[1], "hist") == 0)) {
+    if (argc >= 5 && strcmp(argv[1], "keys") == 0) KEYMIN = atoi(argv[4]);
+    if (argc >= 4 && strcmp(argv[1], "merge") == 0) MERGE = 1;
+    if (argc >= 4 && (strcmp(argv[1], "run") == 0 || strcmp(argv[1], "hist") == 0 || KEYMIN >= 0 || MERGE)) {
         HIST = strcmp(argv[1], "hist") == 0;
         M = atoi(argv[2]);
         int S = atoi(argv[3]);
