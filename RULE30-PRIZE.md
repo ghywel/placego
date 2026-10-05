@@ -2720,3 +2720,31 @@ document has found:
 A new idea would have to do what nobody has done for Mahler's problem: get emptiness from a constrained side of
 positive entropy.
 
+### 8.46 Is it unresolvable? The owner's Turing question (2026-10-05)
+
+The owner: "if the zeta function always returns zeros, and prime numbers continue to infinity, and everything we do
+restates the problem in a different way, is this not a kind of proof in itself, the infinite regression, or, as
+Alan Turing might put it, unresolvable?"
+
+- **A restatement is not a proof.** Equivalent statements share one truth value, so moving between them cannot
+  settle it. What the restatements did show is narrower and useful. They did not regress without end; they
+  converged. Every form of period 2 tried here (§8.38 to §8.45) ends at one missing statement: a condition at the
+  wall costs real information. That is localisation, the problem's core isolated, not an infinite regress.
+- **Turing's theorem is about methods, not single questions.** On computable numbers (1936) shows that no single
+  algorithm decides every question of a kind. By Rice's theorem, for example, no algorithm decides, for every
+  machine, whether the number it prints is rational. Rule 30's centre column is one computable number. Whether it is
+  rational is a definite yes or no (§8.23), as open questions about single constants are. Closer kin:
+  - Conway (1972) proved that a generalised Collatz problem is undecidable, while Collatz's own problem is simply
+    open.
+  - Rule 110 is universal (Cook, 2004), so column questions about general automata are undecidable. Rule 30 is not
+    known to be universal.
+- **Could it be unprovable?** In logical form, "the centre column is never eventually 0101" says that for every
+  time there is a later one where the pattern breaks: a $\Pi_2$ statement. True statements of that form can be
+  unprovable in a given system; Paris and Harrington (1977) gave a natural one for Peano arithmetic. Nothing here
+  points that way, and showing it would itself be a major theorem.
+- **Infinite does not mean undecidable.** Euclid proved that the primes go on for ever with a finite argument, a
+  size argument: multiply the primes you have, add one. Bertrand's postulate fell the same way (PRIOR-ART). The
+  missing statement here is of that kind: a finite reason why an infinite run is impossible. Nobody has found it
+  yet, here or in Mahler's problem (§8.45). That is a statement about the state of mathematics, not about the
+  problem's decidability.
+
