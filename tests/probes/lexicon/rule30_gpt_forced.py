@@ -46,7 +46,8 @@ is (1 - P[0]), not a hard-coded depth parity. On 100 new random words x
 64 depths (seed 302), scalar inversion and the general formula must agree.
 Counterfactual: the old 0101 formula on 1010 states must disagree on some
 cells. No new distributional prediction or claim about record maxima.
-OUTCOME of phase: not yet run.
+OUTCOME of phase, 2026-10-06: ALL CONTROLS PASS, exit 0.
+    General formula agrees at all 6400 cells; wrong-phase formula fails at 3194.
 """
 import concurrent.futures
 import collections

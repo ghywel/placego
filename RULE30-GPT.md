@@ -218,23 +218,110 @@ runs; the requested feedback is to make growth, coding scope, birth times and br
 applications. Next reasoning lane: the forced zeros inside long runs, then structural balance at the core.
 
 
-## G3. Forced-zero reasoning and diagnostics (2026-10-06; in progress)
+## G3. Forced zeros: a parity criterion, and why three bits do not close the walk (2026-10-06)
 
-The owner authorized continued work and use of spare compute. Taking the agreed reasoning lane of §8.2,
-not duplicating Local's record searches or million-diagonal run. Both startup probes passed again.
-Read §8.2, §8.37–§8.38 and §8.41 before choosing the diagnostic. The existing record already measures
-approximately geometric forced-walk survival; this run will distinguish an exact algebraic identity from
-a possible small-state explanation, and check deeper random prefixes rather than increase exact records.
+**Scope and result.** Took the agreed reasoning lane of §8.2, with a four-process CPU diagnostic supporting it.
+Read §8.2, §8.37–§8.38 and §8.41 first; both startup probes passed again. The forced output has an exact
+three-parity description, but explicit realised prefixes show that this summary does not determine the next
+forced output. Sampling 80,000 prefixes at four deeper starting depths supports roughly half-survival per
+forced test. This is neither an independence theorem nor a uniform survival bound; the prize remains open.
 
-For the anti-diagonal pair P = A(k-1), Q = A(k-2), let pi mean bit parity and
-z = pi(P AND (Q shifted left once)). Expanding OR as XOR plus AND in the running-XOR update gives
-L(k) = (k mod 2) XOR pi(P) XOR pi(Q) XOR z XOR ((k mod 2) AND c), where c is the newest input bit.
-At even depth the input bit is hidden: the three parity bits determine the forced output exactly.
-This does not say those three bits update autonomously; the counterfactual asks that question.
+### G3.1. Exact criterion
 
-The pre-registered probe is tests/probes/lexicon/rule30_gpt_forced.py. Its header specifies controls,
-sample sizes and seeds, a blind conditional-survival band and counterexamples sought against three-bit
-closure and against deleting the overlap term. No run has started. A targeted prior-art search returned
-Kopra's left-permutivity paper already in our record and Brunnbauer's diagonal-polynomial work; neither
-was used to assert a new theorem or novelty. The parity expansion is elementary Boolean algebra applied
-to records.c's existing recurrence.
+Use the existing anti-diagonals $A_k[j]=x(-j,k-j)$, with $0\le j\le k$ and $A_k[0]=\tau(k)$.
+Write $P=A_{k-1}$, $Q=A_{k-2}$ as bit words; at $k=1$, $Q$ is empty. Let $\pi$ denote bit parity, and
+$c=\sigma(k-1)$ the newest column-1 bit. Then, for any centre word $\tau$,
+
+```math
+L(k)=\tau(k)\oplus\pi(P)\oplus\pi(Q)
+\oplus\pi\big(P\mathbin{\&}(Q\ll1)\big)
+\oplus\big((1-\tau(k-1))c\big).
+```
+
+**Proof.** The anti-diagonal recurrence is a running XOR of
+$P[j-1]\lor Q[j-2]$ for $j=2,\ldots,k$, with first term $P[0]\lor c$ and initial bit $\tau(k)$.
+For bits, $u\lor v=u\oplus v\oplus uv$. Summing modulo two gives the three parities above;
+the first term supplies the additional $c\oplus P[0]c=(1-\tau(k-1))c$.
+All the bits of $P$ and $Q$ are included; there is no omitted endpoint term. This is elementary Boolean algebra
+applied to the recurrence already in `records.c`, not a new claim about the rule's invertibility.
+
+For $\tau=0101\ldots$, odd $k$ admits exactly one choice of $c$ making $L(k)=0$. At even $k$, $c$ is hidden and
+
+```math
+L(k)=\pi(P)\oplus\pi(Q)\oplus\pi\big(P\mathbin{\&}(Q\ll1)\big).
+```
+
+Thus a forced cell stays zero precisely when the parity of overlapping black entries matches the XOR of the
+two individual parities. The overlap is the nonlinear term. This gives a concrete test of the internal
+configuration; it does not explain why that equality must eventually fail for every prefix.
+
+### G3.2. A falsified small-state shortcut, with replayable witnesses
+
+The three bits determine the current forced cell, but are not an autonomous state for the zero-forcing walk.
+For an even starting depth, take two prefixes giving the same three bits and current output zero; advance that
+forced step and then force the next free step to zero. Their following forced outputs can differ:
+
+| Depth | Three bits before the current forced step | Prefixes | Following forced outputs |
+|---|---|---|---|
+| 22 | $(1,1,0)$ | 26 and 48 | 1 and 0 |
+| 66 | $(0,1,1)$ | 2767783534 and 1338062742 | 1 and 0 |
+
+Prefix bit $i$ is $\sigma(2i)$; take hidden odd-time bits as zero. The probe's `state`, `summary` and `zero_step`
+functions replay these witnesses. Therefore no deterministic update using only these three bits and the depth
+can reproduce the zero-forcing dynamics: the initial summary, current depth and forced choices agree, while
+the later predicted output differs. This closes this particular compression shortcut. It does not rule out
+other summaries, larger finite-state descriptions, or a theorem using the full diagonal pair.
+
+### G3.3. Pre-registration and outcomes
+
+Probe: [rule30_gpt_forced.py](tests/probes/lexicon/rule30_gpt_forced.py). Predictions, fixed sampling seeds,
+controls and counterfactuals were committed in `9c621e7` and pushed to main before the first run.
+One process per starting depth sampled 20,000 uniform visible prefixes; these are prefix-weighted statistics,
+not uniformly sampled distinct walks. Free steps choose their unique zero continuation; a forced 1 ends a walk.
+At each test the denominator contains only prefixes surviving all earlier tests.
+
+- **FZ0 passed.** Scalar left-parent reconstruction on 100 random column-1 words, every depth through 64,
+  agrees with the formula and bit-word update. All 1,024 prefixes at depth 21 reproduce freshly compiled
+  `records.c`'s complete histogram: run lengths/counts 1/512, 3/244, 5/81, 7/72, 9/48, 11/36, 13/16, 17/15.
+  The control raises an error if a walk reaches its cap; none was censored.
+- **FZ1 held.** All 32 conditional survival fractions at starting depths 65, 129, 257 and 513 fall inside the
+  pre-registered interval [0.35, 0.65], each based on at least 100 reached prefixes. The first test's fractions
+  are 0.49605, 0.4959, 0.50235 and 0.49535. The full range is 0.41875–0.56. Counts are retained in the header.
+- **FZ2's three-bit closure counterfactual was rejected** at both stipulated depths, by the witnesses above.
+- **CF was rejected.** Omitting the overlap parity changes directly reconstructed cells.
+
+The run printed `ALL CONTROLS PASS`, exit 0. The roughly half-survival was already suggested at smaller depths
+by §8.36–§8.38; this is an extension of that diagnostic, not a newly discovered law. Neither the finite samples
+nor their marginal conditional rates exclude an exceptional infinite survivor.
+
+**Unexpected check: change the centre's phase.** Pre-registered the `phase` addendum in `3164fc4` and pushed
+before running it. For $1010\ldots$ the free depths are even, so reusing the $0101\ldots$ coefficient is wrong.
+The general formula above agrees with scalar reconstruction at all 6,400 new cells (100 words, 64 depths,
+seed 302). The old phase-specific formula disagrees at 3,194 cells. The command printed `ALL CONTROLS PASS`,
+exit 0. This tests the boundary coefficient independently of the original phase's passing results.
+
+### G3.4. Feedback on Local's right-edge damage question (CHAT C003)
+
+A closed right-edge prefix is not by itself a barrier to damage travelling into the interior. Let $r+t$ be
+the common right edge and $R_k(t)=x(r+t-k,t)$. The forward rule is
+
+```math
+R_k(t+1)=R_k(t)\oplus\big(R_{k-1}(t)\lor R_{k-2}(t)\big).
+```
+
+So the values of a fixed prefix depend only on that prefix, but values farther inward depend on it as well.
+For a direct counterexample to a *fixed-width* confinement criterion, put a black cell at $r=0$ in both rows,
+and flip only the cell at $-K$ in one row, with $K\ge2$ and every other cell white. The initial damage is confined
+to the last $K+1$ cells. At the next step the cell at $-K-1$ differs, because its middle parent is white and
+its right parent is the flipped bit. The common edge is now 1, so that difference has offset $K+2$, outside
+the former fixed-width strip. Both rows are finite valid seeds with the same right edge.
+
+This does not refute Local's observed long-lived identical wall traces or any stronger certificate of
+confinement within a particular growing band. It does show why finite-time localisation alone is insufficient.
+A proof of permanent non-escape needs an invariant boundary condition or a quantitative bound on the inward
+front relative to a precisely defined growing band. No such invariant was established in this block.
+
+**Lead status and next intention.** The forced-zero lead is PART: the exact criterion and failed summary shortcut
+are recorded; a global cost or termination argument is still missing. Next reasoning lane is structural balance
+at the core. Local's exact record and million-diagonal jobs remain separate. Document math checks and publication
+checks accompany this milestone; raw large datasets were not added to git.
