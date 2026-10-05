@@ -1187,3 +1187,59 @@ wrongly.
 **What this means for the route.** The right side's output is now a jump-diffusion of one angle: steady rotation plus
 notched kicks, with no restoring force (§8.9) and no evident trend. That is the simplest possible description of a
 non-trivial column 1, and it is the object part 3 has to reason about.
+
+### 8.11 Is the wheel chaotic? A flywheel kicked by a chaotic machine (2026-10-05)
+
+The owner: "Could the wheel be chaotic, like a double pendulum?" A double pendulum is chaotic in its own variables:
+two nearby starts part exponentially. `rule30_chaos.py` tested the wheel the same way. It flipped one cell, 48 places
+out in a random right half of 64 cells, and followed both wheels. All predictions were written first:
+
+| Test | Result |
+|---|---|
+| C, the light cone (exact): column 1 unchanged until the flip can reach it | **passed**: 0 of 1,500 pairs changed early |
+| D1: the flip moves the wheel for good | **held**: 1,437 of 1,437 |
+| D2: the two angles part diffusively, the squared gap growing as $s^g$ with $g \in [0.7, 1.3]$ | **held**: $g = 1.17$ |
+| D3: the kicks have no memory | **held**: correlation $+0.14$; the previous kick leaves 95.6% of the next one's entropy |
+| N1, the random-chaos step: replace the interior with coin flips at column 13 | **held**: the same wheel forms, more cleanly (60% of windows exact, against 8% with a real right half), kicked both ways |
+
+So **the wheel is not a double pendulum.** Between kicks it is an exact rotation, and nearby wheels part only like a
+random walk, because its angle has no restoring force (§8.9) and nothing amplifies a difference. It is a regular
+flywheel kicked by a chaotic machine. The randomness is borrowed from Rule 30's interior, and N1 shows it can even be
+replaced by plain coin flips without losing the wheel; only the kicks' statistics change. **The wheel belongs to the
+thin layer next to column 0** (13 columns were enough). The interior is only a source of kicks.
+
+**A ladder of statements, each about a finite machine.** N1 suggests treating the right side as a layer $m$ cells
+wide, fed an arbitrary input at its edge. Given column 0 = 0101…, any start for cells $1, \dots, m$, and any sequence
+in column $m+1$, the layer's columns $1, \dots, m$ follow, because information moves at most one cell per step. So
+column 1 is the output of a finite-state transducer with $2^m$ states and one input bit per step. Define
+
+> **$\mathrm{LR}_m$**: for every start of cells $1, \dots, m$ and every input sequence in column $m+1$, the forced left half is
+> not eventually zero.
+
+Then
+
+```math
+\mathrm{LR} = \mathrm{LR}_0 \;\Rightarrow\; \mathrm{LR}_1 \;\Rightarrow\; \mathrm{LR}_2 \;\Rightarrow\; \cdots \;\Rightarrow\;
+\text{B (weak form): no finite right half makes the left half eventually zero.}
+```
+
+*Why each step holds.*
+- **Outputs only shrink.** The column 1 a layer of width $m+1$ produces is one a layer of width $m$ also produces: feed
+  it, as input, the column $m+1$ of the wider layer. So the outputs of $\mathrm{LR}_{m+1}$ are among those of $\mathrm{LR}_m$, and
+  $\mathrm{LR}_m$ implies $\mathrm{LR}_{m+1}$.
+- **The top step.** A finite right half supplies one particular start and one particular input sequence, so $\mathrm{LR}_m$
+  for any single $m$ implies B.
+- **The bottom step.** $\mathrm{LR}_0$, with no layer at all and column 1 arbitrary, is LR (§7). $\square$
+
+For period two, B is what the prize needs (§8).
+
+What the ladder buys is this. At $m = 0$ the left side faces any column 1 at all, and the zero runs grow with depth
+(§7). With a real right half, the layer filters what reaches column 1 down to a wheel and its kicks, and the runs grow
+only slowly (§8, X3). Somewhere up the ladder a finite layer must start to tame the left side. **Each rung is a
+question about a finite automaton driving the left-permutive map**, the kind of object a finite computation, or a Lean
+proof, can handle.
+
+**Next.** The kick game, done properly as the ladder's first rungs. For small $m$, search adversarially over input
+sequences for the longest zero run the left half can be held to from a given depth. At $m = 0$ this is §7's
+exhaustive search. The question is how fast the best achievable run falls as $m$ grows, and whether it becomes
+bounded at some finite $m$.

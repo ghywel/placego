@@ -29,6 +29,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   N1 (blind): with the noise engine the same wheel forms. At least 3% of windows are exact rotations of U, and among
      its kicks both signs occur, each in at least 20% of kicks.
 REFUTED-BY: C failing (the harness); D1, D2, D3 or N1 failing.
+
+OUTCOME of the first run, 2026-10-05 (N = 1500, T = 4096): C passed (0 of 1,500 pairs changed before time 47).
+  D1 HELD: 1,437 of 1,437 pairs differ after time 1000. D2 HELD: the mean squared angle difference grows as s^1.17
+  (10.8, 36.8, 53.3, 79.6, 119.0, 137.9, 151.5, 180.0 for s = 1..8): diffusive. D3 HELD: consecutive kicks correlate
+  at +0.136, and 95.6% of the next kick's entropy is left over 73,649 pairs. N1 HELD: with coin flips at column 13 the
+  same wheel forms, more cleanly (60.2% of windows are exact rotations of U, against 8.4% with a real right half),
+  kicked both ways (22% forward, 69% backward; commonest -11, -6, 0, -5, -1, -2 notches). The kicks' statistics
+  depend on the engine; the wheel does not.
 """
 import math, random, sys, pathlib
 from collections import Counter
