@@ -81,6 +81,8 @@ OUTCOME.
   problem's flavour again.
 - **A Chebyshev-type exact identity in the survivor counts** (§8.41): none is visible.
 - **"Periodic words hold deep zero runs down"** (§8.42): refuted.
+- **The wheel's rigidity as a bound** (§8.44). The kick game's runs grow like the coin's. The timing cuts them, but
+  does not stop them.
 - **Self-similarity between depths d and 2d** (§8.36, RC5): none beyond chance.
 
 ## 5. The one missing statement
@@ -99,9 +101,10 @@ proof of Bertrand's postulate, and not a proof that Rule 30 is random.
 
 ## 6. Live leads (2026-10-05)
 
-1. **The wheel's kicks.** What sets a kick's size is unknown (§8.8, §8.9). The owner's lead, from the interpolation
-   shaders: rotation shows an oscillating hole at the centre, and rotation with translation makes it drift. Being
-   dug next: is a kick's size set by how far its wall travelled through the rotating domain?
+1. **The wheel's kicks** (§8.43, §8.44). A kick's size comes from the interior, not from the wall's origin, its
+   width, or the cells at arrival. Its timing and alphabet are rigid. The kick game, a wheel kicked only at its
+   arrival phases, still has the coin's growing runs. So the wheel narrows the cost-side statement to a kicked
+   rotation, but does not prove it.
 2. **Local's depths 85 and 89** (CLOUD-LOCAL.md, lead M4). They were running on Local when this was written. A blind
    prediction waits for them: R(85) between 65 and 75, R(89) between 69 and 79 (MG8 in `rule30_merge.py`).
 3. **Job M3** (CLOUD-LOCAL.md): the channel bound at layer widths 27 and 28, and the counterexample search to 34

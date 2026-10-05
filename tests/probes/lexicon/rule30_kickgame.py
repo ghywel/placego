@@ -30,6 +30,19 @@ PREDICTIONS, written 2026-10-05 before this script's first run (depths s = 41, 4
       departing), the run from depth 41 is at least 3 longer than the kick game's. (Depth 41, because with that much
       freedom the search approaches a free column 1 and its states grow like the forced walks' own.)
 REFUTED-BY: KG0 failing (the instrument); KG1 to KG3 failing.
+
+OUTCOME, 2026-10-05 (the first run, several minutes):
+  KG0 PASSED: with kicks disabled every phase's run equals the cell-by-cell computation (longest run 8).
+  Kick game, s = 41, 49, .., 105: R_K = 8, 9, 12, 13, 15, 23, 16, 18, 21; log2 G_K = 8.7, 10.2, 11.6, 13.1, 14.5, 15.9,
+  17.4, 18.8, 20.2 (about 0.18 bits per step).
+  KG1 REFUTED: the kick game is no harder for the adversary than the width-12 ladder. It beats it at 57 (12 against
+     10), 81 (23 against 14), 97 (18 against 16) and 105 (21 against 20). So a width-12 layer cannot produce every
+     schedule the game allows.
+  KG2 REFUTED at depth 81 alone (ratio 1.44); at the other eight depths R_K / log2 G_K is 0.88 to 1.04. The coin law
+     holds: the run is about log2 of the number of distinct column-1 histories.
+  KG3 HELD: kicks allowed at every even time give a run of 23 from depth 41, against the game's 8. The arrival
+     phases are a real constraint, worth about two thirds of the run at that depth, but the game's runs still grow
+     with depth.
 """
 import math, sys, pathlib
 

@@ -2651,3 +2651,35 @@ narrower game than the ladder of §8.12, where the adversary feeds a layer anyth
 whether a wheel kicked like this can hold the left half at zero for long.** It was proposed in §8.8 and never run as
 such. If its runs grow more slowly than the ladder's, the wheel's rigidity is a lever a proof can use.
 
+### 8.44 The kick game: the wheel's rigidity is a constraint, not a bound (2026-10-05)
+
+§8.43 left one candidate lever: a wheel can only be kicked at its arrival phases, by whole notches of a small
+alphabet. `rule30_kickgame.py` plays that game, with predictions written first. Column 1 is the wheel $U$ at any of
+its 28 even phases. It is kicked only at the three arrival phases of its 56-step cycle, by sizes from each class's
+alphabet, and only when column 1 departs at that moment. The adversary chooses the starting phase and every kick.
+$R_K(s)$ is the longest zero run of the forced left half from depth $s$. The control held: with kicks disabled the
+game reproduces the pure wheel exactly, phase by phase, against an independent cell-by-cell computation (KG0).
+
+| Depth $s$ | 41 | 49 | 57 | 65 | 73 | 81 | 89 | 97 | 105 |
+|---|---|---|---|---|---|---|---|---|---|
+| Kick game, $R_K(s)$ | 8 | 9 | 12 | 13 | 15 | 23 | 16 | 18 | 21 |
+| $\log_2$ of its distinct column-1 histories | 8.7 | 10.2 | 11.6 | 13.1 | 14.5 | 15.9 | 17.4 | 18.8 | 20.2 |
+| The ladder at width 12 (§8.14) | 8 | 11 | 10 | 13 | 16 | 14 | 16 | 16 | 20 |
+| Real right halves up to 12 cells (§8.14) | 6 | 9 | 10 | 10 | 8 | 8 | 9 | 9 | 10 |
+
+- **The timing is a real constraint** (KG3 held). Allow kicks at every even time and the run from depth 41 is 23,
+  not 8.
+- **But it is not a bound** (KG1 refuted). The game's runs grow with depth, and at four depths they beat the
+  width-12 ladder's.
+- **It is the coin law again** (KG2 held at eight of nine depths). The run is about $\log_2$ of the number of
+  distinct column-1 histories the game allows, which grows by about 0.18 bits per step.
+- **Real right halves stay far below the game.** Their kicks arrive less often (about one every 88 steps, against
+  the game's two chances per 56), and their sizes are not chosen.
+
+**What it means for the proof.** The wheel's rigidity (its arrival phases, its notched alphabet, its instant
+switch) cuts the adversary's freedom but leaves a positive entropy rate. Every game with positive entropy has the
+coin's growing runs. Only the constant walls have zero entropy, and only they have a bounded law (§8.41). So for
+0101 the wheel's structure cannot by itself give the bound. A proof still needs the cost side: the real kicks,
+coming from Rule 30's own interior, must pay a bit for every condition the left half imposes. The wheel narrows the
+search for that statement, from any column 1 to a kicked rotation, but does not supply it.
+
