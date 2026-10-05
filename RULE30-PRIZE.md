@@ -2713,12 +2713,21 @@ there, as Mahler's own conjecture does.
 **What it means.** This is a calibration, not a route. It places the problem precisely: a Mahler-type problem in the
 regime where the decoupling method has not worked for 57 years. It also explains, in one frame, everything this
 document has found:
-- the solved cases are exactly the zero-entropy ones (§8.40, §8.41);
+- the solved cases are exactly those where every admissible column 1 is eventually periodic (§8.40, §8.41;
+  corrected, see below);
 - the counting results give sparsity but never emptiness (§8.33, §8.41);
 - the wheel's rigidity narrows the constrained side without making it finite (§8.44).
 
 A new idea would have to do what nobody has done for Mahler's problem: get emptiness from a constrained side of
 positive entropy.
+
+*Corrected 2026-10-05, after the wide survey (§8.47).* The list above first said "the zero-entropy ones". Zero
+entropy alone is not enough. A Sturmian column has zero entropy and is not eventually periodic, and FLP's
+Theorem 3.2 assumes finitely many admissible orbits, which is stronger. What the solved cases use is that each
+admissible column 1 is eventually periodic. Next to a white wall it is monotone, $0^k 1^\infty$. A sequence
+with at most $n$ distinct words of some length $n$ is eventually periodic (Morse and Hedlund; Kopra's Lemma
+4.2), and Jen's theorem then finishes. Between the two regimes lies a third, untested here: columns 1 with zero
+entropy that are not eventually periodic.
 
 ### 8.46 Is it unresolvable? The owner's Turing question (2026-10-05)
 

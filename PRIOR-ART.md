@@ -1431,7 +1431,8 @@ points to?
   - **The coupling.** A finite configuration with a periodic centre needs the two to agree at the wall for ever:
     that is a Z-number.
   - **Emptiness by finiteness** is, here, Jen's theorem (a periodic column 1) and Condrey's constant walls (column 1
-    monotone, so finitely many behaviours).
+    monotone, so each admissible column 1 is eventually constant; corrected wording, see the wide survey below:
+    zero entropy alone would not be enough).
   - **The open regime.** Next to 0101 the constrained side has positive entropy, about 0.12 bits per visible bit, so
     infinitely many admissible behaviours. That is exactly the regime of Mahler's own conjecture (interval 1/2 > 1/p),
     which this method has not closed since 1968. The entropy squeeze (§8.33) is the analogue of FLP's Theorem 1.1,
