@@ -29,6 +29,18 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   WA3 (counterfactual): with the wall in the other phase (x_t(0) = (t + 1) mod 2) and the same condition, the
       equivalence breaks: at some depth from 3 to 27 the longest wall run differs from records.c's R(d).
 REFUTED-BY: WA0 failing (the derivation); WA1 to WA3 failing.
+
+OUTCOME, 2026-10-05 (the first run, 4 seconds):
+  WA0 PASSED (300 random columns 1, every cell of the light cone to time 40).
+  WA1 HELD (every prefix, m = 0 .. 10).
+  WA2 HELD: the wall's longest run equals records.c's R(d) at all 25 depths from 3 to 27.
+  WA3 HELD, but weakly: the other phase gives exactly R(d - 2) at every depth from 5 to 27 (and R(1), R(2) at 3, 4).
+     It is the same problem shifted by one time step, not a different one, so the counterfactual shows that the
+     phase is bookkeeping, not that the equivalence could have failed. A stronger counterfactual would change the
+     wall's word.
+  So the forced left half for 0101 is a boundary-value problem for Rule 30 itself: evolve the half-line x <= -1
+  forward against a wall that alternates white and black, and require the wall's neighbour to be black at every odd
+  time. The free data are row 0's odd-depth cells; each odd time's condition fixes the next even-depth cell.
 """
 import pathlib, random, subprocess, sys, tempfile
 
@@ -110,7 +122,7 @@ def main():
             if t % 2 == 1:
                 ok &= (r & 1) == 1
             r = wall_step(r, t, W)
-    report("WA0 the forced left half is the wall evolution of its row 0; the wall's neighbour is black at odd times", ok)
+    report("WA0 the forced half is the wall evolution of its row 0; the wall's neighbour is black at odd times", ok)
     ok1 = True
     for m in range(11):
         n = m + 1

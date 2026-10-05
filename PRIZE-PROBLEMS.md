@@ -2550,10 +2550,42 @@ every odd depth from 21 to 45 (MG0c).
 **What it means for the proof.** The doubling conjecture now has a mechanism, but still no proof. There are about
 $2^{0.41\,d}$ distinct walks, so the coin model's record is $\log_2 1.764 \approx 0.82$ of the depth. The bound
 $d + 4$ is therefore about $0.18\,d$ cells of slack, not luck. A proof by this route needs two statements:
-1. **A merging lemma.** The distinct walks number at most $c\,\mu^{d/2}$ for some $\mu < 2$. This concerns one OR
-   gate in a finite system, and might be provable.
+1. **A merging lemma.** The distinct walks number at most $c\,\mu^{d/2}$ for some $\mu < 2$. I first called this
+   the provable half. It is not easier. A difference between two walks passes through an OR gate whose other input
+   is white and is stopped only where that input is black. So a steady merge rate means black cells keep appearing,
+   which is the original problem's own flavour. It also fits the finding that nothing merges inside a run, where the
+   cells are white.
 2. **A uniform cost.** No walk beats the coin's best by $0.18\,d$ cells. This is again a uniformity statement about
    deterministic walks, the kind §8.33 found nobody has proved for Rule 30.
 
 The merging moves the problem without solving it. It does make the target quantitative: a proof may lose up to
 $0.18\,d$ cells against the coin model and still settle period 2.
+
+### 8.39 The same problem as Rule 30 against a wall (2026-10-05)
+
+The forced left half has a plainer description, with no diagonals and no column 1 (`rule30_wall.py`, predictions
+written first). At column 0, the left-parent rule $x_{t+1}(0) = x_t(-1) \oplus (x_t(0) \lor x_t(1))$ says two things.
+At even times it fixes column 1. At odd times, where $x_t(0) = 1$, it says $x_t(-1) = 1$. The left half meanwhile
+evolves forward by Rule 30 using column 0 alone. So:
+
+**The wall form.** Run Rule 30 on the half-line $x \le -1$, against a wall at $x = 0$ that is white at even times and
+black at odd ones. The forced left halves for 0101… are exactly these evolutions in which **the cell beside the wall
+is black at every odd time.**
+
+- The free data are row 0's cells at odd depths. Each odd time's condition fixes the next even-depth cell, through
+  the left edge of its light cone, which is pure XOR. Column 1's free bits and row 0's odd cells determine each other
+  one by one (WA1).
+- The control: the wall evolution reproduces the forced left half cell for cell (WA0). The longest wall run equals
+  `records.c`'s record at every depth from 3 to 27 (WA2). The wall in the other phase gives exactly $R(d - 2)$: the
+  same problem one time step later (WA3, a weak counterfactual).
+
+In this form, the open statements read:
+- **Conjecture LR for 0101…:** no row 0 that is white beyond some depth can keep the wall's neighbour black at every
+  odd time.
+- **The doubling conjecture:** if row 0 is white from depth $d$ on, the wall's neighbour is white at some odd time by
+  $2d + 3$.
+
+This is a question about Rule 30 alone: a finite pattern growing beside a periodic wall. Condrey proved the period-1
+analogue (arXiv:2609.09431): there the wall is constant, and the forced left half has an explicit structure. Here
+the left half is Rule 30's ordinary chaos, and the condition at the wall is one coin per two time steps.
+
