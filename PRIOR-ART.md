@@ -1369,3 +1369,30 @@ depend on it, but they used both facts from memory, so this is recorded as late.
 - **Import:** the comparison in MG7, and the constant in §8.38. Nothing found settles either statement that §8.38
   says a proof would need.
 
+## The owner's zeta note: the prime-gap parallel (surveyed 2026-10-05, by Cloud)
+
+Scope: the owner compared lead 1's returns to zero with the Riemann zeta function's zeros. The precise parallel is
+the probabilistic model of the primes and its maximal gaps. That model is to the primes what the coin model is to
+Rule 30's forced walks. The survey came after the merging census of PRIZE-PROBLEMS.md §8.38 and changed none of its
+predictions.
+- **Cramer's model and conjecture** (H. Cramer, 1936): treat each n as prime with probability 1/log n,
+  independently. The model predicts maximal prime gaps of about (log p)^2. Statement and history checked via
+  https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_conjecture and Granville's survey below.
+- **Maier's theorem** (1985) shows the model is wrong in short intervals, because divisibility by small primes is
+  structure, not chance.
+- **Granville, A., "Harald Cramer and the distribution of prime numbers"**, Scandinavian Actuarial Journal (1995)
+  (https://chance.dartmouth.edu/chance_news/for_chance_news/Riemann/cramer.pdf; checked through the search summary
+  and the Wikipedia article, not read in full). The refined model, with the small primes sieved out, raises the
+  constant: limsup G(p) / (log p)^2 >= 2 e^-gamma = 1.1229. This is the shape of §8.38. A coin model gets the scale,
+  and a structural correction (there divisibility, here the merging of walks) changes the constant (there 1 to
+  1.12, here 1 to 0.82).
+- **Bertrand's postulate**: for every n > 1 there is a prime between n and 2n. That is a doubling statement, like
+  §8.36's conjecture that from depth d there is a one by depth 2d + 4. Chebyshev proved it around 1850 from
+  estimates of factorials, long before anything sharp about gaps. Ramanujan (1919) and Erdos (1932) reproved it
+  from the prime factors of the binomial coefficient C(2n, n). None of the proofs shows that the primes are
+  random. Cited from memory, as standard.
+- **Import:** the shape of a proof worth looking for. Cramer's sharp conjecture is still open. The doubling
+  statement fell to a size argument: a quantity forced to be large, which an empty interval would make small. For
+  Rule 30, any finite bound on R(d), not only d + 4, settles Conjecture LR for 0101... (König's lemma turns
+  unbounded runs into an infinite one). So the target has Bertrand's shape, not Cramer's.
+
