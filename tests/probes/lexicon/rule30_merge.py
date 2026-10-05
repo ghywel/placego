@@ -96,6 +96,20 @@ odd d from 21 to 45. Not seen: D at even depths, below 21, or beyond 45.
   RQ3 (blind): merges happen at both kinds of step. From k = 20 to KMAX - 1, every non-free step loses states
       (D(k + 1) < D(k)), and every free step falls short of doubling (D(k + 1) < 2 D(k)).
 REFUTED-BY: RQ0 failing (the instrument); RQ1 to RQ3 failing.
+
+OUTCOME of recur, 2026-10-05 (KMAX = 53, 56 seconds, 2.8 million states at depth 53):
+  RQ0 PASSED.
+  D(1 .. 20) = 1, 2, 2, 3, 3, 6, 5, 10, 9, 17, 16, 29, 27, 54, 50, 99, 93, 173, 168, 314;
+  D(22 .. 52, even) = 570, 1009, 1800, 3191, 5658, 10040, 17771, 31592, 55939, 99033, 175164, 309669, 546616, 965204,
+  1702523, 3002841; D(47 .. 53, odd) = 513672, 906640, 1598939, 2819694.
+  RQ1 REFUTED: no linear recurrence of order 12 or less holds on D(k0 .. 40) for any k0 up to 13. The growth is not
+     visibly an automaton's count. Lambda drifts down slowly: D(d + 2) / D(d) = 1.7776 at 31, 1.7712 at 39, 1.7650
+     at 47, 1.7635 at 51.
+  RQ2 HELD (1.7651, 1.7650, 1.7636, 1.7635 at 45, 47, 49, 51).
+  RQ3 HELD, and the merge rate is the same at both kinds of step. From depth 22 on, every step keeps 0.939 to 0.944
+     of what it would otherwise have (free steps: of twice the states; non-free steps: of the states), and that
+     fraction falls slowly, from 0.941 to 0.939 between 23 and 53. Each step of the prefix stage merges about 6% of
+     the walks into others; 2 x 0.94^2 = 1.767 per free bit.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
 

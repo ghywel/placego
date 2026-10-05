@@ -1349,3 +1349,23 @@ separate session, given only the lemma and the sources, reviewed it adversariall
   p(n) = 7, 13, 25, 49, 97, 193 at n = 4, 8, ..., 128 (the review's computation), entropy 0.
 - **Import:** the credit and the limits recorded in §8.33. The review found the lemma sound and the first-stated
   reduction a restatement of the problem.
+
+## After the merging census: merging walks and the coin's maximum (surveyed 2026-10-05, by Cloud, after the runs)
+
+Scope: PRIZE-PROBLEMS.md §8.38 (rule30_influence.py, rule30_merge.py). Is the count of distinct forced walks known,
+and are the two outside facts it leans on stated correctly? The survey came after the runs. The predictions did not
+depend on it, but they used both facts from memory, so this is recorded as late.
+- **Milnor's directional entropy** (already listed above, in the column-entropy survey). It measures the whole
+  system's complexity along a direction of space-time. §8.38 counts something narrower: the distinct pairs of
+  anti-diagonals reachable when column 0 is held at 0101... and column 1 is free at even times. Not found in the
+  record: that count, its growth rate (about 1.764 per free bit), or the OR-shielding merges behind it.
+- **Scheidegger, A. E., "A stochastic model for drainage patterns into an intramontane trench"**, Bull. Int. Assoc.
+  Sci. Hydrology 12 (1967), 15-20 (citation checked by search; the paper itself not read). In this river-network
+  model each site drains to one of two neighbours below it, chosen at random, so the streams are coalescing random
+  walks. The number of distinct streams then falls as a power of the distance, which is what MG7 compared against.
+- **Eisenberg, B., "On the expectation of the maximum of IID geometric random variables"**, Statistics & Probability
+  Letters 78 (2008), 135-143 (abstract). The expected maximum of n IID geometrics with P(M >= m) = 2^-m is
+  log2 n + gamma / ln 2 - 1/2 plus a small periodic term. For runs of 1 + 2M that gives §8.38's 2 log2 n + 1.67.
+- **Import:** the comparison in MG7, and the constant in §8.38. Nothing found settles either statement that §8.38
+  says a proof would need.
+

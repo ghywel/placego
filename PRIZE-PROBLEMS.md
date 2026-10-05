@@ -73,7 +73,9 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
     column's entropy in a finite configuration, which has never been proved for Rule 30.
 - **The sharpest open target (§8.36).** The doubling conjecture: in the forced left half for 0101…, a zero run that
   starts at depth $d$ ends by depth $2d + 4$, for every column 1. It holds at every depth computed (to 81, with
-  growing slack), and it would settle period 2 for every finite configuration.
+  growing slack), and it would settle period 2 for every finite configuration. §8.38 explains the slack. The forced
+  walks merge, about 6% at every step, so there are about $2^{0.41\,d}$ distinct walks rather than $2^{d/2}$. The
+  coin's best of them lasts about $0.82\,d$ cells, which is what the records show.
 - **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
   keep it there. Every statistic says they cannot: coin flips paid through a narrow channel. Nothing structural
   yet says why. The structural levers found so far are listed in §8.15:
@@ -2503,3 +2505,55 @@ known plaintext, the crib, through the machine and letting contradictions prune 
 deterministic walks, each of which survives a cell only when a determined bit comes out 0. The doubling conjecture
 says no walk survives more than $d + 4$ cells. The slack is growing: the measured records fall 14 to 16 cells short of
 the bound at depths 69 to 81.
+
+### 8.38 Why the records stop at 0.8 d: the walks merge (2026-10-05)
+
+§8.37 left one number unexplained. If the $2^{d/2}$ prefixes of column 1 gave independent walks, each a fair coin
+at every other cell, the best of them would last about $d$ cells. The records last about $0.8\,d$. Two probes, with
+predictions written before each run, find where the missing walks went.
+
+**Single bits do not explain it** (`rule30_influence.py`). Flip one bit of a random prefix and see whether the run
+changes. From time 12 on, every bit changes it with probability 0.63 to 0.69. That is the coin's $2/3$, the chance
+that two independent runs differ. Only the first two or three bits are weak (IN2 refuted).
+
+**Whole walks merge** (`rule30_merge.py`). The walk from depth $k$ depends only on two anti-diagonals, and part of
+the older one is hidden. In $(A_{k-1} \ll 1) \lor (A_{k-2} \ll 2)$, a bit of $A_{k-2}$ cannot be seen wherever the bit
+of $A_{k-1}$ beside it is 1. Mask those bits. Two prefixes that reach the same masked pair are one walk from then on,
+exactly (MG0b). The count of distinct pairs over every prefix reproduces `records.c`'s record and full histogram at
+every odd depth from 21 to 45 (MG0c).
+
+| Depth $d$ | 21 | 29 | 37 | 45 | 53 |
+|---|---|---|---|---|---|
+| Prefixes $2^{(d-1)/2}$ | 1,024 | 16,384 | 262,144 | 4,194,304 | 67,108,864 |
+| Distinct walks $D(d)$ | 303 | 3,006 | 29,753 | 291,014 | 2,819,694 |
+| Fraction | 0.30 | 0.18 | 0.11 | 0.069 | 0.042 |
+
+- **Every step merges about 6% of the walks** (RQ3), at free and non-free steps alike. So each free bit multiplies
+  the walks by about 1.764 instead of 2 (MG1, RQ2). The rate drifts slowly, from 1.778 at depth 31 to 1.764 at 51.
+  It obeys no linear recurrence of order 12 or less (RQ1 refuted), so no finite automaton is visible behind it.
+- **The OR is the whole mechanism.** With XOR in its place, no two prefixes ever merge (the counterfactual).
+- **Nothing merges inside a run** (MG2 refuted). Once the run starts, the distinct walks and the prefixes both halve
+  every two cells: the coin rate.
+- **So the record is the coin's best over $D(d)$ walks**, not over $2^{d/2}$ prefixes (MG3). The longest of $n$
+  independent coin runs is about $2\log_2 n + 1.67$ cells, which gives $R(d) \approx 0.826\,d + 0.8$. This count,
+  made at depths 45 and below, predicts Cloud's and Local's records at the 12 depths from 49 to 81 with a mean error
+  of −0.9 cells and none larger than 4.1.
+- **A record is one walk** (MG5). At 11 of the 16 depths from 41 to 81, every listed record prefix follows the same
+  walk, and there are never more than three.
+- **The merging is not confined to the early bits** (MG4, MG6 refuted). At depth 41, classes join prefixes that
+  differ as late as time 30.
+- **The chaos step, from the owner's lightning channels** (MG7). Rivers merge too. In Scheidegger's river network
+  the streams coalesce like random walks, so the distinct ones fall only as a power of the distance. Here a fixed
+  fraction merges at every step, so the loss is exponential. At depth 45 the classes peak at 16 to 31 prefixes, and
+  the largest has 284.
+
+**What it means for the proof.** The doubling conjecture now has a mechanism, but still no proof. There are about
+$2^{0.41\,d}$ distinct walks, so the coin model's record is $\log_2 1.764 \approx 0.82$ of the depth. The bound
+$d + 4$ is therefore about $0.18\,d$ cells of slack, not luck. A proof by this route needs two statements:
+1. **A merging lemma.** The distinct walks number at most $c\,\mu^{d/2}$ for some $\mu < 2$. This concerns one OR
+   gate in a finite system, and might be provable.
+2. **A uniform cost.** No walk beats the coin's best by $0.18\,d$ cells. This is again a uniformity statement about
+   deterministic walks, the kind §8.33 found nobody has proved for Rule 30.
+
+The merging moves the problem without solving it. It does make the target quantitative: a proof may lose up to
+$0.18\,d$ cells against the coin model and still settle period 2.
