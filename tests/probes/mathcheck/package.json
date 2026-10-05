@@ -1,0 +1,11 @@
+{
+  "name": "mathcheck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Compile every TeX expression in a Markdown file as GitHub renders it, and typeset it to HTML and PDF",
+  "dependencies": {
+    "marked": "^12.0.2",
+    "mathjax-full": "^3.2.1",
+    "playwright-core": "^1.63.0"
+  }
+}

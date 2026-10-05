@@ -454,6 +454,8 @@ the research record, the scientific record and the instruments.
   Rule 30 work: periodic columns, left-side rigidity, the right side as a complement, the four arms, and the
   templates behind the run lengths (why 13 was missing, and where Fibonacci really is), Rule 30's siblings, and the
   ring resonance its spectra show.
+- [PERIOD-TWO.md](PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
+  what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
 
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn

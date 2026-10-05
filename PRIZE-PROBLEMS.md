@@ -8,6 +8,9 @@ in its header, written before it ran.*
 
 ## The honest summary
 
+*For the Rule 30 period-2 work in one place, with its reading order and how to reproduce it, see
+[PERIOD-TWO.md](PERIOD-TWO.md).*
+
 No open prize problem is one computation away. The one where heavy computation was the leading line of attack,
 Navier–Stokes, was claimed on 2026-09-08, for the case with a smooth external force, and Clay is evaluating the
 claim. For the rest, a computer can win in only two ways:
