@@ -768,7 +768,7 @@ halves, 166 lock into an exact period; the other 3,930 were studied.
 |---|---|
 | Q1: at least 30% of windows are exact copies of the one before | **refuted**: 8.4%. The wheel is coherent, but rarely exact for a whole period |
 | Q2: at least 70% of slips are shifts in time | **held**: 5,430 of 5,714 (95%). The commonest shifts, 16, 36, 52, 0, 30, 20, 40, 26 steps, are all even, in step with the trace |
-| Q3: one domain word covers at least 90% of the exact stretches | **held**: 96.6%. There are only 2 words |
+| Q3: one domain word covers at least 90% of the exact stretches | **held**: 96.6%. There are only 2 words, and the second is the period-14 lock (see the correction below) |
 | Q4: the long zero runs sit inside exact stretches | **refuted, the other way round**: 0 of 40, against a base rate of 39%. Long runs sit next to slips |
 | S (the random-chaos step): the siblings 90, 120, 150, 210 do not turn this wheel | **held**: they sit at 1/2 or 1/3. The wheel is Rule 30's own |
 
@@ -797,6 +797,12 @@ $z(t) = e^{2\pi i \cdot 17 t / 56}$ turning around the circle, and the trace's h
 lights it. The left side sees only the even times (Lemma 1). There the wheel is a single-arc coding of a rotation by
 $17/28$, with 6 of the 28 points lit, and so it never shows two 1s in a row, as Lemma 3 requires. The rare second word
 $U_2$ (3.4%) is not a simple rotation coding: it needs 4 arcs per parity.
+
+*Correction (2026-10-05, found by `rule30_walls.py`).* $U_2$ is not a second wheel. Its least period is 14:
+it is `00010011001101` four times, the period-14 lock read in a 56-step window. So there is one wheel, $U$, and two
+locks, of periods 4 and 14. The 14-lock appears for a while in columns that are not locked for good, and that is
+where $U_2$'s 3.4% of stretches came from. The results for $U_2$ below still stand as computed, but they are
+results for the 14-lock.
 
 **The left half under the pure wheel** (`rule30_wheel_left.py`). Clamp column 0 to 0101… and column 1 to $U$, both
 exactly periodic. Then every forced column is 56-periodic in time, the pairs of columns move through a finite set,
@@ -1006,3 +1012,80 @@ side might do".
    columns, and whether it is the same pattern every time (a glider of the system with column 0 clamped).
 2. A fixed noise control (CF2) and a cleaner speed test, with arrival defined from the particle's pattern.
 3. The particle trains: the shift after a whole episode, as a function of the arrival times.
+
+### 8.8 The walls kick the wheel in notches; orbits and jumps (2026-10-05)
+
+`rule30_walls.py` looked at the particle as a domain wall. It built the domain in columns 0 to 12 from a training set
+of right halves and tested it on another, imaging the 11,437 test slips aligned at their arrival. That arrival time
+is $t_1$, when the wall reaches column 1.
+
+| Check or prediction | Result |
+|---|---|
+| CF: aligned at random times inside exact windows, no cell reaches 50% (the noise control §8.7 lacked) | **passed**: at most 21.5% |
+| V1 (seen first, recorded as a check): the wall moves at half a cell per step | **held**: slope $-2.19$ steps per column, columns 1 to 10 |
+| L1 (seen first): two arrival phases hold at least 90% of slips | **held**: 98.1%, at wheel phases 32 and 52 |
+| B1: each arrival class carries one shift | **refuted**: 57% and 36% (but where the shift matches, the wheel behind the wall fits exactly) |
+| B2: the walls' shifts add up to an episode's shift | **refuted**: 4.9% |
+| S, the random-chaos step: another trace turns a wheel of its own | **refuted** (below) |
+| E1 and E2, the owner's orbit tangent | **refuted, informatively** (below) |
+
+**The wall is a sharp object.** Its front runs from column 10, 19 steps before $t_1$, to column 1 at $t_1$, at half a
+cell per step. It reaches column 1 at only two phases of the wheel's 56-step cycle. Behind it is the wheel again,
+exactly, at a new phase.
+
+**The walls kick the wheel's angle in notches.** B1 failed because the shift within a class is not fixed. The shifts
+differ by multiples of 10 steps, the wheel's block. A delay of $\Delta$ steps turns the wheel's angle by
+$-17\Delta/56$ of a turn, and in those terms every kick is a whole number of notches of $1/28$ of a turn:
+
+| Wall class (arrival phase) | Kicks to the angle, notches of $1/28$ turn (training slips) |
+|---|---|
+| 32 | **+3** (561), +4 (227), +5 (124), +2 (54), +6 (47) |
+| 42 (rare) | +2 (27), +3 (12), +1 (1) |
+| 52 | **−3** (278), −5 (226), −1 (162), −4 (68), −6 (61) |
+
+So there are **two species of wall: one pushes the wheel's angle forward, the other pulls it back**, each by a small
+whole number of notches. The arrival phase fixes the sign. Something not yet seen, presumably the wall's width,
+fixes the size. All kicks are even multiples of $1/56$, so the wheel's phase keeps its parity, in step with the
+trace. Its angle moves on the 28 notches of one parity.
+
+**The owner's tangent: "electron orbits, and how electrons jump between orbits. Is the wheel fixed, or can its size
+vary?"** The orbits are discrete. Next to column 0, column 1 settles into one of three:
+- the wheel $U$ (56 steps, 17 turns);
+- the 4-lock (the 7-cell ring's cycle);
+- the 14-lock.
+
+Its size does not vary continuously. The jumps between them, counted over every 56-step window of column 1 for all
+right halves up to 11 cells (50,650 wheel windows, 2,004 of the 14-lock, 1,948 of the 4-lock), are:
+
+| Jump | Count |
+|---|---|
+| 14-lock → wheel | **193** |
+| 4-lock → wheel | 1 |
+| wheel → either lock | **0** |
+
+E1 had predicted jumps both ways and is refuted. The jumps go one way: the locks behave like **metastable excited
+orbits that decay to the wheel, the ground state**, and nothing re-excites them. E2 (the locks never release) fails
+on that single 4-lock decay. Within the wheel itself the angle does jump in quanta: the walls' notches above. So the
+analogy fits twice over, once for the size of the orbit and once for its phase.
+
+**A correction** (found here): the second domain word $U_2$ of §8.5 has least period 14. It is
+`00010011001101` four times, the 14-lock, not a second wheel. The classifier tested for $U_2$ before the 14-lock, so
+every 14-lock window above was counted as $U_2$. §8.5 and the probe headers say so now.
+
+**The random-chaos step: a census of wheels.** Column 1's highest spectral line, for ten traces. For 0101… it is the
+wheel at 0.3036. For every other trace it is a multiple of the trace's own frequency: 001 and 011 at 1/3, 0011 at
+1/4, 00011 at 1/5, 00101 at 2/5, 0111 and 000111 at 1/2. Traces 0 and 1 show no line. So **only the alternating
+trace turns a wheel of its own**: with every other trace tried, the right side mainly follows the drive. That is only
+the highest line, so it is a hint, not a theorem. But it fits period two being the open case that Condrey named and
+that public work is stuck on.
+
+**What this means for the route.** Part 3 now has a finite alphabet. The right side's output, column 1, is the wheel
+$U$, whose angle is kicked by whole notches ($\pm 1$ to $\pm 6$ of $1/28$ turn) as walls of two species arrive at two
+fixed phases. A finite configuration would need those kicks to steer the left half to zero and keep it there.
+
+**Next.**
+1. What sets a wall's size: its width, or the gap to the next wall?
+2. The left half's response to a single kick. The long runs sit next to slips (§8.5, Q4), so is a long run the left
+   side's echo of one kick, of a given size and sign?
+3. The kick game. Within the two-sided search's depth, can any sequence of kicks from this alphabet hold the left half
+   at zero longer than the runs seen? If the alphabet's best is bounded, the heuristic of §8.6 has a finite form.

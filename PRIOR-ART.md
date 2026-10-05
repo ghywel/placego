@@ -1097,3 +1097,49 @@ particles. That is the subject of computational mechanics.
   method for part 3 of the route (how trains of particles move the wheel's phase).
 - Sources: https://csc.ucdavis.edu/~cmg/papers/ECA54.pdf ;
   https://www.semanticscholar.org/paper/Computational-mechanics-of-cellular-automata:-an-Hanson-Crutchfield/036e7cb40ee06918aa47da9163ee866b9f316e4a
+
+## Before the kick-game step: the wheel, phase locking, and recent Rule 30 work (surveyed 2026-10-05, by Cloud)
+
+Scope: is the wheel of PRIZE-PROBLEMS.md sections 8.5 to 8.8 (a 17/56 rotation next to a column clamped to 0101...,
+kicked in notches by domain walls) already known, and what mathematics is closest? Checked tonight by search and by
+reading abstracts; "(abstract)" means no more than that was read.
+
+### Summary
+
+Nothing found describes the wheel, its walls, or its notched kicks. The closest results are about columns and
+diagonals of the single-seed pattern, and about two adjacent periodic columns, which is exactly the gap our two-sided
+analysis sits in. The closest mathematics for "a wheel at a rational rotation number, with phase slips" is mode
+locking (Arnold tongues).
+
+### Sources and what to import
+
+- **Kopra, J., "Rapid left expansivity, a commonality between Wolfram's Rule 30 and powers of p/q"**, Theoretical
+  Computer Science (2022) (search summary of its Theorem 3.5; open-access PDF at the University of Turku
+  repository, not yet read in full). For a rapidly left expansive rule of width w, the trace of width w - 1 of an
+  eventually finite configuration is not eventually periodic. For Rule 30 that means two adjacent columns,
+  generalising Jen; Condrey notes it does not decide the single column. **Import:** the definition, to check whether
+  our Lemma 4 is a special case. The paper sits next to our two-sided setting (column 0 periodic, column 1 not).
+- **Nersissian, T., "Diagonal Periods and Newton Supports of Rules 30, 86 and 135"**, arXiv:2609.25077 (2026-09-18)
+  (abstract). The single-seed Rule 30 cone has unbounded least diagonal periods in both directions, at least
+  floor(m/2) + 1 at depth m, with a polynomial lift that connects to Fibonacci sequences. For Rule 86 there is a
+  "backward map on periodic tail profiles". **To read:** whether that backward map is our pair map F of section 8.6
+  in mirror image.
+- **Chan-Lopez, E. and Martin-Ruiz, A., "Symmetric Nonlinear Cellular Automata as Algebraic References for Rule
+  30"**, arXiv:2604.00165 (2026) (abstract). They attribute the apparent randomness of the centre column to
+  left-permutivity and an asymmetric Boolean sensitivity, with Rule 22 as the symmetric reference. **Import:** context
+  for section 8.6's churn (order in, noise out) and its avalanche.
+- **Das, M., "Rule 30: Solving the Chaos"**, arXiv:2207.13237 (2022) (abstract). It claims an analytical solution to
+  Prize Problem 1. The prize is still listed as open (rule30prize.org), so the claim has not been accepted. Not
+  imported.
+- **Arnold tongues and the circle map** (Wikipedia, "Arnold tongue"; read). A driven oscillator locks at a rational
+  rotation number p/q over a whole region of parameters, and the rotation number as a function of the drive is a
+  devil's staircase. **Analogy, not yet a method.** Under the period-2 trace the wheel turns 17 times in 56 steps.
+  Under the other traces of the census (section 8.8) column 1 follows the drive's own frequency, which is low-order
+  locking. The walls' notched kicks look like phase slips of a locked oscillator. **Import:** the rotation number as
+  the invariant to compare traces by, if the census is extended.
+- Not relevant on reading the abstract: Brummitt, C. D. and Rowland, E., "Boundary growth in one-dimensional cellular
+  automata", arXiv:1204.2172 (a census of boundary growth rates, not Rule 30's columns).
+
+Links: https://www.utupub.fi/bitstream/handle/10024/174540/1-s2.0-S0304397522007502-main.pdf ;
+https://arxiv.org/abs/2609.25077 ; https://arxiv.org/abs/2604.00165 ; https://arxiv.org/abs/2207.13237 ;
+https://en.wikipedia.org/wiki/Arnold_tongue ; https://arxiv.org/abs/1204.2172

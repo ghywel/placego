@@ -39,6 +39,8 @@ word), K2 (0.3036) and CF (0.0000) passed. 166 of 4,096 right halves were locked
   Q3 HELD: one word covers 96.6% of stretches, and there are only 2 words:
      U  = 00010011010001001101000100110100010011010001001101001101 (23 ones; five blocks 0001001101 and one 001101)
      U2 = 00010011001101000100110011010001001100110100010011001101 (24 ones), 3.4%.
+     (CORRECTION, 2026-10-05: U2 has least period 14, being 00010011001101 four times. It is the period-14 lock seen
+     temporarily in unlocked columns, not a second wheel; rule30_walls.py.)
   Q4 REFUTED, the other way round: 0 of 40 long runs lie inside an exact stretch, against a base rate of 0.389. The
      long zero runs sit next to slips.
   S HELD: Rules 90, 120 and 210 have their highest column-1 line at 1/2 and Rule 150 at 1/3; only Rule 30 turns the

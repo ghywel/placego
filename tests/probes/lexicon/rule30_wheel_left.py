@@ -16,6 +16,8 @@ fixed), or its zero runs are bounded. The script follows the pairs until one rep
 The words (printed by rule30_wheel.py's first run, 2026-10-04; window starts at multiples of 56, so t = 0 is even):
   U  = 00010011010001001101000100110100010011010001001101001101   the universal word, 96.6% of stretches
   U2 = 00010011001101000100110011010001001100110100010011001101   the second word, 3.4%
+       (CORRECTION, 2026-10-05: U2 has least period 14, being 00010011001101 four times. It is the period-14 lock
+       read in a 56-step window, not a second wheel; rule30_walls.py.)
 Each is tried at every even rotation (an odd one would put the word out of step with the trace). A rotation is kept
 only if it obeys Lemma 3 (C0 and C1) everywhere on the cycle, as a real column 1 must.
 

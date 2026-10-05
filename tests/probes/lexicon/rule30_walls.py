@@ -44,6 +44,25 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   E2 (blind): the locks absorb: no jump from L4 or L14 to U or U2.
 REFUTED-BY: CF failing (the instrument); B1, B2, S, E1 or E2 failing; V1 or L1 failing would mean the exploratory look
   misled.
+
+OUTCOME of the first run, 2026-10-05 (W = 11, T = 2048; 11,437 test slips in the image):
+  CF passed (the highest cell 0.215 over 5,051 random alignments). V1 HELD (slope -2.19; first 90% at columns 1..10:
+  0, -1, -4, -5, -10, -13, -14, -15, -16, -19). L1 HELD (98.1%: classes 32 x 6,054, 52 x 5,164, 42 x 215, 12 x 4).
+  B1 REFUTED: class 32's commonest shift, 26, holds in 56.7% of slips, and class 52's, 30, in 35.6%. Where the shift
+  matches, the fit behind the wall is 1.000, an exact shifted wheel. B2 REFUTED: 545 of 11,064 episodes (4.9%).
+  S REFUTED: no other trace turns a wheel of its own. Every highest line sits at a multiple of 1/p (001 and 011 at 1/3,
+  0011 at 1/4, 00011 at 1/5, 00101 at 2/5, 0111 and 000111 at 1/2), and traces 0 and 1 show no line. Among the
+  traces tried, only 01 makes a wheel of its own.
+  E1 and E2 REFUTED, with a correction to their framing. The jumps are U2 -> U 193 times, U -> U2 never, and L4 -> U
+  once; there are no L14 windows. That is because U2 HAS LEAST PERIOD 14 (it is 00010011001101 four times): U2 is the
+  14-lock, not a second wheel, and the classifier tested for U2 before L14. So E1's jumps run between the 14-step
+  lock and the 56-step wheel, one way only: the lock decays into the wheel and is never re-entered here. E2 fails on
+  one jump out of the 4-lock.
+  Added after the first run, as measurements (the second and third runs, identical otherwise): the shifts per class
+  differ by multiples of 10 steps, the wheel's block. A delay of D steps turns the wheel's angle by -17 D / 56 of a
+  turn. In notches of 1/28 turn, class 32 kicks +3 (x561), +4 (x227), +5 (x124), +2 (x54), +6 (x47); class 42 kicks
+  +2 (x27), +3 (x12), +1 (x1); class 52 kicks -3 (x278), -5 (x226), -1 (x162), -4 (x68), -6 (x61). Every kick is a
+  whole number of notches, and the sign is set by the class: two species of wall, forward and backward.
 """
 import math, random, sys, pathlib
 from collections import Counter, defaultdict
@@ -246,6 +265,18 @@ def main():
             f"{ep_ok} of {ep_n} episodes ({ep_ok / ep_n:.1%})")
     print("   shift table from the training half (class: shift, slips): "
           + ", ".join(f"{a}: {s_a[a]} ({sum(shifts[a].values())})" for a in sorted(s_a)), flush=True)
+    print("   shift distributions in the training half (a measurement, added after the first run): "
+          + "; ".join(f"class {a}: " + ", ".join(f"{d}: {v}" for d, v in shifts[a].most_common(5)) for a in sorted(s_a)),
+          flush=True)
+
+    def notches(delta):
+        """A delay of delta steps turns the wheel's angle by -17 delta / 56 of a turn; in notches of 2/56 = 1/28."""
+        k = (-17 * delta) % P
+        k = k - P if k > P // 2 else k
+        return k / 2
+    print("   the same as kicks to the wheel's angle, in notches of 1/28 turn (a measurement, added after the first run): "
+          + "; ".join(f"class {a}: " + ", ".join(f"{notches(d):+g} (x{v})" for d, v in shifts[a].most_common(5))
+                      for a in sorted(s_a)), flush=True)
 
     print("\n   the random-chaos step, a census of wheels: column 1's highest line for each trace", flush=True)
     own = []
