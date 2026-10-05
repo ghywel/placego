@@ -61,7 +61,29 @@ ADDENDUM, written 2026-10-06 after the first run and before the second (python3 
 REFUTED-BY: SA0 failing (the instrument); SA1 to SA3 the other way. SA2 refuted would mean the synchrony is the
   sample's, not the wheel's.
 
-OUTCOME of the second run: (to be recorded)
+OUTCOME of the second run, 2026-10-06 (wide; 75 seconds): SA0 PASSED (the shifted control sits at the independence
+  value in every range). SA1 REFUTED: the late excess Fano factor at width <= 14 (15,744 halves) is 2.05 against
+  2.42 at width <= 12: it does not grow with the population, so the synchrony is not a modulation shared by all
+  halves. SA2 and SA3 were NOT computed: the harness failed (statistics.correlation needs Python 3.10; this Mac
+  runs 3.9), and SA2 was in any case ill designed: a half of width 13 shares its 12 cells nearest the wall with
+  a half of width 12, so the two populations were not disjoint in what matters.
+
+SECOND ADDENDUM, written 2026-10-06 before the third run (python3 rule30_sync.py wide). The excess that does not
+  scale with the population points at clusters: halves that share their cells nearest the wall slipping together,
+  which would mean the wheel shields the wall from the interior (section 8.30's handedness: a change arriving from
+  the right of a black cell is hidden). Sisters: R and R + 2^12 differ only by a black cell at position 13.
+  SB0 (control, must hold): every sister pair has identical columns 1 for the first 12 steps (the light cone).
+  SB1 (blind; shielding): at least 20% of sister pairs, R unlocked, have identical columns 1 over all T steps, and
+      the median first differing time over the pairs that differ is above 200 steps.
+  SB2 (blind): over the late range, the correlation of the slip indicators of sister pairs that do differ is at
+      least 0.3 on average, and that of random pairs is below 0.05.
+  SB3 (blind; the clock test done right): grouping the unlocked halves of width <= 12 by their 6 cells nearest the
+      wall (64 groups), the mean correlation between different groups' slip counts over windows 12 to 72 is below
+      0.1: no common clock. Within groups the Fano factor over the late range exceeds its independence value by
+      at least 1 (the sisters).
+REFUTED-BY: SB0 failing (the harness); SB1 to SB3 the other way. SB3's first half refuted would restore the clock.
+
+OUTCOME of the third run: (to be recorded)
 """
 import math, pathlib, random, statistics, sys
 
@@ -130,33 +152,70 @@ def excess(slips, a, b, rng):
     return fano(N), indep, fano(Nc), N
 
 
+def corr(x, y):
+    n = len(x)
+    mx, my = sum(x) / n, sum(y) / n
+    sxy = sum((a - mx) * (b - my) for a, b in zip(x, y))
+    sxx = sum((a - mx) ** 2 for a in x); syy = sum((b - my) ** 2 for b in y)
+    return sxy / math.sqrt(sxx * syy) if sxx > 0 and syy > 0 else 0.0
+
+
 def wide():
     nwin = T // P
     rng = random.Random(31)
-    small = population(range(1 << 12), nwin)
-    big = population(range(1 << 12, 1 << 14), nwin)           # widths exactly 13 and 14: disjoint from small
-    ok0, ex12 = True, {}
-    for name, (a, b) in RANGES.items():
-        f, indep, fc, N = excess(small, a, b, rng)
-        ok0 &= abs(fc - indep) <= 0.1
-        ex12[name] = f - indep
-        print(f"   width <= 12, {name}: Fano {f:.2f}, independence value {indep:.2f}, shifted {fc:.2f}", flush=True)
-    report("SA0 the shifted control sits at the independence value 1 - sum p^2 / sum p (within 0.1)", ok0)
+    cols, slips, unlocked = {}, {}, []
+    for R in list(range(1 << 12)) + [r + (1 << 12) for r in range(1 << 12)]:
+        c = column1(R, T)
+        cols[R] = c
+        last_bad = max([t for t in range(T - P) if c[t] != c[t + P]], default=-1)
+        slips[R] = [1 if ROT.get(tuple(c[k * P:(k + 1) * P])) is None else 0 for k in range(nwin)]
+        if last_bad >= T - P - 400 and R < (1 << 12):
+            unlocked.append(R)
+    ok0, same, firstdiff = True, 0, []
+    for R in unlocked:
+        c, s = cols[R], cols[R + (1 << 12)]
+        d = next((t for t in range(T) if c[t] != s[t]), None)
+        ok0 &= d is None or d >= 12
+        if d is None:
+            same += 1
+        else:
+            firstdiff.append(d)
+    report("SB0 every sister pair has identical columns 1 for the first 12 steps", ok0)
+    firstdiff.sort()
+    med = firstdiff[len(firstdiff) // 2] if firstdiff else None
+    print(f"   {len(unlocked)} unlocked halves; sisters identical over all {T} steps: {same} ({same / len(unlocked):.3f}); "
+          f"median first differing time of the rest: {med}; quartiles {firstdiff[len(firstdiff) // 4]}, "
+          f"{firstdiff[3 * len(firstdiff) // 4]}", flush=True)
+    verdict("SB1 at least 20% of sister pairs identical throughout, and the median first difference above 200",
+            same / len(unlocked) >= 0.2 and med is not None and med > 200)
     a, b = RANGES["late"]
-    f14, indep14, fc14, _ = excess(small + big, a, b, rng)
-    print(f"   width <= 14 ({len(small) + len(big)} halves), late: Fano {f14:.2f}, independence {indep14:.2f}, "
-          f"shifted {fc14:.2f}", flush=True)
-    verdict("SA1 the late excess Fano at width <= 14 is at least three times that at width <= 12",
-            f14 - indep14 >= 3 * ex12["late"], f"{f14 - indep14:.2f} against {ex12['late']:.2f}")
-    a, b = 12, nwin
-    Ns = [sum(s[k] for s in small) for k in range(a, b)]
-    Nb = [sum(s[k] for s in big) for k in range(a, b)]
-    corr = statistics.correlation(Ns, Nb)
-    verdict("SA2 the two disjoint populations' slip counts co-vary over windows 12 to 72 (correlation >= 0.5)",
-            corr >= 0.5, f"{corr:.3f}")
-    ac = statistics.correlation(Ns[:-1], Ns[1:])
-    verdict("SA3 the lag-1 autocorrelation of the width <= 12 counts over windows 12 to 72 is below 0.3", ac < 0.3,
-            f"{ac:.3f}")
+    sis = [corr(slips[R][a:b], slips[R + (1 << 12)][a:b]) for R in unlocked
+           if cols[R] != cols[R + (1 << 12)]]
+    rnd = [corr(slips[R][a:b], slips[R2][a:b]) for R, R2 in
+           ((rng.choice(unlocked), rng.choice(unlocked)) for _ in range(len(sis))) if R != R2]
+    ms, mr = sum(sis) / len(sis), sum(rnd) / len(rnd)
+    verdict("SB2 late-range slip correlation: sisters that differ >= 0.3 on average, random pairs < 0.05",
+            ms >= 0.3 and mr < 0.05, f"sisters {ms:.3f} ({len(sis)} pairs), random {mr:.3f}")
+    groups = {}
+    for R in unlocked:
+        groups.setdefault(R & 63, []).append(R)
+    a2, b2 = 12, nwin
+    series = {g: [sum(slips[R][k] for R in Rs) for k in range(a2, b2)] for g, Rs in groups.items()}
+    keys = sorted(series)
+    cross = [corr(series[g], series[h]) for i, g in enumerate(keys) for h in keys[i + 1:]]
+    mc = sum(cross) / len(cross)
+    within = []
+    for g, Rs in groups.items():
+        if len(Rs) < 8:
+            continue
+        N = [sum(slips[R][k] for R in Rs) for k in range(a, b)]
+        n = b - a
+        p = [sum(slips[R][a:b]) / n for R in Rs]
+        within.append(fano(N) - (1 - sum(x * x for x in p) / sum(p)))
+    mw = sum(within) / len(within)
+    verdict("SB3 no common clock: mean cross-group correlation below 0.1; within groups the excess Fano >= 1",
+            mc < 0.1 and mw >= 1, f"cross-group {mc:.3f} ({len(cross)} pairs of {len(keys)} groups); "
+            f"within-group excess {mw:.2f}")
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
