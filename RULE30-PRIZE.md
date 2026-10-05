@@ -2947,3 +2947,40 @@ mathematical surveys did not give:
   fires near the wall.
 None of these is a proof. Two of them are tests that could be run: the independence ratio and the hypothesis about
 where kicks are born.
+
+### 8.50 Gates and truth: the owner's NAND question (2026-10-05)
+
+The owner: NAND gates are "wholly logical in the mathematical domain", truth logic is "in the reasoned truth domain",
+and the two are not one to one. "Are we missing a difference between these two systems that from the outside are
+lexically similar but behave quite differently in practice?"
+
+**Where they are one to one.** For a fixed, finite question they are. Every truth table is a NAND circuit (Sheffer,
+1913; Peirce earlier), and every circuit is a truth table. One step of Rule 30 is such a table: three inputs, one
+output, $l \oplus (c \lor r)$.
+
+**Where they part, and why it matters here.** Four differences, each already met in this work without its name:
+- **Finite against for ever.** A truth table or a circuit settles a finite question by checking every case.
+  "Eventually 0101 for ever" is not finite. It needs quantifiers over time ("there is a T such that for every t
+  after it"), and with quantifiers come Turing's and Gödel's limits (§8.46). Every probe here lives on the gate
+  side: a finite check, decided. The prize lives on the truth side. Each bound for one width is a gate fact; the
+  statement for every width needs reasoning.
+- **Gates count information; truth does not.** A NAND gate takes in two bits and gives out one, so it erases
+  information (Landauer). A truth table only says what is true. The missing statement of this work, "keeping the
+  wall's conditions costs real information", is a gate-side statement. To become a proof it must be carried to the
+  truth side, and the one carrier found is an exact count over a finite family of seeds that falls below one
+  (PERIOD-TWO.md §7, question 1).
+- **A physical gate can hang; a logical one cannot.** A real gate fed a near-tie can sit between 0 and 1, and no
+  arbiter can be guaranteed to resolve it in bounded time (metastability; Chaney and Molnar, 1973). That is the
+  owner's MoltenVK experience (§8.48): a comparison at a near-tie, decided by something invisible. Rule 30 as
+  mathematics has no such state, so its randomness is all in the seed.
+- **Classical truth against proof.** In classical logic the centre column either is or is not eventually periodic.
+  A constructive proof must also give the bound by which it breaks. Kari and Kopra's partial result on Mahler's
+  problem is non-constructive, and their Problem 5.1 asks for a constructive one (§8.47). Here any proof would give a
+  bound in principle, since for each width the horizon can be found by search once it is known to be finite.
+
+**The bridge between the two domains is induction.** A finite check of a base case and of one step, a gate-side
+fact, gives a for-ever statement, a truth-side fact. König's lemma is a bridge of the same kind: it turns "no
+infinite run" into "a bound at every depth" (§8.36). The certificates of PERIOD-TWO.md §7, question 3, an invariant
+with a ranking function checked by a solver, are exactly such bridges. Every probe in this document crosses no
+bridge: it is evidence on the gate side. So the owner's distinction is not missing from the work. It is the line
+between what the probes have done and what a proof must do, and it names what fresh eyes are needed for: a bridge.
