@@ -1837,3 +1837,38 @@ arithmetically.
 **What it teaches.** Every irrationality proof of a specific number has come from its structure: Hermite for $e$,
 Lindemann for $\pi$, Apéry's recurrences for $\zeta(3)$. None has come from its digits looking random. Rule 30's
 centre column is in the position $\pi$'s digits would be in if nobody had found $\pi$'s structure.
+
+### 8.24 The complementary pair: two irrational numbers that must add up to one (2026-10-05)
+
+The owner: "I wonder if a rational number can have a complementary pair, such that two related irrational numbers
+combine to form a rational one." That is exactly the period-2 condition. By §8.22, column 0 = 0101… forces
+$x_t(-1) = 1$ at odd $t$ and $x_t(1) = \lnot x_t(-1)$ at even $t$. Read the even-time bits of column −1 as a binary
+number $A$ and those of column 1 as $B$. Complementary bits add without carries, so
+
+```math
+A + B = 0.111\ldots_2 = 1 ,
+```
+
+while the odd-time bits of column −1 make the number 1 by themselves. By Jen's theorem $B$ cannot be eventually
+periodic, so $A$ and $B$ would be two irrational numbers, one made by the left side's chaos and one by the right
+side's thin channel, that add up to exactly one.
+
+**How long a finite seed can keep them complementary** (`rule30_complement.py`, predictions written first). Cut a
+forced left half at depth $d$. The finite seed so made, of width $w$, keeps column 0 at 0101… for exactly $P$
+steps, where $P$ is the depth of the first 1 beyond the cut. So the pair stays complementary for about $P/2$
+digits. A forward simulation confirms the count exactly (CP0: 0 of 200 differ). The excess $P - w$, maximised over
+every right half of each exact width and every cut:
+
+| Right half's width | 0 | 1 | 2 | 3 | 4 | **5** | 6 | 8 | 10 | 12 | 14 | 16 | 17 | 18 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Largest excess $P - w$ | +5 | +8 | +7 | +6 | +5 | **+9** | +8 | +6 | +4 | +2 | +3 | +1 | 0 | −1 |
+
+**A finite seed beats its own width by at most 9 steps** (CP1 held). The champion is tiny: right half 10001, left side
+cut at depth 20, 26 cells in all, keeping column 0 at 0101… for 35 steps (CP2 held: the best width is 5). Wider right
+halves do worse, because their extra bits arrive too late (§8.17). With §8.21, no right half up to 32 cells does
+better than +9. **So the two numbers can be complementary for at most about $(w + 9)/2$ binary digits, where $w$ is
+the seed's width, and then they fall out of step.** A counterexample needs them complementary for ever.
+
+This is the same kind of fact as Condrey's horizon $H(2, w)$ (PRIOR-ART.md), the longest period-2 prefix over rows of
+a given support radius, which he showed is at least $w$. Here the count is in total width, for right halves up to
+32 cells and cuts whose zero run ends by depth 126, and in that range a seed gains at most 9 steps on its width.

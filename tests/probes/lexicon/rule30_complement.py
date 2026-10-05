@@ -32,6 +32,13 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   CP2 (blind): the largest excess over all widths occurs at a width of at most 8 cells. Wider right halves carry
       more bits but deliver them too late (the bottleneck, section 8.17).
 REFUTED-BY: CP0 failing (the instrument); CP1 or CP2 failing.
+
+OUTCOME of the first run, 2026-10-05 (WMAX = 18): CP0 passed (0 of 200 differ). The largest excess by exact width
+W = 0 .. 18: +5, +8, +7, +6, +5, +9, +8, +7, +6, +5, +4, +3, +2, +1, +3, +2, +1, +0, -1. CP1 HELD (largest +9) and
+CP2 HELD (at W = 5). The champion: right half 10001 (R = 17), its forced left half cut at depth 20, 26 cells in all,
+keeps column 0 at 0101... for 35 steps. The same run of 14 zeros from depth 21 serves every width from 5 to 13, and
+a run of 17 from depth 94 every width from 14 to 18: extra cells further out do not change them. With rule30_scan.py
+(no zero run longer than 17 for right halves up to 32 cells) the excess is negative for every width from 18 to 32.
 """
 import pathlib, random, sys
 
