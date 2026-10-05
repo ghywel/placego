@@ -2887,3 +2887,37 @@ Rule 30's period 2 differs from Mahler's problem in this respect. Mahler's $\xi$
 bounds there (at most one Z-number in each unit interval, at most $x^\gamma$ below $x$) never fall below one. The
 live imports are the window idea, the machine-found certificate, the extremal target and the exact count.
 PERIOD-TWO.md §7 writes them out as questions for fresh eyes.
+
+### 8.48 The owner's MoltenVK question: randomness that only one platform showed (2026-10-05)
+
+The owner recalled MOLTENVK-NONDETERMINISM-INVESTIGATED.md. On macOS the interpolator's output wandered, and the
+cause had two parts. **An amplifier:** block matching picks an argmin over candidate offsets, and at a near-tie a
+one-bit difference flips the chosen motion vector "and the whole warp built on it". **A source:** a race in the
+MoltenVK path, invisible on Windows and Linux, where nothing perturbed the tie. The owner: "it smells like quantum
+mechanics. Might this discovery have an application here?"
+
+**The same anatomy is in Rule 30, and it has been measured.**
+- **The amplifier is the XOR.** Rule 30 is $x' = l \oplus (c \lor r)$, so a flipped left input always flips the
+  output. The influence probe measured it: flip any bit of column 1 from time 12 on and the zero run changes with
+  probability 2/3, the coin's value (`rule30_influence.py`).
+- **The tie margin is the OR.** An OR whose other input is 1 absorbs a flip, as `TIE_MARGIN` absorbs a one-bit
+  difference at a near-tie. That absorption is the merging of §8.38: walks that differ early reach the same state.
+- **The source is the interior.** The wheel next to the wall is the stable platform: a rotation that would repeat
+  for ever. The kicks are the race: they come from the chaotic interior, carry its randomness (§8.43), and by Jen's
+  theorem never stop in a finite configuration (§8.13). The MoltenVK report's warning fits them exactly: "the tie
+  margin cannot absorb a perturbation that is not small", and a kick is a whole notch, never small.
+
+**What it gives.** A picture of the cost side, not a new statement. A period-2 counterexample would be a
+configuration where every kick, for ever, lands on a near-tie that the left half's ORs resolve the right way, and
+each such landing costs about a bit. That is the coin model again, the restatement the owner has called the
+ouroboros. One difference matters. The shader's randomness came from outside, from the platform. A finite Rule 30
+configuration has no outside: all of it is in the seed, which is what Wolfram calls intrinsic randomness. So the
+fix that worked there, removing the source (the MoltenVK switches and a texture-free dither), has no analogue
+here. The source is the configuration itself.
+
+**On quantum mechanics.** A deterministic, local system whose outputs look random is exactly what Rule 30 is, and
+'t Hooft's cellular automaton interpretation of quantum mechanics (2016) proposes such automata beneath physics.
+Bell's theorem limits what local hidden variables can reproduce, and 't Hooft's answer needs superdeterminism. None
+of that bears on whether one finite configuration can keep a periodic centre: Rule 30's question is about a single
+deterministic orbit, with no measurement and no statistics. The likeness is real as a picture, of a hidden
+variable that decides an outcome; it is not a route.
