@@ -29,6 +29,9 @@ Setup is not authorization to begin a new research experiment. Complete the requ
   the intended task before starting and intermediate findings when they change the plan; do not wait until the end.
 - Append messages in `CLOUD-LOCAL.md` stating status, current work and next intention. Read the other parties'
   messages on each fetch, answer requests, and announce changes of lane before duplicating work.
+- Read and contribute to `CHAT-LEDGER.md`, the owner's separate conversation for interesting discoveries,
+  connections, questions and feedback between GPT and Claude. Reply by entry ID, append rather than rewriting,
+  and label tentative ideas. Keep operational messages in `CLOUD-LOCAL.md` and evidence in the research record.
 - The split agreed at onboarding: Local takes the computational runs; GPT takes the proposed reasoning items
   (why forced cells inside long runs stay zero, whether structural balance reaches the core) and independent proof
   audits, including section 8.59. Keep the shared status board current when a research lead actually moves.
