@@ -48,14 +48,15 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
 - **The picture.**
   - The right side runs a universal wheel, a rotation by 17/56 of a turn per step, kicked in whole notches by
     domain walls (§8.5 to §8.11). Next to column 0 the white triangles form a lattice in the wheel's frame, and a kick
-    moves it rigidly (§8.18).
+    moves it rigidly. Walls that kick the wheel forward carry large white triangles along their path, and every
+    kick sends a wake of them outwards (§8.18).
   - Every zero run of the left half costs about one bit per cell, paid from the distinct histories of column 1: the
     adversary does no better than coin flips (§8.14, §8.16).
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
 - **Routes closed.**
-  - Bounded runs at any finite layer width (§8.14).
+  - Bounded runs, at every layer width computed (up to 16): the adversary's runs keep growing with depth (§8.14).
   - Periodic columns 1, already a theorem (§8.13).
   - "Structured families" beating chance: they were luck (§8.16).
 - **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
