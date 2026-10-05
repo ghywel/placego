@@ -53,6 +53,19 @@ handover of the period-2 work.
 The OpenAI claim is after this assistant's training data. It is reported here as the sources state it, not as a
 fact checked by reading the proof.
 
+*Update, 2026-10-05 (from the sources, not from reading the proof).* The Navier–Stokes claim is a construction: a
+smooth external force and initial data with finite-time blowup, found by a run of about 10,000 agents over 88 hours
+and formalised in Lean. OpenAI says it will not claim the prize. Clay keeps the problem "active" until peer review
+([Wikipedia, Navier–Stokes priority controversy][ns-pc]). OpenAI has made no claim on the Riemann hypothesis. It is
+reported to be aiming the same system at Riemann and P vs NP. Separately, an Anthropic model raised a proven lower
+bound on the share of zeta zeros on the critical line, reported at 67%. It was checked by two mathematicians and
+formalised in Lean, and it is not a proof of the hypothesis ([TechCrunch, 2026-08-11][tc-rh]; the figure from
+[Live Science][ls-rh]).
+
+[ns-pc]: https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_priority_controversy
+[tc-rh]: https://techcrunch.com/2026/08/11/an-unreleased-anthropic-model-made-progress-on-one-of-maths-biggest-unsolved-problems/
+[ls-rh]: https://www.livescience.com/technology/artificial-intelligence/this-is-what-happened-with-claude-and-me-ais-failed-attempt-to-crack-the-riemann-hypothesis-led-mathematician-to-a-breakthrough
+
 ---
 
 ## 2. Two ways a computer can win a prize
