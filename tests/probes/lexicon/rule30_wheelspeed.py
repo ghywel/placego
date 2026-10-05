@@ -27,6 +27,21 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   C  (control): every phase change between exact windows is an even time shift (the trace's parity is kept), so every
      angle change is a whole number of notches. It is checked, not assumed.
 REFUTED-BY: C failing (the harness); V0, A1 or A2 failing.
+
+OUTCOME of the first run, 2026-10-05 (W = 12, T = 4096): C passed (0 odd shifts).
+  V0 REFUTED, narrowly: the mean excess speed is -0.0457 notches per window (slightly backward), a rotation number of
+     0.303542, against the spectral line's 0.30365, 0.000108 apart against a tolerance of 0.0001. Caveat: across a long
+     gap between exact windows, an angle change beyond +-14 notches is unwrapped wrongly, which can bias the direct
+     drift. A spectral peak need not sit at the mean rate when the kicks are asymmetric. The two instruments differ at
+     the 10^-4 level, and which is nearer the truth is open.
+  A1 HELD as worded but NOT MEANINGFUL: early -0.0622, late -0.0294 notches per window (53%). The window-by-window
+     speeds swing from -0.21 to +0.15, far more than that difference, and the prediction had no significance test, so
+     this shows no real acceleration. (The swings themselves are larger than independent right halves would give,
+     about +-0.04, which hints that slips are synchronised in time across right halves. Not tested.)
+  A2 HELD: the variance of the angle's change grows as L^1.16 (7.2 notches^2 at 1 window, 432 at 32): normal diffusion,
+     about 7 notches^2 per window.
+  The toy-size smoke test exposed an index error (too few windows for A1's ranges). It is fixed; the full run was not
+  affected.
 """
 import math, sys, pathlib
 
@@ -95,14 +110,17 @@ def main():
     v = [sums[k] / counts[k] if counts[k] else float("nan") for k in range(nwin)]
     tot = sum(sums[k] for k in range(nwin) if counts[k])
     n_all = sum(counts[k] for k in range(nwin) if counts[k])
-    vbar = tot / n_all
+    vbar = tot / n_all if n_all else 0.0
     rot = 17 / 56 + vbar / (28 * 56)
     verdict("V0 the kicks' net drift reproduces the spectral line 0.30365 within 0.0001", abs(rot - 0.30365) <= 0.0001,
             f"mean excess speed {vbar:+.4f} notches per window, rotation number {rot:.6f}")
-    early = [v[k] for k in range(2, 11) if counts[k]]
+    early = [v[k] for k in range(2, min(11, nwin)) if counts[k]]
     late = [v[k] for k in range(40, min(71, nwin)) if counts[k]]
+    if not early or not late:
+        print("   (too few windows for A1 at this size)")
+        early, late = early or [0.0], late or [0.0]
     ve, vl = sum(early) / len(early), sum(late) / len(late)
-    diff = abs(ve - vl) / max(abs(ve), abs(vl))
+    diff = abs(ve - vl) / max(abs(ve), abs(vl)) if max(abs(ve), abs(vl)) > 0 else 0.0
     verdict("A1 the wheel's speed changes with time (windows 2..10 against 40..70 differ by at least 25%)", diff >= 0.25,
             f"early {ve:+.4f}, late {vl:+.4f} notches per window; difference {diff:.0%} of the larger")
     print("   excess speed by window (notches per window, mean over right halves): "
@@ -114,6 +132,9 @@ def main():
             m = sum(xs) / len(xs)
             lags.append(L)
             var.append(sum((x - m) ** 2 for x in xs) / len(xs))
+    if len(lags) < 2 or min(var) <= 0:
+        print("   (too few lags for A2 at this size)")
+        lags, var = [1, 2], [1.0, 2.0]
     lx = [math.log(x) for x in lags]
     ly = [math.log(y) for y in var]
     mx, my = sum(lx) / len(lx), sum(ly) / len(ly)

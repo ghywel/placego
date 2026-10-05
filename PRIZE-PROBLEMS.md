@@ -1154,3 +1154,36 @@ look there first: at the first few windows, while column 1 is still settling, an
 1. The formation transient: how the wheel forms from a finite right half, and whether it, rather than the slips, is
    what bounds the early runs.
 2. The kick game, now with the formation transient included.
+
+### 8.10 Does the wheel turn at a constant rate? (2026-10-05)
+
+The owner's lead, from the motion-field work: "velocity, acceleration, jerk, snap, crackle ... A wheel may turn at a
+non-constant rate." `rule30_wheelspeed.py` follows the wheel's angle through every exact window of column 1, for all
+unlocked right halves up to 12 cells over 4096 steps. It adds up the walls' kicks between windows. Its control
+passed: every phase change keeps the trace's parity, so every change is a whole number of notches.
+
+| Prediction | Result |
+|---|---|
+| V0: the kicks' net drift reproduces the spectral line 0.30365 (an independent instrument) within 0.0001 | **refuted, narrowly**: the drift is −0.046 notches per window, a rotation number of 0.303542, 0.000108 from the line |
+| A1: the wheel's mean speed changes with time (windows 2–10 against 40–70) | **held as worded, but not meaningful** |
+| A2: the angle diffuses normally (variance grows as $L^g$, $g \in [0.8, 1.2]$) | **held**: $g = 1.16$, about 7 notches² per window |
+
+What the wheel's motion is, in the motion-field vocabulary:
+- **Velocity.** Exactly constant between kicks: 17/56 of a turn per step.
+- **Acceleration.** Impulses. The velocity jumps by a whole number of notches as each wall arrives, and is constant
+  again afterwards. The wheel is a constant-velocity rotor with impulsive kicks, so jerk, snap and crackle are
+  derivatives of impulses and carry no new information.
+- **The long-run picture.** The kicks make the angle diffuse, like a random walk, at about 7 notches² per window.
+  Their net drift is tiny, under a tenth of a notch per window.
+
+A1 "held" only as worded. The early and late means differ (−0.062 against −0.029 notches per window). But the window-by-
+window speeds swing between −0.21 and +0.15, far more than that difference, and the prediction had no significance
+test, so this is no evidence of a changing rate. The swings are themselves larger than independent right halves
+would give (about ±0.04). That hints the walls are synchronised in time across right halves, which has not been
+tested. V0's narrow refutation has two candidate causes, and which is right is open. A spectral peak need not sit at
+the mean rate when kicks are asymmetric. And an angle change beyond ±14 notches across a long gap would be unwrapped
+wrongly.
+
+**What this means for the route.** The right side's output is now a jump-diffusion of one angle: steady rotation plus
+notched kicks, with no restoring force (§8.9) and no evident trend. That is the simplest possible description of a
+non-trivial column 1, and it is the object part 3 has to reason about.
