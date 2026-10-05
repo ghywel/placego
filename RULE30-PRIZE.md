@@ -3100,3 +3100,10 @@ fraction of survivors while the black tests keep passing, and the count says the
 all or nothing. It is not (CP3 refuted). 208 of 313 such steps are exactly 0 or 1, against 54 of 271 after a white
 cell, and the rest are mostly small fractions (0.02 to 0.13). The two-part picture is a strong tendency, not a
 lemma.
+
+**Who pays the average bit** (mode `share`, predicted first). Pooled over every right-paid step ($w$ = 16 to 24,
+counts of 256 or more), a condition after a black cell costs 1.18 bits and one after a white cell 1.01 bits. I
+predicted the white conditions, through column 1, would carry most of the cost (CP4 refuted: 46%). Both kinds pay
+about a bit. The black conditions involve the left half alone and pay through collapses of whole positions. So
+half the cost side is a statement about the forced left half by itself, the side where Condrey's and Jen's methods
+work, and the other half goes through column 1's narrow channel.

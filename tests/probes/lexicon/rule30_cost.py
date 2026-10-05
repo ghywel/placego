@@ -89,6 +89,11 @@ MODE share. Where the average cost is paid. For each kind (after a black cell, a
 -log2(sum of N(T+1) / sum of N(T)) over right-paid steps of that kind (w = 16 .. 24, each phase alone, N >= 256).
 PREDICTION, written 2026-10-05 before share's first run:
   CP4 (blind): the conditions after a white cell carry more than half of the total pooled cost.
+
+OUTCOME of share, 2026-10-05 (seconds): pooled cost 1.182 bits per condition after a black cell, 1.014 after a
+  white cell.
+  CP4 REFUTED (white share 46%): both kinds pay about a bit, and the black conditions, which involve the left half
+     alone, pay slightly more, through collapses of whole positions.
 """
 import math, pathlib, subprocess, sys, tempfile
 
