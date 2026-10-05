@@ -3144,3 +3144,18 @@ two:
 - after it, **payment at the full rate** with a constant near 4.5.
 A proof could treat the formation as a finite computation and the rest as the steady state. The steady state is
 still the coin, and still the open part, but it is now a statement about one regime with a small constant.
+
+**To depth 230** (`forced_deep.c`, multi-word, equal to `forced.c` where both run; modes `depth` and `depthalpha`,
+predicted first). At right width 20:
+
+| Windows starting at depth | 40 to 99 | 100 to 159 | 160 to 229 |
+|---|---|---|---|
+| Pooled cost per condition (bits) | 1.0000 | 0.9966 | 1.0002 |
+| Debt constant at $\alpha$ = 0.5 / 0.8 / 1.0 | 2.07 / 3.92 / 5.32 | 3.50 / 5.74 / 7.94 | 3.09 / 5.72 / 8.12 |
+
+- **One bit per condition at every depth** (DD2 held).
+- **The constant grows at first** (DD1, DE1 refuted; DE2 held). At every rate it rises once, between the first two
+  bands, then stays flat. At a fixed width it saturates with depth, as far as depth 230.
+
+So the bounded-debt statement holds in the measured range with a constant of about 3.5 at $\alpha = 0.5$, flat in
+width to $b = 24$ and in depth to 230.

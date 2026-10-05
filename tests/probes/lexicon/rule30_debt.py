@@ -77,6 +77,12 @@ MODE depthalpha. The same bands at alpha = 0.5 and 0.8 (b = 20, D = 250).
 PREDICTIONS for depthalpha, written 2026-10-05 after depth's outcome and before depthalpha's first run:
   DE1 (blind): at alpha = 0.8, the last band's constant minus the first's is at most 1.
   DE2 (blind): at alpha = 0.5, every band's constant is at most 5.
+
+OUTCOME of depthalpha, 2026-10-05 (about 20 seconds):
+  alpha 0.5: 2.07, 3.50, 3.09; alpha 0.8: 3.92, 5.74, 5.72 (bands 40 .. 99, 100 .. 159, 160 .. 229).
+  DE1 REFUTED (a rise of 1.80 at alpha 0.8). DE2 HELD.
+  At every rate the constant rises once, between the first two bands, and then stays flat (alpha 1.0: 7.94 then
+  8.12). At a fixed width it saturates with depth, as far as depth 230.
 """
 import math, pathlib, subprocess, sys, tempfile
 
