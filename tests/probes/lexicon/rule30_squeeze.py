@@ -45,6 +45,15 @@ printing only the floating-point lambda' and round counts, no exact check):
   SQ3 (counterfactual for SQ2): fewer than 1% of 10,000 random words of 64 bits are accepted at m = 12, so SQ2's
       acceptance is not trivial.
 REFUTED-BY: SQ0 failing (the instrument); SQ1, SQ2 or SQ3 failing (the bound, or the lemma's step 1).
+
+OUTCOME of the first run, 2026-10-05 (4 minutes 21 seconds): SQ0 PASSED ((a), (b) and (c) all true: the check rejected
+lambda (1 - 10^-3) at every m). SQ1 HELD. Certified bounds, bits per visible bit (power iteration in brackets), with
+states and the constant w_start / min w: m = 8 0.3577 (0.3562), 56, 18; m = 12 0.2593 (0.2578), 402, 208; m = 16 0.2130
+(0.2116), 2,260, 10,309; m = 20 0.1533 (0.1519), 12,749, 115,567; m = 24 0.1342 (0.1327), 67,658, 210,707; m = 26
+0.1292 (0.1277), 179,181, 320,528. So N_26(n) <= 320,528 x 2^(0.1292 n) exactly, and the corollary's figure is
+0.0646 bits per step, now proved (the computation exact, the reasoning in the header). SQ2 HELD (every 64-bit visible
+factor of 100 real right halves, from every even start, accepted at m = 8, 12, 16 and 20). SQ3 HELD (0 of 10,000
+random words accepted at m = 12).
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction
