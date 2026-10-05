@@ -31,7 +31,7 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
 
 - **Evidence.**
   - No counterexample: every right half up to 18 cells for periods 2 to 6 (27 million cases, §5, §6), and for period
-    2 every right half up to 28 cells, 268 million (§8.21; the 30- and 32-cell scans are still running).
+    2 every right half up to 30 cells, 1.07 billion (§8.21; the 32-cell scan is still running).
   - The search can see a counterexample where one exists: in Rule 60, a sibling rule (§8.3).
 - **Proved, or known and restated.**
   - Lemmas 1 to 4, about where the right side's bits enter the left half.
@@ -1731,19 +1731,19 @@ agrees exactly with an independent Python computation (SC0).
 
 | Right halves of at most | 18 cells | 20 | 22 | 24 | 26 | 28 | 30 | 32 |
 |---|---|---|---|---|---|---|---|---|
-| Number | 262,143 | 1,048,575 | 4,194,303 | 16,777,215 | 67,108,863 | 268,435,455 | running | running |
-| Longest zero run in $L(1..126)$ | 17 | 17 | 17 | 17 | 17 | 17 | | |
-| Candidates ending in 30 or more zeros | 0 | 0 | 0 | 0 | 0 | 0 | | |
+| Number | 262,143 | 1,048,575 | 4,194,303 | 16,777,215 | 67,108,863 | 268,435,455 | 1,073,741,823 | running |
+| Longest zero run in $L(1..126)$ | 17 | 17 | 17 | 17 | 17 | 17 | 17 | |
+| Candidates ending in 30 or more zeros | 0 | 0 | 0 | 0 | 0 | 0 | 0 | |
 
-(Results so far. The 30- and 32-cell scans were still running when this was written; the statements below cover the
-widths in the table, and will be extended when they finish.)
+(Results so far. The 32-cell scan was still running when this was written; the statements below cover the widths in
+the table, and will be extended when it finishes.)
 
 **What it excludes.** A counterexample is a finite configuration whose column 0 is 0101… from some time on. Shifted
 in time, its column 0 is 0101… from $t = 0$ (or 1010…, one step later). If its right half has at most 32 cells and
 its left half ends at depth $d$, the forced left half is zero from depth $d + 1$ to 126. A zero run of $126 - d$
 cells would have to occur, and none longer than 17 does. **So no finite configuration whose right half has at
-most 28 cells (so far) and whose left half has at most 108 cells keeps a column at 0101… for ever.** Rung 1 covered longer
+most 30 cells (so far) and whose left half has at most 108 cells keeps a column at 0101… for ever.** Rung 1 covered longer
 left halves (to about 240 cells) but only right halves up to 18 cells.
 
 **The plateau.** The longest run to depth 126 is 17 at every width from 18 cells on, although the number of right
-halves grows 1,000-fold by 28 cells. It is the bottleneck of §8.17 again: at a fixed depth, wider seeds buy nothing.
+halves grows 4,000-fold by 30 cells. It is the bottleneck of §8.17 again: at a fixed depth, wider seeds buy nothing.
