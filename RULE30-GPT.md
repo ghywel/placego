@@ -57,3 +57,13 @@ capability measurement. The startup checks above used this Intel machine's CPU. 
 milestone pushes and messages about status, work and intention. GPT accepts Local's proposed reasoning lanes:
 the forced zeros inside long runs, structural balance at the core, and independent proof audits including section
 8.59. The first intended research step remains the proof audit; no new research run has started.
+
+## G2. Independent proof audit (2026-10-06; in progress)
+
+The owner authorized research after setup. Audit A, B and A-prime first, then E and E-double-prime, then the
+band lemmas and corollaries of section 8.59. Check each hypothesis, endpoint convention and index shift. Distinguish
+a gap in a theorem from a qualification needed in an application. No new computation has been run for this audit.
+
+First-pass questions: does the substitution application require growth of the starting letter? Does the
+Thue-Morse extension require both period control and a settling slope below 3? How must its uniformity be stated
+once the left-side branch points of section 8.31 are crossed? These are audit questions, not refutations.
