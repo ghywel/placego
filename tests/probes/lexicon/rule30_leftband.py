@@ -2,7 +2,7 @@
 """rule30_leftband.py: the band of short-period stripes along Rule 30's left edge. How wide is it, and how does it grow?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_leftband.py [LOGT=13] [EMAX=2048]
+COMMAND:    python3 tests/probes/lexicon/rule30_leftband.py [LOGT=13] [EMAX=2048] | rule30_leftband.py front
 COST:       about a minute on one core.
 
 rule30_diagonals.py (PRIZE-PROBLEMS.md section 8.27) found that the left diagonals E_e(t) = c(t, e - t), the lines
@@ -27,11 +27,33 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
   LB3 (the chaos step, blind): three random 17-cell seeds (the centre cell black) also have eventually periodic left
       diagonals to e = EMAX / 2 with periods at most 64, and a band constant c in the same range [1.4, 2.2].
 REFUTED-BY: LB0 failing (the instrument or the proof); LB1, LB2 or LB3 failing.
+
+OUTCOME of the first run, 2026-10-05 (LOGT = 13, EMAX = 2048, 5 seconds): LB0 PASSED (e = 0 to 63 match; all of 0 to
+2047 measured; the eventually-zero diagonals are e = 2, 7, 28 and 399, and the periods grow at 3, 8, 29 and 400 only).
+The periods seen are 1, 2, 4, 8 and 16; 16 at e = 2047. Preperiods at e = 100, 500, 1000, 2047: 134, 635, 1275, 2685.
+LB1 REFUTED: no eventually-zero diagonal between 29 and 398; the next after 28 is 399, so the gaps grow faster than
+geometrically (5, 21, 371). The period at e = 2047 is 16 (within the bound). LB2 REFUTED on its range only: m_e / e
+settles (1.307 at the last quarter's start, 1.312 at 2047) at c = 1.304, below the predicted 1.4 to 2.2. The band of
+stripes holds the left 0.383 of every row, and its inner boundary moves left at 0.233 cells per step. LB3 REFUTED on
+its range only: three random seeds (1000001110011, 10000111110101, 1000100100000011) have eventually periodic left
+diagonals with periods at most 16 and THE SAME eventually-zero diagonals, 2, 7, 28 and 399, with c = 1.24, 1.23 and
+1.30 (fitted through 0, which a seed's width biases). The band is universal: its stripes do not depend on the seed.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_leftband.py front): is the band
+the part of the pyramid that the seed's information has not reached? Its boundary speed, 0.233, is close to the
+leftward speeds of information found before (PRIZE-PROBLEMS.md section 8.17, 0.21 cells per step next to a clamped
+column; section 8.19, 0.28 for a second seed on the open line).
+  LB4 (blind): Rule 30 from 1 and from 11 (the extra cell on the right, so the left edge is the same) differ only
+      right of a front that moves left at a speed within 0.02 of 0.233 (least squares over t from T/4 to T).
+  LB5 (blind): the same front on a random background (two random rows differing in one cell, 10 trials over 2^LOGT
+      steps) moves left at a speed within 0.02 of the band's: the band's edge is Rule 30's leftward speed of
+      information.
 """
 import random, sys
 
-LOGT = int(sys.argv[1]) if len(sys.argv) > 1 else 13
-EMAX = int(sys.argv[2]) if len(sys.argv) > 2 else 2048
+_nums = [a for a in sys.argv[1:] if a != "front"]
+LOGT = int(_nums[0]) if len(_nums) > 0 else 13
+EMAX = int(_nums[1]) if len(_nums) > 1 else 2048
 T = 1 << LOGT
 FAILS = 0
 # rule30_diagonals.py's left diagonals 0 .. 63 (period, preperiod), from its recorded run at 2^18 steps
@@ -123,8 +145,9 @@ def main():
     b = band(d, EMAX // 4)
     c, ra, rb, eb = b
     settled = abs(rb - ra) / ra < 0.10
-    print(f"   m_e / e: {ra:.3f} at the last quarter's start, {rb:.3f} at e = {eb}; least squares c = {c:.3f}: the band's "
-          f"inner boundary moves at {1 / c - 1:+.3f} cells per step and holds {1 / (2 * c):.3f} of each row", flush=True)
+    print(f"   m_e / e: {ra:.3f} at the last quarter's start, {rb:.3f} at e = {eb}; least squares c = {c:.3f}: the "
+          f"band's inner boundary moves at {1 / c - 1:+.3f} cells per step and holds {1 / (2 * c):.3f} of each row",
+          flush=True)
     verdict("LB2 the band grows linearly with c between 1.4 and 2.2 (m_e / e settled within 10%)",
             settled and 1.4 <= c <= 2.2, f"c = {c:.3f}, settled {settled}")
     rng = random.Random(1919)
@@ -150,5 +173,41 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def front_speed(a, b, width, off):
+    """Run Rule 30 from rows a and b (bit off + x holds cell x) for T steps; return the least-squares slope of the
+    leftmost differing cell's position against t, over t from T/4 to T."""
+    mask = (1 << width) - 1
+    pts = []
+    for t in range(T):
+        d = a ^ b
+        if t >= T // 4 and d:
+            low = (d & -d).bit_length() - 1             # the lowest set bit: the leftmost differing cell
+            pts.append((t, low - off))
+        a = ((a << 1) ^ (a | (a >> 1))) & mask
+        b = ((b << 1) ^ (b | (b >> 1))) & mask
+    mt = sum(t for t, _ in pts) / len(pts)
+    mx = sum(x for _, x in pts) / len(pts)
+    return sum((t - mt) * (x - mx) for t, x in pts) / sum((t - mt) ** 2 for t, _ in pts)
+
+
+def front():
+    v_band = 1 / 1.304 - 1                              # the first run's band boundary
+    off, width = T + 2, 2 * T + 8
+    v_seed = front_speed(1 << off, (1 << off) | (1 << (off + 1)), width, off)
+    verdict("LB4 the seed's information front (1 against 11) moves at the band's speed within 0.02",
+            abs(v_seed - v_band) <= 0.02, f"front {v_seed:+.4f}, band {v_band:+.4f} cells per step")
+    rng = random.Random(1920)
+    vs = []
+    W = 4 * T + 8
+    for _ in range(10):
+        a = rng.getrandbits(W)
+        b = a ^ (1 << (2 * T + 4))                      # one cell flipped in the middle
+        vs.append(front_speed(a, b, W, 2 * T + 4))
+    mean = sum(vs) / len(vs)
+    print("   random-background fronts: " + ", ".join(f"{v:+.4f}" for v in vs), flush=True)
+    verdict("LB5 the random-background front moves at the band's speed within 0.02", abs(mean - v_band) <= 0.02,
+            f"mean {mean:+.4f}, band {v_band:+.4f}")
+
+
 if __name__ == "__main__":
-    main()
+    front() if "front" in sys.argv[1:] else main()
