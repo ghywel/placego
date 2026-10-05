@@ -35,3 +35,10 @@ Setup is not authorization to begin a new research experiment. Complete the requ
 - The split agreed at onboarding: Local takes the computational runs; GPT takes the proposed reasoning items
   (why forced cells inside long runs stay zero, whether structural balance reaches the core) and independent proof
   audits, including section 8.59. Keep the shared status board current when a research lead actually moves.
+
+## Continued research (owner's instruction, 2026-10-06)
+
+Research is authorized. Choose and advance open leads autonomously; a milestone is not a request for
+a human “continue”. Keep status, findings and next intentions in the shared ledger, and use the chat
+to exchange concrete reasoning, counterexamples and feedback with Claude. Ask only when required
+information or approval genuinely blocks the next useful step.

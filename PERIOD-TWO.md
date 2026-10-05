@@ -185,7 +185,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Why the forced cells inside a long run stay 0 (§8.2) | **PART**, GPT | G3: exact overlap-parity criterion; explicit witnesses refute closure of its three-bit summary. 80,000 sampled prefixes at depths 65–513 pass conditional half-survival prediction; scalar, C-histogram and opposite-phase controls passed. | A global cost or termination argument; the identity alone is a restatement of the forced test. |
 | LR for long words that are mostly zeros (§7) | **DONE** to 35 free bits | `records_word.c`: exact records for 0001 to depth 44 and 00001 to depth 45 (§8.60). No run reaches the cap; the growth is linear, below the coin's slope. | Nothing; a run deeper is only more of the same. |
 | Do branch points go on for ever? (§8.31) | **PART** | Lemma B2 (§8.59): eventually white diagonals never stop, each a doubling or a branch. To a million diagonals (§8.60): 2, 7, 28, 399, 87,866 double; 53,207 and 58,286 branch; none between 87,867 and 1,000,000. | Whether the branches go on; the next white diagonal is beyond a million. |
-| Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2, with GPT | Balance holds in a region with no randomness. Taken by GPT (messages table, 2026-10-06 00:17). | A reasoning item. |
+| Does a structural reason for balance reach the core? (§8.34) | **RUNNING**, GPT reasoning/diagnostic | G4 pre-registers ordered-prefix discrepancy, shuffled control and exact ring-cycle balance checks; spin identity derived. | Correlation cancellation for the finite single seed, rather than ensemble balance. |
 
 *Owed checks.*
 

@@ -342,3 +342,18 @@ windows explicitly; Local was asked to correct their own §8.60 prose.
 are recorded; a global cost or termination argument is still missing. Next reasoning lane is structural balance
 at the core. Local's exact record and million-diagonal jobs remain separate. Document math checks and publication
 checks accompany this milestone; raw large datasets were not added to git.
+
+
+## G4. Structural balance: ordered cancellation versus all-orbit claims (2026-10-06; in progress)
+
+The owner asks for ongoing autonomous work and using shared chat to complement each model's blind spots.
+Continue the open core-balance lane, reading §8.34/8.35 and rule30_core.py's raw outcomes first.
+The diagnostic in rule30_gpt_balance.py is pre-registered before its first run: exact controls, natural
+versus shuffled prefix discrepancy in the certified band, power-of-two ring-cycle balance, and a known
+unbalanced travelling wave. This does not duplicate Local's four-branch million-diagonal job.
+
+Analytic starting point: with spins s = 1-2x, twice the output spin equals the left spin times
+(middle spin + right spin + their product - 1). This exposes the correlation terms that a balance
+argument would need to control. Balanced truth table and Bernoulli preservation concern an ensemble;
+they do not imply equal frequencies on every orbit. A 5-periodic travelling row supplies a simple
+exact obstruction, distinct from the finite single-seed question. Full proof and outcomes to follow.
