@@ -33,7 +33,26 @@ PREDICTIONS, written 2026-10-05 before this script's first run.
   CF  (counterfactual, must fail): CW1 with the valuation taken of N_i + N_j is false for most pairs.
 REFUTED-BY: CW0, CW1, CW2 or CF failing (the proof or the instrument); CW3 or CW4 the other way.
 
-OUTCOME: (written after the first run, below)
+OUTCOME of the first run, 2026-10-05 (9 seconds):
+  CW0, CW1, CW2 PASSED (4,910,527 pairs, 0 failures). CW4 HELD.
+  CF FAILED by bad design: the valuation of N_i + N_j equals that of N_i - N_j for 75% of pairs, because both are
+  0 or 1 for most pairs. Replaced by CF2 below.
+  CW3 REFUTED, by my error: the slopes 0.7, 0.8 and 0.9 are rational, so those words are periodic, not Sturmian,
+  and their 2-adic numbers are cycle points with periodic digits. The probe found exactly that: period 21 at slope
+  4/5 (the cycle denominator is 2^5 - 3^4 = -49, and 2 has order 21 modulo 49) and period 166 at slope 7/10 with
+  intercept 0.37 (denominator 2^10 - 3^7 = -1163). At intercept 0 floating point misplaced the floor at exact
+  integers, so that word was not exactly periodic. For the one irrational slope, log3(2), the digits were balanced
+  and aperiodic at both intercepts.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second.
+  CF2 (counterfactual, must fail): CW1 with the wrong partner, the valuation of N_i - N_(j+1), is false for most
+      pairs.
+  CW3b (blind; replaces CW3): irrational slopes log3(2), 1/sqrt(2), pi/4 and e/3, intercepts 0 and 0.37: among
+      digits 1500 to 3000 the share of ones is between 0.45 and 0.55 and there is no period of 500 or less.
+  CW5 (the accident made a control; must hold): for the exactly periodic words of slopes 4/5 and 7/10 (built with
+      exact fractions, intercepts 0 and 1/3), the digits are eventually periodic with periods 21 and 166.
+
+OUTCOME of the second run: (below)
 """
 import math, sys
 from fractions import Fraction
@@ -85,7 +104,7 @@ def controls():
 
 
 def part_identity(T=80, cap=64):
-    bad = cf_true = pairs = 0
+    bad = cf_true = cf2_true = pairs = 0
     bad2 = 0
     for D in (1, 3, 5, 7):
         for N in range(-300, 301):
@@ -102,6 +121,7 @@ def part_identity(T=80, cap=64):
                     pairs += 1
                     bad += n != val2(nums[i] - nums[j], cap)
                     cf_true += n == val2(nums[i] + nums[j], cap)
+                    cf2_true += n == val2(nums[i] - nums[j + 1], cap)
             for n in range(1, 25):
                 blocks = {tuple(par[i:i + n]) for i in range(T + 1)}
                 residues = {nums[i] % (1 << n) for i in range(T + 1)}
@@ -109,12 +129,20 @@ def part_identity(T=80, cap=64):
     report("CW1 the common future of two iterates is the 2-adic valuation of their difference", bad == 0,
            f"{pairs} pairs, {bad} failures")
     report("CW2 blocks of length n and residues modulo 2^n are equally many", bad2 == 0, f"{bad2} failures")
-    report("CF  with N_i + N_j in place of the difference the identity fails for most pairs", cf_true < pairs / 2,
-           f"true for {cf_true} of {pairs}")
+    print(f"NOTE  CF (first design, a failed counterfactual, see the header): true for {cf_true} of {pairs}",
+          flush=True)
+    report("CF2 with the wrong partner N_(j+1) the identity fails for most pairs", cf2_true < pairs / 2,
+           f"true for {cf2_true} of {pairs}")
 
 
 def sturmian(alpha, theta, n):
+    """the mechanical word of slope alpha and intercept theta; exact when both are Fractions"""
     return [1 if math.floor(theta + (s + 1) * alpha) > math.floor(theta + s * alpha) else 0 for s in range(n)]
+
+
+def tail_period(digits, lo, pmax):
+    tail = digits[lo:]
+    return next((p for p in range(1, pmax + 1) if all(tail[k] == tail[k + p] for k in range(len(tail) - p))), None)
 
 
 def phi_mod(v, M):
@@ -131,7 +159,16 @@ def phi_mod(v, M):
 
 def part_sturmian():
     crit = math.log(2) / math.log(3)
-    words = [(a, t) for a in (crit, 0.7, 0.8, 0.9) for t in (0.0, 0.37)]
+    words = [(a, t) for a in (crit, 2 ** -0.5, math.pi / 4, math.e / 3) for t in (0.0, 0.37)]
+    okp = True
+    for (num, den), want in (((4, 5), 21), ((7, 10), 166)):
+        for theta in (Fraction(0), Fraction(1, 3)):
+            v = sturmian(Fraction(num, den), theta, 3000)
+            x = phi_mod(v, 3000)
+            per = tail_period([(x >> k) & 1 for k in range(3000)], 1500, 500)
+            okp &= per == want
+            print(f"   rational slope {num}/{den}, intercept {theta}: digit period {per} (expected {want})", flush=True)
+    report("CW5 periodic parity words give periodic digits, periods 21 and 166", okp)
     ok3 = ok4 = True
     notes = []
     for a, t in words:
@@ -157,7 +194,7 @@ def part_sturmian():
         notes.append(f"slope {a:.3f} intercept {t}: ones {share:.3f}, period {period}, digits {sizes}")
     for nline in notes:
         print("   " + nline, flush=True)
-    verdict("CW3 the 2-adic digits are balanced and have no period up to 500", ok3)
+    verdict("CW3b irrational slopes: the 2-adic digits are balanced and have no period up to 500", ok3)
     verdict("CW4 the least integer with the parity prefix has more than M - 24 digits", ok4)
 
 
