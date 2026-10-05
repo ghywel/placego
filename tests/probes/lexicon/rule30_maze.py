@@ -76,6 +76,17 @@ it is scored on held-out starts.
   MZ6 (blind): the adaptive walker needs fewer than 1.45 looks per row on held-out starts (the best fixed order 1.536).
   MZ7 (blind): the threshold is sharp and between 0.51 and 0.54: in a sweep from 0.50 to 0.56 in steps of 0.01, the
       connected share at depth T first exceeds 10% at a density between 0.51 and 0.54.
+OUTCOME of the second run, 2026-10-05 (python3 rule30_maze.py adaptive, 31 seconds). Training looks per row over four
+iterations: 1.555 (right first everywhere), 1.395, 1.255, 1.483 (the states visited shift with the policy, so the
+updates oscillate); the final policy needs 1.2857 looks per row on the 2,000 held-out starts. MZ6 HELD. The learned
+first looks, with the chance they find black: after a climb up-right with nothing else seen, up-right again (0.891,
+the walker's most common state); after a climb up-left past two white cells, up-left again (0.754); after a climb
+straight up past a white right parent, straight up again (0.753); after a first-look climb straight up, up-right
+(0.471); after a climb up-right past a white left parent, straight up (0.593). The efficient walker follows the grain:
+it rides the lines parallel to the pyramid's left edge, the left diagonals of rule30_diagonals.py. MZ7 HELD: connected
+shares at depth T by density 0.50 to 0.56: 0.030, 0.042, 0.065, 0.131, 0.458, 0.498, 0.645; first above 10% at 0.53.
+Single pyramids per density fluctuate (the first run had 0.011 at 0.50 and 0.584 at 0.55), so the threshold is near
+0.53 to within about 0.02 at this depth.
 """
 import random, sys
 

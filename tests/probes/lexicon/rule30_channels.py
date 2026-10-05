@@ -86,6 +86,17 @@ Var(W) / T over 2,000 paths, measures how much the substrate offers to choose fr
       random-row runs) is below 0.8 times every random pyramid's.
   CH8 (blind, uncertain): Rule 90 from a random row channels like the random pyramids (Ibar(T) within [0.67 min,
       1.5 max] of theirs).
+OUTCOME of the second run, 2026-10-05 (python3 rule30_channels.py cause, T = 2048, one minute). Polymer Ibar(2048), R,
+and the path spread Var(W)/T: Rule 30 from a single 1 0.0368, 0.069, 0.179; Rule 30 from two random rows 0.0332 and
+0.0361, 0.061 and 0.051, 0.182 and 0.170; Rule 90 from two random rows 0.0711 and 0.0701, 0.113 and 0.161, 0.240 and
+0.237; three random pyramids 0.104 to 0.119, 0.159 to 0.192, 0.248 to 0.251. CH6 HELD: the weak channels belong to the
+rule, not the seed. CH7 HELD: Rule 30's routes differ less in resistance, by 0.72 of the random pyramids' spread. The
+cause is the handedness again (rule30_lightning.py, LG4): below a black cell the lower-right child is black a quarter
+of the time and below a white one three quarters, while the other two children are uncorrelated with it. That gives
+a covariance of -1/8 on a third of a uniform path's steps, so Var(W)/T = 1/4 - 2 (1/3)(1/8) = 0.167 to first order,
+close to the measured 0.17 to 0.18. CH8 HELD, at the edge of its band (0.0701 against a lower limit of 0.0697): Rule 90
+channels about 0.6 times as much as random although its path spread is nearly random (0.24), so the spread is not the
+whole story; Rule 90's longer-range structure (its nested triangles) is the candidate, not tested here.
 """
 import array, math, pathlib, random, struct, sys, zlib
 
