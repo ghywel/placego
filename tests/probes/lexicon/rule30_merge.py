@@ -110,6 +110,12 @@ OUTCOME of recur, 2026-10-05 (KMAX = 53, 56 seconds, 2.8 million states at depth
      of what it would otherwise have (free steps: of twice the states; non-free steps: of the states), and that
      fraction falls slowly, from 0.941 to 0.939 between 23 and 53. Each step of the prefix stage merges about 6% of
      the walks into others; 2 x 0.94^2 = 1.767 per free bit.
+
+MG8 (blind; written 2026-10-05 13:21 BST, before Cloud has seen Local's depths 85 and 89, which are running on Local
+  and absent from main at 11528c9). Extrapolate the distinct walks from D(53) at the last measured rate (1.7635 per
+  two depths): log2 D(85) = 34.52 and log2 D(89) = 36.16. The coin's best over them is 2 log2 D + 1.67 = 70.7 and
+  74.0. Prediction: R(85) is between 65 and 75, and R(89) between 69 and 79. Without merging the same coin model
+  gives about 85 and 89. Local records the records; Cloud records this verdict when they arrive.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
 
