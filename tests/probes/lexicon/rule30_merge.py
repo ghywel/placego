@@ -34,6 +34,20 @@ PREDICTIONS, written 2026-10-05 before this script's first run. Part A uses dept
       k with N(k) >= 20), at each of the five depths.
 REFUTED-BY: MA0 failing (the instrument); MA1 to MA3 or MB1 to MB2 failing. MB1 and MB2 decide between merging and
   cost: if MB1 fails, merging explains BL5; if MB2 fails while MB1 holds, BL5 is not explained by either.
+
+OUTCOME of the first run, 2026-10-05 (about three minutes): MA0 passed (0 conflicts at all five depths).
+  MA1 HELD: over distinct states the coin model fits closely, e.g. at s = 49 (965,204 distinct states) 60,745 last at
+      least 9 cells against 60,325 expected, and 119 at least 27 against 117.8. Nothing is outside a factor 2.
+  MA2 HELD: the maxima's coin chances are 0.419, 0.819, 0.737, 0.406, 0.841 (s = 35, 39, 43, 47, 49). The maxima are
+      luck. Section 8.14's "structure, not luck" for the depth-33 and depth-45 families was wrong: each is one state
+      counted 21 and 8 times, with a coin chance of about 14%.
+  MA3 HELD: G / G_eff = 7.4, 9.4, 12.0, 15.3, 17.4.
+  MB1 REFUTED: the 65,535 right halves of at most 16 cells give only 4,703, 6,493, 8,351, 10,314 and 12,352 distinct
+      visible histories (2^12.2 to 2^13.6) at s = 41 to 105. Most of a right half's 16 bits have not reached column 1
+      by time s + 40.
+  MB2 REFUTED: over those distinct histories a zero cell costs about one bit: beta_real = 0.91, 1.07, 1.07, 1.04, 1.20.
+  So BL5 is explained by merging, and the coin model holds for real right halves too, once histories are counted
+  rather than seeds.
 """
 import math, pathlib, re, subprocess, sys, tempfile
 

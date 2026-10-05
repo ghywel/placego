@@ -1445,10 +1445,11 @@ the whole histogram of run lengths, against a simulated coin-flip null and again
 - **Real right halves are far poorer than the adversary.** Sixteen cells of right half hold the left half at zero for
   only 11 cells, at the depths tested, against 16 for the adversary at $m = 16$. Most of a real right half's bits do
   not reach column 1 when a run needs them. This failure of the coin model is in the proof's favour.
-- **Where chance fails in the adversary's favour.** With column 1 free, the histograms show families of starts far
-  beyond the coin tail. At depth 33, 21 starts hold the left half at zero for exactly 33 cells, while none last 25 to
-  31. At depth 45, 8 starts last 43 cells, while none last 35 to 41. These are structure, not luck. They are the
-  templates of §8.2 seen from the adversary's side, and the next target (§8.15).
+- **Where chance seemed to fail in the adversary's favour.** With column 1 free, the histograms show families of
+  starts far beyond the coin tail. At depth 33, 21 starts hold the left half at zero for exactly 33 cells, while none
+  last 25 to 31. At depth 45, 8 starts last 43 cells, while none last 35 to 41. *(Correction, §8.16: this was called
+  "structure, not luck" here. It is luck. Each family is one left-side state counted many times, and coin flips over
+  the distinct states give such a maximum about 14% of the time.)*
 
 ### 8.15 Rule 30 as a random-number generator: where its randomness fails (2026-10-05)
 
@@ -1495,3 +1496,40 @@ lever found so far is a place where the appearance fails:
 - the real right halves' poverty (§8.14).
 
 A proof will be built from such failures, not from the chaos.
+
+### 8.16 Luck, not structure; and a bottleneck, not a cost (2026-10-05)
+
+Section 8.14 left two questions. `rule30_merge.py` answers both, with its predictions written first.
+
+**The adversary's "families" are luck.** Different start groups can lead to the same left-side state (the pair of
+anti-diagonals that fixes everything after depth $s$). The depth-33 family of 21 start groups is one state, and the
+depth-45 family of 8 is another. Counting distinct states, the coin model fits closely at five depths not looked at
+before:
+
+| Depth $s$ | Start groups $G$ | Distinct states | States with a run $\ge 9$: observed, coin model | Longest run | Coin chance of a run that long |
+|---|---|---|---|---|---|
+| 35 | 131,072 | 17,771 | 1,141, 1,111 | 31 | 0.42 |
+| 39 | 524,288 | 55,939 | 3,585, 3,496 | 31 | 0.82 |
+| 43 | 2,097,152 | 175,164 | 11,127, 10,948 | 35 | 0.74 |
+| 47 | 8,388,608 | 546,616 | 34,103, 34,164 | 41 | 0.41 |
+| 49 | 16,777,216 | 965,204 | 60,745, 60,325 | 39 | 0.84 |
+
+Under the coin model each forced cell of the run is 0 with probability one half; with column 1 free the linear cells
+cost nothing. Equal states give equal runs, as they must (0 conflicts, the control). So with column 1 free, **the
+adversary is exactly as good as coin flips over its distinct states, and no better**. The chaos does not fail here.
+
+**Real right halves are poor because their histories merge.** The 65,535 right halves of at most 16 cells produce
+only 4,703 to 12,352 distinct visible histories of column 1 by depths 41 to 105 (MB1 refuted: $2^{12.2}$ to $2^{13.6}$,
+against the $2^{14}$ predicted). Over the distinct histories, a zero cell costs about one bit, $\beta = 0.91$ to 1.20
+(MB2 refuted: no extra cost). So the coin model holds for real right halves too, once histories are counted rather
+than seeds. What fails is the delivery: **most of a right half's bits have not reached column 1 even 100 steps
+later**. That fits the wheel. Next to 0101…, column 1 is the exact rotation $U$ between kicks, and only the kicks, the
+walls arriving from the interior, carry the right half's information into it (§8.8).
+
+**What it means for the prize.** Every statistic of the zero runs measured so far is explained by one rule: **a run
+costs about one bit per cell, paid from the distinct histories available**. That is the heuristic for B, now
+quantified: a finite right half can never supply the infinitely many bits an eventually zero left half would need.
+It is also why a proof is hard: where the statistics are coin flips, there is no structure for a proof to grip. The
+places where the chaos does fail are structural, not statistical: the tie between neighbouring columns (§8.15), the
+wheel (§8.5), the notched kicks (§8.8), Jen's leftward flow of periodicity (§8.13), and now the bottleneck. The next
+step measures the bottleneck: how fast a right half's bits reach column 1.
