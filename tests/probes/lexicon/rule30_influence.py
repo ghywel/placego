@@ -41,6 +41,7 @@ OUTCOME, 2026-10-05 (the first run, 5 seconds, 2000 samples):
   prefixes then reach the same walk state: an exact merge. rule30_merge.py counts the merges.
 """
 import pathlib, random, subprocess, sys, tempfile
+from ompflags import OMP          # Apple's clang needs libomp's flags (ompflags.py)
 
 HERE = pathlib.Path(__file__).resolve().parent
 SAMPLES = int(sys.argv[1]) if len(sys.argv) > 1 else 2000
@@ -115,7 +116,7 @@ def spearman(xs, ys):
 
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_influence_records"
-    subprocess.run(["cc", "-O2", "-fopenmp", "-o", str(exe), str(HERE / "records.c")], check=True)
+    subprocess.run(["cc", "-O2", *OMP, "-o", str(exe), str(HERE / "records.c")], check=True)
     ok0 = True
     for d in (21, 25):
         out = subprocess.run([str(exe), str(d), "2"], check=True, capture_output=True, text=True).stdout

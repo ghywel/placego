@@ -120,6 +120,7 @@ MG8 (blind; written 2026-10-05 13:21 BST, before Cloud has seen Local's depths 8
   and 2.3 above the coin's centre value 70.7. MG8 HELD at 85. Depth 89 has not been reported yet.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
+from ompflags import OMP          # Apple's clang needs libomp's flags (ompflags.py)
 
 HERE = pathlib.Path(__file__).resolve().parent
 ARGS = sys.argv[1:]
@@ -201,7 +202,7 @@ def records_output(d):
         return f.read_text()
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_merge_records"
     if not exe.exists():
-        subprocess.run(["cc", "-O2", "-fopenmp", "-o", str(exe), str(HERE / "records.c")], check=True)
+        subprocess.run(["cc", "-O2", *OMP, "-o", str(exe), str(HERE / "records.c")], check=True)
     out = subprocess.run([str(exe), str(d), "0"], check=True, capture_output=True, text=True).stdout
     CACHE.mkdir(exist_ok=True)
     f.write_text(out)

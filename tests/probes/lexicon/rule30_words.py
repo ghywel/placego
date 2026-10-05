@@ -73,6 +73,7 @@ OUTCOME, 2026-10-05 (the first run, about 25 minutes; then the white0 addendum a
      random wall 0.98.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
+from ompflags import OMP          # Apple's clang needs libomp's flags (ompflags.py)
 
 HERE = pathlib.Path(__file__).resolve().parent
 FAILS = 0
@@ -230,7 +231,7 @@ def main():
         print(f"   census {n:6s} (beta {beta[n]:.3f}): to depth {top}, D = {D[top]}; R_w(d) for d = 2 .. {top}: "
               + " ".join(str(R[d]) for d in sorted(R)), flush=True)
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_words_records"
-    subprocess.run(["cc", "-O2", "-fopenmp", "-o", str(exe), str(HERE / "records.c")], check=True)
+    subprocess.run(["cc", "-O2", *OMP, "-o", str(exe), str(HERE / "records.c")], check=True)
     ok_a = True
     for d in range(3, 34):
         out = subprocess.run([str(exe), str(d), "0"], check=True, capture_output=True, text=True).stdout

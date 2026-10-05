@@ -43,6 +43,7 @@ OUTCOME, 2026-10-05 (the first run, 4 seconds):
   time. The free data are row 0's odd-depth cells; each odd time's condition fixes the next even-depth cell.
 """
 import pathlib, random, subprocess, sys, tempfile
+from ompflags import OMP          # Apple's clang needs libomp's flags (ompflags.py)
 
 HERE = pathlib.Path(__file__).resolve().parent
 FAILS = 0
@@ -140,7 +141,7 @@ def main():
         ok1 &= len(seen) == 1 << n
     verdict("WA1 column 1's even bits and row 0's odd depths determine each other, triangularly (m <= 10)", ok1)
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_wall_records"
-    subprocess.run(["cc", "-O2", "-fopenmp", "-o", str(exe), str(HERE / "records.c")], check=True)
+    subprocess.run(["cc", "-O2", *OMP, "-o", str(exe), str(HERE / "records.c")], check=True)
     ok2, diff3 = True, []
     for d in range(3, 28):
         out = subprocess.run([str(exe), str(d), "0"], check=True, capture_output=True, text=True).stdout
