@@ -3,7 +3,7 @@
 8.52; the cost side of PERIOD-TWO.md section 7, question 1).
 
 RUN-ON:     cpu (Python 3 and a C compiler; count_j.c counts; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep | phases | exact]
+COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep | phases | exact | share]
 COST:       under a minute on one core.
 
 Background (section 8.51). N_{w,j}(T) counts the configurations of exact hull width w whose column 0, at distance j
@@ -84,6 +84,11 @@ OUTCOME of exact, 2026-10-05 (seconds): after a black cell, 208 of 313 steps are
   mostly small (0.023, 0.057, 0.11, 0.125, ...). After a white cell, 54 of 271.
   CP3 REFUTED: the black conditions are mostly, not exactly, all or nothing (66% against 20% after white). No exact
      lemma here; the two-part picture stands as a tendency.
+
+MODE share. Where the average cost is paid. For each kind (after a black cell, after a white cell), the pooled cost
+-log2(sum of N(T+1) / sum of N(T)) over right-paid steps of that kind (w = 16 .. 24, each phase alone, N >= 256).
+PREDICTION, written 2026-10-05 before share's first run:
+  CP4 (blind): the conditions after a white cell carry more than half of the total pooled cost.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -148,6 +153,22 @@ def windows(exe):
                                                          for k in range(1, 11)),
             ", ".join(f"k = {k}: {math.log2(worst[k]):.2f}" for k in range(1, 11)
                       if worst[k] > 0 and math.log2(worst[k]) > 3 - 0.5 * k) or "all within")
+
+
+def share(exe):
+    num = {"black": 0, "white": 0}
+    den = {"black": 0, "white": 0}
+    for word in ("01" * 200, "10" * 200):
+        J, _ = run(exe, 16, 24, word, 1)
+        for (w, j, T), n in J.items():
+            if T >= max(j, 1) and n >= 256:
+                kind = "black" if word[T - 1] == "1" else "white"
+                num[kind] += J.get((w, j, T + 1), 0)
+                den[kind] += n
+    cost = {k: -math.log2(num[k] / den[k]) for k in num}
+    print("   pooled cost per condition: " + ", ".join(f"after {k}: {c:.3f} bits" for k, c in cost.items()))
+    frac = cost["white"] / (cost["white"] + cost["black"])
+    verdict("CP4 the white conditions carry more than half of the cost", frac > 0.5, f"white share {100 * frac:.0f}%")
 
 
 def exact(exe):
@@ -217,6 +238,9 @@ def deep(exe):
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_cost_c"
     subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "count_j.c")], check=True)
+    if len(sys.argv) > 2 and sys.argv[2] == "share":
+        share(exe)
+        return
     if len(sys.argv) > 2 and sys.argv[2] == "exact":
         exact(exe)
         return
