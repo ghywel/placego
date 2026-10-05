@@ -2,7 +2,7 @@
 """rule30_prng.py: what is Rule 30's "poor behaviour on a chi-squared test when applied to all the columns"?
 
 RUN-ON:     cpu (pure Python 3, standard library; seeded)
-COMMAND:    python3 tests/probes/lexicon/rule30_prng.py
+COMMAND:    python3 tests/probes/lexicon/rule30_prng.py [diagnose]
 COST:       about two minutes on one core.
 
 The owner's question (2026-10-05), on Wikipedia's sentence that "Sipper and Tomassini have shown that as a random
@@ -34,6 +34,22 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
      Its bytes pass a 256-bin chi-square (p > 0.01), and the share of steps with x_{t+1}(0) = x_t(-1) still lies in
      [0.24, 0.26]: the flaw is there, but a user who reads only column 0 never sees column -1.
 REFUTED-BY: C failing (the harness); P1 to P6 failing.
+
+OUTCOME of the first run, 2026-10-05 (two minutes): C passed (the identity holds at every cell; (a, 1, a) never
+occurs). P1 HELD (1.07% of 15,000 streams fail at p < 0.01). P2 HELD (0.95%). P3 REFUTED: 21 of 300 starts (7.0%)
+fail the row-byte test, against at most 3%. P4 HELD: x'(i) = x(i-1) in 0.2500 of steps, every neighbour pair below
+p = 1e-10. P5 HELD: Rule 90 0.5002, Rule 150 0.5000. P6 HELD: the centre column's bytes give p = 0.727, and the flaw
+sits in the column beside it (0.2497).
+
+ADDENDUM, written 2026-10-05 after the first run and before the diagnostic (python3 rule30_prng.py diagnose).
+P3's reasoning used the infinite line, where a uniformly random row stays uniform. Two things differ in the test:
+the 4,096 rows of one start are not independent samples (each row is a function of the one before), and on a ring
+of 50 cells Rule 30 is not a bijection (all ones and all zeros both map to all zeros), so the state drifts onto its
+image, which need not be uniform. The diagnostic uses 4-cell nibbles (16 bins), 12 per row, one test per start:
+  D1 (blind; time dependence): on the ring, with every row the test fails in more than 3% of starts; with rows 32
+      steps apart (1,536 nibbles per start) it fails in 0.3% to 3%.
+  D2 (blind; the counterfactual, no ring): the same 50 cells cut from a line wide enough never to wrap, every row:
+      the test also fails in more than 3% of starts, so the cause is time dependence, not the ring.
 """
 import math, random
 
@@ -181,5 +197,39 @@ def main():
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
 
 
+def nibble_fail(rows, cells, every):
+    bins = [0] * 16
+    for r in rows[::every]:
+        for k in range(cells // 4):
+            bins[(r >> (4 * k)) & 15] += 1
+    return chi2(bins) < 0.01
+
+
+def diagnose():
+    rng = random.Random(1997)
+    ring_all = ring_spaced = open_all = 0
+    mask = (1 << N) - 1
+    for _ in range(STARTS):
+        rows = [rng.getrandbits(N)]
+        for _ in range(T - 1):
+            rows.append(ring_step(rows[-1], 30, N))
+        ring_all += nibble_fail(rows, 48, 1)
+        ring_spaced += nibble_fail(rows, 48, 32)
+        width = N + 2 * T + 2                            # the window [T + 1, T + 1 + N) never feels the edges
+        wmask = (1 << width) - 1
+        row = rng.getrandbits(width)
+        win = []
+        for _ in range(T):
+            win.append((row >> (T + 1)) & mask)
+            row = ((row << 1) ^ (row | (row >> 1))) & wmask
+        open_all += nibble_fail(win, 48, 1)
+    verdict("D1 time dependence: every row fails > 3%, rows 32 apart fail 0.3% to 3% (ring)",
+            ring_all / STARTS > 0.03 and 0.003 <= ring_spaced / STARTS <= 0.03,
+            f"every row {ring_all} of {STARTS} ({ring_all / STARTS:.1%}); 32 apart {ring_spaced} ({ring_spaced / STARTS:.1%})")
+    verdict("D2 no ring: an open segment, every row, also fails > 3%", open_all / STARTS > 0.03,
+            f"{open_all} of {STARTS} ({open_all / STARTS:.1%})")
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    diagnose() if sys.argv[1:] == ["diagnose"] else main()
