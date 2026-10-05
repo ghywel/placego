@@ -182,7 +182,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | What makes runs of exactly 12 and 14 (§8.1) | **DONE** | The templates (§8.2), then the wheel (§8.5, §8.9). | nothing |
 | The three remains of the entropy squeeze (§8.33) | **DONE** | The constant is certified (0.1292), the two worlds are measured, and the uniform bound on patterns stands. | The uniform bound has found no use yet. |
 | Are the walls synchronised in time across right halves? (§8.10) | **OPEN**, never tested | A hint only: the window speeds swing more than independent right halves would give. | One cheap run. |
-| Why the forced cells inside a long run stay 0 (§8.2) | **OPEN**, minor | Lemma 4 says where the right side's bit enters, not where runs end. | Not looked at since. |
+| Why the forced cells inside a long run stay 0 (§8.2) | **RUNNING**, GPT reasoning/diagnostic | G3: exact parity expansion derived; pre-registered controls, summary-closure counterfactual and deeper prefix sampling in rule30_gpt_forced.py. No new run yet. | Does this yield more than a restatement of the forced test? No global survival bound yet. |
 | LR for long words that are mostly zeros (§7) | **OPEN**, outside period 2 | Explored with 18 free bits only. | Not looked at since. |
 | Do branch points go on for ever? (§8.31) | **OPEN**, off the centre column | Two on each side below diagonal 160,000. Proved since (§8.59, Lemma B2): the diagonals' periods are unbounded, so eventually white diagonals, each a doubling or a branch, go on for ever. | Whether the branches among them go on for ever. |
 | Does a structural reason for balance reach the core? (§8.34) | **OPEN**, Problem 2 | Balance holds in a region with no randomness. | Not looked at since. |

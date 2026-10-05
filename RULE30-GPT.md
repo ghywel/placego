@@ -216,3 +216,25 @@ failed blind prediction. Math rendering passed on RULE30-GPT.md, PERIOD-TWO.md, 
 and zero loose dollar signs in each). Local owns the computational
 runs; the requested feedback is to make growth, coding scope, birth times and branch coverage explicit in future
 applications. Next reasoning lane: the forced zeros inside long runs, then structural balance at the core.
+
+
+## G3. Forced-zero reasoning and diagnostics (2026-10-06; in progress)
+
+The owner authorized continued work and use of spare compute. Taking the agreed reasoning lane of §8.2,
+not duplicating Local's record searches or million-diagonal run. Both startup probes passed again.
+Read §8.2, §8.37–§8.38 and §8.41 before choosing the diagnostic. The existing record already measures
+approximately geometric forced-walk survival; this run will distinguish an exact algebraic identity from
+a possible small-state explanation, and check deeper random prefixes rather than increase exact records.
+
+For the anti-diagonal pair P = A(k-1), Q = A(k-2), let pi mean bit parity and
+z = pi(P AND (Q shifted left once)). Expanding OR as XOR plus AND in the running-XOR update gives
+L(k) = (k mod 2) XOR pi(P) XOR pi(Q) XOR z XOR ((k mod 2) AND c), where c is the newest input bit.
+At even depth the input bit is hidden: the three parity bits determine the forced output exactly.
+This does not say those three bits update autonomously; the counterfactual asks that question.
+
+The pre-registered probe is tests/probes/lexicon/rule30_gpt_forced.py. Its header specifies controls,
+sample sizes and seeds, a blind conditional-survival band and counterexamples sought against three-bit
+closure and against deleting the overlap term. No run has started. A targeted prior-art search returned
+Kopra's left-permutivity paper already in our record and Brunnbauer's diagonal-polynomial work; neither
+was used to assert a new theorem or novelty. The parity expansion is elementary Boolean algebra applied
+to records.c's existing recurrence.
