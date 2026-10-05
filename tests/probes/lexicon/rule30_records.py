@@ -82,7 +82,13 @@ def verdict(name, held, detail=""):
 
 def build():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_records"
-    subprocess.run(["cc", "-O2", "-fopenmp", "-o", str(exe), str(HERE / "records.c")], check=True)
+    omp = ["-fopenmp"]
+    # Apple's clang has no -fopenmp; it takes OpenMP through Homebrew's libomp (Local, 2026-10-05)
+    if sys.platform == "darwin":
+        lib = next((p for p in ("/opt/homebrew/opt/libomp", "/usr/local/opt/libomp") if os.path.isdir(p)), None)
+        if lib:
+            omp = ["-Xpreprocessor", "-fopenmp", f"-I{lib}/include", f"-L{lib}/lib", "-lomp"]
+    subprocess.run(["cc", "-O2"] + omp + ["-o", str(exe), str(HERE / "records.c")], check=True)
     return exe
 
 
