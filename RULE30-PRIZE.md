@@ -3558,6 +3558,19 @@ $1, 0, 1, 0, \dots$, which are a fixed point of Rule 30: the forced left half's 
 column 1 is a defect in the stripes, and a finite left half needs the defects to cancel every stripe beyond its
 edge.
 
+**A repeat is a white run.** The proof gives more than the inequality. If a block of length $n$ recurs at time
+$a'$, the row at time $a'$ copies the row at time $a$ on the $n - 1$ cells left of the columns. The earlier row is
+white beyond its edge, $L + a$ cells out. So the later row is white from cell $L + a + 1$ to cell $n - 1$: a run of
+$n - 1 - L - a$ white cells, in a row whose own edge is further out. In the forced left half that reads: if the
+visible bits of column 1 agree for $n$ steps from the times $2i$ and $2j > 2i$, the row at time $2j$ has a zero run
+of length $2n - L - 2i$ starting at depth $L + 2i + 1$. Zero runs are what the records of §8.36 and the ladder of
+§8.56 bound. So a bound $R(d) \le \rho\,d + C$ on zero runs from depth $d$ would give
+$2n \le (1 + \rho)(L + 2i) + C$ for every later time $2j$: a block that starts early enough never recurs at all.
+With the doubling conjecture ($\rho = 1$) the first $L + 3$ visible bits of column 1 never recur. This is
+conditional, and the computed range of $R$ (depths to 217) lies below the depths $L + 2i + 1 \ge 218$ where a
+counterexample would need it. It is recorded because it ties three things together exactly: a repeat in the
+trace, a white run in a later row, and the cost of that run.
+
 **What it does not give.** Theorem A′ is sharper than Theorem A and not stronger in its reach. Real right halves
 have no long early repeats, so it does not bind them. The squeeze sentence above is a restatement, as §8.33 was.
 Its use is the comparison: it says exactly which number a proof must move, and from where to where.
