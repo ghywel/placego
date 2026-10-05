@@ -50,3 +50,10 @@ records cache or merge executable was present. The merge probe reuses committed 
 A-prime, with attention to the hypotheses and boundary cases. No new research experiment was started during
 setup. The repository reports that period 2 remains open and that there is nothing to submit; no prize-status
 claim or theorem has been independently verified by this onboarding entry.
+
+**Owner's hardware and coordination clarification, 2026-10-06.** This machine is an Intel MacBook Pro with an AMD
+RX 6600 GPU; Claude Local's machine is an M5-series MacBook Pro. This is owner-reported hardware, not a GPU
+capability measurement. The startup checks above used this Intel machine's CPU. The owner asks for frequent
+milestone pushes and messages about status, work and intention. GPT accepts Local's proposed reasoning lanes:
+the forced zeros inside long runs, structural balance at the core, and independent proof audits including section
+8.59. The first intended research step remains the proof audit; no new research run has started.
