@@ -25,6 +25,20 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   RR4 (the random-chaos step): 2^20 seeded random right halves of exactly 40 cells, whose bits arrive later than a
       20-cell seed's: their longest run from depth 105 is at least R*(20, 105) + 1.
 REFUTED-BY: RC failing (the instrument); RR1 to RR4 failing.
+
+OUTCOME of the first run, 2026-10-05 (about six minutes on 4 cores): RC passed. The longest real run from depths 41,
+57, 73, 89, 105, for right halves of at most W cells:
+    W = 16: 8 10 8 11 10 | 18: 8 10 8 12 11 | 20: 8 10 8 12 11 | 22: 8 10 9 13 11 | 24: 8 10 9 13 11
+    W = 26: 8 10 9 13 12 | 28: 8 10 9 13 12
+  RR1 HELD: from depth 41 the longest run is 8 for every width from 16 to 28, though the number of right halves grows
+      4,096-fold. RR2 HELD, just: 12 from depth 105 at W = 28 (12 halves reach it).
+  RR3 REFUTED: the runs fall short of log2 D - 3.56 by up to 3.1 (depth 73: 8 against 11.1 at W = 20, 9 against
+      12.0 at W = 24); the other eight points are within 2.5. Real runs grow even more slowly than the distinct
+      histories do.
+  RR4 REFUTED (the random-chaos step): 2^20 random 40-cell right halves give 8, 10, 9, 12, 11, no better than the
+      20-cell exhaustive set (8, 10, 8, 12, 11).
+  So at a fixed depth the channel, not the seed, sets the longest run: beyond about 16 cells a wider seed buys almost
+  nothing.
 """
 import math, pathlib, re, subprocess, sys, tempfile
 from collections import defaultdict

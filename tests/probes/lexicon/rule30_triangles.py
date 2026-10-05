@@ -51,6 +51,17 @@ then compared it with column 1 at absolute times, so unless the window started a
 spurious departure a few steps after every lock. TK3's "0 of 1,300" exposed it. The detector now uses the absolute
 phase (window start plus relative phase), and KC was added as the control that would have caught it. The second
 run keeps the predictions unchanged.
+
+OUTCOME of the second run, 2026-10-05 (N = 1200, T = 3000): TR0 passed (0 violations among 1,005,083 runs; Rule 110
+broke all 55,728). KC passed: 35,056 of 35,555 departures (98.6%) in classes 32 (18,481) and 52 (16,575).
+  TK1 HELD: interior triangles do not foretell kicks. Pooled density ratio 1.021 (class 32) and 1.000 (class 52).
+  TK2 REFUTED, and the two wall species differ: along the wall's path, births of size >= 4 are 1.465 times as dense
+      as at random times for class 32 and 0.963 times for class 52. Class-32 walls carry large triangles.
+  TK3 REFUTED, and the test was badly designed: the same set at the new phase in 0.6% of kicks, at the old in 0.0%.
+      Kicks come about every 90 steps, so the 56-step windows next to a departure are themselves disturbed in
+      columns 2 to 4 (the wall reaches column 4 several steps before column 1). The figure shows the lattice
+      nevertheless: in the kick-aligned maps the domain's births sit at fixed places (red points), because kicks
+      are phase-locked to the wheel.
 """
 import pathlib, random, struct, sys, zlib
 from collections import Counter
