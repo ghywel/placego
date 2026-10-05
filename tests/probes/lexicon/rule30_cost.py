@@ -3,7 +3,7 @@
 8.52; the cost side of PERIOD-TWO.md section 7, question 1).
 
 RUN-ON:     cpu (Python 3 and a C compiler; count_j.c counts; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep]
+COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows | deep | phases]
 COST:       under a minute on one core.
 
 Background (section 8.51). N_{w,j}(T) counts the configurations of exact hull width w whose column 0, at distance j
@@ -60,6 +60,13 @@ OUTCOME of deep, 2026-10-05 (15 seconds):
   CD2 REFUTED: c(w) = 1.50 at most widths, but 3.00 at w = 17, 2.00 at 24 and 5.00 at 26 (c <= 6 held; the growth
      limit did not). The jumps come from small counts: a few survivors passing many conditions intact, the luck the
      coin model puts in a logarithm. At large counts the debt is bounded (CD1); at small counts it grows slowly with w.
+
+MODE phases. Each phase of 0101 counted alone (words 0101... and 1010...), w = 16 .. 24, counts >= 256. A right-paid
+step from T to T + 1 imposes the condition at time T, whose kind is set by the word's cell at T - 1: after a black
+cell the condition involves the left half alone (section 8.40), and the newest right cell cannot pay (section 8.52).
+PREDICTIONS for phases, written 2026-10-05 before phases' first run:
+  CP1 (blind): at least 80% of the free steps (rho >= 0.95) are after a black cell.
+  CP2 (blind): at least 60% of the collapses (rho < 0.05) are after a white cell.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -126,6 +133,25 @@ def windows(exe):
                       if worst[k] > 0 and math.log2(worst[k]) > 3 - 0.5 * k) or "all within")
 
 
+def phases(exe):
+    tally = {("free", "black"): 0, ("free", "white"): 0, ("collapse", "black"): 0, ("collapse", "white"): 0}
+    for word in ("01" * 200, "10" * 200):
+        J, _ = run(exe, 16, 24, word, 1)
+        for (w, j, T), n in J.items():
+            if T >= max(j, 1) and n >= 256:
+                rho = J.get((w, j, T + 1), 0) / n
+                kind = "black" if word[T - 1] == "1" else "white"
+                if rho >= 0.95:
+                    tally[("free", kind)] += 1
+                elif rho < 0.05:
+                    tally[("collapse", kind)] += 1
+    print("   " + ", ".join(f"{a} after {b}: {c}" for (a, b), c in tally.items()))
+    fb = tally[("free", "black")] / max(1, tally[("free", "black")] + tally[("free", "white")])
+    cw = tally[("collapse", "white")] / max(1, tally[("collapse", "black")] + tally[("collapse", "white")])
+    verdict("CP1 at least 80% of free steps after a black cell", fb >= 0.8, f"{100 * fb:.0f}%")
+    verdict("CP2 at least 60% of collapses after a white cell", cw >= 0.6, f"{100 * cw:.0f}%")
+
+
 def deep(exe):
     J, _ = run(exe, 16, 26, "01" * 200, 2)
     longest, cw = {}, {}
@@ -153,6 +179,9 @@ def deep(exe):
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_cost_c"
     subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "count_j.c")], check=True)
+    if len(sys.argv) > 2 and sys.argv[2] == "phases":
+        phases(exe)
+        return
     if len(sys.argv) > 2 and sys.argv[2] == "deep":
         deep(exe)
         return
