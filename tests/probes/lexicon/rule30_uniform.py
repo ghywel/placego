@@ -32,7 +32,7 @@ import pathlib, random, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-WMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 16
+WMAX = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 16
 _argv, sys.argv = sys.argv, sys.argv[:1]
 import rule30_periodic as r30                          # noqa: E402
 sys.argv = _argv
@@ -111,5 +111,40 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def longest_run(L, K):
+    run, longest, start = 0, 0, 1
+    for k in range(1, K + 1):
+        if L[k - 1]:
+            run = 0
+        else:
+            run += 1
+            if run > longest:
+                longest, start = run, k - run + 1
+    return longest, start
+
+
+def deep(K2=320):
+    """The addendum: every right half whose zero run reaches depth 126 is recomputed to depth K2."""
+    rng = random.Random(4096)
+    words = {"01": [0, 1], "001": [0, 0, 1], "011": [0, 1, 1], "0001": [0, 0, 0, 1], "0011": [0, 0, 1, 1],
+             "0111": [0, 1, 1, 1], "random": [rng.getrandbits(1) for _ in range(4096)]}
+    for n, w in words.items():
+        tau = [w[t % len(w)] for t in range(K2 + 2)]
+        best, still = {}, 0
+        for W in range(0, WMAX + 1):
+            lo, hi = (0, 1) if W == 0 else (1 << (W - 1), 1 << W)
+            e_best = None
+            for R in range(lo, hi):
+                lg, st = longest_run(r30.forced_left(R, tau[:K + 2], K), K)
+                if st + lg - 1 == K:
+                    lg, st = longest_run(r30.forced_left(R, tau, K2), K2)
+                    still += st + lg - 1 == K2
+                e = lg - W
+                e_best = e if e_best is None or e > e_best else e_best
+            best[W] = e_best
+        print(f"   {n:6s} to depth {K2}: largest excess by width: " + " ".join(f"{W}:{e:+d}" for W, e in best.items())
+              + f"; runs still reaching {K2}: {still}", flush=True)
+
+
 if __name__ == "__main__":
-    main()
+    deep() if sys.argv[1:2] == ["deep"] else main()
