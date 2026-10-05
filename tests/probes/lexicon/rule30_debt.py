@@ -2,7 +2,7 @@
 """rule30_debt.py: the bounded-debt statement at total widths beyond 100 (RULE30-PRIZE.md section 8.53).
 
 RUN-ON:     cpu (Python 3 and a C compiler; forced.c and count_j.c; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_debt.py [BMAX=24] [D=100] [alpha]
+COMMAND:    python3 tests/probes/lexicon/rule30_debt.py [BMAX=24] [D=100] [alpha | depth]
 COST:       a few minutes on one core.
 
 Background (sections 8.51, 8.52). N_{w,j}(T) counts configurations of hull width w whose column 0, at distance j
@@ -55,6 +55,14 @@ OUTCOME of alpha, 2026-10-05 (33 seconds). c_b for b = 8 .. 24 at each alpha:
   is 4.45. The debt is a structure near the wall at shallow depth, not luck; deeper down the conditions are paid at
   the full rate with a small constant. Section 8.6 found the left half's order in the same place: the wheel's
   formation.
+
+MODE depth. forced_deep.c (multi-word, depths to 250) at b = 20, D = 250. The debt constant at the full rate
+alpha = 1, restricted to windows that start in each depth band, and the pooled cost in each band.
+PREDICTIONS for depth, written 2026-10-05 before depth's first run:
+  DD0 (control, must hold): forced_deep.c's output equals forced.c's for b = 0 .. 16 at D = 100.
+  DD1 (blind): at b = 20 the alpha 1.0 constant over windows starting at depths 40 .. 99, 100 .. 159 and 160 .. 229
+      is at most 7 in each band, and the last band's minus the first's is at most 1.5.
+  DD2 (blind): the pooled cost per condition in each band is within 0.02 of 1 bit.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -161,7 +169,48 @@ def alpha_mode():
             f"{cr[0.9][20]:.2f} against {c[0.9][20]:.2f}")
 
 
+def depth_mode():
+    fexe, dexe = build("rule30_debt_forced", "forced.c"), build("rule30_debt_deep", "forced_deep.c")
+    w = "01" * 300
+    a = subprocess.run([str(fexe), "0", "16", "100", w, "2"], check=True, capture_output=True, text=True).stdout
+    b = subprocess.run([str(dexe), "0", "16", "100", w, "2"], check=True, capture_output=True, text=True).stdout
+    report("DD0 forced_deep.c equals forced.c for b <= 16 at D = 100", a == b)
+    out = subprocess.run([str(dexe), "20", "20", "250", w, "2"], check=True, capture_output=True, text=True).stdout
+    H = {}
+    for line in out.split("\n"):
+        f = line.split()
+        if f and f[0] == "H":
+            H.setdefault(int(f[2]), {})[int(f[3])] = int(f[4])
+    bands = ((40, 100), (100, 160), (160, 230))
+    cb, pool = {}, {}
+    for lo, hi in bands:
+        best, num, den = -99.0, 0, 0
+        for j in range(lo, hi):
+            N = tail(H.get(j, {}), 250 - j)
+            for tau in range(len(N)):
+                if N[tau] < 1:
+                    break
+                if N[tau] >= 256 and tau + 1 < len(N):
+                    num += N[tau + 1]
+                    den += N[tau]
+                for k in range(1, len(N) - tau):
+                    if N[tau + k] < 1:
+                        break
+                    best = max(best, math.log2(N[tau + k] / N[tau]) + k)
+        cb[(lo, hi)], pool[(lo, hi)] = best, -math.log2(num / den)
+    print("   b = 20, alpha 1.0 constant by band: " + ", ".join(f"{lo}-{hi - 1}: {c:.2f}" for (lo, hi), c in cb.items()))
+    print("   pooled cost by band: " + ", ".join(f"{lo}-{hi - 1}: {c:.4f}" for (lo, hi), c in pool.items()))
+    v = list(cb.values())
+    verdict("DD1 each band's constant <= 7, last minus first <= 1.5", all(x <= 7 for x in v) and v[-1] - v[0] <= 1.5,
+            ", ".join(f"{x:.2f}" for x in v))
+    verdict("DD2 pooled cost within 0.02 of 1 bit in each band", all(abs(c - 1) <= 0.02 for c in pool.values()),
+            ", ".join(f"{c:.4f}" for c in pool.values()))
+
+
 def main():
+    if len(sys.argv) > 3 and sys.argv[3] == "depth":
+        depth_mode()
+        return
     if len(sys.argv) > 3 and sys.argv[3] == "alpha":
         alpha_mode()
         return
