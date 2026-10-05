@@ -28,7 +28,26 @@ PREDICTIONS, written 2026-10-05 before this script's first run.
   CF  (counterfactual, must fail): SP1's bound with 2q - 2 in place of 4q - 2 is violated.
 REFUTED-BY: SP0, SP1 or CF failing (the proof or the instrument); SP2 or SP3 the other way.
 
-OUTCOME: (written after the first run, below)
+OUTCOME of the first run, 2026-10-05 (SAMPLES 300, 100 seconds):
+  SP0 PASSED. SP1 PASSED (17,044 runs tested, 0 violations; the longest zero run anywhere in the 300 rows is 21).
+  CF FAILED: the bound with 2q - 2 was not violated either. The counterfactual was badly designed. Sturmian rows
+  have short runs, and the runs that qualify (d <= v - q) only exist for large q, where even half the bound is far
+  above 21. So SP1 has little bite on these rows; Theorem B's real test is JC1 of rule30_jenclock.py, where the
+  bound is attained. Replaced below by CF2, designed after seeing this.
+  SP2 HELD, far more strongly than guessed: the share is 0.648, 0.107 at n = 6, 8 and exactly 0 of 100,000 from
+  n = 10 on. SP3 REFUTED: the share does not fall by a factor per scale, it reaches zero. The constraints at
+  neighbouring scales exclude each other. That observation led to the proof that EVERY theta is excluded
+  (Theorem E in section 8.57 is stated for every theta, not almost every).
+
+ADDENDUM, written 2026-10-05 after the first run and before the second.
+  CF2 (counterfactual, must fail): SP1's bound 4q - 2 applied to every zero run, without the condition d <= v - q,
+      is violated (for small q the rows have longer runs outside the periodic window).
+  SP4 (blind; the finite form of "every theta"): the proof gives, for a left half zero beyond depth L, the two-sided
+      condition  q_(n+1) - q_n - C - 4 <= h(n) <= q_n + C + 2,  C = floor((L - 3)/2), where h(n) is the first time
+      the orbit of theta enters the interval K_n of length |q_n alpha - p_n| at 0. Prediction: at L = 99, for every
+      one of 100,000 random theta the condition fails at some n <= 20 (golden alpha, q_n Fibonacci up to 6765).
+
+OUTCOME of the second run: (below)
 """
 import pathlib, random, subprocess, sys, tempfile
 import numpy as np
@@ -110,7 +129,7 @@ def zero_runs(row):
 
 def part_rows():
     rng = random.Random(54)
-    depth, viol, cf_viol, tested, longest = 2000, 0, 0, 0, 0
+    depth, viol, cf_viol, cf2_viol, tested, longest = 2000, 0, 0, 0, 0, 0
     for _ in range(SAMPLES):
         theta = rng.random()
         c = sturmian(theta, depth // 2 + 400)
@@ -120,6 +139,7 @@ def part_rows():
         for q in FIB[:12]:
             diff = np.nonzero(c[:-q] != c[q:])[0]
             v = int(diff[0]) if len(diff) else len(c)
+            cf2_viol += sum(1 for d, r in runs if r > 4 * q - 2 and d + r - 1 < depth)
             if v - q < 1 or 2 * (v - 1 + q) + 1 > 2 * (len(c) - q):   # nothing to test, or beyond what was built
                 continue
             for d, r in runs:
@@ -129,7 +149,10 @@ def part_rows():
                     cf_viol += r > 2 * q - 2
     report("SP1 every zero run starting at depth d <= v - q is at most 4q - 2 long", viol == 0,
            f"{tested} runs tested over {SAMPLES} thetas, {viol} violations; longest run seen anywhere {longest}")
-    report("CF  with 2q - 2 the bound is violated", cf_viol > 0, f"{cf_viol} violations")
+    report("CF  with 2q - 2 the bound is violated (first design; see the header)", cf_viol > 0,
+           f"{cf_viol} violations")
+    report("CF2 without the condition d <= v - q the bound 4q - 2 is violated", cf2_viol > 0,
+           f"{cf2_viol} violations")
 
 
 def part_metric(L=9, n_theta=100000):
@@ -157,10 +180,38 @@ def part_metric(L=9, n_theta=100000):
             all(0.3 <= r <= 0.7 for r in ratios), ", ".join(f"{r:.2f}" for r in ratios))
 
 
+def part_every(L=99, n_theta=100000):
+    """SP4: the two-sided condition of the proof, at every Fibonacci scale, for every sampled theta"""
+    rng = np.random.default_rng(99)
+    theta = rng.random(n_theta)
+    C = (L - 3) // 2
+    qs = FIB                                                 # q_n; FIB[i+1] is q_(n+1)
+    failed_at = np.zeros(n_theta, dtype=np.int64)            # 0 = not yet failed
+    for i in range(len(qs) - 1):
+        q, qn = qs[i], qs[i + 1]
+        delta = q * ALPHA - round(q * ALPHA)                 # q alpha - p, signed
+        lo, hi = qn - q - C - 4, q + C + 2
+        x = theta.copy()
+        h = np.full(n_theta, -1, dtype=np.int64)
+        for s in range(hi + 2):                              # first visit to K_n, searched up to hi + 1
+            y = x % 1.0
+            inK = (y >= 1.0 - delta) if delta > 0 else (y < -delta)
+            newly = inK & (h < 0)
+            h[newly] = s
+            x += ALPHA
+        ok = (h >= 0) & (h >= lo) & (h <= hi)
+        failed_at[(failed_at == 0) & ~ok] = i + 2            # n = i + 2 in the header's numbering
+    survivors = int((failed_at == 0).sum())
+    last = int(failed_at.max())
+    verdict("SP4 at L = 99 the two-sided condition fails by n = 20 for every theta", survivors == 0 and last <= 20,
+            f"{survivors} of {n_theta} never fail up to n = {len(qs)}; the latest first failure is at n = {last}")
+
+
 def main():
     controls()
     part_rows()
     part_metric()
+    part_every()
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
