@@ -3406,3 +3406,17 @@ disagree once $q_{n-1} > 2C + 8$. $\square$
 **Not covered.** Codings by an arc whose ends are not on one orbit (a length outside $\mathbb{Z}\alpha + \mathbb{Z}$):
 the two ends then break the period at unrelated times, and Step 1's gap of $q_{n+1}$ between breaks is lost. Rotations
 on more than one circle. Any kicked wheel.
+
+**The general form of the condition, and where it has no grip.** Step 0 holds for every column 1: if the left
+half is zero beyond depth $L$, then for every $q$ the times at which $c$ breaks period $q$ start by $q + C + 1$ and
+never more than double (plus $q + C + 3$) from one to the next. A column 1 with early long repetitions at
+infinitely many scales fails this, and Sturmian sequences are the extreme case. A sequence without long repetitions
+passes it untouched. The Thue–Morse sequence has no repetition of more than two periods at all, so $(\ast)$ says
+nothing about it.
+
+**A quick look outside the theorem** (exploratory, the run's unplanned step; no predictions were written). With
+the Thue–Morse, period-doubling, Rudin–Shapiro, paperfolding and Fibonacci sequences as column 1, and their
+complements, the forced row to depth 6000 looks like coin flips in every case: the longest zero run is 10 to 16
+cells, the density of ones 0.49 to 0.51, the same as for a random column 1 (10 and 12 cells). The left half
+scrambles any column 1 that is not periodic. For the Fibonacci sequence Theorem E proves the row is never finite;
+for the others nothing is proved.
