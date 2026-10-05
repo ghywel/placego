@@ -52,7 +52,10 @@ ADDENDUM, written 2026-10-05 after the first run and before the second.
   CW5 (the accident made a control; must hold): for the exactly periodic words of slopes 4/5 and 7/10 (built with
       exact fractions, intercepts 0 and 1/3), the digits are eventually periodic with periods 21 and 166.
 
-OUTCOME of the second run: (below)
+OUTCOME of the second run, 2026-10-05: ALL CHECKS PASS. CF2 PASSED (the wrong partner gives the right valuation
+  for 1,280,490 of 4,910,527 pairs, about a quarter, as chance gives). CW5 PASSED (periods 21, 21, 166, 166).
+  CW3b HELD (ones 0.48 to 0.52 at all eight words, no period up to 500). CW4 HELD (the least integer with the first
+  M parity symbols has M - 4 to M digits).
 """
 import math, sys
 from fractions import Fraction

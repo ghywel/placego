@@ -23,7 +23,13 @@ PREDICTIONS, written 2026-10-05 before this script's first run.
   CF  (counterfactual, must fail): the bound n <= L + a, with the earlier time, is violated.
 REFUTED-BY: WN1 or CF failing (the proof or the instrument); WN2 the other way.
 
-OUTCOME: (written after the first run, below)
+OUTCOME of the first run, 2026-10-05 (WMAX 9, 17 seconds): WN1 PASSED (7,436,643 recurring blocks, 0 violations).
+  CF PASSED (20,179 violations with the earlier time). WN2 REFUTED in its first half: the bound n = L + a' is never
+  attained with a' >= 2 by a seed of width 3 or more (it is attained at a' = 1 by the seed 101, section 8.54); its
+  second half held (largest late ratio 0.255). Post hoc, with 400 steps: the longest block that recurs at a late
+  time a' is 15, 18, 18 and 19 cells for a' in [40, 80), [80, 160), [160, 240) and [240, 360). That is the growth
+  of a coin's longest match (a logarithm of the number of pairs), not a share of the bound, so the ratio falls from
+  0.26 at a' = 40 to 0.07 by a' = 300. The 0.255 sits near Rule 30's leftward speed only by accident.
 """
 import sys
 import numpy as np

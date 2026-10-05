@@ -57,6 +57,9 @@ Proved here (2026-10-05, Local; each is elementary and has a pre-registered chec
   longer than $2P - 2$.
 - **Theorem E** (§8.57). If column 1's visible bits are a Sturmian sequence, the forced left half is never
   finite. So LR holds for every pure rotation, rational (Jen) or irrational.
+- **Theorem A′, the window principle** (§8.58). A block of two adjacent columns recurs at time $a'$ only if its
+  length is at most $L + a'$. It contains Theorem A and has a two-line proof. Its Collatz twin is Terras's
+  bijection (PRIZE-PROBLEMS.md §7.5).
 
 ## 3. What has been measured
 
@@ -217,6 +220,14 @@ prize needs a statement about every single finite configuration. The questions a
    **Sharpened (PRIZE-PROBLEMS.md §7.4).** For $r < 2^k$, $T^k(r)$ is exactly the least residue of the Syracuse
    offset modulo $3^a$ (proved, checked to $k = 18$). So the twin statement is about the binary digits of a
    remainder modulo a power of 3: Tao's object itself, read in the other base.
+   **Carried both ways (PRIZE-PROBLEMS.md §7.5, RULE30-PRIZE.md §8.58).** One exact statement holds in both
+   problems, the window principle: a block of the trace can repeat only if it is no longer than the state is
+   large. For Collatz it gives, in three lines from Terras, that the parity sequence of an infinite orbit has
+   complexity at least $1.71\,n$, so no rational has a Sturmian parity sequence. For Rule 30 it gives Theorem A′
+   and only $p(n) \ge n - L$, because a configuration grows a cell a step. Exponential sums cannot reach a single
+   case on either side: their error is at least the square root of the population. What would close Rule 30
+   period 2 is a lower bound, for one orbit, on the number of contents of the $2n$ cells beside the centre:
+   more than $2^{0.13\,n}$.
 
 ## 8. Reading order
 
@@ -251,6 +262,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `wheel_orbit.c` | Proposition 6's certificate for the pure wheel | minutes per phase |
 | `rule30_jenclock.py`, `jenclock.c` | Jen's theorem with a clock (§8.54): Theorems A and B, checked | seconds |
 | `rule30_sturmian.py` | Theorem E (§8.57): every Sturmian column 1 is excluded | 2 minutes |
+| `rule30_window.py` | Theorem A′ (§8.58): the window principle | 20 seconds |
 | `ladder_deep.c`, `rule30_ladder_local.py` | the layer ladder to depth 318, in parallel (§8.56) | minutes to hours |
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |
 

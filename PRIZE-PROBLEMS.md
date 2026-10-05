@@ -342,3 +342,130 @@ in the Collatz literature; it was not looked up.
 - **Jen's theorem with a clock has a Collatz form** (RULE30-PRIZE.md §8.54). A parity sequence that is $P$-periodic
   on a window pins the number 2-adically to a rational cycle point, so the window is at most about as long as the
   number has bits. The bit length is to Collatz what the distance to the left edge is to Rule 30.
+
+### 7.5 The window principle: what the two problems share exactly, and what each lacks (2026-10-05)
+
+*Local. The owner asked how the avenues that Collatz opens might apply to Rule 30, with both prizes given equal
+attention. Cloud's closing remarks named two things: the bounded-debt statement, and the exponential sums that
+Collatz's arithmetic offers. Probes: `tests/probes/prizes/collatz_window.py` and
+`tests/probes/lexicon/rule30_window.py`, predictions committed before each run.*
+
+**One statement, exact in both problems.** Look at the state through a window of $n$ digits. In both problems
+that window and the next $n$ symbols of the trace determine each other. So:
+
+> **A block of the trace can repeat only if it is no longer than the state is large.**
+
+| | Collatz | Rule 30 |
+|---|---|---|
+| State | a rational $N/D$ with $D$ odd | a row with finitely many black cells on the left |
+| Trace | its parity sequence | two adjacent columns |
+| Window of $n$ digits | the residue modulo $2^n$ | the $n - 1$ cells to the left of the columns |
+| Why window and trace match | Terras's bijection | Rule 30 read from right to left |
+| Size of the state | $\log_2 \lvert N \rvert$ | the distance $L$ to the leftmost black cell |
+| Size after one step | grows by at most $\log_2 \tfrac32 = 0.585$, or shrinks | grows by exactly 1 |
+| The statement | blocks of length $n$ at times $i, j$ are equal exactly when $2^n$ divides $N_i - N_j$ (W1) | a block of length $n$ recurs at time $a'$ only if $n \le L + a'$ (Theorem A′) |
+
+*Proof for Collatz (W1).* Terras's bijection holds on the rationals with odd denominator: the first $n$ parities
+of $y$ determine $y$ modulo $2^n$, and conversely. The iterates $N_i/D$ and $N_j/D$ have the same next $n$
+parities exactly when they are congruent modulo $2^n$, and $D$ is odd. $\square$ The Rule 30 proof is the same
+sentence with rows for residues (RULE30-PRIZE.md §8.58).
+
+**What follows on the Collatz side.**
+- **W2, complexity is at least the sojourn.** Let the orbit of $x = N/D$ be infinite, and let $p(n)$ be the number
+  of different blocks of length $n$ in its parity sequence. Iterates with $\lvert N_i \rvert < 2^{n-1}$ are different
+  numbers closer than $2^n$, so by W1 their blocks differ. Hence $p(n)$ is at least the number of such iterates.
+  An iterate grows by at most $3/2$ a step, so
+
+```math
+p(n) \;\ge\; \frac{n - 1 - \log_2(\lvert N \rvert + D)}{\log_2 (3/2)} \;\approx\; 1.71\,n .
+```
+
+- **W3, no rational has a Sturmian parity sequence.** A Sturmian sequence has $p(n) = n + 1$, which is below
+  $1.71\,n$. This holds for every slope, the critical slope $\ln 2/\ln 3$ included, and every intercept. More
+  generally, the 2-adic number with parity sequence $v$ is irrational whenever $v$ is aperiodic and
+  $p(n) \le 1.7\,n$ for infinitely many $n$.
+- **The slower an orbit diverges, the more complex its parity sequence must be.** An orbit that grows by $\sigma$
+  bits a step needs $p(n) \ge n/\sigma$. One that grows more slowly than any exponential needs $p(n)$ to grow
+  faster than any linear function.
+
+**How new this is.** W1 is Terras's theorem, and W2 and W3 follow from it in three lines, so they may be folklore.
+I did not find them stated. What I found:
+- López and Stoll (Integers 9, 2009) compute the 2-adic number for Sturmian sequences of intercept 0, and by the
+  account of a later reader they leave its irrationality open.
+- Their preprint arXiv:2101.12747 (2021) claims more than W3: that a rational with a divergent orbit must have
+  ones at density exactly $\ln 2/\ln 3$. Its proof shows that the *real* sum of Bernstein's series is irrational,
+  and then (its equations 15 and 16) treats that real number and the *2-adic* sum of the same series as one
+  number. A series of rationals can have different limits in the two metrics. As far as I can tell that step is
+  not justified, so I do not rely on the claim.
+- A public repository (`eoc-divergence` on GitHub) carries a draft on the irrationality of the critical Sturmian
+  value, so the question is being worked on.
+W3 is weaker than the 2021 claim and has a complete proof. A proper literature check by someone who knows this
+field is owed.
+
+**Checked** (`collatz_window.py`, two runs):
+
+| Check or prediction | Result |
+|---|---|
+| CW0: Terras's bijection to $n = 12$ | **passed** |
+| CW1: common future = 2-adic valuation of $N_i - N_j$ ($D$ = 1, 3, 5, 7; $\lvert N \rvert \le 300$) | **passed**: 4,910,527 pairs |
+| CW2: blocks of length $n$ and residues modulo $2^n$ are equally many | **passed** |
+| CF, then CF2: a wrong partner breaks the identity | first design **failed** (too weak); CF2 **passed** |
+| CW3, then CW3b: the 2-adic digits for Sturmian sequences are balanced and aperiodic | CW3 **refuted by my error**; CW3b **held** |
+| CW5: periodic parity sequences give periodic digits, periods 21 and 166 | **passed** |
+| CW4: the least integer with the first $M$ parity symbols has more than $M - 24$ digits | **held** |
+
+Two errors of mine, recorded. The first counterfactual compared $N_i + N_j$ with $N_i - N_j$, which share their
+low powers of 2 for three pairs in four, so it could not fail. And three of my four "Sturmian" slopes (0.7, 0.8,
+0.9) were rational, so those sequences were periodic. The probe then found what it should: digit periods 21 at
+slope 4/5 (the cycle's denominator is $2^5 - 3^4 = -49$, and 2 has order 21 modulo 49) and 166 at slope 7/10. I
+kept that as a control.
+
+**Why Collatz gets more from the same principle.** The principle bounds repeats by size, so everything turns on
+how fast size grows compared with the window. A Collatz iterate gains at most 0.585 bits a step and can lose
+bits, so the first $1.71\,n$ iterates fit a window of $n$ bits, and all their blocks differ. A Rule 30
+configuration gains exactly one cell a step for ever, so only the first $n - L$ rows fit a window of $n$ cells.
+The same count gives Rule 30 only $p(n) \ge n - L$, which is Morse and Hedlund's bound again. That is why
+RULE30-PRIZE.md's Theorem E, the Sturmian case, needed a second argument across three scales of the continued
+fraction, where W3 needs none.
+
+**What each problem has that the other lacks.** Count the contents of the window that one orbit ever shows; by
+the principle that number is the trace's complexity $p(n)$.
+
+| | Lower bound, proved for every single orbit | Upper bound, forced on a counterexample |
+|---|---|---|
+| Collatz, a divergent orbit | $1.71\,n$, and $n/\sigma$ for slow growth (W2) | none: only the long-run share of ones is forced, at 0.63 or more |
+| Rule 30, a period-2 counterexample | $n - L$ (Theorem A′) | $2^{0.13\,n}$: the channel bound (RULE30-PRIZE.md §8.33) |
+
+- **Rule 30 has the squeeze.** A counterexample must keep the $2n$ cells beside its centre column within
+  $2^{0.13\,n}$ contents for ever. Collatz has nothing like it: divergence fixes only the long-run share of
+  ones, which costs a parity sequence 5% of its entropy and puts no ceiling on $p(n)$.
+- **Collatz has the sojourn.** Its states can be small, small states are few, and each has its own future.
+  Rule 30's states are never small.
+- **So the two gaps differ in kind.** Rule 30 period 2 would follow from *any* proof that the window beside the
+  centre of a finite configuration shows more than $2^{0.13\,n}$ contents. Collatz has no ceiling to break, so
+  no count of window contents can close it. In this form Rule 30 period 2 is the better posed of the two: it
+  has a target.
+
+**Cloud's closing remarks, answered.**
+1. *"A proof on the Collatz side would show what a Rule 30 proof has to replace."* What Collatz's arithmetic
+   supplies is a size that the trace controls. Rule 30's only size is the distance to its edge, which grows at
+   the speed of light whatever the trace does. A Rule 30 proof has to replace the size by a count: a lower bound
+   on how many contents the window shows. The edge gives $n - L$. The prize needs $2^{0.13\,n}$.
+2. *The exponential sums.* §7.4 identified them: they are Tao's sums, read in base 2. They cannot close either
+   problem, whatever is proved about them. An exponential sum estimates a count as a main term plus an error, and
+   the error is never below the square root of the population. Truly random data would not do better. So this
+   avenue can reach the bounded-debt statement only while many survivors remain. The last survivors, which are
+   the whole of both prizes, are out of its reach in principle. It is still the right tool for the *density*
+   form of bounded debt, which is unproved on both sides.
+3. *What does reach a single case.* Only exact statements have so far: a bijection (the free bits, the seed's
+   left part), the window principle (cycles and Jen's theorem, W3 and Theorem E), and finite checks. Tonight's
+   additions on both sides are all of the second kind, and they stop at the same place: traces with long early
+   repetitions are excluded, and traces that look random are not.
+
+**Where the nonlinearity sits.** One more exact parallel, with no theorem attached yet. Both maps are affine once
+one bit is known. Collatz is $x \mapsto 3x/2$ or $x/2$ plus a source of $1/2$ at the odd steps, and the trace
+records exactly those steps, so knowing the trace makes the whole orbit affine (Terras's formula). Rule 30 is the
+linear Rule 150 plus a source wherever two adjacent cells are black:
+$x_{t+1}(i) = x_t(i-1) \oplus x_t(i) \oplus x_t(i+1) \oplus x_t(i)\,x_t(i+1)$. Its sources fill a field in space
+and time, and the trace records only one column of it. Next to the 0101 wall the trace does make the first three
+columns affine (RULE30-PRIZE.md §8.58), and no more.

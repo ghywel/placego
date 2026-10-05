@@ -21,6 +21,11 @@ Three theorems were added, each elementary and each checked by a pre-registered 
 Also: question 4 is closed (§8.55: Kari and Kopra's argument is about rows, not columns), and the Collatz twin's
 state after the free bits is exactly a least residue modulo a power of 3 (PRIZE-PROBLEMS.md §7.4). None of this
 reaches the real case, where kicks come at a steady rate. §8.54 explains why the method stops there.
+- **The Collatz transfer (§8.58, PRIZE-PROBLEMS.md §7.5).** Both problems obey one exact statement, the window
+  principle: a block of the trace can repeat only if it is no longer than the state is large. It gives Theorem A′
+  here and, on the Collatz side, that no rational has a Sturmian parity sequence. It also names what is missing
+  here: a counterexample must keep the $2n$ cells beside its centre within $2^{0.13\,n}$ contents for ever, and
+  the edge certifies only about $n$.
 
 **Update, 2026-10-05, evening.** Still no proof and nothing to submit. The day's work moved
 the problem to one precise statement:
@@ -3463,3 +3468,79 @@ complements, the forced row to depth 6000 looks like coin flips in every case: t
 cells, the density of ones 0.49 to 0.51, the same as for a random column 1 (10 and 12 cells). The left half
 scrambles any column 1 that is not periodic. For the Fibonacci sequence Theorem E proves the row is never finite;
 for the others nothing is proved.
+
+### 8.58 The window principle: Theorem A′, and what the Collatz twin shows is missing (2026-10-05)
+
+*Local. The owner asked for the Collatz avenues to be carried back to Rule 30. The two-problem account is
+PRIZE-PROBLEMS.md §7.5. This section is the Rule 30 half. Probe `rule30_window.py`, predictions committed first.*
+
+Collatz has a fact so simple that it is rarely stated: two iterates with the same next $n$ parities are congruent
+modulo $2^n$. Rule 30 has the same fact, and it gives a shorter proof of Theorem A (§8.54) and a stronger
+statement.
+
+**Theorem A′ (a block recurs only if it is no longer than the edge is far).** Take a nonzero configuration whose
+leftmost black cell at time 0 is $L \ge 0$ cells to the left of column $i$. If the pair of columns $(i, i+1)$
+shows the same block of $n$ consecutive values starting at times $a$ and $a' > a$, then
+
+```math
+n \le L + a' .
+```
+
+*Proof.* Rule 30 read from right to left gives each cell from the cell to its right one step later and two cells
+of its own time. So the two columns at times $t$ to $t + k$ fix the $k$ cells to their left at time $t$. Equal
+blocks of length $n$ therefore make the rows at times $a$ and $a'$ agree at the $n - 1$ cells left of column
+$i$. The later row has its leftmost black cell $L + a'$ cells out, and the earlier row is white there. If
+$L + a' \le n - 1$ the rows disagree inside the range where they must agree. $\square$
+
+Theorem A is the case where the block recurs because the columns are periodic: a window $[a, b]$ of period $P$
+is a block of length $b - a - P + 1$ that recurs at $a' = a + P$. Jen's theorem is the case of a block that
+recurs for ever. Theorem A′ needs no periodicity, only one repeat.
+
+**Checked** (`rule30_window.py`): over every seed up to 9 cells, every column pair from the seed's left end to 8
+cells past its right end, and every pair of times up to 120, there are 7,436,643 recurring blocks and none
+longer than $L + a'$ (WN1). With the earlier time $a$ in place of $a'$ the bound fails 20,179 times (the
+counterfactual). I predicted the bound would be attained by some seed of 3 or more cells at $a' \ge 2$. It is
+not (WN2 refuted in that half). Late blocks are far below it: the longest block recurring at a time between 240
+and 360 is 19 cells. That is the growth of a coin's longest match, a logarithm of the number of pairs of times.
+
+**The window identity.** For the forced left half next to column 0 = 0101…, the $2n$ cells beside the wall and
+the next $n$ visible bits of column 1 determine each other (Lemma 4, §8.39). So for any column 1:
+
+```math
+p_c(n) \;=\; \text{the number of different contents of the } 2n \text{ cells beside the wall, over all even times,}
+```
+
+where $p_c(n)$ counts the different blocks of $n$ visible bits in column 1. Theorem A′ says the first
+$n - L/2$ of those contents are all different, so $p_c(n) \ge n - L/2$. The channel bound (§8.33) says a real
+right half allows at most about $2^{0.13\,n}$.
+
+**The cost side as one sentence about one orbit.** Put the two together:
+
+> A period-2 counterexample must keep the $2n$ cells to the left of its centre column within $2^{0.13\,n}$
+> different contents for ever, for every $n$. Period 2 follows from any proof that a finite configuration's
+> window shows more than that for one $n$.
+
+This is the entropy squeeze of §8.33 in the form of a count. What is new is the comparison with Collatz
+(PRIZE-PROBLEMS.md §7.5). There the same count has a free lower bound, because a state is a number, small
+numbers are few, and each has its own future. Rule 30's states grow by one cell a step whatever happens, so the
+edge certifies only $n - L/2$ contents, against the $2^{0.13\,n}$ needed. Every measurement says the true count is
+far higher: a chaotic left half shows a new content at almost every step. Nothing proves it for a single orbit.
+
+**The first three columns are affine in column 1** (a small exact fact, used in PRIZE-PROBLEMS.md §7.5). Write
+$c_s$ for column 1 at time $2s$. Given the wall's conditions, at times $2s$ and $2s + 1$:
+
+| Column | $-1$ | $-2$ | $-3$ | $-4$ |
+|---|---|---|---|---|
+| time $2s$ | $\bar c_s$ | $c_s$ | $\bar c_{s+1}$ | $c_s\,c_{s+1}$ |
+| time $2s + 1$ | 1 | $c_{s+1}$ | $\bar c_{s+1}$ | $c_{s+2}$ |
+
+Column $-2$ is column 1 with every visible bit held for two steps, and column $-3$ is its complement one step
+on. The first product appears in column $-4$. A real right half never shows two visible ones in a row (Lemma 3, §8), so
+for it column $-4$ is white at every even time. With column 1 all white the table gives the stripes
+$1, 0, 1, 0, \dots$, which are a fixed point of Rule 30: the forced left half's resting state. A visible one in
+column 1 is a defect in the stripes, and a finite left half needs the defects to cancel every stripe beyond its
+edge.
+
+**What it does not give.** Theorem A′ is sharper than Theorem A and not stronger in its reach. Real right halves
+have no long early repeats, so it does not bind them. The squeeze sentence above is a restatement, as §8.33 was.
+Its use is the comparison: it says exactly which number a proof must move, and from where to where.
