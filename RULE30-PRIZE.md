@@ -3297,6 +3297,49 @@ configurations can be covered cheaply. The set of configurations with a period-2
 the graph of the forced left half over the right halves. The prize asks whether that set contains a finite
 configuration, which is a question about single points, as §8.47 found for every other soft method.
 
+### 8.56 What is excluded outright: the left edge is at least 217 cells away (2026-10-05)
+
+*Local. Engine `ladder_deep.c`, driver `rule30_ladder_local.py`; predictions committed before the deep run. The run
+is still going (depths 249 and 265); this section will be completed when it ends.*
+
+**A corollary of §8.12 that had not been stated.** $R(m, S)$ is the longest zero run of the forced left half from
+depth $S$, over every start of a width-$m$ layer and every input to it. A layer fed any input can show every column
+1 that a real right half can show. Suppose a configuration has column 0 = 0101… from time 0 and its leftmost
+black cell at depth $L$. Its forced left half is zero at every depth beyond $L$, so $R(m, S)$ is infinite for every
+$m$ and every $S > L$. Hence:
+
+> **If $R(m, S)$ is finite for one $m$, no finite configuration with column 0 = 0101… from time 0 has its leftmost
+> black cell less than $S$ cells to the left of column 0, whatever its right half and however wide.**
+
+Cloud's value $R(12, 105) = 20$ (§8.14) already excluded every left edge within 104 cells. The searches over
+right halves (§8.21, to 34 cells) need a bound on the right half's width; this needs none. Conjecture LR's records
+(§8.37) also need none, and reach 84 cells.
+
+**A deeper engine.** `ladder.c` kept every start group of a level in a table, so memory set its depth. But each
+start group has exactly one parent, its visible prefix without the last bit. The groups form a tree, and a
+depth-first walk holds one branch at a time. `ladder_deep.c` does that, on 320-bit diagonals and in parallel. It
+prints exactly `ladder.c`'s histograms and values at 15 points (LL0), and takes 0.2 s where `ladder.c` took 19 s
+($m = 12$, $S = 105$).
+
+**Measured so far** ($m = 24$, six threads):
+
+| Depth $S$ | 153 | 185 | 217 | 249 | 265 |
+|---|---|---|---|---|---|
+| $R(24, S)$ | 19 | 22 | 21 | running | queued |
+| Start groups $G$ | 774,437 | 4,031,417 | 20,270,334 | | |
+| $R / \log_2 G$ | 0.97 | 1.00 | 0.87 | | |
+
+- **Every run is finite** (LL1, so far). With $R(24, 217) = 21$: **no period-2 counterexample has its left edge
+  within 216 cells of the centre when its period starts, whatever its right half.**
+- **The coin law of §8.14 holds at twice the depth** (LL2, so far): the longest run is 0.87 to 1.00 times
+  $\log_2 G$.
+- **The start groups grow by 1.51 and 1.50 for every 8 depths** (LL3, so far), which is 0.148 bits per visible
+  bit, against the channel bound's 0.129 at $m = 26$ (§8.33).
+
+This is a finite check and not a step toward a proof: §8.14 already showed the runs grow with depth at every layer
+width. What it gives is the firmest statement so far about *every* finite configuration, with no condition on the
+right half.
+
 ### 8.57 No pure rotation works: every Sturmian column 1 is excluded (2026-10-05)
 
 *Local. Probe `rule30_sturmian.py`, predictions committed before each of two runs. PERIOD-TWO.md §7, question 7.*
