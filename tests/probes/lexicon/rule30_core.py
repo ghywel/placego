@@ -2,7 +2,7 @@
 """rule30_core.py: where Problems 1 and 2 meet. How much entropy, and what density, the left side naturally has.
 
 RUN-ON:     cpu (pure Python 3, standard library; exact simulation, seeded)
-COMMAND:    python3 tests/probes/lexicon/rule30_core.py
+COMMAND:    python3 tests/probes/lexicon/rule30_core.py | rule30_core.py balance
 COST:       about two minutes on one core.
 
 Background. The entropy squeeze (rule30_squeeze.py, PRIZE-PROBLEMS.md section 8.33) says that in a period-2
@@ -39,6 +39,24 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
   CR4 (blind): in the driven left half-line the period-2 condition x_t(-1) = 1 holds at 0.50 +- 0.01 of odd times:
       a fair coin each time, with nothing pushing towards it.
 REFUTED-BY: CR0 failing (the instrument); CR1 to CR4 failing.
+
+OUTCOME of the first run, 2026-10-05 (24 seconds): CR0 PASSED (the band's strip certified with a cycle of 16;
+period 7 0.0000; Markov 0.4665 against 0.469; coin flips 0.9971 over 2^17 steps, 0.9886 over 2^15).
+  CR1 REFUTED: the universal band's density over diagonals 0 to 39,999 is 319,993 / 640,000 = 0.499989, balanced to
+      about 10^-5 (0.50113 over diagonals 0 to 999, 0.49991 over 1,000 to 9,999, 0.49998 over 10,000 to 39,999). The
+      band is completely ordered and still balanced.
+  CR2 HELD: at depths 65,472 to 65,535 the band is 0.49979, the region between 0.50016, the core 0.50027; the centre
+      column over 2^17 steps has density 0.49947 and h_10 0.9972 (coin flips 0.9971).
+  CR3 HELD: in the left half-line driven by 0101 from 20 random seeds, the lowest column h_10 is 0.9868 (coin flips
+      0.9886 at that length) and the lowest spatial entropy of 10-cell patterns next to column 0 is 0.9877 per cell
+      (coin flips 0.9875). A counterexample needs at most 0.064: the natural left side is about 15 times richer.
+  CR4 HELD: the period-2 condition x_t(-1) = 1 holds at 0.4998 of odd times.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_core.py balance): is the band's
+balance structural? Each settled left diagonal repeats a block of 1 to 32 cells.
+  CR5 (blind, uncertain): at least 75% of the diagonals 0 to 39,999 have a repeating block with exactly half its
+      cells black, and the unbalanced rest (the eventually white and eventually black diagonals among them) cancel
+      to within 0.001 in density.
 """
 import math, random, sys
 from collections import Counter
@@ -188,5 +206,30 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def balance():
+    cyc = band_cycle()
+    P = len(cyc)
+    kinds = Counter()
+    unb_ones = unb_cells = 0
+    for e in range(K):
+        seq = [(v >> e) & 1 for v in cyc]
+        p = 1
+        while p < P and any(seq[i] != seq[(i + p) % P] for i in range(P)):
+            p *= 2
+        ones = sum(seq[:p])
+        if 2 * ones == p:
+            kinds["balanced"] += 1
+        else:
+            kinds["white" if ones == 0 else "black" if ones == p else "other"] += 1
+            unb_ones += ones * (P // p)
+            unb_cells += P
+    share = kinds["balanced"] / K
+    ud = unb_ones / unb_cells if unb_cells else float("nan")
+    print(f"   diagonals 0 to {K - 1}: {dict(kinds)}; the unbalanced ones' density {ud:.5f} over {unb_cells // P} "
+          f"diagonals", flush=True)
+    verdict("CR5 at least 75% of band diagonals exactly balanced; the rest within 0.001 of 1/2",
+            share >= 0.75 and abs(ud - 0.5) <= 0.001, f"{share:.4f} balanced; the rest {ud:.5f}")
+
+
 if __name__ == "__main__":
-    main()
+    balance() if "balance" in sys.argv[1:] else main()
