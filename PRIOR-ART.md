@@ -1229,3 +1229,25 @@ where Rule 30's structure is visible.
 Links: https://link.springer.com/chapter/10.1007/3-540-46416-6_17 ; https://arxiv.org/abs/1306.3546 ;
 https://www.worldscientific.com/doi/abs/10.1142/S012918319600017X ; https://arxiv.org/abs/2405.02875 ;
 https://reference.wolfram.com/language/tutorial/RandomNumberGeneration.html ; https://en.wikipedia.org/wiki/Rule_30
+
+## Before the bottleneck and entropy steps: information flow in Rule 30 (surveyed 2026-10-05, by Cloud)
+
+Scope: are the leftward information speed (PRIZE-PROBLEMS.md §8.17, §8.19) and the entropy of a column next to a
+clamped periodic column (§8.20) known? Checked by search, abstracts only.
+
+- **Shereshevsky, M. A., "Lyapunov exponents for one-dimensional cellular automata"**, J. Nonlinear Sci. 2 (1992)
+  1-8, and **Tisseur, P., "Cellular automata and Lyapunov exponents"**, Nonlinearity 13 (2000) 1547 (arXiv:
+  math/0312136) (abstracts; both cited by Kopra). Left and right Lyapunov exponents measure how fast perturbations
+  spread each way. For Rule 30 the defect cone is asymmetric: perturbations spread right at full speed and left
+  more slowly. A published value of the leftward speed was not found in what was read. Our measurements, 0.21
+  cells per step for a single flip reaching column 1 next to a clamped 0101... and 0.28 for a second seed's
+  influence on the open line, are of that kind. **Import:** the definitions, if the speed is ever needed exactly.
+- **Bagnoli, F. et al., "Stability of cellular automata trajectories revisited: branching walks and Lyapunov
+  profiles"**, arXiv:1406.5553 (search summary only): Lyapunov profiles of elementary rules, Rule 30 included. Not
+  read.
+- Nothing was found on the entropy of one column of Rule 30 next to a clamped periodic column. The bound of §8.20 is
+  computed with the standard tools for sofic shifts (subset construction, spectral radius) on ladder.c's layer
+  model.
+
+Links: https://arxiv.org/abs/math/0312136 ; https://arxiv.org/abs/1406.5553 ;
+https://www.sciencedirect.com/science/article/pii/S0304397522007502
