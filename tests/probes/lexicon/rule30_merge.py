@@ -3,7 +3,9 @@
 
 RUN-ON:     cpu (pure Python 3, standard library; records.c for the controls)
 COMMAND:    python3 tests/probes/lexicon/rule30_merge.py [DMAX=45]
-COST:       about a minute and under 1 GB at DMAX = 45 (the depth 65 witnesses: records.c, minutes, if not cached).
+            python3 tests/probes/lexicon/rule30_merge.py recur [KMAX=53]
+COST:       about a minute and under 1 GB at DMAX = 45 (the depth 65 witnesses: records.c, minutes, if not cached);
+            recur: a few minutes and about 2 GB at KMAX = 53.
 
 Background (PRIZE-PROBLEMS.md sections 8.36 to 8.38; rule30_influence.py). For column 0 = 0101..., a prefix of
 column 1 (its free bits at times 0, 2, .., d - 3) fixes one forced walk from depth d. The record R(d) is the longest
@@ -80,11 +82,27 @@ OUTCOME, 2026-10-05 (the first run, DMAX = 45, 14 seconds):
   CF HELD: with XOR for the OR, D = 2^nfree exactly at every odd depth 21 .. 33. Shielding is the whole mechanism.
   rule30_influence.py's strip reading survives in part. The merges are real and come from shielding (CF), and delta
   is linear in d (MG1). But merges are not confined to the early bits (MG4), and they stop inside a run (MG2).
+
+MODE recur. Is the growth exact? The canonical states at depth k form a finite set of words. If that set is cut out by
+one finite automaton for every k (a regular language, as for Jen's and Rowland's diagonals), its size D(k) obeys a
+linear recurrence with integer coefficients, and lambda is an algebraic number. Such an automaton is the kind of
+certificate that settles every depth at once. Without one, lambda is only an empirical rate.
+PREDICTIONS for recur, written 2026-10-05 after the main run's outcome and before recur's first run. Seen: D(d) at
+odd d from 21 to 45. Not seen: D at even depths, below 21, or beyond 45.
+  RQ0 (control, must hold): recur's D(d) equals the main run's at every odd d from 21 to 45.
+  RQ1 (blind; the regular structure; my prior about 30%): for some start k0 <= 13 a linear recurrence of order at
+      most 12, fitted exactly on D(k0 .. 40), holds on every term of that range and predicts D(41 .. KMAX) exactly.
+  RQ2 (blind): the growth stays put: D(d + 2) / D(d) lies between 1.75 and 1.78 for d = 45, 47, .., KMAX - 2 (odd).
+  RQ3 (blind): merges happen at both kinds of step. From k = 20 to KMAX - 1, every non-free step loses states
+      (D(k + 1) < D(k)), and every free step falls short of doubling (D(k + 1) < 2 D(k)).
+REFUTED-BY: RQ0 failing (the instrument); RQ1 to RQ3 failing.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
-DMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 45
+ARGS = sys.argv[1:]
+MODE = ARGS.pop(0) if ARGS and ARGS[0] == "recur" else "main"
+DMAX = int(ARGS[0]) if ARGS else (53 if MODE == "recur" else 45)
 CACHE = pathlib.Path(tempfile.gettempdir()) / "rule30_records_cache"      # rule30_records.py's per-depth outputs
 FAILS = 0
 
@@ -371,5 +389,70 @@ def parse_local():
     return out
 
 
+def fit_recurrence(u, r):
+    """Exact rational c with u[n] = sum c[i] u[n - 1 - i] (i < r), solved from u[r .. 2r - 1]; None if singular."""
+    from fractions import Fraction
+    M = [[Fraction(u[n - 1 - i]) for i in range(r)] + [Fraction(u[n])] for n in range(r, 2 * r)]
+    for col in range(r):
+        piv = next((i for i in range(col, r) if M[i][col] != 0), None)
+        if piv is None:
+            return None
+        M[col], M[piv] = M[piv], M[col]
+        for i in range(r):
+            if i != col and M[i][col] != 0:
+                f = M[i][col] / M[col][col]
+                M[i] = [a - f * b for a, b in zip(M[i], M[col])]
+    return [M[i][r] / M[i][i] for i in range(r)]
+
+
+def recur():
+    front, k, D = {(0, 0)}, 1, {}
+    while k <= DMAX:
+        D[k] = len(front)
+        print(f"   D({k}) = {D[k]}" + (f"  ratio to D({k - 2}): {D[k] / D[k - 2]:.4f}" if k > 2 else ""), flush=True)
+        free = (k - 1) % 2 == 0
+        front = {canon(diag(P, Q, c, k), P) for (P, Q) in front for c in ((0, 1) if free else (0,))}
+        k += 1
+    known = {21: 303, 23: 540, 25: 953, 27: 1694, 29: 3006, 31: 5324, 33: 9464, 35: 16779, 37: 29753, 39: 52640,
+             41: 93236, 43: 164745, 45: 291014}
+    report("RQ0 recur's D(d) equals the main run's at odd depths 21 .. 45", all(D[d] == v for d, v in known.items()))
+    found = None
+    for k0 in range(1, 14):
+        u = [D[k] for k in range(k0, 41)]
+        for r in range(1, 13):
+            if 2 * r > len(u):
+                break
+            c = fit_recurrence(u, r)
+            if c is None:
+                continue
+            ok = all(sum(c[i] * u[n - 1 - i] for i in range(r)) == u[n] for n in range(r, len(u)))
+            if ok:
+                found = (k0, r, c)
+                break
+        if found:
+            break
+    if found:
+        k0, r, c = found
+        pred = {k: D[k] for k in range(k0, 41)}
+        for k in range(41, DMAX + 1):
+            pred[k] = sum(c[i] * pred[k - 1 - i] for i in range(r))
+        held = all(pred[k] == D[k] for k in range(41, DMAX + 1))
+        verdict("RQ1 a recurrence of order <= 12 fitted on D(k0 .. 40) predicts D(41 .. KMAX)", held,
+                f"k0 {k0}, order {r}, coefficients {[str(x) for x in c]}")
+    else:
+        verdict("RQ1 a recurrence of order <= 12 fitted on D(k0 .. 40) predicts D(41 .. KMAX)", False,
+                "no recurrence of order <= 12 holds on any D(k0 .. 40), k0 <= 13")
+    rat = {d: D[d + 2] / D[d] for d in range(45, DMAX - 1, 2)}
+    verdict("RQ2 D(d + 2) / D(d) between 1.75 and 1.78 for odd d from 45", all(1.75 <= v <= 1.78 for v in rat.values()),
+            ", ".join(f"{d}: {v:.4f}" for d, v in rat.items()))
+    bad = [k for k in range(20, DMAX) if ((k - 1) % 2 == 0 and not D[k + 1] < 2 * D[k])
+           or ((k - 1) % 2 == 1 and not D[k + 1] < D[k])]
+    verdict("RQ3 every non-free step loses states and every free step falls short of doubling", not bad,
+            "free steps keep " + ", ".join(f"{D[k + 1] / (2 * D[k]):.3f}" for k in range(21, DMAX, 2))
+            + "; non-free steps keep " + ", ".join(f"{D[k + 1] / D[k]:.3f}" for k in range(20, DMAX, 2)))
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+    sys.exit(1 if FAILS else 0)
+
+
 if __name__ == "__main__":
-    main()
+    recur() if MODE == "recur" else main()
