@@ -1431,7 +1431,8 @@ points to?
   - **The coupling.** A finite configuration with a periodic centre needs the two to agree at the wall for ever:
     that is a Z-number.
   - **Emptiness by finiteness** is, here, Jen's theorem (a periodic column 1) and Condrey's constant walls (column 1
-    monotone, so finitely many behaviours).
+    monotone, so each admissible column 1 is eventually constant; corrected wording, see the wide survey below:
+    zero entropy alone would not be enough).
   - **The open regime.** Next to 0101 the constrained side has positive entropy, about 0.12 bits per visible bit, so
     infinitely many admissible behaviours. That is exactly the regime of Mahler's own conjecture (interval 1/2 > 1/p),
     which this method has not closed since 1968. The entropy squeeze (§8.33) is the analogue of FLP's Theorem 1.1,
@@ -1443,3 +1444,194 @@ points to?
   A Rule 30 analogue would need a substitute for that arithmetic. It is recorded as the nearest proved size
   argument, not as a route.
 
+
+## The owner's wide survey: nature, biology and the other disciplines (surveyed 2026-10-05, by Cloud)
+
+Scope: the owner asked for one more research road before fresh eyes: as many disciplines as possible, however
+unlikely, each with a tether to the problem's structure. "Our Rule 30 problem paints itself on the back of a snail
+shell." Seven survey agents searched, one per domain: biology and nature; physics and chemistry; mathematics;
+computing and engineering; the long shots (history, astronomy, the arts); molecular machinery (the owner's protein
+folding note); and the Game of Life (the owner's second note). Each was given the same four-item summary of the
+problem and asked to rate each tether from 1 (an analogy) to 5 (the same mathematics). The agents read the
+sources; Cloud checked the top-ranked ones (marked "checked") at their abstract pages. The survey came after every
+run so far and changed no prediction.
+
+The one finding that every domain returned: every theorem found of the form "a low-information drive cannot hold a
+chaotic system in a fixed state" is about **sets** (of positive measure, or with interior), never about **one
+orbit**. That is exactly the gap between the entropy squeeze (sparsity) and the prize (emptiness), and the gap in
+Mahler's problem.
+
+A correction came with it. The mathematics survey read FLP's Theorem 3.2 again: its hypothesis is finitely many
+admissible orbits, which is stronger than zero entropy (a Sturmian system has zero entropy and uncountably many
+points). RULE30-PRIZE.md §8.45 and the section above are corrected in place: the solved cases are those where every
+admissible column 1 is eventually periodic (Morse and Hedlund's criterion, Kopra's Lemma 4.2, then Jen).
+
+**Mathematics** (strength 5 to 2):
+- **Kari, J. and Kopra, J., "Cellular automata and powers of p/q"**, RAIRO-ITA, arXiv:1710.05737 (abstract checked).
+  Mahler's problem restated as a question about one column of the automaton that multiplies by p/q in base pq.
+  Theorem 4.9, from ergodicity, strong mixing and compactness (an unavoidable finite family of cylinders, Lemma
+  4.4): finite unions of intervals approximating [0, 1] as closely as one likes hold no orbit. Not constructive;
+  their Problem 5.1 asks for a constructive proof. The trace subshift is neither sofic nor synchronising
+  (arXiv:2005.05112). Strength 5.
+- **FLP's Theorem 3.3** (the paper of the previous section, pp. 138-139, reread by the survey). Finiteness holds for
+  a dense set of windows, and the bound 1/p comes from enlarging a window to one of those. FLP never beat positive
+  entropy: they moved to a window where the constrained side is finite. Strength 5.
+- **Kopra's barrier** (arXiv:2202.13809, the survey's reading). The class of rapidly left expansive automata contains
+  Rule 90, whose centre column from one cell is eventually constant. A proof must use Rule 30's own nonlinearity.
+- **Lagarias, J. C., "Ternary expansions of powers of 2"**, arXiv:math/0512006. Erdős's conjecture that 2^n has a
+  2 in base 3 for n > 8 is open. Two methods, from the leading digits and from the trailing (3-adic) digits, use
+  independent information, and combining them is "a challenging problem". The exceptional set has Hausdorff
+  dimension log_3 2 > 0, the analogue of positive entropy. Strength 4.
+- **Buzzi, J., "Piecewise isometries have zero topological entropy"**, Ergodic Theory Dynam. Systems 21 (2001)
+  1371-1377 (checked). A rotation with slips of fixed sizes at fixed phases is a piecewise isometry, so column 1's
+  positive entropy must come from the kick sizes, as §8.43 measured. Strength 4.
+- **Collatz.** Bernstein and Lagarias's conjugacy of the 3x+1 map to the 2-adic shift is triangular, like the
+  seed-to-itinerary bijection of the wall form. Tao's theorem (arXiv:1909.03562) covers almost all orbits, not every
+  orbit. Strength 3.
+- **The busy beaver cryptid Antihydra** (https://wiki.bbchallenge.org/wiki/Antihydra): it halts iff an iteration of
+  floor(3n/2) ever has enough odd values, a Mahler-family question. A random-walk model says it never halts;
+  there is no proof. Strength 3.
+- **Furstenberg, Rudolph, Host; Sarnak; Sinai.** Measure rigidity under x2 and x3 concerns measures and typical
+  points; its automaton versions need algebraic, bipermutative rules (arXiv:math/0510564), which Rule 30 is not.
+  Two systems of positive entropy are never disjoint (each has a Bernoulli factor, by Sinai), so there is no
+  measure-level obstruction to coupling the two sides: any proof works point by point. Strength 2 to 3.
+- **Low complexity forces structure** (Morse and Hedlund; Adamczewski and Bugeaud; Durand's Cobham theorem;
+  Nivat-type results). Each works only when the complexity is low. Strength 2.
+
+**Computing and engineering** (strength 4 to 1):
+- **Yolcu, E., Aaronson, S. and Heule, M. J. H., "An automated approach to the Collatz conjecture"**,
+  arXiv:2105.14697 (abstract checked). Collatz as termination of a string rewriting system; nontrivial weakenings
+  proved with SAT-found natural and arctic matrix interpretations; an earlier unary encoding provably admits no
+  such proof, so the encoding decides. Strength 4.
+- **Liveness certificates for infinite-state systems**: regular model checking with learned automaton invariants
+  (http://www.cs.ru.nl/personal/nilsjansen/files/publications/neider-et-al-nfm-2013.pdf); Lin, A. W. and
+  Rümmer, P., CAV 2016, arXiv:1606.01451 (abstract checked: a progress relation as a finite automaton, learned with
+  L* and SAT); k-liveness (Claessen and Sörensson, FMCAD 2012). Condrey's $H(2, w) \ge w$ rules out a fixed-depth
+  induction, so a certificate must scale with the width, as these do. Strength 4.
+- **Rule 30's own forcing rules** (Meier and Staffelbach; Spencer's thesis, arXiv:1306.3546, already above): "10" in
+  a column forces a 1 to its left. Strength 3.
+- **The wheel as a digital line**: Euclidean rhythms and Bresenham's algorithm (Demaine et al., "The distance
+  geometry of music", https://erikdemaine.org/papers/DeepRhythms_CGTA/paper.pdf); linear-time recognition of
+  digital straight segments (arXiv:0906.2351), an exact kick detector; bandpass sigma-delta modulators as piecewise
+  isometries. Strength 3.
+- **Decidability**: properties of ultimate traces are undecidable over all automata (arXiv:1001.0251); for linear
+  automata the columns are automatic and eventual periodicity is decidable (arXiv:1209.6008). Strength 3.
+- Constrained coding (the channel bound is Shannon's capacity, which cannot exclude one word), boundary control of
+  automata as SAT (Bagnoli, Dridi and Fatès, arXiv:2504.03691), phase-locked loop cycle slips (statistics only),
+  particle image velocimetry's peak locking (analogy). Strength 2 to 1.
+
+**Physics and chemistry** (strength 4 to 1):
+- **Touchette, H. and Lloyd, S., "Information-theoretic limits of control"**, PRL 84 (2000) 1156, arXiv:chao-dyn/9905039
+  (abstract checked): each bit gathered buys at most one extra bit of entropy reduction. **Nair, G. N., Evans,
+  R. J., Mareels, I. M. Y. and Moran, W., "Topological feedback entropy and nonlinear stabilization"**, IEEE TAC 49
+  (2004) 1585-1597 (https://people.eng.unimelb.edu.au/gnair/TAC04.pdf; checked via the search summary): a plant can
+  be held in a compact set iff the data rate exceeds its feedback entropy there. OGY control (Ott, Grebogi and
+  Yorke) holds a chaotic system on one unstable periodic orbit with tiny pushes. Strength 4 for the coin model,
+  1 for the missing step: these are theorems about sets.
+- **Domain walls as particles**: Grassberger (1984), annihilating random walks of kinks; **Eloranta, K. and
+  Nummelin, E., "The kink in elementary cellular automaton Rule 18 performs a random walk"**, J. Stat. Phys. 69
+  (1992) 1131-1136 (bibliographic record checked; abstract not seen); Hanson and Crutchfield's automatic domain test
+  (https://csc.ucdavis.edu/~cmg/papers/ECA54.pdf). Strength 4.
+- **Frenkel-Kontorova discommensurations** (Sturmian ground states, arXiv:2507.06915; many-kink solutions at
+  rational rotation number, arXiv:2004.04868); Aubry-Mather arguments need well-ordered configurations, and kicks
+  of both signs break that. **Random tilings**: the angle is the phason coordinate, and its free diffusion is a
+  phason walk (arXiv:cond-mat/0310514). Strength 3 to 4, as descriptions.
+- Boundary-driven transport (Krug, PRL 67 (1991) 1882; Rule 54 with random boundaries, arXiv:1512.01385, which needs
+  integrability), phase slips in wires and condensates, the kicked rotor (Chirikov's diffusion rate comes from
+  ignoring correlations). Strength 2 to 1.
+
+**Biology and nature** (strength 4 to 1):
+- **Cardiac parasystole** (Glass, L., Goldberger, A. L. and Bélair, J., Am. J. Physiol. 251 (1986) H841;
+  Schulte-Frohlinde et al., PRL 87 (2001) 068104, arXiv:cond-mat/0011367, abstract checked). A beat shows when a
+  rotating phase leaves a refractory window; the number of beats between takes at most three values (the three-gap
+  theorem, via Slater 1967); in modulated parasystole the sinus beats reset the phase, a rotation with kicks.
+  Strength 4.
+- **Longest matches in DNA**: Arratia, R. and Waterman, M. S., Adv. Math. 55 (1985); **Rousseau, J., "Longest common
+  substring for random subshifts of finite type"**, Ann. IHP, arXiv:1905.08131 (abstract checked): governed by the
+  Rényi entropy, almost surely, under mixing. The coin law as a theorem for typical inputs. Strength 4.
+- **Random circle maps** (Müller-Bender, Kastner and Radons, arXiv:2204.09392; Antonov and Malicet): random circle
+  maps synchronise unless they share an invariant measure. Rigid rotations share the uniform one, so nothing pulls
+  the wheel's angle back. Strength 3.
+- **Phyllotaxis** (Douady and Couder, PRL 1992; Atela, Golé and Hotton, J. Nonlinear Sci. 2002; Adler, J. Algebra
+  1998): the same continued fractions, but the plant's angle is selected and stable, the opposite of the wheel.
+  Strength 3, for the wheel only.
+- **Seashells** (Meinhardt, https://www.bio.mpg.de/268545/pigmentation-patterns; Wolfram, NKS p. 423): the shell
+  is a space-time plot and colliding waves annihilate, but the models are reaction-diffusion with restoring forces
+  (in Oliva porphyria a hormone counts the waves), and Conus textile's resemblance to Rule 30 is visual. No wall was
+  found. Strength 2.
+- Winfree's phase singularities (a homotopy argument needing a continuous phase), clock-and-wavefront somitogenesis,
+  Boolean-network control (finite, so the pigeonhole case), the error threshold. Strength 2 to 1.
+
+**Molecular machinery** (the owner's protein-folding note; strength 4 to 1):
+- **Invariance entropy** (Colonius, F. and Kawan, C., SIAM J. Control Optim. 2009): the least data rate that keeps
+  every state of a set inside a target. Its lower bounds are volume counts, a uniform escape rate. A single orbit
+  costs nothing. Strength 4, with the same gap.
+- **Boyd, A. B., Mandal, D. and Crutchfield, J. P., "Correlation-powered information engines and the thermodynamics
+  of self-correction"**, PRE 95 (2017) 012152, arXiv:1606.08506 (checked in the PDF). A ratchet reads a period-2
+  tape 0101... with phase slips at rate c; a synchronising state returns it to phase; above c* = 1/(1 + e) it can
+  no longer work. The objects are ours: a period-2 tape with slips. The inequality needs a measure and an energy;
+  the transducer formalism could carry over. Strength 3.
+- **Zurek, W. H., "Algorithmic randomness and physical entropy"**, PRA 40 (1989) 4731 (not read): entropy of a single
+  microstate. It suggests the single-object form of the missing statement. Strength 3.
+- **Algorithmic self-assembly**: Rothemund, Papadakis and Winfree, PLoS Biol. 2 (2004) e424, Sierpinski triangles
+  grown by XOR tiles from a seed row, errors propagating as defects; proofreading tile sets. No Rule 30 tile
+  experiment was found. Strength 3 for the object, 1 for the theorems.
+- **Protein folding**: Levinthal's paradox and its resolution by a biased landscape (Zwanzig, Szabo and Bagchi,
+  PNAS 89 (1992) 20: a bias of a few kT shrinks the search); the HP model's NP-hardness (Berger and Leighton);
+  designability (Li, Helling, Tang and Wingreen, Science 273 (1996) 666), which is many-to-one where the wall's
+  left side is a bijection. Strength 1 to 2.
+- Kinetic proofreading (Hopfield 1974), ribosomal frameshifting at slippery sites, Feynman's ratchet, rotary motors
+  in steps (F1-ATPase; the flagellar motor's 26 steps against the wheel's 28 notches is a coincidence), the KaiABC
+  clock. Strength 2 to 1: they need noise, energy or detailed balance.
+
+**The long shots** (strength 4 to 1):
+- **Langton's ant**: the highway is unproved (https://en.wikipedia.org/wiki/Langton%27s_ant), but **Bunimovich, L. A.
+  and Troubetzkoy, S. E., "Recurrence properties of Lorentz lattice gas cellular automata"**, J. Stat. Phys. 67
+  (1992) 289-302 (bibliographic record checked) proved every trajectory unbounded. The proof's outline, from a
+  summary only: reversibility makes a bounded path periodic, and an extremal cell gives the contradiction.
+  Strength 3.
+- **Calendars**: the Hebrew leap years form E(7, 19); leap-year rules generalise Bresenham (Harris and Reingold);
+  the Persian 33-year cycle is seven 4-year blocks and one 5-year block, slipping now and then to 29 years
+  (arXiv:astro-ph/0409620). The same mathematics as the wheel. Strength 4, as a viewpoint.
+- **Music**: well-formed scales are Christoffel words (Clampitt and Noll, MTO 11.17.1); E(17, 56) was found in no
+  catalogue. Strength 4, as a viewpoint.
+- **Pingala and Virahanka**: a correction to the survey's own brief. They counted metres of n morae made of short
+  (1) and long (2) syllables, which gives the Fibonacci numbers, the same count as binary words with no two
+  adjacent ones (Singh, Historia Math. 12 (1985)).
+- Euclid and Erdős's proof of Bertrand (a gap between two exponents), Kirkwood gaps (long quiet behaviour proves
+  nothing), KAM's golden torus, satin weaves, Huygens's gear ratios. Strength 3 to 1.
+
+**Philosophy and logic** (the owner's note: "We should not discount philosophical sources as irrelevant just because
+they contain no concrete math. Their math is logic, truth, gates." An eighth survey agent; sources not checked by
+Cloud):
+- **Eternal recurrence and Simmel's wheels.** Nietzsche argued that finitely many centres of force must pass through
+  finitely many combinations and repeat (https://www.gutenberg.org/files/52915/52915-h/52915-h.htm). Simmel replied
+  with three wheels on one axle, one turning at 1/pi the speed of another, which never line up again
+  (https://schwitzsplinters.blogspot.com/2012/10/nietzsches-eternal-recurrence-scrambled.html). The pigeonhole case
+  and the open case, in one argument: a wheel with eventually periodic kicks gives a periodic column 1, closed by
+  Jen; the open case is exactly kicks that never become periodic, Simmel's 1/pi. Strength 4, as a picture.
+- **Potential infinity** (Euclid IX.20 says "more than any assigned multitude", never "infinite"; Aristotle;
+  Archytas's staff at the edge of the world; https://plato.stanford.edu/entries/infinity/). The form of the missing
+  statement: for every width w, a bound B(w) by which every configuration on w cells breaks the 0101 centre. Each
+  B(w) is a finite check; the proof needed is a formula for B or a step from w to w + 1. This is PERIOD-TWO.md §7,
+  question 1. Strength 4.
+- **Hume, Popper and Carroll's Tortoise** (https://plato.stanford.edu/entries/induction-problem/;
+  https://en.wikipedia.org/wiki/What_the_Tortoise_Said_to_Achilles). The coin model is a uniformity principle, so
+  more runs that confirm it go round Hume's circle; each restatement hands the Tortoise one more premise, and what
+  is missing is a rule of inference. "Eventually 0101" has the form "there is a T such that for every t", which no
+  finite run can verify or refute. The answer to the owner's ouroboros, from philosophy. Strength 4.
+- **Kripke's quus and Goodman's grue** (https://iep.utm.edu/kripkes-wittgenstein/). Finitely many observations fit
+  infinitely many rules. Here: every finite stretch of 0101 is realised by some seed, so an argument from windows of
+  time cannot work, and a proof must use the finiteness of the seed. Strength 3.
+- **The tetralemma** (Nagarjuna's catuskoti: A, not A, both, neither; Belnap's four-valued logic;
+  https://en.wikipedia.org/wiki/Tetralemma). It names the fourth game that RULE30-PRIZE.md §8.40 lacked: neither,
+  no conditions, the baseline. It suggests a measurement: with $N$ the count of seeds that survive each game,
+  $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$ near 1 says the black and white conditions are
+  independent, as the coin model assumes; a ratio falling towards 0 would be a measurable obstruction. Strength 3.
+- **Boole and Jevons** (https://plato.stanford.edu/entries/boole/). Boole defined x + y only for disjoint classes
+  (exclusive or), and refused Jevons's inclusive or. Since $c \lor r = c \oplus r \oplus cr$, Rule 30 is the linear
+  Rule 150 plus the single term $cr$: all its nonlinearity is the overlap Boole would not interpret. Strength 3.
+- Llull's rotating discs, Leibniz's binary columns (01, 0011, 00001111...), Cusanus's infinite circle as a line,
+  Dante's 3-sphere (two balls glued along a sphere, like two halves glued at a wall; Peterson, Am. J. Phys. 1979),
+  Borges's Library and forking paths, Zeno: pictures, strength 2 to 1. No tether was found for Kant, the Liar or
+  Funes.

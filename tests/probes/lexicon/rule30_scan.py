@@ -41,6 +41,14 @@ REFUTED-BY: a candidate (then follow it deeper before anything else: it is eithe
   or a longer run.
 HAND BACK to Cloud when the run's output is recorded here, with a ledger line ("Local ran M3b"), pushed to main; AT
   ONCE, without finishing, if any candidate survives to depth 2,000.
+OUTCOME of JOB M3b (Local, 2026-10-05, the M5: 10 cores; 15:36:58 to 16:27:30 BST, 50 min 32 s, run as written).
+  SC0 PASSED (the scan agrees with the independent Python computation at W = 12). At W = 34, 17,179,869,183 right
+  halves: longest zero run in L(1..126) 17, reached by 601,991 halves; candidates ending in >= 30 zeros: 0.
+  SC3 HELD: no candidate, and the longest run still 17. SC1 and SC2 also HELD over the whole range (0 candidates,
+  0 still zero at depth 2,000; 17 at every width from 18 to 34). The widths 18 to 32 reproduce the first run exactly
+  (13, 42, 161, 570, 2,354, 9,479, 37,644 and 150,578 halves reaching 17), so a second machine agrees; the count
+  reaching 17 keeps growing by 4.00 per two cells (601,991 / 150,578). So no finite configuration whose right half
+  has at most 34 cells (and left half at most 108) has a column 0 that is 0101... for ever.
 """
 import pathlib, re, subprocess, sys, tempfile
 from collections import defaultdict

@@ -2713,12 +2713,21 @@ there, as Mahler's own conjecture does.
 **What it means.** This is a calibration, not a route. It places the problem precisely: a Mahler-type problem in the
 regime where the decoupling method has not worked for 57 years. It also explains, in one frame, everything this
 document has found:
-- the solved cases are exactly the zero-entropy ones (§8.40, §8.41);
+- the solved cases are exactly those where every admissible column 1 is eventually periodic (§8.40, §8.41;
+  corrected, see below);
 - the counting results give sparsity but never emptiness (§8.33, §8.41);
 - the wheel's rigidity narrows the constrained side without making it finite (§8.44).
 
 A new idea would have to do what nobody has done for Mahler's problem: get emptiness from a constrained side of
 positive entropy.
+
+*Corrected 2026-10-05, after the wide survey (§8.47).* The list above first said "the zero-entropy ones". Zero
+entropy alone is not enough. A Sturmian column has zero entropy and is not eventually periodic, and FLP's
+Theorem 3.2 assumes finitely many admissible orbits, which is stronger. What the solved cases use is that each
+admissible column 1 is eventually periodic. Next to a white wall it is monotone, $0^k 1^\infty$. A sequence
+with at most $n$ distinct words of some length $n$ is eventually periodic (Morse and Hedlund; Kopra's Lemma
+4.2), and Jen's theorem then finishes. Between the two regimes lies a third, untested here: columns 1 with zero
+entropy that are not eventually periodic.
 
 ### 8.46 Is it unresolvable? The owner's Turing question (2026-10-05)
 
@@ -2748,3 +2757,260 @@ Alan Turing might put it, unresolvable?"
   yet, here or in Mahler's problem (§8.45). That is a statement about the state of mathematics, not about the
   problem's decidability.
 
+
+### 8.47 The wide survey: nature, the other disciplines, and OpenAI's claim (2026-10-05)
+
+The owner asked for one more research road before fresh eyes, as wide as possible: "Our Rule 30 problem paints
+itself on the back of a snail shell: that's evolution, that's generations, that's the golden (silver) ratio, in
+the wild." Then two notes: protein folding and the cell's machinery, and the Game of Life. Seven survey agents covered
+biology and nature, physics and chemistry, mathematics, computing and engineering, the long shots (history,
+astronomy, the arts), molecular machinery, and the Game of Life. The sources, with what was checked, are in
+PRIOR-ART ("The owner's wide survey").
+
+**One answer from every domain.** Every theorem found of the form "a low-information drive cannot hold a chaotic
+system in a fixed state" is about **sets** of starting states, never about **one orbit**:
+- in control theory, a set with interior can be held only if the data rate exceeds its feedback entropy (Nair,
+  Evans, Mareels and Moran, 2004), and each bit a controller gathers buys at most one bit of order (Touchette and
+  Lloyd, 2000). Yet OGY control holds a chaotic system on one unstable orbit with tiny pushes;
+- in sequence matching (Erdős and Rényi; Arratia and Waterman, from DNA), the longest agreement is about the
+  logarithm of the number of histories divided by an entropy, almost surely: the coin law of §8.38, as a theorem
+  for typical inputs;
+- in ergodic theory, two systems of positive entropy are never disjoint (Sinai's Bernoulli factors), so there is no
+  obstruction at the level of measures. A proof must work point by point.
+The entropy squeeze (§8.33) is a theorem of the set kind. The prize needs the single-orbit kind. The same gap
+separates Flatto–Lagarias–Pollington's sparsity theorem from Mahler's conjecture, Tao's "almost all" from Collatz,
+and Lagarias's exceptional set of positive dimension from Erdős's conjecture on the ternary digits of $2^n$. The
+busy beaver cryptid Antihydra is the same: a coin model says it never halts, and nobody can prove it.
+
+**The tethers, ranked by what they could give.**
+1. **The Mahler family** (the same mathematics). Kari and Kopra restate Mahler's problem as a question about one
+   column of the automaton that multiplies by $p/q$. That is our kind of question in so many words. Three imports:
+   - *Enlarge the window.* FLP's Theorem 3.3 does not beat positive entropy. It moves to a nearby window where the
+     constrained side is finite, then uses pigeonhole. The analogue is a weaker condition, implied by the 0101 wall,
+     under which every admissible column 1 is eventually periodic, then Jen. The ladder and the channel bound have
+     tried every local layer language of column 1 up to width 16, all of positive entropy (§8.14, §8.20, §8.41).
+     So such a condition, if one exists, is not local in column 1.
+   - *A partial result of a kind not yet tried here.* Kari and Kopra (Theorem 4.9) prove, from ergodicity, mixing
+     and compactness, that some finite unions of intervals, approximating the whole interval as closely as one
+     likes, hold no Z-number orbit. The proof is not constructive (their Problem 5.1). The Rule 30 analogue would be
+     a set of centre-column words, of measure near 1, that no finite configuration can keep to for ever.
+   - *A barrier.* Kopra's class contains Rule 90, whose centre column from one cell is eventually constant
+     (the survey's reading of Kopra). So no proof can use only what the class shares. It must use Rule 30's OR.
+2. **Machine-found certificates** (computing). Yolcu, Aaronson and Heule turned Collatz into the termination of a
+   string rewriting system and proved nontrivial weakenings with SAT-found arctic (max-plus) matrix interpretations.
+   They also proved that one encoding admits no such proof: the encoding decides. Regular model checking proves
+   liveness of infinite-state systems with an automaton invariant plus a well-founded progress relation, learned
+   with SAT (Lin and Rümmer). Condrey's horizon $H(2, w) \ge w$ rules out any fixed-depth induction, so the
+   certificate must scale with the seed's width, as these do. This is the shape a machine-checkable proof of B
+   could take, and the target a large search could aim at.
+3. **The wheel's own mathematics, in the wild** (the same mathematics, for item 2 only). The wheel is
+   - cardiac parasystole: a beat shows when a rotating phase leaves a refractory window, the number of beats between
+     takes at most three values (the three-gap theorem), and in modulated parasystole the sinus beats kick the phase
+     (Glass, Goldberger and Bélair);
+   - a leap-year rule: the Persian 33-year cycle is seven 4-year blocks and one 5-year block, slipping now and then
+     to a 29-year cycle; the wheel is five 10-step blocks and one 6-step block;
+   - a Euclidean rhythm, E(17, 56), catalogued nowhere the survey looked; a Frenkel–Kontorova discommensuration;
+     a phason walk in a random tiling.
+   Two theorems from this group explain measurements of §8.43 rigorously. Piecewise isometries have zero
+   topological entropy (Buzzi, 2001), so all of column 1's entropy must come from the kick sizes. Random rigid
+   rotations preserve distances, so nothing brings two angles together, and the angle must diffuse with no
+   restoring force. (Random circle maps do synchronise unless, as here, they share an invariant measure: Antonov
+   and Malicet.) Nature's rotations differ in exactly that respect. Phyllotaxis selects and stabilises its golden
+   angle, and Meinhardt's shell models restore their wave count with a hormone. Rule 30's wheel has nothing that
+   pulls it back.
+4. **Single-orbit theorems from extremal arguments.** Langton's ant's highway is unproved, but Bunimovich and
+   Troubetzkoy (1992) proved that every trajectory is unbounded: reversibility makes a bounded path periodic, and
+   an extremal cell gives the contradiction. Euclid's primes and Erdős's proof of Bertrand's postulate (a gap
+   between two exponents) are the same kind of finite argument for one infinite fact. Rule 30 is not reversible,
+   but left-permutivity fixes columns from right to left, which may stand in for it. The import is a target: a
+   weaker theorem about every single seed, proved by an extremal argument.
+5. **The coin model, proved for typical seeds.** Eloranta and Nummelin (1992) proved that Rule 18's kink performs
+   a random walk; Hanson and Crutchfield's domain test is automatic. Together they could prove that the kicks'
+   sizes are independent under a random interior. That would be a theorem, and still a statement about sets.
+
+**Protein folding and the cell's machinery** (the owner's note). The biology gives pictures, not theorems; its
+mathematics sits at the information end.
+- Levinthal's paradox is a counting argument: a random search of a protein's shapes would outlast the universe.
+  It is resolved by a bias, a funnel of a few kT (Zwanzig, Szabo and Bagchi, 1992). A period-2 counterexample would
+  need Rule 30 to find an exponentially rare state and stay in it for ever, and §8.43 found no funnel: nothing pulls
+  the wheel back.
+- An information engine that reads a period-2 tape 0101... with phase slips is a published object (Boyd, Mandal
+  and Crutchfield, 2017). A synchronising state brings it back into phase, and above a slip rate of $1/(1 + e)$ it
+  fails. Its inequality needs an energy and a probability, which Rule 30 lacks. Its formalism, transducers reading
+  a tape, describes the sideways rule: each column is computed from the two to its right.
+- DNA tiles grow an automaton's space-time diagram from a seed row (Rothemund, Papadakis and Winfree, 2004, with
+  XOR tiles), and growth errors propagate as defects. That is the wall form grown sideways, in a test tube. No
+  Rule 30 tile experiment was found.
+- Invariance entropy (Colonius and Kawan) is the cleanest theorem that holding costs information, and its proof is
+  a volume count. It is a theorem about sets, as above.
+
+**The Game of Life** (the owner's note: can Rule 30 emerge from some starting board?).
+- **By construction, yes.** Life is intrinsically universal: it simulates any automaton block by block (Durand
+  and Róka; Salo and Törmä). LifeWiki's 0E0P metacell has empty space as its off state, so a finite Life seed
+  could run Rule 30 from a finite seed. Nobody seems to have built one.
+- **Naturally, not in the simplest way.** Life's rule looks the same in a mirror, so a row that stays a row must
+  follow a mirror-symmetric rule. Rule 30 is not mirror-symmetric (its mirror image is Rule 86). An infinite line
+  in Life follows Rule 22 (Wolfram, NKS notes to §6.8), which is symmetric.
+- **Either way it gains nothing.** The centre-column question carries over unchanged, behind an enormous slowdown.
+  Undecidability of Life patterns in general says nothing about one pattern. And Life has nothing like
+  left-permutivity, the sideways solvability on which the wall form rests. Rule 30's asymmetry is not a detail:
+  the whole wall form is built on it.
+
+**OpenAI's claim, compared** (the owner: "it is possible, however unlikely, this may be the same problem worded
+differently"). The claim is Navier–Stokes, not Riemann (PRIZE-PROBLEMS.md, the update of 2026-10-05): a smooth
+external force and initial data whose solution blows up in finite time, found by about 10,000 agents in 88 hours
+and formalised in Lean. Fefferman's official statement allows a force in its breakdown alternative, so a verified
+construction would answer the problem as posed.
+- **The structure is the opposite of ours.** Theirs is an existence claim, proved by building one object, and the
+  force is designed freely: it may carry as much information as the construction needs. Ours is a non-existence
+  claim, and the input at the wall is not free: column 1 must come from a finite right half, through a channel of
+  about 0.12 bits per visible bit (§8.20).
+- **The nearest translation is LR, not B.** A freely designed column 1 is the Rule 30 analogue of a designed
+  force. Building one that makes the forced left half eventually zero would refute Conjecture LR (§7). It would not
+  touch the prize, which needs B: a column 1 that a finite right half makes. The exact records give no sign of
+  such a column: $R(d)$ is finite at every depth computed, and grows about as $0.8\,d$.
+- **What transfers is the method.** Their proof is a finite object, found by a large search and checked by Lean.
+  Here the finite objects are a seed (a counterexample to B; §8.21 and job M3 search for one) or a certificate (the
+  ranking function or automaton invariant of tether 2). A many-agent search plus a proof checker suits both.
+So it is not the same problem worded differently. But if fresh eyes come from a system of that kind, its strength
+is construction and search. The questions for it are in PERIOD-TWO.md §7.
+
+**A correction found by the survey** (§8.45, corrected in place). Zero entropy on the constrained side is not what
+the solved cases use. They use that every admissible column 1 is eventually periodic, which is stronger.
+
+**What it means.** No discipline holds the missing statement. The survey found the same gap everywhere, between a
+theorem about sets and a theorem about one orbit. It found where the gap has been crossed: by finiteness (Jen,
+Condrey, FLP's windows) and by extremal arguments for single trajectories (Langton's ant). It also showed why
+counting is not hopeless here, as it is for measures. The seeds are finite, so an exact count of the
+configurations on $w$ cells that keep $T$ conditions, if it falls below one, proves that there are none.
+Rule 30's period 2 differs from Mahler's problem in this respect. Mahler's $\xi$ is a real number, and the counting
+bounds there (at most one Z-number in each unit interval, at most $x^\gamma$ below $x$) never fall below one. The
+live imports are the window idea, the machine-found certificate, the extremal target and the exact count.
+PERIOD-TWO.md §7 writes them out as questions for fresh eyes.
+
+### 8.48 The owner's MoltenVK question: randomness that only one platform showed (2026-10-05)
+
+The owner recalled MOLTENVK-NONDETERMINISM-INVESTIGATED.md. On macOS the interpolator's output wandered, and the
+cause had two parts. **An amplifier:** block matching picks an argmin over candidate offsets, and at a near-tie a
+one-bit difference flips the chosen motion vector "and the whole warp built on it". **A source:** a race in the
+MoltenVK path, invisible on Windows and Linux, where nothing perturbed the tie. The owner: "it smells like quantum
+mechanics. Might this discovery have an application here?"
+
+**The same anatomy is in Rule 30, and it has been measured.**
+- **The amplifier is the XOR.** Rule 30 is $x' = l \oplus (c \lor r)$, so a flipped left input always flips the
+  output. The influence probe measured it: flip any bit of column 1 from time 12 on and the zero run changes with
+  probability 2/3, the coin's value (`rule30_influence.py`).
+- **The tie margin is the OR.** An OR whose other input is 1 absorbs a flip, as `TIE_MARGIN` absorbs a one-bit
+  difference at a near-tie. That absorption is the merging of §8.38: walks that differ early reach the same state.
+- **The source is the interior.** The wheel next to the wall is the stable platform: a rotation that would repeat
+  for ever. The kicks are the race: they come from the chaotic interior, carry its randomness (§8.43), and by Jen's
+  theorem never stop in a finite configuration (§8.13). The MoltenVK report's warning fits them exactly: "the tie
+  margin cannot absorb a perturbation that is not small", and a kick is a whole notch, never small.
+
+**What it gives.** A picture of the cost side, not a new statement. A period-2 counterexample would be a
+configuration where every kick, for ever, lands on a near-tie that the left half's ORs resolve the right way, and
+each such landing costs about a bit. That is the coin model again, the restatement the owner has called the
+ouroboros. One difference matters. The shader's randomness came from outside, from the platform. A finite Rule 30
+configuration has no outside: all of it is in the seed, which is what Wolfram calls intrinsic randomness. So the
+fix that worked there, removing the source (the MoltenVK switches and a texture-free dither), has no analogue
+here. The source is the configuration itself.
+
+**On quantum mechanics.** A deterministic, local system whose outputs look random is exactly what Rule 30 is, and
+'t Hooft's cellular automaton interpretation of quantum mechanics (2016) proposes such automata beneath physics.
+Bell's theorem limits what local hidden variables can reproduce, and 't Hooft's answer needs superdeterminism. None
+of that bears on whether one finite configuration can keep a periodic centre: Rule 30's question is about a single
+deterministic orbit, with no measurement and no statistics. The likeness is real as a picture, of a hidden
+variable that decides an outcome; it is not a route.
+
+### 8.49 Addendum to §8.47: philosophy and logic (2026-10-05)
+
+The owner: "Many great theorems were devised without even the language of maths. As we found with the 3-sphere,
+Dante had a visualisation with absolutely no maths. ... Their math is logic, truth, gates." An eighth survey agent
+covered philosophy and logic (PRIOR-ART, the end of "The owner's wide survey"). Four things came back that the
+mathematical surveys did not give:
+- **The open case, in one picture.** Nietzsche argued that finitely many states must recur. Simmel answered with
+  wheels turning at an irrational ratio, which never line up again. Kicks that become periodic make column 1
+  periodic, and Jen closes that case. So the open case is exactly a wheel whose kicks never settle into a period,
+  Simmel's irrational wheel.
+- **The ouroboros, answered from philosophy.** The coin model is a uniformity principle, and more confirming runs
+  cannot prove it (Hume). Each restatement adds a premise, and what is missing is a rule of inference (Carroll's
+  Tortoise). And by Kripke's quus, finitely many observations fit infinitely many rules: every finite stretch of
+  0101 is realised by some seed. A proof must use the finiteness of the seed, as PERIOD-TWO.md §7, question 1 does.
+- **The fourth game.** The tetralemma (A, not A, both, neither) names the game §8.40 left out: neither, no
+  conditions at all. It gives a measurable test of the coin model's independence:
+  $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$, from counts of surviving seeds. Near 1, the
+  black and white conditions are independent; well below 1, they obstruct each other, which a proof could use. Not
+  yet measured.
+- **Where the nonlinearity lives.** Boole's "or" was exclusive, and he refused Jevons's inclusive one. Since
+  $c \lor r = c \oplus r \oplus cr$, Rule 30 is the linear Rule 150 plus the one term $cr$: everything that makes
+  Rule 30 hard is the overlap Boole would not interpret. A hypothesis, untested: the kicks are born where that term
+  fires near the wall.
+None of these is a proof. Two of them are tests that could be run: the independence ratio and the hypothesis about
+where kicks are born.
+
+### 8.50 Gates and truth: the owner's NAND question (2026-10-05)
+
+The owner: NAND gates are "wholly logical in the mathematical domain", truth logic is "in the reasoned truth domain",
+and the two are not one to one. "Are we missing a difference between these two systems that from the outside are
+lexically similar but behave quite differently in practice?"
+
+**Where they are one to one.** For a fixed, finite question they are. Every truth table is a NAND circuit (Sheffer,
+1913; Peirce earlier), and every circuit is a truth table. One step of Rule 30 is such a table: three inputs, one
+output, $l \oplus (c \lor r)$.
+
+**Where they part, and why it matters here.** Four differences, each already met in this work without its name:
+- **Finite against for ever.** A truth table or a circuit settles a finite question by checking every case.
+  "Eventually 0101 for ever" is not finite. It needs quantifiers over time ("there is a T such that for every t
+  after it"), and with quantifiers come Turing's and Gödel's limits (§8.46). Every probe here lives on the gate
+  side: a finite check, decided. The prize lives on the truth side. Each bound for one width is a gate fact; the
+  statement for every width needs reasoning.
+- **Gates count information; truth does not.** A NAND gate takes in two bits and gives out one, so it erases
+  information (Landauer). A truth table only says what is true. The missing statement of this work, "keeping the
+  wall's conditions costs real information", is a gate-side statement. To become a proof it must be carried to the
+  truth side, and the one carrier found is an exact count over a finite family of seeds that falls below one
+  (PERIOD-TWO.md §7, question 1).
+- **A physical gate can hang; a logical one cannot.** A real gate fed a near-tie can sit between 0 and 1, and no
+  arbiter can be guaranteed to resolve it in bounded time (metastability; Chaney and Molnar, 1973). That is the
+  owner's MoltenVK experience (§8.48): a comparison at a near-tie, decided by something invisible. Rule 30 as
+  mathematics has no such state, so its randomness is all in the seed.
+- **Classical truth against proof.** In classical logic the centre column either is or is not eventually periodic.
+  A constructive proof must also give the bound by which it breaks. Kari and Kopra's partial result on Mahler's
+  problem is non-constructive, and their Problem 5.1 asks for a constructive one (§8.47). Here any proof would give a
+  bound in principle, since for each width the horizon can be found by search once it is known to be finite.
+
+**The bridge between the two domains is induction.** A finite check of a base case and of one step, a gate-side
+fact, gives a for-ever statement, a truth-side fact. König's lemma is a bridge of the same kind: it turns "no
+infinite run" into "a bound at every depth" (§8.36). The certificates of PERIOD-TWO.md §7, question 3, an invariant
+with a ranking function checked by a solver, are exactly such bridges. Every probe in this document crosses no
+bridge: it is evidence on the gate side. So the owner's distinction is not missing from the work. It is the line
+between what the probes have done and what a proof must do, and it names what fresh eyes are needed for: a bridge.
+
+### 8.51 The counting form, measured, and the tetralemma's fourth game (2026-10-05)
+
+`rule30_count.py` (with `count.c`) counts exactly, with predictions written before the run. $N_w(T)$ is the number
+of pairs (configuration, position) where the configuration's hull is exactly $w$ cells wide, the position is a cell
+of the hull taken as column 0, and that column reads 0101... (either phase) for $T$ steps. Every configuration up to
+$w = 24$ was run, about 200 million pairs. A direct cell-by-cell count agrees up to $w = 9$ (CT0).
+
+| Word | slope of $\log_2 N_w(T)$ at $w$ = 20, 22, 24 | horizon $H(w) - w$, $w$ = 10 to 24 |
+|---|---|---|
+| 0101 | -1.03, -1.07, -1.08 | -1 to +5 |
+| random (seed 1940) | -1.15 at $w$ = 24 | 0 at $w$ = 24 |
+| 0 (theorem: Condrey) | -1.13, -1.14, -1.13 | -1 to 0 |
+| 1 (theorem: Condrey) | -1.13, -1.12, -1.12 | 0 to +1 |
+
+- **The counting form holds as far as it can be counted** (CT2 held). Each step divides the count by about
+  $2^{1.05}$, so $N_w(T) \approx 2^{w - 1.05\,T + c}$. That is PERIOD-TWO.md §7's question 1 with $\alpha$ near 1.
+- **The horizon is tight** (CT1 refuted: I predicted at least +2). It is $w + 5$ at most, and $w - 1$ at $w = 18$.
+- **Black and white are independent** (CT3 held). The tetralemma's ratio
+  $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$ stays between 0.66 and 1.34 with no trend. The
+  coin model's independence is right up to a constant factor. There is no hidden obstruction between the two kinds
+  of condition to exploit. The random word's ratio dipped once to 0.37 (CT4 refuted, by that alone).
+- **The proved words count the same way** (post hoc). The one-colour words, which Condrey's theorem closes, have the
+  same law with a slightly steeper slope. 0101 has the shallowest slope of the words tried.
+
+**What it means.** The counting form is the right statement: it is true as far as it can be counted, it is shared
+by the words that have a theorem, and it would close period 2 if proved, because a count below one is zero. The
+measurement also rules out a cheap route: the tetralemma's ratio shows no obstruction between black and white
+conditions. A proof must explain why each step halves the count, exactly. That is the cost side, now in the form
+of a number that can be watched as $w$ grows.
