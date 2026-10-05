@@ -4,7 +4,7 @@
 PERIOD-TWO.md's board. (Local, 2026-10-06; section 8.60.)
 
 RUN-ON:     cpu, one core (pure Python 3, standard library; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_sync.py [W=12] [T=4096]
+COMMAND:    python3 tests/probes/lexicon/rule30_sync.py [W=12] [T=4096]   |   ... wide   (the addendum)
 COST:       a minute.
 
 METHOD. As in rule30_wheelspeed.py: for every unlocked right half up to W cells, column 1 over T steps is cut into
@@ -33,11 +33,40 @@ PREDICTIONS, written 2026-10-06 before this script's first run.
 REFUTED-BY: S0 or CF failing (the instrument); S1 to S3 the other way. If S2 is refuted the synchrony is not the
   formation's and is worth a section of its own.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-06 (W = 12, T = 4096, 19 seconds): 3,936 unlocked halves, 73 windows. S0 PASSED.
+  Slips per window: early 1131, middle 1017, late 989 of 3,936 (a quarter of the halves slip in any window).
+  Fano factors, real against shifted: early 5.82 / 0.49; middle 2.65 / 0.86; late 3.14 / 0.92.
+  Spread of v(k), real against shifted: early 0.0856 / 0.0389; middle 0.1218 / 0.0360; late 0.0944 / 0.0363.
+  S1 HELD (5.82). S2 REFUTED: the synchrony does not fade; the late Fano factor is 3.14 against 0.92. S3 REFUTED in
+  its late half (ratios 2.20 early, 2.60 late). CF FAILED BY DESIGN: the band [0.8, 1.25] assumed rare slips; for
+  independent halves with rates p_h the Fano factor is 1 - sum p_h^2 / sum p_h, below 1 - mean p, and the control
+  sits there (0.49 with the early range's strong trend, 0.86, 0.92). So the halves slip at the same windows at every
+  time, three times the independent variance even late. An exploratory look (no predictions written): at windows
+  10 to 70 the wheel's phase across halves is always even and favours 4, 6 and 8 (about 8.5% each, against 3.6% for a
+  uniform even phase), a stationary preference, not a lock to the clock; the late slip counts, 884 to 1135, show
+  spikes at single windows rather than a slow trend.
+
+ADDENDUM, written 2026-10-06 after the first run and before the second (python3 rule30_sync.py wide). Is the
+  synchrony a property of the wall and the wheel (a common clock, which any population of right halves would
+  share) or of the sample (halves that share their cells nearest the wall)? Two disjoint populations decide it.
+  SA0 (control, must hold): the shifted control's Fano factor lies within 0.1 of the independence value
+      1 - sum p_h^2 / sum p_h in every range, for the population of width <= 12.
+  SA1 (blind; a common component scales with the population): with all unlocked halves of width <= 14 (about
+      four times as many), the late Fano factor minus its independence value is at least three times the same
+      excess for width <= 12.
+  SA2 (blind; the two populations co-vary): the slip counts per window of the halves of width <= 12 and of the
+      halves of width exactly 13 or 14 (disjoint sets) have correlation at least 0.5 over windows 12 to 72.
+  SA3 (blind; window-local, not a drift): the lag-1 autocorrelation of the width <= 12 slip counts over windows
+      12 to 72 is below 0.3.
+REFUTED-BY: SA0 failing (the instrument); SA1 to SA3 the other way. SA2 refuted would mean the synchrony is the
+  sample's, not the wheel's.
+
+OUTCOME of the second run: (to be recorded)
 """
 import math, pathlib, random, statistics, sys
 
-_nums = [a for a in sys.argv[1:]]
+_nums = [a for a in sys.argv[1:] if a != "wide"]
+WIDE = "wide" in sys.argv[1:]
 W = int(_nums[0]) if len(_nums) > 0 else 12
 T = int(_nums[1]) if len(_nums) > 1 else 4096
 P = 56
@@ -75,7 +104,66 @@ def fano(counts):
     return statistics.pvariance(counts) / m if m > 0 else float("nan")
 
 
+def population(halves, nwin):
+    """per half: the slip indicator per window (locked halves dropped)"""
+    out = []
+    for R in halves:
+        c = column1(R, T)
+        last_bad = max([t for t in range(T - P) if c[t] != c[t + P]], default=-1)
+        if last_bad < T - P - 400:
+            continue
+        out.append([1 if ROT.get(tuple(c[k * P:(k + 1) * P])) is None else 0 for k in range(nwin)])
+    return out
+
+
+def excess(slips, a, b, rng):
+    """the Fano factor over windows a..b-1, its independence value, and a shifted control's"""
+    N = [sum(s[k] for s in slips) for k in range(a, b)]
+    n = b - a
+    p = [sum(s[a:b]) / n for s in slips]
+    indep = 1 - sum(x * x for x in p) / sum(p)
+    Nc = [0] * n
+    for s in slips:
+        off = rng.randrange(n)
+        for j in range(n):
+            Nc[j] += s[a + (j + off) % n]
+    return fano(N), indep, fano(Nc), N
+
+
+def wide():
+    nwin = T // P
+    rng = random.Random(31)
+    small = population(range(1 << 12), nwin)
+    big = population(range(1 << 12, 1 << 14), nwin)           # widths exactly 13 and 14: disjoint from small
+    ok0, ex12 = True, {}
+    for name, (a, b) in RANGES.items():
+        f, indep, fc, N = excess(small, a, b, rng)
+        ok0 &= abs(fc - indep) <= 0.1
+        ex12[name] = f - indep
+        print(f"   width <= 12, {name}: Fano {f:.2f}, independence value {indep:.2f}, shifted {fc:.2f}", flush=True)
+    report("SA0 the shifted control sits at the independence value 1 - sum p^2 / sum p (within 0.1)", ok0)
+    a, b = RANGES["late"]
+    f14, indep14, fc14, _ = excess(small + big, a, b, rng)
+    print(f"   width <= 14 ({len(small) + len(big)} halves), late: Fano {f14:.2f}, independence {indep14:.2f}, "
+          f"shifted {fc14:.2f}", flush=True)
+    verdict("SA1 the late excess Fano at width <= 14 is at least three times that at width <= 12",
+            f14 - indep14 >= 3 * ex12["late"], f"{f14 - indep14:.2f} against {ex12['late']:.2f}")
+    a, b = 12, nwin
+    Ns = [sum(s[k] for s in small) for k in range(a, b)]
+    Nb = [sum(s[k] for s in big) for k in range(a, b)]
+    corr = statistics.correlation(Ns, Nb)
+    verdict("SA2 the two disjoint populations' slip counts co-vary over windows 12 to 72 (correlation >= 0.5)",
+            corr >= 0.5, f"{corr:.3f}")
+    ac = statistics.correlation(Ns[:-1], Ns[1:])
+    verdict("SA3 the lag-1 autocorrelation of the width <= 12 counts over windows 12 to 72 is below 0.3", ac < 0.3,
+            f"{ac:.3f}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if WIDE:
+        wide()
+        return
     nwin = T // P
     slips, kicks = [], []                                  # per half: slip indicator per window; kick per window
     odd = 0
