@@ -99,7 +99,7 @@ OUTCOME of JOB M4 (Local, 2026-10-05, the M5: 10 cores, 16 GB). Finished, with d
   all its record prefixes).
   Still running on Local, to be handed back separately: records_bits.c at 85 (started 12:46, expected about 15:30),
   then JOB M3b, then 89 (expected overnight). Depths 85 and 89 are beyond this job; M4a, M4b and M4c are carried to
-  them unchanged, written here at 12:56, before either result exists (85 had run 10 minutes, 89 not at all).
+  them unchanged, written here at 12:50, before either result exists (85 had run 4 minutes, 89 not at all).
 """
 import importlib.util, math, os, pathlib, subprocess, sys, tempfile
 from multiprocessing import Pool
