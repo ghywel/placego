@@ -52,6 +52,24 @@ excesses at K = 126 for every width, the deep addendum's values to 320 for the r
   UH1 (blind; Cramer's shape): for every two-colour word and the random wall, the largest excess over widths 0 .. 10
       at K = 512 exceeds the value at K = 64 by 2 to 5: about one step per doubling of the horizon.
   UH2 (blind; the one-colour walls): for w = 0 (nonzero right halves) and w = 1 it does not grow at all.
+
+OUTCOME of horizon, 2026-10-05 (4 seconds): largest excess over widths 0 .. 10 at K = 64, 128, 256, 512:
+  01 +9 +9 +9 +9; 001 +10 +10 +10 +10; 011 +9 +9 +9 +10; 0001 +5 +7 +8 +10; 0011 +4 +7 +7 +7; 0111 +6 +7 +7 +7;
+  random +5 +6 +9 +9; 1 +1 throughout; 0 +0 throughout.
+  UH1 REFUTED: the random wall grows (+4), as a coin would, and so do 0001 (+5) and 0011 (+3); but 01 and 001 do not
+     grow at all, and 011 and 0111 by one. For those words the champions sit at shallow depth, and looking eight
+     times deeper finds no longer run.
+  UH2 HELD.
+
+MODE windows. If the periodic wall holds the deep zero runs down, that is a property of periodic words that random
+words lack, and the kind of property a proof could use. The test: the longest zero run of the forced row 0 inside
+each depth window [K/2, K), maximised over every right half of width up to 10, for K = 128 .. 2048.
+PREDICTIONS for windows, written 2026-10-05 after horizon's outcome and before windows' first run. Seen: everything
+above (no window has been computed).
+  UV1 (blind; structure): for 01 the longest run in the window does not grow: at K = 2048 it is at most its value at
+      K = 128 plus 1. Under the coin model, with 16 times as many cells, it would grow by about 4.
+  UV2 (blind; the control the other way): for the random wall it grows by at least 2 from K = 128 to K = 2048.
+  UV3 (blind): 001 behaves like 01 (UV1's bound), and 0001 like the random wall (UV2's growth).
 """
 import pathlib, random, sys
 
@@ -200,5 +218,33 @@ def horizon(Ks=(64, 128, 256, 512), wmax=10):
             f"0: {grow['0']:+d}, 1: {grow['1']:+d}")
 
 
+def windows(Ks=(128, 256, 512, 1024, 2048), wmax=10):
+    rng = random.Random(4096)
+    words = {"01": [0, 1], "001": [0, 0, 1], "0001": [0, 0, 0, 1], "random": [rng.getrandbits(1) for _ in range(4096)]}
+    res = {}
+    for n, w in words.items():
+        Kmax = max(Ks)
+        tau = [w[t % len(w)] for t in range(Kmax + 2)]
+        best = {K: 0 for K in Ks}
+        for W in range(0, wmax + 1):
+            lo, hi = (0, 1) if W == 0 else (1 << (W - 1), 1 << W)
+            for R in range(lo, hi):
+                L = r30.forced_left(R, tau, Kmax)
+                for K in Ks:
+                    run, longest = 0, 0
+                    for k in range(K // 2, K + 1):           # depths K/2 .. K; a run may start before the window
+                        run = 0 if L[k - 1] else run + 1
+                        longest = max(longest, run)
+                    best[K] = max(best[K], longest)
+        res[n] = best
+        print(f"   {n:6s}: longest zero run in the window [K/2, K], over widths 0 .. {wmax}: "
+              + " ".join(f"K {K}: {best[K]}" for K in Ks), flush=True)
+    g = {n: res[n][max(Ks)] - res[n][min(Ks)] for n in res}
+    verdict("UV1 for 01 the deep runs do not grow (at most +1 from K = 128 to 2048)", g["01"] <= 1, f"{g['01']:+d}")
+    verdict("UV2 for the random wall they grow by at least 2", g["random"] >= 2, f"{g['random']:+d}")
+    verdict("UV3 001 like 01 (at most +1), 0001 like the random wall (at least +2)", g["001"] <= 1 and g["0001"] >= 2,
+            f"001 {g['001']:+d}, 0001 {g['0001']:+d}")
+
+
 if __name__ == "__main__":
-    {"deep": deep, "horizon": horizon}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
+    {"deep": deep, "horizon": horizon, "windows": windows}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
