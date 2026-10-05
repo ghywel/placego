@@ -188,6 +188,15 @@ prize needs a statement about every single finite configuration. The questions a
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
    Measured (§8.51): between 0.66 and 1.34 at $w = 24$, with no trend. Independent up to a constant factor.
 
+9. **The Collatz twin** (PRIZE-PROBLEMS.md §7.1 to §7.3). Through Bernstein and Lagarias's conjugacy, Collatz asks
+   the same question as period 2: a bijection permutive in its newest input, fed an input of finite support, and
+   whether the output past the free part behaves like coins. Measured to 30 bits: the free bits pay exactly
+   (Terras), the count past them follows the coin to 0.5%, and the excess stays below 3.7 bits. Collatz has what
+   Rule 30 lacks, arithmetic: after the free bits the state is the explicit integer $3^a + T^{w-1}(r)$, and the
+   question becomes bounding exponential sums $\sum_v e(h\,y_v / 2^j)$ over the parity vectors that stay up (the
+   2-adic counterpart of Tao's 2019 estimate). The measured Fourier structure fades with width. A proof there would
+   show what a Rule 30 proof must replace.
+
 ## 8. Reading order
 
 1. This file.

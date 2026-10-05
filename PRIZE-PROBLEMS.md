@@ -10,6 +10,10 @@ unchanged; this document keeps the prizes as a whole.*
 
 ## The honest summary
 
+**Update, 2026-10-05, evening.** §7 records what the Rule 30 work carries to the other prizes. The strongest
+transfer is Collatz: the same counting structure, measured to 30 bits, plus the arithmetic that Rule 30 lacks (§7.1
+to §7.3).
+
 No open prize problem is one computation away. The one where heavy computation was the leading line of attack,
 Navier–Stokes, was claimed on 2026-09-08, for the case with a smooth external force, and Clay is evaluating the
 claim. For the rest, a computer can win in only two ways:
