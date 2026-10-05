@@ -4,7 +4,7 @@
 PERIOD-TWO.md's board. (Local, 2026-10-06; section 8.60.)
 
 RUN-ON:     cpu, one core (pure Python 3, standard library; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_sync.py [W=12] [T=4096]   |   ... wide   (the addendum)
+COMMAND:    python3 tests/probes/lexicon/rule30_sync.py [W=12] [T=4096]   |   ... wide   |   ... dedup
 COST:       a minute.
 
 METHOD. As in rule30_wheelspeed.py: for every unlocked right half up to W cells, column 1 over T steps is cut into
@@ -83,12 +83,31 @@ SECOND ADDENDUM, written 2026-10-06 before the third run (python3 rule30_sync.py
       at least 1 (the sisters).
 REFUTED-BY: SB0 failing (the harness); SB1 to SB3 the other way. SB3's first half refuted would restore the clock.
 
-OUTCOME of the third run: (to be recorded)
+OUTCOME of the third run, 2026-10-06 (wide; 38 seconds): SB0 PASSED. 1,479 of the 3,936 sister pairs (37.6%) have
+  identical columns 1 over all 4,096 steps; the rest first differ at a median of 34 steps (quartiles 26 and 50).
+  SB1 REFUTED by its second half (the median 34, not above 200: a sister's extra cell either reaches the wall
+  within about 50 steps or never). SB2 REFUTED: sisters that do differ have no late correlation (0.001; random
+  pairs 0.004). SB3 HELD: cross-group correlation 0.009 (no common clock); within-group excess Fano 1.24.
+  So the synchrony of the first run is duplication: halves whose columns 1 are the same sequence.
+
+THIRD ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_sync.py dedup). Damage in Rule 30 always
+  spreads right at speed 1 (the XOR of the left neighbour), so a difference at cell 13 rides with the right edge;
+  it reaches the wall only if its left front escapes into the chaotic core. The claims to test:
+  SC1 (blind): the number of distinct columns 1 among the 3,936 unlocked halves of width <= 12 is between 2,000 and
+      3,200.
+  SC2 (blind; duplication is the whole story): after keeping one half per distinct column 1, the late Fano factor
+      is within 0.3 of its independence value.
+  SC3 (blind; the damage rides the edge): for at least 90% of the identical sister pairs, the leftmost cell where
+      the two patterns differ at time 4,096 lies within 60 cells of the right edge (cell 13 + 4,096).
+REFUTED-BY: SC1 to SC3 the other way.
+
+OUTCOME of the fourth run: (to be recorded)
 """
 import math, pathlib, random, statistics, sys
 
-_nums = [a for a in sys.argv[1:] if a != "wide"]
+_nums = [a for a in sys.argv[1:] if a not in ("wide", "dedup")]
 WIDE = "wide" in sys.argv[1:]
+DEDUP = "dedup" in sys.argv[1:]
 W = int(_nums[0]) if len(_nums) > 0 else 12
 T = int(_nums[1]) if len(_nums) > 1 else 4096
 P = 56
@@ -219,7 +238,55 @@ def wide():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def rows_right(R, n):
+    """the right half's rows (column 0 clamped to 0101...) as integers, bit i = cell i, for n steps"""
+    mask = (1 << (R.bit_length() + n + 3)) - 1
+    row, out = R << 1, []
+    for t in range(n):
+        out.append(row)
+        row = (((row << 1) ^ (row | (row >> 1))) & mask & ~1) | ((t + 1) % 2)
+    return out
+
+
+def dedup():
+    nwin = T // P
+    rng = random.Random(32)
+    cols, slips, unlocked = {}, {}, []
+    for R in range(1 << 12):
+        c = column1(R, T)
+        cols[R] = c
+        last_bad = max([t for t in range(T - P) if c[t] != c[t + P]], default=-1)
+        if last_bad >= T - P - 400:
+            unlocked.append(R)
+            slips[R] = [1 if ROT.get(tuple(c[k * P:(k + 1) * P])) is None else 0 for k in range(nwin)]
+    distinct = {}
+    for R in unlocked:
+        distinct.setdefault(tuple(cols[R]), R)
+    reps = list(distinct.values())
+    verdict("SC1 distinct columns 1 among the unlocked halves between 2,000 and 3,200", 2000 <= len(reps) <= 3200,
+            f"{len(reps)} of {len(unlocked)}")
+    a, b = RANGES["late"]
+    f, indep, fc, _ = excess([slips[R] for R in reps], a, b, rng)
+    verdict("SC2 after deduplication the late Fano factor is within 0.3 of its independence value",
+            abs(f - indep) <= 0.3, f"Fano {f:.2f}, independence {indep:.2f}, shifted {fc:.2f}")
+    near, pairs = 0, 0
+    for R in unlocked:
+        if cols[R] != cols[R + (1 << 12)]:
+            continue
+        pairs += 1
+        x, y = rows_right(R, T)[-1], rows_right(R + (1 << 12), T)[-1]
+        d = x ^ y
+        leftmost = (d & -d).bit_length() - 1 if d else None
+        near += leftmost is not None and leftmost >= 13 + T - 60
+    verdict("SC3 for >= 90% of identical sister pairs the damage's leftmost cell is within 60 of the right edge",
+            pairs > 0 and near / pairs >= 0.9, f"{near} of {pairs}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if DEDUP:
+        dedup()
+        return
     if WIDE:
         wide()
         return
