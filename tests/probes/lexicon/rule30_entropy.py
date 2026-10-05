@@ -24,6 +24,16 @@ PREDICTIONS, written 2026-10-05 before this script's first run. Seen before writ
       turns (section 8.8), is the most order a column 0 can impose.
   EN3 (blind): every trace except the constant 0 has a bound above 0.1 bits per visible bit at m = 10.
 REFUTED-BY: EN0 failing (the instrument); EN1, EN2 or EN3 failing.
+
+OUTCOME of the first run, 2026-10-05: EN0 passed (lambda_1 = golden ratio to 9 digits; the ladder's ratios matched
+within 0.05%; monotone; free column 1.000000 bit; trace 0 0.00036, the slow linear count). Bits per visible bit for
+01, m = 1 .. 18: 0.694, 0.694, 0.694, 0.617, 0.509, 0.442, 0.377, 0.356, 0.322, 0.316, 0.285, 0.258, 0.255, 0.244,
+0.230, 0.212, 0.195, 0.185 (automaton states 2 to 5,901).
+  EN1 HELD: 0.1846 at m = 18 (0.092 bits per step).
+  EN2 REFUTED: at m = 10, 01 gives 0.316, but 0001 gives 0.159, 001 0.190, 11000 0.211, 10000 and 00010 0.230,
+      001011 0.248 and 0011 0.260 bits per visible bit. Per step the traces range from 0.092 (110111) to 0.184
+      (10000); 01 gives 0.158. The wheel does not make column 1 unusually poor.
+  EN3 HELD: every trace above 0.1 bits per visible bit (the lowest, 0001, at 0.159).
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 

@@ -1648,3 +1648,36 @@ influence spreads left at only 0.28 cells per step ($d$ = 256 and 512), so the l
 notices it after 2.3 to 2.9 times $d$ steps (M3 and M4 held). The left seed owns almost everything. It is the same
 asymmetry as above, and the same slow leftward channel as §8.17. (For the prize, every finite seed, single or
 multiple, is covered by Conjecture B; Problem 1 itself asks only about the single cell.)
+
+### 8.20 How much information column 1 can carry: exact bounds (2026-10-05)
+
+The bottleneck (§8.17) can be bounded exactly. A layer of $m$ cells fed any input in column $m + 1$ makes a regular
+language of visible column-1 words. Its deterministic automaton has a few thousand states at most here, and its
+growth rate $\lambda_m$ per visible bit is the spectral radius of that automaton (`entropy.c`, `rule30_entropy.py`,
+predictions written first). Every real right side, finite or infinite, makes a column 1 inside every one of these
+languages. So
+
+```math
+h(\text{column 1 next to } 0101\ldots) \;\le\; \log_2 \lambda_m \quad \text{bits per visible bit, for every } m .
+```
+
+| Layer width $m$ | 1 to 3 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 |
+|---|---|---|---|---|---|---|---|---|---|
+| Bound, bits per visible bit | 0.694 | 0.617 | 0.442 | 0.356 | 0.316 | 0.258 | 0.244 | 0.212 | **0.185** |
+
+The controls held. $m = 1$ gives exactly the golden ratio, Lemma 3's Fibonacci count. Each $\lambda_m$ matches the
+ladder's independently counted start groups within 0.05%. Wider layers never raise the bound (a theorem, checked).
+With column 0 unclamped the instrument reads exactly 1 bit, and with column 0 constant at 0 it reads 0, Condrey's
+case.
+
+**So next to a period-2 column, column 1 carries at most 0.185 bits per visible bit, whatever the right side**,
+which is 0.09 bits per step. A random sequence carries 1. This is the bottleneck of §8.17 as a theorem rather than a
+measurement, up to the convergence of the power iteration (9 digits). The bound is still falling, by about 0.01 to
+0.02 bits per extra cell of layer, and whether it reaches zero is open. A rough estimate from the kicks (about one
+every 90 steps, a few bits each) suggests it levels off near 0.05 to 0.1 bits per visible bit.
+
+**A census of traces** (the random-chaos step: six seeded random words besides the short ones). At $m = 10$ every
+periodic column 0 except the constant 0 leaves column 1 more than 0.1 bits per visible bit (EN3 held). The trace 01
+is not the most constraining (EN2 refuted): 0001 allows 0.159 and 001 0.190, against 0.316 for 01. Per step the
+traces range from 0.09 to 0.18 bits. The wheel, which only 01 turns, does not make its column 1 unusually poor in
+information. It makes it orderly, a different thing.
