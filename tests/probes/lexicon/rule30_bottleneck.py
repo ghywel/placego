@@ -29,6 +29,20 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       step; the walls of section 8.8 move at one half), and at least 5% of the flips at j = 32 have not arrived by
       t = 512.
 REFUTED-BY: BN0 failing (the instrument); BN1 to BN4 failing.
+
+OUTCOME of the first run, 2026-10-05 (about six minutes): BN0 passed (the merge counts reproduced exactly; monotone;
+within the counting bound; and no right half of any width produced a visible prefix the width-16 layer cannot).
+  I(W, t) in bits, for W = 16, 20, 24:  t = 44: 9.92, 10.03, 10.04 | t = 64: 11.52, 12.14, 12.30 |
+      t = 128: 13.33, 15.16, 16.27 | t = 256: 14.64, 17.72, 19.96 | t = 512: 14.91, 18.88, 22.73.
+  BN1 REFUTED: at t = 64 the delivered information is the same for W = 20, 22, 24 within 0.16 bits (that half held),
+      but it is 12.1 to 12.3 bits, not at most 9.6. Early on, column 1 carries about 0.19 bits per step. At t = 44
+      real right halves of 20 or more cells fill 2^10.04 = 1,052 of the 1,092 prefixes a width-16 layer can make.
+  BN2 HELD as worded (0.058 bits per visible bit from t = 128 to 256 at W = 24), but it measured the wrong thing: by
+      then the 24-bit seed, not the channel, limits delivery (19.96 of 24 bits delivered by t = 256).
+  BN3 HELD: at t = 512, 1.09, 1.10 and 1.12 bits are still missing for W = 16, 18, 20.
+  BN4 REFUTED: a single flip's median arrival is 18, 50, 92 and 128 steps from cells 8, 16, 24, 32, a slope of 4.65
+      steps per cell: information moves left at about 0.21 cells per step, not 0.3 to 0.65. Flips never seen by
+      t = 512: 0.2%, 1.2%, 2.8%, 3.9%, below the 5% predicted at j = 32.
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 
