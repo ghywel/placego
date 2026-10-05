@@ -34,6 +34,27 @@ only (the known values: 9, 17, 33, 37; 1, 3 and 21 record prefixes at 9, 13, 33;
       common factor of the first record witnesses at d and at 2d (lengths m and n, in visible bits) is at most
       log2(m n) + 6, which two random words exceed about one time in 64.
 REFUTED-BY: RC0 failing (the instrument); RC1 to RC5 failing.
+A first attempt (2026-10-05) was stopped by the session's 30-minute limit on background jobs during depth 65. Its
+partial printout, seen after these predictions were committed, gave depths 1, 9, 17, 25, 33, 41, 49 and 54 to 61. The
+script now caches each depth's raw output (in the system's temporary directory), and the full run is the second
+attempt.
+
+OUTCOME of the full run, 2026-10-05 (depths 1 to 61 and 65, 4 cores, 55 minutes): RC0 PASSED (the known records and
+their prefix counts; equal to the Python search at every depth from 1 to 29). Records R(d), d = 1 .. 61: 1, 6, 5, 4,
+3, 4, 3, 2, 9, 8, 7, 6, 17, 16, 15, 16, 15, 14, 15, 14, 17, 16, 19, 20, 19, 18, 17, 16, 19, 20, 23, 24, 33, 32, 31,
+30, 29, 32, 31, 38, 37, 36, 35, 34, 43, 42, 41, 40, 39, 44, 47, 46, 45, 44, 43, 42, 45, 46, 51, 50, 49; and R(65) =
+57 (ending at depth 122, reached by 100 prefixes). RC1 HELD and RC2 HELD (no exceptions from 42 to 65; the tightest
+is depth 56, R = 42 = 0.75 d, ending at 98 = 1.75 d). RC3 HELD (the tail loses 0.513 bits per cell at depth 57 and
+0.481 at 65: half a bit). RC4 HELD (100 record prefixes at 65). RC5 HELD (the witnesses at d and 2d share at most 14
+visible bits, against limits of 15.5 to 16.4: nothing beyond chance). The records' ends form plateaus: one long run
+ending at a fixed depth serves a range of starting depths (R(d + 1) >= R(d) - 1 always). The distinct end depths
+are 2, 8, 10, 18, 30, 32, 34, 38, 42, 44, 48, 50, 54, 56, 66, 70, 78, 88, 94, 98, 102, 104, 110 and 122.
+A sharp pattern, seen after the run: R(d) - d is at most 4 at every depth computed (only at depths 2 and 13), equals
+0 at depths 1, 4, 9, 15, 16 and 33, and averages -7.3 over depths 20 and up. So no zero run starting at depth d has
+reached past depth 2d + 4. If R(d) <= d + 4 holds for every d, the forced left half for 0101... has infinitely many
+ones for every column 1: Conjecture LR for 01, which settles period 2 for every finite configuration. It is
+recorded as a conjecture, and JOB M4 tests it blind (M4c). The record-prefix counts (3, 5, 11, 21, 12, 44, 54, 96,
+100, ...) are mostly not powers of 2, so the run's constraints on column 1 are not linear equations over GF(2).
 
 ---------------------------------------------------------------------------------------------------------------
 JOB M4 (Cloud wrote, 2026-10-05; for Local; CLOUD-LOCAL.md lead M4). The records at depths 69, 73 and 77 (and, if the
@@ -47,6 +68,8 @@ COST:       per core, about 2 hours at depth 65, then 16 times more every 8 dept
 PREDICTIONS (written 2026-10-05 before any run of this job, and before Cloud's own run of depths 42 to 65):
   M4a (blind): RC1 and RC2 hold at every depth run: 0.75 d <= R(d) <= 1.35 d, and 1.75 d <= d + R(d) <= 2.35 d.
   M4b (blind): the record never falls by more than 6 cells from one depth run to the next one run.
+  M4c (blind; added 2026-10-05 after Cloud's run of depths 1 to 65 and before any run of this job): the doubling
+      conjecture, R(d) <= d + 4, at every depth run.
 STOP EARLY (CLOUD-LOCAL step 4): if a depth's run passes three times its COST, or if M4a fails at depth 69 (that
 would change the direction), stop and hand back at once with what exists.
 HAND-BACK (finished): the script writes the "R", "H" and "W" lines of every depth run to
@@ -92,8 +115,18 @@ def build():
     return exe
 
 
+CACHE = pathlib.Path(tempfile.gettempdir()) / "rule30_records_cache"
+
+
 def run(exe, d):
-    out = subprocess.run([str(exe), str(d), str(THREADS)], check=True, capture_output=True, text=True).stdout
+    """records.c at depth d; each depth's raw output is cached, so a stopped run resumes where it stopped."""
+    CACHE.mkdir(exist_ok=True)
+    f = CACHE / f"d{d}.txt"
+    if f.exists():
+        out = f.read_text()
+    else:
+        out = subprocess.run([str(exe), str(d), str(THREADS)], check=True, capture_output=True, text=True).stdout
+        f.write_text(out)
     R = count = None
     hist, wits = {}, []
     for line in out.split("\n"):
@@ -179,8 +212,7 @@ def main():
     for d in list(range(1, DMAX + 1)) + [65]:
         R, count, hist, wits, _ = run(exe, d)
         res[d] = (R, count, hist, wits)
-        if d % 8 == 1 or d > DMAX - 8:
-            print(f"   depth {d}: record {R} (ends at {d + R}), {count} record prefixes", flush=True)
+        print(f"   depth {d}: record {R} (ends at {d + R}), {count} record prefixes", flush=True)
     with Pool(THREADS) as pool:
         py = {d: (m, c) for d, m, c in pool.map(py_record, range(1, 30))}
     ok_known = all(res[d][0] == R and (c is None or res[d][1] == c) for d, (R, c) in known.items())
