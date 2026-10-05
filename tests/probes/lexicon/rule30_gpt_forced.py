@@ -24,7 +24,29 @@ CF (must be rejected): removing the AND-overlap parity leaves the output formula
     correct. At least one FZ0 cell must differ without that term.
 REFUTED-BY: a control or counterfactual failure invalidates the intended diagnostic;
     FZ1 outside its band refutes that empirical prediction only.
-OUTCOME: not yet run.
+OUTCOME, first run 2026-10-06: ALL CONTROLS PASS, exit 0.
+FZ0 PASSED: 100 random words x 64 cells; all 1024 depth-21 prefixes,
+    histogram (run: count) 1:512,3:244,5:81,7:72,9:48,11:36,13:16,17:15.
+CF REJECTED: deleting overlap changes some directly reconstructed cells.
+FZ2 REJECTED: depth 22 summary (1,1,0), prefixes 26 and 48 have next
+    forced outputs 1 and 0; depth 66 summary (0,1,1), prefixes 2767783534
+    and 1338062742 have next outputs 1 and 0. Prefix bit i is sigma(2i).
+FZ1 HELD at every stipulated depth. Each row below gives reached counts
+    for forced tests 1..8; passes are the next reached count, then final:
+    65: 20000,9921,4976,2544,1267,619,309,165; final passes 75.
+    129: 20000,9918,4978,2448,1247,631,305,160; final passes 67.
+    257: 20000,10047,4983,2518,1205,608,318,152; final passes 72.
+    513: 20000,9907,5035,2548,1244,614,300,168; final passes 92.
+    All 32 conditional fractions between 0.41875 and 0.56.
+
+UNEXPECTED CHECK, pre-registered before its run (append 'phase' to COMMAND).
+The derivation should survive changing the centre from 0101 to 1010;
+its free-depth convention must change too. General boundary coefficient
+is (1 - P[0]), not a hard-coded depth parity. On 100 new random words x
+64 depths (seed 302), scalar inversion and the general formula must agree.
+Counterfactual: the old 0101 formula on 1010 states must disagree on some
+cells. No new distributional prediction or claim about record maxima.
+OUTCOME of phase: not yet run.
 """
 import concurrent.futures
 import collections
@@ -153,6 +175,37 @@ def sample(d):
     return d, reached, passed, okay
 
 
+def phase_check():
+    rng = random.Random(302)
+    okay, mismatches = True, 0
+    for _ in range(100):
+        sigma = [rng.randrange(2) for _ in range(64)]
+        far, right = sigma, [1-(t & 1) for t in range(65)]
+        cells = []
+        for k in range(1, 65):
+            left = [right[t+1] ^ (right[t] | far[t]) for t in range(len(right)-1)]
+            cells.append(left[0])
+            far, right = right, left
+        p, q = 1, 0
+        for k in range(1, 65):
+            c = sigma[k-1]
+            a,b,z = summary(p,q)
+            general = (1-(k & 1)) ^ a ^ b ^ z ^ ((1-(p & 1)) & c)
+            okay &= general == cells[k-1]
+            mismatches += predicted(p,q,c,k) != cells[k-1]
+            v = (p << 1) | (q << 2) | (c << 1)
+            v = (v & ~1) | (1-(k & 1))
+            shift = 1
+            while shift <= k:
+                v ^= v << shift
+                shift *= 2
+            p,q = v & ((2 << k)-1),p
+    okay &= mismatches > 0
+    print(f'phase 1010: 6400 cells; general formula agrees {okay}; old formula mismatches {mismatches}', flush=True)
+    print('ALL CONTROLS PASS' if okay else 'CONTROL FAILURE')
+    return not okay
+
+
 def main():
     okay = controls()
     okay &= closure(22)
@@ -165,4 +218,5 @@ def main():
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    import sys
+    raise SystemExit(phase_check() if sys.argv[1:] == ['phase'] else main())
