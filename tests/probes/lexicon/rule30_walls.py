@@ -36,7 +36,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   S  (the random-chaos step, a census, blind): of the traces 0, 1, 001, 011, 0011, 0111, 00011, 00101, 000111, at least
      one other than 01 turns a wheel of its own. Its column 1 then has a sharp line (S >= 10) at a frequency that is
      not a multiple of 1 / (trace period), within 0.002.
-REFUTED-BY: CF failing (the instrument); B1, B2 or S failing; V1 or L1 failing would mean the exploratory look misled.
+  E1 (blind; the owner's tangent, 2026-10-05: "electron orbits, and how electrons jump between orbits ... is the wheel
+     fixed or can its size vary?"): column 1's orbits are discrete: the wheel U, the second wheel U2 (both period 56),
+     and the locks of period 4 and 14. Each 56-step window of column 1, over every right half up to W cells (locked ones
+     included), is classified as U, U2 (a rotation of the word), L4 or L14 (period 4 or 14), or none. E1: jumps between
+     U and U2 (consecutive classified windows of one column, gaps ignored) occur in both directions.
+  E2 (blind): the locks absorb: no jump from L4 or L14 to U or U2.
+REFUTED-BY: CF failing (the instrument); B1, B2, S, E1 or E2 failing; V1 or L1 failing would mean the exploratory look
+  misled.
 """
 import math, random, sys, pathlib
 from collections import Counter, defaultdict
@@ -252,6 +259,41 @@ def main():
         if name != "01" and s >= 10 and not on_grid:
             own.append(name)
     verdict("S another trace turns a wheel of its own", bool(own), f"{own}")
+
+    print("\n   the owner's tangent: orbits and jumps. Column 1's 56-step windows over every right half up to W cells:",
+          flush=True)
+    U2 = [int(c) for c in wl.U2]
+    rotU = {tuple(U[(t - d) % P] for t in range(P)) for d in range(P)}
+    rotU2 = {tuple(U2[(t - d) % P] for t in range(P)) for d in range(P)}
+
+    def kind(w):
+        if w in rotU:
+            return "U"
+        if w in rotU2:
+            return "U2"
+        if all(w[t] == w[t + 4] for t in range(P - 4)):
+            return "L4"
+        if all(w[t] == w[t + 14] for t in range(P - 14)):
+            return "L14"
+        return None
+    seen, jumps = Counter(), Counter()
+    for R in range(1 << W):
+        c = ts.column1(R, (0, 1), T)
+        ks = [kind(tuple(c[a:a + P])) for a in range(0, T - P + 1, P)]
+        seen.update(k for k in ks if k)
+        last = None
+        for k in ks:
+            if k is None:
+                continue
+            if last is not None and k != last:
+                jumps[(last, k)] += 1
+            last = k
+    print("      windows by orbit: " + ", ".join(f"{k}: {v}" for k, v in seen.most_common()), flush=True)
+    print("      jumps (from -> to): " + ", ".join(f"{a}->{b}: {v}" for (a, b), v in jumps.most_common()), flush=True)
+    verdict("E1 jumps between the two wheels occur both ways", jumps[("U", "U2")] > 0 and jumps[("U2", "U")] > 0,
+            f"U->U2 {jumps[('U', 'U2')]}, U2->U {jumps[('U2', 'U')]}")
+    out_of_lock = sum(v for (a, b), v in jumps.items() if a in ("L4", "L14") and b in ("U", "U2"))
+    verdict("E2 the locks absorb (no jump from a lock back to a wheel)", out_of_lock == 0, f"{out_of_lock} such jumps")
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
     sys.exit(1 if FAILS else 0)
 
