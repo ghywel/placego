@@ -57,6 +57,10 @@ balance structural? Each settled left diagonal repeats a block of 1 to 32 cells.
   CR5 (blind, uncertain): at least 75% of the diagonals 0 to 39,999 have a repeating block with exactly half its
       cells black, and the unbalanced rest (the eventually white and eventually black diagonals among them) cancel
       to within 0.001 in density.
+OUTCOME of the second run, 2026-10-05 (python3 rule30_core.py balance, seconds): CR5 REFUTED, but the other way from
+a failure of balance. Of the 40,000 band diagonals only 7,901 (19.75%) repeat an exactly balanced block; 6 are
+eventually black, 4 eventually white, and 32,089 are unbalanced. Yet the 32,099 unbalanced diagonals together have
+density 0.49999. The ordered band's balance is collective, a cancellation between diagonals, not a property of each.
 """
 import math, random, sys
 from collections import Counter
