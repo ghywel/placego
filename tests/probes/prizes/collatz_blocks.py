@@ -45,6 +45,15 @@ PREDICTIONS for scaling, written 2026-10-05 before scaling's first run:
   CS1 (blind): at j = 12 and j = 14 the least-squares slope of log2 F against w (w = 20 .. 28) lies between -0.5
       and -0.1: a real structure that fades with width.
   CS2 (blind): at w = 28 and j = 12, F is more than 2 times the noise baseline sqrt(ln 2^j / M).
+
+OUTCOME of scaling, 2026-10-05 (73 seconds). F at j = 10, 12, 14:
+  w = 20 (14,990 survivors): 0.0454, 0.0528, 0.0521;  w = 22 (46,611): 0.0137, 0.0196, 0.0361;
+  w = 24 (168,807): 0.0083, 0.0166, 0.0378;  w = 26 (573,162): 0.0045, 0.0133, 0.0074;
+  w = 28 (1,762,293): 0.0022, 0.0036, 0.0071.
+  CS0 PASSED.
+  CS1 HELD: the slope of log2 F is -0.415 per bit at j = 12 and -0.401 at j = 14. The structure fades with width,
+     nearly as fast as noise.
+  CS2 REFUTED: at w = 28 and j = 12, F is 1.67 times the noise baseline, no longer detectable.
 """
 import math, pathlib, subprocess, sys, tempfile
 

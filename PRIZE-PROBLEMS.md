@@ -259,3 +259,34 @@ at $w = 26$, on 573,162 survivors among $2^{25}$ numbers:
 So the Collatz twin of the bounded-debt statement reduces, block by block, to bounding exponential sums
 $\sum_v e(h\,y_v / 2^j)$ over the parity vectors that stay up. That is a concrete analytic target of the kind
 Tao's method addresses. Whether the structure fades as $w$ grows is the next measurement (§7.3).
+
+### 7.3 The structure fades with width, and why the two problems are one shape
+
+**Measured** (`collatz_blocks.py scaling`, predicted first). The largest odd Fourier coefficient of the survivors'
+state $y \bmod 2^j$, at $w$ = 20, 22, 24, 26, 28:
+
+| $j$ | $w = 20$ | 22 | 24 | 26 | 28 | slope of $\log_2 F$ per bit |
+|---|---|---|---|---|---|---|
+| 12 | 0.0528 | 0.0196 | 0.0166 | 0.0133 | 0.0036 | $-0.415$ |
+| 14 | 0.0521 | 0.0361 | 0.0378 | 0.0074 | 0.0071 | $-0.401$ |
+
+- **The structure fades** (CS1 held), nearly as fast as sampling noise, which falls by 0.5 per bit.
+- **At $w = 28$ it can no longer be seen** at $j = 12$ (CS2 refuted: 1.67 times the noise baseline).
+- So the state after the free bits equidistributes modulo $2^j$ as the width grows. That is the asymptotic shape a
+  proof by exponential sums needs: errors that vanish as $w \to \infty$ at each fixed scale.
+
+**Why the two problems are one shape.** Bernstein and Lagarias's conjugacy $Q$ sends $n$ to its parity sequence,
+read as a 2-adic integer (PRIOR-ART, the wide survey). It is triangular: bit $k$ of $Q(n)$ is bit $k$ of $n$ XOR a
+function of the lower bits. In the language of this project it is permutive in its newest input, as Rule 30 is in
+its left neighbour. A finite $n$ fixes every input bit above the top one. Then:
+- **Collatz:** do the output bits beyond the free part, which are functions of the free bits alone, behave like
+  coins?
+- **Rule 30, period 2:** the forced left half is the output of a triangular bijection from the seed, and a finite
+  seed fixes every input cell beyond its edge. The question is the same.
+
+Both are about a triangular bijection evaluated on inputs of finite support. The difference is the functions
+behind the bits. In Collatz they are arithmetic, carries of $3x + 1$ with the multiplicative structure of $3^a$,
+so they can be written as exponential sums and attacked analytically. In Rule 30 they are Boolean circuits of XOR
+and OR, with no arithmetic to use. That is the avenue the owner asked for: the same question, with tools on one
+side that the other lacks. A method that proves the Collatz form might suggest what a Rule 30 proof would need: a
+substitute for that arithmetic, as §8.45 already concluded for Mahler's problem.
