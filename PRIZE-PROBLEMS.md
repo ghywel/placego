@@ -57,7 +57,7 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
-  - The owner's morning questions (§8.22 to §8.29). Read as a binary number, a column is rational exactly when it
+  - The owner's morning questions (§8.22 to §8.30). Read as a binary number, a column is rational exactly when it
     repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
     numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
     pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. As a conductor Rule 30
@@ -2110,3 +2110,32 @@ perfect.
 method, which walks no corridor more than twice), or following one wall when the maze has no loops. In the worst case
 any method must explore most of the maze. A pyramid grown by a rule from one seed is not such a maze: its walls are
 made by causes, and every black cell has a cause above it. Climbing towards the cause is always right.
+
+### 8.30 The band of stripes, and where the chaos stops (2026-10-05)
+
+§8.27 found the left diagonals periodic with tiny periods after a transient. `rule30_leftband.py` follows them to
+distance 2,047 from the left edge (8,192 steps, predictions written first).
+- **The periods stay tiny.** They double only just after an eventually-zero left diagonal, as proved in §8.27. Those
+  are at distances 2, 7, 28 and 399, so the period is only 16 at distance 2,047. I predicted the zero diagonals would
+  come at a steady ratio near 4 (LB1, refuted): the gaps grow faster.
+- **The stripes are universal.** Three random seeds give the same eventually-zero diagonals, 2, 7, 28 and 399
+  (LB3). Only the transients depend on the seed.
+- **The band grows linearly.** Diagonal $e$ settles after about $1.3e$ steps (LB2; I predicted 1.4 to 2.2). So the band
+  of stripes fills the left 38% of every row, and its inner edge moves left at about 0.25 cells per step.
+- **That edge is Rule 30's leftward speed of information.** On a random background a single flipped cell's influence
+  spreads left at 0.246 cells per step (LB5 held: 10 trials, 0.226 to 0.254). The band's edge moves at 0.245 to 0.257,
+  measured from the transients' growth. So the stripes fill the part of the pyramid that news of the seed has not yet
+  reached. The chaotic core spreads left at a quarter of the speed of light, and outside it the left edge settles into
+  the same stripes whatever the seed was.
+
+One design error is recorded. To measure the seed's front I compared the pyramid from 1 with the pyramid from 11
+(LB4). The two differ only in one extra cell along the right edge, at every step. The extra cell sits to the right of
+a black cell, and the OR in $c' = l \oplus (c \lor r)$ ignores $r$ when $c = 1$. So the change never enters the
+interior. It is a small instance of the handedness that runs through §8.25 to §8.29: Rule 30 hides changes that
+arrive from the right of a black cell.
+
+**Together with §8.27, the pyramid has three regions.** On the left is the band of universal stripes, 38% of each
+row. On the right is a thin strip where the nested, period-doubling diagonals have had time to repeat. Its period is
+about $2^{0.35d}$ at distance $d$, so the strip's width grows only like the logarithm of the depth, about
+$2.8 \log_2 t$. Between them is the chaotic core, whose left edge moves at 0.25 cells per step. The centre column,
+whose irrationality is the prize, lies inside the core.

@@ -48,6 +48,17 @@ column; section 8.19, 0.28 for a second seed on the open line).
   LB5 (blind): the same front on a random background (two random rows differing in one cell, 10 trials over 2^LOGT
       steps) moves left at a speed within 0.02 of the band's: the band's edge is Rule 30's leftward speed of
       information.
+OUTCOME of the second run, 2026-10-05 (python3 rule30_leftband.py front, 1 second). LB4 REFUTED, by its design: the
+leftmost difference between Rule 30 from 1 and from 11 moves RIGHT at exactly +1 cell per step. A check afterwards
+(not part of this script) found every difference within one cell of the right edge x = t, at every step to 4,096:
+the pyramid from 11 is the pyramid from 1 with one more cell along its right edge. The extra cell sits right of a
+black cell, and Rule 30's OR hides it (c' = l XOR (c OR r) ignores r when c = 1), so it never enters the interior and
+says nothing about the seed's information front. LB5 HELD: on a random background the left front moves at -0.2542,
+-0.2259, -0.2472, -0.2483, -0.2512, -0.2420, -0.2497, -0.2407, -0.2526, -0.2522 (mean -0.2464, standard error about
+0.003), within 0.02 of the band's -0.233. That band speed comes from a fit through 0, which the transients' offset
+biases; from increments of the recorded preperiods it is -0.245 (e = 500 to 2047) and -0.257 (1000 to 2047), on both
+sides of the front's speed. So the band's inner edge moves at Rule 30's leftward speed of information, about a quarter
+of a cell per step: the stripes fill the part of the pyramid that news of the seed has not yet reached.
 """
 import random, sys
 
