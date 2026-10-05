@@ -2683,3 +2683,40 @@ coin's growing runs. Only the constant walls have zero entropy, and only they ha
 coming from Rule 30's own interior, must pay a bit for every condition the left half imposes. The wheel narrows the
 search for that statement, from any column 1 to a kicked rotation, but does not supply it.
 
+### 8.45 Mahler's 3/2 problem has the same structure, and stops in the same place (2026-10-05)
+
+Kopra's class of rapidly left expansive cellular automata contains Rule 30 and the automata that multiply by a
+fraction $p/q$ (PRIOR-ART, "Rule 30's siblings in arithmetic"). On the multiplication side, the question of the
+same shape is Mahler's 3/2 problem (1968), still open. It asks whether some $\xi > 0$ keeps every fractional part
+of $\xi (3/2)^n$ below $1/2$. Flatto, Lagarias and Pollington (1995) proved its strongest partial result: the
+fractional parts of $\xi(p/q)^n$ cannot all fit in an interval shorter than $1/p$. Reading their proof shows the same
+skeleton as this work's wall form.
+
+Side by side, Mahler's method (FLP 1995) and Rule 30's period 2:
+- **The free side.** There, the integer parts form a full shift: every itinerary occurs once, by residues mod
+  $q^k$. Here, the left half at the wall is a full shift too, with itinerary and seed in bijection (WA1, §8.39).
+- **The constrained side.** There, the fractional parts follow a linear mod-one map with few admissible strings
+  ($c\beta^k$). Here, column 1 is a kicked rotation with few admissible words (the channel bound, §8.20).
+- **The object sought.** There, a Z-number: the two itineraries agree for ever. Here, a finite configuration with
+  centre 0101: the wall's conditions hold for ever.
+- **Sparsity.** There, fewer than $x^\gamma$ Z-numbers below $x$ (Theorem 1.1). Here, the entropy squeeze (§8.33).
+- **Emptiness.** There, it is proved when only finitely many fractional orbits are admissible (Theorem 3.2). Here,
+  Jen's theorem (periodic column 1) and Condrey's constant walls (monotone column 1) are the same kind of case.
+- **Open.** There, Mahler's interval 1/2, where infinitely many orbits are admissible. Here, the 0101 wall, where
+  column 1 has positive entropy.
+
+The proof of emptiness, in both settings, runs the same way. If the constrained side has only finitely many
+behaviours, pigeonhole makes the coupled orbit periodic, and the free side's injectivity forbids that. Where the
+constrained side has positive entropy, nothing forces periodicity, and the method stops. Rule 30's period 2 sits
+there, as Mahler's own conjecture does.
+
+**What it means.** This is a calibration, not a route. It places the problem precisely: a Mahler-type problem in the
+regime where the decoupling method has not worked for 57 years. It also explains, in one frame, everything this
+document has found:
+- the solved cases are exactly the zero-entropy ones (§8.40, §8.41);
+- the counting results give sparsity but never emptiness (§8.33, §8.41);
+- the wheel's rigidity narrows the constrained side without making it finite (§8.44).
+
+A new idea would have to do what nobody has done for Mahler's problem: get emptiness from a constrained side of
+positive entropy.
+

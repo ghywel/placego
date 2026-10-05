@@ -99,6 +99,12 @@ and Condrey's proof do. The one structure found that exists only next to the 010
 trace tried turns a wheel of its own (§8.8). The likely shape of a proof is a size argument, like Chebyshev's
 proof of Bertrand's postulate, and not a proof that Rule 30 is random.
 
+**Where it sits** (§8.45). The problem has the structure of Mahler's 3/2 problem: the left half is a free full
+shift, column 1 is a thin constrained language, and the two must agree at the wall for ever. Mahler's method
+proves emptiness only when the constrained side is finite, which is our Jen and Condrey cases. It stops where the
+constrained side has positive entropy, as next to 0101. That is where Mahler's own conjecture has been open since
+1968.
+
 ## 6. Live leads (2026-10-05)
 
 1. **The wheel's kicks** (§8.43, §8.44). A kick's size comes from the interior, not from the wall's origin, its

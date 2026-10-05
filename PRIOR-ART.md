@@ -1408,9 +1408,36 @@ points to?
 - **Mahler's 3/2 problem** (1968; checked via https://en.wikipedia.org/wiki/Mahler%27s_3/2_problem). It asks whether
   any xi > 0 keeps every fractional part of xi (3/2)^n below 1/2 (a "Z-number"). It is open.
 - **Flatto, L., Lagarias, J. C. and Pollington, A. D., "On the range of fractional parts {xi (p/q)^n}"**, Acta
-  Arithmetica 70 (1995), 125-147 (statement checked through the search summary; the paper not read). For coprime
-  p > q >= 2, any interval holding every {xi (p/q)^n} has length at least 1/p. This is a proved size argument on
-  the multiplication side of Kopra's class, partial, as Mahler's conjecture needs 1/2.
+  Arithmetica 70 (1995), 125-147 (http://matwbn.icm.edu.pl/ksiazki/aa/aa70/aa7023.pdf; sections 1 to 3 read, the
+  proofs of Theorems 1.1, 1.2, 3.2 followed, Theorem 3.3's lemmas skimmed). For coprime p > q >= 2, any interval
+  holding every {xi (p/q)^n} has length at least 1/p (Theorem 1.4). Partial, as Mahler's conjecture needs 1/2.
+  How the proof works, Mahler's "decoupling":
+  - The integer parts g_n follow a fixed map T on the integers. Its symbols (g mod q) form a full shift: every
+    string of length k occurs exactly once among the residues mod q^k (Lemma 2.2).
+  - The scaled fractional parts follow a linear mod-one map f(x) = beta x + alpha with beta = p/q. Its admissible
+    strings are few: at most c beta^k of length k.
+  - xi is a generalised Z-number exactly when the two itineraries agree, up to a fixed permutation (Prop. 2.1). The
+    counting gives sparsity (Theorem 1.1, at most x^gamma Z-numbers below x, gamma < 1).
+  - Emptiness comes from finiteness (Theorem 3.2). If only finitely many f-orbits stay in the interval, then
+    pigeonhole makes the orbit periodic. Two different powers of xi would then share one integer itinerary, which
+    Lemma 2.2's injectivity forbids. Theorem 3.3, the long part, shows that finiteness holds for a dense set of
+    intervals of length 1/p.
+- **What it means here: the same structure, in the same open regime.** The wall form of RULE30-PRIZE.md §8.39 and
+  §8.40 is a decoupling of the same kind:
+  - **The free side.** The left half is a full shift at the wall, its itinerary in bijection with the seed (WA1).
+    That is the integer side.
+  - **The constrained side.** The right half's column 1 has a thin language (the channel bound, §8.20). That is the
+    mod-one side.
+  - **The coupling.** A finite configuration with a periodic centre needs the two to agree at the wall for ever:
+    that is a Z-number.
+  - **Emptiness by finiteness** is, here, Jen's theorem (a periodic column 1) and Condrey's constant walls (column 1
+    monotone, so finitely many behaviours).
+  - **The open regime.** Next to 0101 the constrained side has positive entropy, about 0.12 bits per visible bit, so
+    infinitely many admissible behaviours. That is exactly the regime of Mahler's own conjecture (interval 1/2 > 1/p),
+    which this method has not closed since 1968. The entropy squeeze (§8.33) is the analogue of FLP's Theorem 1.1,
+    sparsity without emptiness.
+  The import is a calibration, not a route: Rule 30's period-2 case is a Mahler-type problem in the regime where
+  Mahler's method stops.
 - **What it means here.** In the same class as Rule 30, the question of the same shape is also open, and the best
   known result is a size bound. Its proof uses the arithmetic of p/q (integers and residues), which Rule 30 lacks.
   A Rule 30 analogue would need a substitute for that arithmetic. It is recorded as the nearest proved size
