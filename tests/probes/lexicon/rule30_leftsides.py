@@ -2,7 +2,8 @@
 """rule30_leftsides.py: Rowland's question. Does Rule 30 have one left side, or several, depending on the seed?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact, with certificates)
-COMMAND:    python3 tests/probes/lexicon/rule30_leftsides.py [LOGT=18] [K=160000] [SEEDS=40] | ... deeper | ... relphase
+COMMAND:    python3 tests/probes/lexicon/rule30_leftsides.py [LOGT=18] [K=160000] [SEEDS=40] | ... deeper |
+            ... relphase | ... construct
 COST:       about three minutes on one core.
 
 The question (Rowland, "Local nested structure in rule 30", Complex Systems 16, section 5; PRIOR-ART.md). Read from a
@@ -77,10 +78,27 @@ mechanism, measured relative to each row's own phase. For each row find the shif
 equal to the single seed's at time T - 1 - j (along the single seed's cycle), so the row runs j steps behind.
   LS8 (blind): the last black cell of diagonal 53207, less j, has the same phase mod 16 for all 20 rows: the decision
       at the split is locked to the cycle, whatever the row.
+OUTCOME of the third run, 2026-10-05 (python3 rule30_leftsides.py relphase, 1 minute 47 seconds): LS8 HELD. The rows
+run 0 to 25 steps behind the single seed, and once that is removed the last black cell of diagonal 53207 falls at
+phase 11 mod 16 for all 20. The decision at the split is locked to the left side's own cycle, whatever the row: the
+row is forgotten before the decision is made. That is why every row tried takes the same branch.
+
+ADDENDUM, written 2026-10-05 after the third run and before the fourth (python3 rule30_leftsides.py construct): do
+Rowland's other continuations occur for some initial conditions? A strip is the row itself in left-edge coordinates, so
+any settled strip is a valid finite seed (at most K cells). Flip, in the single seed's settled strip, the cell of a
+branch diagonal: the diagonal before it is white for ever, so nothing resets the flipped one, and the flip should
+persist. A flip anywhere else should heal.
+  LS9 (blind): flipping diagonal 53208 of the settled strip gives a finite seed whose left side agrees with the
+      universal one to width 53208 and differs at width 53209. The other continuation is realised.
+  LS10 (blind): the alternative side has its own branch points, Rowland's column 72577 (our diagonal 72576) among them.
+      Flipping there, and separately at the universal side's second branch point 58287, gives finite seeds with at
+      least 4 distinct left sides in all at width K.
+  LS11 (control, blind): flipping a cell at diagonal 60000, not a branch point, heals: the seed's left side is the
+      universal one at width K.
 """
 import random, sys
 
-_nums = [a for a in sys.argv[1:] if a not in ("deeper", "relphase")]
+_nums = [a for a in sys.argv[1:] if a not in ("deeper", "relphase", "construct")]
 LOGT = int(_nums[0]) if len(_nums) > 0 else 18
 K = int(_nums[1]) if len(_nums) > 1 else 160000
 SEEDS = int(_nums[2]) if len(_nums) > 2 else 40
@@ -331,5 +349,51 @@ def relphase():
             f"relative phases {sorted(set(p for p in phases if p is not None))}")
 
 
+def branch_points(cyc):
+    u = 0
+    for v in cyc:
+        u |= v
+    out = []
+    for z in range(1, K - 1):
+        if not (u >> z) & 1:
+            sq = diag_seq(cyc, z - 1)
+            if sum(sq[:period(sq)]) % 2 == 0:
+                out.append(z + 1)
+    return out
+
+
+def construct():
+    base = certify(strip_run(1, K, T, KEEP))
+    settled = base[-1]
+    bp = branch_points(base)
+    print(f"   universal side: branch points {bp}", flush=True)
+    sides = {"universal": base}
+
+    def flipped(V, e, name):
+        cyc = certify(strip_run(V ^ (1 << e), K, T, KEEP))
+        sides[name] = cyc
+        b = branch_points(cyc) if cyc else None
+        print(f"   {name}: certified {cyc is not None}; branch points {b}", flush=True)
+        return cyc
+    alt = flipped(settled, 53208, "flip at 53208")
+    same_below = alt is not None and side(alt, 53208) == side(base, 53208)
+    differs = alt is not None and side(alt, 53209) != side(base, 53209)
+    verdict("LS9 the flip at 53208 persists: same left side to width 53208, different at 53209",
+            same_below and differs, f"same to 53208 {same_below}; differs at 53209 {differs}")
+    abp = branch_points(alt) if alt else []
+    if 72576 in abp:
+        flipped(alt[-1], 72576, "flip at 53208, then at 72576")
+    if 58287 in bp:
+        flipped(settled, 58287, "flip at 58287")
+    distinct = len({side(c, K) for c in sides.values() if c})
+    verdict("LS10 the alternative side branches at 72576; at least 4 distinct left sides at width K",
+            72576 in abp and distinct >= 4, f"alternative side's branch points {abp}; {distinct} distinct sides")
+    heal = certify(strip_run(settled ^ (1 << 60000), K, T, KEEP))
+    verdict("LS11 a flip at diagonal 60000 heals", heal is not None and side(heal, K) == side(base, K))
+    width = settled.bit_length()
+    print(f"   the constructed seeds have at most {width} cells (the settled strip's length)", flush=True)
+
+
 if __name__ == "__main__":
-    relphase() if "relphase" in sys.argv[1:] else deeper() if "deeper" in sys.argv[1:] else main()
+    (construct if "construct" in sys.argv[1:] else relphase if "relphase" in sys.argv[1:]
+     else deeper if "deeper" in sys.argv[1:] else main)()
