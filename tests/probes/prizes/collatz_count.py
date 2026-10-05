@@ -27,6 +27,18 @@ PREDICTIONS, written 2026-10-05 before this script's first run (w = 16 .. WMAX):
       log2(S_w(T + k) / S_w(T)) - log2(P(T + k) / P(T)), the excess over the coin, e_w <= 8 at every w, and
       e_WMAX - e_16 <= 2.
 REFUTED-BY: CZ0 failing (the instrument); CZ1 to CZ4 failing.
+
+OUTCOME, 2026-10-05 (the first run, 21 seconds, w = 16 .. 30, every number):
+  CZ0 PASSED: Terras's bijection, exactly, at every w and T <= w - 1.
+  CZ1 HELD: stopping time and coefficient stopping time give the same counts at every T, for every w from 20 to 30.
+  CZ2 REFUTED, narrowly: the largest stopping time grows by 21.1 steps per bit (135 at w = 16 to 357 at w = 30, noisy:
+     395 at 28). Lagarias and Weiss's stochastic models (Ann. Appl. Probab. 2, 1992) predict growth in proportion to
+     log n for the total stopping time (41.68 log n); their constant is for a different quantity and was not
+     compared here.
+  CZ3 HELD: past the free bits (w = 30, T = 30 .. 285) log2 S_w(T) falls by 0.0637 bits per step, against 0.0640 for
+     the coin (the random walk of Terras's parity vectors). The high bits pay the coin's rate, as Rule 30's right
+     part pays 1.002 bits per condition.
+  CZ4 HELD: the excess over the coin, e_w, is 0.2 to 3.7 and does not grow (1.93 at w = 16, 0.43 at w = 30).
 """
 import math, pathlib, subprocess, sys, tempfile
 

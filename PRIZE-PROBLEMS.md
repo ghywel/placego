@@ -212,4 +212,26 @@ and the prize is about every single case.
 
 ### 7.1 The counting form, carried to Collatz
 
-See `tests/probes/prizes/collatz_count.py`: the Rule 30 instrument, with predictions written before its run.
+`tests/probes/prizes/collatz_count.py` (with `collatz.c`; predictions written before the run) counts every number
+of 16 to 30 bits. $S_w(T)$ is the number of $w$-bit numbers whose orbit under $T(n) = n/2$ or $(3n+1)/2$ stays at
+or above $n$ for $T$ steps. The coin is Terras's random walk of parity vectors: $P(T) = V(T)/2^T$, with $V(T)$ the
+number of parity vectors whose coefficient $3^{a_t}/2^t$ stays above 1.
+- **The free bits pay exactly** (CZ0, the control). For $T < w$ the coefficient count is $2^{w-1-T} V(T)$, by
+  Terras's bijection. This is the Collatz form of RULE30-PRIZE.md §8.51's lemma.
+- **Past the free bits, the high bits pay the coin's rate** (CZ3 held). At $w = 30$, $\log_2 S_w(T)$ falls by 0.0637
+  bits per step from $T = 30$ to 285, against 0.0640 for the coin. That is the counterpart of Rule 30's 1.002 bits
+  per condition.
+- **The excess over the coin does not grow** (CZ4 held): at most 3.7 bits, at every width from 16 to 30.
+- **Stopping time equals Terras's coefficient stopping time** for every number of 20 to 30 bits (CZ1 held).
+- **The horizon** grows by about 21 steps per bit (CZ2 refuted: I said 8 to 20).
+
+**What it means.** Collatz behaves in the count exactly as Rule 30 does. The free part pays exactly, the open part
+pays the coin's rate, and the excess stays bounded. So the Rule 30 statement has a Collatz twin: *the number of
+$w$-bit numbers whose stopping time exceeds $T$ is at most $2^{c} \cdot 2^{w-1} P(T)$ for every $T$.* Since $P(T)$
+decays exponentially, the count then falls below one at $T \approx (w + c)/0.064$, so every stopping time is
+finite, and the conjecture follows by induction. Terras's theorem proves it with $c = 0$ for $T < w$. Beyond $w$ it
+is open, and measured here with $c \le 3.7$ to $w = 30$. The agreement with the coin is long known in spirit (Lagarias
+and Weiss's stochastic models, 1992). What carries over from Rule 30 is the framing: an exact count of finite
+objects, split into the part that pays exactly and the part that pays on average. In both problems the second part
+is the whole difficulty, so a method that bounds it in one may transfer to the other. That is the most concrete
+cross-prize lead this work has produced.
