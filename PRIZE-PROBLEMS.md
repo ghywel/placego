@@ -928,6 +928,14 @@ whole shortfall is at period 13 with column 0 = 0001… (P = 52), where the orbi
 of the budget, not a result. In all, **LR holds exactly for each of the 550,201 periodic columns 1 now decided**, and
 6,851 words (527 classes, all at that one period) remain open.
 
+**The wheel out of step** (the random-chaos step of 2026-10-05, prediction O3 in `wheel_orbit.c`). Delay $U$ by an
+odd number of steps and it breaks Lemma 3, so no right half can make it. Conjecture LR still covers it. **O3 held:**
+the orbit cycles after $\mu = 276\,594\,382$ steps, with $\lambda = 363\,832 = 2^3 \cdot 7 \cdot 73 \cdot 89$, and the
+cycle is not zero (phases 1 and 3 agree). On that cycle both columns have period 28 in time, and $\lambda$ is exactly
+the longest cycle the kill search found for trace 0001… at periods 7 and 14. Different starting points fall into
+the same cycles of $F$. So LR survives even a wheel that no right side could produce. (The certificate's verifier now
+factors $\lambda$ itself, after a composite was passed to it as a prime; both certificates were re-verified.)
+
 **Where this leaves the proof.** The route now has three parts. The first is measured, the second is done, and
 the third is open:
 1. **The right side is a wheel with slips.** This is §8.5, measured on every right half up to 12 cells. It is not yet

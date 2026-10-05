@@ -4,7 +4,7 @@
  * BUILD:      cc -O2 -o wheel_orbit tests/probes/lexicon/wheel_orbit.c
  * COMMAND:    ./wheel_orbit WORD PHASE MAXSTEPS        e.g. ./wheel_orbit U 0 200000000000
  *             ./wheel_orbit selftest                    the known answers below
- *             ./wheel_orbit verify U PHASE MU LAMBDA P1 P2 ...   re-check a certificate (P1.. = primes of LAMBDA)
+ *             ./wheel_orbit verify U PHASE MU LAMBDA   re-check a certificate (it factors LAMBDA itself)
  * COST:       about a billion steps a second; MAXSTEPS bounds the work.
  *
  * Column 0 = 0101... and column 1 = WORD delayed by PHASE (both exactly periodic, period P) force every left column to
@@ -40,6 +40,15 @@
  *   they must agree.
  *   COMMAND: ./wheel_orbit U 1 200000000000 && ./wheel_orbit U 3 200000000000
  *   REFUTED-BY: a cycle equal to the zero fixed point (that would refute LR), or no cycle within the budget.
+ *   OUTCOME, 2026-10-05: O3 HELD. Phases 1 and 3 agree, with mu = 276,594,382 and lambda = 363,832 = 2^3 x 7 x 73 x 89
+ *   (about 1.1 x 10^9 steps), and the cycle is not zero. On the cycle both columns have least period 28 in time,
+ *   and lambda equals the longest cycle that periodic_kill.c found for trace 0001... at q = 7 and 14 (P = 28). F's
+ *   cycles are shared between starting points, and this one lies among columns of period 28.
+ *   VERIFIER FIX, the same day: the first verify of this certificate was given 6497 as a prime, but 6497 = 73 x 89, and
+ *   the minimality check trusted the command line. verify() now factors lambda itself by trial division. Both
+ *   certificates were re-verified with it: U phase 0 (primes 2, 7, 17, 1433, 5501) and U phase 1 (2, 7, 73, 89). The
+ *   wrong certificate lambda = 1456 for U2 is still rejected. Proposition 6's first verification had been given the
+ *   correct primes.
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -140,13 +149,32 @@ static int verify(const char *word, int phase, uint64_t mu, uint64_t lam, int np
     for (uint64_t i = 0; i < mu; i++) { prev = s; s = F(s); }
     int ok = !(s.b == 0 && s.c == 0);
     printf("state after mu steps is %s\n", ok ? "not zero" : "ZERO");
+    int pb = P, pc = P;                                    /* the least period in time of the cycle's two columns */
+    for (int q = 1; q <= P; q++) if (P % q == 0) {
+        uint64_t rb = s.b, rc = s.c;
+        for (int i = 0; i < q; i++) { rb = rot(rb); rc = rot(rc); }
+        if (rb == s.b && pb == P) pb = q;
+        if (rc == s.c && pc == P) pc = q;
+    }
+    printf("on the cycle, the two columns have least periods %d and %d in time (of %d)\n", pb, pc, P);
     state x = s;
     for (uint64_t i = 0; i < lam; i++) x = F(x);
     int back = eq(x, s);
     printf("lambda steps %s to it\n", back ? "return" : "do NOT return");
     ok &= back;
-    for (int j = 0; j < nprimes; j++) {
-        uint64_t p = strtoull(primes[j], NULL, 10), d = lam / p;
+    /* Factor lambda here, by trial division, rather than trust primes from the command line (a composite given as a
+     * prime would weaken the minimality check silently). Any primes given are ignored. */
+    (void)nprimes; (void)primes;
+    uint64_t fac[64]; int nf = 0;
+    uint64_t rest = lam;
+    for (uint64_t f = 2; f * f <= rest; f++)
+        if (rest % f == 0) { fac[nf++] = f; while (rest % f == 0) rest /= f; }
+    if (rest > 1) fac[nf++] = rest;
+    printf("lambda's distinct primes:");
+    for (int j = 0; j < nf; j++) printf(" %llu", (unsigned long long)fac[j]);
+    printf("\n");
+    for (int j = 0; j < nf; j++) {
+        uint64_t p = fac[j], d = lam / p;
         x = s;
         for (uint64_t i = 0; i < d; i++) x = F(x);
         int early = eq(x, s);
