@@ -1533,3 +1533,118 @@ It is also why a proof is hard: where the statistics are coin flips, there is no
 places where the chaos does fail are structural, not statistical: the tie between neighbouring columns (§8.15), the
 wheel (§8.5), the notched kicks (§8.8), Jen's leftward flow of periodicity (§8.13), and now the bottleneck. The next
 step measures the bottleneck: how fast a right half's bits reach column 1.
+
+### 8.17 The bottleneck, measured: the channel, not the seed (2026-10-05)
+
+How much of a right half's information has reached column 1 by time $t$? `bottleneck.c` counts $D(W, t)$, the
+distinct visible histories of column 1 over every right half of at most $W$ cells; $I = \log_2 D$ is what the left
+side can have received (`rule30_bottleneck.py`, predictions written first). An exact ceiling comes from the ladder:
+a layer fed any input can make every prefix a real right half can, so $D(W, t) \le G(m, t + 1)$ for every $m$. It
+held at every point.
+
+| Information delivered, bits | $t = 44$ | 64 | 128 | 256 | 512 |
+|---|---|---|---|---|---|
+| right halves up to 16 cells | 9.92 | 11.52 | 13.33 | 14.64 | 14.91 |
+| up to 20 cells | 10.03 | 12.14 | 15.16 | 17.72 | 18.88 |
+| up to 24 cells | 10.04 | 12.30 | 16.27 | 19.96 | 22.73 |
+
+- **Early on the channel limits delivery.** By $t = 64$ the information is the same, about 12.3 bits, for every width
+  from 20 to 24: about 0.19 bits per step. At $t = 44$ real right halves already make 1,052 of the 1,092 prefixes a
+  width-16 layer can (BN1 refuted only in its number: I had predicted at most 9.6 bits).
+- **Later the seed limits it, and never quite finishes.** At $t = 512$ about 1.1 bits are still missing for widths
+  16 to 20 (BN3 held).
+- **Information moves left at about a fifth of a cell per step.** Flip one cell of a random right half: the change
+  reaches column 1 after a median of 18, 50, 92 and 128 steps from cells 8, 16, 24 and 32, a speed of 0.21 cells per
+  step (BN4 refuted: I had predicted 0.3 to 0.65, near the walls' one half).
+
+`rule30_realruns.py` then tested what this predicts for the real zero runs, over every right half up to 28 cells
+(268 million), with its predictions written first:
+
+| Longest real zero run from depth $s$ | 41 | 57 | 73 | 89 | 105 |
+|---|---|---|---|---|---|
+| right halves up to 16 cells | 8 | 10 | 8 | 11 | 10 |
+| up to 20 cells | 8 | 10 | 8 | 12 | 11 |
+| up to 24 cells | 8 | 10 | 9 | 13 | 11 |
+| up to 28 cells | 8 | 10 | 9 | 13 | 12 |
+| $2^{20}$ random right halves of 40 cells | 8 | 10 | 9 | 12 | 11 |
+
+From depth 41 the longest run is 8 for every width from 16 to 28, although the number of right halves grows 4,096-fold
+(RR1 held). Deeper, wider seeds buy a cell or two (RR2 held, just). The runs fall even below the distinct-history
+estimate at depth 73 (RR3 refuted), and random 40-cell seeds do no better than 20-cell ones (RR4 refuted).
+
+**What it means.** Next to column 0 = 0101…, column 1 is a narrow channel. A seed's information enters it at about
+0.2 bits per step at first and moves through the right side at about 0.2 cells per step. **At a fixed depth, the
+longest zero run is set by the channel, not by the seed: a wider seed buys almost nothing.** For the prize, that is
+the coin model's budget made concrete. An eventually zero left half would need unboundedly many bits delivered on
+time through a channel that carries a fraction of a bit per step. It does not prove anything: a single right half
+needs only one lucky history, and the channel's capacity does not exclude one. But it shows where the right side's
+power runs out.
+
+### 8.18 White triangles and the kicks: the owner's lead (2026-10-05)
+
+The owner: "there are valley defined similar structures such as white triangles that appear in the pattern. Is it
+possible to track similar structures (same size triangle, different location), building a graph of where those
+structures appear and how they relate to the kick?"
+
+**The triangles are exact.** In Rule 30 a maximal run of $n \ge 2$ zeros $[a, b]$, bounded by ones, becomes exactly
+$[a + 1, b - 1]$ one step later:
+
+```math
+x'(a) = 1 \oplus (0 \vee x(a+1)) = 1, \qquad x'(b) = 0 \oplus (0 \vee 1) = 1 ,
+```
+
+and the cells between have three zero parents. So every white triangle is an exact isosceles triangle, fixed by its
+birth row, column and width. `rule30_triangles.py` checked it on a million runs (0 exceptions), and its
+counterfactual, Rule 110, breaks it every time. The forced left half's zero runs of §8.12 to §8.16 are the bases of
+such triangles at time 0.
+
+**Next to column 0 they form a lattice, and a kick is a dislocation of it** (`rule30_lattice.py`). In the wheel's own
+frame (time measured from its phase), the triangles born in columns 2 to 7 sit on 34 fixed sites. Same sizes,
+same places, every 56 steps: the owner's graph is a set of chains, one per site, each repeating every period.
+Across a kick:
+
+| | Births in columns 2 to 4 on the lattice |
+|---|---|
+| before the kick, read at the old phase | **100.0%** (44,320) |
+| after re-locking, read at the new phase | **100.0%** (58,092) |
+| after re-locking, read at the old phase | 26.6% |
+
+So a kick moves the whole lattice rigidly in time by the kick's shift, and nothing else changes (LT2 held). The
+triangles alone recover the shift in only 58% of kicks (LT3 refuted), because the lattice nearly repeats under some
+other shifts. The chains are short, about 1.5 periods on average, because kicks come about every 90 steps. They are
+longest in column 3 and shorten outwards (LT4 refuted: I had predicted column 2 would hold the longest).
+
+**Interior triangles do not foretell kicks.** In columns 12 to 30, in the 36 steps before the wall leaves, the
+density of large triangles near kicks is that at random times: ratios 1.02 and 1.00 for the two wall species (TK1
+held). **The two wall species differ in what they carry:** along the wall's own path, class-32 walls have 1.47
+times the usual density of large triangles, while class-52 walls have the usual density (TK2 refuted: I had
+predicted fewer for both). `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
+- on the left, the lattice in the wheel's frame, 56 phases down and columns 0 to 16 across;
+- on the right, a space-time around a kick, with a margin strip that is green while column 1 runs the wheel and red
+  at departures.
+
+(A first run of `rule30_triangles.py` was void: its kick detector mixed a relative phase with absolute time. The
+detector now has a control, KC, that every later run passed at 98.6%.)
+
+### 8.19 Upwards and sideways: the owner's two pyramid questions (2026-10-05)
+
+**"Build the pyramid from the starting point upwards as well as downwards, as a mirror?"** It is not a mirror.
+Running time backwards means solving $y(i) = x(i-1) \oplus (x(i) \vee x(i+1))$ for the row $x$ above. The XOR
+can be undone, the OR cannot, so the equation can only be solved for the left neighbour,
+$x(i-1) = y(i) \oplus (x(i) \vee x(i+1))$, working leftwards from a choice of the right end. That is exactly the
+equation of the forced left half (§5), read in time instead of space. `rule30_mirror.py` checks the consequences:
+- **No finite parent.** A finite nonzero row's image is two cells wider, so a single 1 has no finite past (and none
+  of the $2^{14} - 1$ rows of at most 14 cells maps to it).
+- **Exactly two parents, both infinite to the left:** …1111│0000… and …1111 0 1111….
+- **The past piles up on the left.** Two and three generations up the left tails have period 3, four up period 6,
+  while the right ends stay all 0, all 1 or period 3.
+
+So the "sign flip" matters only in the reversible XOR part; the OR makes the upward pyramid infinite and one-sided.
+
+**"More than one starting cell, as the 3-sphere is rooted in a pair of points?"** Two seeds are not equal partners.
+With seeds at 0 and $d$, every cell to the right of the left seed's light cone is exactly the lone right seed's
+pattern, a strip $d$ cells wide riding the right edge for ever (checked for $d$ = 8 to 512). The right seed's
+influence spreads left at only 0.28 cells per step ($d$ = 256 and 512), so the left seed's centre column first
+notices it after 2.3 to 2.9 times $d$ steps (M3 and M4 held). The left seed owns almost everything. It is the same
+asymmetry as above, and the same slow leftward channel as §8.17. (For the prize, every finite seed, single or
+multiple, is covered by Conjecture B; Problem 1 itself asks only about the single cell.)

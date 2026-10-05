@@ -34,6 +34,11 @@ PREDICTIONS, written 2026-10-05 before this script's first run (M0 to M2 check w
   M4 (blind): for d = 256 and 512, the right seed's influence front moves left at 0.15 to 0.35 cells per step between
       t = 2d and t = 4d (the bottleneck's single-flip arrival speed was 0.21).
 REFUTED-BY: M0 or M2 failing (the instrument); M1, M3 or M4 failing.
+
+OUTCOME of the first run, 2026-10-05: M0 passed (exactly the two parents; no finite parent of at most 14 cells). M1
+HELD (5 grandparents, every left tail period 3). M2 passed (the strip exact for d = 8 to 512). M3 HELD: column 0
+first differs at 578 (2.26 d) and 1,300 (2.54 d) for d = 256 and 512. M4 HELD: the front moves left at 0.281 and
+0.277 cells per step.
 """
 import itertools, sys
 

@@ -31,6 +31,18 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
 REFUTED-BY: LT1 to LT4 failing. (The kick detector's control is rule30_triangles.py's KC, rerun here as KC.)
   (A smoke test at toy size, N = 6 and T = 600, ran after these predictions were written and before the commit; its
   output was seen and changed nothing here.)
+
+OUTCOME of the first run, 2026-10-05 (N = 800, T = 3000; the lattice learned on 400 seeds, tested on the other 400):
+  KC passed (11,530 of 11,705 departures in classes 32 and 52). The lattice: 34 sites from 14,584 exact windows, in
+  columns 2 to 7 (6, 5, 10, 7, 2, 4).
+  LT1 REFUTED on its second clause: 96.4% of births in columns 2 to 4 sit on lattice sites (156,212 of 162,049), but
+      not all of those sites have frequency 0.9 or more.
+  LT2 HELD: before the kick 100.0% of 44,320 births on the lattice at the old phase; after re-locking 100.0% of 58,092
+      at the new phase, and 26.6% at the old. A kick moves the lattice rigidly in time.
+  LT3 REFUTED: the best shift from triangles alone equals the kick in 57.8% of 11,080 kicks.
+  LT4 REFUTED: mean chain lengths 1.53, 1.64, 1.50, 1.30, 1.09 periods in columns 2 to 6, longest in column 3.
+  The figure's drawing was improved after this run (full-width triangles, a margin strip); a rerun reproduced every
+  number exactly.
 """
 import pathlib, random, sys
 from collections import Counter, defaultdict
@@ -176,15 +188,16 @@ def main():
         line = []
         for c in range(17):
             cnt = cover.get((phi, c))
-            if not cnt:
+            f = sum(cnt.values()) / nwin if cnt else 0
+            if f < 0.1:
                 line.append((250, 250, 250))
                 continue
-            n, v = cnt.most_common(1)[0]
-            f = min(1.0, sum(cnt.values()) / nwin)
-            r, g, b = colour(n)
-            line.append((int(250 - (250 - r) * f), int(250 - (250 - g) * f), int(250 - (250 - b) * f)))
+            r, g, b = colour(cnt.most_common(1)[0][0])
+            if f < 0.5:
+                r, g, b = (r + 2 * 250) // 3, (g + 2 * 250) // 3, (b + 2 * 250) // 3
+            line.append((r, g, b))
         left.append(line)
-    right = []
+    right, margin = [], []
     for rows, col1, B, K in data[half:]:
         good = [k for k in K if 400 <= k[0] <= T - 200 and k[3] - k[0] < 120 and k[4] != k[1]]
         if not good:
@@ -192,41 +205,55 @@ def main():
         t1, D, cl, t2, D2 = good[0]
         lo, hi = t1 - 112, t2 + 112
         inside = {}
-        for t in range(lo - 40, hi):
-            for a, n in B.get(t, []):
-                for h in range((n + 1) // 2):
-                    for j in range(a + h, a + n - h):
-                        inside[(t + h, j)] = n
+        for t in range(max(1, lo - 40), hi):
+            q = rows[t - 1]
+            for a, b in tr.runs(rows[t], 2, 62):
+                n = b - a + 1
+                if n >= 2 and not all((q >> j) & 1 == 0 for j in range(a - 1, b + 2)):
+                    for h in range((n + 1) // 2):
+                        for j in range(a + h, a + n - h):
+                            inside[(t + h, j)] = n
+        locked = set()
+        for start, Dw in exact_windows(col1):
+            locked.update(range(start, start + P))
+        for (u1, _d, _c, u2, _d2) in K:
+            pass
+        deps = {k[0] for k in K}
         for t in range(lo, hi):
             line = []
             for c in range(61):
-                if c <= 1 and t in (t1, t2):
-                    line.append((230, 20, 20))
-                elif (rows[t] >> c) & 1:
+                if (rows[t] >> c) & 1:
                     line.append((30, 30, 30))
                 elif (t, c) in inside:
                     line.append(colour(min(inside[(t, c)], 8)))
                 else:
                     line.append((250, 250, 250))
             right.append(line)
+            mark = (230, 20, 20) if any(abs(t - u) <= 1 for u in deps) else ((60, 170, 60) if t in locked else
+                                                                                (200, 200, 200))
+            margin.append([mark, mark, (255, 255, 255)])
         break
     S = 4
-    w = (17 + 3 + 61) * S
-    h = max(len(left), len(right)) * S
+    LS = 6
+    w = 17 * LS + 3 * S + (3 + 61) * S
+    h = max(len(left) * LS, len(right) * S)
     pix = [255] * (w * h * 3)
-    def put(x0, block):
+    def put(x0, block, sc):
         for y, line in enumerate(block):
             for x, rgb in enumerate(line):
-                for dy in range(S):
-                    for dx in range(S):
-                        o = ((y * S + dy) * w + (x0 + x) * S + dx) * 3
+                for dy in range(sc):
+                    for dx in range(sc):
+                        o = ((y * sc + dy) * w + x0 + x * sc + dx) * 3
                         pix[o:o + 3] = list(rgb)
-    put(0, left)
-    put(20, right)
+    put(0, left, LS)
+    put(17 * LS + 3 * S, margin, S)
+    put(17 * LS + 6 * S, right, S)
     tr.png(HERE / "rule30_lattice.png", pix, w, h)
     print("   wrote rule30_lattice.png: left, the lattice of triangles in the wheel's frame (56 phases down, columns 0..16"
-          " across; yellow size 2, orange 3, blue 4-6, dark blue 7+; faded where rare); right, a space-time around a"
-          " kick (columns 0..60; red marks at the departure and at re-locking)")
+          " across; a cell is coloured by the commonest size of triangle covering it: yellow 2, orange 3, blue 4-6,"
+          " dark blue 7+; full colour if covered in at least half of the exact windows, pale if in 10 to 50%);"
+          " right, a space-time around a kick (columns 0..60, time downwards), with a margin strip: green while"
+          " column 1 is in an exact window of U, red at departures, grey otherwise")
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
     sys.exit(1 if FAILS else 0)
 
