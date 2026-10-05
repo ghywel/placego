@@ -46,7 +46,8 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - Proposition 6: the pure wheel's left half has an exact tail and period in depth (§8.6).
   - **The channel bound:** next to 0101…, column 1 carries at most 0.128 bits per visible bit, whatever the right
     side, from an exact automaton (§8.20). The bound is levelling off near 0.12. Typical right sides use 0.08, about
-    3.5 bits per kick. A random sequence carries 1.
+    3.5 bits per kick. A random sequence carries 1. The bound is now certified exactly (0.1292 at $m = 26$), and it
+    forces every column to the left of a period-2 column 0 below 0.0646 bits per step (§8.33).
 - **The picture.**
   - The right side runs a universal wheel, a rotation by 17/56 of a turn per step, kicked in whole notches by
     domain walls (§8.5 to §8.11). Next to column 0 the white triangles form a lattice in the wheel's frame, and a kick
@@ -68,6 +69,8 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - Bounded runs, at every layer width computed (up to 16): the adversary's runs keep growing with depth (§8.14).
   - Periodic columns 1, already a theorem (§8.13).
   - "Structured families" beating chance: they were luck (§8.16).
+  - The entropy squeeze as a reduction (§8.33): it restates the problem. A proof along it needs a lower bound on a
+    column's entropy in a finite configuration, which has never been proved for Rule 30.
 - **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
   keep it there. Every statistic says they cannot: coin flips paid through a narrow channel. Nothing structural
   yet says why. The structural levers found so far are listed in §8.15:
@@ -2245,3 +2248,126 @@ chaotic medium, and nothing yet shows that the kicks can never conspire.
 the left side looks like part of a two-dimensional chaos. In left-edge coordinates it is a closed one-dimensional
 system (§8.31). Rowland's 2006 question then became a two-minute computation with a proof certificate. Choosing
 coordinates that fit the object is the lesson from the shaders that does carry over.
+
+### 8.33 The entropy squeeze: a period-2 counterexample must be almost frozen (2026-10-05)
+
+This is lead 2 of the open leads (the owner's choice, 2026-10-05). Write $p_s(n)$ for the number of different stretches
+of length $n$ that a sequence $s$ ever shows, and $h(s) = \lim_n \frac{1}{n} \log_2 p_s(n)$ for its *topological
+entropy*, in bits per step. Coin flips have $h = 1$, and a periodic sequence has $h = 0$.
+
+**Lemma (the squeeze).** Let $x$ be any configuration of Rule 30 whose column 0 is $0101\ldots$ from time 0. Then
+every column to the left of column 0 has
+
+```math
+h(\text{column } {-k}) \;\le\; \tfrac12 \log_2 \lambda_{26} \;\le\; 0.0646 \text{ bits per step}, \qquad k = 1, 2, \ldots
+```
+
+and at most $4 \times 320{,}528 \times 2^{0.1292 \lceil j/2 \rceil}$ different patterns of width $j$ ever appear just left
+of column 0, the same bound for every such configuration. (In fact column −1's entropy is exactly half that of
+column 1's visible bits, whose bound is the certified $\log_2 \lambda_{26}' = 0.1292$.)
+
+*Proof.*
+1. **Column 1 is a narrow channel.** By §8.20, every stretch of $n$ visible bits of column 1 (the even times)
+   lies in the language $L_{26}$ of a 26-cell layer. Restarting the configuration at any even time gives another
+   configuration with the same column 0, so this holds for every stretch, not only the first. Hence
+   $p_v(n) \le |L_{26}(n)| \le 320{,}528 \times 2^{0.1292\,n}$.
+2. **Column −1 is column 1 turned over.** The rule at column 0 reads
+   $x_t(-1) = x_{t+1}(0) \oplus (x_t(0) \lor x_t(1))$. So $x_t(-1) = 1$ at odd $t$, and
+   $x_t(-1) = \lnot x_t(1)$ at even $t$. A stretch of column −1 is fixed by its starting parity and half as many
+   visible bits, so $h(\text{column} -1) \le \tfrac12 h(v)$.
+3. **Entropy cannot grow leftwards.** Rule 30 is left-permutive:
+   $x_t(j-2) = x_{t+1}(j-1) \oplus (x_t(j-1) \lor x_t(j))$. Each pair of neighbouring columns is computed from the
+   pair to its right over two consecutive times, and a computed sequence has no more entropy than what it is computed
+   from. Column 0 is periodic and adds nothing.
+4. **Patterns.** A width-$j$ pattern just left of column 0 is computed from columns −1 and 0 over $j$ consecutive
+   times. $\square$
+
+**The arithmetic is certified.** $\lambda_m$ had been found by power iteration, which is not a proof.
+`rule30_squeeze.py` now certifies it for every width up to 26. For a non-negative matrix $A$, a positive vector $w$
+with $Aw \le \lambda' w$ proves the growth rate is at most $\lambda'$ (the Collatz–Wielandt bound). Such a $w$ was
+computed and checked in integer arithmetic, with predictions written first:
+
+| Layer width $m$ | 8 | 12 | 16 | 20 | 24 | 26 |
+|---|---|---|---|---|---|---|
+| Certified bound, bits per visible bit | 0.3577 | 0.2593 | 0.2130 | 0.1533 | 0.1342 | **0.1292** |
+| Automaton states | 56 | 402 | 2,260 | 12,749 | 67,658 | 179,181 |
+
+As a counterfactual, a bound 0.1% below each true rate is rejected, as it must be (SQ0). Step 1 was also tried on real
+data: every 64-bit visible stretch of column 1 from 100 real right halves is accepted by the automata (SQ2), while
+none of 10,000 random 64-bit words is (SQ3).
+
+**What it does to a counterexample.** Suppose a finite configuration had column 0 eventually 0101…. Shifting time
+keeps it finite, so the lemma applies: **its whole left side would carry at most 0.0646 bits per step, in every column
+and in every pattern next to column 0**. The measurements show two worlds (SQ4, SQ5; `rule30_core.py`, CR3):
+
+| Left halves | Fastest growth of a column's stretches, bits per step |
+|---|---|
+| forced from real right sides (§5: infinite, never finite in any case found) | at most **0.0625**, as the lemma requires |
+| left sides of finite seeds, driven by 0101… | at least **0.987**, coin-like |
+
+A period-2 counterexample would be a finite seed in the first world. Its left side would have to be about 15 times
+more ordered than any finite seed's ever is, all the way along column 0.
+
+**What it does not do: an independent review.** The lemma and its proof were given to a separate session, asked only
+to break them and to search the literature. It found every step sound. It rebuilt the automata for widths 1 to 10
+itself and matched §8.20's rates, and checked the identities and bounds on 60 forced configurations. It also found
+that the reduction I first wrote down restates the problem. That reduction was: show that some left column of a
+finite configuration with column 0 = 0101… exceeds 0.0646. But every configuration with column 0 = 0101…, finite or
+not, satisfies the bound, so the target only says that no finite one exists. The review is right. What is left:
+- **The meaningful version is left-only, and it is not new.** Drop the right side and keep only the bound it imposes.
+  Then the target becomes Conjecture LR (§7) for every column 1 the right side can produce. That is the ladder $LR_m$
+  of §8.14, and the squeeze is its entropy shadow. (Equivalently: no finite left seed, driven by 0101…, can keep
+  $x_t(-1) = 1$ at every odd time while its column −1 stays below 0.0646 bits per step.)
+- **Any proof must use the finite left half.** Configurations with a finite right half all satisfy the bound, so
+  right-finiteness, and all the search evidence of §8.21, cannot help. Kopra's whole class of automata cannot supply
+  a lower bound either: the review found that Rule 90, which belongs to it, has a two-cell column from a single seed
+  with linear complexity, $p(n)$ = 7, 13, 25, 49, 97, 193 for $n$ = 4, 8, 16, 32, 64, 128, which is entropy 0.
+- **It needs a kind of statement nobody has proved for Rule 30.** The only known lower bound on any column of a finite
+  configuration is $p(n) \ge n + 1$, which is Jen's theorem in the form Kopra uses (Morse–Hedlund). For the single
+  seed, even entropy above 0 for the centre column would already prove Prize Problem 1.
+
+So lead 2, in its simple form, is closed as a route. Three things from it remain:
+- the certified constant;
+- the uniform bound on patterns of width $j$ at every depth, which could help an argument that works near the left
+  edge of the light cone;
+- the two-worlds measurement.
+
+The literature the review found is in PRIOR-ART.md: Milnor's entropy geometry, which treats a left-permutive map's
+"additional causal cone"; Kopra (2023), read in full; and directional entropy, which concerns whole systems rather
+than single configurations. None states this lemma.
+
+### 8.34 Where Problems 1 and 2 meet (2026-10-05)
+
+The owner's view that the three problems are a three-body problem fits:
+- Problem 3, if true, implies Problem 1. Wolfram notes this: a periodic column would be quick to compute.
+- Problem 2, if true, would rule out every odd period and every lopsided block at once, but not balanced blocks like
+  01.
+- And §8.33 shows where all three are stuck. Each asks for a lower bound on how random Rule 30 is:
+  - Problem 2 needs the centre column fully coin-like.
+  - Problem 1 for the single seed would follow from any positive entropy at all.
+  - Our period-2 case needs entropy above 0.0646 for a finite left seed driven by 0101….
+
+No lower bound of this kind has ever been proved for Rule 30. That one shared obstacle is the structure the three-body
+picture reveals. `rule30_core.py` measured the left side in both settings (predictions written first):
+
+| What | Measured |
+|---|---|
+| single seed: centre column density over $2^{17}$ steps | 0.49947 (within $3/\sqrt n$ of ½) |
+| single seed: centre column block entropy $h_{10}$ | 0.9972 (coin flips 0.9971) |
+| single seed: densities at depth $2^{16}$, band / between / core | 0.49979 / 0.50016 / 0.50027 |
+| left side driven by 0101…, every column, $h_{10}$ | at least 0.9868 (coin flips 0.9886) |
+| left side driven by 0101…: how often $x_t(-1) = 1$ at odd times | 0.4998 |
+| the universal band's density (exact, 40,000 diagonals) | 319,993 / 640,000 = 0.499989 |
+
+- **Problem 2's evidence holds:** the centre column is coin-like in density and in block entropy (CR2).
+- **The period-2 condition is a fair coin flip at every odd time** (CR4). Nothing in the left side's dynamics leans
+  towards it. A counterexample needs all of infinitely many flips to come up heads, and the squeeze says the left side
+  would also have to be nearly frozen.
+- **Balance does not need randomness.** The universal band is completely ordered, every diagonal repeating a block of
+  at most 32 cells, and yet its density is ½ to within $10^{-5}$ (CR1, refuted: I predicted it would sit above ½).
+  The balance is collective. 80% of the diagonals have unbalanced blocks, and together they average 0.49999 (CR5,
+  refuted: I predicted most would be balanced one by one).
+
+So Problem 2's property, equal frequencies, holds in a region with no randomness at all. That leaves room for a
+structural reason for balance, which Problem 2's coin-like evidence alone would not suggest. Whether such a reason
+reaches the core, where the centre column lies, is open.

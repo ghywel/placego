@@ -72,6 +72,11 @@ and 64 is 0.0625 bits per step, under the proved 0.0646, and no count reaches 1%
 slowest of the driven half-lines' columns grows at 0.9987 bits per step. Two worlds: left halves consistent with a
 right side are nearly frozen (and infinite, in every case found), and left sides of finite seeds are coin-like. A
 period-2 counterexample would be a finite seed in the first world.
+REVIEW, 2026-10-05: an independent session, given only the lemma and the sources, found every step sound. It rebuilt
+the automata for m = 1 to 10 and checked the identities and bounds on 60 forced configurations. It also found that the
+reduction first stated with the lemma restates the problem, since every configuration with column 0 = 0101...
+satisfies the bound. The useful left-only form is LR restricted to producible columns 1 (section 8.14's ladder), and
+any proof must use the finite left half (PRIZE-PROBLEMS.md section 8.33).
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction

@@ -1318,3 +1318,29 @@ and Wolfram's prize announcement had been read. Both cover much of the ground.
 
 Links: https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf ;
 https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/
+
+## Before and after the entropy squeeze: column entropy (surveyed 2026-10-05, by an independent review session)
+
+Scope: is PRIZE-PROBLEMS.md §8.33's lemma known? Every left column of a Rule 30 configuration whose column 0 is 0101...
+has topological entropy at most (1/2) log2 lambda_m. Does anything give a lower bound on a column's entropy? A
+separate session, given only the lemma and the sources, reviewed it adversarially and searched. Its findings:
+- **Milnor, J., "On the entropy geometry of cellular automata"**, Complex Systems 2 (1988), Example 6.2 (read via text
+  extraction; https://wpmedia.wolfram.com/sites/13/2018/02/02-3-6.pdf). The "additional causal cone" of a
+  left-permutive map, the geometric fact behind step 3. Directional entropy concerns the whole system, not one
+  configuration with a column held fixed.
+- **Kopra, J., "Rapid left expansivity, a commonality between Wolfram's Rule 30 and powers of p/q"**, Theoretical
+  Computer Science 946 (2023) (read in full by the review, via
+  https://www.utupub.fi/bitstream/handle/10024/174540/1-s2.0-S0304397522007502-main.pdf; earlier listed here as
+  UNVERIFIED after a 403). It defines left expansivity with dimensions (0, 1, 2). It never mentions entropy. Its
+  Jen-type results come from Morse-Hedlund, so the known lower bound on a width-2 trace is p(n) >= n + 1. Kopra's
+  arXiv:2005.05112 on trace complexity was read only in abstract.
+- **Kurka, P.** (column subshifts; https://www.cts.cuni.cz/~kurka/cantor.pdf) and **Courbage, M. and Kaminski, B.**
+  (directional entropy; https://link.springer.com/article/10.1007/s10955-006-9172-1). Both are about systems, not
+  single configurations.
+- Sliding block codes do not increase entropy, and sofic entropy comes from the subset construction (Lind and
+  Marcus, a textbook; cited from memory).
+- **Not found:** the lemma itself; any positive lower bound on the entropy of any column of any finite Rule 30
+  configuration. In Kopra's class such a bound fails in general: Rule 90's two-cell trace from a single seed has
+  p(n) = 7, 13, 25, 49, 97, 193 at n = 4, 8, ..., 128 (the review's computation), entropy 0.
+- **Import:** the credit and the limits recorded in §8.33. The review found the lemma sound and the first-stated
+  reduction a restatement of the problem.
