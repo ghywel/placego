@@ -50,6 +50,14 @@ Known theorems used:
   whatever the right half. The figure is 0.128 by power iteration (§8.20), certified as 0.1292 in integer
   arithmetic (§8.33).
 
+Proved here (2026-10-05, Local; each is elementary and has a pre-registered check):
+- **Theorem A, Jen with a clock** (§8.54). Two adjacent columns cannot both be $P$-periodic on a window $[a, b]$
+  unless $b \le 2a + L + 2P - 1$, with $L$ the distance to the left edge. Jen's theorem is $b = \infty$.
+- **Theorem B** (§8.54). With $P$-periodic columns 0 and 1 ($P \ge 2$), no zero run of the forced left half is
+  longer than $2P - 2$.
+- **Theorem E** (§8.57). If column 1's visible bits are a Sturmian sequence, the forced left half is never
+  finite. So LR holds for every pure rotation, rational (Jen) or irrational.
+
 ## 3. What has been measured
 
 All numbers come from probes whose predictions were committed before they ran. Each probe's header records its
@@ -190,6 +198,9 @@ prize needs a statement about every single finite configuration. The questions a
    **Partly answered (§8.54).** Kicks cannot thin out faster than geometrically: with $P$-periodic stretches
    between kicks at times $\tau_n$, a finite left half needs $\tau_{n+1} \le 2\tau_n + L + 2P + 2$. Slower thinning,
    and the steady rate of real right halves, stay open.
+   **Answered for one class (§8.57, Theorem E).** Every Sturmian column 1 has zero entropy and is never eventually
+   periodic, and for every one of them the left half is never finite. Open next: codings by an arc whose ends are
+   not on one orbit, rotations of a torus, and Toeplitz sequences.
 8. **The fourth game** (§8.49, from the tetralemma). Count the seeds that survive the black, white, both and
    neither games, and measure $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$. A ratio near 1
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
@@ -239,6 +250,8 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `entropy.c`, `entropy2.c` | the channel bound | minutes to hours by width |
 | `wheel_orbit.c` | Proposition 6's certificate for the pure wheel | minutes per phase |
 | `rule30_jenclock.py`, `jenclock.c` | Jen's theorem with a clock (§8.54): Theorems A and B, checked | seconds |
+| `rule30_sturmian.py` | Theorem E (§8.57): every Sturmian column 1 is excluded | 2 minutes |
+| `ladder_deep.c`, `rule30_ladder_local.py` | the layer ladder to depth 318, in parallel (§8.56) | minutes to hours |
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |
 
 **The math check.** After any edit of a document with TeX in it, run `python3 tests/probes/mathcheck/check.py

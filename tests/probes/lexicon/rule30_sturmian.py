@@ -47,7 +47,9 @@ ADDENDUM, written 2026-10-05 after the first run and before the second.
       the orbit of theta enters the interval K_n of length |q_n alpha - p_n| at 0. Prediction: at L = 99, for every
       one of 100,000 random theta the condition fails at some n <= 20 (golden alpha, q_n Fibonacci up to 6765).
 
-OUTCOME of the second run: (below)
+OUTCOME of the second run, 2026-10-05 (SAMPLES 300): SP0, SP1 as before. CF2 PASSED (40,326 violations without
+  the window condition). SP2, SP3 as before. SP4 HELD: at L = 99 every one of 100,000 theta fails the two-sided
+  condition, the latest at n = 14. The first counterfactual stays in the output as a note, not as a check.
 """
 import pathlib, random, subprocess, sys, tempfile
 import numpy as np
@@ -149,8 +151,8 @@ def part_rows():
                     cf_viol += r > 2 * q - 2
     report("SP1 every zero run starting at depth d <= v - q is at most 4q - 2 long", viol == 0,
            f"{tested} runs tested over {SAMPLES} thetas, {viol} violations; longest run seen anywhere {longest}")
-    report("CF  with 2q - 2 the bound is violated (first design; see the header)", cf_viol > 0,
-           f"{cf_viol} violations")
+    print(f"NOTE  CF (first design, recorded as a failed counterfactual in the header): {cf_viol} violations of the "
+          f"bound with 2q - 2", flush=True)
     report("CF2 without the condition d <= v - q the bound 4q - 2 is violated", cf2_viol > 0,
            f"{cf2_viol} violations")
 
