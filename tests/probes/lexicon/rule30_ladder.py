@@ -25,6 +25,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   LD6 (blind): no layer of width 1 or more lets the input hold the left half at zero to the deepest depth computed
       (126); no R(m >= 1, s) is capped.
 REFUTED-BY: LS, LD1, LD2 or LD3 failing (the instrument); LD4, LD5 or LD6 failing.
+
+OUTCOME of the first run, 2026-10-05: LS, LD1, LD2 and LD3 passed (0 of 200 recursions differ; R(0, 33) = 33; R never
+rises with m; the real runs from depths 17, 25, 33 are 9, 10, 6, and every R is at least that). LD4 HELD at every m >= 1,
+LD5 HELD (the growth from s = 17 to 33 is 18 at m = 0 and -2 at m = 8), LD6 HELD (nothing capped). R(m, s) for
+s = 17, 25, 33:
+    m = 0: 15 19 33 | m = 1, 2, 3: 9 12 13 | m = 4: 9 12 11 | m = 5, 6: 9 10 9 | m = 7, 8, 10: 9 10 7
+Start groups (visible column-1 prefixes the layer can produce) at s = 33: 65,536 at m = 0, 2,584 at m = 1 (= F(18), the
+Fibonacci count of Lemma 3's words), 1,318 at m = 4, 341 at m = 8, 317 at m = 10.
 """
 import pathlib, random, re, subprocess, sys, tempfile
 

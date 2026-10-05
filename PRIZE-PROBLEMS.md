@@ -1243,3 +1243,46 @@ proof, can handle.
 sequences for the longest zero run the left half can be held to from a given depth. At $m = 0$ this is §7's
 exhaustive search. The question is how fast the best achievable run falls as $m$ grows, and whether it becomes
 bounded at some finite $m$.
+
+### 8.12 The ladder's first rungs: a thin layer tames the adversary (2026-10-05)
+
+$R(m, s)$ is the longest run of zeros the forced left half can be held to, starting at depth $s$. It is taken over
+every start of a width-$m$ layer next to column 0 = 0101… and every input sequence fed to the layer, however
+adversarial. $m = 0$ means column 1 is free, the setting of conjecture LR. `ladder.c` computes $R$ exactly, and
+Lemma 4 is what makes that possible. Inside a zero run every linear cell forces column 1's bit, so the left side's
+state is fixed along the run. All that remains is which of the layer's $2^m$ states can still supply the demanded
+bits: a breadth-first search over at most $2^m$ states per step. `rule30_ladder.py` checks the instrument and the
+predictions:
+
+| Check or prediction | Result |
+|---|---|
+| LS: the program's left-half recursion matches the column recursion | **passed**, 200 of 200 |
+| LD1: $R(0, 33) = 33$, the exhaustive left-alone value of §7 | **passed** |
+| LD2: $R$ never rises with $m$ (the ladder, §8.11) | **passed** |
+| LD3: $R$ is at least what real right halves achieve | **passed** |
+| LD4: some layer of width $m \le 10$ holds $R(m, 33) \le 24$ | **held**, from $m = 1$ |
+| LD5: at $m = 8$ the run grows with $s$ at most half as fast as at $m = 0$ | **held**: it does not grow at all |
+| LD6: no layer of width 1 or more holds the left half at zero to depth 126 | **held** |
+
+| Layer width $m$ | $R(m, 17)$ | $R(m, 25)$ | $R(m, 33)$ | Visible column-1 prefixes at $s = 33$ |
+|---|---|---|---|---|
+| 0 (column 1 free) | 15 | 19 | **33** | 65,536 |
+| 1 | 9 | 12 | 13 | 2,584 $= F(18)$ |
+| 4 | 9 | 12 | 11 | 1,318 |
+| 5, 6 | 9 | 10 | 9 | 699, 439 |
+| 7, 8, 10 | 9 | 10 | **7** | 348, 341, 317 |
+| real right halves, up to 12 cells | 9 | 10 | 6 | |
+
+**What it shows.**
+- **One cell of layer is enough to tame the adversary.** With column 1 free, the left half can be held at zero for 33
+  cells from depth 33. With a single cell between column 0 and the adversary's input, at most 13. A width-1 layer
+  imposes exactly Lemma 3's two rules, and the visible prefixes it allows number $F(18) = 2584$, the Fibonacci count
+  of §8.2.
+- **Wider layers are tighter still.** From $m = 7$ on, the worst input does almost no better than real right halves:
+  7 against 6 from depth 33. The layer, not the right half's particular content, is what limits the runs.
+- **The visible language is tiny.** A layer of width 10 can produce only 317 of the 65,536 visible prefixes of 16
+  bits.
+
+**What it means for the prize.** If, for some fixed $m$, $R(m, s)$ stays bounded as $s$ grows, then no input to that
+layer can make the left half eventually zero. That is $\mathrm{LR}_m$, and by the ladder it gives B, the period-two
+case. Three values of $s$ cannot show that. The next step pushes $s$ as deep as the program allows.

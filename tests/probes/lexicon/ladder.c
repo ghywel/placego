@@ -65,42 +65,64 @@ static void build_layer(void) {
 static int WORDS;
 static inline void bs_set(uint64_t *b, int i) { b[i >> 6] |= 1ULL << (i & 63); }
 
+/* A hash table of start groups: key = the visible column-1 bits so far, value = a bitset of layer states. Only the
+ * groups the layer can produce are stored (a few hundred to a few million), so S is limited by CAP, not by 2^(S/2). */
+typedef struct { uint64_t *keys; uint64_t *sets; char *used; size_t cap, n; } table;
+
+static void t_init(table *T, size_t cap) {
+    T->cap = cap; T->n = 0;
+    T->keys = calloc(cap, 8); T->used = calloc(cap, 1); T->sets = calloc(cap * WORDS, 8);
+    if (!T->keys || !T->used || !T->sets) { fprintf(stderr, "out of memory\n"); exit(3); }
+}
+static void t_free(table *T) { free(T->keys); free(T->used); free(T->sets); }
+static uint64_t *t_get(table *T, uint64_t key);
+static void t_grow(table *T) {
+    table N; t_init(&N, T->cap * 2);
+    for (size_t i = 0; i < T->cap; i++) if (T->used[i]) memcpy(t_get(&N, T->keys[i]), T->sets + i * WORDS, WORDS * 8);
+    t_free(T); *T = N;
+}
+static uint64_t *t_get(table *T, uint64_t key) {
+    if (2 * (T->n + 1) > T->cap) t_grow(T);
+    size_t h = (size_t)((key * 0x9E3779B97F4A7C15ULL) >> 7) & (T->cap - 1);
+    while (T->used[h] && T->keys[h] != key) h = (h + 1) & (T->cap - 1);
+    if (!T->used[h]) { T->used[h] = 1; T->keys[h] = key; T->n++; }
+    return T->sets + h * WORDS;
+}
+
 static int run(int S) {
     int nstates = 1 << M;
     WORDS = (nstates + 63) / 64;
-    int nbits = S / 2;                                   /* even times 0, 2, ..., < S - 1 */
-    if (S - 1 > 0) nbits = (S - 1 + 1) / 2;
-    size_t ngroups = (size_t)1 << nbits;
-    uint64_t *cur = calloc(ngroups * WORDS, 8), *nxt = calloc(ngroups * WORDS, 8);
-    char *used = calloc(ngroups, 1), *nused = calloc(ngroups, 1);
-    if (M == 0) { cur[0] = 1; } else { for (int s = 0; s < nstates; s++) bs_set(cur, s); }
-    used[0] = 1;
+    if (S / 2 > 63) { fprintf(stderr, "S too large\n"); return 2; }
+    table cur, nxt;
+    t_init(&cur, 1024);
+    uint64_t *b0 = t_get(&cur, 0);
+    if (M == 0) b0[0] = 1; else for (int s = 0; s < nstates; s++) bs_set(b0, s);
     for (int t = 0; t <= S - 2; t++) {                  /* phase A: the starts, grouped by visible column-1 bits */
-        memset(nxt, 0, ngroups * WORDS * 8);
-        memset(nused, 0, ngroups);
-        for (size_t p = 0; p < ngroups; p++) if (used[p]) {
-            uint64_t *b = cur + p * WORDS;
+        t_init(&nxt, 1024);
+        for (size_t i = 0; i < cur.cap; i++) if (cur.used[i]) {
+            uint64_t p = cur.keys[i];
             if (M == 0) {
-                if (t % 2 == 0) {
-                    for (int sg = 0; sg < 2; sg++) { size_t q = p | ((size_t)sg << (t / 2)); nxt[q * WORDS] = 1; nused[q] = 1; }
-                } else { nxt[p * WORDS] = 1; nused[p] = 1; }
+                if (t % 2 == 0) for (int sg = 0; sg < 2; sg++) t_get(&nxt, p | ((uint64_t)sg << (t / 2)))[0] = 1;
+                else t_get(&nxt, p)[0] = 1;
                 continue;
             }
-            for (int w = 0; w < WORDS; w++) for (uint64_t x = b[w]; x; x &= x - 1) {
+            uint64_t bset[WORDS];
+            memcpy(bset, cur.sets + i * WORDS, WORDS * 8);
+            for (int w = 0; w < WORDS; w++) for (uint64_t x = bset[w]; x; x &= x - 1) {
                 int s = w * 64 + __builtin_ctzll(x);
                 int sg = s & 1;
-                size_t q = (t % 2 == 0) ? (p | ((size_t)sg << (t / 2))) : p;
-                for (int u = 0; u < 2; u++) bs_set(nxt + q * WORDS, NXT[(s * 2 + tau(t)) * 2 + u]);
-                nused[q] = 1;
+                uint64_t q = (t % 2 == 0) ? (p | ((uint64_t)sg << (t / 2))) : p;
+                uint64_t *dst = t_get(&nxt, q);
+                for (int u = 0; u < 2; u++) bs_set(dst, NXT[(s * 2 + tau(t)) * 2 + u]);
             }
         }
-        uint64_t *tmp = cur; cur = nxt; nxt = tmp;
-        char *tu = used; used = nused; nused = tu;
+        t_free(&cur); cur = nxt;
     }
     int best = 0;
     long long at_best = 0, groups = 0;
     uint64_t *set = malloc(WORDS * 8), *nset = malloc(WORDS * 8);
-    for (size_t p = 0; p < ngroups; p++) if (used[p]) {
+    for (size_t i = 0; i < cur.cap; i++) if (cur.used[i]) {
+        uint64_t p = cur.keys[i];
         groups++;
         u128 a1 = 0, a2 = 0;
         for (int t = 0; t <= S - 2; t++) {               /* the left side up to depth S - 1 */
@@ -108,7 +130,7 @@ static int run(int S) {
             u128 a = left_step(a1, a2, t, sg);
             a2 = a1; a1 = a;
         }
-        memcpy(set, cur + p * WORDS, WORDS * 8);
+        memcpy(set, cur.sets + i * WORDS, WORDS * 8);
         int runlen = 0;
         for (int t = S - 1; t + 1 <= CAP; t++) {
             int sg = 0;
@@ -147,6 +169,7 @@ static int run(int S) {
     }
     printf("R M %d S %d = %d%s (%lld of %lld start groups reach it)\n", M, S, best,
            (S - 1 + best >= CAP) ? " CAPPED" : "", at_best, groups);
+    t_free(&cur);
     return 0;
 }
 
