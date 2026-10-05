@@ -2,7 +2,7 @@
 """rule30_leftsides.py: Rowland's question. Does Rule 30 have one left side, or several, depending on the seed?
 
 RUN-ON:     cpu (pure Python 3, standard library; exact, with certificates)
-COMMAND:    python3 tests/probes/lexicon/rule30_leftsides.py [LOGT=18] [K=160000] [SEEDS=40]
+COMMAND:    python3 tests/probes/lexicon/rule30_leftsides.py [LOGT=18] [K=160000] [SEEDS=40] | ... deeper
 COST:       about three minutes on one core.
 
 The question (Rowland, "Local nested structure in rule 30", Complex Systems 16, section 5; PRIOR-ART.md). Read from a
@@ -37,12 +37,39 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
   LS3 (blind): the left sides keep splitting: at least 3 distinct left sides by diagonal 75,000, and at least 4 by
       diagonal K - 1.
 REFUTED-BY: LS0 failing (the instrument); LS1, LS2 or LS3 failing.
+
+OUTCOME of the first run, 2026-10-05 (LOGT = 18, K = 160,000, 41 seeds, 2 minutes 38 seconds): LS0 PASSED. (a) The
+strip map matches direct Rule 30. (b) Every seed's strip is certified, each with a cycle of length 32. (c) The single
+seed matches. (d) Diagonal 53207 is eventually white, and diagonal 53206 has period 16 with 6 black cells per period:
+Rowland's column 53209 is our diagonal 53208, as assumed.
+  The single seed's eventually white diagonals below 160,000, each with the period and black count of the diagonal
+  before it: 2 (1, 1), 7 (2, 1), 28 (4, 3), 399 (8, 3), 53207 (16, 6), 58286 (16, 10), 87866 (16, 5). The odd ones
+  double the period (to 32 at diagonal 87867, the period at 159,999). The even ones are the possible splits, at
+  diagonals 53208 and 58287 (Rowland's columns 53209 and 58288).
+  LS1 HELD. LS2 REFUTED and LS3 REFUTED: all 41 seeds have ONE left side, at every width up to 160,000, through
+  both possible splits. If the seed decided each split by a fair coin, all 41 would agree at the first split with
+  probability 2^-40, about 10^-12. So the choice is forced, or nearly so, at least for finite seeds of up to 64 cells.
+  Rowland's alternative continuations exist as cycles of the strip map, but these seeds never reach them.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_leftsides.py deeper): why is the
+choice forced, and for which rows? Diagonals depend only on diagonals nearer the edge, so the seed's information in
+the chaotic core (farther from the edge) never reaches the band. A candidate mechanism: once diagonals e - 1 and e - 2
+have settled, diagonal e settles at its next reset, so each settling time is locked to the rhythm of the diagonals
+before it, and the seed is forgotten. At the split, diagonal 53208 is decided by the time of the last black cell of
+diagonal 53207 (after it, 53208 is a running XOR of 53206), so the lock predicts that time's phase.
+  LS4 (blind, uncertain): ten random rightful rows (all K diagonals random at t = 0, Rowland's general case) share
+      the single seed's left side, as a cycle, to K.
+  LS5 (blind): four wide finite seeds (10,000, 50,000, 100,000 and 150,000 random cells) share it too.
+  LS6 (blind): the universality includes the phase: at time 2^LOGT - 1 every one of these seeds and five more small
+      random seeds has exactly the single seed's strip.
+  LS7 (blind; the mechanism): the last black cell of diagonal 53207 falls at the same phase mod 16 for all of them.
 """
 import random, sys
 
-LOGT = int(sys.argv[1]) if len(sys.argv) > 1 else 18
-K = int(sys.argv[2]) if len(sys.argv) > 2 else 160000
-SEEDS = int(sys.argv[3]) if len(sys.argv) > 3 else 40
+_nums = [a for a in sys.argv[1:] if a != "deeper"]
+LOGT = int(_nums[0]) if len(_nums) > 0 else 18
+K = int(_nums[1]) if len(_nums) > 1 else 160000
+SEEDS = int(_nums[2]) if len(_nums) > 2 else 40
 T = 1 << LOGT
 KEEP = 1024                                            # the last KEEP strips are kept for the certificate
 FAILS = 0
@@ -213,5 +240,54 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def run_tracked(V, z):
+    """strip_run to width K for T steps, also returning the last time diagonal z is black."""
+    mask = (1 << K) - 1
+    tail, last = [], None
+    for t in range(T):
+        if (V >> z) & 1:
+            last = t
+        if t >= T - KEEP:
+            tail.append(V)
+        V = ((V << 2) ^ ((V << 1) | V)) & mask
+    return tail, last
+
+
+def deeper():
+    rng = random.Random(2007)
+    z = 53207
+    rows = [("the single 1", 1)]
+    for k in range(5):
+        w = rng.randrange(2, 65)
+        rows.append((f"small seed {k + 1} ({w} cells)", 1 | (rng.getrandbits(w - 1) << 1)))
+    for w in (10000, 50000, 100000, 150000):
+        rows.append((f"wide seed of {w} cells", 1 | (rng.getrandbits(w - 1) << 1)))
+    for k in range(10):
+        rows.append((f"random rightful row {k + 1}", 1 | (rng.getrandbits(K - 1) << 1)))
+    res = []
+    for name, V0 in rows:
+        tail, last = run_tracked(V0, z)
+        cyc = certify(tail)
+        res.append((name, tail[-1], cyc, last))
+        print(f"   {name}: certified {cyc is not None} (cycle {len(cyc) if cyc else None}); last black of diagonal {z} "
+              f"at t = {last}, phase {last % 16 if last is not None else None} mod 16", flush=True)
+    ref = res[0]
+    same = lambda r, k: r[2] is not None and side(r[2], k) == side(ref[2], k)
+    for k in (53208, 53209, 58288, 75000, K):
+        print(f"   width {k}: same left side as the single seed for {sum(same(r, k) for r in res)} of {len(res)}",
+              flush=True)
+    rr = [r for r in res if r[0].startswith("random rightful")]
+    wide = [r for r in res if r[0].startswith("wide")]
+    verdict("LS4 random rightful rows share the single seed's left side to K", all(same(r, K) for r in rr),
+            f"{sum(same(r, K) for r in rr)} of {len(rr)}")
+    verdict("LS5 wide finite seeds share it too", all(same(r, K) for r in wide),
+            f"{sum(same(r, K) for r in wide)} of {len(wide)}")
+    verdict("LS6 every strip equals the single seed's at the same time", all(r[1] == ref[1] for r in res),
+            f"{sum(r[1] == ref[1] for r in res)} of {len(res)}")
+    ph = {r[3] % 16 for r in res if r[3] is not None}
+    verdict("LS7 the last black cell of diagonal 53207 has one phase mod 16 for all", len(ph) == 1,
+            f"phases {sorted(ph)}")
+
+
 if __name__ == "__main__":
-    main()
+    deeper() if "deeper" in sys.argv[1:] else main()

@@ -60,9 +60,10 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - The owner's morning questions (§8.22 to §8.30). Read as a binary number, a column is rational exactly when it
     repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
     numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
-    pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. As a conductor Rule 30
-    channels lightning three times less than a random material, because of its handedness. As a maze it has no dead
-    ends going up.
+    pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. The diagonals' periods and
+    the striped left side were known already (Jen; Rowland; Wolfram), and were re-derived here before the sources
+    were read. As a conductor, Rule 30 channels lightning three times less than a random material, because of its
+    handedness. As a maze it has no dead ends going up.
 - **Routes closed.**
   - Bounded runs, at every layer width computed (up to 16): the adversary's runs keep growing with depth (§8.14).
   - Periodic columns 1, already a theorem (§8.13).
