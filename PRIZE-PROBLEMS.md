@@ -225,7 +225,9 @@ number of parity vectors whose coefficient $3^{a_t}/2^t$ stays above 1.
 - **Past the free bits, the high bits pay the coin's rate** (CZ3 held). At $w = 30$, $\log_2 S_w(T)$ falls by 0.0637
   bits per step from $T = 30$ to 285, against 0.0640 for the coin. That is the counterpart of Rule 30's 1.002 bits
   per condition.
-- **The excess over the coin does not grow** (CZ4 held): at most 3.7 bits, at every width from 16 to 30.
+- **The excess over the coin does not grow** (CZ4 held): at most 3.7 bits, at every width from 16 to 30, and
+  1.8 and 2.7 at widths 31 and 32 (CZ6, predicted first). At 32 bits the slope past the free bits is $-0.0610$
+  against the coin's $-0.0618$ (CZ5).
 - **Stopping time equals Terras's coefficient stopping time** for every number of 20 to 30 bits (CZ1 held).
 - **The horizon** grows by about 21 steps per bit (CZ2 refuted: I said 8 to 20).
 

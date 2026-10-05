@@ -43,6 +43,9 @@ OUTCOME, 2026-10-05 (the first run, 21 seconds, w = 16 .. 30, every number):
 ADDENDUM, WMAX = 32. PREDICTIONS written 2026-10-05 before the run with WMAX = 32:
   CZ5 (blind): at w = 32, the slope of log2 S past the free bits (T from w to 0.8 H_w) is within 0.01 of the coin's.
   CZ6 (blind): e_31 and e_32 are both at most 4.
+OUTCOME of the addendum, 2026-10-05 (81 seconds, every number of 16 to 32 bits; the verdicts read from the printed
+  slope and e_w lines): CZ5 HELD (w = 32: -0.0610 against the coin's -0.0618, T = 32 .. 357). CZ6 HELD (e_31 = 1.80,
+  e_32 = 2.66). H_31 = 433, H_32 = 447. CZ0 to CZ4 as before (CZ2 still refuted, 21.2 steps per bit).
 """
 import math, pathlib, subprocess, sys, tempfile
 
