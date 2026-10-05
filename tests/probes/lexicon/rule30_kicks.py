@@ -83,6 +83,14 @@ PREDICTIONS for local, written 2026-10-05 after field's outcome and before local
       the class alone (within 3 percentage points).
   LC1 (blind; the kick is local): for some c <= 8 the pattern predicts the kick in at least 90% of held-out slips.
   LC2 (blind): the class alone predicts it in at most 50% (the sizes vary within a class).
+
+OUTCOME of local, 2026-10-05 (W = 11, 16 seconds, 11,437 slips, split in halves):
+  LC0 PASSED: the row at t1 - 20 predicts 47.2%, exactly the class alone.
+  LC1 REFUTED: the arrival pattern predicts 47.2% for c = 1 .. 4, 55.6% for 5 and 6, 56.2% for 7 and 8, and 59.3% for
+     12. Columns 1 to 4 add nothing (at arrival they are fixed by the class); columns 5 to 12 add a little.
+  LC2 HELD (47.2%).
+  So the kick is not decided by what is near column 0 when the wall arrives. Together with KK1, KK2 and FD1, its
+  size comes from beyond the coherent layer: it is the interior's information, entering through the boundary.
 """
 import math, random, sys, pathlib
 from collections import Counter, defaultdict

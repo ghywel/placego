@@ -2614,3 +2614,40 @@ one would do it uniformly over all periods. **But the law holds for a random wor
 from properties every word shares. It fails exactly for the countably many words that are some finite
 configuration's actual centre column. A proof must therefore use what makes periodic words special, as Jen's
 theorem and Condrey's proof do. In these statistics, nothing distinguishes the periodic words from the random one.
+
+### 8.43 What sets a kick's size? The owner's drifting hole (2026-10-05)
+
+The owner, recalling the interpolation shaders: "under rotation they would always reveal an oscillating,
+string-like hole at the centre, and under rotation and translation combined it would drift." Read here, a domain
+wall (§8.7) is a string moving through the wheel's rotating pattern. If the pattern's phase lags from column to
+column at a rate other than the wall's speed, the mismatch a wall carries grows with the distance it travels, and
+the kick's size would be set by where the wall formed. That question had been open since §8.8. `rule30_kicks.py`
+tested it and three alternatives, each with predictions written first, on 11,437 slips. The controls held: the
+commonest kicks (+3 for class 32, −3 for class 52), and shuffled features that add nothing.
+
+What might set the kick, and what the data say:
+- **Where the wall formed** (the owner's drift, KK2): a little. It tells 0.21 bits of the 1.93 that remain after
+  the class. Class-32 walls traced to column 12 kick +6 in 218 of 304 cases, against +3 for the rest.
+- **The wall's width** (KK3): void. Column 1 takes up its new phase at once, so the width is always 0.
+- **The phase of the domain behind the wall, read before arrival** (KK1, FD1): mostly not. It is exact in 20% of
+  slips. It is found ahead of the arrival in at most 9.4%, near a 5.6% background (FD0 failed: those outer reads are
+  noisy).
+- **The cells near column 0 at the moment of arrival** (LC1): no. Columns 1 to 8 predict 56% of held-out kicks,
+  against 47% for the class alone.
+
+- **The rigid part of a kick is the boundary's.** Each wall arrives at one of two phases of the wheel, the phase
+  fixes the sign, the size is a whole number of notches, and column 1 switches to its new phase in one step.
+- **The size is not.** It comes from beyond the coherent layer, so it is the chaotic interior's information
+  entering through the boundary. That matches §8.11 (the kicks have no memory, and a coin-flip interior turns the
+  same wheel) and §8.20 (about 3.5 bits per kick).
+- **The owner's picture, in part.** The phase behind a wall is layered, with steps between bands of columns that
+  move toward column 0 over the following 30 steps (an exploratory look, recorded in the probe's header). Distance
+  travelled carries a little information. But the drift does not set the kick.
+
+**What it means for the proof.** The wheel's rigidity is in the timing and the alphabet of its kicks, not in their
+sizes. A finite configuration's column 1 is therefore, after the wheel forms, a wheel kicked only at two phases per
+turn, by whole notches, with sizes the adversary does not control but that range over the alphabet. That defines a
+narrower game than the ladder of §8.12, where the adversary feeds a layer anything at all. **The kick game asks
+whether a wheel kicked like this can hold the left half at zero for long.** It was proposed in §8.8 and never run as
+such. If its runs grow more slowly than the ladder's, the wheel's rigidity is a lever a proof can use.
+
