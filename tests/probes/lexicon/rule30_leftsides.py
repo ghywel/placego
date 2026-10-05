@@ -95,6 +95,13 @@ persist. A flip anywhere else should heal.
       least 4 distinct left sides in all at width K.
   LS11 (control, blind): flipping a cell at diagonal 60000, not a branch point, heals: the seed's left side is the
       universal one at width K.
+OUTCOME of the fourth run, 2026-10-05 (python3 rule30_leftsides.py construct, 24 seconds): LS9 HELD (the flip at 53208
+persists: the same left side to width 53208, a different one at 53209). LS10 HELD: the alternative side's branch
+points are 53208 and 72576 (Rowland's columns 53209 and 72577); the universal side's are 53208 and 58287 (his 58288).
+Flipping at 72576 on the alternative side and at 58287 on the universal side gives 4 distinct certified left sides at
+width 160,000, each realised by a finite seed of at most 160,000 cells. LS11 HELD (the flip at 60000 heals). So
+Rowland's other continuations do occur for some initial conditions, as he surmised, but only for rows built for them:
+every generic row tried (60 distinct rows) has the one universal left side.
 """
 import random, sys
 

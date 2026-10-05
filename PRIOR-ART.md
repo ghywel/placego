@@ -1310,6 +1310,11 @@ and Wolfram's prize announcement had been read. Both cover much of the ground.
   brackets it; the damage front on a random background, 0.246 with a standard error near 0.003, is close but about
   two standard errors below it.
 - Searches for a later answer to Rowland's question ("rule 30" "left side", 53209) found nothing.
+- **Our answer** (rule30_leftsides.py, PRIZE-PROBLEMS.md §8.31). Rowland's indexing is confirmed (his column 53209 is
+  our diagonal 53208). The other continuations occur for constructed finite seeds: at least 4 certified left sides by
+  diagonal 160,000, with branch points 53208 and 58287 on the universal side and 53208 and 72576 on the other, as he
+  found. But all 60 generic rows tried share one left side, and the split's decision is phase-locked to the left
+  side's own cycle.
 
 Links: https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf ;
 https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/

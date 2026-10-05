@@ -57,7 +57,7 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
-  - The owner's morning questions (§8.22 to §8.30). Read as a binary number, a column is rational exactly when it
+  - The owner's morning questions (§8.22 to §8.32). Read as a binary number, a column is rational exactly when it
     repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
     numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
     pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. The diagonals' periods and
@@ -2158,3 +2158,90 @@ row. On the right is a thin strip where the nested, period-doubling diagonals ha
 about $2^{0.35d}$ at distance $d$, so the strip's width grows only like the logarithm of the depth, about
 $2.8 \log_2 t$. Between them is the chaotic core, whose left edge moves at 0.25 cells per step. The centre column,
 whose irrationality is the prize, lies inside the core.
+
+### 8.31 One left side or many? Rowland's question, answered both ways (2026-10-05)
+
+Rowland asked whether Rule 30 has "really only one left side", the same for every initial row with a white left tail.
+He expected not, and found the first place it could split: his column 53209, our diagonal 53208. There the diagonal
+before is eventually white, and the one before that has an even number of black cells in each period. He left open
+whether the other continuation occurs "for some initial conditions" (PRIOR-ART.md). `rule30_leftsides.py` answers it,
+with predictions written before each of four runs.
+
+**The method, with a certificate.** Each left diagonal depends only on itself and the two nearer the edge. So the first
+$K$ diagonals form a closed system. As a $K$-bit number $V$, they evolve by
+
+```math
+V' = \bigl( (V \ll 2) \oplus ((V \ll 1) \lor V) \bigr) \bmod 2^K ,
+```
+
+which is the row itself in left-edge coordinates. Nothing else in the pattern needs computing. The system is finite
+and deterministic, so one equality $V_t = V_{t+P}$ proves the strip periodic for ever after. Every result below carries
+such a certificate, for $K$ = 160,000 diagonals over $2^{18}$ steps.
+
+**Generic rows have one left side.**
+- 60 distinct rows were tried: the single 1, 45 random finite seeds of up to 64 cells, 4 random seeds of 10,000 to
+  150,000 cells, and 10 rows with a random right part, Rowland's general case. All have the same left side out to diagonal 160,000,
+  through both possible splits on the way (53208 and 58287; LS1, LS4, LS5 held). I predicted both continuations would
+  occur (LS2, refuted).
+- A coin toss at the first split would make 41 seeds agree with probability about $10^{-12}$, so this is no coin.
+  The rows sit at different phases of the one cycle (LS6 refuted). Measured against each row's own phase, though, the
+  moment that decides the split falls at the same point, 11 mod 16, for all 20 rows checked (LS8 held). Diagonals
+  depend only on diagonals nearer the edge, so the chaotic core, farther out, never reaches the band. By the time the
+  band's edge arrives at diagonal 53208, the decision is timed by the band's own rhythm, and the row has been forgotten.
+
+**Constructed rows realise at least four left sides.** A settled strip is itself a valid row. In the single seed's
+settled strip, flip the cell at diagonal 53208. The diagonal before it is white for ever, so nothing resets the flipped
+one, and the flip persists. The result is a finite seed, of at most 160,000 cells, with the other continuation (LS9
+held). Its left side splits again at diagonal 72576, Rowland's column 72577; the universal side's next split is 58287
+(LS10 held). Flipping at those gives four distinct certified left sides by diagonal 160,000. A flip anywhere else, at
+diagonal 60000 for instance, is erased by the resets (LS11 held).
+
+**So the question has two answers.**
+- The other continuations do occur for some initial conditions, as Rowland surmised: explicit finite seeds realise at
+  least four left sides, with certificates.
+- No row tried that was not built for them reaches them. Generic rows have one left side, because the split is decided
+  by a clock that belongs to the left side itself.
+
+Whether branch points go on for ever, giving infinitely many left sides, is open. Below diagonal 160,000 there are two
+on each side. None of this bears directly on the centre column, which lies in the chaotic core, far from the band.
+What it shows is a place where Rule 30's chaos is forgotten completely and provably.
+
+### 8.32 The wheel on the grid: the owner's square peg (2026-10-05)
+
+The owner: "The wheel once again surfaces a leap shift we found in the interpolation shaders: the wheel is inherently
+circular, but the pyramid and its grid are inherently a two-dimensional array. Is this another square-peg,
+round-hole problem?"
+
+**The peg fits.** The wheel turns by a rational amount, 17/56 of a turn per step, so 56 steps are exactly 17 turns,
+with nothing left over. Drawn on a grid, a rotation is a pixelated straight line. At even times $t = 2s$, column 1 is 1
+exactly when $17s \bmod 28 \in \{22, \ldots, 27\}$, that is,
+
+```math
+\sigma(2s) = \left\lfloor \frac{17s + 6}{28} \right\rfloor - \left\lfloor \frac{17s}{28} \right\rfloor .
+```
+
+That is how Bresenham's algorithm draws a line of slope 17/28 on pixels, and how the leap-year rule keeps a calendar in
+step with the sun: floor functions, with an extra step whenever the error builds up. With a rational slope the pattern
+of extra steps repeats exactly. The grid holds this circle perfectly, and the kicks shift the line by whole pixels (the
+notches of §8.8).
+
+**The measurement does not fit.** The grid shows the wheel's angle only modulo a turn, 28 notches at one parity. A kick
+is read as the nearest whole number of notches, so a change near half a turn could be forward or backward. That is the
+shaders' half-period alias exactly, and §8.8 had flagged it as one possible cause of V0's narrow miss.
+
+**Measured** (`rule30_wheelspeed.py`, addendum U0 to U2, predictions written first). The shaders' fix was the carry.
+Here the carry reads the phase at every even time instead of every 56th, so consecutive readings are close and no
+change approaches half a turn.
+- The alias is real: 22 of 205,955 long gaps had wrapped by a whole turn (U2, refuted: I predicted more).
+- It is harmless. Removing it moves the wheel's speed by $3 \times 10^{-6}$ (rotation number 0.303542 to 0.303545),
+  not the $10^{-4}$ that separated it from the spectral line (U1, refuted). So V0's gap has the other recorded cause:
+  when the kicks are lopsided, the spectral peak need not sit at the mean rate.
+
+**So no, not this time.** The circle and the grid agree exactly; only the reading of the angle has the alias, and here
+it does no harm. The hard part of the prize problem is not the representation. It is that the wheel is kicked by a
+chaotic medium, and nothing yet shows that the kicks can never conspire.
+
+**Where the right coordinates did matter today: the left side.** In the pyramid's own coordinates, time and position,
+the left side looks like part of a two-dimensional chaos. In left-edge coordinates it is a closed one-dimensional
+system (§8.31). Rowland's 2006 question then became a two-minute computation with a proof certificate. Choosing
+coordinates that fit the object is the lesson from the shaders that does carry over.
