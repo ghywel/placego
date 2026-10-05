@@ -1757,3 +1757,83 @@ left halves (to about 240 cells) but only right halves up to 18 cells.
 
 **The plateau.** The longest run to depth 126 is 17 at every width from 18 cells on, although the number of right
 halves grows 16,000-fold. It is the bottleneck of §8.17 again: at a fixed depth, wider seeds buy nothing.
+
+### 8.22 Two half-lines, one column 0: chaos on the left, a channel on the right (2026-10-05)
+
+Rule 30 at a cell uses only its two neighbours. So once column 0 is given for all time, the columns to its left evolve
+on their own (Rule 30 with column 0 as their right boundary), and so do the columns to its right. Column 0 must also
+obey the rule, $\tau(t+1) = x_t(-1) \oplus (\tau(t) \vee x_t(1))$. For $\tau = 0101\ldots$ that says
+
+```math
+x_t(-1) = 1 \ \text{at every odd } t, \qquad x_t(1) = \lnot\, x_t(-1) \ \text{at every even } t .
+```
+
+**So a finite configuration with column 0 = 0101… for ever is exactly a pair of finite seeds, one on each side, whose
+two driven half-lines produce columns −1 and 1 meeting these two conditions.** `rule30_halflines.py` checks the
+decoupling exactly (D0: 0 cells differ in 200 whole runs) and measures both sides:
+
+| Column 0 | Left half-line, column −1 (bits per step) | Right half-line, column 1 (bits per step) |
+|---|---|---|
+| 0101… | 0.9997 | 0.057 |
+| 001… | 0.9997 | 0.038 |
+| 0011… | 0.9998 | 0.0001 |
+| 0001… | 0.9997 | 0.0000 |
+
+The left half-line never forms a wheel: its information flows towards column 0 at full speed, so column −1 is pure
+chaos for every trace (D1, D2 held). The right half-line is a thin channel (D3 held), and for 0011… and 0001… typical
+right halves lock column 1 into a periodic pattern; by Jen's theorem those right halves can never be counterexamples.
+
+**The shape of the problem, in one sentence.** A period-2 counterexample needs the left side's chaos to produce,
+bit for bit and for ever, 1 at every odd time and the complement of the right side's wheel-and-kicks at every even
+time. Finite left seeds make only countably many columns −1, inside a space of full entropy. The right side can reach
+only a thin set, at most 0.128 bits per visible bit (§8.20). Two such sets have no reason to meet, and generically
+they do not. That is the heuristic for B in its plainest form. It is not a proof, because one meeting is all a
+counterexample needs.
+
+### 8.23 Columns as numbers: the owner's irrational-number question (2026-10-05)
+
+The owner: "If the pattern never repeats itself, given the kick and the wheel, is it possible to describe the problem
+generally as an irrational number? Do any of the known irrational numbers look similar?"
+
+**Yes, exactly.** Read a column as a binary number, $0.b_0 b_1 b_2 \ldots$. The column is eventually periodic if and
+only if that number is rational. So Prize Problem 1 says that one particular number is irrational: the one whose
+binary digits are the centre column from a single 1. The period-2 case says it is never eventually like
+$0.0101\ldots = 1/3$. In this document's construction, each right half gives the forced left half's number
+$0.L_1 L_2 L_3 \ldots$, and a finite counterexample would make it a terminating binary fraction (a dyadic
+rational).
+
+**What the numbers look like** (`rule30_irrational.py`, 20,000 binary digits, predictions written first). Almost
+every real number's continued fraction obeys three laws: Khinchin (the geometric mean of the partial quotients tends
+to 2.685), Gauss–Kuzmin (41.5% of them equal 1) and Lévy (1.187).
+
+| Number | Geometric mean | Share of 1s | Lévy |
+|---|---|---|---|
+| coin flips (control) | 2.699 | 0.419 | 1.193 |
+| centre column from a single 1 | **2.669** | **0.413** | **1.181** |
+| forced left half of a real right half | **2.683** | **0.416** | **1.185** |
+| column 1 next to 0101… | a giant partial quotient after 3 terms: a near-rational | | |
+
+The control $\sqrt 2$ gives 2, 2, 2, … and 1/3 gives $[0; 3, \approx 2^{19999}]$. The centre column and the forced
+left halves look exactly like typical irrational numbers (IR1, IR2 held). Column 1 next to 0101… does not (IR3
+held): its first digits are a long clean stretch of the wheel, so the number sits extraordinarily close to a
+fraction. It behaves like a Liouville number, a number very well approximated by rationals. That is the wheel seen
+arithmetically.
+
+**Known numbers that resemble the problem.**
+- **Powers of 3/2 (Mahler's problem).** Kopra (PRIOR-ART.md) shows that multiplying by 3/2 in base 6 is a cellular
+  automaton of the same class as Rule 30. Whether the fractional parts of $\xi (3/2)^n$ can all avoid half the circle
+  is open, for the same kind of reason. It is the closest known relative.
+- **$\sqrt 2$, $\pi$, $e$.** All proved irrational, all with digits that look random, and none proved normal. Rule
+  30's centre column looks just as random, but even its irrationality (non-periodicity) is unproved. Prize Problem 2
+  (equal frequencies) is its analogue of normality.
+- **The Thue–Morse number and Champernowne's constant.** Both never repeat, and both were proved to by their
+  structure: Thue–Morse is overlap-free (and its number transcendental, Mahler), and Champernowne's is normal by
+  construction. Rule 30 has no such structure known.
+- **Rotation numbers and the golden ratio.** The wheel is a coding of a rotation by $17/56 = [0; 3, 3, 2, 2]$. Codings
+  of irrational rotations (Sturmian words, the Fibonacci word for the golden ratio) are the classic sequences that
+  never repeat yet are as simple as possible. The golden ratio appears here too: it is the width-1 layer's growth
+  rate exactly (Lemma 3, §8.20).
+
+**What it teaches.** Every irrationality proof of a specific number has come from its structure: Hermite for $e$,
+Lindemann for $\pi$, Apéry's recurrences for $\zeta(3)$. None has come from its digits looking random. Rule 30's
+centre column is in the position $\pi$'s digits would be in if nobody had found $\pi$'s structure.

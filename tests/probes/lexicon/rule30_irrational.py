@@ -32,6 +32,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       (rule30_metric.py), does NOT look typical: its geometric mean lies outside [2.55, 2.85] or its share of 1s is
       outside 0.415 +- 0.03.
 REFUTED-BY: IR0 failing (the instrument); IR1, IR2 or IR3 failing.
+
+OUTCOME of the first run, 2026-10-05 (NBITS = 20,000): IR0 passed (sqrt(2): 7,864 terms, all 2; coin flips: geometric
+mean 2.699, share of 1s 0.4185, Levy 1.193; 1/3: [3, ~2^19999]). IR1 HELD: the centre column from a single 1 gives
+2.669, 0.413, 1.181 over 5,871 terms, largest 2,625. IR2 HELD: the forced left half of 0xB5E3F gives 2.683, 0.416,
+1.185, largest 7,345. IR3 HELD, but not as foreseen: column 1 next to 0101... has only 3 reliable terms, [1, 3, 1],
+then a giant partial quotient. Its first digits are a long clean stretch of the wheel, so the number lies extremely
+close to a fraction (a Liouville-like near-rational), and the statistics never start. Its later stretches do not
+show in a continued fraction, which reads a number from its first digits.
 """
 import math, random, sys, pathlib
 

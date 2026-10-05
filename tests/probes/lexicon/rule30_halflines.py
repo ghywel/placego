@@ -29,6 +29,12 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   D3 (blind; the asymmetry): for each of the four traces, column 1 of the right half-line (2,000-cell random seeds,
       after 600 steps) has h_24 at most a fifth of the left column's h_8, both per step.
 REFUTED-BY: D0 failing (the instrument); D1, D2 or D3 failing.
+
+OUTCOME of the first run, 2026-10-05: D0 passed (0 cells differ in 200 whole runs). The left half-line's column -1, h_8,
+and the right half-line's column 1, h_24, in bits per step: 01: 0.9997 and 0.0574; 001: 0.9997 and 0.0382; 0011:
+0.9998 and 0.0001; 0001: 0.9997 and 0.0000. D1, D2 and D3 HELD. The left side is pure chaos next to column 0 for
+every trace; the right side is a thin channel, and for 0011 and 0001 typical right sides lock column 1 outright (by
+Jen's theorem such a right half can never be a counterexample).
 """
 import math, random, sys
 from collections import Counter
