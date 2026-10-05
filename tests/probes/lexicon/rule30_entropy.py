@@ -38,6 +38,8 @@ within 0.05%; monotone; free column 1.000000 bit; trace 0 0.00036, the slow line
 EXTENSION, written 2026-10-05 after the first run and before running it (python3 rule30_entropy.py deep):
   EN4 (blind): for 01 the bound keeps falling at m = 19 and 20, by less than 0.02 per cell, and at m = 20 lies between
       0.15 and 0.18 bits per visible bit.
+OUTCOME of the extension, 2026-10-05: EN4 HELD. m = 19: 8,733 states, 0.1675; m = 20: 12,749 states, 0.1519 bits per
+visible bit. Still falling by about 0.016 per cell, with no sign yet of levelling off.
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 

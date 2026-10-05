@@ -1661,20 +1661,22 @@ languages. So
 h(\text{column 1 next to } 0101\ldots) \;\le\; \log_2 \lambda_m \quad \text{bits per visible bit, for every } m .
 ```
 
-| Layer width $m$ | 1 to 3 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 |
-|---|---|---|---|---|---|---|---|---|---|
-| Bound, bits per visible bit | 0.694 | 0.617 | 0.442 | 0.356 | 0.316 | 0.258 | 0.244 | 0.212 | **0.185** |
+| Layer width $m$ | 1 to 3 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 19 | 20 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Bound, bits per visible bit | 0.694 | 0.617 | 0.442 | 0.356 | 0.316 | 0.258 | 0.244 | 0.212 | 0.185 | 0.168 | **0.152** |
 
 The controls held. $m = 1$ gives exactly the golden ratio, Lemma 3's Fibonacci count. Each $\lambda_m$ matches the
 ladder's independently counted start groups within 0.05%. Wider layers never raise the bound (a theorem, checked).
 With column 0 unclamped the instrument reads exactly 1 bit, and with column 0 constant at 0 it reads 0, Condrey's
 case.
 
-**So next to a period-2 column, column 1 carries at most 0.185 bits per visible bit, whatever the right side**,
-which is 0.09 bits per step. A random sequence carries 1. This is the bottleneck of §8.17 as a theorem rather than a
-measurement, up to the convergence of the power iteration (9 digits). The bound is still falling, by about 0.01 to
-0.02 bits per extra cell of layer, and whether it reaches zero is open. A rough estimate from the kicks (about one
-every 90 steps, a few bits each) suggests it levels off near 0.05 to 0.1 bits per visible bit.
+**So next to a period-2 column, column 1 carries at most 0.152 bits per visible bit, whatever the right side**
+(the extension to $m = 19, 20$, EN4, held), which is 0.076 bits per step. A random sequence carries 1. This is the
+bottleneck of §8.17 as a theorem rather than a measurement, up to the convergence of the power iteration (9 digits).
+The bound is still falling, by about 0.016 bits per extra cell of layer, with no sign yet of levelling off, and
+whether it reaches zero is open. A rough estimate from the kicks (about one every 90 steps, a few bits each) says it
+should level off near 0.05 to 0.1 bits per visible bit; if it does not, column 1 would carry almost no information
+at all, which would be a structural fact worth a proof of its own.
 
 **A census of traces** (the random-chaos step: six seeded random words besides the short ones). At $m = 10$ every
 periodic column 0 except the constant 0 leaves column 1 more than 0.1 bits per visible bit (EN3 held). The trace 01
