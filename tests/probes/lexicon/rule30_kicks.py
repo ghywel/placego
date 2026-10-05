@@ -64,6 +64,25 @@ PREDICTIONS for field, written 2026-10-05 after the outcome above and before fie
   FD1 (blind; carried in): d' is found in an outer band before it reaches column 1 in at least 80% of slips.
   FD2 (blind; the drift): its front moves inward. For each slip where it is found, the speed from the outermost band
       that shows it first to band 3-4 is between 0.15 and 0.6 cells per step (median over slips).
+
+OUTCOME of field, 2026-10-05 (W = 10, 36 seconds, 5,704 slips): the new phase was found outside first in 536
+  (9.4%), a wrong phase in 317 (5.6%), and the median front speed was 0.333 cells per step.
+  FD0 FAILED: the control is not met (317 against a limit of 268). The outer bands' phase reads are too noisy to
+     tell the right phase from a wrong one with confidence.
+  FD1 REFUTED, and the refutation survives the instrument's weakness: the 9.4% is an upper bound, far below 80%. A
+     kick's new phase is mostly not carried in from outside.
+  FD2 VOID: its speeds were measured on detections that are mostly noise (FD0).
+  So the kick is decided where the wall meets the wall of column 0, not carried in. Mode local tests that.
+
+MODE local: is the kick decided locally, at the moment of arrival? For each slip, the pattern of columns 1 .. c in the
+row at time t1 (the moment the wall reaches column 1), with the class. The slips are split at random into halves. A
+table from the first half maps each (class, pattern) to its commonest kick, and falls back to the class's commonest
+kick for a pattern it has not seen. It is scored on the second half.
+PREDICTIONS for local, written 2026-10-05 after field's outcome and before local's first run:
+  LC0 (control, must hold): the same table built from the row at t1 - 20, before the wall is near, does no better than
+      the class alone (within 3 percentage points).
+  LC1 (blind; the kick is local): for some c <= 8 the pattern predicts the kick in at least 90% of held-out slips.
+  LC2 (blind): the class alone predicts it in at most 50% (the sizes vary within a class).
 """
 import math, random, sys, pathlib
 from collections import Counter, defaultdict
@@ -310,5 +329,69 @@ def field(wmax=10):
     sys.exit(1 if FAILS else 0)
 
 
+def local():
+    train, test = [], []
+    for R in range(1 << W):
+        st = spacetime(R)
+        if locked(st):
+            continue
+        (train if R % 7 == 0 else test).append((st, phases(st)))
+    votes = [[[0, 0] for _ in range(P)] for _ in range(M + 1)]
+    for st, ph in train:
+        for k, d in enumerate(ph):
+            if d is None:
+                continue
+            for t in range(k * P, k * P + P):
+                for i in range(M + 1):
+                    votes[i][(t - d) % P][cell(st, t, i)] += 1
+    D = [[0 if v[0] >= v[1] else 1 for v in votes[i]] for i in range(M + 1)]
+    slips = []
+    for st, ph in test:
+        for k in range(1, len(ph)):
+            d = ph[k - 1]
+            if d is None or ph[k] is not None:
+                continue
+            t1 = next((t for t in range(k * P, min(T, (k + 1) * P)) if cell(st, t, 1) != D[1][(t - d) % P]), None)
+            if t1 is None or t1 - 40 < 0 or t1 + 30 > T:
+                continue
+            dd, fit = best_phase(st, D, t1 + 2, t1 + 20, (1, 2, 3))
+            if fit < 0.95:
+                continue
+            slips.append(((t1 - d) % P, notches(dd - d), st[t1] >> 1, st[t1 - 20] >> 1))
+    rng = random.Random(3)
+    rng.shuffle(slips)
+    half = len(slips) // 2
+    fit_set, score_set = slips[:half], slips[half:]
+    cls = defaultdict(Counter)
+    for a, k, _, _ in fit_set:
+        cls[a][k] += 1
+    cls_mode = {a: c.most_common(1)[0][0] for a, c in cls.items()}
+
+    def accuracy(c, which):
+        tab = defaultdict(Counter)
+        for row in fit_set:
+            tab[(row[0], row[which] & ((1 << c) - 1))][row[1]] += 1
+        hit = 0
+        for row in score_set:
+            key = (row[0], row[which] & ((1 << c) - 1))
+            guess = tab[key].most_common(1)[0][0] if key in tab else cls_mode.get(row[0], 0)
+            hit += guess == row[1]
+        return hit / len(score_set)
+    base = sum(cls_mode.get(a, 0) == k for a, k, _, _ in score_set) / len(score_set)
+    acc = {c: accuracy(c, 2) for c in range(1, 13)}
+    early = accuracy(8, 3)
+    print(f"   {len(slips)} slips; the class alone predicts {base:.1%}; the row at t1, columns 1 .. c: "
+          + ", ".join(f"{c}: {v:.1%}" for c, v in acc.items()) + f"; the row at t1 - 20 (c = 8): {early:.1%}",
+          flush=True)
+    report("LC0 the row at t1 - 20 does no better than the class (within 3 points)", early <= base + 0.03,
+           f"{early:.1%} against {base:.1%}")
+    best_c = max((c for c in acc if c <= 8), key=lambda c: acc[c])
+    verdict("LC1 for some c <= 8 the arrival pattern predicts the kick in at least 90%", acc[best_c] >= 0.90,
+            f"best {acc[best_c]:.1%} at c = {best_c}")
+    verdict("LC2 the class alone predicts at most 50%", base <= 0.50, f"{base:.1%}")
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+    sys.exit(1 if FAILS else 0)
+
+
 if __name__ == "__main__":
-    field() if sys.argv[1:2] == ["field"] else main()
+    {"field": field, "local": local}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
