@@ -58,7 +58,7 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
-  - The owner's morning questions (§8.22 to §8.35). Read as a binary number, a column is rational exactly when it
+  - The owner's morning questions (§8.22 to §8.36). Read as a binary number, a column is rational exactly when it
     repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
     numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
     pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. The diagonals' periods and
@@ -71,6 +71,9 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - "Structured families" beating chance: they were luck (§8.16).
   - The entropy squeeze as a reduction (§8.33): it restates the problem. A proof along it needs a lower bound on a
     column's entropy in a finite configuration, which has never been proved for Rule 30.
+- **The sharpest open target (§8.36).** The doubling conjecture: in the forced left half for 0101…, a zero run that
+  starts at depth $d$ ends by depth $2d + 4$, for every column 1. It holds at every depth computed (to 65), and it
+  would settle period 2 for every finite configuration.
 - **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
   keep it there. Every statistic says they cannot: coin flips paid through a narrow channel. Nothing structural
   yet says why. The structural levers found so far are listed in §8.15:
@@ -2413,3 +2416,53 @@ centre columns run from rows of fair coins as controls:
 - **The analogy has a limit.** Baryogenesis lives in quantum field theory, and nothing here explains it. What carries
   over is the shape of the question: rules that break every mirror symmetry can still keep the books balanced, and
   whether they do is a question about the rule's dynamics, not its symmetries.
+
+### 8.36 Lead 1: the records to depth 65, and a sharp conjecture (2026-10-05)
+
+Conjecture LR for 0101… (§7) says that for every column 1 the forced left half has infinitely many ones. Alone, it
+settles period 2 for every finite configuration. It would follow from a growth bound on zero runs, and the records
+measure exactly that. $R(d)$ is the longest run of zero cells, starting at depth $d$, that any column 1 can force.
+
+**A faster engine.** `records.c` indexes the forced left half along anti-diagonals, $A_k[j] = x_{k-j}(-j)$. Each one is
+then a running XOR of $(A_{k-1} \ll 1) \lor (A_{k-2} \ll 2)$, computed with eight word shifts. The search runs about a
+thousand times faster than before. It reproduces every known record, and it agrees with the old Python search at every
+depth from 1 to 29 (RC0).
+
+**Measured, every depth from 1 to 61 and depth 65** (`rule30_records.py`, predictions written first):
+
+| Depth $d$ | 9 | 13 | 16 | 33 | 41 | 49 | 56 | 59 | 61 | 65 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Record $R(d)$ | 9 | **17** | 16 | 33 | 37 | 39 | 42 | 51 | 49 | 57 |
+| Ends at depth | 18 | 30 | 32 | 66 | 78 | 88 | 98 | 110 | 110 | 122 |
+
+- **The doubling law holds** (RC1, RC2). From depth 42 to 65, every record lies between $0.75d$ and $1.35d$ and
+  ends between $1.75d$ and $2.35d$.
+- **Half a bit per cell** (RC3). Among the $2^{d/2}$ starting prefixes of column 1, those that keep the run going
+  halve every two cells: 0.51 bits per cell at depth 57, 0.48 at 65. This is the coin model of §8.14 exactly. Inside
+  a run, every other cell can be kept at zero by choosing column 1's newest bit, and each of the others is a fair
+  coin.
+- **The early bits do not matter** (RC4): 100 different prefixes reach the record at depth 65.
+- **No renormalisation is visible** (RC5, the expected null). The record witnesses at depths $d$ and $2d$ share no
+  more than chance would give.
+
+**The sharp pattern.** At every depth computed, $R(d) \le d + 4$. The excess reaches 4 only at depths 2 and 13, and is
+0 at depths 1, 4, 9, 15, 16 and 33. Over depths 20 and up it averages −7.3. In words: **no zero run starting at depth
+$d$ has reached past depth $2d + 4$.** The run ends form plateaus: one long run ending at a fixed depth serves a whole
+range of starting depths, since $R(d+1) \ge R(d) - 1$ always.
+
+**The doubling conjecture.** For every column 1, a zero run of the forced left half for 0101… that starts at depth
+$d$ ends by depth $2d + 4$.
+
+It implies Conjecture LR for 0101…, because from any depth there is a one within about twice that depth. With
+Condrey's theorem, that settles every finite configuration for periods 1 and 2. It is the coin model's prediction
+stated as a bound, so the data fit it without showing why it should hold. Local's job M4 tests it blind at depths 69
+to 77 (prediction M4c, added before any Local run).
+
+**What a proof would need.** Inside a run, column 1's newest bit is forced at every other cell. So a run of length
+$r$ is a system of about $r/2$ Boolean equations in the $d/2$ free bits of the prefix. The conjecture says that the
+system has no solution once $r > d + 4$: its equations are never so dependent that they leave a solution after about
+as many equations as unknowns. If the equations were linear over GF(2), a rank argument would do it. They are not:
+the counts of record-setting prefixes (3, 5, 11, 21, 12, 44, 54, 96, 100) are mostly not powers of 2, as solution
+sets of linear systems must be. So the next question is what structure these equations do have. This is again the
+uniform cost of a zero cell, the kind of statement §8.33 found nobody has proved, but now in the form of one finite
+algebraic system per depth.
