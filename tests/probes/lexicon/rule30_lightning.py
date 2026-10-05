@@ -3,7 +3,7 @@
 it forks and where it reaches the bottom.
 
 RUN-ON:     cpu (pure Python 3, standard library; seeded)
-COMMAND:    python3 tests/probes/lexicon/rule30_lightning.py [T=512] [WALKS=20000]
+COMMAND:    python3 tests/probes/lexicon/rule30_lightning.py [T=512] [WALKS=20000] | rule30_lightning.py local
 COST:       about five minutes on one core. Writes rule30_lightning.png next to this script.
 
 The owner (2026-10-05): "take a lightning trace on the pyramid: from the top down run some sort of path-tracing walk
@@ -33,12 +33,33 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       the pyramid: mean arrival below -0.1 standard deviations, while the random pyramids' mean arrivals stay within
       +-0.05 standard deviations on average.
 REFUTED-BY: LG0 failing (the instrument); LG1, LG2 or LG3 failing.
+
+OUTCOME of the first run, 2026-10-05 (T = 512, 20,000 walks): LG0 passed (mean -0.23, variance 340.4 against 340.7).
+Rule 30's interior density 0.5017.
+  The strike: least cost to the bottom centre, in white cells, Rule 30 3, random pyramids 2 to 7 (mean 4.5), Rule 90
+      256. LG1 REFUTED, by its design: the costs are small integers, so a 15% band cannot hold them; Rule 30's 3 lies
+      inside the random range. LG2 HELD (Rule 90 85 times as resistant). The strike to the centre rides the always-black
+      right edge for about 100 rows, then cuts back through the interior.
+  The flicker: Rule 30's walks land at a mean of -35.7 (sd 17.8, 126 distinct cells, 21.4% of steps through white);
+      five random pyramids at -1.5 to +1.7 (sd about 18); Rule 90 at +0.15 (92.7% white steps). LG3 HELD: Rule 30's
+      lightning is pulled left by 2.0 sd, the random pyramids' by +0.013 on average. But the stated cause (the
+      left side's stripes) was not tested, and the figure shows the beam tilting at a steady rate from the very top,
+      far from the stripes. A local cause is likely: below a black cell Rule 30 makes the lower-left and lower-middle
+      cells black half the time each, but the lower-right only a quarter of the time.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_lightning.py local):
+  LG4 (blind; the drift is local): a Markov lightning, which knows only Rule 30's parent-to-child rule (at each step the
+      walker's cell keeps its colour, its four neighbours are fresh coin flips, and the three cells below follow from
+      Rule 30), drifts by within 0.015 cells per step of Rule 30's own -35.7 / 511 = -0.070.
+  LG5 (blind): on the real Rule 30 pyramid the drift is steady: the mean step over rows 1 to 170, 171 to 340 and 341
+      to 511 differs between thirds by less than 30% of the overall mean step.
 """
 import math, pathlib, random, struct, sys, zlib
 
 HERE = pathlib.Path(__file__).resolve().parent
-T = int(sys.argv[1]) if len(sys.argv) > 1 else 512
-WALKS = int(sys.argv[2]) if len(sys.argv) > 2 else 20000
+_nums = [a for a in sys.argv[1:] if a != "local"]
+T = int(_nums[0]) if len(_nums) > 0 else 512
+WALKS = int(_nums[1]) if len(_nums) > 1 else 20000
 EPS = 0.1
 FAILS = 0
 
@@ -209,5 +230,50 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def local():
+    rng = random.Random(1753)
+    n = WALKS
+    total = 0
+    for _ in range(n):
+        c = 1                                            # the apex is black
+        for _t in range(1, T):
+            l2, l1, r1, r2 = (rng.getrandbits(1) for _ in range(4))
+            kids = {-1: l2 ^ (l1 | c), 0: l1 ^ (c | r1), 1: c ^ (r1 | r2)}
+            w = {dx: (1.0 if v else EPS) for dx, v in kids.items()}
+            r, acc = rng.random() * sum(w.values()), 0.0
+            for dx in (-1, 0, 1):
+                acc += w[dx]
+                if r <= acc:
+                    total += dx
+                    c = kids[dx]
+                    break
+    markov = total / (n * (T - 1))
+    real = -35.72 / 511
+    verdict("LG4 the Markov lightning drifts within 0.015 cells per step of Rule 30's -0.070", abs(markov - real) <= 0.015,
+            f"Markov {markov:+.4f} cells per step; Rule 30 {real:+.4f}")
+    r30 = pyramid(30)
+    W = 2 * T + 1
+    thirds = [[0, 0], [0, 0], [0, 0]]
+    for _ in range(WALKS // 2):
+        x = T
+        for t in range(1, T):
+            cand = [y for y in (x - 1, x, x + 1) if T - t <= y <= T + t]
+            w = [1.0 if r30[t][y] else EPS for y in cand]
+            r, acc = rng.random() * sum(w), 0.0
+            for y, wy in zip(cand, w):
+                acc += wy
+                if r <= acc:
+                    k = min(2, (t - 1) * 3 // (T - 1))
+                    thirds[k][0] += y - x
+                    thirds[k][1] += 1
+                    x = y
+                    break
+    rates = [a / b for a, b in thirds]
+    overall = sum(a for a, _ in thirds) / sum(b for _, b in thirds)
+    verdict("LG5 the drift is steady (thirds within 30% of the overall mean step)",
+            max(rates) - min(rates) < 0.3 * abs(overall), ", ".join(f"{r:+.4f}" for r in rates) + f"; overall {overall:+.4f}")
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+
+
 if __name__ == "__main__":
-    main()
+    local() if sys.argv[1:2] == ["local"] else main()
