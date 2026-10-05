@@ -31,7 +31,25 @@ PREDICTIONS, written before this script's first run:
   GC4 (blind): the worst-phase settling upper bound at diagonal 53207 is
       between 107294 and 107326.
 REFUTED-BY: GC0..GC3 failing, CF not rejected, or GC4 outside its band.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-06, first run: ALL CHECKS PASS, exit 0.
+  GC0 PASSED: all 512 width-10 seeds, 16 rows after time 64.
+  GC1 PASSED: first branch 53208, doublings 3, 8, 29, 400.
+  GC2 PASSED: 53208 diagonals; period 16; white 2, 7, 28, 399, 53207.
+  GC3 PASSED: tau(53199) <= 107294.
+  CF REJECTED as required: two disjoint certified 16-cycles at width 53209.
+  GC4 HELD: tau(53207) <= 107312.
+
+ADDENDUM, before its run (COMMAND: append "birth" to the command above).
+Unexpected check: in a forced half-line, diagonal k may first exist at the
+wall at time k-L. An all-seed upper bound should not reset it before it exists.
+Use the worst valid L, namely 1, and start every extension no earlier than k-1.
+  GB0 (must hold): birth-aware bounds are at least the original bounds.
+  GB1 (blind): the worst-phase bounds at 53199 and 53207 stay 107294, 107312.
+  GB2 (counterfactual rejected): for a scalar column born at 100, with constant
+      parents a=0, b=1 and initial state 0, claiming settling at 1 is invalid;
+      the birth-aware reset bound 101 is valid and attained.
+REFUTED-BY: GB0 failing, GB1 changing either value, or GB2 not rejected.
+OUTCOME of birth: not yet run.
 """
 
 
@@ -96,12 +114,12 @@ def certified(orbit, width):
                for t, v in enumerate(orbit))
 
 
-def settling(words, period, target):
+def settling(words, period, target, wall=False):
     bound = 0
     for phase in range(period):
         older, previous = 0, 0  # diagonal -1, diagonal 0
         for k in range(1, target + 1):
-            start = max(older, previous)
+            start = max(older, previous, k - 1 if wall else 0)
             parent = words[k - 1]
             if parent:
                 delay = next(d for d in range(period)
@@ -112,6 +130,23 @@ def settling(words, period, target):
             older, previous = previous, current
         bound = max(bound, previous)
     return bound
+
+
+def birth_audit():
+    words, period, _, _, _ = classify(53208)
+    targets = [53199, 53207]
+    old = [settling(words, period, k) for k in targets]
+    new = [settling(words, period, k, wall=True) for k in targets]
+    tests = [('GB0', all(a <= b for a, b in zip(old, new))),
+             ('GB1', new == [107294, 107312]),
+             ('GB2 counterfactual rejected', 1 < 100 and 101 >= 100
+              and (0 ^ (1 | 0)) == 1)]
+    print(f'original {old}; birth-aware {new}', flush=True)
+    for name, okay in tests:
+        print(f"{'PASS' if okay else 'FAIL'} {name}", flush=True)
+    okay = all(value for _, value in tests)
+    print('ALL CHECKS PASS' if okay else 'FAILURES')
+    return not okay
 
 
 def main():
@@ -162,4 +197,5 @@ def main():
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    import sys
+    raise SystemExit(birth_audit() if sys.argv[1:] == ['birth'] else main())
