@@ -157,7 +157,10 @@ prize needs a statement about every single finite configuration. The questions a
    constructing it, that some set of windows covering almost everything holds no Z-number orbit. The analogue
    would be a set of centre-column words, of measure near 1, that no nonzero finite configuration's centre column
    keeps to for ever. That would be a new theorem about Rule 30's centre columns, short of the prize. It needs
-   Rule 30 to be ergodic and mixing for the uniform measure (to be checked).
+   Rule 30 to be ergodic and mixing for the uniform measure. Partly checked (2026-10-05): Shereshevsky,
+   Monatsh. Math. 114 (1992) 305-316, proves Bernoulli and K natural extensions for surjective one-sided
+   permutive automata under conditions on the neighbourhood's ends. Whether Rule 30's neighbourhood (-1, 0, +1)
+   meets them was not settled here: the paper was not reachable, and only a search summary was read.
 5. **A weaker theorem about every single seed.** Langton's ant's highway is unproved, but every trajectory is
    proved unbounded, by reversibility and an extremal cell. Rule 30 is not reversible, but left-permutivity solves
    it sideways. Is there a statement weaker than B, about every single finite configuration with a 0101 centre,
