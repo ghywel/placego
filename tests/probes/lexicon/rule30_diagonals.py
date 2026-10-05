@@ -61,6 +61,21 @@ that the script runs, printed its verdicts before this file was committed, and t
 and DG2 held; DG1 (slope 0.243), DG4 (left periods of 8 from e = 29, after an eventually-zero diagonal at e = 28) and
 DG5 (m_e <= e for e = 10 to 19; m_e ~ 1.34 e) failed. The predictions above are left exactly as written before it, so
 the full run at 2^18 is not blind for DG1, DG4 and DG5.
+
+OUTCOME of the first full run, 2026-10-05 (LOGT = 18, 20 seconds): DG0 PASSED. Right diagonals 0 to 42 are purely
+periodic from t = 0 (diagonal 43's period no longer fits twice in 2^18 steps); a(n) = 1, 3, 4, 6, 7, 9, 15, 16, 24 as
+Rowland gives; both bounds hold; the centre column is D_t(t) = E_t(t). log2 of the periods, d = 0 .. 42: 0, 1, 1, 2, 3,
+3, 4, 5, 5, 6 (six times), 7, 8 (eight times), 9, 10, 10, 11, 11, 12 (five times), 13, 13, 14, 15, 15, 16, 16, 17, 17.
+DG1 HELD (slope 0.353 over 10 to 42: a doubling every 2.8 diagonals; the smoke test's 0.243 saw only up to 26). DG2 HELD
+(no exceptions; its parenthetical was wrong, since 2^(0.3 t) > t only from t = 12, but every measured period exceeds d
+for d = 3 to 63, those beyond 42 exceeding 2^17). DG3 PASSED: left diagonals 0 to 63 are all eventually periodic; only e
+= 2, 7 and 28 are eventually 0, and the period grows exactly after them, to 2 at e = 3, 4 at e = 8 and 8 at e = 29. DG4
+REFUTED (periods of 8 from e = 29), but the left periods stay tiny: 8 at e = 63, where the right side has 2^17 at d =
+41. DG5 REFUTED (not blind): m_e <= e for e = 10 to 17 and 19, m_e > e from 20 on; m_e = 23, 55, 91 at e = 20, 40, 63;
+the fit through 0 gives m_e ~ 1.34 e (a line at -0.25 cells per step), but m_e / e was still growing at e = 63 (1.44).
+CF PASSED.
+The two sides are opposite kinds of rational number: the right purely periodic with periods doubling, the left a growing
+transient followed by a period of at most 8.
 """
 import math, random, sys
 

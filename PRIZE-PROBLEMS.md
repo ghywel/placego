@@ -1928,3 +1928,79 @@ quantity built from it would be a whole number, yet strictly between 0 and 1, wh
 quantity would have to come from the structure found so far, perhaps the exact channel bound (§8.20) or the wheel's
 lattice (§8.18), turned into an integer that a finite left half would make too small. That is speculation, recorded as
 a lead, not a result.
+
+### 8.27 The pyramid as a stack of rational numbers (2026-10-05)
+
+The owner: "I find myself wondering if there is more than one irrational number embedded, which would confuse and
+compound the already existing irrational number." The pyramid does hold infinitely many numbers, but every one of
+them is rational, and the centre column is built from them.
+
+**Cut the pyramid along diagonals instead of columns.** Write $c(t, x)$ for the cell at time $t$ and position $x$.
+Right diagonal $d$ is $D_d(t) = c(t, t - d)$, and left diagonal $e$ is $E_e(t) = c(t, e - t)$, each read from $t = 0$,
+so each starts with the zeros above the pyramid. The centre cell at time $t$ lies on right diagonal $t$ and on left
+diagonal $t$, at position $t$ along each:
+
+```math
+c(t, 0) = D_t(t) = E_t(t) .
+```
+
+So the centre column is a Cantor diagonal through two lists of numbers, $0.D_d(0) D_d(1) \ldots$ and
+$0.E_e(0) E_e(1) \ldots$. Cantor read the $n$-th digit of the $n$-th number in a list, and changed it, to build a
+number missing from the list. Here the digit is read and kept.
+
+**Every right diagonal is rational, by a short proof.** Rule 30 is $c' = l \oplus (c \lor r)$. Along a right diagonal
+the left parent lies on the same diagonal, so
+
+```math
+D_d(t) = D_d(t-1) \oplus \bigl( D_{d-1}(t-1) \lor D_{d-2}(t-1) \bigr) .
+```
+
+Each diagonal is a running XOR of the OR of the two diagonals to its right. A running XOR of a sequence with period
+$p$ repeats after $p$ steps, or after exactly $2p$ if one period holds an odd number of 1s. The right edge is all 1s,
+and the diagonals beyond it are all 0s. So by induction every right diagonal is purely periodic, with a period that is
+a power of 2 and at most doubles from one diagonal to the next. The periods must also keep growing. Diagonal $d$
+begins with $\lceil d/2 \rceil$ zeros above the pyramid, and then meets the pyramid's left edge, where the two outermost
+cells are always black. So its period is longer than $\lceil d/2 \rceil$. The periodicity is Jen's theorem (1990), and
+Rowland characterises where each period first appears. The proof here is the natural one; it has not been checked
+against theirs.
+
+**The left diagonals are rational too, but of the opposite kind.** Along a left diagonal the right parent lies on the
+same diagonal, but it enters through the OR. Wherever the neighbouring diagonal holds a 1, the new cell is fixed
+whatever the old one was: a reset. So a left diagonal settles into a period no longer than its neighbours', unless
+the diagonal before it is eventually all 0. Only then can the period double.
+
+**Measured** (`rule30_diagonals.py`, $2^{18}$ = 262,144 steps, predictions written first):
+
+| Distance from the edge | 9 | 29 | 42 | 63 |
+|---|---|---|---|---|
+| Right diagonal's period (no transient) | 64 | 4,096 | 131,072 | beyond the window |
+| Left diagonal's period | 1 | 8 | 8 | 8 |
+| Left diagonal's transient (steps before it repeats) | 5 | 30 | 57 | 91 |
+
+- The proved statements check out exactly (DG0, DG3). Rowland's first diagonals of each period, 1, 3, 4, 6, 7, 9,
+  15, 16, 24, are reproduced.
+- **The right periods double about every 2.8 diagonals** (DG1 held: log₂ of the period grows by 0.353 per
+  diagonal). Every right diagonal from 10 on has a period above $2^{0.3d}$ (DG2 held). From diagonal 3 to 63 every
+  period is longer than the diagonal's number (beyond 42 the periods exceed the window's $2^{17}$). So the centre
+  column reads each of those diagonals inside its first period: it never sees one repeat.
+- **The left periods stay tiny.** Only three left diagonals up to 63 are eventually 0, those at 2, 7 and 28, and the
+  period doubles just after each, to 2, 4 and 8. I predicted at most 4 (DG4, refuted). I also predicted that the
+  centre lies inside every left diagonal's transient from distance 10 on (DG5, refuted). It does from distance 20
+  on, but at 10 to 17 and at 19 the transient ends at or before column 0. These two predictions were not blind: a
+  smoke test printed their verdicts before the predictions were committed (recorded in the script).
+
+**What it means.**
+- **There is one candidate irrational number, built from infinitely many rational ones.** On the right the numbers'
+  periods grow exponentially, so each centre digit comes from a number that has not yet repeated. On the left the
+  periods stay small, but the transients grow, and from distance 20 on each centre digit comes from inside a
+  transient. Either way the centre column takes every digit from a stretch of a rational number that does not
+  repeat. That is how a diagonal through rational numbers can avoid repeating, if it does.
+- **The two sides are opposite kinds of order.** The right side is nested: stripes with no transient, whose periods
+  double (Rowland's "local nested structure"). The left side is a band of short-period stripes along the pyramid's
+  left edge, each reached after a transient that grows with the distance from the edge. This band explains why
+  §8.25's prediction LG3 placed regular stripes on the left. The lightning's pull to the left was local all the same
+  (LG4).
+- **The proof idea it suggests.** Cantor's argument shows that a diagonal differs from every number in its list. A
+  proof here would need something else: that the digits the centre column takes from all these rational numbers
+  can never line up into a repeating pattern. That is a statement about how the periods and transients of the
+  diagonals interact, not only about how fast they grow. It is recorded as a lead, not a result.
