@@ -2,7 +2,7 @@
 """rule30_maze.py: the owner's maze. From a random cell, with no map, what is the most efficient way back to the apex?
 
 RUN-ON:     cpu (pure Python 3, standard library; seeded)
-COMMAND:    python3 tests/probes/lexicon/rule30_maze.py [T=2048] [STARTS=2000]
+COMMAND:    python3 tests/probes/lexicon/rule30_maze.py [T=2048] [STARTS=2000] | rule30_maze.py adaptive
 COST:       about two minutes on one core.
 
 The owner (2026-10-05): "Given some random initial starting position in the pyramid, and without knowledge about the
@@ -52,11 +52,36 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
   MZ5 (the chaos step, blind): flipping 1% of Rule 30's interior cells at random makes dead ends (P1 fails), but most
       of the maze stays connected: between 50% and 99.9% of the interior black cells at depth T still connect.
 REFUTED-BY: MZ0 failing (the instrument or the proof); MZ1 to MZ5 failing.
+
+OUTCOME of the first run, 2026-10-05 (T = 2048, 2,000 starts, 9 seconds): MZ0 PASSED (every black cell connects; every
+climb, by every strategy, reaches the apex in exactly t moves; the search agrees with the row-by-row connectivity 200
+times in 200). Over all of Rule 30's black cells the parent patterns are exactly the coin model's (100 0.2496, 011
+0.2503, 010 0.2505, 001 0.2496), but along the climbers' own paths they are not. Looks per row: middle first 1.734,
+right first 1.536, left first 1.645, middle-left-right without P1 2.113. MZ1 REFUTED: a climber's history biases what
+lies above it (after climbing to a middle parent, the next middle parent is black only about 27% of the time), and the
+best fixed order is right first. MZ2 HELD (0.1867 of black cells are dead ends going down; 3/16 = 0.1875). MZ3
+REFUTED, on one count: on a random pyramid of Rule 30's density only 1.52% of the interior black cells at depth 2048
+connect to the apex, and the search with marks always succeeds at 3.02 reads per row on the median, but climbs without
+backtracking stick from 152 of 200 connected starts, not more than 90%. MZ4 HELD, and the sweep places the threshold
+between densities 0.50 and 0.55: connected shares 0.0028, 0.0030, 0.0047, 0.0110, 0.5838, 0.8504, 0.9137 at 0.35,
+0.40, ..., 0.65. Rule 30's density (0.5017) is just below it: a random pattern that dense is a maze of disconnected
+pieces, while Rule 30's is connected everywhere. MZ5 HELD (with 1% flips, 92.55% still connect).
+
+ADDENDUM, written 2026-10-05 after the first run and before the second (python3 rule30_maze.py adaptive): the most
+efficient walker. With P1, a row costs 1 look if the first parent looked at is black and 2 otherwise, so the cost is
+2 - q, where q is the chance that the first look finds black: only the first choice matters. An adaptive walker picks
+its first look by its state: its last move and what its looks showed at the previous row. q for each state and parent
+is estimated from the training walks (the simulation reads the true colours), the policy is updated three times, and
+it is scored on held-out starts.
+  MZ6 (blind): the adaptive walker needs fewer than 1.45 looks per row on held-out starts (the best fixed order 1.536).
+  MZ7 (blind): the threshold is sharp and between 0.51 and 0.54: in a sweep from 0.50 to 0.56 in steps of 0.01, the
+      connected share at depth T first exceeds 10% at a density between 0.51 and 0.54.
 """
 import random, sys
 
-T = int(sys.argv[1]) if len(sys.argv) > 1 else 2048
-STARTS = int(sys.argv[2]) if len(sys.argv) > 2 else 2000
+_nums = [a for a in sys.argv[1:] if a != "adaptive"]
+T = int(_nums[0]) if len(_nums) > 0 else 2048
+STARTS = int(_nums[1]) if len(_nums) > 1 else 2000
 FAILS = 0
 
 
@@ -268,5 +293,74 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def walk_adaptive(rows, t, x, policy, record=None):
+    """Climb with P1, choosing the first look by state = (last move, the previous row's looks as (offset from the
+    current cell, colour)). policy maps a state to a look order. If record is given, the true colours of the three
+    parents are tallied per state. Returns (looks, moves)."""
+    looks = moves = 0
+    state = ("start", ())
+    while t > 0:
+        order = policy.get(state, (1, 0, -1))
+        if record is not None:
+            tally = record.setdefault(state, [0, [0, 0, 0]])
+            tally[0] += 1
+            for k, dx in enumerate((-1, 0, 1)):
+                tally[1][k] += bit(rows[t - 1], x + dx)
+        seen = []
+        for k, dx in enumerate(order):
+            if k == 2:
+                ok = True                              # P1
+            else:
+                looks += 1
+                ok = bit(rows[t - 1], x + dx)
+                seen.append((dx, ok))
+            if ok:
+                state = (dx, tuple(sorted((d - dx, c) for d, c in seen if d != dx)))
+                t, x, moves = t - 1, x + dx, moves + 1
+                break
+    return looks, moves
+
+
+def adaptive():
+    rng = random.Random(1736)
+    r30 = rule30_rows()
+    train, test = [], []
+    for group in (train, test):
+        for _ in range(STARTS):
+            t = rng.randrange(T // 2, T)
+            group.append((t, random_black(r30, rng, t)))
+    policy = {}
+    for it in range(4):
+        rec, L, M = {}, 0, 0
+        for t, x in train:
+            l, m = walk_adaptive(r30, t, x, policy, rec)
+            L, M = L + l, M + m
+        print(f"   iteration {it}: training looks per row {L / M:.4f} with {len(policy)} learned states", flush=True)
+        for state, (n, blacks) in rec.items():
+            ranked = sorted(range(3), key=lambda k: -blacks[k])
+            policy[state] = tuple((-1, 0, 1)[k] for k in ranked)
+    L = M = 0
+    for t, x in test:
+        l, m = walk_adaptive(r30, t, x, policy)
+        L, M = L + l, M + m
+    print("   learned first looks (state: order; offsets -1 left, 0 middle, +1 right):", flush=True)
+    for state, order in sorted(policy.items(), key=lambda kv: str(kv[0])):
+        n, blacks = rec.get(state, [0, [0, 0, 0]])
+        if n >= 100:
+            q = blacks[(-1, 0, 1).index(order[0])] / n
+            print(f"      {state}: {order}, first look black {q:.3f} of {n}", flush=True)
+    verdict("MZ6 the adaptive walker needs fewer than 1.45 looks per row on held-out starts", L / M < 1.45,
+            f"{L / M:.4f}")
+    sweep = {}
+    for p in (0.50, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56):
+        rows = random_rows(p, rng)
+        sweep[p] = interior_share(rows, connected(rows), T - 1)
+    print("   connected share at depth T by density: " + ", ".join(f"{p:.2f}: {v:.4f}" for p, v in sweep.items()),
+          flush=True)
+    first = next((p for p, v in sweep.items() if v > 0.1), None)
+    verdict("MZ7 the connected share first exceeds 10% at a density between 0.51 and 0.54",
+            first is not None and 0.51 <= first <= 0.54, f"first at {first}")
+
+
 if __name__ == "__main__":
-    main()
+    adaptive() if "adaptive" in sys.argv[1:] else main()
