@@ -2695,4 +2695,33 @@ a sharper dichotomy:
 So no local rule of column 1 can give the bounded law for 0101. The cost side has to come from the left half's
 forced cells themselves.
 
+### 8.42 One law for every word: total width plus a logarithm (2026-10-05)
+
+§8.24 found that for 0101 a finite seed keeps its centre column on the word for at most 9 steps beyond its own total
+width, for every right half up to 32 cells. `rule30_uniform.py` asks whether that is one law for every centre word,
+with predictions written before each of three runs. The 0101 values of §8.24 are its control, and they were
+reproduced exactly.
+
+| Centre word | 01 | 001 | 011 | 0001 | 0011 | 0111 | random | 1 | 0 |
+|---|---|---|---|---|---|---|---|---|---|
+| Largest excess, cuts to depth 126 | +9 | +10 | +9 | +7 | +7 | +7 | +6 | +1 | 0 |
+
+- **The same small constant at every two-colour word** (UW1), and even for a random centre column (UW4). The
+  one-colour words are exact, as Condrey's structure requires: no zero run longer than one (UW3).
+- **But the constant is really a logarithm.** Let the cuts go deeper and some excesses grow: for the random wall,
+  from +5 at depth 64 to +9 at 512; for 0001, from +5 to +10. For 01 and 001 the excess stayed flat to depth 512.
+  That looked like a property of periodic words, and I said so before testing it. The direct test refuted it (UV1):
+  the longest deep zero run for 01 grows from 14 cells at depth 128 to 21 at depth 2048, faster than the random
+  wall's. The excess stayed flat only because a small seed's shallow champion stays ahead of the deep runs, which
+  need wider seeds. The longest of N coin-flip sequences over n cells is about $\log_2(nN)$ cells: 21 for the
+  measured case.
+- **Wider right halves usually do worse** (UW2 refuted by one word, 0011), because their extra bits arrive too late.
+
+**What it means for the proof.** Across every word tested, a finite configuration of total width $w$ keeps its
+centre column on a given word for about $w$ plus a logarithm steps. Each condition at the wall costs a bit, and luck
+adds the logarithm, as Cramér's model adds it to prime gaps. Any finite bound settles Problem 1 for a word, and this
+one would do it uniformly over all periods. **But the law holds for a random word too**, so it cannot be proved
+from properties every word shares. It fails exactly for the countably many words that are some finite
+configuration's actual centre column. A proof must therefore use what makes periodic words special, as Jen's
+theorem and Condrey's proof do. In these statistics, nothing distinguishes the periodic words from the random one.
 

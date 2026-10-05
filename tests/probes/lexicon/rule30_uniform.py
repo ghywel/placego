@@ -70,6 +70,18 @@ above (no window has been computed).
       K = 128 plus 1. Under the coin model, with 16 times as many cells, it would grow by about 4.
   UV2 (blind; the control the other way): for the random wall it grows by at least 2 from K = 128 to K = 2048.
   UV3 (blind): 001 behaves like 01 (UV1's bound), and 0001 like the random wall (UV2's growth).
+
+OUTCOME of windows, 2026-10-05 (11 seconds): the longest zero run in [K/2, K], over every right half of width up to
+10, at K = 128, 256, 512, 1024, 2048: 01 14 14 15 17 21; 001 11 13 15 16 19; 0001 13 13 15 12 18; random 13 16 15
+17 17.
+  UV1 REFUTED: for 01 the deep runs grow, by 7, faster than the random wall's 4. UV2 HELD. UV3 REFUTED (001 grows by
+     8).
+  So the periodic wall does not hold the deep runs down. Horizon's flat excess for 01 and 001 came from the
+  definition: the excess is (run - width), and a small right half's champion at shallow depth (01: width 5, depth 21)
+  stays ahead of the longer deep runs, which need wider right halves. With coin cells, the longest run among N
+  sequences over n cells is about log2(n N): for n = 1024 and N = 2047 that is 21, as measured for 01 at K = 2048.
+  The law across words is the coin's, total width plus a logarithm of the depth. The hypothesis raised after horizon
+  (periodicity suppresses deep zero runs) was refuted the same hour.
 """
 import pathlib, random, sys
 
