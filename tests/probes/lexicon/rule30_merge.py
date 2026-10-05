@@ -1,64 +1,60 @@
 #!/usr/bin/env python3
-"""rule30_merge.py: are the ladder's long runs luck or structure? And why are real right halves so poor?
+"""rule30_merge.py: do the forced walks of lead 1 merge, and do the merges set the record law R(d) ~ 0.8 d?
 
-RUN-ON:     cpu (C99 via cc, driven from Python 3 with the standard library)
-COMMAND:    python3 tests/probes/lexicon/rule30_merge.py
-COST:       about five minutes on one core, 1.5 GB of memory at the deepest point.
+RUN-ON:     cpu (pure Python 3, standard library; records.c for the controls)
+COMMAND:    python3 tests/probes/lexicon/rule30_merge.py [DMAX=45]
+COST:       about a minute and under 1 GB at DMAX = 45 (the depth 65 witnesses: records.c, minutes, if not cached).
 
-Two questions left by rule30_ladder_budget.py (PRIZE-PROBLEMS.md section 8.14).
+Background (PRIZE-PROBLEMS.md sections 8.36 to 8.38; rule30_influence.py). For column 0 = 0101..., a prefix of
+column 1 (its free bits at times 0, 2, .., d - 3) fixes one forced walk from depth d. The record R(d) is the longest
+zero run over every prefix. Under the coin model 2^(d/2) independent walks give R ~ d; the records give 0.8 d.
+rule30_influence.py found single late bits re-randomise the run (influence 2/3, the coin value), and only a few early
+bits are weak. Its reading: a cell at time t depends only on column 1 at times t and later, so the bit at time 2i can
+change only rows 0 .. 2i. Its damage drifts down that strip as it moves left (it passes x_{t+1}(i) -> x_t(i-1) through
+the XOR every time, and along a row only through an OR whose other input is 0), so it dies within a distance that
+grows with the strip. Two prefixes whose difference has died reach the same walk state, and from then on they are
+one walk: a merge.
+The walk state at depth k is the pair (A_{k-1}, A_{k-2}). Its canonical form masks the bits of A_{k-2} that an OR
+shields: A_k's input is (A_{k-1} << 1) | (A_{k-2} << 2), so A_{k-2}[j] is unseen wherever A_{k-1}[j + 1] = 1. Two
+states with one canonical form have one future (exact). D(d) counts the canonical states at depth d over all
+prefixes, delta(d) = nfree(d) - log2 D(d) the bits lost to merges before the run; among the prefixes still in a zero
+run after l cells, S_l counts prefixes and D_l distinct canonical states (merges inside the run).
 
-Part A, the "families". With column 1 free, 21 start groups hold the left half at zero for exactly 33 cells from depth
-33, and none for 25 to 31; section 8.14 called that "structure, not luck". Looked at afterwards (ladder.c keys and
-merge modes), the 21 groups reach one and the same left-side state, the anti-diagonal pair (a_{s-2}, a_{s-3}), so they
-are one event counted 21 times. Counting distinct states instead (10,040 at depth 33, 309,669 at depth 45), the tail
-looked like coin flips, and the outliers at 33 and 45 had a chance of about 14% each. With column 1 free only the
-forced cells (even depths) can end a run, so under the coin model a run of R cells from an odd depth s has
-f(R) = (R - 1) / 2 forced cells, and P(run >= R) = 2^-f(R) for each distinct state.
-
-Part B, the real right halves. BL5 found that right halves of 16 cells hold the left half at zero for only 11 cells
-at depths 41 to 105, far below one bit per cell. Two explanations: merging (most right halves give the same column 1,
-so there are far fewer than 2^16 distinct histories), or cost (the histories are distinct, but each zero cell costs
-more than a bit).
-
-PREDICTIONS, written 2026-10-05 before this script's first run. Part A uses depths not examined before.
-  MA0 (control, exact): with column 1 free, equal left-side states give equal runs: 0 conflicts at every depth.
-  MA1 (blind; the coin model over distinct states): at s = 35, 39, 43, 47, 49, the number of distinct states whose run
-      is at least R is within a factor 2 of G_eff 2^-f(R), for every odd R whose expectation is at least 10.
-  MA2 (blind; the maxima are luck): the coin model's chance of a maximum at least as long as the one observed,
-      1 - (1 - 2^-f(R))^G_eff, is at least 0.01 at each of those five depths.
-  MA3 (blind): merging grows with depth: G / G_eff rises from s = 35 to s = 49 (it is 6.5 at 33 and 13.5 at 45).
-  MB1 (blind; little merging): among the 65,535 right halves of at most 16 cells, the number of distinct visible
-      column-1 histories (even times below s + 40) is at least 2^14 at each depth s = 41, 57, 73, 89, 105.
-  MB2 (blind; each cell costs more than a bit): over the distinct histories, the number whose zero run from depth s
-      is at least k falls by beta_real >= 1.2 bits per cell (least-squares slope of log2 N(k), k = 1 up to the last
-      k with N(k) >= 20), at each of the five depths.
-REFUTED-BY: MA0 failing (the instrument); MA1 to MA3 or MB1 to MB2 failing. MB1 and MB2 decide between merging and
-  cost: if MB1 fails, merging explains BL5; if MB2 fails while MB1 holds, BL5 is not explained by either.
-
-OUTCOME of the first run, 2026-10-05 (about three minutes): MA0 passed (0 conflicts at all five depths).
-  MA1 HELD: over distinct states the coin model fits closely, e.g. at s = 49 (965,204 distinct states) 60,745 last at
-      least 9 cells against 60,325 expected, and 119 at least 27 against 117.8. Nothing is outside a factor 2.
-  MA2 HELD: the maxima's coin chances are 0.419, 0.819, 0.737, 0.406, 0.841 (s = 35, 39, 43, 47, 49). The maxima are
-      luck. Section 8.14's "structure, not luck" for the depth-33 and depth-45 families was wrong: each is one state
-      counted 21 and 8 times, with a coin chance of about 14%.
-  MA3 HELD: G / G_eff = 7.4, 9.4, 12.0, 15.3, 17.4.
-  MB1 REFUTED: the 65,535 right halves of at most 16 cells give only 4,703, 6,493, 8,351, 10,314 and 12,352 distinct
-      visible histories (2^12.2 to 2^13.6) at s = 41 to 105. Most of a right half's 16 bits have not reached column 1
-      by time s + 40.
-  MB2 REFUTED: over those distinct histories a zero cell costs about one bit: beta_real = 0.91, 1.07, 1.07, 1.04, 1.20.
-  So BL5 is explained by merging, and the coin model holds for real right halves too, once histories are counted
-  rather than seeds.
+PREDICTIONS, written 2026-10-05 before this script's first run. Seen before: the records R(d) and their prefix
+counts; RC3's tail slopes (0.513 and 0.481 bits per cell at depths 57 and 65); the histograms at depths 21 and 25
+(rule30_influence.py); the influences of rule30_influence.py. Not seen: any count of states or merges, and any record
+witness (W line) beyond RC5's comparison of the first witnesses at d and 2d for d = 21 .. 30.
+  MG0 (controls, must hold): (a) an independent simulator (the left-parent rule, cell by cell) gives row 0 equal to
+      the diagonals' cells, and flipping column 1 at time 2i changes no cell above row 2i but some cell at or below
+      it; (b) flipping a shielded bit of A_{k-2} never changes the walk, and flipping an unshielded one does in at
+      least 30% of trials (the counterfactual); (c) the merged frontier, its multiplicities as weights, gives
+      records.c's record and every H line at each odd depth from 21 to DMAX.
+  MG1 (blind; merges before the run): 1 <= delta(d) <= 5 at every odd d from 21 to DMAX, and delta grows by 1 to 3
+      from depth 21 to 45 (linear in d, about 0.075 per unit depth, as the strip picture gives).
+  MG2 (blind; merges inside the run): at depths 37, 41 and 45 the distinct states fall faster than the prefixes:
+      log2 D_l loses 0.55 to 0.70 bits per cell, log2 S_l 0.45 to 0.55 (least squares over the cells with D_l >= 16).
+  MG3 (blind; the explanation): the merges account for the record law: log2 D(d) / (b_D d), the record ratio the
+      merged walks imply (b_D the slope of MG2), lies between 0.72 and 0.88 at depths 37, 41 and 45 (observed R/d
+      from 49 to 81: 0.79 to 0.88).
+  MG4 (blind): at depth 41, in at least 99% of the classes with two or more prefixes, the members differ only at
+      times below 0.3 d.
+  MG5 (blind; one record, few walks): at every odd depth from 41 to 61 and at 65, 69, 73, 77 and 81, the record
+      witnesses (W lines, up to 64) form at most 6 distinct walks (distinct column 1 from time d - 1, the run's own
+      forced bits), and at most 2 at the median depth.
+  MG6 (blind): within each such walk the witnesses differ only at times below 0.35 d.
+  MG7 (random-chaos, from hydrology; the owner's lightning channels): are merging walks a river network? In
+      Scheidegger's model (1967) the streams are coalescing random walks: the distinct ones fall only as a power of
+      the distance (t^(-1/2), so delta would grow like (1/2) log2 d, 0.55 from 21 to 45), and basins come in all
+      sizes. Prediction: not here: at depth DMAX under 1% of prefixes lie in classes of 64 or more.
+  CF (counterfactual): with XOR in place of the OR (no shielding) no two prefixes merge: D(d) = 2^nfree(d) at every
+      odd d from 21 to 33.
+REFUTED-BY: MG0 failing (the instruments); MG1 to MG7 and CF failing.
 """
-import math, pathlib, re, subprocess, sys, tempfile
+import math, pathlib, random, statistics, subprocess, sys, tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
-_argv, sys.argv = sys.argv, sys.argv[:1]
-import rule30_periodic as r30                          # noqa: E402
-sys.argv = _argv
-DEPTHS_A = [35, 39, 43, 47, 49]
-DEPTHS_B = [41, 57, 73, 89, 105]
-W = 16
+DMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 45
+CACHE = pathlib.Path(tempfile.gettempdir()) / "rule30_records_cache"      # rule30_records.py's per-depth outputs
 FAILS = 0
 
 
@@ -72,82 +68,276 @@ def verdict(name, held, detail=""):
     print(f"{'HELD' if held else 'REFUTED'}  prediction {name}" + (f"  ({detail})" if detail else ""), flush=True)
 
 
-def slope(N):
-    ks = [k for k in range(1, len(N)) if N[k] >= 20]
-    if len(ks) < 3:
-        return float("nan")
-    ys = [math.log2(N[k]) for k in ks]
-    mx, my = sum(ks) / len(ks), sum(ys) / len(ys)
-    return -sum((x - mx) * (y - my) for x, y in zip(ks, ys)) / sum((x - mx) ** 2 for x in ks)
+def diag(P, Q, c, k, xor=False):
+    """A_k from A_{k-1} = P and A_{k-2} = Q, c = column 1 at time k-1 (records.c's rule; xor: the counterfactual)."""
+    X = ((P << 1) ^ (Q << 2) ^ (c << 1)) if xor else ((P << 1) | (Q << 2) | (c << 1))
+    X = (X & ~1) | (k & 1)
+    s = 1
+    while s <= k:
+        X ^= X << s
+        s <<= 1
+    return X & ((2 << k) - 1)
+
+
+def canon(P, Q):
+    return P, Q & ~(P >> 1)
+
+
+def nfree(d):
+    return (d - 2) // 2 + 1 if d >= 2 else 0
+
+
+def walk(P, Q, k, cap=400):
+    """The forced walk from depth k; returns the run and the cells (0 or 1) it met, the last one 1."""
+    k0 = k
+    while k - k0 < cap:
+        A = diag(P, Q, 0, k)
+        if (A >> k) & 1:
+            if (k - 1) % 2 == 0:
+                A = diag(P, Q, 1, k)
+            else:
+                return k - k0
+        P, Q = A, P
+        k += 1
+    return cap
+
+
+def state_at(prefix, d):
+    P, Q = 0, 0
+    for k in range(1, d):
+        c = (prefix >> ((k - 1) // 2)) & 1 if (k - 1) % 2 == 0 else 0
+        P, Q = diag(P, Q, c, k), P
+    return P, Q
+
+
+def left_half(bits, T, K):
+    """Independent: x_t(-j) for t = 0 .. T - K - 1, j = 1 .. K, from column 0 = t mod 2 and column 1 (bits: time ->
+    bit, odd times 0), by x_t(i-1) = x_{t+1}(i) XOR (x_t(i) OR x_t(i+1)). Returns {(t, j): cell}."""
+    right = [t % 2 for t in range(T)]
+    far = [bits.get(t, 0) if t % 2 == 0 else 0 for t in range(T)]
+    cells = {}
+    for j in range(1, K + 1):
+        col = [right[t + 1] ^ (right[t] | far[t]) for t in range(len(right) - 1)]
+        for t, v in enumerate(col):
+            cells[(t, j)] = v
+        far, right = right, col
+    return cells
+
+
+def records_output(d):
+    f = CACHE / f"d{d}.txt"
+    if f.exists():
+        return f.read_text()
+    exe = pathlib.Path(tempfile.gettempdir()) / "rule30_merge_records"
+    if not exe.exists():
+        subprocess.run(["cc", "-O2", "-fopenmp", "-o", str(exe), str(HERE / "records.c")], check=True)
+    out = subprocess.run([str(exe), str(d), "0"], check=True, capture_output=True, text=True).stdout
+    CACHE.mkdir(exist_ok=True)
+    f.write_text(out)
+    return out
+
+
+def parse(out):
+    R, H, W = None, {}, []
+    for ln in out.splitlines():
+        f = ln.split()
+        if not f:
+            continue
+        if f[0] == "R":
+            R = int(f[2])
+        elif f[0] == "H":
+            H[int(f[2])] = int(f[3])
+        elif f[0] == "W":
+            W.append(f[2])
+    return R, H, W
+
+
+def slope(xs, ys):
+    mx, my = statistics.fmean(xs), statistics.fmean(ys)
+    return sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs)
+
+
+def run_from(front, d):
+    """The merged walk from the depth-d frontier {canonical state: multiplicity}: histogram, S_l and D_l."""
+    H, S, Dl = {}, [], []
+    cur, k = dict(front), d
+    while cur:
+        S.append(sum(cur.values()))
+        Dl.append(len(cur))
+        nxt = {}
+        for (P, Q), m in cur.items():
+            A = diag(P, Q, 0, k)
+            if (A >> k) & 1:
+                if (k - 1) % 2 == 0:
+                    A = diag(P, Q, 1, k)
+                else:
+                    H[k - d] = H.get(k - d, 0) + m
+                    continue
+            key = canon(A, P)
+            nxt[key] = nxt.get(key, 0) + m
+        cur, k = nxt, k + 1
+    return H, S, Dl
+
+
+def controls(rng):
+    ok = True
+    for _ in range(200):                                        # MG0 (a)
+        d = 33
+        p = rng.getrandbits(nfree(d))
+        bits = {2 * i: (p >> i) & 1 for i in range(nfree(d))}
+        P, Q = 0, 0
+        cells = left_half(bits, 2 * d + 4, d)
+        for k in range(1, d):
+            c = bits.get(k - 1, 0) if (k - 1) % 2 == 0 else 0
+            P, Q = diag(P, Q, c, k), P
+            ok &= ((P >> k) & 1) == cells[(0, k)]
+        i = rng.randrange(nfree(d))
+        flipped = dict(bits)
+        flipped[2 * i] ^= 1
+        cells2 = left_half(flipped, 2 * d + 4, d)
+        diff = [t for (t, j), v in cells.items() if cells2[(t, j)] != v]
+        ok &= bool(diff) and max(diff) <= 2 * i
+    report("MG0a the simulator's row 0 is the diagonals' cells; the bit at time 2i changes only rows 0 .. 2i", ok)
+    same, changed, trials = True, 0, 0                         # MG0 (b)
+    while trials < 2000:
+        d = 33
+        P, Q = state_at(rng.getrandbits(nfree(d)), d)
+        sh = [j for j in range(d - 1) if (P >> (j + 1)) & 1]
+        un = [j for j in range(d - 1) if not (P >> (j + 1)) & 1]
+        if not sh or not un:
+            continue
+        trials += 1
+        L = walk(P, Q, d)
+        same &= walk(P, Q ^ (1 << rng.choice(sh)), d) == L
+        changed += walk(P, Q ^ (1 << rng.choice(un)), d) != L
+    report("MG0b a shielded bit never changes the walk; an unshielded one does in at least 30% of trials",
+           same and changed >= 0.3 * trials, f"unshielded flips changed the run {changed / trials:.2f}")
 
 
 def main():
-    exe = pathlib.Path(tempfile.mkdtemp()) / "ladder"
-    subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "ladder.c")], check=True)
+    rng = random.Random(1967)                                  # the year of Scheidegger's river-network model
+    controls(rng)
+    front, k = {(0, 0): [1, 0, 0]}, 1                           # canonical state -> [prefixes, OR, AND of them]
+    res, ok0 = {}, True
+    while k <= DMAX:
+        if k % 2 == 1 and k >= 21:
+            d = k
+            mult = {s: v[0] for s, v in front.items()}
+            H, S, Dl = run_from(mult, d)
+            R, Hr, _ = parse(records_output(d))
+            okd = H == Hr and max(H) == R
+            ok0 &= okd
+            sizes = [v[0] for v in front.values()]
+            res[d] = dict(D=len(front), H=H, S=S, Dl=Dl, R=R, sizes=sizes,
+                          diffs=[(v[1] ^ v[2]).bit_length() - 1 for v in front.values() if v[0] > 1])
+            print(f"   depth {d}: D(d) = {len(front)} = 2^{math.log2(len(front)):.2f} of 2^{nfree(d)} prefixes "
+                  f"(delta {nfree(d) - math.log2(len(front)):.2f}); record {max(H)} (records.c {R})"
+                  f"{'' if okd else '  MISMATCH'}", flush=True)
+        free = (k - 1) % 2 == 0
+        i = (k - 1) // 2
+        nxt = {}
+        for (P, Q), (m, o, a) in front.items():
+            for c in ((0, 1) if free else (0,)):
+                A = diag(P, Q, c, k)
+                key = canon(A, P)
+                oo, aa = (o | (c << i), a | (c << i)) if free else (o, a)
+                if key in nxt:
+                    v = nxt[key]
+                    v[0] += m; v[1] |= oo; v[2] &= aa
+                else:
+                    nxt[key] = [m, oo, aa]
+        front, k = nxt, k + 1
+    report(f"MG0c the merged frontier gives records.c's record and histogram at every odd depth 21 .. {DMAX}", ok0)
 
-    conflicts, ma1_bad, ma2, ratios = [], [], {}, {}
-    for s in DEPTHS_A:
-        out = subprocess.run([str(exe), "merge", "0", str(s)], capture_output=True, text=True, timeout=3600).stdout
-        G = int(re.search(r"of (\d+) start", out).group(1))
-        R = int(re.search(r"= (\d+)", out).group(1))
-        Ge = int(re.search(r"^D 0 \d+ distinct (\d+)", out, re.M).group(1))
-        conflicts.append(int(re.search(r"conflicts (\d+)", out).group(1)))
-        dh = {int(a): int(b) for a, b in re.findall(r"^DH 0 \d+ (\d+) (\d+)$", out, re.M)}
-        ratios[s] = G / Ge
-        rows = []
-        for r in range(1, R + 1, 2):
-            obs = sum(v for k, v in dh.items() if k >= r)
-            exp = Ge * 2.0 ** (-(r - 1) / 2)
-            if exp >= 10:
-                rows.append((r, obs, round(exp, 1)))
-                if not exp / 2 <= obs <= 2 * exp:
-                    ma1_bad.append((s, r, obs, round(exp, 1)))
-        f = (R - 1) / 2
-        ma2[s] = 1 - (1 - 2.0 ** -f) ** Ge
-        print(f"   s {s}: G {G}, distinct {Ge} (G / distinct {G / Ge:.1f}), R {R}, coin chance of a max >= R "
-              f"{ma2[s]:.3f}; observed vs expected (R: obs exp) " + " ".join(f"{r}: {o} {e}" for r, o, e in rows),
+    delta = {d: nfree(d) - math.log2(r["D"]) for d, r in res.items()}
+    print("   delta(d): " + ", ".join(f"{d}: {v:.2f}" for d, v in delta.items()))
+    g = delta.get(45, delta[max(delta)]) - delta[21]
+    verdict("MG1 1 <= delta(d) <= 5 at every odd depth, growing by 1 to 3 from 21 to 45",
+            all(1 <= v <= 5 for v in delta.values()) and 1 <= g <= 3, f"growth {g:.2f}")
+
+    bD, bS = {}, {}
+    for d in (37, 41, 45):
+        if d not in res:
+            continue
+        Dl, S = res[d]["Dl"], res[d]["S"]
+        ls = [l for l in range(len(Dl)) if Dl[l] >= 16]
+        bD[d] = -slope(ls, [math.log2(Dl[l]) for l in ls])
+        bS[d] = -slope(ls, [math.log2(S[l]) for l in ls])
+        print(f"   depth {d}: D_l = " + " ".join(str(x) for x in Dl[:24]) + (" .." if len(Dl) > 24 else ""))
+        print(f"   depth {d}: S_l = " + " ".join(str(x) for x in S[:24]) + (" .." if len(S) > 24 else ""))
+    verdict("MG2 distinct states fall 0.55 to 0.70 bits per cell, prefixes 0.45 to 0.55",
+            all(0.55 <= bD[d] <= 0.70 and 0.45 <= bS[d] <= 0.55 for d in bD),
+            ", ".join(f"{d}: D {bD[d]:.3f}, S {bS[d]:.3f}" for d in bD))
+    rho = {d: math.log2(res[d]["D"]) / (bD[d] * d) for d in bD}
+    verdict("MG3 the merged walks imply a record ratio log2 D(d) / (b_D d) of 0.72 to 0.88",
+            all(0.72 <= r <= 0.88 for r in rho.values()), ", ".join(f"{d}: {r:.3f}" for d, r in rho.items()))
+
+    if 41 in res:
+        diffs = res[41]["diffs"]
+        late = [i for i in diffs if 2 * i >= 0.3 * 41]
+        print(f"   depth 41: {len(diffs)} classes with two or more prefixes; latest differing time by class: "
+              + ", ".join(f"{2 * t}: {diffs.count(t)}" for t in sorted(set(diffs))))
+        verdict("MG4 at depth 41, 99% of classes differ only at times below 0.3 d", len(late) <= 0.01 * len(diffs),
+                f"{len(late)} of {len(diffs)} differ later")
+
+    local = parse_local()
+    walks, inner, ok5 = {}, {}, True
+    for d in list(range(41, 62, 2)) + [65, 69, 73, 77, 81]:
+        W = local[d] if d in local else parse(records_output(d))[2]
+        start = (d - 1) // 2                                   # visible bit n is time 2n; the run's own from d - 1
+        groups = {}
+        for w in W:
+            groups.setdefault(w[start:], []).append(w)
+        walks[d] = len(groups)
+        lat = -1
+        for g in groups.values():
+            for n in range(start):
+                if len({w[n] for w in g}) > 1:
+                    lat = max(lat, 2 * n)
+        inner[d] = lat
+        print(f"   depth {d}: {len(W)} witnesses, {len(groups)} distinct walks (sizes "
+              f"{sorted((len(g) for g in groups.values()), reverse=True)}); latest time differing within a walk {lat}",
               flush=True)
-    report("MA0 equal left-side states give equal runs (column 1 free)", all(c == 0 for c in conflicts),
-           f"conflicts {conflicts}")
-    verdict("MA1 the coin model over distinct states, within a factor 2", not ma1_bad, f"outside: {ma1_bad}")
-    verdict("MA2 the maxima are luck: coin chance >= 0.01 at every depth", all(p >= 0.01 for p in ma2.values()),
-            ", ".join(f"s {s}: {p:.3f}" for s, p in ma2.items()))
-    rs = [ratios[s] for s in DEPTHS_A]
-    verdict("MA3 merging grows with depth", all(b > a for a, b in zip(rs, rs[1:])),
-            ", ".join(f"s {s}: {ratios[s]:.1f}" for s in DEPTHS_A))
+    med = statistics.median(walks.values())
+    verdict("MG5 at most 6 distinct record walks at every depth, at most 2 at the median",
+            max(walks.values()) <= 6 and med <= 2, f"largest {max(walks.values())}, median {med}")
+    verdict("MG6 within a record walk the witnesses differ only at times below 0.35 d",
+            all(inner[d] < 0.35 * d for d in inner), ", ".join(f"{d}: {inner[d]}" for d in inner))
 
-    K = max(DEPTHS_B) + 40
-    tau = [t % 2 for t in range(K + 2)]
-    hist_by_s = {s: {} for s in DEPTHS_B}
-    for R0 in range(1, 1 << W):
-        mask = (1 << (R0.bit_length() + K + 3)) - 1
-        row, vis = R0 << 1, []
-        for t in range(K + 1):
-            if t % 2 == 0:
-                vis.append((row >> 1) & 1)
-            row = (((row << 1) ^ (row | (row >> 1))) & mask & ~1) | ((t + 1) % 2)
-        L = r30.forced_left(R0, tau, K)
-        for s in DEPTHS_B:
-            key = tuple(vis[:(s + 40) // 2])
-            n = 0
-            while s - 1 + n < len(L) and L[s - 1 + n] == 0:
-                n += 1
-            hist_by_s[s].setdefault(key, n)
-    mb1, mb2 = {}, {}
-    for s in DEPTHS_B:
-        runs = list(hist_by_s[s].values())
-        mb1[s] = len(runs)
-        top = max(runs)
-        N = [sum(1 for r in runs if r >= k) for k in range(top + 1)]
-        mb2[s] = slope(N)
-        print(f"   real right halves, s {s}: distinct histories {len(runs)} (log2 {math.log2(len(runs)):.2f}), longest run "
-              f"{top}, beta {mb2[s]:.3f}; N(k) " + " ".join(f"{k}:{N[k]}" for k in range(1, top + 1)), flush=True)
-    verdict("MB1 little merging: at least 2^14 distinct histories at every depth", all(v >= 1 << 14 for v in mb1.values()),
-            ", ".join(f"s {s}: {v}" for s, v in mb1.items()))
-    verdict("MB2 each cell costs more than a bit: beta_real >= 1.2 at every depth", all(b >= 1.2 for b in mb2.values()),
-            ", ".join(f"s {s}: {b:.3f}" for s, b in mb2.items()))
+    sizes = res[max(res)]["sizes"]
+    tot = sum(sizes)
+    big = sum(s for s in sizes if s >= 64)
+    bins = {}
+    for s in sizes:
+        b = 1 << (s.bit_length() - 1)
+        bins[b] = bins.get(b, 0) + s
+    print(f"   depth {max(res)}: prefixes by class size (lower power of 2): "
+          + ", ".join(f"{b}: {bins[b] / tot:.4f}" for b in sorted(bins)) + f"; largest class {max(sizes)}")
+    verdict("MG7 under 1% of prefixes in classes of 64 or more (not a river basin)", big < 0.01 * tot,
+            f"{big / tot:.4f}")
+
+    okc = True
+    for d in range(21, 34, 2):
+        fr = {(0, 0)}
+        for k in range(1, d):
+            free = (k - 1) % 2 == 0
+            fr = {(diag(P, Q, c, k, xor=True), P) for (P, Q) in fr for c in ((0, 1) if free else (0,))}
+        okc &= len(fr) == 1 << nfree(d)
+        print(f"   XOR world, depth {d}: {len(fr)} states of 2^{nfree(d)} = {1 << nfree(d)}")
+    verdict("CF without shielding no two prefixes merge (D = 2^nfree at 21 .. 33)", okc)
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
     sys.exit(1 if FAILS else 0)
+
+
+def parse_local():
+    out = {}
+    f = HERE / "rule30_records_local.txt"
+    if f.exists():
+        for ln in f.read_text().splitlines():
+            g = ln.split()
+            if g and g[0] == "W":
+                out.setdefault(int(g[1]), []).append(g[2])
+    return out
 
 
 if __name__ == "__main__":

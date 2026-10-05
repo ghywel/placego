@@ -23,6 +23,22 @@ PREDICTIONS, written 2026-10-05 before this script's first run (no exploratory r
       each depth.
   IN3 (blind): the latest bits matter most: every bit at a time above 0.6 d has f_i above 0.5.
 REFUTED-BY: IN0 failing (the instrument); IN1 to IN3 failing.
+
+OUTCOME, 2026-10-05 (the first run, 5 seconds, 2000 samples):
+  IN0 PASSED: at depths 21 and 25 the forced walk over every prefix gives records.c's histogram exactly.
+  IN1 HELD (Spearman 0.77, 0.83, 0.69 at depths 33, 41, 49).
+  IN2 REFUTED: only the first two or three bits are weak. Influence by bit (time 0, 2, 4, 6, 8, 10):
+     depth 33: 0.01 0.10 0.37 0.55 0.63 0.65;  depth 41: 0.00 0.04 0.20 0.44 0.56 0.65;
+     depth 49: 0.00 0.01 0.11 0.31 0.49 0.60.  From time 12 on every bit sits at 0.63 to 0.69.
+  IN3 HELD (the smallest late influence 0.65, 0.66, 0.65).
+  The plateau is 2/3. Under the coin model a run is 1 + 2M with P(M >= m) = 2^-m, and two independent runs differ
+  with probability 1 - 1/3 = 2/3. So flipping any bit from time 12 on gives a fresh, independent run: the prefixes are
+  as independent as the coin model needs, except for a few early bits. The weak set grows slowly with depth (time 6
+  falls from 0.55 to 0.31 between 33 and 49), not in proportion to d. As the whole explanation of R ~ 0.8 d it fails.
+  A reading, not tested here: a cell at time t depends only on column 1 at times t and later (the left-parent rule
+  builds row t from rows t and t + 1). So the bit at time 2i can change only rows 0 .. 2i. Its damage has to cross
+  that strip to depth d, and an OR whose other input is 1 stops it. A thin strip loses the damage, and the two
+  prefixes then reach the same walk state: an exact merge. rule30_merge.py counts the merges.
 """
 import pathlib, random, subprocess, sys, tempfile
 
