@@ -22,6 +22,19 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       24.)
 REFUTED-BY: SC0 failing (the instrument); SC1 or SC2 failing. A candidate that stays zero to depth 2,000 would be
   reported at once, with its right half, and examined further, not counted.
+
+---------------------------------------------------------------------------------------------------------------
+JOB M3b (Cloud wrote, 2026-10-05; for Local, optional; CLOUD-LOCAL.md lead M3). The same search to 34 cells: 17
+billion right halves, about 2 to 3 hours on 10 cores (Cloud's 32-cell run took about 2 hours on 3).
+RUN-ON:     cpu, all cores
+COMMAND:    python3 tests/probes/lexicon/rule30_scan.py 34 10
+PREDICTION (written 2026-10-05 before any run of this job):
+  SC3 (blind): no candidate ends in 30 or more zeros at depth 126, and the longest zero run in L(1..126) is still 17
+      at W = 34.
+REFUTED-BY: a candidate (then follow it deeper before anything else: it is either a near miss or the counterexample),
+  or a longer run.
+HAND BACK to Cloud when the run's output is recorded here, with a ledger line ("Local ran M3b"), pushed to main; AT
+  ONCE, without finishing, if any candidate survives to depth 2,000.
 """
 import pathlib, re, subprocess, sys, tempfile
 from collections import defaultdict

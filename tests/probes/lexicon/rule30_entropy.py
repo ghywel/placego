@@ -50,6 +50,17 @@ entropy.c for m = 4, 6, 10, 14, 18, 20 exactly, before this prediction was writt
 OUTCOME of extension 2, 2026-10-05: EN5 HELD. m = 21 .. 26: 0.1416, 0.1372, 0.1356, 0.1327, 0.1308, 0.1277 bits per
 visible bit (automaton states 18,926 to 179,181; mean subset 1,374 to 7,862 layer states). The mean fall per cell from
 m = 20 to 26 is 0.0040, a quarter of the 0.0154 before: the bound is levelling off, near 0.12.
+
+---------------------------------------------------------------------------------------------------------------
+JOB M3a (Cloud wrote, 2026-10-05; for Local, optional; CLOUD-LOCAL.md lead M3). The channel bound at m = 27 and 28,
+which need more memory than Cloud's container (about 16 GB at m = 27 and 32 GB at m = 28; one core, minutes).
+RUN-ON:     cpu, the machine with the most memory
+COMMAND:    cc -O2 -o /tmp/entropy2 tests/probes/lexicon/entropy2.c -lm && /tmp/entropy2 27 4000 && /tmp/entropy2 28 4000
+PREDICTION (written 2026-10-05 before any run of this job):
+  EN6 (blind): log2(lambda) at m = 27 and 28 lies between 0.115 and 0.128, each no higher than the one before.
+REFUTED-BY: either value outside that range, or a rise.
+HAND BACK to Cloud when both "E" lines are recorded here (or the run fails for memory, with the error), with a ledger
+  line ("Local ran M3a"), pushed to main.
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 
