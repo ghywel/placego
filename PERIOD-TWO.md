@@ -105,6 +105,12 @@ proves emptiness only when the constrained side is finite, which is our Jen and 
 constrained side has positive entropy, as next to 0101. That is where Mahler's own conjecture has been open since
 1968.
 
+**What the other fields offer** (§8.47). A survey across biology, physics, chemistry, molecular machinery,
+mathematics, computing, the long shots and the Game of Life found no field that holds the missing statement.
+It found the same gap everywhere: theorems that holding a chaotic system costs information are about sets of
+cases, and the prize is about every single case. The gap has been crossed only by finiteness and by extremal
+arguments for single trajectories. §7 turns that into questions.
+
 ## 6. Live leads (2026-10-05)
 
 1. **The wheel's kicks** (§8.43, §8.44). A kick's size comes from the interior, not from the wall's origin, its
@@ -115,19 +121,69 @@ constrained side has positive entropy, as next to 0101. That is where Mahler's o
    prediction waits for them: R(85) between 65 and 75, R(89) between 69 and 79 (MG8 in `rule30_merge.py`).
 3. **Job M3** (CLOUD-LOCAL.md): the channel bound at layer widths 27 and 28, and the counterexample search to 34
    cells.
+4. **The wide survey's imports** (§8.47): Flatto, Lagarias and Pollington's move to a finite window, a
+   machine-found certificate, and a weaker single-seed theorem by an extremal argument. They are written
+   out as questions in §7.
 
-## 7. Reading order
+## 7. Questions for fresh eyes (2026-10-05)
+
+Written after the wide survey (RULE30-PRIZE.md §8.47), for a person or a system meeting the problem for the first
+time. Each question is precise enough to start on, and none is known to be easy.
+
+The survey's one finding frames them. Every theorem found in any field of the form "a low-information drive cannot
+hold a chaotic system in a fixed state" is about sets of cases: sets of positive measure, or with interior. The
+prize needs a statement about every single finite configuration. The questions are ways across that gap.
+
+1. **The counting form of the uniform law.** Let $N_w(T)$ be the number of configurations supported on $w$ cells
+   whose centre column reads 0101... (either phase) at times $0$ to $T - 1$. Prove that
+   $N_w(T) \le 2^{w - \alpha T} \cdot \mathrm{poly}(w, T)$ for some $\alpha > 0$. Fewer than one configuration is
+   none, so this exact count over a finite family would close period 2. Counting crosses the gap here because the
+   seeds are finite. The measured horizon, about $w$ plus a logarithm (§8.24, §8.42), is what $\alpha = 1$
+   predicts. The counts themselves have not been measured. The bound cannot hold for every centre word: a word
+   that is some configuration's own centre column has $N_w(T) \ge 1$ for every $T$. So a proof must use the
+   periodicity of 0101, as §5 says.
+2. **Flatto, Lagarias and Pollington's move** (§8.45, §8.47). Their partial result on Mahler's problem never beats
+   positive entropy. It moves to a nearby window where the constrained side is finite, and then uses pigeonhole.
+   Find a condition implied by the 0101 wall under which every admissible column 1 is eventually periodic, then
+   apply Jen's theorem. Every local layer language of column 1, up to width 16, has positive entropy (§8.14, §8.20).
+   So such a condition, if it exists, is not local in column 1.
+3. **A machine-found certificate.** Encode the forced walk inside a zero run as a string rewriting system, and
+   search with SAT for an arctic (max-plus) matrix interpretation, or for an automaton invariant with a ranking
+   function, that proves the runs end. That is how Yolcu, Aaronson and Heule proved weakenings of Collatz. The
+   encoding decides whether a proof exists. Condrey's $H(2, w) \ge w$ rules out any fixed-depth induction, so the
+   certificate must scale with the seed's width.
+4. **Kari and Kopra's partial result, for Rule 30.** For the automata that multiply by $p/q$ they prove, without
+   constructing it, that some set of windows covering almost everything holds no Z-number orbit. The analogue
+   would be a set of centre-column words, of measure near 1, that no nonzero finite configuration's centre column
+   keeps to for ever. That would be a new theorem about Rule 30's centre columns, short of the prize. It needs
+   Rule 30 to be ergodic and mixing for the uniform measure (to be checked).
+5. **A weaker theorem about every single seed.** Langton's ant's highway is unproved, but every trajectory is
+   proved unbounded, by reversibility and an extremal cell. Rule 30 is not reversible, but left-permutivity solves
+   it sideways. Is there a statement weaker than B, about every single finite configuration with a 0101 centre,
+   that an extremal argument proves?
+6. **LR by construction.** A system strong at construction and search could try to refute Conjecture LR: a column
+   1, not necessarily from a finite right half, whose forced left half is eventually zero. The exact records make
+   it unlikely ($R(d)$ is finite at every depth computed, about $0.8\,d$). A refutation would still teach
+   something: any proof of B would have to use the right half's finiteness.
+7. **The regime between.** Columns 1 with zero entropy that are not eventually periodic: kicks that come for ever,
+   but ever more rarely. Does the forced walk's law stay bounded, as next to a white wall, or grow like the
+   logarithm of the number of histories, as the coin says? This separates "zero entropy" from "finiteness" in this
+   problem (the correction to §8.45).
+
+## 8. Reading order
 
 1. This file.
 2. `WORKFLOW-SAVED-MEMORY.md`: the working rules. Predictions are written before runs, failures are recorded,
    prior art is surveyed before leaps, and every script that produced a recorded number is kept.
 3. `CLOUD-LOCAL.md`: how Cloud and Local split work, and the ledger (start from main and the ledger, never from
    memory).
-4. `RULE30-PRIZE.md`: the honest summary at the top, then §5, §7, §8.4 to §8.14, §8.20, §8.36 to §8.42.
-5. `PRIOR-ART.md`: the dated surveys, especially Condrey, Jen and Kopra, Rowland, and the prime-gap parallel.
+4. `RULE30-PRIZE.md`: the honest summary at the top, then §5, §7, §8.4 to §8.14, §8.20, §8.36 to §8.42, and
+   §8.45 to §8.47 (where the problem sits among its relatives).
+5. `PRIOR-ART.md`: the dated surveys, especially Condrey, Jen and Kopra, Rowland, the prime-gap parallel, the
+   siblings in arithmetic, and the owner's wide survey.
 6. `tests/probes/PROBES.md`: the index of every probe (row `lexicon/`).
 
-## 8. How to reproduce the core numbers
+## 9. How to reproduce the core numbers
 
 Everything is in `tests/probes/lexicon/`. Each script's header gives its command, cost and predictions. Pure
 Python 3 scripts need nothing else, and the C engines need a C compiler with OpenMP.
@@ -151,7 +207,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 RULE30-PRIZE.md` once `npm install` has been run in that folder. It must report 0 TeX errors and no stray dollar
 signs.
 
-## 9. Checks before you start
+## 10. Checks before you start
 
 - `git log --oneline -5` on main and on the working branch. Read the ledger's last rows.
 - `python3 tests/probes/lexicon/rule30_wall.py` must print ALL CHECKS PASS (4 seconds). It ties the wall form to
