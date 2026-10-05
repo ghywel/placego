@@ -37,6 +37,23 @@ them discarded their output).
       and Z(16) >= Z(8) + 3: runs grow with the information the right half carries. (Z(12) = 10 is already known
       from rule30_ladder_deep.py's DL5, so W = 12 is not blind.)
 REFUTED-BY: BL0 or C2 failing (the instrument, or bands that chance alone would break); BL1 to BL5 failing.
+
+OUTCOME of the first run, 2026-10-05 (about eight minutes): BL0 passed. C2 FAILED: for the fresh points' own G, the
+simulated fair-coin maximum left the band at 2 of 26 points (m = 7, s = 45: 0.747; m = 16, s = 45: 1.387). At G near
+1,000 the best of G coins swings by about 2 cells, so BL1's band is too narrow there for chance alone; BL1's holding
+is weaker evidence than it looks at the shallow points.
+  BL1 HELD: R / log2 G lies between 0.775 and 1.280 at all 24 fresh points with m >= 5.
+  BL2 HELD: 1.611 (s = 37) and 1.955 (s = 45) with column 1 free.
+  BL3 REFUTED: the bulk of the histogram falls by 0.71 to 1.09 bits per cell for m >= 5 (m = 5 about 0.75 at every
+      depth; 0.92 to 1.09 at m = 14 and 16), below the band at 9 of 24 points. At m = 0 it falls by 0.47 and 0.49, as
+      predicted. So the longest run is shorter than the bulk's slope implies (log2 G / beta): the far tail is steeper
+      than the bulk.
+  BL4 HELD: h_m = 0.509, 0.378, 0.323, 0.297, 0.262, 0.242 for m = 5, 7, 9, 11, 14, 16: falling, not vanished.
+  BL5 REFUTED: Z(W) = 9, 9, 10, 10, 11 for W = 8, 10, 12, 14, 16. The bound Z(W) <= W + 3 holds, but runs grow by only
+      2 cells from W = 8 to 16. Real right halves do far worse than one bit per cell: their bits mostly do not reach
+      column 1 where a run needs them.
+  Seen in the m = 0 histograms (printed, not predicted): structured families far beyond the geometric tail. At s = 33,
+  21 starts reach exactly 33 cells while none reach 25 to 31. At s = 45, 8 starts reach 43 while none reach 35 to 41.
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 

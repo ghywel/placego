@@ -46,12 +46,15 @@ period 2 is the open case, and the work concentrates there. What exists:
   but not applied until §8.13.
 - **One consequence of Jen's theorem for the wheel.** In a finite configuration with column 0 eventually 0101…,
   column 1 is never eventually periodic, so the wheel must slip infinitely often (§8.13).
+- **The adversary, measured.** An input fed through a layer of $m$ cells, however adversarial, holds the left half at
+  zero for about one cell per bit of choice it has, so its runs grow with depth at every width up to 16. Real right
+  halves are far poorer: 16 cells give at most 11 (§8.12, §8.14).
 - **The gap.** Could the walls' kicks steer the left half to zero and keep it there? That is part 3 of the route
   (§8.6) and it is open. A proof would have to be made there.
 
 Several of these results had been reached by others first: Condrey's triangular uniqueness, his "no bounded law" at
-period 2, Hanson and Crutchfield's domain filter, and Jen's theorem for periodic columns 1. PRIOR-ART.md records
-them.
+period 2, Hanson and Crutchfield's domain filter, Jen's theorem for periodic columns 1, and Meier and Staffelbach's
+reconstruction of the left half from two columns (1991, §8.15). PRIOR-ART.md records them.
 
 ---
 
@@ -1421,3 +1424,74 @@ eventually zero left half would need infinitely many bits. A proof would need th
 uniformly, a statement about pseudorandomness of the same kind as the prize itself. The reading is a hypothesis
 until it survives a blind test. `rule30_ladder_budget.py` tests it at 26 points the deep run did not compute, through
 the whole histogram of run lengths, against a simulated coin-flip null and against real right halves up to 16 cells.
+
+**The blind test** (`rule30_ladder_budget.py`; 26 new points, layer widths up to 16):
+
+| Check or prediction | Result |
+|---|---|
+| BL0: the histogram mode reproduces the deep run | **passed** |
+| C2: the bands are wide enough for chance alone | **failed** at 2 of 26 points (shallow, $G \approx 1000$) |
+| BL1: $R / \log_2 G$ in $[0.75, 1.35]$ for $m \ge 5$ | **held**: 0.78 to 1.28 at all 24 points |
+| BL2: with column 1 free, $R / \log_2 G$ in $[1.5, 2.2]$ | **held**: 1.61 and 1.95 |
+| BL3: the histogram's bulk loses 0.8 to 1.25 bits per cell ($m \ge 5$), 0.4 to 0.6 ($m = 0$) | **refuted**: 0.71 to 1.09; $m = 0$ as predicted |
+| BL4: the start groups' entropy falls with $m$ and is still 0.15 to 0.28 at $m = 16$ | **held**: 0.51, 0.38, 0.32, 0.30, 0.26, **0.24** bits per visible bit |
+| BL5: real right halves of $W$ cells reach at most $W + 3$, and 3 more cells from $W = 8$ to 16 | **refuted**: 9, 9, 10, 10, 11 |
+
+- **The coin model holds for the longest run, roughly.** At every point $R$ is within about 25% of $\log_2 G$. The
+  bulk of the histogram is a little cheaper than one bit per cell (about 0.75 at $m = 5$), and the far tail is steeper
+  than the bulk. "About one bit per cell" is the honest summary; the constant is not exactly 1.
+- **The adversary's freedom keeps shrinking with width, but has not vanished by $m = 16$.** If the entropy of the start
+  groups went to zero as $m \to \infty$, runs would grow more slowly than the depth. That limit is the open quantity.
+- **Real right halves are far poorer than the adversary.** Sixteen cells of right half hold the left half at zero for
+  only 11 cells, at the depths tested, against 16 for the adversary at $m = 16$. Most of a real right half's bits do
+  not reach column 1 when a run needs them. This failure of the coin model is in the proof's favour.
+- **Where chance fails in the adversary's favour.** With column 1 free, the histograms show families of starts far
+  beyond the coin tail. At depth 33, 21 starts hold the left half at zero for exactly 33 cells, while none last 25 to
+  31. At depth 45, 8 starts last 43 cells, while none last 35 to 41. These are structure, not luck. They are the
+  templates of §8.2 seen from the adversary's side, and the next target (§8.15).
+
+### 8.15 Rule 30 as a random-number generator: where its randomness fails (2026-10-05)
+
+The owner asked about the remark that Rule 30 "exhibits poor behavior on a chi squared test when applied to all the
+rule columns" (Sipper and Tomassini, 1996), and whether that ended the centre-column generator. It did not.
+Mathematica used the centre column for random integers for years. The flaw is in using every column at once, and it
+is visible in Rule 30's formula read from right to left:
+
+```math
+x_{t+1}(i) \oplus x_t(i-1) = x_t(i) \vee x_t(i+1) ,
+```
+
+which is 1 three times in four. Each column is its left neighbour's column, delayed one step, XORed with a mask that is
+mostly ones. `rule30_prng.py` replicates Sipper and Tomassini's setup (a ring of 50 cells, 300 random starts, 4,096
+steps, every cell a stream), with its predictions written first:
+
+| Test | Result |
+|---|---|
+| One stream at a time: frequency, and blocks of 4 steps | **pass** (1.07% and 0.95% fail at the 1% level) |
+| Two neighbouring streams: $x_{t+1}(i) = x_t(i-1)$ | **fails completely**: 25.00% of steps instead of 50%; every one of 15,000 pairs below $p = 10^{-10}$ |
+| The same test for the linear Rules 90 and 150 | pass (50.02%, 50.00%) |
+| The centre column alone, from a single 1 (Wolfram's way) | **pass** ($p = 0.73$); the flaw sits in the column beside it, which the user never reads |
+| Bytes of 8 adjacent cells, every row of a run pooled | **fails** in 7% of runs. Each row determines the next, so the rows are not independent draws: with rows 32 steps apart, 0.3% (a pre-registered diagnostic) |
+
+The prediction that whole rows would pass was refuted: the reasoning held for a single row, not for 4,096 dependent
+ones. Which of the two flaws Sipper and Tomassini's test met is not known here, since their paper was not read.
+
+**The real break was cryptographic, and it is this project's construction.** Meier and Staffelbach (1991) recovered
+Wolfram's key from the centre column. The centre column and the column beside it force the whole left half, because
+Rule 30 is left-permutive, and the column beside it can be guessed from the right half of the seed, which carries
+little entropy. That is §5's forced left half and §8's right side as a constraint on column 1, 35 years earlier.
+PRIOR-ART.md records it.
+
+**What it says about the chaos.** Rule 30's randomness is real in one sense and an illusion in another. On the
+infinite line it is chaotic in the strict sense: information from ever further away keeps arriving. From a single 1
+there is no information at all to arrive. The pattern is fully determined, so its randomness can only be an
+appearance, and the prize asks for proof that one particular appearance (non-periodicity) is never broken. Every
+lever found so far is a place where the appearance fails:
+- the identity above (two columns are tied; Lemma 3 and the forced left half);
+- Lemma 1 (half of column 1 is invisible);
+- the wheel (next to 0101…, column 1 is an exact rotation between kicks, §8.5);
+- the notched kicks (§8.8);
+- Jen's theorem (periodicity flows left, §8.13);
+- the real right halves' poverty (§8.14).
+
+A proof will be built from such failures, not from the chaos.

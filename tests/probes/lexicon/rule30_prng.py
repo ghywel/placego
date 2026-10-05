@@ -50,6 +50,12 @@ image, which need not be uniform. The diagnostic uses 4-cell nibbles (16 bins), 
       steps apart (1,536 nibbles per start) it fails in 0.3% to 3%.
   D2 (blind; the counterfactual, no ring): the same 50 cells cut from a line wide enough never to wrap, every row:
       the test also fails in more than 3% of starts, so the cause is time dependence, not the ring.
+OUTCOME of the diagnostic, 2026-10-05: D1 HELD (every row: 37 of 300 starts fail, 12.3%; rows 32 apart: 1 of 300,
+0.3%). D2 HELD (open segment, every row: 39 of 300, 13.0%). Each row's cells are uniform, but the rows of one run are
+not independent draws, so a chi-square that counts them as independent rejects far too often. So Rule 30 used in
+parallel has two flaws, and neither touches the centre column used alone: neighbouring streams are tied by the rule
+(P4), and samples pooled over consecutive rows are dependent (D1, D2). Which of the two Sipper and Tomassini's
+chi-square met is not known here; their paper was not read.
 """
 import math, random
 
