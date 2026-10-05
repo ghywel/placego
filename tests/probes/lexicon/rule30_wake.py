@@ -39,6 +39,12 @@ next wall is at column 22 or beyond while the band is read.
       by at least 0.05.
   CF2 (counterfactual): the same comparison with the band at a random time at least 30 steps before the next kick
       shows no difference (within 0.02, both classes).
+OUTCOME of the clean run, 2026-10-05 (N = 1500): WK3 HELD: with the next wall out of reach, the band after class-32
+kicks holds large triangles 1.202 times as densely as after random times (16,800 pairs), and after class-52 kicks
+1.393 times (13,418). Kicks do send triangle-carrying wakes into the interior. WK4 REFUTED: within class 52 the next
+kick is forward slightly LESS often with a large triangle in the wake (-0.053; class 32: +0.002); the first run's
++0.227 was the next wall's crossing. CF2 FAILED (class 52: +0.041), so links at the 0.05 level are not trustworthy in
+this design. Wakes: yes. Steering: no evidence.
 """
 import pathlib, random, sys
 from collections import Counter

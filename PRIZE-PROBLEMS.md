@@ -1648,7 +1648,12 @@ band did show something (W2 refuted: 1.19 for forward kicks). That band is a lin
 step from column 1 about 80 steps before the kick, the path of a wake sent out by an earlier event. So forward kicks
 may be correlated with earlier ones, as §8.10 hinted. A first test (`rule30_kickgaps.py`) "held" but proved
 nothing: kicks happen at fixed wheel phases, so the gaps between them are quantised and their residues already encode
-the next kick's class. The wake is a lead, still untested. `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
+the next kick's class. A direct test then anchored on each kick and looked outwards, clear of the domain and of the
+next wall's path (`rule30_wake.py`). **Kicks do send wakes:** large triangles are 1.20 times as dense (after forward
+kicks) and 1.39 times (after backward kicks) on the line moving outwards from column 1 at half a cell per step
+(WK3 held). Whether a wake steers the next kick is not shown: the link came out slightly negative (WK4 refuted), and
+the control failed at the 0.04 level, so this design cannot resolve links that small. A first version of the test
+was confounded by the next wall crossing the band, which its own control exposed. `tests/probes/lexicon/rule30_lattice.png` shows both pictures:
 - on the left, the lattice in the wheel's frame, 56 phases down and columns 0 to 16 across;
 - on the right, a space-time around a kick, with a margin strip that is green while column 1 runs the wheel and red
   at departures.
