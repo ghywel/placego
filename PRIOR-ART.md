@@ -1635,3 +1635,18 @@ Cloud):
   Dante's 3-sphere (two balls glued along a sphere, like two halves glued at a wall; Peterson, Am. J. Phys. 1979),
   Borges's Library and forking paths, Zeno: pictures, strength 2 to 1. No tether was found for Kant, the Liar or
   Funes.
+
+**Addendum, the mixing check for question 4** (2026-10-05, by Cloud, from the thesis the owner linked).
+- **Shereshevsky, M. A., "Ergodic properties of certain surjective cellular automata"**, PhD thesis, University of
+  Warwick, 1992 (https://wrap.warwick.ac.uk/id/eprint/34640/1/WRAP_THESIS_Shereshevsky_1992.pdf; Chapter 1, section
+  1.3 read), the source of the paper in Monatsh. Math. 114 (1992) 305-316. Write the rule as
+  $(Tx)_i = F(x_{i+l}, \ldots, x_{i+r})$.
+  - Theorem 1.3.3: if $l < 0$ and $F$ is left permutative, the automaton is $k$-mixing for every $k \ge 1$ for the
+    uniform Bernoulli measure. Rule 30 has $l = -1$ and is permutive in $x_{i-1}$, so it is $k$-mixing, hence
+    ergodic. Shirvani and Rogers had proved the 1-mixing case for two symbols.
+  - Theorem 1.3.2 (a Bernoulli natural extension) needs $l < r \le 0$ in the left-permutive case, and Theorem 1.3.4
+    (a K-automorphism) needs the neighbourhood on one side of the cell. Rule 30 meets neither ($l < 0 < r$).
+  - Proposition 1.3.6: the left-permutive rule $x_0 + x_1(x_2 + 1)$ on the neighbourhood $[0, 2]$ is surjective and
+    not ergodic, so the condition $l < 0$ matters.
+  So Kari and Kopra's hypotheses of ergodicity and strong mixing hold for Rule 30. What their argument would still
+  need is a Rule 30 analogue of the step from Z-numbers to configurations; that is not done.

@@ -116,6 +116,8 @@ MG8 (blind; written 2026-10-05 13:21 BST, before Cloud has seen Local's depths 8
   two depths): log2 D(85) = 34.52 and log2 D(89) = 36.16. The coin's best over them is 2 log2 D + 1.67 = 70.7 and
   74.0. Prediction: R(85) is between 65 and 75, and R(89) between 69 and 79. Without merging the same coin model
   gives about 85 and 89. Local records the records; Cloud records this verdict when they arrive.
+  VERDICT for depth 85 (recorded 2026-10-05 by Cloud, from Local's ledger row of 15:37): R(85) = 73, inside 65 to 75
+  and 2.3 above the coin's centre value 70.7. MG8 HELD at 85. Depth 89 has not been reported yet.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
 

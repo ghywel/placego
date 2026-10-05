@@ -117,8 +117,8 @@ arguments for single trajectories. §7 turns that into questions.
    width, or the cells at arrival. Its timing and alphabet are rigid. The kick game, a wheel kicked only at its
    arrival phases, still has the coin's growing runs. So the wheel narrows the cost-side statement to a kicked
    rotation, but does not prove it.
-2. **Local's depths 85 and 89** (CLOUD-LOCAL.md, lead M4). They were running on Local when this was written. A blind
-   prediction waits for them: R(85) between 65 and 75, R(89) between 69 and 79 (MG8 in `rule30_merge.py`).
+2. **Local's depths 85 and 89** (CLOUD-LOCAL.md, lead M4). Depth 85 is in: R(85) = 73, and the blind prediction
+   (65 to 75, MG8 in `rule30_merge.py`) held. Depth 89 is pending, predicted between 69 and 79.
 3. **Job M3** (CLOUD-LOCAL.md): the channel bound at layer widths 27 and 28, and the counterexample search to 34
    cells.
 4. **The wide survey's imports** (§8.47): Flatto, Lagarias and Pollington's move to a finite window, a
@@ -159,10 +159,12 @@ prize needs a statement about every single finite configuration. The questions a
    constructing it, that some set of windows covering almost everything holds no Z-number orbit. The analogue
    would be a set of centre-column words, of measure near 1, that no nonzero finite configuration's centre column
    keeps to for ever. That would be a new theorem about Rule 30's centre columns, short of the prize. It needs
-   Rule 30 to be ergodic and mixing for the uniform measure. Partly checked (2026-10-05): Shereshevsky,
+   Rule 30 to be ergodic and mixing for the uniform measure. Checked (2026-10-05): Shereshevsky,
    Monatsh. Math. 114 (1992) 305-316, proves Bernoulli and K natural extensions for surjective one-sided
    permutive automata under conditions on the neighbourhood's ends. Whether Rule 30's neighbourhood (-1, 0, +1)
-   meets them was not settled here: the paper was not reachable, and only a search summary was read.
+   meets them was settled from his thesis (Warwick, 1992, Theorem 1.3.3, read): a left-permutative rule whose
+   neighbourhood reaches left of the cell ($l < 0$) is $k$-mixing for every $k$ for the uniform measure. Rule 30
+   qualifies. So Kari and Kopra's hypotheses of ergodicity and mixing hold; the adaptation is what remains.
 5. **A weaker theorem about every single seed.** Langton's ant's highway is unproved, but every trajectory is
    proved unbounded, by reversibility and an extremal cell. Rule 30 is not reversible, but left-permutivity solves
    it sideways. Is there a statement weaker than B, about every single finite configuration with a 0101 centre,
