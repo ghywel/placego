@@ -5,7 +5,8 @@ repeat must stay a growing distance below Theorem A' (Local, 2026-10-05; RULE30-
 on sections 8.27, 8.30, 8.31 and 8.58).
 
 RUN-ON:     cpu, one core (Python 3 with numpy)
-COMMAND:    python3 tests/probes/lexicon/rule30_band.py [WMAX=9]
+COMMAND:    python3 tests/probes/lexicon/rule30_band.py [WMAX=9]          (everything)
+            python3 tests/probes/lexicon/rule30_band.py 9 front        (the addendum's part alone)
 COST:       a few minutes.
 
 THE STATEMENTS (proved in section 8.59). Diagonal k of a row is the cell k places right of the row's leftmost black
@@ -60,7 +61,44 @@ PREDICTIONS, written 2026-10-05 before this script's first run.
 REFUTED-BY: BD0, BD1, BD2, BD4, BD7 or CF failing (a proof or the instrument); BD3, BD5, BD6, BD8, BD9 the other
   way.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-05 (45 seconds): ALL CHECKS PASS, and every blind prediction held.
+  BD0, BD1, BD2 PASSED (41 seeds; every strip of 450 diagonals returns to itself with period 16).
+  BD3 HELD: diagonal 4 is black from time 4 and diagonal 9 from time 11, for every content of the first 10 diagonals.
+  BD4 PASSED (7,763 repeats with a white run to show, 0 violations; the bounds with b = 1, 4, 9: 0 violations).
+  CF PASSED (the run is white again one row later in 0 of 3,025 cases).
+  BD5 HELD: the bound with b = 9 is sharp (166 pairs attain n = L + a' - 9).
+  BD6 HELD (3,755,410 pairs, 0 violations; the least L + a' - n among them is 51, well above 30).
+  BD7 PASSED. BD8 HELD: least slack 1 (period-doubling), 0 (Chacon), -1595 (Fibonacci); 32, 32 and 33 for
+  Thue-Morse, Rudin-Shapiro and paperfolding. BD9 HELD: longest zero runs 11 to 13, ones 0.497 to 0.510.
+
+ADDENDUM, written 2026-10-05 after the first run and before the second. Two more statements (section 8.59):
+  Lemma B3. If at time t the diagonals 0 to M have been periodic, with a common period P, for at least P steps, then
+      no white run of the row inside diagonals 0 to M is longer than 2P.
+  Theorem A''''. With the notation of Theorem A''': if the diagonals 0 to M are settled in that sense at time a',
+      and M < a' - a, then n <= L + a' - M + 2P. So a repeat's white run cannot lie in the settled band.
+  A settled diagonal k settles the next one at the first black cell it shows afterwards (a reset). So the times
+  tau(k+1) = 1 + the first t >= max(tau(k), tau(k-1)) with diagonal k black (tau(k+1) = max(tau(k), tau(k-1)) after
+  an eventually white diagonal) bound the settling of every row with a white left tail, in the worst of the 16
+  phases. S(t) is the number of diagonals with tau + 16 <= t.
+SEEN BEFORE the addendum's predictions: the first run above. Nothing of the strip beyond diagonal 450, no front.
+  BF0 (control, must hold): the strip of 53,200 diagonals from the single cell returns to itself with period 16
+      (run 200,000 steps first); its eventually white diagonals are 2, 7, 28 and 399; three random seeds reach
+      the same cycle.
+  BF1 (Lemma B3, must hold): no white run in any of the cycle's 16 rows is longer than 32. Blind: the longest is
+      between 5 and 16.
+  BF2 (blind): the worst-phase front's slope tau(k) / k at k = 53,199 is between 1.5 and 2.0.
+  BF3 (must hold): for 30 random seeds of up to 40 cells and t = 200, 400, 800 and 1600, the row agrees with one
+      phase of the cycle on every diagonal below S(t).
+  CF2 (counterfactual, must fail): the same on every diagonal below 2 S(t). It must fail in every case.
+  BF4 (what Theorem A'''' reaches; the control must hold, the rest is blind). For a word c as column 1, a pair
+      i < i' with common length l excludes every left edge L with L + 2i' - 2l + 32 <= min(2(i' - i) - 1, 53,199)
+      and tau(L + 2i' - 2l + 32) <= 2i' - 16. L* is the largest L excluded, over pairs with i' - i = m 2^j, m odd
+      below 16. Control: L* >= 50,000 for the period-doubling word (Corollary F excludes every L). Blind:
+      L* >= 8,000 for Thue-Morse, and L* >= 1,000 for Rudin-Shapiro and for paperfolding.
+REFUTED-BY: BF0, BF1's bound, BF3, CF2 or BF4's control failing (a proof or the instrument); the blind parts the
+  other way.
+
+OUTCOME of the second run: (to be recorded)
 """
 import random, sys
 import numpy as np
@@ -314,10 +352,121 @@ def part_words():
     verdict("BD9 the forced row to depth 6000 looks like coin flips for the words the corollary excludes", ok9)
 
 
+def cycle_of(v, K, steps):
+    mask = (1 << K) - 1
+    for _ in range(steps):
+        v = strip_step(v, mask)
+    orbit, u = [v], strip_step(v, mask)
+    while u != v and len(orbit) < 1024:
+        orbit.append(u); u = strip_step(u, mask)
+    return orbit if u == v else None
+
+
+def part_front(K=53200, P=16):
+    rng = random.Random(59)
+    cyc = cycle_of(1, K, 200000)
+    ok = cyc is not None and len(cyc) == P
+    U = np.array([np.unpackbits(np.frombuffer(v.to_bytes((K + 7) // 8, "little"), dtype=np.uint8),
+                                bitorder="little")[:K] for v in cyc], dtype=np.uint8) if ok else None
+    white = [int(k) for k in np.nonzero(~U.any(axis=0))[0]] if ok else []
+    same = ok
+    for _ in range(3):
+        other = cycle_of((rng.getrandbits(rng.randint(2, 64)) << 1) | 1, K, 200000)
+        same &= other is not None and set(other) == set(cyc)
+    report("BF0 the strip of 53,200 diagonals has one cycle of period 16; white diagonals 2, 7, 28, 399",
+           ok and white == [2, 7, 28, 399] and same, f"period {len(cyc) if cyc else None}, white {white}")
+    if not ok:
+        return
+    longest = 0
+    for row in U:
+        z = np.concatenate(([1], row, [1]))
+        edges = np.nonzero(z)[0]
+        longest = max(longest, int((np.diff(edges) - 1).max()))
+    report("BF1 no white run in the cycle is longer than 2P = 32", longest <= 2 * P, f"longest {longest}")
+    verdict("BF1 the longest white run in the cycle is between 5 and 16", 5 <= longest <= 16, f"{longest}")
+
+    iswhite = ~U.any(axis=0)
+    worst = np.zeros(K, dtype=np.int64)
+    for phi in range(P):
+        tau = np.zeros(K, dtype=np.int64)
+        prev = 0                                        # tau(k - 1)
+        for k in range(K - 1):
+            start = max(int(tau[k]), prev)
+            if iswhite[k]:
+                nxt = start
+            else:
+                t = start
+                while not U[(t + phi) % P, k]:
+                    t += 1
+                nxt = t + 1
+            prev = int(tau[k])
+            tau[k + 1] = nxt
+        worst = np.maximum(worst, tau)
+    worst = np.maximum.accumulate(worst)
+    slope = worst[K - 1] / (K - 1)
+    verdict("BF2 the worst-phase front's slope at diagonal 53,199 is between 1.5 and 2.0", 1.5 <= slope <= 2.0,
+            f"tau = {int(worst[K - 1])}, slope {slope:.4f}; at 1,000: {worst[1000] / 1000:.3f}, "
+            f"at 10,000: {worst[10000] / 10000:.3f}")
+
+    def settled(t):
+        return int(np.searchsorted(worst, t - P, side="right"))
+
+    ok3, cf_fail, cases = True, 0, 0
+    KK = 3400
+    mask = (1 << KK) - 1
+    for _ in range(30):
+        v = (rng.getrandbits(rng.randint(1, 39)) << 1) | 1
+        t = 0
+        for T in (200, 400, 800, 1600):
+            while t < T:
+                v = strip_step(v, mask); t += 1
+            S = settled(T)
+            m1, m2 = (1 << S) - 1, (1 << min(2 * S, KK)) - 1
+            ok3 &= any((v ^ u) & m1 == 0 for u in cyc)
+            cases += 1
+            cf_fail += not any((v ^ u) & m2 == 0 for u in cyc)
+    report("BF3 every row agrees with a phase of the cycle on the diagonals below S(t)", ok3,
+           f"S(200), S(1600) = {settled(200)}, {settled(1600)}")
+    report("CF2 no row agrees with a phase of the cycle on the diagonals below 2 S(t)", cf_fail == cases,
+           f"{cf_fail} of {cases} disagree")
+
+    N = 1 << 18
+    W = words(N)
+    ds = sorted({m << j for m in range(1, 16, 2) for j in range(4, 17) if (m << j) <= 100000})
+    lstar = {}
+    for name in ("period-doubling", "Thue-Morse", "Rudin-Shapiro", "paperfolding"):
+        c = W[name]
+        best, arg = -1, None
+        for d in ds:
+            l = lcp_shift(c, d, N - d).astype(np.int64)
+            i2 = np.arange(len(l), dtype=np.int64) + d
+            real = i2 + l < N - 1                              # the common length is not cut by the data's end
+            w0 = 2 * i2 - 2 * l
+            mt = np.searchsorted(worst, 2 * i2 - P, side="right") - 1
+            lmax = np.minimum(np.minimum(2 * d - 1, K - 1), mt) - w0 - 2 * P
+            lmax = np.where(real, lmax, -1)
+            j = int(np.argmax(lmax))
+            if int(lmax[j]) > best:
+                best, arg = int(lmax[j]), (j, j + d, int(l[j]))
+        lstar[name] = best
+        print(f"   L* for {name}: {best}  (pair i = {arg[0]}, i' = {arg[1]}, common length {arg[2]})", flush=True)
+    report("BF4 control: Theorem A'''' excludes every left edge to 50,000 for the period-doubling word",
+           lstar["period-doubling"] >= 50000)
+    verdict("BF4 L* >= 8,000 for Thue-Morse", lstar["Thue-Morse"] >= 8000, f"{lstar['Thue-Morse']}")
+    verdict("BF4 L* >= 1,000 for Rudin-Shapiro and paperfolding",
+            min(lstar["Rudin-Shapiro"], lstar["paperfolding"]) >= 1000,
+            f"{lstar['Rudin-Shapiro']}, {lstar['paperfolding']}")
+
+
 def main():
+    if len(sys.argv) > 2 and sys.argv[2] == "front":
+        part_front()
+        print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+        return
     t9 = part_strip()
     part_window(t9)
     part_words()
+    part_front()
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
