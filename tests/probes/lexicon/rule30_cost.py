@@ -3,7 +3,7 @@
 8.52; the cost side of PERIOD-TWO.md section 7, question 1).
 
 RUN-ON:     cpu (Python 3 and a C compiler; count_j.c counts; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22]
+COMMAND:    python3 tests/probes/lexicon/rule30_cost.py [WMAX=22] [windows]
 COST:       under a minute on one core.
 
 Background (section 8.51). N_{w,j}(T) counts the configurations of exact hull width w whose column 0, at distance j
@@ -23,6 +23,24 @@ PREDICTIONS, written 2026-10-05 before this script's first run (word 0101..., bo
   CJ4 (counterfactual, the word 0, which Condrey's theorem closes): over the same steps, the word 0's largest rho
       is at most 0101's largest rho.
 REFUTED-BY: CJ0 failing (the instrument); CJ1 to CJ4 failing.
+
+OUTCOME, 2026-10-05 (the first run, 3 seconds):
+  CJ0 PASSED: the positions sum to count.c's totals, and the lemma of section 8.51 is exact at every w up to 22.
+  CJ1 REFUTED: the right part does not pay at every step. Of 276 right-paid steps (w = 16 .. 22, N >= 256), 42 have
+     rho of 0.95 or more, most exactly 1: free steps, where the condition is already implied by the earlier ones.
+     46 have rho below 0.05: collapses. The rest spread between. Example, w = 22, j = 2: 1048576, 524288, 196608,
+     65536, 65536, 65536, 12288.
+  CJ2 HELD: the mean of log2 rho is -1.041. On average each right-paid condition costs a bit.
+  CJ3 HELD (rho reaches 1).
+  CJ4 HELD (both reach 1); the word 0's mean log2 rho is -1.632: its right part pays more per condition.
+  So the cost side is not a per-step statement. A proof needs amortisation: a potential that free steps run up and
+  collapses pay off. Mode windows asks whether that debt stays bounded.
+
+MODE windows. For k = 1 .. 10, the worst k-step ratio N_{w,j}(T+k) / N_{w,j}(T) over right-paid windows (T >= j,
+N_{w,j}(T) >= 256, w = 16 .. WMAX), and the longest run of consecutive free steps (rho >= 0.95).
+PREDICTIONS for windows, written 2026-10-05 after the outcome above and before windows' first run:
+  CW1 (blind): the longest run of consecutive free steps is at most 4, at every w from 16 to WMAX.
+  CW2 (blind; bounded debt): log2 of the worst k-step ratio is at most 3 - 0.5 k for every k from 1 to 10.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -64,9 +82,37 @@ def steps(J, wlo, whi):
     return out
 
 
+def windows(exe):
+    J, _ = run(exe, 16, WMAX, "01" * 200, 2)
+    longest = {}
+    for (w, j, T), n in J.items():
+        if T >= max(j, 1) and n >= 256:
+            k = 0
+            while J.get((w, j, T + k), 0) >= 256 and J.get((w, j, T + k + 1), 0) / J[(w, j, T + k)] >= 0.95:
+                k += 1
+            longest[w] = max(longest.get(w, 0), k)
+    print("   longest run of free steps by w: " + ", ".join(f"{w}: {k}" for w, k in sorted(longest.items())))
+    verdict("CW1 at most 4 consecutive free steps", all(k <= 4 for k in longest.values()),
+            f"largest {max(longest.values())}")
+    worst = {}
+    for (w, j, T), n in J.items():
+        if T >= max(j, 1) and n >= 256:
+            for k in range(1, 11):
+                worst[k] = max(worst.get(k, 0.0), J.get((w, j, T + k), 0) / n)
+    print("   worst k-step ratio, log2, k = 1 .. 10: "
+          + " ".join(f"{math.log2(worst[k]):.2f}" if worst[k] > 0 else "-inf" for k in range(1, 11)))
+    verdict("CW2 log2 worst k-step ratio <= 3 - 0.5 k", all(worst[k] == 0 or math.log2(worst[k]) <= 3 - 0.5 * k
+                                                         for k in range(1, 11)),
+            ", ".join(f"k = {k}: {math.log2(worst[k]):.2f}" for k in range(1, 11)
+                      if worst[k] > 0 and math.log2(worst[k]) > 3 - 0.5 * k) or "all within")
+
+
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_cost_c"
     subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "count_j.c")], check=True)
+    if len(sys.argv) > 2 and sys.argv[2] == "windows":
+        windows(exe)
+        return
     w01 = "01" * 200
     J, C = run(exe, 1, WMAX, w01, 2)
     ok_sum = all(sum(J.get((w, j, T), 0) for j in range(w)) == C[(w, T)] for w in range(12, 19) for T in range(1, TMAX))
