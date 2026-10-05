@@ -58,7 +58,7 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
-  - The owner's morning questions (§8.22 to §8.36). Read as a binary number, a column is rational exactly when it
+  - The owner's morning questions (§8.22 to §8.37). Read as a binary number, a column is rational exactly when it
     repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
     numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
     pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. The diagonals' periods and
@@ -72,8 +72,8 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - The entropy squeeze as a reduction (§8.33): it restates the problem. A proof along it needs a lower bound on a
     column's entropy in a finite configuration, which has never been proved for Rule 30.
 - **The sharpest open target (§8.36).** The doubling conjecture: in the forced left half for 0101…, a zero run that
-  starts at depth $d$ ends by depth $2d + 4$, for every column 1. It holds at every depth computed (to 65), and it
-  would settle period 2 for every finite configuration.
+  starts at depth $d$ ends by depth $2d + 4$, for every column 1. It holds at every depth computed (to 81, with
+  growing slack), and it would settle period 2 for every finite configuration.
 - **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
   keep it there. Every statistic says they cannot: coin flips paid through a narrow channel. Nothing structural
   yet says why. The structural levers found so far are listed in §8.15:
@@ -2466,3 +2466,40 @@ the counts of record-setting prefixes (3, 5, 11, 21, 12, 44, 54, 96, 100) are mo
 sets of linear systems must be. So the next question is what structure these equations do have. This is again the
 uniform cost of a zero cell, the kind of statement §8.33 found nobody has proved, but now in the form of one finite
 algebraic system per depth.
+
+### 8.37 Local's depths 69 to 81, and the owner's Enigma lead (2026-10-05)
+
+Local ran job M4 on the M5 (10 cores) exactly as written. The verdicts are in `rule30_records.py` (OUTCOME of JOB M4)
+and the raw lines in `rule30_records_local.txt`.
+
+| Depth $d$ | 69 | 73 | 77 | 81 |
+|---|---|---|---|---|
+| Record $R(d)$ | 55 | 59 | 63 | 65 |
+| Ends at depth | 124 | 132 | 140 | 146 |
+| $R(d) - d$ | −14 | −14 | −14 | −16 |
+
+**All three predictions held** (M4a, M4b, M4c). In particular the doubling conjecture of §8.36 holds at every depth
+run, with 18 to 20 cells to spare. M4c had been committed before Local's run began. Since depth 49 the records have
+settled near $R(d) \approx 0.8\,d$, ending near $1.8\,d$. Local also reproduced Cloud's records at depths 53, 61 and
+65 on a second machine. Depths 85 and 89 are still running, with the same three predictions carried to them before
+either result existed.
+
+**The owner's Enigma lead** (Local's probes, predictions written first). Turing and Welchman broke Enigma by running a
+known plaintext, the crib, through the machine and letting contradictions prune the keys.
+- **The crib route does not transfer.** Asked as a satisfiability problem, "is there a column 1 whose forced left half
+  has zeros at depths $d$ to $d + R - 1$?", the solvers kissat and CaDiCaL find every record correctly (S0). They are
+  slower than plain enumeration, though (S1 refuted). At depth 41 a record witness takes 58 to 117 s against
+  `records.c`'s 3 core-seconds, and at 53 none was found in 600 s. The reason: an Enigma crib letter carried about
+  4.7 bits through one step of wiring. Here a crib cell carries half a bit through a circuit about $d$ steps deep, and
+  every OR gate stops backward propagation unless its other input is already known.
+- **The Bombe's parallel test does transfer.** At a free step, column 1's newest bit enters the depth-$k$ cell's
+  parity through one OR gate whose other input is $\tau(k-1) = 0$. So the two choices give complementary cells, and
+  exactly one continues the run (Lemma 4 made exact). **A prefix's zero run is therefore one forced walk, not a
+  search.** `records_bits.c` runs 64 prefixes' walks in lockstep in a machine word, the way the Bombe tested many
+  hypotheses at once. It is about 12 times faster than `records.c`, with identical outputs at every depth checked
+  (1 to 57, 69 to 77). `records_fast.c` adds a carry-less multiply for the running XOR (1.35 times).
+
+**What it means for the proof.** The record at depth $d$ is now the longest of $2^{\lceil (d-1)/2 \rceil}$
+deterministic walks, each of which survives a cell only when a determined bit comes out 0. The doubling conjecture
+says no walk survives more than $d + 4$ cells. The slack is growing: the measured records fall 14 to 16 cells short of
+the bound at depths 69 to 81.
