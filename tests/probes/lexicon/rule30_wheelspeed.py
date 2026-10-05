@@ -2,7 +2,7 @@
 """rule30_wheelspeed.py: does the wheel turn at a constant rate? Its angle's velocity, acceleration and diffusion.
 
 RUN-ON:     cpu (pure Python 3, standard library; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_wheelspeed.py [W=12] [T=4096]
+COMMAND:    python3 tests/probes/lexicon/rule30_wheelspeed.py [W=12] [T=4096] | ... carry [W] [T]
 COST:       a few minutes on one core.
 
 The owner's lead (2026-10-05): "We have looked at motion field concepts such as velocity, acceleration, jerk, snap,
@@ -42,11 +42,29 @@ OUTCOME of the first run, 2026-10-05 (W = 12, T = 4096): C passed (0 odd shifts)
      about 7 notches^2 per window.
   The toy-size smoke test exposed an index error (too few windows for A1's ranges). It is fixed; the full run was not
   affected.
+
+ADDENDUM, written 2026-10-05 before its first run (python3 rule30_wheelspeed.py carry [W=12] [T=4096]): the owner's
+alias. The owner (2026-10-05): "The wheel once again surfaces a leap shift we found in the interpolation shaders: the
+wheel is inherently circular, but the pyramid and its grid are inherently a two-dimensional array." In the shaders a
+periodic texture's shift is known only modulo its period (the half-period alias, NFRAME-LIMITS.md, 2026-09-28), and
+the fix was a carry: keep the candidates and let continuity decide. Here the wheel's angle is known only modulo a turn
+(28 notches at one parity), and V0's unwrapping took each change between exact windows in [-14, 13]. That range is
+asymmetric (a true +14 is recorded as -14), and across a long gap the angle diffuses far enough (about 7 notches^2 per
+window, A2) to wrap. Both bias the drift backward, and the recorded drift was backward (-0.0457) where the spectrum
+said forward (+0.12). The carry: read the phase in a 56-step window starting at EVERY even time, not only at
+multiples of 56, so that consecutive exact windows are close and no single change approaches half a turn.
+  U0 (control): the aligned windows reproduce the first run's excess speed (-0.0457 notches per window), and every
+      change between consecutive sliding windows is an even shift.
+  U1 (blind; the owner's alias): with the carry the excess speed is forward, and the rotation number lies within
+      0.0001 of the spectral line 0.30365 (V0 holds once the alias is removed).
+  U2 (blind): alias events exist: in at least one aligned gap in 200, the carried change over the same stretch differs
+      from the aligned wrapped change by a whole turn (28 notches).
 """
 import math, sys, pathlib
 
-W = int(sys.argv[1]) if len(sys.argv) > 1 else 12
-T = int(sys.argv[2]) if len(sys.argv) > 2 else 4096
+_nums = [a for a in sys.argv[1:] if a != "carry"]
+W = int(_nums[0]) if len(_nums) > 0 else 12
+T = int(_nums[1]) if len(_nums) > 1 else 4096
 P = 56
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -145,5 +163,63 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def notches(dD):
+    """A phase change dD (mod 56, even) as notches in [-14, 13], as V0 took it."""
+    nn = (-17 * dD) % P
+    nn = nn - P if nn > P // 2 else nn
+    return nn // 2
+
+
+def carry():
+    rots = {"".join(map(str, key)): d for key, d in ROT.items()}
+    nwin = T // P
+    a_tot = a_span = c_tot = c_span = 0
+    odd = gaps = alias = 0
+    for R in range(1 << W):
+        c = column1(R, T)
+        last_bad = max([t for t in range(T - P) if c[t] != c[t + P]], default=-1)
+        if last_bad < T - P - 400:
+            continue                                      # locked, as in the first run
+        cs = "".join(map(str, c))
+        # aligned windows, as V0 (absolute phase D = d)
+        ex = [(k, rots.get(cs[k * P:(k + 1) * P])) for k in range(nwin)]
+        ex = [(k * P, d) for k, d in ex if d is not None]
+        # sliding windows at every even start (absolute phase D = (t + d) mod 56)
+        sl = []
+        for t in range(0, T - P + 1, 2):
+            d = rots.get(cs[t:t + P])
+            if d is not None:
+                sl.append((t, (t + d) % P))
+        cum, angle = {}, 0                                # carried angle at each sliding exact window
+        for (t1, D1), (t2, D2) in zip(sl, sl[1:]):
+            dD = (D2 - D1) % P
+            odd += dD % 2
+            angle += notches(dD)
+            cum[t2] = angle
+        if sl:
+            cum[sl[0][0]] = 0
+            c_tot += angle
+            c_span += (sl[-1][0] - sl[0][0]) / P
+        for (t1, D1), (t2, D2) in zip(ex, ex[1:]):
+            wrapped = notches((D2 - D1) % P)
+            a_tot += wrapped
+            a_span += (t2 - t1) / P
+            if t1 in cum and t2 in cum:
+                gaps += 1
+                diff = cum[t2] - cum[t1] - wrapped
+                alias += diff != 0 and diff % 28 == 0
+    va, vc = a_tot / a_span, c_tot / c_span
+    report("U0 the aligned windows reproduce -0.0457; every sliding change is an even shift",
+           abs(va - (-0.0457)) < 0.00005 and odd == 0, f"aligned {va:+.4f} notches per window; {odd} odd shifts")
+    rot = 17 / 56 + vc / (28 * 56)
+    verdict("U1 with the carry the drift is forward and the rotation number is within 0.0001 of 0.30365",
+            vc > 0 and abs(rot - 0.30365) <= 0.0001, f"carried {vc:+.4f} notches per window, rotation number "
+            f"{rot:.6f} (aligned {17 / 56 + va / (28 * 56):.6f})")
+    verdict("U2 alias events in at least 1 of 200 aligned gaps", gaps > 0 and alias * 200 >= gaps,
+            f"{alias} of {gaps} aligned gaps")
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+    sys.exit(1 if FAILS else 0)
+
+
 if __name__ == "__main__":
-    main()
+    carry() if "carry" in sys.argv[1:] else main()
