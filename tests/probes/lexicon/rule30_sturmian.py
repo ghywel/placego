@@ -51,7 +51,7 @@ OUTCOME of the second run, 2026-10-05 (SAMPLES 300): SP0, SP1 as before. CF2 PAS
   the window condition). SP2, SP3 as before. SP4 HELD: at L = 99 every one of 100,000 theta fails the two-sided
   condition, the latest at n = 14. The first counterfactual stays in the output as a note, not as a check.
 
-SECOND ADDENDUM, written 2026-10-05 (22:35) before the third run: any arcs, for a typical rotation number.
+SECOND ADDENDUM, written 2026-10-05 (about 22:30) before the third run: any arcs, for a typical rotation number.
   Theorem E'' (proved in section 8.57). Let c_s = f(theta + s alpha), where f is the indicator of a finite union
   of arcs with r end points in all. If alpha has infinitely many partial quotients larger than 2^(r+1), the forced
   left half is not eventually zero, for every theta. The proof: the times d_1 < d_2 < ... at which c breaks period
