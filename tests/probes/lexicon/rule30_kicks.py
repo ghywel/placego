@@ -52,12 +52,24 @@ OUTCOME, 2026-10-05 (the first run, W = 11, T = 2048, 18 seconds; 11,437 test sl
   differs between bands by whole notches. The steps between bands move toward column 0 over the next 30 steps (in
   the commonest pattern, from columns 7-8 at t1 + 2 to columns 1-2 at t1 + 32). The probe's next mode tests that
   phase field, with predictions written first.
+
+MODE field: is a kick's new phase carried in from outside, and how fast does its front move? The phase field:
+for even t and each band of two columns (1-2, 3-4, 5-6, 7-8, 9-10), the phase of D that best fits the band over t ..
+t + 8, kept if the fit is at least 0.9. For each slip (old phase d, new phase d', arrival t1 at column 1), search
+the 30 steps before t1 for a time when an outer band (columns 5 or beyond) already shows d' while band 1-2 still
+shows d.
+PREDICTIONS for field, written 2026-10-05 after the outcome above and before field's first run:
+  FD0 (control, must hold): the same search for a wrong phase (d' moved by a random nonzero number of notches) finds
+      it at most half as often as it finds d'.
+  FD1 (blind; carried in): d' is found in an outer band before it reaches column 1 in at least 80% of slips.
+  FD2 (blind; the drift): its front moves inward. For each slip where it is found, the speed from the outermost band
+      that shows it first to band 3-4 is between 0.15 and 0.6 cells per step (median over slips).
 """
 import math, random, sys, pathlib
 from collections import Counter, defaultdict
 
-W = int(sys.argv[1]) if len(sys.argv) > 1 else 11
-T = int(sys.argv[2]) if len(sys.argv) > 2 else 2048
+W = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 11
+T = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 2048
 P, M = 56, 12
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 _argv, sys.argv = sys.argv, sys.argv[:1]
@@ -228,5 +240,75 @@ def main():
     sys.exit(1 if FAILS else 0)
 
 
+def field(wmax=10):
+    train, test = [], []
+    for R in range(1 << wmax):
+        st = spacetime(R)
+        if locked(st):
+            continue
+        (train if R % 7 == 0 else test).append((st, phases(st)))
+    votes = [[[0, 0] for _ in range(P)] for _ in range(M + 1)]
+    for st, ph in train:
+        for k, d in enumerate(ph):
+            if d is None:
+                continue
+            for t in range(k * P, k * P + P):
+                for i in range(M + 1):
+                    votes[i][(t - d) % P][cell(st, t, i)] += 1
+    D = [[0 if v[0] >= v[1] else 1 for v in votes[i]] for i in range(M + 1)]
+    bands = [(1, 2), (3, 4), (5, 6), (7, 8), (9, 10)]
+    rng = random.Random(2)
+    n = found = wrong = 0
+    speeds = []
+    for st, ph in test:
+        memo = {}
+
+        def phi(b, t):
+            if (b, t) not in memo:
+                dd, fit = best_phase(st, D, t, t + 8, bands[b])
+                memo[(b, t)] = dd if fit >= 0.9 else None
+            return memo[(b, t)]
+        for k in range(1, len(ph)):
+            d = ph[k - 1]
+            if d is None or ph[k] is not None:
+                continue
+            t1 = next((t for t in range(k * P, min(T, (k + 1) * P)) if cell(st, t, 1) != D[1][(t - d) % P]), None)
+            if t1 is None or t1 - 40 < 0 or t1 + 30 > T:
+                continue
+            dd, fit = best_phase(st, D, t1 + 2, t1 + 20, (1, 2, 3))
+            if fit < 0.95:
+                continue
+            n += 1
+            shift = rng.choice([x for x in range(-6, 7) if x != 0])
+            dw = (dd - 2 * shift * 33) % P            # moves the angle by `shift` notches (33 = 17^-1 mod 56, halved)
+            first = {}
+            hit_w = False
+            for t in range(t1 - 30 - (t1 - 30) % 2, t1 - 1, 2):
+                if phi(0, t) != d:
+                    continue
+                for b in (2, 3, 4):
+                    v = phi(b, t)
+                    if v == dd and b not in first:
+                        first[b] = t
+                    if v == dw:
+                        hit_w = True
+            if first:
+                found += 1
+                bo = max(first)
+                t3 = next((t for t in range(first[bo], t1 + 1, 2) if phi(1, t) == dd), None)
+                if t3 is not None and t3 > first[bo]:
+                    speeds.append((2 * (bo - 1)) / (t3 - first[bo]))
+            wrong += hit_w
+    med = sorted(speeds)[len(speeds) // 2] if speeds else float("nan")
+    print(f"   {n} slips; the new phase found outside first in {found} ({found / n:.1%}); a wrong phase in {wrong} "
+          f"({wrong / n:.1%}); front speeds measured for {len(speeds)}, median {med:.3f} cells per step", flush=True)
+    report("FD0 a wrong phase is found at most half as often", wrong <= 0.5 * found, f"{wrong} against {found}")
+    verdict("FD1 the new phase is carried in from outside in at least 80% of slips", found >= 0.8 * n,
+            f"{found / n:.1%}")
+    verdict("FD2 its front moves inward at 0.15 to 0.6 cells per step (median)", 0.15 <= med <= 0.6, f"{med:.3f}")
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+    sys.exit(1 if FAILS else 0)
+
+
 if __name__ == "__main__":
-    main()
+    field() if sys.argv[1:2] == ["field"] else main()
