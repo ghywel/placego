@@ -78,7 +78,11 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   coin's best of them lasts about $0.82\,d$ cells, which is what the records show.
 - **The gap.** The kicks must happen for ever. A proof must show they can never steer the left half to zero and
   keep it there. Every statistic says they cannot: coin flips paid through a narrow channel. Nothing structural
-  yet says why. The structural levers found so far are listed in §8.15:
+  yet says why. §8.38 to §8.41 reduce every form of the question to one statement. In the wall form (§8.39), the
+  conditions at a 0101 wall cost real information. The delivery side is a theorem (§8.20). The cost side holds
+  exactly next to a white wall, where the channel's entropy is 0 (Condrey's case), and only as a coin model next to
+  0101 (§8.41). The prime-gap parallel (PRIOR-ART) suggests the proof's likely shape: a size argument, as for
+  Bertrand's postulate, rather than a proof of randomness. The structural levers found so far are listed in §8.15:
   - the tie between neighbouring columns;
   - the wheel;
   - the notched kicks;
@@ -2676,4 +2680,19 @@ distinct column-1 words among the survivors.
 Next to 0101, column 1 is the wheel with its kicks (§8.10 to §8.20), and nothing yet says what a condition costs
 there. The precise target is the 0101 version of RA5: an exact property of column 1 next to 0101 that makes the
 forced walk's demands too costly, as monotonicity does next to a white wall.
+
+**A correction, and a failure of method.** I first proposed to look for that property among the local rules of
+column 1 next to 0101: Lemma 3's "no two visible ones in a row" and the wider layer languages of §8.20. The ladder of
+§8.12 to §8.14 had already done exactly that. With column 1 held to what a layer of $m$ cells can produce, the zero
+runs still grow with depth at every width up to 16, at about one bit per cell ($R \approx \log_2 G$). The check of
+this document's own earlier sections came after the proposal, not before it. Read together, the two results give
+a sharper dichotomy:
+- **Next to a white wall the channel's entropy is 0** (§8.20 reads 0 there). Column 1 can deliver only about
+  $\log_2 s$ bits, and the law is bounded.
+- **Next to 0101 the channel's entropy is positive.** It levels off near 0.12 bits per visible bit, at every layer
+  width computed. A positive-entropy channel lets the runs grow, slowly, as a coin game.
+
+So no local rule of column 1 can give the bounded law for 0101. The cost side has to come from the left half's
+forced cells themselves.
+
 
