@@ -17,10 +17,9 @@ to 8.16) are the bases of such triangles at time 0. Here they are followed in th
 column 0 clamped to 0101..., where column 1 runs the wheel U and is kicked when a domain wall arrives (section 8.8).
 
 An exploratory look (2026-10-05, 500 seeds, not recorded): inside the wheel's domain (the first few columns) births
-have sizes 2 and 3 almost only; deeper in, sizes fall off by about a factor 4 per 2 cells; and the density of births
-in columns 9 to 30 in the 48 steps before a kick is within about 10% of the density at random times, with a
-footprint (fewer births, then more) only along the last 20 steps of the wall's path. TK1 below re-checks the second
-point on fresh seeds; TR0, TK2 and TK3 are new.
+have sizes 2 and 3 almost only; deeper in, sizes fall off by about a factor 4 per 2 cells. Its kick-related
+observations (no excess in the interior; a footprint along the wall's path) used the faulty kick detector described
+under the first run below and are void, so TK1 is in effect blind.
 
 Kicks. A departure is the first time t1 at which column 1 differs from U continued at the phase d of the last exact
 window; its class is (t1 - d) mod 56 (32 and 52 are the two wall species of section 8.8). After a departure the phase
@@ -42,7 +41,16 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       in time by the kick. (50%, not more: an exploratory look found columns beyond 3 or 4 often off the period even
       while column 1 is exact.) (b) The counterfactual: read the window after at the old phase d, as if there had been
       no kick, and the sets agree for at most 10% of the kicks with d' != d.
-REFUTED-BY: TR0 failing, or its counterfactual not caught (the instrument); TK1, TK2 or TK3 failing.
+  KC  (control, added after the first run, before the second: the detector, against a known answer): at least 90% of
+      departures fall in classes 32 and 52, as rule30_walls.py's L1 found (98.1%).
+REFUTED-BY: TR0 or KC failing, or TR0's counterfactual not caught (the instrument); TK1, TK2 or TK3 failing.
+
+FIRST RUN, 2026-10-05: VOID for TK1 to TK3. TR0 passed (0 violations among 1,004,685 runs; Rule 110 broke it in all
+54,397). But the kick detector was wrong: it took the phase of a re-locking window relative to the window's start and
+then compared it with column 1 at absolute times, so unless the window started at a multiple of 56 it reported a
+spurious departure a few steps after every lock. TK3's "0 of 1,300" exposed it. The detector now uses the absolute
+phase (window start plus relative phase), and KC was added as the control that would have caught it. The second
+run keeps the predictions unchanged.
 """
 import pathlib, random, struct, sys, zlib
 from collections import Counter
@@ -134,10 +142,11 @@ def kicks(col1):
         if d is None:
             w = tuple(col1[t:t + P])
             if w in ROT:
+                da = (ROT[w] + t) % P                    # absolute phase: col1[t'] = U[(t' - da) % P]
                 if last is not None:
-                    out.append(last + (t, ROT[w]))
+                    out.append(last + (t, da))
                     last = None
-                d = ROT[w]
+                d = da
                 t += P
             else:
                 t += 1
@@ -166,6 +175,7 @@ def main():
     nk = {32: 0, 52: 0}
     nref = 0
     tk3_n = tk3_ok = tk3_cf_n = tk3_cf = 0
+    classes = Counter()
     example = None
     for i in range(N):
         R = rng.getrandbits(48) | (1 << 47)
@@ -181,6 +191,8 @@ def main():
         col1 = [(r >> 1) & 1 for r in rows]
         B = births(rows)
         for (t1, d, cl, t2, d2) in kicks(col1):
+            if 300 <= t1 <= T - 70:
+                classes[cl] += 1
             if t1 < 300 or t1 > T - 70 or cl not in near:
                 continue
             nk[cl] += 1
@@ -193,7 +205,7 @@ def main():
                 for dt in range(-60, 9):
                     for a, n in B.get(tr + dt, []):
                         ref[(dt, a, min(n, 8))] += 1
-            if t1 >= P and tuple(col1[t1 - P:t1]) in ROT and ROT[tuple(col1[t1 - P:t1])] == d:
+            if t1 >= P and tuple(col1[t1 - P:t1]) in ROT and (ROT[tuple(col1[t1 - P:t1])] + t1 - P) % P == d:
                 before = {((t - d) % P, a, n) for t in range(t1 - P, t1) for a, n in B.get(t, []) if a + n - 1 <= 4}
                 after = {((t - d2) % P, a, n) for t in range(t2, t2 + P) for a, n in B.get(t, []) if a + n - 1 <= 4}
                 tk3_n += 1
@@ -206,6 +218,10 @@ def main():
                     example = (rows, t1, t2, B)
     report("TR0 the shrink theorem holds in Rule 30", bad == 0 and tot > 0, f"{bad} violations among {tot} runs")
     report("TR0 counterfactual caught: Rule 110 breaks it", bad110 > 0, f"{bad110} violations among {tot110} runs")
+    tot_cl = sum(classes.values())
+    report("KC the detector: at least 90% of departures in classes 32 and 52",
+           tot_cl > 0 and (classes[32] + classes[52]) / tot_cl >= 0.9,
+           f"{classes[32] + classes[52]} of {tot_cl}; commonest " + ", ".join(f"{c} x{v}" for c, v in classes.most_common(5)))
 
     def ratio(cl, cond):
         k = sum(v for key, v in near[cl].items() if cond(*key))
