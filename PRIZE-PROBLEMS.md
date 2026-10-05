@@ -946,3 +946,63 @@ the third is open:
    longest run should grow like the width plus a logarithm of the depth, and never become infinite. The measured runs
    (24 at width 24, X3) fit that budget. Turning the heuristic into a proof needs the slips' own structure, which is
    the next target.
+
+### 8.7 A slip is one particle (2026-10-05)
+
+Part 3 of the route asks whether the slips can conspire, which first needs to know what a slip is.
+`rule30_slips.py` builds the domain (columns 0 to 6, the wheel's full spacetime pattern) from one set of right halves,
+and tests it on another. Then it records each of the 22,937 slips it finds there: where the departure from the
+domain first reaches each column, and the pattern of departures around the moment it reaches column 1.
+
+| Check or prediction | Result |
+|---|---|
+| C: the domain, built on the training set, describes the test set | **passed**, 98.6% |
+| CF1: fronts from the left are rare (the direction is not the detector's) | **passed**, 0 of 22,937 |
+| CF2: no fronts inside long exact stretches (noise) | **failed, vacuously**: 0 of 0, because exact windows rarely come five in a row |
+| P1: a slip is a front from the right, at about half a cell per step | **refuted as operationalised**, 0 of 22,937 (see below) |
+| P2: at most 10 shapes cover 80% of slips | **held**: 4 shapes cover 96.7% |
+| P3: the shape decides the phase shift | **refuted**: the commonest shift within a shape is 28% to 43% |
+
+The commonest shape, covering 19,259 slips (84%), shows the domain's columns 1 to 6, left to right, over the 12 steps
+from 8 before the departure reaches column 1 to 3 after it (`#` = off the domain):
+
+```
+....#.     t1 - 8
+.....#
+....##
+...#..
+..#.#.
+...###
+..#.##
+.#.#.#
+#.##..     t1: the departure reaches column 1
+.#..#.
+.##..#
+######     t1 + 3
+```
+
+The departure enters from the interior and moves left diagonally, from column 5 to column 1 in 8 steps. It zigzags,
+3 then 1 steps between columns, about half a cell per step on average, in step with the trace's two-step rhythm. P1
+failed on a technicality: column 6 departs one step after column 5, so the strict order over six columns, as I wrote
+it, never held. The picture is what P1 meant, but the prediction as written is refuted and is recorded so. Of the other
+three shapes, one differs from this in a single cell and one in a few. **So a slip is essentially one kind of
+particle**, a single defect in the wheel's domain that travels in from the right and reaches column 0.
+
+This is computational mechanics, reached independently. Hanson and Crutchfield ("Computational mechanics of cellular
+automata: an example", *Physica D* 103, 1997, on Rule 54) find a dominant regular domain, build a *domain filter* to
+locate defects, and identify the particles and their interactions. Our departure-from-$D$ pattern is their domain
+filter, with the wheel as the domain. Their method is the one to borrow for the particle's interactions
+(PRIOR-ART.md).
+
+P3's refutation says the phase after a slip is not set by the first particle alone. Presumably more particles
+arrive before the wheel locks again, so a slip episode is a train of particles.
+
+**What this means for the route.** Part 3, "can the slips conspire", becomes a question about one particle: when it
+arrives, and how a train of arrivals moves the wheel's phase. That is a much smaller object than "anything the right
+side might do".
+
+**Next.**
+1. Extract the particle exactly, as cell values rather than departures: its own period, its velocity over more
+   columns, and whether it is the same pattern every time (a glider of the system with column 0 clamped).
+2. A fixed noise control (CF2) and a cleaner speed test, with arrival defined from the particle's pattern.
+3. The particle trains: the shift after a whole episode, as a function of the arrival times.

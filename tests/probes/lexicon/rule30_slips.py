@@ -34,6 +34,20 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   CF2 (counterfactual, noise): inside long exact stretches (no slip), a front from the right across columns 2..6 (the
      same test without column 1, which cannot depart there) occurs at most 10% of the time.
 REFUTED-BY: C, CF1 or CF2 failing (the instrument); P1, P2 or P3 failing.
+
+OUTCOME of the first run, 2026-10-05 (W = 12, T = 2048): 560 training and 3,370 test right halves, 22,937 slips.
+  C passed (0.9861). CF1 passed (0 of 22,937 fronts from the left).
+  CF2 FAILED, vacuously: 0 of 0. Exact windows rarely come five in a row (8.4% of windows are exact; rule30_wheel.py,
+     Q1), so no boundary qualified. The noise control could not run, and it needs another design.
+  P1 REFUTED as operationalised: 0 of 22,937. The shapes below show why. The front runs diagonally from column 5,
+     8 steps before t_1, to column 1 at t_1, but column 6 departs a step AFTER column 5, so the strict order over six
+     columns fails every time. The front zigzags (3, 1, 3, 1 steps between columns), about half a cell per step on
+     average, in step with the trace. A cleaner test of the speed needs another definition of arrival.
+  P2 HELD: only 4 distinct shapes, and the 10 commonest (that is, all 4) cover 96.7% of slips. The commonest, 19,259
+     slips (84%), and the third, 552, differ in one cell. So a slip is essentially one kind of particle.
+  P3 REFUTED: within the commonest shape the commonest shift is 52, at only 28% (26 at 43% in the second, 32 at 31% in
+     the third). The phase after a slip is not set by the first particle alone, presumably because more particles
+     arrive before the wheel locks again.
 """
 import sys, pathlib
 from collections import Counter, defaultdict

@@ -1083,3 +1083,17 @@ for what a template is.
 - Rowland, E. S., "Local nested structure in rule 30", Complex Systems 16(3) —
   https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf
 - "Rapid left expansivity ..." — https://www.sciencedirect.com/science/article/pii/S0304397522007502 (403; not read)
+
+## Before the particle step: domains and particles (surveyed 2026-10-05, by Cloud)
+
+Scope: the slips of the wheel (PRIZE-PROBLEMS.md section 8.7) turned out to be defects of a domain that travel as
+particles. That is the subject of computational mechanics.
+
+- **Hanson, J. E. and Crutchfield, J. P., "Computational mechanics of cellular automata: an example"**, Physica D
+  103:169-189 (1997) (abstract and summary read). On elementary rule 54 they identify the dominant regular domain,
+  construct a domain filter that locates and classifies defects, and identify the primary particles, their
+  interactions, and the equation of motion of the filtered spacetime. **Import:** the domain filter (our
+  departure-from-D pattern is one, with the wheel as the domain) and their particle-interaction catalogue, as the
+  method for part 3 of the route (how trains of particles move the wheel's phase).
+- Sources: https://csc.ucdavis.edu/~cmg/papers/ECA54.pdf ;
+  https://www.semanticscholar.org/paper/Computational-mechanics-of-cellular-automata:-an-Hanson-Crutchfield/036e7cb40ee06918aa47da9163ee866b9f316e4a
