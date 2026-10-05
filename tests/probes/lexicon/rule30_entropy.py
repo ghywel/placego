@@ -40,6 +40,13 @@ EXTENSION, written 2026-10-05 after the first run and before running it (python3
       0.15 and 0.18 bits per visible bit.
 OUTCOME of the extension, 2026-10-05: EN4 HELD. m = 19: 8,733 states, 0.1675; m = 20: 12,749 states, 0.1519 bits per
 visible bit. Still falling by about 0.016 per cell, with no sign yet of levelling off.
+
+EXTENSION 2, written 2026-10-05 before running it (python3 rule30_entropy.py deep2). entropy2.c stores the subset states
+sparsely (they hold 7 to 1,022 layer states on average for m = 4 to 20) and reproduced every lambda and state count of
+entropy.c for m = 4, 6, 10, 14, 18, 20 exactly, before this prediction was written.
+  EN5 (blind; does the bound level off?): from m = 20 to m = 26 the bound falls by less per cell, on average, than the
+      0.0154 per cell from m = 14 to m = 20, and at m = 26 it lies between 0.07 and 0.14 bits per visible bit. (The
+      kick estimate says the true value is near 0.05 to 0.15.)
 """
 import math, pathlib, random, re, subprocess, sys, tempfile
 
@@ -129,5 +136,21 @@ def deep():
             falls and 0.15 <= h[20] <= 0.18, ", ".join(f"m {m}: {v:.4f}" for m, v in sorted(h.items())))
 
 
+def deep2():
+    exe = pathlib.Path(tempfile.mkdtemp()) / "entropy2"
+    subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "entropy2.c"), "-lm"], check=True)
+    h = {20: math.log2(1.111005203)}
+    for m in range(21, 27):
+        out = subprocess.run([str(exe), str(m), "4000"], capture_output=True, text=True, timeout=7200).stdout
+        lam = float(re.search(r"^E \d+ (\S+)", out, re.M).group(1))
+        st = re.search(r"^S \d+ (\d+) (\S+)$", out, re.M)
+        h[m] = math.log2(lam)
+        print(f"   trace 01, m {m}: {st.group(1)} automaton states (mean {st.group(2)} layer states each), "
+              f"lambda {lam:.9f}, {h[m]:.4f} bits per visible bit", flush=True)
+    fall = (h[20] - h[26]) / 6
+    verdict("EN5 the fall per cell slows (below 0.0154 on average, m = 20 to 26), and m = 26 lies in 0.07 to 0.14",
+            fall < 0.0154 and 0.07 <= h[26] <= 0.14, f"mean fall {fall:.4f} per cell; m = 26: {h[26]:.4f}")
+
+
 if __name__ == "__main__":
-    deep() if sys.argv[1:] == ["deep"] else main()
+    {"deep": deep, "deep2": deep2}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
