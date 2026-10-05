@@ -4,7 +4,7 @@
 PERIOD-TWO.md's board. (Local, 2026-10-06; section 8.60.)
 
 RUN-ON:     cpu, one core (pure Python 3, standard library; exact)
-COMMAND:    python3 tests/probes/lexicon/rule30_sync.py [W=12] [T=4096]   |   ... wide   |   ... dedup
+COMMAND:    python3 tests/probes/lexicon/rule30_sync.py [W=12] [T=4096]   |   ... wide   |   ... dedup   |   ... long
 COST:       a minute.
 
 METHOD. As in rule30_wheelspeed.py: for every unlocked right half up to W cells, column 1 over T steps is cut into
@@ -101,13 +101,26 @@ THIRD ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_sync.py
       the two patterns differ at time 4,096 lies within 60 cells of the right edge (cell 13 + 4,096).
 REFUTED-BY: SC1 to SC3 the other way.
 
-OUTCOME of the fourth run: (to be recorded)
+OUTCOME of the fourth run, 2026-10-06 (dedup; 40 seconds; a first attempt crashed on a missing sister column, a
+  harness error, and was fixed): SC1 REFUTED by 32: 1,968 distinct columns 1 among the 3,936 unlocked halves (983
+  traces from one half, 495 from two, 241 from three, ... one from twelve; pairs differ in their outermost cell or
+  two). SC2 HELD: after deduplication the late Fano factor is 0.75 against an independence value of 0.73 (shifted
+  0.68): the synchrony is duplication and nothing else. SC3 HELD: for all 1,479 identical sister pairs the damage's
+  leftmost cell at time 4,096 lies within 60 cells of the right edge.
+
+FOURTH ADDENDUM, written 2026-10-06 before the fifth run (python3 rule30_sync.py long).
+  SC4 (blind; the damage never comes back): of the first 200 identical sister pairs (in order of R), at least 95%
+      still have identical columns 1 at 16,384 steps.
+REFUTED-BY: SC4 the other way.
+
+OUTCOME of the fifth run: (to be recorded)
 """
 import math, pathlib, random, statistics, sys
 
-_nums = [a for a in sys.argv[1:] if a not in ("wide", "dedup")]
+_nums = [a for a in sys.argv[1:] if a not in ("wide", "dedup", "long")]
 WIDE = "wide" in sys.argv[1:]
 DEDUP = "dedup" in sys.argv[1:]
+LONG = "long" in sys.argv[1:]
 W = int(_nums[0]) if len(_nums) > 0 else 12
 T = int(_nums[1]) if len(_nums) > 1 else 4096
 P = 56
@@ -271,7 +284,7 @@ def dedup():
             abs(f - indep) <= 0.3, f"Fano {f:.2f}, independence {indep:.2f}, shifted {fc:.2f}")
     near, pairs = 0, 0
     for R in unlocked:
-        if cols[R] != cols[R + (1 << 12)]:
+        if cols[R] != column1(R + (1 << 12), T):
             continue
         pairs += 1
         x, y = rows_right(R, T)[-1], rows_right(R + (1 << 12), T)[-1]
@@ -283,7 +296,26 @@ def dedup():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def long_run():
+    pairs, same = [], 0
+    for R in range(1 << 12):
+        if len(pairs) >= 200:
+            break
+        c = column1(R, T)
+        last_bad = max([t for t in range(T - P) if c[t] != c[t + P]], default=-1)
+        if last_bad >= T - P - 400 and c == column1(R + (1 << 12), T):
+            pairs.append(R)
+    for R in pairs:
+        same += column1(R, 4 * T) == column1(R + (1 << 12), 4 * T)
+    verdict("SC4 at least 95% of the first 200 identical sister pairs stay identical to 16,384 steps",
+            same / len(pairs) >= 0.95, f"{same} of {len(pairs)}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if LONG:
+        long_run()
+        return
     if DEDUP:
         dedup()
         return
