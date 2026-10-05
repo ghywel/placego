@@ -9,6 +9,9 @@
  *          length that occurs, so the shards' histograms can be added.
  *          ./realruns random W N SEED s1 s2 ...   the same for N random right halves of exactly W cells (W <= 64,
  *          splitmix64 from SEED; the top cell is set), lines "Z W s length count".
+ *          ./realruns scan W SHARD NSHARDS TAILMIN   the counterexample search: for each right half of at most W
+ *          cells, the longest zero run anywhere in L(1..126) ("M W length count" histogram), and every half whose
+ *          left half ends in at least TAILMIN zeros at depth 126 ("C W R tail"), a candidate to follow deeper.
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -40,6 +43,39 @@ static uint64_t splitmix64(void) {
 
 int main(int argc, char **argv) {
     if (argc < 5) { fprintf(stderr, "usage: realruns W SHARD NSHARDS s1 s2 ... | realruns random W N SEED s1 ...\n"); return 2; }
+    if (strcmp(argv[1], "scan") == 0 && argc >= 6) {
+        int W = atoi(argv[2]), shard = atoi(argv[3]), nsh = atoi(argv[4]), tailmin = atoi(argv[5]);
+        static long long M[CAP + 2];
+        const int NW = (W + CAP + 66) / 64;
+        uint64_t row[8] = {0}, nr[8] = {0};
+        for (uint64_t R = 1; R < (1ULL << W); R++) {
+            if ((int)(R % (uint64_t)nsh) != shard) continue;
+            memset(row, 0, sizeof row);
+            row[0] = R << 1;
+            u128 a1 = 0, a2 = 0, L = 0;
+            for (int t = 0; t < CAP; t++) {
+                int sg = (int)((row[0] >> 1) & 1);
+                u128 a = left_step(a1, a2, t, sg);
+                L |= ((a >> (t + 1)) & 1) << (t + 1);
+                a2 = a1; a1 = a;
+                for (int k = 0; k < NW; k++) {
+                    uint64_t lf = (row[k] << 1) | (k ? row[k - 1] >> 63 : 0);
+                    uint64_t rt = (row[k] >> 1) | (k + 1 < NW ? row[k + 1] << 63 : 0);
+                    nr[k] = lf ^ (row[k] | rt);
+                }
+                nr[0] = (nr[0] & ~1ULL) | (uint64_t)((t + 1) & 1);
+                memcpy(row, nr, sizeof row);
+            }
+            int best = 0, run = 0;
+            for (int k = 1; k <= CAP; k++) {
+                if ((L >> k) & 1) run = 0; else if (++run > best) best = run;
+            }
+            M[best]++;
+            if (run >= tailmin) printf("C %d %llu %d\n", W, (unsigned long long)R, run);
+        }
+        for (int n = 0; n <= CAP; n++) if (M[n]) printf("M %d %d %lld\n", W, n, M[n]);
+        return 0;
+    }
     int rnd = strcmp(argv[1], "random") == 0, o = rnd ? 1 : 0;
     int W = atoi(argv[1 + o]), shard = rnd ? 0 : atoi(argv[2]), nsh = rnd ? 1 : atoi(argv[3]);
     uint64_t N = rnd ? strtoull(argv[3], 0, 10) : 0;
