@@ -45,7 +45,8 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
 - **Computed facts.**
   - Proposition 6: the pure wheel's left half has an exact tail and period in depth (§8.6).
   - **The channel bound:** next to 0101…, column 1 carries at most 0.128 bits per visible bit, whatever the right
-    side, from an exact automaton (§8.20). The bound is levelling off near 0.12. A random sequence carries 1.
+    side, from an exact automaton (§8.20). The bound is levelling off near 0.12. Typical right sides use 0.08, about
+    3.5 bits per kick. A random sequence carries 1.
 - **The picture.**
   - The right side runs a universal wheel, a rotation by 17/56 of a turn per step, kicked in whole notches by
     domain walls (§8.5 to §8.11). Next to column 0 the white triangles form a lattice in the wheel's frame, and a kick
@@ -1716,6 +1717,14 @@ slowed from 0.015 to 0.004 (EN4 and EN5 held). **The bound is levelling off, nea
 inside the range a rough estimate from the kicks gives (about one kick every 90 steps, each carrying its size and
 some timing). That fits the picture: the wheel carries no information, and the kicks carry all of it. Whether the
 limit is exactly positive is not proved; the trend says it is.
+
+**What column 1 actually carries.** The bound counts every sequence any right side can make. For typical right
+sides (random cells), the entropy rate of column 1's visible bits can be measured directly (`rule30_metric.py`,
+predictions written first): about **0.080 bits per visible bit**, 0.04 bits per step. That is two thirds of what the
+bound allows. The estimate settles once its window covers a whole turn of the wheel (28 visible bits), and it is
+stable on half the data. Its controls held: the pure wheel gives 0, a Markov source its known rate, and shuffled bits
+their full binary entropy. Divided among the kicks (one every 88 steps), **each kick carries about 3.5 bits** (ME3
+held). So column 1's information is the kicks' information: the wheel itself carries none.
 
 **A census of traces** (the random-chaos step: six seeded random words besides the short ones). At $m = 10$ every
 periodic column 0 except the constant 0 leaves column 1 more than 0.1 bits per visible bit (EN3 held). The trace 01

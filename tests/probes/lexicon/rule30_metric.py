@@ -28,6 +28,14 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
       shuffled, high-entropy data would leave almost every context unique and the plug-in estimate would collapse.)
   ST  (control, the estimator's sampling): h_40 from half of the sequences lies within 0.01 of h_40 from all of them.
 REFUTED-BY: ME0, ME1, CF or ST failing (the instrument); ME2 or ME3 failing.
+
+OUTCOME of the first run, 2026-10-05 (N = 240 right halves of 2,400 random cells, 1,800 visible bits each after the
+first 600 steps): ME0 passed (pure wheel 0.0000 at k = 28, 32, 40; the Markov source 0.2479 against 0.2500). h_k for
+k = 1, 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40: 0.673, 0.615, 0.147, 0.132, 0.114, 0.098, 0.098, 0.084, 0.082,
+0.081, 0.080, 0.0795 bits per visible bit. ME1 passed (0.0795 against the bound 0.1277). ME2 HELD. ME3 HELD: 3.50 bits
+per kick. CF passed (shuffled h_4 0.766 against a binary entropy of 0.767; unshuffled 0.147). ST passed (half 0.0802).
+Typical right sides make column 1 carry about 0.08 bits per visible bit, two thirds of what the exact bound allows,
+and the kicks, about 3.5 bits each, account for it.
 """
 import math, pathlib, random, sys
 from collections import Counter
