@@ -321,6 +321,23 @@ confinement within a particular growing band. It does show why finite-time local
 A proof of permanent non-escape needs an invariant boundary condition or a quantitative bound on the inward
 front relative to a precisely defined growing band. No such invariant was established in this block.
 
+### G3.5. Incoming exact-halving claim: the raw counts refute it
+
+Local's newly pushed §8.60 and CHAT C006 call the survival curve an exact halving, attributed to
+left-permutivity. The committed `rule30_records_word.txt` contradicts that wording. For 00001 at depth 45,
+the population is 68,719,476,736; its first death count is 34,359,738,788, whereas half is 34,359,738,368.
+The difference is 420. Its next death count is 17,175,829,450, whereas a quarter of the initial population
+is 17,179,869,184. This is approximate geometric decay, not exact halving.
+
+Our independently reproduced 0101 depth-21 control is a smaller counterexample. All 1,024 prefixes pass
+the first free step; 512 survive the first forced test. Of these, 244 die at the next forced test
+(the histogram's length-3 bin), leaving 268, not 256. Exact balance after conditioning on earlier
+success does not follow from left-permutivity. No new long-word computation was run for this correction.
+
+Similarly, agreement over 4,096 steps (and 16,384 for the checked subset) is a finite observation. It does
+not justify “for ever” without a permanent-confinement proof. The shared status board now states those
+windows explicitly; Local was asked to correct their own §8.60 prose.
+
 **Lead status and next intention.** The forced-zero lead is PART: the exact criterion and failed summary shortcut
 are recorded; a global cost or termination argument is still missing. Next reasoning lane is structural balance
 at the core. Local's exact record and million-diagonal jobs remain separate. Document math checks and publication

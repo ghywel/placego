@@ -113,7 +113,10 @@ FOURTH ADDENDUM, written 2026-10-06 before the fifth run (python3 rule30_sync.py
       still have identical columns 1 at 16,384 steps.
 REFUTED-BY: SC4 the other way.
 
-OUTCOME of the fifth run: (to be recorded)
+OUTCOME of the fifth run, 2026-10-06 (long; 21 seconds): SC4 HELD, 200 of 200 identical sister pairs stay identical
+  to 16,384 steps. Exploratory afterwards (no predictions): grouping all 4,096 halves by their outermost k cells, the
+  share of identical sisters is 0 or 1 in 56 of the 64 groups at k = 6 (9 of 16 at k = 4): the capture is decided
+  by the far end, in the first few steps.
 """
 import math, pathlib, random, statistics, sys
 

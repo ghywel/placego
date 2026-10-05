@@ -33,7 +33,15 @@ PREDICTIONS, written 2026-10-06 before this script's first run.
 REFUTED-BY: M0 failing (the instrument, or section 8.31); M1 to M3 the other way; CF passing is recorded, not a
   failure of a proof.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-06 (K = 1,000,000, 2,200,000 steps in 253 s): certificate found, period 32.
+  Eventually white diagonals: 2, 7, 28, 399 (doublings, 1 -> 2 -> 4 -> 8 -> 16), 53207 and 58286 (branches, 16 -> 16),
+  87866 (a doubling, 16 -> 32), and none from 87,867 to 999,999.
+  M0 FAILED on my list: the probe rule30_leftsides.py had recorded 87866 as a doubling in its own outcome, and the
+  prose of section 8.31 did not repeat it; the certificate and the classification of the six listed ones are right.
+  M1 REFUTED (no new white diagonal between 160,000 and K). M2 REFUTED (the period at K is 32, from 87,867 on).
+  M3 HELD: the worst-phase front's slope is 2.0057 at 999,999 (2.0128 at 100,000).
+  CF FAILED by design: the strip settles at about 2.006 steps per diagonal, so it was periodic about 190,000 steps
+  before the end; 1,000 steps was no test. Lesson, again: predict from the probes' recorded outcomes, not from prose.
 """
 import sys, time
 import numpy as np
