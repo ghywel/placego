@@ -82,6 +82,7 @@ OUTCOME of JOB M4 (Local, 2026-10-05, the M5: 10 cores, 16 GB). Finished, with d
   | 73    | 59   | 132           | 0.808 | -14   | 48              | records.c, 16 min 46 s (machine shared)    |
   | 77    | 63   | 140           | 0.818 | -14   | 64              | records.c, 67 min 20 s (machine shared)    |
   | 81    | 65   | 146           | 0.802 | -16   | 16              | records_bits.c, 41 min 1 s                 |
+  | 85    | 73   | 158           | 0.859 | -12   | 56              | records_bits.c, 2 h 50 min 55 s            |
   M4a HELD at every depth run (0.75 d <= R(d) <= 1.35 d; the ends at 1.80 d to 1.82 d). M4b HELD: the record never
   fell (55, 59, 63, 65). M4c HELD: R(d) <= d + 4 at every depth run, with 18 to 20 cells to spare; R(d) - d is -14
   at 69, 73 and 77 and -16 at 81 (Cloud's mean over depths 20 to 65 is -7.3). M4c was committed at 10:25, before
@@ -97,9 +98,11 @@ OUTCOME of JOB M4 (Local, 2026-10-05, the M5: 10 cores, 16 GB). Finished, with d
   exactly as rule30_records_cloud.txt; a second machine agrees with Cloud's run. Every R, H and W line of 69 to 81 is
   in rule30_records_local.txt (records.c's lines for 69 to 77, records_bits.c's for 81; the 16 witnesses at 81 are
   all its record prefixes).
-  Still running on Local, to be handed back separately: records_bits.c at 85 (started 12:46, expected about 15:30),
-  then JOB M3b, then 89 (expected overnight). Depths 85 and 89 are beyond this job; M4a, M4b and M4c are carried to
-  them unchanged, written here at 12:50, before either result exists (85 had run 4 minutes, 89 not at all).
+  Depth 85 (beyond the job; M4a, M4b and M4c carried to it at 12:50, before its result): M4a HELD (73 in 63.75 ..
+  114.75), M4b HELD (65 -> 73, the largest rise yet, +8), M4c HELD (73 <= 89, 16 to spare). R / d rose to 0.859
+  and R - d to -12. Run 12:46:03 to 15:36:58, 10 threads, records_bits.c; its lines are in rule30_records_local.txt.
+  Still running on Local, to be handed back separately: JOB M3b (from 15:36:58), then records_bits.c at 89
+  (expected about 16 times depth 81's 41 minutes, so around 11 hours; M4a-M4c carried to it as above).
 """
 import importlib.util, math, os, pathlib, subprocess, sys, tempfile
 from multiprocessing import Pool
