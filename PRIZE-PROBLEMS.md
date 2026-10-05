@@ -1872,3 +1872,59 @@ the seed's width, and then they fall out of step.** A counterexample needs them 
 This is the same kind of fact as Condrey's horizon $H(2, w)$ (PRIOR-ART.md), the longest period-2 prefix over rows of
 a given support radius, which he showed is at least $w$. Here the count is in total width, for right halves up to
 32 cells and cuts whose zero run ends by depth 126, and in that range a seed gains at most 9 steps on its width.
+
+### 8.25 The owner's lightning (2026-10-05)
+
+The owner: "take a lightning trace on the pyramid: from the top down run some sort of path-tracing walk that reaches
+the bottom of a given pyramid, and repeat this a large number of times, seeing how the lightning forks and reaches the
+bottom each time."
+
+Black cells conduct and white cells resist. A walker allowed only on black cells would rarely get far, so
+`rule30_lightning.py` uses two kinds of lightning, as real lightning has both:
+- **the strike**, the path of least resistance from the apex, where crossing a white cell costs 1, computed exactly;
+- **the flicker**, 20,000 random walks preferring black cells ten to one.
+
+The pyramids are Rule 30 from a single 1 (depth 512, interior density 0.502), random pyramids of the same density
+with black edges, and Rule 90 (the Sierpinski triangle). Predictions were written first.
+
+| | Rule 30 | Random pyramids | Rule 90 |
+|---|---|---|---|
+| Strike: white cells crossed to the bottom centre | 3 | 2 to 7 | 256 |
+| Flicker: mean landing point (sd about 18) | **−35.7** (2.0 sd to the left) | −1.5 to +1.7 | +0.2 |
+| Flicker: share of steps through white | 0.214 | 0.20 | 0.93 |
+
+- **The strike finds Rule 30 as easy to cross as a random pattern.** Almost every path can stay on black: only 3
+  white cells in 511 rows. (LG1, a 15% band, was refuted by its own design, since the costs are small whole numbers;
+  Rule 30's 3 lies inside the random range.) Rule 90 resists 85 times more (LG2 held). Rule 30's strike to the
+  centre rides the always-black right edge for about 100 rows, then cuts back in.
+- **The flicker is pulled to the left** (LG3 held): Rule 30's lightning lands two standard deviations left of centre,
+  the random pyramids' within a tenth. The cause is local, not hidden structure. A lightning that knows only Rule
+  30's rule from a cell to the three below it, with fresh random neighbours every step, drifts at −0.077 cells per
+  step against the real pyramid's −0.070 (LG4 held). The real drift is steady from top to bottom (LG5 held). Below
+  a black cell, Rule 30 makes the lower-left and lower-middle cells black half the time each, but the lower-right only
+  a quarter of the time: the OR sits on the right. **The lightning sees Rule 30's handedness, and otherwise sees
+  coin flips.**
+
+`tests/probes/lexicon/rule30_lightning.png` shows the pyramid (black cells grey), the flicker's 20,000 paths (yellow
+to red) tilting steadily left, and the strike (blue).
+
+### 8.26 How irrational numbers are proved, and which way might fit (2026-10-05)
+
+The owner's interest is in how irrationality is proved, given "man's obsession with counting to infinite digits of
+pi, just because computers can count very quickly". No digit count ever proved a number irrational. Every proof uses
+a structure the number has, and each kind of proof has an analogue here.
+
+| Proof method | Example | Its analogue for Rule 30 | State |
+|---|---|---|---|
+| Algebraic contradiction | $\sqrt 2$ (Euclid): $p^2 = 2q^2$ has no solution | Jen's theorem (§8.13): if two adjacent columns were both rational, periodicity would flow left and the light cone would force everything to 0 | proved, for pairs of columns |
+| A positive integer smaller than 1 | $e$ (Fourier): $q! \cdot e$ less a whole number would be a positive integer below 1 | some integer-valued count that a finite left half would make too small | no such quantity known; the natural lead |
+| Too-good rational approximations | Liouville numbers | column 1 next to 0101… is near-rational (§8.23) | true of column 1, but it is not the column the prize asks about |
+| Recurrences giving good approximations | $\zeta(3)$ (Apéry) | a recurrence for the centre column | none known |
+| Automata and words | Thue–Morse (overlap-free; transcendental, Mahler) | column 1 is not 2-automatic (§8, T6) | does not apply |
+| Statistics of the digits | none: no irrationality was ever proved this way | the coin model (§8.14, §8.16), Khinchin's laws (§8.23) | evidence only |
+
+Fourier's argument for $e$ has the shape this problem would need. Suppose the number were rational. Then some
+quantity built from it would be a whole number, yet strictly between 0 and 1, which is impossible. For Rule 30 the
+quantity would have to come from the structure found so far, perhaps the exact channel bound (§8.20) or the wheel's
+lattice (§8.18), turned into an integer that a finite left half would make too small. That is speculation, recorded as
+a lead, not a result.

@@ -53,6 +53,10 @@ ADDENDUM, written 2026-10-05 after the first run and before the second (python3 
       Rule 30), drifts by within 0.015 cells per step of Rule 30's own -35.7 / 511 = -0.070.
   LG5 (blind): on the real Rule 30 pyramid the drift is steady: the mean step over rows 1 to 170, 171 to 340 and 341
       to 511 differs between thirds by less than 30% of the overall mean step.
+OUTCOME of the second run, 2026-10-05: LG4 HELD (the Markov lightning drifts -0.0768 cells per step, Rule 30 -0.0699).
+LG5 HELD (thirds -0.0724, -0.0685, -0.0697; overall -0.0702). The pull to the left is local: Rule 30's handedness (the
+OR sits on the right neighbour, so the cell below and to the right of a black cell is black less often), not
+long-range structure. The real pattern's correlations reduce it slightly, by about a tenth.
 """
 import math, pathlib, random, struct, sys, zlib
 
