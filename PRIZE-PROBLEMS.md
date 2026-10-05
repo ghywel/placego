@@ -58,7 +58,7 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - A seed's information reaches column 1 slowly, at about 0.2 cells per step. So at a fixed depth the longest
     real zero run is set by the channel, not the seed: 8 cells from depth 41 for every seed width from 16 to 28
     (§8.17).
-  - The owner's morning questions (§8.22 to §8.32). Read as a binary number, a column is rational exactly when it
+  - The owner's morning questions (§8.22 to §8.35). Read as a binary number, a column is rational exactly when it
     repeats, so the prize asks for one number's irrationality. A period-2 counterexample would need two irrational
     numbers adding to exactly 1, and a finite seed keeps them complementary for at most about $(w + 9)/2$ digits. The
     pyramid's diagonals are all rational, and the centre column is their Cantor diagonal. The diagonals' periods and
@@ -2371,3 +2371,45 @@ picture reveals. `rule30_core.py` measured the left side in both settings (predi
 So Problem 2's property, equal frequencies, holds in a region with no randomness at all. That leaves room for a
 structural reason for balance, which Problem 2's coin-like evidence alone would not suggest. Whether such a reason
 reaches the core, where the centre column lies, is open.
+
+### 8.35 Does Rule 30's coin tip? The owner's matter–antimatter question (2026-10-05)
+
+The owner: "I am thinking of the universal problem of why there is more matter than antimatter. The coin flip tips
+towards the matter side, and I believe the reason isn't known."
+
+**The physics.** The universe holds about one extra baryon for every billion or so baryon–antibaryon pairs: the
+baryon-to-photon ratio is about $6 \times 10^{-10}$. Sakharov (1967) gave three conditions any explanation needs:
+- a process that changes the number of baryons;
+- violation of C (swapping matter for antimatter) and of CP (doing that and mirroring);
+- a departure from thermal equilibrium.
+
+The Standard Model has all three, but its CP violation is far too weak to make the excess. So the cause is unknown,
+as the owner says.
+
+**Rule 30 meets all three conditions.**
+- The number of black cells is not conserved.
+- Swapping colours turns Rule 30 into a different rule (Rule 135), mirroring it gives Rule 86, and doing both gives
+  Rule 149. So C, P and CP are all broken.
+- The single seed starts as far from balance as possible: one black cell in a white world.
+
+**Yet it makes no excess.** Exactly 4 of its 8 outputs are black, and it maps a row of fair coins to a row of fair
+coins (it is surjective). So the balanced state is an equilibrium it cannot leave, and an imbalance at the start is
+washed out. `rule30_tilt.py` asked whether anything survives in the centre column, with predictions written first and
+centre columns run from rows of fair coins as controls:
+- **The control.** Wolfram's black counts at 10, 100, …, $10^6$ steps are reproduced exactly (TI0).
+- **No long memory** (TI1 held). The excess of black over white grows like a fair random walk: a DFA exponent of
+  0.5045, against 0.49 to 0.51 for the controls.
+- **No tilt** (TI2 held). At $2^{21}$ steps the excess is $+1{,}224$, which is $+0.85$ standard deviations. It was
+  $-44$ at $2^{10}$, $+282$ at $2^{15}$ and $-138$ at $2^{17}$: the walk crosses zero.
+- **Wolfram's table** shows black ahead at every decade from $10^4$ to $10^9$, by 0.6 to 2.0 standard deviations.
+  Random walks do that: once ahead, they tend to stay ahead for long stretches.
+
+**What the comparison teaches.**
+- **Sakharov's conditions are necessary, not sufficient,** in Rule 30 as in the Standard Model. Here the reason is
+  plain: what keeps the balance is not a C or CP symmetry, which Rule 30 lacks, but a balanced and surjective rule.
+- **Problem 2 asks exactly the owner's question:** does this rule, started from one black cell, leave a lasting
+  imbalance in its centre column? Every measurement says no. That includes the ordered band of §8.34, which is
+  balanced to $10^{-5}$ with no randomness at all. A proof is still missing.
+- **The analogy has a limit.** Baryogenesis lives in quantum field theory, and nothing here explains it. What carries
+  over is the shape of the question: rules that break every mirror symmetry can still keep the books balanced, and
+  whether they do is a question about the rule's dynamics, not its symmetries.

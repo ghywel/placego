@@ -1309,6 +1309,11 @@ and Wolfram's prize announcement had been read. Both cover much of the ground.
   observation. **Import:** the credit for §8.30's band and its speed. Our 0.245 to 0.257 (from the transients)
   brackets it; the damage front on a random background, 0.246 with a standard error near 0.003, is close but about
   two standard errors below it.
+- **Wolfram's Problem 2 table** (the same announcement, read 2026-10-05). Black and white counts in the centre column
+  after 10, 100, ..., 10^9 steps: black 7, 52, 481, 5,032, 50,098, 500,768, 5,002,220, 50,009,976 and 500,025,038.
+  That is an excess of black at every decade from 10^4 on, by 0.6 to 2.0 standard deviations of a fair coin; Wolfram
+  describes the running excess as random-walk-like. rule30_tilt.py reproduces the counts to 10^6 exactly. (A first
+  summary of the page gave a wrong ratio, 0.9999998, corrected from the table before any use.)
 - Searches for a later answer to Rowland's question ("rule 30" "left side", 53209) found nothing.
 - **Our answer** (rule30_leftsides.py, PRIZE-PROBLEMS.md §8.31). Rowland's indexing is confirmed (his column 53209 is
   our diagonal 53208). The other continuations occur for constructed finite seeds: at least 4 certified left sides by
