@@ -27,6 +27,31 @@ PREDICTIONS, written 2026-10-05 before this script's first run (widths W = 0 .. 
       every width; for w = 0, over nonzero right halves, at most +2 at every width from 1 to 16.
   UW4 (random-chaos: does the law need a period?): a random wall (4096 random bits) obeys UW1's +12 at every width.
 REFUTED-BY: UW0 failing (the instrument); UW1 to UW4 failing.
+
+OUTCOME, 2026-10-05 (the first run, horizon 126, about 15 minutes):
+  UW0 PASSED: 01 reproduces rule30_complement.py at every width 0 .. 16.
+  UW1 HELD: the largest excess is +10 (001, at width 1), +9 (011), +7 (0001, 0011, 0111); 01 has +9.
+  UW2 REFUTED by 0011 alone (+5 at widths 12 .. 16 against +4 at 0 .. 8; its +7 is at width 10). For the other
+     four words the wide right halves do worse (001: +1 vs +10, 011: +7 vs +9, 0001: +2 vs +7, 0111: +3 vs +7).
+  UW3 HELD, exactly: for w = 1 the excess is 1 - W at every width (the stripes: no zero run longer than 1); for w = 0
+     it is 0 at W = 1 and -1 from W = 2 (Condrey's alternating tail).
+  UW4 HELD: the random wall's largest excess is +6.
+  Many entries had a run that reached depth 126. The addendum (mode deep) recomputed those right halves to depth
+  320. The maxima moved by at most one (001 at widths 12 .. 16, 0011 at 15 and 16, and the random wall at 16, from -3
+  to +1), and no verdict changed.
+  A second check, after both (post hoc): 01 and the random wall recomputed at depth 320, with every run that reached
+  320 followed to 640. Among those runs the largest excess is +4 for 01, but +10 for the random wall's empty right
+  half (W = 0), from a run of 10 zeros at depth 562 (against +4 for W = 0 to depth 126). So the excess depends on how
+  deep the cuts may go. That is the coin model's prediction: the longest zero run up to depth K grows like log2 K,
+  so the law would be "total width plus a logarithm", not plus a constant. Mode horizon tests that.
+
+MODE horizon. The largest excess over right halves of widths 0 .. 10, with cuts to depth K = 64, 128, 256 and 512.
+PREDICTIONS for horizon, written 2026-10-05 after the outcome above and before horizon's first run. Seen: the
+excesses at K = 126 for every width, the deep addendum's values to 320 for the runs that reached 126, and the
+640-check above (01 and the random wall only, runs that reached 320).
+  UH1 (blind; Cramer's shape): for every two-colour word and the random wall, the largest excess over widths 0 .. 10
+      at K = 512 exceeds the value at K = 64 by 2 to 5: about one step per doubling of the horizon.
+  UH2 (blind; the one-colour walls): for w = 0 (nonzero right halves) and w = 1 it does not grow at all.
 """
 import pathlib, random, sys
 
@@ -146,5 +171,34 @@ def deep(K2=320):
               + f"; runs still reaching {K2}: {still}", flush=True)
 
 
+def horizon(Ks=(64, 128, 256, 512), wmax=10):
+    rng = random.Random(4096)
+    words = {"01": [0, 1], "001": [0, 0, 1], "011": [0, 1, 1], "0001": [0, 0, 0, 1], "0011": [0, 0, 1, 1],
+             "0111": [0, 1, 1, 1], "random": [rng.getrandbits(1) for _ in range(4096)], "1": [1], "0": [0]}
+    grow = {}
+    for n, w in words.items():
+        Kmax = max(Ks)
+        tau = [w[t % len(w)] for t in range(Kmax + 2)]
+        best = {K: None for K in Ks}
+        for W in range(0, wmax + 1):
+            lo, hi = (0, 1) if W == 0 else (1 << (W - 1), 1 << W)
+            for R in range(lo, hi):
+                if n == "0" and R == 0:
+                    continue
+                L = r30.forced_left(R, tau, Kmax)
+                for K in Ks:
+                    lg, _ = longest_run(L, K)
+                    e = lg - W
+                    best[K] = e if best[K] is None or e > best[K] else best[K]
+        grow[n] = best[max(Ks)] - best[min(Ks)]
+        print(f"   {n:6s}: largest excess over widths 0 .. {wmax} by horizon: "
+              + " ".join(f"K {K}: {best[K]:+d}" for K in Ks) + f"; growth {grow[n]:+d}", flush=True)
+    two = ["01", "001", "011", "0001", "0011", "0111", "random"]
+    verdict("UH1 the excess grows by 2 to 5 from K = 64 to 512 for every two-colour word and the random wall",
+            all(2 <= grow[n] <= 5 for n in two), ", ".join(f"{n}: {grow[n]:+d}" for n in two))
+    verdict("UH2 the one-colour walls do not grow", grow["0"] == 0 and grow["1"] == 0,
+            f"0: {grow['0']:+d}, 1: {grow['1']:+d}")
+
+
 if __name__ == "__main__":
-    deep() if sys.argv[1:2] == ["deep"] else main()
+    {"deep": deep, "horizon": horizon}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
