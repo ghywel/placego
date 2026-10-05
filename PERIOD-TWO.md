@@ -139,7 +139,8 @@ prize needs a statement about every single finite configuration. The questions a
    $N_w(T) \le 2^{w - \alpha T} \cdot \mathrm{poly}(w, T)$ for some $\alpha > 0$. Fewer than one configuration is
    none, so this exact count over a finite family would close period 2. Counting crosses the gap here because the
    seeds are finite. The measured horizon, about $w$ plus a logarithm (§8.24, §8.42), is what $\alpha = 1$
-   predicts. The counts themselves have not been measured. The bound cannot hold for every centre word: a word
+   predicts. Measured (§8.51, `rule30_count.py`): to $w = 24$ the count falls by about $2^{1.05}$ per step, so
+   $\alpha$ is near 1 and the bound looks true. The bound cannot hold for every centre word: a word
    that is some configuration's own centre column has $N_w(T) \ge 1$ for every $T$. So a proof must use the
    periodicity of 0101, as §5 says.
 2. **Flatto, Lagarias and Pollington's move** (§8.45, §8.47). Their partial result on Mahler's problem never beats
@@ -172,6 +173,7 @@ prize needs a statement about every single finite configuration. The questions a
 8. **The fourth game** (§8.49, from the tetralemma). Count the seeds that survive the black, white, both and
    neither games, and measure $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$. A ratio near 1
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
+   Measured (§8.51): between 0.66 and 1.34 at $w = 24$, with no trend. Independent up to a constant factor.
 
 ## 8. Reading order
 

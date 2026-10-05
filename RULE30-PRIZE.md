@@ -2984,3 +2984,33 @@ infinite run" into "a bound at every depth" (§8.36). The certificates of PERIOD
 with a ranking function checked by a solver, are exactly such bridges. Every probe in this document crosses no
 bridge: it is evidence on the gate side. So the owner's distinction is not missing from the work. It is the line
 between what the probes have done and what a proof must do, and it names what fresh eyes are needed for: a bridge.
+
+### 8.51 The counting form, measured, and the tetralemma's fourth game (2026-10-05)
+
+`rule30_count.py` (with `count.c`) counts exactly, with predictions written before the run. $N_w(T)$ is the number
+of pairs (configuration, position) where the configuration's hull is exactly $w$ cells wide, the position is a cell
+of the hull taken as column 0, and that column reads 0101... (either phase) for $T$ steps. Every configuration up to
+$w = 24$ was run, about 200 million pairs. A direct cell-by-cell count agrees up to $w = 9$ (CT0).
+
+| Word | slope of $\log_2 N_w(T)$ at $w$ = 20, 22, 24 | horizon $H(w) - w$, $w$ = 10 to 24 |
+|---|---|---|
+| 0101 | -1.03, -1.07, -1.08 | -1 to +5 |
+| random (seed 1940) | -1.15 at $w$ = 24 | 0 at $w$ = 24 |
+| 0 (theorem: Condrey) | -1.13, -1.14, -1.13 | -1 to 0 |
+| 1 (theorem: Condrey) | -1.13, -1.12, -1.12 | 0 to +1 |
+
+- **The counting form holds as far as it can be counted** (CT2 held). Each step divides the count by about
+  $2^{1.05}$, so $N_w(T) \approx 2^{w - 1.05\,T + c}$. That is PERIOD-TWO.md §7's question 1 with $\alpha$ near 1.
+- **The horizon is tight** (CT1 refuted: I predicted at least +2). It is $w + 5$ at most, and $w - 1$ at $w = 18$.
+- **Black and white are independent** (CT3 held). The tetralemma's ratio
+  $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$ stays between 0.66 and 1.34 with no trend. The
+  coin model's independence is right up to a constant factor. There is no hidden obstruction between the two kinds
+  of condition to exploit. The random word's ratio dipped once to 0.37 (CT4 refuted, by that alone).
+- **The proved words count the same way** (post hoc). The one-colour words, which Condrey's theorem closes, have the
+  same law with a slightly steeper slope. 0101 has the shallowest slope of the words tried.
+
+**What it means.** The counting form is the right statement: it is true as far as it can be counted, it is shared
+by the words that have a theorem, and it would close period 2 if proved, because a count below one is zero. The
+measurement also rules out a cheap route: the tetralemma's ratio shows no obstruction between black and white
+conditions. A proof must explain why each step halves the count, exactly. That is the cost side, now in the form
+of a number that can be watched as $w$ grows.

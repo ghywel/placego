@@ -28,6 +28,23 @@ PREDICTIONS, written 2026-10-05 before this script's first run (word 0101..., bo
   CT5 (counterfactual, the one-colour words, from Condrey's theorem): for the words 0 and 1, H(w) <= w + 2 at every
       w up to WMAX.
 REFUTED-BY: CT0 failing (the instrument); CT1 to CT5 failing.
+
+OUTCOME, 2026-10-05 (the first run, 13 seconds):
+  CT0 PASSED: count.c equals the direct count for w = 1 .. 9 and T <= 16, words 01 and 0.
+  0101: H(w) - w for w = 1 .. 24: +0 +0 +3 -1 +0 +1 +0 +1 +1 +0 +3 +2 +2 +2 +1 +1 +5 -1 +2 +1 +4 +3 +2 +3.
+  CT1 REFUTED: the horizon is tighter than predicted. At w = 10, 15, 16, 18 and 20 it is w + 1 or less (w - 1 at
+     18); the largest is w + 5, at w = 17.
+  CT2 HELD: the slope of log2 N_w(T) is -1.026, -1.070, -1.078 at w = 20, 22, 24. Each step at the wall divides the
+     count by about 2^1.05. At w = 24, log2 N falls from 26.6 at T = 1 to 2.0 at T = 25.
+  CT3 HELD: at w = 24, R(T) stays between 0.66 and 1.34 for T = 4 .. 21 (mean near 0.9). The black and white
+     conditions are independent up to a constant factor, and the factor does not grow with T.
+  CT4 REFUTED, by R alone: the random word's slope is -1.154, within 0.15 of 0101's, but its R(T) dips to 0.37 once
+     (T = 16). Its horizon is w + 0.
+  CT5 HELD: the one-colour words have H(w) - w at most +1 (word 0: 0 or -1; word 1: +1 or 0), as Condrey's
+     theorem requires.
+  Post hoc (no prediction, added after the outcome): the one-colour words' slopes are -1.13, -1.14, -1.13 (word 0)
+     and -1.13, -1.12, -1.12 (word 1) at w = 20, 22, 24. Their counts fall a little faster than 0101's, about as
+     fast as the random word's, and they have a theorem; 0101 has the shallowest slope of the words tried.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 
@@ -155,6 +172,11 @@ def main():
         worst.append(max(h1[w] - w for w in h1))
     verdict("CT5 the one-colour words have H(w) <= w + 2", all(x <= 2 for x in worst),
             f"largest H(w) - w: word 0 {worst[0]:+d}, word 1 {worst[1]:+d}")
+    # Post hoc (added after the first run's outcome, no prediction): the count's slope where a theorem exists.
+    for word in ("0" * 400, "1" * 400):
+        r1 = run_c(exe, WMAX - 4, WMAX, TMAX, word, 1)
+        print(f"   post hoc, word {word[0]}: slope of log2 N_w(T), T from w/2 to H(w) - 4: " + ", ".join(
+            f"w = {w}: {slope(r1, w, w // 2, horizon(r1, w, TMAX) - 4):.3f}" for w in (WMAX - 4, WMAX - 2, WMAX)))
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
     sys.exit(1 if FAILS else 0)
 
