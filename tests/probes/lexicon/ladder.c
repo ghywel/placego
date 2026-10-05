@@ -3,6 +3,8 @@
  * BUILD:   cc -O2 -o ladder tests/probes/lexicon/ladder.c      (driven by rule30_ladder.py, which builds it itself)
  * USAGE:   ./ladder run M S        R(M, S): the longest run of zeros the forced left half can be held to, starting at
  *                                  depth S, over every start of cells 1..M and every input sequence in column M + 1
+ *          ./ladder hist M S       as run, and also the number of start groups whose run has each length
+ *                                  (lines "H M S length groups"; used by rule30_ladder_budget.py)
  *          ./ladder left BITS      the forced left half L(1..n) for a given column 1 (a self-test of the recursion)
  *
  * The left half without columns. The cells x(-j, i) with j + i = t + 1 form an anti-diagonal a_t, a_t[j] =
@@ -42,6 +44,7 @@ static inline u128 left_step(u128 a1, u128 a2, int t, int sigma) {
 }
 
 static int M;
+static int HIST;                              /* print the run-length histogram as well */
 static int *NXT;                              /* NXT[(s*2 + tau)*2 + u] */
 
 static void build_layer(void) {
@@ -120,6 +123,7 @@ static int run(int S) {
     }
     int best = 0;
     long long at_best = 0, groups = 0;
+    static long long hist[CAP + 2];
     uint64_t *set = malloc(WORDS * 8), *nset = malloc(WORDS * 8);
     for (size_t i = 0; i < cur.cap; i++) if (cur.used[i]) {
         uint64_t p = cur.keys[i];
@@ -166,7 +170,9 @@ static int run(int S) {
         }
         if (runlen > best) { best = runlen; at_best = 0; }
         if (runlen == best) at_best++;
+        hist[runlen]++;
     }
+    if (HIST) for (int k = 0; k <= best; k++) printf("H %d %d %d %lld\n", M, S, k, hist[k]);
     printf("R M %d S %d = %d%s (%lld of %lld start groups reach it)\n", M, S, best,
            (S - 1 + best >= CAP) ? " CAPPED" : "", at_best, groups);
     t_free(&cur);
@@ -186,7 +192,8 @@ int main(int argc, char **argv) {
         putchar('\n');
         return 0;
     }
-    if (argc >= 4 && strcmp(argv[1], "run") == 0) {
+    if (argc >= 4 && (strcmp(argv[1], "run") == 0 || strcmp(argv[1], "hist") == 0)) {
+        HIST = strcmp(argv[1], "hist") == 0;
         M = atoi(argv[2]);
         int S = atoi(argv[3]);
         build_layer();

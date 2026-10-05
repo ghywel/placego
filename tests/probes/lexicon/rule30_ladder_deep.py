@@ -21,6 +21,21 @@ PREDICTIONS, written 2026-10-05 before this script's first run:
   DL5 (theorem checks): at every s, R never rises with m; and every R(m, s) is at least the longest zero run from depth
       s that a real right half (every one up to 12 cells) produces.
 REFUTED-BY: DL0 or DL5 failing (the instrument); DL1 to DL4 failing.
+
+OUTCOME of the first run, 2026-10-05 (14 minutes, the largest point 26 million start groups and 1.1 GB): DL0 passed
+(all 30 values and group counts); DL5 passed (R never rises with m; the real runs from depths 41, 49, ..., 105 are
+6, 9, 10, 10, 8, 8, 9, 9, 10, and every R is at least that). DL3 HELD: R(0, 41) = 37. DL1 REFUTED: R(8, s) reaches 25
+(s = 97). DL2 REFUTED: R(10, s) reaches 21 (s = 105). DL4 REFUTED: at m = 12 the runs grow, early 8, 11, 10, 13 and
+late 16, 14, 16, 16, 20. R(6, 105) hit the depth cap (at least 22; 240 start groups reach it). The table, s = 41 to
+105 in steps of 8:
+    m = 6:  11 11 14 17 20 20 21 25 22+ | m = 8:  8 11 11 13 16 17 16 25 21
+    m = 10:  8 11 10 13 16 14 16 19 21  | m = 12: 8 11 10 13 16 14 16 16 20
+    (m = 0: 37 at s = 41; m = 1: 15 21 25 and m = 4: 14 15 19 at s = 41, 49, 57)
+The start groups grow exponentially with s at every m, by a ratio per 8 depths that settles to 3.40 (m = 6), 2.68
+(m = 8), 2.40 (m = 10) and about 2.09 (m = 12). Disclosure: before this run a cost probe printed R(12, 57) = 10 and
+R(12, 73) = 16, two of DL4's nine values. Without them DL4 is still refuted (early mean 10.7, late 16.5).
+Read after the run (post hoc, so not a result): for m >= 4 and s >= 33, R is close to log2 G, the ratio lying
+between 0.81 and 1.26; with column 1 free it is near 2. That reading is tested blind in rule30_ladder_budget.py.
 """
 import pathlib, re, subprocess, sys, tempfile
 

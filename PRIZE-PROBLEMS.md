@@ -32,20 +32,26 @@ period 2 is the open case, and the work concentrates there. What exists:
 - **Evidence.**
   - No counterexample over 27 million cases.
   - The search is shown able to see one where one exists: in Rule 60, a sibling rule (§8.3).
-  - Conjecture LR (§7) holds exactly for all 550,201 periodic columns 1 that were decided (§8.6).
+  - Conjecture LR (§7) holds for every eventually periodic column 1. This is Jen's theorem (1990), restated with a
+    short proof as Proposition 7 (§8.13). The 550,201 periodic columns computed in §8.6 agree with it: that is a
+    check of the instrument, not new evidence.
 - **Small proved results.**
   - Lemmas 1 to 4, about where the right side's bits enter the left half.
   - Proposition 5: in the sibling Rule 90, no period-2 column is possible, by Lucas' theorem.
 - **A description of the right side.** Next to a period-2 column, the right side runs a universal *wheel*: an exact
   coding of a rotation by 17/56 of a turn per step (§8.5). Domain walls interrupt it, arriving from the interior at
   half a cell per step and kicking its angle by whole notches of 1/28 of a turn (§8.7, §8.8).
-- **One computed theorem.** Proposition 6: the wheel alone cannot make the left half finite. An exact cycle certificate
-  was found and verified (§8.6).
+- **One computed fact.** Proposition 6 gives the exact depth period of the pure wheel's left half, by a verified
+  cycle certificate (§8.6). That this left half is not finite follows from Jen's theorem, which the work had cited
+  but not applied until §8.13.
+- **One consequence of Jen's theorem for the wheel.** In a finite configuration with column 0 eventually 0101…,
+  column 1 is never eventually periodic, so the wheel must slip infinitely often (§8.13).
 - **The gap.** Could the walls' kicks steer the left half to zero and keep it there? That is part 3 of the route
   (§8.6) and it is open. A proof would have to be made there.
 
 Several of these results had been reached by others first: Condrey's triangular uniqueness, his "no bounded law" at
-period 2, and Hanson and Crutchfield's domain filter. PRIOR-ART.md records them.
+period 2, Hanson and Crutchfield's domain filter, and Jen's theorem for periodic columns 1. PRIOR-ART.md records
+them.
 
 ---
 
@@ -902,6 +908,9 @@ right side's own disorder, are where the left half shows structure, together wit
   results exactly, and it runs at about 470 million steps a second. It was run on all 28 phases, with O1 and O2
   pre-registered in its header.
 
+*Correction (2026-10-05, §8.13): that this left half is never eventually zero is a special case of Jen's theorem
+(Proposition 7), with a three-line proof. What Proposition 6 adds is the exact tail $\mu$ and period $\lambda$.*
+
 **Proposition 6 (computed): the pure wheel cannot make a finite left half.** Let column 0 be 0101… and column 1 the
 universal wheel $U$, at any of its 28 even phases. Then the forced left half is never eventually zero. The orbit of the
 column pair enters a cycle after
@@ -957,19 +966,25 @@ whole shortfall is at period 13 with column 0 = 0001… (P = 52), where the orbi
 of the budget, not a result. In all, **LR holds exactly for each of the 550,201 periodic columns 1 now decided**, and
 6,851 words (527 classes, all at that one period) remain open.
 
+*Correction (2026-10-05, §8.13): none of this was open. Jen's theorem (Proposition 7) proves that no eventually
+periodic column 1 kills the left half, next to any periodic column 0 other than zero. The 6,851 undecided words are
+settled by it. The search is a check of the instrument against a theorem: it found 0 kills, as it had to.*
+
 **The wheel out of step** (the random-chaos step of 2026-10-05, prediction O3 in `wheel_orbit.c`). Delay $U$ by an
 odd number of steps and it breaks Lemma 3, so no right half can make it. Conjecture LR still covers it. **O3 held:**
 the orbit cycles after $\mu = 276\,594\,382$ steps, with $\lambda = 363\,832 = 2^3 \cdot 7 \cdot 73 \cdot 89$, and the
 cycle is not zero (phases 1 and 3 agree). On that cycle both columns have period 28 in time, and $\lambda$ is exactly
 the longest cycle the kill search found for trace 0001… at periods 7 and 14. Different starting points fall into
-the same cycles of $F$. So LR survives even a wheel that no right side could produce. (The certificate's verifier now
+the same cycles of $F$. So LR survives even a wheel that no right side could produce. (Jen's theorem, §8.13, covers
+this case too, since it never uses a right side.) (The certificate's verifier now
 factors $\lambda$ itself, after a composite was passed to it as a prime; both certificates were re-verified.)
 
 **Where this leaves the proof.** The route now has three parts. The first is measured, the second is done, and
 the third is open:
 1. **The right side is a wheel with slips.** This is §8.5, measured on every right half up to 12 cells. It is not yet
    proved.
-2. **The wheel alone cannot make a finite left half.** This is Proposition 6, computed and verified.
+2. **The wheel alone cannot make a finite left half.** This is Proposition 6, computed and verified. (It is also
+   a special case of Jen's theorem, §8.13.)
 3. **The slips cannot conspire to.** This is open. A heuristic says why it should hold. A right half of $W$ cells
    carries $W$ bits, while a zero run of $n$ cells needs about $n/2$ coincidences at the linear cells (Lemma 4). So the
    longest run should grow like the width plus a logarithm of the depth, and never become infinite. The measured runs
@@ -1280,9 +1295,129 @@ predictions:
   of §8.2.
 - **Wider layers are tighter still.** From $m = 7$ on, the worst input does almost no better than real right halves:
   7 against 6 from depth 33. The layer, not the right half's particular content, is what limits the runs.
+  *(Correction, §8.14: true at depth 33 only. Deeper, the worst input reaches 20 to 25 against real right halves'
+  6 to 10.)*
 - **The visible language is tiny.** A layer of width 10 can produce only 317 of the 65,536 visible prefixes of 16
   bits.
 
 **What it means for the prize.** If, for some fixed $m$, $R(m, s)$ stays bounded as $s$ grows, then no input to that
 layer can make the left half eventually zero. That is $\mathrm{LR}_m$, and by the ladder it gives B, the period-two
 case. Three values of $s$ cannot show that. The next step pushes $s$ as deep as the program allows.
+
+### 8.13 Jen's theorem settles every periodic column 1: a correction (2026-10-05)
+
+Reading Kopra's paper in full (PRIOR-ART.md) showed that §8.6's search for a periodic column 1 that kills the left
+half was answered in 1990. Jen proved that two adjacent columns of a configuration whose left half is eventually zero
+are never both eventually periodic. Kopra restates it as his Corollary 3.7, for every left-permutive rule in which a
+lone 1 spreads to the left, and Rule 30 is one. The work had cited Jen in §5 but had not seen that the theorem decides
+the periodic case of conjecture LR. Here it is in this document's notation. The proof needs only Rule 30's update
+read in two directions.
+
+**Proposition 7 (Jen).** Let column 0 be eventually periodic and not eventually zero, and let column 1 be any
+eventually periodic sequence, made by a right half or not. Then the forced left half is never eventually zero.
+
+*Proof.* Shift time so that both columns are exactly periodic from $t = 0$, with a common period $P$. (The row at the
+new $t = 0$ still has an eventually zero left half, because the zeros far to the left stay zero for any finite time.)
+Rule 30 read from right to left is
+
+```math
+x_t(k-1) = x_{t+1}(k) \oplus \big(x_t(k) \vee x_t(k+1)\big) .
+```
+
+1. **Periodicity moves left.** If columns $k$ and $k+1$ are $P$-periodic, the formula makes column $k - 1$
+   $P$-periodic. Starting from columns 0 and 1, every column of the left half is $P$-periodic.
+2. **Zeros stay zero for a while.** Suppose $x_0(k) = 0$ for every $k < -N$. A cell is 0 when all three cells above
+   it are, so $x_t(k) = 0$ whenever $k < -N - t$. A column far enough left, $k < -N - P$, is therefore zero for
+   $t = 0, \dots, P - 1$, and by step 1 it is zero for ever. So two adjacent columns are both zero for ever.
+3. **Zeros move right.** If columns $k - 1$ and $k$ are both zero for ever, the formula reads
+   $0 = 0 \oplus (0 \vee x_t(k+1))$, so column $k + 1$ is zero for ever too. Repeating, column 0 is zero, which it is
+   not. $\square$
+
+In plain words: periodicity flows to the left, the light cone makes the far left zero for one whole period, and a
+zero pair of columns forces zeros back to the right, all the way to column 0.
+
+**What this corrects.**
+- **§8.6's periodic columns.** K1 to K4 and job M2 could never have found a kill. Their 550,201 decided words, and
+  the 6,851 that M2 left undecided, are all settled by Proposition 7. The search was a check of the instrument
+  against a theorem, and it passed: 0 kills. It was not new evidence. Lead M2's remainder in CLOUD-LOCAL.md is
+  closed, with nothing to run.
+- **Proposition 6.** "Not zero" is a special case. What the certificate adds is the left half's exact tail and period
+  in depth, $\mu = 32\,896\,298$ and $\lambda = 15\,009\,104\,432$. The same holds for O3, the wheel out of step.
+- **Part 2 of the route** (§8.6, "the wheel alone cannot make a finite left half") is Jen's theorem, not a new
+  result.
+- **The cost.** Local spent 12 minutes of a ten-core machine, and Cloud two runs, on a question with a known answer.
+  The lesson goes into the workflow: before a computation is designed, check whether the theorems already listed in
+  PRIOR-ART.md decide it.
+
+**What it adds: the wheel must slip for ever.** Take a finite configuration with column 0 eventually 0101… Its left
+half is eventually zero, so by Proposition 7 column 1 is not eventually periodic. The wheel $U$ is periodic, and so
+are the 4- and 14-locks (§8.5), so column 1 can neither run as the clean wheel for ever nor settle into a lock.
+**The wheel slips infinitely often, in every finite configuration with this trace.** The slips of §8.7 to §8.11 are not
+an accident of the right halves sampled. They are forced. For the prize, everything now rests on part 3: whether
+slips, which must occur for ever, can steer the left half to zero and keep it there.
+
+**Why the proof stops at one column.** Step 1 needs two periodic columns to start from. With column 1 aperiodic it
+has nothing to start from, and a far column that is zero for one period need not stay zero. Kopra marks the limit
+himself (his page 7): his class of rules contains Rule 90, which from a single 1 has an eventually periodic single
+column, so no argument that uses only the class's properties can settle one column. The prize's single column needs
+something Rule 30 has and Rule 90 lacks, such as the nonlinearity behind Lemma 4.
+
+### 8.14 At depth the runs keep growing: a zero run costs about one bit (2026-10-05)
+
+`rule30_ladder_deep.py` pushed the ladder of §8.12 down to depth 105, with its predictions written first. The program
+now keeps only the start groups a layer can actually produce, so the depth limit is 126 rather than the memory.
+
+| $R(m, s)$ | $s = 41$ | 49 | 57 | 65 | 73 | 81 | 89 | 97 | 105 |
+|---|---|---|---|---|---|---|---|---|---|
+| $m = 0$ (column 1 free) | 37 | | | | | | | | |
+| $m = 1$ | 15 | 21 | 25 | | | | | | |
+| $m = 4$ | 14 | 15 | 19 | | | | | | |
+| $m = 6$ | 11 | 11 | 14 | 17 | 20 | 20 | 21 | 25 | $\ge 22$ |
+| $m = 8$ | 8 | 11 | 11 | 13 | 16 | 17 | 16 | 25 | 21 |
+| $m = 10$ | 8 | 11 | 10 | 13 | 16 | 14 | 16 | 19 | 21 |
+| $m = 12$ | 8 | 11 | 10 | 13 | 16 | 14 | 16 | 16 | 20 |
+| real right halves, up to 12 cells | 6 | 9 | 10 | 10 | 8 | 8 | 9 | 9 | 10 |
+
+| Check or prediction | Result |
+|---|---|
+| DL0: the new program reproduces §8.12's 30 values | **passed** |
+| DL5: $R$ never rises with $m$, and is never below the real runs | **passed** |
+| DL1: $R(8, s) \le 16$ for $s$ up to 105 | **refuted**: 25 at $s = 97$ |
+| DL2: $R(10, s) \le 12$ | **refuted**: 21 at $s = 105$ |
+| DL3: with column 1 free the runs keep growing, $R(0, 41) \ge 35$ | **held**: 37 |
+| DL4: at $m = 12$ no growth with depth | **refuted**: 8 to 13 early, 14 to 20 late |
+
+($R(6, 105)$ reached the depth limit, so it is a lower bound. Two of DL4's nine values were seen in a cost test
+before the run; without them DL4 is still refuted.)
+
+**What it shows.**
+- **No rung is bounded, as far as computed.** At every width up to 12, the worst input holds the left half at zero for
+  longer the deeper it starts, roughly in proportion to the depth. A wider layer slows the growth but does not stop it.
+  So $\mathrm{LR}_m$ cannot be proved by a bound on the runs, at least for $m \le 12$. $\mathrm{LR}_m$ itself is not
+  refuted: runs that are finite but unbounded are allowed, and none reached an infinite run.
+- **The adversary beats real right halves at depth.** At depth 33 the gap was one cell (§8.12). By depth 105 it is
+  10 to 15 cells.
+
+**A reading, made after the run.** The number of start groups $G(m, s)$ (the visible prefixes of column 1 that the
+layer can produce before depth $s$) grows exponentially with $s$. At $m = 6$ it grows by a factor of 3.40 every 8
+depths, and at $m = 12$ by about 2.1. Across the whole table, for $m \ge 4$ and $s \ge 33$,
+
+```math
+R(m, s) \approx \log_2 G(m, s) ,
+```
+
+with the ratio between 0.81 and 1.26. With column 1 free the ratio is near 2. Lemma 4 explains the form, if not yet
+the constant. Inside a zero run every visible bit of column 1 is forced, so the run is a deterministic function of
+where it starts, and the adversary's only real choice is the start. A run survives a cell when the left side's forced
+cell is 0, and, if a layer stands between column 0 and the input, when the layer can supply the demanded bit. If each
+of these is a fair coin, a zero cell costs one bit, and the best of $G$ starts lasts about $\log_2 G$ cells. With
+column 1 free the demanded bits cost nothing, so a cell costs half a bit. In short, **the adversary does no better
+than chance**. Real right halves fit the same budget: 12 cells carry 12 bits, and their runs are 6 to 10 at every
+depth computed.
+
+**What it means for the prize.** This is the heuristic of §8.6, part 3, now measured on an adversary. A finite right
+half carries finitely many bits, so its zero runs should be bounded by its width plus a logarithm of the depth, and an
+eventually zero left half would need infinitely many bits. A proof would need the cost per cell to be bounded below
+uniformly, a statement about pseudorandomness of the same kind as the prize itself. The reading is a hypothesis
+until it survives a blind test. `rule30_ladder_budget.py` tests it at 26 points the deep run did not compute, through
+the whole histogram of run lengths, against a simulated coin-flip null and against real right halves up to 16 cells.

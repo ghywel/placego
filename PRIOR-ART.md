@@ -1042,6 +1042,9 @@ for what a template is.
   - Rule 30's right diagonals are periodic with periods $2^\alpha$.
   - The commons issue's stronger phrasing, "at most one eventually periodic column", is UNVERIFIED against the paper.
     PRIZE-PROBLEMS.md §5 keeps the weaker, adjacent-columns form.
+  - (Added 2026-10-05.) Kopra's Corollary 3.7 states the adjacent-columns form for every configuration with an
+    eventually zero left half, not only the single seed. It decides conjecture LR for every eventually periodic
+    column 1 (PRIZE-PROBLEMS.md §8.13), which this entry should have prompted before §8.6's search was designed.
 - **Rowland, E. S., "Local nested structure in rule 30"**, Complex Systems 16(3) (read, pages 1 to 4).
   - At row $2^n$ a region of the initial condition reappears on the right side, and the automaton "begins again"
     locally. This follows from left bijectivity (our left-permutivity) and from the right diagonals' periods
@@ -1114,11 +1117,33 @@ locking (Arnold tongues).
 ### Sources and what to import
 
 - **Kopra, J., "Rapid left expansivity, a commonality between Wolfram's Rule 30 and powers of p/q"**, Theoretical
-  Computer Science (2022) (search summary of its Theorem 3.5; open-access PDF at the University of Turku
-  repository, not yet read in full). For a rapidly left expansive rule of width w, the trace of width w - 1 of an
-  eventually finite configuration is not eventually periodic. For Rule 30 that means two adjacent columns,
-  generalising Jen; Condrey notes it does not decide the single column. **Import:** the definition, to check whether
-  our Lemma 4 is a special case. The paper sits next to our two-sided setting (column 0 periodic, column 1 not).
+  Computer Science 946 (2023) 113668, open access (read in full 2026-10-05; the first version of this entry, from a
+  search summary, said "width w - 1", which was wrong).
+  - **Definitions.** A rule is *left expansive with dimensions (h, d, w)* (Def. 3.1) when the contents of any
+    h + d by w rectangle of a space-time diagram fix the cell just left of its top row. An (m, n) left-permutive rule
+    is left expansive with dimensions (0, 1, m + n), so Rule 30 has (0, 1, 2). It is *left spreading* (Def. 3.3) when
+    the leftmost 1 of a configuration whose left half is eventually zero moves left; for an elementary rule that means
+    001 maps to 1, at speed 1. It is *rapidly left expansive* (Def. 3.4) when the speed is below 1/h, which always
+    holds when h = 0.
+  - **Lemma 3.2.** If a trace of width w is eventually p-periodic, so is the one a column to its left (the preperiod
+    grows by h). **Theorem 3.5.** For a rapidly left expansive rule of width w and any configuration whose left half
+    is eventually zero, no trace of width w is eventually periodic. **Corollary 3.7** is Jen's theorem (Physica D
+    1990, Proposition 3): for a left-permutive, left-spreading elementary rule, no two adjacent columns are both
+    eventually periodic. The proof covers every configuration with an eventually zero left half, not only the single
+    seed.
+  - **Page 7.** The single column (Problem 3.10, Wolfram's Problem 1) "is probably equally difficult for all
+    configurations" with an eventually zero left half. The class cannot settle it, because it contains Rule 90, which
+    from a single 1 has an eventually periodic single column.
+  - **Section 4.** Theorem 4.5 and Corollary 4.6: the right half of a configuration whose left half is eventually zero
+    returns exactly to its start only finitely often. Corollary 4.9: the sequence of right halves has infinitely many
+    limit points. These generalise Pisot's and Dubickas' results on the fractional parts of $\xi (p/q)^n$; Theorem 4.7
+    generalises Morse and Hedlund.
+  - **Imported (PRIZE-PROBLEMS.md §8.13).** Jen's theorem decides conjecture LR for every eventually periodic column
+    1, so §8.6's periodic-column search and job M2 had a known answer. Its proof is our left recursion (Lemma 3.2 with
+    h = 0) plus the light cone. The work had cited Jen in §5 without applying it, which is a failure of method,
+    recorded. A consequence: in a finite configuration with column 0 eventually 0101..., column 1 is never eventually
+    periodic, so the wheel slips for ever. Our Lemma 4, which uses Rule 30's OR and which Rule 90 lacks, is outside
+    Kopra's class. That is consistent with his page-7 remark that the single column needs more than the class gives.
 - **Nersissian, T., "Diagonal Periods and Newton Supports of Rules 30, 86 and 135"**, arXiv:2609.25077 (2026-09-18)
   (abstract). The single-seed Rule 30 cone has unbounded least diagonal periods in both directions, at least
   floor(m/2) + 1 at depth m, with a polynomial lift that connects to Fibonacci sequences. For Rule 86 there is a

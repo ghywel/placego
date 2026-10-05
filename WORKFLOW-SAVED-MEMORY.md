@@ -94,6 +94,12 @@ motion model already published (QVI) and particle image velocimetry as the close
 Record the survey in [PRIOR-ART.md](PRIOR-ART.md) as a dated section: what to import, ranked; what not to import; the
 sources. Credit any borrowed mechanism in the document of the work it feeds.
 
+**Apply the theorems, not only cite them.** Before designing a computation, check whether a theorem already listed in
+PRIOR-ART.md decides it. On 2026-10-05 a search for periodic columns 1 that kill Rule 30's left half (550,201 words,
+and a 12-minute job on Local) turned out to be decided by Jen's theorem of 1990. The work had cited that theorem a day
+earlier without applying it. A full reading of a paper that restated it caught the gap. A search abstract is not a
+reading: read the statements, then ask what each one decides.
+
 ### explore-on-paper-first
 
 **Rule.** Exploring a hypothesis does not always mean building it. Work it through analytically first when the record
