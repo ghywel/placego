@@ -3124,7 +3124,7 @@ parts, so depths to 100, total widths beyond 100, are in reach.
 | Pooled cost per condition, $b$ = 11 to 24 | **1.001 to 1.004 bits** (DB3 held) |
 | The same, depths 50 and beyond against shallower | 1.003 against 1.001 bits (DB4 held) |
 | Longest run of free steps | 5, at every $b$ from 15 to 24 (DB1 refuted: I said 3) |
-| $c_b$ at $\alpha$ = 0.5, 0.8, 0.9, 1.0 ($b \ge 12$) | 4.2, 7.8, 9.0, 10.2: **flat in $b$** (DB2 held; DA1, DA2 refuted) |
+| $c_b$, $\alpha$ = 0.5, 0.8, 0.9, 1.0 ($b \ge 12$) | 4.2, 7.8, 9.0, 10.2: **flat in $b$** (DB2; DA1, DA2 refuted) |
 | The same at $\alpha = 1.0$, depths 40 to 80 only, $b = 24$ | **4.45** (post hoc) |
 | A random word, $c_{20}$ at $\alpha = 0.9$ | 8.52, against 8.96 (DA3 held) |
 

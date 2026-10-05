@@ -157,3 +157,59 @@ Each rung is a result on its own, whether or not the next one succeeds.
 The GPU is not needed for rungs 1 to 3 at these sizes. A CPU does them exactly in minutes. It enters if the search
 must go much further, or for G1 and rung 4. The project's real advantage is not the hardware. It is the method: a
 prediction before every run, a known answer beside every new one, and a counterfactual that must fail.
+
+---
+
+## 7. What the Rule 30 work carries to the other prizes (2026-10-05)
+
+*The owner's question, after a day on Rule 30 Problem 1, period 2: "We don't have a proof but we have lots of clues,
+and a huge amount of evidence. Does anything we have learnt here translate over to any one of the other open cash
+prize math problems, worthy of study by future fresh eyes?"*
+
+**Where the Rule 30 work ended up** (RULE30-PRIZE.md, the evening update; PERIOD-TWO.md). Every restatement of
+period 2 converged on one missing statement: keeping the wall's conditions costs real information. The work took
+it to a precise and measured form. The number of configurations on $w$ cells whose centre follows 0101 for $T$ steps
+falls by one bit per condition. The bits of the seed's left part pay exactly, which is proved. The right part pays
+1.002 bits per condition on average, with a debt that does not grow with width, measured to total widths beyond
+100. A count of finite objects that falls below one is zero, so a proof of that bound would close period 2. What
+blocks it is the same thing that blocks every relative surveyed: the theorems available are about sets of cases,
+and the prize is about every single case.
+
+**Four lessons that are not about Rule 30:**
+1. **The decoupling skeleton.** A free side in bijection with the seed, a constrained side of low entropy, and
+   agreement for ever. Mahler's 3/2 problem, Collatz, Erdős's ternary digits of $2^n$ and the busy beaver cryptid
+   Antihydra all have it. In each, the solved cases are those where the constrained side is eventually periodic,
+   and the open case is positive entropy.
+2. **Sets against single cases.** Probabilistic and information-theoretic theorems (Tao's "almost all" for
+   Collatz; zero-density estimates for the zeta function; data-rate theorems in control) prove statements about
+   sets. Single-case theorems come from finiteness or from exact counting of finite objects.
+3. **Turn a maximum into a count.** A record ("the longest run is about $w$") cannot be proved by sampling. A count
+   ("at most $2^{w - \alpha T}$ seeds survive $T$ conditions") can be, and when the objects are finite a count
+   below one is a proof. Split the count by where the free bits come from: the part that pays exactly
+   (permutivity, a bijection) is provable at once, and what remains is a precise statement about the rest.
+4. **The method.** Predictions committed before runs, a control with a known answer beside every new number, and a
+   counterfactual that must fail. Over a day it caught a dozen wrong guesses of mine, each recorded.
+
+**The prizes, by how much carries over:**
+
+- **Collatz (¥120M): strong.** The same skeleton. Terras's theorem (the first $k$ parity steps of $n$ are a
+  bijection with $n \bmod 2^k$) is the left part's exact payment. Past the free bits the question is open, as on
+  Rule 30's right part. The counting form: if fewer than $2^{w - \alpha T + c}$ numbers of $w$ bits stay above
+  their start for $T$ steps, every stopping time is finite and the conjecture follows. Tested in §7.1.
+- **Rule 30 Problems 2 and 3 ($10k each): strong for tools, nothing yet for a proof.** The same system and every
+  instrument: the wall form, the forced left half, the channel bound, the exact counts. Problem 2 asks for the
+  centre column's density, and the counts already measure the pattern statistics of forced left halves.
+- **Erdős problems (tens to thousands of dollars): moderate, problem by problem.** Many concern finite structures,
+  where an exact count can reach zero. The method suits the kind that fell to AI-assisted search since 2025.
+- **Riemann ($1M): weak.** Cramér's model is our coin model, and zero-density theorems are set theorems. The gap is
+  the same, and nothing here crosses it.
+- **Navier–Stokes ($1M): a lesson, not a route.** A construction with a freely designed force is the analogue of
+  refuting LR, not B (RULE30-PRIZE.md §8.47).
+- **P vs NP ($1M): a lesson, not a route.** Gates against truth (RULE30-PRIZE.md §8.50): finite checks against
+  for-ever statements, with certificates as the bridge.
+- **Beal ($1M): weak.** Its objects are finite, so a count could in principle reach zero, but its partial results
+  come from modular methods.
+
+### 7.1 The counting form, carried to Collatz
+
+See `tests/probes/prizes/collatz_count.py`: the Rule 30 instrument, with predictions written before its run.
