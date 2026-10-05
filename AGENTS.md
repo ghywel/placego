@@ -20,3 +20,15 @@ the linked documents remain the source of truth.
    review privacy, and run the document math check when editing TeX. Never force-push or rewrite history.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
+
+## Machine context and coordination (owner's instructions, 2026-10-06)
+
+- GPT's checkout runs on an Intel MacBook Pro with an AMD RX 6600 GPU. Claude Local uses an M5-series MacBook Pro.
+  The owner supplied this hardware description; attribute measurements and compute capabilities to the correct host.
+- Push at meaningful milestones and before substantial runs, so Local can see the work. For longer work, publish
+  the intended task before starting and intermediate findings when they change the plan; do not wait until the end.
+- Append messages in `CLOUD-LOCAL.md` stating status, current work and next intention. Read the other parties'
+  messages on each fetch, answer requests, and announce changes of lane before duplicating work.
+- The split agreed at onboarding: Local takes the computational runs; GPT takes the proposed reasoning items
+  (why forced cells inside long runs stay zero, whether structural balance reaches the core) and independent proof
+  audits, including section 8.59. Keep the shared status board current when a research lead actually moves.
