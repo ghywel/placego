@@ -50,6 +50,20 @@ ADDENDUM, written 2026-10-05 after the first run and before the second.
 OUTCOME of the second run, 2026-10-05 (SAMPLES 300): SP0, SP1 as before. CF2 PASSED (40,326 violations without
   the window condition). SP2, SP3 as before. SP4 HELD: at L = 99 every one of 100,000 theta fails the two-sided
   condition, the latest at n = 14. The first counterfactual stays in the output as a note, not as a check.
+
+SECOND ADDENDUM, written 2026-10-05 (22:35) before the third run: any arcs, for a typical rotation number.
+  Theorem E'' (proved in section 8.57). Let c_s = f(theta + s alpha), where f is the indicator of a finite union
+  of arcs with r end points in all. If alpha has infinitely many partial quotients larger than 2^(r+1), the forced
+  left half is not eventually zero, for every theta. The proof: the times d_1 < d_2 < ... at which c breaks period
+  q_n satisfy d_1 <= q_n + C + 1 and d_(k+1) <= 2 d_k + q_n + C + 3 (Theorem A in visible bits), and two of the
+  first r + 1 breaks belong to the same end point, hence are at least q_(n+1) apart.
+  SP5 (the finite form, must hold): alpha with partial quotients 1, 20, 1, 20, ...; one arc [0, gamma) with gamma
+      random in (0.1, 0.9) (r = 2), theta random; L = 99. For each of 20,000 samples, at the scale q = 483 or at
+      q = 10604 (both followed by the partial quotient 20), one of the conditions on d_1, d_2, d_3 fails.
+  CF3 (counterfactual, must fail): the same test at the scale q = 461 (followed by the partial quotient 1) does not
+      fail for every sample.
+
+OUTCOME of the third run: (below)
 """
 import pathlib, random, subprocess, sys, tempfile
 import numpy as np
@@ -209,11 +223,50 @@ def part_every(L=99, n_theta=100000):
             f"{survivors} of {n_theta} never fail up to n = {len(qs)}; the latest first failure is at n = {last}")
 
 
+def part_arcs(L=99, n_s=20000):
+    """SP5 and CF3: one arc with two unrelated end points, a rotation number with partial quotients 1, 20, ..."""
+    a = 0.0
+    for _ in range(40):                                      # alpha = [0; 1, 20, 1, 20, ...]
+        a = 1.0 / (1.0 + 1.0 / (20.0 + a))
+    alpha = a
+    rng = np.random.default_rng(58)
+    theta, gamma = rng.random(n_s), 0.1 + 0.8 * rng.random(n_s)
+    C = (L - 3) // 2
+
+    def fails(q):
+        horizon = 8 * (q + C + 2) + 4
+        x = theta.copy()
+        shift = (q * alpha) % 1.0
+        d = np.full((3, n_s), -1, dtype=np.int64)
+        count = np.zeros(n_s, dtype=np.int64)
+        for s in range(horizon):
+            y = x % 1.0
+            brk = (y < gamma) != (((y + shift) % 1.0) < gamma)
+            for k in range(3):
+                put = brk & (count == k)
+                d[k][put] = s
+            count += brk
+            x += alpha
+        big = horizon + 1
+        d1, d2, d3 = (np.where(d[k] < 0, big, d[k]) for k in range(3))
+        ok = (d1 <= q + C + 1) & (d2 <= 2 * d1 + q + C + 3) & (d3 <= 2 * d2 + q + C + 3)
+        return ~ok
+
+    f483, f10604, f461 = fails(483), fails(10604), fails(461)
+    both = f483 | f10604
+    report("SP5 one arc, partial quotients 1, 20: the conditions fail at q = 483 or 10604 for every sample",
+           bool(both.all()), f"{int(both.sum())} of {n_s}; at 483 alone {int(f483.sum())}, at 10604 alone "
+           f"{int(f10604.sum())}")
+    report("CF3 at q = 461, before a partial quotient 1, they do not fail for every sample", not bool(f461.all()),
+           f"fail for {int(f461.sum())} of {n_s}")
+
+
 def main():
     controls()
     part_rows()
     part_metric()
     part_every()
+    part_arcs()
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
