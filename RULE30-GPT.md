@@ -2184,3 +2184,130 @@ finite relaxation may still have full freedom; this does not prove freedom of a
 whole right half, finite initial support, or the forced spatial row. A first small
 width-four certificate at p5 is the next bounded question, rather than requesting
 another long entropy run from Local.
+
+
+## G18. Slow-wall switches: a finite prefix, a protected band, and the missing tail state (2026-10-06)
+
+**Asked by Local in C032.** What can the G11-G13 mechanisms certify at the two
+switches of wall0^a1^b? This answers the finite question without presuming the
+owner's decision about workflow reframing. Fresh wall/merge startup checks both
+ALL CHECKS PASS, with the capped-witness scope in G1. SP0-SP3/CF were published
+before running in c89589f; SP4 in fe3bca5. No Local record job was repeated.
+
+### G18.1. First fix the phase
+
+Write tau for column0, sigma for column1, and pi for column-1. The inverse wall
+identity is pi(t)=tau(t+1) XOR(tau(t) OR sigma(t)). For a period p=a+b starting
+at its first white cell:
+
+- at white times0..a-2, pi(t)=sigma(t);
+- at the last white time a-1, pi(t)=1-sigma(t);
+- at black times a..p-2, pi(t)=0;
+- at the last black time p-1, pi(t)=1.
+
+The last white bit is complemented, and the last black time already has a black
+left neighbour. A black run of length b beginning at time a guarantees the row
+**at time a** is checkerboard on depths1..b-1. At a+r it only gives the direct
+future-window guarantee through depth b-r-1. Thus “a checkerboard of depth b-1
+just before the black-to-white switch” is not the guarantee of Lemma1. The switch
+has to be timed from the future window, rather than treating a whole prefix as
+unchanged until the black run ends. CF checks tau111100 at time3: pi(3)=1,
+where the unchanged checkerboard would have0.
+
+### G18.2. Exact finite-prefix map from a latch position
+
+**Theorem.** For wall0^a1^b, a,b>=1, the first p-1 left cells on row0 are
+determined by the a visible sigma bits at the white times. If these bits are
+monotone (the necessary width-one rule), exactly a+1 distinct prefixes occur.
+This is a finite-prefix assertion, not an autonomous state for the infinite row.
+
+**Construction and proof.** Begin at time a with the known checkerboard word
+of length b-1. To step backwards to time t=a-1,..,0, set x0=0 and
+x1=sigma(t) XOR tau(t+1), then successively set
+x(k+1)=y(k) XOR(x(k) OR x(k-1)), where y is the known next-time row.
+A future prefix of length N determines the preceding prefix of length N+1.
+After a steps this constructs exactly b-1+a=p-1 cells. It uses no sigma at a
+black time and no later white block. The probe implements this row construction
+independently of the column-by-column inverse used by earlier controls.
+
+Monotone visible words have the form0^r1^(a-r), r=0..a. Each is allowed as a
+single width-one block (G14/G15; neighbouring blocks are coupled when b=1).
+The constructed prefixes are distinct: from any row0 prefix of length at least a,
+forward Rule30 on the left half with the fixed wall determines pi(t) for t0..a-1.
+The inverse wall identity recovers each visible sigma(t) from pi(t). Thus equal
+prefixes would imply equal r. This proves both the a+1 upper count and injectivity,
+without assuming an actual whole right half realizes every block.
+
+### G18.3. Uniform protected-band theorem, even without a white prefix
+
+**Theorem.** Suppose a black wall run occupies times a..a+b-1, preceded by any a
+wall bits and followed by anything. If a>=1 and b>=3a+1, row0 is checkerboard
+on depths4a..a+b-1: even depths are1 and odd depths0. The right column before,
+during and after the run is arbitrary. In particular this holds for slow walls,
+without needing the monotone latch hypothesis.
+
+**Proof.** At time a the checkerboard is known on depths1..b-1. One backwards
+step reads its driver010 at depths1,2,3. For any preceding inverse-pair state,
+these three drivers force x4=1; since x4=1 masks x3 in the next OR, every later
+known driver determines the next cell independently of x3. Thus the earlier row
+has the checkerboard on depths4..b. This needs b>=4.
+
+Inductively after s>=1 steps backwards the known band is
+[4s,b-1+s], with the same even-black phase. For one more step use the driver010
+at4s+1..4s+3. It forces x(4s+4)=1 independently of all earlier inverse state;
+subsequent alternating drivers propagate the phase through depth b+s.
+The reset fits when b-1+s>=4s+3, equivalently b>=3(s+1)+1.
+For all s<a this follows from b>=3a+1. The final band is [4a,a+b-1].
+The inverse update within the row does not depend on the earlier wall bit once
+its starting pair is given; the reset handles every pair. That proves the
+nonperiodic-prefix version too. The band loses three cells of length per backwards
+step, the same protected-window accounting as G13.5.
+
+**Finite-support consequence.** At a slow wall's first white phase, b>=3a+1
+forces a black cell at depth2*floor((a+b-1)/2). Hence a finite seed realizing
+that trace cannot have a smaller left support radius. This extends G11's a=1
+bound. It remains a finite-support exclusion for a specified window; it does not
+exclude arbitrary radii or every repeated slow wall.
+
+### G18.4. The prefix does not close the entire per-period state
+
+Take b>=2 and two width-one continuations. Both have their first white block all0.
+The first continuation has all later white blocks0. The other has its second white
+block all1, then later ones0. Set the first black bit after that all1 block to1,
+and the remaining black bits to0. Every sigma update has at least one admissible
+further input; G15's independent-block result also supplies these continuations.
+
+The first different visible input is at time p. By the triangular inverse
+recurrence, a change in sigma(p) with tau(p)=0 first changes the time0 left row
+at depth p+1: at depth1 it first appears at time p, and every further inverse
+column moves that first difference one time step earlier through the XOR of the
+next-time cell; earlier OR inputs are identical there. No newer input reaches
+that leading depth. The rows therefore share the finite prefix above but have
+different tails. This proves that a first latch position does not determine the
+complete spatial row. A per-period map may have one integer *input*, while still
+having an infinite or presently uncontrolled *state*. Its state closure is an
+additional theorem, not a consequence of certifying the two finite switches.
+
+### G18.5. What ran, including a finite blind result
+
+`rule30_gpt_slow_switch.py`, one Intel CPU process, both runs under one second.
+SP0 passed2112 whole-prefix comparisons at a1..8,b1..24, two arbitrary continuations
+per latch position; all192 blocks had exactly a+1 distinct prefixes. SP1 passed
+1696 protected-band checks, eight arbitrary white inputs per pair with b>=3a+1
+and b<=40. **Unexpected SP3:** all64 nonperiodic preceding-wall cases passed at
+b=3a+5, so the band did not rely on a hidden periodicity assumption. CF rejected
+the last-black checkerboard. First run exit0, ALL CONTROLS PASS.
+
+**Blind SP2 held finitely:** for balanced a=b4..16, all143 monotone words had a
+black cell at depth>=a within their2a-1-cell known prefix. No all-a theorem is
+claimed; these balanced walls do not satisfy the protected-band condition above.
+After preregistration, SP4 verified88 valid width-one continuation pairs at
+a1..8,b2..12: same first latch position, first row difference exactly p+1.
+Second run exit0; complete-row counterfactual rejected.
+
+**Status.** Condrey/switch mechanism stays PART, and the reframing remains DECISION
+OWED. Local's two questions have an exact finite-prefix answer and a phase correction,
+but no complete autonomous finite state or bounded-debt theorem. The next useful
+reasoning item is whether the latch restriction improves the three-cells-per-step
+loss on balanced slow walls; SP2's finite support observation is a control, not
+a proposed global law. The small odd-period width-four audit remains available.

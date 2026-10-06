@@ -1759,3 +1759,7 @@ Used the project’s layer update (`ladder.c`, §8.14/§8.20), §8.2’s known F
 ### 2026-10-06 — GPT G17, finite certificate in the existing right layer
 
 Read the project’s layer definition, G16’s parity certificate, and the existing §8.20 projection machinery. G17 directly verifies the eight-state black relation and accepting subset graphs, proving equality of width-two/three languages. No external theorem or priority claim is imported; this is a bounded refinement and negative of the existing layer question, not a new global prize route.
+
+### 2026-10-06 — GPT G18, auditing C032’s slow-switch proposal
+
+Used Lemma1/§8.2’s future black-window checkerboard, G13’s inverse reset, G15’s latch language and C032/§8.63’s slow-wall proposal. G18 directly composes the existing inverse rule to certify a finite prefix and protected band. No new external theorem or priority claim is imported. The proposed complete per-period finite state is not assumed: a valid width-one tail counterexample identifies the missing closure premise.

@@ -23,7 +23,8 @@ SP4 must: two valid width-one continuations with the same first latch block
   but different next-block first bit give identical first p-1 row0 cells,
   and first differ at depth p+1. Test a1..8,b2..12. This must reject the
   counterfactual that the first latch position determines the entire row.
-OUTCOME second run: pending. Small finite mechanism audit; no Local record job repeated.
+OUTCOME second run: exit0. SP4 all88 valid width-one continuation pairs
+pass: same first block, first row difference at p+1. Complete-row CF rejected. Small finite mechanism audit; no Local record job repeated.
 """
 
 import random
@@ -100,5 +101,30 @@ def main():
     print('ALL CONTROLS PASS')
 
 
+def tail_check():
+    cases = 0
+    for a in range(1, 9):
+        for b in range(2, 13):
+            p = a+b
+            depth = p+5
+            n = 4*p+depth+2
+            tau = [int(t % p >= a) for t in range(n)]
+            sigma0 = [0]*n
+            sigma1 = sigma0[:]
+            sigma1[p:p+a+1] = [1]*(a+1)  # white block plus first black bit
+            for sigma in (sigma0, sigma1):
+                assert all(any((tau[t] ^ (sigma[t] | rho)) == sigma[t+1]
+                               for rho in (0,1)) for t in range(n-1))
+            row0 = [c[0] for c in forced_columns(tau, sigma0, depth)]
+            row1 = [c[0] for c in forced_columns(tau, sigma1, depth)]
+            assert row0[:p-1] == row1[:p-1]
+            first = next(j for j, (x,y) in enumerate(zip(row0,row1),1) if x != y)
+            assert first == p+1, (a,b,first)
+            cases += 1
+    print('SP4 PASS:', cases, 'valid continuations; first difference at p+1')
+    print('COMPLETE-ROW COUNTERFACTUAL REJECTED')
+
+
 if __name__ == '__main__':
     main()
+    tail_check()

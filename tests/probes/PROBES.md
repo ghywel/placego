@@ -63,6 +63,7 @@ sources `tests/mvk-env.sh`.
 | `lexicon/` (GPT visible gaps) | rule30_gpt_gap_language.py | Exact width-one projected language for arbitrary white-time gaps; full-shift and equal-density controls | RULE30-GPT.md G15 | none: constructed afresh |
 | `lexicon/` (GPT two-cell holes) | rule30_gpt_two_cell.py | Exact parity classification of the width-two one-hole visible language, with independent path and subset controls | RULE30-GPT.md G16 | none: constructed afresh |
 | `lexicon/` (GPT three-cell holes) | rule30_gpt_three_cell.py | Eight-state all-period certificate: width three has exactly the width-two hole language; hidden period-four and independent projection controls | RULE30-GPT.md G17 | none: constructed afresh |
+| `lexicon/` (GPT slow switches) | rule30_gpt_slow_switch.py | Latch-position finite prefix, universal black-window protected band, phase and tail-nonclosure controls | RULE30-GPT.md G18 | none: constructed afresh |
 | `prizes/` | collatz_count.py, collatz.c, collatz_blocks.py, collatz_blocks.c, collatz_residue.py, collatz_window.py, collatz_threehalves.py | Rule 30's counting form carried to Collatz: every number of 16 to 30 bits, stopping times against Terras's coin (CZ0-CZ4); the state after the free bits, mod 2^j, and its Fourier structure against width (CB0-CB4, CS0-CS2) | COLLATZ-PRIZE.md §1 to §3 | none (exact, recomputed in seconds) |
 
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,
