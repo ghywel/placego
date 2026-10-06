@@ -4328,3 +4328,49 @@ A child with a ones survives precisely when a>=J. Thus Delta_t(a)=Pr(J=a+1). Ove
 **Unexpected immediate-loss guard.** Width3 has a single admitted start at m2: n7, with trace7,11,17,26,13 through T4 and odd counts1,2,3,3. Step2 to3 is noncritical (ell_2=ell_3=2), yet I_w(2,2)=1 and Delta_2(2)=1/2, since f_3(2)=1/2 and f_3(3)=1. Its contribution is1/4. At step3 the only class is a3, where Delta_3(3)=0. Here V(4)=3, Q_w(4)=3/4 and C_w(4)=1: the entire additive discrepancy comes from a noncritical step. Dropping noncritical terms from this formula gives0, incorrectly. This does not contradict G71: noncritical steps have no immediate count loss, but their parity allocation changes a later critical-class occupancy.
 
 **Next controls, preregistered NOT RUN.** BW1: widths2..10, every final T from m through24; compute rational backward f and independent direct survivor states, verify each H increment, the final telescoping identity, monotone/nonnegative weights and the weighted absolute bound. Retain zero ensembles and separate noncritical contributions. Predict exact equality and no bound failure, without predicting the signs or a decay rate. BW2: for final T<=10, independently enumerate future coin strings to check the J distribution against backward Delta on every integer a in its support. Counterfactual: only critical steps contribute to the additive sum; must fail on width3,T4 as above. No large stopping scan, entropy measurement or Local job. Independent Local reading requested; next controls are an instrument check, not a proof of the count conjecture.
+
+
+### G74 controls outcome (2026-10-06)
+
+BW1 passes180 width/final-horizon cases and1740 exact rational H increments at widths2..10, T=m..24. All516 empty-parent increments are retained; terminal telescoping, nonnegative weights and the weighted absolute bound pass. BW2 independently enumerates future coin strings for T1..10 and matches440 backward weights to the maximum-demand distribution. The unexpected critical-only counterfactual is refuted: width3,T4 has total discrepancy1/4 and noncritical contribution1/4.
+
+Probe: `tests/probes/prizes/collatz_gpt_backward_weights.py`; preregistration at4a78c0b, GPT's Intel host, Python, under1 s. No control failed. These validate the finite identity and its guard, not a uniform bound or cancellation rate. Independent Local proof reading remains pending. Next reasoning should target the signed weighted sum, rather than discard noncritical steps or substitute a bound on terminal information loss.
+
+## G75. A uniform atom bound for the backward coin weights (2026-10-06)
+
+G74's weights can be bounded without any assumption on the actual Collatz ensemble. Write h=T-t-1>=0 for the number of future coin bits after the selected child. For every integer L>=1,
+
+    max_a Delta_t(a)
+      <=min(1, L/sqrt(h+1)+32*exp(-(L-1)/2)).
+
+Choosing L=ceil(4*ln(h+1))+1 proves a uniform O(log(h+1)/sqrt(h+1)) bound as h tends to infinity. This controls the coin completion weights only. It neither bounds actual class imbalances nor proves bounded count excess.
+
+**Proof.** Use G74's future-bit count Z_h and maximum demand J. Reverse the h fair bits and write S_k=Z_h-Z_(h-k), with S_0=0. Algebra gives
+
+    J=ell_T-Z_h+R,
+    R=max_(0<=k<=h) (S_k-(ell_T-ell_(T-k))).
+
+Here R is a nonnegative integer, since k0 contributes0. Let beta=log(2)/log(3). The ceiling identity ell_j=ceil(beta*j) implies ell_T-ell_(T-k)>beta*k-1. The exact inequality3^5<2^8 gives beta>5/8. For integer r>=1, R>=r therefore requires some k>=1 with
+
+    S_k-k/2>r-1+k/8.
+
+For completeness the needed fair-binomial tail estimate is elementary: E exp(theta*(S_k-k/2))=cosh(theta/2)^k<=exp(k*theta^2/8). The inequality follows from tanh(u)<=u for u>=0 by integration. Markov's inequality, optimized at theta=4*x/k, gives Pr(S_k-k/2>=x)<=exp(-2*x^2/k) for x>=0. Apply this with x=r-1+k/8 and take a union bound; independence of different suffix sums is not required. Since
+
+    2*(r-1+k/8)^2/k >= (r-1)/2+k/32,
+
+we obtain
+
+    Pr(R>=r)<=exp(-(r-1)/2)*sum_(k>=1) exp(-k/32)
+             <32*exp(-(r-1)/2).
+
+The central atom of Binomial(h,1/2) is at most1/sqrt(h+1). One direct proof: for h=2j its maximum is p_(2j)=binom(2j,j)/4^j; p_0=1 and p_(2j+2)/p_(2j)=(2j+1)/(2j+2). Induction uses (2j+1)*(2j+3)<(2j+2)^2 to give p_(2j)<=1/sqrt(2j+1). The odd maximum p_(2j+1)=p_(2j)*(2j+1)/(2j+2) is at most1/sqrt(2j+2).
+
+For any integer v, split the event J=v into R0..L-1 and R>=L. Each small-R event is contained in Z_h=ell_T+r-v, regardless of dependence between R and Z_h. Thus
+
+    Pr(J=v)<=sum_(r=0)^(L-1) Pr(Z_h=ell_T+r-v)+Pr(R>=L),
+
+which gives the displayed bound and, for the stated L, tail term at most32/(h+1)^2. Since Delta_t(a)=Pr(J=a+1), the claim follows. The h0 case is included, though its bound is simply1. This is a standard concentration-plus-truncation argument, not a new probability theorem; prior art is recorded separately.
+
+**Unexpected dependence guard.** Take T3,t1,h1. Then ell_2=ell_3=2, so J=max(2,2-Z_1)=2, while R=Z_1. Its demand distribution has an atom of1, even though Z_1 has maximum atom1/2. Dropping R, or importing the binomial atom bound directly for J, is wrong. The proof above keeps the dependence and its truncation cost. It also shows why no short-horizon square-root estimate with constant1 is asserted.
+
+**Next controls, preregistered NOT RUN.** WA1: reuse G74's complete future-string population T1..10. For each word verify the reverse decomposition, then compare exact R tail probabilities to the conservative geometric bound for every attained positive r, and each J atom to the displayed bound for L1..8. Predict no failure; retain bounds above1 as vacuous rather than evidence of sharpness. WA2: verify the central-binomial induction inequality by exact squared-integer comparisons for h0..256, and independently enumerate the T3,t1 guard. Counterfactual: max atom of J never exceeds max atom of Binomial(h,1/2); must fail at h1 above. No actual-orbit distribution measurement, asymptotic constant estimate or large Local job. Independent proof reading requested.

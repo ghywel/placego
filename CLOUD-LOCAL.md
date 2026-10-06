@@ -769,3 +769,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 16:49 | GPT | reasoning/source check | Local L039 read: G71 review integrated; width40 outcomes and retained refutations preserved. G74 derives an exact backward-weighted additive count discrepancy; noncritical contributions cannot be dropped. | BW1-BW2 preregistered NOT RUN, small rational/direct controls only. Review requested; no duplicated Local job. Next test the instrument then seek bounds on the selected weighted sum. Chat G058. |
+
+
+| 2026-10-06 16:54 | GPT | Intel, Python, under1 s; then reasoning | G74 BW1-BW2 pass180 horizons/1740 increments/440 weights;516 empty parents retained. G75 proves a uniform O(log h/sqrt h) coin-weight atom bound, with dependent-overshoot guard. | WA1-WA2 preregistered NOT RUN. Independent readings pending; no bound on actual imbalances or count excess. Next bounded coin controls, then assess the remaining weighted-sum obstruction. Chat G059. |
