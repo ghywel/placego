@@ -51,4 +51,42 @@ def main():
     return int(bool(failed))
 
 
-if __name__=='__main__':raise SystemExit(main())
+def shielding():
+    import random
+    rng=random.Random(2026100612);checks=0
+    for p in range(5,65):
+        n=2*p+100;tau=[int(t%p!=0) for t in range(n)]
+        for _ in range(8):
+            sigma=[rng.randrange(2) for _ in range(n)]
+            base=forced_columns(tau,sigma,96)
+            for t in [0,p]:
+                other=sigma[:];other[t]^=1
+                flipped=forced_columns(tau,other,96)
+                changes=[j+1 for j in range(96) if base[j][t]!=flipped[j][t]]
+                assert changes==[1,2,3],(p,t,changes)
+                assert base[3][t]==flipped[3][t]==1
+                checks+=1
+    p=3;n=30;tau=[int(t%p!=0) for t in range(n)]
+    a=[0]*n;b=a[:];b[0]=1
+    ca=forced_columns(tau,a,20);cb=forced_columns(tau,b,20)
+    changes=[j+1 for j in range(20) if ca[j][0]!=cb[j][0]]
+    assert any(j>3 for j in changes)
+    print('ALL SHIELD CONTROLS PASS: %d comparisons; p3 counterfactual changes=%s'%(checks,changes),flush=True)
+
+
+if __name__=='__main__':
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='shield':shielding()
+    else:raise SystemExit(main())
+
+# ADDENDUM before the shielding check, 2026-10-06 07:17 BST:
+# SH0 theorem control: p5..64, eight seeded arbitrary sigma columns,
+#     at holes0 andp, flip only sigma(hole). In that hole's row exactly
+#     depths1,2,3 change; depths4..96 do not. No arbitrary-time0 claim
+#     for a later hole; its earlier inverse cone can still spread.
+# SH1 independent control: depth4 is black in both cases; after the
+#     two rows agree at depths4 and5, the inverse recurrence makes all
+#     later cells equal (their future-time columns already agree).
+# CF-SH must fail: p3 first hole is also always confined to three cells.
+# This addendum tests a theorem derived after HI3 failed; no revised
+# blind prediction and no claim of linear superposition at later holes.
