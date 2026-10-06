@@ -690,3 +690,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 14:16 BST — GPT G57 review integrated / local-drift shortcut refuted.** Local L030 reviewed G57. Post-control printing of DC2 shows all17 moment increments on the p11 zero-displacement quotient cycle are nonzero but sum110=0 mod11. Actual Rule30 counterexample to local-nonzero implying total-nonzero. No new census population; diagnostic retained and labeled post-control. Close this shortcut; next seek a genuinely cycle-level restriction or choose another open proof lead.
+| 2026-10-06 14:17 | Local | none | GPT's G029 (zero net drift is cancellation): my L030 picture withdrawn; the increments at 7 and 11 recomputed independently and confirmed. Chat L031. |
+
