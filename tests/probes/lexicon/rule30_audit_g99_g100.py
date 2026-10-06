@@ -134,6 +134,10 @@ CHECKS (GPT's claims at 827e006):
      length N = 84 (C + 4) contains a repetition g_s = g_(s+q) on a <= s <= b with b + q <= N and b > 2a + q + C; the
      first prefix length at which a violation appears is recorded (descriptive); the Fibonacci horizon check
      4 * 55 + 8 = 228 < 336 at C = 0; the kick-gap recursion excludes k_j = 2^(2^j) and admits k_j = 2^j.
+  S32 (G134, G135, added 2026-10-06 at 748ce79): for awkward angles (golden, sqrt 2 - 1, e - 2, pi - 3, a tiny alpha
+     1/(50 + golden) with a huge first denominator, and 1 minus it), 10 random phases each and C = 0, 2: every
+     Sturmian prefix of length 251 (C + 4) contains a violating repetition (the first violation length is recorded);
+     K_A = 8 (A + 1)^4 + 3 gives 131 at A = 1; 4 * 31 T + 3C + 8 = 251 C + 1000 for T = 2C + 8.
 """
 import random
 from fractions import Fraction as F
@@ -1333,4 +1337,42 @@ kd = [2 ** j for j in range(1, 40)]
 ok31 &= all(kd[j + 1] <= 169 * kd[j] + 84 * 1 + 505 for j in range(len(kd) - 1))
 check('S31 G133: every golden prefix of length 84(C+4) violates the repeat bound (C = 0, 2, 5); horizon and kick checks',
       ok31, 'latest first violation over 30 phases: %s (horizons %s)' % (first_viol, {c: 84 * (c + 4) for c in (0, 2, 5)}))
+def first_violation(alpha, th, Cc, Nn):
+    gseq = [1 if ((th + s_ * alpha) % 1.0) >= 1 - alpha else 0 for s_ in range(Nn + 1)]
+    first = None
+    for q in range(1, Nn):
+        run_start = None
+        for s_ in range(0, Nn - q + 1):
+            if gseq[s_] == gseq[s_ + q]:
+                if run_start is None:
+                    run_start = s_
+                if s_ > 2 * run_start + q + Cc:
+                    pos = s_ + q
+                    first = pos if first is None else min(first, pos)
+                    break
+            else:
+                run_start = None
+        if first is not None and q > first:
+            break
+    return first
+
+
+ok32 = True
+tiny = 1 / (50 + (1 + _mm.sqrt(5)) / 2)
+angles = {'golden': (_mm.sqrt(5) - 1) / 2, 'sqrt2-1': _mm.sqrt(2) - 1, 'e-2': _mm.e - 2, 'pi-3': _mm.pi - 3,
+          'tiny': tiny, '1-tiny': 1 - tiny}
+worst32 = {}
+for name, alpha in angles.items():
+    for Cc in (0, 2):
+        Nn = 251 * (Cc + 4)
+        w = 0
+        for trial in range(10):
+            fv = first_violation(alpha, rng29.random(), Cc, Nn)
+            ok32 &= fv is not None and fv <= Nn
+            w = max(w, fv if fv is not None else 10 ** 9)
+        worst32[(name, Cc)] = w
+ok32 &= 8 * 2 ** 4 + 3 == 131
+ok32 &= all(4 * 31 * (2 * Cc + 8) + 3 * Cc + 8 == 251 * Cc + 1000 for Cc in range(20))
+check('S32 G134, G135: every awkward-angle prefix of length 251(C+4) violates the repeat bound; constants', ok32,
+      'latest first violations: %s' % {k: v for k, v in worst32.items()})
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

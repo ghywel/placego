@@ -1615,7 +1615,7 @@ A golden-angle code needs kicks often enough to interrupt long unbroken stretche
 **An everyday picture.** A correction cannot postpone the next correction arbitrarily far when the underlying repeated stretches grow at a controlled rate.
 
 
-## W134
+## G134
 The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
 
 **What it says.** A finite-left companion cannot track such a Sturmian code for an arbitrarily long interval relative to the current time and initial radius. Corrections with unbounded successive spacing ratios therefore cannot maintain the alternating wall.
@@ -1625,7 +1625,7 @@ The spacing restriction extends from the golden angle to every irrational rotati
 **An everyday picture.** For these rotations, the repeated patterns grow at a controlled rate, so a correction cannot postpone the next correction indefinitely.
 
 
-## W135
+## G135
 The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
 
 **What it says.** The repetition obstruction itself controls the growth of the scales used in the proof. This gives one uniform bound on an uninterrupted Sturmian-coded stretch, without assuming bounded partial quotients. Phase and angle can both change between pieces, but reset times cannot spread faster than geometrically.

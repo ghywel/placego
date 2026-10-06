@@ -1,10 +1,10 @@
-# A uniform Sturmian horizon also bounds phase and angle resets
+# a uniform Sturmian horizon bounds phase and angle resets
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G135. A uniform Sturmian
-horizon also bounds phase and angle resets (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT135. a uniform Sturmian
+horizon bounds phase and angle resets (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The correction-spacing limit holds for every irrational Sturmian angle, even whe
 **An everyday picture.** Changing the dial at each reset cannot make the next uninterrupted stretch arbitrarily long relative to the current time.
 
 ## The formal statement and proof
+
+### G135. A uniform Sturmian horizon also bounds phase and angle resets (2026-10-06)
 
 **Status and target.** Symbolic proof, independent review pending; no experiment. G133 is independently verified by Local L087; G134 is awaiting review. This strengthens their angle scope rather than optimizing the golden constant. Counterfactual: a huge continued-fraction coefficient could postpone the next usable scale beyond every horizon proportional to the left radius. The finite repetition bound itself prevents that escape. All inputs are the existing Theorem E continued-fraction facts and the explicit G134 finite-offset argument; no general novelty claim.
 
@@ -78,3 +80,15 @@ A final infinite piece is impossible. Super-geometrically separated resets canno
 This excludes super-geometric flips for every irrational base angle, including unbounded-type angles. The improved golden constant of G133 is still stronger within its narrower class.
 
 **Unexpected independent checks and limits.** A tiny alpha whose first denominator is enormous is the identified unexpected check: the initial q_0=1 scale already forces q_1<=2C+8, so the proof never waits for that enormous denominator. The complementary near-one case uses q_1=1 and its short error, rather than incorrectly using the long q_0 mismatch arc. These endpoint-angle controls justify the uniform claim. Dyadic times still pass the necessary bounds, so no positive density, positive entropy or realizability conclusion follows. The pieces must use the standard Sturmian interval (or its complement, which has identical repetitions); arbitrary arc observables and the measured rational wheel are not asserted to have this form. This is a class exclusion for companions, not a prize solution.
+
+*Second reader's note on G134 and G135 (Local, 2026-10-06; chat L088).* Both correct. G134: minimality gives
+$q_{n-1} \le (A+1)T$ and $q_{n+2} \le (A+1)^4 T$, hence $K_A = 8(A+1)^4 + 3$ (131 at $A = 1$); the finite-offset step
+is sound, since $0 < r \le D < q_{j-1}$ would give $\|r\alpha\| \ge |\delta_{j-2}| \ge |\delta_{j-1}| + |\delta_j|$
+and so $\|(q_j + r)\alpha\| \ge |\delta_{j-1}|$, and that step also supplies the explicit form of Theorem E Step 4
+that G133 used. G135: the visit bounds themselves give $q_{j+1} \le 2q_j + 2C + 6$, and starting from $q_r \le T$
+each step uses a horizon already justified ($3T, 7T, 15T, 31T$), so $4 \cdot 31T + 3C + 8 = 251C + 1000$ fits inside
+$251(C + 4)$ with no bound on partial quotients; the tiny-angle and near-one starts are handled correctly. Checked
+(`rule30_audit_g99_g100.py`, S32): for the golden angle, $\sqrt 2 - 1$, $e - 2$, $\pi - 3$, a tiny angle
+$1/(50 + \varphi)$ and one minus it, at 10 random phases each and $C = 0, 2$, every prefix of length $251(C + 4)$
+contains a violating repetition; the latest first violation over all of them came at prefix length 45, so the
+uniform constant is very conservative.

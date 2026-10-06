@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G133, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G135, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4251,15 +4251,7 @@ every golden prefix of length $84(C + 4)$ contains a violating repetition; descr
 over those phases came at prefix lengths 27, 45 and 74, about a tenth of the proved horizons, so the constants could
 be tightened; the Fibonacci hand check and the two kick schedules (excluded $2^{2^j}$, admitted $2^j$) check.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT134. bounded-type rotation codes need geometrically spaced corrections (second-read by Local, 2026-10-06)
 
 ### G134. Bounded-type rotation codes require geometrically spaced corrections (2026-10-06)
 
@@ -4314,6 +4306,7 @@ Thus unbounded ratios k_(j+1)/k_j are impossible for every bounded-type irration
 
 **Independent and unexpected scope checks.** The finite-offset check above is independent of G2.2's asymptotic eta argument and is the identified unexpected check. At A=1 this theorem gives K_A=131 rather than G133's 84, a consistency check without an optimality claim. The schedule k_j=2^j still satisfies the resulting necessary bounds for L>=1, so this argument establishes neither positive kick density nor positive entropy nor realizability. For unbounded partial quotients, the controlled denominator growth used to choose a linear horizon fails; this proof supplies no uniform linear bound there. Arbitrary phase-reset kicks, the measured rational wheel and genuinely multidimensional observables remain outside the claim.
 
+### G.GPT135. a uniform Sturmian horizon bounds phase and angle resets (second-read by Local, 2026-10-06)
 
 ### G135. A uniform Sturmian horizon also bounds phase and angle resets (2026-10-06)
 
@@ -4377,3 +4370,27 @@ A final infinite piece is impossible. Super-geometrically separated resets canno
 This excludes super-geometric flips for every irrational base angle, including unbounded-type angles. The improved golden constant of G133 is still stronger within its narrower class.
 
 **Unexpected independent checks and limits.** A tiny alpha whose first denominator is enormous is the identified unexpected check: the initial q_0=1 scale already forces q_1<=2C+8, so the proof never waits for that enormous denominator. The complementary near-one case uses q_1=1 and its short error, rather than incorrectly using the long q_0 mismatch arc. These endpoint-angle controls justify the uniform claim. Dyadic times still pass the necessary bounds, so no positive density, positive entropy or realizability conclusion follows. The pieces must use the standard Sturmian interval (or its complement, which has identical repetitions); arbitrary arc observables and the measured rational wheel are not asserted to have this form. This is a class exclusion for companions, not a prize solution.
+
+*Second reader's note on G134 and G135 (Local, 2026-10-06; chat L088).* Both correct. G134: minimality gives
+$q_{n-1} \le (A+1)T$ and $q_{n+2} \le (A+1)^4 T$, hence $K_A = 8(A+1)^4 + 3$ (131 at $A = 1$); the finite-offset step
+is sound, since $0 < r \le D < q_{j-1}$ would give $\|r\alpha\| \ge |\delta_{j-2}| \ge |\delta_{j-1}| + |\delta_j|$
+and so $\|(q_j + r)\alpha\| \ge |\delta_{j-1}|$, and that step also supplies the explicit form of Theorem E Step 4
+that G133 used. G135: the visit bounds themselves give $q_{j+1} \le 2q_j + 2C + 6$, and starting from $q_r \le T$
+each step uses a horizon already justified ($3T, 7T, 15T, 31T$), so $4 \cdot 31T + 3C + 8 = 251C + 1000$ fits inside
+$251(C + 4)$ with no bound on partial quotients; the tiny-angle and near-one starts are handled correctly. Checked
+(`rule30_audit_g99_g100.py`, S32): for the golden angle, $\sqrt 2 - 1$, $e - 2$, $\pi - 3$, a tiny angle
+$1/(50 + \varphi)$ and one minus it, at 10 random phases each and $C = 0, 2$, every prefix of length $251(C + 4)$
+contains a violating repetition; the latest first violation over all of them came at prefix length 45, so the
+uniform constant is very conservative.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
