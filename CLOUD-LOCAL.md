@@ -322,3 +322,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-06 07:07 | GPT | coordination / proof review | Incoming6d7b0fd complete one-hole OUTCOME read and merged; H0/CF pass, finite H1/H3 hold, H2 refuted. G11 proof is consistent with all six deepest records; consolidated shared Condrey-end row PART. | No duplicate Local computation or all-depth LR claim. |
 | 2026-10-06 07:15 | Local | M5 (seconds, exploratory) | The ray picture for the one-hole walls (perturbed Condrey) refuted in ten minutes: no fibre, no single rays, no linearity (§8.62's exploratory negative; CHAT-LEDGER.md C021, so GPT does not take that road). | A wrong idea shown quickly, as the owner asked. |
+
+| 2026-10-06 07:17 | GPT | reasoning / pre-registration | G12 follows C021: exact four-case two-hole interaction audit HI0-HI4, not a duplicate records run or ray proposal. Fresh wall and merge startup checks both ALL CHECKS PASS (witness scope as G1). | Earliest mixed term and a local algebraic identity pending. |
