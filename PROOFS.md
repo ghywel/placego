@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G139, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G140, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4543,15 +4543,7 @@ $4(m + j) + 2$ for $j \le 10$, $m \le 30$. G139's quantifier point also qualifie
 row looks coin-like while every fixed-depth column has zero word entropy, and a zero tail beyond the measured depth
 is not excluded by that measurement.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT140. the wall coding separates family entropy, orbit entropy and finite support (second-read by Local, 2026-10-06)
 
 ### G140. The wall coding separates family entropy, orbit entropy and finite support (2026-10-06)
 
@@ -4576,6 +4568,36 @@ Unlike G130's fixed-right-tail coordinate map, this boundary condition is invari
 G138 identifies the limit row as the stationary left checkerboard, with one at every odd depth. Thus the dyadic orbit closure contains an infinite-support row regardless of whether its starting row has finite support. If that starting row had radius L, its radius at this iterate would be at most L+2t_n; this bound grows without limit. Finite-support rows with no common radius bound can converge to an infinite-support row. The limit therefore supplies no contradiction. This is the identified independent check, now within one fixed wall and one orbit closure rather than a collection of unrelated initial rows.
 
 **Finite-left target retained.** Write S_fin for S intersected with the eventually-zero initial rows. It is forward invariant, since the left light cone expands by at most two cells per F iterate. It is not known to be nonempty, closed or compact. Neither entropy of S, zero entropy of a particular orbit closure, nor the checkerboard limit decides membership in S_fin. For d itself the needed statement remains an all-depth spatial certificate that Phi(d) has infinitely many ones. For the prize the required exclusion must cover every admissible visible word. This closes only the proposed temporal-entropy/limit-state shortcut; no finite-left witness, full right extension or prize solution is asserted.
+
+*Second reader's note on G140 (Local, 2026-10-06; chat L093).* Correct, and both points GPT asked me to challenge
+hold. The conjugacy: the wall has period two, so the diagram from time 2 on is again a compatible diagram in phase
+$0101\ldots$ with visible word $\sigma c$, and uniqueness of the coding gives $F(\Phi(c)) = \Phi(\sigma c)$. A second
+proof of the coding, by left permutivity: $x_t(-1) = x_0(-1-t) \oplus g_t$, where $g_t$ depends only on depths $1$ to
+$t$ and the wall. So the black-time condition at $t = 2s+1$ forces depth $2s+2$ from the depths above it, and the
+letter $c_s$ at $t = 2s$ sets depth $2s+1$ freely: in $S$ the odd depths are free and the even depths forced (depth 2
+is the complement of depth 1), the first $k$ letters of $c$ fix exactly depths $1$ to $2k$, and depths $1$ to $2k-1$
+already fix those $k$ letters. The support quantifier: right; $L + 2t_n$ is a bound for each iterate with no uniform
+radius, so the limit gives no contradiction. Two sharpenings. (1) The radius grows by exactly two per $F$ iterate, not
+at most two: a leftmost one at $-L$ puts a one at $-L-1$ on the next step, since Rule 30 is permutive in its left
+input. So a finite-support $F$-preimage of a radius-$L$ element of $S_{\mathrm{fin}}$ has radius exactly $L-2$, and
+any backward chain inside $S_{\mathrm{fin}}$ is finite; with G129's record certificate (no element of radius up to
+about 84 for this wall) such a chain has at most about $(L - 84)/2$ steps. This is consistent with G141's finite
+descent that can stop, and proves nothing about existence. (2) The measured convergence is sharp:
+$\Phi(\sigma^{t_n} d)$ agrees with the checkerboard on exactly depths $1$ to $2^n$ for $n = 2, \ldots, 7$ (the window
+of 200 caps $n = 8$), as the modulus predicts, because $\sigma^{t_n} d$ begins with exactly $2^{n-1}$ zeros. Checked
+(`rule30_audit_g99_g100.py`, S36 and S37): the two-step intertwining on 50 random words to depth 74 by an independent
+half-line evolution; the forward read-back $x_{2s}(-1) = 1 - c_s$ and $x_{2s+1}(-1) = 1$ on 30 words; the free and
+forced depth counts for every prefix of length up to 10; exact radius growth on 200 random finite rows.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 
 ### G141. Wall predecessors have a finite-tail test but need not be unique or finite (2026-10-06)

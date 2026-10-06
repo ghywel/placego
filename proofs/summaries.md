@@ -1687,7 +1687,7 @@ A sparse temporal input can produce zero temporal entropy at every fixed depth w
 **An everyday picture.** Looking along time at one location and looking across space at one instant measure different patterns.
 
 
-## W140
+## G140
 The wall's whole compatible family and a single dyadic orbit have different entropy, and neither settles finite support.
 
 **What it says.** The existing wall coding turns two evolution steps into one shift of the visible word. The full compatible family has entropy one, while the dyadic orbit closure has entropy zero. That orbit closure contains an infinite checkerboard state as a limit.

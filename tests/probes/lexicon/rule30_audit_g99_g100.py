@@ -153,6 +153,15 @@ CHECKS (GPT's claims at 827e006):
      locality (e_j(t) = 0 whenever e_1 vanishes on [t, t + j - 1]) for j <= 12; dyadic defects at depth j <= 30 lie in
      the stated backward neighbourhoods of the pulse times; temporal factor counts of the dyadic columns obey
      P(m) <= 4(m + j) + 2 for j <= 10, m <= 30.
+  S36 (G140, added 2026-10-06 at 3ab755c): for 50 random visible words, the forced row Phi(c) evolved two steps
+     forward against the wall (an independent half-line evolution) equals Phi(shift c) at every depth not touched by
+     the truncation; every Phi(c) has a black wall neighbour at odd times; and Phi(shift^(t_n) d) for t_n = 3 * 2^(n-1)
+     agrees with the left checkerboard (ones at odd depths) on a prefix that grows with n.
+  S37 (G140's sharpenings, Local's second reading, 2026-10-06): an independent forward evolution of Phi(c) against the
+     wall reads back x_t(-1) = 1 - c_s at t = 2s and 1 at odd t; for every prefix length k <= 10 the 2^k prefixes give
+     2^k distinct patterns on depths 1..2k, already distinct on depths 1..2k-1, and 2^(k-1) on depths 1..2k-2 (odd
+     depths free, even depths forced), with depth 2 = NOT depth 1; and a left row of radius L >= 1 has radius exactly
+     L + 2 after one F iterate.
 """
 import random
 from fractions import Fraction as F
@@ -1515,4 +1524,67 @@ for j in range(1, 11):
         ok35 &= len(facts) <= 4 * (m + j) + 2
 check('S35 G138, G139: low-depth pairs; dyadic initial cells 10001; defect recurrences and locality; '
       'dyadic defect support; temporal factor bound', ok35)
+def phi_row(vis, K):
+    cols = forced_columns(vis, K, 2)
+    return [cols[j][0] for j in range(1, K + 1)]
+
+
+def wall_two_steps(row, K):
+    """Half-line x <= -1 (row[j-1] = x(-j)), wall x_t(0) = t mod 2, two forward steps from t = 0."""
+    cur = {-j: row[j - 1] for j in range(1, K + 1)}
+    for t in range(2):
+        wall = t % 2
+        nxt = {}
+        for j in range(1, K + 1 - (t + 1)):
+            i = -j
+            right = wall if i + 1 == 0 else cur[i + 1]
+            nxt[i] = R30(cur[i - 1], cur[i], right)
+        cur = nxt
+    return [cur[-j] for j in range(1, K - 1)]
+
+
+ok36 = True
+Kp = 80
+for trial in range(50):
+    vis = [rng29.randint(0, 1) for _ in range(Kp)]
+    r0 = phi_row(vis, Kp)
+    after = wall_two_steps(r0, Kp)
+    r_shift = phi_row(vis[1:] + [0], Kp)
+    ok36 &= after[:Kp - 6] == r_shift[:Kp - 6]
+    cols = forced_columns(vis, 2, 2 * Kp)
+    ok36 &= all(cols[1][t] == 1 for t in range(1, 2 * Kp - 4, 2))
+dyw = [1 if s_ >= 1 and (s_ & (s_ - 1)) == 0 else 0 for s_ in range(4000)]
+agree = []
+for n in range(2, 9):
+    tn = 3 * 2 ** (n - 1)
+    row = phi_row(dyw[tn:tn + 300], 200)
+    checker = [1 if j % 2 == 1 else 0 for j in range(1, 201)]
+    k = 0
+    while k < 200 and row[k] == checker[k]:
+        k += 1
+    agree.append(k)
+ok36 &= all(agree[i + 1] >= agree[i] for i in range(len(agree) - 1)) and agree[-1] > agree[0]
+check('S36 G140: the conjugacy F Phi = Phi shift; black wall neighbour at odd times; the checkerboard limit', ok36,
+      'checkerboard agreement prefixes for n = 2..8: %s' % agree)
+ok37 = True
+for trial in range(30):
+    vis = [rng29.randint(0, 1) for _ in range(40)]
+    cur = phi_row(vis, 120)
+    trace = []
+    for t in range(60):
+        trace.append(cur[0])
+        cur = [R30(cur[i + 1], cur[i], (t % 2) if i == 0 else cur[i - 1]) for i in range(len(cur) - 1)]
+    ok37 &= all(trace[2 * s_] == 1 - vis[s_] and trace[2 * s_ + 1] == 1 for s_ in range(30))
+for k in range(1, 11):
+    pats = [tuple(phi_row(list(p_) + [0] * 4, 2 * k)) for p_ in product((0, 1), repeat=k)]
+    ok37 &= len(set(pats)) == 2 ** k and len({q[:2 * k - 1] for q in pats}) == 2 ** k
+    ok37 &= k == 1 or len({q[:2 * k - 2] for q in pats}) == 2 ** (k - 1)
+    ok37 &= all(q[1] == 1 - q[0] for q in pats)
+for trial in range(200):
+    L = rng29.randint(1, 40)
+    row = [rng29.randint(0, 1) for _ in range(L - 1)] + [1] + [0] * 10
+    after = wall_two_steps(row, L + 10)
+    ok37 &= max(j + 1 for j in range(len(after)) if after[j]) == L + 2
+check('S37 G140 sharpened: forward read-back of the coding; odd depths free, even depths forced; radius grows by exactly 2',
+      ok37)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
