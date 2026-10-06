@@ -4492,3 +4492,37 @@ This is a reparameterization, not a new cancellation theorem. At T=8*m, G78 give
 **Unexpected denominator guard.** epsilon is not a conditional probability bias, since its denominator is the ideal coin class mass. At width2,m1,T4,t3,a2 the start3 has trajectory3,5,8,4 and is still coefficient-admitted, with even terminal4. Thus I=-1. There is one admitted length3 word with a2 (110), giving q=2/8=1/4, while Delta_3(2)=1. Hence epsilon=-4 on a class with positive weight. A pointwise [-1,1] assumption already fails. Normalizing instead by the actual class size would change the probability weights, and cannot silently be substituted into the identity.
 
 **Next diagnostic, preregistered NOT RUN.** SB1: reuse the180 G74/G76 width/horizon cases. Compute mu and epsilon rationally; verify its signed/absolute means recover D/Q and A/Q, retain every U=0 case separately (where D=A=0), and report the largest abs(epsilon) on positive-weight support, signed and absolute means, and S. No size or rate prediction for those measured extrema. SB2: independently evolve the width2,T4 guard and count its single admitted endpoint word, requiring epsilon=-4 and Delta1. Counterfactual: epsilon always lies in[-1,1]; must fail on that guard. These instrument controls define a target for a later reasoning block, not an asymptotic fit or a larger actual-start scan. No Local job or classwise-domination assumption.
+
+
+### G79 weighted-bias diagnostic outcome (2026-10-06)
+
+SB1 passes168 positive-proxy cases and12 zero-proxy cases in the existing180-case scope. The probability weights sum to1, signed and absolute identities agree exactly, and every zero-proxy case has D=A=0. The largest supported abs(epsilon) is131072/6167 (about21.25), at width5,T24,t20,a15, with mu=6167/1953628 (about0.00316). The largest absolute weighted mean is17/9 at width3,T7, whose final actual ensemble is empty; this case is retained rather than interpreted as a positive-count estimate. SB2 independently evolves3 to4 through three steps, enumerates the single admitted a2 word110, and verifies epsilon=-4,Delta1. The unexpected pointwise probability-bias counterfactual is refuted.
+
+Probe: `tests/probes/prizes/collatz_gpt_weighted_bias.py`; preregistration at343dbb1, GPT's Intel host, Python, under1 s. No control failed. These ratios do not measure an asymptotic 1/m rate or demonstrate a uniform actual bias bound. They show why peak pointwise bias and the weighted mean must be separated. No larger actual population or Local job was run. Next reasoning must supply an estimate for this mean, rather than normalize it as an actual conditional probability.
+
+## G80. Interior mixed pairs cancel the first backward difference (2026-10-06)
+
+G76's opposite-sign contributions sometimes cancel for a structural reason. Fix final T and two consecutive steps from t to t+2<=T. Consider one actual input still coefficient-admitted at time t, with a odd steps, and assume
+
+    a>=ell_(t+1).
+
+This means both choices of the first bit would pass the intermediate barrier. Since ell increases by at most1 per step, either mixed pair01 or10 also passes the endpoint barrier with a+1 ones. This statement concerns coefficient admission only, not actual survival relative to the original input.
+
+Write F(j)=f_(t+2)(j), with the same killed-state extension as G74. Two backward fair steps give
+
+    f_t(a)=(F(a)+2*F(a+1)+F(a+2))/4.
+
+Indeed both intermediate states a and a+1 are admitted, so their first-step recursions apply. For either actual mixed pair, the sum of that input's two signed G74 contributions is therefore exactly
+
+    F(a+1)-f_t(a)
+      =(2*F(a+1)-F(a)-F(a+2))/4.
+
+The first differences have cancelled, leaving a second difference. The result is independent of which mixed order the actual orbit takes. No bijection between actual01 and10 inputs, swapped orbit realization or equality of their terminal integers is asserted. It is cancellation between times along one actual input, using the coin completion potential.
+
+**Exact block accounting.** Partition the paid tail into disjoint two-step blocks starting at m,m+2,..., leaving one final step if needed. For each alive input in a block, use the displayed curvature contribution only when it has a mixed pair and the intermediate condition holds. Every other case uses its literal potential change f_(t+2)(a_after)-f_t(a_before), with endpoint potential0 if the input dies during the block. Sum over inputs alive at the block's start. Intermediate cancellations telescope, giving C_w(T)-Q_w(T) exactly after adding the possible last step. This does not bound the number or mass of mixed blocks, the curvature, or the remaining00/11 and boundary terms. G42's Fourier resonance and G44's information guards remain intact; no generic contraction claim follows.
+
+**Unexpected barrier guard.** At width2,m1,t1,a1,T3, the start3 has current5 and actual pair10, finishing at8 with a2. It passes both actual steps. But ell_2=2>a1, so alternative01 is killed immediately. Here f_1(1)=1/2 and f_3(2)=1, giving literal contribution1/2. The unjustified curvature formula instead gives(2*1-0-1)/4=1/4. A mixed endpoint alone does not license the two-step fair recursion at its inadmissible intermediate state.
+
+**Recorded interior example.** Width3,T5,start7 has at t2 the actual pair10, a2 and ell_3=2. G76 records its two contributions+1/4,-1/4. Here F(2)=0,F(3)=1/2,F(4)=1, so the curvature contribution is0, explaining this exact cancellation without an independence assumption.
+
+**Next controls, preregistered NOT RUN.** MP1: reuse widths2..10,T=m..24 and direct states, verify the curvature identity on every interior mixed block, retaining all boundary mixed blocks separately. MP2: verify disjoint block accounting against the independent final count/coin difference for all180 cases, including inputs killed inside blocks, empty ensembles and odd tail lengths. Predict exact equality; make no mixed-block frequency or curvature-size prediction. Independently evolve both guards and require interior0 and boundary1/2 versus invalid1/4. Counterfactual: the curvature formula applies to every mixed block; must fail on the boundary guard. No larger population or Local job. Independent Local reading requested. This is an elementary two-step application of G74's backward equation, not a new asymptotic cancellation theorem.

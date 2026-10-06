@@ -2227,3 +2227,32 @@ The ideal full-class proxy thus grows along a fixed linear horizon. A classwise 
 PC1 passes164 exact rational backward-proxy/forward-tail-moment comparisons at m1..8,T=m..24, including8 empty-tail cases. Endpoint lower bounds pass. PC2 passes32 exact strict inequalities U_coin(m,8*m)/Q_w(8*m)>m for m1..32, using integer counts and moments only. Independently enumerating the m2,T5 words gives tails011,101,110,111, normalized proxy3/2 and proxy3/4, refuting equality with the ideal fair ensemble's zero signed discrepancy.
 
 Probe: `tests/probes/prizes/collatz_gpt_coin_proxy.py`; predictions at14fde39, GPT's Intel host, Python, under1 s. No control failed. The asymptotic obstruction is proved in G78; these are finite instrument checks. No actual-start population, classwise-domination claim or Local computational job was run. Independent proof reading remains pending.
+
+### GPT G80 — interior mixed-pair cancellation (awaiting independent reading)
+
+### G80. Interior mixed pairs cancel the first backward difference (2026-10-06)
+
+G76's opposite-sign contributions sometimes cancel for a structural reason. Fix final T and two consecutive steps from t to t+2<=T. Consider one actual input still coefficient-admitted at time t, with a odd steps, and assume
+
+    a>=ell_(t+1).
+
+This means both choices of the first bit would pass the intermediate barrier. Since ell increases by at most1 per step, either mixed pair01 or10 also passes the endpoint barrier with a+1 ones. This statement concerns coefficient admission only, not actual survival relative to the original input.
+
+Write F(j)=f_(t+2)(j), with the same killed-state extension as G74. Two backward fair steps give
+
+    f_t(a)=(F(a)+2*F(a+1)+F(a+2))/4.
+
+Indeed both intermediate states a and a+1 are admitted, so their first-step recursions apply. For either actual mixed pair, the sum of that input's two signed G74 contributions is therefore exactly
+
+    F(a+1)-f_t(a)
+      =(2*F(a+1)-F(a)-F(a+2))/4.
+
+The first differences have cancelled, leaving a second difference. The result is independent of which mixed order the actual orbit takes. No bijection between actual01 and10 inputs, swapped orbit realization or equality of their terminal integers is asserted. It is cancellation between times along one actual input, using the coin completion potential.
+
+**Exact block accounting.** Partition the paid tail into disjoint two-step blocks starting at m,m+2,..., leaving one final step if needed. For each alive input in a block, use the displayed curvature contribution only when it has a mixed pair and the intermediate condition holds. Every other case uses its literal potential change f_(t+2)(a_after)-f_t(a_before), with endpoint potential0 if the input dies during the block. Sum over inputs alive at the block's start. Intermediate cancellations telescope, giving C_w(T)-Q_w(T) exactly after adding the possible last step. This does not bound the number or mass of mixed blocks, the curvature, or the remaining00/11 and boundary terms. G42's Fourier resonance and G44's information guards remain intact; no generic contraction claim follows.
+
+**Unexpected barrier guard.** At width2,m1,t1,a1,T3, the start3 has current5 and actual pair10, finishing at8 with a2. It passes both actual steps. But ell_2=2>a1, so alternative01 is killed immediately. Here f_1(1)=1/2 and f_3(2)=1, giving literal contribution1/2. The unjustified curvature formula instead gives(2*1-0-1)/4=1/4. A mixed endpoint alone does not license the two-step fair recursion at its inadmissible intermediate state.
+
+**Recorded interior example.** Width3,T5,start7 has at t2 the actual pair10, a2 and ell_3=2. G76 records its two contributions+1/4,-1/4. Here F(2)=0,F(3)=1/2,F(4)=1, so the curvature contribution is0, explaining this exact cancellation without an independence assumption.
+
+**Next controls, preregistered NOT RUN.** MP1: reuse widths2..10,T=m..24 and direct states, verify the curvature identity on every interior mixed block, retaining all boundary mixed blocks separately. MP2: verify disjoint block accounting against the independent final count/coin difference for all180 cases, including inputs killed inside blocks, empty ensembles and odd tail lengths. Predict exact equality; make no mixed-block frequency or curvature-size prediction. Independently evolve both guards and require interior0 and boundary1/2 versus invalid1/4. Counterfactual: the curvature formula applies to every mixed block; must fail on the boundary guard. No larger population or Local job. Independent Local reading requested. This is an elementary two-step application of G74's backward equation, not a new asymptotic cancellation theorem.

@@ -178,3 +178,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_signed_budget.py (G76): SA1 passes180 cases;148 opposite-sign cases,18 zero-net and57 empty-final cases retained. SA2 HELD, positive-count cancellation factor2155/88 at width10,T20. Predictions at961ed39; finite diagnostic, no uniform law.
 
 - prizes/collatz_gpt_coin_proxy.py (G78): PC1 passes164 exact proxy/moment identities,8 empty tails; PC2 passes32 strict linear-horizon bounds and the four-word guard. Predictions at14fde39; coin DP only, no actual allocation measurement.
+
+- prizes/collatz_gpt_weighted_bias.py (G79): SB1 passes168 weighted/12 zero-proxy cases; largest supported bias131072/6167 has weight6167/1953628. SB2 reproduces epsilon-4 guard. Predictions at343dbb1; no asymptotic mean-bias estimate.

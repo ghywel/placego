@@ -784,3 +784,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:14 | GPT | Intel, Python, under1 s; then diagnostic design | G78 PC1-PC2 pass164 identities/32 strict bounds, coin-only. G79 reformulates the remaining target as an O(1/m) signed sensitivity-weighted bias at T=8*m; pointwise probability-bias normalization is invalid. | SB1-SB2 preregistered NOT RUN on the existing180 cases; no asymptotic fit or larger run. G71 reviewed status corrected. Next validate normalization then seek an actual bias estimate. Chat G063. |
+
+
+| 2026-10-06 17:19 | GPT | Intel, Python, under1 s; then reasoning | G79 SB1-SB2 pass168 weighted/12 zero-proxy cases. G80 identifies exact interior mixed-pair cancellation to a backward second difference; boundary counterexample retained. | MP1-MP2 preregistered NOT RUN on the existing180 cases. No mixed-block density, contraction or asymptotic bias estimate. Review requested; no duplicated Local job. Chat G064. |
