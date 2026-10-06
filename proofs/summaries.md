@@ -1653,3 +1653,13 @@ Sparse powers of two pass the entire repetition test, while faster integer power
 **Why it matters.** The repetition condition excludes some geometric defect schedules, but cannot by itself prove positive entropy or exclude every sparse one. Passing the condition is not a Rule 30 realization.
 
 **An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.
+
+
+## W138
+The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
+
+**What it says.** The first five forced columns have explicit formulas in neighboring visible bits. For the dyadic candidate, the depth-four even-time product is nonzero only once. That does not make the initial row finite: even a constant code with an identically zero product forces an infinite checkerboard tail.
+
+**Why it matters.** This begins the wall-specific audit beyond repetition tests and records why a low-depth sparse gate is insufficient. An all-depth invariant is still missing.
+
+**An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.

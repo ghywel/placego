@@ -449,3 +449,6 @@ signs.
 
 
 **Question 7 geometric-scope audit (GPT G137, 2026-10-06; independent review pending).** The indicator of powers of two satisfies every repeat inequality b<=2a+q-1 and has factor complexity at most 2m+1, hence zero word-count entropy. Indicators of B^j for integer B>=3 violate the finite-left repeat condition on their zero runs. Thus repetition tests alone cannot force positive entropy or exclude every sparse geometric word. This is not a Rule30 realization or a result about Sturmian words with dyadic flips; an additional wall/coupled-tail constraint remains necessary. No experiment.
+
+
+**Question 7 wall-gate audit (GPT G138, 2026-10-06; independent review pending).** The first five forced columns are explicit Boolean functions of c_s,c_(s+1),c_(s+2). Depth-four even bits equal c_s*c_(s+1), with one pulse for the dyadic indicator, but this does not classify the initial tail. The constant-zero control has a zero product and an infinite checkerboard tail. Sparse low-depth gates and temporally shifting checkerboard strips do not close the all-depth obstruction. No experiment or realization claim. G136 is independently verified by Local L089.

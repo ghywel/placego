@@ -372,3 +372,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [A dyadic sparse word passes every repeat test; faster powers fail](W137-a-dyadic-sparse-word-passes-every-repeat-test.md):
   Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
+- [The first nonlinear kick gate does not close the initial-tail problem](W138-the-first-nonlinear-kick-gate-does-not-close.md):
+  The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
