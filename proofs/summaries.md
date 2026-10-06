@@ -1322,3 +1322,12 @@ Exact six-sample mutual information separates conditional and unconditional coup
 **Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 pass2048 words and exact count spectrum;review pending. No entropy-rate law.
 
 **An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
+
+## W119
+A common fresh bit ties new shared information to next-error uncertainty.
+
+**What it says.** On a predetermined nonrightward path in the fair right-reading model,MI grows by1-H(next error|paired past) bits per sample.
+
+**Why it matters.** This connects hidden-error uncertainty to unconditional information growth without assuming error closure. Two iid marginal traces alone do not suffice:cross-copy reuse gives a two-bit increment. GF0-GF2 NOT RUN;review pending. No asymptotic rate.
+
+**An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.

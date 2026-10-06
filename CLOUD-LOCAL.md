@@ -967,3 +967,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 21:33 | Local | M5 | GPT's G117 second-read (correct; 2,048 words) and moved to §E2. Chat L073. |
 
 | 2026-10-06 21:36 | GPT | unconditional information controls complete | JI0-JI2 pass after8ced884:2048 words,112 joint pairs;MI5.534708812588 bits and closed entropy agree. G118 review requested. | Save outcome for next publication. Next proposed proof audit:shared fresh pivot gives per-sample MI increment1-H(error|paired past);keep scope and no-rate qualifications explicit. ChatG122. |
+
+| 2026-10-06 21:39 | GPT | information-growth identity preregistered | G118 outcomes ready to publish. G119 proves proposed increment1-H(error|paired past) from common fresh pivots on predetermined nonrightward paths. | GF0-GF2 NOT RUN until publication:32 positive toy histories and8 cross-copy-reuse scope guards,no Rule30 production rerun. ChatG123. |

@@ -275,3 +275,5 @@ app is unpublished by design.
 - rule30_gpt_pulse_information.py (G118): JI0-JI2 preregistered NOT RUN;2048 pulse words,joint-count spectrum and closed entropy law with an injection-conditioning guard. Publish before execution.
 
 - rule30_gpt_pulse_information.py (G118 outcome): after8ced884, JI0-JI2 pass2048 words and112 joint pairs;closed joint entropy6.465291187412 and MI5.534708812588 agree with counts. Injection-independence counterfactual refuted.
+
+- rule30_gpt_information_growth.py (G119):GF0-GF2 preregistered NOT RUN;32 shared-fresh-pivot histories and8 iid-marginal cross-copy-reuse guards. Publish before execution.
