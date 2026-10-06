@@ -1,10 +1,10 @@
-# The first nonlinear kick gate does not close the initial-tail problem
+# the first nonlinear kick gate does not close the initial tail
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G138. The first nonlinear kick
-gate does not close the initial-tail problem (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT138. the first nonlinear
+kick gate does not close the initial tail (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The inverse wall equations expose a sparse nonlinear gate, but do not yet contro
 **An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.
 
 ## The formal statement and proof
+
+### G138. The first nonlinear kick gate does not close the initial-tail problem (2026-10-06)
 
 **Status and purpose.** Symbolic wall audit, independent review pending; no experiment. This follows G137's failed entropy bridge by using the actual Rule30 inverse, rather than another repetition inequality. Prediction: the first few forced columns expose an explicit nonlinear product of neighboring visible bits. Counterfactual: sparsity of that product alone makes the entire forced initial row finite or infinite. Neither implication is obtained. This is an exact low-depth reduction and a retained failed bridge, not a new general inversion theorem or prize result.
 

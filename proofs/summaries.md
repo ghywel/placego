@@ -1667,7 +1667,7 @@ Sparse powers of two pass the entire repetition test, while faster integer power
 **An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.
 
 
-## W138
+## G138
 The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
 
 **What it says.** The first five forced columns have explicit formulas in neighboring visible bits. For the dyadic candidate, the depth-four even-time product is nonzero only once. That does not make the initial row finite: even a constant code with an identically zero product forces an infinite checkerboard tail.
@@ -1677,7 +1677,7 @@ The inverse wall equations expose a sparse nonlinear gate, but do not yet contro
 **An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.
 
 
-## W139
+## G139
 A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial tail unresolved.
 
 **What it says.** The wall inverse reads only a finite forward time window at each fixed depth. Dyadic pulses therefore create defects only in widening neighborhoods before those pulses. Each fixed column, and each fixed finite left window, has zero temporal word-count entropy.

@@ -147,6 +147,12 @@ CHECKS (GPT's claims at 827e006):
   S34 (G137, added 2026-10-06 at 9b7a799): the dyadic word (ones at powers of two) on indices 0..3000 has no
      repetition with b >= 2a + q (the bound b <= 2a + q - 1 holds for every period and start); its factor counts obey
      P(m) <= 2m + 1 for m <= 40; the base-3 and base-4 words violate the bound with C = 5 within 3000 indices.
+  S35 (G138, G139, added 2026-10-06 at 2105418): forced columns v_0..v_6 computed directly from the wall and random
+     visible words (100 words, 60 visible bits) match G138's five even/odd pairs; for the dyadic word v_1(0)..v_5(0) =
+     1, 0, 0, 0, 1; the defect field against the checkerboard background obeys G139's two recurrences and its
+     locality (e_j(t) = 0 whenever e_1 vanishes on [t, t + j - 1]) for j <= 12; dyadic defects at depth j <= 30 lie in
+     the stated backward neighbourhoods of the pulse times; temporal factor counts of the dyadic columns obey
+     P(m) <= 4(m + j) + 2 for j <= 10, m <= 30.
 """
 import random
 from fractions import Fraction as F
@@ -1454,4 +1460,59 @@ for B in (3, 4):
     fv = first_violation_seq(dB, 5)
     ok34 &= fv is not None and fv <= 3000
 check('S34 G137: dyadic word passes b <= 2a + q - 1 everywhere; factor counts <= 2m + 1; bases 3, 4 fail', ok34)
+def forced_columns(vis, J, T):
+    """v_j(t) for j = 0..J, t = 0..T-1 (lists), from column 0 = t mod 2 and visible bits vis[s] at time 2s."""
+    Tt = T + J + 2
+    v0 = [t % 2 for t in range(Tt)]
+    c1 = [(vis[t // 2] if t // 2 < len(vis) else 0) if t % 2 == 0 else 0 for t in range(Tt)]
+    cols = [v0]
+    right, far = v0, c1
+    for j in range(1, J + 1):
+        col = [right[t + 1] ^ (right[t] | far[t]) for t in range(len(right) - 1)]
+        cols.append(col)
+        far, right = right, col
+    return cols
+
+
+ok35 = True
+for trial in range(100):
+    vis = [rng29.randint(0, 1) for _ in range(60)]
+    cols = forced_columns(vis, 6, 80)
+    for s_ in range(0, 25):
+        A, B, D = vis[s_], vis[s_ + 1], vis[s_ + 2]
+        pairs = [(1 - A, 1), (A, B), (1 - B, 1 - B), (A & B, D), (D ^ (A | (1 - B)), 1 - B)]
+        for j in range(1, 6):
+            ok35 &= (cols[j][2 * s_], cols[j][2 * s_ + 1]) == pairs[j - 1]
+dyv = [1 if s_ >= 1 and (s_ & (s_ - 1)) == 0 else 0 for s_ in range(400)]
+dcols = forced_columns(dyv, 30, 300)
+ok35 &= [dcols[j][0] for j in range(1, 6)] == [1, 0, 0, 0, 1]
+# defect field
+for trial in range(50):
+    vis = [rng29.randint(0, 1) if rng29.random() < 0.2 else 0 for _ in range(60)]
+    cols = forced_columns(vis, 13, 70)
+    e = [None] + [[cols[j][t] ^ (j % 2) for t in range(len(cols[j]))] for j in range(1, 14)]
+    for j in range(2, 13):
+        for t in range(0, 60):
+            if j % 2 == 1:
+                pred = e[j][t + 1] ^ (e[j][t] & (1 - e[j - 1][t]))
+            else:
+                pred = e[j][t + 1] ^ ((1 - e[j][t]) & e[j - 1][t])
+            ok35 &= e[j + 1][t] == pred
+    for j in range(1, 13):
+        for t in range(0, 55):
+            if not any(e[1][u] for u in range(t, t + j)):
+                ok35 &= e[j][t] == 0
+ed = [None] + [[dcols[j][t] ^ (j % 2) for t in range(len(dcols[j]))] for j in range(1, 31)]
+pulses = [2 * (2 ** k) for k in range(0, 9)]
+for j in range(1, 31):
+    for t in range(0, 250):
+        if ed[j][t]:
+            ok35 &= any(P_ - j + 1 <= t <= P_ for P_ in pulses)
+for j in range(1, 11):
+    col = dcols[j]
+    for m in range(1, 31):
+        facts = set(tuple(col[u:u + m]) for u in range(0, 240 - m))
+        ok35 &= len(facts) <= 4 * (m + j) + 2
+check('S35 G138, G139: low-depth pairs; dyadic initial cells 10001; defect recurrences and locality; '
+      'dyadic defect support; temporal factor bound', ok35)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
