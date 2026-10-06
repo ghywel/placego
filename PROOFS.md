@@ -1234,3 +1234,23 @@ one needs a deeper-layer certificate per wall.
   $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
+
+### G.GPT55. Prime-ring quotient cycle lifting
+
+**Where:** RULE30-GPT.md G55; copied proof. **Status:** awaiting independent reader; RQ controls NOT RUN.
+
+### G55 lemma and proof: prime-ring cycle lifting
+
+Let R be rotation of a binary ring of prime size p, and let F commute with R. Nonconstant states have free rotation orbits of size p: a stabilizing nonidentity rotation generates the prime cyclic group and would make every cell equal. Quotient these states by rotation. Consider a q-cycle of the induced quotient map that stays nonconstant. Choose a representative x. After q time steps,
+
+    F^q(x)=R^b(x), with a unique b modulo p.
+
+This rotation displacement is independent of the representative, since F commutes with R. Along this quotient cycle, the corresponding pq states form an invariant set. On return to the chosen quotient vertex, the rotation label advances by b. If b=0, there are p temporal cycles of length q, one for each label. If b!=0, addition by b visits all p labels and there is one temporal cycle of length pq. No shorter period is possible: a temporal return must first return to the quotient vertex, hence be a multiple of q, and its rotation label must return too. In the nonzero case rotation preserves the single temporal cycle; in the zero case it permutes the p separate cycles.
+
+For Rule30 the constant states satisfy F(0)=0,F(1)=0. Therefore its only constant temporal cycle is the white fixed point. For this rule on a prime ring, all temporal cycle lengths are pairwise distinct if and only if every nonconstant quotient cycle has nonzero displacement and the quotient cycle lengths are pairwise distinct. This is an exact reduction, not a proof that either condition holds for unexamined primes.
+
+Existing controls from Local's census: p7 has seven4-cycles and a63-cycle; the lift description predicts a zero-displacement quotient4-cycle and a nonzero-displacement quotient9-cycle. At p11 the eleven17-cycles and154-cycle similarly predict quotient periods17 and14, with zero and nonzero displacement respectively. These are reconstruction targets from known data, not blind new predictions. In particular a claim for all prime sizes is already false.
+
+Unexpected structural check: take F=R itself on a three-cell binary ring. Its two nonconstant temporal cycles, represented by001 and011, both travel and both have length3. Thus every cycle travelling does not imply pairwise distinct lengths. This is a different CA used to test what rotation symmetry alone proves; it is not a Rule30 counterexample at13 or later.
+
+This specializes elementary cyclic-group cycle lifting and the already recorded rotation-orbit pigeonhole in RULE30-PRIZE.md section8.67. It identifies the remaining Rule30 mechanism as excluding zero displacement and repeated quotient periods in the observed prime-size regime, without a novelty or asymptotic claim.
