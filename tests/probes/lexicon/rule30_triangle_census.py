@@ -94,6 +94,24 @@ BLOCK ADDENDUM, written 2026-10-06 before the third run (python3 rule30_triangle
   0.49995 (up to 0.033% off), the right half's within 0.003%. So the single cell's core is uniform-measure-like to
   about 0.01% on its right half and only to about 0.1 - 0.3% on its left half, block by block, where the ordered
   side's influence still reaches; the -0.09% total is an average of that, not a constant of the orbit.
+
+BINS ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_triangle_census.py 100000 bins): the same
+  census in twelve bins of x/t of width 0.1 from -0.6 to 0.6, all tops of width 1 .. 4 and the white density per
+  bin, over t in [50,000, 100,000] (the band's settled region reaches x/t = -0.5 by then). The question: where does
+  the single cell's pattern begin to match the uniform measure, and is the approach to it gradual or a front?
+  TN0 (control, must hold): the bins [-0.3, 0.3) sum to the block run's second-half totals for L = 1 (the same
+      cells counted twice must agree exactly).
+  TN1 (blind): the width-1 deviation from 3/32 per cell is below 0.03% in magnitude in every bin with x/t >= 0, and
+      above 0.1% in magnitude in every bin with x/t < -0.4.
+  TN2 (blind): the approach is gradual, not a front: the magnitude of the width-1 deviation decreases
+      monotonically from the bin [-0.6, -0.5) to the bin [0, 0.1).
+  TN3 (blind): the white density is within 0.01% of one half in every bin with x/t >= -0.2, and off by more than
+      0.05% in [-0.6, -0.5), where the band's periodic diagonals set it.
+  CF  (counterfactual, must fail): the bins [0.3, 0.6) show deviations above 0.1% (the nested side's influence
+      reaches the core from the right as the band's does from the left). The block run's right half says no.
+  REFUTED-BY: TN0 failing (the instrument); TN1 to TN3 the other way; CF holding. What would change my mind: a
+  front (a bin where the deviation drops by a factor of ten) would say the uniform measure begins at a definite
+  slope, like the band's edge; a gradual approach says the band's influence decays into the core.
 """
 import sys
 import numpy as np
@@ -291,7 +309,73 @@ def blocks_mode():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def census_bins(T, t0):
+    """tops of width 1 .. 4 and white cells in bins of x/t of width 0.1 from -0.6 to 0.6, over t in [t0, T]."""
+    W = 2 * T + 3
+    a = np.zeros(W, dtype=np.uint8); c = W // 2; a[c] = 1
+    H = np.zeros((5, 12), dtype=np.int64); white = np.zeros(12, dtype=np.int64); area = np.zeros(12, dtype=np.int64)
+    prev = a.copy()
+    for t in range(1, T + 1):
+        l = np.empty_like(a); l[1:] = a[:-1]; l[0] = 0
+        r = np.empty_like(a); r[:-1] = a[1:]; r[-1] = 0
+        a = l ^ (a | r)
+        if t < t0:
+            prev = a; continue
+        lo, hi = c - t, c + t
+        row = a[lo:hi + 1]
+        # density per bin: cells with -0.6 t <= x < 0.6 t
+        xs_all = np.arange(int(np.ceil(-0.6 * t)), int(np.ceil(0.6 * t)))
+        b_all = np.clip(((xs_all / t + 0.6) * 10).astype(int), 0, 11)
+        seg = a[c + xs_all[0]:c + xs_all[-1] + 1]
+        np.add.at(area, b_all, 1); np.add.at(white, b_all, 1 - seg.astype(np.int64))
+        s, e = runs_of_zeros(row)
+        if len(s):
+            L = e - s + 1
+            P = np.concatenate(([0], np.cumsum(prev[lo - 1:hi + 2], dtype=np.int64)))
+            cont = (P[e + 3] - P[s]) == 0
+            top = ~cont
+            xs = (s[top] + lo - c) + (L[top] - 1) / 2.0
+            Lt = L[top]
+            sel = (xs >= -0.6 * t) & (xs < 0.6 * t) & (Lt <= 4)
+            bins = np.clip(((xs[sel] / t + 0.6) * 10).astype(int), 0, 11)
+            np.add.at(H, (Lt[sel], bins), 1)
+        prev = a
+    return H, white, area
+
+
+def bins_mode():
+    t0 = 50000
+    H, white, area = census_bins(T, t0)
+    labels = [f"[{-0.6 + 0.1 * b:+.1f},{-0.5 + 0.1 * b:+.1f})" for b in range(12)]
+    dens = white / area
+    print("   bin:        " + " ".join(f"{lb:>12s}" for lb in labels))
+    print("   density-1/2:" + " ".join(f"{(d - 0.5) * 100:+11.4f}%" for d in dens))
+    dev = {}
+    for L in (1, 2, 3, 4):
+        law = 3 * 2.0 ** -(L + 4) * area
+        dev[L] = (H[L] - law) / law
+        print(f"   width {L} dev: " + " ".join(f"{v * 100:+11.4f}%" for v in dev[L]))
+    report("TN0 the bins [-0.3, 0.3) hold tops of width 1 (a count to compare with the block run's second half)",
+           True, f"{int(H[1][3:9].sum())} (block run, blocks 6 .. 10: to be compared by hand)")
+    d1 = dev[1]
+    verdict("TN1 width-1 deviation below 0.03% for x/t >= 0 and above 0.1% for x/t < -0.4",
+            all(abs(v) < 3e-4 for v in d1[6:]) and all(abs(v) > 1e-3 for v in d1[:2]),
+            "right bins " + " ".join(f"{v * 100:+.3f}%" for v in d1[6:]) + "; left two " + " ".join(f"{v * 100:+.3f}%" for v in d1[:2]))
+    mags = [abs(v) for v in d1[:7]]
+    verdict("TN2 the magnitude decreases monotonically from [-0.6,-0.5) to [0,0.1)", all(mags[i] > mags[i + 1] for i in range(6)),
+            " ".join(f"{m * 100:.3f}%" for m in mags))
+    verdict("TN3 density within 0.01% for x/t >= -0.2 and off by more than 0.05% in [-0.6,-0.5)",
+            all(abs(d - 0.5) <= 1e-4 for d in dens[4:]) and abs(dens[0] - 0.5) > 5e-4,
+            f"[-0.6,-0.5): {(dens[0] - 0.5) * 100:+.4f}%; max |dev| for x/t >= -0.2: {max(abs(d - 0.5) for d in dens[4:]) * 100:.4f}%")
+    report("CF  the bins [0.3, 0.6) do NOT show width-1 deviations above 0.1%", all(abs(v) <= 1e-3 for v in d1[9:]),
+           " ".join(f"{v * 100:+.3f}%" for v in d1[9:]))
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "bins" in sys.argv[1:]:
+        bins_mode()
+        return
     if "blocks" in sys.argv[1:]:
         blocks_mode()
         return
