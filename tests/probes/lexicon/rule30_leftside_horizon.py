@@ -40,9 +40,11 @@ OUTCOME of the first run, 2026-10-06 11:19 (WMAX = 20 for the walls 1, 0, 01 and
   W = 11 on (a jump from 9 to 19 at W = 11), not c <= 12; "width plus a constant" holds in shape, the constant is
   about 17 against the two-sided law's 6 to 10 (section 8.42), as it must be with fewer conditions. LH2 HELD, and
   far more strongly than written: next to 0^a 1^a the left half's own two conditions stop EVERY seed of width <= 16
-  within 29 steps for a = 2, 22 for a = 4, 22 for a = 8 and 21 for a = 16 (over all phases); for a = 8 and 16 that
-  is less than one period, so no finite left seed of width <= 16 survives even one black stretch and the white
-  stretch beside it, let alone two. LH3 REFUTED (the record seeds at W = 16 and 20 differ: cbb5, d1541).
+  within 29 steps for a = 2, 22 for a = 4, 22 for a = 8 and 21 for a = 16 (over all phases). Two consecutive complete
+  black stretches need at least 3a steps from any phase, so for a = 8 (24) and a = 16 (48) no seed of width <= 16
+  survives two consecutive black stretches; for a = 16 not even one period (21 < 32); for a = 2 and 4 seeds outlive
+  several periods. (A first reading said "less than one period for a = 8 and 16", wrong for a = 8: 22 > 16; corrected
+  at 11:35.) LH3 REFUTED (the record seeds at W = 16 and 20 differ: cbb5, d1541).
 """
 import pathlib, subprocess, sys, tempfile
 

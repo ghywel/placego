@@ -4432,16 +4432,20 @@ the lifetime of every two-sided configuration whose left half has width $W$. Pre
   held), against the two-sided law's "total width plus 6 to 10" (§8.42). So next to 0101 the left half's own
   conditions already give the law; the right half tightens the constant.
 - *The slow walls $0^a 1^a$, $a = 2, 4, 8, 16$.* Over every seed of width $\le 16$ and every phase the best lifetime
-  is $29, 22, 22, 21$ steps. For $a = 8$ and $16$ that is less than one period: **no finite left seed of width at most
-  16 survives one black stretch and the white stretch beside it**, whatever phase it starts at (LH2 held with
-  room: it predicted "not two stretches"). The checkerboard that condition (i) demands through a black stretch of
-  length $b$ is a triangle of depth $b - 1$ that a seed of width 16 cannot hold, and the latch's monotone word
-  through the white stretch is what the seed has left to fail on.
+  is $29, 22, 22, 21$ steps. Two consecutive complete black stretches span at least $3a$ steps from any phase
+  ($24$ for $a = 8$, $48$ for $a = 16$), so **no finite left seed of width at most 16 survives two consecutive black
+  stretches next to $0^8 1^8$ or $0^{16} 1^{16}$**, whatever phase it starts at; for $a = 16$ it does not even
+  survive one period (21 < 32). For $a = 2$ and $4$ seeds of width 16 outlive several periods (29 and 22 steps
+  against periods 4 and 8), so the width of the seed against the stretch is what matters, as §8.63 said. (LH2 held.)
+  *Correction, 11:35 the same day:* this paragraph first said "for $a = 8$ and 16 that is less than one period",
+  which is false for $a = 8$ (22 steps against a period of 16: the best seed passes one black and one white stretch
+  and dies six steps into the second black stretch); my misreading, caught on rereading, corrected everywhere.
 - *Record seeds do not nest* (LH3 refuted).
 
 What it says for the reframing (§8.63): the slow walls are, from the left, a *harder* family than 0101 at the
 widths measured, and the theorem to try there (column $-1$ cannot read $0^{b-1}1$ through two consecutive black
-stretches for $b$ large against the seed) has its finite evidence now at one stretch, not two. Bears on: PERIOD-TWO.md
+stretches for $b$ large against the seed) has its finite evidence at $b = 8, 16$ against seeds of width 16, and is
+false for $b = 2, 4$ against the same seeds, which is the "large against the seed" clause doing its work. Bears on: PERIOD-TWO.md
 §7 question 2 (B next to the slow walls). Single-party. Reproduction: `python3 tests/probes/lexicon/rule30_leftside_horizon.py 20 100`
 (seconds).
 
