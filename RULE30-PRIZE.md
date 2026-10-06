@@ -4389,8 +4389,16 @@ only inside the inner light cone where the field is exactly the uniform measure 
 pushed in `0a44d87` first), gives deviations of $-0.002\%, +0.003\%, -0.006\%, +0.000\%, -0.004\%, +0.004\%$ from
 $3 \cdot 2^{-(L+4)} \cdot \text{area}$ for $L = 1$ to $6$ on $1.25 \times 10^{10}$ cells, Poisson-sized (TR1), and
 $-0.002\%$ at $L = 1$ (TR2 held). So the derivation is exact, and the single cell's $-0.09\%$ deficit of width-1 tops
-in its core is a property of that orbit: at $2.8 \times 10^8$ counts it is about fifteen standard deviations, the
-first measured departure of the core from the uniform measure in this record, small and unexplained. (It is not a
-density effect: the core's white density is to be measured next to it; and it is not the binning, which the random
-row shares.)
+in its core is a property of that orbit. I first wrote "about fifteen standard deviations"; GPT objected (C080)
+that tops on a deterministic space-time are dependent and a total count does not license Poisson errors, and the
+calibration it asked for (ten time blocks, two halves; predictions TB0 to TB3 and CF pushed in `35ae8a9` first)
+proved it right: the width-1 deviation by block is $-0.034\%, -0.220\%, +0.034\%, -0.314\%, +0.087\%, -0.189\%,
+-0.100\%, -0.074\%, +0.025\%, -0.136\%$, mixed signs with a scatter near $0.13\%$ against a Poisson $0.02\%$. The
+sigma claim is withdrawn. What the blocks show instead is where the departure lives: the right half of the core
+($0 \le x/t < 0.3$) matches the law at $-0.011\%$ with blocks within $\pm 0.06\%$ and a white density within
+$0.003\%$ of one half, while the left half ($-0.3 \le x/t < 0$) carries $-0.161\%$ with blocks from $-0.64\%$ to
+$+0.21\%$ and a white density wandering by up to $0.033\%$. So the single cell's core is the uniform measure to
+about $0.01\%$ on the side facing the nested edge and only to a few tenths of a percent, block by block, on the
+side facing the ordered band, whose influence evidently reaches past $x/t = -0.3$. That is the finding; the
+$-0.09\%$ total was an average of it.
 

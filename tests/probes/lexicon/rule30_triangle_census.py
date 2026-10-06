@@ -85,6 +85,15 @@ BLOCK ADDENDUM, written 2026-10-06 before the third run (python3 rule30_triangle
       and -0.15%). The first run's L = 2 total was +0.012%, so this must fail.
   REFUTED-BY: TB0 failing (the instrument); TB1 failing (then "fifteen sigma" is withdrawn); TB2, TB3 the other way;
   CF holding.
+  OUTCOME of the third run, 2026-10-06 (blocks; 4 minutes). TB0, CF PASSED. TB1 REFUTED, and GPT's caution stands: the
+  width-1 deviation by time block is -0.034%, -0.220%, +0.034%, -0.314%, +0.087%, -0.189%, -0.100%, -0.074%, +0.025%,
+  -0.136% (total -0.086%): mixed signs, a scatter of about 0.13% against a Poisson 0.02% per block. "Fifteen sigma"
+  is WITHDRAWN. TB3 REFUTED: the deficit lives in the LEFT half of the core (x/t in [-0.3, 0): -0.161%, blocks from
+  -0.641% to +0.213%) while the right half is at -0.011% with blocks within +-0.06%. TB2 REFUTED by the left half as
+  well: its white density by block is 0.50000, 0.50019, 0.49984, 0.50016, 0.50002, 0.50000, 0.50017, 0.49998, 0.49967,
+  0.49995 (up to 0.033% off), the right half's within 0.003%. So the single cell's core is uniform-measure-like to
+  about 0.01% on its right half and only to about 0.1 - 0.3% on its left half, block by block, where the ordered
+  side's influence still reaches; the -0.09% total is an average of that, not a constant of the orbit.
 """
 import sys
 import numpy as np
