@@ -51,10 +51,15 @@ def ma2():
 
 
 def ma3():
-    tails = (Q(9, 19), Q(6, 19), Q(4, 19))
+    # Initial published tuple had the last two phases swapped; retained in G50 outcome.
+    tails = (Q(9, 19), Q(4, 19), Q(6, 19))
     for j, b in enumerate((1, 0, 0)):
         assert 0 <= tails[j] < Q(1, 2)
         assert (3 * tails[j] - b) / 2 == tails[(j + 1) % 3]
+        # Independent rational multiplication using an integer of parity b.
+        x = (b + tails[j]) * Q(3, 2)
+        integer = x.numerator // x.denominator
+        assert x - integer == tails[(j + 1) % 3]
     for k in range(1, 13):
         modulus = 8 ** k
         r = (-9 * pow(19, -1, modulus)) % modulus

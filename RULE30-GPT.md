@@ -3466,7 +3466,7 @@ For even n_j, the half-interval condition forces u_j<1/3; for odd n_j it forces 
 
 Conversely, start from a nonnegative integer n_0 and its ceil-map parity itinerary. Define u_j by this convergent series. If every u_j<1/2, the series gives3*u_j= b_j+2*u_(j+1). Combining this with the integer recurrence shows n_j+u_j=xi*(3/2)^j, xi=n_0+u_0. Provided xi>0, this is a Z-number. Thus the fractional-tail restriction and ordinary-integer itinerary realization are both required. No lower coefficient-deficit ceiling arises, since the integer coefficient is(3/2)^t at every prefix. This is the established decoupling mechanism, specialized here; no novelty claim.
 
-Two consecutive ones are forbidden: their contribution to u_j is at least1/3+2/9=5/9>1/2. This finite forbidden word does not establish emptiness. Unexpected scope control: the purely periodic formal word(100)^infinity has tail values9/19,6/19,4/19, all below1/2, and satisfies the fractional recurrence exactly. It nevertheless cannot be the itinerary of any nonnegative integer start. A period100 has the integer branch map n -> (27*n+9)/8. After k periods integrality implies
+Two consecutive ones are forbidden: their contribution to u_j is at least1/3+2/9=5/9>1/2. This finite forbidden word does not establish emptiness. Unexpected scope control: the purely periodic formal word(100)^infinity has tail values9/19,4/19,6/19, all below1/2, and satisfies the fractional recurrence exactly. It nevertheless cannot be the itinerary of any nonnegative integer start. A period100 has the integer branch map n -> (27*n+9)/8. After k periods integrality implies
 
     19*n_0+9 = 0 modulo8^k.
 
@@ -3475,3 +3475,30 @@ Indeed8^k*n_(3k)=27^k*n_0+9*(27^k-8^k)/19, and27 is invertible modulo8^k. Divisi
 For the actual base-six CA, Kari–Kopra define g(x,y)=3*(x modulo2)+floor(y/2) and f(x,y,z)=g(g(x,y),g(y,z)). Fix y,z and vary x in{0,...,5}. The output depends only on x modulo2, so this six-letter local rule is not left-permutive in the usual full-alphabet sense. Both parity choices give distinct outputs: the inner value changes by3, its parity flips, and the outer value changes by3. There are exactly two outputs, not six. Membership in a broader expansive class must not be substituted for the binary left-invertibility used in our wall proofs. Canonical base-six expansions encode the strict fractional half-interval by a first fractional digit in{0,1,2}; the selected real configurations also require an eventually-zero integer-side tail. Arbitrary bi-infinite traces discard that realization requirement.
 
 **Primary-source scope.** [Kari–Kopra, arXiv:1710.05737v1](https://arxiv.org/html/1710.05737v1), introduction, base expansion conventions, Lemma2.1/proof and the construction of F in section2 read; trace Definition3.2/Corollary3.3 read for scope. No whole-paper or Theorem4.9 proof audit. Existing PRIOR-ART already records FLP decoupling and Dubickas's ceil-map complexity results; this block uses elementary specialized identities to test the proposed transfer, not a new Mahler route.
+
+### G50 outcome and retained first-run failure (2026-10-06)
+
+MA1 passes216 triples; MA2 passes128 samples,48 applicable transitions,32 excluded half-boundaries. MA3 initially FAILED: its published cycle tuple swapped the last two phases. Correct order is9/19,4/19,6/19, as direct substitution shows. Corrected the test tuple and proof ordering, added an independent exact rational multiplication check, then reran MA1-MA3: all pass, including12 finite congruence controls. G017 retains the original ordering in its historical message; G018 corrects it. This was an implementation/phase-order error, not evidence for a Z-number or a failed integer-exclusion theorem. Controls remain single-party.
+
+## G51. Finite Mahler windows and the integer compatibility test (2026-10-06)
+
+**Preregistration.** MW1 next tick compares the prefix interval formula with independent backward interval propagation for all words throughlength10. MW2 compares the ceil parity residue and midpoint rational trajectories when the interval is nonempty. Unexpected MW3: word10101 avoids11 but has an empty window. Counterfactual: no11 is the exact fractional language, or finite fractional admissibility implies infinite ordinary-integer realization. MW controls NOT RUN at publication. No large computation claimed.
+
+### G51 lemma and proof: exact finite Mahler coupling window
+
+Fix a T-bit word b_0,...,b_(T-1). Put C_0=0 and C_(t+1)=3*C_t+b_t*2^t. Prescribed ceil branches and fractional branches give
+
+    2^t*n_t=3^t*n_0+C_t,
+    2^t*u_t=3^t*u_0-C_t.
+
+The integer word is realized by the unique nonnegative residue r_T=-C_T*(3^T)^(-1) modulo2^T. This follows from prefix congruences and integrality, as in G49 with the sign reversed. The allowable initial fractions through timeT form the half-open interval
+
+    I_T=[L_T,U_T),
+    L_T=max_(0<=t<=T) C_t/3^t = C_T/3^T,
+    U_T=min_(0<=t<=T) (C_t+2^(t-1))/3^t,
+
+with the t0 upper endpoint interpreted as1/2. If L_T>=U_T it is empty. The lower equality follows because C_t/3^t is a partial sum of nonnegative terms b_j*2^j/3^(j+1). These inequalities are precisely0<=u_t<1/2 for all prefixes. Consequently every n_0=r_T+2^T*m>=0 paired with u_0 in I_T satisfies the finite Z-number condition throughT, except xi=n_0+u_0=0 is excluded. The recurrence in G50 proves both necessity and sufficiency; no independent parity or randomness assumption is needed.
+
+Across increasing T for a single infinite word, realizing residues satisfy r_(T+1)=r_T or r_T+2^T. They therefore form a nondecreasing integer sequence. An ordinary nonnegative integer realizes the infinite itinerary if and only if these least residues are bounded: bounded monotone integers stabilize, and the stabilized value realizes every prefix; conversely a realizing integer has r_T equal to itself once2^T exceeds it. This makes the missing integer compatibility an explicit boundedness condition, separate from nonemptiness of the fractional intersection. No boundedness theorem for Mahler-admissible words is supplied.
+
+Unexpected finite exclusion:10101 contains no11, but its terminal lower endpoint is133/243>1/2. Its fractional window is empty. Thus the simple no11 subshift from G50 is a strict overestimate of the fractional language; checking only adjacent forbidden bits is insufficient. These are elementary specialized forms of the already recorded decoupling/residue tools, not a new Mahler nonexistence proof.
