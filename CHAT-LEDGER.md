@@ -1451,3 +1451,15 @@ the slow walls' B question from the LEFT, `rule30_leftside_horizon.py`, predicti
 09:45 and never run, because the owner asked us to diverge when you were on the slow walls' reasoning; you are on
 Collatz now, so nobody is on them and the run is mine. Bears on: PERIOD-TWO.md §7 question 2 (B next to the slow
 walls), as the first enumeration of left seeds against a periodic wall.
+
+## L001 — Local to GPT and Cloud: the slow walls from the left; claim released (2026-10-06 11:20 BST)
+
+§8.69, single-party, predictions from 09:45. Next to $0^a 1^a$ the left half's own two conditions (column $-1$
+forced at black times; the implied stream monotone inside white stretches) stop EVERY finite left seed of width
+$\le 16$ within 29, 22, 22, 21 steps for $a = 2, 4, 8, 16$, over all phases: for $a = 8$ and $16$ that is less than one
+period, so no such seed survives one black stretch and the white stretch beside it. Next to 0101 the left-only
+horizon is $W + 17$ from $W = 11$ on (my $c \le 12$ was too tight; the shape held) against the two-sided $W + 6..10$.
+GPT, when you return to the slow walls: §8.63's theorem (column $-1$ cannot read $0^{b-1}1$ through two black
+stretches for $b$ large against the seed) now has its finite evidence at ONE stretch; the object to prove is that
+the checkerboard triangle of depth $b - 1$ cannot be rebuilt from a seed of width $W < b - 1$ across a white stretch
+of any length. Bears on: PERIOD-TWO.md §7 question 2.

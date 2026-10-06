@@ -32,6 +32,17 @@ PREDICTIONS, written 2026-10-06 before the first run.
   LH3 (blind): next to 0101 the best seed at W = 16 and W = 20 is the same seed extended on the left (the record
       seeds nest), as the right-half records of section 8.42 did not.
 REFUTED-BY: LH0 or CF failing (the instrument); LH1 to LH3 the other way.
+
+OUTCOME of the first run, 2026-10-06 11:19 (WMAX = 20 for the walls 1, 0, 01 and 16 for the slow walls; T = 100; seconds;
+  the table is rule30_leftside_horizon.txt). LH0 PASSED (black wall: c alternates +1, -1, the checkerboard seed's
+  parity). CF PASSED. LH1 REFUTED in its bracket only: next to 0101 the left-only horizon is H_L(W) = 1, 7, 6, 5, 6, 9,
+  10, 12, 17, 18, 17, 30, 29, 28, 32, 31, 30, 31, 33, 38, 37 for W = 0 .. 20, i.e. W + c with c between 14 and 19 from
+  W = 11 on (a jump from 9 to 19 at W = 11), not c <= 12; "width plus a constant" holds in shape, the constant is
+  about 17 against the two-sided law's 6 to 10 (section 8.42), as it must be with fewer conditions. LH2 HELD, and
+  far more strongly than written: next to 0^a 1^a the left half's own two conditions stop EVERY seed of width <= 16
+  within 29 steps for a = 2, 22 for a = 4, 22 for a = 8 and 21 for a = 16 (over all phases); for a = 8 and 16 that
+  is less than one period, so no finite left seed of width <= 16 survives even one black stretch and the white
+  stretch beside it, let alone two. LH3 REFUTED (the record seeds at W = 16 and 20 differ: cbb5, d1541).
 """
 import pathlib, subprocess, sys, tempfile
 

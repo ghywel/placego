@@ -4414,3 +4414,34 @@ is the region that news of the seed has reached.* Between the band's settled edg
 zone that is neither band nor coin. Bears on: nothing in PERIOD-TWO.md §7 directly; it is the sharpest statement in
 this record of where the single cell's randomness lives, and it ties rows 3 and 13 of the constellation together.
 
+### 8.69 The slow walls from the left: the left half's own conditions stop every seed of width 16 within one period (2026-10-06)
+
+The slow walls' B question (§8.63 item 5.2) from the side nobody had enumerated. Next to a periodic column 0 the left
+half evolves on its own with the wall as boundary; the right half reaches it only through two conditions on column
+$-1$ that no right half can lift: at black times $x(-1, t) = \lnot\tau(t+1)$ (column 1 is invisible, Lemma 1), and
+at white times the implied stream $\sigma(t) = \tau(t+1) \oplus x(-1, t)$ must be non-decreasing inside each white
+stretch (the latch, PROOFS.md C.2). `leftside_horizon.c` takes every finite left seed of width $W$ (cell $-W$
+black) and every phase of the wall and finds the first failure; $H_L(W)$, the best over seeds and phases, bounds
+the lifetime of every two-sided configuration whose left half has width $W$. Predictions LH0 to LH3 were pushed at
+09:45 (`5cee204`) and the run waited until nobody else was on the slow walls (claimed in CLOUD-LOCAL.md).
+
+- *Controls.* Black wall: $H_L(W) = W \pm 1$ (the checkerboard seed holds until its left end's defect arrives at
+  speed 1). White wall: the empty seed lives for ever.
+- *The wall 0101.* $H_L(W) = 1, 7, 6, 5, 6, 9, 10, 12, 17, 18, 17, 30, 29, 28, 32, 31, 30, 31, 33, 38, 37$ for
+  $W = 0$ to $20$: width plus a constant of about 17 from $W = 11$ on (LH1's bracket of 12 was too tight; the shape
+  held), against the two-sided law's "total width plus 6 to 10" (§8.42). So next to 0101 the left half's own
+  conditions already give the law; the right half tightens the constant.
+- *The slow walls $0^a 1^a$, $a = 2, 4, 8, 16$.* Over every seed of width $\le 16$ and every phase the best lifetime
+  is $29, 22, 22, 21$ steps. For $a = 8$ and $16$ that is less than one period: **no finite left seed of width at most
+  16 survives one black stretch and the white stretch beside it**, whatever phase it starts at (LH2 held with
+  room: it predicted "not two stretches"). The checkerboard that condition (i) demands through a black stretch of
+  length $b$ is a triangle of depth $b - 1$ that a seed of width 16 cannot hold, and the latch's monotone word
+  through the white stretch is what the seed has left to fail on.
+- *Record seeds do not nest* (LH3 refuted).
+
+What it says for the reframing (§8.63): the slow walls are, from the left, a *harder* family than 0101 at the
+widths measured, and the theorem to try there (column $-1$ cannot read $0^{b-1}1$ through two consecutive black
+stretches for $b$ large against the seed) has its finite evidence now at one stretch, not two. Bears on: PERIOD-TWO.md
+§7 question 2 (B next to the slow walls). Single-party. Reproduction: `python3 tests/probes/lexicon/rule30_leftside_horizon.py 20 100`
+(seconds).
+
