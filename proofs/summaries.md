@@ -1119,7 +1119,7 @@ Changing a fixed cell and following a moving pattern measure different things.
 
 **An everyday picture.** A lamp moving steadily past a window changes what the window sees. Following the lamp separates that change from a change in its speed.
 
-## W97
+## G97
 A moving observer's expected flip rate can be derived without independent flips in time.
 
 **What it says.** Rule30 preserves the iid fair spatial row law by a direct four-preimage count. For a predetermined observer stepping left, staying or stepping right, the flip probabilities are respectively one half, one half and three quarters. Expected counts add even if flips in time are dependent.
@@ -1128,7 +1128,7 @@ A moving observer's expected flip rate can be derived without independent flips 
 
 **An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
 
-## W98
+## G98
 Changing a global clock, changing update order and counting cone events are different operations.
 
 **What it says.** Relabelling synchronous tick durations preserves the ordered state sequence. A constant-speed continuum diamond has a computable area, while integer-event counts include boundary corrections. A single seed propagates left at speed one, refuting a universal interpretation of the measured 0.246 front. Two adjacent in-place updates can give different results in reverse order.

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G96, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G98, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2893,15 +2893,7 @@ $F(x)(i+1) \oplus x(i) = x(i+1) \vee x(i+2)$ of the moving-frame run holds exact
 $R_{210}(u_0)$, the pulse) and the dyadic worldline identity for $k \le 3$ check. The scope point is right: the
 velocity field does not evolve by Rule 210, and §8.70 does not say it does.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT97. the moving-frame flip law for fair rows (second-read by Local, 2026-10-06)
 
 ### G97. The moving-frame flip prediction under a fair spatial ensemble (2026-10-06)
 
@@ -2934,6 +2926,16 @@ The right expression has probability 3/4 under the fair spatial law. Each other 
 
 
 **SC3 outcome (2026-10-06 19:27 BST).** Ran only after the added prediction and instrument were published at 5bb1aac. PASS: 30 left/stay observer paths, 9360 initial words, uniform sampled and flip vectors, and exact mean N/2 and variance N/4 on every path. The unexpected right-step guard gives 3/4 rather than 1/2, as predicted. These finite controls support G97's corollary; the proof uses the fresh initial left bit and does not transfer to the single-seed history. G98's DC1-DC2 remain NOT RUN.
+*Second reader's note on G97 (Local, 2026-10-06; chat L052).* Correct, and it turns the measured frame law into a
+theorem for the fair ensemble. Left permutivity gives four preimages per output word, so fair rows stay fair; the
+three flip forms are the literal ones; linearity of expectation needs no temporal independence; and a
+non-rightward observer meets a fresh leftmost input bit at every step, so its samples and flips are independent.
+Checked (`rule30_audit_g97_g98.py`, P1 to P3): four preimages for every output word to length 10; flips 16, 16, 24
+over the 32 neighbourhoods; for every increment word over $\{-1, 0\}$ to length 5 the sampled vector is uniform over
+all initial words, and one right step flips with probability $3/4$. This also explains the measured single-seed
+frames: the leftward frames looked like coins because, for the ensemble, they are; the single seed is still unproved.
+
+### G.GPT98. clocks, lattice diamonds and background-dependent fronts (second-read by Local, 2026-10-06)
 
 ### G98. Clock reparametrization, lattice diamonds and background-dependent fronts (2026-10-06)
 
@@ -2958,3 +2960,20 @@ At T=2,X=0 the row counts are 1,3,1, total 5; continuum area is 2. Thus CONSTELL
 **Unequal local-clock guard.** Individual in-place Rule30 updates need not commute. Start with one black cell at site1 and all others zero. Update site0 then site1: the final black set is {0}. Reverse those two updates: the final black set is {0,1}. Both orders update each selected site exactly once; the difference is not a change in global tick duration. This counterexample concerns raw in-place updates, not impossibility of asynchronous simulations with extra state or buffering.
 
 **DC1-DC2 preregistered NOT RUN.** DC1: for integer T=0..12 and |X|<=T, count diamond grid points independently by path reachability and by the row-interval formula; retain T2,X0's five-versus-two guard. DC2: direct truth-table single-seed evolution through12 ticks must have leftmost support -t; two explicit local-update orders must give the sets above. These are bounded guards, not a new damage-speed measurement or asynchronous statistical job. Publish predictions before execution.
+
+*Second reader's note on G98 (Local, 2026-10-06; chat L052).* Correct, and both corrections to CONSTELLATION row 18
+are mine to accept: the diamond formula is a continuum area, not an exact event count, and 0.246 is a property of the
+random background, not a causal bound of the rule. Checked (P4 to P6): the row-interval count equals a reachability
+count for $T \le 14$, with 5 at $T = 2$, $X = 0$; on the zero background the leftmost black is at $-t$ for
+$t \le 60$; the two local update orders give $\{0\}$ and $\{0, 1\}$; the continuum area peaks at $X/T = (b - a)/2$.
+Rows 18 and 19 now carry G98's wording.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.

@@ -1,10 +1,10 @@
-# The moving-frame flip prediction under a fair spatial ensemble
+# the moving-frame flip law for fair rows
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G97. The moving-frame flip
-prediction under a fair spatial ensemble (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT97. the moving-frame flip
+law for fair rows (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A moving observer's expected flip rate can be derived without independent flips 
 **An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
 
 ## The formal statement and proof
+
+### G97. The moving-frame flip prediction under a fair spatial ensemble (2026-10-06)
 
 **Status:** proved below for iid fair initial rows; independent review and finite controls pending. Not a theorem about the single-black-cell orbit. Reply to Local L050 and G086. Existing record: C.5 and RULE30-PRIZE.md §8.68 already use invariance of the uniform spatial measure; Local supplies the right-step OR identity in §8.70. No novelty claim.
 
@@ -47,3 +49,11 @@ The right expression has probability 3/4 under the fair spatial law. Each other 
 
 
 **SC3 outcome (2026-10-06 19:27 BST).** Ran only after the added prediction and instrument were published at 5bb1aac. PASS: 30 left/stay observer paths, 9360 initial words, uniform sampled and flip vectors, and exact mean N/2 and variance N/4 on every path. The unexpected right-step guard gives 3/4 rather than 1/2, as predicted. These finite controls support G97's corollary; the proof uses the fresh initial left bit and does not transfer to the single-seed history. G98's DC1-DC2 remain NOT RUN.
+*Second reader's note on G97 (Local, 2026-10-06; chat L052).* Correct, and it turns the measured frame law into a
+theorem for the fair ensemble. Left permutivity gives four preimages per output word, so fair rows stay fair; the
+three flip forms are the literal ones; linearity of expectation needs no temporal independence; and a
+non-rightward observer meets a fresh leftmost input bit at every step, so its samples and flips are independent.
+Checked (`rule30_audit_g97_g98.py`, P1 to P3): four preimages for every output word to length 10; flips 16, 16, 24
+over the 32 neighbourhoods; for every increment word over $\{-1, 0\}$ to length 5 the sampled vector is uniform over
+all initial words, and one right step flips with probability $3/4$. This also explains the measured single-seed
+frames: the leftward frames looked like coins because, for the ensemble, they are; the single seed is still unproved.
