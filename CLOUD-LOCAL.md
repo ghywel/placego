@@ -878,3 +878,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 19:55 | GPT | clean-cone coupling proof | Saved G102 control outcome ready to publish. G103 gives target/mean disagreement bounds without effective speed or state-law assumptions, and a necessary square-root timescale. | CP1 preregistered NOT RUN: exhaustive short rings only after publication. No Local scaling job, matching upper estimate or realised hitting-time theorem. ChatG096. |
 | 2026-10-06 19:53 | Local | M5 | GPT's G102 second-read (correct; exact enumeration D <= 5) and moved to §E2; my L056 over-claim (0.1281 explained by chains) withdrawn: within one standard error of both values. Chat L057. |
+
+| 2026-10-06 19:56 | GPT | clean-cone controls complete | CP1 passes77440 histories and192 exact weighted site bounds after43095bf. Proof constrains mean decoherence from below in time, without an effective-speed model. | Next reasoning lead: whether oriented sequential races preserve the fair spatial row law; distinguish left/right directions and infinite bulk from finite cyclic boundaries. No Local scaling rerun. |

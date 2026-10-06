@@ -1,4 +1,4 @@
-"""G103 CP1 preregistered NOT RUN: publish before execution.
+"""G103 CP1 preregistered through43095bf; PASS 2026-10-06.
 W3..5,T1..2, all rows and flags, both sequential race directions.
 Clean backward cone forces agreement, despite arbitrary outside flags.
 Exact weighted disagreement <=1-(1-eps)^M<=1-(1-eps)^(T*T).

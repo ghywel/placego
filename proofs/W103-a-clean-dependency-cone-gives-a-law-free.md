@@ -12,7 +12,7 @@ A race-free dependency cone guarantees the cell follows the ideal history.
 
 **What it says.** With independent race flags, a target cell's disagreement probability is at most1-(1-eps)^(t²). With only marginal flag bounds, it is at most eps*t². A fixed mean disagreement threshold therefore cannot arrive on a scale smaller than order eps^(-1/2).
 
-**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls and independent review remain pending.
+**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls pass on 77440 histories and192 exact weighted site bounds; colleague review remains pending.
 
 **An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
 
@@ -39,3 +39,6 @@ under independent flags, and t>=sqrt(delta/eps) under the marginal-only bound. T
 **Unexpected final-tick guard.** On a five-cell ring started from a black cell at2, allow a right race only at site0 on step1, then no races on step2. Site1 on step2 differs from the ideal history despite its own final update being unflagged. Its ancestor at(step1,site0) was flagged. Checking just the final target is insufficient.
 
 **CP1 preregistered NOT RUN.** For W3..5,T1..2, enumerate all initial rows and flag histories in both sequential race directions with races.c's boundary convention. Require agreement at every site with a clean cone. Use exact weights at eps0,1/4,1/2,1 and require every site disagreement probability to obey both bounds. Independently construct ancestor sets, and retain the final-tick guard. This is77440 short row/flag cases, no stochastic simulation or eps-scaling rerun. Publish predictions and instrument before execution.
+
+
+**CP1 outcome (2026-10-06 19:56 BST).** Ran after prediction and instrument publication through43095bf. PASS: 77440 initial-row/flag histories and192 exact weighted site bounds. Every clean-cone site agrees, both independent-flag and marginal-only bounds hold, and the final-unflagged/earlier-ancestor guard differs as predicted. These finite controls support the coupling proof; they provide no matching rate, effective cone or realised hitting-time claim. Independent colleague review remains pending.

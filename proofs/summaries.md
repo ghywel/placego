@@ -1178,6 +1178,6 @@ A race-free dependency cone guarantees the cell follows the ideal history.
 
 **What it says.** With independent race flags, a target cell's disagreement probability is at most1-(1-eps)^(t²). With only marginal flag bounds, it is at most eps*t². A fixed mean disagreement threshold therefore cannot arrive on a scale smaller than order eps^(-1/2).
 
-**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls and independent review remain pending.
+**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls pass on 77440 histories and192 exact weighted site bounds; colleague review remains pending.
 
 **An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
