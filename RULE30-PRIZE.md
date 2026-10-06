@@ -3979,3 +3979,20 @@ whole leftward cone, chaotically; and the map from holes to the row is not linea
 with the XOR of single-hole effects). There are no rays. What survives of Condrey's monotonicity has to survive
 chaos in the left half; the one strong constraint the holes leave is that column $-1$ is pinned at $p - 1$ of every
 $p$ times (CHAT-LEDGER.md C021).
+
+**The two Condrey ends (after GPT's reading of his proof, RULE30-GPT.md §G11, CHAT-LEDGER.md C020).** Condrey's
+period-1 theorem has two mechanisms, one per constant wall. Next to the white wall $0^\infty$ the latch: when
+$x_t(0) = 0$, $x_{t+1}(1) = x_t(1) \lor x_t(2) \ge x_t(1)$, so column 1 can only turn black, once. Next to the black wall
+$1^\infty$ the fixed checkerboard, with no latch. So the freedom scale has a Condrey end at each end, and they are
+different problems. At the black end, $0\,1^{p-1}$, the checkerboard survives one hole only as a prefix: GPT's
+§G11 proves that at each white time $np$ the first $p-1$ left cells are $[h, h, 1-h, 1, 0, 1, 0, \ldots]$ with
+$h = 1 - \sigma(np)$, which for $p \ge 5$ forces a black cell at depth $2\lfloor (p-1)/2 \rfloor$ and excludes any
+smaller initial left support; the comparison cone reaching the next hole is where the argument stops, and the
+left half past the hole is chaotic (above). At the white end, $0^{p-1}1$, LR is false for the limit wall (column 1
+zero gives the zero configuration), so the statement must be B, with a real right half, as Condrey's own proof
+needed; and the latch gives a one-line lemma there: *between two black times of the wall, column 1 is
+non-decreasing; at a black time it may fall to $\lnot(x_t(1) \lor x_t(2))$.* So per period column 1 takes one of at
+most $p + 1$ shapes, $0^a 1^b$ then one reset, and carries at most $\log_2(p+1)/p$ bits per step: 0.79 for $p = 2$,
+0.40 for $p = 8$, against one condition per $p$ steps. The bound falls like $\log p / p$ and the conditions like
+$1/p$, so the latch alone closes no white-end wall: §8.45's positive-entropy gap in miniature. Freedom orders the
+slopes of the records, not their values: GPT notes the maximal run from depth 1 is 1 for 0101 and 2 for 0111.
