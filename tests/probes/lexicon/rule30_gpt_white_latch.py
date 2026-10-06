@@ -27,6 +27,10 @@ def allowed(tau,a,b):
     return a<=b if tau==0 else not(a==b==1)
 
 
+def project(word,tau):
+    return tuple(word[t] for t in range(len(word)) if not tau[t])
+
+
 def matmul(a,b):
     return [[sum(a[i][k]*b[k][j] for k in range(2)) for j in range(2)] for i in range(2)]
 
@@ -55,7 +59,7 @@ def main():
             for word in itertools.product([0,1],repeat=size+1):
                 if all(allowed(tau[t],word[t],word[t+1]) for t in range(size)):
                     full.append(word)
-                    visible.add(tuple(word[t] for t in range(size+1) if not tau[t]))
+                    visible.add(project(word,tau))
             assert len(full)==count(p,n),(p,n,len(full),count(p,n))
             assert len(visible)==count(p-1,n),(p,n,len(visible),count(p-1,n))
             if p==2:assert len(visible)==fib(n+3)
@@ -65,7 +69,7 @@ def main():
         zeros=sum(all(a<=b for a,b in zip(w,w[1:]))
                   for w in itertools.product([0,1],repeat=size+1))
         assert zeros==size+2
-        visible_black={tuple(w[t] for t in range(size+1) if False)
+        visible_black={project(w,[1]*(size+1))
                        for w in itertools.product([0,1],repeat=size+1)
                        if all(allowed(1,a,b) for a,b in zip(w,w[1:]))}
         assert visible_black=={()}

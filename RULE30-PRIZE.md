@@ -1671,6 +1671,13 @@ inside the range a rough estimate from the kicks gives (about one kick every 90 
 some timing). That fits the picture: the wheel carries no information, and the kicks carry all of it. Whether the
 limit is exactly positive is not proved; the trend says it is.
 
+*2026-10-06, Local.* JOB M3a, blocked for memory since 2026-10-05, ran here after the owner asked whether it could be
+made to fit: the sets' pool (13 GB at $m = 27$, 29 GB at $m = 28$) now lives in a file mapped on the internal NVMe,
+written once (`entropy2.c -DPOOL_MMAP`, identical to the heap build at every width checked), and the runs took 208 s
+and 459 s with 6 GB resident. $m = 27$: 289,484 automaton states, $\log_2 \lambda = 0.1229$; $m = 28$: 448,144
+states, $0.1222$ bits per visible bit (EN6 held). The fall per cell is now 0.0048 then 0.0007: **the bound levels off
+near 0.122**. The exact certificate at these widths is in `rule30_squeeze.py` (SQ6).
+
 **What column 1 actually carries.** The bound counts every sequence any right side can make. For typical right
 sides (random cells), the entropy rate of column 1's visible bits can be measured directly (`rule30_metric.py`,
 predictions written first): about **0.080 bits per visible bit**, 0.04 bits per step. That is two thirds of what the

@@ -77,14 +77,25 @@ the automata for m = 1 to 10 and checked the identities and bounds on 60 forced 
 reduction first stated with the lemma restates the problem, since every configuration with column 0 = 0101...
 satisfies the bound. The useful left-only form is LR restricted to producible columns 1 (section 8.14's ladder), and
 any proof must use the finite left half (RULE30-PRIZE.md section 8.33).
+
+ADDENDUM, written 2026-10-06 before the third run (python3 rule30_squeeze.py 27,28 mmap), after JOB M3a ran on this
+machine with entropy2.c's memory-mapped pool (rule30_entropy.py, MM0 to MM3): the certificate for m = 27 and 28, which
+needed 13 and 29 GB for their pools, by the same exact check. "mmap" builds the variant and puts the pool file in the
+temporary directory on the internal drive.
+  SQ6 (blind): at m = 27 and 28 the certified bounds log2(lambda') lie within 0.002 of 0.1229 and 0.1222 (the power
+      iteration's values from JOB M3a), the exact check passes, and lambda (1 - 10^-3) is rejected, as at every width
+      before. Then every left column next to 0101... has topological entropy at most 0.0612 bits per step.
+REFUTED-BY: SQ6 failing in its exact check (the certificate at that width does not close within 10^-3: raise DELTA),
+  or in its rejection (the check is broken).
 """
-import math, pathlib, random, subprocess, sys, tempfile
+import math, os, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction
 
 HERE = pathlib.Path(__file__).resolve().parent
-_nums = [a for a in sys.argv[1:] if a != "seen"]
+_nums = [a for a in sys.argv[1:] if a not in ("seen", "mmap")]
+MMAP = "mmap" in sys.argv[1:]
 MS = [int(a) for a in _nums[0].split(",")] if _nums else [8, 12, 16, 20, 24, 26]
-RECORDED = {8: 0.356, 12: 0.258, 16: 0.212, 20: 0.1519, 24: 0.1327, 26: 0.1277}
+RECORDED = {8: 0.356, 12: 0.258, 16: 0.212, 20: 0.1519, 24: 0.1327, 26: 0.1277, 27: 0.1229, 28: 0.1222}
 FAILS = 0
 
 
@@ -99,15 +110,19 @@ def verdict(name, held, detail=""):
 
 
 def build():
-    exe = pathlib.Path(tempfile.gettempdir()) / "rule30_squeeze_entropy2"
-    subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "entropy2.c"), "-lm"], check=True)
+    exe = pathlib.Path(tempfile.gettempdir()) / ("rule30_squeeze_entropy2m" if MMAP else "rule30_squeeze_entropy2")
+    flags = ["-DPOOL_MMAP"] if MMAP else []
+    subprocess.run(["cc", "-O2", *flags, "-o", str(exe), str(HERE / "entropy2.c"), "-lm"], check=True)
     return exe
 
 
 def certify(exe, m, tmp):
     path = pathlib.Path(tmp) / f"cert_{m}.txt"
+    env = dict(os.environ, POOL_FILE=str(pathlib.Path(tmp) / f"pool_{m}.bin"), POOL_GB="48") if MMAP else None
     out = subprocess.run([str(exe), str(m), "4000", "cert", "1e-3", str(path)], check=True, capture_output=True,
-                         text=True).stdout.split("\n")
+                         text=True, env=env).stdout.split("\n")
+    if MMAP:
+        (pathlib.Path(tmp) / f"pool_{m}.bin").unlink(missing_ok=True)
     lam = float(next(l for l in out if l.startswith("E ")).split()[2])
     c = next(l for l in out if l.startswith("C ")).split()
     lp = float(c[2])
