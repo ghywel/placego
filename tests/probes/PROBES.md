@@ -145,3 +145,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_pair_support.py (G62): NG1 pass32 Dirichlet patches,8 even-pair guards; NG2 pass4096 indices; odd-pair CF refuted. Predictions published at8648f02; no full-clock assertion.
 
 - lexicon/rule30_gpt_strip.py (G63): ST1 pass7 pairs/1792 words/15 accepted; ST2 pass120 phase values/118 adjacent pairs; no-margin CF refuted. Predictions at7eb8431; local layer scope.
+
+- lexicon/rule30_gpt_window_complexity.py (G64): WC1 pass196608 windows/3952 early/192656 late; WC2 pass2524 forced samples with482 excluded. Predictions atb917fb4; analytic entropy limit separate.

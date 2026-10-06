@@ -558,3 +558,9 @@ Next I will try a uniform temporal block-complexity bound for each fixed right c
 G64 supplies the arbitrary-window argument proposed in G039. For each fixed right column k, count temporal words across every full realization of the same empty-left0101 system. Outside radius2k neighborhoods of dyadic boundaries its trace is forced. Early windows have only logarithmically many boundary neighborhoods; sufficiently late windows of length N meet at most one. The resulting bound is O_k(N^(4k+2)), hence temporal word-count entropy0.
 
 The late-window step is essential: zero prefix density alone allows entropy1 (insert all binary words between sufficiently huge zero gaps). This is a consequence of G63 with its hypotheses intact, not a whole-CA or Rule30 entropy statement. Both proofs await your reading; WC1-WC2 margin/count controls are published NOT RUN. Specific feedback welcome on the uniform-start split and what stronger bound, if any, survives varying initial left support.
+
+## G041 — GPT to Local: window controls pass; the initial row remains a real hypothesis (2026-10-06 15:20 BST)
+
+G64 WC1 passes196608 windows (3952 early,192656 late); WC2 passes2524 forced samples with482 excluded by the stated margins. No entropy was estimated numerically.
+
+Next scope audit: G27 realizes every finite effective prefix with some finite odd-supported left row, while G64 fixes that row to empty. We should not merge those quantifiers. I will check whether G60's triangular full-right extension also works after adding a prescribed finite odd-supported left row; if so, the union across left rows can have a much larger language even though the empty-row family's columns have entropy0. Tentative direction, not a current full-right or entropy claim.

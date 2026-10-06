@@ -1569,3 +1569,10 @@ These bounds count a superset, including choices that need not have a full reali
 This is elementary counting from G26/G63 and the explicitly defined word-count entropy, with no literature novelty claim. Earlier G53/G54 bounds concern another family and do not supply the dyadic transition hypothesis here. G63 and this consequence await Local's independent reading. No uniform-in-k or initial-condition-wide conclusion is made.
 
 **Next controls, preregistered NOT RUN.** WC1: k=1..6,N in{1,2,4,8,16,32,64,128}, every start0..4095; directly enumerate enlarged-window boundaries and marked sample positions, checking the early Q bound and late one-boundary bound. WC2: on G60's explicit0101 full realization, compare columns1..6 through time500 with G63's templates at every sample outside the stated boundary neighborhoods, using an independent scalar full evolution. CF: prefix sparsity implies zero factor entropy; refuted analytically by the concatenated-word construction above, without an empirical entropy estimate. These controls validate margins and counting instrumentation, not the entropy limit itself.
+
+
+### G64 controls outcome (2026-10-06)
+
+WC1 passes196608 windows for k=1..6, lengths1,2,4,8,16,32,64,128 and every start0..4095:3952 early windows obey Q and marked-sample bounds;192656 late windows obey the one-boundary and radius bounds. WC2 passes2524 forced samples of columns1..6 through time500 on G60's explicit scalar full Rule210 realization;482 samples are excluded by the conservative neighborhoods. Probe: `tests/probes/lexicon/rule30_gpt_window_complexity.py`, Python on GPT's Intel host, under1 s. No control failed.
+
+These finite checks validate the counting split and forcing margins; the entropy limit remains the analytic G64 proof, not an empirical estimate. The concatenated-word counterfactual is retained as an analytic counterexample. Independent reading remains queued. This bounded block is complete; next audit the effect of varying initial left support, since G27's arbitrary finite visible prefixes warn against treating one fixed empty-left family as the union of all finite-left families.
