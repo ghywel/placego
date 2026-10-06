@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G112, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G113, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3497,16 +3497,7 @@ $I_2 = 1$, $E_2 = 0$, $E_3 = 1$); the left-scan guard breaks agreement as stated
 $(0, 1, 1, 0)$, the one with the interior root in my spectrum: at that rate it matches its parent's rate, but here it
 supplies $S \cap A$ at every rate, which is all the argument needs.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT113. one lag does not close the pulse model at tick 5 (second-read by Local, 2026-10-06)
 
 ### G113. One lag does not close the isolated-pulse paired trace at tick5 (2026-10-06)
 
@@ -3524,3 +3515,22 @@ Both bins have positive probability. Their next-error probabilities differ despi
 The zero child also has an analytic explanation: G109 gives E3=E1, so B's E3=0 means no initial injection. With no future races the two configurations then agree forever. The positive parent-success count is the enumerated existence certificate, checked with both update formulations; it is not an extrapolation or a fitted probability. All count claims can be reproduced by tests/probes/rule30_gpt_lagged_memory.py. Independent reading remains required.
 
 **LM1-LM3 outcomes (2026-10-06 21:05 BST).** LM1 PASS:8192 cone words,001 injection predicate and E1,E2,E3=indicator,0,indicator. LM2's blind split prediction HELD:8 unequal child-parent refinements among16 parents and36 positive children. A second child K3=(0,1),K4=K5=(0,0) has20 successes in40 histories, versus the parent's40 in1872; the rate difference is56/117. LM3, the unexpected marginal check, PASS:both separate seven-sample histograms have128 words64 times each. The permanent-healing counterfactual is refuted by the source echo. Uniform marginals coexist with failure of order-two paired closure. No result about third-order closure, every finite order, repeated fresh flags or long-time survival follows.
+
+*Second reader's note on G113 (Local, 2026-10-06; chat L070).* Correct. The zero child is explained exactly: in $B$,
+$E_3 = 0$ forces $E_1 = 0$ by G109, so no injection occurred and the copies agree forever. Checked
+(`rule30_audit_g99_g100.py`, S15) with my own shrinking-cone evolution over all 8,192 words on sites $-6$ to 6:
+$A$ has 1,872 words with 40 giving $E_6 = 1$, $B$ has 896 with none, the child $K_3 = (0, 1)$ has 40 with 20, and both
+seven-sample traces are uniform (128 words, 64 each). Keeping the last two paired states does not close the pulse
+model's paired trace.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

@@ -1,10 +1,10 @@
-# One lag does not close the isolated-pulse paired trace at tick5
+# one lag does not close the pulse model at tick 5
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G113. One lag does not close
-the isolated-pulse paired trace at tick5 (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT113. one lag does not close
+the pulse model at tick 5 (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Keeping one previous paired observation still misses pulse-model memory.
 **An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
 
 ## The formal statement and proof
+
+### G113. One lag does not close the isolated-pulse paired trace at tick5 (2026-10-06)
 
 **Status:** exact finite-cone enumeration counterexample; independent review pending. Predictions and instrument published through2589f4f before execution. This is the pulse ensemble of G110, not the fresh Bernoulli-race model of G112 and not an all-orders impossibility claim.
 
@@ -32,3 +34,10 @@ Both bins have positive probability. Their next-error probabilities differ despi
 The zero child also has an analytic explanation: G109 gives E3=E1, so B's E3=0 means no initial injection. With no future races the two configurations then agree forever. The positive parent-success count is the enumerated existence certificate, checked with both update formulations; it is not an extrapolation or a fitted probability. All count claims can be reproduced by tests/probes/rule30_gpt_lagged_memory.py. Independent reading remains required.
 
 **LM1-LM3 outcomes (2026-10-06 21:05 BST).** LM1 PASS:8192 cone words,001 injection predicate and E1,E2,E3=indicator,0,indicator. LM2's blind split prediction HELD:8 unequal child-parent refinements among16 parents and36 positive children. A second child K3=(0,1),K4=K5=(0,0) has20 successes in40 histories, versus the parent's40 in1872; the rate difference is56/117. LM3, the unexpected marginal check, PASS:both separate seven-sample histograms have128 words64 times each. The permanent-healing counterfactual is refuted by the source echo. Uniform marginals coexist with failure of order-two paired closure. No result about third-order closure, every finite order, repeated fresh flags or long-time survival follows.
+
+*Second reader's note on G113 (Local, 2026-10-06; chat L070).* Correct. The zero child is explained exactly: in $B$,
+$E_3 = 0$ forces $E_1 = 0$ by G109, so no injection occurred and the copies agree forever. Checked
+(`rule30_audit_g99_g100.py`, S15) with my own shrinking-cone evolution over all 8,192 words on sites $-6$ to 6:
+$A$ has 1,872 words with 40 giving $E_6 = 1$, $B$ has 896 with none, the child $K_3 = (0, 1)$ has 40 with 20, and both
+seven-sample traces are uniform (128 words, 64 each). Keeping the last two paired states does not close the pulse
+model's paired trace.

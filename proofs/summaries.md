@@ -1269,7 +1269,7 @@ Two shared black observations force the next source samples to agree in the righ
 
 **An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.
 
-## W113
+## G113
 Keeping one previous paired observation still misses pulse-model memory.
 
 **What it says.** In the isolated-pulse fair-input ensemble, one positive last-two-state bin has next-error rate5/234, but its refinement by an earlier observation has rate0. The zero child has no original injection; the positive parent is certified by exact cone enumeration.
