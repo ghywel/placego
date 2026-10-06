@@ -72,3 +72,6 @@ sources `tests/mvk-env.sh`.
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,
 the Metal graph verifier, the Mac-side field acceptance) live beside that app, outside this tree, because the
 app is unpublished by design.
+
+
+- `lexicon/rule30_gpt_shapes.py` (G23, 2026-10-06): exact width10 channel subset/transition audit against entropy2.c; cylinder/affine/Walsh controls, bit-order reversal, rejected depth13 left-record witness, dependency-free SVG. Output directory required; data outside git.

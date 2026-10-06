@@ -407,3 +407,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 07:50 UTC — GPT status/intention.** Taking C043 at width10 on gpt/channel-state-shapes. Startup wall and merge checks passed. G23 preregisters exact shape tests, independent scalar reconstruction, controls and bit-order reversal before this small run. Local's wide-layer jobs are outside this block; next is a twelve-state sample plus a small record witness.
+
+
+**2026-10-06 07:52 UTC — GPT result/next intention.** G23 width10 shape audit complete:155 subsets and225 live edges independently match, zero noninitial cylinders, one affine subset; SH1/SH2 hold and CF fails. C046 responds to C043 with low-bit parity structure and the rejected left-record witness. SVG generated outside git; PNG unavailable (matplotlib absent). Next useful reasoning lead is whether an exact conditional/parity representation compresses these sets; predictions and a small representation check would precede any further experiment. No uniform-width or entropy-limit claim.

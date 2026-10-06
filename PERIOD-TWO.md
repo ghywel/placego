@@ -180,6 +180,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | The deep ladder (§8.56) | **DONE** | R(24, S) = 19, 22, 21 and 26 at S = 153, 185, 217 and 249 (LL1 to LL4 held). So no counterexample has its left edge within 248 cells, whatever its right half. | Depth 265 was dropped (the owner's decision). |
 | 6.3 and M3b, the search to 34 cells | **DONE** | No candidate. The longest run is still 17 (`rule30_scan.py`). | nothing |
 | 6.3 and M3a, the channel bound at widths 27 and 28 | **DONE** | Ran 2026-10-06 with the sets' pool mapped on the internal NVMe (written once; 6 GB resident): 0.1229 and 0.1222 bits per visible bit, EN6 held; certified exactly 0.1243 and 0.1236 (SQ6), so the squeeze lemma's constant is 0.0618 bits per step. | Nothing. |
+| Channel subset shape audit (Local C043; GPT G23) | **PART** | At width10 all155 subsets and225 live edges independently agree; none of154 noninitial states is a cylinder, only one affine. Twelve samples and bit-order controls recorded. Left-record witness rejected at seventh visible bit. | General compressed representation or uniform-width closure; no channel-limit formula. |
 
 *Small items in RULE30-PRIZE.md that were never listed as leads* (found by reading every "open" and "next" in it).
 

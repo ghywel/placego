@@ -2616,3 +2616,33 @@ structural result about this formal map; no novelty or prize solution is claimed
 Following Local C043, audit the existing entropy2.c subset construction, not a new wide-layer computation. Both startup probes passed, including their stated bounded scopes. Predict SH1: at least one of twelve reproducibly sampled noninitial reachable states is not an exact fixed-bit cylinder. Predict SH2: at least one is not an affine subspace of binary width10. Counterfactual: every sampled set is a cylinder, making fixed bits a sufficient exact representation for this sample. Neither outcome establishes a closed-form growth bound.
 
 Use seed2306, sample twelve distinct states without weighting by size or stationary probability, and examine one state reached by a depth13 record witness from the existing records.c construction. Compare every state and transition to a separately coded scalar Rule30 subset BFS. Controls: whole cube, singleton, fixed-bit cylinder, even parity, and a same-size random set. Measure cardinality, fixed-bit cylinder hull, affine hull, sorted integer runs and largest nonconstant Walsh coefficient. Unexpected check: reverse all bit positions; cylinder/affine properties must be invariant, while integer runs may change. Retain any rejected record prefix honestly. Pictures are membership grids, not evidence of randomness. No novelty claim: this audits the project's existing channel automaton.
+
+### G23 outcome: exact cylinders fail, and low-bit correlations remain
+
+At width10 there are155 reachable subset states including the initial full cube, with225 live labeled edges. The separately coded scalar truth-table BFS agrees with the untouched entropy2.c on every exact subset and transition. All controls pass. SH1 and SH2 hold; the all-cylinders counterfactual fails. Exhaustively, none of154 noninitial states is a cylinder, and just one is affine: q119 is the translate of the span of80,256,512 by58 (XOR throughout), with eight members. This exhausts this finite automaton, not other widths.
+
+The reproducible sample, in draw order, follows. Hull sizes are cardinalities; runs refer to consecutive encoded integers, not physical runs. The final row is only a prefix of a left-record witness, not a complete record-reaching channel path.
+
+| State | Size | Fixed bits | Cylinder hull | Affine hull | Integer runs / reversed | Observation |
+|---|---:|---:|---:|---:|---:|---|
+| q124 | 12 | 5 | 32 | 32 | 12 / 5 | Nonlinear subset inside a proper fixed-bit hull. |
+| q27 | 108 | 2 | 256 | 256 | 108 / 35 | Nonlinear subset inside a proper fixed-bit hull. |
+| q18 | 113 | 0 | 1024 | 1024 | 113 / 41 | No fixed bits; sparse correlated subset of the full cube. |
+| q75 | 49 | 0 | 1024 | 1024 | 49 / 21 | No fixed bits; sparse correlated subset of the full cube. |
+| q67 | 101 | 0 | 1024 | 1024 | 80 / 36 | No fixed bits; sparse correlated subset of the full cube. |
+| q17 | 81 | 1 | 512 | 512 | 81 / 28 | Nonlinear subset inside a proper fixed-bit hull. |
+| q111 | 52 | 2 | 256 | 256 | 52 / 21 | Nonlinear subset inside a proper fixed-bit hull. |
+| q25 | 67 | 1 | 512 | 512 | 67 / 24 | Nonlinear subset inside a proper fixed-bit hull. |
+| q118 | 22 | 3 | 128 | 128 | 22 / 10 | Nonlinear subset inside a proper fixed-bit hull. |
+| q44 | 42 | 1 | 512 | 128 | 42 / 19 | Affine hull smaller than fixed-bit hull, but membership still nonlinear. |
+| q154 | 50 | 3 | 128 | 128 | 50 / 14 | Nonlinear subset inside a proper fixed-bit hull. |
+| q90 | 54 | 1 | 512 | 512 | 54 / 21 | Nonlinear subset inside a proper fixed-bit hull. |
+| q15 | 48 | 1 | 512 | 256 | 48 / 18 | Last surviving record prefix; later visible bit is rejected. |
+
+All twelve sampled sets are nonaffine. A concrete low-bit relation remains even without fixed bits: q18 has104 members with odd parity on bits0,1,2 and9 with even parity, giving absolute Walsh coefficient95 out of113. This is an exact count; no statistical significance or randomness claim was tested. Fixed-bit characters often give the trivial maximum equal to cardinality, so the probe also reports the strongest character that is not constant on the set.
+
+The unexpected reversal check preserves all cylinder and affine properties but substantially changes sorted-integer runs: q27 goes108 to35, for example. An interval-looking picture is therefore representation dependent. The parity control correctly has no fixed bits but an affine hull of512; the size128 random control has full hull1024 and largest absolute coefficient38. These are instrument controls, not a fitted null model for channel states.
+
+The depth13 record search returned R13=17 with three witnesses. Its first visible word000101101101011 follows states0,1,3,6,12,20,15 before rejection at index6 (the seventh visible bit). This left-half record does not satisfy the width10 right-channel constraint. The proposed record-reaching comparison was therefore not completed: the picture is explicitly labeled last valid prefix. No contradiction with either instrument follows; their admissibility conditions differ.
+
+Probe: tests/probes/lexicon/rule30_gpt_shapes.py --output OUTPUT_DIRECTORY. It reconstructs everything, leaves data outside git and renders a13-panel membership SVG; optional PNG was unavailable because matplotlib is absent. The final run retains that limitation. No large job was duplicated. Conclusion: fixed-bit cylinders and affine spaces alone cannot exactly represent this width10 automaton. Boolean/parity structure may still support compression, but no uniform-width closure, formula for entropy or prize theorem is proved.
