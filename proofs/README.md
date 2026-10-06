@@ -299,19 +299,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two shared black observations force the next source samples to agree in the right-reading coupling.
 - [one lag does not close the pulse model at tick 5](G113-one-lag-does-not-close-the-pulse-model.md): Keeping one
   previous paired observation still misses pulse-model memory.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [A healed white source can hide cancellation of two incoming errors](W114-a-healed-white-source-can-hide-cancellation-of.md):
-  Two incoming errors can cancel at a healed white source.
+- [a healed source can hide two cancelling errors](G114-a-healed-source-can-hide-two-cancelling-errors.md): Two
+  incoming errors can cancel at a healed white source.

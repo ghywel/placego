@@ -62,6 +62,10 @@ CHECKS (GPT's claims at 827e006):
   S15 (G113, added 2026-10-06 at 832c0d3): the isolated pulse over all 8,192 words on sites -6..6, seven samples at
      site 0: A = {K_4 = K_5 = (0, 0)} has 1,872 words with 40 giving E_6 = 1; B = A and {K_3 = (0, 0)} has 896 with 0;
      the child K_3 = (0, 1) has 40 with 20; both seven-sample traces uniform (128 words, 64 each).
+  S16 (G114, added 2026-10-06 at 9e09890): the expanded difference identity delta = p XOR (1-c) q XOR (1-b) r XOR q r
+     against the truth table on all 64 triples; the cylinder 0011110010000 on -6..6 with the pulse gives ideal / noisy
+     rows 1010101 / 1111011 (tick 3), 01010 / 00001 (tick 4), 101 / 001 (tick 5), incoming source errors (1, 1) at
+     tick 4 and (1, 0) at tick 5; the black-centre guard (p = q = 0, r = 1) gives 0, not Rule 90's 1.
 """
 import random
 from fractions import Fraction as F
@@ -560,4 +564,29 @@ for w in range(2 ** 13):
 check('S15 G113: A 1872 with 40, B 896 with 0, child (0,1) 40 with 20; traces uniform',
       (cntA, sA, cntB, sB, cntC, sC) == (1872, 40, 896, 0, 40, 20) and len(hI7) == 128 and set(hI7.values()) == {64}
       and len(hJ7) == 128 and set(hJ7.values()) == {64}, str((cntA, sA, cntB, sB, cntC, sC)))
+ok16 = True
+for a_, b_, c_, p_, q_, r_ in product((0, 1), repeat=6):
+    lit = R30(a_, b_, c_) ^ R30(a_ ^ p_, b_ ^ q_, c_ ^ r_)
+    ok16 &= lit == p_ ^ ((1 - c_) & q_) ^ ((1 - b_) & r_) ^ (q_ & r_)
+word = '0011110010000'
+x = {i - 6: int(word[i]) for i in range(13)}
+zr, yr = dict(x), dict(x)
+rows = {}
+for t in range(1, 6):
+    lo, hi = -6 + t, 6 - t
+    nz = {i: R30(zr[i - 1], zr[i], zr[i + 1]) for i in range(lo, hi + 1)}
+    ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+    if t == 1:
+        ny[0] = R30(yr[-1], yr[0], ny[1])
+    zr, yr = nz, ny
+    rows[t] = (zr, yr)
+sl = lambda r_, lo, hi: ''.join(str(r_[i]) for i in range(lo, hi + 1))
+ok16 &= (sl(rows[3][0], -3, 3), sl(rows[3][1], -3, 3)) == ('1010101', '1111011')
+ok16 &= (sl(rows[4][0], -2, 2), sl(rows[4][1], -2, 2)) == ('01010', '00001')
+ok16 &= (sl(rows[5][0], -1, 1), sl(rows[5][1], -1, 1)) == ('101', '001')
+e4 = (rows[4][0][-1] ^ rows[4][1][-1], rows[4][0][1] ^ rows[4][1][1])
+e5 = (rows[5][0][-1] ^ rows[5][1][-1], rows[5][0][1] ^ rows[5][1][1])
+ok16 &= e4 == (1, 1) and e5 == (1, 0)
+ok16 &= (0 ^ ((1 - 0) & 0) ^ ((1 - 1) & 1) ^ (0 & 1)) == 0 and (0 ^ 1) == 1
+check('S16 G114: expanded identity on 64 triples; the cylinder rows; incoming errors (1,1), (1,0); black guard', ok16)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

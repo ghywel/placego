@@ -1278,7 +1278,7 @@ Keeping one previous paired observation still misses pulse-model memory.
 
 **An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
 
-## W114
+## G114
 Two incoming errors can cancel at a healed white source.
 
 **What it says.** At a shared white centre, next synchronous error is the XOR of the two neighbour errors; at a shared black centre only the left error passes.
