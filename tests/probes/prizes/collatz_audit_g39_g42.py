@@ -7,13 +7,16 @@ binomial(T,a)/T <= A(T,a) <= binomial(T,a); G40's skeleton cube (a surviving ske
 (f_w(0) = f_w0(0) + sum of 3^(a-s-1) / 2^(T-t) over the free pairs oriented 01), which is stronger than G40's
 statement modulo 3^a; G42's affine identity 2^T q = 3^a r + sum_odd_j 2^j 3^(a - S_(j+1)) for T <= 10 with the Terras
 representative r; G42's family sum 5 * sum x_k^2 = 20480/3103353 and its cosine product; G41's frequency-boundary
-valuations. (Local, 2026-10-06; second reading in CHAT-LEDGER.md L007.)
+valuations; and (added the same day) G43's binary-reader coefficient 2/[M(1 + e(-h/M))], its total weight bound
+3 + log M and the bound 2/M at h = 2^T in G42's family. (Local, 2026-10-06; second readings in CHAT-LEDGER.md L007, L008.)
 
 RUN-ON:     cpu, one core, standard library
 COMMAND:    python3 tests/probes/prizes/collatz_audit_g39_g42.py
 COST:       about a minute.
 OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failures; 5 sum x_k^2 = 20480/3103353 =
   0.0066 exactly; product of 60 cosines 0.99350; valuations 4, 3, 2, all killed by h = 3^7 modulo 3^9.
+  G43 part (second run, the same day): formula error 4e-14 for odd M < 400; weight - (3 + log M) <= 0 for every M
+  tested (largest -2.43); h = 2^T weight <= 2/M for n = 0 .. 39.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -89,3 +92,15 @@ print("G42 family: product of cos(pi x_k), 60 factors =", prod)
 # G41 frequency boundary example: 1111 M M M 11, h = 3^7 mod 3^9
 vals = [9 - s - 1 for s in (4, 5, 6)]
 print("G41 boundary: valuations", vals, "; h*Delta divisible by 3^9 for all:", all(7 + v >= 9 for v in vals))
+# G43 (added 2026-10-06): the +-1 parity reader on Z/M, M odd
+e = lambda x: cmath.exp(2j * math.pi * x)
+worst, over = 0.0, -1e9
+for M in list(range(3, 400, 2)) + [3**k for k in range(6, 10)]:
+    if M < 400:
+        for h in range(1, M):
+            direct = sum((1 - 2 * (x % 2)) * e(-h * x / M) for x in range(M)) / M
+            worst = max(worst, abs(direct - 2 / (M * (1 + e(-h / M)))))
+    W = 1 / M + sum(abs(2 / (M * (1 + e(-h / M)))) for h in range(1, M))
+    over = max(over, W - (3 + math.log(M)))
+fam = all(abs(2 / (3**(4 + 3*n) * (1 + e(-(2**(4 + 4*n) % 3**(4 + 3*n)) / 3**(4 + 3*n))))) <= 2 / 3**(4 + 3*n) + 1e-300 for n in range(40))
+print("G43: max |direct - formula| (odd M < 400):", worst, "; max (weight - (3 + log M)):", over, "; family weight <= 2/M:", fam)

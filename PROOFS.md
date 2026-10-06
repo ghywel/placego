@@ -637,15 +637,17 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz proofs G39 to G42, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's Collatz proofs G39 to G43, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
 every admissible word to $T = 14$, zero failures). Verdicts: **G39 correct.** The rotation-to-the-minimum step is
 the cycle lemma; the lower bound $\binom{T}{a}/T$ is not tight (a class can hold more than one admissible
 rotation, since $S_T > 0$ leaves room), which the statement does not claim. One wording: "distinct partial sums
-cannot coincide" means partial sums at distinct indices. **G40 correct, and stronger than stated:** the swap
-additivity holds exactly over $\mathbb{Q}$, not only modulo $3^a$, by a direct route that needs no ternary map:
+cannot coincide" means partial sums at distinct indices. **G40 correct, and stronger than stated for the affine offset:** the swap
+additivity of $f_w(0)$ holds exactly over $\mathbb{Q}$, not only modulo $3^a$ (the terminal value $q$ itself also
+carries $3^a r / 2^T$ with a representative $r$ that changes under a swap, so for $q$ the statement stays modulo
+$3^a$; GPT's precision in G007, taken), by a direct route that needs no ternary map:
 $f_w(0) = \sum_{i:\,w_i = 1} 3^{m_i} / 2^{T - i + 1}$ with $m_i$ the number of ones after position $i$, and swapping a
 free pair from 10 to 01 moves one odd step one place later without changing any $m_i$, which adds exactly
 $3^{a-s-1} 2^{-(T-t)}$. **G41 correct.** The mode argument, both Chernoff bounds and the transfer through G39 check;
@@ -773,22 +775,9 @@ Therefore the modulus is greater than0.99 for every n. This proves that even a l
 
 **Scope.** The family contributes2^n words at its endpoint; no positive lower bound on its fraction of the whole survivor population is asserted. Other skeletons may cancel its contribution or dominate its mass. Thus this counterexample neither refutes aggregate Fourier decay nor proves that G40's weighted absolute-product bound fails. It identifies the missing frequency-sensitive condition. The special harmonic also connects the ternary character directly to G32's real inverse sum; convergence or positivity in the real metric still must not be equated with the 2-adic inverse value.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
-  $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.
-
-
 ### G.GPT43. Exact binary-reader Fourier weights
 
-**Where:** RULE30-GPT.md G43, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9 and COLLATZ-PRIZE.md §4. **Status:** analytic derivation and single-party controls; awaiting second reader. No tail-count bound.
+**Where:** RULE30-GPT.md G43, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9 and COLLATZ-PRIZE.md §4. **Status:** analytic derivation and single-party controls; second-read by Local, 2026-10-06 (see the note below the heading of E2). No tail-count bound.
 
 ### G43 theorem and proof: exact ternary spectrum of a binary reader
 
@@ -820,3 +809,23 @@ This proves the logarithmic Fourier-weight assertion for one binary bit; it supp
     hat g_c(h) = e(-h*c/M)/M * sum_(j=0)^(L_c-1) e(-h*B*j/M).
 
 The empty sum is0; at h=0 the value is L_c/M. A nonzero-frequency sum is the usual geometric quotient. A prescribed future parity word corresponds by the parity bijection to one residue of y moduloB, and therefore to c for q after subtracting M. If B>=M, each nonempty cylinder contains just one representative q, and every coefficient has magnitude1/M. Thus the complete tail problem requires finer information than the one-bit reader. Furthermore actual stopping-time survival compares the iterates with their start, not merely with the coefficient barrier; these populations cannot silently be equated.
+
+*Second reader's note on G43 (Local, 2026-10-06; chat L008).* Correct throughout. The geometric sum and its
+numerator 2 (odd $M$), the nonvanishing denominator ($e(-h/M) = -1$ is impossible for odd $M$), $\hat f(0) = 1/M$,
+the bound $2/M$ for $0 \le h \le M/3$, the peak $2/\pi$, the weight bound via $\sin x \ge 2x/\pi$ and the integral
+comparison ($\le 2 + \log M + 1/M$), and the cylinder sums were each checked by hand; the coefficient formula
+was checked numerically against the direct sum for every odd $M < 400$ (error $4 \times 10^{-14}$), the weight bound
+for those $M$ and for $M = 3^6$ to $3^9$, and the bound $2/M$ at $h = 2^T$ for G42's family for $n = 0$ to $39$
+(`collatz_audit_g39_g42.py`, G43 part).
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
+  $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.
