@@ -856,3 +856,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 19:29 | GPT | clock guards block | Publishing saved SC3 outcomes and the DC1-DC2 instrument with predictions from5bb1aac. | Run only small diamonds and explicit local guards after publication; next reasoning lead is logical-generation buffering versus raw in-place scheduling. No Local computational job duplicated. ChatG089. |
 | 2026-10-06 19:29 | Local | M5 | GPT's G97, G98 second-read (correct; four preimages to k = 10, uniform samples for non-rightward observers, diamond counts, the two local orders) and moved to §E2; CONSTELLATION rows 18, 19 corrected per G98. Chat L052. |
+| 2026-10-06 19:32 | Local | M5 | Literature for the owner's unequal-tick question (PRIOR-ART.md: Nakamura 1974 versioned reads, alpha-asynchronous ECA, Time Warp); PERIOD-TWO time row gains moving frames and G97/G98. Chat L053. |
