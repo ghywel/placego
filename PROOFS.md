@@ -3846,3 +3846,37 @@ In particular the ancestor-tail spatial periods are unbounded for every nonzero 
 **Independent perspective and unexpected check.** The same bound is the finite-state absorbing-orbit bound:a p-bit deterministic system cannot have a first-hit transient of length>=2^p. This checks the indexing without the inverse graphs. The nonzero-root hypothesis is essential:the zero row has all canonical ancestors zero,all periods 1,and first-hit time 0. Treating every finite row as a root,or every inverse depth as a first-hit time,would incorrectly apply the bound to this counterexample. For a non-root finite row,first descend to its root as in G121;the finite ancestry contributes a time offset,so the statement above is anchored at the root.
 
 **What this bridges and what it does not.** This crosses from the finite inverse transducer to an all-depth necessity:uniformly bounded ancestor-tail periods are impossible. The natural candidate ranking is the first-hit depth on each periodic ring;it decreases under forward evolution,but its state space changes with p_n. It is not a ranking for the forced0101 walk and provides no contradiction to a temporal wall. The missing theorem remains a link from an eventual0101 wall to bounded ancestor-tail periods,or another incompatible restriction. Since unbounded tail periods occur for every nonzero finite root,the property alone cannot distinguish a hypothetical period-two counterexample from other seeds. The counting here is a finite-state pigeonhole proof,not a survivor-decay assumption. The finite-state pigeonhole bound is elementary. G105 supplies related absorbing-zero ring examples, not this ancestor-depth claim. No novelty claim for the general orbit bound.
+
+### G124. Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two (2026-10-06)
+
+**Status:** symbolic inverse-transducer theorem; independent review pending. No new experiment. This classifies least spatial periods of individual periodic rows that reach the all-zero row; it does not claim that Rule 30 is a nilpotent cellular automaton. It supplies no temporal-wall exclusion.
+
+Let y be a spatially periodic output with least period p, and let x be any spatially periodic predecessor. Translation invariance implies p divides x's least period q. Inverting from right to left uses G122's pair maps
+
+    M0(u,v)=(u OR v,u),
+    M1(u,v)=(1 XOR (u OR v),u).
+
+If y is nonconstant, p>=2 and one output symbol in a period is zero. Choose the period cut so the first descending symbol is that zero. The first map sends all four pair states into T={00,10,11}. The following map sends T to at most two states, regardless of the next symbol:
+
+    M0(T)={00,11},
+    M1(T)={10,01}.
+
+Every later map preserves the upper bound on image size. Thus the p-symbol return map has image size at most two and every cycle has length at most two. The pair states of a periodic predecessor lie on a return-map cycle: there is no transient when the row repeats in both spatial directions. If the cycle length is k, the reconstructed bits have period dividing k*p. Combining k<=2 with p dividing q gives
+
+    q=p or q=2*p.
+
+This statement permits several predecessors and does not assume a unique periodic predecessor. The cut is just a phase choice, not a restriction on the row.
+
+For constant output zero, M0 has only fixed cycles 00 and11, so its periodic predecessors are exactly the constant zero and constant one rows. For constant output one, M1 has the unique three-cycle 00->10->01->00, with11 entering it; its periodic predecessors are exactly the three phases of 001. Their least spatial period is 3. These constants are the exceptions to the nonconstant-output period rule.
+
+**Classification.** Take a periodic row reaching zero, and use its finite first-hit trajectory backward from zero. If it is already zero or is the one row, its least period is 1. Otherwise the step before one has period 3. Every earlier row is nonconstant (a constant could reach zero in at most one step), so successive backward least periods are preserved or doubled. The original least period is therefore 3*2^k for some integer k>=0.
+
+**Existence at every allowed period.** G123's canonical tails of any nonzero finite root give periodic rows C_n that first hit zero at time n. Starting with p_2=3, the present return-map bound forces each subsequent period to stay fixed or double. G123 proves these periods unbounded. Hence every value3*2^k is attained somewhere in that ancestry, without skipping a power. Together with the zero and one rows, this proves the possible least periods are exactly1 and3*2^k. The depth at which each doubling occurs is not bounded here beyond G123's finite-state estimate.
+
+**Independent local check and unexpected guard, by hand.** The cyclic words give the exact forward trajectory
+
+    001010 -> 011011 -> 010010 -> 111111 -> 000000.
+
+Each arrow is checked by applying the literal triples of Rule 30 at the six labeled sites. The first word has least period 6, the next two period 3, and the last two period 1. This shows the doubled-period case is real, and that nilpotent-to-zero periodic rows need not have prime-power spatial periods. Separately,001->111 refutes applying q<=2*p to the constant-one output. These are independent finite algebra checks, not a run or a horizon extrapolation.
+
+**Scope and prior art.** Existing-record checks found G105's zero preimages and G122's inverse maps, but no recorded classification of all possible least periods of zero-reaching periodic rows. Targeted prior-art searches for Rule 30 periodic preimages and zero-reaching/nilpotent periodic configurations did not locate a suitable primary source for this exact claim; novelty remains unresolved. The proof above is self-contained. Every nonzero root has these ancestor-period doublings, so they are not a distinguishing feature of a hypothetical eventual 0101 trace. This theorem is a structural result about the periodic zero basin, not evidence that the open temporal-wall bridge is complete.

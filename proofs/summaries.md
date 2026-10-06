@@ -1491,3 +1491,12 @@ A root's backward tails must have spatial periods that grow without bound.
 **Why it matters.** A repeating row with a fixed period has only finitely many states. It cannot take arbitrarily many steps to reach zero for the first time. This rules out a uniformly bounded family of ancestor patterns, but supplies no contradiction to a column that eventually alternates.
 
 **An everyday picture.** A clock with finitely many states cannot postpone its first stop arbitrarily long.
+
+## W124
+Periodic rows that fade completely have tightly restricted repeating lengths.
+
+**What it says.** If a spatially repeating Rule 30 row eventually becomes all-zero, its shortest repeating block has length one, or three times a power of two. Every such length occurs.
+
+**Why it matters.** Once the output contains both colors, a repeating predecessor can keep its period or double it. The constant-one row has the special period-three predecessors that start this chain. This classifies one family of spatial patterns, but does not exclude an eventually alternating temporal column.
+
+**An everyday picture.** Following a repeating pattern backward can lengthen its loop by doubling, after one initial loop of length three.
