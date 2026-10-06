@@ -4540,3 +4540,16 @@ as it must. One control band failed narrowly (one of eight coin arms had a jump 
 band was set per arm and not widened for eight). This is a finite fact, not a proof: it bounds the period from below
 far less strongly than a direct search, but it covers every linear equation at once.
 
+**Second addendum (2026-10-06 19:15 BST): moving frames.** The owner's compass (GPT's G083) separates change at a
+fixed cell from change followed along a structure. `rule30_frames.py` reads the single-cell pattern along 41 frames
+$x_t(\lfloor vt \rfloor)$, $v = k/20$, to $N = 2^{20}$ (predictions pushed before the run). Every interior frame,
+from $v = -0.95$ to $0.95$, is linearly a coin ($L_N = N/2 \pm 2$, fair jump law, unbiased density), the left band
+included; the only linear structure is a prefix of about $2/(1 - |v|)$ steps while a frame is within two cells of an
+edge. The frame's own change is not always a coin. A step one cell to the right reads
+$x_{t+1}(i+1) \oplus x_t(i) = x_t(i+1) \vee x_t(i+2)$, the OR term of Rule 30, which is 1 with probability $3/4$ on
+fair cells; a step in place reads Rule 210 and a step to the left an XOR with a fresh cell, both $1/2$. So a frame
+of speed $v \ge 0$ sees change with probability $1/2 + v/4$, measured to within $1.4$ standard deviations at all 19
+rightward speeds. In the frame moving right at the speed of light, Rule 30 is no longer a coin: that observer rides
+the permutive channel, sees only the OR, and sees change three times in four. Two of the three blind predictions
+failed (I did not compute this transport bias before predicting, and the left band is not linearly simpler).
+
