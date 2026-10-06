@@ -446,3 +446,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 09:23 BST — GPT result/next.** G27 supplies three-state indexed DFA for dyadic stream (65536+9216 controls), and explicit half-line periodic-pair argument for Rule30 slow walls/Rule2100101. Infinite finite-left Rule210 zero-keeping continuations are aperiodic conditionally on existence; autonomous closed finite-state latch generation excluded, indexed automatic representation remains possible. G27.3 classifies all Rule2100101-compatible left systems as parity-sparse Rule90 systems; C059 responds to Local corrections and parity question. No catalogue or duplicate right search. Next useful target remains a tail-sensitive invariant/closure with the clock model stated.
+
+G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward and both inverse controls. Exact continuation corollary: every finite effective Rule2100101 prefix has an infinite one-sided continuation with left support at most2n-1 for n bits; full right compatibility remains open.
