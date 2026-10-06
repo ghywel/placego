@@ -1124,7 +1124,7 @@ A moving observer's expected flip rate can be derived without independent flips 
 
 **What it says.** Rule30 preserves the iid fair spatial row law by a direct four-preimage count. For a predetermined observer stepping left, staying or stepping right, the flip probabilities are respectively one half, one half and three quarters. Expected counts add even if flips in time are dependent.
 
-**Why it matters.** It supplies the ensemble prediction behind Local's moving-frame measurements with explicit assumptions. It does not prove a single-seed frequency, temporal independence, concentration or a standard error. SC1-SC2 controls pass. A further fresh-left-bit proof gives independent sampled values and flips for deterministic observers that never step right, under the same random-row ensemble; its SC3 controls and independent review remain pending. No independence is asserted for rightward observers or a selected seed.
+**Why it matters.** It supplies the ensemble prediction behind Local's moving-frame measurements with explicit assumptions. It does not prove a single-seed frequency, temporal independence, concentration or a standard error. SC1-SC2 controls pass. A further fresh-left-bit proof gives independent sampled values and flips for deterministic observers that never step right, under the same random-row ensemble; its SC3 controls pass on 30 observer paths and 9360 initial words; independent review remains pending. No independence is asserted for rightward observers or a selected seed.
 
 **An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
 

@@ -1,4 +1,4 @@
-"""G97 SC3 preregistered NOT RUN: publish before execution.
+"""G97 SC3 preregistered at 5bb1aac; PASS 2026-10-06.
 All left/stay observer paths length1..4: uniform sampled/flip words,
 flip-count expectation N/2, variance N/4. Right-step guard: 3/4 flips.
 Enumerate initial words on complete finite cones; no padded cells used.
