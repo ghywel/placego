@@ -341,3 +341,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Sideways periodic points correspond exactly to recurrent Rule 30 ring states](W125-sideways-periodic-points-correspond-exactly-to-recurrent-rule.md):
   Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
+- [The ternary sideways map has an exact six-word image and a local predecessor section](W126-the-ternary-sideways-map-has-an-exact-six.md):
+  Six forbidden words completely describe the sideways rule's first ternary image.

@@ -1509,3 +1509,12 @@ Cycles in the sideways rule are the same spacetime patterns as recurrent ring st
 **Why it matters.** This identifies all sideways periodic points through finite-ring recurrence. A row that is merely heading toward a cycle does not qualify, because the sideways construction needs a consistent infinite past as well as a future. The correspondence supplies no restriction on nonperiodic sideways orbits.
 
 **An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
+
+## W126
+Six forbidden words completely describe the sideways rule's first ternary image.
+
+**What it says.** A ternary sequence has a predecessor exactly when it avoids six short words. A local construction produces a predecessor for every allowed sequence.
+
+**Why it matters.** The old forbidden words were only a necessary test. This supplies both necessity and sufficiency, including nonperiodic sequences, while showing that the image still contains many freely chosen patterns. It does not describe the deeper images or enforce a prize problem's wall.
+
+**An everyday picture.** A short checklist now determines whether a whole sequence can pass through one stage, but later stages may impose more rules.
