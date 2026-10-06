@@ -1286,3 +1286,12 @@ Two incoming errors can cancel at a healed white source.
 **Why it matters.** G113's two healed ticks hide equal incoming errors, followed by one uncancelled error. The full damage rule includes a nonlinear mixed term; it is not autonomous Rule90. DP0-DP2 pass64 local identities, cone rows and the autonomous-Rule90 guard; independently reviewed by Local L071.
 
 **An everyday picture.** Two opposing disturbances can hide each other without disappearing.
+
+## W115
+Remembering the injection and one lag still misses older observed information.
+
+**What it says.** In the pulse model a candidate state containing the injection indicator and last two paired observations has next-error rate1/2, while a positive full-history refinement has rate0.
+
+**Why it matters.** The immediately earlier observation finds no split, yet the full observed past gives24. A shallow held diagnostic can falsely suggest closure. All8192 cone words were checked; independent review is pending. No repeated-race or all-orders claim.
+
+**An everyday picture.** Remembering the incident and yesterday can still miss an older clue.

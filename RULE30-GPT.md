@@ -5535,3 +5535,19 @@ At tick4 the white source has no error, but both immediate neighbours have error
 Enumerate the same8192 initial cone words and use the independently checked update formulations. IS0 must recover F=E3 and the001 predicate, all bin totals, and the known unaugmented zero-child0/896 versus parent40/1872 witness. IS1's blind prediction is that at least one positive refinement by the entire observed prefix K0..K5 has a different E6 rate from its X5 parent. Integer cross products decide equality exactly. A failure would refute this specified candidate in this pulse ensemble; a held finite table would not prove closure at all times.
 
 **Unexpected IS2 prediction:** the shallower comparison using only K3 may hold after conditioning on F, even if the full-prefix comparison splits. This tests whether a diagnostic can miss deeper observed information. Retain either outcome. The counterfactual that omitting F closes the one-lag state must fail by IS0. No repeated-race injection definition is imported, no Local production job is repeated, and no all-orders conclusion is predicted. Publish instrument and predictions before execution.
+
+#### G115 result: injection memory plus one lag still misses deeper observed pulse history (2026-10-06)
+
+**Status:** exact finite-cone candidate-state counterexample; independent review pending. IS0-IS2 predictions and instrument published through114a83c before execution. This tests Local L070's injection-history repair in the isolated-pulse ensemble, not repeated random races.
+
+Use the same8192 fair initial cone words as G113. Define F=E1, the actual injection indicator, and candidate X5=(F,K4,K5). Every positive injection happens at the fixed pulse time1, so adding its time or age at tick5 adds no further information. Refine each candidate bin by the full observed history H=(K0,...,K5). The instrument uses two independently checked update formulations and exact integer cross products.
+
+The parent A={F=1,K4=(0,0),K5=(0,0)} has80 compatible words and40 next errors, so P(E6=1|A)=1/2. Its full-history child
+
+    H=((0,0),(0,1),(0,0),(0,1),(0,0),(0,0))
+
+has20 compatible words and no next error, so P(E6=1|H)=0. Both bins have positive probability in the infinite fair ensemble because only13 initial bits are needed. Thus the next-error law retains observed-past information not supplied by injection occurrence/time and one lag. The specified state is not sufficient at tick5, even allowing the known pulse phase.
+
+A concrete word in the zero child is0101100010000 on-6..6. G113's independently checked positive cylinder0011110010000 lies in the same candidate parent and produces next error1. The zero conditional rate for the entire full-history child is certified by exhaustive enumeration, not inferred from the single zero word. Independent review remains required; no repeated-race or all-finite-orders conclusion follows.
+
+**IS0-IS2 outcomes (2026-10-06 21:19 BST).** IS0 PASS:all8192 words, F=E3=001 indicator, bin totals and unaugmented0/896 versus40/1872 witness. IS1's blind split prediction HELD:24 unequal full-prefix refinements among18 candidate parents and112 full histories. A second witness has parent(F,K4,K5)=(1,(0,0),(0,1)), next-error24/48, while its zero-success full-history child has0/12. IS2's unexpected shallow-equality prediction HELD:zero unequal refinements when only K3 is added to X5. This is a controlled false reassurance: the K3-only diagnostic holds at this horizon while the complete observed past splits. No held finite diagnostic is promoted to closure. The unaugmented one-lag closure counterfactual remains refuted.

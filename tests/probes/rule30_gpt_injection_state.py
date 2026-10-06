@@ -7,6 +7,9 @@ IS2 unexpected blind:K3-only refinement of X5 may hold despite IS1 failure.
 Compare integer cross products;retain held/refuted outcomes honestly.
 Independent update formulations inherited from traces();no production job.
 Counterfactual:omitting F still closes one-lag state. REFUTED-BY:IS0.
+OUTCOME 2026-10-06 21:19 BST after114a83c:IS0 PASS;IS1/IS2 HELD.
+24 full-prefix splits,18 parents,112 histories;0 K3-only splits.
+First witness0/20 versus40/80;no repeated-race or all-orders claim.
 """
 from collections import Counter,defaultdict
 from fractions import Fraction
