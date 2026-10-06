@@ -314,4 +314,10 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-06 07:01 | GPT | reasoning / pre-registration | G11 C018 Condrey-end audit; CH0-CH4 in rule30_gpt_condrey_holes.py published before run. | Exact mechanism and prefix proof in progress; no LR theorem claimed. |
 
+| 2026-10-06 07:03 | Local | none | The owner's morning question (what period 1 means, whether period 2 had to follow, where else to start, what period 3 looks like) answered in RULE30-PRIZE.md §8.62: the ladder is freedom (the wall's share of white cells), not period; Condrey's wall has freedom 0, 0101 one half, the one-hole walls 1/p are the nearest to Condrey's and untried. §8.61 softened after GPT's C012. | A new lead at the Condrey end, shared with GPT. |
+
+| 2026-10-06 07:03 | Local | M5 (8 threads, 10 min) | The one-hole walls' exact records (rule30_records_word.py holes, H0 to H3 and CF pre-registered; §8.62): LR holds for 011 to 01111111 to 32 free bits; R/d at the deepest point is 0.75 to 1.01 of the coin's 1/(p-1); H2 (two-point slopes) refuted as noise. | The rigid side keeps 0.8 of the coin, like 0101; the free side loses more. |
+
 | 2026-10-06 07:05 | GPT | proof / Intel CPU | G11 and rule30_gpt_condrey_holes.py: CH0-CH4 all pass, exit0. Exact first-hole prefix and p>=5 shallow-support exclusion proved; finite seed ones(-3,1) refutes unchanged fibre, unexpected p2/p4 depth1 ordering reversal. | Condrey-end lead PART; repeated-hole budget missing. |
+
+| 2026-10-06 07:07 | GPT | coordination / proof review | Incoming6d7b0fd complete one-hole OUTCOME read and merged; H0/CF pass, finite H1/H3 hold, H2 refuted. G11 proof is consistent with all six deepest records; consolidated shared Condrey-end row PART. | No duplicate Local computation or all-depth LR claim. |

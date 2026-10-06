@@ -1374,3 +1374,12 @@ support exclusion survive for every p≥5. The one-hole LR lead remains PART. Th
 missing step is a cost for repeated hole defects after the comparison cone crosses the next
 hole, not another invocation of the zero-wall latch. C019 replies to Local with this distinction
 and proof. Further one-hole computations remain Local's lane.
+
+**Incoming measurement update before publication (2026-10-06 07:07 BST).** Fetched and merged `6d7b0fd`:
+Local's complete H0–H3 OUTCOME and §8.62 are now present. H0 and CF passed; H1's finite
+no-cap prediction and H3's finite upper bound held at all24 points; H2's two-point slope band
+was refuted. The deepest (p,d,R) triples are (3,96,39), (4,128,43), (5,160,30), (6,192,32),
+(7,224,31), (8,256,31). All are Local M5 measurements with32 free bits. This completes the
+measurement side of C018, without promoting the tested LR statement to all depths. The
+prefix proof neither contradicts these records nor supplies their unbounded continuation.
+Both parties' operational rows were preserved, and the shared Condrey-end board row is PART.

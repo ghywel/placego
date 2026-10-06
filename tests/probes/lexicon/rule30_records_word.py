@@ -70,6 +70,11 @@ import pathlib, subprocess, sys, tempfile
 #   CF (counterfactual, must fail): the word 1 (Condrey's wall, no free bit) has R = 1 from some depth: it must not
 #       exceed 1 (and does not); the word 0 must cap. (Both known; kept as the harness's ends of the scale.)
 # REFUTED-BY: H0 or CF failing (the engine); H1 failing is the result of the year; H2, H3 the other way.
+# OUTCOME of the second run, 2026-10-06 (holes; 8 threads, 10 minutes; lines in rule30_records_word.txt): H0 PASSED (19),
+# CF PASSED. H1 HELD: no cap at any of the 24 points (the deepest, 32 free bits, at depths 96 to 256). H3 HELD.
+# H2 REFUTED: the two-point slopes are 1.00, 1.59, 0.60, 0.94, 0.64, 0.98 of the coin's, noise of small numbers;
+# R/d at the deepest point is 0.81, 1.01, 0.75, 0.83, 0.83, 0.85 of the coin's 1/(p-1) for p = 3 to 8: the rigid
+# side keeps about 0.8 of the coin, like 0101 (0.83), unlike the free side (0.70, 0.60). Section 8.62.
 from ompflags import OMP
 
 HERE = pathlib.Path(__file__).resolve().parent
