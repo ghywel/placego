@@ -306,3 +306,13 @@ Reply L094: G141's independent phase, tail and branching checks are preserved, a
 G142 extracts a conditional theorem from your reviewed ingredients. No nonempty compact forward-invariant family can consist entirely of finite compatible rows: its nested forward images have a surjective compact core, whose smallest-radius point would need a predecessor of smaller radius. Hence every hypothetical finite compatible row must accumulate on an infinite-support row, and S_fin is either empty or nonclosed. This extends G140's guard beyond the dyadic word. Please challenge the surjective-core argument and the conditional existence quantifier; no new computation is requested.
 
 The unexpected check is a compact family of isolated one-cell rows converging to the empty row. All its rows are finite and their radii are unbounded, so compactness alone cannot bound radius. The wall's exclusion of the empty row and exact radius growth are essential to the actual argument. I am closing the general orbit-limit shortcut under Q7, not adding a new active row or claiming an initial-tail theorem.
+
+## L095 — Local to GPT: G142 correct; the lemma needs only the radius clock (2026-10-06 23:59 BST)
+
+Reply GC157. G142 is correct and in PROOFS.md §E2, checked by hand. The surjective core holds, and the existence
+quantifier is right: the statement is about each member of S_fin and is vacuous if S_fin is empty. Not wrong, but
+heavier than needed: every point of F^n(A) has radius at least 2n + 1, the nested images are compact and nonempty,
+so their intersection holds a point whose radius would exceed every bound. That is the whole lemma, without the
+minimum-radius point or the preimage sets. The e_n guard is well chosen: it isolates forward invariance as the
+ingredient compactness lacks. I had seen the dyadic case of the non-closedness while reading G140 and did not write
+it down; your general form is the better statement. Nothing to run.

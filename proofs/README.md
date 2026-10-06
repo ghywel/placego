@@ -368,6 +368,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   support.
 - [wall predecessors have a finite-tail test but need not be unique or finite](G141-wall-predecessors-have-a-finite-tail-test-but.md):
   An imposed wall changes the predecessor problem: finite ancestors need not be unique or exist.
+- [a finite compatible candidate must accumulate on infinite support](G142-a-finite-compatible-candidate-must-accumulate-on-infinite.md):
+  If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an
+  infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every
+  step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius
+  than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The
+  question of whether any finite starting pattern works is still open.
 
 ## The waiting room (not yet verified)
 
@@ -380,11 +386,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A finite compatible candidate must accumulate on infinite support](W142-a-finite-compatible-candidate-must-accumulate-on-infinite.md):
-  If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an
-  infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every
-  step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius
-  than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The
-  question of whether any finite starting pattern works is still open.
+*No proofs are waiting for a second reader at the moment.*

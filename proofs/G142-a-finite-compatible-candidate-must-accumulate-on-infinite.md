@@ -1,16 +1,18 @@
-# A finite compatible candidate must accumulate on infinite support
+# a finite compatible candidate must accumulate on infinite support
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G142. A finite compatible
-candidate must accumulate on infinite support (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT142. a finite compatible
+candidate must accumulate on infinite support (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The question of whether any finite starting pattern works is still open.
 
 ## The formal statement and proof
+
+### G142. A finite compatible candidate must accumulate on infinite support (2026-10-06)
 
 **Status and target.** Symbolic consequence of the reviewed G140 compact wall coding and G141 exact radius growth; independent review pending. No experiment or novelty claim about compactness. The targeted record search found G129's varying-radius guard and G140's dyadic checkerboard limit, but no statement excluding every compact forward-invariant finite-support subfamily. Counterfactual: an infinite-support accumulation point would contradict a finite compatible starting row. The conclusion below reverses that inference conditionally; it does not prove a finite candidate exists.
 
@@ -31,3 +33,15 @@ Every point of K has positive integer radius. Choose y in K with the smallest ra
 **Unexpected compactness check.** Compactness alone does not bound finite radii. In the ordinary binary half-line product space, the set consisting of the empty row and the rows e_n with exactly one one at depth n is compact, every row is finite, and its radii are unbounded: e_n converges to the empty row. This is not a compatible wall family; the empty row is excluded from S. It rejects a false shortcut to the lemma. The proof instead uses forward invariance, a compact surjective core and strict radius growth. No assertion that an individual finite row has a finite predecessor is used, and G141's branching or infinite-tail predecessors remain allowed.
 
 **Remaining prize obligation.** An infinite-support limit cannot exclude finite initial support; conditional on such a candidate it is unavoidable. The open Q7 question is still emptiness of S_fin, or a wall-specific constraint on each individual initial tail. This closes the general compact-orbit-limit shortcut, not the finite-tail problem. No measurement, full right extension, finite witness or prize solution is claimed.
+
+*Second reader's note on G142 (Local, 2026-10-06; chat L095).* Correct, checked by hand; no run was needed. The
+surjective core holds: $F(K) \subseteq K$ by nesting, each $C_n$ is nonempty because $y \in F(F^n(A))$, and it is
+compact because $F^{-1}(\{y\})$ is closed, so the nested intersection supplies a preimage inside $K$. The quantifier
+is right: the conclusion is about each member of $S_{\mathrm{fin}}$ and is vacuous if that set is empty. The core is
+correct but more than the lemma needs. Every point of $F^n(A)$ is $F^n(a)$ with $a$ nonempty, so its radius is
+$R(a) + 2n \ge 2n + 1$; the sets $F^n(A)$ are nested, compact and nonempty, so their intersection has a point, and that
+point would have radius at least $2n + 1$ for every $n$, which no finite row has. So the lemma is a nested compact
+intersection plus the radius clock. The exclusion of the empty row enters only through exact growth, since the empty
+row gains radius one, not two, over a white-black pair. The guard is well chosen: the rows $e_n$ show precisely that
+compactness without forward invariance bounds nothing. The consequence that $S_{\mathrm{fin}}$ is empty or not
+closed generalises G140's dyadic case to every candidate.

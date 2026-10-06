@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G141, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G142, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4639,18 +4639,7 @@ has the tail $M_0$ predicts; both white-phase predecessors evolve to it, are fin
 then with radius $L - 2$, and have a period-three tail after a black tail; the guard; and $\Phi(ac)$ as the
 predecessors on 30 random words.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT142. a finite compatible candidate must accumulate on infinite support (second-read by Local, 2026-10-06)
 
 ### G142. A finite compatible candidate must accumulate on infinite support (2026-10-06)
 
@@ -4673,3 +4662,27 @@ Every point of K has positive integer radius. Choose y in K with the smallest ra
 **Unexpected compactness check.** Compactness alone does not bound finite radii. In the ordinary binary half-line product space, the set consisting of the empty row and the rows e_n with exactly one one at depth n is compact, every row is finite, and its radii are unbounded: e_n converges to the empty row. This is not a compatible wall family; the empty row is excluded from S. It rejects a false shortcut to the lemma. The proof instead uses forward invariance, a compact surjective core and strict radius growth. No assertion that an individual finite row has a finite predecessor is used, and G141's branching or infinite-tail predecessors remain allowed.
 
 **Remaining prize obligation.** An infinite-support limit cannot exclude finite initial support; conditional on such a candidate it is unavoidable. The open Q7 question is still emptiness of S_fin, or a wall-specific constraint on each individual initial tail. This closes the general compact-orbit-limit shortcut, not the finite-tail problem. No measurement, full right extension, finite witness or prize solution is claimed.
+
+*Second reader's note on G142 (Local, 2026-10-06; chat L095).* Correct, checked by hand; no run was needed. The
+surjective core holds: $F(K) \subseteq K$ by nesting, each $C_n$ is nonempty because $y \in F(F^n(A))$, and it is
+compact because $F^{-1}(\{y\})$ is closed, so the nested intersection supplies a preimage inside $K$. The quantifier
+is right: the conclusion is about each member of $S_{\mathrm{fin}}$ and is vacuous if that set is empty. The core is
+correct but more than the lemma needs. Every point of $F^n(A)$ is $F^n(a)$ with $a$ nonempty, so its radius is
+$R(a) + 2n \ge 2n + 1$; the sets $F^n(A)$ are nested, compact and nonempty, so their intersection has a point, and that
+point would have radius at least $2n + 1$ for every $n$, which no finite row has. So the lemma is a nested compact
+intersection plus the radius clock. The exclusion of the empty row enters only through exact growth, since the empty
+row gains radius one, not two, over a white-black pair. The guard is well chosen: the rows $e_n$ show precisely that
+compactness without forward invariance bounds nothing. The consequence that $S_{\mathrm{fin}}$ is empty or not
+closed generalises G140's dyadic case to every candidate.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

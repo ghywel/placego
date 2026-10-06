@@ -1707,6 +1707,6 @@ An imposed wall changes the predecessor problem: finite ancestors need not be un
 **An everyday picture.** Holding a boundary externally can discard information that ordinary evolution would carry into the other half of the system.
 
 
-## W142
+## G142
 
 If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The question of whether any finite starting pattern works is still open.
