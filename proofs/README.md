@@ -364,3 +364,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Golden-angle codes cannot be rescued by super-geometrically separated kicks](W133-golden-angle-codes-cannot-be-rescued-by-super.md):
   A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
+- [Bounded-type rotation codes require geometrically spaced corrections](W134-bounded-type-rotation-codes-require-geometrically-spaced-corrections.md):
+  The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
