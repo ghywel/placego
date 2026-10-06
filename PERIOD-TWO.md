@@ -204,7 +204,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 
 | Check | Status | What has been done | What is left |
 |---|---|---|---|
-| The literature for W3 (COLLATZ-PRIZE.md §5) and for Theorems A, A′ and E | **DONE** | Searched 2026-10-05 (PRIOR-ART.md, last entry): W2 is Dubickas 2009, W1 and W3 are in three 2026 notes; the Rule 30 theorems were not found (Kopra and Condrey are the nearest). | Read Dubickas 2009 in full; check Lemma B2 (§8.59) against Jen 1986 and Rowland 2006. |
+| The literature for W3 (COLLATZ-PRIZE.md §5) and for Theorems A, A′ and E | **DONE** | Searched 2026-10-05 (PRIOR-ART.md, last entry): W2 is Dubickas 2009, W1 and W3 are in three 2026 notes; the Rule 30 theorems were not found (Kopra and Condrey are the nearest). Dubickas 2009 read in full 2026-10-06: W2 for integers is his Theorem 5 exactly. | Check Lemma B2 (§8.59) against Jen 1986 and Rowland 2006. |
 | The math check (§9) on every document edited since Local took the lead | **DONE** | Node installed by the owner 2026-10-05; the check passes on RULE30-PRIZE.md, PRIZE-PROBLEMS.md, PERIOD-TWO.md and CLOUD-LOCAL.md. | Run it after every edit. |
 | G1, error-free transformations on each GPU (PRIZE-PROBLEMS.md §6) | **OPEN**, not written | Nothing. It is outside Rule 30. | The job and its prediction. |
 
