@@ -160,3 +160,19 @@ for wbits in range(1, 13):
     for T in range(1, 15):
         n45 += 1; bad45 += g45_count(wbits, T) != brute(wbits, T)
 print("G45: word-ceiling count = brute-force actual survival, w = 1..12, T = 1..14:", n45, "cases, failures", bad45)
+# G46 (added 2026-10-06): the word 1^k 0^(j-k), j = ceil(k log2 3): its G45 ceiling equals the closed form, and the
+# ceilings grow without bound along k with ceil(k log2 3) - k log2 3 small.
+def ceiling(word):
+    B, a, K = 0, 0, None
+    for t, b in enumerate(word):
+        B = 3**b * B + b * 2**t; a += b
+        if 3**a < 2**(t + 1):
+            c = B // (2**(t + 1) - 3**a); K = c if K is None else min(K, c)
+    return K
+bad46, best = 0, []
+for k in range(1, 400):
+    j = (3**k).bit_length()                         # 2^(j-1) < 3^k < 2^j
+    K = ceiling([1] * k + [0] * (j - k))
+    bad46 += K != (3**k - 2**k) // (2**j - 3**k)
+    if not best or K > best[-1][1]: best.append((k, K))
+print("G46: closed form = G45 ceiling for k = 1..399, failures", bad46, "; record ceilings (k, K):", best)
