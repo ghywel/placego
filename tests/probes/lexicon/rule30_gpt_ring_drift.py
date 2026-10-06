@@ -32,7 +32,7 @@ def audit(p):
         checked += 1
     reps = sorted({normalize(x, p) for x in range(1 << p)})
     quotient = cycles(reps, lambda x: normalize(vector(x, p), p))
-    zero_cycles, gauge_cases = [], 0
+    zero_cycles, zero_edges, gauge_cases = [], [], 0
     for cycle in quotient:
         if cycle == [0]:
             continue
@@ -48,6 +48,7 @@ def audit(p):
         assert sum(original) % p == direct
         if direct == 0:
             zero_cycles.append(len(cycle))
+            zero_edges.append((len(cycle), tuple(original)))
         if len(cycle) >= 2:
             assert sum(a != b for a, b in zip(original, changed)) == 2
             gauge_cases += 1
@@ -55,7 +56,7 @@ def audit(p):
         assert zero_cycles == [4]
     if p == 11:
         assert zero_cycles == [17]
-    print('DC PASS:', p, 'drift states=', checked, 'zero cycles=', zero_cycles, 'gauge cases=', gauge_cases)
+    print('DC PASS:', p, 'drift states=', checked, 'zero cycles=', zero_cycles, 'gauge cases=', gauge_cases, 'zero-cycle increments=', zero_edges)
     return checked, gauge_cases
 
 

@@ -105,3 +105,29 @@ for p in (5, 7, 11, 13):
     report[p] = sorted(qb)
 print("G56: theta(Rx) = theta(x) + 1 and sum of phase increments = direct displacement; (q, b) by p:", report)
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
+# G57 (added 2026-10-06): w(y) = 3w - C, m(y) = 3m - D (mod p), delta = (C m - D w)/(w w(y)) (mod p), and the
+# numerator's rotation invariance, on every state of the prime rings 5, 7, 11, 13 whose successor is nonconstant.
+bad57 = n57 = 0
+for p in (5, 7, 11, 13):
+    mask = (1 << p) - 1
+    for x in range(1, mask):
+        y = step(x, p, mask)
+        if y in (0, mask): continue
+        xs = [(x >> i) & 1 for i in range(p)]
+        T = [xs[i] * xs[(i + 1) % p] for i in range(p)]
+        H = [xs[(i - 1) % p] * (xs[i] | xs[(i + 1) % p]) for i in range(p)]
+        E = [T[i] + 2 * H[i] for i in range(p)]
+        C = sum(E); D = sum(i * E[i] for i in range(p)) % p
+        w = sum(xs); m = sum(i * xs[i] for i in range(p)) % p
+        wy = bin(y).count("1"); my = sum(i for i in range(p) if (y >> i) & 1) % p
+        bad57 += wy != 3 * w - C
+        bad57 += my != (3 * m - D) % p
+        bad57 += (theta(y, p) - theta(x, p)) % p != ((C * m - D * w) * pow(w * wy, -1, p)) % p
+        xr = rot(x, p, mask); xrs = [(xr >> i) & 1 for i in range(p)]
+        Er = [xrs[i] * xrs[(i + 1) % p] + 2 * xrs[(i - 1) % p] * (xrs[i] | xrs[(i + 1) % p]) for i in range(p)]
+        Dr = sum(i * Er[i] for i in range(p)) % p; mr = sum(i * xrs[i] for i in range(p)) % p
+        bad57 += (C * mr - Dr * w) % p != (C * m - D * w) % p
+        n57 += 1
+fails += bad57
+print("G57: weight, moment, phase-increment identities and rotation invariance on", n57, "states (p = 5, 7, 11, 13): failures", bad57)
+print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
