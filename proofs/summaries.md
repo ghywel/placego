@@ -1242,7 +1242,7 @@ An isolated race error can disappear at its source and return without another ra
 
 **An everyday picture.** An echo can return after the place where it began has fallen quiet.
 
-## W110
+## G110
 Two individually memoryless traces can form a pair with memory.
 
 **What it says.** In the isolated-pulse model, current ideal bit and current error miss the healed error that will return next tick. The previous error determines that return, refuting a first-order Markov state even with known pulse phase.

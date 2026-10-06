@@ -52,6 +52,8 @@ CHECKS (GPT's claims at 827e006):
      XOR-difference propagation (the difference of the OR term), not the truth table; (b) every old word on sites
      -3..3 with one isolated right race at site 0 on tick 1: 16 injections, each with source signature 1, 0, 1 over
      ticks 1..3, the other 112 giving 0, 0, 0; second-tick damage sets {1} and {-1, 1}, 8 each.
+  S13 (G110, added 2026-10-06 at f922142): the isolated pulse over all 128 words on -3..3: in each bin K_2 = (b, 0),
+     8 words with E_1 = 1 and 56 with E_1 = 0; E_3 = E_1 always; both four-sample traces uniform (16 words, 8 each).
 """
 import random
 from fractions import Fraction as F
@@ -454,4 +456,27 @@ for w in range(2 ** 7):
         ok12 &= sig == (0, 0, 0)
 check('S12 G109: single-flip kernel by XOR-difference propagation; 16 injections, all 1, 0, 1; damage sets',
       ok12 and inj == 16 and sets == {(1,): 8, (-1, 1): 8}, 'injections %d, sets %s' % (inj, sets))
+bins = {}
+hI, hJ = {}, {}
+ok13 = True
+for w in range(2 ** 7):
+    x = {i: (w >> (i + 3)) & 1 for i in range(-3, 4)}
+    ideal1 = {i: R30(x[i - 1], x[i], x[i + 1]) for i in range(-2, 3)}
+    raced1 = dict(ideal1)
+    raced1[0] = R30(x[-1], x[0], ideal1[1])
+    def sync(r, lo, hi):
+        return {i: R30(r[i - 1], r[i], r[i + 1]) for i in range(lo, hi + 1)}
+    i2, r2 = sync(ideal1, -1, 1), sync(raced1, -1, 1)
+    i3, r3 = sync(i2, 0, 0), sync(r2, 0, 0)
+    I = (x[0], ideal1[0], i2[0], i3[0])
+    J = (x[0], raced1[0], r2[0], r3[0])
+    E = tuple(a ^ b for a, b in zip(I, J))
+    ok13 &= E[2] == 0 and E[3] == E[1]
+    key = (I[2], E[2], E[1])
+    bins[key] = bins.get(key, 0) + 1
+    hI[I] = hI.get(I, 0) + 1
+    hJ[J] = hJ.get(J, 0) + 1
+ok13 &= all(bins.get((b, 0, 1), 0) == 8 and bins.get((b, 0, 0), 0) == 56 for b in (0, 1))
+ok13 &= len(hI) == 16 and set(hI.values()) == {8} and len(hJ) == 16 and set(hJ.values()) == {8}
+check('S13 G110: bins 8 and 56 per ideal bit, E_3 = E_1, both traces uniform', ok13, str(sorted(bins.items())))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
