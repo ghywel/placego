@@ -281,3 +281,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [The moving-frame flip prediction under a fair spatial ensemble](W97-the-moving-frame-flip-prediction-under-a-fair.md):
   A moving observer's expected flip rate can be derived without independent flips in time.
+- [Clock reparametrization, lattice diamonds and background-dependent fronts](W98-clock-reparametrization-lattice-diamonds-and-background-dependent-fronts.md):
+  Changing a global clock, changing update order and counting cone events are different operations.

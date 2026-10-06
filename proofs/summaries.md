@@ -1127,3 +1127,12 @@ A moving observer's expected flip rate can be derived without independent flips 
 **Why it matters.** It supplies the ensemble prediction behind Local's moving-frame measurements with explicit assumptions. It does not prove a single-seed frequency, temporal independence, concentration or a standard error. SC1-SC2 controls pass. A further fresh-left-bit proof gives independent sampled values and flips for deterministic observers that never step right, under the same random-row ensemble; its SC3 controls and independent review remain pending. No independence is asserted for rightward observers or a selected seed.
 
 **An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
+
+## W98
+Changing a global clock, changing update order and counting cone events are different operations.
+
+**What it says.** Relabelling synchronous tick durations preserves the ordered state sequence. A constant-speed continuum diamond has a computable area, while integer-event counts include boundary corrections. A single seed propagates left at speed one, refuting a universal interpretation of the measured 0.246 front. Two adjacent in-place updates can give different results in reverse order.
+
+**Why it matters.** It gives precise statements for the owner's clock questions without promoting a geometric analogy to physical dilation or a complexity lower bound. Tiny guard controls and independent review remain pending.
+
+**An everyday picture.** Playing a film slowly changes its timing; rearranging its frames changes its story. Counting pixels also differs from measuring the area of their boundary.
