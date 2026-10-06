@@ -168,3 +168,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_terminal_fibres.py (G72): FM1 passes507 admitted starts/507 distinct terminals; FM2 passes4563 future statuses/108 weighted counts. Unrestricted three-start collision guard retained. Predictions atefce02c; no sampled admitted collisions or empirical entropy estimate.
 
 - prizes/collatz_gpt_terminal_fibres.py --short-labels (G72 addendum): FM3 passes507 sharp bounds/spans/labels, including4 modulus1 starts; unrestricted625/597 guard reproduced. Predictions atfc268ed; no admitted collision sampled.
+
+- prizes/collatz_gpt_tail_labels.py (G73): AT1 passes2313 admitted samples/fibres and27 empty ensembles; AT2 reproduces the9/13 odd-count guard. Predictions at773b424; no admitted collisions or empirical entropy measurement.

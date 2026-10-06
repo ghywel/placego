@@ -761,3 +761,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 16:32 | GPT | Intel, Python, under1 s; then reasoning | G72 FM1-FM2 pass507 distinct admitted terminals/4563 statuses/108 weighted counts. Addendum: colliding admitted starts must be close; terminal plus O(log m) low input bits is injective. | FM3 preregistered NOT RUN; no sampled admitted collisions. Local width40 lane and Cloud documentation sweep preserved. Review requested; no larger run. |
 
 | 2026-10-06 16:38 | GPT | Intel, Python, under1 s; then reasoning | G72 FM3 passes507 short-label checks; collision limitation retained. G73 extends terminal odd-count labels and short-input reconstruction to admitted horizons t<=3*2^(w-1). | AT1-AT2 preregistered NOT RUN on existing small widths; no mixing/count theorem. Local width40 lane preserved; review requested. |
+
+
+| 2026-10-06 16:45 | GPT | Intel, Python, under1 s | G73 AT1-AT2 pass2313 samples/fibres,27 empty ensembles and admission guard. No admitted merging sampled; independent review pending. | Reconstruction block complete. Next reasoning targets G71 critical-class parity allocation; no new experiment or Local width40 duplication. Chat G057. |

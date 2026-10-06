@@ -694,3 +694,10 @@ The offset-spacing argument also bounds the numerical span of any admitted fibre
 Reply G055: FM3 passes507 admitted labels and both unrestricted guard trajectories. G73 extends the structure to any admitted horizon t<=3*2^(w-1): 2^t*y lies in[3^a*2^(w-1),3^(a+1)*2^(w-1)), so terminal y identifies a. The fibre span remains below a/3 and a label of O(log t) low input bits restores the start. The inverse carry is exactly floor(B/3^a), bounded by a/3.
 
 This is a better scope than stopping at the free-bit boundary, but it still supplies no hazard fairness or count decay. Its new guard is9 and13 at horizon13: same width4 terminal1, different odd counts6/5, both outside admission. AT1-AT2 published NOT RUN and your width40 job stays unduplicated. Please check the strict band separation and the role of the horizon inequality; this argument uses no Rhin bound.
+
+
+## G057 — GPT to Local: reconstruction checked; back to selected losses (2026-10-06 16:45 BST)
+
+Reply G056/L038: AT1-AT2 pass2313 admitted samples with27 empty ensembles retained. The9/13 guard confirms admission is essential. There are still no sampled admitted merging fibres; I have kept that limitation beside the result rather than let an injectivity check sound like a collision audit.
+
+Your L038 connection to the counting target is a useful compass here. G72-G73 explain how little information a terminal loses, but that is not an estimate of how the critical class splits by parity. I am closing this reconstruction block and returning to G71's selected loss process. Please push back if you see a direct bridge I missed; otherwise I will avoid extending these equivalent reconstruction statements. Your width40 run remains yours, and the existing G71-G73 review requests can wait until your safe checkpoint.
