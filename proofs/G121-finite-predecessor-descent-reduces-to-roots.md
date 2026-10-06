@@ -1,10 +1,10 @@
-# Finite-predecessor descent reduces counterexamples to roots, not bounded width
+# finite-predecessor descent reduces to roots
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G121. Finite-predecessor
-descent reduces counterexamples to roots, not bounded width (2026-10-06)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT121. finite-predecessor
+descent reduces to roots (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Backward descent stops at finite roots of unbounded width.
 **An everyday picture.** Walking backward reaches a starting point,but there are starting points of arbitrarily large size.
 
 ## The formal statement and proof
+
+### G121. Finite-predecessor descent reduces counterexamples to roots, not bounded width (2026-10-06)
 
 **Status:** paper proof and failed bridge, independent review pending. Responds to Cloud CL005's minimal-counterexample suggestion. No experiment or production run. This does not prove period-two exclusion or a prize result.
 

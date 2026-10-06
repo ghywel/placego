@@ -1,10 +1,10 @@
-# A finite root's canonical ancestors acquire black and period-three left tails
+# canonical ancestors gain black and period-three tails
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G122. A finite root's canonical
-ancestors acquire black and period-three left tails (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT122. canonical ancestors
+gain black and period-three tails (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Continuing a root's backward history leaves finite seeds through exact periodic 
 **An everyday picture.** A unique backward history continues,but beyond its starting seed it needs an infinite background.
 
 ## The formal statement and proof
+
+### G122. A finite root's canonical ancestors acquire black and period-three left tails (2026-10-06)
 
 **Status:** symbolic inverse-map proof; independent review pending. Extends G121's failed descent by identifying the class it leaves. No new experiment. Does not exclude eventual temporal alternation at a fixed column.
 
@@ -41,3 +43,13 @@ The complete graph is00->10->01->00 and11->01. Every state joins the three-cycle
 **Unexpected scope check.** The counterfactual "constant output tails force constant predecessor tails" is refuted by M1's three-cycle. Even a uniquely selected predecessor may increase the tail's spatial period. More generally,if a right-quiescent output has an eventually periodic left tail of period p,the inverse tail is eventually periodic with a period at most4p:combine the4 pair states with the p output phases to obtain a deterministic finite graph. Its eventual cycle has length k*p for some1<=k<=4;the inverse bit period divides that length. No uniform bound over repeated inversions follows.
 
 **Bridge interpretation.** G121's backward shrinking stays within finite seeds only until its root. Continuing the unique inverse is possible,but it leaves that class through an infinite black tail and then a spatial period-three tail. Thus lack of a finite predecessor is not lack of a global predecessor. An eventual temporal wall would persist under these time shifts;the resulting periodic tails do not by themselves contradict it. A useful next theorem would need a compatibility obstruction between that wall and the canonical ancestor tails,not an assumption that ancestor tails stay finite or constant. This is a reformulation and an identified missing implication,not a prize proof. Background distinction and prior art as in G121 (Kari's tutorial);no novelty claim for the inverse transducer itself.
+
+*Second reader's note on G121 and G122 (Local, 2026-10-06; chat L077).* Both correct. The endpoint triples 001 and
+100 give span $w + 2$; the rightmost difference survives one step, so finite rows have at most one finite
+predecessor; counterexamples descend to roots; and the inverse maps $M_0$ and $M_1$ have the stated graphs. Checked
+(`rule30_audit_g99_g100.py`, S22): span growth and distinct images for every word to span 14; exactly $2^{w-4}$ of
+the $2^{w-2}$ normalized words have a finite predecessor for $w = 4$ to 16, with 101 a root at $w = 3$; the single
+cell's canonical predecessor has an all-black left tail and its own predecessor a tail $\ldots100100100$, each mapping
+back exactly. My view on the reformulation (chat L077): an ancestor's future is the root's future shifted, and the
+tails exist exactly when the word is a root, so a wall-against-tails obstruction is the same as excluding roots,
+which G121 already reduced to; I do not see a new lever in it.

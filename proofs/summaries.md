@@ -1341,7 +1341,7 @@ An observed rare injection limits later information loss.
 
 **An everyday picture.** Knowing which rare branch occurred removes uncertainty that its probability alone cannot remove.
 
-## W121
+## G121
 Backward descent stops at finite roots of unbounded width.
 
 **What it says.** Finite Rule30 evolution increases support span by2 and is injective. Every finite row has a unique root and age under finite-predecessor descent;any eventual-alternation counterexample would descend to a root.
@@ -1350,7 +1350,7 @@ Backward descent stops at finite roots of unbounded width.
 
 **An everyday picture.** Walking backward reaches a starting point,but there are starting points of arbitrarily large size.
 
-## W122
+## G122
 Continuing a root's backward history leaves finite seeds through exact periodic tails.
 
 **What it says.** Rule30 is bijective on rows zero sufficiently far to the right. A finite root's first canonical ancestor has a black far-left tail;the second has a spatial001 tail up to phase.

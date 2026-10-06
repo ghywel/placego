@@ -87,6 +87,11 @@ CHECKS (GPT's claims at 827e006):
   S21 (G120, added 2026-10-06 at 9f37d68): on the real pulse traces, H(E_t | paired past) <= 1/8 for t = 2..5 (the
      values are 0, 0, 0 and h2(3/8)/16); the positive toy's final error entropy is 1/8 (the bound tight), and the hidden
      event guard's is h2(1/8)/2 > 1/8 while its prefix information still obeys G119's identity.
+  S22 (G121, G122, added 2026-10-06 at 65e0261): every finite word of span w grows to span w + 2 (w <= 14); images of
+     distinct words are distinct; for w = 4..16 exactly 2^(w-4) of the 2^(w-2) normalized span-w words have a finite
+     predecessor (three quarters are roots), and 101 is a root at w = 3; the canonical right-quiescent predecessor of
+     the single black cell has an all-black left tail, and its own predecessor a left tail of period 3 with bits 001
+     up to phase; applying Rule 30 to each returns the row it came from.
 """
 import random
 from fractions import Fraction as F
@@ -805,4 +810,55 @@ ok21 &= abs(he - h2(0.125) / 2) < 1e-12 and he > 0.125
 ok21 &= abs((prefix_MI(hidden, 1) - prefix_MI(hidden, 0)) - (1 - he)) < 1e-12
 check('S21 G120: pulse error entropies <= 1/8 after t = 1; tight toy 1/8; hidden-event guard h2(1/8)/2', ok21,
       'pulse t = 2..5: %s; hidden %.6f' % (['%.4f' % v for v in vals], he))
+def fwd_finite(bits):
+    """bits: tuple with bits[0] = bits[-1] = 1 (normalized); image on positions -1..len, normalized."""
+    w = len(bits)
+    x = lambda i: bits[i] if 0 <= i < w else 0
+    out = tuple(R30(x(i - 1), x(i), x(i + 1)) for i in range(-1, w + 1))
+    return out
+
+
+ok22 = True
+for w in range(1, 15):
+    seen = set()
+    for m in range(2 ** max(0, w - 2)):
+        mid = tuple((m >> k) & 1 for k in range(w - 2)) if w >= 2 else ()
+        word = (1,) + mid + ((1,) if w >= 2 else ())
+        img = fwd_finite(word)
+        ok22 &= img[0] == 1 and img[-1] == 1 and len(img) == w + 2
+        ok22 &= img not in seen
+        seen.add(img)
+for w in range(4, 17):
+    imgs = set()
+    for m in range(2 ** (w - 4)):
+        mid = tuple((m >> k) & 1 for k in range(w - 4))
+        imgs.add(fwd_finite((1,) + mid + (1,)))
+    ok22 &= len(imgs) == 2 ** (w - 4)
+ok22 &= fwd_finite((1,)) == (1, 1, 1)
+
+
+def canon_pred(y, lo, hi, depth):
+    """Right-quiescent predecessor of y (dict on lo..hi, zero outside), computed down to site lo - depth."""
+    x = {hi + 1: 0, hi + 2: 0}
+    for i in range(hi + 1, lo - depth, -1):
+        x[i - 1] = y.get(i, 0) ^ (x[i] | x[i + 1])
+    return x
+
+
+y0 = {0: 1}
+p1 = canon_pred(y0, 0, 0, 40)
+tail1 = [p1[i] for i in range(-30, -10)]
+ok22 &= all(b == 1 for b in tail1)
+ok22 &= all(R30(p1.get(i - 1, 0), p1.get(i, 0), p1.get(i + 1, 0)) == y0.get(i, 0) for i in range(-25, 3))
+p2 = {hi: 0 for hi in ()}
+x = {3: 0, 4: 0}
+for i in range(3, -60, -1):
+    yi = p1.get(i, 1 if i < -39 else 0)
+    x[i - 1] = yi ^ (x[i] | x[i + 1])
+tail2 = [x[i] for i in range(-50, -20)]
+per3 = all(tail2[k] == tail2[k + 3] for k in range(len(tail2) - 3)) and sorted(tail2[:3]) == [0, 0, 1]
+ok22 &= per3
+ok22 &= all(R30(x[i - 1], x[i], x[i + 1]) == p1.get(i, 0) for i in range(-30, 2))
+check('S22 G121, G122: span growth and injectivity; root fraction 3/4; canonical tails black then period 3 (001)',
+      ok22, 'second tail sample %s' % ''.join(map(str, tail2[:9])))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
