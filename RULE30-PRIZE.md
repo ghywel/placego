@@ -4098,3 +4098,6 @@ white stretch. The reframing below is adjusted accordingly.
    not derived from it.
 What does not change: the uniform count of question 1 is still the only shape that wins, whichever family it is
 first proved on, and the method (predictions first, failures kept, two readers) is the same on every wall.
+
+The owner's second question the same morning, what we would investigate if we were not chasing the money, is answered
+in [CONSTELLATION.md](CONSTELLATION.md), which also carries this section's families as its Part A.
