@@ -1301,6 +1301,15 @@ The fourth isolated-pulse error remembers parity of three earlier ideal samples.
 
 **What it says.** E4 equals the injection indicator times I1 XOR I2 XOR I3. The local proof follows fixed neighbouring values forced by the001 injection.
 
-**Why it matters.** Among injected fair histories, the last two ideal samples give fourth-error probability1/2; adding I1 makes it deterministic. This explains how shallow averaging can hide older information. PE0-PE2 NOT RUN;review pending. No repeated-race or physical-derivative law.
+**Why it matters.** Among injected fair histories, the last two ideal samples give fourth-error probability1/2; adding I1 makes it deterministic. This explains how shallow averaging can hide older information. PE0-PE2 pass512 words and the shallow-average guard;review pending. No repeated-race or physical-derivative law.
 
 **An everyday picture.** Two remembered bits can hide the parity clue carried by a third.
+
+## W117
+An unobserved initial right-tail bit enters the fifth pulse error.
+
+**What it says.** D=x3 AND(x4 OR x5) is independent of the injected ideal prefix and has rate3/8. An explicit Boolean kernel maps that prefix and D to E5.
+
+**Why it matters.** Complete observed source history can leave positive next-error uncertainty even after racing stops. The proposed exact law gives P(E5=1)=19/256 and conditional entropy h2(3/8)/16 bits. FT0-FT2 NOT RUN;review pending. Not an entropy rate or repeated-race law.
+
+**An everyday picture.** A past disturbance can expose information from somewhere the observer never watched.

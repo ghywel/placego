@@ -5,6 +5,8 @@ PE0 must echo F,0,F. PE1 E4=F*(I1 XOR I2 XOR I3),32 fourth errors.
 I2,I3 bins8/16 errors but I1 refinements deterministic.
 Unexpected shallow-average guard;REFUTED-BY:PE2 last-two-sample sufficiency.
 Independent literal-table/XOR-OR updates;no repeated-race job.
+OUTCOME 2026-10-06 21:25 BST after241fb49:PE0-PE2 PASS.
+512 words;64 injections,32 fourth errors;8 ideal triples8 each.
 """
 from collections import Counter
 from itertools import product
