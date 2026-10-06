@@ -321,3 +321,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [A hidden right-tail bit first enters the fifth pulse-error law](W117-a-hidden-right-tail-bit-first-enters-the.md):
   An unobserved initial right-tail bit enters the fifth pulse error.
+- [Exact unconditional mutual information of the first six pulse samples](W118-exact-unconditional-mutual-information-of-the-first-six.md):
+  Exact six-sample mutual information separates conditional and unconditional coupling.
