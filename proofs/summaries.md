@@ -1732,3 +1732,7 @@ Every time shift of the passing silver code still passes with some finite allowa
 ## G147
 
 At any fixed irrational angle, only countably many starting phases could produce a finite initial left tail, so almost every phase has an infinite tail. But if even one finite phase exists, time evolution gives a dense orbit of finite phases with growing radii. Each fixed radius allows only finitely many phases. This is why an almost-every-phase result cannot settle the particular boundary-phase code we are investigating. No finite phase has been constructed.
+
+## W148
+
+Taking acceleration, jerk or another fixed order of XOR temporal difference does not change a binary trace’s word-count entropy: the difference block loses at most its first few input bits. These fields can still expose particular patterns, such as whether a good return repeats or flips the symbols. But quiet temporal differences do not establish a finite spatial tail: the stationary checkerboard has zero differences at every depth and infinitely many black cells. Ordinary signed differences and XOR differences also have different meanings.

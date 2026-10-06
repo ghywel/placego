@@ -417,4 +417,11 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Fixed-order temporal differences preserve entropy but not the repeat sign](W148-fixed-order-temporal-differences-preserve-entropy-but-not.md):
+  Taking acceleration, jerk or another fixed order of XOR temporal difference does not change a binary trace’s
+  word-count entropy: the difference block loses at most its first few input bits. These fields can still expose
+  particular patterns, such as whether a good return repeats or flips the symbols. But quiet temporal differences do
+  not establish a finite spatial tail: the stationary checkerboard has zero differences at every depth and
+  infinitely many black cells. Ordinary signed differences and XOR differences also have different meanings.
