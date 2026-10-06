@@ -281,6 +281,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   race-free dependency cone guarantees the cell follows the ideal history.
 - [right-reading races keep the fair row law; left-reading races change pairs](G104-right-reading-races-keep-the-fair-row-law.md):
   One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
+- [cyclic closure changes the zero-row mass](G105-cyclic-closure-changes-the-zero-row-mass.md): Closing the row into
+  a ring changes an exact probability even when large-ring statistics look fair.
 
 ## The waiting room (not yet verified)
 
@@ -295,7 +297,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Cyclic closure changes zero-row mass in the actual race model](W105-cyclic-closure-changes-zero-row-mass-in-the.md):
-  Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
 - [Spatial fairness survives right races, but moving-frame temporal activity changes](W106-spatial-fairness-survives-right-races-but-moving-frame.md):
   The snapshots can stay statistically unchanged while motion through them changes.

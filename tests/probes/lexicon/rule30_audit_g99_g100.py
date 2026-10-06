@@ -31,6 +31,10 @@ CHECKS (GPT's claims at 827e006):
      three-bit tail, the old bits x_0..x_(w-1) map bijectively onto y_1..y_w. Left-reading races on a fair first row:
      density 1/2 and adjacent disagreement 1/2 (right cell unflagged) or 3/4 (flagged), so 1/2 + eps/4 with exact
      weights at eps = 0, 1/4, 1/2, 1 (chains anchored at depth <= 3).
+  S8 (G105, added 2026-10-06 at f0f3a1b): on rings of 3 to 7 cells, every flag word in both scan directions (races.c's
+     conventions, race_step above): the all-zero new row has exactly 2 old preimages under right races, and under left
+     races 1 or 2 according to whether an effective flag is present; the exact masses 2^(1-W) and
+     [1 + (1 - eps)^(W-1)] 2^(-W) at eps = 0, 1/4, 1/2, 1; the all-zero row stays zero under every flag word.
 """
 import random
 from fractions import Fraction as F
@@ -276,4 +280,20 @@ for D in range(0, 4):
 ok7 &= all(v[0] == F(1, 2) and v[1] == F(1, 2) + e / 4 for (D, e), v in lefts.items() if D >= 1)
 check('S7 G104: right-reading block bijection (widths <= 5); left first-row density 1/2, pairs 1/2 + eps/4', ok7,
       'depth 3: %s' % {str(e): str(lefts[(3, e)][1]) for e in (F(0), F(1, 4), F(1, 2), F(1))})
+ok8 = True
+for W_ in range(3, 8):
+    for mode in 'LR':
+        mass = {e: F(0) for e in (F(0), F(1, 4), F(1, 2), F(1))}
+        for fw in range(2 ** W_):
+            flags = [(fw >> k) & 1 for k in range(W_)]
+            eff = any(flags[1:]) if mode == 'L' else any(flags[:W_ - 1])
+            pre = sum(1 for r0 in range(2 ** W_) if not any(race_step([(r0 >> k) & 1 for k in range(W_)], flags, mode)))
+            want = 2 if mode == 'R' else (1 if eff else 2)
+            ok8 &= pre == want and not any(race_step([0] * W_, flags, mode))
+            nf = sum(flags)
+            for e in mass:
+                mass[e] += e ** nf * (1 - e) ** (W_ - nf) * F(pre, 2 ** W_)
+        for e in mass:
+            ok8 &= mass[e] == (F(2, 2 ** W_) if mode == 'R' else (1 + (1 - e) ** (W_ - 1)) / 2 ** W_)
+check('S8 G105: zero-row preimages 2 (right), 1 or 2 (left); exact masses; the zero row stays zero (rings 3..7)', ok8)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
