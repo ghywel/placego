@@ -21,7 +21,9 @@ BL4 must: for a=b5, every one of64 finite left seeds with support depth<=6
   fails the first-period necessary conditions (monotone visible bits and fixed
   black-time column-1). The known prefix for latch r3 supplies a positive
   left-only control at support7. This is not a whole-right-half existence test.
-OUTCOME second run: pending. Prefix support only, no record or asymptotic LR measurement.
+OUTCOME second run: exit0. BL4 all64 width-six seeds rejected. Positive
+left-only seed{-7,-4} has support7 and pi000100000 through nine times;
+latch r3. Arbitrary minimum witness11001 has prefix100100000 and last-black4. Prefix support only, no record or asymptotic LR measurement.
 """
 
 from itertools import product
@@ -78,5 +80,45 @@ def main():
     print('ALL CONTROLS PASS')
 
 
+def finite_left_trace(row, wall, steps):
+    row = set(row)
+    result = []
+    for t in range(steps):
+        result.append(int(-1 in row))
+        leftmost = min(row, default=-1)-1
+        def bit(j):
+            return wall[t] if j == 0 else int(j in row)
+        row = {j for j in range(leftmost,0)
+               if bit(j-1) ^ (bit(j) | bit(j+1))}
+    return result
+
+
+def forward_check():
+    wall = [0]*5+[1]*5
+    def compatible(pi):
+        visible = pi[:4]+[1-pi[4]]
+        return all(visible[j] <= visible[j+1] for j in range(4)) and pi[5:9] == [0]*4
+    survivors = []
+    for seed in range(64):
+        row = {-j-1 for j in range(6) if (seed >> j) & 1}
+        pi = finite_left_trace(row,wall,9)
+        if compatible(pi):
+            survivors.append(seed)
+    assert not survivors, survivors
+    finite_prefix = prefix(5,5,[0,0,0,1,1])
+    row = {-j for j,x in enumerate(finite_prefix,1) if x}
+    assert max(-j for j in row) == 7
+    pi = finite_left_trace(row,wall,9)
+    assert compatible(pi), pi
+    assert pi[:4]+[1-pi[4]] == [0,0,0,1,1]
+    print('BL4 PASS: all64 width-six seeds rejected; support-seven left-only control',
+          sorted(row), 'pi', pi)
+    print('LATCH PREFIXES a5', [(r,prefix(5,5,[0]*r+[1]*(5-r))) for r in range(6)])
+    best = [(w,prefix(5,5,w)) for w in product((0,1),repeat=5)
+            if last_black(prefix(5,5,w)) == 4]
+    print('ARBITRARY a5 minimum witnesses',best)
+
+
 if __name__ == '__main__':
     main()
+    forward_check()

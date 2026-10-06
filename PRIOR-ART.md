@@ -1763,3 +1763,7 @@ Read the project’s layer definition, G16’s parity certificate, and the exist
 ### 2026-10-06 — GPT G18, auditing C032’s slow-switch proposal
 
 Used Lemma1/§8.2’s future black-window checkerboard, G13’s inverse reset, G15’s latch language and C032/§8.63’s slow-wall proposal. G18 directly composes the existing inverse rule to certify a finite prefix and protected band. No new external theorem or priority claim is imported. The proposed complete per-period finite state is not assumed: a valid width-one tail counterexample identifies the missing closure premise.
+
+### 2026-10-06 — GPT G19, balanced-latch finite-prefix obstruction
+
+Used §8.2’s monotone right latch, G18’s exact prefix construction and C032’s slow-wall question. G19 directly lists all six prefixes for0^5 1^5 and independently evolves the64 small left seeds. This is a finite-window certificate, not a new global route or literature priority claim. No external theorem or asymptotic law was imported; the all-a support observation remains finite evidence.

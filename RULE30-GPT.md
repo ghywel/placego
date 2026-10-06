@@ -2311,3 +2311,99 @@ but no complete autonomous finite state or bounded-debt theorem. The next useful
 reasoning item is whether the latch restriction improves the three-cells-per-step
 loss on balanced slow walls; SP2's finite support observation is a control, not
 a proposed global law. The small odd-period width-four audit remains available.
+
+
+## G19. A concrete latch obstruction on balanced slow walls (2026-10-06)
+
+**Question.** G18's protected band needs b>=3a+1 and misses balanced slow walls.
+Does restricting the white input to a monotone latch make any exact difference
+in their known finite prefixes? This is a prefix-support audit, not a record run,
+a cost asymptotic, or an assumption of an autonomous finite tail state. Startup
+wall/merge checks both ALL CHECKS PASS, with G1's capped-witness scope. BL0-BL3/CF
+were published in f17e93e before the run; BL4 in63606e8 before its independent check.
+
+### G19.1. Exact certificate for the five-by-five wall
+
+**Finite-window theorem.** Any real Rule30 configuration whose column0 begins
+with0000011111 must have a black cell on its initial left half at depth>=7.
+In particular a seed with left support radius<=6 is excluded by this window.
+The claim uses only this finite trace, not periodicity or an infinite continuation.
+
+**Proof.** At the first five white times, visible sigma must be monotone by the
+white-wall update sigma'=sigma OR right2. Its six choices are0^r1^(5-r), r0..5.
+G18's exact inverse construction gives these complete nine-cell initial prefixes:
+
+| r | Visible sigma | Left prefix, depths1..9 | Last black depth in prefix |
+|---|---|---|---|
+| 0 | 11111 | 101000011 | 9 |
+| 1 | 01111 | 011000011 | 9 |
+| 2 | 00111 | 001000011 | 9 |
+| 3 | 00011 | 000100100 | 7 |
+| 4 | 00001 | 000000110 | 8 |
+| 5 | 00000 | 000011010 | 8 |
+
+Each prefix follows by starting with the depth-four checkerboard at time5 and
+performing five inverse-row steps. The displayed finite certificate lists every
+allowed latch input, and every prefix contains a black cell at depth at least7.
+This proves the exclusion. Both independent inverse constructions and a separate
+forward finite-left evolution checked it; no random or asymptotic assertion enters.
+
+**The latch matters in this certificate.** With an arbitrary, unlatched visible
+word11001, the same forced-left construction gives100100000, whose last black
+cell is at depth4. Exhausting all32 arbitrary visible words shows this is their
+minimum, and it is the unique minimizing word. It is forbidden by the latch:
+sigma drops from1 to0 between white times1 and2. Thus a left-only freely driven
+prefix can pass this support test while every physical right input is excluded
+at that support. This is a mechanism-specific distinction between the relaxed
+left problem and the extra necessary constraint supplied by the right side.
+It does not construct a finite complete left half with an infinite periodic wall.
+
+**Unexpected endpoint failure.** The unique minimizing latch position is r3,
+which is interior. Testing only the all-zero and all-one white blocks would give
+last black depth8 or9 and miss the true minimum7. The initial endpoint prediction
+BL3 is refuted and retained. A proposed worst-case reduction to those two extremes
+therefore fails even in this small exact example.
+
+### G19.2. Independent forward check and its practical limit
+
+The first nine pi=column-1 values of a finite left seed are obtained by evolving
+that half under the prescribed wall. Negative cells use ordinary Rule30; the
+right neighbour of cell-1 is tau(t). Recover the white sigma word as
+pi(0),pi(1),pi(2),pi(3),1-pi(4), and require monotonicity. At black times5..8,
+pi must be0 because the next wall bit is black. These are necessary conditions
+for the ten-bit centre window. Every one of the64 seeds supported on depths1..6
+fails them. This independent enumeration is a control of the theorem above.
+
+The finite left seed with black cells at depths4 and7 has
+pi(0..8)=000100000, giving visible sigma00011 (r3), and passes these conditions.
+It also has exactly the r3 prefix in the table. This is a **left-only positive
+control** for the finite necessary conditions. It is not an assertion of a
+complete compatible real right half, an infinite slow wall, or any prize candidate.
+The positive control verifies that the test is not rejecting every seed by design.
+
+### G19.3. What the broader finite audit says, and does not say
+
+`rule30_gpt_balanced_latch.py`, one Intel CPU process, completed both runs in
+seconds. BL0 compared all2044 entire prefixes of arbitrary white words at
+balanced a2..10 between row-wise and column-wise inverse constructions. All pass.
+BL1 held for all8375 monotone words at balanced a4..128: every known2a-1-cell
+prefix contains a black cell at depth>=a. This is **finite evidence only**;
+no all-a lower-bound proof was obtained here.
+
+BL2 held: arbitrary/monotone minimum last-black depths were5/6 at a4,4/7 at a5,
+7/10 at a7,9/14 at a8,9/15 at a9, and11/17 at a10. At a6 both minima were8;
+the latch restriction need not improve this particular support statistic at every
+length. These are exact finite minima for the indicated prefixes, not LR records
+or a claim about their asymptotic law. Unexpected BL3 failed first at a5,r3;
+other failures are retained in the printed audit. CF rejected the same-first-latch
+complete-row claim via a valid next-block change, first difference at depth9.
+BL4's forward control rejected all64 width-six seeds and accepted the support-seven
+left-only control. Both runs exit0 because the instrument controls passed; BL3's
+blind prediction nevertheless failed and was not erased.
+
+**Status.** The Condrey-end mechanism remains PART. There is an exact finite latch
+obstruction on a balanced wall, but neither the finite support observations nor
+channel cardinalities prove a bounded-debt cost. The all-a balanced support bound
+is open, and endpoint monotonicity cannot supply it. Next useful reasoning is to
+identify which interior latch positions control the last-black depth, or return
+to the small width-four channel question; no large Local run is requested.
