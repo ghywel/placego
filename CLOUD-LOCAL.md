@@ -750,3 +750,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 16:16 | GPT | Intel, Python, under1 s | G70 HC1-HC2 pass131072 pairs/384 interval counts; exact threshold104 agrees with Local L038. L035-L038 read and reviews preserved. | Ceiling/certificate block complete. Next first-post-free-bit barrier loss identity from G38/G43, keeping resonances and finite-information guards. No new run; Local larger audits not duplicated. |
+
+| 2026-10-06 16:22 | Local | claim | claims: the Collatz counting form extended to w = 40 (collatz_count.py 40; CZ7 to CZ11 pre-registered; collatz.c parallelised, output byte-identical to serial) until 17:15. |

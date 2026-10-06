@@ -46,6 +46,19 @@ ADDENDUM, WMAX = 32. PREDICTIONS written 2026-10-05 before the run with WMAX = 3
 OUTCOME of the addendum, 2026-10-05 (81 seconds, every number of 16 to 32 bits; the verdicts read from the printed
   slope and e_w lines): CZ5 HELD (w = 32: -0.0610 against the coin's -0.0618, T = 32 .. 357). CZ6 HELD (e_31 = 1.80,
   e_32 = 2.66). H_31 = 433, H_32 = 447. CZ0 to CZ4 as before (CZ2 still refuted, 21.2 steps per bit).
+
+ADDENDUM, WMAX = 40 (Local, 2026-10-06, written and pushed before the run). collatz.c now runs its loop over n with
+OpenMP and per-thread histograms; its output was checked byte-identical to the serial engine at w = 20, 24, 28 before
+any prediction below was written (w = 30 now takes 0.5 s on this machine). G70 (PROOFS.md E2) moved the open linear-
+horizon count onto the coefficient survivors C_w(T); this extension measures them eight bits further.
+  CZ7 (control, must hold): the recorded w <= 32 values reproduce: H_31 = 433, H_32 = 447, e_31 = 1.80, e_32 = 2.66.
+  CZ8 (blind): at w = 40 the slope of log2 S past the free bits (T from w to 0.8 H_w) is within 0.01 of the coin's.
+  CZ9 (blind; the debt does not grow): e_w <= 4 at every w = 33 .. 40, and e_40 - e_32 <= 1.
+  CZ10 (blind): S_w(T) = C_w(T) at every T for every w = 33 .. 40 (Terras's coefficient conjecture holds here).
+  CZ11 (blind): H_w grows by 18 to 24 steps per bit over w = 16 .. 40, and H_40 lies in [560, 680].
+  REFUTED-BY: CZ7 failing (the engine); CZ8 to CZ11 the other way. What would change my mind about the counting form:
+  e_w rising steadily with w (the debt over the coin would grow, the route of COLLATZ-PRIZE.md section 1 would need a
+  growing constant), or the slope drifting away from the coin's as w grows.
 """
 import math, pathlib, subprocess, sys, tempfile
 
@@ -88,7 +101,9 @@ def slope(xs, ys):
 
 def main():
     exe = pathlib.Path(tempfile.gettempdir()) / "collatz_count_c"
-    subprocess.run(["cc", "-O2", "-o", str(exe), str(HERE / "collatz.c"), "-lm"], check=True)
+    sys.path.insert(0, str(HERE.parent / "lexicon"))
+    from ompflags import OMP
+    subprocess.run(["cc", "-O2", *OMP, "-o", str(exe), str(HERE / "collatz.c"), "-lm"], check=True)
     V = coin(CAP)
     S, C, H = {}, {}, {}
     for w in range(16, WMAX + 1):
@@ -130,6 +145,18 @@ def main():
     print("   e_w: " + " ".join(f"{e[w]:.2f}" for w in ws))
     verdict("CZ4 e_w <= 8 at every w, and e_WMAX - e_16 <= 2", all(v <= 8 for v in e.values()) and e[WMAX] - e[16] <= 2,
             f"e_16 {e[16]:.2f}, e_{WMAX} {e[WMAX]:.2f}, largest {max(e.values()):.2f}")
+    if WMAX >= 40:
+        report("CZ7 the recorded w <= 32 values reproduce (H_31 433, H_32 447, e_31 1.80, e_32 2.66)",
+               H[31] == 433 and H[32] == 447 and round(e[31], 2) == 1.80 and round(e[32], 2) == 2.66,
+               f"H_31 {H[31]}, H_32 {H[32]}, e_31 {e[31]:.2f}, e_32 {e[32]:.2f}")
+        verdict("CZ8 at w = 40 the slope past the free bits is within 0.01 of the coin's", abs(s_obs - s_coin) <= 0.01,
+                f"{s_obs:.4f} against {s_coin:.4f}")
+        verdict("CZ9 e_w <= 4 for w = 33 .. 40 and e_40 - e_32 <= 1",
+                all(e[w] <= 4 for w in range(33, 41)) and e[40] - e[32] <= 1,
+                " ".join(f"e_{w} {e[w]:.2f}" for w in range(33, 41)))
+        verdict("CZ10 S_w(T) = C_w(T) at every T for w = 33 .. 40", all(not diff[w] for w in range(33, 41)))
+        verdict("CZ11 H_w grows 18 to 24 per bit over 16 .. 40 and H_40 in [560, 680]",
+                18 <= sl <= 24 and 560 <= H[40] <= 680, f"{sl:.2f} per bit, H_40 {H[40]}")
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
     sys.exit(1 if FAILS else 0)
 
