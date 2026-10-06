@@ -339,3 +339,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A root's backward tails must have spatial periods that grow without bound.
 - [Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two](W124-periodic-rule-30-rows-that-eventually-reach-zero.md):
   Periodic rows that fade completely have tightly restricted repeating lengths.
+- [Sideways periodic points correspond exactly to recurrent Rule 30 ring states](W125-sideways-periodic-points-correspond-exactly-to-recurrent-rule.md):
+  Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.

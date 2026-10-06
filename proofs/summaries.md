@@ -1500,3 +1500,12 @@ Periodic rows that fade completely have tightly restricted repeating lengths.
 **Why it matters.** Once the output contains both colors, a repeating predecessor can keep its period or double it. The constant-one row has the special period-three predecessors that start this chain. This classifies one family of spatial patterns, but does not exclude an eventually alternating temporal column.
 
 **An everyday picture.** Following a repeating pattern backward can lengthen its loop by doubling, after one initial loop of length three.
+
+## W125
+Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
+
+**What it says.** A finite cycle of the sideways map closes the columns into a spatial ring. Its time tracks must repeat, and its starting ring row must already lie on a temporal cycle.
+
+**Why it matters.** This identifies all sideways periodic points through finite-ring recurrence. A row that is merely heading toward a cycle does not qualify, because the sideways construction needs a consistent infinite past as well as a future. The correspondence supplies no restriction on nonperiodic sideways orbits.
+
+**An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
