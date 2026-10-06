@@ -1358,3 +1358,12 @@ Continuing a root's backward history leaves finite seeds through exact periodic 
 **Why it matters.** This locates how backward descent exits the finite-seed class. A periodic output tail has a periodic inverse tail with period at most4 times as large,but no bound over all ancestor depths is supplied. These spatial tails alone do not exclude a temporal0101 wall. Symbolic proof,review pending,no computational run.
 
 **An everyday picture.** A unique backward history continues,but beyond its starting seed it needs an infinite background.
+
+## W123
+A root's backward tails must increase their spatial periods without bound.
+
+**What it says.** The nth ancestor tail first reaches zero in exactly n forward steps. Its least spatial period is therefore at least ceil(log2(n+1));periods form a divisibility chain with infinitely many strict increases.
+
+**Why it matters.** This is an all-depth consequence of the inverse construction and finite-state pigeonhole principle. It rules out a uniformly bounded periodic-tail ancestry,not an eventual0101 temporal wall. The needed wall-to-tail restriction remains unproved. Paper theorem,review pending,no new computation.
+
+**An everyday picture.** A clock with finitely many states cannot postpone its first stop arbitrarily long.

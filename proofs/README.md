@@ -331,3 +331,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Backward descent stops at finite roots of unbounded width.
 - [A finite root's canonical ancestors acquire black and period-three left tails](W122-a-finite-root-s-canonical-ancestors-acquire-black.md):
   Continuing a root's backward history leaves finite seeds through exact periodic tails.
+- [Canonical ancestor tails of every nonzero finite root have unbounded spatial periods](W123-canonical-ancestor-tails-of-every-nonzero-finite-root.md):
+  A root's backward tails must increase their spatial periods without bound.
