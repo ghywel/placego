@@ -3134,3 +3134,32 @@ This follows by dropping the E indicator from the numerator and using U(E)>=1/T.
 ## G40. Adjacent-pair skeletons give an exact conditioned cancellation product (2026-10-06)
 
 **Preregistration.** Pair positions(0,1),(2,3),... and leave an odd final bit fixed. A skeleton records00,11 or mixed M for each pair. At a mixed pair starting at(t,s), both01 and10 should be admissible exactly when3^s>2^(t+1), provided the skeleton endpoints survive. Otherwise only10 can survive. Predict the endpoint ternary residue difference for changing10 to01 is Delta=3^(a-s-1)*2^(-(T-t)) modulo3^a. Since each mixed pair has one odd step, this difference should be independent of other orientations. Hence each surviving skeleton's normalized Fourier modulus equals the product of absolute cosines from its free mixed pairs. PC1: exhaustT<=10, compare skeleton cubes, residue differences and complex products against independent direct parity representatives; tolerance1e-9 for complex arithmetic, integers exact. Unexpected PC2: the all-one endpoint has unit Fourier modulus at every frequency, refuting a contraction uniform across all endpoints. Counterfactual: a positive number of surviving paths alone forces cancellation. Bears on PERIOD-TWO.md §7 question9; reuse startup checks, no Rule30 run.
+
+
+### G40 theorem and proof: the skeleton phase product
+
+Fix lengthT and endpoint odd count a with3^a>2^T. Partition the coefficient-admissible words into skeletons by recording each adjacent pair as00,11 or mixed, retaining an odd final bit separately. Discard skeletons with no survivors. A skeleton fixes the odd count s at the start t of every pair, and all pair-end coefficient ratios.
+
+For a mixed pair let R=3^s/2^t. Orientation10 has intermediate ratio3R/2 and final ratio3R/4; orientation01 has intermediate ratioR/2 and the same final ratio. Thus, in a surviving skeleton,10 is always allowed;01 is allowed exactly whenR>2. Other prefixes are unchanged by a swap. Therefore the surviving orientations form a full independent binary cube on the free mixed pairs with3^s>2^(t+1); all other mixed pairs are forced10. In particular a skeleton with F free pairs contains exactly2^F words.
+
+Let q(w) be the terminal iterate of the unique representative in[0,2^T), reduced moduloM=3^a. G38's carry-free ternary map applies. Modulo an odd power of3, a local10 composition sends x to(3x+1)/4;01 sends x to(3x+2)/4. Their difference is1/4. The following suffix has lengthT-t-2 and c=a-s-1 odd steps, so its slope is3^c/2^(T-t-2). Hence the final difference is
+
+    Delta_t = 3^(a-s-1)*2^(-(T-t)) modulo3^a.
+
+Negative powers mean multiplicative inverses modulo the odd modulus. The suffix slope depends only on its count, not its other orientations. The differences are therefore additive across all free pairs. If w0 has every mixed pair oriented10, then
+
+    q(w) = q(w0) + sum_t eta_t*Delta_t moduloM,
+
+where eta_t=1 for a free pair oriented01 and0 for10. Uniform sampling in this skeleton makes the eta_t independent fair bits. With e(x)=exp(2*pi*i*x), its normalized Fourier coefficient is exactly
+
+    phi_S(h) = e(h*q(w0)/M) * product_t (1+e(h*Delta_t/M))/2.
+
+Thus its modulus is the product of |cos(pi*h*Delta_t/M)|. This is an identity for the survival-conditioned population inside each skeleton, not an iid assumption on the whole path.
+
+**Aggregate boundary.** If A is the total survivor count and S ranges over surviving skeletons at this endpoint, then
+
+    |phi(h)| <= sum_S (2^F(S)/A)*product_free_t |cos(pi*h*Delta_t/M)|.
+
+This follows by partitioning the uniform population and applying the triangle inequality only between skeletons; cancellation within each cube is retained exactly. For h coprime to3 every free pair gives a strictly smaller than1 factor, since Delta_t has3-adic valuation a-s-1<a. There is no uniform gap from1 as the denominator grows. At a=T the sole all-one word has no free pairs and unit Fourier modulus. This does not preclude decay for an aggregate with other endpoint weights; it does preclude a contraction asserted uniformly at every endpoint. A decay theorem still needs quantitative frequency control and mass bounds for the surviving skeletons.
+
+**Outcome.** PC1 passed71 skeleton cubes,208 exact flips and563 Fourier identities throughT10; maximum complex residual6.33e-16 against tolerance1e-9. Direct integer residue iteration supplies an independent control for the modular pair calculation. Unexpected PC2 confirms unit modulus for the all-one endpoints throughT10; the analytic single-word argument proves this for everyT. Single-party controls, no asymptotic decay or count theorem inferred. The affine modular mechanism is the established parity machinery recorded in G38; the independence here is proved by the explicit survival barrier, not borrowed from Tao's renewal law. Next useful target is the weighted skeleton product above.

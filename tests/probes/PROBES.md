@@ -87,3 +87,5 @@ app is unpublished by design.
 - `prizes/collatz_gpt_signed_bound.py` (G29): seeded independent signed rational W2 audit; shifted growth, open-interval parity injection, cycle/endpoint failures and exact integer count. No purported infinite orbit generated.
 
 - `prizes/collatz_gpt_conditioning.py` (G39): exact endpoint-survival rotation and independent DP controls throughT12, short rotation orbits, and a complex-cancellation transfer counterexample. No data files generated.
+
+- `prizes/collatz_gpt_pair_cancellation.py` (G40): independent direct-residue controls for survivor skeleton cubes, additive ternary swap differences and exact Fourier products throughT10; all-one endpoint contraction counterexample. No data files generated.
