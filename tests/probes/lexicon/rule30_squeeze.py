@@ -87,6 +87,12 @@ temporary directory on the internal drive.
       before. Then every left column next to 0101... has topological entropy at most 0.0612 bits per step.
 REFUTED-BY: SQ6 failing in its exact check (the certificate at that width does not close within 10^-3: raise DELTA),
   or in its rejection (the check is broken).
+OUTCOME of the third run, 2026-10-06 (27,28 mmap; 11 minutes): SQ0 PASSED. SQ6 HELD: certified 0.1243 at m = 27
+  (9,596 rounds) and 0.1236 at m = 28 (8,912 rounds), 0.0014 above the power iteration's 0.1229 and 0.1222 (the
+  10^-3 margin); both exact checks pass; lambda (1 - 10^-3) rejected at both. The constants w_start / min w are
+  241,520 and 135,663. So every left column next to 0101... carries at most 0.1236 / 2 = 0.0618 bits per step
+  (the addendum's "0.0612" had forgotten the certificate's margin). The script's printed SQ1 line used its old
+  wording; the numbers above are what SQ6 asked.
 """
 import math, os, pathlib, random, subprocess, sys, tempfile
 from fractions import Fraction
