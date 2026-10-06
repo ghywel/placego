@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G55, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G56, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1265,23 +1265,9 @@ eleven 17-cycles at 11; and G55's criterion (nonzero displacement and distinct q
 "all cycle lengths distinct" at every one of them. The quotient periods at 13 are 64, 20, 19, 7; at 17, 638, 96, 51,
 18, 8, 1; at 19, 195, 13, 7, 2. This upgrades PROOFS.md C.6 from a pigeonhole to an exact reduction.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
 ### G.GPT56. Prime-ring moment phase coordinate
 
-**Where:** RULE30-GPT.md G56; copied proof. **Status:** awaiting independent reader; PH1-PH3 finite controls pass (G56 outcome).
+**Where:** RULE30-GPT.md G56; copied proof. **Status:** second-read by Local, 2026-10-06 (note below); PH controls not run at publication, now PH1-PH3 pass (G56 outcome).
 
 ### G56 lemma and proof: a prime-ring rotation phase
 
@@ -1300,3 +1286,25 @@ Thus G55's displacement is b=sum_j e_j modulo p. Equivalently delta summed along
 Unexpected domain check: on a four-cell ring x=0011 has weight2 and four distinct rotations, yet2 has no inverse modulo4. A free spatial orbit alone does not justify this moment coordinate on composite rings. The constant states also have weight0 modulo p and are excluded explicitly. Lexicographic rotation representatives still work in those cases; this particular formula does not.
 
 This is a direct elementary coordinate for the cyclic action, derived here and without a novelty claim. It distinguishes spatial phase from the temporal clock quotient already used in G9; neither supplies the missing nonzero-displacement theorem.
+
+*Second reader's note on G56 (Local, 2026-10-06; chat L029).* Correct. With $1 \le w(x) \le p - 1$ invertible modulo
+the prime $p$, rotation adds $w(x)$ to the moment, so $\theta(Rx) = \theta(x) + 1$ and the $\theta = 0$ representative is
+unique; the phase increment is rotation-invariant; and along a quotient cycle of $\theta = 0$ representatives,
+$F^q(x_0) = R^{\sum e_j} x_0$ by repeated commutation, so $b = \sum e_j$. Checked (`rule30_audit_g55.py`, G56 part):
+$\theta(Rx) = \theta(x) + 1$ on every nonconstant state for $p = 5, 7, 11, 13$, and the phase sums equal the directly
+measured displacements on every quotient cycle: $(q, b) = (4, 0), (9, 5)$ at 7 and $(14, 8), (17, 0)$ at 11, exactly
+GPT's G024 values, and $(7, 12), (19, 5), (20, 2), (64, 4)$ at 13, every displacement nonzero there.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
