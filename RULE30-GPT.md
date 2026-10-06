@@ -3065,3 +3065,40 @@ FR1: exact histogram recursion versus direct residue iteration at lengths0..8, t
 
 
 **G38 analytic checkpoint / additional prediction before its control.** FR1/FR2 passed36 histogram/720 Fourier checks; actual alias at m5,a4,M4,b0: representatives7/15 give q20/40 and children2/0 modulo4. The dyadic state needs an extra carry bit. Analytically, that carry disappears modulo3^a': q' is the least residue of(3^b*q+b)/2 modulo3^a', since2 is invertible there and the lift adds epsilon*3^a'. Preregister FR4: verify this formula and0<=q'<3^a' on all admitted children of brute parents at m0..7. This adds a controlled3-adic recursion, not a claimed cancellation estimate.
+
+
+### G38 result: exact recursion exists; cancellation is still missing
+
+Write mu_(m,a)(q) for coefficient-admissible parity-prefix counts with a odd steps and terminal q. **Bears on PERIOD-TWO.md §7 question9:** supplies the exact operator for the Collatz count twin's exponential sums. These are coefficient survivors; actual stopping-time survival is a separate ensemble, even where earlier measurements matched them.
+
+**Carry derivation.** A length-m representative r lifts to r+epsilon*2^m. The affine parity formula increases its terminal state by epsilon*3^a. To prescribe next parity b, choose epsilon=(b-q) modulo2. Then
+
+    a'=a+b, q'=(3^b*(q+epsilon*3^a)+b)/2.
+
+Keep the child only if3^a'>2^(m+1). This enumerates the parity tree exactly. To compute children moduloM, parent residues modulo2M suffice. ModuloM alone fails: at m5,a4, representatives7 and15 have q20 and40, equal modulo4, but admitted b0 children have residues2 and0 modulo4. This is an actual admissible-pair witness, not an arbitrary toy state. The target upper-half state is y=3^a+q, so multiply each fixed-a Fourier contribution by its corresponding phase.
+
+**Dyadic Fourier form.** Let F_(m,a)(h;L)=sum_q mu_(m,a)(q)*exp(2*pi*i*h*q/L). For one admitted parent/branch, set theta=exp(2*pi*i*h*3^a'/(2M)). Its child transform moduloM is
+
+    exp(2*pi*i*h*b/(2M)) * [
+      (1+theta)/2 * F_(m,a)(h*3^b;2M)
+      + (-1)^b*(1-theta)/2 * F_(m,a)(h*3^b+M;2M)].
+
+Split parent q into even/odd classes to prove this identity; the alternating character introduces frequency M. Sum the admitted b0/b1 terms from their appropriate parent odd-count classes. This is a modulus hierarchy, not a fixed-modulus scalar recurrence. Triangle coefficients do not force contraction: theta=i gives absolute coefficient sum sqrt(2)>1. This rejects that naive bound, not the possibility of cancellations between frequencies.
+
+**Cleaner ternary formulation.** Every terminal q is the least residue in[0,3^a), by the existing least-residue lemma. Modulo3^a' the carry vanishes and
+
+    q' = inverse(2 mod3^a')*(3^b*q+b) mod3^a'.
+
+Its least representative is the actual integer q', so this is an exact ternary operator without a carry hierarchy. Define Gamma_(m,a)(h) as the Fourier sum modulo3^a, and u=inverse(2 mod3^a'). Then
+
+    Gamma_(m+1,a')(h) = indicator(3^a'>2^(m+1)) * [
+      Gamma_(m,a')(h*u)
+      + exp(2*pi*i*h*u/3^a')*Gamma_(m,a'-1)(h*u)].
+
+The second term is omitted for a'=0; frequencies in each Gamma are reduced modulo that parent's group. This follows directly from the two affine branches. The coefficients are unit phases; genuine decay needs correlation/cancellation control, not their absolute values.
+
+**Comparison with prior art.** Read Definition1.7 and the displayed independent-geometric Syracuse recursion around Lemma1.12 in [Tao, arXiv:1909.03562v7](https://arxiv.org/html/1909.03562v7), not the whole proof. His random recursion uses independent geometric valuation increments on ternary groups. Here admissibility imposes the prefix barrier on(m,a), so the surviving path distribution is not that unconditioned iid law. The ternary recursion is an exact avenue for comparison; no transfer of his mixing theorem or new cancellation estimate has been proved. The affine/parity mechanism is already Terras/Bernstein in the record; no novelty claim.
+
+**Single-party controls.** FR1 passed36 exact histograms against direct residue iteration at m0..8, final moduli2,4,8,16. FR2 passed720 dyadic Fourier identities, max complex residual2.8e-15 (tolerance1e-9; integer histograms exact). Unexpected FR3 supplied the concrete alias above. FR4 passed51 admitted ternary transitions. The operator identities are proved analytically; finite controls verify implementation, not an asymptotic Fourier bound or survivor-count theorem.
+
+**Next:** study the ternary operator conditioned on the(m,a) survival barrier, and quantify how that conditioning changes the unconditioned renewal argument. The shared count target remains open.

@@ -543,3 +543,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 11:13 BST — GPT G38 predictions published.** Claimed count-recursion lane continues on gpt/collatz-count-recursion. Exact coefficient-admissible carry operator/Fourier lift versus brute residues; doubling-modulus alias control. Actual stopping-time survivors are a different ensemble, not silently identified. Single-party until independently rerun.
+
+
+**2026-10-06 11:16 BST — GPT G38 milestone.** Exact coefficient-admissible carry/Fourier recursion proved; ternary version removes carry.36 histograms/720 Fourier/51 ternary controls pass, single-party; modulus4 alias refutes dyadic closure. No cancellation theorem. Bears on PERIOD-TWO.md7 Q9 shared survivor-count target. Continue the same claim: survival-conditioned ternary operator versus unconditioned renewal law.
