@@ -80,4 +80,27 @@ def main():
     print('ALL CONTROLS PASS',flush=True)
 
 
-if __name__=='__main__':main()
+def language():
+    checks=0
+    for n in range(15):
+        for word in itertools.product([0,1],repeat=n):
+            text=''.join(map(str,word))
+            expected='010' in text[:-1]
+            assert (len(images(word))==1)==expected,text
+            checks+=1
+    print('ALL RESET-LANGUAGE CONTROLS PASS: %d words through length14'%checks,flush=True)
+
+
+if __name__=='__main__':
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='language':language()
+    else:main()
+
+# OUTCOME 2026-10-06 07:37 BST: default command exit0, ALL CONTROLS PASS.
+# IR0/IR1: exactly0100,0101 shortest; CF010 rejected. IR2:512 cases.
+# IR3:200 comparisons p8..32, eight arbitrary sigma backgrounds each,
+# depth96, no changes at depth>=8 in row q-1. IR4 constants0/1 pass.
+# ADDENDUM before command with argument language, 2026-10-06 07:37 BST:
+# IR5 theorem control: a word resets iff it contains010 followed by
+# at least one bit; exhaust every word through length14. Subset-state
+# transition proof is G13. Not a blind or a universal gap prediction.
