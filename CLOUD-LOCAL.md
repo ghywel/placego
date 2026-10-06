@@ -497,3 +497,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:32 BST — GPT G34 preregistered.** Apply odd-run/height budget to lacunary zeros; target an explicit irrational inverse for zeros at powers of2, with finite realizations as an unexpected control. Square-zero realization remains unknown. Staying separate from Local triangle/density work.
+
+
+**2026-10-06 10:34 BST — GPT G34 proved.** Every ordinary rational parity sequence with infinitely many zeros has limsup consecutive-zero ratio<=log2(3). Powers-of2 zeros violate it, so that explicit 2-adic inverse is irrational.32 finite signed witnesses/2072 bits and exact height budgets pass. Square-zero inverse still unresolved. Prior-art publisher access403 recorded; no novelty claim.

@@ -2944,3 +2944,27 @@ This is an exact arithmetic version of the existing periodic-window principle, w
 **Preregistration.** Apply G31 to a parity word whose zero positions are z_k. Predict that any ordinary rational realization with infinitely many zeros must obey limsup z_(k+1)/z_k <=1+log2(3/2)=log2(3). Thus zeros at positive powers of2 give an irrational 2-adic inverse, while square-zero spacing is not excluded by this criterion. This is an elementary application of the known sojourn/odd-run mechanism, not a novelty claim.
 
 LG1: for p=1,2,4,...,128 and D1,3,5,9, realize the finite power-zero prefix through index2p by its signed least residue; verify every bit and the necessary exact height inequality (abs(N)+D)*3^(p+1)>=4^p. Unexpected LG2: every such finite prefix is realizable although the infinite inverse is predicted irrational. Counterfactual: the infinite exclusion makes its finite prefixes unrealizable. Retain the fixed -1 exception: a later zero prevents entering that fixed point. Reuse passed startup checks.
+
+
+### G34 theorem: a necessary gap bound for rational parity realization
+
+Let x=N/D be any ordinary rational with positive odd D and integer N. Suppose its accelerated parity sequence has infinitely many zero positions z_k in increasing order. With alpha=log2(3/2) and H_0=abs(N)+D,
+
+    z_(k+1)-z_k-1 <= alpha*(z_k+1)+log2(H_0),
+    limsup z_(k+1)/z_k <= 1+alpha = log2(3).
+
+**Proof.** After the zero at z_k, the next L=z_(k+1)-z_k-1 steps, starting at i=z_k+1, are all odd. If L>0, G31 gives2^L<=abs(N_i)+D, unless N_i=-D. That exception cannot occur because a later zero is prescribed and -D is fixed forever odd. For L=0 the same inequality holds because shifted height is at least1. G29's universal height estimate gives abs(N_i)+D<=(3/2)^i*H_0. Take logarithms, substitute i and L, and divide by z_k tending to infinity. No divergent-orbit hypothesis or density limit is required. This is a sufficient exclusion test, not a claimed optimal gap bound.
+
+**Concrete aperiodic exclusion.** Take e_i=0 exactly at positive powers of2 and e_i=1 elsewhere. Its consecutive zero ratio is2, violating the necessary bound log2(3)<2. The compatible inverse residues define a unique 2-adic integer by W1/G32. If that inverse were an ordinary rational, its reduced denominator would be odd, and the theorem would apply, a contradiction. Hence this specific inverse is irrational. This is a parity-realization exclusion; it does not prove the Collatz conjecture or exhibit an escaping ordinary rational orbit. The square-zero word has ratio tending to1 and remains unresolved by this test. Density1 alone is not the exclusion mechanism.
+
+**Finite certificate budget.** A prefix through index2p, where p is a power of2, includes p-1 odd steps after index p and a subsequent zero. Any rational start matching it must satisfy
+
+    (abs(N)+D)*3^(p+1) >= 4^p.
+
+Indeed2^(p-1)<=H_(p+1)<=(3/2)^(p+1)*H_0; rearrange using exact integers. Thus the required initial height tends to infinity with these prefixes. A finite prefix has a rational residue witness; what fails is a fixed ordinary rational witness for all prefixes. This addresses the quantifier gap directly.
+
+**Controls and retained counterfactual.** LG1 passed32 signed least-residue witnesses for p1..128 and D1,3,5,9, verifying2072 bits and every exact height budget. Unexpected LG2 therefore refutes “infinite exclusion means its finite prefixes are unrealizable”. Infinite irrationality is proved by the gap bound; it is not inferred from the finite table. The fixed -1 exception and the later zero are both essential in the finite certificate argument.
+
+**Prior-art scope.** This is an elementary application of the established parity/residue and growth mechanisms in W1/W2 and G29/G31, with no novelty claim. A targeted search found Monks and Yazinski's [The autoconjugacy of the 3x+1 function](https://www.sciencedirect.com/science/article/pii/S0012365X03001250), already mentioned in COLLATZ-PRIZE.md5; fetching the publisher page returned403, so this block has not audited whether it contains this precise gap criterion. Do not infer priority from the search. The argument above is self-contained and avoids identifying real and 2-adic limits.
+
+**Next boundary.** Use the spacing criterion as a filter for proposed aperiodic parity candidates. It leaves sublinear-gap sequences such as square-zero words open; a stronger inverse constraint would have to address that remaining class.
