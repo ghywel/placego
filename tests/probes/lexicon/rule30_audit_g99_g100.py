@@ -125,6 +125,11 @@ CHECKS (GPT's claims at 827e006):
      constant along 20,000 orbit points, with h the XOR of rotated interval codes from Q(z) = (1 + z) P(z) over GF(2);
      for alpha < 1/2 the Sturmian word has no adjacent ones (AND factor constantly 0); and a repetition of g of length
      e - a + 1 gives a repetition of the width-(w+1) block code of length e - a + 1 - w on random words.
+  S30 (G132, added 2026-10-06 at d318ac4): the circle-covering example f(x) = psi(2x mod 1), psi the Sturmian interval
+     for beta = 2 alpha mod 1: its jumps on a fine grid sit at {0, 1/2, -alpha, 1/2 - alpha} mod 1 for two irrational
+     alpha (both 2 alpha < 1 and 2 alpha > 1), and its orbit code equals the beta-Sturmian code from 2 theta for 20,000
+     steps; the two-torus box [0, 1/2)^2 is not a function of h_(a,b) for any nonzero (a, b) with |a|, |b| <= 4 (two
+     points with equal character value and different box values are found).
 """
 import random
 from fractions import Fraction as F
@@ -1256,4 +1261,39 @@ for trial in range(200):
     ok29 &= all(cw[s_] == cw[s_ + q] for s_ in range(len(base), e_ - wv + 1))
 check('S29 G131: one-orbit arc codes = XOR of rotated interval codes + constant; no adjacent ones for alpha < 1/2; '
       'repeats inherited by block codes', ok29)
+ok30 = True
+for alpha in ((_mm.sqrt(2) - 1) / 1.7, (_mm.sqrt(5) - 1) / 2):
+    beta = (2 * alpha) % 1.0
+    psi = lambda u: 1 if (u % 1.0) >= 1 - beta else 0
+    fcov = lambda x: psi((2 * x) % 1.0)
+    Ngrid = 200000
+    jumps = []
+    prev = fcov(0.0)
+    for i in range(1, Ngrid + 1):
+        x = i / Ngrid
+        cur = fcov(x % 1.0)
+        if cur != prev:
+            jumps.append(x)
+        prev = cur
+    expect = sorted(v % 1.0 for v in (0.0, 0.5, -alpha, 0.5 - alpha))
+    got = sorted(j % 1.0 for j in jumps)
+    ok30 &= len(got) == 4 and all(min(abs(gv - e), 1 - abs(gv - e)) < 2.0 / Ngrid for gv, e in zip(got, expect))
+    th = 0.123
+    ok30 &= all(fcov((th + s_ * alpha) % 1.0) == psi(2 * th + s_ * beta) for s_ in range(20000)
+                if min(abs(((2 * th + s_ * beta) % 1.0) - (1 - beta)), ((2 * th + s_ * beta) % 1.0)) > 1e-9)
+box = lambda x, y: 1 if (x % 1.0) < 0.5 and (y % 1.0) < 0.5 else 0
+for a_ in range(-4, 5):
+    for b_ in range(-4, 5):
+        if a_ == 0 and b_ == 0:
+            continue
+        found = False
+        for trial in range(2000):
+            x, y = rng29.random(), rng29.random()
+            tstep = rng29.random()
+            x2, y2 = (x + b_ * tstep) % 1.0, (y - a_ * tstep) % 1.0      # same character value a x + b y
+            if box(x, y) != box(x2, y2):
+                found = True
+                break
+        ok30 &= found
+check('S30 G132: covering endpoints and Sturmian code; the box is not a function of any small character', ok30)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

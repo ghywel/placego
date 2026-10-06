@@ -1590,7 +1590,7 @@ Finite recoding preserves the repetitions that exclude a Sturmian companion.
 **An everyday picture.** Reading a fixed group of neighboring symbols cannot erase a long repeated stretch except at its ends.
 
 
-## W132
+## G132
 A higher-dimensional rotation can still expose only one circle coordinate.
 
 **What it says.** The earlier exclusion applies to torus observables that factor through an integer circle projection and an allowed arc code. Rational projected angles give periodic codes; irrational ones inherit the Sturmian obstruction. Endpoint conventions do not change the conclusion.

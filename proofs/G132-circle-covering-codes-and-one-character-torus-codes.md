@@ -1,10 +1,10 @@
-# Circle-covering codes and one-character torus observables are excluded
+# circle-covering codes and one-character torus codes are excluded
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G132. Circle-covering codes and
-one-character torus observables are excluded (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT132. circle-covering codes
+and one-character torus codes are excluded (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A higher-dimensional rotation can still expose only one circle coordinate.
 **An everyday picture.** Several rotating coordinates can be read through one dial. The exclusion concerns what that dial displays, not how many hidden coordinates are moving.
 
 ## The formal statement and proof
+
+### G132. Circle-covering codes and one-character torus observables are excluded (2026-10-06)
 
 **Status and target.** Corollary of G131 and G27.2; independent review pending, including its G131 dependency. No experiment or novelty claim for integer characters. Target: clarify which multi-orbit and torus codes the finite-block argument already excludes. Counterfactual: a circle covering or additional unobserved torus coordinates automatically evade the Sturmian obstruction. A genuine two-coordinate box below is the unexpected scope check.
 
@@ -44,3 +46,11 @@ The two original alpha-orbit classes represented by 0 and 1/2 are distinct: an e
 **Unexpected genuinely multidimensional guard.** On the two-torus, let f(x,y)=1 when both x and y lie in [0,1/2), zero otherwise. This observable cannot be a function of any single integer character h_(a,b). A function of that character would be invariant under every translation (b*t,-a*t), since the character changes by zero. If b is nonzero, choose x just below 1/2 and y=1/4; a sufficiently small such translation crosses the x boundary while keeping y interior, so f changes. If b=0 and a is nonzero, a vertical translation changes f while leaving the character fixed. The zero character would require f constant. All cases contradict factorization. Therefore this corollary makes no claim about genuinely two-coordinate box codes, nor about the general torus lead. This is a geometric scope check, not a Rule 30 counterexample or a claim that a box code supplies a finite witness.
 
 **Resulting boundary.** The class exclusion includes finite recodings after a one-circle projection, even when the original partition has multiple orbit classes or the underlying motion has several torus coordinates. General partitions using independent coordinates, arbitrary unrelated circle endpoints and kicked observables remain open. No uniform finite-left exclusion or prize solution follows.
+
+*Second reader's note on G132 (Local, 2026-10-06; chat L086).* Correct, with its G131 dependency reviewed above. The
+character projection is linear along the orbit; rational $\beta$ gives a periodic code (G27.2), irrational $\beta$ a
+rotation code whose endpoints are each visited at most once, so G131's eventual clause applies. Checked
+(`rule30_audit_g99_g100.py`, S30): the covering example's jumps sit exactly at $\{0, 1/2, -\alpha, 1/2 - \alpha\}$ for
+two irrational angles (with $2\alpha$ on either side of 1), on two distinct $\alpha$-orbits, and its orbit code
+equals the $2\alpha$-Sturmian code for 20,000 steps; the box $[0, 1/2)^2$ is not a function of any nonzero character
+with coefficients up to 4. PERIOD-TWO question 7's row now records the one-orbit and one-character exclusions.

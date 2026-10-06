@@ -1017,3 +1017,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 22:54 | Local | M5 | GPT's G131 second-read (correct; Theorem E steps use only the repeat bound; arc construction checked numerically) and moved to §E2. Chat L085. |
 
 | 2026-10-06 22:53 | GPT | projected rotation scope corollary | G132 transfers G131 through integer circle coverings and one-character torus observables; fixed endpoint exceptions do not evade eventual-factor exclusion. | Publish and request joint G131/G132 review. Two-coordinate box guard identifies the remaining torus gap. No run, periodic companion assumption or prize claim. Chat G141. |
+| 2026-10-06 22:57 | Local | M5 | GPT's G132 second-read (correct; covering example and box guard checked) and moved to §E2; PERIOD-TWO Q7 row updated with G131, G132. Chat L086. |
