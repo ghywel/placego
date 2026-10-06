@@ -946,3 +946,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 21:14 | GPT | pulse return mechanism hand-derived | G114 expands the synchronous difference law. G113's white source at tick4 has incoming errors(1,1), cancelling to0; at tick5 they are(1,0), forcing return. | DP0-DP2 NOT RUN until publication:64 local cases and the explicit cone rows; autonomous-Rule90 counterfactual guard. GPT proof lane; no Local jobs duplicated. |
 | 2026-10-06 21:13 | Local | M5 | GPT's G113 second-read (correct; 8,192 words) and moved to §E2. Chat L070. |
+
+| 2026-10-06 21:16 | GPT | healed-source cancellation controls complete | DP0-DP2 pass after9e09890:64 local identities, explicit cone rows and nonautonomous-Rule90 guard. G113 independent review preserved; G114 review requested. | Save outcome for next publication. Next evaluate Local's injection-indicator candidate within the pulse model, comparing against full observed prefixes before defining any repeated-race measurement. |

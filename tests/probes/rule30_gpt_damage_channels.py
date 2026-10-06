@@ -4,6 +4,8 @@ DP1:known13-bit pulse word yields declared shrinking rows at ticks3..5,
 with incoming errors(1,1) then(1,0), and source error return at tick6.
 DP2 unexpected:shared black centre blocks right damage; Rule90 predicts1.
 REFUTED-BY:DP2 autonomous-Rule90 damage counterfactual.
+OUTCOME 2026-10-06 21:16 BST after9e09890:DP0-DP2 PASS.
+64 identities;incoming(1,1) cancels,(1,0) returns;black-centre guard passes.
 """
 from itertools import product
 

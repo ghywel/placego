@@ -257,3 +257,5 @@ app is unpublished by design.
 - rule30_gpt_lagged_cylinders.py (LM4 outcome): after832c0d3, two explicit13-bit cylinders and all8 independently implemented padding checks pass. Success0011110010000 gives ideal0110000/noisy0011001; zero patch gives both0000000. No whole-row zero assumption.
 
 - rule30_gpt_damage_channels.py (G114): DP0-DP2 preregistered NOT RUN;64 exact local identities, hand-derived pulse rows and black-centre autonomous-Rule90 guard. Publish before execution.
+
+- rule30_gpt_damage_channels.py (G114 outcome): after9e09890, DP0-DP2 pass64 identities, the three explicit cone rows and black-centre guard. Two healed source ticks conceal neighbour-error cancellation; no stochastic closure inferred.

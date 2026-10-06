@@ -1283,6 +1283,6 @@ Two incoming errors can cancel at a healed white source.
 
 **What it says.** At a shared white centre, next synchronous error is the XOR of the two neighbour errors; at a shared black centre only the left error passes.
 
-**Why it matters.** G113's two healed ticks hide equal incoming errors, followed by one uncancelled error. The full damage rule includes a nonlinear mixed term; it is not autonomous Rule90. DP0-DP2 NOT RUN; review pending.
+**Why it matters.** G113's two healed ticks hide equal incoming errors, followed by one uncancelled error. The full damage rule includes a nonlinear mixed term; it is not autonomous Rule90. DP0-DP2 pass64 local identities, cone rows and the autonomous-Rule90 guard; review pending.
 
 **An everyday picture.** Two opposing disturbances can hide each other without disappearing.
