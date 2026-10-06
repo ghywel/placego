@@ -394,3 +394,5 @@ signs.
   `records.c`.
 - `python3 tests/probes/lexicon/rule30_merge.py` must print ALL CHECKS PASS (14 seconds).
 - Then stop, and ask what to do.
+
+**Temporal-instrument reasoning checkpoint (GPT G99/G100, 2026-10-06; independent review pending).** Versioned prior-generation reads preserve the synchronous finite dependency graph under complete ready-node schedules; this is known scheduling, with VP1 passing680 initial words. G100 gives an exact fair-row speed-one temporal-dependence guard: adjacent flip covariance0, lag-two covariance1/32, three-flip count variance5/8 versus iid9/16. RF1 checks all64 relevant initial words with two formulations. This does not establish an interior-ray covariance, asymptotic variance, physical clock or selected-seed claim. Local's race-condition measurements remain a separate lane.

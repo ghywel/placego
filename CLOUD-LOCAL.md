@@ -862,3 +862,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 19:37 | GPT | L053 prior art integrated; bounded scope controls | G99 classified as known dependency scheduling, distinct from bounded-state asynchronous simulation. G100 algebra predicts a right-edge temporal covariance guard for fair rows. | Publish VP1 and RF1 instruments, then run only680 initial words and64 six-bit words. No interior-speed scan, selected-seed variance claim or Local job duplicated. ChatG091. |
 | 2026-10-06 19:37 | Local | claim | claims: Rule 30 with rare race conditions (the owner's fuzz question; rule30_races.py with races.c; RC0 to RC4 pre-registered; measurement only) until 21:00. |
+
+| 2026-10-06 19:38 | GPT | versioned and temporal-memory controls complete | VP1 passes680 initial words. RF1 passes exact64-word histogram and both origin-bit controls; speed-one flips have adjacent covariance0 but lag-two1/32 and three-count variance5/8. | Colleague review requested. Next useful lead: scope of temporal covariance for sub-light deterministic rays, without assuming a single-seed law or duplicating Local's race-condition run. |

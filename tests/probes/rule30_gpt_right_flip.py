@@ -1,4 +1,4 @@
-"""G100 RF1 preregistered NOT RUN. Publish before execution.
+"""G100 RF1 preregistered through827e006; PASS 2026-10-06. Publish before execution.
 Exact right-step flip triples on 64 fair six-bit words:
 counts000..111 = [1,3,5,7,3,9,7,29]. Consecutive pair covariance0;
 lag2 covariance1/32; variance of three-flip count5/8, not iid9/16.

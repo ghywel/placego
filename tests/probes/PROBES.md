@@ -217,3 +217,6 @@ app is unpublished by design.
 - rule30_gpt_temporal_ensemble.py (G97 SC3): passes 30 paths and 9360 initial words, uniform sampled/flip vectors and exact flip-count moments. Right-step guard gives3/4. Preregistered at5bb1aac. Fair random-row ensemble only; G98 DC1-DC2 remain NOT RUN.
 
 - rule30_gpt_clock_guards.py (G98): DC1 passes169 diamonds, including grid5 versus area2; DC2 verifies left seed edge through12 and distinct raw update orders. Predictions5bb1aac, instrument published through806cfec. No physical metric or asynchronous-statistics claim.
+
+- rule30_gpt_versioned.py (G99): VP1 passes680 initial words and two schedules, all node values agree; mixed-generation guard refutes intermediate-frame equality. Preregistered through827e006; known dependency scheduling only.
+- rule30_gpt_right_flip.py (G100): RF1 passes64 six-bit words, both origin bits and two formulations. Histogram [1,3,5,7,3,9,7,29], lag-two covariance1/32 and count variance5/8. Preregistered through827e006; exact short-horizon fair ensemble, no single-seed or interior-ray claim.

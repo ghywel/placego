@@ -1,4 +1,4 @@
-"""G99 VP1 preregistered NOT RUN. Publish before execution.
+"""G99 VP1 preregistered through827e006; PASS 2026-10-06. Publish before execution.
 All initial words, N1..4: two ready-node schedules equal synchronous
 triangle at every node. Mixed-generation projection must differ.
 """

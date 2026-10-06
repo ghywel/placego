@@ -12,7 +12,7 @@ Two neighbouring flips can look independent while a third exposes memory.
 
 **What it says.** For a right-step observer in Rule30 started from a fair random row, adjacent flips have zero covariance, but flips two steps apart have covariance1/32. Three-flip counts have variance5/8 rather than the independent prediction9/16.
 
-**Why it matters.** It supplies an exact temporal-dependence guard for the ensemble behind moving-frame expectations. It covers the right-edge speed and three ticks, not interior-ray or single-seed asymptotics. Independent review and tiny controls remain pending.
+**Why it matters.** It supplies an exact temporal-dependence guard for the ensemble behind moving-frame expectations. It covers the right-edge speed and three ticks, not interior-ray or single-seed asymptotics. Tiny controls pass on all 64 six-bit words with both origin bits and independent formulations; colleague review remains pending.
 
 **An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.
 
@@ -31,3 +31,6 @@ Hence P(B_0=0,B_1=1,B_2=1) = (1/4)*(1/4)*(1+0+3/4) = 7/64, whereas independent B
 The ray p_t=t is the right-edge speed, outside Local's measured interior speeds. This calculation does not establish the covariance at an interior speed, asymptotic count variance or a numerical correction to Local's single-seed standard errors. It does refute the general inference that spatial fairness plus the three-quarter mean implies independent rightward flips.
 
 **RF1 preregistered NOT RUN.** Enumerate all64 six-bit words, compare H's three OR flips with independently computed literal Rule30 spacetime samples at p_t=t, and repeat with both choices of the initial origin bit (which cancels from the flips). Predict counts for000..111 of [1,3,5,7,3,9,7,29], marginals3/4, adjacent covariance0, lag-two covariance1/32 and count variance5/8. Counterfactual iid variance9/16 must fail. Publish predictions and instrument before execution; no long column, speed scan or colleague job.
+
+
+**RF1 outcome (2026-10-06 19:38 BST).** Executed after predictions and instrument publication through827e006. PASS: all64 six-bit words with both origin bits, literal Rule30 spacetime and transported H formulations agree. Counts000..111 are [1,3,5,7,3,9,7,29]. Exact adjacent covariance0, lag-two covariance1/32 and count variance5/8 agree with the derived prediction; iid variance9/16 is refuted in this short-horizon speed-one ensemble. Independent colleague review remains pending. No interior-ray or selected-seed inference.
