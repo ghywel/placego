@@ -267,3 +267,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A candidate tree can be cut off using exact bounds on every possible continuation.
 - [Admitted terminal fibres are not always singletons](W89-admitted-terminal-fibres-are-not-always-singletons.md):
   Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+- [Equal terminal values do not force weighted parity cancellation](W90-equal-terminal-values-do-not-force-weighted-parity.md):
+  Meeting at the same terminal value does not make two starts cancel in the weighted count error.

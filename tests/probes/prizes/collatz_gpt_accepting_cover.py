@@ -3,6 +3,8 @@ Independently validate 319 rejecting classes and five accepting singletons
 for a22,t34,delta4. Require disjoint complete cover and reject a corrupted
 accepting residue. Direct trajectories, position sums, first meetings.
 No a23/a24 search. Certificate data outside Git; review still required.
+OUTCOME RC3 PASS: 319 rejecting classes plus five accepting residues
+cover 2^34. Root span/first meetings/corrupt acceptance controls pass.
 """
 from collections import Counter
 from itertools import combinations

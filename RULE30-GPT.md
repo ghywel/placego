@@ -4814,3 +4814,28 @@ Five least-residue pairs were independently validated; exhaustive enumeration of
 | 15257926651 | 15257926655 | 27870404645 |
 
 The a <= 20 analytic exclusion and a = 21 audited residue cover show that 22 is the first odd count permitting a same-count admitted collision, subject to independent review of those proofs and the coverage argument. This is a finite structural result, not a Collatz or Rule 30 solution. The failed BN1 prediction is part of its provenance; no novelty claim. Independent Local reading is requested at return.
+
+
+### G89 accepting-cover outcome and finite classification (2026-10-06)
+
+RC3 passes: 319 rejected residue classes and five accepting singleton residues form a pairwise disjoint cover of all 17179869184 residues modulo 2^34. Independent reasons are 167 admission failures, 132 offset-interval failures and 20 count failures. Every accepted pair passes the direct trajectory, all-prefix admission, odd-position affine and same-width checks, and first meets at step 34. The independent root span is below 8, validating the displacement-four reduction. A corrupted accepting residue is rejected. Predictions and checker at ca9d765; GPT Intel Python, under one second. No control failed. Certificate SHA256: 332752fd9bfb580e89c89722acee44daa9dcebd06507e97ba9bf416289799ace; data outside Git.
+
+Consequently the five rows in G89 give precisely the five lower-start residue families at count 22 and horizon 34. Each family consists of the listed pair plus k*2^34 for k >= 0, with common terminal increased by k*3^22. No shorter admitted horizon with the same odd count can contain a collision: G81 would pad such a meeting pair by zeroes to length 34, producing an accepting code pair that already meets before step 34. Every accepting pair here first meets at 34; equivalently its two last parity bits differ, whereas a proper zero padding would make both last bits zero. This excludes that possibility. The first admitted same-count collision odd count is therefore 22, with the lower-count analytic and residue-cover proofs and this classification still awaiting independent model review. The singleton lead is closed by counterexample; no larger count run was resumed.
+
+Probe: `tests/probes/prizes/collatz_gpt_accepting_cover.py`. This is a finite structural classification, not an all-count density estimate or a prize result.
+
+
+## G90. Equal terminal values do not force weighted parity cancellation (2026-10-06)
+
+Return to G74's open count-discrepancy question using G89's concrete fibre. Take starts 11843133435 and 11843133439, both width 34, and final horizon T = 34. Their first 33 parity bits are free in this width, so the final step is the first paid bit. Their odd counts at time 33 are 21 and 22 respectively, while both final counts are 22 and both terminal values are 21632881628.
+
+For the coin backward weights, f_34(a) is the indicator a >= 22. Thus
+
+    f_33(21) = 1/2, f_33(22) = 1,
+    f_34(22) = 1.
+
+The literal weighted changes of the two actual starts are therefore 1/2 and 0, with positive sum 1/2. In G74's imbalance form, the critical start takes an odd step and has demand weight Delta_33(21) = 1; the above-barrier start takes an even step but has Delta_33(22) = 0. Pooling them because their terminal values agree cannot turn this into signed cancellation.
+
+This is not the discrepancy of the full width-34 population. For the selected pair its coin continuation baseline is 3/2 and its final weighted count is 2; identifying that baseline with the full population's Q would be a separate mistake. No global bias, hazard or count estimate follows. The example closes only the shortcut that terminal coalescence itself ensures zero weighted error. G73's terminal odd-count label is a final-time label and does not say the two penultimate odd-count classes agree.
+
+**Unexpected class guard and preregistered control, NOT RUN.** TC1: independently evolve this pair through 34 steps, require admission, penultimate classes 21/22, common terminal and final classes 22/22. Directly enumerate the two fair coin continuations at each penultimate class to obtain backward weights 1/2 and 1; compute exact rational literal changes and demand-weighted changes, requiring agreement and pair sum 1/2. Counterfactual that equal terminal values force cancellation must fail. Do not enumerate the width-34 population, fit a rate or restart Local's count job. This is a small diagnostic in the existing weighted-bias lane, with independent reading requested and no novelty claim.

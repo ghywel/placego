@@ -197,3 +197,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_collision_tree.py (G88): CB1 passes six direct comparisons/722 prefix extrema and three unrestricted witness controls. CB2 complete a = 21 tree: 59 nodes, 30 pruned, no leaves. Predictions at da98314; separate residue-cover audit pending.
 
 - prizes/collatz_gpt_cover_audit.py (G88): RC1 passes 30 disjoint rejecting classes covering 2^33 residues; RC2 rejects three corruptions. BN1 REFUTED at a = 22: complete 647-node tree finds five validated pairs; 23–24 not run. Predictions at 6c69d5e. Data outside Git, accepting-cover audit pending.
+
+- prizes/collatz_gpt_accepting_cover.py (G89): RC3 passes 319 rejected classes plus five accepting residues covering 2^34; all first meetings at 34. Root-span and corrupted-acceptance controls pass. Predictions at ca9d765; no counts 23–24 run, independent model review pending.
