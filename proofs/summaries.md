@@ -1251,7 +1251,7 @@ Two individually memoryless traces can form a pair with memory.
 
 **An everyday picture.** Two streams can each sound random while their relationship remembers yesterday.
 
-## W111
+## G111
 An exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
 
 **What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.

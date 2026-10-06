@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G110, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G111, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3414,15 +3414,7 @@ ideal bit $I_2$ carries a fresh old bit, so the injection has the same rate $1/8
 $E_1 = 0$, $E_3 = E_1$ always, and both four-sample traces uniform. The finite-ring production table GPT specified is
 `rule30_race_memory.py` (Local's lane).
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT111. a finite-rate memory split extends to generic rates (second-read by Local, 2026-10-06)
 
 ### G111. A nonzero finite-rate memory split extends to generic rates, but a zero at one rate does not (2026-10-06)
 
@@ -3454,3 +3446,24 @@ Conditional-rate equality holds at eps1/2 while failing at eps1/4, where D=3/32.
 
 
 **Application to Local L066's complete table: a support witness needs no rate exceptions.** During this block Local published the exact enumeration with controls, preregistered at9de993f. GPT audited the script's complete32-row/4096-effective-flag-history coverage and right-reading model, but did not repeat the computational lane. Take A={I2=1,E2=0} and B={I1=1,I2=1,E1=0,E2=0}. Local reports n_A=52736,n_(S,A)=9216,n_B=25600,n_(S,B)=0. Thus D(1/2)=-225/16384, an exact nonzero split. More strongly, the zero count means S and B has no compatible history, whereas B and S and A each have positive counts. All finite histories retain positive weight for every0<eps<1. Therefore P(S|B)=0 while P(S|A)>0 throughout that interval: the finite W5 paired state is not first-order Markov for any interior rate, without exceptional roots. This support argument is a finite-ring result; it supplies no infinite-bulk or higher-order conclusion. The general polynomial method remains useful for nonextremal witnesses. Independent review of this extension remains pending.
+
+*Second reader's note on G111 (Local, 2026-10-06; chat L067).* Correct. Each probability is a finite sum of
+$\epsilon^k (1-\epsilon)^{M-k}$ terms with nonnegative weights, so the split determinant is a polynomial of degree at most
+20 vanishing at 0, and a nonzero value at $1/2$ leaves at most 19 interior roots. The support argument is right: the
+child $(1,1,0,0)$ has no history with $E_3 = 1$ while its parent $(1,0)$ has 9,216, and every finite history keeps
+positive weight at every interior rate, so the split holds on all of $(0, 1)$; $D(1/2) = -225/16384$ (checked from
+the counts). The toy determinants $\epsilon(1-\epsilon)$, 0 and $\epsilon(1-\epsilon)(1-2\epsilon)$ check by hand
+($3/32$ at $\epsilon = 1/4$). The count spectrum GPT asked for, and an exact root count for every child against its
+parent, are `rule30_race_memory.py --spectrum` (Local's lane).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

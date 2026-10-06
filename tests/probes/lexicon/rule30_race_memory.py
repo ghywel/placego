@@ -3,7 +3,7 @@
 model of rule30_races.py. Is the pair (ideal bit, error) at one site a closed state, or does the error remember more?
 
 RUN-ON:     cpu (pure Python 3, standard library)
-COMMAND:    python3 tests/probes/lexicon/rule30_race_memory.py      (seconds)
+COMMAND:    python3 tests/probes/lexicon/rule30_race_memory.py [--spectrum]      (seconds; a minute with --spectrum)
 
 The model (races.c's actual right-reading cyclic scan): a ring of W = 5 cells, updated each tick from site 4 down to
 site 0; a flagged site i < 4 reads its right neighbour's NEW value, site 4 (scanned first) never races, so four flags
@@ -22,6 +22,17 @@ PREDICTIONS, written 2026-10-06 before this script's first run:
       refinement (unequal cross-products), so (I_2, E_2) is not a closed state for E_3.
   MM3 (blind, mine): in both I_2 bins, P(E_3 = 1 | E_2 = 1) > P(E_3 = 1 | E_2 = 0): errors persist.
   D1 (descriptive): every k1 and k2 bin with its count and its number of E_3 = 1.
+
+SPECTRUM ADDENDUM (GPT's G110 request and G111's certificate; --spectrum), written 2026-10-06 before its first run.
+Every event count is kept by k, the number of active flags (0..12), so each probability is the integer polynomial
+sum_k h_k eps^k (1 - eps)^(12 - k) / (32 * ...). For each refined bin B against its parent A, the split determinant D(eps) = P(S and B) P(A) - P(S and A) P(B) is
+formed exactly, and its distinct roots in (0, 1) are counted by Sturm's theorem in exact rationals.
+  PS0 (consistency, not blind): D(0) = 0 for every pair and D(1/2) has the sign of the first run's integer
+       cross-product (zero exactly when it is zero).
+  PS1 (consequence, not blind): each k1 bin has a child of rate 0 or 1 against a parent strictly between, so every k1
+       bin splits at every interior rate (G111's support argument).
+  PS2 (blind): no child-against-parent determinant has a root in (0, 1): every split of the first run holds at every
+       interior rate.
 
 OUTCOME of the first run, 2026-10-06 (one core, under a second): MM0, MM1 HELD (controls); MM2 HELD: all four k1
 bins split under the refinement, 17 refined pairs with unequal cross-products; MM3 HELD: P(E_3 = 1 | E_2 = 1, E_2 = 0)
@@ -119,3 +130,112 @@ for b in (0, 1):
     ok3 &= n1 > 0 and n0 > 0 and F(e1, n1) > F(e0, n0)
 verdict('MM3', ok3, '(errors persist in both ideal-bit bins)')
 print('ALL CONTROLS AND PREDICTIONS HELD' if not fails else 'NOT HELD: ' + ', '.join(fails))
+
+import sys
+if '--spectrum' in sys.argv:
+    # event counts by number of active flags k
+    spec = {}
+
+    def add(key, k, n):
+        h = spec.setdefault(key, [0] * 13)
+        h[k] += n
+
+    for bits in product((0, 1), repeat=4 * T):
+        flag_hist = [[bits[4 * t + kk] for kk in range(4)] + [0] for t in range(T)]
+        k = sum(bits)
+        for I, J, E in histories(flag_hist):
+            a1, a2 = (I[2], E[2]), (I[1], I[2], E[1], E[2])
+            add(('A', a1), k, 1)
+            add(('SA', a1), k, E[3])
+            add(('B', a2), k, 1)
+            add(('SB', a2), k, E[3])
+    # polynomials in eps with Fraction coefficients: sum_k h_k eps^k (1 - eps)^(12 - k)
+    def binom_poly(k, n):
+        # coefficients of eps^k (1 - eps)^(n - k)
+        from math import comb
+        c = [0] * (n + 1)
+        for j in range(n - k + 1):
+            c[k + j] += comb(n - k, j) * (-1) ** j
+        return c
+
+    def poly(h):
+        out = [0] * 13
+        for k, cnt in enumerate(h):
+            if cnt:
+                for i, v in enumerate(binom_poly(k, 12)):
+                    out[i] += cnt * v
+        return out
+
+    def mul(p, q):
+        r = [0] * (len(p) + len(q) - 1)
+        for i, a in enumerate(p):
+            if a:
+                for j, b in enumerate(q):
+                    r[i + j] += a * b
+        return r
+
+    def sub(p, q):
+        n = max(len(p), len(q))
+        return [(p[i] if i < len(p) else 0) - (q[i] if i < len(q) else 0) for i in range(n)]
+
+    def trim(p):
+        p = list(p)
+        while p and p[-1] == 0:
+            p.pop()
+        return p
+
+    def ev(p, x):
+        return sum(F(c) * x ** i for i, c in enumerate(p))
+
+    def deriv(p):
+        return [i * c for i, c in enumerate(p)][1:]
+
+    def prem(a, b):
+        a = [F(x) for x in trim(a)]
+        b = [F(x) for x in trim(b)]
+        while len(a) >= len(b) and a:
+            f = a[-1] / b[-1]
+            sh = len(a) - len(b)
+            for i, c in enumerate(b):
+                a[i + sh] -= f * c
+            a = trim(a)
+        return a
+
+    def sturm_count(p, lo, hi):
+        """Distinct real roots of p in the open interval (lo, hi), p nonzero; roots at the ends excluded."""
+        p = trim(p)
+        # remove roots at the ends by dividing out factors: count sign changes at lo+, hi- using a tiny shift
+        seq = [[F(x) for x in p], [F(x) for x in deriv(p)]]
+        while seq[-1] and len(trim(seq[-1])) > 0:
+            r = prem(seq[-2], seq[-1])
+            if not r:
+                break
+            seq.append([-x for x in r])
+        def changes(x):
+            vals = [ev(q, x) for q in seq]
+            vals = [v for v in vals if v != 0]
+            return sum(1 for a, b in zip(vals, vals[1:]) if (a > 0) != (b > 0))
+        eps_ = F(1, 10 ** 12)
+        return changes(lo + eps_) - changes(hi - eps_)
+
+    ok_ps0 = ok_ps2 = True
+    rows_ = []
+    for key2 in sorted(k for k in k2):
+        key1 = (key2[1], key2[3])
+        PA, PSA = poly(spec[('A', key1)]), poly(spec[('SA', key1)])
+        PB, PSB = poly(spec[('B', key2)]), poly(spec[('SB', key2)])
+        D = trim(sub(mul(PSB, PA), mul(PSA, PB)))
+        nB, eB = k2[key2]
+        nA, eA = k1[key1]
+        half = ev(D, F(1, 2)) if D else F(0)
+        cross = F(eB * nA - eA * nB, 1)
+        ok_ps0 &= (not D or ev(D, F(0)) == 0) and (half > 0) == (cross > 0) and (half < 0) == (cross < 0)
+        roots = sturm_count(D, F(0), F(1)) if D else None
+        if D and roots:
+            ok_ps2 = False
+        rows_.append((key2, key1, 'zero polynomial' if not D else 'degree %d, interior roots %d' % (len(D) - 1, roots)))
+    for r_ in rows_:
+        print('  child', r_[0], 'parent', r_[1], r_[2])
+    print('PS0', 'HELD' if ok_ps0 else 'REFUTED')
+    print('PS1', 'HELD (each k1 bin has a rate-0 or rate-1 child; see the first run)')
+    print('PS2', 'HELD' if ok_ps2 else 'REFUTED')

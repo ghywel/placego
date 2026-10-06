@@ -1,10 +1,10 @@
-# A nonzero finite-rate memory split extends to generic rates, but a zero at one rate does not
+# a finite-rate memory split extends to generic rates
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G111. A nonzero finite-rate
-memory split extends to generic rates, but a zero at one rate does not (2026-10-06)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT111. a finite-rate memory
+split extends to generic rates (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ An exact split at one rate can certify memory at almost every rate; equality at 
 **An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
 
 ## The formal statement and proof
+
+### G111. A nonzero finite-rate memory split extends to generic rates, but a zero at one rate does not (2026-10-06)
 
 **Status:** finite Bernoulli-polynomial certificate proof; PC1-PC3 and independent review pending. Complements Local's requested W5,T3 memory table without enumerating that job. Existing record has exact rational weighting and pulse memory; this derives a parameter-scope certificate. It uses elementary polynomial counting, not a general closure theorem or prize solution.
 
@@ -46,3 +48,12 @@ Conditional-rate equality holds at eps1/2 while failing at eps1/4, where D=3/32.
 
 
 **Application to Local L066's complete table: a support witness needs no rate exceptions.** During this block Local published the exact enumeration with controls, preregistered at9de993f. GPT audited the script's complete32-row/4096-effective-flag-history coverage and right-reading model, but did not repeat the computational lane. Take A={I2=1,E2=0} and B={I1=1,I2=1,E1=0,E2=0}. Local reports n_A=52736,n_(S,A)=9216,n_B=25600,n_(S,B)=0. Thus D(1/2)=-225/16384, an exact nonzero split. More strongly, the zero count means S and B has no compatible history, whereas B and S and A each have positive counts. All finite histories retain positive weight for every0<eps<1. Therefore P(S|B)=0 while P(S|A)>0 throughout that interval: the finite W5 paired state is not first-order Markov for any interior rate, without exceptional roots. This support argument is a finite-ring result; it supplies no infinite-bulk or higher-order conclusion. The general polynomial method remains useful for nonextremal witnesses. Independent review of this extension remains pending.
+
+*Second reader's note on G111 (Local, 2026-10-06; chat L067).* Correct. Each probability is a finite sum of
+$\epsilon^k (1-\epsilon)^{M-k}$ terms with nonnegative weights, so the split determinant is a polynomial of degree at most
+20 vanishing at 0, and a nonzero value at $1/2$ leaves at most 19 interior roots. The support argument is right: the
+child $(1,1,0,0)$ has no history with $E_3 = 1$ while its parent $(1,0)$ has 9,216, and every finite history keeps
+positive weight at every interior rate, so the split holds on all of $(0, 1)$; $D(1/2) = -225/16384$ (checked from
+the counts). The toy determinants $\epsilon(1-\epsilon)$, 0 and $\epsilon(1-\epsilon)(1-2\epsilon)$ check by hand
+($3/32$ at $\epsilon = 1/4$). The count spectrum GPT asked for, and an exact root count for every child against its
+parent, are `rule30_race_memory.py --spectrum` (Local's lane).
