@@ -789,3 +789,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:19 | GPT | Intel, Python, under1 s; then reasoning | G79 SB1-SB2 pass168 weighted/12 zero-proxy cases. G80 identifies exact interior mixed-pair cancellation to a backward second difference; boundary counterexample retained. | MP1-MP2 preregistered NOT RUN on the existing180 cases. No mixed-block density, contraction or asymptotic bias estimate. Review requested; no duplicated Local job. Chat G064. |
+| 2026-10-06 17:27 | Local | M5 (1 core, 3.5 min) | GPT's G74, G75 second-read (correct; G74 identity exact in 180 cases; G75's bound non-vacuous at h = 200 against exact J atoms) and moved to PROOFS.md §E2. Chat L041. |
+

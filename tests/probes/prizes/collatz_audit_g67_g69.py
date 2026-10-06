@@ -162,4 +162,67 @@ for w in range(2, 19):
                 fails += len({n % 2 ** s_ for n in ns}) != len(ns)
 print("G72/G73: band labels on", checked72, "admitted (w, t) samples, w = 2..18; actual admitted collisions found:", coll,
       "; largest collision span", maxspan, "(always below a/3; short labels injective)")
+# G74 (added 2026-10-06): the backward-weight telescoping identity C_w(T) - Q_w(T) = (1/2) sum_t sum_a I_w(t,a) Delta_t(a)
+# in exact rationals, widths 2..13, T = m .. m + 14, by direct trajectories.
+from fractions import Fraction as Fr
+def ellf(j): return 0 if j == 0 else next(a for a in range(j + 1) if 3 ** a > 2 ** j)
+n74 = 0
+for w in range(2, 14):
+    m = w - 1
+    for T in range(m, m + 15):
+        f = {T: {}}
+        for a in range(0, T + 2): f[T][a] = Fr(1) if a >= ellf(T) else Fr(0)
+        for t in range(T - 1, -1, -1):
+            f[t] = {}
+            for a in range(0, T + 2):
+                f[t][a] = Fr(0) if a < ellf(t) else (f[t + 1].get(a, Fr(0)) + f[t + 1].get(a + 1, Fr(1))) / 2
+        I = {}; C = 0
+        for n in range(2 ** m, 2 ** w):
+            x = n; a = 0; alive = True
+            for t in range(T):
+                if t >= m and alive:
+                    I[(t, a)] = I.get((t, a), 0) + (1 if x % 2 else -1)
+                if x % 2: a += 1; x = (3 * x + 1) // 2
+                else: x //= 2
+                if 3 ** a < 2 ** (t + 1): alive = False
+            C += alive
+        rhs = Fr(0)
+        for (t, a), iv in I.items():
+            rhs += Fr(iv, 2) * (f[t + 1].get(a + 1, Fr(1)) - f[t + 1].get(a, Fr(0)))
+        # Q_w(T) = H_m = sum over admitted length-m words of f_m(a); count admitted length-m words by a
+        Hm = Fr(0)
+        for n in range(2 ** m, 2 ** w):
+            x = n; a = 0; ok = True
+            for t in range(m):
+                if x % 2: a += 1; x = (3 * x + 1) // 2
+                else: x //= 2
+                if 3 ** a < 2 ** (t + 1): ok = False; break
+            if ok: Hm += f[m][a]
+        fails += Fr(C) - Hm != rhs
+        n74 += 1
+print("G74: telescoping identity exact in", n74, "width/horizon cases (w = 2..13, T = m..m+14)")
+
+# G75: the exact distribution of J (max demand) by dynamic programming, for horizons h up to 300, and the bound
+# min over L of L/sqrt(h+1) + 32 exp(-(L-1)/2); report the first h where the bound is below 1 (non-vacuous) and check it.
+first_nonvac = None; checked75 = 0
+for h in (8, 16, 32, 64, 128, 200, 300):
+    T = h + 50; t = T - h - 1
+    # J = max over j = t+1..T of (ell_j - Z_(j-t-1)); Z counts fair bits for steps t+2..T (h bits).
+    dist = {(0, ellf(t + 1)): Fr(1)}                     # (Z so far, running max) after j = t+1 (Z_0 = 0)
+    for k in range(1, h + 1):
+        j = t + 1 + k; nd = {}
+        for (z, mx), pr in dist.items():
+            for b in (0, 1):
+                z2 = z + b; v = max(mx, ellf(j) - z2)
+                nd[(z2, v)] = nd.get((z2, v), Fr(0)) + pr / 2
+        dist = nd
+    Jd = {}
+    for (z, mx), pr in dist.items(): Jd[mx] = Jd.get(mx, Fr(0)) + pr
+    atom = max(Jd.values())
+    bound = min(L / math.sqrt(h + 1) + 32 * math.exp(-(L - 1) / 2) for L in range(1, 200))
+    fails += float(atom) > bound + 1e-12
+    if bound < 1 and first_nonvac is None: first_nonvac = h
+    checked75 += 1
+    print(f"   G75 h = {h}: max atom of J = {float(atom):.4f}, bound {bound:.4f}")
+print("G75: exact J distributions checked; first non-vacuous horizon among those tried:", first_nonvac)
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
