@@ -25,12 +25,19 @@ PREDICTIONS, written 2026-10-06 before this script's first run.
       collector's 1 - exp(-STEPS / 2^18) = 1 - e^(-15) if the residues were visited like fair coins); at n = 20 at
       least 97% (1 - e^(-3.8) = 0.978).
   TH3 (blind; the share of ones): the parity sequence has ones at a share within 0.002 of 1/2 over STEPS terms.
-  CF  (counterfactual, must fail): the map x -> 2x (p/q = 2/1) has a constant parity sequence, P = 1 for every n;
+  CF  (counterfactual, must fail): the map x -> 2x (p/q = 2/1) from 2 has a constant parity sequence, P = 1 for every n;
       and the periodic control x -> x mod 2^12 + ... is not needed: the first is enough to show the counter sees
       low complexity when it is there.
 REFUTED-BY: TH0 or CF failing (the instrument); TH1 to TH3 the other way.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-06 (4,000,000 terms, 4.5 minutes): TH0 PASSED. TH1 HELD, and more: every residue
+  class is visited for n <= 18 (2^18 = 262,144 classes), 524,034 of 524,288 at n = 19, 1,025,602 of 1,048,576 at n = 20.
+  TH2 HELD: coverage 1.00000 at n = 18 and 0.97809 at n = 20, against a fair coin's 0.97796. TH3 HELD: ones 0.49955.
+  CF FAILED by a slip of mine: the control x -> 2x was started at 1, which is odd, so its parity sequence is 1, 0, 0, ...
+  with P = 2, not 1. The control's intent (the counter sees low complexity) is met, but the statement as written was
+  wrong. Fixed to start at 2; the second run below reruns everything.
+
+OUTCOME of the second run: (to be recorded)
 """
 import math, sys
 
@@ -85,7 +92,7 @@ def main():
         blocks_ok &= len(blocks) == len(res[n])
     report("TH0 the first terms are A061419, and parity blocks of length n are as many as residues mod 2^n", ok0 and blocks_ok)
     # CF: x -> 2x
-    z, pz = 1, set()
+    z, pz = 2, set()                                   # start even: every later term is even too
     for _ in range(1000):
         pz.add(z & 1); z *= 2
     report("CF  the map x -> 2x has a constant parity sequence (P = 1)", len(pz) == 1)
