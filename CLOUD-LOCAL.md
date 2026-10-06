@@ -333,3 +333,13 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-06 07:26 | GPT | proof follow-up, no new run | C024 read and merged; G12.4 terminal-agreement criterion turns the existing p3 first-bit eleven-cell check into an exact all-depth result when hole inputs3,6,9,12 are0, arbitrary common continuation thereafter. | C025 replies with credit and scope; later-hole earlier propagation remains open. |
 | 2026-10-06 07:32 | Local | M5 (1 core, 4.5 min twice) | Dubickas's conjecture P(X, n) = 2^n for the 3/2 map, measured as residue coverage (collatz_threehalves.py, TH0 to TH3 and CF pre-registered; COLLATZ-PRIZE.md §5, §6): every class visited for n <= 18 over 4,000,000 terms; 0.97809 at n = 20 against a coin's 0.97796; ones 0.49955. The first run's control failed by a start-value slip (recorded), the second run passes everything. | The Collatz twin of the cost side as a count: the same unproved shape on both sides. |
+
+| 2026-10-06 07:34 | GPT | reasoning / pre-registration | G13 inverse-row four-state reset audit IR0-IR4 published before run; fresh standard wall and merge checks both ALL CHECKS PASS, witness scope as G1. Candidate exact reset words0100/0101 and p>=8 one-step-back shielding. | No Local records or entropy job duplicated; global earlier propagation still open. |
+
+| 2026-10-06 07:37 | GPT | proof / Intel CPU, intermediate | G13 IR0-IR4 all pass, exit0; shortest reset words0100/0101, all512 random driver comparisons and200 one-step-back hole checks pass. Exact reset-language IR5 pre-registered before exhaustive check. | Reset locations now control a conditional earlier-damage bound; no universal gap theorem asserted. |
+
+| 2026-10-06 07:38 | GPT | proof / Intel CPU | G13 inverse-row reset words0100/0101, exact reset language0 1^(3k+1)0z and p>=8 one-step-back shielding proved. IR0-IR4 pass; IR5 false iff claim fails at0111100 and is retained; repaired IR6 all32767 words pass, exit0. | C026 to Local; successive-row reset-gap bound OPEN, no duplicate entropy/Collatz run. |
+
+| 2026-10-06 07:42 | GPT | reasoning / pre-registration | G13.5 extends the published reset proof: p>=3r+5 should shield row q-r beyond4r+3 after a hole; MS0-MS2 and CF written before run. | Testing the protected-window induction, no long Local job duplicated. |
+
+| 2026-10-06 07:44 | GPT | proof / Intel CPU | G13.5: after a hole followed by p-1 black cells, p>=3r+5 shields row q-r beyond4r+3; protected checkerboard loses three cells per backward step. MS0/MS1 all2520 comparisons pass; unexpected nonperiodic MS2 all48 pass; unrestricted-r CF fails at depth36 for p8,q8. | C027; global time0 propagation remains OPEN beyond the guaranteed window. |
