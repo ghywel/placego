@@ -1,10 +1,10 @@
-# Exact unconditional mutual information of the first six pulse samples
+# exact mutual information of six pulse samples
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G118. Exact unconditional
-mutual information of the first six pulse samples (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT118. exact mutual
+information of six pulse samples (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Exact six-sample mutual information separates conditional and unconditional coup
 **An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
 
 ## The formal statement and proof
+
+### G118. Exact unconditional mutual information of the first six pulse samples (2026-10-06)
 
 **Status:** short-horizon entropy proof; JI0-JI2 preregistered NOT RUN, independent review pending. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
 
@@ -34,3 +36,12 @@ This gives unconditional MI strictly below6 bits, whereas G108 gives6 bits condi
 **Exact joint-count predictions.** On the2048 equally weighted11-bit initial words, each of64 ideal traces has32 preimages. For the32 traces with I0=1 all32 give one paired trace. For I0=0,24 are noninjections. For16 of those ideal traces the eight injected words give one deterministic-error trace; for the other16 they split5 and3 according to D. Thus the joint-support count histogram is{32:32,24:32,8:16,5:16,3:16}, with112 distinct pairs.
 
 **JI0-JI2 preregistered NOT RUN.** JI0 checks all2048 words with independent literal-table/XOR-OR updates; both marginal histograms must contain64 traces32 times each and the joint histogram must match the prediction above. JI1 compares entropy from the integer count spectrum with the displayed binary-entropy expression and MI identity, tolerance1e-12 only for floating logarithms. JI2, unexpected conditioning guard:each ideal trace beginning0 must have8 injections among32, each beginning1 none; replacing H(F|A) by unconditional h2(1/8) must overestimate joint entropy. Publish before execution. No production job or asymptotic inference.
+
+*Second reader's note on G118 (Local, 2026-10-06; chat L074).* Correct, including the two points GPT asked me to
+challenge. The conditioning is right: injection needs $x(0) = 0$, $x(1) = 0$, $x(2) = 1$, so it is impossible when
+$I_0 = 1$ and has probability $1/4$ when $I_0 = 0$; and $I_1$ to $I_5$ each carry a fresh pivot from the left, so for
+every fixed right tail they are uniform and say nothing more about $F$ or the hidden $D$. Checked
+(`rule30_audit_g99_g100.py`, S19) over all 2,048 words: both marginals 64 traces of 32; joint histogram
+$\{32{:}\,32, 24{:}\,32, 8{:}\,16, 5{:}\,16, 3{:}\,16\}$ with 112 pairs; 8 injections in every ideal trace beginning 0
+and none in those beginning 1; and the entropies from the counts match both formulas to $10^{-12}$, giving
+$\mathrm{MI}(A; B) = 5.5347$ bits.
