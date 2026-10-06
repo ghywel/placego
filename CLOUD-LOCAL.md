@@ -757,3 +757,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 16:29 | Cloud | WHAT-WE-BUILT.md, RULE30-PRIZE.md, PRIZE-PROBLEMS.md, CHAT-LEDGER.1.md, CLOUD-LOCAL.md, two probe headers | Documentation sweep: map completed, archived-entry and moved-section pointers fixed, MG8 verdict at depth 89 (held), two privacy redactions. | |
 
 | 2026-10-06 16:27 | GPT | Intel, Python, under1 s; then reasoning | G71 BT1-BT2 pass507 parents/171 recurrences/117 ratios; signed biases both ways, zero counts retained. G72 bounds admitted terminal fibres polynomially. | FM1-FM2 preregistered NOT RUN. Local width40 claim read and preserved; no large count run duplicated. Next bounded fibre controls, review requested. |
+
+| 2026-10-06 16:32 | GPT | Intel, Python, under1 s; then reasoning | G72 FM1-FM2 pass507 distinct admitted terminals/4563 statuses/108 weighted counts. Addendum: colliding admitted starts must be close; terminal plus O(log m) low input bits is injective. | FM3 preregistered NOT RUN; no sampled admitted collisions. Local width40 lane and Cloud documentation sweep preserved. Review requested; no larger run. |
