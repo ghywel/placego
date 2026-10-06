@@ -77,6 +77,22 @@ import pathlib, subprocess, sys, tempfile
 # side keeps about 0.8 of the coin, like 0101 (0.83), unlike the free side (0.70, 0.60). Section 8.62.
 from ompflags import OMP
 
+# SECOND ADDENDUM, written 2026-10-06 before the third run (python3 rule30_records_word.py [THREADS] slow), after the
+# owner asked what the next step after Condrey's period 1 would have been without period 2 (section 8.63). Walls
+# 0^a 1^b with a = b have the same freedom as 0101 (one half) and a switch density 2/(2a) instead of 1: the only thing
+# that changes along a = 2, 4, 8, 16 is how long each stretch lasts. Next to a black stretch of r steps the forced
+# left half is the checkerboard to depth r - 1 whatever column 1 is (Lemma 1); next to a white stretch column -1
+# copies column 1. So the question is whether long stretches change the record's law, which for 0101 is 0.83 d.
+#   SW0 (control, must hold): a = 1 is the 0101 wall: R(01, d) at d = 24, 32, 40, 48 equals the record file.
+#   SW1 (LR, must hold on the conjecture): no run reaches the cap for a = 2, 4, 8, 16 at depths 8, 16, 24, 32, 40, 48
+#       (free bits = d/2, so 24 at the deepest).
+#   SW2 (blind): switch density matters: R/d at d = 48 falls with a, and at a = 16 it is below 0.60 (against 0.83
+#       for 0101 and the coin's 1.0), because the checkerboard stretches admit no zeros.
+#   SW3 (blind; the law's shape): at a = 16 the record from depth d is at most the longest white stretch's reach
+#       plus a constant: R <= 2a + 12 at every depth run (the run cannot cross a black stretch's checkerboard).
+# REFUTED-BY: SW0 failing (the engine); SW1 failing is the result of the year; SW2, SW3 the other way.
+
+
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "rule30_records_word.txt"
 THREADS = next((a for a in sys.argv[1:] if a.isdigit()), "8")
@@ -149,10 +165,39 @@ def holes(exe):
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def slow(exe):
+    known = {}
+    for ln in (HERE / "rule30_records_cloud.txt").read_text().splitlines():
+        if ln.startswith("R "):
+            f = ln.split(); known[int(f[1])] = int(f[2])
+    ok0 = all(run(exe, "01", d, record=False)[0] == known[d] for d in (24, 32, 40, 48))
+    report("SW0 a = 1 is the 0101 wall: R(01, d) at d = 24, 32, 40, 48 equals the record file", ok0)
+    capped, rows = False, {}
+    for a in (2, 4, 8, 16):
+        word = "0" * a + "1" * a
+        rows[a] = []
+        for d in (8, 16, 24, 32, 40, 48):
+            r, c, line = run(exe, word, d)
+            capped |= c
+            rows[a].append((d, r))
+            print(f"   {line}", flush=True)
+    report("SW1 no run reaches the cap", not capped)
+    ratio = {a: rows[a][-1][1] / rows[a][-1][0] for a in rows}
+    print("   R/d at 48: " + ", ".join(f"a = {a}: {ratio[a]:.3f}" for a in rows), flush=True)
+    verdict("SW2 R/d at 48 falls with a and is below 0.60 at a = 16",
+            all(ratio[x] >= ratio[y] for x, y in ((2, 4), (4, 8), (8, 16))) and ratio[16] < 0.60)
+    verdict("SW3 at a = 16, R <= 2a + 12 = 44 at every depth run", all(r <= 44 for d, r in rows[16]),
+            f"max {max(r for d, r in rows[16])}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
     exe = build()
     if "holes" in sys.argv[1:]:
         holes(exe)
+        return
+    if "slow" in sys.argv[1:]:
+        slow(exe)
         return
     known = {}
     for ln in (HERE / "rule30_records_cloud.txt").read_text().splitlines():
