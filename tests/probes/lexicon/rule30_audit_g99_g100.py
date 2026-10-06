@@ -39,9 +39,14 @@ CHECKS (GPT's claims at 827e006):
      synchronous, D = 0..4, exact weights at eps = 0, 1/4, 1/2, 1: the observer's flip x_0 XOR y_delta has mean 1/2
      for delta = -1, 0 and U_D for delta = +1, with U_0 = 3/4, U_D = 3/4 - eps/4 + (eps/2) U_(D-1), and the remainder
      to (3 - eps)/(4 - 2 eps) is [eps/(8 - 4 eps)] (eps/2)^D.
+  S10 (G107, added 2026-10-06 at e779bd0): for T = 1..3, every nonincreasing path (increments -1 or 0) and every
+     schedule switching whole rows between synchronous and right-reading-everywhere (a synchronous right terminal),
+     over all initial words on sites -2T..T+1: the sampled vector (s_0..s_T) is uniform for every path and schedule,
+     so the trace is iid fair conditional on the schedule, with fully correlated rows included.
 """
 import random
 from fractions import Fraction as F
+from itertools import product
 
 fails = []
 
@@ -326,4 +331,29 @@ for D in range(0, 5):
         ok9 &= lim - U == e / (8 - 4 * e) * (e / 2) ** D
 check('S9 G106: flip means 1/2, 1/2 and U_D with the stated remainder (D <= 4; eps = 0, 1/4, 1/2, 1)', ok9,
       'eps = 1/2 limit %s' % ((3 - F(1, 2)) / (4 - 2 * F(1, 2))))
+ok10 = True
+for T_ in range(1, 4):
+    lo0, hi0 = -2 * T_, T_ + 1
+    nb = hi0 - lo0 + 1
+    for path in product((-1, 0), repeat=T_):
+        pos = [0]
+        for d in path:
+            pos.append(pos[-1] + d)
+        for sched in product((0, 1), repeat=T_):
+            cnt = {}
+            for w in range(2 ** nb):
+                row = {lo0 + k: (w >> k) & 1 for k in range(nb)}
+                lo, hi = lo0, hi0
+                samp = [row[0]]
+                for t in range(T_):
+                    new = {}
+                    new[hi - 1] = R30(row[hi - 2], row[hi - 1], row[hi])
+                    for i in range(hi - 2, lo, -1):
+                        rr = new[i + 1] if sched[t] else row[i + 1]
+                        new[i] = R30(row[i - 1], row[i], rr)
+                    row, lo, hi = new, lo + 1, hi - 1
+                    samp.append(row[pos[t + 1]])
+                cnt[tuple(samp)] = cnt.get(tuple(samp), 0) + 1
+            ok10 &= len(cnt) == 2 ** (T_ + 1) and len(set(cnt.values())) == 1
+check('S10 G107: nonincreasing traces uniform under every whole-row race schedule (T <= 3)', ok10)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
