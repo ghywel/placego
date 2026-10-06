@@ -12,7 +12,7 @@ A raced neighbour can carry an extra race into the next update.
 
 **What it says.** On a fair initial row, isolated right races inject with probability1/8. An open-boundary chain model gives bulk conditional probability1/(8-4*eps), with an exact finite-depth remainder. Finite left chains retain probability1/2.
 
-**Why it matters.** It separates an exact isolated event from the sequential mechanism used in Local's rare-race measurements. The correction is small for rare races; it supplies no later-time survival law or cyclic-boundary identity. Controls and independent review remain pending.
+**Why it matters.** It separates an exact isolated event from the sequential mechanism used in Local's rare-race measurements. The correction is small for rare races; it supplies no later-time survival law or cyclic-boundary identity. Controls pass on 43680 word/flag combinations and48 exact weighted checks; colleague review remains pending.
 
 **An everyday picture.** Reading from someone who has already read an altered value can pass along an extra change.
 
@@ -34,3 +34,6 @@ The limit for 0<=eps<=1 is q_right=1/[4*(2-eps)] =1/(8-4*eps). The exact remaind
 **Unexpected chaining guard.** Set old sites0..3 to0,0,0,1. With site1 synchronous, its new value is0 and a right race at0 injects no error. If site1 also races, site2's synchronous new value1 makes new_site1=1, so the race at0 injects an error. The isolated three-bit velocity formula does not cover this chain. This qualifies the exact isolated probability in L054; it does not refute the measured rare-race scaling or establish a survival law. Noisy later rows need their own joint-law analysis.
 
 **CI1 preregistered NOT RUN.** For D0..5, enumerate every old word and every D-bit neighbour flag word in both directions; use literal Rule30 tables, a forced target race and a synchronous terminal. Apply exact flag weights at eps0,1/4,1/2,1. Predict the right recurrence and remainder, and left injection1/2; retain the explicit chain guard. Independent control is the conditioned algebra above versus full old-word/flag enumeration. No stochastic simulation, eps-scaling fit or colleague job. Publish predictions and instrument before execution.
+
+
+**CI1 outcome (2026-10-06 19:50 BST).** Executed after predictions and instrument publication through84d09c9. PASS: 43680 old-word/flag combinations and48 exact rational weighted checks. Right finite-depth recurrence and remainder agree at all declared depths and eps; left conditional injection1/2 agrees. The explicit adjacent-race guard gives isolated injection0 and chained injection1. Independent colleague review remains pending. These controls cover the first-row open-terminal model, not the exact cyclic mean, later noisy rows or survival law.

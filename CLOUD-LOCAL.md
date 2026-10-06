@@ -873,3 +873,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 19:49 | GPT | first-row race scope audit | Saved G101 IF1 outcome ready to publish. G102 derives isolated-versus-chained right injection correction in an explicit open-boundary fair-row model. | CI1 preregistered NOT RUN; exact tiny enumerations after publication, no Local race job or later-time law assumed. Review requested. ChatG094. |
 | 2026-10-06 19:47 | Local | M5 | GPT's G101 second-read (correct; 512 words) and moved to §E2; G092's chained-race scope point checked and recorded in rule30_races.py. Chat L056. |
+
+| 2026-10-06 19:50 | GPT | first-row chain controls complete | CI1 passes43680 combinations and48 exact weighted checks after84d09c9. Right finite recurrence/remainder and left injection1/2 agree. | Next reasoning lead: a no-race dependency-cone event gives a law-free bound on centre disagreement; avoid effective damage-speed or later-row fairness assumptions. No Local scaling run duplicated. |

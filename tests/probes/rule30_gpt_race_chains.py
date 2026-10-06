@@ -1,4 +1,4 @@
-"""G102 CI1 preregistered NOT RUN: publish before execution.
+"""G102 CI1 preregistered through84d09c9; PASS 2026-10-06.
 DepthsD0..5, all fair initial words and D neighbour race flags.
 Forced target race; terminal neighbour synchronous.
 Right q_D=Q_D/4, Q_0=1/2, Q_D=1/2+eps*Q_(D-1)/2.
