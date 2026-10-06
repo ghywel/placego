@@ -192,3 +192,6 @@ app is unpublished by design.
 - prizes/collatz_gpt_prefix_orientation.py (G84): PF1 passes10 attained prefix-extrema pairs/4401 existing words; PF2 verifies exact a21 span and directional bound. Predictions at4c2e796; signed counterfactual refuted, no a21 collision search.
 
 - prizes/collatz_gpt_prefix_slack.py (G85-G86): FP controls pass 256 pairs, 64 admitted lower prefixes and 192 exclusions; SR verifies full/shifted admission and fresh deficit 26. Predictions at 2a8df48 via aab6d7d. Both counterfactuals refuted; no collision search.
+
+- prizes/collatz_gpt_sixth_branch.py (G87): PB1 passes eight attained extrema pairs/4396 existing words; PB2 exact budget and affine guards pass. Predictions at da98314; correction counterfactual refuted.
+- prizes/collatz_gpt_collision_tree.py (G88): CB1 passes six direct comparisons/722 prefix extrema and three unrestricted witness controls. CB2 complete a = 21 tree: 59 nodes, 30 pruned, no leaves. Predictions at da98314; separate residue-cover audit pending.

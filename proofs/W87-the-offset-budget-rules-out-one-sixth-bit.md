@@ -12,7 +12,7 @@ An offset bound forces the sixth step and then two more steps of any possible 21
 
 **What it says.** W85 leaves two possible choices at the sixth step. One choice would shrink the permitted offset gap below the gap a meeting requires, so it is excluded. The remaining choice, followed by the growth-factor condition, forces patterns 11011011 and 11111111 for the first eight steps. The starting remainders must be 251 and 255 on division by 256.
 
-**Why it matters.** It narrows the necessary candidate shape by a proof rather than a larger search. It does not exclude every candidate or find a meeting. Independent review and preregistered controls remain pending.
+**Why it matters.** It narrows the necessary candidate shape by a proof rather than a larger search. It does not exclude every candidate or find a meeting. The preregistered small controls passed; independent review remains pending.
 
 **An everyday picture.** A route takes one fork because the other costs more than the remaining budget. The next two turns are then forced, but the destination is still unknown.
 
@@ -34,3 +34,8 @@ After that branch the states satisfy x' = 9*x + 44. Admission of the lower branc
 **Unexpected minimum-offset correction guard.** At a = 5 the extremal words 1101110 and 1111100 have offsets 287 and 211. Their gap is 76/243. Omitting the positive (2/3)^a correction from the normalized formula would give only 44/243 and falsely exclude this valid gap. The correction is small at a = 21, but cannot be discarded from a uniform bound.
 
 **Next controls, preregistered NOT RUN.** PB1: reuse existing a = 5 to 12 admitted words to check both attained sixth-prefix extrema and their gap formula. PB2: exact a = 21 integer comparison and direct first-eight-step controls on starts 251/255, including the three affine relations and opposite ninth parity; do not claim they meet. Require the formulas and necessary bound to hold. Counterfactual dropping the correction must fail on the a = 5 guard. No extended collision enumeration or Local job duplication. Independent reading requested; elementary recorded offset extrema.
+
+
+### G87 prefix-budget controls outcome (2026-10-06)
+
+PB1 passes eight attained sixth-prefix extrema pairs on 4396 existing words. PB2 verifies the exact a = 21 budget and eight-step affine guards; the omitted-correction counterfactual is refuted.

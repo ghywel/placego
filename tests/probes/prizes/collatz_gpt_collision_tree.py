@@ -4,6 +4,9 @@ all observed prefix extrema independently checked. Unexpected positive
 control: unrestricted t9,a2,displacement28, full direct/tree agreement.
 CB2 BLIND: no admitted a21 collision, displacement4; 100000 nodes,5s.
 A cap is incomplete, never an exclusion. No a22 or large population run.
+OUTCOME: CB1 passes six direct comparisons and 722 prefix extrema;
+unrestricted control accepts three witnesses. CB2 complete in59 nodes,
+30 pruned, no leaves: blind HELD. Separate residue-cover audit pending.
 """
 from collections import defaultdict
 from time import monotonic
@@ -40,7 +43,7 @@ def limits(a,t,s,j,B,restricted):
     return lo,hi
 
 
-def tree(a,t,delta,restricted,cap=100000,seconds=5):
+def tree(a,t,delta,restricted,cap=100000,seconds=5,cuts=None):
     A = 3**a
     stack = [(0,0,0,0,0,0)]  # s,r,j_low,j_high,B_low,B_high
     out = set()
@@ -53,10 +56,14 @@ def tree(a,t,delta,restricted,cap=100000,seconds=5):
         nodes += 1
         if restricted and (3**j < 2**s or 3**k < 2**s):
             pruned += 1
+            if cuts is not None:
+                cuts.append((s,r))
             continue
         left,right = limits(a,t,s,j,B,restricted),limits(a,t,s,k,C,restricted)
         if left is None or right is None or not left[0]-right[1] <= delta*A <= left[1]-right[0]:
             pruned += 1
+            if cuts is not None:
+                cuts.append((s,r))
             continue
         if s == t:
             leaves += 1

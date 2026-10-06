@@ -2,6 +2,8 @@
 PB1 attained sixth-prefix extrema on existing a=5..12 words.
 PB2 exact a21 budget and eight-step guards 251/255; no meeting claim.
 CF dropping positive minimum-offset correction must fail at a5.
+OUTCOME: PB1 passes eight attained extrema/4396 existing words; PB2
+exact budget and affine guards pass, correction counterfactual refuted.
 """
 from itertools import combinations
 from fractions import Fraction
