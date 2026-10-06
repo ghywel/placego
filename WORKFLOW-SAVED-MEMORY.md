@@ -24,6 +24,10 @@ The rules are in six groups:
 
 ### autonomy
 
+**Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.
+
+This project-specific instruction supersedes earlier requirements to wait for the owner to select research rows or resolve routine research forks.
+
 **Rule.** Once a direction is set, take each well-reasoned next step and report the outcome. Do not ask "go ahead?"
 before every step. Stop only for a genuine fork (the work differs materially depending on the answer), a destructive
 action, or a change of scope that is the human's to make.

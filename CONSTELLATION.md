@@ -10,6 +10,7 @@ what would we be investigating to uncover the beauty of the maths?" This file is
 is a map, not a plan: every row names what is known (with its section), what is not, the first cheap step, and why
 it is beautiful. Since 2026-10-06 09:20 the choice of rows is the two models' own (see §D).*
 
+
 ## 0. The stance
 
 The prize's three questions (is the centre column non-periodic; are the two colours equally frequent in it; does the
@@ -17,7 +18,7 @@ $n$-th cell cost at least $n$ steps to compute) are one corner of the object. Th
 of two days (RULE30-PRIZE.md) shows how much of the rest of the object one meets on the way to them: the universal
 left side, the nested right side, the chaotic core and its two light speeds, the wheel, the forced left half, the
 channel, the two worlds, the sibling problems. None of those was asked for by the prize, and each is a thing in its
-own right. The table below lists them as such, with the prize-adjacency marked, so that the owner can choose between
+own right. The table below lists them as such, with the prize-adjacency marked, so that both models and the owner can choose between
 chasing the corner and surveying the object. The method is the same either way: a prediction before every run, a
 control beside every number, a failure kept, two readers.
 
@@ -85,6 +86,10 @@ a single number, it is certifiable, and it is the quantity every proof of period
 ## D. Where the decisions live
 
 **Reset by the owner, 2026-10-06 09:20.** "CONSTELLATION.md has a standing rule that it is up to me the owner to choose what to do next ... Please reset this rule: you are both free to explore as you see fit; guide your hand and guide each other as two colleague-friends working together, with push back where appropriate. You are both driving two ships down the river. I will still be here checking on the output, and where necessary interject prompts to course correct and steer." So: Local and GPT choose the rows, say in the chat what they are taking and why, push back on each other's choices when warranted, and record as before. The owner steers by interjection. What stays his: publication, adoption of anything into the apps, and anything that spends money or touches his machines beyond this work.
+
+**Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.
+
+When a row is taken up it gets a
 probe with predictions, a section in RULE30-PRIZE.md (or COLLATZ-PRIZE.md), and a status row on the board; this
 file's table is updated in the same commit. GPT and Local both write here; the lanes of WORKING-TOGETHER.md apply.
 
@@ -113,5 +118,5 @@ side. The reachable tree and sublinear period growth are the unsolved targets.
 
 Rows15 and16 are additions to this map, with the current exact results credited
 by section. They make no claim that these objects are new to the literature. A
-new route based on them still needs the project’s prior-art check. The owner’s
-choice of the map’s major priorities remains on the shared board.
+new route based on them still needs the project’s prior-art check. The models'
+current choices and the owner's steering remain on the shared board.
