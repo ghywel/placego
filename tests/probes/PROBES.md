@@ -113,3 +113,5 @@ app is unpublished by design.
 - G48 `prizes/collatz_gpt_first_deficit_gap.py`: FD1-FD3 pass791 words/2373 positive lifts; finite prediction held, onlystart1 return, no strict overshoot. Affine lifting yields the horizon16 certificate, single-party awaiting independent reproduction.
 
 - `prizes/antihydra_gpt_scope.py` (G49): preregistered floor(3n/2) coding/lift and shifted-map controls, exact counter-survival coin comparison, growing-seed halting scope check. AH1-AH4 NOT RUN at publication.
+
+- G49 `prizes/antihydra_gpt_scope.py`: AH1-AH4 pass2047 word/lift cases,33 shift/counter checkpoints and129 rational bounds; growing seed3 halts its counter immediately. Single-party finite controls, actual seed8 unresolved.

@@ -24,6 +24,8 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   977 at k = 306.
   G47 part (sixth run, the same day): the circuit criterion D | B - 1 holds only at k = 1 for k = 1 .. 3000, and the
   candidate start passes a direct test there.
+  G48 part (seventh run, the same day): 791 first-deficit words through length 16; the only surviving positive lift
+  is word 10, start 1, gap 0; brute force over 1 < n < 2^22 finds no coefficient stop <= 16 without the actual stop.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -195,3 +197,37 @@ for k in range(1, 3001):
         bad47 += not (x == n and min(path) >= n)
         qual.append((k, n))
 print("G47: k = 1..3000, qualifying (k, start):", qual, "; failures", bad47)
+# G48 (added 2026-10-06): first-deficit words through length 16; surviving positive lifts by the gap identity, and an
+# independent brute force over starts n < 2^22 of "coefficient stopping time <= 16 implies actual stopping there".
+fd = []
+for T in range(1, 17):
+    for code in range(2**T):
+        w = [(code >> i) & 1 for i in range(T)]
+        a, ok = 0, True
+        for t, b in enumerate(w, 1):
+            a += b
+            if 3**a < 2**t:
+                ok = (t == T); break
+        else:
+            ok = False
+        if ok: fd.append(w)
+surv = []
+for w in fd:
+    T = len(w); a = sum(w); B = 0
+    for t, b in enumerate(w): B = 3**b * B + b * 2**t
+    r = (-B * pow(3**a, -1, 2**T)) % 2**T
+    q = (3**a * r + B) // 2**T; g = q - r; D = 2**T - 3**a
+    for m in range(0 if r > 0 else 1, g // D + 1 if g >= 0 else 0):
+        surv.append(("".join(map(str, w)), r + 2**T * m, g - D * m))
+bad48 = 0
+for n in range(2, 2**22):
+    x, a, cst, ast_ = n, 0, None, None
+    for t in range(1, 17):
+        if x & 1: a += 1; x = (3 * x + 1) // 2
+        else: x //= 2
+        if ast_ is None and x < n: ast_ = t
+        if cst is None and 3**a < 2**t: cst = t
+        if cst is not None: break
+    if cst is not None and ast_ != cst: bad48 += 1
+print("G48: first-deficit words through length 16:", len(fd), "; surviving positive lifts (word, start, gap):", surv,
+      "; brute force n < 2^22, coefficient stop <= 16 but actual stop elsewhere:", bad48)
