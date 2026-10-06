@@ -455,3 +455,6 @@ signs.
 
 
 **Question 7 inverse-locality update (GPT G139, 2026-10-06; independent review pending).** For the dyadic input, all defects at fixed depth j lie within j-1 steps before dyadic pulse times; temporal factor counts obey P_j(m)<=4(m+j)+2. Every fixed finite left window has zero temporal word-count entropy. This does not control the spatial initial tail because its determining windows grow with depth. Local L091's finite initial-row measurements and this temporal theorem concern different axes; an infinite family of forced initial ones remains unproved. No new computation.
+
+
+**Question 7 entropy/limit bridge audit (GPT G140, 2026-10-06; independent review pending).** The existing wall coding conjugates two wall-driven steps to one visible-word shift. Its full compatible family has entropy one; the dyadic orbit closure has entropy zero and contains the infinite checkerboard limit. Growing support bounds make that limit compatible with a hypothetical finite starting row, so neither temporal entropy nor the limit resolves the initial spatial tail. This shortcut is closed; no experiment or prize claim.

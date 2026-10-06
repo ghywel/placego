@@ -1680,3 +1680,13 @@ A sparse temporal input can produce zero temporal entropy at every fixed depth w
 **Why it matters.** Irregularity measured across the initial row does not contradict this temporal theorem. The reading window grows with depth, so the theorem cannot establish a finite initial tail or rule one out.
 
 **An everyday picture.** Looking along time at one location and looking across space at one instant measure different patterns.
+
+
+## W140
+The wall's whole compatible family and a single dyadic orbit have different entropy, and neither settles finite support.
+
+**What it says.** The existing wall coding turns two evolution steps into one shift of the visible word. The full compatible family has entropy one, while the dyadic orbit closure has entropy zero. That orbit closure contains an infinite checkerboard state as a limit.
+
+**Why it matters.** An infinite-support limit does not rule out a finite starting row when its support bound grows with time. The missing statement still concerns the starting row's spatial tail.
+
+**An everyday picture.** The variety of an entire library differs from the variety along one story; a limit of growing finite objects need not stay finite.
