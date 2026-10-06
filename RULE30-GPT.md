@@ -1848,3 +1848,114 @@ be15203 reports Local's completed width27/28 power-iteration measurements0.1229/
 bits per visible bit, with its integer SQ6 certificate pending and MM3's write clause
 undecidable as written. Those are Local's measurements, not this run. C028 congratulates
 the mmap handoff, sends this counting refinement and preserves all those qualifications.
+
+## G15. The exact width-one visible language depends on white-time gaps (2026-10-06)
+
+**Question.** G14 counted the white end. What does the same local relaxation say at the black
+end, and does white fraction alone determine its capacity? Read the current record and ledgers;
+no new reply after C028. Both fresh startup checks printed ALL CHECKS PASS, witness scope as G1.
+Checked §8.2's known Fibonacci result, G14's matrices and the two-end board before extending
+those same local rules. VG0–VG4 and CF were pushed in56dcd32 before the enumeration. No wider
+layer, records, squeeze or entropy-pool computation was duplicated.
+
+### G15.1. Exact gap characterization, without a periodicity premise
+
+Let z0<z1<... be the wall's white times and let e_i=sigma(z_i) be the visible bits. Count the
+same width-one relaxation as G14: sigma must satisfy its update for some independently
+chosen next-right input rho(t) at each time. This does not require rho to be a further
+Rule30 column. Consecutive white times have gap g=z(i+1)−z(i), with all g−1 intervening
+wall cells black. Their exact allowed visible pairs are:
+
+| Gap | Allowed visible pairs | Matrix, rows=old bit and columns=new bit |
+|---|---|---|
+| 1 | 00,01,11 | A=[[1,1],[0,1]] |
+| 2 | 00,01,10 | F=[[1,1],[1,0]] |
+| at least3 | 00,01,10,11 | J=[[1,1],[1,1]] |
+
+**Proof.** At a white wall cell, sigma cannot decrease; at a black wall cell, it cannot
+make the transition1→1. Both local conditions are also sufficient for some rho, by G14.
+For gap1, the white update directly forbids10. For gap2, visible1 forces the next sigma
+value1 after the white update, and the black update then forces visible0:11 is forbidden.
+Starting with visible0 allows either next bit, by choosing the intermediate value0.
+
+For gap≥3, use the white update to retain the starting bit. At the first black update,
+choose the next sigma value0, possible from either starting value. Keep sigma0 at the
+remaining black updates until the final one, which can output either desired next bit.
+There are at least two black updates, so this construction realizes all four visible
+pairs. Each interval can be constructed independently once its visible endpoints are
+specified; adjacent intervals share just those endpoints. Thus the listed nearest-neighbour
+conditions are necessary and sufficient for the whole finite or infinite visible language.
+Before the first observed white time, choose sigma0 until the last update, then the required
+first bit; both outputs are possible from sigma0 under either wall value. Any last observed
+visible bit has an allowed continuation. These boundary choices impose no extra constraint.
+
+For n≥1 observed white times, the exact number of visible words is the sum of the entries
+of the product of the n−1 gap matrices. With no white times there is just one empty visible
+word. The language equality is stronger than equality of the counts: the proof specifies
+exactly which visible words extend through the local relaxation.
+
+### G15.2. Two useful consequences and a same-density counterexample
+
+**Black end.** For a one-hole wall $0\,1^{p-1}$ with p≥3, every visible gap uses J. Therefore
+**every binary sequence of hole bits** extends in the width-one relaxation. Its capacity
+is exactly1 bit per visible bit, or1/p per time step. The p2 wall uses F and recovers the
+already-known Fibonacci envelope. This is no claim that a real finite right half can
+produce every such sequence; its further columns may exclude many of them. The one-step
+right-neighbour rules alone provide no hole-bit entropy loss at the black end for p≥3.
+
+**White end and clustered zeros.** For wall $0^{p-1}1$, the cyclic product is
+
+```math
+ A^{p-2}F=\begin{pmatrix}p-1&1\\1&0\end{pmatrix},
+```
+
+exactly G14. More generally, if every white block of length l is separated from the next
+by at least two black cells, its l visible bits form a non-decreasing word, with l+1
+choices, and J makes different blocks independent. For a periodic wall with block lengths
+l1,...,lk and period P, the exact per-period growth factor is the product of (li+1).
+
+**Counterexample to freedom determining this relaxed capacity.** Both primitive period8
+walls00111111 and01101111 have white fraction2/8. Their cyclic matrices are respectively
+
+```math
+ AJ=\begin{pmatrix}2&2\\1&1\end{pmatrix},\qquad
+ JJ=\begin{pmatrix}2&2\\2&2\end{pmatrix}.
+```
+
+They have rank1 and nonzero eigenvalues3 and4. Equivalently, the first wall has a single
+white block with three monotone visible choices; the second has two independently free
+hole bits. Their relaxed rates are log2(3)/8 and2/8 bits per time step. Thus white fraction
+alone does not determine even the width-one visible entropy. This refutes an exact
+capacity-by-fraction statement, not Local's measured coin scaling or a qualitative ladder
+of rigidity. It also does not establish distinct actual right-half entropies, since those
+languages are narrower and have not been counted here.
+
+For any periodic wall with at least one white time, use its cyclic gap-matrix product M.
+The visible prefix count over n periods with a visible endpoint is the sum of entries of
+M^n; removing the endpoint changes counts by at most a factor2. Hence its relaxed rate
+is log2 of the spectral radius of M divided by the time period. Constant white wall uses
+only A and has polynomial counts, rate0; constant black wall has no visible bits, rate0.
+These reproduce the existing endpoint controls rather than claiming new constant-wall
+prize results.
+
+### G15.3. What ran, scope and next intention
+
+`rule30_gpt_gap_language.py`, one Intel CPU process, exited0 and printed ALL CONTROLS PASS.
+VG0 checked all Boolean existence-of-rho transitions. VG1/VG2 enumerated **all256 wall
+traces of length8**, and all256 sigma words for each wall, comparing the **entire projected
+language** to the gap constraints, as well as its matrix count. No mismatches. VG3 verified
+the white-end matrix product for p2..64 and the black-end J case for p≥3. The same-fraction
+counterfactual was rejected by the exact matrices above.
+
+**Unexpected VG4:** the finite, non-uniform gap list3,5,3,4 (white times0,3,8,11,15) admitted
+all32 five-bit visible words under direct scalar enumeration. The characterization does
+not depend on a periodic extension or equal spacing. No blind empirical hypothesis was
+introduced, no prediction failed, and these checks establish neither a full right evolution
+nor LR.
+
+**Lead.** The two-end row remains PART. Local latch counts and their arrangement dependence
+are now completely characterized at width1; a genuine right half still needs wider-layer
+constraints. The next question at the black end is specifically which wider layer first
+removes this full visible shift, if any, with the source lane named before any run. C029
+sends the negative width-one result and the qualification on freedom; it requests no new
+Local computation and leaves the existing integer-certificate job with Local.
