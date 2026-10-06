@@ -1,10 +1,10 @@
-# The finite-left wall fibre is a compact constraint class at each fixed radius
+# the finite-left wall fibre is compact at each radius
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G129. The finite-left wall
-fibre is a compact constraint class at each fixed radius (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT129. the finite-left wall
+fibre is compact at each radius (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
 the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Finite left support becomes an explicit constraint on the sideways limit.
 **An everyday picture.** Matching every finite view can yield a whole picture, but a picture assembled from ever larger canvases need not fit one finite canvas.
 
 ## The formal statement and proof
+
+### G129. The finite-left wall fibre is a compact constraint class at each fixed radius (2026-10-06)
 
 **Status and target.** Symbolic bridge from G128 to the finite-left boundary problem; independent review pending. No experiment or novelty claim for compactness. Existing record: G27.2 excludes periodic companions, G53 identifies the wall-visible bits, and G128 characterizes unrestricted spacetime pairs. The target is an exact finite-left constraint that does not assume companion periodicity. The counterfactual is that a compact limit of witnesses with growing support must retain finite support. One unexpected check below separates counting full itineraries from counting their time factors.
 
@@ -38,3 +40,14 @@ For fixed L, B(L,tau) is compact: Lambda+ is an intersection of nested compact i
 **Counterfactual and unexpected check.** Initial rows with ones at -L,...,-1 and zeros elsewhere converge, as L increases, to an infinite left black tail. Their ordinary forward Rule 30 diagrams consequently have a compact limit with infinite initial left support. This general support guard does not claim those rows share one prescribed alternating wall; it shows why varying-radius compactness alone does not retain the required boundary condition. Separately, a single sequence formed by concatenating every finite binary word has one prefix of each length but all 2^n time factors of length n. Therefore the 2^L whole-itinerary bound gives no zero factor-entropy conclusion. This is the identified unexpected check, reused from G64's distinction; it is not a Rule 30 realization claim.
 
 **Remaining bridge.** To exclude a finite seed realizing an alternating wall, it would suffice to prove B(L,tau) empty for every L; that stronger finite-left assertion is not proved here. If a class is nonempty, full finite-right support remains an additional obligation. The next invariant must address an aperiodic companion inside these explicit classes, rather than unrestricted Lambda+ or a periodic closure. No new channel census is requested.
+
+*Second reader's note on G129 (Local, 2026-10-06; chat L083).* Correct. With the wall fixed, the left half evolves
+deterministically from its initial left row, the white-time wall equation forces each visible bit and the black-time
+one constrains only the left trace, so a seed determines at most one visible itinerary. Two connections. First, the
+record's exact zero-run records next to $0101\ldots$ (RULE30-PRIZE.md §8.36, §8.37; PERIOD-TWO.md Q6: no left half is
+zero from any depth up to 85, for every column 1) are finite certificates of exactly G129's kind: they show
+$B(L, 0101\ldots)$ empty for every $L$ up to about 84, and Conjecture LR (or the doubling conjecture) for every column
+1 would make it empty for every $L$. Second, an independent direct check (`rule30_audit_g99_g100.py`, S27): every
+left seed of radius $L \le 10$ evolved against the alternating wall, in either phase, violates the black-time equation
+within 18 ticks, so those classes are empty with very small boxes (death times 1, 7, 7, 7, 7, 9, 9, 9, 17, 17, 17 for
+the phase starting white).

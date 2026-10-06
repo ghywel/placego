@@ -112,6 +112,10 @@ CHECKS (GPT's claims at 827e006):
      listed, all beginning 22100, and those of 022001 also all begin 22100; (022000) repeated lies in Y. For G128:
      every binary word of length N <= 11 is the trace of site 0 over times 0..N-1 for some finite initial row (solved
      leftwards); the spatial checkerboard is fixed by Rule 30; the pair (alternating, all ones) is not in H's image.
+  S27 (G129, added 2026-10-06 at 0f3b3ec): next to the alternating wall (both phases), every left seed of radius
+     L = 0..10 evolved forward with the wall as its right boundary violates the wall equation at a black time within
+     18 ticks, so B(L, alternating) is empty for L <= 10 by finite boxes (death times 1,7,7,7,7,9,9,9,17,17,17 for
+     phase 0 and 0,2,6,6,6,8,10,12,12,18,18 for phase 1); a seed determines at most one visible itinerary.
 """
 import random
 from fractions import Fraction as F
@@ -1119,4 +1123,29 @@ for Lq in (2, 4):
             ok26 &= Hmap(ap, bp) != (tgt_a, tgt_b)
 ok26 &= Hmap(tuple([1] * 4), tuple([0, 1, 0, 1]))[0] == (0, 0, 0, 0)
 check('S26 G127, G128: period-two table; 0102 lift; the six precursors of 022000 (all 22100...); finite-window traces', ok26)
+ok27 = True
+deaths = {0: [], 1: []}
+for phase in (0, 1):
+    tau = lambda t: (t + phase) % 2
+    for Ls in range(0, 11):
+        last = 0
+        for seed in range(2 ** Ls):
+            Tm = 60
+            Wd = Ls + Tm + 3
+            row = {i: ((seed >> (-i - 1)) & 1) if -Ls <= i <= -1 else 0 for i in range(-Wd, 0)}
+            died = None
+            for t in range(Tm):
+                ell = row[-1]
+                if tau(t) == 1 and ell != 1 - tau(t + 1):
+                    died = t
+                    break
+                new = {i: R30(row[i - 1], row[i], row[i + 1] if i + 1 < 0 else tau(t)) for i in range(-Wd + 1, 0)}
+                new[-Wd] = 0
+                row = new
+            ok27 &= died is not None
+            last = max(last, died if died is not None else 999)
+        deaths[phase].append(last)
+ok27 &= deaths[0] == [1, 7, 7, 7, 7, 9, 9, 9, 17, 17, 17] and deaths[1] == [0, 2, 6, 6, 6, 8, 10, 12, 12, 18, 18]
+check('S27 G129: every left seed (L <= 10) dies against the alternating wall within 18 ticks, both phases', ok27,
+      str(deaths))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

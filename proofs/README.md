@@ -333,19 +333,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A predecessor inside the image may require a longer repeating pattern.
 - [the sideways limit set has every binary trace as a factor](G128-the-sideways-limit-set-has-every-binary-trace.md):
   The unrestricted sideways limit still contains every binary temporal trace.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [The finite-left wall fibre is a compact constraint class at each fixed radius](W129-the-finite-left-wall-fibre-is-a-compact.md):
-  Finite left support becomes an explicit constraint on the sideways limit.
+- [the finite-left wall fibre is compact at each radius](G129-the-finite-left-wall-fibre-is-compact-at.md): Finite
+  left support becomes an explicit constraint on the sideways limit.

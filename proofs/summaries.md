@@ -1560,7 +1560,7 @@ The unrestricted sideways limit still contains every binary temporal trace.
 **An everyday picture.** A shrinking set of paired records can still contain every possible individual record.
 
 
-## W129
+## G129
 Finite left support becomes an explicit constraint on the sideways limit.
 
 **What it says.** Fix a wall and a maximum initial left radius. The admissible pairs form a compact class: every forced initial cell farther left must be zero. If this class is empty, some finite rectangle already witnesses the failure. Each left seed permits at most one complete visible itinerary.
