@@ -148,7 +148,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Q1, the counting form (§5's missing statement; M1 in CLOUD-LOCAL.md) | **OPEN** | Measured to width 26, and by right parts beyond width 100 (§8.51 to §8.53). Restated as a count of window contents (§8.58). | The proof. No known method reaches it. |
 | 6.1, the wheel's kicks | **OPEN** | Narrowed to a kicked rotation (§8.43). The wheel's rigidity alone is refuted as a bound (§8.44). | A statement about the kicks' sizes, which come from the interior. |
 | Q2, the move to a finite window | **OPEN**, not started | Nothing direct. Theorems E and E″ (§8.57) exclude classes of column 1. They do not force periodicity. | A condition that is not local in column 1. |
-| Q3, a machine-found certificate | **OPEN**, not started | Only the SAT crib (§8.37), which answered a different question. | An encoding of the forced walk as string rewriting, then the search. |
+| Q3, a machine-found certificate | **CLOSED** (§8.61) | Assessed before any encoding: a certificate is a potential falling at every forced cell; walks of length 0.83 d from every depth force it to be linear in the seed, and a potential of that kind is the bounded-debt statement of Q1 written as log N. Not a separate route. | Reopen only with a named finite family of potentials to search. |
 | Q6, LR refuted by construction | **PART** | The exact records cover every column 1: no left half is zero from any depth up to 85 onwards (§8.36, §8.37). | Depths beyond the records. Nothing constructive has been tried. |
 | Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). Every column 1 that begins with near-squares at unbounded periods is excluded: period-doubling, Chacon, substitution fixed points starting with a double letter (Corollary F, §8.59). Thue–Morse and paperfolding are excluded for every left edge up to 15,868 cells (Theorem A⁗). | Thue–Morse and paperfolding for every left edge: settling-time and period control on every admissible branched left side (§8.59; GPT audit, RULE30-GPT.md G2). Rudin–Shapiro. Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Kicked wheels. |
 | Q9, the Collatz twin | **PART** | The least-residue lemma (PRIZE-PROBLEMS.md §7.4). The window principle on both sides, W1 to W3 (§7.5). Exponential sums cannot reach a single case. | The literature check (below). A Collatz statement beyond complexity $1.71\,n$. |
@@ -164,6 +164,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | 6.4, the survey's imports | **DONE** as a list | They became Q2, Q3 and Q5. | see those rows |
 | M2, the undecided periodic columns | **CLOSED** | Jen's theorem (§8.13). The run is recorded in `periodic_kill.c`. | nothing |
 | The ten routes of §4 | **CLOSED** | Each names its section. | nothing |
+| Q3 as a route (added 2026-10-06) | **CLOSED** | §8.61: the certificate is Q1's potential. | nothing |
 
 *Runs.*
 
@@ -246,7 +247,7 @@ prize needs a statement about every single finite configuration. The questions a
    Find a condition implied by the 0101 wall under which every admissible column 1 is eventually periodic, then
    apply Jen's theorem. Every local layer language of column 1, up to width 16, has positive entropy (§8.14, §8.20).
    So such a condition, if it exists, is not local in column 1.
-3. **[OPEN, not started]** **A machine-found certificate.** Encode the forced walk inside a zero run as a string rewriting system, and
+3. **[CLOSED, §8.61]** ~~**A machine-found certificate.**~~ Encode the forced walk inside a zero run as a string rewriting system, and
    search with SAT for an arctic (max-plus) matrix interpretation, or for an automaton invariant with a ranking
    function, that proves the runs end. That is how Yolcu, Aaronson and Heule proved weakenings of Collatz. The
    encoding decides whether a proof exists. Condrey's $H(2, w) \ge w$ rules out any fixed-depth induction, so the

@@ -3848,3 +3848,33 @@ is 34,359,738,788 (420 more). For 0101 at depth 21, a fresh independent control 
 halving theorem here. Also the finite agreement windows in the synchrony runs need an additional invariant
 proof before “for ever” follows. See RULE30-GPT.md G3.4–G3.5 and CHAT C008; the original prose is preserved
 for Local to correct. These qualifications do not change the computed record maxima.
+
+
+### 8.61 Question 3 assessed: the certificate it asks for is question 1 in another costume (2026-10-06)
+
+Question 3 of PERIOD-TWO.md asked for a machine-found certificate: encode the forced walk inside a zero run as a
+string rewriting system and search, with SAT, for an arctic matrix interpretation or an automaton invariant with a
+ranking function that proves every run ends, as Yolcu, Aaronson and Heule did for weakenings of Collatz. It had
+never been started. Before building an encoding (a leap), the step: what would such a certificate have to be?
+
+**What a certificate is here.** The forced walk from depth $d$ (§8.37) has as its state the last two anti-diagonals
+of the left half, about $d + k$ bits after $k$ steps, and it ends when a forced cell shows a 1. A termination
+certificate is a function $\Phi$ of the state, non-negative, that falls by at least a fixed amount at every forced
+cell passed and never rises at a linear one. Then no walk from a state of potential $\Phi_0$ can pass more than
+$\Phi_0 / \delta$ forced cells, and the run from depth $d$ is bounded by about $2\Phi_0 / \delta$.
+
+**Two things pin $\Phi$ down.** First, walks of length $0.83\,d$ from every depth $d$ exist (§8.36, exact to depth 85),
+so $\Phi$ at the start must be at least linear in $d$: any certificate scales with the seed, as the question itself
+noted from Condrey's bound. Second, the state's description also grows linearly, and no bounded-size interpretation
+(a fixed finite automaton, a fixed matrix dimension) can carry a potential that is linear in an unbounded string
+*and* knows which forced cells will be 0: the walk's forced cells are the chaotic core's own values. So $\Phi$ would
+have to be a statistic of the whole state that falls at each forced cell, which is a counting statement: the
+number of continuations still able to keep the run alive falls by a constant factor per forced cell. That is the
+bounded-debt form of question 1, $N(T + k) \le 2^{c - \alpha k} N(T)$, written as a potential $\Phi = \log_2 N$.
+
+**So question 3 is not a separate route.** A certificate that proves LR, or B, is a potential that question 1 would
+supply, and SAT can search only a finite family of candidates, of which none is known to contain such a potential.
+What SAT does well here it has already done: the SAT crib of §8.37 (exact, slower than enumeration), and finite
+checks of the kind the ladder does exhaustively. Closed as a route of its own, on this argument and not on a run;
+reopen only with a named finite family of potentials to search. Its tools would serve question 1 if a candidate
+$\Phi$ is ever written down, which is where the work is.
