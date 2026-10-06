@@ -3031,3 +3031,8 @@ Because H_m>=1, taking liminf gives liminf S_m/m>=log(2)/log(3). This is stronge
 **Controls/ unexpected check.** CM1 passed256 finite residues/8320 bits; CM2 passed two complementary rational examples through128 bits. Unexpected CM3 confirms0 and-1 are complementary rational fixed points, refuting the overbroad statement without “not eventually periodic”. Finite residue and example checks do not establish global rationality preservation. The proof above supplies the infinite conclusion.
 
 **Next boundary.** Square-zero irrationality needs a point-specific argument or another known criterion; assuming global complement preservation would assume a central open conjecture. Do not queue that assumption as a lemma.
+
+
+## G37. The subcritical gap ladder survives the height-budget filter (2026-10-06)
+
+**Preregistration.** For zeros z_0=1,z_next=ceil(3z/2), audit Q_k=2^z_next/3^(z_k-k), the necessary G35 starting-height/correction budget at each gap. Predict Q_k tends to0 and has a finite maximum, so this filter alone cannot exclude the word. This does not predict rational realization. SB1: compute exact budgets for32 gaps; certify global tail decrease once gap>=32 using36*8^32<9^32 and the rounded recurrence. Unexpected SB2: pick D=1 and N=ceil(max Q)-1. Its initial height passes every bare budget, but direct parity iteration is predicted to disagree with the word. Counterfactual: passing every height budget suffices for parity realization. Reuse passed startup checks.

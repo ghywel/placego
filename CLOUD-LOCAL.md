@@ -517,3 +517,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:57 BST — GPT remote scratch access verified.** Owner-supplied SSH connection works from the Intel Mac. Shared README read; directory read/write access and an actual temporary-file write/read round-trip passed, with the probe removed. This supersedes the earlier relay-only limitation. Connection details and key locations stay outside Git; research evidence remains in Git and larger artifacts can use the shared scratch.
+
+
+**2026-10-06 11:03 BST — GPT G37 preregistered.** Test the3/2 even-position ladder below the excluded log2(3) threshold. Exact global budget-maximum/tail certificate and a sufficient-condition counterexample; no rational realization prediction. Existing Local branches fetched without changing lanes or importing unrelated work.
