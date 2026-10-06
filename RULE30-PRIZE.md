@@ -4047,8 +4047,10 @@ the simplest non-constant wall; it is the one farthest from Condrey's.
 - *Along $s$ at any $f$: the slow walls* $0^a 1^b$ with $a, b \to \infty$. One switch pair per period, and each
   mechanism gets its stretch. What the left half sees per period is explicit: during the black stretch nothing
   from the right (column 1 is invisible, the checkerboard forms by force to depth $b - 1$); during the white
-  stretch, column $-1$ copies column 1 ($x(-1, t) = \sigma(t)$ while the next wall cell is white), and column 1 from
-  a real right half is latched, $0^{a'} 1^{a - a'}$, one integer. So a real right half injects $O(\log a)$ bits per
+  stretch, column $-1$ copies column 1 ($x(-1, t) = \sigma(t)$ while the next wall cell is white, and its complement
+  at the last white step), and column 1 from a real right half is latched, $0^{a'} 1^{a - a'}$, one integer. (Two
+  endpoints, after GPT's §G18: the checkerboard to depth $b - 1$ holds at the *start* of the black stretch, and at its
+  last black time the first left cell is already 1.) So a real right half injects $O(\log a)$ bits per
   period into the left half, against about $a + b$ conditions, and the target for the left half is nearly
   deterministic: its own column $-1$, under its own autonomous evolution with the wall as boundary, must read
   $0^{b-1} 1$ through every black stretch and a monotone word through every white one. This is the cleanest form of
@@ -4077,10 +4079,13 @@ have 0101's freedom and switch densities $1/a$, for $a = 2, 4, 8, 16$: if the la
 stretches cost nothing and freedom is the whole story; if it falls, switch density is a second axis and the slow
 walls are a genuinely different problem. **Measured** (8 threads, 7 minutes; SW0 and SW1 passed, no cap): $R/d$ at depth 48 is 0.812, 0.812, 0.667 and
 0.792 for $a = 2, 4, 8, 16$, against 0.83 for 0101 and the coin's 1. SW2, which predicted a fall to below 0.60 at
-$a = 16$, is **refuted**; SW3 held with room to spare (the longest run at $a = 16$ is 38). So for the left half
-alone, freedom is the whole story and the checkerboard stretches cost nothing: a free column 1 defeats them. What
-the slow walls change is not LR but B: the budget of a *real* right half, which the latch cuts to one integer per
-white stretch. The reframing below is adjusted accordingly.
+$a = 16$, is **refuted**; SW3 held with room to spare (the longest run at $a = 16$ is 38). So no fall of the predicted
+size was seen: in this run the checkerboard stretches did not cost the free column 1 what I expected. That is what
+the data say and no more (GPT's qualification, CHAT-LEDGER.md C033, is right: four ratios at one depth do not fix
+an asymptotic slope, and a switch-density effect stays unresolved; my first wording, "freedom is the whole story",
+overstated it). What the slow walls change for certain is the B side: the budget of a *real* right half, which the
+latch cuts to one integer per white stretch, and which GPT's §G15 makes exact for the width-one relaxation: a rate
+of $\log_2(a+1)/(a+b)$ bits per step. The reframing below is adjusted accordingly.
 
 **5. The reframing, as a workflow.** Three changes, offered for the owner's decision (DECISION OWED):
 1. *Stop extending finite exclusions as a goal.* The ladder's next depth and the records' depth 93 would cost days
@@ -4092,7 +4097,12 @@ white stretch. The reframing below is adjusted accordingly.
    theorem to try: with the right half's injection explicit ($O(\log a)$ bits per period against $a + b$
    conditions), prove the bounded-debt count of question 1 for this family, where the "debt" is paid by a single
    integer per period rather than by a chaotic column. GPT's exact finite mechanisms at the one-hole corner (§G11
-   to §G13) are the right kind of object for the two switch events.
+   to §G13) are the right kind of object for the two switch events. GPT's §G18 and §G19 (2026-10-06, hours later) already
+   supply the first pieces: for $b \ge 3a + 1$ the row at the first white time is the checkerboard on depths $4a$ to
+   $a + b - 1$ whatever the inputs; on balanced walls the real-right latch excludes freely driven prefixes (a finite
+   support exclusion, interior latch positions minimising); and the caution that certifying both switches does not
+   make the per-period state finite, because the spatial tail is a state of its own that needs a closure or cost
+   theorem. That tail is the precise missing item.
 3. *Keep period 2's record as the measured reference, not the route.* Its wheel is special, its channel bound is
    certified, its counting form is measured to width 26; a proof on the slow walls would be tested against it,
    not derived from it.
