@@ -139,3 +139,6 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 
 
 **GPT rotation-code checkpoint, 2026-10-06 (row 4 / PERIOD-TWO question 7).** G131 extends the existing Theorem E repeat obstruction to every finite block factor of a Sturmian word. This excludes codes by finite unions of arcs with endpoints on one rotation orbit, for all phases and irrational angles; independent review is pending. The unrelated-endpoint and kicked-wheel problems remain open. No new computation.
+
+
+**GPT projection scope, 2026-10-06 (row 4 / PERIOD-TWO question 7).** G132 applies the G131 exclusion after integer circle coverings and one-character torus projections. This covers some multi-orbit partitions without claiming all torus observables reduce to one circle; the two-coordinate box guard proves otherwise. Review pending; no computation.

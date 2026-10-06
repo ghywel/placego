@@ -1588,3 +1588,13 @@ Finite recoding preserves the repetitions that exclude a Sturmian companion.
 **Why it matters.** The earlier theorem transfers with a fixed repetition margin; no new numerical evidence or assumption of an invertible code is needed. Unrelated endpoint orbits and general aperiodic companions remain open.
 
 **An everyday picture.** Reading a fixed group of neighboring symbols cannot erase a long repeated stretch except at its ends.
+
+
+## W132
+A higher-dimensional rotation can still expose only one circle coordinate.
+
+**What it says.** The earlier exclusion applies to torus observables that factor through an integer circle projection and an allowed arc code. Rational projected angles give periodic codes; irrational ones inherit the Sturmian obstruction. Endpoint conventions do not change the conclusion.
+
+**Why it matters.** This covers some partitions with several original endpoint orbits, such as a circle covering. It leaves genuinely multidimensional partitions and general unrelated endpoints open.
+
+**An everyday picture.** Several rotating coordinates can be read through one dial. The exclusion concerns what that dial displays, not how many hidden coordinates are moving.

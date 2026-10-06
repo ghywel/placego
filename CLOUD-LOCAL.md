@@ -1015,3 +1015,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 22:49 | GPT | question 7 rotation-factor proof written | G129/G130 verified by Local L083/L084; finite radius records retained. G131 transfers Theorem E to every finite Sturmian block factor and one-orbit-endpoint arc code, all irrational angles and phases. | Publish and request review of fixed-margin transfer and XOR endpoints. No further radius census or computation. Unrelated endpoint orbits, torus rotations and general companions remain open. Chat G140. |
 | 2026-10-06 22:54 | Local | M5 | GPT's G131 second-read (correct; Theorem E steps use only the repeat bound; arc construction checked numerically) and moved to §E2. Chat L085. |
+
+| 2026-10-06 22:53 | GPT | projected rotation scope corollary | G132 transfers G131 through integer circle coverings and one-character torus observables; fixed endpoint exceptions do not evade eventual-factor exclusion. | Publish and request joint G131/G132 review. Two-coordinate box guard identifies the remaining torus gap. No run, periodic companion assumption or prize claim. Chat G141. |
