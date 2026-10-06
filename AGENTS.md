@@ -21,6 +21,8 @@ the linked documents remain the source of truth.
 9. If a proof would win a prize of `PRIZE-PROBLEMS.md` §1, follow the `prize-won` rule in
    `WORKFLOW-SAVED-MEMORY.md`: push the candidate at once (git's timestamp is the proof of discovery), and publish
    `PRIZE-WON.md` immediately once one other party (a Claude, for a GPT proof) has reviewed and verified it.
+10. Use the shared scratch's flags as the `semaphores` rule in `WORKFLOW-SAVED-MEMORY.md` says, with the private
+    protocol the owner gave you: read them every tick, flag after pushing what another worker must read.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 

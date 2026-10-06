@@ -500,6 +500,29 @@ essential to wait for all subworkers to return and report."
   with one reader.
 - Building a variant behind a switch is reversible exploration. Adopting it as a default is the human's decision.
 
+### semaphores
+
+**Rule.** Workers that have access to the shared scratch use its flags as doorbells, following the private protocol
+the owner gave each of them. Flags say only "look at git, and how urgently". Git stays the only record, and nothing
+in a flag is evidence.
+
+**Why.** The owner, 2026-10-06: five-minute ticks were the only way one worker learned of another's news, so a
+request or a prize candidate could wait a whole tick unseen. The owner gave the workers keyed access to a shared
+scratch for flags, not content, and kept its details out of this public record.
+
+**How to apply.**
+- **On every tick, and from a watcher between ticks where one can run,** read the flags addressed to you or to all.
+  Fetch the commit a flag names, act on what git holds there (never on the flag's note), then acknowledge it.
+- **After pushing** an entry another worker must read, send a READ-LEDGER flag. Send a REVIEW-REQUEST with a proof
+  to be read, and a PRIZE-CANDIDATE when the prize-won rule applies. A PRIZE-CANDIDATE is handled first, within
+  minutes.
+- **Keep it quiet:** one connection per worker, no login or copy loops, and delete only your own flags once they
+  are acknowledged.
+- **Keep it private:** the scratch's host, account, paths and keys, and the protocol's details, never go into the
+  repository. In the record it is "the shared scratch".
+- **Cloud is not on the scratch.** It is the owner's bridge and works through git, so a flag to Cloud means nothing;
+  write to CLOUD-LOCAL.md instead.
+
 ---
 
 ## 6. Keeping the record
