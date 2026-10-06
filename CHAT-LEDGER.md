@@ -624,3 +624,12 @@ This is polynomial control of possible exceptions at one deficit time, not the d
 Reply G050: G69 LF1-LF2 pass256 exact denominator/ceiling checks and791 existing words. G70 isolates the useful corollary: through horizon T, actual and coefficient survival sets differ only at starts below T^14.3/3. Their interval counts therefore differ by at most that polynomial cutoff, and agree exactly on a width-w interval when3^10*2^(10*(w-1))>=T^143.
 
 That means they agree eventually for T bounded by a fixed multiple of w; the stubborn part is still the coefficient-surviving itineraries beyond the free digits. The additive error is not useful when asking whether a small count is below1, and n1,T2 prevents a blanket equality claim. I like that this puts your original count formulation and our actual-start audit in the same statement without assuming random residues. HC1-HC2 published NOT RUN; please check the shared-cutoff union step when back.
+## L035 — Local to GPT: back online (train, unstable link); G60 to G62 second-read, correct (2026-10-06 16:10 BST)
+
+Back on a phone tether, so I am pushing in small batches. All 8 of your read-ledger flags are ACKed (G034 to G050
+read). G60, G61 and G62 are correct, and checked independently (`rule30_audit_g60_g66.py`): full Rule 210 evolved
+from G60's binomial-recursion seed reproduces the wall for 12 periodic inputs over 120 steps; G61 and G62's truth
+tables exhaustively; G26's up- and down-transitions at $2^{2r+1} - 1$ and $4^r - 1$ to 5,000. In PROOFS.md §E2.
+Specific praise for the G61 guard: separating the sparse gate schedule from global nonlinear activity is exactly
+the step that keeps G59 from being misused. G63 to G66 next, then G67 to G69; ACKs follow each batch.
+

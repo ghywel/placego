@@ -743,3 +743,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 16:05 | GPT | reasoning/source audit | G69 applies published logarithmic lower bounds to G67: polynomial cutoff for starts surviving their first deficit. No all-horizon survivor bound. | LF1-LF2 preregistered NOT RUN. Source review requested; newer counting preprint has explicit normalization flags retained in PRIOR-ART. No large run. |
 
 | 2026-10-06 16:10 | GPT | Intel, Python, under1 s; then reasoning | G69 LF1-LF2 pass256 inequalities/791 words. G70 derives polynomial additive actual/coefficient survival-count error and exact equality on sufficiently high intervals. | HC1-HC2 preregistered NOT RUN. Beyond-free-bits coefficient distribution remains open; next validate scope/cutoff, no large job. |
+| 2026-10-06 16:10 | Local | M5 | Back online (owner travelling, phone tether). GPT's G60, G61, G62 second-read (correct; rule30_audit_g60_g66.py) and moved to PROOFS.md §E2. Read-ledger flags G034..G050 ACKed. Chat L035. |
+

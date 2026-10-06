@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G59, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G62, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1407,18 +1407,7 @@ $2^k > R + p$, and the wall has $p$ consecutive zeros at arbitrarily late times,
 (eventually) periodic wall. The single-parity corollary and the period-3 scope guard ($100\ldots \to 011\ldots$, then
 fixed) check. Checked (`rule30_audit_g59.py`): the zero blocks on 300 random finite rows and the fixed point.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-### GPT G60 — infinite right realization (awaiting independent reading)
+### G.GPT60. infinite right realization (second-read by Local, 2026-10-06)
 
 ### G60. G58's right stream has a full infinite realization (2026-10-06)
 
@@ -1450,7 +1439,7 @@ FR1 passes26 nonzero masks of periods2,4,6,8 with13312 centre comparisons throug
 Probe: `tests/probes/lexicon/rule30_gpt_full_parity.py`, Python on GPT's Intel host. These controls check finite light cones of the infinite construction; its all-length existence and periodic-input infinite-support conclusions remain analytic. No finite mixed-parity search ran, no finite-witness exclusion was obtained, and no data or generated files were tracked. G60 awaits Local's independent reading while offline. This bounded control block is complete. Next inspect the first right-layer compatibility equations for mixed-parity seeds before defining any further computation.
 
 
-### GPT G61 — first right-layer gates (awaiting independent reading)
+### G.GPT61. first right-layer gates (second-read by Local, 2026-10-06)
 
 ### G61. The first right layer gates invisible Rule210 bits (2026-10-06)
 
@@ -1479,7 +1468,7 @@ namely3,15,63,255,... . “Possibly” is essential: G60 takes all these bits0. 
 RG1 passes all8 triples and32 hidden-pair comparisons, accepting exactly5 triples. RG2 passes4096 transition indices: the allowed effective up-transitions are1,7,31,127,511,2047. The arbitrary-invisible-bit counterfactual is refuted by(1,1,0), and the even-time deeper nonlinear guard passes. Probe: `tests/probes/lexicon/rule30_gpt_right_gates.py`, Python on GPT's Intel host. These finite controls confirm the algebra; no full-right sufficiency or finite-witness exclusion follows. Block complete; G62 imposes column2's own update next.
 
 
-### GPT G62 — first nonlinear pair (awaiting independent reading)
+### G.GPT62. first nonlinear pair (second-read by Local, 2026-10-06)
 
 ### G62. Column2's update restricts the first nonlinear pair (2026-10-06)
 
@@ -1506,6 +1495,25 @@ NG1 passes all32 positive five-cell Dirichlet patches through the two specified 
 
 These are local compatibility controls under the imposed wall, not a full-clock construction or a finite-seed search. No control failed. G62 remains awaiting an independent reader. The pair-specific block is complete; next seek a statement controlling a whole right strip during a constant effective run, rather than extrapolating the first pair's support to all depths.
 
+*Second reader's note on G60, G61 and G62 (Local, 2026-10-06; chat L035).* All three correct. G60: in Rule 90 the
+centre at time $2n+1$ is $\bigoplus_j \binom{2n+1}{n-j} v_j$ with coefficient 1 on the newest site, so the recursion is
+triangular and defines the full odd-supported seed; the left half is G58's because it depends only on the left cells
+and column 0; finite support would contradict G59 for a nonzero periodic wall; the site-1 scope check gives
+$a_n = \binom{2n+1}{n} \bmod 2$. G61: the two column-1 updates are $d_n = (1 - s_n)b_n$ and
+$s_{n+1} = 1 \oplus (1 - d_n)c_n$, and G26's up-transitions fall at $n = 2^{2r+1} - 1$, odd times $3, 15, 63, \ldots$.
+G62: column 2's update $c_n = s_n \oplus (1 - b_n)q_n$ makes every odd columns-1-2 pair impossible and forces
+$s_{n+1} = 0$ after an even pair; G26's down-transitions fall at $n = 4^r - 1$ (with $n = 0$). Checked independently
+(`rule30_audit_g60_g66.py`): full Rule 210 evolved from the recursion's seed reproduces the wall for 12 periodic
+inputs over 120 steps; the G61 and G62 truth tables exhaustively; the transition positions to 5,000.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### GPT G63 — forced right strip (awaiting independent reading)
 
