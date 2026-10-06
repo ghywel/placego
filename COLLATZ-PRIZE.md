@@ -225,6 +225,14 @@ search on the night of 2026-10-05 (by a search agent of Local's; pages and abstr
   same constant; W2 for rationals with odd denominator (ours) is a small extension he does not state, by the same
   argument; and W3 for divergent integer orbits follows from his theorem at once, since a Sturmian sequence has
   $P = n + 1$.
+- **His conjecture, measured** (`collatz_threehalves.py`, predictions TH0 to TH3 written first; two runs, the second
+  after a slip in the control's start value). For the 3/2 map $x \mod 2^n$ fixes the next $n$ parities, so
+  $P(X, n) = 2^n$ means the orbit of 1 visits every residue class modulo $2^n$. Over the first 4,000,000 terms it
+  does so for every $n \le 18$; at $n = 20$ it has visited 1,025,602 of the 1,048,576 classes, a coverage of 0.97809
+  against the 0.97796 that fair coins would give after as many draws; the share of ones is 0.49955. So the
+  conjecture holds as far as four million terms can see, and the orbit's residues look like coins to four digits.
+  That is the Collatz-side shape of Rule 30's cost side as a count (RULE30-PRIZE.md §8.58): the trace is as complex
+  as it can be, and nobody can prove it on either side.
 - **W1 and W3 appear in three 2026 notes, none refereed**: a GitHub note of 2026-07-22 (Lemma 1 is W1's one
   direction, Corollary 5 is W3 by this argument); a GitHub note of 2026-09-22 (every slope and intercept, by a
   2-adic Liouville argument); and a Zenodo record of 2026-10-02. For slopes below $\log_3 2$, W3 is also implied
@@ -326,7 +334,8 @@ same commit as the result.
 | The Fourier structure of the survivors' state (§3) | **DONE** as a measurement | The largest odd coefficient fades with width. | Nothing: it says exponential sums will not reach single cases. |
 | Exponential sums as a route to single cases | **CLOSED** (§5) | Their error is at least the square root of the population. | Nothing. |
 | W1 to W3, the window principle (§5) | **DONE**, known | Proved here; W2 for integers is Dubickas 2009, Theorem 5 (read in full 2026-10-06); W1 and W3 are in three 2026 notes; our rational extension is a trivial step he does not state. | Nothing. The credit is settled. |
-| A statement beyond complexity $1.71\,n$ for one orbit | **OPEN** | Nothing. | The Collatz twin of Rule 30's "cost side as a count" (RULE30-PRIZE.md §8.58). |
+| A statement beyond complexity $1.71\,n$ for one orbit | **OPEN** | Dubickas conjectures the maximum, $P(X, n) = 2^n$, for the 3/2 orbit of 1 (§5). | The Collatz twin of Rule 30's "cost side as a count" (RULE30-PRIZE.md §8.58): the same unproved shape on both sides. |
+| Dubickas's conjecture $P(X, n) = 2^n$ for the 3/2 map, measured (§5) | **DONE** as a measurement | Every residue class modulo $2^n$ visited for $n \le 18$ over four million terms; 0.97809 of the classes at $n = 20$ against a coin's 0.97796 (`collatz_threehalves.py`). | Nothing a computer can add; a proof would be the 3/2 problem's. |
 | The 2021 preprint's claim (density exactly $\ln 2 / \ln 3$) | **NOTED** | Its equations 15 and 16 take a real limit for a 2-adic one; the objection stands unanswered in public. | Not ours to repair. |
 
 ## 7. How to reproduce
@@ -337,6 +346,7 @@ same commit as the result.
 | `collatz_blocks.py` + `collatz_blocks.c` | the state after the free bits modulo $2^j$ and its Fourier structure against width (CB, CS) | minutes |
 | `collatz_residue.py` | the least-residue lemma (CR0 to CR2, CF), to $k = 18$ | a minute |
 | `collatz_window.py` | the window principle, W1 to W3 (CW0 to CW5, CF2), two runs recorded | a minute |
+| `collatz_threehalves.py` | Dubickas's conjecture for the 3/2 map as residue coverage modulo $2^n$ (TH0 to TH3, CF), two runs recorded | five minutes |
 
 All are in `tests/probes/prizes/`, each with its predictions written before its first run and its OUTCOME in its
 header, failures included. After editing this file run `python3 tests/probes/mathcheck/check.py COLLATZ-PRIZE.md`.

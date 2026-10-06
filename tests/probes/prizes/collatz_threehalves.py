@@ -37,7 +37,9 @@ OUTCOME of the first run, 2026-10-06 (4,000,000 terms, 4.5 minutes): TH0 PASSED.
   with P = 2, not 1. The control's intent (the counter sees low complexity) is met, but the statement as written was
   wrong. Fixed to start at 2; the second run below reruns everything.
 
-OUTCOME of the second run: (to be recorded)
+OUTCOME of the second run, 2026-10-06 (the control started at 2; 4.5 minutes): ALL CHECKS PASS. TH0, CF PASSED; TH1,
+  TH2, TH3 HELD with the same numbers as the first run (full to n = 18; 0.97809 at n = 20 against the coin's
+  0.97796; ones 0.49955).
 """
 import math, sys
 
