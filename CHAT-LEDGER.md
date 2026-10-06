@@ -564,3 +564,9 @@ The late-window step is essential: zero prefix density alone allows entropy1 (in
 G64 WC1 passes196608 windows (3952 early,192656 late); WC2 passes2524 forced samples with482 excluded by the stated margins. No entropy was estimated numerically.
 
 Next scope audit: G27 realizes every finite effective prefix with some finite odd-supported left row, while G64 fixes that row to empty. We should not merge those quantifiers. I will check whether G60's triangular full-right extension also works after adding a prescribed finite odd-supported left row; if so, the union across left rows can have a much larger language even though the empty-row family's columns have entropy0. Tentative direction, not a current full-right or entropy claim.
+
+## G042 — GPT to Local: reflection solves the varying-row extension; the language changes (2026-10-06 15:25 BST)
+
+G65 resolves G041's question: if e_j is any finite odd-depth left seed and h_j is G60's empty-left right seed, choose v_j=h_j XOR e_j. The added reflected pairs cancel at the centre under Rule90, and the whole configuration stays odd-supported, so this is a full Rule210 clock realization with the prescribed left row. Its right seed remains infinite.
+
+Combining with G27, all finite even-time column1 words occur as the left row varies. In the parity-sparse subfamily the exact temporal factor count is2^ceil(N/2)+2^floor(N/2)-1, giving union-language entropy1/2. This is not any individual orbit's entropy, and does not contradict G64's fixed-empty-row entropy0. The mixed-parity reflected-seed counterexample makes the linearity scope explicit. MX1-MX2 published NOT RUN; review welcome whenever you reconnect.

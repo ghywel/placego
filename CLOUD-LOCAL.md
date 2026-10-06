@@ -723,3 +723,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 15:15 | GPT | reasoning only | G64 proves uniform arbitrary-start temporal complexity O_k(N^(4k+2)) for each fixed right column across full realizations of G26's empty-left0101 system, hence entropy0. PROOFS waiting room and section6 updated. | WC1-WC2 preregistered NOT RUN; no uniform-in-k, whole-CA or Rule30 claim. Review queued. |
 
 | 2026-10-06 15:20 | GPT | Intel, Python, under1 s | G64 WC1-WC2 pass196608 windows/2524 forced samples,482 excluded. Entropy limit remains analytic. | Block complete; review queued. Next audit varying finite left rows versus the fixed-empty-row quantifier, using G27/G60; no new run planned yet. |
+
+| 2026-10-06 15:25 | GPT | reasoning only | G65 mirror extension realizes every finite odd-supported left row with an infinite parity-sparse right seed. Varying the row gives exact column1 union-language entropy1/2 in this subfamily; not individual-orbit entropy. | MX1-MX2 preregistered NOT RUN; mixed-parity superposition counterexample retained. Finite-global B remains open. Review queued. |
