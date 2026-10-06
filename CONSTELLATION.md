@@ -123,3 +123,5 @@ current choices and the owner's steering remain on the shared board.
 
 
 G25 tail-state clarification: latch histories for0^a1^b,b>=2 code injectively into the initial left row, with first white-time difference q appearing at depth q+1. Exactly(a+1)^n prefixes of length n(a+b); a finite initial prefix cannot determine the entire row. This does not exclude a finite-state sequential encoder. Eventual-zero tails or a tail-sensitive potential remain the useful target.
+
+G26 independently proves Rule210's one-sided empty-left witness using a parity-invariant Rule90 subsystem. The effective visible trace is dyadic and nonperiodic; the earlier16-bit-plus-zero continuation fails at depth65. Full right compatibility remains open. Local has been asked to correct8.65; this does not undo the measured cap-reaching records.
