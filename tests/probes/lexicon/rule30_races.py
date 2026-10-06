@@ -30,6 +30,18 @@ PREDICTIONS, written 2026-10-06 before this script's first run (no run of races.
   RC3 (blind; the masking): t_half(right) / t_half(left) is in [1.8, 2.2] at every eps (sqrt of 4).
   RC4 (blind, riskier; the absolute law): t_half(left) is within 30% of sqrt(ln 2 / (0.623 eps / 2)) at every eps.
   D1 (descriptive): the fuzzy row's density and fraction of unequal neighbours at the end.
+
+OUTCOME, 2026-10-06 (M5, ten cores, ten seconds). The first run had an instrument fault: when a run has fewer steps
+than checkpoints (left races at eps = 1e-3, T = 286 < 400) the schedule stalled after step 3, and t_half was
+interpolated between steps 3 and 286 (143.6 against 47.2). That one point made RC2, RC3 and RC4 read REFUTED. The
+schedule now always advances (races.c); the run was repeated with the same predictions, and the first run's verdicts
+are kept here. Second run: RC0 PASS. RC1 HELD: races inject an error at 0.5016 (left) and 0.1281 (right) of 10,470
+each. RC2 HELD: exponents -0.501 (left) and -0.493 (right). RC4 HELD: left t_half / law = 0.964, 0.994, 0.999, 1.009,
+0.968 for eps = 1e-3 .. 1e-7. RC3 REFUTED narrowly: right/left ratios 2.022, 1.914, 1.901, 2.073 and 1.758 (eps =
+1e-7, below 1.8). Post hoc, not changing the verdict: four more seeds at eps = 1e-7 give left 5465, 4764, 5369, 5197
+and right 10212, 9460, 7531, 10827, a ratio of means 1.83; at that rate a run averages only about a dozen independent
+damage regions, so one seed varies by about 15%, and the band was too tight for one seed. D1: density 0.497 to 0.502
+and unequal neighbours 0.497 to 0.503 in every fuzzy run: the statistics survive while the history is replaced.
 """
 import math
 import os
