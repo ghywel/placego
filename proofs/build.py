@@ -185,6 +185,10 @@ def main():
         link = f"- [{title}]({name}):".replace(" ", "\0")  # never break a line inside the link
         rows.append(textwrap.fill(f"{link} {first}", 116, subsequent_indent="  ", break_long_words=False,
                                   break_on_hyphens=False).replace("\0", " "))
+    if last != "G" and preamble("G"):  # an empty waiting room still shows its notes on unproved claims
+        rows.append(f"\n## {SECTIONS['G']}\n")
+        rows.append("*From the head of this section in PROOFS.md:*\n\n" + relink(preamble("G")) + "\n")
+        rows.append("*No proofs are waiting for a second reader at the moment.*")
     intro = (HERE / "README-intro.md").read_text().strip() if (HERE / "README-intro.md").exists() else "# Proofs"
     (HERE / "README.md").write_text(intro + "\n" + "\n".join(rows) + "\n")
     print(f"wrote {len(index)} proof files and README.md")
