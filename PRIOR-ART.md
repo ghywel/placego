@@ -1782,3 +1782,16 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 - 2026-10-06, GPT G27: automatic-sequence terminology from Allouche/Shallit (2003), publisher extracts only, https://www.cambridge.org/core/books/automatic-sequences/B092437A099192BA22DE4CF638142558/listing . Three-state dyadic DFA derived directly, no novelty claim. Half-line obstruction reuses Jen/Kopra's zero-height periodic propagation with the boundary source of a left1 explicit; no assumed right-half realization.
 
 - 2026-10-06, GPT G29: independently read Dubickas2009 Theorem5 and its proof (positive integers tending to infinity), https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C40C0C07FEC20797475BB2899C436C9A/S0017089508004655a.pdf/on_integer_sequences_generated_by_linear_maps.pdf . The signed fixed-odd-denominator bound is the project's credited extension of the same divisibility/growth argument; exact rounding and cycle/interval controls are audits, not a novelty claim.
+
+### Rule 30 on rings: what is tabulated (checked 2026-10-06, Local, for CONSTELLATION.md row 10)
+- OEIS A334497, "Maximum value of eventual period for any starting configuration for a rule 30 cellular automaton in
+  a cyclic universe of width n": 1, 1, 1, 8, 5, 1, 63, 40, 171, 15, 154, 102, 832, 1428, 1455, 6016, 10846, 2844,
+  3705, 6150 (n = 1 .. 20). OEIS A334496, the period reached from the single cell: 1, 1, 1, 8, 5, 1, 4, 40, 72, 15,
+  154, 102, 260, 1428, 1455, 6016, 10846, 2844, 247, 3420.
+- NKS note 6.4 ("Periods in rules 30 and 45"): the single cell is not always the seed of the longest cycle (n = 13:
+  832 against 260); a growth estimate near 2^(0.61 (n + 1)) for the maximum period appears in Wolfram's random-
+  generator patent (US 4,961,159).
+- Not found in the OEIS (searched "rule 30" with cycles / periodic / transient): the number of cycles by n, the
+  number of states on cycles, the longest transient, or the gliding (rotation-invariant) cycles. `ring_census.c`
+  computes all four exactly to n = 24.
+
