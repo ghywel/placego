@@ -11,7 +11,17 @@ CF must fail: the first latch position determines the entire row (reuse the
   explicit valid a4,b4 next-block witness; first difference is depth9).
 REFUTED-BY: a comparison mismatch invalidates BL0. Retain first failures for
   each blind prediction, including all actual minimizing positions and depths.
-OUTCOME: pending. Prefix support only, no record or asymptotic LR measurement.
+OUTCOME first run: exit0. BL0 all2044 comparisons pass; BL1 HELD finitely
+for a4..128; BL2 HELD at a4,5,7,8,9,10 (arbitrary/monotone minima respectively
+5/6,4/7,7/10,9/14,9/15,11/17). Unexpected BL3 REFUTED first at a5:
+minimum last-black7 only at r3, neither endpoint. CF rejects complete-row claim.
+
+ADDENDUM before second run:
+BL4 must: for a=b5, every one of64 finite left seeds with support depth<=6
+  fails the first-period necessary conditions (monotone visible bits and fixed
+  black-time column-1). The known prefix for latch r3 supplies a positive
+  left-only control at support7. This is not a whole-right-half existence test.
+OUTCOME second run: pending. Prefix support only, no record or asymptotic LR measurement.
 """
 
 from itertools import product
