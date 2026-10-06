@@ -4,7 +4,8 @@ the second reader's companion to argument audits, independent of GPT's OB/EC/LF 
 (Local, 2026-10-06; PROOFS.md notes; chat L037.)
 COMMAND:    python3 tests/probes/prizes/collatz_audit_g67_g69.py      (under a minute)
 OUTCOME, 2026-10-06: ALL CHECKS PASS (81,119 first-deficit words to length 24; G68 on all to length 20; G69 to a = 2000,
-  least observed exponent -1.585).
+  least observed exponent -1.585). G70 part (added the same day): inclusion and cutoff for n < 65,536,
+  T <= 40, the only discrepancy start is 1; the width criterion with T = ceil(3w/2) first holds at w = 104.
 """
 import math
 fails = 0
@@ -78,4 +79,23 @@ for a in range(1, 2001):
     fails += not (3 ** 10 * K ** 10 < a ** 10 * t ** 133)
     worst = min(worst, (math.log(D) - math.log(A)) / math.log(t) if t > 1 else 0)
 print("G69: cited-bound consequences hold for a = 1..2000; least observed log(D/A)/log t =", round(worst, 3), "(the cited floor is -13.3)")
+# G70 (added 2026-10-06): C(T) is contained in A(T), and every start in A(T) \ C(T) is below R(T) = T^14.3 / 3 (exact
+# tenth-power form 3^10 n^10 < T^143); direct trajectories for n < 2^16, T <= 40. Also the width threshold for
+# T = ceil(3w/2): the least w with 3^10 2^(10(w-1)) >= T^143, and the n = 1, T = 2 guard.
+disc = {}
+for n in range(1, 1 << 16):
+    x = n; a = 0; inA = True; inC = True
+    for T in range(1, 41):
+        if x % 2: a += 1; x = (3 * x + 1) // 2
+        else: x //= 2
+        inA = inA and x >= n; inC = inC and 3 ** a >= 2 ** T
+        if inC and not inA: fails += 1                      # C must be inside A
+        if inA and not inC:
+            fails += not (3 ** 10 * n ** 10 < T ** 143)
+            disc.setdefault(T, set()).add(n)
+        if not inA and not inC: break
+fails += 1 not in disc.get(2, set())
+first = next(w for w in range(2, 400) if 3 ** 10 * 2 ** (10 * (w - 1)) >= (-(-3 * w // 2)) ** 143)
+print("G70: inclusion and cutoff hold for n < 65,536, T <= 40; discrepancy starts found:", sorted(set().union(*disc.values())) if disc else [],
+      "; the width criterion with T = ceil(3w/2) first holds at w =", first)
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")

@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G69, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G70, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1829,16 +1829,7 @@ maximum unique and equal to $B_{\max}(a)$, $a \le 15$) and the envelope to $a = 
 prefix-certificate soundness on every first-deficit word to length 20; G69's two exact consequences for
 $a = 1$ to 2000, where the least observed $\log(D/A)/\log t$ is $-1.585$, far inside the cited $-13.3$.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-### GPT G70 — finite-horizon count bridge (awaiting independent reading)
+### G.GPT70. finite-horizon count bridge (second-read by Local, 2026-10-06)
 
 ### G70. Polynomial additive error between actual and coefficient survival counts (2026-10-06)
 
@@ -1874,3 +1865,20 @@ This is the exact integer form of2^(w-1)>=R(T). The coarser criterion3*2^(w-1)>=
 This is a direct corollary of G69 and the already recorded affine survival formulation, with no novelty claim or prize conclusion. Independent Local reading requested.
 
 **Next controls, preregistered NOT RUN.** HC1: direct actual trajectories for n1..4096 through32 steps, independently accumulate coefficient counts, and at every horizon check set inclusion, the exact tenth-power cutoff for every discrepancy, and the interval count difference bound. Predict no inclusion/cutoff failure; retain the n1 discrepancy rather than discarding it. HC2: for T=ceil(3*w/2), w2..256, evaluate the exact integer criterion and record its truth intervals; predict failure at w32 and success at w256, with no first-threshold prediction. Counterfactual: A(T)=C(T) at all positive starts; refute at n1,T2. These are bounded controls, not a large stopping census or a proof of the beyond-free-bits distribution.
+
+*Second reader's note on G70 (Local, 2026-10-06; chat L038).* Correct, conditional on G69's cited bound. Nonnegative
+offsets give $C(T) \subseteq A(T)$; a start in $A(T) \setminus C(T)$ survives its first deficit at some $j \le T$, so G69
+gives $n < j^{14.3}/3 \le T^{14.3}/3$, and the discrepancy is additive with no factor $T$; the tenth-power form is exact.
+Checked by direct trajectories (`collatz_audit_g67_g69.py`, G70 part): for every $n < 65{,}536$ and $T \le 40$, $C(T)$ lies
+inside $A(T)$ and the only discrepancy start is $n = 1$; with $T = \lceil 3w/2 \rceil$ the exact width criterion first
+holds at $w = 104$.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
