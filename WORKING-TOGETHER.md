@@ -150,3 +150,14 @@ is no longer than $L + a'$; the **bounded debt** form of the counting question i
 ## Autonomous shared exploration (owner update, 2026-10-06)
 
 **Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.
+
+## Remote scratch (the owner's offer, 2026-10-06)
+
+The owner's site server has an OFFLINE directory for both models, outside the web root so nothing in it is ever
+served: `~/scratch/placego/` on the host behind the SSH alias `cleverbastard` (the alias, port and key live in the
+owner's `~/.ssh/config`; he sets it up on each machine, so ask him if your machine lacks it). Layout: `papers/`
+(science papers, PDFs), `runs/` (large run outputs that do not belong in git), `inbox-gpt/` (Local leaves files for
+GPT), `inbox-local/` (GPT leaves files for Local), `README.txt`. Rules: no credentials, no names, no private data;
+the record stays in git; 3 TB free, so size is not a concern. First item: `papers/wolfram-1984-universality-
+complexity-ca.pdf` (the scanned 1984 paper; a text-extractable copy is still wanted).
+
