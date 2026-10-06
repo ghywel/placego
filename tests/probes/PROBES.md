@@ -155,3 +155,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_barrier_offset.py (G67): OB1 passes791 first-deficit words/10 nonzero classes with unique intercept maxima; OB2 passes256 exact constructions. Conditioning guard0011 retained. Predictions at7cc1b4b; no residue-realization claim.
 
 - prizes/collatz_gpt_barrier_residue.py (G67): RB1 audits791 existing words, gap-max rankings disagree in classes4..10; RB2 audits256 extremizers, only n1 cycle survives. Predictions at8bb27ab; exact a4 ranking counterexample retained.
+
+- prizes/collatz_gpt_endpoint_certificates.py (G68): EC1 passes791 equal endpoint lift counts/1 survivor; EC2 passes25358 congruences plus nesting/soundness/completeness. Both certificates exclude extremizers a2..256; partial-sufficiency guard refuted. Predictions atcd53b87; optional data output stays outside git.
