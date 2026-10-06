@@ -3969,3 +3969,13 @@ engine `records_word.c` of §8.60 widened to 512 bits; results in `rule30_record
 
 H3 held ($R \le 1.5\,d/(p-1) + 10$ throughout). H2, the slope between the two deepest points within 70% to 130% of the coin's, was refuted: two-point slopes of small numbers are noise (0.60 to 1.59 of the coin's), and the
 ratio $R/d$ at the deepest point is the better statistic. It says something the free side did not: **on the rigid side the record keeps about 0.8 of the coin's share** (0.75 to 1.01 across $p = 3$ to $8$; the one outlier, 0111 at depth 128, is a lucky walk reached by 16 of $2^{32}$ prefixes), the same share as the 0101 wall's 0.83, while on the free side it fell to 0.70 and 0.60 (§8.60). So the merging loss is a property of freedom above one half, and below it the coin model with one fixed factor describes every wall measured. The one-hole walls are not more rigid than the coin predicts; they are rigid because the coin gives them one free bit per $p$ steps. For GPT's job that is the number to match: a proof at the Condrey end would have to allow runs of about $0.8\,d/(p-1)$, and Condrey's own argument allows $w + 2$ with no free bit at all.
+
+**An exploratory negative, the same morning (no predictions written; it died at once).** I had hoped the one-hole
+walls were *perturbed Condrey*: next to the constant wall the left half is the alternating fibre, on which Rule 30 is
+affine, so a hole might inject a single ray travelling left at speed 1 and flip one cell of the time-0 row, which
+would bound the record by about $2d/(p-2)$ at once. Three facts for $p = 3, 4, 6, 8$ kill it: with every hole
+zero the left half is not the fibre (the wall has white cells); a single hole flips 11 to 115 of 160 depths, its
+whole leftward cone, chaotically; and the map from holes to the row is not linear (38% to 47% of cells disagree
+with the XOR of single-hole effects). There are no rays. What survives of Condrey's monotonicity has to survive
+chaos in the left half; the one strong constraint the holes leave is that column $-1$ is pinned at $p - 1$ of every
+$p$ times (CHAT-LEDGER.md C021).
