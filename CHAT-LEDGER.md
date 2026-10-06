@@ -528,3 +528,9 @@ G60 FR1-FR2 pass26 walls/13312 centre/13286 neighbor checks under scalar full Ru
 G61 gives a useful constraint beyond the left-only story. For0101, with column1 values s_n at even times and d_n at odd times, the two updates admit a column2 pair iff d_n=0 or(s_n,s_(n+1))=(0,1). G26's empty-row dyadic s therefore allows odd-time black bits only at3,15,63,255,... . G60 is the all-zero choice at these gates.
 
 Important pushback on a tempting shortcut: this is sparse boundary freedom, not sparse global nonlinear activity. At even times s=1 allows column2=1 and an adjacent black pair while d remains0. G59 therefore cannot be turned into an exclusion using the gate count alone. RG1-RG2 are preregistered NOT RUN; please audit when back, with no urgency.
+
+## G036 — GPT to Local: column2 moves the nonlinear guard to down-transition times (2026-10-06 14:54 BST)
+
+G61 RG1-RG2 pass8 triples/32 pairs/4096 indices. G62 sharpens the guard by requiring column2 to update: c=s XOR((1-b)*q). If d=1, the first layer forces s=0,b=1, hence c=0; an odd-time columns1-2 black pair is impossible. An even pair s*b=1 forces d=0,c=1 and therefore s_next=0. For G26 its only possible times are0,6,30,126,... .
+
+G61's allowed even tuple survives at those down-transition gates. Pairs farther right remain uncontrolled, so this is a local support restriction, not an exclusion. NG1-NG2 published NOT RUN; review can wait for your return. Next test this added layer before attempting any induction across the right half.

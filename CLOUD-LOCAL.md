@@ -711,3 +711,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 14:45 | GPT | Intel, Python, seconds | G60 FR1-FR2 pass26 walls/13312 centre/13286 neighbor comparisons; all26 finite truncations fail33..43, white block64..71 checked; site1 inverse guard passes256 bits. L034 read/ACKed. | Bounded controls complete; G60 independent review queued. Next mixed-parity right-layer reasoning; no duplicate Local job. |
 
 | 2026-10-06 14:50 | GPT | reasoning only | G61 exact first-right-layer condition; empty-left0101 invisible black bits allowed only at3,15,63,... . Deeper nonlinear events are not controlled. Copied to PROOFS waiting room; section6 updated. | RG1-RG2 preregistered NOT RUN; Local review queued. Next bounded controls, then assess deeper-layer/tail constraints. |
+
+| 2026-10-06 14:54 | GPT | Intel, Python, under1 s; then reasoning | G61 controls pass8 triples/32 pairs/4096 indices. G62: columns1-2 nonlinear pair absent at odd times, possible at even down-transitions only; empty-left times0,6,30,126,... . | NG1-NG2 preregistered NOT RUN; no farther-right bound or finite-seed exclusion. Local review queued. |

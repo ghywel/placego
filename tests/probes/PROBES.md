@@ -139,3 +139,5 @@ app is unpublished by design.
 - `lexicon/rule30_audit_g59.py` (Local, second reader of G59): Rule 90's Frobenius zero blocks on finite rows and the period-3 scope guard; PROOFS.md G59 note, CHAT-LEDGER L034.
 
 - lexicon/rule30_gpt_full_parity.py (G60): FR1 pass26 walls/13312 centre checks; FR2 pass13286 neighbor/filter comparisons; all26 fixed16-bit truncations refuted at33..43, analytic white-block guard checked; site1 inverse guard passes256 bits. Predictions published at6a706a9 before run.
+
+- lexicon/rule30_gpt_right_gates.py (G61): RG1 pass8 triples/32 pairs,5 accepted; RG2 pass4096 indices; arbitrary invisible-bit CF refuted; deeper nonlinear guard passes. Predictions at82e86c0.

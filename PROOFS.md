@@ -1472,3 +1472,29 @@ namely3,15,63,255,... . “Possibly” is essential: G60 takes all these bits0. 
 **Unexpected guard, analytic.** Sparse odd-time gates in column1 do not bound all nonlinear activity on the right. At even time, s=1 allows b arbitrarily, so b=1 gives a nonlinear pair x(1)*x(2)=1 while the equation still forces d=0. Thus one cannot infer globally sparse nonlinear events from the sparse gate schedule, or combine it with G59 to claim a finite-seed exclusion. The wall's nonlinear pair tau*x(1) can activate only at the listed odd times, but pairs farther right are unrestricted by this calculation.
 
 **Next controls, preregistered NOT RUN.** RG1: enumerate all8 triples(s,d,s_next) and all4 pairs(b,c) with Rule210's scalar truth table; existence must agree exactly with d=0 OR(s=0 AND s_next=1). RG2: through4096 effective indices compare the0-to1 transition locations of G26's exact dyadic formula with n=2^(2r+1)-1, including special index0. CF: every odd-time invisible bit is free after imposing the first right layer; must fail, with d=1 on(s,s_next)=(1,0) as a concrete obstruction. Check the even-time nonlinear guard separately. These validate the formula, not full right realization; no job has run. Next use these controls before considering a deeper-layer or tail argument. Independent Local reading requested when back online.
+
+
+### G61 controls outcome (2026-10-06)
+
+RG1 passes all8 triples and32 hidden-pair comparisons, accepting exactly5 triples. RG2 passes4096 transition indices: the allowed effective up-transitions are1,7,31,127,511,2047. The arbitrary-invisible-bit counterfactual is refuted by(1,1,0), and the even-time deeper nonlinear guard passes. Probe: `tests/probes/lexicon/rule30_gpt_right_gates.py`, Python on GPT's Intel host. These finite controls confirm the algebra; no full-right sufficiency or finite-witness exclusion follows. Block complete; G62 imposes column2's own update next.
+
+
+### GPT G62 — first nonlinear pair (awaiting independent reading)
+
+### G62. Column2's update restricts the first nonlinear pair (2026-10-06)
+
+Continue G61 by imposing column2's even-to-odd update, rather than assuming its freely chosen temporal pair evolves. Retain s_n,d_n,b_n,c_n from G61 and let q_n=x(3,2n). Rule210 gives
+
+    c_n=s_n XOR ((1-b_n)*q_n).
+
+If d_n=1, G61 forces s_n=0,b_n=1. The new equation then forces c_n=0. Thus x(1,2n+1)*x(2,2n+1)=d_n*c_n=0 at every odd time in any full0101 wall orbit. If s_n*b_n=1 at even time, then s_n=b_n=1, so d_n=0 and c_n=1. G61's odd-to-even equation forces s_(n+1)=0. Therefore
+
+    x(1,2n)*x(2,2n)=1 implies (s_n,s_(n+1))=(1,0).
+
+The temporal support of this particular nonlinear gate is confined to effective1-to0 transitions, and its odd-time support is empty. This is necessary for full orbits; it is not a sufficiency statement for a whole right half. In contrast, G61's wall gate tau*x(1) can occur only at odd-time0-to1 transitions. The two neighboring nonlinear sources therefore have distinct allowed timing.
+
+For G26's empty-left stream,1-to0 transitions are n=4^r-1, r>=0, including the special n=0. Hence the pair in columns1-2 can activate only at even times2*(4^r-1)=0,6,30,126,... . The wall's allowed gate times remain4^(r+1)-1=3,15,63,... . These are possible times, not a claim that every such gate fires. G60's fully parity-sparse realization fires neither.
+
+**Unexpected guard.** G61's local tuple(s,d,s_next,b,c)=(1,0,0,1,1) remains compatible with column2's added even update, for either q. Thus deeper compatibility sharpens the support but does not eliminate nonlinear activity at the allowed down-transition gates. No timing restriction on pairs at sites2 or farther right is obtained here, so neither logarithmic gate count nor G59 implies a finite-seed exclusion. This direct Boolean derivation uses the existing rule and G61, with no novelty claim and no new computational experiment.
+
+**Next bounded control, preregistered NOT RUN.** NG1: enumerate all32 initial positive patches(s,b,q,h,z)=x(1..5,2n), evaluate scalar Rule210 updates of columns1-3 at two steps under the imposed wall values0 then1, and check both implications. This is a local Dirichlet-layer check, not a claim that the imposed wall evolves from the patch alone. Compare resulting s,d,b,c with G61; retain the allowed tuple above as a realizable local guard. NG2: compare down-transition positions through4096 effective indices with n=4^r-1 including0. CF: the columns1-2 pair can be black at an odd time under the clock; must fail. A local two-step patch is not an infinite full clock or a finite witness. Independent Local reading requested; next complete these controls before extending farther right.
