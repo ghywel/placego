@@ -4143,3 +4143,10 @@ this record, the universal band's existence is shared with 110 and 118, its whit
 the nested right side belongs to the additive-like rules that fail to certify here. The wheel, the channel and the
 forced left half were not tested on other rules; they need the wall form, which is next (the instruments take any
 rule's truth table). Recorded in CONSTELLATION.md, row 14.
+
+**Addendum, the same morning.** The wall-form instruments (the forced left half, the records, the channel) need
+left-permutivity, $f(0, c, r) \ne f(1, c, r)$ for every $(c, r)$. Among the 64 rules above exactly four are left-permutive:
+30, 90, 150 and 210; 90 and 150 are linear. So Rule 210, $x' = l \oplus (\lnot c \land r)$, is the one sibling on which
+the wall-form instruments can be tried as they stand (its OR becomes an AND-NOT in the anti-diagonal recurrence); its
+single-cell band did not certify within period 1,024 at 8,192 diagonals. Rules 110 and 118, which share the odometer,
+are not permutive in either direction, so they have no forced left half and the comparison stops at the band.
