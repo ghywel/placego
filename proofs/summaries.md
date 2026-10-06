@@ -1277,3 +1277,12 @@ Keeping one previous paired observation still misses pulse-model memory.
 **Why it matters.** This refutes order-two Markov at tick5 for this specific ensemble. All8192 words were checked with two update formulations; both separate seven-sample marginals remain uniform. Independent review is pending; no all-orders or repeated-race theorem follows.
 
 **An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
+
+## W114
+Two incoming errors can cancel at a healed white source.
+
+**What it says.** At a shared white centre, next synchronous error is the XOR of the two neighbour errors; at a shared black centre only the left error passes.
+
+**Why it matters.** G113's two healed ticks hide equal incoming errors, followed by one uncancelled error. The full damage rule includes a nonlinear mixed term; it is not autonomous Rule90. DP0-DP2 NOT RUN; review pending.
+
+**An everyday picture.** Two opposing disturbances can hide each other without disappearing.

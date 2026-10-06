@@ -5496,3 +5496,30 @@ The zero child also has an analytic explanation: G109 gives E3=E1, so B's E3=0 m
 **LM4 outcome and explicit positive cylinder (2026-10-06 21:09 BST).** Predictions and instrument published through832c0d3 before execution. PASS:the lexicographically first success word on sites-6..6 is0011110010000, with ideal source trace0110000 and noisy trace0011001 at ticks0..6. It has K3=(0,1),K4=K5=(0,0),E6=1. The zero-child witness is0000000000000 with both traces0000000. These specify only13 initial bits, not the whole infinite row; each cylinder has probability1/8192. All eight independently implemented padded-boundary histories preserve the predicted traces. Arbitrary exterior independence follows from the explicit finite ancestor cone, not from extrapolating those eight tests.
 
 Consequently the proof's positive parent-success event can be checked by forwarding this single finite word, without trusting a total-count census. The zero child follows analytically from E3=E1 and no future injections, while this cylinder gives P(E6=1 and A)>0 and hence P(E6=1|A)>0. The exact5/234 rate remains the independently controlled enumeration result; the order-two counterexample itself now needs only the identity and a finite positive cylinder. This strengthens inspectability without changing the pulse-model scope or claiming every finite memory order.
+
+
+### G114. A healed white source can hide cancellation of two incoming errors (2026-10-06)
+
+**Status:** local algebraic identity and hand-derived pulse mechanism; DP0-DP2 preregistered NOT RUN, independent review pending. This unpacks G113's explicit witness. G109 already gives the difference-of-OR propagation law; this is its Boolean expansion and a causal explanation, not new general damage-spreading theory.
+
+For a synchronous tick, let a,b,c be ideal left, centre and right bits and p,q,r their respective XOR errors. Expanding OR over binary arithmetic gives
+
+    delta_next = p XOR ((1-c)*q) XOR ((1-b)*r) XOR (q*r).
+
+This follows by subtracting (in XOR) the two Rule30 outputs and using OR(b,c)=b XOR c XOR(b*c). If the source is currently healed, q=0, the update reduces to
+
+    delta_next = p XOR ((1-b)*r).
+
+At a shared black centre only the left error matters. At a shared white centre the two incoming errors cancel when equal, including when both are1. Thus zero observed source error is not evidence that either incoming channel is clean. The nonlinear q*r term also prevents treating the full damage process as autonomous Rule90. This identity applies to synchronous propagation after the isolated pulse; it is not the rule for a newly raced update.
+
+**Hand derivation for G113's finite cylinder.** Initial sites-6..6 are0011110010000; only source0 races right on tick1. In the shrinking source cone, predicted ideal/noisy rows are:
+
+| Tick | Sites | Ideal | Noisy |
+|---|---|---|---|
+| 3 | -3..3 | 1010101 | 1111011 |
+| 4 | -2..2 | 01010 | 00001 |
+| 5 | -1..1 | 101 | 001 |
+
+At tick4 the white source has no error, but both immediate neighbours have errors1. These cancel, producing another healed source at tick5. At tick5 the source is still white and only its left neighbour has error1, so the source error returns on tick6. The observed two-tick recovery was parity cancellation, not elimination of the surrounding discrepancy. Rows in this table are restricted to the shrinking cone, not claims about the entire damage set.
+
+**DP0-DP2 preregistered NOT RUN.** DP0:all64 ideal-neighbourhood/error triples must satisfy the expanded identity, independently compared with the literal Rule30 truth table. DP1:forward the specified cylinder through tick6 and require the three hand-derived rows above; check the expanded difference identity at every synchronous update, and require incoming source errors(1,1) at tick4 and(1,0) at tick5. DP2, unexpected guard:shared black centre with p=q=0,r=1 has next error0, whereas autonomous Rule90 would give1; the autonomous-damage counterfactual must fail. Publish before execution. No new production table or repeated-race job.

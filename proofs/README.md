@@ -313,3 +313,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [One lag does not close the isolated-pulse paired trace at tick5](W113-one-lag-does-not-close-the-isolated-pulse.md):
   Keeping one previous paired observation still misses pulse-model memory.
+- [A healed white source can hide cancellation of two incoming errors](W114-a-healed-white-source-can-hide-cancellation-of.md):
+  Two incoming errors can cancel at a healed white source.
