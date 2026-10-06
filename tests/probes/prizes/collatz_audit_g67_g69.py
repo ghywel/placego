@@ -98,4 +98,38 @@ fails += 1 not in disc.get(2, set())
 first = next(w for w in range(2, 400) if 3 ** 10 * 2 ** (10 * (w - 1)) >= (-(-3 * w // 2)) ** 143)
 print("G70: inclusion and cutoff hold for n < 65,536, T <= 40; discrepancy starts found:", sorted(set().union(*disc.values())) if disc else [],
       "; the width criterion with T = ceil(3w/2) first holds at w =", first)
+# G71 (added 2026-10-06): the boundary-loss recurrence V(t+1) = 2V(t) - N(t), the first-paid-bit identity
+# 2 C_w(w) - V(w) = F(w-1), and the later loss process C_w(t+1) = C_w(t) - E_w(t), checked by direct trajectories of
+# every width-w start for w = 2 .. 15 to horizon 30 (coefficient survival of each start's own parity word).
+ell = lambda t: 0 if t == 0 else (2 ** t).bit_length() * 0 + next(a for a in range(t + 1) if 3 ** a > 2 ** t)
+TT = 30
+Vc = [1]; cur = {0: 1}; Nc = []
+for t in range(TT):
+    crit = ell(t + 1) == ell(t) + 1
+    Nc.append(cur.get(ell(t), 0) if crit else 0)
+    nxt = {}
+    for a, c in cur.items():
+        for b in (0, 1):
+            if 3 ** (a + b) > 2 ** (t + 1): nxt[a + b] = nxt.get(a + b, 0) + c
+    cur = nxt; Vc.append(sum(cur.values()))
+    fails += Vc[t + 1] != 2 * Vc[t] - Nc[t]
+for w in range(2, 16):
+    m = w - 1
+    surv = [0] * (TT + 1); E = [0] * TT; F = 0
+    for n in range(2 ** m, 2 ** w):
+        x = n; a = 0; alive = True
+        for t in range(TT):
+            if alive: surv[t] += 1
+            crit = ell(t + 1) == ell(t) + 1
+            if alive and crit and a == ell(t):
+                if x % 2 == 0: E[t] += 1
+                if t == m: F += (-1) ** ((x - 3 ** a) % 2)   # q = x - 3^a at the free-bit boundary
+            if x % 2: a += 1; x = (3 * x + 1) // 2
+            else: x //= 2
+            if alive and not (3 ** a > 2 ** (t + 1)): alive = False
+        if alive: surv[TT] += 1
+    fails += surv[m] != Vc[m]                                          # free bits: C_w(m) = V(m)
+    fails += 2 * surv[w] - Vc[w] != F                                  # first paid bit
+    fails += any(surv[t + 1] != surv[t] - E[t] for t in range(TT))   # loss process
+print("G71: recurrence for V to T = 30; first-paid-bit identity and loss process for every width 2..15 (direct trajectories)")
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")

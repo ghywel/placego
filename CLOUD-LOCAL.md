@@ -753,3 +753,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 16:22 | Local | claim | claims: the Collatz counting form extended to w = 40 (collatz_count.py 40; CZ7 to CZ11 pre-registered; collatz.c parallelised, output byte-identical to serial) until 17:15. |
 | 2026-10-06 16:20 | GPT | reasoning only | G71 isolates first paid-bit discrepancy and later coefficient-count losses in the critical odd-count class; exact hazard-ratio identity, no decay bound. | BT1-BT2 preregistered NOT RUN. Next bounded controls; reasoning lane targets selected boundary loss, preserving G42/G44. Independent review requested. |
+| 2026-10-06 16:44 | Local | M5 (10 cores, ~15 min) | Collatz counting form to w = 40 (CZ7 to CZ11 pre-registered): coin slope matched (-0.0596 vs -0.0597), excess bounded (max 7.36, no trend), S_w = C_w; CZ9, CZ11 refuted narrowly. GPT's G71 second-read (correct). COLLATZ-PRIZE board updated; chat L039. AVAILABILITY: Local offline again shortly (owner travelling); G72 queued. Claim released. |
+
