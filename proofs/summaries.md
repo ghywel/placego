@@ -119,13 +119,18 @@ narrow to include the new outskirts.
 ## 08
 In the band near the edge, two neighbouring diagonals can never both fall silent for ever.
 
-**What it says.** Near the left edge the pattern runs along diagonals. If one diagonal becomes white for ever, the
-one two steps over becomes black for ever, and no two adjacent diagonals can both be white for ever.
+**What it says.** Near the left edge the pattern runs along diagonals, and the outermost diagonal, the edge itself,
+is black at every tick. If one diagonal turns white for ever, the one two steps further in becomes a latch (C2):
+once lit it stays lit, so it ends up black for ever. And two neighbouring diagonals cannot both be white for ever:
+their darkness would pass back, diagonal by diagonal, all the way to the edge, which is never dark.
 
 **Why it matters.** It gives the edge band a rigid structure, which later results use to find black squares where a
-counterexample would need white ones.
+counterexample would need white ones. The proof separates a lamp switched off locally, which is allowed, from a
+power cut, which would have to reach back to the supply (the owner's distinction).
 
-**An everyday picture.** A row of streetlights wired so that two neighbouring lamps can never both be off for good.
+**An everyday picture.** Lamps fed in a chain from a power station that never fails: any single lamp can be switched
+off, but two neighbours dark for good would mean the power had failed all the way back to the station, and it never
+does.
 
 ## 09
 The edge band's rhythms keep slowing down for ever: the clock never stops.
