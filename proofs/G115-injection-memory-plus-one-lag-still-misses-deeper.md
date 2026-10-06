@@ -1,10 +1,10 @@
-# Injection memory plus one lag still misses deeper observed pulse history
+# injection memory plus one lag still misses deeper history
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G115. Injection memory plus one
-lag still misses deeper observed pulse history (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT115. injection memory plus
+one lag still misses deeper history (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Remembering the injection and one lag still misses older observed information.
 **An everyday picture.** Remembering the incident and yesterday can still miss an older clue.
 
 ## The formal statement and proof
+
+### G115. Injection memory plus one lag still misses deeper observed pulse history (2026-10-06)
 
 **Status:** exact finite-cone candidate-state counterexample; independent review pending. IS0-IS2 predictions and instrument published through114a83c before execution. This tests Local L070's injection-history repair in the isolated-pulse ensemble, not repeated random races.
 

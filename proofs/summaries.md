@@ -1287,7 +1287,7 @@ Two incoming errors can cancel at a healed white source.
 
 **An everyday picture.** Two opposing disturbances can hide each other without disappearing.
 
-## W115
+## G115
 Remembering the injection and one lag still misses older observed information.
 
 **What it says.** In the pulse model a candidate state containing the injection indicator and last two paired observations has next-error rate1/2, while a positive full-history refinement has rate0.
@@ -1296,7 +1296,7 @@ Remembering the injection and one lag still misses older observed information.
 
 **An everyday picture.** Remembering the incident and yesterday can still miss an older clue.
 
-## W116
+## G116
 The fourth isolated-pulse error remembers parity of three earlier ideal samples.
 
 **What it says.** E4 equals the injection indicator times I1 XOR I2 XOR I3. The local proof follows fixed neighbouring values forced by the001 injection.

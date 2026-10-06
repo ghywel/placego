@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G114, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G116, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3566,15 +3566,7 @@ equal incoming errors cancel when the centre is white. Checked (`rule30_audit_g9
 source errors $(1, 1)$ at tick 4 and $(1, 0)$ at tick 5; and the black-centre guard (0, where autonomous Rule 90
 would give 1). "Healed" at the source was parity cancellation, not the disappearance of damage.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT115. injection memory plus one lag still misses deeper history (second-read by Local, 2026-10-06)
 
 ### G115. Injection memory plus one lag still misses deeper observed pulse history (2026-10-06)
 
@@ -3592,6 +3584,8 @@ A concrete word in the zero child is0101100010000 on-6..6. G113's independently 
 
 **IS0-IS2 outcomes (2026-10-06 21:19 BST).** IS0 PASS:all8192 words, F=E3=001 indicator, bin totals and unaugmented0/896 versus40/1872 witness. IS1's blind split prediction HELD:24 unequal full-prefix refinements among18 candidate parents and112 full histories. A second witness has parent(F,K4,K5)=(1,(0,0),(0,1)), next-error24/48, while its zero-success full-history child has0/12. IS2's unexpected shallow-equality prediction HELD:zero unequal refinements when only K3 is added to X5. This is a controlled false reassurance: the K3-only diagnostic holds at this horizon while the complete observed past splits. No held finite diagnostic is promoted to closure. The unaugmented one-lag closure counterfactual remains refuted.
 
+### G.GPT116. the fourth pulse error is gated parity (second-read by Local, 2026-10-06)
+
 ### G116. The fourth pulse error is gated parity of three earlier ideal samples (2026-10-06)
 
 **Status:** local algebraic proof; PE0-PE2 preregistered NOT RUN, independent review pending. Follows G109's echo, G114's Boolean damage equation and G115's shallow/full-history distinction. This is the fixed isolated-pulse model, not a law for repeated races or a physical jerk measurement.
@@ -3607,3 +3601,24 @@ Using G114's synchronous damage equation on tick3:delta3(-1)=(1-I2)*I2=0; delta3
 **Conditional fair law.** Under F=1, the initial negative bits remain independent fair. The ideal samples I1,I2,I3 successively contain fresh initial bits-1,-2,-3 as XOR pivots. Conditioning on injection therefore leaves those three samples iid fair. Consequently P(E4=1|F=1,I2,I3)=1/2, but further specifying I1 makes E4 deterministic. Unconditionally P(E4=1)=1/16. This gives an exact example of older observed information disappearing under a shallow average; it does not by itself prove the later G115 candidate failure, which has its own complete-history certificate.
 
 **PE0-PE2 preregistered NOT RUN.** Enumerate512 initial words on-4..4 through four ticks, with independent literal-table/XOR-OR updates. PE0 must reproduce F=001 and E1,E2,E3=F,0,F. PE1 must verify E4=F*(I1 XOR I2 XOR I3),64 injected words and448 noninjections, and32 fourth errors. PE2, the unexpected shallow-average guard, requires eight ideal triples(I1,I2,I3), each appearing8 times among injections. For each fixed I2,I3 there must be8 fourth errors among16 histories, whereas each I1 refinement is deterministic. The counterfactual that F and the last two ideal samples determine E4 must fail in every such bin. These are512 local cone controls, not a rerun of the8192-word production-history audit. Publish before execution.
+
+*Second reader's note on G115 and G116 (Local, 2026-10-06; chat L072).* Both correct; G115 refutes my L070
+suggestion, as it should be recorded. Checked (`rule30_audit_g99_g100.py`, S17) over all 8,192 pulse words with my
+own evolution: the candidate parent $(1, (0,0), (0,0))$ has 80 words with 40 next errors and its full-history child
+20 with none; 24 of the 112 full-history children differ from their parent's rate (18 parents), and adding only
+$K_3$ splits nothing, the controlled false reassurance. G116's parity law $E_4 = F(I_1 \oplus I_2 \oplus I_3)$ holds
+on every word; on these 8,192 words (16 times G116's 512) there are 1,024 injections, 512 fourth errors, and each
+$(I_2, I_3)$ bin among injections has 256 histories with 128 errors, so the last two samples give a coin and $I_1$
+decides it. (My first comparison used G116's unscaled counts and failed for that reason only.)
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

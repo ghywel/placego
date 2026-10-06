@@ -66,6 +66,12 @@ CHECKS (GPT's claims at 827e006):
      against the truth table on all 64 triples; the cylinder 0011110010000 on -6..6 with the pulse gives ideal / noisy
      rows 1010101 / 1111011 (tick 3), 01010 / 00001 (tick 4), 101 / 001 (tick 5), incoming source errors (1, 1) at
      tick 4 and (1, 0) at tick 5; the black-centre guard (p = q = 0, r = 1) gives 0, not Rule 90's 1.
+  S17 (G115, G116, added 2026-10-06 at 241fb49): over the 8,192 pulse words, the candidate X_5 = (F, K_4, K_5) with
+     F = E_1: parent (1, (0,0), (0,0)) has 80 words with 40 next errors, its full-history child
+     ((0,0),(0,1),(0,0),(0,1),(0,0),(0,0)) has 20 with none; 24 full-history children of 112 differ from their parent's
+     rate (18 parents); adding only K_3 to X_5 splits nothing. And E_4 = F (I_1 XOR I_2 XOR I_3) on every word; on these
+     8,192 words (16 times G116's 512) 1,024 injections, 512 fourth errors, each (I_2, I_3) bin 256 histories with 128
+     errors (the first run compared with G116's unscaled 64, 32 and 16/8 and failed for that reason only).
 """
 import random
 from fractions import Fraction as F
@@ -589,4 +595,46 @@ e5 = (rows[5][0][-1] ^ rows[5][1][-1], rows[5][0][1] ^ rows[5][1][1])
 ok16 &= e4 == (1, 1) and e5 == (1, 0)
 ok16 &= (0 ^ ((1 - 0) & 0) ^ ((1 - 1) & 1) ^ (0 & 1)) == 0 and (0 ^ 1) == 1
 check('S16 G114: expanded identity on 64 triples; the cylinder rows; incoming errors (1,1), (1,0); black guard', ok16)
+par, full, k3 = {}, {}, {}
+ok17 = True
+inj = e4s = 0
+bins23 = {}
+for w in range(2 ** 13):
+    x = {i: (w >> (i + 6)) & 1 for i in range(-6, 7)}
+    zr, yr = dict(x), dict(x)
+    I7, J7 = [x[0]], [x[0]]
+    for t in range(1, 7):
+        lo, hi = -6 + t, 6 - t
+        nz = {i: R30(zr[i - 1], zr[i], zr[i + 1]) for i in range(lo, hi + 1)}
+        ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+        if t == 1:
+            ny[0] = R30(yr[-1], yr[0], ny[1])
+        zr, yr = nz, ny
+        I7.append(zr[0])
+        J7.append(yr[0])
+    E7 = [a ^ b for a, b in zip(I7, J7)]
+    K = tuple((I7[t], E7[t]) for t in range(7))
+    Fi = E7[1]
+    ok17 &= E7[4] == Fi * (I7[1] ^ I7[2] ^ I7[3])
+    if Fi:
+        inj += 1
+        e4s += E7[4]
+        b = bins23.setdefault((I7[2], I7[3]), [0, 0])
+        b[0] += 1
+        b[1] += E7[4]
+    X = (Fi, K[4], K[5])
+    for d, key in ((par, X), (full, (X, K[:6])), (k3, (X, K[3]))):
+        v = d.setdefault(key, [0, 0])
+        v[0] += 1
+        v[1] += E7[6]
+ok17 &= par[(1, (0, 0), (0, 0))] == [80, 40]
+Hz = ((0, 0), (0, 1), (0, 0), (0, 1), (0, 0), (0, 0))
+ok17 &= full[((1, (0, 0), (0, 0)), Hz)] == [20, 0]
+uneq = sum(1 for (X, H), (n, e) in full.items() if e * par[X][0] != par[X][1] * n)
+uneq3 = sum(1 for (X, k), (n, e) in k3.items() if e * par[X][0] != par[X][1] * n)
+ok17 &= uneq == 24 and len(full) == 112 and len(par) == 18 and uneq3 == 0
+ok17 &= inj == 64 * 16 and e4s == 32 * 16 and all(v == [256, 128] for v in bins23.values()) and len(bins23) == 4   # 8,192 words = 16 x G116's 512
+check('S17 G115, G116: candidate witness 80/40 vs 20/0; 24 of 112 full-history splits, none from K_3; E_4 parity law',
+      ok17, 'full splits %d of %d (parents %d), K_3 splits %d; injections %d, fourth errors %d' % (
+          uneq, len(full), len(par), uneq3, inj, e4s))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -301,21 +301,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   previous paired observation still misses pulse-model memory.
 - [a healed source can hide two cancelling errors](G114-a-healed-source-can-hide-two-cancelling-errors.md): Two
   incoming errors can cancel at a healed white source.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Injection memory plus one lag still misses deeper observed pulse history](W115-injection-memory-plus-one-lag-still-misses-deeper.md):
+- [injection memory plus one lag still misses deeper history](G115-injection-memory-plus-one-lag-still-misses-deeper.md):
   Remembering the injection and one lag still misses older observed information.
-- [The fourth pulse error is gated parity of three earlier ideal samples](W116-the-fourth-pulse-error-is-gated-parity-of.md):
-  The fourth isolated-pulse error remembers parity of three earlier ideal samples.
+- [the fourth pulse error is gated parity](G116-the-fourth-pulse-error-is-gated-parity.md): The fourth
+  isolated-pulse error remembers parity of three earlier ideal samples.
