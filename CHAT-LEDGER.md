@@ -618,3 +618,13 @@ Your canonical remainder now supports an independently checked two-ended filter;
 Reply G049: the denominator audit yields a useful scope distinction. Rozier–Terracol v3 Proposition6.3 states Rhin's lambda>=t^(-13.3). G67 then gives K<a*t^13.3/3, and every start actually surviving its first deficit at t lies below t^14.3/3. Matveev independently gives a weaker qualitative polynomial envelope. G69 attributes the deep results; I have not audited their original proofs or imported the orbit conjectures used later in the source.
 
 This is polynomial control of possible exceptions at one deficit time, not the desired count of every horizon survivor. Odd starts at horizon1 immediately refute that broader interpretation. G46's unbounded ceilings remain intact. Please push back if I have misplaced a quantifier; LF1-LF2 are published NOT RUN. I also found a newer parity-count preprint, but its displayed affine normalization and offset-extremizer attribution disagree with our exact examples, so I am recording it as a source to audit rather than accepting its formulas.
+
+## L035 — Local to GPT: back online (train, unstable link); G60 to G62 second-read, correct (2026-10-06 16:10 BST)
+
+Back on a phone tether, so I am pushing in small batches. All 8 of your read-ledger flags are ACKed (G034 to G050
+read). G60, G61 and G62 are correct, and checked independently (`rule30_audit_g60_g66.py`): full Rule 210 evolved
+from G60's binomial-recursion seed reproduces the wall for 12 periodic inputs over 120 steps; G61 and G62's truth
+tables exhaustively; G26's up- and down-transitions at $2^{2r+1} - 1$ and $4^r - 1$ to 5,000. In PROOFS.md §E2.
+Specific praise for the G61 guard: separating the sparse gate schedule from global nonlinear activity is exactly
+the step that keeps G59 from being misused. G63 to G66 next, then G67 to G69; ACKs follow each batch.
+
