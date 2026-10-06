@@ -68,6 +68,23 @@ RANDOM-ROW ADDENDUM, written 2026-10-06 before the second run (python3 rule30_tr
   1,171,848,670; 585,956,651; 292,950,068; ...), Poisson-sized; at L = 10, 15, 20, 24: 2,290,402 (law 2,288,818),
   71,594 (71,526), 2,187 (2,235), 117 (140); widest 31 (CF PASSED). TR2 HELD: the L = 1 count is -0.002% from the
   law, so the single cell's -0.09% is the orbit's, not the law's. The derivation is exact as stated.
+
+BLOCK ADDENDUM, written 2026-10-06 before the third run (python3 rule30_triangle_census.py 100000 blocks), after
+  GPT's pushback (C080): tops on a deterministic space-time are dependent, so "fifteen sigma" from the total count
+  alone is not justified; the calibration is replicates. The core is split into ten time blocks of 10^4 rows and
+  two halves (x/t in [-0.3, 0) and [0, 0.3)); for each, the counts of tops of width 1 .. 4 against the law and the
+  white density.
+  TB0 (control, must hold): the twenty cells' counts sum to the first run's core counts exactly.
+  TB1 (blind, the calibration): the width-1 deficit is systematic: every one of the ten time blocks shows a
+      deviation between -0.05% and -0.15% from 3 * 2^-5 * block area. If the blocks scatter with mixed signs, GPT's
+      caution stands and the sigma claim is withdrawn in the record.
+  TB2 (blind): the core's white density is within 0.01% of 1/2 in every block, so the deficit is not a density
+      effect (a white excess of 0.02% would be needed to produce it).
+  TB3 (blind): the two halves of the core show the deficit alike, within a factor of 2 of each other.
+  CF  (counterfactual, must fail): the width-2 tops show the same systematic deficit (every block between -0.05%
+      and -0.15%). The first run's L = 2 total was +0.012%, so this must fail.
+  REFUTED-BY: TB0 failing (the instrument); TB1 failing (then "fifteen sigma" is withdrawn); TB2, TB3 the other way;
+  CF holding.
 """
 import sys
 import numpy as np
@@ -198,7 +215,77 @@ def random_mode():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def census_blocks(T, nb=10):
+    """the core only: counts of tops of width 1 .. 8 and white cells, by time block and by half of the core."""
+    W = 2 * T + 3
+    a = np.zeros(W, dtype=np.uint8); c = W // 2; a[c] = 1
+    H = np.zeros((9, nb, 2), dtype=np.int64)
+    white = np.zeros((nb, 2), dtype=np.int64); area = np.zeros((nb, 2), dtype=np.int64)
+    prev = a.copy()
+    bs = T // nb
+    for t in range(1, T + 1):
+        l = np.empty_like(a); l[1:] = a[:-1]; l[0] = 0
+        r = np.empty_like(a); r[:-1] = a[1:]; r[-1] = 0
+        a = l ^ (a | r)
+        lo, hi = c - t, c + t
+        row = a[lo:hi + 1]
+        s, e = runs_of_zeros(row)
+        b = min((t - 1) // bs, nb - 1)
+        # white density and area by half, cells with x/t in [-0.3, 0) and [0, 0.3)
+        xl = int(np.ceil(-0.3 * t)); xr = int(np.ceil(0.3 * t)) - 1       # cells -0.3t <= x < 0.3t
+        seg = a[c + xl:c + xr + 1]; mid = -xl
+        area[b, 0] += mid; area[b, 1] += seg.size - mid
+        white[b, 0] += mid - int(seg[:mid].sum()); white[b, 1] += (seg.size - mid) - int(seg[mid:].sum())
+        if len(s):
+            L = e - s + 1
+            P = np.concatenate(([0], np.cumsum(prev[lo - 1:hi + 2], dtype=np.int64)))
+            cont = (P[e + 3] - P[s]) == 0
+            top = ~cont
+            xs = (s[top] + lo - c) + (L[top] - 1) / 2.0
+            Lt = L[top]
+            sel = (xs >= -0.3 * t) & (xs < 0.3 * t) & (Lt <= 8)
+            half = (xs[sel] >= 0).astype(int)
+            np.add.at(H, (Lt[sel], b, half), 1)
+        prev = a
+    return H, white, area
+
+
+def blocks_mode():
+    H, white, area = census_blocks(T)
+    nb = H.shape[1]
+    tot = H.sum(axis=(1, 2))
+    print("   core totals by width 1 .. 8:", [int(tot[L]) for L in range(1, 9)])
+    dens = white / area
+    print("   white density by block (left half | right half): " + " ".join(f"{dens[b, 0]:.5f}|{dens[b, 1]:.5f}" for b in range(nb)))
+    dev = {}
+    for L in (1, 2, 3, 4):
+        law = 3 * 2.0 ** -(L + 4) * area
+        dev[L] = (H[L] - law) / law
+        print(f"   width {L}: deviation by block, left|right: " + " ".join(f"{dev[L][b, 0] * 100:+.3f}%|{dev[L][b, 1] * 100:+.3f}%" for b in range(nb)))
+        both = (H[L].sum(axis=1) - law.sum(axis=1)) / law.sum(axis=1)
+        print(f"            both halves: " + " ".join(f"{v * 100:+.3f}%" for v in both) + f"   total {(H[L].sum() - law.sum()) / law.sum() * 100:+.3f}%")
+    first = [281011418, 140641871, 70333586, 35178509]
+    report("TB0 the block counts sum to the first run's core counts for L = 1 .. 4",
+           [int(tot[L]) for L in range(1, 5)] == first, f"{[int(tot[L]) for L in range(1, 5)]}")
+    b1 = (H[1].sum(axis=1) - (3 / 32) * area.sum(axis=1)) / ((3 / 32) * area.sum(axis=1))
+    verdict("TB1 every time block's width-1 deviation lies in [-0.15%, -0.05%]", all(-1.5e-3 <= v <= -5e-4 for v in b1),
+            " ".join(f"{v * 100:+.3f}%" for v in b1))
+    verdict("TB2 the white density is within 0.01% of 1/2 in every block", bool(np.all(np.abs(dens - 0.5) <= 1e-4)),
+            f"max |dens - 1/2| = {float(np.max(np.abs(dens - 0.5))):.6f}")
+    lh = (H[1][:, 0].sum() - (3 / 32) * area[:, 0].sum()) / ((3 / 32) * area[:, 0].sum())
+    rh = (H[1][:, 1].sum() - (3 / 32) * area[:, 1].sum()) / ((3 / 32) * area[:, 1].sum())
+    verdict("TB3 the two halves show the width-1 deficit alike (within a factor 2)",
+            lh < 0 and rh < 0 and 0.5 <= lh / rh <= 2, f"left {lh * 100:+.3f}%, right {rh * 100:+.3f}%")
+    b2 = (H[2].sum(axis=1) - (3 / 64) * area.sum(axis=1)) / ((3 / 64) * area.sum(axis=1))
+    report("CF  width-2 tops do NOT show the same systematic deficit in every block", not all(-1.5e-3 <= v <= -5e-4 for v in b2),
+           " ".join(f"{v * 100:+.3f}%" for v in b2))
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "blocks" in sys.argv[1:]:
+        blocks_mode()
+        return
     if "random" in sys.argv[1:]:
         random_mode()
         return
