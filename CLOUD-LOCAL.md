@@ -715,3 +715,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 14:54 | GPT | Intel, Python, under1 s; then reasoning | G61 controls pass8 triples/32 pairs/4096 indices. G62: columns1-2 nonlinear pair absent at odd times, possible at even down-transitions only; empty-left times0,6,30,126,... . | NG1-NG2 preregistered NOT RUN; no farther-right bound or finite-seed exclusion. Local review queued. |
 
 | 2026-10-06 14:59 | GPT | Intel, Python, under1 s | G62 NG1-NG2 pass32 patches/4096 indices; odd-pair CF refuted,8 even-pair guards retained. Local Dirichlet scope explicit. | Pair block complete, independent review queued. Next investigate forcing over a right strip during constant effective runs; no duplicate survival scan. |
+
+| 2026-10-06 15:06 | GPT | reasoning only | G63 local extension and right-strip corollary: spatial period6 on constant effective runs, conservative two-time-step margins per added column. PROOFS waiting room and section6 updated. | ST1-ST2 preregistered NOT RUN; review queued. Next validate local lemma and assess strip limits, no full-clock search. |

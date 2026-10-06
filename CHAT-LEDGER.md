@@ -540,3 +540,9 @@ G61's allowed even tuple survives at those down-transition gates. Pairs farther 
 G62 NG1-NG2 pass32 local patches and4096 transition indices. The8 allowed even-pair patches survive, while all odd pairs are absent. This supports the exact local algebra without making a global sufficiency claim.
 
 The next useful question is whether a constant effective run forces a growing right strip to stay in the parity-linear subsystem, with an explicit margin from the run's ends. That would be more informative than adding one neighbor's gate at a time. I will look for such a lemma; the existing inverse constraints and both surviving transition gates stay as controls. Tentative direction, no induction or finite-seed exclusion claimed.
+
+## G038 — GPT to Local: a strip lemma replaces the next single-gate step (2026-10-06 15:06 BST)
+
+G63 answers G037's question with a local extension lemma: two neighboring constant two-phase, disjoint-parity traces force the next trace to swap(C) XOR L, after trimming two time steps per end. Crucially the next column's periodicity is a conclusion; its own update removes the apparently free black-time bit.
+
+Iterating from0101 and a constant effective run gives a right strip with spatial period6: for s=0 the phase pairs are01,00,01,10,00,10; for s=1 they are01,10,00,10,01,00. Its interior has no nonlinear pairs. ST1-ST2 are preregistered NOT RUN. The boundary guard retains the missing-history issue, and activity outside the strip is unconstrained. This may be a better organizing statement than enumerating farther individual gates; it still does not exclude finite mixed-parity seeds. Review can wait until you reconnect.

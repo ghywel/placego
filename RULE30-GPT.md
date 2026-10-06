@@ -3810,3 +3810,28 @@ For G26's empty-left stream,1-to0 transitions are n=4^r-1, r>=0, including the s
 NG1 passes all32 positive five-cell Dirichlet patches through the two specified updates. All8 patches with an even columns1-2 black pair force the next effective bit0; all32 have no odd pair. The allowed even-pair guard survives in8 patches. NG2 passes4096 indices, with down-transition positions0,3,15,63,255,1023,4095. The odd-pair counterfactual is refuted. Probe: `tests/probes/lexicon/rule30_gpt_pair_support.py`, Python on GPT's Intel host, under1 s.
 
 These are local compatibility controls under the imposed wall, not a full-clock construction or a finite-seed search. No control failed. G62 remains awaiting an independent reader. The pair-specific block is complete; next seek a statement controlling a whole right strip during a constant effective run, rather than extrapolating the first pair's support to all depths.
+
+
+## G63. A constant effective run forces a right strip (2026-10-06)
+
+Question from G037: can G61-G62's individual gate restrictions be replaced by a strip statement? The following local extension lemma does so. This is derived from Rule210's recorded truth table and the parity subsystem in G28; a targeted record search for period-six/constant Rule210 strip statements found no matching entry. It is not a literature novelty claim, a full-realization construction, or a finite-seed exclusion.
+
+**Local extension lemma.** In a Rule210 orbit let neighboring columns L,C have constant two-phase temporal values on an integer time interval I=[A,B], inclusive. Write their (even,odd) pairs as L=(l_e,l_o), C=(c_e,c_o), each in{00,10,01}, with disjoint occupied phases: l_e*c_e=l_o*c_o=0. Then the next column R is forced on[A+2,B-2] to the pair
+
+    R=(c_o XOR l_e, c_e XOR l_o).
+
+No temporal periodicity assumption is imposed on R or any farther column. If C=00, its own update gives R(t)=L(t), using C(t+1)=0, and the formula follows. If C=10, its odd-time white update forces R(odd)=1 XOR l_o, while its even black update requires l_e=0. Put b=1 XOR l_o. If b=1, R is black at the preceding odd time; its own update then forces its next even value to C(odd)=0, independently of the farther column. If b=0 and an even R were1, its own update would force the next odd R to C(even)=1, contradicting the known odd0. Thus R(even)=0 in either case. The case C=01 is the parity-swapped argument, giving R(odd)=0 and R(even)=1 XOR l_e. Trimming two steps at each end ensures every preceding/following sample and C update used lies in I. These cases prove the lemma and show the output remains in{00,10,01}, with opposite occupied phase to C whenever nonzero.
+
+**Strip corollary for0101.** Suppose s_n=x(1,2n)=a is constant for m<=n<=N. G61 forces d_n=x(1,2n+1)=0 for m<=n<N, since a constant transition is not0-to1. Thus columns0 and1 have pairs v_0=01, v_1=(a,0) on[2m,2N]. Iterating the lemma gives, for every k>=1 with a nonempty specified window,
+
+    column k has pair v_k on
+    [2m+2*(k-1), 2N-2*(k-1)],
+    v_(k+1)=swap(v_k) XOR v_(k-1).
+
+The vectors repeat spatially with period6. For a=0, v_0..v_5 are01,00,01,10,00,10; for a=1 they are01,10,00,10,01,00. In both cases direct recurrence gives v_6=v_0 and v_7=v_1, proving repetition. Neighboring forced columns have disjoint black phases, so every adjacent pair wholly inside their common forced time window has nonlinear product0. This is a growing, parity-linear right strip on the interior of a constant effective run, not just one gate's support. In G26 the effective dyadic runs grow without bound, so any full realization of that particular empty-left system has arbitrarily wide such strips.
+
+**Unexpected boundary guard.** Dropping the temporal margin is unjustified. In the local layer system L=00,C=10 on[0,7], choose R=11 at times0,1 and thereafter R=01 (even0,odd1). C's updates and R's updates admit a farther-column stream, yet R(0)=1 disagrees with the predicted pair01. The preceding odd sample outside the interval is missing. This is a counterexample within the stated local layer equations, not an assertion that the farther stream itself has a full evolution. It shows why the lemma's proof must retain its time-window premises. The two-step margin is conservative; no optimality claim.
+
+The corollary does not force the entire right half at one time or make every nonlinear event vanish eventually. Growing strips inside growing intervals can coexist with activity at their edges or farther right. G59 therefore still supplies no finite-seed contradiction. Full mixed-parity finite witnesses remain open.
+
+**Next controls, preregistered NOT RUN.** ST1: enumerate all7 disjoint-phase pairs(L,C), all256 eight-bit R words on[0,7]; retain exactly those satisfying C's seven updates and admitting seven farther-column bits for R's own updates. Every accepted R must match the lemma on[2,5]. ST2: check both six-phase spatial cycles and their disjoint-phase property through60 columns. CF: the same forcing holds at every endpoint with no margin; must fail on the specified L=00,C=10,R boundary guard. These are local controls, not finite/full orbit searches. Independent Local reading requested; next run them before using the strip quantitatively.
