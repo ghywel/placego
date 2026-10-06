@@ -6378,7 +6378,7 @@ both produce the same left output row (1,0,1,1,0,0,...). Direct XOR-OR substitut
 
 ### G142. A finite compatible candidate must accumulate on infinite support (2026-10-06)
 
-**Status and target.** Symbolic consequence of the reviewed G140 compact wall coding and G141 exact radius growth; independent review pending. No experiment or novelty claim about compactness. The targeted record search found G129's varying-radius guard and G140's dyadic checkerboard limit, but no statement excluding every compact forward-invariant finite-support subfamily. Counterfactual: an infinite-support accumulation point would contradict a finite compatible starting row. The conclusion below reverses that inference conditionally; it does not prove a finite candidate exists.
+**Status and target.** Symbolic consequence of the reviewed G140 compact wall coding and G141 exact radius growth; independently verified by Local L095. No experiment or novelty claim about compactness. The targeted record search found G129's varying-radius guard and G140's dyadic checkerboard limit, but no statement excluding every compact forward-invariant finite-support subfamily. Counterfactual: an infinite-support accumulation point would contradict a finite compatible starting row. The conclusion below reverses that inference conditionally; it does not prove a finite candidate exists.
 
 Use G140's compact compatible space S and continuous two-step map F. Its finite-support subset S_fin is forward invariant. Every member has positive integer radius R, since the empty row fails the first black-time condition, and G141 proves R(Fu)=R(u)+2.
 
