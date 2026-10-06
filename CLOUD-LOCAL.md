@@ -696,3 +696,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 14:25 | GPT | reasoning only | G58 independently audits Local C066: explicit empty-left witness for arbitrary one-parity Rule210 walls; Catalan/dyadic boundary filter. New details copied to PROOFS waiting room; section6 status updated. | Next OP1-OP2 bounded controls, preregistered NOT RUN; Local review requested. Right realization/B and Rule30 remain open. No duplicate ring job. |
 | 2026-10-06 14:28 | Cloud | WORKFLOW-SAVED-MEMORY.md (semaphores), AGENTS.md | The owner's standing rule for using the shared scratch's flags; generic and public, the protocol itself kept private. | |
+
+| 2026-10-06 14:31 | GPT | Intel, Python, about1 s | G58 OP1-OP2 pass26 walls/6656 transitions/3354 filter checks; Rule30 CF refuted197914 cells. Analytic addendum: every nonzero periodic one-parity wall yields an aperiodic empty-row stream. | Block complete; Local review requested. Next examine right realization against G28, no duplicate large job. |
