@@ -2474,3 +2474,40 @@ The two parity representatives modulo8 follow directly by evolving one odd start
 **Unexpected signed-direction guard.** At a3, W_110 consists of1101 with B23, and W_111 of1110 with B19. The reverse signed bound is-4/27, attained by(19-23)/27. It is not an absolute-difference bound: abs(19-23)/27=4/27. Replacing a directional bound by an absolute bound is the counterfactual refuted here. Also a2 has no111 class; the extrema formulas require a>=3.
 
 **Next controls, preregistered NOT RUN.** PF1: reuse a3..12 admitted words to verify both attained prefix extrema and the signed inequality; independently check representatives3/7 modulo8 and the a3 direction guard. PF2: exact integer verification of a21's two interval bounds and signed numerator. Require the stated necessity bounds to hold; do not infer or search for a collision. Report any failure, and record this as a continuation of the existing residue-code lane, not a duplicate of Local's a17 enumeration. Elementary affine/position reasoning from G67/G81/G83, no imported theorem or novelty claim; independent review requested.
+
+
+### G84 prefix controls outcome (2026-10-06)
+
+PF1 passes10 attained-prefix-extrema pairs on4401 existing admitted words at a3..12. Representatives3/7 modulo8 and the signed-direction counterfactual check. PF2 verifies exactly4<R_21<8 and the reverse-direction bound12455114260/3486784401<4 (the reduced form of the stated fraction). No control failed; no a21 word or actual-start search occurred. Probe: `tests/probes/prizes/collatz_gpt_prefix_orientation.py`; predictions at4c2e796, GPT Intel Python, under1 s. Necessity only, with independent proof review pending.
+
+
+### G85. Admission forces two further shared odd bits in a21 candidates (2026-10-06)
+
+Continue G84's necessary a21 collision orientation. Let the smaller start n have prefix110 and the other start n+4 prefix111. After three steps their values are
+
+    u=(9*n+5)/8, u'=(27*n+127)/8=3*u+14.
+
+Thus these values have the same parity. Admission of the110 branch at step4 requires its next bit1: retaining only two odd bits would leave9<16. Both values therefore take an odd step, giving v' =3*v+20 where v=(3*u+1)/2. These values again have the same parity. Admission of the lower branch at step5 requires another odd bit, since27<32. Both take that odd step. Every a21 collision candidate must consequently have first five bits11011 and11111, respectively. By the parity bijection the lower start is27 modulo32 and the upper31 modulo32. After five steps their values satisfy w'=3*w+29, so they have opposite parity next; no further common-bit extension is asserted.
+
+This is a conditional constraint on any collision, not its existence or an a21 exclusion. The global span bound still allows the positive intercept orientation, and these prefixes still attain its opposing extrema; this refinement does not by itself improve the cutoff20.
+
+**Unexpected admission guard.** Starts3 and7 differ by4 and begin110/111, but the lower branch fails coefficient admission at step4. Its first five bits are11000, while the upper has11101. Thus displacement4 and the three-bit orientation alone do not imply the five-bit prefixes. The counterfactual omitting admission must fail on this pair.
+
+**Next controls, preregistered NOT RUN.** FP1: direct exact trajectories for n=8*k+3 with0<=k<256 and n+4; whenever the lower start is coefficient-admitted through5, require both five-bit prefixes, the three affine relations above, residues27/31 modulo32 and opposite next parity. Do not require a terminal collision or infer one. FP2: separately check3/7 and the residue representatives27/31, retain failed admission in the guard. These are small algebra controls, not a new collision search or a Local computational job. Review requested; elementary recorded identities, no novelty claim.
+
+
+### G86. Removing the common odd count does not preserve admission (2026-10-06)
+
+A tempting continuation of G85 would reduce a21 collisions to the already excluded smaller odd counts by restarting after a short common-count prefix. This route fails: the coefficient barrier carries accumulated slack, and a suffix is not generally admitted relative to its own starting time.
+
+In G85's possible sixth-bit branch(1,0), both trajectories have accumulated five odd steps after six steps. Their new states differ by14: from w'=3*w+29, the odd/even updates give (3*w+1)/2 and (3*w+29)/2. If they eventually meet with a21, the remaining27-step suffixes have16 odd steps. But3^16=43046721<2^27, so neither suffix can satisfy the fresh coefficient barrier even at its endpoint. G83's cutoff through20 cannot be applied to those suffixes. This is conditional reasoning, not an assertion that this collision branch exists.
+
+The correct suffix condition after a prefix of length s and odd count j is
+
+    3^(j+a_k)>=2^(s+k),
+
+rather than3^a_k>=2^k. It depends on the accumulated prefix ratio. A fresh-admission injectivity proof is not thereby an injectivity proof for all such shifted barriers.
+
+**Unexpected explicit slack guard.** The word110111 followed by16 ones and11 zeroes has length33 and21 ones. Its first six coefficient prefixes are admitted; the subsequent ones increase the coefficient ratio, and among the trailing zeroes the endpoint is the smallest ratio, with3^21>2^33. Thus the full word is admitted. Its27-bit suffix1^16 0^11 first fails the fresh barrier at step26, since2^25<3^16<2^26, while it remains admitted against the shifted barrier. This is an abstract parity word, realizable by the recorded parity bijection; no meeting pair is implied. Starts27/31 realize G85's six-bit branch and have new states107/121, illustrating the displacement14 without claiming that they meet.
+
+**Next control, preregistered NOT RUN.** SR1: exact prefix tests of this full word and suffix, require full admission, shifted suffix admission and fresh suffix first deficit26; direct27/31 six-step guard must give odd counts5/5 and states107/121. Counterfactual that restarting preserves fresh admission must fail. No extended collision enumeration. Record this as a closed shortcut, not closure of the shifted-barrier problem or the original singleton question.
