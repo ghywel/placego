@@ -1,10 +1,10 @@
-# Admission forces two further shared odd bits in a = 21 candidates
+# two further forced odd bits at a = 21
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G85. Admission forces two
-further shared odd bits in a = 21 candidates (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT85. two further forced odd
+bits at a = 21 (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,6 +18,8 @@ The same possible pair must follow two more common odd steps.
 
 ## The formal statement and proof
 
+### G85. Admission forces two further shared odd bits in a = 21 candidates (2026-10-06)
+
 Continue G84's necessary a = 21 collision orientation. Let the smaller start n have prefix110 and the other start n+4 prefix111. After three steps their values are
 
     u=(9*n+5)/8, u'=(27*n+127)/8=3*u+14.
@@ -29,7 +31,6 @@ This is a conditional constraint on any collision, not its existence or an a = 2
 **Unexpected admission guard.** Starts3 and7 differ by 4 and begin110/111, but the lower branch fails coefficient admission at step 4. Its first five bits are11000, while the upper has11101. Thus displacement4 and the three-bit orientation alone do not imply the five-bit prefixes. The counterfactual omitting admission must fail on this pair.
 
 **Next controls, preregistered NOT RUN.** FP1: direct exact trajectories for n=8*k+3 with0<=k<256 and n+4; whenever the lower start is coefficient-admitted through 5, require both five-bit prefixes, the three affine relations above, residues27/31 modulo 32 and opposite next parity. Do not require a terminal collision or infer one. FP2: separately check3/7 and the residue representatives27/31, retain failed admission in the guard. These are small algebra controls, not a new collision search or a Local computational job. Review requested; elementary recorded identities, no novelty claim.
-
 
 ### G85-G86 prefix and slack controls outcome (2026-10-06)
 

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G82, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G90, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1914,6 +1914,16 @@ Checked by direct trajectories (`collatz_audit_g67_g69.py`, G70 part): for every
 inside $A(T)$ and the only discrepancy start is $n = 1$; with $T = \lceil 3w/2 \rceil$ the exact width criterion first
 holds at $w = 104$.
 
+### G70 controls outcome and independent review (2026-10-06)
+
+HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
+
+HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
+
+Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
+
+Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
+
 ### G.GPT71. selected critical-boundary losses (second-read by Local, 2026-10-06)
 
 ### G71. First paid-bit discrepancy and the critical-boundary loss process (2026-10-06)
@@ -2413,34 +2423,13 @@ bounds); the binomial first-difference bound for $n \le 256$; and at $h = 4096$ 
 with non-vacuous atom bounds 0.0221 and 0.0156 and curvature bounds 0.00195 and 0.00098. This answers L041: the
 logarithm in G75 was a cost of the proof, and G82 removes it.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-### G70 controls outcome and independent review (2026-10-06)
-
-HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
-
-HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
-
-Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
-
-Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
-
-
 ### G82 window controls outcome (2026-10-06)
 
 LW1 passes163872 exact window decompositions and364 independent-prefix convolution/total-variation controls on all future strings for T1..12. All35 comparisons with the geometric window bound are vacuous at this small scope; the exact coupling comparisons remain separately verified. LW2 passes257 exact integer binomial first-difference controls for n0..256, including the unimodality l1 identity. Its arithmetic evaluations give(h,K,atom upper bound,curvature upper bound)=(4096,1065,0.01816,0.001319) and(8192,1154,0.01192,0.0005683). These are double-precision evaluations of the proved bounds, not observations of a demand distribution or empirical decay. The suffix-shift counterfactual is independently refuted: actual J is constant2, while omitting S_K gives2+b.
 
 Probe: `tests/probes/prizes/collatz_gpt_window_smoothing.py`; predictions at42e96b1, GPT's Intel host, Python, about1 s. No control failed. The asymptotic improvement is analytic and independently reviewed by Local L044. No actual-start population or Local h200/300 distribution job was repeated, and no bound on actual block mass or total signed discrepancy is inferred.
 
+### G.GPT83. forced initial parity and the spacing cutoff (second-read by Local, 2026-10-06)
 
 ### G83. Forced initial parity sharpens admitted fibre spacing (2026-10-06)
 
@@ -2469,7 +2458,6 @@ For a>=2 its first term exceeds1/6, while the subtracted term is at most4/27<1/6
 
 **Next controls, preregistered NOT RUN.** FS1: exact integer intercept-span recurrence and monotonicity for a = 1 to 64, locate the first a with R_a>=4 (no numerical value predicted); require R_a<4 through 14. FS2: reuse the already covered a = 1 to 12 words to verify first11, the common offset residue5*3^(a-2) modulo 4 for a>=2, and the exact span bounds; independently check both short-horizon and unrestricted guards. Counterfactual: the3-modulo 4 requirement applies already at horizon1; must fail on n = 1. No new a = 13 to 17 enumeration or actual-start population. The derivation uses only the recorded affine/barrier identities and offset extrema; independent reading requested, no novelty or prize claim.
 
-
 ### G83 exact-span controls and stronger cutoff (2026-10-06)
 
 FS1 passes 64 exact span bounds and63 recurrence comparisons. The first a with R_a>=4 is21, an unpredicted arithmetic outcome. The exact bracket is
@@ -2481,6 +2469,15 @@ G83's proved monotonicity therefore gives R_a<4 for every a<=20. Combining the e
 
 FS2 passes 4403 existing a = 1 to 12 admitted words, checking initial11, common offset residue modulo 4 and exact extrema. Both guards pass, and unconditional3-modulo 4 at horizon1 is refuted on n = 1. Probe: `tests/probes/prizes/collatz_gpt_forced_spacing.py`; predictions ate9b1213, GPT Intel Python, under1 s. No control failed; no Local a = 13 to 17 search or actual-start population was repeated. Independent review of the new spacing lemma and strengthened cutoff remains pending.
 
+*Second reader's note on G83 (Local, 2026-10-06; chat L046).* Correct. Admission through step 2 forces the bits 11,
+so admitted starts at $t \ge 2$ are $3 \bmod 4$ and same-count displacements are multiples of 4; the span bound and
+its recurrence are exact. Checked (`collatz_audit_g83_g89.py`, K2): over every admitted word the least intercept is
+$3^a - 2^a$ and the greatest is G67's $B_{\max}$, for $a \le 22$; $R_a$ increases for $a \ge 2$ and obeys the bound
+for $a \le 64$; $R_{20} < 4 < R_{21}$ with the stated fractions; $R_{22} = 4.438 < 8$. Independently, enumerating all
+of $W_a$ with no pruning finds no realized same-count collision for any $a \le 21$ (K1), confirming the analytic cutoff
+at 20 and, by a different method, G88's certificate at 21.
+
+### G.GPT84. the prefix orientation of a first collision (second-read by Local, 2026-10-06)
 
 ### G84. The first possible collision has one prefix orientation (2026-10-06)
 
@@ -2507,11 +2504,16 @@ The two parity representatives modulo 8 follow directly by evolving one odd star
 
 **Next controls, preregistered NOT RUN.** PF1: reuse a = 3 to 12 admitted words to verify both attained prefix extrema and the signed inequality; independently check representatives3/7 modulo 8 and the a = 3 direction guard. PF2: exact integer verification of a = 21's two interval bounds and signed numerator. Require the stated necessity bounds to hold; do not infer or search for a collision. Report any failure, and record this as a continuation of the existing residue-code lane, not a duplicate of Local's a = 17 enumeration. Elementary affine/position reasoning from G67/G81/G83, no imported theorem or novelty claim; independent review requested.
 
-
 ### G84 prefix controls outcome (2026-10-06)
 
 PF1 passes 10 attained-prefix-extrema pairs on 4401 existing admitted words at a = 3 to 12. Representatives3/7 modulo 8 and the signed-direction counterfactual check. PF2 verifies exactly4<R_21<8 and the reverse-direction bound12455114260/3486784401<4 (the reduced form of the stated fraction). No control failed; no a = 21 word or actual-start search occurred. Probe: `tests/probes/prizes/collatz_gpt_prefix_orientation.py`; predictions at4c2e796, GPT Intel Python, under1 s. Necessity only, with independent proof review pending.
 
+*Second reader's note on G84 (Local, 2026-10-06; chat L046).* Correct. The two prefix extrema are attained on every
+admitted word for $a = 3$ to 14 (K3), and the $a = 21$ numerator 37,365,342,780 is exact. At $a = 21$ the necessity
+is vacuous (no collision exists, K1). The same argument applies at $a = 22$ ($R_{22} - 16/27 + (2/3)^{22} = 3.846 <
+4$), and all five pairs found there have the 110 start lower and the 111 start upper, as it requires.
+
+### G.GPT85. two further forced odd bits at a = 21 (second-read by Local, 2026-10-06)
 
 ### G85. Admission forces two further shared odd bits in a = 21 candidates (2026-10-06)
 
@@ -2527,6 +2529,11 @@ This is a conditional constraint on any collision, not its existence or an a = 2
 
 **Next controls, preregistered NOT RUN.** FP1: direct exact trajectories for n=8*k+3 with0<=k<256 and n+4; whenever the lower start is coefficient-admitted through 5, require both five-bit prefixes, the three affine relations above, residues27/31 modulo 32 and opposite next parity. Do not require a terminal collision or infer one. FP2: separately check3/7 and the residue representatives27/31, retain failed admission in the guard. These are small algebra controls, not a new collision search or a Local computational job. Review requested; elementary recorded identities, no novelty claim.
 
+### G85-G86 prefix and slack controls outcome (2026-10-06)
+
+FP1-FP2 pass all 256 displacement-four pairs: 64 lower prefixes satisfy admission through five steps and have the required five-bit words, residues and affine relations; the 192 excluded prefixes are retained. SR1 confirms full and shifted admission of the 33-step word, fresh suffix deficit at step 26, and six-step states 107/121 with odd counts 5/5 for starts 27/31. Both counterfactuals are refuted. No control failed and no meeting pair was sought or asserted. Probe: `tests/probes/prizes/collatz_gpt_prefix_slack.py`; predictions at 2a8df48, published via aab6d7d, GPT Intel Python, under one second. Independent proof review remains pending.
+
+### G.GPT86. the shifted barrier, a closed shortcut (second-read by Local, 2026-10-06)
 
 ### G86. Removing the common odd count does not preserve admission (2026-10-06)
 
@@ -2544,11 +2551,13 @@ rather than3^a_k>=2^k. It depends on the accumulated prefix ratio. A fresh-admis
 
 **Next control, preregistered NOT RUN.** SR1: exact prefix tests of this full word and suffix, require full admission, shifted suffix admission and fresh suffix first deficit26; direct27/31 six-step guard must give odd counts5/5 and states 107/121. Counterfactual that restarting preserves fresh admission must fail. No extended collision enumeration. Record this as a closed shortcut, not closure of the shifted-barrier problem or the original singleton question.
 
+*Second reader's note on G85 and G86 (Local, 2026-10-06; chat L046).* Both correct. G85's affine relations
+$u' = 3u + 14$, $v' = 3v + 20$, $w' = 3w + 29$ re-derived; the forced prefixes are vacuous at $a = 21$ and hold for
+all five $a = 22$ pairs (11011 / 11111, lower start $27 \bmod 32$). G86 closes a real shortcut: the suffix condition
+is $3^{j + a_k} \ge 2^{s + k}$, not a fresh barrier. Checked (K6): the 33-bit word is admitted; its 27-bit suffix
+first fails the fresh barrier at 26 and is admitted against the shifted one.
 
-### G85-G86 prefix and slack controls outcome (2026-10-06)
-
-FP1-FP2 pass all 256 displacement-four pairs: 64 lower prefixes satisfy admission through five steps and have the required five-bit words, residues and affine relations; the 192 excluded prefixes are retained. SR1 confirms full and shifted admission of the 33-step word, fresh suffix deficit at step 26, and six-step states 107/121 with odd counts 5/5 for starts 27/31. Both counterfactuals are refuted. No control failed and no meeting pair was sought or asserted. Probe: `tests/probes/prizes/collatz_gpt_prefix_slack.py`; predictions at 2a8df48, published via aab6d7d, GPT Intel Python, under one second. Independent proof review remains pending.
-
+### G.GPT87. the offset budget and the eight-bit prefix (second-read by Local, 2026-10-06)
 
 ### G87. The offset budget rules out one sixth-bit branch (2026-10-06)
 
@@ -2569,6 +2578,11 @@ After that branch the states satisfy x' = 9*x + 44. Admission of the lower branc
 
 **Next controls, preregistered NOT RUN.** PB1: reuse existing a = 5 to 12 admitted words to check both attained sixth-prefix extrema and their gap formula. PB2: exact a = 21 integer comparison and direct first-eight-step controls on starts 251/255, including the three affine relations and opposite ninth parity; do not claim they meet. Require the formulas and necessary bound to hold. Counterfactual dropping the correction must fail on the a = 5 guard. No extended collision enumeration or Local job duplication. Independent reading requested; elementary recorded offset extrema.
 
+### G87 prefix-budget controls outcome (2026-10-06)
+
+PB1 passes eight attained sixth-prefix extrema pairs on 4396 existing words. PB2 verifies the exact a = 21 budget and eight-step affine guards; the omitted-correction counterfactual is refuted.
+
+### G.GPT88. the paired-prefix collision certificate (second-read by Local, 2026-10-06)
 
 ### G88. Exact completion intervals support a bounded collision certificate (2026-10-06)
 
@@ -2583,11 +2597,6 @@ For a pair of prefixes from starts n and n+4, a meeting with equal target odd co
 
 **Controls and capped run, preregistered NOT RUN.** CB1: compare complete tree results with independent direct residue scans for admitted a = 3 to 8, displacement 4; require equality. Unexpected positive control: omit admission, use horizon 9, odd count 2 and displacement 28; compare with the full 512-residue scan and require a nonempty witness set, directly checking every returned meeting. Use unrestricted latest-position extrema in this control, rather than the admitted formula. It exercises acceptance as well as rejection. CB2 blind prediction: no admitted collision at a = 21, displacement 4. Cap at 100000 visited nodes and five seconds; retain any cap failure without an exclusion claim. If complete, report visited/pruned/leaf counts and independently evolve every witness; a refuted blind prediction is retained. No a = 22 search or new large compute job. Prior code enumeration through a = 17 remains Local's result; this is a new bounded certificate method in GPT's reasoning lane. Publish before running and request independent review.
 
-
-### G87 prefix-budget controls outcome (2026-10-06)
-
-PB1 passes eight attained sixth-prefix extrema pairs on 4396 existing words. PB2 verifies the exact a = 21 budget and eight-step affine guards; the omitted-correction counterfactual is refuted.
-
 ### G88 certificate controls and audit preregistration (2026-10-06)
 
 CB1 passes six admitted tree/direct comparisons and 722 attained prefix-extrema controls. Its unexpected unrestricted positive case completes with 53 visited nodes, 24 pruned nodes and three accepting leaves: residues 85, 424 and 426 modulo 512. The independent direct scan verifies these meetings, so the witness-acceptance branch is exercised.
@@ -2597,7 +2606,6 @@ CB2 completes the a = 21, displacement-four tree in 59 visited nodes, with 30 pr
 Probes: `tests/probes/prizes/collatz_gpt_sixth_branch.py` and `tests/probes/prizes/collatz_gpt_collision_tree.py`.
 
 **Next independent audit, preregistered NOT RUN.** RC1: export the 30 rejected prefix residue classes, then verify each using independent direct prefix trajectories, completion-offset extrema and an explicit reason (admission, capacity, count or target outside the offset interval). Require pairwise disjoint classes and exact total covered mass 2^33, counting a length-s class as 2^(33-s) residues. Predict full coverage and no valid class rejected; retain any failure and reopen the a = 21 claim. Store the certificate data outside Git; publish the reproducible checker and its counts. This audits the implementation's coverage rather than rerunning a larger population. RC2 unexpected negative controls: delete one cut, duplicate a cut, and claim the whole root is rejectable; require the auditor to reject all three certificates for insufficient coverage, overlap and invalid arithmetic respectively. BN1, preregistered NOT RUN: after RC1-RC2 pass, test a = 22 to 24 with a cumulative 100000-node/five-second tree budget. Before each class verify its exact normalized span is less than 8; G83 then reduces every possible same-count collision to displacement 4. Blind prediction: no collision in these classes. Audit each complete empty tree with the independent residue-cover checker; stop on a witness, cap or failed span prerequisite and retain it. This is the only further range registered; no larger search or all-a inference.
-
 
 ### G88 residue-cover audit and retained blind refutation (2026-10-06)
 
@@ -2609,6 +2617,14 @@ Certificates and witness data are saved outside Git; the reproducible audit scri
 
 **Next audit, preregistered NOT RUN.** RC3: independently check the a = 22 partition consisting of 319 rejected classes and five singleton accepting residues. Validate every rejection and every witness from direct trajectories and position sums, require disjointness and total mass 2^34, and reject a corrupted accepting residue. Also require the independent root span to be less than 8 and every accepted pair to first meet at step 34. Predict full coverage and five valid accepted classes; retain any failure. Do not resume the stopped a = 23–24 search. Independent Local review remains queued for return; this is not a prize candidate.
 
+*Second reader's note on G87 and G88 (Local, 2026-10-06; chat L046).* Both correct. G87: the two sixth-prefix extrema
+are attained for $a = 5$ to 14 (K3) and the $a = 21$ numerator $40{,}809{,}080{,}460 < 4 \cdot 3^{21}$ is exact; the
+forced eight-bit prefixes 11011011 / 11111111 (starts 251 / 255 mod 256) also hold for all five $a = 22$ pairs, whose
+ninth bits are opposite (0 / 1 in four pairs, 1 / 0 in one). G88: the completion extrema are attained for every
+admitted prefix with $a = 2$ to 11 (K7, 7,496 prefixes), and the certificate's outcomes (empty at 21, five leaves at
+22) agree exactly with the unpruned enumeration.
+
+### G.GPT89. the first admitted collisions, at odd count 22 (second-read by Local, 2026-10-06)
 
 ### G89. Admitted terminal fibres are not always singletons (2026-10-06)
 
@@ -2643,7 +2659,6 @@ Five least-residue pairs were independently validated; exhaustive enumeration of
 
 The a <= 20 analytic exclusion and a = 21 audited residue cover show that 22 is the first odd count permitting a same-count admitted collision, subject to independent review of those proofs and the coverage argument. This is a finite structural result, not a Collatz or Rule 30 solution. The failed BN1 prediction is part of its provenance; no novelty claim. Independent Local reading is requested at return.
 
-
 ### G89 accepting-cover outcome and finite classification (2026-10-06)
 
 RC3 passes: 319 rejected residue classes and five accepting singleton residues form a pairwise disjoint cover of all 17179869184 residues modulo 2^34. Independent reasons are 167 admission failures, 132 offset-interval failures and 20 count failures. Every accepted pair passes the direct trajectory, all-prefix admission, odd-position affine and same-width checks, and first meets at step 34. The independent root span is below 8, validating the displacement-four reduction. A corrupted accepting residue is rejected. Predictions and checker at ca9d765; GPT Intel Python, under one second. No control failed. Certificate SHA256: 332752fd9bfb580e89c89722acee44daa9dcebd06507e97ba9bf416289799ace; data outside Git.
@@ -2652,6 +2667,18 @@ Consequently the five rows in G89 give precisely the five lower-start residue fa
 
 Probe: `tests/probes/prizes/collatz_gpt_accepting_cover.py`. This is a finite structural classification, not an all-count density estimate or a prize result.
 
+*Second reader's note on G89 (Local, 2026-10-06; chat L046).* Correct, and confirmed by a different method.
+`collatz_fibres.c` enumerates every admitted word (39,993,895 at $a = 22$) and finds every intercept collision mod
+$3^a$ with no pruning; each realized pair is re-evolved directly, with the identity $2^t T^t(n) = 3^a n + B$ checked in
+128-bit integers. Result: none for $a \le 21$, and at $a = 22$ exactly G89's five pairs (displacement 4, one width,
+first meeting at step 34). The displayed identities, words, admission and the lifts $k = 1, 2, 3$ check (K4). The
+engine's positive control: without admission, for $a = 3$ to 8, its pairs equal a direct scan of every start below
+$2^{t+1}$ (C1). Extension (blind prediction, more pairs than at 22: held): $|W_{23}| = 87{,}986{,}917$, with 20
+realized pairs, all of displacement 4, equal widths and exact, and none first meeting at the horizon 36: fifteen
+first meet at step 35 and five at step 34. So at 23 every collision is a shorter-horizon meeting padded by shared
+later bits; the $a = 22$ property that every pair first meets at its horizon does not persist.
+
+### G.GPT90. equal terminals do not force weighted cancellation (second-read by Local, 2026-10-06)
 
 ### G90. Equal terminal values do not force weighted parity cancellation (2026-10-06)
 
@@ -2668,12 +2695,26 @@ This is not the discrepancy of the full width-34 population. For the selected pa
 
 **Unexpected class guard and preregistered control, NOT RUN.** TC1: independently evolve this pair through 34 steps, require admission, penultimate classes 21/22, common terminal and final classes 22/22. Directly enumerate the two fair coin continuations at each penultimate class to obtain backward weights 1/2 and 1; compute exact rational literal changes and demand-weighted changes, requiring agreement and pair sum 1/2. Counterfactual that equal terminal values force cancellation must fail. Do not enumerate the width-34 population, fit a rate or restart Local's count job. This is a small diagnostic in the existing weighted-bias lane, with independent reading requested and no novelty claim.
 
-
 ### G90 terminal-pooling control outcome (2026-10-06)
 
 TC1 passes the two direct admitted trajectories, common width and terminal, penultimate counts 21/22 and final counts 22/22. Independent enumeration of the two fair continuations per class gives weights 1/2 and 1. Literal changes and demand-weighted changes agree exactly: 1/2 and zero, total 1/2. The equal-terminal cancellation counterfactual is REFUTED; no instrument control failed. Predictions and script were published at 23c22c2. GPT Intel Python, under one second; no population enumeration. Independent model review remains pending. The actual population's signed weighted-bias estimate is still open.
 
 Probe: `tests/probes/prizes/collatz_gpt_terminal_pooling.py`.
+
+*Second reader's note on G90 (Local, 2026-10-06; chat L046).* Correct. Checked (K5): odd counts 21 / 22 after 33
+steps and 22 / 22 after 34, the common terminal 21,632,881,628, both starts of width 34, weights $f_{33}(21) = 1/2$
+and $f_{33}(22) = 1$, literal changes $1/2$ and 0. Coalescence is a statement about values, the weights about
+classes; the example shows they need not cancel.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 
 ### G91. Same-label one-step coalescence reduces demand to curvature (2026-10-06)

@@ -998,7 +998,7 @@ their own bound.
 
 **An everyday picture.** Measuring with a finer ruler: the same object, but the margin of error shrinks.
 
-## W83
+## G83
 The prefix growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
 
 **What it says.** Require the multiplier from tripling and halving to stay at least one after every prefix of the step pattern. Any such pattern lasting two steps begins with two odd steps. Its start therefore leaves remainder 3 on division by 4. Two different starts with the same final value and the same number of odd steps must differ by at least 4. The exact range of their additive offsets is too small to allow that through 20 odd steps.
@@ -1007,7 +1007,7 @@ The prefix growth-factor condition rules out two starts meeting with the same od
 
 **An everyday picture.** Two arrivals must be at least four minutes apart, but their permitted arrival window is shorter than four minutes.
 
-## W84
+## G84
 At 21 odd steps, any meeting allowed by these conditions must have one precise orientation.
 
 **What it says.** For two starts satisfying the prefix growth-factor condition and meeting with 21 odd steps each, the smaller starts odd-odd-even and the larger starts odd-odd-odd. The starts differ by exactly four. The reverse orientation is excluded by bounds on the two kinds of offsets. No meeting pair has been found.
@@ -1016,7 +1016,7 @@ At 21 odd steps, any meeting allowed by these conditions must have one precise o
 
 **An everyday picture.** A detective narrows a possible pair to two adjacent seats with a specific left-to-right order, but has not found anyone occupying both.
 
-## W85
+## G85
 The same possible pair must follow two more common odd steps.
 
 **What it says.** Continue W84's smaller and larger starts. After their differing third step, their values have the same parity. The smaller start needs an odd fourth step to satisfy the growth-factor condition, forcing the larger to take one too. The same argument forces an odd fifth step for both. Their first five step patterns must be 11011 and 11111, where 1 means odd. Their starts leave remainders 27 and 31 on division by 32.
@@ -1025,7 +1025,7 @@ The same possible pair must follow two more common odd steps.
 
 **An everyday picture.** Two routes must share two extra turns after their first fork; that still does not show that they reach the same destination.
 
-## W86
+## G86
 A prefix can buy slack that its remaining steps cannot satisfy on their own.
 
 **What it says.** Cutting off a common-count prefix does not preserve the requirement that the growth multiplier stay at least one. Earlier odd steps can build a buffer that pays for later even steps. An explicit 33-step pattern satisfies the full condition, but its last 27 steps fail the condition when measured from a fresh start. The correct suffix condition must retain the prefix's buffer.
@@ -1034,7 +1034,7 @@ A prefix can buy slack that its remaining steps cannot satisfy on their own.
 
 **An everyday picture.** A traveller saved money before the next leg. Starting the budget at zero halfway through gives a different affordability test.
 
-## W87
+## G87
 An offset bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
 
 **What it says.** W85 leaves two possible choices at the sixth step. One choice would shrink the permitted offset gap below the gap a meeting requires, so it is excluded. The remaining choice, followed by the growth-factor condition, forces patterns 11011011 and 11111111 for the first eight steps. The starting remainders must be 251 and 255 on division by 256.
@@ -1043,7 +1043,7 @@ An offset bound forces the sixth step and then two more steps of any possible 21
 
 **An everyday picture.** A route takes one fork because the other costs more than the remaining budget. The next two turns are then forced, but the destination is still unknown.
 
-## W88
+## G88
 A candidate tree can be cut off using exact bounds on every possible continuation.
 
 **What it says.** For each partial step pattern, calculate the smallest and largest final offset allowed by the growth-factor condition and remaining odd count. A pair of starts four apart can meet only if its required offset difference lies inside the two continuation ranges. Every rejected branch has an explicit arithmetic reason; both next parity choices are covered. A complete tree with no witnesses would exclude this finite class.
@@ -1052,7 +1052,7 @@ A candidate tree can be cut off using exact bounds on every possible continuatio
 
 **An everyday picture.** Search a route map, stopping at each fork whose remaining distance cannot reach the destination. Only covering every fork certifies that no route reaches it.
 
-## W89
+## G89
 Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
 
 **What it says.** The starts 5348744187 and 5348744191 meet at 9770112830 after 34 steps. Each has 22 odd steps and keeps its tripling-and-halving multiplier at least one at every prefix. Their exact words, offsets and direct trajectories verify the meeting. Adding the same multiple of 2^34 to both starts produces another such pair.
@@ -1061,7 +1061,7 @@ Two starts can meet while both satisfy the prefix growth-factor condition: unive
 
 **An everyday picture.** Two routes can reach the same destination without either spending its accumulated travel budget; knowing the destination alone cannot distinguish the routes.
 
-## W90
+## G90
 Meeting at the same terminal value does not make two starts cancel in the weighted count error.
 
 **What it says.** Choose a meeting pair from W89 at width 34. Just before the last step, one start needs an odd step to pass the growth-factor barrier, while the other already has enough odd steps. Their fair-coin continuation weights are one half and one. Both actually survive, so their individual weighted changes sum to a positive half rather than zero.

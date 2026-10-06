@@ -239,6 +239,22 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   can ever meet reduces to a finite check on step patterns.
 - [localized coin overshoot and curvature](G82-localized-coin-overshoot-and-curvature.md): A sharper version of G75:
   the weights shrink like 1/√h, with no logarithm.
+- [forced initial parity and the spacing cutoff](G83-forced-initial-parity-and-the-spacing-cutoff.md): The prefix
+  growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
+- [the prefix orientation of a first collision](G84-the-prefix-orientation-of-a-first-collision.md): At 21 odd
+  steps, any meeting allowed by these conditions must have one precise orientation.
+- [two further forced odd bits at a = 21](G85-two-further-forced-odd-bits-at-a-21.md): The same possible pair must
+  follow two more common odd steps.
+- [the shifted barrier, a closed shortcut](G86-the-shifted-barrier-a-closed-shortcut.md): A prefix can buy slack
+  that its remaining steps cannot satisfy on their own.
+- [the offset budget and the eight-bit prefix](G87-the-offset-budget-and-the-eight-bit-prefix.md): An offset bound
+  forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
+- [the paired-prefix collision certificate](G88-the-paired-prefix-collision-certificate.md): A candidate tree can be
+  cut off using exact bounds on every possible continuation.
+- [the first admitted collisions, at odd count 22](G89-the-first-admitted-collisions-at-odd-count-22.md): Two starts
+  can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+- [equal terminals do not force weighted cancellation](G90-equal-terminals-do-not-force-weighted-cancellation.md):
+  Meeting at the same terminal value does not make two starts cancel in the weighted count error.
 
 ## The waiting room (not yet verified)
 
@@ -253,22 +269,6 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Forced initial parity sharpens admitted fibre spacing](W83-forced-initial-parity-sharpens-admitted-fibre-spacing.md):
-  The prefix growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
-- [The first possible collision has one prefix orientation](W84-the-first-possible-collision-has-one-prefix-orientation.md):
-  At 21 odd steps, any meeting allowed by these conditions must have one precise orientation.
-- [Admission forces two further shared odd bits in a = 21 candidates](W85-admission-forces-two-further-shared-odd-bits-in.md):
-  The same possible pair must follow two more common odd steps.
-- [Removing the common odd count does not preserve admission](W86-removing-the-common-odd-count-does-not-preserve.md):
-  A prefix can buy slack that its remaining steps cannot satisfy on their own.
-- [The offset budget rules out one sixth-bit branch](W87-the-offset-budget-rules-out-one-sixth-bit.md): An offset
-  bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
-- [Exact completion intervals support a bounded collision certificate](W88-exact-completion-intervals-support-a-bounded-collision-certificate.md):
-  A candidate tree can be cut off using exact bounds on every possible continuation.
-- [Admitted terminal fibres are not always singletons](W89-admitted-terminal-fibres-are-not-always-singletons.md):
-  Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
-- [Equal terminal values do not force weighted parity cancellation](W90-equal-terminal-values-do-not-force-weighted-parity.md):
-  Meeting at the same terminal value does not make two starts cancel in the weighted count error.
 - [Same-label one-step coalescence reduces demand to curvature](W91-same-label-one-step-coalescence-reduces-demand-to.md):
   Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
 - [A coarse coalescence-curvature bootstrap still has a growing coefficient](W92-a-coarse-coalescence-curvature-bootstrap-still-has-a.md):

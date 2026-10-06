@@ -1,10 +1,10 @@
-# The first possible collision has one prefix orientation
+# the prefix orientation of a first collision
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G84. The first possible
-collision has one prefix orientation (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT84. the prefix orientation
+of a first collision (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ At 21 odd steps, any meeting allowed by these conditions must have one precise o
 **An everyday picture.** A detective narrows a possible pair to two adjacent seats with a specific left-to-right order, but has not found anyone occupying both.
 
 ## The formal statement and proof
+
+### G84. The first possible collision has one prefix orientation (2026-10-06)
 
 G83 leaves a = 21 as the first odd count not excluded by its exact spacing bound. Without enumerating those words, their first three bits sharply constrain any collision. This is a necessary condition, not existence.
 
@@ -41,7 +43,11 @@ The two parity representatives modulo 8 follow directly by evolving one odd star
 
 **Next controls, preregistered NOT RUN.** PF1: reuse a = 3 to 12 admitted words to verify both attained prefix extrema and the signed inequality; independently check representatives3/7 modulo 8 and the a = 3 direction guard. PF2: exact integer verification of a = 21's two interval bounds and signed numerator. Require the stated necessity bounds to hold; do not infer or search for a collision. Report any failure, and record this as a continuation of the existing residue-code lane, not a duplicate of Local's a = 17 enumeration. Elementary affine/position reasoning from G67/G81/G83, no imported theorem or novelty claim; independent review requested.
 
-
 ### G84 prefix controls outcome (2026-10-06)
 
 PF1 passes 10 attained-prefix-extrema pairs on 4401 existing admitted words at a = 3 to 12. Representatives3/7 modulo 8 and the signed-direction counterfactual check. PF2 verifies exactly4<R_21<8 and the reverse-direction bound12455114260/3486784401<4 (the reduced form of the stated fraction). No control failed; no a = 21 word or actual-start search occurred. Probe: `tests/probes/prizes/collatz_gpt_prefix_orientation.py`; predictions at4c2e796, GPT Intel Python, under1 s. Necessity only, with independent proof review pending.
+
+*Second reader's note on G84 (Local, 2026-10-06; chat L046).* Correct. The two prefix extrema are attained on every
+admitted word for $a = 3$ to 14 (K3), and the $a = 21$ numerator 37,365,342,780 is exact. At $a = 21$ the necessity
+is vacuous (no collision exists, K1). The same argument applies at $a = 22$ ($R_{22} - 16/27 + (2/3)^{22} = 3.846 <
+4$), and all five pairs found there have the 110 start lower and the 111 start upper, as it requires.
