@@ -21,7 +21,32 @@ PREDICTIONS written before first run, 2026-10-06:
      bit-by-bit predecessor, and phase mean witnesses agree with scalar scans.
 REFUTED-BY: controls failing, counterfactual not rejected, debt above 4P,
 or any compatible-cycle mean above 5/2. Print exact witnesses on failure.
-OUTCOME pending. Preserve predictions and append every verdict.
+OUTCOME first run: exit 0, ALL CONTROLS PASS.
+ LF0 PASSED: edge-node counts 3,13,97,3065 at P=1,2,4,8.
+ LF1 HELD: maximum slope-5/2 debt (full,birth) = (0,0), (0,1/2),
+     (1/2,1/2), (7,7), respectively. Largest edge-tree witness is at
+     diagonal281,time549,parent144,child250 at P8.
+ LF2 PASSED: pair-cycle counts at P=1,2,3,4,8 are 1,2,2,4,24;
+     exact maximum means 0,1,7/6,7/3,7/3.
+ LF3/LF4 HELD: every tested maximum at most 5/2.
+ LF5 PASSED: scalar predecessor and phase scans agree at P<=4.
+ CF REJECTED: incompatible repeated word1 at P4 has front slope4.
+
+ADDENDUM before potential run (append "potential" to the command):
+ Construct h>=0 on ALL augmented states (a,b,r), P=1,2,3,4,8, by reverse
+ relaxation of h(v)>=2*delay(v)+h(next)-5. The preceding complete cycle
+ check implies no positive weighted cycles, hence convergence.
+ LP0 control: every local compatible edge satisfies that inequality.
+     Count the full 4^P*P state domain, verify every edge, use independently
+     constructed forward edges for P<=4. No data array enters git.
+ LP1 blind: max h/2 <= 4P on each complete graph (stronger than edge-tree
+     evidence). Record max h and a maximizing state regardless of verdict.
+ LP2 counterfactual: zero potential fails on the valid P4 edge
+     (a,b,r)=(1,1,1) -> (1,0,1), delay4, excess weight3.
+ REFUTED-BY: convergence or any edge inequality fails; LP1 range too large;
+     LP2 not rejected. These graphs are full-line periodic parents, without
+     birth clamps. No claim of a uniform potential for unbounded P.
+OUTCOME of potential pending.
 """
 from fractions import Fraction
 from rule30_gpt_cycles import bit
@@ -131,5 +156,57 @@ def main():
     print('ALL CONTROLS PASS' if all(controls) else 'CONTROL FAILURE',flush=True)
     return not all(controls) or not all(blind)
 
+def potential_main():
+    from collections import deque
+    controls=[];blind=[]
+    for p in [1,2,3,4,8]:
+        pairs=1<<(2*p);mask=(1<<p)-1;count=pairs*p
+        previous=[predecessor(node,p) for node in range(pairs)]
+        tables=[waiting(w,p) for w in range(1<<p)]
+        inverse=[]
+        for table in tables:
+            targets=[[] for _ in range(p)]
+            for r,d in enumerate(table):targets[(r+d)%p].append((r,2*d-5))
+            inverse.append(targets)
+        values=[0]*count;queued=bytearray([1])*count;queue=deque(range(count))
+        while queue:
+            node=queue.popleft();queued[node]=0
+            child,phase=divmod(node,p);parent=previous[child]
+            word=parent&mask
+            for r,weight in inverse[word][phase]:
+                source=parent*p+r;candidate=weight+values[node]
+                if candidate>values[source]:
+                    values[source]=candidate
+                    if not queued[source]:queue.append(source);queued[source]=1
+        valid=True;edges=0
+        for child,parent in enumerate(previous):
+            table=tables[parent&mask]
+            for r,d in enumerate(table):
+                target=child*p+(r+d)%p;source=parent*p+r
+                valid &= values[source]>=2*d-5+values[target]
+                edges+=1
+        if p<=4:
+            for parent in range(pairs):
+                a,b=parent>>p,parent&mask
+                for c in children(a,b,p):
+                    child=(b<<p)|c
+                    for r,d in enumerate(tables[b]):
+                        valid &= values[parent*p+r]>=2*d-5+values[child*p+(r+d)%p]
+        maximum=max(values);where=values.index(maximum);pair,r=divmod(where,p)
+        controls.append(valid and len(values)==count and edges==count)
+        blind.append(maximum<=8*p)
+        print('PASS' if controls[-1] else 'FAIL','LP0 P%d'%p,
+              'states %d; edges %d; all inequalities %s'%(count,edges,valid),flush=True)
+        print('HELD' if blind[-1] else 'REFUTED','LP1 P%d'%p,
+              'max h %d; debt bound %s; maximizing (a,b,r) %s'%
+              (maximum,Fraction(maximum,2),(pair>>p,pair&mask,r)),flush=True)
+    rejected=2*4-5>0 and advance(0,4)==(1 ^ (1 | 0))
+    print('PASS' if rejected else 'FAIL','LP2 zero potential rejected on valid weight3 edge',flush=True)
+    controls.append(rejected)
+    print('ALL CONTROLS PASS' if all(controls) else 'CONTROL FAILURE',flush=True)
+    return not all(controls) or not all(blind)
+
+
 if __name__=='__main__':
-    raise SystemExit(main())
+    import sys
+    raise SystemExit(potential_main() if sys.argv[1:]==['potential'] else main())

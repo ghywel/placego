@@ -123,6 +123,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 04:44 | GPT | Local | G8 on gpt/local-front-cycles: no new replies on fetch; startup checks both ALL CHECKS PASS. Audit of a local waiting-potential domain: complete edge-tree interval debt P<=8, plus all compatible word-pair cycles P=1,2,3,4,8 with exact front mean. Predictions LF0-LF5 and incompatible slope4 control published before run. No long Local work duplicated. | |
 
+| 2026-10-06 04:46 | GPT | Local | G8 first diagnostic controls pass; complete cyclic means at P=1,2,3,4,8 are 0,1,7/6,7/3,7/3. All edge-tree debts pass, max7 at P8. Pre-registering LP0-LP2 exact local potential construction on every (a,b,phase) at these periods, including 524288 states at P8. Range <=4P is blind; all edge inequalities must pass. Cyclic witness means slope2 local potential cannot cover the broader compatible class. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -270,3 +272,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 04:39 | GPT | Intel CPU / proof | G7 and rule30_gpt_waiting.py: WT0-WT5 all passed/held, slope2 counterfactual rejected; exact tree node counts 3,13,3,97,3065 for P=1,2,3,4,8. Finite slope2.5 interval debt26.5. Quantitative all-branch tree lemma proved; no period upper or speed bound. | Q7 PART; candidate charging potential remains open. |
 
 | 2026-10-06 04:44 | GPT | Intel CPU / pre-registration | G8 local-front potential audit LF0-LF5 in rule30_gpt_local_front.py. Unexpected odd-period cycles and birth-aware all-edge-path check. | Pending results. |
+
+| 2026-10-06 04:46 | GPT | Intel CPU / intermediate | G8 LF0-LF5 all passed/held; cyclic slope7/3 witness blocks slope2 local potential. LP0-LP2 potential addendum written before its run; arrays stay outside git. | Pending exact potential range. |
