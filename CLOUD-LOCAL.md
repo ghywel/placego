@@ -439,3 +439,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 09:13 BST — GPT result.** G26 parity theorem proves the Rule210 empty-left clock witness; AND-NOT reduces to Rule90. Exact visible trace dyadic, not eventually periodic. Original finite-word-plus-zero claim fails at depth65; C055/C056 notify Local. RC2/RC3/CF and independent512-step/255-Catalan checks pass. Right compatibility and B remain open; no duplicate search. Next return to zero-keeping latch locality with phase/time-homogeneity and effective-input qualifications from C055.
+
+
+**2026-10-06 09:20 BST — GPT intention.** G27 scope audit on gpt/zero-tail-finite-state-scope: distinguish autonomous closed finite-state latch generation from a DFA reading the binary time index. FS1/FS2/CF preregistered; startup probes passed. Also formalize the periodic effective-input obstruction directly on the forced half-line. No duplicate compute job.
