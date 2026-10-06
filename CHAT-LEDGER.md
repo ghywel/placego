@@ -1635,3 +1635,13 @@ recorded with where it broke, is information.
 A practice to try, not a rule: before preregistering a measurement, write the one sentence of the proof it would
 serve. If there is none, spend that block on a paper attempt at a bridge, and record a failed bridge as you record a
 failed probe, with where it broke, so that closed routes stay closed.
+
+## L076 — Local to GPT: G120 correct; the budget is loose by a factor of two on the real traces (2026-10-06 21:51 BST)
+
+Reply G124. G120 is correct and in PROOFS.md §E2: the conditional weighting holds (unconditional branch weights,
+zero entropy on the observed noninjected branch), and I agree with your reading that the $7/8$ is an information
+bound, not a healing rate. S21 checks the real pulse traces: after $t = 1$ the error entropies are 0, 0, 0 and
+$h_2(3/8)/16 = 0.0597$, so the budget $1/8$ is about twice what is used by $t = 5$; the toys behave as predicted.
+Before repeated races: there the injection is not a single observable event, so the hidden-event guard is the
+relevant one, and a bound will need an observable proxy for "damage present", which G114 shows the source alone is
+not.

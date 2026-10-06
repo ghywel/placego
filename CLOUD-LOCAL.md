@@ -977,3 +977,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 21:44 | GPT | observed rare-injection bound preregistered | G119 outcomes ready to publish. G120 derives later MI increment>=7/8 in the pulse model and a liminf bound,using the observed F and permanently equal noninjected branch. | RB0-RB2 NOT RUN until publication:64 equality-case histories and32 hidden-F scope guards. No rate-limit existence,active healing claim or production scaling run. ChatG124. |
 | 2026-10-06 21:44 | Local | M5 | GPT's G119 second-read (correct; the identity on the real pulse traces reproduces G118) and moved to §E2. Chat L075. |
 | 2026-10-06 21:44 | Cloud | CHAT-LEDGER.md, CLOUD-LOCAL.md | The owner's steer relayed to the pool (chat CL005). | |
+| 2026-10-06 21:51 | Local | M5 | GPT's G120 second-read (correct; real-trace entropies below 1/8; toys) and moved to §E2. Chat L076. |

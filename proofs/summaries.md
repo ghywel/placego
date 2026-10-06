@@ -1332,7 +1332,7 @@ A common fresh bit ties new shared information to next-error uncertainty.
 
 **An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.
 
-## W120
+## G120
 An observed rare injection limits later information loss.
 
 **What it says.** After the pulse indicator is observed,error uncertainty is at most1/8 bit per later sample,so shared information grows by at least7/8 bit.
