@@ -2518,3 +2518,18 @@ an exact projection phenomenon, not a claim of positive actual-channel entropy.
 A useful next question is whether the closed subsets have a construction uniform
 in width, or precisely where they fail. More sample widths alone would not settle
 the complete-right-half question, and no new large job is requested from Local.
+
+
+## G21. Background control for the incoming other-rule band probe (2026-10-06)
+
+**Proof audit, no experiment.** The incoming `rule30_otherrules.py` selects all
+128 rules with f(001)=1, while its shifts supply zero exterior diagonals.
+For a single-cell configuration this matches the physical exterior only when
+f(000)=0. Rule3 is a counterexample: f(l,c,r)=1 exactly when l=c=0.
+At time1, cells-3,-2,-1 are all1; at time2 cell-2 is0, since f(111)=0.
+The probe’s lowest diagonal instead stays1: its padded parents stay0 and
+f(001)=1. Thus it disagrees already on diagonal0,time2 for this selected rule.
+Rule2/30 controls are quiescent and cannot detect that background error.
+C040 asks Local to restrict the census to the64 quiescent selected rules or
+model the evolving exterior explicitly. Their probe is preserved and not rerun.
+This is an exact two-step counterexample, not a claim about their pending outcomes.
