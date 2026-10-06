@@ -3,6 +3,11 @@
 *The source for the "In plain words" section of every page in this folder. One section per proof, headed by its
 id; the first paragraph is the one-line hook used in the index. Rebuild with `python3 proofs/build.py`.*
 
+*How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
+without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
+status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
+batches. Plain-words pass done through W122 (2026-10-06); entries after it may still be drafts.*
+
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
 
@@ -1005,356 +1010,475 @@ their own bound.
 **An everyday picture.** Measuring with a finer ruler: the same object, but the margin of error shrinks.
 
 ## G83
-The prefix growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
+Surviving numbers all start with two odd steps, which rules out any two of them meeting for up to 20 odd steps.
 
-**What it says.** Require the multiplier from tripling and halving to stay at least one after every prefix of the step pattern. Any such pattern lasting two steps begins with two odd steps. Its start therefore leaves remainder 3 on division by 4. Two different starts with the same final value and the same number of odd steps must differ by at least 4. The exact range of their additive offsets is too small to allow that through 20 odd steps.
+**What it says.** These pages ask whether two different surviving Collatz numbers, with the same number of odd
+steps, can ever land on the same value. If they never could, the Collatz count's bookkeeping would be exactly one to
+one. To keep its growth factor at least 1 through two steps, a number must take two odd steps first, so it leaves a
+remainder of 3 when divided by 4. Two surviving numbers that meet must therefore differ by a multiple of 4. But
+numbers that end on the same value with the same count of odd steps can only start within a span narrower than 4,
+for every count up to 20, so no two can meet.
 
-**Why it matters.** This extends the finite word search through 17 using a proof and exact arithmetic. It concerns the growth-factor condition, which differs from requiring the actual number to stay above its start. The new spacing proof awaits independent review; it does not resolve Collatz.
+**Why it matters.** It settles the first twenty cases by a short argument instead of a search, which had reached 17.
 
-**An everyday picture.** Two arrivals must be at least four minutes apart, but their permitted arrival window is shorter than four minutes.
+**An everyday picture.** Two people who may only stand on every fourth paving stone cannot share a path shorter than
+four stones unless they stand on the same one.
 
 ## G84
-At 21 odd steps, any meeting allowed by these conditions must have one precise orientation.
+At 21 odd steps, the first case left open, any meeting of two surviving numbers would have to take one exact form.
 
-**What it says.** For two starts satisfying the prefix growth-factor condition and meeting with 21 odd steps each, the smaller starts odd-odd-even and the larger starts odd-odd-odd. The starts differ by exactly four. The reverse orientation is excluded by bounds on the two kinds of offsets. No meeting pair has been found.
+**What it says.** Sort the surviving step patterns by their first three steps: odd-odd-even or odd-odd-odd. Two
+patterns that begin the same way cannot meet at 21 odd steps, so a meeting needs one of each kind, and the two
+starting numbers must differ by exactly 4.
 
-**Why it matters.** It narrows the first count left open by W83 without another large search. These are necessary conditions, not an existence claim. Independent review remains pending.
+**Why it matters.** It narrows any search for a meeting at 21 to one precise shape, instead of all patterns.
 
-**An everyday picture.** A detective narrows a possible pair to two adjacent seats with a specific left-to-right order, but has not found anyone occupying both.
+**An everyday picture.** A detective who cannot yet name the culprit, but has proved it must be one of two twins who
+arrived four minutes apart.
 
 ## G85
-The same possible pair must follow two more common odd steps.
+The two candidates of G84 must also take the same next two steps: both odd.
 
-**What it says.** Continue W84's smaller and larger starts. After their differing third step, their values have the same parity. The smaller start needs an odd fourth step to satisfy the growth-factor condition, forcing the larger to take one too. The same argument forces an odd fifth step for both. Their first five step patterns must be 11011 and 11111, where 1 means odd. Their starts leave remainders 27 and 31 on division by 32.
+**What it says.** After their third step the two numbers are both odd or both even. The smaller one needs an odd
+fourth step and an odd fifth step to keep its growth factor up, so the larger one takes them too. Their first five
+steps must be odd-odd-even-odd-odd and five odds, so they leave remainders 27 and 31 when divided by 32.
 
-**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review remains pending; the small direct trajectory controls passed.
+**Why it matters.** Each forced step cuts the places a meeting could hide by half, by proof rather than search.
 
-**An everyday picture.** Two routes must share two extra turns after their first fork; that still does not show that they reach the same destination.
+**An everyday picture.** Two dancers keeping time to the same music: when one must step forward, so must the other.
 
 ## G86
-A prefix can buy slack that its remaining steps cannot satisfy on their own.
+A tempting shortcut fails: the end of a surviving path need not survive on its own.
 
-**What it says.** Cutting off a common-count prefix does not preserve the requirement that the growth multiplier stay at least one. Earlier odd steps can build a buffer that pays for later even steps. An explicit 33-step pattern satisfies the full condition, but its last 27 steps fail the condition when measured from a fresh start. The correct suffix condition must retain the prefix's buffer.
+**What it says.** One might cut off the first few steps and apply G83's result to the rest. But early odd steps
+build a cushion that later even steps spend. GPT gave a 33-step pattern that survives as a whole while its last 27
+steps, taken from a fresh start, would not.
 
-**Why it matters.** It blocks an invalid shortcut: applying W83's smaller-count result to a suffix that no longer satisfies W83's hypothesis. The original collision question and the condition with a carried buffer remain open. This reasoning awaits independent review.
+**Why it matters.** It stops an invalid argument before anyone relies on it. The rest of a path must be judged with
+the cushion carried forward.
 
-**An everyday picture.** A traveller saved money before the next leg. Starting the budget at zero halfway through gives a different affordability test.
+**An everyday picture.** A walker who climbed a hill first can walk downhill for a while and still end above home;
+the downhill stretch on its own would not.
 
 ## G87
-An offset bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
+A budget argument forces three more steps, pinning down the first eight steps of any meeting pair at 21.
 
-**What it says.** W85 leaves two possible choices at the sixth step. One choice would shrink the permitted offset gap below the gap a meeting requires, so it is excluded. The remaining choice, followed by the growth-factor condition, forces patterns 11011011 and 11111111 for the first eight steps. The starting remainders must be 251 and 255 on division by 256.
+**What it says.** At the sixth step there were two possibilities. One would leave the two numbers too little room in
+their possible offsets to meet, so it is ruled out, and the growth-factor rule then forces the next two. The
+patterns must begin 11011011 and 11111111 (1 meaning odd), so the starts leave remainders 251 and 255 when divided
+by 256.
 
-**Why it matters.** It narrows the necessary candidate shape by a proof rather than a larger search. It does not exclude every candidate or find a meeting. The preregistered small controls passed; independent review remains pending.
+**Why it matters.** The candidates shrink by proof alone, and the method, comparing the most and least each option
+could contribute, becomes the next page's certificate.
 
-**An everyday picture.** A route takes one fork because the other costs more than the remaining budget. The next two turns are then forced, but the destination is still unknown.
+**An everyday picture.** Planning a trip on a fixed budget: if one route already costs more than the rest of the
+trip could ever save, cross it off.
 
 ## G88
-A candidate tree can be cut off using exact bounds on every possible continuation.
+A way to rule out a whole tree of possibilities by arithmetic, branch by branch, instead of trying every number.
 
-**What it says.** For each partial step pattern, calculate the smallest and largest final offset allowed by the growth-factor condition and remaining odd count. A pair of starts four apart can meet only if its required offset difference lies inside the two continuation ranges. Every rejected branch has an explicit arithmetic reason; both next parity choices are covered. A complete tree with no witnesses would exclude this finite class.
+**What it says.** For each partly written step pattern, compute the smallest and largest offset any continuation
+could reach. Two starts 4 apart can meet only if the difference they need fits within those ranges; a branch where
+it cannot is cut, with the reason written down. If every branch is cut, no meeting exists in that class.
 
-**Why it matters.** This offers a certificate rather than a larger uncontrolled scan. The run is preregistered with a node and time cap; hitting either cap proves nothing about the unexplored branches. A separate known collision without the growth-factor restriction tests that genuine witnesses are accepted. The capped run completed in 59 nodes with no candidate, and the positive collision control passed. The count-21 coverage audit passed. The next count, 22, produced genuine counterexamples to universal injectivity, and its accepting cover also passed the independent implementation audit. Independent model review remains pending.
+**Why it matters.** It turns a search into a certificate: a list of reasons anyone can check, rather than "the
+computer found nothing".
 
-**An everyday picture.** Search a route map, stopping at each fork whose remaining distance cannot reach the destination. Only covering every fork certifies that no route reaches it.
+**An everyday picture.** Pruning a family tree: if no descendant of a branch could have been born in the right year,
+you need not trace that branch any further.
 
 ## G89
-Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+Two surviving numbers can meet after all: the first pair appears at 22 odd steps.
 
-**What it says.** The starts 5348744187 and 5348744191 meet at 9770112830 after 34 steps. Each has 22 odd steps and keeps its tripling-and-halving multiplier at least one at every prefix. Their exact words, offsets and direct trajectories verify the meeting. Adding the same multiple of 2^34 to both starts produces another such pair.
+**What it says.** The numbers 5,348,744,187 and 5,348,744,191 differ by 4. Each keeps its growth factor at least 1
+at every step, each takes 22 odd steps, and after 34 steps both arrive at 9,770,112,830. Adding the same multiple of
+2^34 to both gives infinitely many such pairs. With fewer odd steps no pair exists (G83 to G88).
 
-**Why it matters.** It answers the singleton question with a counterexample and makes the two-member fibre bound sharp. The smaller odd counts are excluded by the preceding argument and audited finite cover. The accepting-cover audit confirms exactly five residue families at count 22, with first meetings at step 34, pending independent model review. It does not refute Collatz or solve either prize problem. The no-collision prediction failed and is retained.
+**Why it matters.** It settles the question with a counterexample. The Collatz count's bookkeeping is nearly, but
+not exactly, one to one, and the count has to allow for it.
 
-**An everyday picture.** Two routes can reach the same destination without either spending its accumulated travel budget; knowing the destination alone cannot distinguish the routes.
+**An everyday picture.** Two hikers who set off four doors apart, both always above their starting height, and meet
+on the same summit.
 
 ## G90
-Meeting at the same terminal value does not make two starts cancel in the weighted count error.
+Two numbers that meet do not cancel each other out in the count's error.
 
-**What it says.** Choose a meeting pair from W89 at width 34. Just before the last step, one start needs an odd step to pass the growth-factor barrier, while the other already has enough odd steps. Their fair-coin continuation weights are one half and one. Both actually survive, so their individual weighted changes sum to a positive half rather than zero.
+**What it says.** These pages test ways of proving that the real Collatz count never strays far from the fair-coin
+prediction, using the exact error formula of G74. Take a meeting pair from G89's family, 11,843,133,435 and
+11,843,133,439. Just before the end, one still needs an odd step to survive while the other already has enough.
+Under the coin weights one counts a half and the other a whole, so their contributions add up instead of cancelling.
 
-**Why it matters.** Terminal pooling cannot supply the missing signed cancellation merely because two trajectories meet. This selected-pair example does not estimate the full population error. It returns the collision insight to the open weighted-bias question. The preregistered two-trajectory control passed, including the unequal penultimate-class guard. Independent model review remains pending.
+**Why it matters.** It closes a hoped-for shortcut, that paths which merge must cancel in the error. Cancellation,
+if there is any, has to come from somewhere else.
 
-**An everyday picture.** Two travellers reach the same destination, but only one used the last coin toss to clear a toll. Sharing a destination does not balance their different budgets.
-
+**An everyday picture.** Two runners crossing the line together did not run the same race: one needed a sprint at
+the end and the other did not.
 
 ## G91
-Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
+When an odd-step path and an even-step path merge, their two contributions combine into something smaller.
 
-**What it says.** Pair an odd parent with an even parent when their next states and next odd counts agree. Their two contributions combine into half the difference of two neighbouring backward demand weights. Unmatched occurrences retain their original contributions, including even steps that fail the barrier.
+**What it says.** Pair up paths that reach the same next value with the same number of odd steps, one by an odd step
+and one by an even step. Each pair's two contributions to the error combine into half the difference of two
+neighbouring coin weights, which is small far from the end. Paths with no partner keep their full contribution.
 
-**Why it matters.** The reviewed coin curvature bound can control a matched pair away from the final horizon. It does not bound how many pairs or unmatched inputs occur. The exact identity improves the terminal-pooling question without assuming full cancellation. The small controls passed 100 exact increments and the true-pair, synthetic multiplicity and lost-child guards. Independent model review remains pending.
+**Why it matters.** It is an exact identity that shrinks part of the error, a real tool, though it does not yet say
+how many paths find partners.
 
-**An everyday picture.** Some travellers can share the next checkpoint, but their different toll weights leave a small difference. Unpaired travellers and those denied entry still belong in the accounting.
-
+**An everyday picture.** Two overlapping charges on a bill reduced to the small difference between them; charges
+with no match stay in full.
 
 ## G92
-A coarse maximum-curvature bound still cannot close the constant count estimate by itself.
+Even with the pairing tool, the crude estimate still grows, slowly, with the length of the run.
 
-**What it says.** Grant that unmatched inputs cancel completely, and bound all matched pairs by the largest available curvature bound. Replacing the matched count by half the survivor count leaves a coefficient growing at least as the logarithm of the paid tail. This is growth of the estimate's right-hand side, not of the actual error.
+**What it says.** Grant generously that unpaired paths cancel completely, and bound every pair by the largest amount
+it could contribute. The estimate still grows like the logarithm of the number of steps, so it cannot give the fixed
+bound that is wanted.
 
-**Why it matters.** Matching improves the old square-root obstruction but needs actual allocation or signed information to become a global result. An exact pair has zero meeting-step contribution at a slightly longer horizon despite a positive bound, demonstrating the distinction. Independent review remains pending.
+**Why it matters.** It improves on the square-root growth of G77, and shows that the remaining gap needs real
+information about which paths pair up.
 
-**An everyday picture.** Charging every paired traveller the largest possible toll overestimates the total even when some actual tolls are zero. The improved price cap alone does not settle the bill.
-
+**An everyday picture.** Assuming every repair costs the most it possibly could: the estimate still creeps up, only
+more slowly than before.
 
 ## G94
-An induction proof for demand log-concavity must control the absorbing edge separately.
+A smooth-shape argument fails: the coin weights stop being a smooth single hump beyond 64 steps.
 
-**What it says.** Away from the barrier, demand atoms undergo ordinary two-point averaging, which preserves log-concavity. At the edge an extra half of the first atom stays there. One explicit inequality among the first four future atoms is necessary and sufficient to preserve log-concavity when the future law is already log-concave.
+**What it says.** One hoped to prove that the coin weights always form a smooth single hump (in the jargon,
+log-concave), since ordinary averaging keeps that shape. At the survival boundary an extra piece stays put, and GPT
+found the exact condition for the shape to survive there. Local then checked the real boundary: the shape holds in
+every case up to 64 steps, fails beyond, first at 73, and always at the edge, never in the middle.
 
-**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. That example is synthetic, but Local's second reading then checked the real barrier schedule: the edge inequality holds up to horizon 64 and fails from 65 on (first at horizon 73), so the real demand law is not always log-concave. It breaks only at this edge, never in the interior, up to horizon 1,024.
+**Why it matters.** It closes the route, and records exactly where and why it breaks.
 
-**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check, and on the real schedule it sometimes makes a small bump.
+**An everyday picture.** A sandpile shaken against a wall stays a smooth mound in the open, but sand piling up
+against the wall can form a shoulder.
 
 ## G95
-The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
+The real survival boundary never pauses twice in a row, but that alone does not keep the shape smooth.
 
-**What it says.** The threshold rises at least once in every two steps. A different schedule, 00011, has demand atoms 26/32, 5/32 and 1/32, which are not log-concave. That schedule falls outside the actual restriction.
+**What it says.** The number of odd steps a survivor needs rises by one at least every two steps, because each step
+needs about 0.63 odd steps on average, so any two steps need at least one. GPT showed that a made-up boundary which
+does pause twice breaks the smooth shape. The real one never pauses twice, yet G94 found it breaks the shape anyway.
 
-**Why it matters.** A candidate statement was log-concavity for all schedules without adjacent flat steps. Local’s actual-schedule counterexample in L048 refutes that general statement. The pending finite family search is stopped before execution; the elementary schedule property and unrestricted guard remain valid. Independent review of those statements remains pending. The actual count error would still need signed allocation control.
+**Why it matters.** It sorts out which property matters and closes a suggested restriction, so the next attempt does
+not rely on it.
 
-**An everyday picture.** A staircase with no long landings may keep a demand profile smoother, but the shape must be proved; a staircase with a long landing already gives a counterexample.
-
+**An everyday picture.** A staircase with no two landings in a row can still be uneven underfoot.
 
 ## G96
-Changing a fixed cell and following a moving pattern measure different things.
+Watching one square change and following a moving pattern are different measurements.
 
-**What it says.** A difference taken along a constant-speed worldline vanishes on an exactly translating pattern, while a fixed-cell difference need not. Rule30 can be expressed in that moving frame by shifting its update. Its fixed-cell XOR change equals Rule210 evaluated on the state; the resulting change field does not itself evolve by Rule210, as a single-cell example shows.
+**What it says.** These pages come from the owner's questions about clocks and about GPU "races" (CONSTELLATION rows
+18 and 19): what happens when a computer updates Rule 30 in place and some squares read a neighbour that has already
+been updated. They are about Rule 30 for its own sake, not directly about the prize. A pattern sliding along at a
+steady speed changes at every fixed square, yet does not change at all if you move with it. GPT wrote both kinds of
+change exactly. The change at a fixed square is Rule 210 applied to the row (C.8), though the pattern of changes
+does not itself follow Rule 210.
 
-**Why it matters.** The owner's shader-to-temporal-instrument connection needs a precise choice of observable. A passing pulse can have a nonzero fixed-cell second difference despite zero acceleration of its tracked position. These are scope identities and examples, not a Rule30 travelling-wave, prize or physical instrument claim. Small controls pass on 504 ring rows, 1512 transported cases and 168 dyadic checks; independent review remains pending.
+**Why it matters.** It fixes which "change" an instrument measures before anyone reads physics into it.
 
-**An everyday picture.** A lamp moving steadily past a window changes what the window sees. Following the lamp separates that change from a change in its speed.
+**An everyday picture.** From the platform a passing train changes the view every moment; from inside the carriage
+nothing changes at all.
 
 ## G97
-A moving observer's expected flip rate can be derived without independent flips in time.
+An observer walking right through a random Rule 30 pattern sees more change than one standing still or walking left.
 
-**What it says.** Rule30 preserves the iid fair spatial row law by a direct four-preimage count. For a predetermined observer stepping left, staying or stepping right, the flip probabilities are respectively one half, one half and three quarters. Expected counts add even if flips in time are dependent.
+**What it says.** Start from a random row of fair coin flips; Rule 30 keeps every row random, proved here directly.
+An observer who steps right each tick sees the colour flip three times in four. Standing still or stepping left, it
+is one time in two. These averages add up even though successive flips are not independent.
 
-**Why it matters.** It supplies the ensemble prediction behind Local's moving-frame measurements with explicit assumptions. It does not prove a single-seed frequency, temporal independence, concentration or a standard error. SC1-SC2 controls pass. A further fresh-left-bit proof gives independent sampled values and flips for deterministic observers that never step right, under the same random-row ensemble; its SC3 controls pass on 30 observer paths and 9360 initial words; independent review remains pending. No independence is asserted for rightward observers or a selected seed.
+**Why it matters.** It gives the exact prediction behind Local's moving-observer measurements, with its assumptions
+stated.
 
-**An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
+**An everyday picture.** Walking into the rain gets you wetter than standing still.
 
 ## G98
-Changing a global clock, changing update order and counting cone events are different operations.
+Speeding up the clock, reordering the updates and counting events are three different things.
 
-**What it says.** Relabelling synchronous tick durations preserves the ordered state sequence. A constant-speed continuum diamond has a computable area, while integer-event counts include boundary corrections. A single seed propagates left at speed one, refuting a universal interpretation of the measured 0.246 front. Two adjacent in-place updates can give different results in reverse order.
+**What it says.** Making every tick longer or shorter changes nothing anyone inside could see. Changing the order in
+which squares are updated in place can change the result: two neighbours updated in opposite orders can disagree.
+Counting events in a light-cone shape has edge corrections a smooth formula misses. And a single black square
+spreads left at full speed, so the measured quarter-speed (C4) belongs to random backgrounds, not to every pattern.
 
-**Why it matters.** It gives precise statements for the owner's clock questions without promoting a geometric analogy to physical dilation or a complexity lower bound. Tiny guard controls and independent review remain pending.
+**Why it matters.** It answers the owner's clock questions precisely, without turning a picture into physics.
 
-**An everyday picture.** Playing a film slowly changes its timing; rearranging its frames changes its story. Counting pixels also differs from measuring the area of their boundary.
+**An everyday picture.** Slowing a film down does not change the story; shuffling its frames does.
 
 ## G99
-A shared logical generation can survive unequal physical update times.
+Label every value with its tick number, and any order of updating gives exactly the right answer.
 
-**What it says.** Store immutable values labelled by site and generation. Any complete schedule that computes a node only after its three prior-generation parents gives the synchronous history's values. An intermediate mixture of generations is not necessarily a synchronous frame.
+**What it says.** Keep each square's value for each tick separately, and compute a value only once its three parents
+from the previous tick are ready. Then every schedule, however uneven the machine's timing, produces exactly the
+true Rule 30. A snapshot that mixes values from different ticks is not a true frame.
 
-**Why it matters.** It identifies the buffering and dependency assumptions needed to answer the owner's local-clock question. It claims neither a physical metric nor an algorithmic speedup. Small controls pass on 680 initial words and two schedules; independent review remains pending.
+**Why it matters.** It names the cure for the owner's GPU races: keep the old row until the new one is finished
+(double-buffering), or label versions, and timing stops mattering.
 
-**An everyday picture.** Cooks can prepare different ingredients at different times, provided each recipe uses the specified versions and the finished dish includes every required ingredient.
+**An everyday picture.** Builders who wait for the floor below to be finished can work at any pace; the building
+comes out the same.
 
 ## G100
-Two neighbouring flips can look independent while a third exposes memory.
+Flips that look independent in pairs can still remember: the memory shows up two steps apart.
 
-**What it says.** For a right-step observer in Rule30 started from a fair random row, adjacent flips have zero covariance, but flips two steps apart have covariance1/32. Three-flip counts have variance5/8 rather than the independent prediction9/16.
+**What it says.** For an observer stepping right through a random pattern, neighbouring flips are uncorrelated, but
+flips two ticks apart are linked, so a count of three flips varies more than three coin tosses would.
 
-**Why it matters.** It supplies an exact temporal-dependence guard for the ensemble behind moving-frame expectations. It covers the right-edge speed and three ticks, not interior-ray or single-seed asymptotics. Tiny controls pass on all 64 six-bit words with both origin bits and independent formulations; colleague review remains pending.
+**Why it matters.** "Looks random in pairs" is not "random"; reading measurements as independent would understate
+their spread.
 
-**An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.
+**An everyday picture.** In a queue you may not know the person next to you, yet know the person two places back.
 
 ## G101
-Temporal memory also appears in an interior moving frame.
+The same hidden memory appears for an observer moving at three-quarter speed.
 
-**What it says.** A speed-three-quarter observer repeats stay/right/right/right. Under a fair random initial row, the second and fourth flips in each aligned block have covariance1/32. The four-flip count variance is7/8 rather than the independent prediction13/16.
+**What it says.** An observer who stays put for one tick and steps right for three, over and over, finds the second
+and fourth flips of each block linked in the same way.
 
-**Why it matters.** It extends the exact right-edge guard to an interior ray without rerunning long measurements. Distinct blocks need not be independent, and the selected seed or long-run variance remains unproved. Small controls pass on all 512 initial words and all pair covariances; colleague review remains pending.
+**Why it matters.** The memory is not just an effect of moving at full speed; it appears inside the pattern too.
 
-**An everyday picture.** A slower route can still contain short stretches that carry the same memory as a fast route.
+**An everyday picture.** The link in the queue is still there if you walk along it more slowly.
 
 ## G102
-A raced neighbour can carry an extra race into the next update.
+A single race corrupts a square one time in eight; a chain of races changes that slightly.
 
-**What it says.** On a fair initial row, isolated right races inject with probability1/8. An open-boundary chain model gives bulk conditional probability1/(8-4*eps), with an exact finite-depth remainder. Finite left chains retain probability1/2.
+**What it says.** These pages come from the owner's questions about clocks and about GPU "races" (CONSTELLATION rows
+18 and 19): what happens when a computer updates Rule 30 in place and some squares read a neighbour that has already
+been updated. They are about Rule 30 for its own sake, not directly about the prize. Model a race as a square
+reading its right neighbour's new value instead of its old one. On a random row, a lone race gives a wrong value one
+time in eight. If the neighbour raced too, races chain and the rate becomes 1/(8 − 4ε), where ε is how often races
+happen. A race that reads the left neighbour is wrong half the time.
 
-**Why it matters.** It separates an exact isolated event from the sequential mechanism used in Local's rare-race measurements. The correction is small for rare races; it supplies no later-time survival law or cyclic-boundary identity. Controls pass on 43680 word/flag combinations and48 exact weighted checks; colleague review remains pending.
+**Why it matters.** It is the exact starting rate behind Local's race measurements. The left-right difference is
+Rule 30's own: the left input passes straight through (the perfect wire of CL004), so racing it scrambles the result
+completely.
 
-**An everyday picture.** Reading from someone who has already read an altered value can pass along an extra change.
+**An everyday picture.** Copying from a neighbour who has already changed their answer: from one side you are only
+occasionally wrong, from the other you might as well guess.
 
 ## G103
-A race-free dependency cone guarantees the cell follows the ideal history.
+A square is guaranteed correct if no race happened anywhere in the region it depends on.
 
-**What it says.** With independent race flags, a target cell's disagreement probability is at most1-(1-eps)^(t²). With only marginal flag bounds, it is at most eps*t². A fixed mean disagreement threshold therefore cannot arrive on a scale smaller than order eps^(-1/2).
+**What it says.** A square's value at tick t depends on a triangle of about t² earlier updates. If none of them
+raced, it is right. So with races at rate ε it is wrong with probability at most about εt², and noticeable errors
+cannot appear before about 1/√ε ticks.
 
-**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls pass on 77440 histories and192 exact weighted site bounds; colleague review remains pending.
+**Why it matters.** It is a guaranteed early-warning bound that needs no assumption about the pattern.
 
-**An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
+**An everyday picture.** A dish comes out right if nothing anywhere in its chain of ingredients was spoiled; the
+longer the chain, the more chances for spoilage.
 
 ## G104
-One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
+Races that read the right neighbour leave each row looking perfectly random; races that read the left leave a trace
+in neighbouring pairs.
 
-**What it says.** The infinite right-reading model preserves the fair product law via a conditional block inverse. On a fair input row, the left-reading model retains density1/2 but gives adjacent disagreement1/2+eps/4.
+**What it says.** With right-reading races, every row still has exactly the statistics of fair coin flips. With
+left-reading races the share of black squares stays a half, but neighbouring squares differ a little more often than
+they should.
 
-**Why it matters.** It earns a right-bulk extension of the injection calculation to later noisy rows, while leaving ideal-history disagreement separate. The left result is first-step only. No exact finite-ring or selected-seed law is claimed. Controls pass on2720 right cases,10880 left cases and48 exact weighted moments; independent review remains pending.
+**Why it matters.** It explains how a glitching computation can look statistically perfect: inspecting one row
+cannot reveal right-reading races.
 
-**An everyday picture.** Two patterns can contain the same number of black cells but arrange neighbouring cells differently.
+**An everyday picture.** A tampered deck can still look perfectly shuffled; only the order in which the cards come
+out gives it away.
 
 ## G105
-Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
+Joining the row into a ring changes an exact probability, even though large rings look fair.
 
-**What it says.** Every right flag pattern gives exactly two preimages of the zero row. Left patterns give one or two according to whether any effective race is present. The resulting zero-row probabilities differ from the uniform ring law.
+**What it says.** On a small ring, the number of earlier rows that lead to an all-white row depends on whether a
+race happened, so the exact probabilities differ from the fair ones.
 
-**Why it matters.** Infinite fair spatial invariance cannot be imported as exact finite cyclic invariance. The all-zero initial row also blocks any state-uniform upper decoherence bound. ZR1 passes43648 cases and40 exact weighted probabilities; independent review is pending.
+**Why it matters.** Results proved on the endless line cannot be assumed exact on the finite rings that computers
+actually run.
 
-**An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
+**An everyday picture.** Joining the ends of a chain removes the free end you would use to rebuild it.
 
 ## G106
-The snapshots can stay statistically unchanged while motion through them changes.
+Snapshots can stay statistically unchanged while what a moving observer sees changes.
 
-**What it says.** In the infinite fair right-reading race model, an observer stepping left or staying has flip mean1/2. Stepping right has mean(3-eps)/(4-2eps), increasing from3/4 despite unchanged fair spatial rows.
+**What it says.** With right-reading races every row still looks fair, but an observer stepping right now sees flips
+a little more often than three times in four, the more so as races grow common.
 
-**Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 passes43648 cases and60 exact weighted means; colleague review is pending.
+**Why it matters.** This is how such races could be detected: not by looking at a row, but by moving through time.
 
-**An everyday picture.** Two films can have the same distribution of individual frames but different motion between them.
+**An everyday picture.** Every photograph of a busy street looks normal, but a film of it shows people walking at
+the wrong speed.
 
 ## G107
-A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.
+An observer standing still or moving left cannot detect right-reading races at all.
 
-**What it says.** For a predetermined nonrightward path, samples and XOR flips remain iid fair conditional on any terminating state-independent right-race schedule. Flip-count mean and variance are N/2,N/4.
+**What it says.** Along such a path, every sampled value and every flip stays a fair coin toss, whatever the
+schedule of races.
 
-**Why it matters.** Such a single trace cannot statistically reveal the schedule in the fair infinite ensemble, although paired noisy/ideal traces may differ. Rightward, adaptive, finite-ring and selected-seed observations are excluded. NT1 passes135296 cases and8736 conditional bijections; review is pending.
+**Why it matters.** An observer in the wrong place sees nothing amiss; detecting these races needs a comparison with
+the true history, or motion to the right.
 
-**An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.
+**An everyday picture.** A sentry facing the wrong way reports a quiet night.
 
 ## G108
-Two individually random traces can remain perfectly related when their shared environment is known.
+The glitched and the true histories are tied together exactly, even though each looks random on its own.
 
-**What it says.** Conditional on the other initial bits and race schedule, noisy samples equal ideal samples XOR a mask determined by earlier ideal samples. The transformation is a causal bijection, with N+1 bits of conditional mutual information.
+**What it says.** Given everything else, the raced samples equal the true samples with a correction mask, and the
+mask is fixed by earlier true samples. The relation can be undone step by step.
 
-**Why it matters.** Marginal iid observations do not make two histories independent. First-tick race errors depend on the previous sampled state. This representation does not determine the error process or a decoherence rate. CT1 passes135296 paired cases and8736 conditional classes; review is pending.
+**Why it matters.** Two random-looking signals can be completely related, so independence must never be assumed from
+appearances.
 
-**An everyday picture.** Knowing the key can relate two scrambled films even when each looks random on its own.
+**An everyday picture.** A message and its encrypted copy each look like gibberish, yet with the key either one
+gives back the other.
 
 ## G109
-An isolated race error can disappear at its source and return without another race.
+A race error can vanish at its square and come back the next tick without any new race.
 
-**What it says.** A right-race injection forces a black ideal right neighbour. The original source's disagreement on the first three ticks is1,0,1. Its second-tick damage has moved elsewhere.
+**What it says.** After a race, the damaged square is wrong at the first tick, right at the second and wrong again
+at the third: the damage moved next door and came back.
 
-**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 pass160 cases with an independent damage equation; review is pending.
+**Why it matters.** A square that looks correct is not necessarily healed; whether an error is gone cannot be judged
+from one square.
 
-**An everyday picture.** An echo can return after the place where it began has fallen quiet.
+**An everyday picture.** A stain that seems to wash out, then reappears as the cloth dries.
 
 ## G110
-Two individually memoryless traces can form a pair with memory.
+Two signals that each have no memory can have memory as a pair.
 
-**What it says.** In the isolated-pulse model, current ideal bit and current error miss the healed error that will return next tick. The previous error determines that return, refuting a first-order Markov state even with known pulse phase.
+**What it says.** In the model with one race, knowing the current true value and the current error does not predict
+the next error. The previous error is needed too, because it is the one that comes back (G109).
 
-**Why it matters.** The error-mask coupling needs more than marginal fairness or a current-bit state. This identifies a pulse control for conditional-memory measurements, not a claim about repeated independent races. PM1 passes128 words with exact conditional counts; review is pending.
+**Why it matters.** It sets how much of the past any model of the glitches must keep.
 
-**An everyday picture.** Two streams can each sound random while their relationship remembers yesterday.
+**An everyday picture.** Two dancers who each look improvised, but together repeat a step from the bar before.
 
 ## G111
-An exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
+Memory found at one race rate is memory at almost every rate; agreement at one rate proves nothing.
 
-**What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.
+**What it says.** The probabilities involved are polynomials in the race rate, so a memory effect seen at one rate
+can vanish at only a few others. Local's example then shows it at every rate in between.
 
-**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 pass12 independent exact checks; reviewed by Local L067.
+**Why it matters.** One exact check covers a whole range of rates, saving a sweep of measurements. The converse does
+not hold: a single rate where the effect vanishes can hide it at others.
 
-**An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
+**An everyday picture.** A cracked bell sounds wrong at almost every pitch; finding one pitch where it sounds true
+does not prove it is sound.
 
 ## G112
-Two shared black observations force the next source samples to agree in the right-reading coupling.
+Two shared black squares in a row shield the next update from a race.
 
-**What it says.** Starting from a shared row, a shared white first-step right neighbour forces agreement immediately to its left. Two shared black source observations then shield the next update.
+**What it says.** In the true and raced histories side by side, when the source square is black at two observations
+running in both, the next update is guaranteed to agree.
 
-**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 pass672 effective cases, two cylinder controls and an orientation guard; independently reviewed by Local L069; no claim about higher memory orders or survival follows.
+**Why it matters.** Such patterns occur with positive probability, and they prove that the raced history cannot be
+described with memory of only the last step, at every race rate.
 
-**An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.
+**An everyday picture.** Two closed doors in a row stop a draught, whatever is happening outside; the black squares
+do the masking of proofs 01 and 03.
 
 ## G113
-Keeping one previous paired observation still misses pulse-model memory.
+Remembering one step back is still not enough to predict the errors.
 
-**What it says.** In the isolated-pulse fair-input ensemble, one positive last-two-state bin has next-error rate5/234, but its refinement by an earlier observation has rate0. The zero child has no original injection; the positive parent now has an explicit13-bit cylinder, independently checked under all eight nearest-exterior assignments.
+**What it says.** In the model with one race, a description made of the last two paired observations still misses
+information: in one case adding an earlier observation turns an error rate of 5/234 into zero.
 
-**Why it matters.** This refutes order-two Markov at tick5 for this specific ensemble. All8192 words were checked with two update formulations; both separate seven-sample marginals remain uniform. Independently reviewed by Local L070; no all-orders or repeated-race theorem follows.
+**Why it matters.** Short-memory models of the glitches are provably incomplete, so longer histories matter.
 
 **An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
 
 ## G114
-Two incoming errors can cancel at a healed white source.
+Two incoming errors can cancel each other at a white square.
 
-**What it says.** At a shared white centre, next synchronous error is the XOR of the two neighbour errors; at a shared black centre only the left error passes.
+**What it says.** At a white square the next error is the exclusive-or of the errors arriving from left and right,
+so two errors cancel. At a black square only the left error passes.
 
-**Why it matters.** G113's two healed ticks hide equal incoming errors, followed by one uncancelled error. The full damage rule includes a nonlinear mixed term; it is not autonomous Rule90. DP0-DP2 pass64 local identities, cone rows and the autonomous-Rule90 guard; independently reviewed by Local L071.
+**Why it matters.** It explains the hidden healed ticks of G113, and shows black hiding the right-hand input once
+more, as in proofs 01 and 03.
 
-**An everyday picture.** Two opposing disturbances can hide each other without disappearing.
+**An everyday picture.** Two waves meeting crest to trough flatten each other out.
 
 ## G115
-Remembering the injection and one lag still misses older observed information.
+Remembering the race and the last two steps still misses older information.
 
-**What it says.** In the pulse model a candidate state containing the injection indicator and last two paired observations has next-error rate1/2, while a positive full-history refinement has rate0.
+**What it says.** A description that includes whether the race happened and the last two observations leaves the
+next error a coin toss, while the full history pins it down exactly.
 
-**Why it matters.** The immediately earlier observation finds no split, yet the full observed past gives24. A shallow held diagnostic can falsely suggest closure. All8192 cone words were checked; independent review is pending. No repeated-race or all-orders claim.
+**Why it matters.** A shallow check can wrongly suggest a model is complete.
 
-**An everyday picture.** Remembering the incident and yesterday can still miss an older clue.
+**An everyday picture.** A doctor who asks only about the last two days misses the cause from last week.
 
 ## G116
-The fourth isolated-pulse error remembers parity of three earlier ideal samples.
+The fourth error after a race depends on three earlier true values together.
 
-**What it says.** E4 equals the injection indicator times I1 XOR I2 XOR I3. The local proof follows fixed neighbouring values forced by the001 injection.
+**What it says.** Given that the race happened, the fourth error is the exclusive-or of the true values at ticks 1,
+2 and 3. Knowing only the last two leaves it a coin toss; adding the first makes it certain.
 
-**Why it matters.** Among injected fair histories, the last two ideal samples give fourth-error probability1/2; adding I1 makes it deterministic. This explains how shallow averaging can hide older information. PE0-PE2 pass512 words and the shallow-average guard;review pending. No repeated-race or physical-derivative law.
+**Why it matters.** It names exactly the old information that the shorter memories of G113 and G115 missed.
 
-**An everyday picture.** Two remembered bits can hide the parity clue carried by a third.
+**An everyday picture.** A lock that opens only when three digits are right: knowing two of them tells you nothing.
 
 ## G117
-An unobserved initial right-tail bit enters the fifth pulse error.
+A hidden starting bit that is never observed enters the fifth error.
 
-**What it says.** D=x3 AND(x4 OR x5) is independent of the injected ideal prefix and has rate3/8. An explicit Boolean kernel maps that prefix and D to E5.
+**What it says.** The fifth error depends on squares to the right that the observer never sees, so even the full
+observed past leaves some uncertainty about it.
 
-**Why it matters.** Complete observed source history can leave positive next-error uncertainty even after racing stops. The proposed exact law gives P(E5=1)=19/256 and conditional entropy h2(3/8)/16 bits. FT0-FT2 pass2048 histories and the identical-past/different-future guard;reviewed by Local L073. Not an entropy rate or repeated-race law.
+**Why it matters.** Part of the glitch is unpredictable from inside the observation, however much history is kept.
 
-**An everyday picture.** A past disturbance can expose information from somewhere the observer never watched.
+**An everyday picture.** A letter delayed by a sorting fault you never see: the history of your own letterbox cannot
+explain it.
 
 ## G118
-Exact six-sample mutual information separates conditional and unconditional coupling.
+Six samples of the true and the raced histories share 5.53 of their 6 bits.
 
-**What it says.** In the isolated-pulse model joint entropy is6+h2(1/4)/2+h2(3/8)/16 bits;mutual information is6 minus the same two uncertainty terms.
+**What it says.** Each history alone is six fair coin tosses. Together they share 5.5347 bits of information, almost
+all of it; hidden starting bits supply the rest.
 
-**Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 pass2048 words and exact count spectrum;reviewed by Local L074. No entropy-rate law.
+**Why it matters.** It measures exactly how much of the truth survives one glitch.
 
-**An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
+**An everyday picture.** A photocopy keeps almost everything on the page, losing only what the copier could not see.
 
 ## G119
-A common fresh bit ties new shared information to next-error uncertainty.
+Each new sample adds shared information equal to one bit minus the uncertainty of the next error.
 
-**What it says.** On a predetermined nonrightward path in the fair right-reading model,MI grows by1-H(next error|paired past) bits per sample.
+**What it says.** On a path standing still or moving left, a fresh random bit enters both histories at each sample,
+so the information they share grows by one bit minus how uncertain the next error is.
 
-**Why it matters.** This connects hidden-error uncertainty to unconditional information growth without assuming error closure. Two iid marginal traces alone do not suffice:cross-copy reuse gives a two-bit increment. GF0-GF2 pass32 positive histories and8 scope guards;reviewed by Local L075. No asymptotic rate.
+**Why it matters.** It ties how unpredictable the glitch is to how well the raced copy keeps tracking the truth.
 
-**An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.
+**An everyday picture.** Two diaries of the same day agree on everything except what one writer misheard.
 
 ## G120
-An observed rare injection limits later information loss.
+Once you know whether a rare race happened, the raced copy keeps at least 7/8 of a bit of each new sample.
 
-**What it says.** After the pulse indicator is observed,error uncertainty is at most1/8 bit per later sample,so shared information grows by at least7/8 bit.
+**What it says.** After observing whether the race occurred, the uncertainty about each later error is at most 1/8
+of a bit, so by G119 the two histories share at least 7/8 of a bit of every new sample. No assumption that the rate
+settles down is needed.
 
-**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 pass64 observed histories and32 hidden-event guards;reviewed by Local L076.
+**Why it matters.** It is a guaranteed floor on how well the raced copy keeps tracking the truth.
 
-**An everyday picture.** Knowing which rare branch occurred removes uncertainty that its probability alone cannot remove.
+**An everyday picture.** Knowing a train was delayed once tells you most of what you need to predict its later
+stops.
 
 ## G121
-Backward descent stops at finite roots of unbounded width.
+Walking a seed backwards in time shrinks it, but the walk stops at a "root", and roots come in every size.
 
-**What it says.** Finite Rule30 evolution increases support span by2 and is injective. Every finite row has a unique root and age under finite-predecessor descent;any eventual-alternation counterexample would descend to a root.
+**What it says.** A finite row has at most one finite row that produces it one tick earlier, and that earlier row is
+two squares narrower. Walking back, every row reaches a unique starting row, its root. A counterexample stays a
+counterexample as you walk it back, so the smallest counterexample would have to be a root. But three quarters of
+all rows of every width are roots, and the single black square is one already.
 
-**Why it matters.** Three quarters of normalized words at every width>=4 are roots. The reduction cannot close width induction or bound a minimal counterexample;the selected one-cell seed is already a root. Full-shift surjectivity does not supply finite predecessors. Paper proof,review pending,no new computation.
+**Why it matters.** It is the first attempt at the smallest-counterexample move of the owner's steer (chat CL005),
+recorded as a failed bridge with the exact place it breaks: shrinking backwards cannot bound the size of a
+counterexample. It has not yet had its second reading.
 
-**An everyday picture.** Walking backward reaches a starting point,but there are starting points of arbitrarily large size.
+**An everyday picture.** Rewinding the film of a growing crystal back to its seed: every crystal has a seed, but
+seeds come in every size, so rewinding alone cannot show that the crystal was small.
 
 ## G122
-Continuing a root's backward history leaves finite seeds through exact periodic tails.
+Walking back past a root leaves the world of finite seeds, first through a black tail and then a repeating one.
 
-**What it says.** Rule30 is bijective on rows zero sufficiently far to the right. A finite root's first canonical ancestor has a black far-left tail;the second has a spatial001 tail up to phase.
+**What it says.** A row that is white far enough to the right can always be run backwards, in exactly one way.
+Behind a root, the earlier row has an endless black tail on the left; one tick further back, that tail becomes the
+endlessly repeating pattern 001.
 
-**Why it matters.** This locates how backward descent exits the finite-seed class. A periodic output tail has a periodic inverse tail with period at most4 times as large,but no bound over all ancestor depths is supplied. These spatial tails alone do not exclude a temporal0101 wall. Symbolic proof,review pending,no computational run.
+**Why it matters.** It maps exactly how the backward walk escapes the finite seeds the prize is about. Whether that
+exit says anything about the blinking middle column is still open. It has not yet had its second reading.
 
-**An everyday picture.** A unique backward history continues,but beyond its starting seed it needs an infinite background.
+**An everyday picture.** Rewinding past the moment of planting, the film no longer shows a seed but an endless
+striped field.

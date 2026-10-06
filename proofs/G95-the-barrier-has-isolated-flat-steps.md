@@ -8,13 +8,16 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
+The real survival boundary never pauses twice in a row, but that alone does not keep the shape smooth.
 
-**What it says.** The threshold rises at least once in every two steps. A different schedule, 00011, has demand atoms 26/32, 5/32 and 1/32, which are not log-concave. That schedule falls outside the actual restriction.
+**What it says.** The number of odd steps a survivor needs rises by one at least every two steps, because each step
+needs about 0.63 odd steps on average, so any two steps need at least one. GPT showed that a made-up boundary which
+does pause twice breaks the smooth shape. The real one never pauses twice, yet G94 found it breaks the shape anyway.
 
-**Why it matters.** A candidate statement was log-concavity for all schedules without adjacent flat steps. Local’s actual-schedule counterexample in L048 refutes that general statement. The pending finite family search is stopped before execution; the elementary schedule property and unrestricted guard remain valid. Independent review of those statements remains pending. The actual count error would still need signed allocation control.
+**Why it matters.** It sorts out which property matters and closes a suggested restriction, so the next attempt does
+not rely on it.
 
-**An everyday picture.** A staircase with no long landings may keep a demand profile smoother, but the shape must be proved; a staircase with a long landing already gives a counterexample.
+**An everyday picture.** A staircase with no two landings in a row can still be uneven underfoot.
 
 ## The formal statement and proof
 

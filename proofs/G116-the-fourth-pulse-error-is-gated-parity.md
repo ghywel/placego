@@ -8,13 +8,14 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-The fourth isolated-pulse error remembers parity of three earlier ideal samples.
+The fourth error after a race depends on three earlier true values together.
 
-**What it says.** E4 equals the injection indicator times I1 XOR I2 XOR I3. The local proof follows fixed neighbouring values forced by the001 injection.
+**What it says.** Given that the race happened, the fourth error is the exclusive-or of the true values at ticks 1,
+2 and 3. Knowing only the last two leaves it a coin toss; adding the first makes it certain.
 
-**Why it matters.** Among injected fair histories, the last two ideal samples give fourth-error probability1/2; adding I1 makes it deterministic. This explains how shallow averaging can hide older information. PE0-PE2 pass512 words and the shallow-average guard;review pending. No repeated-race or physical-derivative law.
+**Why it matters.** It names exactly the old information that the shorter memories of G113 and G115 missed.
 
-**An everyday picture.** Two remembered bits can hide the parity clue carried by a third.
+**An everyday picture.** A lock that opens only when three digits are right: knowing two of them tells you nothing.
 
 ## The formal statement and proof
 

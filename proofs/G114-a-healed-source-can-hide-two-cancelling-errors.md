@@ -8,13 +8,15 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-Two incoming errors can cancel at a healed white source.
+Two incoming errors can cancel each other at a white square.
 
-**What it says.** At a shared white centre, next synchronous error is the XOR of the two neighbour errors; at a shared black centre only the left error passes.
+**What it says.** At a white square the next error is the exclusive-or of the errors arriving from left and right,
+so two errors cancel. At a black square only the left error passes.
 
-**Why it matters.** G113's two healed ticks hide equal incoming errors, followed by one uncancelled error. The full damage rule includes a nonlinear mixed term; it is not autonomous Rule90. DP0-DP2 pass64 local identities, cone rows and the autonomous-Rule90 guard; independently reviewed by Local L071.
+**Why it matters.** It explains the hidden healed ticks of G113, and shows black hiding the right-hand input once
+more, as in proofs 01 and 03.
 
-**An everyday picture.** Two opposing disturbances can hide each other without disappearing.
+**An everyday picture.** Two waves meeting crest to trough flatten each other out.
 
 ## The formal statement and proof
 

@@ -8,13 +8,17 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-A candidate tree can be cut off using exact bounds on every possible continuation.
+A way to rule out a whole tree of possibilities by arithmetic, branch by branch, instead of trying every number.
 
-**What it says.** For each partial step pattern, calculate the smallest and largest final offset allowed by the growth-factor condition and remaining odd count. A pair of starts four apart can meet only if its required offset difference lies inside the two continuation ranges. Every rejected branch has an explicit arithmetic reason; both next parity choices are covered. A complete tree with no witnesses would exclude this finite class.
+**What it says.** For each partly written step pattern, compute the smallest and largest offset any continuation
+could reach. Two starts 4 apart can meet only if the difference they need fits within those ranges; a branch where
+it cannot is cut, with the reason written down. If every branch is cut, no meeting exists in that class.
 
-**Why it matters.** This offers a certificate rather than a larger uncontrolled scan. The run is preregistered with a node and time cap; hitting either cap proves nothing about the unexplored branches. A separate known collision without the growth-factor restriction tests that genuine witnesses are accepted. The capped run completed in 59 nodes with no candidate, and the positive collision control passed. The count-21 coverage audit passed. The next count, 22, produced genuine counterexamples to universal injectivity, and its accepting cover also passed the independent implementation audit. Independent model review remains pending.
+**Why it matters.** It turns a search into a certificate: a list of reasons anyone can check, rather than "the
+computer found nothing".
 
-**An everyday picture.** Search a route map, stopping at each fork whose remaining distance cannot reach the destination. Only covering every fork certifies that no route reaches it.
+**An everyday picture.** Pruning a family tree: if no descendant of a branch could have been born in the right year,
+you need not trace that branch any further.
 
 ## The formal statement and proof
 

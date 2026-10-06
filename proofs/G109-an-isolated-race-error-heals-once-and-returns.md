@@ -8,13 +8,15 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-An isolated race error can disappear at its source and return without another race.
+A race error can vanish at its square and come back the next tick without any new race.
 
-**What it says.** A right-race injection forces a black ideal right neighbour. The original source's disagreement on the first three ticks is1,0,1. Its second-tick damage has moved elsewhere.
+**What it says.** After a race, the damaged square is wrong at the first tick, right at the second and wrong again
+at the third: the damage moved next door and came back.
 
-**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 pass160 cases with an independent damage equation; review is pending.
+**Why it matters.** A square that looks correct is not necessarily healed; whether an error is gone cannot be judged
+from one square.
 
-**An everyday picture.** An echo can return after the place where it began has fallen quiet.
+**An everyday picture.** A stain that seems to wash out, then reappears as the cloth dries.
 
 ## The formal statement and proof
 

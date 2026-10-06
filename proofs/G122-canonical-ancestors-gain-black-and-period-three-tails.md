@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Continuing a root's backward history leaves finite seeds through exact periodic tails.
+Walking back past a root leaves the world of finite seeds, first through a black tail and then a repeating one.
 
-**What it says.** Rule30 is bijective on rows zero sufficiently far to the right. A finite root's first canonical ancestor has a black far-left tail;the second has a spatial001 tail up to phase.
+**What it says.** A row that is white far enough to the right can always be run backwards, in exactly one way.
+Behind a root, the earlier row has an endless black tail on the left; one tick further back, that tail becomes the
+endlessly repeating pattern 001.
 
-**Why it matters.** This locates how backward descent exits the finite-seed class. A periodic output tail has a periodic inverse tail with period at most4 times as large,but no bound over all ancestor depths is supplied. These spatial tails alone do not exclude a temporal0101 wall. Symbolic proof,review pending,no computational run.
+**Why it matters.** It maps exactly how the backward walk escapes the finite seeds the prize is about. Whether that
+exit says anything about the blinking middle column is still open. It has not yet had its second reading.
 
-**An everyday picture.** A unique backward history continues,but beyond its starting seed it needs an infinite background.
+**An everyday picture.** Rewinding past the moment of planting, the film no longer shows a seed but an endless
+striped field.
 
 ## The formal statement and proof
 

@@ -8,13 +8,15 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-The same possible pair must follow two more common odd steps.
+The two candidates of G84 must also take the same next two steps: both odd.
 
-**What it says.** Continue W84's smaller and larger starts. After their differing third step, their values have the same parity. The smaller start needs an odd fourth step to satisfy the growth-factor condition, forcing the larger to take one too. The same argument forces an odd fifth step for both. Their first five step patterns must be 11011 and 11111, where 1 means odd. Their starts leave remainders 27 and 31 on division by 32.
+**What it says.** After their third step the two numbers are both odd or both even. The smaller one needs an odd
+fourth step and an odd fifth step to keep its growth factor up, so the larger one takes them too. Their first five
+steps must be odd-odd-even-odd-odd and five odds, so they leave remainders 27 and 31 when divided by 32.
 
-**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review remains pending; the small direct trajectory controls passed.
+**Why it matters.** Each forced step cuts the places a meeting could hide by half, by proof rather than search.
 
-**An everyday picture.** Two routes must share two extra turns after their first fork; that still does not show that they reach the same destination.
+**An everyday picture.** Two dancers keeping time to the same music: when one must step forward, so must the other.
 
 ## The formal statement and proof
 

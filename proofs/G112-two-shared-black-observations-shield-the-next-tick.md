@@ -8,13 +8,16 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Two shared black observations force the next source samples to agree in the right-reading coupling.
+Two shared black squares in a row shield the next update from a race.
 
-**What it says.** Starting from a shared row, a shared white first-step right neighbour forces agreement immediately to its left. Two shared black source observations then shield the next update.
+**What it says.** In the true and raced histories side by side, when the source square is black at two observations
+running in both, the next update is guaranteed to agree.
 
-**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 pass672 effective cases, two cylinder controls and an orientation guard; independently reviewed by Local L069; no claim about higher memory orders or survival follows.
+**Why it matters.** Such patterns occur with positive probability, and they prove that the raced history cannot be
+described with memory of only the last step, at every race rate.
 
-**An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.
+**An everyday picture.** Two closed doors in a row stop a draught, whatever is happening outside; the black squares
+do the masking of proofs 01 and 03.
 
 ## The formal statement and proof
 

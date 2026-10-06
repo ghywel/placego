@@ -8,13 +8,21 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-A raced neighbour can carry an extra race into the next update.
+A single race corrupts a square one time in eight; a chain of races changes that slightly.
 
-**What it says.** On a fair initial row, isolated right races inject with probability1/8. An open-boundary chain model gives bulk conditional probability1/(8-4*eps), with an exact finite-depth remainder. Finite left chains retain probability1/2.
+**What it says.** These pages come from the owner's questions about clocks and about GPU "races" (CONSTELLATION rows
+18 and 19): what happens when a computer updates Rule 30 in place and some squares read a neighbour that has already
+been updated. They are about Rule 30 for its own sake, not directly about the prize. Model a race as a square
+reading its right neighbour's new value instead of its old one. On a random row, a lone race gives a wrong value one
+time in eight. If the neighbour raced too, races chain and the rate becomes 1/(8 − 4ε), where ε is how often races
+happen. A race that reads the left neighbour is wrong half the time.
 
-**Why it matters.** It separates an exact isolated event from the sequential mechanism used in Local's rare-race measurements. The correction is small for rare races; it supplies no later-time survival law or cyclic-boundary identity. Controls pass on 43680 word/flag combinations and48 exact weighted checks; colleague review remains pending.
+**Why it matters.** It is the exact starting rate behind Local's race measurements. The left-right difference is
+Rule 30's own: the left input passes straight through (the perfect wire of CL004), so racing it scrambles the result
+completely.
 
-**An everyday picture.** Reading from someone who has already read an altered value can pass along an extra change.
+**An everyday picture.** Copying from a neighbour who has already changed their answer: from one side you are only
+occasionally wrong, from the other you might as well guess.
 
 ## The formal statement and proof
 

@@ -8,11 +8,12 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-Keeping one previous paired observation still misses pulse-model memory.
+Remembering one step back is still not enough to predict the errors.
 
-**What it says.** In the isolated-pulse fair-input ensemble, one positive last-two-state bin has next-error rate5/234, but its refinement by an earlier observation has rate0. The zero child has no original injection; the positive parent now has an explicit13-bit cylinder, independently checked under all eight nearest-exterior assignments.
+**What it says.** In the model with one race, a description made of the last two paired observations still misses
+information: in one case adding an earlier observation turns an error rate of 5/234 into zero.
 
-**Why it matters.** This refutes order-two Markov at tick5 for this specific ensemble. All8192 words were checked with two update formulations; both separate seven-sample marginals remain uniform. Independently reviewed by Local L070; no all-orders or repeated-race theorem follows.
+**Why it matters.** Short-memory models of the glitches are provably incomplete, so longer histories matter.
 
 **An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
 

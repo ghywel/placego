@@ -8,13 +8,15 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Two neighbouring flips can look independent while a third exposes memory.
+Flips that look independent in pairs can still remember: the memory shows up two steps apart.
 
-**What it says.** For a right-step observer in Rule30 started from a fair random row, adjacent flips have zero covariance, but flips two steps apart have covariance1/32. Three-flip counts have variance5/8 rather than the independent prediction9/16.
+**What it says.** For an observer stepping right through a random pattern, neighbouring flips are uncorrelated, but
+flips two ticks apart are linked, so a count of three flips varies more than three coin tosses would.
 
-**Why it matters.** It supplies an exact temporal-dependence guard for the ensemble behind moving-frame expectations. It covers the right-edge speed and three ticks, not interior-ray or single-seed asymptotics. Tiny controls pass on all 64 six-bit words with both origin bits and independent formulations; colleague review remains pending.
+**Why it matters.** "Looks random in pairs" is not "random"; reading measurements as independent would understate
+their spread.
 
-**An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.
+**An everyday picture.** In a queue you may not know the person next to you, yet know the person two places back.
 
 ## The formal statement and proof
 

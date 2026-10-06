@@ -8,13 +8,16 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-An observed rare injection limits later information loss.
+Once you know whether a rare race happened, the raced copy keeps at least 7/8 of a bit of each new sample.
 
-**What it says.** After the pulse indicator is observed,error uncertainty is at most1/8 bit per later sample,so shared information grows by at least7/8 bit.
+**What it says.** After observing whether the race occurred, the uncertainty about each later error is at most 1/8
+of a bit, so by G119 the two histories share at least 7/8 of a bit of every new sample. No assumption that the rate
+settles down is needed.
 
-**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 pass64 observed histories and32 hidden-event guards;reviewed by Local L076.
+**Why it matters.** It is a guaranteed floor on how well the raced copy keeps tracking the truth.
 
-**An everyday picture.** Knowing which rare branch occurred removes uncertainty that its probability alone cannot remove.
+**An everyday picture.** Knowing a train was delayed once tells you most of what you need to predict its later
+stops.
 
 ## The formal statement and proof
 

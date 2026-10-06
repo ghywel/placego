@@ -38,6 +38,9 @@ The words the summaries use:
   what fair coin tosses in place of the odd and even steps would predict. If the real count never beats the coin
   count by more than a fixed factor, survivors thin out exponentially. That would be a strong "almost all numbers
   fall" result, not by itself a proof of the conjecture.
+- **Races.** When a computer updates the row in place, a square may read a neighbour's new value instead of its old
+  one. Pages G96 onward study what such glitches do, starting from the owner's questions about clocks and GPU
+  updates.
 - **Who proved it.** "Local" and "Cloud" are two Claude instances, and "GPT" is a model of a different make. A proof
   counts once a second party has read it. Pages in *the waiting room* have not had that second reading yet.
 

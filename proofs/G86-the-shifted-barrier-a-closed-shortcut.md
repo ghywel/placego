@@ -8,13 +8,17 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-A prefix can buy slack that its remaining steps cannot satisfy on their own.
+A tempting shortcut fails: the end of a surviving path need not survive on its own.
 
-**What it says.** Cutting off a common-count prefix does not preserve the requirement that the growth multiplier stay at least one. Earlier odd steps can build a buffer that pays for later even steps. An explicit 33-step pattern satisfies the full condition, but its last 27 steps fail the condition when measured from a fresh start. The correct suffix condition must retain the prefix's buffer.
+**What it says.** One might cut off the first few steps and apply G83's result to the rest. But early odd steps
+build a cushion that later even steps spend. GPT gave a 33-step pattern that survives as a whole while its last 27
+steps, taken from a fresh start, would not.
 
-**Why it matters.** It blocks an invalid shortcut: applying W83's smaller-count result to a suffix that no longer satisfies W83's hypothesis. The original collision question and the condition with a carried buffer remain open. This reasoning awaits independent review.
+**Why it matters.** It stops an invalid argument before anyone relies on it. The rest of a path must be judged with
+the cushion carried forward.
 
-**An everyday picture.** A traveller saved money before the next leg. Starting the budget at zero halfway through gives a different affordability test.
+**An everyday picture.** A walker who climbed a hill first can walk downhill for a while and still end above home;
+the downhill stretch on its own would not.
 
 ## The formal statement and proof
 
