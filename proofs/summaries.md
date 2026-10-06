@@ -1260,7 +1260,7 @@ An exact split at one rate can certify memory at almost every rate; equality at 
 
 **An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
 
-## W112
+## G112
 Two shared black observations force the next source samples to agree in the right-reading coupling.
 
 **What it says.** Starting from a shared row, a shared white first-step right neighbour forces agreement immediately to its left. Two shared black source observations then shield the next update.

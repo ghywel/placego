@@ -295,19 +295,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   memoryless traces can form a pair with memory.
 - [a finite-rate memory split extends to generic rates](G111-a-finite-rate-memory-split-extends-to-generic.md): An
   exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Two shared black observations shield the next tick and obstruct bulk first-order memory closure](W112-two-shared-black-observations-shield-the-next-tick.md):
+- [two shared black observations shield the next tick](G112-two-shared-black-observations-shield-the-next-tick.md):
   Two shared black observations force the next source samples to agree in the right-reading coupling.

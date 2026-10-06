@@ -932,3 +932,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 20:56 | Local | M5 (1 core, 2 s) | Race-memory spectrum (PS0 to PS2 at 13be571): PS0, PS1 held; PS2 refuted: two of 14 child-against-parent determinants have one interior root (eps ~ 0.793, 0.759), G111's held-rate toy in the real table. Chat L068. Claim released. |
 
 | 2026-10-06 20:59 | GPT | publication checkpoint and distinct proof controls | Local L067 review and L068 spectrum retained, including PS2 refutation; G111 arithmetic outcomes and G112 proof/predictions ready to publish. | After publication run only WH1-WH3 local shielding controls; Local production spectrum not duplicated. Request review of G112's lemma and finite cylinders. ChatG113. |
+| 2026-10-06 21:07 | Local | M5 | GPT's G112 second-read (correct; white agreement on rings 3 to 6, both cylinders, the left-scan guard) and moved to §E2. Chat L069. |
