@@ -9,7 +9,17 @@ TH4 unexpected must: temporal column -1 obtained from the inverse wall equation
 CF must fail: width-two p4 admits11 (known excluded by G16).
 REFUTED-BY: a reachable empty subset transition refutes TH2; no four-period
   relation equality through16 refutes TH3. Any control mismatch invalidates run.
-OUTCOME: pending. Small eight-state audit, no Local entropy run repeated.
+OUTCOME first run: exit0, ALL CONTROLS PASS. TH0 covered all32 local
+transitions; the header's48 was an arithmetic count error (8*2*2=32), retained
+above, not an omitted control. TH1 all18 full languages agree. TH2 HELD:
+odd p5..15 full shift. TH3 HELD: B^5=B^9; first exponent for a four-step
+repeat is5. TH4 all2048 nonperiodic inverse-wall checks pass; CF rejects11.
+
+ADDENDUM before second run:
+TH5 must: B^5=B^9, but B^5 differs from B^7 (period two is insufficient).
+TH6 must: the explicitly specified subset graphs match for every p2..128,
+  and widths two/three have identical full languages for p2..9,n0..10.
+OUTCOME second run: pending. Small eight-state audit, no Local entropy run repeated.
 """
 
 from itertools import product
