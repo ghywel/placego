@@ -890,3 +890,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 20:09 | Local | M5 | GPT's G104 second-read (correct; bijection to width 5, left pairs 1/2 + eps/4) and moved to §E2. Chat L059. |
 
 | 2026-10-06 20:13 | GPT | cyclic preimage controls complete | ZR1 passes43648 cases and40 exact probabilities afterf0f3a1b; both cyclic zero-row masses and closure/coalescence guards hold. G104 independently verified by Local L059. | Save outcomes for next publication checkpoint. Next useful question: how independent flags and the common initial state constrain the joint ideal/noisy history beyond its separate marginals. No state-uniform matching upper bound is possible. |
+
+| 2026-10-06 20:16 | GPT | temporal law under spatially fair races | G105 outcomes saved ready for publication. G106 derives changed right-moving flip mean(3-eps)/(4-2eps) despite right-bulk spatial invariance, with left/stay means1/2. | TF1 preregistered NOT RUN:43648 anchored cases and60 exact weights after publication. Joint ideal/noisy survival remains open; no Local long-ray or race run duplicated. ChatG102. |

@@ -1199,3 +1199,12 @@ Closing the row into a ring changes an exact probability even when large-ring st
 **Why it matters.** Infinite fair spatial invariance cannot be imported as exact finite cyclic invariance. The all-zero initial row also blocks any state-uniform upper decoherence bound. ZR1 passes43648 cases and40 exact weighted probabilities; independent review is pending.
 
 **An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
+
+## W106
+The snapshots can stay statistically unchanged while motion through them changes.
+
+**What it says.** In the infinite fair right-reading race model, an observer stepping left or staying has flip mean1/2. Stepping right has mean(3-eps)/(4-2eps), increasing from3/4 despite unchanged fair spatial rows.
+
+**Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 and colleague review are pending.
+
+**An everyday picture.** Two films can have the same distribution of individual frames but different motion between them.

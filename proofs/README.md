@@ -297,3 +297,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Cyclic closure changes zero-row mass in the actual race model](W105-cyclic-closure-changes-zero-row-mass-in-the.md):
   Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
+- [Spatial fairness survives right races, but moving-frame temporal activity changes](W106-spatial-fairness-survives-right-races-but-moving-frame.md):
+  The snapshots can stay statistically unchanged while motion through them changes.
