@@ -30,7 +30,7 @@ not written out). Rule 210, Rule 90 and the Collatz entries are marked by their 
 | B7 Theorem A′ | any configuration | as Theorem A | general ✓ |
 | B8 Lemma B1, B9 Lemma B2 | the diagonals of any left-bounded row | the diagonal recurrence | general (the band is wall-independent) ✓ |
 | B10 Theorem A‴, B12 Lemma B3, B13 Theorem A⁗ | any configuration with a settled band | the window and the band | general ✓ |
-| B11 Corollary F (near-squares) | 0101 | the pair $(-1, 0)$ repeats at shifts $2(i' - i)$ because column $-1$ is constant at odd times | 0101 as proved; any periodic wall with shifts in multiples of the period, via Lemma 1 ~ |
+| B11 Corollary F (near-squares) | 0101 | the pair $(-1, 0)$ repeats at shifts $2(i' - i)$ because column $-1$ is constant at odd times | any nonconstant periodic wall, for phase-aligned period blocks: GPT's G52, second-read ✓ |
 | B14 Theorem E, B15 Theorem E″ | 0101, visible bits a rotation coding | the wall's visible times are the even times | 0101 only as audited |
 | B′16 Proposition 5 | Rule 90, period two | $x_{2^n + s}(0) = x_s(-2^n) \oplus x_s(2^n)$ | Rule 90 with any periodic nonzero column 0: the identity gives long white stretches ✓ (standard for linear rules) |
 | B′17 Proposition 7 (Jen) | column 0 eventually periodic and not eventually zero; column 1 eventually periodic | Jen's mechanism | general for Rule 30 ✓ |
@@ -54,8 +54,8 @@ not written out). Rule 210, Rule 90 and the Collatz entries are marked by their 
 trace. What is period-two-specific is a short list: the channel certificate and the squeeze built on it, the wheel
 (Proposition 6), the rotation-coding exclusions (Theorems E, E″), the affine columns, and Corollary F as written. So
 a proof that wanted to leave period 2 would carry almost all of the machinery with it, and would need, for each new
-wall, its own channel certificate. The two "~" extensions (Corollary F and a per-wall squeeze) are the first places to
-write that out.
+wall, its own channel certificate. Of the two "~" extensions, Corollary F is now written out (G52, for phase-aligned period blocks); a per-wall
+squeeze is the one left.
 
 ## A. The wall form
 
@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz and test-bed proofs G39 to G51, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G52, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1121,23 +1121,9 @@ exactly when an ordinary integer realises the word; $10101$ gives $133/243 > 1/2
 words), $\xi = r_T + L_T$ was multiplied by $(3/2)^t$ in exact rationals, and its integer parts follow the word's
 parities and its fractional parts stay in $[0, 1/2)$ through $T$; no $n_0 < 200$ passes the $8^6$ congruence.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
 ### G.GPT52. Phase-aligned period-block extension of Corollary F
 
-**Where:** RULE30-GPT.md G52; copied proof. **Status:** awaiting independent reader; MF1-MF2 finite conversion controls pass. The original index's plausible extension is not promoted before review.
+**Where:** RULE30-GPT.md G52; copied proof. **Status:** second-read by Local, 2026-10-06 (note below); GPT's MF controls not run at publication. The original index's plausible extension is not promoted before review.
 
 ### G52 theorem and proof: Corollary F for phase-aligned period blocks
 
@@ -1159,7 +1145,35 @@ Shift the whole forced evolution forward by p. Its wall has the same phase and i
 
 The statement still requires phase-aligned period-block repeats. It does not exclude all unaligned visible-bit near-squares or solve any Rule30 prize question. This is a derived extension of the checked band/window lemmas, awaiting independent review.
 
-**G52 control status:** MF1-MF2 pass50 walls/288 samples/8016 transitions; analytic extension and empty-row addendum still await a second reader.
+**G52 control status:** MF1-MF2 pass50 walls/288 samples/8016 transitions; analytic extension and empty-row addendum independently read by Local (L023/L024).
+
+*The addendum above was written by GPT after Local's first reading below; Local second-read it the same day
+(chat L024): correct. A nonconstant wall has a phase with black then white, where Lemma 1 makes column $-1$ black
+whatever column 1 is; the leftmost black cell then persists and moves left ($100 \to 1$), so the left row at time
+$p$ is finite and nonempty; shifting by one period keeps the near-square hypothesis with slack $K + 1$, using indices
+$(i - 1, i' - 1)$ when $i \ge 1$ and $(0, i')$ with length $\ell - 1$ when $i = 0$; the nonempty case then applies.*
+
+*Second reader's note on G52 (Local, 2026-10-06; chat L023).* Correct. Matching white-phase vectors over $\ell_j$
+complete periods at shifts that are multiples of $p$ make the pair $(-1, 0)$ identical over $p\ell_j$ times, by
+Lemma 1 and the periodicity of $\tau$ (including $\tau(t+1)$ at a block's last time); Theorem A‴ at distance
+$L - 1$ with $b < p(i'_j - i_j)$ black at time $p\,i'_j$ gives $p\ell_j \le p\,i'_j - pK - 1$, against
+$\ell_j \ge i'_j - K$; such $j$ exist because $i'_j - i_j \to \infty$. The 001 example checks (column $-1$ reads
+0, 1, 1 at the three phases with column 1 white). Checked: the window-matching step on 1,764 random nonconstant
+walls of periods 2 to 9 with arbitrary bits at black phases, zero failures (`rule30_audit_g52.py`).
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G.GPT53. Period-block form of the entropy squeeze
 

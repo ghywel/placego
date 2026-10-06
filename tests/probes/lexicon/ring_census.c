@@ -21,34 +21,35 @@ int main(int argc, char **argv) {
     int nmax = argc > 1 ? atoi(argv[1]) : 24, nmin = argc > 2 ? atoi(argv[2]) : 1;
     for (int n = nmin; n <= nmax; n++) {
         uint32_t N = (uint32_t)1 << n, mask = N - 1;
-        uint32_t *stamp = calloc(N, 4), *pos = calloc(N, 4), *pre = calloc(N, 4), *cid = calloc(N, 4);
-        uint32_t *clen = malloc(4 * (N / 1 + 1)), *crep = malloc(4 * (N + 1));
+        /* Two arrays per state (8 bytes, 4 GiB at n = 29; the first version used four and thrashed a 16 GB machine):
+           A[x] = 0 unvisited; = the walk's tag (s + 1 < 2^31) while x is on the current walk; = FIN | cycle id once done.
+           B[x] = position on the current walk, then the preperiod once done. */
+        const uint32_t FIN = 0x80000000u;
+        uint32_t *A = calloc(N, 4), *B = calloc(N, 4);
+        uint32_t cap = 1024, *clen = malloc(4 * cap), *crep = malloc(4 * cap);
         uint32_t ncyc = 0, periodic = 0, maxper = 0, maxtr = 0, single = 0;
         for (uint32_t s = 0; s < N; s++) {
-            if (stamp[s]) continue;
+            if (A[s]) continue;
             uint32_t cur = s + 1, x = s, len = 0;
-            while (!stamp[x]) { stamp[x] = cur; pos[x] = len++; x = n == 1 ? step(x, 1, 1) : step(x, n, mask); }
-            uint32_t base;                                   /* preperiod of the node where the walk stopped */
-            if (stamp[x] == cur) {                           /* a new cycle: nodes pos[x] .. len-1 of the walk */
-                uint32_t L = len - pos[x];
+            while (!A[x]) { A[x] = cur; B[x] = len++; x = n == 1 ? step(x, 1, 1) : step(x, n, mask); }
+            if (A[x] == cur) {                               /* a new cycle: walk positions B[x] .. len-1 */
+                uint32_t posx = B[x], L = len - posx;
+                if (ncyc == cap) { cap *= 2; clen = realloc(clen, 4 * cap); crep = realloc(crep, 4 * cap); }
                 clen[ncyc] = L; crep[ncyc] = x; ncyc++;
                 periodic += L; if (L > maxper) maxper = L;
                 uint32_t y = x;
-                for (uint32_t i = 0; i < L; i++) { pre[y] = 0; cid[y] = ncyc; y = step(y, n, mask); }
-                base = 0;
-                /* the walk's tail: nodes with pos < pos[x] */
-                uint32_t z = s;
-                for (uint32_t i = 0; i < pos[x]; i++) { pre[z] = pos[x] - i; cid[z] = ncyc; if (pre[z] > maxtr) maxtr = pre[z]; z = step(z, n, mask); }
-            } else {
-                base = pre[x];
-                uint32_t z = s, c = cid[x];
-                for (uint32_t i = 0; i < len; i++) { pre[z] = base + len - i; cid[z] = c; if (pre[z] > maxtr) maxtr = pre[z]; z = step(z, n, mask); }
+                for (uint32_t i = 0; i < L; i++) { B[y] = 0; A[y] = FIN | ncyc; y = step(y, n, mask); }
+                uint32_t z = s;                              /* the walk's tail: positions 0 .. posx-1 */
+                for (uint32_t i = 0; i < posx; i++) { B[z] = posx - i; A[z] = FIN | ncyc; if (B[z] > maxtr) maxtr = B[z]; z = step(z, n, mask); }
+            } else {                                         /* the walk ran into a finished node */
+                uint32_t base = B[x], c = A[x] & ~FIN, z = s;
+                for (uint32_t i = 0; i < len; i++) { B[z] = base + len - i; A[z] = FIN | c; if (B[z] > maxtr) maxtr = B[z]; z = step(z, n, mask); }
             }
         }
-        single = clen[cid[1] - 1];
+        single = clen[(A[1] & ~FIN) - 1];
         /* gliding cycles: rotation by one maps the cycle to itself */
         uint32_t gliding = 0;
-        for (uint32_t c = 0; c < ncyc; c++) if (cid[rot(crep[c], n, mask)] == c + 1) gliding++;
+        for (uint32_t c = 0; c < ncyc; c++) if ((A[rot(crep[c], n, mask)] & ~FIN) == c + 1) gliding++;
         /* length histogram: distinct lengths with multiplicities, the five largest */
         printf("n %d cycles %u periodic %u maxper %u single %u maxtransient %u gliding %u\n", n, ncyc, periodic, maxper, single, maxtr, gliding);
         /* sort lengths descending (small arrays except for tiny n with many fixed points) */
@@ -65,7 +66,7 @@ int main(int argc, char **argv) {
         /* certificate of the longest cycle: one state on it */
         for (uint32_t c = 0; c < ncyc; c++) if (clen[c] == maxper) { printf("  longest from state %u", crep[c]); break; }
         printf("\n"); fflush(stdout);
-        free(stamp); free(pos); free(pre); free(cid); free(clen); free(crep); free(sorted);
+        free(A); free(B); free(clen); free(crep); free(sorted);
     }
     return 0;
 }

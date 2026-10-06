@@ -54,3 +54,13 @@ n 27 cycles 40 periodic 526744 maxper 240300 single 240300 maxtransient 34054 gl
   lengths 240300 67554 54333x3 44091 3240 3159 1755 594 ...  longest from state 132149304
 n 28 cycles 60 periodic 1048450 maxper 249165 single 249165 maxtransient 47968 gliding 7
   lengths 249165x4 8932x4 4004 1428 644x2 309x28 133x2 112 ...  longest from state 52294496
+n 25 cycles 16 periodic 683556 maxper 588425 single 588425 maxtransient 9252 gliding 6
+  lengths 588425 74525 3470x5 2950 275 5x6 1  longest from state 14392195
+n 26 cycles 33 periodic 385427 maxper 312156 single 312156 maxtransient 18758 gliding 8
+  lengths 312156 22815x2 6669x2 4537x2 2158 832 442 312x2 ...  longest from state 63334113
+n 27 cycles 40 periodic 526744 maxper 240300 single 240300 maxtransient 34054 gliding 10
+  lengths 240300 67554 54333x3 44091 3240 3159 1755 594 ...  longest from state 132149304
+n 28 cycles 60 periodic 1048450 maxper 249165 single 249165 maxtransient 47968 gliding 7
+  lengths 249165x4 8932x4 4004 1428 644x2 309x28 133x2 112 ...  longest from state 52294496
+n 29 cycles 14 periodic 2406827 maxper 1466066 single 833808 maxtransient 49468 gliding 14
+  lengths 1466066 833808 78474 21228 2871 1334 1218 580 ...  longest from state 281509819
