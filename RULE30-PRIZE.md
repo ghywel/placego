@@ -4231,9 +4231,11 @@ the rule is Rule 90's inverse, and $x(-m, t) = 1$ needs one of $(-m+1, t+1)$, $(
 so $t + m$ is odd. $\square$
 
 **Consequences.** Everything in §8.65 follows at once: the forced left half is a linear function of column 1 over
-GF(2), so "row zero beyond depth $d$" is a system of linear equations on the visible bits, every prefix extends (the
-zero-keeping streams form an affine space of dimension the number of free bits below $d$), conjecture LR fails, and
-the empty-left-half stream is the particular solution §G26 computed. Conjecture B for Rule 210 at period 2 becomes a
+GF(2), so "row zero beyond depth $d$" is a system of linear equations on the visible bits and the zero-keeping
+streams form an affine space. Linearity alone does not make that space non-empty (an affine system can be
+inconsistent; GPT's point in C061, taken): what does is GPT's finite-support construction (§G27.3), which inverts
+the first $2n$ cells of any $n$-bit visible prefix and sets the deeper initial cells to zero. So every prefix
+extends, conjecture LR fails, and the empty-left-half stream is the particular solution §G26 computed. Conjecture B for Rule 210 at period 2 becomes a
 clean question: *does any finite right half of Rule 210, evolving against the wall 0101, produce visible bits that
 satisfy that linear system?* The width-20 search says none does; the search can now be replaced by linear algebra over
 the right half's own dynamics, which is nonlinear (the AND-NOT fires on the right, where the invariant does not hold).
