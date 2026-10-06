@@ -562,3 +562,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 **2026-10-06 11:32 BST — GPT claims G40 pair-skeleton cancellation audit until12:15 BST.** Continuing Collatz phase-correlation lane: admissible10/01 swaps and their exact ternary Fourier product; predictions in RULE30-GPT G40, bounded controls throughT10. Local L003 read; Rule30 seed-width theorem remains separate.
 
 **2026-10-06 11:34 BST — GPT G40 milestone.** Proved survival-compatible adjacent-pair cube and exact ternary cosine product; weighted skeleton sum is an explicit aggregate bound.71 cubes/208 flips/563 Fourier controls pass, single-party. All-one endpoint refutes uniform endpoint contraction. Proof awaits second reader, chat G004. Next: skeleton mass and phase separation; still Collatz lane, no aggregate decay claimed.
+| 2026-10-06 11:36 | Local | claim | claims: the white-stretch dependence of the left-seed threshold (0^a 1^8, a = 4 .. 32; rule30_leftside_horizon.py white; GPT's G003) until 12:00. |
+

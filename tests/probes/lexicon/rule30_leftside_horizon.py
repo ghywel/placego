@@ -68,6 +68,19 @@ WIDE ADDENDUM, written 2026-10-06 before the second run (python3 rule30_leftside
   the seed's width against the stretch is the whole hypothesis: W = 16 = 2b fails at b = 8 and W = 20 = 2.5 b passes;
   W = 24 = 1.5 b fails at b = 16. The horizon gains about 1.9 steps per unit width on 0^8 1^8 and 1.4 on 0^16 1^16
   between W = 16 and 24, more than the 0101 law's one, because passing a stretch is worth a stretch.
+
+WHITE-STRETCH ADDENDUM, written 2026-10-06 before the third run (python3 rule30_leftside_horizon.py white), after GPT's
+  G003: the 2b threshold was measured with a = b only. Here the black stretch is fixed at b = 8 and the white
+  stretch varies, a = 4, 8, 16, 32, widths to 24, T = 100. The passing width P(a) is the least W whose best seed
+  survives two consecutive complete black stretches (H_L(W) >= 2b + a from some phase; the test uses H_L >= 2b + a).
+  LA1 (blind): P(a) is non-decreasing in a and P(32) >= P(4) + 2: a longer white stretch gives the left half longer
+      to lose the carrier, so more width is needed.
+  LA2 (blind): P(4) <= 16: with a short white stretch, width 2b already passes.
+  LA3 (blind): the horizon for W < P(a) is independent of a to within 2 steps (the seed dies in the second black
+      stretch at the same depth whatever the white stretch was).
+  CF  (counterfactual, must fail): P(32) <= 12 (a wide white stretch makes passing easier). It should not.
+  REFUTED-BY: LA1 to LA3 the other way; CF holding. What would change my mind about "W against b": P(a) growing
+  without bound in a would say the white stretch, not the black one, sets the hypothesis.
 """
 import pathlib, subprocess, sys, tempfile
 
@@ -133,7 +146,36 @@ def wide():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def white():
+    exe = build()
+    b = 8
+    with open(OUT, "a") as fh:
+        fh.write("# white-stretch run: 0^a 1^8, a = 4, 8, 16, 32, widths to 24, T = 100\n")
+    res, P = {}, {}
+    for a in (4, 8, 16, 32):
+        word = "0" * a + "1" * b
+        out = subprocess.run([str(exe), word, "24", "100", "8"], capture_output=True, text=True, check=True).stdout
+        with open(OUT, "a") as fh:
+            fh.write(out)
+        r = {int(ln.split()[2]): int(ln.split()[4]) for ln in out.splitlines()}
+        res[a] = r
+        P[a] = next((W for W in range(25) if r[W] >= 2 * b + a), None)
+        print(f"   0^{a} 1^8: " + " ".join(f"{W}:{r[W]}" for W in range(8, 25)) + f"   passing width {P[a]} (needs {2 * b + a})", flush=True)
+    ok1 = all(P[a] is not None for a in P) and P[4] <= P[8] <= P[16] <= P[32] and P[32] >= P[4] + 2
+    verdict("LA1 P(a) non-decreasing and P(32) >= P(4) + 2", ok1, f"P = {P}")
+    verdict("LA2 P(4) <= 16", P[4] is not None and P[4] <= 16, f"P(4) = {P[4]}")
+    lows = {a: [res[a][W] for W in range(8, min(P[x] for x in P if P[x] is not None))] for a in res} if all(P[a] is not None for a in P) else {}
+    ok3 = bool(lows) and all(abs(lows[a][i] - lows[4][i]) <= 2 for a in lows for i in range(len(lows[4])))
+    verdict("LA3 below the passing width the horizon is independent of a within 2 steps", ok3,
+            "; ".join(f"a={a}: {v}" for a, v in lows.items()) if lows else "no passing width for some a")
+    report("CF  P(32) is NOT <= 12", P[32] is None or P[32] > 12, f"P(32) = {P[32]}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "white" in sys.argv[1:]:
+        white()
+        return
     if "wide" in sys.argv[1:]:
         wide()
         return
