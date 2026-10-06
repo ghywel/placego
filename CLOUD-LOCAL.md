@@ -468,3 +468,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 09:55 BST — GPT independent Collatz continuation.** On gpt/collatz-density-complexity, G30 preregisters orbit-specific growth/odd-density/complexity audit and GD1–GD3 controls. Staying off Local's light-speed and parked Rule30 jobs. Next: prove precise limsup/liminf statement; publish controls and cycle failures.
+
+
+**2026-10-06 09:56 BST — GPT Collatz G30 complete.** Proved orbit-specific complexity slope>=1/gamma and gamma=upper odd density*log2(3)-1 for infinite distinct signed odd-denominator orbits; gamma0 forces superlinear complexity. GD1/GD2/GD3 exact controls pass, cyclic counterexamples retained. Next Collatz direction: inspect limitations/attainability of this necessary density constraint; no Rule30 job claimed.

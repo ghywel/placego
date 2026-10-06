@@ -2809,3 +2809,36 @@ For i<K, abs(N_i)<=2^(n-1)-D<2^(n-1). The K initial numerators are distinct and 
 **Preregistration.** Extend G29's distinct-orbit sojourn argument using the orbit-specific upper exponential growth rate gamma of the shifted numerator height, rather than its universal log2(3/2) ceiling. Predict liminf p(n)/n >= 1/gamma when gamma>0, and superlinear complexity when gamma=0. Audit the signed rational identity gamma = (limsup odd-prefix density)*log2(3)-1 under the explicit hypothesis of an infinite distinct orbit. This sharpens the existing W2 slow-growth sentence; no novelty or divergent-orbit claim.
 
 GD1: exact affine composition and multiplicative correction identities for D=1,3,5,9, starts -64..64 and prefixes through32, retaining zeros separately. GD2: finite distinct prefixes under a signed height threshold have different n-bit parity words (n1..8). Counterfactual: the density/growth identity holds for cycles too. Unexpected GD3: the fixed orbit -1 and positive cycle1,2 have non-vanishing correction terms, so both reject that counterfactual. Proof conclusions remain conditional, independently of these finite controls. Both standing startup checks passed this block.
+
+
+### G30 theorem: orbit-specific growth forces a complexity slope
+
+Fix odd D>0 and an accelerated Collatz orbit x_i=N_i/D with infinitely many distinct states. Define S_m as the number of odd numerator steps among indices0..m-1, delta as limsup S_m/m, and gamma as limsup log2(abs(N_m)+D)/m. Let p(n) count distinct length-n blocks in its infinite parity sequence. Then
+
+    0 <= gamma <= log2(3/2),
+    gamma = delta*log2(3)-1,
+    liminf p(n)/n >= 1/gamma             if gamma>0,
+    p(n)/n tends to infinity             if gamma=0.
+
+These are conditional statements, not an existence theorem. They refine the existing W2 slow-growth consequence rather than claim a new complexity mechanism.
+
+**Proof of the growth identity.** G29 shows abs(N_i) tends to infinity, hence the orbit never hits0 and abs(x_i) tends to infinity. With e_i=N_i modulo2, the exact identity is
+
+    log2(abs(x_(i+1))) - log2(abs(x_i))
+      = e_i*log2(3)-1 + e_i*log2(abs(1+1/(3*x_i))).
+
+The last term tends to0, including for negative x_i; its Cesaro mean therefore tends to0. Summing gives log2(abs(x_m))/m = (S_m/m)*log2(3)-1+o(1). Replacing abs(x_m) by abs(N_m)+D changes the logarithm by log2(D)+log2(1+1/abs(x_m)), whose quotient by m tends to0. Taking limsup proves the identity. The lower bound gamma>=0 follows from integer shifted height; G29's universal3/2 bound gives the upper bound. In particular delta>=1/log2(3). No convergence of the odd density is assumed.
+
+**Proof of the complexity bound.** For any epsilon>0 the definition of gamma supplies a finite C_epsilon>=1 with abs(N_i)+D <= C_epsilon*2^((gamma+epsilon)*i) for every i>=0 (absorb the finitely many early indices into C_epsilon). For all indices from0 through floor((n-1-log2(C_epsilon))/(gamma+epsilon)), when this upper limit is nonnegative, abs(N_i)<2^(n-1). The numerators are distinct; G29's affine/divisibility argument makes their length-n words distinct. Thus liminf p(n)/n >=1/(gamma+epsilon). Let epsilon decrease to0. For gamma=0 this proves divergence of the ratio, not merely an unbounded subsequence. Finite transients and the denominator affect only C_epsilon.
+
+**Consequence for a finite complexity slope.** If c=liminf p(n)/n is finite, then gamma>0 and
+
+    delta >= (1+1/c)/log2(3).
+
+For c=2 this requires upper odd density at least approximately0.94639; for c=3 at least0.84124. Attaining the universal lower slope c=1/log2(3/2) would require upper odd density1. These are necessary conditions, not attainable examples. If the upper odd density is exactly1/log2(3), then gamma=0 and complexity is superlinear. If the odd density actually converges, the growth rate also converges to delta*log2(3)-1. Nothing here proves that an actual infinite distinct orbit has critical density or exists.
+
+**Retained failure and unexpected check.** Dropping escape makes the density identity false. On fixed -1, odd density1 suggests growth log2(3/2), but the correction is log2(2/3) at every step, giving actual rate0. On cycle1,2, odd density1/2 suggests negative growth; the nonzero mean correction again gives actual rate0. A finite observed density does not imply a limiting density or asymptotic complexity slope.
+
+**Independent finite controls.** collatz_gpt_density_growth.py checks16512 exact affine compositions,15633 nonzero multiplicative identities using rational arithmetic, and8352 words from distinct finite prefixes within strict signed intervals. Both cyclic counterfactuals pass as counterexamples. The exact product identity checks the telescoping mechanism independently of logarithmic numerics; the infinite conclusion follows from the proof and its hypotheses. No divergent trajectory is sampled. The shifted-height growth control was independently established in G29.
+
+**Prior-art scope.** The divisibility/sojourn mechanism is Dubickas2009 Theorem5 and the project's W2 slow-growth observation (COLLATZ-PRIZE.md5), already read and credited in G29. The odd-density equation here is an elementary telescoping calculation with its hypotheses supplied, not a priority claim. The existing record's phrase “grows by sigma bits a step” can be replaced by the precise upper exponential rate above.
