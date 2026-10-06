@@ -1088,3 +1088,137 @@ pairs, from the already checked 524288-state certificate. At P=16 the quotient s
 $4^{16}=4294967296$ vertices: this factor-P reduction is not an efficient arbitrary-period
 algorithm. Next open target: an analytic potential or smaller sufficient summary on aligned
 pairs with a uniform period-scaled bound. No Local computation is requested.
+
+## G10. Exact aligned certificates through period 10, with two failed bounds (2026-10-06)
+
+**Question.** Before guessing an analytic potential, audit two necessary properties of the G8/G9
+candidate on the broader compatible domain: its cycle slope and its interval-debt range. This is
+GPT's reasoning/certificate lane, not Local's million-diagonal side computation. Read the current
+standing rules, PERIOD-TWO.md and shared messages; fetch found no new Claude replies. Both startup
+checks printed ALL CHECKS PASS, with G1's existing capped witness scope. The tools reuse G7's
+predecessor, G8's cycle reasoning and G9.4's quotient; no new external theorem was imported.
+
+CC0–CC4 were published in `1120bb8` before the first run. Its outcomes and AP0–AP2 were published
+in `9144d5c` before the aligned run. Certificate-expansion controls CC5/AP3 were written before
+the third command. Commands, from the repository root:
+
+- `PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/lexicon/rule30_gpt_cycle_obstructions.py`
+- the same command with `potential` appended;
+- the same command with `witness` appended.
+
+All used one GPT Intel CPU process, standard library; no GPU measurement, Local job or stored
+potential array. The run scope is common temporal P=1 through10, including periods which cannot
+occur as edge-generated powers of two. The latter distinction is kept throughout.
+
+### G10.1. Complete finite domain and every prediction
+
+| P | All pair / quotient states | Pair cycles | Cyclic pair states | Exact maximum clock-cycle mean | Least nonnegative max h | Exact full-line interval debt bound |
+|---|---:|---:|---:|---|---:|---|
+| 1 | 4 | 1 | 1 | 0 | 0 | 0 |
+| 2 | 16 | 2 | 3 | 1 | 0 | 0 |
+| 3 | 64 | 2 | 37 | 7/6 | 2 | 1 |
+| 4 | 256 | 4 | 43 | 7/3 | 6 | 3 |
+| 5 | 1024 | 9 | 416 | 15/8 | 10 | 5 |
+| 6 | 4096 | 12 | 1329 | 5/2 | 21 | 10.5 |
+| 7 | 16384 | 6 | 5895 | 5/2 | 37 | 18.5 |
+| 8 | 65536 | 24 | 16043 | 7/3 | 45 | 22.5 |
+| 9 | 262144 | 23 | 44002 | 1006/493 | 59 | 29.5 |
+| 10 | 1048576 | 33 | 75698 | 89/41 | 97 | 48.5 |
+
+**CC0 passed.** Every spatial cycle was checked bit by bit against the Rule30 diagonal equation;
+every maximizing recurrent clock loop was independently scanned and closed. Known maxima at
+P=1,2,3,4,8 matched G8. All clock means at P≤5 were additionally compared with independent
+scalar scans, not only their maximizing witnesses. Unique predecessor makes the complete pair
+cycle enumeration exhaustive; no sampling or spatial-length cutoff is used.
+
+**CC1 failed at P6 and P7:** the proposed plateau7/3 is false. It held at the other eight periods.
+**CC2 held:** every tested mean is at most5/2. **CC3 held:** every tested mean is strictly below3.
+Neither implies a theorem at arbitrary P or a small transient-debt budget. **CC4 passed:** bit
+repetition lifts the P4 witness to P8 with the same exact mean7/3. The valid-cycle slope2
+counterfactual was rejected. **Unexpected check:** non-power-of-two P5,7,9 were included; P7,
+unlike P8, attains exactly5/2, revealing a real zero-weight cycle for that slope.
+
+**Harness limitation retained.** The first shell command ran Python into a log and then printed
+the log without preserving Python's exit status. Its wrapper returned0. The script's return
+expression is1 after CC1 fails, but the original Python process status was not captured; it is
+not reported as observed. The potential and witness wrappers explicitly saved and propagated
+Python's status; both returned1 because AP1 failed, while both printed ALL CONTROLS PASS.
+These failures concern blind bounds, not broken instruments.
+
+**AP0 passed.** For every child pair (b,c), obtain its unique predecessor (a,b), calculate
+$d=\delta(b,0)$, and emit the quotient edge $(a,b)\to(S^d b,S^d c)$ with weight2d−5.
+This enumerates exactly $4^P$ edges. Reverse relaxation from0 gives nonnegative integer g;
+the final inequality $g(v)\ge2d-5+g(v')$ was checked on **every quotient edge**. At P≤8,
+an independent forward-child construction checks the lift at every phase on the original
+augmented graph. G8's known maxima all match. No cap of50million edge attempts was reached;
+P10 used1939298 attempts and1114920 successful increases.
+
+**AP1 failed at P10:** max h/2=48.5 exceeds4P=40. It held at P1 through9. **AP2 passed:**
+zero potential is rejected on a valid P4 delay4 edge. **CC5/AP3 passed:** independently expanded
+scalar certificates below verify the tight mean5/2 cycle and a path attaining debt48.5.
+Every failure is retained in the probe header; there is no revised post-run prediction.
+
+### G10.2. A valid period-7 cycle forces slope at least 5/2 on the broader domain
+
+The fourteen temporal words, least significant bit first in time, are
+
+`[97,101,56,57,14,46,67,75,112,114,28,92,7,23]`.
+
+Every cyclic triple is compatible. At recurrent clock phase2, one circuit advances35 steps
+and returns to phase2 modulo7. This is the scalar certificate printed by `witness`; the
+spatial period is14. If a bounded potential on the full compatible phase graph charges all
+edges at slope gamma, summing around this clock cycle gives $35\le14\gamma$.
+Therefore $\gamma\ge5/2$. This strengthens G8's7/3 lower bound for the **all-period, broader**
+compatible domain. It does not refute a lower slope on powers-of-two periods or edge-generated
+sides: P7 is not such a period, and G7 already excludes spatial pair cycles from the edge root.
+The candidate slope5/2 is attained, rather than refuted, by this cycle.
+
+### G10.3. A 39-edge period-10 witness refutes the proposed constant 4P
+
+AP3 follows tight quotient inequalities from the maximizing aligned pair (142,648) to a state
+with potential0. It then undoes each clock rotation to recover actual temporal words. In order,
+they are
+
+`[142,648,11,782,521,522,14,11,10,2,1011,995,32,642,831,762,394,672,755,190,153,202,238,72,843,527,392,778,271,11,521,13,9,8,14,12,4,1015,999,32,698]`.
+
+The first word is the older parent; the next39 words supply the delays and the final word is
+the last child. Starting at clock phase0, the exact delays are
+
+`[4,7,1,2,6,2,2,8,10,3,1,10,2,1,1,2,4,1,1,3,1,1,1,3,3,4,5,2,1,2,7,3,10,8,1,10,2,1,10]`.
+
+Every one of the39 triple equations was checked for all10 time residues. Independent scalar
+next-black scans give total146, so
+
+```math
+ 146-\tfrac52\times39=48.5>4\times10=40,
+ \qquad 2\times146-5\times39=97.
+```
+
+This is an exact finite counterexample to debt≤4P on arbitrary compatible periodic-word
+intervals. It refutes that proposed constant, not the existence of some bound C(P)=O(P).
+It is not an edge-generated path or a finite-seed prize counterexample. Period10 also cannot
+by itself refute the powers-of-two version. A finite path with a relatively high average is
+not an asymptotic slope counterexample; P10's largest recurrent slope is only89/41.
+
+**Why the certificate bound is sharp, rather than an artifact of relaxation.** Starting from0,
+every reverse increase stays below every feasible nonnegative integer potential: if the child
+value is at most that potential, so is weight plus child value at its parent. At termination
+g is feasible, hence the least such potential pointwise. Independently, the displayed path's
+reward97 forces any potential range to be at least97 by telescoping. The verified potential
+has range97. Thus the exact maximum interval excess at slope5/2 in this common-P10 domain is
+48.5; the path attains it and the certificate bounds all other paths.
+
+### G10.4. What moved and what remains
+
+G9.4's quotient has now been implemented and fully certified at **every common P≤10**.
+The table's C=max h/2 bounds every full-line interval at slope5/2, for all compatible path
+lengths. G9 transfers each budget to the normalized birth front with the same absolute C;
+L1 birth intervals cost at most C+1, or C+L for general L. This is a finite computer-certified
+theorem with a written transfer proof, not an extrapolation from a measured edge prefix.
+
+The broad analytic target must accept slope at least5/2 and a constant larger than4 in a
+putative C(P)≤constant×P. No uniform linear bound is proved, and the edge-generated power-of-two
+version remains a separate, potentially stronger target. Q7 and the local waiting-potential
+lead remain PART. Next reasoning intention: isolate which restrictions the edge root imposes
+on clock-aligned pairs before choosing an analytic potential family. A large unrestricted
+period16 computation is not proposed; no new Local run is requested.

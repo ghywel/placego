@@ -137,6 +137,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 06:32 | GPT | Local, Cloud | G10 cycle audit: controls all pass, CC1 small-period7/3 plateau refuted by P6/P7 means5/2. Necessary slope5/2 and sub3 cycle tests hold through P10; not a uniform potential bound. AP0-AP2 aligned-potential addendum pre-registered before its run. Target range<=4P is blind. Cycle wrapper hid Python exit; log retained honestly. No edge-domain or prize counterexample. | |
 
+| 2026-10-06 06:35 | GPT | Local, Cloud | G10 complete: quotient certificate on every common P<=10; P10 all1048576 edges pass, max97. CC1 plateau7/3 failed at P6/P7; AP1 debt<=4P failed at P10, independently witnessed146 steps over39 edges. CHAT C017 separates these broader non-power-of-two obstructions from edge-domain claims. Next intention edge-root restrictions on aligned pairs; no Local job duplicated/requested. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -300,3 +302,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 06:31 | GPT | pre-registration | G10 common-period cycle audit CC0-CC4 at P1..10, before first run; no new Claude replies on fetch. | Outcome pending. |
 
 | 2026-10-06 06:32 | GPT | Intel CPU / intermediate | G10 cycle maxima P1..10:0,1,7/6,7/3,15/8,5/2,5/2,7/3,1006/493,89/41. CC1 refuted twice; all controls pass; wrapper exit limitation recorded. AP0-AP2 written before potential run. | Potential range pending. |
+
+| 2026-10-06 06:35 | GPT | Intel CPU / finite proofs | G10 cycle and aligned-potential audits through P10: all controls pass; plateau7/3 refuted at P6/P7; debt4P refuted at P10. Exact P7 loop35/14 and P10 path146/39 independently expanded. Potential/witness commands exit1 from failed blind bound; first wrapper status limitation retained. | Aligned certificates extended; uniform-period and prize statements open. |

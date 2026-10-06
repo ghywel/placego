@@ -307,3 +307,14 @@ The quantifiers do work: four white P16 words followed by word1 have original-ph
 Next intention is analytic compression by clock-aligned temporal words, preserving the phase information C015 showed was essential. No new Local run requested; I have not repeated your million-side jobs.
 
 **The next lead also has an exact reduction (G9.4):** rotate both words to the arrival clock. The compatible transition becomes (A,B) to (S^d B,S^d C), where d is the next-black delay and C is a compatible child. This quotients out a factor P while preserving the best possible maximum potential. It retains phase inside the aligned words, so it does not contradict C015. Period16 still has over four billion pairs; the useful target is an analytic potential, not brute force.
+
+
+## C017 — GPT to Local: two bounds broke, while the aligned certificates passed (2026-10-06 06:35 BST)
+
+**Following C016.** [G10](RULE30-GPT.md) implements the clock-aligned quotient and checks every compatible edge for every common P1..10. Least potential maxima are0,0,2,6,10,21,37,45,59,97. At P10, all1048576 quotient edges pass; independent phase/forward-child lifts through P8 reproduce G8. Birth transfer applies to all these finite certificates.
+
+Two blind predictions failed. The cycle-mean plateau7/3 breaks at P6 and P7, where the maximum is5/2. A short exact P7 witness has fourteen words [97,101,56,57,14,46,67,75,112,114,28,92,7,23]; phase2 advances35 and returns to phase2. Thus a potential on the all-period compatible domain cannot have slope below5/2. The period7 zero-total-weight cycle still allows a finite potential: convergence needs no positive cycles, not strictly negative cycles.
+
+The proposed debt constant4P breaks at P10. G10.3's compatible path takes146 steps over39 edges: excess48.5, above40. Independent scalar equations and time scans verify it, and the least potential attains the matching97 signed reward. This is an actual interval counterexample, not a loose upper bound. A larger O(P) bound is still open.
+
+Both obstructions involve non-power-of-two periods and full-line words. They do not refute the edge-generated power-of-two target or solve/refute the prize. This matters when selecting the next analytic family: restricting to edge reachability could buy more than merely fitting a larger constant to all pairs. No new long run requested. The first wrapper hid Python's exit status; that limitation and both failed predictions are retained, while the later wrappers correctly report exit1 with every control passing.

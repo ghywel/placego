@@ -39,6 +39,26 @@ ADDENDUM before run with argument "potential":
  Cap50million edge-relaxation attempts per P; stopping is PARTIAL,
  not a certificate. REFUTED-BY: any edge/lift/known-value check fails,
  cap reached, AP1 too large, or zero counterfactual not rejected.
+OUTCOME aligned potential run: exit1, ALL CONTROLS PASS.
+ AP0 max_h P1..10:0,0,2,6,10,21,37,45,59,97; every quotient edge
+ passed; independent phase/forward-child lifts through P8 passed.
+ AP1 REFUTED at P10: debt97/2 exceeds4P=40; held at P1..9.
+ AP2 zero counterfactual rejected. No cap reached.
+CERTIFICATE EXPANSION before run with argument "witness":
+ CC5 control: expand the known P7 maximum into its scalar closed loop.
+ AP3 control: reconstitute only P10's potential and extract a tight path
+     from a maximizing state to potential0. Convert aligned pairs back
+     to actual words; scalar compatibility and elapsed time must give
+     signed reward97. This is independent validation of the existing
+     maximum, not a new blind discovery. AP1 must still fail at P10;
+     witness mode therefore returns1 even when all controls pass.
+OUTCOME witness expansion 2026-10-06 06:35 BST: exit1, ALL CONTROLS PASS.
+ CC5 P7 words [97,101,56,57,14,46,67,75,112,114,28,92,7,23],
+     recurrent phase2, one spatial circuit14, elapsed35, mean5/2.
+ AP3 P10:39 edges, elapsed146, signed reward97, terminal_h0.
+     All39 scalar triple equations at all10 residues and next-black
+     scans passed. Complete literal words/delays retained in G10.3.
+ AP1 remains refuted, so exit1 is expected. No control failure.
 """
 from fractions import Fraction
 from rule30_gpt_local_front import pair_cycles, maximum_mean
@@ -113,14 +133,14 @@ def main():
 
 
 
-def aligned_potential_main():
+def aligned_potential_main(periods=range(1,11),extract=False):
     """Complete quotient certificate; arrays reconstructed outside git."""
     from array import array
     from collections import deque
     from rule30_gpt_local_front import predecessor
     controls=[];blinds=[]
     known={1:0,2:0,3:2,4:6,8:45}
-    for p in range(1,11):
+    for p in periods:
         count=1<<(2*p);mask=(1<<p)-1
         head=array('i',[-1])*count;source=array('I');link=array('i');weight=array('h')
         def rotate(w,d):
@@ -167,6 +187,40 @@ def aligned_potential_main():
         print(('PASS' if valid else 'FAIL')+' AP0 P%d: quotient states/edges%d max_h%d debt%s maximizing(A,B)%r updates%d attempts%d'%
               (p,count,maximum,Fraction(maximum,2),(where>>p,where&mask),updates,attempts),flush=True)
         print(('HELD' if blinds[-1] else 'REFUTED')+' AP1 P%d: debt<=4P'%p,flush=True)
+        if extract:
+            from rule30_gpt_waiting import children
+            todo=deque([where]);parents={where:None};end=None
+            while todo:
+                pair=todo.popleft()
+                if values[pair]==0:end=pair;break
+                a,b=pair>>p,pair&mask
+                d=(b & -b).bit_length() if b else 0
+                for c in children(a,b,p):
+                    target=(rotate(b,d)<<p)|rotate(c,d)
+                    if values[pair]==2*d-5+values[target] and target not in parents:
+                        parents[target]=(pair,d);todo.append(target)
+            assert end is not None,'least potential must have a tight path to zero'
+            path=[];pair=end
+            while parents[pair] is not None:
+                prev,d=parents[pair];path.append((prev,pair,d));pair=prev
+            path.reverse();phase=0;elapsed=0
+            words=[where>>p,where&mask];delays=[]
+            for prev,target,d in path:
+                phase=(phase+d)%p;elapsed+=d;delays.append(d)
+                words.append(rotate(target&mask,-phase))
+            scalar=0
+            for word in words[1:-1]:
+                if word:
+                    while not bit(word,scalar,p):scalar+=1
+                    scalar+=1
+            valid_path=all(bit(words[j+1],t+1,p)==(bit(words[j-1],t,p) ^
+                    (bit(words[j],t,p)|bit(words[j+1],t,p)))
+                    for j in range(1,len(words)-1) for t in range(p))
+            assert valid_path and scalar==elapsed and 2*elapsed-5*len(path)==maximum
+            print('PASS AP3 exact maximal-debt witness: P%d edges%d elapsed%d reward%d terminal_h0'%
+                    (p,len(path),elapsed,maximum),flush=True)
+            print('AP3 words=%r delays=%r'%(words,delays),flush=True)
+
     fixed=[9,8,14,12,4,7,6,2,11,3,1,13]
     # The zero potential has a valid positive-weight edge of delay4.
     rejected=compatible(fixed,4) and max(waiting(8,4))==4 and 2*4-5>0
@@ -177,4 +231,13 @@ def aligned_potential_main():
 
 if __name__=='__main__':
     import sys
+    if sys.argv[1:]==['witness']:
+        best=Fraction(-1);chosen=None
+        for cycle in pair_cycles(7):
+            words=[node&127 for node in cycle];mean,cert=clock_loop(words,7)
+            if mean>best:best,chosen=mean,(words,cert)
+        words,cert=chosen
+        assert best==Fraction(5,2) and compatible(words,7) and scalar_certificate(words,7,cert)
+        print('PASS CC5 exact P7 witness: words=%r recurrent=%r mean%s'%(words,cert,best),flush=True)
+        raise SystemExit(aligned_potential_main([10],True))
     raise SystemExit(aligned_potential_main() if sys.argv[1:]==['potential'] else main())

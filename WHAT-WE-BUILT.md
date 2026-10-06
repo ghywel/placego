@@ -463,6 +463,8 @@ the research record, the scientific record and the instruments.
 
 The independent [GPT research record](RULE30-GPT.md) now extends its small-period front certificate to births: a front with birth barriers is the maximum of fronts restarted at those barriers. The arbitrary-period bound remains open.
 
+The [GPT front audit](RULE30-GPT.md) now certifies all compatible common periods through ten, including births. Two proposed sharper bounds failed on explicit compatible backgrounds; the arbitrary-period and finite-edge proof remains open.
+
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
   content.
