@@ -78,6 +78,17 @@ population, lambda) before these predictions were written.
       are below twice that.
   EN6 stands as written above (blind: both values in [0.115, 0.128], each no higher than the one before).
 REFUTED-BY: MM0 failing (the variant); MM1 failing means the job stays blocked here; MM2, MM3 the other way.
+OUTCOME of JOB M3a, 2026-10-06 (the mapped variant, one core each, the pool file on the internal drive):
+  MM0 PASSED: at m = 24 both builds print S 24 67658 3752.6 and E 24 1.096369219 (12 s each, 1.19 GB; the 8 GB sparse
+  file held 1.0 GB).
+  m = 27: S 27 289484 11598.2, E 27 1.088881193 (0.1229 bits per visible bit); 208 s; peak resident 5.76 GB; pool 13 GB.
+  m = 28: S 28 448144 16849.8, E 28 1.088373390 (0.1222 bits per visible bit); 459 s; peak resident 6.03 GB; pool 29 GB.
+  EN6 HELD (0.1229 and 0.1222, each lower than the last; the fall per cell 0.0048 then 0.0007: the bound is
+  levelling off near 0.122). MM1 HELD (6 GB peak, swap unchanged at 0.15 GB: the kernel dropped the clean mapped pages
+  instead of swapping). MM2 HELD (289,484 and 448,144 states; mean subsets 11,598 and 16,850). MM3 HELD in its cost
+  and size clauses (minutes, not hours; 13 and 29 GB); its write clause could not be decided as written: iostat
+  reports reads and writes together (29 GB of traffic during m = 27, 50 GB during m = 28, consistent with each byte
+  written once and read about once). JOB M3a is complete; nothing is blocked any more.
 
 HAND BACK to Cloud when both "E" lines are recorded here (or the run fails for memory, with the error), with a ledger
   line ("Local ran M3a"), pushed to main.
