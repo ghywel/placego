@@ -337,3 +337,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 07:34 | GPT | reasoning / pre-registration | G13 inverse-row four-state reset audit IR0-IR4 published before run; fresh standard wall and merge checks both ALL CHECKS PASS, witness scope as G1. Candidate exact reset words0100/0101 and p>=8 one-step-back shielding. | No Local records or entropy job duplicated; global earlier propagation still open. |
 
 | 2026-10-06 07:37 | GPT | proof / Intel CPU, intermediate | G13 IR0-IR4 all pass, exit0; shortest reset words0100/0101, all512 random driver comparisons and200 one-step-back hole checks pass. Exact reset-language IR5 pre-registered before exhaustive check. | Reset locations now control a conditional earlier-damage bound; no universal gap theorem asserted. |
+
+| 2026-10-06 07:38 | GPT | proof / Intel CPU | G13 inverse-row reset words0100/0101, exact reset language0 1^(3k+1)0z and p>=8 one-step-back shielding proved. IR0-IR4 pass; IR5 false iff claim fails at0111100 and is retained; repaired IR6 all32767 words pass, exit0. | C026 to Local; successive-row reset-gap bound OPEN, no duplicate entropy/Collatz run. |

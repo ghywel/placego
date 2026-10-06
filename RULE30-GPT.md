@@ -1526,3 +1526,139 @@ This is a conditional p3 result, not G12.1's universal four-black-window result.
 prove that every background at p3 shields the first bit, or that a later input at q>0 has
 finite influence on time0. C025 thanks Local for the labelled counts and records the
 criterion; the two-end lead remains PART and the earlier-propagation bound remains open.
+
+## G13. An exact four-state reset certificate for one inverse row (2026-10-06)
+
+**Question and scope.** Continue C024/C025's distinction between the injection row and an earlier
+row. Fetched shared work, including Local's Collatz measurements and entropy-pool variant; those
+jobs were not repeated. Fresh wall and merge startup commands both printed ALL CHECKS PASS,
+with the existing witness scope as G1. Used G12's own-row shielding and §8.2 Lemma4, and checked
+§8.19's inverse-row record before constructing the automaton. IR0–IR4 were pushed inf082231
+before their run. This is a finite certificate for one backward step, not a prize proof.
+
+### G13.1. Four states and the shortest reset words
+
+Fix a future row $y_j=v_j(t+1)$. Reconstruct an earlier row $x_j=v_j(t)$ leftwards, using
+
+```math
+ x_{j+1}=y_j\oplus(x_j\lor x_{j-1}).
+```
+
+The state before reading y_j is $(x_{j-1},x_j)$, one of00,01,10,11. The transition is
+
+```math
+ T_y(a,b)=(b,y\oplus(a\lor b)).
+```
+
+| State | Driver0 | Driver1 |
+|---|---|---|
+| 00 | 00 | 01 |
+| 01 | 11 | 10 |
+| 10 | 01 | 00 |
+| 11 | 11 | 10 |
+
+A word resets if it sends **all four** starting states to one state. These are synchronizing
+words in the usual automata sense; only that definition is borrowed from the abstract of
+[Maslennikova2014](https://arxiv.org/abs/1405.3576), not a theorem from that paper.
+
+Both0100 and0101 reset: after01 the image is{01,10}, after010 it is{01,11}, and the fourth
+bit sends both states to11 if0, or10 if1. No shorter word resets, as is also visible in the
+subset table below; these are the only length4 reset words. Reading010 alone leaves two
+states and does not reset. This distinction matters in depth bounds.
+
+### G13.2. Complete reset language, with a failed first characterization retained
+
+I initially proposed that every reset word contains010 followed by another bit. IR5 checked
+that claim and failed at0111100. This is a false characterization, not an instrument failure
+and not a refutation of the shortest words or the one-step theorem. The failure remains in
+the probe and here. The corrected exact statement is:
+
+**Theorem.** A finite driver word resets exactly when it contains a factor
+
+```math
+ 0\,1^{3k+1}\,0\,z,\qquad k\ge0,\quad z\in\{0,1\}.
+```
+
+**Proof by the reachable non-singleton images.** Begin with the full set F. Label
+S0={00,01,11}, S1={00,01,10}, C={00,11}, D={01,10}, B={00,10}, A={00,01}, E={01,11}.
+Their transitions, calculated from G13.1, are:
+
+| Image set | Driver0 | Driver1 |
+|---|---|---|
+| F | S0 | S1 |
+| S0 | C | D |
+| S1 | S0 | S1 |
+| C | C | D |
+| D | E | B |
+| B | A | A |
+| A | C | D |
+| E | singleton11 | singleton10 |
+
+A singleton remains a singleton under every later driver. The first collapse must therefore
+be from E on one further bit. E is reached only from D on0. Before any collapse, the image
+after a0 is S0,C,A orE. If it is E, one more bit already collapses. Otherwise, the next1
+always gives D, and successive ones cycle D,B,A,D. Leading ones, with no preceding0, leave
+S1. Hence the first visit to E follows a0, a run of ones of length1 modulo3, and another0;
+the next bit collapses. Conversely, each such factor collapses the full image, whatever
+prefix precedes it, since after its first0 the possible non-singleton image is among those
+just listed (or E, which collapses still sooner). This proves the exact language. The
+shortest factors have k0 and length4, giving G13.1. No probabilistic premise enters.
+
+### G13.3. Conditional propagation bound and one step backward from a hole
+
+Suppose two future rows agree at every depth greater than D. If their common future tail has
+010 at depths r,r+1,r+2 with r>D, the next driver is also common. The reset word010z sends
+both earlier-row states to the same pair at depths r+3,r+4. Every following driver is common,
+so the earlier rows agree at every depth≥r+3. Their last possible difference is at most r+2.
+If such a start lies at r≤D+G, this gives the conditional bound
+
+```math
+ D_{t-1}\le D_t+G+2.
+```
+
+The longer factors in G13.2 also reset, with their corresponding length in the bound. No
+uniform bound on G for our forced rows is proved. If the two future rows differ infinitely
+far left, there is no common tail to which this argument applies.
+
+**One-step theorem.** If a hole at q≥1 is followed by seven black wall cells, flipping only
+sigma(q) changes no cell at depth≥8 of the row at q−1. In particular this holds for every
+one-hole wall with p≥8, independently of all other right-column inputs.
+
+**Proof.** At q, G12 shows the two rows differ only at depths1,2,3. The seven-black window
+also fixes the common cells at depths5,6,7 to010, by G11's prefix formula. The depth8 cells
+are common by G12, even if their value is not fixed. Thus the earlier-row driver at depths
+5..8 is010z. G13.1 resets both states to a common pair at depths8 and9; all later drivers
+are common, so agreement persists. This improves a one-step damage bound without assuming
+that later holes are rays or that their time0 effects are linear.
+
+**Why this does not close the problem.** Repeating the argument would require sufficiently
+nearby reset factors in each succeeding common future tail. A gap-free assertion is false
+for unrestricted drivers: constant0 keeps states00 and11 distinct forever; constant1 cycles
+00,01,10 and preserves three possible states. These are the explicitly unexpected controls.
+A finite row's far-left zero tail contains no reset factor, so finiteness itself does not
+supply the missing reset-gap hypothesis. Failure to reset all four states also does not
+prove that a particular pair stays different. This certificate identifies a useful local
+mechanism and its exact domain; it supplies no all-depth one-hole LR or universal linear
+propagation bound.
+
+### G13.4. Commands and every outcome
+
+`rule30_gpt_inverse_reset.py`, one Intel CPU process, seed2026100613, standard library:
+
+- Default command: exit0, ALL CONTROLS PASS. IR0 checked all Boolean triples; IR1 enumerated
+  every word through length4 and found exactly0100,0101; CF rejected010 as a reset.
+- IR2 passed512 independently reconstructed scalar prefix/reset/suffix comparisons, all
+  four starting states each. IR3 passed200 hole comparisons, p8..32, eight arbitrary sigma
+  columns per period, row q−1 at q=p, through depth96. No depth≥8 differed.
+- IR4's constant0 two fixed states and constant1 three-cycle obstruction passed. These
+  reject a uniform-reset inference from the presence of black cells alone.
+- Argument `language`: IR5 exited1 at0111100; the candidate characterization was false.
+  It was published before the run and is retained unchanged.
+- After the subset-table repair, IR6 was published in0aa21c9 before its check. Argument
+  `language-repaired` exited0 and printed ALL RESET-LANGUAGE CONTROLS PASS for all32767
+  words through length14. The proof in G13.2 covers arbitrary lengths; the enumeration
+  independently checks its implementation rather than supplying that unbounded conclusion.
+
+**Lead status.** The two Condrey ends remain PART. One-step inverse-row propagation now has a
+specific finite reset certificate and a p≥8 theorem. A reset-gap bound over the successive
+rows is the named missing step; C026 gives Local the mechanism and the failed-language repair.

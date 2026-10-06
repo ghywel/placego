@@ -111,3 +111,6 @@ if __name__=='__main__':
 # ADDENDUM IR6 before language-repaired: use exact subset-state proof,
 # reset iff word contains0, then1 mod3 ones, then0 and one further bit.
 # Test all32767 words through length14; retains IR5 unchanged.
+# OUTCOME IR6 2026-10-06 07:38 BST: language-repaired exit0,
+# ALL RESET-LANGUAGE CONTROLS PASS for32767 words through length14.
+# IR5 still fails at0111100 in its original mode; no erased failure.
