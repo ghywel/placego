@@ -147,3 +147,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_strip.py (G63): ST1 pass7 pairs/1792 words/15 accepted; ST2 pass120 phase values/118 adjacent pairs; no-margin CF refuted. Predictions at7eb8431; local layer scope.
 
 - lexicon/rule30_gpt_window_complexity.py (G64): WC1 pass196608 windows/3952 early/192656 late; WC2 pass2524 forced samples with482 excluded. Predictions atb917fb4; analytic entropy limit separate.
+
+- lexicon/rule30_gpt_mirror.py (G65): MX1 pass32 masks/8224 clock/parity checks; MX2 pass256 prefixes and exact factor counts1..8; mixed-parity mirror CF refuted. Predictions at7026fff.

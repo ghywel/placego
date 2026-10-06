@@ -3901,3 +3901,42 @@ This is entropy of the union's temporal language. It does not assert that any on
 This synthesizes already recorded G27/G60 with the elementary binomial symmetry; no novelty claim or new prior-art theorem. The finite-right B problem remains open, and no Rule30 consequence is asserted. New details await Local's independent reading.
 
 **Next controls, preregistered NOT RUN.** MX1:32 odd-depth left masks through depth9, reflected onto G60's reconstructed right seed, scalar Rule210 through256 steps; clock, prescribed initial left row and global parity must hold. MX2: all256 odd-depth left masks through depth15, same full extension, first8 column1 even bits must cover all256 words. Compare the two-phase temporal factor count for lengths1..8 against the exact formula above using those finite prefixes. CF: adding any reflected finite seed preserves a Rule210 centre trace; refute with{1} versus{-2,1,2} at time2. These are bounded controls for full infinite-right light cones and the language map, not finite-global witness searches.
+
+
+### G65 controls outcome (2026-10-06)
+
+MX1 passes32 left masks/8224 clock and parity time checks through256 steps. MX2 realizes all256 distinct eight-bit even-time column1 prefixes; temporal factor counts for lengths1..8 are2,3,5,7,11,15,23,31, matching the exact formula. The mixed-parity reflected-addition counterfactual is refuted at time2 (centre0 versus1). Probe: `tests/probes/lexicon/rule30_gpt_mirror.py`, Python on GPT's Intel host, under1 s. These finite checks do not estimate entropy or construct finite global witnesses. No control failed. The extension/count block is complete; G66 addresses bounded support uniformly.
+
+
+## G66. Bounded left support retains zero fixed-column entropy (2026-10-06)
+
+Complete G65's quantifier audit. For every fixed R>=0 and k>=1, all full Rule2100101 realizations whose initial left support lies in[-R,-1] have zero temporal word-count entropy in column k, uniformly across those left rows, right realizations and temporal starting positions. An infinite right half is allowed. The bound depends on R,k. G65's positive union-language entropy is therefore a genuinely unbounded-left-support effect; it does not require any individual orbit to have positive entropy.
+
+**A finite Rule90 trace is localized near powers of two.** Let E be any finite initial row supported in[-R,R], and A=S+S^(-1) over GF(2). If 2^q<=t<2^(q+1), the Frobenius identity gives
+
+    A^t=product over b with the b-th bit of t=1 of
+        (S^(2^b)+S^(-2^b)).
+
+Every monomial exponent has absolute value at least2^q-(t-2^q)=2^(q+1)-t: the largest signed power cannot be canceled by more than the sum of all smaller ones. Thus (A^t E)(i)=0 whenever2^(q+1)-t>R+abs(i). No assertion that all remaining times are nonzero is made. This is a direct shift-polynomial bound, not a new prior-art theorem.
+
+**Apply it to the left perturbation.** G27's inverse classification makes every clock-compatible left row odd-supported and its evolution Rule90 with boundary0101. Compare a row e supported in[-R,-1] with the empty-left evolution. Their difference has zero boundary and evolves linearly. Extend e symmetrically to the positive side, forming a finite E supported in[-R,R]. Its global Rule90 centre is0 for all time by reflection symmetry; hence its left restriction is exactly this zero-boundary difference. The left-neighbor discrepancy at time t is (A^t E)(-1), which can be nonzero only within R+1 time steps before the next power of2. The even-time effective stream s differs from G26's dyadic baseline by that discrepancy; its odd-time left-neighbor values remain0. At t=0 any discrepancy is handled by the initial boundary margin.
+
+Let B={-1} union{2^j-1:j>=1}. Outside radius R+2 neighborhoods of B, the two neighboring effective even bits agree with the same constant baseline run. G61 then forces the intervening odd-time column1 bit0. Thus columns0 and1 agree with the baseline two-phase templates between these widened neighborhoods. Applying G63 iteratively shows column k agrees with the baseline spatial-period-six template outside radius
+
+    r=R+2k+4
+
+of B. This is a conservative enlargement: R+2 covers perturbations and neighboring even samples; each added column trims2 more time steps at each end. Activity inside these neighborhoods or farther right is not excluded.
+
+**Uniform counting.** Reuse G64's arbitrary-start early/late window argument with this fixed radius r. With L=N+2r, M the least power of2 at least L+1, Q=log2(M)+1, the combined family has
+
+    P_(R,k)(N) <= (M+r)*2^((2r+1)*Q)
+                  +8*(L+1)*2^(2r+1)
+               =O_(R,k)(N^(2r+2)).
+
+At a fixed start, every forced template is common to all left rows with this radius; arbitrary neighborhood bits already cover their differences. The bound is uniform over starting times and right realizations. Its logarithm divided by N tends to0. This proves the stated entropy result, including each particular finite compatible left row. It does not give a uniform bound as R or k grows with N.
+
+**Unexpected quantifier guard.** G65's arbitrary-prefix construction uses left support growing with the requested prefix length (at most2n-1 for n even-time bits). It supplies full parity-sparse realizations and union-language entropy1/2 when R is unrestricted. Thus taking a supremum over R before taking the temporal word-length limit changes the answer. The bounded-support theorem and the unbounded union do not contradict each other; neither yields a finite-global-seed exclusion. No Rule30 transfer is asserted.
+
+No experiment ran for this new lemma. It synthesizes G27/G63-G65 and the recorded Frobenius identity, with no novelty claim. Independent Local reading requested.
+
+**Next controls, preregistered NOT RUN.** BP1: all32 reflected odd-left masks through depth9, scalar Rule90 through512 steps; compare the trace at-1 with the left discrepancy of the corresponding full Rule210 mirror extension, and require it to vanish whenever the next-power gap exceeds10. BP2: for the same full realizations, columns1..6 through time500 must match the baseline period-six templates whenever farther than r=9+2k+4 from B. CF: the same strip/entropy bound is uniform over unrestricted left radius; rejected analytically by G65's exact union-language count, not by an empirical entropy estimate. These validate localization and conservative margins, not the entropy limit itself.
