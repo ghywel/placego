@@ -4011,3 +4011,90 @@ most $p + 1$ shapes, $0^a 1^b$ then one reset, and carries at most $\log_2(p+1)/
 0.40 for $p = 8$, against one condition per $p$ steps. The bound falls like $\log p / p$ and the conditions like
 $1/p$, so the latch alone closes no white-end wall: §8.45's positive-entropy gap in miniature. Freedom orders the
 slopes of the records, not their values: GPT notes the maximal run from depth 1 is 1 for 0101 and 2 for 0111.
+
+
+### 8.63 If period 2 had never been proposed: the next steps after Condrey, and a reframing of the work (2026-10-06)
+
+The owner, after §8.62: "Can you expand on what alternative next steps might be imagined, as if Condrey's period 2 had
+not been proposed. This becomes a full workflow reframing of where we should give our attention, as the current
+pathway and projection is built off a predicate that does not, necessarily, follow logically." This section is that
+expansion. It is reasoning, with one measurement started beside it; nothing here is a theorem.
+
+**1. What a next step has to be.** The prize is one orbit, and "eventually periodic" quantifies over every period $p$
+and every starting time $T_0$. Because the row at time $T_0$ is a finite seed, the only statements that bear on the
+prize are theorems over *all finite seeds* (or over all $T_0$ at once). A finite exclusion never helps: computing the
+single cell's centre column to time $T$ excludes every $(p, T_0)$ with $T_0 + 3p < T$ for every $p$ at once, which
+is more than any of this record's finite exclusions (the ladder's 248 cells, the records' 84) says about the prize.
+Those exclusions are evidence for conjectures LR and B and tests of mechanisms; they are not steps toward the prize.
+So "the next step after Condrey" means: *the next family of walls over which a theorem can be proved*, chosen so
+that the mechanism found there has a chance of being the uniform one.
+
+**2. The two coordinates of a wall.** A periodic column 0 is a word $w$ of period $p$. Two numbers describe how it
+treats the left half. Its *freedom* $f$, the share of white cells, is the share of steps at which column 1 is
+visible to the left half (Lemma 1, §8.2) and hence the rate at which the right half can inject bits; §8.62 is the
+ladder along $f$. Its *switch density* $s$, the number of colour changes per step, is the rate at which the wall
+interrupts the two mechanisms of Condrey's proof: next to a white stretch, column 1 can only turn black (the latch),
+and next to a black stretch of $r$ steps the forced left half is the checkerboard to depth $r - 1$ whatever column 1
+is (Lemma 1 again: $x(-k, t) = (k+1) \bmod 2$ whenever $\tau(t), \ldots, \tau(t+k)$ are all black). Condrey's walls
+have $s = 0$. The wall $0101$ has $s = 1$, the largest possible: it switches every step, so neither mechanism ever
+has time to act, and a third one appears there and nowhere else, the wheel (§8.8). Measured by $s$, period 2 is not
+the simplest non-constant wall; it is the one farthest from Condrey's.
+
+**3. The alternatives, as a map.**
+- *Along $f$ at small $s$: the one-hole walls* $0\,1^{p-1}$ (§8.62, GPT's §G11 to §G13). Freedom $1/p$, switch density
+  $2/p$. The checkerboard survives each hole as a prefix; past the hole the left half is chaotic; LR there is the
+  statement, measured at $0.8\,d/(p-1)$.
+- *Along $s$ at any $f$: the slow walls* $0^a 1^b$ with $a, b \to \infty$. One switch pair per period, and each
+  mechanism gets its stretch. What the left half sees per period is explicit: during the black stretch nothing
+  from the right (column 1 is invisible, the checkerboard forms by force to depth $b - 1$); during the white
+  stretch, column $-1$ copies column 1 ($x(-1, t) = \sigma(t)$ while the next wall cell is white), and column 1 from
+  a real right half is latched, $0^{a'} 1^{a - a'}$, one integer. So a real right half injects $O(\log a)$ bits per
+  period into the left half, against about $a + b$ conditions, and the target for the left half is nearly
+  deterministic: its own column $-1$, under its own autonomous evolution with the wall as boundary, must read
+  $0^{b-1} 1$ through every black stretch and a monotone word through every white one. This is the cleanest form of
+  the question anywhere on the map: a finite half-line seed, a periodic boundary, and a column that must be a fixed
+  word on long stretches for ever. The one-hole walls are its $a = 1$ corner. In the other corner, $a \gg b$, the
+  latch dominates and the statement must be B (LR is false for $0^\infty$).
+- *Along $p$ at $s \approx 1$: the by-period ladder.* Period 2, then 3 (two walls, $011$ and $001$), then 4. Each is
+  a new wall with the switches every step or two; the wheel of period 2 does not carry (§8.8), so each would need
+  its own structure. This is the ladder the project has been on. Its justification was that 0101 is the smallest
+  open case, which is true, and that the uniform argument must show itself somewhere, which is true of every
+  family.
+- *The single cell itself.* The prize's orbit has structure no general seed has (the universal left side, the nested
+  right side, the core). A direct proof that its centre column has unbounded complexity or unbounded runs would
+  need a handle on the core, and the two bands are provably far from it (§8.30). No foothold is known.
+- *A condition that forces a neighbour column periodic* (question 2's move). Next to a white stretch the latch
+  makes column 1 eventually constant; with $p \to \infty$ that is Condrey's white case through Jen's theorem. On
+  slow walls the latch holds per stretch, which is why they are the family where this move has the most to work
+  with.
+
+**4. What the measurements say so far.** §8.42 measured the horizon of real seeds for every word up to period 4 and a
+random word: total width plus 6 to 10 steps, the same law for all, which says that for *real* right halves the cost
+per step is about one bit whatever the wall, because the right half pays for column 1 too (§8.51). §8.60 and §8.62
+measured LR's records across $f$ and found the coin's law with a share between 0.6 and 1.0. Neither measured $s$ at
+fixed $f$. `rule30_records_word.py slow` (predictions SW0 to SW3, written first) now takes the walls $0^a 1^a$, which
+have 0101's freedom and switch densities $1/a$, for $a = 2, 4, 8, 16$: if the law stays $0.83\,d$ the checkerboard
+stretches cost nothing and freedom is the whole story; if it falls, switch density is a second axis and the slow
+walls are a genuinely different problem. **Measured** (8 threads, 7 minutes; SW0 and SW1 passed, no cap): $R/d$ at depth 48 is 0.812, 0.812, 0.667 and
+0.792 for $a = 2, 4, 8, 16$, against 0.83 for 0101 and the coin's 1. SW2, which predicted a fall to below 0.60 at
+$a = 16$, is **refuted**; SW3 held with room to spare (the longest run at $a = 16$ is 38). So for the left half
+alone, freedom is the whole story and the checkerboard stretches cost nothing: a free column 1 defeats them. What
+the slow walls change is not LR but B: the budget of a *real* right half, which the latch cuts to one integer per
+white stretch. The reframing below is adjusted accordingly.
+
+**5. The reframing, as a workflow.** Three changes, offered for the owner's decision (DECISION OWED):
+1. *Stop extending finite exclusions as a goal.* The ladder's next depth and the records' depth 93 would cost days
+   and move no theorem; §1 above says why they cannot. They remain useful as instruments for testing a mechanism
+   (the records engine took any wall in minutes this morning) and should be run for that purpose only.
+2. *Give the slow walls the attention period 2 has had, on the B side.* The measurement above says LR is no easier
+   there, so the target is B: a real right half, whose column 1 the latch cuts to one integer per white stretch,
+   driving a finite left half that must answer every black stretch with the fixed word $0^{b-1}1$. The first
+   theorem to try: with the right half's injection explicit ($O(\log a)$ bits per period against $a + b$
+   conditions), prove the bounded-debt count of question 1 for this family, where the "debt" is paid by a single
+   integer per period rather than by a chaotic column. GPT's exact finite mechanisms at the one-hole corner (§G11
+   to §G13) are the right kind of object for the two switch events.
+3. *Keep period 2's record as the measured reference, not the route.* Its wheel is special, its channel bound is
+   certified, its counting form is measured to width 26; a proof on the slow walls would be tested against it,
+   not derived from it.
+What does not change: the uniform count of question 1 is still the only shape that wins, whichever family it is
+first proved on, and the method (predictions first, failures kept, two readers) is the same on every wall.
