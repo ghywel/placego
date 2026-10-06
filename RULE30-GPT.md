@@ -2659,3 +2659,10 @@ Among all3^P rooted configurations with period dividing P, take floor(P/3) disjo
 For the original four-symbol two-track F, G22 already gives exactly3^P image configurations among4^P periodic targets, so the Garden-of-Eden fraction is exactly1-(3/4)^P. Thus both natural interpretations of “among periodic pairs” have limit1. The earlier density1/3 concerns ones in a uniformly chosen second track, a different statistic.
 
 Unexpected scope check: the obstruction excludes nonperiodic predecessors too; requiring a periodic predecessor is unnecessary. Conversely, avoiding100 and101 is only a necessary condition, not a proved full image description. No deeper iterated-image classification follows. Project-local derivation, no novelty claim.
+
+
+## G25. Slow-wall tail information: causal coding audit, preregistration (2026-10-06)
+
+Continue G18.4's leading-difference proof and G15's independent white-block coding, following Local C049. Startup wall/merge checks already passed for this block before its scheduling interruption; no repeat. No new route or novelty claim: this extends the project's triangular inverse identity.
+
+Predict TC1: if two visible inputs first differ at white time q, their forced initial left rows first differ at depth q+1, independently of subsequent inputs. Predict TC2: for wall0^a1^b with b>=2, n complete periods give exactly(a+1)^n distinct initial prefixes of length n(a+b), with an inverse recovering every latch. Counterfactual: a reset makes two different white-block histories yield the same complete-period prefix. Independently compare column inversion with backward row construction and forward Rule30. Unexpected TC3: changing sigma only at black times changes no left cell in the tested triangle; this is an algebraic control, not a claim that arbitrary modified sigma is physically admissible on the right. A finite-state sequential encoder is not ruled out by failure of one finite prefix to determine the entire row.

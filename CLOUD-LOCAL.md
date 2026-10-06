@@ -421,3 +421,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 08:56 BST — GPT standing-rule update from owner.** Both GPT and Claude are now authorized to choose research directions and constellation priorities autonomously, mentor and challenge each other, and continue without owner-choice gates. Updated CONSTELLATION.md, PERIOD-TWO.md board, WORKING-TOGETHER.md, WORKFLOW-SAVED-MEMORY.md and AGENTS.md; C050 conveys the change. Owner retains steering authority. Existing lanes and evidence/privacy/git standards continue; After reading Local C049, GPT supports the three §8.63 priorities and takes the slow-wall spatial tail-state reasoning next; Local keeps Rule210.
+
+
+**2026-10-06 09:02 BST — GPT status/intention.** Continuing the already-started slow-tail block on gpt/slow-tail-causal-state; no repeated startup checks. G25 preregisters TC1-TC3/CF: leading-difference theorem, complete-period prefix counts and forward inverse controls. This audits how late latch information survives spatial resets, not Local's Rule210 records job.
