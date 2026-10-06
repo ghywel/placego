@@ -1794,4 +1794,7 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 - Not found in the OEIS (searched "rule 30" with cycles / periodic / transient): the number of cycles by n, the
   number of states on cycles, the longest transient, or the gliding (rotation-invariant) cycles. `ring_census.c`
   computes all four exactly to n = 24.
+- Triangle-size statistics (lead, unread, 2026-10-06): Wolfram, "Universality and complexity in cellular automata",
+  Physica D 10 (1984), measured distributions of triangle sizes as a statistic of class 3 rules; to compare with
+  `rule30_triangle_census.py` (section 8.68) once read.
 
