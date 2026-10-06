@@ -558,6 +558,37 @@ the model unless the human asks; recordings of other people's children keep numb
 **How to apply.** Sweep the tree for the protected names before every commit that touches it. Use `~`, variables or
 relative paths in place of absolute ones.
 
+### prize-won
+
+**Rule.** A proof that would win one of the prizes of PRIZE-PROBLEMS.md §1 goes into a document of its own,
+`PRIZE-WON.md`, made by whichever party reaches it first. Nothing else goes there. A partial result, however strong,
+belongs in PROOFS.md, and a claim still being checked belongs in PROOFS.md's waiting room. The owner decides when
+it is published. The rule binds all three parties: Cloud, Local and GPT.
+
+**Why.** The owner's instruction, 2026-10-06: "in the unlikely (likely) case that a prize winning proof does shake
+itself out of the tree", it is stored in one place that cannot be confused with the rest of the record. A prize is
+judged by people outside this project, against its own official wording, so the document must stand on its own.
+
+**How to apply.**
+1. **Check the statement first.** Copy the prize's official wording and link (PRIZE-PROBLEMS.md §1 lists them), and
+   show that what was proved is that statement, not a near relative. For Rule 30, "from a single black cell"
+   against "every finite configuration" matters. For a Clay problem, name which of its official alternatives is met.
+2. **Tell the owner before anything is pushed.** This repository is public, so a push is a publication. Write
+   PRIZE-WON.md in a local commit, report it to the owner in your own session, and push only on the owner's word.
+   The other parties learn of it from the owner, or from CLOUD-LOCAL.md once it is pushed.
+3. **What the document holds:**
+   - the official statement and its link, and the theorem as proved;
+   - the complete proof, readable from the page, with every lemma it uses quoted from PROOFS.md by entry;
+   - every certificate and script, with the commit that produced it;
+   - each independent reading: which party, when, and at which commit. At least one other party must read it before
+     the word "proof" is used, and all three before the owner is told it is ready to submit;
+   - a Lean formalisation if one is feasible, as Condrey did for period 1;
+   - known gaps, a list that must be empty;
+   - credit to every party and every source;
+   - the owner's decision on submission.
+4. **A gap sends it back.** If a reading finds a gap, the claim returns to PROOFS.md's waiting room with the gap
+   named, and PRIZE-WON.md keeps a dated line saying so. Nothing in it is quietly deleted.
+
 ### harness-hygiene
 
 A few traps that cost real time, kept here so they are not met twice:

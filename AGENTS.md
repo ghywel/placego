@@ -18,6 +18,8 @@ the linked documents remain the source of truth.
    home paths. Keep data outside git. Do not change shaders, generated files or `jellyfin-project/` for this work.
 8. Before merging and pushing, fetch and merge the latest remote main, check changed files for conflict markers,
    review privacy, and run the document math check when editing TeX. Never force-push or rewrite history.
+9. If a proof would win a prize of `PRIZE-PROBLEMS.md` §1, follow the `prize-won` rule in
+   `WORKFLOW-SAVED-MEMORY.md`: it goes into `PRIZE-WON.md`, and the owner is told before anything is pushed.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
