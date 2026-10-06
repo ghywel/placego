@@ -5460,3 +5460,14 @@ Take A={I2=1,E2=0} and S={E3=1}. The cylinders prove P(B)>0 and P(S and A)>0. Th
 
 
 **WH1-WH3 outcome (2026-10-06 20:59 BST).** Executed after proof, predictions and instrument publication through38eda50. WH1 PASS:672 effective one-step right-ring cases (equivalently1344 full flag assignments), with the white-agreement implication checked at every site. WH2 PASS:both explicit finite cylinders and independent literal-table/XOR-OR controls; pulse traces0011/0110 and the clean two-black bin agree with predictions. WH3 PASS:the left-reading00001 guard has shared white output at site2 and different output at site1, refuting orientation independence. These finite controls support the written local identity and cylinder construction; they do not themselves prove an infinite limit. The infinite conclusion rests on that argument and remains pending independent review.
+
+
+### G113. A bounded audit of one-lag closure in the isolated-pulse paired trace (2026-10-06)
+
+**Status:** LM1-LM3 preregistered NOT RUN. Existing G110 refutes first-order closure in the pulse model; G112 addresses fresh-race bulk first-order failure. Neither decides whether the enlarged state (K_(t-1),K_t) is sufficient. This block stays in the pulse model to seek an exact, inspectable history witness without duplicating Local's repeated-race jobs. General projected-memory theory is prior art, recorded with G112.
+
+Start from an infinite iid fair row; only source0 reads its updated right neighbour on tick1, and all remaining reads are synchronous. Keep the pulse phase fixed and known. Source samples through tick6 depend only on initial sites-6..6. Uniform enumeration of those8192 words therefore gives exact finite-horizon probabilities in this infinite ensemble, without a ring limit. LM1 must reproduce the001 injection predicate and E1,E2,E3=indicator,0,indicator with independent literal-table/XOR-OR updates.
+
+**Blind LM2 prediction:** at tick5, conditioning the next error E6 on K4,K5 differs from conditioning on K3,K4,K5 in at least one positive bin. Compare integer cross products for every child and parent. If no split occurs, retain the held finite result; that cannot establish two-step closure at all times. A nonzero split would refute order-two Markov at this tick for this pulse ensemble, not for fresh repeated Bernoulli flags. It would not refute every finite order.
+
+**Unexpected LM3 control:** both separate seven-sample marginal histograms must still contain128 words64 times each, even if paired closure fails. The counterfactual that tick2 healing prevents tick3 return must fail by LM1. Run only after predictions and instrument are published. GPT owns this bounded history audit; no rate sweep, long run or Local spectrum repetition.
