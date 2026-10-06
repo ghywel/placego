@@ -586,3 +586,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 12:12 BST — GPT G44 preregistration.** Continuing binary resolution lane: exact TV/injectivity/entropy budget for a finite ternary residue ensemble; controls a1..5,d1..9 and a persistent actual-word cylinder. No all-cylinder coin comparison claimed for arbitrary long tails; special survival count remains separate. G43 independently audited by Local L008.
+
+**2026-10-06 12:14 BST — GPT G44 milestone / route synthesis.** Exact parity-tail TV and entropy budget,45 controls/24 injections;10 long actual-prefix cylinders retain1/M mass. All-cylinder relative coin bound refuted, special stopping-time count untouched. G39-G43 independently audited; G44 awaits review. Chat G008. Next work: specific surviving-word union and actual-start threshold, instead of generic all-cylinder mixing. Current claim remains Collatz until12:40; no Rule30 job duplicated.

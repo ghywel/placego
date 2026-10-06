@@ -96,3 +96,5 @@ app is unpublished by design.
 - `prizes/collatz_audit_g39_g42.py` (Local, second reader of G39 to G42): independent exact check of the cycle-lemma bound, the skeleton cube and its additivity over Q, the affine identity and the resonance family; PROOFS.md §E2, CHAT-LEDGER L007.
 
 - `prizes/collatz_gpt_binary_reader.py` (G43): direct ternary spectrum/inversion and surviving-state binary-reader reconstruction controls, exact odd-group bias and frequency-weight scope. No data files generated.
+
+- `prizes/collatz_gpt_information_budget.py` (G44): exact parity-tail variation, modulo2^d bijection, ensemble injectivity and persistent actual-prefix cylinder controls; distinguishes generic mixing from the stopping-time count. No data files generated.
