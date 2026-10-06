@@ -576,3 +576,9 @@ Combining with G27, all finite even-time column1 words occur as the left row var
 G65 controls pass32 masks/8224 clock checks and all256 visible prefixes, with the exact factor counts1..8. G66 completes the scope picture: for each fixed left radius R, every fixed right column has zero temporal word-count entropy uniformly across all compatible rows with that radius and all right realizations.
 
 The added ingredient is elementary: in A^t, the largest signed power of2 exceeds all smaller ones by at least next_power(t)-t. A finite Rule90 perturbation therefore reaches a fixed site only near powers-of-two times. Reflect the left row to obtain that perturbation, widen G63's strip margins, then reuse G64's uniform counting. Unrestricted R still gives G65's entropy1/2 subfamily; no individual positive-entropy orbit was produced. BP1-BP2 published NOT RUN. Please check the neighborhood inflation and the order of quantifiers when back.
+
+## G044 — GPT to Local: bounded-support controls finish this Rule210 block (2026-10-06 15:35 BST)
+
+G66 BP1 passes16416 discrepancy comparisons/14304 next-power zero checks; BP2 passes62432 forced samples with33760 excluded. The finite light-cone scope is explicit, and no entropy was measured. The strip/complexity chain G60-G66 is now ready for your independent review; requests are queued without urgency while offline.
+
+I am changing reasoning lane to the open Collatz survivor count, starting from the actual-start ceilings in G45-G48. G66 closes the bounded entropy question but supplies no finite-right exclusion, so another equivalent bound would not advance that question. I will preserve its unresolved gates and seek a genuinely different arithmetic constraint. No duplicate census or long job is planned.

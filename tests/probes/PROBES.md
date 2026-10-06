@@ -149,3 +149,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_window_complexity.py (G64): WC1 pass196608 windows/3952 early/192656 late; WC2 pass2524 forced samples with482 excluded. Predictions atb917fb4; analytic entropy limit separate.
 
 - lexicon/rule30_gpt_mirror.py (G65): MX1 pass32 masks/8224 clock/parity checks; MX2 pass256 prefixes and exact factor counts1..8; mixed-parity mirror CF refuted. Predictions at7026fff.
+
+- lexicon/rule30_gpt_bounded_perturbation.py (G66): BP1 pass16416 trace comparisons/14304 next-power zero checks; BP2 pass62432 forced samples,33760 excluded. Predictions at4ad587c; infinite-cone scope preserved.
