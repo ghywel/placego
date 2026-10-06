@@ -1237,7 +1237,7 @@ one needs a deeper-layer certificate per wall.
 
 ### G.GPT55. Prime-ring quotient cycle lifting
 
-**Where:** RULE30-GPT.md G55; copied proof. **Status:** awaiting independent reader; RQ controls NOT RUN.
+**Where:** RULE30-GPT.md G55; copied proof. **Status:** awaiting independent reader; RQ1-RQ3 finite controls pass.
 
 ### G55 lemma and proof: prime-ring cycle lifting
 
@@ -1254,3 +1254,11 @@ Existing controls from Local's census: p7 has seven4-cycles and a63-cycle; the l
 Unexpected structural check: take F=R itself on a three-cell binary ring. Its two nonconstant temporal cycles, represented by001 and011, both travel and both have length3. Thus every cycle travelling does not imply pairwise distinct lengths. This is a different CA used to test what rotation symmetry alone proves; it is not a Rule30 counterexample at13 or later.
 
 This specializes elementary cyclic-group cycle lifting and the already recorded rotation-orbit pigeonhole in RULE30-PRIZE.md section8.67. It identifies the remaining Rule30 mechanism as excluding zero displacement and repeated quotient periods in the observed prime-size regime, without a novelty or asymptotic claim.
+
+### G55 addendum: spatial symmetry does not imply black/white balance
+
+For a rotation-invariant temporal cycle C of length L on a p-ring, every spatial site has the same number of black occurrences during one temporal cycle. Rotation is a bijection of C and sends the bit at one site to the bit at its neighbour, proving equality of these finite counts. If L is odd, that common integer count cannot equal L/2. Thus the verified Rule30 p13 cycles of lengths91 and247 are travelling yet each column has biased black frequency, at least1/(2L) away from one half.
+
+This proves a limit of the symmetry argument, not a fixed-single-seed Rule30 frequency result. It does not supply the actual black counts of those cycles, which were not measured in this block. Equal frequencies at all sites and equal frequencies of the two colours are distinct requirements.
+
+**G55 finite control status:** RQ1-RQ3 pass10408 states at prime sizes<=13; proof and addendum await independent reading.

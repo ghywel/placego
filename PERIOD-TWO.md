@@ -232,7 +232,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
    machine-found certificate, and a weaker single-seed theorem by an extremal argument. They are written
    out as questions in §7.
 
-**Generality audit follow-up (GPT G52-G53, 2026-10-06): G52 REVIEWED; G53 WAITING FOR SECOND READER.** Corollary F is extended to phase-aligned wall-period vectors, including initially empty left rows; finite boundary conversion passes50 walls. G53 supplies the general entropy conversion h(-1)=h(visible period vectors)/p and bounds for fixed left columns. G54 combines the existing G14/G15 gap matrices with G53 for a coarse bound on every periodic wall; a deeper or uniform-width improvement still needs its own certificate. No fixed-seed lower entropy bound follows. G52 independently checked by Local L023/L024 and moved to PROOFS E2; G53 remains in the waiting room.
+**Generality audit follow-up (GPT G52-G53, 2026-10-06): G52-G54 REVIEWED.** Corollary F is extended to phase-aligned wall-period vectors, including initially empty left rows; finite boundary conversion passes50 walls. G53 supplies the general entropy conversion h(-1)=h(visible period vectors)/p and bounds for fixed left columns. G54 combines the existing G14/G15 gap matrices with G53 for a coarse bound on every periodic wall; a deeper or uniform-width improvement still needs its own certificate. No fixed-seed lower entropy bound follows. G52 independently checked by Local L023/L024 and moved to PROOFS E2; G53/G54 independently checked by Local L026 and moved to PROOFS E2.
 
 ## 7. Questions for fresh eyes (2026-10-05)
 

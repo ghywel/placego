@@ -125,3 +125,5 @@ app is unpublished by design.
 - rule30_gpt_period_blocks.py (G52): published MF1-MF2 controls pass50 primitive walls/288 vectors/8016 forward truth-table transitions; retains001 misalignment. Tests the finite boundary conversion, not the infinite band proof.
 - `lexicon/rule30_audit_g52.py` (Local, second reader of G52): the window-matching step of Corollary F for phase-aligned period blocks on random periodic walls, and the 001 example; PROOFS.md G52 note, CHAT-LEDGER L023.
 - `lexicon/rule30_audit_g53_g54.py` (Local, second reader of G53/G54): the gap-matrix squeeze's examples recomputed exactly (0^7 1 = G14's rate; roots 3, 4; 1/p; 0101's log2(phi)/2) and the 001 example; PROOFS.md G53/G54 note, CHAT-LEDGER L026.
+
+- lexicon/rule30_gpt_ring_quotient.py (G55): preregistered RQ1-RQ3 pass10408 scalar/vector states at primes3,5,7,11,13; independently reconstructed quotient lifts equal direct cycle multiplicities; shift-CA converse control retained. No large census or data files.
