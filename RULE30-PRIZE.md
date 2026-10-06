@@ -4160,3 +4160,31 @@ background, and four (91, 103, 107, 111) are conjugate to rules whose single cel
 so their "bands" were frames of nothing at all. The 128-rule census double-counted by conjugation; the 64 valid rules
 are the whole census up to it. (Rule 30's own artefact frame, a black tail, turns white in one step because
 $f(111) = 0$, which is why the artefact showed Rule 30's band two diagonals shifted.)
+
+
+### 8.65 Rule 210, the one sibling: conjecture LR is false there (2026-10-06)
+
+§8.64 found that among the 64 rules whose single cell has a light-speed edge and a quiescent white tail, exactly one
+other rule is nonlinear and left-permutive: Rule 210, $x' = l \oplus (\lnot c \land r)$. Its inverse reads
+$l = x' \oplus (\lnot c \land r)$, so the forced left half of §8.39 exists for it with the OR of Rule 30's inverse replaced by
+an AND-NOT, and `records_word.c -DRULE210` runs the same search (predictions Z0 to Z3 and CF written first; the run took
+seconds). The question was whether Rule 30's rigidity at period 2, conjecture LR with its records at $0.83\,d$, belongs to
+the rule or to its class.
+
+**It belongs to the rule.** Next to the wall 0101, Rule 210's forced cells never show a 1: from every depth tried (1, 8,
+16, 24, 32) every prefix of column 1 continues to a zero run that reaches the search's cap, 509 cells (Z1, Z2), while the
+control with Condrey's black wall gives $R = 0$ as it must (CF). An independent greedy computation by the column
+recurrence confirmed zero runs of 112 cells from depth 8 for all 16 prefixes, and found an explicit column 1, visible
+bits $1011\,0000\,1111\,1111$ then zeros, whose forced left half is **empty at time 0**: the left half-line is white and
+stays consistent with the wall for ever. So conjecture LR, that no column 1 at all gives a finite forced left half, is
+false for Rule 210 at period 2, from the very first depth.
+
+**What is not settled.** Conjecture B, that no finite configuration keeps the centre 0101, is open for Rule 210: a search
+over every right half of width up to 20, the wall at its left end, found none that keeps 0101 for 300 steps (Z3; most die
+within a few steps, as for Rule 30). So Rule 210 is a rule where the one-sided conjecture fails and the two-sided one
+may still hold, which is the gap between LR and B made concrete on a rule where it can be studied cheaply.
+
+**What it means for the record.** Rule 30's records ($R \approx 0.83\,d$), the exact halving of survivors at the forced
+cells, Theorems A to E and the band lemmas were all derived for Rule 30's OR. The band exists on Rule 110 and 118 too
+(§8.64); the rigidity of the forced left half does not survive the change of one gate. "Rule 30 is special" now has
+two measured senses: the white-diagonal clock in its band, and LR. CONSTELLATION.md row 14 is updated.

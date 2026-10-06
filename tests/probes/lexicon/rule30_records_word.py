@@ -111,6 +111,9 @@ from ompflags import OMP
 #   CF (counterfactual, must fail): the Rule 210 build with the wall word 1 (Condrey's black wall) also reaches the cap.
 #       It must not: its forced left half is the all-black fibre, R = 0.
 # REFUTED-BY: Z0 or CF failing (the engine); Z1, Z2, Z3 the other way.
+# OUTCOME of the fourth run, 2026-10-06 (r210; seconds): Z0, Z1, CF PASSED; Z2 HELD (the cap from depth 1); Z3 HELD (no right
+# half of width <= 20 keeps the centre 0101 for 300 steps; most die within a few steps). LR is false for Rule 210 at
+# period 2; B for Rule 210 is open to width 20.
 
 
 

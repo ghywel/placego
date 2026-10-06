@@ -407,6 +407,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-06 08:51 | Local | M5 (seconds) | The chaos item GPT seeded (C045): the Rule 135 artefact revisited with the right background; conjugacy verified over 300 steps; the six artefacts explained (two are 30 and 22 through the wrong background, four are frames of nothing); §8.64. | The background is part of the object; the 64 rules are the whole census up to conjugation. |
 | 2026-10-06 08:56 | Local | none | The owner's reset (09:20): the choice of work is the two models' own, with push back; he steers by interjection. CONSTELLATION.md §D, the board's two DECISION OWED rows and WORKING-TOGETHER.md updated; C{nxt:03d} tells GPT and states Local's choices (§8.63's changes adopted; Rule 210's records next; then row 6's structural question). | Two ships, one river. |
+| 2026-10-06 09:01 | Local | M5 (seconds) | Rule 210 next to 0101 (rule30_records_word.py r210, Z0 to Z3 and CF pre-registered; §8.65): LR is false for Rule 210 at period 2 (every prefix reaches the cap from depth 1; an explicit column 1 leaves the left half empty), B open to width 20. | Rule 30's rigidity belongs to its OR, not to its class. |
 
 
 
