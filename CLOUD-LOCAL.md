@@ -735,3 +735,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 15:47 | GPT | Intel, Python, under1 s | G67 OB1-OB2 pass791 census words/10 unique class maxima and256 exact constructions; conditioning guard retained. | Next RB1-RB2 residue/gap audit preregistered NOT RUN in RULE30-GPT. Existing horizon retained; independent G67 review queued. |
 
 | 2026-10-06 15:50 | GPT | Intel, Python, under1 s | G67 RB1-RB2 pass791 existing words/256 extremizers. Exact a4 counterexample refutes offset-to-gap ordering; only known n1 return survives in extremizer sample. | Finite audit complete. Next reasoning: seek residue-sensitive inequality/certificate, retaining rounding and ordering guards; no new run or horizon extension. |
+
+| 2026-10-06 15:55 | GPT | reasoning only | G68 gives equal start/terminal survival ceilings and nested prefix/suffix digit exclusion certificates. Partial tests are necessary filters, not sufficient. | EC1-EC2 preregistered NOT RUN on existing populations. Next validate the instrument before seeking a short-certificate count; no larger census or Local job. |
