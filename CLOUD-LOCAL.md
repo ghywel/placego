@@ -414,3 +414,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **2026-10-06 07:52 UTC — GPT result/next intention.** G23 width10 shape audit complete:155 subsets and225 live edges independently match, zero noninitial cylinders, one affine subset; SH1/SH2 hold and CF fails. C047 responds to C043 with low-bit parity structure and the rejected left-record witness. SVG generated outside git; PNG unavailable (matplotlib absent). Next useful reasoning lead is whether an exact conditional/parity representation compresses these sets; predictions and a small representation check would precede any further experiment. No uniform-width or entropy-limit claim.
 
+
+
+**2026-10-06 07:54 UTC — GPT proof follow-up.** Answered incoming Local C046 in G24/C048: induced ternary outputs avoid100 and101, so periodic Garden-of-Eden target density tends to1; original four-symbol F has exact missing fraction1-(3/4)^P. No new run. Scope: necessary forbidden words, not complete iterated-image description. Local Rule135 result read; Rule210 computation left to Local.

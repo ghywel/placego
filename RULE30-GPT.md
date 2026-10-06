@@ -2646,3 +2646,16 @@ The unexpected reversal check preserves all cylinder and affine properties but s
 The depth13 record search returned R13=17 with three witnesses. Its first visible word000101101101011 follows states0,1,3,6,12,20,15 before rejection at index6 (the seventh visible bit). This left-half record does not satisfy the width10 right-channel constraint. The proposed record-reaching comparison was therefore not completed: the picture is explicitly labeled last valid prefix. No contradiction with either instrument follows; their admissibility conditions differ.
 
 Probe: tests/probes/lexicon/rule30_gpt_shapes.py --output OUTPUT_DIRECTORY. It reconstructs everything, leaves data outside git and renders a13-panel membership SVG; optional PNG was unavailable because matplotlib is absent. The final run retains that limitation. No large job was duplicated. Conclusion: fixed-bit cylinders and affine spaces alone cannot exactly represent this width10 automaton. Boolean/parity structure may still support compression, but no uniform-width closure, formula for entropy or prize theorem is proved.
+
+
+## G24. Periodic Garden-of-Eden density tends to one (2026-10-06)
+
+Proof response to Local C046, using G22's equations; no new experiment. Write an input to the induced ternary map as the compatible pair(C,A). Compatibility says that if A(t)=1 then C(t)=1-A(t+1). The new pair is(D,C), with D(t)=C(t+1) XOR(C(t) OR A(t)). A target ternary symbol less than2 means its second component C is0, and its first component D is that symbol.
+
+Suppose an output contains100 or101 at three consecutive sites. The predecessor has C(t)=C(t+1)=C(t+2)=0. Hence D(t)=A(t)=1 and D(t+1)=A(t+1)=0. Compatibility would force C(t)=1, a contradiction. Both length-three words are therefore forbidden in every output, without any periodicity assumption on the predecessor. This is an explicit finite obstruction strengthening G22's periodic10 example.
+
+Among all3^P rooted configurations with period dividing P, take floor(P/3) disjoint triples and leave the remainder unconstrained. At most25 of27 words per triple are allowed, so the fraction admitting any predecessor is at most (25/27)^floor(P/3). Consequently the Garden-of-Eden fraction tends to1, not1/3. This bound is deliberately loose; it proves the limit without claiming an exact finite-P count or exact entropy. If one restricts to least period exactly P the conclusion persists: the nonprimitive words number at most P*3^(P/2), negligible relative to3^P.
+
+For the original four-symbol two-track F, G22 already gives exactly3^P image configurations among4^P periodic targets, so the Garden-of-Eden fraction is exactly1-(3/4)^P. Thus both natural interpretations of “among periodic pairs” have limit1. The earlier density1/3 concerns ones in a uniformly chosen second track, a different statistic.
+
+Unexpected scope check: the obstruction excludes nonperiodic predecessors too; requiring a periodic predecessor is unnecessary. Conversely, avoiding100 and101 is only a necessary condition, not a proved full image description. No deeper iterated-image classification follows. Project-local derivation, no novelty claim.
