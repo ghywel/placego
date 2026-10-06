@@ -6519,7 +6519,7 @@ Every angle satisfying (2) has a finite integer continued-fraction prefix follow
 
 ### G145. The silver half-phase code fails every finite repeat allowance (2026-10-07)
 
-**Status and target.** Symbolic Q7 proof, independent review pending. No experiment. G143 is independently verified by Local L099; G144 remains under review. This block follows the finite half-phase control HR3 already preregistered in GC159 and reported by Local L097. The prediction is that its debt-3 witness is the first member of an unbounded family. The counterfactual is a uniform finite debt bound at this phase. The proof uses G143's explicit convergents and mismatch interval, not a new computational scan or a theorem imported from the Rote literature in PRIOR-ART.md.
+**Status and target.** Symbolic Q7 proof, independently verified by Local L101. No experiment. G143 and G144 are independently verified by Local L099 and L100. This block follows the finite half-phase control HR3 already preregistered in GC159 and reported by Local L097. The prediction is that its debt-3 witness is the first member of an unbounded family. The counterfactual is a uniform finite debt bound at this phase. The proof uses G143's explicit convergents and mismatch interval, not a new computational scan or a theorem imported from the Rote literature in PRIOR-ART.md.
 
 Put beta=2-sqrt(2), r=sqrt(2)-1 and c_s=floor(s*beta+1/2) modulo2. Let p_n/q_n be beta's convergents, with n=1 giving 1/1 and n=2 giving 1/2. For every odd n>=3, put Q_n=q_n+q_(n-1). Then the period-Q_n prefix equality interval is exactly
 
@@ -6572,3 +6572,23 @@ The passing phases t*beta modulo2 and the excluded phases 1/2+t*beta modulo2 are
 G145 and the wall's necessary finite-radius repeat bound force u_half to have infinite support. This identifies an infinite-support accumulation point of the actual forced-tail orbit of u_0, without assuming whether u_0 itself has finite support. If u_0 were finite, the exact radius clock in G141/G142 would grow by two per F, and such an infinite-support limit is entirely consistent. No contradiction to a finite u_0 follows. Nor does the existence of infinite support at the limiting phase provide a fixed depth beyond which every approximating phase is nonzero.
 
 **Unexpected prefix guard and remaining obligation.** Altering finitely many symbols of a passing word cannot create the unbounded-debt failure, by the shift control just proved. Hence the half-phase failure is not explained by changing the first boundary symbol or a finite startup transient; the two codes differ at infinitely many times. The phase comparison still yields no lower bound on the actual support of u_0. Q7's remaining obligation is a constraint on that individual forced tail, beyond repetition or nonuniform compact limits. No finite witness or prize claim follows.
+
+### G147. At a fixed irrational angle, finite-tail phases are empty or countable and dense (2026-10-07)
+
+**Status and target.** Symbolic Q7 corollary, independent review pending. No experiment or general symbolic-dynamics novelty claim. Uses the verified wall coding G140, radius clock G141/G142 and fixed-radius count G129. G145 is independently verified by Local L101. Prediction: varying the phase can give an almost-every-phase exclusion without deciding one exceptional phase. Counterfactual: density of the phase orbit would promote a finite-tail realization to an interval of finite-tail phases. The countability argument refutes that promotion. The phase-dependent repeat record is G143-G146; no external theorem beyond the elementary density of an irrational rotation is imported.
+
+Fix any irrational beta in (0,1). For phases rho modulo2 let c^(rho)_s=floor(s*beta+rho) modulo2, and let
+
+    E_beta = {rho : Phi(c^(rho)) has finite support}.
+
+Then E_beta is countable and forward invariant under rho -> rho+beta modulo2. It is either empty or dense. In particular almost every phase has an infinite forced initial left tail, at every fixed irrational angle, including the exceptional phase-zero angles of G144. This statement does not exclude any specified phase in E_beta, or establish that E_beta is nonempty.
+
+**Proof.** Distinct phases modulo2 give distinct visible words. Indeed the two shifted half-circle partitions disagree on a nonempty open interval of the length-two circle whenever their shifts differ modulo2. The forward orbit s*beta modulo2 is dense and enters that interval, giving a differing symbol. The uniqueness of Phi therefore makes the phase-to-initial-row map injective.
+
+There are only countably many finite binary initial rows: at radius at most L there are at most 2^L. Injectivity gives at most 2^L phases in E_beta with radius at most L. Taking the union over positive integer L makes E_beta countable, hence of Lebesgue measure zero. The empty row is not compatible with the clock, as in G141.
+
+The conjugacy gives F(Phi(c^(rho)))=Phi(c^(rho+beta modulo2)). Forward evolution preserves finite support, so E_beta is forward invariant. If it contains rho, it contains its whole dense irrational forward orbit. Its radii on that orbit are exactly R(rho)+2t by the radius clock. This proves the empty-or-dense dichotomy, and explains why countability and density do not conflict.
+
+**Uniform-radius qualification.** Every fixed-radius phase set is finite. Consequently, along any convergent sequence of pairwise distinct phases in E_beta, the radii tend to infinity: a bounded-radius subsequence would lie in a finite set, contradicting distinctness. An interval of finite-tail phases is impossible, but a dense exceptional set of finite tails is allowed. No uniform-radius conclusion follows from density of one orbit.
+
+**Unexpected check and remaining obligation.** The same countability argument applies at the silver angle even though G143 passes every repeat test and G145 fails every allowance at another phase. Conversely, assuming just one finite phase would supply a dense countable orbit with steadily growing radii, fully consistent with the infinite-support limits in G142/G146. Thus an almost-every-phase theorem, residual-set argument or dense collection of infinite tails cannot settle the individual boundary-phase candidate. E_beta has not been shown nonempty, and its countability is not a prize solution or an all-phase exclusion. The next obligation remains a spatial constraint on Phi(c^(0)), rather than another phase-counting estimate.

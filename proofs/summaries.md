@@ -1728,3 +1728,7 @@ Moving the starting point of the silver-angle rotation by half a turn makes a de
 ## W146
 
 Every time shift of the passing silver code still passes with some finite allowance. Yet these shifted codes can approach the half-phase code, which fails every finite allowance. The required allowances grow without bound. Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A bound for each word cannot be used as a uniform bound for the whole family.
+
+## W147
+
+At any fixed irrational angle, only countably many starting phases could produce a finite initial left tail, so almost every phase has an infinite tail. But if even one finite phase exists, time evolution gives a dense orbit of finite phases with growing radii. Each fixed radius allows only finitely many phases. This is why an almost-every-phase result cannot settle the particular boundary-phase code we are investigating. No finite phase has been constructed.

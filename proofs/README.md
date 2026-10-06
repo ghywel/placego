@@ -413,3 +413,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This
   does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A
   bound for each word cannot be used as a uniform bound for the whole family.
+- [At a fixed irrational angle, finite-tail phases are empty or countable and dense](W147-at-a-fixed-irrational-angle-finite-tail-phases.md):
+  At any fixed irrational angle, only countably many starting phases could produce a finite initial left tail, so
+  almost every phase has an infinite tail. But if even one finite phase exists, time evolution gives a dense orbit
+  of finite phases with growing radii. Each fixed radius allows only finitely many phases. This is why an
+  almost-every-phase result cannot settle the particular boundary-phase code we are investigating. No finite phase
+  has been constructed.
