@@ -6,7 +6,8 @@ and p*q when b != 0. It also checks the census's distinct-length cases against G
 PROOFS.md G55 note; chat L027.)
 
 COMMAND:    python3 tests/probes/lexicon/rule30_audit_g55.py      (about a minute)
-OUTCOME, 2026-10-06: ALL CHECKS PASS. Every cycle obeys the lifting law on p = 5, 7, 11, 13, 17, 19; the zero-displacement
+OUTCOME, 2026-10-06: ALL CHECKS PASS (G56 part added the same day: theta(Rx) = theta(x) + 1 everywhere; phase sums = direct
+  displacements; (q, b) = (4, 0), (9, 5) at 7, (14, 8), (17, 0) at 11, (7, 12), (19, 5), (20, 2), (64, 4) at 13). Every cycle obeys the lifting law on p = 5, 7, 11, 13, 17, 19; the zero-displacement
   families are exactly 7 (seven 4-cycles) and 11 (eleven 17-cycles); the criterion matches distinctness at every p.
 """
 def step(x, n, mask):
@@ -61,4 +62,46 @@ for cyc in cyc_all:
     fails += not eq
     rows.append((len(cyc), counts[0], round(counts[0] / len(cyc), 4), eq))
 print("G55 addendum, p = 13: (length, black count per site, frequency, equal at all sites):", sorted(rows, reverse=True))
+print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
+# G56 (added 2026-10-06): the moment phase theta(x) = m(x) w(x)^-1 mod p. Check theta(Rx) = theta(x) + 1 on every
+# nonconstant state, and that summing e_j = theta(F(x_j)) over a quotient cycle of theta-0 representatives gives the
+# displacement b found directly; report (q, b) at p = 7, 11 against GPT's G024 values.
+def theta(x, p):
+    w = bin(x).count("1"); m = sum(i for i in range(p) if (x >> i) & 1) % p
+    return (m * pow(w, -1, p)) % p
+def rotk(x, p, mask, k):
+    for _ in range(k % p): x = rot(x, p, mask)
+    return x
+report = {}
+for p in (5, 7, 11, 13):
+    mask = (1 << p) - 1
+    for x in range(1, mask):
+        fails += theta(rot(x, p, mask), p) != (theta(x, p) + 1) % p
+    qmap = {}                                               # quotient map on theta-0 representatives, with e
+    for x in range(1, mask):
+        if theta(x, p) != 0: continue
+        z = step(x, p, mask)
+        if z == 0 or z == mask: qmap[x] = (None, 0); continue
+        e = theta(z, p); qmap[x] = (rotk(z, p, mask, -e), e)
+    done = set(); qb = []
+    for x0 in qmap:
+        if x0 in done: continue
+        order, y = {}, x0
+        while y is not None and y not in order and y not in done:
+            order[y] = len(order); y = qmap[y][0]
+        if y is not None and y in order:                     # a new quotient cycle starting at y
+            cyc, v = [], y
+            while True:
+                cyc.append(v); v = qmap[v][0]
+                if v == y: break
+            q = len(cyc); b = sum(qmap[v][1] for v in cyc) % p
+            z = y
+            for _ in range(q): z = step(z, p, mask)
+            orb = {}; t = y
+            for k in range(p): orb[t] = k; t = rot(t, p, mask)
+            fails += orb.get(z, -1) != b
+            qb.append((q, b))
+        done.update(order)
+    report[p] = sorted(qb)
+print("G56: theta(Rx) = theta(x) + 1 and sum of phase increments = direct displacement; (q, b) by p:", report)
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
