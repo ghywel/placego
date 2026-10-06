@@ -239,3 +239,5 @@ app is unpublished by design.
 - rule30_gpt_trace_coupling.py (G108): CT1 passes135296 paired cases and8736 conditional classes after85f0972. Both trace projections bijective; masks depend only on past ideal prefixes. Four-input E1=1-I0 guard passes. Conditional support counts supply entropy; no unconditional information or survival law.
 
 - rule30_gpt_error_echo.py (G109): afterf9aa008, EH1 passes32 local kernels; EH2 passes128 initial words,16 injections all101, masks{1} and{-1,1} eight each. Independent XOR damage propagation agrees. No repeated-race or global survival claim.
+
+- rule30_gpt_pulse_memory.py (G110): PM1 passes128 words afterf922142. Each current ideal-bit bin has8 previous injections and56 noninjections; E3=E1. Both marginal trace laws uniform. Paired first-order Markov equality fails in this pulse model; repeated-iid table belongs to Local.

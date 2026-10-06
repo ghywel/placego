@@ -1,4 +1,5 @@
-"""G110 PM1 preregistered NOT RUN: publish before execution.
+"""G110 PM1 predictions published throughf922142 before execution.
+PASS:128 words; both current-bit bins split8 versus56 by past error.
 128 fair initial words; isolated pulse, literal updates to tick3.
 Current K2=(ideal bit,0), past E1 predicts E3; bins8 versus56.
 Both marginal four-sample laws uniform despite pair memory.

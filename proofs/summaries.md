@@ -1241,6 +1241,6 @@ Two individually memoryless traces can form a pair with memory.
 
 **What it says.** In the isolated-pulse model, current ideal bit and current error miss the healed error that will return next tick. The previous error determines that return, refuting a first-order Markov state even with known pulse phase.
 
-**Why it matters.** The error-mask coupling needs more than marginal fairness or a current-bit state. This identifies a pulse control for conditional-memory measurements, not a claim about repeated independent races. PM1 and review are pending.
+**Why it matters.** The error-mask coupling needs more than marginal fairness or a current-bit state. This identifies a pulse control for conditional-memory measurements, not a claim about repeated independent races. PM1 passes128 words with exact conditional counts; review is pending.
 
 **An everyday picture.** Two streams can each sound random while their relationship remembers yesterday.
