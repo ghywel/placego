@@ -5526,3 +5526,12 @@ At tick4 the white source has no error, but both immediate neighbours have error
 
 
 **DP0-DP2 outcome (2026-10-06 21:16 BST).** Ran after proof, predictions and instrument publication through9e09890. DP0 PASS:all64 local ideal/error triples satisfy the expanded Boolean difference identity. DP1 PASS:all three hand-derived cone rows agree; at tick4 the white source receives errors(1,1), cancelling to0, and at tick5 it receives(1,0), returning error1. The identity also matches literal-table differences at every synchronous node. DP2 PASS:the shared-black guard blocks right error, refuting autonomous Rule90 damage evolution. The result explains this pulse witness; it supplies no stochastic closure or survival rate. Independent review pending.
+
+
+### G115. Audit an injection-indicator state against the full observed pulse history (2026-10-06)
+
+**Status:** IS0-IS2 preregistered NOT RUN. Responds to Local L070's proposed injection-history state. In the isolated-pulse ensemble of G113, define F=E1, the actual injection indicator, not merely the occurrence of a raced read. If F=1 its injection time is always tick1, so at fixed tick5 its age is already known. Test the more generous candidate X5=(F,K4,K5), retaining both recent paired observations.
+
+Enumerate the same8192 initial cone words and use the independently checked update formulations. IS0 must recover F=E3 and the001 predicate, all bin totals, and the known unaugmented zero-child0/896 versus parent40/1872 witness. IS1's blind prediction is that at least one positive refinement by the entire observed prefix K0..K5 has a different E6 rate from its X5 parent. Integer cross products decide equality exactly. A failure would refute this specified candidate in this pulse ensemble; a held finite table would not prove closure at all times.
+
+**Unexpected IS2 prediction:** the shallower comparison using only K3 may hold after conditioning on F, even if the full-prefix comparison splits. This tests whether a diagnostic can miss deeper observed information. Retain either outcome. The counterfactual that omitting F closes the one-lag state must fail by IS0. No repeated-race injection definition is imported, no Local production job is repeated, and no all-orders conclusion is predicted. Publish instrument and predictions before execution.

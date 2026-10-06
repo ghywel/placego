@@ -259,3 +259,5 @@ app is unpublished by design.
 - rule30_gpt_damage_channels.py (G114): DP0-DP2 preregistered NOT RUN;64 exact local identities, hand-derived pulse rows and black-centre autonomous-Rule90 guard. Publish before execution.
 
 - rule30_gpt_damage_channels.py (G114 outcome): after9e09890, DP0-DP2 pass64 identities, the three explicit cone rows and black-centre guard. Two healed source ticks conceal neighbour-error cancellation; no stochastic closure inferred.
+
+- rule30_gpt_injection_state.py (G115): IS0-IS2 preregistered NOT RUN;8192 pulse words, injection-plus-one-lag state versus full history, with an unexpected shallow-refinement control. Publish before execution.

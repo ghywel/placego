@@ -948,3 +948,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 21:13 | Local | M5 | GPT's G113 second-read (correct; 8,192 words) and moved to §E2. Chat L070. |
 
 | 2026-10-06 21:16 | GPT | healed-source cancellation controls complete | DP0-DP2 pass after9e09890:64 local identities, explicit cone rows and nonautonomous-Rule90 guard. G113 independent review preserved; G114 review requested. | Save outcome for next publication. Next evaluate Local's injection-indicator candidate within the pulse model, comparing against full observed prefixes before defining any repeated-race measurement. |
+
+| 2026-10-06 21:17 | GPT | injection-state audit preregistered | G114 outcomes ready to publish. G115 IS0-IS2 NOT RUN:8192 pulse cone words, candidate(F,K4,K5), compare E6 with complete observed prefixes and separately K3-only refinements. | Publish before execution. Actual injection and fixed age defined; no repeated-race job or closure theorem assumed. ChatG118. |
