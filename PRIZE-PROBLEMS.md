@@ -13,6 +13,9 @@ unchanged; this document keeps the prizes as a whole.*
 **Update, 2026-10-05, evening.** §7 records what the Rule 30 work carries to the other prizes. The strongest
 transfer is Collatz: the same counting structure, measured to 30 bits, plus the arithmetic that Rule 30 lacks (§7.1
 to §7.3).
+§8 (2026-10-06) maps the proofs collected in PROOFS.md onto this pool: strong reach for Rule 30 Problem 1 at
+other periods and for Collatz, moderate for Problem 2 and some Erdős problems, none for the five other Clay
+problems.
 
 No open prize problem is one computation away. The one where heavy computation was the leading line of attack,
 Navier–Stokes, was claimed on 2026-09-08, for the case with a smooth external force, and Clay is evaluating the
@@ -216,3 +219,82 @@ and the prize is about every single case.
 
 **The Collatz sections (7.1 to 7.5) moved on 2026-10-06, at the owner's request, to [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md)**, as its sections 1 to 5, unchanged. That file has its own honest
 summary, board of leads and reproduction table. Every reference in the record now points there.
+
+---
+
+## 8. The grimoire against the pool: where PROOFS.md's proofs may apply (2026-10-06)
+
+*The owner's request: a big-picture look at the problem pool of §1, asking where the proofs collected in
+[PROOFS.md](PROOFS.md) may have applications. This is an assessment by Cloud from the statements in PROOFS.md (its
+sections A to G as of 2026-10-06 midday), not a new result. The proofs themselves were not re-checked here, and
+every "applies" below is a lead to test, not a claim.*
+
+**The proofs fall into six families of tools.** Grouping them by method, not by topic, shows where they can travel:
+1. **Permutivity and exact bijections.** Lemma 4 (the newest bit enters once, as an XOR), C.4 (the leftward speed
+   of information is an identity), C.7 (the first three columns are affine in column 1), and on the Collatz side
+   F.1 (the remainder lemma) and G45 (actual-start survival is a residue class cut by a ceiling). Each says that some
+   new input enters bijectively, so it can be counted exactly.
+2. **Windows of periodicity cannot outlast an edge.** Theorems A, B, A′, A‴, A⁗, Corollary F, Lemmas B1 to B3,
+   Jen (Proposition 7) and GPT's half-line form of the periodic-pair obstruction (E.7). These are Jen's mechanism
+   with a clock: a periodic stretch must end before the information from the edge arrives.
+3. **Rotation-coded inputs are excluded.** Theorems E and E″ (no Sturmian column 1 works, for any arcs at a typical
+   rotation number). On the Collatz side, GPT's G34 and G35 exclude Beatty-like parity sequences for rational orbits.
+   These are the same kind of theorem in two problems.
+4. **Certified counting of constrained languages.** The squeeze (B′ 19), with its spectral-radius bound certified
+   in integer arithmetic by a Collatz–Wielandt vector, and the all-period width relaxations (E.3, E.6).
+5. **Exact statistics of the uniform measure.** C.3 (the shrink theorem for white triangles), C.5 (the triangle
+   law), C.6 (gliders on prime rings, by pigeonhole), and the linear siblings (Proposition 5, by Lucas's theorem;
+   the parity invariant for Rule 210).
+6. **Collatz survival and Fourier structure.** G39 to G47, all second-read except G47:
+   - G39 to G41: survival conditioning, the skeleton phase product, and linearly many free pairs;
+   - G42: primitive characters can stay resonant;
+   - G43: the exact ternary spectrum of a binary reader;
+   - G44: resolution of a finite residue ensemble;
+   - G46 and G47: formal ceilings are unbounded, and the first-deficit family realises only by a return.
+   Add Dubickas's external bound on divergent orbits (F.2).
+
+**The pool, ranked by how far the grimoire reaches:**
+- **Rule 30 Problem 1 at other periods ($10k): strong, already partly reached.** Families 2 and 4 are stated for
+  general periodic walls: E.3 holds for every $p \ge 2$ and E.6 for every odd $p \ge 5$, in width relaxations.
+  Theorems A, B and Jen with a clock do not use $p = 2$ specially. The record works on period 2, but the grimoire is
+  already a period-by-period programme. *Lead:* list which entries in A and B hold for every primitive word as
+  written, and which use 0101. Any entry that is fully general narrows Problem 1 to the cases it leaves out.
+- **Collatz (¥120M): strong.** Families 1 and 6 were built for it. Family 3 is a bridge: Theorem E's argument
+  (rotation-coded drivers are excluded) and G34/G35 (Beatty-like parity sequences are excluded) should be compared
+  line by line. One general theorem may cover both, roughly: a permutive finiteness constraint excludes every
+  rotation-coded input.
+- **Rule 30 Problem 2 ($10k): moderate.** Family 5 proves statements "of Problem 2's kind" for the uniform measure:
+  the triangle law, matched on a random row to 0.006% and on the single cell's core to about 0.05%. Problem 2 asks
+  the same for the one orbit from a single cell, which is the sets-against-one-case gap again (§7). *Lead:* C.5
+  locates where the single cell's statistics already agree with the uniform measure. A proof would need to transfer
+  that agreement into the region where it is measured, perhaps with family 2's edge clock.
+- **Rule 30 Problem 3 ($10k): weak.** Family 1 gives dependency bounds: the centre cell at time $n$ depends on the
+  cell $n$ places to the left, through an XOR (C.4). That is a statement about information flow, not about the cost
+  of computing. Problem 3 asks for a computational lower bound, which is P versus NP territory.
+- **Erdős problems: moderate, problem by problem.** Three families travel to specific kinds of problem:
+  - *Base interplay.* G43 (the ternary spectrum of a binary reader) and G44 (resolving a residue ensemble mod
+    $3^a$) are exactly the objects in Erdős's question about the ternary digits of $2^n$ (Lagarias, PRIOR-ART).
+    Multiplication by 2 in base 3 is a permutive automaton of Kopra's class, so families 1 and 2 apply as well.
+  - *Beatty and Sturmian sequences:* family 3.
+  - *Pattern-avoidance and density questions with a finite-automaton structure:* family 4's certified
+    transfer-matrix bounds.
+  *Before starting, check erdosproblems.com for which of these are open and carry a prize; that was not done here.*
+- **Beal ($1M): weak.** Family 1's residue-class arguments are elementary modular arithmetic. Beal's partial results
+  come from deeper modular methods, and nothing here reaches them.
+- **Riemann ($1M): weak.** G42 and G43 are character sums modulo powers of 3 in a dynamical setting. They say nothing
+  about zeros of L-functions. The only link is the coin model (§7).
+- **Navier–Stokes, Yang–Mills, Hodge, Birch and Swinnerton-Dyer, P vs NP ($1M each): none.** The proofs are about
+  discrete permutive systems and their counts; none of these problems has that structure. The method lessons of §7
+  stand, but no proof here transfers.
+
+**Two neighbours with no cash prize, but the best test beds for the tools.**
+- **Mahler's 3/2 problem.** Kari and Kopra made it a trace problem of a permutive automaton (PRIOR-ART), so families
+  1 to 3 apply as written.
+- **The busy beaver cryptid Antihydra.** It iterates $\lfloor 3n/2 \rfloor$, which is the Collatz machinery of
+  family 6 with a different constant.
+
+A tool that proves something about either is tested on a problem of the same shape before it is trusted on a prize.
+
+**What to do with this.** The cheapest high-value step is the generality audit of the first lead: for each entry in
+PROOFS.md A, B and E, record "general word", "every period $p$" or "0101 only". That turns the grimoire's reach
+across Rule 30's periods from an impression into a table, and it needs no new run, only reading.
