@@ -28,6 +28,9 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   is word 10, start 1, gap 0; brute force over 1 < n < 2^22 finds no coefficient stop <= 16 without the actual stop.
   G49 part (eighth run, the same day): the floor(3n/2) identity and residue law for n < 3000, t <= 20, 0 failures;
   the fair-coin counter's survival 0.5, 0.4023, 0.3822 at T = 1, 10, 60, every value >= 1 - r = 0.3820.
+  G50/G51 part (ninth run, the same day): 588 nonempty windows (T <= 12) realised exactly in rationals, 0 failures;
+  the (100) tails, the 8^k obstruction, the 11 bound, 10101's 133/243, two base-six outputs. (A first version of the
+  tails check truncated the series and used too tight a tolerance; it read False on my error, fixed to exact.)
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -254,3 +257,35 @@ for T in range(1, 61):
     dist = nd; surv.append(float(sum(dist.values())))
 print("G49: identity and residue law on n < 3000, t <= 20: failures", bad49, "; fair-coin survival at T = 1, 10, 60:",
       [round(surv[i], 4) for i in (0, 9, 59)], ">= 1 - r =", round(1 - rr, 4), ":", all(s >= 1 - rr for s in surv))
+# G50, G51 (added 2026-10-06): Mahler's 3/2. For every word of length T <= 12 with a nonempty window, take
+# n_0 = r_T and u_0 = L_T and check with exact rationals that xi (3/2)^t = n_t + u_t with integer part n_t (of the
+# word's parities) and fractional part u_t in [0, 1/2) for t <= T; check the (100) tails and its 2-adic obstruction,
+# the 11 bound, 10101's empty window, and the base-six local rule's two outputs.
+import math
+bad5051 = n5051 = 0
+for T in range(1, 13):
+    for code in range(2**T):
+        w = [(code >> i) & 1 for i in range(T)]
+        C, Cs = 0, [0]
+        for t, b in enumerate(w): C = 3 * C + b * 2**t; Cs.append(C)
+        L = Fr(Cs[T], 3**T); U = min(Fr(Cs[t] + Fr(2**t, 2), 3**t) for t in range(T + 1))
+        if L >= U: continue
+        r = (-Cs[T] * pow(3**T, -1, 2**T)) % 2**T
+        xi = r + L
+        if xi == 0: continue
+        n5051 += 1
+        for t in range(T + 1):
+            v = xi * Fr(3, 2)**t; n = math.floor(v); u = v - n
+            if not (0 <= u < Fr(1, 2)) or (t < T and n % 2 != w[t]): bad5051 += 1; break
+# exact: a tail of a period-3 word is (sum of its first three terms) / (1 - 8/27)
+tails = [sum(Fr(b * 2**k, 3**(k + 1)) for k, b in enumerate(([1, 0, 0] * 2)[s:s + 3])) / (1 - Fr(8, 27)) for s in (0, 1, 2)]
+tails_exact = [Fr(9, 19), Fr(4, 19), Fr(6, 19)]
+ok_tails = tails == tails_exact
+ok_2adic = all((27**k * n0 + 9 * (27**k - 8**k) // 19) % 8**k != 0 for n0 in range(0, 200) for k in (6,))
+ok_11 = Fr(1, 3) + Fr(2, 9) == Fr(5, 9) and Fr(5, 9) > Fr(1, 2)
+ok_10101 = Fr(1, 3) + Fr(4, 27) + Fr(16, 243) == Fr(133, 243)
+g = lambda x, y: 3 * (x % 2) + y // 2
+outs = {(y, z): len({g(g(x, y), g(y, z)) for x in range(6)}) for y in range(6) for z in range(6)}
+print("G50/G51: windows realised exactly for", n5051, "nonempty words (T <= 12), failures", bad5051,
+      "; (100) tails 9/19, 4/19, 6/19:", ok_tails, "; no n0 < 200 passes 8^6:", ok_2adic, "; 11 bound:", ok_11,
+      "; 10101 = 133/243:", ok_10101, "; base-six outputs per (y, z):", set(outs.values()))

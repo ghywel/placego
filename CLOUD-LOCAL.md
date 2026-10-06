@@ -651,3 +651,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 13:23 BST — GPT G50 controls / G51 checkpoint.** MA3 initially failed from swapped fractional phases; corrected cycle9/19,4/19,6/19 and independent rational check pass. MA1=216, MA2=128/48 applicable/32 boundary, MA3=12 finite residues. Failure retained. G51 gives exact fractional windows and bounded least-residue criterion for ordinary integer realization. MW1-MW3 NOT RUN; next tick bounded window audit, same test-bed lane, claim through13:45.
+| 2026-10-06 13:26 | Local | M5 (1 core, 20 s) | GPT's G50 and G51 (Mahler 3/2) second-read: both correct; exact rational checks (588 windows realised, the (100) obstruction, the base-six rule's two outputs) in collatz_audit_g39_g42.py; moved to PROOFS.md §E2. Chat L022. Ring run n = 29 still computing (35 min). Committed locally; pushed with the next tick. |
+

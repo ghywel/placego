@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz proofs G39 to G49, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's Collatz and test-bed proofs G39 to G51, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1060,23 +1060,9 @@ by exact dynamic programming, $0.5$, $0.4023$, $0.3822$ at $T = 1$, 10, 60, ever
 (`collatz_audit_g39_g42.py`, G49 part). The Antihydra reduction itself is, as G49 says, taken from the project
 source and not machine-verified here.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
 ### G.GPT50. Mahler itinerary coupling and alphabet scope
 
-**Where:** RULE30-GPT.md G50; proof copied verbatim. **Status:** awaiting independent reader; corrected MA controls pass, initial phase-order failure retained in G50 outcome. Established decoupling specialized; no novelty or Z-number nonexistence claim.
+**Where:** RULE30-GPT.md G50; proof copied verbatim. **Status:** second-read by Local, 2026-10-06 (note below G51); corrected MA controls pass, initial phase-order failure retained in G50 outcome. Established decoupling specialized; no novelty or Z-number nonexistence claim.
 
 ### G50 theorem and proof: Mahler needs both itineraries, and a different alphabet
 
@@ -1101,7 +1087,7 @@ For the actual base-six CA, Kari–Kopra define g(x,y)=3*(x modulo2)+floor(y/2) 
 
 ### G.GPT51. Exact finite Mahler coupling window
 
-**Where:** RULE30-GPT.md G51; copied proof. **Status:** awaiting independent reader; MW controls NOT RUN.
+**Where:** RULE30-GPT.md G51; copied proof. **Status:** second-read by Local, 2026-10-06 (note below); GPT's MW controls not run at publication.
 
 ### G51 lemma and proof: exact finite Mahler coupling window
 
@@ -1121,3 +1107,30 @@ with the t0 upper endpoint interpreted as1/2. If L_T>=U_T it is empty. The lower
 Across increasing T for a single infinite word, realizing residues satisfy r_(T+1)=r_T or r_T+2^T. They therefore form a nondecreasing integer sequence. An ordinary nonnegative integer realizes the infinite itinerary if and only if these least residues are bounded: bounded monotone integers stabilize, and the stabilized value realizes every prefix; conversely a realizing integer has r_T equal to itself once2^T exceeds it. This makes the missing integer compatibility an explicit boundedness condition, separate from nonemptiness of the fractional intersection. No boundedness theorem for Mahler-admissible words is supplied.
 
 Unexpected finite exclusion:10101 contains no11, but its terminal lower endpoint is133/243>1/2. Its fractional window is empty. Thus the simple no11 subshift from G50 is a strict overestimate of the fractional language; checking only adjacent forbidden bits is insufficient. These are elementary specialized forms of the already recorded decoupling/residue tools, not a new Mahler nonexistence proof.
+
+*Second reader's note on G50 and G51 (Local, 2026-10-06; chat L022).* Both correct. G50: separating integer and
+fractional parts of $\tfrac32(n_j + u_j)$ gives $n_{j+1} = \lceil 3n_j/2 \rceil$ and $u_{j+1} = (3u_j - b_j)/2$, with
+$u_j < 1/3$ forced at even $n_j$ and $u_j \ge 1/3$ at odd; the tail series and its converse hold; two adjacent ones
+force $u \ge 5/9$; the $(100)$ tails are $9/19$, $4/19$, $6/19$ in that order (G018's corrected order); and the
+integer obstruction $19 n_0 + 9 \equiv 0 \pmod{8^k}$ follows because 19 and 27 are invertible modulo $8^k$. The
+base-six rule's two outputs check for every $(y, z)$; that this is Kari and Kopra's rule is taken from the source,
+not checked here. G51: both affine identities by induction; the window is exactly $0 \le u_t < 1/2$ for every
+prefix, with $L_T = C_T/3^T$ because the partial sums increase; the residues are nondecreasing and stabilise
+exactly when an ordinary integer realises the word; $10101$ gives $133/243 > 1/2$. Exact checks
+(`collatz_audit_g39_g42.py`, G50/G51 part): for every word of length at most 12 with a nonempty window (588
+words), $\xi = r_T + L_T$ was multiplied by $(3/2)^t$ in exact rationals, and its integer parts follow the word's
+parities and its fractional parts stay in $[0, 1/2)$ through $T$; no $n_0 < 200$ passes the $8^6$ congruence.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
