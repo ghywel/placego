@@ -321,21 +321,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   backwards in time shrinks it, but the walk stops at a "root", and roots come in every size.
 - [canonical ancestors gain black and period-three tails](G122-canonical-ancestors-gain-black-and-period-three-tails.md):
   Walking back past a root leaves the world of finite seeds, first through a black tail and then a repeating one.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Canonical ancestor tails of every nonzero finite root have unbounded spatial periods](W123-canonical-ancestor-tails-of-every-nonzero-finite-root.md):
-  A root's backward tails must have spatial periods that grow without bound.
-- [Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two](W124-periodic-rule-30-rows-that-eventually-reach-zero.md):
+- [canonical ancestor tails have unbounded periods](G123-canonical-ancestor-tails-have-unbounded-periods.md): A
+  root's backward tails must have spatial periods that grow without bound.
+- [zero-reaching periodic rows have periods 1 or 3 times a power of two](G124-zero-reaching-periodic-rows-have-periods-1-or.md):
   Periodic rows that fade completely have tightly restricted repeating lengths.

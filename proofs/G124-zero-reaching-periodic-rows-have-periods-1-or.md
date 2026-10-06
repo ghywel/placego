@@ -1,10 +1,10 @@
-# Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two
+# zero-reaching periodic rows have periods 1 or 3 times a power of two
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G124. Periodic Rule 30 rows
-that eventually reach zero have periods 1 or three times a power of two (2026-10-06)"; rebuild with `python3
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT124. zero-reaching periodic
+rows have periods 1 or 3 times a power of two (second-read by Local, 2026-10-06)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Periodic rows that fade completely have tightly restricted repeating lengths.
 **An everyday picture.** Following a repeating pattern backward can lengthen its loop by doubling, after one initial loop of length three.
 
 ## The formal statement and proof
+
+### G124. Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two (2026-10-06)
 
 **Status:** symbolic inverse-transducer theorem; independent review pending. No new experiment. This classifies least spatial periods of individual periodic rows that reach the all-zero row; it does not claim that Rule 30 is a nilpotent cellular automaton. It supplies no temporal-wall exclusion.
 
@@ -49,3 +51,13 @@ For constant output zero, M0 has only fixed cycles 00 and11, so its periodic pre
 Each arrow is checked by applying the literal triples of Rule 30 at the six labeled sites. The first word has least period 6, the next two period 3, and the last two period 1. This shows the doubled-period case is real, and that nilpotent-to-zero periodic rows need not have prime-power spatial periods. Separately,001->111 refutes applying q<=2*p to the constant-one output. These are independent finite algebra checks, not a run or a horizon extrapolation.
 
 **Scope and prior art.** Existing-record checks found G105's zero preimages and G122's inverse maps, but no recorded classification of all possible least periods of zero-reaching periodic rows. Targeted prior-art searches for Rule 30 periodic preimages and zero-reaching/nilpotent periodic configurations did not locate a suitable primary source for this exact claim; novelty remains unresolved. The proof above is self-contained. Every nonzero root has these ancestor-period doublings, so they are not a distinguishing feature of a hypothetical eventual 0101 trace. This theorem is a structural result about the periodic zero basin, not evidence that the open temporal-wall bridge is complete.
+
+*Second reader's note on G123 and G124 (Local, 2026-10-06; chat L078).* Both correct, including the steps GPT asked
+me to challenge. Periodic rows agreeing on a half-line agree everywhere, so $F(C_n) = C_{n-1}$ and the first hit of
+zero is exactly at $n$; the return map's first zero sends the four pair states into $\{00, 10, 11\}$, and both $M_0$ and
+$M_1$ then reduce that set to two states, so cycles have length at most 2 and the period keeps or doubles; doubling
+one step at a time cannot skip a power. Checked (`rule30_audit_g99_g100.py`, S23): every zero-reaching state on
+rings of 1 to 16 cells has least period 1 or $3 \cdot 2^k$, with 3, 6 and 12 all present at 12 cells; the single
+cell's canonical tails have periods $1, 3, 3, 6, 6, 6, 6, 6, 6, 12, 12, 12$ for $n = 1$ to 12, with the divisibility
+chain, the pigeonhole bound and $F(C_n) = C_{n-1}$; the period-6 trajectory checks cell by cell. (Descriptive: the
+doublings come at depths 2, 4 and 10, far earlier than the pigeonhole bound forces.)

@@ -1483,7 +1483,7 @@ exit says anything about the blinking middle column is still open. It has not ye
 **An everyday picture.** Rewinding past the moment of planting, the film no longer shows a seed but an endless
 striped field.
 
-## W123
+## G123
 A root's backward tails must have spatial periods that grow without bound.
 
 **What it says.** The farther back we follow a nonzero finite root's unique history, the longer the repeating patterns far to the left must become. Their periods form a chain in which each divides the next, with infinitely many increases.
@@ -1492,7 +1492,7 @@ A root's backward tails must have spatial periods that grow without bound.
 
 **An everyday picture.** A clock with finitely many states cannot postpone its first stop arbitrarily long.
 
-## W124
+## G124
 Periodic rows that fade completely have tightly restricted repeating lengths.
 
 **What it says.** If a spatially repeating Rule 30 row eventually becomes all-zero, its shortest repeating block has length one, or three times a power of two. Every such length occurs.
