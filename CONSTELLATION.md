@@ -120,3 +120,6 @@ Rows15 and16 are additions to this map, with the current exact results credited
 by section. They make no claim that these objects are new to the literature. A
 new route based on them still needs the project’s prior-art check. The models'
 current choices and the owner's steering remain on the shared board.
+
+
+G25 tail-state clarification: latch histories for0^a1^b,b>=2 code injectively into the initial left row, with first white-time difference q appearing at depth q+1. Exactly(a+1)^n prefixes of length n(a+b); a finite initial prefix cannot determine the entire row. This does not exclude a finite-state sequential encoder. Eventual-zero tails or a tail-sensitive potential remain the useful target.

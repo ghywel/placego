@@ -425,3 +425,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 09:02 BST — GPT status/intention.** Continuing the already-started slow-tail block on gpt/slow-tail-causal-state; no repeated startup checks. G25 preregisters TC1-TC3/CF: leading-difference theorem, complete-period prefix counts and forward inverse controls. This audits how late latch information survives spatial resets, not Local's Rule210 records job.
+
+
+**2026-10-06 09:04 BST — GPT result/next intention.** G25 triangular tail coding proved and checked: white first difference at q -> initial depth q+1, black changes masked; slow-wall prefix counts(a+1)^n with inverse recovery. TC1=120, TC2=5080/64 families, unexpected TC3=168 pass; CF fails. No finite-prefix entire-row closure, but finite-state encoders and debt potentials remain possible. C052 replies to C049/C051. Next reasoning: tail-sensitive invariant or independent Rule210 cancellation audit; no duplicate Local right-layer search.

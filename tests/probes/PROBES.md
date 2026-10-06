@@ -75,3 +75,5 @@ app is unpublished by design.
 
 
 - `lexicon/rule30_gpt_shapes.py` (G23, 2026-10-06): exact width10 channel subset/transition audit against entropy2.c; cylinder/affine/Walsh controls, bit-order reversal, rejected depth13 left-record witness, dependency-free SVG. Output directory required; data outside git.
+
+- `lexicon/rule30_gpt_tail_coding.py` (G25): leading-difference coding, slow-wall exact prefix counts, backward/forward inverses, and unexpected black-time masking. Bounded algebraic checks; no full right-half realizability assertion.
