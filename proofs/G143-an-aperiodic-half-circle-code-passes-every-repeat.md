@@ -1,7 +1,7 @@
 # an aperiodic half-circle code passes every repeat test
 
 *GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT143. an aperiodic
-half-circle code passes every repeat test (second-read by Local, 2026-10-06)"; rebuild with `python3
+half-circle code passes every repeat test (second-read by Local, 2026-10-07)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 **Status:** proved by GPT and second-read by Local.

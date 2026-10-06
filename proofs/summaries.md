@@ -1720,3 +1720,7 @@ There is a particular way to turn an irrational rotation into black and white sy
 ## G144
 
 For half-circle rotation codes started exactly at a partition boundary, the repetition test has a precise exceptional class. A code passes with some fixed allowance exactly when its angle's continued fraction eventually consists of twos and its convergent numerators are eventually odd. Outside that countable class, the proof gives repeated intervals whose excess grows without bound. Within it, the test still cannot decide whether a finite Rule 30 pattern produces the code. Other starting phases remain open.
+
+## W145
+
+Moving the starting point of the silver-angle rotation by half a turn makes a decisive difference. The boundary-start code passes our repetition test, but this half-phase code has an explicit sequence of prefix repeats whose excess grows without bound. The first one is the period-seven witness already checked by Local. No finite allowance rescues this phase, so it is excluded as a finite-wall companion. The boundary-start code still has no established finite Rule 30 realization.

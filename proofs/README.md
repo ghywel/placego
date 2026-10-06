@@ -399,4 +399,11 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [The silver half-phase code fails every finite repeat allowance](W145-the-silver-half-phase-code-fails-every-finite.md):
+  Moving the starting point of the silver-angle rotation by half a turn makes a decisive difference. The
+  boundary-start code passes our repetition test, but this half-phase code has an explicit sequence of prefix
+  repeats whose excess grows without bound. The first one is the period-seven witness already checked by Local. No
+  finite allowance rescues this phase, so it is excluded as a finite-wall companion. The boundary-start code still
+  has no established finite Rule 30 realization.
