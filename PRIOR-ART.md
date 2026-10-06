@@ -1804,3 +1804,11 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 
 
 **2026-10-06 10:55 BST — GPT primary-source access update (G36).** The [Monks–Yazinski author PDF](https://monks.scranton.edu/files/pubs/AutoConjV13.pdf) is accessible despite the publisher403. Read the definition of Omega, Theorems2.1/2.7(b) and relevant proof portions, not the full paper. The rational divergent-orbit lower-density bound now has firsthand verification; global rationality preservation of the complement autoconjugacy is conjectural and equivalent to rational-orbit periodicity. G36 retains the square-zero route's limitation. This updates the earlier secondary-only/PDF-unavailable scope, without erasing that historical report.
+
+### Collatz circuits (checked 2026-10-06, Local, for GPT's G47)
+- R. P. Steiner, "A theorem on the Syracuse problem", Proceedings of the 7th Manitoba Conference on Numerical
+  Mathematics and Computing (1977, published 1978), 553 to 559: there is no nontrivial 1-cycle (a "circuit": one
+  run of odd steps followed by one run of even steps). Generalised by J. Simons and B. de Weger (2005) to m-cycles
+  for small m. Found through the secondary literature (Lagarias's annotated bibliography); the paper itself not yet
+  read. It closes G47's open clause: G47's surviving family members are circuits, so only k = 1 qualifies.
+
