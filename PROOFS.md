@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G120, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G122, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3762,15 +3762,7 @@ The interpretation is also right: much of the $7/8$ comes from histories that we
 $h_2(3/8)/16 = 0.0597$, all below $1/8$; the positive toy is tight at $1/8$; the hidden-event guard gives
 $h_2(1/8)/2 = 0.2718 > 1/8$ while G119's identity still holds there.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT121. finite-predecessor descent reduces to roots (second-read by Local, 2026-10-06)
 
 ### G121. Finite-predecessor descent reduces counterexamples to roots, not bounded width (2026-10-06)
 
@@ -3787,6 +3779,8 @@ Suppose a finite row is a counterexample to eventual-period-two exclusion at a f
 **Unexpected scope check,by hand.** The counterfactual "left permutivity gives a finite predecessor for every finite row" fails already on a single black cell:every nonzero finite image has span at least3,and the zero row maps to zero. Yet every finite output block has a compatible longer input block by right-to-left inversion (G104);compactness gives global predecessors. Such predecessors of this root must have infinite support. So full-shift surjectivity cannot supply the missing finite descent. This distinction is standard cellular-automaton background:see Jarkko Kari's [Cellular Automata tutorial](https://users.utu.fi/jkari/wp-content/uploads/sites/1251/2023/12/CAintro.pdf),slides89-100,on finite injectivity versus finite surjectivity and infinite predecessors. No novelty claim for finite injectivity;the present application identifies the precise failure of this proposed bridge.
 
 **Next proof obligation.** A minimal-counterexample argument needs a different transformation that preserves eventual alternation while shrinking a root,or a theorem excluding every root. Removing an endpoint by hand has no established trace-preservation property:its causal cone eventually reaches any fixed observation column,so finite propagation alone guarantees no forever equality. The root count is not evidence of period-two survival. Ordinary inverse-time descent alone is closed as a complete proof route;other shrinking transformations remain open.
+
+### G.GPT122. canonical ancestors gain black and period-three tails (second-read by Local, 2026-10-06)
 
 ### G122. A finite root's canonical ancestors acquire black and period-three left tails (2026-10-06)
 
@@ -3814,6 +3808,26 @@ The complete graph is00->10->01->00 and11->01. Every state joins the three-cycle
 
 **Bridge interpretation.** G121's backward shrinking stays within finite seeds only until its root. Continuing the unique inverse is possible,but it leaves that class through an infinite black tail and then a spatial period-three tail. Thus lack of a finite predecessor is not lack of a global predecessor. An eventual temporal wall would persist under these time shifts;the resulting periodic tails do not by themselves contradict it. A useful next theorem would need a compatibility obstruction between that wall and the canonical ancestor tails,not an assumption that ancestor tails stay finite or constant. This is a reformulation and an identified missing implication,not a prize proof. Background distinction and prior art as in G121 (Kari's tutorial);no novelty claim for the inverse transducer itself.
 
+*Second reader's note on G121 and G122 (Local, 2026-10-06; chat L077).* Both correct. The endpoint triples 001 and
+100 give span $w + 2$; the rightmost difference survives one step, so finite rows have at most one finite
+predecessor; counterexamples descend to roots; and the inverse maps $M_0$ and $M_1$ have the stated graphs. Checked
+(`rule30_audit_g99_g100.py`, S22): span growth and distinct images for every word to span 14; exactly $2^{w-4}$ of
+the $2^{w-2}$ normalized words have a finite predecessor for $w = 4$ to 16, with 101 a root at $w = 3$; the single
+cell's canonical predecessor has an all-black left tail and its own predecessor a tail $\ldots100100100$, each mapping
+back exactly. My view on the reformulation (chat L077): an ancestor's future is the root's future shifted, and the
+tails exist exactly when the word is a root, so a wall-against-tails obstruction is the same as excluding roots,
+which G121 already reduced to; I do not see a new lever in it.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
 ### G123. Canonical ancestor tails of every nonzero finite root have unbounded spatial periods (2026-10-06)
 
 **Status:** all-depth paper theorem conditional on G121-G122's proved inverse construction;independent review pending. No measurement or new experiment. This concerns spatial periods in backward ancestors,not the source's temporal period or a prize solution.
@@ -3822,13 +3836,13 @@ Let r be a nonzero finite root,and let x_n be its unique right-quiescent nth can
 
 The extensions obey F(C_n)=C_(n-1). To see this,far enough left the local update on x_n reads only its periodic tail,so F(C_n) agrees there with the tail of F(x_n)=x_(n-1). Both extended rows are periodic;agreement on a left half-line forces agreement at every site. Thus F^n(C_n)=0 and F^(n-1)(C_n)=1. Zero is absorbing,so C_n first reaches zero after exactly n steps. This is exact for all n,not a horizon fit.
 
-All n+1 rows C_n,F(C_n),...,F^n(C_n) are distinct. A repeat before hitting zero would put the deterministic orbit on a cycle,which cannot later hit absorbing zero for the first time. Every row in this trajectory has spatial period dividing p_n,because a translation-commuting cellular automaton preserves any input period. They therefore occupy n+1 distinct labeled configurations on a p_n-cell ring,which has2^p_n configurations. Consequently
+All n+1 rows C_n,F(C_n),...,F^n(C_n) are distinct. A repeat before hitting zero would put the deterministic orbit on a cycle,which cannot later hit absorbing zero for the first time. Every row in this trajectory has spatial period dividing p_n,because a translation-commuting cellular automaton preserves any input period. They therefore occupy n+1 distinct labeled configurations on a p_n-cell ring,which has 2^p_n configurations. Consequently
 
     n+1 <= 2^p_n,
     p_n >= ceil(log2(n+1)).
 
 In particular the ancestor-tail spatial periods are unbounded for every nonzero finite root. Moreover p_(n-1) divides p_n:the output's least period divides any period of its input. Combined with G122,p_(n-1)<=p_n<=4*p_(n-1). The divisibility chain must have infinitely many strict increases. No linear growth law,exact multiplier sequence,or bounded gaps between increases is established.
 
-**Independent perspective and unexpected check.** The same bound is the finite-state absorbing-orbit bound:a p-bit deterministic system cannot have a first-hit transient of length>=2^p. This checks the indexing without the inverse graphs. The nonzero-root hypothesis is essential:the zero row has all canonical ancestors zero,all periods1,and first-hit time0. Treating every finite row as a root,or every inverse depth as a first-hit time,would incorrectly apply the bound to this counterexample. For a non-root finite row,first descend to its root as in G121;the finite ancestry contributes a time offset,so the statement above is anchored at the root.
+**Independent perspective and unexpected check.** The same bound is the finite-state absorbing-orbit bound:a p-bit deterministic system cannot have a first-hit transient of length>=2^p. This checks the indexing without the inverse graphs. The nonzero-root hypothesis is essential:the zero row has all canonical ancestors zero,all periods 1,and first-hit time 0. Treating every finite row as a root,or every inverse depth as a first-hit time,would incorrectly apply the bound to this counterexample. For a non-root finite row,first descend to its root as in G121;the finite ancestry contributes a time offset,so the statement above is anchored at the root.
 
-**What this bridges and what it does not.** This crosses from the finite inverse transducer to an all-depth necessity:uniformly bounded ancestor-tail periods are impossible. The natural candidate ranking is the first-hit depth on each periodic ring;it decreases under forward evolution,but its state space changes with p_n. It is not a ranking for the forced0101 walk and provides no contradiction to a temporal wall. The missing theorem remains a link from an eventual0101 wall to bounded ancestor-tail periods,or another incompatible restriction. Since unbounded tail periods occur for every nonzero finite root,the property alone cannot distinguish a hypothetical period-two counterexample from other seeds. The counting here is a finite-state pigeonhole proof,not a survivor-decay assumption. Background prior art is the elementary deterministic-orbit bound already used for finite rings in G105;no novelty claim for that bound.
+**What this bridges and what it does not.** This crosses from the finite inverse transducer to an all-depth necessity:uniformly bounded ancestor-tail periods are impossible. The natural candidate ranking is the first-hit depth on each periodic ring;it decreases under forward evolution,but its state space changes with p_n. It is not a ranking for the forced0101 walk and provides no contradiction to a temporal wall. The missing theorem remains a link from an eventual0101 wall to bounded ancestor-tail periods,or another incompatible restriction. Since unbounded tail periods occur for every nonzero finite root,the property alone cannot distinguish a hypothetical period-two counterexample from other seeds. The counting here is a finite-state pigeonhole proof,not a survivor-decay assumption. The finite-state pigeonhole bound is elementary. G105 supplies related absorbing-zero ring examples, not this ancestor-depth claim. No novelty claim for the general orbit bound.

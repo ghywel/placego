@@ -8,13 +8,17 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-An induction proof for demand log-concavity must control the absorbing edge separately.
+A smooth-shape argument fails: the coin weights stop being a smooth single hump beyond 64 steps.
 
-**What it says.** Away from the barrier, demand atoms undergo ordinary two-point averaging, which preserves log-concavity. At the edge an extra half of the first atom stays there. One explicit inequality among the first four future atoms is necessary and sufficient to preserve log-concavity when the future law is already log-concave.
+**What it says.** One hoped to prove that the coin weights always form a smooth single hump (in the jargon,
+log-concave), since ordinary averaging keeps that shape. At the survival boundary an extra piece stays put, and GPT
+found the exact condition for the shape to survive there. Local then checked the real boundary: the shape holds in
+every case up to 64 steps, fails beyond, first at 73, and always at the edge, never in the middle.
 
-**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. That example is synthetic, but Local's second reading then checked the real barrier schedule: the edge inequality holds up to horizon 64 and fails from 65 on (first at horizon 73), so the real demand law is not always log-concave. It breaks only at this edge, never in the interior, up to horizon 1,024.
+**Why it matters.** It closes the route, and records exactly where and why it breaks.
 
-**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check, and on the real schedule it sometimes makes a small bump.
+**An everyday picture.** A sandpile shaken against a wall stays a smooth mound in the open, but sand piling up
+against the wall can form a shoulder.
 
 ## The formal statement and proof
 

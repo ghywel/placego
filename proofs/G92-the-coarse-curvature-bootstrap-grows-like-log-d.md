@@ -8,13 +8,17 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-A coarse maximum-curvature bound still cannot close the constant count estimate by itself.
+Even with the pairing tool, the crude estimate still grows, slowly, with the length of the run.
 
-**What it says.** Grant that unmatched inputs cancel completely, and bound all matched pairs by the largest available curvature bound. Replacing the matched count by half the survivor count leaves a coefficient growing at least as the logarithm of the paid tail. This is growth of the estimate's right-hand side, not of the actual error.
+**What it says.** Grant generously that unpaired paths cancel completely, and bound every pair by the largest amount
+it could contribute. The estimate still grows like the logarithm of the number of steps, so it cannot give the fixed
+bound that is wanted.
 
-**Why it matters.** Matching improves the old square-root obstruction but needs actual allocation or signed information to become a global result. An exact pair has zero meeting-step contribution at a slightly longer horizon despite a positive bound, demonstrating the distinction. Independent review remains pending.
+**Why it matters.** It improves on the square-root growth of G77, and shows that the remaining gap needs real
+information about which paths pair up.
 
-**An everyday picture.** Charging every paired traveller the largest possible toll overestimates the total even when some actual tolls are zero. The improved price cap alone does not settle the bill.
+**An everyday picture.** Assuming every repair costs the most it possibly could: the estimate still creeps up, only
+more slowly than before.
 
 ## The formal statement and proof
 

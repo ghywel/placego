@@ -8,13 +8,14 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Temporal memory also appears in an interior moving frame.
+The same hidden memory appears for an observer moving at three-quarter speed.
 
-**What it says.** A speed-three-quarter observer repeats stay/right/right/right. Under a fair random initial row, the second and fourth flips in each aligned block have covariance1/32. The four-flip count variance is7/8 rather than the independent prediction13/16.
+**What it says.** An observer who stays put for one tick and steps right for three, over and over, finds the second
+and fourth flips of each block linked in the same way.
 
-**Why it matters.** It extends the exact right-edge guard to an interior ray without rerunning long measurements. Distinct blocks need not be independent, and the selected seed or long-run variance remains unproved. Small controls pass on all 512 initial words and all pair covariances; colleague review remains pending.
+**Why it matters.** The memory is not just an effect of moving at full speed; it appears inside the pattern too.
 
-**An everyday picture.** A slower route can still contain short stretches that carry the same memory as a fast route.
+**An everyday picture.** The link in the queue is still there if you walk along it more slowly.
 
 ## The formal statement and proof
 

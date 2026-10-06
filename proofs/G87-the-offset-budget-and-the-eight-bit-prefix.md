@@ -8,13 +8,18 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-An offset bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
+A budget argument forces three more steps, pinning down the first eight steps of any meeting pair at 21.
 
-**What it says.** W85 leaves two possible choices at the sixth step. One choice would shrink the permitted offset gap below the gap a meeting requires, so it is excluded. The remaining choice, followed by the growth-factor condition, forces patterns 11011011 and 11111111 for the first eight steps. The starting remainders must be 251 and 255 on division by 256.
+**What it says.** At the sixth step there were two possibilities. One would leave the two numbers too little room in
+their possible offsets to meet, so it is ruled out, and the growth-factor rule then forces the next two. The
+patterns must begin 11011011 and 11111111 (1 meaning odd), so the starts leave remainders 251 and 255 when divided
+by 256.
 
-**Why it matters.** It narrows the necessary candidate shape by a proof rather than a larger search. It does not exclude every candidate or find a meeting. The preregistered small controls passed; independent review remains pending.
+**Why it matters.** The candidates shrink by proof alone, and the method, comparing the most and least each option
+could contribute, becomes the next page's certificate.
 
-**An everyday picture.** A route takes one fork because the other costs more than the remaining budget. The next two turns are then forced, but the destination is still unknown.
+**An everyday picture.** Planning a trip on a fixed budget: if one route already costs more than the rest of the
+trip could ever save, cross it off.
 
 ## The formal statement and proof
 

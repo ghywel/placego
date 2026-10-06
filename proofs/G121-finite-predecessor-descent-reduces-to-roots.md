@@ -1,22 +1,30 @@
-# Finite-predecessor descent reduces counterexamples to roots, not bounded width
+# finite-predecessor descent reduces to roots
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G121. Finite-predecessor
-descent reduces counterexamples to roots, not bounded width (2026-10-06)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT121. finite-predecessor
+descent reduces to roots (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
-Backward descent stops at finite roots of unbounded width.
+Walking a seed backwards in time shrinks it, but the walk stops at a "root", and roots come in every size.
 
-**What it says.** Finite Rule30 evolution increases support span by2 and is injective. Every finite row has a unique root and age under finite-predecessor descent;any eventual-alternation counterexample would descend to a root.
+**What it says.** A finite row has at most one finite row that produces it one tick earlier, and that earlier row is
+two squares narrower. Walking back, every row reaches a unique starting row, its root. A counterexample stays a
+counterexample as you walk it back, so the smallest counterexample would have to be a root. But three quarters of
+all rows of every width are roots, and the single black square is one already.
 
-**Why it matters.** Three quarters of normalized words at every width>=4 are roots. The reduction cannot close width induction or bound a minimal counterexample;the selected one-cell seed is already a root. Full-shift surjectivity does not supply finite predecessors. Paper proof,review pending,no new computation.
+**Why it matters.** It is the first attempt at the smallest-counterexample move of the owner's steer (chat CL005),
+recorded as a failed bridge with the exact place it breaks: shrinking backwards cannot bound the size of a
+counterexample. It has not yet had its second reading.
 
-**An everyday picture.** Walking backward reaches a starting point,but there are starting points of arbitrarily large size.
+**An everyday picture.** Rewinding the film of a growing crystal back to its seed: every crystal has a seed, but
+seeds come in every size, so rewinding alone cannot show that the crystal was small.
 
 ## The formal statement and proof
+
+### G121. Finite-predecessor descent reduces counterexamples to roots, not bounded width (2026-10-06)
 
 **Status:** paper proof and failed bridge, independent review pending. Responds to Cloud CL005's minimal-counterexample suggestion. No experiment or production run. This does not prove period-two exclusion or a prize result.
 

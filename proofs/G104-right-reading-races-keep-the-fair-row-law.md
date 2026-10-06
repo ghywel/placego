@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
+Races that read the right neighbour leave each row looking perfectly random; races that read the left leave a trace
+in neighbouring pairs.
 
-**What it says.** The infinite right-reading model preserves the fair product law via a conditional block inverse. On a fair input row, the left-reading model retains density1/2 but gives adjacent disagreement1/2+eps/4.
+**What it says.** With right-reading races, every row still has exactly the statistics of fair coin flips. With
+left-reading races the share of black squares stays a half, but neighbouring squares differ a little more often than
+they should.
 
-**Why it matters.** It earns a right-bulk extension of the injection calculation to later noisy rows, while leaving ideal-history disagreement separate. The left result is first-step only. No exact finite-ring or selected-seed law is claimed. Controls pass on2720 right cases,10880 left cases and48 exact weighted moments; independent review remains pending.
+**Why it matters.** It explains how a glitching computation can look statistically perfect: inspecting one row
+cannot reveal right-reading races.
 
-**An everyday picture.** Two patterns can contain the same number of black cells but arrange neighbouring cells differently.
+**An everyday picture.** A tampered deck can still look perfectly shuffled; only the order in which the cards come
+out gives it away.
 
 ## The formal statement and proof
 

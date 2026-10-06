@@ -8,13 +8,17 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+Two surviving numbers can meet after all: the first pair appears at 22 odd steps.
 
-**What it says.** The starts 5348744187 and 5348744191 meet at 9770112830 after 34 steps. Each has 22 odd steps and keeps its tripling-and-halving multiplier at least one at every prefix. Their exact words, offsets and direct trajectories verify the meeting. Adding the same multiple of 2^34 to both starts produces another such pair.
+**What it says.** The numbers 5,348,744,187 and 5,348,744,191 differ by 4. Each keeps its growth factor at least 1
+at every step, each takes 22 odd steps, and after 34 steps both arrive at 9,770,112,830. Adding the same multiple of
+2^34 to both gives infinitely many such pairs. With fewer odd steps no pair exists (G83 to G88).
 
-**Why it matters.** It answers the singleton question with a counterexample and makes the two-member fibre bound sharp. The smaller odd counts are excluded by the preceding argument and audited finite cover. The accepting-cover audit confirms exactly five residue families at count 22, with first meetings at step 34, pending independent model review. It does not refute Collatz or solve either prize problem. The no-collision prediction failed and is retained.
+**Why it matters.** It settles the question with a counterexample. The Collatz count's bookkeeping is nearly, but
+not exactly, one to one, and the count has to allow for it.
 
-**An everyday picture.** Two routes can reach the same destination without either spending its accumulated travel budget; knowing the destination alone cannot distinguish the routes.
+**An everyday picture.** Two hikers who set off four doors apart, both always above their starting height, and meet
+on the same summit.
 
 ## The formal statement and proof
 

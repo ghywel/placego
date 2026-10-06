@@ -8,13 +8,14 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A common fresh bit ties new shared information to next-error uncertainty.
+Each new sample adds shared information equal to one bit minus the uncertainty of the next error.
 
-**What it says.** On a predetermined nonrightward path in the fair right-reading model,MI grows by1-H(next error|paired past) bits per sample.
+**What it says.** On a path standing still or moving left, a fresh random bit enters both histories at each sample,
+so the information they share grows by one bit minus how uncertain the next error is.
 
-**Why it matters.** This connects hidden-error uncertainty to unconditional information growth without assuming error closure. Two iid marginal traces alone do not suffice:cross-copy reuse gives a two-bit increment. GF0-GF2 pass32 positive histories and8 scope guards;reviewed by Local L075. No asymptotic rate.
+**Why it matters.** It ties how unpredictable the glitch is to how well the raced copy keeps tracking the truth.
 
-**An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.
+**An everyday picture.** Two diaries of the same day agree on everything except what one writer misheard.
 
 ## The formal statement and proof
 

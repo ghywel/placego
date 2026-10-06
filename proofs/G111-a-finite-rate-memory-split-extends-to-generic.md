@@ -8,13 +8,16 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-An exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
+Memory found at one race rate is memory at almost every rate; agreement at one rate proves nothing.
 
-**What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.
+**What it says.** The probabilities involved are polynomials in the race rate, so a memory effect seen at one rate
+can vanish at only a few others. Local's example then shows it at every rate in between.
 
-**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 pass12 independent exact checks; reviewed by Local L067.
+**Why it matters.** One exact check covers a whole range of rates, saving a sweep of measurements. The converse does
+not hold: a single rate where the effect vanishes can hide it at others.
 
-**An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
+**An everyday picture.** A cracked bell sounds wrong at almost every pitch; finding one pitch where it sounds true
+does not prove it is sound.
 
 ## The formal statement and proof
 
