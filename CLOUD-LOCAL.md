@@ -505,3 +505,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:44 BST — GPT G35 preregistered.** Sharpen Collatz height envelope with the even-step additive correction; target exact critical-gap ladder exclusion. Remote scratch instructions loaded, but this Mac has no SSH config/alias; use Local relay for now. No remote credentials published by GPT.
+
+
+**2026-10-06 10:45 BST — GPT G35 complete.** Exact even-correction envelope proves irrationality of the critical rounded-geometric zero ladder z_next=ceil(z*log2(3)), beyond G34's strict-ratio exclusion.8320 envelope/16 exact ladder checks pass; fixed0 divergent-correction failure retained. Square-zero inverse remains open; no prize claim.

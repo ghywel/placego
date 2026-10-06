@@ -2975,3 +2975,33 @@ Indeed2^(p-1)<=H_(p+1)<=(3/2)^(p+1)*H_0; rearrange using exact integers. Thus th
 **Preregistration.** Sharpen G34 with H_i=abs(N_i)+D, A_i=3^S_i/2^i and E_i=sum(2^j/3^S_j over even steps j<i). Predict H_i<=A_i*(H_0+D*E_i). For density1 parity words E_i has a finite real limit, so log2(H_i)<=log2(3/2)*i-K_i*log2(3)+C, where K_i counts even steps. Apply this to zero positions z_0=1, z_(k+1)=ceil(z_k*log2(3)), computed exactly as bit_length(3^z_k). Predict irrational inverse even though its zero ratio tends to the G34 threshold.
 
 EC1: exact rational envelope for signed starts -32..32,D1,3,5,9 through32 steps. EC2: first16 critical ladder gaps certified by exact integer inequalities2^(z_next-1)<3^z<=2^z_next. Unexpected EC3: fixed0 has E_i=2^i-1 and equality in the envelope; its E_i diverges, so the density hypothesis cannot be dropped. Counterfactual: shifted height contracts by exactly1/2 at every even step; N=2,D=1 refutes it. Reuse passed startup checks.
+
+
+### G35 theorem: the critical rounded-geometric zero ladder has irrational inverse
+
+Let S_i count odd steps and K_i=i-S_i count even steps. Define A_i=3^S_i/2^i and E_i=sum(2^j/3^S_j over even steps j<i). For every signed ordinary rational start N/D with positive odd D,
+
+    H_i=abs(N_i)+D <= A_i*(H_0+D*E_i).
+
+**Envelope proof.** At an odd step H_(j+1)<=3H_j/2 by G29. At an even step H_(j+1)=H_j/2+D/2 exactly. Divide by A_(j+1), which is3A_j/2 or A_j/2 respectively. Odd steps do not increase H/A; an even step increases it by D/A_j=D*2^j/3^S_j. Sum these increments. The additive term is essential; dropping it fails already at N=2,D=1.
+
+If liminf S_i/i>log(2)/log(3), then E_i has a finite real limit E_R: choose d above the critical density and below the liminf, and C with S_j>=d*j-C. Its summands are bounded by3^C*(2/3^d)^j, a convergent geometric majorant. Thus for a fixed start there is a finite constant C_H with
+
+    log2(H_i) <= alpha*i-K_i*log2(3)+C_H,
+    alpha=log2(3/2), C_H=log2(H_0+D*E_R).
+
+This keeps the cumulative penalty from the even steps that G34's universal bound discarded. It does not identify real and 2-adic inverse sums.
+
+**Boundary exclusion.** Put q=log2(3), z_0=1 and z_(k+1)=ceil(q*z_k). Define a binary parity word with zeros exactly at the z_k and ones elsewhere. The recurrence has the exact integer implementation z_next=bit_length(3^z), since3^z is never a power of2. From q*z_k<=z_next<q*z_k+1, the positions grow geometrically, the zero count is O(log(i)), the ones density tends to1, and z_next/z_k tends to q. Therefore G34 alone, whose bound is <=q, does not exclude this word.
+
+Suppose its inverse were an ordinary rational. At i=z_k+1 the next L=z_next-z_k-1 steps are odd and a later zero rules out the fixed -1 exception. G31 requires L<=log2(H_i). But
+
+    L >= alpha*i-q,
+    L <= alpha*i-K_i*q+C_H,
+    K_i*q <= C_H+q.
+
+At these indices K_i=k+1 tends to infinity, a contradiction. Hence this word's unique 2-adic inverse is irrational. This is a concrete boundary refinement using established growth/parity mechanisms, with no novelty or prize claim. It does not decide the square-zero inverse: its remaining odd runs are sublinear, so the much larger linear allowance persists even after the even-step penalty.
+
+**Finite form.** A start matching the ladder through the next zero must satisfy H_0+D*E_i>=3^(K_i-1), since2^z_next>=3^z_k and the envelope bounds the intervening run. No fixed numerator/denominator survives arbitrarily many such prefixes. This does not deny finite residue witnesses.
+
+**Controls and failure retained.** EC1 passed8320 exact signed envelope checks. EC2 certified16 ladder gaps with integer powers, avoiding floating-point ceil; first positions1,2,4,7,12,20,32,51,81,129,205,325,516,818,1297,2056. Unexpected EC3: fixed0 saturates the envelope with E_i=2^i-1, which diverges. Thus real convergence of the correction requires a density hypothesis and cannot be inferred for all rational orbits. Infinite exclusion follows analytically;16 checked gaps do not establish it. Prior-art scope is G34's established mechanism/search boundary; priority remains unclaimed.
