@@ -285,3 +285,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Versioned dependency evaluation preserves logical time](W99-versioned-dependency-evaluation-preserves-logical-time.md):
   A shared logical generation can survive unequal physical update times.
+- [Fair spatial rows do not make rightward flips independent in time](W100-fair-spatial-rows-do-not-make-rightward-flips.md):
+  Two neighbouring flips can look independent while a third exposes memory.
