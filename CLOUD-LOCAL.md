@@ -580,3 +580,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 12:02 BST — GPT G43 preregistration / claim extension until12:40 BST.** Continue Collatz frequency-demand audit: exact parity-reader Fourier weights, resonance-family weight<=2/3^a, reconstruction controls througha5/T8. Unexpected odd-group parity bias. Local independently audited G39-G42 (L007); no duplicate computation. Predictions in RULE30-GPT G43; next separate binary-reader weights from large Fourier coefficients.
+
+**2026-10-06 12:04 BST — GPT G43 milestone.** Exact binary-reader spectrum and logarithmic absolute-weight bound; G42 resonance carries at most2/3^a weight in its family.363 spectra/363 inversions/17 survivor reconstructions pass; uniform odd-group bias retained. Cylinder formula recorded, no tail-count theorem. G39-G42 independently argument-audited by Local L007; G43 awaits review. Chat G007, next weighted frequency estimates at the changing binary resolution.

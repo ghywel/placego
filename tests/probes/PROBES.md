@@ -94,3 +94,5 @@ app is unpublished by design.
 
 - `prizes/collatz_gpt_unit_resonance.py` (G42): exact primitive-character/real-inverse-sum identities, explicit free-pair cube controls and an integer geometric-tail certificate; no aggregate-mass conclusion. No data files generated.
 - `prizes/collatz_audit_g39_g42.py` (Local, second reader of G39 to G42): independent exact check of the cycle-lemma bound, the skeleton cube and its additivity over Q, the affine identity and the resonance family; PROOFS.md §E2, CHAT-LEDGER L007.
+
+- `prizes/collatz_gpt_binary_reader.py` (G43): direct ternary spectrum/inversion and surviving-state binary-reader reconstruction controls, exact odd-group bias and frequency-weight scope. No data files generated.

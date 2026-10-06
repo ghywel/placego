@@ -3240,3 +3240,37 @@ Therefore the modulus is greater than0.99 for every n. This proves that even a l
 ## G43. Binary parity reads ternary Fourier coefficients with unequal weights (2026-10-06)
 
 **Preregistration.** Audit the exact frequency demand of COLLATZ-PRIZE.md §4. For odd M=3^a and f(q)=(-1)^q on its least representatives, predict normalized Fourier coefficient hat f(h)=2/[M*(1+e(-h/M))], with h moduloM. Its magnitude is1/[M*|cos(pi*h/M)|]: the next-bit reader strongly weights frequencies nearM/2, while G42's harmonic h=2^T has weight<=2/M on its explicit family. BF1: check all coefficients/inversion for a1..5 by direct sums, complex tolerance1e-9. BF2: check parity expectation for actual surviving terminal histograms throughT8 using weighted Fourier reconstruction. Unexpected BF3: uniform residues on an odd ternary group have parity imbalance1/M; a zero baseline would be wrong. Counterfactual: all nonzero unit frequencies have equal importance for the next binary bit. Optional exact generalization: a binary residue cylinder moduloB=2^d has a truncated geometric Fourier sum. No claim that one-step expectation proves the full tail count. Reuse startup checks; Local L007 argument audit read. Bears on PERIOD-TWO.md §7 question9.
+
+
+### G43 theorem and proof: exact ternary spectrum of a binary reader
+
+Let M=3^a with a>=1, and interpret q moduloM by its least representative0<=q<M. Set f(q)=(-1)^q and e(x)=exp(2*pi*i*x). For0<=h<M define hat f(h)=M^(-1)*sum_q f(q)*e(-h*q/M). A geometric sum with ratio-e(-h/M) gives
+
+    hat f(h) = 2/[M*(1+e(-h/M))],
+    |hat f(h)| = 1/[M*|cos(pi*h/M)|].
+
+The numerator is2 because M is odd and e(-h)=1. The denominator is nonzero for integer h on an odd group. In particular hat f(0)=1/M, not0. Fourier inversion gives, for any distribution of q with phi(h)=expectation e(h*q/M),
+
+    expectation f(q) = sum_h hat f(h)*phi(h).
+
+G38's upper-half state is y=M+q. Since M is odd, its next parity is odd exactly when q is even. Thus
+
+    probability(y odd) = (1+sum_h hat f(h)*phi(h))/2.
+
+This sum is real, although individual summands may be complex. Uniform ternary residues give probability(y odd)=(M+1)/(2M), including the finite1/(2M) bias.
+
+**Which frequencies matter.** The weights peak near h=M/2, where |hat f((M-1)/2)|=1/[M*sin(pi/(2M))], tending to2/pi. If0<=h<=M/3, then |hat f(h)|<=2/M. In G42's family, M/h=(81/16)*(27/16)^n>3 at the resonant primitive harmonic h=2^T. Its contribution to the parity-reader sum therefore has magnitude at most2/M even though |phi(h)|>0.99. This is a within-family bound; it does not transfer that family's measure to the full population. It also does not refute the general relevance of primitive-frequency resonances to other test functions.
+
+For completeness, writing d=|h-M/2| gives |hat f(h)|=1/[M*sin(pi*d/M)]<=1/(2d), using sin(x)>=2x/pi on[0,pi/2]. Sum over the half-integer distances to obtain sum_h|hat f(h)|<=3+log(M), with log natural. Indeed the paired distances give sum_(j=0)^((M-3)/2)1/(j+1/2) plus1/M, bounded by2+log(M)+1/M by integral comparison. Hence a bound |phi(h)|<=delta for all nonzero h implies
+
+    |probability(y odd)-(M+1)/(2M)| <= delta*(3+log(M))/2.
+
+This proves the logarithmic Fourier-weight assertion for one binary bit; it supplies no delta estimate itself. Frequency-specific estimates may instead be inserted into the exact weighted sum.
+
+**Longer binary cylinders.** For B=2^d,0<=c<B, let g_c(q)=1 when q is congruent to c moduloB. Put L_c=max(0,1+floor((M-1-c)/B)). Its Fourier coefficient is the exact finite sum
+
+    hat g_c(h) = e(-h*c/M)/M * sum_(j=0)^(L_c-1) e(-h*B*j/M).
+
+The empty sum is0; at h=0 the value is L_c/M. A nonzero-frequency sum is the usual geometric quotient. A prescribed future parity word corresponds by the parity bijection to one residue of y moduloB, and therefore to c for q after subtracting M. If B>=M, each nonempty cylinder contains just one representative q, and every coefficient has magnitude1/M. Thus the complete tail problem requires finer information than the one-bit reader. Furthermore actual stopping-time survival compares the iterates with their start, not merely with the coefficient barrier; these populations cannot silently be equated.
+
+**Outcome.** BF1 passed363 direct spectrum checks and363 inversions for a1..5. BF2 reconstructed17 actual coefficient-survivor histograms throughT8, max complex residual3.82e-13 versus1e-9 tolerance. Unexpected BF3 verifies the exact odd-modulus parity bias and unequal unit-frequency weights.33 finite family-weight checks support the all-n geometric-ratio proof. Single-party controls; proof pending second reader. Elementary finite Fourier inversion/geometric sums, no novelty claim. The general cylinder identity is derived analytically; no multi-step survival bound or transfer of Tao's mixing law is claimed. This narrows the next target to the reader's weighted frequencies and the tail's changing resolution.
