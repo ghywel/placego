@@ -73,6 +73,24 @@ LOCK ADDENDUM, written 2026-10-06 before the second run (python3 rule30_damage_s
   mechanism stands with a correction: the lock is probabilistic, since k_min moves by jumps and a front whose next
   damaged diagonal is above w + 1 when it heals at or below w passes the barrier. DL2 HELD: 500 climbs for the whole
   run at v = 0.2510, the random background's speed.
+
+LOCK-PROBABILITY ADDENDUM, written 2026-10-06 before the third run (python3 rule30_damage_speed.py lockprob). The
+  barrier at w + 1 catches the damage only if diagonal w + 1 is damaged when the front heals through w; two of three
+  flips were caught. Here: flips on diagonals 3 .. 7 (barrier 8), 8 .. 28 (barrier 29), 30 .. 395 (barrier 400) and
+  450 (no barrier until 87,866), at 16 consecutive times from t = 4096, each followed for 2048 steps; "locked" means
+  the lowest damaged diagonal did not move in the last 1024 steps and sits at w + 1.
+  LP0 (control, must hold): a flip on diagonal 3 is locked on 3 at every phase (it is above the white diagonal 2).
+  LP1 (blind): the lock probability at 400, over flips on 30 .. 395 and all phases, is between 0.5 and 0.9.
+  LP2 (blind): a flip far below the barrier is caught more often than one just below it, because the damage it
+      brings is denser: P(lock at 400 | flip on 30 .. 100) exceeds P(lock at 400 | flip on 350 .. 395) by at least 0.1,
+      and the same ordering holds at 29 (flips on 8 .. 15 against 25 .. 28).
+  LP3 (blind): every flip that slips past 400 is still climbing at the end, at a speed within 0.05 of 0.25 over
+      the last 1024 steps.
+  CF  (counterfactual, must fail): flips on 450 lock (the lowest damaged diagonal constant over the last 1024 steps)
+      with probability at least 0.5. There is no barrier there; it must be about zero.
+  REFUTED-BY: LP0 failing or CF holding (the instrument); LP1 to LP3 the other way. What would change my mind about
+  the barriers: a lock probability near 1 (they are nearly absolute) or below 0.3 (they are weak), either of which
+  is a fact about how the band's doublings handle information.
 """
 import sys
 import numpy as np
@@ -203,7 +221,58 @@ def lock():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def lockprob(t0=4096, T=2048, phases=16):
+    flips = [3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25, 28, 30, 50, 100, 150, 200, 250, 300, 350, 380, 390, 395, 450]
+    barrier = lambda d: 3 if d == 3 else (8 if d <= 7 else (29 if d <= 28 else (400 if d <= 399 else None)))
+    width = 2 * (t0 + phases + T) + 1024
+    a = np.zeros(width, dtype=np.uint8); a[width // 2] = 1
+    for _ in range(t0):
+        a = step(a)
+    rows = []
+    for _ in range(phases):
+        rows.append(a.copy()); a = step(a)
+    res = {}
+    for d in flips:
+        locked, speeds, ends = 0, [], []
+        for j, r in enumerate(rows):
+            off = width // 2 - (t0 + j)
+            x, y = r.copy(), r.copy(); y[off + d] ^= 1
+            kmin = []
+            for s_ in range(T + 1):
+                df = x != y
+                kmin.append(int(np.argmax(df)) + s_ - off)
+                if s_ < T:
+                    x, y = step(x), step(y)
+            still = kmin[-1] == kmin[T - 1024]
+            b = barrier(d)
+            if still and (b is None or kmin[-1] == b):
+                locked += 1
+            elif still:
+                locked += 1          # locked somewhere else (reported below)
+            if not still:
+                speeds.append(1 - (kmin[-1] - kmin[T - 1024]) / 1024)
+            ends.append(kmin[-1])
+        res[d] = (locked / phases, speeds, ends)
+        print(f"   flip on {d:3d} (barrier {barrier(d)}): locked {locked}/{phases}; ends {sorted(set(ends))[:6]}"
+              + (f"; climbing at {np.mean(speeds):.3f}" if speeds else ""), flush=True)
+    report("LP0 a flip on 3 is locked on 3 at every phase", res[3][0] == 1.0 and set(res[3][2]) == {3})
+    p400 = np.mean([res[d][0] for d in flips if 30 <= d <= 395])
+    verdict("LP1 lock probability at 400 between 0.5 and 0.9", 0.5 <= p400 <= 0.9, f"{p400:.3f}")
+    far = np.mean([res[d][0] for d in (30, 50, 100)]); near = np.mean([res[d][0] for d in (350, 380, 390, 395)])
+    far29 = np.mean([res[d][0] for d in (8, 10, 12, 15)]); near29 = np.mean([res[d][0] for d in (25, 28)])
+    verdict("LP2 far flips are caught more often than near ones, at 400 and at 29",
+            far - near >= 0.1 and far29 > near29, f"400: far {far:.3f} near {near:.3f}; 29: far {far29:.3f} near {near29:.3f}")
+    sp = [v for d in flips if 30 <= d <= 395 for v in res[d][1]]
+    verdict("LP3 flips that slip past 400 climb at 0.25 within 0.05", bool(sp) and all(abs(v - 0.25) <= 0.05 for v in sp),
+            f"{len(sp)} slipped; speeds {min(sp):.3f} .. {max(sp):.3f}" if sp else "none slipped")
+    report("CF  flips on 450 do NOT lock with probability >= 0.5", res[450][0] < 0.5, f"{res[450][0]:.3f}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "lockprob" in sys.argv[1:]:
+        lockprob()
+        return
     if "lock" in sys.argv[1:]:
         lock()
         return
