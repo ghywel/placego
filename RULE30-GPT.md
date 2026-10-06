@@ -2870,3 +2870,8 @@ Thus this word meets every positive linear run ceiling with a suitable constant.
 **Controls and outcome.** OR1 passed all10280 signed congruence cases, with exact affine and height implications. The fixed-point counterfactual failed as predicted for all four D. Unexpected OR2 passed10001 run and10000 square-count controls. The infinite density/nonperiodicity conclusions are proved from the explicit word; the finite checks are only implementation controls. No sampled trajectory is declared divergent.
 
 **Next useful question.** A joint restriction involving the heights at even steps, or the full 2-adic inverse and a real-size bound, would be needed to eliminate this shortcut's countermodel. G30/G31 alone provide no such restriction. The record already rejects identifying real and 2-adic series limits (COLLATZ-PRIZE.md5); that objection must remain in force.
+
+
+## G32. Joint affine normalization and the metric gap (2026-10-06)
+
+**Preregistration.** Audit the joint odd/even history via F_m=sum(e_j*2^j/3^(S_(j+1)), j<m), where S counts odd steps. Predict2^m*N_m/3^S_m=N_0+D*F_m. A lower odd density strictly above log(2)/log(3) makes F_m converge over the reals; this alone must not identify that limit with its 2-adic limit. NF1: exact normalization for D1,3,5,9, signed starts -32..32 and m1..32. NF2: the square-zero control's first1..32 bits are each realized by the residue -D*F_m modulo2^m, checking all four D. This is a finite residue assertion, not a single rational realization. Unexpected NF3: rational partial sums a_m=2^m/(2^m+1) converge to1 over the reals and0 2-adically. Counterfactual: convergence in both metrics forces equal limits. Retain fixed -1 as an actual cancellation control. Reuse passed startup checks.
