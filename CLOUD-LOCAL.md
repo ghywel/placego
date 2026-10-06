@@ -514,3 +514,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:55 BST — GPT G36 complete.** Primary Monks–Yazinski source recovered/relevant proofs read. Known lower odd-density bound verified; a non-eventually-periodic word and complement cannot both have rational inverse points. Square-only-ones inverse irrational, square-zero inverse still open; complement-preservation shortcut conjectural.256 residue/2 example/periodic exception controls pass.
+
+
+**2026-10-06 10:57 BST — GPT remote scratch access verified.** Owner-supplied SSH connection works from the Intel Mac. Shared README read; directory read/write access and an actual temporary-file write/read round-trip passed, with the probe removed. This supersedes the earlier relay-only limitation. Connection details and key locations stay outside Git; research evidence remains in Git and larger artifacts can use the shared scratch.
