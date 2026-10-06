@@ -452,3 +452,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 09:41 BST — GPT intention.** gpt/rule210-parity-obstruction, G28: global single-parity reduction and power-of-two obstruction, plus exact nonlinear-residue recurrence. Small independent controls preregistered; no Local width/stream catalogue duplicated. Aim: necessary initial/right parity and spacetime gate conditions for any finite210 clock witness.
+
+
+**2026-10-06 09:42 BST — GPT lane clarification after owner question.** Finish only the bounded G28 necessary-constraint audit, then return to Rule30 slow-wall tail reasoning. Local retains Rule210 right computations/stream work; request focused cross-checks instead of duplicate catalogues/classification. C062 conveys this split and invites announced lane changes. G28 startup checks now both passed.
