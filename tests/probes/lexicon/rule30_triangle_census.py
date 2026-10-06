@@ -112,6 +112,25 @@ BINS ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_triangle
   REFUTED-BY: TN0 failing (the instrument); TN1 to TN3 the other way; CF holding. What would change my mind: a
   front (a bin where the deviation drops by a factor of ten) would say the uniform measure begins at a definite
   slope, like the band's edge; a gradual approach says the band's influence decays into the core.
+  OUTCOME of the fourth run, 2026-10-06 (bins; t in [50,000, 100,000]; 4 minutes). TN0, CF PASSED. Width-1 deviation by
+  bin from [-0.6,-0.5) to [+0.5,+0.6): -1.477%, -0.891%, -0.380%, -0.423%, -0.028%, -0.060%, -0.051%, -0.009%,
+  +0.039%, +0.019%, +0.011%, -0.046%. A FRONT between x/t = -0.3 and -0.2: a factor fifteen in one bin, then a
+  flat +-0.05% (the dependent-count scatter) all the way to +0.6. TN2 REFUTED (not gradual). TN1 REFUTED on its
+  right clause only (the right bins reach 0.05%, the true scatter, not 0.03%). TN3 REFUTED on magnitude: the
+  density in [-0.6,-0.5) is +0.039% (predicted > 0.05%) and within 0.0023% of one half for x/t >= -0.2 (held).
+  Widths 3 and 4 show the mirror: +0.46%, +0.74% and +0.27%, +0.53% in [-0.4,-0.2): fewer short runs, more long
+  ones, the band's long runs reaching in. Reading, not pre-registered: the front sits where Rule 30's leftward
+  speed of information, 0.246 (sections 8.30, 8.66), puts the edge of the region that news of the seed has
+  reached; the fine-bin addendum tests it.
+
+FINE-BIN ADDENDUM, written 2026-10-06 before the fifth run (python3 rule30_triangle_census.py 100000 fine): bins of
+  width 0.02 in x/t from -0.40 to -0.10, same census, t in [50,000, 100,000].
+  TF1 (blind, the light-speed reading): the width-1 deviation crosses from a magnitude above 0.2% to below 0.1%
+      within the two bins straddling x/t = -0.246, i.e. the last bin above 0.2% has its right edge in [-0.28, -0.22].
+  TF2 (blind): right of the front the deviation stays within +-0.1% in every bin to -0.10 (no second structure).
+  TF3 (blind): the width-4 excess has the same front: its last bin above +0.2% ends within 0.04 of TF1's.
+  REFUTED-BY: TF1 the other way (a front elsewhere, or none at this resolution: then the connection to 0.246 is
+  not made); TF2, TF3 the other way.
 """
 import sys
 import numpy as np
@@ -372,7 +391,60 @@ def bins_mode():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def fine_mode():
+    """bins of width 0.02 from -0.40 to -0.10 (15 bins), widths 1 .. 4, t in [50,000, T]."""
+    t0 = 50000
+    W = 2 * T + 3
+    a = np.zeros(W, dtype=np.uint8); c = W // 2; a[c] = 1
+    nb = 15
+    H = np.zeros((5, nb), dtype=np.int64); area = np.zeros(nb, dtype=np.int64)
+    prev = a.copy()
+    for t in range(1, T + 1):
+        l = np.empty_like(a); l[1:] = a[:-1]; l[0] = 0
+        r = np.empty_like(a); r[:-1] = a[1:]; r[-1] = 0
+        a = l ^ (a | r)
+        if t < t0:
+            prev = a; continue
+        lo, hi = c - t, c + t
+        row = a[lo:hi + 1]
+        xs_all = np.arange(int(np.ceil(-0.4 * t)), int(np.ceil(-0.1 * t)))
+        np.add.at(area, np.clip(((xs_all / t + 0.4) * 50).astype(int), 0, nb - 1), 1)
+        s, e = runs_of_zeros(row)
+        if len(s):
+            L = e - s + 1
+            P = np.concatenate(([0], np.cumsum(prev[lo - 1:hi + 2], dtype=np.int64)))
+            cont = (P[e + 3] - P[s]) == 0
+            top = ~cont
+            xs = (s[top] + lo - c) + (L[top] - 1) / 2.0
+            Lt = L[top]
+            sel = (xs >= -0.4 * t) & (xs < -0.1 * t) & (Lt <= 4)
+            bins = np.clip(((xs[sel] / t + 0.4) * 50).astype(int), 0, nb - 1)
+            np.add.at(H, (Lt[sel], bins), 1)
+        prev = a
+    edges = [-0.4 + 0.02 * b for b in range(nb + 1)]
+    dev = {L: (H[L] - 3 * 2.0 ** -(L + 4) * area) / (3 * 2.0 ** -(L + 4) * area) for L in (1, 2, 3, 4)}
+    print("   bin right edge: " + " ".join(f"{edges[b + 1]:+.2f}" for b in range(nb)))
+    for L in (1, 2, 3, 4):
+        print(f"   width {L} dev:    " + " ".join(f"{v * 100:+.2f}%" for v in dev[L]))
+    d1 = dev[1]
+    last_big = max((b for b in range(nb) if abs(d1[b]) > 2e-3), default=-1)
+    first_small = min((b for b in range(nb) if abs(d1[b]) < 1e-3), default=nb)
+    edge = edges[last_big + 1] if last_big >= 0 else None
+    verdict("TF1 the width-1 front (last bin above 0.2%) has its right edge in [-0.28, -0.22]",
+            edge is not None and -0.28 <= edge <= -0.22 and first_small >= last_big, f"edge {edge}, first bin below 0.1% ends at {edges[first_small + 1] if first_small < nb else None}")
+    verdict("TF2 right of the front the deviation stays within 0.1% to -0.10",
+            edge is not None and all(abs(v) <= 1e-3 for v in d1[last_big + 1:]), " ".join(f"{v * 100:+.2f}%" for v in d1[last_big + 1:]))
+    d4 = dev[4]
+    last4 = max((b for b in range(nb) if d4[b] > 2e-3), default=-1)
+    edge4 = edges[last4 + 1] if last4 >= 0 else None
+    verdict("TF3 the width-4 excess has the same front within 0.04", edge is not None and edge4 is not None and abs(edge4 - edge) <= 0.04, f"width-4 edge {edge4}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "fine" in sys.argv[1:]:
+        fine_mode()
+        return
     if "bins" in sys.argv[1:]:
         bins_mode()
         return
