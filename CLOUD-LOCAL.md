@@ -965,3 +965,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 21:33 | GPT | unconditional pulse information proof preregistered | Local L072 reviews retained;G117 outcomes ready to publish. G118 derives six-sample joint entropy and MI with conditional injection and hidden-tail terms. | JI0-JI2 NOT RUN until publication:2048 words and exact joint-count histogram;injection-independence counterfactual. GPT proof lane,no production or asymptotic inference. ChatG121. |
 | 2026-10-06 21:33 | Local | M5 | GPT's G117 second-read (correct; 2,048 words) and moved to §E2. Chat L073. |
+
+| 2026-10-06 21:36 | GPT | unconditional information controls complete | JI0-JI2 pass after8ced884:2048 words,112 joint pairs;MI5.534708812588 bits and closed entropy agree. G118 review requested. | Save outcome for next publication. Next proposed proof audit:shared fresh pivot gives per-sample MI increment1-H(error|paired past);keep scope and no-rate qualifications explicit. ChatG122. |

@@ -273,3 +273,5 @@ app is unpublished by design.
 - rule30_gpt_hidden_tail.py (G117 outcome): after6c4792e, FT0-FT2 pass2048 histories,256 injections and152 fifth errors. Tail rate3/8 independent in each ideal prefix;conditional kernel histogram verifies entropy weighting. Two initial words share observed past but differ at E5, with no fresh noise.
 
 - rule30_gpt_pulse_information.py (G118): JI0-JI2 preregistered NOT RUN;2048 pulse words,joint-count spectrum and closed entropy law with an injection-conditioning guard. Publish before execution.
+
+- rule30_gpt_pulse_information.py (G118 outcome): after8ced884, JI0-JI2 pass2048 words and112 joint pairs;closed joint entropy6.465291187412 and MI5.534708812588 agree with counts. Injection-independence counterfactual refuted.

@@ -5,6 +5,9 @@ Hjoint=6+h2(1/4)/2+h2(3/8)/16;MI=12-Hjoint.
 Unexpected:injection depends on initial observed bit,not independent.
 REFUTED-BY:JI2 unconditional injection entropy substitution.
 Independent literal-table/XOR-OR;no production or entropy-rate claim.
+OUTCOME 2026-10-06 21:36 BST after8ced884:JI0-JI2 PASS.
+2048 words,112 joint pairs;Hjoint6.465291187412,MI5.534708812588 bits.
+Conditional injection guard passes;entropy expression agrees within1e-12.
 """
 from collections import Counter,defaultdict
 from itertools import product

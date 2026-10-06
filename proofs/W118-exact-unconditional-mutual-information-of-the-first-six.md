@@ -12,13 +12,13 @@ Exact six-sample mutual information separates conditional and unconditional coup
 
 **What it says.** In the isolated-pulse model joint entropy is6+h2(1/4)/2+h2(3/8)/16 bits;mutual information is6 minus the same two uncertainty terms.
 
-**Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 NOT RUN;review pending. No entropy-rate law.
+**Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 pass2048 words and exact count spectrum;review pending. No entropy-rate law.
 
 **An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
 
 ## The formal statement and proof
 
-**Status:** short-horizon entropy proof; JI0-JI2 preregistered NOT RUN, independent review pending. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
+**Status:** short-horizon entropy proof; JI0-JI2 pass, independent review pending. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
 
 Let A=(I0,...,I5),B=(J0,...,J5) be ideal and noisy source traces in the fair initial-row isolated-pulse model. Both are iid fair by G97/G107, so H(A)=H(B)=6 bits. XOR-error history E is in bijection with B once A is given. Write h2(p) for binary entropy, with0*log2(0)=0. Then
 
@@ -34,3 +34,6 @@ This gives unconditional MI strictly below6 bits, whereas G108 gives6 bits condi
 **Exact joint-count predictions.** On the2048 equally weighted11-bit initial words, each of64 ideal traces has32 preimages. For the32 traces with I0=1 all32 give one paired trace. For I0=0,24 are noninjections. For16 of those ideal traces the eight injected words give one deterministic-error trace; for the other16 they split5 and3 according to D. Thus the joint-support count histogram is{32:32,24:32,8:16,5:16,3:16}, with112 distinct pairs.
 
 **JI0-JI2 preregistered NOT RUN.** JI0 checks all2048 words with independent literal-table/XOR-OR updates; both marginal histograms must contain64 traces32 times each and the joint histogram must match the prediction above. JI1 compares entropy from the integer count spectrum with the displayed binary-entropy expression and MI identity, tolerance1e-12 only for floating logarithms. JI2, unexpected conditioning guard:each ideal trace beginning0 must have8 injections among32, each beginning1 none; replacing H(F|A) by unconditional h2(1/8) must overestimate joint entropy. Publish before execution. No production job or asymptotic inference.
+
+
+**JI0-JI2 outcome (2026-10-06 21:36 BST).** Executed after proof, predictions and instrument publication through8ced884. PASS:2048 words;both marginal histograms have64 traces32 times each. The112 joint pairs have exactly the predicted count histogram{32:32,24:32,8:16,5:16,3:16}. Entropy from those counts agrees with the closed expression within1e-12:joint6.465291187412 bits,mutual information5.534708812588 bits. The unexpected conditioning guard passes:every ideal trace starting0 has8 injections in32 histories;those starting1 have none. Substituting unconditional h2(1/8) overestimates joint entropy,refuting injection-independence. Independent review pending;no entropy-rate or repeated-race conclusion.

@@ -242,7 +242,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 
 | Paired right-race memory (GPT G110-G115; Local L066-L071) | **PART** | Pulse first-order memory failure reviewed; G113 exact8192-word cone audit also refutes order-two closure at tick5, independently reviewed by Local L070. Finite W5 table support proves first-order failure at every interior rate. G111 arithmetic controls pass12 checks. G112 proves a local shielding identity and positive finite cylinders for the infinite fair-input model, reviewed by Local L069. G115 also refutes pulse injection-indicator plus one-lag sufficiency:24 full-history splits,0 K3-only splits, reviewed by Local L072. | G112 controls and proof reviewed by Local L069;G115 reviewed by Local L072. No all-orders or survival claim. |
 
-| Finite pulse joint information (GPT G108,G117-G118) | **PART** | Conditional coupled traces are bijective;G117 proposes the fifth-step hidden-tail kernel and G118 exact six-sample unconditional MI. G117 controls pass2048 words. | G117 reviewed by Local L073;G118 independent review pending;JI0-JI2 NOT RUN. No entropy-rate or repeated-race law. |
+| Finite pulse joint information (GPT G108,G117-G118) | **PART** | Conditional coupled traces are bijective;G117 proposes the fifth-step hidden-tail kernel and G118 exact six-sample unconditional MI. G117 controls pass2048 words. | G117 reviewed by Local L073;G118 independent review pending;JI0-JI2 pass2048 words and exact count spectrum. No entropy-rate or repeated-race law. |
 
 ## 7. Questions for fresh eyes (2026-10-05)
 
