@@ -64,6 +64,13 @@ DEEP ADDENDUM, written 2026-10-06 before the second run (python3 rule30_ring_cen
   recorded table line for line, and the rerun compares n = 25 .. 28 with the first engine's lines. The predictions
   above are unchanged. (Also on record: the first deep run started about a minute before these predictions were
   pushed, though after they were committed in e310da3; it was stopped and restarted once the push had gone out.)
+  OUTCOME of the deep run, 2026-10-06 13:45 (the two-array engine; minutes): RD0 PASSED (A334497 and A334496 at
+  n = 25 .. 29: 588425, 312156, 240300, 249165, 1466066 and 588425, 312156, 240300, 249165, 833808); the new
+  engine's n = 25 .. 28 lines identical to the first engine's. CF PASSED. RD1 HELD: at the prime n = 29 there are 14
+  cycles, all of distinct lengths (1466066, 833808, 78474, 21228, 2871, 1334, 1218, 580, ...), and all 14 are
+  gliders. RD2 REFUTED: at n = 25 .. 28 the longest transient (9252, 18758, 34054, 47968) stays below the longest
+  cycle; the transient-beats-cycle rings remain 21 and 22. RD3 HELD (16, 33, 40, 60, 14 cycles). Periodic states:
+  683556, 385427, 526744, 1048450, 2406827.
 """
 import pathlib, re, subprocess, sys, tempfile
 import numpy as np

@@ -4251,22 +4251,23 @@ rows. Rule 30's rightward speed of influence is exactly 1; the leftward one was 
 background (§8.30, LB5) and never derived. `rule30_damage_speed.py` (predictions DS0 to DS5, CF, then DL1 and DL2,
 written and pushed before each run) measures it on structured backgrounds, with the two factors that make it.
 
-**The identity.** In diagonal coordinates $k = x + t$ the rule reads $D_k(t+1) = D_{k-2}(t) \oplus (D_{k-1}(t) \lor
-D_k(t))$ on the whole plane, so a difference between two configurations never reaches a lower diagonal. Its lowest
+**The identity.** In diagonal coordinates $k = x + t$ the rule reads $D_k(t+1) = D_{k-2}(t) \oplus (D_{k-1}(t) \lor D_k(t))$ on the whole plane, so a difference between two configurations never reaches a lower diagonal. Its lowest
 damaged diagonal $k_{\min}(t)$ can only rise, and it rises exactly when the undamaged diagonal below it is black at
 that step: then $D_{k_{\min}}(t+1) = D_{k_{\min}-2}(t) \oplus 1$ is the same in both copies. The leftmost damaged
 cell is at $x = k_{\min} - t$, so
-$$v = 1 - P(\text{heal}) \cdot E[\text{jump} \mid \text{heal}],$$
+
+```math
+v = 1 - P(\text{heal}) \cdot E[\text{jump} \mid \text{heal}],
+```
+
 an identity (it held within 0.009 on every background). I had written in the predictions that the jump is at most
 2, because $D_{k+2}(t+1) = D_k(t) \oplus (\cdots)$ always carries damage two diagonals up; that is wrong where the
 damage is dense, since the OR can then differ too and cancel the XOR, and the instrument check DS1 caught it: jumps
 of 5, 7 and 10 occurred. The error is kept in the probe's header.
 
 **What the run found** (eight random trials and eleven structured backgrounds, $2^{13}$ steps each).
-- *Random background:* $v = 0.2468$ (DS0 held; LB5's 0.246). $P(\text{heal}) = 0.410$, not $1/2$, and $E[\text{jump}]
-  = 1.84$, not $1.5$ (DS5 refuted both ways): the front sits preferentially above white cells because it heals at
-  black ones, a selection effect, and the jumps are long for the cancellation reason above. So $0.246 = 1 - 0.410
-  \times 1.839$ to the run's accuracy, and neither factor is the background's density: the first is the density of
+- *Random background:* $v = 0.2468$ (DS0 held; LB5's 0.246). $P(\text{heal}) = 0.410$, not $1/2$, and $E[\text{jump}]   = 1.84$, not $1.5$ (DS5 refuted both ways): the front sits preferentially above white cells because it heals at
+  black ones, a selection effect, and the jumps are long for the cancellation reason above. So $0.246 = 1 - 0.410   \times 1.839$ to the run's accuracy, and neither factor is the background's density: the first is the density of
   the diagonal below the front *as the front sees it*. A derivation of 0.246 is a derivation of that conditional
   density, which is where the directed-percolation flavour of row 3 lives.
 - *The checkerboard* (a fixed point of the rule): $v = -0.388$. The damage front moves RIGHT. Healing happens every
@@ -4369,11 +4370,9 @@ cell is the uniform measure to three decimals through twelve octaves.* This is P
 a two-dimensional object, and the deviation at $L = 1$ ($-0.09\%$ on $2.8 \times 10^8$ counts, far outside Poisson
 noise) is real and small; what it is, is not known.
 
-**The right edge.** The widest triangles of the whole cone sit *on* the edge, $x/t = 1.000$, at the times $m \cdot
-2^k$: width 40 at $t = 65{,}536$, 38 at $32{,}768$ and $98{,}304$, 36 at $16{,}384$, $49{,}152$, $81{,}920$, 35 at
+**The right edge.** The widest triangles of the whole cone sit *on* the edge, $x/t = 1.000$, at the times $m \cdot 2^k$: width 40 at $t = 65{,}536$, 38 at $32{,}768$ and $98{,}304$, 36 at $16{,}384$, $49{,}152$, $81{,}920$, 35 at
 $8{,}192$ and its odd multiples. They grow like $\log_2 t + 22$, so TC3's "more than twice the core's" was wrong:
-the nested side's triangles are large by position, not by scale, and the core's widest ($29 = \log_2$ of $3 \cdot
-\text{area}/16$) keeps pace with them.
+the nested side's triangles are large by position, not by scale, and the core's widest ($29 = \log_2$ of $3 \cdot \text{area}/16$) keeps pace with them.
 
 **The left band** ($x/t < -0.6$): tops of width 15 ($21{,}916$) and 16 ($5{,}882$) exist and none wider, against
 TC4's "under 12"; the band's ratios are near $1/2$ to $L = 9$ and structured beyond ($0.61$ at 10, $0.88$ at 15).
@@ -4392,8 +4391,7 @@ $-0.002\%$ at $L = 1$ (TR2 held). So the derivation is exact, and the single cel
 in its core is a property of that orbit. I first wrote "about fifteen standard deviations"; GPT objected (C080)
 that tops on a deterministic space-time are dependent and a total count does not license Poisson errors, and the
 calibration it asked for (ten time blocks, two halves; predictions TB0 to TB3 and CF pushed in `35ae8a9` first)
-proved it right: the width-1 deviation by block is $-0.034\%, -0.220\%, +0.034\%, -0.314\%, +0.087\%, -0.189\%,
--0.100\%, -0.074\%, +0.025\%, -0.136\%$, mixed signs with a scatter near $0.13\%$ against a Poisson $0.02\%$. The
+proved it right: the width-1 deviation by block is $-0.034\%, -0.220\%, +0.034\%, -0.314\%, +0.087\%, -0.189\%, -0.100\%, -0.074\%, +0.025\%, -0.136\%$, mixed signs with a scatter near $0.13\%$ against a Poisson $0.02\%$. The
 sigma claim is withdrawn. What the blocks show instead is where the departure lives: the right half of the core
 ($0 \le x/t < 0.3$) matches the law at $-0.011\%$ with blocks within $\pm 0.06\%$ and a white density within
 $0.003\%$ of one half, while the left half ($-0.3 \le x/t < 0$) carries $-0.161\%$ with blocks from $-0.64\%$ to
@@ -4408,8 +4406,7 @@ $3/32$ is $-1.48\%, -0.89\%, -0.38\%, -0.42\%$ for $x/t$ from $-0.6$ to $-0.2$ a
 from $-0.2$ to $+0.6$: a front, not a gradient (TN2 refuted). At resolution $0.02$ the last bin with a deviation
 above $0.2\%$ is $[-0.26, -0.24)$, and the width-4 excess ($+0.95\%$ to $+1.19\%$ in $[-0.34, -0.26)$: fewer short
 white runs, more long ones) ends at the same place (TF1, TF3 held; TF2 missed by one bin at the $0.1\%$ scatter).
-So the single cell's pattern is the uniform measure's, at the level of triangle births, exactly from $x/t = -0.24
-\pm 0.02$ rightward, and $0.246$ is Rule 30's leftward speed of information (§8.30, LB5; §8.66): *the uniform core
+So the single cell's pattern is the uniform measure's, at the level of triangle births, exactly from $x/t = -0.24 \pm 0.02$ rightward, and $0.246$ is Rule 30's leftward speed of information (§8.30, LB5; §8.66): *the uniform core
 is the region that news of the seed has reached.* (I first wrote here that "between the band's settled edge near
 $-0.5$ and $-0.25$ lies a zone that is neither band nor coin". That was wrong: I never measured the band's edge.
 Measured afterwards, with predictions TE1, TE2 and CF pushed first (`edge` mode), the settled edge, below which every
@@ -4454,8 +4451,7 @@ false for $b = 2, 4$ against the same seeds, which is the "large against the see
 (seconds).
 
 **Addendum (11:28 the same day): wider seeds pass.** Widths 17 to 24 (`wide`; LW1 to LW3 and CF pushed in `13a7b23`
-first; all three blind predictions refuted, the control held). Next to $0^8 1^8$: $H_L = 24, 25, 26, 29, 31, 30, 34,
-36$ for $W = 17$ to $24$: a seed of width 20 passes two consecutive black stretches and one of width 24 lives two full
+first; all three blind predictions refuted, the control held). Next to $0^8 1^8$: $H_L = 24, 25, 26, 29, 31, 30, 34, 36$ for $W = 17$ to $24$: a seed of width 20 passes two consecutive black stretches and one of width 24 lives two full
 periods and four steps more. Next to $0^{16} 1^{16}$: $21, 24, 26, 26, 26, 29, 30, 32$: width 24 reaches exactly one
 period and dies at the second black stretch. So "the wall sets the horizon" (LW3) was wrong; the seed's width
 against the stretch is the whole hypothesis: $W = 2b$ fails and $W = 2.5\,b$ passes at $b = 8$, $W = 1.5\,b$ fails at
@@ -4485,3 +4481,11 @@ than $a + b - 2$ cannot hold the forced $0^{b-1}1$ through two consecutive black
 the black stretch alone: the seed must carry, across the white stretch, both the checkerboard the next black
 stretch forces and the monotone latch word the white stretch demands, and the sum of their lengths is the period.
 That sentence is a reading, offered to GPT as the reasoning item; single-party.
+
+**Addendum to §8.67 (the same day): rings to $n = 29$.** The census was extended to $n = 25$ to 29 (`deep` mode;
+predictions RD0 to RD3 and CF pushed first; the OEIS b-files of A334497 and A334496 read before the run as controls,
+both reproduced). The prime ring $n = 29$ has 14 cycles, of 14 distinct lengths (the longest 1,466,066), and all 14
+are gliders, as the pigeonhole of PROOFS.md C.6 requires when the lengths are distinct: the pattern seen at 13, 17,
+19 and 23 continues at 29. Cycle counts 16, 33, 40, 60, 14 for $n = 25$ to 29. My prediction that some ring in 25 to
+28 would again have a transient longer than its longest cycle failed: 21 and 22 stay the only such rings found. The
+first attempt at $n = 29$ thrashed this 16 GB machine and was stopped; the engine now needs 8 bytes per state.

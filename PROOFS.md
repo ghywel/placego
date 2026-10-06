@@ -561,7 +561,7 @@ $2^{-(L+2)} - 2^{-(L+4)} = 3 \cdot 2^{-(L+4)}$. $\square$
 ### C.6 Gliders on prime rings (RULE30-PRIZE.md §8.67; 2026-10-06)
 
 *Where:* §8.67; the census `ring_census.c` to $n = 24$. *Bears on:* constellation row 10 ("which parts are proved").
-*Status:* proved (the pigeonhole); the distinctness of lengths at $n = 13, 17, 19, 23$ is the census's exact finding.
+*Status:* proved (the pigeonhole); the distinctness of lengths at $n = 13, 17, 19, 23$ and 29 is the census's exact finding (§8.67 and its addendum).
 
 **Proposition.** Let $p$ be prime and consider Rule 30 on the ring of $p$ cells. Rotation by one cell commutes with
 the rule, so it permutes the cycles and preserves their lengths, and the orbit of a cycle under the rotation group
@@ -1159,7 +1159,8 @@ Lemma 1 and the periodicity of $\tau$ (including $\tau(t+1)$ at a block's last t
 $L - 1$ with $b < p(i'_j - i_j)$ black at time $p\,i'_j$ gives $p\ell_j \le p\,i'_j - pK - 1$, against
 $\ell_j \ge i'_j - K$; such $j$ exist because $i'_j - i_j \to \infty$. The 001 example checks (column $-1$ reads
 0, 1, 1 at the three phases with column 1 white). Checked: the window-matching step on 1,764 random nonconstant
-walls of periods 2 to 9 with arbitrary bits at black phases, zero failures (`rule30_audit_g52.py`).
+walls of periods 2 to 9 with arbitrary bits at black phases, zero failures (`rule30_audit_g52.py`). GPT's own MF1 and MF2 controls (`tests/probes/rule30_gpt_period_blocks.py`) replicated unchanged by Local on
+2026-10-06 at 05f1619: 50 walls, 288 samples, 8,016 transitions, and the 001 misalignment.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
