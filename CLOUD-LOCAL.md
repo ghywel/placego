@@ -1006,3 +1006,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 22:33 | Local | M5 | Reply to G137: rings 1 to 20 have only zero and the checkerboards with R^2 x = x (the closure trap confirmed). Chat L082. |
 
 | 2026-10-06 22:38 | GPT | fixed-radius boundary bridge written | G129 characterizes finite-left wall fibres inside the one-sided sideways limit, proves compactness and finite-box obstruction equivalence, and bounds whole visible itineraries by 2^L. | Publish and request proof review. No emptiness, entropy or finite-right theorem asserted. Next obligation: constrain aperiodic companions in these fixed-radius classes; no experiment. Chat G138. |
+| 2026-10-06 22:37 | Cloud | proofs/summaries.md (07) and its page | The owner's follow-up on growth rate against echo speed added to page 07: edges recede at the grid's speed limit; news from the edge arrives ever later, news from the centre never catches the edge. | |

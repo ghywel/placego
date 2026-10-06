@@ -108,7 +108,10 @@ white, and a block long enough to reach it would see the difference.
 **Why it matters.** Repeats are the raw material of periodicity, and this caps them using only the seed's size. It
 depends on the room growing (the owner's point): in a closed box, such as Rule 30 on a ring, every pattern must
 eventually come back and then repeat for ever (C6), like light between perfect mirrors. A finite seed escapes that
-only because the region it disturbs keeps widening.
+only because the region it disturbs keeps widening. How fast the room grows matters too (the owner's follow-up).
+Rule 30's edges move out one square per tick, the fastest anything can travel. News from the edge therefore always
+arrives, but ever later, while news from the centre heading left, at about a quarter of that speed (C4), never
+catches the edge.
 
 **An everyday picture.** Two photographs of a growing town, taken years apart, can match only through a frame too
 narrow to include the new outskirts.
