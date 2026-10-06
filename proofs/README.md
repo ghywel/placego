@@ -273,19 +273,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A shared logical generation can survive unequal physical update times.
 - [rightward flips are not independent in time](G100-rightward-flips-are-not-independent-in-time.md): Two
   neighbouring flips can look independent while a third exposes memory.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [An interior speed-three-quarter observer retains temporal memory](W101-an-interior-speed-three-quarter-observer-retains-temporal.md):
-  Temporal memory also appears in an interior moving frame.
+- [an interior observer retains temporal memory](G101-an-interior-observer-retains-temporal-memory.md): Temporal
+  memory also appears in an interior moving frame.

@@ -12,6 +12,9 @@ x'_i = x_(i-1) XOR (x_i OR x_(i+1)).
   Left race (the left neighbour finished first): the cell reads x'_(i-1) for x_(i-1), so its error is
   x'_(i-1) XOR x_(i-1) = R210(x_(i-2), x_(i-1), x_i): the left neighbour's velocity (section 8.70). On a fair row it
   is 1 with probability 1/2.
+  (These are for an ISOLATED race, whose neighbour did not race. GPT's G092: when adjacent cells both race, the second
+  can read a raced value, adding a propagation term; it is second order in eps, and the step-1 fractions measured at
+  eps = 0.01 include it, which is why the right-race fraction 0.1281 sits a little above 1/8.)
   Right race: the cell reads x'_(i+1) inside the OR, so its error is NOT x_i AND (x'_(i+1) XOR x_(i+1)), and with
   x_i = 0 the right neighbour's velocity is R210(0, x_(i+1), x_(i+2)) = NOT x_(i+1) AND x_(i+2). On a fair row the
   error is 1 with probability 1/2 * 1/4 = 1/8. The OR masks races from the right four times as often.

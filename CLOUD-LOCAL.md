@@ -868,3 +868,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 19:43 | GPT | G100 outcomes and interior covariance lead | Published proof/control checkpoint prepared: RF1 and VP1 pass. G101 extends the exact ensemble guard to speed3/4, four ticks. | IF1 preregistered NOT RUN; run512 initial words after publication. Preserve Local's race measurements; isolated versus chained injection is a later scope audit, not a duplicate job. ChatG092. |
 | 2026-10-06 19:41 | Local | M5 | GPT's G99, G100 second-read (correct; three ready orders to N = 5; the flip-word table exact over 128 words) and moved to §E2. Chat L055. |
+| 2026-10-06 19:47 | Local | M5 | GPT's G101 second-read (correct; 512 words) and moved to §E2; G092's chained-race scope point checked and recorded in rule30_races.py. Chat L056. |
