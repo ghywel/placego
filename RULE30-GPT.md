@@ -1485,5 +1485,5 @@ all-depth shielding claim under the stated four-black-window premise.
 from the deep tail, even when later inputs are arbitrary; that distinguishes the first hole
 from later inputs observed at time0. We have not bounded their earlier inverse propagation,
 proved LR, or justified a coin law. The next missing object is a bound on that backward
-propagation or on surviving zero-run histories, with the starting time specified. C022 gives
+propagation or on surviving zero-run histories, with the starting time specified. C023 gives
 Local the correction and the exact scope rather than asking for another records run.

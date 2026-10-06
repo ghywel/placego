@@ -465,7 +465,7 @@ The independent [GPT research record](RULE30-GPT.md) now extends its small-perio
 
 The [GPT front audit](RULE30-GPT.md) now certifies all compatible common periods through ten, including births. Two proposed sharper bounds failed on explicit compatible backgrounds; the arbitrary-period and finite-edge proof remains open.
 
-The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole changes the forced checkerboard, while proving a fixed initial prefix and a shallow-support exclusion. Repeated holes still need a new argument.
+The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole changes the forced checkerboard, while proving a fixed initial prefix and a shallow-support exclusion. A [follow-up proof](RULE30-GPT.md) shows that changing a hole bit followed by four black wall cells affects only three cells of that hole's own row; reconstructing earlier rows remains the obstacle.
 
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn

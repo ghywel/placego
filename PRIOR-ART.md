@@ -1657,9 +1657,12 @@ Checked after the proofs of COLLATZ-PRIZE.md §5 and RULE30-PRIZE.md §8.54, §8
 Pages and abstracts were read; no PDF could be opened, so Dubickas 2009, Jen 1990, Monks-Yazinski 2004,
 López-Stoll 2009, Bernstein-Lagarias 1996 and Terras 1976 were seen only in abstract or through citing papers.
 
-- **Collatz, W2 (complexity at least 1.71 n): FOUND, refereed.** Dubickas, Glasgow Math. J. 51 (2009) 243-252,
-  Theorem 5 by citing papers (arXiv:2510.11723 §3.3; arXiv:2609.19007): the same constant $\log 2/\log(3/2)$ for
-  divergent integer trajectories, conditional on their existence. To read in full: it decides the credit.
+- **Collatz, W2 (complexity at least 1.71 n): FOUND, refereed, read in full 2026-10-06.** Dubickas, Glasgow Math. J.
+  51 (2009) 243-252. Theorem 3 (the $\lceil px/q \rceil$ maps, $\liminf P/n \ge \log q/\log(p/q)$), Corollary 4 (the
+  $\lceil 3x/2 \rceil$ sequence, $P(X, n) > 1.70951129\,n$) and Theorem 5 (the 3x+1 map on positive integers with
+  $x_n \to \infty$: $P(X, n) > 1.70951129\,n$ for large $n$; "speculative" because conditional on a divergent
+  trajectory). Integers only; rationals are not mentioned. He conjectures $P(X, n) = 2^n$. Credit settled: W2 for
+  integers is his; ours adds odd-denominator rationals by the same count.
 - **Collatz, W1 and W3: FOUND three times in 2026, all unrefereed** (GitHub notes of 2026-07-22 and 2026-09-22, a
   Zenodo record of 2026-10-02). Implied for integer orbits by Dubickas's Theorem 5; for slopes below $\log_3 2$ by
   Monks and Yazinski (2004), Theorem 2.7(b) (secondary account).
