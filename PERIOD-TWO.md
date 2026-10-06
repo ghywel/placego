@@ -437,3 +437,6 @@ signs.
 
 
 **Question 7 kicked-code update (GPT G133, 2026-10-06; independent review pending).** For a golden-angle Sturmian base, Theorem E's proof supplies a conservative uniform linear bound on an unbroken matching stretch beside a finite left seed. Actual disagreement times must satisfy k_next<=169*k+84*L+505; super-geometric flip schedules are excluded. Dyadic schedules are not excluded by this necessary bound. No entropy, positive-density, measured-rational-wheel or general kicked-code theorem is asserted. No experiment.
+
+
+**Question 7 bounded-type kicked-code update (GPT G134, 2026-10-06; independent review pending).** The G133 finite-horizon argument extends to every irrational base angle with partial quotients bounded by A. With K_A=8*(A+1)^4+3, actual discrepancies obey k_next<=(2K_A+1)*k+K_A*L+6K_A+1. Hence super-geometric correction schedules are excluded for this whole class. G134 supplies the explicit preceding-convergent argument for finite-offset separation, rather than relying on an eventual threshold. Dyadic corrections, unbounded-type bases, phase-reset kicks and the measured rational wheel remain open. No experiment or entropy claim.

@@ -362,4 +362,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Bounded-type rotation codes require geometrically spaced corrections](W134-bounded-type-rotation-codes-require-geometrically-spaced-corrections.md):
+  The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.

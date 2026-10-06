@@ -1613,3 +1613,13 @@ A golden-angle code needs kicks often enough to interrupt long unbroken stretche
 **Why it matters.** This reaches a class of kicked, aperiodic companions rather than only exact rotation codes. It gives no positive entropy or kick-density bound, and does not exclude every sparse schedule or the measured rational wheel.
 
 **An everyday picture.** A correction cannot postpone the next correction arbitrarily far when the underlying repeated stretches grow at a controlled rate.
+
+
+## W134
+The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
+
+**What it says.** A finite-left companion cannot track such a Sturmian code for an arbitrarily long interval relative to the current time and initial radius. Corrections with unbounded successive spacing ratios therefore cannot maintain the alternating wall.
+
+**Why it matters.** This excludes sparse kicked codes across a larger family of irrational angles. It also makes the finite-offset step explicit. Unbounded-type angles, positive entropy and the measured rational wheel remain open.
+
+**An everyday picture.** For these rotations, the repeated patterns grow at a controlled rate, so a correction cannot postpone the next correction indefinitely.
