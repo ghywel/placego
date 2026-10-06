@@ -3300,3 +3300,39 @@ More generally, if the q law has support sizeN<=M, its word law has support at m
 **Outcome and synthesis.** IB1 passed45 exact rational variation/parity-bijection controls, including24 injective ensembles for a1..5,d1..9. Unexpected IB2 checked10 actual-prefix cylinders at d12,d16: mass1/M, not2^(-d). All comparisons use direct iterates and integer/rational arithmetic. The all-length statement follows from the proof, not those finite cases; single-party controls pending second reader. This uses the known parity bijection and elementary finite counting/information identities, with no novelty claim.
 
 G38–G44 now identify the operator, survival conditioning cost, free-pair cubes, their interior mass, a primitive resonance, the binary reader weights and the finite-resolution boundary. These are useful exact structure, not a tail-count proof. The next task must exploit the specific surviving-word set and its actual-start threshold; asking for uniform control over all binary cylinders is an invalid strengthening. Local's L008 channel analogy is useful at this precise level: deterministic reads can reveal an initial ensemble's information, while further exclusions require structure of the admissible target. G39–G43 have independent argument audits from Local (L007/L008); G44 is new.
+
+
+## G45. Word-specific actual-start survival ceilings (2026-10-06)
+
+**Preregistration and pending checkpoint.** Derive the exact realizing residue and ceiling below. AS1 predicts the word-by-word count agrees with independent direct starts of widths1..8 for horizons1..12. AS2 checks that any actual survivor absent from the coefficient population lies below its word's finite ceiling. Unexpected AS3: the1,2 cycle at start1 refutes universal equality of the two survival notions; word1010 should have ceiling1 and residue1 modulo16. Counterfactual: actual and coefficient survival agree for all positive starts. Predictions and control script are published in this tick; numerical controls are intentionally NOT RUN until the next tick, following the one-commit/one-push network rule. Startup checks reused. Bears on PERIOD-TWO.md §7 question9 and COLLATZ-PRIZE.md §1.
+
+### G45 theorem and proof: actual-start survival is a residue class cut by a ceiling
+
+Fix a binary parity word w of lengthT>=1. Let a_t count its ones in the first t positions and define B_0=0. Reading the bit b at positiont, update
+
+    B_(t+1)=3^b*B_t+b*2^t.
+
+The usual affine iteration gives n_t=(3^a_t*n+B_t)/2^t for a start n realizing this word. Its realizing starts form the residue class
+
+    n = r_w modulo2^T,
+    r_w = -B_T*(3^a_T)^(-1) modulo2^T.
+
+This is the known parity bijection. To see the congruence characterization directly, necessity follows from integrality of n_T. Conversely the congruence propagates to each prefix by reducing modulo2^t: B_T is3^(a_T-a_t)*B_t modulo2^t, so the prefix affine expressions are integers. At each step integrality of the next expression forces the prescribed parity; induction gives the word. The inverse exists because3^a_T is odd.
+
+Actual survival throughT means n_t>=n for every1<=t<=T. If3^a_t>2^t, this condition holds automatically for positive n, since B_t>=0. Equality is impossible for t>=1 by unique prime factorisation. At a deficient prefix3^a_t<2^t, it is equivalent to
+
+    n <= floor(B_t/(2^t-3^a_t)).
+
+Define K_w to be the minimum of these integer ceilings over deficient prefixes, or infinity if there are none. Then the positive starts realizing w and surviving throughT are exactly
+
+    n congruent to r_w modulo2^T, with1<=n<=K_w.
+
+For w-bit starts put L=2^(w-1), U=min(2^w-1,K_w). The exact count for this word is0 if U<L, otherwise
+
+    floor((U-r_w)/2^T)-floor((L-1-r_w)/2^T).
+
+Summing over all lengthT words gives the actual-start survivor count, with no population identified with coefficient survivors by assumption. Words whose coefficient barrier survives have K_w=infinity. Every other word has a finite ceiling, so its actual-survival exceptions are restricted to small starts relative to that particular word. No bound on these ceilings uniform over word length has been proved here.
+
+**Unexpected analytic scope check.** The word1010 has B_4=7,a_4=2 and deficient final coefficient9/16. Its ceiling is K=1 and its residue is1 modulo16. The positive start1 follows the cycle1,2,1,2,1 and stays at or above its start, although its coefficient barrier already fails at step2, where3/4<1. Thus the two notions are not universally equal. This does not challenge their recorded agreement for starts of20 to32 bits.
+
+**What remains.** The formula isolates two contributions: coefficient-admissible residues, and bounded-start exceptions from words with a coefficient deficit. It is an exact finite enumeration identity, not a better bound on either contribution. Both depend on the specific words and realizing residue classes. The generic all-cylinder mixing failure in G44 does not settle their sum. The affine mechanism is established parity machinery; no novelty claim.

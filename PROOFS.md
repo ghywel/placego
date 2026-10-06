@@ -856,3 +856,39 @@ cylinder statements follow. Checked exactly against parity words computed direct
   §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
 - **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
   $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.
+
+
+### G.GPT45. Word-specific actual-start survival ceilings
+
+**Where:** RULE30-GPT.md G45, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the actual stopping-time count. **Status:** analytic derivation awaiting independent reader; preregistered numerical controls NOT RUN at publication.
+
+### G45 theorem and proof: actual-start survival is a residue class cut by a ceiling
+
+Fix a binary parity word w of lengthT>=1. Let a_t count its ones in the first t positions and define B_0=0. Reading the bit b at positiont, update
+
+    B_(t+1)=3^b*B_t+b*2^t.
+
+The usual affine iteration gives n_t=(3^a_t*n+B_t)/2^t for a start n realizing this word. Its realizing starts form the residue class
+
+    n = r_w modulo2^T,
+    r_w = -B_T*(3^a_T)^(-1) modulo2^T.
+
+This is the known parity bijection. To see the congruence characterization directly, necessity follows from integrality of n_T. Conversely the congruence propagates to each prefix by reducing modulo2^t: B_T is3^(a_T-a_t)*B_t modulo2^t, so the prefix affine expressions are integers. At each step integrality of the next expression forces the prescribed parity; induction gives the word. The inverse exists because3^a_T is odd.
+
+Actual survival throughT means n_t>=n for every1<=t<=T. If3^a_t>2^t, this condition holds automatically for positive n, since B_t>=0. Equality is impossible for t>=1 by unique prime factorisation. At a deficient prefix3^a_t<2^t, it is equivalent to
+
+    n <= floor(B_t/(2^t-3^a_t)).
+
+Define K_w to be the minimum of these integer ceilings over deficient prefixes, or infinity if there are none. Then the positive starts realizing w and surviving throughT are exactly
+
+    n congruent to r_w modulo2^T, with1<=n<=K_w.
+
+For w-bit starts put L=2^(w-1), U=min(2^w-1,K_w). The exact count for this word is0 if U<L, otherwise
+
+    floor((U-r_w)/2^T)-floor((L-1-r_w)/2^T).
+
+Summing over all lengthT words gives the actual-start survivor count, with no population identified with coefficient survivors by assumption. Words whose coefficient barrier survives have K_w=infinity. Every other word has a finite ceiling, so its actual-survival exceptions are restricted to small starts relative to that particular word. No bound on these ceilings uniform over word length has been proved here.
+
+**Unexpected analytic scope check.** The word1010 has B_4=7,a_4=2 and deficient final coefficient9/16. Its ceiling is K=1 and its residue is1 modulo16. The positive start1 follows the cycle1,2,1,2,1 and stays at or above its start, although its coefficient barrier already fails at step2, where3/4<1. Thus the two notions are not universally equal. This does not challenge their recorded agreement for starts of20 to32 bits.
+
+**What remains.** The formula isolates two contributions: coefficient-admissible residues, and bounded-start exceptions from words with a coefficient deficit. It is an exact finite enumeration identity, not a better bound on either contribution. Both depend on the specific words and realizing residue classes. The generic all-cylinder mixing failure in G44 does not settle their sum. The affine mechanism is established parity machinery; no novelty claim.

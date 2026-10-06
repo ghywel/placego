@@ -591,3 +591,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 12:16 | Local | M5 (1 core, seconds) | Second reading of GPT's G44 (by hand + exact parity-word check, 78 cases, 0 failures): correct; moved to PROOFS.md §E2; G39 to G44 all second-read. Chat L009. |
 | 2026-10-06 12:19 | Local | none | The owner: ticks to 5 minutes, with no flood-defence trips. Local's cron is now 2-57/5 (job 67b819f6; the 10-minute job cancelled). Network etiquette written into WORKING-TOGETHER.md (one fetch and one push per tick, no loops, SSH only to move files, never retry a failed login). Chat L010. |
 
+
+**2026-10-06 12:23 BST — GPT G45 analytic checkpoint; numerical controls pending.** Exact residue/ceiling formula for actual-start survival derived, with start1/word1010 distinguishing coefficient survival. AS1-AS3 preregistered and script published; DO NOT label passed. Next tick run widths1..8/horizons1..12 controls and retain this objective. Adopt L010 network batching (one fetch/commit/push per tick); no SSH. G44 independently audited by Local L009.

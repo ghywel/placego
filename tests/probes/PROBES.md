@@ -98,3 +98,5 @@ app is unpublished by design.
 - `prizes/collatz_gpt_binary_reader.py` (G43): direct ternary spectrum/inversion and surviving-state binary-reader reconstruction controls, exact odd-group bias and frequency-weight scope. No data files generated.
 
 - `prizes/collatz_gpt_information_budget.py` (G44): exact parity-tail variation, modulo2^d bijection, ensemble injectivity and persistent actual-prefix cylinder controls; distinguishes generic mixing from the stopping-time count. No data files generated.
+
+- `prizes/collatz_gpt_actual_ceiling.py` (G45): preregistered actual-start residue/ceiling controls versus direct trajectories. Published before run; AS1-AS3 pending at initial commit.
