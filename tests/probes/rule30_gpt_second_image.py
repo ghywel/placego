@@ -1,6 +1,6 @@
-"""G127 NS0-NS2 preregistered NOT RUN. Publish before execution.
+"""G127 NS0/NS2 PASS; NS1 HELD at n=6 after81fb4fd publication.
 Search n=1..7 for a periodic target in Y with no locally-Y precursor block.
-Blind prediction: a witness occurs by n=7. A miss is finite evidence only.
+Blind prediction held:022000 has six precursors,all containing100.
 Independent triple decode and de Bruijn path counts verify the certificate.
 Unexpected guard: period-doubling defeats the period-preserving section,
 not existence of an image-constrained predecessor.

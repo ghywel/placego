@@ -1524,6 +1524,6 @@ A predecessor inside the image may require a longer repeating pattern.
 
 **What it says.** A period-two target has a period-four predecessor inside the image, but no period-two predecessor there. Therefore no predecessor choice that commutes with shifting can stay inside the image for every target.
 
-**Why it matters.** Failure of a local inverse is not failure of every predecessor. A separate bounded search will seek a finite obstruction to having any image-constrained predecessor, while keeping that distinction explicit.
+**Why it matters.** Failure of a local inverse is not failure of every predecessor. A separate certificate shows genuine loss at the next layer: an allowed target forces a forbidden word in every predecessor. This establishes one strict image inclusion, not a rule for all deeper layers.
 
 **An everyday picture.** A repeating request may need a response with a longer loop, even when a short local response exists outside the allowed set.

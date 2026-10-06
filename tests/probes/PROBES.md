@@ -285,3 +285,5 @@ app is unpublished by design.
 - rule30_gpt_rare_information.py (G120 outcome):after9f37d68,RB0-RB2 pass64 observed-injection and32 hidden-event histories;exact budget tight in positive control,hidden-event entropy0.271782221600 refutes rarity-only extension.
 
 - rule30_gpt_second_image.py (G127): NS0-NS2 preregistered NOT RUN. Prefix lengths1..7; full finite precursor exhaustion, independent path-count certificate, and a period-doubling section guard. Publish before execution.
+
+- rule30_gpt_second_image.py (G127 outcome): after81fb4fd,NS0/NS2 pass;NS1 HELD at n6. Target022000 has six full-shift precursor blocks,all containing100,with independent path count6. Binary constraints independently force22100. Strict deeper-image loss proved,not universal strictness.
