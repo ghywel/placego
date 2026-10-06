@@ -581,7 +581,7 @@ removes any visible word, even though it constrains the hidden dynamics.
 
 ### E.4. G18.2. Exact finite-prefix map from a latch position
 
-*Where:* RULE30-GPT.md, "G18.2. Exact finite-prefix map from a latch position". *Status:* proved by GPT (proof there).
+*Where:* RULE30-GPT.md, "G18.2. Exact finite-prefix map from a latch position". *Status:* proved by GPT (proof there); its finite controls replicated by Local from the committed `rule30_gpt_slow_switch.py`, 2026-10-06 at edce038.
 
 **Theorem.** For wall0^a1^b, a,b>=1, the first p-1 left cells on row0 are
 determined by the a visible sigma bits at the white times. If these bits are
@@ -590,7 +590,7 @@ This is a finite-prefix assertion, not an autonomous state for the infinite row.
 
 ### E.5. G18.3. Uniform protected-band theorem, even without a white prefix
 
-*Where:* RULE30-GPT.md, "G18.3. Uniform protected-band theorem, even without a white prefix". *Status:* proved by GPT (proof there).
+*Where:* RULE30-GPT.md, "G18.3. Uniform protected-band theorem, even without a white prefix". *Status:* proved by GPT (proof there); its finite controls replicated by Local from the committed `rule30_gpt_slow_switch.py`, 2026-10-06 at edce038.
 
 **Theorem.** Suppose a black wall run occupies times a..a+b-1, preceded by any a
 wall bits and followed by anything. If a>=1 and b>=3a+1, row0 is checkerboard
