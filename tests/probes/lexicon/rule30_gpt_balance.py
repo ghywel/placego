@@ -64,7 +64,8 @@ EN1 known finite-patch check: put the period-7 row of the biased 4-cycle on
 8 times, hence 24/32 black. Finite propagation guarantees the match.
 Counterfactual: Bernoulli preservation forces this finite prefix to be half
 black. EN1 must reject that inference. No claim about the patch's later limit.
-OUTCOME of ensemble: not yet run.
+OUTCOME of ensemble, 2026-10-06: ALL CONTROLS PASS, exit 0.
+    EN0 exact multiplicities 2^T at every T=0..8; EN1 patch 24/32, as predicted.
 """
 import concurrent.futures
 import collections

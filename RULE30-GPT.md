@@ -344,16 +344,169 @@ at the core. Local's exact record and million-diagonal jobs remain separate. Doc
 checks accompany this milestone; raw large datasets were not added to git.
 
 
-## G4. Structural balance: ordered cancellation versus all-orbit claims (2026-10-06; in progress)
+## G4. Structural balance: ordered cancellation, correlations and exact obstructions (2026-10-06)
 
-The owner asks for ongoing autonomous work and using shared chat to complement each model's blind spots.
-Continue the open core-balance lane, reading §8.34/8.35 and rule30_core.py's raw outcomes first.
-The diagnostic in rule30_gpt_balance.py is pre-registered before its first run: exact controls, natural
-versus shuffled prefix discrepancy in the certified band, power-of-two ring-cycle balance, and a known
-unbalanced travelling wave. This does not duplicate Local's four-branch million-diagonal job.
+**Result and scope.** The ordered band's cancellation is stronger than in 991 of 1,000 permutations of its
+same finite list of diagonal densities. Two candidate shortcuts failed: my proposed absolute discrepancy
+bound, and balance of every nonzero power-of-two-period ring cycle. A precise temporal fair-coin theorem
+holds for a random initial-row ensemble; it cannot be transferred to the fixed single-cell seed or to
+conditioned forced walks. Exact correlation identities below state what remains to control. No proof of
+Prize Problem 2, or of a limiting ordered-band density, is claimed.
 
-Analytic starting point: with spins s = 1-2x, twice the output spin equals the left spin times
-(middle spin + right spin + their product - 1). This exposes the correlation terms that a balance
-argument would need to control. Balanced truth table and Bernoulli preservation concern an ensemble;
-they do not imply equal frequencies on every orbit. A 5-periodic travelling row supplies a simple
-exact obstruction, distinct from the finite single-seed question. Full proof and outcomes to follow.
+Read §8.34/8.35 and `rule30_core.py`'s raw outcomes before choosing the diagnostic. The cycle machinery is from
+G2 and Rowland's already credited mechanism. Targeted searches about periodic cycles found Wolfram's prize
+page and cycle literature; no new claim of priority is made for these elementary identities or witnesses.
+
+### G4.1. What balance means algebraically
+
+For physical cells put $s_i(t)=1-2x_i(t)$, so black has spin $-1$. Rule 30 gives exactly
+
+```math
+2s_i(t+1)=s_{i-1}(t)\big(s_i(t)+s_{i+1}(t)+s_i(t)s_{i+1}(t)-1\big).
+```
+
+The probe checks all eight neighbourhoods. This is the spin form of the OR truth table, not a conservation
+law. Write $\mu_i(T)$ for the temporal spin mean, and $C_{1,i},C_{2,i},C_{3,i}$ for the temporal means of
+$s_{i-1}s_i$, $s_{i-1}s_{i+1}$ and $s_{i-1}s_i s_{i+1}$. Summing the identity gives
+
+```math
+2\mu_i(T)+\mu_{i-1}(T)=C_{1,i}(T)+C_{2,i}(T)+C_{3,i}(T)
+-\frac{2(s_i(T)-s_i(0))}{T}.
+```
+
+The endpoint error has absolute value at most $4/T$. Thus even a temporal limit of zero neighbour bias
+would leave a correlation sum to control for the centre column. Balanced local outputs alone do not set
+those correlations to zero.
+
+Average also over a spatial window of $M$ cells. The shift of $\mu_{i-1}$ costs one cell at either end, giving
+
+```math
+3\overline\mu=\overline C_1+\overline C_2+\overline C_3+E,
+\qquad |E|\le \frac4T+\frac2M.
+```
+
+This concerns a space-time average, not the temporal average of one selected column. On a ring over a full
+cycle, $E=0$. A density of one-half is then equivalent to cancellation of that correlation sum; it does
+not follow just from surjectivity.
+
+**Diagonal-coordinate qualification.** The ordered band uses $D_k$, with parents $k-2,k-1,k$, rather than
+physical adjacent cells. For a temporally periodic prefix the same spin expansion applies with those
+indices. Its spatial boundary term involves two diagonals, so the corresponding mean identity has
+$|E|\le4/M$ and no temporal error. Keeping the coordinate system explicit avoids transferring the
+physical-cell boundary constant to the diagonal strip.
+
+### G4.2. Two exact biased cycles
+
+The first biased power-of-two cycle found by the exhaustive ring check is
+
+```math
+1\longrightarrow67\longrightarrow100\longrightarrow63\longrightarrow1
+```
+
+on seven cells, with bit $i$ meaning cell $i$. Direct cyclic Rule 30 updates verify all four arrows.
+Its black counts are 1, 3, 3 and 6, total $13/28$, not one-half. The per-column black counts across the
+four phases are $(3,2,2,1,1,2,2)$: column 0 has density $3/4$, while columns 3 and 4 have density $1/4$.
+A power-of-two temporal period therefore does not enforce collective or individual-column balance.
+Of the 31 nonzero power-of-two cycles on rings of sizes 1–14, only 17 are balanced.
+
+There is also the simple five-cell travelling cycle
+
+```math
+7\longrightarrow25\longrightarrow14\longrightarrow19\longrightarrow28\longrightarrow7,
+```
+
+each row with three black cells, so density $3/5$. It is the spatial repetition of `11100`, shifted two
+cells at each step. Both cycles represent infinite spatially periodic configurations. Neither is a finite
+configuration counterexample to a prize statement. They do block a blanket argument that a balanced,
+surjective rule, periodicity, or a power-of-two clock forces every orbit to have density one-half.
+
+In particular, an argument for the *edge-generated* ordered strip must retain that accessibility condition;
+it cannot replace the strip by arbitrary power-of-two-period configurations.
+
+### G4.3. Finite ordered-prefix discrepancy, and the permutation null
+
+For the unique period-16 cycle on diagonals 0–53207, let $w_k$ be the number of black cells in the 16-phase
+word at diagonal $k$. Define
+
+```math
+U(M)=\sum_{k=0}^{M-1}w_k-8M.
+```
+
+The previously recorded value at $M=40000$ is $U=-7$, reproduced exactly. My pre-registered claim
+$|U(M)|\le128$ for every $1000\le M\le53208$ was **refuted**: the maximum absolute discrepancy is 216,
+attained with sign $-216$ at $M=50086$. At $M=53208$, black count 425490 gives $U=-174$ and density about
+0.499796. A close average at one endpoint is not a bound on all partial sums.
+
+Shuffling the diagonal weights keeps each diagonal's temporal black count, the weight distribution and
+final total unchanged, but destroys spatial order. The first shuffle (seed 304) gave maximum 473;
+it passed the prediction of exceeding both 100 and twice the natural maximum. This one draw alone was
+not treated as a significance test.
+
+A second pre-registered run used 1,000 shuffles, seeds 40000–40999 and eight CPU workers. Only 9 gave a
+maximum no greater than 216; the plus-one randomisation value is $10/1001\approx0.009990$.
+The null maxima ranged from 189 to 966, median 401. The prediction of at most 5% below the natural
+statistic held; all total-preservation controls passed.
+
+This is evidence of unusually strong cancellation in the spatial ordering of this **fixed finite list**.
+It is not a probability that a density theorem is true, a test of independent Rule 30 cells, or a result
+about the core. The randomisation statistic and width range were fixed before that run.
+
+A useful new reasoning target is to bound the normalized discrepancy $U(M)/P$ in terms of the common
+period $P$ for prefixes reachable from a finite left edge, across every branch. If such a bound is
+small compared with $M$, it would explain collective band balance. Arbitrary periodic rings are excluded
+from that proposed target by the seven-cell witness. No such bound is proved here.
+
+### G4.4. The exact coin statement that is actually true
+
+Under independent fair initial bits, every finite temporal trace of a fixed physical column is uniform.
+Here is the standard triangular argument, spelled out to separate it from the false conditional-halving
+claim caught in G3.
+
+For the centre at time $t$, iterated left-permutivity gives
+
+```math
+x_0(t)=x_{-t}(0)\oplus G_t\big(x_{-t+1}(0),\ldots,x_t(0)\big).
+```
+
+The leftmost initial bit propagates through the unique all-rightward path and enters as XOR. Equivalently,
+induct on the rule: its left-parent term carries that bit, whereas its middle and right terms have later
+left endpoints. Fix the $T$ positive-index bits 1 through $T$. Given any desired trace at times 0 through
+$T$, solve successively for the initial bits $0,-1,\ldots,-T$. Exactly one assignment works.
+Thus each $(T+1)$-bit trace has exactly $2^T$ preimages among the $2^{2T+1}$ light-cone words, and probability
+$2^{-(T+1)}$. This establishes finite-dimensional independence and fairness for that ensemble.
+
+The fixed single-cell row supplies no fresh random leftmost bits. Conditioning on earlier forced-walk
+success also supplies no guarantee that a later forced test has a new unconstrained fair bit. These are
+different probability spaces; the exact ensemble theorem proves neither claim.
+
+**Unexpected scope check: a finite seed with a biased long prefix.** Restrict the seven-periodic initial row
+of the four-cycle to $[-T,T]$, with zeros outside. Finite propagation makes its centre agree with the
+periodic row through time $T$. Taking $T=4q-1$ gives a finite seed with $3q$ black cells in its first $4q$
+centre values, density $3/4$. This works for arbitrarily large $q$, with a different seed each time;
+it says nothing about any one seed's limiting density. No seed-width-independent convergence assertion
+can be inferred from ensemble balance.
+
+The pre-registered `ensemble` check exhaustively enumerated every light-cone word for $T=0,\ldots,8$;
+all trace counts were exactly $2^T$. The finite patch with $T=31$ gave `1101` repeated eight times,
+24 black cells out of 32, as predicted. Both controls passed. This directly rejects the inference
+that Bernoulli preservation forces every finite prefix to be half black.
+
+### G4.5. Reproduction, failures, coordination and next lead
+
+Probe: [rule30_gpt_balance.py](tests/probes/lexicon/rule30_gpt_balance.py), commands main, `shuffle`, `ensemble`.
+Pre-registration commit `503f6dc` preceded the first run; GitHub rejected the main push and a branch push
+was pending. Later remote inspection confirmed the branch publication. Its server completion before the
+first run was not verified. The shuffle and ensemble pre-registrations (`88e8d22`, `c302117`) were pushed
+and confirmed before their runs. The main push later succeeded. CB1 and CB3 remain recorded failures;
+CB0, CB4, SH0 and EN0/EN1 passed; CB2 and SH1 held. All three commands exited 0 with `ALL CONTROLS PASS`.
+
+Local acknowledged and corrected the G3 exact-halving error in CHAT C010 and §8.60. Local's C009 now supplies
+four distinct left sides at a million diagonals, each period 32 and settling slope near 2. Those finite
+measurements retain their scope. I will take the suggested open reasoning question about reset-front bounds:
+what would make their sub-3 slope follow on every admissible branch? Global black density alone does not
+control an adaptively sampled front. The ordered-bias target remains an open sublead of core balance.
+
+The owner requested ongoing work without human continuation prompts. Automatic follow-ups in this chat are
+active every 30 minutes, with meaningful findings and blocking failures reported. This does not alter the
+shared evidence or publication standards. The shared board, ledger and chat carry this block's status and
+feedback; document math checks accompany publication.
