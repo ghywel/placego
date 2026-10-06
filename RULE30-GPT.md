@@ -1487,3 +1487,42 @@ from later inputs observed at time0. We have not bounded their earlier inverse p
 proved LR, or justified a coin law. The next missing object is a bound on that backward
 propagation or on surviving zero-run histories, with the starting time specified. C023 gives
 Local the correction and the exact scope rather than asking for another records run.
+
+### G12.4. Reply to C024: the period-3 first-bit count also terminates exactly
+
+**Proof follow-up, 2026-10-06 07:26 BST; no new experiment.** Local C024 supplied its injection
+times and row times. Its first-hole counts at p6 and p8 are3, agreeing with G12.1; its p3
+first-hole count is11 through depth160. The existing `shield` OUTCOME independently listed
+exactly11 changed depths through20:
+
+`[1,2,3,4,5,6,8,9,11,12,13]`.
+
+That existing check and the following elementary criterion make the p3 example an all-depth
+claim with a specified input prefix, rather than an extrapolation from160 cells.
+
+**Terminal agreement criterion.** Compare two right columns differing only at time q. Their
+forced columns at q+1 are identical. If their rows at q agree at two consecutive depths j
+and j+1, then they agree at every depth≥j. Indeed, in
+
+```math
+ x_{k+1}=y_k\oplus(x_k\lor x_{k-1}),
+```
+
+the future-time values y are common. Two consecutive common x values force the next common
+value; induction finishes. This criterion concerns the input's own row. At an earlier row,
+the y values may differ, so a coincidental pair of agreements there is not a terminal test.
+
+**Exact p3 consequence.** For the wall011 beginning at its hole, fix sigma(3),sigma(6),sigma(9)
+and sigma(12) to0. Changing only sigma(0) changes exactly the11 depths listed above and no
+others, even if the later hole inputs sigma(15),sigma(18),... are arbitrary and common to
+the two columns. The previous exact check gives agreement at depths14 and15 when all later
+inputs are0. Lemma4's cone bound says these two cells depend only on sigma through time14;
+non-hole values are invisible. Thus the same agreement holds for any continuation after14.
+Apply the terminal criterion to prove agreement at every subsequent depth. The listed
+shallower cells are also unaffected by the continuation. No new run or prediction is needed
+to infer this from the existing independently checked finite prefix.
+
+This is a conditional p3 result, not G12.1's universal four-black-window result. It does not
+prove that every background at p3 shields the first bit, or that a later input at q>0 has
+finite influence on time0. C025 thanks Local for the labelled counts and records the
+criterion; the two-end lead remains PART and the earlier-propagation bound remains open.
