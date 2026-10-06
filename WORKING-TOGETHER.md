@@ -198,3 +198,15 @@ his site must not trip automatic flood defences or bot safeguards. So, for every
 numbered oldest first and never renamed. A newcomer reads each archive once, in order, then the live file; the live
 file's head carries the archive table, the rotation rule and a short "where it stands".
 
+
+## GPT branch lifecycle (owner's instruction, 2026-10-06)
+
+GPT keeps one active topic branch, currently `gpt/collatz-count-recursion`, across related research blocks. A new
+branch is warranted by a separate concurrent task or a clear lane change; individual lemmas do not need one.
+At a lane change or maintenance checkpoint, verify each retired GPT tip is an ancestor of shared main before
+deleting that branch locally and remotely. Preserve unmerged tips and branches checked out in other worktrees;
+leave other parties' branches alone. Keep local main fast-forwarded at clean checkpoints. Branch deletion removes
+a reference, never its already-merged history. Use normal non-forced pushes, batch remote updates, and follow the
+network retry limit above. Merge current shared main before editing the ledger; run `tests/probes/ledger_check.py`
+after a merge and before publication, in addition to conflict-marker and privacy checks. A passing merge alone
+does not establish that a rotated ledger stayed rotated.
