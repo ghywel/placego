@@ -329,7 +329,7 @@ same commit as the result.
 
 | Lead | Status | What has been done | What is left |
 |---|---|---|---|
-| The counting form (§1): fewer than $2^{w - \alpha T + c}$ survivors | **OPEN** | Measured to $w = 30$: the coin to 0.5%, excess below 3.7 bits. | The proof. The same gap as Rule 30's question 1. |
+| The counting form (§1): fewer than $2^{w - \alpha T + c}$ survivors | **OPEN** | Replicated by Local on 2026-10-06 from the committed script (`collatz_count.py 32`, 25 s, at 894fc71: slope $-0.0610$ against the coin's $-0.0618$, $e_{32} = 2.66$, $H_{32} = 447$, CZ2 refuted at 21.18 per bit, all as recorded). Measured to $w = 30$: the coin to 0.5%, excess below 3.7 bits. | The proof. The same gap as Rule 30's question 1. |
 | The state after the free bits as an integer (§2, §4) | **DONE** as a lemma | The least-residue lemma, checked to $k = 18$; known (Terras, Lagarias, Kontorovich–Sinai). | Use it: a statement about the binary digits of a remainder modulo $3^a$, for one orbit. |
 | The Fourier structure of the survivors' state (§3) | **DONE** as a measurement | The largest odd coefficient fades with width. | Nothing: it says exponential sums will not reach single cases. |
 | Exponential sums as a route to single cases | **CLOSED** (§5) | Their error is at least the square root of the population. | Nothing. |
