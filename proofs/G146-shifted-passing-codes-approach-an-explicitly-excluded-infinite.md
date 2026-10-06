@@ -1,16 +1,18 @@
-# Shifted passing codes approach an explicitly excluded infinite tail
+# shifted passing codes approach an explicitly excluded infinite tail
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G146. Shifted passing codes
-approach an explicitly excluded infinite tail (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT146. shifted passing codes
+approach an explicitly excluded infinite tail (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 Every time shift of the passing silver code still passes with some finite allowance. Yet these shifted codes can approach the half-phase code, which fails every finite allowance. The required allowances grow without bound. Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A bound for each word cannot be used as a uniform bound for the whole family.
 
 ## The formal statement and proof
+
+### G146. Shifted passing codes approach an explicitly excluded infinite tail (2026-10-07)
 
 **Status and target.** Symbolic Q7 closure audit, independent review pending. Depends on verified G140/G143 and the pending G145 half-phase exclusion. No experiment. Prediction: every time shift of the passing silver code still has some finite repeat allowance, but these allowances cannot be uniform when the phases approach one half. Counterfactual: closure of the passing family might transfer its repeat bound, or finite support, to every limiting rotation phase. G142 already closes the general finite-support compact-limit shortcut; this block names a specific excluded limit and identifies exactly which allowance loses uniformity. Existing rotation and wall-coding records are used, with no new prior-art theorem or computational job.
 
@@ -35,3 +37,19 @@ The passing phases t*beta modulo2 and the excluded phases 1/2+t*beta modulo2 are
 G145 and the wall's necessary finite-radius repeat bound force u_half to have infinite support. This identifies an infinite-support accumulation point of the actual forced-tail orbit of u_0, without assuming whether u_0 itself has finite support. If u_0 were finite, the exact radius clock in G141/G142 would grow by two per F, and such an infinite-support limit is entirely consistent. No contradiction to a finite u_0 follows. Nor does the existence of infinite support at the limiting phase provide a fixed depth beyond which every approximating phase is nonzero.
 
 **Unexpected prefix guard and remaining obligation.** Altering finitely many symbols of a passing word cannot create the unbounded-debt failure, by the shift control just proved. Hence the half-phase failure is not explained by changing the first boundary symbol or a finite startup transient; the two codes differ at infinitely many times. The phase comparison still yields no lower bound on the actual support of u_0. Q7's remaining obligation is a constraint on that individual forced tail, beyond repetition or nonuniform compact limits. No finite witness or prize claim follows.
+
+*Second reader's note on G146 (Local, 2026-10-07; chat L102).* Correct. The shift control holds in both directions,
+including the straddling case $a < t \le b$, where the suffix $[t, b]$ gives $b \le t + q + C$. Each $B_C$ is closed
+because a violation is a finite witness. $\sigma^t c^{(0)} = c^{(t\beta \bmod 2)}$ holds since adding 2 to the phase
+leaves every parity unchanged. Convergence to $c^{(1/2)}$ is coordinatewise, because no $s\beta + 1/2$ is an integer, so
+each G145 witness is eventually inherited and the least allowance escapes along the whole approach, not along a
+subsequence. The two dense phase orbits are disjoint by irrationality, and continuity of $\Phi$ with
+$F \Phi = \Phi \sigma$ carries the limit to the forced rows. As the block says, this gives no contradiction for a finite
+$u_0$ (G142). Checked (`rule30_audit_g99_g100.py`, S42, only GC159's 4,096 symbols of $c^{(0)}$): the shift identity,
+the shift allowance (maximal debt at most $t$) on the seven shifts below 2,048 that set a new closest phase to 1/2, and
+the G145 witnesses for $n = 3, 5, 7$ inside every shifted prefix whose agreement with $c^{(1/2)}$ covers them.
+Descriptive: at $t = 11, 18, 35, 373$ the maximal debt is exactly $t - 3$, so the shift allowance is nearly attained.
+The reason: a G143 interval lying wholly beyond $t$ gains exactly $t$ in debt under the shift, and the maximum comes
+from a sharp one, for example $[13, 40]$ at period 17 when $t = 11$. My first draft of S42 also expected the agreement
+and the debt to rise monotonically along those shifts. G146 claims neither; the approach alternates sides of 1/2 and the
+prefix truncates the debt, so that draft failed and was narrowed.

@@ -393,6 +393,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   repeats whose excess grows without bound. The first one is the period-seven witness already checked by Local. No
   finite allowance rescues this phase, so it is excluded as a finite-wall companion. The boundary-start code still
   has no established finite Rule 30 realization.
+- [shifted passing codes approach an explicitly excluded infinite tail](G146-shifted-passing-codes-approach-an-explicitly-excluded-infinite.md):
+  Every time shift of the passing silver code still passes with some finite allowance. Yet these shifted codes can
+  approach the half-phase code, which fails every finite allowance. The required allowances grow without bound.
+  Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This
+  does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A
+  bound for each word cannot be used as a uniform bound for the whole family.
 
 ## The waiting room (not yet verified)
 
@@ -405,11 +411,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Shifted passing codes approach an explicitly excluded infinite tail](W146-shifted-passing-codes-approach-an-explicitly-excluded-infinite.md):
-  Every time shift of the passing silver code still passes with some finite allowance. Yet these shifted codes can
-  approach the half-phase code, which fails every finite allowance. The required allowances grow without bound.
-  Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This
-  does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A
-  bound for each word cannot be used as a uniform bound for the whole family.
+*No proofs are waiting for a second reader at the moment.*

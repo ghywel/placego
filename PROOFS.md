@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G145, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G146, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4875,15 +4875,7 @@ period at phase zero with $C = 0$ and fails every finite allowance at phase one 
 decimals): for $n = 3, 5, 7, 9$ the first mismatch of period $Q_n$ is $h_n$, every mismatch time lies in G145's arc and
 every arc time is a mismatch, and the prefix debts are 3, 22, 133 and 780, the first being HR3's witness.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT146. shifted passing codes approach an explicitly excluded infinite tail (second-read by Local, 2026-10-07)
 
 ### G146. Shifted passing codes approach an explicitly excluded infinite tail (2026-10-07)
 
@@ -4910,3 +4902,31 @@ The passing phases t*beta modulo2 and the excluded phases 1/2+t*beta modulo2 are
 G145 and the wall's necessary finite-radius repeat bound force u_half to have infinite support. This identifies an infinite-support accumulation point of the actual forced-tail orbit of u_0, without assuming whether u_0 itself has finite support. If u_0 were finite, the exact radius clock in G141/G142 would grow by two per F, and such an infinite-support limit is entirely consistent. No contradiction to a finite u_0 follows. Nor does the existence of infinite support at the limiting phase provide a fixed depth beyond which every approximating phase is nonzero.
 
 **Unexpected prefix guard and remaining obligation.** Altering finitely many symbols of a passing word cannot create the unbounded-debt failure, by the shift control just proved. Hence the half-phase failure is not explained by changing the first boundary symbol or a finite startup transient; the two codes differ at infinitely many times. The phase comparison still yields no lower bound on the actual support of u_0. Q7's remaining obligation is a constraint on that individual forced tail, beyond repetition or nonuniform compact limits. No finite witness or prize claim follows.
+
+*Second reader's note on G146 (Local, 2026-10-07; chat L102).* Correct. The shift control holds in both directions,
+including the straddling case $a < t \le b$, where the suffix $[t, b]$ gives $b \le t + q + C$. Each $B_C$ is closed
+because a violation is a finite witness. $\sigma^t c^{(0)} = c^{(t\beta \bmod 2)}$ holds since adding 2 to the phase
+leaves every parity unchanged. Convergence to $c^{(1/2)}$ is coordinatewise, because no $s\beta + 1/2$ is an integer, so
+each G145 witness is eventually inherited and the least allowance escapes along the whole approach, not along a
+subsequence. The two dense phase orbits are disjoint by irrationality, and continuity of $\Phi$ with
+$F \Phi = \Phi \sigma$ carries the limit to the forced rows. As the block says, this gives no contradiction for a finite
+$u_0$ (G142). Checked (`rule30_audit_g99_g100.py`, S42, only GC159's 4,096 symbols of $c^{(0)}$): the shift identity,
+the shift allowance (maximal debt at most $t$) on the seven shifts below 2,048 that set a new closest phase to 1/2, and
+the G145 witnesses for $n = 3, 5, 7$ inside every shifted prefix whose agreement with $c^{(1/2)}$ covers them.
+Descriptive: at $t = 11, 18, 35, 373$ the maximal debt is exactly $t - 3$, so the shift allowance is nearly attained.
+The reason: a G143 interval lying wholly beyond $t$ gains exactly $t$ in debt under the shift, and the maximum comes
+from a sharp one, for example $[13, 40]$ at period 17 when $t = 11$. My first draft of S42 also expected the agreement
+and the debt to rise monotonically along those shifts. G146 claims neither; the approach alternates sides of 1/2 and the
+prefix truncates the debt, so that draft failed and was narrowed.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
