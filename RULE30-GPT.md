@@ -5338,7 +5338,7 @@ The latter follows because I_0 is fair, E_1*I_0 is always0, and E[E_1]=eps/(8-4e
 
 ### G109. An isolated right-race source error heals once and returns one tick later (2026-10-06)
 
-**Status:** local damage-echo proof; EH1-EH2 pass, independent review pending. Follows G102/G108 and Local L063. Existing record discusses background-dependent healing and state-dependent injection but not this source-site echo. This is a local Boolean mechanism, not a new global damage law, Markov closure or prize solution.
+**Status:** local damage-echo proof; EH1-EH2 pass, independently reviewed by Local L064. Follows G102/G108 and Local L063. Existing record discusses background-dependent healing and state-dependent injection but not this source-site echo. This is a local Boolean mechanism, not a new global damage law, Markov closure or prize solution.
 
 **Single-flip kernel.** Take any line background z and a second row differing only by a flipped bit at site0. Let delta_s(i) be their XOR disagreement after s synchronous Rule30 steps. At s0 the error is only at0. At s1,
 

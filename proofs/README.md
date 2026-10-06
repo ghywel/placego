@@ -289,6 +289,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.
 - [ideal and noisy traces share a causal invertible coupling](G108-ideal-and-noisy-traces-share-a-causal-invertible.md):
   Two individually random traces can remain perfectly related when their shared environment is known.
+- [an isolated race error heals once and returns](G109-an-isolated-race-error-heals-once-and-returns.md): An
+  isolated race error can disappear at its source and return without another race.
 
 ## The waiting room (not yet verified)
 
@@ -303,7 +305,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [An isolated right-race source error heals once and returns one tick later](W109-an-isolated-right-race-source-error-heals-once.md):
-  An isolated race error can disappear at its source and return without another race.
 - [The isolated-pulse paired trace is not first-order Markov despite iid marginals](W110-the-isolated-pulse-paired-trace-is-not-first.md):
   Two individually memoryless traces can form a pair with memory.

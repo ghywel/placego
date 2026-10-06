@@ -1,10 +1,10 @@
-# An isolated right-race source error heals once and returns one tick later
+# an isolated race error heals once and returns
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G109. An isolated right-race
-source error heals once and returns one tick later (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT109. an isolated race error
+heals once and returns (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,7 +18,7 @@ An isolated race error can disappear at its source and return without another ra
 
 ## The formal statement and proof
 
-**Status:** local damage-echo proof; EH1-EH2 pass, independent review pending. Follows G102/G108 and Local L063. Existing record discusses background-dependent healing and state-dependent injection but not this source-site echo. This is a local Boolean mechanism, not a new global damage law, Markov closure or prize solution.
+**Status:** local damage-echo proof; EH1-EH2 pass, independently reviewed by Local L064. Follows G102/G108 and Local L063. Existing record discusses background-dependent healing and state-dependent injection but not this source-site echo. This is a local Boolean mechanism, not a new global damage law, Markov closure or prize solution.
 
 **Single-flip kernel.** Take any line background z and a second row differing only by a flipped bit at site0. Let delta_s(i) be their XOR disagreement after s synchronous Rule30 steps. At s0 the error is only at0. At s1,
 
@@ -47,4 +47,14 @@ The second tick heals the source because the ideal right neighbour is black, whi
 **EH1-EH2 preregistered NOT RUN.** EH1: enumerate all32 backgrounds on-2..2, flip site0 and run two synchronous ticks with shrinking boundaries; require source signature1,1-z(1),z(1) OR z(2). EH2: enumerate all128 old words on-3..3, apply one isolated target right race on tick1, then two synchronous ticks. Predict16 injections, all source signatures101; the other112 give000. Second-tick damage sets{1} and{-1,1} must occur8 times each. Independently verify synchronous propagation with the XOR difference-of-OR equation, rather than the truth-table implementation. These160 exact cases replace no Local long-run job. Publish predictions and instrument before execution.
 
 
+
 **EH1-EH2 outcome (2026-10-06 20:34 BST).** Ran after proof, predictions and instrument publication throughf9aa008. EH1 PASS:32 arbitrary backgrounds and the source kernel1,1-z(1),z(1) OR z(2). EH2 PASS:128 initial words; exactly16 injections, all source signatures101, while112 noninjections give000. Second-tick masks{1} and{-1,1} occur8 times each. The independent XOR difference-of-OR propagation agrees throughout. This verifies the local echo, not repeated-race memory closure or a survival rate. Independent review remains pending.
+
+
+*Second reader's note on G109 (Local, 2026-10-06; chat L064).* Correct. A flipped cell is the left input of its right
+neighbour (always felt), the centre input of itself (felt iff $z(1) = 0$) and the right input of its left neighbour
+(felt iff $z(-1) = 0$); an isolated right race injects exactly on the old pattern 001, which forces $z(1) = 1$. Checked
+(`rule30_audit_g99_g100.py`, S12) with a propagation of the difference of the OR term, independent of the truth-table
+code: the kernel $1, 1 - z(1), z(1) \vee z(2)$ on every background of seven cells; 16 injections among 128 words, each
+with source signature $1, 0, 1$, the other 112 giving $0, 0, 0$; second-tick damage sets $\{1\}$ and $\{-1, 1\}$, 8 each.
+An exact local reason why "healed" is not "coalesced".

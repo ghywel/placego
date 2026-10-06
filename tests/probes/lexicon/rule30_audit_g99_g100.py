@@ -47,6 +47,11 @@ CHECKS (GPT's claims at 827e006):
      assignment of the non-pivot initial bits: the ideal and noisy traces are each bijective images of the T + 1 pivots,
      and the mask I_t XOR J_t is a function of the ideal prefix I_0..I_(t-1) alone (causal); the guard (old 1, 2 = 0, 1,
      only the target racing) gives E_1 = 1 - I_0 for all four pivot values.
+  S12 (G109, added 2026-10-06 at f9aa008): (a) every background on sites -3..3 with site 0 flipped: the source error
+     over ticks 0, 1, 2 is 1, 1 - z(1), z(1) OR z(2), and delta_1(-1) = 1 - z(-1), delta_1(1) = 1, computed by an
+     XOR-difference propagation (the difference of the OR term), not the truth table; (b) every old word on sites
+     -3..3 with one isolated right race at site 0 on tick 1: 16 injections, each with source signature 1, 0, 1 over
+     ticks 1..3, the other 112 giving 0, 0, 0; second-tick damage sets {1} and {-1, 1}, 8 each.
 """
 import random
 from fractions import Fraction as F
@@ -409,4 +414,44 @@ for xm1 in (0, 1):
         g_ok &= (I1 ^ J1) == 1 - x0
 check('S11 G108: both traces bijective in the pivots, the mask causal in the ideal prefix (T <= 3); E_1 = 1 - I_0',
       ok11 and g_ok)
+def diff_step(z, d, lo, hi):
+    """Synchronous step of a background z and its difference d, by the difference of the OR term."""
+    nz, nd = {}, {}
+    for i in range(lo + 1, hi):
+        nz[i] = R30(z[i - 1], z[i], z[i + 1])
+        orz = z[i] | z[i + 1]
+        orw = (z[i] ^ d[i]) | (z[i + 1] ^ d[i + 1])
+        nd[i] = d[i - 1] ^ orz ^ orw
+    return nz, nd
+
+
+ok12 = True
+for w in range(2 ** 7):
+    z = {i: (w >> (i + 3)) & 1 for i in range(-3, 4)}
+    d = {i: int(i == 0) for i in range(-3, 4)}
+    z1, d1 = diff_step(z, d, -3, 3)
+    z2, d2 = diff_step(z1, d1, -2, 2)
+    ok12 &= (d[0], d1[0], d2[0]) == (1, 1 - z[1], z[1] | z[2])
+    ok12 &= d1[-1] == 1 - z[-1] and d1[1] == 1
+inj = 0
+sets = {}
+for w in range(2 ** 7):
+    x = {i: (w >> (i + 3)) & 1 for i in range(-3, 4)}
+    ideal1 = {i: R30(x[i - 1], x[i], x[i + 1]) for i in range(-2, 3)}
+    raced1 = dict(ideal1)
+    raced1[0] = R30(x[-1], x[0], ideal1[1])        # site 1 synchronous, already computed; only site 0 races
+    def sync(r, lo, hi):
+        return {i: R30(r[i - 1], r[i], r[i + 1]) for i in range(lo, hi + 1)}
+    i2, r2 = sync(ideal1, -1, 1), sync(raced1, -1, 1)
+    i3, r3 = sync(i2, 0, 0), sync(r2, 0, 0)
+    sig = (ideal1[0] ^ raced1[0], i2[0] ^ r2[0], i3[0] ^ r3[0])
+    if sig[0]:
+        inj += 1
+        ok12 &= sig == (1, 0, 1)
+        dset = tuple(i for i in (-1, 0, 1) if i2[i] != r2[i])
+        sets[dset] = sets.get(dset, 0) + 1
+    else:
+        ok12 &= sig == (0, 0, 0)
+check('S12 G109: single-flip kernel by XOR-difference propagation; 16 injections, all 1, 0, 1; damage sets',
+      ok12 and inj == 16 and sets == {(1,): 8, (-1, 1): 8}, 'injections %d, sets %s' % (inj, sets))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
