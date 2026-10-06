@@ -1570,7 +1570,7 @@ Finite left support becomes an explicit constraint on the sideways limit.
 **An everyday picture.** Matching every finite view can yield a whole picture, but a picture assembled from ever larger canvases need not fit one finite canvas.
 
 
-## W130
+## G130
 Every wall has one forced left seed once the initial right tail is fixed.
 
 **What it says.** Successive left-permutive inversion gives a unique infinite left row for any prescribed temporal wall and any fixed initial right tail. Even a right tail of zeros can realize every wall if infinite left support is allowed.

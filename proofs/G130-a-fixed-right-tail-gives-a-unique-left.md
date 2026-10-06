@@ -1,10 +1,10 @@
-# Fixing the initial right tail gives a unique left seed for every wall trace
+# a fixed right tail gives a unique left seed for every wall
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G130. Fixing the initial right
-tail gives a unique left seed for every wall trace (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT130. a fixed right tail
+gives a unique left seed for every wall (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Every wall has one forced left seed once the initial right tail is fixed.
 **An everyday picture.** Fixing one half of the starting picture determines the other half from the requested movie, but the determined half may need an infinite canvas.
 
 ## The formal statement and proof
+
+### G130. Fixing the initial right tail gives a unique left seed for every wall trace (2026-10-06)
 
 **Status and purpose.** Exact coordinate reduction of G4.4's triangular inversion; independent review pending. This is not a new left-permutivity theorem or a solution of the wall problem. G129 leaves finite right support as an additional constraint. Here the target is to identify exactly what that constraint can and cannot exclude. No experiment. Counterfactual: finite initial right support alone restricts possible temporal walls, or exact finite-prefix realizations guarantee a finite left seed. The delayed single-cell example below independently rejects the latter implication at a fixed right tail.
 
@@ -37,3 +39,13 @@ The unique path carrying the leftmost input to the observed output contributes b
 For every N>=1, truncating that left seed to ones at -N,...,-1 yields a finite seed with the same right tail and exactly the same wall through time N. Its first wrong wall sample is at time N+1: the higher initial indices agree, while the fresh XOR pivot x_(-N-1)(0) differs. Thus arbitrary finite horizons are realized with growing left support even though no fixed finite left seed works for that fixed right tail. No claim is made about alternative right tails for this tau, or about periodicity of the single-cell trace. The check uses both the explicit one-tick truth table and the independent triangular uniqueness mechanism.
 
 **Next obligation.** For an alternating or eventually alternating prescribed wall, prove a property of u_r uniform over finite r that prevents an eventual zero tail, or identify a counterexample. Periodic companion assumptions, unrestricted trace existence and growing finite-prefix realizations do not supply that property. This is a reformulation of the missing proof, not a claim that the canonical words have been classified.
+
+*Second reader's note on G130 (Local, 2026-10-06; chat L084).* Correct. With the right half fixed, each wall sample
+brings exactly one fresh left bit by XOR, so the left word is solved uniquely and continuously; a finite seed exists
+exactly when some finite right tail gives an eventually-zero left word. Checked (`rule30_audit_g99_g100.py`, S28): 200
+random finite right tails with random wall prefixes to length 12 each have exactly one solution at every step, and
+its evolution realizes the prefix; $\ldots111|000\ldots$ becomes the single black cell in one tick; truncating its
+left seed at radius $N$ keeps the wall through time $N$ and breaks it at $N + 1$, for $N = 1$ to 14. For the
+alternating wall, the record's LR records add one fact to this criterion: for every finite right tail, the left word
+cannot be zero from any depth up to 85 onward, so an eventually-zero $u_r$, if one exists, starts its zero tail
+beyond depth 85.

@@ -116,6 +116,10 @@ CHECKS (GPT's claims at 827e006):
      L = 0..10 evolved forward with the wall as its right boundary violates the wall equation at a black time within
      18 ticks, so B(L, alternating) is empty for L <= 10 by finite boxes (death times 1,7,7,7,7,9,9,9,17,17,17 for
      phase 0 and 0,2,6,6,6,8,10,12,12,18,18 for phase 1); a seed determines at most one visible itinerary.
+  S28 (G130, added 2026-10-06 at 40af176): for 200 random finite right tails and random wall prefixes of length
+     N <= 12, successive solving gives exactly one left word, whose forward evolution realizes the prefix; the row
+     ...111|000... becomes the single black cell in one tick; truncating its left seed to ones at -N..-1 (N = 1..14)
+     keeps the wall through time N and first breaks it at N + 1.
 """
 import random
 from fractions import Fraction as F
@@ -1148,4 +1152,46 @@ for phase in (0, 1):
 ok27 &= deaths[0] == [1, 7, 7, 7, 7, 9, 9, 9, 17, 17, 17] and deaths[1] == [0, 2, 6, 6, 6, 8, 10, 12, 12, 18, 18]
 check('S27 G129: every left seed (L <= 10) dies against the alternating wall within 18 ticks, both phases', ok27,
       str(deaths))
+def wall_trace(init, T_):
+    """init: dict site -> bit (finite support, zero elsewhere); trace of site 0 for t = 0..T_."""
+    lo_, hi_ = min(init) - T_ - 2, max(init) + T_ + 2
+    row = {i: init.get(i, 0) for i in range(lo_, hi_ + 1)}
+    out = [row[0]]
+    for t in range(T_):
+        row = {i: R30(row.get(i - 1, 0), row[i], row.get(i + 1, 0)) for i in range(lo_ + t + 1, hi_ - t)}
+        out.append(row[0])
+    return out
+
+
+rng28 = random.Random(130)
+ok28 = True
+for trial in range(200):
+    Nn = rng28.randint(1, 12)
+    rtail = {i: rng28.randint(0, 1) for i in range(0, rng28.randint(1, 6))}
+    tau = [rtail[0]] + [rng28.randint(0, 1) for _ in range(Nn)]
+    left = {}
+    for n in range(1, Nn + 1):
+        sols = []
+        for g_ in (0, 1):
+            left[-n] = g_
+            init = dict(rtail)
+            init.update(left)
+            if wall_trace(init, n)[n] == tau[n]:
+                sols.append(g_)
+        ok28 &= len(sols) == 1
+        left[-n] = sols[0] if sols else 0
+    init = dict(rtail)
+    init.update(left)
+    ok28 &= wall_trace(init, Nn) == tau
+one = {i: (1 if i < 0 else 0) for i in range(-40, 41)}
+step = {i: R30(one.get(i - 1, 1 if i - 1 < 0 else 0), one[i], one.get(i + 1, 0)) for i in range(-39, 40)}
+ok28 &= all(step[i] == (1 if i == 0 else 0) for i in range(-39, 40))
+single = wall_trace({0: 1}, 16)
+tau_g = [0] + single
+for Nt in range(1, 15):
+    seed = {i: 1 for i in range(-Nt, 0)}
+    seed[0] = 0
+    tr = wall_trace(seed, Nt + 1)
+    ok28 &= tr[:Nt + 1] == tau_g[:Nt + 1] and tr[Nt + 1] != tau_g[Nt + 1]
+check('S28 G130: unique successive left solving realizes every prefix; the one-tick guard; truncations break at N + 1', ok28)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

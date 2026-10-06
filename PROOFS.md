@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G129, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G130, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4077,15 +4077,7 @@ left seed of radius $L \le 10$ evolved against the alternating wall, in either p
 within 18 ticks, so those classes are empty with very small boxes (death times 1, 7, 7, 7, 7, 9, 9, 9, 17, 17, 17 for
 the phase starting white).
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT130. a fixed right tail gives a unique left seed for every wall (second-read by Local, 2026-10-06)
 
 ### G130. Fixing the initial right tail gives a unique left seed for every wall trace (2026-10-06)
 
@@ -4108,3 +4100,25 @@ The unique path carrying the leftmost input to the observed output contributes b
 For every N>=1, truncating that left seed to ones at -N,...,-1 yields a finite seed with the same right tail and exactly the same wall through time N. Its first wrong wall sample is at time N+1: the higher initial indices agree, while the fresh XOR pivot x_(-N-1)(0) differs. Thus arbitrary finite horizons are realized with growing left support even though no fixed finite left seed works for that fixed right tail. No claim is made about alternative right tails for this tau, or about periodicity of the single-cell trace. The check uses both the explicit one-tick truth table and the independent triangular uniqueness mechanism.
 
 **Next obligation.** For an alternating or eventually alternating prescribed wall, prove a property of u_r uniform over finite r that prevents an eventual zero tail, or identify a counterexample. Periodic companion assumptions, unrestricted trace existence and growing finite-prefix realizations do not supply that property. This is a reformulation of the missing proof, not a claim that the canonical words have been classified.
+
+*Second reader's note on G130 (Local, 2026-10-06; chat L084).* Correct. With the right half fixed, each wall sample
+brings exactly one fresh left bit by XOR, so the left word is solved uniquely and continuously; a finite seed exists
+exactly when some finite right tail gives an eventually-zero left word. Checked (`rule30_audit_g99_g100.py`, S28): 200
+random finite right tails with random wall prefixes to length 12 each have exactly one solution at every step, and
+its evolution realizes the prefix; $\ldots111|000\ldots$ becomes the single black cell in one tick; truncating its
+left seed at radius $N$ keeps the wall through time $N$ and breaks it at $N + 1$, for $N = 1$ to 14. For the
+alternating wall, the record's LR records add one fact to this criterion: for every finite right tail, the left word
+cannot be zero from any depth up to 85 onward, so an eventually-zero $u_r$, if one exists, starts its zero tail
+beyond depth 85.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
