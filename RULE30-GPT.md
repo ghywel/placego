@@ -1385,3 +1385,105 @@ was refuted. The deepest (p,d,R) triples are (3,96,39), (4,128,43), (5,160,30), 
 measurement side of C018, without promoting the tested LR statement to all depths. The
 prefix proof neither contradicts these records nor supplies their unbounded continuation.
 Both parties' operational rows were preserved, and the shared Condrey-end board row is PART.
+
+## G12. A hole bit is shielded beyond three cells of its own row (2026-10-06)
+
+**Question and scope.** C021 reported that individual hole effects can spread and cannot generally be
+superposed. This block asks exactly where two inputs interact, rather than retrying the ray proposal.
+Fetched and merged03bf7bc, read C021 and the shared board; both standard startup probes printed ALL
+CHECKS PASS (existing witness scope as G1). Reused §8.2 Lemma4's triangular input formula and G11's
+prefix calculation. No Local record search was repeated. Predictions HI0–HI4 were pushed in9ce2aa8;
+a subsequent theorem-control addendum was pushed in5127719 before its run.
+
+### G12.1. Exact local shielding theorem
+
+Suppose a prescribed wall has a white cell at time q followed by at least four black cells:
+
+```math
+ \tau(q)=0,\qquad \tau(q+1)=\tau(q+2)=\tau(q+3)=\tau(q+4)=1.
+```
+
+Take two arbitrary right columns sigma that differ only at q. Their forced left rows **at time q**
+differ exactly at depths1,2,3, and agree at every depth4 and beyond. No condition is placed on the
+wall or right column after q+4. Thus this holds at every hole of a one-hole wall with p≥5.
+
+**Proof.** Write $x_j=v_j(q)$ and $y_j=v_j(q+1)$, where depth0 is the wall. The future columns y
+are identical in the two constructions: inverse causality uses only sigma at times at least q+1.
+The four-black window and G11's calculation give
+
+```math
+ x_1=h,\quad x_2=h,\quad x_3=1-h,\quad x_4=1,\qquad h=1-\sigma(q).
+```
+
+The next cell is determined by
+
+```math
+ x_5=y_4\oplus(x_4\lor x_3)=y_4\oplus1.
+```
+
+It is therefore identical in both rows. Once the two preceding x cells agree and the y cell
+agrees, the recurrence $x_{j+1}=y_j\oplus(x_j\lor x_{j-1})$ gives agreement at the next cell.
+Induction proves equality at all depths≥4. The first three displayed cells each flip. This
+proves an infinite-depth statement about a **single input at its own time**, not one-hole LR.
+
+For a wall beginning at its white phase, the entire time0 tail beyond depth3 ignores sigma(0),
+whatever all later hole inputs are. In particular, sigma(0) has no mixed Boolean interaction
+with any later input in that tail. This is stronger than a finite observation of no interaction.
+It does not say that a bit injected at time q>0 changes only three cells of the time0 row:
+propagating its modified row backwards through q time steps is a different operation. C021's
+late-hole spreading and nonlinear effects remain compatible with the theorem.
+
+### G12.2. An exact identity at the second input's leading edge
+
+For the wall beginning at a hole, let a=sigma(0), b=sigma(p), fixing every other input. Let
+$I(j)$ be the XOR of the four depth-j cells for (a,b)=00,10,01,11: the coefficient of ab in
+that cell's Boolean polynomial. In particular, zero I at all depths is the exact two-input
+superposition test for this fixed background.
+
+Lemma4 gives no dependence on b through depth p, and
+$x_{p+1}=b\oplus V(a)$. The column at time1 does not depend on a. Put $U(a)=x_p$. Since
+$X\lor U=X\oplus U\oplus XU$ over Boolean arithmetic, the inverse recurrence at the next depth gives
+
+```math
+ I(p+2)=U(0)\oplus U(1).
+```
+
+The term at time1 has no a coefficient; the only ab coefficient comes from bU(a). This is
+an exact criterion, not a prediction that the right side is1. For p≥5 it is0 by G12.1, and
+indeed every I(j) is0. Thus the first hole is a poor representative of later hole interactions.
+The algebra makes the failed blind prediction below understandable without changing it.
+
+### G12.3. Predictions, runs and failures
+
+The probe is `rule30_gpt_hole_interactions.py`, one Intel CPU process. It evaluates four scalar
+fibres with only the first two hole inputs variable, all other sigma bits zero. An independent
+packed four-case recurrence checks every output cell. This is not an exact record search.
+
+- HI0, packed/scalar agreement, passed at p2..32 through depth3p+2.
+- HI1, second-bit arrival at depth p+1 and no earlier dependence, passed.
+- HI2, the identity in G12.2, passed at every period tested.
+- HI3, blind interaction by depth2p+2 at every p3..32, **refuted at every p5..32**.
+  There was no mixed term through the tested horizons3p+2 for those periods. G12.1 explains
+  its absence at every depth for that first input, not merely within the horizon.
+- HI4, explicitly unexpected p2 comparison, ran: first mixed depth4 at p2,5 at p3,8 at p4.
+  Mixed-cell counts through the respective horizons8,11,14 were4,5,5. The generic
+  superposition counterfactual was rejected by these witnesses.
+
+The initial shell invocation printed a date after the probe, masking its return code; a separate
+invocation of the identical command captured **exit1**, with ALL CONTROLS PASS and HI3 refuted.
+The failed blind prediction is retained. A failed prediction is not a failed control.
+
+The `shield` addendum then checked the newly derived theorem on p5..64, eight seeded arbitrary
+sigma columns per period, at holes0 andp, through depth96: **960 comparisons**, seed2026100612.
+Every flip changed exactly depths1,2,3 of that hole's own row; depth4 was black in both. The
+command exited0 and printed ALL SHIELD CONTROLS PASS. Its p3 counterfactual, all other sigma
+bits zero, changed depths[1,2,3,4,5,6,8,9,11,12,13] through20, rejecting universal three-cell
+shielding at every period. These checks validate the instrument; the proof establishes the
+all-depth shielding claim under the stated four-black-window premise.
+
+**What changed.** The one-hole lead remains PART. A local boundary bit really can be erased
+from the deep tail, even when later inputs are arbitrary; that distinguishes the first hole
+from later inputs observed at time0. We have not bounded their earlier inverse propagation,
+proved LR, or justified a coin law. The next missing object is a bound on that backward
+propagation or on surviving zero-run histories, with the starting time specified. C022 gives
+Local the correction and the exact scope rather than asking for another records run.

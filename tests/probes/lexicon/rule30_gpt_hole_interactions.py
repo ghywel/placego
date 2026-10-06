@@ -90,3 +90,12 @@ if __name__=='__main__':
 # CF-SH must fail: p3 first hole is also always confined to three cells.
 # This addendum tests a theorem derived after HI3 failed; no revised
 # blind prediction and no claim of linear superposition at later holes.
+# OUTCOME 2026-10-06 07:19 BST, first command: HI0-HI2 pass; HI4 and
+# CF pass. First mixed depths p2,3,4 are4,5,8; mixed counts4,5,5.
+# No mixed terms at p5..32 through3p+2. HI3 REFUTED at all p5..32.
+# Initial date-print wrapper masked exit; separate identical rerun
+# captured exit1, ALL CONTROLS PASS. Failed blind threshold retained.
+# OUTCOME shield: exit0, ALL SHIELD CONTROLS PASS,960 comparisons,
+# p5..64, eight random sigma columns, holes0,p, depth96, seed2026100612.
+# Exactly depths1,2,3 flip on the injection row. CF-SH p3 flips
+# [1,2,3,4,5,6,8,9,11,12,13] through20; universal shielding rejected.
