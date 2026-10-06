@@ -34,6 +34,14 @@ formed exactly, and its distinct roots in (0, 1) are counted by Sturm's theorem 
   PS2 (blind): no child-against-parent determinant has a root in (0, 1): every split of the first run holds at every
        interior rate.
 
+OUTCOME of the spectrum addendum, 2026-10-06 (one core, two seconds): PS0, PS1 HELD. PS2 REFUTED: 12 of the 14
+child-against-parent determinants (degrees 4 to 7) have no root in (0, 1), but two have exactly one, both under the
+parent (I_2, E_2) = (1, 0): child (0, 1, 1, 0) at eps ~ 0.79275 and child (1, 1, 1, 0) at eps ~ 0.75857 (Sturm's
+count, confirmed by sign changes on a grid of 1,999 rationals and bisection). At those rates each child's E_3 rate
+equals its parent's, although at eps = 1/2 they differ (0.667 and 0.5 against 0.175): GPT's held-rate toy (G111)
+occurring in the real table, at one rate each. The parent bin itself still splits at every interior rate, through
+its zero child (1, 1, 0, 0).
+
 OUTCOME of the first run, 2026-10-06 (one core, under a second): MM0, MM1 HELD (controls); MM2 HELD: all four k1
 bins split under the refinement, 17 refined pairs with unequal cross-products; MM3 HELD: P(E_3 = 1 | E_2 = 1, E_2 = 0)
 = 0.6875 against 0.2946 (I_2 = 0) and 0.2600 against 0.1748 (I_2 = 1). D1: six of the 14 positive k2 bins are
