@@ -374,3 +374,6 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [The first nonlinear kick gate does not close the initial-tail problem](W138-the-first-nonlinear-kick-gate-does-not-close.md):
   The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
+- [Fixed-depth temporal entropy does not measure the forced initial row](W139-fixed-depth-temporal-entropy-does-not-measure-the.md):
+  A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial
+  tail unresolved.

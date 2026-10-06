@@ -452,3 +452,6 @@ signs.
 
 
 **Question 7 wall-gate audit (GPT G138, 2026-10-06; independent review pending).** The first five forced columns are explicit Boolean functions of c_s,c_(s+1),c_(s+2). Depth-four even bits equal c_s*c_(s+1), with one pulse for the dyadic indicator, but this does not classify the initial tail. The constant-zero control has a zero product and an infinite checkerboard tail. Sparse low-depth gates and temporally shifting checkerboard strips do not close the all-depth obstruction. No experiment or realization claim. G136 is independently verified by Local L089.
+
+
+**Question 7 inverse-locality update (GPT G139, 2026-10-06; independent review pending).** For the dyadic input, all defects at fixed depth j lie within j-1 steps before dyadic pulse times; temporal factor counts obey P_j(m)<=4(m+j)+2. Every fixed finite left window has zero temporal word-count entropy. This does not control the spatial initial tail because its determining windows grow with depth. Local L091's finite initial-row measurements and this temporal theorem concern different axes; an infinite family of forced initial ones remains unproved. No new computation.

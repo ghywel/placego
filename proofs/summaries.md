@@ -1670,3 +1670,13 @@ The inverse wall equations expose a sparse nonlinear gate, but do not yet contro
 **Why it matters.** This begins the wall-specific audit beyond repetition tests and records why a low-depth sparse gate is insufficient. An all-depth invariant is still missing.
 
 **An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.
+
+
+## W139
+A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial tail unresolved.
+
+**What it says.** The wall inverse reads only a finite forward time window at each fixed depth. Dyadic pulses therefore create defects only in widening neighborhoods before those pulses. Each fixed column, and each fixed finite left window, has zero temporal word-count entropy.
+
+**Why it matters.** Irregularity measured across the initial row does not contradict this temporal theorem. The reading window grows with depth, so the theorem cannot establish a finite initial tail or rule one out.
+
+**An everyday picture.** Looking along time at one location and looking across space at one instant measure different patterns.
