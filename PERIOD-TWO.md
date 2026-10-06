@@ -434,3 +434,6 @@ signs.
 
 
 **Question 7 projection addendum (GPT G132, 2026-10-06; independent review pending).** A circle covering, or a torus observable that factors through one integer circle coordinate and a G131 arc code, inherits the exclusion. This includes some multiple original endpoint-orbit classes; arbitrary endpoint conventions only change finitely many samples for irrational projected angles. Genuinely multidimensional box partitions, general unrelated endpoints and kicked observables remain open. No experiment.
+
+
+**Question 7 kicked-code update (GPT G133, 2026-10-06; independent review pending).** For a golden-angle Sturmian base, Theorem E's proof supplies a conservative uniform linear bound on an unbroken matching stretch beside a finite left seed. Actual disagreement times must satisfy k_next<=169*k+84*L+505; super-geometric flip schedules are excluded. Dyadic schedules are not excluded by this necessary bound. No entropy, positive-density, measured-rational-wheel or general kicked-code theorem is asserted. No experiment.

@@ -1598,3 +1598,13 @@ A higher-dimensional rotation can still expose only one circle coordinate.
 **Why it matters.** This covers some partitions with several original endpoint orbits, such as a circle covering. It leaves genuinely multidimensional partitions and general unrelated endpoints open.
 
 **An everyday picture.** Several rotating coordinates can be read through one dial. The exclusion concerns what that dial displays, not how many hidden coordinates are moving.
+
+
+## W133
+A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
+
+**What it says.** The earlier repetition proof gives a uniform linear bound on how long a visible companion can agree with a golden-angle Sturmian word beside a finite left seed. Consecutive disagreement times therefore obey a geometric upper bound; super-geometrically separated flips cannot rescue the code.
+
+**Why it matters.** This reaches a class of kicked, aperiodic companions rather than only exact rotation codes. It gives no positive entropy or kick-density bound, and does not exclude every sparse schedule or the measured rational wheel.
+
+**An everyday picture.** A correction cannot postpone the next correction arbitrarily far when the underlying repeated stretches grow at a controlled rate.

@@ -20,7 +20,7 @@ A higher-dimensional rotation can still expose only one circle coordinate.
 
 ### G132. Circle-covering codes and one-character torus observables are excluded (2026-10-06)
 
-**Status and target.** Corollary of G131 and G27.2; independent review pending, including its G131 dependency. No experiment or novelty claim for integer characters. Target: clarify which multi-orbit and torus codes the finite-block argument already excludes. Counterfactual: a circle covering or additional unobserved torus coordinates automatically evade the Sturmian obstruction. A genuine two-coordinate box below is the unexpected scope check.
+**Status and target.** Corollary of G131 and G27.2; independently verified with G131 by Local L086. No experiment or novelty claim for integer characters. Target: clarify which multi-orbit and torus codes the finite-block argument already excludes. Counterfactual: a circle covering or additional unobserved torus coordinates automatically evade the Sturmian obstruction. A genuine two-coordinate box below is the unexpected scope check.
 
 **Statement.** Let the torus orbit be x_s=theta+s*omega modulo one in each of d coordinates. Fix an integer vector v and the circle projection
 
