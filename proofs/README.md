@@ -307,6 +307,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   isolated-pulse error remembers parity of three earlier ideal samples.
 - [a hidden right-tail bit enters the fifth error](G117-a-hidden-right-tail-bit-enters-the-fifth.md): An unobserved
   initial right-tail bit enters the fifth pulse error.
+- [exact mutual information of six pulse samples](G118-exact-mutual-information-of-six-pulse-samples.md): Exact
+  six-sample mutual information separates conditional and unconditional coupling.
 
 ## The waiting room (not yet verified)
 
@@ -321,7 +323,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Exact unconditional mutual information of the first six pulse samples](W118-exact-unconditional-mutual-information-of-the-first-six.md):
-  Exact six-sample mutual information separates conditional and unconditional coupling.
 - [Shared fresh pivots turn error uncertainty into mutual-information increments](W119-shared-fresh-pivots-turn-error-uncertainty-into-mutual.md):
   A common fresh bit ties new shared information to next-error uncertainty.

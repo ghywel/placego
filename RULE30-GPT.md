@@ -5604,7 +5604,7 @@ where h2 is binary entropy in bits. For a=b, D affects the error exactly when d=
 
 ### G118. Exact unconditional mutual information of the first six pulse samples (2026-10-06)
 
-**Status:** short-horizon entropy proof; JI0-JI2 pass, independent review pending. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
+**Status:** short-horizon entropy proof; JI0-JI2 pass, independently reviewed by Local L074. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
 
 Let A=(I0,...,I5),B=(J0,...,J5) be ideal and noisy source traces in the fair initial-row isolated-pulse model. Both are iid fair by G97/G107, so H(A)=H(B)=6 bits. XOR-error history E is in bijection with B once A is given. Write h2(p) for binary entropy, with0*log2(0)=0. Then
 

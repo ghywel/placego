@@ -76,6 +76,10 @@ CHECKS (GPT's claims at 827e006):
      formula in (I_1, I_2, I_3, I_4, D), D = x(3) (x(4) OR x(5)), on every injected word and is 0 otherwise; 256
      injections, 152 fifth errors; each injected ideal quadruple occurs 16 times, D = 1 in 6; the per-quadruple error
      counts have histogram {0: 2, 16: 6, 6: 6, 10: 2}; the all-zero quadruple has E_5 = D.
+  S19 (G118, added 2026-10-06 at 8ced884): over the 2,048 pulse words, six samples each: both marginal traces 64 x 32;
+     the joint histogram {32: 32, 24: 32, 8: 16, 5: 16, 3: 16}, 112 distinct pairs; each ideal trace beginning 0 has 8
+     injections among 32, beginning 1 none; H(A, B) and MI(A; B) from the counts equal 6 + h2(1/4)/2 + h2(3/8)/16 and
+     6 - h2(1/4)/2 - h2(3/8)/16 to 1e-12.
 """
 import random
 from fractions import Fraction as F
@@ -685,4 +689,39 @@ ok18 &= inj18 == 256 and e5s == 152 and len(quad) == 16 and all(v[0] == 16 and v
 ok18 &= hist == {0: 2, 16: 6, 6: 6, 10: 2}
 check('S18 G117: fifth-error formula on every injected word; 256 injections, 152 errors; D-split; histogram', ok18,
       'injections %d, errors %d, histogram %s' % (inj18, e5s, dict(sorted(hist.items()))))
+import math
+joint, mA, mB, injA = {}, {}, {}, {}
+for w in range(2 ** 11):
+    x = {i: (w >> (i + 5)) & 1 for i in range(-5, 6)}
+    zr, yr = dict(x), dict(x)
+    A_, B_ = [x[0]], [x[0]]
+    for t in range(1, 6):
+        lo, hi = -5 + t, 5 - t
+        nz = {i: R30(zr[i - 1], zr[i], zr[i + 1]) for i in range(lo, hi + 1)}
+        ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+        if t == 1:
+            ny[0] = R30(yr[-1], yr[0], ny[1])
+        zr, yr = nz, ny
+        A_.append(zr[0])
+        B_.append(yr[0])
+    A_, B_ = tuple(A_), tuple(B_)
+    joint[(A_, B_)] = joint.get((A_, B_), 0) + 1
+    mA[A_] = mA.get(A_, 0) + 1
+    mB[B_] = mB.get(B_, 0) + 1
+    ia = injA.setdefault(A_, [0, 0])
+    ia[0] += 1
+    ia[1] += A_[1] ^ B_[1]
+jh = {}
+for v in joint.values():
+    jh[v] = jh.get(v, 0) + 1
+Hn = lambda counts: -sum(c / 2048 * math.log2(c / 2048) for c in counts)
+HAB = Hn(joint.values())
+HA, HB = Hn(mA.values()), Hn(mB.values())
+h2 = lambda q: -q * math.log2(q) - (1 - q) * math.log2(1 - q)
+ok19 = len(mA) == 64 and set(mA.values()) == {32} and len(mB) == 64 and set(mB.values()) == {32}
+ok19 &= jh == {32: 32, 24: 32, 8: 16, 5: 16, 3: 16} and len(joint) == 112
+ok19 &= all(v[1] == (8 if a[0] == 0 else 0) for a, v in injA.items())
+ok19 &= abs(HAB - (6 + h2(0.25) / 2 + h2(0.375) / 16)) < 1e-12 and abs((HA + HB - HAB) - (6 - h2(0.25) / 2 - h2(0.375) / 16)) < 1e-12
+check('S19 G118: marginals, joint histogram, injections by I_0, H(A,B) and MI', ok19,
+      'MI = %.6f bits' % (HA + HB - HAB))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -1314,12 +1314,12 @@ An unobserved initial right-tail bit enters the fifth pulse error.
 
 **An everyday picture.** A past disturbance can expose information from somewhere the observer never watched.
 
-## W118
+## G118
 Exact six-sample mutual information separates conditional and unconditional coupling.
 
 **What it says.** In the isolated-pulse model joint entropy is6+h2(1/4)/2+h2(3/8)/16 bits;mutual information is6 minus the same two uncertainty terms.
 
-**Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 pass2048 words and exact count spectrum;review pending. No entropy-rate law.
+**Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 pass2048 words and exact count spectrum;reviewed by Local L074. No entropy-rate law.
 
 **An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
 

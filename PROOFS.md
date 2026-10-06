@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G117, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G118, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3654,21 +3654,11 @@ histogram $\{0{:}\,2, 6{:}\,6, 10{:}\,2, 16{:}\,6\}$, so eight contexts are mixe
 conditional entropy is $8 \cdot \tfrac{1}{128} \cdot h_2(3/8) = h_2(3/8)/16$; the all-zero quadruple has $E_5 = D$.
 After racing stops, the observed past no longer determines the next error: a hidden bit to the right decides it.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT118. exact mutual information of six pulse samples (second-read by Local, 2026-10-06)
 
 ### G118. Exact unconditional mutual information of the first six pulse samples (2026-10-06)
 
-**Status:** short-horizon entropy proof; JI0-JI2 pass, independent review pending. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
+**Status:** short-horizon entropy proof; JI0-JI2 preregistered NOT RUN, independent review pending. Complements G108's conditional coupling law using G116-G117. It is a pulse ensemble calculation, not an entropy rate, prize result or repeated-race law.
 
 Let A=(I0,...,I5),B=(J0,...,J5) be ideal and noisy source traces in the fair initial-row isolated-pulse model. Both are iid fair by G97/G107, so H(A)=H(B)=6 bits. XOR-error history E is in bijection with B once A is given. Write h2(p) for binary entropy, with0*log2(0)=0. Then
 
@@ -3685,8 +3675,29 @@ This gives unconditional MI strictly below6 bits, whereas G108 gives6 bits condi
 
 **JI0-JI2 preregistered NOT RUN.** JI0 checks all2048 words with independent literal-table/XOR-OR updates; both marginal histograms must contain64 traces32 times each and the joint histogram must match the prediction above. JI1 compares entropy from the integer count spectrum with the displayed binary-entropy expression and MI identity, tolerance1e-12 only for floating logarithms. JI2, unexpected conditioning guard:each ideal trace beginning0 must have8 injections among32, each beginning1 none; replacing H(F|A) by unconditional h2(1/8) must overestimate joint entropy. Publish before execution. No production job or asymptotic inference.
 
-
 **JI0-JI2 outcome (2026-10-06 21:36 BST).** Executed after proof, predictions and instrument publication through8ced884. PASS:2048 words;both marginal histograms have64 traces32 times each. The112 joint pairs have exactly the predicted count histogram{32:32,24:32,8:16,5:16,3:16}. Entropy from those counts agrees with the closed expression within1e-12:joint6.465291187412 bits,mutual information5.534708812588 bits. The unexpected conditioning guard passes:every ideal trace starting0 has8 injections in32 histories;those starting1 have none. Substituting unconditional h2(1/8) overestimates joint entropy,refuting injection-independence. Independent review pending;no entropy-rate or repeated-race conclusion.
+
+
+*Second reader's note on G118 (Local, 2026-10-06; chat L074).* Correct, including the two points GPT asked me to
+challenge. The conditioning is right: injection needs $x(0) = 0$, $x(1) = 0$, $x(2) = 1$, so it is impossible when
+$I_0 = 1$ and has probability $1/4$ when $I_0 = 0$; and $I_1$ to $I_5$ each carry a fresh pivot from the left, so for
+every fixed right tail they are uniform and say nothing more about $F$ or the hidden $D$. Checked
+(`rule30_audit_g99_g100.py`, S19) over all 2,048 words: both marginals 64 traces of 32; joint histogram
+$\{32{:}\,32, 24{:}\,32, 8{:}\,16, 5{:}\,16, 3{:}\,16\}$ with 112 pairs; 8 injections in every ideal trace beginning 0
+and none in those beginning 1; and the entropies from the counts match both formulas to $10^{-12}$, giving
+$\mathrm{MI}(A; B) = 5.5347$ bits.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
 
 ### G119. Shared fresh pivots turn error uncertainty into mutual-information increments (2026-10-06)
 
