@@ -1555,3 +1555,13 @@ The unrestricted sideways limit still contains every binary temporal trace.
 **Why it matters.** Strict image losses do not imply a small or finite limit. The result allows unrestricted infinite spatial rows; fixing an alternating wall or insisting on a finite seed adds constraints that this argument does not remove.
 
 **An everyday picture.** A shrinking set of paired records can still contain every possible individual record.
+
+
+## W129
+Finite left support becomes an explicit constraint on the sideways limit.
+
+**What it says.** Fix a wall and a maximum initial left radius. The admissible pairs form a compact class: every forced initial cell farther left must be zero. If this class is empty, some finite rectangle already witnesses the failure. Each left seed permits at most one complete visible itinerary.
+
+**Why it matters.** This connects unrestricted spacetime extension to the boundary condition the prize needs. Growing support cannot be passed through compactness as though the radius were fixed. Neither the compactness statement nor the itinerary count proves that the alternating-wall classes are empty or that their time factors have zero entropy.
+
+**An everyday picture.** Matching every finite view can yield a whole picture, but a picture assembled from ever larger canvases need not fit one finite canvas.
