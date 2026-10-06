@@ -461,6 +461,8 @@ the research record, the scientific record and the instruments.
 - [PERIOD-TWO.md](PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
   what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
 
+The independent [GPT research record](RULE30-GPT.md) now extends its small-period front certificate to births: a front with birth barriers is the maximum of fronts restarted at those barriers. The arbitrary-period bound remains open.
+
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
   content.

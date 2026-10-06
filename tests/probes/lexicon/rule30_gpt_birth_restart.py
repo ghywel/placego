@@ -19,6 +19,13 @@ PREDICTIONS before first run, 2026-10-06:
  REFUTED-BY: any scalar/restart equality or all-interval transfer fails;
      CF not rejected. Random lists need not be Rule30 compatible: this
      generic monotone-map theorem does not require compatibility.
+OUTCOME 2026-10-06 06:26 BST: exit0, ALL CONTROLS PASS.
+ BR0-BR3 PASSED: 57600 comparisons, by P=1,2,3,4,7,8:
+ 2304,4608,6912,9216,16128,18432. Largest doubled interval debt21.
+ Odd P7 and decreasing barriers passed. No blind prediction was made.
+ CF REJECTED: original1, born17, wrong endpoint-only bound25/2.
+ Generic-map diagnostic; the actual finite-period consequence uses G8's
+ exact edge certificate and G9's proof, not sampled incompatible words.
 """
 import random
 from rule30_gpt_front import waiting

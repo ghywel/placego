@@ -945,3 +945,146 @@ covering all compatible paths rather than one measured side. Its mathematical ex
 open: bound the potentials uniformly as P grows, or find an obstruction in that broader
 compatible class and use edge reachability instead. Q7 remains PART. No ranking of the LR
 forced walk, no prize solution and no unbounded-period settling theorem are claimed.
+
+## G9. Birth clamps inherit an all-interval front budget (2026-10-06)
+
+**Question and scope.** G8 left birth correction outside its full-line certificate. This block proves
+an elementary transfer lemma, extending that certificate without a second graph. Read the current
+history, standing workflow, PERIOD-TWO.md and both shared ledgers; fetched main with no new Claude
+reply. Both startup checks printed ALL CHECKS PASS, with the capped witness scope of G1.
+BR0–BR3 and the endpoint-only counterfactual were pushed in `54592f2` before running the diagnostic.
+This is a theorem about the conservative front, not actual settling times or a prize solution.
+
+### G9.1. Maximum over restarts: exact identity
+
+Fix the temporal words and phase. Write $F_j(s)=s+\delta(w_j,s\bmod P)$ for the next-black map,
+with $F_j(s)=s$ for an identically white word. These maps are nondecreasing on integer times:
+starting later cannot find an earlier next black. The same holds after a fixed phase shift.
+Put $G_{a,b}=F_{b-1}\circ\cdots\circ F_a$ and $G_{a,a}(s)=s$. Let birth barriers be $b_j$,
+and define $T_0=0$ and $T_{j+1}=F_j(\max(T_j,b_j))$. Then, for $k\ge1$,
+
+```math
+ T_k=\max\left\{G_{0,k}(0),\ \max_{0\le j<k}G_{j,k}(b_j)\right\}.
+```
+
+**Proof.** On a totally ordered domain, a nondecreasing map preserves a finite maximum:
+$F(\max(u,v))=\max(F(u),F(v))$. At each step distribute $F_j$ over the old maximum and the
+new barrier. Induction gives the displayed formula, including the original start and each
+restart at its own barrier. The barrier need not increase with j. This is the usual maximum
+expansion of a reflected recurrence, applied here to next-black maps; no novelty is claimed
+for that order argument (PRIOR-ART.md records the limited reading).
+
+### G9.2. Transfer theorem and the precise quantifiers
+
+Suppose $C\ge0$, $\gamma\ge1$, and the unclamped front has the **same** budget for every
+interval and every starting time:
+
+```math
+ G_{a,b}(u)-u\le\gamma(b-a)+C
+ \qquad(0\le a\le b,\ u\in\mathbb Z).
+```
+
+For periodic words it suffices to check u in every residue class, because the maps commute
+with translation by P. Suppose also $b_j\le j$. Every restart term obeys
+
+```math
+ G_{j,k}(b_j)\le b_j+\gamma(k-j)+C
+ \le\gamma k+C-(\gamma-1)j\le\gamma k+C.
+```
+
+The original-start term has that same bound. Taking their maximum proves
+$T_k\le\gamma k+C$ **including all birth clamps**. No per-birth penalty is added. Rule 30
+compatibility is needed to obtain the budget from G8, but not for this transfer lemma.
+
+For the normalized half-line recursion of G2/G6, $b_j=\max(0,j+1-L)$ with $L\ge1$,
+so $b_j\le j$. Thus the theorem applies. Any already required initial-time offset remains
+part of the normalization; this does not assert that all physical cells settle at time zero.
+
+On an interval of the birth-clamped front, the same expansion starting at a gives
+
+```math
+ T_b-T_a\le\gamma(b-a)+C+\max(0,a-T_a).
+```
+
+For L=1, $T_a\ge a-1$ for $a\ge1$, since the preceding update starts at its birth barrier
+and never decreases time. Hence the extra term is at most 1; at a=0 it is zero.
+For general L, $T_a\ge\max(0,a-L)$ gives an extra term at most L. These interval statements
+are weaker than the absolute bound at the normalized origin; the distinction matters.
+
+**New consequence of the existing finite certificate.** G8 supplies the all-interval,
+all-phase budget with $\gamma=5/2$ and C=0,0,1,3,22.5 for common P=1,2,3,4,8 respectively.
+Consequently **every compatible path at those common periods**, of arbitrary length, has
+birth-clamped $T_k\le(5/2)k+C$ under the normalized schedule above. At P=8 the absolute debt
+is at most 22.5; every birth-clamped interval has debt at most 23.5 for L=1, or 22.5+L generally.
+These are rigorous consequences conditional on G8's exactly checked finite edge inequalities,
+not an extrapolation of the random diagnostic or the finite edge trees. Compatible pairs
+need not be reachable from the black edge root; the broader G8 domain already covers them.
+
+An unbounded-period certificate with C(P)=O(P), slope below 3 and P=o(M) would therefore carry
+its birth correction automatically. Neither the uniform certificate nor sublinear periods
+has been proved. A bound only from one original start, even at every prefix, is insufficient.
+
+### G9.3. Diagnostic, failed shortcut and unexpected check
+
+Ran `PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/lexicon/rule30_gpt_birth_restart.py`,
+one GPT Intel CPU process, standard library, exit 0, ALL CONTROLS PASS. BR0–BR3 are theorem
+controls, not blind evidence. Seed 2026100609 generates 24 word lists of length24 at each
+P=1,2,3,4,7,8. Each list uses L=1,2,5 barriers and a fourth barrier that is j at multiples
+of 3 and zero otherwise. All phases and prefixes are checked. Words may be incompatible;
+this deliberately tests the generic transfer theorem independently of Rule 30 assumptions.
+
+The budget C is computed by independent scalar scans of every unclamped interval at every
+starting residue. Birth updates use waiting tables. A third calculation scans every restart
+suffix and checks exact equality to their maximum. All 57600 scalar/restart/bound comparisons
+passed; counts by P are 2304,4608,6912,9216,16128,18432. Largest doubled interval debt was 21.
+No control failed. **Unexpected check:** odd P=7 and the barrier that repeatedly falls to zero
+both pass; monotonicity is required of the clock maps, not of the barriers.
+
+**Counterfactual rejected, with exact witness.** At P=16, take four white words followed by
+word1. From time 0 the unclamped front stays 0 then ends 1, obeying every original-prefix
+slope-5/2 bound with debt0. With $b_j=j$, the last word is entered at time 4, its next black
+is at time 16, and the result is 17, exceeding $(5/2)\times5=12.5$. This is a generic-map
+counterexample to replacing the all-phase, all-interval hypothesis by an endpoint-only
+hypothesis. The word list is not claimed to be a compatible Rule 30 side.
+
+**What moved.** Birth transfer is now DONE as a lemma. The local-potential lead remains PART:
+its missing ingredients are a uniform arbitrary-period budget and sublinear period growth,
+or an edge-sensitive substitute if broader compatibility obstructs that budget. Next
+reasoning intention: use simultaneous temporal rotation to express the phase-aware potential
+on clock-aligned word pairs; this retains phase information while removing the redundant
+factor P in the finite graph. No Local long run was duplicated or requested.
+
+### G9.4. Next lead advanced: clock alignment removes a redundant factor P
+
+There is a second exact reduction, without a new computation. Let S rotate a temporal word
+by one time step, so $(S a)(t)=a(t+1)$. Replace $(a,b,r)$ by the clock-aligned pair
+$Q(a,b,r)=(S^r a,S^r b)$. If these words are A,B, let $d=\delta(B,0)$. Its allowed quotient
+edges are precisely
+
+```math
+ (A,B)\longrightarrow(S^d B,S^d C),
+ \qquad S C=A\oplus(B\lor C),\qquad \text{weight }2d-5.
+```
+
+**Proof of equivalence.** Simultaneously rotating the three words preserves the compatibility
+equation. The change $R_t(a,b,r)=(S^t a,S^t b,r-t\bmod P)$ preserves delay, edges and Q.
+Its action is free because the phase coordinate changes, even if the words have smaller
+fundamental period. Each orbit has P vertices. Every quotient edge lifts at r=0, and every
+original edge projects to the displayed edge. Thus the quotient has $4^P$ vertices and
+$4^P$ edges, counted with allowed choices, instead of $P4^P$ each.
+
+Any quotient potential g lifts to $h(a,b,r)=g(Q(a,b,r))$ with exactly the same inequalities.
+Conversely, from any nonnegative integer certificate h, form
+$\bar h(v)=\max_{0\le t<P}h(R_t v)$. Each rotated edge has the same weight; taking maxima
+on its inequalities proves $\bar h(v)\ge2d-5+\bar h(v')$. This certificate is invariant on
+orbits, descends to g, and has exactly the same global maximum as h. Hence the two graphs
+admit certificates with **identical optimal maximum potential**. No computation of a new
+potential is claimed. The unaligned unique-predecessor property need not survive projection.
+
+This does not evade G8's phase-free obstruction. The aligned words encode the arrival phase,
+and the target words rotate by the actual delay; they are not the original pair at the next
+spatial index. At P=8 this proves that a certificate with maximum 45 exists on 65536 aligned
+pairs, from the already checked 524288-state certificate. At P=16 the quotient still has
+$4^{16}=4294967296$ vertices: this factor-P reduction is not an efficient arbitrary-period
+algorithm. Next open target: an analytic potential or smaller sufficient summary on aligned
+pairs with a uniform period-scaled bound. No Local computation is requested.
