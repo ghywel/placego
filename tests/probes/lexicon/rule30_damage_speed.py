@@ -36,11 +36,48 @@ PREDICTIONS, written 2026-10-06 before the first run.
   DS5 (blind, the derivation's test): on the random background P(heal) is within 0.02 of 1/2 and E[jump | heal]
       within 0.05 of 1.5, so 0.754 = 0.5 * 1.5 to that accuracy.
 REFUTED-BY: DS0 or DS1 failing (the instrument), CF holding; DS2 to DS5 the other way.
+
+OUTCOME of the first run, 2026-10-06 (LOGT = 13, 70 seconds). DS0 PASSED (random: 0.2547, 0.2434, 0.2482, 0.2166,
+  0.2414, 0.2580, 0.2601, 0.2517; mean 0.2468). CF PASSED (white: v = 1). DS1 FAILED on its first half and the header
+  above is WRONG where it says "never more": the jump reached 5 on the checkerboard, 7 on the band, 10 on a ring
+  background. D_(k+2)(t+1) = D_k(t) xor (D_(k+1) or D_(k+2)) propagates the damage two diagonals up only when the OR is
+  the same in both copies; where the damage is dense the OR can differ too and cancel the XOR, so a whole stack of
+  damaged diagonals can heal at once. The identity v = 1 - mean rise held everywhere (worst gap 0.0087). The blind
+  predictions were all REFUTED, each by a mechanism: DS2, the checkerboard gives v = -0.3877: the damage front moves
+  RIGHT; healing (every other step, mean jump 2.5) outruns the leftward flow, so a flipped cell's influence on the
+  fixed point recedes to the right and the checkerboard closes behind it. DS3, the band gives v = 1.0000 with 175
+  heals, all in the first quarter: the damage climbs from diagonal 64 and LOCKS on one diagonal for ever (the lock
+  addendum below says which). DS4, the ring backgrounds spread by 1.39, not 0.05, and the densest (ring 10, 0.700) is
+  among the fastest (2/3); the speeds are exact rationals where the jump is exactly 2 and the heal is periodic (ring
+  4: 1/2, ring 5: 1/3, ring 10: 2/3, the checkerboard as ring 6: -0.3877 again), and ring 8 (11000001) gives v = 1
+  with P(heal) = 0.0006: a white diagonal runs through it and the damage locks above it. DS5, on the random
+  background P(heal) = 0.4102, not 1/2, and E[jump] = 1.839, not 1.5; the product 0.7545 is 1 - 0.2455. The front
+  sits preferentially above white cells because it heals at black ones, a selection effect, and the jumps are longer
+  than 2 for the cancellation reason above. So 0.246 = 1 - 0.410 x 1.839 to the accuracy of the run, and neither
+  factor is the background's density: the first is the density of the diagonal below the front AS THE FRONT SEES IT.
+
+LOCK ADDENDUM, written 2026-10-06 before the second run (python3 rule30_damage_speed.py 13 lock). The band's damage
+  locked on one diagonal. Healing needs a black cell on the diagonal below the front, and the band has eventually
+  WHITE diagonals (2, 7, 28, 399, 87,866: section 8.31). Above an eventually white diagonal w, damage can never heal:
+  D_(w+1)(t+1) = D_(w-1)(t) xor D_(w+1)(t) once D_w is white, so a difference on w + 1 is permanent (and constant).
+  The 175 heals from diagonal 64 with mean jump 1.92 climb about 336: to 400.
+  DL1 (must hold if this is the mechanism): a flip on diagonal 64 at t = 4096 locks on diagonal 400; flips on 10 and
+      20 lock on 29; a flip on 3 locks on 8. (Only the preperiods matter: each of those diagonals is white by t = 4096.)
+  DL2 (blind): a flip on diagonal 500 at t = 4096, below no eventually white diagonal until 87,866, does not lock
+      within 2^13 steps and climbs at a steady rate: v within 0.1 of the random background's 0.25, because the band's
+      period-16 diagonals are black about as often as random ones as the front sees them.
+  REFUTED-BY: DL1 failing (the mechanism is not the eventually white diagonals); DL2 the other way.
+  OUTCOME of the second run, 2026-10-06 (lock; 40 seconds): 64 -> 400 (last rise t = 429) and 10 -> 29 (t = 27) as
+  predicted; 3 stays on 3 (it is already above the white diagonal 2: my misapplication, the mechanism's prediction
+  was 3); 20 did NOT lock: it passed 29 and 399 and climbed to 6,259 at v = 0.2453. DL1 FAILED on those two; the
+  mechanism stands with a correction: the lock is probabilistic, since k_min moves by jumps and a front whose next
+  damaged diagonal is above w + 1 when it heals at or below w passes the barrier. DL2 HELD: 500 climbs for the whole
+  run at v = 0.2510, the random background's speed.
 """
 import sys
 import numpy as np
 
-LOGT = int(sys.argv[1]) if len(sys.argv) > 1 else 13
+LOGT = int(next((a for a in sys.argv[1:] if a.isdigit()), 13))
 T = 1 << LOGT
 FAILS = 0
 
@@ -134,7 +171,42 @@ def band_bg(T):
     return a, b
 
 
+def band_flip(diag, T, t0=4096):
+    width = 2 * (t0 + T) + 1024
+    a = np.zeros(width, dtype=np.uint8); a[width // 2] = 1
+    for _ in range(t0):
+        a = step(a)
+    b = a.copy(); b[width // 2 - t0 + diag] ^= 1
+    return a, b, width // 2 - t0
+
+
+def lock():
+    """which diagonal the band's damage locks on, for flips on diagonals 3, 10, 20, 64 and 500 at t = 4096."""
+    out = {}
+    for diag in (3, 10, 20, 64, 500):
+        a, b, off = band_flip(diag, T)
+        kmin = []
+        for t in range(T + 1):
+            d = a != b
+            kmin.append(int(np.argmax(d)) + t - off)
+            if t < T:
+                a, b = step(a), step(b)
+        lo = T // 4
+        v = 1 - (kmin[-1] - kmin[lo]) / (T - lo)
+        last_change = max((t for t in range(1, T + 1) if kmin[t] != kmin[t - 1]), default=0)
+        out[diag] = (kmin[-1], v, last_change)
+        print(f"   flip on diagonal {diag}: lowest damaged diagonal at the end {kmin[-1]}, last rise at t = {last_change}, v {v:.4f}", flush=True)
+    report("DL1 flips on 64 lock on 400, on 10 and 20 lock on 29, on 3 locks on 8",
+           out[64][0] == 400 and out[10][0] == 29 and out[20][0] == 29 and out[3][0] == 8)
+    verdict("DL2 a flip on 500 does not lock and climbs at v within 0.1 of 0.25",
+            out[500][2] > T - T // 8 and abs(out[500][1] - 0.25) <= 0.1, f"v {out[500][1]:.4f}, last rise {out[500][2]}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "lock" in sys.argv[1:]:
+        lock()
+        return
     rng = np.random.default_rng(20261006)
     width = 4 * T + 2
     res = {}

@@ -4242,3 +4242,63 @@ the right half's own dynamics, which is nonlinear (the AND-NOT fires on the righ
 For Rule 30 the same induction fails at the first step: its OR is 1 whenever either neighbour is black, so no parity
 invariant forces linearity, and the forced left half is chaotic. That is the exact sense in which Rule 30's rigidity
 is its OR.
+
+
+### 8.66 The leftward light speed is the background's: $0.246 = 1 - 0.41 \times 1.84$; the checkerboard heals, the band locks (2026-10-06)
+
+CONSTELLATION.md row 3, chosen by a random draw after the owner asked the two models to stop converging on the same
+rows. Rule 30's rightward speed of influence is exactly 1; the leftward one was measured at 0.246 on a random
+background (§8.30, LB5) and never derived. `rule30_damage_speed.py` (predictions DS0 to DS5, CF, then DL1 and DL2,
+written and pushed before each run) measures it on structured backgrounds, with the two factors that make it.
+
+**The identity.** In diagonal coordinates $k = x + t$ the rule reads $D_k(t+1) = D_{k-2}(t) \oplus (D_{k-1}(t) \lor
+D_k(t))$ on the whole plane, so a difference between two configurations never reaches a lower diagonal. Its lowest
+damaged diagonal $k_{\min}(t)$ can only rise, and it rises exactly when the undamaged diagonal below it is black at
+that step: then $D_{k_{\min}}(t+1) = D_{k_{\min}-2}(t) \oplus 1$ is the same in both copies. The leftmost damaged
+cell is at $x = k_{\min} - t$, so
+$$v = 1 - P(\text{heal}) \cdot E[\text{jump} \mid \text{heal}],$$
+an identity (it held within 0.009 on every background). I had written in the predictions that the jump is at most
+2, because $D_{k+2}(t+1) = D_k(t) \oplus (\cdots)$ always carries damage two diagonals up; that is wrong where the
+damage is dense, since the OR can then differ too and cancel the XOR, and the instrument check DS1 caught it: jumps
+of 5, 7 and 10 occurred. The error is kept in the probe's header.
+
+**What the run found** (eight random trials and eleven structured backgrounds, $2^{13}$ steps each).
+- *Random background:* $v = 0.2468$ (DS0 held; LB5's 0.246). $P(\text{heal}) = 0.410$, not $1/2$, and $E[\text{jump}]
+  = 1.84$, not $1.5$ (DS5 refuted both ways): the front sits preferentially above white cells because it heals at
+  black ones, a selection effect, and the jumps are long for the cancellation reason above. So $0.246 = 1 - 0.410
+  \times 1.839$ to the run's accuracy, and neither factor is the background's density: the first is the density of
+  the diagonal below the front *as the front sees it*. A derivation of 0.246 is a derivation of that conditional
+  density, which is where the directed-percolation flavour of row 3 lives.
+- *The checkerboard* (a fixed point of the rule): $v = -0.388$. The damage front moves RIGHT. Healing happens every
+  other step (the diagonal below alternates) with mean jump 2.5, and $0.555 \times 2.5 > 1$: the chaotic region a
+  flipped cell creates drifts rightward as a whole and the checkerboard closes behind it. A fixed point that heals
+  its left side faster than light. (DS2 predicted $1/4$.)
+- *The single cell's own band:* damage put on diagonal 64 at $t = 4096$ climbs for 429 steps and then LOCKS on
+  diagonal 400 for ever ($v = 1$ exactly). The mechanism is the band's eventually white diagonals (§8.31): once
+  $D_{399}$ is white, $D_{400}(t+1) = D_{398}(t) \oplus D_{400}(t)$ and a difference on 400 is permanent. DL1 held
+  for 64 → 400 and 10 → 29, failed for 3 (which is already above the white diagonal 2 and never moves; my
+  misapplication) and for 20, which passed 29 and 399 and climbed to 6,259 at $v = 0.2453$: the lock is not
+  certain, because $k_{\min}$ jumps, and if diagonal $w + 1$ happens to be undamaged when the front passes $w$ the
+  damage goes on. So the eventually white diagonals are *partial barriers* for information moving outward through
+  the band, and this is a new role for the doubling positions 2, 7, 28, 399, 87,866. Above 399 the band carries
+  damage at the random background's speed (DL2 held: a flip on 500 climbs at 0.2510), so the band's period-16
+  diagonals are, as the front sees them, as black as random ones. (DS3 predicted the random speed for the band;
+  refuted by the lock, then held above it.)
+- *Periodic backgrounds* tiled from one cycle state of each ring $n = 3..10$: speeds from $-0.388$ to $1$ (DS4's
+  "spread above 0.05" held by a factor 28; its "densest is slowest" refuted: the densest, ring 10 at 0.700, is among
+  the fastest at $2/3$). Where the heal is periodic and the jump exactly 2 the speed is an exact rational: ring 4
+  (1000) $1/2$, ring 5 (11001) $1/3$, ring 10 (0011111011) $2/3$; ring 7 gives $0.2222$ and ring 9 $0.2632$; ring 8
+  (11000001) gives $v = 1$ with $P(\text{heal}) = 0.0006$, a white diagonal running through it on which the damage
+  locks as in the band.
+
+**What it says.** The leftward speed of information is not a constant of the rule. It is $1 - (\text{heal rate})$,
+and the heal rate is set by the black cells of the background's diagonals as the front meets them: zero on a white
+diagonal (speed 1, the band's lock), every other step on the checkerboard (negative speed), 0.41 on a random
+background and, as it turns out, on the band's periodic diagonals too (0.246). The rightward speed 1 and the
+leftward 0.246 are therefore different kinds of number: the first is the rule's XOR, the second a statistic of the
+orbit. Row 3's "is 0.246 algebraic" becomes "is the front's conditional density algebraic", which nobody should
+expect. What is exact and new is the structural fact: the eventually white diagonals of the universal left side are
+one-way barriers that information crossing the band outward can be caught on, with the catch probabilistic.
+
+Reproduction: `python3 tests/probes/lexicon/rule30_damage_speed.py 13` (70 s) and `... 13 lock` (40 s). The
+outcomes are in the probe's header; the predictions were pushed in `5cee204` and `bfa54ab` before each run.

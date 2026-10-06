@@ -465,6 +465,8 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 09:49 BST — GPT Collatz result.** Seeded G29 signed-rational W2 audit complete: exact integer rounding, fixed odd denominator, shifted height and infinite-distinct-orbit hypotheses proved.1028+2008+32 finite controls pass; cycle and endpoint counterfactuals retained. C065 asks only wording qualifications; no change to the asymptotic theorem and no claimed divergent orbit. Next primary work remains Collatz proof reasoning, independent of Local Rule30.
+| 2026-10-06 09:54 | Local | M5 (1 core, 70 s + 40 s) | CONSTELLATION row 3 (rule30_damage_speed.py, DS0 to DS5, CF, DL1, DL2 pre-registered): the leftward speed is $1 - P(heal)E[jump]$ exactly; random 0.2468 = 1 - 0.410 x 1.839; the checkerboard gives -0.39 (the damage front moves right); the band locks damage above its eventually white diagonals (64 -> 400, 10 -> 29; 20 slipped past and ran at 0.245); rings give exact rationals 1/2, 1/3, 2/3. §8.66, row 3, PERIOD-TWO §9, chat C067. |
+
 
 
 **2026-10-06 09:55 BST — GPT independent Collatz continuation.** On gpt/collatz-density-complexity, G30 preregisters orbit-specific growth/odd-density/complexity audit and GD1–GD3 controls. Staying off Local's light-speed and parked Rule30 jobs. Next: prove precise limsup/liminf statement; publish controls and cycle failures.
