@@ -4397,3 +4397,37 @@ Report A/Q and D/Q, with Q>0 at every finite horizon; report A/abs(D) only when 
 **Unexpected sign guard, derived directly.** At width3,T5 the sole admitted free-bit start7 follows7,11,17,26,13,20 with odd counts1,2,3,3,4. Backward coin completion gives H_2=1/2,H_3=3/4,H_4=1/2,H_5=1. Thus the contributions at t2,3,4 are respectively+1/4,-1/4,+1/2. Their total is1/2, whereas A=1. The unrestricted-sign counterfactual that every contribution has the sign of the final discrepancy is false already here. This exact guard also prevents equating the triangle budget with the signed budget.
 
 **Next diagnostic, preregistered NOT RUN.** SA1: reuse widths2..10 and T=m..24, the full G74 scope, recording Pplus/Pminus/A/D with exact rational arithmetic, extrema of A/Q and A/abs(D), all zero discrepancies and all empty final ensembles. Required controls: D equals the direct final count minus the independently computed coin count, A>=abs(D), and the guard has terms(+1/4,-1/4,+1/2). SA2 blind prediction: at least one case with a positive final count has cancellation factor A/abs(D)>2. A failure is retained and changes the interpretation, not the scope. Counterfactual: every nonzero term agrees with the final sign; must fail on the guard. No rate fit, larger population or Local run. This block asks whether triangle estimates lose material information in a small sample; it cannot decide the asymptotic count claim.
+
+
+### G76 signed-budget outcome (2026-10-06)
+
+SA1 passes180 width/final-horizon cases;148 nonzero-net cases have at least one contribution opposite to their final sign. All18 zero-net cases and57 empty-final ensembles are retained in the probe output. Independent direct final counts match the weighted net in every case. SA2 HELD: among positive-count cases with nonzero discrepancy, the largest cancellation factor is2155/88 (about24.49), at width10,T20 with C=13, Pplus=2067/512 and Pminus=2243/512. Here D=-11/32, A=2155/256, D/Q=-11/427 and A/Q=2155/3416. The largest A/Q in the full sample is1033093/95527 (about10.81), at width5,T24. The unexpected width3,T5 guard reproduces(+1/4,-1/4,+1/2) and refutes the one-sign counterfactual.
+
+Probe: `tests/probes/prizes/collatz_gpt_signed_budget.py`; preregistration at961ed39, GPT's Intel host, Python, under1 s. No required control failed. These finite diagnostics show a material loss from taking absolute values in some small cases; they neither prove that cancellation persists at large width nor refute all possible triangle bounds. Next reasoning should preserve the signed observable rather than infer a uniform law from the largest sampled factor. No larger Local count run was duplicated.
+
+
+## G77. Which triangle estimate the signed diagnostic does and does not exclude (2026-10-06)
+
+The count target is an upper bound on C_w(T)/Q_w(T), not a small cancellation factor A/abs(D). From G76, C=Q+D<=Q+A. Therefore a uniform estimate A<=B*Q would suffice to give C/Q<=1+B, or excess at most log2(1+B) bits whenever C>0. Cancellation is one possible mechanism, not a necessary assumption for that upper-bound strategy.
+
+**Unexpected normalization guard.** G76's largest positive-count cancellation factor2155/88 (width10,T20) has A/Q=2155/3416<1, D/Q=-11/427 and C/Q=416/427. A triangle estimate already gives C/Q<=1+2155/3416<2 in that case. Thus a large A/abs(D) does not refute a useful bound on A/Q. This is an exact consequence of the retained rational row, not a new run. The full small sample's maximum A/Q=1033093/95527 also supplies no uniform constant at larger width.
+
+A particular coarse use of G75, however, cannot close a horizon-independent estimate. For h>=0 put
+
+    b(h)=min(1, inf over integer L>=1 of
+                  (L/sqrt(h+1)+32*exp(-(L-1)/2))).
+
+Each term inside the infimum is at least1/sqrt(h+1), so b(h)>=1/sqrt(h+1). Since sum_a abs(I_w(t,a))<=C_w(t), G74-G75 give
+
+    A_w(T)<= (1/2)*sum_(t=m)^(T-1) b(T-t-1)*C_w(t).
+
+Suppose one substitutes the desired bootstrap C_w(t)<=K*Q_w(t) at all preceding horizons. Q_w(t) is nonincreasing, because the coin survivor probability is nonincreasing. Consequently the resulting sufficient upper bound has the form
+
+    A_w(T)/Q_w(T) <= K*B_(m,T),
+    B_(m,T)=(1/2)*sum_(t=m)^(T-1)
+                       b(T-t-1)*Q_w(t)/Q_w(T),
+    B_(m,T)>=sqrt(T-m+1)-1.
+
+The last inequality follows from the preceding lower bound on b and sum_(j=1)^d j^(-1/2)>=2*(sqrt(d+1)-1), with d=T-m. Thus the coefficient in this particular sufficient estimate grows with the paid-tail length. It cannot certify a uniform B or close a fixed-K induction simply by substituting the same coarse count bound. This is a statement about the estimate's right-hand side, not a lower bound on the true A or D and not a refutation of the count conjecture. It remains valid along linear horizons where the paid tail grows with width.
+
+**Route status.** Close only the route that takes the maximum coin weight, replaces every class imbalance by its full class size, and feeds a uniform count bootstrap into that bound. A sharper triangle estimate retaining the actual odd-count allocation, or cancellation in the signed sum, remains open. The next reasoning question is whether the barrier-demand weights suppress classes carrying most of the actual mass, rather than taking their maximum. No new experiment is proposed in this audit; G74-G76 identities and the exact normalization guard are the controls. Independent Local reading requested. This is elementary accounting of recorded bounds, with no novelty claim.

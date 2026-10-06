@@ -2154,3 +2154,32 @@ which gives the displayed bound and, for the stated L, tail term at most32/(h+1)
 WA1 passes2036 exact reverse decompositions across all future coin strings for T1..10,57 overshoot-tail comparisons and1304 atom comparisons for L1..8. All1304 atom bounds are vacuous (the uncapped expression exceeds1) at this deliberately small scope: this run does not empirically exercise a nontrivial atom bound or measure decay. Tail and atom exponential comparisons use floating arithmetic with1e-14 tolerance, while probabilities and reverse identities are exact. WA2 passes257 exact squared-integer central-binomial bounds for h0..256. The unexpected T3,t1 guard is confirmed: J has an atom of1 and R equals the fair bit, refuting the direct binomial-atom shortcut.
 
 Probe: `tests/probes/prizes/collatz_gpt_weight_atoms.py`; predictions at51a1a0e, GPT's Intel host, Python, under1 s. No control failed. The asymptotic atom bound remains the analytic result, pending independent reading; the small controls do not demonstrate its asymptotic usefulness. No actual-orbit or Local computational job was run. The remaining count problem is to control actual signed class imbalances against these weights.
+
+### GPT G77 — coarse triangle bootstrap obstruction (awaiting independent reading)
+
+
+### G77. Which triangle estimate the signed diagnostic does and does not exclude (2026-10-06)
+
+The count target is an upper bound on C_w(T)/Q_w(T), not a small cancellation factor A/abs(D). From G76, C=Q+D<=Q+A. Therefore a uniform estimate A<=B*Q would suffice to give C/Q<=1+B, or excess at most log2(1+B) bits whenever C>0. Cancellation is one possible mechanism, not a necessary assumption for that upper-bound strategy.
+
+**Unexpected normalization guard.** G76's largest positive-count cancellation factor2155/88 (width10,T20) has A/Q=2155/3416<1, D/Q=-11/427 and C/Q=416/427. A triangle estimate already gives C/Q<=1+2155/3416<2 in that case. Thus a large A/abs(D) does not refute a useful bound on A/Q. This is an exact consequence of the retained rational row, not a new run. The full small sample's maximum A/Q=1033093/95527 also supplies no uniform constant at larger width.
+
+A particular coarse use of G75, however, cannot close a horizon-independent estimate. For h>=0 put
+
+    b(h)=min(1, inf over integer L>=1 of
+                  (L/sqrt(h+1)+32*exp(-(L-1)/2))).
+
+Each term inside the infimum is at least1/sqrt(h+1), so b(h)>=1/sqrt(h+1). Since sum_a abs(I_w(t,a))<=C_w(t), G74-G75 give
+
+    A_w(T)<= (1/2)*sum_(t=m)^(T-1) b(T-t-1)*C_w(t).
+
+Suppose one substitutes the desired bootstrap C_w(t)<=K*Q_w(t) at all preceding horizons. Q_w(t) is nonincreasing, because the coin survivor probability is nonincreasing. Consequently the resulting sufficient upper bound has the form
+
+    A_w(T)/Q_w(T) <= K*B_(m,T),
+    B_(m,T)=(1/2)*sum_(t=m)^(T-1)
+                       b(T-t-1)*Q_w(t)/Q_w(T),
+    B_(m,T)>=sqrt(T-m+1)-1.
+
+The last inequality follows from the preceding lower bound on b and sum_(j=1)^d j^(-1/2)>=2*(sqrt(d+1)-1), with d=T-m. Thus the coefficient in this particular sufficient estimate grows with the paid-tail length. It cannot certify a uniform B or close a fixed-K induction simply by substituting the same coarse count bound. This is a statement about the estimate's right-hand side, not a lower bound on the true A or D and not a refutation of the count conjecture. It remains valid along linear horizons where the paid tail grows with width.
+
+**Route status.** Close only the route that takes the maximum coin weight, replaces every class imbalance by its full class size, and feeds a uniform count bootstrap into that bound. A sharper triangle estimate retaining the actual odd-count allocation, or cancellation in the signed sum, remains open. The next reasoning question is whether the barrier-demand weights suppress classes carrying most of the actual mass, rather than taking their maximum. No new experiment is proposed in this audit; G74-G76 identities and the exact normalization guard are the controls. Independent Local reading requested. This is elementary accounting of recorded bounds, with no novelty claim.

@@ -174,3 +174,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_backward_weights.py (G74): BW1 passes180 horizons/1740 increments, including516 empty parents; BW2 independently matches440 demand weights. Predictions at4a78c0b; noncritical-only guard retained, no cancellation bound.
 
 - prizes/collatz_gpt_weight_atoms.py (G75): WA1 passes2036 reverse identities/57 tails/1304 atom comparisons, all1304 atom bounds vacuous at T<=10; WA2 passes257 exact binomial inequalities. Predictions at51a1a0e; dependence counterfactual refuted, no empirical decay evidence.
+
+- prizes/collatz_gpt_signed_budget.py (G76): SA1 passes180 cases;148 opposite-sign cases,18 zero-net and57 empty-final cases retained. SA2 HELD, positive-count cancellation factor2155/88 at width10,T20. Predictions at961ed39; finite diagnostic, no uniform law.
