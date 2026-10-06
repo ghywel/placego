@@ -1794,7 +1794,10 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 - Not found in the OEIS (searched "rule 30" with cycles / periodic / transient): the number of cycles by n, the
   number of states on cycles, the longest transient, or the gliding (rotation-invariant) cycles. `ring_census.c`
   computes all four exactly to n = 24.
-- Triangle-size statistics (lead, unread, 2026-10-06): Wolfram, "Universality and complexity in cellular automata",
-  Physica D 10 (1984), measured distributions of triangle sizes as a statistic of class 3 rules; to compare with
-  `rule30_triangle_census.py` (section 8.68) once read.
+- Triangle-size statistics (checked 2026-10-06): NKS note 6.1 ("Properties of initially random cellular automaton
+  patterns"): "The density of triangles of size n goes roughly like 2^-n for rules 126, 30 (see also page 871), 150
+  and 182 and roughly like 1.3^-n for rule 22", for random initial conditions, with no constant and no derivation.
+  The 1984 Physica D paper is a scanned PDF (fetched; not text-extractable here; its text was not read). So the
+  ratio one half is known approximately; the exact law 3 * 2^-(L+4) per cell from the invariant uniform measure,
+  and its 0.1% match on the single cell's core (section 8.68), were not found. Page 871 of NKS is still to be read.
 

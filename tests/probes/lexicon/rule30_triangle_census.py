@@ -50,11 +50,24 @@ OUTCOME of the first run, 2026-10-06 (T = 10^5, 4 minutes). TC0, CF PASSED. TC1 
   left band has tops of widths 15 (21,916 of them) and 16 (5,882) and none wider; its ratios are near 1/2 to L = 9
   and then structured (0.61 at 10, 0.88 at 15). Not pre-registered and so only a reading: the band's widest run
   equals its period 16.
+
+RANDOM-ROW ADDENDUM, written 2026-10-06 before the second run (python3 rule30_triangle_census.py 50000 random): the same
+  census on a random row of width 300,003 (seed 20261006), counted only inside the inner light cone (cells no
+  boundary can have reached), where the field is EXACTLY the uniform measure at every time (the rule is surjective,
+  so the uniform measure is invariant). Area 1.25 * 10^10 cells, four times the single cell's core.
+  TR0 (control, must hold): the white density in the inner cone is 0.5 within 10^-4.
+  TR1 (the derivation, must hold): the tops' counts are 3 * 2^-(L+4) * area within 0.05% for L = 1 .. 6.
+  TR2 (blind): the single cell's -0.09% at L = 1 does NOT appear here (the random row's L = 1 count is within 0.02%
+      of the law), so the deficit belongs to the single cell's orbit, not to the law.
+  CF  (counterfactual, must fail): no top wider than 16 (the band's cutoff). The law expects about 140 tops of width
+      24 and a widest near 31.
+  REFUTED-BY: TR0 or TR1 failing (the derivation of 3 * 2^-(L+4) misses a correlation); TR2 the other way (the deficit
+  is the law's and the derivation is only approximate); CF holding.
 """
 import sys
 import numpy as np
 
-T = int(sys.argv[1]) if len(sys.argv) > 1 else 100000
+T = int(next((a for a in sys.argv[1:] if a.isdigit()), 100000))
 LMAX = 64
 FAILS = 0
 
@@ -135,7 +148,55 @@ def census_slow(T):
     return out
 
 
+def census_random(T, W, seed=20261006):
+    rng = np.random.default_rng(seed)
+    a = rng.integers(0, 2, W, dtype=np.uint8)
+    H = np.zeros((LMAX + 1,), dtype=np.int64)
+    white, area, widest_seen = 0, 0, 0
+    prev = a.copy()
+    for t in range(1, T + 1):
+        l = np.empty_like(a); l[1:] = a[:-1]; l[0] = 0
+        r = np.empty_like(a); r[:-1] = a[1:]; r[-1] = 0
+        a = l ^ (a | r)
+        lo, hi = t + 1, W - 2 - t                   # the inner cone, one cell inside what the edges could reach
+        row = a[lo:hi + 1]
+        area += hi - lo + 1; white += int(row.size - row.sum())
+        # runs inside the window only: cut the window with black sentinels so no run touches its ends
+        rw = np.concatenate(([1], row, [1]))
+        s, e = runs_of_zeros(rw)
+        if len(s):
+            s = s - 1 + lo; e = e - 1 + lo              # back to array indices
+            L = e - s + 1
+            P = np.concatenate(([0], np.cumsum(prev[lo - 1:hi + 2], dtype=np.int64)))
+            cont = (P[e - lo + 3] - P[s - lo]) == 0
+            top = ~cont
+            Lt = L[top]
+            np.add.at(H, np.minimum(Lt, LMAX), 1)
+        prev = a
+    return H, white / area, area
+
+
+def random_mode():
+    W = 300003
+    H, dens, area = census_random(T, W)
+    print(f"   random row: area {area}, white density {dens:.6f}")
+    print("   counts by width: " + " ".join(f"{L}:{int(H[L])}" for L in range(1, LMAX + 1) if H[L]))
+    pred = [3 * 2.0 ** -(L + 4) * area for L in range(LMAX + 1)]
+    devs = [(H[L] - pred[L]) / pred[L] for L in range(1, 7)]
+    print("   deviations from 3 * 2^-(L+4) * area, L = 1 .. 6: " + " ".join(f"{d * 100:+.3f}%" for d in devs))
+    print("   L = 10, 15, 20, 24: " + " ".join(f"{int(H[L])} (law {pred[L]:.0f})" for L in (10, 15, 20, 24)))
+    report("TR0 white density 0.5 within 1e-4", abs(dens - 0.5) <= 1e-4, f"{dens:.6f}")
+    report("TR1 counts within 0.05% of the law for L = 1 .. 6", all(abs(d) <= 5e-4 for d in devs))
+    verdict("TR2 the L = 1 count is within 0.02% of the law (the single cell's -0.09% is the orbit's)", abs(devs[0]) <= 2e-4, f"{devs[0] * 100:+.3f}%")
+    nz = np.nonzero(H)[0]
+    report("CF  tops wider than 16 exist", int(nz[-1]) > 16, f"widest {int(nz[-1])}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "random" in sys.argv[1:]:
+        random_mode()
+        return
     H, big, first = census(T)
     slow = census_slow(60)
     report("TC0 the vectorised census equals the set-based census over the first 60 rows",

@@ -4379,7 +4379,8 @@ the nested side's triangles are large by position, not by scale, and the core's 
 TC4's "under 12"; the band's ratios are near $1/2$ to $L = 9$ and structured beyond ($0.61$ at 10, $0.88$ at 15).
 A reading, not pre-registered: the band's widest white run is its period, 16.
 
-Reproduction: `python3 tests/probes/lexicon/rule30_triangle_census.py 100000` (4 minutes). Literature owed: Wolfram
-1984 measured triangle-size distributions for class 3 rules (PRIOR-ART.md); whether the $3 \cdot 2^{-(L+4)}$ law and
-its match on the single cell are there is to be checked before any claim of novelty.
+Reproduction: `python3 tests/probes/lexicon/rule30_triangle_census.py 100000` (4 minutes). Literature (PRIOR-ART.md):
+NKS note 6.1 has the ratio, "roughly like $2^{-n}$" for rules 126, 30, 150, 182 on random initial conditions, with
+no constant and no derivation; the exact $3 \cdot 2^{-(L+4)}$ and the single-cell match were not found there (NKS
+p. 871 still to be read; the 1984 paper is a scan not readable here).
 
