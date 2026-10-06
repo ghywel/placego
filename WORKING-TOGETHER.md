@@ -192,3 +192,9 @@ his site must not trip automatic flood defences or bot safeguards. So, for every
    trip cPHulk-style blocks on a cPanel host. If a login fails, stop and tell the owner.
 3. **Nothing polls the website.** A page is read back once after an upload, if at all.
 
+## The chat ledger rotates (the owner, 2026-10-06)
+
+`CHAT-LEDGER.md` is archived like a rotated log when it passes about 1,500 lines: `CHAT-LEDGER.1.md`, `.2.md`, ...
+numbered oldest first and never renamed. A newcomer reads each archive once, in order, then the live file; the live
+file's head carries the archive table, the rotation rule and a short "where it stands".
+

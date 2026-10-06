@@ -142,6 +142,18 @@ FINE-BIN ADDENDUM, written 2026-10-06 before the fifth run (python3 rule30_trian
   leftward speed of information 0.246 (sections 8.30, 8.66): the uniform core is the region news of the seed has
   reached. Between the band's settled edge near -0.5 and -0.25 lies a zone that is neither, with fewer short white
   runs and more long ones.
+
+EDGE ADDENDUM, written 2026-10-06 before the sixth run (python3 rule30_triangle_census.py edge), on a suspected error of
+  my own: the bins addendum above says the band's settled region "reaches x/t = -0.5", with no measurement behind it,
+  and section 8.68 then calls [-0.5, -0.25] a "third regime". Section 8.30 (LB2) says diagonal e settles after about
+  1.3 e steps, which puts the settled edge at x/t = 1/1.3 - 1 = -0.23. If so there is no third regime: the triangle
+  law fails on the settled band and holds off it. Test: at t0 = 40,000 and 80,000, the settled edge K(t0) is the
+  largest K such that every diagonal k <= K satisfies D_k(t) = D_k(t + 16) for all t in [t0, t0 + 256] (period 16
+  holds for every diagonal below 87,866, section 8.31).
+  TE1 (the reading): K(t0)/t0 - 1 lies in [-0.27, -0.21] at both times.
+  TE2: it agrees with the triangle front (-0.24 +- 0.02) within 0.03 at both times.
+  CF  (must fail): K(t0)/t0 - 1 <= -0.45 (my unfounded "-0.5").
+  REFUTED-BY: TE1 or TE2 the other way (then the zone is real and my reading is wrong); CF holding.
 """
 import sys
 import numpy as np
@@ -452,7 +464,38 @@ def fine_mode():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def edge_mode():
+    res = {}
+    for t0 in (40000, 80000):
+        W = 2 * (t0 + 300) + 3
+        a = np.zeros(W, dtype=np.uint8); c = W // 2; a[c] = 1
+        for _ in range(t0):
+            l = np.empty_like(a); l[1:] = a[:-1]; l[0] = 0
+            r = np.empty_like(a); r[:-1] = a[1:]; r[-1] = 0
+            a = l ^ (a | r)
+        rows = []                                        # diagonal k at time t is the cell x = k - t
+        for t in range(t0, t0 + 256 + 17):
+            rows.append(a[c - t:c - t + t0 + 1].copy())  # diagonals k = 0 .. t0
+            l = np.empty_like(a); l[1:] = a[:-1]; l[0] = 0
+            r = np.empty_like(a); r[:-1] = a[1:]; r[-1] = 0
+            a = l ^ (a | r)
+        D = np.array(rows)                               # D[i, k] = D_k(t0 + i)
+        ok = np.all(D[:256] == D[16:272], axis=0)
+        bad = np.nonzero(~ok)[0]
+        K = int(bad[0]) - 1 if len(bad) else t0
+        res[t0] = K / t0 - 1
+        print(f"   t0 = {t0}: settled edge K = {K}, x/t = {res[t0]:+.4f}", flush=True)
+    verdict("TE1 the settled edge lies in [-0.27, -0.21] at both times", all(-0.27 <= v <= -0.21 for v in res.values()),
+            " ".join(f"{v:+.4f}" for v in res.values()))
+    verdict("TE2 it agrees with the triangle front -0.24 within 0.03", all(abs(v + 0.24) <= 0.03 for v in res.values()))
+    report("CF  the settled edge is NOT at x/t <= -0.45", all(v > -0.45 for v in res.values()))
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "edge" in sys.argv[1:]:
+        edge_mode()
+        return
     if "fine" in sys.argv[1:]:
         fine_mode()
         return

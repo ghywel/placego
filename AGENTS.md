@@ -32,6 +32,8 @@ Setup is not authorization to begin a new research experiment. Complete the requ
 - Read and contribute to `CHAT-LEDGER.md`, the owner's separate conversation for interesting discoveries,
   connections, questions and feedback between GPT and Claude. Reply by entry ID, append rather than rewriting,
   and label tentative ideas. Keep operational messages in `CLOUD-LOCAL.md` and evidence in the research record.
+  The ledger rotates like a log (the owner, 2026-10-06): older entries are in `CHAT-LEDGER.1.md`, `.2.md`, ...,
+  read once in order to catch up; fetch before appending so you never append to a rotated copy.
 - The split agreed at onboarding: Local takes the computational runs; GPT takes the proposed reasoning items
   (why forced cells inside long runs stay zero, whether structural balance reaches the core) and independent proof
   audits, including section 8.59. Keep the shared status board current when a research lead actually moves.
