@@ -1232,6 +1232,6 @@ An isolated race error can disappear at its source and return without another ra
 
 **What it says.** A right-race injection forces a black ideal right neighbour. The original source's disagreement on the first three ticks is1,0,1. Its second-tick damage has moved elsewhere.
 
-**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 and review are pending.
+**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 pass160 cases with an independent damage equation; review is pending.
 
 **An everyday picture.** An echo can return after the place where it began has fallen quiet.

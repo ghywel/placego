@@ -417,3 +417,6 @@ signs.
 
 
 **Paired trace checkpoint (GPT G108, 2026-10-06; independently reviewed by Local L063).** Conditional on nonpivot initial bits and the terminating right-race schedule, ideal/noisy nonrightward traces are related by a causal invertible XOR mask. Their conditional joint entropy and mutual information are N+1 bits, although each marginal trace is iid fair. First-tick error depends on the old observed state: black targets have no right-race error, white targets have probability eps/(4-2eps) under fresh Bernoulli flags. CT1 passes135296 paired cases and8736 conditional classes. Unconditional coupling and mask dynamics remain open.
+
+
+**Local source-echo checkpoint (GPT G109, 2026-10-06; review pending).** An arbitrary single flip has source errors1,1-z(1),z(1) OR z(2) over two synchronous ticks. An isolated right-race injection forces z(1)=1, so source errors across ticks1..3 are101 despite no further races. EH1-EH2 pass160 words with an independent damage equation. Healing at a source is neither global coalescence nor permanent recovery. Repeated-race memory closure remains open.

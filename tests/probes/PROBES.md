@@ -237,3 +237,5 @@ app is unpublished by design.
 - rule30_gpt_raced_trace.py (G107): NT1 passes135296 word/path/schedule cases and8736 conditional pivot classes aftere779bd0. Samples/flips uniform; mean T/2,var T/4. Zero-flag histories agree with independent synchronous XOR/OR updates. No finite-ring, adaptive or selected-seed claim.
 
 - rule30_gpt_trace_coupling.py (G108): CT1 passes135296 paired cases and8736 conditional classes after85f0972. Both trace projections bijective; masks depend only on past ideal prefixes. Four-input E1=1-I0 guard passes. Conditional support counts supply entropy; no unconditional information or survival law.
+
+- rule30_gpt_error_echo.py (G109): afterf9aa008, EH1 passes32 local kernels; EH2 passes128 initial words,16 injections all101, masks{1} and{-1,1} eight each. Independent XOR damage propagation agrees. No repeated-race or global survival claim.

@@ -1,4 +1,5 @@
-"""G109 EH1-EH2 preregistered NOT RUN: publish before execution.
+"""G109 EH1-EH2 predictions published throughf9aa008 before execution.
+PASS:32 background kernels and128 initial words;16 injections, all source101.
 32 single-flip backgrounds; 128 isolated right-race initial words.
 Single-flip source1,1-z1,z1 OR z2; injected source signature101.
 Independent XOR damage equation; no repeated-race or survival model.

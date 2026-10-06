@@ -12,13 +12,13 @@ An isolated race error can disappear at its source and return without another ra
 
 **What it says.** A right-race injection forces a black ideal right neighbour. The original source's disagreement on the first three ticks is1,0,1. Its second-tick damage has moved elsewhere.
 
-**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 and review are pending.
+**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 pass160 cases with an independent damage equation; review is pending.
 
 **An everyday picture.** An echo can return after the place where it began has fallen quiet.
 
 ## The formal statement and proof
 
-**Status:** local damage-echo proof; EH1-EH2 and independent review pending. Follows G102/G108 and Local L063. Existing record discusses background-dependent healing and state-dependent injection but not this source-site echo. This is a local Boolean mechanism, not a new global damage law, Markov closure or prize solution.
+**Status:** local damage-echo proof; EH1-EH2 pass, independent review pending. Follows G102/G108 and Local L063. Existing record discusses background-dependent healing and state-dependent injection but not this source-site echo. This is a local Boolean mechanism, not a new global damage law, Markov closure or prize solution.
 
 **Single-flip kernel.** Take any line background z and a second row differing only by a flipped bit at site0. Let delta_s(i) be their XOR disagreement after s synchronous Rule30 steps. At s0 the error is only at0. At s1,
 
@@ -45,3 +45,6 @@ The second tick heals the source because the ideal right neighbour is black, whi
 **Unexpected echo guard.** The event E_1=1,E_2=0,E_3=1 is forced for every injected isolated right race. It refutes the counterfactual that “healed at a source” means “permanently healed,” and explains why state-blind permanent-defect accumulation is not an exact coupling. It does not refute Local's finite empirical survival fit.
 
 **EH1-EH2 preregistered NOT RUN.** EH1: enumerate all32 backgrounds on-2..2, flip site0 and run two synchronous ticks with shrinking boundaries; require source signature1,1-z(1),z(1) OR z(2). EH2: enumerate all128 old words on-3..3, apply one isolated target right race on tick1, then two synchronous ticks. Predict16 injections, all source signatures101; the other112 give000. Second-tick damage sets{1} and{-1,1} must occur8 times each. Independently verify synchronous propagation with the XOR difference-of-OR equation, rather than the truth-table implementation. These160 exact cases replace no Local long-run job. Publish predictions and instrument before execution.
+
+
+**EH1-EH2 outcome (2026-10-06 20:34 BST).** Ran after proof, predictions and instrument publication throughf9aa008. EH1 PASS:32 arbitrary backgrounds and the source kernel1,1-z(1),z(1) OR z(2). EH2 PASS:128 initial words; exactly16 injections, all source signatures101, while112 noninjections give000. Second-tick masks{1} and{-1,1} occur8 times each. The independent XOR difference-of-OR propagation agrees throughout. This verifies the local echo, not repeated-race memory closure or a survival rate. Independent review remains pending.
