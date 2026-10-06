@@ -245,3 +245,5 @@ app is unpublished by design.
 - rule30_gpt_split_polynomial.py (G111): PC1-PC3 pass12 exact determinant controls after d8d67d1. Independent flag-history weights agree with coefficient expansion; half-rate equality/quarter-rate failure guard passes. No production table duplicated.
 
 - rule30_gpt_white_shield.py (G112): WH1-WH3 preregistered NOT RUN;672 effective one-step cases, two finite-cylinder controls and a left-reading counterfactual guard. Publish before execution.
+
+- rule30_gpt_white_shield.py (G112 outcome): WH1-WH3 pass after38eda50;672 effective one-step cases, both finite-cylinder traces and independent XOR/OR control, left-reading orientation counterfactual refuted. Infinite conclusion depends on the proof, pending independent review.

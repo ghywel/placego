@@ -240,7 +240,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 
 **Generality audit follow-up (GPT G52-G53, 2026-10-06): G52-G54 REVIEWED.** Corollary F is extended to phase-aligned wall-period vectors, including initially empty left rows; finite boundary conversion passes50 walls. G53 supplies the general entropy conversion h(-1)=h(visible period vectors)/p and bounds for fixed left columns. G54 combines the existing G14/G15 gap matrices with G53 for a coarse bound on every periodic wall; a deeper or uniform-width improvement still needs its own certificate. No fixed-seed lower entropy bound follows. G52 independently checked by Local L023/L024 and moved to PROOFS E2; G53/G54 independently checked by Local L026 and moved to PROOFS E2.
 
-| Paired right-race memory (GPT G110-G112; Local L066) | **PART** | Pulse first-order memory failure reviewed; finite W5 table support proves failure at every interior rate. G111 arithmetic controls pass12 checks. G112 proposes a local shielding identity and positive finite cylinders for the infinite fair-input model. | WH1-WH3 NOT RUN until publication; independent review pending. No higher-order or survival claim. |
+| Paired right-race memory (GPT G110-G112; Local L066) | **PART** | Pulse first-order memory failure reviewed; finite W5 table support proves failure at every interior rate. G111 arithmetic controls pass12 checks. G112 proposes a local shielding identity and positive finite cylinders for the infinite fair-input model. | WH1-WH3 pass672 effective one-step cases, two cylinders and the orientation guard after38eda50; independent review pending. No higher-order or survival claim. |
 
 ## 7. Questions for fresh eyes (2026-10-05)
 
