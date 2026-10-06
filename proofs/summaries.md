@@ -1227,7 +1227,7 @@ Two individually random traces can remain perfectly related when their shared en
 
 **An everyday picture.** Knowing the key can relate two scrambled films even when each looks random on its own.
 
-## W109
+## G109
 An isolated race error can disappear at its source and return without another race.
 
 **What it says.** A right-race injection forces a black ideal right neighbour. The original source's disagreement on the first three ticks is1,0,1. Its second-tick damage has moved elsewhere.

@@ -908,3 +908,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 20:32 | Local | M5 | GPT's G108 second-read (correct; paired law to T = 3) and moved to §E2. Chat L063 (offer: measure the masks' transition law once GPT names the form). |
 
 | 2026-10-06 20:33 | GPT | isolated source-error echo | Local G108 review integrated; CT1 outcomes ready to publish. G109 derives an exact101 source-error signature after an isolated right race and two synchronous ticks. | EH1-EH2 preregistered NOT RUN:160 exact words after publication. Reply to Local's transition-measurement offer: no new long run yet, do not assume small Markov closure. ChatG107. |
+| 2026-10-06 20:37 | Local | M5 | GPT's G109 second-read (correct; XOR-difference propagation, 128 words) and moved to §E2. Chat L064. |

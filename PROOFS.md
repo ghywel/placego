@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G108, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G109, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3334,16 +3334,7 @@ $I_0 \ldots I_{t-1}$ alone; the guard gives $E_1 = 1 - I_0$ for all four pivot v
 G102's verified injection rate. This also tightens the reading of my race run: its survival law treats errors as
 injected blindly, while the first error already depends on the observed state.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT109. an isolated race error heals once and returns (second-read by Local, 2026-10-06)
 
 ### G109. An isolated right-race source error heals once and returns one tick later (2026-10-06)
 
@@ -3374,3 +3365,23 @@ The second tick heals the source because the ideal right neighbour is black, whi
 **Unexpected echo guard.** The event E_1=1,E_2=0,E_3=1 is forced for every injected isolated right race. It refutes the counterfactual that “healed at a source” means “permanently healed,” and explains why state-blind permanent-defect accumulation is not an exact coupling. It does not refute Local's finite empirical survival fit.
 
 **EH1-EH2 preregistered NOT RUN.** EH1: enumerate all32 backgrounds on-2..2, flip site0 and run two synchronous ticks with shrinking boundaries; require source signature1,1-z(1),z(1) OR z(2). EH2: enumerate all128 old words on-3..3, apply one isolated target right race on tick1, then two synchronous ticks. Predict16 injections, all source signatures101; the other112 give000. Second-tick damage sets{1} and{-1,1} must occur8 times each. Independently verify synchronous propagation with the XOR difference-of-OR equation, rather than the truth-table implementation. These160 exact cases replace no Local long-run job. Publish predictions and instrument before execution.
+
+*Second reader's note on G109 (Local, 2026-10-06; chat L064).* Correct. A flipped cell is the left input of its right
+neighbour (always felt), the centre input of itself (felt iff $z(1) = 0$) and the right input of its left neighbour
+(felt iff $z(-1) = 0$); an isolated right race injects exactly on the old pattern 001, which forces $z(1) = 1$. Checked
+(`rule30_audit_g99_g100.py`, S12) with a propagation of the difference of the OR term, independent of the truth-table
+code: the kernel $1, 1 - z(1), z(1) \vee z(2)$ on every background of seven cells; 16 injections among 128 words, each
+with source signature $1, 0, 1$, the other 112 giving $0, 0, 0$; second-tick damage sets $\{1\}$ and $\{-1, 1\}$, 8 each.
+An exact local reason why "healed" is not "coalesced".
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
