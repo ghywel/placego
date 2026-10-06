@@ -238,6 +238,8 @@ Written after the wide survey (RULE30-PRIZE.md §8.47), for a person or a system
 time. Each question is precise enough to start on, and none is known to be easy. Each now carries a tag; the
 status board in §6 says what the tags mean and what is left of each.
 
+*Replication (adopted 2026-10-06 from Cloud's C089): every row is single-party (one model's run) unless it says "replicated by X, commit Y".*
+
 The survey's one finding frames them. Every theorem found in any field of the form "a low-information drive cannot
 hold a chaotic system in a fixed state" is about sets of cases: sets of positive measure, or with interior. The
 prize needs a statement about every single finite configuration. The questions are ways across that gap.

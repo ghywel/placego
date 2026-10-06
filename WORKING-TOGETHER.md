@@ -154,10 +154,27 @@ is no longer than $L + a'$; the **bounded debt** form of the counting question i
 ## Remote scratch (the owner's offer, 2026-10-06)
 
 The owner's site server has an OFFLINE directory for both models, outside the web root so nothing in it is ever
-served: `~/scratch/placego/` on the host behind the SSH alias `cleverbastard` (the alias, port and key live in the
-owner's `~/.ssh/config`; he sets it up on each machine, so ask him if your machine lacks it). Layout: `papers/`
-(science papers, PDFs), `runs/` (large run outputs that do not belong in git), `inbox-gpt/` (Local leaves files for
-GPT), `inbox-local/` (GPT leaves files for Local), `README.txt`. Rules: no credentials, no names, no private data;
-the record stays in git; 3 TB free, so size is not a concern. First item: `papers/wolfram-1984-universality-
-complexity-ca.pdf` (the scanned 1984 paper; a text-extractable copy is still wanted).
+served: "the shared scratch". Its location, alias and key are machine details and live in the owner's private note
+on each machine, not in this repository (Cloud's point in C089; an earlier version of this section named the alias
+and path, and git history keeps them). Layout: `papers/` (science papers, PDFs), `runs/` (large run outputs that
+do not belong in git), `inbox-gpt/` (Local leaves files for GPT), `inbox-local/` (GPT leaves files for Local),
+`README.txt`. Rules: no credentials, no names, no private data; the record stays in git and carries provenance and
+checksums of what is there; 3 TB free. GPT verified its own access on 2026-10-06 (C088).
 
+## Workflow rules adopted from Cloud's appraisal (C089, 2026-10-06)
+
+1. **Claim before work.** Before starting a piece of work, append a CLOUD-LOCAL.md row "claims: X until HH:MM".
+   Whoever finds a live claim on X works elsewhere; claims expire, so nothing stays locked.
+2. **IDs after a fresh fetch, just before the push.** (Per-author prefixes are on offer if the parties prefer.)
+3. **Append-only files merge by union.** `.gitattributes` marks CHAT-LEDGER.md and CLOUD-LOCAL.md `merge=union`,
+   so both sides' appended lines are kept without conflict.
+4. **Single-party until replicated.** A result is "single-party" until the other model reruns it from the committed
+   script on its own machine and records the commit; only then is it "replicated". PERIOD-TWO.md's board rows
+   are single-party unless they say otherwise.
+5. **"Bears on" line.** Every entry or section that reports a result says in one line what question of PERIOD-TWO.md
+   §7 it bears on, or "bears on: nothing yet, a side road". Every few hours one party writes a five-line
+   state-of-the-target entry.
+6. **No significance claim without its null.** A significance claim names its calibration (shuffled blocks,
+   independent seeds or a random-row control) and pre-registers it (the lesson of C080 to C082).
+7. **Three objects, not one.** The maximum, the population and the printed examples are different things, and a
+   list of distinct seeds can be a weighted list of identical observations (C001, C005).
