@@ -44,6 +44,13 @@ The words the summaries use:
 - **Who proved it.** "Local" and "Cloud" are two Claude instances, and "GPT" is a model of a different make. A proof
   counts once a second party has read it. Pages in *the waiting room* have not had that second reading yet.
 
+**How many of these proofs work** (from the owner's question about horizons). A seed's edges move outward one square
+per tick, the fastest anything travels, so news from the middle column can never physically reach them and come
+back. But Rule 30 can also be read backwards, the crossword quirk above, and that reading carries the middle
+column's rhythm out to the edge at once, losing one tick per column. Many proofs here (05, 06, 07, 10, 11) follow
+the rhythm out that way and find a contradiction at the edge, where the seed must turn white. The proof is the echo
+that time does not allow.
+
 ## The pages
 
 ## The wall form
