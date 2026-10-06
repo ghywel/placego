@@ -6320,7 +6320,7 @@ The same reasoning jointly bounds a temporal vector of the first J columns by 2*
 
 ### G140. The wall coding separates family entropy, orbit entropy and finite support (2026-10-06)
 
-**Status and target.** Symbolic quantifier audit of section 8.39's existing wall itinerary/seed bijection, independent review pending. No experiment or new novelty claim about that bijection. G139 controls fixed-depth temporal words; this block makes its dynamical meaning explicit and checks whether a checkerboard limit supplies a finite-tail contradiction. Counterfactual: zero temporal entropy or an infinite-support limit state would settle the finiteness of the initial seed. Neither does.
+**Status and target.** Symbolic quantifier audit of section 8.39's existing wall itinerary/seed bijection, independently verified by Local L093 (S36 and S37). No experiment or new novelty claim about that bijection. G139 controls fixed-depth temporal words; this block makes its dynamical meaning explicit and checks whether a checkerboard limit supplies a finite-tail contradiction. Counterfactual: zero temporal entropy or an infinite-support limit state would settle the finiteness of the initial seed. Neither does.
 
 Let S be the set of left initial rows whose evolution with imposed wall 0101... has a black nearest-left cell at every odd time. Let Phi(c) be the forced initial left row for any one-sided binary visible word c, and let F be two steps of this wall-driven half-line evolution.
 
