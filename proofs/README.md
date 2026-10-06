@@ -62,7 +62,7 @@ The words the summaries use:
 - [Theorem A (a window cannot outlast the edge)](05-theorem-a-a-window-cannot-outlast-the-edge.md): A steady rhythm
   in two neighbouring columns cannot last once news from the edge arrives.
 - [Theorem B (a zero run cannot outlast two periods)](06-theorem-b-a-zero-run-cannot-outlast-two.md): If the middle
-  and column 1 both repeat, the forced left half can never be silent for more than two periods.
+  and column 1 both repeat, the left half can never show a white gap more than two periods wide.
 - [Theorem A′ (a block recurs only if it is no longer than the edge is far)](07-theorem-a-a-block-recurs-only-if-it.md):
   A pattern can only repeat if it is shorter than the distance to the edge.
 - [Lemma B1 (white, then black)](08-lemma-b1-white-then-black.md): In the band near the edge, two neighbouring

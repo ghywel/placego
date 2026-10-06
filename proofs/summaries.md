@@ -77,15 +77,24 @@ rule that could block news from the left would fall outside it.
 reaches you, eyes open or shut.
 
 ## 06
-If the middle and column 1 both repeat, the forced left half can never be silent for more than two periods.
+If the middle and column 1 both repeat, the left half can never show a white gap more than two periods wide.
 
-**What it says.** With both columns repeating with period P, every white run in the top row of the left half is at
-most 2P − 2 squares long.
+**What it says.** Suppose the middle column and column 1 repeat every P ticks. Then, at the starting moment, every
+stretch of white squares across the left half is at most 2P − 2 squares wide. The units differ: the gap is measured
+across space, in squares, and the period in time, in ticks.
 
-**Why it matters.** A finite left half needs an endless white run. This shows repeating inputs cannot give one, with
-a sharp number attached.
+**Why it is true.** Every column of the left half inherits the same repeat. A wide white gap forces a white triangle
+beneath it, and a gap of 2P − 1 or more makes the triangle deep enough that some column stays white for a whole
+period. A repeating column that is white for one whole period is white for ever. That permanent white then spreads
+right, column by column, through the latch of C2, until it would silence the middle column, which is still beating.
 
-**An everyday picture.** A drummer keeping a steady beat cannot leave a gap longer than two bars.
+**Why it matters.** A finite left half needs an endless white stretch. This shows repeating columns cannot give one,
+with a sharp number attached. It counts squares and ticks, not seconds, so it holds at any speed the pattern is
+played back (the owner's question; see G98).
+
+**An everyday picture.** Music on a loop: if it is silent for one whole play-through, it is silent for ever. A white
+gap two loops wide guarantees such a silence somewhere, and silence spreads until it reaches the drummer in the
+middle, who is still playing.
 
 ## 07
 A pattern can only repeat if it is shorter than the distance to the edge.
