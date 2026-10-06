@@ -1021,7 +1021,7 @@ The same possible pair must follow two more common odd steps.
 
 **What it says.** Continue W84's smaller and larger starts. After their differing third step, their values have the same parity. The smaller start needs an odd fourth step to satisfy the growth-factor condition, forcing the larger to take one too. The same argument forces an odd fifth step for both. Their first five step patterns must be 11011 and 11111, where 1 means odd. Their starts leave remainders 27 and 31 on division by 32.
 
-**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review and preregistered controls remain pending.
+**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review remains pending; the small direct trajectory controls passed.
 
 **An everyday picture.** Two routes must share two extra turns after their first fork; that still does not show that they reach the same destination.
 
@@ -1033,3 +1033,21 @@ A prefix can buy slack that its remaining steps cannot satisfy on their own.
 **Why it matters.** It blocks an invalid shortcut: applying W83's smaller-count result to a suffix that no longer satisfies W83's hypothesis. The original collision question and the condition with a carried buffer remain open. This reasoning awaits independent review.
 
 **An everyday picture.** A traveller saved money before the next leg. Starting the budget at zero halfway through gives a different affordability test.
+
+## W87
+An offset bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
+
+**What it says.** W85 leaves two possible choices at the sixth step. One choice would shrink the permitted offset gap below the gap a meeting requires, so it is excluded. The remaining choice, followed by the growth-factor condition, forces patterns 11011011 and 11111111 for the first eight steps. The starting remainders must be 251 and 255 on division by 256.
+
+**Why it matters.** It narrows the necessary candidate shape by a proof rather than a larger search. It does not exclude every candidate or find a meeting. Independent review and preregistered controls remain pending.
+
+**An everyday picture.** A route takes one fork because the other costs more than the remaining budget. The next two turns are then forced, but the destination is still unknown.
+
+## W88
+A candidate tree can be cut off using exact bounds on every possible continuation.
+
+**What it says.** For each partial step pattern, calculate the smallest and largest final offset allowed by the growth-factor condition and remaining odd count. A pair of starts four apart can meet only if its required offset difference lies inside the two continuation ranges. Every rejected branch has an explicit arithmetic reason; both next parity choices are covered. A complete tree with no witnesses would exclude this finite class.
+
+**Why it matters.** This offers a certificate rather than a larger uncontrolled scan. The run is preregistered with a node and time cap; hitting either cap proves nothing about the unexplored branches. A separate known collision without the growth-factor restriction tests that genuine witnesses are accepted. Independent review and the run remain pending.
+
+**An everyday picture.** Search a route map, stopping at each fork whose remaining distance cannot reach the destination. Only covering every fork certifies that no route reaches it.

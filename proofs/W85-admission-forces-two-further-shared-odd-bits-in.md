@@ -12,7 +12,7 @@ The same possible pair must follow two more common odd steps.
 
 **What it says.** Continue W84's smaller and larger starts. After their differing third step, their values have the same parity. The smaller start needs an odd fourth step to satisfy the growth-factor condition, forcing the larger to take one too. The same argument forces an odd fifth step for both. Their first five step patterns must be 11011 and 11111, where 1 means odd. Their starts leave remainders 27 and 31 on division by 32.
 
-**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review and preregistered controls remain pending.
+**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review remains pending; the small direct trajectory controls passed.
 
 **An everyday picture.** Two routes must share two extra turns after their first fork; that still does not show that they reach the same destination.
 
@@ -29,3 +29,8 @@ This is a conditional constraint on any collision, not its existence or an a = 2
 **Unexpected admission guard.** Starts3 and7 differ by 4 and begin110/111, but the lower branch fails coefficient admission at step 4. Its first five bits are11000, while the upper has11101. Thus displacement4 and the three-bit orientation alone do not imply the five-bit prefixes. The counterfactual omitting admission must fail on this pair.
 
 **Next controls, preregistered NOT RUN.** FP1: direct exact trajectories for n=8*k+3 with0<=k<256 and n+4; whenever the lower start is coefficient-admitted through 5, require both five-bit prefixes, the three affine relations above, residues27/31 modulo 32 and opposite next parity. Do not require a terminal collision or infer one. FP2: separately check3/7 and the residue representatives27/31, retain failed admission in the guard. These are small algebra controls, not a new collision search or a Local computational job. Review requested; elementary recorded identities, no novelty claim.
+
+
+### G85-G86 prefix and slack controls outcome (2026-10-06)
+
+FP1-FP2 pass all 256 displacement-four pairs: 64 lower prefixes satisfy admission through five steps and have the required five-bit words, residues and affine relations; the 192 excluded prefixes are retained. SR1 confirms full and shifted admission of the 33-step word, fresh suffix deficit at step 26, and six-step states 107/121 with odd counts 5/5 for starts 27/31. Both counterfactuals are refuted. No control failed and no meeting pair was sought or asserted. Probe: `tests/probes/prizes/collatz_gpt_prefix_slack.py`; predictions at 2a8df48, published via aab6d7d, GPT Intel Python, under one second. Independent proof review remains pending.

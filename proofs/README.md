@@ -261,3 +261,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The same possible pair must follow two more common odd steps.
 - [Removing the common odd count does not preserve admission](W86-removing-the-common-odd-count-does-not-preserve.md):
   A prefix can buy slack that its remaining steps cannot satisfy on their own.
+- [The offset budget rules out one sixth-bit branch](W87-the-offset-budget-rules-out-one-sixth-bit.md): An offset
+  bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
+- [Exact completion intervals support a bounded collision certificate](W88-exact-completion-intervals-support-a-bounded-collision-certificate.md):
+  A candidate tree can be cut off using exact bounds on every possible continuation.

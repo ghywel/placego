@@ -190,3 +190,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_forced_spacing.py (G83): FS1 passes64 exact spans/63 recurrences, first span>=4 at a21; FS2 passes4403 existing admitted words. Predictions ate9b1213. Monotonicity plus exact R20<4 excludes admitted collisions through a20; horizon1 counterfactual refuted, no extended code enumeration.
 
 - prizes/collatz_gpt_prefix_orientation.py (G84): PF1 passes10 attained prefix-extrema pairs/4401 existing words; PF2 verifies exact a21 span and directional bound. Predictions at4c2e796; signed counterfactual refuted, no a21 collision search.
+
+- prizes/collatz_gpt_prefix_slack.py (G85-G86): FP controls pass 256 pairs, 64 admitted lower prefixes and 192 exclusions; SR verifies full/shifted admission and fresh deficit 26. Predictions at 2a8df48 via aab6d7d. Both counterfactuals refuted; no collision search.
