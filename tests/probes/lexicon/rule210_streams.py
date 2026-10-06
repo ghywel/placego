@@ -6,7 +6,7 @@ left-permutive rules in Kopra's form) would give conjecture B for Rule 210 witho
 CHAT-LEDGER.md C053, made finite. (Local, 2026-10-06; section 8.65's addendum.)
 
 RUN-ON:     cpu, one core (pure Python 3, big integers)
-COMMAND:    python3 tests/probes/lexicon/rule210_streams.py [DEPTHS=1,8,16,24] [N=4000]
+COMMAND:    python3 tests/probes/lexicon/rule210_streams.py [DEPTHS=1,8,16,24] [N=4000]   |   ... parity
 COST:       a few minutes.
 
 METHOD. The forced left half by the anti-diagonal recurrence (section 8.36) with Rule 210's inverse, l = x' xor
@@ -39,7 +39,20 @@ OUTCOME of the first run, 2026-10-06 (depths 1, 8, 16, 24; N = 4000; 26 seconds)
 """
 import random, sys
 
-_a = sys.argv[1:]
+# ADDENDUM, written 2026-10-06 before the second run (python3 rule210_streams.py parity), after GPT's G26 proved that the
+# empty-left-half stream is Rule 90 in disguise: on an empty left half the occupied cells have t + j odd, no two
+# neighbours are both black, and the AND-NOT reduces to XOR. Which of the other zero-keeping streams share that
+# parity-sparse regime, and which are genuinely nonlinear? For each prefix at depths 8, 16, 24 the stream's left half is
+# built by the column recurrence for 300 times and 300 depths and searched for two horizontally adjacent black cells.
+#   PS0 (control, must hold): the depth-1 stream (the empty left half) has no adjacent black pair anywhere in the window.
+#   PS1 (blind): the parity-sparse streams are exactly those whose time-0 row is empty below d, one prefix per depth
+#       (the all-zero row), so 1 of 16, 1 of 256, 1 of 4096.
+#   PS2 (blind): every other stream shows an adjacent black pair within its first 2d times.
+#   CF  (counterfactual, must fail): Rule 30's forced left half from the same visible stream (the OR in place of the
+#       AND-NOT) has adjacent black pairs from the first times for every prefix; it must not be parity-sparse.
+# REFUTED-BY: PS0 or CF failing (the instrument); PS1, PS2 the other way.
+
+_a = [a for a in sys.argv[1:] if a != "parity"]
 DEPTHS = [int(x) for x in _a[0].split(",")] if len(_a) > 0 else [1, 8, 16, 24]
 N = int(_a[1]) if len(_a) > 1 else 4000
 FAILS = 0
@@ -111,7 +124,64 @@ def periodicity(v):
     return None, None
 
 
+def left_half(vis, T, depth, rule210):
+    """columns of the forced left half from the visible bits (sigma at even times): rows[t][m-1] = x(-m, t)"""
+    import numpy as np
+    n = T + depth + 2
+    tau = np.array([t & 1 for t in range(n)], dtype=np.uint8)
+    sg = np.array([vis[t // 2] if (t & 1) == 0 and t // 2 < len(vis) else 0 for t in range(n)], dtype=np.uint8)
+    g = (lambda c, r: (1 - c) & r) if rule210 else (lambda c, r: c | r)
+    cols = []
+    cur = tau[1:] ^ g(tau[:-1], sg[:-1]); right = tau[:-1]
+    cols.append(cur)
+    for _ in range(depth - 1):
+        nxt = cur[1:] ^ g(cur[:-1], right[:len(cur) - 1]); right, cur = cur[:-1], nxt
+        cols.append(cur)
+    return [[int(cols[m][t]) for m in range(depth)] for t in range(T)]
+
+
+def first_adjacent(rows):
+    for t, row in enumerate(rows):
+        for m in range(len(row) - 1):
+            if row[m] and row[m + 1]:
+                return t
+    return None
+
+
+def parity():
+    T, depth = 300, 300
+    v, _ = stream({}, 1, 2 * (T + depth) + 4, True)
+    report("PS0 the empty-left-half stream has no adjacent black pair in 300 x 300", first_adjacent(left_half(v, T, depth, True)) is None)
+    sparse = {}; late = []
+    cf_dense = True
+    for d in (8, 16, 24):
+        nfree = len([t for t in range(d - 1) if tau(t) == 0])
+        sparse[d] = []
+        for pre in range(1 << nfree):
+            bits = {2 * i: (pre >> i) & 1 for i in range(nfree)}
+            v, end = stream(bits, d, 2 * (T + depth) + 4, True)
+            rows = left_half(v, T, depth, True)
+            fa = first_adjacent(rows)
+            empty0 = not any(rows[0][:d - 1])
+            if fa is None:
+                sparse[d].append((pre, empty0))
+            elif fa >= 2 * d:
+                late.append((d, pre, fa))
+            if pre < 4:
+                cf_dense &= first_adjacent(left_half(v, 40, 40, False)) is not None and first_adjacent(left_half(v, 40, 40, False)) < 4
+        print(f"   depth {d}: parity-sparse streams {len(sparse[d])} of {1 << nfree}; of them with an empty time-0 row: "
+              f"{sum(1 for _, e in sparse[d] if e)}", flush=True)
+    verdict("PS1 the parity-sparse streams are exactly the empty-row ones, one per depth",
+            all(len(sparse[d]) == 1 and sparse[d][0][1] for d in sparse))
+    verdict("PS2 every other stream shows an adjacent pair within 2d times", not late, f"late: {late[:5]}")
+    report("CF  Rule 30's left half from the same streams is dense from the first times", cf_dense)
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "parity" in sys.argv[1:]:
+        parity()
+        return
     # ZS0: Rule 30 from depth 8 ends quickly; Rule 210 from depths 8, 16 survives
     ok0 = True
     for pre in range(1 << 4):
