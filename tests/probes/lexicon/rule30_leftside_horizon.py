@@ -96,6 +96,11 @@ PERIOD ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_leftsi
       width 24 (it would be about 25).
   CF  (counterfactual, must fail): P(8,4) <= 9, which the old "2b" reading would give. It must not.
   REFUTED-BY: LB1 the other way (then the period is not the hypothesis either); CF holding.
+  OUTCOME of the fourth run, 2026-10-06 11:38 (period; 4 minutes). P(4,4) = 6, P(8,4) = 10, P(4,16) = 20, P(8,16) = none
+  to 24. LB1 REFUTED on its two tight brackets (6 against [7, 11], 10 against [11, 15]; the other two held), CF PASSED.
+  Over the eight walls measured, P against the period a + b: (4,4) 6 vs 8; (8,4) 10 vs 12; (4,8) 13 vs 12; (8,8)
+  17 vs 16; (16,8) 23 vs 24; (4,16) 20 vs 20; (8,16) >= 25 vs 24; (16,16) >= 25 vs 32. So P = a + b within 2 at every
+  wall where it is defined: the passing width is the period to within two cells, in both directions.
 """
 import pathlib, subprocess, sys, tempfile
 

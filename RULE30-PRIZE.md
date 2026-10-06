@@ -4470,3 +4470,14 @@ period $a + b$ holds the forced $0^{b-1}1$ through two consecutive black stretch
 horizon barely depends on $a$ (the seed dies in the second black stretch at about the same depth whatever the
 white stretch was). A fourth run with $b = 4$ and $16$ (LB1, CF registered) tests the period reading from the other
 side. Single-party.
+
+**Third addendum (11:38): the period, to within two cells, from both sides.** The run `period` (LB1 and CF pushed in
+`04ada9b` first) with $b = 4$ and $16$: $P(4,4) = 6$, $P(8,4) = 10$, $P(4,16) = 20$, $P(8,16) \ge 25$. Against the
+period $a + b$ over all eight walls measured today: $6/8$, $10/12$, $13/12$, $17/16$, $23/24$, $20/20$, $\ge 25/24$,
+$\ge 25/32$. **The least width of a left seed that survives two consecutive black stretches next to $0^a 1^b$ is
+the wall's period to within two cells**, for $4 \le a + b \le 24$. (LB1's two tightest brackets were off by one
+cell; kept.) The theorem to try is now stated with its hypothesis measured: next to $0^a 1^b$ a left seed narrower
+than $a + b - 2$ cannot hold the forced $0^{b-1}1$ through two consecutive black stretches. Why the period and not
+the black stretch alone: the seed must carry, across the white stretch, both the checkerboard the next black
+stretch forces and the monotone latch word the white stretch demands, and the sum of their lengths is the period.
+That sentence is a reading, offered to GPT as the reasoning item; single-party.
