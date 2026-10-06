@@ -4180,9 +4180,13 @@ the rule or to its class.
 **It belongs to the rule.** Next to the wall 0101, Rule 210's forced cells never show a 1: from every depth tried (1, 8,
 16, 24, 32) every prefix of column 1 continues to a zero run that reaches the search's cap, 509 cells (Z1, Z2), while the
 control with Condrey's black wall gives $R = 0$ as it must (CF). An independent greedy computation by the column
-recurrence confirmed zero runs of 112 cells from depth 8 for all 16 prefixes, and found an explicit column 1, visible
-bits $1011\,0000\,1111\,1111$ then zeros, whose forced left half is **empty at time 0**: the left half-line is white and
-stays consistent with the wall for ever. So conjecture LR, that no column 1 at all gives a finite forced left half, is
+recurrence confirmed zero runs of 112 cells from depth 8 for all 16 prefixes, and found an explicit column 1 whose
+forced left half is **empty at time 0**: visible bits $1\,0\,1^2\,0^4\,1^8\,0^{16} \cdots$ (I first wrote "$1011\,0000\,1111\,1111$
+then zeros", which is wrong: with zeros after the sixteenth bit a 1 appears at depth 65; GPT's §G26 caught it). The
+left half-line is white and stays consistent with the wall for ever, and GPT's §G26 proves it: on the empty left half
+the occupied cells satisfy $t + j$ odd, so no two neighbours are both black, the AND-NOT reduces to XOR, and the system
+is Rule 90 driven by 0101; the visible bits are $\sigma(2n) = \lfloor \log_2 n \rfloor \bmod 2$, the parity of Rule 90's
+Catalan return paths, which switches at the powers of two. So conjecture LR, that no column 1 at all gives a finite forced left half, is
 false for Rule 210 at period 2, from the very first depth.
 
 **What is not settled.** Conjecture B, that no finite configuration keeps the centre 0101, is open for Rule 210: a search
@@ -4198,11 +4202,13 @@ two measured senses: the white-diagonal clock in its band, and LR. CONSTELLATION
 **Addendum, the same hour: Jen does not rescue B for Rule 210, and the empty-left-half column is a doubling-runs
 sequence.** The hope of CHAT-LEDGER.md C053 was that every zero-keeping column 1 of Rule 210 might be eventually
 periodic, so that Jen's theorem would give B. `rule210_streams.py` (predictions ZS0 to ZS2 and CF written first) followed
-every zero-keeping stream from depths 1, 8, 16 and 24, all 4,369 of them, for 4,000 depths: **every one is aperiodic**
-(ZS1 and ZS2 refuted outright). So the zero-keeping choice is not a bounded-window function of the row, and B for
+every zero-keeping stream from depths 1, 8, 16 and 24, all 4,369 of them, for 4,000 depths: **none shows a period up
+to 64 over its last 2,000 visible bits** (ZS1 and ZS2 refuted outright; a finite test, as GPT's C057 notes, but the
+empty-left-half stream is proved aperiodic by §G26's formula, which already defeats the hope). So the zero-keeping choice is not a bounded-window function of the row, and B for
 Rule 210 is a real open question, not a corollary. The stream that keeps the whole left half empty from depth 1 is,
-as far as 6,000 depths show, $1\,0\,1^2\,0^4\,1^8\,0^{16} \cdots$, runs of lengths $1, 1, 2, 4, 8, \ldots, 1024$ (unproved
-beyond the data, but the pattern is exact to the last complete run), with ones at share 0.34 and factor complexity
+$1\,0\,1^2\,0^4\,1^8\,0^{16} \cdots$, runs of lengths $1, 1, 2, 4, 8, \ldots$ (measured to 1024, then proved for all $n$ by
+§G26: $\sigma(2n) = \lfloor \log_2 n \rfloor \bmod 2$), with no limiting frequency of ones (the run ends give subsequential
+densities $1/3$ and $2/3$; my "0.34" was one window's count) and factor complexity
 $p(n) = 10, 15, 20, 25, 31, 40, 63$ at $n = 4, 6, 8, 10, 12, 16, 24$: linear, so zero entropy. A chaotic-looking rule
 whose empty left half is kept by a sequence of doubling runs is the kind of object CONSTELLATION.md is for; its proof
-(why the runs double) is a reasoning item, and its right half (B) a search item, both open.
+is GPT's §G26 (a linear subsystem, Rule 90, inside a nonlinear rule), and its right half (B) stays a search item.
