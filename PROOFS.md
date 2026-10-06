@@ -12,6 +12,11 @@ that names what was wrong. Claims that still want a second reader are kept apart
 about Conjecture LR and Conjecture B (PERIOD-TWO.md §5, §7); B′ is the siblings, Jen and the squeeze; C is the exact
 statements about the single cell proved in the last two days; E is GPT's; F is Collatz; G is the waiting room.*
 
+*For a general reader: [proofs/README.md](proofs/README.md) gives every entry its own page, opening with a summary
+in plain words, built from this file by `python3 proofs/build.py`. A new entry needs its summary in
+[proofs/summaries.md](proofs/summaries.md); the build names any that are missing and writes nothing until they
+exist (Cloud, 2026-10-06, at the owner's request).*
+
 ## Generality index (Local's audit, 2026-10-06; Cloud's CL002 split)
 
 What each Rule 30 entry's proof actually uses about the wall. "Any trace" means any column 0 at all, periodic or
@@ -95,6 +100,8 @@ So, whatever column 2 does:
 For the alternating trace, this means the part of column 1 that the left side sees, $e(s)$, never has two ones in a
 row. $\square$ *Checked:* `rule30_twosided.py` T1 and T2 (every right half tried; random sequences violate the rules,
 
+*Correction (Cloud, 2026-10-06): the copy above was cut off mid-sentence. The source, RULE30-PRIZE.md §8.2, ends the note: "so they are not vacuous)."*
+
 ### 4. Lemma 4 (the newest bit of column 1 enters once, as an XOR)
 
 *Where:* RULE30-PRIZE.md, "8.2 Why runs of 13 were missing: templates, and where Fibonacci really is (2026-10-04)". *Bears on:* the counting form: the newest visible bit enters once, as an XOR. *Status:* proved; checked (P2).
@@ -115,6 +122,9 @@ column $-m$ at time $t$ depends on $\sigma(t), \dots, \sigma(t+m-1)$, and the ne
 the term $x(-m+1, t+1)$, as an XOR. Unwinding $L(k) = x(-k, 0)$ this way down to column $-1$ at time $k-1$ leaves
 $x(-1, k-1) = \tau(k) \oplus \big(\tau(k-1) \vee \sigma(k-1)\big)$. That is $\tau(k) \oplus \sigma(k-1)$ when
 $\tau(k-1) = 0$, and it does not involve $\sigma(k-1)$ when $\tau(k-1) = 1$. $\square$ *Checked:* P2 in
+
+*Correction (Cloud, 2026-10-06): the copy above was cut off mid-sentence. The source, RULE30-PRIZE.md §8.2, ends the note: "P2 in `rule30_linear_cell.py` (7 words, 50 random
+columns 1, every depth to 192: no violation; the counterfactual 'the flip changes only $L(k)$' is caught)."*
 
 
 ## B. Windows, zero runs and the left band
@@ -614,6 +624,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 **Theorem.** A finite driver word resets exactly when it contains a factor
 
+*Correction (Cloud, 2026-10-06): the copy above was cut off mid-sentence. The statement in RULE30-GPT.md G13.2 continues with the factor:*
+
+```math
+ 0\,1^{3k+1}\,0\,z,\qquad k\ge0,\quad z\in\{0,1\}.
+```
+
 ### E.2. G13.5. Several backward steps, with the protected window's exact cost
 
 *Where:* RULE30-GPT.md, "G13.5. Several backward steps, with the protected window's exact cost". *Status:* proved by GPT (proof there).
@@ -622,6 +638,16 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 values outside that window. Compare two right columns differing only at q. For any integer
 r with $0\le r\le q$ and $p\ge3r+5$, their rows at q−r agree at **every** depth≥4r+4. In
 addition their common cells in the interval
+
+*Correction (Cloud, 2026-10-06): the copy above was cut off mid-sentence. The statement in RULE30-GPT.md G13.5 continues:*
+
+```math
+ [4r+4,\ p-1+r]
+```
+
+*are the checkerboard: black at even depths and white at odd depths. The interval's length is p−4−3r; each
+backward step consumes three cells of this protected window. All other right-column inputs, and the wall before
+and after the specified window, are arbitrary and common to the two constructions.*
 
 ### E.3. G17.1. Exact all-period theorem and certificate
 
@@ -683,6 +709,12 @@ exclusions G28 to G35) are GPT's to copy here; this file lists the ones whose st
 *Where:* COLLATZ-PRIZE.md, "4. The state after the free bits is a remainder modulo a power of 3 (2026-10-05)". *Bears on:* the counting form for Collatz (COLLATZ-PRIZE.md §1). *Status:* proved.
 
 **Lemma.** Let $0 \le r < 2^k$, and let $a$ be the number of odd steps among the first $k$ steps of $r$. Then
+
+*Correction (Cloud, 2026-10-06): the copy above was cut off mid-sentence. The statement in COLLATZ-PRIZE.md §4 continues:*
+
+```math
+0 \le T^k(r) < 3^a \qquad\text{and}\qquad T^k(2^k m + r) = 3^a m + T^k(r) \ \text{ for every integer } m .
+```
 
 ### F.2. Dubickas's theorem (external; the record's W2)
 
