@@ -265,3 +265,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   bound forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
 - [Exact completion intervals support a bounded collision certificate](W88-exact-completion-intervals-support-a-bounded-collision-certificate.md):
   A candidate tree can be cut off using exact bounds on every possible continuation.
+- [Admitted terminal fibres are not always singletons](W89-admitted-terminal-fibres-are-not-always-singletons.md):
+  Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.

@@ -2597,3 +2597,48 @@ CB2 completes the a = 21, displacement-four tree in 59 visited nodes, with 30 pr
 Probes: `tests/probes/prizes/collatz_gpt_sixth_branch.py` and `tests/probes/prizes/collatz_gpt_collision_tree.py`.
 
 **Next independent audit, preregistered NOT RUN.** RC1: export the 30 rejected prefix residue classes, then verify each using independent direct prefix trajectories, completion-offset extrema and an explicit reason (admission, capacity, count or target outside the offset interval). Require pairwise disjoint classes and exact total covered mass 2^33, counting a length-s class as 2^(33-s) residues. Predict full coverage and no valid class rejected; retain any failure and reopen the a = 21 claim. Store the certificate data outside Git; publish the reproducible checker and its counts. This audits the implementation's coverage rather than rerunning a larger population. RC2 unexpected negative controls: delete one cut, duplicate a cut, and claim the whole root is rejectable; require the auditor to reject all three certificates for insufficient coverage, overlap and invalid arithmetic respectively. BN1, preregistered NOT RUN: after RC1-RC2 pass, test a = 22 to 24 with a cumulative 100000-node/five-second tree budget. Before each class verify its exact normalized span is less than 8; G83 then reduces every possible same-count collision to displacement 4. Blind prediction: no collision in these classes. Audit each complete empty tree with the independent residue-cover checker; stop on a witness, cap or failed span prerequisite and retain it. This is the only further range registered; no larger search or all-a inference.
+
+
+### G88 residue-cover audit and retained blind refutation (2026-10-06)
+
+RC1 passes: 30 pairwise disjoint rejected residue classes cover all 8589934592 residues modulo 2^33. Independent direct-prefix and position-sum checks justify 17 admission rejections and 13 offset-interval rejections. RC2 rejects a missing class, a duplicated class and an invalid root rejection for the predicted reasons. Thus the count-21 finite exclusion passes the separate coverage audit; independent model review remains pending.
+
+BN1's blind no-collision prediction is REFUTED at a = 22. That tree completes in 647 visited nodes with 319 rejected nodes and five accepting leaves. It stops there as preregistered; a = 23 and 24 were not run. The span prerequisite R_22 < 8 passes. All five accepted residues yield positive same-width starts four apart, 22 odd steps each, coefficient admission at every prefix and equal terminals after 34 steps. Least-residue starts were additionally checked with two direct update formulas and independent odd-position intercept sums. The combined audit/search took under one second; no cap was reached. Predictions at 6c69d5e. No instrument control failed; the blind mathematical prediction failed and is retained.
+
+Certificates and witness data are saved outside Git; the reproducible audit script is `tests/probes/prizes/collatz_gpt_cover_audit.py`. The a = 22 accepting/rejected partition has not yet had a separate coverage audit, so five found pairs is not yet asserted to be the exhaustive family count. The counterexamples themselves already refute all-a admitted injectivity.
+
+**Next audit, preregistered NOT RUN.** RC3: independently check the a = 22 partition consisting of 319 rejected classes and five singleton accepting residues. Validate every rejection and every witness from direct trajectories and position sums, require disjointness and total mass 2^34, and reject a corrupted accepting residue. Also require the independent root span to be less than 8 and every accepted pair to first meet at step 34. Predict full coverage and five valid accepted classes; retain any failure. Do not resume the stopped a = 23–24 search. Independent Local review remains queued for return; this is not a prize candidate.
+
+
+### G89. Admitted terminal fibres are not always singletons (2026-10-06)
+
+The count-22 run refutes the open all-a injectivity conjecture from L040. One explicit pair is
+
+    n = 5348744187, n' = 5348744191,
+    T^34(n) = T^34(n') = 9770112830.
+
+Both starts have width 33. Their parity words, where 1 denotes an odd step of the halved Collatz map, are
+
+    1101101101011011100110110110101101,
+    1111111111011100100111011100001100.
+
+Each word has 22 ones and satisfies 3^(prefix odd count) >= 2^(prefix length) at all 34 prefixes. This is checked by exact integer comparisons, separately from the actual trajectories. Their intercepts are B = 166780787837 and B' = 41256549401; their difference is 125524238436 = 4*3^22. The position-sum intercept formula and direct evolutions independently verify
+
+    2^34*9770112830 = 3^22*5348744187 + 166780787837
+                      = 3^22*5348744191 + 41256549401.
+
+Thus the meeting is within G73's admitted common-width domain. It does not contradict G72-G73's multiplicity or short-label reconstruction theorems, which allow multiplicity; it refutes the unproved singleton conjecture. Since R_22 < 8, G83 bounds each same-count fibre by two, and this pair attains that bound.
+
+**Infinite lift families.** For every integer k >= 0 add k*2^34 to both starts. The parity bijection preserves both 34-bit words and admission, and the common terminal becomes 9770112830 + k*3^22. For k = 0 their common width is directly checked. For k >= 1 both lie strictly inside the same length-2^34 interval, and every relevant power-of-two width boundary is an endpoint of such an interval; their widths therefore agree. This gives infinitely many admitted meeting pairs at the one horizon 34, not an asymptotic collision density.
+
+Five least-residue pairs were independently validated; exhaustive enumeration of the accepting partition remains under RC3 audit:
+
+| Smaller start | Larger start | Common terminal after 34 steps |
+| --- | --- | --- |
+| 5348744187 | 5348744191 | 9770112830 |
+| 7435082747 | 7435082751 | 13581056558 |
+| 11843133435 | 11843133439 | 21632881628 |
+| 15231450875 | 15231450879 | 27822043514 |
+| 15257926651 | 15257926655 | 27870404645 |
+
+The a <= 20 analytic exclusion and a = 21 audited residue cover show that 22 is the first odd count permitting a same-count admitted collision, subject to independent review of those proofs and the coverage argument. This is a finite structural result, not a Collatz or Rule 30 solution. The failed BN1 prediction is part of its provenance; no novelty claim. Independent Local reading is requested at return.

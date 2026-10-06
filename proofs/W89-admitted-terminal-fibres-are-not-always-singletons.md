@@ -1,0 +1,50 @@
+# Admitted terminal fibres are not always singletons
+
+*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G89. Admitted terminal fibres
+are not always singletons (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and
+this summary in [summaries.md](summaries.md), never this file.*
+
+**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+
+## In plain words
+
+Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+
+**What it says.** The starts 5348744187 and 5348744191 meet at 9770112830 after 34 steps. Each has 22 odd steps and keeps its tripling-and-halving multiplier at least one at every prefix. Their exact words, offsets and direct trajectories verify the meeting. Adding the same multiple of 2^34 to both starts produces another such pair.
+
+**Why it matters.** It answers the singleton question with a counterexample and makes the two-member fibre bound sharp. The smaller odd counts are excluded by the preceding argument and audited finite cover, pending independent review. It does not refute Collatz or solve either prize problem. The no-collision prediction failed and is retained.
+
+**An everyday picture.** Two routes can reach the same destination without either spending its accumulated travel budget; knowing the destination alone cannot distinguish the routes.
+
+## The formal statement and proof
+
+The count-22 run refutes the open all-a injectivity conjecture from L040. One explicit pair is
+
+    n = 5348744187, n' = 5348744191,
+    T^34(n) = T^34(n') = 9770112830.
+
+Both starts have width 33. Their parity words, where 1 denotes an odd step of the halved Collatz map, are
+
+    1101101101011011100110110110101101,
+    1111111111011100100111011100001100.
+
+Each word has 22 ones and satisfies 3^(prefix odd count) >= 2^(prefix length) at all 34 prefixes. This is checked by exact integer comparisons, separately from the actual trajectories. Their intercepts are B = 166780787837 and B' = 41256549401; their difference is 125524238436 = 4*3^22. The position-sum intercept formula and direct evolutions independently verify
+
+    2^34*9770112830 = 3^22*5348744187 + 166780787837
+                      = 3^22*5348744191 + 41256549401.
+
+Thus the meeting is within G73's admitted common-width domain. It does not contradict G72-G73's multiplicity or short-label reconstruction theorems, which allow multiplicity; it refutes the unproved singleton conjecture. Since R_22 < 8, G83 bounds each same-count fibre by two, and this pair attains that bound.
+
+**Infinite lift families.** For every integer k >= 0 add k*2^34 to both starts. The parity bijection preserves both 34-bit words and admission, and the common terminal becomes 9770112830 + k*3^22. For k = 0 their common width is directly checked. For k >= 1 both lie strictly inside the same length-2^34 interval, and every relevant power-of-two width boundary is an endpoint of such an interval; their widths therefore agree. This gives infinitely many admitted meeting pairs at the one horizon 34, not an asymptotic collision density.
+
+Five least-residue pairs were independently validated; exhaustive enumeration of the accepting partition remains under RC3 audit:
+
+| Smaller start | Larger start | Common terminal after 34 steps |
+| --- | --- | --- |
+| 5348744187 | 5348744191 | 9770112830 |
+| 7435082747 | 7435082751 | 13581056558 |
+| 11843133435 | 11843133439 | 21632881628 |
+| 15231450875 | 15231450879 | 27822043514 |
+| 15257926651 | 15257926655 | 27870404645 |
+
+The a <= 20 analytic exclusion and a = 21 audited residue cover show that 22 is the first odd count permitting a same-count admitted collision, subject to independent review of those proofs and the coverage argument. This is a finite structural result, not a Collatz or Rule 30 solution. The failed BN1 prediction is part of its provenance; no novelty claim. Independent Local reading is requested at return.

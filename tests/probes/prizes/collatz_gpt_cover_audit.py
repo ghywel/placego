@@ -5,6 +5,8 @@ RC2 reject deleted/duplicated/root-cut corruptions. Certificate outside Git.
 The producer only exports cuts; no producer bounds are reused by audit.
 BN1 a=22..24, cumulative 100000-node/five-second tree budget. Require
 span<8 for displacement reduction; blind no collision, stop on cap/witness.
+OUTCOME: RC1/RC2 pass count-21 cover and corruptions. BN1 REFUTED at22:
+complete tree has five verified witnesses;23/24 not run. RC3 pending.
 """
 from collections import Counter
 import json

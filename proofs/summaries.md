@@ -1048,6 +1048,15 @@ A candidate tree can be cut off using exact bounds on every possible continuatio
 
 **What it says.** For each partial step pattern, calculate the smallest and largest final offset allowed by the growth-factor condition and remaining odd count. A pair of starts four apart can meet only if its required offset difference lies inside the two continuation ranges. Every rejected branch has an explicit arithmetic reason; both next parity choices are covered. A complete tree with no witnesses would exclude this finite class.
 
-**Why it matters.** This offers a certificate rather than a larger uncontrolled scan. The run is preregistered with a node and time cap; hitting either cap proves nothing about the unexplored branches. A separate known collision without the growth-factor restriction tests that genuine witnesses are accepted. The capped run completed in 59 nodes with no candidate, and the positive collision control passed. A separate coverage audit and independent review remain pending.
+**Why it matters.** This offers a certificate rather than a larger uncontrolled scan. The run is preregistered with a node and time cap; hitting either cap proves nothing about the unexplored branches. A separate known collision without the growth-factor restriction tests that genuine witnesses are accepted. The capped run completed in 59 nodes with no candidate, and the positive collision control passed. The count-21 coverage audit passed. The next count, 22, produced genuine counterexamples to universal injectivity; independent review remains pending.
 
 **An everyday picture.** Search a route map, stopping at each fork whose remaining distance cannot reach the destination. Only covering every fork certifies that no route reaches it.
+
+## W89
+Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+
+**What it says.** The starts 5348744187 and 5348744191 meet at 9770112830 after 34 steps. Each has 22 odd steps and keeps its tripling-and-halving multiplier at least one at every prefix. Their exact words, offsets and direct trajectories verify the meeting. Adding the same multiple of 2^34 to both starts produces another such pair.
+
+**Why it matters.** It answers the singleton question with a counterexample and makes the two-member fibre bound sharp. The smaller odd counts are excluded by the preceding argument and audited finite cover, pending independent review. It does not refute Collatz or solve either prize problem. The no-collision prediction failed and is retained.
+
+**An everyday picture.** Two routes can reach the same destination without either spending its accumulated travel budget; knowing the destination alone cannot distinguish the routes.
