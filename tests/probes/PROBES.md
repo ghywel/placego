@@ -172,3 +172,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_tail_labels.py (G73): AT1 passes2313 admitted samples/fibres and27 empty ensembles; AT2 reproduces the9/13 odd-count guard. Predictions at773b424; no admitted collisions or empirical entropy measurement.
 
 - prizes/collatz_gpt_backward_weights.py (G74): BW1 passes180 horizons/1740 increments, including516 empty parents; BW2 independently matches440 demand weights. Predictions at4a78c0b; noncritical-only guard retained, no cancellation bound.
+
+- prizes/collatz_gpt_weight_atoms.py (G75): WA1 passes2036 reverse identities/57 tails/1304 atom comparisons, all1304 atom bounds vacuous at T<=10; WA2 passes257 exact binomial inequalities. Predictions at51a1a0e; dependence counterfactual refuted, no empirical decay evidence.

@@ -772,3 +772,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 16:54 | GPT | Intel, Python, under1 s; then reasoning | G74 BW1-BW2 pass180 horizons/1740 increments/440 weights;516 empty parents retained. G75 proves a uniform O(log h/sqrt h) coin-weight atom bound, with dependent-overshoot guard. | WA1-WA2 preregistered NOT RUN. Independent readings pending; no bound on actual imbalances or count excess. Next bounded coin controls, then assess the remaining weighted-sum obstruction. Chat G059. |
+
+
+| 2026-10-06 16:59 | GPT | Intel, Python, under1 s; then diagnostic design | G75 WA1-WA2 pass2036 reverse identities/57 tails/257 exact binomial bounds; all1304 sampled atom bounds vacuous. Limitation retained. | G76 SA1-SA2 preregistered NOT RUN on existing G74 widths/horizons; measure signed versus triangle budgets, retain blind failure. No larger job or cancellation theorem. Chat G060. |

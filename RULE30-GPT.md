@@ -4374,3 +4374,26 @@ which gives the displayed bound and, for the stated L, tail term at most32/(h+1)
 **Unexpected dependence guard.** Take T3,t1,h1. Then ell_2=ell_3=2, so J=max(2,2-Z_1)=2, while R=Z_1. Its demand distribution has an atom of1, even though Z_1 has maximum atom1/2. Dropping R, or importing the binomial atom bound directly for J, is wrong. The proof above keeps the dependence and its truncation cost. It also shows why no short-horizon square-root estimate with constant1 is asserted.
 
 **Next controls, preregistered NOT RUN.** WA1: reuse G74's complete future-string population T1..10. For each word verify the reverse decomposition, then compare exact R tail probabilities to the conservative geometric bound for every attained positive r, and each J atom to the displayed bound for L1..8. Predict no failure; retain bounds above1 as vacuous rather than evidence of sharpness. WA2: verify the central-binomial induction inequality by exact squared-integer comparisons for h0..256, and independently enumerate the T3,t1 guard. Counterfactual: max atom of J never exceeds max atom of Binomial(h,1/2); must fail at h1 above. No actual-orbit distribution measurement, asymptotic constant estimate or large Local job. Independent proof reading requested.
+
+
+### G75 controls outcome (2026-10-06)
+
+WA1 passes2036 exact reverse decompositions across all future coin strings for T1..10,57 overshoot-tail comparisons and1304 atom comparisons for L1..8. All1304 atom bounds are vacuous (the uncapped expression exceeds1) at this deliberately small scope: this run does not empirically exercise a nontrivial atom bound or measure decay. Tail and atom exponential comparisons use floating arithmetic with1e-14 tolerance, while probabilities and reverse identities are exact. WA2 passes257 exact squared-integer central-binomial bounds for h0..256. The unexpected T3,t1 guard is confirmed: J has an atom of1 and R equals the fair bit, refuting the direct binomial-atom shortcut.
+
+Probe: `tests/probes/prizes/collatz_gpt_weight_atoms.py`; predictions at51a1a0e, GPT's Intel host, Python, under1 s. No control failed. The asymptotic atom bound remains the analytic result, pending independent reading; the small controls do not demonstrate its asymptotic usefulness. No actual-orbit or Local computational job was run. The remaining count problem is to control actual signed class imbalances against these weights.
+
+
+## G76. A bounded signed-contribution diagnostic, preregistered (2026-10-06)
+
+G75 controls the coin weights, not the actual signed imbalances. Before pursuing a triangle bound or a cancellation estimate, distinguish them on the already used small ensemble. For each width/final horizon in G74, write g_(t,a)=I_w(t,a)*Delta_t(a)/2, and measure
+
+    Pplus=sum max(g_(t,a),0),
+    Pminus=sum max(-g_(t,a),0),
+    D=Pplus-Pminus=C_w(T)-Q_w(T),
+    A=Pplus+Pminus.
+
+Report A/Q and D/Q, with Q>0 at every finite horizon; report A/abs(D) only when D!=0. Retain zero net discrepancies and empty actual ensembles separately. No finite maximum of these ratios is an asymptotic bound. This is a diagnostic of the selected observable, not a new large count or a generic parity-uniformity test. G74 supplies the identity; neither it nor G75 asserts cancellation.
+
+**Unexpected sign guard, derived directly.** At width3,T5 the sole admitted free-bit start7 follows7,11,17,26,13,20 with odd counts1,2,3,3,4. Backward coin completion gives H_2=1/2,H_3=3/4,H_4=1/2,H_5=1. Thus the contributions at t2,3,4 are respectively+1/4,-1/4,+1/2. Their total is1/2, whereas A=1. The unrestricted-sign counterfactual that every contribution has the sign of the final discrepancy is false already here. This exact guard also prevents equating the triangle budget with the signed budget.
+
+**Next diagnostic, preregistered NOT RUN.** SA1: reuse widths2..10 and T=m..24, the full G74 scope, recording Pplus/Pminus/A/D with exact rational arithmetic, extrema of A/Q and A/abs(D), all zero discrepancies and all empty final ensembles. Required controls: D equals the direct final count minus the independently computed coin count, A>=abs(D), and the guard has terms(+1/4,-1/4,+1/2). SA2 blind prediction: at least one case with a positive final count has cancellation factor A/abs(D)>2. A failure is retained and changes the interpretation, not the scope. Counterfactual: every nonzero term agrees with the final sign; must fail on the guard. No rate fit, larger population or Local run. This block asks whether triangle estimates lose material information in a small sample; it cannot decide the asymptotic count claim.
