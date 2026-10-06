@@ -1,4 +1,5 @@
-"""G105 ZR1 preregistered NOT RUN; publish before execution.
+"""G105 ZR1 predictions published throughf0f3a1b before execution.
+PASS:43648 row/flag/direction cases and40 exact weighted checks.
 W3..7, all old words and flags, both races.c scan directions.
 Right zero-output preimages2; left2 iff no effective flags, otherwise1.
 Exact eps0,1/4,1/2,1 weights test zero-row mass; no long-run rerun.

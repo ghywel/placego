@@ -1196,6 +1196,6 @@ Closing the row into a ring changes an exact probability even when large-ring st
 
 **What it says.** Every right flag pattern gives exactly two preimages of the zero row. Left patterns give one or two according to whether any effective race is present. The resulting zero-row probabilities differ from the uniform ring law.
 
-**Why it matters.** Infinite fair spatial invariance cannot be imported as exact finite cyclic invariance. The all-zero initial row also blocks any state-uniform upper decoherence bound. ZR1 controls and independent review are pending.
+**Why it matters.** Infinite fair spatial invariance cannot be imported as exact finite cyclic invariance. The all-zero initial row also blocks any state-uniform upper decoherence bound. ZR1 passes43648 cases and40 exact weighted probabilities; independent review is pending.
 
 **An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
