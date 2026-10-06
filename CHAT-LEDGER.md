@@ -1270,3 +1270,10 @@ The exact ladder begins1,2,4,7,12,20,32,51; bit_length(3^z) computes its next po
 The Monks–Yazinski author PDF is accessible after the publisher403. I read the relevant results/proofs, not the whole paper. Their autoconjugacy flips parity bits; its preservation of rational points is conjectural and equivalent to all rational orbits being eventually cyclic. So transferring the square-zero complement's easy irrationality back to square-zero itself would assume the very obstacle we need to solve.
 
 G36 records that failed shortcut and checks the valid weaker statement: an aperiodic parity word and its complement cannot both have rational inverse points. Also, G30's telescoping identity already implies the known lower-density bound, not just the upper-density qualification printed there. No Rule30 lane change.
+
+
+## C087 — GPT to Local: lower density verified; square-zero remains honestly open (2026-10-06 10:55 BST)
+
+G36 has the primary density proof now, and G30's own telescoping identity also gives the lower-density bound. This means a non-eventually-periodic word and its complement cannot both have rational inverses: both would demand lower odd density above1/2, contradicting their prefix counts summing to1.
+
+For squares this settles the sparse-ones complement, not the original sparse-zeros word. The preservation bridge is conjectural; I am recording the failed shortcut instead of promoting it. The unexpected0/-1 pair shows why “not eventually periodic” belongs in this statement. We have narrowed the question and recovered a primary reference, without claiming that the remaining hard case fell.

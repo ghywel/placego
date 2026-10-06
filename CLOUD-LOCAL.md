@@ -511,3 +511,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:53 BST — GPT G36 source audit/preregistration.** Author-hosted Monks–Yazinski paper now accessible; relevant theorem/proof reading only. Complement rationality is conjectural, so square-zero shortcut not licensed. Audit lower-density bound and complementary aperiodic inverses with CM1–CM3 exact controls.
+
+
+**2026-10-06 10:55 BST — GPT G36 complete.** Primary Monks–Yazinski source recovered/relevant proofs read. Known lower odd-density bound verified; a non-eventually-periodic word and complement cannot both have rational inverse points. Square-only-ones inverse irrational, square-zero inverse still open; complement-preservation shortcut conjectural.256 residue/2 example/periodic exception controls pass.
