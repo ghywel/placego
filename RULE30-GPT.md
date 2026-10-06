@@ -3676,3 +3676,26 @@ This is elementary Boolean/integer algebra and a coordinate-change identity, der
 Published DC1-DC3 pass10395 nonconstant-input/nonconstant-output drift comparisons at primes3,5,7,11,13, plus8 quotient-cycle coordinate-change controls. Weight and moment identities also hold on inputs whose successors are constant; the phase formula correctly excludes those denominators. The zero-displacement quotient periods4 at7 and17 at11 remain. Changing the phase at one class alters exactly two edge increments on each tested cycle of length>=2 while preserving the total. No inequality excluding zero sums was obtained. The identity block is complete; further local algebra needs a concrete Rule30 restriction to be useful, rather than treating reparameterization as progress on the later-prime pattern.
 
 **Post-control diagnostic prompted by Local L030.** Reprinted the already computed DC2 edge increments, rerunning the same population to check the proposed interpretation of zero drift. The p7 zero cycle has increments(0,2,4,1), sum7. The p11 quotient17-cycle has(9,2,10,9,7,1,9,1,3,9,8,3,7,10,10,4,8), sum110=10*11. Every one of the latter increments is nonzero. This is an actual Rule30 counterexample to “all local increments nonzero implies a nonzero cycle displacement”. A zero total is modular cancellation, not pointwise agreement of correction and state phases. This diagnostic was not a blind prediction; it records the observed list from the existing small exact census.
+
+
+## G58. One-parity walls: an explicit empty-left witness (2026-10-06)
+
+Independent audit of Local C066 in PROOFS.md's waiting room, extending the existing G26 construction rather than claiming a new mechanism. Let tau(t)=0 at every even time, with arbitrary odd-time bits a_m=tau(2m+1). Periodicity is not required. At left depth k>=1 set u_k(0)=0, u_0(t)=tau(t), and evolve the Dirichlet half-line by
+
+    u_k(t+1)=u_(k-1)(t) XOR u_(k+1)(t).
+
+Induction gives u_k(t)=0 whenever t+k is even, including the boundary k=0. Consequently adjacent cells cannot both be1. Rule210 is f(l,c,r)=l XOR r XOR(c*r); its nonlinear term vanishes throughout this left half. The half-line therefore satisfies Rule210 exactly, not merely Rule90 approximately. Each time has finite support because influence travels at most one cell per step.
+
+Put pi(t)=u_1(t) and sigma(t)=tau(t+1) XOR pi(t). Then pi(odd)=sigma(odd)=0. At even t, tau(t)=0 and the wall's Rule210 update is pi(t) XOR sigma(t)=tau(t+1). At odd t, tau(t+1)=pi(t)=sigma(t)=0, so the same wall equation holds. Thus the entire left half and wall are compatible for all t>=0, with an empty initial left row. This refutes LR for every wall in this phase of the one-parity family. It does not construct a right half realizing sigma; B/full-clock realization and Rule30 remain open. C066's existence conclusion is verified by this argument; its family wording must not be read as saying every sigma with odd bits zero gives an empty initial row.
+
+G26's Dyck-walk calculation gives the explicit boundary filter:
+
+    pi(2n)=XOR over m=0..n-1 of a_m*(C_(n-m-1) mod2)
+           =XOR over r>=0 with 2^r<=n of a_(n-2^r),
+    sigma(2n)=a_n XOR pi(2n).
+
+The empty sum at n=0 is0. The second equality uses the already proved Catalan parity identity C_j odd iff j=2^r-1. Arbitrary holes at odd times are therefore allowed; the alternating wall is only a special case. No universal claim that these witnesses are aperiodic is made for arbitrary a.
+
+**Unexpected scope check, proved without a run.** A nonzero periodic one-parity wall cannot have odd period: adding an odd period sends every odd time to an even time with the same bit, forcing that bit to0. This explains why an odd-period nonzero wall cannot be inserted into the construction by merely choosing a time phase. The opposite parity phase has the analogous invariant t+k even and can be constructed directly. Also the previously recorded Rule30 countercontrol remains: f(0,1,0)=1 for Rule30 but0 for Rule210/Rule90, so parity sparsity does not transfer the linear reduction.
+
+**Next bounded controls, preregistered, NOT RUN.** OP1: for all26 nonzero odd-time masks of periods2,4,6,8, through256 steps, independently compare scalar truth-table Rule210 half-line evolution and XOR half-line evolution, starting with an empty row; parity and wall equations must hold. OP2: compare depth1 against exact integer Catalan coefficients and the dyadic filter above, including all odd-time white holes. CF: applying the same left evolution as a Rule30 witness must fail (retain (0,1,0) as a concrete rule-level discriminator). These checks validate implementation, not the all-length theorem; there is no blind empirical prediction or large census. Both earlier startup controls remain passed; no environment or job change. Next implement these controls and ask Local to audit the explicit filter and scope.
