@@ -354,6 +354,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
 - [a uniform Sturmian horizon bounds phase and angle resets](G135-a-uniform-sturmian-horizon-bounds-phase-and-angle.md):
   The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
+- [uniform recoding horizons include rational mechanical bases](G136-uniform-recoding-horizons-include-rational-mechanical-bases.md):
+  Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
 
 ## The waiting room (not yet verified)
 
@@ -366,7 +368,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Uniform recoding horizons include rational mechanical bases](W136-uniform-recoding-horizons-include-rational-mechanical-bases.md):
-  Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
+*No proofs are waiting for a second reader at the moment.*

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G135, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G136, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4383,15 +4383,7 @@ $1/(50 + \varphi)$ and one minus it, at 10 random phases each and $C = 0, 2$, ev
 contains a violating repetition; the latest first violation over all of them came at prefix length 45, so the
 uniform constant is very conservative.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT136. uniform recoding horizons include rational mechanical bases (second-read by Local, 2026-10-06)
 
 ### G136. Uniform recoding horizons include rational mechanical bases (2026-10-06)
 
@@ -4425,3 +4417,25 @@ Finitely many disagreements or a final infinite piece are impossible by the same
 **Orbit-endpoint interpretation.** G131 constructs a finite block code for any half-open binary arc partition whose actual jump points have the form beta+k_j*alpha. If the integer exponents span D=max(k_j)-min(k_j)>=1, its Laurent polynomial Q(z)=sum(z^k_j) has an even number of jumps and Q=(1+z)P. P has exponent span D-1, so after rephasing its block width parameter is w=D-1. The same construction works for rational angles: distinct actual jump points are listed once, and equality of the jumps leaves only a constant difference, absorbed in F. Constant partitions use w=0. Thus pieces whose endpoint representations have uniformly bounded exponent span inherit the reset bound, even if their angles and partitions vary. The controlling parameter here is exponent span, not merely the number of endpoints. No arbitrary unrelated-endpoint partition is claimed to have this representation.
 
 **Unexpected width guard, proved without a run.** An unrestricted finite block code can fit any prescribed finite binary prefix. Fix an irrational Sturmian g and finitely many starting indices 0,...,m. Their infinite future tails are pairwise distinct: equality of two would give an eventually periodic mechanical code, impossible because its symbol frequency is irrational. For each pair there is a finite first differing coordinate; take w at least the largest such coordinate. All the blocks g_s,...,g_(s+w) at these indices are distinct. Define F on them to output the desired prefix, and define it arbitrarily elsewhere. This does not give an infinite prescribed word, a uniform w or a finite-left Rule 30 realization. In particular the record's overlap-free Thue-Morse prefixes can pass the repeat inequality for arbitrary finite horizons while being fitted by increasingly wide recodings. A horizon independent of all recoding widths is therefore false. This is the identified independent scope check. At w=0 the theorem recovers G135 and its rational extension; constant F also retains the immediate period-one obstruction. Geometric correction schedules still pass the displayed necessary bounds, and no positive density, entropy or prize solution follows.
+
+*Second reader's note on G136 (Local, 2026-10-06; chat L089).* Correct. The perturbation is sound: with
+$\eta > (N + 1)|\epsilon|$ a sample on either endpoint moves to the correct side of the moved interval, and every other
+sample keeps a positive margin; the prefix through $N = M + w = 251(C + w + 4)$ carries repetitions of $g$ to
+repetitions of $c$ with constant $C + w$, which is where $H(C, w) = 251(C + 4) + 250w$ comes from; the reset and
+disagreement recursions follow. Checked (`rule30_audit_g99_g100.py`, S33): exact rational mechanical codes
+($\alpha = 0, 1, 1/2, 2/5, 3/7$) and random block codes of width up to 4 over irrational and rational mechanical words
+all violate within $H(C, w)$; for the width guard, fitting the first 121 Thue–Morse bits by a recoding of a golden
+Sturmian word needs width 204 here, and that Thue–Morse prefix (overlap-free) passes the repeat bound with $C = 0$,
+so no width-independent horizon exists, as G136 says.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

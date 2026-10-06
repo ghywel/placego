@@ -1,10 +1,10 @@
-# Uniform recoding horizons include rational mechanical bases
+# uniform recoding horizons include rational mechanical bases
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G136. Uniform recoding horizons
-include rational mechanical bases (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md
-and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT136. uniform recoding
+horizons include rational mechanical bases (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Finite recodings retain the uniform spacing bound, with an explicit allowance fo
 **An everyday picture.** Reading several neighboring symbols adds a fixed allowance. Increasing that reading window indefinitely changes the problem.
 
 ## The formal statement and proof
+
+### G136. Uniform recoding horizons include rational mechanical bases (2026-10-06)
 
 **Status and purpose.** Symbolic corollary of G131 and G135; independent review pending. Dependencies G134/G135 are independently verified by Local L088. No experiment. Counterfactual: either a finite recoding margin or a rational limiting angle might evade the uniform horizon. The exact margin and a finite-prefix approximation settle both. This advances recoded/reset companions, not the missing entropy theorem. The inherited rotation-partition prior art is recorded in G131; no general novelty claim.
 
@@ -48,3 +50,13 @@ Finitely many disagreements or a final infinite piece are impossible by the same
 **Orbit-endpoint interpretation.** G131 constructs a finite block code for any half-open binary arc partition whose actual jump points have the form beta+k_j*alpha. If the integer exponents span D=max(k_j)-min(k_j)>=1, its Laurent polynomial Q(z)=sum(z^k_j) has an even number of jumps and Q=(1+z)P. P has exponent span D-1, so after rephasing its block width parameter is w=D-1. The same construction works for rational angles: distinct actual jump points are listed once, and equality of the jumps leaves only a constant difference, absorbed in F. Constant partitions use w=0. Thus pieces whose endpoint representations have uniformly bounded exponent span inherit the reset bound, even if their angles and partitions vary. The controlling parameter here is exponent span, not merely the number of endpoints. No arbitrary unrelated-endpoint partition is claimed to have this representation.
 
 **Unexpected width guard, proved without a run.** An unrestricted finite block code can fit any prescribed finite binary prefix. Fix an irrational Sturmian g and finitely many starting indices 0,...,m. Their infinite future tails are pairwise distinct: equality of two would give an eventually periodic mechanical code, impossible because its symbol frequency is irrational. For each pair there is a finite first differing coordinate; take w at least the largest such coordinate. All the blocks g_s,...,g_(s+w) at these indices are distinct. Define F on them to output the desired prefix, and define it arbitrarily elsewhere. This does not give an infinite prescribed word, a uniform w or a finite-left Rule 30 realization. In particular the record's overlap-free Thue-Morse prefixes can pass the repeat inequality for arbitrary finite horizons while being fitted by increasingly wide recodings. A horizon independent of all recoding widths is therefore false. This is the identified independent scope check. At w=0 the theorem recovers G135 and its rational extension; constant F also retains the immediate period-one obstruction. Geometric correction schedules still pass the displayed necessary bounds, and no positive density, entropy or prize solution follows.
+
+*Second reader's note on G136 (Local, 2026-10-06; chat L089).* Correct. The perturbation is sound: with
+$\eta > (N + 1)|\epsilon|$ a sample on either endpoint moves to the correct side of the moved interval, and every other
+sample keeps a positive margin; the prefix through $N = M + w = 251(C + w + 4)$ carries repetitions of $g$ to
+repetitions of $c$ with constant $C + w$, which is where $H(C, w) = 251(C + 4) + 250w$ comes from; the reset and
+disagreement recursions follow. Checked (`rule30_audit_g99_g100.py`, S33): exact rational mechanical codes
+($\alpha = 0, 1, 1/2, 2/5, 3/7$) and random block codes of width up to 4 over irrational and rational mechanical words
+all violate within $H(C, w)$; for the width guard, fitting the first 121 Thue–Morse bits by a recoding of a golden
+Sturmian word needs width 204 here, and that Thue–Morse prefix (overlap-free) passes the repeat bound with $C = 0$,
+so no width-independent horizon exists, as G136 says.

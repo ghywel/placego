@@ -138,6 +138,12 @@ CHECKS (GPT's claims at 827e006):
      1/(50 + golden) with a huge first denominator, and 1 minus it), 10 random phases each and C = 0, 2: every
      Sturmian prefix of length 251 (C + 4) contains a violating repetition (the first violation length is recorded);
      K_A = 8 (A + 1)^4 + 3 gives 131 at A = 1; 4 * 31 T + 3C + 8 = 251 C + 1000 for T = 2C + 8.
+  S33 (G136, added 2026-10-06 at f8c09fd): exact rational mechanical codes (alpha = 0, 1, 1/2, 2/5, 3/7, random
+     rational phases) and random width-(w+1) block codes (w <= 3) of irrational and rational mechanical words all
+     contain a violating repetition within H(C, w) = 251 (C + 4) + 250 w (C = 0, 1); the width guard: a recoding of a
+     golden Sturmian word fitting the first 120 Thue-Morse bits exists at the width where the 121 blocks become
+     distinct (at least 119, since a Sturmian word has n + 1 blocks of length n), and that Thue-Morse prefix
+     (overlap-free) has no repetition violating the bound with C = 0. (The first run capped the width search at 119.)
 """
 import random
 from fractions import Fraction as F
@@ -1375,4 +1381,58 @@ ok32 &= 8 * 2 ** 4 + 3 == 131
 ok32 &= all(4 * 31 * (2 * Cc + 8) + 3 * Cc + 8 == 251 * Cc + 1000 for Cc in range(20))
 check('S32 G134, G135: every awkward-angle prefix of length 251(C+4) violates the repeat bound; constants', ok32,
       'latest first violations: %s' % {k: v for k, v in worst32.items()})
+def first_violation_seq(seq, Cc):
+    Nn = len(seq) - 1
+    first = None
+    for q in range(1, Nn):
+        run_start = None
+        for s_ in range(0, Nn - q + 1):
+            if seq[s_] == seq[s_ + q]:
+                if run_start is None:
+                    run_start = s_
+                if s_ > 2 * run_start + q + Cc:
+                    pos = s_ + q
+                    first = pos if first is None else min(first, pos)
+                    break
+            else:
+                run_start = None
+        if first is not None and q > first:
+            break
+    return first
+
+
+def mech_exact(alpha, theta, n):
+    return [1 if ((theta + s_ * alpha) % 1) >= 1 - alpha else 0 for s_ in range(n)]
+
+
+ok33 = True
+for alpha in (F(0), F(1), F(1, 2), F(2, 5), F(3, 7)):
+    for trial in range(5):
+        th = F(rng29.randint(0, 999), 1000)
+        for Cc in (0, 1):
+            Mm = 251 * (Cc + 4)
+            fv = first_violation_seq(mech_exact(alpha, th, Mm + 1), Cc)
+            ok33 &= fv is not None and fv <= Mm
+for alpha in ((_mm.sqrt(5) - 1) / 2, _mm.pi - 3, F(2, 5)):
+    for trial in range(5):
+        wv = rng29.randint(0, 3)
+        table = {blk: rng29.randint(0, 1) for blk in product((0, 1), repeat=wv + 1)}
+        for Cc in (0, 1):
+            Mm = 251 * (Cc + 4) + 250 * wv
+            th = rng29.random() if not isinstance(alpha, F) else F(rng29.randint(0, 999), 1000)
+            g_ = mech_exact(alpha, th, Mm + wv + 1)
+            cseq = [table[tuple(g_[i:i + wv + 1])] for i in range(Mm + 1)]
+            fv = first_violation_seq(cseq, Cc)
+            ok33 &= fv is not None and fv <= Mm
+tm = [bin(i).count('1') % 2 for i in range(400)]
+ok33 &= first_violation_seq(tm[:400], 0) is None
+gg = mech_exact((_mm.sqrt(5) - 1) / 2, 0.3, 1200)
+for wv in range(1, 900):       # a Sturmian word has n + 1 blocks of length n: 121 distinct need w >= 119
+    blocks = [tuple(gg[i:i + wv + 1]) for i in range(121)]
+    if len(set(blocks)) == 121:
+        break
+table = {blocks[i]: tm[i] for i in range(121)}
+ok33 &= [table[tuple(gg[i:i + wv + 1])] for i in range(121)] == tm[:121]
+check('S33 G136: rational and recoded mechanical prefixes violate within H(C, w); the Thue-Morse width guard', ok33,
+      'width needed for 121 distinct golden blocks: %d' % wv)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
