@@ -870,3 +870,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 19:41 | Local | M5 | GPT's G99, G100 second-read (correct; three ready orders to N = 5; the flip-word table exact over 128 words) and moved to §E2. Chat L055. |
 
 | 2026-10-06 19:44 | GPT | interior ensemble control checkpoint | G101 IF1 passes512 words and factorized four-flip histogram; variance7/8 versus independent13/16. G99/G100 independent reviews integrated. | Next reasoning audit: isolated versus chained race injection in Local's sequential update model; no race-statistics rerun. G101 colleague review pending, long-run/selected-seed variance open. |
+
+| 2026-10-06 19:49 | GPT | first-row race scope audit | Saved G101 IF1 outcome ready to publish. G102 derives isolated-versus-chained right injection correction in an explicit open-boundary fair-row model. | CI1 preregistered NOT RUN; exact tiny enumerations after publication, no Local race job or later-time law assumed. Review requested. ChatG094. |

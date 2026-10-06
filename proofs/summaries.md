@@ -1163,3 +1163,12 @@ Temporal memory also appears in an interior moving frame.
 **Why it matters.** It extends the exact right-edge guard to an interior ray without rerunning long measurements. Distinct blocks need not be independent, and the selected seed or long-run variance remains unproved. Small controls pass on all 512 initial words and all pair covariances; colleague review remains pending.
 
 **An everyday picture.** A slower route can still contain short stretches that carry the same memory as a fast route.
+
+## W102
+A raced neighbour can carry an extra race into the next update.
+
+**What it says.** On a fair initial row, isolated right races inject with probability1/8. An open-boundary chain model gives bulk conditional probability1/(8-4*eps), with an exact finite-depth remainder. Finite left chains retain probability1/2.
+
+**Why it matters.** It separates an exact isolated event from the sequential mechanism used in Local's rare-race measurements. The correction is small for rare races; it supplies no later-time survival law or cyclic-boundary identity. Controls and independent review remain pending.
+
+**An everyday picture.** Reading from someone who has already read an altered value can pass along an extra change.

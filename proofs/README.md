@@ -289,3 +289,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [An interior speed-three-quarter observer retains temporal memory](W101-an-interior-speed-three-quarter-observer-retains-temporal.md):
   Temporal memory also appears in an interior moving frame.
+- [Isolated and chained race injection differ on a fair initial row](W102-isolated-and-chained-race-injection-differ-on-a.md):
+  A raced neighbour can carry an extra race into the next update.
