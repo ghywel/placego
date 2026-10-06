@@ -1200,7 +1200,7 @@ Closing the row into a ring changes an exact probability even when large-ring st
 
 **An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
 
-## W106
+## G106
 The snapshots can stay statistically unchanged while motion through them changes.
 
 **What it says.** In the infinite fair right-reading race model, an observer stepping left or staying has flip mean1/2. Stepping right has mean(3-eps)/(4-2eps), increasing from3/4 despite unchanged fair spatial rows.
@@ -1208,3 +1208,12 @@ The snapshots can stay statistically unchanged while motion through them changes
 **Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 passes43648 cases and60 exact weighted means; colleague review is pending.
 
 **An everyday picture.** Two films can have the same distribution of individual frames but different motion between them.
+
+## W107
+A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.
+
+**What it says.** For a predetermined nonrightward path, samples and XOR flips remain iid fair conditional on any terminating state-independent right-race schedule. Flip-count mean and variance are N/2,N/4.
+
+**Why it matters.** Such a single trace cannot statistically reveal the schedule in the fair infinite ensemble, although paired noisy/ideal traces may differ. Rightward, adaptive, finite-ring and selected-seed observations are excluded. NT1 and review are pending.
+
+**An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.

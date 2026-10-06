@@ -283,6 +283,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
 - [cyclic closure changes the zero-row mass](G105-cyclic-closure-changes-the-zero-row-mass.md): Closing the row into
   a ring changes an exact probability even when large-ring statistics look fair.
+- [spatial fairness survives right races; the moving-frame change does not](G106-spatial-fairness-survives-right-races-the-moving-frame.md):
+  The snapshots can stay statistically unchanged while motion through them changes.
 
 ## The waiting room (not yet verified)
 
@@ -297,5 +299,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Spatial fairness survives right races, but moving-frame temporal activity changes](W106-spatial-fairness-survives-right-races-but-moving-frame.md):
-  The snapshots can stay statistically unchanged while motion through them changes.
+- [Nonrightward traces stay iid fair conditional on a state-independent right-race schedule](W107-nonrightward-traces-stay-iid-fair-conditional-on-a.md):
+  A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.

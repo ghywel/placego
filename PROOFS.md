@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G105, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G106, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3199,26 +3199,17 @@ $x_{i-1} = x_i \vee R_i$ around the ring, so one old 1 spreads to all; the left 
 (`rule30_audit_g99_g100.py`, S8) with my own sequential race step on rings of 3 to 7 cells, every flag word and both
 directions: exactly 2 zero-row preimages for right races, 1 or 2 for left races according to an effective flag, the
 exact masses $2^{1-W}$ and $[1 + (1-\epsilon)^{W-1}]\,2^{-W}$ at four values of $\epsilon$, and the zero row fixed
-under every flag word. This qualifies my race run's summary precisely: on a finite ring the row law is preserved only
-approximately (by exponentially small masses), and "the fuzz replaces the history" needs an active state: the empty
+under every flag word. This qualifies my race run's summary: on a finite ring the exact row law fails (the zero row's mass
+is doubled, an exponentially small amount for one event; GPT's G103 note: this is not a bound on total variation or
+on any other statistic, so how close the ring stays overall is open), and "the fuzz replaces the history" needs an active state: the empty
 row is never replaced.
 
 
 **GPT scope clarification after L060.** The zero-row probability discrepancy is exponentially small. This one cylinder supplies no upper bound on total variation of the whole row law or on every local statistic, especially at later times. General finite-ring closeness remains open.
 
+### G.GPT106. spatial fairness survives right races; the moving-frame change does not (second-read by Local, 2026-10-06)
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-### G106. Spatial fairness survives right races, but moving-frame temporal activity changes (2026-10-06)
-
-**Status:** infinite-bulk one-step flip-law proof; TF1 passes, independent review pending. Follow-up G97/G102/G104. Existing record separates spatial invariance from temporal independence; this derives a changed temporal mean in the specific right-reading race model. No general probabilistic-CA theorem, novelty or selected-seed claim is imported.
+**Status:** infinite-bulk one-step flip-law proof; TF1 passes, independently reviewed by Local L061. Follow-up G97/G102/G104. Existing record separates spatial invariance from temporal independence; this derives a changed temporal mean in the specific right-reading race model. No general probabilistic-CA theorem, novelty or selected-seed claim is imported.
 
 Use G104's infinite right-reading recursion with fair iid old row x and fresh independent Bernoulli(eps) flags,0<=eps<1. Let y be the next noisy row. For an observer moving by delta in{-1,0,1}, its flip is x_i XOR y_(i+delta). All flag chains terminate almost surely. The fresh flag field is independent of the current old row at each step.
 
@@ -3255,4 +3246,43 @@ For finite D these are polynomial probabilities also defined at eps1. At eps1, U
 **TF1 preregistered NOT RUN.** D0..4, enumerate all old words on sites-2..D+2 and every flag pattern on sites-1..D, with siteD+1 a synchronous terminal. Use the literal Rule30 truth table to compute the next block, then count observer flips for delta-1,0,1. Exact flag weights at eps0,1/4,1/2,1 must give1/2,1/2,U_D. Independent control is the conditioned OR recurrence, including its exact remainder, against full word/flag enumeration. Predict43648 cases and60 weighted flip checks; this count happens to match ZR1 but the objects differ. Counterfactual that unchanged spatial law forces unchanged rightward flip mean must fail. Publish predictions and instrument before execution; no long-ray or colleague race-statistics rerun.
 
 
+
 **TF1 outcome (2026-10-06 20:18 BST).** Executed after proof, predictions and instrument publication throughd05bb6b. PASS:43648 old-word/flag cases and60 exact rational weighted flip means. Left/stay means1/2 hold for every finite flag pattern; right U_D and its bulk remainder agree at every declared depth and eps. Finite eps1 checks remain anchored endpoint controls. The infinite eps1/2 rightward mean5/6 follows the proved recurrence, not a long-run empirical fit. No temporal independence, variance or ideal/noisy survival result follows. Independent review remains pending.
+
+*Second reader's note on G106 (Local, 2026-10-06; chat L061).* Correct. The rightward flip is $A_{i+1}$, and a raced
+site gives $A_j = x_j \vee A_{j+1}$ with $x_j$ fresh, so $U = (3 - \epsilon)/(4 - 2\epsilon)$; stays and left steps
+keep a fresh far-left bit. Checked (`rule30_audit_g99_g100.py`, S9) by exact enumeration of old words and flags for
+$D \le 4$ at $\epsilon = 0, 1/4, 1/2, 1$: means $1/2$, $1/2$ and $U_D$ with the stated remainder; the limit at
+$\epsilon = 1/2$ is $5/6$. This is the cleanest answer yet to the owner's fuzz question: every snapshot stays fair,
+and the fuzz shows only in the temporal field seen by an observer moving right.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
+### G107. Nonrightward traces stay iid fair conditional on a state-independent right-race schedule (2026-10-06)
+
+**Status:** conditional trace-law proof; NT1 and independent review pending. Extends G97's synchronous fresh-bit proof to G104's right-reading recursion, following G106 and Local L061. This is a model-specific extension of known left permutivity, not a prize solution or novelty claim. Existing record G97 supplies the synchronous argument; G104 supplies the terminating recursion.
+
+Start on the infinite line from an iid fair row. Allow any fixed right-reading flag field whose rightward runs terminate at every site and logical step. It need not be spatially or temporally independent. For random flags, require the entire flag field to be independent of the initial row, and termination almost surely. Fresh Bernoulli flags with eps<1 satisfy this. Adaptive flags selected from states are excluded.
+
+**Triangular composition lemma.** Conditional on the whole flag field, each time-t value at site i has form
+
+    x_t(i)=x_0(i-t) XOR g_(t,i)(initial bits strictly to the right of i-t).
+
+Its dependency uses only finitely many initial bits at each finite t. Proof by induction: one right-reading update is x_(t-1)(i-1) XOR A, and the OR/recursive term A uses only previous-row sites>=i. Each recursion terminates, so it has finitely many such inputs. Their initial left endpoints are at least i-(t-1)=i-t+1; only the left input exposes initial bit i-t, with XOR coefficient1. Finite composition of finite recursion trees remains finite. Thus the fresh leftmost initial bit never enters the other term, even though the right dependency may be arbitrarily long.
+
+**Conditional trace law.** Fix a predetermined path p_0,p_1,... with p_t nonincreasing. Define L_t=p_t-t, which strictly decreases. Earlier samples depend only on initial sites>=L_s>L_t. Given all other initial bits and the flag field, the current sample contains the untouched fair bit at L_t, whereas all earlier samples are fixed. It is therefore fair independent of the earlier sample vector. Induction gives iid fair sampled bits conditional on the full flag field. Their distribution does not depend on that field, so the trace is also independent of the flag field as a random object (equality of every finite cylinder law).
+
+Each N-vector of consecutive XOR flips has exactly two sample-vector preimages, so flips are iid fair, mean count N/2 and variance N/4. This now earns the nonrightward temporal-independence result deliberately left open by G106. No state-law induction or independence between successive flag rows is needed: conditioning first handles all their correlations.
+
+**Scope and unexpected coupling guard.** Under these assumptions a single predetermined nonrightward trace has exactly the same statistical law as the synchronous fair-ensemble trace. This does not say the noisy and ideal traces coincide, nor that their two copies are independent: at eps0 they are the same random trace. Their joint history remains a separate question. No selected-seed, finite-ring, adaptive-observer or multisite-transition claim follows. Rightward observers are excluded; G106's rightward mean differs from1/2 even at eps0. Thus this theorem cannot justify calling every temporal observable insensitive to races.
+
+**NT1 preregistered NOT RUN.** T1..3; every path with increments-1 or0; every T-bit schedule switching entire update rows between synchronous and right-reading races, except a fixed synchronous right terminal. Enumerate every initial word on sites-2T..T+1 and evaluate by literal Rule30 tables with shrinking finite boundaries. For each path/schedule, group inputs by all bits except the fresh pivots L_0..L_T: every conditional group must map bijectively onto sampled words. Independently check uniform flip words and mean/variance T/2,T/4. Predict135296 word/path/schedule cases and8736 conditional bijection classes. The schedule family includes fully correlated successive flags, not just fresh Bernoulli rows. Retain the eps0 identical-copy guard using the same inputs. This finite control supports the conditional proof; no simulation fit or colleague job. Publish before execution.

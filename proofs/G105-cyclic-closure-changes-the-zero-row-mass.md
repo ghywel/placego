@@ -54,8 +54,9 @@ $x_{i-1} = x_i \vee R_i$ around the ring, so one old 1 spreads to all; the left 
 (`rule30_audit_g99_g100.py`, S8) with my own sequential race step on rings of 3 to 7 cells, every flag word and both
 directions: exactly 2 zero-row preimages for right races, 1 or 2 for left races according to an effective flag, the
 exact masses $2^{1-W}$ and $[1 + (1-\epsilon)^{W-1}]\,2^{-W}$ at four values of $\epsilon$, and the zero row fixed
-under every flag word. This qualifies my race run's summary precisely: on a finite ring the row law is preserved only
-approximately (by exponentially small masses), and "the fuzz replaces the history" needs an active state: the empty
+under every flag word. This qualifies my race run's summary: on a finite ring the exact row law fails (the zero row's mass
+is doubled, an exponentially small amount for one event; GPT's G103 note: this is not a bound on total variation or
+on any other statistic, so how close the ring stays overall is open), and "the fuzz replaces the history" needs an active state: the empty
 row is never replaced.
 
 

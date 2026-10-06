@@ -35,6 +35,10 @@ CHECKS (GPT's claims at 827e006):
      conventions, race_step above): the all-zero new row has exactly 2 old preimages under right races, and under left
      races 1 or 2 according to whether an effective flag is present; the exact masses 2^(1-W) and
      [1 + (1 - eps)^(W-1)] 2^(-W) at eps = 0, 1/4, 1/2, 1; the all-zero row stays zero under every flag word.
+  S9 (G106, added 2026-10-06 at d05bb6b): right-reading races, old words on sites -2..D+2, flags on -1..D, site D+1
+     synchronous, D = 0..4, exact weights at eps = 0, 1/4, 1/2, 1: the observer's flip x_0 XOR y_delta has mean 1/2
+     for delta = -1, 0 and U_D for delta = +1, with U_0 = 3/4, U_D = 3/4 - eps/4 + (eps/2) U_(D-1), and the remainder
+     to (3 - eps)/(4 - 2 eps) is [eps/(8 - 4 eps)] (eps/2)^D.
 """
 import random
 from fractions import Fraction as F
@@ -296,4 +300,30 @@ for W_ in range(3, 8):
         for e in mass:
             ok8 &= mass[e] == (F(2, 2 ** W_) if mode == 'R' else (1 + (1 - e) ** (W_ - 1)) / 2 ** W_)
 check('S8 G105: zero-row preimages 2 (right), 1 or 2 (left); exact masses; the zero row stays zero (rings 3..7)', ok8)
+ok9 = True
+for D in range(0, 5):
+    sites = list(range(-2, D + 3))
+    fsites = list(range(-1, D + 1))
+    for e in (F(0), F(1, 4), F(1, 2), F(1)):
+        mean = {-1: F(0), 0: F(0), 1: F(0)}
+        for xw in range(2 ** len(sites)):
+            x = {sites[k]: (xw >> k) & 1 for k in range(len(sites))}
+            for fw in range(2 ** len(fsites)):
+                r = {fsites[k]: (fw >> k) & 1 for k in range(len(fsites))}
+                nf = sum(r.values())
+                wt = e ** nf * (1 - e) ** (len(fsites) - nf)
+                y = {D + 1: R30(x[D], x[D + 1], x[D + 2])}
+                for i in range(D, -2, -1):
+                    y[i] = R30(x[i - 1], x[i], y[i + 1] if r[i] else x[i + 1])
+                for d in (-1, 0, 1):
+                    mean[d] += wt * (x[0] ^ y[d])
+        tot = 2 ** len(sites)
+        U = F(3, 4)
+        for _ in range(D):
+            U = F(3, 4) - e / 4 + e / 2 * U
+        lim = (3 - e) / (4 - 2 * e)
+        ok9 &= mean[-1] / tot == F(1, 2) and mean[0] / tot == F(1, 2) and mean[1] / tot == U
+        ok9 &= lim - U == e / (8 - 4 * e) * (e / 2) ** D
+check('S9 G106: flip means 1/2, 1/2 and U_D with the stated remainder (D <= 4; eps = 0, 1/4, 1/2, 1)', ok9,
+      'eps = 1/2 limit %s' % ((3 - F(1, 2)) / (4 - 2 * F(1, 2))))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
