@@ -43,13 +43,28 @@ OUTCOME of the first run, 2026-10-06 (n = 1 .. 24, 40 seconds; the table is rule
   a pigeonhole, not a mechanism: rotation permutes the cycles of each length, its orbits on a prime ring have size 1
   or p, and at those n every cycle length occurs once, so every cycle is fixed by rotation, i.e. rotation by one cell
   is a power of the time map on it. At n = 7 and 11 the one repeated length is the one non-gliding class.
+
+DEEP ADDENDUM, written 2026-10-06 before the second run (python3 rule30_ring_census.py deep): n = 25 to 29, one n at
+  a time (12 GB at n = 29). Controls from the OEIS b-files, read on 2026-10-06 before the run: A334497 (maximum
+  period) 588425, 312156, 240300, 249165, 1466066 and A334496 (single cell) 588425, 312156, 240300, 249165, 833808
+  for n = 25 .. 29.
+  RD0 (control, must hold): both sequences reproduced at n = 25 .. 29.
+  CF  (must fail): the periodic states number 2^n at some n (the map would be a bijection; Rule 30 on a ring is not
+      injective).
+  RD1 (blind, the prime-ring test): at the prime n = 29 every cycle length occurs once, so every cycle is a glider
+      (gliding count = cycle count).
+  RD2 (blind): at some n in 25 .. 28 the longest transient exceeds the longest cycle, as at 21 and 22.
+  RD3 (blind): fewer than 100 cycles at every n in 25 .. 29.
+  REFUTED-BY: RD0 failing or CF holding (the engine); RD1 to RD3 the other way. What would change my mind: a repeated
+  cycle length at n = 29 (then 29 copies by rotation, and non-gliding cycles) would say the distinct lengths at 13,
+  17, 19, 23 were small-number luck rather than a pattern of prime rings.
 """
 import pathlib, re, subprocess, sys, tempfile
 import numpy as np
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "rule30_ring_census.txt"
-NMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 24
+NMAX = int(next((a for a in sys.argv[1:] if a.isdigit()), 24))
 FAILS = 0
 A334497 = [1, 1, 1, 8, 5, 1, 63, 40, 171, 15, 154, 102, 832, 1428, 1455, 6016, 10846, 2844, 3705, 6150]
 A334496 = [1, 1, 1, 8, 5, 1, 4, 40, 72, 15, 154, 102, 260, 1428, 1455, 6016, 10846, 2844, 247, 3420]
@@ -65,12 +80,41 @@ def verdict(name, held, detail=""):
     print(f"{'HELD' if held else 'REFUTED'}  prediction {name}" + (f"  ({detail})" if detail else ""), flush=True)
 
 
+def deep():
+    exe = pathlib.Path(tempfile.gettempdir()) / "rule30_ring_census"
+    arch = ["-mcpu=apple-m1"] if sys.platform == "darwin" else []
+    subprocess.run(["cc", "-O3", *arch, "-o", str(exe), str(HERE / "ring_census.c")], check=True)
+    A497 = {25: 588425, 26: 312156, 27: 240300, 28: 249165, 29: 1466066}
+    A496 = {25: 588425, 26: 312156, 27: 240300, 28: 249165, 29: 833808}
+    rows = {}
+    for n in range(25, 30):
+        out = subprocess.run([str(exe), str(n), str(n)], capture_output=True, text=True, check=True).stdout
+        with open(OUT, "a") as fh:
+            fh.write(out)
+        print(out, end="", flush=True)
+        m = re.match(r"n (\d+) cycles (\d+) periodic (\d+) maxper (\d+) single (\d+) maxtransient (\d+) gliding (\d+)", out)
+        nn, c, P, mp, sg, mt, gl = map(int, m.groups()); rows[n] = dict(c=c, P=P, mp=mp, sg=sg, mt=mt, gl=gl)
+    report("RD0 A334497 and A334496 reproduced at n = 25 .. 29",
+           all(rows[n]["mp"] == A497[n] and rows[n]["sg"] == A496[n] for n in rows),
+           f"max {[rows[n]['mp'] for n in rows]}; single {[rows[n]['sg'] for n in rows]}")
+    report("CF  periodic states = 2^n at some n is FALSE", all(rows[n]["P"] < 2**n for n in rows))
+    verdict("RD1 at n = 29 every cycle is a glider", rows[29]["gl"] == rows[29]["c"], f"gliding {rows[29]['gl']} of {rows[29]['c']}")
+    verdict("RD2 some n in 25 .. 28 has longest transient > longest cycle",
+            any(rows[n]["mt"] > rows[n]["mp"] for n in range(25, 29)), f"{[(n, rows[n]['mt'], rows[n]['mp']) for n in range(25, 29)]}")
+    verdict("RD3 fewer than 100 cycles at every n", all(rows[n]["c"] < 100 for n in rows), f"{[rows[n]['c'] for n in rows]}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "deep" in sys.argv[1:]:
+        deep()
+        return
     exe = pathlib.Path(tempfile.gettempdir()) / "rule30_ring_census"
     arch = ["-mcpu=apple-m1"] if sys.platform == "darwin" else []
     subprocess.run(["cc", "-O3", *arch, "-o", str(exe), str(HERE / "ring_census.c")], check=True)
     out = subprocess.run([str(exe), str(NMAX)], capture_output=True, text=True, check=True).stdout
-    OUT.write_text(out)
+    with open(OUT, "a") as fh:
+        fh.write(out)
     print(out, flush=True)
     rows = {}
     for ln in out.splitlines():

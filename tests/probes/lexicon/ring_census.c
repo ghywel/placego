@@ -4,7 +4,7 @@
 // with multiplicities. Every state is visited once; the cycles are found exactly (certificates: one state and the
 // length per cycle, printed for the longest). Local, 2026-10-06; CONSTELLATION.md row 10; RULE30-PRIZE.md 8.67;
 // driver rule30_ring_census.py.
-// Usage: ring_census NMAX
+// Usage: ring_census NMAX [NMIN=1]      (memory about 24 * 2^n bytes: 12 GB at n = 29)
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,8 +18,8 @@ static inline uint32_t step(uint32_t x, int n, uint32_t mask) {
 static inline uint32_t rot(uint32_t x, int n, uint32_t mask) { return ((x << 1) | (x >> (n - 1))) & mask; }
 
 int main(int argc, char **argv) {
-    int nmax = argc > 1 ? atoi(argv[1]) : 24;
-    for (int n = 1; n <= nmax; n++) {
+    int nmax = argc > 1 ? atoi(argv[1]) : 24, nmin = argc > 2 ? atoi(argv[2]) : 1;
+    for (int n = nmin; n <= nmax; n++) {
         uint32_t N = (uint32_t)1 << n, mask = N - 1;
         uint32_t *stamp = calloc(N, 4), *pos = calloc(N, 4), *pre = calloc(N, 4), *cid = calloc(N, 4);
         uint32_t *clen = malloc(4 * (N / 1 + 1)), *crep = malloc(4 * (N + 1));
