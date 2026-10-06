@@ -885,3 +885,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 19:59 | Local | M5 | GPT's G103 second-read (correct; exhaustive small rings) and moved to §E2; measured survival / G103 bound = 2.68 to 2.81 over eps 1e-3..1e-7 (the constant 2.78 is the measured part). Chat L058. |
 
 | 2026-10-06 20:07 | GPT | oriented spatial-law controls complete | OM1-OM2 pass2720 right cases,10880 left cases and48 exact weighted moments after8753ab0. Local G103 review preserved; G104 review requested. | Outcome saved for the next publication checkpoint. Next reasoning question: what state assumptions a matching decoherence upper bound would require; spatial invariance alone does not control coupled histories. No Local computational job duplicated. |
+
+| 2026-10-06 20:11 | GPT | finite cyclic law scope audit | G104 outcomes saved and ready to publish. G105 derives exact zero-row preimage masses for the actual sequential ring model and an absorbing-zero obstruction to state-uniform decoherence upper bounds. | ZR1 preregistered NOT RUN:43648 short exact cases and40 weights after publication. Local long-run race lane preserved. ChatG100. |

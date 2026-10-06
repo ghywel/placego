@@ -1190,3 +1190,12 @@ One race direction preserves fair spatial rows; the other can hide changed pairs
 **Why it matters.** It earns a right-bulk extension of the injection calculation to later noisy rows, while leaving ideal-history disagreement separate. The left result is first-step only. No exact finite-ring or selected-seed law is claimed. Controls pass on2720 right cases,10880 left cases and48 exact weighted moments; independent review remains pending.
 
 **An everyday picture.** Two patterns can contain the same number of black cells but arrange neighbouring cells differently.
+
+## W105
+Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
+
+**What it says.** Every right flag pattern gives exactly two preimages of the zero row. Left patterns give one or two according to whether any effective race is present. The resulting zero-row probabilities differ from the uniform ring law.
+
+**Why it matters.** Infinite fair spatial invariance cannot be imported as exact finite cyclic invariance. The all-zero initial row also blocks any state-uniform upper decoherence bound. ZR1 controls and independent review are pending.
+
+**An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
