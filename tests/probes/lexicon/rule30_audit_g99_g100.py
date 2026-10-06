@@ -43,6 +43,10 @@ CHECKS (GPT's claims at 827e006):
      schedule switching whole rows between synchronous and right-reading-everywhere (a synchronous right terminal),
      over all initial words on sites -2T..T+1: the sampled vector (s_0..s_T) is uniform for every path and schedule,
      so the trace is iid fair conditional on the schedule, with fully correlated rows included.
+  S11 (G108, added 2026-10-06 at 85f0972): for T = 1..3, every nonincreasing path and whole-row schedule, and every
+     assignment of the non-pivot initial bits: the ideal and noisy traces are each bijective images of the T + 1 pivots,
+     and the mask I_t XOR J_t is a function of the ideal prefix I_0..I_(t-1) alone (causal); the guard (old 1, 2 = 0, 1,
+     only the target racing) gives E_1 = 1 - I_0 for all four pivot values.
 """
 import random
 from fractions import Fraction as F
@@ -356,4 +360,53 @@ for T_ in range(1, 4):
                 cnt[tuple(samp)] = cnt.get(tuple(samp), 0) + 1
             ok10 &= len(cnt) == 2 ** (T_ + 1) and len(set(cnt.values())) == 1
 check('S10 G107: nonincreasing traces uniform under every whole-row race schedule (T <= 3)', ok10)
+def trace(row0, lo0, hi0, pos, sched):
+    row, lo, hi = dict(row0), lo0, hi0
+    out = [row[pos[0]]]
+    for t in range(len(sched)):
+        new = {hi - 1: R30(row[hi - 2], row[hi - 1], row[hi])}
+        for i in range(hi - 2, lo, -1):
+            new[i] = R30(row[i - 1], row[i], new[i + 1] if sched[t] else row[i + 1])
+        row, lo, hi = new, lo + 1, hi - 1
+        out.append(row[pos[t + 1]])
+    return out
+
+
+ok11 = True
+for T_ in range(1, 4):
+    lo0, hi0 = -2 * T_, T_ + 1
+    for path in product((-1, 0), repeat=T_):
+        pos = [0]
+        for d in path:
+            pos.append(pos[-1] + d)
+        piv = [pos[t] - t for t in range(T_ + 1)]
+        others = [i for i in range(lo0, hi0 + 1) if i not in piv]
+        for sched in product((0, 1), repeat=T_):
+            for rw in range(2 ** len(others)):
+                base = {others[k]: (rw >> k) & 1 for k in range(len(others))}
+                Is, Js, mask = set(), set(), {}
+                for pw in range(2 ** (T_ + 1)):
+                    row = dict(base)
+                    for k in range(T_ + 1):
+                        row[piv[k]] = (pw >> k) & 1
+                    I = trace(row, lo0, hi0, pos, (0,) * T_)
+                    J = trace(row, lo0, hi0, pos, sched)
+                    Is.add(tuple(I))
+                    Js.add(tuple(J))
+                    for t in range(T_ + 1):
+                        key = (t, tuple(I[:t]))
+                        e = I[t] ^ J[t]
+                        if mask.setdefault(key, e) != e:
+                            ok11 = False
+                ok11 &= len(Is) == 2 ** (T_ + 1) and len(Js) == 2 ** (T_ + 1)
+g_ok = True
+for xm1 in (0, 1):
+    for x0 in (0, 1):
+        x = {-1: xm1, 0: x0, 1: 0, 2: 1, -2: 0, 3: 0}
+        I1 = R30(x[-1], x[0], x[1])
+        y1 = R30(x[0], x[1], x[2])
+        J1 = R30(x[-1], x[0], y1)
+        g_ok &= (I1 ^ J1) == 1 - x0
+check('S11 G108: both traces bijective in the pivots, the mask causal in the ideal prefix (T <= 3); E_1 = 1 - I_0',
+      ok11 and g_ok)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

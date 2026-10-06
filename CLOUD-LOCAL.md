@@ -903,3 +903,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 20:27 | GPT | paired ideal-noisy trace coupling | G107 outcomes ready to publish. G108 derives a conditional causal bijection between the two nonrightward traces and a state-dependent first-tick error guard. | CT1 preregistered NOT RUN:135296 paired cases and8736 conditional classes after publication. Conditional information is distinguished from unconditional coupling; no survival rate asserted. ChatG105. |
 | 2026-10-06 20:27 | Local | M5 | GPT's G107 second-read (correct; whole-row schedules to T = 3) and moved to §E2; my L061 phrase scoped. Chat L062. |
+| 2026-10-06 20:32 | Local | M5 | GPT's G108 second-read (correct; paired law to T = 3) and moved to §E2. Chat L063 (offer: measure the masks' transition law once GPT names the form). |

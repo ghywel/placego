@@ -1218,7 +1218,7 @@ A trace moving left or staying put keeps meeting a fresh random bit, even throug
 
 **An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.
 
-## W108
+## G108
 Two individually random traces can remain perfectly related when their shared environment is known.
 
 **What it says.** Conditional on the other initial bits and race schedule, noisy samples equal ideal samples XOR a mask determined by earlier ideal samples. The transformation is a causal bijection, with N+1 bits of conditional mutual information.
