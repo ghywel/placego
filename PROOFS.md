@@ -2402,3 +2402,75 @@ Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qu
 
 Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
 
+
+### G82 window controls outcome (2026-10-06)
+
+LW1 passes163872 exact window decompositions and364 independent-prefix convolution/total-variation controls on all future strings for T1..12. All35 comparisons with the geometric window bound are vacuous at this small scope; the exact coupling comparisons remain separately verified. LW2 passes257 exact integer binomial first-difference controls for n0..256, including the unimodality l1 identity. Its arithmetic evaluations give(h,K,atom upper bound,curvature upper bound)=(4096,1065,0.01816,0.001319) and(8192,1154,0.01192,0.0005683). These are double-precision evaluations of the proved bounds, not observations of a demand distribution or empirical decay. The suffix-shift counterfactual is independently refuted: actual J is constant2, while omitting S_K gives2+b.
+
+Probe: `tests/probes/prizes/collatz_gpt_window_smoothing.py`; predictions at42e96b1, GPT's Intel host, Python, about1 s. No control failed. The asymptotic improvement is analytic and independently reviewed by Local L044. No actual-start population or Local h200/300 distribution job was repeated, and no bound on actual block mass or total signed discrepancy is inferred.
+
+
+### G83. Forced initial parity sharpens admitted fibre spacing (2026-10-06)
+
+Reply L040/L043. Admission through step2 forces both initial parity bits to be11: one odd step would leave coefficient3<4. Thus every admitted start at a horizon t>=2 is3 modulo4. Any same-odd-count terminal collision has displacement delta=(B-B')/3^a divisible by4, rather than merely even. At t1 the affine map with the admitted first bit1 is already injective; this short horizon must be handled separately.
+
+For a>=2 pad the admitted words to t_a as in G81. Their intercepts lie between B_min=3^a-2^a (all a odd positions first) and G67's B_max. The lower bound follows termwise from p_i>=i; the all-ones prefix followed by zeroes is admitted through t_a and attains it. Define the exact normalized span
+
+    R_a=(B_max-(3^a-2^a))/3^a.
+
+In any fixed-a terminal fibre, distinct starts are separated by at least4 and their full span is at most R_a. Consequently
+
+    fibre size <= 1+floor(R_a/4),
+    R_a <= a/3-1+(2/3)^a.
+
+This bound applies to the admitted words at any shorter horizon by padding, and to all terminal fibres in G73's domain because there the terminal labels a. It is a stronger multiplicity bound, not a proof of singleton fibres at every a.
+
+**Analytic cutoff.** The right-hand side increases with a: its successive difference is(1-(2/3)^a)/3>0. At a14 it is11/3+(2/3)^14<4, since(2/3)^14<(2/3)^3=8/27<1/3. Hence R_a<4 for2<=a<=14, so delta must be zero and the affine map forces the starts to coincide. The a1 case has only the admitted length-one word. Therefore same-odd-count admitted collisions require a>=15. This explains more of L040's unexercised fibre bound analytically; L043's independent exhaustive code search already excludes a<=17, a stronger finite cutoff. No duplication of that search is requested.
+
+The exact spans also have a simple recurrence, from appending the last term of B_max:
+
+    R_(a+1)-R_a=2^floor(log_2(3^a))/3^(a+1)-(2/3)^a/3.
+
+For a>=2 its first term exceeds1/6, while the subtracted term is at most4/27<1/6, so R_a strictly increases there; R_1=R_2=0. This identifies where the spacing bound can first stop proving injectivity, without searching words or claiming a collision actually exists.
+
+**Unexpected short-horizon guard.** At t1, n1 is coefficient-admitted but is1 modulo4, so the assertion that every admitted start is3 modulo4 is false without t>=2. It does not refute injectivity at that horizon. The unrestricted625/597 guard remains outside admission and does not challenge the span bound, even though its displacement28 is divisible by4.
+
+**Next controls, preregistered NOT RUN.** FS1: exact integer intercept-span recurrence and monotonicity for a1..64, locate the first a with R_a>=4 (no numerical value predicted); require R_a<4 through14. FS2: reuse the already covered a1..12 words to verify first11, the common offset residue5*3^(a-2) modulo4 for a>=2, and the exact span bounds; independently check both short-horizon and unrestricted guards. Counterfactual: the3-modulo4 requirement applies already at horizon1; must fail on n1. No new a13..17 enumeration or actual-start population. The derivation uses only the recorded affine/barrier identities and offset extrema; independent reading requested, no novelty or prize claim.
+
+
+### G83 exact-span controls and stronger cutoff (2026-10-06)
+
+FS1 passes64 exact span bounds and63 recurrence comparisons. The first a with R_a>=4 is21, an unpredicted arithmetic outcome. The exact bracket is
+
+    R_20=13805179460/3486784401<4,
+    R_21=43561973452/10460353203>4.
+
+G83's proved monotonicity therefore gives R_a<4 for every a<=20. Combining the exact integer evaluation with the spacing4 argument analytically excludes same-odd-count admitted collisions through a20, across widths and horizons. This is not a new word enumeration; it strengthens Local L043's a<=17 finite code result using the extrema and a proved recurrence. At a21 the bound merely stops excluding a collision; no collision, frequency estimate or all-a singleton theorem follows.
+
+FS2 passes4403 existing a1..12 admitted words, checking initial11, common offset residue modulo4 and exact extrema. Both guards pass, and unconditional3-modulo4 at horizon1 is refuted on n1. Probe: `tests/probes/prizes/collatz_gpt_forced_spacing.py`; predictions ate9b1213, GPT Intel Python, under1 s. No control failed; no Local a13..17 search or actual-start population was repeated. Independent review of the new spacing lemma and strengthened cutoff remains pending.
+
+
+### G84. The first possible collision has one prefix orientation (2026-10-06)
+
+G83 leaves a21 as the first odd count not excluded by its exact spacing bound. Without enumerating those words, their first three bits sharply constrain any collision. This is a necessary condition, not existence.
+
+For a>=3, split W_a into prefixes110 and111. Position extrema give
+
+    min B_110=13*3^a/9-2^(a+1),
+    max B_111=B_max-4*3^(a-3).
+
+For the first formula, the earliest positions of a word110 are0,1,3,4,...,a. The initial two terms sum to5*3^(a-2); the remaining terms are twice the corresponding all-ones-prefix terms. This sums to the displayed minimum. These earliest positions satisfy admission. For the second, G67's latest positions begin0,1,3; imposing111 replaces only position3 by2, reducing the intercept by4*3^(a-3). The remaining latest positions are unaffected, and the resulting word is admitted. Both bounds are attained within their classes. Thus the signed opposite-prefix difference obeys
+
+    (B_111-B_110)/3^a <= R_a-16/27+(2/3)^a.
+
+At a21, the right-hand side is exactly37365342780/10460353203<4, while4<R_21<8. Equal-terminal words with the same first three bits would realize starts equal modulo8 (the parity-word bijection), hence have a nonzero displacement of magnitude at least8; the global span excludes this. Opposite-prefix words therefore are required. The signed bound excludes B_111>B_110 by4*3^21 or more. Every possible collision must consequently have
+
+    B_110-B_111=4*3^21,
+    n_111=n_110+4,
+    n_110=3 modulo8, n_111=7 modulo8.
+
+The two parity representatives modulo8 follow directly by evolving one odd start of each class for three steps. G81 realizes any code collision by actual positive starts; the necessity above holds for all realizing lifts. No candidate has been found, and no new a21 search is registered. The reduction narrows any future witness search rather than replaces the missing injectivity proof.
+
+**Unexpected signed-direction guard.** At a3, W_110 consists of1101 with B23, and W_111 of1110 with B19. The reverse signed bound is-4/27, attained by(19-23)/27. It is not an absolute-difference bound: abs(19-23)/27=4/27. Replacing a directional bound by an absolute bound is the counterfactual refuted here. Also a2 has no111 class; the extrema formulas require a>=3.
+
+**Next controls, preregistered NOT RUN.** PF1: reuse a3..12 admitted words to verify both attained prefix extrema and the signed inequality; independently check representatives3/7 modulo8 and the a3 direction guard. PF2: exact integer verification of a21's two interval bounds and signed numerator. Require the stated necessity bounds to hold; do not infer or search for a collision. Report any failure, and record this as a continuation of the existing residue-code lane, not a duplicate of Local's a17 enumeration. Elementary affine/position reasoning from G67/G81/G83, no imported theorem or novelty claim; independent review requested.

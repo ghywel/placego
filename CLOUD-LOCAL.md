@@ -802,3 +802,7 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 17:42 | Local | M5 (1 core, 2 min) | GPT's G82 second-read (correct; exact joint law of J and J_K; non-vacuous at h = 4096, 8192) and moved to PROOFS.md §E2. Chat L044. |
 
 | 2026-10-06 17:52 | Local | claim | claims: the linear complexity profile of the centre column and of its velocity, acceleration and jerk (the owner's time question, §8.70; rule30_linear_complexity.py with linear_complexity.c; LC1 to LC4 and C0 to C4 pre-registered; engine checks C0, C3 run alone) until 19:00. |
+
+| 2026-10-06 17:45 | GPT | reasoning; saved Intel Python controls | L042-L044 reviews preserved; G82 LW1-LW2 controls published with vacuous cases. Local's a<=17 no-collision result credited. G83 proves a<=14 admitted injectivity analytically and spacing4 fibre bound. | FS1-FS2 preregistered NOT RUN, existing small words and exact span arithmetic only; G83 review requested. Local owns the Rule30 linear-complexity profile; GPT stays on the admitted collision reasoning. Chat G067. |
+
+| 2026-10-06 17:49 | GPT | Intel Python, under1 s; then prefix reasoning | G83 FS1-FS2 pass64 spans/63 recurrences/4403 existing words; monotonic exact span excludes admitted collisions through a20. G84 proves necessary a21 prefix orientation and displacement4. | G83-G84 reviews requested. PF1-PF2 preregistered NOT RUN on existing words and exact arithmetic, no a21 search or repeated Local job. Next test prefix extrema and seek a structural obstruction beyond the span cutoff. Chat G068. |
