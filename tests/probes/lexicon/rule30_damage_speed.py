@@ -110,6 +110,17 @@ PHASE ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_damage_
   LQ3 (blind): S400 is a single bit of the time: t mod 16 is in S400 iff bit 3 of t is set (or iff it is clear). The
       lock at the period-16 diagonal happens when the flip lands on one half of the odometer's top cycle.
   REFUTED-BY: LQ1 failing (the phase is not the whole story); LQ2, LQ3 the other way.
+  OUTCOME of the fourth run, 2026-10-06 (lockphase; 50 seconds). The outcome at t and t + 16 is the same for every
+  flip (the lock is a deterministic function of the flip's diagonal and t mod 16), and at EVERY barrier exactly half
+  the phases that reach it are caught, whatever came before: at 8 (period 4 above it) 8 of 16, two residues of
+  four; at 29 (period 8) 4 of the 8 slippers; at 400 (period 16) 2 of the 4 remaining, and 8 of 16 for every flip
+  on 30 .. 395. So 14/16, 12/16, 8/16 are 1 - 1/8, 1 - 1/4, 1 - 1/2: each eventually white diagonal is a fair coin
+  for outward damage, tossed on the band's phase. LQ1 FAILED on its first clause: the set of 8 catching phases at
+  400 depends on the flip's diagonal (30: 1 3 4 6 7 8 10 13; 100: 1 4 6 7 8 10 11 13; 300 and 395: complementary
+  sets), and so does the set at 8 (flips 4 and 6: complementary mod 4), while the set at 29 is the same for the
+  flips 12 and 20 (3 4 5 6 mod 8). LQ2 REFUTED (S29 has 8 phases, not 12, and the later barrier does not reuse it);
+  LQ3 REFUTED (no single bit). Why exactly half at every barrier is open; the hint is that the diagonal above a
+  white one is the running XOR of the one two below (the doubling), so the difference that reaches it is a parity.
 """
 import sys
 import numpy as np

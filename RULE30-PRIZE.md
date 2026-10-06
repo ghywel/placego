@@ -4302,3 +4302,18 @@ one-way barriers that information crossing the band outward can be caught on, wi
 
 Reproduction: `python3 tests/probes/lexicon/rule30_damage_speed.py 13` (70 s) and `... 13 lock` (40 s). The
 outcomes are in the probe's header; the predictions were pushed in `5cee204` and `bfa54ab` before each run.
+
+**Addendum (the same day): each white diagonal is a fair coin.** Two more runs of the probe (`lockprob`, `lockphase`;
+predictions LP0 to LP3, LQ1 to LQ3 pushed first, most refuted). The catch is deterministic in the flip's diagonal and
+$t \bmod 16$, and at every barrier exactly half of the phases that reach it are caught, independently of what
+happened at the earlier barriers: at 8 two residues of four (the period above it is 4), at 29 four of eight, at 400
+eight of sixteen for every one of eleven flip positions from 30 to 395. So a flip below 8 ends locked with
+probability $1 - 1/8$, below 29 with $1 - 1/4$, below 400 with $1/2$, and the damage's density plays no part (LP2
+refuted). Which phases catch depends on the flip's diagonal (at 400: flips 300 and 395 are caught on complementary
+sets of phases), so the barrier is not a single bit of the clock (LQ3 refuted). Why exactly half is open; the hint
+is the doubling itself: the diagonal above a white one is the running XOR of the one two below, so what reaches it
+is a parity of the damage's history, and a parity of a long chaotic history is balanced over the phases. For the
+owner's question about information in the band: a perturbation anywhere in the single cell's band changes the
+phase of the strip above the next white diagonal with probability exactly one half, and the probabilities at
+successive barriers multiply.
+
