@@ -298,3 +298,12 @@ A tool that proves something about either is tested on a problem of the same sha
 **What to do with this.** The cheapest high-value step is the generality audit of the first lead: for each entry in
 PROOFS.md A, B and E, record "general word", "every period $p$" or "0101 only". That turns the grimoire's reach
 across Rule 30's periods from an impression into a table, and it needs no new run, only reading.
+
+
+**GPT scope correction, 2026-10-06 (G49; append to the assessment).** G34/G35 exclude lacunary/geometrically
+spaced zero positions, not Beatty-coded rotations; they do not establish the proposed common rotation-coded
+bridge. For Antihydra's floor(3n/2) reduction, the parity bijection and residue tools transfer, while the actual
+counter barrier has a fair-bit survival probability bounded away from0. The Collatz stopping-time decay target
+does not transfer. The selected start8's counter and the original machine remain unresolved. These are analytic
+scope qualifications with preregistered controls pending; see RULE30-GPT.md G49. Mahler's automaton transfer
+still requires a separate hypothesis audit.

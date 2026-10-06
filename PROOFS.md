@@ -979,3 +979,22 @@ This is a derived form of G45 and the known affine lift lemma, not a new stoppin
 For every positive integer n>1 whose first coefficient deficit occurs by step16, actual stopping occurs at that same step. This is a finite-horizon statement over all positive starts, not an all-horizon theorem.
 
 **Certificate and argument.** The committed script enumerates every binary word throughlength16, retaining exactly the791 words whose first deficient prefix is the whole word. Its exact gap calculation and census find only one realized positive surviving lift: word10,start1,gap0. G48's affine identity says every positive lift of a residue has gap g-D*m, with D>0. Thus the script's integer enumeration of all m from their positive-domain minimum to floor(g/D) accounts for every possible surviving start in each class, including starts larger than the representatives tested directly. There are no remaining positive survivors except1. Before the first coefficient deficit, the positive affine correction ensures actual survival, so an n>1 with that deficit by16 descends at the deficit itself. The direct controls check2373 lifts independently and retain the zero-residue domain exception. This computed argument depends on the completeness and correctness of the committed enumeration; it awaits independent reproduction and review. No novelty or prize claim.
+
+
+### G.GPT49. Scope of the floor(3n/2) test bed
+
+**Where:** RULE30-GPT.md G49, 2026-10-06; copied verbatim. **Bears on:** PRIZE-PROBLEMS.md §8, Antihydra tool transfer. **Status:** analytic map/counter/coin calculation awaiting second reader; AH controls NOT RUN. Machine reduction is reported from the project source, not independently machine-verified.
+
+### G49 theorem and proof: floor(3n/2) preserves coding but changes survival
+
+Let H(n)=floor(3n/2) on nonnegative integers. Write b=n modulo2. Then H(n)=(3n-b)/2. Every n>=2 strictly increases, since H(n)-n=floor(n/2)>=1;0 and1 are fixed. Therefore the count of positive w-bit starts staying above their start is2^(w-1) for every horizon, rather than exponentially decaying. This does not settle a parity-counter halting problem.
+
+For a word b_0,...,b_(t-1), define C_0=0 and C_(j+1)=3*C_j+b_j*2^j. Then
+
+    2^t*H^t(n) = 3^t*n-C_t.
+
+The word is realized by exactly one residue r modulo2^t, namely r=C_t*(3^t)^(-1) modulo2^t. Prefix congruences and integrality force the prescribed parities just as in G45. Lifting a start by2^t*m adds3^t*m to its terminal value. For0<=r<2^t, nonnegativity and C_t>=0 give0<=H^t(r)<3^t. Thus the parity bijection, affine lift and finite-residue binary reader transfer, with modulus3^t independent of the odd count. G43/G44's reader identities can be used with that law; none supplies a pointwise orbit theorem.
+
+**Actual test-bed event.** In the reported Antihydra reduction, the initial value is H_0=8 and a counter starts at0, gains2 when H_j is even and loses1 when it is odd. Writing a_t for the odd count, its value aftert steps is2t-3a_t. Avoiding halt throughT requires2t-3a_t>=0 at every prefix, since the only negative crossing is to-1. This upper-odd-density barrier differs from Collatz's coefficient lower-density barrier. Strict growth of H says nothing by itself about it: seed3 grows but makes the zero counter hit-1 immediately. The reduction is cited from the project source; the original six-state Turing-machine transition simulation has not been independently verified here.
+
+**The fair-coin analogue does not have exponential survival decay.** Let iid bits drive counter increments+2 for0 and-1 for1. Put r=(sqrt(5)-1)/2, so r^2+r=1. For counter c>=0, h(c)=r^(c+1) obeys(h(c+2)+h(c-1))/2=h(c), and h(-1)=1. Stopping at the first hit of-1 or at finiteT gives expectation h(C_stopped)=r at initial counter0: this follows by successive conditional expectation, with no unbounded stopping theorem. On paths that hit, h=1; on other paths h>=0. Hence P(hit byT)<=r and P(surviveT)>=1-r>0 for everyT. No assumption about H^t(8)'s actual parity distribution is made. Uniform starts modulo2^T realize all T-bit words once, so the same lower bound holds for that finite initial ensemble. It does not determine the selected start8. Thus transferring the Collatz coin's decaying survival target to this barrier is mathematically invalid.
