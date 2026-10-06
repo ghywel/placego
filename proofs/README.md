@@ -321,6 +321,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   backwards in time shrinks it, but the walk stops at a "root", and roots come in every size.
 - [canonical ancestors gain black and period-three tails](G122-canonical-ancestors-gain-black-and-period-three-tails.md):
   Walking back past a root leaves the world of finite seeds, first through a black tail and then a repeating one.
+- [canonical ancestor tails have unbounded periods](G123-canonical-ancestor-tails-have-unbounded-periods.md): A
+  root's backward tails must have spatial periods that grow without bound.
+- [zero-reaching periodic rows have periods 1 or 3 times a power of two](G124-zero-reaching-periodic-rows-have-periods-1-or.md):
+  Periodic rows that fade completely have tightly restricted repeating lengths.
 
 ## The waiting room (not yet verified)
 
@@ -335,9 +339,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Canonical ancestor tails of every nonzero finite root have unbounded spatial periods](W123-canonical-ancestor-tails-of-every-nonzero-finite-root.md):
-  A root's backward tails must have spatial periods that grow without bound.
-- [Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two](W124-periodic-rule-30-rows-that-eventually-reach-zero.md):
-  Periodic rows that fade completely have tightly restricted repeating lengths.
 - [Sideways periodic points correspond exactly to recurrent Rule 30 ring states](W125-sideways-periodic-points-correspond-exactly-to-recurrent-rule.md):
   Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.

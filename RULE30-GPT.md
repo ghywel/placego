@@ -5723,7 +5723,7 @@ The complete graph is00->10->01->00 and11->01. Every state joins the three-cycle
 
 ### G123. Canonical ancestor tails of every nonzero finite root have unbounded spatial periods (2026-10-06)
 
-**Status:** all-depth paper theorem conditional on G121-G122's proved inverse construction;independent review pending. No measurement or new experiment. This concerns spatial periods in backward ancestors,not the source's temporal period or a prize solution.
+**Status:** all-depth paper theorem using G121-G122's inverse construction; reviewed by Local L078. No measurement or new experiment. This concerns spatial periods in backward ancestors,not the source's temporal period or a prize solution.
 
 Let r be a nonzero finite root,and let x_n be its unique right-quiescent nth canonical predecessor,with x_0=r. G122 inductively supplies an eventually periodic far-left tail for each x_n. Let C_n be the unique two-sided periodic extension of that tail,with least spatial period p_n. C_0 is the zero row,C_1 the one row,and p_0=p_1=1,p_2=3.
 
@@ -5742,7 +5742,7 @@ In particular the ancestor-tail spatial periods are unbounded for every nonzero 
 
 ### G124. Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two (2026-10-06)
 
-**Status:** symbolic inverse-transducer theorem; independent review pending. No new experiment. This classifies least spatial periods of individual periodic rows that reach the all-zero row; it does not claim that Rule 30 is a nilpotent cellular automaton. It supplies no temporal-wall exclusion.
+**Status:** symbolic inverse-transducer theorem; reviewed by Local L078. No new experiment. This classifies least spatial periods of individual periodic rows that reach the all-zero row; it does not claim that Rule 30 is a nilpotent cellular automaton. It supplies no temporal-wall exclusion.
 
 Let y be a spatially periodic output with least period p, and let x be any spatially periodic predecessor. Translation invariance implies p divides x's least period q. Inverting from right to left uses G122's pair maps
 

@@ -92,6 +92,11 @@ CHECKS (GPT's claims at 827e006):
      predecessor (three quarters are roots), and 101 is a root at w = 3; the canonical right-quiescent predecessor of
      the single black cell has an all-black left tail, and its own predecessor a left tail of period 3 with bits 001
      up to phase; applying Rule 30 to each returns the row it came from.
+  S23 (G123, G124, added 2026-10-06 at 9da67fb): (a) on every ring of N = 1..16 cells, every state that reaches zero
+     has least spatial period 1 or 3 * 2^k, and periods 3, 6 and 12 all occur (N = 12); (b) the single cell's canonical
+     ancestors x_1..x_12, computed on a long window, have far-left tails whose least periods p_n are 1, 3, then 3 * 2^k,
+     with p_(n-1) dividing p_n, p_n >= ceil(log2(n + 1)), and Rule 30 mapping each tail to the previous one; (c) the
+     cyclic trajectory 001010 -> 011011 -> 010010 -> 111111 -> 000000.
 """
 import random
 from fractions import Fraction as F
@@ -861,4 +866,71 @@ ok22 &= per3
 ok22 &= all(R30(x[i - 1], x[i], x[i + 1]) == p1.get(i, 0) for i in range(-30, 2))
 check('S22 G121, G122: span growth and injectivity; root fraction 3/4; canonical tails black then period 3 (001)',
       ok22, 'second tail sample %s' % ''.join(map(str, tail2[:9])))
+def least_period(seq):
+    n = len(seq)
+    for q in range(1, n + 1):
+        if n % q == 0 and all(seq[i] == seq[(i + q) % n] for i in range(n)):
+            return q
+    return n
+
+
+ok23 = True
+allowed = lambda q: q == 1 or (q % 3 == 0 and (q // 3) & ((q // 3) - 1) == 0)
+seen_periods = set()
+for N in range(1, 17):
+    mask = (1 << N) - 1
+    nxt = []
+    for st in range(1 << N):
+        if N == 1:
+            nxt.append(R30(st, st, st))
+            continue
+        l = ((st << 1) | (st >> (N - 1))) & mask
+        r = ((st >> 1) | (st << (N - 1))) & mask
+        nxt.append((l ^ (st | r)) & mask)
+    preds = {}
+    for st, t in enumerate(nxt):
+        preds.setdefault(t, []).append(st)
+    basin, stack = {0}, [0]
+    while stack:
+        u = stack.pop()
+        for v in preds.get(u, []):
+            if v not in basin:
+                basin.add(v)
+                stack.append(v)
+    for st in basin:
+        q = least_period([(st >> i) & 1 for i in range(N)])
+        ok23 &= allowed(q)
+        if N == 12:
+            seen_periods.add(q)
+ok23 &= {3, 6, 12} <= seen_periods
+# canonical ancestors of the single cell on a long window
+Wn = 6000
+lo_w, hi_w = -Wn, 2
+cur = {i: 0 for i in range(lo_w, hi_w + 1)}
+cur[0] = 1
+tails = []
+for n in range(1, 13):
+    x = {hi_w + 1: 0, hi_w + 2: 0}
+    for i in range(hi_w + 1, lo_w, -1):
+        x[i - 1] = cur.get(i, 0) ^ (x[i] | x[i + 1])
+    seg = [x[i] for i in range(lo_w + 50, lo_w + 50 + 1536)]
+    q = None
+    for cand in range(1, 769):
+        if all(seg[i] == seg[i + cand] for i in range(len(seg) - cand)):
+            q = cand
+            break
+    tails.append(q)
+    ok23 &= all(R30(x[i - 1], x[i], x[i + 1]) == cur.get(i, 0) for i in range(lo_w + 2, hi_w))
+    cur = {i: x[i] for i in range(lo_w, hi_w + 1)}
+import math as _m
+ok23 &= tails[0] == 1 and tails[1] == 3 and all(q is not None and allowed(q) for q in tails)
+ok23 &= all(tails[k] % tails[k - 1] == 0 for k in range(1, len(tails)))
+ok23 &= all(tails[n - 1] >= _m.ceil(_m.log2(n + 1)) for n in range(1, 13))
+traj = ['001010', '011011', '010010', '111111', '000000']
+for a_, b_ in zip(traj, traj[1:]):
+    v = [int(c) for c in a_]
+    ok23 &= ''.join(str(R30(v[i - 1], v[i], v[(i + 1) % 6])) for i in range(6)) == b_
+ok23 &= [least_period([int(c) for c in t]) for t in traj] == [6, 3, 3, 1, 1]
+check('S23 G123, G124: zero-basin periods on rings to 16; canonical tail periods; the period-6 trajectory', ok23,
+      'tail periods %s; periods at N = 12 %s' % (tails, sorted(seen_periods)))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

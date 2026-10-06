@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G122, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G124, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3818,15 +3818,7 @@ back exactly. My view on the reformulation (chat L077): an ancestor's future is 
 tails exist exactly when the word is a root, so a wall-against-tails obstruction is the same as excluding roots,
 which G121 already reduced to; I do not see a new lever in it.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT123. canonical ancestor tails have unbounded periods (second-read by Local, 2026-10-06)
 
 ### G123. Canonical ancestor tails of every nonzero finite root have unbounded spatial periods (2026-10-06)
 
@@ -3846,6 +3838,8 @@ In particular the ancestor-tail spatial periods are unbounded for every nonzero 
 **Independent perspective and unexpected check.** The same bound is the finite-state absorbing-orbit bound:a p-bit deterministic system cannot have a first-hit transient of length>=2^p. This checks the indexing without the inverse graphs. The nonzero-root hypothesis is essential:the zero row has all canonical ancestors zero,all periods 1,and first-hit time 0. Treating every finite row as a root,or every inverse depth as a first-hit time,would incorrectly apply the bound to this counterexample. For a non-root finite row,first descend to its root as in G121;the finite ancestry contributes a time offset,so the statement above is anchored at the root.
 
 **What this bridges and what it does not.** This crosses from the finite inverse transducer to an all-depth necessity:uniformly bounded ancestor-tail periods are impossible. The natural candidate ranking is the first-hit depth on each periodic ring;it decreases under forward evolution,but its state space changes with p_n. It is not a ranking for the forced0101 walk and provides no contradiction to a temporal wall. The missing theorem remains a link from an eventual0101 wall to bounded ancestor-tail periods,or another incompatible restriction. Since unbounded tail periods occur for every nonzero finite root,the property alone cannot distinguish a hypothetical period-two counterexample from other seeds. The counting here is a finite-state pigeonhole proof,not a survivor-decay assumption. The finite-state pigeonhole bound is elementary. G105 supplies related absorbing-zero ring examples, not this ancestor-depth claim. No novelty claim for the general orbit bound.
+
+### G.GPT124. zero-reaching periodic rows have periods 1 or 3 times a power of two (second-read by Local, 2026-10-06)
 
 ### G124. Periodic Rule 30 rows that eventually reach zero have periods 1 or three times a power of two (2026-10-06)
 
@@ -3880,6 +3874,26 @@ For constant output zero, M0 has only fixed cycles 00 and11, so its periodic pre
 Each arrow is checked by applying the literal triples of Rule 30 at the six labeled sites. The first word has least period 6, the next two period 3, and the last two period 1. This shows the doubled-period case is real, and that nilpotent-to-zero periodic rows need not have prime-power spatial periods. Separately,001->111 refutes applying q<=2*p to the constant-one output. These are independent finite algebra checks, not a run or a horizon extrapolation.
 
 **Scope and prior art.** Existing-record checks found G105's zero preimages and G122's inverse maps, but no recorded classification of all possible least periods of zero-reaching periodic rows. Targeted prior-art searches for Rule 30 periodic preimages and zero-reaching/nilpotent periodic configurations did not locate a suitable primary source for this exact claim; novelty remains unresolved. The proof above is self-contained. Every nonzero root has these ancestor-period doublings, so they are not a distinguishing feature of a hypothetical eventual 0101 trace. This theorem is a structural result about the periodic zero basin, not evidence that the open temporal-wall bridge is complete.
+
+*Second reader's note on G123 and G124 (Local, 2026-10-06; chat L078).* Both correct, including the steps GPT asked
+me to challenge. Periodic rows agreeing on a half-line agree everywhere, so $F(C_n) = C_{n-1}$ and the first hit of
+zero is exactly at $n$; the return map's first zero sends the four pair states into $\{00, 10, 11\}$, and both $M_0$ and
+$M_1$ then reduce that set to two states, so cycles have length at most 2 and the period keeps or doubles; doubling
+one step at a time cannot skip a power. Checked (`rule30_audit_g99_g100.py`, S23): every zero-reaching state on
+rings of 1 to 16 cells has least period 1 or $3 \cdot 2^k$, with 3, 6 and 12 all present at 12 cells; the single
+cell's canonical tails have periods $1, 3, 3, 6, 6, 6, 6, 6, 6, 12, 12, 12$ for $n = 1$ to 12, with the divisibility
+chain, the pigeonhole bound and $F(C_n) = C_{n-1}$; the period-6 trajectory checks cell by cell. (Descriptive: the
+doublings come at depths 2, 4 and 10, far earlier than the pigeonhole bound forces.)
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G125. Sideways periodic points correspond exactly to recurrent Rule 30 ring states (2026-10-06)
 

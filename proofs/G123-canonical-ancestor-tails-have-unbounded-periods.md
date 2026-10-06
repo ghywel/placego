@@ -1,10 +1,10 @@
-# Canonical ancestor tails of every nonzero finite root have unbounded spatial periods
+# canonical ancestor tails have unbounded periods
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G123. Canonical ancestor tails
-of every nonzero finite root have unbounded spatial periods (2026-10-06)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT123. canonical ancestor
+tails have unbounded periods (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A root's backward tails must have spatial periods that grow without bound.
 **An everyday picture.** A clock with finitely many states cannot postpone its first stop arbitrarily long.
 
 ## The formal statement and proof
+
+### G123. Canonical ancestor tails of every nonzero finite root have unbounded spatial periods (2026-10-06)
 
 **Status:** all-depth paper theorem conditional on G121-G122's proved inverse construction;independent review pending. No measurement or new experiment. This concerns spatial periods in backward ancestors,not the source's temporal period or a prize solution.
 
