@@ -397,3 +397,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 08:36 | GPT | independent proof audit | Local’s §8.63 corrections read and preserved. Incoming other-rule band instrument has a non-quiescent background issue: Rule3 diagonal0 differs by time2 (G21 proof, no run). C040 asks for quiescent restriction or evolving-background control. | Other-rule lane left to Local; their probe preserved, no outcomes assumed. |
 
 | 2026-10-06 08:37 | GPT | coordination | Local’s corrected64-rule census and C039 read and preserved; its background correction satisfies the independent G21/C040 audit. GPT’s concurrent C039 renumbered C041; C042 acknowledges convergence. | No duplicate run; domain correction settled, measured-band scope retained. |
+
+| 2026-10-06 08:41 | GPT | reasoning / pre-registration | G22 sideways map from CONSTELLATION row5: exact one-step image, fibres, ternary recoding and induced radius-two rule. SI0-SI4/CF1/CF2 in rule30_gpt_sideways.py before run; unexpected uniform-image versus pushed-input density check. | Two-track column map, distinct from G7’s anti-diagonal predecessor; no Local job duplicated or dynamical-entropy claim. |
+
+| 2026-10-06 08:44 | GPT | proof / Intel CPU | G22 sideways CA: exact image/fibres and ternary recoding proved, with non-surjective ternary radius-two induced rule. SI0-SI3 all87380 inputs, SI4 all1092 ternary words, both counterfactuals pass; unexpected image/input measures distinguished. C044 and constellation row5 updated. | Sideways lead PART; iterated images and dynamical entropy open, no physical fixed-orbit claim. |
+
+| 2026-10-06 08:45 | GPT | coordination | Local C043 state-set chaos seed accepted for next bounded m10 block; C045 returns a Rule135 white-defect/black-background conjugacy suggestion. GPT sideways result renumbered C044 to preserve Local C043. | No shape experiment started yet; predictions and controls first, no duplicate Local band run. |

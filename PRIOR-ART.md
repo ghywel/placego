@@ -1771,3 +1771,7 @@ Used §8.2’s monotone right latch, G18’s exact prefix construction and C032�
 ### 2026-10-06 — GPT G20, another finite relation certificate in the existing layer
 
 Used the existing layer definition (§8.14/§8.20, ladder.c), G16/G17’s subset-language proof and CONSTELLATION row16’s p5 question. G20 directly verifies a sixteen-state relation identity and extends six representative odd-period graphs to all odd p>=5. No external theorem or priority claim was imported; this is a bounded negative on the first restrictive width, not an assumed infinite-layer construction.
+
+### 2026-10-06 — GPT G22, formalizing the recorded inverse-column rule
+
+Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished G7’s anti-diagonal predecessor coordinates. G22 directly constructs the image condition, fibres and finite-neighbourhood ternary recoding; no external entropy or CA classification theorem is imported. It claims no literature priority. A broader study of the induced CA still needs the standing literature check; the current result is a bounded algebraic formalization of the recorded rule.
