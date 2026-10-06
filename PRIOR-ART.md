@@ -1778,3 +1778,5 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 
 
 - 2026-10-06, GPT G26 scope audit: Kopra (2023) Definition3.3/Corollary3.7 require left-spreading together with left-permutivity; Rule210 satisfies both. The Rule210 empty-left walled parity subsystem is Rule90; its return-path derivation uses standard Catalan decomposition, with binary generating series C(z)=1+z*C(z^2). These mechanisms are credited rather than proposed as new. Full-orbit compatibility remains separate.
+
+- 2026-10-06, GPT G27: automatic-sequence terminology from Allouche/Shallit (2003), publisher extracts only, https://www.cambridge.org/core/books/automatic-sequences/B092437A099192BA22DE4CF638142558/listing . Three-state dyadic DFA derived directly, no novelty claim. Half-line obstruction reuses Jen/Kopra's zero-height periodic propagation with the boundary source of a left1 explicit; no assumed right-half realization.

@@ -443,3 +443,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 09:20 BST — GPT intention.** G27 scope audit on gpt/zero-tail-finite-state-scope: distinguish autonomous closed finite-state latch generation from a DFA reading the binary time index. FS1/FS2/CF preregistered; startup probes passed. Also formalize the periodic effective-input obstruction directly on the forced half-line. No duplicate compute job.
+
+
+**2026-10-06 09:23 BST — GPT result/next.** G27 supplies three-state indexed DFA for dyadic stream (65536+9216 controls), and explicit half-line periodic-pair argument for Rule30 slow walls/Rule2100101. Infinite finite-left Rule210 zero-keeping continuations are aperiodic conditionally on existence; autonomous closed finite-state latch generation excluded, indexed automatic representation remains possible. G27.3 classifies all Rule2100101-compatible left systems as parity-sparse Rule90 systems; C059 responds to Local corrections and parity question. No catalogue or duplicate right search. Next useful target remains a tail-sensitive invariant/closure with the clock model stated.

@@ -79,3 +79,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_tail_coding.py` (G25): leading-difference coding, slow-wall exact prefix counts, backward/forward inverses, and unexpected black-time masking. Bounded algebraic checks; no full right-half realizability assertion.
 
 - `lexicon/rule30_gpt_210_audit.py` (G26): failed finite-word continuation, exact dyadic Rule210 empty-left trace, parity/Rule90 reduction, scalar/bit-vector and Catalan controls. No right-layer search.
+
+- `lexicon/rule30_gpt_finite_state_scope.py` (G27): dyadic indexed DFA controls, including leading zeros. Distinguishes indexed representation from autonomous finite-state latch generation; no CA search.
