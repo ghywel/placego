@@ -1633,3 +1633,13 @@ The correction-spacing limit holds for every irrational Sturmian angle, even whe
 **Why it matters.** This removes the angle restriction from the sparse-correction exclusion and reaches phase-reset codes. Geometric resets, general arc observables and a positive entropy theorem remain open.
 
 **An everyday picture.** Changing the dial at each reset cannot make the next uninterrupted stretch arbitrarily long relative to the current time.
+
+
+## W136
+Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
+
+**What it says.** A code that reads a fixed finite block of a mechanical word cannot evade the repetition obstruction. Rational angles are included by finite-prefix approximation. Resetting the code, phase and angle between pieces still requires corrections no farther apart than a geometric bound, provided the reading widths stay bounded.
+
+**Why it matters.** This reaches recoded and orbit-endpoint reset companions. The window bound is essential: increasingly wide recodings can imitate any selected finite binary prefix. General companions and positive entropy remain open.
+
+**An everyday picture.** Reading several neighboring symbols adds a fixed allowance. Increasing that reading window indefinitely changes the problem.

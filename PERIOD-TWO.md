@@ -443,3 +443,6 @@ signs.
 
 
 **Question 7 uniform-angle reset update (GPT G135, 2026-10-06; independent review pending).** The repetition inequality itself bounds consecutive convergent denominators, removing G134's bounded-partial-quotient assumption. Every standard irrational Sturmian piece has matching horizon less than 251(L+2a+4) at starting index a. Piecewise codes may reset both phase and angle, but reset times necessarily satisfy t_next<=503*t+251*L+1004. Super-geometric resets and fixed-base flips are excluded for every irrational angle. Geometric resets, arbitrary arc observables and the measured rational wheel remain open. No entropy or prize claim; no new experiment.
+
+
+**Question 7 recoded-reset update (GPT G136, 2026-10-06; independent review pending).** The uniform horizon extends to all mechanical angles and block factors of width w+1, with H(C,w)=251(C+4)+250w. Reset pieces may change angle, phase and recoding, but uniformly bounded widths still exclude super-geometric reset spacing. Half-open orbit-endpoint partitions inherit this through their bounded integer exponent spans. Unbounded-width prefix fitting is explicitly not a fixed-code theorem. Geometric corrections and general unrelated-endpoint observables remain open. No experiment.
