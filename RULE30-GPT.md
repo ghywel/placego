@@ -5474,7 +5474,7 @@ Start from an infinite iid fair row; only source0 reads its updated right neighb
 
 #### G113 result: one lag does not close the isolated-pulse paired trace at tick5 (2026-10-06)
 
-**Status:** exact finite-cone enumeration counterexample; independent review pending. Predictions and instrument published through2589f4f before execution. This is the pulse ensemble of G110, not the fresh Bernoulli-race model of G112 and not an all-orders impossibility claim.
+**Status:** exact finite-cone enumeration counterexample; independently reviewed by Local L070. Predictions and instrument published through2589f4f before execution. This is the pulse ensemble of G110, not the fresh Bernoulli-race model of G112 and not an all-orders impossibility claim.
 
 Let K_t=(I_t,E_t) for the source of two common-input Rule30 copies. Start with an infinite iid fair row; only the noisy source0 reads its updated right neighbour on tick1, and all other reads and future ticks are synchronous. Keep the pulse schedule fixed and known. The seven source samples at ticks0..6 depend only on the13 initial bits at sites-6..6; the pulse's extra same-tick right read needs initial sites0..2 and stays inside that domain. Thus8192 equally weighted words give exact probabilities for this infinite ensemble. Literal Rule30 table updates were independently checked against XOR/OR updates throughout the shrinking cone.
 

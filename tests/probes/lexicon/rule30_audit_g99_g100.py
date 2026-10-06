@@ -59,6 +59,9 @@ CHECKS (GPT's claims at 827e006):
      nine-node cylinders on the line (initial words 0110000 and 0000010 on -3..3, flags as stated): ideal / raced source
      traces 1100..., B occurs with E_3 = 0, and 0011 / 0110 with I_2 = 1, E_2 = 0, E_3 = 1; (c) the left-scan guard on
      a ring of 5 (initial 00001, only site 1 flagged): site 2 white in both, site 1 different.
+  S15 (G113, added 2026-10-06 at 832c0d3): the isolated pulse over all 8,192 words on sites -6..6, seven samples at
+     site 0: A = {K_4 = K_5 = (0, 0)} has 1,872 words with 40 giving E_6 = 1; B = A and {K_3 = (0, 0)} has 896 with 0;
+     the child K_3 = (0, 1) has 40 with 20; both seven-sample traces uniform (128 words, 64 each).
 """
 import random
 from fractions import Fraction as F
@@ -523,4 +526,38 @@ z5 = ideal_step(x5)
 y5 = race_step(x5, [0, 1, 0, 0, 0], 'L')
 ok14 &= z5[2] == 0 and y5[2] == 0 and z5[1] != y5[1]
 check('S14 G112: white agreement (rings 3..6, right scan); both cylinders; the left-scan guard', ok14)
+cntA = sA = cntB = sB = cntC = sC = 0
+hI7, hJ7 = {}, {}
+for w in range(2 ** 13):
+    x = {i: (w >> (i + 6)) & 1 for i in range(-6, 7)}
+    zr = dict(x)
+    yr = dict(x)
+    I7, J7 = [x[0]], [x[0]]
+    for t in range(1, 7):
+        lo, hi = -6 + t, 6 - t
+        nz = {i: R30(zr[i - 1], zr[i], zr[i + 1]) for i in range(lo, hi + 1)}
+        if t == 1:
+            ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+            ny[0] = R30(yr[-1], yr[0], ny[1])           # the pulse: site 0 reads its updated right neighbour
+        else:
+            ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+        zr, yr = nz, ny
+        I7.append(zr[0])
+        J7.append(yr[0])
+    E7 = [a ^ b for a, b in zip(I7, J7)]
+    K = [(I7[t], E7[t]) for t in range(7)]
+    hI7[tuple(I7)] = hI7.get(tuple(I7), 0) + 1
+    hJ7[tuple(J7)] = hJ7.get(tuple(J7), 0) + 1
+    if K[4] == (0, 0) and K[5] == (0, 0):
+        cntA += 1
+        sA += E7[6]
+        if K[3] == (0, 0):
+            cntB += 1
+            sB += E7[6]
+        if K[3] == (0, 1):
+            cntC += 1
+            sC += E7[6]
+check('S15 G113: A 1872 with 40, B 896 with 0, child (0,1) 40 with 20; traces uniform',
+      (cntA, sA, cntB, sB, cntC, sC) == (1872, 40, 896, 0, 40, 20) and len(hI7) == 128 and set(hI7.values()) == {64}
+      and len(hJ7) == 128 and set(hJ7.values()) == {64}, str((cntA, sA, cntB, sB, cntC, sC)))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
