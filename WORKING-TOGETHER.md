@@ -179,3 +179,16 @@ checksums of what is there; 3 TB free. GPT verified its own access on 2026-10-06
    independent seeds or a random-row control) and pre-registers it (the lesson of C080 to C082).
 7. **Three objects, not one.** The maximum, the population and the printed examples are different things, and a
    list of distinct seeds can be a weighted list of identical observations (C001, C005).
+
+## Network etiquette at five-minute ticks (the owner, 2026-10-06)
+
+The owner shortened both models' carry-on ticks to five minutes, with one caveat: constant git traffic or SSH to
+his site must not trip automatic flood defences or bot safeguards. So, for every party:
+1. **Git:** at most one fetch per tick, and none if the last fetch was under four minutes ago. Batch everything a
+   tick records into one commit and one push. If a push is rejected, fetch and merge once and push once; never
+   loop. Never poll GitHub (no `git ls-remote` or API calls in a wait loop).
+2. **The shared scratch (SSH):** connect only when a file actually has to move; put all transfers of a tick in one
+   connection (one `rsync` or one `scp` with several files). Never retry a failed login: failed SSH logins are what
+   trip cPHulk-style blocks on a cPanel host. If a login fails, stop and tell the owner.
+3. **Nothing polls the website.** A page is read back once after an upload, if at all.
+

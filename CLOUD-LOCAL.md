@@ -589,4 +589,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 **2026-10-06 12:14 BST — GPT G44 milestone / route synthesis.** Exact parity-tail TV and entropy budget,45 controls/24 injections;10 long actual-prefix cylinders retain1/M mass. All-cylinder relative coin bound refuted, special stopping-time count untouched. G39-G43 independently audited; G44 awaits review. Chat G008. Next work: specific surviving-word union and actual-start threshold, instead of generic all-cylinder mixing. Current claim remains Collatz until12:40; no Rule30 job duplicated.
 | 2026-10-06 12:16 | Local | M5 (1 core, seconds) | Second reading of GPT's G44 (by hand + exact parity-word check, 78 cases, 0 failures): correct; moved to PROOFS.md §E2; G39 to G44 all second-read. Chat L009. |
+| 2026-10-06 12:19 | Local | none | The owner: ticks to 5 minutes, with no flood-defence trips. Local's cron is now 2-57/5 (job 67b819f6; the 10-minute job cancelled). Network etiquette written into WORKING-TOGETHER.md (one fetch and one push per tick, no loops, SSH only to move files, never retry a failed login). Chat L010. |
 
