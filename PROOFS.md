@@ -561,7 +561,7 @@ $2^{-(L+2)} - 2^{-(L+4)} = 3 \cdot 2^{-(L+4)}$. $\square$
 ### C.6 Gliders on prime rings (RULE30-PRIZE.md §8.67; 2026-10-06)
 
 *Where:* §8.67; the census `ring_census.c` to $n = 24$. *Bears on:* constellation row 10 ("which parts are proved").
-*Status:* proved (the pigeonhole); the distinctness of lengths at $n = 13, 17, 19, 23$ and 29 is the census's exact finding (§8.67 and its addendum).
+*Status:* proved (the pigeonhole); the distinctness of lengths at $n = 13, 17, 19, 23$ and 29 is the census's exact finding (§8.67 and its addendum). GPT's G55 (second-read, §E2) refines it to an exact criterion: lengths are distinct exactly when every nonconstant quotient cycle has nonzero rotation displacement and the quotient periods are distinct.
 
 **Proposition.** Let $p$ be prime and consider Rule 30 on the ring of $p$ cells. Rotation by one cell commutes with
 the rule, so it permutes the cycles and preserves their lengths, and the orbit of a cycle under the rotation group
@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G54, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G55, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1221,23 +1221,9 @@ coarse bound that the certified $0.0618$ improves on (`rule30_audit_g53_g54.py`,
 entries the Generality index's last "~" is resolved for a coarse bound: every periodic wall has a squeeze; a sharp
 one needs a deeper-layer certificate per wall.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
 ### G.GPT55. Prime-ring quotient cycle lifting
 
-**Where:** RULE30-GPT.md G55; copied proof. **Status:** awaiting independent reader; RQ controls NOT RUN.
+**Where:** RULE30-GPT.md G55; copied proof. **Status:** second-read by Local, 2026-10-06 (note below); GPT's RQ controls not run at publication.
 
 ### G55 lemma and proof: prime-ring cycle lifting
 
@@ -1254,3 +1240,27 @@ Existing controls from Local's census: p7 has seven4-cycles and a63-cycle; the l
 Unexpected structural check: take F=R itself on a three-cell binary ring. Its two nonconstant temporal cycles, represented by001 and011, both travel and both have length3. Thus every cycle travelling does not imply pairwise distinct lengths. This is a different CA used to test what rotation symmetry alone proves; it is not a Rule30 counterexample at13 or later.
 
 This specializes elementary cyclic-group cycle lifting and the already recorded rotation-orbit pigeonhole in RULE30-PRIZE.md section8.67. It identifies the remaining Rule30 mechanism as excluding zero displacement and repeated quotient periods in the observed prime-size regime, without a novelty or asymptotic claim.
+
+*Second reader's note on G55 (Local, 2026-10-06; chat L027).* Correct. A rotation fixing a state on a prime ring
+generates all rotations, so nonconstant states have free orbits; $F^q(x) = R^b(x)$ fixes $b$ independently of the
+representative because $F$ commutes with $R$; $b = 0$ gives $p$ cycles of length $q$ and $b \ne 0$ one cycle of length
+$pq$, with no shorter return in either case; Rule 30 sends the all-black ring to white, so the white fixed point is
+the only constant cycle. Checked directly (`rule30_audit_g55.py`): on the prime rings 5, 7, 11, 13, 17 and 19 every
+temporal cycle obeys the lifting law; the zero-displacement families are exactly the seven 4-cycles at 7 and the
+eleven 17-cycles at 11; and G55's criterion (nonzero displacement and distinct quotient periods) agrees with
+"all cycle lengths distinct" at every one of them. The quotient periods at 13 are 64, 20, 19, 7; at 17, 638, 96, 51,
+18, 8, 1; at 19, 195, 13, 7, 2. This upgrades PROOFS.md C.6 from a pigeonhole to an exact reduction.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
