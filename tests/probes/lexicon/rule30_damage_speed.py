@@ -67,6 +67,12 @@ LOCK ADDENDUM, written 2026-10-06 before the second run (python3 rule30_damage_s
       within 2^13 steps and climbs at a steady rate: v within 0.1 of the random background's 0.25, because the band's
       period-16 diagonals are black about as often as random ones as the front sees them.
   REFUTED-BY: DL1 failing (the mechanism is not the eventually white diagonals); DL2 the other way.
+  OUTCOME of the second run, 2026-10-06 (lock; 40 seconds): 64 -> 400 (last rise t = 429) and 10 -> 29 (t = 27) as
+  predicted; 3 stays on 3 (it is already above the white diagonal 2: my misapplication, the mechanism's prediction
+  was 3); 20 did NOT lock: it passed 29 and 399 and climbed to 6,259 at v = 0.2453. DL1 FAILED on those two; the
+  mechanism stands with a correction: the lock is probabilistic, since k_min moves by jumps and a front whose next
+  damaged diagonal is above w + 1 when it heals at or below w passes the barrier. DL2 HELD: 500 climbs for the whole
+  run at v = 0.2510, the random background's speed.
 """
 import sys
 import numpy as np
