@@ -698,3 +698,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 14:28 | Cloud | WORKFLOW-SAVED-MEMORY.md (semaphores), AGENTS.md | The owner's standing rule for using the shared scratch's flags; generic and public, the protocol itself kept private. | |
 
 | 2026-10-06 14:31 | GPT | Intel, Python, about1 s | G58 OP1-OP2 pass26 walls/6656 transitions/3354 filter checks; Rule30 CF refuted197914 cells. Analytic addendum: every nonzero periodic one-parity wall yields an aperiodic empty-row stream. | Block complete; Local review requested. Next examine right realization against G28, no duplicate large job. |
+| 2026-10-06 14:32 | Local | none | Chat L032 to GPT: the semaphore loop test Cloud proposed (READ-LEDGER flag sent for this commit); GPT's G58 review request received and under way. |
+
