@@ -92,10 +92,45 @@ def language(repaired=False):
     print('ALL RESET-LANGUAGE CONTROLS PASS: %d words through length14'%checks,flush=True)
 
 
+def multistep():
+    rng=random.Random(2026100614);checks=0
+    for p in range(5,65):
+        n=p+100;tau=[int(t%p!=0) for t in range(n)]
+        for _ in range(4):
+            sigma=[rng.randrange(2) for _ in range(n)]
+            other=sigma[:];other[p]^=1
+            a=forced_columns(tau,sigma,96);b=forced_columns(tau,other,96)
+            for r in range((p-5)//3+1):
+                start=4*r+4;end=p-1+r;t=p-r
+                assert all(a[j-1][t]==b[j-1][t] for j in range(start,97)),(p,r)
+                assert all(a[j-1][t]==b[j-1][t]==int(j%2==0)
+                           for j in range(start,end+1)),(p,r)
+                checks+=1
+    extra=0
+    for q in range(1,7):
+        p=3*q+5;n=q+p+70
+        for _ in range(8):
+            tau=[rng.randrange(2) for _ in range(n)]
+            tau[q]=0;tau[q+1:q+p]=[1]*(p-1)
+            sigma=[rng.randrange(2) for _ in range(n)]
+            other=sigma[:];other[q]^=1
+            a=forced_columns(tau,sigma,64);b=forced_columns(tau,other,64)
+            assert all(a[j-1][0]==b[j-1][0] for j in range(4*q+4,65))
+            extra+=1
+    p=8;q=8;n=180;tau=[int(t%p!=0) for t in range(n)]
+    sigma=[0]*n;other=sigma[:];other[q]=1
+    a=forced_columns(tau,sigma,160);b=forced_columns(tau,other,160)
+    beyond=[j for j in range(4*q+4,161) if a[j-1][0]!=b[j-1][0]]
+    assert beyond
+    print('ALL MULTISTEP CONTROLS PASS: %d protected-window comparisons; %d unexpected nonperiodic backgrounds'%(checks,extra),flush=True)
+    print('CF unrestricted-r rejected: p8 q8 r8, first change beyond35 at%d'%beyond[0],flush=True)
+
+
 if __name__=='__main__':
     import sys
     if len(sys.argv)>1 and sys.argv[1]=='language':language()
     elif len(sys.argv)>1 and sys.argv[1]=='language-repaired':language(True)
+    elif len(sys.argv)>1 and sys.argv[1]=='multistep':multistep()
     else:main()
 
 # OUTCOME 2026-10-06 07:37 BST: default command exit0, ALL CONTROLS PASS.
@@ -114,3 +149,13 @@ if __name__=='__main__':
 # OUTCOME IR6 2026-10-06 07:38 BST: language-repaired exit0,
 # ALL RESET-LANGUAGE CONTROLS PASS for32767 words through length14.
 # IR5 still fails at0111100 in its original mode; no erased failure.
+# ADDENDUM before multistep, 2026-10-06 07:42 BST:
+# MS0 theorem control: p>=3r+5 implies hole flip at q=p changes no
+# depths>=4r+4 in row q-r; p5..64, four sigma backgrounds, depth96.
+# MS1 theorem control: common cells4r+4..p-1+r are checkerboard.
+# MS2 unexpected: theorem only needs the following black window,
+# not periodicity; random wall before/after that window, q1..6,
+# p=3q+5, eight backgrounds each, compare row0 through64.
+# CF must fail: extend to any r, dropping p>=3r+5; p8,q8,r8,
+# all other sigma bits0, known C024 spreading, depth160.
+# REFUTED-BY: MS0-MS2 fail or CF not rejected. No global gap prediction.
