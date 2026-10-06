@@ -2533,3 +2533,79 @@ Rule2/30 controls are quiescent and cannot detect that background error.
 C040 asks Local to restrict the census to the64 quiescent selected rules or
 model the evolving exterior explicitly. Their probe is preserved and not rerun.
 This is an exact two-step counterexample, not a claim about their pending outcomes.
+
+
+## G22. The sideways map has a ternary image and a non-surjective ternary dynamics (2026-10-06)
+
+**Question from CONSTELLATION row5.** Formalize the inverse-column rule as a CA
+on the time axis. On two bi-infinite binary tracks, write S a(t)=a(t+1) and
+F(a,b)=(c,a), c=S a XOR(a OR b). Here a is the nearest existing column and b
+its right neighbour. This is a two-track, four-symbol CA with neighbourhood
+{0,1}. It commutes with time shift. It differs from G7’s anti-diagonal predecessor
+H(a,b)=(S b XOR(a OR b),a); the coordinates must not be interchanged silently.
+No fixed wall or finite-seed restriction is imposed in this formal system.
+Startup wall/merge checks ALL CHECKS PASS; G1's scope applies. SI0-SI4/CF1/CF2
+were published in f1dcc98 before the run; no Local job was repeated.
+
+**Exact image and fibres.** A pair(c,a) lies in the image iff
+c(t) XOR a(t+1)>=a(t) at every t. Where a(t)=0, the predecessor bit is
+b(t)=c(t) XOR a(t+1); where a(t)=1, compatibility forces c(t)=1-a(t+1)
+and b(t) is free. This proves necessity, sufficiency and the entire preimage
+fibre. On P-periodic tracks it has size2^popcount(a). On infinite tracks its
+free coordinates are exactly the positions where a is1. In particular F is not
+injective, even on constant tracks.
+
+**Ternary recoding theorem.** Encode an image pair by z(t)=2 if a(t)=1,
+and otherwise z(t)=c(t). Conversely set A(t)=[z(t)=2] and
+C(t)=z(t) if z(t)!=2, otherwise C(t)=1-A(t+1).
+Then(c,a)=(C,A). These two rules are inverse, commute with shift and use
+finite neighbourhoods. Thus the one-step image, with its time-shift action,
+is conjugate to the full three-symbol shift. Every ternary sequence is allowed;
+this is an exact representation, not a symbolic fit to a picture.
+
+There are exactly3^P image configurations fixed by the P-step shift. For ordinary
+length-n blocks there are4*3^(n-1) choices: choose the first n-1 second-track bits,
+with two choices of c at a0 and one at a1; at the final site both a values allow
+two c choices because the following a is outside the block. Consequently the
+image language’s exponential rate is log2(3) bits per time-axis site, compared
+with2 for the full two-binary-track space. This is word-count entropy of the
+image under shift, **not** dynamical entropy of iterating F, nor the fixed-wall
+channel entropy studied in G20.
+
+**The induced dynamics.** Conjugate F restricted to its image by this recoding.
+On arbitrary ternary z, compute A,C as above. Its new symbol is2 if C(t)=1;
+otherwise it is C(t+1) XOR A(t). This uses z(t),z(t+1),z(t+2), so it is a
+three-symbol CA with neighbourhood{0,1,2}. The probe also implements its explicit
+case rule independently and checks the conjugacy.
+
+The induced CA is not onto. For the bi-infinite periodic target(c,a)=(10,00),
+the only F predecessor is(a,b)=(00,10). That predecessor is outside the image:
+at its first site, c=0 and a=1 while a(next)=0 violate compatibility.
+Uniqueness holds without requiring a periodic predecessor. Therefore this target,
+whose ternary code is10 repeated, has no predecessor under the induced rule.
+The ternary description does not make the iterated image a full invariant
+surjective dynamics. Further image layers and dynamical entropy remain open.
+
+**Unexpected measure check.** Uniformly counting P-periodic image configurations
+makes the second-track1 density1/3: it is the uniform ternary symbol2 density.
+Uniformly counting the4^P binary input pairs and pushing them through F keeps
+that density1/2, since the second output track is the first input track. An image
+with k second-track ones has2^k predecessors, so its ternary code has probability
+2^k/4^P; the pushed measure is a product with probabilities1/4,1/4,1/2 for
+symbols0,1,2. Its Shannon entropy is1.5 bits per site. Equal weighting of images
+and equal weighting of inputs are different exact ensembles. This makes no
+claim about the frequencies of a single physical Rule30 trajectory.
+
+**Checks.** `rule30_gpt_sideways.py`, one Intel CPU process, both runs under one
+second: all87380 input pairs at P1..8 passed SI0-SI3’s complete image, exact
+fibre, recoding, shift and density checks. All1092 ternary words at P1..6 passed
+SI4’s independent induced-rule comparison. Both counterfactuals were rejected:
+injectivity and surjectivity onto the image. The final rerun adds all8 explicit
+Rule30 inverse truth-table cases; the first SI0 used a scalar versus bit-vector
+port, and that narrower initial scope is recorded. Both exit0, ALL CONTROLS PASS.
+The all-size theorems use the displayed coordinate formulae, not extrapolation.
+
+**Status.** The sideways formalization moves to PART: exact CA, image recoding,
+fibres and induced rule established. Its iterated images, invariant measures and
+dynamical entropy are not classified. The ternary shift representation is a
+structural result about this formal map; no novelty or prize solution is claimed.

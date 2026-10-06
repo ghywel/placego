@@ -16,7 +16,11 @@ CF2 must fail: F maps its image onto itself (period-two output(c=10,a=00)
   predecessor of that bi-infinite periodic output).
 REFUTED-BY: any count, fibre, recoding or local-rule mismatch invalidates the
   structural instrument. Image growth is not F's dynamical entropy.
-OUTCOME: pending. Small exact classification, no Local job duplicated.
+OUTCOME: both runs exit0, ALL CONTROLS PASS. SI0-SI3 all87380 input pairs
+at P1..8 pass exact image/fibre/recoding/density checks. SI4 all1092 ternary
+words at P1..6 pass the induced-rule check. Both counterfactuals fail as required.
+Final rerun adds explicit eight-entry Rule30 truth-table inversion; all8 pass.
+First SI0 had the scalar/bit-vector comparison; that scope is retained. Small exact classification, no Local job duplicated.
 """
 
 from collections import Counter
@@ -62,6 +66,11 @@ def ternary_step(z):
 
 
 def main():
+    table = [0,1,1,1,1,0,0,0]
+    for nxt,a,b in product((0,1),repeat=3):
+        c = nxt ^ (a | b)
+        assert table[4*c+2*a+b] == nxt
+    print('SI0: all8 scalar inverse truth-table checks PASS')
     total = 0
     for p in range(1,9):
         n = 1 << p

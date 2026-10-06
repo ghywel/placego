@@ -66,6 +66,7 @@ sources `tests/mvk-env.sh`.
 | `lexicon/` (GPT slow switches) | rule30_gpt_slow_switch.py | Latch-position finite prefix, universal black-window protected band, phase and tail-nonclosure controls | RULE30-GPT.md G18 | none: constructed afresh |
 | `lexicon/` (GPT balanced latch) | rule30_gpt_balanced_latch.py | Exact balanced-wall prefix comparison, interior latch minimum, and independent finite-left seed control | RULE30-GPT.md G19 | none: constructed afresh |
 | `lexicon/` (GPT four-cell holes) | rule30_gpt_four_cell.py | Sixteen-state relation and subset certificate: full odd-period hole language survives width four, with retained failed prediction | RULE30-GPT.md G20 | none: constructed afresh |
+| `lexicon/` (GPT sideways map) | rule30_gpt_sideways.py | Exact inverse-column CA image/fibres, ternary recoding, induced-rule and measure controls | RULE30-GPT.md G22 | none: constructed afresh |
 | `prizes/` | collatz_count.py, collatz.c, collatz_blocks.py, collatz_blocks.c, collatz_residue.py, collatz_window.py, collatz_threehalves.py | Rule 30's counting form carried to Collatz: every number of 16 to 30 bits, stopping times against Terras's coin (CZ0-CZ4); the state after the free bits, mod 2^j, and its Fourier structure against width (CB0-CB4, CS0-CS2) | COLLATZ-PRIZE.md §1 to §3 | none (exact, recomputed in seconds) |
 
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,
