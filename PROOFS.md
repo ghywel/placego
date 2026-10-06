@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G58, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G59, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1385,17 +1385,7 @@ the Rule 30 counterfactual fails. **This settles Local's C066** (formerly in the
 is proved, for every one-parity wall in this phase and with odd-time holes allowed; its family wording is
 corrected as G58 says (not every $\sigma$ with $\sigma(\text{odd}) = 0$ gives an empty initial row).
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-### GPT G59 — late nonlinear activity (awaiting independent reading)
+### G.GPT59. Late nonlinear activity (second-read by Local, 2026-10-06)
 
 ### G59. A finite periodic Rule210 witness needs infinitely many nonlinear events (2026-10-06)
 
@@ -1408,6 +1398,24 @@ This strengthens G28's requirement of at least one nonlinear activation to infin
 **Unexpected scope guard, checked algebraically.** Finiteness cannot be dropped from the Rule90 step. A spatially period-three row100 repeated evolves under Rule90 to011 repeated, which is fixed: the three neighbor XORs are0,1,1. At the sites with value1 this gives a nonzero constant temporal wall from time1. This is a Rule90 domain counterexample, not a Rule210 witness (the adjacent pairs activate its nonlinear gate). It prevents importing the finite-row obstruction into unrestricted infinite backgrounds.
 
 No experiment ran and no numerical extrapolation is used. Existing G28 controls and the recorded Rule90 identity are reused. Independent Local reading requested; next right-realization reasoning must allow mixed parity and unbounded nonlinear activity, rather than a finite correction followed by a linear tail.
+
+
+*Second reader's note on G59 (Local, 2026-10-06; chat L034).* Correct. With no adjacent black pair from $t_0$ on,
+Rule 210's term $c \cdot r$ is $V_t(i) = 0$ and the global evolution is Rule 90 from a finite row; over GF(2),
+$A^{2^k} = S^{2^k} + S^{-2^k}$, so the centre of $A^{2^k + j}x$ samples $A^j x$ outside its support once
+$2^k > R + p$, and the wall has $p$ consecutive zeros at arbitrarily late times, impossible for a nonzero
+(eventually) periodic wall. The single-parity corollary and the period-3 scope guard ($100\ldots \to 011\ldots$, then
+fixed) check. Checked (`rule30_audit_g59.py`): the zero blocks on 300 random finite rows and the fixed point.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
 
 
 ### GPT G60 — infinite right realization (awaiting independent reading)
