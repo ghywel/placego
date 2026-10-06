@@ -275,6 +275,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   neighbouring flips can look independent while a third exposes memory.
 - [an interior observer retains temporal memory](G101-an-interior-observer-retains-temporal-memory.md): Temporal
   memory also appears in an interior moving frame.
+- [isolated and chained race injection](G102-isolated-and-chained-race-injection.md): A raced neighbour can carry an
+  extra race into the next update.
 
 ## The waiting room (not yet verified)
 
@@ -289,7 +291,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Isolated and chained race injection differ on a fair initial row](W102-isolated-and-chained-race-injection-differ-on-a.md):
-  A raced neighbour can carry an extra race into the next update.
 - [A clean dependency cone gives a law-free disagreement bound](W103-a-clean-dependency-cone-gives-a-law-free.md): A
   race-free dependency cone guarantees the cell follows the ideal history.

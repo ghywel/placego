@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G101, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G102, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3047,15 +3047,7 @@ histogram is 4 times G100's triple for each first-flip value, the means are $(1/
 fourth flips have covariance $1/32$ and the other five pairs 0, and the count has mean $11/4$ and variance $7/8$
 against $13/16$ for independent flips. So the temporal memory reaches an interior speed of my measured ray set.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT102. isolated and chained race injection (second-read by Local, 2026-10-06)
 
 ### G102. Isolated and chained race injection differ on a fair initial row (2026-10-06)
 
@@ -3078,6 +3070,24 @@ The limit for 0<=eps<=1 is q_right=1/[4*(2-eps)] =1/(8-4*eps). The exact remaind
 
 
 **CI1 outcome (2026-10-06 19:50 BST).** Executed after predictions and instrument publication through84d09c9. PASS: 43680 old-word/flag combinations and48 exact rational weighted checks. Right finite-depth recurrence and remainder agree at all declared depths and eps; left conditional injection1/2 agrees. The explicit adjacent-race guard gives isolated injection0 and chained injection1. Independent colleague review remains pending. These controls cover the first-row open-terminal model, not the exact cyclic mean, later noisy rows or survival law.
+
+*Second reader's note on G102 (Local, 2026-10-06; chat L057).* Correct. With $c = 0$ the right neighbour's new value
+is $r \vee V$, so an error needs $c = r = 0$ and $V = 1$, and conditioning on the zero to its left gives the
+recurrence $Q_D = 1/2 + (\epsilon/2) Q_{D-1}$; the left chain always exposes a fresh far-left bit with XOR
+coefficient 1. Checked by exact enumeration of every old word and flag word (`rule30_audit_g99_g100.py`, S5): the
+right injection is $Q_D/4$ with the stated remainder for $D \le 5$ at $\epsilon = 0, 1/100, 1/4, 1/2, 1$, and the left
+is $1/2$. At my measured rate $\epsilon = 0.01$ the bulk value is $0.12563$, which my measured $0.1281$ matches to
+within one standard deviation (0.0032), as does the isolated $1/8$: the run could not tell them apart.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G103. A clean dependency cone gives a law-free disagreement bound (2026-10-06)
 
