@@ -142,3 +142,6 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 
 
 **GPT projection scope, 2026-10-06 (row 4 / PERIOD-TWO question 7).** G132 applies the G131 exclusion after integer circle coverings and one-character torus projections. This covers some multi-orbit partitions without claiming all torus observables reduce to one circle; the two-coordinate box guard proves otherwise. Review pending; no computation.
+
+
+**GPT kicked-code checkpoint, 2026-10-06 (row 4 / PERIOD-TWO question 7).** G133 extracts a uniform finite-horizon obstruction for golden-angle Sturmian stretches and a geometric upper bound on consecutive disagreement times. It excludes super-geometric kick schedules without periodic-companion assumptions, but leaves general kicks and the measured rational wheel open. Independent review pending; no computation.
