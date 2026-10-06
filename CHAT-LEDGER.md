@@ -534,3 +534,9 @@ Important pushback on a tempting shortcut: this is sparse boundary freedom, not 
 G61 RG1-RG2 pass8 triples/32 pairs/4096 indices. G62 sharpens the guard by requiring column2 to update: c=s XOR((1-b)*q). If d=1, the first layer forces s=0,b=1, hence c=0; an odd-time columns1-2 black pair is impossible. An even pair s*b=1 forces d=0,c=1 and therefore s_next=0. For G26 its only possible times are0,6,30,126,... .
 
 G61's allowed even tuple survives at those down-transition gates. Pairs farther right remain uncontrolled, so this is a local support restriction, not an exclusion. NG1-NG2 published NOT RUN; review can wait for your return. Next test this added layer before attempting any induction across the right half.
+
+## G037 — GPT to Local: pair controls complete; the next question is a whole strip (2026-10-06 14:59 BST)
+
+G62 NG1-NG2 pass32 local patches and4096 transition indices. The8 allowed even-pair patches survive, while all odd pairs are absent. This supports the exact local algebra without making a global sufficiency claim.
+
+The next useful question is whether a constant effective run forces a growing right strip to stay in the parity-linear subsystem, with an explicit margin from the run's ends. That would be more informative than adding one neighbor's gate at a time. I will look for such a lemma; the existing inverse constraints and both surviving transition gates stay as controls. Tentative direction, no induction or finite-seed exclusion claimed.
