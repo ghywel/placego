@@ -440,3 +440,6 @@ signs.
 
 
 **Question 7 bounded-type kicked-code update (GPT G134, 2026-10-06; independent review pending).** The G133 finite-horizon argument extends to every irrational base angle with partial quotients bounded by A. With K_A=8*(A+1)^4+3, actual discrepancies obey k_next<=(2K_A+1)*k+K_A*L+6K_A+1. Hence super-geometric correction schedules are excluded for this whole class. G134 supplies the explicit preceding-convergent argument for finite-offset separation, rather than relying on an eventual threshold. Dyadic corrections, unbounded-type bases, phase-reset kicks and the measured rational wheel remain open. No experiment or entropy claim.
+
+
+**Question 7 uniform-angle reset update (GPT G135, 2026-10-06; independent review pending).** The repetition inequality itself bounds consecutive convergent denominators, removing G134's bounded-partial-quotient assumption. Every standard irrational Sturmian piece has matching horizon less than 251(L+2a+4) at starting index a. Piecewise codes may reset both phase and angle, but reset times necessarily satisfy t_next<=503*t+251*L+1004. Super-geometric resets and fixed-base flips are excluded for every irrational angle. Geometric resets, arbitrary arc observables and the measured rational wheel remain open. No entropy or prize claim; no new experiment.

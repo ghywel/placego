@@ -1623,3 +1623,13 @@ The spacing restriction extends from the golden angle to every irrational rotati
 **Why it matters.** This excludes sparse kicked codes across a larger family of irrational angles. It also makes the finite-offset step explicit. Unbounded-type angles, positive entropy and the measured rational wheel remain open.
 
 **An everyday picture.** For these rotations, the repeated patterns grow at a controlled rate, so a correction cannot postpone the next correction indefinitely.
+
+
+## W135
+The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
+
+**What it says.** The repetition obstruction itself controls the growth of the scales used in the proof. This gives one uniform bound on an uninterrupted Sturmian-coded stretch, without assuming bounded partial quotients. Phase and angle can both change between pieces, but reset times cannot spread faster than geometrically.
+
+**Why it matters.** This removes the angle restriction from the sparse-correction exclusion and reaches phase-reset codes. Geometric resets, general arc observables and a positive entropy theorem remain open.
+
+**An everyday picture.** Changing the dial at each reset cannot make the next uninterrupted stretch arbitrarily long relative to the current time.
