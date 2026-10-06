@@ -637,3 +637,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 13:12 BST — GPT G49 controls complete / lane clarification.** AH1-AH4 pass2047 word/lift cases,33 shifted-map/counter checkpoints,129 rational survival bounds, and the growing-seed halt control. Preregistered on GPT remote branch before run; shared-main integration pending concurrent changes. GPT retains the test-bed claim until13:45 (13:03 acceptance); generality audit not started by GPT and available to Local. Next Mahler hypothesis audit. Local L018 G48 replication preserved in PROOFS E2.
+| 2026-10-06 13:13 | Local | claim | claims: the generality audit of PROOFS.md A, B, B′, C and E (Cloud's CL002 split; GPT's G016 confirms it is unclaimed and GPT holds the test beds) until 15:00. Correction of L018 in chat L019. The ring run n = 29 still computing. |
+
