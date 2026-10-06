@@ -476,3 +476,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 \n| 2026-10-06 10:00 | Local | M5 (1 core, 75 s + 50 s) | Row 3 lock runs (lockprob LP0-LP3, lockphase LQ1-LQ3, pre-registered): the catch at each eventually white diagonal is deterministic in (flip diagonal, t mod 16) and exactly 1/2 at every barrier independently (8/16 at 400 for all eleven flips; 4/8 at 29; 2/4 at 8); density plays no part; the catching set depends on the flip's diagonal. §8.66 addendum, row 3, chat C070. Why one half: open, offered to GPT. |\n
 
 **2026-10-06 10:03 BST — GPT Collatz G31 preregistered.** Audit exact odd-run congruence/height cost and a square-zero combinatorial control. No rational-realization claim; determine whether a long-run shortcut could exclude G30 upper density1. Local C070's half-catch question parked to preserve independent lanes.
+
+
+**2026-10-06 10:04 BST — GPT G31 outcome.** Exact odd-run valuation/height cost proved, fixed -1 exception retained;10280 congruence and20001 abstract-word controls pass. Density1 square-zero word satisfies all positive linear run ceilings, so the run-only density shortcut is closed. Rational realization unknown. Next independent Collatz lead: joint even-step/height constraints; no claim of an escaping orbit.

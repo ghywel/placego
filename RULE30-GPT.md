@@ -2847,3 +2847,26 @@ For c=2 this requires upper odd density at least approximately0.94639; for c=3 a
 ## G31. Collatz odd-run cost and the limitation of a density shortcut (2026-10-06)
 
 **Preregistration.** Audit the exact all-odd prefix: L odd steps occur exactly when N+D is divisible by2^L, with D positive odd. Predict for N!=-D that L<=log2(abs(N)+D). OR1: all signed starts -128..128, D1,3,5,9 and L1..10; compare actual parity words, divisibility and the composed iterate. Counterfactual: the size bound also holds at N=-D. Unexpected OR2: a binary word with zeros at square indices has density1 and unbounded odd runs, but its run length is sublinear in the starting index; check indices through10000. This word is only a combinatorial control, not asserted to be a rational Collatz orbit. No new startup checks: continue the passed G30 block.
+
+
+### G31 theorem: exact odd-run cost, with its fixed-point exception
+
+For integer numerator N and positive odd D, the next L>=1 accelerated steps are all odd exactly when2^L divides N+D. On that prefix,
+
+    2^L*(N_L+D) = 3^L*(N+D).
+
+Necessity follows by composing the odd branch. For sufficiency, divisibility by2^L makes N odd, and after one odd step N_1+D=3(N+D)/2 is divisible by2^(L-1); induction finishes. This is the all-ones instance of the affine parity/residue correspondence already credited to Terras in W1, not a novelty claim.
+
+If N!=-D, the exact number of consecutive odd steps is the exponent of2 dividing N+D. Since N+D is nonzero, this gives2^L<=abs(N+D)<=abs(N)+D. At N=-D the orbit is fixed at rational -1 and remains odd forever, so removing that exception makes the bound false. An infinite distinct orbit cannot visit this fixed point.
+
+**Consequences and failed shortcut.** At orbit index i, an odd run has length at most log2(abs(N_i)+D). G30's growth ceiling therefore bounds it by (gamma+epsilon)*i+log2(C_epsilon) for every epsilon>0. The universal estimate also gives log2(H_0)+i*log2(3/2). These bounds exclude overly long individual runs at a given height; they do not by themselves exclude upper odd density1.
+
+To see the logical limitation, let an abstract binary word have zeros precisely at indices k^2, k>=0, and ones elsewhere. Its first m positions contain floor(sqrt(m-1))+1 zeros, so its ones density tends to1. After the zero at k^2 there is an odd run of2k ones; at any start i the remaining run is at most2*sqrt(i). For every alpha>0,
+
+    2*sqrt(i) <= alpha*i + 1/alpha.
+
+Thus this word meets every positive linear run ceiling with a suitable constant. It is not eventually periodic: it has infinitely many zeros with unbounded gaps, whereas an eventually periodic word with infinitely many zeros has bounded zero gaps. This refutes only the inference from the run ceiling to density strictly below1. We do not assert its other G30 complexity constraints, its rational realization, or its exclusion from rational Collatz orbits. The initial wording “failing to represent an escaping rational orbit” was too strong for this control; realization is unresolved here.
+
+**Controls and outcome.** OR1 passed all10280 signed congruence cases, with exact affine and height implications. The fixed-point counterfactual failed as predicted for all four D. Unexpected OR2 passed10001 run and10000 square-count controls. The infinite density/nonperiodicity conclusions are proved from the explicit word; the finite checks are only implementation controls. No sampled trajectory is declared divergent.
+
+**Next useful question.** A joint restriction involving the heights at even steps, or the full 2-adic inverse and a real-size bound, would be needed to eliminate this shortcut's countermodel. G30/G31 alone provide no such restriction. The record already rejects identifying real and 2-adic series limits (COLLATZ-PRIZE.md5); that objection must remain in force.
