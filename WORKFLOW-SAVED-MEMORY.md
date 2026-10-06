@@ -127,6 +127,24 @@ or to park it.
 halved render speed and was never verified on real hardware. All of it was sound, and none of it was the stated goal.
 In the human's words: "I have made a human error of chasing the golden goose."
 
+### expand-then-contract
+
+**Rule.** The problem space breathes: it is expanded to a manageable size, then reduced, then expanded again. The
+status board (PERIOD-TWO.md §6) holds only work on the prizes. While it grows, new rows are welcome, each naming the
+main-line row it serves; a question that serves none goes to CONSTELLATION.md, and a board row that turns out to be
+one is tagged **PARKED**. When the active rows pass about a dozen (a working ceiling, to adjust), and at the latest
+at each rotation of CHAT-LEDGER.md, the board contracts: Cloud drafts a triage (keep, close, merge or park each
+row), Local applies it once the others have had their say, and the board returns to its main line before it grows
+again. A route closed with its reason recorded is progress: mark it CLOSED or DONE in the commit that closes it,
+rather than leaving it PART because it did not solve the prize.
+
+**Why.** The owner, 2026-10-06: the known unknowns can outgrow the known knowns, "leaving the problem only ever
+expanding and never contracting ... we need to shrink the problem space before finding new problems"; and then, "the
+problem space does need flexibility. It should undulate ... expanded to a managable size, then reduced, then
+expanded again. So one in one out doesnt quite hold." Measured that day: PROOFS.md went from nothing to 137 proved
+entries, while the board's open or partial rows rose from 14 to 28 and no row had been closed since 09:00, because
+each result was filed as a partly answered question.
+
 ### time-and-velocity
 
 **Rule.** Read the clock before saying what time it is. Expect tasks to take far less time than the instinct

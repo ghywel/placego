@@ -140,7 +140,11 @@ through.
 
 The tags. **OPEN**: nothing settles it, and work can start. **PART**: part is settled, and the rest is named.
 **RUNNING**: a job is on a machine. **DONE**: acted on, and the result is recorded. **CLOSED**: a dead route, or
-settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be done with what is here.
+settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be done with what is here. **PARKED**:
+a side question kept for its own sake in CONSTELLATION.md, not active work on the prize. The board grows to a
+manageable size, then a triage returns it to its main line before it grows again; a new row names the main-line row
+it serves, and a closed route is marked in the commit that closes it (the `expand-then-contract` rule in
+WORKFLOW-SAVED-MEMORY.md, the owner's, 2026-10-06).
 
 *The prize, and the routes to it.*
 
