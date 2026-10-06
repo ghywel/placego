@@ -33,6 +33,23 @@ PREDICTIONS, written 2026-10-06 before the first run.
 REFUTED-BY: TC0 failing or CF holding (the instrument); TC1 to TC4 the other way. What would change my mind: a core
 ratio away from one half (the core's white runs would not be coin-like at the level of triangles, which bears on
 Problem 2), or a left band with a large triangle (the band's bounded periods would have to allow it).
+
+OUTCOME of the first run, 2026-10-06 (T = 10^5, 4 minutes). TC0, CF PASSED. TC1 HELD far beyond its bracket: the core's
+  ratios are 0.500, 0.500, 0.500, 0.499, 0.503, 0.500, 0.496, 0.495, 0.507, 0.485 for L = 3 .. 12, and the counts
+  themselves are 281,011,418; 140,641,871; 70,333,586; 35,178,509; 17,580,624; 8,797,846; ... ; 137,109 (L = 12);
+  ... 29 (one top of width 29, two of 28). Derived AFTER the run and then matched: the uniform measure is invariant
+  under Rule 30 (a surjective rule), and under it a maximal white run [i, j] of length L has probability 2^-(L+2),
+  while the continuation (the cells above, one wider each side, all white, and black beyond them so that the run is
+  exactly [i, j]) has probability 2^-(L+4); so the density of tops of width L is 3 * 2^-(L+4) per cell. Against the
+  core's area 0.3 T^2 = 3.0 * 10^9 that predicts 281,250,000; 140,625,000; 70,312,500; 35,156,250; 17,578,125 for L =
+  1 .. 5 (measured within 0.09%, 0.01%, 0.03%, 0.06%, 0.02%) and 549,316 at L = 10 (measured 547,147, -0.4%), 17,166
+  at L = 15 (16,585), 536 at L = 20 (505), 1.05 at L = 29 (2). The widest core top, 29, is where 3 * 2^-(L+4) * area
+  = 1, i.e. L = 29.1. TC2 HELD (29). TC3 REFUTED in its second clause: the widest tops of the cone sit ON the right
+  edge (x/t = 1.000) at the times m * 2^k: 40 at 65,536, 38 at 32,768 and 98,304, 36 at 16,384, 49,152, 81,920, 35 at
+  8,192 and the odd multiples of it; they grow like log2 t + 22 and so are not twice the core's 29. TC4 REFUTED: the
+  left band has tops of widths 15 (21,916 of them) and 16 (5,882) and none wider; its ratios are near 1/2 to L = 9
+  and then structured (0.61 at 10, 0.88 at 15). Not pre-registered and so only a reading: the band's widest run
+  equals its period 16.
 """
 import sys
 import numpy as np

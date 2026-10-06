@@ -4346,3 +4346,40 @@ What would change the picture: a cycle count that stayed smooth in $n$ would hav
 come from sub-rings; they do not, in the way I had assumed, and the count is dominated instead by whether rotation
 classes are full. Reproduction: `python3 tests/probes/lexicon/rule30_ring_census.py 24` (40 s, 300 MB).
 
+### 8.68 The triangle census of the single cell: the core's triangles are the uniform measure's to three decimals, $3 \cdot 2^{-(L+4)}$ per cell (2026-10-06)
+
+CONSTELLATION.md row 13, the last cheap-run row nobody was on. `rule30_triangle_census.py` (predictions TC0 to TC4
+and CF pushed in `ac4f5c4` before the run) counts the tops of white triangles (§8.18's shrink theorem makes every
+triangle exact and fixes it by its top) in the single cell's light cone to $t = 10^5$, by width $L$ and position
+$x/t$; the vectorised census was checked top by top against a set-based one over sixty rows.
+
+**The core** ($|x/t| \le 0.3$, area $3.0 \times 10^9$ cells): the counts by width are $281{,}011{,}418$;
+$140{,}641{,}871$; $70{,}333{,}586$; $35{,}178{,}509$; $17{,}580{,}624$; \ldots; $137{,}109$ at $L = 12$; \ldots; one
+top of width 29. The ratios $N(L+1)/N(L)$ are $0.500, 0.500, 0.500, 0.499, 0.503, 0.500, 0.496, 0.495, 0.507, 0.485$
+for $L = 3$ to $12$ (TC1 predicted $[0.4, 0.6]$). The exact law was derived after the run and then matched: the
+uniform Bernoulli measure is invariant under Rule 30 (the rule is surjective, being left-permutive), and under it a
+maximal white run $[i, j]$ of length $L$ has probability $2^{-(L+2)}$ (white inside, black at both ends) while the
+run is a *continuation* with probability $2^{-(L+4)}$ (the $L + 2$ cells above white, and the two beyond them black
+so that the run below is exactly $[i, j]$, since $100 \to 1$ and $001 \to 1$). So the density of tops of width $L$
+is $2^{-(L+2)} - 2^{-(L+4)} = 3 \cdot 2^{-(L+4)}$ per cell. Against the core's area that predicts $281{,}250{,}000$;
+$140{,}625{,}000$; $70{,}312{,}500$; $35{,}156{,}250$; $17{,}578{,}125$ for $L = 1$ to $5$: measured within $0.09\%$,
+$0.01\%$, $0.03\%$, $0.06\%$, $0.02\%$; $549{,}316$ at $L = 10$ (measured $547{,}147$); $536$ at $L = 20$ ($505$);
+$1.05$ at $L = 29$ (two tops of 28, one of 29; TC2 held). *At the level of triangle births, the core of the single
+cell is the uniform measure to three decimals through twelve octaves.* This is Problem 2's kind of statement made on
+a two-dimensional object, and the deviation at $L = 1$ ($-0.09\%$ on $2.8 \times 10^8$ counts, far outside Poisson
+noise) is real and small; what it is, is not known.
+
+**The right edge.** The widest triangles of the whole cone sit *on* the edge, $x/t = 1.000$, at the times $m \cdot
+2^k$: width 40 at $t = 65{,}536$, 38 at $32{,}768$ and $98{,}304$, 36 at $16{,}384$, $49{,}152$, $81{,}920$, 35 at
+$8{,}192$ and its odd multiples. They grow like $\log_2 t + 22$, so TC3's "more than twice the core's" was wrong:
+the nested side's triangles are large by position, not by scale, and the core's widest ($29 = \log_2$ of $3 \cdot
+\text{area}/16$) keeps pace with them.
+
+**The left band** ($x/t < -0.6$): tops of width 15 ($21{,}916$) and 16 ($5{,}882$) exist and none wider, against
+TC4's "under 12"; the band's ratios are near $1/2$ to $L = 9$ and structured beyond ($0.61$ at 10, $0.88$ at 15).
+A reading, not pre-registered: the band's widest white run is its period, 16.
+
+Reproduction: `python3 tests/probes/lexicon/rule30_triangle_census.py 100000` (4 minutes). Literature owed: Wolfram
+1984 measured triangle-size distributions for class 3 rules (PRIOR-ART.md); whether the $3 \cdot 2^{-(L+4)}$ law and
+its match on the single cell are there is to be checked before any claim of novelty.
+
