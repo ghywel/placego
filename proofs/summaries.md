@@ -1265,6 +1265,6 @@ Two shared black observations force the next source samples to agree in the righ
 
 **What it says.** Starting from a shared row, a shared white first-step right neighbour forces agreement immediately to its left. Two shared black source observations then shield the next update.
 
-**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 are NOT RUN and independent review is pending; no claim about higher memory orders or survival follows.
+**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 pass672 effective cases, two cylinder controls and an orientation guard; independent review is pending; no claim about higher memory orders or survival follows.
 
 **An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.

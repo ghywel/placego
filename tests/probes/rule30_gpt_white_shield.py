@@ -5,6 +5,8 @@ WH3 unexpected: left-reading00001 with flag at1 violates white implication.
 Counterfactual: orientation does not matter. REFUTED-BY:WH3, if predicted.
 Independent controls: XOR/OR versus literal table; explicit cylinder traces.
 No repetition of Local's three-tick production enumeration.
+OUTCOME 2026-10-06 20:59 BST, after38eda50: WH1-WH3 PASS.
+672 effective cases, two cylinders, left-reading counterfactual refuted.
 """
 from itertools import product
 
