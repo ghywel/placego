@@ -6,13 +6,13 @@ RUN-ON:     cpu (Python 3 and a C compiler; collatz_blocks.c; exact)
 COMMAND:    python3 tests/probes/prizes/collatz_blocks.py [W=26] [JMAX=12]   or   ... collatz_blocks.py scaling
 COST:       under a minute on one core.
 
-Background (section 7.1). For a w-bit number n = 2^(w-1) + r, Terras's affine formula gives, after the w - 1 free
-steps, T^(w-1)(n) = 3^a + T^(w-1)(r), with a the number of odd steps. Call it y. Its low j bits fix the next j
-parities (Terras again). So "past the free bits the count follows the coin" is exactly the statement that y mod 2^j
-is close to uniform over the numbers still above their start: an equidistribution question about explicit
-integers, open to exponential sums (Tao's method, 2019, used the 3-adic analogue for "almost all" orbits). Rule
-30's right part has no such formula. The random baselines for M samples in K = 2^j bins: total-variation distance
-about sqrt(K / (2 pi M)); the largest odd Fourier coefficient about sqrt(ln K / M).
+Background (COLLATZ-PRIZE.md section 1). For a w-bit number n = 2^(w-1) + r, Terras's affine formula gives, after
+the w - 1 free steps, T^(w-1)(n) = 3^a + T^(w-1)(r), with a the number of odd steps. Call it y. Its low j bits fix
+the next j parities (Terras again). So "past the free bits the count follows the coin" is exactly the statement that
+y mod 2^j is close to uniform over the numbers still above their start: an equidistribution question about explicit
+integers, open to exponential sums (Tao's method, 2019, used the 3-adic analogue for "almost all" orbits). Rule 30's
+right part has no such formula. The random baselines for M samples in K = 2^j bins: total-variation distance about
+sqrt(K / (2 pi M)); the largest odd Fourier coefficient about sqrt(ln K / M).
 
 PREDICTIONS, written 2026-10-05 before this script's first run:
   CB0 (control, must hold): the affine formula holds for every n, at w = 20, 22, 24 and W.

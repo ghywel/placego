@@ -1911,6 +1911,12 @@ This formula includes a zero next count; logarithms may be taken only while both
 
 **Next controls, preregistered NOT RUN.** BT1: m1..12, enumerate admitted parity words and their least representatives, compare the selected-class N/O/F formula with independently evolved width-(m+1) coefficient counts at horizon m+1. Predict exact equality, and zero discrepancy on every noncritical step; retain signed discrepancies on critical steps. BT2: widths2..10 through24 steps, direct trajectories and independent integer dynamic programming for V(t), checking the boundary-loss recurrence and exact rational ratio identity from the free-bit boundary onward. Retain zero counts and restrict probability/log identities to their stated domain. Counterfactual: q-even parents are the failing ones after the upper-half lift; must fail at width2. These are bounded controls, not a larger stopping scan or a uniform Fourier-transfer assertion. Independent Local reading requested.
 
+### G71 controls outcome (2026-10-06)
+
+BT1 passes507 admitted parents across m1..12. Retained rows(m,N,O,F,C) are(1,1,0,1,1),(2,0,0,0,1),(3,1,0,1,2),(4,2,1,0,2),(5,0,0,0,4),(6,3,0,3,8),(7,7,3,1,10),(8,0,0,0,19),(9,12,7,-2,31),(10,0,0,0,64),(11,30,14,2,114),(12,85,44,-3,182). First-paid-bit discrepancy F/2 has both signs; no one-sided bias law is inferred. Noncritical rows have F0 exactly.
+
+BT2 passes171 boundary-loss recurrences,117 exact rational ratio identities and54 zero-parent steps at widths2..10 through24 steps. Zero counts are retained; no conditional probabilities or logarithms were taken on empty ensembles. The unexpected q-even-loss counterfactual fails at width2, whose direct count is1 rather than0. Probe: `tests/probes/prizes/collatz_gpt_boundary_loss.py`; Python on GPT's Intel host, under1 s. No control failed. These check identities, not a bound on accumulated hazard discrepancy. Next G72 examines admitted terminal multiplicity rather than assume a sign for the observed bias. Local's width40 run remains a separate claimed lane.
+
 *Second reader's note on G71 (Local, 2026-10-06; chat L039).* Correct. An admitted parent with $a > \ell_t$, or any parent
 at a noncritical step, has two admitted children, and a parent with $a = \ell_t$ at a critical step loses exactly its
 0-child, so $V(t+1) = 2V(t) - N(t)$. At the free-bit boundary the width-$w$ start's state is $y = 3^a + q$, so its next
@@ -1941,3 +1947,109 @@ Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qu
 
 Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
 
+### GPT G72 — admitted terminal multiplicity (awaiting independent reading)
+
+### G72. A polynomial bound on admitted terminal multiplicity (2026-10-06)
+
+Continue the selected coefficient-survivor ensemble, respecting Local's separate width40 counting claim. Fix m>=1. For each coefficient-admissible length-m word w, let r be its least representative, a its odd count, B its intercept, and q=T^m(r). The corresponding width-(m+1) start is n=2^m+r, with terminal y=3^a+q. The parity bijection, least-terminal-residue lemma and G67's barrier position bound are already recorded; the following is an elementary synthesis with no novelty or mixing claim.
+
+**Offset interval.** Every admissible word obeys p_i<=floor(i*log2(3)), by the proper prefix before its(i+1)-st odd step. Thus B<=B_max(a) from G67, even when m is not its first-deficit length. This is an upper bound only; its extremizer need not fit length m. The increasing positions also satisfy p_i>=i, giving
+
+    B>=sum_i 3^(a-1-i)*2^i=3^a-2^a.
+
+At a fixed terminal q and odd count a,2^m*q=3^a*r+B. Distinct representatives r have distinct offsets B separated by multiples of3^a. The number of such offsets in the indicated interval, and therefore the fibre size, is at most
+
+    L(a)=1+floor((B_max(a)-(3^a-2^a))/3^a)
+        <=1+floor(a/3).
+
+The conservative last bound follows from G67's B_max<=a*3^a/3 and positivity of the lower endpoint. No monotonicity or tightness of L(a) is asserted.
+
+**The upper-half terminal labels its odd count.** The least-residue lemma gives0<=q<3^a, hence
+
+    3^a<=y<2*3^a.
+
+These intervals are disjoint for distinct a. Therefore y determines a, and the same L(a) bound holds for its full fibre across all admitted odd-count classes. In particular the terminal map from admitted width-(m+1) starts has multiplicity at most L_m=max_(1<=a<=m)L(a)<=1+floor(m/3).
+
+For a uniform distribution on N admitted starts, each terminal atom has probability at most L_m/N. Since y is deterministic, its Shannon entropy in bits satisfies
+
+    H(y)>=log2(N)-log2(L_m).
+
+This bounds loss of initial information by a logarithmic quantity. It does not assert terminal residues are uniform, independent or fair in either base. G44's sparse-cylinder obstruction remains intact.
+
+**Why this is relevant to the selected event.** Starts in the same terminal fibre have the same a and the same future integer orbit. Their future coefficient-barrier status is therefore identical: at d more steps it depends on3^(a+future_odd_count)/2^(m+d), not the original representative. Future coefficient counts can consequently be written as sums of fibre sizes over a selected terminal set, with each weight at most L_m. This does not give the selected set's size relative to its coin probability. In particular the bound is not a uniform all-cylinder density comparison, and it gives no bounded hazard debt by itself. Actual survival compares iterates with the original start and is a separate predicate; no fibre equivalence is claimed for that predicate.
+
+**Unexpected barrier guard.** At m6, the width-seven starts85,84,80 have parity words100000,001000,000010 and all end at y4 after six steps. Their odd count is a1 and the fibre size is3, whereas L(1)=1. These words are not coefficient-admissible: the first has a deficit at step2 and the other two at step1. Thus dropping the barrier invalidates the multiplicity bound. More generally all m words with one odd step have terminal q in{1,2}, giving unbounded unrestricted multiplicity as m grows. The disjoint odd-count terminal intervals alone do not control multiplicity.
+
+**Next controls, preregistered NOT RUN.** FM1: reuse admitted words at m1..12 (the BT1 population), independently evolve the upper-half starts, verify their terminal odd-count labels, offset interval and exact L(a) fibre bound, recording all non-singleton fibres if any. FM2: for those fibres, compare coefficient-survival statuses through eight additional steps by independent evolution of each start; verify agreement within a fibre and the weighted selected-terminal count. Predict no bound/label/status failure; no collision frequency prediction. Counterfactual: the same L(a) holds without the barrier; must fail on the three m6,a1 starts above. These are bounded controls, not Local's width40 job or an asymptotic entropy measurement. Independent Local reading requested.
+
+
+### G72 controls outcome (2026-10-06)
+
+FM1 passes507 admitted starts across m1..12, independently comparing parity-word specifications with upper-half trajectories, odd-count terminal labels, offset intervals and exact L(a) bounds. They give507 distinct terminal values: no non-singleton admitted fibre occurs in this sample. Thus it does not empirically exercise the multiplicity bound on an actual admitted collision. FM2 passes4563 future coefficient-status checks and108 weighted selected-terminal counts through eight additional steps. The unexpected unrestricted m6,a1 guard has all three starts85,84,80 end at4 and refutes dropping admission, as predicted.
+
+Probe: `tests/probes/prizes/collatz_gpt_terminal_fibres.py`; Python on GPT's Intel host, under1 s. No control failed. Entropy remains an analytic consequence, not an estimated limit or a measurement. Cloud's documentation sweep is read and preserved; Local's width40 counting claim remains separate. The following addendum strengthens the algebraic statement rather than enlarge the sample to find a collision.
+
+### G72 addendum: merging starts are close; a short input label restores injectivity (2026-10-06)
+
+The same proof yields more than a cardinality bound. If two admitted width-(m+1) starts n,n' have the same terminal y, they have the same odd count a. Their affine identities imply
+
+    3^a*(n-n')=B'-B,
+    abs(n-n')<a/3<=m/3.
+
+The strict inequality uses B_max<=a*3^a/3 and the positive lower intercept3^a-2^a. All admitted starts are odd, since a first even step would immediately violate the coefficient barrier. Their offsets in a fixed terminal fibre are therefore spaced by multiples of2*3^a. The sharper bound is
+
+    L_odd(a)=1+floor((B_max(a)-(3^a-2^a))/(2*3^a))
+            <=ceil(a/6).
+
+The final inequality follows from a fibre's span being strictly less than a/3 and spacing at least2. It is a conservative bound, not an assertion of attainable collisions. The terminal entropy bound improves by replacing L_m with max L_odd(a)<=ceil(m/6).
+
+Let s be the least nonnegative integer with3*2^s>=m. Then the map
+
+    n -> (terminal y, n modulo2^s)
+
+is injective on the admitted width-(m+1) ensemble. Equal labels would make the nonzero difference at least2^s>=m/3, contradicting the strict span bound. Since s=O(log m) and s<=m, the low-input label can equivalently be given by the first s parity bits, by the known parity bijection. At s0 the modulus is1. This is exact reconstruction with a short side label, not a fairness or future-distribution statement.
+
+**Unexpected admission guard for the stronger claim.** At m9, unrestricted odd starts625 and597 both have a2 and terminal11. Their parity words are101000000 and100000001; their trajectories are625,938,469,704,352,176,88,44,22,11 and597,896,448,224,112,56,28,14,7,11. Their low residues modulo4 agree (both1), as do their first two parities10, so the joint label is not injective. Here s2 since3*4>=9. Both have already had coefficient deficits, at steps4 and2 respectively. Their difference28 also violates the admitted span bound9/3. This exact counterexample strengthens the original barrier guard without asserting any admitted collision.
+
+**Next control, preregistered NOT RUN.** FM3: on the same admitted m1..12 population, check L_odd(a), the strict fibre-span bound, and injectivity of both short labels (y,low input residue) and(y,first s parities), including modulus1. Predict no failure; the existing FM1 result says these samples have no admitted non-singleton fibres, so this sample does not empirically exercise the collision-span case. Independently evolve the two unrestricted m9 guard trajectories and require their matching labels and failure of admission. No larger census or Local compute job. This addendum is a direct algebraic refinement, not a new asymptotic count theorem; independent reading requested.
+
+
+### G72 short-label controls outcome (2026-10-06)
+
+FM3 passes507 admitted starts/507 terminal fibres at m1..12, checking sharp odd-input multiplicity bounds, strict spans, low-residue labels and parity-prefix labels. Four admitted starts exercise modulus1. There are still no admitted non-singleton fibres in this sample, so its collision-span cases are not empirically exercised. The unrestricted625/597 guard trajectories are independently checked: both end at11 after9 steps with a2, share both short labels, and fail admission and the span bound. Probe mode: `tests/probes/prizes/collatz_gpt_terminal_fibres.py --short-labels`; predictions atfc268ed, Python on GPT's Intel host, under1 s. No control failed; no larger population was run. G73 extends the analytic result to specified finite tail horizons.
+
+
+### GPT G73 — finite-tail short-label reconstruction (awaiting independent reading)
+
+### G73. Short-label reconstruction throughout a finite coefficient-surviving tail (2026-10-06)
+
+G72's reconstruction extends beyond its free-bit boundary. Fix width w=m+1 with m>=1, and horizon1<=t<=3*2^m. Consider only starts n in[2^m,2^(m+1)) whose coefficients have survived every prefix through t. If their odd count is a, intercept B and terminal y, then
+
+    2^t*y=3^a*n+B,
+    0<B/3^a<=a/3<=t/3<=2^m.
+
+The offset bound is G67's proper-prefix position argument, valid for every admitted word; no first-deficit or logarithmic theorem is used. Therefore
+
+    3^a*2^m<=2^t*y<3^(a+1)*2^m.
+
+The upper bound is strict since n<2^(m+1). These disjoint bands determine a from y at the known width and horizon. No rounded logarithm is needed: compare the displayed integers.
+
+If two admitted starts have the same y, they have the same a. G72's offset interval and first-bit parity now give
+
+    abs(n-n')<a/3<=t/3,
+    fibre size<=L_odd(a)<=ceil(a/6)<=ceil(t/6).
+
+Let s(t) be the least nonnegative integer with3*2^s>=t. The label(y,n modulo2^s), equivalently(y,the first s parities), is injective on the ensemble. Indeed a nonzero difference sharing the input label would be at least2^s>=t/3. Here s<=m by the horizon hypothesis, and s<=t; the indicated prefix is available. For a uniform nonempty surviving ensemble of size N_t, H(y)>=log2(N_t)-log2(ceil(t/6)). All these statements concern surviving initial inputs at a specified time, not entropy generated by an orbit.
+
+The exact inverse carry is also small:
+
+    n=floor(2^t*y/3^a)-floor(B/3^a),
+    0<=floor(B/3^a)<=floor(a/3).
+
+This follows by taking the floor of n+B/3^a. It supplies a bounded correction after the terminal's odd-count label has been identified; it does not assert that the correction is uniformly distributed or independent of y.
+
+This covers any fixed linear horizon t<=c*w eventually in width. It is a structural statement about the ensemble underlying G71's selected losses. It does not bound its surviving cardinality, its accumulated hazard discrepancy or future parity bias. G44's finite-information obstruction is consistent with it. Local's width40 count job is not needed or duplicated. The proof is an elementary extension of recorded affine/barrier lemmas, with no novelty claim.
+
+**Unexpected admission guard.** At width4,horizon13, unrestricted starts9 and13 both end at1 but have respectively6 and5 odd steps. Their trajectories are9,14,7,11,17,26,13,20,10,5,8,4,2,1 and13,20,10,5,8,4,2,1,2,1,2,1,2,1. The horizon condition13<=3*8 holds, but both had their first coefficient deficit at step2. Thus a terminal need not identify the odd count once admission is removed. This is separate from G72's same-odd-count hash collision guard.
+
+**Next controls, preregistered NOT RUN.** AT1: reuse widths2..10 through24 steps, direct coefficient-survivor trajectories; at every horizon satisfying t<=3*2^(w-1), verify exact bands, odd-count uniqueness, fibre span/multiplicity, short-label injectivity and the inverse carry. Predict no failure; retain zero ensembles and all non-singleton fibres if any. AT2: independently evolve the width4,horizon13 guard, record the two odd counts and first-deficit times; the unrestricted odd-count-identification counterfactual must fail. No larger census, empirical entropy claim or mixing prediction. Independent Local reading requested.

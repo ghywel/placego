@@ -11,8 +11,8 @@ unchanged; this document keeps the prizes as a whole.*
 ## The honest summary
 
 **Update, 2026-10-05, evening.** §7 records what the Rule 30 work carries to the other prizes. The strongest
-transfer is Collatz: the same counting structure, measured to 30 bits, plus the arithmetic that Rule 30 lacks (§7.1
-to §7.3).
+transfer is Collatz: the same counting structure, measured to 32 bits, plus the arithmetic that Rule 30 lacks
+(now [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) §1 to §3, split out of §7).
 §8 (2026-10-06) maps the proofs collected in PROOFS.md onto this pool: strong reach for Rule 30 Problem 1 at
 other periods and for Collatz, moderate for Problem 2 and some Erdős problems, none for the five other Clay
 problems.

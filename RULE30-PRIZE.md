@@ -3825,7 +3825,7 @@ failed on that wording). W2, a cross-check against `rule30_rigidity.py`'s 14-fre
 |---|---|---|---|---|---|---|---|---|
 | $R_{00001}(d)$ | 35 | 45 | 50 | 85 | 85 | 105 | 115 | 130 |
 
-No run reaches the cap at any depth (W3 held: LR holds to 36 free bits for these words). The growth is linear and not faster (W4 held), and well below the coin's slope (W5 refuted): a least-squares line from depth 24 has slope 2.11 for 0001 against the coin's 3, and from depth 25 slope 2.40 for 00001 against the coin's 4; for 0101 the measured law is 0.83 against 1. The record takes a smaller share of the coin's run the freer the column is: 0.83, 0.70, 0.60. The histograms printed by the engine (`rule30_records_word.txt`) show the bulk to be very nearly a coin, and not exactly one: from depth 45 with 00001, of the $2^{36}$ prefixes 34,359,738,788 end at the first forced cell (run 0), 420 more than half; 17,175,829,450 at the next (run 5), 4,039,734 fewer than a quarter; and so on down to the 314 that reach 130. I first wrote "exactly, to the last digit" here and in the chat; GPT read the file and corrected it (CHAT-LEDGER.md C008, RULE30-GPT.md §G3.5), with its own control: for 0101 from depth 21 the first forced cell leaves 512 of 1,024 and the second 268 of the 512. A forced cell is not a balanced function of the earlier free bits, and conditioning on earlier survival does not preserve balance; left-permutivity gives no such theorem. The record is the tail of a nearly fair coin, and the tail is shorter than independent fair coins would give (the merging of §8.38), more so the more free bits there are. $R < 4d$ and $R < 5d$ held throughout (W6).
+No run reaches the cap at any depth (W3 held: LR holds to 36 free bits for these words). The growth is linear and not faster (W4 held), and well below the coin's slope (W5 refuted): a least-squares line from depth 24 has slope 2.11 for 0001 against the coin's 3, and from depth 25 slope 2.40 for 00001 against the coin's 4; for 0101 the measured law is 0.83 against 1. The record takes a smaller share of the coin's run the freer the column is: 0.83, 0.70, 0.60. The histograms printed by the engine (`rule30_records_word.txt`) show the bulk to be very nearly a coin, and not exactly one: from depth 45 with 00001, of the $2^{36}$ prefixes 34,359,738,788 end at the first forced cell (run 0), 420 more than half; 17,175,829,450 at the next (run 5), 4,039,734 fewer than a quarter; and so on down to the 314 that reach 130. I first wrote "exactly, to the last digit" here and in the chat; GPT read the file and corrected it (CHAT-LEDGER.1.md C008, RULE30-GPT.md §G3.5), with its own control: for 0101 from depth 21 the first forced cell leaves 512 of 1,024 and the second 268 of the 512. A forced cell is not a balanced function of the earlier free bits, and conditioning on earlier survival does not preserve balance; left-permutivity gives no such theorem. The record is the tail of a nearly fair coin, and the tail is shorter than independent fair coins would give (the merging of §8.38), more so the more free bits there are. $R < 4d$ and $R < 5d$ held throughout (W6).
 
 **3. Do branch points go on for ever? (§8.31.)** Lemma B2 (§8.59) says the eventually white diagonals never stop,
 and each is a doubling or a branch; its proof also gives an explicit if weak bound: while the period is $P$, the
@@ -3841,7 +3841,7 @@ and had 190,000 steps to spare. What the run adds: the gaps between eventually w
 52,808, 5,079, 29,580, and then more than 912,000, follow no pattern seen; whether the branches among them go on
 for ever stays open, and the next white diagonal lies beyond a million.
 
-**Addendum, the four left sides (GPT's ask in CHAT-LEDGER.md C004; `rule30_leftside_million.py sides`, predictions L0
+**Addendum, the four left sides (GPT's ask in CHAT-LEDGER.1.md C004; `rule30_leftside_million.py sides`, predictions L0
 to L4 written first).** The four left sides that §8.31 realised, each run to a million diagonals from a settled
 strip with the split diagonal flipped (a settled strip is itself a finite row): all four certify with period 32 at
 a million (L1 held), and their worst-phase settling slopes are 2.0057, 2.0023, 2.0052 and 2.0076 (L4 held, within
@@ -3890,7 +3890,7 @@ bounded-debt form of question 1, $N(T + k) \le 2^{c - \alpha k} N(T)$, written a
 
 **So question 3 waits on question 1.** The only potentials anyone here has named are counting ones, and a counting
 potential is question 1. That is a statement about the candidates in hand, not an impossibility: GPT's audit
-(RULE30-GPT.md §G5, CHAT-LEDGER.md C012) rightly objects that a fixed matrix can carry a potential linear in an
+(RULE30-GPT.md §G5, CHAT-LEDGER.1.md C012) rightly objects that a fixed matrix can carry a potential linear in an
 unbounded string (the unary counter), that a ranking need not be a population-decay curve ($2^d$ countdown paths
 of length $2d$ have a linear ranking and a flat survivor count), and that "walks of length $0.83\,d$ from every
 depth" is measured to depth 89, not proved. The first version of this section claimed an equivalence and an
@@ -3960,7 +3960,7 @@ missing statement (§5) with different numbers, twice.
 **Where else one could have started.** Three places, by this reading.
 1. *The Condrey end.* Extend his monotonicity (next to a constant wall, column 1 can only turn black once) to
    the one-hole walls, one free bit per period, and see what survives. This is the job given to GPT on the
-   morning of 2026-10-06 (CHAT-LEDGER.md C018); the measurement that goes beside it is below.
+   morning of 2026-10-06 (CHAT-LEDGER.1.md C018); the measurement that goes beside it is below.
 2. *The single cell's own pattern.* The prize is about one configuration, which has structure no general finite
    seed has (the universal left side, §8.30 and §8.31; the nested right side; the core between). A proof that its
    centre column has unbounded zero runs, or unbounded factor complexity, would settle the prize without any
@@ -3993,9 +3993,9 @@ zero the left half is not the fibre (the wall has white cells); a single hole fl
 whole leftward cone, chaotically; and the map from holes to the row is not linear (38% to 47% of cells disagree
 with the XOR of single-hole effects). There are no rays. What survives of Condrey's monotonicity has to survive
 chaos in the left half; the one strong constraint the holes leave is that column $-1$ is pinned at $p - 1$ of every
-$p$ times (CHAT-LEDGER.md C021).
+$p$ times (CHAT-LEDGER.1.md C021).
 
-**The two Condrey ends (after GPT's reading of his proof, RULE30-GPT.md §G11, CHAT-LEDGER.md C020).** Condrey's
+**The two Condrey ends (after GPT's reading of his proof, RULE30-GPT.md §G11, CHAT-LEDGER.1.md C020).** Condrey's
 period-1 theorem has two mechanisms, one per constant wall. Next to the white wall $0^\infty$ the latch: when
 $x_t(0) = 0$, $x_{t+1}(1) = x_t(1) \lor x_t(2) \ge x_t(1)$, so column 1 can only turn black, once. Next to the black wall
 $1^\infty$ the fixed checkerboard, with no latch. So the freedom scale has a Condrey end at each end, and they are
@@ -4081,7 +4081,7 @@ walls are a genuinely different problem. **Measured** (8 threads, 7 minutes; SW0
 0.792 for $a = 2, 4, 8, 16$, against 0.83 for 0101 and the coin's 1. SW2, which predicted a fall to below 0.60 at
 $a = 16$, is **refuted**; SW3 held with room to spare (the longest run at $a = 16$ is 38). So no fall of the predicted
 size was seen: in this run the checkerboard stretches did not cost the free column 1 what I expected. That is what
-the data say and no more (GPT's qualification, CHAT-LEDGER.md C033, is right: four ratios at one depth do not fix
+the data say and no more (GPT's qualification, CHAT-LEDGER.1.md C033, is right: four ratios at one depth do not fix
 an asymptotic slope, and a switch-density effect stays unresolved; my first wording, "freedom is the whole story",
 overstated it). What the slow walls change for certain is the B side: the budget of a *real* right half, which the
 latch cuts to one integer per white stretch, and which GPT's §G15 makes exact for the width-one relaxation: a rate
@@ -4157,7 +4157,7 @@ the wall-form instruments can be tried as they stand (its OR becomes an AND-NOT 
 single-cell band did not certify within period 1,024 at 8,192 diagonals. Rules 110 and 118, which share the odometer,
 are not permutive in either direction, so they have no forced left half and the comparison stops at the band.
 
-**The chaos item (GPT's seed, CHAT-LEDGER.md C045): the background is part of the object.** Colour-complement
+**The chaos item (GPT's seed, CHAT-LEDGER.1.md C045): the background is part of the object.** Colour-complement
 conjugacy, $f'(n) = \lnot f(\lnot n)$, maps a rule on a white background with a black defect to its conjugate on a black
 background with a white defect. Checked: the physical strip of Rule 135 (a white defect in black, the black tail kept
 black) is the complement of Rule 30's strip at every one of 300 steps. The six artefacts of the first run have
@@ -4200,7 +4200,7 @@ cells, Theorems A to E and the band lemmas were all derived for Rule 30's OR. Th
 two measured senses: the white-diagonal clock in its band, and LR. CONSTELLATION.md row 14 is updated.
 
 **Addendum, the same hour: Jen does not rescue B for Rule 210, and the empty-left-half column is a doubling-runs
-sequence.** The hope of CHAT-LEDGER.md C053 was that every zero-keeping column 1 of Rule 210 might be eventually
+sequence.** The hope of CHAT-LEDGER.1.md C053 was that every zero-keeping column 1 of Rule 210 might be eventually
 periodic, so that Jen's theorem would give B. `rule210_streams.py` (predictions ZS0 to ZS2 and CF written first) followed
 every zero-keeping stream from depths 1, 8, 16 and 24, all 4,369 of them, for 4,000 depths: **none shows a period up
 to 64 over its last 2,000 visible bits** (ZS1 and ZS2 refuted outright; a finite test, as GPT's C057 notes, but the

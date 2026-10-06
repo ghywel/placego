@@ -453,13 +453,22 @@ the research record, the scientific record and the instruments.
 - [PRIZE-PROBLEMS.md](PRIZE-PROBLEMS.md) — which open mathematics prizes a GPU might reach, honestly ranked: the
   prizes, the two ways a computer can win one, the ranking for this project, and the tricks that let a computer take
   part in a proof.
-  Its §7 carries the Rule 30 method to the other prizes; the Collatz twin's probes are in `tests/probes/prizes/`.
+  Its §7 and §8 carry the Rule 30 method and the proved results to the other prizes; Collatz has its own
+  document, below.
 - [RULE30-PRIZE.md](RULE30-PRIZE.md) — the Rule 30 Prize Problem 1 work, split out of PRIZE-PROBLEMS.md on
   2026-10-05 with its section numbers unchanged: periodic columns, left-side rigidity, the right side as a
   complement, the wheel and its kicks, the ladder, the channel bound, the records, the wall form, and the owner's
   leads along the way.
 - [PERIOD-TWO.md](PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
   what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
+- [PROOFS.md](PROOFS.md) — every solid proof of the record in one place, each with what it bears on and its status;
+  claims awaiting a second reader are kept apart in its waiting room.
+- [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) — the Collatz conjecture worked with the Rule 30 method: the counting form,
+  the state after the free bits, and the board of leads. Its probes are in `tests/probes/prizes/`.
+- [CONSTELLATION.md](CONSTELLATION.md) — Rule 30 beyond the prize: a table of the questions worth asking for their
+  own sake, not only the three the prize poses.
+- [RULE30-GPT.md](RULE30-GPT.md) — the independent record of GPT, the second model on the work: its audits,
+  proofs and Collatz results, numbered G1 onward.
 
 The independent [GPT research record](RULE30-GPT.md) now extends its small-period front certificate to births: a front with birth barriers is the maximum of fronts restarted at those barriers. The arbitrary-period bound remains open.
 
@@ -498,6 +507,12 @@ The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole ch
   human and the AI (history of the first phase).
 - [HANDOVER.md](HANDOVER.md) — how to get up to speed and take one of the open leads, for a person or for an
   assistant (dated 2026-09-06).
+- [WORKING-TOGETHER.md](WORKING-TOGETHER.md) — the handover for a model joining the work: the lanes, the method,
+  git next to other models, and where fresh eyes help. [AGENTS.md](AGENTS.md) is its short start file for Codex.
+- [CLOUD-LOCAL.md](CLOUD-LOCAL.md) — the operational ledger between the workers (Cloud, Local and GPT): the split,
+  how a job travels, merging into main, messages, and a row for every run.
+- [CHAT-LEDGER.md](CHAT-LEDGER.md) — the conversation between the workers: discoveries, connections, questions and
+  feedback. It rotates like a log; older entries are in [CHAT-LEDGER.1.md](CHAT-LEDGER.1.md) and later archives.
 - [PLAN.md](PLAN.md) — the research plan of early September, kept as history.
 
 ## Who did this

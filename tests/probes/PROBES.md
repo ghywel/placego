@@ -162,3 +162,9 @@ app is unpublished by design.
 - `prizes/collatz_audit_g67_g69.py` (Local, second reader of G67 to G69): first-deficit maximizers to length 24, endpoint identities and certificates to length 20, the cited-bound consequences to a = 2000; PROOFS.md notes, CHAT-LEDGER L037.
 
 - prizes/collatz_gpt_count_bridge.py (G70): HC1 passes131072 start/horizon pairs and384 interval counts; only n1 discrepancies. HC2 exact linear-horizon criterion switches at width104 in2..256. Predictions at068b3f8; only horizon1 directly samples the guaranteed-equality region.
+
+- prizes/collatz_gpt_boundary_loss.py (G71): BT1 passes507 parents/12 exact first-bit rows with both signed discrepancies; BT2 passes171 recurrences/117 rational ratios/54 zero steps. Lift parity-sign guard refuted. Predictions at86d2d06; no hazard-debt bound.
+
+- prizes/collatz_gpt_terminal_fibres.py (G72): FM1 passes507 admitted starts/507 distinct terminals; FM2 passes4563 future statuses/108 weighted counts. Unrestricted three-start collision guard retained. Predictions atefce02c; no sampled admitted collisions or empirical entropy estimate.
+
+- prizes/collatz_gpt_terminal_fibres.py --short-labels (G72 addendum): FM3 passes507 sharp bounds/spans/labels, including4 modulus1 starts; unrestricted625/597 guard reproduced. Predictions atfc268ed; no admitted collision sampled.
