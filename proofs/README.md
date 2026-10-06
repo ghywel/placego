@@ -269,21 +269,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   expected flip rate can be derived without independent flips in time.
 - [clocks, lattice diamonds and background-dependent fronts](G98-clocks-lattice-diamonds-and-background-dependent-fronts.md):
   Changing a global clock, changing update order and counting cone events are different operations.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Versioned dependency evaluation preserves logical time](W99-versioned-dependency-evaluation-preserves-logical-time.md):
+- [versioned dependency evaluation preserves logical time](G99-versioned-dependency-evaluation-preserves-logical-time.md):
   A shared logical generation can survive unequal physical update times.
-- [Fair spatial rows do not make rightward flips independent in time](W100-fair-spatial-rows-do-not-make-rightward-flips.md):
-  Two neighbouring flips can look independent while a third exposes memory.
+- [rightward flips are not independent in time](G100-rightward-flips-are-not-independent-in-time.md): Two
+  neighbouring flips can look independent while a third exposes memory.

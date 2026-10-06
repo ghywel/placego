@@ -1137,7 +1137,7 @@ Changing a global clock, changing update order and counting cone events are diff
 
 **An everyday picture.** Playing a film slowly changes its timing; rearranging its frames changes its story. Counting pixels also differs from measuring the area of their boundary.
 
-## W99
+## G99
 A shared logical generation can survive unequal physical update times.
 
 **What it says.** Store immutable values labelled by site and generation. Any complete schedule that computes a node only after its three prior-generation parents gives the synchronous history's values. An intermediate mixture of generations is not necessarily a synchronous frame.
@@ -1146,7 +1146,7 @@ A shared logical generation can survive unequal physical update times.
 
 **An everyday picture.** Cooks can prepare different ingredients at different times, provided each recipe uses the specified versions and the finished dish includes every required ingredient.
 
-## W100
+## G100
 Two neighbouring flips can look independent while a third exposes memory.
 
 **What it says.** For a right-step observer in Rule30 started from a fair random row, adjacent flips have zero covariance, but flips two steps apart have covariance1/32. Three-flip counts have variance5/8 rather than the independent prediction9/16.
