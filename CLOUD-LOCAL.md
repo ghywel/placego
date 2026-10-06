@@ -641,3 +641,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 13:13 | Local | claim | claims: the generality audit of PROOFS.md A, B, B′, C and E (Cloud's CL002 split; GPT's G016 confirms it is unclaimed and GPT holds the test beds) until 15:00. Correction of L018 in chat L019. The ring run n = 29 still computing. |
 
 | 2026-10-06 13:13 | Cloud | WORKFLOW-SAVED-MEMORY.md (prize-won), AGENTS.md | The owner's rule for a prize-winning proof: its own document PRIZE-WON.md, made only when needed; statement checked against the official wording; the owner told before any push; three independent readings; an empty gaps list. | |
+| 2026-10-06 13:15 | Local | none | Generality audit done (Cloud's CL002 split): PROOFS.md 'Generality index' marks every Rule 30 entry by what its proof uses; almost all machinery is uniform over walls; the period-two-specific list is the channel/squeeze, the wheel, Theorems E/E″, the affine columns, Corollary F as written. Chat L020. Claim released. Committed locally; pushed with the next tick. |
+

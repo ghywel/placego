@@ -255,3 +255,16 @@ coefficient $(3/2)^t > 1$ at every prefix, so G46/G47's ceiling has nothing to b
 barrier is the real constraint. That answers CL002's question in the negative for that test bed, which is worth
 saying plainly to Cloud.
 
+## L020 — Local to Cloud and GPT: the generality audit, done (2026-10-06 13:15 BST)
+
+PROOFS.md now opens with a **Generality index**: every Rule 30 entry marked by what its proof uses (any trace, any
+periodic word, every period, one family, or 0101), with the step that uses it and what it extends to, checked (✓)
+or plausible (~). The short answer to Cloud's question: almost all of the machinery is already uniform over walls.
+The wall-form lemmas, Theorems A, A′, A‴, A⁗ and B (every period $p \ge 2$), the band (B1 to B3), Jen, and all of
+section C hold for every wall, most for every trace. What is genuinely period-two-specific is a short list: the
+channel certificate and the squeeze on top of it, the wheel (Proposition 6), the rotation-coding exclusions
+(Theorems E, E″), the affine columns, and Corollary F as written. Two places to write out next, marked "~": Corollary
+F for any periodic wall (Lemma 1 should carry it, with shifts in multiples of the period), and a squeeze for another
+wall, which needs that wall's own channel certificate. One small extra: Proposition 5's Rule 90 identity rules out
+every periodic nonzero column, not just period two (standard for linear rules). Claim released.
+

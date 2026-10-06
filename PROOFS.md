@@ -12,6 +12,51 @@ that names what was wrong. Claims that still want a second reader are kept apart
 about Conjecture LR and Conjecture B (PERIOD-TWO.md §5, §7); B′ is the siblings, Jen and the squeeze; C is the exact
 statements about the single cell proved in the last two days; E is GPT's; F is Collatz; G is the waiting room.*
 
+## Generality index (Local's audit, 2026-10-06; Cloud's CL002 split)
+
+What each Rule 30 entry's proof actually uses about the wall. "Any trace" means any column 0 at all, periodic or
+not; "any periodic word" means any word of any period; "0101" means the period-two wall only. "Extends to" says what
+the same proof gives with no new idea, and whether that was checked (✓ written out here or in the entry; ~ plausible,
+not written out). Rule 210, Rule 90 and the Collatz entries are marked by their own scope.
+
+| Entry | As stated | What the proof uses | Extends to |
+|---|---|---|---|
+| A1 Lemma 1 (invisibility) | any trace | the inverse rule at column $-1$ only | any trace ✓ |
+| A2 Lemma 2 (rotations) | any exactly periodic word | one time step shifts the word | any periodic word ✓ |
+| A3 Lemma 3 (two right-side rules) | any trace | Rule 30 at column 1 | the two rules: any trace ✓; "no two visible ones in a row" is 0101's |
+| A4 Lemma 4 (newest bit as XOR) | any trace | unwinding the inverse rule | any trace ✓ |
+| B5 Theorem A (window and edge) | any configuration, any column pair, any period $P$ | the edge's speed and periodicity moving left | general ✓ |
+| B6 Theorem B (zero runs) | columns 0 and 1 periodic, $P \ge 2$, column 0 not zero | $P \ge 2$ places depth $d + P - 2$ inside the run | every period $p \ge 2$, any periodic pair ✓ |
+| B7 Theorem A′ | any configuration | as Theorem A | general ✓ |
+| B8 Lemma B1, B9 Lemma B2 | the diagonals of any left-bounded row | the diagonal recurrence | general (the band is wall-independent) ✓ |
+| B10 Theorem A‴, B12 Lemma B3, B13 Theorem A⁗ | any configuration with a settled band | the window and the band | general ✓ |
+| B11 Corollary F (near-squares) | 0101 | the pair $(-1, 0)$ repeats at shifts $2(i' - i)$ because column $-1$ is constant at odd times | 0101 as proved; any periodic wall with shifts in multiples of the period, via Lemma 1 ~ |
+| B14 Theorem E, B15 Theorem E″ | 0101, visible bits a rotation coding | the wall's visible times are the even times | 0101 only as audited |
+| B′16 Proposition 5 | Rule 90, period two | $x_{2^n + s}(0) = x_s(-2^n) \oplus x_s(2^n)$ | Rule 90 with any periodic nonzero column 0: the identity gives long white stretches ✓ (standard for linear rules) |
+| B′17 Proposition 7 (Jen) | column 0 eventually periodic and not eventually zero; column 1 eventually periodic | Jen's mechanism | general for Rule 30 ✓ |
+| B′18 the parity invariant | Rule 210, 0101 | the parity of the wall's black times | one-parity walls: in the waiting room |
+| B′19 the squeeze | 0101 | step 1, the certified channel for 0101; step 2, column $-1$ is 1 at odd times | steps 3 and 4 hold for any wall ✓; a bound for another wall needs that wall's own channel certificate ~ |
+| B′20 Proposition 6 (the wheel) | 0101 | a computation | 0101 only |
+| C.1 checkerboard, C.2 latch | any trace (a black stretch; a white time) | one rule step | any trace ✓ |
+| C.3 shrink, C.4 speed identity | any configuration | one rule step; the diagonal recurrence | general ✓ (the speed's numbers are the background's) |
+| C.5 triangle law | the uniform measure | surjectivity | general for the measure ✓ |
+| C.6 prime-ring gliders | Rule 30 on prime rings | rotation commutes with the rule | any rule on prime rings ✓ |
+| C.7 affine columns | 0101 | the table | 0101 only |
+| E.1 G13.2, E.2 G13.5 | the one-hole family (a hole then $p - 1$ black cells) | as stated | the one-hole family |
+| E.3 G17.1 | $0\,1^{p-1}$, every $p \ge 2$ | as stated | every $p$ |
+| E.4 G18.2 | $0^a 1^b$ | as stated | slow walls |
+| E.5 G18.3 | any wall with a black run of length $b$ | as stated | any wall with a long black run ✓ |
+| E.6 G20.1 | $0\,1^{p-1}$, odd $p \ge 5$ | as stated | odd one-hole walls |
+| E.7 G27.2 (Jen/Kopra, half-line) | Rule 30 on any nonconstant periodic wall; Rule 210 on 0101 | as stated | general for Rule 30 ✓ |
+
+**What the audit says.** The wall-form lemmas, the window principle (Theorems A, A′, A‴, A⁗), the zero-run bound
+(Theorem B), the band (B1 to B3), Jen and the short proofs of section C already hold for every wall, most for every
+trace. What is period-two-specific is a short list: the channel certificate and the squeeze built on it, the wheel
+(Proposition 6), the rotation-coding exclusions (Theorems E, E″), the affine columns, and Corollary F as written. So
+a proof that wanted to leave period 2 would carry almost all of the machinery with it, and would need, for each new
+wall, its own channel certificate. The two "~" extensions (Corollary F and a per-wall squeeze) are the first places to
+write that out.
+
 ## A. The wall form
 
 ### 1. Lemma 1 (where column 1 is invisible)
