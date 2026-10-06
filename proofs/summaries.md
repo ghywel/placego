@@ -1501,7 +1501,7 @@ Periodic rows that fade completely have tightly restricted repeating lengths.
 
 **An everyday picture.** Following a repeating pattern backward can lengthen its loop by doubling, after one initial loop of length three.
 
-## W125
+## G125
 Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
 
 **What it says.** A finite cycle of the sideways map closes the columns into a spatial ring. Its time tracks must repeat, and its starting ring row must already lie on a temporal cycle.

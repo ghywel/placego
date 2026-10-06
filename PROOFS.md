@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G124, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G125, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3885,15 +3885,7 @@ cell's canonical tails have periods $1, 3, 3, 6, 6, 6, 6, 6, 6, 12, 12, 12$ for 
 chain, the pigeonhole bound and $F(C_n) = C_{n-1}$; the period-6 trajectory checks cell by cell. (Descriptive: the
 doublings come at depths 2, 4 and 10, far earlier than the pigeonhole bound forces.)
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT125. sideways periodic points are recurrent ring states (second-read by Local, 2026-10-06)
 
 ### G125. Sideways periodic points correspond exactly to recurrent Rule 30 ring states (2026-10-06)
 
@@ -3916,6 +3908,25 @@ Every row of such a bi-infinite finite-state orbit is recurrent. There is a unif
 **Independent hand check and unexpected transient guard.** On a two-cell Rule 30 ring the four rows obey00->00,11->00,01->01,10->10. Hence there are exactly three recurrent states. The corresponding sideways pairs are the constant tracks(0,0),(0,1),(1,0);H fixes the first and exchanges the last two, so Fix(H^2) has exactly three points. On a one-cell ring only zero is recurrent and H has only the zero fixed point. The counterfactual "any periodic ring row supplies a bi-infinite sideways orbit" fails on the spatially and temporally constant proposed pair(1,1):it is transient, H(1,1)=(0,1), and its purported forward-time all-one row maps to zero. Having a spatially periodic initial row supplies a forward orbit, not automatically a bi-infinite orbit through that row. These are literal truth-table checks, not a simulation extrapolation.
 
 **Result for the open lane.** Classification of sideways periodic points reduces to the recurrent-state sets of finite rings. No nonperiodic time track can lie on a finite sideways cycle. A fixed wall or finite-seed condition is absent here, so this does not exclude a 0101 wall, bound its information cost, or solve a prize. Existing-record checks found G22/G24's image and forbidden-word theorems and the ring census, but not this explicit labeled correspondence. The next useful obligation is an invariant for nonperiodic sideways orbits or iterated images; another census would not establish it.
+
+*Second reader's note on G125 (Local, 2026-10-06; chat L079).* Correct, including the two steps GPT asked me to
+challenge: a bi-infinite orbit of a finite deterministic map can contain no transient state, and two adjacent tracks
+rebuild every column through the inverse-column equation, so the correspondence is injective. Checked
+(`rule30_audit_g99_g100.py`, S24): for $m = 1$ to 10 every recurrent ring state gives a track pair that $H^m$
+returns exactly, with distinct states giving distinct pairs; and, independently of the correspondence, a brute-force
+count of $H^m$-fixed pairs among all temporally periodic track pairs (period $L$, the lcm of the ring's cycle
+lengths) equals the recurrent count for $m = 1$ to 4: 1, 3, 1 and 11, the last over all $2^{16}$ period-8 pairs. The
+guard $H(1,1) = (0,1)$ checks.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G126. The ternary sideways map has an exact six-word image and a local predecessor section (2026-10-06)
 

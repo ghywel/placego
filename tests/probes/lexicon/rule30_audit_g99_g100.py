@@ -97,6 +97,10 @@ CHECKS (GPT's claims at 827e006):
      ancestors x_1..x_12, computed on a long window, have far-left tails whose least periods p_n are 1, 3, then 3 * 2^k,
      with p_(n-1) dividing p_n, p_n >= ceil(log2(n + 1)), and Rule 30 mapping each tail to the previous one; (c) the
      cyclic trajectory 001010 -> 011011 -> 010010 -> 111111 -> 000000.
+  S24 (G125, added 2026-10-06 at 0c1c83f): for m = 1..10, the recurrent states of the m-cell ring map to track pairs
+     (sites 0, 1) that H^m returns exactly, distinct states giving distinct pairs; for m = 1..4, a brute-force count of
+     H^m-fixed pairs among all temporally periodic track pairs of period L (L the lcm of the ring's cycle lengths),
+     made without the ring correspondence, equals the number of recurrent states; H(1, 1) = (0, 1).
 """
 import random
 from fractions import Fraction as F
@@ -933,4 +937,72 @@ for a_, b_ in zip(traj, traj[1:]):
 ok23 &= [least_period([int(c) for c in t]) for t in traj] == [6, 3, 3, 1, 1]
 check('S23 G123, G124: zero-basin periods on rings to 16; canonical tail periods; the period-6 trajectory', ok23,
       'tail periods %s; periods at N = 12 %s' % (tails, sorted(seen_periods)))
+def Hmap(a, b):
+    """Sideways map on periodic tracks (tuples of equal length L, time index mod L)."""
+    L_ = len(a)
+    return tuple(a[(t + 1) % L_] ^ (a[t] | b[t]) for t in range(L_)), a
+
+
+ok24 = True
+from math import gcd
+for m in range(1, 11):
+    mask = (1 << m) - 1
+    def ring_step(st):
+        if m == 1:
+            return R30(st, st, st)
+        l = ((st << 1) | (st >> (m - 1))) & mask
+        r = ((st >> 1) | (st << (m - 1))) & mask
+        return (l ^ (st | r)) & mask
+    nxt = [ring_step(st) for st in range(1 << m)]
+    # recurrent states: on cycles
+    rec = set()
+    for st in range(1 << m):
+        x = st
+        for _ in range(1 << m):
+            x = nxt[x]
+        rec.add(x)
+    # close: collect full cycles
+    recurrent = set()
+    for st in rec:
+        y = nxt[st]
+        while y != st:
+            recurrent.add(y)
+            y = nxt[y]
+        recurrent.add(st)
+    cyc_len = {}
+    for st in recurrent:
+        y, k = nxt[st], 1
+        while y != st:
+            y, k = nxt[y], k + 1
+        cyc_len[st] = k
+    Lc = 1
+    for k in set(cyc_len.values()):
+        Lc = Lc * k // gcd(Lc, k)
+    pairs = set()
+    for st in recurrent:
+        rows = [st]
+        for _ in range(Lc - 1):
+            rows.append(nxt[rows[-1]])
+        bit = lambda r_, i: (r_ >> (i % m)) & 1
+        a = tuple(bit(r_, 0) for r_ in rows)
+        b = tuple(bit(r_, 1) for r_ in rows)
+        u, v = a, b
+        for _ in range(m):
+            u, v = Hmap(u, v)
+        ok24 &= (u, v) == (a, b)
+        pairs.add((a, b))
+    ok24 &= len(pairs) == len(recurrent)
+    if m <= 4 and 2 * Lc <= 20:
+        cnt = 0
+        for wa in range(1 << Lc):
+            for wb in range(1 << Lc):
+                a = tuple((wa >> t) & 1 for t in range(Lc))
+                b = tuple((wb >> t) & 1 for t in range(Lc))
+                u, v = a, b
+                for _ in range(m):
+                    u, v = Hmap(u, v)
+                cnt += (u, v) == (a, b)
+        ok24 &= cnt == len(recurrent)
+ok24 &= Hmap((1,), (1,)) == ((0,), (1,))
+check('S24 G125: recurrent ring states give exact H^m fixed pairs (m <= 10); brute-force fixed-point counts (m <= 4)', ok24)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

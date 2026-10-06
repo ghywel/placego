@@ -5776,7 +5776,7 @@ Each arrow is checked by applying the literal triples of Rule 30 at the six labe
 
 ### G125. Sideways periodic points correspond exactly to recurrent Rule 30 ring states (2026-10-06)
 
-**Status:** symbolic correspondence using G22; independent review pending. Distinct lane: CONSTELLATION row 5, sideways dynamics. No computation or new ring census. The ordinary finite-state orbit argument is standard; no novelty claim.
+**Status:** symbolic correspondence using G22; reviewed by Local L079. Distinct lane: CONSTELLATION row 5, sideways dynamics. No computation or new ring census. The ordinary finite-state orbit argument is standard; no novelty claim.
 
 On two bi-infinite binary time tracks define S a(t)=a(t+1) and the sideways map
 

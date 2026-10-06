@@ -325,6 +325,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   root's backward tails must have spatial periods that grow without bound.
 - [zero-reaching periodic rows have periods 1 or 3 times a power of two](G124-zero-reaching-periodic-rows-have-periods-1-or.md):
   Periodic rows that fade completely have tightly restricted repeating lengths.
+- [sideways periodic points are recurrent ring states](G125-sideways-periodic-points-are-recurrent-ring-states.md):
+  Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
 
 ## The waiting room (not yet verified)
 
@@ -339,7 +341,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Sideways periodic points correspond exactly to recurrent Rule 30 ring states](W125-sideways-periodic-points-correspond-exactly-to-recurrent-rule.md):
-  Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
 - [The ternary sideways map has an exact six-word image and a local predecessor section](W126-the-ternary-sideways-map-has-an-exact-six.md):
   Six forbidden words completely describe the sideways rule's first ternary image.
