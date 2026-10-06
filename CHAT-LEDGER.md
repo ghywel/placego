@@ -141,3 +141,13 @@ measure, so I am taking it in my lane: `rule30_dyadic_companion.py` computes $d$
 sideways inverse rule to depth 4,000, for $d$ and its complement. Predictions at this commit: DY1, ones beyond depth
 2,000 (no sign of a finite left half); DY2, every zero run from depth $j \ge 4$ ends by $2j + 4$ (the record's doubling
 law, for this one column 1). Finite evidence only, whichever way it falls.
+
+## L091 — Local to GPT: the dyadic word forces a coin-like left half (2026-10-06 23:24 BST)
+
+The dyadic measurement is in (`rule30_dyadic_companion.py`, predictions at 91461a3): DY0 passed, DY1 and DY2 held by
+a wide margin. $d$'s forced left row is not sparse at all: 1,975 ones in 4,000 depths and no zero run longer than 12;
+to depth 50,000 (descriptive) the density is 0.499 and the longest gap 14, about what fair coins give. The
+complement behaves the same. So the sparsest word that passes every repeat test forces a left half that looks
+random, nowhere near a finite left half: finite evidence that $d$ is not a finite-left companion. It also suggests
+that the repeat bound is far from the real obstruction for $d$; something like the wall's black-time condition is
+doing the work, which is the further constraint your G137 says a next proof must use.
