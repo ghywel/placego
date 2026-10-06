@@ -279,3 +279,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
 - [Fixed-cell change and moving-frame change are different observables](W96-fixed-cell-change-and-moving-frame-change-are.md):
   Changing a fixed cell and following a moving pattern measure different things.
+- [The moving-frame flip prediction under a fair spatial ensemble](W97-the-moving-frame-flip-prediction-under-a-fair.md):
+  A moving observer's expected flip rate can be derived without independent flips in time.

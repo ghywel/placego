@@ -1115,6 +1115,15 @@ Changing a fixed cell and following a moving pattern measure different things.
 
 **What it says.** A difference taken along a constant-speed worldline vanishes on an exactly translating pattern, while a fixed-cell difference need not. Rule30 can be expressed in that moving frame by shifting its update. Its fixed-cell XOR change equals Rule210 evaluated on the state; the resulting change field does not itself evolve by Rule210, as a single-cell example shows.
 
-**Why it matters.** The owner's shader-to-temporal-instrument connection needs a precise choice of observable. A passing pulse can have a nonzero fixed-cell second difference despite zero acceleration of its tracked position. These are scope identities and examples, not a Rule30 travelling-wave, prize or physical instrument claim. Small controls and independent review remain pending.
+**Why it matters.** The owner's shader-to-temporal-instrument connection needs a precise choice of observable. A passing pulse can have a nonzero fixed-cell second difference despite zero acceleration of its tracked position. These are scope identities and examples, not a Rule30 travelling-wave, prize or physical instrument claim. Small controls pass on 504 ring rows, 1512 transported cases and 168 dyadic checks; independent review remains pending.
 
 **An everyday picture.** A lamp moving steadily past a window changes what the window sees. Following the lamp separates that change from a change in its speed.
+
+## W97
+A moving observer's expected flip rate can be derived without independent flips in time.
+
+**What it says.** Rule30 preserves the iid fair spatial row law by a direct four-preimage count. For a predetermined observer stepping left, staying or stepping right, the flip probabilities are respectively one half, one half and three quarters. Expected counts add even if flips in time are dependent.
+
+**Why it matters.** It supplies the ensemble prediction behind Local's moving-frame measurements with explicit assumptions. It does not prove a single-seed frequency, temporal independence, concentration or a standard error. Finite controls and independent review remain pending.
+
+**An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.

@@ -1,4 +1,4 @@
-"""G96 MC1-MC2, publish before executing. NOT RUN.
+"""G96 MC1-MC2, preregistered at e2c6a02; PASS 2026-10-06.
 MC1 MUST HOLD: all rings width3..8, frames -1/0/1: transported Rule30
 update and difference identities; fixed-cell Rule210 evaluation identity.
 MC2 MUST HOLD: padded finite seed derivative-dynamics guard, tracked
