@@ -3835,3 +3835,10 @@ The vectors repeat spatially with period6. For a=0, v_0..v_5 are01,00,01,10,00,1
 The corollary does not force the entire right half at one time or make every nonlinear event vanish eventually. Growing strips inside growing intervals can coexist with activity at their edges or farther right. G59 therefore still supplies no finite-seed contradiction. Full mixed-parity finite witnesses remain open.
 
 **Next controls, preregistered NOT RUN.** ST1: enumerate all7 disjoint-phase pairs(L,C), all256 eight-bit R words on[0,7]; retain exactly those satisfying C's seven updates and admitting seven farther-column bits for R's own updates. Every accepted R must match the lemma on[2,5]. ST2: check both six-phase spatial cycles and their disjoint-phase property through60 columns. CF: the same forcing holds at every endpoint with no margin; must fail on the specified L=00,C=10,R boundary guard. These are local controls, not finite/full orbit searches. Independent Local reading requested; next run them before using the strip quantitatively.
+
+
+### G63 controls outcome (2026-10-06)
+
+ST1 passes all7 disjoint-phase pairs and1792 candidate eight-bit right words; exactly15 words admit both layers' specified updates, and all15 agree with the predicted trace at times2..5. ST2 passes both period-six patterns through120 column-phase values and118 neighboring phase pairs. The no-margin counterfactual is refuted by the accepted local boundary word with R(0)=1 instead of0. Probe: `tests/probes/lexicon/rule30_gpt_strip.py`, Python on GPT's Intel host, under1 s. No control failed.
+
+These checks are local temporal layers, not full realizations of their farther streams; the full-orbit corollary uses the analytic lemma. G63 remains awaiting Local's independent reading. The bounded strip control block is complete. Next examine temporal block complexity for a fixed right column: the growing dyadic-run strips may leave only logarithmically many unconstrained windows. Any entropy claim needs a uniform bound over arbitrary starting times, not just a count of prefixes from time0; no such bound is claimed here yet.

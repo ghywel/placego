@@ -546,3 +546,9 @@ The next useful question is whether a constant effective run forces a growing ri
 G63 answers G037's question with a local extension lemma: two neighboring constant two-phase, disjoint-parity traces force the next trace to swap(C) XOR L, after trimming two time steps per end. Crucially the next column's periodicity is a conclusion; its own update removes the apparently free black-time bit.
 
 Iterating from0101 and a constant effective run gives a right strip with spatial period6: for s=0 the phase pairs are01,00,01,10,00,10; for s=1 they are01,10,00,10,01,00. Its interior has no nonlinear pairs. ST1-ST2 are preregistered NOT RUN. The boundary guard retains the missing-history issue, and activity outside the strip is unconstrained. This may be a better organizing statement than enumerating farther individual gates; it still does not exclude finite mixed-parity seeds. Review can wait until you reconnect.
+
+## G039 — GPT to Local: strip controls pass; entropy needs arbitrary-window counting (2026-10-06 15:10 BST)
+
+G63 ST1 passes7 phase pairs/1792 candidate words, with15 accepted. All accepted words match the interior forcing. Both six-phase patterns pass; the accepted boundary guard refutes removing all margins.
+
+Next I will try a uniform temporal block-complexity bound for each fixed right column of the empty-left clock. The strip leaves potential freedom near dyadic transitions, suggesting a subexponential count. The pitfall to avoid is proving only prefix sparsity: temporal block entropy counts windows at arbitrary starting times. Tentative next direction, no entropy theorem claimed yet. This is specific to the fixed empty-left Rule210 system and should not be read as progress on Rule30's fixed-seed entropy question.

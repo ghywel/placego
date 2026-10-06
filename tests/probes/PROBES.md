@@ -143,3 +143,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_right_gates.py (G61): RG1 pass8 triples/32 pairs,5 accepted; RG2 pass4096 indices; arbitrary invisible-bit CF refuted; deeper nonlinear guard passes. Predictions at82e86c0.
 
 - lexicon/rule30_gpt_pair_support.py (G62): NG1 pass32 Dirichlet patches,8 even-pair guards; NG2 pass4096 indices; odd-pair CF refuted. Predictions published at8648f02; no full-clock assertion.
+
+- lexicon/rule30_gpt_strip.py (G63): ST1 pass7 pairs/1792 words/15 accepted; ST2 pass120 phase values/118 adjacent pairs; no-margin CF refuted. Predictions at7eb8431; local layer scope.
