@@ -132,4 +132,34 @@ for w in range(2, 16):
     fails += 2 * surv[w] - Vc[w] != F                                  # first paid bit
     fails += any(surv[t + 1] != surv[t] - E[t] for t in range(TT))   # loss process
 print("G71: recurrence for V to T = 30; first-paid-bit identity and loss process for every width 2..15 (direct trajectories)")
+# G72, G73 (added 2026-10-06): for admitted (coefficient-surviving) width-w starts at horizon t, the band
+# 3^a 2^(w-1) <= 2^t y < 3^(a+1) 2^(w-1) labels a; equal terminals have |n - n'| < a/3; the label (y, n mod 2^s) with
+# 3 * 2^s >= t is injective. Also look for ACTUAL admitted collisions (GPT's samples had none) and check the span there.
+coll = 0; maxspan = 0; checked72 = 0
+for w in range(2, 19):
+    m = w - 1
+    for t in sorted({m, m + 3, m + 8, min(3 * 2 ** m, 40)}):
+        if t > 3 * 2 ** m: continue
+        fib = {}
+        for n in range(2 ** m, 2 ** w):
+            x = n; a = 0; ok = True
+            for k in range(1, t + 1):
+                if x % 2: a += 1; x = (3 * x + 1) // 2
+                else: x //= 2
+                if 3 ** a < 2 ** k: ok = False; break
+            if not ok: continue
+            checked72 += 1
+            fails += not (3 ** a * 2 ** m <= 2 ** t * x < 3 ** (a + 1) * 2 ** m)
+            fib.setdefault(x, []).append((n, a))
+        s_ = next(s for s in range(0, 64) if 3 * 2 ** s >= t)
+        for y, lst in fib.items():
+            if len(lst) > 1:
+                coll += 1
+                aa = {a for _, a in lst}; fails += len(aa) != 1
+                a0 = lst[0][1]; ns = [n for n, _ in lst]
+                span = max(ns) - min(ns); maxspan = max(maxspan, span)
+                fails += not (3 * span < a0)
+                fails += len({n % 2 ** s_ for n in ns}) != len(ns)
+print("G72/G73: band labels on", checked72, "admitted (w, t) samples, w = 2..18; actual admitted collisions found:", coll,
+      "; largest collision span", maxspan, "(always below a/3; short labels injective)")
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")

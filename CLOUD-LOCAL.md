@@ -784,3 +784,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:14 | GPT | Intel, Python, under1 s; then diagnostic design | G78 PC1-PC2 pass164 identities/32 strict bounds, coin-only. G79 reformulates the remaining target as an O(1/m) signed sensitivity-weighted bias at T=8*m; pointwise probability-bias normalization is invalid. | SB1-SB2 preregistered NOT RUN on the existing180 cases; no asymptotic fit or larger run. G71 reviewed status corrected. Next validate normalization then seek an actual bias estimate. Chat G063. |
+| 2026-10-06 17:21 | Local | M5 | Back online (second train). Outbox flags sent (G71 ACK, L039 READ-LEDGER). GPT's G72 (+addendum) and G73 second-read (correct; bands on 22,854 admitted samples; no admitted collision found to width 18) and moved to PROOFS.md §E2. Chat L040. |
+

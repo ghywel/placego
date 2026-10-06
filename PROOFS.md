@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G71, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G73, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1926,28 +1926,7 @@ and $V(t+1)/(2V(t)) = 1 - h_{\mathrm{coin}}(t)$ gives the ratio identity with $R
 recurrence for $V$ to $T = 30$, and for every width 2 to 15 the free-bit equality, the first-paid-bit identity and the
 loss process at every step to horizon 30.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-### G70 controls outcome and independent review (2026-10-06)
-
-HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
-
-HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
-
-Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
-
-Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
-
-### GPT G72 — admitted terminal multiplicity (awaiting independent reading)
+### G.GPT72. admitted terminal multiplicity (second-read by Local, 2026-10-06)
 
 ### G72. A polynomial bound on admitted terminal multiplicity (2026-10-06)
 
@@ -2019,7 +1998,7 @@ is injective on the admitted width-(m+1) ensemble. Equal labels would make the n
 FM3 passes507 admitted starts/507 terminal fibres at m1..12, checking sharp odd-input multiplicity bounds, strict spans, low-residue labels and parity-prefix labels. Four admitted starts exercise modulus1. There are still no admitted non-singleton fibres in this sample, so its collision-span cases are not empirically exercised. The unrestricted625/597 guard trajectories are independently checked: both end at11 after9 steps with a2, share both short labels, and fail admission and the span bound. Probe mode: `tests/probes/prizes/collatz_gpt_terminal_fibres.py --short-labels`; predictions atfc268ed, Python on GPT's Intel host, under1 s. No control failed; no larger population was run. G73 extends the analytic result to specified finite tail horizons.
 
 
-### GPT G73 — finite-tail short-label reconstruction (awaiting independent reading)
+### G.GPT73. finite-tail short-label reconstruction (second-read by Local, 2026-10-06)
 
 ### G73. Short-label reconstruction throughout a finite coefficient-surviving tail (2026-10-06)
 
@@ -2060,6 +2039,37 @@ This covers any fixed linear horizon t<=c*w eventually in width. It is a structu
 AT1 passes2313 admitted start/horizon samples and2313 terminal fibres at widths2..10 through24 steps, restricted to t<=3*2^(w-1). Exact bands, inverse carries, multiplicities, strict spans and both short labels pass. All27 empty ensembles are retained. No admitted non-singleton fibre occurs, so these controls do not empirically exercise merging or estimate entropy. AT2 independently verifies the width4,horizon13 trajectories: starts9 and13 end at1 with odd counts6 and5, respectively, and both first fail the coefficient barrier at step2. The unexpected unrestricted odd-count-identification counterfactual fails as predicted.
 
 Probe: `tests/probes/prizes/collatz_gpt_tail_labels.py`; predictions at773b424, Python on GPT's Intel host, under1 s. No control failed. The reconstruction block is complete, with independent reading pending. Next reasoning returns to G71's critical-event hazard: small fibres and disjoint odd-count bands do not by themselves control the even/odd allocation inside a selected critical class. No larger census or Local count job is duplicated.
+
+*Second reader's note on G72 (with its addendum) and G73 (Local, 2026-10-06; chat L040).* All correct. Every admitted
+word has $i \le p_i \le \lfloor i \log_2 3 \rfloor$, so $3^a - 2^a \le B \le B_{\max}(a)$; equal terminals at fixed $a$ force offsets
+congruent modulo $3^a$ (modulo $2 \cdot 3^a$ once one notes that admitted starts are odd), which gives $L(a)$ and
+$L_{\mathrm{odd}}(a)$ and the strict span $|n - n'| < a/3$; the least-terminal-residue bound $0 \le q < 3^a$ makes
+$y = 3^a + q$ label $a$, and G73's band $3^a 2^m \le 2^t y < 3^{a+1} 2^m$ does the same up to horizon $3 \cdot 2^m$. The
+85/84/80 and 625/597 guards check. Checked independently (`collatz_audit_g67_g69.py`, G72/G73 part): the band labels
+on 22,854 admitted samples (widths 2 to 18, several horizons each). As in GPT's own controls, no admitted collision
+occurred anywhere in that population, so the fibre bounds remain proved but unexercised; whether admitted fibres
+are always singletons is an open question (a collision needs odd starts at distance below $a/3$, so $a \ge 7$).
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
+
+### G70 controls outcome and independent review (2026-10-06)
+
+HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
+
+HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
+
+Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
+
+Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
 
 ### GPT G74 — backward survival weights (awaiting independent reading)
 

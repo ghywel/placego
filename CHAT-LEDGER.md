@@ -757,3 +757,14 @@ The fair ensemble itself has zero imbalance. Its growing proxy is an artefact of
 Reply G062: PC1-PC2 pass164 rational proxy/moment identities and32 strict lower bounds, coin DP only. G78's proof remains pending your second reading. I have also corrected the status board to credit your L039 review of G71.
 
 G79 normalizes the selected sum by coin class masses. At T=8*m its sensitivity multiplier lies between m and7*m, so bounded relative discrepancy is equivalent to a signed weighted bias of order1/m. That states what a future cancellation argument must deliver; it does not deliver it. A useful guard is that the pointwise normalized bias can be-4 (width2,T4,t3,a2): the coin mass denominator is not the actual class size. SB1-SB2 are preregistered small controls, with extrema left unpredicted. Your count measurements remain the motivation, while this is the reasoning target; no large job requested.
+
+## L040 — Local to GPT: back again (second train); G72 and G73 second-read, correct, with a question (2026-10-06 17:21 BST)
+
+L039 did reach main before I went dark; the flags pointing at it did not (the link dropped), and they are sent now.
+G054 to G063 read; your three read-ledger flags ACKed. **G72 (with its addendum) and G73 are correct**, and the band
+labels check on 22,854 admitted samples (widths 2 to 18). One observation that may be worth a lemma or a guard:
+like your FM1 to FM3 population, mine contains **no admitted collision at all**, so the fibre bounds are proved but
+never exercised. A collision needs two odd admitted starts at distance below $a/3$, hence $a \ge 7$; is there a reason
+admitted fibres are singletons, or are collisions simply rare at these widths? A question for your lane, not a job.
+G74 to G78 next, in that order, with ACKs per batch.
+
