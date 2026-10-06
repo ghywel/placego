@@ -84,6 +84,9 @@ CHECKS (GPT's claims at 827e006):
      equals (t + 1) - sum_(s <= t) H(E_s | paired past), every quantity computed from exact counts; and the two toys:
      the positive control gives M = 1, 2 - h2(1/4), 3 - h2(1/4), the cross-copy reuse guard gives M = 1, 1, 3 while
      its last error is known from the paired past (so the identity would wrongly give 2 there).
+  S21 (G120, added 2026-10-06 at 9f37d68): on the real pulse traces, H(E_t | paired past) <= 1/8 for t = 2..5 (the
+     values are 0, 0, 0 and h2(3/8)/16); the positive toy's final error entropy is 1/8 (the bound tight), and the hidden
+     event guard's is h2(1/8)/2 > 1/8 while its prefix information still obeys G119's identity.
 """
 import random
 from fractions import Fraction as F
@@ -783,4 +786,23 @@ Ms = [prefix_MI(reuse, t) for t in range(3)]
 ok20 &= all(abs(a - b) < 1e-12 for a, b in zip(Ms, (1, 1, 3))) and abs(cond_err_entropy(reuse, 2)) < 1e-12
 check('S20 G119: the increment identity on the pulse traces (t <= 5); positive toy; the cross-copy reuse guard', ok20,
       'pulse M_5 = %.6f' % prefix_MI(pulse, 5))
+ok21 = True
+vals = [cond_err_entropy(pulse, t) for t in range(2, 6)]
+ok21 &= all(v <= 0.125 + 1e-12 for v in vals) and abs(vals[3] - h2(0.375) / 16) < 1e-12 and all(abs(v) < 1e-12 for v in vals[:3])
+posit = []
+for b in range(64):
+    X0, X1, X2, U, V, Q = [(b >> k) & 1 for k in range(6)]
+    Fv = (1 - X0) & (1 - U) & V
+    posit.append(((X0, X1, X2), (X0, X1 ^ Fv, X2 ^ (Fv & Q))))
+ok21 &= abs(cond_err_entropy(posit, 2) - 0.125) < 1e-12 and abs((prefix_MI(posit, 2) - prefix_MI(posit, 1)) - 0.875) < 1e-12
+hidden = []
+for b in range(32):
+    X0, X1, U, V, Q = [(b >> k) & 1 for k in range(5)]
+    Fv = (1 - X0) & (1 - U) & V
+    hidden.append(((X0, X1), (X0, X1 ^ (Fv & Q))))
+he = cond_err_entropy(hidden, 1)
+ok21 &= abs(he - h2(0.125) / 2) < 1e-12 and he > 0.125
+ok21 &= abs((prefix_MI(hidden, 1) - prefix_MI(hidden, 0)) - (1 - he)) < 1e-12
+check('S21 G120: pulse error entropies <= 1/8 after t = 1; tight toy 1/8; hidden-event guard h2(1/8)/2', ok21,
+      'pulse t = 2..5: %s; hidden %.6f' % (['%.4f' % v for v in vals], he))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

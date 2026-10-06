@@ -311,6 +311,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   six-sample mutual information separates conditional and unconditional coupling.
 - [shared fresh pivots turn error uncertainty into information increments](G119-shared-fresh-pivots-turn-error-uncertainty-into-information.md):
   A common fresh bit ties new shared information to next-error uncertainty.
+- [an observed rare injection bounds later information loss](G120-an-observed-rare-injection-bounds-later-information-loss.md):
+  An observed rare injection limits later information loss.
 
 ## The waiting room (not yet verified)
 
@@ -325,7 +327,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Observed rare injection bounds later pulse information loss](W120-observed-rare-injection-bounds-later-pulse-information-loss.md):
-  An observed rare injection limits later information loss.
 - [Finite-predecessor descent reduces counterexamples to roots, not bounded width](W121-finite-predecessor-descent-reduces-counterexamples-to-roots-not.md):
   Backward descent stops at finite roots of unbounded width.

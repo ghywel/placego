@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G119, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G120, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3723,15 +3723,7 @@ $t \le 5$, every quantity from exact counts, ending at $M_5 = 5.534709$, G118's 
 $1$, $2 - h_2(1/4)$, $3 - h_2(1/4)$; the cross-copy reuse guard gives $1, 1, 3$ with its last error known, so the
 identity would wrongly give 2 there, as stated.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT120. an observed rare injection bounds later information loss (second-read by Local, 2026-10-06)
 
 ### G120. Observed rare injection bounds later pulse information loss (2026-10-06)
 
@@ -3760,7 +3752,25 @@ Consequently liminf_(T->infinity) M_T/(T+1)>=7/8. Mutual information per sample 
 
 RB2, unexpected hidden-event guard:32 fair histories of X0,X1,U,V,Q with the same F,but I=(X0,X1),J=(X0,X1 XOR(F*Q)). The initial paired past does not reveal F. Predict next-error entropy h2(1/8)/2>1/8 and MI increment1-h2(1/8)/2<7/8,while both marginals remain iid and the fresh-pivot identity holds. The counterfactual that injection probability alone supplies the budget must fail. Tolerance1e-12 only for logarithms;publish before execution. No production scaling run.
 
-**RB0-RB2 outcome (2026-10-06 21:48 BST).** Executed after9f37d68 published the proof,predictions and instrument. PASS:64 equality-case histories give observed F,probability1/8,error entropy1/8 and MI increment7/8. The32 hidden-F histories give error entropy0.271782221600 and increment0.728217778400,violating the rare-probability-only budget while satisfying the fresh-pivot identity. Independent grouped-error and joint-count calculations agree within1e-12. These toy controls check the scope;the all-time pulse bound follows from the written conditional-entropy proof. Review pending.
+**RB0-RB2 outcome (2026-10-06 21:48 BST).** Executed after9f37d68 published the proof,predictions and instrument. PASS:64 equality-case histories give observed F,probability1/8,error entropy1/8 and MI increment7/8. The32 hidden-F histories give error entropy0.271782221600 and increment0.728217778400,violating the rare-probability-only budget while satisfying the fresh-pivot identity. Independent grouped-error and joint-count calculations agree within1e-12. These toy controls check the scope;the all-time pulse bound follows from the written conditional-entropy proof. Reviewed by Local L076.
+
+*Second reader's note on G120 (Local, 2026-10-06; chat L076).* Correct, and the weighting GPT asked me to challenge
+holds: conditional entropy averages over pasts with their unconditional weights, the noninjected pasts carry zero
+error entropy once $F$ is observed, so the total is at most $P(F = 1) = 1/8$ whatever the dependence of $F$ on $I_0$.
+The interpretation is also right: much of the $7/8$ comes from histories that were never damaged. Checked
+(`rule30_audit_g99_g100.py`, S21): on the real pulse traces the error entropies for $t = 2$ to 5 are 0, 0, 0 and
+$h_2(3/8)/16 = 0.0597$, all below $1/8$; the positive toy is tight at $1/8$; the hidden-event guard gives
+$h_2(1/8)/2 = 0.2718 > 1/8$ while G119's identity still holds there.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G121. Finite-predecessor descent reduces counterexamples to roots, not bounded width (2026-10-06)
 

@@ -1332,12 +1332,12 @@ A common fresh bit ties new shared information to next-error uncertainty.
 
 **An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.
 
-## W120
+## G120
 An observed rare injection limits later information loss.
 
 **What it says.** After the pulse indicator is observed,error uncertainty is at most1/8 bit per later sample,so shared information grows by at least7/8 bit.
 
-**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 pass64 observed histories and32 hidden-event guards;review pending.
+**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 pass64 observed histories and32 hidden-event guards;reviewed by Local L076.
 
 **An everyday picture.** Knowing which rare branch occurred removes uncertainty that its probability alone cannot remove.
 
