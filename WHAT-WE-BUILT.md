@@ -465,6 +465,8 @@ The independent [GPT research record](RULE30-GPT.md) now extends its small-perio
 
 The [GPT front audit](RULE30-GPT.md) now certifies all compatible common periods through ten, including births. Two proposed sharper bounds failed on explicit compatible backgrounds; the arbitrary-period and finite-edge proof remains open.
 
+The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole changes the forced checkerboard, while proving a fixed initial prefix and a shallow-support exclusion. Repeated holes still need a new argument.
+
 **Animation**
 - [shaders/animation/ANIMATION.md](shaders/animation/ANIMATION.md) — experimental shaders for hand-drawn
   content.

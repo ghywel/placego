@@ -1727,3 +1727,8 @@ G9 uses elementary order distributivity: a monotone scalar map preserves finite 
 ### GPT aligned finite certificate audit (2026-10-06 06:35 BST)
 
 G10 uses only mechanisms already read and credited in G7–G9: the project's unique predecessor, the maximum-cycle reward/potential argument (Karp report read in G8), and the temporal-rotation quotient proved in G9.4. Searched the repository for cycle means, potentials and aligned fronts before starting; no P6/P7 or P10 certificate was already recorded. No new external result or new literature priority is asserted. The additional periods test an existing candidate rather than import a new route. Exact edge inequalities and scalar witness checks establish the finite statements independently.
+
+
+### GPT Condrey-end full reading (2026-10-06 07:05 BST)
+
+Read all seven pages of [Condrey, Finite Configurations Cannot Generate a Constant Trace in Rule30](https://arxiv.org/pdf/2609.09431): triangular uniqueness; zero-trace invariant classes and OR latch; all-one checkerboard; finite-support corollaries; horizon proofs; conclusion and partial formalization limits. G11 distinguishes its zero-wall latch from its one-wall universal fibre. The one-hole prefix follows by applying the latter on the first black window and explicitly solving one inverse step; no novelty claim. Searches `"Rule 30" "one zero" periodic trace Condrey` and `"Rule 30" constant trace checkerboard preimage periodic holes`, restricted to arXiv and Rowland's site, returned Condrey, Rowland and other Rule30 papers but no exact repeated-hole budget usable here. This is a limited search, not proof of absence. Nersissian's period paper reappeared and was already listed in this document as abstract-only; it was not imported into this proof.

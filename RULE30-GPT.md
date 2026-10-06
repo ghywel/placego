@@ -1222,3 +1222,155 @@ version remains a separate, potentially stronger target. Q7 and the local waitin
 lead remain PART. Next reasoning intention: isolate which restrictions the edge root imposes
 on clock-aligned pairs before choosing an analytic potential family. A large unrestricted
 period16 computation is not proposed; no new Local run is requested.
+
+## G11. Condrey's two mechanisms and what survives the first hole (2026-10-06)
+
+**Asked by Local in CHAT C018, at the owner's request.** Read Condrey's full seven-page
+[Finite Configurations Cannot Generate a Constant Trace in Rule30](https://arxiv.org/pdf/2609.09431),
+including the proofs, sharp horizons and the limits of its partial formalization. Read the current
+standing workflow, PERIOD-TWO.md and ledgers; both startup checks printed ALL CHECKS PASS, with
+G1's capped witness scope. Local keeps the one-hole record runs; none was duplicated.
+CH0–CH4 were pushed in `5097375` before the small scalar verification. A concurrent Local
+Collatz split was merged, preserving both parties' rows and Local's new references.
+
+### G11.1. The latch belongs to the zero wall, not the one wall
+
+There are two distinct mechanisms in Condrey's proof. Let the prescribed centre be tau,
+its right neighbour sigma, and the next right column rho. A genuine right evolution satisfies
+
+```math
+ \sigma(t+1)=\tau(t)\oplus\bigl(\sigma(t)\lor\rho(t)\bigr).
+```
+
+For a **zero wall**, this is an OR latch: sigma cannot fall from1 to0. In Condrey's
+zero-trace classification, the first right-hand1 advances towards the wall until the right
+neighbour latches at1; the compatible left row acquires an infinite alternating tail.
+His triangular uniqueness lemma identifies that completion with the only possible left row.
+For a **one wall**, the update is the complement of that OR: sigma=1 necessarily becomes0.
+Here Condrey instead gives a universal fixed checkerboard on the left, independent of the
+right half. An eventual-one column forces an eventual-zero left neighbour, giving his short
+constant-trace exclusion as well. These mechanisms must not be conflated.
+
+The latch statement is about a right column belonging to an actual Rule30 evolution, with
+rho present. In our stronger LR problem, an arbitrary proposed sigma need not satisfy that
+right equation. The constant-one left checkerboard works for arbitrary sigma because the
+wall masks it; a right-column monotonicity claim cannot silently be imposed on every LR input.
+This is the precise qualification to C018's phrase "next to a constant wall".
+
+### G11.2. Exact prefix theorem for one hole per period
+
+Let $p\ge3$, $\tau(t)=0$ precisely at multiples of p, and $h_n=1-\sigma(np)$. At each hole
+time np the first p−1 cells of the forced left row are exactly the truncation of
+
+```math
+ (h_n,h_n,1-h_n,1,0,1,0,1,\ldots).
+```
+
+In particular, once depth4 is reached, every even depth through p−1 is black and every odd
+depth through p−1 is white, independently of all hole inputs. This is a finite-prefix
+statement for every p and every sigma, not a claim about the whole infinite row.
+
+**Proof.** The inverse recurrence, with $v_0(t)=\tau(t)$ and $v_{-1}(t)=\sigma(t)$, is
+
+```math
+ v_j(t)=v_{j-1}(t+1)\oplus\bigl(v_{j-1}(t)\lor v_{j-2}(t)\bigr),\qquad j\ge1.
+```
+
+Induction shows that depth j at time t uses only tau on $[t,t+j]$ and sigma on
+$[t,t+j-1]$. On a window where tau is all1, the forced columns have the checkerboard values
+$v_j(t)=1$ for even j and0 for odd j: verify the recurrence directly, starting with $v_1=0$.
+Immediately after the hole, tau is1 for p−1 times. Thus at time np+1 the cells
+$y_j=v_j(np+1)$ equal the checkerboard for $1\le j\le p-2$.
+
+Write $x_j=v_j(np)$ and $x_0=0$. The centre equation gives $x_1=h_n$. Running one step
+backwards along the left row gives
+
+```math
+ x_{j+1}=y_j\oplus(x_j\lor x_{j-1})\qquad(1\le j\le p-2).
+```
+
+Since $y_1=0$, $x_2=h_n$. If the relevant depths exist, $y_2=1$ gives
+$x_3=1-h_n$, and $y_3=0$ gives $x_4=(1-h_n)\lor h_n=1$. The remaining updates preserve
+$x_j=1$ at even j and0 at odd j. This proves exactly the displayed prefix, including the
+short truncations p3 and p4.
+
+The same calculation describes the **whole** initial left row for a single transient white
+cell followed by an all-one wall. That special trace is eventually constant and is already
+excluded by Condrey; its prefix is the comparison object here. The periodic one-hole wall
+agrees with it only until the next hole enters the inverse cone.
+
+**Support consequence.** If the initial left row is zero at every depth greater than L,
+then for $p\ge5$ a one-hole wall beginning at its white phase requires
+
+```math
+ L\ge 2\left\lfloor\frac{p-1}{2}\right\rfloor
+ =\begin{cases}p-1,&p\text{ odd},\\p-2,&p\text{ even}.\end{cases}
+```
+
+The indicated even cell lies in the forced prefix and is black. This excludes every such
+left support smaller than the bound, independently of the right half. It is a range where
+the extension gives a theorem: sufficiently long black blocks exclude a specified shallow
+left support. It is not LR at a fixed p with unbounded L. If the initial phase is different,
+normalize to a hole by a forward time shift and account for the resulting support growth;
+do not apply the same L to a shifted row without correction.
+
+### G11.3. Exactly what breaks, with a finite counterexample
+
+The no-hole checkerboard is not preserved by the first white cell. For p4 and sigma(0)=1,
+the forced initial left prefix is `[0,0,1]`, rather than `[0,1,0]`. This is not merely an
+incompatible right-column toy: the finite row with ones exactly at positions−3 and1 has
+centre trace `01110` through time4. It realizes the first one-hole period and the next white
+cell, while its initial left row begins with two zeros. No infinite periodic trace is claimed.
+
+The first-column formula pinpoints the change, for arbitrary p≥3:
+
+```math
+ v_1(t)=\begin{cases}
+ 1-\sigma(t),&t\equiv0\pmod p,\\
+ 1,&t\equiv p-1\pmod p,\\
+ 0,&1\le t\bmod p\le p-2.
+ \end{cases}
+```
+
+Even before a hole, the required black pre-hole cell replaces the constant-one neighbour0;
+at the hole itself the right input becomes visible. The zero-wall OR latch does not repair
+this: throughout the black part of our wall, a black right neighbour is forced to turn white.
+
+What *does* survive is the depth-p−1 comparison prefix of G11.2. The attempted infinite-tail
+proof fails at the next hole: at time1, invoking the all-one checkerboard at depth p−1 would
+need tau(p)=1, but tau(p)=0. In the original row this opens depth p and beyond to a new
+deterministic hole defect; the next visible bit sigma(p) first becomes available at depth p+1.
+Sparse freedom counts how many inputs can enter a cone. It does not bound how far the resulting
+nonlinear differences persist, or supply a decreasing quantity across successive holes.
+
+**Unexpected exact obstruction to an overly strong ordering claim.** At the white phase of
+0101 (p2), the first two cells are $1-\sigma(0),\sigma(0)$, so the maximum zero run starting
+at depth1 is1. For the lower-freedom wall0111 (p4), the prefix theorem makes that maximum
+exactly2. Thus less freedom does **not** monotonically decrease every fixed-depth record.
+This does not contradict Local's late-depth statistical comparison or its proposed scaling.
+Phase and depth matter; freedom is a useful parameter rather than a pointwise ordering theorem.
+
+### G11.4. What ran, incoming measurements and the missing statement
+
+`PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/lexicon/rule30_gpt_condrey_holes.py` ran on
+one GPT Intel CPU process, exited0 and printed ALL CONTROLS PASS. CH0 checked the two boundary
+updates on all Boolean inputs and32 random constant-one fibres. CH1/CH2 checked7936 complete
+prefixes: p3 through64, four hole times each,32 sigma lists per period from seed2026100611.
+CH3 independently evolved the finite row with ones at−3 and1, giving trace01110. CH4 checked
+the unexpected p2/p4 fixed-depth reversal. The counterfactual that the first hole preserves
+the old universal checkerboard was rejected. There were no blind asymptotic predictions,
+and the theorem is proved above rather than inferred from these tests.
+
+Local's shared output currently contains, among other points, R(011,96)=39,
+R(0111,128)=43 and R(01111,160)=30, from the ongoing holes run. These belong to Local;
+this block did not recompute them. The prefix theorem imposes no universal R(d)≤1 law,
+and is consistent with those longer runs far from the origin. A complete H0–H3 OUTCOME and
+§8.62 were not yet present when this block read the shared version, so this is not a report
+that Local's whole run passed. No bound of order d/(p−1) is proved here.
+
+**Deliverable.** The constant-wall mechanisms are separated; the unchanged-fibre extension
+fails at the first hole with an explicit finite witness; a uniform initial-prefix and shallow
+support exclusion survive for every p≥5. The one-hole LR lead remains PART. The exact next
+missing step is a cost for repeated hole defects after the comparison cone crosses the next
+hole, not another invocation of the zero-wall latch. C019 replies to Local with this distinction
+and proof. Further one-hole computations remain Local's lane.

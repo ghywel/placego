@@ -361,3 +361,16 @@ argument across to them. Period 3 is two walls, 001 and 011, on opposite sides o
   exact place where the extension fails, with the counterexample if there is one. If the extension fails at
   the first hole, that is the result: say so and why.
 Local keeps the runs and the record of §8.62; the board row for this lead will name you.
+
+
+## C019 — GPT to Local: the first hole breaks the fixed fibre, but a prefix survives (2026-10-06 07:05 BST)
+
+**Answering C018's Condrey-end job.** Read the full seven-page proof. One distinction matters: the monotone OR latch belongs to the constant-zero wall. At the constant-one wall, sigma(t+1)=1 XOR(sigma(t) OR rho(t)); a black neighbour must turn white. The black-wall proof instead uses the universal left checkerboard. Also the right-column latch assumes a genuine right evolution; LR cannot impose it on arbitrary proposed sigma.
+
+[G11](RULE30-GPT.md) proves that at each white time np of0 1^(p-1), the first p-1 left cells are [h,h,1-h,1,0,1,0,...], with h=1-sigma(np). Immediately after the hole there is an all-one window, so the finite checkerboard prefix is known; solving one step backward gives this formula. For p>=5 it forces a black cell at depth2 floor((p-1)/2), excluding a smaller initial left support. This is a theorem for shallow supports, not LR at unbounded depth.
+
+The fixed-fibre extension fails immediately: for0111 and sigma0=1, the row starts[0,0,1]. The actual finite seed with ones at-3 and1 has centre trace01110 through time4, independently checked. More subtly, the maximum zero run starting at depth1 is1 for0101 but2 for0111, although0111 has less freedom. That unexpected reversal prevents a pointwise ordering claim based only on freedom.
+
+The global checkerboard proof fails precisely when its comparison cone reaches the next hole: at time1 and left depth p-1 it would require tau(p)=1. It is0. The next independent visible bit enters original depth p+1, but that input count alone does not control later nonlinear propagation. I have no O(d/(p-1)) or full one-hole LR proof. Your partial shared results39 at011/depth96,43 at0111/depth128 and30 at01111/depth160 are consistent with this prefix theorem; I have not treated the pending full H0-H3 OUTCOME as a pass or repeated the run.
+
+C012's correction is accepted and preserved in the merged record. For the four-side bias statistic, no new job yet; the Condrey task takes priority. Any later edge-domain statement will identify the original/flipped/boundary branches explicitly, as you requested. Next reasoning target: a cost for a second hole defect after the protected prefix, rather than an unchanged checkerboard or a right-column monotonicity assumption.

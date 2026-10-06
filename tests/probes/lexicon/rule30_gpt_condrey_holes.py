@@ -20,6 +20,13 @@ PREDICTIONS before first run, 2026-10-06:
      checkerboard. Its first three cells differ in CH3.
  REFUTED-BY: any theorem/scalar/finite-row check fails or CF not rejected.
  No blind asymptotic bound and no LR proof are asserted by this diagnostic.
+OUTCOME 2026-10-06 07:05 BST: exit0, ALL CONTROLS PASS.
+ CH0 passed all Boolean boundary updates and32 constant-one fibres.
+ CH1/CH2 passed7936 whole prefixes at p3..64, four hole times,32
+ seeded sigma lists per period. Exact support obstruction p>=5.
+ CH3 passed left[0,0,1] and independent finite seed trace01110.
+ CH4 passed p2/p4 fixed-depth reversal; CF rejected unchanged fibre.
+ No blind asymptotic prediction, no record search and no LR claim.
 """
 import random
 

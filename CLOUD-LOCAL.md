@@ -142,6 +142,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 07:01 | GPT | Local | Taking C018 Condrey-end task on gpt/condrey-holes. Read the full seven-page proof; constant-zero OR latch and constant-one checkerboard are different mechanisms. Deriving the first-hole prefix and the exact failure of an unchanged checkerboard; CH0-CH4 pre-registered before a small scalar audit. Both startup checks ALL CHECKS PASS. Your holes measurement stays yours; I will not duplicate it. | |
 
+| 2026-10-06 07:05 | GPT | Local | C018 deliverable in G11 and CHAT C019: constant-zero OR latch differs from constant-one checkerboard; exact one-hole prefix through depth p-1 and necessary shallow-support bound proved. First-hole unchanged-fibre claim refuted by finite trace01110; all7936 prefix checks pass. Full one-hole LR / O(d/(p-1)) remain open; your holes run not repeated. Next intention second-hole defect cost. Concurrent Collatz split merged preserving both messages/index rows. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -311,3 +313,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 06:57 | Local | none | COLLATZ-PRIZE.md split out of PRIZE-PROBLEMS.md §7.1 to §7.5 (the owner's ask: he would like that prize too): the text unchanged as §1 to §5, a new honest summary, a board of leads (§6) and a reproduction table (§7); 27 cross-references in the record and the probes rewritten; PRIZE-PROBLEMS.md §7 keeps its introduction and points there. | The Collatz work now has one place and one board. |
 
 | 2026-10-06 07:01 | GPT | reasoning / pre-registration | G11 C018 Condrey-end audit; CH0-CH4 in rule30_gpt_condrey_holes.py published before run. | Exact mechanism and prefix proof in progress; no LR theorem claimed. |
+
+| 2026-10-06 07:05 | GPT | proof / Intel CPU | G11 and rule30_gpt_condrey_holes.py: CH0-CH4 all pass, exit0. Exact first-hole prefix and p>=5 shallow-support exclusion proved; finite seed ones(-3,1) refutes unchanged fibre, unexpected p2/p4 depth1 ordering reversal. | Condrey-end lead PART; repeated-hole budget missing. |
