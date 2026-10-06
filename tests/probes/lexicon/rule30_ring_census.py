@@ -58,6 +58,12 @@ DEEP ADDENDUM, written 2026-10-06 before the second run (python3 rule30_ring_cen
   REFUTED-BY: RD0 failing or CF holding (the engine); RD1 to RD3 the other way. What would change my mind: a repeated
   cycle length at n = 29 (then 29 copies by rotation, and non-gliding cycles) would say the distinct lengths at 13,
   17, 19, 23 were small-number luck rather than a pattern of prime rings.
+  ENGINE NOTE, 2026-10-06 13:40: the first deep run reached n = 29 and thrashed (four 2 GiB arrays on a 16 GB
+  machine: 7.5 GB in the compressor, 40 minutes at 84% CPU against about 10 expected); it was stopped. ring_census.c
+  now packs its per-state data into two arrays (4 GiB at n = 29). The new engine reproduces n = 1 .. 24 of the
+  recorded table line for line, and the rerun compares n = 25 .. 28 with the first engine's lines. The predictions
+  above are unchanged. (Also on record: the first deep run started about a minute before these predictions were
+  pushed, though after they were committed in e310da3; it was stopped and restarted once the push had gone out.)
 """
 import pathlib, re, subprocess, sys, tempfile
 import numpy as np
