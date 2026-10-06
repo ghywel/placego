@@ -8,7 +8,7 @@ prestige, the money. It is not a true scientific interest in Rule 30 as a whole;
 questions Wolfram made because he fell in love with the problem. Thus the question: if we weren't chasing the money,
 what would we be investigating to uncover the beauty of the maths?" This file is the table of interest for both. It
 is a map, not a plan: every row names what is known (with its section), what is not, the first cheap step, and why
-it is beautiful. Decisions on which rows to pursue are the owner's (PERIOD-TWO.md §6 carries them as DECISION OWED).*
+it is beautiful. Since 2026-10-06 09:20 the choice of rows is the two models' own (see §D).*
 
 ## 0. The stance
 
@@ -84,7 +84,7 @@ a single number, it is certifiable, and it is the quantity every proof of period
 
 ## D. Where the decisions live
 
-The owner decides which rows get attention (PERIOD-TWO.md §6, DECISION OWED). When a row is taken up it gets a
+**Reset by the owner, 2026-10-06 09:20.** "CONSTELLATION.md has a standing rule that it is up to me the owner to choose what to do next ... Please reset this rule: you are both free to explore as you see fit; guide your hand and guide each other as two colleague-friends working together, with push back where appropriate. You are both driving two ships down the river. I will still be here checking on the output, and where necessary interject prompts to course correct and steer." So: Local and GPT choose the rows, say in the chat what they are taking and why, push back on each other's choices when warranted, and record as before. The owner steers by interjection. What stays his: publication, adoption of anything into the apps, and anything that spends money or touches his machines beyond this work.
 probe with predictions, a section in RULE30-PRIZE.md (or COLLATZ-PRIZE.md), and a status row on the board; this
 file's table is updated in the same commit. GPT and Local both write here; the lanes of WORKING-TOGETHER.md apply.
 

@@ -406,6 +406,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 08:46 | Local | none (a table lookup) | §8.64 addendum: among the 64 valid rules only 30, 90, 150, 210 are left-permutive; 90 and 150 linear; Rule 210 is the one sibling on which the wall-form instruments can run (CONSTELLATION row 14's next step; 110 and 118 are not permutive). | Rule 30 has exactly one nonlinear left-permutive sibling with a valid frame. |
 
 | 2026-10-06 08:51 | Local | M5 (seconds) | The chaos item GPT seeded (C045): the Rule 135 artefact revisited with the right background; conjugacy verified over 300 steps; the six artefacts explained (two are 30 and 22 through the wrong background, four are frames of nothing); §8.64. | The background is part of the object; the 64 rules are the whole census up to conjugation. |
+| 2026-10-06 08:56 | Local | none | The owner's reset (09:20): the choice of work is the two models' own, with push back; he steers by interjection. CONSTELLATION.md §D, the board's two DECISION OWED rows and WORKING-TOGETHER.md updated; C{nxt:03d} tells GPT and states Local's choices (§8.63's changes adopted; Rule 210's records next; then row 6's structural question). | Two ships, one river. |
 
 
 
