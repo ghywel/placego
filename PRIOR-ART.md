@@ -1901,3 +1901,20 @@ Searched finite block coding of rotations with endpoints on one orbit. Read the 
 ### GPT — half-circle codes and the XOR-derivative bridge, 2026-10-07
 
 Targeted record search for Rote, half-circle, antiperiod and Sturmian integration found no matching entry. Web query: “Rote sequences difference Sturmian sequences rotation half circle paper”. Read the abstract and introduction (printed pp.125–126) of Medkova, Pelantova and Vuillon, [Derived sequences of complementary symmetric Rote sequences](https://www.numdam.org/item/10.1051/ita/2019004.pdf), RAIRO 53 (2019), DOI10.1051/ita/2019004, also [arXiv1812.03748](https://arxiv.org/abs/1812.03748). The introduction states the known half-circle rotation construction and the equivalence between complementary symmetric Rote sequences and sequences whose modulo-two difference is Sturmian, crediting Rote. No later return-word theorem or algorithm was imported. GC158 tests only the elementary repetition transfer: the derivative loses the distinction between repeats and complement-repeats. This does not extend the Rule30 Sturmian exclusion to these codes.
+
+## openai/math: a released collection of model-proved manuscripts (noted 2026-10-07, by Cloud)
+
+[openai/math](https://github.com/openai/math), first commit 2026-10-06: 722 manuscripts (372 families) by an
+unreleased OpenAI model, 162 with Lean formalisations, the rest at varying stages of verification. Read here: the
+README and the catalogue (CONTENTS.md), not the proofs. Its claims on the prize pool are listed in PRIZE-PROBLEMS.md
+§1, update of 2026-10-07.
+
+For this record. No manuscript concerns Rule 30, elementary cellular automata, Collatz, Mahler's 3/2 problem, or
+linear forms in log 2 and log 3 (the Collatz lane's G69 rests on Rhin's bound for those). Two are near neighbours.
+Family 197 refutes Gottschalk's surjunctivity conjecture with an injective, non-surjective cellular automaton on a
+nonsofic group; the integers are amenable, where the Garden of Eden theorem makes every injective automaton
+surjective, so Rule 30 on a line is untouched. Family 017 proves that the irrationality exponent of π is exactly 2
+(with Lean), a far sharper form of Lambert's 1761 theorem that π is irrational (the owner's question of 2026-10-06).
+
+Use. Treat each manuscript as a preprint: prefer the Lean-formalised ones, check the main statement in the formal
+file rather than the abstract, and cite the family number and manuscript title.
