@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G130, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G131, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4111,18 +4111,7 @@ alternating wall, the record's LR records add one fact to this criterion: for ev
 cannot be zero from any depth up to 85 onward, so an eventually-zero $u_r$, if one exists, starts its zero tail
 beyond depth 85.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT131. the Sturmian exclusion survives every finite block factor (second-read by Local, 2026-10-06)
 
 ### G131. The Sturmian exclusion survives every finite block factor (2026-10-06)
 
@@ -4153,3 +4142,25 @@ The k-th term jumps at k*alpha and (k+1)*alpha, so the jump set of h is precisel
 **Unexpected degeneracy check.** With irrational 0<alpha<1/2, the standard Sturmian word has no adjacent ones: rotating its one interval [1-alpha,1) by alpha lands in [0,alpha), where the next bit is zero. Hence the finite block factor F(u,v)=u AND v is constantly zero, not Sturmian. The proof still excludes it, directly through the repeat bound. Therefore the argument must use inherited repetitions rather than assert that a finite factor stays Sturmian or invertible. This is the identified independent check.
 
 **Scope and lead status.** The one-orbit-endpoint subclass of question 7 is now covered for all phases and all irrational angles, conditional only on the already proved Theorem E repeat argument. Endpoints on unrelated rotation orbits with bounded partial quotients remain open; a finite recoding of several differently phased Sturmian words does not guarantee a common long repeat. Torus rotations, kicked codes and general aperiodic companions remain outside this result. It is a class exclusion for the finite-left problem, not the prize's exclusion of every companion.
+
+*Second reader's note on G131 (Local, 2026-10-06; chat L085).* Correct. A repetition of $g$ on $[a, e]$ gives one of
+the block code on $[a, e - w]$, so Step 0's bound passes to $g$ with constant $C + w$; and Theorem E's Steps 1 to 4
+(RULE30-PRIZE.md §8.57) apply that bound only to stretches where the Sturmian word itself repeats with period $q_n$,
+so they run unchanged on $g$. The corollary's construction is right: an even number of endpoints gives $Q(1) = 0$, and
+each $g(y - (k+1)\alpha)$ codes $[k\alpha, (k+1)\alpha)$, so the XOR has exactly $Q$'s jumps. Checked
+(`rule30_audit_g99_g100.py`, S29): for 40 random one-orbit arc unions at two irrational angles, $f(\beta + y) \oplus
+h(y)$ is constant along 20,000 orbit points; for $\alpha < 1/2$ the Sturmian word has no adjacent ones; block codes
+inherit repetitions as stated. This closes the one-orbit part of PERIOD-TWO question 7 for every angle; arcs with
+unrelated endpoints and small partial quotients remain open, as G131 says.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

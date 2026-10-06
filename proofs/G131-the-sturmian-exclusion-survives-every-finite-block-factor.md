@@ -1,10 +1,10 @@
-# The Sturmian exclusion survives every finite block factor
+# the Sturmian exclusion survives every finite block factor
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G131. The Sturmian exclusion
-survives every finite block factor (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT131. the Sturmian exclusion
+survives every finite block factor (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Finite recoding preserves the repetitions that exclude a Sturmian companion.
 **An everyday picture.** Reading a fixed group of neighboring symbols cannot erase a long repeated stretch except at its ends.
 
 ## The formal statement and proof
+
+### G131. The Sturmian exclusion survives every finite block factor (2026-10-06)
 
 **Status and purpose.** Symbolic extension of RULE30-PRIZE.md section 8.57's Theorem E; independent review pending. No experiment. The target is the open rotation-code lead in PERIOD-TWO.md question 7, without assuming a periodic companion. The counterfactual is that a finite recoding can remove the early repetitions responsible for Theorem E. The proof retains the exact fixed margin. Prior art: finite block coding and orbit-endpoint rotation partitions are standard; the abstract of Kupsa and Starosta, [On the partitions with Sturmian-like refinements (2015)](https://www.aimsciences.org/article/doi/10.3934/dcds.2015.35.3483), discusses this class and stronger refinement results. Only the abstract was read; no refinement or injectivity theorem is imported. The result below is a corollary of the project's existing repeat obstruction, not a novelty claim about Sturmian coding.
 
@@ -45,3 +47,13 @@ The k-th term jumps at k*alpha and (k+1)*alpha, so the jump set of h is precisel
 **Unexpected degeneracy check.** With irrational 0<alpha<1/2, the standard Sturmian word has no adjacent ones: rotating its one interval [1-alpha,1) by alpha lands in [0,alpha), where the next bit is zero. Hence the finite block factor F(u,v)=u AND v is constantly zero, not Sturmian. The proof still excludes it, directly through the repeat bound. Therefore the argument must use inherited repetitions rather than assert that a finite factor stays Sturmian or invertible. This is the identified independent check.
 
 **Scope and lead status.** The one-orbit-endpoint subclass of question 7 is now covered for all phases and all irrational angles, conditional only on the already proved Theorem E repeat argument. Endpoints on unrelated rotation orbits with bounded partial quotients remain open; a finite recoding of several differently phased Sturmian words does not guarantee a common long repeat. Torus rotations, kicked codes and general aperiodic companions remain outside this result. It is a class exclusion for the finite-left problem, not the prize's exclusion of every companion.
+
+*Second reader's note on G131 (Local, 2026-10-06; chat L085).* Correct. A repetition of $g$ on $[a, e]$ gives one of
+the block code on $[a, e - w]$, so Step 0's bound passes to $g$ with constant $C + w$; and Theorem E's Steps 1 to 4
+(RULE30-PRIZE.md §8.57) apply that bound only to stretches where the Sturmian word itself repeats with period $q_n$,
+so they run unchanged on $g$. The corollary's construction is right: an even number of endpoints gives $Q(1) = 0$, and
+each $g(y - (k+1)\alpha)$ codes $[k\alpha, (k+1)\alpha)$, so the XOR has exactly $Q$'s jumps. Checked
+(`rule30_audit_g99_g100.py`, S29): for 40 random one-orbit arc unions at two irrational angles, $f(\beta + y) \oplus
+h(y)$ is constant along 20,000 orbit points; for $\alpha < 1/2$ the Sturmian word has no adjacent ones; block codes
+inherit repetitions as stated. This closes the one-orbit part of PERIOD-TWO question 7 for every angle; arcs with
+unrelated endpoints and small partial quotients remain open, as G131 says.

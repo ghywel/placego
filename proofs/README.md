@@ -344,19 +344,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   left support becomes an explicit constraint on the sideways limit.
 - [a fixed right tail gives a unique left seed for every wall](G130-a-fixed-right-tail-gives-a-unique-left.md):
   Every wall has one forced left seed once the initial right tail is fixed.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [The Sturmian exclusion survives every finite block factor](W131-the-sturmian-exclusion-survives-every-finite-block-factor.md):
+- [the Sturmian exclusion survives every finite block factor](G131-the-sturmian-exclusion-survives-every-finite-block-factor.md):
   Finite recoding preserves the repetitions that exclude a Sturmian companion.

@@ -120,6 +120,11 @@ CHECKS (GPT's claims at 827e006):
      N <= 12, successive solving gives exactly one left word, whose forward evolution realizes the prefix; the row
      ...111|000... becomes the single black cell in one tick; truncating its left seed to ones at -N..-1 (N = 1..14)
      keeps the wall through time N and first breaks it at N + 1.
+  S29 (G131, added 2026-10-06 at 85e3257): for 40 random step functions on the circle whose jump endpoints lie on one
+     rotation orbit (alpha = sqrt 2 - 1 and the golden angle; even numbers of endpoints), f(beta + y) XOR h(y) is
+     constant along 20,000 orbit points, with h the XOR of rotated interval codes from Q(z) = (1 + z) P(z) over GF(2);
+     for alpha < 1/2 the Sturmian word has no adjacent ones (AND factor constantly 0); and a repetition of g of length
+     e - a + 1 gives a repetition of the width-(w+1) block code of length e - a + 1 - w on random words.
 """
 import random
 from fractions import Fraction as F
@@ -1194,4 +1199,61 @@ for Nt in range(1, 15):
     tr = wall_trace(seed, Nt + 1)
     ok28 &= tr[:Nt + 1] == tau_g[:Nt + 1] and tr[Nt + 1] != tau_g[Nt + 1]
 check('S28 G130: unique successive left solving realizes every prefix; the one-tick guard; truncations break at N + 1', ok28)
+import math as _mm
+ok29 = True
+rng29 = random.Random(131)
+for alpha in (_mm.sqrt(2) - 1, (_mm.sqrt(5) - 1) / 2):
+    g = lambda y: 1 if (y % 1.0) >= 1 - alpha else 0
+    for trial in range(20):
+        ks = sorted(rng29.sample(range(-6, 7), 2 * rng29.randint(1, 3)))
+        beta = rng29.random()
+        ends = sorted(((beta + k * alpha) % 1.0) for k in ks)
+        f0 = rng29.randint(0, 1)
+        f = lambda x: (sum(1 for e in ends if e <= (x % 1.0)) + f0) % 2
+        # Q(z) = sum z^(k - kmin); P = Q / (1 + z) over GF(2)
+        kmin = ks[0]
+        Q = [0] * (ks[-1] - kmin + 1)
+        for k in ks:
+            Q[k - kmin] ^= 1
+        P = [0] * (len(Q) - 1)
+        rem = Q[:]
+        for i in range(len(Q) - 1, 0, -1):          # divide from the top: z^i term -> P_(i-1)
+            if rem[i]:
+                P[i - 1] ^= 1
+                rem[i] ^= 1
+                rem[i - 1] ^= 1
+        ok29 &= not any(rem)
+        def h(y):
+            v = 0
+            for j, pj in enumerate(P):
+                if pj:
+                    k = j + kmin
+                    v ^= g(y - (k + 1) * alpha)
+            return v
+        theta = rng29.random()
+        vals = set()
+        for sidx in range(20000):
+            y = (theta - beta + sidx * alpha) % 1.0
+            x = (beta + y) % 1.0
+            if min(abs(x - e) for e in ends) < 1e-9:
+                continue
+            vals.add(f(beta + y) ^ h(y))
+        ok29 &= len(vals) == 1
+a2 = _mm.sqrt(2) - 1
+gs = [1 if ((0.3 + s_ * a2) % 1.0) >= 1 - a2 else 0 for s_ in range(5000)]
+ok29 &= all(not (gs[i] and gs[i + 1]) for i in range(4999))
+for trial in range(200):
+    wv = rng29.randint(0, 3)
+    base = [rng29.randint(0, 1) for _ in range(30)]
+    q = rng29.randint(1, 5)
+    word = base + [0] * 40
+    for i_ in range(len(base), len(word)):
+        word[i_] = word[i_ - q]
+    a_ = rng29.randint(0, 10)
+    e_ = len(word) - 1 - q
+    Fb = lambda blk: (sum(blk) % 2) ^ (blk[0] & blk[-1])
+    cw = [Fb(word[i_:i_ + wv + 1]) for i_ in range(len(word) - wv)]
+    ok29 &= all(cw[s_] == cw[s_ + q] for s_ in range(len(base), e_ - wv + 1))
+check('S29 G131: one-orbit arc codes = XOR of rotated interval codes + constant; no adjacent ones for alpha < 1/2; '
+      'repeats inherited by block codes', ok29)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

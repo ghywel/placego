@@ -1580,7 +1580,7 @@ Every wall has one forced left seed once the initial right tail is fixed.
 **An everyday picture.** Fixing one half of the starting picture determines the other half from the requested movie, but the determined half may need an infinite canvas.
 
 
-## W131
+## G131
 Finite recoding preserves the repetitions that exclude a Sturmian companion.
 
 **What it says.** Any fixed finite block function of a Sturmian sequence is excluded beside the alternating wall with finite left support. This includes rotation codes on several arcs when all endpoints belong to one rotation orbit, for every phase and every irrational angle.
