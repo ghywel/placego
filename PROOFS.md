@@ -2183,3 +2183,40 @@ Suppose one substitutes the desired bootstrap C_w(t)<=K*Q_w(t) at all preceding 
 The last inequality follows from the preceding lower bound on b and sum_(j=1)^d j^(-1/2)>=2*(sqrt(d+1)-1), with d=T-m. Thus the coefficient in this particular sufficient estimate grows with the paid-tail length. It cannot certify a uniform B or close a fixed-K induction simply by substituting the same coarse count bound. This is a statement about the estimate's right-hand side, not a lower bound on the true A or D and not a refutation of the count conjecture. It remains valid along linear horizons where the paid tail grows with width.
 
 **Route status.** Close only the route that takes the maximum coin weight, replaces every class imbalance by its full class size, and feeds a uniform count bootstrap into that bound. A sharper triangle estimate retaining the actual odd-count allocation, or cancellation in the signed sum, remains open. The next reasoning question is whether the barrier-demand weights suppress classes carrying most of the actual mass, rather than taking their maximum. No new experiment is proposed in this audit; G74-G76 identities and the exact normalization guard are the controls. Independent Local reading requested. This is elementary accounting of recorded bounds, with no novelty claim.
+
+### GPT G78 — ideal allocation proxy obstruction (awaiting independent reading)
+
+### G78. Even ideal coin-class allocation leaves a growing full-class proxy (2026-10-06)
+
+G77 leaves allocation-aware triangle estimates open. One qualification is needed: merely matching the coin odd-count allocation does not make the bound from replacing abs(I) by K uniformly small. Define v(t,a) as the number of admitted length-t words with a ones and
+
+    q_w(t,a)=2^m*v(t,a)/2^t,
+    U_coin(m,T)=(1/2)*sum_(t=m)^(T-1) sum_a q_w(t,a)*Delta_t(a).
+
+These are ideal coin class masses and their full-class proxy, not actual Collatz measurements. Let d=T-m. Choose a length-T admitted word uniformly, and let Z_tail be its number of ones after the first m bits. Then exactly
+
+    U_coin(m,T)/Q_w(T)=E[2*Z_tail-d | admitted through T].
+
+**Proof.** Keep the admitted first-m-bit ensemble with one unit of mass per word and replace only the d future bits by independent bits of odd probability p. Its final mass is the finite polynomial
+
+    F(p)=sum over admitted length-T words of p^z*(1-p)^(d-z),
+
+where z=Z_tail. Thus F(1/2)=V(T)/2^d=Q_w(T), and differentiation gives
+
+    F'(1/2)/(2*F(1/2))=E[2*Z_tail-d | admitted through T].
+
+Independently, differentiate one tail coordinate at a time. An admitted prefix at time t has mass q_w(t,a) when all tail coordinates are fair. Making its next bit odd rather than even changes its future completion probability by Delta_t(a). A prefix already killed contributes0. The coordinate sum is therefore F'(1/2)=sum_(t=m)^(T-1) sum_a q_w(t,a)*Delta_t(a)=2*U_coin. This is the finite increasing-event differentiation formula often called Margulis-Russo; the complete specialization is proved here and no external theorem is required.
+
+Since each surviving full word has at least ell_T ones and its prefix at most m, Z_tail>=ell_T-m. Consequently
+
+    U_coin(m,T)/Q_w(T)>=2*ell_T-T-m.
+
+In particular beta=log(2)/log(3)>5/8 gives, at T=8*m with m>=1,
+
+    U_coin(m,8*m)/Q_w(8*m)>m.
+
+The ideal full-class proxy thus grows along a fixed linear horizon. A classwise comparison K_w(t,a)<=K*q_w(t,a), followed by abs(I_w(t,a))<=K_w(t,a), yields A_w(T)<=K*U_coin(m,T). Its sufficient right-hand side cannot establish a uniform A/Q bound by itself. This is not a lower bound on actual A: in an exactly fair coin ensemble the signed class imbalance vanishes, even though the proxy is positive. Sharper estimates for actual abs(I), or a signed cancellation argument, remain open. No assertion is made that actual classwise domination holds.
+
+**Unexpected proxy-versus-error guard.** At m2,T5 the four admitted full words have tail words011,101,110,111. Their tail signed counts2*z-3 are1,1,1,3, with mean3/2. Here Q=1/2 and U_coin=3/4. Ideal fairness has zero count discrepancy despite that positive proxy. Replacing a zero imbalance by the full class size is therefore a substantive loss, not just a change of normalization.
+
+**Next controls, preregistered NOT RUN.** PC1: m1..8,T=m..24, compute U_coin by exact rational backward weights and compare it with an independent forward integer recurrence for admitted word counts and summed tail odd counts. Predict identity and the endpoint lower bound; retain T=m. PC2: coin dynamic programming only, m1..32,T=8*m; verify the strict lower bound U_coin/Q>m by the moment formula and independently enumerate the m2,T5 guard. Counterfactual: an ideal fair ensemble's full-class proxy equals its signed discrepancy0; must fail on the positive3/4 guard. No actual-start scan, Local job, or empirical claim about actual class domination. Independent Local reading requested.

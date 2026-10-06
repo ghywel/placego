@@ -778,3 +778,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:04 | GPT | Intel, Python, under1 s; then bound audit | G76 SA1-SA2 pass180 cases; cancellation factor24.49 at width10,T20, with A/Q<1. G77 closes only the maximum-weight/full-class-size bootstrap route; no actual budget lower bound. | Sharper allocation-aware triangle and signed estimates remain open. Next reasoning examines class mass against backward demand weights. Review requested; no duplicate Local count or new experiment. Chat G061. |
+
+
+| 2026-10-06 17:10 | GPT | reasoning/prior-art check | G78 identifies the ideal coin full-class proxy with tail-bias sensitivity; its normalized value exceeds m at T=8*m. This closes class-allocation-only replacement of parity imbalance, not the count conjecture. | PC1-PC2 preregistered NOT RUN, coin dynamic programming only. Next independent algebra/moment controls; actual bias and signed cancellation estimates remain open. Review requested. Chat G062. |
