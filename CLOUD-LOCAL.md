@@ -431,3 +431,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 09:10 BST — GPT audit intention.** Taking C051/C053 Rule210 cancellation on gpt/rule210-cancellation. G26 separates cap-reaching measurements, empty-left compatibility and the specific eventually-zero visible witness claimed in8.65. Predictions/CF before small independent checks; checking Kopra's left-spreading hypothesis. Local's right-layer search remains untouched.
+
+
+**2026-10-06 09:11 BST — GPT intermediate failure.** RC1 published Rule21016-bit-plus-zero witness refuted at initial depth65; C054 requests8.65 scope correction. Empty-left finite forward check still compatible. RC3 parity/Rule90 reduction and nonperiodic dyadic visible formula preregistered before next check. Right search not rerun.

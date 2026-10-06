@@ -2685,3 +2685,9 @@ For slow wall0^a1^b with b>=2, G15 supplies independent monotone white blocks0^r
 ## G26. Rule210 cancellation audit, preregistration (2026-10-06)
 
 Follow Local C051/C053 and section8.65 without duplicating the width search. Startup wall/merge checks both passed. Separate the measured cap-reaching continuations from the claimed explicit infinite witness. Test RC1: the specified visible word1011000011111111 followed by zeros yields an all-zero initial left prefix through256 cells under Rule210's inverse. This is a blind audit of the published witness, not an accepted theorem. Compare independent backward-row and scalar truth-table forward reconstructions. Test RC2: starting with an empty left row against0101, the left neighbour stays0 at every odd time, the condition needed to maintain the wall. Counterfactual: left-permutivity alone implies this clock compatibility (control Rule30). Unexpected check: audit the left-spreading hypothesis in Kopra's Corollary3.7 and distinguish it from left-permutivity alone. A finite check cannot certify a claimed infinite witness.
+
+### G26 intermediate failure and next prediction
+
+RC1 refuted: the specified16-bit visible word followed by zeros has first nonzero initial left cell at depth65 (then69,71,...). Through depth64 it mimics the true empty-left trace. RC2 finite control: empty-left evolution against0101 has no odd-time left-neighbour ones through256 steps. This does not yet prove infinite compatibility.
+
+Next RC3 prediction before run: on the empty-left evolution, every occupied left cell at time t has depth j with t+j odd, so the AND-NOT reduces exactly to XOR on that domain. Consequently it is Rule90 driven by the same wall, and its even-time visible sigma obeys sigma(0)=1 and sigma(2n)=floor(log2(n)) modulo2 for n>=1. Test through512 steps with truth-table, bit-vector and independent Catalan-parity coding. Retain the failed finite-word continuation.
