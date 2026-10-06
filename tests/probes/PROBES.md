@@ -120,3 +120,5 @@ app is unpublished by design.
 
 - G50 `prizes/mahler_gpt_scope.py`: initial MA3 phase-order failure retained; corrected MA1-MA3 pass216 triples,128 samples and12 finite congruences, with added rational multiplication control.
 - `prizes/mahler_gpt_window.py` (G51): preregistered exact prefix/backward fractional-window comparison, ceil-residue midpoint trajectories,10101 exclusion. MW1-MW3 NOT RUN at publication.
+
+- G51 prizes/mahler_gpt_window.py: MW1-MW3 pass2047 exact window comparisons and532 midpoint trajectories, including10101 exclusion. Single-party finite controls.
