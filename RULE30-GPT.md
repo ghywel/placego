@@ -3107,3 +3107,25 @@ The second term is omitted for a'=0; frequencies in each Gamma are reduced modul
 ## G39. Endpoint-conditioned survival: a polynomial event cost, no automatic Fourier transfer (2026-10-06)
 
 **Preregistration.** Fix length T>=1 and odd count a with3^a>2^T. Uniformly sample words with that count; E means every nonempty prefix satisfies3^a_t>2^t. Predict P(E)>=1/T by rotating at the unique minimum of logarithmic partial sums, including nonprimitive words. SC1: exhaust all words throughT=12, compare barrier counts with an independent integer dynamic program and verify every positive-total rotation class contains an admissible word. SC2: check T*A(T,a)>=binomial(T,a). Unexpected SC3: repeated110 and all-one words test the short-orbit case. Counterfactual SC4: small conditioning cost transfers small complex-character expectation; a two-point cancellation example is predicted to refute this. Exact integer barriers; no floating-point admissibility. Single-party controls. Bears on PERIOD-TWO.md §7 question9, the shared count twin, through the conditioning boundary in G38. Reuse passed startup checks; Local retains Rule30 runs.
+
+
+### G39 theorem and proof: fixed-endpoint event transfer
+
+Fix integers T>=1 and0<=a<=T with3^a>2^T. Let U be the uniform law on binary words of lengthT with a ones. Let E require3^a_t>2^t at every nonempty prefix. If A(T,a) counts E, then
+
+    binomial(T,a)/T <= A(T,a) <= binomial(T,a).
+
+**Proof.** For a word w, put S_j=a_j*log(3)-j*log(2), for0<=j<=T. Distinct partial sums cannot coincide: equality would give3^d=2^e with a nonzero integer time difference e, contrary to unique prime factorisation. Choose the unique minimum S_k among S_0,...,S_(T-1). Rotate w to start just after indexk. Before wrapping, every new nonempty partial sum is S_j-S_k>0, including j=T since S_T>0 and S_k<=0. After wrapping it is S_T+S_j-S_k>0. Hence each rotation class contains an admissible word. Every class has at mostT members, even when the word is nonprimitive. Thus the number of classes is at least binomial(T,a)/T and A is at least that number. The upper bound is immediate.
+
+Consequently, for any event B and nonnegative function f on this finite population,
+
+    U(B | E) <= T*U(B),
+    expectation_U(f | E) <= T*expectation_U(f).
+
+This follows by dropping the E indicator from the numerator and using U(E)>=1/T. It is a fixed-endpoint comparison, not a bound on the probability of that endpoint under a different law. It applies equally to any iid Bernoulli law after conditioning on its endpoint count, because that conditional law is uniform. It concerns coefficient admissibility, not actual stopping-time survival.
+
+**Cancellation boundary.** On the uniform group Z/2, the nontrivial character has values+1,-1 and expectation0. Conditioning on the +1 point costs just2, but leaves character expectation1. Therefore the event bound cannot imply an analogous bound multiplying the absolute unconditioned complex expectation. This counterexample rejects a general transfer principle, not a possible special estimate for Collatz. Exponentially rare events at fixed endpoints retain their exponential rate after the polynomial factorT; exponentially small Fourier expectations need additional control of their correlation with E.
+
+**Exact next operator.** Fix terminal(T,a). Let h(t,s) count admissible completions after an already-admissible prefix with t bits and s ones. Terminal values are h(T,s)=1 if s=a, otherwise0; impossible states have0. Backwards, h(t,s) is the sum of h(t+1,s+b) over b=0,1 for which3^(s+b)>2^(t+1). Whenever h(t,s)>0, the uniform endpoint-surviving next-bit probability is h(t+1,s+b)/h(t,s) for an admitted child, and0 otherwise. This is proved by partitioning completions by their next bit. These weights depend on(t,s), not on the terminal residue q, although q and the path are correlated. Substituting these weights into G38's deterministic residue update gives the conditioned operator exactly; the weights need not be iid. No decay estimate follows merely from writing this operator.
+
+**Outcome and scope.** SC1 passed1767 positive-total words in181 rotation classes and independent DP counts throughT12; SC2 passed35 endpoint count inequalities. Unexpected SC3 includes all-one and repeated110 short rotation orbits. SC4 refutes complex-cancellation transfer. Integer checks are exact and single-party. The analytic argument establishes the all-length count comparison; controls only audit its implementation. Prior-art mechanism: classical cyclic-minimum path rotation, no novelty asserted. Tao's unconditioned geometric-valuation law in G38 is a different population; this result does not transfer his mixing estimate. Shared survivor-count/Fourier decay remains open. Next useful target: bound the conditioned operator using the completion weights, rather than substituting the iid law.
