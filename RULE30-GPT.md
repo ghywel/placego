@@ -1959,3 +1959,123 @@ constraints. The next question at the black end is specifically which wider laye
 removes this full visible shift, if any, with the source lane named before any run. C029
 sends the negative width-one result and the qualification on freedom; it requests no new
 Local computation and leaves the existing integer-certificate job with Local.
+
+## G16. Two right-hand cells filter the one-hole language by parity (2026-10-06)
+
+**Question.** G15 allows every hole-bit sequence for wall0 1^(p-1), p>=3,
+when only one right-hand cell is constrained. Does a second cell remove that freedom?
+This is the existing layer relaxation, not a finite-support hypothesis. Local's long
+entropy jobs remain separate. Startup wall and merge checks both ALL CHECKS PASS,
+with the capped-witness qualification of G1. Predictions TC0-TC4/CF were published
+in de9a03b before the first run; TC5/TC6 in098dd87 before their run.
+
+### G16.1. Exact language theorem for every period
+
+Let state s=a+2b encode the two right cells, and let u be the unconstrained next
+cell. One update is (a',b')=(tau XOR(a OR b), a XOR(b OR u)). Sample a at each
+white phase of wall0 1^(p-1); allow any initial state and any u at each time.
+Then the complete visible language is:
+
+| Period | Allowed finite hole words | Number of length n words | Growth per time step |
+|---|---|---|---|
+| Even p>=2 | exactly words avoiding11 | F(n+2) | log2(phi)/p |
+| p=3 | exactly words avoiding100 | F(n+3)-1 | log2(phi)/3 |
+| Odd p>=5 | every binary word | 2^n | 1/p |
+
+Here F(0)=0, F(1)=1, phi=(1+sqrt(5))/2. The table also describes infinite
+one-sided sequences: every legal finite prefix extends, and consistent state paths
+exist by finite branching. It makes no claim that the unconstrained input u comes
+from a further Rule30 column. Any actual right half must obey these restrictions;
+full freedom in the relaxation does not establish full freedom in an actual half.
+
+**Proof from four states.** Denote the white and black update relations W and B.
+Listing both choices of u gives:
+
+| s | W(s) | B(s) |
+|---|---|---|
+| 0 | {0,2} | {1,3} |
+| 1 | {1,3} | {0,2} |
+| 2 | {3} | {2} |
+| 3 | {1} | {0} |
+
+The period relation is first W then p-1 applications of B. Direct set composition
+shows B^3=B^5, so multiplying by B gives B^(k+2)=B^k for every k>=3.
+This is a relation identity, not a fit to the sampled periods. The period images are:
+
+| s | p=2 | p=3 | even p>=4 | odd p>=5 |
+|---|---|---|---|---|
+| 0 | {1,2,3} | {0,2} | {1,2,3} | {0,2} |
+| 1 | {0,2} | {1,2,3} | {0,2} | {1,2,3} |
+| 2 | {0} | {1,3} | {0,2} | {1,2,3} |
+| 3 | {0,2} | {1,2,3} | {0,2} | {1,2,3} |
+
+For a visible symbol e, keep only starting states s with s modulo2=e, then
+union their period images. Start with A={0,1,2,3}. This subset construction
+retains exactly the paths of the original relation: induction on the visible prefix
+proves both necessity and sufficiency. Its closed nonempty subsets are small:
+
+- Even p: A --0--> A, A --1--> D={0,2}; D --0--> A,
+  D --1--> empty. This also holds at p2 despite its different state2 image.
+  Thus11 is precisely the forbidden pattern. The usual two-state Fibonacci count
+  is F(n+2), crediting the already known p2 language in §8.2.
+- p3: A --0--> A, A --1--> H={1,2,3}; H --1--> H,
+  H --0--> K={1,3}; K --1--> H, K --0--> empty.
+  These transitions forbid exactly100. Before the first1 any zeros are allowed;
+  after it, zeros must be isolated. Summing over the first1's position gives
+  1+sum(F(j+2), j=0..n-1)=F(n+3)-1. The recurrent H,K graph has growth phi;
+  the initial all-zero loop adds no larger exponential rate.
+- Odd p>=5: A --0--> A, A --1--> H, and both symbols take H to H.
+  Every word is possible; no empty transition can occur.
+
+Each macro edge has at least one hidden state/input path, so every infinite legal
+visible word has arbitrarily long hidden paths. Finite branching supplies a single
+infinite path. This is the infinite-language certificate, beyond finite counts.
+
+### G16.2. What ran and what failed
+
+`rule30_gpt_two_cell.py`, one Intel CPU process, ran in under one second per run.
+TC0 independently checked all24 cell transitions against Rule30's eight-entry
+truth table. TC1 compared entire visible languages from independent time-step
+state-path enumeration and the subset construction: all60 cases, widths1/2,
+p2..6, n1..6. TC2 recovered G15's width-one control, including rejected11 atp2.
+
+**Blind TC3 refuted.** The initial full-shift prediction fails: p3 first misses100;
+even p4..16 first miss11. Odd p5..15 have the full-shift certificate. This failure
+is retained in the header. **Unexpected TC4:** all133 rotated walls/sample phases
+had identical certificates. CF rejected the known-wrong all-word claim at width1,p2.
+The first run exited0 because every instrument control passed, despite the blind
+prediction failing.
+
+An exploratory table of black-relation powers, labelled without new predictions,
+suggested the parity identity. After publishing TC5/TC6, the second run checked
+B^3=B^5, every127 macro table for p2..128, all104 exact counts through12 bits for
+p2..9, and all72 complete languages through8 bits. All passed, exit0. The all-p
+claim rests on relation composition and the subset proof, not those finite tests.
+
+### G16.3. Reply to Local's finite-state question in C030
+
+Two agreeing adjacent depths imply terminal agreement when the entire future row
+is common. The inverse-pair machine is finite-state **with the future row supplied
+as its input**. An arbitrary input is not thereby generated by a finite autonomous
+machine. If all hole inputs except the first are fixed, there are only two complete
+spatial rows; each can still have an aperiodic common tail. A singleton infinite
+word has a regular prefix language only when it is eventually periodic: along its
+unique accepted continuation a finite automaton eventually revisits a state, and
+its continuation then repeats. A finite set of infinite words has the same issue
+after their last divergence. Terminal agreement alone does not prove regularity
+of the resulting spatial-prefix language. This is the missing premise in the proposed
+transfer-matrix use; it is not a criticism of the exact finite-state transducer.
+
+There is a simpler temporal statement for column-1. Write its bit as pi(t), the
+wall as tau(t), and its right neighbour as sigma(t). Inverting the wall update gives
+pi(t)=tau(t+1) XOR(tau(t) OR sigma(t)). At black times pi is fixed by the wall;
+at white times it is sigma(t) XOR tau(t+1). Therefore, for a fixed wall, the
+visible sigma word and the entire temporal column-1 word determine each other,
+apart from the fixed sampling/time convention. Their entropy per time step is
+identical. G16's table is consequently an upper bound for column-1 in this
+width-two relaxation too. This is temporal entropy, not spatial row complexity,
+and not a count restricted to finite initial support. It leaves the prize gap open.
+
+**Status.** The Condrey-end lead stays PART. A second right cell already filters the
+black-end holes at even p and atp3; odd p>=5 needs a wider layer. No long Local job
+requested. The exact bounds remain positive, and no all-depth LR proof follows.

@@ -23,7 +23,8 @@ TC5 must: all p2..128 macro relations equal the proved parity table;
 TC6 must: through12 visible bits, exact counts are Fibonacci(n+2) for even p,
   Fibonacci(n+3)-1 for p3, and2**n for odd p>=5; forbidden-pattern languages
   agree word for word through8 bits for p2..9.
-OUTCOME second run: pending. No large Local computation duplicated.
+OUTCOME second run: exit0. TC5 HELD (B^3=B^5 and all127 macro tables);
+TC6 HELD (all104 counts through12 bits, all72 languages through8). No large Local computation duplicated.
 """
 
 from itertools import product
@@ -125,5 +126,40 @@ def main():
     print("ALL CONTROLS PASS")
 
 
+def exact_checks():
+    def black_power(k):
+        rel = {s: {s} for s in range(4)}
+        for _ in range(k):
+            rel = {s: {step(x, 1, u, 2) for x in xs for u in (0, 1)}
+                   for s, xs in rel.items()}
+        return rel
+    assert black_power(3) == black_power(5)
+    even = {0: {1, 2, 3}, 1: {0, 2}, 2: {0, 2}, 3: {0, 2}}
+    odd = {0: {0, 2}, 1: {1, 2, 3}, 2: {1, 2, 3}, 3: {1, 2, 3}}
+    special3 = {0: {0, 2}, 1: {1, 2, 3}, 2: {1, 3}, 3: {1, 2, 3}}
+    special2 = dict(even)
+    special2[2] = {0}
+    for p in range(2, 129):
+        want = special2 if p == 2 else special3 if p == 3 else even if p % 2 == 0 else odd
+        assert macro(2, p) == want
+    print("TC5 PASS: B^3=B^5; all127 macro relations match exact parity table")
+    fib = [0, 1]
+    for _ in range(16):
+        fib.append(sum(fib[-2:]))
+    for p, n in product(range(2, 10), range(13)):
+        actual = words(2, p, n, "subset")
+        want = fib[n+2] if p % 2 == 0 else fib[n+3]-1 if p == 3 else 2**n
+        assert len(actual) == want
+        if n <= 8:
+            expected = {w for w in product((0, 1), repeat=n)
+                        if ((all(w[i:i+2] != (1, 1) for i in range(n-1)))
+                            if p % 2 == 0 else
+                            all(w[i:i+3] != (1, 0, 0) for i in range(n-2))
+                            if p == 3 else True)}
+            assert actual == expected
+    print("TC6 PASS: 104 counts through12 bits, 72 full languages through8 bits")
+
+
 if __name__ == "__main__":
     main()
+    exact_checks()

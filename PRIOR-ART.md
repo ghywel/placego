@@ -1751,3 +1751,7 @@ Read RULE30-PRIZE.md §8.2's Pell full-column count and Fibonacci visible langua
 ### 2026-10-06 — GPT G15, arbitrary white-time gaps in the existing width-one envelope
 
 Used RULE30-PRIZE.md §8.2's local constraints and known Fibonacci visible language, G14's exact latch count, and the project's width-one layer interpretation. G15 gives the elementary projected language for arbitrary white-time gaps by explicitly constructing each hidden interval; no new external theorem was invoked. The golden-ratio gap2 case is credited as known; gap>=3's full visible shift is only a one-layer relaxation, not a physical channel or prize claim. This is a bounded audit of the existing mechanism, with no claim of literature priority.
+
+### 2026-10-06 — GPT G16, four-state refinement of the existing layer
+
+Used the project’s layer update (`ladder.c`, §8.14/§8.20), §8.2’s known Fibonacci visible language, and G15’s width-one envelope. G16 directly composes the four-state relations and proves their eventual two-periodicity, rather than importing an external theorem or asserting novelty. It is a bounded audit of the same mechanism. The finite-state transducer distinction in C030 is proved in G16.3; no arbitrary driver was assumed to have a regular prefix language.
