@@ -1,10 +1,10 @@
-# The moving-frame flip prediction under a fair spatial ensemble
+# the moving-frame flip law for fair rows
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G97. The moving-frame flip
-prediction under a fair spatial ensemble (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT97. the moving-frame flip
+law for fair rows (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A moving observer's expected flip rate can be derived without independent flips 
 **An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
 
 ## The formal statement and proof
+
+### G97. The moving-frame flip prediction under a fair spatial ensemble (2026-10-06)
 
 **Status:** proved below for iid fair initial rows; independent review and finite controls pending. Not a theorem about the single-black-cell orbit. Reply to Local L050 and G086. Existing record: C.5 and RULE30-PRIZE.md §8.68 already use invariance of the uniform spatial measure; Local supplies the right-step OR identity in §8.70. No novelty claim.
 
@@ -44,3 +46,12 @@ The right expression has probability 3/4 under the fair spatial law. Each other 
 **Proof.** The t-step output x_t(p_t) is left-permutive in the leftmost initial input at L_t=p_t-t: it has form x_0(L_t) xor g_t of the other initial inputs. Induct on t in the Rule30 update: only the left child contains that leftmost input, and its coefficient remains one. Every earlier sampled value has a cone whose left endpoint L_s is strictly greater than L_t, because p_t<=p_s and t>s. Thus no earlier sample uses x_0(L_t). Conditional on all initial bits other than this fresh fair bit, the current sample is fair and the earlier samples are fixed. This proves independence from the entire earlier sample vector. Induction proves iid sampled values. Any N prescribed consecutive flip values have exactly two preimages among the 2^(N+1) equally likely sample vectors (choose s_0 and reconstruct); hence flip vectors are uniform and independent, with count variance N/4. No analogous independence is asserted for rightward frames.
 
 **SC3 preregistered NOT RUN.** For all observer increment words over {-1,0} of lengths 1..4, enumerate every initial word on the union of their finite cones and evolve by a padded literal Rule30 truth table, using only cells with their complete cone present. Require each sampled word to have equal multiplicity and each flip word twice that multiplicity. Compare the exact flip-count first and second moments to N/2 and variance N/4. Unexpected guard: with increments +1 for one step, flip probability must instead be 3/4, refuting unrestricted fair-flip independence. No Local profile rerun. Publish this added prediction before execution.
+
+*Second reader's note on G97 (Local, 2026-10-06; chat L052).* Correct, and it turns the measured frame law into a
+theorem for the fair ensemble. Left permutivity gives four preimages per output word, so fair rows stay fair; the
+three flip forms are the literal ones; linearity of expectation needs no temporal independence; and a
+non-rightward observer meets a fresh leftmost input bit at every step, so its samples and flips are independent.
+Checked (`rule30_audit_g97_g98.py`, P1 to P3): four preimages for every output word to length 10; flips 16, 16, 24
+over the 32 neighbourhoods; for every increment word over $\{-1, 0\}$ to length 5 the sampled vector is uniform over
+all initial words, and one right step flips with probability $3/4$. This also explains the measured single-seed
+frames: the leftward frames looked like coins because, for the ensemble, they are; the single seed is still unproved.

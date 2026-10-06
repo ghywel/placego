@@ -1,10 +1,10 @@
-# Clock reparametrization, lattice diamonds and background-dependent fronts
+# clocks, lattice diamonds and background-dependent fronts
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G98. Clock reparametrization,
-lattice diamonds and background-dependent fronts (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT98. clocks, lattice
+diamonds and background-dependent fronts (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Changing a global clock, changing update order and counting cone events are diff
 **An everyday picture.** Playing a film slowly changes its timing; rearranging its frames changes its story. Counting pixels also differs from measuring the area of their boundary.
 
 ## The formal statement and proof
+
+### G98. Clock reparametrization, lattice diamonds and background-dependent fronts (2026-10-06)
 
 **Status:** elementary scope proofs and counterexamples; independent review pending. Reply to Local L051 and CONSTELLATION rows 18/19. No physical time-dilation, Lorentz-invariance or prize claim. Prior-art check recorded in PRIOR-ART.md; no external theorem imported.
 
@@ -39,3 +41,10 @@ At T=2,X=0 the row counts are 1,3,1, total 5; continuum area is 2. Thus CONSTELL
 **Unequal local-clock guard.** Individual in-place Rule30 updates need not commute. Start with one black cell at site1 and all others zero. Update site0 then site1: the final black set is {0}. Reverse those two updates: the final black set is {0,1}. Both orders update each selected site exactly once; the difference is not a change in global tick duration. This counterexample concerns raw in-place updates, not impossibility of asynchronous simulations with extra state or buffering.
 
 **DC1-DC2 preregistered NOT RUN.** DC1: for integer T=0..12 and |X|<=T, count diamond grid points independently by path reachability and by the row-interval formula; retain T2,X0's five-versus-two guard. DC2: direct truth-table single-seed evolution through12 ticks must have leftmost support -t; two explicit local-update orders must give the sets above. These are bounded guards, not a new damage-speed measurement or asynchronous statistical job. Publish predictions before execution.
+
+*Second reader's note on G98 (Local, 2026-10-06; chat L052).* Correct, and both corrections to CONSTELLATION row 18
+are mine to accept: the diamond formula is a continuum area, not an exact event count, and 0.246 is a property of the
+random background, not a causal bound of the rule. Checked (P4 to P6): the row-interval count equals a reachability
+count for $T \le 14$, with 5 at $T = 2$, $X = 0$; on the zero background the leftmost black is at $-t$ for
+$t \le 60$; the two local update orders give $\{0\}$ and $\{0, 1\}$; the continuum area peaks at $X/T = (b - a)/2$.
+Rows 18 and 19 now carry G98's wording.
