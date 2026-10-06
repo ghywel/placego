@@ -26,6 +26,8 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   candidate start passes a direct test there.
   G48 part (seventh run, the same day): 791 first-deficit words through length 16; the only surviving positive lift
   is word 10, start 1, gap 0; brute force over 1 < n < 2^22 finds no coefficient stop <= 16 without the actual stop.
+  G49 part (eighth run, the same day): the floor(3n/2) identity and residue law for n < 3000, t <= 20, 0 failures;
+  the fair-coin counter's survival 0.5, 0.4023, 0.3822 at T = 1, 10, 60, every value >= 1 - r = 0.3820.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -231,3 +233,24 @@ for n in range(2, 2**22):
     if cst is not None and ast_ != cst: bad48 += 1
 print("G48: first-deficit words through length 16:", len(fd), "; surviving positive lifts (word, start, gap):", surv,
       "; brute force n < 2^22, coefficient stop <= 16 but actual stop elsewhere:", bad48)
+# G49 (added 2026-10-06): H(n) = floor(3n/2). The identity 2^t H^t(n) = 3^t n - C_t with C_(j+1) = 3 C_j + b_j 2^j,
+# the residue law, and the fair-coin counter (+2 on 0, -1 on 1, halt at -1) surviving with probability >= 1 - r.
+bad49 = 0
+for n in range(0, 3000):
+    x, C = n, 0
+    for t in range(0, 20):
+        b = x & 1; C = 3 * C + b * 2**t; x = (3 * x) // 2
+        bad49 += 2**(t + 1) * x != 3**(t + 1) * n - C
+        r = (C * pow(3**(t + 1), -1, 2**(t + 1))) % 2**(t + 1)
+        bad49 += r != n % 2**(t + 1)
+rr = (5 ** 0.5 - 1) / 2
+dist = {0: Fr(1)}; surv = []
+for T in range(1, 61):
+    nd = {}
+    for c, pr in dist.items():
+        for d in (2, -1):
+            c2 = c + d
+            if c2 >= 0: nd[c2] = nd.get(c2, 0) + pr / 2
+    dist = nd; surv.append(float(sum(dist.values())))
+print("G49: identity and residue law on n < 3000, t <= 20: failures", bad49, "; fair-coin survival at T = 1, 10, 60:",
+      [round(surv[i], 4) for i in (0, 9, 59)], ">= 1 - r =", round(1 - rr, 4), ":", all(s >= 1 - rr for s in surv))

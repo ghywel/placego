@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz proofs G39 to G48, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's Collatz proofs G39 to G49, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1032,24 +1032,9 @@ step 16 without its actual stopping at that step. So the finite-horizon statemen
 It is the coefficient stopping time conjecture checked to horizon 16, which GPT identifies as known (G014); the
 literature verifies it much further, so the value here is the exact gap form, not the horizon.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
 ### G.GPT49. Scope of the floor(3n/2) test bed
 
-**Where:** RULE30-GPT.md G49, 2026-10-06; copied verbatim. **Bears on:** PRIZE-PROBLEMS.md §8, Antihydra tool transfer. **Status:** analytic map/counter/coin calculation awaiting second reader; AH1-AH4 finite controls pass (G49 outcome). Machine reduction is reported from the project source, not independently machine-verified.
+**Where:** RULE30-GPT.md G49, 2026-10-06; copied verbatim. **Bears on:** PRIZE-PROBLEMS.md §8, Antihydra tool transfer. **Status:** analytic map/counter/coin calculation, second-read by Local, 2026-10-06 (note below); AH1-AH4 finite controls pass (G49 outcome). Machine reduction is reported from the project source, not independently machine-verified.
 
 ### G49 theorem and proof: floor(3n/2) preserves coding but changes survival
 
@@ -1064,3 +1049,27 @@ The word is realized by exactly one residue r modulo2^t, namely r=C_t*(3^t)^(-1)
 **Actual test-bed event.** In the reported Antihydra reduction, the initial value is H_0=8 and a counter starts at0, gains2 when H_j is even and loses1 when it is odd. Writing a_t for the odd count, its value aftert steps is2t-3a_t. Avoiding halt throughT requires2t-3a_t>=0 at every prefix, since the only negative crossing is to-1. This upper-odd-density barrier differs from Collatz's coefficient lower-density barrier. Strict growth of H says nothing by itself about it: seed3 grows but makes the zero counter hit-1 immediately. The reduction is cited from the project source; the original six-state Turing-machine transition simulation has not been independently verified here.
 
 **The fair-coin analogue does not have exponential survival decay.** Let iid bits drive counter increments+2 for0 and-1 for1. Put r=(sqrt(5)-1)/2, so r^2+r=1. For counter c>=0, h(c)=r^(c+1) obeys(h(c+2)+h(c-1))/2=h(c), and h(-1)=1. Stopping at the first hit of-1 or at finiteT gives expectation h(C_stopped)=r at initial counter0: this follows by successive conditional expectation, with no unbounded stopping theorem. On paths that hit, h=1; on other paths h>=0. Hence P(hit byT)<=r and P(surviveT)>=1-r>0 for everyT. No assumption about H^t(8)'s actual parity distribution is made. Uniform starts modulo2^T realize all T-bit words once, so the same lower bound holds for that finite initial ensemble. It does not determine the selected start8. Thus transferring the Collatz coin's decaying survival target to this barrier is mathematically invalid.
+
+*Second reader's note on G49 (Local, 2026-10-06; chat L021).* Correct. $H(n) = (3n - b)/2$ and
+$H(n) - n = \lfloor n/2 \rfloor$; the identity $2^t H^t(n) = 3^t n - C_t$ follows by induction
+($2^{t+1} H^{t+1} = 3 \cdot 2^t H^t - 2^t b_t$); the residue, the lift by $3^t m$ and $0 \le H^t(r) < 3^t$ check;
+the counter is $2t - 3a_t$; and $h(c) = r^{c+1}$ is harmonic for the walk that adds 2 or subtracts 1, because
+$r^3 - 2r + 1 = (r - 1)(r^2 + r - 1) = 0$, so the stopped expectation gives $P(\text{survive } T) \ge 1 - r$. Checked
+exactly: the identity and residue law for every $n < 3000$ and $t \le 20$, and the fair-coin survival probability
+by exact dynamic programming, $0.5$, $0.4023$, $0.3822$ at $T = 1$, 10, 60, every value above $1 - r = 0.3820$
+(`collatz_audit_g39_g42.py`, G49 part). The Antihydra reduction itself is, as G49 says, taken from the project
+source and not machine-verified here.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.

@@ -645,3 +645,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 13:15 | Local | none | Generality audit done (Cloud's CL002 split): PROOFS.md 'Generality index' marks every Rule 30 entry by what its proof uses; almost all machinery is uniform over walls; the period-two-specific list is the channel/squeeze, the wheel, Theorems E/E″, the affine columns, Corollary F as written. Chat L020. Claim released. Committed locally; pushed with the next tick. |
 
 | 2026-10-06 13:17 | Cloud | WORKFLOW-SAVED-MEMORY.md (prize-won), AGENTS.md | The owner's addendum: publish a prize proof immediately after one other party's verification (cross-model where possible); push the candidate at once for the timestamp. | |
+| 2026-10-06 13:19 | Local | M5 (1 core, 5 s) | GPT's G49 second-read (correct; exact checks: the identity to n < 3000, t <= 20; the fair-coin survival 0.3822 at T = 60 against the bound 0.3820) and moved to PROOFS.md §E2. The owner's prize-won rule taken into Local's tick (prize candidates first; Local is GPT's default verifier). Chat L021. The ring run n = 29 still computing. Committed locally; pushed with the next tick. |
+
