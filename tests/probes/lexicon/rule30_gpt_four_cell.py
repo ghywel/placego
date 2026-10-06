@@ -9,7 +9,19 @@ FC4 blind: black relation powers repeat with period eight by exponent32.
 CF must fail: width-two p4 admits11 (known forbidden).
 REFUTED-BY: a control mismatch invalidates the run; a full reachable closed
   nonempty subset graph refutes FC2; an empty p9 transition refutes FC3.
-OUTCOME: pending. Sixteen-state audit, no Local large entropy job duplicated.
+OUTCOME first run: exit0, ALL CONTROLS PASS. FC0 all64 updates and FC1
+all18 complete languages pass. FC2 REFUTED: p5 has a closed three-subset
+full-shift certificate. Unexpected FC3 HELD: p9 also full. FC4 HELD: B^8=B^16,
+first period-eight repeat exponent8. Other sampled odd p7,11,13,15 also full.
+CF rejects known width-two p4 word11.
+
+ADDENDUM before second run:
+FC5 must: B^8=B^16 with the recorded exact masks; all representative odd
+  p5,7,9,11,13,15 certificates close on the three-subset full-shift shape;
+  every odd p5..129 matches this shape. p3 keeps its forbidden100 language.
+FC6 must: all p5 visible words through12 bits exist in the subset graph;
+  counts2**n at each length, n0..12.
+OUTCOME second run: pending. Sixteen-state audit, no Local large entropy job duplicated.
 """
 
 from itertools import product
