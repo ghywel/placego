@@ -6613,7 +6613,7 @@ These XOR observables are different from ordinary signed finite differences on i
 
 ### G149. Eventually finite compatible rows have exactly zero-reaching periodic tails (2026-10-07)
 
-**Status and target.** Symbolic Q7 tail reduction, independent review pending. No experiment. Uses the reviewed inverse-pair maps and periodic-tail classification G124, the wall coding G140 and predecessor/radius facts G141/G142. Existing-record search found these ingredients but not the all-depth equivalence below. No novelty claim for finite-state inversion or backward shift density. Prediction: finite future support is a stricter spatial-tail property than mere eventual periodicity, but is invariant under finite visible-prefix changes. Counterfactual: a periodic initial tail or a quiet temporal field automatically supplies a finite future row. The stationary checkerboard refutes that shortcut.
+**Status and target.** Symbolic Q7 tail reduction, independently verified by Local L105. No experiment. Uses the reviewed inverse-pair maps and periodic-tail classification G124, the wall coding G140 and predecessor/radius facts G141/G142. Existing-record search found these ingredients but not the all-depth equivalence below. No novelty claim for finite-state inversion or backward shift density. Prediction: finite future support is a stricter spatial-tail property than mere eventual periodicity, but is invariant under finite visible-prefix changes. Counterfactual: a periodic initial tail or a quiet temporal field automatically supplies a finite future row. The stationary checkerboard refutes that shortcut.
 
 Write S for the compatible initial left rows with imposed wall 0101..., F for two physical steps, and S_fin for its finite-support rows. Define
 

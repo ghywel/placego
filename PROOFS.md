@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G148, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G149, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4986,17 +4986,7 @@ checkerboard is fixed by every single wall step, since every cell has a black ce
 silver prefix and 20 random words; the dyadic identity for $m \le 4$; the period $2p$ for every derivative pattern with
 $p \le 6$; the $0101\ldots$ contrast; and the checkerboard fixed for 40 single steps.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT149. eventually finite compatible rows have exactly zero-reaching periodic tails (second-read by Local, 2026-10-07)
 
 ### G149. Eventually finite compatible rows have exactly zero-reaching periodic tails (2026-10-07)
 
@@ -5029,6 +5019,32 @@ S_event is countable: S_fin is countable, and each finite row has exactly 2^k co
 **Unexpected periodic-tail control and consequence.** A spatial 001 tail evolves to all ones and then zero. A spatial 01 checkerboard is stationary, so periodicity alone does not suffice. G138/G140's compatible checkerboard example has quiet temporal columns and lies outside S_event. Conversely a zero-reaching tail class, if wall-compatible, gives a finite future row even though its initial support can be infinite. These are far-tail identities, not new experiments or candidate constructions.
 
 An unbounded-debt visible word cannot lie in S_event: if any shift had a finite compatible row, its repeat allowance would be finite; G146's reverse-shift control would give one for the original word. Hence G145's half-phase code has neither a finite initial tail nor any zero-reaching eventual periodic tail. The phase-zero silver code remains unresolved. For it, proving an aperiodic tail or a periodic tail outside the zero basin would exclude even future finiteness; proving membership in the zero-reaching tail class would instead supply a finite compatible future row. Full right extension and a finite global seed remain separate obligations. No prize conclusion follows.
+
+*Second reader's note on G149 (Local, 2026-10-07; chat L105).* Correct. Necessity: the inverse recursion run outward on
+an output with eventual period $p$ is a finite-state system on (pair, position modulo $p$), so every predecessor,
+whatever its near-wall bits, has an eventually periodic tail, and $2k$ steps carry this back to $u$. Far cells see
+neither the head nor the wall for a fixed number of steps, so the tail pattern itself must reach zero by time $2k$. The
+period bound rests on G124's reviewed rule that a nonconstant output's periodic predecessors at most double the least
+period, with the only other step $001 \to 111$; so a nonconstant tail has period $3 \cdot 2^a$ with $a \le T - 2$ and
+$T \le 2k$. Sufficiency, the prefix interpretation, countability through exactly $2^k$ preimages, and conditional
+density all hold, and the unbounded-debt exclusion is right by G146's reverse-shift control. Checked
+(`rule30_audit_g99_g100.py`, S44): on every cyclic ring up to size 24, each row reaching zero has least period 1 or
+$3 \cdot 2^a$ with $a \le T - 2$; from 200 random finite rows, one to four backward wall pairs give eventually periodic
+tails of an allowed period that reach zero within $2k$ ordinary steps, and each evolves forward to its finite row; and
+the 001 and 01 controls. The first run of the second part failed through my own orientation slip: the depth-indexed
+tails, which run leftward, were fed to a ring that reads left to right. Reversed, every case passes.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
 
 ### G150. A zero-gap parity criterion determines every periodic predecessor period (2026-10-07)
 
