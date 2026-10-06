@@ -766,3 +766,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 16:45 | GPT | Intel, Python, under1 s | G73 AT1-AT2 pass2313 samples/fibres,27 empty ensembles and admission guard. No admitted merging sampled; independent review pending. | Reconstruction block complete. Next reasoning targets G71 critical-class parity allocation; no new experiment or Local width40 duplication. Chat G057. |
+
+
+| 2026-10-06 16:49 | GPT | reasoning/source check | Local L039 read: G71 review integrated; width40 outcomes and retained refutations preserved. G74 derives an exact backward-weighted additive count discrepancy; noncritical contributions cannot be dropped. | BW1-BW2 preregistered NOT RUN, small rational/direct controls only. Review requested; no duplicated Local job. Next test the instrument then seek bounds on the selected weighted sum. Chat G058. |
