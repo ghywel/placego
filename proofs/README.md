@@ -38,6 +38,9 @@ The words the summaries use:
   what fair coin tosses in place of the odd and even steps would predict. If the real count never beats the coin
   count by more than a fixed factor, survivors thin out exponentially. That would be a strong "almost all numbers
   fall" result, not by itself a proof of the conjecture.
+- **Races.** When a computer updates the row in place, a square may read a neighbour's new value instead of its old
+  one. Pages G96 onward study what such glitches do, starting from the owner's questions about clocks and GPU
+  updates.
 - **Who proved it.** "Local" and "Cloud" are two Claude instances, and "GPT" is a model of a different make. A proof
   counts once a second party has read it. Pages in *the waiting room* have not had that second reading yet.
 
@@ -239,80 +242,81 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   can ever meet reduces to a finite check on step patterns.
 - [localized coin overshoot and curvature](G82-localized-coin-overshoot-and-curvature.md): A sharper version of G75:
   the weights shrink like 1/√h, with no logarithm.
-- [forced initial parity and the spacing cutoff](G83-forced-initial-parity-and-the-spacing-cutoff.md): The prefix
-  growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
+- [forced initial parity and the spacing cutoff](G83-forced-initial-parity-and-the-spacing-cutoff.md): Surviving
+  numbers all start with two odd steps, which rules out any two of them meeting for up to 20 odd steps.
 - [the prefix orientation of a first collision](G84-the-prefix-orientation-of-a-first-collision.md): At 21 odd
-  steps, any meeting allowed by these conditions must have one precise orientation.
-- [two further forced odd bits at a = 21](G85-two-further-forced-odd-bits-at-a-21.md): The same possible pair must
-  follow two more common odd steps.
-- [the shifted barrier, a closed shortcut](G86-the-shifted-barrier-a-closed-shortcut.md): A prefix can buy slack
-  that its remaining steps cannot satisfy on their own.
-- [the offset budget and the eight-bit prefix](G87-the-offset-budget-and-the-eight-bit-prefix.md): An offset bound
-  forces the sixth step and then two more steps of any possible 21-odd-step meeting pair.
-- [the paired-prefix collision certificate](G88-the-paired-prefix-collision-certificate.md): A candidate tree can be
-  cut off using exact bounds on every possible continuation.
-- [the first admitted collisions, at odd count 22](G89-the-first-admitted-collisions-at-odd-count-22.md): Two starts
-  can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
+  steps, the first case left open, any meeting of two surviving numbers would have to take one exact form.
+- [two further forced odd bits at a = 21](G85-two-further-forced-odd-bits-at-a-21.md): The two candidates of G84
+  must also take the same next two steps: both odd.
+- [the shifted barrier, a closed shortcut](G86-the-shifted-barrier-a-closed-shortcut.md): A tempting shortcut fails:
+  the end of a surviving path need not survive on its own.
+- [the offset budget and the eight-bit prefix](G87-the-offset-budget-and-the-eight-bit-prefix.md): A budget argument
+  forces three more steps, pinning down the first eight steps of any meeting pair at 21.
+- [the paired-prefix collision certificate](G88-the-paired-prefix-collision-certificate.md): A way to rule out a
+  whole tree of possibilities by arithmetic, branch by branch, instead of trying every number.
+- [the first admitted collisions, at odd count 22](G89-the-first-admitted-collisions-at-odd-count-22.md): Two
+  surviving numbers can meet after all: the first pair appears at 22 odd steps.
 - [equal terminals do not force weighted cancellation](G90-equal-terminals-do-not-force-weighted-cancellation.md):
-  Meeting at the same terminal value does not make two starts cancel in the weighted count error.
+  Two numbers that meet do not cancel each other out in the count's error.
 - [same-label coalescence and the curvature identity](G91-same-label-coalescence-and-the-curvature-identity.md):
-  Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
-- [the coarse curvature bootstrap grows like log d](G92-the-coarse-curvature-bootstrap-grows-like-log-d.md): A
-  coarse maximum-curvature bound still cannot close the constant count estimate by itself.
+  When an odd-step path and an even-step path merge, their two contributions combine into something smaller.
+- [the coarse curvature bootstrap grows like log d](G92-the-coarse-curvature-bootstrap-grows-like-log-d.md): Even
+  with the pairing tool, the crude estimate still grows, slowly, with the length of the run.
 - [the absorbing-edge inequality, which fails from horizon 65](G94-the-absorbing-edge-inequality-which-fails-from-horizon.md):
-  An induction proof for demand log-concavity must control the absorbing edge separately.
-- [the barrier has isolated flat steps](G95-the-barrier-has-isolated-flat-steps.md): The actual barrier has no
-  consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
-- [fixed-cell change and moving-frame change](G96-fixed-cell-change-and-moving-frame-change.md): Changing a fixed
-  cell and following a moving pattern measure different things.
-- [the moving-frame flip law for fair rows](G97-the-moving-frame-flip-law-for-fair-rows.md): A moving observer's
-  expected flip rate can be derived without independent flips in time.
+  A smooth-shape argument fails: the coin weights stop being a smooth single hump beyond 64 steps.
+- [the barrier has isolated flat steps](G95-the-barrier-has-isolated-flat-steps.md): The real survival boundary
+  never pauses twice in a row, but that alone does not keep the shape smooth.
+- [fixed-cell change and moving-frame change](G96-fixed-cell-change-and-moving-frame-change.md): Watching one square
+  change and following a moving pattern are different measurements.
+- [the moving-frame flip law for fair rows](G97-the-moving-frame-flip-law-for-fair-rows.md): An observer walking
+  right through a random Rule 30 pattern sees more change than one standing still or walking left.
 - [clocks, lattice diamonds and background-dependent fronts](G98-clocks-lattice-diamonds-and-background-dependent-fronts.md):
-  Changing a global clock, changing update order and counting cone events are different operations.
+  Speeding up the clock, reordering the updates and counting events are three different things.
 - [versioned dependency evaluation preserves logical time](G99-versioned-dependency-evaluation-preserves-logical-time.md):
-  A shared logical generation can survive unequal physical update times.
-- [rightward flips are not independent in time](G100-rightward-flips-are-not-independent-in-time.md): Two
-  neighbouring flips can look independent while a third exposes memory.
-- [an interior observer retains temporal memory](G101-an-interior-observer-retains-temporal-memory.md): Temporal
-  memory also appears in an interior moving frame.
-- [isolated and chained race injection](G102-isolated-and-chained-race-injection.md): A raced neighbour can carry an
-  extra race into the next update.
+  Label every value with its tick number, and any order of updating gives exactly the right answer.
+- [rightward flips are not independent in time](G100-rightward-flips-are-not-independent-in-time.md): Flips that
+  look independent in pairs can still remember: the memory shows up two steps apart.
+- [an interior observer retains temporal memory](G101-an-interior-observer-retains-temporal-memory.md): The same
+  hidden memory appears for an observer moving at three-quarter speed.
+- [isolated and chained race injection](G102-isolated-and-chained-race-injection.md): A single race corrupts a
+  square one time in eight; a chain of races changes that slightly.
 - [a clean dependency cone bounds the disagreement](G103-a-clean-dependency-cone-bounds-the-disagreement.md): A
-  race-free dependency cone guarantees the cell follows the ideal history.
+  square is guaranteed correct if no race happened anywhere in the region it depends on.
 - [right-reading races keep the fair row law; left-reading races change pairs](G104-right-reading-races-keep-the-fair-row-law.md):
-  One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
-- [cyclic closure changes the zero-row mass](G105-cyclic-closure-changes-the-zero-row-mass.md): Closing the row into
-  a ring changes an exact probability even when large-ring statistics look fair.
+  Races that read the right neighbour leave each row looking perfectly random; races that read the left leave a
+  trace in neighbouring pairs.
+- [cyclic closure changes the zero-row mass](G105-cyclic-closure-changes-the-zero-row-mass.md): Joining the row into
+  a ring changes an exact probability, even though large rings look fair.
 - [spatial fairness survives right races; the moving-frame change does not](G106-spatial-fairness-survives-right-races-the-moving-frame.md):
-  The snapshots can stay statistically unchanged while motion through them changes.
+  Snapshots can stay statistically unchanged while what a moving observer sees changes.
 - [nonrightward traces stay fair under any fixed right-race schedule](G107-nonrightward-traces-stay-fair-under-any-fixed-right.md):
-  A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.
+  An observer standing still or moving left cannot detect right-reading races at all.
 - [ideal and noisy traces share a causal invertible coupling](G108-ideal-and-noisy-traces-share-a-causal-invertible.md):
-  Two individually random traces can remain perfectly related when their shared environment is known.
-- [an isolated race error heals once and returns](G109-an-isolated-race-error-heals-once-and-returns.md): An
-  isolated race error can disappear at its source and return without another race.
-- [the paired trace is not first-order Markov](G110-the-paired-trace-is-not-first-order-markov.md): Two individually
-  memoryless traces can form a pair with memory.
-- [a finite-rate memory split extends to generic rates](G111-a-finite-rate-memory-split-extends-to-generic.md): An
-  exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
+  The glitched and the true histories are tied together exactly, even though each looks random on its own.
+- [an isolated race error heals once and returns](G109-an-isolated-race-error-heals-once-and-returns.md): A race
+  error can vanish at its square and come back the next tick without any new race.
+- [the paired trace is not first-order Markov](G110-the-paired-trace-is-not-first-order-markov.md): Two signals that
+  each have no memory can have memory as a pair.
+- [a finite-rate memory split extends to generic rates](G111-a-finite-rate-memory-split-extends-to-generic.md):
+  Memory found at one race rate is memory at almost every rate; agreement at one rate proves nothing.
 - [two shared black observations shield the next tick](G112-two-shared-black-observations-shield-the-next-tick.md):
-  Two shared black observations force the next source samples to agree in the right-reading coupling.
-- [one lag does not close the pulse model at tick 5](G113-one-lag-does-not-close-the-pulse-model.md): Keeping one
-  previous paired observation still misses pulse-model memory.
+  Two shared black squares in a row shield the next update from a race.
+- [one lag does not close the pulse model at tick 5](G113-one-lag-does-not-close-the-pulse-model.md): Remembering
+  one step back is still not enough to predict the errors.
 - [a healed source can hide two cancelling errors](G114-a-healed-source-can-hide-two-cancelling-errors.md): Two
-  incoming errors can cancel at a healed white source.
+  incoming errors can cancel each other at a white square.
 - [injection memory plus one lag still misses deeper history](G115-injection-memory-plus-one-lag-still-misses-deeper.md):
-  Remembering the injection and one lag still misses older observed information.
-- [the fourth pulse error is gated parity](G116-the-fourth-pulse-error-is-gated-parity.md): The fourth
-  isolated-pulse error remembers parity of three earlier ideal samples.
-- [a hidden right-tail bit enters the fifth error](G117-a-hidden-right-tail-bit-enters-the-fifth.md): An unobserved
-  initial right-tail bit enters the fifth pulse error.
-- [exact mutual information of six pulse samples](G118-exact-mutual-information-of-six-pulse-samples.md): Exact
-  six-sample mutual information separates conditional and unconditional coupling.
+  Remembering the race and the last two steps still misses older information.
+- [the fourth pulse error is gated parity](G116-the-fourth-pulse-error-is-gated-parity.md): The fourth error after a
+  race depends on three earlier true values together.
+- [a hidden right-tail bit enters the fifth error](G117-a-hidden-right-tail-bit-enters-the-fifth.md): A hidden
+  starting bit that is never observed enters the fifth error.
+- [exact mutual information of six pulse samples](G118-exact-mutual-information-of-six-pulse-samples.md): Six
+  samples of the true and the raced histories share 5.53 of their 6 bits.
 - [shared fresh pivots turn error uncertainty into information increments](G119-shared-fresh-pivots-turn-error-uncertainty-into-information.md):
-  A common fresh bit ties new shared information to next-error uncertainty.
+  Each new sample adds shared information equal to one bit minus the uncertainty of the next error.
 - [an observed rare injection bounds later information loss](G120-an-observed-rare-injection-bounds-later-information-loss.md):
-  An observed rare injection limits later information loss.
+  Once you know whether a rare race happened, the raced copy keeps at least 7/8 of a bit of each new sample.
 
 ## The waiting room (not yet verified)
 
@@ -328,6 +332,6 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 *The pages:*
 
 - [Finite-predecessor descent reduces counterexamples to roots, not bounded width](W121-finite-predecessor-descent-reduces-counterexamples-to-roots-not.md):
-  Backward descent stops at finite roots of unbounded width.
+  Walking a seed backwards in time shrinks it, but the walk stops at a "root", and roots come in every size.
 - [A finite root's canonical ancestors acquire black and period-three left tails](W122-a-finite-root-s-canonical-ancestors-acquire-black.md):
-  Continuing a root's backward history leaves finite seeds through exact periodic tails.
+  Walking back past a root leaves the world of finite seeds, first through a black tail and then a repeating one.

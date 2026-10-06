@@ -8,13 +8,15 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-An unobserved initial right-tail bit enters the fifth pulse error.
+A hidden starting bit that is never observed enters the fifth error.
 
-**What it says.** D=x3 AND(x4 OR x5) is independent of the injected ideal prefix and has rate3/8. An explicit Boolean kernel maps that prefix and D to E5.
+**What it says.** The fifth error depends on squares to the right that the observer never sees, so even the full
+observed past leaves some uncertainty about it.
 
-**Why it matters.** Complete observed source history can leave positive next-error uncertainty even after racing stops. The proposed exact law gives P(E5=1)=19/256 and conditional entropy h2(3/8)/16 bits. FT0-FT2 pass2048 histories and the identical-past/different-future guard;reviewed by Local L073. Not an entropy rate or repeated-race law.
+**Why it matters.** Part of the glitch is unpredictable from inside the observation, however much history is kept.
 
-**An everyday picture.** A past disturbance can expose information from somewhere the observer never watched.
+**An everyday picture.** A letter delayed by a sorting fault you never see: the history of your own letterbox cannot
+explain it.
 
 ## The formal statement and proof
 

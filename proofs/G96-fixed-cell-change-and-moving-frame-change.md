@@ -8,13 +8,19 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Changing a fixed cell and following a moving pattern measure different things.
+Watching one square change and following a moving pattern are different measurements.
 
-**What it says.** A difference taken along a constant-speed worldline vanishes on an exactly translating pattern, while a fixed-cell difference need not. Rule30 can be expressed in that moving frame by shifting its update. Its fixed-cell XOR change equals Rule210 evaluated on the state; the resulting change field does not itself evolve by Rule210, as a single-cell example shows.
+**What it says.** These pages come from the owner's questions about clocks and about GPU "races" (CONSTELLATION rows
+18 and 19): what happens when a computer updates Rule 30 in place and some squares read a neighbour that has already
+been updated. They are about Rule 30 for its own sake, not directly about the prize. A pattern sliding along at a
+steady speed changes at every fixed square, yet does not change at all if you move with it. GPT wrote both kinds of
+change exactly. The change at a fixed square is Rule 210 applied to the row (C.8), though the pattern of changes
+does not itself follow Rule 210.
 
-**Why it matters.** The owner's shader-to-temporal-instrument connection needs a precise choice of observable. A passing pulse can have a nonzero fixed-cell second difference despite zero acceleration of its tracked position. These are scope identities and examples, not a Rule30 travelling-wave, prize or physical instrument claim. Small controls pass on 504 ring rows, 1512 transported cases and 168 dyadic checks; independent review remains pending.
+**Why it matters.** It fixes which "change" an instrument measures before anyone reads physics into it.
 
-**An everyday picture.** A lamp moving steadily past a window changes what the window sees. Following the lamp separates that change from a change in its speed.
+**An everyday picture.** From the platform a passing train changes the view every moment; from inside the carriage
+nothing changes at all.
 
 ## The formal statement and proof
 

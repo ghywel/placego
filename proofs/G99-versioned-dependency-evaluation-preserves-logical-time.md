@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-A shared logical generation can survive unequal physical update times.
+Label every value with its tick number, and any order of updating gives exactly the right answer.
 
-**What it says.** Store immutable values labelled by site and generation. Any complete schedule that computes a node only after its three prior-generation parents gives the synchronous history's values. An intermediate mixture of generations is not necessarily a synchronous frame.
+**What it says.** Keep each square's value for each tick separately, and compute a value only once its three parents
+from the previous tick are ready. Then every schedule, however uneven the machine's timing, produces exactly the
+true Rule 30. A snapshot that mixes values from different ticks is not a true frame.
 
-**Why it matters.** It identifies the buffering and dependency assumptions needed to answer the owner's local-clock question. It claims neither a physical metric nor an algorithmic speedup. Small controls pass on 680 initial words and two schedules; independent review remains pending.
+**Why it matters.** It names the cure for the owner's GPU races: keep the old row until the new one is finished
+(double-buffering), or label versions, and timing stops mattering.
 
-**An everyday picture.** Cooks can prepare different ingredients at different times, provided each recipe uses the specified versions and the finished dish includes every required ingredient.
+**An everyday picture.** Builders who wait for the floor below to be finished can work at any pace; the building
+comes out the same.
 
 ## The formal statement and proof
 

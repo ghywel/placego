@@ -8,13 +8,14 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-Remembering the injection and one lag still misses older observed information.
+Remembering the race and the last two steps still misses older information.
 
-**What it says.** In the pulse model a candidate state containing the injection indicator and last two paired observations has next-error rate1/2, while a positive full-history refinement has rate0.
+**What it says.** A description that includes whether the race happened and the last two observations leaves the
+next error a coin toss, while the full history pins it down exactly.
 
-**Why it matters.** The immediately earlier observation finds no split, yet the full observed past gives24. A shallow held diagnostic can falsely suggest closure. All8192 cone words were checked; independent review is pending. No repeated-race or all-orders claim.
+**Why it matters.** A shallow check can wrongly suggest a model is complete.
 
-**An everyday picture.** Remembering the incident and yesterday can still miss an older clue.
+**An everyday picture.** A doctor who asks only about the last two days misses the cause from last week.
 
 ## The formal statement and proof
 

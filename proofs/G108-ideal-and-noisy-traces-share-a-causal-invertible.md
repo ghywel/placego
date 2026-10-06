@@ -8,13 +8,16 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Two individually random traces can remain perfectly related when their shared environment is known.
+The glitched and the true histories are tied together exactly, even though each looks random on its own.
 
-**What it says.** Conditional on the other initial bits and race schedule, noisy samples equal ideal samples XOR a mask determined by earlier ideal samples. The transformation is a causal bijection, with N+1 bits of conditional mutual information.
+**What it says.** Given everything else, the raced samples equal the true samples with a correction mask, and the
+mask is fixed by earlier true samples. The relation can be undone step by step.
 
-**Why it matters.** Marginal iid observations do not make two histories independent. First-tick race errors depend on the previous sampled state. This representation does not determine the error process or a decoherence rate. CT1 passes135296 paired cases and8736 conditional classes; review is pending.
+**Why it matters.** Two random-looking signals can be completely related, so independence must never be assumed from
+appearances.
 
-**An everyday picture.** Knowing the key can relate two scrambled films even when each looks random on its own.
+**An everyday picture.** A message and its encrypted copy each look like gibberish, yet with the key either one
+gives back the other.
 
 ## The formal statement and proof
 

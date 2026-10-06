@@ -8,13 +8,15 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
+Joining the row into a ring changes an exact probability, even though large rings look fair.
 
-**What it says.** Every right flag pattern gives exactly two preimages of the zero row. Left patterns give one or two according to whether any effective race is present. The resulting zero-row probabilities differ from the uniform ring law.
+**What it says.** On a small ring, the number of earlier rows that lead to an all-white row depends on whether a
+race happened, so the exact probabilities differ from the fair ones.
 
-**Why it matters.** Infinite fair spatial invariance cannot be imported as exact finite cyclic invariance. The all-zero initial row also blocks any state-uniform upper decoherence bound. ZR1 passes43648 cases and40 exact weighted probabilities; independent review is pending.
+**Why it matters.** Results proved on the endless line cannot be assumed exact on the finite rings that computers
+actually run.
 
-**An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
+**An everyday picture.** Joining the ends of a chain removes the free end you would use to rebuild it.
 
 ## The formal statement and proof
 

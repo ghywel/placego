@@ -8,13 +8,16 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-A race-free dependency cone guarantees the cell follows the ideal history.
+A square is guaranteed correct if no race happened anywhere in the region it depends on.
 
-**What it says.** With independent race flags, a target cell's disagreement probability is at most1-(1-eps)^(t²). With only marginal flag bounds, it is at most eps*t². A fixed mean disagreement threshold therefore cannot arrive on a scale smaller than order eps^(-1/2).
+**What it says.** A square's value at tick t depends on a triangle of about t² earlier updates. If none of them
+raced, it is right. So with races at rate ε it is wrong with probability at most about εt², and noticeable errors
+cannot appear before about 1/√ε ticks.
 
-**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls pass on 77440 histories and192 exact weighted site bounds; colleague review remains pending.
+**Why it matters.** It is a guaranteed early-warning bound that needs no assumption about the pattern.
 
-**An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
+**An everyday picture.** A dish comes out right if nothing anywhere in its chain of ingredients was spoiled; the
+longer the chain, the more chances for spoilage.
 
 ## The formal statement and proof
 

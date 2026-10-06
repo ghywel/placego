@@ -8,13 +8,19 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-The prefix growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
+Surviving numbers all start with two odd steps, which rules out any two of them meeting for up to 20 odd steps.
 
-**What it says.** Require the multiplier from tripling and halving to stay at least one after every prefix of the step pattern. Any such pattern lasting two steps begins with two odd steps. Its start therefore leaves remainder 3 on division by 4. Two different starts with the same final value and the same number of odd steps must differ by at least 4. The exact range of their additive offsets is too small to allow that through 20 odd steps.
+**What it says.** These pages ask whether two different surviving Collatz numbers, with the same number of odd
+steps, can ever land on the same value. If they never could, the Collatz count's bookkeeping would be exactly one to
+one. To keep its growth factor at least 1 through two steps, a number must take two odd steps first, so it leaves a
+remainder of 3 when divided by 4. Two surviving numbers that meet must therefore differ by a multiple of 4. But
+numbers that end on the same value with the same count of odd steps can only start within a span narrower than 4,
+for every count up to 20, so no two can meet.
 
-**Why it matters.** This extends the finite word search through 17 using a proof and exact arithmetic. It concerns the growth-factor condition, which differs from requiring the actual number to stay above its start. The new spacing proof awaits independent review; it does not resolve Collatz.
+**Why it matters.** It settles the first twenty cases by a short argument instead of a search, which had reached 17.
 
-**An everyday picture.** Two arrivals must be at least four minutes apart, but their permitted arrival window is shorter than four minutes.
+**An everyday picture.** Two people who may only stand on every fourth paving stone cannot share a path shorter than
+four stones unless they stand on the same one.
 
 ## The formal statement and proof
 

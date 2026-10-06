@@ -8,13 +8,16 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-At 21 odd steps, any meeting allowed by these conditions must have one precise orientation.
+At 21 odd steps, the first case left open, any meeting of two surviving numbers would have to take one exact form.
 
-**What it says.** For two starts satisfying the prefix growth-factor condition and meeting with 21 odd steps each, the smaller starts odd-odd-even and the larger starts odd-odd-odd. The starts differ by exactly four. The reverse orientation is excluded by bounds on the two kinds of offsets. No meeting pair has been found.
+**What it says.** Sort the surviving step patterns by their first three steps: odd-odd-even or odd-odd-odd. Two
+patterns that begin the same way cannot meet at 21 odd steps, so a meeting needs one of each kind, and the two
+starting numbers must differ by exactly 4.
 
-**Why it matters.** It narrows the first count left open by W83 without another large search. These are necessary conditions, not an existence claim. Independent review remains pending.
+**Why it matters.** It narrows any search for a meeting at 21 to one precise shape, instead of all patterns.
 
-**An everyday picture.** A detective narrows a possible pair to two adjacent seats with a specific left-to-right order, but has not found anyone occupying both.
+**An everyday picture.** A detective who cannot yet name the culprit, but has proved it must be one of two twins who
+arrived four minutes apart.
 
 ## The formal statement and proof
 

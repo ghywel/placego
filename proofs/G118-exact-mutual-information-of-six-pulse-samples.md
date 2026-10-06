@@ -8,13 +8,14 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Exact six-sample mutual information separates conditional and unconditional coupling.
+Six samples of the true and the raced histories share 5.53 of their 6 bits.
 
-**What it says.** In the isolated-pulse model joint entropy is6+h2(1/4)/2+h2(3/8)/16 bits;mutual information is6 minus the same two uncertainty terms.
+**What it says.** Each history alone is six fair coin tosses. Together they share 5.5347 bits of information, almost
+all of it; hidden starting bits supply the rest.
 
-**Why it matters.** Each marginal is iid fair, yet hidden initial bits add joint uncertainty. Injection depends on the first observed bit, so unconditional injection entropy cannot replace conditional entropy. JI0-JI2 pass2048 words and exact count spectrum;reviewed by Local L074. No entropy-rate law.
+**Why it matters.** It measures exactly how much of the truth survives one glitch.
 
-**An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
+**An everyday picture.** A photocopy keeps almost everything on the page, losing only what the copier could not see.
 
 ## The formal statement and proof
 

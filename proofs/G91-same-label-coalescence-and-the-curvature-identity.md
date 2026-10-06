@@ -8,13 +8,17 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
+When an odd-step path and an even-step path merge, their two contributions combine into something smaller.
 
-**What it says.** Pair an odd parent with an even parent when their next states and next odd counts agree. Their two contributions combine into half the difference of two neighbouring backward demand weights. Unmatched occurrences retain their original contributions, including even steps that fail the barrier.
+**What it says.** Pair up paths that reach the same next value with the same number of odd steps, one by an odd step
+and one by an even step. Each pair's two contributions to the error combine into half the difference of two
+neighbouring coin weights, which is small far from the end. Paths with no partner keep their full contribution.
 
-**Why it matters.** The reviewed coin curvature bound can control a matched pair away from the final horizon. It does not bound how many pairs or unmatched inputs occur. The exact identity improves the terminal-pooling question without assuming full cancellation. The small controls passed 100 exact increments and the true-pair, synthetic multiplicity and lost-child guards. Independent model review remains pending.
+**Why it matters.** It is an exact identity that shrinks part of the error, a real tool, though it does not yet say
+how many paths find partners.
 
-**An everyday picture.** Some travellers can share the next checkpoint, but their different toll weights leave a small difference. Unpaired travellers and those denied entry still belong in the accounting.
+**An everyday picture.** Two overlapping charges on a bill reduced to the small difference between them; charges
+with no match stay in full.
 
 ## The formal statement and proof
 

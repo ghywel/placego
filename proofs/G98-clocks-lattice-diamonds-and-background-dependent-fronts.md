@@ -8,13 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Changing a global clock, changing update order and counting cone events are different operations.
+Speeding up the clock, reordering the updates and counting events are three different things.
 
-**What it says.** Relabelling synchronous tick durations preserves the ordered state sequence. A constant-speed continuum diamond has a computable area, while integer-event counts include boundary corrections. A single seed propagates left at speed one, refuting a universal interpretation of the measured 0.246 front. Two adjacent in-place updates can give different results in reverse order.
+**What it says.** Making every tick longer or shorter changes nothing anyone inside could see. Changing the order in
+which squares are updated in place can change the result: two neighbours updated in opposite orders can disagree.
+Counting events in a light-cone shape has edge corrections a smooth formula misses. And a single black square
+spreads left at full speed, so the measured quarter-speed (C4) belongs to random backgrounds, not to every pattern.
 
-**Why it matters.** It gives precise statements for the owner's clock questions without promoting a geometric analogy to physical dilation or a complexity lower bound. Tiny guard controls and independent review remain pending.
+**Why it matters.** It answers the owner's clock questions precisely, without turning a picture into physics.
 
-**An everyday picture.** Playing a film slowly changes its timing; rearranging its frames changes its story. Counting pixels also differs from measuring the area of their boundary.
+**An everyday picture.** Slowing a film down does not change the story; shuffling its frames does.
 
 ## The formal statement and proof
 

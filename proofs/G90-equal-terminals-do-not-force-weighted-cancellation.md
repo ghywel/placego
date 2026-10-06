@@ -8,13 +8,18 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-Meeting at the same terminal value does not make two starts cancel in the weighted count error.
+Two numbers that meet do not cancel each other out in the count's error.
 
-**What it says.** Choose a meeting pair from W89 at width 34. Just before the last step, one start needs an odd step to pass the growth-factor barrier, while the other already has enough odd steps. Their fair-coin continuation weights are one half and one. Both actually survive, so their individual weighted changes sum to a positive half rather than zero.
+**What it says.** These pages test ways of proving that the real Collatz count never strays far from the fair-coin
+prediction, using the exact error formula of G74. Take a meeting pair from G89's family, 11,843,133,435 and
+11,843,133,439. Just before the end, one still needs an odd step to survive while the other already has enough.
+Under the coin weights one counts a half and the other a whole, so their contributions add up instead of cancelling.
 
-**Why it matters.** Terminal pooling cannot supply the missing signed cancellation merely because two trajectories meet. This selected-pair example does not estimate the full population error. It returns the collision insight to the open weighted-bias question. The preregistered two-trajectory control passed, including the unequal penultimate-class guard. Independent model review remains pending.
+**Why it matters.** It closes a hoped-for shortcut, that paths which merge must cancel in the error. Cancellation,
+if there is any, has to come from somewhere else.
 
-**An everyday picture.** Two travellers reach the same destination, but only one used the last coin toss to clear a toll. Sharing a destination does not balance their different budgets.
+**An everyday picture.** Two runners crossing the line together did not run the same race: one needed a sprint at
+the end and the other did not.
 
 ## The formal statement and proof
 

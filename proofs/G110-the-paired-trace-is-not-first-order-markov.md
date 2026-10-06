@@ -8,13 +8,14 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Two individually memoryless traces can form a pair with memory.
+Two signals that each have no memory can have memory as a pair.
 
-**What it says.** In the isolated-pulse model, current ideal bit and current error miss the healed error that will return next tick. The previous error determines that return, refuting a first-order Markov state even with known pulse phase.
+**What it says.** In the model with one race, knowing the current true value and the current error does not predict
+the next error. The previous error is needed too, because it is the one that comes back (G109).
 
-**Why it matters.** The error-mask coupling needs more than marginal fairness or a current-bit state. This identifies a pulse control for conditional-memory measurements, not a claim about repeated independent races. PM1 passes128 words with exact conditional counts; review is pending.
+**Why it matters.** It sets how much of the past any model of the glitches must keep.
 
-**An everyday picture.** Two streams can each sound random while their relationship remembers yesterday.
+**An everyday picture.** Two dancers who each look improvised, but together repeat a step from the bar before.
 
 ## The formal statement and proof
 

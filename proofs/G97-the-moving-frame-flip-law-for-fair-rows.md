@@ -8,13 +8,16 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-A moving observer's expected flip rate can be derived without independent flips in time.
+An observer walking right through a random Rule 30 pattern sees more change than one standing still or walking left.
 
-**What it says.** Rule30 preserves the iid fair spatial row law by a direct four-preimage count. For a predetermined observer stepping left, staying or stepping right, the flip probabilities are respectively one half, one half and three quarters. Expected counts add even if flips in time are dependent.
+**What it says.** Start from a random row of fair coin flips; Rule 30 keeps every row random, proved here directly.
+An observer who steps right each tick sees the colour flip three times in four. Standing still or stepping left, it
+is one time in two. These averages add up even though successive flips are not independent.
 
-**Why it matters.** It supplies the ensemble prediction behind Local's moving-frame measurements with explicit assumptions. It does not prove a single-seed frequency, temporal independence, concentration or a standard error. SC1-SC2 controls pass. A further fresh-left-bit proof gives independent sampled values and flips for deterministic observers that never step right, under the same random-row ensemble; its SC3 controls pass on 30 observer paths and 9360 initial words; independent review remains pending. No independence is asserted for rightward observers or a selected seed.
+**Why it matters.** It gives the exact prediction behind Local's moving-observer measurements, with its assumptions
+stated.
 
-**An everyday picture.** Knowing the average number of heads does not tell you whether successive tosses are related.
+**An everyday picture.** Walking into the rain gets you wetter than standing still.
 
 ## The formal statement and proof
 
