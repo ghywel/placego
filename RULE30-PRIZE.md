@@ -4546,10 +4546,11 @@ $x_t(\lfloor vt \rfloor)$, $v = k/20$, to $N = 2^{20}$ (predictions pushed befor
 from $v = -0.95$ to $0.95$, is linearly a coin ($L_N = N/2 \pm 2$, fair jump law, unbiased density), the left band
 included; the only linear structure is a prefix of about $2/(1 - |v|)$ steps while a frame is within two cells of an
 edge. The frame's own change is not always a coin. A step one cell to the right reads
-$x_{t+1}(i+1) \oplus x_t(i) = x_t(i+1) \vee x_t(i+2)$, the OR term of Rule 30, which is 1 with probability $3/4$ on
-fair cells; a step in place reads Rule 210 and a step to the left an XOR with a fresh cell, both $1/2$. So a frame
-of speed $v \ge 0$ sees change with probability $1/2 + v/4$, measured to within $1.4$ standard deviations at all 19
-rightward speeds. In the frame moving right at the speed of light, Rule 30 is no longer a coin: that observer rides
+$x_{t+1}(i+1) \oplus x_t(i) = x_t(i+1) \vee x_t(i+2)$, the OR term of Rule 30, which is 1 with probability $3/4$ when the
+two cells are independent fair bits (GPT's G086: for independent Bernoulli($q$) cells it is $2q - q^2$, so this is a
+property of the row's statistics, not of the rule alone); a step in place reads Rule 210 and a step to the left an XOR with a fresh cell, both $1/2$. So a frame
+of speed $v \ge 0$ sees change with probability $1/2 + v/4$, measured to within $1.4$ at all 19 rightward speeds, in units that treat successive changes as
+independent (they are not, so this is a yardstick, not a test; the single seed's pair law is not proved). In the frame moving right at the speed of light, Rule 30 is no longer a coin: that observer rides
 the permutive channel, sees only the OR, and sees change three times in four. Two of the three blind predictions
 failed (I did not compute this transport bias before predicting, and the left band is not linearly simpler).
 

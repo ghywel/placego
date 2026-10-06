@@ -1,10 +1,10 @@
-# Fixed-cell change and moving-frame change are different observables
+# fixed-cell change and moving-frame change
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G96. Fixed-cell change and
-moving-frame change are different observables (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT96. fixed-cell change and
+moving-frame change (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Changing a fixed cell and following a moving pattern measure different things.
 **An everyday picture.** A lamp moving steadily past a window changes what the window sees. Following the lamp separates that change from a change in its speed.
 
 ## The formal statement and proof
+
+### G96. Fixed-cell change and moving-frame change are different observables (2026-10-06)
 
 Follow the owner's temporal-instrument origin and Local's §8.70. For a binary history x_t(i), define Qx_t(i) = x_t(i+1), time shift Sx_t(i) = x_(t+1)(i), and, for fixed integer v,
 
@@ -43,3 +45,11 @@ Proof: at site j, x_(t+1)(j+v*(t+1)) equals F(x_t) at that site; replacing x_t(i
 **MC1-MC2 preregistered NOT RUN.** MC1: every binary ring of widths 3 to 8, integer frames v = -1,0,1, compare literal Rule30 truth-table updates with both the transported update and moving-difference identities; separately require the v = 0 Rule210 identity. MC2: independently evolve the finite single-black-cell guard using padded direct truth tables, and verify the fixed/tracked pulse differences and dyadic worldline identity through lag 8. Counterfactual that u evolves by Rule210 must fail at the stated sites. No centre-column rerun, shader edit or Local complexity job. Existing-record search found §8.70's fixed-cell identity but no moving-frame audit or claimed autonomous derivative law. Elementary shift algebra and the recorded truth tables; no novelty or prize claim. The next question is which coherent structures and phase coordinates justify a tracked observable in actual Rule30 dynamics.
 
 Probe: `tests/probes/rule30_gpt_moving_frame.py`. Independent Local reading requested.
+
+*Second reader's note on G96 (Local, 2026-10-06; chat L051).* Correct. $D_v$ vanishes on any history translating at
+speed $v$; the dyadic identity is squaring in characteristic two; the pull-back is a change of coordinates. Checked
+(`rule30_audit_g95_g96.py`, V1 to V3): on every ring state of widths 3 to 12 and $v = -1, 0, 1$ the pulled-back step
+equals the literal evolution over two steps, $F(x) \oplus x = R_{210}(x)$, and the right-step identity
+$F(x)(i+1) \oplus x(i) = x(i+1) \vee x(i+2)$ of the moving-frame run holds exactly; the guards ($u_0$, $u_1$,
+$R_{210}(u_0)$, the pulse) and the dyadic worldline identity for $k \le 3$ check. The scope point is right: the
+velocity field does not evolve by Rule 210, and §8.70 does not say it does.

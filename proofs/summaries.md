@@ -1100,7 +1100,7 @@ An induction proof for demand log-concavity must control the absorbing edge sepa
 
 **An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check, and on the real schedule it sometimes makes a small bump.
 
-## W95
+## G95
 The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
 
 **What it says.** The threshold rises at least once in every two steps. A different schedule, 00011, has demand atoms 26/32, 5/32 and 1/32, which are not log-concave. That schedule falls outside the actual restriction.
@@ -1110,7 +1110,7 @@ The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers
 **An everyday picture.** A staircase with no long landings may keep a demand profile smoother, but the shape must be proved; a staircase with a long landing already gives a counterexample.
 
 
-## W96
+## G96
 Changing a fixed cell and following a moving pattern measure different things.
 
 **What it says.** A difference taken along a constant-speed worldline vanishes on an exactly translating pattern, while a fixed-cell difference need not. Rule30 can be expressed in that moving frame by shifting its update. Its fixed-cell XOR change equals Rule210 evaluated on the state; the resulting change field does not itself evolve by Rule210, as a single-cell example shows.
