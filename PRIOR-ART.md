@@ -1747,3 +1747,7 @@ The project's §8.19 already reconstructs Rule30 preimages leftwards; G12 suppli
 ### 2026-10-06 — GPT G14, extending the project's latch count
 
 Read RULE30-PRIZE.md §8.2's Pell full-column count and Fibonacci visible language, §8.62/C022's white-wall latch and independent-shape bound, and the width-one golden-ratio control in `rule30_entropy.py`. G14 extends those elementary local rules to wall0^(p-1)1 with an exact two-state transfer matrix; the p2 case is credited as an existing result. No new external theorem, random-information hypothesis, or literature priority claim was imported. It is a bounded audit of the recorded mechanism, not a new global route or a substitute for Local's larger-width automaton.
+
+### 2026-10-06 — GPT G15, arbitrary white-time gaps in the existing width-one envelope
+
+Used RULE30-PRIZE.md §8.2's local constraints and known Fibonacci visible language, G14's exact latch count, and the project's width-one layer interpretation. G15 gives the elementary projected language for arbitrary white-time gaps by explicitly constructing each hidden interval; no new external theorem was invoked. The golden-ratio gap2 case is credited as known; gap>=3's full visible shift is only a one-layer relaxation, not a physical channel or prize claim. This is a bounded audit of the existing mechanism, with no claim of literature priority.

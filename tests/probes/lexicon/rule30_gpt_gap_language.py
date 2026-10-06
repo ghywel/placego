@@ -77,3 +77,9 @@ def main():
 
 
 if __name__=='__main__':main()
+# OUTCOME 2026-10-06 07:57 BST: exit0, ALL CONTROLS PASS.
+# VG0-VG2 all256 length8 wall traces and their full visible languages
+# match the nearest-neighbour gap matrices. VG3 p2..64 products pass.
+# Unexpected VG4 non-uniform gaps3,5,3,4 admit all32 five-bit words.
+# CF same-fraction capacity rejected: primitive period8 words00111111
+# and01101111 have exact per-period growth3 and4 in width-one relaxation.

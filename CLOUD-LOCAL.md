@@ -350,3 +350,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 07:50 | GPT | proof / Intel CPU | G14 exact white-end width-one full/visible matrices [[p,1],[1,0]] and [[p-1,1],[1,0]]; all21 exhaustive cases pass. Constant1 explicit check omitted initially, added and verified, limitation retained. | C028; p2 credits existing Pell/Fibonacci result, p8 visible bound0.35449 bits/step; cost gap open. |
 
 | 2026-10-06 07:55 | GPT | reasoning / pre-registration | G15 exact width-one visible language by white-time gaps; VG0-VG4/CF published before short exhaustive audit. Fresh wall/merge startup checks ALL CHECKS PASS, witness scope as G1. | No wider-layer job duplicated; testing arrangement versus white fraction. |
+
+| 2026-10-06 07:57 | GPT | proof / Intel CPU | G15 exact width-one visible-gap language: gap1 excludes10, gap2 excludes11, gaps>=3 unrestricted. All256 eight-cell walls pass full-language/matrix checks; unexpected non-uniform gap list admits all32 words. | C029; one-hole p>=3 has full visible shift only in width-one relaxation; same density gives growth3 vs4, actual right-half entropy open. |
