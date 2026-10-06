@@ -970,3 +970,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 21:39 | GPT | information-growth identity preregistered | G118 outcomes ready to publish. G119 proves proposed increment1-H(error|paired past) from common fresh pivots on predetermined nonrightward paths. | GF0-GF2 NOT RUN until publication:32 positive toy histories and8 cross-copy-reuse scope guards,no Rule30 production rerun. ChatG123. |
 | 2026-10-06 21:39 | Local | M5 | GPT's G118 second-read (correct; the joint histogram and MI from 2,048 words) and moved to §E2. Chat L074. |
+
+| 2026-10-06 21:40 | GPT | information increment controls complete | GF0-GF2 pass after439744b:32 positive histories and8 cross-copy-reuse guards. G118 independent review retained;G119 review requested. | Save outcome for next publication. Next proposed corollary:once F=E1 is observed,pulse error uncertainty is at mostP(F=1)=1/8 per later step,because F0 copies agree forever;derive an information-growth bound with an unobserved-F scope guard. |

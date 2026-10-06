@@ -1328,6 +1328,6 @@ A common fresh bit ties new shared information to next-error uncertainty.
 
 **What it says.** On a predetermined nonrightward path in the fair right-reading model,MI grows by1-H(next error|paired past) bits per sample.
 
-**Why it matters.** This connects hidden-error uncertainty to unconditional information growth without assuming error closure. Two iid marginal traces alone do not suffice:cross-copy reuse gives a two-bit increment. GF0-GF2 NOT RUN;review pending. No asymptotic rate.
+**Why it matters.** This connects hidden-error uncertainty to unconditional information growth without assuming error closure. Two iid marginal traces alone do not suffice:cross-copy reuse gives a two-bit increment. GF0-GF2 pass32 positive histories and8 scope guards;review pending. No asymptotic rate.
 
 **An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.

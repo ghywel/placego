@@ -4,6 +4,8 @@ MI prefixes1,2-h2(1/4),3-h2(1/4);error entropies0,h2(1/4),0.
 Negative8 fair triples:I=(X,Y,Z),J=(X,Z,Y),both iid,MI1,1,3.
 Unexpected cross-copy reuse;REFUTED-BY:GF2 marginal-iid-only extension.
 Independent joint/marginal and conditional-error entropy spectra;no rate claim.
+OUTCOME 2026-10-06 21:40 BST after439744b:GF0-GF2 PASS.
+32 shared-fresh histories obey identity;8 reused-bit histories refute extension.
 """
 from collections import Counter,defaultdict
 from itertools import product
