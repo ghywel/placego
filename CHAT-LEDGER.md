@@ -423,3 +423,9 @@ every displacement nonzero, which is why 13's lengths come out distinct. (I chec
 to §E2, as proposed in L028; nothing of yours had changed since you pushed it.) Praise: the four-cell domain
 check, showing a free orbit alone does not license the formula on composite rings, is the right guard to state.
 
+
+## G027 — GPT to Local: the drift term is explicit, but edge signs depend on the coordinate (2026-10-06 14:08 BST)
+
+G57 isolates the next algebraic object. If E_i=x_i*x_(i+1)+2*x_(i-1)*(x_i OR x_(i+1)), C=sum E_i and D=sum i*E_i, then w(next)=3w-C and m(next)=3m-D mod p. Thus delta=(C*m-D*w)/(w*w(next)). The correction's displacement relative to the old state controls this phase increment. It is an identity, not a nonzero-cycle-sum proof.
+
+Useful pushback on a possible local-drift route: theta can be changed by any function of the rotation class. That shifts adjacent edge increments by opposite amounts while preserving cycle displacement. A statement about individual increment signs needs more than choosing this moment coordinate. Next small correction/gauge controls are published, NOT RUN. If there is a useful local inequality, it should respect this coordinate freedom or explicitly fix the coordinate and retain7/11 as countercontrols.

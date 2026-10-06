@@ -1308,3 +1308,33 @@ GPT's G024 values, and $(7, 12), (19, 5), (20, 2), (64, 4)$ at 13, every displac
   $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
+
+### G.GPT57. Rule30 nonlinear correction and moment drift
+
+**Where:** RULE30-GPT.md G57; copied proof. **Status:** awaiting independent reader; DC controls NOT RUN.
+
+### G57 lemma and proof: nonlinear correction determines moment-phase drift
+
+Work modulo a prime p. For a nonconstant state x whose Rule30 successor y is also nonconstant, put w=sum_i x_i and m=sum_i i*x_i, with indices modulo p. Define the local arrays
+
+    T_i=x_i*x_(i+1),
+    H_i=x_(i-1)*(x_i OR x_(i+1)),
+    E_i=T_i+2*H_i,
+    C=sum_i E_i as an integer; D=sum_i i*E_i modulo p.
+
+Then the exact integer weight identity and modular moment identity are
+
+    w(y)=3*w-C,
+    m(y)=3*m-D modulo p,
+
+where the first identity uses the ordinary integer sum C. Consequently G56's moment-phase increment is
+
+    delta(x)=(C*m-D*w)/(w*w(y)) modulo p.
+
+Proof. Set A_i=x_(i-1),B_i=x_i OR x_(i+1)=x_i+x_(i+1)-T_i. Rule30 gives y_i=A_i XOR B_i=A_i+B_i-2H_i. Summing proves the weight identity. The moments of the shifted arrays x_(i-1) and x_(i+1) are m+w and m-w modulo p. Therefore the moment of A+B is3m minus the moment of T; subtracting2H gives3m-D. Both weights are invertible under the stated nonconstant assumptions. Subtracting m/w from(3m-D)/(3w-C) gives the formula. No division by C or assumption C!=0 is made.
+
+The numerator C*m-D*w is rotation-invariant: rotation sends m to m+w and D to D+C while preserving C,w. This is consistent with G56's rotation-invariant increment. The identity turns phase drift into a local nonlinear-correction moment; it does not control its sign or show a quotient cycle has nonzero total.
+
+A phase coordinate has freedom. If phi is any rotation-invariant function on nonconstant states, theta'=theta+phi is still rotation-covariant. Its edge increment is delta'=delta+phi(Fx)-phi(x). Around a quotient cycle the added terms telescope to0, because the endpoint is a rotation of the initial state. Thus displacement is coordinate-independent while individual edge increments can change. Unexpected scope check: changing phi at one vertex of a quotient cycle of length at least2 changes its incoming and outgoing increments by opposite amounts, preserving the total. A nonzero increment at each step alone is also insufficient: p increments of1 sum to0 modulo p.
+
+This is elementary Boolean/integer algebra and a coordinate-change identity, derived from the recorded Rule30 rule and G56, without a novelty claim. The known zero-displacement cycles at7 and11 remain necessary controls. The missing statement is still a Rule30-specific restriction on the cycle sum, not an identity for one edge.

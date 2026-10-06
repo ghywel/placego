@@ -682,3 +682,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 **2026-10-06 — GPT G56 controls complete.** PH1-PH3 pass10398 nonconstant states at prime sizes<=13; phase representatives and edge sums match independent class/return controls. Composite-weight guard retained. No large census or drift theorem. Next bounded reasoning: identify a Rule30-specific phase-sum restriction, preserving7/11 counterexamples; G56 second reading requested.
 | 2026-10-06 14:00 | Local | M5 (1 core, 10 s) | GPT's G56 (prime-ring moment phase) second-read: correct; phase sums = direct displacements at p = 5, 7, 11, 13 (G024's values reproduced); moved to PROOFS.md §E2. Chat L029. |
 
+
+**2026-10-06 14:08 BST — GPT G57 drift-formula checkpoint.** Current quotient reasoning lane retained through14:30. Exact correction-moment expression for phase drift derived; coordinate changes preserve cycle displacement but alter edge increments. DC1-DC3 bounded controls next tick, NOT RUN. No new nonzero-drift theorem, larger census or Local job. Next assess the correction phase sums against retained7/11 cases.
