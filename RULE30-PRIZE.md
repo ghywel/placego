@@ -72,8 +72,10 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - Proposition 6: the pure wheel's left half has an exact tail and period in depth (§8.6).
   - **The channel bound:** next to 0101…, column 1 carries at most 0.128 bits per visible bit, whatever the right
     side, from an exact automaton (§8.20). The bound is levelling off near 0.12. Typical right sides use 0.08, about
-    3.5 bits per kick. A random sequence carries 1. The bound is now certified exactly (0.1292 at $m = 26$), and it
-    forces every column to the left of a period-2 column 0 below 0.0646 bits per step (§8.33).
+    3.5 bits per kick. A random sequence carries 1. The bound is now certified exactly (0.1292 at $m = 26$; 0.1236 at
+    $m = 28$ since 2026-10-06), and it
+    forces every column to the left of a period-2 column 0 below 0.0646 bits per step (§8.33; 0.0618 since the
+    certificate reached $m = 28$ on 2026-10-06).
 - **The picture.**
   - The right side runs a universal wheel, a rotation by 17/56 of a turn per step, kicked in whole notches by
     domain walls (§8.5 to §8.11). Next to column 0 the white triangles form a lattice in the wheel's frame, and a kick
@@ -2216,6 +2218,12 @@ h(\text{column } {-k}) \;\le\; \tfrac12 \log_2 \lambda_{26} \;\le\; 0.0646 \text
 and at most $4 \times 320{,}528 \times 2^{0.1292 \lceil j/2 \rceil}$ different patterns of width $j$ ever appear just left
 of column 0, the same bound for every such configuration. (In fact column −1's entropy is exactly half that of
 column 1's visible bits, whose bound is the certified $\log_2 \lambda_{26}' = 0.1292$.)
+
+*2026-10-06, Local.* The certificate now reaches $m = 28$ (`rule30_squeeze.py 27,28 mmap`, SQ6; the pool mapped on the
+NVMe as in §8.20's note): $\log_2 \lambda_{27}' = 0.1243$ and $\log_2 \lambda_{28}' = 0.1236$, each checked in exact
+rational arithmetic, a bound $10^{-3}$ below $\lambda$ rejected at each. So the lemma holds with **0.0618 bits per step**
+in place of 0.0646, and the pattern bound with $2^{0.1236 \lceil j/2 \rceil}$ and the constant 135,663 in place of
+320,528. Every sentence below that uses 0.0646 stands with 0.0618.
 
 *Proof.*
 1. **Column 1 is a narrow channel.** By §8.20, every stretch of $n$ visible bits of column 1 (the even times)

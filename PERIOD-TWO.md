@@ -49,7 +49,8 @@ The same question has several exact forms, each checked against the others by a 
 Known theorems used:
 - **Jen (1990), via Kopra**: two adjacent columns of a configuration with an eventually zero left half are never
   both eventually periodic. So no eventually periodic column 1 can work (Proposition 7, §8.13).
-- **The channel bound**. Next to 0101..., column 1 carries at most about 0.13 bits per visible bit (0.064 per step),
+- **The channel bound**. Next to 0101..., column 1 carries at most about 0.12 bits per visible bit (certified 0.1236
+  at $m = 28$, 0.0618 per step, since 2026-10-06),
   whatever the right half. The figure is 0.128 by power iteration (§8.20), certified as 0.1292 in integer
   arithmetic (§8.33).
 
@@ -174,7 +175,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | 6.2 and M4, the exact records | **DONE** | Depths 69, 73, 77, 81, 85 and 89: R = 55, 59, 63, 65, 73 and 75. All three predictions held at each; Cloud's MG8 (69 to 79) held at 89. Depth 89 took 14 hours on 10 threads. | Nothing owed. Depth 93 would take about 10 days here. |
 | The deep ladder (§8.56) | **DONE** | R(24, S) = 19, 22, 21 and 26 at S = 153, 185, 217 and 249 (LL1 to LL4 held). So no counterexample has its left edge within 248 cells, whatever its right half. | Depth 265 was dropped (the owner's decision). |
 | 6.3 and M3b, the search to 34 cells | **DONE** | No candidate. The longest run is still 17 (`rule30_scan.py`). | nothing |
-| 6.3 and M3a, the channel bound at widths 27 and 28 | **DONE** | Ran 2026-10-06 with the sets' pool mapped on the internal NVMe (written once; 6 GB resident): 0.1229 and 0.1222 bits per visible bit, EN6 held; the bound levels off near 0.122 (§8.20's note). | The exact certificate at 27 and 28 (`rule30_squeeze.py mmap`, SQ6). |
+| 6.3 and M3a, the channel bound at widths 27 and 28 | **DONE** | Ran 2026-10-06 with the sets' pool mapped on the internal NVMe (written once; 6 GB resident): 0.1229 and 0.1222 bits per visible bit, EN6 held; certified exactly 0.1243 and 0.1236 (SQ6), so the squeeze lemma's constant is 0.0618 bits per step. | Nothing. |
 
 *Small items in RULE30-PRIZE.md that were never listed as leads* (found by reading every "open" and "next" in it).
 
