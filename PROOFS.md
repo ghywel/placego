@@ -1761,3 +1761,39 @@ All255 G67 extremizers with a2..256 admit both certificates; a1 admits neither. 
 Post-control diagnostics identify the two maximum-depth cases as a200 and253: prefix15, suffix18 containing11 ones. The largest sampled ceiling is19584 at a253. These are descriptive finite maxima, not preregistered depth bounds, asymptotic rates or evidence of independence. All256 individual records are retained outside git; the probe reproduces them with an optional output-file argument. Probe: `tests/probes/prizes/collatz_gpt_endpoint_certificates.py`; Python on GPT's Intel host, about6 s. No control failed.
 
 The bounded instrument audit is complete; independent proof review remains pending. Next reasoning/source audit: whether established lower bounds for linear forms in logarithms give a uniform polynomial envelope for G67's near-resonance denominator, and what that envelope actually says about counts. No such bound is claimed yet, and it would not by itself prove an actual survival estimate. No larger census or additional run is started here.
+
+
+### GPT G69 — polynomial first-deficit ceiling (awaiting independent reading)
+
+### G69. Known logarithmic bounds give a polynomial first-deficit ceiling (2026-10-06)
+
+G67's ceiling is unbounded, but it has a uniform polynomial envelope in the deficit time. This is a consequence of established logarithmic lower bounds, not a new transcendence result or a prize solution.
+
+**Source and hypotheses.** [Rozier–Terracol arXiv:2502.00948v3, Proposition6.3](https://arxiv.org/html/2502.00948v3#S6) states Rhin's effective bound: for integer coefficients and H=max(abs(u1),abs(u2))>=2, abs(u0+u1*log2+u2*log3)>=H^(-13.3). Here log denotes the natural logarithm of the indicated number, not a base-two logarithm. Read the proposition and its application in Section6; the original1987 Rhin proof was not read. Their subsequent finiteness argument additionally uses conjectural orbit bounds. We use only the stated unconditional logarithmic inequality, not those conjectural hypotheses. The numerical exponent is source-attributed and awaits independent reading.
+
+For a first-deficit word with a>=1 ones and t=ceil(a*log2(3)), let A=3^a, D=2^t-A, and
+
+    lambda=t*ln(2)-a*ln(3)>0.
+
+Since t>=2 and t>a, the cited bound applies with u0=0,u1=t,u2=-a,H=t. Thus
+
+    D/A=exp(lambda)-1>lambda>=t^(-13.3).
+
+G67 gives B<=a*A/3 for every word in this barrier class, so
+
+    K=floor(B/D)<a*t^13.3/3<t^14.3/3.
+
+The zero-ones first-deficit word has no positive survivor. Therefore every positive actual start surviving at its first coefficient deficit at time t satisfies n<t^14.3/3. Its positive terminal value obeys the same bound by G68. The displayed inequality is strict because exp(lambda)-1>lambda.
+
+**A limited count consequence.** Let E_t be the set of positive integers whose coefficient first falls below1 at time t but whose actual trajectory has not fallen below its own start through that time. Every member lies in the same interval[1,t^14.3/3), irrespective of which parity word realizes it. Hence
+
+    abs(E_t)<=floor(t^14.3/3)<=floor(t^15/3),
+    abs(E_t intersection[1,2^t])/2^t<=t^14.3/(3*2^t)->0.
+
+The harmless floor bound is still valid when the strict cutoff is an integer. At each fixed t this also bounds starts beyond the least-residue period, since the ceiling bounds all positive lifts. No independence or residue-density multiplication is used. This is a polynomial bound on actual exceptions at a specified first deficit, not the number of all non-stopped starts at horizon t. Summing polynomial bounds over unbounded t gives no finite total. It does not prove that E_t is empty for n>=2, rule out coefficient stopping time infinity, or establish the open tail-survivor estimate of COLLATZ-PRIZE.md §1.
+
+**Independent weaker source route.** [Languasco–Luca–Moree–Togbé, Theorem2.1](https://link.springer.com/article/10.1007/s12188-025-00293-9) states the rational positive-number form of Matveev's theorem. With numbers2,3 and exponents t,-a, it gives D/A>(e*t)^(-C), where C=1.4*30^5*2^(9/2)*ln(2)*ln(3). Combining with G67 yields K<(a/3)*(e*t)^C, again polynomial with a very large exponent. Its theorem hypotheses and application to prime-power gaps were read. This independently supplies the qualitative polynomial conclusion without relying on the sharper source-attributed13.3 exponent. Neither underlying logarithmic proof has been reproduced here.
+
+**Unexpected scope guard.** At horizon1 all positive odd starts have T(n)=(3n+1)/2>=n and coefficient3/2>1. This is an unbounded set of actual survivors. It cannot satisfy G69's polynomial endpoint cutoff because no coefficient deficit has occurred. Thus interpreting the exceptional-first-deficit count as a bound on all horizon survivors would be false. G46's unbounded formal ceilings are also consistent with polynomial growth; polynomial does not mean uniformly bounded.
+
+**Next controls, preregistered NOT RUN.** LF1: a1..256, t=bit_length(3^a), exact integer check D^10*t^133>A^10 (the weaker consequence D/A>t^(-13.3)), and K^10*3^10<a^10*t^133 for G67's maximum ceiling. These are finite application controls, not a verification of Rhin's theorem. LF2: reuse exactly791 first-deficit words throughlength16 and their independently evolved positive surviving lifts; require all such starts and terminals to satisfy3*n<t^15 and3*q<t^15, and their counts at each time to respect the coarse cutoff. No larger census. Counterfactual: the same cutoff bounds all horizon survivors without a deficit; refute analytically at horizon1 with unbounded odd starts. Independent proof/source reading requested.

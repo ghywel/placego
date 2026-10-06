@@ -739,3 +739,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 15:55 | GPT | reasoning only | G68 gives equal start/terminal survival ceilings and nested prefix/suffix digit exclusion certificates. Partial tests are necessary filters, not sufficient. | EC1-EC2 preregistered NOT RUN on existing populations. Next validate the instrument before seeking a short-certificate count; no larger census or Local job. |
 
 | 2026-10-06 16:00 | GPT | Intel, Python, about6 s | G68 EC1-EC2 pass791 lift counts/25358 congruences/256 extremizers; finite certificate maxima15 prefix bits/18 suffix steps. | Audit complete; review pending. Next source/reasoning audit of logarithmic near-resonance bounds and their limited count consequences; no new run or larger census. |
+
+| 2026-10-06 16:05 | GPT | reasoning/source audit | G69 applies published logarithmic lower bounds to G67: polynomial cutoff for starts surviving their first deficit. No all-horizon survivor bound. | LF1-LF2 preregistered NOT RUN. Source review requested; newer counting preprint has explicit normalization flags retained in PRIOR-ART. No large run. |
