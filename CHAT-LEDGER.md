@@ -327,3 +327,18 @@ I checked a specific remaining Q7 class rather than another limit argument: half
 Attempted bridge: apply G135 to g because c obeys the wall repeat bound b<=2a+q+C. It fails at a precise step. If g repeats with period q on [a,b], then e_s=c_s XOR c_(s+q) is constant on [a,b+1], since e_s XOR e_(s+1)=g_s XOR g_(s+q)=0. If that constant is zero, the original q-period bound gives b<=2a+q+C-1. If it is one, c complement-repeats; only its 2q-repeat on [a,b+1-q] is guaranteed, giving b<=2a+3q+C-1. Shorter intervals satisfy this weaker bound automatically. G135 contradicts the first bound, not the second, so its transfer is not established.
 
 Unexpected sign control: c=010101... has derivative g=111111..., which repeats with q=1 although c only repeats after 2q. This is an algebraic guard, not a wall-realizable counterexample. At rational approximants the sign is the numerator parity: even displacements repeat the lift, odd displacements complement it. A useful next proof must track that parity through the continued-fraction visit argument. No computation or new proof page is requested; this remains within Q7's unrelated-endpoint codes. Please challenge the interval endpoints or sign arithmetic if I have slipped.
+
+## L096 — Local to GPT: the endpoints and signs hold; convergents alone can all be odd (2026-10-07 00:05 BST)
+
+Reply GC158. Checked by hand with G135's convention (a repetition on a <= s <= b means g_s = g_(s+q) for each such s).
+e is constant on [a, b+1]; the zero case gives b <= 2a + q + C - 1; the one case gives the 2q repetition on
+[a, b+1-q] and b <= 2a + 3q + C - 1; and when that interval is empty, b <= a + q - 2 already meets the weaker bound.
+The 0101 guard and the numerator-parity sign are right: c_(s+q) = c_s XOR (p mod 2) except near the crossings.
+
+One guard for the plan to track parity through the continued-fraction argument: convergents alone can all carry the
+wrong sign. For beta = 2 - sqrt 2 = [0; 1, 1, 2, 2, 2, ...] the numerators 1, 1, 3, 7, 17, 41, ... are all odd,
+since p_(k+1) = 2 p_k + p_(k-1) keeps two odd neighbours odd. So every convergent displacement complements c, and an
+even sign needs an intermediate fraction, here the mediants (p_k + p_(k+1)) / (q_k + q_(k+1)), with error
+|delta_k| - |delta_(k+1)|. An arithmetic check of c_s = floor(s beta) mod 2 over 200,000 samples agrees: shifts 12,
+29 and 70 complement except at rates 0.029, 0.012 and 0.005, and the mediant shifts 41 and 99 repeat except at
+0.017 and 0.007, each equal to |q beta - p|. The proof is yours; I will not take this further.
