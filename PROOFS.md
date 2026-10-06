@@ -30,7 +30,7 @@ not written out). Rule 210, Rule 90 and the Collatz entries are marked by their 
 | B7 Theorem A′ | any configuration | as Theorem A | general ✓ |
 | B8 Lemma B1, B9 Lemma B2 | the diagonals of any left-bounded row | the diagonal recurrence | general (the band is wall-independent) ✓ |
 | B10 Theorem A‴, B12 Lemma B3, B13 Theorem A⁗ | any configuration with a settled band | the window and the band | general ✓ |
-| B11 Corollary F (near-squares) | 0101 | the pair $(-1, 0)$ repeats at shifts $2(i' - i)$ because column $-1$ is constant at odd times | 0101 as proved; any periodic wall with shifts in multiples of the period, via Lemma 1 ~ |
+| B11 Corollary F (near-squares) | 0101 | the pair $(-1, 0)$ repeats at shifts $2(i' - i)$ because column $-1$ is constant at odd times | any nonconstant periodic wall, for phase-aligned period blocks: GPT's G52, second-read ✓ |
 | B14 Theorem E, B15 Theorem E″ | 0101, visible bits a rotation coding | the wall's visible times are the even times | 0101 only as audited |
 | B′16 Proposition 5 | Rule 90, period two | $x_{2^n + s}(0) = x_s(-2^n) \oplus x_s(2^n)$ | Rule 90 with any periodic nonzero column 0: the identity gives long white stretches ✓ (standard for linear rules) |
 | B′17 Proposition 7 (Jen) | column 0 eventually periodic and not eventually zero; column 1 eventually periodic | Jen's mechanism | general for Rule 30 ✓ |
@@ -54,8 +54,8 @@ not written out). Rule 210, Rule 90 and the Collatz entries are marked by their 
 trace. What is period-two-specific is a short list: the channel certificate and the squeeze built on it, the wheel
 (Proposition 6), the rotation-coding exclusions (Theorems E, E″), the affine columns, and Corollary F as written. So
 a proof that wanted to leave period 2 would carry almost all of the machinery with it, and would need, for each new
-wall, its own channel certificate. The two "~" extensions (Corollary F and a per-wall squeeze) are the first places to
-write that out.
+wall, its own channel certificate. Of the two "~" extensions, Corollary F is now written out (G52, for phase-aligned period blocks); a per-wall
+squeeze is the one left.
 
 ## A. The wall form
 
@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz and test-bed proofs G39 to G51, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G52, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1121,6 +1121,30 @@ exactly when an ordinary integer realises the word; $10101$ gives $133/243 > 1/2
 words), $\xi = r_T + L_T$ was multiplied by $(3/2)^t$ in exact rationals, and its integer parts follow the word's
 parities and its fractional parts stay in $[0, 1/2)$ through $T$; no $n_0 < 200$ passes the $8^6$ congruence.
 
+### G.GPT52. Phase-aligned period-block extension of Corollary F
+
+**Where:** RULE30-GPT.md G52; copied proof. **Status:** second-read by Local, 2026-10-06 (note below); GPT's MF controls not run at publication. The original index's plausible extension is not promoted before review.
+
+### G52 theorem and proof: Corollary F for phase-aligned period blocks
+
+Let a nonconstant Rule30 wall tau have period p>=2 from time0. For each period m, let v_m be the vector of column1 bits at the white phases within times pm,...,pm+p-1, in phase order. Suppose there is a fixed integer K>=0 and pairs i_j<i'_j with i'_j-i_j tending to infinity for which the vectors v at these indices have a common future of at least ell_j periods, with ell_j>=i'_j-K. Then the forced left half cannot have an initially finite nonempty black support.
+
+Proof. Assume finite support and let its leftmost black cell be at depth L. The universal band lemma B2 supplies an eventually-black diagonal b>=L+pK, black from time t_b. Matching white-phase vectors for ell_j complete periods makes the column pair(-1,0) identical for p*ell_j times from a=pi_j and a'=pi'_j. This follows directly from Lemma1: at a white phase the left neighbour depends on the matching visible bit, and at a black phase it is independent of that bit; tau(t) and tau(t+1) agree because both shifts are multiples of p. Choose j so p(i'_j-i_j)>b and pi'_j>=t_b. Theorem A triple-prime with distance L-1 from the leftmost black cell to column-1 gives
+
+    p*ell_j <= L-1+pi'_j-b <= pi'_j-pK-1,
+
+contradicting ell_j>=i'_j-K. This reuses the checked half-line versions of Lemma1, B2 and the window principle; no full right-half realization is required. For0101 there is one white phase per period and this is Corollary F's existing statement. It is a derived extension, without a novelty claim. Empty initial left rows are not included in this stated version; their forced first birth and time shift need a separate scope check.
+
+Phase alignment matters. For wall001 and visible bits all0, Lemma1 gives column-1 values0,1,1 at phases0,1,2. Shifting by one visible-bit index exchanges the two white phases (physical times0 and1), whose left-neighbour values differ. Identical visible-bit futures alone therefore do not justify repeating the pair at those physical shifts. The block statement above supplies the missing alignment. It does not prove that an arbitrary near-square in the ungrouped visible sequence can be aligned, nor supply a new channel/squeeze certificate.
+
+*Second reader's note on G52 (Local, 2026-10-06; chat L023).* Correct. Matching white-phase vectors over $\ell_j$
+complete periods at shifts that are multiples of $p$ make the pair $(-1, 0)$ identical over $p\ell_j$ times, by
+Lemma 1 and the periodicity of $\tau$ (including $\tau(t+1)$ at a block's last time); Theorem A‴ at distance
+$L - 1$ with $b < p(i'_j - i_j)$ black at time $p\,i'_j$ gives $p\ell_j \le p\,i'_j - pK - 1$, against
+$\ell_j \ge i'_j - K$; such $j$ exist because $i'_j - i_j \to \infty$. The 001 example checks (column $-1$ reads
+0, 1, 1 at the three phases with column 1 white). Checked: the window-matching step on 1,764 random nonconstant
+walls of periods 2 to 9 with arbitrary bits at black phases, zero failures (`rule30_audit_g52.py`).
+
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 - **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
@@ -1134,19 +1158,3 @@ parities and its fractional parts stay in $[0, 1/2)$ through $T$; no $n_0 < 200$
   $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
-
-### G.GPT52. Phase-aligned period-block extension of Corollary F
-
-**Where:** RULE30-GPT.md G52; copied proof. **Status:** awaiting independent reader; MF controls NOT RUN. The original index's plausible extension is not promoted before review.
-
-### G52 theorem and proof: Corollary F for phase-aligned period blocks
-
-Let a nonconstant Rule30 wall tau have period p>=2 from time0. For each period m, let v_m be the vector of column1 bits at the white phases within times pm,...,pm+p-1, in phase order. Suppose there is a fixed integer K>=0 and pairs i_j<i'_j with i'_j-i_j tending to infinity for which the vectors v at these indices have a common future of at least ell_j periods, with ell_j>=i'_j-K. Then the forced left half cannot have an initially finite nonempty black support.
-
-Proof. Assume finite support and let its leftmost black cell be at depth L. The universal band lemma B2 supplies an eventually-black diagonal b>=L+pK, black from time t_b. Matching white-phase vectors for ell_j complete periods makes the column pair(-1,0) identical for p*ell_j times from a=pi_j and a'=pi'_j. This follows directly from Lemma1: at a white phase the left neighbour depends on the matching visible bit, and at a black phase it is independent of that bit; tau(t) and tau(t+1) agree because both shifts are multiples of p. Choose j so p(i'_j-i_j)>b and pi'_j>=t_b. Theorem A triple-prime with distance L-1 from the leftmost black cell to column-1 gives
-
-    p*ell_j <= L-1+pi'_j-b <= pi'_j-pK-1,
-
-contradicting ell_j>=i'_j-K. This reuses the checked half-line versions of Lemma1, B2 and the window principle; no full right-half realization is required. For0101 there is one white phase per period and this is Corollary F's existing statement. It is a derived extension, without a novelty claim. Empty initial left rows are not included in this stated version; their forced first birth and time shift need a separate scope check.
-
-Phase alignment matters. For wall001 and visible bits all0, Lemma1 gives column-1 values0,1,1 at phases0,1,2. Shifting by one visible-bit index exchanges the two white phases (physical times0 and1), whose left-neighbour values differ. Identical visible-bit futures alone therefore do not justify repeating the pair at those physical shifts. The block statement above supplies the missing alignment. It does not prove that an arbitrary near-square in the ungrouped visible sequence can be aligned, nor supply a new channel/squeeze certificate.
