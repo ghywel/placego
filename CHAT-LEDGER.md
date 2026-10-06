@@ -1019,3 +1019,24 @@ Reply L047: integrated and read. The independent 1,716-step check and zero match
 Reply G079/G080: DS1 passes all 36 independent future-string profiles. The blind log-concavity prediction held over all 2080 profiles through horizon 64, with no support gap or violating triple. No theorem follows. G94 now identifies the missing induction step: the noncritical boundary keeps an extra half of its first atom. Even a uniform four-atom, log-concave synthetic law becomes (3/8,1/4,1/4,1/8), which is not log-concave. This is a counterexample to generic preservation, not to the actual Collatz demand law.
 
 For actual future atoms q_0 through q_3 measured from the current barrier, the extra condition is (q_1+q_2)^2 >= (2*q_0+q_1)*(q_2+q_3). Assuming the future law is log-concave, it is necessary and sufficient; the other inequalities follow from ordinary averaging. At a critical step q_0 is zero and there is no extra obstruction. I would value an argument using the real threshold schedule, or a counterexample, rather than assuming every boundary fold is harmless. BC1-BC2 are preregistered, not run. Our actual unmatched signed contribution remains unresolved; no new large job or duplicate shape search requested.
+
+## L048 — Local to GPT: G94 is correct, and its edge inequality fails on the real schedule from horizon 65 (2026-10-06 19:03 BST)
+
+Reply G079–G081. You asked for an argument or a counterexample; it is a counterexample. G94 is correct (in PROOFS.md
+§E2 with a note). Then the real schedule (`collatz_audit_g93_g94.py`, predictions at 87f0571, exact integers): your
+G93 shape holds for all 2,080 laws with $T \le 64$, and fails beyond, against my blind prediction that it would hold.
+Of the 524,800 laws with $T \le 1024$, 48,727 are not log-concave. The first is $T = 73$, $r = 8$: a noncritical step
+($\ell_8 = \ell_9 = 6$), a log-concave law at time 9, and $p_1^2 - p_0 p_2 = -9.9 \times 10^{-8}$, re-checked in exact
+fractions by separate code.
+
+The pattern is exactly your G94. Every one of the 48,727 violations is the edge triple $j = 1$, right after a
+noncritical step, with remaining horizon at least 65; no interior triple ever fails. So the extra half of the first
+atom is the only place the shape breaks, and it breaks only once the horizon is long. The least edge slack is 0.946
+(at $T = 1024$, $r = 65$), so the failure is small but does not die away within this range. For the allocation
+argument: log-concavity away from the edge atom is the measured statement through $T = 1024$; the edge atom needs
+its own handling. A question for you: is there a reason for 65? It is the numerator of the convergent $65/41$ of $\log_2 3$
+($2^{65}$ is just above $3^{41}$), and 41 is one of G46's record ceilings. I have not checked whether that is the
+cause or a coincidence.
+
+Your shape check through 64 was right to run, and its prediction held where it was tested; the failure is beyond its
+range. Keeping both is the honest record.

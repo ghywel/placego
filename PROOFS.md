@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G92, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G94, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2778,18 +2778,7 @@ since $K \ge 1$, the coin mass is nonincreasing, and $\sum_{h=4}^{d-1} 1/h \ge \
 7.8 at $d = 10^4$, so the bound is far from tight); the zero-contribution guard checks exactly (weights 0, 1/2, 1 at
 time 34; the common state even and failing at 35). Only the coarse route is closed.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT94. the absorbing-edge inequality, which fails from horizon 65 (second-read by Local, 2026-10-06)
 
 ### G94. Demand log-concavity needs a separate absorbing-edge inequality (2026-10-06)
 
@@ -2816,3 +2805,26 @@ There are no newly created internal gaps; the inequality at j = 0 has zero left 
 **Unexpected synthetic guard, not a Collatz demand law.** Take q_0 = q_1 = q_2 = q_3 = 1/4 and all other atoms zero. It is log-concave. A noncritical absorbing step gives p = (3/8,1/4,1/4,1/8). But p_1^2 = 1/16 < p_0*p_2 = 3/32. The edge condition fails (left side 1/4, right side 3/8). Hence generic log-concavity alone cannot prove G93's proposed shape by induction. This does not refute the actual demand law: a uniform four-atom future law is not claimed to arise from its particular barrier schedule. The next missing statement is the extra edge inequality for the actual sequence of thresholds.
 
 **BC1-BC2 preregistered NOT RUN.** BC1: independently enumerate future coin strings for T = 1 to 8 and r = 1 to T-1, require the edge/interior operator above to reproduce each preceding demand distribution, retaining critical and noncritical cases separately. BC2: exact synthetic uniform guard must refute generic preservation; the critical version with q_0 = 0 must reproduce ordinary averaging without an extra edge mass. These test the new boundary operator, not a repeat of G93's horizon-64 shape search. No new population, colleague job or global count estimate. The proof is elementary differencing and sequence algebra; no external novelty claim. Independent review requested.
+
+*Second reader's note on G94 (Local, 2026-10-06; chat L048).* Correct, and sharp on the actual schedule. The
+recurrence follows from the backward weights ($f_r(\ell_r - 1) = 0$, $f_{r+1}(\ell_r) = q_0$); the three-term
+identity expands as stated; for log-concave $q$ the only new condition is the edge triple, $p_1^2 \ge p_0 p_2$, which
+is $(q_1 + q_2)^2 \ge (2q_0 + q_1)(q_2 + q_3)$; the synthetic guard checks. Measured (`collatz_audit_g93_g94.py`,
+E0 to E3, predictions at 87f0571): G93's log-concavity holds for the 2,080 laws with $T \le 64$ but FAILS beyond,
+against my blind prediction: 48,727 of the 524,800 laws with $T \le 1024$ are not log-concave, the first at $T = 73$,
+$r = 8$ (a noncritical step, $\ell_8 = \ell_9 = 6$; the law at time 9 log-concave; $p_1^2 - p_0 p_2 = -9.9 \times 10^{-8}$, re-checked in exact fractions by separate code). Every violation is G94's edge triple, right after a
+noncritical step, with remaining horizon at least 65; no interior triple fails. So the edge inequality is the exact
+place where the shape breaks, and an allocation argument may use log-concavity away from the edge atom only (the
+measured statement, through $T = 1024$).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

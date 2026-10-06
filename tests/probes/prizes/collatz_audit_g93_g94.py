@@ -23,6 +23,14 @@ written before the smoke and is left unchanged. Nothing beyond horizon 64 was co
      inequality fails for it (1/4 < 3/8); with q_0 = 0 (critical) the edge inequality holds for it.
   D1 (descriptive): the least normalized slack of the edge inequality (q_1 + q_2)^2 / ((2 q_0 + q_1)(q_2 + q_3)) over
      the noncritical steps, and where it occurs.
+
+OUTCOME, 2026-10-06 (TMAX = 1024; M5, one core, about four minutes): E0, E2, E3 PASS. E1 REFUTED: 48,727 of the
+524,800 demand laws are not log-concave. The first (in order of T, then r downward) is T = 73, r = 8: the step from
+time 9 is noncritical (ell_8 = ell_9 = 6), the law at time 9 is log-concave, and p_1^2 - p_0 p_2 = -9.9e-8 < 0 (edge
+sides 5.4115e-4 < 5.4155e-4); re-checked with exact fractions straight from the definition, by separate code. A
+second pass over all 524,800 laws: EVERY violation is the edge triple j = 1, right after a noncritical step, with
+remaining horizon T - r >= 65; no interior triple fails. D1: least edge slack 0.946, at T = 1024, r = 65. So G94's
+absorbing-edge inequality is not only needed: on the actual threshold schedule it fails, from horizon 65 on.
 """
 import sys
 from fractions import Fraction as Fr

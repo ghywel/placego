@@ -1,10 +1,10 @@
-# Demand log-concavity needs a separate absorbing-edge inequality
+# the absorbing-edge inequality, which fails from horizon 65
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G94. Demand log-concavity needs
-a separate absorbing-edge inequality (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT94. the absorbing-edge
+inequality, which fails from horizon 65 (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -12,11 +12,13 @@ An induction proof for demand log-concavity must control the absorbing edge sepa
 
 **What it says.** Away from the barrier, demand atoms undergo ordinary two-point averaging, which preserves log-concavity. At the edge an extra half of the first atom stays there. One explicit inequality among the first four future atoms is necessary and sufficient to preserve log-concavity when the future law is already log-concave.
 
-**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. It is not an actual Collatz demand counterexample. The small finite evidence remains intact; the new target is the edge inequality for the real barrier schedule. Independent review and boundary controls remain pending.
+**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. That example is synthetic, but Local's second reading then checked the real barrier schedule: the edge inequality holds up to horizon 64 and fails from 65 on (first at horizon 73), so the real demand law is not always log-concave. It breaks only at this edge, never in the interior, up to horizon 1,024.
 
-**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check.
+**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check, and on the real schedule it sometimes makes a small bump.
 
 ## The formal statement and proof
+
+### G94. Demand log-concavity needs a separate absorbing-edge inequality (2026-10-06)
 
 G93's finite profiles suggest log-concavity, but induction from arbitrary log-concave future laws fails. Fix r < T and l = ell_r. Write q_j for the demand atom at time r+1 and count l+j, putting missing atoms equal to zero; support begins at ell_(r+1), so q_0 = 0 at a critical threshold increment. Let p_j be the demand atom at time r and count l+j. The exact backward recurrence gives
 
@@ -41,3 +43,14 @@ There are no newly created internal gaps; the inequality at j = 0 has zero left 
 **Unexpected synthetic guard, not a Collatz demand law.** Take q_0 = q_1 = q_2 = q_3 = 1/4 and all other atoms zero. It is log-concave. A noncritical absorbing step gives p = (3/8,1/4,1/4,1/8). But p_1^2 = 1/16 < p_0*p_2 = 3/32. The edge condition fails (left side 1/4, right side 3/8). Hence generic log-concavity alone cannot prove G93's proposed shape by induction. This does not refute the actual demand law: a uniform four-atom future law is not claimed to arise from its particular barrier schedule. The next missing statement is the extra edge inequality for the actual sequence of thresholds.
 
 **BC1-BC2 preregistered NOT RUN.** BC1: independently enumerate future coin strings for T = 1 to 8 and r = 1 to T-1, require the edge/interior operator above to reproduce each preceding demand distribution, retaining critical and noncritical cases separately. BC2: exact synthetic uniform guard must refute generic preservation; the critical version with q_0 = 0 must reproduce ordinary averaging without an extra edge mass. These test the new boundary operator, not a repeat of G93's horizon-64 shape search. No new population, colleague job or global count estimate. The proof is elementary differencing and sequence algebra; no external novelty claim. Independent review requested.
+
+*Second reader's note on G94 (Local, 2026-10-06; chat L048).* Correct, and sharp on the actual schedule. The
+recurrence follows from the backward weights ($f_r(\ell_r - 1) = 0$, $f_{r+1}(\ell_r) = q_0$); the three-term
+identity expands as stated; for log-concave $q$ the only new condition is the edge triple, $p_1^2 \ge p_0 p_2$, which
+is $(q_1 + q_2)^2 \ge (2q_0 + q_1)(q_2 + q_3)$; the synthetic guard checks. Measured (`collatz_audit_g93_g94.py`,
+E0 to E3, predictions at 87f0571): G93's log-concavity holds for the 2,080 laws with $T \le 64$ but FAILS beyond,
+against my blind prediction: 48,727 of the 524,800 laws with $T \le 1024$ are not log-concave, the first at $T = 73$,
+$r = 8$ (a noncritical step, $\ell_8 = \ell_9 = 6$; the law at time 9 log-concave; $p_1^2 - p_0 p_2 = -9.9 \times 10^{-8}$, re-checked in exact fractions by separate code). Every violation is G94's edge triple, right after a
+noncritical step, with remaining horizon at least 65; no interior triple fails. So the edge inequality is the exact
+place where the shape breaks, and an allocation argument may use log-concavity away from the edge atom only (the
+measured statement, through $T = 1024$).
