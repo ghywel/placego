@@ -22,6 +22,14 @@ PREDICTIONS, written 2026-10-06 before this script's first run:
       refinement (unequal cross-products), so (I_2, E_2) is not a closed state for E_3.
   MM3 (blind, mine): in both I_2 bins, P(E_3 = 1 | E_2 = 1) > P(E_3 = 1 | E_2 = 0): errors persist.
   D1 (descriptive): every k1 and k2 bin with its count and its number of E_3 = 1.
+
+OUTCOME of the first run, 2026-10-06 (one core, under a second): MM0, MM1 HELD (controls); MM2 HELD: all four k1
+bins split under the refinement, 17 refined pairs with unequal cross-products; MM3 HELD: P(E_3 = 1 | E_2 = 1, E_2 = 0)
+= 0.6875 against 0.2946 (I_2 = 0) and 0.2600 against 0.1748 (I_2 = 1). D1: six of the 14 positive k2 bins are
+deterministic: (I_1, I_2, E_1, E_2) = (0,0,1,0) and (1,0,0,1) and (1,0,1,0) always give E_3 = 1; (0,0,1,1),
+(0,1,0,1) and (1,1,0,0) never do (the last holds 25,600 histories). The first is G109's echo surviving random races:
+an error that healed at tick 2 returns at tick 3 every time when both ideal bits are white. k1 counts: (0,0) 57,344
+with 16,896; (0,1) 8,192 with 5,632; (1,0) 52,736 with 9,216; (1,1) 12,800 with 3,328.
 """
 from fractions import Fraction as F
 from itertools import product
