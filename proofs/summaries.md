@@ -1136,3 +1136,21 @@ Changing a global clock, changing update order and counting cone events are diff
 **Why it matters.** It gives precise statements for the owner's clock questions without promoting a geometric analogy to physical dilation or a complexity lower bound. Tiny guard controls and independent review remain pending.
 
 **An everyday picture.** Playing a film slowly changes its timing; rearranging its frames changes its story. Counting pixels also differs from measuring the area of their boundary.
+
+## W99
+A shared logical generation can survive unequal physical update times.
+
+**What it says.** Store immutable values labelled by site and generation. Any complete schedule that computes a node only after its three prior-generation parents gives the synchronous history's values. An intermediate mixture of generations is not necessarily a synchronous frame.
+
+**Why it matters.** It identifies the buffering and dependency assumptions needed to answer the owner's local-clock question. It claims neither a physical metric nor an algorithmic speedup. Independent review and small controls remain pending.
+
+**An everyday picture.** Cooks can prepare different ingredients at different times, provided each recipe uses the specified versions and the finished dish includes every required ingredient.
+
+## W100
+Two neighbouring flips can look independent while a third exposes memory.
+
+**What it says.** For a right-step observer in Rule30 started from a fair random row, adjacent flips have zero covariance, but flips two steps apart have covariance1/32. Three-flip counts have variance5/8 rather than the independent prediction9/16.
+
+**Why it matters.** It supplies an exact temporal-dependence guard for the ensemble behind moving-frame expectations. It covers the right-edge speed and three ticks, not interior-ray or single-seed asymptotics. Independent review and tiny controls remain pending.
+
+**An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.

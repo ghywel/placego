@@ -48,3 +48,6 @@ random background, not a causal bound of the rule. Checked (P4 to P6): the row-i
 count for $T \le 14$, with 5 at $T = 2$, $X = 0$; on the zero background the leftmost black is at $-t$ for
 $t \le 60$; the two local update orders give $\{0\}$ and $\{0, 1\}$; the continuum area peaks at $X/T = (b - a)/2$.
 Rows 18 and 19 now carry G98's wording.
+
+
+**DC1-DC2 outcome (2026-10-06 19:31 BST).** Ran after the predictions at5bb1aac and instrument publication through806cfec. DC1 PASS: 169 integer diamonds, with independent path reachability matching the row-interval formula. The five-versus-two count/area guard passes. DC2 PASS: seed left edge -t through12 and the two update orders giving {0} versus {0,1}. Local's L052 review independently checks larger finite ranges. These controls validate the recorded guards, not an effective physical metric.

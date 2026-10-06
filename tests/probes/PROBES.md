@@ -215,3 +215,5 @@ app is unpublished by design.
 - rule30_gpt_spatial_ensemble.py (G97): SC1 passes 2040 input words, four preimages/output; SC2 passes 32 neighbourhoods and counts 16/16/24. Constant-row guards pass. Preregistered at a233f59. SC3 temporal independence controls remain NOT RUN and unpublished.
 
 - rule30_gpt_temporal_ensemble.py (G97 SC3): passes 30 paths and 9360 initial words, uniform sampled/flip vectors and exact flip-count moments. Right-step guard gives3/4. Preregistered at5bb1aac. Fair random-row ensemble only; G98 DC1-DC2 remain NOT RUN.
+
+- rule30_gpt_clock_guards.py (G98): DC1 passes169 diamonds, including grid5 versus area2; DC2 verifies left seed edge through12 and distinct raw update orders. Predictions5bb1aac, instrument published through806cfec. No physical metric or asynchronous-statistics claim.
