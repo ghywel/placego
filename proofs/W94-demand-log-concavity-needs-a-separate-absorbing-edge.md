@@ -12,7 +12,7 @@ An induction proof for demand log-concavity must control the absorbing edge sepa
 
 **What it says.** Away from the barrier, demand atoms undergo ordinary two-point averaging, which preserves log-concavity. At the edge an extra half of the first atom stays there. One explicit inequality among the first four future atoms is necessary and sufficient to preserve log-concavity when the future law is already log-concave.
 
-**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. It is not an actual Collatz demand counterexample. The small finite evidence remains intact; the new target is the edge inequality for the real barrier schedule. Independent review and boundary controls remain pending.
+**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. It is not an actual Collatz demand counterexample. The small finite evidence remains intact; the new target is the edge inequality for the real barrier schedule. The 28 independently enumerated boundary controls and exact synthetic guards passed. Independent review remains pending.
 
 **An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check.
 
@@ -41,3 +41,10 @@ There are no newly created internal gaps; the inequality at j = 0 has zero left 
 **Unexpected synthetic guard, not a Collatz demand law.** Take q_0 = q_1 = q_2 = q_3 = 1/4 and all other atoms zero. It is log-concave. A noncritical absorbing step gives p = (3/8,1/4,1/4,1/8). But p_1^2 = 1/16 < p_0*p_2 = 3/32. The edge condition fails (left side 1/4, right side 3/8). Hence generic log-concavity alone cannot prove G93's proposed shape by induction. This does not refute the actual demand law: a uniform four-atom future law is not claimed to arise from its particular barrier schedule. The next missing statement is the extra edge inequality for the actual sequence of thresholds.
 
 **BC1-BC2 preregistered NOT RUN.** BC1: independently enumerate future coin strings for T = 1 to 8 and r = 1 to T-1, require the edge/interior operator above to reproduce each preceding demand distribution, retaining critical and noncritical cases separately. BC2: exact synthetic uniform guard must refute generic preservation; the critical version with q_0 = 0 must reproduce ordinary averaging without an extra edge mass. These test the new boundary operator, not a repeat of G93's horizon-64 shape search. No new population, colleague job or global count estimate. The proof is elementary differencing and sequence algebra; no external novelty claim. Independent review requested.
+
+
+### G94 absorbing-edge controls outcome (2026-10-06)
+
+BC1 passes 28 independently enumerated future-string boundary operators, split into 19 critical and nine noncritical steps. BC2 verifies the synthetic noncritical deficit -1/32 and critical ordinary-averaging identity. The generic log-concavity-preservation counterfactual is REFUTED; no control failed. Predictions and script at fea12c1, published via 5854db3 before execution. GPT Intel Python, under one second. No actual demand log-concavity counterexample or population estimate is inferred; the extra edge inequality for the true threshold schedule remains open. Independent proof review pending.
+
+Probe: `tests/probes/prizes/collatz_gpt_demand_edge.py`.

@@ -637,3 +637,8 @@ A few traps that cost real time, kept here so they are not met twice:
 - **Any "take the newest result" step needs two checks:** the result is newer than the start of the run, and it is not
   empty.
 - **A remote launch that prints a process id has not necessarily started.** Read its log a few seconds later.
+
+
+### Origin and research compass (owner context, 2026-10-06)
+
+The project began with n-frame interpolation shaders and became temporal field measurement: velocity, acceleration, jerk and higher changes, with the measured field itself as the product at matching source/output frame rates. WHAT-WE-BUILT.md summarizes the instrument, its calibration and limits. The owner identifies time and temporal evolution as the connection to the present mathematics and science collaboration. Keep that origin in view when choosing useful questions; RULE30-PRIZE.md §8.70 already develops the owner's temporal-derivative lead. Preserve the distinction between exact mathematical statements and measured instrument performance.

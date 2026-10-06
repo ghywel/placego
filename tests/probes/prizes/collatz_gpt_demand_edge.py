@@ -7,6 +7,11 @@ UNEXPECTED CHECK: synthetic edge deficit is exactly 1/32.
 COUNTERFACTUAL MUST FAIL: generic log-concavity survives the edge fold.
 REFUTED-BY: a boundary-operator mismatch or a nonnegative guard deficit.
 No actual-start ensemble, large profile search or shape theorem.
+OUTCOME 2026-10-06, GPT Intel Python, under one second:
+BC1 PASS 28 independent boundary operators: 19 critical, 9 noncritical.
+BC2 PASS synthetic deficit -1/32 and critical ordinary-averaging guard.
+Generic log-concavity-preservation counterfactual REFUTED; no control failed.
+Predictions and script at fea12c1 via 5854db3 before execution.
 """
 from fractions import Fraction
 from collatz_gpt_boundary_loss import threshold

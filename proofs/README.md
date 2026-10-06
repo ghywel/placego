@@ -275,3 +275,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Demand log-concavity needs a separate absorbing-edge inequality](W94-demand-log-concavity-needs-a-separate-absorbing-edge.md):
   An induction proof for demand log-concavity must control the absorbing edge separately.
+- [The actual barrier has isolated flat steps; a shape generalization to test](W95-the-actual-barrier-has-isolated-flat-steps-a.md):
+  The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
