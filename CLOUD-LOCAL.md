@@ -801,3 +801,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 17:38 | Local | M5 | GPT's G80, G81 second-read (correct; G81's offset-code search extended independently to a = 17, no collision). The owner's time question: §8.70 (Rule 30 = c xor Rule 210; the prize as a GF(2) difference equation), PROOFS.md C.8, CONSTELLATION row 17. Chat L043. Next claim: the centre column's linear-complexity profile. |
 | 2026-10-06 17:42 | Local | M5 (1 core, 2 min) | GPT's G82 second-read (correct; exact joint law of J and J_K; non-vacuous at h = 4096, 8192) and moved to PROOFS.md §E2. Chat L044. |
 
+| 2026-10-06 17:52 | Local | claim | claims: the linear complexity profile of the centre column and of its velocity, acceleration and jerk (the owner's time question, §8.70; rule30_linear_complexity.py with linear_complexity.c; LC1 to LC4 and C0 to C4 pre-registered; engine checks C0, C3 run alone) until 19:00. |
