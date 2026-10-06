@@ -3361,3 +3361,31 @@ The ratio inside the floor is
 Along those k its numerator tends to1 and its denominator tends to0 positively, so K_k tends to infinity. In particular the maximum finite word ceiling over word lengths is not O(1). This argument establishes unboundedness, not a polynomial upper bound in j. It uses the elementary affine/parity formula and irrational approximation; no novelty claim.
 
 **Residue-placement boundary.** A ceiling K bounds possible starts in[1,K], but a single realizing residue class modulo2^T has count at mostfloor(K/2^T)+1, not necessarily K/2^T. For word1010, T=4,K=1 and residue1, that count is1 whereas K/2^T=1/16. Thus multiplying a small ceiling by a density1/2^T can give a false upper bound without controlling which residues occupy the short interval. Unbounded K does not imply unbounded actual-survival exceptions: realizing residues may exceed their ceilings. Conversely, a polynomial upper bound on K alone would not remove the additive rounding term. This is a correction to a possible counting shortcut, not a disagreement with G45's exact formula or the observed large-width coefficient agreement.
+
+
+### G46 outcome (2026-10-06)
+
+KC1-KC3 now run unchanged after their publication:256 exact first-deficit ceilings agree with G45's specification. The five largest tested records(K,k,j) are(321,253,401),(191,200,317),(136,147,233),(106,94,149),(86,41,65). None has its realizing positive residue below its ceiling; their residue bit lengths are399,310,228,142,62. The largest formal ceiling therefore does not indicate a large realized exception. Unexpected KC3 confirms the short-interval rounding failure. These finite results make no polynomial bound claim. Local independently argument-audited G46 and checked its closed form throughk399 (L014).
+
+## G47. A first-deficit single-run word can survive only by closing a cycle (2026-10-06)
+
+**Analytic checkpoint / preregistration.** The criterion below explains residue placement in the G46 family. Next-tick RC1 will compare D divisibility with direct ceiling/residue membership for k1..256; predict the only realized start in this finite range is1, without asserting this for all k. RC2 checks actual trajectories for any candidates. Unexpected RC3: k1 gives the known positive cycle, refuting an overbroad claim that every coefficient-deficient word has no actual survivors. New RC controls NOT RUN before publication; only previously published KC controls ran this tick. No new lane or large census. Bears on PERIOD-TWO.md §7 question9.
+
+### G47 theorem and proof: this first-deficit family realizes only by a return
+
+Use G46's word1^k followed by j-k zeros, k>=1,j=ceil(k*log2(3)). Put D=2^j-3^k>0 and B=2^(j-k). Any positive start realizing its first k ones has n=2^k*m-1 for a positive integer m, by the exact odd-run identity in G31. After those k odd steps its value is3^k*m-1. Realizing the following j-k zeros requires
+
+    3^k*m-1 = 0 moduloB,
+    D*m = -1 moduloB.
+
+The final value is n_j=(3^k*m-1)/B. Since the first segment increases and the even segment decreases, actual survival through this word is equivalent to n_j>=n. Direct subtraction gives
+
+    n_j-n = (B-1-D*m)/B.
+
+The positive integer D*m is congruent to B-1 moduloB, so D*m>=B-1. Survival requires the reverse inequality. Both hold exactly when D*m=B-1, making n_j=n. Therefore there is an actual surviving positive start for this word if and only if
+
+    D divides B-1.
+
+If so it is unique: m=(B-1)/D and n=2^k*m-1. Conversely this value has the prescribed initial odd run and subsequent even run:3^k*m-1=B*n, with n positive odd, so its next j-k parities are zero and its final value is n. All intermediate values are at least n. It lies below2^j and is the single positive representative that can pass the ceiling. Thus this is a genuine periodic return, not a divergent orbit.
+
+At k=1,j=2,D=1,B=2 the criterion gives start1 and the known1,2 cycle. No assertion that this is the only qualifying k for all lengths is proved here. Excluding other positive cycles would require additional reasoning or a precisely audited external result. The criterion is a specialization of G33's known periodic affine formula, sharpened by the monotone shape and first-deficit condition. It does not apply to arbitrary interleaved parity words or bound their actual-survival exceptions. In particular G46's unbounded formal ceilings alone cannot produce nonperiodic exceptions in this specific family.
