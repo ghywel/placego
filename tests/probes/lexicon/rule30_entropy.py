@@ -59,6 +59,26 @@ COMMAND:    cc -O2 -o /tmp/entropy2 tests/probes/lexicon/entropy2.c -lm && /tmp/
 PREDICTION (written 2026-10-05 before any run of this job):
   EN6 (blind): log2(lambda) at m = 27 and 28 lies between 0.115 and 0.128, each no higher than the one before.
 REFUTED-BY: either value outside that range, or a rise.
+ADDENDUM to JOB M3a (Local, 2026-10-06, after the owner asked whether the blocked job could be made to fit a 16 GB
+machine). The memory is the pool of sorted sets (about 1.4 billion layer states, 5.6 GB, at m = 26, growing 2.2 times
+per cell). entropy2.c now has a compile-time variant, -DPOOL_MMAP, that keeps that pool in a file mapped on the
+internal NVMe: append-only, every byte written once, read in order by the BFS and one set at a time by the hash
+lookups. Nothing else changes. The variant reproduced the heap build to the digit at m = 10, 14, 18 (states, mean
+population, lambda) before these predictions were written.
+  COMMAND:  cc -O2 -DPOOL_MMAP -o /tmp/entropy2m tests/probes/lexicon/entropy2.c -lm
+            POOL_FILE=<a file on the internal drive> POOL_GB=48 /tmp/entropy2m 27 4000   (then 28)
+  MM0 (control, must hold): at m = 24 the variant's S and E lines equal the heap build's exactly.
+  MM1 (blind; the point of the variant): the peak resident memory of the variant at m = 28 stays below 14 GB, so
+      the run completes on this 16 GB machine without swapping.
+  MM2 (blind; sizes): the automaton has between 250,000 and 320,000 states at m = 27 and between 380,000 and 500,000
+      at m = 28, with mean subsets of 10,000 to 13,000 and 14,000 to 19,000 layer states (the growth of 1.57 and
+      1.42 per cell seen from m = 21 to 26).
+  MM3 (blind; cost): each width finishes within 3 hours of wall time on one core, and the pool file is written once:
+      its size is within 30% of 12 GB at m = 27 and 28 GB at m = 28, and the drive's total writes during the run
+      are below twice that.
+  EN6 stands as written above (blind: both values in [0.115, 0.128], each no higher than the one before).
+REFUTED-BY: MM0 failing (the variant); MM1 failing means the job stays blocked here; MM2, MM3 the other way.
+
 HAND BACK to Cloud when both "E" lines are recorded here (or the run fails for memory, with the error), with a ledger
   line ("Local ran M3a"), pushed to main.
 """

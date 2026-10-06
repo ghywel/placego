@@ -22,6 +22,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef POOL_MMAP
+/* Variant (Local, 2026-10-06, JOB M3a on a 16 GB machine): the pool of sets, which is the whole of the memory at
+ * m >= 26 (about 28 GB at m = 28), lives in a file mapped on the fastest local disk instead of the heap. It is
+ * append-only, so every byte is written to the disk once; the BFS reads it in order, and the hash lookups read one
+ * set at a time. Nothing else changes, so every number must equal the heap build's. Build with
+ *     cc -O2 -DPOOL_MMAP -o entropy2m entropy2.c -lm
+ * and run with the environment variable POOL_FILE naming the file (created sparse, POOL_GB gigabytes, default 64). */
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <unistd.h>
+#endif
 
 static int M;
 static uint32_t MASK;
@@ -57,8 +68,23 @@ static int64_t find_or_add(const uint32_t *a, uint32_t n) {
         h = (h + 1) & (HCAP - 1);
     }
     if (N + 1 > SCAP) { SCAP = SCAP ? SCAP * 3 / 2 + 16 : 1024; OFF = realloc(OFF, sizeof(size_t) * SCAP); LEN = realloc(LEN, 4 * SCAP); }
+#ifdef POOL_MMAP
+    if (!POOL) {
+        const char *path = getenv("POOL_FILE");
+        const char *gb = getenv("POOL_GB");
+        size_t bytes = (size_t)(gb ? atol(gb) : 64) << 30;
+        int fd = path ? open(path, O_RDWR | O_CREAT | O_TRUNC, 0644) : -1;
+        if (fd < 0 || ftruncate(fd, (off_t)bytes) != 0) { fprintf(stderr, "POOL_FILE: cannot create %s\n", path ? path : "(unset)"); exit(3); }
+        POOL = mmap(NULL, bytes, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+        if (POOL == MAP_FAILED) { fprintf(stderr, "POOL_FILE: mmap failed\n"); exit(3); }
+        PCAP = bytes / 4;
+    }
+    if (PLEN + n > PCAP) { fprintf(stderr, "POOL_FILE: full (raise POOL_GB)\n"); exit(3); }
+    if (!OFF || !LEN) { fprintf(stderr, "out of memory\n"); exit(3); }
+#else
     if (PLEN + n > PCAP) { PCAP = (PLEN + n) * 3 / 2 + (1 << 20); POOL = realloc(POOL, 4 * PCAP); }
     if (!POOL || !OFF || !LEN) { fprintf(stderr, "out of memory\n"); exit(3); }
+#endif
     memcpy(POOL + PLEN, a, 4 * (size_t)n);
     OFF[N] = PLEN; LEN[N] = n; PLEN += n;
     HT[h] = (int64_t)N;
