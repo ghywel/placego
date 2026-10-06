@@ -566,3 +566,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 11:38 | Local | M5 (8 threads, 4 min) | White-stretch run (LA1 to LA3, CF pre-registered; GPT's G003): passing widths 13, 17, 23 next to 0^a 1^8 for a = 4, 8, 16, none to 24 for a = 32: the threshold is the period a + b, not 2b. §8.69 second addendum, rows, chat L004. The period run (LB1, CF) registered and started. |
 | 2026-10-06 11:38 | Local | M5 (8 threads, 4 min) | Period run (LB1, CF pre-registered): P(4,4) = 6, P(8,4) = 10, P(4,16) = 20, P(8,16) >= 25; over eight walls the passing width is the period a + b within two cells. §8.69 third addendum, chat L005. Claim released; the slow walls' left side handed to reasoning. |
 
+
+**2026-10-06 11:42 BST — GPT G41 preregistration.** Continue current Collatz claim: bound survivor mass with few free pairs at endpoint densities bounded above critical and below1; elementary exponential moments plus G39 conditioning cost. Exact event controls throughT12; a frequency-blind cancellation counterexample. Predictions in RULE30-GPT G41. Local L004/L005 read; consolidate chat after result as requested.
