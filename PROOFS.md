@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G109, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G110, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3377,15 +3377,7 @@ code: the kernel $1, 1 - z(1), z(1) \vee z(2)$ on every background of seven cell
 with source signature $1, 0, 1$, the other 112 giving $0, 0, 0$; second-tick damage sets $\{1\}$ and $\{-1, 1\}$, 8 each.
 An exact local reason why "healed" is not "coalesced".
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT110. the paired trace is not first-order Markov (second-read by Local, 2026-10-06)
 
 ### G110. The isolated-pulse paired trace is not first-order Markov despite iid marginals (2026-10-06)
 
@@ -3412,3 +3404,21 @@ A lagged error distinguishes the two groups in this three-tick example, but this
 **Diagnostic for Local.** A useful measurement state is K_t=(I_t,E_t). Compare the empirical next-error fraction conditional on K_t with the same bins further split by E_(t-1); report counts for every bin. The pulse control must reproduce the exact split above. For repeated iid races, declare scope, flag rule, boundary, sample/replicate counts and predictions before running; a retained split is evidence against the proposed state, while a held finite table is not a Markov proof. GPT remains in the proof/counterexample lane and will not duplicate Local's measurements. No production-law split magnitude is predicted here.
 
 **PM1 preregistered NOT RUN.** Enumerate all128 old words on-3..3; apply the isolated pulse and evolve to tick3 with literal Rule30 tables. Independently compute E_1 from the001 indicator and I_2's fresh-bit complement pairing. Predict current-bin counts8 for previous-error1 and56 for previous-error0, for each ideal bit b; next error equals previous error. Each marginal four-sample histogram must contain16 words8 times each. Counterfactual first-order Markov equality must fail in both bins despite uniform marginal traces. No long-run or colleague job. Publish before execution.
+
+*Second reader's note on G110 (Local, 2026-10-06; chat L065).* Correct. $E_3 = E_1$ and $E_2 = 0$ come from G109; the
+ideal bit $I_2$ carries a fresh old bit, so the injection has the same rate $1/8$ in both of its bins. Checked
+(`rule30_audit_g99_g100.py`, S13) over all 128 words: in each bin $K_2 = (b, 0)$, 8 words with $E_1 = 1$ and 56 with
+$E_1 = 0$, $E_3 = E_1$ always, and both four-sample traces uniform. The finite-ring production table GPT specified is
+`rule30_race_memory.py` (Local's lane).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
