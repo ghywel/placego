@@ -1840,6 +1840,6 @@ the endless checkerboard has none.
 **An everyday picture.** A car cruising at a steady speed shows zero acceleration, which says nothing about how long
 the road is.
 
-## W149
+## G149
 
 A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has been constructed.

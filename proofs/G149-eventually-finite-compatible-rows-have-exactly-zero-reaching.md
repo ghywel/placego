@@ -1,16 +1,18 @@
-# Eventually finite compatible rows have exactly zero-reaching periodic tails
+# eventually finite compatible rows have exactly zero-reaching periodic tails
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G149. Eventually finite
-compatible rows have exactly zero-reaching periodic tails (2026-10-07)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT149. eventually finite
+compatible rows have exactly zero-reaching periodic tails (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has been constructed.
 
 ## The formal statement and proof
+
+### G149. Eventually finite compatible rows have exactly zero-reaching periodic tails (2026-10-07)
 
 **Status and target.** Symbolic Q7 tail reduction, independent review pending. No experiment. Uses the reviewed inverse-pair maps and periodic-tail classification G124, the wall coding G140 and predecessor/radius facts G141/G142. Existing-record search found these ingredients but not the all-depth equivalence below. No novelty claim for finite-state inversion or backward shift density. Prediction: finite future support is a stricter spatial-tail property than mere eventual periodicity, but is invariant under finite visible-prefix changes. Counterfactual: a periodic initial tail or a quiet temporal field automatically supplies a finite future row. The stationary checkerboard refutes that shortcut.
 
@@ -41,3 +43,17 @@ S_event is countable: S_fin is countable, and each finite row has exactly 2^k co
 **Unexpected periodic-tail control and consequence.** A spatial 001 tail evolves to all ones and then zero. A spatial 01 checkerboard is stationary, so periodicity alone does not suffice. G138/G140's compatible checkerboard example has quiet temporal columns and lies outside S_event. Conversely a zero-reaching tail class, if wall-compatible, gives a finite future row even though its initial support can be infinite. These are far-tail identities, not new experiments or candidate constructions.
 
 An unbounded-debt visible word cannot lie in S_event: if any shift had a finite compatible row, its repeat allowance would be finite; G146's reverse-shift control would give one for the original word. Hence G145's half-phase code has neither a finite initial tail nor any zero-reaching eventual periodic tail. The phase-zero silver code remains unresolved. For it, proving an aperiodic tail or a periodic tail outside the zero basin would exclude even future finiteness; proving membership in the zero-reaching tail class would instead supply a finite compatible future row. Full right extension and a finite global seed remain separate obligations. No prize conclusion follows.
+
+*Second reader's note on G149 (Local, 2026-10-07; chat L105).* Correct. Necessity: the inverse recursion run outward on
+an output with eventual period $p$ is a finite-state system on (pair, position modulo $p$), so every predecessor,
+whatever its near-wall bits, has an eventually periodic tail, and $2k$ steps carry this back to $u$. Far cells see
+neither the head nor the wall for a fixed number of steps, so the tail pattern itself must reach zero by time $2k$. The
+period bound rests on G124's reviewed rule that a nonconstant output's periodic predecessors at most double the least
+period, with the only other step $001 \to 111$; so a nonconstant tail has period $3 \cdot 2^a$ with $a \le T - 2$ and
+$T \le 2k$. Sufficiency, the prefix interpretation, countability through exactly $2^k$ preimages, and conditional
+density all hold, and the unbounded-debt exclusion is right by G146's reverse-shift control. Checked
+(`rule30_audit_g99_g100.py`, S44): on every cyclic ring up to size 24, each row reaching zero has least period 1 or
+$3 \cdot 2^a$ with $a \le T - 2$; from 200 random finite rows, one to four backward wall pairs give eventually periodic
+tails of an allowed period that reach zero within $2k$ ordinary steps, and each evolves forward to its finite row; and
+the 001 and 01 controls. The first run of the second part failed through my own orientation slip: the depth-indexed
+tails, which run leftward, were fed to a ring that reads left to right. Reversed, every case passes.

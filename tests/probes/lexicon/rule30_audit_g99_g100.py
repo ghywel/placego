@@ -199,6 +199,13 @@ CHECKS (GPT's claims at 827e006):
      y up to p = 6); the ordinary second difference of 0101... alternates -2, 2 while its XOR D^2 vanishes; and the
      left checkerboard is fixed by every single wall step, so every positive-order temporal difference at every
      depth vanishes on a row of infinite support.
+  S44 (G149, added 2026-10-07 at 1df0f13): (a) on every cyclic ring of size up to 24 (numpy), each row reaching zero
+     has least period 1 or 3 * 2^a with a <= T - 2, T its first-hit time (G124 with G149's bound); (b) from 200 random
+     finite rows, k = 1..4 wall-phase backward pairs (black step q_0 = q_1 = 1, white step q_0 = 0 with a random q_1)
+     give rows whose far tails are eventually periodic, with least period 1 or 3 * 2^a, a <= 2k - 2, and whose tail
+     pattern reaches zero within 2k ordinary steps; each evolves forward 2k wall steps back to its finite row; and
+     (c) the controls 001 -> 111 -> 000 and the stationary 01. The first run of (b) failed through my orientation slip
+     (depth-indexed tails fed to a left-to-right ring); reversed, every case passes.
 """
 import random
 from fractions import Fraction as F
@@ -1929,4 +1936,79 @@ for t in range(40):
     ok43 &= nxt == row[:len(nxt)]
     cur = nxt
 check('S43 G148: factor counts of fixed-order differences and jets; dyadic orders; integration periods; the controls', ok43)
+import numpy as _np
+
+
+def ring_step(x):
+    return [x[(i - 1) % len(x)] ^ (x[i] | x[(i + 1) % len(x)]) for i in range(len(x))]
+
+
+def least_period(w):
+    for P in range(1, len(w) + 1):
+        if len(w) % P == 0 and w == w[P:] + w[:P]:
+            return P
+
+
+def first_hit(x, cap):
+    for T in range(cap + 1):
+        if not any(x):
+            return T
+        x = ring_step(x)
+    return None
+
+
+def allowed(P, T):
+    if P == 1:
+        return True
+    a, q = 0, P
+    if q % 3:
+        return False
+    q //= 3
+    while q % 2 == 0:
+        q //= 2
+        a += 1
+    return q == 1 and a <= T - 2
+
+
+ok44 = True
+for n in range(1, 25):
+    m = (1 << n) - 1
+    x = _np.arange(1 << n, dtype=_np.uint32)
+    hit = _np.full(1 << n, -1, dtype=_np.int32)
+    cur = x.copy()
+    for T in range(0, 3 * n + 4):
+        newly = (cur == 0) & (hit < 0)
+        hit[newly] = T
+        rl = ((cur << 1) | (cur >> (n - 1))) & m          # bit i <- bit i-1: left neighbour
+        rr = ((cur >> 1) | (cur << (n - 1))) & m          # bit i <- bit i+1: right neighbour
+        cur = (rl ^ (cur | rr)) & m
+    for v in _np.nonzero(hit >= 0)[0][:4000]:
+        w = [(int(v) >> i) & 1 for i in range(n)]
+        ok44 &= allowed(least_period(w), int(hit[v]))
+    if n <= 16:
+        for v in _np.nonzero(hit >= 0)[0]:
+            w = [(int(v) >> i) & 1 for i in range(n)]
+            ok44 &= first_hit(w, 3 * n + 4) == int(hit[v])
+for trial in range(200):
+    k = 1 + trial % 4
+    L = rng29.randint(1, 12)
+    K = 1600
+    y = [rng29.randint(0, 1) for _ in range(L - 1)] + [1] + [0] * (K - L)
+    rows = [y]
+    for _ in range(k):
+        z = back_step(rows[-1], 1, 1)
+        w_ = back_step(z, 0, rng29.randint(0, 1))
+        rows += [z, w_]
+    u = rows[-1]
+    win = u[700:1300]
+    P = next(P for P in range(1, 300) if all(win[i] == win[i + P] for i in range(len(win) - P)))
+    pat = list(reversed(win[:P]))                       # depth runs leftward; the ring reads left to right
+    T = first_hit(pat, 2 * k)
+    ok44 &= T is not None and T <= 2 * k and allowed(least_period(pat), 2 * k)
+    fw = u
+    for t in range(2 * k):
+        fw = fwd_step(fw, t % 2)
+    ok44 &= fw[:200] == y[:200]
+ok44 &= ring_step([0, 0, 1]) == [1, 1, 1] and ring_step([1, 1, 1]) == [0, 0, 0] and ring_step([0, 1, 0, 1]) == [0, 1, 0, 1]
+check('S44 G149: zero-reaching periodic tails, their periods and first hits; backward wall pairs give such tails', ok44)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
