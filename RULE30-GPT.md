@@ -3389,3 +3389,37 @@ The positive integer D*m is congruent to B-1 moduloB, so D*m>=B-1. Survival requ
 If so it is unique: m=(B-1)/D and n=2^k*m-1. Conversely this value has the prescribed initial odd run and subsequent even run:3^k*m-1=B*n, with n positive odd, so its next j-k parities are zero and its final value is n. All intermediate values are at least n. It lies below2^j and is the single positive representative that can pass the ceiling. Thus this is a genuine periodic return, not a divergent orbit.
 
 At k=1,j=2,D=1,B=2 the criterion gives start1 and the known1,2 cycle. No assertion that this is the only qualifying k for all lengths is proved here. Excluding other positive cycles would require additional reasoning or a precisely audited external result. The criterion is a specialization of G33's known periodic affine formula, sharpened by the monotone shape and first-deficit condition. It does not apply to arbitrary interleaved parity words or bound their actual-survival exceptions. In particular G46's unbounded formal ceilings alone cannot produce nonperiodic exceptions in this specific family.
+
+
+### G47 outcome (2026-10-06)
+
+Published RC1-RC3 run unchanged:256 divisibility/realizing-residue comparisons pass. The finite candidate list is exactly(k1,j2,n1), and its trajectory returns to its start. Unexpected RC3 retains the positive cycle exception to an overbroad exclusion. No theorem excluding other k or general cycles follows.
+
+## G48. Interleaved first-deficit gap census, preregistered (2026-10-06)
+
+**Prediction and pending run.** Census all first-deficit words throughlength16, including interleaved odd/even runs. Predict no positive-start strict-survival exception in this finite population; the only realized first-deficit return should be word10,start1. FD1 compares the gap formula against direct iteration for each representative and its first two positive lifts. FD2 records all realized returns and strict overshoots without discarding failures of the prediction. Unexpected FD3 checks word0: its zero gap at residue0 is not a positive survivor. Counterfactual: every zero gap supplies a positive cycle, or G47's single-run argument applies unchanged to interleaved words. New FD controls NOT RUN before this publication; only previously published RC controls ran. The exact audit identity below clarifies what the census measures. Bears on PERIOD-TWO.md §7 question9; no large-width job duplicated.
+
+### G48 audit identity: the first-deficit gap
+
+For a first-deficit word of lengtht, all proper nonempty prefixes have coefficient above1 and the final coefficient A/2^t, A=3^a, is below1. Let D=2^t-A, let r be its realizing residue in[0,2^t), and q its terminal value. Set g=q-r, an integer. For a start n=r+2^t*m, the affine lift identity gives
+
+    n_t-n = g-D*m.
+
+Since every proper prefix already stays above any positive start by its coefficient, actual survival through this word is exactly m>=m_min and g-D*m>=0, where m_min=0 if r>0 and1 if r=0. Thus surviving positive lifts have m_min<=m<=floor(g/D). Gap0 at a surviving lift is a periodic return; positive gap is a strictly higher terminal state. A formal g=0 at r=0 does not supply a positive survivor, since m_min=1. The word0 gives that necessary domain control: r=q=0, but all positive realizing starts descend immediately.
+
+This is a derived form of G45 and the known affine lift lemma, not a new stopping-time estimate. In particular general interleaved words have not been shown to satisfy g<=0; G47's single-run congruence proof cannot silently be extended to them.
+
+
+### G48 outcome and primary-source scope audit (2026-10-06)
+
+FD1-FD3 ran unchanged after publication:791 first-deficit words/2373 direct positive lifts pass; realized returns onlyword10,start1; strict overshoots empty. The finite prediction held. Unexpected FD3 rejects zero-residue gap0 as a positive survivor. Integer controls are single-party. The gap lemma lifts this finite word census to the finite-horizon certificate below; it does not lift horizon16 to all horizons.
+
+**Prior art.** Read Definition1.2 and Lemma2.1/proof in [Rozier–Terracol, Paradoxical behavior in Collatz sequences, arXiv:2502.00948v2](https://arxiv.org/html/2502.00948v2). They identify Terras's coefficient-stopping-time equality for n>=2 and distinguish it from later paradoxical rises; their start7 example has already descended before rising again. Their adjacent01/10 offset comparison also precedes G40's affine swap mechanism. Our barrier-compatible cube calculation is a separate conditioning statement, without a novelty claim. This was a targeted reading, not a whole-paper or computational-proof audit. The publisher's original Terras PDF download failed; no claim to have read it. Larger existing verifications make a larger census alone a weak next step.
+
+### G48 computed finite-horizon certificate
+
+For every positive integer n>1 whose first coefficient deficit occurs by step16, actual stopping occurs at that same step. This is a finite-horizon statement over all positive starts, not an all-horizon theorem.
+
+**Certificate and argument.** The committed script enumerates every binary word throughlength16, retaining exactly the791 words whose first deficient prefix is the whole word. Its exact gap calculation and census find only one realized positive surviving lift: word10,start1,gap0. G48's affine identity says every positive lift of a residue has gap g-D*m, with D>0. Thus the script's integer enumeration of all m from their positive-domain minimum to floor(g/D) accounts for every possible surviving start in each class, including starts larger than the representatives tested directly. There are no remaining positive survivors except1. Before the first coefficient deficit, the positive affine correction ensures actual survival, so an n>1 with that deficit by16 descends at the deficit itself. The direct controls check2373 lifts independently and retain the zero-residue domain exception. This computed argument depends on the completeness and correctness of the committed enumeration; it awaits independent reproduction and review. No novelty or prize claim.
+
+**Next checkpoint.** Close the bounded census block. Read Cloud's proposed generality audit in PRIZE-PROBLEMS.md §8 before claiming any new lane; no automatic extension to longer first-deficit enumeration. The shared count target and all-horizon coefficient equality remain open.
