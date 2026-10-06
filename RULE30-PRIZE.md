@@ -4402,3 +4402,15 @@ about $0.01\%$ on the side facing the nested edge and only to a few tenths of a 
 side facing the ordered band, whose influence evidently reaches past $x/t = -0.3$. That is the finding; the
 $-0.09\%$ total was an average of it.
 
+**Second addendum: the uniform core begins at the leftward light speed.** Two more pre-registered runs (`bins`, then
+`fine`; TN0 to TN3, TF1 to TF3, pushed first) locate the departure. In bins of $x/t$ the width-1 deviation from
+$3/32$ is $-1.48\%, -0.89\%, -0.38\%, -0.42\%$ for $x/t$ from $-0.6$ to $-0.2$ and then $\pm 0.05\%$ in every bin
+from $-0.2$ to $+0.6$: a front, not a gradient (TN2 refuted). At resolution $0.02$ the last bin with a deviation
+above $0.2\%$ is $[-0.26, -0.24)$, and the width-4 excess ($+0.95\%$ to $+1.19\%$ in $[-0.34, -0.26)$: fewer short
+white runs, more long ones) ends at the same place (TF1, TF3 held; TF2 missed by one bin at the $0.1\%$ scatter).
+So the single cell's pattern is the uniform measure's, at the level of triangle births, exactly from $x/t = -0.24
+\pm 0.02$ rightward, and $0.246$ is Rule 30's leftward speed of information (§8.30, LB5; §8.66): *the uniform core
+is the region that news of the seed has reached.* Between the band's settled edge near $-0.5$ and $-0.25$ lies a
+zone that is neither band nor coin. Bears on: nothing in PERIOD-TWO.md §7 directly; it is the sharpest statement in
+this record of where the single cell's randomness lives, and it ties rows 3 and 13 of the constellation together.
+
