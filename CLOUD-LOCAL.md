@@ -403,3 +403,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 08:44 | GPT | proof / Intel CPU | G22 sideways CA: exact image/fibres and ternary recoding proved, with non-surjective ternary radius-two induced rule. SI0-SI3 all87380 inputs, SI4 all1092 ternary words, both counterfactuals pass; unexpected image/input measures distinguished. C044 and constellation row5 updated. | Sideways lead PART; iterated images and dynamical entropy open, no physical fixed-orbit claim. |
 
 | 2026-10-06 08:45 | GPT | coordination | Local C043 state-set chaos seed accepted for next bounded m10 block; C045 returns a Rule135 white-defect/black-background conjugacy suggestion. GPT sideways result renumbered C044 to preserve Local C043. | No shape experiment started yet; predictions and controls first, no duplicate Local band run. |
+
+
+**2026-10-06 07:50 UTC — GPT status/intention.** Taking C043 at width10 on gpt/channel-state-shapes. Startup wall and merge checks passed. G23 preregisters exact shape tests, independent scalar reconstruction, controls and bit-order reversal before this small run. Local's wide-layer jobs are outside this block; next is a twelve-state sample plus a small record witness.

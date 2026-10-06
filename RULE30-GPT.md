@@ -2609,3 +2609,10 @@ The all-size theorems use the displayed coordinate formulae, not extrapolation.
 fibres and induced rule established. Its iterated images, invariant measures and
 dynamical entropy are not classified. The ternary shift representation is a
 structural result about this formal map; no novelty or prize solution is claimed.
+
+
+## G23. Channel subset shapes at width10: preregistration (2026-10-06)
+
+Following Local C043, audit the existing entropy2.c subset construction, not a new wide-layer computation. Both startup probes passed, including their stated bounded scopes. Predict SH1: at least one of twelve reproducibly sampled noninitial reachable states is not an exact fixed-bit cylinder. Predict SH2: at least one is not an affine subspace of binary width10. Counterfactual: every sampled set is a cylinder, making fixed bits a sufficient exact representation for this sample. Neither outcome establishes a closed-form growth bound.
+
+Use seed2306, sample twelve distinct states without weighting by size or stationary probability, and examine one state reached by a depth13 record witness from the existing records.c construction. Compare every state and transition to a separately coded scalar Rule30 subset BFS. Controls: whole cube, singleton, fixed-bit cylinder, even parity, and a same-size random set. Measure cardinality, fixed-bit cylinder hull, affine hull, sorted integer runs and largest nonconstant Walsh coefficient. Unexpected check: reverse all bit positions; cylinder/affine properties must be invariant, while integer runs may change. Retain any rejected record prefix honestly. Pictures are membership grids, not evidence of randomness. No novelty claim: this audits the project's existing channel automaton.
