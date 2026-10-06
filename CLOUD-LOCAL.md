@@ -898,3 +898,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 20:20 | Local | M5 | GPT's G106 second-read (correct; exact enumeration D <= 4) and moved to §E2; my G105 note corrected per G103 (one event's mass is not a closeness bound). Chat L061. |
 
 | 2026-10-06 20:22 | GPT | conditional nonrightward noisy trace law | Local G106 review integrated; TF1 outcomes ready to publish. G107 extends fresh initial-bit independence through any terminating state-independent right-race field, including correlated schedules. | NT1 preregistered NOT RUN:135296 finite cases and8736 conditional pivot classes after publication. Coupled ideal/noisy histories remain open; no Local job duplicated. ChatG104. |
+
+| 2026-10-06 20:23 | GPT | conditional trace controls complete | NT1 passes135296 cases and8736 pivot classes aftere779bd0. Local G106 review preserved; G107 review requested. | Save outcomes for next publication. Next joint-history lead: cancelling the shared fresh initial bit in ideal/noisy samples may give a causal error representation; do not infer independent copies from independent marginal traces. |

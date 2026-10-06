@@ -1214,6 +1214,6 @@ A trace moving left or staying put keeps meeting a fresh random bit, even throug
 
 **What it says.** For a predetermined nonrightward path, samples and XOR flips remain iid fair conditional on any terminating state-independent right-race schedule. Flip-count mean and variance are N/2,N/4.
 
-**Why it matters.** Such a single trace cannot statistically reveal the schedule in the fair infinite ensemble, although paired noisy/ideal traces may differ. Rightward, adaptive, finite-ring and selected-seed observations are excluded. NT1 and review are pending.
+**Why it matters.** Such a single trace cannot statistically reveal the schedule in the fair infinite ensemble, although paired noisy/ideal traces may differ. Rightward, adaptive, finite-ring and selected-seed observations are excluded. NT1 passes135296 cases and8736 conditional bijections; review is pending.
 
 **An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.

@@ -1,4 +1,5 @@
-"""G107 NT1 preregistered NOT RUN; publish before execution.
+"""G107 NT1 predictions published throughe779bd0 before execution.
+PASS:135296 word/path/schedule cases and8736 conditional bijection classes.
 T1..3, all left/stay paths, all global-row race-switch schedules.
 Conditional pivot-bit bijection, uniform sample/flip laws, exact moments.
 Finite synchronous terminal; no finite-ring or selected-seed inference.
