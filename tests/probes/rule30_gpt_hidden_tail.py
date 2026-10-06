@@ -5,6 +5,9 @@ Injected prefix16 cases16 each,D1 six,D0 ten;error-count histogram0:2,16:6,6:6,1
 Unexpected guard:identical complete observed history can have different E5
 without new flags.REFUTED-BY:FT2 deterministic-next-error counterfactual.
 Independent XOR/OR controls;no repeated-race job or entropy-rate claim.
+OUTCOME 2026-10-06 21:30 BST after6c4792e:FT0-FT2 PASS.
+2048 words,256 injections,152 fifth errors;16 exact conditional kernels.
+Identical observed histories from00110001000 and00110001101 have different E5.
 """
 from collections import Counter,defaultdict
 from itertools import product

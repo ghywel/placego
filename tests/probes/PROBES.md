@@ -269,3 +269,5 @@ app is unpublished by design.
 - rule30_gpt_pulse_parity.py (G116 outcome): after241fb49, PE0-PE2 pass512 words,64 injections and32 fourth errors. Gated triple parity exact;last-two-sample conditional rate1/2 becomes deterministic with the older bit.
 
 - rule30_gpt_hidden_tail.py (G117): FT0-FT2 preregistered NOT RUN;2048 five-tick pulse words, exact latent-tail kernel and no-fresh-noise conditional uncertainty guard. Publish before execution.
+
+- rule30_gpt_hidden_tail.py (G117 outcome): after6c4792e, FT0-FT2 pass2048 histories,256 injections and152 fifth errors. Tail rate3/8 independent in each ideal prefix;conditional kernel histogram verifies entropy weighting. Two initial words share observed past but differ at E5, with no fresh noise.

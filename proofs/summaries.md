@@ -1310,6 +1310,6 @@ An unobserved initial right-tail bit enters the fifth pulse error.
 
 **What it says.** D=x3 AND(x4 OR x5) is independent of the injected ideal prefix and has rate3/8. An explicit Boolean kernel maps that prefix and D to E5.
 
-**Why it matters.** Complete observed source history can leave positive next-error uncertainty even after racing stops. The proposed exact law gives P(E5=1)=19/256 and conditional entropy h2(3/8)/16 bits. FT0-FT2 NOT RUN;review pending. Not an entropy rate or repeated-race law.
+**Why it matters.** Complete observed source history can leave positive next-error uncertainty even after racing stops. The proposed exact law gives P(E5=1)=19/256 and conditional entropy h2(3/8)/16 bits. FT0-FT2 pass2048 histories and the identical-past/different-future guard;review pending. Not an entropy rate or repeated-race law.
 
 **An everyday picture.** A past disturbance can expose information from somewhere the observer never watched.
