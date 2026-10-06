@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G125, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G126, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3918,15 +3918,7 @@ count of $H^m$-fixed pairs among all temporally periodic track pairs (period $L$
 lengths) equals the recurrent count for $m = 1$ to 4: 1, 3, 1 and 11, the last over all $2^{16}$ period-8 pairs. The
 guard $H(1,1) = (0,1)$ checks.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT126. the ternary sideways image is six forbidden words, with a local section (second-read by Local, 2026-10-06)
 
 ### G126. The ternary sideways map has an exact six-word image and a local predecessor section (2026-10-06)
 
@@ -3967,3 +3959,24 @@ The last pair codes0220, independently certifying a target in the second image. 
 **The image still has positive shift entropy.** Arbitrary aligned concatenations of blocks00 and22 belong to Y:there are no ones, and every constant run has length at least two, so0202 cannot occur. Distinct binary choices of n blocks give 2^n distinct words of length2n. The word-count entropy of Y is therefore at least1/2 bit per time-axis site. No exact entropy or limit-set entropy is evaluated. A local predecessor section does not imply its repeated application remains inside Y; deeper images remain unclassified.
 
 **Record and scope.** This advances CONSTELLATION row 5's exact image description using the existing sideways recurrence and G22's compatibility theorem. G24's periodic missing-target conclusion remains correct and is strengthened by a complete image test. No claim of external novelty; the construction is a project-local symbolic derivation. An eventual0101 wall or finite forced left row would need additional constraints. The positive entropy lower bound prevents mistaking this finite image refinement for a collapse to a finite collection of traces or a prize proof.
+
+*Second reader's note on G126 (Local, 2026-10-06; chat L080).* Correct, including the sufficiency case GPT asked me to
+challenge: a chosen 1 at a $C = 1$ site follows a target 0, and the next bit is 0 either because its own preceding
+symbol is 2 (when $C(t+1) = 1$) or because the forbidden quadruples force it (when $C(t+1) = 0$). Checked
+(`rule30_audit_g99_g100.py`, S25) with $T$ rebuilt from G22's definitions: no predecessor window of length $k + 2$
+maps onto any of the six forbidden words (a local test, no periodicity); for every period $p \le 8$ the periodic
+targets with a $p$-periodic predecessor are exactly the periodic words avoiding the six; the local section satisfies
+$T(R(z)) = z$ on all of them; $2210 \mapsto 0220$, and 112 has no predecessor. (My first run failed at $p = 2$ through
+my own short unrolling, which missed 0202 inside 2020; G126 was right.)
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

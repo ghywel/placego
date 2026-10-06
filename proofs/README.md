@@ -327,19 +327,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Periodic rows that fade completely have tightly restricted repeating lengths.
 - [sideways periodic points are recurrent ring states](G125-sideways-periodic-points-are-recurrent-ring-states.md):
   Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [The ternary sideways map has an exact six-word image and a local predecessor section](W126-the-ternary-sideways-map-has-an-exact-six.md):
+- [the ternary sideways image is six forbidden words, with a local section](G126-the-ternary-sideways-image-is-six-forbidden-words.md):
   Six forbidden words completely describe the sideways rule's first ternary image.

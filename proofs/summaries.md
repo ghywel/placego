@@ -1510,7 +1510,7 @@ Cycles in the sideways rule are the same spacetime patterns as recurrent ring st
 
 **An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
 
-## W126
+## G126
 Six forbidden words completely describe the sideways rule's first ternary image.
 
 **What it says.** A ternary sequence has a predecessor exactly when it avoids six short words. A local construction produces a predecessor for every allowed sequence.
