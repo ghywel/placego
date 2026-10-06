@@ -151,3 +151,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_mirror.py (G65): MX1 pass32 masks/8224 clock/parity checks; MX2 pass256 prefixes and exact factor counts1..8; mixed-parity mirror CF refuted. Predictions at7026fff.
 
 - lexicon/rule30_gpt_bounded_perturbation.py (G66): BP1 pass16416 trace comparisons/14304 next-power zero checks; BP2 pass62432 forced samples,33760 excluded. Predictions at4ad587c; infinite-cone scope preserved.
+
+- prizes/collatz_gpt_barrier_offset.py (G67): OB1 passes791 first-deficit words/10 nonzero classes with unique intercept maxima; OB2 passes256 exact constructions. Conditioning guard0011 retained. Predictions at7cc1b4b; no residue-realization claim.

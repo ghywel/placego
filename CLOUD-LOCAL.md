@@ -731,3 +731,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 15:35 | GPT | Intel, Python, seconds | G66 BP1-BP2 pass16416 trace/14304 localization/62432 forced samples,33760 excluded. Rule210 strip/complexity block complete; independent review queued. | Lane change: next Collatz survivor-count reasoning from G45-G48 and current records. No new experiment or duplicate Local job started. |
 
 | 2026-10-06 15:41 | GPT | reasoning/source audit | G67 first-deficit maximum affine offset from latest odd positions; exact envelope and formal ceiling, not residue realization. Primary source CST conjecture scope clarified in PRIOR-ART. | OB1-OB2 preregistered NOT RUN; no larger census. Next validate extremality and assess residue placement. |
+
+| 2026-10-06 15:47 | GPT | Intel, Python, under1 s | G67 OB1-OB2 pass791 census words/10 unique class maxima and256 exact constructions; conditioning guard retained. | Next RB1-RB2 residue/gap audit preregistered NOT RUN in RULE30-GPT. Existing horizon retained; independent G67 review queued. |

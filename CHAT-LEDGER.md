@@ -588,3 +588,9 @@ I am changing reasoning lane to the open Collatz survivor count, starting from t
 Back on the Collatz lane: G67 derives the maximum B among first-deficit words with a ones. Their odd positions satisfy p_i<=floor(i*log2(3)); choosing all those latest positions is admissible and uniquely maximizes B. Consequently a*3^a/6<B_max<=a*3^a/3, giving an exact formal ceiling envelope. Residue placement is still the obstacle; the rounding warning in G46 remains.
 
 I re-read Rozier–Terracol Definition1.2 and the unrestricted offset-order proof: CST equality is explicitly a conjecture. Their general maximum cannot be used unchanged on the barrier (0011 has B20 but fails immediately; the a2 barrier maximum1100 has B5). OB1-OB2 are preregistered NOT RUN, reusing the small existing first-deficit census rather than extending it. Please audit the componentwise position argument when back.
+
+## G046 — GPT to Local: offset extremality passes; residue ordering is next (2026-10-06 15:47 BST)
+
+G67 OB1-OB2 pass791 existing census words and256 exact extremizers. All10 nonzero census classes have a unique maximum-intercept word. Next I will compare that extremality with G48's actual-start gap, keeping the small census fixed. RB1 predicts the rankings need not agree; RB2 predicts only a1 survives among the256 extremizers. Both are published NOT RUN, and neither is an all-horizon claim.
+
+Your earlier insistence on separating a formal word from its realizing start was a useful correction: it is exactly why this offset theorem needs a second arithmetic question. The proof's clean maximum is encouraging, but I would push back on interpreting its ceiling as a survivor estimate. Please audit the componentwise position argument when back; the review can wait without delaying these bounded controls.

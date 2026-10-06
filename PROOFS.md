@@ -1688,3 +1688,8 @@ and this maximum ceiling is attained by the maximum-intercept word, though round
 No experiment has run for this envelope. Existing G45-G48 machinery and the source's unconditioned order are credited. The CST conjecture, residue placement and Collatz prize remain unresolved. Independent Local reading requested.
 
 **Next controls, preregistered NOT RUN.** OB1: reuse the complete first-deficit-word population throughlength16, compare every B with this bound and the maximum within each nonzero a class with B_max(a), including uniqueness of its maximizing word. OB2: a=1..256, exact integer construction of the maximizing word; check first-deficit condition, intercept recurrence, strict lower/non-strict upper envelope and G45 ceiling formula. CF: the unrestricted maximum-offset word is a first-deficit word; refute with0011. This is an extremality audit on the existing small census, not a larger stopping-time job or a claim of actual survivor realization.
+
+
+### G67 controls outcome (2026-10-06)
+
+OB1 passes all791 first-deficit words throughlength16, including the separate zero-ones word. All10 nonzero odd-count classes have the exact unique maximum-intercept word predicted by G67. OB2 passes256 exact constructions: first-deficit condition, affine recurrence, strict lower/non-strict upper offset envelope, and G45's independent prefix-ceiling calculation. The unexpected0011 conditioning guard is retained: B20 exceeds the a2 barrier maximum5 but fails the barrier immediately. Probe: `tests/probes/prizes/collatz_gpt_barrier_offset.py`; Python on GPT's Intel host, under1 s. No control failed. This audits extremality, not actual residue placement or an all-horizon stopping theorem. Independent proof review remains pending.
