@@ -1568,3 +1568,13 @@ Finite left support becomes an explicit constraint on the sideways limit.
 **Why it matters.** This connects unrestricted spacetime extension to the boundary condition the prize needs. Growing support cannot be passed through compactness as though the radius were fixed. Neither the compactness statement nor the itinerary count proves that the alternating-wall classes are empty or that their time factors have zero entropy.
 
 **An everyday picture.** Matching every finite view can yield a whole picture, but a picture assembled from ever larger canvases need not fit one finite canvas.
+
+
+## W130
+Every wall has one forced left seed once the initial right tail is fixed.
+
+**What it says.** Successive left-permutive inversion gives a unique infinite left row for any prescribed temporal wall and any fixed initial right tail. Even a right tail of zeros can realize every wall if infinite left support is allowed.
+
+**Why it matters.** A finite global seed exists exactly when some finite right-tail choice gives an eventually-zero forced left row. Arbitrarily long finite-prefix realizations can instead require growing left support; they do not settle this condition.
+
+**An everyday picture.** Fixing one half of the starting picture determines the other half from the requested movie, but the determined half may need an infinite canvas.
