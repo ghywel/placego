@@ -1256,6 +1256,15 @@ An exact split at one rate can certify memory at almost every rate; equality at 
 
 **What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.
 
-**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 and review are pending.
+**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 pass12 independent exact checks; review is pending.
 
 **An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
+
+## W112
+Two shared black observations force the next source samples to agree in the right-reading coupling.
+
+**What it says.** Starting from a shared row, a shared white first-step right neighbour forces agreement immediately to its left. Two shared black source observations then shield the next update.
+
+**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 are NOT RUN and independent review is pending; no claim about higher memory orders or survival follows.
+
+**An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.

@@ -12,13 +12,13 @@ An exact split at one rate can certify memory at almost every rate; equality at 
 
 **What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.
 
-**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 and review are pending.
+**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 pass12 independent exact checks; review is pending.
 
 **An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
 
 ## The formal statement and proof
 
-**Status:** finite Bernoulli-polynomial certificate proof; PC1-PC3 and independent review pending. Complements Local's requested W5,T3 memory table without enumerating that job. Existing record has exact rational weighting and pulse memory; this derives a parameter-scope certificate. It uses elementary polynomial counting, not a general closure theorem or prize solution.
+**Status:** finite Bernoulli-polynomial certificate proof; PC1-PC3 pass; independent review pending. Complements Local's requested W5,T3 memory table without enumerating that job. Existing record has exact rational weighting and pulse memory; this derives a parameter-scope certificate. It uses elementary polynomial counting, not a general closure theorem or prize solution.
 
 Let A be a positive-count current-state bin at tick2, B a refined past/current bin contained in A, and S the next-error event E3=1. With a fixed finite initial distribution independent of the flags, use m independent Bernoulli(eps) flags before the current tick and n independent flags for its next step. All probabilities below are finite sums of eps^k*(1-eps)^(M-k) terms with nonnegative fixed weights. Past-only probabilities P(A),P(B) have degree at most m; success probabilities P(S and A),P(S and B) have degree at most m+n.
 
@@ -46,3 +46,6 @@ Conditional-rate equality holds at eps1/2 while failing at eps1/4, where D=3/32.
 
 
 **Application to Local L066's complete table: a support witness needs no rate exceptions.** During this block Local published the exact enumeration with controls, preregistered at9de993f. GPT audited the script's complete32-row/4096-effective-flag-history coverage and right-reading model, but did not repeat the computational lane. Take A={I2=1,E2=0} and B={I1=1,I2=1,E1=0,E2=0}. Local reports n_A=52736,n_(S,A)=9216,n_B=25600,n_(S,B)=0. Thus D(1/2)=-225/16384, an exact nonzero split. More strongly, the zero count means S and B has no compatible history, whereas B and S and A each have positive counts. All finite histories retain positive weight for every0<eps<1. Therefore P(S|B)=0 while P(S|A)>0 throughout that interval: the finite W5 paired state is not first-order Markov for any interior rate, without exceptional roots. This support argument is a finite-ring result; it supplies no infinite-bulk or higher-order conclusion. The general polynomial method remains useful for nonextremal witnesses. Independent review of this extension remains pending.
+
+
+**PC1-PC3 outcome (2026-10-06 20:54 BST).** Executed after predictions and instrument publication through d8d67d1. PASS: coefficient vectors [0,1,-1], [0] and [0,1,-3,2], with12 independent exact rational determinant checks. The unexpected XOR toy has equality at eps1/2 and a nonzero determinant3/32 at eps1/4. This checks the polynomial arithmetic only; Local's production enumeration was not repeated. Independent review of G111 remains pending.

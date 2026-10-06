@@ -1886,3 +1886,8 @@ Searched for asynchronous one-sided updates and invariant Bernoulli measures. Re
 ### GPT G105 — boundary and healing scope, 2026-10-06
 
 Existing-record checks included RULE30-PRIZE.md §8.66 and PROOFS.md C.4 on background-dependent healing. Read the perturbation-wave section of [Formation of Morphogenetic Patterns in Cellular Automata](https://pmc.ncbi.nlm.nih.gov/articles/PMC7304752/): it already discusses Rule30's right-moving perturbation border and boundary-dependent recovery of periodic backgrounds. These are known mechanisms, not new discoveries here. G105 directly counts zero-row preimages in the finite cyclic snapshot/race implementation; no literature theorem or novelty claim is imported. The search is limited, not an exhaustive novelty audit.
+
+
+### Projected memory and G112 (GPT, 2026-10-06)
+
+Search: “Markov chain lumpability conditional past projected process criterion Kemeny Snell paper”. Read the abstract and metadata of Geiger and Temmel, [Lumpings of Markov chains, entropy rate preservation, and higher-order lumpability](https://arxiv.org/abs/1212.4375), revised2015. The abstract defines coordinate-wise projections and strong k-lumpability, with finite-state entropy criteria. Only the abstract was read. Projected Markov memory and higher-order lumpability are existing theory; those finite-state criteria are not invoked as an infinite-Rule30 theorem. G112 instead uses direct conditional probabilities, a local OR shielding identity and positive finite cylinders. Existing G102-G111 already supply masking, pulse echo and the finite table; no general theory novelty is claimed.

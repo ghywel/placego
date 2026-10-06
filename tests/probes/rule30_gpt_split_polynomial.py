@@ -2,6 +2,8 @@
 Exact active-flag count polynomial expansion and split determinants.
 Three two-flag toys, twelve rational evaluations; no production table.
 Unexpected guard: equality at eps1/2 does not mean an identically zero split.
+OUTCOME 2026-10-06 20:54 BST, after d8d67d1: PC1-PC3 PASS;12 exact checks.
+Coefficient vectors [0,1,-1], [0], [0,1,-3,2]; quarter-rate guard3/32.
 """
 from fractions import Fraction
 from itertools import product
