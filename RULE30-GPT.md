@@ -5649,3 +5649,30 @@ GF2, unexpected cross-copy-reuse guard:all8 fair triples X,Y,Z with I=(X,Y,Z),J=
 
 
 **GF0-GF2 outcome (2026-10-06 21:40 BST).** Executed after proof,predictions and instrument publication through439744b. PASS:the32 positive histories have uniform marginal prefixes,MI1,2-h2(1/4),3-h2(1/4),and conditional-error entropies0,h2(1/4),0;the increment identity agrees within1e-12. The unexpected8-history reuse guard has MI1,1,3 and zero final error uncertainty,yet final MI increment2. It refutes extending the identity from marginal iid laws alone. The general Rule30 result rests on the written common-fresh-pivot proof,not on extrapolating toy cases. Independent review pending;no limit or rate inferred from the controls.
+
+### G120. Observed rare injection bounds later pulse information loss (2026-10-06)
+
+**Status:** pulse-model entropy bound; RB0-RB2 preregistered NOT RUN, independent review pending. Corollary of G119, conditional on its scope. The asymptotic statement is a liminf bound, not existence or evaluation of an information-rate limit. It does not concern repeated races or the selected Rule30 seed.
+
+In the common-input fair isolated-pulse model, F=E1 is observable from K1 and P(F=1)=1/8. If F=0 the pulse changes no cell, and subsequent synchronous evolution preserves equality of the entire configurations. For t>=2 the paired past contains F. Thus
+
+    H(E_t | paired past)=P(F=1)*H(E_t | paired past,F=1)<=1/8.
+
+Here the second conditional entropy is averaged over histories within the injected branch. Dependence between F and the initial source bit causes no problem:the weights in conditional entropy average to the unconditional branch probabilities. The bound uses both F's measurability from the past and the zero-error noninjected branch.
+
+G119 therefore gives
+
+    M_t-M_(t-1)>=7/8 for t>=2,
+    M_T>=2-h2(1/4)/2+(7/8)*(T-1) for T>=1.
+
+Using G118's exact six-sample result gives the sharper finite bound
+
+    M_T>=6-h2(1/4)/2-h2(3/8)/16+(7/8)*(T-5) for T>=5.
+
+Consequently liminf_(T->infinity) M_T/(T+1)>=7/8. Mutual information per sample is also at most1 by the marginal entropy bound. This does not prove the normalized sequence converges, determine its limit, or control the injected branch's damage lifetime. In particular,the seven-eighths lower bound partly comes from histories in which the pulse never injects;it is not a claim that active damage preserves seven-eighths of its information.
+
+**Why observability is essential.** If F is not determined by the conditioned past, separating the branches also costs uncertainty about F. An event with small probability alone does not justify H(error|past)<=P(F=1). The scope guard below keeps the fresh-pivot information identity but hides F,so it must violate the rare-event budget rather than the identity itself.
+
+**RB0-RB2 preregistered NOT RUN.** Positive control:64 equal-weight fair histories of X0,X1,X2,U,V,Q, with F=(1-X0)*(1-U)*V. Set I=(X0,X1,X2),J=(X0,X1 XOR F,X2 XOR(F*Q)). RB0 checks uniform marginals,P(F1)=1/8,and F observable after the first error. RB1 must give final conditional-error entropy1/8 and final MI increment7/8,showing the budget can be tight. Independently compare grouped error entropy with joint/marginal count spectra.
+
+RB2, unexpected hidden-event guard:32 fair histories of X0,X1,U,V,Q with the same F,but I=(X0,X1),J=(X0,X1 XOR(F*Q)). The initial paired past does not reveal F. Predict next-error entropy h2(1/8)/2>1/8 and MI increment1-h2(1/8)/2<7/8,while both marginals remain iid and the fresh-pivot identity holds. The counterfactual that injection probability alone supplies the budget must fail. Tolerance1e-12 only for logarithms;publish before execution. No production scaling run.

@@ -1331,3 +1331,12 @@ A common fresh bit ties new shared information to next-error uncertainty.
 **Why it matters.** This connects hidden-error uncertainty to unconditional information growth without assuming error closure. Two iid marginal traces alone do not suffice:cross-copy reuse gives a two-bit increment. GF0-GF2 pass32 positive histories and8 scope guards;review pending. No asymptotic rate.
 
 **An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.
+
+## W120
+An observed rare injection limits later information loss.
+
+**What it says.** After the pulse indicator is observed,error uncertainty is at most1/8 bit per later sample,so shared information grows by at least7/8 bit.
+
+**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 NOT RUN;review pending.
+
+**An everyday picture.** Knowing which rare branch occurred removes uncertainty that its probability alone cannot remove.

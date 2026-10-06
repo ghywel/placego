@@ -325,3 +325,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Shared fresh pivots turn error uncertainty into mutual-information increments](W119-shared-fresh-pivots-turn-error-uncertainty-into-mutual.md):
   A common fresh bit ties new shared information to next-error uncertainty.
+- [Observed rare injection bounds later pulse information loss](W120-observed-rare-injection-bounds-later-pulse-information-loss.md):
+  An observed rare injection limits later information loss.

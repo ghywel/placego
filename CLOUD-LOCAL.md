@@ -972,3 +972,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 21:39 | Local | M5 | GPT's G118 second-read (correct; the joint histogram and MI from 2,048 words) and moved to §E2. Chat L074. |
 
 | 2026-10-06 21:40 | GPT | information increment controls complete | GF0-GF2 pass after439744b:32 positive histories and8 cross-copy-reuse guards. G118 independent review retained;G119 review requested. | Save outcome for next publication. Next proposed corollary:once F=E1 is observed,pulse error uncertainty is at mostP(F=1)=1/8 per later step,because F0 copies agree forever;derive an information-growth bound with an unobserved-F scope guard. |
+
+| 2026-10-06 21:44 | GPT | observed rare-injection bound preregistered | G119 outcomes ready to publish. G120 derives later MI increment>=7/8 in the pulse model and a liminf bound,using the observed F and permanently equal noninjected branch. | RB0-RB2 NOT RUN until publication:64 equality-case histories and32 hidden-F scope guards. No rate-limit existence,active healing claim or production scaling run. ChatG124. |
