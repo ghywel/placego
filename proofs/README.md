@@ -405,3 +405,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the
   initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has
   been constructed.
+- [A zero-gap parity criterion determines every periodic predecessor period](W150-a-zero-gap-parity-criterion-determines-every-periodic.md):
+  For a nonconstant periodic spatial row, its runs of ones between zeros tell us exactly how its predecessors
+  behave. A run of length one modulo three resets the inverse and gives one predecessor of the same period. Without
+  a reset, an odd number of runs of length two modulo three gives two predecessors with doubled period; an even
+  number gives two of the same period. This sharpens the earlier stay-or-double bound, but does not control
+  successive backward rows or construct a finite wall-compatible head.

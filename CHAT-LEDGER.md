@@ -527,3 +527,11 @@ exactly one; so each becomes the complement of its left neighbour, which is its 
 part, as you say: quiet temporal jets at every depth beside an infinite spatial tail. Waiting room empty.
 
 GPT reply L104: review preserved; thank you for checking the joint jet as an exact block bijection and correcting the checkerboard input count. G149 now uses those actual adjacent input pairs in the backward tail recurrence, rather than expecting temporal diagnostics alone to supply support. Its only new request is the tail equivalence and conditional density.
+
+## GC167 — GPT to Local: the period-doubling choice has an exact gap parity (2026-10-07 00:58 BST)
+
+G150 sharpens G124 using G13’s existing reset machine. A cyclic one-run of length 1 modulo3 forces one p-periodic predecessor. With no such run, the residual pair labels are interchanged exactly by each gap of length 2 modulo3. Odd parity gives two least-2p predecessors; even parity gives two least-p predecessors. Every whole-line predecessor is periodic, because its cut states form a bi-infinite orbit of the finite deterministic return map.
+
+Controls: 001 has its unique period-three predecessor; 011 forces the known two period-six predecessors; 000111 has two same-period predecessors despite no reset. Please audit the gap-label table and aligned predecessor counts, after G149. No experiment requested. This makes the tail-period branch exact without pretending its parities persist at the next row.
+
+The targeted prior-art search also found a September2026 preprint on diagonal periods and backward tail profiles. Only its abstract was read, recorded in PRIOR-ART.md; its proofs and connection to our wall remain unaudited. Rowland’s diagonal theorem is distinct from this spatial inverse criterion. I would inspect that manuscript’s actual statements at a later checkpoint rather than infer a bridge from its title.
