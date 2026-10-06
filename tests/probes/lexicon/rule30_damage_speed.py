@@ -91,6 +91,25 @@ LOCK-PROBABILITY ADDENDUM, written 2026-10-06 before the third run (python3 rule
   REFUTED-BY: LP0 failing or CF holding (the instrument); LP1 to LP3 the other way. What would change my mind about
   the barriers: a lock probability near 1 (they are nearly absolute) or below 0.3 (they are weak), either of which
   is a fact about how the band's doublings handle information.
+  OUTCOME of the third run, 2026-10-06 (lockprob; 75 seconds): LP0, CF PASSED. The lock fractions are EXACT and
+  independent of the flip's position: 8/16 at 400 for every flip on 30 .. 395 (LP1 held at its edge, 0.500), 12/16
+  locked (at 29 or 400) for every flip on 10 .. 28, 14/16 (at 8, 29 or 400) for every flip on 4 .. 7, 0/16 at 450;
+  a flip on 8 is itself locked (8 = 7 + 1), as 3 is. LP2 REFUTED: the damage's density plays no part. LP3 HELD (88
+  slipped, 0.209 .. 0.285). Eleven independent 8/16 results are not chance: the lock is decided by the PHASE of the
+  band at the flip time, and the fractions 7/8, 6/8, 4/8 at the barriers 8, 29, 400 are fractions of the periods 8,
+  8, 16 of the diagonals just above each barrier. The fourth run tests that reading.
+
+PHASE ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_damage_speed.py lockphase): flips on 4, 6,
+  12, 20, 30, 100, 300, 395 at 32 consecutive times from t = 4096 (two periods of 16), recording the end diagonal
+  per phase.
+  LQ1 (the reading, must hold): for the flips 30, 100, 300, 395 the set of phases (t mod 16) that lock at 400 is one
+      set S400 of size 8, the same for all four, and the outcome at t and t + 16 is the same.
+  LQ2 (blind): for the flips 12 and 20 the phases that lock at 29 form one set S29 (a union of residues mod 8, 6 of
+      the 8), and among the phases that slip past 29 the ones that then lock at 400 are exactly those in S400: the
+      barrier decides on the phase alone, not on the history.
+  LQ3 (blind): S400 is a single bit of the time: t mod 16 is in S400 iff bit 3 of t is set (or iff it is clear). The
+      lock at the period-16 diagonal happens when the flip lands on one half of the odometer's top cycle.
+  REFUTED-BY: LQ1 failing (the phase is not the whole story); LQ2, LQ3 the other way.
 """
 import sys
 import numpy as np
@@ -269,7 +288,44 @@ def lockprob(t0=4096, T=2048, phases=16):
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def lockphase(t0=4096, T=2048, phases=32):
+    flips = [4, 6, 12, 20, 30, 100, 300, 395]
+    width = 2 * (t0 + phases + T) + 1024
+    a = np.zeros(width, dtype=np.uint8); a[width // 2] = 1
+    for _ in range(t0):
+        a = step(a)
+    rows = []
+    for _ in range(phases):
+        rows.append(a.copy()); a = step(a)
+    ends = {}
+    for d in flips:
+        ends[d] = []
+        for j, r in enumerate(rows):
+            off = width // 2 - (t0 + j)
+            x, y = r.copy(), r.copy(); y[off + d] ^= 1
+            for _ in range(T):
+                x, y = step(x), step(y)
+            ends[d].append(int(np.argmax(x != y)) + T - off)
+        print(f"   flip on {d:3d}: end by phase (t = 4096 + j): " + " ".join(
+            ("8" if e == 8 else "29" if e == 29 else "400" if e == 400 else ".") for e in ends[d]), flush=True)
+    S400 = [set((t0 + j) % 16 for j, e in enumerate(ends[d]) if e == 400) for d in (30, 100, 300, 395)]
+    rep = all(ends[d][j] == ends[d][j + 16] for d in flips for j in range(16))
+    report("LQ1 one set S400 of size 8 for the flips 30 .. 395, repeating with period 16",
+           all(S == S400[0] for S in S400) and len(S400[0]) == 8 and rep, f"S400 = {sorted(S400[0])}, repeats {rep}")
+    S29 = [set((t0 + j) % 16 for j, e in enumerate(ends[d]) if e == 29) for d in (12, 20)]
+    slip400 = [set((t0 + j) % 16 for j, e in enumerate(ends[d]) if e == 400) for d in (12, 20)]
+    ok2 = S29[0] == S29[1] and len(S29[0]) == 12 and all(s == (set(range(16)) - S29[0]) & S400[0] for s in slip400)
+    verdict("LQ2 S29 is one set of 12 residues and the slippers lock at 400 exactly on S400", ok2,
+            f"S29 = {sorted(S29[0])} / {sorted(S29[1])}; slippers locked at 400: {sorted(slip400[0])} / {sorted(slip400[1])}")
+    bit3 = set(r for r in range(16) if r & 8)
+    verdict("LQ3 S400 is bit 3 of t (set or clear)", S400[0] in (bit3, set(range(16)) - bit3), f"S400 = {sorted(S400[0])}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "lockphase" in sys.argv[1:]:
+        lockphase()
+        return
     if "lockprob" in sys.argv[1:]:
         lockprob()
         return
