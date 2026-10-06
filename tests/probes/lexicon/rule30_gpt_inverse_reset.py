@@ -159,3 +159,8 @@ if __name__=='__main__':
 # CF must fail: extend to any r, dropping p>=3r+5; p8,q8,r8,
 # all other sigma bits0, known C024 spreading, depth160.
 # REFUTED-BY: MS0-MS2 fail or CF not rejected. No global gap prediction.
+# OUTCOME multistep 2026-10-06 07:44 BST: exit0, ALL MULTISTEP
+# CONTROLS PASS. MS0/MS1:2520 comparisons p5..64, four backgrounds,
+# all allowed r, depth96; MS2:48 nonperiodic-background comparisons,
+# q1..6, eight backgrounds each, depth64. Seed2026100614.
+# CF unrestricted-r rejected at changed depth36, p8,q8,r8, cutoff35.
