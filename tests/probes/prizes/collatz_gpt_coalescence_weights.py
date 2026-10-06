@@ -7,6 +7,11 @@ UNEXPECTED CHECK: width2,T4,t3 lost even child contributes -1/2.
 COUNTERFACTUAL MUST FAIL: remove failed children before regrouping.
 REFUTED-BY: any exact rational mismatch or a zero lost-child contribution.
 No mass, rate or global bias estimate; no large population.
+OUTCOME 2026-10-06, GPT Intel Python, under one second:
+CM1 PASS: 30 horizons, 100 increments, 21 empty parents retained.
+CM2 PASS: true pair, synthetic multiplicities, lost-child guard -1/2.
+Surviving-children-only counterfactual REFUTED; no control failed.
+Predictions and script published at 8e6dfee before execution.
 """
 from collections import Counter
 from fractions import Fraction

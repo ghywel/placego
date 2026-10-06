@@ -271,3 +271,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Meeting at the same terminal value does not make two starts cancel in the weighted count error.
 - [Same-label one-step coalescence reduces demand to curvature](W91-same-label-one-step-coalescence-reduces-demand-to.md):
   Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
+- [A coarse coalescence-curvature bootstrap still has a growing coefficient](W92-a-coarse-coalescence-curvature-bootstrap-still-has-a.md):
+  A coarse maximum-curvature bound still cannot close the constant count estimate by itself.

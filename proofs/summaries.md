@@ -1076,6 +1076,16 @@ Matching inputs that merge with the same odd-count label replaces demand weights
 
 **What it says.** Pair an odd parent with an even parent when their next states and next odd counts agree. Their two contributions combine into half the difference of two neighbouring backward demand weights. Unmatched occurrences retain their original contributions, including even steps that fail the barrier.
 
-**Why it matters.** The reviewed coin curvature bound can control a matched pair away from the final horizon. It does not bound how many pairs or unmatched inputs occur. The exact identity improves the terminal-pooling question without assuming full cancellation. Small controls and independent review remain pending.
+**Why it matters.** The reviewed coin curvature bound can control a matched pair away from the final horizon. It does not bound how many pairs or unmatched inputs occur. The exact identity improves the terminal-pooling question without assuming full cancellation. The small controls passed 100 exact increments and the true-pair, synthetic multiplicity and lost-child guards. Independent model review remains pending.
 
 **An everyday picture.** Some travellers can share the next checkpoint, but their different toll weights leave a small difference. Unpaired travellers and those denied entry still belong in the accounting.
+
+
+## W92
+A coarse maximum-curvature bound still cannot close the constant count estimate by itself.
+
+**What it says.** Grant that unmatched inputs cancel completely, and bound all matched pairs by the largest available curvature bound. Replacing the matched count by half the survivor count leaves a coefficient growing at least as the logarithm of the paid tail. This is growth of the estimate's right-hand side, not of the actual error.
+
+**Why it matters.** Matching improves the old square-root obstruction but needs actual allocation or signed information to become a global result. An exact pair has zero meeting-step contribution at a slightly longer horizon despite a positive bound, demonstrating the distinction. Independent review remains pending.
+
+**An everyday picture.** Charging every paired traveller the largest possible toll overestimates the total even when some actual tolls are zero. The improved price cap alone does not settle the bill.
