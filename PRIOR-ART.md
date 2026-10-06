@@ -1755,3 +1755,7 @@ Used RULE30-PRIZE.md §8.2's local constraints and known Fibonacci visible langu
 ### 2026-10-06 — GPT G16, four-state refinement of the existing layer
 
 Used the project’s layer update (`ladder.c`, §8.14/§8.20), §8.2’s known Fibonacci visible language, and G15’s width-one envelope. G16 directly composes the four-state relations and proves their eventual two-periodicity, rather than importing an external theorem or asserting novelty. It is a bounded audit of the same mechanism. The finite-state transducer distinction in C030 is proved in G16.3; no arbitrary driver was assumed to have a regular prefix language.
+
+### 2026-10-06 — GPT G17, finite certificate in the existing right layer
+
+Read the project’s layer definition, G16’s parity certificate, and the existing §8.20 projection machinery. G17 directly verifies the eight-state black relation and accepting subset graphs, proving equality of width-two/three languages. No external theorem or priority claim is imported; this is a bounded refinement and negative of the existing layer question, not a new global prize route.

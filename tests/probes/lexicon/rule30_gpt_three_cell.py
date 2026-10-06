@@ -19,7 +19,8 @@ ADDENDUM before second run:
 TH5 must: B^5=B^9, but B^5 differs from B^7 (period two is insufficient).
 TH6 must: the explicitly specified subset graphs match for every p2..128,
   and widths two/three have identical full languages for p2..9,n0..10.
-OUTCOME second run: pending. Small eight-state audit, no Local entropy run repeated.
+OUTCOME second run: exit0. TH5 HELD, exact image masks and period-four
+identity checked; TH6 HELD, all127 subset graphs and88 complete languages. Small eight-state audit, no Local entropy run repeated.
 """
 
 from itertools import product
@@ -96,5 +97,32 @@ def main():
     print('ALL CONTROLS PASS')
 
 
+def certificate_checks():
+    assert black_power(5) == black_power(9)
+    assert black_power(5) != black_power(7)
+    assert [sum(1 << x for x in black_power(5)[s]) for s in range(8)] == [102, 68, 68, 85, 196, 84, 68, 69]
+    print('TH5 PASS: B^5=B^9, B^5 differs from B^7; exact image masks verified')
+    I = frozenset(range(8))
+    E = frozenset((0, 1, 2, 4, 5, 6, 7))
+    E2 = frozenset((0, 1, 2, 4, 5, 7))
+    D = frozenset((0, 2, 4, 6))
+    H = frozenset((1, 2, 5, 6, 7))
+    K = frozenset((1, 5, 7))
+    empty = frozenset()
+    for p in range(2, 129):
+        if p % 2 == 0:
+            e = E2 if p == 2 else E
+            expected = {I: [e, D], e: [e, D], D: [e, empty]}
+        elif p == 3:
+            expected = {I: [E, H], E: [E, H], H: [K, H], K: [empty, H]}
+        else:
+            expected = {I: [E, H], E: [E, H], H: [H, H]}
+        assert graph(p)[0] == expected, p
+    for p, n in product(range(2, 10), range(11)):
+        assert words(2, p, n, 'subset') == words(3, p, n, 'subset')
+    print('TH6 PASS: all127 subset graphs, all88 width-two/three full languages')
+
+
 if __name__ == '__main__':
     main()
+    certificate_checks()
