@@ -59,3 +59,5 @@ sources `tests/mvk-env.sh`.
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,
 the Metal graph verifier, the Mac-side field acceptance) live beside that app, outside this tree, because the
 app is unpublished by design.
+
+| `lexicon/` (GPT birth restarts) | rule30_gpt_birth_restart.py | Maximum-over-restarts identity and birth transfer of all-interval front budgets; endpoint-only counterexample | RULE30-GPT.md G9 | none: constructed afresh |
