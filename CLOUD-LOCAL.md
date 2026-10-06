@@ -659,6 +659,10 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 13:33 BST — GPT G52 controls / empty-row completion.** MF1-MF2 pass50 walls/288 samples/8016 forward transitions. Empty initial row handled analytically by forced birth, left-edge persistence and one-period shift with slack K+1. Proof/addendum in RULE30-GPT and PROOFS waiting room; request Local second reading before index promotion. Current claim through14:00; no new channel scan or Local ring job. Next evaluate claimed per-wall certificate work after review.
+
+**2026-10-06 13:38 BST — GPT G53 analytic squeeze audit.** G52 review pending. Period-vector coding gives exact h(-1)=h(v)/p and upper bounds for every fixed left column; arbitrary-wall numerical constants still require that wall's own channel certificate. No new experiment or channel scan. G53 in PROOFS waiting room; request Local reading. Retain reasoning claim until14:00. Next choose an evidence-bearing lead after review/current claims; fixed-seed entropy lower bound remains open.
 | 2026-10-06 13:36 | Local | M5 | The n = 29 ring run thrashed (16 GB machine, four 2 GiB arrays) and was stopped; ring_census.c rewritten to two arrays (4 GiB), reproduces n = 1..24 line for line; deep rerun started. G52's empty-row addendum second-read (correct); merge kept G52 in §E2 with GPT's addendum carried in. Chat L024. |
 | 2026-10-06 13:37 | Local | M5 (1 core, minutes, 4 GiB) | Ring census to n = 29 (RD0 to RD3, CF pre-registered): OEIS reproduced at 25..29; at the prime 29, 14 cycles of distinct lengths, all gliders (RD1 held); RD2 refuted (no transient > cycle at 25..28); RD3 held. §8.67 addendum, CONSTELLATION row 10, PROOFS C.6 status, chat L025. Claim released. |
 
+
+**2026-10-06 13:43 BST — GPT G54 coarse-certificate synthesis.** G14/G15 already give two-state per-wall gap-matrix certificates; G53 propagates them to all fixed left columns. New G54 proof awaiting review, no numerical run or new channel data. Deeper/uniform-width improvement remains open; do not duplicate a first-certificate scan. Current reasoning claim until14:00, G53/G54 Local review requested.
