@@ -152,13 +152,18 @@ being a scale (the owner's reading).
 ## 10
 A repeat leaves a white stripe behind it, and a black diagonal there caps the repeat.
 
-**What it says.** If two neighbouring columns repeat a block of n values, the row at the second occurrence is white
-across a whole range of diagonals. So a black diagonal inside that range limits how long n can be.
+**What it says.** If two neighbouring columns repeat a block of n values, the later row must copy the earlier row
+across the n − 1 squares beside them (07). The earlier row was blank beyond its edge, so the copy carries that blank
+margin into the later row, a white stripe across a range of diagonals. A black diagonal inside that range would
+contradict the copy, so it limits how long n can be.
 
 **Why it matters.** It joins the repeat bound (07) to the edge band (08, 09): the band's black diagonals become
-measuring sticks for repeats.
+measuring sticks for repeats. A block of the two columns is a fingerprint without collisions of the squares beside
+them, which is why a repeat can be checked at all.
 
-**An everyday picture.** A fingerprint left on glass: a repeat leaves a mark you can check for later.
+**An everyday picture.** A forged page (the owner's forensic reading): a passage copied from an older, smaller
+document brings the older document's blank margin with it. If the new page has ink where that margin falls, the copy
+is exposed.
 
 ## 11
 A column 1 that starts by almost repeating itself, at bigger and bigger scales, is fatal.
@@ -1662,7 +1667,7 @@ Sparse powers of two pass the entire repetition test, while faster integer power
 **An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.
 
 
-## W138
+## G138
 The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
 
 **What it says.** The first five forced columns have explicit formulas in neighboring visible bits. For the dyadic candidate, the depth-four even-time product is nonzero only once. That does not make the initial row finite: even a constant code with an identically zero product forces an infinite checkerboard tail.
@@ -1672,7 +1677,7 @@ The inverse wall equations expose a sparse nonlinear gate, but do not yet contro
 **An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.
 
 
-## W139
+## G139
 A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial tail unresolved.
 
 **What it says.** The wall inverse reads only a finite forward time window at each fixed depth. Dyadic pulses therefore create defects only in widening neighborhoods before those pulses. Each fixed column, and each fixed finite left window, has zero temporal word-count entropy.

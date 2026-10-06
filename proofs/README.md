@@ -358,6 +358,11 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
 - [a dyadic sparse word passes every repeat test; faster powers fail](G137-a-dyadic-sparse-word-passes-every-repeat-test.md):
   Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
+- [the first nonlinear kick gate does not close the initial tail](G138-the-first-nonlinear-kick-gate-does-not-close.md):
+  The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
+- [fixed-depth temporal entropy does not measure the initial row](G139-fixed-depth-temporal-entropy-does-not-measure-the.md):
+  A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial
+  tail unresolved.
 
 ## The waiting room (not yet verified)
 
@@ -372,11 +377,6 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [The first nonlinear kick gate does not close the initial-tail problem](W138-the-first-nonlinear-kick-gate-does-not-close.md):
-  The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
-- [Fixed-depth temporal entropy does not measure the forced initial row](W139-fixed-depth-temporal-entropy-does-not-measure-the.md):
-  A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial
-  tail unresolved.
 - [The wall coding separates family entropy, orbit entropy and finite support](W140-the-wall-coding-separates-family-entropy-orbit-entropy.md):
   The wall's whole compatible family and a single dyadic orbit have different entropy, and neither settles finite
   support.
