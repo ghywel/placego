@@ -30,6 +30,19 @@ PREDICTIONS, written 2026-10-06 before the first run.
 REFUTED-BY: RC0 failing or CF holding (the engine); RC1 to RC4 the other way. What would change my mind: a cycle
 count that is smooth in n (no divisor structure) would say the ring's cycles do not come from sub-rings, which is
 how the 7-periodic tails of section 5 were explained.
+
+OUTCOME of the first run, 2026-10-06 (n = 1 .. 24, 40 seconds; the table is rule30_ring_census.txt). RC0 PASSED, and
+  after the run the OEIS b-file of A334497 (to n = 36) was checked against n = 21 .. 24 as well: 2793, 3553, 38249,
+  185040 agree. CF PASSED (n = 7: 4 against 63; n = 13: 260 against 832; n = 19: 247 against 3705; n = 20, 21). RC1
+  REFUTED: a = 0.553, and the periodic states are wildly irregular (4,350 at n = 18, 4,124 at 19, 33,926 at 20, 16,619
+  at 21, 194,991 at 24). RC2 REFUTED at 7 and 11 (hits 13, 17, 19, 23 only): the primes 7 and 11 have MORE cycles than
+  their neighbours because one short cycle there comes in a full rotation class (seven 4-cycles at n = 7, eleven
+  17-cycles at n = 11). RC3 REFUTED twice: the longest transient at n = 24 is 9,568, and at n = 21 (4,308 against a
+  maximum period of 2,793) and n = 22 (5,477 against 3,553) the longest transient EXCEEDS the longest cycle. RC4 HELD,
+  and more than held: at n = 13, 17, 19 and 23 EVERY cycle is gliding (5 of 5, 7 of 7, 5 of 5, 4 of 4). The reason is
+  a pigeonhole, not a mechanism: rotation permutes the cycles of each length, its orbits on a prime ring have size 1
+  or p, and at those n every cycle length occurs once, so every cycle is fixed by rotation, i.e. rotation by one cell
+  is a power of the time map on it. At n = 7 and 11 the one repeated length is the one non-gliding class.
 """
 import pathlib, re, subprocess, sys, tempfile
 import numpy as np

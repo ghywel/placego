@@ -366,6 +366,7 @@ Python 3 scripts need nothing else, and the C engines need a C compiler with Ope
 | `rule30_sync.py`, `rule30_records_word.py` + `records_word.c`, `rule30_leftside_million.py` | the small items (§8.60): the slips' synchrony is duplication; exact records for any wall word; the left side to a million diagonals | a minute; 15 minutes; 5 minutes |
 | `rule30_otherrules.py` | the left band of every rule whose edge moves at light speed (§8.64): 30, 110 and 118 alone have one | seconds |
 | `rule30_damage_speed.py` | the leftward light speed on structured backgrounds: $v = 1 - P(\text{heal})E[\text{jump}]$; the checkerboard heals ($-0.39$), the band locks above its white diagonals, rings give exact rationals (§8.66) | `python3 tests/probes/lexicon/rule30_damage_speed.py 13` and `... 13 lock` | 2 min |
+| `rule30_ring_census.py` | Rule 30 on rings to $n = 24$, complete: cycle counts, periodic states, transients, gliders; OEIS A334496/A334497 reproduced (§8.67) | `python3 tests/probes/lexicon/rule30_ring_census.py 24` | 40 s |
 | `rule30_band.py` | Lemmas B1 to B3, Theorems A‴ and A⁗, Corollary F (§8.59): the band of stripes meets the window principle; the universal strip to 53,200 diagonals with a certificate | a minute |
 | `ladder_deep.c`, `rule30_ladder_local.py` | the layer ladder to depth 318, in parallel (§8.56) | minutes to hours |
 | `rule30_walls.py`, `rule30_slips.py` | the wheel's domain walls and kicks | minutes |

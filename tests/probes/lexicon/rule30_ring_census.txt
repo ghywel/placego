@@ -1,0 +1,48 @@
+n 1 cycles 1 periodic 1 maxper 1 single 1 maxtransient 1 gliding 1
+  lengths 1  longest from state 0
+n 2 cycles 3 periodic 3 maxper 1 single 1 maxtransient 1 gliding 1
+  lengths 1x3  longest from state 0
+n 3 cycles 1 periodic 1 maxper 1 single 1 maxtransient 3 gliding 1
+  lengths 1  longest from state 0
+n 4 cycles 4 periodic 11 maxper 8 single 8 maxtransient 1 gliding 2
+  lengths 8 1x3  longest from state 1
+n 5 cycles 2 periodic 6 maxper 5 single 5 maxtransient 5 gliding 2
+  lengths 5 1  longest from state 19
+n 6 cycles 3 periodic 3 maxper 1 single 1 maxtransient 10 gliding 1
+  lengths 1x3  longest from state 0
+n 7 cycles 9 periodic 92 maxper 63 single 4 maxtransient 2 gliding 2
+  lengths 63 4x7 1  longest from state 108
+n 8 cycles 5 periodic 51 maxper 40 single 40 maxtransient 16 gliding 3
+  lengths 40 8 1x3  longest from state 131
+n 9 cycles 3 periodic 244 maxper 171 single 72 maxtransient 13 gliding 3
+  lengths 171 72 1  longest from state 396
+n 10 cycles 6 periodic 38 maxper 15 single 15 maxtransient 46 gliding 2
+  lengths 15x2 5 1x3  longest from state 892
+n 11 cycles 13 periodic 342 maxper 154 single 154 maxtransient 55 gliding 2
+  lengths 154 17x11 1  longest from state 1806
+n 12 cycles 12 periodic 431 maxper 102 single 102 maxtransient 126 gliding 2
+  lengths 102x4 8 3x4 1x3  longest from state 4032
+n 13 cycles 5 periodic 1431 maxper 832 single 260 maxtransient 66 gliding 5
+  lengths 832 260 247 91 1  longest from state 396
+n 14 cycles 18 periodic 2082 maxper 1428 single 1428 maxtransient 127 gliding 5
+  lengths 1428 133x2 112 84x2 63 14 4x7 1x3 ...  longest from state 1
+n 15 cycles 31 periodic 1776 maxper 1455 single 1455 maxtransient 321 gliding 3
+  lengths 1455 30x5 9x5 7x15 5x4 1  longest from state 950
+n 16 cycles 9 periodic 10291 maxper 6016 single 6016 maxtransient 287 gliding 5
+  lengths 6016 4144 40x3 8 1x3  longest from state 45837
+n 17 cycles 7 periodic 13805 maxper 10846 single 10846 maxtransient 362 gliding 7
+  lengths 10846 1632 867 306 136 17 1  longest from state 24768
+n 18 cycles 18 periodic 4350 maxper 2844 single 2844 maxtransient 1137 gliding 4
+  lengths 2844 186x6 171 72 24x6 1x3  longest from state 183523
+n 19 cycles 5 periodic 4124 maxper 3705 single 247 maxtransient 1234 gliding 5
+  lengths 3705 247 133 38 1  longest from state 236796
+n 20 cycles 27 periodic 33926 maxper 6150 single 3420 maxtransient 1736 gliding 4
+  lengths 6150x2 3420x4 1715x4 580 68x5 30x4 15x2 8 ...  longest from state 974848
+n 21 cycles 60 periodic 16619 maxper 2793 single 597 maxtransient 4308 gliding 4
+  lengths 2793 597x7 409x21 63 44x21 42 4x7 1 ...  longest from state 1950526
+n 22 cycles 24 periodic 15744 maxper 3553 single 3256 maxtransient 5477 gliding 3
+  lengths 3553x2 3256x2 781x2 154 77x2 66 17x11 1x3 ...  longest from state 3798751
+n 23 cycles 4 periodic 43172 maxper 38249 single 38249 maxtransient 6051 gliding 4
+  lengths 38249 4784 138 1  longest from state 5213949
+n 24 cycles 49 periodic 194991 maxper 185040 single 185040 maxtransient 9568 gliding 5
+  lengths 185040 5448 366x8 312x2 102x4 40 20x24 8 ...  longest from state 8860643

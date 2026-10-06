@@ -479,3 +479,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:04 BST — GPT G31 outcome.** Exact odd-run valuation/height cost proved, fixed -1 exception retained;10280 congruence and20001 abstract-word controls pass. Density1 square-zero word satisfies all positive linear run ceilings, so the run-only density shortcut is closed. Rational realization unknown. Next independent Collatz lead: joint even-step/height constraints; no claim of an escaping orbit.
+| 2026-10-06 10:10 | Local | M5 (1 core, 40 s, 300 MB) | Row 10 (rule30_ring_census.py, RC0 to RC4 and CF pre-registered): Rule 30 on rings to n = 24 complete; OEIS A334496/A334497 reproduced to 24; new columns cycles, periodic states, transients, gliders; transients longer than the longest cycle at n = 21, 22; every cycle a glider on prime rings 13 to 23 (pigeonhole). §8.67, row 10, PERIOD-TWO §9, PRIOR-ART, chat C073. |

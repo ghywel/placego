@@ -4317,3 +4317,32 @@ owner's question about information in the band: a perturbation anywhere in the s
 phase of the strip above the next white diagonal with probability exactly one half, and the probabilities at
 successive barriers multiply.
 
+### 8.67 Rule 30 on rings to $n = 24$, complete: cycle counts, transients longer than cycles, and every cycle a glider on prime rings (2026-10-06)
+
+CONSTELLATION.md row 10, by the random draw; literature first (PRIOR-ART.md: OEIS A334497 and A334496 tabulate the
+maximum period and the single cell's period; nothing tabulates the number of cycles, the periodic states, the
+transients or the gliding cycles). `ring_census.c` visits all $2^n$ states for $n \le 24$ and certifies every cycle
+by a state and a length; `rule30_ring_census.py` carries the predictions (RC0 to RC4, CF, pushed in `71f704c`
+before the run) and the table is `rule30_ring_census.txt`. Both OEIS sequences are reproduced to $n = 24$ (A334497's
+b-file reaches 36). The four new columns, and what was wrong in my expectations:
+- *Cycle counts* $c(n)$: 1, 3, 1, 4, 2, 3, 9, 5, 3, 6, 13, 12, 5, 18, 31, 9, 7, 18, 5, 27, 60, 24, 4, 49. Not divisor
+  structure in the way I predicted (RC2 refuted at 7 and 11): prime rings have few cycles *unless* one length is
+  repeated, in which case rotation supplies $p$ copies at once (seven 4-cycles at $n = 7$, eleven 17-cycles at 11).
+- *Periodic states* $P(n)$: 431 at 12, then 1431, 2082, 1776, 10291, 13805, 4350, 4124, 33926, 16619, 15744, 43172,
+  194991 at 24; a fitted $2^{0.553 n}$ (RC1 predicted 0.6 to 0.8) but the fit means little: the periodic set is a
+  vanishing and erratic fraction of the ring.
+- *Transients*: the longest preperiod is 9,568 at $n = 24$ (RC3 predicted below 200), and at $n = 21$ and $22$ it is
+  LONGER than the longest cycle (4,308 against 2,793; 5,477 against 3,553). On a ring Rule 30 can wander longer than
+  it cycles.
+- *Gliding cycles* (rotation by one cell maps the cycle to itself, so the pattern travels): at every prime $n$ from 13
+  to 23 every cycle is gliding. This is a pigeonhole, worth stating because it is exact: rotation permutes the cycles
+  of each length and its orbits on a prime ring have size 1 or $p$; at $n = 13, 17, 19, 23$ every cycle length occurs
+  once, so every cycle is rotation-invariant and rotation is a power of the time map on it. The 63-cycle of the
+  7-ring is one (the 7-periodic tails of §5 are travelling patterns), and the one non-gliding class at 7 and 11 is
+  the one repeated length. Which parts are proved, then: the glider statement is proved for the listed $n$ by the
+  census plus the pigeonhole; the growth of the maximum period is not proved for any $n$ beyond the table.
+
+What would change the picture: a cycle count that stayed smooth in $n$ would have said the ring's cycles do not
+come from sub-rings; they do not, in the way I had assumed, and the count is dominated instead by whether rotation
+classes are full. Reproduction: `python3 tests/probes/lexicon/rule30_ring_census.py 24` (40 s, 300 MB).
+
