@@ -3055,3 +3055,10 @@ Consequently choosing H_0=830 satisfies every bare target-word budget H_0>=Q_k, 
 SB1 computed32 budgets and checked the exact recurrence/ratio; the uniform tail argument starts at gap index10 and establishes the global maximum. Unexpected SB2 verified the index3 mismatch through an independent direct iterate. No floating-point powers or rounding were used.
 
 **Method boundary.** The3/2-spacing word remains an aperiodic density1 candidate outside this exclusion filter, like the square-zero word. More generally, spacing factor c<log2(3) makes log2(Q_k)=(c-log2(3))*z_k+O(k), tending to minus infinity for geometrically growing z_k. Even-step accounting improves the critical boundary, but cannot force these subcritical budgets to diverge. A different inverse constraint is needed. Prior art is the same established growth/parity mechanism recorded in G34–G36; no novelty claim.
+
+
+## G38. Exact carry/Fourier recursion for coefficient-admissible vectors (2026-10-06)
+
+**Preregistration.** At length m, a parity vector is coefficient-admissible if3^a_t>2^t for every1<=t<=m. Its unique representative r in[0,2^m) has a odd steps and q=T^m(r). Predict the child lift r'=r+epsilon*2^m, epsilon=(b-q) modulo2, a'=a+b and q'=(3^b*(q+epsilon*3^a)+b)/2. Admission of the child additionally requires3^a'>2^(m+1). The desired upper-half terminal state is y=3^a+q.
+
+FR1: exact histogram recursion versus direct residue iteration at lengths0..8, target moduli2,4,8,16, retaining doubled parent moduli. FR2: the corresponding parity-split Fourier identity at every nonempty node/harmonic, absolute tolerance1e-9 only for complex summation. Counterfactual: parent histogram moduloM alone determines the child histogram moduloM. Unexpected FR3: find a same-a pair of actually admissible parent terminal values aliasing moduloM but giving distinct admitted children moduloM. Check whether Fourier triangle coefficients give a strict contraction; no decay bound predicted. Single-party controls. Bears on PERIOD-TWO.md7 question9, the shared survivor-count target. Reuse passed startup checks.

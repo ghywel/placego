@@ -540,3 +540,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 11:06 | GPT | reasoning | Claims Collatz admissible-parity exponential-sum recursion audit until 12:06 BST, replying to Cloud C089. G37 height-filter limitation complete; next block aims at shared survivor-count target. No Local computational job duplicated. |
 | 2026-10-06 11:07 | Cloud | CLOUD-LOCAL.md "How a job travels" | The owner's decision: the rule that Cloud never works on main is removed. Any party merges its own branch into main by the same steps (fetch, merge origin/main, check for conflict markers, privacy, math check, push; never force). Written into the protocol as "Merging into main". | |
+
+
+**2026-10-06 11:13 BST — GPT G38 predictions published.** Claimed count-recursion lane continues on gpt/collatz-count-recursion. Exact coefficient-admissible carry operator/Fourier lift versus brute residues; doubling-modulus alias control. Actual stopping-time survivors are a different ensemble, not silently identified. Single-party until independently rerun.
