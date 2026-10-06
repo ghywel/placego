@@ -47,7 +47,24 @@ all diagonal weights and final total exactly. SH0 control: natural statistic
 are <=216; natural order has stronger cancellation than 95% of permutations.
 Also report the plus-one randomisation p = (1 + count<=natural)/1001 and
 median/min/max; no inference about balance of the core or infinite widths.
-OUTCOME of shuffle: not yet run.
+OUTCOME of shuffle, 2026-10-06: ALL CONTROLS PASS, exit 0.
+SH0 PASSED: natural 216; all 1000 permutations preserve the total.
+SH1 HELD: 9 of 1000 statistics <=216; plus-one p 0.009990;
+    permutation minimum 189, median 401, maximum 966.
+This tests the ordering of a fixed finite list of diagonal weights, not
+independence of actual Rule 30 cells or a limiting-density theorem.
+
+SECOND ADDENDUM, before its run (append 'ensemble' to COMMAND).
+Unexpected scope check: exact temporal coin balance holds for an ensemble,
+not every deterministic seed. EN0 controls: for T=0..8 enumerate all 2^(2T+1)
+initial light-cone words. Every (T+1)-bit centre trace has exactly 2^T preimages,
+including T=0. This follows by triangular inversion of the new leftmost input.
+EN1 known finite-patch check: put the period-7 row of the biased 4-cycle on
+[-31,31], zero outside. Its centre trace at times 0..31 is [1,1,0,1] repeated
+8 times, hence 24/32 black. Finite propagation guarantees the match.
+Counterfactual: Bernoulli preservation forces this finite prefix to be half
+black. EN1 must reject that inference. No claim about the patch's later limit.
+OUTCOME of ensemble: not yet run.
 """
 import concurrent.futures
 import collections
@@ -189,6 +206,35 @@ def shuffle_audit():
     return not okay
 
 
+def ensemble_check():
+    okay = True
+    for tmax in range(9):
+        n = 2*tmax+1
+        mask = (1 << n)-1
+        counts = collections.Counter()
+        for initial in range(1 << n):
+            v, trace = initial,0
+            for t in range(tmax+1):
+                trace |= ((v >> tmax) & 1) << t
+                v = ((v << 1) ^ (v | (v >> 1))) & mask
+            counts[trace] += 1
+        valid = len(counts) == 1 << (tmax+1) and set(counts.values()) == {1 << tmax}
+        okay &= valid
+        print(f'EN0 T={tmax}: {len(counts)} traces; multiplicities {sorted(set(counts.values()))}; {valid}',flush=True)
+    edge = 31
+    v = sum(1 << (i+edge) for i in range(-edge,edge+1) if i % 7 == 0)
+    mask = (1 << (2*edge+1))-1
+    trace = []
+    for t in range(32):
+        trace.append((v >> edge) & 1)
+        v = ((v << 1) ^ (v | (v >> 1))) & mask
+    valid = trace == [1,1,0,1]*8 and sum(trace) == 24
+    okay &= valid
+    print(f'EN1 finite patch: {sum(trace)}/32 black; matches biased cycle {valid}; half-black inference rejected {sum(trace) != 16}',flush=True)
+    print('ALL CONTROLS PASS' if okay else 'CONTROL FAILURE')
+    return not okay
+
+
 def main():
     okay = controls()
     okay &= band()
@@ -199,4 +245,5 @@ def main():
 
 if __name__ == '__main__':
     import sys
-    raise SystemExit(shuffle_audit() if sys.argv[1:] == ['shuffle'] else main())
+    raise SystemExit(ensemble_check() if sys.argv[1:] == ['ensemble'] else
+                     shuffle_audit() if sys.argv[1:] == ['shuffle'] else main())
