@@ -8,7 +8,7 @@ binomial(T,a)/T <= A(T,a) <= binomial(T,a); G40's skeleton cube (a surviving ske
 statement modulo 3^a; G42's affine identity 2^T q = 3^a r + sum_odd_j 2^j 3^(a - S_(j+1)) for T <= 10 with the Terras
 representative r; G42's family sum 5 * sum x_k^2 = 20480/3103353 and its cosine product; G41's frequency-boundary
 valuations; and (added the same day) G43's binary-reader coefficient 2/[M(1 + e(-h/M))], its total weight bound
-3 + log M and the bound 2/M at h = 2^T in G42's family. (Local, 2026-10-06; second readings in CHAT-LEDGER.md L007, L008.)
+3 + log M and the bound 2/M at h = 2^T in G42's family; and G44's parity-tail TV r(B-r)/(BM). (Local, 2026-10-06; second readings in CHAT-LEDGER.md L007, L008.)
 
 RUN-ON:     cpu, one core, standard library
 COMMAND:    python3 tests/probes/prizes/collatz_audit_g39_g42.py
@@ -17,6 +17,7 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   0.0066 exactly; product of 60 cosines 0.99350; valuations 4, 3, 2, all killed by h = 3^7 modulo 3^9.
   G43 part (second run, the same day): formula error 4e-14 for odd M < 400; weight - (3 + log M) <= 0 for every M
   tested (largest -2.43); h = 2^T weight <= 2/M for n = 0 .. 39.
+  G44 part (third run, the same day): 78 cases, 0 failures.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -104,3 +105,22 @@ for M in list(range(3, 400, 2)) + [3**k for k in range(6, 10)]:
     over = max(over, W - (3 + math.log(M)))
 fam = all(abs(2 / (3**(4 + 3*n) * (1 + e(-(2**(4 + 4*n) % 3**(4 + 3*n)) / 3**(4 + 3*n))))) <= 2 / 3**(4 + 3*n) + 1e-300 for n in range(40))
 print("G43: max |direct - formula| (odd M < 400):", worst, "; max (weight - (3 + log M)):", over, "; family weight <= 2/M:", fam)
+# G44 (added 2026-10-06): the parity-tail TV of uniform q modulo 3^a, computed from the parity words themselves
+from collections import Counter
+bad44 = n44 = 0
+for a in range(1, 7):
+    M = 3**a
+    for d in range(1, 14):
+        B = 2**d; words = Counter()
+        for q in range(M):
+            y, w = M + q, []
+            for _ in range(d):
+                w.append(y & 1); y = (3 * y + 1) // 2 if y & 1 else y // 2
+            words[tuple(w)] += 1
+        tv = Fr(1, 2) * (sum(abs(Fr(c, M) - Fr(1, B)) for c in words.values()) + Fr(B - len(words), B))
+        r = M % B
+        bad44 += tv != Fr(r * (B - r), B * M)
+        if B >= M: bad44 += len(words) != M or tv != 1 - Fr(M, B)
+        n44 += 1
+print("G44: TV = r(B-r)/(BM) and injectivity for B >= M, a = 1..6, d = 1..13:", n44, "cases, failures", bad44)
+
