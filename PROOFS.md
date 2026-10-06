@@ -1893,3 +1893,42 @@ HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion 
 Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
 
 Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
+
+
+### GPT G71 — selected critical-boundary losses (awaiting independent reading)
+
+### G71. First paid-bit discrepancy and the critical-boundary loss process (2026-10-06)
+
+Resume the coefficient count of COLLATZ-PRIZE.md §1. G70 separates it from actual survival on sufficiently high intervals; this section concerns coefficient survival only. It specializes the already recorded parity bijection, G38's terminal recursion and G43's binary reader. No novelty claim, mixing estimate or tail-count theorem.
+
+Let ell_t be the least nonnegative integer a with3^a>=2^t (ell_0=0). At t>0 equality of these powers is impossible, so this is also the coefficient-admissible endpoint threshold. Its increments are0 or1. Call step t to t+1 critical when ell_(t+1)=ell_t+1. Let V(t) count length-t words whose every prefix has coefficient at least1. At a critical step, let N(t) count those words with exactly ell_t ones; otherwise put N(t)=0. A child of such a critical-boundary word fails iff its new bit is0. All other admitted parents have two admitted children. Therefore
+
+    V(t+1)=2*V(t)-N(t).
+
+**The first step after the free bits.** Fix width w>=2 and m=w-1. Every admitted length-m word has one representative r in[0,2^m), and exactly one width-w start n=2^m+r. If it has a ones and terminal q=T^m(r), its actual state at the free-bit boundary is y=3^a+q. Since3^a is odd, its next parity is1 minus the parity of q.
+
+Let C_w(t) count coefficient-surviving starts in[2^m,2^(m+1)) through horizon t. At a critical step m to m+1, write O(m) for the number of critical-boundary parents with q odd, and
+
+    F(m)=sum over critical-boundary parents of (-1)^q
+        =N(m)-2*O(m).
+
+At a noncritical step put O(m)=F(m)=0. Only the parents counted by O(m) fail the next barrier, because q odd means y even. Thus
+
+    C_w(w)=V(m)-O(m),
+    2*C_w(w)-V(w)=F(m).
+
+The coin benchmark2^(w-1)*P(w) equals V(w)/2, so the signed first-paid-bit discrepancy is exactly F(m)/2. At noncritical steps it is zero regardless of the terminal distribution. At critical steps it is the parity imbalance of one selected endpoint class, not the imbalance of the whole admitted ensemble. G43 expresses this reader as a weighted ternary spectrum; no cancellation for this selected class is established here.
+
+**An exact selected-event loss process for later steps.** For any t, among the width-w coefficient survivors let E_w(t) count those with a_t=ell_t and even current state, provided the step is critical; otherwise set E_w(t)=0. Then
+
+    C_w(t+1)=C_w(t)-E_w(t).
+
+No claim of conditional fairness is made. When C_w(t)>0 define h_w(t)=E_w(t)/C_w(t), and put h_coin(t)=N(t)/(2*V(t)). With Q_w(t)=2^(w-1)*V(t)/2^t and R_w(t)=C_w(t)/Q_w(t),
+
+    R_w(t+1)=R_w(t)*(1-h_w(t))/(1-h_coin(t)).
+
+This formula includes a zero next count; logarithms may be taken only while both consecutive counts are positive. At t=m, R_w(m)=1 by the free-bit bijection. Hence bounded excess requires control of the accumulated selected-event hazard discrepancy after m. Noncritical steps contribute no loss on either side. This is an exact reduction of the desired count, not a proof of its boundedness or an independence model. It neither requires nor establishes G44's invalid all-cylinder comparison, and G42's resonances remain retained obstacles to generic Fourier arguments.
+
+**Unexpected parity-sign guard.** At w2,m1 there is one admitted parent word1, r1,q2. Its width-two start is n3 with actual iterates3,5,8, so the next bit is1 and it survives the critical step. Thus C_2(2)=1,V(2)=1,F(1)=1, giving discrepancy+1/2. Counting q-even parents as losses instead would give C_2(2)=0 and the wrong sign. This exact two-step example checks the odd lift3^a; no experiment was needed to derive it. C_w is not asserted to equal the actual-survival count for every small width; G70's stated criterion governs that comparison.
+
+**Next controls, preregistered NOT RUN.** BT1: m1..12, enumerate admitted parity words and their least representatives, compare the selected-class N/O/F formula with independently evolved width-(m+1) coefficient counts at horizon m+1. Predict exact equality, and zero discrepancy on every noncritical step; retain signed discrepancies on critical steps. BT2: widths2..10 through24 steps, direct trajectories and independent integer dynamic programming for V(t), checking the boundary-loss recurrence and exact rational ratio identity from the free-bit boundary onward. Retain zero counts and restrict probability/log identities to their stated domain. Counterfactual: q-even parents are the failing ones after the upper-half lift; must fail at width2. These are bounded controls, not a larger stopping scan or a uniform Fourier-transfer assertion. Independent Local reading requested.

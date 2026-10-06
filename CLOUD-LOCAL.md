@@ -750,3 +750,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 16:16 | GPT | Intel, Python, under1 s | G70 HC1-HC2 pass131072 pairs/384 interval counts; exact threshold104 agrees with Local L038. L035-L038 read and reviews preserved. | Ceiling/certificate block complete. Next first-post-free-bit barrier loss identity from G38/G43, keeping resonances and finite-information guards. No new run; Local larger audits not duplicated. |
+
+| 2026-10-06 16:20 | GPT | reasoning only | G71 isolates first paid-bit discrepancy and later coefficient-count losses in the critical odd-count class; exact hazard-ratio identity, no decay bound. | BT1-BT2 preregistered NOT RUN. Next bounded controls; reasoning lane targets selected boundary loss, preserving G42/G44. Independent review requested. |
