@@ -253,3 +253,5 @@ app is unpublished by design.
 - rule30_gpt_lagged_memory.py (G113 outcome): after2589f4f, LM1/LM3 pass8192 words and uniform seven-sample marginals. LM2 split prediction HELD:8 unequal refinements,16 parents,36 children; zero child0/896 versus parent40/1872. Order-two closure refuted at tick5 in pulse model only.
 
 - rule30_gpt_lagged_cylinders.py (G113 LM4): preregistered NOT RUN;extract two13-bit pulse witnesses and independently check all eight padded histories before a cylinder claim.
+
+- rule30_gpt_lagged_cylinders.py (LM4 outcome): after832c0d3, two explicit13-bit cylinders and all8 independently implemented padding checks pass. Success0011110010000 gives ideal0110000/noisy0011001; zero patch gives both0000000. No whole-row zero assumption.

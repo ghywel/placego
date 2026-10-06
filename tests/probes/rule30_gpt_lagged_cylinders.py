@@ -2,6 +2,8 @@
 Extract lexicographic13-bit zero-child and positive-parent witnesses.
 Independent literal-table padded histories must preserve traces in8 checks.
 Unexpected boundary guard:both outer bits arbitrary, not fixed zero.
+OUTCOME 2026-10-06 21:09 BST after832c0d3:LM4 PASS;8 padded checks.
+Success0011110010000,I0110000,J0011001;zero0000000000000.
 """
 from itertools import product
 from rule30_gpt_lagged_memory import traces

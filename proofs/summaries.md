@@ -1272,7 +1272,7 @@ Two shared black observations force the next source samples to agree in the righ
 ## W113
 Keeping one previous paired observation still misses pulse-model memory.
 
-**What it says.** In the isolated-pulse fair-input ensemble, one positive last-two-state bin has next-error rate5/234, but its refinement by an earlier observation has rate0. The zero child has no original injection; the positive parent is certified by exact cone enumeration.
+**What it says.** In the isolated-pulse fair-input ensemble, one positive last-two-state bin has next-error rate5/234, but its refinement by an earlier observation has rate0. The zero child has no original injection; the positive parent now has an explicit13-bit cylinder, independently checked under all eight nearest-exterior assignments.
 
 **Why it matters.** This refutes order-two Markov at tick5 for this specific ensemble. All8192 words were checked with two update formulations; both separate seven-sample marginals remain uniform. Independent review is pending; no all-orders or repeated-race theorem follows.
 
