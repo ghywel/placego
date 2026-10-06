@@ -24,8 +24,32 @@ CB4 known obstruction: the 5-ring word with cells 0,1,2 black (integer 7)
 REFUTED-BY: a control failure invalidates the diagnostic; CB1/2/3 failures
     refute only their respective conjectural statements. No inference about
     a single finite seed's limiting centre-column density.
-OUTCOME: not yet run.
+OUTCOME, first run 2026-10-06: ALL CONTROLS PASS, exit 0.
+CB0 PASSED: all truth-table/preimage controls; 7-ring spectrum correct;
+    known strip black count 319993 reproduced.
+CB1 REFUTED: max absolute discrepancy 216 at width 50086 (signed -216),
+    exceeding 128. Width 53208 total 425490, discrepancy -174.
+CB2 HELD: shuffled maximum 473 at width 29600 (signed -473), final total
+    preserved. One shuffle is not a significance test.
+CB3 REFUTED: 17 of 31 nonzero power-of-two cycles balanced; first biased
+    cycle at ring size 7, period 4, black/total 13/28, states [1,67,100,63].
+CB4 PASSED: 5-ring [7,25,14,19,28], density 15/25 = 3/5.
+Pre-registration commit 503f6dc preceded the first run. The main push was
+rejected with a GitHub server error; a branch push was pending. Later remote
+inspection confirmed the pre-registration on the branch. Do not assert its
+server publication completed before the run.
+
+ADDENDUM, before its run (append 'shuffle' to COMMAND): quantify CB2 with
+1000 shuffled populations, seeds 40000..40999, eight CPU workers. Statistic
+is maximum absolute prefix discrepancy over widths 1000..53208. Preserve
+all diagonal weights and final total exactly. SH0 control: natural statistic
+216; all shuffles preserve total. SH1 blind: at most 5% of shuffled statistics
+are <=216; natural order has stronger cancellation than 95% of permutations.
+Also report the plus-one randomisation p = (1 + count<=natural)/1001 and
+median/min/max; no inference about balance of the core or infinite widths.
+OUTCOME of shuffle: not yet run.
 """
+import concurrent.futures
 import collections
 import importlib.util
 import pathlib
@@ -129,6 +153,42 @@ def ring_audit():
     return okay
 
 
+def init_shuffle():
+    global SHUFFLE_BASE
+    here = pathlib.Path(__file__).resolve().parent
+    spec = importlib.util.spec_from_file_location('gpt_cycles',here/'rule30_gpt_cycles.py')
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    words,p,_,_,_ = mod.classify(53208)
+    SHUFFLE_BASE = [v.bit_count() for v in words]
+
+
+def one_shuffle(seed):
+    weights = SHUFFLE_BASE[:]
+    total = sum(weights)
+    random.Random(seed).shuffle(weights)
+    maximum, final = discrepancy(weights)
+    return maximum[0], final == total
+
+
+def shuffle_audit():
+    here = pathlib.Path(__file__).resolve().parent
+    spec = importlib.util.spec_from_file_location('gpt_cycles',here/'rule30_gpt_cycles.py')
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    words,p,_,_,_ = mod.classify(53208)
+    natural,_ = discrepancy([v.bit_count() for v in words])
+    with concurrent.futures.ProcessPoolExecutor(max_workers=8, initializer=init_shuffle) as pool:
+        results = list(pool.map(one_shuffle,range(40000,41000)))
+    vals = sorted(v for v,_ in results)
+    count = sum(v <= natural[0] for v in vals)
+    okay = natural[0] == 216 and all(kept for _,kept in results)
+    print(f'SH0 {okay}; natural {natural[0]}; permutations 1000; count <= natural {count}',flush=True)
+    print(f'{"HELD" if count <= 50 else "REFUTED"} SH1: p_plus_one {(count+1)/1001:.6f}; min {vals[0]}; median {(vals[499]+vals[500])/2}; max {vals[-1]}',flush=True)
+    print('ALL CONTROLS PASS' if okay else 'CONTROL FAILURE')
+    return not okay
+
+
 def main():
     okay = controls()
     okay &= band()
@@ -138,4 +198,5 @@ def main():
 
 
 if __name__ == '__main__':
-    raise SystemExit(main())
+    import sys
+    raise SystemExit(shuffle_audit() if sys.argv[1:] == ['shuffle'] else main())
