@@ -301,3 +301,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Nonrightward traces stay iid fair conditional on a state-independent right-race schedule](W107-nonrightward-traces-stay-iid-fair-conditional-on-a.md):
   A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.
+- [Shared initial bits give a causal invertible coupling of ideal and noisy traces](W108-shared-initial-bits-give-a-causal-invertible-coupling.md):
+  Two individually random traces can remain perfectly related when their shared environment is known.

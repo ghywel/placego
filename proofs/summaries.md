@@ -1217,3 +1217,12 @@ A trace moving left or staying put keeps meeting a fresh random bit, even throug
 **Why it matters.** Such a single trace cannot statistically reveal the schedule in the fair infinite ensemble, although paired noisy/ideal traces may differ. Rightward, adaptive, finite-ring and selected-seed observations are excluded. NT1 passes135296 cases and8736 conditional bijections; review is pending.
 
 **An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.
+
+## W108
+Two individually random traces can remain perfectly related when their shared environment is known.
+
+**What it says.** Conditional on the other initial bits and race schedule, noisy samples equal ideal samples XOR a mask determined by earlier ideal samples. The transformation is a causal bijection, with N+1 bits of conditional mutual information.
+
+**Why it matters.** Marginal iid observations do not make two histories independent. First-tick race errors depend on the previous sampled state. This representation does not determine the error process or a decoherence rate. CT1 and review are pending.
+
+**An everyday picture.** Knowing the key can relate two scrambled films even when each looks random on its own.
