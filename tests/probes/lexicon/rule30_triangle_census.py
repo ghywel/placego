@@ -63,6 +63,11 @@ RANDOM-ROW ADDENDUM, written 2026-10-06 before the second run (python3 rule30_tr
       24 and a widest near 31.
   REFUTED-BY: TR0 or TR1 failing (the derivation of 3 * 2^-(L+4) misses a correlation); TR2 the other way (the deficit
   is the law's and the derivation is only approximate); CF holding.
+  OUTCOME of the second run, 2026-10-06 (random; T = 50,000, 3 minutes): TR0 PASSED (0.500001). TR1 PASSED: the
+  deviations from 3 * 2^-(L+4) * area are -0.002%, +0.003%, -0.006%, +0.000%, -0.004%, +0.004% for L = 1 .. 6 (counts
+  1,171,848,670; 585,956,651; 292,950,068; ...), Poisson-sized; at L = 10, 15, 20, 24: 2,290,402 (law 2,288,818),
+  71,594 (71,526), 2,187 (2,235), 117 (140); widest 31 (CF PASSED). TR2 HELD: the L = 1 count is -0.002% from the
+  law, so the single cell's -0.09% is the orbit's, not the law's. The derivation is exact as stated.
 """
 import sys
 import numpy as np

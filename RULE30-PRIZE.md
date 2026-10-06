@@ -4384,3 +4384,13 @@ NKS note 6.1 has the ratio, "roughly like $2^{-n}$" for rules 126, 30, 150, 182 
 no constant and no derivation; the exact $3 \cdot 2^{-(L+4)}$ and the single-cell match were not found there (NKS
 p. 871 still to be read; the 1984 paper is a scan not readable here).
 
+**Addendum (the same day): the law is exact, the deficit is the orbit's.** The same census on a random row, counted
+only inside the inner light cone where the field is exactly the uniform measure (predictions TR0 to TR2 and CF
+pushed in `0a44d87` first), gives deviations of $-0.002\%, +0.003\%, -0.006\%, +0.000\%, -0.004\%, +0.004\%$ from
+$3 \cdot 2^{-(L+4)} \cdot \text{area}$ for $L = 1$ to $6$ on $1.25 \times 10^{10}$ cells, Poisson-sized (TR1), and
+$-0.002\%$ at $L = 1$ (TR2 held). So the derivation is exact, and the single cell's $-0.09\%$ deficit of width-1 tops
+in its core is a property of that orbit: at $2.8 \times 10^8$ counts it is about fifteen standard deviations, the
+first measured departure of the core from the uniform measure in this record, small and unexplained. (It is not a
+density effect: the core's white density is to be measured next to it; and it is not the binning, which the random
+row shares.)
+
