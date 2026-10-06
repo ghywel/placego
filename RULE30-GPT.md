@@ -6460,3 +6460,59 @@ This proves the claim for these periods too. For q=1 a match requires x_s<1-beta
 The phase is essential. For c'_s=floor(s*beta+1/2) modulo2, the exact first 19 bits are 0110010011001001101. Period 7 repeats on [0,10] and fails at 11, giving debt 10-7=3. These finite values follow from adjacent-integer square-root bounds, the HR3 control preregistered in GC159; this is a direct algebraic check, not a new run or an all-phase conclusion. The period-q derivative lift counterfactual remains refuted by 0101... and its constant-one derivative.
 
 **Scope.** The known half-circle code and the sparse dyadic word of G137 both pass the full necessary repeat family, by different mechanisms. Here numerator parity and mediant returns explain the gap. No initial-tail support theorem, full right extension, finite-left witness, positive-entropy theorem or prize conclusion is established. Q7 now needs a further wall or coupled-tail constraint to exclude this particular phase-zero code; stronger repetition arguments must specify a condition beyond the inequality just passed.
+
+
+### G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)
+
+**Status and target.** Symbolic Q7 classification, independent review pending together with G143. No experiment. Fix the phase zero used in GC159; this is not an all-phase classification. The inputs are G143's signed mismatch intervals and tail-two mesh argument, ordinary continued-fraction best approximation and Legendre's criterion. The Rote critical-exponent literature is recorded in PRIOR-ART.md; its ordinary factor exponent does not include the starting index in our debt and no theorem from it is imported.
+
+Let beta be any irrational in (0,1), let c_s=floor(s*beta) modulo2, and write p_n/q_n for its convergents, a_(n+1) for the next coefficient and delta_n=q_n*beta-p_n. Then the following are equivalent:
+
+1. There is a finite constant C such that every equality interval c_s=c_(s+q), a<=s<=b, a>=0, q>=1, satisfies b<=2a+q+C.
+2. Eventually every a_n is 2 and every convergent numerator p_n is odd.
+
+The angles in (2) form a countable quadratic class. G143's beta=2-sqrt(2) belongs to it and even satisfies the strict C=0 bound. Passing this filter is not a finite-left Rule30 realization. Every other phase-zero half-circle code is excluded by the wall's necessary repeat inequality for every finite left radius.
+
+**Obstruction from even numerators.** Suppose p_n is even, with n large enough that |delta_n|<1. The period q_n has signed even-integer error delta_n, so its mismatch interval is the upper or lower arc of length |delta_n| given in G143. Its first positive visit is exactly h=q_(n+1). Indeed best approximation gives distance at least |delta_n| to every integer at every 0<k<q_(n+1); q_n itself has the wrong error sign to enter this arc, and no other such k attains the opposite endpoint. At q_(n+1) the error has opposite sign and smaller magnitude, so the arc is hit.
+
+If delta_n>0, the prefix equality interval is [0,h-1]. If delta_n<0, time zero is a mismatch and the equality interval is [1,h-1]. Their debts b-2a-q_n are respectively
+
+    q_(n+1)-q_n-1,    q_(n+1)-q_n-3.
+
+Both are at least q_(n-1)-3. Infinitely many even p_n therefore produce unbounded debt. Condition (1) forces all sufficiently late p_n to be odd. The numerator recurrence then forces every sufficiently late a_(n+1) to be even.
+
+**Obstruction from large coefficients.** Put d=|delta_n| and a=a_(n+1)>=3. Write |delta_(n-1)|=(a+gamma)*d with 0<gamma<1. For large n, the period 2q_n has signed even-integer error 2delta_n and mismatch arc of length 2d. Its first positive visit is
+
+    h=(a-1)*q_n+q_(n-1).
+
+Here is an explicit first-hit justification. Expand any integer pair (p,k) in the unimodular basis (p_n,q_n),(p_(n-1),q_(n-1)), with coefficients m,l. An error of the sign opposite delta_n and magnitude less than 2d, which is less than |delta_(n-1)|, requires m,l>0: opposite coefficient signs add error magnitudes, and a zero coefficient is either of the wrong sign or too large. If k<h, then m<=a-2. Its opposite-sign error has magnitude
+
+    l*|delta_(n-1)|-m*d >= (2+gamma)*d > 2d.
+
+Thus no earlier positive visit is possible. At h, m=a-1 and l=1 give the required opposite error (1+gamma)*d<2d. As before the initial equality interval starts at zero or one, according to the sign of delta_n. Its debt for period 2q_n is
+
+    (a-3)*q_n+q_(n-1)-1, or
+    (a-3)*q_n+q_(n-1)-3.
+
+These tend to infinity along any infinite set of coefficients at least three. Condition (1) therefore forces eventually a_n<=2. Combined with eventual evenness from the numerator obstruction, it forces eventually a_n=2. This proves (1) implies (2), with explicit violating intervals whenever either obstruction occurs infinitely often.
+
+**Converse: finite exceptions cost only a finite constant.** Assume (2), put r=sqrt(2)-1, and take n sufficiently late. Then the exact error ratios and recurrence are
+
+    |delta_(n-1)|=(2+r)*|delta_n|,
+    |delta_(n+1)|=r*|delta_n|,
+    q_(n+1)=2q_n+q_(n-1).
+
+The even-numerator mediants have denominator B_n=q_n+q_(n-1) and numerator A_n=(p_n+p_(n-1))/2. They approximate alpha=beta/2 with alternating errors D_n=(delta_n+delta_(n-1))/2, whose successive magnitude ratio is r. Consecutive pairs (A_n,B_n) are unimodular, as direct substitution gives determinant of absolute value one; their denominators satisfy the same tail-two recurrence. Moreover
+
+    B_n*|D_n| = 1/(B_(n+1)/B_n+r)
+                -> 1/(2*sqrt(2)) < 1/2.
+
+Legendre's criterion makes them genuine alpha convergents for all sufficiently late n. They are consecutive: their errors have opposite signs, whereas a skipped even number of convergent steps has the same sign, and a skipped odd number of at least three has determinant of magnitude at least two. Thus alpha also has an eventual continued-fraction tail of twos. Its late same-sign error records are its convergents and intervening mediants, by G143's unimodular record argument. Their beta periods are B_n and B_n+B_(n-1)=2q_n. There are only finitely many earlier record periods.
+
+For every sufficiently late B_n or 2q_n, G143's entire mesh and first-hit argument applies verbatim with the displayed error ratios: a q_(n+1)-point orbit mesh has largest gap (1+r)*|delta_n|; no positive arc visit precedes q_n; the mediant visits provide the required first-hit upper bound. Consequently every repeat at these candidate periods satisfies b<2a+q, without any assumption on the finite continued-fraction prefix. Same-sign mismatch-interval inclusion reduces all other late periods to these records.
+
+Each of the finitely many earlier record periods has a nonempty mismatch arc. Irrational rotation has a finite orbit mesh finer than that arc, so every translate of a sufficiently long fixed block hits it. Its equality runs therefore have bounded length, and its repeat debt has a finite upper bound independent of a. Taking the maximum of these finitely many bounds and zero supplies C. This proves (2) implies (1).
+
+**Unexpected parity controls and limits.** The tail-two angle beta=sqrt(2)-1 fails the criterion: it has infinitely many even convergent numerators. Already the convergent 2/5, followed by 5/12, gives a period-5 equality on [0,11] of debt 6. Thus being in the silver quadratic field or having a tail of twos alone is insufficient. Conversely beta=[0;1,1,4,4,...] has eventually all odd numerators but fails by the doubled-period obstruction. These are direct arithmetic controls, not new runs. They distinguish both required conditions from weaker shortcuts.
+
+Every angle satisfying (2) has a finite integer continued-fraction prefix followed by the same infinite tail, so there are countably many and they are quadratic. Their complements and arbitrary phases were not classified here. The wall has a necessary repeat constant determined by its finite left radius, so the theorem excludes all other phase-zero codes as companions. The exceptional class remains unresolved for actual initial-tail support. No finite witness, full right extension, positive-entropy or prize claim follows.

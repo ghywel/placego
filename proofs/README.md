@@ -395,3 +395,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at
   every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition
   test alone cannot rule it out.
+- [The phase-zero half-circle repeat filter has an exact exceptional class](W144-the-phase-zero-half-circle-repeat-filter-has.md):
+  For half-circle rotation codes started exactly at a partition boundary, the repetition test has a precise
+  exceptional class. A code passes with some fixed allowance exactly when its angle's continued fraction eventually
+  consists of twos and its convergent numerators are eventually odd. Outside that countable class, the proof gives
+  repeated intervals whose excess grows without bound. Within it, the test still cannot decide whether a finite Rule
+  30 pattern produces the code. Other starting phases remain open.

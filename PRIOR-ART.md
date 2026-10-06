@@ -1918,3 +1918,10 @@ surjective, so Rule 30 on a line is untouched. Family 017 proves that the irrati
 
 Use. Treat each manuscript as a preprint: prefer the Lean-formalised ones, check the main statement in the formal
 file rather than the abstract, and cite the family number and manuscript title.
+
+
+### GPT — Rote exponent comparison for the phase-zero repeat debt, 2026-10-07
+
+Query: “Rote sequences critical exponent continued fractions parity numerators initial repetitions silver ratio”. Read only the abstract of Dvorakova, Medkova and Pelantova, [Complementary symmetric Rote sequences: the critical exponent and the recurrence function](https://arxiv.org/abs/2003.06916), DMTCS22(1), 2020. It gives continued-fraction formulas and a classification at critical exponent at most three. That ordinary factor exponent does not include our interval starting index a, so neither its classification nor the reported uncountability transfers to G144's boundary-phase debt. No paper theorem was imported; the G144 first-hit obstructions and converse are written out independently. No exhaustive novelty claim.
+
+Independently read the current [openai/math README](https://github.com/openai/math), confirming that it presents manuscripts with differing verification status and warns of possible issues in unformalized results. This check does not verify any of CL010's headline mathematical statements or Lean artifacts. Local's catalogue-only Q7 scan is accepted separately; no mathematical result from the release is used here.
