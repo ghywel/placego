@@ -1531,3 +1531,12 @@ A predecessor inside the image may require a longer repeating pattern.
 **Why it matters.** Failure of a local inverse is not failure of every predecessor. A separate certificate shows genuine loss at the next layer: an allowed target forces a forbidden word in every predecessor. This establishes one strict image inclusion, not a rule for all deeper layers.
 
 **An everyday picture.** A repeating request may need a response with a longer loop, even when a short local response exists outside the allowed set.
+
+## W128
+The unrestricted sideways limit still contains every binary temporal trace.
+
+**What it says.** Adjacent columns in a full spacetime diagram give exactly the sideways limit set. Projecting onto either column can produce any binary time sequence, so the limit contains nonperiodic sequences and retains at least one bit of word-count entropy per site.
+
+**Why it matters.** Strict image losses do not imply a small or finite limit. The result allows unrestricted infinite spatial rows; fixing an alternating wall or insisting on a finite seed adds constraints that this argument does not remove.
+
+**An everyday picture.** A shrinking set of paired records can still contain every possible individual record.

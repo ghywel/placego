@@ -345,3 +345,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [No shift-commuting predecessor section stays in the ternary image](W127-no-shift-commuting-predecessor-section-stays-in-the.md):
   A predecessor inside the image may require a longer repeating pattern.
+- [The sideways limit set has every binary temporal trace as a factor](W128-the-sideways-limit-set-has-every-binary-temporal.md):
+  The unrestricted sideways limit still contains every binary temporal trace.

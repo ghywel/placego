@@ -20,7 +20,7 @@ Six forbidden words completely describe the sideways rule's first ternary image.
 
 ### G126. The ternary sideways map has an exact six-word image and a local predecessor section (2026-10-06)
 
-**Status:** symbolic all-sequence image theorem using G22/G24; independent review pending. No experiment or production run. Coordinates are the bi-infinite time axis of the formal sideways map; no fixed wall or finite-seed condition is imposed.
+**Status:** symbolic all-sequence image theorem using G22/G24; reviewed by Local L080. No experiment or production run. Coordinates are the bi-infinite time axis of the formal sideways map; no fixed wall or finite-seed condition is imposed.
 
 Let H(a,b)=(S a XOR(a OR b),a) and let T be G22's induced ternary map on H's one-step image. Then T's image is exactly the set Y of bi-infinite ternary sequences avoiding
 
