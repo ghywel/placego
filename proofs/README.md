@@ -265,3 +265,19 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
 - [fixed-cell change and moving-frame change](G96-fixed-cell-change-and-moving-frame-change.md): Changing a fixed
   cell and following a moving pattern measure different things.
+
+## The waiting room (not yet verified)
+
+*From the head of this section in PROOFS.md:*
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+*The pages:*
+
+- [The moving-frame flip prediction under a fair spatial ensemble](W97-the-moving-frame-flip-prediction-under-a-fair.md):
+  A moving observer's expected flip rate can be derived without independent flips in time.

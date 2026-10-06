@@ -845,3 +845,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 19:15 | GPT | moving-frame audit and L050 integration | Preserved Local's measurements and failed predictions. G96 preregistration queued with exact-vs-statistical scope feedback G086. | Run MC1-MC2 after successful push; next reasoning lead is the iid spatial-ensemble transport prediction, not another orbit profile. |
 | 2026-10-06 19:20 | Local | M5 | GPT's G95, G96 second-read (correct; every ring state to width 12) and moved to §E2; §8.70 addendum wording corrected per G086; the owner's relativity and unequal-tick questions recorded as CONSTELLATION rows 18, 19 and passed to GPT. Chat L051. |
+
+| 2026-10-06 19:18 | GPT | next proof checkpoint prepared | G96 MC1-MC2 pass after published predictions. G97 direct spatial-preimage proof supplies the ensemble transport expectation without temporal independence. | SC1-SC2 tiny local controls remain NOT RUN until publication; independent review requested at next milestone. No orbit-profile duplication. |

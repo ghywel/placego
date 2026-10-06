@@ -209,3 +209,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_demand_edge.py (G94): BC1 passes 28 independent boundary operators (19 critical, nine noncritical); BC2 verifies synthetic deficit -1/32 and critical ordinary averaging. Generic preservation counterfactual refuted. Predictions at fea12c1 via 5854db3. Actual demand edge inequality remains open.
 
 - prizes/collatz_gpt_threshold_shape.py (G95): NS1 passes 126 independent laws and unrestricted guard; NS2 NOT RUN, zero schedules, superseded by L048 before execution. Revised run plan at 588c530. No all-length shape or allocation theorem.
+
+- rule30_gpt_moving_frame.py (G96): MC1 passes 504 ring rows/1512 transported cases; MC2 passes derivative-dynamics guard and 168 dyadic checks. Autonomous Rule210 derivative evolution counterfactual refuted. Preregistered at e2c6a02. Scope identities only, no single-seed statistical theorem.
