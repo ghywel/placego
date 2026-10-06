@@ -27,6 +27,10 @@ CHECKS (GPT's claims at 827e006):
      with the ideal history; with exact flag weights at eps = 1/4, 1/2, 1, every site's disagreement probability is at
      most 1 - (1 - eps)^M (M the deduplicated cone size) and at most eps t^2; the final-tick guard (ring of 5, black
      cell at 2, one right race at site 0 on step 1) makes site 1 differ on step 2.
+  S7 (G104, added 2026-10-06 at 8753ab0): right-reading races: for block widths 1..5, every flag pattern and every
+     three-bit tail, the old bits x_0..x_(w-1) map bijectively onto y_1..y_w. Left-reading races on a fair first row:
+     density 1/2 and adjacent disagreement 1/2 (right cell unflagged) or 3/4 (flagged), so 1/2 + eps/4 with exact
+     weights at eps = 0, 1/4, 1/2, 1 (chains anchored at depth <= 3).
 """
 import random
 from fractions import Fraction as F
@@ -229,4 +233,47 @@ r2 = race_step(r1, [0] * 5, 'R')
 i2 = ideal_step(ideal_step(row))
 check('S6 G103: clean cones agree; disagreement within both bounds (rings 3..5, T <= 2, both directions); final-tick '
       'guard', ok6 and r1 == [1, 1, 1, 1, 0] and r2[1] != i2[1], 'raced step 1 %s' % r1)
+ok7 = True
+for w in range(1, 6):
+    for fl in range(2 ** w):
+        r = {i: (fl >> (i - 1)) & 1 for i in range(1, w + 1)}
+        for tail in range(8):
+            tx = {w: tail & 1, w + 1: (tail >> 1) & 1, w + 2: (tail >> 2) & 1}
+            outs = set()
+            for ob in range(2 ** w):
+                x = dict(tx)
+                for i in range(w):
+                    x[i] = (ob >> i) & 1
+                y = {w + 1: R30(x[w], x[w + 1], x[w + 2])}
+                for i in range(w, 0, -1):
+                    y[i] = R30(x[i - 1], x[i], y[i + 1] if r[i] else x[i + 1])
+                outs.add(tuple(y[i] for i in range(1, w + 1)))
+            ok7 &= len(outs) == 2 ** w
+lefts = {}
+for D in range(0, 4):
+    # sites -(D+1) .. 3 old; target pair (1, 2); flags at sites 1-D .. 2 (site 2 is the pair's right cell)
+    sites = list(range(-(D + 1), 4))
+    flag_sites = list(range(1 - D, 3))
+    for e in (F(0), F(1, 4), F(1, 2), F(1)):
+        dens = F(0)
+        dis = F(0)
+        for xw in range(2 ** len(sites)):
+            x = {sites[k]: (xw >> k) & 1 for k in range(len(sites))}
+            for fw in range(2 ** len(flag_sites)):
+                r = {flag_sites[k]: (fw >> k) & 1 for k in range(len(flag_sites))}
+                r[1 - D] = 0                         # anchor: the chain's leftmost site reads an old bit
+                nf = sum(r[k] for k in flag_sites)
+                wt = e ** nf * (1 - e) ** (len(flag_sites) - 1 - nf) if True else 0
+                if (fw & 1):                          # anchored site forced unflagged: skip the flagged half
+                    continue
+                y = {}
+                for i in range(1 - D, 3):
+                    y[i] = R30(y[i - 1] if r[i] and (i - 1) in y else x[i - 1], x[i], x[i + 1])
+                dens += wt * y[1]
+                dis += wt * (y[1] ^ y[2])
+        tot = 2 ** len(sites)
+        lefts[(D, e)] = (dens / tot, dis / tot)
+ok7 &= all(v[0] == F(1, 2) and v[1] == F(1, 2) + e / 4 for (D, e), v in lefts.items() if D >= 1)
+check('S7 G104: right-reading block bijection (widths <= 5); left first-row density 1/2, pairs 1/2 + eps/4', ok7,
+      'depth 3: %s' % {str(e): str(lefts[(3, e)][1]) for e in (F(0), F(1, 4), F(1, 2), F(1))})
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

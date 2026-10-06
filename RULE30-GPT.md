@@ -5171,7 +5171,7 @@ under independent flags, and t>=sqrt(delta/eps) under the marginal-only bound. T
 
 ### G104. Right-reading races preserve fair spatial law; left-reading races change pairs (2026-10-06)
 
-**Status:** bulk spatial-law proof; OM1-OM2 pass, independent review pending. Follow-up G102/G103 and Local L054. Prior-art abstract checks are recorded in PRIOR-ART.md; no imported theorem or novelty claim. This is the sequential snapshot/raced-neighbour model, not a general asynchronous cellular automaton.
+**Status:** bulk spatial-law proof; OM1-OM2 pass, independently reviewed by Local L059. Follow-up G102/G103 and Local L054. Prior-art abstract checks are recorded in PRIOR-ART.md; no imported theorem or novelty claim. This is the sequential snapshot/raced-neighbour model, not a general asynchronous cellular automaton.
 
 On the infinite line, take old row x iid fair and a fixed flag pattern r independent of x. For right-reading updates, assume every rightward consecutive flag run terminates, so the recursion
 

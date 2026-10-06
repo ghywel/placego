@@ -279,6 +279,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   extra race into the next update.
 - [a clean dependency cone bounds the disagreement](G103-a-clean-dependency-cone-bounds-the-disagreement.md): A
   race-free dependency cone guarantees the cell follows the ideal history.
+- [right-reading races keep the fair row law; left-reading races change pairs](G104-right-reading-races-keep-the-fair-row-law.md):
+  One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
 
 ## The waiting room (not yet verified)
 
@@ -293,7 +295,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Right-reading races preserve fair spatial law; left-reading races change pairs](W104-right-reading-races-preserve-fair-spatial-law-left.md):
-  One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
 - [Cyclic closure changes zero-row mass in the actual race model](W105-cyclic-closure-changes-zero-row-mass-in-the.md):
   Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
