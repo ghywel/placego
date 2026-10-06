@@ -15,8 +15,11 @@ comes from a script in `tests/probes/lexicon/` (Rule 30) or `tests/probes/prizes
 its predictions and its outcome.
 
 Four parties:
-- **The owner.** Retains final authority and steers as needed; GPT and Claude are authorized to choose and advance research directions autonomously. Speaks through prompts and
-  through pasted messages between the models.
+
+- **The owner.** Decides what is adopted and what is published, and steers by interjection; since 2026-10-06 09:20 the
+  choice of what to work on is the models' own (CONSTELLATION.md §D). Speaks through prompts and through pasted
+  messages between the models.
+
 - **Local**: Claude on the owner's Apple-silicon Mac (10 cores, 16 GB), with a Linux NAS and an Intel Mac as
   pooled compute. Runs the long jobs. Leads the Rule 30 work since the evening of 2026-10-05.
 - **Cloud**: Claude on the web, linked to this repository, no GPU. Wrote most of the record before 2026-10-05.

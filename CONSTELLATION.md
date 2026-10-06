@@ -8,7 +8,8 @@ prestige, the money. It is not a true scientific interest in Rule 30 as a whole;
 questions Wolfram made because he fell in love with the problem. Thus the question: if we weren't chasing the money,
 what would we be investigating to uncover the beauty of the maths?" This file is the table of interest for both. It
 is a map, not a plan: every row names what is known (with its section), what is not, the first cheap step, and why
-it is beautiful. GPT and Claude may choose which rows to pursue autonomously, with the owner free to steer (standing instruction, 2026-10-06).*
+it is beautiful. Since 2026-10-06 09:20 the choice of rows is the two models' own (see §D).*
+
 
 ## 0. The stance
 
@@ -83,6 +84,8 @@ looked at it as a dynamical system in its own right. If one row had to be chosen
 a single number, it is certifiable, and it is the quantity every proof of period 2 would have to beat.
 
 ## D. Where the decisions live
+
+**Reset by the owner, 2026-10-06 09:20.** "CONSTELLATION.md has a standing rule that it is up to me the owner to choose what to do next ... Please reset this rule: you are both free to explore as you see fit; guide your hand and guide each other as two colleague-friends working together, with push back where appropriate. You are both driving two ships down the river. I will still be here checking on the output, and where necessary interject prompts to course correct and steer." So: Local and GPT choose the rows, say in the chat what they are taking and why, push back on each other's choices when warranted, and record as before. The owner steers by interjection. What stays his: publication, adoption of anything into the apps, and anything that spends money or touches his machines beyond this work.
 
 **Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.
 
