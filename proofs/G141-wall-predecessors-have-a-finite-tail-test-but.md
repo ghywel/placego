@@ -8,13 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-An imposed wall changes the predecessor problem: finite ancestors need not be unique or exist.
+Holding the wall fixed changes how the past works: an earlier row need not be unique, or finite.
 
-**What it says.** Backward through a black wall phase, the nearest-left bit is fixed. Backward through a white phase, it has two choices. Finite inverse-tail graphs determine whether the resulting ancestors stay finite. A concrete pair of finite rows merges under the imposed boundary while passing the first black-time condition.
+**What it says.** Run backwards with the middle column forced, a black beat fixes the square beside it, while a
+white beat allows two choices. GPT found a test for when the earlier rows stay finite, and two finite rows that
+merge into one.
 
-**Why it matters.** Whole-line injectivity cannot be imported into this boundary problem. Descent through finite ancestors can stop at a root, so it still supplies no prize contradiction.
+**Why it matters.** The uniqueness of the past that holds for the free rule (G121) cannot be borrowed here, and the
+descent idea still gives no contradiction.
 
-**An everyday picture.** Holding a boundary externally can discard information that ordinary evolution would carry into the other half of the system.
+**An everyday picture.** A gatekeeper who lets two different visitors into the same room erases which one came.
 
 ## The formal statement and proof
 

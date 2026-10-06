@@ -8,13 +8,17 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-A root's backward tails must have spatial periods that grow without bound.
+Run a root backwards for ever, and the repeating pattern on its far left keeps getting longer.
 
-**What it says.** The farther back we follow a nonzero finite root's unique history, the longer the repeating patterns far to the left must become. Their periods form a chain in which each divides the next, with infinitely many increases.
+**What it says.** Rule 30 can be run backwards in exactly one way if rows may stretch endlessly to the left (G122).
+Doing that from a root, each earlier row repeats far to the left with some period, and the periods keep growing,
+each a multiple of the last, without limit.
 
-**Why it matters.** A repeating row with a fixed period has only finitely many states. It cannot take arbitrarily many steps to reach zero for the first time. This rules out a uniformly bounded family of ancestor patterns, but supplies no contradiction to a column that eventually alternates.
+**Why it matters.** It closes a hoped-for shortcut, that a seed's backward history stays simple. It holds for every
+root, so it cannot single out a counterexample.
 
-**An everyday picture.** A clock with finitely many states cannot postpone its first stop arbitrarily long.
+**An everyday picture.** Rewinding a film further and further shows ever longer repeating wallpaper at its edge,
+never one fixed pattern.
 
 ## The formal statement and proof
 

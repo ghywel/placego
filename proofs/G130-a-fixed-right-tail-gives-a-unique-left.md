@@ -8,13 +8,16 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-Every wall has one forced left seed once the initial right tail is fixed.
+Fix the seed's right part, and any wall forces exactly one left part, though usually an infinite one.
 
-**What it says.** Successive left-permutive inversion gives a unique infinite left row for any prescribed temporal wall and any fixed initial right tail. Even a right tail of zeros can realize every wall if infinite left support is allowed.
+**What it says.** Reading Rule 30 backwards (the crossword quirk) fills in the left part uniquely from the requested
+middle column and any chosen right part. Even an all-white right part works, if the left part may be infinite.
 
-**Why it matters.** A finite global seed exists exactly when some finite right-tail choice gives an eventually-zero forced left row. Arbitrarily long finite-prefix realizations can instead require growing left support; they do not settle this condition.
+**Why it matters.** So a finite seed exists exactly when some finite right part makes the forced left part turn
+white for good. That is the precise target.
 
-**An everyday picture.** Fixing one half of the starting picture determines the other half from the requested movie, but the determined half may need an infinite canvas.
+**An everyday picture.** Given the film and one half of the opening frame, the other half is fixed, but it may need
+an endless canvas.
 
 ## The formal statement and proof
 

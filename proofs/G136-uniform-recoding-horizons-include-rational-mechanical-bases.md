@@ -8,13 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
+Fixed-window recodings and rational angles obey the same spacing limit, as long as the window stays bounded.
 
-**What it says.** A code that reads a fixed finite block of a mechanical word cannot evade the repetition obstruction. Rational angles are included by finite-prefix approximation. Resetting the code, phase and angle between pieces still requires corrections no farther apart than a geometric bound, provided the reading widths stay bounded.
+**What it says.** Reading a fixed window of a rotation pattern, or using a rational angle, still needs corrections
+at least at a geometric rate, even with resets. The window must stay bounded: wide enough windows can imitate
+anything.
 
-**Why it matters.** This reaches recoded and orbit-endpoint reset companions. The window bound is essential: increasingly wide recodings can imitate any selected finite binary prefix. General companions and positive entropy remain open.
+**Why it matters.** It maps the edge of the method: bounded reading windows are essential.
 
-**An everyday picture.** Reading several neighboring symbols adds a fixed allowance. Increasing that reading window indefinitely changes the problem.
+**An everyday picture.** Through a fixed keyhole you see the same repeats; widen the keyhole without limit and you
+can see anything.
 
 ## The formal statement and proof
 

@@ -8,13 +8,14 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
+The same holds for every rotation angle whose continued-fraction digits stay bounded.
 
-**What it says.** A finite-left companion cannot track such a Sturmian code for an arbitrarily long interval relative to the current time and initial radius. Corrections with unbounded successive spacing ratios therefore cannot maintain the alternating wall.
+**What it says.** G133's spacing limit extends from the golden ratio to every irrational angle of "bounded type",
+whose continued-fraction digits never grow large.
 
-**Why it matters.** This excludes sparse kicked codes across a larger family of irrational angles. It also makes the finite-offset step explicit. Unbounded-type angles, positive entropy and the measured rational wheel remain open.
+**Why it matters.** A larger family of kicked patterns is excluded.
 
-**An everyday picture.** For these rotations, the repeated patterns grow at a controlled rate, so a correction cannot postpone the next correction indefinitely.
+**An everyday picture.** The same rule for every top that wobbles at a steadily irrational rate.
 
 ## The formal statement and proof
 

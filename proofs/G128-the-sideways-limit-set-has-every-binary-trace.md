@@ -8,13 +8,15 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-The unrestricted sideways limit still contains every binary temporal trace.
+However many sideways steps you take, every possible sequence of black and white still appears in some column.
 
-**What it says.** Adjacent columns in a full spacetime diagram give exactly the sideways limit set. Projecting onto either column can produce any binary time sequence, so the limit contains nonperiodic sequences and retains at least one bit of word-count entropy per site.
+**What it says.** The patterns that survive every sideways step are exactly the pairs of neighbouring columns in
+complete Rule 30 histories, and either column of such a pair can be any sequence at all.
 
-**Why it matters.** Strict image losses do not imply a small or finite limit. The result allows unrestricted infinite spatial rows; fixing an alternating wall or insisting on a finite seed adds constraints that this argument does not remove.
+**Why it matters.** It closes a broad route: narrowing by sideways steps alone can never rule out a blinking column.
+Any proof must use the blinking wall itself or the finiteness of the seed.
 
-**An everyday picture.** A shrinking set of paired records can still contain every possible individual record.
+**An everyday picture.** A sieve that, however often you shake it, still lets every single grain through on its own.
 
 ## The formal statement and proof
 

@@ -8,7 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The question of whether any finite starting pattern works is still open.
+A finite seed that kept the middle blinking would still have rows approaching an infinite pattern.
+
+**What it says.** Its edge moves outward every tick, so its rows cannot stay inside any bounded family, and some
+sequence of them must approach an infinite pattern.
+
+**Why it matters.** Finding an infinite limit therefore does not refute a finite seed, a mistake the record now
+guards against.
+
+**An everyday picture.** Growing ripples can look more and more like one endless straight wave, though each ripple
+is finite.
 
 ## The formal statement and proof
 

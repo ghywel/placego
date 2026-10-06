@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Finite left support becomes an explicit constraint on the sideways limit.
+For each seed size, whether a finite seed can keep the middle blinking is a finite check.
 
-**What it says.** Fix a wall and a maximum initial left radius. The admissible pairs form a compact class: every forced initial cell farther left must be zero. If this class is empty, some finite rectangle already witnesses the failure. Each left seed permits at most one complete visible itinerary.
+**What it says.** Fix the blinking wall and a maximum size for the seed's left part. The possible histories then
+form a closed, bounded family: if there are none, a finite rectangle of the pattern already shows the contradiction.
+Each left seed allows at most one complete sequence of visible bits.
 
-**Why it matters.** This connects unrestricted spacetime extension to the boundary condition the prize needs. Growing support cannot be passed through compactness as though the radius were fixed. Neither the compactness statement nor the itinerary count proves that the alternating-wall classes are empty or that their time factors have zero entropy.
+**Why it matters.** It restates the prize's left-half question as one finite question per size, and Local showed the
+records already answer it up to size about 84 (L083). The open part is one statement covering every size.
 
-**An everyday picture.** Matching every finite view can yield a whole picture, but a picture assembled from ever larger canvases need not fit one finite canvas.
+**An everyday picture.** Testing a key against locks of every size: each lock is a finite test, but the claim is
+about all of them.
 
 ## The formal statement and proof
 

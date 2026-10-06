@@ -8,13 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
+A pattern that is black only at the powers of two passes every repeat test; powers of three fail.
 
-**What it says.** The word with ones exactly at powers of two satisfies every necessary repetition inequality and has only linearly many different words of each length. Replacing two by any integer at least three creates zero runs that violate the inequality.
+**What it says.** The sequence that is black exactly at ticks 1, 2, 4, 8, 16, ... passes every repeat test the
+record requires, and is about as simple as a never-repeating pattern can be. Using powers of 3 or more leaves white
+runs too long, and fails.
 
-**Why it matters.** The repetition condition excludes some geometric defect schedules, but cannot by itself prove positive entropy or exclude every sparse one. Passing the condition is not a Rule 30 realization.
+**Why it matters.** It shows the limit of the repeat test: it cannot by itself rule out every sparse pattern.
+Passing the test does not mean Rule 30 can produce it.
 
-**An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.
+**An everyday picture.** A filter that turns away some impostors and lets one through, which still faces every other
+check.
 
 ## The formal statement and proof
 

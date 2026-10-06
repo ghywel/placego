@@ -8,7 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-For half-circle rotation codes started exactly at a partition boundary, the repetition test has a precise exceptional class. A code passes with some fixed allowance exactly when its angle's continued fraction eventually consists of twos and its convergent numerators are eventually odd. Outside that countable class, the proof gives repeated intervals whose excess grows without bound. Within it, the test still cannot decide whether a finite Rule 30 pattern produces the code. Other starting phases remain open.
+For half-dial codes started at the dial's boundary, exactly which angles pass the repeat test is now known.
+
+**What it says.** Such a code passes with a fixed allowance exactly when the angle's continued-fraction digits are
+eventually all 2 and a related sequence of numerators is eventually odd. Every other angle fails, with an excess
+that grows without bound.
+
+**Why it matters.** It turns a family of open cases into a small, precise exceptional class, which still needs the
+wall's own equations.
+
+**An everyday picture.** A lock that opens only for keys whose teeth eventually all have the same height.
 
 ## The formal statement and proof
 

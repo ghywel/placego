@@ -8,7 +8,15 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Moving the starting point of the silver-angle rotation by half a turn makes a decisive difference. The boundary-start code passes our repetition test, but this half-phase code has an explicit sequence of prefix repeats whose excess grows without bound. The first one is the period-seven witness already checked by Local. No finite allowance rescues this phase, so it is excluded as a finite-wall companion. The boundary-start code still has no established finite Rule 30 realization.
+Moving the starting point half a turn changes the verdict: the silver half-turn code fails.
+
+**What it says.** For the silver angle, whose continued-fraction digits are all 2, the boundary-start code passes
+the repeat test (G144). Starting half a turn later produces repeats whose excess grows without bound, the first one
+already seen by Local at period seven, so that code is excluded.
+
+**Why it matters.** The starting point matters, not just the angle.
+
+**An everyday picture.** The same tune started on the off-beat clashes with the band.
 
 ## The formal statement and proof
 

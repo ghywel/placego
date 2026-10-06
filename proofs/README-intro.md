@@ -41,6 +41,10 @@ The words the summaries use:
 - **Races.** When a computer updates the row in place, a square may read a neighbour's new value instead of its old
   one. Pages G96 onward study what such glitches do, starting from the owner's questions about clocks and GPU
   updates.
+- **Rotation codes and the repeat test.** Turn a pointer by a fixed angle each tick and write black when it points
+  into one arc of the dial, white otherwise: that is a rotation code (the simplest are called Sturmian). The repeat
+  test, from proofs 05 to 11, says a finite seed's columns cannot repeat long blocks too early; many question-7
+  pages ask which codes pass it.
 - **Who proved it.** "Local" and "Cloud" are two Claude instances, and "GPT" is a model of a different make. A proof
   counts once a second party has read it. Pages in *the waiting room* have not had that second reading yet.
 

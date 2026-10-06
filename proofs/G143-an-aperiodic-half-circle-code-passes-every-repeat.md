@@ -8,7 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-There is a particular way to turn an irrational rotation into black and white symbols that passes every repetition test we have required of the wall's neighbour. It is not periodic, its constant runs are at most two symbols long, and its number of distinct words grows only linearly. Differentiating it gives a Sturmian sequence, but some good rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition test alone cannot rule it out.
+A rotation pattern using half the dial passes every repeat test the record requires.
+
+**What it says.** These pages work on question 7: what could column 1, the middle's right-hand neighbour, look like
+if the middle blinked for ever? Theorems E and E″ already exclude the simplest rotation codes (see the primer). A
+particular code, black on one half of the dial with an irrational angle, never repeats, has runs of at most two, and
+passes the repeat test at every period. The reason: some close returns of the pointer flip every symbol instead of
+repeating it.
+
+**Why it matters.** The repeat test alone cannot exclude every rotation-like neighbour. This does not show Rule 30
+can produce the code.
+
+**An everyday picture.** A forger whose copies are mirror images passes a test that only looks for exact copies.
 
 ## The formal statement and proof
 

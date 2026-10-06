@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Taking acceleration, jerk or another fixed order of XOR temporal difference does not change a binary trace’s word-count entropy: the difference block loses at most its first few input bits. These fields can still expose particular patterns, such as whether a good return repeats or flips the symbols. But quiet temporal differences do not establish a finite spatial tail: the stationary checkerboard has zero differences at every depth and infinitely many black cells. Ordinary signed differences and XOR differences also have different meanings.
+The "acceleration" of a pattern, or any fixed-order change, keeps its variety and cannot prove a seed finite.
+
+**What it says.** The change from tick to tick, the change of that change, and so on (the owner's velocity and
+acceleration question, C.8) keep a pattern's variety the same, losing only its first few bits. They can expose
+particular features, such as whether a near-repeat repeats or flips, but quiet changes do not mean a finite seed:
+the endless checkerboard has none.
+
+**Why it matters.** It closes a measurement shortcut cleanly.
+
+**An everyday picture.** A car cruising at a steady speed shows zero acceleration, which says nothing about how long
+the road is.
 
 ## The formal statement and proof
 

@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through W122 (2026-10-06); entries after it may still be drafts.*
+batches. Plain-words pass done through G148 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -1523,216 +1523,319 @@ exit says anything about the blinking middle column is still open. It has not ye
 striped field.
 
 ## G123
-A root's backward tails must have spatial periods that grow without bound.
+Run a root backwards for ever, and the repeating pattern on its far left keeps getting longer.
 
-**What it says.** The farther back we follow a nonzero finite root's unique history, the longer the repeating patterns far to the left must become. Their periods form a chain in which each divides the next, with infinitely many increases.
+**What it says.** Rule 30 can be run backwards in exactly one way if rows may stretch endlessly to the left (G122).
+Doing that from a root, each earlier row repeats far to the left with some period, and the periods keep growing,
+each a multiple of the last, without limit.
 
-**Why it matters.** A repeating row with a fixed period has only finitely many states. It cannot take arbitrarily many steps to reach zero for the first time. This rules out a uniformly bounded family of ancestor patterns, but supplies no contradiction to a column that eventually alternates.
+**Why it matters.** It closes a hoped-for shortcut, that a seed's backward history stays simple. It holds for every
+root, so it cannot single out a counterexample.
 
-**An everyday picture.** A clock with finitely many states cannot postpone its first stop arbitrarily long.
+**An everyday picture.** Rewinding a film further and further shows ever longer repeating wallpaper at its edge,
+never one fixed pattern.
 
 ## G124
-Periodic rows that fade completely have tightly restricted repeating lengths.
+A repeating row that eventually fades to all white can only repeat every 1, 3, 6, 12, 24, ... squares.
 
-**What it says.** If a spatially repeating Rule 30 row eventually becomes all-zero, its shortest repeating block has length one, or three times a power of two. Every such length occurs.
+**What it says.** If a row repeats across space and Rule 30 eventually turns it entirely white, its shortest
+repeating block is 1 square long, or three times a power of two. Every such length occurs.
 
-**Why it matters.** Once the output contains both colors, a repeating predecessor can keep its period or double it. The constant-one row has the special period-three predecessors that start this chain. This classifies one family of spatial patterns, but does not exclude an eventually alternating temporal column.
+**Why it matters.** It is a clean classification of the patterns that die out completely: their loop lengths start
+at three and double. It does not touch the blinking middle column.
 
-**An everyday picture.** Following a repeating pattern backward can lengthen its loop by doubling, after one initial loop of length three.
+**An everyday picture.** A note and its octaves: start at three and keep doubling.
 
 ## G125
-Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
+The sideways rule's repeating patterns are exactly Rule 30's repeating patterns on a ring.
 
-**What it says.** A finite cycle of the sideways map closes the columns into a spatial ring. Its time tracks must repeat, and its starting ring row must already lie on a temporal cycle.
+**What it says.** The sideways rule reads Rule 30 along time instead of across space, turning pairs of columns into
+sequences of three symbols (CONSTELLATION row 5). A pattern that repeats in that view is the same thing as a ring of
+squares whose row comes back to itself in time.
 
-**Why it matters.** This identifies all sideways periodic points through finite-ring recurrence. A row that is merely heading toward a cycle does not qualify, because the sideways construction needs a consistent infinite past as well as a future. The correspondence supplies no restriction on nonperiodic sideways orbits.
+**Why it matters.** It hands every repeating sideways pattern to the ring census, which already lists them all for
+rings of up to 29 squares, with no new computation.
 
-**An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
+**An everyday picture.** A strip of wallpaper that repeats sideways can be rolled into a cylinder, provided the
+pattern also matches all the way through time.
 
 ## G126
-Six forbidden words completely describe the sideways rule's first ternary image.
+One sideways step can produce exactly the sequences that avoid six short forbidden words.
 
-**What it says.** A ternary sequence has a predecessor exactly when it avoids six short words. A local construction produces a predecessor for every allowed sequence.
+**What it says.** The sideways rule reads Rule 30 along time instead of across space, turning pairs of columns into
+sequences of three symbols (CONSTELLATION row 5). GPT found the complete list of what one step can produce: every
+sequence that avoids six particular short words. A simple recipe builds an input for every allowed output.
 
-**Why it matters.** The old forbidden words were only a necessary test. This supplies both necessity and sufficiency, including nonperiodic sequences, while showing that the image still contains many freely chosen patterns. It does not describe the deeper images or enforce a prize problem's wall.
+**Why it matters.** It completes an earlier partial list. It still leaves plenty of freedom, so on its own it does
+not constrain the prize's column.
 
-**An everyday picture.** A short checklist now determines whether a whole sequence can pass through one stage, but later stages may impose more rules.
+**An everyday picture.** A spellchecker with six banned words: anything else can be typed.
 
 ## G127
-A predecessor inside the image may require a longer repeating pattern.
+A second sideways step loses more sequences, and no simple repeating recipe stays inside the allowed set.
 
-**What it says.** A period-two target has a period-four predecessor inside the image, but no period-two predecessor there. Therefore no predecessor choice that commutes with shifting can stay inside the image for every target.
+**What it says.** Some allowed sequences need an input that repeats less often than they do, so no recipe that
+treats every position alike can work. And one allowed sequence forces a banned word in every possible input, so two
+steps produce strictly less than one.
 
-**Why it matters.** Failure of a local inverse is not failure of every predecessor. A separate certificate shows genuine loss at the next layer: an allowed target forces a forbidden word in every predecessor. This establishes one strict image inclusion, not a rule for all deeper layers.
+**Why it matters.** Each sideways step genuinely narrows what can appear, though this does not say how far the
+narrowing goes.
 
-**An everyday picture.** A repeating request may need a response with a longer loop, even when a short local response exists outside the allowed set.
+**An everyday picture.** Each pass through a sieve removes more grains; it does not say what is left at the end.
 
 ## G128
-The unrestricted sideways limit still contains every binary temporal trace.
+However many sideways steps you take, every possible sequence of black and white still appears in some column.
 
-**What it says.** Adjacent columns in a full spacetime diagram give exactly the sideways limit set. Projecting onto either column can produce any binary time sequence, so the limit contains nonperiodic sequences and retains at least one bit of word-count entropy per site.
+**What it says.** The patterns that survive every sideways step are exactly the pairs of neighbouring columns in
+complete Rule 30 histories, and either column of such a pair can be any sequence at all.
 
-**Why it matters.** Strict image losses do not imply a small or finite limit. The result allows unrestricted infinite spatial rows; fixing an alternating wall or insisting on a finite seed adds constraints that this argument does not remove.
+**Why it matters.** It closes a broad route: narrowing by sideways steps alone can never rule out a blinking column.
+Any proof must use the blinking wall itself or the finiteness of the seed.
 
-**An everyday picture.** A shrinking set of paired records can still contain every possible individual record.
-
+**An everyday picture.** A sieve that, however often you shake it, still lets every single grain through on its own.
 
 ## G129
-Finite left support becomes an explicit constraint on the sideways limit.
+For each seed size, whether a finite seed can keep the middle blinking is a finite check.
 
-**What it says.** Fix a wall and a maximum initial left radius. The admissible pairs form a compact class: every forced initial cell farther left must be zero. If this class is empty, some finite rectangle already witnesses the failure. Each left seed permits at most one complete visible itinerary.
+**What it says.** Fix the blinking wall and a maximum size for the seed's left part. The possible histories then
+form a closed, bounded family: if there are none, a finite rectangle of the pattern already shows the contradiction.
+Each left seed allows at most one complete sequence of visible bits.
 
-**Why it matters.** This connects unrestricted spacetime extension to the boundary condition the prize needs. Growing support cannot be passed through compactness as though the radius were fixed. Neither the compactness statement nor the itinerary count proves that the alternating-wall classes are empty or that their time factors have zero entropy.
+**Why it matters.** It restates the prize's left-half question as one finite question per size, and Local showed the
+records already answer it up to size about 84 (L083). The open part is one statement covering every size.
 
-**An everyday picture.** Matching every finite view can yield a whole picture, but a picture assembled from ever larger canvases need not fit one finite canvas.
-
+**An everyday picture.** Testing a key against locks of every size: each lock is a finite test, but the claim is
+about all of them.
 
 ## G130
-Every wall has one forced left seed once the initial right tail is fixed.
+Fix the seed's right part, and any wall forces exactly one left part, though usually an infinite one.
 
-**What it says.** Successive left-permutive inversion gives a unique infinite left row for any prescribed temporal wall and any fixed initial right tail. Even a right tail of zeros can realize every wall if infinite left support is allowed.
+**What it says.** Reading Rule 30 backwards (the crossword quirk) fills in the left part uniquely from the requested
+middle column and any chosen right part. Even an all-white right part works, if the left part may be infinite.
 
-**Why it matters.** A finite global seed exists exactly when some finite right-tail choice gives an eventually-zero forced left row. Arbitrarily long finite-prefix realizations can instead require growing left support; they do not settle this condition.
+**Why it matters.** So a finite seed exists exactly when some finite right part makes the forced left part turn
+white for good. That is the precise target.
 
-**An everyday picture.** Fixing one half of the starting picture determines the other half from the requested movie, but the determined half may need an infinite canvas.
-
+**An everyday picture.** Given the film and one half of the opening frame, the other half is fixed, but it may need
+an endless canvas.
 
 ## G131
-Finite recoding preserves the repetitions that exclude a Sturmian companion.
+Recoding a rotation pattern through any fixed window still cannot keep the middle blinking.
 
-**What it says.** Any fixed finite block function of a Sturmian sequence is excluded beside the alternating wall with finite left support. This includes rotation codes on several arcs when all endpoints belong to one rotation orbit, for every phase and every irrational angle.
+**What it says.** These pages work on question 7: what could column 1, the middle's right-hand neighbour, look like
+if the middle blinked for ever? Theorems E and E″ already exclude the simplest rotation codes (see the primer). Any
+rule that reads a fixed small window of such a pattern and writes black or white keeps its long repeats, so it is
+excluded too. This covers rotation codes with several arcs when their edges are related in a simple way.
 
-**Why it matters.** The earlier theorem transfers with a fixed repetition margin; no new numerical evidence or assumption of an invertible code is needed. Unrelated endpoint orbits and general aperiodic companions remain open.
+**Why it matters.** It widens Theorem E from one kind of pattern to a large family. Patterns whose arcs are
+unrelated remain open.
 
-**An everyday picture.** Reading a fixed group of neighboring symbols cannot erase a long repeated stretch except at its ends.
-
+**An everyday picture.** A song played through a fixed set of filters still has a repeating chorus.
 
 ## G132
-A higher-dimensional rotation can still expose only one circle coordinate.
+A pointer driven by several hidden wheels is excluded too, when what you see depends on one of them.
 
-**What it says.** The earlier exclusion applies to torus observables that factor through an integer circle projection and an allowed arc code. Rational projected angles give periodic codes; irrational ones inherit the Sturmian obstruction. Endpoint conventions do not change the conclusion.
+**What it says.** Rotations in several dimensions are excluded whenever the black-or-white reading depends on a
+single circular coordinate.
 
-**Why it matters.** This covers some partitions with several original endpoint orbits, such as a circle covering. It leaves genuinely multidimensional partitions and general unrelated endpoints open.
+**Why it matters.** It covers some patterns with several unrelated arcs. Readings that genuinely use several
+dimensions remain open.
 
-**An everyday picture.** Several rotating coordinates can be read through one dial. The exclusion concerns what that dial displays, not how many hidden coordinates are moving.
-
+**An everyday picture.** However many gears turn behind a clock face, if you read only one hand, you see that hand's
+rhythm.
 
 ## G133
-A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
+A golden-ratio rotation pattern cannot be rescued by ever rarer corrections.
 
-**What it says.** The earlier repetition proof gives a uniform linear bound on how long a visible companion can agree with a golden-angle Sturmian word beside a finite left seed. Consecutive disagreement times therefore obey a geometric upper bound; super-geometrically separated flips cannot rescue the code.
+**What it says.** These pages work on question 7: what could column 1, the middle's right-hand neighbour, look like
+if the middle blinked for ever? Theorems E and E″ already exclude the simplest rotation codes (see the primer).
+Suppose column 1 follows the golden-ratio rotation code but is corrected now and then (a "kick"). Each stretch
+between corrections can last at most a fixed multiple of the current time, so corrections must keep coming at least
+at a steady geometric rate; ever sparser ones cannot keep the middle blinking.
 
-**Why it matters.** This reaches a class of kicked, aperiodic companions rather than only exact rotation codes. It gives no positive entropy or kick-density bound, and does not exclude every sparse schedule or the measured rational wheel.
+**Why it matters.** It reaches beyond exact rotation codes to kicked ones, close to the measured wheel (6.1). Kicks
+at a steady geometric rate remain possible, and the wheel's own angle is rational, which G136 takes up.
 
-**An everyday picture.** A correction cannot postpone the next correction arbitrarily far when the underlying repeated stretches grow at a controlled rate.
-
+**An everyday picture.** A wobbling top needs a push every so often, and the gaps between pushes cannot keep
+stretching without limit.
 
 ## G134
-The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
+The same holds for every rotation angle whose continued-fraction digits stay bounded.
 
-**What it says.** A finite-left companion cannot track such a Sturmian code for an arbitrarily long interval relative to the current time and initial radius. Corrections with unbounded successive spacing ratios therefore cannot maintain the alternating wall.
+**What it says.** G133's spacing limit extends from the golden ratio to every irrational angle of "bounded type",
+whose continued-fraction digits never grow large.
 
-**Why it matters.** This excludes sparse kicked codes across a larger family of irrational angles. It also makes the finite-offset step explicit. Unbounded-type angles, positive entropy and the measured rational wheel remain open.
+**Why it matters.** A larger family of kicked patterns is excluded.
 
-**An everyday picture.** For these rotations, the repeated patterns grow at a controlled rate, so a correction cannot postpone the next correction indefinitely.
-
+**An everyday picture.** The same rule for every top that wobbles at a steadily irrational rate.
 
 ## G135
-The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
+And for every irrational angle, even when the angle and starting point change at each correction.
 
-**What it says.** The repetition obstruction itself controls the growth of the scales used in the proof. This gives one uniform bound on an uninterrupted Sturmian-coded stretch, without assuming bounded partial quotients. Phase and angle can both change between pieces, but reset times cannot spread faster than geometrically.
+**What it says.** The limit on uninterrupted stretches holds for every irrational rotation, and survives resets that
+change the angle and the starting point between pieces.
 
-**Why it matters.** This removes the angle restriction from the sparse-correction exclusion and reaches phase-reset codes. Geometric resets, general arc observables and a positive entropy theorem remain open.
+**Why it matters.** It removes the restriction on the angle. Corrections at a steady geometric rate remain possible.
 
-**An everyday picture.** Changing the dial at each reset cannot make the next uninterrupted stretch arbitrarily long relative to the current time.
-
+**An everyday picture.** Swapping the top for a different one at each push does not let you push less often.
 
 ## G136
-Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
+Fixed-window recodings and rational angles obey the same spacing limit, as long as the window stays bounded.
 
-**What it says.** A code that reads a fixed finite block of a mechanical word cannot evade the repetition obstruction. Rational angles are included by finite-prefix approximation. Resetting the code, phase and angle between pieces still requires corrections no farther apart than a geometric bound, provided the reading widths stay bounded.
+**What it says.** Reading a fixed window of a rotation pattern, or using a rational angle, still needs corrections
+at least at a geometric rate, even with resets. The window must stay bounded: wide enough windows can imitate
+anything.
 
-**Why it matters.** This reaches recoded and orbit-endpoint reset companions. The window bound is essential: increasingly wide recodings can imitate any selected finite binary prefix. General companions and positive entropy remain open.
+**Why it matters.** It maps the edge of the method: bounded reading windows are essential.
 
-**An everyday picture.** Reading several neighboring symbols adds a fixed allowance. Increasing that reading window indefinitely changes the problem.
-
+**An everyday picture.** Through a fixed keyhole you see the same repeats; widen the keyhole without limit and you
+can see anything.
 
 ## G137
-Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
+A pattern that is black only at the powers of two passes every repeat test; powers of three fail.
 
-**What it says.** The word with ones exactly at powers of two satisfies every necessary repetition inequality and has only linearly many different words of each length. Replacing two by any integer at least three creates zero runs that violate the inequality.
+**What it says.** The sequence that is black exactly at ticks 1, 2, 4, 8, 16, ... passes every repeat test the
+record requires, and is about as simple as a never-repeating pattern can be. Using powers of 3 or more leaves white
+runs too long, and fails.
 
-**Why it matters.** The repetition condition excludes some geometric defect schedules, but cannot by itself prove positive entropy or exclude every sparse one. Passing the condition is not a Rule 30 realization.
+**Why it matters.** It shows the limit of the repeat test: it cannot by itself rule out every sparse pattern.
+Passing the test does not mean Rule 30 can produce it.
 
-**An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.
-
+**An everyday picture.** A filter that turns away some impostors and lets one through, which still faces every other
+check.
 
 ## G138
-The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
+The first place where Rule 30's "and" matters stays quiet for the powers-of-two pattern, but quiet is not enough.
 
-**What it says.** The first five forced columns have explicit formulas in neighboring visible bits. For the dyadic candidate, the depth-four even-time product is nonzero only once. That does not make the initial row finite: even a constant code with an identically zero product forces an infinite checkerboard tail.
+**What it says.** Reading backwards from the wall, the first five forced columns have exact formulas in column 1's
+visible bits, and the fourth contains Rule 30's first product (C7). For the powers-of-two candidate that product
+fires only once. But even a constant column 1, where it never fires, forces an endless checkerboard to the left.
 
-**Why it matters.** This begins the wall-specific audit beyond repetition tests and records why a low-depth sparse gate is insufficient. An all-depth invariant is still missing.
+**Why it matters.** It starts testing candidates against the wall's own equations rather than repeat tests, and
+records why one shallow check cannot certify a finite seed.
 
 **An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.
 
-
 ## G139
-A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial tail unresolved.
+A column can look perfectly simple over time while the starting row stays unresolved.
 
-**What it says.** The wall inverse reads only a finite forward time window at each fixed depth. Dyadic pulses therefore create defects only in widening neighborhoods before those pulses. Each fixed column, and each fixed finite left window, has zero temporal word-count entropy.
+**What it says.** Each fixed column on the left reads only a limited stretch of the future, so for the powers-of-two
+candidate every fixed column has almost no variety over time. That says nothing about whether the starting row is
+finite, because the depth that matters keeps growing.
 
-**Why it matters.** Irregularity measured across the initial row does not contradict this temporal theorem. The reading window grows with depth, so the theorem cannot establish a finite initial tail or rule one out.
+**Why it matters.** It separates two measurements that are easy to confuse: variety along time at one place, and the
+shape of the starting row across space.
 
-**An everyday picture.** Looking along time at one location and looking across space at one instant measure different patterns.
-
+**An everyday picture.** Watching one window for a year tells you about that window, not about how long the street
+is.
 
 ## G140
-The wall's whole compatible family and a single dyadic orbit have different entropy, and neither settles finite support.
+The whole family of possible histories is rich, one particular history is simple, and neither settles finiteness.
 
-**What it says.** The existing wall coding turns two evolution steps into one shift of the visible word. The full compatible family has entropy one, while the dyadic orbit closure has entropy zero. That orbit closure contains an infinite checkerboard state as a limit.
+**What it says.** All the histories compatible with the wall carry one bit of freedom per step; the powers-of-two
+history carries none. Its limit includes an endless checkerboard, but a finite seed whose edge grows every tick can
+still approach an infinite limit.
 
-**Why it matters.** An infinite-support limit does not rule out a finite starting row when its support bound grows with time. The missing statement still concerns the starting row's spatial tail.
+**Why it matters.** It keeps three questions apart: the variety of the family, the variety of one history, and
+whether its seed is finite.
 
-**An everyday picture.** The variety of an entire library differs from the variety along one story; a limit of growing finite objects need not stay finite.
-
+**An everyday picture.** A library holds every story and one story can be very plain; neither tells you whether a
+book ends.
 
 ## G141
-An imposed wall changes the predecessor problem: finite ancestors need not be unique or exist.
+Holding the wall fixed changes how the past works: an earlier row need not be unique, or finite.
 
-**What it says.** Backward through a black wall phase, the nearest-left bit is fixed. Backward through a white phase, it has two choices. Finite inverse-tail graphs determine whether the resulting ancestors stay finite. A concrete pair of finite rows merges under the imposed boundary while passing the first black-time condition.
+**What it says.** Run backwards with the middle column forced, a black beat fixes the square beside it, while a
+white beat allows two choices. GPT found a test for when the earlier rows stay finite, and two finite rows that
+merge into one.
 
-**Why it matters.** Whole-line injectivity cannot be imported into this boundary problem. Descent through finite ancestors can stop at a root, so it still supplies no prize contradiction.
+**Why it matters.** The uniqueness of the past that holds for the free rule (G121) cannot be borrowed here, and the
+descent idea still gives no contradiction.
 
-**An everyday picture.** Holding a boundary externally can discard information that ordinary evolution would carry into the other half of the system.
-
+**An everyday picture.** A gatekeeper who lets two different visitors into the same room erases which one came.
 
 ## G142
+A finite seed that kept the middle blinking would still have rows approaching an infinite pattern.
 
-If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The question of whether any finite starting pattern works is still open.
+**What it says.** Its edge moves outward every tick, so its rows cannot stay inside any bounded family, and some
+sequence of them must approach an infinite pattern.
 
+**Why it matters.** Finding an infinite limit therefore does not refute a finite seed, a mistake the record now
+guards against.
+
+**An everyday picture.** Growing ripples can look more and more like one endless straight wave, though each ripple
+is finite.
 
 ## G143
+A rotation pattern using half the dial passes every repeat test the record requires.
 
-There is a particular way to turn an irrational rotation into black and white symbols that passes every repetition test we have required of the wall's neighbour. It is not periodic, its constant runs are at most two symbols long, and its number of distinct words grows only linearly. Differentiating it gives a Sturmian sequence, but some good rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition test alone cannot rule it out.
+**What it says.** These pages work on question 7: what could column 1, the middle's right-hand neighbour, look like
+if the middle blinked for ever? Theorems E and E″ already exclude the simplest rotation codes (see the primer). A
+particular code, black on one half of the dial with an irrational angle, never repeats, has runs of at most two, and
+passes the repeat test at every period. The reason: some close returns of the pointer flip every symbol instead of
+repeating it.
 
+**Why it matters.** The repeat test alone cannot exclude every rotation-like neighbour. This does not show Rule 30
+can produce the code.
+
+**An everyday picture.** A forger whose copies are mirror images passes a test that only looks for exact copies.
 
 ## G144
+For half-dial codes started at the dial's boundary, exactly which angles pass the repeat test is now known.
 
-For half-circle rotation codes started exactly at a partition boundary, the repetition test has a precise exceptional class. A code passes with some fixed allowance exactly when its angle's continued fraction eventually consists of twos and its convergent numerators are eventually odd. Outside that countable class, the proof gives repeated intervals whose excess grows without bound. Within it, the test still cannot decide whether a finite Rule 30 pattern produces the code. Other starting phases remain open.
+**What it says.** Such a code passes with a fixed allowance exactly when the angle's continued-fraction digits are
+eventually all 2 and a related sequence of numerators is eventually odd. Every other angle fails, with an excess
+that grows without bound.
+
+**Why it matters.** It turns a family of open cases into a small, precise exceptional class, which still needs the
+wall's own equations.
+
+**An everyday picture.** A lock that opens only for keys whose teeth eventually all have the same height.
 
 ## G145
+Moving the starting point half a turn changes the verdict: the silver half-turn code fails.
 
-Moving the starting point of the silver-angle rotation by half a turn makes a decisive difference. The boundary-start code passes our repetition test, but this half-phase code has an explicit sequence of prefix repeats whose excess grows without bound. The first one is the period-seven witness already checked by Local. No finite allowance rescues this phase, so it is excluded as a finite-wall companion. The boundary-start code still has no established finite Rule 30 realization.
+**What it says.** For the silver angle, whose continued-fraction digits are all 2, the boundary-start code passes
+the repeat test (G144). Starting half a turn later produces repeats whose excess grows without bound, the first one
+already seen by Local at period seven, so that code is excluded.
+
+**Why it matters.** The starting point matters, not just the angle.
+
+**An everyday picture.** The same tune started on the off-beat clashes with the band.
 
 ## G146
+Codes that pass the test can come as close as you like to one that fails.
 
-Every time shift of the passing silver code still passes with some finite allowance. Yet these shifted codes can approach the half-phase code, which fails every finite allowance. The required allowances grow without bound. Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A bound for each word cannot be used as a uniform bound for the whole family.
+**What it says.** Every time-shifted copy of the passing silver code still passes, but needs an ever larger
+allowance, and the shifts approach the failing half-turn code. Their starting rows approach one particular infinite
+row.
+
+**Why it matters.** A bound that holds for each pattern separately cannot be used as one bound for the whole family,
+and approaching an infinite row does not rule out a finite seed whose edge grows.
+
+**An everyday picture.** Each step towards a cliff is safe on its own, yet the steps lead to the edge.
 
 ## G147
+At any one irrational angle, at most countably many starting points could come from a finite seed.
 
-At any fixed irrational angle, only countably many starting phases could produce a finite initial left tail, so almost every phase has an infinite tail. But if even one finite phase exists, time evolution gives a dense orbit of finite phases with growing radii. Each fixed radius allows only finitely many phases. This is why an almost-every-phase result cannot settle the particular boundary-phase code we are investigating. No finite phase has been constructed.
+**What it says.** So almost every starting point is ruled out. But if even one works, time evolution produces a
+dense crowd of them with growing seeds, and each seed size allows only finitely many.
+
+**Why it matters.** This is why an "almost every starting point" result cannot settle the particular code under
+study.
+
+**An everyday picture.** A rule that holds for almost every dart thrown says nothing about the one dart you care
+about.
 
 ## G148
+The "acceleration" of a pattern, or any fixed-order change, keeps its variety and cannot prove a seed finite.
 
-Taking acceleration, jerk or another fixed order of XOR temporal difference does not change a binary trace’s word-count entropy: the difference block loses at most its first few input bits. These fields can still expose particular patterns, such as whether a good return repeats or flips the symbols. But quiet temporal differences do not establish a finite spatial tail: the stationary checkerboard has zero differences at every depth and infinitely many black cells. Ordinary signed differences and XOR differences also have different meanings.
+**What it says.** The change from tick to tick, the change of that change, and so on (the owner's velocity and
+acceleration question, C.8) keep a pattern's variety the same, losing only its first few bits. They can expose
+particular features, such as whether a near-repeat repeats or flips, but quiet changes do not mean a finite seed:
+the endless checkerboard has none.
+
+**Why it matters.** It closes a measurement shortcut cleanly.
+
+**An everyday picture.** A car cruising at a steady speed shows zero acceleration, which says nothing about how long
+the road is.

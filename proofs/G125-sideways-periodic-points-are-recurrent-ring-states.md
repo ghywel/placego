@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
+The sideways rule's repeating patterns are exactly Rule 30's repeating patterns on a ring.
 
-**What it says.** A finite cycle of the sideways map closes the columns into a spatial ring. Its time tracks must repeat, and its starting ring row must already lie on a temporal cycle.
+**What it says.** The sideways rule reads Rule 30 along time instead of across space, turning pairs of columns into
+sequences of three symbols (CONSTELLATION row 5). A pattern that repeats in that view is the same thing as a ring of
+squares whose row comes back to itself in time.
 
-**Why it matters.** This identifies all sideways periodic points through finite-ring recurrence. A row that is merely heading toward a cycle does not qualify, because the sideways construction needs a consistent infinite past as well as a future. The correspondence supplies no restriction on nonperiodic sideways orbits.
+**Why it matters.** It hands every repeating sideways pattern to the ring census, which already lists them all for
+rings of up to 29 squares, with no new computation.
 
-**An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
+**An everyday picture.** A strip of wallpaper that repeats sideways can be rolled into a cylinder, provided the
+pattern also matches all the way through time.
 
 ## The formal statement and proof
 

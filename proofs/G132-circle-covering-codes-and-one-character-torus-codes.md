@@ -8,13 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A higher-dimensional rotation can still expose only one circle coordinate.
+A pointer driven by several hidden wheels is excluded too, when what you see depends on one of them.
 
-**What it says.** The earlier exclusion applies to torus observables that factor through an integer circle projection and an allowed arc code. Rational projected angles give periodic codes; irrational ones inherit the Sturmian obstruction. Endpoint conventions do not change the conclusion.
+**What it says.** Rotations in several dimensions are excluded whenever the black-or-white reading depends on a
+single circular coordinate.
 
-**Why it matters.** This covers some partitions with several original endpoint orbits, such as a circle covering. It leaves genuinely multidimensional partitions and general unrelated endpoints open.
+**Why it matters.** It covers some patterns with several unrelated arcs. Readings that genuinely use several
+dimensions remain open.
 
-**An everyday picture.** Several rotating coordinates can be read through one dial. The exclusion concerns what that dial displays, not how many hidden coordinates are moving.
+**An everyday picture.** However many gears turn behind a clock face, if you read only one hand, you see that hand's
+rhythm.
 
 ## The formal statement and proof
 

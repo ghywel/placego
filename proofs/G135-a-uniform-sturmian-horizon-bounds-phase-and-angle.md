@@ -8,13 +8,14 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
+And for every irrational angle, even when the angle and starting point change at each correction.
 
-**What it says.** The repetition obstruction itself controls the growth of the scales used in the proof. This gives one uniform bound on an uninterrupted Sturmian-coded stretch, without assuming bounded partial quotients. Phase and angle can both change between pieces, but reset times cannot spread faster than geometrically.
+**What it says.** The limit on uninterrupted stretches holds for every irrational rotation, and survives resets that
+change the angle and the starting point between pieces.
 
-**Why it matters.** This removes the angle restriction from the sparse-correction exclusion and reaches phase-reset codes. Geometric resets, general arc observables and a positive entropy theorem remain open.
+**Why it matters.** It removes the restriction on the angle. Corrections at a steady geometric rate remain possible.
 
-**An everyday picture.** Changing the dial at each reset cannot make the next uninterrupted stretch arbitrarily long relative to the current time.
+**An everyday picture.** Swapping the top for a different one at each push does not let you push less often.
 
 ## The formal statement and proof
 

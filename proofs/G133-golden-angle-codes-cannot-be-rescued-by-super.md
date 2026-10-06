@@ -8,13 +8,19 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
+A golden-ratio rotation pattern cannot be rescued by ever rarer corrections.
 
-**What it says.** The earlier repetition proof gives a uniform linear bound on how long a visible companion can agree with a golden-angle Sturmian word beside a finite left seed. Consecutive disagreement times therefore obey a geometric upper bound; super-geometrically separated flips cannot rescue the code.
+**What it says.** These pages work on question 7: what could column 1, the middle's right-hand neighbour, look like
+if the middle blinked for ever? Theorems E and E″ already exclude the simplest rotation codes (see the primer).
+Suppose column 1 follows the golden-ratio rotation code but is corrected now and then (a "kick"). Each stretch
+between corrections can last at most a fixed multiple of the current time, so corrections must keep coming at least
+at a steady geometric rate; ever sparser ones cannot keep the middle blinking.
 
-**Why it matters.** This reaches a class of kicked, aperiodic companions rather than only exact rotation codes. It gives no positive entropy or kick-density bound, and does not exclude every sparse schedule or the measured rational wheel.
+**Why it matters.** It reaches beyond exact rotation codes to kicked ones, close to the measured wheel (6.1). Kicks
+at a steady geometric rate remain possible, and the wheel's own angle is rational, which G136 takes up.
 
-**An everyday picture.** A correction cannot postpone the next correction arbitrarily far when the underlying repeated stretches grow at a controlled rate.
+**An everyday picture.** A wobbling top needs a push every so often, and the gaps between pushes cannot keep
+stretching without limit.
 
 ## The formal statement and proof
 

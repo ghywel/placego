@@ -8,11 +8,14 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The inverse wall equations expose a sparse nonlinear gate, but do not yet control the initial tail.
+The first place where Rule 30's "and" matters stays quiet for the powers-of-two pattern, but quiet is not enough.
 
-**What it says.** The first five forced columns have explicit formulas in neighboring visible bits. For the dyadic candidate, the depth-four even-time product is nonzero only once. That does not make the initial row finite: even a constant code with an identically zero product forces an infinite checkerboard tail.
+**What it says.** Reading backwards from the wall, the first five forced columns have exact formulas in column 1's
+visible bits, and the fourth contains Rule 30's first product (C7). For the powers-of-two candidate that product
+fires only once. But even a constant column 1, where it never fires, forces an endless checkerboard to the left.
 
-**Why it matters.** This begins the wall-specific audit beyond repetition tests and records why a low-depth sparse gate is insufficient. An all-depth invariant is still missing.
+**Why it matters.** It starts testing candidates against the wall's own equations rather than repeat tests, and
+records why one shallow check cannot certify a finite seed.
 
 **An everyday picture.** One quiet gate does not certify that the rest of the circuit is quiet.
 

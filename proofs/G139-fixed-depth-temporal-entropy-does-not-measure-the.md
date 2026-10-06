@@ -8,13 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A sparse temporal input can produce zero temporal entropy at every fixed depth while leaving the spatial initial tail unresolved.
+A column can look perfectly simple over time while the starting row stays unresolved.
 
-**What it says.** The wall inverse reads only a finite forward time window at each fixed depth. Dyadic pulses therefore create defects only in widening neighborhoods before those pulses. Each fixed column, and each fixed finite left window, has zero temporal word-count entropy.
+**What it says.** Each fixed column on the left reads only a limited stretch of the future, so for the powers-of-two
+candidate every fixed column has almost no variety over time. That says nothing about whether the starting row is
+finite, because the depth that matters keeps growing.
 
-**Why it matters.** Irregularity measured across the initial row does not contradict this temporal theorem. The reading window grows with depth, so the theorem cannot establish a finite initial tail or rule one out.
+**Why it matters.** It separates two measurements that are easy to confuse: variety along time at one place, and the
+shape of the starting row across space.
 
-**An everyday picture.** Looking along time at one location and looking across space at one instant measure different patterns.
+**An everyday picture.** Watching one window for a year tells you about that window, not about how long the street
+is.
 
 ## The formal statement and proof
 

@@ -8,13 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A predecessor inside the image may require a longer repeating pattern.
+A second sideways step loses more sequences, and no simple repeating recipe stays inside the allowed set.
 
-**What it says.** A period-two target has a period-four predecessor inside the image, but no period-two predecessor there. Therefore no predecessor choice that commutes with shifting can stay inside the image for every target.
+**What it says.** Some allowed sequences need an input that repeats less often than they do, so no recipe that
+treats every position alike can work. And one allowed sequence forces a banned word in every possible input, so two
+steps produce strictly less than one.
 
-**Why it matters.** Failure of a local inverse is not failure of every predecessor. A separate certificate shows genuine loss at the next layer: an allowed target forces a forbidden word in every predecessor. This establishes one strict image inclusion, not a rule for all deeper layers.
+**Why it matters.** Each sideways step genuinely narrows what can appear, though this does not say how far the
+narrowing goes.
 
-**An everyday picture.** A repeating request may need a response with a longer loop, even when a short local response exists outside the allowed set.
+**An everyday picture.** Each pass through a sieve removes more grains; it does not say what is left at the end.
 
 ## The formal statement and proof
 

@@ -9,7 +9,16 @@ file.*
 
 ## In plain words
 
-At any fixed irrational angle, only countably many starting phases could produce a finite initial left tail, so almost every phase has an infinite tail. But if even one finite phase exists, time evolution gives a dense orbit of finite phases with growing radii. Each fixed radius allows only finitely many phases. This is why an almost-every-phase result cannot settle the particular boundary-phase code we are investigating. No finite phase has been constructed.
+At any one irrational angle, at most countably many starting points could come from a finite seed.
+
+**What it says.** So almost every starting point is ruled out. But if even one works, time evolution produces a
+dense crowd of them with growing seeds, and each seed size allows only finitely many.
+
+**Why it matters.** This is why an "almost every starting point" result cannot settle the particular code under
+study.
+
+**An everyday picture.** A rule that holds for almost every dart thrown says nothing about the one dart you care
+about.
 
 ## The formal statement and proof
 

@@ -8,7 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Every time shift of the passing silver code still passes with some finite allowance. Yet these shifted codes can approach the half-phase code, which fails every finite allowance. The required allowances grow without bound. Under the wall’s exact coding, the corresponding initial rows approach a specific row with infinite support. This does not rule out a finite starting row: its radius would grow at every step, as earlier proofs already require. A bound for each word cannot be used as a uniform bound for the whole family.
+Codes that pass the test can come as close as you like to one that fails.
+
+**What it says.** Every time-shifted copy of the passing silver code still passes, but needs an ever larger
+allowance, and the shifts approach the failing half-turn code. Their starting rows approach one particular infinite
+row.
+
+**Why it matters.** A bound that holds for each pattern separately cannot be used as one bound for the whole family,
+and approaching an infinite row does not rule out a finite seed whose edge grows.
+
+**An everyday picture.** Each step towards a cliff is safe on its own, yet the steps lead to the edge.
 
 ## The formal statement and proof
 

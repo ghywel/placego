@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Finite recoding preserves the repetitions that exclude a Sturmian companion.
+Recoding a rotation pattern through any fixed window still cannot keep the middle blinking.
 
-**What it says.** Any fixed finite block function of a Sturmian sequence is excluded beside the alternating wall with finite left support. This includes rotation codes on several arcs when all endpoints belong to one rotation orbit, for every phase and every irrational angle.
+**What it says.** These pages work on question 7: what could column 1, the middle's right-hand neighbour, look like
+if the middle blinked for ever? Theorems E and E″ already exclude the simplest rotation codes (see the primer). Any
+rule that reads a fixed small window of such a pattern and writes black or white keeps its long repeats, so it is
+excluded too. This covers rotation codes with several arcs when their edges are related in a simple way.
 
-**Why it matters.** The earlier theorem transfers with a fixed repetition margin; no new numerical evidence or assumption of an invertible code is needed. Unrelated endpoint orbits and general aperiodic companions remain open.
+**Why it matters.** It widens Theorem E from one kind of pattern to a large family. Patterns whose arcs are
+unrelated remain open.
 
-**An everyday picture.** Reading a fixed group of neighboring symbols cannot erase a long repeated stretch except at its ends.
+**An everyday picture.** A song played through a fixed set of filters still has a repeating chorus.
 
 ## The formal statement and proof
 

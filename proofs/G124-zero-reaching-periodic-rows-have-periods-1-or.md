@@ -8,13 +8,15 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Periodic rows that fade completely have tightly restricted repeating lengths.
+A repeating row that eventually fades to all white can only repeat every 1, 3, 6, 12, 24, ... squares.
 
-**What it says.** If a spatially repeating Rule 30 row eventually becomes all-zero, its shortest repeating block has length one, or three times a power of two. Every such length occurs.
+**What it says.** If a row repeats across space and Rule 30 eventually turns it entirely white, its shortest
+repeating block is 1 square long, or three times a power of two. Every such length occurs.
 
-**Why it matters.** Once the output contains both colors, a repeating predecessor can keep its period or double it. The constant-one row has the special period-three predecessors that start this chain. This classifies one family of spatial patterns, but does not exclude an eventually alternating temporal column.
+**Why it matters.** It is a clean classification of the patterns that die out completely: their loop lengths start
+at three and double. It does not touch the blinking middle column.
 
-**An everyday picture.** Following a repeating pattern backward can lengthen its loop by doubling, after one initial loop of length three.
+**An everyday picture.** A note and its octaves: start at three and keep doubling.
 
 ## The formal statement and proof
 

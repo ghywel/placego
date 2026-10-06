@@ -8,13 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Six forbidden words completely describe the sideways rule's first ternary image.
+One sideways step can produce exactly the sequences that avoid six short forbidden words.
 
-**What it says.** A ternary sequence has a predecessor exactly when it avoids six short words. A local construction produces a predecessor for every allowed sequence.
+**What it says.** The sideways rule reads Rule 30 along time instead of across space, turning pairs of columns into
+sequences of three symbols (CONSTELLATION row 5). GPT found the complete list of what one step can produce: every
+sequence that avoids six particular short words. A simple recipe builds an input for every allowed output.
 
-**Why it matters.** The old forbidden words were only a necessary test. This supplies both necessity and sufficiency, including nonperiodic sequences, while showing that the image still contains many freely chosen patterns. It does not describe the deeper images or enforce a prize problem's wall.
+**Why it matters.** It completes an earlier partial list. It still leaves plenty of freedom, so on its own it does
+not constrain the prize's column.
 
-**An everyday picture.** A short checklist now determines whether a whole sequence can pass through one stage, but later stages may impose more rules.
+**An everyday picture.** A spellchecker with six banned words: anything else can be typed.
 
 ## The formal statement and proof
 
