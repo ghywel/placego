@@ -69,6 +69,18 @@ bound on the share of zeta zeros on the critical line, reported at 67%. It was c
 formalised in Lean, and it is not a proof of the hypothesis ([TechCrunch, 2026-08-11][tc-rh]; the figure from
 [Live Science][ls-rh]).
 
+*Update, 2026-10-07 (from the repository's README and catalogue, not from reading the proofs).* OpenAI published
+[openai/math](https://github.com/openai/math): 722 manuscripts in 372 families, produced by an unreleased internal
+model posed about 4,000 open problems, on average three hours of thinking each; 162 papers have a Lean formalisation
+of their main result, and the README warns that unformalised results "could have issues". Claims touching this pool,
+none of them a Clay problem itself: every Dirichlet L-function, zeta included, is zero-free for real part above 7/8,
+the quasi-Riemann hypothesis (family 003, with Lean); the rational Hodge conjecture for every complex CM abelian
+variety (032, no Lean); the full Birch and Swinnerton-Dyer formula for curves over the rationals with Selmer corank
+at most one at some prime (002, no Lean); universal computation in forced Navier–Stokes flows (376, with Lean),
+beside the earlier blowup claim; the Unique Games Conjecture (102, with Lean); Erdős's similarity conjecture in its
+geometric and dyadic cases and his higher-dimensional distinct-distances conjecture. Nothing on Rule 30, Collatz,
+Beal, P vs NP, Yang–Mills or Mahler's 3/2 problem.
+
 [ns-pc]: https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_priority_controversy
 [tc-rh]: https://techcrunch.com/2026/08/11/an-unreleased-anthropic-model-made-progress-on-one-of-maths-biggest-unsolved-problems/
 [ls-rh]: https://www.livescience.com/technology/artificial-intelligence/this-is-what-happened-with-claude-and-me-ais-failed-attempt-to-crack-the-riemann-hypothesis-led-mathematician-to-a-breakthrough
