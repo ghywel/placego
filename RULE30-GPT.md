@@ -2875,3 +2875,29 @@ Thus this word meets every positive linear run ceiling with a suitable constant.
 ## G32. Joint affine normalization and the metric gap (2026-10-06)
 
 **Preregistration.** Audit the joint odd/even history via F_m=sum(e_j*2^j/3^(S_(j+1)), j<m), where S counts odd steps. Predict2^m*N_m/3^S_m=N_0+D*F_m. A lower odd density strictly above log(2)/log(3) makes F_m converge over the reals; this alone must not identify that limit with its 2-adic limit. NF1: exact normalization for D1,3,5,9, signed starts -32..32 and m1..32. NF2: the square-zero control's first1..32 bits are each realized by the residue -D*F_m modulo2^m, checking all four D. This is a finite residue assertion, not a single rational realization. Unexpected NF3: rational partial sums a_m=2^m/(2^m+1) converge to1 over the reals and0 2-adically. Counterfactual: convergence in both metrics forces equal limits. Retain fixed -1 as an actual cancellation control. Reuse passed startup checks.
+
+
+### G32 theorem: real growth normalization does not identify the parity inverse
+
+For a fixed positive odd D and actual numerator orbit, let e_j be its parity, S_m=sum(e_j,j<m), A_m=3^S_m/2^m, and F_m as preregistered. Composing either affine branch gives the exact identity
+
+    N_m = A_m*(N_0+D*F_m).
+
+For an abstract binary word, the same formula describes the affine branch composition, but integrality at every step remains a separate condition. Its finite initial numerator residue is -D*F_m modulo2^m. Indeed denominators in F_m are odd; this congruence makes the composed numerator integral, and the parity/residue bijection gives exactly the chosen prefix. The inverse residues are compatible as m increases because F_(m+1)-F_m is divisible by2^m in the odd-denominator ring. Finite residues, however many, do not exhibit one ordinary rational numerator matching all prefixes.
+
+**Real convergence, with an explicit hypothesis.** Suppose liminf S_m/m exceeds log(2)/log(3). Choose d between those two quantities. There is a finite C such that S_m>=d*m-C for all m. Every nonzero summand of F_m is at most3^C*(2/3^d)^j; the ratio is strictly less than1. Thus F_m has a finite real limit F_R. The real normalized coefficient is
+
+    lambda_R = N_0 + D*F_R,
+    N_m/A_m tends to lambda_R over the reals.
+
+If lambda_R is nonzero, N_m eventually has its sign and N_m is asymptotic to lambda_R*A_m. If the odd density also converges to delta, the logarithmic absolute growth rate is delta*log2(3)-1. Cancellation lambda_R=0 must not be dismissed: the actual fixed orbit -1 has F_R=1 and lambda_R=0. No conclusion about escape follows merely from real convergence of F_m.
+
+**The separate 2-adic limit.** The j-th summand has 2-adic valuation at least j (or is zero), so F_m always converges 2-adically to F_2. For an actual integer numerator orbit, the exact identity gives N_0+D*F_m=2^m*N_m/3^S_m, whose 2-adic valuation is at least m. Hence N_0=-D*F_2, an equality in the 2-adic field. It does not imply N_0=-D*F_R. A high-density parity word makes both limits available, not equal. Rationality of the inverse -D*F_2 is the missing realization condition for the square-zero control; the real coefficient cannot replace it.
+
+**Unexpected counterexample to the metric shortcut.** Define a_0=0 and a_m=2^m/(2^m+1) for m>=1. The series with rational terms a_m-a_(m-1) has partial sums a_m. Over the reals, its error from1 is1/(2^m+1), tending to0. Its 2-adic valuation is exactly m, so it tends to0 2-adically. All denominators are odd. This disproves the general implication “convergence in both metrics means the same limit”; it is not a claim that this series is a Collatz inverse.
+
+**Controls.** NF1 passed8320 signed exact normalization identities. NF2 passed128 square-zero prefix residue realizations; each length has its own residue representative, not one exhibited infinite rational orbit. NF3 passed64 exact telescoping/error/valuation controls. The -1 geometric cancellation passed independently. Infinite convergence conclusions follow from the proofs, not these finite counts.
+
+**Prior-art boundary.** The affine composition and inverse series are the established Terras/Bernstein mechanism already used in COLLATZ-PRIZE.md. Read the abstract of [Lopez and Stoll, The 3x+1 Periodicity Conjeture in R (2021)](https://arxiv.org/abs/2101.12747), which claims an exclusion above the critical lower density. This block did not audit its51-page proof or adopt that claim. The project's existing objection about real/2-adic identification is retained; the general counterexample above independently establishes why such an identification would need an additional theorem. No priority claim and no repaired density theorem.
+
+**Outcome/next boundary.** Joint normalization organizes the history but does not close the rational-realization gap. A future proposal must control F_2 or explicitly prove a bridge to F_R; merely showing real convergence, a sign, or an irrational real sum is insufficient. This closes the proposed metric shortcut, not the Collatz lead.

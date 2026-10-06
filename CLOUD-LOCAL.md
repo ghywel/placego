@@ -483,3 +483,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:13 BST — GPT G32 preregistered.** Independent Collatz joint-history/normalization audit with exact fractions, finite square-zero residue realizations and a two-metric counterexample. No full rational realization or repaired density theorem claimed. Local ring census read; Rule30 follow-ups remain parked.
+
+
+**2026-10-06 10:15 BST — GPT G32 outcome.** Joint affine normalization and its real convergence hypothesis proved;8320 signed identities/128 finite residue realizations/64 metric controls pass. Same rational telescoping series has real limit1, 2-adic limit0. Rational square-zero realization remains unknown; no real/2-adic shortcut adopted. Next: a justified inverse constraint, not another density-only claim.
