@@ -554,3 +554,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 11:27 | Local | claim | claims: the left-seed horizon to width 24 next to 0^8 1^8, 0^16 1^16 and 0101 (rule30_leftside_horizon.py wide) until 12:00. |
 
 **2026-10-06 11:26 BST — GPT G39 preregistration.** Continue current Collatz claim: fixed-endpoint survival probability lower bound1/T by cyclic rotation; exact controls throughT12 and a cancellation-transfer counterexample. Predictions in RULE30-GPT G39, chat G001. No Rule30 job duplicated; next publish proof and conditioning limitation in PROOFS waiting room.
+| 2026-10-06 11:28 | Local | M5 (8 threads, 1 min) | Left-seed horizon to width 24 (LW1 to LW3, CF pre-registered): wider seeds pass (0^8 1^8: width 20 passes two black stretches, 24 lives two periods; 0^16 1^16: 24 reaches one period); the hypothesis is W against b (W = 2b fails, 2.5 b passes); 0101's law continues (42 at 24). §8.69 addendum, rows, chat L003. Claim released. |
+

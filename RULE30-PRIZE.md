@@ -4449,3 +4449,13 @@ false for $b = 2, 4$ against the same seeds, which is the "large against the see
 §7 question 2 (B next to the slow walls). Single-party. Reproduction: `python3 tests/probes/lexicon/rule30_leftside_horizon.py 20 100`
 (seconds).
 
+**Addendum (11:28 the same day): wider seeds pass.** Widths 17 to 24 (`wide`; LW1 to LW3 and CF pushed in `13a7b23`
+first; all three blind predictions refuted, the control held). Next to $0^8 1^8$: $H_L = 24, 25, 26, 29, 31, 30, 34,
+36$ for $W = 17$ to $24$: a seed of width 20 passes two consecutive black stretches and one of width 24 lives two full
+periods and four steps more. Next to $0^{16} 1^{16}$: $21, 24, 26, 26, 26, 29, 30, 32$: width 24 reaches exactly one
+period and dies at the second black stretch. So "the wall sets the horizon" (LW3) was wrong; the seed's width
+against the stretch is the whole hypothesis: $W = 2b$ fails and $W = 2.5\,b$ passes at $b = 8$, $W = 1.5\,b$ fails at
+$b = 16$. The theorem to try is therefore: *next to $0^a 1^b$, no left seed of width $W < 2b$ (or thereabouts) can
+hold condition (i) through two consecutive black stretches*; the checkerboard triangle of depth $b - 1$ must be
+rebuilt across the white stretch from what the seed carries, and width about $2b$ is what it takes. Next to 0101
+the law continues ($H_L(24) = 42$). Single-party.

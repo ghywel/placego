@@ -60,6 +60,14 @@ WIDE ADDENDUM, written 2026-10-06 before the second run (python3 rule30_leftside
   REFUTED-BY: LW1 to LW3 the other way; CF holding. What would change my mind: a width at which the slow-wall horizon
   jumps past two black stretches would locate the seed width that can carry a checkerboard across a white stretch,
   and the theorem of section 8.63 would need that width in its hypothesis.
+  OUTCOME of the second run, 2026-10-06 11:28 (wide; a minute). All three blind predictions REFUTED the informative
+  way, CF PASSED (0101: H_L(24) = 42, the law W + 17 continues). 0^8 1^8: H_L = 21, 22, 21, 24, 25, 26, 29, 31, 30, 34,
+  36 for W = 14 .. 24: a seed of width 20 passes two consecutive black stretches (29 >= 24) and one of width 24 lives
+  36 steps, two full periods and four more. 0^16 1^16: 21, 20, 21, 21, 24, 26, 26, 26, 29, 30, 32: width 24 reaches
+  exactly one period (one black stretch and the white stretch beside it) and dies at the second black stretch. So
+  the seed's width against the stretch is the whole hypothesis: W = 16 = 2b fails at b = 8 and W = 20 = 2.5 b passes;
+  W = 24 = 1.5 b fails at b = 16. The horizon gains about 1.9 steps per unit width on 0^8 1^8 and 1.4 on 0^16 1^16
+  between W = 16 and 24, more than the 0101 law's one, because passing a stretch is worth a stretch.
 """
 import pathlib, subprocess, sys, tempfile
 
@@ -68,8 +76,8 @@ from ompflags import OMP
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "rule30_leftside_horizon.txt"
-WMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 20
-T = int(sys.argv[2]) if len(sys.argv) > 2 else 100
+WMAX = int(next((a for a in sys.argv[1:] if a.isdigit()), 20))
+T = int(([a for a in sys.argv[1:] if a.isdigit()] + ["100", "100"])[1])
 FAILS = 0
 
 
