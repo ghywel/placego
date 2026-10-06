@@ -14,7 +14,8 @@ the white beats.
 left only every other tick. Every later count of "how much information gets through" starts here.
 
 **An everyday picture.** A door with a buzzer: when the door is already open (black), pressing the buzzer changes
-nothing.
+nothing. The buzzer has no memory: at the next white beat, column 1 is heard again. The version with a memory is
+proof 03's latch.
 
 ## 02
 Starting the rhythm one beat later is the same problem, so only one starting beat needs checking.
@@ -35,7 +36,11 @@ black and column 1 is black next tick, it must have been white this tick.
 **Why it matters.** The right side cannot send just any signal: these two rules already rule out some patterns of
 column 1, which is the first narrowing of the channel.
 
-**An everyday picture.** One-way streets: some routes are simply not drivable, whatever the traffic is doing.
+**An everyday picture.** A set-reset latch (the owner's picture). The right side can only press "set"; the wall's
+black beat is the "reset" it cannot see. While the wall is white, a set latch stays set however often set is
+pressed; a black beat clears it. Next to the blinking wall this gives the rule above: every visible 1 is followed by
+a forced 0, like a nerve cell's rest after it fires, or the "never two ones in a row" rule of the codes once used to
+write data on magnetic disks.
 
 ## 04
 Each new bit from column 1 reaches the left exactly once, either as a clean flip or not at all.
@@ -251,8 +256,9 @@ white stretch of the wall, once column 1 turns black it stays black until the st
 **Why it matters.** It turns column 1 into a one-way switch during white stretches, which sharply limits what the
 right side can say there. Walls with long white and long black stretches ("slow walls") are studied with this tool.
 
-**An everyday picture.** A latch on a garden gate: once it clicks shut it stays shut until someone comes along to
-lift it.
+**An everyday picture.** A set-reset latch (the owner's picture): column 2 can press "set", and pressing it again
+changes nothing; only a black beat of the wall, a button the right side cannot reach, resets it. Proof 03 is the
+same latch with its reset written in.
 
 ## C3
 A run of white squares shrinks by exactly one square at each end per tick, so Rule 30's white triangles are perfect.
@@ -1236,7 +1242,7 @@ An isolated race error can disappear at its source and return without another ra
 
 **An everyday picture.** An echo can return after the place where it began has fallen quiet.
 
-## W110
+## G110
 Two individually memoryless traces can form a pair with memory.
 
 **What it says.** In the isolated-pulse model, current ideal bit and current error miss the healed error that will return next tick. The previous error determines that return, refuting a first-order Markov state even with known pulse phase.
@@ -1250,6 +1256,6 @@ An exact split at one rate can certify memory at almost every rate; equality at 
 
 **What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.
 
-**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. No production witness is supplied yet; one small toy already has equality at half rate but failure at quarter rate. PC1-PC3 and review are pending.
+**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. Local subsequently supplied a deterministic-bin witness, whose positive/zero support proves finite-ring memory at every interior rate. One small toy still shows why half-rate equality can hide quarter-rate failure. PC1-PC3 and review are pending.
 
 **An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.

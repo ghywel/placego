@@ -291,6 +291,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two individually random traces can remain perfectly related when their shared environment is known.
 - [an isolated race error heals once and returns](G109-an-isolated-race-error-heals-once-and-returns.md): An
   isolated race error can disappear at its source and return without another race.
+- [the paired trace is not first-order Markov](G110-the-paired-trace-is-not-first-order-markov.md): Two individually
+  memoryless traces can form a pair with memory.
 
 ## The waiting room (not yet verified)
 
@@ -305,7 +307,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [The isolated-pulse paired trace is not first-order Markov despite iid marginals](W110-the-isolated-pulse-paired-trace-is-not-first.md):
-  Two individually memoryless traces can form a pair with memory.
 - [A nonzero finite-rate memory split extends to generic rates, but a zero at one rate does not](W111-a-nonzero-finite-rate-memory-split-extends-to.md):
   An exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
