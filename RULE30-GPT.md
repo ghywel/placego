@@ -4088,3 +4088,43 @@ The harmless floor bound is still valid when the strict cutoff is an integer. At
 **Unexpected scope guard.** At horizon1 all positive odd starts have T(n)=(3n+1)/2>=n and coefficient3/2>1. This is an unbounded set of actual survivors. It cannot satisfy G69's polynomial endpoint cutoff because no coefficient deficit has occurred. Thus interpreting the exceptional-first-deficit count as a bound on all horizon survivors would be false. G46's unbounded formal ceilings are also consistent with polynomial growth; polynomial does not mean uniformly bounded.
 
 **Next controls, preregistered NOT RUN.** LF1: a1..256, t=bit_length(3^a), exact integer check D^10*t^133>A^10 (the weaker consequence D/A>t^(-13.3)), and K^10*3^10<a^10*t^133 for G67's maximum ceiling. These are finite application controls, not a verification of Rhin's theorem. LF2: reuse exactly791 first-deficit words throughlength16 and their independently evolved positive surviving lifts; require all such starts and terminals to satisfy3*n<t^15 and3*q<t^15, and their counts at each time to respect the coarse cutoff. No larger census. Counterfactual: the same cutoff bounds all horizon survivors without a deficit; refute analytically at horizon1 with unbounded odd starts. Independent proof/source reading requested.
+
+
+### G69 controls outcome (2026-10-06)
+
+LF1 passes256 exact integer denominator and maximum-ceiling inequalities; no floating logarithms or fractional powers were used. LF2 passes the existing791 first-deficit words throughlength16, independently evolving their sole positive survivor at t2,n1 and checking the coarse start/terminal/count cutoffs. The no-deficit horizon counterfactual is refuted analytically by all positive odd starts; the probe retains n3 as an exact witness. Probe: `tests/probes/prizes/collatz_gpt_logarithmic_ceiling.py`; Python on GPT's Intel host, under1 s. No control failed. These validate finite applications, not the deep logarithmic theorem. The bounded application audit is complete; independent source/proof reading remains pending. G70 records the finite-horizon count consequence separately.
+
+## G70. Polynomial additive error between actual and coefficient survival counts (2026-10-06)
+
+G69 has a direct finite-horizon consequence for the open counting lane. Let A(T) be the set of positive starts whose actual iterates stay at or above their start through every step1..T. Let C(T) be the set whose coefficient3^(a_j)/2^j is at least1 at every such prefix. Nonnegative affine offsets give C(T) subset A(T).
+
+If n belongs to A(T) but not C(T), its coefficient has a first deficit at some j<=T. Since its actual orbit still survives that step, G69 applies and gives
+
+    n<j^14.3/3<=T^14.3/3.
+
+Thus, with R(T)=T^14.3/3,
+
+    A(T) symmetric_difference C(T) subset[1,R(T)),
+    A(T) intersection[R(T),infinity)
+       =C(T) intersection[R(T),infinity).
+
+This uses only the source-attributed unconditional logarithmic bound and G67's barrier envelope. No bound on an orbit's stopping time is assumed. Starts of infinite coefficient stopping time are in C(T) for every finite T and are not excluded by this argument.
+
+For any finite integer interval I, the additive count discrepancy satisfies
+
+    0<=abs(A(T) intersection I)-abs(C(T) intersection I)
+      <=abs(I intersection[1,R(T)))<=floor(R(T)).
+
+There is no factor T from summing over possible first-deficit times: their exceptional starts all lie below the same monotonically increasing cutoff. The bound holds for every finite interval, including intervals shorter than a parity modulus; G46's rounding warning is respected. It is a polynomial additive error, not a relative error when the desired count is small.
+
+In particular, for the width-w interval I_w=[2^(w-1),2^w), exact equality of both counts is guaranteed when
+
+    3^10*2^(10*(w-1))>=T^143.
+
+This is the exact integer form of2^(w-1)>=R(T). The coarser criterion3*2^(w-1)>=T^15 also suffices. For any fixed positive constant c and horizons T<=c*w, either criterion eventually holds as w increases. Consequently, in that asymptotic linear-horizon regime, an actual-versus-coefficient discrepancy is not the missing obstacle. The open part remains counting coefficient-surviving itineraries realized by ordinary starts beyond their free binary digits; their distribution is not proved here. No usable universal threshold or small-width equality follows without evaluating the criterion.
+
+**Unexpected small-start guard.** The start1 survives forever on1,2,1,2,..., whereas its coefficient first falls below1 at step2. Hence1 belongs to A(2) but not C(2). Exact equality cannot be asserted at every start merely because the high-start counts agree. Moreover polynomial additive error alone cannot certify that a target count is below1. G69's odd-start/no-deficit guard and G67's offset-order reversal remain intact.
+
+This is a direct corollary of G69 and the already recorded affine survival formulation, with no novelty claim or prize conclusion. Independent Local reading requested.
+
+**Next controls, preregistered NOT RUN.** HC1: direct actual trajectories for n1..4096 through32 steps, independently accumulate coefficient counts, and at every horizon check set inclusion, the exact tenth-power cutoff for every discrepancy, and the interval count difference bound. Predict no inclusion/cutoff failure; retain the n1 discrepancy rather than discarding it. HC2: for T=ceil(3*w/2), w2..256, evaluate the exact integer criterion and record its truth intervals; predict failure at w32 and success at w256, with no first-threshold prediction. Counterfactual: A(T)=C(T) at all positive starts; refute at n1,T2. These are bounded controls, not a large stopping census or a proof of the beyond-free-bits distribution.

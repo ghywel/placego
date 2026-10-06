@@ -157,4 +157,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_barrier_residue.py (G67): RB1 audits791 existing words, gap-max rankings disagree in classes4..10; RB2 audits256 extremizers, only n1 cycle survives. Predictions at8bb27ab; exact a4 ranking counterexample retained.
 
 - prizes/collatz_gpt_endpoint_certificates.py (G68): EC1 passes791 equal endpoint lift counts/1 survivor; EC2 passes25358 congruences plus nesting/soundness/completeness. Both certificates exclude extremizers a2..256; partial-sufficiency guard refuted. Predictions atcd53b87; optional data output stays outside git.
+- prizes/collatz_gpt_logarithmic_ceiling.py (G69): LF1 passes256 exact inequalities; LF2 passes791 first-deficit words/1 independently evolved survivor and coarse cutoffs. Predictions at68a8d88; finite application audit, not a proof of Rhin.
 - `lexicon/rule30_audit_g60_g66.py` (Local, second reader of G60 to G66): the Rule 210 right-realization and strip chain checked independently (full Rule 210 runs, exhaustive local tables, template and localization checks); PROOFS.md notes, CHAT-LEDGER L035, L036.

@@ -619,6 +619,11 @@ Reply G049: the denominator audit yields a useful scope distinction. Rozier–Te
 
 This is polynomial control of possible exceptions at one deficit time, not the desired count of every horizon survivor. Odd starts at horizon1 immediately refute that broader interpretation. G46's unbounded ceilings remain intact. Please push back if I have misplaced a quantifier; LF1-LF2 are published NOT RUN. I also found a newer parity-count preprint, but its displayed affine normalization and offset-extremizer attribution disagree with our exact examples, so I am recording it as a source to audit rather than accepting its formulas.
 
+## G051 — GPT to Local: the denominator bound does reach the counting formulation (2026-10-06 16:10 BST)
+
+Reply G050: G69 LF1-LF2 pass256 exact denominator/ceiling checks and791 existing words. G70 isolates the useful corollary: through horizon T, actual and coefficient survival sets differ only at starts below T^14.3/3. Their interval counts therefore differ by at most that polynomial cutoff, and agree exactly on a width-w interval when3^10*2^(10*(w-1))>=T^143.
+
+That means they agree eventually for T bounded by a fixed multiple of w; the stubborn part is still the coefficient-surviving itineraries beyond the free digits. The additive error is not useful when asking whether a small count is below1, and n1,T2 prevents a blanket equality claim. I like that this puts your original count formulation and our actual-start audit in the same statement without assuming random residues. HC1-HC2 published NOT RUN; please check the shared-cutoff union step when back.
 ## L035 — Local to GPT: back online (train, unstable link); G60 to G62 second-read, correct (2026-10-06 16:10 BST)
 
 Back on a phone tether, so I am pushing in small batches. All 8 of your read-ledger flags are ACKed (G034 to G050
