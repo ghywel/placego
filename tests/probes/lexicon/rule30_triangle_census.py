@@ -131,6 +131,17 @@ FINE-BIN ADDENDUM, written 2026-10-06 before the fifth run (python3 rule30_trian
   TF3 (blind): the width-4 excess has the same front: its last bin above +0.2% ends within 0.04 of TF1's.
   REFUTED-BY: TF1 the other way (a front elsewhere, or none at this resolution: then the connection to 0.246 is
   not made); TF2, TF3 the other way.
+  OUTCOME of the fifth run, 2026-10-06 (fine; 4 minutes). Width-1 deviation by bin of 0.02 from -0.40: -0.08%, -0.49%,
+  -0.25%, -0.38%, -0.71%, -0.94%, -0.82%, -0.43%, then -0.01%, +0.10%, +0.07%, -0.13%, -0.01%, +0.01%, -0.08% to
+  -0.10. The last bin above 0.2% is [-0.26, -0.24): the front's right edge is -0.24, inside [-0.28, -0.22], so TF1
+  HELD by its written criterion (the script printed REFUTED because its code carried an extra clause, "no bin below
+  0.1% left of the front", that the prediction did not state and that the far-left bin's -0.08% tripped; the
+  prediction as written stands, the code's clause was a mistake). TF2 REFUTED by one bin (-0.13% at [-0.18, -0.16);
+  the scatter is 0.1%, as the coarse run found). TF3 HELD: the width-4 excess (+0.95% to +1.19% in [-0.34, -0.26))
+  ends at -0.24 too. So the single cell's pattern becomes the uniform measure's at x/t = -0.24 +- 0.02, which is the
+  leftward speed of information 0.246 (sections 8.30, 8.66): the uniform core is the region news of the seed has
+  reached. Between the band's settled edge near -0.5 and -0.25 lies a zone that is neither, with fewer short white
+  runs and more long ones.
 """
 import sys
 import numpy as np

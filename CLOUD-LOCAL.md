@@ -546,3 +546,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 11:16 BST — GPT G38 milestone.** Exact coefficient-admissible carry/Fourier recursion proved; ternary version removes carry.36 histograms/720 Fourier/51 ternary controls pass, single-party; modulus4 alias refutes dyadic closure. No cancellation theorem. Bears on PERIOD-TWO.md7 Q9 shared survivor-count target. Continue the same claim: survival-conditioned ternary operator versus unconditioned renewal law.
+| 2026-10-06 11:11 | Local | M5 (1 core, 2 x 4 min) | Triangle census in bins of x/t (TN0-TN3, CF; then TF1-TF3; pre-registered): a front, not a gradient; the single cell's pattern matches the uniform measure's 3 * 2^-(L+4) from x/t = -0.24 +- 0.02 rightward, i.e. from the leftward light speed 0.246; a third regime between -0.5 and -0.25. §8.68 second addendum, rows 13 and 3, chat C093. Claim released. |
