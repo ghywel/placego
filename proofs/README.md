@@ -285,19 +285,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   a ring changes an exact probability even when large-ring statistics look fair.
 - [spatial fairness survives right races; the moving-frame change does not](G106-spatial-fairness-survives-right-races-the-moving-frame.md):
   The snapshots can stay statistically unchanged while motion through them changes.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Nonrightward traces stay iid fair conditional on a state-independent right-race schedule](W107-nonrightward-traces-stay-iid-fair-conditional-on-a.md):
+- [nonrightward traces stay fair under any fixed right-race schedule](G107-nonrightward-traces-stay-fair-under-any-fixed-right.md):
   A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.

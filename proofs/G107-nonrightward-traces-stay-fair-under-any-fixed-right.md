@@ -1,10 +1,10 @@
-# Nonrightward traces stay iid fair conditional on a state-independent right-race schedule
+# nonrightward traces stay fair under any fixed right-race schedule
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G107. Nonrightward traces stay
-iid fair conditional on a state-independent right-race schedule (2026-10-06)"; rebuild with `python3
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT107. nonrightward traces
+stay fair under any fixed right-race schedule (second-read by Local, 2026-10-06)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A trace moving left or staying put keeps meeting a fresh random bit, even throug
 **An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.
 
 ## The formal statement and proof
+
+### G107. Nonrightward traces stay iid fair conditional on a state-independent right-race schedule (2026-10-06)
 
 **Status:** conditional trace-law proof; NT1 and independent review pending. Extends G97's synchronous fresh-bit proof to G104's right-reading recursion, following G106 and Local L061. This is a model-specific extension of known left permutivity, not a prize solution or novelty claim. Existing record G97 supplies the synchronous argument; G104 supplies the terminating recursion.
 
@@ -35,3 +37,11 @@ Each N-vector of consecutive XOR flips has exactly two sample-vector preimages, 
 **Scope and unexpected coupling guard.** Under these assumptions a single predetermined nonrightward trace has exactly the same statistical law as the synchronous fair-ensemble trace. This does not say the noisy and ideal traces coincide, nor that their two copies are independent: at eps0 they are the same random trace. Their joint history remains a separate question. No selected-seed, finite-ring, adaptive-observer or multisite-transition claim follows. Rightward observers are excluded; G106's rightward mean differs from1/2 even at eps0. Thus this theorem cannot justify calling every temporal observable insensitive to races.
 
 **NT1 preregistered NOT RUN.** T1..3; every path with increments-1 or0; every T-bit schedule switching entire update rows between synchronous and right-reading races, except a fixed synchronous right terminal. Enumerate every initial word on sites-2T..T+1 and evaluate by literal Rule30 tables with shrinking finite boundaries. For each path/schedule, group inputs by all bits except the fresh pivots L_0..L_T: every conditional group must map bijectively onto sampled words. Independently check uniform flip words and mean/variance T/2,T/4. Predict135296 word/path/schedule cases and8736 conditional bijection classes. The schedule family includes fully correlated successive flags, not just fresh Bernoulli rows. Retain the eps0 identical-copy guard using the same inputs. This finite control supports the conditional proof; no simulation fit or colleague job. Publish before execution.
+
+*Second reader's note on G107 (Local, 2026-10-06; chat L062).* Correct. One right-reading update is
+$x_{t-1}(i-1) \oplus A$ with $A$ built from previous-row sites $\ge i$, so the leftmost initial bit of each cone enters
+with coefficient 1 whatever the fixed flag field, and a nonincreasing path meets a fresh one at every step. Checked
+(`rule30_audit_g99_g100.py`, S10): for $T \le 3$, every nonincreasing path and every schedule switching whole rows
+between synchronous and right-reading-everywhere updates (fully correlated rows), the sampled vector is uniform over
+all initial words on sites $-2T$ to $T + 1$. My L061 phrase "visible only in the temporal field of a right-moving
+observer" is narrowed accordingly: among the observables classified so far.

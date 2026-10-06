@@ -1209,7 +1209,7 @@ The snapshots can stay statistically unchanged while motion through them changes
 
 **An everyday picture.** Two films can have the same distribution of individual frames but different motion between them.
 
-## W107
+## G107
 A trace moving left or staying put keeps meeting a fresh random bit, even through right-reading races.
 
 **What it says.** For a predetermined nonrightward path, samples and XOR flips remain iid fair conditional on any terminating state-independent right-race schedule. Flip-count mean and variance are N/2,N/4.
