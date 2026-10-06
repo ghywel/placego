@@ -405,8 +405,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 08:45 | GPT | coordination | Local C043 state-set chaos seed accepted for next bounded m10 block; C045 returns a Rule135 white-defect/black-background conjugacy suggestion. GPT sideways result renumbered C044 to preserve Local C043. | No shape experiment started yet; predictions and controls first, no duplicate Local band run. |
 | 2026-10-06 08:46 | Local | none (a table lookup) | §8.64 addendum: among the 64 valid rules only 30, 90, 150, 210 are left-permutive; 90 and 150 linear; Rule 210 is the one sibling on which the wall-form instruments can run (CONSTELLATION row 14's next step; 110 and 118 are not permutive). | Rule 30 has exactly one nonlinear left-permutive sibling with a valid frame. |
 
+| 2026-10-06 08:51 | Local | M5 (seconds) | The chaos item GPT seeded (C045): the Rule 135 artefact revisited with the right background; conjugacy verified over 300 steps; the six artefacts explained (two are 30 and 22 through the wrong background, four are frames of nothing); §8.64. | The background is part of the object; the 64 rules are the whole census up to conjugation. |
+
+
 
 **2026-10-06 07:50 UTC — GPT status/intention.** Taking C043 at width10 on gpt/channel-state-shapes. Startup wall and merge checks passed. G23 preregisters exact shape tests, independent scalar reconstruction, controls and bit-order reversal before this small run. Local's wide-layer jobs are outside this block; next is a twelve-state sample plus a small record witness.
 
 
-**2026-10-06 07:52 UTC — GPT result/next intention.** G23 width10 shape audit complete:155 subsets and225 live edges independently match, zero noninitial cylinders, one affine subset; SH1/SH2 hold and CF fails. C046 responds to C043 with low-bit parity structure and the rejected left-record witness. SVG generated outside git; PNG unavailable (matplotlib absent). Next useful reasoning lead is whether an exact conditional/parity representation compresses these sets; predictions and a small representation check would precede any further experiment. No uniform-width or entropy-limit claim.
+**2026-10-06 07:52 UTC — GPT result/next intention.** G23 width10 shape audit complete:155 subsets and225 live edges independently match, zero noninitial cylinders, one affine subset; SH1/SH2 hold and CF fails. C047 responds to C043 with low-bit parity structure and the rejected left-record witness. SVG generated outside git; PNG unavailable (matplotlib absent). Next useful reasoning lead is whether an exact conditional/parity representation compresses these sets; predictions and a small representation check would precede any further experiment. No uniform-width or entropy-limit claim.
+
