@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G57, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G58, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1333,24 +1333,9 @@ exhaustively (`rule30_audit_g55.py`, G57 part): all four identities on all 10,39
 11, 13 whose successor is nonconstant, zero failures. G027's gauge remark is also right: adding any class function
 to $\theta$ shifts consecutive increments by opposite amounts and leaves every cycle sum unchanged.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+### G.GPT58. Explicit one-parity witness (second-read by Local, 2026-10-06)
 
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-### GPT G58 — explicit one-parity witness (independent details awaiting Local)
-
-## G58. One-parity walls: an explicit empty-left witness (2026-10-06)
+### G58. One-parity walls: an explicit empty-left witness (2026-10-06)
 
 Independent audit of Local C066 in PROOFS.md's waiting room, extending the existing G26 construction rather than claiming a new mechanism. Let tau(t)=0 at every even time, with arbitrary odd-time bits a_m=tau(2m+1). Periodicity is not required. At left depth k>=1 set u_k(0)=0, u_0(t)=tau(t), and evolve the Dirichlet half-line by
 
@@ -1386,3 +1371,25 @@ OP1 passes26 nonzero one-parity wall masks of periods2,4,6,8,6656 whole-row tran
 For periodic a of period q, A(z)=(a_0+...+a_(q-1)*z^(q-1))/(1+z^q) is rational and nonzero. S is not rational: its coefficient sequence has infinitely many1s and unbounded gaps, so cannot be eventually periodic. Over a finite field every rational power series has eventually periodic coefficients, because a fixed finite linear recurrence advances a finite set of windows deterministically; conversely an eventually periodic sequence has a polynomial prefix plus a rational periodic tail. If V were eventually periodic, V would be rational, and S=V/A+1 would be rational, a contradiction. Hence sigma's even subsequence, and therefore its full stream, is not eventually periodic. Division by A is in the rational-function field; A need not have a nonzero constant coefficient. This extends G26's particular alternating-wall aperiodicity result to all nonzero periodic walls in this parity phase. The zero wall is excluded essentially (A=0 gives V=0). No finite computation is cited as proving aperiodicity.
 
 This algebraic argument is derived from the existing Catalan filter and the finite-state recurrence proof above; no novelty claim. It concerns this empty-row witness, not all finite-left witnesses and not right realization. Independent Local reading requested. The bounded construction/control block is complete; the useful next question is whether the required right stream can be realized, checked against G28's existing obstructions before any new route.
+
+*Second reader's note on G58 and its addendum (Local, 2026-10-06; chat L033).* Correct. The invariant $u_k(t) = 0$ for
+$t + k$ even holds from the empty row and the white even times of the wall, and propagates because both neighbours
+then have $t + k$ even; so Rule 210's term $c \cdot r$ vanishes and the half-line is Rule 90's exactly. The wall
+equation holds at even times by the definition of $\sigma$ and at odd times because every term is 0. The filter uses
+the classical fact that $C_j$ is odd exactly when $j = 2^r - 1$. The addendum is sound: over $\mathbb{F}_2$,
+$V = A(1 + S)$, rational series are exactly the eventually periodic ones, and $S = \sum z^{2^r}$ has unbounded gaps,
+so a nonzero periodic $A$ forces $\sigma$ to be aperiodic. Checked independently (`rule30_audit_g58.py`): from an
+empty row under Rule 210's own truth table, for 200 inputs (periodic with periods 1 to 7 and random, with holes),
+the parity invariant, the wall equation, $\sigma(\text{odd}) = 0$ and the dyadic filter hold at every time to 160;
+the Rule 30 counterfactual fails. **This settles Local's C066** (formerly in the waiting room): its existence claim
+is proved, for every one-parity wall in this phase and with odd-time holes allowed; its family wording is
+corrected as G58 says (not every $\sigma$ with $\sigma(\text{odd}) = 0$ gives an empty initial row).
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.

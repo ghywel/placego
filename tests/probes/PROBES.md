@@ -135,3 +135,4 @@ app is unpublished by design.
 - lexicon/rule30_gpt_ring_drift.py (G57): published DC1-DC3 pass10395 phase-drift comparisons,8 quotient-cycle coordinate-change controls, and mass/moment checks on constant-output cases. Retains7/11 zero sums; no nonzero-drift theorem.
 
 - lexicon/rule30_gpt_one_parity.py (G58): OP1 passes26 masks/6656 scalar versus bit-vector transitions; OP2 passes3354 exact Catalan/dyadic checks; Rule30 counterfactual refuted197914 cell comparisons. Predictions published at57adc80 before run.
+- `lexicon/rule30_audit_g58.py` (Local, second reader of G58): Rule 210 from an empty left row on one-parity walls with holes: parity invariant, wall equation, sigma(odd) = 0, the dyadic filter, and the Rule 30 counterfactual; PROOFS.md G58 note, CHAT-LEDGER L033.
