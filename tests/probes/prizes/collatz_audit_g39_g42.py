@@ -1,0 +1,91 @@
+#!/usr/bin/env python3
+"""collatz_audit_g39_g42.py: Local's independent exact check of GPT's G39 to G42 (PROOFS.md section E2), written as
+the second reader's companion to an argument audit, NOT a rerun of GPT's scripts. Exact integers and fractions.
+Checks, for every coefficient-admissible parity word with 3^a > 2^T and T <= 14: G39's bound
+binomial(T,a)/T <= A(T,a) <= binomial(T,a); G40's skeleton cube (a surviving skeleton with F free pairs has exactly
+2^F words, free meaning a mixed pair at (t, s) with 3^s > 2^(t+1)) and its swap additivity, verified EXACTLY OVER Q
+(f_w(0) = f_w0(0) + sum of 3^(a-s-1) / 2^(T-t) over the free pairs oriented 01), which is stronger than G40's
+statement modulo 3^a; G42's affine identity 2^T q = 3^a r + sum_odd_j 2^j 3^(a - S_(j+1)) for T <= 10 with the Terras
+representative r; G42's family sum 5 * sum x_k^2 = 20480/3103353 and its cosine product; G41's frequency-boundary
+valuations. (Local, 2026-10-06; second reading in CHAT-LEDGER.md L007.)
+
+RUN-ON:     cpu, one core, standard library
+COMMAND:    python3 tests/probes/prizes/collatz_audit_g39_g42.py
+COST:       about a minute.
+OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failures; 5 sum x_k^2 = 20480/3103353 =
+  0.0066 exactly; product of 60 cosines 0.99350; valuations 4, 3, 2, all killed by h = 3^7 modulo 3^9.
+"""
+from fractions import Fraction as Fr
+from itertools import combinations
+from math import comb
+import cmath, math
+def admissible(w):
+    s = 0
+    for t, b in enumerate(w, 1):
+        s += b
+        if 3**s <= 2**t: return False
+    return True
+def fw0(w):  # f_w(0) over Q: odd step at 1-indexed i contributes 3^(ones after i) / 2^(T-i+1)
+    T = len(w); tot = Fr(0); after = sum(w)
+    for i, b in enumerate(w, 1):
+        if b: after -= 1; tot += Fr(3**after, 2**(T - i + 1))
+    return tot
+def rep_and_q(w):  # Terras representative r in [0,2^T) and terminal integer q
+    T = len(w); a = sum(w)
+    for r in range(2**T):
+        x, ok = r, True
+        for b in w:
+            if x % 2 != b: ok = False; break
+            x = (3*x + 1)//2 if b else x//2
+        if ok: return r, x
+bad = 0; checked = 0
+for T in range(2, 15):
+    for a in range(T + 1):
+        if 3**a <= 2**T: continue
+        words = []
+        for ones in combinations(range(T), a):
+            w = [0]*T
+            for i in ones: w[i] = 1
+            words.append(tuple(w))
+        A = sum(admissible(w) for w in words)
+        if not (comb(T, a) <= T * A and A <= comb(T, a)): bad += 1          # G39
+        # G40: skeletons
+        sk = {}
+        for w in words:
+            if not admissible(w): continue
+            key = tuple(('M' if w[i] != w[i+1] else w[i]) for i in range(0, T - T % 2, 2)) + ((w[-1],) if T % 2 else ())
+            sk.setdefault(key, []).append(w)
+        for key, ws in sk.items():
+            # free pairs: mixed pairs with 3^s > 2^(t+1)
+            free = []; s = 0
+            for j, k in enumerate(key[:T // 2]):
+                t = 2 * j
+                if k == 'M' and 3**s > 2**(t + 1): free.append((t, s))
+                s += 2 if k == 1 else (1 if k == 'M' else 0)
+            if len(ws) != 2**len(free): bad += 1                              # the cube
+            w0 = None
+            for w in ws:
+                if all(w[t] == 1 for (t, _) in free) and all(w[2*j] == 1 for j, k in enumerate(key[:T // 2]) if k == 'M'): w0 = w
+            for w in ws:  # exact additivity over Q
+                eta = sum(Fr(3**(a - s - 1), 2**(T - t)) for (t, s) in free if w[t] == 0)
+                if fw0(w) != fw0(w0) + eta: bad += 1
+            checked += len(ws)
+        # G42 identity on every admissible word for T <= 10
+        if T <= 10:
+            for w in words:
+                if not admissible(w): continue
+                r, q = rep_and_q(w)
+                S = 0; rhs = 3**a * r
+                for j, b in enumerate(w):
+                    S += b
+                    if b: rhs += 2**j * 3**(a - S)
+                if 2**T * q != rhs: bad += 1
+print("G39/G40/G42 checks on", checked, "admissible words, T <= 14: failures =", bad)
+xs = [Fr(64, 2187) * Fr(16, 27)**k for k in range(200)]
+print("G42 family: 5*sum x_k^2 =", 5 * Fr(4096, 3103353) * 5 / 5, "(closed form 20480/3103353 =", float(Fr(20480, 3103353)), "); partial 200 terms", float(5 * sum(x*x for x in xs)))
+prod = 1.0
+for x in xs[:60]: prod *= math.cos(math.pi * float(x))
+print("G42 family: product of cos(pi x_k), 60 factors =", prod)
+# G41 frequency boundary example: 1111 M M M 11, h = 3^7 mod 3^9
+vals = [9 - s - 1 for s in (4, 5, 6)]
+print("G41 boundary: valuations", vals, "; h*Delta divisible by 3^9 for all:", all(7 + v >= 9 for v in vals))

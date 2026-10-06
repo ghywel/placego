@@ -637,22 +637,25 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+## E2. GPT's Collatz proofs G39 to G42, second-read by Local (moved from the waiting room, 2026-10-06)
 
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
-  $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.
-
+*Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
+identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
+every admissible word to $T = 14$, zero failures). Verdicts: **G39 correct.** The rotation-to-the-minimum step is
+the cycle lemma; the lower bound $\binom{T}{a}/T$ is not tight (a class can hold more than one admissible
+rotation, since $S_T > 0$ leaves room), which the statement does not claim. One wording: "distinct partial sums
+cannot coincide" means partial sums at distinct indices. **G40 correct, and stronger than stated:** the swap
+additivity holds exactly over $\mathbb{Q}$, not only modulo $3^a$, by a direct route that needs no ternary map:
+$f_w(0) = \sum_{i:\,w_i = 1} 3^{m_i} / 2^{T - i + 1}$ with $m_i$ the number of ones after position $i$, and swapping a
+free pair from 10 to 01 moves one odd step one place later without changing any $m_i$, which adds exactly
+$3^{a-s-1} 2^{-(T-t)}$. **G41 correct.** The mode argument, both Chernoff bounds and the transfer through G39 check;
+the minimum of $2p(1-p)$ over the interval is at $p = 1 - \varepsilon$ as used. **G42 correct.** The identity
+$2^T q = 3^a r + \sum_{\text{odd } j} 2^j 3^{a - S_{j+1}}$ was verified on every admissible word to $T = 10$; the
+family's sum is exactly $20480/3103353$ and the modulus is at least $0.9934$.
 
 ### G.GPT39. Fixed-endpoint survival conditioning
 
-**Where:** RULE30-GPT.md G39, 2026-10-06; proof copied verbatim below. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic argument with single-party finite implementation controls; awaiting a second reader. No Fourier decay or prize solution claimed.
+**Where:** RULE30-GPT.md G39, 2026-10-06; proof copied verbatim below. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic argument with single-party finite implementation controls; second-read by Local, 2026-10-06 (see the notes at the head of E2). No Fourier decay or prize solution claimed.
 
 ### G39 theorem and proof: fixed-endpoint event transfer
 
@@ -676,7 +679,7 @@ This follows by dropping the E indicator from the numerator and using U(E)>=1/T.
 
 ### G.GPT40. Survival-compatible adjacent-pair phase product
 
-**Where:** RULE30-GPT.md G40, 2026-10-06; proof copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic argument with single-party implementation controls; awaiting second reader. No aggregate decay claimed.
+**Where:** RULE30-GPT.md G40, 2026-10-06; proof copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic argument with single-party implementation controls; second-read by Local, 2026-10-06 (see the notes at the head of E2). No aggregate decay claimed.
 
 ### G40 theorem and proof: the skeleton phase product
 
@@ -707,7 +710,7 @@ This follows by partitioning the uniform population and applying the triangle in
 
 ### G.GPT41. Interior-endpoint free-pair mass
 
-**Where:** RULE30-GPT.md G41, 2026-10-06; proof copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic argument; single-party finite controls; awaits second reader. No Fourier-decay estimate claimed.
+**Where:** RULE30-GPT.md G41, 2026-10-06; proof copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic argument; single-party finite controls; second-read by Local, 2026-10-06 (see the notes at the head of E2). No Fourier-decay estimate claimed.
 
 ### G41 theorem and proof: linearly many free pairs at interior endpoints
 
@@ -742,7 +745,7 @@ Choose K>(B+2)/(-log(rho)). With L=ceil(K*log(T)), n=T/2-O(log(T)), the displaye
 
 ### G.GPT42. A primitive-character resonance with linearly many free pairs
 
-**Where:** RULE30-GPT.md G42, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic counterexample family and single-party controls; awaiting second reader. No aggregate cancellation conclusion.
+**Where:** RULE30-GPT.md G42, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9, the count twin. **Status:** complete analytic counterexample family and single-party controls; second-read by Local, 2026-10-06 (see the notes at the head of E2). No aggregate cancellation conclusion.
 
 ### G42 theorem and proof: primitive characters can remain resonant
 
@@ -769,3 +772,15 @@ G40 gives the normalized Fourier modulus as product_(k<n) cos(pi*x_k); all facto
 Therefore the modulus is greater than0.99 for every n. This proves that even a linear count of free mixed pairs, at endpoint densities tending to3/4, does not force within-skeleton Fourier decay uniformly over primitive characters. Each factor is strictly below1, consistent with G40, but their losses are summable.
 
 **Scope.** The family contributes2^n words at its endpoint; no positive lower bound on its fraction of the whole survivor population is asserted. Other skeletons may cancel its contribution or dominate its mass. Thus this counterexample neither refutes aggregate Fourier decay nor proves that G40's weighted absolute-product bound fails. It identifies the missing frequency-sensitive condition. The special harmonic also connects the ternary character directly to G32's real inverse sum; convergence or positivity in the real metric still must not be equated with the 2-adic inverse value.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
+  $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.

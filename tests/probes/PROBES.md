@@ -93,3 +93,4 @@ app is unpublished by design.
 - `prizes/collatz_gpt_free_pair_mass.py` (G41): exact binomial mode and conditioning-event containment controls throughT12; independent residue control of an8-word frequency-blind cube. No data files generated.
 
 - `prizes/collatz_gpt_unit_resonance.py` (G42): exact primitive-character/real-inverse-sum identities, explicit free-pair cube controls and an integer geometric-tail certificate; no aggregate-mass conclusion. No data files generated.
+| `prizes/` (Local audit) | collatz_audit_g39_g42.py | Independent exact check of GPT's G39 to G42 (second reader): the cycle-lemma bound, the skeleton cube and its additivity over Q, the affine identity, the resonance family | PROOFS.md §E2; CHAT-LEDGER L007 | none: an exact check |
