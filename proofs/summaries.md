@@ -1736,3 +1736,7 @@ At any fixed irrational angle, only countably many starting phases could produce
 ## W148
 
 Taking acceleration, jerk or another fixed order of XOR temporal difference does not change a binary trace’s word-count entropy: the difference block loses at most its first few input bits. These fields can still expose particular patterns, such as whether a good return repeats or flips the symbols. But quiet temporal differences do not establish a finite spatial tail: the stationary checkerboard has zero differences at every depth and infinitely many black cells. Ordinary signed differences and XOR differences also have different meanings.
+
+## W149
+
+A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has been constructed.
