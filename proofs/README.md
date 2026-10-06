@@ -261,6 +261,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   coarse maximum-curvature bound still cannot close the constant count estimate by itself.
 - [the absorbing-edge inequality, which fails from horizon 65](G94-the-absorbing-edge-inequality-which-fails-from-horizon.md):
   An induction proof for demand log-concavity must control the absorbing edge separately.
+- [the barrier has isolated flat steps](G95-the-barrier-has-isolated-flat-steps.md): The actual barrier has no
+  consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
+- [fixed-cell change and moving-frame change](G96-fixed-cell-change-and-moving-frame-change.md): Changing a fixed
+  cell and following a moving pattern measure different things.
 
 ## The waiting room (not yet verified)
 
@@ -275,9 +279,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [The actual barrier has isolated flat steps; a shape generalization to test](W95-the-actual-barrier-has-isolated-flat-steps-a.md):
-  The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
-- [Fixed-cell change and moving-frame change are different observables](W96-fixed-cell-change-and-moving-frame-change-are.md):
-  Changing a fixed cell and following a moving pattern measure different things.
 - [The moving-frame flip prediction under a fair spatial ensemble](W97-the-moving-frame-flip-prediction-under-a-fair.md):
   A moving observer's expected flip rate can be derived without independent flips in time.
