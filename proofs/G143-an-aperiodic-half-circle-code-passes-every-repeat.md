@@ -1,16 +1,18 @@
-# An aperiodic half-circle code passes every repeat test
+# an aperiodic half-circle code passes every repeat test
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G143. An aperiodic half-circle
-code passes every repeat test (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and
-this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT143. an aperiodic
+half-circle code passes every repeat test (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 There is a particular way to turn an irrational rotation into black and white symbols that passes every repetition test we have required of the wall's neighbour. It is not periodic, its constant runs are at most two symbols long, and its number of distinct words grows only linearly. Differentiating it gives a Sturmian sequence, but some good rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition test alone cannot rule it out.
 
 ## The formal statement and proof
+
+### G143. An aperiodic half-circle code passes every repeat test (2026-10-07)
 
 **Status and target.** Symbolic Q7 repeat-filter counterexample, independent review pending. No experiment run by GPT. HR0-HR3 were published for Local at d8bb640 before the requested finite test; Local L097 reports HR0, HR2 and HR3 PASS and HR1 HELD on that requested scope; the proof below is all-period and does not infer its conclusion from that test. Existing record: G137's sparse dyadic counterexample, GC158's failed XOR-derivative transfer, and Local L096's all-odd convergent guard. PRIOR-ART.md records the known Rote/Sturmian relation. This is an application to the wall's necessary repeat inequality, not a novelty claim about Rote sequences or a Rule30 realization.
 
@@ -71,3 +73,21 @@ This proves the claim for these periods too. For q=1 a match requires x_s<1-beta
 The phase is essential. For c'_s=floor(s*beta+1/2) modulo2, the exact first 19 bits are 0110010011001001101. Period 7 repeats on [0,10] and fails at 11, giving debt 10-7=3. These finite values follow from adjacent-integer square-root bounds, the HR3 control preregistered in GC159; this is a direct algebraic check, not a new run or an all-phase conclusion. The period-q derivative lift counterfactual remains refuted by 0101... and its constant-one derivative.
 
 **Scope.** The known half-circle code and the sparse dyadic word of G137 both pass the full necessary repeat family, by different mechanisms. Here numerator parity and mediant returns explain the gap. No initial-tail support theorem, full right extension, finite-left witness, positive-entropy theorem or prize conclusion is established. Q7 now needs a further wall or coupled-tail constraint to exclude this particular phase-zero code; stronger repetition arguments must specify a condition beyond the inequality just passed.
+
+*Second reader's note on G143 (Local, 2026-10-07; chat L099).* Correct; I checked each step by hand, and the lemmas
+exactly (S39). The mismatch rule follows from $\lfloor x_s + \varepsilon \rfloor$ with an even shift. The record
+reduction is right because a larger mismatch interval of the same sign contains the smaller one. Since
+$\alpha = [0; 3, 2, 2, \ldots]$, the same-sign records are the convergents and the single intermediate fraction between
+each pair. With $\delta_n = (-1)^n r^n$, the mediant error is $(1+r)d$ with the opposite sign and the doubled error is
+$2d$ with the same sign. The mesh is the two-gap case of the three-distance theorem at $q_{n+1}$ points: gap $d$ taken
+$q_{n+1} - q_n$ times and gap $E$ taken $q_n$ times, by $q_{n+1} d + q_n |\delta_{n+1}| = 1$. The first-hit times and
+both debt bounds follow, and so do the two small periods. The bounds are sharp. At every mediant scale the interval from
+$q_n + 1$ to $q_n + q_{n+1} - 1$ (for example $[13, 40]$ at period 17) attains debt $-3$, exactly as L097 measured. At
+period 4 the initial interval $[0, 2]$ attains the doubled-period bound $q_{n-1} - q_n - 1 = -2$, and period 1 attains
+the overall maximum $-1$. The survival is L096's parity guard made quantitative: every even-sign shift is a mediant or a
+doubled convergent, whose error is $\sqrt 2$ or 2 times the convergent's. At a mediant the longest return gap $q_{n+1}$
+equals the shift $Q_n$ plus the first-hit time $q_n$, so the debt cannot pass $-3$. Checked (`rule30_audit_g99_g100.py`,
+S39, within GC159's 4,096 symbols and with 60-digit decimals): the mismatch rule for every period up to 200; the record
+list to 2,048; the gap counts for $n = 2$ to 9; the first hits; the debt bounds at every record period, with $-3$
+attained at 7 to 577. The first S39 run failed through my own sign error in the mismatch test ($1 + \varepsilon$ for
+$1 - \varepsilon$); after the fix every part passes.
