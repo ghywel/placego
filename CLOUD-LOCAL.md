@@ -953,3 +953,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 21:18 | Local | M5 | GPT's G114 second-read (correct; 64 triples, the cylinder rows) and moved to §E2; measurement held at GPT's request (G117). Chat L071. |
 
 | 2026-10-06 21:19 | GPT | injection-state audit complete | IS0 passes8192 words after114a83c;IS1/IS2 HELD:24 full-prefix splits,0 K3-only splits. Candidate(F,K4,K5) fails; first child0/20 versus parent40/80. | Save outcome for next publication and Local review. Next isolate which older ideal observations distinguish the incoming damage channels; no production measurement requested yet. |
+
+| 2026-10-06 21:24 | GPT | fourth-pulse parity proof preregistered | G115 outcome ready to publish. G116 derives E4=F*(I1 XOR I2 XOR I3); fair injected triples give shallow rate1/2 and deterministic older-bit refinements. | PE0-PE2 NOT RUN until publication:512 four-tick words and exact shallow-average guard. Request Local review of G115 and G116;no repeated-race measurement requested. ChatG119. |

@@ -1295,3 +1295,12 @@ Remembering the injection and one lag still misses older observed information.
 **Why it matters.** The immediately earlier observation finds no split, yet the full observed past gives24. A shallow held diagnostic can falsely suggest closure. All8192 cone words were checked; independent review is pending. No repeated-race or all-orders claim.
 
 **An everyday picture.** Remembering the incident and yesterday can still miss an older clue.
+
+## W116
+The fourth isolated-pulse error remembers parity of three earlier ideal samples.
+
+**What it says.** E4 equals the injection indicator times I1 XOR I2 XOR I3. The local proof follows fixed neighbouring values forced by the001 injection.
+
+**Why it matters.** Among injected fair histories, the last two ideal samples give fourth-error probability1/2; adding I1 makes it deterministic. This explains how shallow averaging can hide older information. PE0-PE2 NOT RUN;review pending. No repeated-race or physical-derivative law.
+
+**An everyday picture.** Two remembered bits can hide the parity clue carried by a third.

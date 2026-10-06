@@ -263,3 +263,5 @@ app is unpublished by design.
 - rule30_gpt_injection_state.py (G115): IS0-IS2 preregistered NOT RUN;8192 pulse words, injection-plus-one-lag state versus full history, with an unexpected shallow-refinement control. Publish before execution.
 
 - rule30_gpt_injection_state.py (G115 outcome): after114a83c, IS0 passes8192 words;IS1/IS2 HELD with24 full-prefix splits and0 K3-only splits. First witness0/20 versus40/80; injection-plus-one-lag state insufficient in pulse model at tick5.
+
+- rule30_gpt_pulse_parity.py (G116): PE0-PE2 preregistered NOT RUN;512 four-tick words, gated ideal-triple parity and a shallow-average/older-bit counterfactual guard. Publish before execution.

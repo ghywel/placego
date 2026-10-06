@@ -317,3 +317,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Injection memory plus one lag still misses deeper observed pulse history](W115-injection-memory-plus-one-lag-still-misses-deeper.md):
   Remembering the injection and one lag still misses older observed information.
+- [The fourth pulse error is gated parity of three earlier ideal samples](W116-the-fourth-pulse-error-is-gated-parity-of.md):
+  The fourth isolated-pulse error remembers parity of three earlier ideal samples.
