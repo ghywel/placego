@@ -28,6 +28,20 @@ N = 4096, as --instrument):
       chi-square p >= 1e-6, |z(density)| <= 6, |z(frame difference)| <= 6.
   MF3 (blind, weakly held; near the right edge): the frame v = 0.95 fails at least one of the same four.
   D1 (descriptive): the table for all 41 frames; the speeds where the coin-like range begins and ends.
+
+OUTCOME of the first run, 2026-10-06 (LOGN = 20; M5, ten cores, about two minutes): F0, F1 PASS. Every interior frame
+(k = -19..19) is linearly a coin: L_N = N/2 +- 2, jump chi-square p from 0.014 to 1, density |z| < 2. MF1 REFUTED,
+only by the frame difference: every rightward frame has it biased, z = 26.5 at v = 0.05 rising to 485 at v = 0.95,
+which is P(change) = 1/2 + v/4 (prediction 512 v in z units; residuals within +-1.4 for all 19 frames). I failed to
+compute this before predicting: a step of the frame one cell to the right gives x_(t+1)(i+1) XOR x_t(i) = x_t(i+1) OR
+x_t(i+2), the OR term of Rule 30 = l XOR (c OR r), which is 1 with probability 3/4 on fair cells; a step in place gives
+Rule 210 and a step to the left gives x_t(i-2) XOR ..., both 1/2 (leftward frames measured |z| < 3). The frame that
+moves right at light speed rides Rule 30's permutive channel and sees only its OR. MF2 REFUTED: the left band
+(v = -0.5, -0.75) is coin-like by all four measures. MF3 HELD, but only by the same transport bias, not by structure
+near the edge. The edges do show: the frames v = -0.95 and 0.95 have one jump of height 39 and 36 (all other frames
+<= 22; about 1e-6 under coins), at bit 41 and 42, after a prefix of linear complexity 1 or 3; at v = +-0.9 the jump
+is at bit 21 or 22. So the linear structure near either edge lasts only while the frame is within about two cells of
+it, about 2 / (1 - |v|) steps.
 """
 import math
 import os
