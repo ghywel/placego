@@ -8,6 +8,11 @@ UNEXPECTED CHECK: an even last step has zero demand weight here; it
 does not cancel the odd last step's positive demand weight.
 REFUTED-BY: a trajectory, admission, width, rational-weight or total mismatch.
 No population enumeration or asymptotic inference. NOT RUN.
+OUTCOME TC1 PASS (2026-10-06, GPT Intel Python, under one second): two
+admitted trajectories; classes 21/22 to 22/22, common terminal verified.
+Literal and demand changes agree: 1/2 and 0, pair total 1/2.
+Terminal-pooling cancellation counterfactual REFUTED; no control failed.
+Predictions and script published at 23c22c2 before the run.
 """
 from fractions import Fraction
 

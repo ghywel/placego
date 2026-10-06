@@ -269,3 +269,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two starts can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
 - [Equal terminal values do not force weighted parity cancellation](W90-equal-terminal-values-do-not-force-weighted-parity.md):
   Meeting at the same terminal value does not make two starts cancel in the weighted count error.
+- [Same-label one-step coalescence reduces demand to curvature](W91-same-label-one-step-coalescence-reduces-demand-to.md):
+  Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.

@@ -1066,6 +1066,16 @@ Meeting at the same terminal value does not make two starts cancel in the weight
 
 **What it says.** Choose a meeting pair from W89 at width 34. Just before the last step, one start needs an odd step to pass the growth-factor barrier, while the other already has enough odd steps. Their fair-coin continuation weights are one half and one. Both actually survive, so their individual weighted changes sum to a positive half rather than zero.
 
-**Why it matters.** Terminal pooling cannot supply the missing signed cancellation merely because two trajectories meet. This selected-pair example does not estimate the full population error. It returns the collision insight to the open weighted-bias question. Independent review and the preregistered control remain pending.
+**Why it matters.** Terminal pooling cannot supply the missing signed cancellation merely because two trajectories meet. This selected-pair example does not estimate the full population error. It returns the collision insight to the open weighted-bias question. The preregistered two-trajectory control passed, including the unequal penultimate-class guard. Independent model review remains pending.
 
 **An everyday picture.** Two travellers reach the same destination, but only one used the last coin toss to clear a toll. Sharing a destination does not balance their different budgets.
+
+
+## W91
+Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
+
+**What it says.** Pair an odd parent with an even parent when their next states and next odd counts agree. Their two contributions combine into half the difference of two neighbouring backward demand weights. Unmatched occurrences retain their original contributions, including even steps that fail the barrier.
+
+**Why it matters.** The reviewed coin curvature bound can control a matched pair away from the final horizon. It does not bound how many pairs or unmatched inputs occur. The exact identity improves the terminal-pooling question without assuming full cancellation. Small controls and independent review remain pending.
+
+**An everyday picture.** Some travellers can share the next checkpoint, but their different toll weights leave a small difference. Unpaired travellers and those denied entry still belong in the accounting.

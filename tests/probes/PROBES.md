@@ -199,3 +199,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_cover_audit.py (G88): RC1 passes 30 disjoint rejecting classes covering 2^33 residues; RC2 rejects three corruptions. BN1 REFUTED at a = 22: complete 647-node tree finds five validated pairs; 23–24 not run. Predictions at 6c69d5e. Data outside Git, accepting-cover audit pending.
 
 - prizes/collatz_gpt_accepting_cover.py (G89): RC3 passes 319 rejected classes plus five accepting residues covering 2^34; all first meetings at 34. Root-span and corrupted-acceptance controls pass. Predictions at ca9d765; no counts 23–24 run, independent model review pending.
+
+- prizes/collatz_gpt_terminal_pooling.py (G90): TC1 passes two admitted trajectories and four enumerated coin continuations; literal and demand-weighted changes agree, pair total 1/2. Equal-terminal cancellation counterfactual refuted. Predictions at 23c22c2; no full-population estimate.
