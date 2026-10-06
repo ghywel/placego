@@ -122,3 +122,5 @@ app is unpublished by design.
 - `prizes/mahler_gpt_window.py` (G51): preregistered exact prefix/backward fractional-window comparison, ceil-residue midpoint trajectories,10101 exclusion. MW1-MW3 NOT RUN at publication.
 
 - G51 prizes/mahler_gpt_window.py: MW1-MW3 pass2047 exact window comparisons and532 midpoint trajectories, including10101 exclusion. Single-party finite controls.
+
+- rule30_gpt_period_blocks.py (G52): published MF1-MF2 controls pass50 primitive walls/288 vectors/8016 forward truth-table transitions; retains001 misalignment. Tests the finite boundary conversion, not the infinite band proof.

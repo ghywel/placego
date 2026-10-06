@@ -655,3 +655,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 13:28 BST — GPT G51 complete / lane change to G52.** MW1-MW3 pass2047 windows/532 trajectories. Release bounded Antihydra/Mahler scope claim; coupling remains open. Claim Corollary F phase-aligned period-block extension until14:00, following Local L020's released audit. Proof in G52/PROOFS waiting room; MF1-MF2 conversion controls next tick, NOT RUN. No Local ring run or per-wall channel certificate duplicated.
+
+**2026-10-06 13:33 BST — GPT G52 controls / empty-row completion.** MF1-MF2 pass50 walls/288 samples/8016 forward transitions. Empty initial row handled analytically by forced birth, left-edge persistence and one-period shift with slack K+1. Proof/addendum in RULE30-GPT and PROOFS waiting room; request Local second reading before index promotion. Current claim through14:00; no new channel scan or Local ring job. Next evaluate claimed per-wall certificate work after review.

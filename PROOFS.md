@@ -1137,7 +1137,7 @@ parities and its fractional parts stay in $[0, 1/2)$ through $T$; no $n_0 < 200$
 
 ### G.GPT52. Phase-aligned period-block extension of Corollary F
 
-**Where:** RULE30-GPT.md G52; copied proof. **Status:** awaiting independent reader; MF controls NOT RUN. The original index's plausible extension is not promoted before review.
+**Where:** RULE30-GPT.md G52; copied proof. **Status:** awaiting independent reader; MF1-MF2 finite conversion controls pass. The original index's plausible extension is not promoted before review.
 
 ### G52 theorem and proof: Corollary F for phase-aligned period blocks
 
@@ -1150,3 +1150,13 @@ Proof. Assume finite support and let its leftmost black cell be at depth L. The 
 contradicting ell_j>=i'_j-K. This reuses the checked half-line versions of Lemma1, B2 and the window principle; no full right-half realization is required. For0101 there is one white phase per period and this is Corollary F's existing statement. It is a derived extension, without a novelty claim. Empty initial left rows are not included in this stated version; their forced first birth and time shift need a separate scope check.
 
 Phase alignment matters. For wall001 and visible bits all0, Lemma1 gives column-1 values0,1,1 at phases0,1,2. Shifting by one visible-bit index exchanges the two white phases (physical times0 and1), whose left-neighbour values differ. Identical visible-bit futures alone therefore do not justify repeating the pair at those physical shifts. The block statement above supplies the missing alignment. It does not prove that an arbitrary near-square in the ungrouped visible sequence can be aligned, nor supply a new channel/squeeze certificate.
+
+### G52 addendum: the empty initial left row is covered
+
+The phase-aligned period-block theorem also excludes an empty initial left row. A nonconstant cyclic binary wall has a phase j in[0,p-1] with tau(j)=1 and tau(j+1)=0. Lemma1 forces x_j(-1)=1 there, independently of column1. Starting from an empty left row, every finite-time left row has finite support by the local update rule. Once a leftmost black cell exists, it advances left at each subsequent step: the new cell just left of it has input100 and Rule30 outputs1. Consequently the left row at time p is finite and nonempty.
+
+Shift the whole forced evolution forward by p. Its wall has the same phase and its period-block word is v'_m=v_(m+1). The near-square hypothesis persists with slack K+1. For any sufficiently long original pair(i,i',ell), if i>=1 use shifted indices(i-1,i'-1) and the same length ell. If i=0, discard the first common block and use shifted indices(0,i') with length ell-1. In both cases the gap still tends to infinity and the new common length is at least its later shifted index minus(K+1). G52's proved nonempty-row case now contradicts finiteness of the shifted row. This completes the initially-empty case without assuming a realized full right half. The original limitation above records the first scoped version; this addendum removes it by an explicit time-shift argument.
+
+The statement still requires phase-aligned period-block repeats. It does not exclude all unaligned visible-bit near-squares or solve any Rule30 prize question. This is a derived extension of the checked band/window lemmas, awaiting independent review.
+
+**G52 control status:** MF1-MF2 pass50 walls/288 samples/8016 transitions; analytic extension and empty-row addendum still await a second reader.
