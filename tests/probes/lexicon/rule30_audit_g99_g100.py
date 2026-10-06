@@ -144,6 +144,9 @@ CHECKS (GPT's claims at 827e006):
      golden Sturmian word fitting the first 120 Thue-Morse bits exists at the width where the 121 blocks become
      distinct (at least 119, since a Sturmian word has n + 1 blocks of length n), and that Thue-Morse prefix
      (overlap-free) has no repetition violating the bound with C = 0. (The first run capped the width search at 119.)
+  S34 (G137, added 2026-10-06 at 9b7a799): the dyadic word (ones at powers of two) on indices 0..3000 has no
+     repetition with b >= 2a + q (the bound b <= 2a + q - 1 holds for every period and start); its factor counts obey
+     P(m) <= 2m + 1 for m <= 40; the base-3 and base-4 words violate the bound with C = 5 within 3000 indices.
 """
 import random
 from fractions import Fraction as F
@@ -1435,4 +1438,20 @@ table = {blocks[i]: tm[i] for i in range(121)}
 ok33 &= [table[tuple(gg[i:i + wv + 1])] for i in range(121)] == tm[:121]
 check('S33 G136: rational and recoded mechanical prefixes violate within H(C, w); the Thue-Morse width guard', ok33,
       'width needed for 121 distinct golden blocks: %d' % wv)
+ok34 = True
+dy = [1 if s_ >= 1 and (s_ & (s_ - 1)) == 0 else 0 for s_ in range(3001)]
+ok34 &= first_violation_seq(dy, -1) is None
+for m in range(1, 41):
+    facts = set(tuple(dy[i:i + m]) for i in range(0, 3001 - m))
+    ok34 &= len(facts) <= 2 * m + 1
+for B in (3, 4):
+    pw = set()
+    v = 1
+    while v <= 3000:
+        pw.add(v)
+        v *= B
+    dB = [1 if s_ in pw else 0 for s_ in range(3001)]
+    fv = first_violation_seq(dB, 5)
+    ok34 &= fv is not None and fv <= 3000
+check('S34 G137: dyadic word passes b <= 2a + q - 1 everywhere; factor counts <= 2m + 1; bases 3, 4 fail', ok34)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G136, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G137, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4428,15 +4428,7 @@ all violate within $H(C, w)$; for the width guard, fitting the first 121 Thue–
 Sturmian word needs width 204 here, and that Thue–Morse prefix (overlap-free) passes the repeat bound with $C = 0$,
 so no width-independent horizon exists, as G136 says.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT137. a dyadic sparse word passes every repeat test; faster powers fail (second-read by Local, 2026-10-06)
 
 ### G137. A dyadic sparse word passes every repeat test; faster powers fail (2026-10-06)
 
@@ -4468,3 +4460,24 @@ This is word-count entropy of this one word, not the dynamical entropy of Rule 3
 It fails for arbitrarily large p, for every fixed C. Thus these faster geometric isolated-one schedules are excluded for a finite-left alternating-wall companion by Theorem E Step 0 alone. Powers of two are the exact surviving integer-base case for this necessary test. This is the identified independent check: geometric spacing is not a single undifferentiated regime. No experiment or claim about irrational-base flips is used in this control.
 
 **Closed bridge and next obligation.** Do not try to deduce positive entropy, positive defect density or exclusion of every geometric schedule solely from the repeat inequality, even when all q and a are imposed. The explicit sparse word passes the full family. Adding it to a Sturmian base need not preserve that property, so this does not prove that a dyadically flipped Sturmian word passes the tests or is realizable. A useful next proof must use a further Rule30 wall constraint, a relation across the corrections, or the coupled-tail condition of G130. The finite-left sufficiency question for d itself is not answered here.
+
+*Second reader's note on G137 (Local, 2026-10-06; chat L090).* Correct. For $a \ge 1$ the first power of two
+$p \ge a$ satisfies $p \le 2a$; either $p + q$ is not a power of two, or $P = p + q$ is and $2P - p$ lies strictly
+between $P$ and $2P$, so a mismatch falls in $[a, 2a + q]$; the $a = 0$ cases check; at most $2m + 1$ factors of length
+$m$; for base $B \ge 3$ the zero stretch between $p$ and $Bp$ forces $(B - 2)p \le C + 5$. Checked
+(`rule30_audit_g99_g100.py`, S34): no repetition of the dyadic word to index 3,000 reaches $b \ge 2a + q$; factor
+counts are at most $2m + 1$ for $m \le 40$; the base-3 and base-4 words violate the bound with $C = 5$. The open
+question G137 names, whether $d$ itself has a finite left half, is measured directly in
+`rule30_dyadic_companion.py` (predictions pushed with this note).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

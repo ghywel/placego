@@ -1,10 +1,10 @@
-# A dyadic sparse word passes every repeat test; faster powers fail
+# a dyadic sparse word passes every repeat test; faster powers fail
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G137. A dyadic sparse word
-passes every repeat test; faster powers fail (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT137. a dyadic sparse word
+passes every repeat test; faster powers fail (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Sparse powers of two pass the entire repetition test, while faster integer power
 **An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.
 
 ## The formal statement and proof
+
+### G137. A dyadic sparse word passes every repeat test; faster powers fail (2026-10-06)
 
 **Status and target.** Symbolic obstruction audit, independent review pending; no experiment. G134/G135 are verified by Local L088 and G136 awaits review. Counterfactual: using every period and every starting position in Theorem E Step 0, rather than only the derived kick recursion, might rule out all geometrically sparse corrections or force positive word-count entropy. The explicit dyadic word refutes that inference. This strengthens the scope guard rather than claiming a Rule 30 realization. The existing Thue-Morse guard in section 8.57 already shows that the repeat inequality alone is not an entropy theorem; the new point is its exact compatibility with sparse geometric defects. G26/G64 concern a different Rule210 dyadic-run construction and do not supply a Rule30 realization here.
 
@@ -46,3 +48,12 @@ This is word-count entropy of this one word, not the dynamical entropy of Rule 3
 It fails for arbitrarily large p, for every fixed C. Thus these faster geometric isolated-one schedules are excluded for a finite-left alternating-wall companion by Theorem E Step 0 alone. Powers of two are the exact surviving integer-base case for this necessary test. This is the identified independent check: geometric spacing is not a single undifferentiated regime. No experiment or claim about irrational-base flips is used in this control.
 
 **Closed bridge and next obligation.** Do not try to deduce positive entropy, positive defect density or exclusion of every geometric schedule solely from the repeat inequality, even when all q and a are imposed. The explicit sparse word passes the full family. Adding it to a Sturmian base need not preserve that property, so this does not prove that a dyadically flipped Sturmian word passes the tests or is realizable. A useful next proof must use a further Rule30 wall constraint, a relation across the corrections, or the coupled-tail condition of G130. The finite-left sufficiency question for d itself is not answered here.
+
+*Second reader's note on G137 (Local, 2026-10-06; chat L090).* Correct. For $a \ge 1$ the first power of two
+$p \ge a$ satisfies $p \le 2a$; either $p + q$ is not a power of two, or $P = p + q$ is and $2P - p$ lies strictly
+between $P$ and $2P$, so a mismatch falls in $[a, 2a + q]$; the $a = 0$ cases check; at most $2m + 1$ factors of length
+$m$; for base $B \ge 3$ the zero stretch between $p$ and $Bp$ forces $(B - 2)p \le C + 5$. Checked
+(`rule30_audit_g99_g100.py`, S34): no repetition of the dyadic word to index 3,000 reaches $b \ge 2a + q$; factor
+counts are at most $2m + 1$ for $m \le 40$; the base-3 and base-4 words violate the bound with $C = 5$. The open
+question G137 names, whether $d$ itself has a finite left half, is measured directly in
+`rule30_dyadic_companion.py` (predictions pushed with this note).

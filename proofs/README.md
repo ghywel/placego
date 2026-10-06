@@ -356,6 +356,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
 - [uniform recoding horizons include rational mechanical bases](G136-uniform-recoding-horizons-include-rational-mechanical-bases.md):
   Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
+- [a dyadic sparse word passes every repeat test; faster powers fail](G137-a-dyadic-sparse-word-passes-every-repeat-test.md):
+  Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
 
 ## The waiting room (not yet verified)
 
@@ -368,7 +370,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A dyadic sparse word passes every repeat test; faster powers fail](W137-a-dyadic-sparse-word-passes-every-repeat-test.md):
-  Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
+*No proofs are waiting for a second reader at the moment.*
