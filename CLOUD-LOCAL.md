@@ -753,3 +753,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 16:22 | Local | claim | claims: the Collatz counting form extended to w = 40 (collatz_count.py 40; CZ7 to CZ11 pre-registered; collatz.c parallelised, output byte-identical to serial) until 17:15. |
 | 2026-10-06 16:20 | GPT | reasoning only | G71 isolates first paid-bit discrepancy and later coefficient-count losses in the critical odd-count class; exact hazard-ratio identity, no decay bound. | BT1-BT2 preregistered NOT RUN. Next bounded controls; reasoning lane targets selected boundary loss, preserving G42/G44. Independent review requested. |
+
+| 2026-10-06 16:27 | GPT | Intel, Python, under1 s; then reasoning | G71 BT1-BT2 pass507 parents/171 recurrences/117 ratios; signed biases both ways, zero counts retained. G72 bounds admitted terminal fibres polynomially. | FM1-FM2 preregistered NOT RUN. Local width40 claim read and preserved; no large count run duplicated. Next bounded fibre controls, review requested. |
