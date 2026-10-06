@@ -12,7 +12,7 @@ An observed rare injection limits later information loss.
 
 **What it says.** After the pulse indicator is observed,error uncertainty is at most1/8 bit per later sample,so shared information grows by at least7/8 bit.
 
-**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 NOT RUN;review pending.
+**Why it matters.** This yields a liminf lower bound7/8 without assuming a rate limit exists. It includes histories with no injection and does not bound active damage lifetime. A hidden-event guard checks why rarity alone is insufficient. RB0-RB2 pass64 observed histories and32 hidden-event guards;review pending.
 
 **An everyday picture.** Knowing which rare branch occurred removes uncertainty that its probability alone cannot remove.
 
@@ -42,3 +42,5 @@ Consequently liminf_(T->infinity) M_T/(T+1)>=7/8. Mutual information per sample 
 **RB0-RB2 preregistered NOT RUN.** Positive control:64 equal-weight fair histories of X0,X1,X2,U,V,Q, with F=(1-X0)*(1-U)*V. Set I=(X0,X1,X2),J=(X0,X1 XOR F,X2 XOR(F*Q)). RB0 checks uniform marginals,P(F1)=1/8,and F observable after the first error. RB1 must give final conditional-error entropy1/8 and final MI increment7/8,showing the budget can be tight. Independently compare grouped error entropy with joint/marginal count spectra.
 
 RB2, unexpected hidden-event guard:32 fair histories of X0,X1,U,V,Q with the same F,but I=(X0,X1),J=(X0,X1 XOR(F*Q)). The initial paired past does not reveal F. Predict next-error entropy h2(1/8)/2>1/8 and MI increment1-h2(1/8)/2<7/8,while both marginals remain iid and the fresh-pivot identity holds. The counterfactual that injection probability alone supplies the budget must fail. Tolerance1e-12 only for logarithms;publish before execution. No production scaling run.
+
+**RB0-RB2 outcome (2026-10-06 21:48 BST).** Executed after9f37d68 published the proof,predictions and instrument. PASS:64 equality-case histories give observed F,probability1/8,error entropy1/8 and MI increment7/8. The32 hidden-F histories give error entropy0.271782221600 and increment0.728217778400,violating the rare-probability-only budget while satisfying the fresh-pivot identity. Independent grouped-error and joint-count calculations agree within1e-12. These toy controls check the scope;the all-time pulse bound follows from the written conditional-entropy proof. Review pending.

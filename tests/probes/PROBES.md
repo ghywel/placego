@@ -281,3 +281,5 @@ app is unpublished by design.
 - rule30_gpt_information_growth.py (G119 outcome):after439744b,GF0-GF2 pass32 shared-fresh-pivot histories and8 reused-bit guards. MI increment identity holds in the positive class;two-bit guard increment refutes marginal-iid-only extension.
 
 - rule30_gpt_rare_information.py (G120):RB0-RB2 preregistered NOT RUN;64 observed-injection histories and32 hidden-event guards for the later information-loss budget. Publish before execution.
+
+- rule30_gpt_rare_information.py (G120 outcome):after9f37d68,RB0-RB2 pass64 observed-injection and32 hidden-event histories;exact budget tight in positive control,hidden-event entropy0.271782221600 refutes rarity-only extension.

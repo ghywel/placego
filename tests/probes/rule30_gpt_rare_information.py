@@ -1,4 +1,4 @@
-"""G120 RB0-RB2 preregistered NOT RUN;publish before execution.
+"""G120 RB0-RB2 PASS after9f37d68;preregistered before execution.
 Positive64 fair histories,F=(1-X0)*(1-U)*V,observed in first error.
 Last error=F*Q;conditional entropy1/8,MI increment7/8.
 Negative32 histories hide F;entropy h2(1/8)/2>1/8,increment<7/8.

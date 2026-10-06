@@ -327,3 +327,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Observed rare injection bounds later pulse information loss](W120-observed-rare-injection-bounds-later-pulse-information-loss.md):
   An observed rare injection limits later information loss.
+- [Finite-predecessor descent reduces counterexamples to roots, not bounded width](W121-finite-predecessor-descent-reduces-counterexamples-to-roots-not.md):
+  Backward descent stops at finite roots of unbounded width.
