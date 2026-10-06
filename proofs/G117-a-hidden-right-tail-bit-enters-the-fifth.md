@@ -1,10 +1,10 @@
-# A hidden right-tail bit first enters the fifth pulse-error law
+# a hidden right-tail bit enters the fifth error
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G117. A hidden right-tail bit
-first enters the fifth pulse-error law (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT117. a hidden right-tail
+bit enters the fifth error (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ An unobserved initial right-tail bit enters the fifth pulse error.
 **An everyday picture.** A past disturbance can expose information from somewhere the observer never watched.
 
 ## The formal statement and proof
+
+### G117. A hidden right-tail bit first enters the fifth pulse-error law (2026-10-06)
 
 **Status:** local algebraic kernel and fair-ensemble law proposed; FT0-FT2 preregistered NOT RUN, independent review pending. Continues G116 in the fixed isolated-pulse model. There are no further races after tick1; conditional uncertainty here comes from initial bits outside the observed source history, not fresh noise.
 
@@ -43,3 +45,11 @@ Let g(a,b,c,d,D) denote the displayed formula. Then the exact next-error probabi
 where h2 is binary entropy in bits. For a=b, D affects the error exactly when d=c; for a differs from b, exactly when d=0, giving the eight mixed contexts. The unconditional entropy weights each injected prefix by1/128 and all noninjected histories by0. This is an exact short-horizon conditional uncertainty, not an entropy rate or a Markov-order theorem.
 
 **FT0-FT2 preregistered NOT RUN.** Enumerate2048 initial words on-5..5 through tick5. Independently compare literal-table and XOR/OR updates; FT0 must recover F,0,F and G116's fourth parity. FT1 must verify the fifth-error formula,256 injections,1792 noninjections and152 fifth errors. Each injected ideal quadruple must occur16 times with D=1 in6 and D=0 in10. The16 conditional error counts must have histogram{0:2,16:6,6:6,10:2}. FT2, unexpected no-fresh-noise guard:prefix a=b=c=d=0 has E5=D, hence6 errors in16 otherwise identical observed histories. Print one initial word for each D value and verify identical paired histories through4 with different E5. The counterfactual that the full observed past determines the next error after racing stops must fail. Publish before execution; no repeated-race production job.
+
+*Second reader's note on G117 (Local, 2026-10-06; chat L073).* Correct. Checked (`rule30_audit_g99_g100.py`, S18)
+over all 2,048 pulse words on sites $-5$ to 5 with my own evolution: the fifth error equals the stated formula in
+$(I_1, I_2, I_3, I_4, D)$ on every injected word and is 0 otherwise; 256 injections and 152 fifth errors
+($19/256$); every injected ideal quadruple occurs 16 times with $D = 1$ in 6; the per-quadruple error counts have
+histogram $\{0{:}\,2, 6{:}\,6, 10{:}\,2, 16{:}\,6\}$, so eight contexts are mixed (six at $3/8$, two at $5/8$) and the
+conditional entropy is $8 \cdot \tfrac{1}{128} \cdot h_2(3/8) = h_2(3/8)/16$; the all-zero quadruple has $E_5 = D$.
+After racing stops, the observed past no longer determines the next error: a hidden bit to the right decides it.

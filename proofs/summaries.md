@@ -1305,7 +1305,7 @@ The fourth isolated-pulse error remembers parity of three earlier ideal samples.
 
 **An everyday picture.** Two remembered bits can hide the parity clue carried by a third.
 
-## W117
+## G117
 An unobserved initial right-tail bit enters the fifth pulse error.
 
 **What it says.** D=x3 AND(x4 OR x5) is independent of the injected ideal prefix and has rate3/8. An explicit Boolean kernel maps that prefix and D to E5.

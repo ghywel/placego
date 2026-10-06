@@ -72,6 +72,10 @@ CHECKS (GPT's claims at 827e006):
      rate (18 parents); adding only K_3 to X_5 splits nothing. And E_4 = F (I_1 XOR I_2 XOR I_3) on every word; on these
      8,192 words (16 times G116's 512) 1,024 injections, 512 fourth errors, each (I_2, I_3) bin 256 histories with 128
      errors (the first run compared with G116's unscaled 64, 32 and 16/8 and failed for that reason only).
+  S18 (G117, added 2026-10-06 at 6c4792e): over the 2,048 pulse words on sites -5..5: the fifth error equals G117's
+     formula in (I_1, I_2, I_3, I_4, D), D = x(3) (x(4) OR x(5)), on every injected word and is 0 otherwise; 256
+     injections, 152 fifth errors; each injected ideal quadruple occurs 16 times, D = 1 in 6; the per-quadruple error
+     counts have histogram {0: 2, 16: 6, 6: 6, 10: 2}; the all-zero quadruple has E_5 = D.
 """
 import random
 from fractions import Fraction as F
@@ -637,4 +641,48 @@ ok17 &= inj == 64 * 16 and e4s == 32 * 16 and all(v == [256, 128] for v in bins2
 check('S17 G115, G116: candidate witness 80/40 vs 20/0; 24 of 112 full-history splits, none from K_3; E_4 parity law',
       ok17, 'full splits %d of %d (parents %d), K_3 splits %d; injections %d, fourth errors %d' % (
           uneq, len(full), len(par), uneq3, inj, e4s))
+ok18 = True
+inj18 = e5s = 0
+quad = {}
+for w in range(2 ** 11):
+    x = {i: (w >> (i + 5)) & 1 for i in range(-5, 6)}
+    zr, yr = dict(x), dict(x)
+    I6, J6 = [x[0]], [x[0]]
+    for t in range(1, 6):
+        lo, hi = -5 + t, 5 - t
+        nz = {i: R30(zr[i - 1], zr[i], zr[i + 1]) for i in range(lo, hi + 1)}
+        ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+        if t == 1:
+            ny[0] = R30(yr[-1], yr[0], ny[1])
+        zr, yr = nz, ny
+        I6.append(zr[0])
+        J6.append(yr[0])
+    E6 = [u ^ v for u, v in zip(I6, J6)]
+    Fi = E6[1]
+    if not Fi:
+        ok18 &= E6[5] == 0
+        continue
+    inj18 += 1
+    e5s += E6[5]
+    a_, b_, c_, d_ = I6[1], I6[2], I6[3], I6[4]
+    Dh = x[3] & (x[4] | x[5])
+    H_ = a_ ^ b_ ^ c_
+    L_ = 1 ^ ((1 - b_) & (d_ ^ (c_ | (1 ^ a_ ^ b_))))
+    R_ = b_ ^ Dh
+    C_ = c_ ^ ((1 ^ a_ ^ b_) | (1 ^ a_ ^ Dh))
+    form = L_ ^ ((1 - C_) & H_) ^ ((1 - d_) & R_) ^ (H_ & R_)
+    ok18 &= E6[5] == form
+    q = quad.setdefault((a_, b_, c_, d_), [0, 0, 0])
+    q[0] += 1
+    q[1] += Dh
+    q[2] += E6[5]
+    if (a_, b_, c_, d_) == (0, 0, 0, 0):
+        ok18 &= E6[5] == Dh
+hist = {}
+for v in quad.values():
+    hist[v[2]] = hist.get(v[2], 0) + 1
+ok18 &= inj18 == 256 and e5s == 152 and len(quad) == 16 and all(v[0] == 16 and v[1] == 6 for v in quad.values())
+ok18 &= hist == {0: 2, 16: 6, 6: 6, 10: 2}
+check('S18 G117: fifth-error formula on every injected word; 256 injections, 152 errors; D-split; histogram', ok18,
+      'injections %d, errors %d, histogram %s' % (inj18, e5s, dict(sorted(hist.items()))))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
