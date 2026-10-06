@@ -107,6 +107,11 @@ CHECKS (GPT's claims at 827e006):
      p-periodic predecessor are exactly the periodic words avoiding the six words cyclically; (c) the local section R
      gives T(R(z)) = z for every such word; (d) 0220 has predecessor 2210 and 112 has none. (The first run failed
      only at p = 2 because the cyclic-avoidance test unrolled the word too few times to see 0202 inside 2020; fixed.)
+  S26 (G127, G128, added 2026-10-06 at 81fb4fd): T on the period-two points 00, 11, 22, 12, 21 gives 00, 22, 11, 22, 22;
+     0102 lies in Y and maps to 1212; the full-shift precursor blocks of the target prefix 022000 are exactly the six
+     listed, all beginning 22100, and those of 022001 also all begin 22100; (022000) repeated lies in Y. For G128:
+     every binary word of length N <= 11 is the trace of site 0 over times 0..N-1 for some finite initial row (solved
+     leftwards); the spatial checkerboard is fixed by Rule 30; the pair (alternating, all ones) is not in H's image.
 """
 import random
 from fractions import Fraction as F
@@ -1061,4 +1066,57 @@ for p_ in range(1, 9):
     ok25 &= all(T_cyc(section(z)) == z for z in Yset)
 ok25 &= T_cyc((2, 2, 1, 0)) == (0, 2, 2, 0) and (1, 1, 2) not in set(T_cyc(c) for c in product((0, 1, 2), repeat=3))
 check('S25 G126: forbidden windows have no predecessor; periodic images = Y for p <= 8; the local section inverts T', ok25)
+def T_window(pre):
+    """Precursor code block of length k + 2 -> target block of length k."""
+    Yp = [1 if c == 2 else 0 for c in pre]
+    Xp = [pre[t] if Yp[t] == 0 else (1 - Yp[t + 1] if t + 1 < len(pre) else None) for t in range(len(pre))]
+    return tuple(2 if Xp[t] == 1 else (Xp[t + 1] ^ (Xp[t] | Yp[t])) for t in range(len(pre) - 2))
+
+
+ok26 = True
+per2 = {w: T_cyc(w) for w in [(0, 0), (1, 1), (2, 2), (1, 2), (2, 1)]}
+ok26 &= per2 == {(0, 0): (0, 0), (1, 1): (2, 2), (2, 2): (1, 1), (1, 2): (2, 2), (2, 1): (2, 2)}
+ok26 &= avoids_cyc((0, 1, 0, 2)) and T_cyc((0, 1, 0, 2)) == (1, 2, 1, 2) and avoids_cyc((1, 2))
+pre6 = sorted(''.join(map(str, pre)) for pre in product((0, 1, 2), repeat=8) if T_window(pre) == (0, 2, 2, 0, 0, 0))
+ok26 &= pre6 == ['22100000', '22100001', '22100002', '22100022', '22100220', '22100221']
+pre6b = [pre for pre in product((0, 1, 2), repeat=8) if T_window(pre) == (0, 2, 2, 0, 0, 1)]
+ok26 &= len(pre6b) > 0 and all(pre[:5] == (2, 2, 1, 0, 0) for pre in pre6b)
+ok26 &= avoids_cyc((0, 2, 2, 0, 0, 0))
+# G128: finite-window realization of every binary trace (left-permutive solving)
+for Nw in range(1, 12):
+    for wv in range(2 ** Nw):
+        target = [(wv >> t) & 1 for t in range(Nw)]
+        # unknown initial bits at sites 0, -1, ..., -(Nw-1); all other initial bits zero
+        init = {}
+        for k in range(Nw):
+            # choose x_0(-k) so that the site-0 sample at time k matches
+            for guess in (0, 1):
+                init[-k] = guess
+                row = {i: init.get(i, 0) for i in range(-Nw - 1, Nw + 2)}
+                for t in range(k):
+                    row = {i: R30(row[i - 1], row[i], row[i + 1]) for i in range(-Nw - 1 + t + 1, Nw + 1 - t)}
+                if row[0] == target[k]:
+                    break
+            else:
+                ok26 = False
+        row = {i: init.get(i, 0) for i in range(-Nw - 1, Nw + 2)}
+        tr = [row[0]]
+        for t in range(Nw - 1):
+            row = {i: R30(row[i - 1], row[i], row[i + 1]) for i in range(-Nw - 1 + t + 1, Nw + 1 - t)}
+            tr.append(row[0])
+        ok26 &= tr == target
+chk = [0, 1] * 4
+ok26 &= [R30(chk[i - 1], chk[i], chk[(i + 1) % 8]) for i in range(8)] == chk
+# (a, b) = ((01)^inf, 1^inf) has no H-preimage: H's second output is the first input, which must then be all ones,
+# and the first output is then S(ones) XOR (ones OR b') = 0 everywhere. Brute force over period-2 (and period-4) inputs:
+for Lq in (2, 4):
+    tgt_a = tuple(t % 2 for t in range(Lq))
+    tgt_b = tuple(1 for _ in range(Lq))
+    for wa in range(2 ** Lq):
+        for wb in range(2 ** Lq):
+            ap = tuple((wa >> t) & 1 for t in range(Lq))
+            bp = tuple((wb >> t) & 1 for t in range(Lq))
+            ok26 &= Hmap(ap, bp) != (tgt_a, tgt_b)
+ok26 &= Hmap(tuple([1] * 4), tuple([0, 1, 0, 1]))[0] == (0, 0, 0, 0)
+check('S26 G127, G128: period-two table; 0102 lift; the six precursors of 022000 (all 22100...); finite-window traces', ok26)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

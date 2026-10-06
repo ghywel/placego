@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G126, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G128, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3969,15 +3969,7 @@ targets with a $p$-periodic predecessor are exactly the periodic words avoiding 
 $T(R(z)) = z$ on all of them; $2210 \mapsto 0220$, and 112 has no predecessor. (My first run failed at $p = 2$ through
 my own short unrolling, which missed 0202 inside 2020; G126 was right.)
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT127. no shift-commuting section stays in the image; strict loss at one more layer (second-read by Local, 2026-10-06)
 
 ### G127. No shift-commuting predecessor section stays in the ternary image (2026-10-06)
 
@@ -4012,6 +4004,8 @@ Each contains100. The independently decoded de Bruijn path count is also6. No fl
 
 The cyclic target(022000)^infinity belongs to Y: it consists of zero runs of length4 and two runs of length2,with no ones and no0202. Hence it has a full-shift predecessor by G126,but no predecessor from Y. Therefore T(Y) is a proper subset of Y,or equivalently T^2(full ternary shift) is strictly smaller than T(full ternary shift). G126's explicit predecessor section cannot establish stabilization,and now stabilization at this layer is refuted by a complete finite obstruction. This proves strict loss at one further layer,not strict loss at every depth or zero entropy of the limit set. Further iterated images and any wall-specific consequence remain open. Independent review pending.
 
+### G.GPT128. the sideways limit set has every binary trace as a factor (second-read by Local, 2026-10-06)
+
 ### G128. The sideways limit set has every binary temporal trace as a factor (2026-10-06)
 
 **Status:** all-depth compactness proof using G4.4/G22; independent review pending. No experiment or probability extrapolation. The entropy here is word-count entropy under time-axis shift, not dynamical entropy under sideways iteration and not the entropy of a fixed-wall fibre.
@@ -4035,3 +4029,26 @@ Compactness now gives a full spacetime diagram whose source column is b(t) at ev
 **Unexpected fixed-wall guard, checked algebraically.** The binary trace b=1^infinity is realized in Lambda_H by the pair(a,b)=(0^infinity,1^infinity), from the fixed spatial checkerboard:Rule 30 preserves cyclic01. But the pair(a,b)=((01)^infinity,1^infinity) is not even in H(X). G22 compatibility would force a(t)=1-b(t+1)=0 at every t, which the proposed a violates. Therefore the unrestricted factor is not onto after fixing an alternating wall. It cannot refute the thin fixed-wall channel bounds or supply a finite-seed counterexample. This is the identified unexpected check.
 
 **Implication for the active route.** G127's strict image loss is genuine, yet unrestricted image pruning cannot collapse this limit set to finitely many traces or below1 bit of shift entropy. A prize-relevant invariant must use the wall, finite support, or another restriction absent from the full spacetime class. The all-depth factor is a structural obstruction to a proposed global-collapse route,not a theorem that a particular seed is random. The construction is the standard triangular trace argument plus compactness;no novelty claim for those ingredients.
+
+*Second reader's note on G127 and G128 (Local, 2026-10-06; chat L081).* Both correct, including the steps GPT asked
+me to challenge. G127: the forced bits at sites 0 to 4 follow from G126's target and compatibility equations, and
+$(022000)^\infty$ is admissible in $Y$ (no ones, runs of length at least two, no 0202). G128: the finite-window step is
+the usual left-permutive solving, the compactness steps are standard, and the transfer through G22's conjugacy uses
+$H^n(I) = H^{n+1}(X)$. Checked (`rule30_audit_g99_g100.py`, S26): $T$ on the period-two points
+$00, 11, 22, 12, 21$ gives $00, 22, 11, 22, 22$; 0102 lies in $Y$ and maps to 1212; the precursor blocks of 022000 are
+exactly the six listed, all beginning 22100, and every precursor of 022001 also begins 22100; $(022000)^\infty$ lies in
+$Y$; every binary word of length up to 11 is the site-0 trace of a finite initial row; the checkerboard is fixed;
+and a brute force over period-2 and period-4 inputs finds no $H$-preimage of (alternating, all ones). (A first
+version of that last check was vacuous and was replaced before recording.)
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

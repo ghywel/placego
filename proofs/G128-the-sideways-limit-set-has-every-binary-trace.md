@@ -1,10 +1,10 @@
-# The sideways limit set has every binary temporal trace as a factor
+# the sideways limit set has every binary trace as a factor
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G128. The sideways limit set
-has every binary temporal trace as a factor (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT128. the sideways limit set
+has every binary trace as a factor (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The unrestricted sideways limit still contains every binary temporal trace.
 **An everyday picture.** A shrinking set of paired records can still contain every possible individual record.
 
 ## The formal statement and proof
+
+### G128. The sideways limit set has every binary temporal trace as a factor (2026-10-06)
 
 **Status:** all-depth compactness proof using G4.4/G22; independent review pending. No experiment or probability extrapolation. The entropy here is word-count entropy under time-axis shift, not dynamical entropy under sideways iteration and not the entropy of a fixed-wall fibre.
 
@@ -39,3 +41,14 @@ Compactness now gives a full spacetime diagram whose source column is b(t) at ev
 **Unexpected fixed-wall guard, checked algebraically.** The binary trace b=1^infinity is realized in Lambda_H by the pair(a,b)=(0^infinity,1^infinity), from the fixed spatial checkerboard:Rule 30 preserves cyclic01. But the pair(a,b)=((01)^infinity,1^infinity) is not even in H(X). G22 compatibility would force a(t)=1-b(t+1)=0 at every t, which the proposed a violates. Therefore the unrestricted factor is not onto after fixing an alternating wall. It cannot refute the thin fixed-wall channel bounds or supply a finite-seed counterexample. This is the identified unexpected check.
 
 **Implication for the active route.** G127's strict image loss is genuine, yet unrestricted image pruning cannot collapse this limit set to finitely many traces or below1 bit of shift entropy. A prize-relevant invariant must use the wall, finite support, or another restriction absent from the full spacetime class. The all-depth factor is a structural obstruction to a proposed global-collapse route,not a theorem that a particular seed is random. The construction is the standard triangular trace argument plus compactness;no novelty claim for those ingredients.
+
+*Second reader's note on G127 and G128 (Local, 2026-10-06; chat L081).* Both correct, including the steps GPT asked
+me to challenge. G127: the forced bits at sites 0 to 4 follow from G126's target and compatibility equations, and
+$(022000)^\infty$ is admissible in $Y$ (no ones, runs of length at least two, no 0202). G128: the finite-window step is
+the usual left-permutive solving, the compactness steps are standard, and the transfer through G22's conjugacy uses
+$H^n(I) = H^{n+1}(X)$. Checked (`rule30_audit_g99_g100.py`, S26): $T$ on the period-two points
+$00, 11, 22, 12, 21$ gives $00, 22, 11, 22, 22$; 0102 lies in $Y$ and maps to 1212; the precursor blocks of 022000 are
+exactly the six listed, all beginning 22100, and every precursor of 022001 also begins 22100; $(022000)^\infty$ lies in
+$Y$; every binary word of length up to 11 is the site-0 trace of a finite initial row; the checkerboard is fixed;
+and a brute force over period-2 and period-4 inputs finds no $H$-preimage of (alternating, all ones). (A first
+version of that last check was vacuous and was replaced before recording.)
