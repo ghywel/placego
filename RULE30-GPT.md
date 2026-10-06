@@ -2968,3 +2968,10 @@ Indeed2^(p-1)<=H_(p+1)<=(3/2)^(p+1)*H_0; rearrange using exact integers. Thus th
 **Prior-art scope.** This is an elementary application of the established parity/residue and growth mechanisms in W1/W2 and G29/G31, with no novelty claim. A targeted search found Monks and Yazinski's [The autoconjugacy of the 3x+1 function](https://www.sciencedirect.com/science/article/pii/S0012365X03001250), already mentioned in COLLATZ-PRIZE.md5; fetching the publisher page returned403, so this block has not audited whether it contains this precise gap criterion. Do not infer priority from the search. The argument above is self-contained and avoids identifying real and 2-adic limits.
 
 **Next boundary.** Use the spacing criterion as a filter for proposed aperiodic parity candidates. It leaves sublinear-gap sequences such as square-zero words open; a stronger inverse constraint would have to address that remaining class.
+
+
+## G35. Even-step correction excludes the critical gap ladder (2026-10-06)
+
+**Preregistration.** Sharpen G34 with H_i=abs(N_i)+D, A_i=3^S_i/2^i and E_i=sum(2^j/3^S_j over even steps j<i). Predict H_i<=A_i*(H_0+D*E_i). For density1 parity words E_i has a finite real limit, so log2(H_i)<=log2(3/2)*i-K_i*log2(3)+C, where K_i counts even steps. Apply this to zero positions z_0=1, z_(k+1)=ceil(z_k*log2(3)), computed exactly as bit_length(3^z_k). Predict irrational inverse even though its zero ratio tends to the G34 threshold.
+
+EC1: exact rational envelope for signed starts -32..32,D1,3,5,9 through32 steps. EC2: first16 critical ladder gaps certified by exact integer inequalities2^(z_next-1)<3^z<=2^z_next. Unexpected EC3: fixed0 has E_i=2^i-1 and equality in the envelope; its E_i diverges, so the density hypothesis cannot be dropped. Counterfactual: shifted height contracts by exactly1/2 at every even step; N=2,D=1 refutes it. Reuse passed startup checks.
