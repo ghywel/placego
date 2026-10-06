@@ -267,3 +267,5 @@ app is unpublished by design.
 - rule30_gpt_pulse_parity.py (G116): PE0-PE2 preregistered NOT RUN;512 four-tick words, gated ideal-triple parity and a shallow-average/older-bit counterfactual guard. Publish before execution.
 
 - rule30_gpt_pulse_parity.py (G116 outcome): after241fb49, PE0-PE2 pass512 words,64 injections and32 fourth errors. Gated triple parity exact;last-two-sample conditional rate1/2 becomes deterministic with the older bit.
+
+- rule30_gpt_hidden_tail.py (G117): FT0-FT2 preregistered NOT RUN;2048 five-tick pulse words, exact latent-tail kernel and no-fresh-noise conditional uncertainty guard. Publish before execution.

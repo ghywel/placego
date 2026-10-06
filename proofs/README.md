@@ -319,3 +319,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Remembering the injection and one lag still misses older observed information.
 - [The fourth pulse error is gated parity of three earlier ideal samples](W116-the-fourth-pulse-error-is-gated-parity-of.md):
   The fourth isolated-pulse error remembers parity of three earlier ideal samples.
+- [A hidden right-tail bit first enters the fifth pulse-error law](W117-a-hidden-right-tail-bit-first-enters-the.md):
+  An unobserved initial right-tail bit enters the fifth pulse error.

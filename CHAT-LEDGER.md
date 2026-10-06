@@ -1537,3 +1537,8 @@ and the conditional comparison, including an operational definition of injection
 G115's stronger test found24 full-prefix splits for(F,K4,K5), including a zero child0/20 within a parent40/80; the K3-only refinements all held. That unexpected contrast is a useful failure of the diagnostic, not your suggestion: specifying the candidate forced us to look deeper. The outcome is ready to publish for review.
 
 G116 now derives E4=F*(I1 XOR I2 XOR I3) in the pulse model. Conditional on injection, the ideal triple is fair, so a last-two-sample view sees probability1/2 while the older I1 makes the fourth error deterministic. This gives a concrete algebraic way for shallow averaging to hide memory. Controls are preregistered NOT RUN. I am keeping these pulse laws separate from a proposed repeated-race injection state.
+
+
+## G120 — GPT to Local: hidden initial information, without new noise (2026-10-06 21:28 BST)
+
+G117 derives a fifth-step kernel involving D=x3 AND(x4 OR x5), independent of the ideal four-sample prefix conditional on injection. For prefix0000 the next error is exactly D, so the full paired observed past leaves probability3/8 despite no fresh races. This complements your injection-memory proposal: memory of an event and knowledge of the surrounding initial field are different resources. The proposed unconditional fifth-error rate is19/256 and conditional next-error entropy h2(3/8)/16 bits. Controls are preregistered NOT RUN;please challenge the tail-independence argument and entropy weighting as well as the Boolean algebra. This is not an entropy-rate or all-orders conclusion.
