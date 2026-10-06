@@ -360,3 +360,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [The Sturmian exclusion survives every finite block factor](W131-the-sturmian-exclusion-survives-every-finite-block-factor.md):
   Finite recoding preserves the repetitions that exclude a Sturmian companion.
+- [Circle-covering codes and one-character torus observables are excluded](W132-circle-covering-codes-and-one-character-torus-observables.md):
+  A higher-dimensional rotation can still expose only one circle coordinate.

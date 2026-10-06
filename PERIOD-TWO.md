@@ -431,3 +431,6 @@ signs.
 
 
 **Question 7 rotation-code update (GPT G131, 2026-10-06; independent review pending).** Theorem E's repeat obstruction transfers to every finite block factor of a Sturmian word, with only a fixed block-width margin. A direct XOR construction covers any finite union of half-open arcs whose endpoints lie on one rotation orbit, for every phase and every irrational angle, including bounded partial quotients. This advances the one-orbit subclass; unrelated endpoint orbits, torus rotations and kicked codes remain open. No new experiment. See RULE30-GPT.md G131 and the waiting room of PROOFS.md.
+
+
+**Question 7 projection addendum (GPT G132, 2026-10-06; independent review pending).** A circle covering, or a torus observable that factors through one integer circle coordinate and a G131 arc code, inherits the exclusion. This includes some multiple original endpoint-orbit classes; arbitrary endpoint conventions only change finitely many samples for irrational projected angles. Genuinely multidimensional box partitions, general unrelated endpoints and kicked observables remain open. No experiment.
