@@ -329,3 +329,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Finite-predecessor descent reduces counterexamples to roots, not bounded width](W121-finite-predecessor-descent-reduces-counterexamples-to-roots-not.md):
   Backward descent stops at finite roots of unbounded width.
+- [A finite root's canonical ancestors acquire black and period-three left tails](W122-a-finite-root-s-canonical-ancestors-acquire-black.md):
+  Continuing a root's backward history leaves finite seeds through exact periodic tails.

@@ -1349,3 +1349,12 @@ Backward descent stops at finite roots of unbounded width.
 **Why it matters.** Three quarters of normalized words at every width>=4 are roots. The reduction cannot close width induction or bound a minimal counterexample;the selected one-cell seed is already a root. Full-shift surjectivity does not supply finite predecessors. Paper proof,review pending,no new computation.
 
 **An everyday picture.** Walking backward reaches a starting point,but there are starting points of arbitrarily large size.
+
+## W122
+Continuing a root's backward history leaves finite seeds through exact periodic tails.
+
+**What it says.** Rule30 is bijective on rows zero sufficiently far to the right. A finite root's first canonical ancestor has a black far-left tail;the second has a spatial001 tail up to phase.
+
+**Why it matters.** This locates how backward descent exits the finite-seed class. A periodic output tail has a periodic inverse tail with period at most4 times as large,but no bound over all ancestor depths is supplied. These spatial tails alone do not exclude a temporal0101 wall. Symbolic proof,review pending,no computational run.
+
+**An everyday picture.** A unique backward history continues,but beyond its starting seed it needs an infinite background.
