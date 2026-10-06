@@ -295,6 +295,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   memoryless traces can form a pair with memory.
 - [a finite-rate memory split extends to generic rates](G111-a-finite-rate-memory-split-extends-to-generic.md): An
   exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
+- [two shared black observations shield the next tick](G112-two-shared-black-observations-shield-the-next-tick.md):
+  Two shared black observations force the next source samples to agree in the right-reading coupling.
 
 ## The waiting room (not yet verified)
 
@@ -309,7 +311,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Two shared black observations shield the next tick and obstruct bulk first-order memory closure](W112-two-shared-black-observations-shield-the-next-tick.md):
-  Two shared black observations force the next source samples to agree in the right-reading coupling.
 - [One lag does not close the isolated-pulse paired trace at tick5](W113-one-lag-does-not-close-the-isolated-pulse.md):
   Keeping one previous paired observation still misses pulse-model memory.

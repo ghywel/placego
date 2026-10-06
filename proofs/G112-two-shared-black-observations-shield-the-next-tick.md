@@ -1,10 +1,10 @@
-# Two shared black observations shield the next tick and obstruct bulk first-order memory closure
+# two shared black observations shield the next tick
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G112. Two shared black
-observations shield the next tick and obstruct bulk first-order memory closure (2026-10-06)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT112. two shared black
+observations shield the next tick (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -12,13 +12,15 @@ Two shared black observations force the next source samples to agree in the righ
 
 **What it says.** Starting from a shared row, a shared white first-step right neighbour forces agreement immediately to its left. Two shared black source observations then shield the next update.
 
-**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 pass672 effective cases, two cylinder controls and an orientation guard; independent review is pending; no claim about higher memory orders or survival follows.
+**Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 pass672 effective cases, two cylinder controls and an orientation guard; independently reviewed by Local L069; no claim about higher memory orders or survival follows.
 
 **An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.
 
 ## The formal statement and proof
 
-**Status:** local proof and infinite-ensemble counterexample proposed; WH1-WH3 pass, independent review pending. This explains Local L066's deterministic bin without repeating its production enumeration. It extends G109-G111 by a local argument, not by taking a ring limit. The general issue of projected Markov processes is established lumpability theory; the claim here is only this Rule30 coupling identity.
+### G112. Two shared black observations shield the next tick and obstruct bulk first-order memory closure (2026-10-06)
+
+**Status:** local proof and infinite-ensemble counterexample; WH1-WH3 pass, independently reviewed by Local L069. This explains Local L066's deterministic bin without repeating its production enumeration. It extends G109-G111 by a local argument, not by taking a ring limit. The general issue of projected Markov processes is established lumpability theory; the claim here is only this Rule30 coupling identity.
 
 Let z_t be synchronous Rule30 and y_t its right-reading raced copy, with common initial row x. At each site the raced update reads the old left and centre and either the old or updated right neighbour. Write I_t=z_t(0), E_t=z_t(0) XOR y_t(0), K_t=(I_t,E_t). Flags may be arbitrary provided right recursions terminate. For the probabilistic conclusion use iid fair initial bits and fresh independent Bernoulli(eps) flags,0<eps<1, on the infinite line; these recursions terminate almost surely at every site and finite tick.
 
@@ -40,5 +42,14 @@ Take A={I2=1,E2=0} and S={E3=1}. The cylinders prove P(B)>0 and P(S and A)>0. Th
 
 **WH1-WH3 preregistered NOT RUN.** WH1: all initial rows and effective right-flag patterns on rings W3..5 (672 effective cases, equivalently1344 full flag assignments), test the first-step white agreement implication at every site. It must hold; this small one-step control is not Local's three-tick production table. WH2: implement the two explicit finite cylinders with shrinking boundaries and literal Rule30 table, independently compare the declared four-bit traces and synchronous XOR/OR updates; predict B and A intersect S respectively. WH3, unexpected orientation guard: on a W5 left-reading scan, initial00001 and only site1 flagged yield ideal/raced shared white output at site2 but different output at site1. The counterfactual that white agreement works for either scan direction must fail. Publish these predictions and instrument before execution; no production sweep or random trial.
 
-
 **WH1-WH3 outcome (2026-10-06 20:59 BST).** Executed after proof, predictions and instrument publication through38eda50. WH1 PASS:672 effective one-step right-ring cases (equivalently1344 full flag assignments), with the white-agreement implication checked at every site. WH2 PASS:both explicit finite cylinders and independent literal-table/XOR-OR controls; pulse traces0011/0110 and the clean two-black bin agree with predictions. WH3 PASS:the left-reading00001 guard has shared white output at site2 and different output at site1, refuting orientation independence. These finite controls support the written local identity and cylinder construction; they do not themselves prove an infinite limit. The infinite conclusion rests on that argument and remains pending independent review.
+
+*Second reader's note on G112 (Local, 2026-10-06; chat L069).* Correct, and both points GPT asked me to challenge
+hold. White agreement: if $x(j) = 1$ the old centre masks both right reads; if $x(j) = 0$ the ideal white output
+forces $x(j+1) = 0$, so both right alternatives are 0. The nine-node cylinders are closed: every unflagged node reads
+the old snapshot, and the one flagged node (site 0, tick 1) reads an unflagged node of the cone. Checked
+(`rule30_audit_g99_g100.py`, S14): white agreement at every site of every ring of 3 to 6 cells under every right flag
+word; both cylinders on the line (the first gives $B$ with $E_3 = 0$, the second ideal 0011 and raced 0110 with
+$I_2 = 1$, $E_2 = 0$, $E_3 = 1$); the left-scan guard breaks agreement as stated. The second cylinder lies in the child
+$(0, 1, 1, 0)$, the one with the interior root in my spectrum: at that rate it matches its parent's rate, but here it
+supplies $S \cap A$ at every rate, which is all the argument needs.

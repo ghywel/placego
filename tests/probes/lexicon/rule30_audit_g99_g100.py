@@ -54,6 +54,11 @@ CHECKS (GPT's claims at 827e006):
      ticks 1..3, the other 112 giving 0, 0, 0; second-tick damage sets {1} and {-1, 1}, 8 each.
   S13 (G110, added 2026-10-06 at f922142): the isolated pulse over all 128 words on -3..3: in each bin K_2 = (b, 0),
      8 words with E_1 = 1 and 56 with E_1 = 0; E_3 = E_1 always; both four-sample traces uniform (16 words, 8 each).
+  S14 (G112, added 2026-10-06 at 38eda50): (a) white agreement after one right-reading step, at every site of every
+     ring of 3 to 6 cells, every initial row and flag word: z_1(j+1) = y_1(j+1) = 0 implies z_1(j) = y_1(j); (b) the two
+     nine-node cylinders on the line (initial words 0110000 and 0000010 on -3..3, flags as stated): ideal / raced source
+     traces 1100..., B occurs with E_3 = 0, and 0011 / 0110 with I_2 = 1, E_2 = 0, E_3 = 1; (c) the left-scan guard on
+     a ring of 5 (initial 00001, only site 1 flagged): site 2 white in both, site 1 different.
 """
 import random
 from fractions import Fraction as F
@@ -479,4 +484,43 @@ for w in range(2 ** 7):
 ok13 &= all(bins.get((b, 0, 1), 0) == 8 and bins.get((b, 0, 0), 0) == 56 for b in (0, 1))
 ok13 &= len(hI) == 16 and set(hI.values()) == {8} and len(hJ) == 16 and set(hJ.values()) == {8}
 check('S13 G110: bins 8 and 56 per ideal bit, E_3 = E_1, both traces uniform', ok13, str(sorted(bins.items())))
+ok14 = True
+for W_ in range(3, 7):
+    for r0 in range(2 ** W_):
+        x = [(r0 >> k) & 1 for k in range(W_)]
+        z = ideal_step(x)
+        for fw in range(2 ** W_):
+            fl = [(fw >> k) & 1 for k in range(W_)]
+            y = race_step(x, fl, 'R')
+            for j in range(W_):
+                j1 = (j + 1) % W_
+                if z[j1] == 0 and y[j1] == 0 and z[j] != y[j]:
+                    ok14 = False
+
+
+def line_cyl(word, flag_t1_site0):
+    x = {i - 3: int(word[i]) for i in range(7)}
+    z1 = {i: R30(x[i - 1], x[i], x[i + 1]) for i in range(-2, 3)}
+    y1 = {}
+    for i in range(2, -3, -1):                     # right-to-left scan on the cone's tick-1 nodes
+        rr = y1[i + 1] if (i == 0 and flag_t1_site0) else x[i + 1]
+        y1[i] = R30(x[i - 1], x[i], rr)
+    z2 = {i: R30(z1[i - 1], z1[i], z1[i + 1]) for i in range(-1, 2)}
+    y2 = {i: R30(y1[i - 1], y1[i], y1[i + 1]) for i in range(-1, 2)}
+    z3 = R30(z2[-1], z2[0], z2[1])
+    y3 = R30(y2[-1], y2[0], y2[1])
+    return (x[0], z1[0], z2[0], z3), (x[0], y1[0], y2[0], y3)
+
+
+I_, J_ = line_cyl('0110000', False)
+E_ = [a ^ b for a, b in zip(I_, J_)]
+ok14 &= I_[1] == 1 and I_[2] == 1 and E_[1] == 0 and E_[2] == 0 and E_[3] == 0
+I_, J_ = line_cyl('0000010', True)
+E_ = [a ^ b for a, b in zip(I_, J_)]
+ok14 &= I_ == (0, 0, 1, 1) and J_ == (0, 1, 1, 0) and I_[2] == 1 and E_[2] == 0 and E_[3] == 1
+x5 = [0, 0, 0, 0, 1]
+z5 = ideal_step(x5)
+y5 = race_step(x5, [0, 1, 0, 0, 0], 'L')
+ok14 &= z5[2] == 0 and y5[2] == 0 and z5[1] != y5[1]
+check('S14 G112: white agreement (rings 3..6, right scan); both cylinders; the left-scan guard', ok14)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

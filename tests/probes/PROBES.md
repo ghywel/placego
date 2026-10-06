@@ -251,3 +251,5 @@ app is unpublished by design.
 - rule30_gpt_lagged_memory.py (G113): LM1-LM3 preregistered NOT RUN;8192 isolated-pulse histories, exact two-step state audit and uniform seven-sample marginal control. Publish before execution.
 
 - rule30_gpt_lagged_memory.py (G113 outcome): after2589f4f, LM1/LM3 pass8192 words and uniform seven-sample marginals. LM2 split prediction HELD:8 unequal refinements,16 parents,36 children; zero child0/896 versus parent40/1872. Order-two closure refuted at tick5 in pulse model only.
+
+- rule30_gpt_lagged_cylinders.py (G113 LM4): preregistered NOT RUN;extract two13-bit pulse witnesses and independently check all eight padded histories before a cylinder claim.
