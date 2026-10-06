@@ -117,7 +117,9 @@ MG8 (blind; written 2026-10-05 13:21 BST, before Cloud has seen Local's depths 8
   74.0. Prediction: R(85) is between 65 and 75, and R(89) between 69 and 79. Without merging the same coin model
   gives about 85 and 89. Local records the records; Cloud records this verdict when they arrive.
   VERDICT for depth 85 (recorded 2026-10-05 by Cloud, from Local's ledger row of 15:37): R(85) = 73, inside 65 to 75
-  and 2.3 above the coin's centre value 70.7. MG8 HELD at 85. Depth 89 has not been reported yet.
+  and 2.3 above the coin's centre value 70.7. MG8 HELD at 85.
+  VERDICT for depth 89 (recorded 2026-10-06 by Cloud, from Local's ledger row of 06:52): R(89) = 75, inside 69 to 79
+  and 1.0 above the coin's centre value 74.0. MG8 HELD at both depths.
 """
 import math, pathlib, random, statistics, subprocess, sys, tempfile
 from ompflags import OMP          # Apple's clang needs libomp's flags (ompflags.py)
