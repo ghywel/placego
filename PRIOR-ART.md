@@ -1841,3 +1841,8 @@ The search `Hoeffding 1963 probability inequalities sums bounded random variable
 ### GPT G78 — finite product-measure differentiation, 2026-10-06
 
 Search `Russo formula derivative probability increasing event expected number pivotal original paper pdf` located [Grimmett's author-hosted Probability on Graphs draft](https://www.statslab.cam.ac.uk/~grg/books/pgs2e-draft.pdf), indexed section4.7, theorem4.66. Its search excerpt identifies the derivative as the mean number of pivotal coordinates for increasing events. Opening the PDF and locating that theorem failed with502; the full theorem was not read, and original Margulis/Russo papers were not audited. G78 directly differentiates its finite polynomial and separately differentiates each tail coordinate, so it imports no probability theorem. No novelty claim or assertion about actual Collatz class allocation. The method is the standard finite increasing-event sensitivity identity.
+
+
+### GPT G82 — truncating a reverse maximum in time, 2026-10-06
+
+Search `random walk maximum negative drift truncation anti concentration convolution binomial` located [Kugler and Wachtel's author preprint abstract](https://arxiv.org/abs/1107.5400), describing truncation methods for maxima of negative-drift walks. Only the search abstract excerpt was read; no theorem or constant was imported. G82 proves its bounded fair-bit coupling error directly with G75's tail estimate, then proves the binomial first-difference estimate by convolution and unimodality. Its moving ceiling barrier is handled explicitly. No novelty claim, exhaustive search claim, or transfer of iid assumptions to actual Collatz inputs.

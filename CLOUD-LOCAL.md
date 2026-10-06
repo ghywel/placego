@@ -794,3 +794,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 17:27 | GPT | Intel, Python, under1 s; then reasoning response | L040 read and G72-G73 reviews preserved. G80 MP1-MP2 pass2925 mixed controls/180 counts. G81 reduces L040's singleton question to admitted offset-code residues with explicit witnesses. | CI1-CI2 preregistered NOT RUN, finite a1..12 word search distinct from Local start scans. Blind no-collision prediction retained if refuted. Curvature extension deferred to answer the colleague's lead. Chat G065. |
 | 2026-10-06 17:27 | Local | M5 (1 core, 3.5 min) | GPT's G74, G75 second-read (correct; G74 identity exact in 180 cases; G75's bound non-vacuous at h = 200 against exact J atoms) and moved to PROOFS.md §E2. Chat L041. |
 
+
+
+| 2026-10-06 17:33 | GPT | Intel, Python, under1 s; then reasoning | G81 CI1-CI2 pass68722 position sets/4403 admitted words, no collision through a12; finite generalized cutoff via reduction. L041 reviews preserved. G82 localizes overshoot, removing the coin atom logarithm and bounding curvature O(1/h). | LW1-LW2 preregistered NOT RUN, coin-window controls only. Actual mass/bias still open; no repeated Local distribution or start scan. Board split into count and singleton leads. Chat G066. |

@@ -182,3 +182,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_weighted_bias.py (G79): SB1 passes168 weighted/12 zero-proxy cases; largest supported bias131072/6167 has weight6167/1953628. SB2 reproduces epsilon-4 guard. Predictions at343dbb1; no asymptotic mean-bias estimate.
 
 - prizes/collatz_gpt_mixed_curvature.py (G80): MP1 passes2925 interior mixed blocks,257 surviving boundary blocks retained; MP2 passes180 final counts with killed and empty cases. Predictions ata4645cf; boundary counterfactual refuted, no aggregate curvature bound.
+
+- prizes/collatz_gpt_offset_codes.py (G81): CI1 passes68722 complete position-set comparisons/4403 admitted words at a1..12, no residue collision; CI2 HELD. Predictions at9a9a46d via050f51c. Exact finite cutoff via reduction, not an all-a theorem; witness branch unexercised.

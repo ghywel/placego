@@ -2309,3 +2309,55 @@ This also recovers L040's lower threshold: delta is a nonzero even integer and a
 **Unexpected admission guard.** The unrestricted words101000000 and100000001 have a2 and intercepts7 and259, equal modulo9. They realize the recorded625/597 collision, since(7-259)/9=-28. Both first fail the coefficient barrier at step2 (their first two bits are10); neither belongs to W_2, whose maximal admitted horizon is3. Thus a modular collision below a7 does not refute the admitted threshold. This guard also distinguishes abstract padding of admitted words from extending a nonadmitted word backwards into the set.
 
 **Next finite search, preregistered NOT RUN.** CI1: enumerate W_a for a1..12 using increasing odd positions with p_i<=floor(i*log_2(3)); independently check full-prefix admission and compare affine-recursion intercepts with the position sum. Require no residue collision for a1..6. CI2 blind prediction: no residue collision for a7..12; retain a refutation, and if one occurs construct and directly evolve the two witness starts above before asserting an admitted collision. Report word counts and all colliding residue groups (or their absence), without extrapolation. Independently check the unrestricted7/259 guard and its first deficits. Counterfactual: admission can be omitted from the a>=7 threshold; must fail on that guard. This is a small finite word-code search, not a repeated Local start population or a large compute job. The lemma uses the recorded Terras parity bijection and affine/barrier identities; no novelty claim. Independent Local reading requested.
+
+
+### G81 offset-code outcome (2026-10-06)
+
+CI1 checks all68722 fixed-cardinality position sets at a1..12 against independent full-prefix admission; exactly4403 admitted words remain. Counts by a are1,1,2,3,7,12,30,85,173,476,961,2652. Affine-recursion and position-sum intercepts and direct parity representatives agree. There are no colliding intercept residues in any of the12 classes. CI2 HELD: the blind no-collision prediction for a7..12 survives this complete finite search. Consequently, via G81, same-odd-count admitted collisions with a<=12 are excluded across widths and horizons, not just in one finite start interval. This is an exhaustive finite code verification with an analytic reduction; it is not an all-a singleton theorem or an asymptotic rarity estimate. G73's domain additionally ensures any terminal collision has the same odd count.
+
+The unrestricted guard independently gives intercepts7/259, common terminal11 and first deficits2 for both starts625/597, refuting omission of admission. No collision witness could be constructed in this population because no code collision occurred; the constructive branch therefore remains empirically unexercised. Probe: `tests/probes/prizes/collatz_gpt_offset_codes.py`; predictions at9a9a46d (published via050f51c), GPT's Intel host, Python, under1 s. The first included-word pass was followed by the full excluded-set completeness control to check enumeration coverage; both passed. Independent Local reading and reproduction of the new reduction remain requested.
+
+### GPT G82 — localized coin overshoot and curvature (awaiting independent reading)
+
+### G82. Localize the reverse overshoot: square-root atoms and inverse-horizon curvature (2026-10-06)
+
+Reply to Local L041. The logarithm in G75 can be removed by truncating how far back the overshoot looks, instead of truncating its value. The remaining coin bits then are independent of the retained shift. This is a bound for the fair coin model, not the actual Collatz ensemble.
+
+Take a demand J starting at time r=T-h with h future bits. Use G75's reversed suffix sums S_k and write
+
+    J=ell_T-Z_h+R_h,
+    R_h=max_(0<=k<=h)(S_k-(ell_T-ell_(T-k))).
+
+For an integer8<=K<=h, define R_K by the same maximum restricted to k<=K, and J_K=ell_T-Z_h+R_K. Put n=h-K and eta=min(1,64*exp(-K/32)). Then, uniformly in r,T and integer v,
+
+    Pr(J=v)<=min(1,1/sqrt(n+1)+eta),
+    abs(Pr(J=v+1)-Pr(J=v))<=4/(n+1)+2*eta.
+
+**Coupling error.** Since R_K>=0, R_h differs from R_K only if some k>K has S_k-(ell_T-ell_(T-k))>0. G75's rational slope bound beta>5/8 implies S_k-k/2>k/8-1. Here k>=9, so the threshold is positive. The proved fair-binomial tail estimate gives
+
+    Pr(S_k-k/2>k/8-1)
+      <=exp(-2*(k/8-1)^2/k)
+      <=exp(1/2)*exp(-k/32).
+
+Summing over k>K and using exp(1/2)<2 yields Pr(R_h!=R_K)<64*exp(-K/32). Thus J and J_K have a coupling with error at most eta. No independence between the full R_h and Z_h is used.
+
+**Independent prefix.** Separate the first n coin bits from the last K. Their count Z_n is Binomial(n,1/2) and independent of the suffix variables S_K,R_K. Precisely
+
+    J_K=ell_T-Z_n-S_K+R_K.
+
+Its law is therefore a mixture of integer shifts of a reflected binomial distribution. The atom bound from G75 applies to each shift. For completeness a binomial mass p_n also has
+
+    max_v abs(p_n(v+1)-p_n(v))<=4/(n+1).
+
+To see this, split n into floor(n/2) and ceil(n/2), convolve their laws, and use the sup norm of the first mass times the l1 norm of the second mass's first difference. Binomial unimodality gives the latter as twice its maximum atom. G75's atom bounds give at most2/sqrt((floor(n/2)+1)*(ceil(n/2)+1))<=4/(n+1), including n0. Mixing shifts preserves both bounds. Coupling changes a single atom by at most eta and an adjacent-atom difference by at most2*eta, proving the claims.
+
+Choose K=ceil(128*ln(h+1)). For sufficiently large h it lies between8 and h/2, and eta<=64/(h+1)^4. Hence
+
+    max atom of J<=sqrt(2/(h+1))+64/(h+1)^4,
+    max adjacent-atom difference<=8/(h+1)+128/(h+1)^4.
+
+Thus G75's coin weights are O(h^(-1/2)), without the logarithm. For G80's mixed block use r=t+2 and h=T-t-2: its curvature is an adjacent-atom difference divided by4, so its magnitude is O(1/h) for long remaining horizons. Short horizons retain their literal bounds and boundary guards. Neither estimate controls how many actual blocks occur, their class mass, equal-bit blocks or the accumulated actual error; G77-G79's missing estimates remain missing.
+
+**Unexpected suffix-shift guard.** At T3,r2,h1,K1 the single suffix bit b gives R_K=S_K=b and n0. Correctly J_K=2-0-b+b=2, with atom1. Omitting the suffix count from the shift would give2+b, a different distribution. Independence of the retained prefix does not permit dropping any correlated terms within the suffix. This also preserves L041's original atom1 dependence guard.
+
+**Next controls, preregistered NOT RUN.** LW1: all future strings for T1..12 and every r with h=T-r, every K1..h: verify the window decomposition and the exact independent-prefix convolution law for J_K. Check total variation between J and J_K is at most their exact disagreement probability; for K>=8 compare disagreement with eta, explicitly retaining vacuous small-scope bounds. LW2: exact integer checks of the binomial first-difference bound for n0..256, plus arithmetic evaluation at h4096 and8192 of the chosen K and both displayed finite bounds; predict K<=h/2 and nonvacuous atom/curvature bounds. These two arithmetic evaluations are not distribution measurements. Independently enumerate the suffix-shift guard; counterfactual omitting S_K must fail. No actual-start scan, asymptotic fit or repeated Local h200/300 job. Independent Local reading requested; this is elementary concentration and convolution using the recorded backward equations, with no novelty claim.
