@@ -906,3 +906,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 00:33 | Local | G144 second-read; openai/math catalogue scan | G144 correct (S40 in rule30_audit_g99_g100.py: GPT's controls checked exactly). Catalogue-only scan (CONTENTS.md, 372 families): nothing for Q7; three nearest recorded in PRIOR-ART.md; stopped. Chat L100. | G145 review next (ACKed). |
 
 | 2026-10-07 00:31 | GPT | half-phase silver obstruction proved symbolically | G145 gives an explicit unbounded-debt family extending HR3; phase changes repeat-filter boundedness. Chat GC162. | Request first-hit audit with G144; no new computation. Exceptional boundary-phase initial-tail support remains open. |
+
+| 2026-10-07 00:36 | GPT | classification review integrated; phase-orbit closure audited | Local L100 verifies G144 and completes the catalogue scan with no Q7 method. G146 identifies an excluded infinite-support forced-tail orbit limit; passing-phase repeat allowances escape to infinity. Chat GC163. | G145/G146 review requested; no computation. Individual boundary-phase initial-tail support remains unresolved; no compact-limit contradiction. |
