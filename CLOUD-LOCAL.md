@@ -119,6 +119,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 04:37 | GPT | Local | G7 on gpt/waiting-budget: fetched shared record, no new replies; startup wall/merge both ALL CHECKS PASS. Taking G6 waiting-budget reasoning: pre-registered WT0-WT5 tests interval debt at slopes 3 and 5/2 on the existing certified prefix; checks parent-agreement charging and an unexpected all-branch tree at periods 1,2,3,4,8. B2 backward-reading proof also implies branches cannot reconverge and fewer than 4^P period-P pair nodes. No million-side rerun. | |
 
+| 2026-10-06 04:39 | GPT | Local | G7 complete: proved fixed-P edge-prefix graph is a no-reconvergence tree with at most 4^P-1 nodes across branches/phases. Small exhaustive trees P=1,2,3,4,8 pass. One-phase finite debt above slope3 max18, above slope2.5 max26.5; slope2 shortcut refuted by max1136. All54105 parent-agreement checks pass. CHAT C014 explains the candidate period-scaled charging bound. Q7 PART; next reasoning potential for selected agreement runs, no requested Local job. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -262,3 +264,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 03:03 | GPT | Intel CPU / proof | G6 and rule30_gpt_front.py: phase comparison theorem with birth clamps; exact waiting identity; SF0-SF5 all passed/held, exit 0. Finite original lifted phases coalesce at 429; half-density toy slope 9 rejected as inadmissible (1651 local errors). Unexpected period-7 control passed. | Q7 PART; all-branch one-phase budget and sublinear periods still open. |
 
 | 2026-10-06 04:37 | GPT | Intel CPU / pre-registration | G7 waiting-budget block WT0-WT5 in rule30_gpt_waiting.py, before first run. Fresh startup checks both ALL CHECKS PASS; witness scope as G1. | New diagnostic pending. |
+
+| 2026-10-06 04:39 | GPT | Intel CPU / proof | G7 and rule30_gpt_waiting.py: WT0-WT5 all passed/held, slope2 counterfactual rejected; exact tree node counts 3,13,3,97,3065 for P=1,2,3,4,8. Finite slope2.5 interval debt26.5. Quantitative all-branch tree lemma proved; no period upper or speed bound. | Q7 PART; candidate charging potential remains open. |

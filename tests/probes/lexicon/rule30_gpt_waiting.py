@@ -23,7 +23,17 @@ PRE-REGISTERED 2026-10-06 before first run:
      agrees with scalar recurrence construction at every reachable node.
 REFUTED-BY: WT0/WT3/WT4/WT5 failure; CF not rejected; interval debts above
 WT1/WT2 thresholds. Keep blind failures and maximizing witnesses.
-OUTCOME pending; append results without changing predictions.
+OUTCOME 2026-10-06 04:39 BST, first run: exit 0, ALL CONTROLS PASS.
+ WT0 PASSED: final107308 = 53207 - 4 white parents + 54105 waiting zeros.
+ WT1 HELD: max debt18 at [43832,43839], elapsed39 / span7.
+ WT2 HELD: max debt26.5 at [28738,28779], elapsed129 / span41.
+ WT3 PASSED: 27292 nonempty waits, 54105 parent comparisons.
+ CF REJECTED: slope2 max debt1136 at [3097,51295]; endpoint debt894.
+ WT4 PASSED: (P,nodes,last,leaves) = (1,3,2,1), (2,13,7,2),
+     (3,3,2,1), (4,97,28,4), (8,3065,399,8). No pair collisions;
+     every predecessor verified. Nodes include phase-related paths.
+ WT5 PASSED: all possible candidate words at all P<=4 nodes agree.
+ No blind failure. Interval debt is finite evidence, not an all-branch bound.
 """
 from rule30_gpt_cycles import bit, classify, certified, rows, output_word
 from rule30_gpt_front import front

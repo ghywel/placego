@@ -679,3 +679,120 @@ for a telescoping charge or an explicit obstruction. Local's long-run lane stays
 solution or limiting-density theorem is claimed.
 
 **Record check.** The first document render reported 0 TeX errors but 20 unconsumed dollar signs: this project's renderer accepts fenced display math, not double-dollar display blocks. Converted the five new blocks to the established math fences before publication. This was a document-format failure, not a scientific probe failure.
+
+## G7. Adaptive waiting debt and a finite all-branch period tree (2026-10-06)
+
+**Question.** Can G6's zero-wait cost be charged over intervals rather than bounded at every single
+step? What does Lemma B2's backward-reading argument say about branches quantitatively?
+Fetched current history and both ledgers; no new Claude replies. Both startup probes printed
+ALL CHECKS PASS (standard witness-input scope as G1). Pre-registered WT0–WT5 and pushed `714d36f`
+on `gpt/waiting-budget` before the diagnostic. No Local million-side computation was repeated.
+Prior-art search and source scope are recorded in PRIOR-ART.md's dated G7 entry.
+
+### G7.1. Theorem: period-P edge histories form a finite tree
+
+Represent every temporal word by its $P$ bits indexed by absolute time modulo $P$. This includes
+words whose minimal period divides $P$. Write $S w(t)=w(t+1)$ for the cyclic time shift.
+A node is the adjacent pair $(a,b)=(w_{k-1},w_k)$; the root is $(0,1^P)$ at diagonal 0.
+A child $(b,c)$ is allowed exactly when
+
+```math
+ S c=a\oplus(b\lor c).
+```
+
+**Unique predecessor.** The predecessor of any pair $(a,b)$ is determined by
+
+```math
+ H(a,b)=\bigl(S b\oplus(a\lor b),a\bigr).
+```
+
+There are at most two children: for a specified initial bit $c(0)$ the scalar recurrence fixes the
+whole word, and a child is allowed only if it closes after $P$ steps. The root's predecessor is
+$(0,0)$, whose predecessor is itself. The pair $(0,0)$ is not reachable from the root: repeatedly
+reading its predecessor backward would contradict the root's black word.
+
+No pair can occur at two different depths in the rooted graph. If one did, apply the unique
+predecessor until the shallower copy reaches the root. The deeper copy then equals the root at
+positive depth, so its preceding node would have to be $(0,0)$, already excluded. No two genuinely
+different paths can reach the same pair at the same depth either: backward reading makes their
+entire histories identical. Thus the root-reachable graph is a tree, with no reconvergence across
+branches and no repeated pair along a path.
+
+There are $4^P$ possible pairs and the zero pair is excluded. Consequently the entire rooted tree,
+counting all its branches and temporal phase choices together, has at most $4^P-1$ nodes. A
+compatible prefix of $K$ diagonals therefore obeys
+
+```math
+ K\le4^P-1,\qquad P\ge\tfrac12\log_2(K+1).
+```
+
+This is a quantitative consequence of Local's Lemma B2, not a separate mechanism or a priority
+claim. Every finite path is realisable: construct its $P$ strip rows, which obey the closed
+one-sided spatial update; take one row as a finite seed and put white cells to its right.
+The right boundary cannot affect the strip. The theorem does not bound settling times.
+Its inequality is a **lower** bound on period; it supplies no upper bound such as $P=o(K)$.
+
+A fixed-P tree can be exhaustively certified rather than sampling branches. Its leaves have no
+period-dividing-P extension. In the edge-generated power-of-two setting, the reset/parity
+classification then forces the next period doubling. This remains a finite certificate whose
+worst-case size is exponential in P, not a tractable all-period proof of the open front conjecture.
+
+### G7.2. Pre-registered interval charging diagnostic
+
+For the phase-zero conservative front $T(k)$, define the maximum interval debt at a specified slope:
+
+```math
+ D_\gamma(M)=\max_{0\le a\le b\le M}
+ \bigl(T(b)-T(a)-\gamma(b-a)\bigr).
+```
+
+It can be computed exactly by scanning $T(k)-\gamma k$ and subtracting its minimum at earlier
+indices. The diagnostic uses integer arithmetic for slopes 3, 5/2 and 2. These slopes and the
+blind thresholds were chosen before the run. A bound at an endpoint alone can miss a large
+interval debt; the slope-2 measurement below shows that distinction.
+
+**Candidate sufficient condition, not proved.** On every admissible side, if
+$D_{5/2}(M)\le C P(M)+O(1)$ with a finite constant C (allowed to depend on the side), and
+$P(M)=o(M)$, then $T(M)\le(5/2)M+o(M)$. G6 transfers this to every phase. This would supply
+the below-3 settling hypothesis used in G2's sufficient Thue–Morse exclusion criterion. The
+single finite prefix below does not establish either hypothesis or cover other branches.
+
+The local equations checked are G6.2's parent-agreement criterion. Every nonempty zero wait at
+word $w_k$ has $w_{k-2}=w_{k-1}$ at the scanned times except the final transition, where they
+are different. All such selected comparisons were checked. This identity does not, by itself,
+charge one interval against another.
+
+### G7.3. What ran and every outcome
+
+Ran `PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/lexicon/rule30_gpt_waiting.py`, GPT Intel CPU,
+one process. First-run exit 0, ALL CONTROLS PASS. Numbers below are its recorded output.
+
+| Pre-registered item | Outcome |
+|---|---|
+| WT0, certified prefix and waiting identity | Passed: phase-zero final bound 107308 at diagonal 53207; 53207 extension steps, four identically white parent words, 54105 waiting zeros. Exactly 53207−4+54105=107308. The final white word 53207 is not used as a parent in this calculation. |
+| WT1, slope-3 debt at most 32 | Held: maximum 18, interval [43832,43839], elapsed 39 over seven diagonals. |
+| WT2, slope-5/2 debt at most 64 | Held: maximum 26.5, interval [28738,28779], elapsed 129 over 41 diagonals. |
+| WT3, parent-agreement equations | Passed: 27292 nonempty waits; all 54105 selected parent comparisons agree with the exact criterion. |
+| CF, slope at most 2 on every interval | Rejected: maximum debt 1136 on [3097,51295], larger than endpoint debt 894. |
+| WT4, explicitly unexpected all-branch tree check | Passed for periods 1,2,3,4,8; node totals and leaves below, no pair collision, every predecessor verified. |
+| WT5, independent extension control | Passed: at every reachable node with P≤4, brute force over all possible next words agrees exactly with the two-initial-bit construction. |
+
+| Common period P | All reachable pair nodes | Maximum last diagonal | Leaves |
+|---|---:|---:|---:|
+| 1 | 3 | 2 | 1 |
+| 2 | 13 | 7 | 2 |
+| 3 | 3 | 2 | 1 |
+| 4 | 97 | 28 | 4 |
+| 8 | 3065 | 399 | 8 |
+
+The period-3 case is deliberately unexpected: a non-power-of-two common period allows the
+period-1 prefix but cannot cross its first doubling. These node counts include phase-related
+paths; they are not counts of different left sides up to temporal shift. In particular, the
+small trees precede the first genuine side split at diagonal 53208.
+
+No blind prediction failed in this block. The tree ceiling and no-reconvergence property are
+proved for every P; the debt figures are finite measurements on the existing one-side prefix.
+No all-branch sub-3 settling theorem or prize solution follows. Q7 stays PART. The next useful
+reasoning target is a potential that charges these selected agreement runs, with its precise
+class of compatible side prefixes stated; a bound for arbitrary half-black words is already
+excluded by G6's toy.
