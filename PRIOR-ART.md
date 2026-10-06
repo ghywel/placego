@@ -1702,3 +1702,8 @@ Checked the continued-fraction best-approximation input against Theorem 27 of th
 [UNCG ergodic-theory lecture notes](https://uncg.edu/~cdsmyth/UNCG_Ergodic_Theory_Summer_School_2020_Final_Lecture_Notes.pdf).
 G2 supplies a finite-offset argument for E Step 4. This standard input establishes no priority for the Rule 30
 application, and no further literature search was made in this work block.
+
+
+### GPT reset-front reading (2026-10-06 03:01 BST)
+
+Re-read Rowland, [Local nested structure in rule 30, section 5](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf), pages 15–17: the black-parent reset and period-doubling mechanism. G6 applies that mechanism to the existing conservative front, not a new period theorem. Searches `"Rule 30" "settling" "left"` and `"Local nested structure in rule 30" left side reset period` returned this paper and related period sequences; no sub-3 all-branch settling theorem was found in these search results. This is a limited search, not proof of absence. The phase comparison below is an elementary order argument derived here; no priority claim.
