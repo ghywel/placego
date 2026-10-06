@@ -1101,7 +1101,7 @@ For the actual base-six CA, Kari–Kopra define g(x,y)=3*(x modulo2)+floor(y/2) 
 
 ### G.GPT51. Exact finite Mahler coupling window
 
-**Where:** RULE30-GPT.md G51; copied proof. **Status:** awaiting independent reader; MW controls NOT RUN.
+**Where:** RULE30-GPT.md G51; copied proof. **Status:** awaiting independent reader; MW1-MW3 finite controls pass (G51 outcome).
 
 ### G51 lemma and proof: exact finite Mahler coupling window
 
@@ -1121,3 +1121,19 @@ with the t0 upper endpoint interpreted as1/2. If L_T>=U_T it is empty. The lower
 Across increasing T for a single infinite word, realizing residues satisfy r_(T+1)=r_T or r_T+2^T. They therefore form a nondecreasing integer sequence. An ordinary nonnegative integer realizes the infinite itinerary if and only if these least residues are bounded: bounded monotone integers stabilize, and the stabilized value realizes every prefix; conversely a realizing integer has r_T equal to itself once2^T exceeds it. This makes the missing integer compatibility an explicit boundedness condition, separate from nonemptiness of the fractional intersection. No boundedness theorem for Mahler-admissible words is supplied.
 
 Unexpected finite exclusion:10101 contains no11, but its terminal lower endpoint is133/243>1/2. Its fractional window is empty. Thus the simple no11 subshift from G50 is a strict overestimate of the fractional language; checking only adjacent forbidden bits is insufficient. These are elementary specialized forms of the already recorded decoupling/residue tools, not a new Mahler nonexistence proof.
+
+### G.GPT52. Phase-aligned period-block extension of Corollary F
+
+**Where:** RULE30-GPT.md G52; copied proof. **Status:** awaiting independent reader; MF controls NOT RUN. The original index's plausible extension is not promoted before review.
+
+### G52 theorem and proof: Corollary F for phase-aligned period blocks
+
+Let a nonconstant Rule30 wall tau have period p>=2 from time0. For each period m, let v_m be the vector of column1 bits at the white phases within times pm,...,pm+p-1, in phase order. Suppose there is a fixed integer K>=0 and pairs i_j<i'_j with i'_j-i_j tending to infinity for which the vectors v at these indices have a common future of at least ell_j periods, with ell_j>=i'_j-K. Then the forced left half cannot have an initially finite nonempty black support.
+
+Proof. Assume finite support and let its leftmost black cell be at depth L. The universal band lemma B2 supplies an eventually-black diagonal b>=L+pK, black from time t_b. Matching white-phase vectors for ell_j complete periods makes the column pair(-1,0) identical for p*ell_j times from a=pi_j and a'=pi'_j. This follows directly from Lemma1: at a white phase the left neighbour depends on the matching visible bit, and at a black phase it is independent of that bit; tau(t) and tau(t+1) agree because both shifts are multiples of p. Choose j so p(i'_j-i_j)>b and pi'_j>=t_b. Theorem A triple-prime with distance L-1 from the leftmost black cell to column-1 gives
+
+    p*ell_j <= L-1+pi'_j-b <= pi'_j-pK-1,
+
+contradicting ell_j>=i'_j-K. This reuses the checked half-line versions of Lemma1, B2 and the window principle; no full right-half realization is required. For0101 there is one white phase per period and this is Corollary F's existing statement. It is a derived extension, without a novelty claim. Empty initial left rows are not included in this stated version; their forced first birth and time shift need a separate scope check.
+
+Phase alignment matters. For wall001 and visible bits all0, Lemma1 gives column-1 values0,1,1 at phases0,1,2. Shifting by one visible-bit index exchanges the two white phases (physical times0 and1), whose left-neighbour values differ. Identical visible-bit futures alone therefore do not justify repeating the pair at those physical shifts. The block statement above supplies the missing alignment. It does not prove that an arbitrary near-square in the ungrouped visible sequence can be aligned, nor supply a new channel/squeeze certificate.

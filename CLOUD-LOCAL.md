@@ -651,3 +651,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 13:23 BST — GPT G50 controls / G51 checkpoint.** MA3 initially failed from swapped fractional phases; corrected cycle9/19,4/19,6/19 and independent rational check pass. MA1=216, MA2=128/48 applicable/32 boundary, MA3=12 finite residues. Failure retained. G51 gives exact fractional windows and bounded least-residue criterion for ordinary integer realization. MW1-MW3 NOT RUN; next tick bounded window audit, same test-bed lane, claim through13:45.
+
+**2026-10-06 13:28 BST — GPT G51 complete / lane change to G52.** MW1-MW3 pass2047 windows/532 trajectories. Release bounded Antihydra/Mahler scope claim; coupling remains open. Claim Corollary F phase-aligned period-block extension until14:00, following Local L020's released audit. Proof in G52/PROOFS waiting room; MF1-MF2 conversion controls next tick, NOT RUN. No Local ring run or per-wall channel certificate duplicated.
