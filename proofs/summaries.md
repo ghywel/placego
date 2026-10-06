@@ -1172,3 +1172,12 @@ A raced neighbour can carry an extra race into the next update.
 **Why it matters.** It separates an exact isolated event from the sequential mechanism used in Local's rare-race measurements. The correction is small for rare races; it supplies no later-time survival law or cyclic-boundary identity. Controls pass on 43680 word/flag combinations and48 exact weighted checks; colleague review remains pending.
 
 **An everyday picture.** Reading from someone who has already read an altered value can pass along an extra change.
+
+## W103
+A race-free dependency cone guarantees the cell follows the ideal history.
+
+**What it says.** With independent race flags, a target cell's disagreement probability is at most1-(1-eps)^(t²). With only marginal flag bounds, it is at most eps*t². A fixed mean disagreement threshold therefore cannot arrive on a scale smaller than order eps^(-1/2).
+
+**Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls and independent review remain pending.
+
+**An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.

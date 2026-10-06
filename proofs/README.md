@@ -291,3 +291,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Isolated and chained race injection differ on a fair initial row](W102-isolated-and-chained-race-injection-differ-on-a.md):
   A raced neighbour can carry an extra race into the next update.
+- [A clean dependency cone gives a law-free disagreement bound](W103-a-clean-dependency-cone-gives-a-law-free.md): A
+  race-free dependency cone guarantees the cell follows the ideal history.
