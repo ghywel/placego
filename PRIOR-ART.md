@@ -1653,7 +1653,7 @@ Cloud):
 
 ## After the window principle: the Collatz complexity bound is Dubickas's (checked 2026-10-05, by Local through a search agent)
 
-Checked after the proofs of PRIZE-PROBLEMS.md §7.5 and RULE30-PRIZE.md §8.54, §8.57, §8.58 were written.
+Checked after the proofs of COLLATZ-PRIZE.md §5 and RULE30-PRIZE.md §8.54, §8.57, §8.58 were written.
 Pages and abstracts were read; no PDF could be opened, so Dubickas 2009, Jen 1990, Monks-Yazinski 2004,
 López-Stoll 2009, Bernstein-Lagarias 1996 and Terras 1976 were seen only in abstract or through citing papers.
 
@@ -1663,7 +1663,7 @@ López-Stoll 2009, Bernstein-Lagarias 1996 and Terras 1976 were seen only in abs
 - **Collatz, W1 and W3: FOUND three times in 2026, all unrefereed** (GitHub notes of 2026-07-22 and 2026-09-22, a
   Zenodo record of 2026-10-02). Implied for integer orbits by Dubickas's Theorem 5; for slopes below $\log_3 2$ by
   Monks and Yazinski (2004), Theorem 2.7(b) (secondary account).
-- **The lemma of PRIZE-PROBLEMS.md §7.4**: the identity is Terras (1976) and Lagarias (1985, Theorem B), verbatim as
+- **The lemma of COLLATZ-PRIZE.md §4**: the identity is Terras (1976) and Lagarias (1985, Theorem B), verbatim as
   Lemma 2.3 of arXiv:2602.10466; the least-residue bound is Kontorovich and Sinai's structure theorem, part two
   (arXiv:0910.1944, Theorem 5.2), in the odd-to-odd form.
 - **arXiv:2101.12747** (López and Stoll, 2021): no refereed criticism, correction or confirmation found. The gap at

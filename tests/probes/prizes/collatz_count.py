@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""collatz_count.py: Rule 30's counting form, carried to Collatz (PRIZE-PROBLEMS.md section 7.1).
+"""collatz_count.py: Rule 30's counting form, carried to Collatz (COLLATZ-PRIZE.md section 1).
 
 RUN-ON:     cpu (Python 3 and a C compiler; collatz.c counts; exact)
 COMMAND:    python3 tests/probes/prizes/collatz_count.py [WMAX=30]

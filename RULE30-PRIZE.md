@@ -19,12 +19,12 @@ Three theorems were added, each elementary and each checked by a pre-registered 
   left half is never finite. With Jen's theorem: no pure wheel works, rational or irrational. These are the first
   columns 1 beyond the eventually periodic ones for which Conjecture LR is proved.
 Also: question 4 is closed (§8.55: Kari and Kopra's argument is about rows, not columns), and the Collatz twin's
-state after the free bits is exactly a least residue modulo a power of 3 (PRIZE-PROBLEMS.md §7.4). None of this
+state after the free bits is exactly a least residue modulo a power of 3 (COLLATZ-PRIZE.md §4). None of this
 reaches the real case, where kicks come at a steady rate. §8.54 explains why the method stops there.
-- **The Collatz transfer (§8.58, PRIZE-PROBLEMS.md §7.5).** Both problems obey one exact statement, the window
+- **The Collatz transfer (§8.58, COLLATZ-PRIZE.md §5).** Both problems obey one exact statement, the window
   principle: a block of the trace can repeat only if it is no longer than the state is large. It gives Theorem A′
   here and, on the Collatz side, that no rational has a Sturmian parity sequence (found afterwards to be known:
-  Dubickas 2009 for integer orbits, and three 2026 notes; PRIZE-PROBLEMS.md §7.5). It also names what is missing
+  Dubickas 2009 for integer orbits, and three 2026 notes; COLLATZ-PRIZE.md §5). It also names what is missing
   here: a counterexample must keep the $2n$ cells beside its centre within $2^{0.13\,n}$ contents for ever, and
   the edge certifies only about $n$.
 - **The band of stripes, brought in (§8.59).** The left end of every row has infinitely many diagonals that are
@@ -3503,7 +3503,7 @@ for the others nothing is proved.
 ### 8.58 The window principle: Theorem A′, and what the Collatz twin shows is missing (2026-10-05)
 
 *Local. The owner asked for the Collatz avenues to be carried back to Rule 30. The two-problem account is
-PRIZE-PROBLEMS.md §7.5. This section is the Rule 30 half. Probe `rule30_window.py`, predictions committed first.*
+COLLATZ-PRIZE.md §5. This section is the Rule 30 half. Probe `rule30_window.py`, predictions committed first.*
 
 Collatz has a fact so simple that it is rarely stated: two iterates with the same next $n$ parities are congruent
 modulo $2^n$. Rule 30 has the same fact, and it gives a shorter proof of Theorem A (§8.54) and a stronger
@@ -3552,12 +3552,12 @@ right half allows at most about $2^{0.13\,n}$.
 > window shows more than that for one $n$.
 
 This is the entropy squeeze of §8.33 in the form of a count. What is new is the comparison with Collatz
-(PRIZE-PROBLEMS.md §7.5). There the same count has a free lower bound, because a state is a number, small
+(COLLATZ-PRIZE.md §5). There the same count has a free lower bound, because a state is a number, small
 numbers are few, and each has its own future. Rule 30's states grow by one cell a step whatever happens, so the
 edge certifies only $n - L/2$ contents, against the $2^{0.13\,n}$ needed. Every measurement says the true count is
 far higher: a chaotic left half shows a new content at almost every step. Nothing proves it for a single orbit.
 
-**The first three columns are affine in column 1** (a small exact fact, used in PRIZE-PROBLEMS.md §7.5). Write
+**The first three columns are affine in column 1** (a small exact fact, used in COLLATZ-PRIZE.md §5). Write
 $c_s$ for column 1 at time $2s$. Given the wall's conditions, at times $2s$ and $2s + 1$:
 
 | Column | $-1$ | $-2$ | $-3$ | $-4$ |
@@ -3873,12 +3873,16 @@ have to be a statistic of the whole state that falls at each forced cell, which 
 number of continuations still able to keep the run alive falls by a constant factor per forced cell. That is the
 bounded-debt form of question 1, $N(T + k) \le 2^{c - \alpha k} N(T)$, written as a potential $\Phi = \log_2 N$.
 
-**So question 3 is not a separate route.** A certificate that proves LR, or B, is a potential that question 1 would
-supply, and SAT can search only a finite family of candidates, of which none is known to contain such a potential.
-What SAT does well here it has already done: the SAT crib of §8.37 (exact, slower than enumeration), and finite
-checks of the kind the ladder does exhaustively. Closed as a route of its own, on this argument and not on a run;
-reopen only with a named finite family of potentials to search. Its tools would serve question 1 if a candidate
-$\Phi$ is ever written down, which is where the work is.
+**So question 3 waits on question 1.** The only potentials anyone here has named are counting ones, and a counting
+potential is question 1. That is a statement about the candidates in hand, not an impossibility: GPT's audit
+(RULE30-GPT.md §G5, CHAT-LEDGER.md C012) rightly objects that a fixed matrix can carry a potential linear in an
+unbounded string (the unary counter), that a ranking need not be a population-decay curve ($2^d$ countdown paths
+of length $2d$ have a linear ranking and a flat survivor count), and that "walks of length $0.83\,d$ from every
+depth" is measured to depth 89, not proved. The first version of this section claimed an equivalence and an
+impossibility; both are withdrawn. What stands: SAT can search only a finite family of candidates, none has been
+named, and what SAT does well here it has already done (the crib of §8.37, the ladder's exhaustive checks). Closed
+as a route of its own until a family of potentials is named; its tools would then serve, and the naming is where
+the work is.
 
 
 **GPT audit note on §8.61 (2026-10-06).** A fixed 2-by-2 matrix with diagonal entries 1 and upper-right

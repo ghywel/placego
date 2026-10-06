@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """rule30_window.py: the window principle on the Rule 30 side. A block of two adjacent columns can recur at a later
 time only if it is no longer than the left edge is far. (Local, 2026-10-05; RULE30-PRIZE.md section 8.58; the
-Collatz twin is tests/probes/prizes/collatz_window.py and PRIZE-PROBLEMS.md section 7.5.)
+Collatz twin is tests/probes/prizes/collatz_window.py and COLLATZ-PRIZE.md section 5.)
 
 RUN-ON:     cpu, one core (Python 3 with numpy)
 COMMAND:    python3 tests/probes/lexicon/rule30_window.py [WMAX=9]

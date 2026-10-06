@@ -60,7 +60,7 @@ Two models editing one repository at the same time will collide unless each stay
 
 | Where | Who writes | How |
 |---|---|---|
-| `RULE30-PRIZE.md`, `PRIZE-PROBLEMS.md`, `PERIOD-TWO.md` §1 to §5 and §7 to §10 | Local (and Cloud) | sections 8.x in order |
+| `RULE30-PRIZE.md`, `COLLATZ-PRIZE.md`, `PRIZE-PROBLEMS.md`, `PERIOD-TWO.md` §1 to §5 and §7 to §10 | Local (and Cloud) | sections 8.x in order; the Collatz board is COLLATZ-PRIZE.md §6 |
 | **`RULE30-GPT.md`** (create it) | **you** | your sections G1, G2, ... in the same form as RULE30-PRIZE.md's 8.x: title with date, what was asked, what was predicted, what ran, what it means. When a result of yours is settled, Local may fold a summary into the main record with credit, by section number |
 | `PERIOD-TWO.md` §6, the status board | everyone | when a lead moves because of your work, change its row and its tag **in the same commit** as the result. Add a row for a new lead when you write it down. Delete nothing; strike through finished titles |
 | `CLOUD-LOCAL.md`, the ledger | everyone | **append** rows at the bottom, one per run or per piece of reasoning that changed the record. Never edit an old row. Format: `| YYYY-MM-DD HH:MM | GPT | machine | what, naming the script and the section | remark |` |
@@ -117,7 +117,7 @@ the flags on macOS), and the SAT solvers `kissat` and `cadical`. At the time of 
 
 The board in PERIOD-TWO.md §6 is current. In order of value:
 - **Break the theorems.** Theorems A and B (RULE30-PRIZE.md §8.54), E and E″ (§8.57), A′ (§8.58), and the
-  Collatz lemmas (PRIZE-PROBLEMS.md §7.4, §7.5). Read each proof as an adversary. A gap found is the most useful
+  Collatz lemmas (COLLATZ-PRIZE.md §4, §5). Read each proof as an adversary. A gap found is the most useful
   thing you can hand back.
 - **Q2 and Q3** (PERIOD-TWO.md §7) have never been started by anyone.
 - **Q1**, the counting form, is the problem itself; §8.51 to §8.53 and §8.58 say where it stands.

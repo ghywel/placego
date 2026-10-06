@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """collatz_residue.py: what the state after the free bits is. For r < 2^k, the k-th iterate y = T^k(r) of the Collatz
 map T(n) = n/2 or (3n + 1)/2 is the least residue of a Syracuse offset modulo 3^a, for all but a vanishing share of
-r. (Local, 2026-10-05; PRIZE-PROBLEMS.md section 7.4; PERIOD-TWO.md section 7, question 9.)
+r. (Local, 2026-10-05; COLLATZ-PRIZE.md section 4; PERIOD-TWO.md section 7, question 9.)
 
 RUN-ON:     cpu, one core, pure Python 3
 COMMAND:    python3 tests/probes/prizes/collatz_residue.py [KMAX=18]
 COST:       about 10 seconds.
 
-THE STATEMENT (proved in section 7.4; a failure here means the proof or this script is wrong). Let r < 2^k have
+THE STATEMENT (proved in COLLATZ-PRIZE.md section 4; a failure here means the proof or this script is wrong). Let r < 2^k have
 parity vector v over its first k steps, with a odd steps at positions i_0 < ... < i_(a-1). Terras's formula is
     T^k(r) = (3^a r + c_v) / 2^k,   c_v = sum over j of 3^(a-1-j) 2^(i_j).
 So y = T^k(r) satisfies y = c_v / 2^k modulo 3^a. And 0 <= y < 3^a + (3/2)^a, because r < 2^k and
