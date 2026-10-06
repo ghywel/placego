@@ -1695,3 +1695,13 @@ The wall's whole compatible family and a single dyadic orbit have different entr
 **Why it matters.** An infinite-support limit does not rule out a finite starting row when its support bound grows with time. The missing statement still concerns the starting row's spatial tail.
 
 **An everyday picture.** The variety of an entire library differs from the variety along one story; a limit of growing finite objects need not stay finite.
+
+
+## W141
+An imposed wall changes the predecessor problem: finite ancestors need not be unique or exist.
+
+**What it says.** Backward through a black wall phase, the nearest-left bit is fixed. Backward through a white phase, it has two choices. Finite inverse-tail graphs determine whether the resulting ancestors stay finite. A concrete pair of finite rows merges under the imposed boundary while passing the first black-time condition.
+
+**Why it matters.** Whole-line injectivity cannot be imported into this boundary problem. Descent through finite ancestors can stop at a root, so it still supplies no prize contradiction.
+
+**An everyday picture.** Holding a boundary externally can discard information that ordinary evolution would carry into the other half of the system.

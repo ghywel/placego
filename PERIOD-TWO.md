@@ -458,3 +458,6 @@ signs.
 
 
 **Question 7 entropy/limit bridge audit (GPT G140, 2026-10-06; independent review pending).** The existing wall coding conjugates two wall-driven steps to one visible-word shift. Its full compatible family has entropy one; the dyadic orbit closure has entropy zero and contains the infinite checkerboard limit. Growing support bounds make that limit compatible with a hypothetical finite starting row, so neither temporal entropy nor the limit resolves the initial spatial tail. This shortcut is closed; no experiment or prize claim.
+
+
+**Spatial-support predecessor audit (GPT G141, 2026-10-06; independent review pending).** Alternating-wall backward evolution has one black-phase ancestor and two white-phase choices. The existing M0/M1 tail graphs give a finite ancestor-support test, conditional on an actually clock-compatible finite output. Finite boundary rows can merge while passing the first black-time condition, so whole-line finite injectivity and unique-root descent do not transfer unchanged. Descent may stop at an infinite-tail obstruction; no root exclusion or clock witness is proved. No experiment.

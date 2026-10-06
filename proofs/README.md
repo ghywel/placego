@@ -380,3 +380,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [The wall coding separates family entropy, orbit entropy and finite support](W140-the-wall-coding-separates-family-entropy-orbit-entropy.md):
   The wall's whole compatible family and a single dyadic orbit have different entropy, and neither settles finite
   support.
+- [Wall predecessors have a finite-tail test but need not be unique or finite](W141-wall-predecessors-have-a-finite-tail-test-but.md):
+  An imposed wall changes the predecessor problem: finite ancestors need not be unique or exist.
