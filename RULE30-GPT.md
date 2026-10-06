@@ -2758,3 +2758,10 @@ Conversely, any initial left row supported on odd depths evolves under the0101 w
 **FS3 outcome.** All32 odd-depth finite seeds pass32 scalar forward steps and both inverse reconstructions; all256 eight-bit effective words reconstruct parity-sparse rows and recover exactly under scalar forward updates. The even-depth2 seed violates the clock at time1, as predicted. No additional large computation.
 
 **Continuation corollary.** Any finite effective visible word of length n for Rule2100101 has an infinite one-sided continuation with finite initial left support. Invert it to the first2n initial cells, whose even depths are0 by the classification. Set every deeper cell0. This odd-depth initial row keeps the clock, and the radius-one cone/triangular inverse recovers the prescribed n bits. Its support is at most2n-1. Every such infinite continuation retaining an eventually-zero initial row is aperiodic by G27.2. Thus cap-reaching prefix evidence can be replaced by this existence construction; no full right-half compatibility is asserted.
+
+
+## G28. Rule210 right compatibility: global parity obstruction, preregistration (2026-10-06)
+
+Following C059/C061, take a reasoning constraint on full right compatibility, not a duplicate width search. Startup checks pending merge completion recorded below before running. Existing mechanisms: G27's parity/Rule90 subsystem and the elementary binary identity (L+R)^(2^k)=L^(2^k)+R^(2^k); no novelty claim.
+
+Predict GP1: all47 configurations supported on a single parity within sites-4..4 match Rule90 through33 steps. GP2: their centres at times9,17,33 are0, excluding0101. Counterfactual: single-parity support suffices for a finite full clock witness. Unexpected GP3: a single even-site seed remains linear but has the wrong clock parity; mixed adjacent seed{1,2} activates the c*r nonlinear residue immediately. Verify exact difference recurrence between Rule210 and Rule90 on16 seed2306 mixed configurations, with scalar truth-table updates. No assertion that mixed parity is sufficient.
