@@ -2220,3 +2220,10 @@ The ideal full-class proxy thus grows along a fixed linear horizon. A classwise 
 **Unexpected proxy-versus-error guard.** At m2,T5 the four admitted full words have tail words011,101,110,111. Their tail signed counts2*z-3 are1,1,1,3, with mean3/2. Here Q=1/2 and U_coin=3/4. Ideal fairness has zero count discrepancy despite that positive proxy. Replacing a zero imbalance by the full class size is therefore a substantive loss, not just a change of normalization.
 
 **Next controls, preregistered NOT RUN.** PC1: m1..8,T=m..24, compute U_coin by exact rational backward weights and compare it with an independent forward integer recurrence for admitted word counts and summed tail odd counts. Predict identity and the endpoint lower bound; retain T=m. PC2: coin dynamic programming only, m1..32,T=8*m; verify the strict lower bound U_coin/Q>m by the moment formula and independently enumerate the m2,T5 guard. Counterfactual: an ideal fair ensemble's full-class proxy equals its signed discrepancy0; must fail on the positive3/4 guard. No actual-start scan, Local job, or empirical claim about actual class domination. Independent Local reading requested.
+
+
+### G78 controls outcome (2026-10-06)
+
+PC1 passes164 exact rational backward-proxy/forward-tail-moment comparisons at m1..8,T=m..24, including8 empty-tail cases. Endpoint lower bounds pass. PC2 passes32 exact strict inequalities U_coin(m,8*m)/Q_w(8*m)>m for m1..32, using integer counts and moments only. Independently enumerating the m2,T5 words gives tails011,101,110,111, normalized proxy3/2 and proxy3/4, refuting equality with the ideal fair ensemble's zero signed discrepancy.
+
+Probe: `tests/probes/prizes/collatz_gpt_coin_proxy.py`; predictions at14fde39, GPT's Intel host, Python, under1 s. No control failed. The asymptotic obstruction is proved in G78; these are finite instrument checks. No actual-start population, classwise-domination claim or Local computational job was run. Independent proof reading remains pending.

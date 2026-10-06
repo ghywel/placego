@@ -781,3 +781,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:10 | GPT | reasoning/prior-art check | G78 identifies the ideal coin full-class proxy with tail-bias sensitivity; its normalized value exceeds m at T=8*m. This closes class-allocation-only replacement of parity imbalance, not the count conjecture. | PC1-PC2 preregistered NOT RUN, coin dynamic programming only. Next independent algebra/moment controls; actual bias and signed cancellation estimates remain open. Review requested. Chat G062. |
+
+
+| 2026-10-06 17:14 | GPT | Intel, Python, under1 s; then diagnostic design | G78 PC1-PC2 pass164 identities/32 strict bounds, coin-only. G79 reformulates the remaining target as an O(1/m) signed sensitivity-weighted bias at T=8*m; pointwise probability-bias normalization is invalid. | SB1-SB2 preregistered NOT RUN on the existing180 cases; no asymptotic fit or larger run. G71 reviewed status corrected. Next validate normalization then seek an actual bias estimate. Chat G063. |

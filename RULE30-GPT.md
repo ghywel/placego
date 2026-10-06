@@ -4466,3 +4466,29 @@ The ideal full-class proxy thus grows along a fixed linear horizon. A classwise 
 **Unexpected proxy-versus-error guard.** At m2,T5 the four admitted full words have tail words011,101,110,111. Their tail signed counts2*z-3 are1,1,1,3, with mean3/2. Here Q=1/2 and U_coin=3/4. Ideal fairness has zero count discrepancy despite that positive proxy. Replacing a zero imbalance by the full class size is therefore a substantive loss, not just a change of normalization.
 
 **Next controls, preregistered NOT RUN.** PC1: m1..8,T=m..24, compute U_coin by exact rational backward weights and compare it with an independent forward integer recurrence for admitted word counts and summed tail odd counts. Predict identity and the endpoint lower bound; retain T=m. PC2: coin dynamic programming only, m1..32,T=8*m; verify the strict lower bound U_coin/Q>m by the moment formula and independently enumerate the m2,T5 guard. Counterfactual: an ideal fair ensemble's full-class proxy equals its signed discrepancy0; must fail on the positive3/4 guard. No actual-start scan, Local job, or empirical claim about actual class domination. Independent Local reading requested.
+
+
+### G78 controls outcome (2026-10-06)
+
+PC1 passes164 exact rational backward-proxy/forward-tail-moment comparisons at m1..8,T=m..24, including8 empty-tail cases. Endpoint lower bounds pass. PC2 passes32 exact strict inequalities U_coin(m,8*m)/Q_w(8*m)>m for m1..32, using integer counts and moments only. Independently enumerating the m2,T5 words gives tails011,101,110,111, normalized proxy3/2 and proxy3/4, refuting equality with the ideal fair ensemble's zero signed discrepancy.
+
+Probe: `tests/probes/prizes/collatz_gpt_coin_proxy.py`; predictions at14fde39, GPT's Intel host, Python, under1 s. No control failed. The asymptotic obstruction is proved in G78; these are finite instrument checks. No actual-start population, classwise-domination claim or Local computational job was run. Independent proof reading remains pending.
+
+
+## G79. The coin-sensitivity-weighted actual bias target, preregistered diagnostic (2026-10-06)
+
+Use G74 and G78 without replacing actual parity imbalances by full class sizes. At a class with q_w(t,a)>0 put epsilon_w(t,a)=I_w(t,a)/q_w(t,a). Every actual admitted prefix is an admitted parity word, so a class with q=0 also has I=0. Terms with Delta=0 are irrelevant. If U_coin(m,T)>0, define the probability weights
+
+    mu_(m,T)(t,a)=q_w(t,a)*Delta_t(a)/(2*U_coin(m,T)).
+
+They sum to1. The recorded identities immediately give
+
+    D_w(T)/Q_w(T)=S_(m,T)*E_mu[epsilon_w],
+    A_w(T)/Q_w(T)=S_(m,T)*E_mu[abs(epsilon_w)],
+    S_(m,T)=U_coin(m,T)/Q_w(T).
+
+This is a reparameterization, not a new cancellation theorem. At T=8*m, G78 gives m<S<=7*m (the upper bound uses2*Z_tail-d<=d=7*m). Thus a bounded relative discrepancy is equivalent to an O(1/m) signed weighted mean along this horizon: necessity follows from S>m and sufficiency from S<=7*m. A uniform upper bound C/Q also bounds abs(D/Q), since C>=0 implies D/Q>=-1. No such bias estimate is proved. A corresponding O(1/m) absolute weighted mean would be a stronger sufficient triangle bound; G77-G78 do not establish it.
+
+**Unexpected denominator guard.** epsilon is not a conditional probability bias, since its denominator is the ideal coin class mass. At width2,m1,T4,t3,a2 the start3 has trajectory3,5,8,4 and is still coefficient-admitted, with even terminal4. Thus I=-1. There is one admitted length3 word with a2 (110), giving q=2/8=1/4, while Delta_3(2)=1. Hence epsilon=-4 on a class with positive weight. A pointwise [-1,1] assumption already fails. Normalizing instead by the actual class size would change the probability weights, and cannot silently be substituted into the identity.
+
+**Next diagnostic, preregistered NOT RUN.** SB1: reuse the180 G74/G76 width/horizon cases. Compute mu and epsilon rationally; verify its signed/absolute means recover D/Q and A/Q, retain every U=0 case separately (where D=A=0), and report the largest abs(epsilon) on positive-weight support, signed and absolute means, and S. No size or rate prediction for those measured extrema. SB2: independently evolve the width2,T4 guard and count its single admitted endpoint word, requiring epsilon=-4 and Delta1. Counterfactual: epsilon always lies in[-1,1]; must fail on that guard. These instrument controls define a target for a later reasoning block, not an asymptotic fit or a larger actual-start scan. No Local job or classwise-domination assumption.
