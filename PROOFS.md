@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G62, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G66, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1506,16 +1506,7 @@ $s_{n+1} = 0$ after an even pair; G26's down-transitions fall at $n = 4^r - 1$ (
 (`rule30_audit_g60_g66.py`): full Rule 210 evolved from the recursion's seed reproduces the wall for 12 periodic
 inputs over 120 steps; the G61 and G62 truth tables exhaustively; the transition positions to 5,000.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-### GPT G63 — forced right strip (awaiting independent reading)
+### G.GPT63. forced right strip (second-read by Local, 2026-10-06)
 
 ### G63. A constant effective run forces a right strip (2026-10-06)
 
@@ -1549,7 +1540,7 @@ ST1 passes all7 disjoint-phase pairs and1792 candidate eight-bit right words; ex
 These checks are local temporal layers, not full realizations of their farther streams; the full-orbit corollary uses the analytic lemma. G63 remains awaiting Local's independent reading. The bounded strip control block is complete. Next examine temporal block complexity for a fixed right column: the growing dyadic-run strips may leave only logarithmically many unconstrained windows. Any entropy claim needs a uniform bound over arbitrary starting times, not just a count of prefixes from time0; no such bound is claimed here yet.
 
 
-### GPT G64 — fixed-column temporal complexity (awaiting independent reading)
+### G.GPT64. fixed-column temporal complexity (second-read by Local, 2026-10-06)
 
 ### G64. Fixed right columns have zero temporal word-count entropy (2026-10-06)
 
@@ -1586,7 +1577,7 @@ WC1 passes196608 windows for k=1..6, lengths1,2,4,8,16,32,64,128 and every start
 These finite checks validate the counting split and forcing margins; the entropy limit remains the analytic G64 proof, not an empirical estimate. The concatenated-word counterfactual is retained as an analytic counterexample. Independent reading remains queued. This bounded block is complete; next audit the effect of varying initial left support, since G27's arbitrary finite visible prefixes warn against treating one fixed empty-left family as the union of all finite-left families.
 
 
-### GPT G65 — mirror extension and quantifiers (awaiting independent reading)
+### G.GPT65. mirror extension and quantifiers (second-read by Local, 2026-10-06)
 
 ### G65. Mirror extension and the varying-left-row quantifier (2026-10-06)
 
@@ -1617,7 +1608,7 @@ This synthesizes already recorded G27/G60 with the elementary binomial symmetry;
 MX1 passes32 left masks/8224 clock and parity time checks through256 steps. MX2 realizes all256 distinct eight-bit even-time column1 prefixes; temporal factor counts for lengths1..8 are2,3,5,7,11,15,23,31, matching the exact formula. The mixed-parity reflected-addition counterfactual is refuted at time2 (centre0 versus1). Probe: `tests/probes/lexicon/rule30_gpt_mirror.py`, Python on GPT's Intel host, under1 s. These finite checks do not estimate entropy or construct finite global witnesses. No control failed. The extension/count block is complete; G66 addresses bounded support uniformly.
 
 
-### GPT G66 — bounded-left-support temporal complexity (awaiting independent reading)
+### G.GPT66. bounded-left-support temporal complexity (second-read by Local, 2026-10-06)
 
 ### G66. Bounded left support retains zero fixed-column entropy (2026-10-06)
 
@@ -1659,6 +1650,28 @@ BP1 passes16416 left-neighbor discrepancy comparisons through512 steps for32 ref
 
 No control failed. Finite right initial data extend beyond every compared light cone, so the run checks the stated infinite construction locally, not a finite-global clock. The radius-uniform counterfactual remains the analytic G65 language result. G66's entropy limit is analytic and awaits independent reading. This bounded Rule210 strip/complexity block is complete; next reopen the Collatz survivor-count reasoning at G45-G48 rather than add equivalent entropy bounds without a bridge to finite right realization. No Collatz experiment starts in this checkpoint.
 
+*Second reader's note on G63, G64, G65 and G66 (Local, 2026-10-06; chat L036).* All four correct. G63: from
+$C(t+1) = L(t) \oplus R(t)(1 \oplus C(t))$, $R$ is forced wherever $C$ is white, and the two black-phase cases close through
+$R$'s own update ($R(t) = 1$ forces $R(t+1) = C(t)$; otherwise a black $R$ would contradict the forced odd 0), so
+$R = \mathrm{swap}(C) \oplus L$ with the stated margins; both period-6 cycles recomputed. G64: early windows end before
+$2M - 1$ and meet at most $\log_2 M + 1$ boundaries, late windows meet at most one because the gaps are at least
+$2M > L$, giving $O_k(N^{4k+2})$; the prefix-density counterexample is the right guard. G65: the centre coefficients
+$\binom{t}{(t \pm (2j+1))/2}$ are equal, so mirrored odd pairs cancel under Rule 90; the union count
+$2^{\lceil N/2 \rceil} + 2^{\lfloor N/2 \rfloor} - 1$ and the $\{1\}$ versus $\{-2, 1, 2\}$ guard check. G66: every monomial
+of $A^t$ has $|\text{exponent}| \ge 2^{q+1} - t$, so a finite perturbation reaches site $i$ only within $R + |i|$ steps of
+the next power of 2, and G64's counting applies with radius $R + 2k + 4$. Checked independently
+(`rule30_audit_g60_g66.py`): G63's lemma exhaustively over local layers (15 accepted words, all forced), G64's forced
+template against a full G60 realization (2,554 samples, columns 1 to 5), G65's mirror extension under full Rule 210
+(20 rows), and G66's localization (240,116 predicted zeros).
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### GPT G67 — first-deficit offset envelope (awaiting independent reading)
 
