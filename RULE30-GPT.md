@@ -1722,3 +1722,129 @@ outside the guaranteed checkerboard window could extend the certificate, but the
 are not bounded here. The lead remains PART. C027 passes Local the exact window cost and
 records this limit; the next reasoning target is what replaces the protected window after
 it expires, rather than extrapolating the local bound to all earlier times.
+
+## G14. Exact two-state counting at the white Condrey end (2026-10-06)
+
+**Question and prior record.** C022/§8.62 bounds the wall $0^{p-1}1$'s column1 by at most
+p+1 shapes per period, giving log2(p+1)/p bits per step. That bound is valid, but discards
+cross-period reset constraints and counts bits invisible to the left half. This bounded
+proof audit sharpens it. The p2 cases are **already known**: §8.2 has the full-column Pell
+count and the visible Fibonacci language; `rule30_entropy.py` uses the latter as its m1
+control. The contribution here is the elementary general-p formula, not rediscovery of
+Fibonacci or a replacement for Local's wider-layer work.
+
+Read shared history and C022–C027, the two-end board and the startup workflow; both fresh
+startup checks printed ALL CHECKS PASS, witness scope as G1. WL0–WL4/CF were pushed
+in0436ef5 before the small enumeration. No entropy2, mmap, squeeze or Collatz job was run.
+
+### G14.1. The exact width-one relaxation
+
+Let p≥2 and fix tau to0 at times0..p−2 and1 at time p−1, repeating. For a genuine right
+column s=sigma with next-right cell rho, the update is
+
+```math
+ s(t+1)=\tau(t)\oplus(s(t)\lor\rho(t)).
+```
+
+At a white wall cell this requires s(t+1)≥s(t); at a black wall cell it forbids the
+transition1→1. Conversely, each allowed transition has some rho(t). We count exactly this
+**width-one relaxation**, choosing rho freely at each time. It need not be a valid further
+column of a full Rule30 evolution. Therefore these counts bound real right-column
+languages from above, and do not establish their actual entropy.
+
+Use the value s(np) as a state,0 or1. If it is0, white updates permit the first1 at one of
+positions1..p−1. Each such rise forces the next-period state0, since the black update must
+then fall. If no rise occurs, the black update permits either next state. If the starting
+state is1, the whole block is1 and the black update forces next state0. Thus the number
+of distinct full-column blocks for each state transition is
+
+```math
+ T_p=\begin{pmatrix}p&1\\1&0\end{pmatrix}.
+```
+
+For n whole periods, including the next-period endpoint s(np), the exact number of full
+words is the sum of all four entries of $T_p^n$. The endpoint convention matters: these
+are length np+1 words, not the length2n pair-prefix Pell counts printed in §8.2. Both have
+the same p2 exponential growth factor1+sqrt2.
+
+### G14.2. Delete the invisible bit without double counting
+
+The left half sees sigma only when tau=0. Omit s at each black time, retaining the next
+period's first visible bit as the endpoint. A start0 block whose visible part contains a1
+has its first rise at one of positions1..p−2 and forces next state0: p−2 distinct blocks.
+If its visible part is all0, either next state is possible. In the all0/next0 case, the
+black-time bit can be0 or1, but both extensions give the **same visible word** and must be
+counted once. A start1 block has all visible bits1 and forces next0. The visible matrix is
+therefore
+
+```math
+ V_p=\begin{pmatrix}p-1&1\\1&0\end{pmatrix}.
+```
+
+State transitions and their visible block labels identify distinct visible words: each
+period's starting state is itself a visible bit, including the final endpoint. Every path
+has an allowed full-column extension by the constructions just given. Hence the number
+of visible words of length n(p−1)+1 is exactly the sum of entries of $V_p^n$.
+
+Put m=p−1. These counts obey
+
+```math
+ C_0=2,\quad C_1=m+2,\quad C_n=mC_{n-1}+C_{n-2}\quad(n\ge2).
+```
+
+This follows directly from $V_p^2=mV_p+I$. Its dominant root is
+
+```math
+ \lambda_{\rm vis}(p)=\frac{p-1+\sqrt{(p-1)^2+4}}2.
+```
+
+Changing the endpoint convention changes prefix counts by at most a factor2, since an
+endpoint has two possible values and each prefix extends. The asymptotic visible-language
+entropy bound per time step is consequently
+
+```math
+ h_{\rm vis}(p)=\frac{\log_2\lambda_{\rm vis}(p)}p.
+```
+
+For full sigma the corresponding root replaces p−1 by p, so
+$h_{\rm full}(p)=\log_2((p+\sqrt{p^2+4})/2)/p$. Both sharpen the independent-shape bound
+log2(p+1)/p, and h_vis is the relevant one for the forced left half. These are elementary
+language growth rates, not claims about a particular finite seed's information production.
+
+### G14.3. Numbers, controls and limits
+
+| p | Full sigma bound, bits/step | Visible bound, bits/step | Independent shapes bound |
+|---|---:|---:|---:|
+| 2 | 0.635776652 | 0.347120957 | 0.792481250 |
+| 3 | 0.574559656 | 0.423851101 | 0.666666667 |
+| 8 | 0.377753926 | 0.354491897 | 0.396240625 |
+| 64 | 0.093755501 | 0.093400676 | 0.094099497 |
+
+The p2 visible count is F(n+3), the existing no-adjacent-ones result with n+1 visible bits.
+Its full-column root is the existing Pell root. The p8 visible rate sharpens C022's coarse
+0.40 estimate to0.35449; it remains above the black-condition density1/8. For every p≥3,
+lambda_vis>2, so h_vis>1/p. At p2 it is below1/p, but an entropy upper bound is still not
+the missing lower information cost for every single trajectory. The deeper period2
+channel bound is much stronger already; this audit supplies no new prize implication.
+
+`rule30_gpt_white_latch.py`, one Intel CPU process, enumerated **21** (p,n) cases, p2..8,
+n≤5 and np≤15. WL0 verified all Boolean existence-of-rho transitions; WL1/WL2 matched
+both matrices to full enumeration and deduplicated visible words; WL3 recovered the
+Fibonacci count. The counterfactual equating full and visible counts was rejected: at
+p2,n1 there are4 full words but3 distinct visible words, with the same endpoint convention.
+
+**Unexpected WL4:** the constant0 wall permits just N+2 full sigma words of length N+1,
+not exponential growth; the constant1 wall has no visible bits. The first run implemented
+the constant0 part but did not explicitly enumerate the constant1 projection, so it was
+not a complete WL4 check. That omission was recorded in the probe, the explicit empty
+projection check was added, and the identical main command reran. Both commands exited0;
+the verification rerun printed ALL CONTROLS PASS, covering the complete stated controls.
+N1..12 were checked for both constant walls. No blind research prediction failed here;
+the first control's coverage limitation is retained rather than called a complete pass.
+
+**Lead and coordination.** The two-end lead remains PART. The latch's exact relaxed visible
+count is settled by this proof; the actual right half and the cost side remain open. Incoming
+be15203 reports Local's completed width27/28 power-iteration measurements0.1229/0.1222
+bits per visible bit, with its integer SQ6 certificate pending and MM3's write clause
+undecidable as written. Those are Local's measurements, not this run. C028 congratulates
+the mmap handoff, sends this counting refinement and preserves all those qualifications.

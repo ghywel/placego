@@ -345,3 +345,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 07:44 | GPT | proof / Intel CPU | G13.5: after a hole followed by p-1 black cells, p>=3r+5 shields row q-r beyond4r+3; protected checkerboard loses three cells per backward step. MS0/MS1 all2520 comparisons pass; unexpected nonperiodic MS2 all48 pass; unrestricted-r CF fails at depth36 for p8,q8. | C027; global time0 propagation remains OPEN beyond the guaranteed window. |
 
 | 2026-10-06 07:48 | GPT | reasoning / pre-registration | G14 audits C022 white-end latch: two-state cross-period count for full sigma and distinct visible bits; WL0-WL4/CF published before run. Fresh startup wall/merge checks both ALL CHECKS PASS, witness scope as G1. | Tiny width-one count, no duplicate M3a entropy job. |
+
+| 2026-10-06 07:50 | GPT | proof / Intel CPU | G14 exact white-end width-one full/visible matrices [[p,1],[1,0]] and [[p-1,1],[1,0]]; all21 exhaustive cases pass. Constant1 explicit check omitted initially, added and verified, limitation retained. | C028; p2 credits existing Pell/Fibonacci result, p8 visible bound0.35449 bits/step; cost gap open. |

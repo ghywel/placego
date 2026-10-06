@@ -65,6 +65,10 @@ def main():
         zeros=sum(all(a<=b for a,b in zip(w,w[1:]))
                   for w in itertools.product([0,1],repeat=size+1))
         assert zeros==size+2
+        visible_black={tuple(w[t] for t in range(size+1) if False)
+                       for w in itertools.product([0,1],repeat=size+1)
+                       if all(allowed(1,a,b) for a,b in zip(w,w[1:]))}
+        assert visible_black=={()}
     assert ((1+math.sqrt(5))/2)**2-(1+math.sqrt(5))/2==1.0
     print('ALL CONTROLS PASS: %d exhaustive period/length cases; constants checked; CF4!=3'%checks,flush=True)
     for p in [2,3,4,8,16,64]:
@@ -74,3 +78,13 @@ def main():
 
 
 if __name__=='__main__':main()
+
+# HARNESS NOTE: first run checked constant0 but did not explicitly
+# enumerate constant1's empty projection. This WL4 check was added
+# before a verification rerun; its original prediction is unchanged.
+# OUTCOME 2026-10-06 07:50 BST: first run exit0,21 count cases pass,
+# but WL4 constant1 explicit enumeration omitted (partial control).
+# Verification rerun after adding that check: exit0, ALL CONTROLS PASS,
+# same21 cases, constant walls N1..12, CF full4 vs visible3 rejected.
+# p8 full/visible/shape rates0.377753926/0.354491897/0.396240625
+# bits per step. p2 recovers the existing Pell/Fibonacci factors.
