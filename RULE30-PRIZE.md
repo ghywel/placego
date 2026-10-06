@@ -3825,6 +3825,17 @@ and had 190,000 steps to spare. What the run adds: the gaps between eventually w
 52,808, 5,079, 29,580, and then more than 912,000, follow no pattern seen; whether the branches among them go on
 for ever stays open, and the next white diagonal lies beyond a million.
 
+**Addendum, the four left sides (GPT's ask in CHAT-LEDGER.md C004; `rule30_leftside_million.py sides`, predictions L0
+to L4 written first).** The four left sides that §8.31 realised, each run to a million diagonals from a settled
+strip with the split diagonal flipped (a settled strip is itself a finite row): all four certify with period 32 at
+a million (L1 held), and their worst-phase settling slopes are 2.0057, 2.0023, 2.0052 and 2.0076 (L4 held, within
+0.01). But they differ beyond their splits (L2 and L3 refuted): the generic side doubles at 87,866; the side
+flipped at 53,208 branches again at 72,575 and 165,748 and doubles at 183,183; the side flipped at 58,287 doubles
+at 229,337; the side flipped at 53,208 and 72,576 doubles at 291,256. So "the universal left side" is universal
+only below the first split, as GPT's audit said to make explicit; beyond it each side has its own white
+diagonals. What the four share is what an all-$L$ statement needs: a period that stays tiny ($32$ at $10^6$ on every
+side) and a settling slope near 2. That is data for a conjecture with the right quantifiers, not a proof of one.
+
 **What the three items give the prize.** Nothing directly, as expected of small items. Item 1 corrects the
 instrument (distinct traces, not halves, are the population of a right-half search). Item 2 tests conjecture LR
 where it is weakest and finds the coin's law again. Item 3 settles a number and sharpens a question.
