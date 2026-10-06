@@ -127,3 +127,5 @@ app is unpublished by design.
 - `lexicon/rule30_audit_g53_g54.py` (Local, second reader of G53/G54): the gap-matrix squeeze's examples recomputed exactly (0^7 1 = G14's rate; roots 3, 4; 1/p; 0101's log2(phi)/2) and the 001 example; PROOFS.md G53/G54 note, CHAT-LEDGER L026.
 - lexicon/rule30_gpt_ring_quotient.py (G55): preregistered RQ1-RQ3 pass10408 scalar/vector states at primes3,5,7,11,13; independently reconstructed quotient lifts equal direct cycle multiplicities; shift-CA converse control retained. No large census or data files.
 - `lexicon/rule30_audit_g55.py` (Local, second reader of G55): every Rule 30 cycle on the prime rings 5 to 19 against the quotient lifting law, and the distinct-length criterion; PROOFS.md G55 note, CHAT-LEDGER L027.
+
+- lexicon/rule30_gpt_ring_phase.py (G56): preregistered moment-phase covariance, independent lexicographic classes and direct return-displacement controls; free composite-orbit guard. PH1-PH3 NOT RUN at publication.

@@ -1278,3 +1278,25 @@ eleven 17-cycles at 11; and G55's criterion (nonzero displacement and distinct q
   $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
+
+### G.GPT56. Prime-ring moment phase coordinate
+
+**Where:** RULE30-GPT.md G56; copied proof. **Status:** awaiting independent reader; PH controls NOT RUN.
+
+### G56 lemma and proof: a prime-ring rotation phase
+
+Number sites0,...,p-1 so R moves the bit at i to i+1 modulo the prime p. For a nonconstant binary state x, define its weight w(x)=sum_i x_i and moment m(x)=sum_i i*x_i modulo p. Since1<=w(x)<=p-1, w(x) is invertible modulo p. Set
+
+    theta(x)=m(x)*w(x)^(-1) modulo p.
+
+Rotation preserves w and gives m(Rx)=m(x)+w(x) modulo p, including the wrap from p-1 to0. Therefore theta(Rx)=theta(x)+1. Each rotation class has a unique representative N(x)=R^(-theta(x))x with theta0. This is another exact quotient coordinate, not a new quotient or a claim of measured computational speedup.
+
+Whenever x and F(x) are nonconstant and F commutes with R, the phase increment delta(x)=theta(F(x))-theta(x) is rotation-invariant. For a q-cycle of rotation classes, use theta0 representatives x_j and let e_j=theta(F(x_j)). Its quotient update is x_(j+1)=R^(-e_j)F(x_j). Repeated commutation gives
+
+    F^q(x_0)=R^(e_0+...+e_(q-1))x_0.
+
+Thus G55's displacement is b=sum_j e_j modulo p. Equivalently delta summed along the actual q-step lifted path telescopes to b. The coordinate does not show b is nonzero: the verified zero-displacement cycles at7 and11 remain valid. A Rule30-specific restriction on these phase sums is still needed.
+
+Unexpected domain check: on a four-cell ring x=0011 has weight2 and four distinct rotations, yet2 has no inverse modulo4. A free spatial orbit alone does not justify this moment coordinate on composite rings. The constant states also have weight0 modulo p and are excluded explicitly. Lexicographic rotation representatives still work in those cases; this particular formula does not.
+
+This is a direct elementary coordinate for the cyclic action, derived here and without a novelty claim. It distinguishes spatial phase from the temporal clock quotient already used in G9; neither supplies the missing nonzero-displacement theorem.
