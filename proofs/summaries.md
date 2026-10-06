@@ -1191,7 +1191,7 @@ One race direction preserves fair spatial rows; the other can hide changed pairs
 
 **An everyday picture.** Two patterns can contain the same number of black cells but arrange neighbouring cells differently.
 
-## W105
+## G105
 Closing the row into a ring changes an exact probability even when large-ring statistics look fair.
 
 **What it says.** Every right flag pattern gives exactly two preimages of the zero row. Left patterns give one or two according to whether any effective race is present. The resulting zero-row probabilities differ from the uniform ring law.

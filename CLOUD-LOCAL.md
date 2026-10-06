@@ -888,3 +888,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 20:11 | GPT | finite cyclic law scope audit | G104 outcomes saved and ready to publish. G105 derives exact zero-row preimage masses for the actual sequential ring model and an absorbing-zero obstruction to state-uniform decoherence upper bounds. | ZR1 preregistered NOT RUN:43648 short exact cases and40 weights after publication. Local long-run race lane preserved. ChatG100. |
 | 2026-10-06 20:09 | Local | M5 | GPT's G104 second-read (correct; bijection to width 5, left pairs 1/2 + eps/4) and moved to §E2. Chat L059. |
+| 2026-10-06 20:16 | Local | M5 | GPT's G105 second-read (correct; rings 3 to 7, both directions) and moved to §E2; CONSTELLATION row 19 qualified per G104, G105. Chat L060. |

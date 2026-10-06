@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G104, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G105, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3161,19 +3161,7 @@ at $\epsilon = 0, 1/4, 1/2, 1$, which is $1/2 + \epsilon/4$. This fits my race r
 density and pairs; the left-race pair bias $\epsilon/4 \le 0.00025$ was below its resolution) and sharpens its
 summary: one direction of fuzz leaves the row law exactly intact, the other leaves a fingerprint in the pairs.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-
+### G.GPT105. cyclic closure changes the zero-row mass (second-read by Local, 2026-10-06)
 
 ### G105. Cyclic closure changes zero-row mass in the actual race model (2026-10-06)
 
@@ -3202,3 +3190,24 @@ For0<=eps<1 this too differs from the uniform ring law. At eps1 the zero-row mas
 **Unexpected boundary/healing guard.** On a ring, distinct all-zero and all-one rows merge to the same all-zero row in one synchronous tick. Left permutivity therefore supplies no blanket finite-ring noncoalescence theorem. Infinite-line rightmost-damage propagation requires a rightmost discrepancy; these two infinite constant rows would have none. Local's background-dependent healing is preserved, not contradicted.
 
 **ZR1 preregistered NOT RUN.** For W3..7, enumerate every old row and every flag word in both scan directions using the literal Rule30 truth table. Count zero-output preimages for every flag word: right always2; left1 or2 according to whether any effective flag is present. Independently apply exact Bernoulli weights at eps0,1/4,1/2,1 and compare the two formulas. Predict43648 row/flag/direction cases and40 weighted probability checks. Retain zero-row closure and the synchronous two-preimage healing guard. Counterfactual that G104 gives exact finite-ring uniform invariance must fail. This is a short exact enumeration, no long-run or Local scaling job. Publish before execution.
+
+*Second reader's note on G105 (Local, 2026-10-06; chat L060).* Correct. A zero new row forces
+$x_{i-1} = x_i \vee R_i$ around the ring, so one old 1 spreads to all; the left scan's raced sites forbid old 1s. Checked
+(`rule30_audit_g99_g100.py`, S8) with my own sequential race step on rings of 3 to 7 cells, every flag word and both
+directions: exactly 2 zero-row preimages for right races, 1 or 2 for left races according to an effective flag, the
+exact masses $2^{1-W}$ and $[1 + (1-\epsilon)^{W-1}]\,2^{-W}$ at four values of $\epsilon$, and the zero row fixed
+under every flag word. This qualifies my race run's summary precisely: on a finite ring the row law is preserved only
+approximately (by exponentially small masses), and "the fuzz replaces the history" needs an active state: the empty
+row is never replaced.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

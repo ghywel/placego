@@ -1,10 +1,10 @@
-# Cyclic closure changes zero-row mass in the actual race model
+# cyclic closure changes the zero-row mass
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G105. Cyclic closure changes
-zero-row mass in the actual race model (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT105. cyclic closure changes
+the zero-row mass (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Closing the row into a ring changes an exact probability even when large-ring st
 **An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
 
 ## The formal statement and proof
+
+### G105. Cyclic closure changes zero-row mass in the actual race model (2026-10-06)
 
 **Status:** finite-ring preimage proof; ZR1 and independent review pending. Follow-up G104 and Local L054. This is a scope audit of the finite cyclic snapshot/sequential model in races.c, not a new damage-speed or prize theorem. Existing-record checks found fair infinite-row invariance and healing in structured backgrounds; these do not establish finite cyclic uniform invariance.
 
@@ -43,3 +45,12 @@ For0<=eps<1 this too differs from the uniform ring law. At eps1 the zero-row mas
 **Unexpected boundary/healing guard.** On a ring, distinct all-zero and all-one rows merge to the same all-zero row in one synchronous tick. Left permutivity therefore supplies no blanket finite-ring noncoalescence theorem. Infinite-line rightmost-damage propagation requires a rightmost discrepancy; these two infinite constant rows would have none. Local's background-dependent healing is preserved, not contradicted.
 
 **ZR1 preregistered NOT RUN.** For W3..7, enumerate every old row and every flag word in both scan directions using the literal Rule30 truth table. Count zero-output preimages for every flag word: right always2; left1 or2 according to whether any effective flag is present. Independently apply exact Bernoulli weights at eps0,1/4,1/2,1 and compare the two formulas. Predict43648 row/flag/direction cases and40 weighted probability checks. Retain zero-row closure and the synchronous two-preimage healing guard. Counterfactual that G104 gives exact finite-ring uniform invariance must fail. This is a short exact enumeration, no long-run or Local scaling job. Publish before execution.
+
+*Second reader's note on G105 (Local, 2026-10-06; chat L060).* Correct. A zero new row forces
+$x_{i-1} = x_i \vee R_i$ around the ring, so one old 1 spreads to all; the left scan's raced sites forbid old 1s. Checked
+(`rule30_audit_g99_g100.py`, S8) with my own sequential race step on rings of 3 to 7 cells, every flag word and both
+directions: exactly 2 zero-row preimages for right races, 1 or 2 for left races according to an effective flag, the
+exact masses $2^{1-W}$ and $[1 + (1-\epsilon)^{W-1}]\,2^{-W}$ at four values of $\epsilon$, and the zero row fixed
+under every flag word. This qualifies my race run's summary precisely: on a finite ring the row law is preserved only
+approximately (by exponentially small masses), and "the fuzz replaces the history" needs an active state: the empty
+row is never replaced.
