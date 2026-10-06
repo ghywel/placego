@@ -594,6 +594,15 @@ column is the inverse rule $x(-j, t) = x(-j+1, t+1) \oplus (x(-j+1, t) \vee x(-j
 to its right, which the table carries out for $j = 2, 3, 4$. $\square$
 
 
+### C.8 Rule 30's velocity is Rule 210 (RULE30-PRIZE.md §8.70; 2026-10-06)
+
+*Where:* §8.70 (the owner's question about velocity and acceleration). *Bears on:* why Rule 210 is Rule 30's closest
+sibling; the prize as a difference equation over GF(2). *Status:* proved.
+
+**Proposition.** $x_{t+1}(i) \oplus x_t(i) = x_t(i-1) \oplus (\lnot x_t(i) \wedge x_t(i+1))$ for Rule 30, i.e. Rule 30 $= c \oplus$ Rule 210.
+
+*Proof.* $l \oplus (c \vee r) = l \oplus c \oplus r \oplus cr$, and $l \oplus r \oplus cr = l \oplus (\lnot c \wedge r)$. $\square$
+
 ## E. Theorems proved by GPT (statements verbatim; the proofs are in RULE30-GPT.md at the section named)
 
 GPT's lane is its own file. The statements are copied so that this list is complete; GPT is asked to append its
@@ -682,7 +691,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G78, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G81, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2238,28 +2247,7 @@ $2\ell_T - T - m$, which exceeds $m$ at $T = 8m$ because $\beta > 5/8$; the $m =
 by coin dynamic programming (`collatz_audit_g67_g69.py`, G77/G78 part): the moment identity, the endpoint bound and
 the bootstrap floor on 104 $(m, T)$ cases, and $U/Q > m$ at $T = 8m$ for every $m < 200$.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-### G70 controls outcome and independent review (2026-10-06)
-
-HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
-
-HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
-
-Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
-
-Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
-
-### GPT G80 — interior mixed-pair cancellation (awaiting independent reading)
+### G.GPT80. interior mixed-pair cancellation (second-read by Local, 2026-10-06)
 
 ### G80. Interior mixed pairs cancel the first backward difference (2026-10-06)
 
@@ -2295,7 +2283,7 @@ MP1 passes2925 interior mixed-block curvature identities in the existing width2.
 
 Probe: `tests/probes/prizes/collatz_gpt_mixed_curvature.py`; predictions ata4645cf, GPT's Intel host, Python, under1 s. No control failed. The exact local cancellation and block identity remain pending independent reading; no bound on total curvature, boundary mass or equal-bit blocks is established. No larger actual population or Local job was run.
 
-### GPT G81 — offset-code collision reduction (awaiting independent reading)
+### G.GPT81. offset-code collision reduction (second-read by Local, 2026-10-06)
 
 ### G81. Reduce the admitted-collision question to offset residues (2026-10-06)
 
@@ -2325,6 +2313,39 @@ This also recovers L040's lower threshold: delta is a nonzero even integer and a
 CI1 checks all68722 fixed-cardinality position sets at a1..12 against independent full-prefix admission; exactly4403 admitted words remain. Counts by a are1,1,2,3,7,12,30,85,173,476,961,2652. Affine-recursion and position-sum intercepts and direct parity representatives agree. There are no colliding intercept residues in any of the12 classes. CI2 HELD: the blind no-collision prediction for a7..12 survives this complete finite search. Consequently, via G81, same-odd-count admitted collisions with a<=12 are excluded across widths and horizons, not just in one finite start interval. This is an exhaustive finite code verification with an analytic reduction; it is not an all-a singleton theorem or an asymptotic rarity estimate. G73's domain additionally ensures any terminal collision has the same odd count.
 
 The unrestricted guard independently gives intercepts7/259, common terminal11 and first deficits2 for both starts625/597, refuting omission of admission. No collision witness could be constructed in this population because no code collision occurred; the constructive branch therefore remains empirically unexercised. Probe: `tests/probes/prizes/collatz_gpt_offset_codes.py`; predictions at9a9a46d (published via050f51c), GPT's Intel host, Python, under1 s. The first included-word pass was followed by the full excluded-set completeness control to check enumeration coverage; both passed. Independent Local reading and reproduction of the new reduction remain requested.
+
+*Second reader's note on G80 and G81 (Local, 2026-10-06; chat L043).* Both correct. G80: with $a \ge \ell_{t+1}$ both
+intermediate states are admitted, so $f_t(a) = (F(a) + 2F(a+1) + F(a+2))/4$, and a mixed pair's two contributions sum to the
+second difference; the block accounting telescopes; the boundary guard shows why the condition is needed. Checked: the
+two-step identity on all 6,376 admitted $(T, t, a)$ states with $T \le 30$, in exact rationals. G81: a collision gives
+$3^a(n' - n) = B - B'$ and padding to $t_a$ keeps $B$ and admission; conversely $\delta = (B - B')/3^a$ is nonzero (equal
+least representatives would give equal words), even (every admitted word starts with 1, so $B$ is odd) and below
+$a/3 < M$ in size, so $n = r + 2M$ or $r + 3M$ and $n' = n + \delta$ realize both words with equal terminals; the 7/259 guard
+checks. Checked independently with my own enumeration (`collatz_audit_g67_g69.py`, G81 part): the counts $|W_a|$ for
+$a \le 12$ agree with GPT's, and **the search extends to $a = 17$** ($|W_a|$ = 8045, 17637, 51033, 108950, 312455 for
+$a = 13$ to 17) **with no offset-residue collision**, so by G81 there is no same-odd-count admitted collision for
+$a \le 17$ at any width or horizon.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
+
+### G70 controls outcome and independent review (2026-10-06)
+
+HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
+
+HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
+
+Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
+
+Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
 
 ### GPT G82 — localized coin overshoot and curvature (awaiting independent reading)
 

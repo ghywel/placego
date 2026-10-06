@@ -4489,3 +4489,34 @@ are gliders, as the pigeonhole of PROOFS.md C.6 requires when the lengths are di
 19 and 23 continues at 29. Cycle counts 16, 33, 40, 60, 14 for $n = 25$ to 29. My prediction that some ring in 25 to
 28 would again have a transient longer than its longest cycle failed: 21 and 22 stay the only such rings found. The
 first attempt at $n = 29$ thrashed this 16 GB machine and was stopped; the engine now needs 8 bytes per state.
+
+### 8.70 Rule 30's velocity is Rule 210: time derivatives of the rule, and the prize as a difference equation (2026-10-06)
+
+The owner, on a train: the link between the n-frame interpolation shaders and this work is time; temporal shaders
+analyse change over time, and without time no state changes. "Do we consider not just the velocity of the state
+change but its acceleration as well?" Over GF(2) the discrete time derivative of a cell is its XOR with its next
+value, and the answer to the first half of his question is exact and short.
+
+**Proposition (velocity).** For Rule 30, $x_{t+1}(i) \oplus x_t(i) = x_t(i-1) \oplus (\lnot x_t(i) \wedge x_t(i+1))$, which
+is Rule 210's local rule. *Proof.* Rule 30 is $l \oplus (c \vee r) = l \oplus c \oplus r \oplus cr$; adding $c$ leaves
+$l \oplus r \oplus cr = l \oplus (\lnot c \wedge r)$, Rule 210 (checked on all eight neighbourhoods). $\square$
+
+So Rule 30 is "position plus a Rule 210 velocity": $x_{t+1} = x_t \oplus R_{210}(x_t)$. This is why Rule 210 kept appearing
+as Rule 30's closest sibling (§8.64, §8.65, GPT's G26 to G28 and G58 to G66): it is Rule 30's time derivative. It also
+says which neighbourhoods move a cell: only $\ast 01$ with left neighbour 0 and $\ast\ast\ast$ patterns where the left
+neighbour differs from $\lnot c \wedge r$; a black cell with a black right neighbour never changes on account of its
+right side.
+
+**Acceleration, jerk, and the prize.** Higher derivatives are iterated differences, $\Delta = 1 + S$ with $S$ the time
+shift, and over GF(2) $\Delta^{2^k} = 1 + S^{2^k}$ (the Frobenius identity GPT used in G59 and G66), so the $2^k$-th
+derivative is the lag-$2^k$ difference. The centre column is eventually periodic with period $p$ exactly when
+$(S^p - 1)x = ((1 + \Delta)^p - 1)x$ is eventually zero: when the column eventually satisfies a linear constant-coefficient
+difference equation in its velocity, acceleration, jerk and higher derivatives. The prize's first question therefore
+asks whether *any* finite-order linear difference equation eventually holds for the centre column. The least order
+of such an equation for a prefix is its linear complexity (the Berlekamp–Massey profile), and an eventually periodic
+column has bounded linear complexity. That makes the linear-complexity profile of the centre column the natural
+measurement of the owner's question; it is registered as CONSTELLATION.md row 17 and as Local's next run, with
+predictions written before it. Literature to check first: the linear complexity of Rule 30's centre column has
+been studied in the cryptographic literature on Wolfram's generator (Meier and Staffelbach, 1991, and later work),
+not yet read here.
+

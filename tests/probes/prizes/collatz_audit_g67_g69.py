@@ -270,4 +270,28 @@ for m in range(1, 9):
 strict = all(2 * ellf(8 * m) - 9 * m > m for m in range(1, 200))
 fails += not strict
 print("G77/G78: moment identity, endpoint bound and bootstrap floor on", n78, "(m, T) cases; U/Q > m at T = 8m for m < 200:", strict)
+# G81 (added 2026-10-06): the offset-code search, independently and further. W_a = admitted words of length
+# t_a = floor(log2 3^a) with a ones = position sets 0 = p_0 < ... < p_(a-1) with p_i <= floor(i log2 3). Check the
+# counts for a <= 12 against GPT's (1,1,2,3,7,12,30,85,173,476,961,2652) and look for B-residue collisions mod 3^a to a = 17.
+import sys as _sys
+_sys.setrecursionlimit(10000)
+counts81 = []; coll81 = {}
+for a in range(1, 18):
+    A = 3 ** a; caps = [(3 ** i).bit_length() - 1 for i in range(a)]
+    seen = set(); cnt = 0; hit = False
+    def dfs(i, prev, B):
+        global cnt, hit
+        if i == a:
+            cnt += 1; r = B % A
+            if r in seen: hit = True
+            seen.add(r); return
+        lo = 0 if i == 0 else prev + 1
+        for p_ in range(lo, caps[i] + 1):
+            dfs(i + 1, p_, B + 3 ** (a - 1 - i) * 2 ** p_)
+    dfs(0, -1, 0)
+    counts81.append(cnt); coll81[a] = hit
+fails += counts81[:12] != [1, 1, 2, 3, 7, 12, 30, 85, 173, 476, 961, 2652]
+fails += any(coll81[a] for a in range(1, 7))
+fails += (7 - 259) % 9 != 0 or (7 - 259) // 9 != -28
+print("G81: |W_a| for a = 1..17:", counts81, "; residue collisions:", [a for a in coll81 if coll81[a]] or "none")
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
