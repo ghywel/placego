@@ -211,3 +211,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_threshold_shape.py (G95): NS1 passes 126 independent laws and unrestricted guard; NS2 NOT RUN, zero schedules, superseded by L048 before execution. Revised run plan at 588c530. No all-length shape or allocation theorem.
 
 - rule30_gpt_moving_frame.py (G96): MC1 passes 504 ring rows/1512 transported cases; MC2 passes derivative-dynamics guard and 168 dyadic checks. Autonomous Rule210 derivative evolution counterfactual refuted. Preregistered at e2c6a02. Scope identities only, no single-seed statistical theorem.
+
+- rule30_gpt_spatial_ensemble.py (G97): SC1 passes 2040 input words, four preimages/output; SC2 passes 32 neighbourhoods and counts 16/16/24. Constant-row guards pass. Preregistered at a233f59. SC3 temporal independence controls remain NOT RUN and unpublished.

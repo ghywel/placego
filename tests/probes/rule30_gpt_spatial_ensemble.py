@@ -1,4 +1,4 @@
-"""G97 SC1-SC2 preregistered NOT RUN; publish before execution.
+"""G97 SC1-SC2 SC1-SC2 preregistered at a233f59; PASS 2026-10-06.
 SC1: widths1..8, each output word has exactly four local preimages.
 SC2: five-bit neighbourhoods give 16,16,24 left/stay/right flips;
 literal truth-table updates agree with separate Boolean identities.
