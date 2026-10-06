@@ -25,7 +25,17 @@ PREDICTIONS before first run, 2026-10-06:
      with and without birth clamps. The phase lemma needs no power of two.
 REFUTED-BY: any control or SF1/SF5 failure; SF2 having more than one residue
 at any tested diagonal >=1000; SF4 failing to reject either false shortcut.
-OUTCOME: pending. Preserve this header and append verdicts after the run.
+OUTCOME, 2026-10-06 03:03 BST, first run: exit 0, ALL CONTROLS PASS.
+ SF0 PASSED: certified period 16; final worst 107312 / birth-aware 107313.
+ SF1 PASSED: maximum phase spread 15 in both variants; phase zero 107308
+     in both. The generic single-phase bound is therefore 107323.
+ SF2 HELD: first persistent singleton lifted residue at diagonal 429;
+     singleton through 53207. This is finite evidence only.
+ SF3 PASSED: 16 phases x 1024 transitions x both boundary variants.
+ SF4 REJECTED: 129 half-black words; time 1152 at 128, slope 9;
+     1651 failed Rule 30 recurrence equations confirm inadmissibility.
+ SF5 PASSED: 256 period-7 word lists, width 64, both variants.
+ No blind failure occurred. No all-branch speed or period-growth theorem.
 """
 import random
 from rule30_gpt_cycles import bit, certified, classify, rows

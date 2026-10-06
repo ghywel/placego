@@ -561,3 +561,121 @@ been supplied here. Leave Q3's practical deferral intact pending such a candidat
 that fixed-dimension methods are generally impossible or equivalent to Q1's uniform contraction law.
 Asked Local to revise their own prose; a dated note is appended under §8.61. Next substantive reasoning
 intention remains the reset-front question named in G4 and CHAT C009.
+
+## G6. Reset-front phase comparison and the remaining path cost (2026-10-06)
+
+**Scope.** A bounded reasoning block on C009/C011's reset-front question. Fetched current shared history
+before starting; no new Claude reply was present. Both fresh startup commands printed ALL CHECKS PASS;
+the standard merge probe's witness summaries retain the capped-input scope recorded in G1.
+The diagnostic's SF0–SF5 predictions and operational intention were pushed on `gpt/reset-front` in
+`01affe1` before its first run. No Local million-diagonal job was repeated. Prior-art reading/search is
+in PRIOR-ART.md's dated reset-front entry; this extends the existing Rowland/Local reset mechanism.
+
+### G6.1. Theorem: one phase controls the conservative front within P−1
+
+Fix a finite compatible prefix of periodic diagonal words $w_0,\ldots,w_{M-1}$ with common period $P$.
+They need not have minimal period $P$. This compares the conservative reset bounds of §8.59, not actual
+last transient times or different branches. Set $T_\phi(0)=0$ for integer phases $\phi$.
+Let $b_k$ be a phase-independent earliest birth time for diagonal $k+1$, or zero on the full line.
+For the half-line one may use $b_k=\max(0,k+1-L)$; G2's worst valid $L=1$ gives $b_k=k$.
+Define
+
+```math
+ F_k(s)=\begin{cases}
+ s,&w_k\equiv0,\\
+ 1+\min\{t\ge s:w_k(t)=1\},&w_k\not\equiv0.
+ \end{cases}
+```
+
+The front is nondecreasing in $k$, so the older-parent maximum in §8.59 is redundant. Writing
+$U_\phi(k)=T_\phi(k)+\phi$ gives exactly
+
+```math
+ U_\phi(0)=\phi,\qquad
+ U_\phi(k+1)=F_k\bigl(\max(U_\phi(k),b_k+\phi)\bigr).
+```
+
+**Proof.** Each $F_k$ is nondecreasing and satisfies $F_k(s+P)=F_k(s)+P$. Induction therefore gives
+both $U_\phi(k)\le U_\psi(k)$ for $\phi\le\psi$ and
+$U_{\phi+P}(k)=U_\phi(k)+P$. For $0\le\phi<\psi<P$, put $d=\psi-\phi$.
+The lifted difference is between 0 and $P$, hence
+
+```math
+ -d\le T_\psi(k)-T_\phi(k)\le P-d.
+```
+
+Since $1\le d\le P-1$, every pair of phase bounds differs by at most $P-1$.
+In particular, for any chosen phase $\phi_0$,
+
+```math
+ \max_{0\le\phi<P}T_\phi(M)\le T_{\phi_0}(M)+P-1.
+```
+
+For $P=1$ there is only one phase. Birth clamps preserve the proof because $b_k+\phi$ is
+nondecreasing in phase and translates by $P$.
+
+**Consequence for the open bound.** On each admissible branched side, a bound
+$T_{\phi_0}(M)\le\gamma M+O(1)$ with $\gamma<3$, together with $P(M)=o(M)$,
+suffices for the worst phase to have slope below 3 eventually. The representative phase may be chosen
+for each prefix, provided the proposed one-phase bound applies to that choice. This removes the
+need for separate phase-speed estimates. It does not remove the all-branch quantifier, prove period
+growth, or prove a speed bound. Branches have different word lists and must each satisfy the hypotheses.
+
+### G6.2. Exact accounting: waiting zeros, not area density
+
+For a chosen phase, let $c_k=\max(0,b_k-T_\phi(k))$ be the birth-clamp increment. Let $z_k$ be the
+number of zero cells scanned before the first black cell, starting at the clamped time; set $z_k=0$
+when $w_k\equiv0$. Let $W(M)$ count those identically white parent words for $0\le k<M$.
+Summing the reset recurrence gives the exact identity
+
+```math
+ T_\phi(M)=M-W(M)+\sum_{k<M}z_k+\sum_{k<M}c_k.
+```
+
+Thus a sub-3 front theorem requires control of the zero-wait budget along this selected path.
+An area-average or time-average black density alone does not provide it.
+
+**Compatibility along a wait.** In an actual side, write the two parent words as $a=w_{k-2}$ and
+$b=w_{k-1}$, the child as $c=w_k$. If $c(s)=0$ and the first following black is $c(s+z)=1$,
+then the recurrence $c(t+1)=a(t)\oplus(b(t)\lor c(t))$ implies $a(t)=b(t)$ for
+$s\le t\le s+z-2$, and $a(s+z-1)\ne b(s+z-1)$. The first range is empty when $z=1$.
+Thus a nonzero waiting cost is exactly an adjacent-parent agreement run followed by a disagreement,
+plus the starting zero. This is an exact necessary local condition, not yet a bound on the sum of
+such costs at adaptively selected times. The toy below fails these compatibility equations.
+
+
+**Counterexample to that shortcut, not to Rule 30.** Let $P=2h$ and prescribe word $w_k$ to be black
+on the $h$ consecutive residues starting at $k(h+1)+h$ modulo $2h$, white elsewhere. Each word is
+exactly half black. The phase-zero front begins at $T_0(0)=0$ and at step $k$ waits through exactly
+$h$ zeros, so induction gives $T_0(M)=(h+1)M$. With $h=8$ the period is 16, yet the slope is 9.
+For larger power-of-two $h$, the slope is arbitrarily large. These prescribed words do not satisfy
+Rule 30's diagonal recurrence: the finite check below rejects them. Any argument for the actual
+band must use compatibility between neighbouring words, not just their marginal densities.
+
+### G6.3. Pre-registered finite checks
+
+Ran `PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/lexicon/rule30_gpt_front.py` on the GPT Intel CPU,
+one process. First run exit 0, ALL CONTROLS PASS. All numerical values below are that run's output.
+
+| Item | Outcome |
+|---|---|
+| SF0, known independent strip certificate and front endpoints | Period 16, 53,208 words certified; original worst bound 107312, birth-aware 107313, matching G2. |
+| SF1, phase theorem | Passed at every prefix; maximum spread 15 in both variants. Phase-zero final bound 107308 in both variants. Thus the theorem's generic one-phase bound is 107323; exact worst bounds above are tighter. |
+| SF2, blind phase coalescence | Held. First persistent singleton residue of the lifted phases is at diagonal 429; all remain singleton through diagonal 53207. |
+| SF3, independent scalar bit scan | Passed for 16 phases, 1024 transitions and both boundary variants. |
+| SF4, density shortcut counterfactual | Rejected: all 129 toy words half black; phase-zero bound 1152 at diagonal 128, slope 9. There are 1651 failed Rule 30 local equations, confirming the toy is inadmissible. |
+| SF5, explicitly unexpected check | Passed for 256 seeded word lists, period 7, width 64, both boundary variants, including an all-white list. No power-of-two or Rule 30 premise is needed for the phase theorem. |
+
+The observed coalescence has a precise limited meaning. In the original front, once the lifted phases
+have one residue modulo $P$, their pairwise differences are 0 or $P$. With inactive birth clamps,
+translation equivariance preserves those differences under every later map. Thus phase offsets can
+remain fixed while the front advances. The measurement certifies this over the existing finite prefix;
+it does not prove coalescence on every branch or after every period doubling.
+
+**What moved.** Q7 remains PART. The phase quantifier in its settling requirement has an elementary
+bound; the missing item is now a one-phase adaptive waiting budget, across all admissible sides, plus
+sublinear period growth. Next intention: inspect the compatibility equations along successive waits
+for a telescoping charge or an explicit obstruction. Local's long-run lane stays separate. No prize
+solution or limiting-density theorem is claimed.
+
+**Record check.** The first document render reported 0 TeX errors but 20 unconsumed dollar signs: this project's renderer accepts fenced display math, not double-dollar display blocks. Converted the five new blocks to the established math fences before publication. This was a document-format failure, not a scientific probe failure.

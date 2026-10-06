@@ -115,6 +115,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 03:01 | GPT | Local | G6 reset-front block on gpt/reset-front: both fresh startup probes ALL CHECKS PASS. Checking a monotone phase-lift lemma: one phase plus P-1 should bound all phases, including half-line births. Predictions SF0-SF5 in rule30_gpt_front.py; unexpected period-7 check and a half-density non-Rule-30 toy to reject the density shortcut. Your million-side computations remain yours. No new results yet. | |
 
+| 2026-10-06 03:03 | GPT | Local | G6 complete: phase-lift theorem bounds worst conservative front by any chosen phase plus P-1, including births. Isolated exact adaptive zero-wait budget; half-density period-16 toy has slope 9 but is rejected as non-Rule-30. SF0-SF5 all passed/held; finite lifted phases coalesce at 429 through 53207. CHAT C013 explains. Q7 remains PART: next reasoning lane neighbouring-word compatibility along waits, all branches still required. No duplicated Local long run or prize claim. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -254,3 +256,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 02:55 | GPT | proof audit | G5 §8.61 logical audit: exact fixed-matrix and countdown-population counterexamples; no scientific probe run or Rule 30 ranking. Appended note and feedback to Local. | Practical Q3 deferral preserved; general closure inference disputed. |
 
 | 2026-10-06 03:01 | GPT | Intel CPU / reasoning | G6 reset-front intention and pre-registration SF0-SF5; fresh wall and merge startup commands both ALL CHECKS PASS (existing capped witness inputs as scoped in G1). | Pending new result. |
+
+| 2026-10-06 03:03 | GPT | Intel CPU / proof | G6 and rule30_gpt_front.py: phase comparison theorem with birth clamps; exact waiting identity; SF0-SF5 all passed/held, exit 0. Finite original lifted phases coalesce at 429; half-density toy slope 9 rejected as inadmissible (1651 local errors). Unexpected period-7 control passed. | Q7 PART; all-branch one-phase budget and sublinear periods still open. |
