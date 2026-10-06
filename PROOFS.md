@@ -35,7 +35,7 @@ not written out). Rule 210, Rule 90 and the Collatz entries are marked by their 
 | B′16 Proposition 5 | Rule 90, period two | $x_{2^n + s}(0) = x_s(-2^n) \oplus x_s(2^n)$ | Rule 90 with any periodic nonzero column 0: the identity gives long white stretches ✓ (standard for linear rules) |
 | B′17 Proposition 7 (Jen) | column 0 eventually periodic and not eventually zero; column 1 eventually periodic | Jen's mechanism | general for Rule 30 ✓ |
 | B′18 the parity invariant | Rule 210, 0101 | the parity of the wall's black times | one-parity walls: in the waiting room |
-| B′19 the squeeze | 0101 | step 1, the certified channel for 0101; step 2, column $-1$ is 1 at odd times | steps 3 and 4 hold for any wall ✓; a bound for another wall needs that wall's own channel certificate ~ |
+| B′19 the squeeze | 0101 | step 1, the certified channel for 0101; step 2, column $-1$ is 1 at odd times | every periodic wall, coarsely: GPT's G53 (period-block conversion) and G54 (gap-matrix bound $\log_2 \rho(M)/p$), second-read ✓; a sharp bound for a wall still needs its own deeper-layer certificate |
 | B′20 Proposition 6 (the wheel) | 0101 | a computation | 0101 only |
 | C.1 checkerboard, C.2 latch | any trace (a black stretch; a white time) | one rule step | any trace ✓ |
 | C.3 shrink, C.4 speed identity | any configuration | one rule step; the diagonal recurrence | general ✓ (the speed's numbers are the background's) |
@@ -54,8 +54,8 @@ not written out). Rule 210, Rule 90 and the Collatz entries are marked by their 
 trace. What is period-two-specific is a short list: the channel certificate and the squeeze built on it, the wheel
 (Proposition 6), the rotation-coding exclusions (Theorems E, E″), the affine columns, and Corollary F as written. So
 a proof that wanted to leave period 2 would carry almost all of the machinery with it, and would need, for each new
-wall, its own channel certificate. Of the two "~" extensions, Corollary F is now written out (G52, for phase-aligned period blocks); a per-wall
-squeeze is the one left.
+wall, its own channel certificate. Both "~" extensions are now written out and second-read: Corollary F for phase-aligned period blocks (G52) and a
+coarse squeeze for every periodic wall (G53, G54). What remains period-two-specific is the sharp channel constant.
 
 ## A. The wall form
 
@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G52, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G54, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1162,23 +1162,9 @@ $\ell_j \ge i'_j - K$; such $j$ exist because $i'_j - i_j \to \infty$. The 001 e
 walls of periods 2 to 9 with arbitrary bits at black phases, zero failures (`rule30_audit_g52.py`). GPT's own MF1 and MF2 controls (`tests/probes/rule30_gpt_period_blocks.py`) replicated unchanged by Local on
 2026-10-06 at 05f1619: 50 walls, 288 samples, 8,016 transitions, and the 001 misalignment.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
 ### G.GPT53. Period-block form of the entropy squeeze
 
-**Where:** RULE30-GPT.md G53; copied proof. **Status:** awaiting independent reader. No new numerical certificate claimed.
+**Where:** RULE30-GPT.md G53; copied proof. **Status:** second-read by Local, 2026-10-06 (note below G54). No new numerical certificate claimed.
 
 ### G53 lemma and proof: period-block entropy conversion
 
@@ -1201,7 +1187,7 @@ This is the period-block form of RULE30-PRIZE.md section8.33 proof steps2-4, not
 
 ### G.GPT54. Gap-matrix coarse squeeze for every periodic wall
 
-**Where:** RULE30-GPT.md G54; copied proof. **Status:** awaiting independent reader of the synthesis with G53. Reuses G14/G15; no new channel data.
+**Where:** RULE30-GPT.md G54; copied proof. **Status:** second-read by Local, 2026-10-06 (note below). Reuses G14/G15; no new channel data.
 
 ### G54 corollary and proof: coarse squeeze for every periodic wall
 
@@ -1221,3 +1207,30 @@ The same bound is independent of which white phase starts the product: cyclic pr
 For wall0^(p-1)1, the product A^(p-2)F=[[p-1,1],[1,0]] recovers G14's bound log2(((p-1)+sqrt((p-1)^2+4))/2)/p. For the one-hole wall01^(p-1) with p>=3, it is J and gives1/p. Neither closes the single-orbit information-cost gap.
 
 Unexpected units check: G14's p8 visible rate0.354491897 is already per physical step, so it bounds fixed left-column entropy directly; dividing it by8 again would be wrong. G15's period8 examples00111111 and01101111 instead have per-period roots3 and4, so the respective physical bounds are log2(3)/8 and2/8. White fraction alone does not determine this certificate. These examples and calculations are reused from G14/G15, without a new experimental or novelty claim.
+
+*Second reader's note on G53 and G54 (Local, 2026-10-06; chat L026).* Both correct. G53: at a white phase
+$\pi(t) = \tau(t+1) \oplus \sigma(t)$ and at a black phase $\pi(t)$ is fixed, so aligned period blocks of $\pi$
+correspond one to one with the vectors $v$; $P_v(n) \le P_\pi(pn)$ and $P_\pi(m) \le p\,P_v(\lceil m/p \rceil + 1)$ give
+$h(\pi) = h(v)/p$ (the lower bound along $m = pn$ suffices for the limsup), and column $-k$ over $m$ times needs
+$\pi$ over $m + k - 1$ times and one phase, so it inherits the bound. G54: G15's gap matrices bound a superset of
+every actual visible itinerary; cyclic products share trace and determinant; the discriminant $(a - d)^2 + 4bc$ is
+nonnegative; and the examples check exactly: for $0^7 1$ the product $A^6 F$ has spectral radius $(7 + \sqrt{53})/2$
+and gives $0.354491897$ bits per step, **exactly G14's recorded rate**, which confirms the units; $00111111$ and
+$01101111$ give $\log_2 3/8$ and $2/8$; the one-hole walls $1/p$; and $0101$ gives $\log_2 \varphi / 2 = 0.3471$, the
+coarse bound that the certified $0.0618$ improves on (`rule30_audit_g53_g54.py`, all checks pass). With these two
+entries the Generality index's last "~" is resolved for a coarse bound: every periodic wall has a squeeze; a sharp
+one needs a deeper-layer certificate per wall.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
