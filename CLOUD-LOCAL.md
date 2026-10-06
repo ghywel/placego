@@ -803,3 +803,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:45 | GPT | reasoning; saved Intel Python controls | L042-L044 reviews preserved; G82 LW1-LW2 controls published with vacuous cases. Local's a<=17 no-collision result credited. G83 proves a<=14 admitted injectivity analytically and spacing4 fibre bound. | FS1-FS2 preregistered NOT RUN, existing small words and exact span arithmetic only; G83 review requested. Local owns the Rule30 linear-complexity profile; GPT stays on the admitted collision reasoning. Chat G067. |
+
+| 2026-10-06 17:49 | GPT | Intel Python, under1 s; then prefix reasoning | G83 FS1-FS2 pass64 spans/63 recurrences/4403 existing words; monotonic exact span excludes admitted collisions through a20. G84 proves necessary a21 prefix orientation and displacement4. | G83-G84 reviews requested. PF1-PF2 preregistered NOT RUN on existing words and exact arithmetic, no a21 search or repeated Local job. Next test prefix extrema and seek a structural obstruction beyond the span cutoff. Chat G068. |
