@@ -80,6 +80,10 @@ CHECKS (GPT's claims at 827e006):
      the joint histogram {32: 32, 24: 32, 8: 16, 5: 16, 3: 16}, 112 distinct pairs; each ideal trace beginning 0 has 8
      injections among 32, beginning 1 none; H(A, B) and MI(A; B) from the counts equal 6 + h2(1/4)/2 + h2(3/8)/16 and
      6 - h2(1/4)/2 - h2(3/8)/16 to 1e-12.
+  S20 (G119, added 2026-10-06 at 439744b): on the 2,048 pulse words, for t = 0..5, the prefix mutual information M_t
+     equals (t + 1) - sum_(s <= t) H(E_s | paired past), every quantity computed from exact counts; and the two toys:
+     the positive control gives M = 1, 2 - h2(1/4), 3 - h2(1/4), the cross-copy reuse guard gives M = 1, 1, 3 while
+     its last error is known from the paired past (so the identity would wrongly give 2 there).
 """
 import random
 from fractions import Fraction as F
@@ -724,4 +728,59 @@ ok19 &= all(v[1] == (8 if a[0] == 0 else 0) for a, v in injA.items())
 ok19 &= abs(HAB - (6 + h2(0.25) / 2 + h2(0.375) / 16)) < 1e-12 and abs((HA + HB - HAB) - (6 - h2(0.25) / 2 - h2(0.375) / 16)) < 1e-12
 check('S19 G118: marginals, joint histogram, injections by I_0, H(A,B) and MI', ok19,
       'MI = %.6f bits' % (HA + HB - HAB))
+def H_counts(counter, total):
+    return -sum(c / total * math.log2(c / total) for c in counter.values() if c)
+
+
+def prefix_MI(samples, t):
+    """samples: list of (I tuple, J tuple), equally weighted. MI between prefixes of length t + 1."""
+    n = len(samples)
+    from collections import Counter
+    cA = Counter(I[:t + 1] for I, J in samples)
+    cB = Counter(J[:t + 1] for I, J in samples)
+    cAB = Counter((I[:t + 1], J[:t + 1]) for I, J in samples)
+    return H_counts(cA, n) + H_counts(cB, n) - H_counts(cAB, n)
+
+
+def cond_err_entropy(samples, t):
+    """H(E_t | K_0..K_(t-1)) from counts."""
+    from collections import Counter
+    n = len(samples)
+    past = Counter((tuple(zip(I[:t], J[:t]))) for I, J in samples)
+    joint = Counter((tuple(zip(I[:t], J[:t])), I[t] ^ J[t]) for I, J in samples)
+    return H_counts(joint, n) - H_counts(past, n)
+
+
+pulse = []
+for w in range(2 ** 11):
+    x = {i: (w >> (i + 5)) & 1 for i in range(-5, 6)}
+    zr, yr = dict(x), dict(x)
+    A_, B_ = [x[0]], [x[0]]
+    for t in range(1, 6):
+        lo, hi = -5 + t, 5 - t
+        nz = {i: R30(zr[i - 1], zr[i], zr[i + 1]) for i in range(lo, hi + 1)}
+        ny = {i: R30(yr[i - 1], yr[i], yr[i + 1]) for i in range(lo, hi + 1)}
+        if t == 1:
+            ny[0] = R30(yr[-1], yr[0], ny[1])
+        zr, yr = nz, ny
+        A_.append(zr[0])
+        B_.append(yr[0])
+    pulse.append((tuple(A_), tuple(B_)))
+ok20 = True
+acc = 0.0
+for t in range(6):
+    acc += cond_err_entropy(pulse, t)
+    ok20 &= abs(prefix_MI(pulse, t) - ((t + 1) - acc)) < 1e-12
+toy = []
+for b in range(32):
+    X0, X1, X2, U, V = [(b >> k) & 1 for k in range(5)]
+    Rr = U & V
+    toy.append(((X0, X1, X2), (X0, X1 ^ Rr, X2 ^ (Rr & X0))))
+ok20 &= abs(prefix_MI(toy, 0) - 1) < 1e-12 and abs(prefix_MI(toy, 1) - (2 - h2(0.25))) < 1e-12
+ok20 &= abs(prefix_MI(toy, 2) - (3 - h2(0.25))) < 1e-12
+reuse = [((X, Y, Z), (X, Z, Y)) for X in (0, 1) for Y in (0, 1) for Z in (0, 1)]
+Ms = [prefix_MI(reuse, t) for t in range(3)]
+ok20 &= all(abs(a - b) < 1e-12 for a, b in zip(Ms, (1, 1, 3))) and abs(cond_err_entropy(reuse, 2)) < 1e-12
+check('S20 G119: the increment identity on the pulse traces (t <= 5); positive toy; the cross-copy reuse guard', ok20,
+      'pulse M_5 = %.6f' % prefix_MI(pulse, 5))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -1,10 +1,10 @@
-# Shared fresh pivots turn error uncertainty into mutual-information increments
+# shared fresh pivots turn error uncertainty into information increments
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G119. Shared fresh pivots turn
-error uncertainty into mutual-information increments (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT119. shared fresh pivots
+turn error uncertainty into information increments (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A common fresh bit ties new shared information to next-error uncertainty.
 **An everyday picture.** A new common bit shares what an uncertain discrepancy leaves visible.
 
 ## The formal statement and proof
+
+### G119. Shared fresh pivots turn error uncertainty into mutual-information increments (2026-10-06)
 
 **Status:** general right-reading fair-ensemble identity; GF0-GF2 preregistered NOT RUN, independent review pending. Uses G107-G108's fresh-pivot property and ordinary entropy chain rule, not a new general information theorem.
 
@@ -38,3 +40,12 @@ The relevant property is a common unused pivot relative to the paired history, n
 **GF0-GF2 preregistered NOT RUN.** Use two independent small finite controls, not another Rule30 production run. GF0-GF1 positive control:three fair pivots X0,X1,X2 and two fair hidden bits U,V, R=U*V;I=(X0,X1,X2),J=(X0,X1 XOR R,X2 XOR(R*X0)). All32 histories have equal weight. Predict both marginal prefixes uniform,MI prefixes1,2-h2(1/4),3-h2(1/4),and next-error conditional entropies0,h2(1/4),0. Independently compare integer joint/marginal entropy spectra with conditional-error groups, tolerance1e-12 only for logs.
 
 GF2, unexpected cross-copy-reuse guard:all8 fair triples X,Y,Z with I=(X,Y,Z),J=(X,Z,Y). Both marginals are iid and initial samples agree, butMI prefixes are1,1,3;the last increment is2 while the last error is known from the paired past. The formula would predict1 there and must fail. This counterexample refutes extending the identity from marginal iid laws alone. Publish before execution. It is a scope control, not a Rule30 counterexample.
+
+*Second reader's note on G119 (Local, 2026-10-06; chat L075).* Correct, including the measurability step GPT asked me
+to challenge: every earlier paired sample and the current $u_t, v_t$ depend only on initial bits strictly right of
+$L_t$ (earlier pivots lie further right), so the shared pivot is fresh even given the whole paired past and $E_t$,
+and the joint increment is $1 + H(E_t \mid \text{paired past})$. Checked (`rule30_audit_g99_g100.py`, S20) on the real
+pulse traces from all 2,048 words: $M_t = (t + 1) - \sum_{s \le t} H(E_s \mid \text{paired past})$ for every
+$t \le 5$, every quantity from exact counts, ending at $M_5 = 5.534709$, G118's value; the positive toy gives
+$1$, $2 - h_2(1/4)$, $3 - h_2(1/4)$; the cross-copy reuse guard gives $1, 1, 3$ with its last error known, so the
+identity would wrongly give 2 there, as stated.

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G118, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G119, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3687,17 +3687,7 @@ $\{32{:}\,32, 24{:}\,32, 8{:}\,16, 5{:}\,16, 3{:}\,16\}$ with 112 pairs; 8 injec
 and none in those beginning 1; and the entropies from the counts match both formulas to $10^{-12}$, giving
 $\mathrm{MI}(A; B) = 5.5347$ bits.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT119. shared fresh pivots turn error uncertainty into information increments (second-read by Local, 2026-10-06)
 
 ### G119. Shared fresh pivots turn error uncertainty into mutual-information increments (2026-10-06)
 
@@ -3721,3 +3711,24 @@ The relevant property is a common unused pivot relative to the paired history, n
 **GF0-GF2 preregistered NOT RUN.** Use two independent small finite controls, not another Rule30 production run. GF0-GF1 positive control:three fair pivots X0,X1,X2 and two fair hidden bits U,V, R=U*V;I=(X0,X1,X2),J=(X0,X1 XOR R,X2 XOR(R*X0)). All32 histories have equal weight. Predict both marginal prefixes uniform,MI prefixes1,2-h2(1/4),3-h2(1/4),and next-error conditional entropies0,h2(1/4),0. Independently compare integer joint/marginal entropy spectra with conditional-error groups, tolerance1e-12 only for logs.
 
 GF2, unexpected cross-copy-reuse guard:all8 fair triples X,Y,Z with I=(X,Y,Z),J=(X,Z,Y). Both marginals are iid and initial samples agree, butMI prefixes are1,1,3;the last increment is2 while the last error is known from the paired past. The formula would predict1 there and must fail. This counterexample refutes extending the identity from marginal iid laws alone. Publish before execution. It is a scope control, not a Rule30 counterexample.
+
+*Second reader's note on G119 (Local, 2026-10-06; chat L075).* Correct, including the measurability step GPT asked me
+to challenge: every earlier paired sample and the current $u_t, v_t$ depend only on initial bits strictly right of
+$L_t$ (earlier pivots lie further right), so the shared pivot is fresh even given the whole paired past and $E_t$,
+and the joint increment is $1 + H(E_t \mid \text{paired past})$. Checked (`rule30_audit_g99_g100.py`, S20) on the real
+pulse traces from all 2,048 words: $M_t = (t + 1) - \sum_{s \le t} H(E_s \mid \text{paired past})$ for every
+$t \le 5$, every quantity from exact counts, ending at $M_5 = 5.534709$, G118's value; the positive toy gives
+$1$, $2 - h_2(1/4)$, $3 - h_2(1/4)$; the cross-copy reuse guard gives $1, 1, 3$ with its last error known, so the
+identity would wrongly give 2 there, as stated.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
