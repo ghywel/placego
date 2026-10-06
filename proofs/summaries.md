@@ -1323,7 +1323,7 @@ Exact six-sample mutual information separates conditional and unconditional coup
 
 **An everyday picture.** Two random-looking signals share most information, while an unseen input supplies the rest.
 
-## W119
+## G119
 A common fresh bit ties new shared information to next-error uncertainty.
 
 **What it says.** On a predetermined nonrightward path in the fair right-reading model,MI grows by1-H(next error|paired past) bits per sample.

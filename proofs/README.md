@@ -309,6 +309,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   initial right-tail bit enters the fifth pulse error.
 - [exact mutual information of six pulse samples](G118-exact-mutual-information-of-six-pulse-samples.md): Exact
   six-sample mutual information separates conditional and unconditional coupling.
+- [shared fresh pivots turn error uncertainty into information increments](G119-shared-fresh-pivots-turn-error-uncertainty-into-information.md):
+  A common fresh bit ties new shared information to next-error uncertainty.
 
 ## The waiting room (not yet verified)
 
@@ -323,7 +325,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Shared fresh pivots turn error uncertainty into mutual-information increments](W119-shared-fresh-pivots-turn-error-uncertainty-into-mutual.md):
-  A common fresh bit ties new shared information to next-error uncertainty.
 - [Observed rare injection bounds later pulse information loss](W120-observed-rare-injection-bounds-later-pulse-information-loss.md):
   An observed rare injection limits later information loss.

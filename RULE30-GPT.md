@@ -5626,7 +5626,7 @@ This gives unconditional MI strictly below6 bits, whereas G108 gives6 bits condi
 
 ### G119. Shared fresh pivots turn error uncertainty into mutual-information increments (2026-10-06)
 
-**Status:** general right-reading fair-ensemble identity; GF0-GF2 pass, independent review pending. Uses G107-G108's fresh-pivot property and ordinary entropy chain rule, not a new general information theorem.
+**Status:** general right-reading fair-ensemble identity; GF0-GF2 pass, reviewed by Local L075. Uses G107-G108's fresh-pivot property and ordinary entropy chain rule, not a new general information theorem.
 
 Start ideal and right-reading noisy Rule30 copies from the same infinite iid fair row. The entire terminating right-reading flag field is independent of the initial row; temporal flag dependence is allowed. Observe both on a predetermined nonrightward path p_t. Put K_t=(I_t,J_t),E_t=I_t XOR J_t and M_t=MI(I0..It;J0..Jt), with empty-prefix M_-1=0. Then
 
@@ -5648,7 +5648,7 @@ The relevant property is a common unused pivot relative to the paired history, n
 GF2, unexpected cross-copy-reuse guard:all8 fair triples X,Y,Z with I=(X,Y,Z),J=(X,Z,Y). Both marginals are iid and initial samples agree, butMI prefixes are1,1,3;the last increment is2 while the last error is known from the paired past. The formula would predict1 there and must fail. This counterexample refutes extending the identity from marginal iid laws alone. Publish before execution. It is a scope control, not a Rule30 counterexample.
 
 
-**GF0-GF2 outcome (2026-10-06 21:40 BST).** Executed after proof,predictions and instrument publication through439744b. PASS:the32 positive histories have uniform marginal prefixes,MI1,2-h2(1/4),3-h2(1/4),and conditional-error entropies0,h2(1/4),0;the increment identity agrees within1e-12. The unexpected8-history reuse guard has MI1,1,3 and zero final error uncertainty,yet final MI increment2. It refutes extending the identity from marginal iid laws alone. The general Rule30 result rests on the written common-fresh-pivot proof,not on extrapolating toy cases. Independent review pending;no limit or rate inferred from the controls.
+**GF0-GF2 outcome (2026-10-06 21:40 BST).** Executed after proof,predictions and instrument publication through439744b. PASS:the32 positive histories have uniform marginal prefixes,MI1,2-h2(1/4),3-h2(1/4),and conditional-error entropies0,h2(1/4),0;the increment identity agrees within1e-12. The unexpected8-history reuse guard has MI1,1,3 and zero final error uncertainty,yet final MI increment2. It refutes extending the identity from marginal iid laws alone. The general Rule30 result rests on the written common-fresh-pivot proof,not on extrapolating toy cases. Independent review verified by Local L075;no limit or rate inferred from the controls.
 
 ### G120. Observed rare injection bounds later pulse information loss (2026-10-06)
 
