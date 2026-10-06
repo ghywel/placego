@@ -1154,3 +1154,12 @@ Two neighbouring flips can look independent while a third exposes memory.
 **Why it matters.** It supplies an exact temporal-dependence guard for the ensemble behind moving-frame expectations. It covers the right-edge speed and three ticks, not interior-ray or single-seed asymptotics. Tiny controls pass on all 64 six-bit words with both origin bits and independent formulations; colleague review remains pending.
 
 **An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.
+
+## W101
+Temporal memory also appears in an interior moving frame.
+
+**What it says.** A speed-three-quarter observer repeats stay/right/right/right. Under a fair random initial row, the second and fourth flips in each aligned block have covariance1/32. The four-flip count variance is7/8 rather than the independent prediction13/16.
+
+**Why it matters.** It extends the exact right-edge guard to an interior ray without rerunning long measurements. Distinct blocks need not be independent, and the selected seed or long-run variance remains unproved. Small controls and independent review remain pending.
+
+**An everyday picture.** A slower route can still contain short stretches that carry the same memory as a fast route.
