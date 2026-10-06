@@ -8,15 +8,15 @@ and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 14 odd steps without a
+Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 20 odd steps without a
 search.
 
 **What it says.** To keep its growth factor at least 1 through two steps, a number must take two odd steps first, so
 it leaves a remainder of 3 when divided by 4. Two surviving numbers that meet must therefore differ by a multiple of
 4. GPT combined that with the known range of offsets to show that no two such numbers can meet when the number of
-odd steps a is between 2 and 14.
+odd steps a is between 2 and 14; an exact calculation of the same bound then carries this to a = 20.
 
-**Why it matters.** It explains part of the finite search that followed G81 (no meeting up to a = 17) by a short
+**Why it matters.** It goes past the finite search that followed G81 (no meeting up to a = 17) with a short
 argument, and sharpens the bound on how many numbers can share an end value. It has not yet had its second reading.
 
 **An everyday picture.** If every guest arrives on the hour or at a quarter past, and the doors are less than four
@@ -48,3 +48,15 @@ For a>=2 its first term exceeds1/6, while the subtracted term is at most4/27<1/6
 **Unexpected short-horizon guard.** At t1, n1 is coefficient-admitted but is1 modulo4, so the assertion that every admitted start is3 modulo4 is false without t>=2. It does not refute injectivity at that horizon. The unrestricted625/597 guard remains outside admission and does not challenge the span bound, even though its displacement28 is divisible by4.
 
 **Next controls, preregistered NOT RUN.** FS1: exact integer intercept-span recurrence and monotonicity for a1..64, locate the first a with R_a>=4 (no numerical value predicted); require R_a<4 through14. FS2: reuse the already covered a1..12 words to verify first11, the common offset residue5*3^(a-2) modulo4 for a>=2, and the exact span bounds; independently check both short-horizon and unrestricted guards. Counterfactual: the3-modulo4 requirement applies already at horizon1; must fail on n1. No new a13..17 enumeration or actual-start population. The derivation uses only the recorded affine/barrier identities and offset extrema; independent reading requested, no novelty or prize claim.
+
+
+### G83 exact-span controls and stronger cutoff (2026-10-06)
+
+FS1 passes64 exact span bounds and63 recurrence comparisons. The first a with R_a>=4 is21, an unpredicted arithmetic outcome. The exact bracket is
+
+    R_20=13805179460/3486784401<4,
+    R_21=43561973452/10460353203>4.
+
+G83's proved monotonicity therefore gives R_a<4 for every a<=20. Combining the exact integer evaluation with the spacing4 argument analytically excludes same-odd-count admitted collisions through a20, across widths and horizons. This is not a new word enumeration; it strengthens Local L043's a<=17 finite code result using the extrema and a proved recurrence. At a21 the bound merely stops excluding a collision; no collision, frequency estimate or all-a singleton theorem follows.
+
+FS2 passes4403 existing a1..12 admitted words, checking initial11, common offset residue modulo4 and exact extrema. Both guards pass, and unconditional3-modulo4 at horizon1 is refuted on n1. Probe: `tests/probes/prizes/collatz_gpt_forced_spacing.py`; predictions ate9b1213, GPT Intel Python, under1 s. No control failed; no Local a13..17 search or actual-start population was repeated. Independent review of the new spacing lemma and strengthened cutoff remains pending.

@@ -254,5 +254,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 *The pages:*
 
 - [Forced initial parity sharpens admitted fibre spacing](W83-forced-initial-parity-sharpens-admitted-fibre-spacing.md):
-  Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 14 odd steps without
+  Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 20 odd steps without
   a search.
+- [The first possible collision has one prefix orientation](W84-the-first-possible-collision-has-one-prefix-orientation.md):
+  At 21 odd steps, the first case G83 leaves open, any meeting of two surviving numbers would have to take one exact
+  form.

@@ -999,16 +999,31 @@ their own bound.
 **An everyday picture.** Measuring with a finer ruler: the same object, but the margin of error shrinks.
 
 ## W83
-Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 14 odd steps without a
+Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 20 odd steps without a
 search.
 
 **What it says.** To keep its growth factor at least 1 through two steps, a number must take two odd steps first, so
 it leaves a remainder of 3 when divided by 4. Two surviving numbers that meet must therefore differ by a multiple of
 4. GPT combined that with the known range of offsets to show that no two such numbers can meet when the number of
-odd steps a is between 2 and 14.
+odd steps a is between 2 and 14; an exact calculation of the same bound then carries this to a = 20.
 
-**Why it matters.** It explains part of the finite search that followed G81 (no meeting up to a = 17) by a short
+**Why it matters.** It goes past the finite search that followed G81 (no meeting up to a = 17) with a short
 argument, and sharpens the bound on how many numbers can share an end value. It has not yet had its second reading.
 
 **An everyday picture.** If every guest arrives on the hour or at a quarter past, and the doors are less than four
 minutes apart, no two guests can collide in the doorway.
+
+## W84
+At 21 odd steps, the first case G83 leaves open, any meeting of two surviving numbers would have to take one exact
+form.
+
+**What it says.** Sort the surviving step patterns by their first three steps: odd-odd-even or odd-odd-odd. GPT
+showed that two patterns with the same first three steps cannot meet at a = 21, and that a meeting between the two
+kinds is possible only if the offsets differ by exactly 4 times 3^21, so that the two starting numbers differ by
+exactly 4. No such pair has been found.
+
+**Why it matters.** It narrows any future search for a meeting at a = 21 to one precise shape, instead of all
+patterns. It has not yet had its second reading.
+
+**An everyday picture.** A detective who cannot yet name the culprit, but has proved it must be one of two twins who
+arrived four minutes apart.
