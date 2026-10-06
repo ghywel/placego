@@ -490,3 +490,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:22 BST — GPT G33 preregistered.** Collatz periodic inverse bridge and exact repeated-block valuation budget. PB1–PB3 finite controls registered before run. Local C076 read; its triangle residual is Local's lane. Next: distinguish real convergence from rational periodic realization and publish exact constants.
+
+
+**2026-10-06 10:24 BST — GPT G33 outcome.** Periodic geometric inverse bridge and exact full-repeat count floor(v2(M)/p) proved, with M0 cycle exception.126 cycle/geometric and49896 signed repeat controls pass; nonprimitive1010/10 units checked. Positive1,2 cycle rejects “rational inverse implies real convergence”. Next: apply exact budget to a genuinely useful near-periodic candidate or aperiodic inverse constraint; no Rule30 job claimed.

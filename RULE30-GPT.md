@@ -2908,3 +2908,32 @@ If lambda_R is nonzero, N_m eventually has its sign and N_m is asymptotic to lam
 **Preregistration.** For a length-p parity word w with s ones and affine intercept B, predict its rational cycle point c=B/(2^p-3^s). Real and 2-adic inverse limits agree when3^s>2^p; for a nonzero word with3^s<2^p, the real inverse series diverges although the 2-adic inverse is rational. Also audit a precise finite repetition ceiling: for x=N/D and M=N*(2^p-3^s)-D*B, the next k full copies of w occur iff2^(kp) divides M. Noncycle maximum is floor(v2(M)/p); M=0 is the actual cycle case. This is an exact-constant version of the existing periodic-window principle, not a new mechanism.
 
 PB1: all words of lengths1..6, their fixed-odd-denominator cycles and real/2-adic geometric formulas. PB2: starts -16..16, D1,3,5 and k1..4 for those words, comparing divisibility with direct iteration. Counterfactual: a rational periodic inverse must have a convergent real inverse series. Unexpected PB3: nonprimitive word1010 has the same cycle point as10, but counts full repeats in four-step units, not two-step units. Retain the all-zero exception. Reuse the passed startup checks; no long job.
+
+
+### G33 theorem: the periodic bridge and the exact number of full repeats
+
+Let w=(e_0,...,e_(p-1)) be a nonempty finite binary word, s its number of ones, and B the integer affine intercept, so its composed branches act as (3^s*x+B)/2^p. Set
+
+    c = B/(2^p-3^s),
+    r = 2^p/3^s,
+    F_p = B/3^s.
+
+The denominator2^p-3^s is odd and nonzero (powers of2 and3 cannot coincide for p>=1). The inverse series for the infinite repetition w has block sums F_p*r^q. Since the 2-adic absolute value of r is2^(-p)<1, its 2-adic sum is F_p/(1-r), and its inverse point is c=-F_p/(1-r). By the parity/residue correspondence this odd-denominator rational has precisely the prescribed repeated parity word; its p-step branch composition fixes it. Its least orbit period may divide p. This is the known rational cycle formula, not a new family of cycles.
+
+For nonzero w, B>0. When3^s>2^p, r<1 over the reals as well, so the real and 2-adic geometric sums both equal the same rational F_p/(1-r), and c<0. When3^s<2^p, the positive real block sums grow and the real series diverges, while c>0 remains a rational 2-adic inverse. The all-zero word has B=0 and both inverse sums0, irrespective of r. Thus rational periodic realization does not imply real convergence; nor does agreement in this periodic case justify agreement for aperiodic words.
+
+**Exact finite repeat budget.** For any start x=N/D with integer N and positive odd D, write
+
+    M = N*(2^p-3^s)-D*B.
+
+The difference x-c has denominator D*(2^p-3^s), which is odd, and numerator M. By W1, the first kp parities equal k full copies of w exactly when2^(kp) divides M. If M!=0, the exact maximum number of full copies is floor(v2(M)/p), and the entire common binary prefix has length v2(M). In particular kp<=log2(abs(M)). If M=0, x=c and the word repeats forever. This includes signed numerators and unreduced representations; multiplying numerator and denominator by an odd factor does not change v2(M).
+
+This is an exact arithmetic version of the existing periodic-window principle, with the cycle exception explicit. It proves again that an eventually periodic parity sequence of an ordinary odd-denominator rational is eventually cyclic: at the beginning of its periodic tail every k is allowed, forcing M=0. No divergent orbit is produced or excluded beyond this known periodic case.
+
+**Unexpected unit-of-count control.** Words10 and1010 have the same cycle point1. Start17 differs from it by16, so its common prefix has length4: two full10 blocks, one full1010 block, then a mismatch. Treating an arbitrary supplied block as a primitive period would miscount.
+
+**Retained counterfactual.** The positive cycle1,2 has parity word10, c=1 and real inverse block ratio4/3. Its positive real terms do not tend to0, so the real series diverges although its 2-adic inverse equals the rational1. The negative cycle -5,-7,-10 has word110, ratio8/9 and convergent inverse in both metrics. Neither cycle satisfies G29/G30's infinite-distinct hypothesis.
+
+**Controls and prior art.** collatz_gpt_periodic.py passed126 cycle/geometric controls (39 nonzero words with real convergence,81 with real divergence,6 all-zero words),49896 signed repetition/divisibility comparisons, and the nonprimitive-block control. Classification of infinite convergence is proved above, not inferred from truncation. The established Terras/Bernstein correspondence, rational cycle formula and W1/periodic-window discussion are already recorded in COLLATZ-PRIZE.md4–5; the tested denominator example there agrees with this formula. No novelty claim. Document validation is required before publication.
+
+**Next boundary.** Periodicity supplies an algebraic bridge. A proposed bridge for aperiodic words needs a separate argument; this known-case audit supplies controls for it, not that argument. The exact repeat budget can test future near-periodic candidate prefixes without interpreting finite repetition as an infinite cycle.
