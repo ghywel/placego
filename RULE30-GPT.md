@@ -6595,7 +6595,7 @@ The conjugacy gives F(Phi(c^(rho)))=Phi(c^(rho+beta modulo2)). Forward evolution
 
 ### G148. Fixed-order temporal differences preserve entropy but not the repeat sign (2026-10-07)
 
-**Status and target.** Symbolic diagnostic audit, independent review pending. No experiment, shader change or new general finite-difference novelty claim. The owner linked the project to temporal motion fields; WHAT-WE-BUILT.md's overview and motion-field description were read, alongside the existing G96 transport guard, G138/G139 stationary-tail controls and G143's Sturmian derivative. Prediction: every fixed-order XOR temporal difference has the same word-count entropy as the original binary trace. Counterfactual: going to acceleration, jerk or another fixed order automatically reveals positive entropy missed by the visible trace. The elementary block argument refutes that implication, without refuting uses of these fields for specific structural diagnostics.
+**Status and target.** Symbolic diagnostic audit, independently verified by Local L104. No experiment, shader change or new general finite-difference novelty claim. The owner linked the project to temporal motion fields; WHAT-WE-BUILT.md's overview and motion-field description were read, alongside the existing G96 transport guard, G138/G139 stationary-tail controls and G143's Sturmian derivative. Prediction: every fixed-order XOR temporal difference has the same word-count entropy as the original binary trace. Counterfactual: going to acceleration, jerk or another fixed order automatically reveals positive entropy missed by the visible trace. The elementary block argument refutes that implication, without refuting uses of these fields for specific structural diagnostics.
 
 Let S shift a one-sided binary word forward, and let D=1+S over GF(2). For any fixed k>=1, D^k is the order-k XOR temporal difference. If P_x(n) counts the distinct length-n factors of x, then
 
@@ -6610,3 +6610,35 @@ In particular every fixed-order difference of G143's silver code still has zero 
 These XOR observables are different from ordinary signed finite differences on integer-valued samples. If an ordinary order-k difference of a bounded integer sequence is eventually zero, successive summation makes its tail a polynomial of degree at most k-1; boundedness forces that polynomial to be constant. For the alternating binary trace 0101..., D^2 x is zero, but its ordinary second difference is the alternating sequence -2,2,-2,2,... . XOR acceleration zero therefore does not mean a constant binary state, or zero ordinary acceleration.
 
 **Unexpected support guard and next obligation.** G138's constant-zero visible code has the stationary checkerboard forced left row, with infinitely many ones. Every fixed-depth temporal column is constant, so all positive-order temporal differences vanish there, under either arithmetic. The derivatives discard the stationary spatial background. This directly refutes inferring finite spatial support from quiet temporal jets, even when every fixed order at every fixed depth is checked. G96 separately explains why fixed-cell differences are not physical acceleration of tracked structures. A productive next use must name a coupled spatial constraint or a specific phase/sign relation; it cannot rely on a generic entropy increase, derivative quietness or the mere word 'acceleration'. No finite initial-tail exclusion or prize claim follows.
+
+### G149. Eventually finite compatible rows have exactly zero-reaching periodic tails (2026-10-07)
+
+**Status and target.** Symbolic Q7 tail reduction, independent review pending. No experiment. Uses the reviewed inverse-pair maps and periodic-tail classification G124, the wall coding G140 and predecessor/radius facts G141/G142. Existing-record search found these ingredients but not the all-depth equivalence below. No novelty claim for finite-state inversion or backward shift density. Prediction: finite future support is a stricter spatial-tail property than mere eventual periodicity, but is invariant under finite visible-prefix changes. Counterfactual: a periodic initial tail or a quiet temporal field automatically supplies a finite future row. The stationary checkerboard refutes that shortcut.
+
+Write S for the compatible initial left rows with imposed wall 0101..., F for two physical steps, and S_fin for its finite-support rows. Define
+
+    S_event = union_(k>=0) F^(-k)(S_fin), inside S.
+
+Then u belongs to S_event if and only if its initial far-left tail is eventually spatially periodic, with that periodic pattern reaching the all-zero pattern after a finite number of ordinary Rule30 steps. This is an exact characterization of becoming finite later, not of being finite at time zero.
+
+**Necessity, using both neighboring cells.** Suppose F^k(u) is finite, so the row at physical time 2k is eventually zero. A single backward step solves the known inverse recurrence
+
+    q_(j+1)=y_j XOR (q_j OR q_(j-1)).
+
+If the output y has an eventually periodic tail of period p, the outward recursion is a deterministic finite-state system: its state is the adjacent input pair together with position modulo p. There are 4p states. Along the actual predecessor row the state eventually repeats, so the predecessor also has an eventually periodic spatial tail. No injectivity, finite predecessor or particular choice of near-wall bits is assumed. Repeating this argument for all 2k backward steps proves that u has an eventually periodic tail.
+
+For any fixed number of forward steps, sufficiently far-left cells have cones disjoint from the finite head and the wall. Their evolution is therefore exactly the ordinary Rule30 evolution of this periodic tail pattern. Since the output after 2k steps is eventually zero, the whole periodic pattern reaches zero by then. G124 now restricts its least spatial period to 1 or 3*2^a, a>=0. For k>=1 a nonconstant such pattern has a<=2k-2, since the two final steps are period3 -> all ones -> all zeros, and each earlier backward period can at most double. Thus its least period is at most 3*4^(k-1). These bounds describe tails only; they do not decide the wall compatibility of a finite head.
+
+**Sufficiency.** Conversely, suppose u is in S and its eventual periodic tail pattern reaches zero after T steps. Beyond the finite head enlarged by the T-step light cone, the evolved row is zero. It has finite support. Advance to the next even physical time if T is odd; finite support is preserved. Thus F^ceil(T/2)(u) is finite and u belongs to S_event. The imposed wall and its compatibility must be retained; a tail pattern alone is not a construction of such a u.
+
+**Visible-prefix interpretation and density qualification.** Let C_fin=Phi^(-1)(S_fin). G140's conjugacy gives
+
+    Phi^(-1)(S_event)=union_(k>=0) sigma^(-k)(C_fin).
+
+Each length-k binary prefix can be prepended freely to any c in C_fin, producing a compatible row that becomes Phi(c) after k two-step iterates. All these ancestors have zero-reaching periodic spatial tails by the equivalence just proved. Initial finiteness itself is not asserted for them; G141 explains that ancestors may instead have black or period-three tails.
+
+S_event is countable: S_fin is countable, and each finite row has exactly 2^k compatible preimages under F^k by the full one-sided shift coding. It is empty exactly when S_fin is empty. If nonempty, it is dense in S: to match any finite visible prefix w, prepend w to one chosen c in C_fin. Continuity of Phi transfers this cylinder density. This countable dense conditional family is not a finite-support compact family or an existence proof.
+
+**Unexpected periodic-tail control and consequence.** A spatial 001 tail evolves to all ones and then zero. A spatial 01 checkerboard is stationary, so periodicity alone does not suffice. G138/G140's compatible checkerboard example has quiet temporal columns and lies outside S_event. Conversely a zero-reaching tail class, if wall-compatible, gives a finite future row even though its initial support can be infinite. These are far-tail identities, not new experiments or candidate constructions.
+
+An unbounded-debt visible word cannot lie in S_event: if any shift had a finite compatible row, its repeat allowance would be finite; G146's reverse-shift control would give one for the original word. Hence G145's half-phase code has neither a finite initial tail nor any zero-reaching eventual periodic tail. The phase-zero silver code remains unresolved. For it, proving an aperiodic tail or a periodic tail outside the zero basin would exclude even future finiteness; proving membership in the zero-reaching tail class would instead supply a finite compatible future row. Full right extension and a finite global seed remain separate obligations. No prize conclusion follows.

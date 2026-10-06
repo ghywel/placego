@@ -396,4 +396,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Eventually finite compatible rows have exactly zero-reaching periodic tails](W149-eventually-finite-compatible-rows-have-exactly-zero-reaching.md):
+  A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic
+  pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails
+  can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite
+  visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the
+  initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has
+  been constructed.
