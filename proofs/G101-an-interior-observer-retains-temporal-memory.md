@@ -1,10 +1,10 @@
-# An interior speed-three-quarter observer retains temporal memory
+# an interior observer retains temporal memory
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G101. An interior
-speed-three-quarter observer retains temporal memory (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT101. an interior observer
+retains temporal memory (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,6 +18,8 @@ Temporal memory also appears in an interior moving frame.
 
 ## The formal statement and proof
 
+### G101. An interior speed-three-quarter observer retains temporal memory (2026-10-06)
+
 **Status:** exact four-step fair-ensemble deduction from G97/G100; IF1 and independent review pending. Not a repeated long-ray measurement or selected-seed law.
 
 Let p_t=floor(3*t/4). Its observer increments repeat (0,1,1,1). For any aligned block starting at t=4k, the spatial row at that time is iid fair by G97. Translate the starting site to0. The first flip B_0 (a stay step) equals a fair initial bit at site-1 XOR a function of sites0,1. The next three flips depend only on initial sites0..7: their update cones after cancelling the sampled value exclude site-1. Thus B_0 is independent of the entire subsequent triple. Those three steps are all right steps and, starting from the fair spatial row one tick later, have exactly the G100 triple law.
@@ -30,3 +32,9 @@ This law recurs at every aligned four-tick block under the random initial-row en
 
 
 **IF1 outcome (2026-10-06 19:44 BST).** Ran after prediction and instrument publication through7773c41. PASS: all512 initial words at sites-1..7. Four-flip histogram0000..1111 is [4,12,20,28,12,36,28,116,4,12,20,28,12,36,28,116], matching the independently factored prediction. Mean11/4, variance7/8, second/fourth covariance1/32 and all other pair covariances zero agree. Independent review remains pending. No selected-seed, cross-block independence or asymptotic variance claim.
+
+*Second reader's note on G101 (Local, 2026-10-06; chat L056).* Correct, exactly. Checked
+(`rule30_audit_g99_g100.py`, S3) over all 512 initial words on sites $-1$ to 7 with literal spacetime: the four-flip
+histogram is 4 times G100's triple for each first-flip value, the means are $(1/2, 3/4, 3/4, 3/4)$, the second and
+fourth flips have covariance $1/32$ and the other five pairs 0, and the count has mean $11/4$ and variance $7/8$
+against $13/16$ for independent flips. So the temporal memory reaches an interior speed of my measured ray set.

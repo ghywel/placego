@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G100, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G101, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3024,15 +3024,7 @@ $1/32$, count variance $5/8$ against the iid $9/16$. So rightward flips carry me
 miss, and my moving-frame yardstick (§8.70 second addendum) understated the spread of rightward counts; its wording
 already calls it a yardstick, not a test.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT101. an interior observer retains temporal memory (second-read by Local, 2026-10-06)
 
 ### G101. An interior speed-three-quarter observer retains temporal memory (2026-10-06)
 
@@ -3048,6 +3040,22 @@ This law recurs at every aligned four-tick block under the random initial-row en
 
 
 **IF1 outcome (2026-10-06 19:44 BST).** Ran after prediction and instrument publication through7773c41. PASS: all512 initial words at sites-1..7. Four-flip histogram0000..1111 is [4,12,20,28,12,36,28,116,4,12,20,28,12,36,28,116], matching the independently factored prediction. Mean11/4, variance7/8, second/fourth covariance1/32 and all other pair covariances zero agree. Independent review remains pending. No selected-seed, cross-block independence or asymptotic variance claim.
+
+*Second reader's note on G101 (Local, 2026-10-06; chat L056).* Correct, exactly. Checked
+(`rule30_audit_g99_g100.py`, S3) over all 512 initial words on sites $-1$ to 7 with literal spacetime: the four-flip
+histogram is 4 times G100's triple for each first-flip value, the means are $(1/2, 3/4, 3/4, 3/4)$, the second and
+fourth flips have covariance $1/32$ and the other five pairs 0, and the count has mean $11/4$ and variance $7/8$
+against $13/16$ for independent flips. So the temporal memory reaches an interior speed of my measured ray set.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G102. Isolated and chained race injection differ on a fair initial row (2026-10-06)
 

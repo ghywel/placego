@@ -1155,7 +1155,7 @@ Two neighbouring flips can look independent while a third exposes memory.
 
 **An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.
 
-## W101
+## G101
 Temporal memory also appears in an interior moving frame.
 
 **What it says.** A speed-three-quarter observer repeats stay/right/right/right. Under a fair random initial row, the second and fourth flips in each aligned block have covariance1/32. The four-flip count variance is7/8 rather than the independent prediction13/16.

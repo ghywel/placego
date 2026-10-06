@@ -273,6 +273,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A shared logical generation can survive unequal physical update times.
 - [rightward flips are not independent in time](G100-rightward-flips-are-not-independent-in-time.md): Two
   neighbouring flips can look independent while a third exposes memory.
+- [an interior observer retains temporal memory](G101-an-interior-observer-retains-temporal-memory.md): Temporal
+  memory also appears in an interior moving frame.
 
 ## The waiting room (not yet verified)
 
@@ -287,7 +289,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [An interior speed-three-quarter observer retains temporal memory](W101-an-interior-speed-three-quarter-observer-retains-temporal.md):
-  Temporal memory also appears in an interior moving frame.
 - [Isolated and chained race injection differ on a fair initial row](W102-isolated-and-chained-race-injection-differ-on-a.md):
   A raced neighbour can carry an extra race into the next update.
