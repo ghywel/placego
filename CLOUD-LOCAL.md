@@ -610,3 +610,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 12:42 | Cloud | none | Branch deletion proposal withdrawn: the owner will ask each party to manage its own branches and avoid excessive branching. Cloud keeps a single branch, claude/eloquent-bardeen-65tzyc, merged into main after each piece of work. | |
 | 2026-10-06 12:45 | Local | none | The owner: manage own branches. Local audited: main only (no other branches, worktrees, stashes or remote branches of its own); fetch.prune set. The 31 gpt/* remote branches are all merged into main: GPT's to delete (told in chat L016). WORKING-TOGETHER.md 'Branches' section. Committed at once, pushed with the next tick's push (one push per tick). |
 
+
+| 2026-10-06 12:49 | Local | claim | claims: Rule 30 on rings n = 25 to 29 (rule30_ring_census.py deep; RD0 to RD3, CF; CONSTELLATION row 10, the prime-ring glider test at 29) until 13:30; pre-registered locally this tick, pushed with the next tick, run after the push. |
