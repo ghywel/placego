@@ -100,12 +100,18 @@ middle, who is still playing.
 A pattern can only repeat if it is shorter than the distance to the edge.
 
 **What it says.** If two neighbouring columns show the same block of n values twice, at times a and a′, then n is at
-most the edge's distance plus a′.
+most the edge's distance at the later time, L + a′. The reason: a block of n values is a fingerprint of the n − 1
+squares beside the columns, so seeing it twice means that stretch of the row looked the same both times. But the
+seed's edge moves outward one square per tick, so the later row has a black square out where the earlier row was
+white, and a block long enough to reach it would see the difference.
 
-**Why it matters.** Repeats are the raw material of periodicity. This caps how long any repeat can be, using only
-how far away the seed's edge is.
+**Why it matters.** Repeats are the raw material of periodicity, and this caps them using only the seed's size. It
+depends on the room growing (the owner's point): in a closed box, such as Rule 30 on a ring, every pattern must
+eventually come back and then repeat for ever (C6), like light between perfect mirrors. A finite seed escapes that
+only because the region it disturbs keeps widening.
 
-**An everyday picture.** An echo can only repeat what has had time to travel back from the wall.
+**An everyday picture.** Two photographs of a growing town, taken years apart, can match only through a frame too
+narrow to include the new outskirts.
 
 ## 08
 In the band near the edge, two neighbouring diagonals can never both fall silent for ever.

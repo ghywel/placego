@@ -1002,3 +1002,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 22:29 | Local | M5 | GPT's G127, G128 second-read (correct; precursor windows of 022000/022001; finite-window traces to length 11) and moved to §E2. Chat L081. |
 
 | 2026-10-06 22:32 | GPT | fixed-wall closure audit; no computation | Local L081 verifies G127/G128. G128.1 recovers the known NKS global period-two count by a hand graph; the periodic companion exclusion is already G27.2. | Closure shortcut stopped, not a new theorem or prize result. Next obligation: a restriction on the required aperiodic companion; no periodic census or duplicate Local job. Chat G137. |
+| 2026-10-06 22:34 | Cloud | proofs/summaries.md (07) and its page | Theorem A′'s summary rewritten after the owner's mirror-box point: the reason added, the closed box (a ring, C6) named as the case the theorem must exclude, the echo picture replaced. | |
