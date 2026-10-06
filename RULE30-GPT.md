@@ -3005,3 +3005,29 @@ At these indices K_i=k+1 tends to infinity, a contradiction. Hence this word's u
 **Finite form.** A start matching the ladder through the next zero must satisfy H_0+D*E_i>=3^(K_i-1), since2^z_next>=3^z_k and the envelope bounds the intervening run. No fixed numerator/denominator survives arbitrarily many such prefixes. This does not deny finite residue witnesses.
 
 **Controls and failure retained.** EC1 passed8320 exact signed envelope checks. EC2 certified16 ladder gaps with integer powers, avoiding floating-point ceil; first positions1,2,4,7,12,20,32,51,81,129,205,325,516,818,1297,2056. Unexpected EC3: fixed0 saturates the envelope with E_i=2^i-1, which diverges. Thus real convergence of the correction requires a density hypothesis and cannot be inferred for all rational orbits. Infinite exclusion follows analytically;16 checked gaps do not establish it. Prior-art scope is G34's established mechanism/search boundary; priority remains unclaimed.
+
+
+## G36. Complement route audit and the lower-density qualification (2026-10-06)
+
+**Source audit before controls.** Found the author-hosted Monks–Yazinski autoconjugacy paper after the publisher403. Read the definition, Theorems2.1/2.7(b), and their relevant proofs (not the whole paper). The proposed shortcut “complementation preserves rational inverse points” is an unproved conjecture equivalent to rational-orbit periodicity, not an available lemma.
+
+**Preregister CM1:** invert the square-zero and power-zero words and their complements modulo2^n for n1..64; verify all prefixes. CM2: exact examples3 and-4/9, -11/3 and8/5 have complementary128-bit parity words. Unexpected CM3:0 and-1 are complementary rational fixed points, so a conclusion that no complementary pair can both be rational must explicitly exclude eventual periodicity. Counterfactual: the divergent-orbit lower-density bound also holds for cycles. The0 fixed point and1,2 cycle reject it. Reuse startup checks already passed.
+
+
+### G36 outcome: the lower-density bound is available; complement rationality is not
+
+For an infinite distinct ordinary rational orbit, G30 proves
+
+    log2(H_m)/m = (S_m/m)*log2(3)-1+o(1).
+
+Because H_m>=1, taking liminf gives liminf S_m/m>=log(2)/log(3). This is stronger than the upper-density necessary bound explicitly noted in G30, and is already known. G30's growth-exponent formula still uses the upper density; the two roles must not be conflated. Cycles0 and1,2 have limiting odd densities0 and1/2, so the infinite-distinct hypothesis remains essential.
+
+**Valid complementary exclusion (self-contained argument).** Let a binary word be not eventually periodic, and let x,y be the 2-adic inverse points of it and its bitwise complement. They cannot both be ordinary rationals. If they were, both orbits would be infinite distinct, since a finite orbit produces an eventually periodic parity word. Both lower odd densities would be at least beta=log(2)/log(3)>1/2. Choose epsilon<beta-1/2; eventually both prefix densities would exceed1/2, although their pointwise sum is exactly1. Contradiction. This does not decide which inverse is irrational.
+
+**Application and retained failed route.** The square-zero word's complement has ones only at squares, hence density0 and no eventual period. Its inverse is irrational by the lower-density bound. The original square-zero word has density1 and remains unresolved. Inferring its irrationality by applying rationality preservation under complementation is not licensed. No example of a rational divergent point is claimed; lack of a proven preservation theorem is a limitation, not a demonstrated counterexample to preservation.
+
+**Primary-source audit.** [Monks and Yazinski, author version of The Autoconjugacy of the 3x+1 Function](https://monks.scranton.edu/files/pubs/AutoConjV13.pdf), published2004: definition of Omega and Theorem2.1, pages2–3; Theorem2.7(b), page6; relevant proofs pages8–12. The lower-density theorem applies to divergent odd-denominator rational orbits. Their Theorem2.1 equates rationality preservation by Omega with rational-orbit periodicity. These statements/proof portions were read; other results and the entire paper were not independently audited. This resolves the previous publisher-access limitation and replaces the secondary-only attribution for this density bound.
+
+**Controls/ unexpected check.** CM1 passed256 finite residues/8320 bits; CM2 passed two complementary rational examples through128 bits. Unexpected CM3 confirms0 and-1 are complementary rational fixed points, refuting the overbroad statement without “not eventually periodic”. Finite residue and example checks do not establish global rationality preservation. The proof above supplies the infinite conclusion.
+
+**Next boundary.** Square-zero irrationality needs a point-specific argument or another known criterion; assuming global complement preservation would assume a central open conjecture. Do not queue that assumption as a lemma.

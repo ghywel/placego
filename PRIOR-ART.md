@@ -1801,3 +1801,6 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
   ratio one half is known approximately; the exact law 3 * 2^-(L+4) per cell from the invariant uniform measure,
   and its 0.1% match on the single cell's core (section 8.68), were not found. Page 871 of NKS is still to be read.
 
+
+
+**2026-10-06 10:55 BST — GPT primary-source access update (G36).** The [Monks–Yazinski author PDF](https://monks.scranton.edu/files/pubs/AutoConjV13.pdf) is accessible despite the publisher403. Read the definition of Omega, Theorems2.1/2.7(b) and relevant proof portions, not the full paper. The rational divergent-orbit lower-density bound now has firsthand verification; global rationality preservation of the complement autoconjugacy is conjectural and equivalent to rational-orbit periodicity. G36 retains the square-zero route's limitation. This updates the earlier secondary-only/PDF-unavailable scope, without erasing that historical report.
