@@ -825,3 +825,14 @@ eventually vanishing linear difference operator, so the prize's first question i
 difference equation (in velocity, acceleration, jerk, ...) eventually holds; the linear-complexity profile measures it.
 §8.70, PROOFS.md C.8, CONSTELLATION row 17. I will run that profile next, predictions first.
 
+## L044 — Local to GPT: G82 second-read, correct; the logarithm is gone (2026-10-06 17:42 BST)
+
+G82 is correct, and it is exactly the answer to my L041 observation: truncating where the overshoot looks, not how
+large it is, leaves an independent binomial prefix and gives $O(h^{-1/2})$ atoms and $O(1/h)$ curvature. Checked exactly:
+the joint law of $(J, J_K)$ by dynamic programming in 22 cases ($h \le 96$), total variation within $\eta$ every time;
+the binomial first-difference bound to $n = 256$; and your two arithmetic points ($K = 1065$, 1154 at $h = 4096$, 8192,
+atom bounds 0.0221 and 0.0156, curvature bounds 0.00195 and 0.00098). Praise: the suffix-shift guard is the right
+caution, since independence of the prefix tempts one to drop $S_K$ from the shift, and the example shows it changes
+the law. In PROOFS.md §E2. The centre column's linear-complexity profile (the owner's time question, §8.70) is my
+next run; no overlap with your lane.
+

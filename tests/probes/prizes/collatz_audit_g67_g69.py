@@ -294,4 +294,48 @@ fails += counts81[:12] != [1, 1, 2, 3, 7, 12, 30, 85, 173, 476, 961, 2652]
 fails += any(coll81[a] for a in range(1, 7))
 fails += (7 - 259) % 9 != 0 or (7 - 259) // 9 != -28
 print("G81: |W_a| for a = 1..17:", counts81, "; residue collisions:", [a for a in coll81 if coll81[a]] or "none")
+# G82 (added 2026-10-06): exact joint law of (J, J_K) by dynamic programming over the h future bits read in reverse
+# (suffix sums S_k), for h up to 96 and K = 8 .. h; total variation(J, J_K) <= Pr(J != J_K) <= eta = min(1, 64 exp(-K/32));
+# the atom and adjacent-difference bounds; the binomial first-difference bound for n <= 256; the arithmetic at 4096, 8192.
+def g82_joint(T, h, K):
+    # reverse bits: k = 1..h, S_k = sum of the last k bits; R_h = max_{0<=k<=h}(S_k - (ell_T - ell_(T-k))), R_K = same over k<=K
+    st = {(0, 0, 0): Fr(1)}                     # (S, R_full, R_K)
+    for k in range(1, h + 1):
+        nd = {}
+        for (sv, rf, rk), pr in st.items():
+            for b in (0, 1):
+                s2 = sv + b; v = s2 - (ellf(T) - ellf(T - k))
+                rf2 = max(rf, v); rk2 = max(rk, v) if k <= K else rk
+                key = (s2, rf2, rk2); nd[key] = nd.get(key, Fr(0)) + pr / 2
+        st = nd
+    J = {}; JK = {}; dis = Fr(0)
+    for (sv, rf, rk), pr in st.items():
+        j = ellf(T) - sv + rf; jk = ellf(T) - sv + rk
+        J[j] = J.get(j, Fr(0)) + pr; JK[jk] = JK.get(jk, Fr(0)) + pr
+        if rf != rk: dis += pr
+    return J, JK, dis
+n82 = 0
+for h in (16, 32, 64, 96):
+    T = h + 40
+    for K in sorted({8, 12, 16, 24, 32, 48, h // 2, h}):
+        if K < 8 or K > h: continue
+        J, JK, dis = g82_joint(T, h, K)
+        tv = sum(abs(J.get(v, 0) - JK.get(v, 0)) for v in set(J) | set(JK)) / 2
+        eta = min(1.0, 64 * math.exp(-K / 32)); nn = h - K
+        fails += float(tv) > float(dis) + 1e-15 or float(dis) > eta + 1e-12
+        atom = max(J.values()); adj = max(abs(J.get(v + 1, 0) - J.get(v, 0)) for v in range(min(J) - 1, max(J) + 1))
+        fails += float(atom) > min(1, 1 / math.sqrt(nn + 1) + eta) + 1e-12
+        fails += float(adj) > 4 / (nn + 1) + 2 * eta + 1e-12
+        n82 += 1
+from math import comb
+for nb in range(0, 257):
+    pm = [Fr(comb(nb, i), 2 ** nb) for i in range(nb + 1)]
+    md = max(abs((pm[i + 1] if i + 1 <= nb else 0) - (pm[i] if i >= 0 else 0)) for i in range(-1, nb + 1))
+    fails += md * (nb + 1) > 4
+ar = {}
+for h in (4096, 8192):
+    K = math.ceil(128 * math.log(h + 1)); eta = 64 * math.exp(-K / 32)
+    ar[h] = (K, K <= h // 2, round(math.sqrt(2 / (h + 1)) + 64 / (h + 1) ** 4, 4), round(8 / (h + 1) + 128 / (h + 1) ** 4, 5))
+    fails += not ar[h][1]
+print("G82: exact (J, J_K) laws for", n82, "(h, K) cases: TV <= Pr(J != J_K) <= eta, atom and adjacent bounds hold; binomial difference bound n <= 256; (K, K<=h/2, atom bound, curvature bound) at 4096, 8192:", ar)
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
