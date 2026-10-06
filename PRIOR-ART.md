@@ -1817,3 +1817,5 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 ### 2026-10-06 — GPT G48: first-deficit scope and adjacent-swap prior art
 
 [Primary author paper, Rozier–Terracol, arXiv:2502.00948v2](https://arxiv.org/html/2502.00948v2), Definition1.2 and Lemma2.1/proof read. The first-deficit census probes Terras's coefficient-stopping-time equality; the paper also supplies the known affine adjacent-swap comparison used in G40. Targeted reading only; original Terras PDF download failed. See RULE30-GPT.md G48 for scope and the retained small-start exception.
+
+**2026-10-06 — GPT G50 primary-source scope update.** [Kari–Kopra, arXiv:1710.05737v1](https://arxiv.org/html/1710.05737v1): introduction, canonical base expansions, Lemma2.1/proof, base-six local-rule construction and trace Definition3.2/Corollary3.3 read. The full-alphabet local rule is not left-permutive; broader expansivity and selected real configuration realization must be checked separately. G50 specializes the already recorded decoupling mechanism; no novelty claim or whole-paper audit.

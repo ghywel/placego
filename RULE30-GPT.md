@@ -3448,3 +3448,30 @@ The word is realized by exactly one residue r modulo2^t, namely r=C_t*(3^t)^(-1)
 ### G49 outcome (2026-10-06)
 
 Published AH1-AH4 ran unchanged:2047 exact word/lift cases,33 shifted-map/counter checkpoints and129 rational fair-counter survival bounds pass. Brute words through10 agree with the DP. Unexpected AH4 gives seed3 to4 while the counter reaches-1, as predicted. These are bounded single-party controls, not machine-equivalence validation or a proof about start8. Next: inspect Mahler trace hypotheses; retain the test-bed lane. Local L018 independently replicated G48 by a fresh word census and brute starts below2^22.
+
+## G50. Mahler scope: a valid fractional itinerary can miss every integer start (2026-10-06)
+
+**Preregistration / analytic block.** MA1 will check all216 local triples and the two-output left-digit fibers. MA2 will compare exact rational multiplication against integer/fraction recurrences for starts n0..31 and u in{0,1/6,1/3,1/2}; keep only the claimed recurrence when both consecutive fractions lie in[0,1/2), and retain the excluded boundary1/2. Unexpected MA3 checks the three formal(100) tails and integer congruences through12 periods; predict fractional admissibility but no nonnegative integer realizing the infinite word. Controls NOT RUN at publication. Counterfactual: every admissible fractional trace supplies a Z-number, or the six-letter rule is left-permutive because it shares an expansive class with Rule30. No machine simulation or Local audit duplicated.
+
+### G50 theorem and proof: Mahler needs both itineraries, and a different alphabet
+
+Write xi*(3/2)^j=n_j+u_j, with integer n_j>=0 and0<=u_j<1/2 at every j. If b_j=n_j modulo2, direct separation of integer and fractional parts gives
+
+    n_(j+1)=(3*n_j+b_j)/2=ceil(3*n_j/2),
+    u_(j+1)=(3*u_j-b_j)/2.
+
+For even n_j, the half-interval condition forces u_j<1/3; for odd n_j it forces u_j>=1/3, wrapping the fractional part once. Iterating the second recurrence backwards and using the bounded tail yields
+
+    u_j=sum_(k>=0) b_(j+k)*2^k/3^(k+1).
+
+Conversely, start from a nonnegative integer n_0 and its ceil-map parity itinerary. Define u_j by this convergent series. If every u_j<1/2, the series gives3*u_j= b_j+2*u_(j+1). Combining this with the integer recurrence shows n_j+u_j=xi*(3/2)^j, xi=n_0+u_0. Provided xi>0, this is a Z-number. Thus the fractional-tail restriction and ordinary-integer itinerary realization are both required. No lower coefficient-deficit ceiling arises, since the integer coefficient is(3/2)^t at every prefix. This is the established decoupling mechanism, specialized here; no novelty claim.
+
+Two consecutive ones are forbidden: their contribution to u_j is at least1/3+2/9=5/9>1/2. This finite forbidden word does not establish emptiness. Unexpected scope control: the purely periodic formal word(100)^infinity has tail values9/19,6/19,4/19, all below1/2, and satisfies the fractional recurrence exactly. It nevertheless cannot be the itinerary of any nonnegative integer start. A period100 has the integer branch map n -> (27*n+9)/8. After k periods integrality implies
+
+    19*n_0+9 = 0 modulo8^k.
+
+Indeed8^k*n_(3k)=27^k*n_0+9*(27^k-8^k)/19, and27 is invertible modulo8^k. Divisibility for every k forces19*n_0+9=0, impossible for a nonnegative integer. The compatible 2-adic value-9/19 is not an ordinary integer start. Formal fractional admissibility alone is therefore insufficient, even when every tail obeys the strict half-interval bound.
+
+For the actual base-six CA, Kari–Kopra define g(x,y)=3*(x modulo2)+floor(y/2) and f(x,y,z)=g(g(x,y),g(y,z)). Fix y,z and vary x in{0,...,5}. The output depends only on x modulo2, so this six-letter local rule is not left-permutive in the usual full-alphabet sense. Both parity choices give distinct outputs: the inner value changes by3, its parity flips, and the outer value changes by3. There are exactly two outputs, not six. Membership in a broader expansive class must not be substituted for the binary left-invertibility used in our wall proofs. Canonical base-six expansions encode the strict fractional half-interval by a first fractional digit in{0,1,2}; the selected real configurations also require an eventually-zero integer-side tail. Arbitrary bi-infinite traces discard that realization requirement.
+
+**Primary-source scope.** [Kari–Kopra, arXiv:1710.05737v1](https://arxiv.org/html/1710.05737v1), introduction, base expansion conventions, Lemma2.1/proof and the construction of F in section2 read; trace Definition3.2/Corollary3.3 read for scope. No whole-paper or Theorem4.9 proof audit. Existing PRIOR-ART already records FLP decoupling and Dubickas's ceil-map complexity results; this block uses elementary specialized identities to test the proposed transfer, not a new Mahler route.

@@ -115,3 +115,5 @@ app is unpublished by design.
 - `prizes/antihydra_gpt_scope.py` (G49): preregistered floor(3n/2) coding/lift and shifted-map controls, exact counter-survival coin comparison, growing-seed halting scope check. AH1-AH4 NOT RUN at publication.
 
 - G49 `prizes/antihydra_gpt_scope.py`: AH1-AH4 pass2047 word/lift cases,33 shift/counter checkpoints and129 rational bounds; growing seed3 halts its counter immediately. Single-party finite controls, actual seed8 unresolved.
+
+- `prizes/mahler_gpt_scope.py` (G50): preregistered216 base-six local triples, exact rational integer/fraction scope and excluded1/2 boundary, formal100 fractional cycle versus integer congruences. MA1-MA3 NOT RUN at publication.
