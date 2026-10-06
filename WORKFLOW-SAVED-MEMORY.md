@@ -562,8 +562,9 @@ relative paths in place of absolute ones.
 
 **Rule.** A proof that would win one of the prizes of PRIZE-PROBLEMS.md §1 goes into a document of its own,
 `PRIZE-WON.md`, made by whichever party reaches it first. Nothing else goes there. A partial result, however strong,
-belongs in PROOFS.md, and a claim still being checked belongs in PROOFS.md's waiting room. The owner decides when
-it is published. The rule binds all three parties: Cloud, Local and GPT.
+belongs in PROOFS.md, and a claim still being checked belongs in PROOFS.md's waiting room. It is published as soon
+as one other party has reviewed and verified it (the owner's addendum below). The rule binds all three parties:
+Cloud, Local and GPT.
 
 **Why.** The owner's instruction, 2026-10-06: "in the unlikely (likely) case that a prize winning proof does shake
 itself out of the tree", it is stored in one place that cannot be confused with the rest of the record. A prize is
@@ -573,21 +574,29 @@ judged by people outside this project, against its own official wording, so the 
 1. **Check the statement first.** Copy the prize's official wording and link (PRIZE-PROBLEMS.md §1 lists them), and
    show that what was proved is that statement, not a near relative. For Rule 30, "from a single black cell"
    against "every finite configuration" matters. For a Clay problem, name which of its official alternatives is met.
-2. **Tell the owner before anything is pushed.** This repository is public, so a push is a publication. Write
-   PRIZE-WON.md in a local commit, report it to the owner in your own session, and push only on the owner's word.
-   The other parties learn of it from the owner, or from CLOUD-LOCAL.md once it is pushed.
+2. **Push the candidate at once; publish on one verification.** The git history is the timestamp, and the
+   timestamp is the proof of discovery, whoever else was watching. So the candidate is pushed as soon as it exists,
+   to PROOFS.md's waiting room, labelled "prize candidate, not yet verified", with a CLOUD-LOCAL.md row asking for
+   review. One other party then reviews and verifies it, preferably of the other make: a GPT proof is read by Claude
+   (Local first), and a Claude proof by GPT. The moment that reading confirms it, the finder or the reader creates
+   PRIZE-WON.md and pushes it immediately, and tells the owner in its session. No further wait.
 3. **What the document holds:**
    - the official statement and its link, and the theorem as proved;
    - the complete proof, readable from the page, with every lemma it uses quoted from PROOFS.md by entry;
    - every certificate and script, with the commit that produced it;
-   - each independent reading: which party, when, and at which commit. At least one other party must read it before
-     the word "proof" is used, and all three before the owner is told it is ready to submit;
+   - each independent reading: which party, when, and at which commit. One verification by another party is the
+     bar for publishing; the third party's reading, when it comes, is added below it;
    - a Lean formalisation if one is feasible, as Condrey did for period 1;
    - known gaps, a list that must be empty;
    - credit to every party and every source;
    - the owner's decision on submission.
 4. **A gap sends it back.** If a reading finds a gap, the claim returns to PROOFS.md's waiting room with the gap
    named, and PRIZE-WON.md keeps a dated line saying so. Nothing in it is quietly deleted.
+
+*Addendum, the owner, 2026-10-06:* "the proof is to be published immediately as soon as it has been reviewed and
+verified by 1 other work[er] (a GPT derived prize proof is peer reviewed by Claude Local) - the git is a timestamped
+versioning history itself - the time stamp is the proof of discovery regardless of whether anybody else was watching
+and stole our work." Step 2 was rewritten to match. Before it, the rule held publication for the owner's word.
 
 ### harness-hygiene
 
