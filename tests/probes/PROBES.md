@@ -58,6 +58,7 @@ sources `tests/mvk-env.sh`.
 | `lexicon/` (GPT cycle obstructions) | rule30_gpt_cycle_obstructions.py | Complete small-period necessary cycle-mean audit for the uniform front potential; exact recurrent witnesses | RULE30-GPT.md G10 | none: constructed afresh |
 | `lexicon/` (GPT Condrey holes) | rule30_gpt_condrey_holes.py | First-hole prefix theorem, constant-wall mechanism audit and finite-row counterexample to unchanged checkerboard | RULE30-GPT.md G11 | none: constructed afresh |
 | `lexicon/` (GPT hole interactions) | rule30_gpt_hole_interactions.py | Exact four-case two-hole interaction and newest-input controls | RULE30-GPT.md G12 | none: constructed afresh |
+| `lexicon/` (GPT inverse reset) | rule30_gpt_inverse_reset.py | Four-state inverse-row reset certificate and one-step-back hole shielding | RULE30-GPT.md G13 | none: constructed afresh |
 | `prizes/` | collatz_count.py, collatz.c, collatz_blocks.py, collatz_blocks.c, collatz_residue.py, collatz_window.py, collatz_threehalves.py | Rule 30's counting form carried to Collatz: every number of 16 to 30 bits, stopping times against Terras's coin (CZ0-CZ4); the state after the free bits, mod 2^j, and its Fourier structure against width (CB0-CB4, CS0-CS2) | COLLATZ-PRIZE.md §1 to §3 | none (exact, recomputed in seconds) |
 
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,
