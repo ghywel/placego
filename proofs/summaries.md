@@ -1089,3 +1089,13 @@ A coarse maximum-curvature bound still cannot close the constant count estimate 
 **Why it matters.** Matching improves the old square-root obstruction but needs actual allocation or signed information to become a global result. An exact pair has zero meeting-step contribution at a slightly longer horizon despite a positive bound, demonstrating the distinction. Independent review remains pending.
 
 **An everyday picture.** Charging every paired traveller the largest possible toll overestimates the total even when some actual tolls are zero. The improved price cap alone does not settle the bill.
+
+
+## W94
+An induction proof for demand log-concavity must control the absorbing edge separately.
+
+**What it says.** Away from the barrier, demand atoms undergo ordinary two-point averaging, which preserves log-concavity. At the edge an extra half of the first atom stays there. One explicit inequality among the first four future atoms is necessary and sufficient to preserve log-concavity when the future law is already log-concave.
+
+**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. It is not an actual Collatz demand counterexample. The small finite evidence remains intact; the new target is the edge inequality for the real barrier schedule. Independent review and boundary controls remain pending.
+
+**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check.

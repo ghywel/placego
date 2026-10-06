@@ -259,3 +259,19 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
 - [the coarse curvature bootstrap grows like log d](G92-the-coarse-curvature-bootstrap-grows-like-log-d.md): A
   coarse maximum-curvature bound still cannot close the constant count estimate by itself.
+
+## The waiting room (not yet verified)
+
+*From the head of this section in PROOFS.md:*
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+*The pages:*
+
+- [Demand log-concavity needs a separate absorbing-edge inequality](W94-demand-log-concavity-needs-a-separate-absorbing-edge.md):
+  An induction proof for demand log-concavity must control the absorbing edge separately.

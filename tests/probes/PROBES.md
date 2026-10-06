@@ -203,3 +203,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_terminal_pooling.py (G90): TC1 passes two admitted trajectories and four enumerated coin continuations; literal and demand-weighted changes agree, pair total 1/2. Equal-terminal cancellation counterfactual refuted. Predictions at 23c22c2; no full-population estimate.
 
 - prizes/collatz_gpt_coalescence_weights.py (G91): CM1 passes 30 horizons/100 increments, retaining 21 empty parents. CM2 passes true pair, synthetic multiplicities and independently enumerated -1/2 lost-child guard; counterfactual refuted. Predictions at 8e6dfee; actual unmatched mass remains open.
+
+- prizes/collatz_gpt_demand_shape.py (G93): DS1 passes 36 independently enumerated profiles; DS2 HELD over 2080 exact profiles through T64, no log-concavity failure or support gap. Independent-shift convolution counterfactual refuted. Predictions at ebc2ee3 via 3add022. Finite coin evidence only, no shape theorem or actual allocation bound.

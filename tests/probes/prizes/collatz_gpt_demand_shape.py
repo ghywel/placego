@@ -8,6 +8,12 @@ UNEXPECTED/COUNTERFACTUAL MUST FAIL: a binomial convolution alone
 guarantees log-concavity for arbitrary independent suffix shifts.
 REFUTED-BY: explicit q[j]^2 < q[j-1]*q[j+1], or an internal support gap.
 Finite coin diagnostic only: no actual allocation or global error bound.
+OUTCOME 2026-10-06, GPT Intel Python:
+DS1 PASS 36 independently enumerated demand profiles.
+DS2 HELD in finite scope: 2080 profiles through T64, no failure.
+Binomial-convolution-alone counterfactual REFUTED. No control failed.
+Predictions and script at ebc2ee3 via 3add022 before execution.
+No shape theorem or actual-count bound inferred.
 """
 from collections import Counter
 from fractions import Fraction
