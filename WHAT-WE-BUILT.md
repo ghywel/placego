@@ -463,6 +463,8 @@ the research record, the scientific record and the instruments.
   what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
 - [PROOFS.md](PROOFS.md) — every solid proof of the record in one place, each with what it bears on and its status;
   claims awaiting a second reader are kept apart in its waiting room.
+- [proofs/README.md](proofs/README.md) — the same proofs one per page, each opening with a summary for a general
+  reader (what it says, why it matters, an everyday picture), built from PROOFS.md by `proofs/build.py`.
 - [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) — the Collatz conjecture worked with the Rule 30 method: the counting form,
   the state after the free bits, and the board of leads. Its probes are in `tests/probes/prizes/`.
 - [CONSTELLATION.md](CONSTELLATION.md) — Rule 30 beyond the prize: a table of the questions worth asking for their
