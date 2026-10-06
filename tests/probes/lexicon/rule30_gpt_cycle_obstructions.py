@@ -20,6 +20,25 @@ PREDICTIONS before first run, 2026-10-06:
  if CC2 fails. Never identify a full-line cycle as a finite-seed side.
  Non-power-of-two obstructions alone cannot refute the power-of-two
  edge-domain candidate. No potential-size bound follows from CC2 holding.
+OUTCOME 2026-10-06 06:32 BST, cycle run: ALL CONTROLS PASS.
+ CC0 maxima P1..10:0,1,7/6,7/3,15/8,5/2,5/2,7/3,1006/493,89/41.
+ CC1 REFUTED at P6/P7; held at the other eight periods.
+ CC2/CC3 HELD at all ten periods. CC4 and CF passed.
+ Wrapper printed the log after Python; its exit0 masks Python's return.
+ The diagnostic's return expression is1 because CC1 failed; actual Python
+ process exit was not captured. Preserve this harness limitation.
+ADDENDUM before run with argument "potential":
+ AP0 controls: construct G9.4's quotient potential at EVERY P1..10;
+     check every quotient edge, independently lift every phase/forward
+     child at P<=8, and match G8's known maxima at P1,2,3,4,8.
+ AP1 blind: max_h/2<=4P at each period, as in the earlier LP1 candidate.
+ AP2 counterfactual: zero potential fails a valid P4 delay4 edge.
+ Unexpected check: AP includes odd periods with tight mean5/2 at P7;
+     positive excess in a zero-total-weight cycle must still propagate
+     to a finite potential. All arrays remain outside git.
+ Cap50million edge-relaxation attempts per P; stopping is PARTIAL,
+ not a certificate. REFUTED-BY: any edge/lift/known-value check fails,
+ cap reached, AP1 too large, or zero counterfactual not rejected.
 """
 from fractions import Fraction
 from rule30_gpt_local_front import pair_cycles, maximum_mean
@@ -93,4 +112,69 @@ def main():
     return not all(controls) or not all(blinds)
 
 
-if __name__=='__main__':raise SystemExit(main())
+
+def aligned_potential_main():
+    """Complete quotient certificate; arrays reconstructed outside git."""
+    from array import array
+    from collections import deque
+    from rule30_gpt_local_front import predecessor
+    controls=[];blinds=[]
+    known={1:0,2:0,3:2,4:6,8:45}
+    for p in range(1,11):
+        count=1<<(2*p);mask=(1<<p)-1
+        head=array('i',[-1])*count;source=array('I');link=array('i');weight=array('h')
+        def rotate(w,d):
+            d%=p
+            return ((w>>d)|(w<<(p-d)))&mask
+        for child in range(count):
+            b,c=child>>p,child&mask
+            parent=predecessor(child,p)
+            d=(b & -b).bit_length() if b else 0
+            target=(rotate(b,d)<<p)|rotate(c,d)
+            source.append(parent);weight.append(2*d-5)
+            link.append(head[target]);head[target]=child
+        values=array('I',[0])*count;queue=deque(range(count));queued=bytearray([1])*count
+        updates=0;attempts=0
+        while queue:
+            target=queue.popleft();queued[target]=0;edge=head[target]
+            while edge!=-1:
+                attempts+=1
+                if attempts>50000000:raise RuntimeError('AP cap: partial certificate, not a pass')
+                parent=source[edge];candidate=values[target]+weight[edge]
+                if candidate>values[parent]:
+                    values[parent]=candidate;updates+=1
+                    if not queued[parent]:queue.append(parent);queued[parent]=1
+                edge=link[edge]
+        valid=True
+        for target in range(count):
+            edge=head[target]
+            while edge!=-1:
+                valid &= values[source[edge]]>=weight[edge]+values[target]
+                edge=link[edge]
+        if p<=8:
+            # Independent forward children and phase lifts audit every original edge.
+            from rule30_gpt_waiting import children
+            for pair in range(count):
+                a,b=pair>>p,pair&mask
+                for c in children(a,b,p):
+                    for r,d in enumerate(waiting(b,p)):
+                        aligned=(rotate(a,r)<<p)|rotate(b,r)
+                        target=(rotate(b,r+d)<<p)|rotate(c,r+d)
+                        valid &= values[aligned]>=2*d-5+values[target]
+        maximum=max(values);where=values.index(maximum)
+        valid &= len(source)==count and (p not in known or maximum==known[p])
+        controls.append(valid);blinds.append(maximum<=8*p)
+        print(('PASS' if valid else 'FAIL')+' AP0 P%d: quotient states/edges%d max_h%d debt%s maximizing(A,B)%r updates%d attempts%d'%
+              (p,count,maximum,Fraction(maximum,2),(where>>p,where&mask),updates,attempts),flush=True)
+        print(('HELD' if blinds[-1] else 'REFUTED')+' AP1 P%d: debt<=4P'%p,flush=True)
+    fixed=[9,8,14,12,4,7,6,2,11,3,1,13]
+    # The zero potential has a valid positive-weight edge of delay4.
+    rejected=compatible(fixed,4) and max(waiting(8,4))==4 and 2*4-5>0
+    controls.append(rejected);print(('PASS' if rejected else 'FAIL')+' AP2 zero-potential counterfactual rejected',flush=True)
+    print('ALL CONTROLS PASS' if all(controls) else 'CONTROL FAILURE',flush=True)
+    return not all(controls) or not all(blinds)
+
+
+if __name__=='__main__':
+    import sys
+    raise SystemExit(aligned_potential_main() if sys.argv[1:]==['potential'] else main())

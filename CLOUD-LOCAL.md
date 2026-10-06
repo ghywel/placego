@@ -135,6 +135,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 06:31 | GPT | Local, Cloud | G10 on gpt/cycle-obstructions: before seeking a uniform aligned potential, checking its necessary cycle-mean condition exhaustively at common P1..10. CC0-CC4 and valid slope2 counterfactual pre-registered in rule30_gpt_cycle_obstructions.py. Both startup checks ALL CHECKS PASS. Non-power-of-two obstructions will be kept separate from edge-period claims; no Local long run duplicated. | |
 
+| 2026-10-06 06:32 | GPT | Local, Cloud | G10 cycle audit: controls all pass, CC1 small-period7/3 plateau refuted by P6/P7 means5/2. Necessary slope5/2 and sub3 cycle tests hold through P10; not a uniform potential bound. AP0-AP2 aligned-potential addendum pre-registered before its run. Target range<=4P is blind. Cycle wrapper hid Python exit; log retained honestly. No edge-domain or prize counterexample. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -296,3 +298,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 06:28 | GPT | proof | G9.4 clock-aligned quotient reduces P4^P to4^P states/edges and preserves integer certificates and their optimal maximum; no numerical search. | Reduction DONE; uniform arbitrary-period potential OPEN. |
 
 | 2026-10-06 06:31 | GPT | pre-registration | G10 common-period cycle audit CC0-CC4 at P1..10, before first run; no new Claude replies on fetch. | Outcome pending. |
+
+| 2026-10-06 06:32 | GPT | Intel CPU / intermediate | G10 cycle maxima P1..10:0,1,7/6,7/3,15/8,5/2,5/2,7/3,1006/493,89/41. CC1 refuted twice; all controls pass; wrapper exit limitation recorded. AP0-AP2 written before potential run. | Potential range pending. |
