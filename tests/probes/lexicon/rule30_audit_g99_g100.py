@@ -193,6 +193,12 @@ CHECKS (GPT's claims at 827e006):
      the shifted prefix) never exceeds t, and the agreement reaches beyond the n = 7 witness. A first draft also asked
      the agreement and the debt to rise monotonically along the records; G146 claims neither, and that draft failed
      (the approach alternates sides of 1/2 and the shrinking prefix truncates the debt); it was narrowed to the above.
+  S43 (G148, added 2026-10-07 at eeb3e01): on GC159's silver prefix and on 20 random words of length 600, for
+     k = 1..5 and n = 1..12, P_(D^k x)(n) <= P_x(n+k) <= 2^k P_(D^k x)(n), and the jet (x, Dx, ..., D^k x) has exactly
+     P_x(n+k) length-n factors; D^(2^m) = 1 + S^(2^m) for m <= 4; a p-periodic Dy forces y to be 2p-periodic (all
+     y up to p = 6); the ordinary second difference of 0101... alternates -2, 2 while its XOR D^2 vanishes; and the
+     left checkerboard is fixed by every single wall step, so every positive-order temporal difference at every
+     depth vanishes on a row of infinite support.
 """
 import random
 from fractions import Fraction as F
@@ -1884,4 +1890,43 @@ for t_ in recs42:
 ok42 &= max(a_ for _, a_, _ in rows42) >= 373 + 239
 check('S42 G146: shifted passing codes approach the half-phase code, carry its witnesses, and obey the shift allowance',
       ok42, '(t, agreement with c^(1/2), max debt): %s' % rows42)
+def xdiff(x, k):
+    for _ in range(k):
+        x = [x[i] ^ x[i + 1] for i in range(len(x) - 1)]
+    return x
+
+
+def nfac(x, n):
+    return len({tuple(x[i:i + n]) for i in range(len(x) - n + 1)})
+
+
+ok43 = True
+words = [c0[:4096]] + [[rng29.randint(0, 1) for _ in range(600)] for _ in range(20)]
+for x in words:
+    for k in range(1, 6):
+        dk = xdiff(x, k)
+        jets = [xdiff(x, j)[:len(x) - k] for j in range(k + 1)]
+        jet = list(zip(*jets))
+        for n in range(1, 13):
+            pd, px = nfac(dk, n), nfac(x, n + k)
+            ok43 &= pd <= px <= 2 ** k * pd and nfac(jet, n) == px
+for m in range(5):
+    x = [rng29.randint(0, 1) for _ in range(200)]
+    ok43 &= xdiff(x, 2 ** m) == [x[i] ^ x[i + 2 ** m] for i in range(200 - 2 ** m)]
+for p_ in range(1, 7):
+    for bits in product((0, 1), repeat=p_):
+        for y0 in (0, 1):
+            y = [y0]
+            for i in range(60):
+                y.append(y[-1] ^ bits[i % p_])
+            ok43 &= all(y[i] == y[i + 2 * p_] for i in range(len(y) - 2 * p_))
+alt = [i % 2 for i in range(40)]
+ok43 &= xdiff(alt, 2) == [0] * 38 and [alt[i + 2] - 2 * alt[i + 1] + alt[i] for i in range(38)] == [-2, 2] * 19
+row = [1 if j % 2 == 1 else 0 for j in range(1, 121)]
+cur = row[:]
+for t in range(40):
+    nxt = [R30(cur[i + 1], cur[i], (t % 2) if i == 0 else cur[i - 1]) for i in range(len(cur) - 1)]
+    ok43 &= nxt == row[:len(nxt)]
+    cur = nxt
+check('S43 G148: factor counts of fixed-order differences and jets; dyadic orders; integration periods; the controls', ok43)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
