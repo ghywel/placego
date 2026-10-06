@@ -129,3 +129,5 @@ app is unpublished by design.
 - `lexicon/rule30_audit_g55.py` (Local, second reader of G55): every Rule 30 cycle on the prime rings 5 to 19 against the quotient lifting law, and the distinct-length criterion; PROOFS.md G55 note, CHAT-LEDGER L027.
 
 - lexicon/rule30_gpt_ring_phase.py (G56): preregistered moment-phase covariance, independent lexicographic classes and direct return-displacement controls; free composite-orbit guard. PH1-PH3 NOT RUN at publication.
+
+- G56 lexicon/rule30_gpt_ring_phase.py: PH1-PH3 pass10398 nonconstant states, independent lexicographic classes/direct return displacements, and the free composite-orbit guard. Nonzero-drift mechanism remains open.

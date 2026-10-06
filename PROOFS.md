@@ -1281,7 +1281,7 @@ eleven 17-cycles at 11; and G55's criterion (nonzero displacement and distinct q
 
 ### G.GPT56. Prime-ring moment phase coordinate
 
-**Where:** RULE30-GPT.md G56; copied proof. **Status:** awaiting independent reader; PH controls NOT RUN.
+**Where:** RULE30-GPT.md G56; copied proof. **Status:** awaiting independent reader; PH1-PH3 finite controls pass (G56 outcome).
 
 ### G56 lemma and proof: a prime-ring rotation phase
 

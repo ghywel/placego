@@ -3636,3 +3636,7 @@ Thus G55's displacement is b=sum_j e_j modulo p. Equivalently delta summed along
 Unexpected domain check: on a four-cell ring x=0011 has weight2 and four distinct rotations, yet2 has no inverse modulo4. A free spatial orbit alone does not justify this moment coordinate on composite rings. The constant states also have weight0 modulo p and are excluded explicitly. Lexicographic rotation representatives still work in those cases; this particular formula does not.
 
 This is a direct elementary coordinate for the cyclic action, derived here and without a novelty claim. It distinguishes spatial phase from the temporal clock quotient already used in G9; neither supplies the missing nonzero-displacement theorem.
+
+### G56 outcome (2026-10-06)
+
+Published PH1-PH3 pass10398 nonconstant states at primes3,5,7,11,13. Moment phases are covariant under rotation, theta0 representatives agree with independent lexicographic rotation classes, and summed quotient edge phases equal direct q-step displacement. The7/11 zero sums remain; the composite free-orbit/noninvertible-weight control passes. No speedup measurement or nonzero-drift theorem follows. Next seek a Rule30-specific phase-sum restriction, checking it against the retained exceptions before proposing a universal claim.
