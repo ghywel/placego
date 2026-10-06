@@ -4103,6 +4103,12 @@ of $\log_2(a+1)/(a+b)$ bits per step. The reframing below is adjusted accordingl
    support exclusion, interior latch positions minimising); and the caution that certifying both switches does not
    make the per-period state finite, because the spatial tail is a state of its own that needs a closure or cost
    theorem. That tail is the precise missing item.
+   *Measured the same morning (`rule30_uniform.py slow`, US0 to US3 written first):* next to $0^a 1^a$ for $a = 4, 8, 16$
+   every right half of width up to 16 keeps its centre on the word for at most its total width plus 9, 7 and 6 steps
+   (the empty right half next to $0^{16} 1^{16}$ alone reaches +15), and for $a = 8$ and $16$ the excess is negative from
+   width 7 on. Three blind predictions missed on the empty right half and on a flag's semantics (the probe's outcome
+   says how); the law of §8.42 stands on the slow walls, with smaller constants than 0101's. That is the B side's
+   promise in numbers: the latch leaves a real right half little to say, and the left half pays for it.
 3. *Keep period 2's record as the measured reference, not the route.* Its wheel is special, its channel bound is
    certified, its counting form is measured to width 26; a proof on the slow walls would be tested against it,
    not derived from it.

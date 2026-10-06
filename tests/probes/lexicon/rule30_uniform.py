@@ -141,6 +141,15 @@ def excess_by_width(tau, skip_zero=False):
 #   US3 (blind): no run reaches depth 126 (no capped width) for any slow wall at W <= WMAX.
 # REFUTED-BY: US0 failing (the instrument); US1 to US3 the other way (a slow wall that lets a finite seed keep its
 #   centre far beyond its width would be the first wall to break the law of section 8.42).
+# OUTCOME of the slow run, 2026-10-06 (WMAX stayed at its default 16, the mode word having taken the argument's place; 18 s):
+# US0 PASSED. Largest excess by width: 0^4 1^4: +5, +4, +4, +4, +6, +5, +4, +3, then +2 .. +9 .. +5 (W = 8 to 16); 0^8 1^8:
+# +7, +5, +4, +3, +2, +1, 0, -1, +1, 0, -1, ..., -7; 0^16 1^16: +15 at W = 0 (the empty right half), then +6, +5, ..., -1, +1.
+# US1 REFUTED by the empty right half alone (a = 16, W = 0: +15; every W >= 1 is within +9). US2 REFUTED by the same
+# value. US3 REFUTED by the flag's semantics: it marks any right half whose longest run ends at the window's edge,
+# which a short run at depth 124 does; the champion runs at width 8 next to 0^4 1^4 are 10 cells (K = 126) and 18
+# cells (K = 400 and 1200) from depth 215, reaching no edge. So no slow wall breaks the law: for real right halves the
+# excess is at most +9 (a = 4), +7 (a = 8) and +6 (a = 16, W >= 1), and it falls below zero for wide seeds at a = 8
+# and 16, where the latch leaves the right half little to say.
 
 
 def slow():
