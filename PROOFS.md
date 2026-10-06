@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G142, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G143, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4675,18 +4675,7 @@ row gains radius one, not two, over a white-black pair. The guard is well chosen
 compactness without forward invariance bounds nothing. The consequence that $S_{\mathrm{fin}}$ is empty or not
 closed generalises G140's dyadic case to every candidate.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT143. an aperiodic half-circle code passes every repeat test (second-read by Local, 2026-10-06)
 
 ### G143. An aperiodic half-circle code passes every repeat test (2026-10-07)
 
@@ -4750,10 +4739,39 @@ The phase is essential. For c'_s=floor(s*beta+1/2) modulo2, the exact first 19 b
 
 **Scope.** The known half-circle code and the sparse dyadic word of G137 both pass the full necessary repeat family, by different mechanisms. Here numerator parity and mediant returns explain the gap. No initial-tail support theorem, full right extension, finite-left witness, positive-entropy theorem or prize conclusion is established. Q7 now needs a further wall or coupled-tail constraint to exclude this particular phase-zero code; stronger repetition arguments must specify a condition beyond the inequality just passed.
 
+*Second reader's note on G143 (Local, 2026-10-07; chat L099).* Correct; I checked each step by hand, and the lemmas
+exactly (S39). The mismatch rule follows from $\lfloor x_s + \varepsilon \rfloor$ with an even shift. The record
+reduction is right because a larger mismatch interval of the same sign contains the smaller one. Since
+$\alpha = [0; 3, 2, 2, \ldots]$, the same-sign records are the convergents and the single intermediate fraction between
+each pair. With $\delta_n = (-1)^n r^n$, the mediant error is $(1+r)d$ with the opposite sign and the doubled error is
+$2d$ with the same sign. The mesh is the two-gap case of the three-distance theorem at $q_{n+1}$ points: gap $d$ taken
+$q_{n+1} - q_n$ times and gap $E$ taken $q_n$ times, by $q_{n+1} d + q_n |\delta_{n+1}| = 1$. The first-hit times and
+both debt bounds follow, and so do the two small periods. The bounds are sharp. At every mediant scale the interval from
+$q_n + 1$ to $q_n + q_{n+1} - 1$ (for example $[13, 40]$ at period 17) attains debt $-3$, exactly as L097 measured. At
+period 4 the initial interval $[0, 2]$ attains the doubled-period bound $q_{n-1} - q_n - 1 = -2$, and period 1 attains
+the overall maximum $-1$. The survival is L096's parity guard made quantitative: every even-sign shift is a mediant or a
+doubled convergent, whose error is $\sqrt 2$ or 2 times the convergent's. At a mediant the longest return gap $q_{n+1}$
+equals the shift $Q_n$ plus the first-hit time $q_n$, so the debt cannot pass $-3$. Checked (`rule30_audit_g99_g100.py`,
+S39, within GC159's 4,096 symbols and with 60-digit decimals): the mismatch rule for every period up to 200; the record
+list to 2,048; the gap counts for $n = 2$ to 9; the first hits; the debt bounds at every record period, with $-3$
+attained at 7 to 577. The first S39 run failed through my own sign error in the mismatch test ($1 + \varepsilon$ for
+$1 - \varepsilon$); after the fix every part passes.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
 
 ### G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)
 
-**Status and target.** Symbolic Q7 classification, independent review pending together with G143. No experiment. Fix the phase zero used in GC159; this is not an all-phase classification. The inputs are G143's signed mismatch intervals and tail-two mesh argument, ordinary continued-fraction best approximation and Legendre's criterion. The Rote critical-exponent literature is recorded in PRIOR-ART.md; its ordinary factor exponent does not include the starting index in our debt and no theorem from it is imported.
+**Status and target.** Symbolic Q7 classification, independent review pending; G143 independently verified by Local L099. No experiment. Fix the phase zero used in GC159; this is not an all-phase classification. The inputs are G143's signed mismatch intervals and tail-two mesh argument, ordinary continued-fraction best approximation and Legendre's criterion. The Rote critical-exponent literature is recorded in PRIOR-ART.md; its ordinary factor exponent does not include the starting index in our debt and no theorem from it is imported.
 
 Let beta be any irrational in (0,1), let c_s=floor(s*beta) modulo2, and write p_n/q_n for its convergents, a_(n+1) for the next coefficient and delta_n=q_n*beta-p_n. Then the following are equivalent:
 

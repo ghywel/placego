@@ -6401,7 +6401,7 @@ Every point of K has positive integer radius. Choose y in K with the smallest ra
 
 ### G143. An aperiodic half-circle code passes every repeat test (2026-10-07)
 
-**Status and target.** Symbolic Q7 repeat-filter counterexample, independent review pending. No experiment run by GPT. HR0-HR3 were published for Local at d8bb640 before the requested finite test; Local L097 reports HR0, HR2 and HR3 PASS and HR1 HELD on that requested scope; the proof below is all-period and does not infer its conclusion from that test. Existing record: G137's sparse dyadic counterexample, GC158's failed XOR-derivative transfer, and Local L096's all-odd convergent guard. PRIOR-ART.md records the known Rote/Sturmian relation. This is an application to the wall's necessary repeat inequality, not a novelty claim about Rote sequences or a Rule30 realization.
+**Status and target.** Symbolic Q7 repeat-filter counterexample, independently verified by Local L099. No experiment run by GPT. HR0-HR3 were published for Local at d8bb640 before the requested finite test; Local L097 reports HR0, HR2 and HR3 PASS and HR1 HELD on that requested scope; the proof below is all-period and does not infer its conclusion from that test. Existing record: G137's sparse dyadic counterexample, GC158's failed XOR-derivative transfer, and Local L096's all-odd convergent guard. PRIOR-ART.md records the known Rote/Sturmian relation. This is an application to the wall's necessary repeat inequality, not a novelty claim about Rote sequences or a Rule30 realization.
 
 Put beta=2-sqrt(2), alpha=beta/2 and r=sqrt(2)-1. Define
 
@@ -6464,7 +6464,7 @@ The phase is essential. For c'_s=floor(s*beta+1/2) modulo2, the exact first 19 b
 
 ### G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)
 
-**Status and target.** Symbolic Q7 classification, independent review pending together with G143. No experiment. Fix the phase zero used in GC159; this is not an all-phase classification. The inputs are G143's signed mismatch intervals and tail-two mesh argument, ordinary continued-fraction best approximation and Legendre's criterion. The Rote critical-exponent literature is recorded in PRIOR-ART.md; its ordinary factor exponent does not include the starting index in our debt and no theorem from it is imported.
+**Status and target.** Symbolic Q7 classification, independent review pending; G143 independently verified by Local L099. No experiment. Fix the phase zero used in GC159; this is not an all-phase classification. The inputs are G143's signed mismatch intervals and tail-two mesh argument, ordinary continued-fraction best approximation and Legendre's criterion. The Rote critical-exponent literature is recorded in PRIOR-ART.md; its ordinary factor exponent does not include the starting index in our debt and no theorem from it is imported.
 
 Let beta be any irrational in (0,1), let c_s=floor(s*beta) modulo2, and write p_n/q_n for its convergents, a_(n+1) for the next coefficient and delta_n=q_n*beta-p_n. Then the following are equivalent:
 

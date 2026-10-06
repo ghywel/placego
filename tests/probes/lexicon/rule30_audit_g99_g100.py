@@ -169,6 +169,13 @@ CHECKS (GPT's claims at 827e006):
      M0 test says so (with radius exactly L - 2), and have a period-three tail containing ones after a black tail;
      the guard rows 011 and 101 both give 1011 and then 10011; and for 30 random visible words c the white-phase
      predecessors of Phi(c) are Phi((1 - a) c), the phase convention of G140.
+  S39 (G143, added 2026-10-07 at 54a9d03; all within GC159's 4,096-symbol prefix, 60-digit decimals): for
+     c_s = floor(s beta) mod 2, beta = 2 - sqrt 2: the mismatch rule (c_s != c_(s+q) exactly when x_s = {s beta} lies in
+     [1 - eps, 1) or [0, -eps), eps the error to the nearest even integer) for q <= 200 and s + q <= 4,095; the
+     same-sign error records for q <= 2,048 are exactly 1, 2, Q_n = q_n + q_(n-1) and 2 q_n; for n = 2..9 the q_(n+1)
+     orbit points have exactly two gaps, d = |delta_n| (q_(n+1) - q_n times) and E = (1 + r) d (q_n times); the first
+     positive mismatch is at q_n for period Q_n and in [q_n, Q_n] for period 2 q_n; and every maximal repeat interval
+     of those periods inside the prefix has debt at most -3 (Q_n) and q_(n-1) - q_n - 1 (2 q_n), with -3 attained.
 """
 import random
 from fractions import Fraction as F
@@ -1660,4 +1667,71 @@ for trial in range(30):
         ok38 &= w[:90] == phi_row([1 - a] + vis, 110)[:90]
 check('S38 G141: the black and white backward steps, their tail tests and radii; the merging guard; the phase convention',
       ok38, 'tail kinds (black-phase predecessor, white-phase predecessor): %s' % sorted(kinds.items()))
+import decimal
+decimal.getcontext().prec = 60
+DB = 2 - decimal.Decimal(2).sqrt()
+NP = 4096
+xs = [(s_ * DB) % 1 for s_ in range(NP)]
+cb = [int((s_ * DB).to_integral_value(rounding=decimal.ROUND_FLOOR)) % 2 for s_ in range(NP)]
+
+
+def eps_even(q):
+    v = q * DB
+    P = 2 * int((v / 2).to_integral_value(rounding=decimal.ROUND_HALF_EVEN))
+    return v - P
+
+
+def in_mis(x, e):
+    return x >= 1 - e if e > 0 else x < -e
+
+
+ok39 = True
+for q in range(1, 201):
+    e = eps_even(q)
+    ok39 &= all((cb[s_] != cb[s_ + q]) == in_mis(xs[s_], e) for s_ in range(NP - q))
+recs, best = [], {1: None, -1: None}
+for q in range(1, 2049):
+    e = eps_even(q)
+    sg = 1 if e > 0 else -1
+    if best[sg] is None or abs(e) < best[sg]:
+        best[sg] = abs(e)
+        recs.append(q)
+qs = [1, 2]
+while qs[-1] < 5000:
+    qs.append(2 * qs[-1] + qs[-2])
+want = sorted({1, 2} | {qs[n] + qs[n - 1] for n in range(1, len(qs))} | {2 * qs[n] for n in range(1, len(qs))})
+ok39 &= recs == [q for q in want if q <= 2048]
+for n in range(1, 9):
+    qn, qn1 = qs[n], qs[n + 1]
+    d = min(abs(qn * DB - k) for k in range(qn + 1))
+    E = (decimal.Decimal(2).sqrt()) * d
+    pts = sorted(xs[:qn1])
+    gaps = [pts[i + 1] - pts[i] for i in range(len(pts) - 1)] + [1 - pts[-1] + pts[0]]
+    nd = sum(1 for g_ in gaps if abs(g_ - d) < decimal.Decimal(10) ** -40)
+    nE = sum(1 for g_ in gaps if abs(g_ - E) < decimal.Decimal(10) ** -40)
+    ok39 &= nd == qn1 - qn and nE == qn
+worst = {}
+for n in range(1, 9):
+    for kind, q in (('Q', qs[n] + qs[n - 1]), ('2q', 2 * qs[n])):
+        if q > 2048:
+            continue
+        mis = [s_ for s_ in range(1, NP - q) if cb[s_] != cb[s_ + q]]
+        first = mis[0]
+        ok39 &= first == qs[n] if kind == 'Q' else qs[n] <= first <= qs[n] + qs[n - 1]
+        dmax, s_ = None, 0
+        while s_ + q <= NP - 1:
+            if cb[s_] == cb[s_ + q]:
+                a_ = s_
+                while s_ + q <= NP - 1 and cb[s_] == cb[s_ + q]:
+                    s_ += 1
+                if s_ + q <= NP - 1:            # only intervals closed by a mismatch inside the prefix
+                    dd = (s_ - 1) - 2 * a_ - q
+                    dmax = dd if dmax is None else max(dmax, dd)
+            s_ += 1
+        bound = -3 if kind == 'Q' else qs[n - 1] - qs[n] - 1
+        ok39 &= dmax is not None and dmax <= bound
+        worst[q] = dmax
+ok39 &= all(worst[qs[n] + qs[n - 1]] == -3 for n in range(2, 8))
+check('S39 G143: the mismatch rule, the record list, the two-gap mesh, the first hits and the debt bounds at the records',
+      ok39, 'records to 2,048: %s; worst debts: %s' % (recs, sorted(worst.items())))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
