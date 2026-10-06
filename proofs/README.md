@@ -293,6 +293,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   isolated race error can disappear at its source and return without another race.
 - [the paired trace is not first-order Markov](G110-the-paired-trace-is-not-first-order-markov.md): Two individually
   memoryless traces can form a pair with memory.
+- [a finite-rate memory split extends to generic rates](G111-a-finite-rate-memory-split-extends-to-generic.md): An
+  exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
 
 ## The waiting room (not yet verified)
 
@@ -307,7 +309,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [A nonzero finite-rate memory split extends to generic rates, but a zero at one rate does not](W111-a-nonzero-finite-rate-memory-split-extends-to.md):
-  An exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
 - [Two shared black observations shield the next tick and obstruct bulk first-order memory closure](W112-two-shared-black-observations-shield-the-next-tick.md):
   Two shared black observations force the next source samples to agree in the right-reading coupling.
