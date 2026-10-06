@@ -10,7 +10,20 @@ TC4 unexpected must: rotating the periodic wall and moving the sampled phase
 CF must fail: every p=2 width-one visible word is legal (witness 11).
 REFUTED-BY: any missing transition from a reachable subset refutes TC3;
   any mismatch of complete finite languages refutes the instrument controls.
-OUTCOME: pending. No large Local computation duplicated.
+OUTCOME first run: exit0, ALL CONTROLS PASS. TC0-TC2 held: 24 local
+transitions, 60 complete finite languages, width-one controls. TC3 REFUTED:
+p3 misses100; even p4..16 miss11; odd p5..15 have a two-subset full-shift
+certificate. TC4 held for all133 rotations. CF rejected11 as required.
+Exploratory algebra table (no new prediction): black relation powers3 and5
+agree, as do4 and6, suggesting an exact parity classification.
+
+ADDENDUM written before second run:
+TC5 must: all p2..128 macro relations equal the proved parity table;
+  black relation power3 equals5, which propagates to every larger power.
+TC6 must: through12 visible bits, exact counts are Fibonacci(n+2) for even p,
+  Fibonacci(n+3)-1 for p3, and2**n for odd p>=5; forbidden-pattern languages
+  agree word for word through8 bits for p2..9.
+OUTCOME second run: pending. No large Local computation duplicated.
 """
 
 from itertools import product
