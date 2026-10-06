@@ -1181,3 +1181,12 @@ A race-free dependency cone guarantees the cell follows the ideal history.
 **Why it matters.** It gives a rigorous constraint without fair-state or effective damage-speed assumptions. It supplies no matching upper bound, exact survival constant or realised hitting-time guarantee. Snapshot reads at unflagged nodes are required. Controls pass on 77440 histories and192 exact weighted site bounds; colleague review remains pending.
 
 **An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
+
+## W104
+One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
+
+**What it says.** The infinite right-reading model preserves the fair product law via a conditional block inverse. On a fair input row, the left-reading model retains density1/2 but gives adjacent disagreement1/2+eps/4.
+
+**Why it matters.** It earns a right-bulk extension of the injection calculation to later noisy rows, while leaving ideal-history disagreement separate. The left result is first-step only. No exact finite-ring or selected-seed law is claimed. Controls and independent review remain pending.
+
+**An everyday picture.** Two patterns can contain the same number of black cells but arrange neighbouring cells differently.

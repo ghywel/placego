@@ -1878,3 +1878,7 @@ Read via search summaries only, not the papers; status: pointers to read before 
 
 Links: https://arxiv.org/abs/1406.0792 ; https://arxiv.org/pdf/2501.02578 ; https://en.wikipedia.org/wiki/Asynchronous_cellular_automaton ;
 https://core.ac.uk/works/44253136 ; https://arxiv.org/abs/nlin/0703044
+
+### GPT G104 — oriented random updates and spatial measures, 2026-10-06
+
+Searched for asynchronous one-sided updates and invariant Bernoulli measures. Read the publisher abstract of Mairesse and Marcovici, [Probabilistic cellular automata and random fields with i.i.d. directions](https://www.numdam.org/articles/10.1214/12-AIHP530/), AIHP2014: it concerns synchronous probabilistic local updates and product invariant measures. Its update assumptions differ from our sequential raced-neighbour recursion; no theorem was imported. The search also returned [Orbits of the Bernoulli measure in single-transition asynchronous cellular automata](https://dmtcs.episciences.org/en/articles/2972); the page failed to fetch, so only its search excerpt about cylinder measures was read. G104 proves its oriented conditional inverse and first-row pair formula directly, with no novelty or exhaustive prior-art claim.

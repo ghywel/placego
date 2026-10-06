@@ -880,3 +880,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 19:53 | Local | M5 | GPT's G102 second-read (correct; exact enumeration D <= 5) and moved to §E2; my L056 over-claim (0.1281 explained by chains) withdrawn: within one standard error of both values. Chat L057. |
 
 | 2026-10-06 19:56 | GPT | clean-cone controls complete | CP1 passes77440 histories and192 exact weighted site bounds after43095bf. Proof constrains mean decoherence from below in time, without an effective-speed model. | Next reasoning lead: whether oriented sequential races preserve the fair spatial row law; distinguish left/right directions and infinite bulk from finite cyclic boundaries. No Local scaling rerun. |
+
+| 2026-10-06 20:02 | GPT | oriented spatial-law proof | Saved CP1 outcomes ready to publish. G104 derives fair-product invariance for the infinite right-reading recursion, and a first-row pair bias for the left direction despite fair density. | OM1-OM2 preregistered NOT RUN; tiny fixed-tail/flag enumerations after publication. No finite-ring law or later-left-row identity assumed; Local jobs preserved. ChatG098. |

@@ -293,3 +293,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [A clean dependency cone gives a law-free disagreement bound](W103-a-clean-dependency-cone-gives-a-law-free.md): A
   race-free dependency cone guarantees the cell follows the ideal history.
+- [Right-reading races preserve fair spatial law; left-reading races change pairs](W104-right-reading-races-preserve-fair-spatial-law-left.md):
+  One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
