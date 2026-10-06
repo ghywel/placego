@@ -176,6 +176,12 @@ CHECKS (GPT's claims at 827e006):
      orbit points have exactly two gaps, d = |delta_n| (q_(n+1) - q_n times) and E = (1 + r) d (q_n times); the first
      positive mismatch is at q_n for period Q_n and in [q_n, Q_n] for period 2 q_n; and every maximal repeat interval
      of those periods inside the prefix has debt at most -3 (Q_n) and q_(n-1) - q_n - 1 (2 q_n), with -3 attained.
+  S40 (G144, added 2026-10-07 at f824c71; G144's own arithmetic controls, 60-digit decimals, prefixes under 2,100): for
+     beta = sqrt 2 - 1 and the even numerators p_n = 2, 12, 70 the first positive mismatch of period q_n is q_(n+1) and
+     the initial interval has debt q_(n+1) - q_n - 1 or - 3 by the sign of delta_n (6 at period 5, [0, 11]); for
+     beta = [0; 1, 1, 4, 4, ...] the numerators are odd and, for period 2 q_n, the first positive mismatch is
+     (a - 1) q_n + q_(n-1) and the initial debt (a - 3) q_n + q_(n-1) - 1 or - 3; for beta = 2 - sqrt 2 the even
+     mediants satisfy B_n |D_n| = 1 / (B_(n+1) / B_n + r) < 1/2 and are alpha's convergents, consecutive and unimodular.
 """
 import random
 from fractions import Fraction as F
@@ -1734,4 +1740,66 @@ for n in range(1, 9):
 ok39 &= all(worst[qs[n] + qs[n - 1]] == -3 for n in range(2, 8))
 check('S39 G143: the mismatch rule, the record list, the two-gap mesh, the first hits and the debt bounds at the records',
       ok39, 'records to 2,048: %s; worst debts: %s' % (recs, sorted(worst.items())))
+from fractions import Fraction as _Fr
+
+
+def cf_conv(a0, cf):
+    p0, q0, p1, q1 = 1, 0, a0, 1
+    out = []
+    for a in cf:
+        p0, q0, p1, q1 = p1, q1, a * p1 + p0, a * q1 + q0
+        out.append((p1, q1))
+    return out
+
+
+def cf_value(cf):
+    x = _Fr(0)
+    for a in reversed(cf):
+        x = 1 / (a + x)
+    return decimal.Decimal(x.numerator) / decimal.Decimal(x.denominator)
+
+
+def initial_debt(beta, q, M):
+    c_ = [int((s_ * beta).to_integral_value(rounding=decimal.ROUND_FLOOR)) % 2 for s_ in range(M + q + 2)]
+    mis = [s_ for s_ in range(M) if c_[s_] != c_[s_ + q]]
+    h = [s_ for s_ in mis if s_ > 0][0]
+    a_ = 1 if c_[0] != c_[q] else 0
+    return h, (h - 1) - 2 * a_ - q
+
+
+ok40 = True
+b1 = decimal.Decimal(2).sqrt() - 1
+cv1 = cf_conv(0, [2] * 12)
+for i in range(1, 6):
+    (pn, qn), (pn1, qn1) = cv1[i], cv1[i + 1]
+    if pn % 2 == 0:
+        dn = qn * b1 - pn
+        h, dbt = initial_debt(b1, qn, qn1 + 5)
+        ok40 &= h == qn1 and dbt == (qn1 - qn - 1 if dn > 0 else qn1 - qn - 3)
+ok40 &= initial_debt(b1, 5, 20) == (12, 6)
+cf2 = [1, 1] + [4] * 120
+b2 = cf_value(cf2)
+cv2 = cf_conv(0, cf2[:8])
+ok40 &= all(pn % 2 == 1 for pn, _ in cv2)
+for i in range(1, 5):
+    (pm, qm), (pn, qn) = cv2[i - 1], cv2[i]
+    a = cf2[i + 1]
+    dn = qn * b2 - pn
+    h, dbt = initial_debt(b2, 2 * qn, (a - 1) * qn + qm + 5)
+    ok40 &= h == (a - 1) * qn + qm and dbt == ((a - 3) * qn + qm - 1 if dn > 0 else (a - 3) * qn + qm - 3)
+b3 = 2 - decimal.Decimal(2).sqrt()
+al = b3 / 2
+r_ = decimal.Decimal(2).sqrt() - 1
+cv3 = cf_conv(0, [1, 1] + [2] * 14)
+AB = [((cv3[i][0] + cv3[i - 1][0]) // 2, cv3[i][1] + cv3[i - 1][1]) for i in range(2, 13)]
+cva = cf_conv(0, [3] + [2] * 16)
+for i in range(len(AB) - 1):
+    (A, B), (A1, B1) = AB[i], AB[i + 1]
+    D, D1 = B * al - A, B1 * al - A1
+    ok40 &= abs(A * B1 - A1 * B) == 1 and D * D1 < 0 and B * abs(D) < decimal.Decimal(1) / 2
+    ok40 &= abs(B * abs(D) - 1 / (decimal.Decimal(B1) / B + abs(D1) / abs(D))) < decimal.Decimal(10) ** -40
+    ok40 &= abs(abs(D1) / abs(D) - r_) < decimal.Decimal(10) ** -40
+    ok40 &= (A, B) in cva
+check('S40 G144: the even-numerator and large-coefficient obstructions on its controls; the converse mediants are alpha convergents',
+      ok40)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

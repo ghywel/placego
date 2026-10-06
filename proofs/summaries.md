@@ -1717,6 +1717,6 @@ If a finite pattern can keep the alternating wall's condition forever, its succe
 There is a particular way to turn an irrational rotation into black and white symbols that passes every repetition test we have required of the wall's neighbour. It is not periodic, its constant runs are at most two symbols long, and its number of distinct words grows only linearly. Differentiating it gives a Sturmian sequence, but some good rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition test alone cannot rule it out.
 
 
-## W144
+## G144
 
 For half-circle rotation codes started exactly at a partition boundary, the repetition test has a precise exceptional class. A code passes with some fixed allowance exactly when its angle's continued fraction eventually consists of twos and its convergent numerators are eventually odd. Outside that countable class, the proof gives repeated intervals whose excess grows without bound. Within it, the test still cannot decide whether a finite Rule 30 pattern produces the code. Other starting phases remain open.

@@ -1925,3 +1925,18 @@ file rather than the abstract, and cite the family number and manuscript title.
 Query: “Rote sequences critical exponent continued fractions parity numerators initial repetitions silver ratio”. Read only the abstract of Dvorakova, Medkova and Pelantova, [Complementary symmetric Rote sequences: the critical exponent and the recurrence function](https://arxiv.org/abs/2003.06916), DMTCS22(1), 2020. It gives continued-fraction formulas and a classification at critical exponent at most three. That ordinary factor exponent does not include our interval starting index a, so neither its classification nor the reported uncountability transfers to G144's boundary-phase debt. No paper theorem was imported; the G144 first-hit obstructions and converse are written out independently. No exhaustive novelty claim.
 
 Independently read the current [openai/math README](https://github.com/openai/math), confirming that it presents manuscripts with differing verification status and warns of possible issues in unformalized results. This check does not verify any of CL010's headline mathematical statements or Lean artifacts. Local's catalogue-only Q7 scan is accepted separately; no mathematical result from the release is used here.
+
+### Local — catalogue-only scan of openai/math for question 7, 2026-10-07
+
+Scope, as GC161 set it: the release's `CONTENTS.md` only (all 372 family headers and every manuscript abstract
+listed there), no proofs and no Lean files read. Keywords: Sturmian, Rote, rotation codes, mechanical and Beatty
+words, balanced words, repetitions and critical exponents, three-distance, symbolic dynamics and subshifts,
+cellular automata, combinatorics on words, inhomogeneous approximation. Result: no family or abstract is about
+Sturmian, Rote or rotation codes, repetitions, critical exponents, subshifts or cellular automata on the integers, so
+nothing in it helps question 7. Recorded and stopped. The three nearest, none usable:
+
+| Family | Main statement, as the catalogue gives it | Formal artifact | Why it does not help |
+|---|---|---|---|
+| 022 | The weak inhomogeneous Duffin–Schaeffer conjecture: divergence of the totient-weighted series gives infinitely many solutions of the shifted approximation inequality for almost every x | no Lean link in the catalogue | a statement about almost every angle; our half-circle questions are about specific quadratic angles and fixed phases |
+| 017 | The irrationality exponent of pi is 2 | Lean link in the catalogue | an exponent for one constant, not a method stated for rotation codes |
+| 197 | A torsion-free nonsofic group algebra that is not directly finite; companion examples give injective nonsurjective cellular automata, refuting Gottschalk's surjunctivity conjecture | Lean link for the family; which statement it formalises was not checked | needs a nonsofic group; on the integers the Garden of Eden theorem holds (Cloud's CL010 reading confirmed against the catalogue) |

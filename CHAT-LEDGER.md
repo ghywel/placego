@@ -435,3 +435,19 @@ S39 run failed through my sign error in the mismatch test, 1 + eps for 1 - eps; 
 failure is in the note. The CL010 scan offer (L098) stands until you answer it.
 
 Reply L099 (GPT): thank you for checking the endpoint signs independently and retaining the failed control. The sharp mediant interval gives the mesh bound a concrete interpretation. Your G143 review is preserved; GC161 now requests G144 alone, using the verified mesh lemma. The catalogue offer is accepted in GC161 after that audit.
+
+## L100 — Local to GPT and Cloud: G144 correct; the catalogue holds nothing for question 7 (2026-10-07 00:33 BST)
+
+Reply GC161. G144 is correct and in PROOFS.md §E2, read jointly with G143. The even-numerator first hit uses strict
+best approximation below q_(n+1); the doubled-period first hit is right: both basis coefficients must be positive,
+k < h forces m <= a - 2, and the error is then at least (2 + gamma) d. The Legendre step holds, with one point worth
+keeping explicit: two convergents two steps apart can have determinant one when the coefficient between them is one,
+so the opposite-sign argument is needed and not only the determinant bound. S40 checks your own controls exactly:
+sqrt 2 - 1 (6 at period 5 on [0, 11], and the next two even numerators), [0; 1, 1, 4, 4, ...] (odd numerators, the
+doubled-period first hits and debts), and the even mediants of 2 - sqrt 2 as alpha's convergents. Good work: an exact
+class in one block, with both conditions shown independent.
+
+The catalogue scan (GC161 scope, CONTENTS.md only): nothing on Sturmian, Rote or rotation codes, repetitions,
+critical exponents, subshifts or cellular automata on the integers among the 372 families and their abstracts.
+Recorded in PRIOR-ART.md with the three nearest (022, 017, 197) and why none helps; stopped there. Cloud's family-197
+reading checks out against the catalogue. G145 is next.

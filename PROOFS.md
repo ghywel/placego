@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G143, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G144, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4757,17 +4757,7 @@ list to 2,048; the gap counts for $n = 2$ to 9; the first hits; the debt bounds 
 attained at 7 to 577. The first S39 run failed through my own sign error in the mismatch test ($1 + \varepsilon$ for
 $1 - \varepsilon$); after the fix every part passes.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT144. the phase-zero half-circle repeat filter has an exact exceptional class (second-read by Local, 2026-10-06)
 
 ### G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)
 
@@ -4823,3 +4813,32 @@ Each of the finitely many earlier record periods has a nonempty mismatch arc. Ir
 **Unexpected parity controls and limits.** The tail-two angle beta=sqrt(2)-1 fails the criterion: it has infinitely many even convergent numerators. Already the convergent 2/5, followed by 5/12, gives a period-5 equality on [0,11] of debt 6. Thus being in the silver quadratic field or having a tail of twos alone is insufficient. Conversely beta=[0;1,1,4,4,...] has eventually all odd numerators but fails by the doubled-period obstruction. These are direct arithmetic controls, not new runs. They distinguish both required conditions from weaker shortcuts.
 
 Every angle satisfying (2) has a finite integer continued-fraction prefix followed by the same infinite tail, so there are countably many and they are quadratic. Their complements and arbitrary phases were not classified here. The wall has a necessary repeat constant determined by its finite left radius, so the theorem excludes all other phase-zero codes as companions. The exceptional class remains unresolved for actual initial-tail support. No finite witness, full right extension, positive-entropy or prize claim follows.
+
+*Second reader's note on G144 (Local, 2026-10-07; chat L100).* Correct, read jointly with G143 as asked. Even
+numerators: for $0 < k < q_{n+1}$ with $k \ne q_n$ best approximation is strict, $\|k\beta\| > |\delta_n|$, and $q_n$
+itself has the wrong sign, so the first hit is $q_{n+1}$ and the initial debts are $q_{n+1} - q_n - 1$ or $- 3$. Large
+coefficients: with $|\delta_{n-1}| = a d + |\delta_{n+1}|$, an opposite-sign error below $2d$ needs both basis
+coefficients positive, $k < h$ forces $m \le a - 2$ and an error of at least $(2 + \gamma) d$, and $m = a - 1$, $l = 1$
+gives $(1 + \gamma) d$; so $h = (a-1) q_n + q_{n-1}$ and the debts follow. The Legendre step holds: with $a_{n+1} = 2$
+the determinant of consecutive even mediants is $\pm 1$ by direct expansion; unimodularity and opposite signs give the
+exact identity $B_n |D_n| = 1/(B_{n+1}/B_n + |D_{n+1}|/|D_n|)$, whose limit is $1/(2\sqrt 2)$. The consecutiveness
+argument needs both of its parts: two convergents two steps apart can have determinant one when the coefficient between
+them is one, and only the sign excludes that case. For late $n$ the complete quotients equal $1 + \sqrt 2$ exactly, so
+G143's ratios, mesh and first hits apply verbatim, and the finitely many early records each have bounded equality runs.
+Checked (`rule30_audit_g99_g100.py`, S40, G144's own controls, prefixes under 2,100, 60-digit decimals): at
+$\sqrt 2 - 1$ the even numerators 2, 12 and 70 give first hits $q_{n+1}$ and the stated debts (6 at period 5 on
+$[0, 11]$); at $[0; 1, 1, 4, 4, \ldots]$ the numerators are odd and the doubled periods have first hit
+$(a-1) q_n + q_{n-1}$ and the stated debts; and at $2 - \sqrt 2$ the even mediants are unimodular, alternate in sign,
+satisfy the identity and the Legendre bound, and are exactly the convergents of $\alpha$.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

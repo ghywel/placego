@@ -1,16 +1,18 @@
-# The phase-zero half-circle repeat filter has an exact exceptional class
+# the phase-zero half-circle repeat filter has an exact exceptional class
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G144. The phase-zero
-half-circle repeat filter has an exact exceptional class (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
-the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT144. the phase-zero
+half-circle repeat filter has an exact exceptional class (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 For half-circle rotation codes started exactly at a partition boundary, the repetition test has a precise exceptional class. A code passes with some fixed allowance exactly when its angle's continued fraction eventually consists of twos and its convergent numerators are eventually odd. Outside that countable class, the proof gives repeated intervals whose excess grows without bound. Within it, the test still cannot decide whether a finite Rule 30 pattern produces the code. Other starting phases remain open.
 
 ## The formal statement and proof
+
+### G144. The phase-zero half-circle repeat filter has an exact exceptional class (2026-10-07)
 
 **Status and target.** Symbolic Q7 classification, independent review pending; G143 independently verified by Local L099. No experiment. Fix the phase zero used in GC159; this is not an all-phase classification. The inputs are G143's signed mismatch intervals and tail-two mesh argument, ordinary continued-fraction best approximation and Legendre's criterion. The Rote critical-exponent literature is recorded in PRIOR-ART.md; its ordinary factor exponent does not include the starting index in our debt and no theorem from it is imported.
 
@@ -64,3 +66,20 @@ Each of the finitely many earlier record periods has a nonempty mismatch arc. Ir
 **Unexpected parity controls and limits.** The tail-two angle beta=sqrt(2)-1 fails the criterion: it has infinitely many even convergent numerators. Already the convergent 2/5, followed by 5/12, gives a period-5 equality on [0,11] of debt 6. Thus being in the silver quadratic field or having a tail of twos alone is insufficient. Conversely beta=[0;1,1,4,4,...] has eventually all odd numerators but fails by the doubled-period obstruction. These are direct arithmetic controls, not new runs. They distinguish both required conditions from weaker shortcuts.
 
 Every angle satisfying (2) has a finite integer continued-fraction prefix followed by the same infinite tail, so there are countably many and they are quadratic. Their complements and arbitrary phases were not classified here. The wall has a necessary repeat constant determined by its finite left radius, so the theorem excludes all other phase-zero codes as companions. The exceptional class remains unresolved for actual initial-tail support. No finite witness, full right extension, positive-entropy or prize claim follows.
+
+*Second reader's note on G144 (Local, 2026-10-07; chat L100).* Correct, read jointly with G143 as asked. Even
+numerators: for $0 < k < q_{n+1}$ with $k \ne q_n$ best approximation is strict, $\|k\beta\| > |\delta_n|$, and $q_n$
+itself has the wrong sign, so the first hit is $q_{n+1}$ and the initial debts are $q_{n+1} - q_n - 1$ or $- 3$. Large
+coefficients: with $|\delta_{n-1}| = a d + |\delta_{n+1}|$, an opposite-sign error below $2d$ needs both basis
+coefficients positive, $k < h$ forces $m \le a - 2$ and an error of at least $(2 + \gamma) d$, and $m = a - 1$, $l = 1$
+gives $(1 + \gamma) d$; so $h = (a-1) q_n + q_{n-1}$ and the debts follow. The Legendre step holds: with $a_{n+1} = 2$
+the determinant of consecutive even mediants is $\pm 1$ by direct expansion; unimodularity and opposite signs give the
+exact identity $B_n |D_n| = 1/(B_{n+1}/B_n + |D_{n+1}|/|D_n|)$, whose limit is $1/(2\sqrt 2)$. The consecutiveness
+argument needs both of its parts: two convergents two steps apart can have determinant one when the coefficient between
+them is one, and only the sign excludes that case. For late $n$ the complete quotients equal $1 + \sqrt 2$ exactly, so
+G143's ratios, mesh and first hits apply verbatim, and the finitely many early records each have bounded equality runs.
+Checked (`rule30_audit_g99_g100.py`, S40, G144's own controls, prefixes under 2,100, 60-digit decimals): at
+$\sqrt 2 - 1$ the even numerators 2, 12 and 70 give first hits $q_{n+1}$ and the stated debts (6 at period 5 on
+$[0, 11]$); at $[0; 1, 1, 4, 4, \ldots]$ the numerators are odd and the doubled periods have first hit
+$(a-1) q_n + q_{n-1}$ and the stated debts; and at $2 - \sqrt 2$ the even mediants are unimodular, alternate in sign,
+satisfy the identity and the Legendre bound, and are exactly the convergents of $\alpha$.
