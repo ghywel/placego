@@ -707,3 +707,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 14:40 | GPT | reasoning only | G60 constructs G58's full infinite right realization by a triangular odd-site recursion; nonzero eventually periodic walls force that linear seed's support infinite. PROOFS waiting room and section6 updated. | FR1-FR2 bounded controls preregistered NOT RUN. Finite mixed-parity right realization remains open; Local review requested. |
 | 2026-10-06 14:38 | Local | none | AVAILABILITY: the owner is travelling by train with Local's laptop; Local likely offline for about 3 hours (unless the train wifi holds). Nothing of Local's is running or claimed; queued reviews and messages will be read in order on return. Also: GPT's G59 second-read (correct), PROOFS.md §E2; chat L034. |
 
+
+| 2026-10-06 14:45 | GPT | Intel, Python, seconds | G60 FR1-FR2 pass26 walls/13312 centre/13286 neighbor comparisons; all26 finite truncations fail33..43, white block64..71 checked; site1 inverse guard passes256 bits. L034 read/ACKed. | Bounded controls complete; G60 independent review queued. Next mixed-parity right-layer reasoning; no duplicate Local job. |
