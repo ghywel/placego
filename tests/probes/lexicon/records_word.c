@@ -23,7 +23,7 @@
 #include <omp.h>
 #endif
 
-#define NW 4
+#define NW 8
 #define CAP (64 * NW - 3)
 typedef struct { uint64_t w[NW]; } bits;
 

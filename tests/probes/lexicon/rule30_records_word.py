@@ -54,11 +54,27 @@ OUTCOME of the first run, 2026-10-06 (8 threads, 32 minutes beside two other job
   it from the file (CHAT-LEDGER.md C008).
 """
 import pathlib, subprocess, sys, tempfile
+
+# ADDENDUM, written 2026-10-06 before the second run (python3 rule30_records_word.py [THREADS] holes), after the owner's
+# morning question (section 8.62): the walls nearest Condrey's constant wall are those with ONE white cell per period,
+# 0 1^(p-1), which leave column 1 one free bit per p steps. They are the least free walls there are, and rigidity
+# (section 7, R5) found them the most rigid. The coin model says R_w(d) grows like d / (p - 1).
+#   H0 (control, must hold): for 0111 the largest R over the depths with at most 14 free bits is 19 (rule30_rigidity.py's
+#       R5 line: "0111: 19 (from depth 31)").
+#   H1 (LR, must hold on the conjecture): no run reaches the cap (509) for the words 011, 0111, ..., 01111111 at the
+#       depths run (four depths each, the deepest with 32 free bits).
+#   H2 (blind; the slope): for each word, the slope of R_w(d) between its two deepest points lies within
+#       [0.7, 1.3] / (p - 1): the record keeps between 70% and 130% of the coin's share, unlike the free words, where
+#       the share fell to 0.60.
+#   H3 (blind; the law): R_w(d) <= 1.5 d / (p - 1) + 10 at every depth run.
+#   CF (counterfactual, must fail): the word 1 (Condrey's wall, no free bit) has R = 1 from some depth: it must not
+#       exceed 1 (and does not); the word 0 must cap. (Both known; kept as the harness's ends of the scale.)
+# REFUTED-BY: H0 or CF failing (the engine); H1 failing is the result of the year; H2, H3 the other way.
 from ompflags import OMP
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "rule30_records_word.txt"
-THREADS = sys.argv[1] if len(sys.argv) > 1 else "8"
+THREADS = next((a for a in sys.argv[1:] if a.isdigit()), "8")
 FAILS = 0
 
 
@@ -98,8 +114,41 @@ def rotations(word):
     return sorted({word[i:] + word[:i] for i in range(len(word))})
 
 
+def holes(exe):
+    hist = {}
+    rot_best = max(run(exe, "0111", d, record=False)[0] for d in range(2, 60) if nfree("0111", d) <= 14)
+    report("H0 for 0111 the largest R over depths with at most 14 free bits is 19", rot_best == 19, f"{rot_best}")
+    cf_ok = all(run(exe, "0", d, record=False)[1] for d in (1, 2, 3)) and \
+        max(run(exe, "1", d, record=False)[0] for d in range(1, 9)) == 1
+    report("CF  the word 0 caps and the word 1 never exceeds 1 (the ends of the scale)", cf_ok)
+    capped, h2, h3, notes = False, True, True, []
+    for p_ in range(3, 9):
+        word = "0" + "1" * (p_ - 1)
+        depths = [8 * p_, 16 * p_, 24 * p_, 32 * p_]
+        pts = []
+        for d in depths:
+            r, c, line = run(exe, word, d)
+            capped |= c
+            pts.append((d, r))
+            print(f"   {line}", flush=True)
+        (d1, r1), (d2, r2) = pts[-2], pts[-1]
+        slope = (r2 - r1) / (d2 - d1)
+        h2 &= 0.7 / (p_ - 1) <= slope <= 1.3 / (p_ - 1)
+        h3 &= all(r <= 1.5 * d / (p_ - 1) + 10 for d, r in pts)
+        notes.append(f"{word}: slope {slope:.3f} = {slope * (p_ - 1):.2f} of the coin's; R/d at {d2}: {r2 / d2:.3f}")
+    for n in notes:
+        print("   " + n, flush=True)
+    report("H1 no run reaches the cap", not capped)
+    verdict("H2 each slope within [0.7, 1.3] of the coin's 1/(p-1)", h2)
+    verdict("H3 R <= 1.5 d/(p-1) + 10 throughout", h3)
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
     exe = build()
+    if "holes" in sys.argv[1:]:
+        holes(exe)
+        return
     known = {}
     for ln in (HERE / "rule30_records_cloud.txt").read_text().splitlines():
         if ln.startswith("R "):
