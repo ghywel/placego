@@ -1235,3 +1235,12 @@ An isolated race error can disappear at its source and return without another ra
 **Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 pass160 cases with an independent damage equation; review is pending.
 
 **An everyday picture.** An echo can return after the place where it began has fallen quiet.
+
+## W110
+Two individually memoryless traces can form a pair with memory.
+
+**What it says.** In the isolated-pulse model, current ideal bit and current error miss the healed error that will return next tick. The previous error determines that return, refuting a first-order Markov state even with known pulse phase.
+
+**Why it matters.** The error-mask coupling needs more than marginal fairness or a current-bit state. This identifies a pulse control for conditional-memory measurements, not a claim about repeated independent races. PM1 and review are pending.
+
+**An everyday picture.** Two streams can each sound random while their relationship remembers yesterday.

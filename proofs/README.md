@@ -305,3 +305,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [An isolated right-race source error heals once and returns one tick later](W109-an-isolated-right-race-source-error-heals-once.md):
   An isolated race error can disappear at its source and return without another race.
+- [The isolated-pulse paired trace is not first-order Markov despite iid marginals](W110-the-isolated-pulse-paired-trace-is-not-first.md):
+  Two individually memoryless traces can form a pair with memory.
