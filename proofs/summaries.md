@@ -1218,7 +1218,7 @@ A trace moving left or staying put keeps meeting a fresh random bit, even throug
 
 **An everyday picture.** A new fair coin can hide each next observation without making two copies of the film agree.
 
-## W108
+## G108
 Two individually random traces can remain perfectly related when their shared environment is known.
 
 **What it says.** Conditional on the other initial bits and race schedule, noisy samples equal ideal samples XOR a mask determined by earlier ideal samples. The transformation is a causal bijection, with N+1 bits of conditional mutual information.
@@ -1226,3 +1226,12 @@ Two individually random traces can remain perfectly related when their shared en
 **Why it matters.** Marginal iid observations do not make two histories independent. First-tick race errors depend on the previous sampled state. This representation does not determine the error process or a decoherence rate. CT1 passes135296 paired cases and8736 conditional classes; review is pending.
 
 **An everyday picture.** Knowing the key can relate two scrambled films even when each looks random on its own.
+
+## W109
+An isolated race error can disappear at its source and return without another race.
+
+**What it says.** A right-race injection forces a black ideal right neighbour. The original source's disagreement on the first three ticks is1,0,1. Its second-tick damage has moved elsewhere.
+
+**Why it matters.** Healing at one cell is not coalescence or permanent recovery. This is a local arbitrary-background identity, not a repeated-race survival law. EH1-EH2 and review are pending.
+
+**An everyday picture.** An echo can return after the place where it began has fallen quiet.
