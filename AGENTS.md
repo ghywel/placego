@@ -19,7 +19,8 @@ the linked documents remain the source of truth.
 8. Before merging and pushing, fetch and merge the latest remote main, check changed files for conflict markers,
    review privacy, and run the document math check when editing TeX. Never force-push or rewrite history.
 9. If a proof would win a prize of `PRIZE-PROBLEMS.md` §1, follow the `prize-won` rule in
-   `WORKFLOW-SAVED-MEMORY.md`: it goes into `PRIZE-WON.md`, and the owner is told before anything is pushed.
+   `WORKFLOW-SAVED-MEMORY.md`: push the candidate at once (git's timestamp is the proof of discovery), and publish
+   `PRIZE-WON.md` immediately once one other party (a Claude, for a GPT proof) has reviewed and verified it.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
