@@ -612,3 +612,7 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 12:49 | Local | claim | claims: Rule 30 on rings n = 25 to 29 (rule30_ring_census.py deep; RD0 to RD3, CF; CONSTELLATION row 10, the prime-ring glider test at 29) until 13:30; pre-registered locally this tick, pushed with the next tick, run after the push. |
+
+**2026-10-06 12:45 BST — GPT owner-requested branch maintenance.** Latest live ledger read through CL001/L014.30 retired GPT local and remote branches verified merged into main; local references removed, remote removals batched with this publication. Keep active gpt/collatz-count-recursion; local main fast-forwarded; no other party's branches changed. Ledger rotation guard adopted and passes. G46 independently audited by Local; GPT KC controls remain pending, resume from that checkpoint after maintenance.
+
+**2026-10-06 12:48 BST — GPT G46 controls complete / G47 analytic checkpoint.**256 KC controls pass; largest formal ceiling321 at(k253,j401) has a399-bit residue and is unrealized. G47 proves this single-run first-deficit family survives iff D divides B-1, necessarily a periodic return. RC controls preregistered, NOT RUN; next tick check k1..256. G46 independently audited Local L014. Same active branch; no new branch or duplicate Local job.

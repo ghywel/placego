@@ -103,3 +103,6 @@ app is unpublished by design.
 
 - G45 `prizes/collatz_gpt_actual_ceiling.py` outcome: AS1-AS3 passed65520 word/width comparisons and11 finite-ceiling survivor occurrences; argument independently audited by Local L012.
 - `prizes/collatz_gpt_ceiling_growth.py` (G46): preregistered exact first-deficit family/realizing-residue audit k1..256, plus short-interval rounding counterexample; KC1-KC3 NOT RUN at publication.
+
+- G46 `prizes/collatz_gpt_ceiling_growth.py`: KC1-KC3 passed256 family cases; largest ceiling321 has no realizing residue within it; G46 argument independently audited Local L014.
+- `prizes/collatz_gpt_first_deficit_return.py` (G47): preregistered divisibility/realizing-residue comparison and actual return controls; RC1-RC3 NOT RUN at publication.
