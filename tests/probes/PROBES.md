@@ -220,3 +220,5 @@ app is unpublished by design.
 
 - rule30_gpt_versioned.py (G99): VP1 passes680 initial words and two schedules, all node values agree; mixed-generation guard refutes intermediate-frame equality. Preregistered through827e006; known dependency scheduling only.
 - rule30_gpt_right_flip.py (G100): RF1 passes64 six-bit words, both origin bits and two formulations. Histogram [1,3,5,7,3,9,7,29], lag-two covariance1/32 and count variance5/8. Preregistered through827e006; exact short-horizon fair ensemble, no single-seed or interior-ray claim.
+
+- rule30_gpt_interior_flip.py (G101): IF1 passes512 initial words, exact factorized histogram, four-flip variance7/8 and second/fourth covariance1/32. Predictions and instrument through7773c41. Speed3/4 fair-row ensemble only; no single-seed or long-run variance inference.

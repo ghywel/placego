@@ -1,4 +1,4 @@
-"""G101 IF1 preregistered NOT RUN: publish before execution.
+"""G101 IF1 preregistered through7773c41; PASS 2026-10-06.
 Observer p_t=floor(3t/4), t0..4; all512 inputs at sites-1..7.
 Four-flip histogram = 4*[1,3,5,7,3,9,7,29] for each first-bit value.
 Mean11/4, variance7/8 versus independent13/16; covariance(1,3)=1/32.
