@@ -3031,3 +3031,27 @@ Because H_m>=1, taking liminf gives liminf S_m/m>=log(2)/log(3). This is stronge
 **Controls/ unexpected check.** CM1 passed256 finite residues/8320 bits; CM2 passed two complementary rational examples through128 bits. Unexpected CM3 confirms0 and-1 are complementary rational fixed points, refuting the overbroad statement without “not eventually periodic”. Finite residue and example checks do not establish global rationality preservation. The proof above supplies the infinite conclusion.
 
 **Next boundary.** Square-zero irrationality needs a point-specific argument or another known criterion; assuming global complement preservation would assume a central open conjecture. Do not queue that assumption as a lemma.
+
+
+## G37. The subcritical gap ladder survives the height-budget filter (2026-10-06)
+
+**Preregistration.** For zeros z_0=1,z_next=ceil(3z/2), audit Q_k=2^z_next/3^(z_k-k), the necessary G35 starting-height/correction budget at each gap. Predict Q_k tends to0 and has a finite maximum, so this filter alone cannot exclude the word. This does not predict rational realization. SB1: compute exact budgets for32 gaps; certify global tail decrease once gap>=32 using36*8^32<9^32 and the rounded recurrence. Unexpected SB2: pick D=1 and N=ceil(max Q)-1. Its initial height passes every bare budget, but direct parity iteration is predicted to disagree with the word. Counterfactual: passing every height budget suffices for parity realization. Reuse passed startup checks.
+
+
+### G37 outcome: a certified limitation, not a rational realization
+
+For z_0=1,z_next=ceil(3z/2), there are K_i=k+1 zeros before i=z_k+1. G35's necessary budget is H_0+D*E_i>=Q_k, with Q_k=2^z_next/3^(z_k-k). Set Delta_k=z_next-z_k. Direct division gives
+
+    Q_(k+1)/Q_k = 2^Delta_(k+1)/3^(Delta_k-1).
+
+The rounded recurrence implies Delta_(k+1)<=3*Delta_k/2+1, so the squared ratio is at most36*(8/9)^Delta_k. The gaps grow and, once Delta_k>=32, this is uniformly below1 because36*8^32<9^32. Thus the entire remaining budget tail decreases geometrically to0. This is an infinite tail certificate, not an extrapolation from32 samples.
+
+The global maximum is at k8,z8=41, next zero62:
+
+    max Q_k = 4611686018427387904 / 5559060566555523 < 830.
+
+Consequently choosing H_0=830 satisfies every bare target-word budget H_0>=Q_k, and hence every necessary H_0+D*E_i>=Q_k because E_i>=0. But the ordinary integer start829 has H_0=830,D=1 and its actual parity word first differs from the target at index3. These are formal necessary budgets computed from the prescribed word; they do not make that word the start's actual parity sequence. This explicitly rejects sufficiency of budget satisfaction. It neither supplies a rational realization nor proves that none exists.
+
+SB1 computed32 budgets and checked the exact recurrence/ratio; the uniform tail argument starts at gap index10 and establishes the global maximum. Unexpected SB2 verified the index3 mismatch through an independent direct iterate. No floating-point powers or rounding were used.
+
+**Method boundary.** The3/2-spacing word remains an aperiodic density1 candidate outside this exclusion filter, like the square-zero word. More generally, spacing factor c<log2(3) makes log2(Q_k)=(c-log2(3))*z_k+O(k), tending to minus infinity for geometrically growing z_k. Even-step accounting improves the critical boundary, but cannot force these subcritical budgets to diverge. A different inverse constraint is needed. Prior art is the same established growth/parity mechanism recorded in G34–G36; no novelty claim.
