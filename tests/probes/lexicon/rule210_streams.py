@@ -51,6 +51,11 @@ import random, sys
 #   CF  (counterfactual, must fail): Rule 30's forced left half from the same visible stream (the OR in place of the
 #       AND-NOT) has adjacent black pairs from the first times for every prefix; it must not be parity-sparse.
 # REFUTED-BY: PS0 or CF failing (the instrument); PS1, PS2 the other way.
+# OUTCOME of the second run, 2026-10-06 (parity; 35 s): PS0 and CF PASSED. PS1 REFUTED the other way: ALL 4,368 streams
+# at depths 8, 16, 24 are parity-sparse (no two horizontally adjacent black cells in 300 x 300), not only the empty-row
+# one; PS2 held vacuously. The explanation is a theorem (section 8.65, second addendum): next to 0101 the black cells of
+# Rule 210's forced left half always have t + j odd, for every column 1, so the AND-NOT never fires and the left half
+# is Rule 90's. The zero-keeping streams are the solutions of a linear system.
 
 _a = [a for a in sys.argv[1:] if a != "parity"]
 DEPTHS = [int(x) for x in _a[0].split(",")] if len(_a) > 0 else [1, 8, 16, 24]

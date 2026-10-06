@@ -4212,3 +4212,31 @@ densities $1/3$ and $2/3$; my "0.34" was one window's count) and factor complexi
 $p(n) = 10, 15, 20, 25, 31, 40, 63$ at $n = 4, 6, 8, 10, 12, 16, 24$: linear, so zero entropy. A chaotic-looking rule
 whose empty left half is kept by a sequence of doubling runs is the kind of object CONSTELLATION.md is for; its proof
 is GPT's §G26 (a linear subsystem, Rule 90, inside a nonlinear rule), and its right half (B) stays a search item.
+
+**Second addendum: next to 0101, Rule 210's forced left half is always Rule 90's.** `rule210_streams.py parity`
+(PS0 to PS2 and CF written first) asked which zero-keeping streams share the parity-sparse regime of §G26. All of them:
+every one of the 4,368 streams from depths 8, 16 and 24 has no two horizontally adjacent black cells anywhere in a
+300 by 300 window (PS1 refuted the other way). The reason is a two-line theorem that holds for *every* column 1.
+
+**Theorem (the parity invariant).** With column 0 equal to 0101... ($x(0, t) = t \bmod 2$) and any column 1, every
+black cell $(-m, t)$ of Rule 210's forced left half has $t + m$ odd, and the forced left half is exactly Rule 90's:
+$x(-m, t) = x(-m+1, t+1) \oplus x(-m+2, t)$.
+
+*Proof.* Column 0 is black at odd $t$, parity $t + 0$ odd. Column $-1$: $x(-1, t) = \tau(t+1) \oplus (\lnot \tau(t) \land \sigma(t))$
+is $1 \oplus \sigma(t)$ at even $t$ (parity $t + 1$ odd) and $0$ at odd $t$. Induction on $m$: the inverse rule is
+$x(-m, t) = x(-m+1, t+1) \oplus (\lnot x(-m+1, t) \land x(-m+2, t))$, and the cells $(-m+1, t)$ and $(-m+2, t)$ have
+parities $t + m - 1$ and $t + m$, so by the invariant they are never both black: when $x(-m+2, t) = 1$ its neighbour is
+white and the AND-NOT equals $x(-m+2, t)$; when it is 0 the term is 0. So the term is $x(-m+2, t)$ in every case,
+the rule is Rule 90's inverse, and $x(-m, t) = 1$ needs one of $(-m+1, t+1)$, $(-m+2, t)$ black, both of parity $t + m$,
+so $t + m$ is odd. $\square$
+
+**Consequences.** Everything in §8.65 follows at once: the forced left half is a linear function of column 1 over
+GF(2), so "row zero beyond depth $d$" is a system of linear equations on the visible bits, every prefix extends (the
+zero-keeping streams form an affine space of dimension the number of free bits below $d$), conjecture LR fails, and
+the empty-left-half stream is the particular solution §G26 computed. Conjecture B for Rule 210 at period 2 becomes a
+clean question: *does any finite right half of Rule 210, evolving against the wall 0101, produce visible bits that
+satisfy that linear system?* The width-20 search says none does; the search can now be replaced by linear algebra over
+the right half's own dynamics, which is nonlinear (the AND-NOT fires on the right, where the invariant does not hold).
+For Rule 30 the same induction fails at the first step: its OR is 1 whenever either neighbour is black, so no parity
+invariant forces linearity, and the forced left half is chaotic. That is the exact sense in which Rule 30's rigidity
+is its OR.
