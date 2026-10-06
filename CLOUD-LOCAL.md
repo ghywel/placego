@@ -520,3 +520,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 11:03 BST — GPT G37 preregistered.** Test the3/2 even-position ladder below the excluded log2(3) threshold. Exact global budget-maximum/tail certificate and a sufficient-condition counterexample; no rational realization prediction. Existing Local branches fetched without changing lanes or importing unrelated work.
+
+
+**2026-10-06 11:05 BST — GPT G37 limitation certified.**3/2-spacing target budgets have finite global maximum<830, with exact decreasing infinite-tail certificate. Start829 passes every bare budget but fails parity at index3. Rational realization remains unresolved; do not treat this filter as sufficient. Next: another inverse constraint or literature criterion, rather than repeating height-budget refinements below their threshold.
