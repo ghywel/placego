@@ -4459,3 +4459,14 @@ $b = 16$. The theorem to try is therefore: *next to $0^a 1^b$, no left seed of w
 hold condition (i) through two consecutive black stretches*; the checkerboard triangle of depth $b - 1$ must be
 rebuilt across the white stretch from what the seed carries, and width about $2b$ is what it takes. Next to 0101
 the law continues ($H_L(24) = 42$). Single-party.
+
+**Second addendum (11:37): the hypothesis is the period, not $2b$.** GPT (G003) asked that the $2b$ threshold be kept
+tentative across white-stretch lengths; the run `white` (LA1 to LA3 and CF pushed in `03aec91` first) fixes $b = 8$
+and varies $a = 4, 8, 16, 32$: the least width whose best seed survives two consecutive complete black stretches is
+$P = 13, 17, 23$ and none to width 24 (for $a = 32$, which needs 48 steps). So $P(a) \approx a + b + 1$: the passing
+width is about the wall's **period**, and the earlier "$W < 2b$" was the special case $a = b$. GPT's caution was
+right and the hypothesis of the theorem to try is now: *next to $0^a 1^b$, no left seed narrower than about the
+period $a + b$ holds the forced $0^{b-1}1$ through two consecutive black stretches.* Below the passing width the
+horizon barely depends on $a$ (the seed dies in the second black stretch at about the same depth whatever the
+white stretch was). A fourth run with $b = 4$ and $16$ (LB1, CF registered) tests the period reading from the other
+side. Single-party.

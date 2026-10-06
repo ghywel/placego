@@ -81,6 +81,21 @@ WHITE-STRETCH ADDENDUM, written 2026-10-06 before the third run (python3 rule30_
   CF  (counterfactual, must fail): P(32) <= 12 (a wide white stretch makes passing easier). It should not.
   REFUTED-BY: LA1 to LA3 the other way; CF holding. What would change my mind about "W against b": P(a) growing
   without bound in a would say the white stretch, not the black one, sets the hypothesis.
+  OUTCOME of the third run, 2026-10-06 11:37 (white; 4 minutes). P(4) = 13, P(8) = 17, P(16) = 23, P(32) = none to
+  width 24 (48 steps needed). LA1's substance HELD (non-decreasing, and P(16) - P(4) = 10), the verdict printed
+  REFUTED only because P(32) is undefined at this width; LA2 HELD; LA3 likewise substantively held (below the
+  passing width the rows for a = 8, 16, 32 agree within 2 steps; a = 4 within 3) and printed REFUTED for the same
+  technical reason; CF PASSED. The reading, not pre-registered: P(a) = a + b + 1 at a = 4 and 8 and a + b - 1 at
+  a = 16, i.e. the passing width is about the wall's PERIOD, not 2b. The run with a = b = 8 (P = 17 = 16 + 1) and
+  a = b = 16 (no pass at 24, period 32) agree. GPT's G003 caution was right: the hypothesis is W against a + b.
+
+PERIOD ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_leftside_horizon.py period): b = 4 and 16
+  with a = 4, 8: the walls 0^4 1^4, 0^8 1^4, 0^4 1^16, 0^8 1^16, widths to 24, passing = two consecutive complete
+  black stretches (H_L >= 2b + a).
+  LB1 (blind, the period reading): P(4,4) in [7, 11], P(8,4) in [11, 15], P(4,16) in [19, 23], and P(8,16) is none to
+      width 24 (it would be about 25).
+  CF  (counterfactual, must fail): P(8,4) <= 9, which the old "2b" reading would give. It must not.
+  REFUTED-BY: LB1 the other way (then the period is not the hypothesis either); CF holding.
 """
 import pathlib, subprocess, sys, tempfile
 
@@ -172,7 +187,30 @@ def white():
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def period():
+    exe = build()
+    with open(OUT, "a") as fh:
+        fh.write("# period run: 0^a 1^b for (a, b) = (4,4), (8,4), (4,16), (8,16), widths to 24, T = 100\n")
+    P = {}
+    for a, b in ((4, 4), (8, 4), (4, 16), (8, 16)):
+        word = "0" * a + "1" * b
+        out = subprocess.run([str(exe), word, "24", "100", "8"], capture_output=True, text=True, check=True).stdout
+        with open(OUT, "a") as fh:
+            fh.write(out)
+        r = {int(ln.split()[2]): int(ln.split()[4]) for ln in out.splitlines()}
+        P[(a, b)] = next((W for W in range(25) if r[W] >= 2 * b + a), None)
+        print(f"   0^{a} 1^{b}: " + " ".join(f"{W}:{r[W]}" for W in range(6, 25)) + f"   passing width {P[(a, b)]} (needs {2 * b + a})", flush=True)
+    ok = (P[(4, 4)] is not None and 7 <= P[(4, 4)] <= 11 and P[(8, 4)] is not None and 11 <= P[(8, 4)] <= 15
+          and P[(4, 16)] is not None and 19 <= P[(4, 16)] <= 23 and P[(8, 16)] is None)
+    verdict("LB1 P(4,4) in [7,11], P(8,4) in [11,15], P(4,16) in [19,23], P(8,16) none to 24", ok, f"P = {P}")
+    report("CF  P(8,4) is NOT <= 9", P[(8, 4)] is None or P[(8, 4)] > 9, f"P(8,4) = {P[(8, 4)]}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "period" in sys.argv[1:]:
+        period()
+        return
     if "white" in sys.argv[1:]:
         white()
         return
