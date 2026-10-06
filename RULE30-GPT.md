@@ -3536,3 +3536,26 @@ Shift the whole forced evolution forward by p. Its wall has the same phase and i
 The statement still requires phase-aligned period-block repeats. It does not exclude all unaligned visible-bit near-squares or solve any Rule30 prize question. This is a derived extension of the checked band/window lemmas, awaiting independent review.
 
 **Next checkpoint.** Request Local's independent reading of G52 including this addendum before promoting the generality index. If accepted, close this extension; evaluate the separate per-wall channel-certificate lead using current claims rather than starting a duplicate scan.
+
+## G53. General squeeze conversion, conditional on each wall's channel (2026-10-06)
+
+**Bounded analytic audit.** G52 review pending; take the separate general-squeeze qualification identified in Local L020. No numerical job. Prediction/target: exact entropy conversion by period-block coding, with no transfer of the0101 spectral constant. Counterfactual: the raw column1 language or a certificate for a different wall gives the same sharp bound. Unexpected check: invisible black-phase bits collapse to one left-neighbour trace on wall001. Prior mechanism checked against section8.33 proof steps2-4; no novelty claim.
+
+### G53 lemma and proof: period-block entropy conversion
+
+Fix a period-p wall tau, with z white phases per period. Let v_m be the z-bit vector of column1 at those phases during period m, and let pi be column-1. For a one-sided sequence s, let P_s(n) count its distinct contiguous n-symbol words, and h(s)=limsup log2(P_s(n))/n. The vectors v are symbols in an alphabet of size2^z. Then
+
+    h(pi)=h(v)/p,
+    h(column -k)<=h(v)/p for every fixed k>=1.
+
+At each white phase, pi(t)=tau(t+1) XOR sigma(t), so its p-symbol period block determines v_m uniquely. At each black phase, pi(t)=tau(t+1) XOR1 is fixed. Therefore period blocks of pi and symbols v are in bijection. Every n-vector word supplies a distinct aligned pn-bit pi word, giving P_v(n)<=P_pi(pn). Every m-bit pi word is determined by its start phase and at most ceil(m/p)+1 consecutive v symbols. Extend shorter determining words to this common length using the infinite future; hence P_pi(m)<=p*P_v(ceil(m/p)+1). Taking the two limsup bounds proves the equality.
+
+Repeated scalar inversion computes column-k over m times from pi and tau over at most m+k-1 times. There are p possible start phases of tau. Thus a deliberately loose uniform bound is
+
+    P_(column -k)(m)<=p*P_v(ceil((m+k-1)/p)+1).
+
+This proves the entropy inequality, since fixed finite lookahead and the phase factor disappear after division by m. In particular h(v)<=z gives the elementary bound z/p bits per physical step. If an independently certified per-period vector language obeys P_v(n)<=C*lambda^n, the bound improves to log2(lambda)/p. That hypothesis needs a certificate for the chosen wall; the0101 certificate does not establish it for another wall. With p2,z1 this recovers the established squeeze conversion, apart from deliberately looser finite constants.
+
+Unexpected scope check: for wall001 and all white-phase bits0, pi is the periodic word011 independently of every right bit at a black phase. Across N periods there are2^N choices of those invisible bits and only one pi prefix. Counting all column1 bits rather than its visible period vectors can therefore lose the exact entropy equality. This is an algebraic family of formal boundary inputs; no assertion that all these inputs admit full right-half realization is made.
+
+This is the period-block form of RULE30-PRIZE.md section8.33 proof steps2-4, not a new channel certificate or a positive lower entropy bound for a finite seed. It leaves the fixed-seed cost and left/right compatibility gaps open.
