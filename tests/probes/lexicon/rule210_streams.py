@@ -29,7 +29,13 @@ PREDICTIONS, written 2026-10-06 before this script's first run.
 REFUTED-BY: ZS0 or CF failing (the instrument); ZS1 the other way, which would leave B for Rule 210 a real question;
   ZS2 the other way.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-06 (depths 1, 8, 16, 24; N = 4000; 26 seconds): ZS0 and CF PASSED. ZS1 REFUTED and ZS2
+  REFUTED, completely: all 4,369 zero-keeping streams are aperiodic (no period up to 64 over the last 2,000 visible
+  bits), none ends in constant bits. So the zero-keeping choice is not finite-state, Jen's theorem does not reach
+  B for Rule 210, and B there is a real open question. Exploratory, after the run: the stream from depth 1 (the one
+  that keeps the whole left half empty) is 1 0 11 0000 1^8 0^16 1^32 ... with run lengths 1, 1, 2, 4, 8, ..., 1024
+  (checked to 6,000 depths), ones at share 0.34, and factor complexity p(n) = 10, 15, 20, 25, 31, 40, 63 at
+  n = 4, 6, 8, 10, 12, 16, 24: linear, zero entropy, aperiodic.
 """
 import random, sys
 

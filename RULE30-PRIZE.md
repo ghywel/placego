@@ -4188,3 +4188,15 @@ may still hold, which is the gap between LR and B made concrete on a rule where 
 cells, Theorems A to E and the band lemmas were all derived for Rule 30's OR. The band exists on Rule 110 and 118 too
 (§8.64); the rigidity of the forced left half does not survive the change of one gate. "Rule 30 is special" now has
 two measured senses: the white-diagonal clock in its band, and LR. CONSTELLATION.md row 14 is updated.
+
+**Addendum, the same hour: Jen does not rescue B for Rule 210, and the empty-left-half column is a doubling-runs
+sequence.** The hope of CHAT-LEDGER.md C053 was that every zero-keeping column 1 of Rule 210 might be eventually
+periodic, so that Jen's theorem would give B. `rule210_streams.py` (predictions ZS0 to ZS2 and CF written first) followed
+every zero-keeping stream from depths 1, 8, 16 and 24, all 4,369 of them, for 4,000 depths: **every one is aperiodic**
+(ZS1 and ZS2 refuted outright). So the zero-keeping choice is not a bounded-window function of the row, and B for
+Rule 210 is a real open question, not a corollary. The stream that keeps the whole left half empty from depth 1 is,
+as far as 6,000 depths show, $1\,0\,1^2\,0^4\,1^8\,0^{16} \cdots$, runs of lengths $1, 1, 2, 4, 8, \ldots, 1024$ (unproved
+beyond the data, but the pattern is exact to the last complete run), with ones at share 0.34 and factor complexity
+$p(n) = 10, 15, 20, 25, 31, 40, 63$ at $n = 4, 6, 8, 10, 12, 16, 24$: linear, so zero entropy. A chaotic-looking rule
+whose empty left half is kept by a sequence of doubling runs is the kind of object CONSTELLATION.md is for; its proof
+(why the runs double) is a reasoning item, and its right half (B) a search item, both open.
