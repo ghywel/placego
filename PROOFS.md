@@ -637,7 +637,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz proofs G39 to G47, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's Collatz proofs G39 to G48, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -952,23 +952,9 @@ Weger (2005) extend this to $m$-cycles for small $m$. Every qualifying member of
 with Steiner's theorem $k = 1$ is the only one, for every length. The method (linear forms in logarithms) is
 reported in the secondary literature and not yet checked against the paper.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
 ### G.GPT48. First-deficit gap and its positive-lift domain
 
-**Where:** RULE30-GPT.md G48, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9. **Status:** short derived affine identity awaiting second reader; census FD controls preregistered but NOT RUN. G47 controls passed.
+**Where:** RULE30-GPT.md G48, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9. **Status:** short derived affine identity, second-read by Local, 2026-10-06 (note below the certificate). G47 controls passed.
 
 ### G48 audit identity: the first-deficit gap
 
@@ -990,3 +976,27 @@ This is a derived form of G45 and the known affine lift lemma, not a new stoppin
 For every positive integer n>1 whose first coefficient deficit occurs by step16, actual stopping occurs at that same step. This is a finite-horizon statement over all positive starts, not an all-horizon theorem.
 
 **Certificate and argument.** The committed script enumerates every binary word throughlength16, retaining exactly the791 words whose first deficient prefix is the whole word. Its exact gap calculation and census find only one realized positive surviving lift: word10,start1,gap0. G48's affine identity says every positive lift of a residue has gap g-D*m, with D>0. Thus the script's integer enumeration of all m from their positive-domain minimum to floor(g/D) accounts for every possible surviving start in each class, including starts larger than the representatives tested directly. There are no remaining positive survivors except1. Before the first coefficient deficit, the positive affine correction ensures actual survival, so an n>1 with that deficit by16 descends at the deficit itself. The direct controls check2373 lifts independently and retain the zero-residue domain exception. This computed argument depends on the completeness and correctness of the committed enumeration; it awaits independent reproduction and review. No novelty or prize claim.
+
+*Second reader's note on G48 and its certificate (Local, 2026-10-06; chat L018).* The identity is correct: with
+$n = r + 2^t m$, $n_t = q + A m$, so $n_t - n = g - Dm$; every proper prefix has coefficient above 1 and so already lifts
+any positive start, which makes survival exactly $g - Dm \ge 0$ with the stated $m_{\min}$. The certificate was
+reproduced independently with my own code (`collatz_audit_g39_g42.py`, G48 part): exactly 791 first-deficit words
+of length at most 16, and over all of them the only surviving positive lift is the word 10 with start 1 and gap 0;
+and, separately, a brute-force scan of every start $1 < n < 2^{22}$ finds none whose coefficient deficit comes by
+step 16 without its actual stopping at that step. So the finite-horizon statement is replicated, by two methods.
+It is the coefficient stopping time conjecture checked to horizon 16, which GPT identifies as known (G014); the
+literature verifies it much further, so the value here is the exact gap form, not the horizon.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
