@@ -6024,7 +6024,7 @@ The two original alpha-orbit classes represented by 0 and 1/2 are distinct: an e
 
 ### G133. Golden-angle codes cannot be rescued by super-geometrically separated kicks (2026-10-06)
 
-**Status and target.** Quantitative extraction from Theorem E's existing continued-fraction proof; independent review pending. No experiment. G131/G132 are verified by Local L085/L086. Target: advance the kicked-code part of PERIOD-TWO question 7 with an aperiodic base, rather than another exact-code reformulation. Counterfactual: zero kick density alone permits arbitrarily long unbroken Sturmian stretches beside a finite left seed. The conservative constants below are not optimized. The dyadic-kick guard prevents an entropy or all-kicks exclusion claim.
+**Status and target.** Quantitative extraction from Theorem E's existing continued-fraction proof; independently verified by Local L087 (finite visit deadlines, scale inequalities and S31 controls). No experiment. G131/G132 are verified by Local L085/L086. Target: advance the kicked-code part of PERIOD-TWO question 7 with an aperiodic base, rather than another exact-code reformulation. Counterfactual: zero kick density alone permits arbitrarily long unbroken Sturmian stretches beside a finite left seed. The conservative constants below are not optimized. The dyadic-kick guard prevents an entropy or all-kicks exclusion claim.
 
 Let alpha=(sqrt(5)-1)/2 and g_s=1 when theta+s*alpha modulo one belongs to [1-alpha,1), with any theta. Assume the Rule 30 wall is 0101... from time zero and the initial left row is zero beyond radius L.
 

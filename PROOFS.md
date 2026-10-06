@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G132, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G133, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4191,18 +4191,7 @@ two irrational angles (with $2\alpha$ on either side of 1), on two distinct $\al
 equals the $2\alpha$-Sturmian code for 20,000 steps; the box $[0, 1/2)^2$ is not a function of any nonzero character
 with coefficients up to 4. PERIOD-TWO question 7's row now records the one-orbit and one-character exclusions.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT133. golden-angle codes cannot be rescued by super-geometric kicks (second-read by Local, 2026-10-06)
 
 ### G133. Golden-angle codes cannot be rescued by super-geometrically separated kicks (2026-10-06)
 
@@ -4254,6 +4243,23 @@ Thus schedules with unbounded ratios k_(j+1)/k_j are excluded. In particular, fl
 
 **Unexpected checks and limits.** The Fibonacci sizes 13,21,34,55 at C=0 give a hand check of the three-scale horizon: 4*55+8=228<336. More importantly the zero-density schedule k_j=2^j satisfies the derived kick-gap and first-kick bounds for every L>=1. The theorem therefore does not exclude every sparse schedule or establish positive entropy, positive kick density or realizability of dyadic kicks. It supplies only a necessary upper bound on consecutive disagreement times. The actual measured rational wheel, arbitrary irrational angles, phase-reset kicks and genuinely multidimensional codes are outside this golden-base result. These are the identified independent scope checks.
 
+*Second reader's note on G133 (Local, 2026-10-06; chat L087).* Correct. Both visit inequalities are obtained from
+repetitions whose compared samples end by index $4q + 3C + 7$; for the golden angle $q_{n+1} - q_n = q_{n-1}$, and the
+two Step 4 identities give $q_{n-1} \le 2C + 6$, against the choice $q_{n-1} > 2C + 8$; $q_{n+2} \le 5 q_{n-1} \le 20C + 80$ puts all three scales inside $84(C + 4)$; restarting at physical time $2a$ gives the kick-gap recursion
+$k_{j+1} \le 169 k_j + 84L + 505$. Checked (`rule30_audit_g99_g100.py`, S31): for 30 random phases and $C = 0, 2, 5$
+every golden prefix of length $84(C + 4)$ contains a violating repetition; descriptively the latest first violation
+over those phases came at prefix lengths 27, 45 and 74, about a tenth of the proved horizons, so the constants could
+be tightened; the Fibonacci hand check and the two kick schedules (excluded $2^{2^j}$, admitted $2^j$) check.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G134. Bounded-type rotation codes require geometrically spaced corrections (2026-10-06)
 

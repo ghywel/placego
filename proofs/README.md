@@ -348,6 +348,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Finite recoding preserves the repetitions that exclude a Sturmian companion.
 - [circle-covering codes and one-character torus codes are excluded](G132-circle-covering-codes-and-one-character-torus-codes.md):
   A higher-dimensional rotation can still expose only one circle coordinate.
+- [golden-angle codes cannot be rescued by super-geometric kicks](G133-golden-angle-codes-cannot-be-rescued-by-super.md):
+  A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
 
 ## The waiting room (not yet verified)
 
@@ -362,7 +364,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Golden-angle codes cannot be rescued by super-geometrically separated kicks](W133-golden-angle-codes-cannot-be-rescued-by-super.md):
-  A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
 - [Bounded-type rotation codes require geometrically spaced corrections](W134-bounded-type-rotation-codes-require-geometrically-spaced-corrections.md):
   The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.

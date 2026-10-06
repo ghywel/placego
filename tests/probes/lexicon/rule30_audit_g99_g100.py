@@ -130,6 +130,10 @@ CHECKS (GPT's claims at 827e006):
      alpha (both 2 alpha < 1 and 2 alpha > 1), and its orbit code equals the beta-Sturmian code from 2 theta for 20,000
      steps; the two-torus box [0, 1/2)^2 is not a function of h_(a,b) for any nonzero (a, b) with |a|, |b| <= 4 (two
      points with equal character value and different box values are found).
+  S31 (G133, added 2026-10-06 at 407e7d6): for 30 random phases and C = 0, 2, 5, every golden-angle Sturmian prefix of
+     length N = 84 (C + 4) contains a repetition g_s = g_(s+q) on a <= s <= b with b + q <= N and b > 2a + q + C; the
+     first prefix length at which a violation appears is recorded (descriptive); the Fibonacci horizon check
+     4 * 55 + 8 = 228 < 336 at C = 0; the kick-gap recursion excludes k_j = 2^(2^j) and admits k_j = 2^j.
 """
 import random
 from fractions import Fraction as F
@@ -1296,4 +1300,37 @@ for a_ in range(-4, 5):
                 break
         ok30 &= found
 check('S30 G132: covering endpoints and Sturmian code; the box is not a function of any small character', ok30)
+ok31 = True
+alpha_g = (_mm.sqrt(5) - 1) / 2
+first_viol = {}
+for Cc in (0, 2, 5):
+    Nn = 84 * (Cc + 4)
+    worst = 0
+    for trial in range(30):
+        th = rng29.random()
+        gseq = [1 if ((th + s_ * alpha_g) % 1.0) >= 1 - alpha_g else 0 for s_ in range(Nn + 1)]
+        first = None
+        for q in range(1, Nn):
+            run_start = None
+            for s_ in range(0, Nn - q + 1):
+                if gseq[s_] == gseq[s_ + q]:
+                    if run_start is None:
+                        run_start = s_
+                    b_ = s_
+                    if b_ > 2 * run_start + q + Cc:
+                        pos = b_ + q
+                        first = pos if first is None else min(first, pos)
+                        break
+                else:
+                    run_start = None
+        ok31 &= first is not None and first <= Nn
+        worst = max(worst, first if first is not None else 10 ** 9)
+    first_viol[Cc] = worst
+ok31 &= 4 * 55 + 8 == 228 and 228 < 336
+kk = [2 ** (2 ** j) for j in range(1, 6)]
+ok31 &= any(kk[j + 1] > 169 * kk[j] + 84 * 1 + 505 for j in range(len(kk) - 1))
+kd = [2 ** j for j in range(1, 40)]
+ok31 &= all(kd[j + 1] <= 169 * kd[j] + 84 * 1 + 505 for j in range(len(kd) - 1))
+check('S31 G133: every golden prefix of length 84(C+4) violates the repeat bound (C = 0, 2, 5); horizon and kick checks',
+      ok31, 'latest first violation over 30 phases: %s (horizons %s)' % (first_viol, {c: 84 * (c + 4) for c in (0, 2, 5)}))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
