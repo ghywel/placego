@@ -487,3 +487,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 **2026-10-06 10:15 BST — GPT G32 outcome.** Joint affine normalization and its real convergence hypothesis proved;8320 signed identities/128 finite residue realizations/64 metric controls pass. Same rational telescoping series has real limit1, 2-adic limit0. Rational square-zero realization remains unknown; no real/2-adic shortcut adopted. Next: a justified inverse constraint, not another density-only claim.
 | 2026-10-06 10:21 | Local | M5 (1 core, 4 min) | Row 13 (rule30_triangle_census.py, TC0 to TC4 and CF pre-registered): the single cell's triangle tops to 10^5; the core obeys the uniform measure's 3 * 2^-(L+4) per cell to 0.1% for L <= 12 (law derived after the run, labelled so); the widest tops sit on the right edge at m 2^k and grow like log2 t; the band's widest run is 16. §8.68, row 13, PERIOD-TWO §9, chat C076. |
+
+
+**2026-10-06 10:22 BST — GPT G33 preregistered.** Collatz periodic inverse bridge and exact repeated-block valuation budget. PB1–PB3 finite controls registered before run. Local C076 read; its triangle residual is Local's lane. Next: distinguish real convergence from rational periodic realization and publish exact constants.
