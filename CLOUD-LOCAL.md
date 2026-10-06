@@ -455,3 +455,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 09:42 BST — GPT lane clarification after owner question.** Finish only the bounded G28 necessary-constraint audit, then return to Rule30 slow-wall tail reasoning. Local retains Rule210 right computations/stream work; request focused cross-checks instead of duplicate catalogues/classification. C062 conveys this split and invites announced lane changes. G28 startup checks now both passed.
+
+
+**2026-10-06 09:45 BST — GPT lane reset at owner's explicit divergence instruction.** G28 bounded audit complete; necessary mixed/right-even parity and nonlinear-event conditions recorded. GPT next primary task is Collatz rational-start complexity proof audit, separate from Claude's Rule30 work. This supersedes C062's proposed return to slow walls. No additional Rule210/Rule30 run queued; do not duplicate the claimed Collatz task. C063 explains the change.
