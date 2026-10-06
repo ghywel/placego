@@ -1200,7 +1200,7 @@ Closing the row into a ring changes an exact probability even when large-ring st
 
 **An everyday picture.** Joining the ends of a chain removes the free end used to reconstruct it.
 
-## W106
+## G106
 The snapshots can stay statistically unchanged while motion through them changes.
 
 **What it says.** In the infinite fair right-reading race model, an observer stepping left or staying has flip mean1/2. Stepping right has mean(3-eps)/(4-2eps), increasing from3/4 despite unchanged fair spatial rows.

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G105, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G106, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3199,22 +3199,15 @@ $x_{i-1} = x_i \vee R_i$ around the ring, so one old 1 spreads to all; the left 
 (`rule30_audit_g99_g100.py`, S8) with my own sequential race step on rings of 3 to 7 cells, every flag word and both
 directions: exactly 2 zero-row preimages for right races, 1 or 2 for left races according to an effective flag, the
 exact masses $2^{1-W}$ and $[1 + (1-\epsilon)^{W-1}]\,2^{-W}$ at four values of $\epsilon$, and the zero row fixed
-under every flag word. This qualifies my race run's summary precisely: on a finite ring the row law is preserved only
-approximately (by exponentially small masses), and "the fuzz replaces the history" needs an active state: the empty
+under every flag word. This qualifies my race run's summary: on a finite ring the exact row law fails (the zero row's mass
+is doubled, an exponentially small amount for one event; GPT's G103 note: this is not a bound on total variation or
+on any other statistic, so how close the ring stays overall is open), and "the fuzz replaces the history" needs an active state: the empty
 row is never replaced.
 
 
 **GPT scope clarification after L060.** The zero-row probability discrepancy is exponentially small. This one cylinder supplies no upper bound on total variation of the whole row law or on every local statistic, especially at later times. General finite-ring closeness remains open.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT106. spatial fairness survives right races; the moving-frame change does not (second-read by Local, 2026-10-06)
 
 ### G106. Spatial fairness survives right races, but moving-frame temporal activity changes (2026-10-06)
 
@@ -3253,3 +3246,22 @@ For finite D these are polynomial probabilities also defined at eps1. At eps1, U
 **Unexpected temporal guard.** With eps1/2, the infinite rightward flip mean is5/6, not3/4, although every noisy spatial row remains iid fair. Equal spatial measures need not give equal transition measures. This directly addresses the owner's temporal-field motivation without claiming physical acceleration or a prize result.
 
 **TF1 preregistered NOT RUN.** D0..4, enumerate all old words on sites-2..D+2 and every flag pattern on sites-1..D, with siteD+1 a synchronous terminal. Use the literal Rule30 truth table to compute the next block, then count observer flips for delta-1,0,1. Exact flag weights at eps0,1/4,1/2,1 must give1/2,1/2,U_D. Independent control is the conditioned OR recurrence, including its exact remainder, against full word/flag enumeration. Predict43648 cases and60 weighted flip checks; this count happens to match ZR1 but the objects differ. Counterfactual that unchanged spatial law forces unchanged rightward flip mean must fail. Publish predictions and instrument before execution; no long-ray or colleague race-statistics rerun.
+
+*Second reader's note on G106 (Local, 2026-10-06; chat L061).* Correct. The rightward flip is $A_{i+1}$, and a raced
+site gives $A_j = x_j \vee A_{j+1}$ with $x_j$ fresh, so $U = (3 - \epsilon)/(4 - 2\epsilon)$; stays and left steps
+keep a fresh far-left bit. Checked (`rule30_audit_g99_g100.py`, S9) by exact enumeration of old words and flags for
+$D \le 4$ at $\epsilon = 0, 1/4, 1/2, 1$: means $1/2$, $1/2$ and $U_D$ with the stated remainder; the limit at
+$\epsilon = 1/2$ is $5/6$. This is the cleanest answer yet to the owner's fuzz question: every snapshot stays fair,
+and the fuzz shows only in the temporal field seen by an observer moving right.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
