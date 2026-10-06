@@ -1164,7 +1164,7 @@ Temporal memory also appears in an interior moving frame.
 
 **An everyday picture.** A slower route can still contain short stretches that carry the same memory as a fast route.
 
-## W102
+## G102
 A raced neighbour can carry an extra race into the next update.
 
 **What it says.** On a fair initial row, isolated right races inject with probability1/8. An open-boundary chain model gives bulk conditional probability1/(8-4*eps), with an exact finite-depth remainder. Finite left chains retain probability1/2.

@@ -18,6 +18,10 @@ CHECKS (GPT's claims at 827e006):
      mean 11/4 and variance 7/8 (independent flips: 13/16).
   S4 (G092's scope point on L054, exact): from sites 0..3 = 0, 0, 0, 1 (zeros elsewhere), right races at site 1 then
      site 0 make site 0 differ from the synchronous value, while site 0's isolated right-race injection is 0.
+  S5 (G102, added 2026-10-06 at 84d09c9): a forced race at site 0 of a fair row, neighbour race flags at sites 1..D
+     (right) or -1..-D (left) with weights eps^k (1 - eps)^(D - k), the next site synchronous; by exact enumeration of
+     every old word and flag word for D = 0..5 and eps = 0, 1/100, 1/4, 1/2, 1: right injection = Q_D / 4 with
+     Q_0 = 1/2, Q_D = 1/2 + (eps/2) Q_(D-1), remainder (eps/2)^(D+1) / (4 (2 - eps)) to 1/(8 - 4 eps); left = 1/2.
 """
 import random
 from fractions import Fraction as F
@@ -118,4 +122,46 @@ new[0] = R30(row[-1], row[0], new[1])         # right race at site 0 reads the r
 iso0 = (1 - row[0]) & (sync[1] ^ row[1])      # isolated injection at site 0: NOT x_0 AND (synchronous change of site 1)
 check('S4 G092: chained right races make site 0 differ though its isolated injection is 0',
       new[0] != sync[0] and iso0 == 0, 'sync %d raced %d' % (sync[0], new[0]))
+def chain(D, eps, side):
+    """Exact injection probability at site 0 under a forced race, D neighbour flags, as a Fraction."""
+    tot = F(0)
+    n = D + 4                                     # old sites -(D+2) .. (D+2) suffice for both sides
+    sites = list(range(-(D + 2), D + 3))
+    for w in range(2 ** len(sites)):
+        old = {sites[k]: (w >> k) & 1 for k in range(len(sites))}
+        for fl in range(2 ** D):
+            flags = [(fl >> k) & 1 for k in range(D)]
+            weight = F(1)
+            for f_ in flags:
+                weight *= eps if f_ else 1 - eps
+            new = {}
+            if side == 'R':
+                # site D+1 synchronous; sites D..1 race if flagged (read the new right neighbour); site 0 forced race
+                new[D + 1] = R30(old[D], old[D + 1], old[D + 2])
+                for i in range(D, 0, -1):
+                    rr = new[i + 1] if flags[i - 1] else old[i + 1]
+                    new[i] = R30(old[i - 1], old[i], rr)
+                raced = R30(old[-1], old[0], new[1])
+            else:
+                new[-(D + 1)] = R30(old[-(D + 2)], old[-(D + 1)], old[-D])
+                for i in range(-D, 0):
+                    ll = new[i - 1] if flags[-i - 1] else old[i - 1]
+                    new[i] = R30(ll, old[i], old[i + 1])
+                raced = R30(new[-1], old[0], old[1])
+            sync = R30(old[-1], old[0], old[1])
+            tot += weight * (raced != sync)
+    return tot / 2 ** len(sites)
+
+
+ok5 = True
+for eps in (F(0), F(1, 100), F(1, 4), F(1, 2), F(1)):
+    Q = F(1, 2)
+    for D in range(0, 6):
+        if D > 0:
+            Q = F(1, 2) + eps / 2 * Q
+        r_, l_ = chain(D, eps, 'R'), chain(D, eps, 'L')
+        lim = 1 / (8 - 4 * eps)
+        ok5 &= r_ == Q / 4 and lim - r_ == (eps / 2) ** (D + 1) / (4 * (2 - eps)) and l_ == F(1, 2)
+check('S5 G102: right chain Q_D/4 with the stated remainder; left 1/2 (D <= 5; eps = 0, 1/100, 1/4, 1/2, 1)', ok5,
+      'q at eps = 1/100: %.5f' % float(1 / (8 - 4 * F(1, 100))))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

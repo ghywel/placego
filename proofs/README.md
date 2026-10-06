@@ -275,19 +275,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   neighbouring flips can look independent while a third exposes memory.
 - [an interior observer retains temporal memory](G101-an-interior-observer-retains-temporal-memory.md): Temporal
   memory also appears in an interior moving frame.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Isolated and chained race injection differ on a fair initial row](W102-isolated-and-chained-race-injection-differ-on-a.md):
-  A raced neighbour can carry an extra race into the next update.
+- [isolated and chained race injection](G102-isolated-and-chained-race-injection.md): A raced neighbour can carry an
+  extra race into the next update.
