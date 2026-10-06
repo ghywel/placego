@@ -1532,7 +1532,7 @@ Six forbidden words completely describe the sideways rule's first ternary image.
 
 **An everyday picture.** A short checklist now determines whether a whole sequence can pass through one stage, but later stages may impose more rules.
 
-## W127
+## G127
 A predecessor inside the image may require a longer repeating pattern.
 
 **What it says.** A period-two target has a period-four predecessor inside the image, but no period-two predecessor there. Therefore no predecessor choice that commutes with shifting can stay inside the image for every target.
@@ -1541,7 +1541,7 @@ A predecessor inside the image may require a longer repeating pattern.
 
 **An everyday picture.** A repeating request may need a response with a longer loop, even when a short local response exists outside the allowed set.
 
-## W128
+## G128
 The unrestricted sideways limit still contains every binary temporal trace.
 
 **What it says.** Adjacent columns in a full spacetime diagram give exactly the sideways limit set. Projecting onto either column can produce any binary time sequence, so the limit contains nonperiodic sequences and retains at least one bit of word-count entropy per site.

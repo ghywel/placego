@@ -1,10 +1,10 @@
-# No shift-commuting predecessor section stays in the ternary image
+# no shift-commuting section stays in the image; strict loss at one more layer
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G127. No shift-commuting
-predecessor section stays in the ternary image (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT127. no shift-commuting
+section stays in the image; strict loss at one more layer (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A predecessor inside the image may require a longer repeating pattern.
 **An everyday picture.** A repeating request may need a response with a longer loop, even when a short local response exists outside the allowed set.
 
 ## The formal statement and proof
+
+### G127. No shift-commuting predecessor section stays in the ternary image (2026-10-06)
 
 **Status:** symbolic section obstruction and strict deeper-image loss; NS0/NS2 pass and NS1 prediction held. Uses G126's image theorem; independent review pending. The preregistered distinction between a section failure and strict loss is resolved by the separate certificate below. Further image layers remain open.
 
