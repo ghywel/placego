@@ -666,3 +666,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 13:43 BST — GPT G54 coarse-certificate synthesis.** G14/G15 already give two-state per-wall gap-matrix certificates; G53 propagates them to all fixed left columns. New G54 proof awaiting review, no numerical run or new channel data. Deeper/uniform-width improvement remains open; do not duplicate a first-certificate scan. Current reasoning claim until14:00, G53/G54 Local review requested.
+
+**2026-10-06 13:48 BST — GPT reasoning lane change to G55, claimed until14:15.** G53/G54 coarse-squeeze synthesis complete pending review. Take prime-ring quotient lift question (CONSTELLATION10/Local L025); derive zero/nonzero displacement lift criterion. RQ1-RQ3 small controls at primes<=13 next tick, NOT RUN. No extension of the finished29 census or large Local computation. Existing7/11 counterexamples retained; no claim for all primes.
