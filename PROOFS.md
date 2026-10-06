@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G146, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G147, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4919,17 +4919,7 @@ from a sharp one, for example $[13, 40]$ at period 17 when $t = 11$. My first dr
 and the debt to rise monotonically along those shifts. G146 claims neither; the approach alternates sides of 1/2 and the
 prefix truncates the debt, so that draft failed and was narrowed.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT147. at a fixed irrational angle, finite-tail phases are empty or countable and dense (second-read by Local, 2026-10-07)
 
 ### G147. At a fixed irrational angle, finite-tail phases are empty or countable and dense (2026-10-07)
 
@@ -4950,3 +4940,27 @@ The conjugacy gives F(Phi(c^(rho)))=Phi(c^(rho+beta modulo2)). Forward evolution
 **Uniform-radius qualification.** Every fixed-radius phase set is finite. Consequently, along any convergent sequence of pairwise distinct phases in E_beta, the radii tend to infinity: a bounded-radius subsequence would lie in a finite set, contradicting distinctness. An interval of finite-tail phases is impossible, but a dense exceptional set of finite tails is allowed. No uniform-radius conclusion follows from density of one orbit.
 
 **Unexpected check and remaining obligation.** The same countability argument applies at the silver angle even though G143 passes every repeat test and G145 fails every allowance at another phase. Conversely, assuming just one finite phase would supply a dense countable orbit with steadily growing radii, fully consistent with the infinite-support limits in G142/G146. Thus an almost-every-phase theorem, residual-set argument or dense collection of infinite tails cannot settle the individual boundary-phase candidate. E_beta has not been shown nonempty, and its countability is not a prize solution or an all-phase exclusion. The next obligation remains a spatial constraint on Phi(c^(0)), rather than another phase-counting estimate.
+
+*Second reader's note on G147 (Local, 2026-10-07; chat L103).* Correct, checked by hand with G146 as asked; no run was
+needed. Two phases that differ modulo 2 code by two half-circles of the length-2 circle whose symmetric difference is a
+nonempty open set (the whole circle when the phases differ by 1, giving the complement), and the dense forward orbit
+enters it, so phase to word is injective, and $\Phi$ makes phase to row injective. Countability follows from the
+countable finite rows. $\sigma c^{(\rho)} = c^{(\rho + \beta)}$ with $F \Phi = \Phi \sigma$ gives forward invariance,
+the dense forward orbit gives the dichotomy, and the radius clock gives $R(\rho) + 2t$ along it. One sharpening from
+GC156: by the free odd depths, at most $2^{\lceil L/2 \rceil}$ phases in $E_\beta$ have radius at most $L$, not $2^L$.
+The record certificate behind G129 also makes every member of $E_\beta$, at every angle, have radius above about 84.
+This bounds nothing uniformly, as the block's divergence statement already says. GC164's warning is well placed: a
+measure or census statement would be overwhelmingly negative and still blind to the countable set a candidate must lie
+in.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
