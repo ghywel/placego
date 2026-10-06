@@ -14,6 +14,8 @@
 // forced (the one choice that keeps L(k) = 0), and a run ends at the first forced cell (w(k-1) = 1) with L(k) = 1.
 //
 // Usage: records_word WORD D [THREADS] [SPLIT]   (SPLIT = number of leading free bits spread over the threads)
+// Build with -DRULE210 for Rule 210, the one other nonlinear left-permutive rule with a quiescent white background
+// (RULE30-PRIZE.md section 8.64): same search, the inverse rule's OR replaced by an AND-NOT.
 // Prints:  R w D = R (COUNT of LEAVES prefixes reach it); cap CAP   and CAPPED if any walk reaches the cap.
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,8 +44,13 @@ static inline bits shl(bits a, int s) {            // s = 1 or 2
 static inline bits step(bits a1, bits a2, int s, int wk) {
     bits b = shl(a1, 1), c = shl(a2, 2), r;
     uint64_t carry = 0;
+    c.w[0] |= (uint64_t)s << 1;
+#ifdef RULE210
+    /* Rule 210, x' = l xor (not c and r): the inverse reads l = x' xor (not c and r), so the OR becomes an AND-NOT */
+    for (int i = 0; i < NW; i++) b.w[i] = (~b.w[i]) & c.w[i];
+#else
     for (int i = 0; i < NW; i++) b.w[i] |= c.w[i];
-    b.w[0] |= (uint64_t)s << 1;
+#endif
     for (int i = 0; i < NW; i++) {
         uint64_t x = b.w[i];
         x ^= x << 1; x ^= x << 2; x ^= x << 4; x ^= x << 8; x ^= x << 16; x ^= x << 32;
@@ -59,6 +66,7 @@ static inline int getbit(bits a, int k) { return (a.w[k >> 6] >> (k & 63)) & 1; 
 // the forced walk from level k (>= D) with the run so far zero: returns the run length reached, CAP if capped
 static int walk(int k, bits a1, bits a2) {
     while (k - D < CAP) {
+        if (k >= 64 * NW - 2) return CAP;          /* out of bits: count as capped (the word 0 reaches this) */
         int free = wbit(k - 1) == 0;
         bits a = step(a1, a2, 0, wbit(k));
         if (getbit(a, k)) {

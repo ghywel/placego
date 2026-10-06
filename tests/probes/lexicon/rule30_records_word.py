@@ -95,6 +95,24 @@ from ompflags import OMP
 # see rule30_records_word.txt; R/d at 48 is 0.812, 0.812, 0.667, 0.792 for a = 2, 4, 8, 16. SW2 REFUTED (no fall
 # with a; 0.79 at a = 16, not below 0.60). SW3 HELD (max 38 <= 44). Freedom, not switch density, sets LR's law.
 
+# THIRD ADDENDUM, written 2026-10-06 before the fourth run (python3 rule30_records_word.py [THREADS] r210): Rule 210,
+# x' = l xor (not c and r), the one other nonlinear left-permutive rule with a quiescent white background (section 8.64).
+# records_word.c -DRULE210 replaces the inverse rule's OR by an AND-NOT; everything else is the same search.
+# SEEN BEFORE these predictions (exploratory, 2026-10-06 09:35): the engine reported every prefix reaching the cap at
+# depths 8, 16, 24 next to 0101, and an independent greedy computation in Python confirmed zero runs of 112 cells from
+# depth 8 for all 16 prefixes, and found a column 1 (1011 0000 1111 1111 then zeros at the even times) whose forced left
+# half is EMPTY at time 0. A search of two-sided configurations of width <= 16 found none with centre 0101 for 300 steps.
+#   Z0 (control, must hold): the Rule 30 build is unchanged: R(01, d) at d = 8, 24, 46 equals the record file.
+#   Z1 (must hold, given the exploratory finding): for Rule 210 next to 0101, every prefix reaches the cap at depths
+#       8, 16, 24 and 32 (LR is false for Rule 210 at period 2).
+#   Z2 (blind): at depth 1 as well, every prefix reaches the cap: there is no depth at which the forced cells bite.
+#   Z3 (blind; B for Rule 210 to width 20): no two-sided configuration with the wall at its left end and a right half of
+#       width at most 20 keeps the centre column 0101... for 300 steps.
+#   CF (counterfactual, must fail): the Rule 210 build with the wall word 1 (Condrey's black wall) also reaches the cap.
+#       It must not: its forced left half is the all-black fibre, R = 0.
+# REFUTED-BY: Z0 or CF failing (the engine); Z1, Z2, Z3 the other way.
+
+
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "rule30_records_word.txt"
@@ -194,7 +212,46 @@ def slow(exe):
     print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
 
 
+def r210():
+    exe = build()
+    arch = ["-mcpu=apple-m1"] if sys.platform == "darwin" else []
+    exe210 = pathlib.Path(tempfile.gettempdir()) / "rule30_records_word_210"
+    subprocess.run(["cc", "-O3", *arch, *OMP, "-DRULE210", "-o", str(exe210), str(HERE / "records_word.c")], check=True)
+    known = {}
+    for ln in (HERE / "rule30_records_cloud.txt").read_text().splitlines():
+        if ln.startswith("R "):
+            f = ln.split(); known[int(f[1])] = int(f[2])
+    report("Z0 the Rule 30 build is unchanged at d = 8, 24, 46", all(run(exe, "01", d, record=False)[0] == known[d] for d in (8, 24, 46)))
+    caps = [run(exe210, "01", d, record=False)[1] for d in (8, 16, 24, 32)]
+    report("Z1 Rule 210 next to 0101: every prefix reaches the cap at depths 8, 16, 24, 32 (LR is false for 210)", all(caps))
+    verdict("Z2 from depth 1 as well", run(exe210, "01", 1, record=False)[1])
+    report("CF  Rule 210 with the wall word 1 gives R = 0, not the cap", run(exe210, "1", 6, record=False)[0] == 0)
+    # Z3: two-sided configurations, the wall at the left end, right halves of width <= 20, 300 steps
+    def step210(x, mask):
+        return ((x >> 1) ^ ((~x) & (x << 1))) & mask
+    found = None
+    mask = (1 << 1000) - 1
+    for w in range(1, 21):
+        for right in range(1 << (w - 1), 1 << w):      # the right half occupies cells 1 .. w, its last cell black
+            x = right << 401                                # the centre is bit 400, white at time 0
+            ok = True
+            for t in range(1, 300):
+                x = step210(x, mask)
+                if (x >> 400) & 1 != t % 2:
+                    ok = False; break
+            if ok:
+                found = (w, right); break
+        if found:
+            break
+    verdict("Z3 no right half of width <= 20 keeps the centre 0101 for 300 steps (B for Rule 210 to width 20)",
+            found is None, f"{found}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "r210" in sys.argv[1:]:
+        r210()
+        return
     exe = build()
     if "holes" in sys.argv[1:]:
         holes(exe)
