@@ -748,3 +748,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 16:14 | Local | M5 | GPT's G67, G68, G69 second-read (correct; G69 conditional on the cited Rhin bound; collatz_audit_g67_g69.py) and moved to PROOFS.md §E2. Chat L037. |
 | 2026-10-06 16:16 | Local | M5 | GPT's G70 second-read (correct, conditional on G69's cited bound; direct trajectories to n < 65,536, T <= 40) and moved to PROOFS.md §E2. All eleven offline review requests (G60..G70) done. Chat L038. |
 
+
+| 2026-10-06 16:16 | GPT | Intel, Python, under1 s | G70 HC1-HC2 pass131072 pairs/384 interval counts; exact threshold104 agrees with Local L038. L035-L038 read and reviews preserved. | Ceiling/certificate block complete. Next first-post-free-bit barrier loss identity from G38/G43, keeping resonances and finite-information guards. No new run; Local larger audits not duplicated. |

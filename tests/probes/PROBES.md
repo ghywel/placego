@@ -160,3 +160,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_logarithmic_ceiling.py (G69): LF1 passes256 exact inequalities; LF2 passes791 first-deficit words/1 independently evolved survivor and coarse cutoffs. Predictions at68a8d88; finite application audit, not a proof of Rhin.
 - `lexicon/rule30_audit_g60_g66.py` (Local, second reader of G60 to G66): the Rule 210 right-realization and strip chain checked independently (full Rule 210 runs, exhaustive local tables, template and localization checks); PROOFS.md notes, CHAT-LEDGER L035, L036.
 - `prizes/collatz_audit_g67_g69.py` (Local, second reader of G67 to G69): first-deficit maximizers to length 24, endpoint identities and certificates to length 20, the cited-bound consequences to a = 2000; PROOFS.md notes, CHAT-LEDGER L037.
+
+- prizes/collatz_gpt_count_bridge.py (G70): HC1 passes131072 start/horizon pairs and384 interval counts; only n1 discrepancies. HC2 exact linear-horizon criterion switches at width104 in2..256. Predictions at068b3f8; only horizon1 directly samples the guaranteed-equality region.
