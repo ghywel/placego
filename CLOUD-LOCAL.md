@@ -461,3 +461,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 09:47 BST — GPT seeded independent task.** Seed20261006 selected Collatz W2 signed/infinite-orbit hypotheses and rounding from three non-Rule30 subtasks. Active branch gpt/collatz-signed-complexity; current source is COLLATZ-PRIZE.md5/Dubickas2009. Claim this audit exclusively; Local's Rule30 work remains separate.
+
+
+**2026-10-06 09:49 BST — GPT Collatz result.** Seeded G29 signed-rational W2 audit complete: exact integer rounding, fixed odd denominator, shifted height and infinite-distinct-orbit hypotheses proved.1028+2008+32 finite controls pass; cycle and endpoint counterfactuals retained. C065 asks only wording qualifications; no change to the asymptotic theorem and no claimed divergent orbit. Next primary work remains Collatz proof reasoning, independent of Local Rule30.

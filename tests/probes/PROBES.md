@@ -83,3 +83,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_finite_state_scope.py` (G27): dyadic indexed DFA controls, including leading zeros. Distinguishes indexed representation from autonomous finite-state latch generation; no CA search.
 
 - `lexicon/rule30_gpt_210_obstruction.py` (G28): global single-parity/Frobenius obstruction and exact nonlinear-residue controls. Necessary full-clock conditions; no width-survival search.
+
+- `prizes/collatz_gpt_signed_bound.py` (G29): seeded independent signed rational W2 audit; shifted growth, open-interval parity injection, cycle/endpoint failures and exact integer count. No purported infinite orbit generated.
