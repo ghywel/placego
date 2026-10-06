@@ -637,7 +637,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz proofs G39 to G46, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's Collatz proofs G39 to G47, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -916,24 +916,9 @@ within $\eta$ of 1). Checked exactly: the closed form equals G45's general ceili
 record ceilings $(k, K)$ are $(5, 16)$, $(17, 25)$, $(29, 39)$, $(41, 86)$, $(94, 106)$, $(147, 136)$, $(200, 191)$,
 $(253, 321)$, $(306, 977)$, at the $k$ where $k\log_2 3$ falls just below an integer (`collatz_audit_g39_g42.py`, G46 part).
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
 ### G.GPT47. First-deficit single-run survival implies a periodic return
 
-**Where:** RULE30-GPT.md G47, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9. **Status:** complete analytic argument awaiting second reader; RC controls published but NOT RUN. G46's KC controls passed; G46 argument independently audited by Local L014.
+**Where:** RULE30-GPT.md G47, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9. **Status:** complete analytic argument, second-read by Local, 2026-10-06 (note below); GPT's RC controls published, not run at publication. G46's KC controls passed; G46 argument independently audited by Local L014.
 
 ### G47 theorem and proof: this first-deficit family realizes only by a return
 
@@ -954,6 +939,32 @@ If so it is unique: m=(B-1)/D and n=2^k*m-1. Conversely this value has the presc
 
 At k=1,j=2,D=1,B=2 the criterion gives start1 and the known1,2 cycle. No assertion that this is the only qualifying k for all lengths is proved here. Excluding other positive cycles would require additional reasoning or a precisely audited external result. The criterion is a specialization of G33's known periodic affine formula, sharpened by the monotone shape and first-deficit condition. It does not apply to arbitrary interleaved parity words or bound their actual-survival exceptions. In particular G46's unbounded formal ceilings alone cannot produce nonperiodic exceptions in this specific family.
 
+*Second reader's note on G47 (Local, 2026-10-06; chat L017).* Correct. A start with $k$ initial odd steps is
+$n = 2^k m - 1$ and reaches $3^k m - 1$; the $j - k$ even steps need $2^{j-k} \mid 3^k m - 1$, i.e.
+$Dm \equiv -1 \pmod B$ since $2^j m \equiv 0$; the path's minimum after the start is its last value, so survival is $n_j \ge n$,
+and $n_j - n = (B - 1 - Dm)/B$ forces $Dm = B - 1$; the converse and $n < 2^j$ check. Exact search: for $k = 1$ to
+3000 the criterion holds only at $k = 1$ (the cycle $1, 2$), and the candidate start passes a direct test there
+(`collatz_audit_g39_g42.py`, G47 part). **A connection that closes G47's open clause by citation, to be audited
+against the paper:** a cycle made of one run of odd steps followed by one run of even steps is a *circuit* (a
+1-cycle) in R. P. Steiner, "A theorem on the Syracuse problem", Proc. 7th Manitoba Conference on Numerical
+Mathematics and Computing (1977), 553 to 559, which proves that the only circuit is the trivial one; Simons and de
+Weger (2005) extend this to $m$-cycles for small $m$. Every qualifying member of G47's family is such a circuit, so
+with Steiner's theorem $k = 1$ is the only one, for every length. The method (linear forms in logarithms) is
+reported in the secondary literature and not yet checked against the paper.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G.GPT48. First-deficit gap and its positive-lift domain
 

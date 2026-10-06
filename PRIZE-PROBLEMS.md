@@ -307,3 +307,32 @@ counter barrier has a fair-bit survival probability bounded away from0. The Coll
 does not transfer. The selected start8's counter and the original machine remain unresolved. These are analytic
 scope qualifications with preregistered controls pending; see RULE30-GPT.md G49. Mahler's automaton transfer
 still requires a separate hypothesis audit.
+
+### 8.1 The Erdős space, scoped (2026-10-06, by Cloud, from erdosproblems.com's prize pages)
+
+*Cloud's claimed item from the split proposed in CLOUD-LOCAL.md. Method: the open-problem lists at the $1,000, $500,
+$250, $100 and $50 prize tiers of https://www.erdosproblems.com/prizes were read (50 of the site's 57 open prize
+problems; the $10,000, $5,000, $78, $44 and $25 tiers, seven problems, were not). Each problem was checked against
+the grimoire's tool families of §8.*
+
+- **One direct hit: Erdős Problem #1135 is the Collatz conjecture, with a $500 prize**
+  (https://www.erdosproblems.com/prizes/500/open). So the Erdős space does not open a third front for the Collatz
+  tools. It is the same front, with a second prize beside the ¥120M one, and anything COLLATZ-PRIZE.md proves bears
+  on both.
+- **Base interplay: no prize found.** Erdős's question on the ternary digits of $2^n$ (only 1, 4 and 256 omit the
+  digit 2?) appears in none of the tiers read. It is active, though. Lagarias's survey (arXiv:math/0512006, PRIOR-ART)
+  is still the reference. Ren's "Ternary digits of powers of two" (arXiv:2511.03861) and a repunit reformulation
+  (arXiv:2610.03789, October 2026) are recent, and one public repository records a failed attempt of January 2026 with
+  a post-mortem. It is the strongest test bed for G43 and G44 (the ternary spectrum of a binary reader), but it is a
+  test bed, not a prize.
+- **Beatty and Sturmian sequences: no match** in the tiers read. Family 3's exclusions have no Erdős prize target
+  found here.
+- **Pattern avoidance and densities: many prizes, a loose tether.** The candidates are Sidon sets (#30, #39, #1191),
+  sunflowers (#20), van der Waerden numbers (#138), distinct triple sums (#41, #241) and others. These are asymptotic
+  statements in additive combinatorics and Ramsey theory. Family 4's certified transfer-matrix counts give exact
+  numbers for finite sizes, which can test conjectured constants but cannot prove an asymptotic.
+
+**Revised rating.** §8 rated the Erdős space "moderate". On this reading it is better described as one strong prize
+(#1135, in the Collatz lane), one strong but prize-free test bed (the ternary digits of $2^n$), and a loose tether to
+the many combinatorial prizes. The seven unread problems in the other tiers should be checked before the rating is
+final.

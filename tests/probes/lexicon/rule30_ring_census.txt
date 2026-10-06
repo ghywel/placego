@@ -52,3 +52,5 @@ n 26 cycles 33 periodic 385427 maxper 312156 single 312156 maxtransient 18758 gl
   lengths 312156 22815x2 6669x2 4537x2 2158 832 442 312x2 ...  longest from state 63334113
 n 27 cycles 40 periodic 526744 maxper 240300 single 240300 maxtransient 34054 gliding 10
   lengths 240300 67554 54333x3 44091 3240 3159 1755 594 ...  longest from state 132149304
+n 28 cycles 60 periodic 1048450 maxper 249165 single 249165 maxtransient 47968 gliding 7
+  lengths 249165x4 8932x4 4004 1428 644x2 309x28 133x2 112 ...  longest from state 52294496

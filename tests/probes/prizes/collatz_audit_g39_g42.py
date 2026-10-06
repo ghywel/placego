@@ -22,6 +22,8 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   failures.
   G46 part (fifth run, the same day): closed form = G45 ceiling for k = 1 .. 399, 0 failures; record ceilings up to
   977 at k = 306.
+  G47 part (sixth run, the same day): the circuit criterion D | B - 1 holds only at k = 1 for k = 1 .. 3000, and the
+  candidate start passes a direct test there.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -178,3 +180,18 @@ for k in range(1, 400):
     bad46 += K != (3**k - 2**k) // (2**j - 3**k)
     if not best or K > best[-1][1]: best.append((k, K))
 print("G46: closed form = G45 ceiling for k = 1..399, failures", bad46, "; record ceilings (k, K):", best)
+# G47 (added 2026-10-06): for 1^k 0^(j-k) with j = ceil(k log2 3), a surviving positive start exists iff D | B - 1
+# (D = 2^j - 3^k, B = 2^(j-k)), and it is then the periodic return n = 2^k (B-1)/D - 1. Check the criterion against a
+# direct test of the unique candidate, and search k for qualifying cases.
+qual, bad47 = [], 0
+for k in range(1, 3001):
+    j = (3**k).bit_length(); D = 2**j - 3**k; B = 2**(j - k)
+    crit = (B - 1) % D == 0
+    if crit:
+        m = (B - 1) // D; n = 2**k * m - 1; x = n; path = [x]
+        for b in [1] * k + [0] * (j - k):
+            if x % 2 != b: bad47 += 1; break
+            x = (3 * x + 1) // 2 if b else x // 2; path.append(x)
+        bad47 += not (x == n and min(path) >= n)
+        qual.append((k, n))
+print("G47: k = 1..3000, qualifying (k, start):", qual, "; failures", bad47)
