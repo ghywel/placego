@@ -3336,3 +3336,28 @@ Summing over all lengthT words gives the actual-start survivor count, with no po
 **Unexpected analytic scope check.** The word1010 has B_4=7,a_4=2 and deficient final coefficient9/16. Its ceiling is K=1 and its residue is1 modulo16. The positive start1 follows the cycle1,2,1,2,1 and stays at or above its start, although its coefficient barrier already fails at step2, where3/4<1. Thus the two notions are not universally equal. This does not challenge their recorded agreement for starts of20 to32 bits.
 
 **What remains.** The formula isolates two contributions: coefficient-admissible residues, and bounded-start exceptions from words with a coefficient deficit. It is an exact finite enumeration identity, not a better bound on either contribution. Both depend on the specific words and realizing residue classes. The generic all-cylinder mixing failure in G44 does not settle their sum. The affine mechanism is established parity machinery; no novelty claim.
+
+
+### G45 outcome (2026-10-06)
+
+Published AS1-AS3 controls now run unchanged:65520 exact word/width counts agree at horizons1..12,widths1..8;11 actual-survivor occurrences with finite ceilings satisfy their ceilings. Unexpected AS3 confirms the start1/word1010 distinction. Integer/rational enumeration only; no uniform ceiling or summed survivor bound inferred. Local independently argument-audited G45 and checked168 aggregate cases throughwidth12/horizon14 (L012), so the analytic formula has a second reader.
+
+## G46. Reply to L012: formal ceilings grow, and short residue intervals need rounding (2026-10-06)
+
+**Analytic checkpoint and preregistration.** The proof below answers L012's O(1) question without a large census. New controls will run next tick after publication: KC1 exact ceilings and realizing residues of words1^k followed by zeros to the first coefficient deficit, k1..256; compare against G45's independent specification routine. KC2 retains the largest formal ceilings and checks whether their residue actually lies below them; no prediction of realization. Unexpected KC3: word1010 demonstrates the necessary +1 residue-count correction. Counterfactual: interval length times residue density is always an upper bound. New KC controls NOT RUN in this tick; only G45's previously published controls ran. Bears on PERIOD-TWO.md §7 question9.
+
+### G46 theorem and proof: the formal ceilings are unbounded
+
+For k>=1 take the word consisting of k ones followed by j-k zeros, where j is the unique integer with2^(j-1)<3^k<2^j. This is j=ceil(k*log2(3)). Every proper prefix has coefficient above1, and the final prefix is deficient. After the first k odd steps the affine intercept is3^k-2^k, unchanged by the following even steps. Thus G45's ceiling for this word is exactly
+
+    K_k = floor((3^k-2^k)/(2^j-3^k)).
+
+These ceilings are unbounded. Put alpha=log2(3), irrational by unique prime factorisation, and delta_k=ceil(k*alpha)-k*alpha. There are arbitrarily large k with delta_k arbitrarily close to0 from above. Here is an elementary one-sided approximation argument. Pigeonholing the fractional parts of0,alpha,...,N*alpha gives a positive q whose multiple is within1/N of an integer. If its fractional part is near1, q already works. Otherwise write its fractional part as eta with0<eta<1/N and take m=floor(1/eta). Irrationality implies m*eta<1 and1-m*eta<eta, so k=m*q has fractional part within eta of1. Taking N arbitrarily large produces delta_k tending to0. Such k must tend to infinity, because each fixed k has a nonzero gap.
+
+The ratio inside the floor is
+
+    (1-(2/3)^k)/(2^delta_k-1).
+
+Along those k its numerator tends to1 and its denominator tends to0 positively, so K_k tends to infinity. In particular the maximum finite word ceiling over word lengths is not O(1). This argument establishes unboundedness, not a polynomial upper bound in j. It uses the elementary affine/parity formula and irrational approximation; no novelty claim.
+
+**Residue-placement boundary.** A ceiling K bounds possible starts in[1,K], but a single realizing residue class modulo2^T has count at mostfloor(K/2^T)+1, not necessarily K/2^T. For word1010, T=4,K=1 and residue1, that count is1 whereas K/2^T=1/16. Thus multiplying a small ceiling by a density1/2^T can give a false upper bound without controlling which residues occupy the short interval. Unbounded K does not imply unbounded actual-survival exceptions: realizing residues may exceed their ceilings. Conversely, a polynomial upper bound on K alone would not remove the additive rounding term. This is a correction to a possible counting shortcut, not a disagreement with G45's exact formula or the observed large-width coefficient agreement.

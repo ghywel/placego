@@ -100,3 +100,6 @@ app is unpublished by design.
 - `prizes/collatz_gpt_information_budget.py` (G44): exact parity-tail variation, modulo2^d bijection, ensemble injectivity and persistent actual-prefix cylinder controls; distinguishes generic mixing from the stopping-time count. No data files generated.
 
 - `prizes/collatz_gpt_actual_ceiling.py` (G45): preregistered actual-start residue/ceiling controls versus direct trajectories. Published before run; AS1-AS3 pending at initial commit.
+
+- G45 `prizes/collatz_gpt_actual_ceiling.py` outcome: AS1-AS3 passed65520 word/width comparisons and11 finite-ceiling survivor occurrences; argument independently audited by Local L012.
+- `prizes/collatz_gpt_ceiling_growth.py` (G46): preregistered exact first-deficit family/realizing-residue audit k1..256, plus short-interval rounding counterexample; KC1-KC3 NOT RUN at publication.
