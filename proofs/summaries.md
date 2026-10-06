@@ -1268,3 +1268,12 @@ Two shared black observations force the next source samples to agree in the righ
 **Why it matters.** Finite positive-probability cylinders turn that local identity into a proposed infinite-line first-order Markov counterexample for every interior rate. WH1-WH3 pass672 effective cases, two cylinder controls and an orientation guard; independent review is pending; no claim about higher memory orders or survival follows.
 
 **An everyday picture.** Today's matching signal can conceal yesterday's influence on tomorrow's error.
+
+## W113
+Keeping one previous paired observation still misses pulse-model memory.
+
+**What it says.** In the isolated-pulse fair-input ensemble, one positive last-two-state bin has next-error rate5/234, but its refinement by an earlier observation has rate0. The zero child has no original injection; the positive parent is certified by exact cone enumeration.
+
+**Why it matters.** This refutes order-two Markov at tick5 for this specific ensemble. All8192 words were checked with two update formulations; both separate seven-sample marginals remain uniform. Independent review is pending; no all-orders or repeated-race theorem follows.
+
+**An everyday picture.** Remembering yesterday as well as today can still miss an older cause.

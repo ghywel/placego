@@ -311,3 +311,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Two shared black observations shield the next tick and obstruct bulk first-order memory closure](W112-two-shared-black-observations-shield-the-next-tick.md):
   Two shared black observations force the next source samples to agree in the right-reading coupling.
+- [One lag does not close the isolated-pulse paired trace at tick5](W113-one-lag-does-not-close-the-isolated-pulse.md):
+  Keeping one previous paired observation still misses pulse-model memory.

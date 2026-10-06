@@ -5471,3 +5471,20 @@ Start from an infinite iid fair row; only source0 reads its updated right neighb
 **Blind LM2 prediction:** at tick5, conditioning the next error E6 on K4,K5 differs from conditioning on K3,K4,K5 in at least one positive bin. Compare integer cross products for every child and parent. If no split occurs, retain the held finite result; that cannot establish two-step closure at all times. A nonzero split would refute order-two Markov at this tick for this pulse ensemble, not for fresh repeated Bernoulli flags. It would not refute every finite order.
 
 **Unexpected LM3 control:** both separate seven-sample marginal histograms must still contain128 words64 times each, even if paired closure fails. The counterfactual that tick2 healing prevents tick3 return must fail by LM1. Run only after predictions and instrument are published. GPT owns this bounded history audit; no rate sweep, long run or Local spectrum repetition.
+
+#### G113 result: one lag does not close the isolated-pulse paired trace at tick5 (2026-10-06)
+
+**Status:** exact finite-cone enumeration counterexample; independent review pending. Predictions and instrument published through2589f4f before execution. This is the pulse ensemble of G110, not the fresh Bernoulli-race model of G112 and not an all-orders impossibility claim.
+
+Let K_t=(I_t,E_t) for the source of two common-input Rule30 copies. Start with an infinite iid fair row; only the noisy source0 reads its updated right neighbour on tick1, and all other reads and future ticks are synchronous. Keep the pulse schedule fixed and known. The seven source samples at ticks0..6 depend only on the13 initial bits at sites-6..6; the pulse's extra same-tick right read needs initial sites0..2 and stays inside that domain. Thus8192 equally weighted words give exact probabilities for this infinite ensemble. Literal Rule30 table updates were independently checked against XOR/OR updates throughout the shrinking cone.
+
+Take A={K4=(0,0),K5=(0,0)} and its refinement B=A intersect {K3=(0,0)}. LM2 counts n_A=1872,n_(E6=1,A)=40,n_B=896,n_(E6=1,B)=0. Therefore
+
+    P(E6=1 | A)=40/1872=5/234,
+    P(E6=1 | B)=0.
+
+Both bins have positive probability. Their next-error probabilities differ despite identical last two observed paired states; this violates second-order Markov at tick5, even with a time-dependent kernel and the known pulse phase.
+
+The zero child also has an analytic explanation: G109 gives E3=E1, so B's E3=0 means no initial injection. With no future races the two configurations then agree forever. The positive parent-success count is the enumerated existence certificate, checked with both update formulations; it is not an extrapolation or a fitted probability. All count claims can be reproduced by tests/probes/rule30_gpt_lagged_memory.py. Independent reading remains required.
+
+**LM1-LM3 outcomes (2026-10-06 21:05 BST).** LM1 PASS:8192 cone words,001 injection predicate and E1,E2,E3=indicator,0,indicator. LM2's blind split prediction HELD:8 unequal child-parent refinements among16 parents and36 positive children. A second child K3=(0,1),K4=K5=(0,0) has20 successes in40 histories, versus the parent's40 in1872; the rate difference is56/117. LM3, the unexpected marginal check, PASS:both separate seven-sample histograms have128 words64 times each. The permanent-healing counterfactual is refuted by the source echo. Uniform marginals coexist with failure of order-two paired closure. No result about third-order closure, every finite order, repeated fresh flags or long-time survival follows.

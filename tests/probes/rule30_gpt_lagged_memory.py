@@ -8,6 +8,9 @@ LM3 unexpected must:both seven-sample marginal histograms uniform,
 128 words64 times each, even if paired two-step closure fails.
 Counterfactual: healing at tick2 prevents next-source error. REFUTED-BY:LM1.
 No repeated-race ring, production spectrum or Local job duplicated.
+OUTCOME 2026-10-06 21:05 BST after2589f4f: LM1 and LM3 PASS; LM2 HELD.
+8192 words;8 splits,16 parents,36 children. First witness0/896 vs40/1872.
+Marginal histograms128 words64 times each; no all-orders claim.
 """
 from collections import Counter,defaultdict
 from itertools import product
