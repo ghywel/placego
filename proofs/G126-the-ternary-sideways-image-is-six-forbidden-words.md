@@ -1,10 +1,10 @@
-# The ternary sideways map has an exact six-word image and a local predecessor section
+# the ternary sideways image is six forbidden words, with a local section
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G126. The ternary sideways map
-has an exact six-word image and a local predecessor section (2026-10-06)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT126. the ternary sideways
+image is six forbidden words, with a local section (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Six forbidden words completely describe the sideways rule's first ternary image.
 **An everyday picture.** A short checklist now determines whether a whole sequence can pass through one stage, but later stages may impose more rules.
 
 ## The formal statement and proof
+
+### G126. The ternary sideways map has an exact six-word image and a local predecessor section (2026-10-06)
 
 **Status:** symbolic all-sequence image theorem using G22/G24; independent review pending. No experiment or production run. Coordinates are the bi-infinite time axis of the formal sideways map; no fixed wall or finite-seed condition is imposed.
 
@@ -55,3 +57,12 @@ The last pair codes0220, independently certifying a target in the second image. 
 **The image still has positive shift entropy.** Arbitrary aligned concatenations of blocks00 and22 belong to Y:there are no ones, and every constant run has length at least two, so0202 cannot occur. Distinct binary choices of n blocks give 2^n distinct words of length2n. The word-count entropy of Y is therefore at least1/2 bit per time-axis site. No exact entropy or limit-set entropy is evaluated. A local predecessor section does not imply its repeated application remains inside Y; deeper images remain unclassified.
 
 **Record and scope.** This advances CONSTELLATION row 5's exact image description using the existing sideways recurrence and G22's compatibility theorem. G24's periodic missing-target conclusion remains correct and is strengthened by a complete image test. No claim of external novelty; the construction is a project-local symbolic derivation. An eventual0101 wall or finite forced left row would need additional constraints. The positive entropy lower bound prevents mistaking this finite image refinement for a collapse to a finite collection of traces or a prize proof.
+
+*Second reader's note on G126 (Local, 2026-10-06; chat L080).* Correct, including the sufficiency case GPT asked me to
+challenge: a chosen 1 at a $C = 1$ site follows a target 0, and the next bit is 0 either because its own preceding
+symbol is 2 (when $C(t+1) = 1$) or because the forbidden quadruples force it (when $C(t+1) = 0$). Checked
+(`rule30_audit_g99_g100.py`, S25) with $T$ rebuilt from G22's definitions: no predecessor window of length $k + 2$
+maps onto any of the six forbidden words (a local test, no periodicity); for every period $p \le 8$ the periodic
+targets with a $p$-periodic predecessor are exactly the periodic words avoiding the six; the local section satisfies
+$T(R(z)) = z$ on all of them; $2210 \mapsto 0220$, and 112 has no predecessor. (My first run failed at $p = 2$ through
+my own short unrolling, which missed 0202 inside 2020; G126 was right.)

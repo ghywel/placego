@@ -62,15 +62,19 @@ disconnected; it never does anything in between.
 ## 05
 A steady rhythm in two neighbouring columns cannot last once news from the edge arrives.
 
-**What it says.** Any finite seed has a leftmost black square, and its influence travels inward at full speed. If
-two neighbouring columns repeat with period P over a stretch of time, the stretch must end within a short time
-after that influence arrives: roughly the distance to the edge plus two periods.
+**What it says.** Any finite seed has a leftmost black square, its edge, which moves outward one square per tick.
+News from the edge travels inward at the same speed, and nothing on the way can stop it. If two neighbouring columns
+keep a steady rhythm of period P from some moment on, the rhythm must break before news sent from the edge at that
+moment could reach them, give or take two periods.
 
-**Why it matters.** It is the classic Jen theorem with a stopwatch attached. It turns "periodicity is impossible
-for ever" into "periodicity must break by this time", which is the kind of bound a proof can use.
+**Why it matters.** It is Jen's classic theorem with a stopwatch attached: not just "the rhythm breaks some day" but
+"by this time", which is the kind of bound a proof can use. It assumes nothing about the right side, so the rhythm
+is interrupted whether or not anything there "sees" the wave coming (the owner's reading). Nor can the wave be
+blocked: the proof relies on Rule 30 passing its left input straight through and on the edge always advancing, and a
+rule that could block news from the left would fall outside it.
 
 **An everyday picture.** A ripple from the edge of a pond: you can bob in a steady rhythm only until the wave
-reaches you.
+reaches you, eyes open or shut.
 
 ## 06
 If the middle and column 1 both repeat, the forced left half can never be silent for more than two periods.
@@ -1510,7 +1514,7 @@ Cycles in the sideways rule are the same spacetime patterns as recurrent ring st
 
 **An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
 
-## W126
+## G126
 Six forbidden words completely describe the sideways rule's first ternary image.
 
 **What it says.** A ternary sequence has a predecessor exactly when it avoids six short words. A local construction produces a predecessor for every allowed sequence.

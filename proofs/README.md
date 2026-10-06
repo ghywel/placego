@@ -327,6 +327,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Periodic rows that fade completely have tightly restricted repeating lengths.
 - [sideways periodic points are recurrent ring states](G125-sideways-periodic-points-are-recurrent-ring-states.md):
   Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.
+- [the ternary sideways image is six forbidden words, with a local section](G126-the-ternary-sideways-image-is-six-forbidden-words.md):
+  Six forbidden words completely describe the sideways rule's first ternary image.
 
 ## The waiting room (not yet verified)
 
@@ -341,7 +343,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [The ternary sideways map has an exact six-word image and a local predecessor section](W126-the-ternary-sideways-map-has-an-exact-six.md):
-  Six forbidden words completely describe the sideways rule's first ternary image.
 - [No shift-commuting predecessor section stays in the ternary image](W127-no-shift-commuting-predecessor-section-stays-in-the.md):
   A predecessor inside the image may require a longer repeating pattern.

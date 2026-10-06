@@ -101,6 +101,12 @@ CHECKS (GPT's claims at 827e006):
      (sites 0, 1) that H^m returns exactly, distinct states giving distinct pairs; for m = 1..4, a brute-force count of
      H^m-fixed pairs among all temporally periodic track pairs of period L (L the lcm of the ring's cycle lengths),
      made without the ring correspondence, equals the number of recurrent states; H(1, 1) = (0, 1).
+  S25 (G126, added 2026-10-06 at 1a5a291): the ternary map T (decode a code to its pair in H's image, apply H, encode),
+     built from G22's definitions: (a) no ternary predecessor window of length k + 2 maps onto any of the six forbidden
+     words (length k), a local check with no periodicity; (b) for every period p = 1..8, the periodic targets with a
+     p-periodic predecessor are exactly the periodic words avoiding the six words cyclically; (c) the local section R
+     gives T(R(z)) = z for every such word; (d) 0220 has predecessor 2210 and 112 has none. (The first run failed
+     only at p = 2 because the cyclic-avoidance test unrolled the word too few times to see 0202 inside 2020; fixed.)
 """
 import random
 from fractions import Fraction as F
@@ -1005,4 +1011,54 @@ for m in range(1, 11):
         ok24 &= cnt == len(recurrent)
 ok24 &= Hmap((1,), (1,)) == ((0,), (1,))
 check('S24 G125: recurrent ring states give exact H^m fixed pairs (m <= 10); brute-force fixed-point counts (m <= 4)', ok24)
+def decode_cyc(code):
+    """Ternary code (cyclic tuple) -> pair (X, Y) of H's image: Y = [code = 2], X = code where Y = 0, else 1 - Y(t+1)."""
+    L_ = len(code)
+    Y = tuple(1 if c == 2 else 0 for c in code)
+    X = tuple(code[t] if Y[t] == 0 else 1 - Y[(t + 1) % L_] for t in range(L_))
+    return X, Y
+
+
+def encode(X, Y):
+    return tuple(2 if Y[t] else X[t] for t in range(len(X)))
+
+
+def T_cyc(code):
+    X, Y = decode_cyc(code)
+    L_ = len(code)
+    X2 = tuple(X[(t + 1) % L_] ^ (X[t] | Y[t]) for t in range(L_))
+    return encode(X2, X)
+
+
+FORB = [(1, 0, 0), (1, 0, 1), (1, 1, 2), (0, 2, 1, 0), (0, 2, 1, 1), (0, 2, 0, 2)]
+ok25 = True
+for w in FORB:
+    k = len(w)
+    for pre in product((0, 1, 2), repeat=k + 2):
+        Y = [1 if c == 2 else 0 for c in pre]
+        X = [pre[t] if Y[t] == 0 else (1 - Y[t + 1] if t + 1 < len(pre) else None) for t in range(len(pre))]
+        # target code at t: the new second track X(t) marks 2, the new first track is X(t+1) XOR (X(t) OR Y(t))
+        tgt = tuple(2 if X[t] == 1 else (X[t + 1] ^ (X[t] | Y[t])) for t in range(k))
+        ok25 &= tgt != w
+def avoids_cyc(word):
+    L_ = len(word)
+    ext = word * 8            # long enough that every 4-letter window starting in the middle copy is complete
+    return not any(tuple(ext[i:i + len(f)]) == f for f in FORB for i in range(L_, 2 * L_))
+
+
+def section(z):
+    L_ = len(z)
+    C = tuple(1 if c == 2 else 0 for c in z)
+    D = tuple(z[t] if C[t] == 0 else 1 - C[(t + 1) % L_] for t in range(L_))
+    A = tuple((D[t] ^ C[(t + 1) % L_]) if C[t] == 0 else int(z[(t - 1) % L_] == 0) for t in range(L_))
+    return tuple(2 if A[t] else C[t] for t in range(L_))
+
+
+for p_ in range(1, 9):
+    images = set(T_cyc(c) for c in product((0, 1, 2), repeat=p_))
+    Yset = set(w for w in product((0, 1, 2), repeat=p_) if avoids_cyc(w))
+    ok25 &= images == Yset
+    ok25 &= all(T_cyc(section(z)) == z for z in Yset)
+ok25 &= T_cyc((2, 2, 1, 0)) == (0, 2, 2, 0) and (1, 1, 2) not in set(T_cyc(c) for c in product((0, 1, 2), repeat=3))
+check('S25 G126: forbidden windows have no predecessor; periodic images = Y for p <= 8; the local section inverts T', ok25)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
