@@ -3727,3 +3727,26 @@ This strengthens G28's requirement of at least one nonlinear activation to infin
 **Unexpected scope guard, checked algebraically.** Finiteness cannot be dropped from the Rule90 step. A spatially period-three row100 repeated evolves under Rule90 to011 repeated, which is fixed: the three neighbor XORs are0,1,1. At the sites with value1 this gives a nonzero constant temporal wall from time1. This is a Rule90 domain counterexample, not a Rule210 witness (the adjacent pairs activate its nonlinear gate). It prevents importing the finite-row obstruction into unrestricted infinite backgrounds.
 
 No experiment ran and no numerical extrapolation is used. Existing G28 controls and the recorded Rule90 identity are reused. Independent Local reading requested; next right-realization reasoning must allow mixed parity and unbounded nonlinear activity, rather than a finite correction followed by a linear tail.
+
+
+## G60. G58's right stream has a full infinite realization (2026-10-06)
+
+Question: can the empty-left witness of G58 be realized on the right at all, separately from the finite-global-seed B question? Yes, within the globally parity-sparse Rule90 subsystem already identified in G28. This is a triangular construction from the recorded additive rule, not a new external mechanism. It realizes every one-parity temporal wall, even nonperiodic ones, on a full Rule210 configuration with an empty left half. For nonzero eventually periodic walls this particular right half necessarily has infinite support.
+
+Let tau(2n)=0 and a_n=tau(2n+1). At time0 set x(i)=0 for i<=0 and for positive even i. Write v_j=x(2j+1), j>=0. Globally all occupied sites have odd parity, so by G28 the full Rule210 orbit agrees with Rule90 for all time. At even times its centre is0. At odd time2n+1, expanding the commuting shift operators gives
+
+    x_(2n+1)(0)=XOR over j=0..n of
+                 (binom(2n+1,n-j) mod2)*v_j.
+
+All negative initial sites are0; the coefficient of the newest positive site2n+1 is1. Thus define recursively
+
+    v_n=a_n XOR (XOR over j=0..n-1 of
+                 (binom(2n+1,n-j) mod2)*v_j).
+
+This gives existence and uniqueness within the class of empty-left, globally odd-supported initial rows, for every infinite binary input a. Every finite-time equation involves only finitely many initial sites, so the recursion defines an actual full configuration and its orbit; no limiting-time interchange or finite-support assumption is needed. Its centre trace is exactly tau. Its left half must agree with G58's empty-left Dirichlet evolution, whose initial row and boundary are identical. Its right neighbor has odd-time bits0 by global parity. At even times the wall equation forces sigma(2n)=a_n XOR pi(2n). Hence it realizes precisely G58's selected sigma, not merely a wall with another unspecified adjacent stream.
+
+For nonzero eventually periodic tau, v cannot have finite support. Otherwise the full seed would be finite and single-parity, contradicting the general finite Rule90 white-block obstruction in G59. This is an existence result for an infinite right half and an obstruction for this linear finite-support class. It does not exclude a different, mixed-parity finite right seed realizing the same wall or settle B. References to “right compatibility/B” in earlier status summaries must distinguish these two domains.
+
+**Unexpected scope check, analytic.** Infinite support is not compulsory for arbitrary nonperiodic one-parity walls. Taking v_0=1 and every other v_j=0 gives the finite seed at site1; its odd-time wall is a_n=binom(2n+1,n) mod2. This is a valid input/output pair of the recursion, but cannot be nonzero eventually periodic by the same obstruction. The periodicity hypothesis is therefore essential to the infinite-support conclusion.
+
+**Preregistered next controls, NOT RUN.** FR1: reconstruct v for all26 nonzero odd-time masks of periods2,4,6,8 and256 odd-time samples from the exact binomial recursion; independently evolve scalar Rule210 on the full finite light cone through512 steps and recover tau through time511. FR2: compare its right-neighbor trace with G58's dyadic filter, retaining its empty-left parity invariant. CF: truncating a nonzero periodic input's reconstructed seed to a fixed finite odd-site prefix keeps its wall forever; must fail, with a failure time found analytically by G59's white block and checked beyond that block. These are implementation controls, not a finite-right search or a proof of eventual periodicity from data. Next implement this bounded audit; Local review of the construction is requested.
