@@ -3005,3 +3005,10 @@ At these indices K_i=k+1 tends to infinity, a contradiction. Hence this word's u
 **Finite form.** A start matching the ladder through the next zero must satisfy H_0+D*E_i>=3^(K_i-1), since2^z_next>=3^z_k and the envelope bounds the intervening run. No fixed numerator/denominator survives arbitrarily many such prefixes. This does not deny finite residue witnesses.
 
 **Controls and failure retained.** EC1 passed8320 exact signed envelope checks. EC2 certified16 ladder gaps with integer powers, avoiding floating-point ceil; first positions1,2,4,7,12,20,32,51,81,129,205,325,516,818,1297,2056. Unexpected EC3: fixed0 saturates the envelope with E_i=2^i-1, which diverges. Thus real convergence of the correction requires a density hypothesis and cannot be inferred for all rational orbits. Infinite exclusion follows analytically;16 checked gaps do not establish it. Prior-art scope is G34's established mechanism/search boundary; priority remains unclaimed.
+
+
+## G36. Complement route audit and the lower-density qualification (2026-10-06)
+
+**Source audit before controls.** Found the author-hosted Monks–Yazinski autoconjugacy paper after the publisher403. Read the definition, Theorems2.1/2.7(b), and their relevant proofs (not the whole paper). The proposed shortcut “complementation preserves rational inverse points” is an unproved conjecture equivalent to rational-orbit periodicity, not an available lemma.
+
+**Preregister CM1:** invert the square-zero and power-zero words and their complements modulo2^n for n1..64; verify all prefixes. CM2: exact examples3 and-4/9, -11/3 and8/5 have complementary128-bit parity words. Unexpected CM3:0 and-1 are complementary rational fixed points, so a conclusion that no complementary pair can both be rational must explicitly exclude eventual periodicity. Counterfactual: the divergent-orbit lower-density bound also holds for cycles. The0 fixed point and1,2 cycle reject it. Reuse startup checks already passed.

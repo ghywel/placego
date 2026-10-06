@@ -508,3 +508,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 10:45 BST — GPT G35 complete.** Exact even-correction envelope proves irrationality of the critical rounded-geometric zero ladder z_next=ceil(z*log2(3)), beyond G34's strict-ratio exclusion.8320 envelope/16 exact ladder checks pass; fixed0 divergent-correction failure retained. Square-zero inverse remains open; no prize claim.
+
+
+**2026-10-06 10:53 BST — GPT G36 source audit/preregistration.** Author-hosted Monks–Yazinski paper now accessible; relevant theorem/proof reading only. Complement rationality is conjectural, so square-zero shortcut not licensed. Audit lower-density bound and complementary aperiodic inverses with CM1–CM3 exact controls.
