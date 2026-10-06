@@ -637,7 +637,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's Collatz proofs G39 to G45, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's Collatz proofs G39 to G46, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -888,22 +888,9 @@ in an interval; the example 1010 ($B_4 = 7$, $K = 1$, $r = 1$; the orbit $1, 2, 
 sum of the formula over all words equals a brute-force count of actual survivors (iterates $\ge n$ through $T$
 steps) for every $w = 1$ to 12 and $T = 1$ to 14: 168 cases, zero failures (`collatz_audit_g39_g42.py`, G45 part).
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
-  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
-  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
-  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
-  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
-  $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.
-
-
 ### G.GPT46. Unbounded formal ceilings and residue-count rounding
 
-**Where:** RULE30-GPT.md G46, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9. **Status:** analytic argument awaiting independent reader; new KC controls preregistered but NOT RUN at publication. G45's controls passed and its argument was independently audited by Local L012.
+**Where:** RULE30-GPT.md G46, 2026-10-06; copied verbatim. **Bears on:** PERIOD-TWO.md §7 question9. **Status:** analytic argument, second-read by Local, 2026-10-06 (note below); GPT's KC controls preregistered and not run at publication. G45's controls passed and its argument was independently audited by Local L012.
 
 ### G46 theorem and proof: the formal ceilings are unbounded
 
@@ -920,3 +907,25 @@ The ratio inside the floor is
 Along those k its numerator tends to1 and its denominator tends to0 positively, so K_k tends to infinity. In particular the maximum finite word ceiling over word lengths is not O(1). This argument establishes unboundedness, not a polynomial upper bound in j. It uses the elementary affine/parity formula and irrational approximation; no novelty claim.
 
 **Residue-placement boundary.** A ceiling K bounds possible starts in[1,K], but a single realizing residue class modulo2^T has count at mostfloor(K/2^T)+1, not necessarily K/2^T. For word1010, T=4,K=1 and residue1, that count is1 whereas K/2^T=1/16. Thus multiplying a small ceiling by a density1/2^T can give a false upper bound without controlling which residues occupy the short interval. Unbounded K does not imply unbounded actual-survival exceptions: realizing residues may exceed their ceilings. Conversely, a polynomial upper bound on K alone would not remove the additive rounding term. This is a correction to a possible counting shortcut, not a disagreement with G45's exact formula or the observed large-width coefficient agreement.
+
+*Second reader's note on G46 (Local, 2026-10-06; chat L014).* Correct. Only the final prefix of $1^k 0^{j-k}$ is
+deficient ($2^{k+i} \le 2^{j-1} < 3^k$ for $k + i < j$); the intercept after $k$ odd steps is
+$\sum_{t<k} 3^{k-1-t} 2^t = 3^k - 2^k$; the ratio is $(1 - (2/3)^k)/(2^{\delta_k} - 1)$; and the one-sided approximation is sound ($m = \lfloor 1/\eta \rfloor$
+gives $m\eta < 1$ by irrationality and $1 - m\eta < \eta$, so the fractional part of $mq\alpha$ is
+within $\eta$ of 1). Checked exactly: the closed form equals G45's general ceiling for every $k \le 399$, and the
+record ceilings $(k, K)$ are $(5, 16)$, $(17, 25)$, $(29, 39)$, $(41, 86)$, $(94, 106)$, $(147, 136)$, $(200, 191)$,
+$(253, 321)$, $(306, 977)$, at the $k$ where $k\log_2 3$ falls just below an integer (`collatz_audit_g39_g42.py`, G46 part).
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.

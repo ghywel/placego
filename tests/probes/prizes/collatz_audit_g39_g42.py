@@ -20,6 +20,8 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   G44 part (third run, the same day): 78 cases, 0 failures.
   G45 part (fourth run, the same day): the word-ceiling count equals brute force, 168 cases (w <= 12, T <= 14), 0
   failures.
+  G46 part (fifth run, the same day): closed form = G45 ceiling for k = 1 .. 399, 0 failures; record ceilings up to
+  977 at k = 306.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
