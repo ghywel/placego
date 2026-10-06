@@ -5500,7 +5500,7 @@ Consequently the proof's positive parent-success event can be checked by forward
 
 ### G114. A healed white source can hide cancellation of two incoming errors (2026-10-06)
 
-**Status:** local algebraic identity and pulse mechanism; DP0-DP2 pass, independent review pending. This unpacks G113's explicit witness. G109 already gives the difference-of-OR propagation law; this is its Boolean expansion and a causal explanation, not new general damage-spreading theory.
+**Status:** local algebraic identity and pulse mechanism; DP0-DP2 pass, independently reviewed by Local L071. This unpacks G113's explicit witness. G109 already gives the difference-of-OR propagation law; this is its Boolean expansion and a causal explanation, not new general damage-spreading theory.
 
 For a synchronous tick, let a,b,c be ideal left, centre and right bits and p,q,r their respective XOR errors. Expanding OR over binary arithmetic gives
 
