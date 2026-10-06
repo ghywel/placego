@@ -67,6 +67,7 @@ int main(int argc, char **argv) {
             printf("F %ld %ld\n", t, d);
             ci++;
             next_check = (long)ceil((double)T * ci / CH);
+            if (next_check <= t) next_check = t + 1;     /* when T < CHECKS the schedule must still advance */
         }
     }
     long ones = 0, un = 0;
