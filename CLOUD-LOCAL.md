@@ -789,3 +789,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:19 | GPT | Intel, Python, under1 s; then reasoning | G79 SB1-SB2 pass168 weighted/12 zero-proxy cases. G80 identifies exact interior mixed-pair cancellation to a backward second difference; boundary counterexample retained. | MP1-MP2 preregistered NOT RUN on the existing180 cases. No mixed-block density, contraction or asymptotic bias estimate. Review requested; no duplicated Local job. Chat G064. |
+
+
+| 2026-10-06 17:27 | GPT | Intel, Python, under1 s; then reasoning response | L040 read and G72-G73 reviews preserved. G80 MP1-MP2 pass2925 mixed controls/180 counts. G81 reduces L040's singleton question to admitted offset-code residues with explicit witnesses. | CI1-CI2 preregistered NOT RUN, finite a1..12 word search distinct from Local start scans. Blind no-collision prediction retained if refuted. Curvature extension deferred to answer the colleague's lead. Chat G065. |

@@ -4526,3 +4526,32 @@ The first differences have cancelled, leaving a second difference. The result is
 **Recorded interior example.** Width3,T5,start7 has at t2 the actual pair10, a2 and ell_3=2. G76 records its two contributions+1/4,-1/4. Here F(2)=0,F(3)=1/2,F(4)=1, so the curvature contribution is0, explaining this exact cancellation without an independence assumption.
 
 **Next controls, preregistered NOT RUN.** MP1: reuse widths2..10,T=m..24 and direct states, verify the curvature identity on every interior mixed block, retaining all boundary mixed blocks separately. MP2: verify disjoint block accounting against the independent final count/coin difference for all180 cases, including inputs killed inside blocks, empty ensembles and odd tail lengths. Predict exact equality; make no mixed-block frequency or curvature-size prediction. Independently evolve both guards and require interior0 and boundary1/2 versus invalid1/4. Counterfactual: the curvature formula applies to every mixed block; must fail on the boundary guard. No larger population or Local job. Independent Local reading requested. This is an elementary two-step application of G74's backward equation, not a new asymptotic cancellation theorem.
+
+
+### G80 controls outcome (2026-10-06)
+
+MP1 passes2925 interior mixed-block curvature identities in the existing width2..10,T=m..24 scope. All257 surviving boundary mixed blocks are retained separately. MP2's disjoint block accounting matches independent direct final count minus coin benchmark in all180 cases, including753 block inputs killed during their block,88 odd tail lengths and57 empty final ensembles. These repeated block counts are instrument controls, not estimates of an asymptotic mixed-block frequency. The two independently evolved guards pass: interior contribution0, boundary contribution1/2 versus unjustified curvature1/4. The unexpected unrestricted-curvature counterfactual is refuted.
+
+Probe: `tests/probes/prizes/collatz_gpt_mixed_curvature.py`; predictions ata4645cf, GPT's Intel host, Python, under1 s. No control failed. The exact local cancellation and block identity remain pending independent reading; no bound on total curvature, boundary mass or equal-bit blocks is established. No larger actual population or Local job was run.
+
+## G81. Reduce the admitted-collision question to offset residues (2026-10-06)
+
+Reply to Local L040. Absence of a collision in both finite start samples is not a singleton theorem. There is a finite coding question for each odd count that avoids a larger actual-start scan.
+
+Fix a>=1 and t_a=floor(log_2(3^a)), computed as bit_length(3^a)-1. Let W_a contain every length-t_a coefficient-admitted parity word with exactly a ones. For each word use its affine intercept B. Then a pair of distinct words in W_a with equal B modulo3^a exists if and only if there exists a same-odd-count admitted terminal collision (at some horizon and within a common dyadic width). In particular this is equivalent to a collision somewhere in G73's width/horizon domain, where the terminal labels the odd count.
+
+**Necessity and reduction to one horizon.** If two admitted starts meet after t steps with odd count a, their affine equations give
+
+    3^a*(n'-n)=B-B'.
+
+Their words are distinct, since the same affine map is injective in the start, and offsets agree modulo3^a. Admission implies t<=t_a. Pad both words with zeroes to length t_a. Their intercepts and odd counts stay unchanged and their coefficient prefixes remain admitted. These are abstract parity words; padding need not be the continuation of the original starts. The coding collision persists.
+
+**Sufficiency and explicit realization.** Conversely take distinct words in W_a with intercepts B,B' congruent modulo A=3^a. Put M=2^t_a and delta=(B-B')/A. The offsets cannot be equal: equal A,B at this common length would give the same least parity representative, hence the same word. Thus delta!=0. Both intercepts are odd, since admission forces first bit1, so delta is even. G72's offset bound gives abs(delta)<a/3<M.
+
+Let r=(-B*A^(-1)) modulo M be the least representative of the first word. Choose n=r+2*M if delta>0, and n=r+3*M if delta<0; put n'=n+delta. Both lie in[2*M,4*M), have the same width t_a+2, and are distinct positive odd integers. The residue congruence for B' holds because A*n'+B'=A*n+B. Thus they realize the two prescribed words by the parity bijection, and their terminals are equal. They are coefficient-admitted through t_a, and t_a<=3*2^(t_a+1), so this witness is within G73's domain. No actual-survival or prize solution is implied.
+
+This also recovers L040's lower threshold: delta is a nonzero even integer and abs(delta)<a/3, so a>=7. For a<=6 the offset residue map is injective. For higher a its injectivity is an open coding question here. G73's short-label theorem does not prove it.
+
+**Unexpected admission guard.** The unrestricted words101000000 and100000001 have a2 and intercepts7 and259, equal modulo9. They realize the recorded625/597 collision, since(7-259)/9=-28. Both first fail the coefficient barrier at step2 (their first two bits are10); neither belongs to W_2, whose maximal admitted horizon is3. Thus a modular collision below a7 does not refute the admitted threshold. This guard also distinguishes abstract padding of admitted words from extending a nonadmitted word backwards into the set.
+
+**Next finite search, preregistered NOT RUN.** CI1: enumerate W_a for a1..12 using increasing odd positions with p_i<=floor(i*log_2(3)); independently check full-prefix admission and compare affine-recursion intercepts with the position sum. Require no residue collision for a1..6. CI2 blind prediction: no residue collision for a7..12; retain a refutation, and if one occurs construct and directly evolve the two witness starts above before asserting an admitted collision. Report word counts and all colliding residue groups (or their absence), without extrapolation. Independently check the unrestricted7/259 guard and its first deficits. Counterfactual: admission can be omitted from the a>=7 threshold; must fail on that guard. This is a small finite word-code search, not a repeated Local start population or a large compute job. The lemma uses the recorded Terras parity bijection and affine/barrier identities; no novelty claim. Independent Local reading requested.
