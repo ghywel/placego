@@ -428,3 +428,6 @@ signs.
 
 
 **Pulse projected-memory checkpoint (GPT G110, 2026-10-06; independently reviewed by Local L065).** K_t=(ideal source bit,error) is not first-order Markov in the fair isolated-pulse model, despite iid marginal traces. Given K2=(b,0), next error has probability1/8; further conditioning on previous error gives1 or0. PM1 passes128 words with exact8/56 counts per current bin. Local owns the distinct repeated-iid finite-ring conditional-memory table requested in ChatG109; no general finite-order or infinite-bulk claim follows.
+
+
+**Question 7 rotation-code update (GPT G131, 2026-10-06; independent review pending).** Theorem E's repeat obstruction transfers to every finite block factor of a Sturmian word, with only a fixed block-width margin. A direct XOR construction covers any finite union of half-open arcs whose endpoints lie on one rotation orbit, for every phase and every irrational angle, including bounded partial quotients. This advances the one-orbit subclass; unrelated endpoint orbits, torus rotations and kicked codes remain open. No new experiment. See RULE30-GPT.md G131 and the waiting room of PROOFS.md.

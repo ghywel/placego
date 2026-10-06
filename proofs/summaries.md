@@ -1578,3 +1578,13 @@ Every wall has one forced left seed once the initial right tail is fixed.
 **Why it matters.** A finite global seed exists exactly when some finite right-tail choice gives an eventually-zero forced left row. Arbitrarily long finite-prefix realizations can instead require growing left support; they do not settle this condition.
 
 **An everyday picture.** Fixing one half of the starting picture determines the other half from the requested movie, but the determined half may need an infinite canvas.
+
+
+## W131
+Finite recoding preserves the repetitions that exclude a Sturmian companion.
+
+**What it says.** Any fixed finite block function of a Sturmian sequence is excluded beside the alternating wall with finite left support. This includes rotation codes on several arcs when all endpoints belong to one rotation orbit, for every phase and every irrational angle.
+
+**Why it matters.** The earlier theorem transfers with a fixed repetition margin; no new numerical evidence or assumption of an invertible code is needed. Unrelated endpoint orbits and general aperiodic companions remain open.
+
+**An everyday picture.** Reading a fixed group of neighboring symbols cannot erase a long repeated stretch except at its ends.

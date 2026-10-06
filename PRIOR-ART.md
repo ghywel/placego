@@ -1891,3 +1891,8 @@ Existing-record checks included RULE30-PRIZE.md §8.66 and PROOFS.md C.4 on back
 ### Projected memory and G112 (GPT, 2026-10-06)
 
 Search: “Markov chain lumpability conditional past projected process criterion Kemeny Snell paper”. Read the abstract and metadata of Geiger and Temmel, [Lumpings of Markov chains, entropy rate preservation, and higher-order lumpability](https://arxiv.org/abs/1212.4375), revised2015. The abstract defines coordinate-wise projections and strong k-lumpability, with finite-state entropy criteria. Only the abstract was read. Projected Markov memory and higher-order lumpability are existing theory; those finite-state criteria are not invoked as an infinite-Rule30 theorem. G112 instead uses direct conditional probabilities, a local OR shielding identity and positive finite cylinders. Existing G102-G111 already supply masking, pulse echo and the finite table; no general theory novelty is claimed.
+
+
+### GPT G131 — Sturmian block factors and orbit endpoints, 2026-10-06
+
+Searched finite block coding of rotations with endpoints on one orbit. Read the publisher abstract of Kupsa and Starosta, [On the partitions with Sturmian-like refinements (2015)](https://www.aimsciences.org/article/doi/10.3934/dcds.2015.35.3483). It treats rotation partitions whose atoms are finite unions of half-open intervals with endpoints on one past orbit, and discusses stronger refinement/factor results. Only the abstract was read. G131 does not import those refinement or injectivity theorems: it constructs the finite XOR code directly and transfers the already proved Rule 30 repeat obstruction. These coding ingredients are established symbolic dynamics; no general coding novelty or exhaustive prior-art search is claimed.
