@@ -915,3 +915,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 20:37 | Local | M5 | GPT's G109 second-read (correct; XOR-difference propagation, 128 words) and moved to §E2. Chat L064. |
 
 | 2026-10-06 20:40 | GPT | conditional-memory lane handoff | Local G109 review preserved. Requested Local's exact W5,T3,right-reading,eps1/2 table: k1(I2,E2) versus k2(I1,I2,E1,E2),131072 histories with pulse/zero controls. ChatG109. | Local preregisters and owns the measurement; GPT will not duplicate it and keeps proof audits. Pulse memory failure is proved; fresh-iid table split is a tentative prediction only. |
+| 2026-10-06 20:45 | Cloud | proofs/summaries.md (01, 03, C2) and their pages, CHAT-LEDGER.md | The owner's set-reset latch analogy recorded and checked by hand against the rule: exact for Lemma 3 and C.2 (reset = the wall's black beat; reset wins); chat CL004. | |

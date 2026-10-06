@@ -16,7 +16,11 @@ black and column 1 is black next tick, it must have been white this tick.
 **Why it matters.** The right side cannot send just any signal: these two rules already rule out some patterns of
 column 1, which is the first narrowing of the channel.
 
-**An everyday picture.** One-way streets: some routes are simply not drivable, whatever the traffic is doing.
+**An everyday picture.** A set-reset latch (the owner's picture). The right side can only press "set"; the wall's
+black beat is the "reset" it cannot see. While the wall is white, a set latch stays set however often set is
+pressed; a black beat clears it. Next to the blinking wall this gives the rule above: every visible 1 is followed by
+a forced 0, like a nerve cell's rest after it fires, or the "never two ones in a row" rule of the codes once used to
+write data on magnetic disks.
 
 ## The formal statement and proof
 

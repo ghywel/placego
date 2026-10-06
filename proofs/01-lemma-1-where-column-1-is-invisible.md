@@ -18,7 +18,8 @@ the white beats.
 left only every other tick. Every later count of "how much information gets through" starts here.
 
 **An everyday picture.** A door with a buzzer: when the door is already open (black), pressing the buzzer changes
-nothing.
+nothing. The buzzer has no memory: at the next white beat, column 1 is heard again. The version with a memory is
+proof 03's latch.
 
 ## The formal statement and proof
 

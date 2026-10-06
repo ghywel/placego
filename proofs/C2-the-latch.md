@@ -16,8 +16,9 @@ white stretch of the wall, once column 1 turns black it stays black until the st
 **Why it matters.** It turns column 1 into a one-way switch during white stretches, which sharply limits what the
 right side can say there. Walls with long white and long black stretches ("slow walls") are studied with this tool.
 
-**An everyday picture.** A latch on a garden gate: once it clicks shut it stays shut until someone comes along to
-lift it.
+**An everyday picture.** A set-reset latch (the owner's picture): column 2 can press "set", and pressing it again
+changes nothing; only a black beat of the wall, a button the right side cannot reach, resets it. Proof 03 is the
+same latch with its reset written in.
 
 ## The formal statement and proof
 
