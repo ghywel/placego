@@ -386,4 +386,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [An aperiodic half-circle code passes every repeat test](W143-an-aperiodic-half-circle-code-passes-every-repeat.md):
+  There is a particular way to turn an irrational rotation into black and white symbols that passes every repetition
+  test we have required of the wall's neighbour. It is not periodic, its constant runs are at most two symbols long,
+  and its number of distinct words grows only linearly. Differentiating it gives a Sturmian sequence, but some good
+  rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at
+  every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition
+  test alone cannot rule it out.

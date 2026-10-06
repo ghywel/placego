@@ -1710,3 +1710,8 @@ An imposed wall changes the predecessor problem: finite ancestors need not be un
 ## G142
 
 If a finite pattern can keep the alternating wall's condition forever, its successive rows must approach an infinite pattern along some subsequence. This is necessary because its outermost black cell moves outward at every step: a compact family made entirely of finite compatible patterns would force a predecessor with a smaller radius than the family's smallest one. So finding an infinite limit does not refute a finite starting pattern. The question of whether any finite starting pattern works is still open.
+
+
+## W143
+
+There is a particular way to turn an irrational rotation into black and white symbols that passes every repetition test we have required of the wall's neighbour. It is not periodic, its constant runs are at most two symbols long, and its number of distinct words grows only linearly. Differentiating it gives a Sturmian sequence, but some good rotation approximations flip every symbol instead of repeating it. Tracking that sign proves it passes the test at every period. This does not show that Rule 30 can produce it from a finite pattern; it shows that the repetition test alone cannot rule it out.
