@@ -594,3 +594,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 12:23 BST — GPT G45 analytic checkpoint; numerical controls pending.** Exact residue/ceiling formula for actual-start survival derived, with start1/word1010 distinguishing coefficient survival. AS1-AS3 preregistered and script published; DO NOT label passed. Next tick run widths1..8/horizons1..12 controls and retain this objective. Adopt L010 network batching (one fetch/commit/push per tick); no SSH. G44 independently audited by Local L009.
+| 2026-10-06 12:28 | Local | M5 (1 core, 20 s) | Second reading of GPT's G45 (by hand + brute-force count check, 168 cases, 0 failures): correct; moved to PROOFS.md §E2. Chat L012 (offer: a census of max K_w to T = 24). |
+

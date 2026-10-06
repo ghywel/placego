@@ -8,7 +8,7 @@ binomial(T,a)/T <= A(T,a) <= binomial(T,a); G40's skeleton cube (a surviving ske
 statement modulo 3^a; G42's affine identity 2^T q = 3^a r + sum_odd_j 2^j 3^(a - S_(j+1)) for T <= 10 with the Terras
 representative r; G42's family sum 5 * sum x_k^2 = 20480/3103353 and its cosine product; G41's frequency-boundary
 valuations; and (added the same day) G43's binary-reader coefficient 2/[M(1 + e(-h/M))], its total weight bound
-3 + log M and the bound 2/M at h = 2^T in G42's family; and G44's parity-tail TV r(B-r)/(BM). (Local, 2026-10-06; second readings in CHAT-LEDGER.md L007, L008.)
+3 + log M and the bound 2/M at h = 2^T in G42's family; G44's parity-tail TV r(B-r)/(BM); and G45's actual-start count, against brute force. (Local, 2026-10-06; second readings in CHAT-LEDGER.md L007, L008.)
 
 RUN-ON:     cpu, one core, standard library
 COMMAND:    python3 tests/probes/prizes/collatz_audit_g39_g42.py
@@ -18,6 +18,8 @@ OUTCOME, 2026-10-06 (the first run): 1,607 admissible words to T = 14, 0 failure
   G43 part (second run, the same day): formula error 4e-14 for odd M < 400; weight - (3 + log M) <= 0 for every M
   tested (largest -2.43); h = 2^T weight <= 2/M for n = 0 .. 39.
   G44 part (third run, the same day): 78 cases, 0 failures.
+  G45 part (fourth run, the same day): the word-ceiling count equals brute force, 168 cases (w <= 12, T <= 14), 0
+  failures.
 """
 from fractions import Fraction as Fr
 from itertools import combinations
@@ -124,3 +126,37 @@ for a in range(1, 7):
         n44 += 1
 print("G44: TV = r(B-r)/(BM) and injectivity for B >= M, a = 1..6, d = 1..13:", n44, "cases, failures", bad44)
 
+# G45 (added 2026-10-06): actual-start survival = residue class cut by a word-specific ceiling.
+# Brute force: count w-bit starts n whose first T shortcut-map iterates all stay >= n; compare with the sum over
+# all length-T words of the G45 formula.
+def g45_count(wbits, T):
+    L, Uw = 2**(wbits - 1), 2**wbits - 1
+    tot = 0
+    for code in range(2**T):
+        word = [(code >> i) & 1 for i in range(T)]
+        B, a, K = 0, 0, None
+        for t, b in enumerate(word):
+            B = 3**b * B + b * 2**t; a += b
+            tt = t + 1
+            if 3**a < 2**tt:
+                c = B // (2**tt - 3**a)
+                K = c if K is None else min(K, c)
+        r = (-B * pow(3**a, -1, 2**T)) % 2**T
+        U = Uw if K is None else min(Uw, K)
+        if U >= L:
+            tot += (U - r) // 2**T - (L - 1 - r) // 2**T
+    return tot
+def brute(wbits, T):
+    c = 0
+    for n in range(2**(wbits - 1), 2**wbits):
+        x, ok = n, True
+        for _ in range(T):
+            x = (3 * x + 1) // 2 if x & 1 else x // 2
+            if x < n: ok = False; break
+        c += ok
+    return c
+bad45 = n45 = 0
+for wbits in range(1, 13):
+    for T in range(1, 15):
+        n45 += 1; bad45 += g45_count(wbits, T) != brute(wbits, T)
+print("G45: word-ceiling count = brute-force actual survival, w = 1..12, T = 1..14:", n45, "cases, failures", bad45)
