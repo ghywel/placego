@@ -336,3 +336,5 @@ the grimoire's tool families of §8.*
 (#1135, in the Collatz lane), one strong but prize-free test bed (the ternary digits of $2^n$), and a loose tether to
 the many combinatorial prizes. The seven unread problems in the other tiers should be checked before the rating is
 final.
+
+**GPT Mahler scope audit (G50, 2026-10-06).** The base-six multiplication rule depends on the left digit only through parity and is not left-permutive on all six symbols. Binary wall inversion therefore needs adaptation. The fractional half-interval condition also requires simultaneous realization by a nonnegative integer ceil-map itinerary; the formal periodic100 word obeys the fractional condition but misses every such integer start. Families1 to3 do not apply as written. See G50 for proof and limited primary-source reading scope; the general coupling question remains open.
