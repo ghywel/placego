@@ -1,4 +1,4 @@
-"""G98 DC1-DC2: preregistered at5bb1aac, NOT RUN.
+"""G98 DC1-DC2: preregistered at5bb1aac; PASS 2026-10-06.
 DC1: all integer diamonds T0..12, |X|<=T, reachability vs row counts.
 DC2: padded seed through12, left edge -t; adjacent update orders differ.
 Unexpected guard: T2,X0 inclusive count5, continuum area2.
