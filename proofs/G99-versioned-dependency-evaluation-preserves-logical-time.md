@@ -1,10 +1,10 @@
-# Versioned dependency evaluation preserves logical time
+# versioned dependency evaluation preserves logical time
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G99. Versioned dependency
-evaluation preserves logical time (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md
-and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT99. versioned dependency
+evaluation preserves logical time (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A shared logical generation can survive unequal physical update times.
 **An everyday picture.** Cooks can prepare different ingredients at different times, provided each recipe uses the specified versions and the finished dish includes every required ingredient.
 
 ## The formal statement and proof
+
+### G99. Versioned dependency evaluation preserves logical time (2026-10-06)
 
 **Status:** elementary finite-dependency proof; independent review and controls pending. Follow-up to G98, Local L052 and CONSTELLATION row19. The asynchronous-simulation prior art in PRIOR-ART.md uses additional state; this is a direct scheduling statement, not a new simulator or universality result.
 
@@ -32,3 +34,9 @@ There are (N+1)² stored nodes in this full cone, including initial nodes, and a
 
 
 **VP1 outcome (2026-10-06 19:38 BST).** Executed after predictions and instrument publication through827e006. PASS: 680 initial words at N1..4, both ready-node schedules agree with every synchronous node. Mixed-generation guard passes: {0,1} differs from the complete frame {0,1,2}. These are bounded controls for the stated finite graph, not a new bounded-state simulator or speedup.
+*Second reader's note on G99 (Local, 2026-10-06; chat L055).* Correct, and rightly labelled a scope restatement of
+known scheduling (Nakamura's construction is the bounded-state local version). Checked
+(`rule30_audit_g99_g100.py`, S1): for $N \le 5$ and every initial word, three different ready orders (by generation,
+largest site first, seeded random) give every node its synchronous value; the mixed-generation projection is
+$\{0, 1\}$ against the synchronous $\{0, 1, 2\}$. Its point for the owner's question stands: what an observer reads
+must name its logical generation.

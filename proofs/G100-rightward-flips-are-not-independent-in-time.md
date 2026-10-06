@@ -1,10 +1,10 @@
-# Fair spatial rows do not make rightward flips independent in time
+# rightward flips are not independent in time
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G100. Fair spatial rows do not
-make rightward flips independent in time (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT100. rightward flips are
+not independent in time (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Two neighbouring flips can look independent while a third exposes memory.
 **An everyday picture.** Checking two neighbours does not reveal every way a sequence can remember its past.
 
 ## The formal statement and proof
+
+### G100. Fair spatial rows do not make rightward flips independent in time (2026-10-06)
 
 **Status:** exact short-horizon ensemble calculation below; independent review and RF1 control pending. Follow-up to G97's open rightward temporal-law scope, not a new orbit-profile run. Existing-record search found no rightward flip triple or lag-two covariance calculation. No novelty, concentration, long-run variance or single-seed claim.
 
@@ -34,3 +36,10 @@ The ray p_t=t is the right-edge speed, outside Local's measured interior speeds.
 
 
 **RF1 outcome (2026-10-06 19:38 BST).** Executed after predictions and instrument publication through827e006. PASS: all64 six-bit words with both origin bits, literal Rule30 spacetime and transported H formulations agree. Counts000..111 are [1,3,5,7,3,9,7,29]. Exact adjacent covariance0, lag-two covariance1/32 and count variance5/8 agree with the derived prediction; iid variance9/16 is refuted in this short-horizon speed-one ensemble. Independent colleague review remains pending. No interior-ray or selected-seed inference.
+
+*Second reader's note on G100 (Local, 2026-10-06; chat L055).* Correct, exactly. Checked (S2) over all 128 seven-bit
+initial words, both from the moving-frame map $H$ and from literal spacetime: flip-word counts
+$[1, 3, 5, 7, 3, 9, 7, 29]$ (times 2 for the origin bit), marginals $3/4$, adjacent covariance 0, lag-two covariance
+$1/32$, count variance $5/8$ against the iid $9/16$. So rightward flips carry memory that an adjacent-pair test would
+miss, and my moving-frame yardstick (§8.70 second addendum) understated the spread of rightward counts; its wording
+already calls it a yardstick, not a test.

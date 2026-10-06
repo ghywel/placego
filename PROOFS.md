@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G98, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G100, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2971,15 +2971,7 @@ Rows 18 and 19 now carry G98's wording.
 
 **DC1-DC2 outcome (2026-10-06 19:31 BST).** Ran after the predictions at5bb1aac and instrument publication through806cfec. DC1 PASS: 169 integer diamonds, with independent path reachability matching the row-interval formula. The five-versus-two count/area guard passes. DC2 PASS: seed left edge -t through12 and the two update orders giving {0} versus {0,1}. Local's L052 review independently checks larger finite ranges. These controls validate the recorded guards, not an effective physical metric.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT99. versioned dependency evaluation preserves logical time (second-read by Local, 2026-10-06)
 
 ### G99. Versioned dependency evaluation preserves logical time (2026-10-06)
 
@@ -2997,6 +2989,14 @@ There are (N+1)² stored nodes in this full cone, including initial nodes, and a
 
 
 **VP1 outcome (2026-10-06 19:38 BST).** Executed after predictions and instrument publication through827e006. PASS: 680 initial words at N1..4, both ready-node schedules agree with every synchronous node. Mixed-generation guard passes: {0,1} differs from the complete frame {0,1,2}. These are bounded controls for the stated finite graph, not a new bounded-state simulator or speedup.
+*Second reader's note on G99 (Local, 2026-10-06; chat L055).* Correct, and rightly labelled a scope restatement of
+known scheduling (Nakamura's construction is the bounded-state local version). Checked
+(`rule30_audit_g99_g100.py`, S1): for $N \le 5$ and every initial word, three different ready orders (by generation,
+largest site first, seeded random) give every node its synchronous value; the mixed-generation projection is
+$\{0, 1\}$ against the synchronous $\{0, 1, 2\}$. Its point for the owner's question stands: what an observer reads
+must name its logical generation.
+
+### G.GPT100. rightward flips are not independent in time (second-read by Local, 2026-10-06)
 
 ### G100. Fair spatial rows do not make rightward flips independent in time (2026-10-06)
 
@@ -3016,6 +3016,23 @@ The ray p_t=t is the right-edge speed, outside Local's measured interior speeds.
 
 
 **RF1 outcome (2026-10-06 19:38 BST).** Executed after predictions and instrument publication through827e006. PASS: all64 six-bit words with both origin bits, literal Rule30 spacetime and transported H formulations agree. Counts000..111 are [1,3,5,7,3,9,7,29]. Exact adjacent covariance0, lag-two covariance1/32 and count variance5/8 agree with the derived prediction; iid variance9/16 is refuted in this short-horizon speed-one ensemble. Independent colleague review remains pending. No interior-ray or selected-seed inference.
+
+*Second reader's note on G100 (Local, 2026-10-06; chat L055).* Correct, exactly. Checked (S2) over all 128 seven-bit
+initial words, both from the moving-frame map $H$ and from literal spacetime: flip-word counts
+$[1, 3, 5, 7, 3, 9, 7, 29]$ (times 2 for the origin bit), marginals $3/4$, adjacent covariance 0, lag-two covariance
+$1/32$, count variance $5/8$ against the iid $9/16$. So rightward flips carry memory that an adjacent-pair test would
+miss, and my moving-frame yardstick (§8.70 second addendum) understated the spread of rightward counts; its wording
+already calls it a yardstick, not a test.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G101. An interior speed-three-quarter observer retains temporal memory (2026-10-06)
 

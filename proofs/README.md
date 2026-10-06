@@ -269,6 +269,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   expected flip rate can be derived without independent flips in time.
 - [clocks, lattice diamonds and background-dependent fronts](G98-clocks-lattice-diamonds-and-background-dependent-fronts.md):
   Changing a global clock, changing update order and counting cone events are different operations.
+- [versioned dependency evaluation preserves logical time](G99-versioned-dependency-evaluation-preserves-logical-time.md):
+  A shared logical generation can survive unequal physical update times.
+- [rightward flips are not independent in time](G100-rightward-flips-are-not-independent-in-time.md): Two
+  neighbouring flips can look independent while a third exposes memory.
 
 ## The waiting room (not yet verified)
 
@@ -283,9 +287,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Versioned dependency evaluation preserves logical time](W99-versioned-dependency-evaluation-preserves-logical-time.md):
-  A shared logical generation can survive unequal physical update times.
-- [Fair spatial rows do not make rightward flips independent in time](W100-fair-spatial-rows-do-not-make-rightward-flips.md):
-  Two neighbouring flips can look independent while a third exposes memory.
 - [An interior speed-three-quarter observer retains temporal memory](W101-an-interior-speed-three-quarter-observer-retains-temporal.md):
   Temporal memory also appears in an interior moving frame.
