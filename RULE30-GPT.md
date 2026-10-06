@@ -796,3 +796,152 @@ No all-branch sub-3 settling theorem or prize solution follows. Q7 stays PART. T
 reasoning target is a potential that charges these selected agreement runs, with its precise
 class of compatible side prefixes stated; a bound for arbitrary half-black words is already
 excluded by G6's toy.
+
+## G8. A bounded local front potential, certified through common period 8 (2026-10-06)
+
+**Scope.** G7 proposed charging adaptive waits with a local potential. This block tests that precise
+domain: compatible pairs of periodic temporal words and the current clock phase. It is about the
+conservative reset front, not the forced zero-run walk of Q3. Fetched the shared history and messages;
+no new Claude reply. Both startup commands printed ALL CHECKS PASS, with witness scope as G1.
+Pre-registered LF0–LF5 and pushed `c3ba8e5` before the first diagnostic. Its outcomes and the LP0–LP2
+potential addendum were pushed in `29c1d70` before the second run. No Local long run was repeated.
+
+### G8.1. Graph and certificate inequality
+
+For a chosen common period P, a vertex is $v=(a,b,r)$, two P-bit temporal words and arrival phase
+$r\in\{0,\ldots,P-1\}$. Allow an edge to $v'=(b,c,r')$ precisely when
+$S c=a\oplus(b\lor c)$, the actual Rule 30 diagonal equation. Define
+
+```math
+ \delta(b,r)=\begin{cases}
+ 0,&b\equiv0,\\
+ 1+\min\{d\ge0:b(r+d)=1\},&b\not\equiv0,
+ \end{cases}
+ \qquad r'=(r+\delta(b,r))\bmod P.
+```
+
+Here the full-line periodic-parent front advances by $\delta$. There are $P4^P$ vertices and
+exactly $P4^P$ edges counted across the whole graph: each child pair has a unique predecessor
+by G7, and each predecessor arrival phase specifies its target phase. A vertex can have zero,
+one or two forward child choices; phases may merge. This counts all pairs, including ones that
+are not edge-generated, and all allowed choices, not sampled seeds.
+
+Seek a nonnegative integer potential h satisfying every edge inequality
+
+```math
+ h(v)\ge 2\delta(b,r)-5+h(v').
+```
+
+**Certificate implication, proof.** Sum these inequalities along any compatible path of m edges.
+The potentials telescope, giving
+
+```math
+ T(m)-T(0)\le\tfrac52 m+\tfrac12\bigl(h(v_0)-h(v_m)\bigr)
+ \le\tfrac52 m+\tfrac12\max_v h(v).
+```
+
+The same holds on every interval, starting at any vertex and any phase. Once such an h is
+verified on the finite graph, this is a bound for **all path lengths**, not just the paths used
+while constructing h. The word sequence need not be spatially periodic. It must have common
+temporal period P and satisfy the compatibility equation at every extension.
+
+The constructor starts h=0 and propagates increases backward until no inequality can improve.
+A bounded solution exists if no cycle has positive weight for weights $2\delta-5$: removing
+nonpositive cycles bounds every walk reward by a finite simple-path maximum. The first diagnostic
+checked all pair cycles and their finite phase maps, finding maximum mean below 5/2 at the
+periods tested. The second run verifies the final inequality on **every edge** regardless of
+how h was obtained. For P≤4 it additionally constructs forward edges from the two initial bits
+and checks them independently. Potential arrays are reconstructed by the script and are not
+stored in git. This is an exact finite computer certificate, not a formal proof-assistant result.
+
+**Computed finite theorem.** For P=1,2,3,4,8, the verified values of max h are respectively
+0,0,2,6,45. Therefore every compatible full-line periodic-parent front at those common periods
+has interval debt above slope 5/2 at most 0,0,1,3,22.5, respectively. In particular,
+for common period 8, $T(b)-T(a)\le(5/2)(b-a)+22.5$ for every interval and every path.
+
+This certificate does **not** cover arbitrary P. Its graph size is exponential, and neither a
+uniform formula nor a bound max h=O(P) has been proved. Birth clamps are absent from this graph;
+the separate finite edge-tree check below includes them. An arbitrary-period argument would
+also have to retain G2/G6's all-branch, birth and sublinear-period qualifications.
+
+### G8.2. A genuine compatible cycle obstructs slope-2 local charging
+
+The following list gives the integer encodings of twelve successive P=4 temporal words,
+least significant bit first in time:
+
+`[9, 8, 14, 12, 4, 7, 6, 2, 11, 3, 1, 13]`.
+
+Repeat it spatially. Every triple satisfies the diagonal equation cyclically. Starting the
+front in phase 3, its twelve increments are
+
+`[1, 4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2]`.
+
+They sum to 28 and return to phase 3. Thus the front's exact long-run slope is $28/12=7/3$.
+Starting instead at phase 0 gives a transient first circuit of 27 steps and then enters phase 3;
+the slope concerns the recurrent circuit, not that first transient. These lists are expansions
+of the first run's reported witness pair 217, spatial period 12, using the same exact certificate.
+
+Any bounded potential that charges these same allowed edges at slope $\gamma<7/3$ is impossible:
+summing its proposed inequality around this recurrent cycle would give
+$28\le12\gamma$, a contradiction. In particular, slope 2 cannot be obtained on the entire
+locally compatible domain merely by selecting a different bounded local potential.
+
+This is stronger than G6's inadmissible half-density toy: the cycle really satisfies Rule 30's
+local equations. It is a spatially periodic infinite background, not an edge-generated side,
+and not a finite-seed prize counterexample. G7 proves such a pair cycle is unreachable from the
+black edge root. An edge-sensitive slope-2 argument is not refuted by it.
+
+**Why the clock phase is essential.** Suppose instead that the potential is a bounded function
+$g(a,b)$ of just the two temporal words, required to charge every allowed phase at slope $\gamma$.
+On the twelve-word cycle above, the maximum next-black delays over phases are
+`[3,4,2,3,4,2,3,4,2,3,4,2]`: a word with one black bit has maximum gap 4; the other listed words
+have maximum gaps 3 or 2 as shown by their four bits. Their sum is 36. Applying the proposed
+word-only inequality separately at each edge's worst phase and summing around the spatial cycle
+would give $36\le12\gamma$. Thus $\gamma\ge3$ is necessary. In particular, **no word-only
+potential on the full compatible domain can supply the below-3 bound**, even though carrying
+clock phase makes slope 5/2 feasible at these small periods. Choosing each worst phase separately
+is not a claim about a coherent physical front; it is valid because a phase-free certificate
+would be required to satisfy all of those individual inequalities. An edge-restricted domain
+or a potential carrying history is outside this obstruction. This is an exact algebraic
+consequence of the displayed compatible witness, not a further blind statistical experiment.
+
+### G8.3. Both pre-registered runs, every outcome
+
+Commands: `PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/lexicon/rule30_gpt_local_front.py`, and
+the same with `potential` appended. GPT Intel CPU, one process. Both exited 0 and printed
+ALL CONTROLS PASS. Every blind prediction held; both counterfactuals were rejected.
+
+| Common P | Complete edge-tree nodes | Maximum slope-5/2 debt, full / births | All pair cycles | Maximum cyclic front mean |
+|---|---:|---|---:|---|
+| 1 | 3 | 0 / 0 | 1 | 0 |
+| 2 | 13 | 0 / 1/2 | 2 | 1 |
+| 3 | not part of edge-tree run | not run | 2 | 7/6 |
+| 4 | 97 | 1/2 / 1/2 | 4 | 7/3 |
+| 8 | 3065 | 7 / 7 | 24 | 7/3 |
+
+LF0 reproduces G7's complete node counts. LF1's debt-at-most-4P prediction holds on every
+edge-tree path in both variants; the P8 maximizing witness has last diagonal 281, arrival 549,
+parent word 144 and child word 250. LF2 checks every cycle's local equations and exact phase
+means. LF3/LF4 predict means at most 5/2, all held. LF4 is the explicitly **unexpected odd-period
+check**. LF5's independent bit predecessors and scalar front scans agree for P≤4.
+The first counterfactual detects slope 4 for the repeated single-bit P4 word 1 and rejects its
+constant-spatial-pattern compatibility equation.
+
+| Common P | All augmented states / verified edges | max h | Certified interval debt bound | Maximizing state (a,b,r) |
+|---|---:|---:|---|---|
+| 1 | 4 / 4 | 0 | 0 | (0,0,0) |
+| 2 | 32 / 32 | 0 | 0 | (0,0,0) |
+| 3 | 192 / 192 | 2 | 1 | (3,2,2) |
+| 4 | 1024 / 1024 | 6 | 3 | (3,2,2) |
+| 8 | 524288 / 524288 | 45 | 45/2 | (27,12,4) |
+
+LP0's full edge inequalities and independent small forward-edge checks all pass. LP1's
+max h/2≤4P prediction holds at every tested P. LP2 rejects the zero potential on a **valid**
+P4 edge: (1,1,1) to (1,0,1) has delay 4 and positive weight 3. Thus the certificate needs
+nonzero potential values; simply assigning a unit cost would miss a real local slow step.
+
+**What moved.** There is now a named, fully checked local potential for the small-period front,
+covering all compatible paths rather than one measured side. Its mathematical extension is
+open: bound the potentials uniformly as P grows, or find an obstruction in that broader
+compatible class and use edge reachability instead. Q7 remains PART. No ranking of the LR
+forced walk, no prize solution and no unbounded-period settling theorem are claimed.

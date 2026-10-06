@@ -46,7 +46,18 @@ ADDENDUM before potential run (append "potential" to the command):
  REFUTED-BY: convergence or any edge inequality fails; LP1 range too large;
      LP2 not rejected. These graphs are full-line periodic parents, without
      birth clamps. No claim of a uniform potential for unbounded P.
-OUTCOME of potential pending.
+OUTCOME of potential 2026-10-06 04:49 BST: exit 0, ALL CONTROLS PASS.
+ LP0 PASSED: states/edges 4,32,192,1024,524288 at P=1,2,3,4,8;
+     all exact inequalities and P<=4 forward checks pass.
+ LP1 HELD: max h 0,0,2,6,45; debt bounds 0,0,1,3,45/2.
+     Maximizing states (0,0,0),(0,0,0),(3,2,2),(3,2,2),(27,12,4).
+ LP2 REJECTED zero potential on valid delay4 weight3 edge.
+ Certificate expansion of LF P4 witness: temporal words
+ [9,8,14,12,4,7,6,2,11,3,1,13]; recurrent phase3 increments
+ [1,4,2,1,4,2,1,4,2,1,4,2], total28, phase returns3, slope7/3.
+ Phase0 has a transient first circuit27, then enters phase3.
+ No blind failures. Full-line common-period certificates only, not a
+ uniform unbounded-P or birth-clamped certificate.
 """
 from fractions import Fraction
 from rule30_gpt_cycles import bit
