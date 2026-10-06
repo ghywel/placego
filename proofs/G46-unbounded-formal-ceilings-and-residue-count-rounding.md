@@ -17,8 +17,10 @@ corrected a rounding short cut in counting.
 **Why it matters.** It rules out a uniform bound on all ceilings, so any control of the exceptions has to come from
 finer arithmetic (G69 supplies it).
 
-**An everyday picture.** Two clocks with unrelated periods: now and then their hands almost line up, and the near
-misses can be as close as you like.
+**An everyday picture.** The circle of fifths never quite closes. Stacking fifths comes back close to an octave of
+the starting note now and then, sometimes falling just short of it (after 5, 17, 29 and 41 fifths), and those near
+misses can be as close as you like. Each one that falls short gives a large ceiling here (Local's observation in
+chat L039, from the owner's Coprime work).
 
 ## The formal statement and proof
 

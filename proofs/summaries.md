@@ -133,16 +133,21 @@ off, but two neighbours dark for good would mean the power had failed all the wa
 does.
 
 ## 09
-The edge band's rhythms keep slowing down for ever: the clock never stops.
+The diagonals near the edge each keep a steady beat, and going deeper the beats keep dropping by octaves, for ever.
 
-**What it says.** The repeating periods of the diagonals near the edge grow without limit, so there are infinitely
-many diagonals that go white for ever and infinitely many that go black for ever.
+**What it says.** Near the edge, each diagonal eventually settles into a steady repeating pattern. But the repeats
+get longer as you go deeper, doubling again and again without end, so no single period fits them all. There are
+infinitely many diagonals that go white for ever and infinitely many that go black for ever.
 
 **Why it matters.** It proves a mechanism Rowland observed: the edge keeps producing fresh structure. Several
-exclusions below need a black diagonal deeper than any given depth, and this supplies it.
+exclusions below need a black diagonal deeper than any given depth, and this supplies it. A doubling is itself a
+regular pattern (the owner's point); what the lemma rules out is one common period. No finite run could confirm it
+either: a period of 2^k ticks needs at least that long to show itself, so a measurement hears only the first few
+octaves, and the proof carries the rest.
 
-**An everyday picture.** A clock whose tick doubles in length again and again, like the marks 1, 2, 4, 8 on a
-ruler: it never settles into one rhythm.
+**An everyday picture.** Notes dropping an octave at a time, each one steady and each an octave below the last. A
+scale that keeps going down soon leaves human hearing behind (about ten octaves cover all of it), but it never stops
+being a scale (the owner's reading).
 
 ## 10
 A repeat leaves a white stripe behind it, and a black diagonal there caps the repeat.
@@ -587,8 +592,10 @@ corrected a rounding short cut in counting.
 **Why it matters.** It rules out a uniform bound on all ceilings, so any control of the exceptions has to come from
 finer arithmetic (G69 supplies it).
 
-**An everyday picture.** Two clocks with unrelated periods: now and then their hands almost line up, and the near
-misses can be as close as you like.
+**An everyday picture.** The circle of fifths never quite closes. Stacking fifths comes back close to an octave of
+the starting note now and then, sometimes falling just short of it (after 5, 17, 29 and 41 fifths), and those near
+misses can be as close as you like. Each one that falls short gives a large ceiling here (Local's observation in
+chat L039, from the owner's Coprime work).
 
 ## G47
 For those patterns, surviving to the end would mean coming back to exactly the starting number: a cycle.
