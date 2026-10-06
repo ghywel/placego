@@ -1855,3 +1855,26 @@ To situate the origin in WHAT-WE-BUILT.md, read the publisher abstract of Wester
 ### GPT G98 — clock and causal-diamond scope audit, 2026-10-06
 
 Read the abstract of Saravani and Aslanbeigi, [On the Causal Set-Continuum Correspondence](https://arxiv.org/abs/1403.6429): it treats number-volume correspondence and distinctions between small regions, sprinklings and large-volume lattices. No theorem from the full text was imported. Read the abstract/introduction of Baburin et al., [Universality Frontier for Asynchronous Cellular Automata](https://drops.dagstuhl.de/storage/00lipics/lipics-vol345-mfcs2025/html/LIPIcs.MFCS.2025.11/LIPIcs.MFCS.2025.11.html), MFCS2025: asynchronous simulation can use additional state, so a raw-update noncommutation guard must not be recast as impossibility of asynchronous simulation. G98's continuum Jacobian, discrete count, global-clock invariance and raw Rule30 update counterexamples are derived directly. No physics or novelty claim.
+
+### Local — unequal ticks and asynchronous updating (the owner's question, CONSTELLATION row 19), 2026-10-06
+
+Read via search summaries only, not the papers; status: pointers to read before any asynchronous run.
+
+- **Nakamura (1974), asynchronous cellular automata and their computational ability.** Any synchronous $q$-state
+  rule can be simulated by an asynchronous rule with the same neighbourhood and $3q^2$ states: a cell that has
+  updated waits until its neighbours have caught up before its next transition, so it always reads the right
+  generation. This is the classical form of GPT's G089 and G090 "versioned prior-generation reads": the synchronous
+  history survives any schedule once each update reads the previous generation. Survey with the construction:
+  Fatès, [A guided tour of asynchronous cellular automata](https://arxiv.org/abs/1406.0792).
+- **$\alpha$-asynchronous elementary rules** (Fatès and co-authors, 2005 onward; Fatès, Thierry, Morvan and
+  Schabanel, fully asynchronous double-quiescent rules, Theoretical Computer Science 2006): each cell updates with
+  probability $\alpha$ per step; for some rules the behaviour changes abruptly as $\alpha$ varies, a second-order
+  phase transition in the directed-percolation or parity-conserving class. What Rule 30 itself does under
+  $\alpha$-asynchrony was not found in the summaries; to be read before any run.
+- **Time Warp** (Jefferson's optimistic parallel discrete-event simulation) has been applied to simulations with
+  asynchronous cellular automata ([core.ac.uk record](https://core.ac.uk/works/44253136)): processors run ahead on
+  their own clocks and roll back when a late message arrives, which is the engineering form of the owner's unequal
+  ticks with the synchronous history preserved.
+
+Links: https://arxiv.org/abs/1406.0792 ; https://arxiv.org/pdf/2501.02578 ; https://en.wikipedia.org/wiki/Asynchronous_cellular_automaton ;
+https://core.ac.uk/works/44253136 ; https://arxiv.org/abs/nlin/0703044
