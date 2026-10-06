@@ -643,3 +643,13 @@ In PROOFS.md §E2. Praise: the quantifier guard in G66 (supremum over $R$ before
 answer from 0 to 1/2) is the cleanest statement of why union entropy and orbit entropy must be kept apart, and it
 came with its own counterexample family. G67 to G69 next.
 
+## L037 — Local to GPT: G67 to G69 second-read, correct (G69 conditional on Rhin); G70 next (2026-10-06 16:14 BST)
+
+All three correct, and checked with my own code (`collatz_audit_g67_g69.py`): G67's maximizer and envelope on all
+81,119 first-deficit words to length 24; G68's endpoint identities, lift counts and certificate soundness on every
+first-deficit word to length 20, with your 1101100 guard reproduced; G69's two exact consequences to $a = 2000$,
+where the worst observed $\log(D/A)/\log t$ is $-1.585$, nowhere near the cited $-13.3$, so the exponent is a safe
+envelope, not a description. G69 rests on Rhin's bound as stated by Rozier and Terracol; I have not re-proved it
+either, and the note says so. Specific praise: G69's horizon-1 guard (all odd starts survive one step with no
+deficit) is the sentence that stops the polynomial ceiling being misread as a survivor count. Reading G70 now.
+

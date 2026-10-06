@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G66, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G69, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -1664,16 +1664,7 @@ the next power of 2, and G64's counting applies with radius $R + 2k + 4$. Checke
 template against a full G60 realization (2,554 samples, columns 1 to 5), G65's mirror extension under full Rule 210
 (20 rows), and G66's localization (240,116 predicted zeros).
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-### GPT G67 — first-deficit offset envelope (awaiting independent reading)
+### G.GPT67. first-deficit offset envelope (second-read by Local, 2026-10-06)
 
 ### G67. The maximal affine offset at a first coefficient deficit (2026-10-06)
 
@@ -1733,7 +1724,7 @@ RB2 passes its finite prediction on all256 G67 extremizers: no zero residues occ
 This completes the finite extremality audit. Next reasoning target: a residue-sensitive inequality or certificate for first-deficit words; any such claim must retain this ordering counterexample and G46's rounding obstruction. Simply extending the extremizer table would not supply the missing uniform argument. No new experiment is registered or launched in this checkpoint.
 
 
-### GPT G68 — endpoint digit certificates (awaiting independent reading)
+### G.GPT68. endpoint digit certificates (second-read by Local, 2026-10-06)
 
 ### G68. Two endpoint ceilings and nested digit exclusion certificates (2026-10-06)
 
@@ -1784,7 +1775,7 @@ Post-control diagnostics identify the two maximum-depth cases as a200 and253: pr
 The bounded instrument audit is complete; independent proof review remains pending. Next reasoning/source audit: whether established lower bounds for linear forms in logarithms give a uniform polynomial envelope for G67's near-resonance denominator, and what that envelope actually says about counts. No such bound is claimed yet, and it would not by itself prove an actual survival estimate. No larger census or additional run is started here.
 
 
-### GPT G69 — polynomial first-deficit ceiling (awaiting independent reading)
+### G.GPT69. polynomial first-deficit ceiling (second-read by Local, 2026-10-06)
 
 ### G69. Known logarithmic bounds give a polynomial first-deficit ceiling (2026-10-06)
 
@@ -1824,6 +1815,28 @@ The harmless floor bound is still valid when the strict cutoff is an integer. At
 
 LF1 passes256 exact integer denominator and maximum-ceiling inequalities; no floating logarithms or fractional powers were used. LF2 passes the existing791 first-deficit words throughlength16, independently evolving their sole positive survivor at t2,n1 and checking the coarse start/terminal/count cutoffs. The no-deficit horizon counterfactual is refuted analytically by all positive odd starts; the probe retains n3 as an exact witness. Probe: `tests/probes/prizes/collatz_gpt_logarithmic_ceiling.py`; Python on GPT's Intel host, under1 s. No control failed. These validate finite applications, not the deep logarithmic theorem. The bounded application audit is complete; independent source/proof reading remains pending. G70 records the finite-horizon count consequence separately.
 
+*Second reader's note on G67, G68 and G69 (Local, 2026-10-06; chat L037).* All three correct (G69 conditional on the
+cited Rhin bound, which neither of us has re-proved). G67: the prefix before the $(i+1)$-st odd step has $i$ ones in
+$p_i$ steps, so $3^i > 2^{p_i}$ and $p_i \le \lfloor i \log_2 3 \rfloor$; the latest positions are simultaneously
+admissible (strictly increasing since $\log_2 3 > 1$, every intermediate prefix above 1, first failure at
+$t = \lceil a \log_2 3 \rceil$) and maximize $B$ componentwise; $B_{\max}/3^a = \tfrac13 \sum_i 2^{-\{i \log_2 3\}}$ gives the
+envelope. G68: $q - n = (B - Dn)/M = (B - Dq)/A$, so start and terminal share the ceiling; the prefix and suffix
+congruences and the nesting hold, and the 1101100 guard reproduces $(K, r, y) = (1, 59, 38)$. G69:
+$D/A = e^\lambda - 1 > \lambda \ge t^{-13.3}$ with $H = t$ (as $t > a$), so $K < a t^{13.3}/3$; the scope guard at
+horizon 1 is right.
+Checked independently (`collatz_audit_g67_g69.py`): G67 on all 81,119 first-deficit words to length 24 (each class's
+maximum unique and equal to $B_{\max}(a)$, $a \le 15$) and the envelope to $a = 399$; G68's identities, lift counts and
+prefix-certificate soundness on every first-deficit word to length 20; G69's two exact consequences for
+$a = 1$ to 2000, where the least observed $\log(D/A)/\log t$ is $-1.585$, far inside the cited $-13.3$.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### GPT G70 — finite-horizon count bridge (awaiting independent reading)
 
