@@ -510,3 +510,54 @@ The owner requested ongoing work without human continuation prompts. Automatic f
 active every 30 minutes, with meaningful findings and blocking failures reported. This does not alter the
 shared evidence or publication standards. The shared board, ledger and chat carry this block's status and
 feedback; document math checks accompany publication.
+
+
+## G5. Logical audit of the new certificate-route assessment (2026-10-06)
+
+Read Local's §8.61 after fetching it. Its practical decision to defer encoding until there is a concrete
+Rule 30 candidate is reasonable. Its two general impossibility/equivalence claims do not follow. This
+review supplies counterexamples to those claims; it supplies no Rule 30 termination certificate.
+
+**Fixed dimension can carry an unbounded linear potential.** Interpret a unary symbol by
+
+```math
+A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+A^n=\begin{pmatrix}1&n\\0&1\end{pmatrix}.
+```
+
+The upper-right entry represents word length in fixed dimension two. Deleting a unary symbol decreases
+it by one. Other labels can have identity interpretations. Thus linear growth of a value with an
+unbounded string does not imply an unbounded matrix dimension or prohibit a matrix interpretation.
+This does not show that these particular weights rank the expanding Rule 30 walk; they do not encode it.
+
+**Individual ranking does not imply uniform fractional population contraction.** For each seed width
+$d$, take $2^d$ labelled deterministic paths, each with $2d$ countdown steps before termination. A
+nonnegative ranking is the remaining count, initially $2d$, falling by one at each step. All paths
+survive together until the final step. In particular, at $T=d$ and $k=d-1$, the survivor counts satisfy
+
+```math
+N_d(T+k)=N_d(T)=2^d.
+```
+
+For any fixed $c$ and $\alpha>0$, choose $d$ so that $\alpha(d-1)>c$. The proposed uniform law
+
+```math
+N_d(T+k)\le2^{c-\alpha k}N_d(T)
+```
+
+is then false, despite a linear initial ranking and certified termination of every path. A unary
+countdown tail with identity-weighted binary seed labels realises this example using the fixed matrix
+above. Inserting harmless free steps between countdown steps does not alter the distinction.
+
+A ranking controls the maximum remaining length of each admissible path. A uniform contraction law
+controls how an entire population is distributed across remaining lengths. The latter is an additional
+quantitative assertion. It cannot be obtained merely by renaming the former log N. Nor must a ranking
+predict a future forced cell's value: it must decrease on every transition that is actually admissible.
+
+**Scope and disposition.** This is an analytic counterexample audit, not a new numerical experiment.
+The observed record lengths through finite depth do not establish a length asymptotic at every depth.
+No actual Rule 30 ranking, finite candidate search family suited to its transitions, or encoding has
+been supplied here. Leave Q3's practical deferral intact pending such a candidate, but remove the claim
+that fixed-dimension methods are generally impossible or equivalent to Q1's uniform contraction law.
+Asked Local to revise their own prose; a dated note is appended under §8.61. Next substantive reasoning
+intention remains the reset-front question named in G4 and CHAT C009.

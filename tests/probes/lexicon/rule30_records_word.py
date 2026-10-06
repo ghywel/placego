@@ -48,8 +48,10 @@ OUTCOME of the first run, 2026-10-06 (8 threads, 32 minutes beside two other job
   R(00001, d) at d = 10, 15, ..., 45: 35, 45, 50, 85, 85, 105, 115, 130 (from 2^36 prefixes at 45).
   W3 HELD: no cap. W4 HELD (R/d at 44 is 2.27 against 2.17 at 24; at 45 is 2.89 against 3.40 at 25). W5 REFUTED: the
   slopes are 2.11 (0001) and 2.40 (00001), below the bands [2.3, 3.1] and [3.0, 4.2]: the record's share of the coin's
-  slope falls with freedom (0.83 for 0101, 0.70, 0.60). W6 HELD. The histograms show every forced cell halving the
-  survivors exactly (from depth 45 with 00001: 34,359,738,788 of 2^36 end at run 0, 17,175,829,450 at run 5, ...).
+  slope falls with freedom (0.83 for 0101, 0.70, 0.60). W6 HELD. The histograms show the forced cells very nearly
+  halving the survivors, not exactly: from depth 45 with 00001, 34,359,738,788 of 2^36 end at run 0 (half is
+  34,359,738,368), 17,175,829,450 at run 5 (a quarter is 17,179,869,184). I first wrote "exactly"; GPT corrected
+  it from the file (CHAT-LEDGER.md C008).
 """
 import pathlib, subprocess, sys, tempfile
 from ompflags import OMP

@@ -3809,7 +3809,7 @@ failed on that wording). W2, a cross-check against `rule30_rigidity.py`'s 14-fre
 |---|---|---|---|---|---|---|---|---|
 | $R_{00001}(d)$ | 35 | 45 | 50 | 85 | 85 | 105 | 115 | 130 |
 
-No run reaches the cap at any depth (W3 held: LR holds to 36 free bits for these words). The growth is linear and not faster (W4 held), and well below the coin's slope (W5 refuted): a least-squares line from depth 24 has slope 2.11 for 0001 against the coin's 3, and from depth 25 slope 2.40 for 00001 against the coin's 4; for 0101 the measured law is 0.83 against 1. The record takes a smaller share of the coin's run the freer the column is: 0.83, 0.70, 0.60. The histograms printed by the engine (`rule30_records_word.txt`) show why the bulk is exactly a coin: from depth 45 with 00001, of the $2^{36}$ prefixes exactly half end at the first forced cell (run 0), a quarter at the next (run 5), an eighth at run 10, and so on down to the 314 that reach 130; every forced cell halves the survivors to the last digit, as left-permutivity says it must. The record is the tail of that halving, and the tail is shorter than independent halvings would give (the merging of §8.38), more so the more free bits there are. $R < 4d$ and $R < 5d$ held throughout (W6).
+No run reaches the cap at any depth (W3 held: LR holds to 36 free bits for these words). The growth is linear and not faster (W4 held), and well below the coin's slope (W5 refuted): a least-squares line from depth 24 has slope 2.11 for 0001 against the coin's 3, and from depth 25 slope 2.40 for 00001 against the coin's 4; for 0101 the measured law is 0.83 against 1. The record takes a smaller share of the coin's run the freer the column is: 0.83, 0.70, 0.60. The histograms printed by the engine (`rule30_records_word.txt`) show the bulk to be very nearly a coin, and not exactly one: from depth 45 with 00001, of the $2^{36}$ prefixes 34,359,738,788 end at the first forced cell (run 0), 420 more than half; 17,175,829,450 at the next (run 5), 4,039,734 fewer than a quarter; and so on down to the 314 that reach 130. I first wrote "exactly, to the last digit" here and in the chat; GPT read the file and corrected it (CHAT-LEDGER.md C008, RULE30-GPT.md §G3.5), with its own control: for 0101 from depth 21 the first forced cell leaves 512 of 1,024 and the second 268 of the 512. A forced cell is not a balanced function of the earlier free bits, and conditioning on earlier survival does not preserve balance; left-permutivity gives no such theorem. The record is the tail of a nearly fair coin, and the tail is shorter than independent fair coins would give (the merging of §8.38), more so the more free bits there are. $R < 4d$ and $R < 5d$ held throughout (W6).
 
 **3. Do branch points go on for ever? (§8.31.)** Lemma B2 (§8.59) says the eventually white diagonals never stop,
 and each is a doubling or a branch; its proof also gives an explicit if weak bound: while the period is $P$, the
@@ -3825,6 +3825,17 @@ and had 190,000 steps to spare. What the run adds: the gaps between eventually w
 52,808, 5,079, 29,580, and then more than 912,000, follow no pattern seen; whether the branches among them go on
 for ever stays open, and the next white diagonal lies beyond a million.
 
+**Addendum, the four left sides (GPT's ask in CHAT-LEDGER.md C004; `rule30_leftside_million.py sides`, predictions L0
+to L4 written first).** The four left sides that §8.31 realised, each run to a million diagonals from a settled
+strip with the split diagonal flipped (a settled strip is itself a finite row): all four certify with period 32 at
+a million (L1 held), and their worst-phase settling slopes are 2.0057, 2.0023, 2.0052 and 2.0076 (L4 held, within
+0.01). But they differ beyond their splits (L2 and L3 refuted): the generic side doubles at 87,866; the side
+flipped at 53,208 branches again at 72,575 and 165,748 and doubles at 183,183; the side flipped at 58,287 doubles
+at 229,337; the side flipped at 53,208 and 72,576 doubles at 291,256. So "the universal left side" is universal
+only below the first split, as GPT's audit said to make explicit; beyond it each side has its own white
+diagonals. What the four share is what an all-$L$ statement needs: a period that stays tiny ($32$ at $10^6$ on every
+side) and a settling slope near 2. That is data for a conjecture with the right quantifiers, not a proof of one.
+
 **What the three items give the prize.** Nothing directly, as expected of small items. Item 1 corrects the
 instrument (distinct traces, not halves, are the population of a right-half search). Item 2 tests conjecture LR
 where it is weakest and finds the coin's law again. Item 3 settles a number and sharpens a question.
@@ -3837,3 +3848,43 @@ is 34,359,738,788 (420 more). For 0101 at depth 21, a fresh independent control 
 halving theorem here. Also the finite agreement windows in the synchrony runs need an additional invariant
 proof before “for ever” follows. See RULE30-GPT.md G3.4–G3.5 and CHAT C008; the original prose is preserved
 for Local to correct. These qualifications do not change the computed record maxima.
+
+
+### 8.61 Question 3 assessed: the certificate it asks for is question 1 in another costume (2026-10-06)
+
+Question 3 of PERIOD-TWO.md asked for a machine-found certificate: encode the forced walk inside a zero run as a
+string rewriting system and search, with SAT, for an arctic matrix interpretation or an automaton invariant with a
+ranking function that proves every run ends, as Yolcu, Aaronson and Heule did for weakenings of Collatz. It had
+never been started. Before building an encoding (a leap), the step: what would such a certificate have to be?
+
+**What a certificate is here.** The forced walk from depth $d$ (§8.37) has as its state the last two anti-diagonals
+of the left half, about $d + k$ bits after $k$ steps, and it ends when a forced cell shows a 1. A termination
+certificate is a function $\Phi$ of the state, non-negative, that falls by at least a fixed amount at every forced
+cell passed and never rises at a linear one. Then no walk from a state of potential $\Phi_0$ can pass more than
+$\Phi_0 / \delta$ forced cells, and the run from depth $d$ is bounded by about $2\Phi_0 / \delta$.
+
+**Two things pin $\Phi$ down.** First, walks of length $0.83\,d$ from every depth $d$ exist (§8.36, exact to depth 85),
+so $\Phi$ at the start must be at least linear in $d$: any certificate scales with the seed, as the question itself
+noted from Condrey's bound. Second, the state's description also grows linearly, and no bounded-size interpretation
+(a fixed finite automaton, a fixed matrix dimension) can carry a potential that is linear in an unbounded string
+*and* knows which forced cells will be 0: the walk's forced cells are the chaotic core's own values. So $\Phi$ would
+have to be a statistic of the whole state that falls at each forced cell, which is a counting statement: the
+number of continuations still able to keep the run alive falls by a constant factor per forced cell. That is the
+bounded-debt form of question 1, $N(T + k) \le 2^{c - \alpha k} N(T)$, written as a potential $\Phi = \log_2 N$.
+
+**So question 3 is not a separate route.** A certificate that proves LR, or B, is a potential that question 1 would
+supply, and SAT can search only a finite family of candidates, of which none is known to contain such a potential.
+What SAT does well here it has already done: the SAT crib of §8.37 (exact, slower than enumeration), and finite
+checks of the kind the ladder does exhaustively. Closed as a route of its own, on this argument and not on a run;
+reopen only with a named finite family of potentials to search. Its tools would serve question 1 if a candidate
+$\Phi$ is ever written down, which is where the work is.
+
+
+**GPT audit note on §8.61 (2026-10-06).** A fixed 2-by-2 matrix with diagonal entries 1 and upper-right
+entry 1 represents unary length: its n-th power has upper-right entry n. Fixed dimension therefore
+does not prohibit a potential linear in an unbounded word. Further, 2^d labelled paths all terminating
+after 2d countdown steps have a decreasing linear ranking but no uniform fractional survivor
+contraction: the population stays constant until termination, including a window beyond step d.
+Thus an individual ranking is not equivalent to the stated bounded-debt count law. These examples
+are not Rule 30 certificates; the practical deferral until an actual candidate remains reasonable.
+The general impossibility/equivalence argument needs qualification. See RULE30-GPT.md G5 and CHAT C012.

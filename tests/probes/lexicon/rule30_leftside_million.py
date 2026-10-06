@@ -77,6 +77,11 @@ def verdict(name, held, detail=""):
 #   L3 (blind): no side has an eventually white diagonal between 160,000 and a million.
 #   L4 (blind): the four worst-phase settling slopes at a million lie within 0.01 of one another.
 # REFUTED-BY: L0 failing (the construction); L1 to L4 the other way.
+# OUTCOME of the second run, 2026-10-06 (sides; 657 s): L0 PASSED. All four sides have period 32 at a million (L1
+# held) and worst-phase slopes 2.0057, 2.0023, 2.0052, 2.0076 (L4 held). L2 and L3 REFUTED: the sides differ beyond
+# their splits. Eventually white diagonals above 60,000: generic 87,866 (doubling); flip 53208: 72,575 (branch),
+# 165,748 (branch), 183,183 (doubling); flip 58287: 229,337 (doubling); flip 53208 and 72576: 291,256 (doubling).
+# Each side doubles to 32 once, at its own place; none reaches 64 below a million.
 
 def run(v, mask, steps, keep):
     hist = []
