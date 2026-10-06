@@ -255,21 +255,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   can meet while both satisfy the prefix growth-factor condition: universal injectivity is false.
 - [equal terminals do not force weighted cancellation](G90-equal-terminals-do-not-force-weighted-cancellation.md):
   Meeting at the same terminal value does not make two starts cancel in the weighted count error.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Same-label one-step coalescence reduces demand to curvature](W91-same-label-one-step-coalescence-reduces-demand-to.md):
+- [same-label coalescence and the curvature identity](G91-same-label-coalescence-and-the-curvature-identity.md):
   Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
-- [A coarse coalescence-curvature bootstrap still has a growing coefficient](W92-a-coarse-coalescence-curvature-bootstrap-still-has-a.md):
-  A coarse maximum-curvature bound still cannot close the constant count estimate by itself.
+- [the coarse curvature bootstrap grows like log d](G92-the-coarse-curvature-bootstrap-grows-like-log-d.md): A
+  coarse maximum-curvature bound still cannot close the constant count estimate by itself.

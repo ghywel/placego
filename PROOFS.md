@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G90, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G92, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2705,16 +2705,7 @@ steps and 22 / 22 after 34, the common terminal 21,632,881,628, both starts of w
 and $f_{33}(22) = 1$, literal changes $1/2$ and 0. Coalescence is a statement about values, the weights about
 classes; the example shows they need not cancel.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT91. same-label coalescence and the curvature identity (second-read by Local, 2026-10-06)
 
 ### G91. Same-label one-step coalescence reduces demand to curvature (2026-10-06)
 
@@ -2741,13 +2732,22 @@ The same window choice as G82 makes this O(1/h) for sufficiently large h. The to
 
 **Controls, preregistered NOT RUN.** CM1: widths 2 to 5, horizons m through 9, use existing direct survivor rows and rational backward weights to compare each literal H increment with the grouped matched/unmatched sum. Predict equality, including empty parents and failed children; do not fit a rate. CM2: directly evolve the G90 pair to time 33, require one matched same-label child and +1/2 contribution; then repeat the odd parent twice and the even parent three times as an explicitly synthetic multiplicity guard, requiring M = 2 and correct residual accounting. Independently enumerate the two continuations of the lost-child guard to require -1/2, and refute the counterfactual that grouping only surviving children preserves the increment. No larger population or colleague job. This specializes G74 and G82's recorded elementary identities; no literature novelty claim. Independent review requested at Local's return.
 
-
 ### G91 coalescence controls outcome (2026-10-06)
 
 CM1 passes 30 small horizons and 100 exact increment comparisons, including 21 empty-parent cases. CM2 passes the genuine G90 pair (+1/2 with one match), the explicitly synthetic two-odd/three-even multiplicity guard (two matches and correct residual), and the independently enumerated lost-child contribution -1/2. The surviving-children-only counterfactual is REFUTED; no instrument control failed. Predictions and script at 8e6dfee; GPT Intel Python, under one second. No actual matched-mass rate, large population or global count bound was measured. Independent model review remains pending.
 
 Probe: `tests/probes/prizes/collatz_gpt_coalescence_weights.py`. Next question: can the actual unmatched signed demand be controlled? The decomposition by itself supplies no answer.
 
+*Second reader's note on G91 (Local, 2026-10-06; chat L047).* Correct. The identity is a regrouping of G74's parent
+sum by the next state and count, and it holds only with failed children kept. Checked (`collatz_audit_g91_g92.py`,
+M1 to M3): the literal increment $H_{t+1} - H_t$ equals the grouped sum at all 1,716 steps of widths 2 to 12,
+horizons $m$ to $m + 12$; every matched child is admitted; grouping only surviving children breaks the identity
+(the counterfactual is seen); the lost-child guard checks. Observation (descriptive): at those widths no parent is
+ever matched, so the curvature term is exactly zero there. That agrees with the G89 classification: a matched pair
+is an admitted same-count meeting, none exists below odd count 22, and the smallest start in any pair found (odd
+count 23, `collatz_audit_g83_g89.py`) has width 31.
+
+### G.GPT92. the coarse curvature bootstrap grows like log d (second-read by Local, 2026-10-06)
 
 ### G92. A coarse coalescence-curvature bootstrap still has a growing coefficient (2026-10-06)
 
@@ -2772,3 +2772,20 @@ The final comparison integrates 1/x on [4,d]. Hence this sufficient right-hand s
 This is not a lower bound on actual matched error, D or A, nor a refutation of the count conjecture. The actual adjacent differences may vanish or cancel, and the matched mass can be much smaller than C/2. No such sharper allocation or signed estimate is supplied here. Only the route that replaces every matched weight by this maximum-window bound and every matched count by C/2 is closed. G91's exact identity and actual unmatched signed contribution remain available.
 
 **Unexpected zero-contribution guard, exact arithmetic rather than a run.** Use G90's two actual parents at time 33 but final horizon T = 35. Now ell_34 = 22 and ell_35 = 23. The one-step fair continuation weights at time 34 for counts 21, 22, 23 are respectively 0, 1/2, 1. Therefore Delta_33(21) = Delta_33(22) = 1/2 and the matched pair contributes exactly zero, even though c(1) = 1/2. Their common state at time 34 is even, so both fail the next coefficient barrier; zero contribution at the meeting step is not zero final error for the selected pair. This guard demonstrates why the positive coefficient above cannot be called observed error. No new experiment, rate fit, wider collision search or external novelty claim; the proof specializes G77 and G91 and retains the domain of the smoothing bound.
+
+*Second reader's note on G92 (Local, 2026-10-06; chat L047).* Correct. Each window expression is at least $2/h$
+since $K \ge 1$, the coin mass is nonincreasing, and $\sum_{h=4}^{d-1} 1/h \ge \log(d/4)$. Checked (M4, M5): $c(h) \ge \min(1/2, 2/h)$ for $h \le 10^4$ and the coefficient exceeds $\log(d/4)$ for $5 \le d \le 10^4$ (64.2 against
+7.8 at $d = 10^4$, so the bound is far from tight); the zero-contribution guard checks exactly (weights 0, 1/2, 1 at
+time 34; the common state even and failing at 35). Only the coarse route is closed.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

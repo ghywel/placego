@@ -1071,7 +1071,7 @@ Meeting at the same terminal value does not make two starts cancel in the weight
 **An everyday picture.** Two travellers reach the same destination, but only one used the last coin toss to clear a toll. Sharing a destination does not balance their different budgets.
 
 
-## W91
+## G91
 Matching inputs that merge with the same odd-count label replaces demand weights by their adjacent difference.
 
 **What it says.** Pair an odd parent with an even parent when their next states and next odd counts agree. Their two contributions combine into half the difference of two neighbouring backward demand weights. Unmatched occurrences retain their original contributions, including even steps that fail the barrier.
@@ -1081,7 +1081,7 @@ Matching inputs that merge with the same odd-count label replaces demand weights
 **An everyday picture.** Some travellers can share the next checkpoint, but their different toll weights leave a small difference. Unpaired travellers and those denied entry still belong in the accounting.
 
 
-## W92
+## G92
 A coarse maximum-curvature bound still cannot close the constant count estimate by itself.
 
 **What it says.** Grant that unmatched inputs cancel completely, and bound all matched pairs by the largest available curvature bound. Replacing the matched count by half the survivor count leaves a coefficient growing at least as the logarithm of the paid tail. This is growth of the estimate's right-hand side, not of the actual error.
