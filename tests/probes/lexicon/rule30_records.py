@@ -101,8 +101,11 @@ OUTCOME of JOB M4 (Local, 2026-10-05, the M5: 10 cores, 16 GB). Finished, with d
   Depth 85 (beyond the job; M4a, M4b and M4c carried to it at 12:50, before its result): M4a HELD (73 in 63.75 ..
   114.75), M4b HELD (65 -> 73, the largest rise yet, +8), M4c HELD (73 <= 89, 16 to spare). R / d rose to 0.859
   and R - d to -12. Run 12:46:03 to 15:36:58, 10 threads, records_bits.c; its lines are in rule30_records_local.txt.
-  Still running on Local, to be handed back separately: JOB M3b (from 15:36:58), then records_bits.c at 89
-  (expected about 16 times depth 81's 41 minutes, so around 11 hours; M4a-M4c carried to it as above).
+  Depth 89 (M4a, M4b, M4c and Cloud's MG8 carried to it before its result): R(89) = 75, reached by 176 record
+  prefixes. M4a HELD (75 in 66.75 .. 120.15; d + R = 164 = 1.84 d), M4b HELD (73 -> 75), M4c HELD (75 <= 93, 18 to
+  spare), MG8 HELD (75 in 69 .. 79). R / d = 0.843, R - d = -14. Run 2026-10-05 16:27:30 to 2026-10-06 06:19:38,
+  49,928 s on 10 threads, records_bits.c; its lines (the histogram and the first 64 record prefixes, a sample)
+  are in rule30_records_local.txt. JOB M4 and its extensions are complete.
 """
 import importlib.util, math, os, pathlib, subprocess, sys, tempfile
 from multiprocessing import Pool

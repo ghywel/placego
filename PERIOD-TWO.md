@@ -74,8 +74,8 @@ Proved here (2026-10-05, Local; each is elementary and has a pre-registered chec
 All numbers come from probes whose predictions were committed before they ran. Each probe's header records its
 OUTCOME.
 
-- **R(d), exact** at depths 1 to 61, 65, 69, 73, 77 and 81 (§8.36, §8.37). R(81) = 65, R(d) <= d + 4 at every
-  depth, and R(d) - d is about -0.18 d.
+- **R(d), exact** at depths 1 to 61, 65, 69, 73, 77, 81, 85 and 89 (§8.36, §8.37). R(89) = 75, R(d) <= d + 4 at every
+  depth, and R(d) - d is about -0.16 d.
 - **Distinct forced walks** at depth d (§8.38): about $2^{0.41 d}$. Each free bit multiplies them by 1.764, not 2,
   because about 6% merge at every step.
 - **The record is the best of those walks** under coin flips (§8.38): $R(d) \approx 0.826\,d + 0.8$. This
@@ -170,7 +170,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 
 | Lead | Status | What is in | What is left |
 |---|---|---|---|
-| 6.2 and M4, the exact records | **RUNNING** | Depths 69, 73, 77, 81 and 85: R = 55, 59, 63, 65 and 73. All three predictions held at each. | Depth 89, started 2026-10-05 16:27. |
+| 6.2 and M4, the exact records | **DONE** | Depths 69, 73, 77, 81, 85 and 89: R = 55, 59, 63, 65, 73 and 75. All three predictions held at each; Cloud's MG8 (69 to 79) held at 89. Depth 89 took 14 hours on 10 threads. | Nothing owed. Depth 93 would take about 10 days here. |
 | The deep ladder (§8.56) | **DONE** | R(24, S) = 19, 22, 21 and 26 at S = 153, 185, 217 and 249 (LL1 to LL4 held). So no counterexample has its left edge within 248 cells, whatever its right half. | Depth 265 was dropped (the owner's decision). |
 | 6.3 and M3b, the search to 34 cells | **DONE** | No candidate. The longest run is still 17 (`rule30_scan.py`). | nothing |
 | 6.3 and M3a, the channel bound at widths 27 and 28 | **BLOCKED** | Not run. | It needs 16 and 32 GB of memory. The Mac has 16 GB in all. |
@@ -213,8 +213,8 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
    width, or the cells at arrival. Its timing and alphabet are rigid. The kick game, a wheel kicked only at its
    arrival phases, still has the coin's growing runs. So the wheel narrows the cost-side statement to a kicked
    rotation, but does not prove it.
-2. **[RUNNING]** **Local's depths 85 and 89** (CLOUD-LOCAL.md, lead M4). Depth 85 is in: R(85) = 73, and the blind prediction
-   (65 to 75, MG8 in `rule30_merge.py`) held. Depth 89 is pending, predicted between 69 and 79.
+2. **[DONE]** ~~**Local's depths 85 and 89**~~ (CLOUD-LOCAL.md, lead M4). Depth 85 is in: R(85) = 73, and the blind prediction
+   (65 to 75, MG8 in `rule30_merge.py`) held. Depth 89 is in: R(89) = 75, inside the predicted 69 to 79.
 3. **[DONE in part, BLOCKED in part]** **Job M3** (CLOUD-LOCAL.md): the channel bound at layer widths 27 and 28, and the counterexample search to 34
    cells. The search is done: no candidate. The channel bound needs more memory than the Mac has.
 4. **[DONE]** ~~**The wide survey's imports**~~ (§8.47): Flatto, Lagarias and Pollington's move to a finite window, a

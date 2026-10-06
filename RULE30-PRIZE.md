@@ -49,7 +49,7 @@ the problem to one precise statement:
 - **The open part** (§8.52). The right part pays in lumps, never more than 3 free steps in a row to $w = 26$. The
   statement that would close period 2: $N_{w,j}(T+k) \le 2^{c(w) - \alpha k} N_{w,j}(T)$ for some $\alpha > 0$, with
   $c(w) = O(\log w)$. PERIOD-TWO.md §7 lists it with the other questions for whoever continues.
-- **Local's records**: $R(85) = 73$, as predicted blind from the merging census (§8.38); no right half up to 34
+- **Local's records**: $R(85) = 73$ and $R(89) = 75$ (14 hours), as predicted blind from the merging census (§8.38); no right half up to 34
   cells is a counterexample.
 
 **Where the work stands (2026-10-05, early morning).** There is no proof and nothing to submit. Period 1 was closed
@@ -2422,7 +2422,8 @@ and the raw lines in `rule30_records_local.txt`.
 **All three predictions held** (M4a, M4b, M4c). In particular the doubling conjecture of §8.36 holds at every depth
 run, with 18 to 20 cells to spare. M4c had been committed before Local's run began. Since depth 49 the records have
 settled near $R(d) \approx 0.8\,d$, ending near $1.8\,d$. Local also reproduced Cloud's records at depths 53, 61 and
-65 on a second machine. Depths 85 and 89 are still running, with the same three predictions carried to them before
+65 on a second machine. Depths 85 and 89 came in on 2026-10-05 and 2026-10-06 ($R = 73$ and $75$; the three
+predictions and Cloud's MG8 held at both), with the same three predictions carried to them before
 either result existed.
 
 **The owner's Enigma lead** (Local's probes, predictions written first). Turing and Welchman broke Enigma by running a
