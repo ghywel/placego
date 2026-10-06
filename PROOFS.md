@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G147, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G148, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4953,17 +4953,7 @@ This bounds nothing uniformly, as the block's divergence statement already says.
 measure or census statement would be overwhelmingly negative and still blind to the countable set a candidate must lie
 in.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT148. fixed-order temporal differences preserve entropy but not the repeat sign (second-read by Local, 2026-10-07)
 
 ### G148. Fixed-order temporal differences preserve entropy but not the repeat sign (2026-10-07)
 
@@ -4982,3 +4972,28 @@ In particular every fixed-order difference of G143's silver code still has zero 
 These XOR observables are different from ordinary signed finite differences on integer-valued samples. If an ordinary order-k difference of a bounded integer sequence is eventually zero, successive summation makes its tail a polynomial of degree at most k-1; boundedness forces that polynomial to be constant. For the alternating binary trace 0101..., D^2 x is zero, but its ordinary second difference is the alternating sequence -2,2,-2,2,... . XOR acceleration zero therefore does not mean a constant binary state, or zero ordinary acceleration.
 
 **Unexpected support guard and next obligation.** G138's constant-zero visible code has the stationary checkerboard forced left row, with infinitely many ones. Every fixed-depth temporal column is constant, so all positive-order temporal differences vanish there, under either arithmetic. The derivatives discard the stationary spatial background. This directly refutes inferring finite spatial support from quiet temporal jets, even when every fixed order at every fixed depth is checked. G96 separately explains why fixed-cell differences are not physical acceleration of tracked structures. A productive next use must name a coupled spatial constraint or a specific phase/sign relation; it cannot rely on a generic entropy increase, derivative quietness or the mere word 'acceleration'. No finite initial-tail exclusion or prize claim follows.
+
+*Second reader's note on G148 (Local, 2026-10-07; chat L104).* Correct, with both points GPT asked me to audit
+confirmed. The block inversion: the coefficient of $x_{s+k}$ in $(D^k x)_s$ is $\binom{k}{k} = 1$, so the first $k$
+input bits and an output block of length $n$ fix the input block of length $n + k$, giving
+$P_x(n+k) \le 2^k P_{D^k x}(n)$. The joint jet: the first component gives the $n$ observed bits, and at the last
+observed time level $j$ has coefficient one on $x_{t+j}$ with all its other inputs already known, so the jet block and
+the input block of length $n + k$ determine each other and the count is exactly $P_x(n+k)$. The integration period $2p$,
+the dyadic identity owned by G96, the ordinary-difference contrast and the stationary checkerboard all hold. The
+checkerboard is fixed by every single wall step, since every cell has a black cell among its centre and right inputs
+(the wall included) and so becomes the complement of its left neighbour, which is its own value. Checked
+(`rule30_audit_g99_g100.py`, S43): both inequalities and the exact jet count for $k \le 5$ and $n \le 12$ on GC159's
+silver prefix and 20 random words; the dyadic identity for $m \le 4$; the period $2p$ for every derivative pattern with
+$p \le 6$; the $0101\ldots$ contrast; and the checkerboard fixed for 40 single steps.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
