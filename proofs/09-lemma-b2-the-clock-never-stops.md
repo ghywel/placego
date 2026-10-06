@@ -8,16 +8,21 @@ stops)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and
 
 ## In plain words
 
-The edge band's rhythms keep slowing down for ever: the clock never stops.
+The diagonals near the edge each keep a steady beat, and going deeper the beats keep dropping by octaves, for ever.
 
-**What it says.** The repeating periods of the diagonals near the edge grow without limit, so there are infinitely
-many diagonals that go white for ever and infinitely many that go black for ever.
+**What it says.** Near the edge, each diagonal eventually settles into a steady repeating pattern. But the repeats
+get longer as you go deeper, doubling again and again without end, so no single period fits them all. There are
+infinitely many diagonals that go white for ever and infinitely many that go black for ever.
 
 **Why it matters.** It proves a mechanism Rowland observed: the edge keeps producing fresh structure. Several
-exclusions below need a black diagonal deeper than any given depth, and this supplies it.
+exclusions below need a black diagonal deeper than any given depth, and this supplies it. A doubling is itself a
+regular pattern (the owner's point); what the lemma rules out is one common period. No finite run could confirm it
+either: a period of 2^k ticks needs at least that long to show itself, so a measurement hears only the first few
+octaves, and the proof carries the rest.
 
-**An everyday picture.** A clock whose tick doubles in length again and again, like the marks 1, 2, 4, 8 on a
-ruler: it never settles into one rhythm.
+**An everyday picture.** Notes dropping an octave at a time, each one steady and each an octave below the last. A
+scale that keeps going down soon leaves human hearing behind (about ten octaves cover all of it), but it never stops
+being a scale (the owner's reading).
 
 ## The formal statement and proof
 

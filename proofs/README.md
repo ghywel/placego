@@ -74,8 +74,8 @@ that time does not allow.
   A pattern can only repeat if it is shorter than the distance to the edge.
 - [Lemma B1 (white, then black)](08-lemma-b1-white-then-black.md): In the band near the edge, two neighbouring
   diagonals can never both fall silent for ever.
-- [Lemma B2 (the clock never stops)](09-lemma-b2-the-clock-never-stops.md): The edge band's rhythms keep slowing
-  down for ever: the clock never stops.
+- [Lemma B2 (the clock never stops)](09-lemma-b2-the-clock-never-stops.md): The diagonals near the edge each keep a
+  steady beat, and going deeper the beats keep dropping by octaves, for ever.
 - [Theorem A‴ (the window principle, with the band)](10-theorem-a-the-window-principle-with-the-band.md): A repeat
   leaves a white stripe behind it, and a black diagonal there caps the repeat.
 - [Corollary F (near-squares at the start are fatal)](11-corollary-f-near-squares-at-the-start-are.md): A column 1

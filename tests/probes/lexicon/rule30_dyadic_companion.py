@@ -19,6 +19,14 @@ PREDICTIONS, written 2026-10-06 before this script's first run:
       and for its complement.
   DY2 (blind; the doubling law of section 8.36): every zero run of row 0 for d that starts at depth j >= 4 ends by
       depth 2j + 4.
+
+OUTCOME, 2026-10-06 (K = 4000, one core, a fraction of a second): DY0 PASS. DY1 and DY2 HELD by a wide margin: the
+forced row 0 for d has 1,975 ones in 4,000 depths, the last at depth 4,000, and its longest zero run is 12 (largest
+gap 13); for the complement 1,971 ones, longest zero run 11. Descriptive extension, not pre-registered (K = 50,000):
+24,944 ones for d (density 0.499) with largest gap 14, and 24,999 for the complement with largest gap 15. The
+sparsest word that passes every repeat test forces a left half that looks like fair coins (a longest zero run of
+about log2 of the number of runs), nowhere near eventually zero: finite evidence that d is not a finite-left
+companion, not a proof.
 """
 import random
 import sys
