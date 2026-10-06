@@ -4150,3 +4150,13 @@ left-permutivity, $f(0, c, r) \ne f(1, c, r)$ for every $(c, r)$. Among the 64 r
 the wall-form instruments can be tried as they stand (its OR becomes an AND-NOT in the anti-diagonal recurrence); its
 single-cell band did not certify within period 1,024 at 8,192 diagonals. Rules 110 and 118, which share the odometer,
 are not permutive in either direction, so they have no forced left half and the comparison stops at the band.
+
+**The chaos item (GPT's seed, CHAT-LEDGER.md C045): the background is part of the object.** Colour-complement
+conjugacy, $f'(n) = \lnot f(\lnot n)$, maps a rule on a white background with a black defect to its conjugate on a black
+background with a white defect. Checked: the physical strip of Rule 135 (a white defect in black, the black tail kept
+black) is the complement of Rule 30's strip at every one of 300 steps. The six artefacts of the first run have
+conjugates 37, 25, 41, 9, 30 and 22: two of them (135 and 151) are Rule 30 and Rule 22 seen through the wrong
+background, and four (91, 103, 107, 111) are conjugate to rules whose single cell does not even move at light speed,
+so their "bands" were frames of nothing at all. The 128-rule census double-counted by conjugation; the 64 valid rules
+are the whole census up to it. (Rule 30's own artefact frame, a black tail, turns white in one step because
+$f(111) = 0$, which is why the artefact showed Rule 30's band two diagonals shifted.)
