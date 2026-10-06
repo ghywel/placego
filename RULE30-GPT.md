@@ -3559,3 +3559,26 @@ This proves the entropy inequality, since fixed finite lookahead and the phase f
 Unexpected scope check: for wall001 and all white-phase bits0, pi is the periodic word011 independently of every right bit at a black phase. Across N periods there are2^N choices of those invisible bits and only one pi prefix. Counting all column1 bits rather than its visible period vectors can therefore lose the exact entropy equality. This is an algebraic family of formal boundary inputs; no assertion that all these inputs admit full right-half realization is made.
 
 This is the period-block form of RULE30-PRIZE.md section8.33 proof steps2-4, not a new channel certificate or a positive lower entropy bound for a finite seed. It leaves the fixed-seed cost and left/right compatibility gaps open.
+
+## G54. Existing gap matrices supply a coarse arbitrary-wall squeeze (2026-10-06)
+
+**Bounded synthesis audit.** Before choosing a new channel computation, read G14/G15 and section8.33. The coarse certificate already exists in the record; the remaining lead is a deeper or uniform-width improvement, not first existence of a bound. Target/prediction: G15's per-period matrix root combines with G53 into a left-column bound. Counterfactual: all non0101 walls need a new computation before any bound is available, or G14's physical rate must be divided by p again. Unexpected check: compare existing per-period roots with already-normalized physical rates. Analytic block only; no computation run or measurement claimed.
+
+### G54 corollary and proof: coarse squeeze for every periodic wall
+
+Let tau have period p and at least one white phase. List its white phases cyclically, let g_1,...,g_z be the positive gaps between consecutive white times (including the wrap gap), and put
+
+    M=B_(g_1)*...*B_(g_z),
+    B_1=A=[[1,1],[0,1]],
+    B_2=F=[[1,1],[1,0]],
+    B_g=J=[[1,1],[1,1]] for g>=3.
+
+Then every fixed column to the left of the wall has entropy at most log2(rho(M))/p, where rho is the spectral radius.
+
+G15 proves these are the exact allowed visible pairs in the width-one relaxation with an independently chosen next-right input. Its language contains every actual right-column visible itinerary. A word of n complete periods has nz visible symbols; its pair constraints use n cyclic matrix products apart from fixed endpoint factors. Equivalently counts are obtained from M^(n-1) with fixed nonnegative two-state boundary factors. Their growth is at most a constant times(n+1)*rho(M)^n, allowing a Jordan block; rho(M)>=1 because the all-zero visible path is allowed. Thus the period-vector entropy is at most log2(rho(M)). G53 propagates the bound to every fixed left column and divides by p physical steps per period. No equality is asserted for an actual orbit. If the wall has no white phase, its left-neighbour trace is periodic and all fixed left columns have entropy0 by inversion.
+
+The same bound is independent of which white phase starts the product: cyclic products have the same trace and determinant, hence the same characteristic polynomial in this two-state case. For an explicit exact value, with t=trace(M),d=det(M), rho(M)=(t+sqrt(t*t-4*d))/2. These nonnegative products have real eigenvalues since the discriminant equals(a-d_entry)^2+4bc>=0. This algebraic value is an upper bound from the relaxation, not a new large-layer certificate.
+
+For wall0^(p-1)1, the product A^(p-2)F=[[p-1,1],[1,0]] recovers G14's bound log2(((p-1)+sqrt((p-1)^2+4))/2)/p. For the one-hole wall01^(p-1) with p>=3, it is J and gives1/p. Neither closes the single-orbit information-cost gap.
+
+Unexpected units check: G14's p8 visible rate0.354491897 is already per physical step, so it bounds fixed left-column entropy directly; dividing it by8 again would be wrong. G15's period8 examples00111111 and01101111 instead have per-period roots3 and4, so the respective physical bounds are log2(3)/8 and2/8. White fraction alone does not determine this certificate. These examples and calculations are reused from G14/G15, without a new experimental or novelty claim.
