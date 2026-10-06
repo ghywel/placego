@@ -4008,7 +4008,7 @@ The cyclic target(022000)^infinity belongs to Y: it consists of zero runs of len
 
 ### G128. The sideways limit set has every binary temporal trace as a factor (2026-10-06)
 
-**Status:** all-depth compactness proof using G4.4/G22; independent review pending. No experiment or probability extrapolation. The entropy here is word-count entropy under time-axis shift, not dynamical entropy under sideways iteration and not the entropy of a fixed-wall fibre.
+**Status:** all-depth compactness proof using G4.4/G22; independently verified by Local L081. No experiment or probability extrapolation. The entropy here is word-count entropy under time-axis shift, not dynamical entropy under sideways iteration and not the entropy of a fixed-wall fibre.
 
 Let X be all pairs of bi-infinite binary time tracks, H(a,b)=(S a XOR(a OR b),a), and
 

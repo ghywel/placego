@@ -5871,7 +5871,7 @@ The cyclic target(022000)^infinity belongs to Y: it consists of zero runs of len
 
 ### G128. The sideways limit set has every binary temporal trace as a factor (2026-10-06)
 
-**Status:** all-depth compactness proof using G4.4/G22; independent review pending. No experiment or probability extrapolation. The entropy here is word-count entropy under time-axis shift, not dynamical entropy under sideways iteration and not the entropy of a fixed-wall fibre.
+**Status:** all-depth compactness proof using G4.4/G22; independently verified by Local L081. No experiment or probability extrapolation. The entropy here is word-count entropy under time-axis shift, not dynamical entropy under sideways iteration and not the entropy of a fixed-wall fibre.
 
 Let X be all pairs of bi-infinite binary time tracks, H(a,b)=(S a XOR(a OR b),a), and
 
@@ -5892,3 +5892,23 @@ Compactness now gives a full spacetime diagram whose source column is b(t) at ev
 **Unexpected fixed-wall guard, checked algebraically.** The binary trace b=1^infinity is realized in Lambda_H by the pair(a,b)=(0^infinity,1^infinity), from the fixed spatial checkerboard:Rule 30 preserves cyclic01. But the pair(a,b)=((01)^infinity,1^infinity) is not even in H(X). G22 compatibility would force a(t)=1-b(t+1)=0 at every t, which the proposed a violates. Therefore the unrestricted factor is not onto after fixing an alternating wall. It cannot refute the thin fixed-wall channel bounds or supply a finite-seed counterexample. This is the identified unexpected check.
 
 **Implication for the active route.** G127's strict image loss is genuine, yet unrestricted image pruning cannot collapse this limit set to finitely many traces or below1 bit of shift entropy. A prize-relevant invariant must use the wall, finite support, or another restriction absent from the full spacetime class. The all-depth factor is a structural obstruction to a proposed global-collapse route,not a theorem that a particular seed is random. The construction is the standard triangular trace argument plus compactness;no novelty claim for those ingredients.
+
+
+### G128.1. Known period-two closure obstruction and the missing implication (2026-10-06)
+
+**Purpose and prior art.** Audit whether an alternating wall can be closed by giving all columns its temporal period. This is a known obstruction, not a new prize lead: Wolfram, [A New Kind of Science, notes to page 267, printed page 954](https://files.wolframcdn.com/pub/www.wolframscience.com/nks/nks-ch6.pdf#page=83), reports three Rule 30 configurations with temporal period dividing two, the same count as for period one. The following exact graph explains that count without another census.
+
+Encode the temporal words 00, 01, 10, 11 as 0, 1, 2, 3 respectively. The sideways map H(a,b)=(S a XOR (a OR b),a) acts on these sixteen ordered pairs as follows. This table is a hand substitution into the rule, not an experimental result.
+
+| a / b | 0 | 1 | 2 | 3 |
+| --- | --- | --- | --- | --- |
+| 0 | (0,0) | (1,0) | (2,0) | (3,0) |
+| 1 | (3,1) | (3,1) | (1,1) | (1,1) |
+| 2 | (3,2) | (2,2) | (3,2) | (2,2) |
+| 3 | (0,3) | (0,3) | (0,3) | (0,3) |
+
+The only recurrent states are (0,0) and the cycle (0,3),(3,0); every other state enters that set within three steps. A full diagram periodic in time with period dividing two supplies a bi-infinite spatial orbit of this finite graph. Every state in such an orbit is recurrent: arbitrarily long predecessor paths in a finite deterministic graph must contain a cycle, which cannot exit to a transient state. Therefore the only whole-row configurations are all zero and the two spatial checkerboards. All three are stationary in time.
+
+**The companion test is already covered by G27.2.** If a is alternating and b also has eventual temporal period dividing two, start after their common settling time. G22's compatibility b(t)=1 implies a(t)=1-b(t+1). It permits only b=00 or b=a. In either case one H step forces the immediate left column to be constantly one, and subsequent steps force the stationary checkerboard left tail. This is incompatible with an initially eventually-zero left row. G27.2 already excludes any eventual periodic adjacent companion under that finite-left assumption; the sixteen-state audit recovers a special case rather than improving it.
+
+**Unexpected scope check and stopping decision.** G128 nevertheless realizes an alternating single column in some unrestricted full spacetime diagram. Thus that column does not license a globally period-two diagram or a period-two companion. Spatial checkerboards having period two does not make their temporal period two. This is the identified independent scope check. No numerical experiment was needed. The attempted period-two closure shortcut is closed; extending periodic graph censuses would not address the aperiodic companions required by G27.2. The next useful obligation remains a wall-sensitive restriction that applies to those companions without assuming the periodicity to be proved.
