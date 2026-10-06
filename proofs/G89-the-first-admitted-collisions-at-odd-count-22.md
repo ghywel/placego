@@ -1,10 +1,10 @@
-# Admitted terminal fibres are not always singletons
+# the first admitted collisions, at odd count 22
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G89. Admitted terminal fibres
-are not always singletons (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and
-this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT89. the first admitted
+collisions, at odd count 22 (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Two starts can meet while both satisfy the prefix growth-factor condition: unive
 **An everyday picture.** Two routes can reach the same destination without either spending its accumulated travel budget; knowing the destination alone cannot distinguish the routes.
 
 ## The formal statement and proof
+
+### G89. Admitted terminal fibres are not always singletons (2026-10-06)
 
 The count-22 run refutes the open all-a injectivity conjecture from L040. One explicit pair is
 
@@ -49,7 +51,6 @@ Five least-residue pairs were independently validated; exhaustive enumeration of
 
 The a <= 20 analytic exclusion and a = 21 audited residue cover show that 22 is the first odd count permitting a same-count admitted collision, subject to independent review of those proofs and the coverage argument. This is a finite structural result, not a Collatz or Rule 30 solution. The failed BN1 prediction is part of its provenance; no novelty claim. Independent Local reading is requested at return.
 
-
 ### G89 accepting-cover outcome and finite classification (2026-10-06)
 
 RC3 passes: 319 rejected residue classes and five accepting singleton residues form a pairwise disjoint cover of all 17179869184 residues modulo 2^34. Independent reasons are 167 admission failures, 132 offset-interval failures and 20 count failures. Every accepted pair passes the direct trajectory, all-prefix admission, odd-position affine and same-width checks, and first meets at step 34. The independent root span is below 8, validating the displacement-four reduction. A corrupted accepting residue is rejected. Predictions and checker at ca9d765; GPT Intel Python, under one second. No control failed. Certificate SHA256: 332752fd9bfb580e89c89722acee44daa9dcebd06507e97ba9bf416289799ace; data outside Git.
@@ -57,3 +58,14 @@ RC3 passes: 319 rejected residue classes and five accepting singleton residues f
 Consequently the five rows in G89 give precisely the five lower-start residue families at count 22 and horizon 34. Each family consists of the listed pair plus k*2^34 for k >= 0, with common terminal increased by k*3^22. No shorter admitted horizon with the same odd count can contain a collision: G81 would pad such a meeting pair by zeroes to length 34, producing an accepting code pair that already meets before step 34. Every accepting pair here first meets at 34; equivalently its two last parity bits differ, whereas a proper zero padding would make both last bits zero. This excludes that possibility. The first admitted same-count collision odd count is therefore 22, with the lower-count analytic and residue-cover proofs and this classification still awaiting independent model review. The singleton lead is closed by counterexample; no larger count run was resumed.
 
 Probe: `tests/probes/prizes/collatz_gpt_accepting_cover.py`. This is a finite structural classification, not an all-count density estimate or a prize result.
+
+*Second reader's note on G89 (Local, 2026-10-06; chat L046).* Correct, and confirmed by a different method.
+`collatz_fibres.c` enumerates every admitted word (39,993,895 at $a = 22$) and finds every intercept collision mod
+$3^a$ with no pruning; each realized pair is re-evolved directly, with the identity $2^t T^t(n) = 3^a n + B$ checked in
+128-bit integers. Result: none for $a \le 21$, and at $a = 22$ exactly G89's five pairs (displacement 4, one width,
+first meeting at step 34). The displayed identities, words, admission and the lifts $k = 1, 2, 3$ check (K4). The
+engine's positive control: without admission, for $a = 3$ to 8, its pairs equal a direct scan of every start below
+$2^{t+1}$ (C1). Extension (blind prediction, more pairs than at 22: held): $|W_{23}| = 87{,}986{,}917$, with 20
+realized pairs, all of displacement 4, equal widths and exact, and none first meeting at the horizon 36: fifteen
+first meet at step 35 and five at step 34. So at 23 every collision is a shorter-horizon meeting padded by shared
+later bits; the $a = 22$ property that every pair first meets at its horizon does not persist.

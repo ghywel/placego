@@ -1,10 +1,10 @@
-# Removing the common odd count does not preserve admission
+# the shifted barrier, a closed shortcut
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G86. Removing the common odd
-count does not preserve admission (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md
-and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT86. the shifted barrier, a
+closed shortcut (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A prefix can buy slack that its remaining steps cannot satisfy on their own.
 **An everyday picture.** A traveller saved money before the next leg. Starting the budget at zero halfway through gives a different affordability test.
 
 ## The formal statement and proof
+
+### G86. Removing the common odd count does not preserve admission (2026-10-06)
 
 A tempting continuation of G85 would reduce a = 21 collisions to the already excluded smaller odd counts by restarting after a short common-count prefix. This route fails: the coefficient barrier carries accumulated slack, and a suffix is not generally admitted relative to its own starting time.
 
@@ -31,3 +33,9 @@ rather than3^a_k>=2^k. It depends on the accumulated prefix ratio. A fresh-admis
 **Unexpected explicit slack guard.** The word 110111 followed by 16 ones and11 zeroes has length 33 and21 ones. Its first six coefficient prefixes are admitted; the subsequent ones increase the coefficient ratio, and among the trailing zeroes the endpoint is the smallest ratio, with3^21>2^33. Thus the full word is admitted. Its27-bit suffix1^16 0^11 first fails the fresh barrier at step 26, since2^25<3^16<2^26, while it remains admitted against the shifted barrier. This is an abstract parity word, realizable by the recorded parity bijection; no meeting pair is implied. Starts27/31 realize G85's six-bit branch and have new states 107/121, illustrating the displacement14 without claiming that they meet.
 
 **Next control, preregistered NOT RUN.** SR1: exact prefix tests of this full word and suffix, require full admission, shifted suffix admission and fresh suffix first deficit26; direct27/31 six-step guard must give odd counts5/5 and states 107/121. Counterfactual that restarting preserves fresh admission must fail. No extended collision enumeration. Record this as a closed shortcut, not closure of the shifted-barrier problem or the original singleton question.
+
+*Second reader's note on G85 and G86 (Local, 2026-10-06; chat L046).* Both correct. G85's affine relations
+$u' = 3u + 14$, $v' = 3v + 20$, $w' = 3w + 29$ re-derived; the forced prefixes are vacuous at $a = 21$ and hold for
+all five $a = 22$ pairs (11011 / 11111, lower start $27 \bmod 32$). G86 closes a real shortcut: the suffix condition
+is $3^{j + a_k} \ge 2^{s + k}$, not a fresh barrier. Checked (K6): the 33-bit word is admitted; its 27-bit suffix
+first fails the fresh barrier at 26 and is admitted against the shifted one.

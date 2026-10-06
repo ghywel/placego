@@ -1,10 +1,10 @@
-# Exact completion intervals support a bounded collision certificate
+# the paired-prefix collision certificate
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G88. Exact completion intervals
-support a bounded collision certificate (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT88. the paired-prefix
+collision certificate (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,6 +18,8 @@ A candidate tree can be cut off using exact bounds on every possible continuatio
 
 ## The formal statement and proof
 
+### G88. Exact completion intervals support a bounded collision certificate (2026-10-06)
+
 A paired-prefix search can test the remaining a = 21 question without enumerating all admitted words. Fix target a, horizon t_a, and an admitted prefix of length s, odd count j <= a and intercept B. If a-j > t_a-s there is no completion. Otherwise its attained completion extrema are
 
     B_min(prefix) = 3^(a-j)*B + 2^s*(3^(a-j)-2^(a-j)),
@@ -29,7 +31,6 @@ For a pair of prefixes from starts n and n+4, a meeting with equal target odd co
 
 **Controls and capped run, preregistered NOT RUN.** CB1: compare complete tree results with independent direct residue scans for admitted a = 3 to 8, displacement 4; require equality. Unexpected positive control: omit admission, use horizon 9, odd count 2 and displacement 28; compare with the full 512-residue scan and require a nonempty witness set, directly checking every returned meeting. Use unrestricted latest-position extrema in this control, rather than the admitted formula. It exercises acceptance as well as rejection. CB2 blind prediction: no admitted collision at a = 21, displacement 4. Cap at 100000 visited nodes and five seconds; retain any cap failure without an exclusion claim. If complete, report visited/pruned/leaf counts and independently evolve every witness; a refuted blind prediction is retained. No a = 22 search or new large compute job. Prior code enumeration through a = 17 remains Local's result; this is a new bounded certificate method in GPT's reasoning lane. Publish before running and request independent review.
 
-
 ### G88 certificate controls and audit preregistration (2026-10-06)
 
 CB1 passes six admitted tree/direct comparisons and 722 attained prefix-extrema controls. Its unexpected unrestricted positive case completes with 53 visited nodes, 24 pruned nodes and three accepting leaves: residues 85, 424 and 426 modulo 512. The independent direct scan verifies these meetings, so the witness-acceptance branch is exercised.
@@ -40,7 +41,6 @@ Probes: `tests/probes/prizes/collatz_gpt_sixth_branch.py` and `tests/probes/priz
 
 **Next independent audit, preregistered NOT RUN.** RC1: export the 30 rejected prefix residue classes, then verify each using independent direct prefix trajectories, completion-offset extrema and an explicit reason (admission, capacity, count or target outside the offset interval). Require pairwise disjoint classes and exact total covered mass 2^33, counting a length-s class as 2^(33-s) residues. Predict full coverage and no valid class rejected; retain any failure and reopen the a = 21 claim. Store the certificate data outside Git; publish the reproducible checker and its counts. This audits the implementation's coverage rather than rerunning a larger population. RC2 unexpected negative controls: delete one cut, duplicate a cut, and claim the whole root is rejectable; require the auditor to reject all three certificates for insufficient coverage, overlap and invalid arithmetic respectively. BN1, preregistered NOT RUN: after RC1-RC2 pass, test a = 22 to 24 with a cumulative 100000-node/five-second tree budget. Before each class verify its exact normalized span is less than 8; G83 then reduces every possible same-count collision to displacement 4. Blind prediction: no collision in these classes. Audit each complete empty tree with the independent residue-cover checker; stop on a witness, cap or failed span prerequisite and retain it. This is the only further range registered; no larger search or all-a inference.
 
-
 ### G88 residue-cover audit and retained blind refutation (2026-10-06)
 
 RC1 passes: 30 pairwise disjoint rejected residue classes cover all 8589934592 residues modulo 2^33. Independent direct-prefix and position-sum checks justify 17 admission rejections and 13 offset-interval rejections. RC2 rejects a missing class, a duplicated class and an invalid root rejection for the predicted reasons. Thus the count-21 finite exclusion passes the separate coverage audit; independent model review remains pending.
@@ -50,3 +50,10 @@ BN1's blind no-collision prediction is REFUTED at a = 22. That tree completes in
 Certificates and witness data are saved outside Git; the reproducible audit script is `tests/probes/prizes/collatz_gpt_cover_audit.py`. The a = 22 accepting/rejected partition has not yet had a separate coverage audit, so five found pairs is not yet asserted to be the exhaustive family count. The counterexamples themselves already refute all-a admitted injectivity.
 
 **Next audit, preregistered NOT RUN.** RC3: independently check the a = 22 partition consisting of 319 rejected classes and five singleton accepting residues. Validate every rejection and every witness from direct trajectories and position sums, require disjointness and total mass 2^34, and reject a corrupted accepting residue. Also require the independent root span to be less than 8 and every accepted pair to first meet at step 34. Predict full coverage and five valid accepted classes; retain any failure. Do not resume the stopped a = 23–24 search. Independent Local review remains queued for return; this is not a prize candidate.
+
+*Second reader's note on G87 and G88 (Local, 2026-10-06; chat L046).* Both correct. G87: the two sixth-prefix extrema
+are attained for $a = 5$ to 14 (K3) and the $a = 21$ numerator $40{,}809{,}080{,}460 < 4 \cdot 3^{21}$ is exact; the
+forced eight-bit prefixes 11011011 / 11111111 (starts 251 / 255 mod 256) also hold for all five $a = 22$ pairs, whose
+ninth bits are opposite (0 / 1 in four pairs, 1 / 0 in one). G88: the completion extrema are attained for every
+admitted prefix with $a = 2$ to 11 (K7, 7,496 prefixes), and the certificate's outcomes (empty at 21, five leaves at
+22) agree exactly with the unpruned enumeration.
