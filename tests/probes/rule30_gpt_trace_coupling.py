@@ -1,4 +1,5 @@
-"""G108 CT1 preregistered NOT RUN: publish before execution.
+"""G108 CT1 predictions published through85f0972 before execution.
+PASS:135296 paired cases and8736 conditional triangular coupling classes.
 135296 paired cases; 8736 conditional classes; causal prefix masks.
 Reuse NT1 race evaluator, independent synchronous Boolean evaluator.
 Four-input guard E1=1-I0; iid marginals do not imply independent copies.

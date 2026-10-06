@@ -1223,6 +1223,6 @@ Two individually random traces can remain perfectly related when their shared en
 
 **What it says.** Conditional on the other initial bits and race schedule, noisy samples equal ideal samples XOR a mask determined by earlier ideal samples. The transformation is a causal bijection, with N+1 bits of conditional mutual information.
 
-**Why it matters.** Marginal iid observations do not make two histories independent. First-tick race errors depend on the previous sampled state. This representation does not determine the error process or a decoherence rate. CT1 and review are pending.
+**Why it matters.** Marginal iid observations do not make two histories independent. First-tick race errors depend on the previous sampled state. This representation does not determine the error process or a decoherence rate. CT1 passes135296 paired cases and8736 conditional classes; review is pending.
 
 **An everyday picture.** Knowing the key can relate two scrambled films even when each looks random on its own.

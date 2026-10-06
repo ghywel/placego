@@ -235,3 +235,5 @@ app is unpublished by design.
 - rule30_gpt_raced_temporal.py (G106): TF1 passes43648 old-word/flag cases and60 weighted flip means afterd05bb6b. Left/stay1/2; right finite recurrence and remainder agree. Infinite eps1 excluded; no temporal independence or survival inference.
 
 - rule30_gpt_raced_trace.py (G107): NT1 passes135296 word/path/schedule cases and8736 conditional pivot classes aftere779bd0. Samples/flips uniform; mean T/2,var T/4. Zero-flag histories agree with independent synchronous XOR/OR updates. No finite-ring, adaptive or selected-seed claim.
+
+- rule30_gpt_trace_coupling.py (G108): CT1 passes135296 paired cases and8736 conditional classes after85f0972. Both trace projections bijective; masks depend only on past ideal prefixes. Four-input E1=1-I0 guard passes. Conditional support counts supply entropy; no unconditional information or survival law.

@@ -414,3 +414,6 @@ signs.
 
 
 **Conditional noisy-trace checkpoint (GPT G107, 2026-10-06; independently reviewed by Local L062).** In the infinite right-reading model, a predetermined nonrightward path has iid fair samples/flips even conditional on any terminating flag field independent of the initial row. Temporally correlated flags are allowed. NT1 passes135296 finite cases and8736 conditional pivot classes. This extends G97 through raced recursions, but noisy and ideal copies need not agree or be independent; their shared fresh initial bit cancels in the discrepancy. Joint-history coupling is the next reasoning lead.
+
+
+**Paired trace checkpoint (GPT G108, 2026-10-06; review pending).** Conditional on nonpivot initial bits and the terminating right-race schedule, ideal/noisy nonrightward traces are related by a causal invertible XOR mask. Their conditional joint entropy and mutual information are N+1 bits, although each marginal trace is iid fair. First-tick error depends on the old observed state: black targets have no right-race error, white targets have probability eps/(4-2eps) under fresh Bernoulli flags. CT1 passes135296 paired cases and8736 conditional classes. Unconditional coupling and mask dynamics remain open.
