@@ -1,16 +1,18 @@
-# The silver half-phase code fails every finite repeat allowance
+# the silver half-phase code fails every finite repeat allowance
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G145. The silver half-phase
-code fails every finite repeat allowance (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT145. the silver half-phase
+code fails every finite repeat allowance (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 Moving the starting point of the silver-angle rotation by half a turn makes a decisive difference. The boundary-start code passes our repetition test, but this half-phase code has an explicit sequence of prefix repeats whose excess grows without bound. The first one is the period-seven witness already checked by Local. No finite allowance rescues this phase, so it is excluded as a finite-wall companion. The boundary-start code still has no established finite Rule 30 realization.
 
 ## The formal statement and proof
+
+### G145. The silver half-phase code fails every finite repeat allowance (2026-10-07)
 
 **Status and target.** Symbolic Q7 proof, independent review pending. No experiment. G143 is independently verified by Local L099; G144 remains under review. This block follows the finite half-phase control HR3 already preregistered in GC159 and reported by Local L097. The prediction is that its debt-3 witness is the first member of an unbounded family. The counterfactual is a uniform finite debt bound at this phase. The proof uses G143's explicit convergents and mismatch interval, not a new computational scan or a theorem imported from the Rote literature in PRIOR-ART.md.
 
@@ -39,3 +41,15 @@ For l=1, the first possible m is 4: m=2 has positive error; m=4 has negative err
 The denominator recurrence gives unbounded q_n and q_(n-1)<q_n, so the displayed debt is greater than q_n/2-1 and diverges. This proves the exclusion for every finite allowance.
 
 **Unexpected check and scope.** At n=3 the convergents are 3/5 and 1/2: Q_n=7, h_n=11, and debt=3, exactly HR3's retained finite witness. The same angle at phase zero passes every period with C=0 by G143. Thus changing the phase can change boundedness of the repeat debt, not just its finite constant. This is not a finite Rule30 witness at either phase. The boundary-phase exceptional angles in G144 and their actual forced initial tails remain unresolved; no prize claim follows.
+
+*Second reader's note on G145 (Local, 2026-10-07; chat L101).* Correct. At phase one half the mismatch rule for period
+$Q_n$ moves the arc to $\{k\beta\} \in [1/2 - E, 1/2)$, which is exactly an odd $p$ with $2k\beta - p \in [-2E, 0)$. For
+odd $n$ the denominators $q_n$ are odd and $q_{n-1}$ even, so in the basis expansion of $(p, 2k)$ the coefficient $m$ is
+even and $l$ odd, and the error is $(-m + (2+r) l) d$. Mixed signs give at least $(4 + r) d > 2E$, zero coefficients
+fail by parity, sign or denominator, and for $l = 1$ only $m = 4$ lands in the window $(2 + r, 4 + 3r)$; every $l \ge 3$
+needs $m \ge 8$ and a larger denominator. So the first hit is $h_n = 2q_n + q_{n-1}/2$, time zero is not a mismatch, and
+the prefix debt is $q_n - q_{n-1}/2 - 1$. The phase contrast with G143 is the striking part: the same angle passes every
+period at phase zero with $C = 0$ and fails every finite allowance at phase one half. Checked
+(`rule30_audit_g99_g100.py`, S41, within GC159's 4,096 symbols, the integer floors cross-checked against 60-digit
+decimals): for $n = 3, 5, 7, 9$ the first mismatch of period $Q_n$ is $h_n$, every mismatch time lies in G145's arc and
+every arc time is a mismatch, and the prefix debts are 3, 22, 133 and 780, the first being HR3's witness.

@@ -182,6 +182,11 @@ CHECKS (GPT's claims at 827e006):
      beta = [0; 1, 1, 4, 4, ...] the numerators are odd and, for period 2 q_n, the first positive mismatch is
      (a - 1) q_n + q_(n-1) and the initial debt (a - 3) q_n + q_(n-1) - 1 or - 3; for beta = 2 - sqrt 2 the even
      mediants satisfy B_n |D_n| = 1 / (B_(n+1) / B_n + r) < 1/2 and are alpha's convergents, consecutive and unimodular.
+  S41 (G145, added 2026-10-07 at e760928; within GC159's 4,096 symbols, exact integers cross-checked by 60-digit
+     decimals): for the half-phase code c_s = floor(s beta + 1/2) mod 2, beta = 2 - sqrt 2, and n = 3, 5, 7, 9, the
+     period Q_n = q_n + q_(n-1) has its first mismatch at h_n = 2 q_n + q_(n-1)/2 (none at time 0, none before), so the
+     prefix interval [0, h_n - 1] has debt q_n - q_(n-1)/2 - 1 = 3, 22, 133, 780; and the mismatch times agree with
+     G145's arc {k beta} in [1/2 - E, 1/2), E = (1 + r) |delta_n|.
 """
 import random
 from fractions import Fraction as F
@@ -1802,4 +1807,30 @@ for i in range(len(AB) - 1):
     ok40 &= (A, B) in cva
 check('S40 G144: the even-numerator and large-coefficient obstructions on its controls; the converse mediants are alpha convergents',
       ok40)
+def flh_int(s_):
+    return 0 if s_ == 0 else 2 * s_ - ((math.isqrt(8 * s_ * s_) - 1) // 2 + 1)
+
+
+ok41 = True
+NH = 4096
+hc = [flh_int(s_) % 2 for s_ in range(NH)]
+ok41 &= all(flh_int(s_) == int((s_ * DB + decimal.Decimal(1) / 2).to_integral_value(rounding=decimal.ROUND_FLOOR))
+            for s_ in range(NH))
+qsb = [1, 2]
+while len(qsb) < 12:
+    qsb.append(2 * qsb[-1] + qsb[-2])
+debts41 = []
+for n in (3, 5, 7, 9):
+    qn, qm = qsb[n - 1], qsb[n - 2]
+    Q, h = qn + qm, 2 * qn + qm // 2
+    mis = [k for k in range(NH - Q) if hc[k] != hc[k + Q]]
+    d_ = min(abs(qn * DB - j) for j in range(qn + 1))
+    E_ = (1 + (decimal.Decimal(2).sqrt() - 1)) * d_
+    arc = [k for k in range(NH - Q) if decimal.Decimal(1) / 2 - E_ <= xs[k] < decimal.Decimal(1) / 2]
+    ok41 &= qn % 2 == 1 and qm % 2 == 0 and mis[0] == h and mis == arc
+    debts41.append((h - 1) - Q)
+    ok41 &= (h - 1) - Q == qn - qm // 2 - 1
+ok41 &= debts41 == [3, 22, 133, 780]
+check('S41 G145: the half-phase first hits h_n = 2 q_n + q_(n-1)/2 and the unbounded prefix debts', ok41,
+      'debts at n = 3, 5, 7, 9: %s' % debts41)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G144, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G145, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4831,15 +4831,7 @@ $[0, 11]$); at $[0; 1, 1, 4, 4, \ldots]$ the numerators are odd and the doubled 
 $(a-1) q_n + q_{n-1}$ and the stated debts; and at $2 - \sqrt 2$ the even mediants are unimodular, alternate in sign,
 satisfy the identity and the Legendre bound, and are exactly the convergents of $\alpha$.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT145. the silver half-phase code fails every finite repeat allowance (second-read by Local, 2026-10-07)
 
 ### G145. The silver half-phase code fails every finite repeat allowance (2026-10-07)
 
@@ -4870,3 +4862,27 @@ For l=1, the first possible m is 4: m=2 has positive error; m=4 has negative err
 The denominator recurrence gives unbounded q_n and q_(n-1)<q_n, so the displayed debt is greater than q_n/2-1 and diverges. This proves the exclusion for every finite allowance.
 
 **Unexpected check and scope.** At n=3 the convergents are 3/5 and 1/2: Q_n=7, h_n=11, and debt=3, exactly HR3's retained finite witness. The same angle at phase zero passes every period with C=0 by G143. Thus changing the phase can change boundedness of the repeat debt, not just its finite constant. This is not a finite Rule30 witness at either phase. The boundary-phase exceptional angles in G144 and their actual forced initial tails remain unresolved; no prize claim follows.
+
+*Second reader's note on G145 (Local, 2026-10-07; chat L101).* Correct. At phase one half the mismatch rule for period
+$Q_n$ moves the arc to $\{k\beta\} \in [1/2 - E, 1/2)$, which is exactly an odd $p$ with $2k\beta - p \in [-2E, 0)$. For
+odd $n$ the denominators $q_n$ are odd and $q_{n-1}$ even, so in the basis expansion of $(p, 2k)$ the coefficient $m$ is
+even and $l$ odd, and the error is $(-m + (2+r) l) d$. Mixed signs give at least $(4 + r) d > 2E$, zero coefficients
+fail by parity, sign or denominator, and for $l = 1$ only $m = 4$ lands in the window $(2 + r, 4 + 3r)$; every $l \ge 3$
+needs $m \ge 8$ and a larger denominator. So the first hit is $h_n = 2q_n + q_{n-1}/2$, time zero is not a mismatch, and
+the prefix debt is $q_n - q_{n-1}/2 - 1$. The phase contrast with G143 is the striking part: the same angle passes every
+period at phase zero with $C = 0$ and fails every finite allowance at phase one half. Checked
+(`rule30_audit_g99_g100.py`, S41, within GC159's 4,096 symbols, the integer floors cross-checked against 60-digit
+decimals): for $n = 3, 5, 7, 9$ the first mismatch of period $Q_n$ is $h_n$, every mismatch time lies in G145's arc and
+every arc time is a mismatch, and the prefix debts are 3, 22, 133 and 780, the first being HR3's witness.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
