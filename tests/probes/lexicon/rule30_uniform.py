@@ -131,6 +131,42 @@ def excess_by_width(tau, skip_zero=False):
     return out
 
 
+# ADDENDUM, written 2026-10-06 before the run (python3 rule30_uniform.py slow [WMAX=12]): the slow walls of section 8.63
+# on the B side. Does "total width plus a constant" hold next to 0^a 1^a for a = 4, 8, 16, where a real right half's
+# column 1 is latched (monotone through each white stretch) and the black stretches force the checkerboard?
+#   US0 (control, must hold): the 01 wall reproduces rule30_complement.py's excesses for W <= WMAX (the UW0 list), and
+#       the same list is NOT reproduced when the wall's phase is shifted by one step (the instrument sees the wall).
+#   US1 (blind): the largest excess by width stays at most +12 for each slow wall, as for every two-colour word (UW1).
+#   US2 (blind): the largest excess does not grow with a: a = 16's is at most a = 4's plus 2.
+#   US3 (blind): no run reaches depth 126 (no capped width) for any slow wall at W <= WMAX.
+# REFUTED-BY: US0 failing (the instrument); US1 to US3 the other way (a slow wall that lets a finite seed keep its
+#   centre far beyond its width would be the first wall to break the law of section 8.42).
+
+
+def slow():
+    want = [5, 8, 7, 6, 5, 9, 8, 7, 6, 5, 4, 3, 2, 1, 3, 2, 1]
+    tau01 = [t % 2 for t in range(K + 2)]
+    res01 = excess_by_width(tau01)
+    shifted = excess_by_width([(t + 1) % 2 for t in range(K + 2)])
+    got = [res01[W][0] for W in range(min(17, WMAX + 1))]
+    report("US0 the 01 wall reproduces the recorded excesses, and the phase-shifted wall does not",
+           got == want[:len(got)] and [shifted[W][0] for W in range(len(got))] != want[:len(got)], f"{got}")
+    res = {}
+    for a in (4, 8, 16):
+        w = [0] * a + [1] * a
+        tau = [w[t % len(w)] for t in range(K + 2)]
+        res[a] = excess_by_width(tau)
+        print(f"   0^{a} 1^{a}: largest excess by width: " + " ".join(f"{W}:{v[0]:+d}{'*' if v[2] else ''}" for W, v in res[a].items()),
+              flush=True)
+    big = {a: max(v[0] for v in res[a].values()) for a in res}
+    verdict("US1 the largest excess is at most +12 for each slow wall", all(b <= 12 for b in big.values()),
+            ", ".join(f"a = {a}: {b:+d}" for a, b in big.items()))
+    verdict("US2 the largest excess does not grow with a (a = 16 at most a = 4 plus 2)", big[16] <= big[4] + 2)
+    verdict("US3 no run reaches depth 126", not any(v[2] for a in res for v in res[a].values()))
+    print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
+    sys.exit(1 if FAILS else 0)
+
+
 def main():
     rng = random.Random(4096)
     words = {"01": [0, 1], "001": [0, 0, 1], "011": [0, 1, 1], "0001": [0, 0, 0, 1], "0011": [0, 0, 1, 1],
@@ -259,4 +295,4 @@ def windows(Ks=(128, 256, 512, 1024, 2048), wmax=10):
 
 
 if __name__ == "__main__":
-    {"deep": deep, "horizon": horizon, "windows": windows}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
+    {"deep": deep, "horizon": horizon, "windows": windows, "slow": slow}.get(sys.argv[1] if len(sys.argv) > 1 else "", main)()
