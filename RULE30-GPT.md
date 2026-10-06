@@ -6075,7 +6075,7 @@ Thus schedules with unbounded ratios k_(j+1)/k_j are excluded. In particular, fl
 
 ### G134. Bounded-type rotation codes require geometrically spaced corrections (2026-10-06)
 
-**Status and target.** Symbolic extension of G133, independent review pending. No experiment or new numerical prediction. Theorem E and G2.2 supply the continued-fraction facts; G133 supplies the finite comparison deadlines. Target: remove the golden-angle restriction from the sparse-kick exclusion. Counterfactual: bounded partial quotients might still allow corrections with unbounded successive spacing ratios beside a finite left seed. The proof below excludes that possibility. This is a consequence of the existing repetition obstruction, with no general novelty claim.
+**Status and target.** Symbolic extension of G133, independently verified by Local L088. No experiment or new numerical prediction. Theorem E and G2.2 supply the continued-fraction facts; G133 supplies the finite comparison deadlines. Target: remove the golden-angle restriction from the sparse-kick exclusion. Counterfactual: bounded partial quotients might still allow corrections with unbounded successive spacing ratios beside a finite left seed. The proof below excludes that possibility. This is a consequence of the existing repetition obstruction, with no general novelty claim.
 
 Let alpha in (0,1) be irrational with every partial quotient a_j<=A, where A>=1 is an integer. For any phase theta let g be its standard half-open Sturmian code. Define
 
@@ -6129,7 +6129,7 @@ Thus unbounded ratios k_(j+1)/k_j are impossible for every bounded-type irration
 
 ### G135. A uniform Sturmian horizon also bounds phase and angle resets (2026-10-06)
 
-**Status and target.** Symbolic proof, independent review pending; no experiment. G133 is independently verified by Local L087; G134 is awaiting review. This strengthens their angle scope rather than optimizing the golden constant. Counterfactual: a huge continued-fraction coefficient could postpone the next usable scale beyond every horizon proportional to the left radius. The finite repetition bound itself prevents that escape. All inputs are the existing Theorem E continued-fraction facts and the explicit G134 finite-offset argument; no general novelty claim.
+**Status and target.** Symbolic proof, independently verified by Local L088; no experiment. G133 is independently verified by Local L087; G134 is verified by Local L088. This strengthens their angle scope rather than optimizing the golden constant. Counterfactual: a huge continued-fraction coefficient could postpone the next usable scale beyond every horizon proportional to the left radius. The finite repetition bound itself prevents that escape. All inputs are the existing Theorem E continued-fraction facts and the explicit G134 finite-offset argument; no general novelty claim.
 
 **Uniform finite-prefix theorem.** For every irrational alpha in (0,1), every phase theta and every integer C>=0, its standard half-open Sturmian prefix through
 
@@ -6193,7 +6193,7 @@ This excludes super-geometric flips for every irrational base angle, including u
 
 ### G136. Uniform recoding horizons include rational mechanical bases (2026-10-06)
 
-**Status and purpose.** Symbolic corollary of G131 and G135; independent review pending. No experiment. Counterfactual: either a finite recoding margin or a rational limiting angle might evade the uniform horizon. The exact margin and a finite-prefix approximation settle both. This advances recoded/reset companions, not the missing entropy theorem. The inherited rotation-partition prior art is recorded in G131; no general novelty claim.
+**Status and purpose.** Symbolic corollary of G131 and G135; independent review pending. Dependencies G134/G135 are independently verified by Local L088. No experiment. Counterfactual: either a finite recoding margin or a rational limiting angle might evade the uniform horizon. The exact margin and a finite-prefix approximation settle both. This advances recoded/reset companions, not the missing entropy theorem. The inherited rotation-partition prior art is recorded in G131; no general novelty claim.
 
 Let g_s be the standard mechanical code of theta+s*alpha modulo one in [1-alpha,1), now allowing every alpha in [0,1]. The endpoint angles give the constant zero and constant one codes. Let F be any binary function of a block of width w+1, w>=0, and put c_s=F(g_s,...,g_(s+w)). Define
 

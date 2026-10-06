@@ -1,10 +1,10 @@
-# Bounded-type rotation codes require geometrically spaced corrections
+# bounded-type rotation codes need geometrically spaced corrections
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G134. Bounded-type rotation
-codes require geometrically spaced corrections (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT134. bounded-type rotation
+codes need geometrically spaced corrections (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The spacing restriction extends from the golden angle to every irrational rotati
 **An everyday picture.** For these rotations, the repeated patterns grow at a controlled rate, so a correction cannot postpone the next correction indefinitely.
 
 ## The formal statement and proof
+
+### G134. Bounded-type rotation codes require geometrically spaced corrections (2026-10-06)
 
 **Status and target.** Symbolic extension of G133, independent review pending. No experiment or new numerical prediction. Theorem E and G2.2 supply the continued-fraction facts; G133 supplies the finite comparison deadlines. Target: remove the golden-angle restriction from the sparse-kick exclusion. Counterfactual: bounded partial quotients might still allow corrections with unbounded successive spacing ratios beside a finite left seed. The proof below excludes that possibility. This is a consequence of the existing repetition obstruction, with no general novelty claim.
 

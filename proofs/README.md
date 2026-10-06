@@ -350,6 +350,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A higher-dimensional rotation can still expose only one circle coordinate.
 - [golden-angle codes cannot be rescued by super-geometric kicks](G133-golden-angle-codes-cannot-be-rescued-by-super.md):
   A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
+- [bounded-type rotation codes need geometrically spaced corrections](G134-bounded-type-rotation-codes-need-geometrically-spaced-corrections.md):
+  The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
+- [a uniform Sturmian horizon bounds phase and angle resets](G135-a-uniform-sturmian-horizon-bounds-phase-and-angle.md):
+  The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
 
 ## The waiting room (not yet verified)
 
@@ -364,9 +368,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Bounded-type rotation codes require geometrically spaced corrections](W134-bounded-type-rotation-codes-require-geometrically-spaced-corrections.md):
-  The spacing restriction extends from the golden angle to every irrational rotation with bounded partial quotients.
-- [A uniform Sturmian horizon also bounds phase and angle resets](W135-a-uniform-sturmian-horizon-also-bounds-phase-and.md):
-  The correction-spacing limit holds for every irrational Sturmian angle, even when resets change the angle.
 - [Uniform recoding horizons include rational mechanical bases](W136-uniform-recoding-horizons-include-rational-mechanical-bases.md):
   Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
