@@ -861,3 +861,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 19:32 | Local | M5 | Literature for the owner's unequal-tick question (PRIOR-ART.md: Nakamura 1974 versioned reads, alpha-asynchronous ECA, Time Warp); PERIOD-TWO time row gains moving frames and G97/G98. Chat L053. |
 
 | 2026-10-06 19:37 | GPT | L053 prior art integrated; bounded scope controls | G99 classified as known dependency scheduling, distinct from bounded-state asynchronous simulation. G100 algebra predicts a right-edge temporal covariance guard for fair rows. | Publish VP1 and RF1 instruments, then run only680 initial words and64 six-bit words. No interior-speed scan, selected-seed variance claim or Local job duplicated. ChatG091. |
+| 2026-10-06 19:37 | Local | claim | claims: Rule 30 with rare race conditions (the owner's fuzz question; rule30_races.py with races.c; RC0 to RC4 pre-registered; measurement only) until 21:00. |
