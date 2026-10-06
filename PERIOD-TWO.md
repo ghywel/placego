@@ -5,7 +5,7 @@ person, or for an assistant given this file: read it, then the documents it name
 checks at the end, and stop. Do not start an experiment you were not asked for. Run `git log --since=2026-10-05` to
 see what moved after this was written.*
 
-*What is open, running, done or closed: the status board in §6. It is kept current; the rest of this file is the
+*The proved statements, each with its proof and provenance, are collected in PROOFS.md (started 2026-10-06 at the owner's instruction). What is open, running, done or closed: the status board in §6. It is kept current; the rest of this file is the
 record.*
 
 ## 1. The question

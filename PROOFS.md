@@ -1,0 +1,650 @@
+# PROOFS.md: the solid proofs of this record, in one place
+
+*Started 2026-10-06 11:15 BST at the owner's instruction: "Solid, concrete proofs that don't outright solve the
+prize are extremely valuable and should be stored in their own PROOFS.md document." Each entry is a statement with
+a proof a reader can check from the page, or a certificate committed in this repository, copied verbatim from
+where it was first recorded (named under* Where*), with what it bears on and its status. Nothing here solves the
+prize; everything here is exact. Entries are appended, never rewritten; a correction is a new line under the entry
+that names what was wrong. Claims that still want a second reader are kept apart at the end, so that the word
+"proved" keeps its meaning.*
+
+*Reading order for a newcomer: A (the wall form) then B (windows and zero runs), which together are what is known
+about Conjecture LR and Conjecture B (PERIOD-TWO.md §5, §7); B′ is the siblings, Jen and the squeeze; C is the exact
+statements about the single cell proved in the last two days; E is GPT's; F is Collatz; G is the waiting room.*
+
+## A. The wall form
+
+### 1. Lemma 1 (where column 1 is invisible)
+
+*Where:* RULE30-PRIZE.md, "7. Rung 2, first progress: left-side rigidity (2026-10-04)". *Bears on:* the wall form: column 1 is visible only at white times; every statement about injection rates rests on it. *Status:* proved.
+
+**Lemma 1 (where column 1 is invisible).** With column 0's trace $\tau$ fixed, the forced left half depends on column
+1 only at the times $t$ with $\tau(t) = 0$.
+
+*Proof.* The only place column 1 enters is
+$x_t(-1) = \tau(t+1) + \big(\tau(t) \vee x_t(1)\big) \bmod 2$. Where $\tau(t) = 1$, the "or" is 1 whatever $x_t(1)$
+is. Every further left column is built from columns $-1$ and $0$ and those to their left. $\square$
+
+### 2. Lemma 2 (rotations are equivalent)
+
+*Where:* RULE30-PRIZE.md, "7. Rung 2, first progress: left-side rigidity (2026-10-04)". *Bears on:* the wall form: one rotation of a periodic word per class suffices. *Status:* proved.
+
+**Lemma 2 (rotations are equivalent).** A finite configuration whose column is exactly periodic from $t = 0$, with
+word $w$, is still finite one step later, and its column is then periodic with $w$ rotated by one place. So a finite
+configuration exists for one rotation of a cyclic word exactly when it exists for all of them, and ruling out one
+rotation per class is enough. $\square$
+
+### 3. Lemma 3 (two local rules from the right side)
+
+*Where:* RULE30-PRIZE.md, "8. The right side as a complement (2026-10-04)". *Bears on:* the right side as a constraint on column 1 (two local rules). *Status:* proved; checked on random sequences.
+
+**Lemma 3 (two local rules from the right side).** At column 1, Rule 30 reads
+$\sigma(t+1) = \tau(t) + \big(\sigma(t) \vee x_t(2)\big) \bmod 2$, where $\tau$ is column 0 and $\sigma$ is column 1.
+So, whatever column 2 does:
+
+```math
+\tau(t) = 0:\quad \sigma(t) = 1 \;\Rightarrow\; \sigma(t+1) = 1, \qquad\qquad
+\tau(t) = 1:\quad \sigma(t+1) = 1 \;\Rightarrow\; \sigma(t) = 0 .
+```
+
+For the alternating trace, this means the part of column 1 that the left side sees, $e(s)$, never has two ones in a
+row. $\square$ *Checked:* `rule30_twosided.py` T1 and T2 (every right half tried; random sequences violate the rules,
+
+### 4. Lemma 4 (the newest bit of column 1 enters once, as an XOR)
+
+*Where:* RULE30-PRIZE.md, "8.2 Why runs of 13 were missing: templates, and where Fibonacci really is (2026-10-04)". *Bears on:* the counting form: the newest visible bit enters once, as an XOR. *Status:* proved; checked (P2).
+
+**Lemma 4 (the newest bit of column 1 enters once, as an XOR).** Write $L(k)$ for the cell at depth $k$ of the
+forced left half (column $-k$ at time 0). It depends on $\sigma(0), \dots, \sigma(k-1)$ only, and on the newest of
+them like this:
+
+```math
+L(k) = \begin{cases}
+\sigma(k-1) \oplus g_k\big(\sigma(0), \dots, \sigma(k-2)\big) & \text{if } \tau(k-1) = 0 \quad \text{(a linear cell)},\\[2pt]
+h_k\big(\sigma(0), \dots, \sigma(k-2)\big) & \text{if } \tau(k-1) = 1 \quad \text{(a forced cell)}.
+\end{cases}
+```
+
+*Proof.* Rule 30 run to the left is $x(i-1, t) = x(i, t+1) \oplus \big(x(i, t) \vee x(i+1, t)\big)$. By induction,
+column $-m$ at time $t$ depends on $\sigma(t), \dots, \sigma(t+m-1)$, and the newest of these enters only through
+the term $x(-m+1, t+1)$, as an XOR. Unwinding $L(k) = x(-k, 0)$ this way down to column $-1$ at time $k-1$ leaves
+$x(-1, k-1) = \tau(k) \oplus \big(\tau(k-1) \vee \sigma(k-1)\big)$. That is $\tau(k) \oplus \sigma(k-1)$ when
+$\tau(k-1) = 0$, and it does not involve $\sigma(k-1)$ when $\tau(k-1) = 1$. $\square$ *Checked:* P2 in
+
+
+## B. Windows, zero runs and the left band
+
+### 5. Theorem A (a window cannot outlast the edge)
+
+*Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2 of PERIOD-TWO.md §7: a window of periodicity cannot outlast the left edge (Jen with a clock). *Status:* proved.
+
+**Theorem A (a window cannot outlast the edge).** Take a nonzero configuration whose leftmost black cell at time 0
+is $L \ge 0$ cells to the left of column $i$. If columns $i$ and $i + 1$ are $P$-periodic on $[a, b]$, then
+
+```math
+b \le 2a + L + 2P - 1 .
+```
+
+At time $a$ the left edge is $L + a$ cells away. So the window's length $b - a$ is less than that distance plus $2P$.
+
+*Proof.* Three facts, each one line of Rule 30.
+1. **Periodicity moves left and loses one step.** $x_t(k-1) = x_{t+1}(k) \oplus (x_t(k) \vee x_t(k+1))$. So if columns
+   $k$ and $k+1$ are $P$-periodic on $[a, b]$, column $k - 1$ is $P$-periodic on $[a, b - 1]$. After $j$ steps to the
+   left, column $i - j$ is $P$-periodic on $[a, b - j]$.
+2. **The edge moves left one cell a step.** The leftmost black cell has two white cells to its left, and $001 \to 1$.
+   So column $i - j$ is white before time $j - L$ and black at time $j - L$ (for $j \ge L$).
+3. **The two meet.** Take $j = a + P + L$. Column $i - j$ turns black for the first time at $e = a + P$. If
+   $b \ge 2a + L + 2P$, then $e \le b - j$. So both $e - P = a$ and $e$ lie in the window where column $i - j$ is
+   $P$-periodic. It is white at one and black at the other, a contradiction. $\square$
+
+### 6. Theorem B (a zero run cannot outlast two periods)
+
+*Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2: a zero run in row 0 of the forced left half is at most two periods long. *Status:* proved; sharp at q = 2.
+
+**Theorem B (a zero run cannot outlast two periods).** Let columns 0 and 1 be $P$-periodic from time 0, with
+$P \ge 2$ and column 0 not zero. Then every run of zeros in row 0 of the forced left half has length at most
+$2P - 2$. (For $P = 1$ the same proof gives 1, which is attained by the stripes $0101\dots$ in space.)
+
+*Proof.* Every column of the left half is $P$-periodic (fact 1, with an unbounded window). Let row 0 be zero at
+depths $d$ to $d + R - 1$. A cell is white when the three cells above it are. So column $-k$ is white at times 0 to
+$\min(k - d,\ d + R - 1 - k)$, which is a triangle of zeros under the run. If $R \ge 2P - 1$, the column at
+$k = d + P - 1$ is white for $P$ steps in a row, and so for ever. With column $-k$ zero, the rule for the column to
+its right reads $x_{t+1}(-k+1) = x_t(-k+1) \vee x_t(-k+2)$. That column never turns from black to white. It is
+periodic, so it is constant. Its depth $d + P - 2$ lies in the run because $P \ge 2$, so it is white at time 0, and
+zero for ever. Two adjacent zero columns force zeros to
+the right, as in §8.13, as far as column 0, which is not zero. $\square$
+
+### 7. Theorem A′ (a block recurs only if it is no longer than the edge is far)
+
+*Where:* RULE30-PRIZE.md, "8.58 The window principle: Theorem A′, and what the Collatz twin shows is missing (2026-10-05)". *Bears on:* the window principle: a block recurs only if it is no longer than the edge is far. *Status:* proved.
+
+**Theorem A′ (a block recurs only if it is no longer than the edge is far).** Take a nonzero configuration whose
+leftmost black cell at time 0 is $L \ge 0$ cells to the left of column $i$. If the pair of columns $(i, i+1)$
+shows the same block of $n$ consecutive values starting at times $a$ and $a' > a$, then
+
+```math
+n \le L + a' .
+```
+
+*Proof.* Rule 30 read from right to left gives each cell from the cell to its right one step later and two cells
+of its own time. So the two columns at times $t$ to $t + k$ fix the $k$ cells to their left at time $t$. Equal
+blocks of length $n$ therefore make the rows at times $a$ and $a'$ agree at the $n - 1$ cells left of column
+$i$. The later row has its leftmost black cell $L + a'$ cells out, and the earlier row is white there. If
+$L + a' \le n - 1$ the rows disagree inside the range where they must agree. $\square$
+
+### 8. Lemma B1 (white, then black)
+
+*Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the left band: an eventually white diagonal is preceded by an eventually black one. *Status:* proved.
+
+**Lemma B1 (white, then black).** If diagonal $j$ is eventually white, diagonal $j + 2$ is eventually black. No two
+adjacent diagonals are both eventually white. A diagonal other than 0 and 1 is eventually black only if the one two
+before it is eventually white.
+
+*Proof.* Once $D_j \equiv 0$, $D_{j+2}(t+1) = D_{j+1}(t) \lor D_{j+2}(t)$, which never falls, so $D_{j+2}$ is eventually
+constant, and it is 1 unless $D_{j+1} \equiv D_{j+2} \equiv 0$ as well. If $D_j \equiv D_{j+1} \equiv 0$ then
+$D_{j+1}(t+1) = D_{j-1}(t) \oplus (D_j \lor D_{j+1}) = D_{j-1}(t)$ forces $D_{j-1} \equiv 0$, and so on down to
+$D_0 \equiv 0$, which is false ($D_0 \equiv 1$). That proves the first two claims. For the third: if $D_k \equiv 1$
+then $D_k(t+1) = D_{k-2}(t) \oplus 1$ forces $D_{k-2} \equiv 0$. $\square$
+
+### 9. Lemma B2 (the clock never stops)
+
+*Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the left band: the diagonal periods double without end (Rowland's mechanism, proved). *Status:* proved.
+
+**Lemma B2 (the clock never stops).** The eventual periods of the diagonals are unbounded. So there are infinitely
+many eventually white diagonals, and infinitely many eventually black ones.
+
+*Proof.* Suppose every diagonal had eventual period dividing $P$. Write $V_k \in \{0,1\}^{\mathbb{Z}/P}$ for the
+periodic regime of diagonal $k$, indexed by time modulo $P$, so that $V_k(s+1) = V_{k-2}(s) \oplus (V_{k-1}(s) \lor V_k(s))$
+for every $k \ge 0$, with $V_{-1} = V_{-2} = 0$. The pairs $(V_{k-1}, V_k)$ take finitely many values, so
+$(V_{k_1 - 1}, V_{k_1}) = (V_{k_2 - 1}, V_{k_2})$ for some $k_1 < k_2$. The recurrence can be read backwards,
+$V_{k-2}(s) = V_k(s+1) \oplus (V_{k-1}(s) \lor V_k(s))$, so $V_{k_1 - j} = V_{k_2 - j}$ for every $j \ge 0$, and the
+backward reading continues into the negative indices, where everything is 0. With $q = k_2 - k_1$ this gives
+$V_0 = V_{-q} = 0$, against $V_0 \equiv 1$. So the periods are unbounded. A diagonal's period exceeds the periods
+of the two before it only when the one before it is eventually white: otherwise a time with $D_{k-1}(t) = 1$ resets
+$D_k(t+1) = \lnot D_{k-2}(t)$, after which $D_k$ follows its inputs' period. Infinitely many doublings need infinitely
+many eventually white diagonals, and Lemma B1 turns each into an eventually black one. $\square$
+
+### 10. Theorem A‴ (the window principle, with the band)
+
+*Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the window principle with the band. *Status:* proved.
+
+**Theorem A‴ (the window principle, with the band).** Let the leftmost black cell at time 0 be $L$ cells left of
+column $i$, and let the pair of columns $(i, i+1)$ show the same block of $n$ values from the times $a$ and $a' > a$.
+Then row $a'$ is white on its diagonals $L + a' - n + 1$ to $a' - a - 1$. Hence, if diagonal $b$ is black at time $a'$
+and $b < a' - a$, then $n \le L + a' - b$.
+
+*Proof.* By §8.58 the rows at $a$ and $a'$ agree on the $n - 1$ cells left of column $i$. Row $a$ is white beyond
+distance $L + a$, so row $a'$ is white at the distances $L + a + 1$ to $n - 1$. Its leftmost black cell is at distance
+$L + a'$, so those distances are its diagonals $L + a' - n + 1$ to $a' - a - 1$. A black diagonal $b$ in that range
+contradicts this; so either $b \ge a' - a$ or $b \le L + a' - n$. $\square$
+
+### 11. Corollary F (near-squares at the start are fatal)
+
+*Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* near-squares at the start are fatal. *Status:* proved.
+
+**Corollary F (near-squares at the start are fatal).** Let $c$ be the visible bits of column 1, and write
+$\ell(i, i')$ for the length of the common future of $c$ at the indices $i < i'$. If there is a constant $K$ and pairs
+$i_j < i'_j$ with $i'_j - i_j \to \infty$ and $\ell(i_j, i'_j) \ge i'_j - K$, then the forced left half is never finite.
+In words: a column 1 that starts with a square, or misses one by a bounded amount, at larger and larger periods,
+is excluded, with any left half.
+
+*Proof.* Suppose the left half were finite, its leftmost black cell at depth $L$. By Lemma B2 there is an eventually
+black diagonal $b \ge L + 2K$, black from some time $t_b$. The pair of columns $(-1, 0)$ repeats its block of length
+$2\ell$ from the times $2i_j$ and $2i'_j$ (column 0 is periodic and column $-1$ at the odd times is constant). Take
+$j$ with $2(i'_j - i_j) > b$ and $2i'_j \ge t_b$. Theorem A‴ with the distance $L - 1$ to column $-1$ gives
+$2\ell \le L - 1 + 2i'_j - b \le 2i'_j - 2K - 1$, against $\ell \ge i'_j - K$. $\square$
+
+### 12. Lemma B3 (the settled band has no long white run)
+
+*Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the settled band has no long white run. *Status:* proved.
+
+**Lemma B3 (the settled band has no long white run).** Suppose that at time $t$ the diagonals $0$ to $M$ have been
+in their periodic regime, with a common period $P$, for at least $P$ steps. Then no white run of the row inside
+diagonals $0$ to $M$ is longer than $2P$.
+
+*Proof.* Let the row be white on $[g+1, M']$ with $M' \le M$ and $D_g(t) = 1$ (diagonals 0 and 1 are black, so such a
+$g \ge 1$ exists). One step back, the constraint $D_{k-2} = D_{k-1} \lor D_k$ for $k \in [g+1, M']$ leaves two cases:
+either the row at $t - 1$ is white on $[g-1, M']$ with $D_{g-2}(t-1) = 1$ (the run is older and two cells wider),
+or it is black on $[g-1, M'-2]$ (the run is born here, under a black run). Repeating, the run is older for $s_0$
+steps and born at time $t - s_0 - 1$. At time $t - P$ the row is the same as at $t$, white exactly from $g+1$, so
+$s_0 < P$. Forward from time $t - P$, a white run only loses two cells a step at its edge side:
+$D_k(\tau+1) = 0$ whenever $k-2$, $k-1$, $k$ are all white. So at time $t - s_0 - 1$ the row is white on
+$[g + 1 + 2(P - s_0 - 1), M']$ and black on $[g - 2s_0 - 1, M' - 2]$. The two ranges are disjoint only if
+$M' - g \le 2P - 2s_0 \le 2P$. $\square$
+
+### 13. Theorem A⁗ (a repeat's white run cannot lie in the settled band)
+
+*Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* a repeat's white run cannot lie in the settled band. *Status:* proved.
+
+**Theorem A⁗ (a repeat's white run cannot lie in the settled band).** In the setting of Theorem A‴, if the diagonals
+$0$ to $M$ are settled in the sense of Lemma B3 at time $a'$ and $M < a' - a$, then $n \le L + a' - M + 2P$.
+
+*Proof.* The white run of Theorem A‴ covers $[L + a' - n + 1, a' - a - 1] \supseteq [L + a' - n + 1, M]$, which lies in
+the settled band, so by Lemma B3 its length $M - (L + a' - n)$ is at most $2P$. $\square$
+
+### 14. Theorem E
+
+*Where:* RULE30-PRIZE.md, "8.57 No pure rotation works: every Sturmian column 1 is excluded (2026-10-05)". *Bears on:* question 3 of PERIOD-TWO.md §7 (closed by §8.61): no pure rotation gives a period-two column. *Status:* proved.
+
+**Theorem E.** Let $\alpha$ be irrational and $\theta$ any real number, and let column 1's visible bits be the
+Sturmian sequence $c_s = 1$ if the fractional part of $\theta + s\alpha$ lies in $[1 - \alpha, 1)$, and $c_s = 0$
+otherwise. Let column 0 be 0101… Then the forced left half is not eventually zero.
+
+With Jen's theorem for rational $\alpha$: **no column 1 that codes a rotation in this way, by any angle and from any
+starting point, can go with a finite left half.** In the language of §8.5: a wheel that is never kicked cannot hold
+the left half, whatever its rotation number. Conjecture LR holds for every such column 1, and these are
+uncountably many sequences of zero entropy, none of them eventually periodic.
+
+*Proof.* Suppose the left half is zero beyond depth $L$. ($L \ge 1$: an empty left half fails the condition at
+time 1.) Put $C = \lfloor (L - 3)/2 \rfloor$.
+
+**Step 0: Theorem A in visible bits.** If $c_s = c_{s+q}$ for every $s$ from $s_a$ to $s_e$, then
+
+```math
+s_e \le 2 s_a + q + C . \tag{$\ast$}
+```
+
+Column $-1$ is $\bar c_s$ at even times and 1 at odd times (§8.39), so columns $-1$ and 0 are $2q$-periodic on the
+times $2s_a$ to $2(s_e + q) + 1$. Theorem A, with the left edge $L - 1$ cells from column $-1$, gives $(\ast)$. It
+needs no right half: its proof uses Rule 30 only at columns 0 and to the left.
+
+**Notation.** Let $p_n / q_n$ be the convergents of $\alpha$, with partial quotients $a_n$, and
+$\delta_n = q_n\alpha - p_n$. The signs of $\delta_n$ alternate, $|\delta_{n-1}| = a_{n+1}|\delta_n| + |\delta_{n+1}|$,
+and $\|m\alpha\| \ge |\delta_n|$ for $0 < |m| < q_{n+1}$ ($\|\cdot\|$ is the distance to the nearest integer). Write
+$x_s$ for $\theta + s\alpha$ on the circle, and $K_n$ for the half-open arc of length $|\delta_n|$ that ends at 0 if
+$\delta_n > 0$ and starts at 0 if $\delta_n < 0$. Take $n$ large.
+
+**Step 1: where $c$ breaks period $q_n$.** $c_{s+q_n}$ is the code of $x_s + \delta_n$, a point $|\delta_n|$ away from
+$x_s$. The two codes differ exactly when an end of $[1 - \alpha, 1)$ lies between them, which is when $x_s$ or
+$x_{s+1}$ is in $K_n$. Let $h < h'$ be the first two times the orbit visits $K_n$. A return to an arc of length
+$|\delta_n|$ needs $\|(h' - h)\alpha\| < |\delta_n|$, so $h' - h \ge q_{n+1}$.
+
+**Step 2: two inequalities at every scale.** $c_s = c_{s+q_n}$ for $0 \le s \le h - 2$, and again for
+$h + 1 \le s \le h' - 2$. Apply $(\ast)$ to each stretch:
+
+```math
+h \le q_n + C + 2, \qquad h' \le 2h + q_n + C + 4 .
+```
+
+With $h' \ge h + q_{n+1}$ the second gives $h \ge q_{n+1} - q_n - C - 4$. So the first visit $h(n)$ to $K_n$ satisfies
+
+```math
+q_{n+1} - q_n - C - 4 \;\le\; h(n) \;\le\; q_n + C + 2 . \tag{$\ast\ast$}
+```
+
+**Step 3: a partial quotient of 2 or more.** If $a_{n+1} \ge 2$ then $q_{n+1} - q_n \ge q_n + q_{n-1}$, and
+$(\ast\ast)$ is empty as soon as $q_{n-1} > 2C + 6$. So if infinitely many partial quotients are at least 2, the
+proof is done.
+
+**Step 4: all partial quotients 1 from some point on.** Then $q_{n+1} - q_n = q_{n-1}$ and
+$|\delta_{n-1}| = |\delta_n| + |\delta_{n+1}|$. Put $s = h(n)$ and $s' = h(n+1)$. The arcs $K_n$ and $K_{n+1}$ lie on
+opposite sides of 0, so $x_s$ and $x_{s'}$ are less than $|\delta_n| + |\delta_{n+1}| = |\delta_{n-1}|$ apart, on known
+sides. By $(\ast\ast)$, $m = s - s'$ lies between $-q_n - 2C - 6$ and $2C + 6$, and $m \ne 0$ because the two arcs
+are disjoint. An $m \ne 0$ with
+$\|m\alpha\| < |\delta_{n-1}|$ has $|m| \ge q_n$, and for large $n$ the only one in that range with the right sign is
+$m = -q_n$. So
+
+```math
+h(n+1) = h(n) + q_n \qquad\text{for every large } n .
+```
+
+The upper bound of $(\ast\ast)$ at $n + 1$ now gives $h(n) \le q_{n-1} + C + 2$, and the lower bound at $n$ gives
+$h(n) \ge q_{n-1} - C - 4$. So $h(n)$ is within $C + 4$ of $q_{n-1}$, for every large $n$. Then $h(n+1) = h(n) + q_n$
+is within $C + 4$ of $q_{n+1}$. But the same statement at $n + 1$ puts $h(n+1)$ within $C + 4$ of $q_n$. Those
+disagree once $q_{n-1} > 2C + 8$. $\square$
+
+### 15. Theorem E″ (any arcs, for a typical rotation number; added the same night)
+
+*Where:* RULE30-PRIZE.md, "8.57 No pure rotation works: every Sturmian column 1 is excluded (2026-10-05)". *Bears on:* the same for any arcs and a typical rotation number. *Status:* proved.
+
+**Theorem E″ (any arcs, for a typical rotation number; added the same night).** Let $c_s = f(\theta + s\alpha)$,
+where $f$ is 1 on a finite union of arcs with $r$ end points in all, and 0 elsewhere. If $\alpha$ has infinitely
+many partial quotients larger than $2^{r+1}$, the forced left half is not eventually zero, for every $\theta$.
+Almost every $\alpha$ has unbounded partial quotients, so for almost every rotation number **no coding by arcs at
+all** can go with a finite left half. These sequences have complexity up to $r\,n$.
+
+*Proof.* $c$ breaks period $q_n$ at time $s$ exactly when $x_s$ lies in one of $r$ arcs of length $|\delta_n|$, one at
+each end point. Let $d_1 < d_2 < \dots$ be the break times. Step 0 on the stretch before $d_1$ and on each stretch
+between consecutive breaks gives $d_1 \le q_n + C + 1$ and $d_{k+1} \le 2 d_k + q_n + C + 3$, so
+$d_k < 2^k (q_n + C + 2)$. Two of the first $r + 1$ breaks belong to the same end point, and returns to an arc of
+length $|\delta_n|$ are at least $q_{n+1}$ apart. So $q_{n+1} \le d_{r+1} < 2^{r+1}(q_n + C + 2)$, which fails
+when $a_{n+1} > 2^{r+1}$ and $q_n$ is large. $\square$
+
+
+## B′. Siblings, Jen, the squeeze and one certified computation
+
+### 16. Proposition 5 (Rule 90 has no finite configuration with a period-two column)
+
+*Where:* RULE30-PRIZE.md, "8.3 What was already known, Rule 30's siblings, and the owner's harmonics (2026-10-04)". *Bears on:* the siblings: Rule 90 has no finite configuration with a period-two column. *Status:* proved.
+
+**Proposition 5 (Rule 90 has no finite configuration with a period-two column).** Under Rule 90, $x' = l \oplus r$,
+let a finite row have its support in $[-w, w]$. Then column 0 is 0 at time $2^n$ and at time $2^n + 1$ whenever
+$2^n > w + 1$.
+
+*Proof.* Rule 90 is linear, and a single 1 at position $j$ reaches $(0, t)$ with the value
+$\binom{t}{(t-j)/2} \bmod 2$. By Lucas' theorem, $\binom{2^n}{k}$ is odd only for $k \in \{0, 2^n\}$, and
+$\binom{2^n+1}{k}$ only for $k \in \{0, 1, 2^n, 2^n+1\}$. These need $|j| \in \{2^n - 1, 2^n, 2^n + 1\}$, outside the
+support. $\square$
+
+### 17. Proposition 7 (Jen)
+
+*Where:* RULE30-PRIZE.md, "8.13 Jen's theorem settles every periodic column 1: a correction (2026-10-05)". *Bears on:* Jen's theorem in the form the record uses (every periodic column 1 is settled). *Status:* proved (Jen 1986, restated with proof).
+
+**Proposition 7 (Jen).** Let column 0 be eventually periodic and not eventually zero, and let column 1 be any
+eventually periodic sequence, made by a right half or not. Then the forced left half is never eventually zero.
+
+*Proof.* Shift time so that both columns are exactly periodic from $t = 0$, with a common period $P$. (The row at the
+new $t = 0$ still has an eventually zero left half, because the zeros far to the left stay zero for any finite time.)
+Rule 30 read from right to left is
+
+```math
+x_t(k-1) = x_{t+1}(k) \oplus \big(x_t(k) \vee x_t(k+1)\big) .
+```
+
+1. **Periodicity moves left.** If columns $k$ and $k+1$ are $P$-periodic, the formula makes column $k - 1$
+   $P$-periodic. Starting from columns 0 and 1, every column of the left half is $P$-periodic.
+2. **Zeros stay zero for a while.** Suppose $x_0(k) = 0$ for every $k < -N$. A cell is 0 when all three cells above
+   it are, so $x_t(k) = 0$ whenever $k < -N - t$. A column far enough left, $k < -N - P$, is therefore zero for
+   $t = 0, \dots, P - 1$, and by step 1 it is zero for ever. So two adjacent columns are both zero for ever.
+3. **Zeros move right.** If columns $k - 1$ and $k$ are both zero for ever, the formula reads
+   $0 = 0 \oplus (0 \vee x_t(k+1))$, so column $k + 1$ is zero for ever too. Repeating, column 0 is zero, which it is
+   not. $\square$
+
+### 18. Theorem (the parity invariant)
+
+*Where:* RULE30-PRIZE.md, "8.65 Rule 210, the one sibling: conjecture LR is false there (2026-10-06)". *Bears on:* Rule 210 next to 0101: the forced left half is Rule 90's (so LR fails there by linearity plus GPT's witness). *Status:* proved.
+
+**Theorem (the parity invariant).** With column 0 equal to 0101... ($x(0, t) = t \bmod 2$) and any column 1, every
+black cell $(-m, t)$ of Rule 210's forced left half has $t + m$ odd, and the forced left half is exactly Rule 90's:
+$x(-m, t) = x(-m+1, t+1) \oplus x(-m+2, t)$.
+
+*Proof.* Column 0 is black at odd $t$, parity $t + 0$ odd. Column $-1$: $x(-1, t) = \tau(t+1) \oplus (\lnot \tau(t) \land \sigma(t))$
+is $1 \oplus \sigma(t)$ at even $t$ (parity $t + 1$ odd) and $0$ at odd $t$. Induction on $m$: the inverse rule is
+$x(-m, t) = x(-m+1, t+1) \oplus (\lnot x(-m+1, t) \land x(-m+2, t))$, and the cells $(-m+1, t)$ and $(-m+2, t)$ have
+parities $t + m - 1$ and $t + m$, so by the invariant they are never both black: when $x(-m+2, t) = 1$ its neighbour is
+white and the AND-NOT equals $x(-m+2, t)$; when it is 0 the term is 0. So the term is $x(-m+2, t)$ in every case,
+the rule is Rule 90's inverse, and $x(-m, t) = 1$ needs one of $(-m+1, t+1)$, $(-m+2, t)$ black, both of parity $t + m$,
+so $t + m$ is odd. $\square$
+
+### 19. Lemma (the squeeze)
+
+*Where:* RULE30-PRIZE.md, "8.33 The entropy squeeze: a period-2 counterexample must be almost frozen (2026-10-05)". *Bears on:* the entropy squeeze: a period-2 counterexample must carry a certified minimum of information per step. *Status:* proved (the lemma); the constant 0.0618 bits/step is a certified computation (§8.20, §8.33).
+
+**Lemma (the squeeze).** Let $x$ be any configuration of Rule 30 whose column 0 is $0101\ldots$ from time 0. Then
+every column to the left of column 0 has
+
+```math
+h(\text{column } {-k}) \;\le\; \tfrac12 \log_2 \lambda_{26} \;\le\; 0.0646 \text{ bits per step}, \qquad k = 1, 2, \ldots
+```
+
+and at most $4 \times 320{,}528 \times 2^{0.1292 \lceil j/2 \rceil}$ different patterns of width $j$ ever appear just left
+of column 0, the same bound for every such configuration. (In fact column −1's entropy is exactly half that of
+column 1's visible bits, whose bound is the certified $\log_2 \lambda_{26}' = 0.1292$.)
+
+*2026-10-06, Local.* The certificate now reaches $m = 28$ (`rule30_squeeze.py 27,28 mmap`, SQ6; the pool mapped on the
+NVMe as in §8.20's note): $\log_2 \lambda_{27}' = 0.1243$ and $\log_2 \lambda_{28}' = 0.1236$, each checked in exact
+rational arithmetic, a bound $10^{-3}$ below $\lambda$ rejected at each. So the lemma holds with **0.0618 bits per step**
+in place of 0.0646, and the pattern bound with $2^{0.1236 \lceil j/2 \rceil}$ and the constant 135,663 in place of
+320,528. Every sentence below that uses 0.0646 stands with 0.0618.
+
+*Proof.*
+1. **Column 1 is a narrow channel.** By §8.20, every stretch of $n$ visible bits of column 1 (the even times)
+   lies in the language $L_{26}$ of a 26-cell layer. Restarting the configuration at any even time gives another
+   configuration with the same column 0, so this holds for every stretch, not only the first. Hence
+   $p_v(n) \le |L_{26}(n)| \le 320{,}528 \times 2^{0.1292\,n}$.
+2. **Column −1 is column 1 turned over.** The rule at column 0 reads
+   $x_t(-1) = x_{t+1}(0) \oplus (x_t(0) \lor x_t(1))$. So $x_t(-1) = 1$ at odd $t$, and
+   $x_t(-1) = \lnot x_t(1)$ at even $t$. A stretch of column −1 is fixed by its starting parity and half as many
+   visible bits, so $h(\text{column} -1) \le \tfrac12 h(v)$.
+3. **Entropy cannot grow leftwards.** Rule 30 is left-permutive:
+   $x_t(j-2) = x_{t+1}(j-1) \oplus (x_t(j-1) \lor x_t(j))$. Each pair of neighbouring columns is computed from the
+   pair to its right over two consecutive times, and a computed sequence has no more entropy than what it is computed
+   from. Column 0 is periodic and adds nothing.
+4. **Patterns.** A width-$j$ pattern just left of column 0 is computed from columns −1 and 0 over $j$ consecutive
+   times. $\square$
+
+### 20. Proposition 6 (computed): the pure wheel cannot make a finite left half
+
+*Where:* RULE30-PRIZE.md, "8.6 Order in, noise out: the left side churns the wheel (2026-10-04)". *Bears on:* the pure wheel cannot make a finite left half. *Status:* certified by computation (the script named in the section).
+
+**Proposition 6 (computed): the pure wheel cannot make a finite left half.** Let column 0 be 0101… and column 1 the
+universal wheel $U$, at any of its 28 even phases. Then the forced left half is never eventually zero. The orbit of the
+column pair enters a cycle after
+
+```math
+\mu = 32\,896\,298 \text{ steps}, \qquad \lambda = 15\,009\,104\,432 = 2^4 \cdot 7 \cdot 17 \cdot 1433 \cdot 5501 ,
+```
+
+and the cycle is not the zero fixed point. So the left half is eventually periodic in depth, with period dividing
+$\lambda$, and it has infinitely many ones.
+
+*Proof.* The certificate $(\mu, \lambda)$ was found by Brent's algorithm in about $4.7 \times 10^{10}$ steps per phase
+(O1 and O2 held). It was then re-checked independently by plain stepping:
+- the state after $\mu$ steps is not zero, and $\lambda$ further steps return to it;
+- $\lambda / p$ steps do not return, for each prime $p$ of $\lambda$, so $\lambda$ is the exact period;
+- the state after $\mu - 1$ steps is not on the cycle, so $\mu$ is minimal.
+
+The verifier rejects false certificates (its counterfactuals). Every phase gives the same certificate, for a reason:
+$F$ commutes with the rotation of time, which is a permutation of bits, and a rotation by 2 fixes the trace and moves
+the wheel's phase by 2. So the 28 orbits are rotations of one, and one certificate settles them all. All 28 were run
+anyway and agree. $\square$
+
+
+## C. Short proofs recorded without a theorem heading (restated here with their proofs)
+
+These were proved inside sections as running text. They are restated so that each is a checkable unit.
+
+### C.1 The checkerboard lemma (RULE30-PRIZE.md §8.62, §8.63; 2026-10-06)
+
+*Where:* §8.62 and §8.63 item 2. *Bears on:* the wall form next to black stretches; GPT's G18 builds on it. *Status:* proved.
+
+**Lemma.** Let column 0 carry the periodic word $\tau$ and let $\tau(t), \tau(t+1), \ldots, \tau(t+k)$ all be black. Then
+in the forced left half $x(-j, t) = (j + 1) \bmod 2$ for $1 \le j \le k$, whatever column 1 is.
+
+*Proof.* The inverse rule is $x(-j, t) = x(-j+1, t+1) \oplus \big(x(-j+1, t) \vee x(-j+2, t)\big)$. For $j = 1$:
+$x(-1, t) = \tau(t+1) \oplus (\tau(t) \vee x(1, t)) = 1 \oplus 1 = 0$ since $\tau(t) = \tau(t+1) = 1$. Suppose the claim
+holds for $j - 1$ at every time $t'$ with $\tau(t'), \ldots, \tau(t' + k - j + 1)$ black (so in particular at $t$ and
+$t + 1$ when $j \le k$). Then $x(-j+1, t+1) = j \bmod 2$ and $x(-j+1, t) = j \bmod 2$, and $x(-j+2, t) = (j - 1) \bmod 2$
+(for $j = 2$ this is $\tau(t) = 1$). One of $x(-j+1, t)$ and $x(-j+2, t)$ is black, so the OR is 1 and
+$x(-j, t) = (j \bmod 2) \oplus 1 = (j + 1) \bmod 2$. $\square$
+
+### C.2 The latch (RULE30-PRIZE.md §8.62; 2026-10-06)
+
+*Where:* §8.62, the white Condrey end. *Bears on:* Conjecture B next to white stretches; the slow walls (§8.63). *Status:* proved.
+
+**Lemma.** If column 0 is white at time $t$, then $x_{t+1}(1) = x_t(1) \vee x_t(2)$. Hence across a white stretch of
+the wall column 1 is non-decreasing: once black it stays black until the stretch ends.
+
+*Proof.* Rule 30 at column 1 reads $x_{t+1}(1) = x_t(0) \oplus (x_t(1) \vee x_t(2))$, and $x_t(0) = 0$. $\square$
+
+### C.3 The shrink theorem for white triangles (RULE30-PRIZE.md §8.18; 2026-10-05)
+
+*Where:* §8.18; checked on 1,005,083 runs by `rule30_triangles.py` (0 exceptions; Rule 110 breaks it). *Bears on:* the
+triangle census (§8.68); the zero runs of the ladder are the bases of such triangles. *Status:* proved.
+
+**Theorem.** In Rule 30 a maximal run of $n \ge 2$ white cells $[a, b]$, bounded by black cells, becomes exactly the run
+$[a + 1, b - 1]$ one step later. So every white triangle is an exact isosceles triangle, fixed by its birth row,
+column and width.
+
+*Proof.* $x'(a) = x(a-1) \oplus (x(a) \vee x(a+1)) = 1 \oplus (0 \vee 0) = 1$ since $x(a-1) = 1$ and $n \ge 2$;
+$x'(b) = x(b-1) \oplus (x(b) \vee x(b+1)) = 0 \oplus (0 \vee 1) = 1$; every cell strictly inside has three white
+parents and $000 \to 0$; and $x'(a+1), \ldots, x'(b-1)$ are bounded by the two black cells just produced. $\square$
+
+### C.4 The leftward speed of information is an identity (RULE30-PRIZE.md §8.66; 2026-10-06)
+
+*Where:* §8.66. *Bears on:* constellation row 3; the band's white diagonals as barriers. *Status:* proved (the identity);
+the numbers $0.41$ and $1.84$ are measured.
+
+**Proposition.** Write $D_k(t) = x(k - t, t)$ (diagonal coordinates). Then
+$D_k(t+1) = D_{k-2}(t) \oplus (D_{k-1}(t) \vee D_k(t))$ on the whole plane. Consequently, for two configurations differing somewhere, the lowest damaged
+diagonal $k_{\min}(t)$ never decreases, it increases at step $t$ only if the undamaged diagonal below it is black
+($D_{k_{\min}-1}(t) = 1$), and the leftward speed of the leftmost differing cell, averaged over $[t_1, t_2]$, is
+$v = 1 - (\text{number of rises}) \cdot (\text{mean rise}) / (t_2 - t_1) = 1 - P(\text{heal}) \, E[\text{jump} \mid \text{heal}]$.
+
+*Proof.* $x(i, t+1) = x(i-1, t) \oplus (x(i, t) \vee x(i+1, t))$ with $i = k - t - 1$ gives the three parents on
+diagonals $k - 2, k - 1, k$. So $D_k(t+1)$ depends on diagonals $\le k$ only: a difference confined to diagonals
+$\ge k_{\min}$ stays confined there. If $D_{k_{\min}-1}(t) = 1$ (the same in both copies, being below the damage),
+then $D_{k_{\min}}(t+1) = D_{k_{\min}-2}(t) \oplus 1$ is the same in both copies, so $k_{\min}$ rises; if it is 0,
+$D_{k_{\min}}(t+1) = D_{k_{\min}-2}(t) \oplus D_{k_{\min}}(t)$ differs, so $k_{\min}$ stays. The leftmost differing
+cell is at $x = k_{\min}(t) - t$, whose mean velocity is $(\Delta k_{\min})/\Delta t - 1$; the stated identity is
+that average written as (frequency of rises) times (mean rise). $\square$
+
+*Corollary (the band locks).* If diagonal $w$ is eventually white, then from that time
+$D_{w+1}(t+1) = D_{w-1}(t) \oplus D_{w+1}(t)$, so a difference on diagonal $w + 1$ is permanent: damage that reaches $w + 1$ never heals.
+(Measured: caught with probability exactly one half over the band's phases at $w = 7, 28, 399$.)
+
+### C.5 The triangle law of the uniform measure (RULE30-PRIZE.md §8.68; 2026-10-06)
+
+*Where:* §8.68; matched on a random row to $0.006\%$ and on the single cell's core right of $x/t = -0.24$ to about
+$0.05\%$. *Bears on:* Problem 2's kind of statement; where the single cell's randomness lives. *Status:* proved for
+the measure; the single cell's agreement is measured.
+
+**Proposition.** Under the uniform Bernoulli measure on $\{0,1\}^{\mathbb Z}$, which Rule 30 preserves, the density
+per cell of tops of white triangles of width $L \ge 1$ (a maximal white run of length $L$ whose cells above, one
+wider on each side, are not all white) is $3 \cdot 2^{-(L+4)}$.
+
+*Proof.* Rule 30 is left-permutive ($x' = l \oplus (c \vee r)$ is a bijection in $l$), hence surjective, and a
+cellular automaton preserves the uniform measure if and only if it is surjective; so the row at time $t$ is
+i.i.d. fair whenever the row at time $t - 1$ is. A maximal white run exactly on $[i, j]$ ($L = j - i + 1$) has
+probability $2^{-(L+2)}$ (white inside, black at $i - 1$ and $j + 1$). It is a continuation exactly when the row
+above is white on $[i-1, j+1]$ and black at $i - 2$ and $j + 2$: white on $[i-1, j+1]$ makes $[i, j]$ white below
+($000 \to 0$), black at $i-2$ makes cell $i - 1$ black below ($100 \to 1$), black at $j+2$ makes cell $j + 1$ black
+below ($001 \to 1$), and conversely a run exactly $[i, j]$ below a white stretch $[i-1, j+1]$ forces those two black
+cells. That event has probability $2^{-(L+4)}$ in the i.i.d. row above. So the density of tops is
+$2^{-(L+2)} - 2^{-(L+4)} = 3 \cdot 2^{-(L+4)}$. $\square$
+
+### C.6 Gliders on prime rings (RULE30-PRIZE.md §8.67; 2026-10-06)
+
+*Where:* §8.67; the census `ring_census.c` to $n = 24$. *Bears on:* constellation row 10 ("which parts are proved").
+*Status:* proved (the pigeonhole); the distinctness of lengths at $n = 13, 17, 19, 23$ is the census's exact finding.
+
+**Proposition.** Let $p$ be prime and consider Rule 30 on the ring of $p$ cells. Rotation by one cell commutes with
+the rule, so it permutes the cycles and preserves their lengths, and the orbit of a cycle under the rotation group
+$\mathbb Z_p$ has size 1 or $p$. Hence a cycle whose length occurs fewer than $p$ times among all cycles is fixed by
+rotation: rotation by one cell acts on it as some power of the time map (the pattern travels). In particular, when
+all cycle lengths are distinct, every cycle is such a glider.
+
+*Proof.* Commutation: both the rule and the rotation are defined by the same local function applied at every cell.
+A group of prime order acting on a set has orbits of size 1 or $p$. A cycle fixed by rotation $\rho$ satisfies
+$\rho(s) \in \{f^j(s)\}$ for a state $s$ on it, i.e. $\rho = f^j$ on the cycle. $\square$
+
+### C.7 The first three columns are affine in column 1 (RULE30-PRIZE.md §8.58; used in COLLATZ-PRIZE.md §5)
+
+*Where:* §8.58. *Bears on:* the counting form; the Collatz twin. *Status:* proved (a table computed from the inverse
+rule next to the alternating wall; the product first appears in column $-4$).
+
+**Fact.** Next to the wall $0101\ldots$, write $c_s$ for column 1 at time $2s$ (the visible bits). At times $2s$ and
+$2s+1$ the forced columns are:
+
+| Column | $-1$ | $-2$ | $-3$ | $-4$ |
+|---|---|---|---|---|
+| time $2s$ | $\bar c_s$ | $c_s$ | $\bar c_{s+1}$ | $c_s\,c_{s+1}$ |
+| time $2s + 1$ | 1 | $c_{s+1}$ | $\bar c_{s+1}$ | $c_{s+2}$ |
+
+Column $-2$ is column 1 with every visible bit held for two steps, column $-3$ is its complement one step on, and
+the first product appears in column $-4$.
+
+*Proof.* Lemma 1's explicit form gives column $-1$ ($1$ at odd times, $\bar c_s$ at time $2s$); each further
+column is the inverse rule $x(-j, t) = x(-j+1, t+1) \oplus (x(-j+1, t) \vee x(-j+2, t))$ applied to the two columns
+to its right, which the table carries out for $j = 2, 3, 4$. $\square$
+
+
+## E. Theorems proved by GPT (statements verbatim; the proofs are in RULE30-GPT.md at the section named)
+
+GPT's lane is its own file. The statements are copied so that this list is complete; GPT is asked to append its
+proofs here in its own words, or to say which it would rather keep as pointers.
+
+### E.1. G13.2. Complete reset language, with a failed first characterization retained
+
+*Where:* RULE30-GPT.md, "G13.2. Complete reset language, with a failed first characterization retained". *Status:* proved by GPT (proof there).
+
+**Theorem.** A finite driver word resets exactly when it contains a factor
+
+### E.2. G13.5. Several backward steps, with the protected window's exact cost
+
+*Where:* RULE30-GPT.md, "G13.5. Several backward steps, with the protected window's exact cost". *Status:* proved by GPT (proof there).
+
+**Theorem.** Suppose a wall has a hole at q and then p−1 black cells, with no premise on its
+values outside that window. Compare two right columns differing only at q. For any integer
+r with $0\le r\le q$ and $p\ge3r+5$, their rows at q−r agree at **every** depth≥4r+4. In
+addition their common cells in the interval
+
+### E.3. G17.1. Exact all-period theorem and certificate
+
+*Where:* RULE30-GPT.md, "G17.1. Exact all-period theorem and certificate". *Status:* proved by GPT (proof there).
+
+**Theorem.** For every p>=2, width-three and width-two relaxations of wall0 1^(p-1)
+have exactly the same finite and infinite one-sided hole languages. Thus even p
+avoids11; p3 avoids100; odd p>=5 is unrestricted. G16's counts and entropy rates
+remain exact for this relaxation. The third cell neither lowers these rates nor
+removes any visible word, even though it constrains the hidden dynamics.
+
+### E.4. G18.2. Exact finite-prefix map from a latch position
+
+*Where:* RULE30-GPT.md, "G18.2. Exact finite-prefix map from a latch position". *Status:* proved by GPT (proof there).
+
+**Theorem.** For wall0^a1^b, a,b>=1, the first p-1 left cells on row0 are
+determined by the a visible sigma bits at the white times. If these bits are
+monotone (the necessary width-one rule), exactly a+1 distinct prefixes occur.
+This is a finite-prefix assertion, not an autonomous state for the infinite row.
+
+### E.5. G18.3. Uniform protected-band theorem, even without a white prefix
+
+*Where:* RULE30-GPT.md, "G18.3. Uniform protected-band theorem, even without a white prefix". *Status:* proved by GPT (proof there).
+
+**Theorem.** Suppose a black wall run occupies times a..a+b-1, preceded by any a
+wall bits and followed by anything. If a>=1 and b>=3a+1, row0 is checkerboard
+on depths4a..a+b-1: even depths are1 and odd depths0. The right column before,
+during and after the run is arbitrary. In particular this holds for slow walls,
+without needing the monotone latch hypothesis.
+
+### E.6. G20.1. Exact theorem, including the failed first prediction
+
+*Where:* RULE30-GPT.md, "G20.1. Exact theorem, including the failed first prediction". *Status:* proved by GPT (proof there).
+
+**Theorem.** For every odd p>=5, the width-four relaxation of wall0 1^(p-1)
+allows every finite and infinite one-sided sequence of visible hole bits. It has
+exactly2^n words of length n and rate1/p bit per time step. Combining G15-G17,
+a layer that first restricts these walls, if one exists, has width at least five.
+This is not an existence proof for an entire infinite right half or a finite seed.
+
+### E.7. G27.2. The periodic-pair obstruction works on the forced half-line
+
+*Where:* RULE30-GPT.md, "G27.2. The periodic-pair obstruction works on the forced half-line". *Status:* proved by GPT (proof there).
+
+**Lemma (Jen/Kopra mechanism, half-line form).** For Rule30 on a nonconstant periodic wall, or Rule210 on0101, no consistent left-half evolution with an initially eventually-zero left row can have an eventually periodic adjacent left column pi. Right-half realizability is not a premise.
+
+
+Further exact results of GPT's recorded as theorems inside RULE30-GPT.md §G11 to §G35 (shielding, reset and the
+protected window on one-hole walls; the exact injection rate $\log_2(a+1)/(a+b)$ on slow walls (G15); the reset
+theorem for $b \ge 3a + 1$ (G18); the latch obstruction (G19); the sideways map's ternary image (G22); the
+periodic Garden-of-Eden density (G24); the dyadic stream and the parity classification (G26, G27); the Collatz
+exclusions G28 to G35) are GPT's to copy here; this file lists the ones whose statements carry a theorem heading.
+
+
+## F. Collatz
+
+### F.1. The remainder lemma
+
+*Where:* COLLATZ-PRIZE.md, "4. The state after the free bits is a remainder modulo a power of 3 (2026-10-05)". *Bears on:* the counting form for Collatz (COLLATZ-PRIZE.md §1). *Status:* proved.
+
+**Lemma.** Let $0 \le r < 2^k$, and let $a$ be the number of odd steps among the first $k$ steps of $r$. Then
+
+### F.2. Dubickas's theorem (external; the record's W2)
+
+*Where:* COLLATZ-PRIZE.md §5; PRIOR-ART.md. *Status:* a published theorem (A. Dubickas, 2009, Theorem 5), read in
+full and credited; the record's "complexity at least $1.70951129\,n$" statement for divergent integer orbits is
+its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **The one-parity generalisation of the parity invariant** (Local, C066, 2026-10-06): on every wall whose black
+  cells all sit at odd times (0001, 000001, 010001, ...), the streams with $\sigma(\text{odd}) = 0$ form a family on
+  which Rule 210's forced left half is Rule 90's, and GPT's finite-support construction gives zero-keeping streams
+  for every prefix, so LR is false for Rule 210 on every one-parity wall. *Sketch:* the invariant's base needs only
+  columns 0 and 1 parity-sparse; the induction is unchanged. Unchecked.
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the front is measured at
+  $x/t = -0.24 \pm 0.02$ against the measured speed $0.246$; the identification is a reading, not a theorem.

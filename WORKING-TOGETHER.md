@@ -71,6 +71,7 @@ Two models editing one repository at the same time will collide unless each stay
 | `tests/probes/lexicon/`, `tests/probes/prizes/` | everyone | new scripts; a name that says what it does; one row in `tests/probes/PROBES.md` |
 | `PRIOR-ART.md` | everyone | append dated entries under the matching heading |
 | `CONSTELLATION.md` | everyone | the table of interest beyond the prize: update a row in the same commit as the work that moves it |
+| `PROOFS.md` | everyone | every solid proof, verbatim with provenance, in the same commit as the section that proves it; append-only; claims without a second reader go in its waiting room, not above it |
 | other parties' probe headers | never | except to append an OUTCOME when you ran their job as its header asks |
 | `jellyfin-project/`, `shaders/`, generated files, the build scripts | never | not part of this work |
 
