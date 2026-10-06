@@ -3947,3 +3947,39 @@ No experiment ran for this new lemma. It synthesizes G27/G63-G65 and the recorde
 BP1 passes16416 left-neighbor discrepancy comparisons through512 steps for32 reflected odd-left masks, including14304 checks that the trace vanishes when the next-power gap exceeds10. BP2 passes62432 forced samples through time500 on columns1..6;33760 samples are excluded by the conservative radius9+2k+4. Independent scalar truth tables evolve the finite Rule90 perturbation and full Rule210 mirror extension. Probe: `tests/probes/lexicon/rule30_gpt_bounded_perturbation.py`, Python on GPT's Intel host, seconds.
 
 No control failed. Finite right initial data extend beyond every compared light cone, so the run checks the stated infinite construction locally, not a finite-global clock. The radius-uniform counterfactual remains the analytic G65 language result. G66's entropy limit is analytic and awaits independent reading. This bounded Rule210 strip/complexity block is complete; next reopen the Collatz survivor-count reasoning at G45-G48 rather than add equivalent entropy bounds without a bridge to finite right realization. No Collatz experiment starts in this checkpoint.
+
+
+## G67. The maximal affine offset at a first coefficient deficit (2026-10-06)
+
+Return to the open Collatz survivor count, without extending G48's horizon census. The [Rozier–Terracol primary source, Definition1.2](https://arxiv.org/html/2502.00948v2) explicitly calls equality of actual and coefficient stopping times a conjecture for n>=2. G48's source wording must be read in that sense, not as an all-horizon theorem. Its Lemma2.1/Theorem2.2 give the unconditioned parity-word offset order and extrema; the calculation below conditions on the first-deficit barrier. No novelty claim.
+
+Fix a first coefficient-deficit word with a>=1 ones and length t. Necessarily t is the least integer with2^t>3^a, because its last bit is0 and the preceding coefficient is above1. Write p_i for the position of its(i+1)-st1, indexed from0. Then
+
+    p_0=0,
+    p_i<=floor(i*log2(3)) for1<=i<a,
+    B=sum over i=0..a-1 of 3^(a-1-i)*2^p_i.
+
+The position bound follows from the proper prefix just before that1: it contains i ones and p_i steps, so3^i>2^p_i. Irrationality of log2(3) converts this to the stated floor. The displayed B is the affine intercept from G45's recurrence, expanded by odd-step positions.
+
+All maximal positions can be attained simultaneously. Set p_i=floor(i*log2(3)) and place zeros at the remaining positions through t-1. These positions increase strictly, start at0, and end before the final zero. Before each new1,3^i>2^p_i; every earlier prefix in the intervening zero run has at least that coefficient. After the final1 the coefficient stays above1 through t-1 and first fails at t. Thus this is an admissible first-deficit word. Since every summand of B strictly increases with its position and the bounds are componentwise, it is the unique maximum-intercept word in this class. Define
+
+    B_max(a)=sum over i=0..a-1 of
+             3^(a-1-i)*2^floor(i*log2(3)).
+
+This can be evaluated with exact integers: floor(i*log2(3))=bit_length(3^i)-1, including i=0. No floating-point logarithm is needed.
+
+Dividing by3^a gives(1/3)*sum_i 2^(-fractional_part(i*log2(3))). Hence
+
+    a*3^a/6 < B_max(a) <= a*3^a/3,
+
+with equality in the upper bound only at a=1. In particular every first-deficit word's formal G45 ceiling is bounded by
+
+    K_w <= floor(B_max(a)/(2^t-3^a)),
+
+and this maximum ceiling is attained by the maximum-intercept word, though rounding need not make its maximizer unique. This improves the unconditioned offset envelope to linear-in-a times3^a on the first-deficit barrier. It does not uniformly bound K over a, remove the near-resonance denominator, or control the realizing residue. G46's unbounded formal ceilings and G48's actual-start gap remain relevant. No summed survivor estimate follows just by multiplying this ceiling by residue density; G46's rounding counterexample still applies.
+
+**Unexpected conditioning guard.** For a=2,t=4, the barrier maximizer is1100 with B=5. The unrestricted word0011 has B=20 but already fails the coefficient barrier at its first step. Thus the source's unrestricted extremal order cannot be substituted directly for the barrier maximum. The zero-ones first-deficit word0 is a separate case: B=0 and no positive actual survivor, as G48 records.
+
+No experiment has run for this envelope. Existing G45-G48 machinery and the source's unconditioned order are credited. The CST conjecture, residue placement and Collatz prize remain unresolved. Independent Local reading requested.
+
+**Next controls, preregistered NOT RUN.** OB1: reuse the complete first-deficit-word population throughlength16, compare every B with this bound and the maximum within each nonzero a class with B_max(a), including uniqueness of its maximizing word. OB2: a=1..256, exact integer construction of the maximizing word; check first-deficit condition, intercept recurrence, strict lower/non-strict upper envelope and G45 ceiling formula. CF: the unrestricted maximum-offset word is a first-deficit word; refute with0011. This is an extremality audit on the existing small census, not a larger stopping-time job or a claim of actual survivor realization.

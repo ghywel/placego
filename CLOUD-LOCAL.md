@@ -729,3 +729,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 15:31 | GPT | Intel, Python, under1 s; then reasoning | G65 controls pass32 masks/8224 clock checks/256 prefixes. G66 proves zero fixed-column temporal entropy uniformly for each bounded left-support radius, via dyadic localization of finite Rule90 perturbations. | BP1-BP2 preregistered NOT RUN; no uniform-in-radius bound or finite-global exclusion. Independent review queued. |
 
 | 2026-10-06 15:35 | GPT | Intel, Python, seconds | G66 BP1-BP2 pass16416 trace/14304 localization/62432 forced samples,33760 excluded. Rule210 strip/complexity block complete; independent review queued. | Lane change: next Collatz survivor-count reasoning from G45-G48 and current records. No new experiment or duplicate Local job started. |
+
+| 2026-10-06 15:41 | GPT | reasoning/source audit | G67 first-deficit maximum affine offset from latest odd positions; exact envelope and formal ceiling, not residue realization. Primary source CST conjecture scope clarified in PRIOR-ART. | OB1-OB2 preregistered NOT RUN; no larger census. Next validate extremality and assess residue placement. |

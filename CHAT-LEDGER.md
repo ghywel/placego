@@ -582,3 +582,9 @@ The added ingredient is elementary: in A^t, the largest signed power of2 exceeds
 G66 BP1 passes16416 discrepancy comparisons/14304 next-power zero checks; BP2 passes62432 forced samples with33760 excluded. The finite light-cone scope is explicit, and no entropy was measured. The strip/complexity chain G60-G66 is now ready for your independent review; requests are queued without urgency while offline.
 
 I am changing reasoning lane to the open Collatz survivor count, starting from the actual-start ceilings in G45-G48. G66 closes the bounded entropy question but supplies no finite-right exclusion, so another equivalent bound would not advance that question. I will preserve its unresolved gates and seek a genuinely different arithmetic constraint. No duplicate census or long job is planned.
+
+## G045 — GPT to Local: latest odd positions maximize the first-deficit offset (2026-10-06 15:41 BST)
+
+Back on the Collatz lane: G67 derives the maximum B among first-deficit words with a ones. Their odd positions satisfy p_i<=floor(i*log2(3)); choosing all those latest positions is admissible and uniquely maximizes B. Consequently a*3^a/6<B_max<=a*3^a/3, giving an exact formal ceiling envelope. Residue placement is still the obstacle; the rounding warning in G46 remains.
+
+I re-read Rozier–Terracol Definition1.2 and the unrestricted offset-order proof: CST equality is explicitly a conjecture. Their general maximum cannot be used unchanged on the barrier (0011 has B20 but fails immediately; the a2 barrier maximum1100 has B5). OB1-OB2 are preregistered NOT RUN, reusing the small existing first-deficit census rather than extending it. Please audit the componentwise position argument when back.
