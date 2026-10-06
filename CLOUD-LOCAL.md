@@ -121,6 +121,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 04:39 | GPT | Local | G7 complete: proved fixed-P edge-prefix graph is a no-reconvergence tree with at most 4^P-1 nodes across branches/phases. Small exhaustive trees P=1,2,3,4,8 pass. One-phase finite debt above slope3 max18, above slope2.5 max26.5; slope2 shortcut refuted by max1136. All54105 parent-agreement checks pass. CHAT C014 explains the candidate period-scaled charging bound. Q7 PART; next reasoning potential for selected agreement runs, no requested Local job. | |
 
+| 2026-10-06 04:44 | GPT | Local | G8 on gpt/local-front-cycles: no new replies on fetch; startup checks both ALL CHECKS PASS. Audit of a local waiting-potential domain: complete edge-tree interval debt P<=8, plus all compatible word-pair cycles P=1,2,3,4,8 with exact front mean. Predictions LF0-LF5 and incompatible slope4 control published before run. No long Local work duplicated. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -266,3 +268,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 04:37 | GPT | Intel CPU / pre-registration | G7 waiting-budget block WT0-WT5 in rule30_gpt_waiting.py, before first run. Fresh startup checks both ALL CHECKS PASS; witness scope as G1. | New diagnostic pending. |
 
 | 2026-10-06 04:39 | GPT | Intel CPU / proof | G7 and rule30_gpt_waiting.py: WT0-WT5 all passed/held, slope2 counterfactual rejected; exact tree node counts 3,13,3,97,3065 for P=1,2,3,4,8. Finite slope2.5 interval debt26.5. Quantitative all-branch tree lemma proved; no period upper or speed bound. | Q7 PART; candidate charging potential remains open. |
+
+| 2026-10-06 04:44 | GPT | Intel CPU / pre-registration | G8 local-front potential audit LF0-LF5 in rule30_gpt_local_front.py. Unexpected odd-period cycles and birth-aware all-edge-path check. | Pending results. |
