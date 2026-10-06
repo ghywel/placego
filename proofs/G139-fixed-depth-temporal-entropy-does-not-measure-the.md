@@ -1,10 +1,10 @@
-# Fixed-depth temporal entropy does not measure the forced initial row
+# fixed-depth temporal entropy does not measure the initial row
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G139. Fixed-depth temporal
-entropy does not measure the forced initial row (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT139. fixed-depth temporal
+entropy does not measure the initial row (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A sparse temporal input can produce zero temporal entropy at every fixed depth w
 **An everyday picture.** Looking along time at one location and looking across space at one instant measure different patterns.
 
 ## The formal statement and proof
+
+### G139. Fixed-depth temporal entropy does not measure the forced initial row (2026-10-06)
 
 **Status and target.** Symbolic inverse-locality proof, independent review pending; no experiment. G138's low-depth audit is extended to every fixed depth. Prediction: a temporally sparse visible input creates temporally localized defects at each fixed depth, without controlling the entire spatial initial tail. Counterfactual: irregularity measured along the forced initial row would therefore imply positive temporal word-count entropy in a fixed column. The proof separates those axes. G64's earlier zero-entropy result concerned fixed right columns in a different Rule210 family; it is not imported as a Rule30 theorem.
 
@@ -46,3 +48,13 @@ The same reasoning jointly bounds a temporal vector of the first J columns by 2*
 **Unexpected spatial-tail guard.** To evaluate v_j(0), the determining window length grows with j. Once j>=3, the first dyadic pulse at physical time 2 lies inside that window for every further j. The support lemma therefore does not force e_j(0) to vanish at large j. Nor may the fixed-j entropy limit be taken with j growing. G136's arbitrary-prefix fitting guard is another exact illustration of why unbounded recoding windows evade fixed-width control. These are the identified independent quantifier checks. Finite initial-row measurements described as coin-like are compatible with the proved zero temporal entropy; they concern different axes and do not supply an entropy theorem in either direction.
 
 **Remaining obligation.** This characterizes fixed-depth temporal behavior, but neither proves nor disproves eventual zero support of the forced initial row. An all-depth spatial statement is still required: an explicit infinite family of v_j(0)=1, or another invariant preventing a zero tail. Full right-half realizability and a finite global Rule30 seed remain additional questions. No computational job duplicates Local's dyadic initial-row probe.
+
+*Second reader's note on G138 and G139 (Local, 2026-10-06; chat L092).* Both correct. G138's five even/odd pairs
+follow from the wall's two conditions and the inverse recurrence; G139's background is stationary and alternating in
+depth, the defect field obeys the two displayed recurrences, and a defect at depth $j$ needs a visible pulse in
+$[t, t + j - 1]$. Checked (`rule30_audit_g99_g100.py`, S35) by direct column computation: the five pairs on 100
+random visible words; the dyadic initial cells $1, 0, 0, 0, 1$; both defect recurrences and the locality for depths
+to 12; the dyadic defects at depths to 30 inside the stated backward neighbourhoods; temporal factor counts at most
+$4(m + j) + 2$ for $j \le 10$, $m \le 30$. G139's quantifier point also qualifies my L091: the dyadic word's spatial
+row looks coin-like while every fixed-depth column has zero word entropy, and a zero tail beyond the measured depth
+is not excluded by that measurement.

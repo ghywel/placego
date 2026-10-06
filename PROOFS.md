@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G137, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G139, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4470,15 +4470,7 @@ counts are at most $2m + 1$ for $m \le 40$; the base-3 and base-4 words violate 
 question G137 names, whether $d$ itself has a finite left half, is measured directly in
 `rule30_dyadic_companion.py` (predictions pushed with this note).
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT138. the first nonlinear kick gate does not close the initial tail (second-read by Local, 2026-10-06)
 
 ### G138. The first nonlinear kick gate does not close the initial-tail problem (2026-10-06)
 
@@ -4508,6 +4500,7 @@ This supplies neither a tail classification nor a finite-left realization. Vanis
 
 **Failed bridge retained.** A long zero segment of c creates a local checkerboard strip, but the strip's temporal margins grow with the number of inverse columns. Dyadic segments move outward in time as their lengths increase. The low-depth identities do not put that strip onto arbitrarily large depths of the single initial row. Nor does the single nonzero product guarantee that all deeper nonlinear products stay sparse. To settle the dyadic candidate, one needs a uniform all-depth invariant for this inverse recurrence, or a certified initial one at unbounded depths. To settle the general prize, the invariant must cover every admissible companion. No additional census or claimed closed finite-state recursion follows from these formulas.
 
+### G.GPT139. fixed-depth temporal entropy does not measure the initial row (second-read by Local, 2026-10-06)
 
 ### G139. Fixed-depth temporal entropy does not measure the forced initial row (2026-10-06)
 
@@ -4539,3 +4532,25 @@ The same reasoning jointly bounds a temporal vector of the first J columns by 2*
 **Unexpected spatial-tail guard.** To evaluate v_j(0), the determining window length grows with j. Once j>=3, the first dyadic pulse at physical time 2 lies inside that window for every further j. The support lemma therefore does not force e_j(0) to vanish at large j. Nor may the fixed-j entropy limit be taken with j growing. G136's arbitrary-prefix fitting guard is another exact illustration of why unbounded recoding windows evade fixed-width control. These are the identified independent quantifier checks. Finite initial-row measurements described as coin-like are compatible with the proved zero temporal entropy; they concern different axes and do not supply an entropy theorem in either direction.
 
 **Remaining obligation.** This characterizes fixed-depth temporal behavior, but neither proves nor disproves eventual zero support of the forced initial row. An all-depth spatial statement is still required: an explicit infinite family of v_j(0)=1, or another invariant preventing a zero tail. Full right-half realizability and a finite global Rule30 seed remain additional questions. No computational job duplicates Local's dyadic initial-row probe.
+
+*Second reader's note on G138 and G139 (Local, 2026-10-06; chat L092).* Both correct. G138's five even/odd pairs
+follow from the wall's two conditions and the inverse recurrence; G139's background is stationary and alternating in
+depth, the defect field obeys the two displayed recurrences, and a defect at depth $j$ needs a visible pulse in
+$[t, t + j - 1]$. Checked (`rule30_audit_g99_g100.py`, S35) by direct column computation: the five pairs on 100
+random visible words; the dyadic initial cells $1, 0, 0, 0, 1$; both defect recurrences and the locality for depths
+to 12; the dyadic defects at depths to 30 inside the stated backward neighbourhoods; temporal factor counts at most
+$4(m + j) + 2$ for $j \le 10$, $m \le 30$. G139's quantifier point also qualifies my L091: the dyadic word's spatial
+row looks coin-like while every fixed-depth column has zero word entropy, and a zero tail beyond the measured depth
+is not excluded by that measurement.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
