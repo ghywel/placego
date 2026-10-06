@@ -29,7 +29,24 @@ PREDICTIONS, written 2026-10-06 before this script's first run.
   CF  (counterfactual, must fail): Rule 2's strip has a period doubling. It must not.
 REFUTED-BY: OR0 or CF failing (the instrument); OR1 to OR4 the other way.
 
-OUTCOME: (to be recorded after the first run)
+OUTCOME of the first run, 2026-10-06 (K = 8192, 40,000 steps, 7 seconds), on the 128 rules with f(0,0,1) = 1: OR0 and
+  CF PASSED; OR1 HELD (86, 90, 150 uncertified); 9 rules certified with a nontrivial band (30, 91, 103, 107, 110, 111,
+  118, 135, 151), 102 trivial, 17 uncertified; OR2 HELD (9); OR3 REFUTED (periods 4 and 8 exist); OR4 HELD by rule 135,
+  which showed exactly Rule 30's white diagonals 2, 7, 28, 399 and its doublings two diagonals earlier.
+  BUT THE INSTRUMENT WAS MIS-SCOPED: the strip assumes the white left tail stays white, which needs f(0,0,0) = 0 as
+  well as f(0,0,1) = 1. Six of the nine (91, 103, 107, 111, 135, 151) have f(0,0,0) = 1: their background turns black
+  at the first step and the strip computed a frame that no configuration of theirs realises. Rule 135 is Rule 30's
+  colour-complement (f'(n) = not f(not n)), so its coincidence with Rule 30's band is that relation seen through the
+  invalid frame, not a second rule with the same left side. The valid domain is the 64 rules with f(0,0,0) = 0 and
+  f(0,0,1) = 1. The second run restricts to them; the predictions are the same, re-evaluated on the right domain.
+
+OUTCOME of the second run, 2026-10-06 (the 64 valid rules; 3 seconds): OR0, CF PASSED; OR1 HELD. Certified with a
+  nontrivial band: 30 (period 16, white 2, 7, 28, 399), 110 (period 32 at 8192, no white diagonal, doublings at 2, 3,
+  5, 7, 45) and 118 (period 4, no white diagonal). Trivial (largest period below 4): 47 rules. Uncertified within
+  period 1024: 14 (18, 22, 26, 82, 86, 90, 102, 126, 146, 150, 154, 182, 210, 218). OR2 REFUTED (3, not 5 to 30);
+  OR3 REFUTED (118 has period 4, 110 has 32); OR4 REFUTED (no valid rule shares 2 and 7). Rule 30 is the only rule
+  of the 64 whose band doubles through eventually white diagonals, Rowland's mechanism; Rule 110's band doubles
+  without them.
 """
 import sys
 import numpy as np
@@ -105,7 +122,7 @@ def band(rule):
 
 
 def main():
-    rules = [r for r in range(256) if (r >> 1) & 1]
+    rules = [r for r in range(256) if (r >> 1) & 1 and not (r & 1)]     # the edge moves at speed 1 and the tail stays white
     rows = {}
     for r in rules:
         rows[r] = band(r)

@@ -4111,3 +4111,35 @@ first proved on, and the method (predictions first, failures kept, two readers) 
 
 The owner's second question the same morning, what we would investigate if we were not chasing the money, is answered
 in [CONSTELLATION.md](CONSTELLATION.md), which also carries this section's families as its Part A.
+
+
+### 8.64 What makes 30 special among the 256: the left band of every rule (2026-10-06)
+
+Row 14 of CONSTELLATION.md, taken as the cheapest question that bears on all the others: which of this record's facts
+are Rule 30's and which belong to its class. `rule30_otherrules.py` (predictions OR0 to OR4 and CF written first; two
+runs, 7 s and 3 s) runs the band instrument of §8.30, §8.31 and §8.59 on every elementary rule for which the instrument
+is valid: the left edge of the single cell must move at light speed, $f(0,0,1) = 1$, and the white tail must stay white,
+$f(0,0,0) = 0$. There are 64 such rules. (The first run used the 128 with $f(0,0,1) = 1$ alone; six of its nine
+"nontrivial bands" were artefacts of a frame no configuration realises, among them Rule 135, Rule 30's colour-complement,
+which showed Rule 30's band exactly. The scope error is in the probe's outcome; the second run is the result.)
+
+**The result.** Of the 64 rules, from the single cell to 8,192 diagonals:
+- **three** have a certified band with a small period: **Rule 30** (period 16; eventually white diagonals 2, 7, 28,
+  399), **Rule 110** (period 32, doublings at diagonals 2, 3, 5, 7 and 45, no eventually white diagonal) and **Rule
+  118** (period 4, no eventually white diagonal; nearly trivial);
+- 47 are trivial (every diagonal of period 1 or 2);
+- 14 do not certify within period 1,024: the additive and nested rules, 18, 22, 26, 82, 86, 90, 102, 126, 146, 150,
+  154, 182, 210 and 218, whose diagonal periods grow too fast for the strip to repeat.
+
+Three of the four blind predictions were refuted: I expected 5 to 30 rules with a nontrivial band (OR2: 3), Rule 30's
+period to be the smallest among them (OR3: 118 has 4 and 110 has 32), and some other rule to share the white diagonals
+2 and 7 (OR4: none). OR1 held: the mirror 86 and the linear rules do not certify.
+
+**What it says.** The odometer at the left edge is rare: two rules in sixty-four have one worth the name, and they are
+the two famous ones, 30 and 110. Rule 30 is the only rule whose band grows its period through eventually white
+diagonals, which is Rowland's parity mechanism (§8.27, §8.31) and depends on Rule 30's OR and XOR; Rule 110's band
+doubles by some other mechanism, five times in the first 45 diagonals and then not again below 8,192. So of the facts in
+this record, the universal band's existence is shared with 110 and 118, its white-diagonal clock is Rule 30's own, and
+the nested right side belongs to the additive-like rules that fail to certify here. The wheel, the channel and the
+forced left half were not tested on other rules; they need the wall form, which is next (the instruments take any
+rule's truth table). Recorded in CONSTELLATION.md, row 14.
