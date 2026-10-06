@@ -1697,7 +1697,7 @@ The wall's whole compatible family and a single dyadic orbit have different entr
 **An everyday picture.** The variety of an entire library differs from the variety along one story; a limit of growing finite objects need not stay finite.
 
 
-## W141
+## G141
 An imposed wall changes the predecessor problem: finite ancestors need not be unique or exist.
 
 **What it says.** Backward through a black wall phase, the nearest-left bit is fixed. Backward through a white phase, it has two choices. Finite inverse-tail graphs determine whether the resulting ancestors stay finite. A concrete pair of finite rows merges under the imposed boundary while passing the first black-time condition.

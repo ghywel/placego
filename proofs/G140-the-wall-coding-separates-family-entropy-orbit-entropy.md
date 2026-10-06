@@ -56,7 +56,8 @@ at most two: a leftmost one at $-L$ puts a one at $-L-1$ on the next step, since
 input. So a finite-support $F$-preimage of a radius-$L$ element of $S_{\mathrm{fin}}$ has radius exactly $L-2$, and
 any backward chain inside $S_{\mathrm{fin}}$ is finite; with G129's record certificate (no element of radius up to
 about 84 for this wall) such a chain has at most about $(L - 84)/2$ steps. This is consistent with G141's finite
-descent that can stop, and proves nothing about existence. (2) The measured convergence is sharp:
+descent that can stop, and proves nothing about existence (G141's descent paragraph, written before this note,
+already states the exact growth). (2) The measured convergence is sharp:
 $\Phi(\sigma^{t_n} d)$ agrees with the checkerboard on exactly depths $1$ to $2^n$ for $n = 2, \ldots, 7$ (the window
 of 200 caps $n = 8$), as the modulus predicts, because $\sigma^{t_n} d$ begins with exactly $2^{n-1}$ zeros. Checked
 (`rule30_audit_g99_g100.py`, S36 and S37): the two-step intertwining on 50 random words to depth 74 by an independent

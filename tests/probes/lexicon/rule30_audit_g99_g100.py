@@ -162,6 +162,13 @@ CHECKS (GPT's claims at 827e006):
      2^k distinct patterns on depths 1..2k, already distinct on depths 1..2k-1, and 2^(k-1) on depths 1..2k-2 (odd
      depths free, even depths forced), with depth 2 = NOT depth 1; and a left row of radius L >= 1 has radius exactly
      L + 2 after one F iterate.
+  S38 (G141, added 2026-10-06 at 54956f6): rows by depth from the wall, backward step q_(j+1) = y_j XOR (q_j OR q_(j-1)).
+     For 400 random finite white-phase rows u (radius 1..15): the black-phase predecessor (q_0 = q_1 = 1) evolves
+     forward to u, has radius exactly L - 1 when finite, and its tail (zero or black) is the one the M0 graph predicts
+     from the last pair; both white-phase predecessors (q_0 = 0, q_1 = a) evolve to it, are finite exactly when the
+     M0 test says so (with radius exactly L - 2), and have a period-three tail containing ones after a black tail;
+     the guard rows 011 and 101 both give 1011 and then 10011; and for 30 random visible words c the white-phase
+     predecessors of Phi(c) are Phi((1 - a) c), the phase convention of G140.
 """
 import random
 from fractions import Fraction as F
@@ -1587,4 +1594,70 @@ for trial in range(200):
     ok37 &= max(j + 1 for j in range(len(after)) if after[j]) == L + 2
 check('S37 G140 sharpened: forward read-back of the coding; odd depths free, even depths forced; radius grows by exactly 2',
       ok37)
+def back_step(y, wall, q1):
+    q = [wall, q1]
+    for j in range(1, len(y)):
+        q.append(y[j - 1] ^ (q[j] | q[j - 1]))
+    return q[1:]
+
+
+def fwd_step(row, wall):
+    q = [wall] + row
+    return [q[j + 1] ^ (q[j] | q[j - 1]) for j in range(1, len(row))]
+
+
+def radius(row):
+    return max([j + 1 for j in range(len(row)) if row[j]] or [0])
+
+
+def tail_kind(row, start):
+    t = row[start:]
+    if not any(t):
+        return 'zero'
+    if all(t):
+        return 'black'
+    if all(t[i] == t[i + 3] for i in range(len(t) - 3)) and any(t):
+        return 'period3'
+    return 'other'
+
+
+ok38 = True
+kinds = {}
+for trial in range(400):
+    L = rng29.randint(1, 15)
+    K = L + 60
+    u = [rng29.randint(0, 1) for _ in range(L - 1)] + [1] + [0] * (K - L)
+    z = back_step(u, 1, 1)
+    ok38 &= fwd_step(z, 1)[:K - 2] == u[:K - 2]
+    pair = (z[L], z[L - 1])          # (q_(L+1), q_L): the outward recursion is M0 from here
+    zk = tail_kind(z, L + 3)
+    ok38 &= zk == ('zero' if pair == (0, 0) else 'black')
+    if zk == 'zero':
+        ok38 &= radius(z) == L - 1 if L >= 2 else radius(z) <= 1
+    for a in (0, 1):
+        w = back_step(z[:K - 4], 0, a)
+        ok38 &= fwd_step(w, 0)[:K - 7] == z[:K - 7]
+        if zk == 'black':
+            wk = tail_kind(w[:K - 6], L + 12)
+            ok38 &= wk == 'period3'
+        else:
+            m = radius(z)
+            wp = (w[m], w[m - 1]) if m >= 1 else (w[0], 0)
+            wk = tail_kind(w[:K - 6], m + 3)
+            ok38 &= wk == ('zero' if wp == (0, 0) else 'black')
+            if wk == 'zero':
+                ok38 &= radius(w) == L - 2
+        kinds[(zk, wk)] = kinds.get((zk, wk), 0) + 1
+g1 = fwd_step([0, 1, 1] + [0] * 8, 0)
+g2 = fwd_step([1, 0, 1] + [0] * 8, 0)
+ok38 &= g1 == g2 and g1[:6] == [1, 0, 1, 1, 0, 0] and fwd_step(g1, 1)[:7] == [1, 0, 0, 1, 1, 0, 0]
+for trial in range(30):
+    vis = [rng29.randint(0, 1) for _ in range(60)]
+    u = phi_row(vis, 110)
+    z = back_step(u, 1, 1)
+    for a in (0, 1):
+        w = back_step(z[:105], 0, a)
+        ok38 &= w[:90] == phi_row([1 - a] + vis, 110)[:90]
+check('S38 G141: the black and white backward steps, their tail tests and radii; the merging guard; the phase convention',
+      ok38, 'tail kinds (black-phase predecessor, white-phase predecessor): %s' % sorted(kinds.items()))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

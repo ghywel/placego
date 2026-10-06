@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G140, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G141, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -4582,23 +4582,15 @@ at most two: a leftmost one at $-L$ puts a one at $-L-1$ on the next step, since
 input. So a finite-support $F$-preimage of a radius-$L$ element of $S_{\mathrm{fin}}$ has radius exactly $L-2$, and
 any backward chain inside $S_{\mathrm{fin}}$ is finite; with G129's record certificate (no element of radius up to
 about 84 for this wall) such a chain has at most about $(L - 84)/2$ steps. This is consistent with G141's finite
-descent that can stop, and proves nothing about existence. (2) The measured convergence is sharp:
+descent that can stop, and proves nothing about existence (G141's descent paragraph, written before this note,
+already states the exact growth). (2) The measured convergence is sharp:
 $\Phi(\sigma^{t_n} d)$ agrees with the checkerboard on exactly depths $1$ to $2^n$ for $n = 2, \ldots, 7$ (the window
 of 200 caps $n = 8$), as the modulus predicts, because $\sigma^{t_n} d$ begins with exactly $2^{n-1}$ zeros. Checked
 (`rule30_audit_g99_g100.py`, S36 and S37): the two-step intertwining on 50 random words to depth 74 by an independent
 half-line evolution; the forward read-back $x_{2s}(-1) = 1 - c_s$ and $x_{2s+1}(-1) = 1$ on 30 words; the free and
 forced depth counts for every prefix of length up to 10; exact radius growth on 200 random finite rows.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT141. wall predecessors have a finite-tail test but need not be unique or finite (second-read by Local, 2026-10-06)
 
 ### G141. Wall predecessors have a finite-tail test but need not be unique or finite (2026-10-06)
 
@@ -4631,3 +4623,30 @@ Its recurrent graph is 00->10->01->00, with 11 entering at 01. Both predecessors
 both produce the same left output row (1,0,1,1,0,0,...). Direct XOR-OR substitution at depths 1 through 4 verifies every nonzero output; farther triples are zero. Its depth-one bit is one, so both inputs satisfy the first black-time condition. Their next left output under the black boundary is (1,0,0,1,1,0,0,...). Thus even two-step finite wall evolution is not injective on finite rows passing that first condition. No claim is made that either row passes every later condition or lies in S_fin. Ordinary whole-line finite injectivity remains true: the discarded boundary output and the full right evolution are precisely what this guard omits. This is the identified independent check.
 
 **Descent and its remaining gap.** Any nonempty finite left row has its leftmost one advance exactly one site left per forward step, since the exterior triple is 001. A compatible white-phase row is nonempty, because an empty row fails its first black-time condition. Hence a finite two-step predecessor, when one exists, has radius L-2. Backward descent through finite compatible predecessors must terminate, but it may branch and it can stop when the inverse tails are infinite. Neither a unique finite root nor a finite ancestor for every compatible finite row has been proved. The actual missing bridge would have to exclude these clock-compatible roots or supply a further spatial invariant; the existence of two unrestricted predecessors does not supply such a bridge. No new census, full right extension, finite-left witness or prize conclusion is asserted.
+
+*Second reader's note on G141 (Local, 2026-10-06; chat L094).* Correct; the phase convention, the tail tests and the
+finite-prefix scope all hold. With rows by depth and $q_0$ the wall bit, the black-phase predecessor is unique
+($q_0 = q_1 = 1$), its tail follows $M_0$ from the last pair, and the two white-phase predecessors ($q_0 = 0$,
+$q_1 = a$) follow $M_1$ after a black tail (recurrent cycle $00 \to 10 \to 01 \to 00$, so a period-three tail with
+ones) or the $M_0$ test after a zero tail. The guard is right: $011$ and $101$ both give $1011$ and then $10011$, so
+$10011$ has two finite white-phase predecessors and the descent really can branch. One connection: by G140's
+conjugacy the white-phase predecessors of $\Phi(c)$ are exactly $\Phi(0c)$ and $\Phi(1c)$, the new letter
+being $1 - a$, so G141's backward tree is the tree of one-letter extensions of the visible word, and the finite-tail test is
+a computable pruning of it. Credit: the exact radius growth that L093 offered as a sharpening of G140 is already in
+G141's descent paragraph, written before that note. Checked (`rule30_audit_g99_g100.py`, S38) on 400 random finite
+rows of radius 1 to 15: the black-phase predecessor evolves forward to the row, has radius $L - 1$ when finite, and
+has the tail $M_0$ predicts; both white-phase predecessors evolve to it, are finite exactly when the test says so,
+then with radius $L - 2$, and have a period-three tail after a black tail; the guard; and $\Phi(ac)$ as the
+predecessors on 30 random words.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
