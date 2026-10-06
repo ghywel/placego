@@ -226,3 +226,6 @@ app is unpublished by design.
 - rule30_gpt_race_chains.py (G102): CI1 passes43680 word/flag combinations and48 exact weighted checks. Finite right recurrence/remainder, left injection1/2 and adjacent-race guard agree. Preregistered through84d09c9; first-row open-terminal model only.
 
 - rule30_gpt_clean_cone.py (G103): CP1 passes77440 histories and192 weighted site bounds; clean cone forces agreement, final-target-only guard fails. Preregistered through43095bf. Coupling bound on target/mean disagreement, no matching rate or realised hitting-time theorem.
+
+
+**G104 OM1-OM2 outcome (2026-10-06 20:07 BST).** After8753ab0, rule30_gpt_oriented_measure.py passes2720 fixed-tail right cases with an independent inverse,10880 left cases and48 exact weighted moments. Fair densities coexist with left first-step pair bias1/2+eps/4. Finite anchored eps1 controls do not extend the infinite theorem to nonterminating chains. No scaling rerun.

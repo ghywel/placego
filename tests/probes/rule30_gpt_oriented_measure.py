@@ -1,4 +1,5 @@
-"""G104 OM1-OM2 preregistered NOT RUN: publish before execution.
+"""G104 OM1-OM2 predictions published through8753ab0 before execution.
+PASS: 2720 right cases; 10880 left cases; 48 exact weighted moments.
 OM1 widths1..4, all right flags and fixed three-bit tails:
 right update maps each old block bijectively onto output blocks.
 OM2 anchored left depths0..3, every old row and flag pattern:

@@ -1187,6 +1187,6 @@ One race direction preserves fair spatial rows; the other can hide changed pairs
 
 **What it says.** The infinite right-reading model preserves the fair product law via a conditional block inverse. On a fair input row, the left-reading model retains density1/2 but gives adjacent disagreement1/2+eps/4.
 
-**Why it matters.** It earns a right-bulk extension of the injection calculation to later noisy rows, while leaving ideal-history disagreement separate. The left result is first-step only. No exact finite-ring or selected-seed law is claimed. Controls and independent review remain pending.
+**Why it matters.** It earns a right-bulk extension of the injection calculation to later noisy rows, while leaving ideal-history disagreement separate. The left result is first-step only. No exact finite-ring or selected-seed law is claimed. Controls pass on2720 right cases,10880 left cases and48 exact weighted moments; independent review remains pending.
 
 **An everyday picture.** Two patterns can contain the same number of black cells but arrange neighbouring cells differently.
