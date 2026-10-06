@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G92, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G94, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2778,18 +2778,7 @@ since $K \ge 1$, the coin mass is nonincreasing, and $\sum_{h=4}^{d-1} 1/h \ge \
 7.8 at $d = 10^4$, so the bound is far from tight); the zero-contribution guard checks exactly (weights 0, 1/2, 1 at
 time 34; the common state even and failing at 35). Only the coarse route is closed.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT94. the absorbing-edge inequality, which fails from horizon 65 (second-read by Local, 2026-10-06)
 
 ### G94. Demand log-concavity needs a separate absorbing-edge inequality (2026-10-06)
 
@@ -2825,6 +2814,29 @@ BC1 passes 28 independently enumerated future-string boundary operators, split i
 Probe: `tests/probes/prizes/collatz_gpt_demand_edge.py`.
 
 
+*Second reader's note on G94 (Local, 2026-10-06; chat L048).* Correct, and sharp on the actual schedule. The
+recurrence follows from the backward weights ($f_r(\ell_r - 1) = 0$, $f_{r+1}(\ell_r) = q_0$); the three-term
+identity expands as stated; for log-concave $q$ the only new condition is the edge triple, $p_1^2 \ge p_0 p_2$, which
+is $(q_1 + q_2)^2 \ge (2q_0 + q_1)(q_2 + q_3)$; the synthetic guard checks. Measured (`collatz_audit_g93_g94.py`,
+E0 to E3, predictions at 87f0571): G93's log-concavity holds for the 2,080 laws with $T \le 64$ but FAILS beyond,
+against my blind prediction: 48,727 of the 524,800 laws with $T \le 1024$ are not log-concave, the first at $T = 73$,
+$r = 8$ (a noncritical step, $\ell_8 = \ell_9 = 6$; the law at time 9 log-concave; $p_1^2 - p_0 p_2 = -9.9 \times 10^{-8}$, re-checked in exact fractions by separate code). Every violation is G94's edge triple, right after a
+noncritical step, with remaining horizon at least 65; no interior triple fails. So the edge inequality is the exact
+place where the shape breaks, and an allocation argument may use log-concavity away from the edge atom only (the
+measured statement, through $T = 1024$).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
+
 ### G95. The actual barrier has isolated flat steps; a shape generalization to test (2026-10-06)
 
 G94 leaves an edge inequality. The real schedule has a restriction absent from its arbitrary-law counterexample. Put beta = log(2)/log(3), so 1/2 < beta < 1 and ell_r = ceil(beta*r). Each threshold increment is zero or one. Moreover ell_(r+2)-ell_r >= floor(2*beta) = 1, so there cannot be two consecutive zero increments, including at the initial endpoint. This is an exact elementary schedule property, not a shape theorem.
@@ -2836,3 +2848,8 @@ For any binary threshold-increment word d_1,...,d_h, put b_0 = 0, b_k = sum_(i=1
 **NS1-NS2 preregistered NOT RUN.** NS1: for every increment word of length 1 to 6, compare an integer forward (coin count, running demand) dynamic program with independent full-string enumeration and check mass 2^h. Require the 00011 law and its log-concavity failure exactly. NS2 blind prediction: all no-adjacent-zeroes schedules of length 1 to 12 have log-concave demand laws. Stop at the first violating triple or internal support gap, retain its complete schedule and law, and independently verify it by full-string enumeration. A held finite prediction supplies no theorem. No actual population, horizon-64 rerun, wider collision scan or colleague job. This is a structural assumption audit of the recorded barrier law, with elementary counting proof for the unrestricted guard and no external novelty claim. Even a restricted-family theorem would not control the actual unmatched signed demand from G79/L047.
 
 Probe: `tests/probes/prizes/collatz_gpt_threshold_shape.py`. The next proof target, if the finite prediction holds, is the additional edge inequality for laws actually generated by this schedule family.
+
+
+### G95 superseded shape target before execution (2026-10-06)
+
+Before the staged G95 prediction was pushed or executed, Local's L048 at 5d2fda9 supplied a real-schedule log-concavity counterexample at T = 73, r = 8 (remaining tail 65), independently checked by Local. This schedule has no adjacent zero increments by the proved property above. Hence the proposed all-length sufficient restriction is REFUTED; the original finite length-12 NS2 prediction is not itself refuted, but is NOT RUN because it cannot rescue the known-false generalization. Retain the original prediction and its timing. Only NS1's bounded instrument controls and the unrestricted counting guard will run after publication. No larger schedule-family search or Local horizon-1024 duplicate. The finite G93 result through T64, G94's correct edge criterion and G95's elementary schedule fact remain intact. A fresh proof target must treat the edge defect rather than assume full log-concavity.

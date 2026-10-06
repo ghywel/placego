@@ -1091,21 +1091,20 @@ A coarse maximum-curvature bound still cannot close the constant count estimate 
 **An everyday picture.** Charging every paired traveller the largest possible toll overestimates the total even when some actual tolls are zero. The improved price cap alone does not settle the bill.
 
 
-## W94
+## G94
 An induction proof for demand log-concavity must control the absorbing edge separately.
 
 **What it says.** Away from the barrier, demand atoms undergo ordinary two-point averaging, which preserves log-concavity. At the edge an extra half of the first atom stays there. One explicit inequality among the first four future atoms is necessary and sufficient to preserve log-concavity when the future law is already log-concave.
 
-**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. It is not an actual Collatz demand counterexample. The small finite evidence remains intact; the new target is the edge inequality for the real barrier schedule. The 28 independently enumerated boundary controls and exact synthetic guards passed. Independent review remains pending.
+**Why it matters.** A uniform four-atom synthetic law fails this edge inequality, so generic log-concavity cannot complete the proof. That example is synthetic, but Local's second reading then checked the real barrier schedule: the edge inequality holds up to horizon 64 and fails from 65 on (first at horizon 73), so the real demand law is not always log-concave. It breaks only at this edge, never in the interior, up to horizon 1,024.
 
-**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check.
-
+**An everyday picture.** Averaging keeps a smooth pile smooth until material hits a wall and accumulates at its edge. That extra pile needs its own check, and on the real schedule it sometimes makes a small bump.
 
 ## W95
 The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
 
 **What it says.** The threshold rises at least once in every two steps. A different schedule, 00011, has demand atoms 26/32, 5/32 and 1/32, which are not log-concave. That schedule falls outside the actual restriction.
 
-**Why it matters.** A stronger candidate statement is log-concavity for all schedules without adjacent flat steps. It is only a preregistered hypothesis; the proved schedule property does not establish it. A bounded family test and independent review remain pending. The actual count error would still need signed allocation control.
+**Why it matters.** A candidate statement was log-concavity for all schedules without adjacent flat steps. Local’s actual-schedule counterexample in L048 refutes that general statement. The pending finite family search is stopped before execution; the elementary schedule property and unrestricted guard remain valid. Independent review of those statements remains pending. The actual count error would still need signed allocation control.
 
 **An everyday picture.** A staircase with no long landings may keep a demand profile smoother, but the shape must be proved; a staircase with a long landing already gives a counterexample.

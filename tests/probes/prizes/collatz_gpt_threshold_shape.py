@@ -7,11 +7,16 @@ UNEXPECTED COUNTERFACTUAL MUST FAIL: all fair-bit demand laws are
 log-concave, even without the schedule restriction.
 REFUTED-BY: schedule 00011 gives atoms (26,5,1)/32, with 25 < 26.
 No actual-start population, earlier-profile rerun or global bound.
+ADDENDUM BEFORE EXECUTION: Local L048 at 5d2fda9 refutes the all-length
+no-adjacent-zero sufficient restriction on the actual schedule. NS2 length12
+finite prediction is retained but NOT RUN; default executes NS1 only.
+No broader family search; explicit --shape is outside this updated run plan.
 """
 from collections import Counter
 from itertools import accumulate, product
 import json
 from pathlib import Path
+import sys
 
 
 def dp(schedule):
@@ -49,7 +54,7 @@ def violation(law):
     return None
 
 
-def main():
+def main(run_shape=False):
     controls = 0
     for h in range(1, 7):
         for schedule in product((0, 1), repeat=h):
@@ -61,7 +66,7 @@ def main():
     assert violation(dp(guard)) == 1
     profiles = 0
     failure = None
-    for h in range(1, 13):
+    for h in (range(1, 13) if run_shape else ()):
         for schedule in product((0, 1), repeat=h):
             if any(x == y == 0 for x, y in zip(schedule, schedule[1:])):
                 continue
@@ -79,10 +84,10 @@ def main():
         json.dumps(dict(controls=controls,profiles=profiles,failure=failure),indent=2))
     print('NS1 PASS:',controls,'independent barrier/coin laws')
     print('Unrestricted fair-bit log-concavity counterfactual REFUTED: (26,5,1)/32')
-    print('NS2', 'REFUTED' if failure else 'HELD in finite scope', 'after',profiles,'schedules')
+    print('NS2', 'NOT RUN (superseded by L048)' if not run_shape else ('REFUTED' if failure else 'HELD in finite scope'), 'after',profiles,'schedules')
     print('Independent failure:',failure)
     print('No actual demand shape theorem or unmatched allocation estimate inferred')
 
 
 if __name__ == '__main__':
-    main()
+    main(run_shape="--shape" in sys.argv)
