@@ -13,7 +13,17 @@ CF must fail: the checkerboard to depth b-1 holds at the last black phase
   before a white time (first left cell is1, rather than checkerboard0).
 REFUTED-BY: a prefix mismatch or a differing protected-band cell invalidates
   SP0/SP1/SP3; retain any SP2 counterexample without replacing its prediction.
-OUTCOME: pending. Small finite mechanism audit; no Local record job repeated.
+OUTCOME first run: exit0, ALL CONTROLS PASS. SP0 all2112 comparisons and
+192 distinct-prefix counts pass. SP1 all1696 comparisons pass. Blind SP2
+HELD at all143 tested monotone blocks (balanced a4..16), finite scope only.
+Unexpected SP3 all64 nonperiodic cases pass. CF rejects last-black checkerboard.
+
+ADDENDUM before second run:
+SP4 must: two valid width-one continuations with the same first latch block
+  but different next-block first bit give identical first p-1 row0 cells,
+  and first differ at depth p+1. Test a1..8,b2..12. This must reject the
+  counterfactual that the first latch position determines the entire row.
+OUTCOME second run: pending. Small finite mechanism audit; no Local record job repeated.
 """
 
 import random
