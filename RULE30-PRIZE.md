@@ -3893,3 +3893,79 @@ contraction: the population stays constant until termination, including a window
 Thus an individual ranking is not equivalent to the stated bounded-debt count law. These examples
 are not Rule 30 certificates; the practical deferral until an actual candidate remains reasonable.
 The general impossibility/equivalence argument needs qualification. See RULE30-GPT.md G5 and CHAT C012.
+
+
+### 8.62 The owner's question: what "period 1" means, whether period 2 had to follow, and the ladder by freedom (2026-10-06)
+
+The owner asked, on the morning of 2026-10-06: the prize asks whether the centre column of Rule 30, from one black
+cell, ever becomes periodic; Condrey proved that no nonzero finite configuration has an eventually constant centre
+column, "period 1", and our work has been on "period 2" as his own next step. But what does period 1 even mean,
+does period 2 necessarily follow, where else could one have started, and what would period 3 look like?
+
+**What the words mean.** The centre column $c(t) = x_t(0)$ is *eventually periodic* if there are $T$ and $p \ge 1$ with
+$c(t + p) = c(t)$ for every $t \ge T$. The prize's conjecture is that it is not; so the conjecture is the conjunction,
+over every $p$, of "not eventually periodic with period $p$". "Period 1" is the case $p = 1$: the column eventually
+constant, $000\ldots$ or $111\ldots$ from some time on. "Period 2" is the case of least period 2: $0101\ldots$ or
+$1010\ldots$ from some time on. The cases are logically independent of one another, and there are infinitely many.
+
+**Why a statement about all finite seeds from time 0 is the right shape.** The row of the single cell's pattern at
+time $T$ is itself a finite configuration, of width $2T + 1$. So "the centre column is $p$-periodic from time $T$ on,
+from the single cell" is the same as "the centre column is $p$-periodic from time 0, from that finite seed". A
+theorem of the form *no nonzero finite configuration has a centre column $p$-periodic from time 0* therefore
+settles period $p$ for the single cell, "eventually" included. That is the shape of Condrey's theorem (§5,
+PRIOR-ART.md: no nonzero finite configuration has a centre column constant from time 0 for longer than $w + 2$
+steps, sharp), and it is the shape of everything in this record: Conjecture B, the ladder, the records, the
+exclusions. Period 1 was not a special case of the single cell's column; it was the first wall.
+
+**Does period 2 follow?** Not logically. Nothing about period 1 implies anything about period 2, and settling
+period 2 would settle nothing about period 3. The prize needs every period at once, so an enumeration by period
+can never finish; what it can do is show the uniform argument somewhere. Period 2 was chosen as the smallest open
+case and the simplest wall that is not constant. That choice is Condrey's, and it is natural, but it is not forced.
+
+**The ladder that the record found is not the period but the freedom.** Fix the wall: column 0 equal to a word $w$
+of period $p$ with $z$ white cells per period, from time 0. By Lemma 1 (§8.2), column 1 is visible to the left
+half only at the white times, and by Lemma 4 the cells of the forced left half come in two kinds: a linear cell for
+every white time (set at will by column 1's bit) and a forced cell for every black time (a condition). Write
+$f = z / p$ for the wall's *freedom*. The coin model of §8.38 then says the record zero run grows like
+$R_w(d) \approx \frac{f}{1 - f}\, d$, less a merging loss. On that scale:
+- Condrey's wall $1^\infty$ has $f = 0$: no free bit, the universal fibre, $R = 1$. The proof lives here because
+  the wall admits no choice at all.
+- The one-hole walls $0\,1^{p-1}$ have $f = 1/p$: one free bit per $p$ steps, the least free walls there are, and
+  the nearest to Condrey's. `rule30_rigidity.py` found them the most rigid of all words (§7, R5), and nobody has
+  tried to carry Condrey's argument across to them.
+- Our wall $0101$ has $f = 1/2$: the middle of the scale, with $R \approx 0.83\,d$.
+- The words that are mostly white, $0^{p-1}1$, have $f \to 1$: §8.60 measured $R \approx 2.1\,d$ and $2.4\,d$ for 0001
+  and 00001.
+Period 3 is two walls on opposite sides of this scale, $011$ ($f = 1/3$) and $001$ ($f = 2/3$); every general
+statement in this record (Jen's theorem; Theorems A, A′, B; E and E″; the band lemmas; the window principle)
+holds for every period, and the records engine of §8.60 takes any word, but §8.8 found that no wall other than
+$0101$ turns a wheel, so the specific structure of §8.4 to §8.11 does not carry. "Period 3" would be the same
+missing statement (§5) with different numbers, twice.
+
+**Where else one could have started.** Three places, by this reading.
+1. *The Condrey end.* Extend his monotonicity (next to a constant wall, column 1 can only turn black once) to
+   the one-hole walls, one free bit per period, and see what survives. This is the job given to GPT on the
+   morning of 2026-10-06 (CHAT-LEDGER.md C018); the measurement that goes beside it is below.
+2. *The single cell's own pattern.* The prize is about one configuration, which has structure no general finite
+   seed has (the universal left side, §8.30 and §8.31; the nested right side; the core between). A proof that its
+   centre column has unbounded zero runs, or unbounded factor complexity, would settle the prize without any
+   wall. Nothing in this record reaches the core of the single cell's pattern, and the two bands are provably
+   far from the centre, so this route has no foothold yet.
+3. *The uniform count.* Question 1 of PERIOD-TWO.md, stated for every wall at once: the number of finite seeds of
+   width $w$ whose centre keeps any period-$p$ word for $T$ steps falls like $2^{w - \alpha T}$. Only this shape
+   wins the prize, whichever wall is studied first.
+
+**The measurement at the Condrey end** (`rule30_records_word.py holes`, predictions H0 to H3 written first; the
+engine `records_word.c` of §8.60 widened to 512 bits; results in `rule30_records_word.txt`). H0 and the counterfactual passed (0111's 14-free-bit maximum is 19, as rigidity recorded; the word 0 caps and the word 1 never exceeds 1). **H1 held: no run reaches the cap**, so LR holds for the six one-hole walls to 32 free bits, at depths up to 256.
+
+| Word $w$ ($f = 1/p$) | depths | $R_w(d)$ | $R/d$ at the deepest | coin's $f/(1-f) = 1/(p-1)$ | share |
+|---|---|---|---|---|---|
+| 011 | 24, 48, 72, 96 | 9, 20, 27, 39 | 0.406 | 0.500 | 0.81 |
+| 0111 | 32, 64, 96, 128 | 18, 19, 26, 43 | 0.336 | 0.333 | 1.01 |
+| 01111 | 40, 80, 120, 160 | 8, 18, 24, 30 | 0.188 | 0.250 | 0.75 |
+| 011111 | 48, 96, 144, 192 | 10, 18, 23, 32 | 0.167 | 0.200 | 0.83 |
+| 0111111 | 56, 112, 168, 224 | 6, 14, 25, 31 | 0.138 | 0.167 | 0.83 |
+| 01111111 | 64, 128, 192, 256 | 8, 16, 22, 31 | 0.121 | 0.143 | 0.85 |
+
+H3 held ($R \le 1.5\,d/(p-1) + 10$ throughout). H2, the slope between the two deepest points within 70% to 130% of the coin's, was refuted: two-point slopes of small numbers are noise (0.60 to 1.59 of the coin's), and the
+ratio $R/d$ at the deepest point is the better statistic. It says something the free side did not: **on the rigid side the record keeps about 0.8 of the coin's share** (0.75 to 1.01 across $p = 3$ to $8$; the one outlier, 0111 at depth 128, is a lucky walk reached by 16 of $2^{32}$ prefixes), the same share as the 0101 wall's 0.83, while on the free side it fell to 0.70 and 0.60 (§8.60). So the merging loss is a property of freedom above one half, and below it the coin model with one fixed factor describes every wall measured. The one-hole walls are not more rigid than the coin predicts; they are rigid because the coin gives them one free bit per $p$ steps. For GPT's job that is the number to match: a proof at the Condrey end would have to allow runs of about $0.8\,d/(p-1)$, and Condrey's own argument allows $w + 2$ with no free bit at all.
