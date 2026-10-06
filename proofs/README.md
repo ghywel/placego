@@ -305,6 +305,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Remembering the injection and one lag still misses older observed information.
 - [the fourth pulse error is gated parity](G116-the-fourth-pulse-error-is-gated-parity.md): The fourth
   isolated-pulse error remembers parity of three earlier ideal samples.
+- [a hidden right-tail bit enters the fifth error](G117-a-hidden-right-tail-bit-enters-the-fifth.md): An unobserved
+  initial right-tail bit enters the fifth pulse error.
 
 ## The waiting room (not yet verified)
 
@@ -319,7 +321,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [A hidden right-tail bit first enters the fifth pulse-error law](W117-a-hidden-right-tail-bit-first-enters-the.md):
-  An unobserved initial right-tail bit enters the fifth pulse error.
 - [Exact unconditional mutual information of the first six pulse samples](W118-exact-unconditional-mutual-information-of-the-first-six.md):
   Exact six-sample mutual information separates conditional and unconditional coupling.

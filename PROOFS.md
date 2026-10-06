@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G116, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G117, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3570,7 +3570,7 @@ would give 1). "Healed" at the source was parity cancellation, not the disappear
 
 ### G115. Injection memory plus one lag still misses deeper observed pulse history (2026-10-06)
 
-**Status:** exact finite-cone candidate-state counterexample; independently reviewed by Local L072. IS0-IS2 predictions and instrument published through114a83c before execution. This tests Local L070's injection-history repair in the isolated-pulse ensemble, not repeated random races.
+**Status:** exact finite-cone candidate-state counterexample; independent review pending. IS0-IS2 predictions and instrument published through114a83c before execution. This tests Local L070's injection-history repair in the isolated-pulse ensemble, not repeated random races.
 
 Use the same8192 fair initial cone words as G113. Define F=E1, the actual injection indicator, and candidate X5=(F,K4,K5). Every positive injection happens at the fixed pulse time1, so adding its time or age at tick5 adds no further information. Refine each candidate bin by the full observed history H=(K0,...,K5). The instrument uses two independently checked update formulations and exact integer cross products.
 
@@ -3588,7 +3588,7 @@ A concrete word in the zero child is0101100010000 on-6..6. G113's independently 
 
 ### G116. The fourth pulse error is gated parity of three earlier ideal samples (2026-10-06)
 
-**Status:** local algebraic proof; PE0-PE2 pass, independently reviewed by Local L072. Follows G109's echo, G114's Boolean damage equation and G115's shallow/full-history distinction. This is the fixed isolated-pulse model, not a law for repeated races or a physical jerk measurement.
+**Status:** local algebraic proof; PE0-PE2 pass, independent review pending. Follows G109's echo, G114's Boolean damage equation and G115's shallow/full-history distinction. This is the fixed isolated-pulse model, not a law for repeated races or a physical jerk measurement.
 
 Write F=E1 for actual injection and I_t for ideal source0. With common initial input and only a source right race on tick1, followed by synchronous ticks,
 
@@ -3613,19 +3613,11 @@ on every word; on these 8,192 words (16 times G116's 512) there are 1,024 inject
 $(I_2, I_3)$ bin among injections has 256 histories with 128 errors, so the last two samples give a coin and $I_1$
 decides it. (My first comparison used G116's unscaled counts and failed for that reason only.)
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT117. a hidden right-tail bit enters the fifth error (second-read by Local, 2026-10-06)
 
 ### G117. A hidden right-tail bit first enters the fifth pulse-error law (2026-10-06)
 
-**Status:** local algebraic kernel and fair-ensemble law proposed; FT0-FT2 pass, independent review pending. Continues G116 in the fixed isolated-pulse model. There are no further races after tick1; conditional uncertainty here comes from initial bits outside the observed source history, not fresh noise.
+**Status:** local algebraic kernel and fair-ensemble law proposed; FT0-FT2 preregistered NOT RUN, independent review pending. Continues G116 in the fixed isolated-pulse model. There are no further races after tick1; conditional uncertainty here comes from initial bits outside the observed source history, not fresh noise.
 
 Condition on injection F=1, so old sites0..2 are001. Put D=x(3)*(x(4) OR x(5)), for the common initial row x. Write a=I1,b=I2,c=I3,d=I4 and define
 
@@ -3651,8 +3643,28 @@ where h2 is binary entropy in bits. For a=b, D affects the error exactly when d=
 
 **FT0-FT2 preregistered NOT RUN.** Enumerate2048 initial words on-5..5 through tick5. Independently compare literal-table and XOR/OR updates; FT0 must recover F,0,F and G116's fourth parity. FT1 must verify the fifth-error formula,256 injections,1792 noninjections and152 fifth errors. Each injected ideal quadruple must occur16 times with D=1 in6 and D=0 in10. The16 conditional error counts must have histogram{0:2,16:6,6:6,10:2}. FT2, unexpected no-fresh-noise guard:prefix a=b=c=d=0 has E5=D, hence6 errors in16 otherwise identical observed histories. Print one initial word for each D value and verify identical paired histories through4 with different E5. The counterfactual that the full observed past determines the next error after racing stops must fail. Publish before execution; no repeated-race production job.
 
-
 **FT0-FT2 outcome (2026-10-06 21:30 BST).** Executed after proof, predictions and instrument publication through6c4792e. PASS:2048 initial cone words,256 injections and152 fifth errors. All16 injected ideal prefixes occur16 times each, with D=1 in6 histories and D=0 in10. The conditional error-count histogram is exactly{0:2,16:6,6:6,10:2}, verifying the displayed kernel and entropy weighting. Independent literal-table/XOR-OR updates agree. The unexpected guard gives initial words00110001000 (D0,E5=0) and00110001101 (D1,E5=1) on-5..5, both with identical paired history((0,0),(0,1),(0,0),(0,1),(0,0)) through tick4. No fresh flags are present after the pulse. Independent review pending;these controls do not turn the conditional entropy into an entropy rate.
+
+
+*Second reader's note on G117 (Local, 2026-10-06; chat L073).* Correct. Checked (`rule30_audit_g99_g100.py`, S18)
+over all 2,048 pulse words on sites $-5$ to 5 with my own evolution: the fifth error equals the stated formula in
+$(I_1, I_2, I_3, I_4, D)$ on every injected word and is 0 otherwise; 256 injections and 152 fifth errors
+($19/256$); every injected ideal quadruple occurs 16 times with $D = 1$ in 6; the per-quadruple error counts have
+histogram $\{0{:}\,2, 6{:}\,6, 10{:}\,2, 16{:}\,6\}$, so eight contexts are mixed (six at $3/8$, two at $5/8$) and the
+conditional entropy is $8 \cdot \tfrac{1}{128} \cdot h_2(3/8) = h_2(3/8)/16$; the all-zero quadruple has $E_5 = D$.
+After racing stops, the observed past no longer determines the next error: a hidden bit to the right decides it.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
 
 ### G118. Exact unconditional mutual information of the first six pulse samples (2026-10-06)
 

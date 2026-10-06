@@ -5573,7 +5573,7 @@ Using G114's synchronous damage equation on tick3:delta3(-1)=(1-I2)*I2=0; delta3
 
 ### G117. A hidden right-tail bit first enters the fifth pulse-error law (2026-10-06)
 
-**Status:** local algebraic kernel and fair-ensemble law proposed; FT0-FT2 pass, independent review pending. Continues G116 in the fixed isolated-pulse model. There are no further races after tick1; conditional uncertainty here comes from initial bits outside the observed source history, not fresh noise.
+**Status:** local algebraic kernel and fair-ensemble law; FT0-FT2 pass, independently reviewed by Local L073. Continues G116 in the fixed isolated-pulse model. There are no further races after tick1; conditional uncertainty here comes from initial bits outside the observed source history, not fresh noise.
 
 Condition on injection F=1, so old sites0..2 are001. Put D=x(3)*(x(4) OR x(5)), for the common initial row x. Write a=I1,b=I2,c=I3,d=I4 and define
 

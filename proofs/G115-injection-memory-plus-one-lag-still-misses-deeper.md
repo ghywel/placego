@@ -20,7 +20,7 @@ Remembering the injection and one lag still misses older observed information.
 
 ### G115. Injection memory plus one lag still misses deeper observed pulse history (2026-10-06)
 
-**Status:** exact finite-cone candidate-state counterexample; independently reviewed by Local L072. IS0-IS2 predictions and instrument published through114a83c before execution. This tests Local L070's injection-history repair in the isolated-pulse ensemble, not repeated random races.
+**Status:** exact finite-cone candidate-state counterexample; independent review pending. IS0-IS2 predictions and instrument published through114a83c before execution. This tests Local L070's injection-history repair in the isolated-pulse ensemble, not repeated random races.
 
 Use the same8192 fair initial cone words as G113. Define F=E1, the actual injection indicator, and candidate X5=(F,K4,K5). Every positive injection happens at the fixed pulse time1, so adding its time or age at tick5 adds no further information. Refine each candidate bin by the full observed history H=(K0,...,K5). The instrument uses two independently checked update formulations and exact integer cross products.
 

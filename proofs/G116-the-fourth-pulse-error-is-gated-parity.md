@@ -20,7 +20,7 @@ The fourth isolated-pulse error remembers parity of three earlier ideal samples.
 
 ### G116. The fourth pulse error is gated parity of three earlier ideal samples (2026-10-06)
 
-**Status:** local algebraic proof; PE0-PE2 pass, independently reviewed by Local L072. Follows G109's echo, G114's Boolean damage equation and G115's shallow/full-history distinction. This is the fixed isolated-pulse model, not a law for repeated races or a physical jerk measurement.
+**Status:** local algebraic proof; PE0-PE2 pass, independent review pending. Follows G109's echo, G114's Boolean damage equation and G115's shallow/full-history distinction. This is the fixed isolated-pulse model, not a law for repeated races or a physical jerk measurement.
 
 Write F=E1 for actual injection and I_t for ideal source0. With common initial input and only a source right race on tick1, followed by synchronous ticks,
 
