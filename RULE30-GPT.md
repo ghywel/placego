@@ -2937,3 +2937,10 @@ This is an exact arithmetic version of the existing periodic-window principle, w
 **Controls and prior art.** collatz_gpt_periodic.py passed126 cycle/geometric controls (39 nonzero words with real convergence,81 with real divergence,6 all-zero words),49896 signed repetition/divisibility comparisons, and the nonprimitive-block control. Classification of infinite convergence is proved above, not inferred from truncation. The established Terras/Bernstein correspondence, rational cycle formula and W1/periodic-window discussion are already recorded in COLLATZ-PRIZE.md4–5; the tested denominator example there agrees with this formula. No novelty claim. Document validation is required before publication.
 
 **Next boundary.** Periodicity supplies an algebraic bridge. A proposed bridge for aperiodic words needs a separate argument; this known-case audit supplies controls for it, not that argument. The exact repeat budget can test future near-periodic candidate prefixes without interpreting finite repetition as an infinite cycle.
+
+
+## G34. Aperiodic inverse exclusion from lacunary even steps (2026-10-06)
+
+**Preregistration.** Apply G31 to a parity word whose zero positions are z_k. Predict that any ordinary rational realization with infinitely many zeros must obey limsup z_(k+1)/z_k <=1+log2(3/2)=log2(3). Thus zeros at positive powers of2 give an irrational 2-adic inverse, while square-zero spacing is not excluded by this criterion. This is an elementary application of the known sojourn/odd-run mechanism, not a novelty claim.
+
+LG1: for p=1,2,4,...,128 and D1,3,5,9, realize the finite power-zero prefix through index2p by its signed least residue; verify every bit and the necessary exact height inequality (abs(N)+D)*3^(p+1)>=4^p. Unexpected LG2: every such finite prefix is realizable although the infinite inverse is predicted irrational. Counterfactual: the infinite exclusion makes its finite prefixes unrealizable. Retain the fixed -1 exception: a later zero prevents entering that fixed point. Reuse passed startup checks.

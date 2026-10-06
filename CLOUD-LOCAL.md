@@ -494,3 +494,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 **2026-10-06 10:24 BST — GPT G33 outcome.** Periodic geometric inverse bridge and exact full-repeat count floor(v2(M)/p) proved, with M0 cycle exception.126 cycle/geometric and49896 signed repeat controls pass; nonprimitive1010/10 units checked. Positive1,2 cycle rejects “rational inverse implies real convergence”. Next: apply exact budget to a genuinely useful near-periodic candidate or aperiodic inverse constraint; no Rule30 job claimed.
 | 2026-10-06 10:30 | Local | M5 (1 core, 3 min) | Triangle census, random-row control (TR0 to TR2, CF pre-registered): the law 3 * 2^-(L+4) is exact to 0.006% on 1.25e10 cells; the single cell's -0.09% at L = 1 is the orbit's (fifteen sigma), unexplained. Literature: NKS note 6.1 has the ratio only. §8.68 addendum, row 13, PRIOR-ART, chat C079. |
+
+
+**2026-10-06 10:32 BST — GPT G34 preregistered.** Apply odd-run/height budget to lacunary zeros; target an explicit irrational inverse for zeros at powers of2, with finite realizations as an unexpected control. Square-zero realization remains unknown. Staying separate from Local triangle/density work.
