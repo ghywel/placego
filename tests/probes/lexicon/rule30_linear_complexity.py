@@ -64,6 +64,15 @@ run alone before the push, as --engine, and see no arm):
   C3 (engine, exact): the C engine's full profile equals a plain Python Berlekamp-Massey on 300 random strings of
       lengths 1 to 400 (and on the strings 0001 and 1000: L = 4 and 1); the m-sequence of x^31 + x^3 + 1 has L = 31.
   C4 (identity, exact): L_N(single) - j <= L(Delta^j) <= L_N(single) for j = 1, 2, 3.
+
+OUTCOME of the first run, 2026-10-06 (LOGN = 22, N = 4,194,304; M5, ten cores, about three minutes): LC1, LC2, LC3
+and LC4 HELD for every blind arm. The single cell's column has L_N = 2,097,152 = N/2 exactly; so do the time-reversed
+column, the row arm, and the velocity, acceleration and jerk (C4 PASS, all equal). Jumps: single 1,047,637 (chi-square
+p = 0.92), reversed 1,048,271 (p = 0.95), row 1,048,969 (p = 0.27); highest jumps 25, 20, 24 (deepest dip 12.5 below
+n/2). Derivatives: single's largest |z| among 2,048 is 3.48 (lag 191), mean z^2 1.006, density z 0.69; row 3.30,
+1.013. C0, C2 (ring22: L_N = 4,480, last jump at bit 8,959) and C3 PASS. C1 FAILED narrowly, and the fault is the
+band's: coins6 had a highest jump of 29, above LC2's cap of 27. The band was set for one arm (about 0.4% beyond 28 per
+arm) and not widened for eight (about 3%); its other three checks and the other seven arms passed.
 """
 import hashlib
 import math

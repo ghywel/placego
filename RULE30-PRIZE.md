@@ -4520,3 +4520,23 @@ predictions written before it. Literature to check first: the linear complexity 
 been studied in the cryptographic literature on Wolfram's generator (Meier and Staffelbach, 1991, and later work),
 not yet read here.
 
+**Addendum (2026-10-06 18:05 BST): the measurement.** Literature: linear complexity tests on Rule 30's centre column
+are reported as passed (L near half the length) at cryptographic lengths; no published profile of the single-cell
+column at millions of bits was found. `rule30_linear_complexity.py` (with a bit-packed Berlekamp–Massey engine,
+`linear_complexity.c`; predictions LC1 to LC4 pushed before the run) measured the first $N = 2^{22} = 4{,}194{,}304$
+bits. The linear complexity is $L_N = 2{,}097{,}152 = N/2$ exactly. So no linear difference equation over GF(2), of
+any order below $N/2$ and with any coefficients, holds on these bits: if the centre column is eventually periodic,
+its preperiod plus period is at least $2{,}097{,}152$. The whole profile is that of fair coins: about $N/4$ jumps
+whose heights fit $2^{-k}$ (chi-square $p = 0.92$), the deepest dip $12.5$ below $n/2$. The column read backwards in
+time gives the same (reversal is not an identity for linear complexity: $0001$ has $L = 4$, $1000$ has $L = 1$).
+Velocity, acceleration and jerk have exactly the same complexity, as they must: if the first $N$ bits of $x$
+satisfy a recurrence of order $L$ then $\Delta x$ satisfies the same one, and conversely $x$ satisfies $C(z)(1+z)$,
+so $L(x) - j \le L(\Delta^j x) \le L(x)$ (proved in the probe's header, checked exactly). The 1,024 lag differences
+and the 1,024 derivatives $\Delta^j$ show no bias (largest $|z| = 3.48$ among 2,048, mean $z^2 = 1.006$). So, to the
+owner's question: in the GF(2) sense, the centre column's acceleration and jerk carry no more structure than its
+velocity, and its velocity none beyond the column itself; every derivative is as complex as the column, which is as
+complex as a coin. The counterfactual (Rule 30 on the ring of 22 cells, eventually periodic) saturates at $L = 4{,}480$
+as it must. One control band failed narrowly (one of eight coin arms had a jump of 29 against a cap of 27; the
+band was set per arm and not widened for eight). This is a finite fact, not a proof: it bounds the period from below
+far less strongly than a direct search, but it covers every linear equation at once.
+
