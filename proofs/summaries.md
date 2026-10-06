@@ -1244,3 +1244,12 @@ Two individually memoryless traces can form a pair with memory.
 **Why it matters.** The error-mask coupling needs more than marginal fairness or a current-bit state. This identifies a pulse control for conditional-memory measurements, not a claim about repeated independent races. PM1 passes128 words with exact conditional counts; review is pending.
 
 **An everyday picture.** Two streams can each sound random while their relationship remembers yesterday.
+
+## W111
+An exact split at one rate can certify memory at almost every rate; equality at one rate cannot certify closure.
+
+**What it says.** Finite Bernoulli histories give polynomial conditional-split determinants. A nonzero half-rate witness in the W5,T3 table would persist except at at most19 interior rates, including a sufficiently small positive-rate interval.
+
+**Why it matters.** This can extend a finite-ring witness without rerunning a rate sweep. No production witness is supplied yet; one small toy already has equality at half rate but failure at quarter rate. PC1-PC3 and review are pending.
+
+**An everyday picture.** A curve crossing zero once is different from a curve that stays zero everywhere.
