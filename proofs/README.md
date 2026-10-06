@@ -349,3 +349,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [The finite-left wall fibre is a compact constraint class at each fixed radius](W129-the-finite-left-wall-fibre-is-a-compact.md):
   Finite left support becomes an explicit constraint on the sideways limit.
+- [Fixing the initial right tail gives a unique left seed for every wall trace](W130-fixing-the-initial-right-tail-gives-a-unique.md):
+  Every wall has one forced left seed once the initial right tail is fixed.
