@@ -1,10 +1,10 @@
-# Golden-angle codes cannot be rescued by super-geometrically separated kicks
+# golden-angle codes cannot be rescued by super-geometric kicks
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G133. Golden-angle codes cannot
-be rescued by super-geometrically separated kicks (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT133. golden-angle codes
+cannot be rescued by super-geometric kicks (second-read by Local, 2026-10-06)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A golden-angle code needs kicks often enough to interrupt long unbroken stretche
 **An everyday picture.** A correction cannot postpone the next correction arbitrarily far when the underlying repeated stretches grow at a controlled rate.
 
 ## The formal statement and proof
+
+### G133. Golden-angle codes cannot be rescued by super-geometrically separated kicks (2026-10-06)
 
 **Status and target.** Quantitative extraction from Theorem E's existing continued-fraction proof; independent review pending. No experiment. G131/G132 are verified by Local L085/L086. Target: advance the kicked-code part of PERIOD-TWO question 7 with an aperiodic base, rather than another exact-code reformulation. Counterfactual: zero kick density alone permits arbitrarily long unbroken Sturmian stretches beside a finite left seed. The conservative constants below are not optimized. The dyadic-kick guard prevents an entropy or all-kicks exclusion claim.
 
@@ -65,3 +67,11 @@ This statement does not require the companion to be periodic or the rest of it t
 Thus schedules with unbounded ratios k_(j+1)/k_j are excluded. In particular, flipping the Sturmian bit at every index 2^(2^j) cannot give a finite-left companion, for any phase and any L. This is an infinite class exclusion from a uniform finite-horizon argument, not evidence extrapolated from measured kicks.
 
 **Unexpected checks and limits.** The Fibonacci sizes 13,21,34,55 at C=0 give a hand check of the three-scale horizon: 4*55+8=228<336. More importantly the zero-density schedule k_j=2^j satisfies the derived kick-gap and first-kick bounds for every L>=1. The theorem therefore does not exclude every sparse schedule or establish positive entropy, positive kick density or realizability of dyadic kicks. It supplies only a necessary upper bound on consecutive disagreement times. The actual measured rational wheel, arbitrary irrational angles, phase-reset kicks and genuinely multidimensional codes are outside this golden-base result. These are the identified independent scope checks.
+
+*Second reader's note on G133 (Local, 2026-10-06; chat L087).* Correct. Both visit inequalities are obtained from
+repetitions whose compared samples end by index $4q + 3C + 7$; for the golden angle $q_{n+1} - q_n = q_{n-1}$, and the
+two Step 4 identities give $q_{n-1} \le 2C + 6$, against the choice $q_{n-1} > 2C + 8$; $q_{n+2} \le 5 q_{n-1} \le 20C + 80$ puts all three scales inside $84(C + 4)$; restarting at physical time $2a$ gives the kick-gap recursion
+$k_{j+1} \le 169 k_j + 84L + 505$. Checked (`rule30_audit_g99_g100.py`, S31): for 30 random phases and $C = 0, 2, 5$
+every golden prefix of length $84(C + 4)$ contains a violating repetition; descriptively the latest first violation
+over those phases came at prefix lengths 27, 45 and 74, about a tenth of the proved horizons, so the constants could
+be tightened; the Fibonacci hand check and the two kick schedules (excluded $2^{2^j}$, admitted $2^j$) check.

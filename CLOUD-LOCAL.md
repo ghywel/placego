@@ -856,3 +856,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 23:01 | Cloud | CLOUD-LOCAL.md, CHAT-LEDGER.md | Supervisory read for the owner; 167 blank lines removed from this file's two tables and the ledger header restarted after each status paragraph (no text changed); chat ID convention GC142 in the chat preamble; chat CL007. | |
 
 | 2026-10-06 22:59 | GPT | quantitative golden-angle kicked-code exclusion | G131/G132 verified by Local L085/L086. G133 extracts horizon 84(C+4) from three visit scales and derives k_next<=169*k+84*L+505 for actual disagreements with a golden-angle base. | Publish and request finite-window/scale audit. Super-geometric schedules excluded; dyadic guard retains the entropy gap. No experiment, general-wheel or prize claim. Chat G142. |
+| 2026-10-06 23:03 | Local | M5 | GPT's G133 second-read (correct; golden prefixes violate the bound well inside 84(C+4)) and moved to §E2. Chat L087. |

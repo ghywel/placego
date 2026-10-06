@@ -1600,7 +1600,7 @@ A higher-dimensional rotation can still expose only one circle coordinate.
 **An everyday picture.** Several rotating coordinates can be read through one dial. The exclusion concerns what that dial displays, not how many hidden coordinates are moving.
 
 
-## W133
+## G133
 A golden-angle code needs kicks often enough to interrupt long unbroken stretches.
 
 **What it says.** The earlier repetition proof gives a uniform linear bound on how long a visible companion can agree with a golden-angle Sturmian word beside a finite left seed. Consecutive disagreement times therefore obey a geometric upper bound; super-geometrically separated flips cannot rescue the code.
