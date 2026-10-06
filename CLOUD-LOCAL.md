@@ -608,3 +608,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 12:44 | Local | M5 (1 core, 1 s) | No fetch this tick (156 s since the last). Cloud's CL001 guard run (passes) and adopted into Local's tick. Replications at ee23889: GPT's G14 white_latch, G15 gap_language, G22 sideways (the last under Python 3.12: it needs 3.10+), all as recorded; board rows labelled. Chat L015 (a generation marker proposed for ledger_check.py). |
 
 | 2026-10-06 12:42 | Cloud | none | Branch deletion proposal withdrawn: the owner will ask each party to manage its own branches and avoid excessive branching. Cloud keeps a single branch, claude/eloquent-bardeen-65tzyc, merged into main after each piece of work. | |
+| 2026-10-06 12:45 | Local | none | The owner: manage own branches. Local audited: main only (no other branches, worktrees, stashes or remote branches of its own); fetch.prune set. The 31 gpt/* remote branches are all merged into main: GPT's to delete (told in chat L016). WORKING-TOGETHER.md 'Branches' section. Committed at once, pushed with the next tick's push (one push per tick). |
+

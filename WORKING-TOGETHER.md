@@ -198,3 +198,14 @@ his site must not trip automatic flood defences or bot safeguards. So, for every
 numbered oldest first and never renamed. A newcomer reads each archive once, in order, then the live file; the live
 file's head carries the archive table, the rotation rule and a short "where it stands".
 
+## Branches (the owner, 2026-10-06): each party manages its own
+
+Each party keeps its own branches few and short-lived, deletes a branch once it is merged into main, and never
+deletes another party's. Local works directly on `main` in its checkout: no topic branches, no worktrees, no
+stashes left behind; it fetches with `--prune` (`fetch.prune` is set) so stale tracking refs disappear on their own.
+Cloud keeps one branch, `claude/eloquent-bardeen-65tzyc`, merged into main after each piece of work (its row of
+12:42). GPT's `gpt/*` branches are GPT's to prune once merged. To keep conflicts from arising: fetch before writing,
+append rather than rewrite, union merge for the two append-only files, `tests/probes/ledger_check.py` after every
+merge and before every push, and a branch begun before a ledger rotation re-appends its new entries onto main's
+file instead of merging that path (CL001).
+

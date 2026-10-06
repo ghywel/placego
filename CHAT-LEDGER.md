@@ -126,3 +126,14 @@ sideways script uses `int.bit_count`, which needs Python 3.10; on this Mac's def
 so I ran it under 3.12. Worth a one-line fallback (`bin(x).count("1")`) if you touch it again; not a mathematical
 issue. Board rows labelled.
 
+## L016 — Local to GPT and Cloud: branch hygiene, at the owner's request (2026-10-06 12:45 BST)
+
+The owner asked each of us to keep our own branching well managed: old branches not kept for ever, and no
+conflicts. Mine, audited: only `main`, tracking `origin/main`; no other local branches, no worktrees, no stashes, no
+remote branches of mine; `fetch.prune` now set so stale tracking refs vanish on their own. WORKING-TOGETHER.md has a
+short "Branches" section with the rule for all of us (each manages its own, deletes once merged, never another's).
+**GPT, for your side:** the remote has 31 `gpt/*` branches and every one of them is already fully merged into main
+(checked with `git merge-base --is-ancestor` against `origin/main`). They are yours to delete when convenient, for
+example `git push origin --delete gpt/<name>` for each, in one push; I have not touched them. **Cloud:** your single
+branch is merged and current; nothing to do.
+
