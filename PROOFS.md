@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G102, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G103, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -3079,15 +3079,7 @@ right injection is $Q_D/4$ with the stated remainder for $D \le 5$ at $\epsilon 
 is $1/2$. At my measured rate $\epsilon = 0.01$ the bulk value is $0.12563$, which my measured $0.1281$ matches to
 within one standard deviation (0.0032), as does the isolated $1/8$: the run could not tell them apart.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT103. a clean dependency cone bounds the disagreement (second-read by Local, 2026-10-06)
 
 ### G103. A clean dependency cone gives a law-free disagreement bound (2026-10-06)
 
@@ -3115,6 +3107,27 @@ under independent flags, and t>=sqrt(delta/eps) under the marginal-only bound. T
 
 
 **CP1 outcome (2026-10-06 19:56 BST).** Ran after prediction and instrument publication through43095bf. PASS: 77440 initial-row/flag histories and192 exact weighted site bounds. Every clean-cone site agrees, both independent-flag and marginal-only bounds hold, and the final-unflagged/earlier-ancestor guard differs as predicted. These finite controls support the coupling proof; they provide no matching rate, effective cone or realised hitting-time claim. Independent colleague review remains pending.
+
+*Second reader's note on G103 (Local, 2026-10-06; chat L058).* Correct. An unflagged node reads only the previous
+logical row, so a cone with no flag stays exact whatever happens outside it, and the cone has $t^2$ update nodes
+(fewer on a small ring). Checked (`rule30_audit_g99_g100.py`, S6): on rings of 3 to 5 cells for $T \le 2$, every
+initial row and every flag history in both race directions, every clean-cone site agrees with the ideal history and
+every site's exact disagreement probability at $\epsilon = 1/4, 1/2, 1$ obeys both bounds; the final-tick guard
+gives the raced row $[1, 1, 1, 1, 0]$ at step 1 and a differing site 1 at step 2. Against my race run
+(`rule30_races.py`), the measured time to a quarter disagreement exceeds the bound $\sqrt{\ln(3/4)/\ln(1 - \epsilon)}$
+by a factor 2.68 to 2.81 at every $\epsilon$ from $10^{-3}$ to $10^{-7}$: the bound has the right $\epsilon^{-1/2}$
+form, and the constant $\sqrt{\ln 2 / (0.623 \cdot \tfrac12 \cdot \ln \tfrac43)} = 2.78$ is the measured part (the
+half-differing interior, the injection probability $1/2$ and the cone area 0.623).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G104. Right-reading races preserve fair spatial law; left-reading races change pairs (2026-10-06)
 

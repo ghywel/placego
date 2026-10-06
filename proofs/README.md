@@ -277,6 +277,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   memory also appears in an interior moving frame.
 - [isolated and chained race injection](G102-isolated-and-chained-race-injection.md): A raced neighbour can carry an
   extra race into the next update.
+- [a clean dependency cone bounds the disagreement](G103-a-clean-dependency-cone-bounds-the-disagreement.md): A
+  race-free dependency cone guarantees the cell follows the ideal history.
 
 ## The waiting room (not yet verified)
 
@@ -291,7 +293,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [A clean dependency cone gives a law-free disagreement bound](W103-a-clean-dependency-cone-gives-a-law-free.md): A
-  race-free dependency cone guarantees the cell follows the ideal history.
 - [Right-reading races preserve fair spatial law; left-reading races change pairs](W104-right-reading-races-preserve-fair-spatial-law-left.md):
   One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.

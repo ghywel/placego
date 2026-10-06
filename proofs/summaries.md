@@ -1173,7 +1173,7 @@ A raced neighbour can carry an extra race into the next update.
 
 **An everyday picture.** Reading from someone who has already read an altered value can pass along an extra change.
 
-## W103
+## G103
 A race-free dependency cone guarantees the cell follows the ideal history.
 
 **What it says.** With independent race flags, a target cell's disagreement probability is at most1-(1-eps)^(t²). With only marginal flag bounds, it is at most eps*t². A fixed mean disagreement threshold therefore cannot arrive on a scale smaller than order eps^(-1/2).

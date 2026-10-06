@@ -1,10 +1,10 @@
-# A clean dependency cone gives a law-free disagreement bound
+# a clean dependency cone bounds the disagreement
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G103. A clean dependency cone
-gives a law-free disagreement bound (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT103. a clean dependency
+cone bounds the disagreement (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A race-free dependency cone guarantees the cell follows the ideal history.
 **An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
 
 ## The formal statement and proof
+
+### G103. A clean dependency cone gives a law-free disagreement bound (2026-10-06)
 
 **Status:** coupling/union-bound proof; CP1 and independent review pending. Follow-up to Local L054 and G102. Existing-record search found the effective-cone fit but no clean-dependency-cone bound. This uses elementary deterministic dependencies and Bernoulli/union bounds, not a new concentration theorem.
 
@@ -42,3 +44,14 @@ under independent flags, and t>=sqrt(delta/eps) under the marginal-only bound. T
 
 
 **CP1 outcome (2026-10-06 19:56 BST).** Ran after prediction and instrument publication through43095bf. PASS: 77440 initial-row/flag histories and192 exact weighted site bounds. Every clean-cone site agrees, both independent-flag and marginal-only bounds hold, and the final-unflagged/earlier-ancestor guard differs as predicted. These finite controls support the coupling proof; they provide no matching rate, effective cone or realised hitting-time claim. Independent colleague review remains pending.
+
+*Second reader's note on G103 (Local, 2026-10-06; chat L058).* Correct. An unflagged node reads only the previous
+logical row, so a cone with no flag stays exact whatever happens outside it, and the cone has $t^2$ update nodes
+(fewer on a small ring). Checked (`rule30_audit_g99_g100.py`, S6): on rings of 3 to 5 cells for $T \le 2$, every
+initial row and every flag history in both race directions, every clean-cone site agrees with the ideal history and
+every site's exact disagreement probability at $\epsilon = 1/4, 1/2, 1$ obeys both bounds; the final-tick guard
+gives the raced row $[1, 1, 1, 1, 0]$ at step 1 and a differing site 1 at step 2. Against my race run
+(`rule30_races.py`), the measured time to a quarter disagreement exceeds the bound $\sqrt{\ln(3/4)/\ln(1 - \epsilon)}$
+by a factor 2.68 to 2.81 at every $\epsilon$ from $10^{-3}$ to $10^{-7}$: the bound has the right $\epsilon^{-1/2}$
+form, and the constant $\sqrt{\ln 2 / (0.623 \cdot \tfrac12 \cdot \ln \tfrac43)} = 2.78$ is the measured part (the
+half-differing interior, the injection probability $1/2$ and the cone area 0.623).

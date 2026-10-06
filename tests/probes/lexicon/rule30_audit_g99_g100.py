@@ -22,6 +22,11 @@ CHECKS (GPT's claims at 827e006):
      (right) or -1..-D (left) with weights eps^k (1 - eps)^(D - k), the next site synchronous; by exact enumeration of
      every old word and flag word for D = 0..5 and eps = 0, 1/100, 1/4, 1/2, 1: right injection = Q_D / 4 with
      Q_0 = 1/2, Q_D = 1/2 + (eps/2) Q_(D-1), remainder (eps/2)^(D+1) / (4 (2 - eps)) to 1/(8 - 4 eps); left = 1/2.
+  S6 (G103, added 2026-10-06 at 43095bf): on rings of 3 to 5 cells, T = 1, 2 steps, every initial row and every flag
+     history, both race directions with races.c's conventions: every site whose dependency cone holds no flag agrees
+     with the ideal history; with exact flag weights at eps = 1/4, 1/2, 1, every site's disagreement probability is at
+     most 1 - (1 - eps)^M (M the deduplicated cone size) and at most eps t^2; the final-tick guard (ring of 5, black
+     cell at 2, one right race at site 0 on step 1) makes site 1 differ on step 2.
 """
 import random
 from fractions import Fraction as F
@@ -164,4 +169,64 @@ for eps in (F(0), F(1, 100), F(1, 4), F(1, 2), F(1)):
         ok5 &= r_ == Q / 4 and lim - r_ == (eps / 2) ** (D + 1) / (4 * (2 - eps)) and l_ == F(1, 2)
 check('S5 G102: right chain Q_D/4 with the stated remainder; left 1/2 (D <= 5; eps = 0, 1/100, 1/4, 1/2, 1)', ok5,
       'q at eps = 1/100: %.5f' % float(1 / (8 - 4 * F(1, 100))))
+def race_step(row, flags, mode):
+    W_ = len(row)
+    new = [0] * W_
+    order = range(W_) if mode == 'L' else range(W_ - 1, -1, -1)
+    for i in order:
+        l = row[(i - 1) % W_]
+        r = row[(i + 1) % W_]
+        if flags[i] and mode == 'L' and i > 0:
+            l = new[i - 1]
+        if flags[i] and mode == 'R' and i < W_ - 1:
+            r = new[i + 1]
+        new[i] = R30(l, row[i], r)
+    return new
+
+
+def ideal_step(row):
+    W_ = len(row)
+    return [R30(row[(i - 1) % W_], row[i], row[(i + 1) % W_]) for i in range(W_)]
+
+
+ok6 = True
+for W_ in range(3, 6):
+    for T_ in (1, 2):
+        cones = {}
+        for i in range(W_):
+            cone = set()
+            for s_ in range(1, T_ + 1):
+                for d in range(-(T_ - s_), T_ - s_ + 1):
+                    cone.add(((i + d) % W_, s_))
+            cones[i] = cone
+        for mode in 'LR':
+            prob = {e: [F(0)] * W_ for e in (F(1, 4), F(1, 2), F(1))}
+            for r0 in range(2 ** W_):
+                row0 = [(r0 >> k) & 1 for k in range(W_)]
+                ideal = row0
+                for _ in range(T_):
+                    ideal = ideal_step(ideal)
+                for fh in range(2 ** (W_ * T_)):
+                    flags = [[(fh >> (s_ * W_ + k)) & 1 for k in range(W_)] for s_ in range(T_)]
+                    row = row0
+                    for s_ in range(T_):
+                        row = race_step(row, flags[s_], mode)
+                    nf = bin(fh).count('1')
+                    for i in range(W_):
+                        clean = all(not flags[s_ - 1][j] for (j, s_) in cones[i])
+                        if clean and row[i] != ideal[i]:
+                            ok6 = False
+                        if row[i] != ideal[i]:
+                            for e in prob:
+                                prob[e][i] += e ** nf * (1 - e) ** (W_ * T_ - nf) / 2 ** W_
+            for e in prob:
+                for i in range(W_):
+                    M = len(cones[i])
+                    ok6 &= prob[e][i] <= 1 - (1 - e) ** M and prob[e][i] <= min(1, e * T_ ** 2)
+row = [0, 0, 1, 0, 0]
+r1 = race_step(row, [1, 0, 0, 0, 0], 'R')
+r2 = race_step(r1, [0] * 5, 'R')
+i2 = ideal_step(ideal_step(row))
+check('S6 G103: clean cones agree; disagreement within both bounds (rings 3..5, T <= 2, both directions); final-tick '
+      'guard', ok6 and r1 == [1, 1, 1, 1, 0] and r2[1] != i2[1], 'raced step 1 %s' % r1)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
