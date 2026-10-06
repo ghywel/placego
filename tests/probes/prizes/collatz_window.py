@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """collatz_window.py: the window principle on the Collatz side. While an orbit fits in n binary digits, its parity
-sequence cannot repeat a block of n symbols. (Local, 2026-10-05; PRIZE-PROBLEMS.md section 7.5; the Rule 30 twin is
+sequence cannot repeat a block of n symbols. (Local, 2026-10-05; COLLATZ-PRIZE.md section 5; the Rule 30 twin is
 RULE30-PRIZE.md section 8.58.)
 
 RUN-ON:     cpu, one core, pure Python 3
 COMMAND:    python3 tests/probes/prizes/collatz_window.py
 COST:       about a minute.
 
-THE STATEMENTS (proved in section 7.5; all follow from Terras's bijection between residues modulo 2^n and parity
+THE STATEMENTS (proved in COLLATZ-PRIZE.md section 5; all follow from Terras's bijection between residues modulo 2^n and parity
 blocks of length n, which holds on the rationals with odd denominator).
   W1 (equal futures, congruent presents). Let x = N/D with D odd, and let N_i / D be its i-th iterate under
      T(x) = x/2 or (3x + 1)/2. The parity blocks of length n that start at times i and j are equal exactly when

@@ -62,7 +62,7 @@ Proved here (2026-10-05, Local; each is elementary and has a pre-registered chec
   finite. So LR holds for every pure rotation, rational (Jen) or irrational.
 - **Theorem A′, the window principle** (§8.58). A block of two adjacent columns recurs at time $a'$ only if its
   length is at most $L + a'$. It contains Theorem A and has a two-line proof. Its Collatz twin is Terras's
-  bijection (PRIZE-PROBLEMS.md §7.5).
+  bijection (COLLATZ-PRIZE.md §5).
 - **Lemmas B1 to B3, Theorems A‴ and A⁗, Corollary F** (§8.59). The left diagonals' periods are unbounded, so
   infinitely many diagonals are black for ever; a repeat of the trace, being a white run in the later row, stays
   a growing distance below Theorem A′; a column 1 that begins with near-squares at unbounded periods is excluded
@@ -151,7 +151,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 | Q3, a machine-found certificate | **CLOSED** (§8.61) | Assessed before any encoding: a certificate is a potential falling at every forced cell; walks of length 0.83 d from every depth force it to be linear in the seed, and a potential of that kind is the bounded-debt statement of Q1 written as log N. Not a separate route. | Reopen only with a named finite family of potentials to search. |
 | Q6, LR refuted by construction | **PART** | The exact records cover every column 1: no left half is zero from any depth up to 85 onwards (§8.36, §8.37). | Depths beyond the records. Nothing constructive has been tried. |
 | Q7, the regime between | **PART** | Kicks cannot thin out faster than geometrically (Theorem A). Every Sturmian column 1 is excluded (Theorem E). Codings by arcs are excluded for almost every rotation number (Theorem E″). Every column 1 that begins with near-squares at unbounded periods is excluded: period-doubling, Chacon, substitution fixed points starting with a double letter (Corollary F, §8.59). Thue–Morse and paperfolding are excluded for every left edge up to 15,868 cells (Theorem A⁗). | Thue–Morse and paperfolding for every left edge: one-phase adaptive waiting bound below slope 3 and sublinear period growth on every admissible branched left side (§8.59; GPT G2/G6). G6 proves worst phase is at most any chosen phase plus P−1, including births. Rudin–Shapiro. Arcs with unrelated ends when the partial quotients stay small. Rotations of a torus. Kicked wheels. |
-| Q9, the Collatz twin | **PART** | The least-residue lemma (PRIZE-PROBLEMS.md §7.4). The window principle on both sides, W1 to W3 (§7.5). Exponential sums cannot reach a single case. | The literature check (below). A Collatz statement beyond complexity $1.71\,n$. |
+| Q9, the Collatz twin | **PART** | The least-residue lemma (COLLATZ-PRIZE.md §4). The window principle on both sides, W1 to W3 (COLLATZ-PRIZE.md §5). Exponential sums cannot reach a single case. | The literature check (below). A Collatz statement beyond complexity $1.71\,n$. |
 | Rung 3, periods 3 to 6 (RULE30-PRIZE.md §6) | **PART** | Horizons measured for every word up to period 4 (§8.42). Theorems A, A′, B and E hold for every period. | Nothing specific to periods 3 to 6 has been tried since. |
 
 *Finished or closed.*
@@ -203,7 +203,7 @@ settled by a theorem; do not reopen without new evidence. **BLOCKED**: cannot be
 
 | Check | Status | What has been done | What is left |
 |---|---|---|---|
-| The literature for W3 (PRIZE-PROBLEMS.md §7.5) and for Theorems A, A′ and E | **DONE** | Searched 2026-10-05 (PRIOR-ART.md, last entry): W2 is Dubickas 2009, W1 and W3 are in three 2026 notes; the Rule 30 theorems were not found (Kopra and Condrey are the nearest). | Read Dubickas 2009 in full; check Lemma B2 (§8.59) against Jen 1986 and Rowland 2006. |
+| The literature for W3 (COLLATZ-PRIZE.md §5) and for Theorems A, A′ and E | **DONE** | Searched 2026-10-05 (PRIOR-ART.md, last entry): W2 is Dubickas 2009, W1 and W3 are in three 2026 notes; the Rule 30 theorems were not found (Kopra and Condrey are the nearest). | Read Dubickas 2009 in full; check Lemma B2 (§8.59) against Jen 1986 and Rowland 2006. |
 | The math check (§9) on every document edited since Local took the lead | **DONE** | Node installed by the owner 2026-10-05; the check passes on RULE30-PRIZE.md, PRIZE-PROBLEMS.md, PERIOD-TWO.md and CLOUD-LOCAL.md. | Run it after every edit. |
 | G1, error-free transformations on each GPU (PRIZE-PROBLEMS.md §6) | **OPEN**, not written | Nothing. It is outside Rule 30. | The job and its prediction. |
 
@@ -295,7 +295,7 @@ prize needs a statement about every single finite configuration. The questions a
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
    Measured (§8.51): between 0.66 and 1.34 at $w = 24$, with no trend. Independent up to a constant factor.
 
-9. **[PART]** **The Collatz twin** (PRIZE-PROBLEMS.md §7.1 to §7.3). Through Bernstein and Lagarias's conjugacy, Collatz asks
+9. **[PART]** **The Collatz twin** (COLLATZ-PRIZE.md §1 to §3). Through Bernstein and Lagarias's conjugacy, Collatz asks
    the same question as period 2: a bijection permutive in its newest input, fed an input of finite support, and
    whether the output past the free part behaves like coins. Measured to 30 bits: the free bits pay exactly
    (Terras), the count past them follows the coin to 0.5%, and the excess stays below 3.7 bits. Collatz has what
@@ -303,10 +303,10 @@ prize needs a statement about every single finite configuration. The questions a
    question becomes bounding exponential sums $\sum_v e(h\,y_v / 2^j)$ over the parity vectors that stay up (the
    2-adic counterpart of Tao's 2019 estimate). The measured Fourier structure fades with width. A proof there would
    show what a Rule 30 proof must replace.
-   **Sharpened (PRIZE-PROBLEMS.md §7.4).** For $r < 2^k$, $T^k(r)$ is exactly the least residue of the Syracuse
+   **Sharpened (COLLATZ-PRIZE.md §4).** For $r < 2^k$, $T^k(r)$ is exactly the least residue of the Syracuse
    offset modulo $3^a$ (proved, checked to $k = 18$). So the twin statement is about the binary digits of a
    remainder modulo a power of 3: Tao's object itself, read in the other base.
-   **Carried both ways (PRIZE-PROBLEMS.md §7.5, RULE30-PRIZE.md §8.58).** One exact statement holds in both
+   **Carried both ways (COLLATZ-PRIZE.md §5, RULE30-PRIZE.md §8.58).** One exact statement holds in both
    problems, the window principle: a block of the trace can repeat only if it is no longer than the state is
    large. For Collatz it gives, in three lines from Terras, that the parity sequence of an infinite orbit has
    complexity at least $1.71\,n$, so no rational has a Sturmian parity sequence. For Rule 30 it gives Theorem A′
@@ -325,6 +325,7 @@ prize needs a statement about every single finite configuration. The questions a
    lanes in the repository, the method, and what to do in the first hour.
 4. `RULE30-PRIZE.md`: the honest summary at the top, then §5, §7, §8.4 to §8.14, §8.20, §8.36 to §8.42, and
    §8.45 to §8.47 (where the problem sits among its relatives).
+   The Collatz twin has its own record since 2026-10-06, `COLLATZ-PRIZE.md`, with its own board (§6).
 5. `PRIOR-ART.md`: the dated surveys, especially Condrey, Jen and Kopra, Rowland, the prime-gap parallel, the
    siblings in arithmetic, and the owner's wide survey.
 6. `tests/probes/PROBES.md`: the index of every probe (row `lexicon/`).

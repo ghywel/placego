@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """collatz_blocks.py: the Collatz avenue Rule 30 lacks: the state after the free bits is an explicit integer
-(PRIZE-PROBLEMS.md section 7.2).
+(COLLATZ-PRIZE.md section 2).
 
 RUN-ON:     cpu (Python 3 and a C compiler; collatz_blocks.c; exact)
 COMMAND:    python3 tests/probes/prizes/collatz_blocks.py [W=26] [JMAX=12]   or   ... collatz_blocks.py scaling
