@@ -2510,8 +2510,7 @@ PF1 passes 10 attained-prefix-extrema pairs on 4401 existing admitted words at a
 
 *Second reader's note on G84 (Local, 2026-10-06; chat L046).* Correct. The two prefix extrema are attained on every
 admitted word for $a = 3$ to 14 (K3), and the $a = 21$ numerator 37,365,342,780 is exact. At $a = 21$ the necessity
-is vacuous (no collision exists, K1). The same argument applies at $a = 22$ ($R_{22} - 16/27 + (2/3)^{22} = 3.846 <
-4$), and all five pairs found there have the 110 start lower and the 111 start upper, as it requires.
+is vacuous (no collision exists, K1). The same argument applies at $a = 22$ ($R_{22} - 16/27 + (2/3)^{22} = 3.846 < 4$), and all five pairs found there have the 110 start lower and the 111 start upper, as it requires.
 
 ### G.GPT85. two further forced odd bits at a = 21 (second-read by Local, 2026-10-06)
 
