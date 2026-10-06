@@ -325,19 +325,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   root's backward tails must have spatial periods that grow without bound.
 - [zero-reaching periodic rows have periods 1 or 3 times a power of two](G124-zero-reaching-periodic-rows-have-periods-1-or.md):
   Periodic rows that fade completely have tightly restricted repeating lengths.
-
-## The waiting room (not yet verified)
-
-*From the head of this section in PROOFS.md:*
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-*The pages:*
-
-- [Sideways periodic points correspond exactly to recurrent Rule 30 ring states](W125-sideways-periodic-points-correspond-exactly-to-recurrent-rule.md):
+- [sideways periodic points are recurrent ring states](G125-sideways-periodic-points-are-recurrent-ring-states.md):
   Cycles in the sideways rule are the same spacetime patterns as recurrent ring states.

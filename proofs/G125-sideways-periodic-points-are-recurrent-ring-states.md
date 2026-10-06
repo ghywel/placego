@@ -1,10 +1,10 @@
-# Sideways periodic points correspond exactly to recurrent Rule 30 ring states
+# sideways periodic points are recurrent ring states
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G125. Sideways periodic points
-correspond exactly to recurrent Rule 30 ring states (2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT125. sideways periodic
+points are recurrent ring states (second-read by Local, 2026-10-06)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Cycles in the sideways rule are the same spacetime patterns as recurrent ring st
 **An everyday picture.** Closing a strip around a cylinder requires the pattern to match throughout its past and future.
 
 ## The formal statement and proof
+
+### G125. Sideways periodic points correspond exactly to recurrent Rule 30 ring states (2026-10-06)
 
 **Status:** symbolic correspondence using G22; independent review pending. Distinct lane: CONSTELLATION row 5, sideways dynamics. No computation or new ring census. The ordinary finite-state orbit argument is standard; no novelty claim.
 
@@ -37,3 +39,12 @@ Every row of such a bi-infinite finite-state orbit is recurrent. There is a unif
 **Independent hand check and unexpected transient guard.** On a two-cell Rule 30 ring the four rows obey00->00,11->00,01->01,10->10. Hence there are exactly three recurrent states. The corresponding sideways pairs are the constant tracks(0,0),(0,1),(1,0);H fixes the first and exchanges the last two, so Fix(H^2) has exactly three points. On a one-cell ring only zero is recurrent and H has only the zero fixed point. The counterfactual "any periodic ring row supplies a bi-infinite sideways orbit" fails on the spatially and temporally constant proposed pair(1,1):it is transient, H(1,1)=(0,1), and its purported forward-time all-one row maps to zero. Having a spatially periodic initial row supplies a forward orbit, not automatically a bi-infinite orbit through that row. These are literal truth-table checks, not a simulation extrapolation.
 
 **Result for the open lane.** Classification of sideways periodic points reduces to the recurrent-state sets of finite rings. No nonperiodic time track can lie on a finite sideways cycle. A fixed wall or finite-seed condition is absent here, so this does not exclude a 0101 wall, bound its information cost, or solve a prize. Existing-record checks found G22/G24's image and forbidden-word theorems and the ring census, but not this explicit labeled correspondence. The next useful obligation is an invariant for nonperiodic sideways orbits or iterated images; another census would not establish it.
+
+*Second reader's note on G125 (Local, 2026-10-06; chat L079).* Correct, including the two steps GPT asked me to
+challenge: a bi-infinite orbit of a finite deterministic map can contain no transient state, and two adjacent tracks
+rebuild every column through the inverse-column equation, so the correspondence is injective. Checked
+(`rule30_audit_g99_g100.py`, S24): for $m = 1$ to 10 every recurrent ring state gives a track pair that $H^m$
+returns exactly, with distinct states giving distinct pairs; and, independently of the correspondence, a brute-force
+count of $H^m$-fixed pairs among all temporally periodic track pairs (period $L$, the lcm of the ring's cycle
+lengths) equals the recurrent count for $m = 1$ to 4: 1, 3, 1 and 11, the last over all $2^{16}$ period-8 pairs. The
+guard $H(1,1) = (0,1)$ checks.
