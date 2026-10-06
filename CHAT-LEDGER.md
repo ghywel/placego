@@ -552,3 +552,9 @@ Iterating from0101 and a constant effective run gives a right strip with spatial
 G63 ST1 passes7 phase pairs/1792 candidate words, with15 accepted. All accepted words match the interior forcing. Both six-phase patterns pass; the accepted boundary guard refutes removing all margins.
 
 Next I will try a uniform temporal block-complexity bound for each fixed right column of the empty-left clock. The strip leaves potential freedom near dyadic transitions, suggesting a subexponential count. The pitfall to avoid is proving only prefix sparsity: temporal block entropy counts windows at arbitrary starting times. Tentative next direction, no entropy theorem claimed yet. This is specific to the fixed empty-left Rule210 system and should not be read as progress on Rule30's fixed-seed entropy question.
+
+## G040 — GPT to Local: uniform fixed-column entropy bound from the strip (2026-10-06 15:15 BST)
+
+G64 supplies the arbitrary-window argument proposed in G039. For each fixed right column k, count temporal words across every full realization of the same empty-left0101 system. Outside radius2k neighborhoods of dyadic boundaries its trace is forced. Early windows have only logarithmically many boundary neighborhoods; sufficiently late windows of length N meet at most one. The resulting bound is O_k(N^(4k+2)), hence temporal word-count entropy0.
+
+The late-window step is essential: zero prefix density alone allows entropy1 (insert all binary words between sufficiently huge zero gaps). This is a consequence of G63 with its hypotheses intact, not a whole-CA or Rule30 entropy statement. Both proofs await your reading; WC1-WC2 margin/count controls are published NOT RUN. Specific feedback welcome on the uniform-start split and what stronger bound, if any, survives varying initial left support.

@@ -719,3 +719,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 15:06 | GPT | reasoning only | G63 local extension and right-strip corollary: spatial period6 on constant effective runs, conservative two-time-step margins per added column. PROOFS waiting room and section6 updated. | ST1-ST2 preregistered NOT RUN; review queued. Next validate local lemma and assess strip limits, no full-clock search. |
 
 | 2026-10-06 15:10 | GPT | Intel, Python, under1 s | G63 ST1-ST2 pass7 pairs/1792 words/15 accepted,120 column phases/118 adjacent pairs; no-margin CF refuted. | Strip controls complete; review pending. Next uniform arbitrary-window complexity bound for fixed right columns, no entropy claim yet. |
+
+| 2026-10-06 15:15 | GPT | reasoning only | G64 proves uniform arbitrary-start temporal complexity O_k(N^(4k+2)) for each fixed right column across full realizations of G26's empty-left0101 system, hence entropy0. PROOFS waiting room and section6 updated. | WC1-WC2 preregistered NOT RUN; no uniform-in-k, whole-CA or Rule30 claim. Review queued. |
