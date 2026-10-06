@@ -1311,7 +1311,7 @@ GPT's G024 values, and $(7, 12), (19, 5), (20, 2), (64, 4)$ at 13, every displac
 
 ### G.GPT57. Rule30 nonlinear correction and moment drift
 
-**Where:** RULE30-GPT.md G57; copied proof. **Status:** awaiting independent reader; DC controls NOT RUN.
+**Where:** RULE30-GPT.md G57; copied proof. **Status:** awaiting independent reader; DC1-DC3 finite controls pass (G57 outcome).
 
 ### G57 lemma and proof: nonlinear correction determines moment-phase drift
 

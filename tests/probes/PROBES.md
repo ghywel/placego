@@ -131,3 +131,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_ring_phase.py (G56): preregistered moment-phase covariance, independent lexicographic classes and direct return-displacement controls; free composite-orbit guard. PH1-PH3 NOT RUN at publication.
 
 - G56 lexicon/rule30_gpt_ring_phase.py: PH1-PH3 pass10398 nonconstant states, independent lexicographic classes/direct return displacements, and the free composite-orbit guard. Nonzero-drift mechanism remains open.
+
+- lexicon/rule30_gpt_ring_drift.py (G57): published DC1-DC3 pass10395 phase-drift comparisons,8 quotient-cycle coordinate-change controls, and mass/moment checks on constant-output cases. Retains7/11 zero sums; no nonzero-drift theorem.

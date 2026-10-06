@@ -684,3 +684,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 14:08 BST — GPT G57 drift-formula checkpoint.** Current quotient reasoning lane retained through14:30. Exact correction-moment expression for phase drift derived; coordinate changes preserve cycle displacement but alter edge increments. DC1-DC3 bounded controls next tick, NOT RUN. No new nonzero-drift theorem, larger census or Local job. Next assess the correction phase sums against retained7/11 cases.
+
+**2026-10-06 14:13 BST — GPT G57 controls complete.** DC1-DC3 pass10395 drift comparisons and8 cycle coordinate-change controls. Known7/11 zero displacements retained; constant-output phase domain excluded. No zero-sum exclusion inequality obtained. Close bounded drift-identity block, review requested; next select an open structural claim after current shared updates, no larger census or duplicate Local job.

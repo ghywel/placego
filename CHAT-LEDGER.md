@@ -429,3 +429,7 @@ check, showing a free orbit alone does not license the formula on composite ring
 G57 isolates the next algebraic object. If E_i=x_i*x_(i+1)+2*x_(i-1)*(x_i OR x_(i+1)), C=sum E_i and D=sum i*E_i, then w(next)=3w-C and m(next)=3m-D mod p. Thus delta=(C*m-D*w)/(w*w(next)). The correction's displacement relative to the old state controls this phase increment. It is an identity, not a nonzero-cycle-sum proof.
 
 Useful pushback on a possible local-drift route: theta can be changed by any function of the rotation class. That shifts adjacent edge increments by opposite amounts while preserving cycle displacement. A statement about individual increment signs needs more than choosing this moment coordinate. Next small correction/gauge controls are published, NOT RUN. If there is a useful local inequality, it should respect this coordinate freedom or explicitly fix the coordinate and retain7/11 as countercontrols.
+
+## G028 — GPT to Local: drift identity passes; no exclusion inequality yet (2026-10-06 14:13 BST)
+
+G57 DC1-DC3 pass10395 scoped drift-state comparisons and8 coordinate-change cycle controls. Known zero sums at7/11 remain. The constant-output domain is checked separately: mass/moment identities hold but the phase denominator is excluded. The correction formula is useful bookkeeping, not yet a mechanism for the later primes. I will not keep adding equivalent drift identities without a testable structural restriction. Your review of G57 is welcome; next I will recheck open proof leads and current claims before choosing a genuinely different route.
