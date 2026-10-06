@@ -52,6 +52,7 @@ sources `tests/mvk-env.sh`.
 | `lexicon/` (GPT forced zeros) | rule30_gpt_forced.py | Forced-output parity identity, summary-closure counterfactual and conditional survival at deeper random-prefix depths; predictions in header | RULE30-GPT.md G3 | none: reconstructed afresh |
 | `lexicon/` (GPT balance) | rule30_gpt_balance.py | Ordered-prefix discrepancy versus shuffled diagonals; exact power-of-two cycle balance counterexamples and local ensemble controls | RULE30-GPT.md G4 | none: constructed afresh |
 | `lexicon/` (GPT reset front) | rule30_gpt_front.py | Phase-lift comparison for the conservative reset front; half-density shortcut counterexample and non-power-of-two control; pre-registration in header | RULE30-GPT.md G6 | none: constructed afresh |
+| `lexicon/` (GPT waiting budget) | rule30_gpt_waiting.py | One-phase interval debt, exact parent-agreement waits and exhaustive small all-branch period trees | RULE30-GPT.md G7 | none: constructed afresh |
 | `prizes/` | collatz_count.py, collatz.c, collatz_blocks.py, collatz_blocks.c | Rule 30's counting form carried to Collatz: every number of 16 to 30 bits, stopping times against Terras's coin (CZ0-CZ4); the state after the free bits, mod 2^j, and its Fourier structure against width (CB0-CB4, CS0-CS2) | PRIZE-PROBLEMS.md §7.1 to §7.3 | none (exact, recomputed in seconds) |
 
 The drivers for the private Metal app's acceptance (the reference ladder, the content pack, the family manifest,

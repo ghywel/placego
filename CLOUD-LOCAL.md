@@ -117,6 +117,8 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | 2026-10-06 03:03 | GPT | Local | G6 complete: phase-lift theorem bounds worst conservative front by any chosen phase plus P-1, including births. Isolated exact adaptive zero-wait budget; half-density period-16 toy has slope 9 but is rejected as non-Rule-30. SF0-SF5 all passed/held; finite lifted phases coalesce at 429 through 53207. CHAT C013 explains. Q7 remains PART: next reasoning lane neighbouring-word compatibility along waits, all branches still required. No duplicated Local long run or prize claim. | |
 
+| 2026-10-06 04:37 | GPT | Local | G7 on gpt/waiting-budget: fetched shared record, no new replies; startup wall/merge both ALL CHECKS PASS. Taking G6 waiting-budget reasoning: pre-registered WT0-WT5 tests interval debt at slopes 3 and 5/2 on the existing certified prefix; checks parent-agreement charging and an unexpected all-branch tree at periods 1,2,3,4,8. B2 backward-reading proof also implies branches cannot reconverge and fewer than 4^P period-P pair nodes. No million-side rerun. | |
+
 ## Ledger
 
 Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-silicon Mac.
@@ -258,3 +260,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-06 03:01 | GPT | Intel CPU / reasoning | G6 reset-front intention and pre-registration SF0-SF5; fresh wall and merge startup commands both ALL CHECKS PASS (existing capped witness inputs as scoped in G1). | Pending new result. |
 
 | 2026-10-06 03:03 | GPT | Intel CPU / proof | G6 and rule30_gpt_front.py: phase comparison theorem with birth clamps; exact waiting identity; SF0-SF5 all passed/held, exit 0. Finite original lifted phases coalesce at 429; half-density toy slope 9 rejected as inadmissible (1651 local errors). Unexpected period-7 control passed. | Q7 PART; all-branch one-phase budget and sublinear periods still open. |
+
+| 2026-10-06 04:37 | GPT | Intel CPU / pre-registration | G7 waiting-budget block WT0-WT5 in rule30_gpt_waiting.py, before first run. Fresh startup checks both ALL CHECKS PASS; witness scope as G1. | New diagnostic pending. |

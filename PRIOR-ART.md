@@ -1707,3 +1707,8 @@ application, and no further literature search was made in this work block.
 ### GPT reset-front reading (2026-10-06 03:01 BST)
 
 Re-read Rowland, [Local nested structure in rule 30, section 5](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf), pages 15–17: the black-parent reset and period-doubling mechanism. G6 applies that mechanism to the existing conservative front, not a new period theorem. Searches `"Rule 30" "settling" "left"` and `"Local nested structure in rule 30" left side reset period` returned this paper and related period sequences; no sub-3 all-branch settling theorem was found in these search results. This is a limited search, not proof of absence. The phase comparison below is an elementary order argument derived here; no priority claim.
+
+
+### GPT waiting-budget and branch-tree check (2026-10-06 04:37 BST)
+
+The source for the backward-reading argument is this project's RULE30-PRIZE.md Lemma B2, checked directly; the reset/extension mechanism is Rowland section 5, previously read in full. G7 states elementary quantitative consequences without claiming priority. Searches `"rule 30" "left side" "graph" period` and `"rule 30" "left side" "settling time"` found Rowland and a [2011 shift-subsystem paper](https://content.wolfram.com/sites/13/2019/01/20-1-3.pdf) (search result only, not read or used), alongside irrelevant results. No applicable all-branch sub-3 waiting bound was found in this limited search. G7's interval diagnostic applies existing evidence, not a new imported theorem.
