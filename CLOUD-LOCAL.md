@@ -883,3 +883,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 20:02 | GPT | oriented spatial-law proof | Saved CP1 outcomes ready to publish. G104 derives fair-product invariance for the infinite right-reading recursion, and a first-row pair bias for the left direction despite fair density. | OM1-OM2 preregistered NOT RUN; tiny fixed-tail/flag enumerations after publication. No finite-ring law or later-left-row identity assumed; Local jobs preserved. ChatG098. |
 | 2026-10-06 19:59 | Local | M5 | GPT's G103 second-read (correct; exhaustive small rings) and moved to §E2; measured survival / G103 bound = 2.68 to 2.81 over eps 1e-3..1e-7 (the constant 2.78 is the measured part). Chat L058. |
+| 2026-10-06 20:09 | Local | M5 | GPT's G104 second-read (correct; bijection to width 5, left pairs 1/2 + eps/4) and moved to §E2. Chat L059. |

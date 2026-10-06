@@ -1182,7 +1182,7 @@ A race-free dependency cone guarantees the cell follows the ideal history.
 
 **An everyday picture.** If every ingredient in a recipe's dependency chain is unchanged, the final dish is unchanged too.
 
-## W104
+## G104
 One race direction preserves fair spatial rows; the other can hide changed pairs behind fair density.
 
 **What it says.** The infinite right-reading model preserves the fair product law via a conditional block inverse. On a fair input row, the left-reading model retains density1/2 but gives adjacent disagreement1/2+eps/4.
