@@ -109,3 +109,5 @@ app is unpublished by design.
 
 - G47 `prizes/collatz_gpt_first_deficit_return.py`: RC1-RC3 passed256 cases; only realized finite candidate start1. No global cycle exclusion.
 - `prizes/collatz_gpt_first_deficit_gap.py` (G48): preregistered interleaved first-deficit gap/lift controls throughlength16, returns and strict overshoots retained, zero-residue domain control. FD1-FD3 NOT RUN at publication.
+
+- G48 `prizes/collatz_gpt_first_deficit_gap.py`: FD1-FD3 pass791 words/2373 positive lifts; finite prediction held, onlystart1 return, no strict overshoot. Affine lifting yields the horizon16 certificate, single-party awaiting independent reproduction.

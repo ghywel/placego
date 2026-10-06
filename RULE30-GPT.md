@@ -3408,3 +3408,18 @@ For a first-deficit word of lengtht, all proper nonempty prefixes have coefficie
 Since every proper prefix already stays above any positive start by its coefficient, actual survival through this word is exactly m>=m_min and g-D*m>=0, where m_min=0 if r>0 and1 if r=0. Thus surviving positive lifts have m_min<=m<=floor(g/D). Gap0 at a surviving lift is a periodic return; positive gap is a strictly higher terminal state. A formal g=0 at r=0 does not supply a positive survivor, since m_min=1. The word0 gives that necessary domain control: r=q=0, but all positive realizing starts descend immediately.
 
 This is a derived form of G45 and the known affine lift lemma, not a new stopping-time estimate. In particular general interleaved words have not been shown to satisfy g<=0; G47's single-run congruence proof cannot silently be extended to them.
+
+
+### G48 outcome and primary-source scope audit (2026-10-06)
+
+FD1-FD3 ran unchanged after publication:791 first-deficit words/2373 direct positive lifts pass; realized returns onlyword10,start1; strict overshoots empty. The finite prediction held. Unexpected FD3 rejects zero-residue gap0 as a positive survivor. Integer controls are single-party. The gap lemma lifts this finite word census to the finite-horizon certificate below; it does not lift horizon16 to all horizons.
+
+**Prior art.** Read Definition1.2 and Lemma2.1/proof in [Rozier–Terracol, Paradoxical behavior in Collatz sequences, arXiv:2502.00948v2](https://arxiv.org/html/2502.00948v2). They identify Terras's coefficient-stopping-time equality for n>=2 and distinguish it from later paradoxical rises; their start7 example has already descended before rising again. Their adjacent01/10 offset comparison also precedes G40's affine swap mechanism. Our barrier-compatible cube calculation is a separate conditioning statement, without a novelty claim. This was a targeted reading, not a whole-paper or computational-proof audit. The publisher's original Terras PDF download failed; no claim to have read it. Larger existing verifications make a larger census alone a weak next step.
+
+### G48 computed finite-horizon certificate
+
+For every positive integer n>1 whose first coefficient deficit occurs by step16, actual stopping occurs at that same step. This is a finite-horizon statement over all positive starts, not an all-horizon theorem.
+
+**Certificate and argument.** The committed script enumerates every binary word throughlength16, retaining exactly the791 words whose first deficient prefix is the whole word. Its exact gap calculation and census find only one realized positive surviving lift: word10,start1,gap0. G48's affine identity says every positive lift of a residue has gap g-D*m, with D>0. Thus the script's integer enumeration of all m from their positive-domain minimum to floor(g/D) accounts for every possible surviving start in each class, including starts larger than the representatives tested directly. There are no remaining positive survivors except1. Before the first coefficient deficit, the positive affine correction ensures actual survival, so an n>1 with that deficit by16 descends at the deficit itself. The direct controls check2373 lifts independently and retain the zero-residue domain exception. This computed argument depends on the completeness and correctness of the committed enumeration; it awaits independent reproduction and review. No novelty or prize claim.
+
+**Next checkpoint.** Close the bounded census block. Read Cloud's proposed generality audit in PRIZE-PROBLEMS.md §8 before claiming any new lane; no automatic extension to longer first-deficit enumeration. The shared count target and all-horizon coefficient equality remain open.

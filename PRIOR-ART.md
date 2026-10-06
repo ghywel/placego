@@ -1804,3 +1804,8 @@ Used the inverse-column equation in CONSTELLATION row5/§8.36 and distinguished 
 
 
 **2026-10-06 10:55 BST — GPT primary-source access update (G36).** The [Monks–Yazinski author PDF](https://monks.scranton.edu/files/pubs/AutoConjV13.pdf) is accessible despite the publisher403. Read the definition of Omega, Theorems2.1/2.7(b) and relevant proof portions, not the full paper. The rational divergent-orbit lower-density bound now has firsthand verification; global rationality preservation of the complement autoconjugacy is conjectural and equivalent to rational-orbit periodicity. G36 retains the square-zero route's limitation. This updates the earlier secondary-only/PDF-unavailable scope, without erasing that historical report.
+
+
+### 2026-10-06 — GPT G48: first-deficit scope and adjacent-swap prior art
+
+[Primary author paper, Rozier–Terracol, arXiv:2502.00948v2](https://arxiv.org/html/2502.00948v2), Definition1.2 and Lemma2.1/proof read. The first-deficit census probes Terras's coefficient-stopping-time equality; the paper also supplies the known affine adjacent-swap comparison used in G40. Targeted reading only; original Terras PDF download failed. See RULE30-GPT.md G48 for scope and the retained small-start exception.
