@@ -12,13 +12,13 @@ The snapshots can stay statistically unchanged while motion through them changes
 
 **What it says.** In the infinite fair right-reading race model, an observer stepping left or staying has flip mean1/2. Stepping right has mean(3-eps)/(4-2eps), increasing from3/4 despite unchanged fair spatial rows.
 
-**Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 and colleague review are pending.
+**Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 passes43648 cases and60 exact weighted means; colleague review is pending.
 
 **An everyday picture.** Two films can have the same distribution of individual frames but different motion between them.
 
 ## The formal statement and proof
 
-**Status:** infinite-bulk one-step flip-law proof; TF1 and independent review pending. Follow-up G97/G102/G104. Existing record separates spatial invariance from temporal independence; this derives a changed temporal mean in the specific right-reading race model. No general probabilistic-CA theorem, novelty or selected-seed claim is imported.
+**Status:** infinite-bulk one-step flip-law proof; TF1 passes, independent review pending. Follow-up G97/G102/G104. Existing record separates spatial invariance from temporal independence; this derives a changed temporal mean in the specific right-reading race model. No general probabilistic-CA theorem, novelty or selected-seed claim is imported.
 
 Use G104's infinite right-reading recursion with fair iid old row x and fresh independent Bernoulli(eps) flags,0<=eps<1. Let y be the next noisy row. For an observer moving by delta in{-1,0,1}, its flip is x_i XOR y_(i+delta). All flag chains terminate almost surely. The fresh flag field is independent of the current old row at each step.
 
@@ -53,3 +53,6 @@ For finite D these are polynomial probabilities also defined at eps1. At eps1, U
 **Unexpected temporal guard.** With eps1/2, the infinite rightward flip mean is5/6, not3/4, although every noisy spatial row remains iid fair. Equal spatial measures need not give equal transition measures. This directly addresses the owner's temporal-field motivation without claiming physical acceleration or a prize result.
 
 **TF1 preregistered NOT RUN.** D0..4, enumerate all old words on sites-2..D+2 and every flag pattern on sites-1..D, with siteD+1 a synchronous terminal. Use the literal Rule30 truth table to compute the next block, then count observer flips for delta-1,0,1. Exact flag weights at eps0,1/4,1/2,1 must give1/2,1/2,U_D. Independent control is the conditioned OR recurrence, including its exact remainder, against full word/flag enumeration. Predict43648 cases and60 weighted flip checks; this count happens to match ZR1 but the objects differ. Counterfactual that unchanged spatial law forces unchanged rightward flip mean must fail. Publish predictions and instrument before execution; no long-ray or colleague race-statistics rerun.
+
+
+**TF1 outcome (2026-10-06 20:18 BST).** Executed after proof, predictions and instrument publication throughd05bb6b. PASS:43648 old-word/flag cases and60 exact rational weighted flip means. Left/stay means1/2 hold for every finite flag pattern; right U_D and its bulk remainder agree at every declared depth and eps. Finite eps1 checks remain anchored endpoint controls. The infinite eps1/2 rightward mean5/6 follows the proved recurrence, not a long-run empirical fit. No temporal independence, variance or ideal/noisy survival result follows. Independent review remains pending.

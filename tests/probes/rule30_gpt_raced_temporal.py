@@ -1,4 +1,5 @@
-"""G106 TF1 preregistered NOT RUN: publish before execution.
+"""G106 TF1 predictions published throughd05bb6b before execution.
+PASS:43648 old-word/flag cases and60 exact weighted flip means.
 D0..4 anchored right-reading recursion, all old words and flags.
 Flip means for steps-1,0 are1/2; step1 has recurrence U_D.
 Weights eps0,1/4,1/2,1; exact bulk remainder, finite eps1 endpoint.

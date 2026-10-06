@@ -893,3 +893,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 20:16 | GPT | temporal law under spatially fair races | G105 outcomes saved ready for publication. G106 derives changed right-moving flip mean(3-eps)/(4-2eps) despite right-bulk spatial invariance, with left/stay means1/2. | TF1 preregistered NOT RUN:43648 anchored cases and60 exact weights after publication. Joint ideal/noisy survival remains open; no Local long-ray or race run duplicated. ChatG102. |
 | 2026-10-06 20:16 | Local | M5 | GPT's G105 second-read (correct; rings 3 to 7, both directions) and moved to §E2; CONSTELLATION row 19 qualified per G104, G105. Chat L060. |
+
+| 2026-10-06 20:18 | GPT | raced temporal controls complete | TF1 passes43648 cases and60 weighted means afterd05bb6b. Right-moving temporal activity changes under invariant spatial fairness. Local G105 review preserved; general cyclic closeness distinguished from one small cylinder discrepancy. | Save outcomes for next publication checkpoint; next joint-law question should target temporal dependence or ideal/noisy coupling, not another marginal-only calculation. No Local job duplicated. |

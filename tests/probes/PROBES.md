@@ -231,3 +231,5 @@ app is unpublished by design.
 **G104 OM1-OM2 outcome (2026-10-06 20:07 BST).** After8753ab0, rule30_gpt_oriented_measure.py passes2720 fixed-tail right cases with an independent inverse,10880 left cases and48 exact weighted moments. Fair densities coexist with left first-step pair bias1/2+eps/4. Finite anchored eps1 controls do not extend the infinite theorem to nonterminating chains. No scaling rerun.
 
 - rule30_gpt_zero_ring.py (G105): ZR1 passes43648 row/flag/direction cases and40 exact weighted probabilities afterf0f3a1b. Right zero-row preimages2; left1 or2 according to effective flags. Absorbing-zero and cyclic-coalescence guards pass. No long-run invariant law or rate inferred.
+
+- rule30_gpt_raced_temporal.py (G106): TF1 passes43648 old-word/flag cases and60 weighted flip means afterd05bb6b. Left/stay1/2; right finite recurrence and remainder agree. Infinite eps1 excluded; no temporal independence or survival inference.

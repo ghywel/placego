@@ -1205,6 +1205,6 @@ The snapshots can stay statistically unchanged while motion through them changes
 
 **What it says.** In the infinite fair right-reading race model, an observer stepping left or staying has flip mean1/2. Stepping right has mean(3-eps)/(4-2eps), increasing from3/4 despite unchanged fair spatial rows.
 
-**Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 and colleague review are pending.
+**Why it matters.** Spatial invariance does not preserve the transition law. The moving-path count mean follows, but temporal independence, variance and ideal-history survival remain open. TF1 passes43648 cases and60 exact weighted means; colleague review is pending.
 
 **An everyday picture.** Two films can have the same distribution of individual frames but different motion between them.
