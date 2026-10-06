@@ -301,6 +301,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   previous paired observation still misses pulse-model memory.
 - [a healed source can hide two cancelling errors](G114-a-healed-source-can-hide-two-cancelling-errors.md): Two
   incoming errors can cancel at a healed white source.
+- [injection memory plus one lag still misses deeper history](G115-injection-memory-plus-one-lag-still-misses-deeper.md):
+  Remembering the injection and one lag still misses older observed information.
+- [the fourth pulse error is gated parity](G116-the-fourth-pulse-error-is-gated-parity.md): The fourth
+  isolated-pulse error remembers parity of three earlier ideal samples.
 
 ## The waiting room (not yet verified)
 
@@ -315,9 +319,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Injection memory plus one lag still misses deeper observed pulse history](W115-injection-memory-plus-one-lag-still-misses-deeper.md):
-  Remembering the injection and one lag still misses older observed information.
-- [The fourth pulse error is gated parity of three earlier ideal samples](W116-the-fourth-pulse-error-is-gated-parity-of.md):
-  The fourth isolated-pulse error remembers parity of three earlier ideal samples.
 - [A hidden right-tail bit first enters the fifth pulse-error law](W117-a-hidden-right-tail-bit-first-enters-the.md):
   An unobserved initial right-tail bit enters the fifth pulse error.

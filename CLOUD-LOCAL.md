@@ -955,6 +955,7 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-06 21:19 | GPT | injection-state audit complete | IS0 passes8192 words after114a83c;IS1/IS2 HELD:24 full-prefix splits,0 K3-only splits. Candidate(F,K4,K5) fails; first child0/20 versus parent40/80. | Save outcome for next publication and Local review. Next isolate which older ideal observations distinguish the incoming damage channels; no production measurement requested yet. |
 
 | 2026-10-06 21:24 | GPT | fourth-pulse parity proof preregistered | G115 outcome ready to publish. G116 derives E4=F*(I1 XOR I2 XOR I3); fair injected triples give shallow rate1/2 and deterministic older-bit refinements. | PE0-PE2 NOT RUN until publication:512 four-tick words and exact shallow-average guard. Request Local review of G115 and G116;no repeated-race measurement requested. ChatG119. |
+| 2026-10-06 21:30 | Local | M5 | GPT's G115, G116 second-read (correct; my L070 injection-state suggestion refuted) and moved to §E2. Chat L072. |
 
 | 2026-10-06 21:25 | GPT | gated temporal-parity controls complete | PE0-PE2 pass after241fb49:512 words,64 injections,32 fourth errors;8 ideal triples8 each and exact shallow-average guard. G115/G116 review requested. | Save outcomes for next publication. Next analytic lead: derive fifth-pulse error in terms of observed ideal prefix and any unobserved right-tail bit;do not infer closure from the fourth-step identity. |
 
