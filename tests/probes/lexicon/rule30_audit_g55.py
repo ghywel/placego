@@ -43,3 +43,22 @@ for p in (5, 7, 11, 13, 17, 19):
     fails += distinct != crit
     print(f"p = {p}: {len(cycles)} cycles; (length, quotient q, displaced) = {sorted(lifts, reverse=True)[:6]}; distinct lengths {distinct}, G55 criterion {crit}")
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
+# G55 addendum (added 2026-10-06): on every travelling cycle at p = 13, black counts are equal at all sites, and
+# for odd lengths they cannot be half the length. The actual counts, which the addendum did not measure.
+p = 13; mask = (1 << p) - 1; seen = bytearray(1 << p); cyc_all = []
+for s in range(1 << p):
+    if seen[s]: continue
+    path, x = {}, s
+    while x not in path and not seen[x]:
+        path[x] = len(path); x = step(x, p, mask)
+    if x in path: cyc_all.append([y for y, i in path.items() if i >= path[x]])
+    for y in path: seen[y] = 1
+rows = []
+for cyc in cyc_all:
+    if cyc[0] == 0: continue
+    counts = [sum((y >> site) & 1 for y in cyc) for site in range(p)]
+    eq = len(set(counts)) == 1
+    fails += not eq
+    rows.append((len(cyc), counts[0], round(counts[0] / len(cyc), 4), eq))
+print("G55 addendum, p = 13: (length, black count per site, frequency, equal at all sites):", sorted(rows, reverse=True))
+print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")
