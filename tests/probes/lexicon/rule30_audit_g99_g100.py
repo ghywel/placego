@@ -187,6 +187,12 @@ CHECKS (GPT's claims at 827e006):
      period Q_n = q_n + q_(n-1) has its first mismatch at h_n = 2 q_n + q_(n-1)/2 (none at time 0, none before), so the
      prefix interval [0, h_n - 1] has debt q_n - q_(n-1)/2 - 1 = 3, 22, 133, 780; and the mismatch times agree with
      G145's arc {k beta} in [1/2 - E, 1/2), E = (1 + r) |delta_n|.
+  S42 (G146, added 2026-10-07 at 960ddfa; only GC159's 4,096 symbols of c^(0)): sigma^t c^(0) = c^(t beta mod 2) on
+     the prefix; along the shifts t < 2,048 whose phase t beta mod 2 sets a new closest approach to 1/2, the shifted
+     prefix contains G145's witness whenever its agreement with c^(1/2) covers it, its maximal debt (all periods within
+     the shifted prefix) never exceeds t, and the agreement reaches beyond the n = 7 witness. A first draft also asked
+     the agreement and the debt to rise monotonically along the records; G146 claims neither, and that draft failed
+     (the approach alternates sides of 1/2 and the shrinking prefix truncates the debt); it was narrowed to the above.
 """
 import random
 from fractions import Fraction as F
@@ -1833,4 +1839,49 @@ for n in (3, 5, 7, 9):
 ok41 &= debts41 == [3, 22, 133, 780]
 check('S41 G145: the half-phase first hits h_n = 2 q_n + q_(n-1)/2 and the unbounded prefix debts', ok41,
       'debts at n = 3, 5, 7, 9: %s' % debts41)
+ok42 = True
+half = decimal.Decimal(1) / 2
+c0 = cb
+ok42 &= all(c0[t_ + s_] == int(((s_ + t_) * DB).to_integral_value(rounding=decimal.ROUND_FLOOR)) % 2 and
+            c0[t_ + s_] == int((s_ * DB + ((t_ * DB) % 2)).to_integral_value(rounding=decimal.ROUND_FLOOR)) % 2
+            for t_ in (1, 7, 41, 239) for s_ in range(200))
+
+
+def max_debt(w):
+    best_ = None
+    for q in range(1, len(w) // 2 + 1):
+        s_ = 0
+        while s_ + q <= len(w) - 1:
+            if w[s_] == w[s_ + q]:
+                a_ = s_
+                while s_ + q <= len(w) - 1 and w[s_] == w[s_ + q]:
+                    s_ += 1
+                dd = (s_ - 1) - 2 * a_ - q
+                best_ = dd if best_ is None else max(best_, dd)
+            s_ += 1
+    return best_
+
+
+recs42, bestd = [], None
+for t_ in range(1, 2048):
+    dist = abs((t_ * DB) % 2 - half)
+    if bestd is None or dist < bestd:
+        bestd = dist
+        recs42.append(t_)
+wit = [(3, 7, 11), (5, 41, 64), (7, 239, 373)]           # (n, Q_n, h_n) from S41
+rows42 = []
+for t_ in recs42:
+    w = c0[t_:]
+    agree = 0
+    while agree < len(w) and w[agree] == hc[agree]:
+        agree += 1
+    md = max_debt(w)
+    for n_, Q, h in wit:
+        if agree >= h + Q:
+            ok42 &= all(w[k] == w[k + Q] for k in range(h)) and (h - 1) - Q <= md
+    ok42 &= md <= t_
+    rows42.append((t_, agree, md))
+ok42 &= max(a_ for _, a_, _ in rows42) >= 373 + 239
+check('S42 G146: shifted passing codes approach the half-phase code, carry its witnesses, and obey the shift allowance',
+      ok42, '(t, agreement with c^(1/2), max debt): %s' % rows42)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
