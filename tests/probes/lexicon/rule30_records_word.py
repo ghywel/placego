@@ -91,6 +91,9 @@ from ompflags import OMP
 #   SW3 (blind; the law's shape): at a = 16 the record from depth d is at most the longest white stretch's reach
 #       plus a constant: R <= 2a + 12 at every depth run (the run cannot cross a black stretch's checkerboard).
 # REFUTED-BY: SW0 failing (the engine); SW1 failing is the result of the year; SW2, SW3 the other way.
+# OUTCOME of the third run, 2026-10-06 (slow; 8 threads, 7 minutes): SW0, SW1 PASSED. R at depths 8 .. 48: a = 2:
+# see rule30_records_word.txt; R/d at 48 is 0.812, 0.812, 0.667, 0.792 for a = 2, 4, 8, 16. SW2 REFUTED (no fall
+# with a; 0.79 at a = 16, not below 0.60). SW3 HELD (max 38 <= 44). Freedom, not switch density, sets LR's law.
 
 
 HERE = pathlib.Path(__file__).resolve().parent
