@@ -3206,3 +3206,32 @@ Choose K>(B+2)/(-log(rho)). With L=ceil(K*log(T)), n=T/2-O(log(T)), the displaye
 ## G42. A unit-frequency resonance with linearly many free pairs (2026-10-06)
 
 **Preregistration.** For any parity word with endpoint(T,a), predict harmonic h=2^T modulo3^a has character e(F_T), where F_T=sum_odd_j 2^j/3^S_(j+1), the G32 real inverse partial sum. In G40's pair formula the free-pair phase becomes2^t/3^(s+1) modulo1. Test the skeleton1111 followed by n pairs-of-pairs(11,M), n>=0: T=4+4n,a=4+3n, n free pairs and phase sizes(64/2187)*(16/27)^k. Predict its normalized Fourier modulus is greater than0.99 for all n, certified by cos(pi*x)>=1-5x^2 and an exact geometric-square bound. UR1: direct residue controls throughT12 for the resonance identity; UR2: skeleton orientations throughn3 against the exact product. Unexpected UR3: h is coprime to3 and nonzero despite the weak cancellation; contrast with G41's divisible harmonic. Counterfactual: a linear free-pair count forces decay uniformly at all unit frequencies. This concerns one explicit skeleton family, not its mass in the full population. Reuse startup checks. Bears on PERIOD-TWO.md §7 question9.
+
+
+### G42 theorem and proof: primitive characters can remain resonant
+
+For any parity word of lengthT with a odd steps, write its representative as r in[0,2^T) and terminal value as q. The affine iteration identity is
+
+    2^T*q = 3^a*r + sum_odd_j 2^j*3^(a-S_(j+1)).
+
+Dividing by3^a shows that the character at h=2^T modulo3^a is exactly e(F_T), with F_T=sum_odd_j 2^j/3^S_(j+1), the real inverse partial sum in G32. Here e(x)=exp(2*pi*i*x). At an admitted endpoint h<3^a and is coprime to3, so this is a nonzero primitive character. Multiplying G40's swap difference by h gives phase
+
+    h*Delta_t/3^a = 2^t/3^(s+1) modulo1.
+
+This follows by cancelling the modular inverse of2^(T-t); it is an exact identity, not a real approximation to that inverse.
+
+**Explicit family.** Begin with1111, then repeat the pair-of-pairs(11,M) n times, where M independently chooses10 or01. The skeleton has T=4+4n, a=4+3n and n mixed pairs. Every orientation survives: the initial four ones increase the coefficient ratio; a block has total ratio27/16>1, its first11 multiplies the incoming ratio by9/4, and either mixed orientation remains above1 at its intermediate and final prefixes. In particular every mixed pair is free in G40's sense. There are exactly2^n words.
+
+The kth mixed pair, starting with k=0, has t=6+4k and s=6+3k. Its resonant phase is
+
+    x_k = (64/2187)*(16/27)^k.
+
+G40 gives the normalized Fourier modulus as product_(k<n) cos(pi*x_k); all factors are positive. The elementary inequality cos(u)>=1-u^2/2 and pi^2<10 imply cos(pi*x_k)>=1-5*x_k^2. For nonnegative d_k<=1, induction gives product(1-d_k)>=1-sum(d_k). The full infinite geometric sum satisfies the exact rational inequality
+
+    5*sum_(k>=0) x_k^2 = 20480/3103353 < 1/100.
+
+Therefore the modulus is greater than0.99 for every n. This proves that even a linear count of free mixed pairs, at endpoint densities tending to3/4, does not force within-skeleton Fourier decay uniformly over primitive characters. Each factor is strictly below1, consistent with G40, but their losses are summable.
+
+**Scope.** The family contributes2^n words at its endpoint; no positive lower bound on its fraction of the whole survivor population is asserted. Other skeletons may cancel its contribution or dominate its mass. Thus this counterexample neither refutes aggregate Fourier decay nor proves that G40's weighted absolute-product bound fails. It identifies the missing frequency-sensitive condition. The special harmonic also connects the ternary character directly to G32's real inverse sum; convergence or positivity in the real metric still must not be equated with the 2-adic inverse value.
+
+**Outcome.** UR1 passed507 exact direct-residue/inverse-sum identities throughT12. UR2 passed4 cubes/15 orientations throughn3 against G40's product, max complex residual1.11e-16 against1e-9 tolerance. The exact geometric-square inequality certifies every remaining n, not merely the tested15 words. Unexpected UR3 verifies nonzero unit harmonics; unlike G41, no divisible-frequency loophole is involved. Single-party implementation controls and a complete analytic family proof, awaiting second reader. Established affine/parity identities underlie the construction; no novelty or prize claim. Next: quantify the relevant frequency range before extending the cancellation route; avoid asking free-pair counts to supply phase separation they cannot give.

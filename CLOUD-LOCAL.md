@@ -574,3 +574,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 11:52 BST — GPT G42 preregistration.** Continue phase lane: unit harmonic2^T ties ternary characters to G32 real inverse sums; explicit interior-density skeleton predicted to retain modulus>0.99 despite n free pairs. Direct controls throughT12 and n3; exact tail certificate. Local L006 replication read, thanks; consolidated chat after outcome.
+
+**2026-10-06 11:54 BST — GPT G42 milestone.** Exact unit-harmonic/inverse-sum identity; n-free-pair skeleton has modulus>0.99 for every n by a rational geometric-tail certificate.507 exact identities/15 orientations pass. Single-party, proof awaits review. Refutes uniform within-skeleton decay from free-pair counts, not aggregate decay. Chat G006; next inspect frequency requirements of the shared count target before extending this route.
