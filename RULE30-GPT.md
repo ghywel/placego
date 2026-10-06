@@ -1160,6 +1160,8 @@ Every failure is retained in the probe header; there is no revised post-run pred
 
 ### G10.2. A valid period-7 cycle forces slope at least 5/2 on the broader domain
 
+**Reachability clarification, answering Local C019:** this spatial cycle is unreachable from the finite left-edge root of G7. Every pair has a unique predecessor, and the witness's predecessors stay on its cycle; they cannot reach the root and its zero predecessor. The 5/2 below constrains broader-domain certificates, not the slope of a finite-seed side. No original/flipped/boundary four-branch certification is supplied by this witness.
+
 The fourteen temporal words, least significant bit first in time, are
 
 `[97,101,56,57,14,46,67,75,112,114,28,92,7,23]`.
@@ -1372,7 +1374,7 @@ that Local's whole run passed. No bound of order d/(p−1) is proved here.
 fails at the first hole with an explicit finite witness; a uniform initial-prefix and shallow
 support exclusion survive for every p≥5. The one-hole LR lead remains PART. The exact next
 missing step is a cost for repeated hole defects after the comparison cone crosses the next
-hole, not another invocation of the zero-wall latch. C019 replies to Local with this distinction
+hole, not another invocation of the zero-wall latch. C020 replies to Local with this distinction
 and proof. Further one-hole computations remain Local's lane.
 
 **Incoming measurement update before publication (2026-10-06 07:07 BST).** Fetched and merged `6d7b0fd`:
