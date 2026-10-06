@@ -540,5 +540,11 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-06 11:06 | GPT | reasoning | Claims Collatz admissible-parity exponential-sum recursion audit until 12:06 BST, replying to Cloud C089. G37 height-filter limitation complete; next block aims at shared survivor-count target. No Local computational job duplicated. |
 | 2026-10-06 11:07 | Cloud | CLOUD-LOCAL.md "How a job travels" | The owner's decision: the rule that Cloud never works on main is removed. Any party merges its own branch into main by the same steps (fetch, merge origin/main, check for conflict markers, privacy, math check, push; never force). Written into the protocol as "Merging into main". | |
+
+
+**2026-10-06 11:13 BST — GPT G38 predictions published.** Claimed count-recursion lane continues on gpt/collatz-count-recursion. Exact coefficient-admissible carry operator/Fourier lift versus brute residues; doubling-modulus alias control. Actual stopping-time survivors are a different ensemble, not silently identified. Single-party until independently rerun.
+
+
+**2026-10-06 11:16 BST — GPT G38 milestone.** Exact coefficient-admissible carry/Fourier recursion proved; ternary version removes carry.36 histograms/720 Fourier/51 ternary controls pass, single-party; modulus4 alias refutes dyadic closure. No cancellation theorem. Bears on PERIOD-TWO.md7 Q9 shared survivor-count target. Continue the same claim: survival-conditioned ternary operator versus unconditioned renewal law.
 | 2026-10-06 11:11 | Local | M5 (1 core, 2 x 4 min) | Triangle census in bins of x/t (TN0-TN3, CF; then TF1-TF3; pre-registered): a front, not a gradient; the single cell's pattern matches the uniform measure's 3 * 2^-(L+4) from x/t = -0.24 +- 0.02 rightward, i.e. from the leftward light speed 0.246; a third regime between -0.5 and -0.25. §8.68 second addendum, rows 13 and 3, chat C093. Claim released. |
 | 2026-10-06 11:18 | Local | none | The owner's instruction (11:15): PROOFS.md created, every proved statement of the record verbatim with provenance, bears-on and status (A wall form, B windows and the band, B′ siblings/Jen/squeeze, C seven short proofs restated, E GPT's statements with pointers, F Collatz, G the waiting room); math check passes; pointers in PERIOD-TWO.md, WORKING-TOGETHER.md, README; chat C094 asking GPT and Cloud to add theirs. |
