@@ -40,9 +40,26 @@ OUTCOME of the first run, 2026-10-06 11:19 (WMAX = 20 for the walls 1, 0, 01 and
   W = 11 on (a jump from 9 to 19 at W = 11), not c <= 12; "width plus a constant" holds in shape, the constant is
   about 17 against the two-sided law's 6 to 10 (section 8.42), as it must be with fewer conditions. LH2 HELD, and
   far more strongly than written: next to 0^a 1^a the left half's own two conditions stop EVERY seed of width <= 16
-  within 29 steps for a = 2, 22 for a = 4, 22 for a = 8 and 21 for a = 16 (over all phases); for a = 8 and 16 that
-  is less than one period, so no finite left seed of width <= 16 survives even one black stretch and the white
-  stretch beside it, let alone two. LH3 REFUTED (the record seeds at W = 16 and 20 differ: cbb5, d1541).
+  within 29 steps for a = 2, 22 for a = 4, 22 for a = 8 and 21 for a = 16 (over all phases). Two consecutive complete
+  black stretches need at least 3a steps from any phase, so for a = 8 (24) and a = 16 (48) no seed of width <= 16
+  survives two consecutive black stretches; for a = 16 not even one period (21 < 32); for a = 2 and 4 seeds outlive
+  several periods. (A first reading said "less than one period for a = 8 and 16", wrong for a = 8: 22 > 16; corrected
+  at 11:35.) LH3 REFUTED (the record seeds at W = 16 and 20 differ: cbb5, d1541).
+
+WIDE ADDENDUM, written 2026-10-06 before the second run (python3 rule30_leftside_horizon.py wide): widths 17 to 24 next
+  to 0^8 1^8, 0^16 1^16 and 0101 (T = 100). The question: can a seed wider than the black stretch rebuild the
+  checkerboard across a white stretch and pass a second black stretch?
+  LW1 (blind): next to 0^8 1^8 no seed of width <= 24 survives two consecutive complete black stretches: H_L(W) <= 23
+      for every W <= 24. A seed three times the stretch's width is still not enough.
+  LW2 (blind): next to 0^16 1^16, H_L(W) < 32 for every W <= 24 (not one period), and the gain from W = 16 to 24 is
+      at most 8 steps.
+  LW3 (blind): on both slow walls the horizon grows by less than one step per unit width from W = 16 to 24 (the
+      law "width plus a constant" does not hold there: the wall sets the horizon, not the seed).
+  CF  (counterfactual, must fail): next to 0101 the law stops too: H_L(24) < 24 + 10. The first run's W + 17 says
+      it will not; H_L(24) >= 34 is expected.
+  REFUTED-BY: LW1 to LW3 the other way; CF holding. What would change my mind: a width at which the slow-wall horizon
+  jumps past two black stretches would locate the seed width that can carry a checkerboard across a white stretch,
+  and the theorem of section 8.63 would need that width in its hypothesis.
 """
 import pathlib, subprocess, sys, tempfile
 
@@ -84,7 +101,34 @@ def run(exe, word, wmax, t):
     return res
 
 
+def wide():
+    exe = build()
+    with open(OUT, "a") as fh:
+        fh.write("# wide run: widths 17 .. 24, T = 100\n")
+    res = {}
+    for word in ["0000000011111111", "0" * 16 + "1" * 16, "01"]:
+        out = subprocess.run([str(exe), word, "24", "100", "8"], capture_output=True, text=True, check=True).stdout
+        with open(OUT, "a") as fh:
+            fh.write(out)
+        r = {}
+        for ln in out.splitlines():
+            f = ln.split(); r[int(f[2])] = int(f[4])
+        res[word] = r
+        print(f"   {word[:8]}{'...' if len(word) > 8 else ''}: " + " ".join(f"{W}:{r[W]}" for W in range(14, 25)), flush=True)
+    a8, a16, z = res["0000000011111111"], res["0" * 16 + "1" * 16], res["01"]
+    verdict("LW1 0^8 1^8: H_L(W) <= 23 for every W <= 24", all(a8[W] <= 23 for W in range(0, 25)), f"max {max(a8[W] for W in range(25))}")
+    verdict("LW2 0^16 1^16: H_L(W) < 32 for W <= 24 and the gain from 16 to 24 is at most 8",
+            all(a16[W] < 32 for W in range(25)) and a16[24] - a16[16] <= 8, f"max {max(a16[W] for W in range(25))}, H(16) {a16[16]}, H(24) {a16[24]}")
+    verdict("LW3 both slow walls gain less than one step per unit width from 16 to 24",
+            a8[24] - a8[16] < 8 and a16[24] - a16[16] < 8, f"a=8: {a8[16]} -> {a8[24]}; a=16: {a16[16]} -> {a16[24]}")
+    report("CF  0101: the law does NOT stop (H_L(24) >= 34)", z[24] >= 34, f"H_L(24) = {z[24]}")
+    print("\nALL CHECKS PASS" if FAILS == 0 else f"\n{FAILS} CHECK(S) FAILED")
+
+
 def main():
+    if "wide" in sys.argv[1:]:
+        wide()
+        return
     exe = build()
     with open(OUT, "a") as fh:
         fh.write(f"# run WMAX={WMAX} T={T}\n")
