@@ -154,6 +154,12 @@ EDGE ADDENDUM, written 2026-10-06 before the sixth run (python3 rule30_triangle_
   TE2: it agrees with the triangle front (-0.24 +- 0.02) within 0.03 at both times.
   CF  (must fail): K(t0)/t0 - 1 <= -0.45 (my unfounded "-0.5").
   REFUTED-BY: TE1 or TE2 the other way (then the zone is real and my reading is wrong); CF holding.
+  OUTCOME of the sixth run, 2026-10-06 (edge; a minute): TE1 HELD, TE2 HELD, CF PASSED. The settled edge (every
+  diagonal below it of period 16 over the window) is at K = 29,837 at t0 = 40,000 and 59,869 at 80,000: x/t =
+  -0.2541 and -0.2516, on the triangle front (-0.24 +- 0.02, at the fine bins' resolution). The "third regime" was
+  my error: the region [-0.5, -0.25] is the settled band itself; there are two regimes, band and coin, and the
+  triangle front is the band's inner edge, which moves left at Rule 30's leftward speed of information (section
+  8.30).
 """
 import sys
 import numpy as np

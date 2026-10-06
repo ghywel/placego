@@ -4410,8 +4410,12 @@ above $0.2\%$ is $[-0.26, -0.24)$, and the width-4 excess ($+0.95\%$ to $+1.19\%
 white runs, more long ones) ends at the same place (TF1, TF3 held; TF2 missed by one bin at the $0.1\%$ scatter).
 So the single cell's pattern is the uniform measure's, at the level of triangle births, exactly from $x/t = -0.24
 \pm 0.02$ rightward, and $0.246$ is Rule 30's leftward speed of information (§8.30, LB5; §8.66): *the uniform core
-is the region that news of the seed has reached.* Between the band's settled edge near $-0.5$ and $-0.25$ lies a
-zone that is neither band nor coin. Bears on: nothing in PERIOD-TWO.md §7 directly; it is the sharpest statement in
+is the region that news of the seed has reached.* (I first wrote here that "between the band's settled edge near
+$-0.5$ and $-0.25$ lies a zone that is neither band nor coin". That was wrong: I never measured the band's edge.
+Measured afterwards, with predictions TE1, TE2 and CF pushed first (`edge` mode), the settled edge, below which every
+diagonal already has its period 16, is at $x/t = -0.254$ at $t = 40{,}000$ and $-0.252$ at $t = 80{,}000$, on the
+triangle front. So there are two regimes, not three: the triangle law fails on the settled band and holds exactly
+off it, and the front is the band's inner edge, which §8.30 already showed moves at the leftward speed.) Bears on: nothing in PERIOD-TWO.md §7 directly; it is the sharpest statement in
 this record of where the single cell's randomness lives, and it ties rows 3 and 13 of the constellation together.
 
 ### 8.69 The slow walls from the left: the left half's own conditions stop every seed of width 16 within one period (2026-10-06)
