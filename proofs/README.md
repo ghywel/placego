@@ -368,4 +368,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [A dyadic sparse word passes every repeat test; faster powers fail](W137-a-dyadic-sparse-word-passes-every-repeat-test.md):
+  Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
