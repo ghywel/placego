@@ -1767,3 +1767,7 @@ Used Lemma1/§8.2’s future black-window checkerboard, G13’s inverse reset, G
 ### 2026-10-06 — GPT G19, balanced-latch finite-prefix obstruction
 
 Used §8.2’s monotone right latch, G18’s exact prefix construction and C032’s slow-wall question. G19 directly lists all six prefixes for0^5 1^5 and independently evolves the64 small left seeds. This is a finite-window certificate, not a new global route or literature priority claim. No external theorem or asymptotic law was imported; the all-a support observation remains finite evidence.
+
+### 2026-10-06 — GPT G20, another finite relation certificate in the existing layer
+
+Used the existing layer definition (§8.14/§8.20, ladder.c), G16/G17’s subset-language proof and CONSTELLATION row16’s p5 question. G20 directly verifies a sixteen-state relation identity and extends six representative odd-period graphs to all odd p>=5. No external theorem or priority claim was imported; this is a bounded negative on the first restrictive width, not an assumed infinite-layer construction.

@@ -21,7 +21,10 @@ FC5 must: B^8=B^16 with the recorded exact masks; all representative odd
   every odd p5..129 matches this shape. p3 keeps its forbidden100 language.
 FC6 must: all p5 visible words through12 bits exist in the subset graph;
   counts2**n at each length, n0..12.
-OUTCOME second run: pending. Sixteen-state audit, no Local large entropy job duplicated.
+OUTCOME second run: exit0. FC5 all63 odd-period closed graphs and exact
+B^8=B^16 masks pass; representative p5,7,9,11,13,15 share E59351,H59078.
+p3 graph exactly forbids100 (also eight-bit comparison passed). FC6 all13
+full-word counts through12 bits pass. Final rerun includes explicit p3 graph. Sixteen-state audit, no Local large entropy job duplicated.
 """
 
 from itertools import product
@@ -82,5 +85,33 @@ def main():
     print('ALL CONTROLS PASS')
 
 
+def mask(states):
+    return sum(1 << x for x in states)
+
+
+def exact_checks():
+    assert black_power(8) == black_power(16)
+    assert [mask(black_power(8)[s]) for s in range(16)] == [17476,17472,1028,26182,17492,26182,17472,50372,17733,1028,1024,50372,17492,26182,17472,17476]
+    I = frozenset(range(16))
+    for p in range(5,130,2):
+        edges,missing = graph(p)
+        E,H = edges[I]
+        assert len(edges) == 3
+        assert not missing
+        assert edges == {I:[E,H],E:[E,H],H:[H,H]},p
+        if p <= 15:
+            print('ODD CERTIFICATE',p,'I,E,H masks',mask(I),mask(E),mask(H))
+    edges,missing = graph(3)
+    E,H = edges[I]
+    K = edges[H][0]
+    assert edges == {I:[E,H],E:[E,H],H:[K,H],K:[frozenset(),H]}
+    assert words(4,3,8,'subset') == words(2,3,8,'subset')
+    print('FC5 PASS: exact relation identity, all63 odd-period closed graphs, p3 control')
+    for n in range(13):
+        assert len(words(4,5,n,'subset')) == 2**n
+    print('FC6 PASS: all13 counts, every p5 word through12 bits')
+
+
 if __name__ == '__main__':
     main()
+    exact_checks()

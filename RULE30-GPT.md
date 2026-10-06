@@ -2407,3 +2407,114 @@ channel cardinalities prove a bounded-debt cost. The all-a balanced support boun
 is open, and endpoint monotonicity cannot supply it. Next useful reasoning is to
 identify which interior latch positions control the last-black depth, or return
 to the small width-four channel question; no large Local run is requested.
+
+
+## G20. Odd one-hole walls remain fully free through four right cells (2026-10-06)
+
+**Question from CONSTELLATION row16.** Is width four the first layer to restrict
+the p5 hole language? G15-G17 had shown full freedom through width three for
+odd p>=5. This audit uses the existing right-layer update, with the next outside
+cell arbitrary at each time. It does not repeat Local's large automata or assume
+that the outside cell comes from another valid column. Fresh wall/merge checks
+both ALL CHECKS PASS, with G1's capped-witness scope. FC0-FC4/CF were published
+in e670d7d; FC5/FC6 in110ae08 before their respective runs.
+
+### G20.1. Exact theorem, including the failed first prediction
+
+**Theorem.** For every odd p>=5, the width-four relaxation of wall0 1^(p-1)
+allows every finite and infinite one-sided sequence of visible hole bits. It has
+exactly2^n words of length n and rate1/p bit per time step. Combining G15-G17,
+a layer that first restricts these walls, if one exists, has width at least five.
+This is not an existence proof for an entire infinite right half or a finite seed.
+
+**Blind FC2 was refuted.** The prediction that p5 would first lose freedom at
+width four was wrong. Its complete accepting subset graph has no empty edge;
+that supplies the theorem at p5, not merely a failure to find a short forbidden word.
+
+### G20.2. Exact all-period certificate
+
+For four state bits x1..x4 encoded by s=sum(xj*2^(j-1)), a step has
+xj'=leftj XOR(xj OR rightj), with left1=tau and right4=u.
+Allow both u choices. Let W and B be the resulting white and black relations.
+Set composition gives B^8=B^16; here are all sixteen image masks for either
+power (mask m encodes the states j with bit j of m equal to1):
+
+| Initial s | B^8 and B^16 image mask |
+|---|---|
+| 0 | 17476 |
+| 1 | 17472 |
+| 2 | 1028 |
+| 3 | 26182 |
+| 4 | 17492 |
+| 5 | 26182 |
+| 6 | 17472 |
+| 7 | 50372 |
+| 8 | 17733 |
+| 9 | 1028 |
+| 10 | 1024 |
+| 11 | 50372 |
+| 12 | 17492 |
+| 13 | 26182 |
+| 14 | 17472 |
+| 15 | 17476 |
+
+The verifier starts from singleton images and applies the displayed Rule30
+formula for both u choices, checking these exact integers. Equality of all images
+is an equality of relations, so associativity proves B^(k+8)=B^k for every k>=8.
+The period macro is first W, then B^(p-1). Thus odd p5 and7 are short exceptions;
+p9,11,13,15 represent every odd residue thereafter. No extrapolation from the
+largest tested period is needed.
+
+For a visible symbol e, keep starting states with s modulo2=e and union their
+macro images. Start with I={0,..,15}, mask65535. For each of the six representative
+odd periods, the reachable subsets are exactly I, E and H, with masks
+E=59351 and H=59078. In full:
+E={0,1,2,4,6,7,8,9,10,13,14,15};
+H={1,2,6,7,9,10,13,14,15}.
+The same accepting graph holds for all of them:
+
+| Subset | visible0 | visible1 |
+|---|---|---|
+| I | E | H |
+| E | E | H |
+| H | H | H |
+
+Each nonempty edge is precisely the union of valid state/input paths through
+one period. Induction on the visible word proves exact language equivalence
+between these subsets and the original layer; the table never reaches empty.
+Consequently every finite word has a hidden layer path. For a specified infinite
+visible word, the arbitrarily long finite paths form a finitely branching tree;
+an infinite branch gives a consistent infinite state/input history. This proves
+the infinite-language statement. It leaves the outside input unconstrained, as
+the theorem's relaxation requires.
+
+The p3 graph was separately checked: an initial all-zero-visible loop enters
+states with transitions exactly as in G17's forbidden100 graph. Its visible
+language remains words avoiding100. No new even-period classification is claimed
+in this block; CF at width two,p4 is an instrument control only.
+
+### G20.3. What ran and what remains open
+
+`rule30_gpt_four_cell.py`, one Intel CPU process, first run under one second;
+second and final reruns under one second each. FC0 compared all64 local updates
+against the independent eight-entry truth table. FC1 compared complete direct
+state-path and subset languages for p3,5,7 through six visible bits, all18 cases.
+FC2 refuted as above. **Unexpected FC3 held:** p9 also has a closed full-shift
+certificate. FC4 held: the first exponent at which the period-eight relation
+repeat appeared was8. CF rejected the known-wrong width-two,p4 word11.
+First run exit0, ALL CONTROLS PASS despite the blind FC2 failure.
+
+After preregistration, FC5 checked the exact B^8=B^16 masks, all63 odd-period
+closed graphs p5..129, the six representative certificates above, and the p3
+forbidden100 graph plus an eight-bit comparison to width two. FC6 checked all13
+counts2^n at p5,n0..12. Second run exit0; the final rerun also includes the
+explicit p3 graph assertion. These finite controls verify the implementation;
+the all-p and all-word-length theorem uses the relation identity and closure.
+
+**Status.** The hole-channel lead is PART. The first restrictive layer for odd
+p>=5, if any, is beyond four. The hidden periods have changed at widths two,
+three and four, while the observed odd-period language stayed the same. This is
+an exact projection phenomenon, not a claim of positive actual-channel entropy.
+A useful next question is whether the closed subsets have a construction uniform
+in width, or precisely where they fail. More sample widths alone would not settle
+the complete-right-half question, and no new large job is requested from Local.
