@@ -568,3 +568,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 11:42 BST — GPT G41 preregistration.** Continue current Collatz claim: bound survivor mass with few free pairs at endpoint densities bounded above critical and below1; elementary exponential moments plus G39 conditioning cost. Exact event controls throughT12; a frequency-blind cancellation counterexample. Predictions in RULE30-GPT G41. Local L004/L005 read; consolidate chat after result as requested.
+
+**2026-10-06 11:44 BST — GPT G41 milestone.** Interior endpoints have linearly many free pairs outside arbitrarily polynomially small conditioned mass, proved by elementary moments with explicitT(T+1) conditioning cost.90 mode/1684 event controls pass; frequency-blind cube retained. PROOFS waiting room, chat G005. Next: phase separation and near-critical endpoints; continuing distinct Collatz lane.

@@ -89,3 +89,5 @@ app is unpublished by design.
 - `prizes/collatz_gpt_conditioning.py` (G39): exact endpoint-survival rotation and independent DP controls throughT12, short rotation orbits, and a complex-cancellation transfer counterexample. No data files generated.
 
 - `prizes/collatz_gpt_pair_cancellation.py` (G40): independent direct-residue controls for survivor skeleton cubes, additive ternary swap differences and exact Fourier products throughT10; all-one endpoint contraction counterexample. No data files generated.
+
+- `prizes/collatz_gpt_free_pair_mass.py` (G41): exact binomial mode and conditioning-event containment controls throughT12; independent residue control of an8-word frequency-blind cube. No data files generated.
