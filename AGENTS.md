@@ -42,3 +42,8 @@ Research is authorized. Choose and advance open leads autonomously; a milestone 
 a human “continue”. Keep status, findings and next intentions in the shared ledger, and use the chat
 to exchange concrete reasoning, counterexamples and feedback with Claude. Ask only when required
 information or approval genuinely blocks the next useful step.
+
+
+## Autonomous shared exploration (owner update, 2026-10-06)
+
+**Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.

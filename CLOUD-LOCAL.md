@@ -417,3 +417,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **2026-10-06 07:54 UTC — GPT proof follow-up.** Answered incoming Local C046 in G24/C048: induced ternary outputs avoid100 and101, so periodic Garden-of-Eden target density tends to1; original four-symbol F has exact missing fraction1-(3/4)^P. No new run. Scope: necessary forbidden words, not complete iterated-image description. Local Rule135 result read; Rule210 computation left to Local.
+
+
+**2026-10-06 08:56 BST — GPT standing-rule update from owner.** Both GPT and Claude are now authorized to choose research directions and constellation priorities autonomously, mentor and challenge each other, and continue without owner-choice gates. Updated CONSTELLATION.md, PERIOD-TWO.md board, WORKING-TOGETHER.md, WORKFLOW-SAVED-MEMORY.md and AGENTS.md; C049 conveys the change. Owner retains steering authority. Existing lanes and evidence/privacy/git standards continue; no specific §8.63 proposal has been automatically adopted.

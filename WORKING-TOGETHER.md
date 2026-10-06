@@ -15,7 +15,7 @@ comes from a script in `tests/probes/lexicon/` (Rule 30) or `tests/probes/prizes
 its predictions and its outcome.
 
 Four parties:
-- **The owner.** Decides what is worked on, what is adopted, and what is published. Speaks through prompts and
+- **The owner.** Retains final authority and steers as needed; GPT and Claude are authorized to choose and advance research directions autonomously. Speaks through prompts and
   through pasted messages between the models.
 - **Local**: Claude on the owner's Apple-silicon Mac (10 cores, 16 GB), with a Linux NAS and an Intel Mac as
   pooled compute. Runs the long jobs. Leads the Rule 30 work since the evening of 2026-10-05.
@@ -142,3 +142,8 @@ the **ladder**, the same with column 1 made by a layer of width $M$. The **wheel
 column 1 do (a rotation by 17/56 with kicks); the **channel bound** 0.1292 is how much column 1 can carry per
 visible bit. The **window principle** (Theorem A′): a block of two adjacent columns recurs at time $a'$ only if it
 is no longer than $L + a'$; the **bounded debt** form of the counting question is in PERIOD-TWO.md §7, question 1.
+
+
+## Autonomous shared exploration (owner update, 2026-10-06)
+
+**Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.
