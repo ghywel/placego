@@ -80,12 +80,13 @@ def main():
     print('ALL CONTROLS PASS',flush=True)
 
 
-def language():
+def language(repaired=False):
+    import re
     checks=0
     for n in range(15):
         for word in itertools.product([0,1],repeat=n):
             text=''.join(map(str,word))
-            expected='010' in text[:-1]
+            expected=bool(re.search(r'01(?:111)*0[01]',text)) if repaired else '010' in text[:-1]
             assert (len(images(word))==1)==expected,text
             checks+=1
     print('ALL RESET-LANGUAGE CONTROLS PASS: %d words through length14'%checks,flush=True)
@@ -94,6 +95,7 @@ def language():
 if __name__=='__main__':
     import sys
     if len(sys.argv)>1 and sys.argv[1]=='language':language()
+    elif len(sys.argv)>1 and sys.argv[1]=='language-repaired':language(True)
     else:main()
 
 # OUTCOME 2026-10-06 07:37 BST: default command exit0, ALL CONTROLS PASS.
@@ -104,3 +106,8 @@ if __name__=='__main__':
 # IR5 theorem control: a word resets iff it contains010 followed by
 # at least one bit; exhaust every word through length14. Subset-state
 # transition proof is G13. Not a blind or a universal gap prediction.
+# OUTCOME IR5: exit1, control failed at0111100, which resets without
+# containing010. The candidate iff claim was false; IR0-IR4 stand.
+# ADDENDUM IR6 before language-repaired: use exact subset-state proof,
+# reset iff word contains0, then1 mod3 ones, then0 and one further bit.
+# Test all32767 words through length14; retains IR5 unchanged.
