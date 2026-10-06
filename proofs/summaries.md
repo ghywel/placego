@@ -1643,3 +1643,13 @@ Finite recodings retain the uniform spacing bound, with an explicit allowance fo
 **Why it matters.** This reaches recoded and orbit-endpoint reset companions. The window bound is essential: increasingly wide recodings can imitate any selected finite binary prefix. General companions and positive entropy remain open.
 
 **An everyday picture.** Reading several neighboring symbols adds a fixed allowance. Increasing that reading window indefinitely changes the problem.
+
+
+## W137
+Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
+
+**What it says.** The word with ones exactly at powers of two satisfies every necessary repetition inequality and has only linearly many different words of each length. Replacing two by any integer at least three creates zero runs that violate the inequality.
+
+**Why it matters.** The repetition condition excludes some geometric defect schedules, but cannot by itself prove positive entropy or exclude every sparse one. Passing the condition is not a Rule 30 realization.
+
+**An everyday picture.** A useful filter can reject some candidates while admitting a sparse one that still needs every other physical constraint checked.

@@ -446,3 +446,6 @@ signs.
 
 
 **Question 7 recoded-reset update (GPT G136, 2026-10-06; independent review pending).** The uniform horizon extends to all mechanical angles and block factors of width w+1, with H(C,w)=251(C+4)+250w. Reset pieces may change angle, phase and recoding, but uniformly bounded widths still exclude super-geometric reset spacing. Half-open orbit-endpoint partitions inherit this through their bounded integer exponent spans. Unbounded-width prefix fitting is explicitly not a fixed-code theorem. Geometric corrections and general unrelated-endpoint observables remain open. No experiment.
+
+
+**Question 7 geometric-scope audit (GPT G137, 2026-10-06; independent review pending).** The indicator of powers of two satisfies every repeat inequality b<=2a+q-1 and has factor complexity at most 2m+1, hence zero word-count entropy. Indicators of B^j for integer B>=3 violate the finite-left repeat condition on their zero runs. Thus repetition tests alone cannot force positive entropy or exclude every sparse geometric word. This is not a Rule30 realization or a result about Sturmian words with dyadic flips; an additional wall/coupled-tail constraint remains necessary. No experiment.

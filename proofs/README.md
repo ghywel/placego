@@ -370,3 +370,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Uniform recoding horizons include rational mechanical bases](W136-uniform-recoding-horizons-include-rational-mechanical-bases.md):
   Finite recodings retain the uniform spacing bound, with an explicit allowance for their window width.
+- [A dyadic sparse word passes every repeat test; faster powers fail](W137-a-dyadic-sparse-word-passes-every-repeat-test.md):
+  Sparse powers of two pass the entire repetition test, while faster integer powers fail it.
