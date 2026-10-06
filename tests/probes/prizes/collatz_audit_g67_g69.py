@@ -225,4 +225,49 @@ for h in (8, 16, 32, 64, 128, 200, 300):
     checked75 += 1
     print(f"   G75 h = {h}: max atom of J = {float(atom):.4f}, bound {bound:.4f}")
 print("G75: exact J distributions checked; first non-vacuous horizon among those tried:", first_nonvac)
+# G77, G78 (added 2026-10-06): coin dynamic programming only. G78: U_coin/Q = E[2 Z_tail - d] (Russo sum = moment) and
+# U_coin(m, 8m)/Q > m; G77: B_(m,T) >= sqrt(T - m + 1) - 1 with b(h) replaced by its floor 1/sqrt(h+1).
+def coin_tables(m, T):
+    # counts of admitted words by (t, a) and backward f; returns q_w(t,a) masses, Delta, Q_w(t)
+    cnt = [{0: 1}]
+    for t in range(T):
+        nx = {}
+        for a, c in cnt[-1].items():
+            for b in (0, 1):
+                if 3 ** (a + b) > 2 ** (t + 1): nx[a + b] = nx.get(a + b, 0) + c
+        cnt.append(nx)
+    f = {T: {a: Fr(1) if a >= ellf(T) else Fr(0) for a in range(T + 2)}}
+    for t in range(T - 1, -1, -1):
+        f[t] = {a: (Fr(0) if a < ellf(t) else (f[t + 1].get(a, Fr(0)) + f[t + 1].get(a + 1, Fr(1))) / 2) for a in range(T + 2)}
+    return cnt, f
+n78 = 0
+for m in range(1, 9):
+    for T in range(m, m + 13):
+        cnt, f = coin_tables(m, T)
+        Q = Fr(2 ** m * sum(cnt[T].values()), 2 ** T)
+        U = Fr(0)
+        for t in range(m, T):
+            for a, c in cnt[t].items():
+                U += Fr(2 ** m * c, 2 ** t) * (f[t + 1].get(a + 1, Fr(1)) - f[t + 1].get(a, Fr(0))) / 2
+        # E[2 Z_tail - d] over admitted length-T words: enumerate by DP on (prefix ones at m, total ones)
+        mom = Fr(0); tot = 0
+        pre = {}
+        for code in range(2 ** T):
+            wbits = [(code >> i) & 1 for i in range(T)]
+            a = 0; ok = True
+            for t, b in enumerate(wbits):
+                a += b
+                if 3 ** a < 2 ** (t + 1): ok = False; break
+            if not ok: continue
+            z = sum(wbits[m:]); mom += 2 * z - (T - m); tot += 1
+        if tot:
+            fails += U / Q != mom / tot
+            fails += U / Q < 2 * ellf(T) - T - m
+        n78 += 1
+        if T - m >= 1 and Q > 0:
+            Bl = sum(Fr(1, 2) * (1 / math.sqrt(T - t)) * float(Fr(2 ** m * sum(cnt[t].values()), 2 ** t) / Q) for t in range(m, T))
+            fails += Bl < math.sqrt(T - m + 1) - 1 - 1e-12
+strict = all(2 * ellf(8 * m) - 9 * m > m for m in range(1, 200))
+fails += not strict
+print("G77/G78: moment identity, endpoint bound and bootstrap floor on", n78, "(m, T) cases; U/Q > m at T = 8m for m < 200:", strict)
 print("ALL CHECKS PASS" if fails == 0 else f"{fails} CHECK(S) FAILED")

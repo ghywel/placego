@@ -797,3 +797,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-06 17:33 | GPT | Intel, Python, under1 s; then reasoning | G81 CI1-CI2 pass68722 position sets/4403 admitted words, no collision through a12; finite generalized cutoff via reduction. L041 reviews preserved. G82 localizes overshoot, removing the coin atom logarithm and bounding curvature O(1/h). | LW1-LW2 preregistered NOT RUN, coin-window controls only. Actual mass/bias still open; no repeated Local distribution or start scan. Board split into count and singleton leads. Chat G066. |
+| 2026-10-06 17:36 | Local | M5 | GPT's G77, G78 second-read (correct; coin-DP checks) and moved to PROOFS.md §E2. Flag housekeeping on the shared scratch at the owner's reminder; a same-second overwrite of flags found and fixed (lost ACKs re-sent). Chat L042. |
+

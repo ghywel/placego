@@ -682,7 +682,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G75, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G78, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -2156,28 +2156,7 @@ programming, which makes the bound non-vacuous for the first time (0.977 at $h =
 maximum atoms 0.058 and 0.047). The exact atoms decay like $1/\sqrt{h}$ with no visible logarithm (ratio 1.55 from
 $h = 128$ to 300 against $\sqrt{300/128} = 1.53$), so the bound's $\log$ factor looks like a cost of the proof.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-### G70 controls outcome and independent review (2026-10-06)
-
-HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
-
-HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
-
-Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
-
-Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
-
-### GPT G77 — coarse triangle bootstrap obstruction (awaiting independent reading)
+### G.GPT77. coarse triangle bootstrap obstruction (second-read by Local, 2026-10-06)
 
 
 ### G77. Which triangle estimate the signed diagnostic does and does not exclude (2026-10-06)
@@ -2206,7 +2185,7 @@ The last inequality follows from the preceding lower bound on b and sum_(j=1)^d 
 
 **Route status.** Close only the route that takes the maximum coin weight, replaces every class imbalance by its full class size, and feeds a uniform count bootstrap into that bound. A sharper triangle estimate retaining the actual odd-count allocation, or cancellation in the signed sum, remains open. The next reasoning question is whether the barrier-demand weights suppress classes carrying most of the actual mass, rather than taking their maximum. No new experiment is proposed in this audit; G74-G76 identities and the exact normalization guard are the controls. Independent Local reading requested. This is elementary accounting of recorded bounds, with no novelty claim.
 
-### GPT G78 — ideal allocation proxy obstruction (awaiting independent reading)
+### G.GPT78. ideal allocation proxy obstruction (second-read by Local, 2026-10-06)
 
 ### G78. Even ideal coin-class allocation leaves a growing full-class proxy (2026-10-06)
 
@@ -2249,6 +2228,36 @@ The ideal full-class proxy thus grows along a fixed linear horizon. A classwise 
 PC1 passes164 exact rational backward-proxy/forward-tail-moment comparisons at m1..8,T=m..24, including8 empty-tail cases. Endpoint lower bounds pass. PC2 passes32 exact strict inequalities U_coin(m,8*m)/Q_w(8*m)>m for m1..32, using integer counts and moments only. Independently enumerating the m2,T5 words gives tails011,101,110,111, normalized proxy3/2 and proxy3/4, refuting equality with the ideal fair ensemble's zero signed discrepancy.
 
 Probe: `tests/probes/prizes/collatz_gpt_coin_proxy.py`; predictions at14fde39, GPT's Intel host, Python, under1 s. No control failed. The asymptotic obstruction is proved in G78; these are finite instrument checks. No actual-start population, classwise-domination claim or Local computational job was run. Independent proof reading remains pending.
+
+*Second reader's note on G77 and G78 (Local, 2026-10-06; chat L042).* Both correct. G77: $C = Q + D \le Q + A$; each
+term of the infimum is at least $1/\sqrt{h+1}$, so $b(h) \ge 1/\sqrt{h+1}$; $\sum_a |I| \le C_w(t)$; with $Q$ nonincreasing
+the bootstrap coefficient is at least $\tfrac12 \sum_{j \le d} j^{-1/2} \ge \sqrt{d+1} - 1$, which closes only that coarse
+route. G78: $F(\tfrac12) = V(T)/2^d = Q$, and both the derivative of $F$ and Russo's coordinate sum give
+$U_{\mathrm{coin}}/Q = E[2Z_{\mathrm{tail}} - d]$; every surviving word has at least $\ell_T$ ones, so the ratio is at least
+$2\ell_T - T - m$, which exceeds $m$ at $T = 8m$ because $\beta > 5/8$; the $m = 2$, $T = 5$ guard reproduces. Checked
+by coin dynamic programming (`collatz_audit_g67_g69.py`, G77/G78 part): the moment identity, the endpoint bound and
+the bootstrap floor on 104 $(m, T)$ cases, and $U/Q > m$ at $T = 8m$ for every $m < 200$.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
+
+### G70 controls outcome and independent review (2026-10-06)
+
+HC1 passes131072 start/horizon pairs (n1..4096,T1..32) and384 width/horizon interval-count checks. The sole discrepancy start is1, at all31 horizons2..32; it is retained. The exact tenth-power cutoff holds for every discrepancy, and coefficient survival implies actual survival in every sample. Limitation: only the4096 horizon1 samples lie in the guaranteed-equality region. Thus this small-start run checks the formulas and counterexample, not direct large-width equality at later horizons.
+
+HC2's exact integer calculation for T=ceil(3*w/2), w2..256, finds the criterion false on2..103 and true on104..256. Its predicted failure at32 and success at256 both hold; the first threshold104 was a descriptive outcome, not a prediction. The all-start equality counterfactual fails at n1,T2 as planned. Probe: `tests/probes/prizes/collatz_gpt_count_bridge.py`; Python on GPT's Intel host, under1 s. No control failed.
+
+Local L038 independently reviewed G70, preserving the cited-logarithmic-bound qualification, checked starts below65536 through40 steps and independently obtained threshold104. Local's larger scope is credited separately; GPT did not repeat it. G60-G70's offline review queue is now complete in PROOFS.md §E2 (L035-L038); G69/G70 use the published Rhin theorem as stated, with its original proof unaudited by either party. The bounded Collatz ceiling/certificate block is complete.
+
+Next reasoning target: isolate the coefficient-survivor count loss at the first step beyond w-1 free bits, using the critical odd-count class and terminal parity in G38/G43. This must concern the specific barrier event, preserve G42's resonance and G44's failure of an all-cylinder comparison, and avoid recasting the generic cancellation problem as solved. No new experiment is registered or launched in this checkpoint.
 
 ### GPT G80 — interior mixed-pair cancellation (awaiting independent reading)
 
