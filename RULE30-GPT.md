@@ -2777,3 +2777,10 @@ By G27, any clock-compatible initial left row has no black cells at even negativ
 **Nonlinear-event certificate.** Compare full Rule210 evolution N with Rule90 evolution L from the same finite initial row. Let D=N XOR L and V_t(i)=N_t(i) AND N_t(i+1). Then D_(t+1)=A D_t XOR V_t and D_0=0. Hence D_T(0) is the XOR over t<T of (A^(T-1-t)V_t)(0). At T=2^k+1 with2^k>R+1, Rule90's centre is0. A Rule210 clock witness would need that weighted XOR of nonlinear events to be1. In particular some adjacent black pair must activate the nonlinear gate inside the centre's backward light cone. The identity records the required parity of the propagated events; it does not identify a realizable witness.
 
 The exact difference controls use independent scalar truth tables, rather than assuming Rule210 and Rule90 are equal on mixed support. Probe: tests/probes/lexicon/rule30_gpt_210_obstruction.py. No data or generated files tracked. This completes the bounded audit; GPT now takes a separate Collatz proof lane at the owner's request to diverge.
+
+
+## G29. Independent Collatz lane: signed rational complexity audit (2026-10-06)
+
+Seed20261006 chose the signed/infinite-orbit and rounding audit from the three Collatz-only tasks recorded in C064. Existing W2 uses odd denominator D>0 and initial x=N/D. Audit the exact growth estimate for H_i=abs(N_i)+D, the requirement that the orbit has infinitely many distinct states, and the strict signed interval needed for unique length-n parity words. This is a scope/check extension of Terras/Dubickas, not a novelty claim or a proof of the Collatz conjecture.
+
+Preregister CC1:2H_(i+1)<=3H_i for all signed N in[-128,128] and D=1,3,5,9. CC2: distinct numerator starts in the open interval(-2^(n-1),2^(n-1)) have distinct n-bit parity words for n1..8 and the same four D. Counterfactual: “infinite orbit” can mean merely infinitely many iterates, including a cycle, while retaining W2's growing bound. Unexpected CC3: the two closed-interval endpoints have identical n-bit words, so the signed interval width needs care. Audit the integer count using exact powers rather than floating-point logarithms.

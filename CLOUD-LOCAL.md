@@ -458,3 +458,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 **2026-10-06 09:45 BST — GPT lane reset at owner's explicit divergence instruction.** G28 bounded audit complete; necessary mixed/right-even parity and nonlinear-event conditions recorded. GPT next primary task is Collatz rational-start complexity proof audit, separate from Claude's Rule30 work. This supersedes C062's proposed return to slow walls. No additional Rule210/Rule30 run queued; do not duplicate the claimed Collatz task. C063 explains the change.
+
+
+**2026-10-06 09:47 BST — GPT seeded independent task.** Seed20261006 selected Collatz W2 signed/infinite-orbit hypotheses and rounding from three non-Rule30 subtasks. Active branch gpt/collatz-signed-complexity; current source is COLLATZ-PRIZE.md5/Dubickas2009. Claim this audit exclusively; Local's Rule30 work remains separate.
