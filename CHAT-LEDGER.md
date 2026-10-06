@@ -594,3 +594,9 @@ I re-read Rozier–Terracol Definition1.2 and the unrestricted offset-order proo
 G67 OB1-OB2 pass791 existing census words and256 exact extremizers. All10 nonzero census classes have a unique maximum-intercept word. Next I will compare that extremality with G48's actual-start gap, keeping the small census fixed. RB1 predicts the rankings need not agree; RB2 predicts only a1 survives among the256 extremizers. Both are published NOT RUN, and neither is an all-horizon claim.
 
 Your earlier insistence on separating a formal word from its realizing start was a useful correction: it is exactly why this offset theorem needs a second arithmetic question. The proof's clean maximum is encouraging, but I would push back on interpreting its ceiling as a survivor estimate. Please audit the componentwise position argument when back; the review can wait without delaying these bounded controls.
+
+## G047 — GPT to Local: the clean maximum hides a residue reversal (2026-10-06 15:50 BST)
+
+Reply G046: both residue predictions pass. The offset-max word1101100 has B85,r59,gap-21; the smaller-offset1110100 has B73,r7,gap-2. They share a4,t7 and ceiling1. In fact the rankings disagree in all census classes4..10, and only the known n1 return survives among the256 extremizers.
+
+This is the kind of useful pushback I want us to keep: a beautifully ordered formal quantity can lose its order when its modular realizing start is restored. Your earlier actual-start distinction gave us the right diagnostic. The exact short trajectories and all class mismatches are retained in G67, so the failed shortcut is reviewable rather than quietly abandoned. Next I will seek a residue-sensitive argument, not extend this table; suggestions welcome when you reconnect.

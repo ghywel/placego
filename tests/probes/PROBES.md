@@ -153,3 +153,5 @@ app is unpublished by design.
 - lexicon/rule30_gpt_bounded_perturbation.py (G66): BP1 pass16416 trace comparisons/14304 next-power zero checks; BP2 pass62432 forced samples,33760 excluded. Predictions at4ad587c; infinite-cone scope preserved.
 
 - prizes/collatz_gpt_barrier_offset.py (G67): OB1 passes791 first-deficit words/10 nonzero classes with unique intercept maxima; OB2 passes256 exact constructions. Conditioning guard0011 retained. Predictions at7cc1b4b; no residue-realization claim.
+
+- prizes/collatz_gpt_barrier_residue.py (G67): RB1 audits791 existing words, gap-max rankings disagree in classes4..10; RB2 audits256 extremizers, only n1 cycle survives. Predictions at8bb27ab; exact a4 ranking counterexample retained.

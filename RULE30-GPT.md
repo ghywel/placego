@@ -3990,3 +3990,20 @@ No experiment has run for this envelope. Existing G45-G48 machinery and the sour
 OB1 passes all791 first-deficit words throughlength16, including the separate zero-ones word. All10 nonzero odd-count classes have the exact unique maximum-intercept word predicted by G67. OB2 passes256 exact constructions: first-deficit condition, affine recurrence, strict lower/non-strict upper offset envelope, and G45's independent prefix-ceiling calculation. The unexpected0011 conditioning guard is retained: B20 exceeds the a2 barrier maximum5 but fails the barrier immediately. Probe: `tests/probes/prizes/collatz_gpt_barrier_offset.py`; Python on GPT's Intel host, under1 s. No control failed. This audits extremality, not actual residue placement or an all-horizon stopping theorem. Independent proof review remains pending.
 
 **Next residue controls, preregistered NOT RUN.** RB1: reuse exactly G48's first-deficit words throughlength16 and compare, within each odd-count class, the word maximizing B with words maximizing the terminal gap g=q-r of the least nonnegative realizing residue. Prediction: maximizing formal B need not maximize g; retain every mismatch, and any class where it does. RB2: for G67's256 exact extremizers, predict that only a=1 has a positive actual surviving lift; test r against K, including r=0's positive-domain lower lift, and independently evolve any claimed surviving lift. This finite prediction is not an all-a theorem. Unexpected check: the counterfactual that extremal B orders actual gaps must be tested directly rather than inferred from the offset bound. No census horizon increase or large computational job is proposed.
+
+### G67 residue controls outcome (2026-10-06)
+
+RB1 passes its prediction on the same791 first-deficit words throughlength16. Maximum-intercept words also maximize the least-residue terminal gap in classes a=1,2,3; they fail to maximize it in every class a=4..10. Retained pairs (a, extremal gap, maximum gap): (4,-21,-2), (5,-5,-1), (6,-145,-82), (7,-474,-107), (8,-609,-37), (9,-2859,-50), (10,-5572,-34). These are finite class maxima, not bounds for larger a.
+
+The unexpected ordering counterfactual is refuted by a fully explicit pair, isolated as a post-control diagnostic. Both words below have a4,t7,D=47 and are first-deficit:
+
+| Word | Offset B | Least residue r | Terminal q | Gap q-r |
+| --- | --- | --- | --- | --- |
+| 1101100 | 85 | 59 | 38 | -21 |
+| 1110100 | 73 | 7 | 5 | -2 |
+
+Their integer trajectories are respectively59,89,134,67,101,152,76,38 and7,11,17,26,13,20,10,5. They have the same formal ceiling K=1, but neither residue lies below it. G48's exact identity2^t*g=B-D*r explains the reversal: the offset increases by12 while D*r increases by2444, so the gap falls by19. Componentwise odd-position monotonicity of B therefore cannot be transferred to actual gaps. The counterexample is exact arithmetic, not a statistical inference.
+
+RB2 passes its finite prediction on all256 G67 extremizers: no zero residues occur, and the complete list of positive surviving lifts is(a,t,n,g)=(1,2,1,0). The least positive realizing start for each word is evolved independently, including the positive-domain guard r=0, and every putative surviving lift is checked. The identity linking intercept, residue and gap is also verified. No larger census, extrapolation to all a, or new stopping theorem is claimed. Probe: `tests/probes/prizes/collatz_gpt_barrier_residue.py`; Python on GPT's Intel host, under1 s. No control failed; all mismatches predicted by RB1 are retained.
+
+This completes the finite extremality audit. Next reasoning target: a residue-sensitive inequality or certificate for first-deficit words; any such claim must retain this ordering counterexample and G46's rounding obstruction. Simply extending the extremizer table would not supply the missing uniform argument. No new experiment is registered or launched in this checkpoint.
