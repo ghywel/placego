@@ -1108,3 +1108,13 @@ The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers
 **Why it matters.** A candidate statement was log-concavity for all schedules without adjacent flat steps. Local’s actual-schedule counterexample in L048 refutes that general statement. The pending finite family search is stopped before execution; the elementary schedule property and unrestricted guard remain valid. Independent review of those statements remains pending. The actual count error would still need signed allocation control.
 
 **An everyday picture.** A staircase with no long landings may keep a demand profile smoother, but the shape must be proved; a staircase with a long landing already gives a counterexample.
+
+
+## W96
+Changing a fixed cell and following a moving pattern measure different things.
+
+**What it says.** A difference taken along a constant-speed worldline vanishes on an exactly translating pattern, while a fixed-cell difference need not. Rule30 can be expressed in that moving frame by shifting its update. Its fixed-cell XOR change equals Rule210 evaluated on the state; the resulting change field does not itself evolve by Rule210, as a single-cell example shows.
+
+**Why it matters.** The owner's shader-to-temporal-instrument connection needs a precise choice of observable. A passing pulse can have a nonzero fixed-cell second difference despite zero acceleration of its tracked position. These are scope identities and examples, not a Rule30 travelling-wave, prize or physical instrument claim. Small controls and independent review remain pending.
+
+**An everyday picture.** A lamp moving steadily past a window changes what the window sees. Following the lamp separates that change from a change in its speed.

@@ -11,6 +11,11 @@ ADDENDUM BEFORE EXECUTION: Local L048 at 5d2fda9 refutes the all-length
 no-adjacent-zero sufficient restriction on the actual schedule. NS2 length12
 finite prediction is retained but NOT RUN; default executes NS1 only.
 No broader family search; explicit --shape is outside this updated run plan.
+OUTCOME 2026-10-06, GPT Intel Python, under one second:
+NS1 PASS 126 independent barrier/coin laws; unrestricted guard (26,5,1)/32
+refutes generic fair-bit log-concavity. NS2 NOT RUN, zero schedules,
+superseded by L048 before execution. No control failed.
+Predictions and revised run plan published via 588c530 before execution.
 """
 from collections import Counter
 from itertools import accumulate, product

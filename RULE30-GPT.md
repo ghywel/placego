@@ -4972,3 +4972,37 @@ Probe: `tests/probes/prizes/collatz_gpt_threshold_shape.py`. The next proof targ
 ## G95 superseded shape target before execution (2026-10-06)
 
 Before the staged G95 prediction was pushed or executed, Local's L048 at 5d2fda9 supplied a real-schedule log-concavity counterexample at T = 73, r = 8 (remaining tail 65), independently checked by Local. This schedule has no adjacent zero increments by the proved property above. Hence the proposed all-length sufficient restriction is REFUTED; the original finite length-12 NS2 prediction is not itself refuted, but is NOT RUN because it cannot rescue the known-false generalization. Retain the original prediction and its timing. Only NS1's bounded instrument controls and the unrestricted counting guard will run after publication. No larger schedule-family search or Local horizon-1024 duplicate. The finite G93 result through T64, G94's correct edge criterion and G95's elementary schedule fact remain intact. A fresh proof target must treat the edge defect rather than assume full log-concavity.
+
+
+## G95 bounded controls outcome (2026-10-06)
+
+NS1 passes 126 independent barrier/coin laws and exact mass controls, including the unrestricted (26,5,1)/32 log-concavity counterexample. No control failed. NS2 is NOT RUN with zero schedules evaluated, superseded by Local L048 before execution; its finite prediction is retained without a verdict. Revised run plan and script published via 588c530 before execution. GPT Intel Python, under one second. The all-length no-adjacent-zero sufficient-shape conjecture is refuted by Local's actual-schedule counterexample; no shape or actual allocation theorem is claimed. The next active reasoning item follows the owner's temporal-instrument origin: fixed-cell versus moving-frame differences, with no shader changes or duplicate Local complexity job.
+
+
+## G96. Fixed-cell change and moving-frame change are different observables (2026-10-06)
+
+Follow the owner's temporal-instrument origin and Local's §8.70. For a binary history x_t(i), define Qx_t(i) = x_t(i+1), time shift Sx_t(i) = x_(t+1)(i), and, for fixed integer v,
+
+    D_v = 1 + S*Q^v over GF(2),
+    (D_v x)_t(i) = x_(t+1)(i+v) xor x_t(i).
+
+D_0 is the fixed-cell XOR change. For x_t(i) = w(i-v*t), D_v x is zero everywhere, regardless of w; D_0 need not be zero. This is a generic exact-translation history, not a claimed Rule 30 solution. The dyadic identity is
+
+    D_v^(2^k) = 1 + S^(2^k)*Q^(v*2^k),
+
+by repeated squaring of the single linear operator S*Q^v in characteristic two. It compares cells along the same constant-speed worldline. No real-valued acceleration, physical unit, feature identity or noise model is asserted.
+
+For an actual Rule 30 orbit with global map F, pull back to z_t(j) = x_t(j+v*t). Translation covariance gives
+
+    z_(t+1) = Q^v*F(z_t),
+    z_(t+1) xor z_t = Q^v*F(z_t) xor z_t.
+
+Proof: at site j, x_(t+1)(j+v*(t+1)) equals F(x_t) at that site; replacing x_t(i) by z_t(i-v*t) gives F(z_t)(j+v). This is a change of coordinates, without treating the update rule as linear. At v = 0, §8.70 supplies F(x) xor x = R210(x).
+
+**Unexpected derivative-dynamics guard.** Write u_t = F(x_t) xor x_t = R210(x_t). Its next value is R210(F(x_t)), not in general R210(u_t). For a single black cell at site 0, x_1 has black sites {-1,0,1}, so u_0 has {-1,1}. The next Rule 30 row has {-2,-1,2}, giving u_1 = {-2,0,1,2}. But applying Rule 210 to u_0 gives {-2,2}. The shortcut that the velocity field itself evolves by Rule 210 fails at sites 0 and 1. This clarifies the scope of the correct identity in §8.70; that section is not being accused of claiming the shortcut.
+
+**Transport-versus-acceleration guard.** In the generic translating pulse x_t(i) = 1 exactly when i = t, the tracked position p_t = t has numerical velocity 1 and acceleration and jerk zero. At fixed site 0 the first three samples are 1,0,0: its second real finite difference is 1, and its second GF(2) difference is also 1. Along i = t every sample is 1, with zero differences. Thus fixed-cell second differences can reflect passage of a constant-speed pattern, not acceleration of that pattern. The example is a scope guard, not Rule 30 data or a PIV validation.
+
+**MC1-MC2 preregistered NOT RUN.** MC1: every binary ring of widths 3 to 8, integer frames v = -1,0,1, compare literal Rule30 truth-table updates with both the transported update and moving-difference identities; separately require the v = 0 Rule210 identity. MC2: independently evolve the finite single-black-cell guard using padded direct truth tables, and verify the fixed/tracked pulse differences and dyadic worldline identity through lag 8. Counterfactual that u evolves by Rule210 must fail at the stated sites. No centre-column rerun, shader edit or Local complexity job. Existing-record search found §8.70's fixed-cell identity but no moving-frame audit or claimed autonomous derivative law. Elementary shift algebra and the recorded truth tables; no novelty or prize claim. The next question is which coherent structures and phase coordinates justify a tracked observable in actual Rule30 dynamics.
+
+Probe: `tests/probes/rule30_gpt_moving_frame.py`. Independent Local reading requested.

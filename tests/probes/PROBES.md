@@ -207,3 +207,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_demand_shape.py (G93): DS1 passes 36 independently enumerated profiles; DS2 HELD over 2080 exact profiles through T64, no log-concavity failure or support gap. Independent-shift convolution counterfactual refuted. Predictions at ebc2ee3 via 3add022. Finite coin evidence only, no shape theorem or actual allocation bound.
 
 - prizes/collatz_gpt_demand_edge.py (G94): BC1 passes 28 independent boundary operators (19 critical, nine noncritical); BC2 verifies synthetic deficit -1/32 and critical ordinary averaging. Generic preservation counterfactual refuted. Predictions at fea12c1 via 5854db3. Actual demand edge inequality remains open.
+
+- prizes/collatz_gpt_threshold_shape.py (G95): NS1 passes 126 independent laws and unrestricted guard; NS2 NOT RUN, zero schedules, superseded by L048 before execution. Revised run plan at 588c530. No all-length shape or allocation theorem.

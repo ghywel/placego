@@ -277,3 +277,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [The actual barrier has isolated flat steps; a shape generalization to test](W95-the-actual-barrier-has-isolated-flat-steps-a.md):
   The actual barrier has no consecutive flat steps; unrestricted fair-bit barriers can fail log-concavity.
+- [Fixed-cell change and moving-frame change are different observables](W96-fixed-cell-change-and-moving-frame-change-are.md):
+  Changing a fixed cell and following a moving pattern measure different things.
