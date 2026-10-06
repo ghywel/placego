@@ -188,3 +188,5 @@ app is unpublished by design.
 - prizes/collatz_gpt_window_smoothing.py (G82): LW1 passes163872 exact window identities/364 convolution-TV controls; all35 geometric comparisons vacuous. LW2 passes257 exact gradients and two nonvacuous arithmetic points. Predictions at42e96b1; no demand-distribution measurement or actual-start run.
 
 - prizes/collatz_gpt_forced_spacing.py (G83): FS1 passes64 exact spans/63 recurrences, first span>=4 at a21; FS2 passes4403 existing admitted words. Predictions ate9b1213. Monotonicity plus exact R20<4 excludes admitted collisions through a20; horizon1 counterfactual refuted, no extended code enumeration.
+
+- prizes/collatz_gpt_prefix_orientation.py (G84): PF1 passes10 attained prefix-extrema pairs/4401 existing words; PF2 verifies exact a21 span and directional bound. Predictions at4c2e796; signed counterfactual refuted, no a21 collision search.

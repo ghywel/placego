@@ -254,8 +254,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 *The pages:*
 
 - [Forced initial parity sharpens admitted fibre spacing](W83-forced-initial-parity-sharpens-admitted-fibre-spacing.md):
-  Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 20 odd steps without
-  a search.
+  The prefix growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
 - [The first possible collision has one prefix orientation](W84-the-first-possible-collision-has-one-prefix-orientation.md):
-  At 21 odd steps, the first case G83 leaves open, any meeting of two surviving numbers would have to take one exact
-  form.
+  At 21 odd steps, any meeting allowed by these conditions must have one precise orientation.
+- [Admission forces two further shared odd bits in a = 21 candidates](W85-admission-forces-two-further-shared-odd-bits-in.md):
+  The same possible pair must follow two more common odd steps.
+- [Removing the common odd count does not preserve admission](W86-removing-the-common-odd-count-does-not-preserve.md):
+  A prefix can buy slack that its remaining steps cannot satisfy on their own.

@@ -999,31 +999,37 @@ their own bound.
 **An everyday picture.** Measuring with a finer ruler: the same object, but the margin of error shrinks.
 
 ## W83
-Surviving Collatz numbers always start with two odd steps, which rules out meetings for up to 20 odd steps without a
-search.
+The prefix growth-factor condition rules out two starts meeting with the same odd-step count up to 20.
 
-**What it says.** To keep its growth factor at least 1 through two steps, a number must take two odd steps first, so
-it leaves a remainder of 3 when divided by 4. Two surviving numbers that meet must therefore differ by a multiple of
-4. GPT combined that with the known range of offsets to show that no two such numbers can meet when the number of
-odd steps a is between 2 and 14; an exact calculation of the same bound then carries this to a = 20.
+**What it says.** Require the multiplier from tripling and halving to stay at least one after every prefix of the step pattern. Any such pattern lasting two steps begins with two odd steps. Its start therefore leaves remainder 3 on division by 4. Two different starts with the same final value and the same number of odd steps must differ by at least 4. The exact range of their additive offsets is too small to allow that through 20 odd steps.
 
-**Why it matters.** It goes past the finite search that followed G81 (no meeting up to a = 17) with a short
-argument, and sharpens the bound on how many numbers can share an end value. It has not yet had its second reading.
+**Why it matters.** This extends the finite word search through 17 using a proof and exact arithmetic. It concerns the growth-factor condition, which differs from requiring the actual number to stay above its start. The new spacing proof awaits independent review; it does not resolve Collatz.
 
-**An everyday picture.** If every guest arrives on the hour or at a quarter past, and the doors are less than four
-minutes apart, no two guests can collide in the doorway.
+**An everyday picture.** Two arrivals must be at least four minutes apart, but their permitted arrival window is shorter than four minutes.
 
 ## W84
-At 21 odd steps, the first case G83 leaves open, any meeting of two surviving numbers would have to take one exact
-form.
+At 21 odd steps, any meeting allowed by these conditions must have one precise orientation.
 
-**What it says.** Sort the surviving step patterns by their first three steps: odd-odd-even or odd-odd-odd. GPT
-showed that two patterns with the same first three steps cannot meet at a = 21, and that a meeting between the two
-kinds is possible only if the offsets differ by exactly 4 times 3^21, so that the two starting numbers differ by
-exactly 4. No such pair has been found.
+**What it says.** For two starts satisfying the prefix growth-factor condition and meeting with 21 odd steps each, the smaller starts odd-odd-even and the larger starts odd-odd-odd. The starts differ by exactly four. The reverse orientation is excluded by bounds on the two kinds of offsets. No meeting pair has been found.
 
-**Why it matters.** It narrows any future search for a meeting at a = 21 to one precise shape, instead of all
-patterns. It has not yet had its second reading.
+**Why it matters.** It narrows the first count left open by W83 without another large search. These are necessary conditions, not an existence claim. Independent review remains pending.
 
-**An everyday picture.** A detective who cannot yet name the culprit, but has proved it must be one of two twins who
-arrived four minutes apart.
+**An everyday picture.** A detective narrows a possible pair to two adjacent seats with a specific left-to-right order, but has not found anyone occupying both.
+
+## W85
+The same possible pair must follow two more common odd steps.
+
+**What it says.** Continue W84's smaller and larger starts. After their differing third step, their values have the same parity. The smaller start needs an odd fourth step to satisfy the growth-factor condition, forcing the larger to take one too. The same argument forces an odd fifth step for both. Their first five step patterns must be 11011 and 11111, where 1 means odd. Their starts leave remainders 27 and 31 on division by 32.
+
+**Why it matters.** It makes the necessary candidate shape more precise. It neither finds a meeting nor excludes every possible pair. The next step has opposite parities, so the common odd-step extension stops here. Independent review and preregistered controls remain pending.
+
+**An everyday picture.** Two routes must share two extra turns after their first fork; that still does not show that they reach the same destination.
+
+## W86
+A prefix can buy slack that its remaining steps cannot satisfy on their own.
+
+**What it says.** Cutting off a common-count prefix does not preserve the requirement that the growth multiplier stay at least one. Earlier odd steps can build a buffer that pays for later even steps. An explicit 33-step pattern satisfies the full condition, but its last 27 steps fail the condition when measured from a fresh start. The correct suffix condition must retain the prefix's buffer.
+
+**Why it matters.** It blocks an invalid shortcut: applying W83's smaller-count result to a suffix that no longer satisfies W83's hypothesis. The original collision question and the condition with a carried buffer remain open. This reasoning awaits independent review.
+
+**An everyday picture.** A traveller saved money before the next leg. Starting the budget at zero halfway through gives a different affordability test.
