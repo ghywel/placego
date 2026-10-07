@@ -470,6 +470,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   exchange two starting patterns have a restricted eventual period behavior.
 - [the return-eight paired graph is acyclic](G192-the-return-eight-paired-graph-is-acyclic.md): The paired
   return-eight graph has no loop at all.
+- [prune paired windows and retain the swap bit in the quotient](G193-prune-paired-windows-and-retain-the-swap-bit.md):
+  The paired graph can be reduced while keeping a bit that records exchange.
 
 ## The waiting room (not yet verified)
 
@@ -484,7 +486,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Prune paired windows and retain the swap bit in the quotient](W193-prune-paired-windows-and-retain-the-swap-bit.md):
-  The paired graph can be reduced while keeping a bit that records exchange.
 - [Two binary potentials test the quotient's persistent phase](W194-two-binary-potentials-test-the-quotient-s-persistent.md):
   Two binary equations expose the obstruction to persistent exchange.

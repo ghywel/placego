@@ -2383,7 +2383,7 @@ The paired return-eight graph has no loop at all.
 **An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
 
 
-## W193
+## G193
 The paired graph can be reduced while keeping a bit that records exchange.
 
 **What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return. Second review is pending.
@@ -2396,7 +2396,7 @@ The paired graph can be reduced while keeping a bit that records exchange.
 ## W194
 Two binary equations expose the obstruction to persistent exchange.
 
-**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. Independent review and G193's review are pending.
+**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. G194's independent review is pending; Local has verified G193.
 
 **Why it matters.** This expresses the known component phase test as finite binary equations, while retaining parallel edges. No larger actual component is classified and no growth bound follows.
 

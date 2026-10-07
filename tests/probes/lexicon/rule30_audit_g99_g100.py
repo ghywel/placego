@@ -437,6 +437,12 @@ CHECKS (GPT's claims at 827e006):
      from 1 to 16 the 362 single words with U5 = 1 (10100100 among them) all have c = 1 + S Delta^2 w and only
      accepted triples, yet no two of them, shifted or not, have complementary entries c_u + c_v = 1; the solutions of
      Delta^2 beta = 1 at caps 4, 8, 12, 16 are the four rotations of 0011, each containing 11001.
+  S89 (G193, added 2026-10-07 at d689b08): in G190's graphs for m = 1 to 6, every edge ends in H_m (V(X) + V(Y) = 1,
+     V = U_(2m-2)), every discarded vertex, diagonal ones included, has indegree 0, |H_m| = 2 N0 N1 with (N0, N1) =
+     (0, 1), (0, 1), (2, 3), (2, 3), (5, 10), (16, 17), and for every source vertex and appended pair the edge equation
+     holds exactly when V(X') + V(Y') = 1; orientation plus edge label equals the target's orientation on every edge;
+     the longest r = 8 path has 5 edges (G193 bounds it by 6); V_3 = x + z on G192's triples; the labelled quotients
+     of the half-turn 4-cycle (q = 4 yes, q = 8 no) and K_{2,2} (every even length, not 1).
 """
 import random
 from fractions import Fraction as F
@@ -4543,4 +4549,79 @@ for q in (4, 8, 12, 16):
                                        for s in range(q)) for b in sols)
 check('S88 G192: F3 accepts 001, 010, 011, 100, 101; at caps 1-16 no two words with U5 = 1 have complementary entries '
       '(single words exist); Delta^2 beta = 1 forces 0011 and the block 11001', ok88)
+ok89 = True
+_long89 = {}
+for m in range(1, 7):
+    V, E = graph84(m)
+    Vf = lambda X: U82(2 * m - 2, list(X) + [0])          # V_m = U_(2m-2) on the m-bit window
+    Ff = lambda X: U82(2 * m - 1, list(X) + [0])
+    Af = lambda X: U82(2 * m, list(X) + [0])
+    Vs = set(V)
+    H = {(X, Y) for X, Y in V if Vf(X) ^ Vf(Y) == 1}
+    wins = {X for X, Y in V}
+    N0, N1 = sum(1 for X in wins if Vf(X) == 0), sum(1 for X in wins if Vf(X) == 1)
+    ok89 &= len(H) == 2 * N0 * N1 and all((Y, X) in H for X, Y in H) and all(X != Y for X, Y in H)
+    indeg = {v: 0 for v in V}
+    for u in E:
+        for w in E[u]:
+            indeg[w] += 1
+            ok89 &= w in H                                   # every edge ends in H_m
+    ok89 &= all(indeg[v] == 0 for v in V if v not in H)     # discarded vertices (diagonals too) have no in-edge
+    # the target-only identity: for a source vertex and appended bits with the new pair a vertex, G190's edge equation
+    # b + b' = 1 + A(X) + A(Y) holds exactly when V(X') + V(Y') = 1
+    for X, Y in V:
+        for b, b2 in product((0, 1), repeat=2):
+            X2, Y2 = X[1:] + (b,), Y[1:] + (b2,)
+            if (X2, Y2) in Vs:
+                ok89 &= ((b ^ b2) == 1 ^ Af(X) ^ Af(Y)) == ((Vf(X2) ^ Vf(Y2)) == 1)
+    # orientation labels on the quotient: canonical representative has V(X) = 0; every edge's label carries the
+    # orientation exactly (orientation of source + label = orientation of target)
+    orient = lambda v: 0 if Vf(v[0]) == 0 else 1
+    for u in E:
+        if u in H:
+            for w in E[u]:
+                canon_u = u if orient(u) == 0 else (u[1], u[0])
+                w_from_canon = w if canon_u == u else (w[1], w[0])
+                label = orient(w_from_canon)
+                ok89 &= orient(u) ^ label == orient(w)
+    # longest path in the (acyclic) original graph
+    memo = {}
+
+    def lp(v):
+        if v not in memo:
+            memo[v] = max([0] + [1 + lp(w) for w in E.get(v, [])])
+        return memo[v]
+    _long89[m] = (max(lp(v) for v in V), N0, N1)
+ok89 &= _long89[1][1:] == (0, 1) and _long89[3][1:] == (2, 3) and _long89[3][0] <= 6
+# V_3 = U_4 = x + z on G192's five triples: 010, 101 have 0; 001, 011, 100 have 1
+ok89 &= {t: U82(4, list(t) + [0] * 6) for t in _acc88} == {(0, 1, 0): 0, (1, 0, 1): 0, (0, 0, 1): 1, (0, 1, 1): 1,
+                                                            (1, 0, 0): 1}
+
+
+def quotient_admits89(adj, sig, canon, h):
+    """Labelled quotient: a closed walk of length h whose labels XOR to 1 exists."""
+    n = len(adj)
+    orient = [0 if v in canon else 1 for v in range(n)]
+    rep = {v: (v if v in canon else sig[v]) for v in range(n)}
+    Q = {}
+    for c in canon:
+        for w in adj[c]:
+            Q.setdefault(c, []).append((rep[w], orient[w]))
+    for c in canon:
+        layer = {(c, 0)}
+        for _ in range(h):
+            layer = {(t, s ^ e) for (x, s) in layer for t, e in Q.get(x, [])}
+        if (c, 1) in layer:
+            return True
+    return False
+
+
+_c4adj, _c4sig = [[1], [2], [3], [0]], [2, 3, 0, 1]
+ok89 &= quotient_admits89(_c4adj, _c4sig, {0, 1}, 2) and not quotient_admits89(_c4adj, _c4sig, {0, 1}, 4)
+_k22adj, _k22sig = [[2, 3], [2, 3], [0, 1], [0, 1]], [1, 0, 3, 2]
+ok89 &= all(quotient_admits89(_k22adj, _k22sig, {0, 2}, h) for h in (2, 4, 8, 16))
+ok89 &= not quotient_admits89(_k22adj, _k22sig, {0, 2}, 1)
+check('S89 G193: in G190\'s graphs (m = 1-6) every edge ends in H_m, discarded vertices have no in-edge, '
+      '|H_m| = 2 N0 N1, the edge equation is target-only, labels carry orientation; r = 8 paths <= 6 edges; C4 and K22 '
+      'quotients', ok89)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

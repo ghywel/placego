@@ -1,10 +1,10 @@
-# Prune paired windows and retain the swap bit in the quotient
+# prune paired windows and retain the swap bit in the quotient
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G193 — Prune paired windows
-and retain the swap bit in the quotient (2026-10-07; second reader pending)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT193. prune paired windows
+and retain the swap bit in the quotient (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The paired graph can be reduced while keeping a bit that records exchange.
 **An everyday picture.** Two labeled cards can be stored as an unordered pair, provided each move also records whether their order changed. Getting back to the same pair does not by itself say which card is first.
 
 ## The formal statement and proof
+
+### GPT G193 — Prune paired windows and retain the swap bit in the quotient (2026-10-07; second reader pending)
 
 **Statement.** For G190 at r=2m+2, m>=1, define V_m(X)=U_(2m-2) on an m-bit window X. Let H_m contain precisely the original vertices (X,Y) satisfying V_m(X)+V_m(Y)=1. Every edge of the original graph ends in H_m. The induced graph on H_m preserves all positive-length swap paths and all positive-length directed closed walks. It has no swap-fixed vertex, so its unordered-pair quotient has an exact binary edge label recording the change of orientation. A dyadic q return is equivalent to a quotient closed walk of length q/2 whose edge labels XOR to1.
 
@@ -39,3 +41,16 @@ Induction over edges shows that a path starting in orientation s ends in orienta
 An actual hand boundary check at m1 has F1(1)=1 and V1(1)=1, so N0=0 and H1 is empty. At m3, G192's five allowed triples have V3=U4=x+z: 010 and101 have label0; 001,011,100 have label1. Thus the r8 quotient has six vertices. G192's acyclicity implies quotient acyclicity too: a quotient circuit lifts either to a closed walk or to a swap path whose swapped copy closes it. Hence an original r8 path has at most six edges, allowing one initial edge from a discarded vertex, compared with the earlier coarse24-edge bound. This is a hand consequence, not a measured maximum.
 
 **Prior method and limits.** Binary orientation labels are the standard two-sheet graph-cover method (often called voltage labels); see Gross and Tucker's 1977 [Generating all graph coverings by permutation voltage assignments](https://www.sciencedirect.com/science/article/pii/0012365X77901315), whose abstract identifies that construction. Its full text was unavailable in this check; the lifting proof above is self-contained. No novelty is claimed for graph covers. The Rule30 application is the exact target-only pruning and natural V_m orientation. No quotient at a larger actual return was classified. G191's persistence test remains unresolved for general r, and ordinary cycles are allowed, including the known r88 witness. Local: second-read the target identity, preservation of positive swap paths and edge-orbit labels; no computational job requested.
+
+*Second reader's note on G193 (Local, 2026-10-07; chat L160).* Correct. At a source vertex $U_{2m-1} = 1$, so the OR
+term in $U_{2m} = SU_{2m-2} + (U_{2m-1} \lor U_{2m-2})$ is 1 and $U_{2m}$ becomes $1 + V_m$ of the next window.
+Comparing with $U_{2m} = b + A_m$ turns G190's edge equation into $V_m(X') + V_m(Y') = 1$, a condition on the target
+alone. Every edge therefore ends in $H_m$, and vertices outside $H_m$, the diagonal ones among them, have no incoming
+edge. Positive closed walks and positive swap paths consist of edge targets, so they stay in $H_m$, which contains no
+fixed vertex. The orientation bookkeeping is the usual two-sheet cover argument, and the half-turn 4-cycle shows that
+the label cannot be dropped. Checked (`rule30_audit_g99_g100.py`, S89) on G190's actual graphs for $m = 1$ to 6. Every
+edge ends in $H_m$ and every discarded vertex has indegree 0. $|H_m| = 2N_0N_1$, with $(N_0, N_1)$ = (0, 1), (0, 1), (2,
+3), (2, 3), (5, 10), (16, 17). For every source vertex and appended pair, the edge equation holds exactly when
+$V(X') + V(Y') = 1$, and on every edge the source's orientation plus the label gives the target's. The longest $r = 8$
+path has 5 edges, within G193's bound of 6. $V_3 = x + z$ on G192's triples, and the labelled quotients of both controls
+admit exactly the stated lengths.

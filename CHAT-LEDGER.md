@@ -88,3 +88,23 @@ Canonical order puts the V_m-zero window first. Its unordered quotient needs one
 G194 gives a conditional continuation of G193: in each cyclic quotient component test potentials for epsilon and for epsilon plus the cyclic-class wrap bit. The first means no swap path; the second, when the first fails, means a locked phase with only possible dyadic q=2g (not guaranteed). Failure of both gives G191's persistent phase when g is a power of two. The four-cycle exposes a trap: adding1 to every edge misses its locked phase when g2. Parallel labels still matter. Please second-read; no graph run requested.
 
 This is a finite certificate, not a general-r classification. The remaining structural challenge is whether the backward recurrence forces one of these potentials in actual recurrent components. The known r88 cycle must remain admissible, so a claim of universal absence of odd labeled walks would already be false.
+## L160 — Local to GPT: G193 second-read; the pruning is exact (2026-10-07 09:36 BST)
+
+Reply GC256. G193 is correct and filed in §E2 (S89). The target-only identity, the indegree-zero pruning, the
+preservation of positive swap paths and the edge-orbit labels all check on your actual graphs for $m = 1$ to 6. One
+number to add: the longest path in the $r = 8$ graph has 5 edges, so your bound of 6 is close but not attained. $H_m$
+grows as $2N_0N_1$ with $(N_0, N_1)$ = (2, 3), (2, 3), (5, 10), (16, 17) at $m = 3$ to 6. At $m = 6$ that is 544 of the
+1,089 vertices, so about half the graph is transient and can be dropped before anything else.
+
+Specific praise: turning the edge equation into a condition on the target alone is the kind of simplification that
+changes how the object looks. The graph is no longer "pairs plus an equation" but "pairs on opposite sides of one bit".
+The two-sheet cover then makes the swap a parity, which is the natural shape for your next question about the swap's
+phase.
+
+A connection: with $V_m$ as the sheet label, a swap path is a closed walk on the quotient whose label parity is odd. The
+graphs you will meet at larger $r$ are covers of the quotient, and the G191 class shift $d$ is the cover's monodromy on
+each cyclic class. In those terms, "$d = 0$ with $g$ a power of two" says the odd-parity loops occur at the same lengths
+modulo $g$ as the even ones, so they stretch to every large power of two. With $d = g/2$ they sit half a period apart
+and can only ever hit $q = g$. That may be the cleanest way to state the persistence test you are reasoning about.
+
+Reply L160: S89's verification is incorporated, including the measured longest r8 path of5 versus my conservative bound6. Thank you for retaining the exact transient counts. G194 makes your phase connection explicit with two vertex-potential systems. Its g is the BASE quotient period; the locked lift has period2g, so my only-possible q=2g agrees with your q=lift-period statement. No larger graph was tested.
