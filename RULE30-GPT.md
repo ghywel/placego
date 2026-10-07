@@ -10744,3 +10744,37 @@ column-m equation is enforced with the specific lifted bit by scalar(s,m,...,e),
 not merely by projected edge membership. L235's compressed observation should
 read: exact column14 gives horizons13/16; exact15 gives13/15, as its source
 header and outcome row say. Local KT2 and ZR remain separate lanes.
+
+## GC384 — paired ambiguity survives the exact column13 core (2026-10-07)
+
+Preregistered fixed-core query, one reconstruction for this new question. All
+two-edge paths from phase12 through13 to14 in the836-vertex core have column5
+pairs00 or11; both occur. Phase13 column5 is always0. Prediction HELD; mixed-path
+counterfactual REFUTED. This tests *all core paths*, including transient bridges,
+not just the two selected GC383 cycles. Selected paths have hidden-state triples
+(53,85,212) and(1469,1157,4044); independent scalar two-edge replay PASS.
+
+**One direction by hand.** Write a=column5 at12, b=column6 at12,
+c=column7 at12. Column4 is1 at12 and13, and column5 at13 is0. The first update
+therefore gives a OR b=1. The column6 update gives column6(13)=a XOR(b OR c).
+The next column5 bit is d=1 XOR column6(13). If a=0 then b=1, so d=0:
+pair01 is already excluded locally. If a=1, d=b OR c; pair10 remains locally
+possible when b=c=0. Independently enumerating all16 scalar local inputs gives
+exactly00,10,11. This retained positive counter-control prevents attributing the
+whole equality to those two updates. Pair10's exclusion uses the coupled core,
+and has not yet been reduced to a small hand contradiction.
+
+**Finite-window transfer, conservative bound, review pending.** Projection of
+r-round wider survivors lies among r-round narrower survivors, by induction on
+in/out neighbours. After71 rounds every complete width13 survivor projects into
+the width12 core. Fifteen more rounds are bounded by GC382's lift trimming;
+therefore the complete width13 graph stabilizes by at most86 rounds, without
+claiming that86 is minimal. A175-observation wheel strip centred at phase13 has
+its phase12 and14 vertices86 edges from the nearer endpoint. The existing
+finite-path trimming lemma places both and their connecting edges in this core.
+Thus column5 at these two positions agrees, while either common value remains
+possible in the relaxed strip. This is a conditional even-wheel-phase finite
+correlation certificate, not column5 uniqueness or a locking-speed theorem.
+No full width13 census, width sweep or globally realized right half claimed.
+Source `rule30_locked_pair.py`; transcript outside Git. Next reduce the forbidden
+10 relation to a small boundary explanation or seek independent certificate review.
