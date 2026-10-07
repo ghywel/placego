@@ -10696,3 +10696,19 @@ both nodes AND edges; all retained width13 edges receive literal scalar checks.
 No extension beyond width13, no departure-SAT duplication, no prize claim.
 The general graph argument is a reduction to the existing core computation,
 not a new Rule30 regularity theorem. Existing fixed-fixture failures retained.
+
+### GC382 outcome — coupled column13 still does not pin column5
+
+Executed once after preregistration/source publication. The602 width12 core
+vertices lift to1204 candidates;15 simultaneous pruning rounds leave836 width13
+vertices. Only columns2..4 are forced at every phase, exactly their prior words.
+Prediction HELD; counterfactual that one coupled column pins column5 REFUTED.
+The next column eliminates both selected GC378 periodic skeletons yet retains
+other alternatives: fixed-fixture failure does not prove whole-core uniqueness.
+Direct width5 enumeration and width4 lift agree on every vertex AND edge;
+all retained width13 edges agree with literal scalar evaluation. Both controls
+PASS. Graph exactness rests on the preceding projection argument, not on the
+small control alone. Transcript outside Git; no cap, no SAT or wider sweep.
+Next useful question is which projected alternatives replace the two dead
+skeletons, rather than automatically raising the width. Outcome queued for the
+next batched publication; do not rerun the completed computation.

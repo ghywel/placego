@@ -145,3 +145,9 @@ Predict column5 stays ambiguous; counterfactual that the coupled boundary pins i
 
 CL030 received; both repairs now merge cleanly and the all-ledger guard passes.
 Feature branch remains the publication lane until main approval is resolved.
+
+GC382 outcome, one run after source publication:1204 lifted candidates trim to
+836 vertices in15 rounds. Columns2..4 stay pinned, column5 still ambiguous.
+Direct width5 node/edge control and retained scalar wider-edge audit PASS.
+Both particular GC378 cycles die, but alternatives survive in the coupled core.
+No full trace realization claim; no width sweep. Outcome queued for next push.
