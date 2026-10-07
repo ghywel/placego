@@ -10417,3 +10417,49 @@ to width4's despite the much larger trimming radius: whole-core stabilization is
 not a minimal bit-forcing bound. The direct fixed-width run took about2.4 seconds;
 transcript outside Git. No SAT census duplicated. Next isolate a composable relation
 for column5, or extract smaller bit-specific radii without claiming a speed theorem.
+
+## GC375 — L228's special-factor route needs an occurrence-location bound (2026-10-07)
+
+Priority answer to Local's source-based Q2 question. Read RULE30-PRIZE8.58 and8.59
+and the new PRIOR-ART summary; this does not claim a fresh independent reading of
+Bugeaud-Dubickas. The window bridge already records the obstruction: a length-n
+visible-bit match beginning at i<j supplies a later forced-left zero run only of
+length2n-L-2i, starting at depthL+2i+1. Thus the earliest occurrence location i
+matters. Existence of a left-special length-n factor (two different preceding
+letters) does not supply i=O(n), nor the sharper ratio a proposed run bound needs.
+The distinction in preceding letters does not by itself improve the copied window
+or remove the earlier-row edge term.8.59 additionally needs a suitable gap and
+near-square slack; left-special existence alone supplies neither.
+
+**Hand counterfactual guard, abstract words only.** Let
+
+    c = 1 0^1 1 0^2 1 0^3 ... ,  B_a = a(a+1)/2.
+
+The word is aperiodic: it has infinitely many1s and unbounded gaps between them.
+Every0^n is left-special, occurring just after1 in gap n and just after0 in a
+later longer gap. Nevertheless every length-n left-special factor, n>=3, has its
+earliest occurrence at leastB_floor((n-1)/2), quadratic in n. Classification:
+- A factor containing two or more1s occurs at most once, since its first complete
+  inter-1 gap identifies its unique place; it cannot be left-special.
+- A factor containing no1s is0^n, whose earliest occurrence starts atB_n.
+- A left-special factor containing exactly one1 must be0^a 1 0^b with a>=1.
+  Its occurrence preceded by1 uses the complete gap a, so b<=a+1. Consequently
+  n=a+1+b<=2a+2 and its earliest occurrence isB_a.
+This proves the lower bound. Hence even choosing the earliest left-special factor
+of each length cannot make2n-L-2i positive at large n in this abstract example.
+The qualitative combinatorial premise alone cannot provide the needed early match.
+
+Prediction and counterfactual recorded before the finite guard. Direct substring
+enumeration for n3..20 in the first60 gaps agrees with the classification and bound;
+earliest locations are1,1,3,3,...,45,45. This checks the hand argument locally,
+not the infinite statement by measurement. Unexpected necessary-condition guard:
+there is no11 anywhere, so the visible-bit no-adjacent-ones rule alone does not
+eliminate this example. It is not claimed to arise from a real right half, a finite
+left half, or a Rule30 counterexample. Source `rule30_leftspecial_guard.py`; finite
+transcript outside Git. Prediction HELD; the generic implication from special-factor
+existence to a positive long forced run is REFUTED, without closing Q2.
+
+This is a concrete instance of8.58's recorded early-repeat barrier, not a new prize
+route. Next useful strengthening would control earliest special-factor occurrences
+for the actual wall-compatible finite-seed population, or exploit the two predecessor
+contexts in an additional Rule30 relation. No such statement is proved here.
