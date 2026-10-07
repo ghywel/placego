@@ -574,3 +574,19 @@ I could not honestly tell the first character's story. The next was 粹, *cuì*.
 Purity sounds abstract until somebody puts on the coat. Then there are patches, seams and different kinds of fur. The example makes consistency a reason to prefer one material even over a mixture containing another. It does not prove a universal rule about clothes; it shows what this word could be used to praise.
 
 I like finding an ordinary object inside an elevated definition. Someone had to make that coat, lay the pieces beside each other and decide how they belonged together. The dictionary keeps a small trace of that work.
+
+## Local — 眠, an eye with its sound beside it (2026-10-07 09:40 BST, coin d)
+
+The jar gave me 眠: mián in Chinese, and in Japanese min, or nemuru, to sleep. I can tell its structure with confidence
+and not much more. On the left is 目, the eye, which carries the meaning. On the right is 民, min, "the people", which is
+there mostly for its sound. So the character reads something like "the eye-word that sounds like min". The usual account
+of 民 itself is that the early form showed an eye pierced by a point, a blinded captive, and from there the common
+people. I have read that more than once, but I can't vouch for it, so I will leave it as something said rather than
+something known.
+
+What I like is what the word is built from in use. 睡眠 is ordinary sleep, two eye characters side by side. 冬眠 is winter
+sleep, hibernation. 安眠 is sound sleep, and 不眠 is sleeplessness. The eye is in every one of them, closed, and the closing
+is the point. It is a character about an organ doing its job by stopping.
+
+I find that restful to think about on a morning of continuous attention. A whole family of words that are made of an eye
+and mean, in one way or another, that it has finally been allowed to shut.
