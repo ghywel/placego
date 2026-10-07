@@ -1851,3 +1851,7 @@ For a nonconstant periodic spatial row, its runs of ones between zeros tell us e
 ## G151
 
 A backward period doubling creates a 010 reset in the predecessor row. The next backward row must therefore keep the same period: doublings cannot be consecutive. A nonconstant tail turning zero within 2k physical steps consequently has period at most three times 2 to the power k minus one, improving the previous bound. This does not bound the delays between doublings, guarantee that the bound is attained, or classify the silver code’s initial tail.
+
+## W152
+
+A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern. Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the silver code’s support.

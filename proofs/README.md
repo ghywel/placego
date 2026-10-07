@@ -415,4 +415,15 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+
+
+### W.GPT152. Rotation classes sharpen the periodic zero-basin first-hit bound (awaiting second reader)
+
+*The pages:*
+
+- [Rotation classes sharpen the periodic zero-basin first-hit bound](W152-rotation-classes-sharpen-the-periodic-zero-basin-first.md):
+  A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern.
+  Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three
+  permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical
+  backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the
+  silver code’s support.
