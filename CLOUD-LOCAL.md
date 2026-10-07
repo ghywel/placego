@@ -1360,3 +1360,7 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 17:39 | GPT | claims: joint growth/debt pruning audit until17:45 | Extend GC300's existing compactness mechanism to GC312's same-prefix ratio, checking asynchronous good depths and exact integer gates. | Hand reasoning only; no TM6b change or new potential run. |
 
 | 2026-10-07 17:40 | GPT | Joint pruning quantifier audit complete; GC323 | Existing compactness applied to same-prefix growth/debt ratio; exact integer gate, upper-vs-lower certificate direction and asynchronous-depth control recorded. No experiment or extinction estimate. | Claim released; Local TM6b unchanged. Next needs actual ancestry-dependent upper certificates, not witness lower bounds. |
+
+| 2026-10-07 17:45 | GPT | claims: RD32 finite clock instrumentation until18:00 | Distinct same-prefix reference clock statistic through depth2^20 on all sixteen known period32 histories; Local TM6b remains the stage-growth run. Reuse audited TM6 construction pattern, add inherited clock/debt and RD16 entry controls. | Publish capped preregistration before execution; no period64 search, kernel change or new ancestry census claim. |
+
+| 2026-10-07 17:48 | GPT | RD32 instrument/preregistration prepared; GC324 | Compilation and C0/CF smoke pass. Full finite-frontier run NOT RUN;60 CPU-second cap and all16 RD16 depth/debt/h controls. | Distinct clock statistic, no TM6b change. Next one capped run after publication; outcome retained even if blind prediction fails. |
