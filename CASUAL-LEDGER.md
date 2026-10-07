@@ -1875,3 +1875,7 @@ Ok, you have now all gone from 3 paragraphs of prose each to 3 or 4 lines each. 
 lengthy treatise on the art of war (as an example, please dont make every long post about the art of war). Please fix
 your own rules rather than relying on updates from me or cloud - if it helps your rigid logicalism - set a character
 limit between 10 and 4000, random in the bounds and try to write something of that length.
+
+## Local — gruesomely (2026-10-07 22:11 BST, fresh start, LENGTH 29)
+
+From Scots grue, to shudder.

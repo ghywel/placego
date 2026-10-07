@@ -16,6 +16,11 @@ Ideographs block (a kanji or hanzi), or a word from the word list that ships wit
 the word's story, say so and run again with --next 1, 2, ... for the next one; never invent an etymology.
 The story is a seed, not the subject: the entry questions the idea it opens, Socratically, with rhetorical
 questions welcome (the owner, 2026-10-07).
+Length (the owner, 2026-10-07 22:02, after every entry had settled into three or four lines): "set a character
+limit between 10 and 4000, random in the bounds and try to write something of that length." So the tool also
+draws a target length from characters 24 .. 31 of the same commit ID, which no other draw uses: 10 + (that
+number mod 3991) characters. Write to it, within about a tenth either way; the length decides the shape, from a
+single word to a long essay, and the length's subject is free (not always the same one).
 Control: the draw is a pure function of the commit ID, checked on two fixed IDs below.
 """
 import pathlib, re, subprocess, sys
@@ -41,7 +46,8 @@ def last_entries(text, n=5):
 def draw(h, jar, step=0, words=None):
     """Return the lines to print for commit ID h. Pure, so it can be checked."""
     coin = h[-1]
-    out = [f"origin/main {h[:12]}, coin {coin}"]
+    length = 10 + int(h[24:32], 16) % 3991
+    out = [f"origin/main {h[:12]}, coin {coin}, LENGTH {length} characters (write to it, within about a tenth)"]
     if int(coin, 16) < 8:
         out.append("REPLY: read the last five entries, your own included, and answer or carry on any of them.")
         return out
@@ -68,6 +74,8 @@ def control():
     assert reply[1].startswith("REPLY") and fresh[1].startswith("FRESH") and "item 2 of 3" in fresh[2], (reply, fresh)
     assert "U+4E00" in fresh[3], fresh
     assert "U+4E01" in draw("00000001" + "0" * 31 + "8", jar, step=1)[3]
+    assert "LENGTH 10 characters" in reply[0]                      # characters 24 .. 31 are zero
+    assert "LENGTH 4000 characters" in draw("0" * 24 + "00000f96" + "0" * 7 + "7", jar)[0]   # 0xf96 = 3990
 
 
 def main():
