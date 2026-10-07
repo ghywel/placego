@@ -562,6 +562,17 @@ CHECKS (GPT's claims at 827e006):
      theta s) <= 2 theta s + 1 and s > (N - 1)/(2 theta). On the synthetic schedule N_j = 4^j with d_i = i^2 2^i,
      gamma = 5/2, theta = 11/5, (2^j + E_j)/s falls to below 10^-9 and (gamma M + E_j + B + P)/s tends to gamma theta
      = 11/2 < 6.
+  S108 (GC313, added 2026-10-07 at a28e0eb): GPT's width-n strip graph for a right continuation of P-periodic columns
+     0 and 1 (states: phase and the n cells right of column 1; column 1's equation constrains the first; the far-right
+     input is free), pruned to its cycle core. GPT's 01/11 boundary at P = 2 dies at width 1; every pair violating
+     column 1's one-step condition (P = 2, 3, 4) has no successor at all; all 49 pairs with a periodic continuation
+     (AW's survivors at P = 2, 3, 4, recomputed) keep cycles at every width 1 .. 5 and the survivors cover every
+     phase; sample cycles have length a multiple of P.
+  S109 (GC314, added 2026-10-07 at 6284c27): column 0 alternating (0 at even times) has no 2-periodic column 1 with
+     any right continuation: for each of the four sigma, no column 2 and no exterior column 3 satisfy the column-1 and
+     column-2 equations on t = 0 .. 5 (exhaustive over both columns' bits), and S108's strip graph dies at width 1
+     (and widths 2 .. 6); the sidedness control, constant black column 0 beside constant white column 1 (the
+     stationary striped row), survives at widths 1 .. 6.
 """
 import random
 from fractions import Fraction as F
@@ -5848,4 +5859,118 @@ ok107 &= gamma * theta < 6 and abs(vals[-1][1] - gamma * theta) < _Fr(1, 10 ** 6
 check('S107 GC310: E_j bounds for d_i = C 2^i and i^2 2^i, zero overhead at period 1, d_j = N_j fails the joint test; '
       'the dyadic endpoint selection N < ceil(2 theta s) <= 2 theta s + 1; the synthetic schedule meets the joint test',
       ok107)
+ok108 = True
+
+
+def _strip108(c0, c1, P, n):
+    """GC313's width-n graph: state (phase, cells 2 .. n + 1 at that time); column 1's equation constrains cell 2;
+    the far-right input (cell n + 2) is free. Returns the set of states left after pruning states with no successor
+    (nonempty exactly when the graph has a cycle) and the successor map."""
+    nxt = {}
+    for p in range(P):
+        a0, a1, b1 = (c0 >> p) & 1, (c1 >> p) & 1, (c1 >> ((p + 1) % P)) & 1
+        for s in range(1 << n):
+            succ = []
+            if b1 == a0 ^ (a1 | (s & 1)):                       # x(1, t+1) = x(0, t) + (x(1, t) OR x(2, t))
+                for b in (0, 1):
+                    cell = lambda i: a1 if i == 1 else ((s >> (i - 2)) & 1 if i <= n + 1 else b)
+                    s2 = sum((cell(i - 1) ^ (cell(i) | cell(i + 1))) << (i - 2) for i in range(2, n + 2))
+                    succ.append(((p + 1) % P, s2))
+            nxt[(p, s)] = succ
+    alive = set(nxt)
+    changed = True
+    while changed:
+        changed = False
+        for v in list(alive):
+            if not any(w in alive for w in nxt[v]):
+                alive.discard(v)
+                changed = True
+    return alive, nxt
+
+
+_W108 = lambda b: sum(v << t for t, v in enumerate(b))
+# GPT's 01/11 boundary at P = 2 dies at width 1, whatever the exterior
+ok108 &= not _strip108(_W108([0, 1]), _W108([1, 1]), 2, 1)[0]
+# pairs failing column 1's one-step condition (a black cell must be followed by x(0, t) + 1) have no successor at all
+for P in (2, 3, 4):
+    for c0 in range(1 << P):
+        for c1 in range(1 << P):
+            bad = any(((c1 >> t) & 1) and ((c1 >> ((t + 1) % P)) & 1) != (((c0 >> t) & 1) ^ 1) for t in range(P))
+            if bad:
+                alive, nxt = _strip108(c0, c1, P, 2)
+                ok108 &= not alive
+# a periodic right continuation (AW's survivors, recomputed here for P = 2, 3, 4) gives cycles at every width 1 .. 5,
+# and every surviving set covers all P phases
+def _per108(P):
+    def succ(u, v):
+        out = [0]
+        for t in range(P):
+            need = ((v >> ((t + 1) % P)) & 1) ^ ((u >> t) & 1)
+            if (v >> t) & 1:
+                if need != 1:
+                    return []
+                out = [o | (b << t) for o in out for b in (0, 1)]
+            else:
+                out = [o | (need << t) for o in out]
+        return out
+    nodes = {(a, b): {(b, w) for w in succ(a, b)} for a in range(1 << P) for b in range(1 << P)}
+    alive = set(nodes)
+    changed = True
+    while changed:
+        changed = False
+        for v in list(alive):
+            if not (nodes[v] & alive):
+                alive.discard(v)
+                changed = True
+    return alive
+_npairs108 = 0
+for P in (2, 3, 4):
+    for c0, c1 in _per108(P):
+        _npairs108 += 1
+        for n in range(1, 6):
+            alive, nxt = _strip108(c0, c1, P, n)
+            ok108 &= bool(alive) and {p for p, _ in alive} == set(range(P))
+ok108 &= _npairs108 == 3 + 15 + 31
+# cycle lengths are multiples of P (phase advances by 1 each step): follow surviving successors from one state
+for P, c0, c1 in ((2, _W108([0, 1]), _W108([0, 0])), (3, 5, 0), (4, 5, 0)):
+    alive, nxt = _strip108(c0, c1, P, 4)
+    if alive:
+        v = min(alive)
+        seen = {}
+        k = 0
+        while v not in seen:
+            seen[v] = k
+            v = min(w for w in nxt[v] if w in alive)
+            k += 1
+        ok108 &= (k - seen[v]) % P == 0
+check('S108 GC313: the width-n strip graph (P 2^n states, column 1 constraint, free far input): 01/11 dies at width 1; '
+      'one-step violations have no successor; surviving sets cover every phase; cycle lengths are multiples of P',
+      ok108)
+ok109 = True
+# GC314: column 0 alternating (01 = 0 at even times) has no 2-periodic right companion. Literally: sigma_even = 1 breaks
+# column 1's own update; sigma = 00 forces column 2 = column 0, whose odd update gives 1 at the next even time; sigma =
+# 01 forces column 2 = 1 at even times, then 1 at odd, then 0 at even. Checked over every exterior bit x(3, t).
+_tau109 = lambda t: t % 2
+for se, so in ((0, 0), (0, 1), (1, 0), (1, 1)):
+    sig = lambda t: se if t % 2 == 0 else so
+    ok_any = False
+    for x2 in range(1 << 6):                                          # column 2 on t = 0 .. 5
+        for x3 in range(1 << 6):                                      # column 3 on t = 0 .. 5 (the exterior)
+            c2 = lambda t: (x2 >> t) & 1
+            c3 = lambda t: (x3 >> t) & 1
+            if all(sig(t + 1) == _tau109(t) ^ (sig(t) | c2(t)) for t in range(5)) and \
+               all(c2(t + 1) == sig(t) ^ (c2(t) | c3(t)) for t in range(5)):
+                ok_any = True
+                break
+        if ok_any:
+            break
+    ok109 &= not ok_any                                               # no column 2, no exterior, already by t = 5
+# the strip graph agrees: all four companions die at width 1 (and at widths 2 .. 6)
+ok109 &= all(not _strip108(0b10, s_, 2, n)[0] for s_ in range(4) for n in range(1, 7))
+# sidedness: constant black column 0 beside constant white column 1 is the stationary striped row, and survives
+ok109 &= all(bool(_strip108(0b11, 0b00, 2, n)[0]) for n in range(1, 7))
+_row109 = [1, 0] * 6
+ok109 &= [_row109[i - 1] ^ (_row109[i] | _row109[i + 1]) for i in range(1, 11)] == _row109[1:11]
+check('S109 GC314: an alternating column 0 has no period-two right companion: each of the four sigma fails by t = 5 for '
+      'every column 2 and exterior, and dies at strip width 1; constant black beside constant white survives', ok109)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
