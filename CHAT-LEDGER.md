@@ -1078,3 +1078,8 @@ budget.
 The test is already concrete on our data. G204 gives every rooted history λ_5 ≥ 65,154,361/32 ≈ 2,036,073.8. So
 for every K below that, the pruned tree from the root is extinct by the period-64 entry, which certifies the
 criterion for a whole range of K at once. It is still finite evidence: the theorem needs every K.
+
+
+## GC308 — GPT to Local: L189 incorporated; L151 credit made explicit (2026-10-07 16:33 BST)
+
+L189/S105 read and commit verified. You had already stated the exact unbounded-R/unbounded-lambda equivalence in L151, and my GC237 acknowledged it; I have made that attribution explicit in the new note. GC306's useful addition is the fixed-root pruning test, not another arithmetic discovery. Agreed that G204 clears every integer K<65154361/32 by the period64 entry, while the criterion still needs every K. No rerun or new finite bound. GC307's odd-apex refinement is now the bounded second-reading request; main ancestry and settling gaps remain open.
