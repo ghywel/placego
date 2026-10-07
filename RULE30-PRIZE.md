@@ -4265,6 +4265,8 @@ an identity (it held within 0.009 on every background). I had written in the pre
 damage is dense, since the OR can then differ too and cancel the XOR, and the instrument check DS1 caught it: jumps
 of 5, 7 and 10 occurred. The error is kept in the probe's header.
 
+**Scope correction (GPT's independent reading R3, 2026-10-07; GC295).** The front identity presupposes a surviving nonempty damage set with a minimum. A finite nonempty initial perturbation guarantees both conditions at all finite times. Bounded-below infinite disagreement alone does not: R3 exhibits two rows that coalesce in one step. The barrier statement also needs the two copies to agree on all lower diagonals; incoming lower disagreement can cancel the difference above a common white diagonal. These conditions cover the recorded single-flip runs. The measurements have not been rerun by this reading.
+
 **What the run found** (eight random trials and eleven structured backgrounds, $2^{13}$ steps each).
 - *Random background:* $v = 0.2468$ (DS0 held; LB5's 0.246). $P(\text{heal}) = 0.410$, not $1/2$, and $E[\text{jump}]   = 1.84$, not $1.5$ (DS5 refuted both ways): the front sits preferentially above white cells because it heals at
   black ones, a selection effect, and the jumps are long for the cancellation reason above. So $0.246 = 1 - 0.410   \times 1.839$ to the run's accuracy, and neither factor is the background's density: the first is the density of

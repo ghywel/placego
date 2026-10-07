@@ -368,11 +368,11 @@ in from both edges.
 How fast news travels leftwards in Rule 30 is an exact bookkeeping identity: full speed, minus the times it gets
 squashed.
 
-**What it says.** Compare two copies of Rule 30 that differ somewhere and watch the leftmost difference. Read along
+**What it says.** Compare two copies of Rule 30 that initially differ at finitely many cells and watch the leftmost difference. Read along
 the diagonals, the difference never moves backwards, and it is held back only when the square just below it on the
 diagonal is black. So its average speed equals full speed minus (how often it is held back) times (how far it is set
-back each time). The measured numbers, 0.41 and 1.84, give a speed of about a quarter. A diagonal that turns white
-for good becomes a barrier: damage that crosses it never heals.
+back each time). The measured numbers, 0.41 and 1.84, give a speed of about a quarter. If the copies agree below and on a diagonal that turns white
+for good, a difference immediately above it cannot heal.
 
 **Why it matters.** It turns a measured speed into an exact identity, and explains why the band of white diagonals
 left of the middle acts as a one-way wall for information.
