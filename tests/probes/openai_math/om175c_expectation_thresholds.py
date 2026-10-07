@@ -112,9 +112,12 @@ def amgm_ok(rng):
 
 
 def constants_ok():
-    rho = sum(math.e / 64 ** i for i in range(1, 200))
+    # rho = e * sum_{i<=s} 64^-i. Exactly: the finite sum is below 1/63 for every s, and e < 3 gives e/63 < 1/21
+    # and (e/63)/(1 - e/63) < 1/20 (that is 21 e < 63). (The first run compared floats, whose sum rounds to e/63
+    # itself, and failed on that rounding.)
     D, B = 256, 512
-    ok = rho < math.e / 63 < 1 / 21 and rho / (1 - rho) < 1 / 20 and Fr(9, 40) > Fr(1, 10)
+    ok = (all(sum(Fr(1, 64 ** i) for i in range(1, s + 1)) < Fr(1, 63) for s in range(1, 60))
+          and math.e < 3 and 21 * math.e < 63 and Fr(9, 40) > Fr(1, 10))
     # mean of Y at the extreme s allowed by p, for a range of p: mu <= 5 B^4 p
     for p in [Fr(1, k) for k in (600, 10 ** 4, 10 ** 6, 10 ** 9)]:
         s = 0
