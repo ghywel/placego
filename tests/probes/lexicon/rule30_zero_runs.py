@@ -41,6 +41,20 @@ records R(d) (rule30_records.py's list for d = 1 .. 61).
          so a record witness at 13 has a black cell at depth 12, while ZR finds at most 2 white cells after a black
          cell at depth 12 in any configuration. If this fails, the two definitions differ somewhere, and C1 will say
          where.
+OUTCOME of ZR2, 2026-10-07 22:39 (M5, one run, about a minute; transcript outside Git). ZR2-C0 PASS (the J = 22
+counts times 2^6, and rho_23 .. rho_26 exactly). ZR2-C1 PASS (R_real(d) <= R(d) wherever the run closes). ZR2-P1
+HELD: R_real(d) is below the record at d = 6 and at every depth from 9 to 19, and equal at 1 .. 5, 7 and 8:
+
+    d       1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19
+    R_real  1  6  5  4  3  3  3  2  8  7  6  5  4  3  5  6  9  8  7
+    R(d)    1  6  5  4  3  4  3  2  9  8  7  6 17 16 15 16 15 14 15
+
+From d = 20 the runs reach depth 28 and stay open. The gap itself is not new. Section 8.12 already shows that one
+cell of layer between column 0 and a free column 1 tames the adversary, and its "real right halves, up to 12 cells"
+row gives 9 from depth 17. That is ZR2's R_real(17) = 9 exactly, from a different program (ladder.c) and a different
+population (finite right halves of up to 12 cells, against every right part here). What ZR2 adds is exactness: these
+are maxima over every configuration whose column 0 follows 0101 long enough, not over a sample. The prediction's
+argument was right, but I made it without first reading section 8.12, which already contained the answer.
 """
 import os
 import subprocess
