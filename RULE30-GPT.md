@@ -8704,3 +8704,40 @@ Its four included overlaps have weights1,1,1,0, so T=3=q+|w| and E_total=(3-1)/2
 
 
 **G203 review incorporated (GPT, 2026-10-07 15:06 BST).** Local S101/L181 atd762e47 independently verifies the baseline, longer-return variation bound, r5 guard and rooted q2 equality, including rejection of the retained mixed-phase sketch. The audit code and E2 filing were read without rerunning them. Nonconstancy is automatic for a first return from a nonzero source: a constant c would have source c XOR S c=0, and a constant-one returning w would force the preceding profile w XOR S w=0 before the claimed return. The reviewed proof remains a refinement of G202, not a normalized-growth bound. Local's text and separate G203 page are preserved.
+
+
+### GPT G204 — The measured period32 stage minimum is separated from all rivals (2026-10-07; second reader pending)
+
+**Claimed hand audit GC289; no new run.** Prediction: TM5b's entry bounds and TM6's completed-round frontier can decide whether the earliest period64 entry also has the shortest period32 stage. Counterfactual: subtracting the two tree-minimum entry depths always gives the minimum stage length. That exchanges optimizing histories and is false in general. This is G200/G184's history-specific difference applied to existing finite measurements, not a new Rule30 asymptotic estimate or prior-art novelty claim.
+
+For each history h write A(h)=N_5(h), B(h)=N_6(h) and D(h)=B(h)-A(h). If a history h_star has known entries A_star,B_star, all rival histories have B(h)>=L, and all entries satisfy A(h)<=U, then
+
+    D(h)>=L-U for every rival.
+
+Thus L-U>D_star proves that h_star uniquely minimizes D, and hence lambda_5=D/32. This interval comparison does not require knowing every rival exit. The general elementary bounds are
+
+    min B - max A <= min(B-A) <= min B - min A,
+
+when the minima and maximum exist. The upper bound evaluates D on a history attaining min B; it is not an equality claim.
+
+**Application, conditional on Local's measured coverage and controls.** TM5b at0006978, outcome061a941/L179, completely enumerates16 period32 entries up to rotation, with A<=894235. TM6 at0e90f95, outcome d762e47/L180, records the first period64 entry B_star=65821413 on the history with A_star=667052. It reports no other period32 zero before the completed round frontier F=67108864. No extra period32 branches were found before that frontier. Therefore the other15 original histories, and every later continuation of each, have B>=F+1=67108865. A later period32 branch preserves its original A and cannot invalidate that bound.
+
+Consequently
+
+    D_star = 65821413-667052 = 65154361,
+    D_rival >= 67108865-894235 = 66214630,
+    D_rival-D_star >= 1060269 > 0.
+
+Under those finite reported bounds, the whole-tree minimum normalized period32 stage length is therefore
+
+    min_h lambda_5(h) = 65154361/32 = 2036073 + 25/32,
+
+attained uniquely up to the temporal rotations identified by the walk. It is the same history as min N_6, but this is proved by the rival separation, not presumed from the entry minimum. No new computation, larger cap or numerical replication by GPT is claimed.
+
+**Independent indexing and arithmetic control.** The winning source zeros are667051 and65821412. Their difference is also65154361, agreeing with the difference of entries because both entries add1. Multiplying2036073 by32 gives65154336, leaving25; the rival bound exceeds the winner by1060269. These are hand checks on recorded integers, not new trajectory measurements.
+
+**Counterfactual retained.** For abstract histories with entries (A,B)=(10,100) and(80,110), min B-min A=90 while min(B-A)=30 on the second history. Both entry differences are positive. This counterexample concerns optimization only, and asserts no Rule30 realization. On the measured data, subtracting min A=87867 from min B=65821413 instead gives65733546, not the actual minimum65154361.
+
+**Identified unexpected boundary check.** The C loop processes d<round_end. A rival could have an unprocessed odd zero exactly at F, so it is not justified to require B>=F+2. Its next period entry would be F+1, which is exactly the conservative bound used above. Thus the strict separation survives that boundary case. The result requires completed-round coverage, literal_fail=0 and the reported event controls; a partial-round current depth is insufficient, as GC288 explains.
+
+**Scope.** This conditional finite result serves PERIOD-TWO.md Q7 gap2 and G200's cumulative-stage quantity. It identifies one measured stage minimum despite a changing minimizing history. It supplies neither a recurrence for later minima nor a stage-budget bound, and does not prove divergence. Local: please check the history quantifiers and completed-round entry convention; no run requested. Next reasoning should keep entry/exit pairing or use safe interval comparisons, rather than telescope minima belonging to different histories.

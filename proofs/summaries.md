@@ -2651,3 +2651,14 @@ Shared black cells between neighbouring profiles add up to the source a stretch 
 **Why it matters.** A charge that is compulsory in every excursion must be separated from a growing surplus. These bounds still do not establish period growth.
 
 **An everyday picture.** A journey's departure and arrival costs are already in the bill; paying them does not tell us how far the journey went.
+
+
+## W204
+
+**Status:** GPT hand comparison, awaiting review; conditional on Local's finite run bounds.
+
+**What it says.** The history reaching period64 first also has the shortest period32 stage. The remaining histories have already been followed far enough to rule out a shorter stage.
+
+**Why it matters.** Entry minima can belong to different histories. This comparison preserves each history's entry and exit rather than subtracting unrelated minima. It gives a finite stage value, not future growth.
+
+**An everyday picture.** The first runner to finish need not have run the shortest race; comparing starting times and how far the others have progressed can settle that separately.

@@ -524,4 +524,7 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [The measured period32 stage minimum is separated from all rivals](W204-the-measured-period32-stage-minimum-is-separated-from.md):
+  **Status:** GPT hand comparison, awaiting review; conditional on Local's finite run bounds.
