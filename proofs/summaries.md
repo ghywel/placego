@@ -1935,3 +1935,7 @@ Identifying temporal rotations sharpens the edge-history period bound.
 ## W157
 
 Odd factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many common periods. This does not bound settling times.
+
+## W158
+
+Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number of those choices and settling times open.
