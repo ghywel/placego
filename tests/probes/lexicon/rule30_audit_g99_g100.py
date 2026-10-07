@@ -268,6 +268,11 @@ CHECKS (GPT's claims at 827e006):
      every gated phase r, the three post-split costs of the two children are {l + 2, l + m + 2} for the adjacent runs of
      c at r; the rooted control a = 0000110001010011 gives the six cost pairs of G162; the single-black-cell family
      attains q + 2 at q = 4..16; and the pulse-difference family has orders q - 2 -> q - 1 and cost q + 2 at q = 8..16.
+  S57 (G163, added 2026-10-07 at 7869162): for 400 random strips (m = 1..12 drivers, period P = 1..8, zero drivers
+     allowed), the block map F is nondecreasing with F(t + P) = F(t) + P; every phase cycle gives the same rate rho;
+     |F^n(t) - t - n rho| <= P - 1 for all t and n <= 60; and when rho <= 5m/2 the truncated supremum H is at most
+     2(P - 1) and satisfies the block inequality; the pulse strip attains the error P - 1, and the G8 witness's
+     F(0) = 27, F(3) = 31 at P = 4 give F^n(0) = 28 n - 1.
 """
 import random
 from fractions import Fraction as F
@@ -2661,4 +2666,68 @@ for q in (8, 16):
     ok56 &= max(three_costs(aD, k, 0, q) for k in edge_children(aD, 0, q)) == q + 2
 check('S56 G162: three post-split costs are {l + 2, l + m + 2}; the rooted control; the q + 2 families', ok56,
       '%d gated even-parity cases checked' % n56)
+from fractions import Fraction as _F57
+
+
+def block_map(drivers, P):
+    def F(t):
+        for w in drivers:
+            if w:
+                u = t
+                while not (w >> (u % P)) & 1:
+                    u += 1
+                t = u + 1
+        return t
+    return F
+
+
+def strip_rate(F, P):
+    rates = set()
+    for t0 in range(P):
+        seen, t, n = {}, t0, 0
+        while t % P not in seen:
+            seen[t % P] = (n, t)
+            t, n = F(t), n + 1
+        n0, t1 = seen[t % P]
+        rates.add(_F57(t - t1, n - n0))
+    return rates
+
+
+ok57 = True
+for trial in range(400):
+    P = rng29.randint(1, 8)
+    m = rng29.randint(1, 12)
+    drivers = [0 if rng29.random() < 0.2 else rng29.randint(0, (1 << P) - 1) for _ in range(m)]
+    F = block_map(drivers, P)
+    ok57 &= all(F(t + P) == F(t) + P and F(t) <= F(t + 1) for t in range(-P, 2 * P))
+    rates = strip_rate(F, P)
+    ok57 &= len(rates) == 1
+    rho = rates.pop()
+    for t in range(P):
+        x = t
+        for n in range(1, 61):
+            x = F(x)
+            ok57 &= abs(x - t - n * rho) <= P - 1
+    if rho <= _F57(5 * m, 2):
+        def H(t, N=60):
+            best, x = 0, t
+            for n in range(1, N + 1):
+                x = F(x)
+                best = max(best, 2 * (x - t) - 5 * m * n)
+            return best
+        Hs = [H(t) for t in range(P)]
+        ok57 &= max(Hs) <= 2 * (P - 1)
+        ok57 &= all(H(t) >= 2 * (F(t) - t) - 5 * m + H(F(t) % P) for t in range(P))
+for P in (2, 5, 8):
+    Fp = block_map([1], P)
+    x = 0
+    for n in range(1, 30):
+        x = Fp(x)
+    ok57 &= strip_rate(Fp, P) == {P} and abs(x - 29 * P) == P - 1
+F0 = lambda t: {0: 27, 3: 31}[t % 4] + 4 * (t // 4) if t % 4 in (0, 3) else None
+x = 0
+for n in range(1, 8):
+    x = F0(x)
+    ok57 &= x == 28 * n - 1
+check('S57 G163: one winding rate per strip, the P - 1 error band, and the whole-block potential below 2(P - 1)', ok57)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

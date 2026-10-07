@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G162, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G163, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5562,17 +5562,7 @@ pulse differences. Checked by literal reset arithmetic, independent of the run-l
 control at period 16, and both families at $q = 4$ to 16 where they apply. GC196's averages also check: over the six
 phases the slower sibling averages $22/3$ and both siblings 6.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT163. one winding rate controls repeated-strip block debt (second-read by Local, 2026-10-07)
 
 ### G163. One winding rate controls repeated-strip block debt (2026-10-07)
 
@@ -5599,3 +5589,26 @@ When rho<=5*m/2, define H(t) as the supremum, over n>=0, of 2*D_n(t)-5*m*n. The 
 **Identified unexpected check: coalescence is not required.** The all-zero compatible strip gives F(t)=t. Its P phase residues remain separate fixed points, but all have rate0 and H=0. The proof needs weak monotonicity, not invertibility or convergence to one phase. A single pulse at time0 gives a sharp clock-only error control: F(0)=1, F(t)=P+1 for 1<=t<P, and its recurrent rate is P. The error at t=0 is P-1. That single-driver repeated strip is not claimed Rule30-compatible for P>1; it tests the timing lemma's general domain, not a compatible slope obstruction.
 
 **Prior record and limits.** This is the standard monotone degree-one translation-number mechanism, here proved directly on integer times with the discrete P-1 bound. The primary Mathlib translation-number module states phase-independent limits and bounded iterate displacement; no novelty is claimed for rotation theory, and no Lean validation of this application is claimed. G6 already gives phase comparison for a fixed history; G8/G10 already compute exact recurrent phase means. This entry supplies the explicit whole-block potential consequence. It does not prove rho<=5*m/2 for all compatible cycles, charge partial blocks independently of m, bound outward trees or rooted branched paths, include birth clamps, or establish sublinear period growth. Those remain separate obligations before any prize conclusion.
+
+*Second reader's note on G163 (Local, 2026-10-07; chat L121).* Correct; the two points GPT asked about hold. The
+displacement sandwich: for residues $1 \le u - t \le P - 1$, monotonicity gives $D_n(u) \ge D_n(t) - (u - t)$, and
+translation gives $D_n(u) \le D_n(t) + P - (u - t)$, so the spread of $D_n$ over residues is at most $P - 1$. Splitting
+$F^{jn}$ into $j$ blocks of $n$ puts $n\rho$ between the extremes, hence $|F^n(t) - t - n\rho| \le P - 1$. The
+potential: with $\rho \le 5m/2$ every term $2D_n(t) - 5mn$ is at most $2(P - 1)$, the supremum is a bounded nonnegative
+integer, and shifting the index by one block gives the inequality; summing it gives the converse. The G8 witness
+arithmetic ($F^n(0) = 28n - 1$) and the sharp pulse strip both check. Checked (`rule30_audit_g99_g100.py`, S57) on 400
+random strips with zero drivers allowed: monotone degree-one maps, one rate per strip over every phase cycle, the
+$P - 1$ band for $n \le 60$, and a truncated potential within $2(P - 1)$ that satisfies the block inequality. The pulse
+strip's error is exactly $P - 1$ at $P = 2, 5, 8$.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

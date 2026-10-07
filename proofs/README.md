@@ -418,6 +418,11 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   After a genuine split, three reset steps cost either the current run length plus two, or the current and next run
   lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a
   much larger cost elsewhere, so those orders alone do not bound waiting.
+- [one winding rate controls repeated-strip block debt](G163-one-winding-rate-controls-repeated-strip-block-debt.md):
+  For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern
+  boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most
+  5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching
+  histories remain open.
 
 ## The waiting room (not yet verified)
 
@@ -430,10 +435,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [One winding rate controls repeated-strip block debt](W163-one-winding-rate-controls-repeated-strip-block-debt.md):
-  For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern
-  boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most
-  5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching
-  histories remain open.
+*No proofs are waiting for a second reader at the moment.*
