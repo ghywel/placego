@@ -7336,3 +7336,74 @@ constant, absorbed into its equilibrium gap in this linear model; no equivalence
   a theorem.
 
 
+
+
+### GPT G202 — Overlap parity telescopes, but does not close the rooted return state (2026-10-07; second reader pending)
+
+**Question and hand prediction; no new run.** G200 needs the full sum of rooted zero-return excursions.
+The saved restart note proposed cyclic overlap parity as a possible charge. Prediction: summing the compatibility
+equation gives an exact boundary syndrome, but no unsigned cumulative charge. Counterfactual: the two profile
+parities and their overlap parity determine the next profile parity at fixed period. The already-reviewed rooted
+period8 prefix refutes that depth-independent closure below. This uses G3's Boolean expansion, G157-G158's
+cyclic compatibility, and G185/S75's existing words; no new prior-art or novelty claim.
+
+Fix a common temporal period q and write pi(v) for the parity of its q bits. For q-periodic profiles a,b,c with
+
+    S c = a XOR (b OR c),
+
+shift invariance of parity and b OR c = b XOR c XOR (b AND c) give
+
+    pi(a) = pi(b) XOR pi(b AND c).
+
+The two appearances of pi(c) cancel. In particular this identity does NOT solve for pi(c) from pi(a),pi(b).
+
+On a rooted history write w_n for its profiles and define
+
+    I_n = pi(w_n AND w_(n+1)).
+
+Compatibility of w_(n-1),w_n,w_(n+1) gives I_n=pi(w_(n-1)) XOR pi(w_n). Therefore any interval of valid
+common-q triples obeys
+
+    XOR_(n=h..k) I_n = pi(w_(h-1)) XOR pi(w_k).
+
+For one G200 excursion between zero profiles at z_prev and z_next, take h=z_prev+1 and k=z_next-1. The boundary
+w_z_prev is zero, and w_(z_next-1) is the returning source a_next. Thus
+
+    XOR_(n=z_prev+1..z_next-1) I_n = pi(a_next).
+
+An internal same-period branch has syndrome0; the odd source ending the period stage has syndrome1. Summing
+these disjoint excursion intervals gives total syndrome1 for a complete stage. This asserts an ODD number of
+odd-overlap positions before its exit, not a lower bound growing with q, its length, or the number of internal
+branches. No independence or nonnegative monotone charge follows.
+
+**Identified unexpected boundary check.** The last included index is z_next-1, whose overlap is with the zero
+profile and is itself0. Extending through index z_next would use the integration child beyond the returning
+zero. At the odd exit that child has least period2q, so the q-period shift-parity argument would be invalid.
+The zero overlap there does not repair that missing periodicity. A same-period even integration does permit
+extension, but that is not the stage exit. This checks the cap and indexing without a new trajectory run.
+
+**Literal rooted closure countercontrol.** G185's q4 construction on cap8 has, in increasing temporal order,
+
+    a=01110111, c=00101101, one=11111111, e=01101001, f=01001010.
+
+G185/S75 places the suffix zero,c,one,e,f at rooted depths28 through32, up to a common temporal rotation, which preserves
+all the parities used here. They lie in the same period8 stage. The masks with time0 in the low bit are
+238,180,255,150,82 respectively. The weights of c,one,e,f are4,8,4,3. Both reached pairs (c,one) at depth30
+and (one,e) at depth31 have summary
+
+    (pi(first), pi(second), pi(first AND second)) = (0,0,0).
+
+Their respective next profiles e and f have parities0 and1. Hence no depth-independent next-parity function of
+this summary and the common period can be valid even on this single rooted history. The literal equation
+S f = one XOR (e OR f) checks the latter output: e OR f=01101011 and S f=10010100. This is hand substitution
+in an independently reviewed finite prefix, not a new measurement or an assertion of rootedness for G185's
+larger family. Depth-aware summaries, more retained information, and inequalities using the full words are
+not refuted by this two-depth control.
+
+**Scope and next intention.** The overlap syndrome is a necessary exact diagnostic and can check a future
+cumulative-return argument. Its telescoping value alone supplies no normalized growth. The proposed autonomous
+three-parity state at fixed period is closed in the precise depth-independent sense above; no general barrier
+to all parity methods is claimed. G200's actual cumulative-return estimate and the stage budget remain open.
+Bears on: PERIOD-TWO.md question7, growth gap2. Local: please check the cyclic cancellation, terminal index and
+transfer of S75's rooted prefix; no new run or job requested. Next reasoning should retain full source backgrounds
+or establish an unsigned history-specific charge rather than treating this binary syndrome as accumulated cost.

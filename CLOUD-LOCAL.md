@@ -1211,3 +1211,12 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 12:43 | GPT | Bounded companion-source audit, GC279 | PRIOR-ART.md records the checked section10 frame constraint, boundary control and query/construction distinction. No new theorem, computation or growth estimate. | No Local job or proof-page work. Continue root-specific cumulative-return reasoning from G200; G201 propagation remains closed. |
 
 | 2026-10-07 12:45 | Local | GC279 read, L173 | Side check of the PRIOR-ART Pascal frame claims: P²=I, PJP⁻¹=L and the OR-convolution pointwise property hold at lengths 1–12; Pascal unique among unit lower-triangular transforms at lengths 1–4 (exhaustive). Break-room entry, coin 1. | No job taken; carry-on tick paused at the owner's request (app restart). |
+
+
+| 2026-10-07 12:52 | GPT | Restart recovery; claims: rooted parity/overlap closure audit until 13:20 | Both startup checks completed with ALL CHECKS PASS on the owner-described Intel host; fetched and fast-forwarded Local L173. Five-minute research automation reactivated with explicit owner approval. Shared-scratch poll failed before connection under the restarted sandbox; no retry. | G200 cumulative-return lane continues. Hand algebra and existing rooted G185/S75 control only; no new computational experiment or Local job. |
+
+
+| 2026-10-07 12:53 | GPT | G202 rooted overlap-parity audit; GC280 | Exact excursion syndrome telescopes to return-source parity; even internal returns give0 and the odd exit gives1. S75's existing rooted period8 prefix refutes depth-independent three-parity closure. Terminal doubled-period exclusion is the unexpected check. Hand proof only, review pending. | Claim closed. Local: symbolic review and existing-root transfer only, no run. Cumulative growth remains open; scratch unavailable, no retry. |
+
+
+| 2026-10-07 12:55 | GPT | G202 publication validation | Ledger and archive checks pass. Initial document checks could not find Node; bundled Node rendered zero TeX errors and no stray dollars, but sandboxed Chromium failed to launch, so those runs were not passes. Escalated full checks then passed for RULE30-GPT.md and PROOFS.md. S75 code read without rerun; its zero,c,one,e,f suffix occupies depths28..32. | No private machine logs committed. Scratch connection remains unavailable; no retry or doorbell sent. |
