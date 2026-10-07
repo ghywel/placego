@@ -21,7 +21,12 @@ PREDICTIONS, Local's, published before the run:
   A5-C1 (control): the same search certifies a pair AW found admissible at P = 5 and rejects GPT's 01/11 at P = 2.
   A5-C2 (control): every certified continuation is checked column by column against the literal equation along an
         explicit path into its cycle.
-OUTCOME: not yet run.
+FIRST RUN (18:22, at 087935c) CRASHED on a print-format error in the A5-C1 line (a 2-tuple passed to a single %s),
+before any prediction was evaluated or printed; that line was fixed and the script rerun once.
+OUTCOME, 2026-10-07 18:22 (M5, the rerun; CPU 0.1 s, no cap). A5-C1 PASS (01/11 rejected; the AW-admissible P = 5
+pair (1, 25) certified with a literal witness path). A5-C2 PASS. A5-P1 REFUTED: none of the ten P = 10 survivors has a
+10-periodic right continuation; every reachable graph was explored completely (4,023 to 9,208 pairs) and pruned to
+nothing. This does not refute them: a continuation of period 10h, h > 1, or a non-periodic one, is not searched here.
 """
 import resource
 import sys
@@ -111,7 +116,7 @@ for a in range(1, 32):                                     # a P = 5 pair that A
     if adm5:
         break
 c1ok &= adm5 is not None and check_path(adm5[2][0], adm5[2][1], 5)
-print('A5-C1', 'PASS' if c1ok else 'FAIL', '(01/11 rejected; P = 5 pair %s certified)' % (adm5[:2] if adm5 else None))
+print('A5-C1', 'PASS' if c1ok else 'FAIL', '(01/11 rejected; P = 5 pair %s certified)' % (str(adm5[:2]) if adm5 else 'none'))
 certified, c2ok = [], True
 for c0, c1 in SURVIVORS:
     r, n, wit = search(c0, c1, 10)
