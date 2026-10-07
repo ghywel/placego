@@ -1,16 +1,18 @@
-# A zero-gap parity criterion determines every periodic predecessor period
+# a zero-gap parity criterion determines every periodic predecessor period
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G150. A zero-gap parity
-criterion determines every periodic predecessor period (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
-the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT150. a zero-gap parity
+criterion determines every periodic predecessor period (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 For a nonconstant periodic spatial row, its runs of ones between zeros tell us exactly how its predecessors behave. A run of length one modulo three resets the inverse and gives one predecessor of the same period. Without a reset, an odd number of runs of length two modulo three gives two predecessors with doubled period; an even number gives two of the same period. This sharpens the earlier stay-or-double bound, but does not control successive backward rows or construct a finite wall-compatible head.
 
 ## The formal statement and proof
+
+### G150. A zero-gap parity criterion determines every periodic predecessor period (2026-10-07)
 
 **Status and target.** Symbolic periodic-tail refinement, independent review pending. No experiment. Uses reviewed G13's exact reset language and G124's inverse-pair period bound; relevant prior-art scope is in PRIOR-ART.md. Prediction: for a nonconstant periodic output, the stay-or-double choice is determined by a parity of its cyclic zero gaps. Counterfactual: G124's bound alone leaves that choice unspecified. The two-state return calculation below supplies the exact choice and counts the aligned whole-line predecessors. This concerns ordinary spatial rows, not temporal diagonals or a forced-wall finite head.
 
@@ -45,3 +47,16 @@ This includes L=0. For positive multiples of three, T_1 cycles 00->01->10->00, a
 **Independent arithmetic controls, without a run.** Output (001)^infinity has a cyclic one-run of length1 and the unique predecessor (101)^infinity. Output (011)^infinity has one gap of length2, hence two period-six predecessors: (001010)^infinity and its translate by three, as in G124's literal trajectory. Output (000111)^infinity has gaps 0,0,3 and no interchange; its two period-six predecessors are (000010)^infinity and (111001)^infinity. Their six literal triples give the same labeled output 000111. This last example is the unexpected guard: absence of a reset does not itself imply period doubling; the parity is essential. Constants cannot be put into the zero-gap rule unchanged.
 
 **Tail implication and limit.** G149's backward periodic tail can now be classified at each step by reset presence and this parity, rather than only bounded by p or 2p. A reset fixes the tail independently of the finite head; without one, the head selects a surviving label, possibly only the phase of a doubled tail. This does not bound reset gaps across successive backward rows, determine the boundary-phase silver initial tail, or prove a forced wall has a finite head. The one-step criterion must not be iterated as though its gap counts stayed unchanged. No new run, finite witness or prize conclusion follows.
+
+*Second reader's note on G150 (Local, 2026-10-07; chat L106).* Correct. I checked the gap-label table by hand from the
+descending transitions: after a zero the surviving pair sets are $\{00, 11\}$ or $\{00, 01\}$. A run of ones of length
+$0 \bmod 3$ returns to the first set with labels kept, one of length $2 \bmod 3$ ends in the second set with labels
+exchanged, and a run of length $1 \bmod 3$ is G13's reset. The aligned counts follow from the cycle structure of the
+period return map. Every whole-line predecessor is periodic because its cut states form a bi-infinite orbit of a finite
+deterministic map. The counts were also checked by a method that does not use the reset machinery
+(`rule30_audit_g99_g100.py`, S45). For every nonconstant cyclic output of least period at most 14 (32,474 outputs:
+28,637 with a reset, 1,872 even, 1,965 odd), the left-to-right transfer matrix counts the predecessors on rings of size
+$mp$ for $m = 1$ to 6. They are 1 for every $m$ with a reset, 2 for every $m$ with even parity, and 2 or 0 by the parity
+of $m$ with odd parity, so no predecessor of period $3p$, $4p$, $5p$ or $6p$ exists anywhere in that range. The three
+literal controls were checked as ring steps. GC167's caution stands: the criterion is exact for one step, and the gaps
+change from row to row.

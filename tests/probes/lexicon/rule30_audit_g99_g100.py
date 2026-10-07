@@ -206,6 +206,11 @@ CHECKS (GPT's claims at 827e006):
      pattern reaches zero within 2k ordinary steps; each evolves forward 2k wall steps back to its finite row; and
      (c) the controls 001 -> 111 -> 000 and the stationary 01. The first run of (b) failed through my orientation slip
      (depth-indexed tails fed to a left-to-right ring); reversed, every case passes.
+  S45 (G150, added 2026-10-07 at 70db53c): for every nonconstant cyclic output of least period p <= 14, the number of
+     Rule 30 predecessors on rings of size m p (m = 1..6), counted independently by the left-to-right transfer matrix
+     (trace of the product over a period, raised to m), is 1 for every m when a cyclic run of ones has length 1 mod 3,
+     else 2 for every m when the number N of runs of length 2 mod 3 is even, else 2 for even m and 0 for odd m; and the
+     three literal controls (001 <- 101; 011 <- 001010 and its translate by 3; 000111 <- 000010 and 111001).
 """
 import random
 from fractions import Fraction as F
@@ -2011,4 +2016,57 @@ for trial in range(200):
     ok44 &= fw[:200] == y[:200]
 ok44 &= ring_step([0, 0, 1]) == [1, 1, 1] and ring_step([1, 1, 1]) == [0, 0, 0] and ring_step([0, 1, 0, 1]) == [0, 1, 0, 1]
 check('S44 G149: zero-reaching periodic tails, their periods and first hits; backward wall pairs give such tails', ok44)
+def _mm(A, B):
+    return [[sum(A[i][k] * B[k][j] for k in range(4)) for j in range(4)] for i in range(4)]
+
+
+def ltr_matrix(y):
+    M = [[1 if i == j else 0 for j in range(4)] for i in range(4)]
+    for yi in y:
+        T = [[0] * 4 for _ in range(4)]
+        for a in (0, 1):
+            for b in (0, 1):
+                for c_ in (0, 1):
+                    if yi == a ^ (b | c_):
+                        T[2 * a + b][2 * b + c_] = 1
+        M = _mm(M, T)
+    return M
+
+
+def g150_predict(y):
+    i0 = y.index(0)
+    rot = y[i0:] + y[:i0]
+    runs, cur = [], 0
+    for v in rot[1:] + [0]:
+        if v == 1:
+            cur += 1
+        else:
+            runs.append(cur)
+            cur = 0
+    if any(L % 3 == 1 for L in runs):
+        return 'reset'
+    return 'even' if sum(1 for L in runs if L % 3 == 2) % 2 == 0 else 'odd'
+
+
+ok45 = True
+kinds45 = {'reset': 0, 'even': 0, 'odd': 0}
+for p_ in range(2, 15):
+    for v in range(1, (1 << p_) - 1):
+        y = [(v >> i) & 1 for i in range(p_)]
+        if least_period(y) != p_:
+            continue
+        kind = g150_predict(y)
+        kinds45[kind] += 1
+        H = ltr_matrix(y)
+        P_ = H
+        for m in range(1, 7):
+            tr = sum(P_[i][i] for i in range(4))
+            want = 1 if kind == 'reset' else (2 if kind == 'even' or m % 2 == 0 else 0)
+            ok45 &= tr == want
+            P_ = _mm(P_, H)
+ok45 &= ring_step([1, 0, 1]) == [0, 0, 1]
+ok45 &= ring_step([0, 0, 1, 0, 1, 0]) == [0, 1, 1] * 2 and ring_step([0, 1, 0, 0, 0, 1]) == [0, 1, 1] * 2
+ok45 &= ring_step([0, 0, 0, 0, 1, 0]) == [0, 0, 0, 1, 1, 1] and ring_step([1, 1, 1, 0, 0, 1]) == [0, 0, 0, 1, 1, 1]
+check('S45 G150: periodic predecessor counts on rings of size m p follow the zero-gap parity rule exactly', ok45,
+      'outputs by kind (p <= 14): %s' % kinds45)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

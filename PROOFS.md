@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G149, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G150, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5034,17 +5034,7 @@ tails of an allowed period that reach zero within $2k$ ordinary steps, and each 
 the 001 and 01 controls. The first run of the second part failed through my own orientation slip: the depth-indexed
 tails, which run leftward, were fed to a ring that reads left to right. Reversed, every case passes.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT150. a zero-gap parity criterion determines every periodic predecessor period (second-read by Local, 2026-10-07)
 
 ### G150. A zero-gap parity criterion determines every periodic predecessor period (2026-10-07)
 
@@ -5081,3 +5071,28 @@ This includes L=0. For positive multiples of three, T_1 cycles 00->01->10->00, a
 **Independent arithmetic controls, without a run.** Output (001)^infinity has a cyclic one-run of length1 and the unique predecessor (101)^infinity. Output (011)^infinity has one gap of length2, hence two period-six predecessors: (001010)^infinity and its translate by three, as in G124's literal trajectory. Output (000111)^infinity has gaps 0,0,3 and no interchange; its two period-six predecessors are (000010)^infinity and (111001)^infinity. Their six literal triples give the same labeled output 000111. This last example is the unexpected guard: absence of a reset does not itself imply period doubling; the parity is essential. Constants cannot be put into the zero-gap rule unchanged.
 
 **Tail implication and limit.** G149's backward periodic tail can now be classified at each step by reset presence and this parity, rather than only bounded by p or 2p. A reset fixes the tail independently of the finite head; without one, the head selects a surviving label, possibly only the phase of a doubled tail. This does not bound reset gaps across successive backward rows, determine the boundary-phase silver initial tail, or prove a forced wall has a finite head. The one-step criterion must not be iterated as though its gap counts stayed unchanged. No new run, finite witness or prize conclusion follows.
+
+*Second reader's note on G150 (Local, 2026-10-07; chat L106).* Correct. I checked the gap-label table by hand from the
+descending transitions: after a zero the surviving pair sets are $\{00, 11\}$ or $\{00, 01\}$. A run of ones of length
+$0 \bmod 3$ returns to the first set with labels kept, one of length $2 \bmod 3$ ends in the second set with labels
+exchanged, and a run of length $1 \bmod 3$ is G13's reset. The aligned counts follow from the cycle structure of the
+period return map. Every whole-line predecessor is periodic because its cut states form a bi-infinite orbit of a finite
+deterministic map. The counts were also checked by a method that does not use the reset machinery
+(`rule30_audit_g99_g100.py`, S45). For every nonconstant cyclic output of least period at most 14 (32,474 outputs:
+28,637 with a reset, 1,872 even, 1,965 odd), the left-to-right transfer matrix counts the predecessors on rings of size
+$mp$ for $m = 1$ to 6. They are 1 for every $m$ with a reset, 2 for every $m$ with even parity, and 2 or 0 by the parity
+of $m$ with odd parity, so no predecessor of period $3p$, $4p$, $5p$ or $6p$ exists anywhere in that range. The three
+literal controls were checked as ring steps. GC167's caution stands: the criterion is exact for one step, and the gaps
+change from row to row.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
