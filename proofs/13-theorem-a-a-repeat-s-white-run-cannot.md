@@ -15,7 +15,11 @@ lie in it, and it cannot be longer than 2P there, so the repeat is bounded.
 
 **Why it matters.** A sharper cap on repeats, from the edge band's own regularity.
 
-**An everyday picture.** A long empty parking space cannot hide in a car park that is always full.
+**An everyday picture.** Driving round a busy car park: spaces keep opening as cars leave, but each is small and
+gone within moments, and you pass the car about to leave just before it goes, so a driver who needs a long space
+where they are can circle for ever while spaces are made all around them (the owner's reading). The settled band is
+that car park. White gaps are born in it all the time, but none is wider than 2P or older than P steps (12), so the
+long white stripe a repeat needs is never there at the moment and place it is needed.
 
 ## The formal statement and proof
 

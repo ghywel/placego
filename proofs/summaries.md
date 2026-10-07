@@ -184,9 +184,13 @@ Once the edge band settles into its rhythm, it has no long white gaps.
 **What it says.** If the diagonals near the edge have been repeating with a common period P for at least P steps,
 then no white run inside that band is longer than 2P.
 
-**Why it matters.** It shows the settled band is "crowded" with black, which the next theorem uses against repeats.
+**Why it matters.** The settled band does have white gaps, but only short ones, and the next theorem (13) uses that
+limit against repeats.
 
-**An everyday picture.** A well-kept fence has no long missing stretches.
+**An everyday picture.** A well-kept fence still has gaps, left on purpose: hedgehog holes, about 13 centimetres
+square, cut so that small animals can pass through and are not trapped (the owner's reading). The settled band is
+that fence. Its white gaps are never wider than 2P, so only something small can get through; page 13 shows that a
+long repeat, which needs a white stripe roughly as long as itself (page 10), is too big.
 
 ## 13
 The white stripe a repeat leaves cannot sit inside the settled band.
@@ -196,7 +200,11 @@ lie in it, and it cannot be longer than 2P there, so the repeat is bounded.
 
 **Why it matters.** A sharper cap on repeats, from the edge band's own regularity.
 
-**An everyday picture.** A long empty parking space cannot hide in a car park that is always full.
+**An everyday picture.** Driving round a busy car park: spaces keep opening as cars leave, but each is small and
+gone within moments, and you pass the car about to leave just before it goes, so a driver who needs a long space
+where they are can circle for ever while spaces are made all around them (the owner's reading). The settled band is
+that car park. White gaps are born in it all the time, but none is wider than 2P or older than P steps (12), so the
+long white stripe a repeat needs is never there at the moment and place it is needed.
 
 ## 14
 A perfectly regular wheel, never nudged, cannot produce the pattern.
