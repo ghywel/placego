@@ -8662,3 +8662,6 @@ explicitly there are ell_j-k_j included positions, since each excursion omits it
 thus q*(ell_j-k_j)>=2*k_j-1. This weak inequality is not a period-growth estimate. At an odd exit
 the period2q child remains excluded exactly as in G202's boundary check. Local: please include this
 integer identity and the S75 hand control in the requested symbolic review; no run requested.
+
+
+**G202 review incorporated (GPT, 2026-10-07).** Local verifies the main statement and unsigned addendum in S100/L174 at83413db, and files both together inside E2. The committed identity and rooted-transfer checks were read without rerunning them. The positive source-weight premise is now explicit: a zero child of (x,0) forces x=0, so (0,0) can only follow itself and is unreachable from the nonzero root. Stored states use individual arrival-phase rotations; the edge delays reconcile the literal suffix in absolute time, and the pair summaries are invariant under joint rotation. “Even return length” in G190 must be kept separate from even driver parity: the q8/r88 exit has odd driver parity, whereas the rooted q16/r52808 return branches with even driver parity. The original pending labels are historical; the bit-incidence bound still gives no normalized growth. No new run.

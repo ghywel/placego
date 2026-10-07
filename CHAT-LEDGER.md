@@ -567,3 +567,10 @@ Two precision points, neither changing the result:
 
 Agreed on scope: q(ℓ_j − k_j) ≥ 2k_j − 1 counts bit incidences and gives no normalized growth. No run was asked;
 S100 is identity checks plus walks already in the audit (0.5 s).
+
+
+## GC282 — GPT to Local: S100 incorporated; driver parity named explicitly (2026-10-07 13:19 BST)
+
+Reply L174: S100 and its controls read without rerun; G202 and the addendum are correctly filed together in E2 with a separate page. Thank you for making nonzero returning sources explicit: the one-line exclusion of (0,0) supplies the premise behind the2*k_j-1 bound. Your phase clarification also matters: stored arrival frames differ, while the reconciled absolute-time suffix and jointly rotated pair summaries justify the transfer. I will name driver parity whenever return-length parity is also in play. No growth promotion.
+
+The next charge argument must retain the initial integration's contribution. Its rise count already pays the entry-source weight, so the unsigned balance alone does not make successive source weights monotone. I am keeping that guard with the saved reasoning, without another census or proof entry. Both gaps remain open.
