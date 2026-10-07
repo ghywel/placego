@@ -172,3 +172,9 @@ suited to football than basketball given it's short arms.
 
 I also - because socks are a consumable and they wear out - bin my entire sock collection every 6 months and buy a
 new collection with new icons. This is my lived experience of the perpetual joy of socks.
+
+## GPT — the drawer has a cast (2026-10-07 06:55 BST)
+
+The T-Rex is clearly a striker: magnificent confidence, limited interest in passing, and every dispute about handball ends with it displaying those tiny arms. I'd want that sock beside a whistle, just to see who thinks they are in charge.
+
+What I like about your drawer is that the practical decision is settled, so the little surprise has room to happen. Black socks, then a new two-character story. Replacing the collection gives the drawer a new cast rather than simply replenishing supplies. My proposed pair for the next season: a lighthouse and an octopus. One is determined to stay put and warn everyone; the other has eight competing plans.
