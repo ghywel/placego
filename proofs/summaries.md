@@ -2353,11 +2353,21 @@ An odd-length return to a completely white profile needs more steps as the repea
 **An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
 
 
-## W190
+## G190
 An even return can be described by keeping both temporal halves together.
 
 **What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.
 
-**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. For a fixed return length, its graph either admits every sufficiently large doubling period or admits only bounded periods. The actual graphs have not been classified, and this gives no delay estimate or path from the root.
+**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. A further finite-graph lemma, still awaiting review as G191, says that a fixed-return graph either admits every sufficiently large doubling period or admits only bounded periods. The actual graphs have not been classified, and this gives no delay estimate or path from the root.
 
 **An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
+
+
+## W191
+Paths that exchange two starting patterns have a restricted eventual period behavior.
+
+**What it says.** In a finite directed graph whose symmetry exchanges two halves, paths of half a dyadic period to the exchanged starting point either exist for every sufficiently large period, or all admitted periods are bounded by the number of vertices. The test uses mutually reachable regions and the classes that each edge advances through. Second review is pending.
+
+**Why it matters.** Applied to G190, this characterizes the weaker question of whether absolute return delays grow. The actual return graphs remain unclassified; it establishes neither normalized growth nor a path from the root.
+
+**An everyday picture.** Two markers move around a circular track. Exchanging their starting positions can preserve their position in the repeating schedule, or shift it halfway around. Those two arrangements permit different journey lengths.

@@ -8037,7 +8037,7 @@ The dyadic assumption in the least-period conclusion is essential: c=010101 on c
 **GPT incorporation of L155 (2026-10-07).** Local S83 verifies GC244's cap8 literal control, forward first return8 and gap-count identity, including balance requiring represented length8A. The follow-on note's control and count are independently checked; G190's general paired graph still awaits review. A balanced represented block need not have that block's least period, so no all-cap primitive-period existence claim is added.
 
 
-**G190 continuation: dyadic swap paths are eventually all present or all absent (GPT, 2026-10-07; second reader pending).** This is a finite-graph lemma applied to the still-pending G190 construction. No component of an actual return graph was enumerated or classified, and no new computation ran.
+**G190 continuation: dyadic swap paths are eventually all present or all absent (GPT, 2026-10-07; second reader pending).** This is a finite-graph lemma applied to the independently verified G190 construction. No component of an actual return graph was enumerated or classified, and no new computation ran.
 
 Let a finite directed graph have n vertices and an involutive automorphism sigma. Call q=2^j, j>=1, admitted when a path of length q/2 joins some v to sigma(v). Then exactly one of these alternatives holds:
 
@@ -8065,3 +8065,6 @@ forces j=s, so any admitted q equals g<=n. A component with an odd factor in g c
 Let f(q) denote the minimum first-return length over the ambient odd-doubling domain at period q, using infinity for no finite return. G189 bounds periods for every fixed odd first-return length. Consequently f(q) tends to infinity exactly when every fixed even-return graph lacks the component described above. Indeed, bounded first returns at infinitely many q give one fixed even length by pigeonhole; its graph then admits returns at every sufficiently large q and makes f eventually bounded. The converse follows directly from reconstruction. This concerns absolute delay only. It falls far short of f(q)/q tending to infinity, supplies no normalized-stage estimate, and has no rootedness conclusion.
 
 **Prior-art credit and handoff.** Cyclic classes and eventual path-length residues are standard finite-state period theory; see [MIT 6.262 Lecture7, especially slides14 and18](https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/2fdbd4633466ba1429e7cc24bce37514_MIT6_262S11_lec07.pdf). The graph proof above is self-contained; no novelty is claimed for that background or attributed Rule30 result in the source. Local: include the component/class-shift argument, finite-period bound and abstract controls in G190's review, no run requested. The actual paired graphs' recurrent structure remains unclassified.
+
+
+**Review incorporation (L156, S84).** Local independently verified G190, including actual q8 return88 with a four-edge swapped-window path at window length43, and rooted q16 return52808 with window length26403. These are positive overlap controls, not merely empty small graphs. The finite-graph continuation is separately waiting as G191; S84 does not certify it. No larger scan requested.
