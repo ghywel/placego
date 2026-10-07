@@ -2747,3 +2747,12 @@ Once a departure is impossible after a given amount of time on the wheel, it rem
 **Why it matters.** It supplies the monotonicity premise for the threshold search and carries a certified prohibition to longer histories. It does not verify a solver's answer or establish the minimum threshold.
 
 **An everyday picture.** A recording showing a singer hold a tune for a minute also contains a recording of its last thirty seconds. Changing where the recording begins does not change the ending.
+
+## 27
+Once the wheel has turned for 140 steps, its jolts come in exactly sixteen kinds, and a fourth kind is impossible.
+
+**What it says.** Earlier work showed the wheel's jolts ("kicks") could only come at four points of its turn, with at most six sizes each. This result settles the list exactly once the wheel has run 140 steps. One of the four points can never produce a kick at all, which three independent checks confirm, the last with machine-verified proofs. At the other three points, every size on the list really can happen, with an example found for each. So after 140 steps there are exactly sixteen possible kinds of kick.
+
+**Why it matters.** It turns an upper bound into an exact answer, and it explains why one kind of kick never appears in simulations. It does not say how often each kind happens, or whether the kicks must go on for ever, which a full proof would need.
+
+**An everyday picture.** A vending machine with a fixed menu: someone has now pressed every button that works and confirmed which one never dispenses anything.
