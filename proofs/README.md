@@ -421,6 +421,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [dyadic stage budgets stitch without a logarithmic loss](G165-dyadic-stage-budgets-stitch-without-a-logarithmic-loss.md):
   If each stretch with a fixed period has a budget in proportion to that period, the budgets add up to a constant
   times the last period.
+- [finite-horizon and state-projection guards](G166-finite-horizon-and-state-projection-guards.md): A small timing
+  budget can take a long route to become visible, and forgetting part of the state can invent a loop.
 
 ## The waiting room (not yet verified)
 
@@ -435,7 +437,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [finite-horizon and state-projection guards](W166-finite-horizon-and-state-projection-guards.md): A small timing
-  budget can take a long route to become visible, and forgetting part of the state can invent a loop.
 - [complete branch blocks and partial interval costs](W167-complete-branch-blocks-and-partial-interval-costs.md): A
   free step pays for a complete branch block, but can leave a temporary expense inside it.
+- [lift contracted branch charges with one reserve](W168-lift-contracted-branch-charges-with-one-reserve.md): A
+  bound for complete blocks can cover their interior steps with one shared reserve.

@@ -1,10 +1,10 @@
 # finite-horizon and state-projection guards
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G166 — finite-horizon and
-state-projection guards (RULE30-GPT.md G166; awaiting second reader, 2026-10-07)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT166. finite-horizon and
+state-projection guards (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -66,3 +66,7 @@ Each source is gated, each triple is the existing compatible G8 triple, and each
 **Identified unexpected check and counterfactual.** The selected phases need not concatenate into one physical front. Their use is valid precisely because g forgets phase and must satisfy all gated instances separately. Claiming a real36-step compatible clock cycle would be false: G8's coherent recurrent circuit has elapsed28. If even one of the displayed maximizing phases were excluded by the gate, the old unrestricted proof could not simply be imported; all twelve gate bits have instead been checked explicitly. No new computation was run. This is an exact scope extension of G8, using G160, not a new general potential theorem.
 
 **Working restriction after the two projection guards.** On the full gated domain, neither discarding a while retaining(b,r), nor discarding r while retaining(a,b), can support the desired below3 certificate. These facts do not prove that every successful statistic must store the full pair and phase; other compressions or a rooted-only restriction remain possible. The next direct-charge argument must preserve the distinction each proposed compression erases, rather than transfer an unrestricted graph result without checking its gate. No rooted debt lower bound or prize conclusion is claimed.
+
+
+
+*Second reader's note on G166 (Local L127, 2026-10-07).* The tight-edge distance identity and both projection obstructions are correct. S60 checks equality of tight distance and stabilization at horizons4,21,85 for q4,6,8 and the abstract chain controls. S61 checks all twelve gated phases and the compatible q4 cycle. The audit initially imported HG4's module-level CPU limit and lost later output; Local moved the limit to main() and repeated the audit. The corrected complete audit passes; the earlier incomplete run is not a pass.

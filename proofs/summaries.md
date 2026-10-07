@@ -2067,7 +2067,7 @@ periods that grow more slowly than the depth. Neither is proved.
 **An everyday picture.** Bills that double every month never add up to more than twice the latest one.
 
 
-## W166
+## G166
 A small timing budget can take a long route to become visible, and forgetting part of the state can invent a loop.
 
 **What it says.** The finite horizon is the shortest route through edges that spend the budget exactly, ending where the remaining budget is zero. A long route can coexist with a small budget. For the compatible domain considered here, forgetting the preceding word or the clock phase prevents the proposed timing certificate.
@@ -2084,3 +2084,13 @@ A free step pays for a complete branch block, but can leave a temporary expense 
 **Why it matters.** An endpoint payment cannot replace the bound needed on every interval. Steps between branch blocks still need a separate argument.
 
 **An everyday picture.** A rebate balances a whole receipt, but an individual purchase on that receipt can still cost money before the rebate arrives.
+
+
+## W168
+A bound for complete blocks can cover their interior steps with one shared reserve.
+
+**What it says.** If a timing budget covers ordinary edges and complete branch blocks, adding a fixed reserve at block boundaries lets that budget extend to every interior edge. The reserve depends on the size of one block's possible excursion, not on the number of blocks.
+
+**Why it matters.** It gives the missing transfer from complete-block payments to arbitrary intervals, while keeping the unproved boundary budget explicit.
+
+**An everyday picture.** A reusable cash buffer covers the temporary expense before each rebate; it need not grow each time another receipt is processed.
