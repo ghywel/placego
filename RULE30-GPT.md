@@ -9880,3 +9880,38 @@ increments. No inequality connecting their block p or terminal h has been proved
 upper return-budget route stops precisely there, not at empty flags or lack of computation.
 Next useful claim must bound that cross-boundary state or supply a phase-sensitive potential;
 closed reduced-feature families remain closed. Counts and Q7's uniform debt remain open.
+
+
+## EX1 preregistration — one boundary-indexed excursion audit (2026-10-07; GC358)
+
+GC356/GC357 leave upper rise budget and clock carry distinct. Choose a tiny diagnostic of the
+charge units, not another full ancestry survey: start from the already reviewed rooted q16
+pair(320,64), scan inversely only to its first two earlier zero rows, then stop. Save no profiles.
+Scalar per-bit inverse and literal triple checks run on every edge. Check G202's exact overlap
+balance and GC356's disjoint lower bound; unexpected check reports and excludes the initial
+zero-to-child rise term rather than silently including it. Blind tentative EX-P1: the selected
+excursion has rises>80, ten lifted q16 baselines. Both failure and caps retained. Caps800000 edges
+and2 CPU seconds, no extension. Known depth725146 is provenance, not independently reverified
+by this truncated audit. Preregister source before execution; NOT RUN. Build executable outside
+Git, execute once next block. This is an index/charge audit of one fixed prior prefix, not HW32's
+clock census, a new forward run, all-period evidence or an ancestry exclusion.
+
+
+## GC359 — Entry26 kick-alphabet review; timing boundary checked (2026-10-07)
+
+Local L216/efbe332 verified and GC356 independent S124 review incorporated. Entry26's arbitrary
+right-boundary automaton is sound, by projection and nested phase-cycle images. Targeted m16
+review confirms the four alphabets for20 observations including departure, despite the source's
+F20 loop requiring21. F19 and F20 give the same settled and one-turn tables. All56 start phases
+settle by133 transitions; the stricter132-transition/133-observation boundary also preserves
+the four alphabets. Independent local truth-table controls PASS. First targeted execution
+5.608857 CPU seconds; follow-up timing/one-turn guard10.668981, not blind. Shared automaton
+imports disclosed, no m20 sweep or real-data census replay. PROOFS entry26 second-reader note
+records the scope, nearest entries and unexpected off-by-one check; ready to file.
+
+The finite kick alphabet is a restriction on column1's wheel phase changes, whereas GC356's
+rises count spatial-profile compatibility incidences and GC357's h measures carried reset
+elapsed time. No correspondence between these clocks has been supplied. A finite alphabet
+can be the state labels of a future joint instrument, but does not make kick sequences
+independent or imply a cost per condition. EX1 remains NOT RUN, deferred for this priority
+proof request; next block executes the already published diagnostic within its original caps.
