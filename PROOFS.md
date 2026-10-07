@@ -6794,7 +6794,7 @@ three controls and the constant-1 counter-check behave as stated.
 
 ### GPT G195 — A four-window certificate for phase mixing (2026-10-07; second reader pending)
 
-**Statement, conditional on pending G194.** In G193's quotient at m>=1, two distinct edge orbits have the same source and target exactly when there is an (m-1)-bit word T such that
+**Statement, using independently reviewed G194.** In G193's quotient at m>=1, two distinct edge orbits have the same source and target exactly when there is an (m-1)-bit word T such that
 
     F_m(0T)=F_m(1T)=F_m(T0)=F_m(T1)=1,
     V_m(0T)+V_m(1T)=1.
@@ -6819,6 +6819,18 @@ Unexpected check: G192 proves this actual graph acyclic. The parallel pair is th
 
 **Record and limits.** G193/G194 already retain parallel choices; this adds their exact Rule30 window criterion and the same-component witness shortcut. No novelty is claimed for generic graph potentials. No larger-r window or recurrent component has been tested, including r88. Local: second-read the necessity of equal tails and the transient guard; no job requested. The next bounded structural question is whether a known return component can reach one of these four-window pairs and return from its target. That question remains open, and absence of this sufficient certificate would not rule out persistence by longer oppositely labeled paths.
 
+**G195 continuation: long overlap excludes the certificate on the observed walk (GPT, 2026-10-07; second reader pending).** On any dyadic swap walk of length h=q/2 in G190, if m-1>=h, none of its source vertices can have equal tails. Hence none can be the source of G195's parallel edge pair. This does not exclude other vertices in the same strongly connected component.
+
+**Prediction and counterfactual before controls.** The difference between the two temporal halves should have period h; a whole h-block of zeros should therefore be impossible. The counterfactual that the known short-period witness itself is a suitable place to search for the local certificate fails in this overlap regime. No computation runs.
+
+Close the walk by its swapped copy, as in reviewed G190, to obtain a q-periodic word w. Put beta(t)=w(t)+w(t+h). Then beta(t+h)=beta(t). If the source windows at some t share a tail, beta is zero at t+1 through t+m-1. When m-1>=h, that interval contains a full h-block; h-periodicity forces beta identically zero. But w would then be h-periodic, and so would c=U_(2m)(w), contradicting c(t+h)=1+c(t). This proves the exclusion.
+
+A further simple-cycle guard applies when m>=q. The word w has least period q: it is q-periodic and its derived c has least period q. If two unordered quotient vertices at times0<=s<t<h coincide, their m-bit first windows either coincide or are exchanged. At least one full q-block then shows that shifting w by t-s or t-s-h preserves w. Neither shift is0 modulo q, contrary to least period q. Thus the h vertices on this particular quotient walk are distinct. The component can still contain additional edges and vertices; a simple observed circuit is not a certificate that the entire component is a simple cycle.
+
+**Actual controls and identified unexpected sharp-length guard.** The reviewed q8/r88 witness has h4,m43; the rooted q16/r52808 witness has h8,m26403. Both therefore exclude the four-window certificate on their observed paths and have simple quotient circuits of length4 and8 respectively. These are hand consequences of their verified parameters, not new graph runs. Unexpected check: an h-periodic nonzero difference can contain h-1 consecutive zeros. For h4, take the word-only control w=00001000; beta=w+S4w=10001000, which has three consecutive zeros. This is not asserted to satisfy the return graph. It checks why the zero-block argument requires h zeros and cannot silently use h-1.
+
+The next recurrence question must therefore concern a detour from a known return component to a four-window pair and back, or a longer pair of equal-length paths with opposite labels. Inspecting only the known periodic circuit cannot answer it. No detour search, PR191-B1 restart or larger-r census is requested.
+
 *Second reader's note on G195 (Local, 2026-10-07; chat L162).* Correct. By G189's affine form, $V_m$ of a window is its
 last bit plus a function of the earlier bits. A target orientation therefore fixes both appended bits, so each source
 has at most one edge per label, and parallel quotient edges must carry opposite labels. Exchanged ordered targets share
@@ -6828,7 +6840,12 @@ both of G194's potentials. Checked (`rule30_audit_g99_g100.py`, S91) on G190's g
 Each source has at most one edge per label, every parallel pair carries opposite labels, and the parallel pairs are
 exactly the four-window pairs. There is one at $m = 3$ (GPT's $T = 01$, reproduced edge for edge) and one at $m = 6$,
 none elsewhere, all in acyclic graphs and so transient, as the guard says. On 300 random strongly connected labelled
-graphs with an opposite parallel pair added, neither potential is soluble.
+graphs with an opposite parallel pair added, neither potential is soluble. The overlap continuation is also correct: on
+a closed swap walk, $\beta = w + S^h w$ has period $h$, so equal tails over $m - 1 \ge h$ positions would make $\beta$
+vanish and $w$, hence $c$, $h$-periodic, against $c(t + h) = 1 + c(t)$. S92 confirms on both actual even returns
+($q = 8$, $m = 43$; rooted $q = 16$, $m = 26{,}403$) that $\beta$ is nonzero, no source on the walk has equal tails, and
+the walk's quotient vertices are distinct. GPT's $h - 1$ guard (00001000) has three zeros in a row in $\beta$ but not
+four.
 
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader

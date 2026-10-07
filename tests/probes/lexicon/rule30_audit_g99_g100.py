@@ -454,6 +454,10 @@ CHECKS (GPT's claims at 827e006):
      the four-window pairs over (m - 1)-bit T (one each at m = 3 and m = 6, none elsewhere, all in acyclic graphs);
      at m = 3, T = 01 gives source (101, 001) with targets (010, 011) and its swap; on 300 random strongly connected
      labelled graphs with an opposite parallel pair added, neither of G194's potentials is soluble.
+  S92 (G195's overlap continuation, added 2026-10-07 at e6c9aad): on the actual q = 8 (r = 88, m = 43, h = 4) and
+     rooted q = 16 (r = 52,808, m = 26,403, h = 8) returns, beta = w + S^h w is h-periodic and nonzero, no source window
+     pair on the walk has equal tails, and the walk's h quotient vertices are distinct; the guard 00001000 (h = 4)
+     has three zeros in a row in beta but not four.
 """
 import random
 from fractions import Fraction as F
@@ -4776,4 +4780,29 @@ for trial in range(300):
     ok91 &= not potential90(k, edges, [x ^ w for (_, _, x), w in zip(edges, wrap)])
 check('S91 G195: in G190\'s graphs (m = 1-6) parallel quotient edges are exactly the four-window pairs, with opposite '
       'labels; T = 01 at m = 3; an opposite parallel pair in a strongly connected graph defeats both potentials', ok91)
+ok92 = True
+# G195's overlap continuation on the two actual even returns: beta = w + S^h w is h-periodic and nonzero, so no window
+# pair on the walk has equal tails (m - 1 >= h), and with m >= q the h quotient vertices of the walk are distinct
+for q, a in ((8, _s8), (16, 161 | (161 << 8))):
+    pr = walk84(q, a)
+    r, h = len(pr) - 1, q // 2
+    m = (r - 2) // 2
+    w = pr[r - 1]
+    beta = w ^ _rq3.rot(w, h, q)
+    ok92 &= m - 1 >= h and m >= q and beta != 0 and _rq3.rot(beta, h, q) == beta and _lp82(w, q) == q
+    bit = lambda t: (w >> (t % q)) & 1
+    win = lambda t: tuple(bit(t + i) for i in range(min(m, 3 * q)))   # windows longer than 2q repeat; 3q bits decide
+    for t in range(h):
+        X, Y = win(t), win(t + h)
+        ok92 &= X[1:] != Y[1:]                               # tails differ at every source on the walk
+    verts = [frozenset((win(t), win(t + h))) for t in range(h)]
+    ok92 &= len(set(verts)) == h                             # the walk's quotient vertices are distinct
+# the sharp-length guard: an h-periodic nonzero difference can hold h - 1 zeros in a row (w = 00001000, h = 4)
+_w92 = sum(int(b) << t for t, b in enumerate('00001000'))
+_b92 = _w92 ^ _rq3.rot(_w92, 4, 8)
+ok92 &= _b92 == sum(int(b) << t for t, b in enumerate('10001000'))
+ok92 &= any(all(not (_b92 >> ((s + k) % 8)) & 1 for k in range(3)) for s in range(8))
+ok92 &= not any(all(not (_b92 >> ((s + k) % 8)) & 1 for k in range(4)) for s in range(8))
+check('S92 G195 overlap continuation: on the actual q = 8 (r = 88) and rooted q = 16 (r = 52,808) returns no source '
+      'has equal tails and the walk\'s quotient vertices are distinct; the h - 1 zero guard (00001000)', ok92)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
