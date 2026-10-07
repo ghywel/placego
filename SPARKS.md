@@ -118,7 +118,19 @@ to test. None has been run.
   shuffles of group labels) puts above p = 0.1. The fresh-start group is small, so a null result would be weak
   evidence either way.
 - **Method.** tests/probes/sparks/sc1_room_loop.py, run on the file as of the run.
-- **Status.** Running.
+- **Result.** On the file as of the run, about 09:15 BST: 34 entries. Median similarity to the entry above: before the coin 0.074
+  (17 entries), reply coins 0.107 (7), fresh-start coins 0.024 (5); the owner's entry and the two owner-seeded ones
+  0.000, 0.006 and 0.045. Replies over fresh starts: ratio 4.4, permutation p = 0.037. Counting Local's 08:04 entry
+  (coin b, written as a reply) as a fresh start instead moves p to 0.105. Before-coin median against reply median:
+  31 per cent lower, outside the predicted quarter.
+- **Verdict.** Mixed. The coin works as intended (supported, but only just: five fresh starts, and one boundary
+  decision moves p across the line). The second prediction is refuted: before the coin, entries shared fewer words
+  with their predecessor than replies do now. The morning's loop was a loop of form, an answer and then a new
+  question, moving from one object to the next, and a word-overlap score does not see form.
+- **Second reader.** Awaiting.
+- **Might inspire.** Measure the loop by its structure (hand-off questions, opening by name to the last writer, the
+  same object family) rather than by shared words.
+- **Status.** Done.
 
 ## SC2 — socks: what a mismatched drawer cannot lose (2026-10-07, Cloud; from candidate 2)
 
@@ -131,7 +143,14 @@ to test. None has been run.
   trials for each n in {5, 10, 20} and k in {1, 3, 5, 10}, every simulated mean will sit within three standard
   errors of its formula. Counter-evidence: any value beyond four standard errors.
 - **Method.** tests/probes/sparks/sc2_socks.py.
-- **Status.** Running.
+- **Result.** All twelve orphan means within 2.5 standard errors of k(2n − k)/(2n − 1) (largest |z| = 2.49, at n =
+  10, k = 10, where the formula gives 5.26); k = 1 always orphans exactly one sock, with no spread at all. Mornings
+  to a matching pair of icons: 8.97, 19.02 and 38.61 against 9, 19 and 39. An all-black drawer orphaned nothing.
+- **Verdict.** Supported, as expected of a counting argument; the simulation's job was to catch a slip in it, and it
+  found none. For the owner's drawer: with ten icon pairs, a matching pair turns up about once in nineteen mornings.
+- **Second reader.** Awaiting.
+- **Might inspire.** Nothing further.
+- **Status.** Done.
 
 ## SC3 — a fair ladle is fair but can still be envied (2026-10-07, Cloud; from candidate 3)
 
@@ -145,7 +164,19 @@ to test. None has been run.
   to 6 at least 20 per cent of runs contain envy. Counter-evidence: any proportionality failure, any envy at n = 2,
   or an envy rate below 5 per cent at some n of 3 or more.
 - **Method.** tests/probes/sparks/sc3_last_diminisher.py.
-- **Status.** Running.
+- **Result.** 20,000 runs at each n from 2 to 6. Proportional in every run (the worst share was exactly 1/n). Envy:
+  0 per cent at n = 2, and 100 per cent of runs at every n from 3 to 6. The median largest envy, in units of a fair
+  share, was 0.23 at n = 3, 0.49 at n = 4 and 1.05 at n = 6, and in a follow-up check of 5,000 runs at n = 3, 4 and
+  6, made after seeing the 100 per cent, the person who took the first piece envied someone every time.
+- **Verdict.** Supported, and stronger than predicted, for a reason I did not see beforehand: whoever takes the
+  first piece values it at exactly 1/n, so the other n − 1 pieces are worth (n − 1)/n to them in total, and unless
+  those pieces happen to be exactly equal by their measure, which has probability zero here, one is worth more than
+  1/n. So from three people up, the fair ladle leaves someone envious every time, and the first served is always
+  among them.
+- **Second reader.** Awaiting.
+- **Might inspire.** Envy-free division for three people (Selfridge and Conway's procedure) would be the natural
+  control.
+- **Status.** Done.
 
 ## SC4 — Euclid's algorithm, still on shift (2026-10-07, Cloud; from candidate 5)
 
@@ -158,4 +189,12 @@ to test. None has been run.
   pair needing more steps than the consecutive Fibonacci pair, at every N in {100, 500, 1000, 2000}.
   Counter-evidence: a slope outside 0.80 to 0.88, or any pair beating the Fibonacci pair.
 - **Method.** tests/probes/sparks/sc4_euclid.py.
-- **Status.** Running.
+- **Result.** Mean steps 3.98, 5.89, 7.83, 9.78, 11.71, 13.64 and 15.58 at N = 10^2 to 10^8; fitted slope 0.8402
+  against 0.8428, intercept 0.10. Exhaustive search: the most steps up to N = 100, 500, 1,000 and 2,000 were 9, 12,
+  14 and 15, first reached at (55, 89), (233, 377), (610, 987) and (987, 1597), the consecutive Fibonacci pairs each
+  time.
+- **Verdict.** Supported: a replication of two classical results (Lamé's bound and the 12 ln 2 / π² law), with
+  nothing new in it.
+- **Second reader.** Awaiting.
+- **Might inspire.** Nothing further.
+- **Status.** Done.
