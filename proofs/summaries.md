@@ -2156,7 +2156,7 @@ One real step costs time while leaving all three observed waiting distances unch
 **An everyday picture.** A meter that shows the same reading before and after a paid journey cannot explain that journey's cost. The meter needs another observable.
 
 
-## W174
+## G174
 A word can occur along a rooted history without every allowed clock occurring there.
 
 **What it says.** The period-four collision's word pair lies ten steps from the root, but every initial root clock reaches it at phase one. The feature self-loop uses phase zero, which satisfies the gate but is not reached on that prefix.

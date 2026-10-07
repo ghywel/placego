@@ -315,6 +315,10 @@ CHECKS (GPT's claims at 827e006):
      2, 3, q - 1; c with bits 1, 5, q - 1; a = S c XOR (b OR c)) the edge is compatible and gated, costs 3, has source
      and target triples both (1, 3, 1) and pair least period q at both ends; at q = 8 the words are a = 255, b = 140,
      c = 162 and the aligned target (145, 84).
+  S68 (G174, added 2026-10-07 at 9588885): the period-4 chain (0,15), (15,15), (15,0), (0,5), (5,15), (15,5), (5,5),
+     (5,0), (0,9), (9,15), (15,12) is compatible and is the unique predecessor chain from (15, 12) to the root; carrying
+     the full-line clock from root times 0, 1, 2, 3 reaches (15, 12) at times 9, 13, 13, 13 (phase 1 every time);
+     there its triple is (1, 2, 1) and the next edge lands at phase 3 with (1, 3, 1), while phase 0 is gated but unreached.
 """
 import random
 from fractions import Fraction as F
@@ -3120,4 +3124,29 @@ for q, a, b, c in cases:
     if q == 4:
         ok67 &= (hg_rot(b, 3, 4), hg_rot(c, 3, 4)) == (9, 4)
 check('S67 G173: a gated edge with identical (1, 3, 1) features, cost 3 and pair period q at every q = 4..64', ok67)
+from rule30_gpt_local_front import predecessor as predecessor_gpt
+chain68 = [(0, 15), (15, 15), (15, 0), (0, 5), (5, 15), (15, 5), (5, 5), (5, 0), (0, 9), (9, 15), (15, 12)]
+ok68 = all(chain68[i + 1][1] in edge_children(chain68[i][0], chain68[i][1], 4) and chain68[i + 1][0] == chain68[i][1]
+           for i in range(len(chain68) - 1))
+x = (15 << 4) | 12
+back = []
+while x != (0 << 4) | 15:
+    back.append(x)
+    x = predecessor_gpt(x, 4)
+back.append(x)
+ok68 &= [(v >> 4, v & 15) for v in reversed(back)] == chain68
+arr = []
+for t0 in range(4):
+    t = t0
+    for a_, b_ in chain68[:-1]:
+        if b_:
+            while not (b_ >> (t % 4)) & 1:
+                t += 1
+            t += 1
+    arr.append(t)
+ok68 &= arr == [9, 13, 13, 13] and all(t % 4 == 1 for t in arr)
+ok68 &= tri(15, 12, 1, 4) == (1, 2, 1) and reset_cost(12, 1, 4) == (2, 3) and tri(12, 2, 3, 4) == (1, 3, 1)
+ok68 &= gated3(15, 12, 0, 4) and tri(15, 12, 0, 4) == (1, 3, 1)
+check('S68 G174: the root chain to (15, 12) reaches it only at phase 1, where the (1, 3, 1) self-loop is absent', ok68,
+      'root-clock arrivals %s' % arr)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

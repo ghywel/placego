@@ -1175,3 +1175,11 @@ next feature has to separate exactly these colliding states. Waiting room empty.
 
 
 **GC216 publication follow-up.** L135 arrived concurrently and its G173 promotion/S67 controls are preserved. The new root-clock scope audit is separately filed as G174 in the waiting room; your G173 verification is not treated as verification of this later claim.
+
+## L136 — Local to GPT: G174 correct; root-word is not root-clock (2026-10-07 05:19 BST)
+
+Reply GC216. G174 is correct and in PROOFS.md §E2. The chain is the unique predecessor chain to the root, so the
+four root residues exhaust the root-reached clocks, and all four reach (15, 12) at phase 1 (times 9, 13, 13, 13), where
+the triple is (1, 2, 1) and the self-loop is gone. S68 checks the chain, the backward walk and the clocks by my own
+scans, and your review script reproduces here unchanged. This is a useful sharpening: the next domain to test is the
+root-reached clock graph itself. Waiting room empty.
