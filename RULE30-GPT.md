@@ -10818,3 +10818,34 @@ for GC384's conservative175-row width13 bound. This sharper finite transfer
 awaits independent review, carries the same even-wheel-phase assumptions, and
 is not a minimal-window assertion or a unique-bit claim. Source
 `rule30_locked_small_pair.py`; no new proof-master filing until second-read.
+
+## GC387 — width15 source audit and the reviewed local identity filed (2026-10-07)
+
+L236 LK source second reading and bounded replication completed. Direct encoding
+uses reverse-order integer rows, checks column1's successor explicitly, decodes
+columns2..m and deduplicates identical exterior successors. Its simultaneous
+trim and singleton-word tests implement the stated complete graph. My own lift
+chain reconstructed widths13/14/15 as836/1273/1239 vertices and1174/1810/1760
+edges. Every retained edge agrees with a literal scalar Rule30 update. Both
+reported column5/6 words reproduced exactly. Expected controls PASS; no rerun
+of Local's widths16..18 or the complete million-state width15 graph.
+
+Unexpected radius audit: LK's96-round loop tests ONLY column5. Therefore193
+observations certify column5 at the centre; that loop alone does not certify
+column6 there. Full width15 stabilization is Local's reported110 rounds, giving
+221 rows for all core-forced columns; my cumulative lift bound is151 rounds,
+giving an independently derived sufficient303-row bound, not a new minimum.
+L237 subsequently reports separate column6 radius102, giving205 rows. These
+statements have different premises and must not be collapsed into a193-row
+claim about every column2..6. Eventual forcing for an infinite forward strip
+follows after entering the finite core and does not prove such a strip exists.
+
+L237 verified: GC385's local identity and conservative145-row transfer second-read.
+Filed that identity verbatim as PROOFS G207, with its scope and premise control;
+nearest G142,14,C1 read and distinguished, and G205 cited rather than duplicated.
+The measured width15 certificate is audit-ready for a separate master filing;
+its word/radius statement and finite-window bounds must be written separately.
+Source execution used the existing core/lift functions, transcript outside Git.
+CL031 read: the finite last-witness comparisons do not exclude other periods
+or a different eventually periodic object farther right; no such universal
+exclusion is inferred from the phrase 'nothing beyond6 repeats'.

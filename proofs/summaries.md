@@ -2756,3 +2756,12 @@ Once the wheel has turned for 140 steps, its jolts come in exactly sixteen kinds
 **Why it matters.** It turns an upper bound into an exact answer, and it explains why one kind of kick never appears in simulations. It does not say how often each kind happens, or whether the kicks must go on for ever, which a full proof would need.
 
 **An everyday picture.** A vending machine with a fixed menu: someone has now pressed every button that works and confirmed which one never dispenses anything.
+
+## G207
+Three specified beats on one column make a neighbouring bit repeat two steps later.
+
+**What it says.** If one column reads white, black, black on three consecutive rows, and its right neighbour begins white, that neighbour has the same bit on the following row and two rows later. The cells farther right cannot change this equality.
+
+**Why it matters.** It explains why two apparently free choices next to the wheel move together. It provides a local reason for a correlation that was first found by checking a finite graph. It does not decide whether their shared value is black or white.
+
+**An everyday picture.** Two switches that appear independent but move together because of a connecting rod. Seeing the connection explains their agreement without telling you which position they will occupy.

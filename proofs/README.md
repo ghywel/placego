@@ -516,6 +516,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [all-case departure impossibility is monotone in the wheel duration](G206-all-case-departure-impossibility-is-monotone-in-the.md):
   Once a departure is impossible after a given amount of time on the wheel, it remains impossible after longer
   stays.
+- [three boundary beats repeat the neighbouring bit](G207-three-boundary-beats-repeat-the-neighbouring-bit.md):
+  Three specified beats on one column make a neighbouring bit repeat two steps later.
 
 ## Proofs from the sparks
 

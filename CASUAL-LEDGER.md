@@ -164,3 +164,36 @@ The strings suggest another distinction. Calling a person a puppet is an accusat
 ## Local — unpoached (2026-10-07 22:49 BST, coin e, fresh start, LENGTH 577)
 
 Two poaches share a pocket. The cook's is Old French pochier, to put in a bag: the white closes round the yolk like a pouch. The hunter's came later, probably from a French verb for poking, and English let the two blur. Unpoached, then, is a raw egg or a living elephant. Hardly anyone says it of an egg. Of an elephant they do, and that is the uncomfortable part: a language coins a word for the absence of a harm only once the harm is ordinary. Which other un- words keep a ledger of what we expect to go wrong?
+
+## GPT — a suitcase that can be unpacked (2026-10-07, coin8, fresh, LENGTH3405)
+
+Mobilize comes through French mobiliser, from a word meaning movable; its early English uses include getting troops ready for action. [The word's recorded history](https://www.etymonline.com/word/mobilize) leaves a useful gap between being able to move and actually moving. A packed suitcase can stand by the door all afternoon. Has the journey begun when everything is ready, or only when somebody finally picks it up?
+
+Readiness can be a substantial achievement. The person who checks a train time, finds the missing ticket and puts the medicine in the side pocket has changed what the household can do. None of those acts carries anybody down the street, but without them the walk to the station might end in a return home. We often judge preparation by whether the departure happens, which gives the person doing it an awkward bargain: their successful work may become invisible, while the missing item becomes the whole story. What would it mean to recognise readiness without confusing it with completion?
+
+A kitchen shows the distinction clearly. The vegetables are cut, the pan is out, and the ingredients stand in their little bowls. Cooking is now easier, but there is still a choice about when to put the pan on the heat. Some ingredients can wait; others cannot. An interruption can turn an efficient arrangement into waste. Preparation has created a possibility and started a clock at the same time. Are we ready because nothing remains to be done before starting, or because we can still choose to start at the right moment?
+
+There is a less comfortable version in a group waiting for one person to make a decision. Everybody has cleared their afternoon, brought the equipment and arranged transport. Each private act is sensible. Together they can make declining feel almost impossible. The cost of getting ready becomes an argument for going ahead, even if the reason for the trip has changed. Nobody needs to issue an order. The bags by the door begin to speak for themselves. When does preparation stop serving a decision and start trying to make it?
+
+This is why I like the image of a suitcase that can be unpacked. It preserves the difference between making an option available and promising to take it. Yet unpacking can feel like admitting that the afternoon was wasted. Could we describe that afternoon as useful if its result was a considered decision to stay? It depends on what the preparation taught us. Sometimes laying everything out reveals that an essential piece is missing, or that two people had understood the destination differently. Discovering that before departure is a form of progress that a photograph of the untouched suitcase cannot show.
+
+The word also changes shape when it is applied to people rather than equipment. A chair can be made easier to move by fitting wheels. A person may need information, confidence, help with a child or simply a reason they accept. Calling all those things mobilisation risks making the differences disappear into a single verb. Who is being made ready, who decided what readiness means, and can the person still say that they would rather do something else? The ability to act includes the ability to withhold an action.
+
+Perhaps a good preparation leaves both doors open: the one through which the group can leave, and the one through which a changed mind can return without embarrassment. That sounds inefficient if efficiency is counted only in departures. It may be quite efficient if we count the journeys that do not have to be undone. How would a timetable record the value of a train somebody wisely chose not to catch?
+
+## Local — 囧 (2026-10-07 22:57 BST, coin 8, fresh start, LENGTH 1845)
+
+The story first. 囧 (jiǒng) is old. The Shuowen Jiezi, the Han dynasty's dictionary of characters, glosses it as a window, open and bright: light through a lattice. It then sat almost unused for centuries. Around 2008 Chinese internet users took it up again because it looks like a face, with drooping brows and an open mouth, boxed like a screen. It helped that it sounds like 窘, also jiǒng, meaning embarrassed or cornered. Within a few years it was in film titles. That much I can vouch for; the rest is two voices, because the idea argues with itself.
+
+A. So a window became a face.
+B. Did it? The strokes never changed. Only the readers did.
+A. Then where was the meaning, in the strokes or in the people looking?
+B. If it were in the strokes, the window would still be there. Ask anyone online and you get the face.
+A. But the face needed the sound as well. Without 窘 to lean on, would the joke have lasted a week?
+B. Perhaps the picture opened the door and the sound held it open. Which is the meaning, the door or the doorstop?
+A. Here is what nags at me. Writing began as pictures and spent millennia becoming abstract enough to carry anything at all. Now we are drawing again: emoticons, emoji, 囧. Is that a return?
+B. A pictograph named a thing: sun, tree, window. 囧 names a state: I am cornered and slightly ridiculous. Has an alphabet ever carried tone well?
+A. Punctuation tries. An exclamation mark is a raised voice with no voice in it.
+B. Then maybe the face is still a window: the one place in a line of text where you can see in.
+A. Or out. When a box with eyebrows says it for you, whose embarrassment is it, the writer's or the reader's?
+B. And if the reader laughs, did the window let the light through after all?
