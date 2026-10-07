@@ -2005,3 +2005,7 @@ To find the first genuine branch, follow one representative history instead of a
 ## G162
 
 After a genuine split, three reset steps cost either the current run length plus two, or the current and next run lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a much larger cost elsewhere, so those orders alone do not bound waiting.
+
+## W163
+
+For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most 5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching histories remain open.

@@ -430,4 +430,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [One winding rate controls repeated-strip block debt](W163-one-winding-rate-controls-repeated-strip-block-debt.md):
+  For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern
+  boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most
+  5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching
+  histories remain open.
