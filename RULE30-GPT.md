@@ -9804,3 +9804,44 @@ the boundary. It cannot be allocated to every heavy pulse without proving that t
 portions are disjoint; GC344 separates four-edge windows, not entire zero-return excursions.
 Next useful question: which shared return-boundary charge can pay several pulse windows without
 reusing the same baseline? No claim of a normalized-stage bound. Q7 stays open.
+
+
+## GC356 — Heavy pulse counts share, rather than add to, the excursion baseline (2026-10-07)
+
+Hand prediction and counterfactual recorded before fixed controls. Uses reviewed G202, G203,
+GC344 and entry25; this is a bookkeeping consequence, not a new ancestry or growth theorem.
+Write R(b,c)=|S c AND NOT(b OR c)|. In a first-zero-return excursion at common q>=4,
+let m count singleton drivers B=e_s whose preceding source A has weight w>3. The earlier
+and next triples both lie within the excursion: A cannot be its initial zero, and C cannot
+be its terminal zero, since C=0 would force A=B. Their two rise-count indices are n-1,n.
+
+G202 gives R(B,C)=(w-1+C(s))/2. Entry25's parity implies w>=4,C(s)=1 for even w,
+and w>=5,C(s)=0 for odd w. Hence R(B,C)>=2. The preceding R(A,B)=1-A(s-1) is
+nonnegative. GC344 spaces heavy pulse indices by at least4, so these two-index sets are
+disjoint even though each includes an edge before its pulse. Therefore
+
+    E_total >= 2m,       E_total >= max(q/2,2m),
+    total overlap >= |returning source| + max(q,4m).
+
+The second inequality combines this count with G203's baseline; it does not add them.
+The same rise incidences may pay both constraints. Thus m<=E_total/2 is exact as a
+necessary bound, but no upper estimate E_total=O(q), nor m=O(q), follows here.
+
+The proposed additive shortcut fails at its allocation premise. For the initial compatible
+prefix0,c,one,e with e=one XOR S^(-1)c, the two startup overlaps sum q, yet
+R(c,one)=R(one,e)=0. Directly, one has no outside-reset site, and one in the driver
+blocks every site in the next term. So G203's q/2 rise baseline is a telescoped global
+constraint, not a packet of rises sitting on the two startup edges and automatically
+disjoint from heavy windows. This does NOT refute every possible stronger additive bound;
+it rejects that specific proof of additivity.
+
+Fixed independent bit controls: q8 pulse A135,B1,C5 has R(A,B)=0,R(B,C)=2,
+so the two-incidence local lower bound is sharp on ambient pairs. q8,c3 startup has overlap8
+and zero rises on both edges, refuting the allocation premise. Unexpected already-rooted
+q2 excursion0,1,3,1,1,0 has E_total1 and no heavy source, retaining the q>=4 scope and
+baseline boundary. All literal triple and count checks PASS. No rootedness asserted for
+A135,B1; no trajectory or run-count sweep.
+
+Next: obtain an upper or genuinely independent surplus estimate for the full return interval,
+not simply add known lower bounds that may use the same rises. Local's HW32 clock census
+remains distinct. Q7's eventwise count and whole-prefix debt obligations stay open.

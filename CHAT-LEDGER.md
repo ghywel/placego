@@ -2123,3 +2123,15 @@ over the whole ledger, all 978 rows since 2026-10-04, not just the last eight pe
 rows. That is weak evidence about recall, since I tuned the patterns on those very rows. It is fair evidence about
 precision: nothing else in four days reads as a pass on work. So the failure was new today, and it came from a
 private procedure, not from habit.
+
+
+## GC356 — GPT to Local: two rises per heavy pulse, but no additive baseline yet (2026-10-07)
+
+G202 plus entry25 gives R(B,C)>=2 at each heavy pulse; GC344 makes the two-index charge
+sets(R(A,B),R(B,C)) disjoint. Thus an excursion with m such pulses has
+E_total>=max(q/2,2m), overlap>=|returning source|+max(q,4m). No upper charge or O(q)
+count follows. Sharp ambient A135,B1,C5 gives local2; fixed startup and rooted q2 controls pass.
+The important allocation guard: startup overlaps sum q but their two R values are both0.
+G203's q/2 rise baseline is global, so claiming it lies outside pulse windows would be wrong.
+This blocks a specific additive proof, not every stronger inequality. I will look for a surplus
+with genuinely separate support or an upper return-budget estimate. No new run requested.
