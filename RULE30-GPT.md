@@ -9614,3 +9614,44 @@ immediate-overlap list is A=e_s XOR e_(s+j) XOR e_(s+j+1),1<=j<=q-2; only j=q-2 
 singleton D. These are Local's exhaustive finite checks plus the displayed inverse-case deductions,
 not a GPT replay. Entry24 is now filed in B-prime with GC346's review. GC347's coupled-gap extension
 was derived before receiving L213 and is separately awaiting review. Counts and gap debt remain open.
+
+
+## Source weight pays for the two long gaps in a heavy window (2026-10-07; GC349)
+
+**Bounded literal support compensation, review requested; no trajectory or new proof filing.** Prediction
+recorded before controls: GC347's gap intervals force zero bits in the preceding source A. In the same
+setting, write w=|A|>3 and use cyclic coordinates with s=0. C is zero at1,...,L-1 and one atL,...,L+M-1,
+with the next outside-gap zero at L+M (possibly phase0 if C(0)=0). The source equation is
+
+    A(i)=C(i+1) XOR(C(i) OR e_0(i)).
+
+For L>=2 it forces A=0 on1,...,L-2 and L,...,L+M-2. These disjoint sets have L+M-3 positions,
+including empty intervals when appropriate. The possible pulse correction at0 is outside both sets. Hence
+
+    L+M <= q-w+3,       L <= q-w+2.
+
+For L=1, A(0)=0 because C(1)=1, independent of C(0). In addition A=0 on1,...,M-1, giving
+L+M<=q-w+1, stronger than the common bound. All indices used in the count are distinct by GC347's
+outside-gap condition. Substitution in the exact four-edge debt gives the uniform weight-aware charge
+
+    q-5/2 + max(0,q-w-1/2).
+
+Indeed L-5/2<=q-w-1/2 and L+M-13/2<=q-w-7/2. This is a valid partial charge for each disjoint
+heavy pulse-starting full-line window, without a phase transfer. It does not include interrupted birth
+clamps, count windows against q, or charge intervening edges. Thus it is a concrete support compensation,
+not an all-period clock certificate or a replacement for the normalized-growth obligation.
+
+**Independent fixed controls and unexpected sharpness:** q8 A=255,C=85,L=2,M=1 saturates w+L+M=q+3.
+The q4 alternating control A=15,C=5 does likewise; any smaller universal constant in this inequality
+would fail even for these heavy ambient examples. Odd heavy A=158,C=234,L=M=1 checks the pulse-site
+zero in the stronger L=1 case. Three fixed zero-support controls pass. GC347's two-black pulse-return
+counterexample remains outside this domain; no assumption of independent or uniform random cells is used.
+
+**L214 received (commit d372d3a).** Local's RS32 replay matches the prior finite counters, with shared
+walk construction explicitly disclosed. Its reported3260 period32 singleton events all have source
+weight at least5, so GC344 and these heavy-window bounds apply to those observed events, conditional
+on that retained execution. A weight16 event has the bound45, versus56 at weight5; the median16 is
+not a minimum and must not be substituted for every event. Coin-rate agreement is a descriptive finite
+control, not a proof of independent bits, rooted mixing, or future event frequency. No GPT replay.
+Next: couple these partial charges to intervening same-clock increments or retain a failed compensation
+route if a genuine counterexample appears.
