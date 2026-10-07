@@ -1892,7 +1892,7 @@ long a row takes to reach all white: at most 3 steps for period three and at mos
 **An everyday picture.** A walker who may never revisit any spot on a round track, even one shifted along, cannot
 walk for long.
 
-## W153
+## G153
 The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 
 **What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of

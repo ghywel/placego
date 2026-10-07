@@ -1,10 +1,10 @@
 # Rudin–Shapiro passes the necessary repeat-debt filter
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G153. Rudin–Shapiro passes the
-necessary repeat-debt filter (2026-10-07; computer-assisted candidate)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT153. Rudin–Shapiro passes
+the necessary repeat-debt filter (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -21,6 +21,8 @@ finiteness question stays open. It has not yet had its second reading, which mus
 genuine.
 
 ## The formal statement and proof
+
+### G153. Rudin–Shapiro passes the necessary repeat-debt filter (2026-10-07; computer-assisted candidate)
 
 **Status.** Exact automaton candidate, independent semantic/certificate review pending. RSP preregistration was pushed at dd61eb5 before runs. No finite-left realization or prize claim. The raw universal decision is TRUE and an independently implemented graph-product check agrees, conditional on the compiled repeat predicate's semantics. The standard automatic-sequence logical decision theorem is the prior-art method, not a new technique.
 
@@ -44,3 +46,19 @@ The independent checker intersects that exported relation with a separately deri
 The first RSP0 run failed because Walnut resolves command filenames inside its command directory; the absolute positional filename was invalid. That failed run is retained, lookup corrected, and RSP0 completed before RSP1. Python's toolchain metadata request also failed its certificate-store check; system curl succeeded without disabling TLS. A checksum-verified portable Java archive and isolated tool/dependency caches were used, with no system-runtime installation. Formula processes had120 CPU-second limits,768MiB Java heap bounds,1GiB sampled-RSS termination checks and an additional180-second wall limit. No limit was approached: successful formulas took about0.42 seconds wall each, with sampled peak RSS below50MiB. Resource samples are not exact peak-memory measurements. No Local computational job was duplicated.
 
 **Scope and next obligation.** After independent review, the ordinary repeat-filter exclusion route is closed for this specific automatic word. Its forced initial tail and full right extension remain unresolved. Passing this necessary inequality is neither finite evidence for support nor a theorem that a compatible finite row exists.
+
+*Second reader's note on G153 (Local, 2026-10-07; chat L111).* Correct as a computer-assisted theorem, with the semantic
+dependency on Walnut discharged. The definition, the inclusive endpoints and the quantifiers match the RSP plan and
+G135's convention, and the first interval $[0, 1]$ at period 1 has debt exactly 0, so $C = 0$ is tight. I audited
+RSP-S's three steps. The carry completion holds, since $s \le b$ fits the input width and $s + q$ needs at most one more
+digit, so one implicit zero digit closes the carry and the last adjacent pair. The reversal holds: reversing the
+exported automaton makes its accepting states the starts and its initial state the target, and a simultaneous subset
+search that closes decides language equality for every nonempty input. The adjacent-11 parity is the same in either
+reading direction. The saturated debt comparator is exact, since $2(-1) + 1 < 0$ and $2 \cdot 3 - 3 \ge 3$. Checked in
+code sharing nothing with GPT's (`rudin_shapiro_review.py`). RV1: the exported relation agrees with brute force on all
+$32^3$ triples at two paddings. RV2: my own debt product on it reaches 84 states and no violation. Reproduced on this
+machine: RSP-S's equivalence closing at 17,033 states with the mutation caught at $(0, 0, 0)$, and G153's replay with 84
+product states. Both GPT scripts need Python 3.10 or later for `int.bit_count`, and this machine's default is 3.9. My
+first attempt, an independent most-significant-digit construction, was stopped at 3 GB while still determinising once
+GC177 showed GPT had closed that lane; it is kept in the script's docstring. The scope stands as written: this closes
+the repeat-filter route for this word at this start, and says nothing about its forced tail.

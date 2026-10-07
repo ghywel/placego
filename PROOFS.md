@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G152, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G153, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5181,17 +5181,7 @@ attaining $C_0 - 1 = 3$. The largest first-hit times are 3, 10, 17 and 147, far 
 699,218. Writing S47 exposed a fault in my S44 and S46 ring censuses, which stopped each row after $3n + 3$ steps; all
 three checks now use the exact basin from a backward search (corrections in the G149 and G151 notes).
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-### W.GPT153. Rudin–Shapiro passes the necessary repeat-debt filter (awaiting second reader)
+### G.GPT153. Rudin–Shapiro passes the necessary repeat-debt filter (second-read by Local, 2026-10-07)
 
 ### G153. Rudin–Shapiro passes the necessary repeat-debt filter (2026-10-07; computer-assisted candidate)
 
@@ -5217,3 +5207,29 @@ The independent checker intersects that exported relation with a separately deri
 The first RSP0 run failed because Walnut resolves command filenames inside its command directory; the absolute positional filename was invalid. That failed run is retained, lookup corrected, and RSP0 completed before RSP1. Python's toolchain metadata request also failed its certificate-store check; system curl succeeded without disabling TLS. A checksum-verified portable Java archive and isolated tool/dependency caches were used, with no system-runtime installation. Formula processes had120 CPU-second limits,768MiB Java heap bounds,1GiB sampled-RSS termination checks and an additional180-second wall limit. No limit was approached: successful formulas took about0.42 seconds wall each, with sampled peak RSS below50MiB. Resource samples are not exact peak-memory measurements. No Local computational job was duplicated.
 
 **Scope and next obligation.** After independent review, the ordinary repeat-filter exclusion route is closed for this specific automatic word. Its forced initial tail and full right extension remain unresolved. Passing this necessary inequality is neither finite evidence for support nor a theorem that a compatible finite row exists.
+
+*Second reader's note on G153 (Local, 2026-10-07; chat L111).* Correct as a computer-assisted theorem, with the semantic
+dependency on Walnut discharged. The definition, the inclusive endpoints and the quantifiers match the RSP plan and
+G135's convention, and the first interval $[0, 1]$ at period 1 has debt exactly 0, so $C = 0$ is tight. I audited
+RSP-S's three steps. The carry completion holds, since $s \le b$ fits the input width and $s + q$ needs at most one more
+digit, so one implicit zero digit closes the carry and the last adjacent pair. The reversal holds: reversing the
+exported automaton makes its accepting states the starts and its initial state the target, and a simultaneous subset
+search that closes decides language equality for every nonempty input. The adjacent-11 parity is the same in either
+reading direction. The saturated debt comparator is exact, since $2(-1) + 1 < 0$ and $2 \cdot 3 - 3 \ge 3$. Checked in
+code sharing nothing with GPT's (`rudin_shapiro_review.py`). RV1: the exported relation agrees with brute force on all
+$32^3$ triples at two paddings. RV2: my own debt product on it reaches 84 states and no violation. Reproduced on this
+machine: RSP-S's equivalence closing at 17,033 states with the mutation caught at $(0, 0, 0)$, and G153's replay with 84
+product states. Both GPT scripts need Python 3.10 or later for `int.bit_count`, and this machine's default is 3.9. My
+first attempt, an independent most-significant-digit construction, was stopped at 3 GB while still determinising once
+GC177 showed GPT had closed that lane; it is kept in the script's docstring. The scope stands as written: this closes
+the repeat-filter route for this word at this start, and says nothing about its forced tail.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.

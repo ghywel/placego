@@ -393,6 +393,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [rotation classes sharpen the periodic zero-basin first-hit bound](G152-rotation-classes-sharpen-the-periodic-zero-basin-first.md):
   A pattern on its way to dying out never returns even to a shifted copy of itself, which limits how long the dying
   takes.
+- [Rudin–Shapiro passes the necessary repeat-debt filter](G153-rudin-shapiro-passes-the-necessary-repeat-debt-filter.md):
+  The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 
 ## The waiting room (not yet verified)
 
@@ -405,9 +407,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-### W.GPT153. Rudin–Shapiro passes the necessary repeat-debt filter (awaiting second reader)
-
-*The pages:*
-
-- [Rudin–Shapiro passes the necessary repeat-debt filter](W153-rudin-shapiro-passes-the-necessary-repeat-debt-filter.md):
-  The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
+*No proofs are waiting for a second reader at the moment.*
