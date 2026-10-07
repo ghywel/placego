@@ -9308,3 +9308,28 @@ At reference arrival phase1, the four successive drivers B,C,E,F have delays(q,r
 There are still q-2 nonterminal ambient start classes rather than a constant number; the q4,r1 exclusion removes one small-period class but supplies no all-q sparsity theorem. Their allowances scale with q, and overlap requires care, so this extension alone does not establish linear total clock debt. Next: inspect ancestry of the remaining relative separations or use an explicitly justified covering/compensation argument. Closed potential families stay closed.
 
 **GC334 literal verification before publication.** An independent scalar per-phase check atq4,8,16,32 verifies52 nonterminal support choices, all three triples, the four reset delays and maximum ordered prefix rise, plus the four terminal shapes. This finite verification checks the displayed algebra and arithmetic; it is neither a rooted trajectory run nor a proof by extrapolation.
+
+
+## Forced pulse-window overlaps can share one clock allowance (2026-10-07; GC335)
+
+**Bounded covering refinement, review pending, conditional on GC334's displayed identities; no new trajectory or proof count.** Prediction before the internal-start audit: only two overlap types occur among the inclusion shapes(e_s+e_(s+r),e_s). Counterfactual: every overlapping four-driver window needs a separate phase/birth transfer. Exact joined clocks refute that wasteful charge without supplying a total-debt theorem.
+
+Inside one nonterminal r-window, the three later full pairs are(B,C),(C,E),(E,F). A new named start requires a two-black predecessor and a singleton driver. The first pair cannot qualify because its predecessor B has one black bit. The second qualifies exactly when r=q-2: E is a singleton and C has two bits, making the TERMINAL r=q-1 start. The third qualifies exactly when r=q-3: E has two bits and F is a singleton, making the r=1 start after rotating its pulse to phase0. This exhausts internal starts, not merely those seen in the retained trace.
+
+For q>=8, a start at r=q-3 therefore forces the r=1 start three transitions later. The union has seven driver edges, not eight. From special phase1 its delays are
+
+    q, q-2, 1, q, 2, 1, q.
+
+The shared pulse is counted once. Adjusted prefixes at slope5/2 are
+
+    0, q-5/2, 2q-7, 2q-17/2, 3q-11, 3q-23/2, 3q-13, 4q-31/2.
+
+For q>=8 these are nonnegative and their maximum is the last, so exact reference interval debt is4q-31/2. One G164 transfer gives arbitrary-arrival/birth allowance5q-33/2. Separately transferring the two four-edge lists would cost(4q-12)+(3q-8)=7q-20. Joining saves2q-7/2 without assuming their arrival phases independently: after the first three edges the new pulse sits at phase q-1 and its arrival is phase0, precisely its own special phase. Independent scalar literal/delay/ordered-prefix checks atq8,16,32 pass; no rooted occurrence of this joined family is asserted.
+
+G156 permits at most one start of each full pair class. Consequently this joined group occurs at most once per period. If only r=1 occurs and r=q-3 does not, the joined allowance still bounds that shorter window, since5q-33/2 exceeds3q-8 for q>=8. If r=q-3 occurs, its forced r=1 start prevents any other r=1 occurrence anywhere on the same rooted history. This is a valid combined charge for that two-class group, leaving every other gap untouched.
+
+The other overlap is containment: at r=q-2, the terminal two-singleton window begins two transitions later and lies entirely inside the original four-driver window. The original allowance is4q-11. A standalone terminal window has reference delays(q,q) from phase1, debt2q-5 and transferred allowance3q-6; for q>=8 the containing-window allowance is larger. Thus one reserved charge4q-11 bounds this two-class group whether the earlier r=q-2 start occurs or only the terminal start occurs. No extra terminal phase charge is necessary.
+
+**Unexpected q4 guard.** The q-3 to1 group would identify r=1 with itself; GC334's rotated-return exclusion prevents any rooted occurrence. The remaining r2 window has allowance5 and contains its forced terminal window; a standalone terminal window has allowance6. Therefore allowance6 suffices for their combined group at q4. This boundary does not license substituting the q>=8 seven-edge debt formula atq4.
+
+This classifies overlaps and gives genuine smaller partial charges, but the other q-dependent separations remain. Summing them still gives a quadratic-scale worst-case budget rather than a linear one, and complementary same-clock gap debt remains unknown. Next useful work concerns reachable separations or compensation beyond this named family; no growth, exhaustion, settling or prize conclusion follows.
