@@ -264,12 +264,17 @@ empty triangle right at the centre, which a finite seed is soon too small to fil
 If both the middle and column 1 eventually repeat, the left half cannot be finite (Jen's theorem).
 
 **What it says.** Two neighbouring columns that both repeat from some point on force infinitely many black squares
-on the left.
+on the left. The reason comes in three steps. The repeat spreads left: every column to their left must repeat with
+the same loop. Far out, where the seed never reached, a column starts white for a whole loop, so it stays white for
+ever. And two columns that are white for ever make the next one in white for ever too, all the way back to the
+middle, which was supposed to be beating.
 
 **Why it matters.** It settles every periodic column 1 at once. Since a finite seed makes column 1 irregular, the
 open case is exactly the irregular one.
 
-**An everyday picture.** Two drummers keeping steady beats cannot hush the whole crowd to their left.
+**An everyday picture.** A track set on repeat: if its first full loop was silent, it is silent for ever. The two
+steady columns set every column to their left on repeat; far out, the first loop was silent; and the silence works
+its way back in, one column at a time, until it reaches the beat that started it.
 
 ## 18
 Next to a blinking wall, Rule 30's sibling Rule 210 behaves exactly like the simple cousin Rule 90.
