@@ -8,7 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-For a nonconstant periodic spatial row, its runs of ones between zeros tell us exactly how its predecessors behave. A run of length one modulo three resets the inverse and gives one predecessor of the same period. Without a reset, an odd number of runs of length two modulo three gives two predecessors with doubled period; an even number gives two of the same period. This sharpens the earlier stay-or-double bound, but does not control successive backward rows or construct a finite wall-compatible head.
+How a repeating row's past repeats is decided by counting its gaps.
+
+**What it says.** For a repeating row with both colours, look at the runs of black between white squares. A run of
+length 1, 4, 7, ... resets the backward rebuild (E1) and gives one earlier row with the same period. Without such a
+run, an odd number of runs of length 2, 5, 8, ... gives two earlier rows with double the period, and an even number
+gives two with the same period.
+
+**Why it matters.** It sharpens "stay or double" (G124) into an exact rule, though it does not follow the history
+further back.
+
+**An everyday picture.** Whether a repeating knitting pattern came from one of the same length or twice as long can
+be read off by counting its gaps.
 
 ## The formal statement and proof
 

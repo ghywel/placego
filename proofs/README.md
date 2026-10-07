@@ -385,30 +385,14 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [fixed-order temporal differences preserve entropy but not the repeat sign](G148-fixed-order-temporal-differences-preserve-entropy-but-not.md):
   The "acceleration" of a pattern, or any fixed-order change, keeps its variety and cannot prove a seed finite.
 - [eventually finite compatible rows have exactly zero-reaching periodic tails](G149-eventually-finite-compatible-rows-have-exactly-zero-reaching.md):
-  A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic
-  pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails
-  can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite
-  visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the
-  initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has
-  been constructed.
+  A candidate starting row becomes finite later exactly when its far-left part repeats and that repeat dies out.
 - [a zero-gap parity criterion determines every periodic predecessor period](G150-a-zero-gap-parity-criterion-determines-every-periodic.md):
-  For a nonconstant periodic spatial row, its runs of ones between zeros tell us exactly how its predecessors
-  behave. A run of length one modulo three resets the inverse and gives one predecessor of the same period. Without
-  a reset, an odd number of runs of length two modulo three gives two predecessors with doubled period; an even
-  number gives two of the same period. This sharpens the earlier stay-or-double bound, but does not control
-  successive backward rows or construct a finite wall-compatible head.
-- [backward period doublings cannot be consecutive](G151-backward-period-doublings-cannot-be-consecutive.md): A
-  backward period doubling creates a 010 reset in the predecessor row. The next backward row must therefore keep the
-  same period: doublings cannot be consecutive. A nonconstant tail turning zero within 2k physical steps
-  consequently has period at most three times 2 to the power k minus one, improving the previous bound. This does
-  not bound the delays between doublings, guarantee that the bound is attained, or classify the silver code’s
-  initial tail.
+  How a repeating row's past repeats is decided by counting its gaps.
+- [backward period doublings cannot be consecutive](G151-backward-period-doublings-cannot-be-consecutive.md): Going
+  backwards, a repeating row's period can never double twice in a row.
 - [rotation classes sharpen the periodic zero-basin first-hit bound](G152-rotation-classes-sharpen-the-periodic-zero-basin-first.md):
-  A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern.
-  Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three
-  permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical
-  backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the
-  silver code’s support.
+  A pattern on its way to dying out never returns even to a shifted copy of itself, which limits how long the dying
+  takes.
 
 ## The waiting room (not yet verified)
 
@@ -426,7 +410,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 *The pages:*
 
 - [Rudin–Shapiro passes the necessary repeat-debt filter](W153-rudin-shapiro-passes-the-necessary-repeat-debt-filter.md):
-  An exact automaton calculation says the Rudin–Shapiro word passes every necessary repeat-debt inequality with
-  allowance zero. A separate graph-product check agrees; review of the encoded predicate and certificate is pending.
-  The result would close that exclusion shortcut for this word, while leaving its forced wall tail unresolved. No
-  finite compatible row has been constructed.
+  The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.

@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern. Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the silver code’s support.
+A pattern on its way to dying out never returns even to a shifted copy of itself, which limits how long the dying
+takes.
+
+**What it says.** Counting repeating rows up to rotation, with the periods G124 allows, gives a sharper limit on how
+long a row takes to reach all white: at most 3 steps for period three and at most 12 for period six.
+
+**Why it matters.** It sharpens the picture of the dying patterns and gives backward tails a faster growth floor
+(G123). It does not settle the blinking wall.
+
+**An everyday picture.** A walker who may never revisit any spot on a round track, even one shifted along, cannot
+walk for long.
 
 ## The formal statement and proof
 

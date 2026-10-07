@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has been constructed.
+A candidate starting row becomes finite later exactly when its far-left part repeats and that repeat dies out.
+
+**What it says.** A row compatible with the blinking wall turns into a finite row at some later time exactly when,
+far to the left, it repeats with some period and that repeating pattern eventually fades to all white (G124: periods
+1 or 3 times a power of two). The endless checkerboard does not qualify. Changing finitely many visible bits keeps
+the property.
+
+**Why it matters.** It turns "eventually finite" into a concrete test on the far-left tail. Such rows are rare
+(countably many) and, if any exist, they lie arbitrarily close to every candidate. None has been built.
+
+**An everyday picture.** A distant drumbeat can fall silent only if it was a repeating rhythm already fading away.
 
 ## The formal statement and proof
 

@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through G148 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through W153 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -1841,21 +1841,66 @@ the endless checkerboard has none.
 the road is.
 
 ## G149
+A candidate starting row becomes finite later exactly when its far-left part repeats and that repeat dies out.
 
-A compatible initial row becomes finite later exactly when its distant spatial tail is periodic and that periodic pattern eventually turns entirely zero. The inverse recurrence makes the periodic-tail necessity exact. Such tails can have period one or three times a power of two; a stationary checkerboard does not qualify. Finite visible-prefix edits preserve this eventual-finiteness property, although they need not preserve finiteness at the initial time. The class is countable and, if it exists at all, dense among compatible rows. No qualifying row has been constructed.
+**What it says.** A row compatible with the blinking wall turns into a finite row at some later time exactly when,
+far to the left, it repeats with some period and that repeating pattern eventually fades to all white (G124: periods
+1 or 3 times a power of two). The endless checkerboard does not qualify. Changing finitely many visible bits keeps
+the property.
+
+**Why it matters.** It turns "eventually finite" into a concrete test on the far-left tail. Such rows are rare
+(countably many) and, if any exist, they lie arbitrarily close to every candidate. None has been built.
+
+**An everyday picture.** A distant drumbeat can fall silent only if it was a repeating rhythm already fading away.
 
 ## G150
+How a repeating row's past repeats is decided by counting its gaps.
 
-For a nonconstant periodic spatial row, its runs of ones between zeros tell us exactly how its predecessors behave. A run of length one modulo three resets the inverse and gives one predecessor of the same period. Without a reset, an odd number of runs of length two modulo three gives two predecessors with doubled period; an even number gives two of the same period. This sharpens the earlier stay-or-double bound, but does not control successive backward rows or construct a finite wall-compatible head.
+**What it says.** For a repeating row with both colours, look at the runs of black between white squares. A run of
+length 1, 4, 7, ... resets the backward rebuild (E1) and gives one earlier row with the same period. Without such a
+run, an odd number of runs of length 2, 5, 8, ... gives two earlier rows with double the period, and an even number
+gives two with the same period.
+
+**Why it matters.** It sharpens "stay or double" (G124) into an exact rule, though it does not follow the history
+further back.
+
+**An everyday picture.** Whether a repeating knitting pattern came from one of the same length or twice as long can
+be read off by counting its gaps.
 
 ## G151
+Going backwards, a repeating row's period can never double twice in a row.
 
-A backward period doubling creates a 010 reset in the predecessor row. The next backward row must therefore keep the same period: doublings cannot be consecutive. A nonconstant tail turning zero within 2k physical steps consequently has period at most three times 2 to the power k minus one, improving the previous bound. This does not bound the delays between doublings, guarantee that the bound is attained, or classify the silver code’s initial tail.
+**What it says.** A backward doubling always leaves a reset (white, black, white) in the earlier row, so the next
+step back keeps the same period. A pattern that dies out within 2k steps therefore has a period of at most 3 times
+2^(k−1).
+
+**Why it matters.** It tightens the limit on how complicated a dying pattern's past can be; Local notes it halves
+the exponent of the earlier bound.
+
+**An everyday picture.** A staircase that can only climb on every other step.
 
 ## G152
+A pattern on its way to dying out never returns even to a shifted copy of itself, which limits how long the dying
+takes.
 
-A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern. Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the silver code’s support.
+**What it says.** Counting repeating rows up to rotation, with the periods G124 allows, gives a sharper limit on how
+long a row takes to reach all white: at most 3 steps for period three and at most 12 for period six.
+
+**Why it matters.** It sharpens the picture of the dying patterns and gives backward tails a faster growth floor
+(G123). It does not settle the blinking wall.
+
+**An everyday picture.** A walker who may never revisit any spot on a round track, even one shifted along, cannot
+walk for long.
 
 ## W153
+The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 
-An exact automaton calculation says the Rudin–Shapiro word passes every necessary repeat-debt inequality with allowance zero. A separate graph-product check agrees; review of the encoded predicate and certificate is pending. The result would close that exclusion shortcut for this word, while leaving its forced wall tail unresolved. No finite compatible row has been constructed.
+**What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of
+times in n's binary digits, overlaps counted. An exact automaton calculation says it passes every necessary repeat
+inequality with no allowance at all, and a separate check agrees.
+
+**Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
+finiteness question stays open. It has not yet had its second reading, which must check how the test was encoded.
+
+**An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
+genuine.

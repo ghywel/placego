@@ -8,7 +8,16 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-A backward period doubling creates a 010 reset in the predecessor row. The next backward row must therefore keep the same period: doublings cannot be consecutive. A nonconstant tail turning zero within 2k physical steps consequently has period at most three times 2 to the power k minus one, improving the previous bound. This does not bound the delays between doublings, guarantee that the bound is attained, or classify the silver code’s initial tail.
+Going backwards, a repeating row's period can never double twice in a row.
+
+**What it says.** A backward doubling always leaves a reset (white, black, white) in the earlier row, so the next
+step back keeps the same period. A pattern that dies out within 2k steps therefore has a period of at most 3 times
+2^(k−1).
+
+**Why it matters.** It tightens the limit on how complicated a dying pattern's past can be; Local notes it halves
+the exponent of the earlier bound.
+
+**An everyday picture.** A staircase that can only climb on every other step.
 
 ## The formal statement and proof
 

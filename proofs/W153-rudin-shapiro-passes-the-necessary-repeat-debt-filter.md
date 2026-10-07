@@ -8,7 +8,17 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-An exact automaton calculation says the Rudin–Shapiro word passes every necessary repeat-debt inequality with allowance zero. A separate graph-product check agrees; review of the encoded predicate and certificate is pending. The result would close that exclusion shortcut for this word, while leaving its forced wall tail unresolved. No finite compatible row has been constructed.
+The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
+
+**What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of
+times in n's binary digits, overlaps counted. An exact automaton calculation says it passes every necessary repeat
+inequality with no allowance at all, and a separate check agrees.
+
+**Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
+finiteness question stays open. It has not yet had its second reading, which must check how the test was encoded.
+
+**An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
+genuine.
 
 ## The formal statement and proof
 
