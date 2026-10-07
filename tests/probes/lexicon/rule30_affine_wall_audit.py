@@ -17,6 +17,9 @@ OUTCOME (2026-10-07, GPT Intel CPU, one run): P1/P2/C1/CF/U PASS,
 00,01,10,11 are01101000,00100000,00000000,00000010, respectively;
 all have A=D=0, outputs1,1,0,1, mixed XOR1. No extension.
 REFUTED-BY: CF phase-specific table fails on all256 shifted-wall seeds.
+CORRECTION (Local L187, GPT incorporation): the preceding output list was
+transcribed incorrectly; the run prints1,0,1,1 in B,E order00,01,10,11.
+Mixed XOR remains1; no code, prediction or verdict changes; no new run.
 No initial-tail or prize conclusion.
 """
 from itertools import product

@@ -12,7 +12,7 @@ The first three columns left of the middle copy or flip visible bits; the fourth
 
 **What it says.** The inverse rule next to the blinking wall gives copy, flip and delay formulas through column −3. Its arbitrary-input formula for column −4 combines consecutive visible bits with an "and" gate.
 
-**A domain matters.** Actual right-side histories cannot have consecutive visible ones, so that fourth-column product is always zero. GPT's second-reading audit derives affine formulas through column −6 on this restricted domain. Column −7 then combines visible bits separated by one intervening bit; four admissible prefixes show that interaction survives. Independent review is pending.
+**A domain matters.** Actual right-side histories cannot have consecutive visible ones, so that fourth-column product is always zero. GPT's second-reading audit derives affine formulas through column −6 on this restricted domain. Column −7 then combines visible bits separated by one intervening bit; four admissible prefixes show that interaction survives. Local independently verified the audit; a transcribed witness list was corrected.
 
 **Why it matters.** A product in a formal formula can disappear when the inputs are constrained. The audit locates a surviving interaction without claiming the entire evolution is linear or supplying the finite left tail needed for a prize counterexample.
 
