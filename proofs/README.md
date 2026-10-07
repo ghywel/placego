@@ -464,6 +464,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   After a period doubles, the next completely white profile cannot appear within eleven steps.
 - [odd zero returns require logarithmic delay in the entry period](G189-odd-zero-returns-require-logarithmic-delay-in-the.md):
   An odd-length return to a completely white profile needs more steps as the repeat period grows.
+- [even returns as paths between swapped temporal halves](G190-even-returns-as-paths-between-swapped-temporal-halves.md):
+  An even return can be described by keeping both temporal halves together.
 
 ## The waiting room (not yet verified)
 
@@ -476,7 +478,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Even returns as paths between swapped temporal halves](W190-even-returns-as-paths-between-swapped-temporal-halves.md):
-  An even return can be described by keeping both temporal halves together.
+*No proofs are waiting for a second reader at the moment.*

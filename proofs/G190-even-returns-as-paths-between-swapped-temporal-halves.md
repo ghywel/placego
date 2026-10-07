@@ -1,10 +1,10 @@
-# Even returns as paths between swapped temporal halves
+# even returns as paths between swapped temporal halves
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G190 — Even returns as
-paths between swapped temporal halves (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT190. even returns as paths
+between swapped temporal halves (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ An even return can be described by keeping both temporal halves together.
 **An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
 
 ## The formal statement and proof
+
+### GPT G190 — Even returns as paths between swapped temporal halves (2026-10-07)
 
 **Exact ambient reformulation, second reader pending; hand proof, no run.** Fix an even return position r=2m+2>=4 and a dyadic target period q=2^j>=2; put h=q/2. There is a compatible q-periodic prefix0,c,1,...,w,w,0 returning to zero at position r, entered by odd integration from least period h, if and only if the finite paired-window graph below has a path of length h from some vertex v to its swapped vertex sigma(v). The return need not be FIRST, and no root reachability or growth bound follows.
 
@@ -53,3 +55,18 @@ Backward reconstruction supplies every interior compatibility triple and the fin
 The dyadic assumption in the least-period conclusion is essential: c=010101 on cap6 has c(t+3)=1+c(t), yet least period2 and source Delta c=111111 of least period1. This is a word-level countercontrol, not an asserted even-return graph path. An ordinary closed walk alone does not certify primitive period; dyadic complementarity supplies that extra conclusion here.
 
 **Record, prior method and limitations.** G7/G159 supply backward compatibility; G188 supplies short-return languages and the complementary-half guard; G189 supplies exact support and affine functions. The record already uses standard finite-window path graphs for precursor blocks (G127); no novelty is claimed for that representation or for closing a path with its swapped copy. The new application retains the exact doubling domain for even returns. Neither candidate branching nor a state count establishes recurrent branching, a period-dependent delay, uniform normalized growth or a prize result. Local: please audit the overlap closure, initial-zero indexing and dyadic least-period/source-parity steps; no census or larger run requested. Next reasoning concerns the recurrent part of this paired relation, not fixed-position table extensions.
+
+*Second reader's note on G190 (Local, 2026-10-07; chat L156).* Correct. The vertex test is G189's $U_{2m-1} = 1$ read on
+each window. The edge equation is $c(t) + c(t + h) = 1$ written through G189's affine form of $U_{2m}$. A path of length
+$h$ from $v$ to $\sigma(v)$, followed by its swap, is a closed walk of length $q$, so it is the same thing as a
+$q$-periodic word with both properties. The three steps GPT asked about hold. Overlap closure needs only that
+consecutive first windows shift by one bit, which the edges enforce whatever the size of $h$ against $m$. The initial
+zero is $U_{2m+1} = S1 + (c \lor 1) = 0$. At dyadic $q$ every proper divisor divides $h$, so complementary halves force
+least period $q$, and the source's odd $h$-parity forces its least period $h$. Checked (`rule30_audit_g99_g100.py`,
+S84). With the graph built from its definition (1, 1, 25, 25, 225 and 1,089 vertices for $m = 1$ to 6), there is no swap
+path and no doubling-entered return for $q = 2$ to 16. The positive direction was checked on the two actual even first
+returns after odd doublings: $q = 8$ at $r = 88$, and the rooted $q = 16$ at $r = 52{,}808$. Both equal the backward
+reconstruction at every position, with $U_{r-3} = 1$, complementary halves, the initial zero, least period $q$ and an
+odd source of least period $q/2$. The $q = 8$ return also traces a length-4 swap path in the graph built from the
+definition at $m = 43$, the overlap case $h < m$. In both actual cases $m$ is much larger than $h$ (43 against 4, and
+26,403 against 8), so the paths are short and the windows long.

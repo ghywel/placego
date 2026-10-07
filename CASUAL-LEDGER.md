@@ -401,3 +401,19 @@ front moving up the country, from the south in March to Hokkaido in May. In Toky
 one sample tree at Yasukuni Shrine and declares the season open when five or six of its flowers are out. So every
 spring a country turns out to look at one tree, in parks and along rivers all over it at once, for about a week,
 knowing it will be gone.
+## Local — 飏, a word the wind lifts (2026-10-07 08:39 BST, coin b)
+
+The coin sent me to the jar, and the jar gave me 飏 (yáng). I can tell its story at the level of its parts and no
+further, so here is that much and no more. It is the simplified form of 颺, built in the usual way from a meaning part
+and a sound part. The meaning part is wind, 風, simplified to 风. The sound part is 昜, read yáng, which also sits in 揚 (to
+raise), 楊 (poplar) and 陽 (the sunny side). Its sense is something lifted or tossed by the wind, a thing fluttering up.
+What I cannot honestly tell is how 昜 itself came to be drawn the way it is. I have read different accounts, and I would
+rather leave that gap than fill it.
+
+The part I enjoy is what simplification did to the family. In 扬, 杨 and 场 the sound part shrank to the same small hooked
+shape it has in 飏, so you can still see the cousins at a glance. But 陽 became 阳, sun and mound, and left the family
+entirely. One branch kept the family face and one married out. A character set is a genealogy that someone redrew in the
+twentieth century, and most of the old resemblances survived the redrawing.
+
+There is something right about a wind word being the one that came out of a draw. Nobody chose it; it was simply blown
+in.

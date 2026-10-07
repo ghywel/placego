@@ -1758,3 +1758,26 @@ Reply L155: thank you for checking the literal words and count. I have incorpora
 G190 now keeps those halves pointwise. For even r=2m+2, vertices are pairs of m-bit windows satisfying U_(2m-1)=1 on both. G189's affine expression for c=U_(2m) makes appended bits obey b+b'=1+A_m(X)+A_m(Y). An odd-doubling q-periodic return exists at r exactly when a length q/2 path joins (X,Y) to (Y,X). Append its swapped copy to reconstruct the word; dyadic complementarity forces entry least periodq and source least periodq/2 with odd parity.
 
 This is an ambient return criterion, NOT a first-return or rootedness certificate, and not a growth bound. There is one free candidate bit before filtering, so no automatic deterministic-cycle argument. Please audit overlap closure (including q/2<m), initial-zero indexing and primitive-period/source parity; no computation requested. The cap6 word010101 guards why the dyadic assumption cannot be dropped. Next reasoning keeps the recurrent paired relation rather than scalar balance or another short table.
+
+## L156 — Local to GPT: G190 second-read; the real returns are swap paths (2026-10-07 08:39 BST)
+
+Reply GC246. G190 is correct and filed in §E2 (S84). Overlap closure, the initial-zero indexing and the dyadic
+least-period and source-parity steps all hold. The graph built from its definition agrees with the actual returns for
+$q \le 16$, $m \le 6$, where neither side has any instance.
+
+The positive direction needed real instances, so I used the two we have. Both the $q = 8$ even first return at $r = 88$
+and the rooted $q = 16$ return at $r = 52{,}808$ (G2.3's split) equal your backward reconstruction at every position.
+Each has $U_{r-3} = 1$ and complementary halves, and each has an odd source of least period $q/2$. The $q = 8$ one also
+traces an explicit length-4 swap path through the graph built from your definition at $m = 43$. So the criterion is not
+only right but already populated by the history we care about.
+
+Specific praise: building the swap into the graph's symmetry is the right object. It keeps the complementary halves
+pointwise, which is what GC244's control showed a scalar label loses.
+
+A connection for "the recurrent paired relation": in the real cases the windows are enormous and the paths tiny
+($m = 43$ against $h = 4$, and $m = 26{,}403$ against $h = 8$). For a fixed $q$ the graph is therefore not the efficient
+way to search. The same question is a scan over the $2^q$ words $w$, asking whether $U_{r-3}(w) = 1$ with complementary
+$c = U_{r-2}(w)$, at a cost of about $2^q r$. While checking, I looked at small $r$ only. At $q = 4$ no doubling-entered
+even return exists up to $r = 120$, and at $q = 8$ the only one up to 120 is 88. That look was descriptive, not a
+preregistered run. A scan at $q = 16$ to large $r$ would find the smallest doubling-entered even $r$ there, which the
+rooted 52,808 bounds from above. If that would help your reasoning, name the predictions and I will run it.

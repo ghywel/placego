@@ -2353,7 +2353,7 @@ An odd-length return to a completely white profile needs more steps as the repea
 **An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
 
 
-## W190
+## G190
 An even return can be described by keeping both temporal halves together.
 
 **What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.

@@ -413,6 +413,13 @@ CHECKS (GPT's claims at 827e006):
      halves; source 10110100, least period 8, even); over all 357 cyclic words at caps 4 to 16 giving a return at 8,
      the gaps between ones have one or two zeros, the length is 2A + 3B and the entry weight 2A + B, so a balanced
      entry needs B = 2A and q = 8A (found only at caps 8 and 16).
+  S84 (G190, added 2026-10-07 at de10ef7): the paired-window graph built from its definition (F = U_(2m-1) and A from
+     U_2m on m-bit windows, vertices 1, 1, 25, 25, 225, 1089 for m = 1..6) has no length-q/2 path from a vertex to its
+     swap for q = 2, 4, 8, 16, and exactly then no doubling-entered return at r = 2m + 2 exists; the two actual even
+     first returns after odd doublings, q = 8 at r = 88 and the rooted q = 16 at r = 52,808, equal G189's backward
+     reconstruction at every position, with U_(r-3) = 1, complementary halves, least period q and a source of least
+     period q/2 and odd half-parity; the q = 8 one traces a length-4 path from v to its swap in the graph so defined
+     (m = 43); the r = 4 graph has one vertex and no edge; GC244's control fails c(1) + c(5) = 1; c = 010101 on cap 6.
 """
 import random
 from fractions import Fraction as F
@@ -4226,4 +4233,95 @@ ok83 &= _n83 == 357 and _bal83 == {8, 16}
 check('S83 GC244: the cap-8 return from w = 10100100 (c = 10010011, weight 4, no complementary halves, even source); '
       'gap count length 2A + 3B and weight 2A + B over all 357 return-8 words at caps 4-16; balance only at q = 8A',
       ok83)
+def graph84(m):
+    """G190's paired-window graph for return r = 2m + 2: F = U_(2m-1), U_2m(t) = w(t + m) + A(w(t..t+m-1))."""
+    F, A = {}, {}
+    for X in product((0, 1), repeat=m):
+        F[X] = U82(2 * m - 1, list(X) + [0])
+        A[X] = U82(2 * m, list(X) + [0])                   # w(t + m) = 0 here, so U_2m(0) = A(X)
+        ok = U82(2 * m, list(X) + [1]) == 1 ^ A[X]         # the newest bit enters with coefficient 1
+        assert ok
+    V = [(X, Y) for X in F for Y in F if F[X] == 1 and F[Y] == 1]
+    Vs = set(V)
+    E = {}
+    for X, Y in V:
+        for b, b2 in product((0, 1), repeat=2):
+            if b ^ b2 == 1 ^ A[X] ^ A[Y]:
+                n = (X[1:] + (b,), Y[1:] + (b2,))
+                if n in Vs:
+                    E.setdefault((X, Y), []).append(n)
+    return V, E
+
+
+def rhs84(m, h):
+    V, E = graph84(m)
+    for v in V:
+        layer = {v}
+        for _ in range(h):
+            layer = {n for u in layer for n in E.get(u, [])}
+        if (v[1], v[0]) in layer:
+            return True
+    return False
+
+
+def lhs84(m, q):
+    """Some q-periodic w with U_(2m-1)(w) = 1 and c = U_2m(w) of complementary halves (odd doubling from q/2)."""
+    full, h = (1 << q) - 1, q // 2
+    for w in range(1 << q):
+        if Ucyc83(2 * m - 1, w, q) == full:
+            c = Ucyc83(2 * m, w, q)
+            if _rq3.rot(c, h, q) == c ^ full:
+                return True
+    return False
+
+
+ok84 = True
+# both sides on small cases, the graph built from its definition: no path and no return for q = 2 to 16, m = 1 to 6
+for q in (2, 4, 8, 16):
+    for m in range(1, 7):
+        ok84 &= lhs84(m, q) == rhs84(m, q // 2) == False
+_V1, _E1 = graph84(1)
+ok84 &= _V1 == [((1,), (1,))] and not _E1                    # the r = 4 boundary: one vertex, no edge
+
+
+def walk84(q, a):
+    c = _rq3.children(a, 0, q)[0]
+    prof, x, y = [0, c], 0, c
+    while y and len(prof) < 60000:
+        x, y = y, _rq3.children(x, y, q)[0]
+        prof.append(y)
+    return prof
+
+
+# the two actual even first returns after odd doublings: q = 8 at r = 88, and the rooted q = 16 at r = 52,808
+_s8 = next(b | (b << 4) for b in range(16) if bin(b).count('1') % 2 and len(walk84(8, b | (b << 4))) - 1 == 88)
+for q, a, rr in ((8, _s8, 88), (16, 161 | (161 << 8), 52808)):
+    pr = walk84(q, a)
+    r, full, h = len(pr) - 1, (1 << q) - 1, q // 2
+    w, c = pr[r - 1], pr[1]
+    U = [w, w]
+    for n in range(2, r + 1):
+        U.append(_rq3.rot(U[n - 2], 1, q) ^ (U[n - 1] | U[n - 2]))
+    src = c ^ _rq3.rot(c, 1, q)
+    ok84 &= r == rr and pr[r - 2] == w and all(U[n] == pr[r - 1 - n] for n in range(r)) and U[r - 3] == full
+    ok84 &= _rq3.rot(c, h, q) == c ^ full and _lp82(c, q) == q and _lp82(src, q) == h
+    ok84 &= bin(src & ((1 << h) - 1)).count('1') % 2 == 1
+    if q == 8:
+        # its paired windows trace a length-4 path from v to its swap, with F and A taken from their definitions
+        m = (r - 2) // 2
+        bit = lambda t: (w >> (t % q)) & 1
+        X = [tuple(bit(t + k) for k in range(m)) for t in range(q + 1)]
+        Fv = lambda Z: U82(2 * m - 1, list(Z) + [0])
+        Av = lambda Z: U82(2 * m, list(Z) + [0])
+        ok84 &= all(Fv(X[t]) == 1 for t in range(q))
+        ok84 &= all(bit(t + m) ^ bit(t + h + m) == 1 ^ Av(X[t]) ^ Av(X[t + h]) for t in range(h))
+        ok84 &= (X[h], X[2 * h]) == (X[h], X[0])           # after h steps the pair (X(0), X(h)) is swapped
+# GC244's balanced cap-8 return fails c(1) + c(5) = 1; the nondyadic guard c = 010101 on cap 6
+_c244 = sum(int(b) << t for t, b in enumerate('10010011'))
+ok84 &= ((_c244 >> 1) & 1) ^ ((_c244 >> 5) & 1) == 0
+_c6 = sum(int(b) << t for t, b in enumerate('010101'))
+ok84 &= _rq3.rot(_c6, 3, 6) == _c6 ^ 63 and _lp82(_c6, 6) == 2 and (_c6 ^ _rq3.rot(_c6, 1, 6)) == 63
+check('S84 G190: no path and no return for q = 2-16, m = 1-6 (graph from its definition); the actual even returns at '
+      'q = 8 (r = 88) and the rooted q = 16 (r = 52,808) reconstruct backwards with complementary halves and odd '
+      'sources, the first tracing a length-4 swap path; r = 4; GC244; cap 6', ok84)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
