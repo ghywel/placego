@@ -408,6 +408,11 @@ CHECKS (GPT's claims at 827e006):
      U_3 = w Delta w (which ignores w(1) when w(0) = 0), U_4 = Delta^2 w; the r = 5 and r = 7 maps; at caps 2 to 11
      every nonzero c whose first zero is at an odd position r = 2k + 3 has least period at most 2^k (exactly 2 at r = 5,
      4 at r = 7; 11 at r = 11); at cap 12 an even first return at r = 8 has an entry of least period 12.
+  S83 (GC244's control, added 2026-10-07 at fe0e7bd): w = 10100100 at cap 8 reconstructs, through G189's backward
+     functions, a compatible first return at position 8 from c = 10010011 (weight 4, least period 8, no complementary
+     halves; source 10110100, least period 8, even); over all 357 cyclic words at caps 4 to 16 giving a return at 8,
+     the gaps between ones have one or two zeros, the length is 2A + 3B and the entry weight 2A + B, so a balanced
+     entry needs B = 2A and q = 8A (found only at caps 8 and 16).
 """
 import random
 from fractions import Fraction as F
@@ -4177,4 +4182,48 @@ ok82 &= 12 in _ev82
 check('S82 G189: U_2j affine in its newest bit with support w(t..t+j), U_(2j+1) on the same support (n <= 12, '
       'exhaustive); U_2, U_3, U_4; odd first returns at caps 2-11 obey q <= 2^k, exact at r = 5, 7; even r = 8 reaches '
       'period 12', ok82)
+def Ucyc83(n, w, q):
+    """G189's backward functions on a cyclic q-bit word."""
+    U = [w, w]
+    for i in range(2, n + 1):
+        U.append(_rq3.rot(U[i - 2], 1, q) ^ (U[i - 1] | U[i - 2]))
+    return U[n]
+
+
+ok83 = True
+# GC244's literal control: w = 10100100 at cap 8 reconstructs a first return at position 8 from c = 10010011
+_W83 = lambda s: sum(int(b) << t for t, b in enumerate(s))
+q, full = 8, 255
+w, c = _W83('10100100'), Ucyc83(6, _W83('10100100'), 8)
+src = c ^ _rq3.rot(c, 1, q)
+ok83 &= Ucyc83(5, w, q) == full and c == _W83('10010011') and bin(c).count('1') == 4 and _lp82(c, q) == 8
+ok83 &= _rq3.rot(c, 4, q) != c ^ full and src == _W83('10110100') and _lp82(src, q) == 8
+ok83 &= bin(src).count('1') % 2 == 0
+seq = [src, 0, c] + [Ucyc83(n, w, q) for n in range(5, -1, -1)] + [0]
+ok83 &= all(_rq3.rot(seq[i + 2], 1, q) == seq[i] ^ (seq[i + 1] | seq[i + 2]) for i in range(len(seq) - 2))
+x, y, pos = 0, c, 1
+while y and pos < 20:
+    x, y, pos = y, _rq3.children(x, y, q)[0], pos + 1
+ok83 &= pos == 8
+# the gap count over every cyclic w at caps 4 to 16 with U_5 = 1 (a return at 8): gaps of one or two zeros only,
+# length 2A + 3B and entry weight 2A + B; balance (weight q/2) then needs B = 2A, so q = 8A
+_n83, _bal83 = 0, set()
+for q in range(4, 17):
+    full = (1 << q) - 1
+    for w in range(1, full):
+        if Ucyc83(5, w, q) != full:
+            continue
+        _n83 += 1
+        ones = [t for t in range(q) if (w >> t) & 1]
+        gaps = [(ones[(i + 1) % len(ones)] - ones[i] - 1) % q for i in range(len(ones))]
+        A, B = gaps.count(1), gaps.count(2)
+        cw = bin(Ucyc83(6, w, q)).count('1')
+        ok83 &= set(gaps) <= {1, 2} and 2 * A + 3 * B == q and cw == 2 * A + B
+        if 2 * cw == q:
+            _bal83.add(q)
+            ok83 &= B == 2 * A and q == 8 * A
+ok83 &= _n83 == 357 and _bal83 == {8, 16}
+check('S83 GC244: the cap-8 return from w = 10100100 (c = 10010011, weight 4, no complementary halves, even source); '
+      'gap count length 2A + 3B and weight 2A + B over all 357 return-8 words at caps 4-16; balance only at q = 8A',
+      ok83)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
