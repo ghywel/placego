@@ -353,6 +353,13 @@ missed that entry for half an hour (it checked the newest heading before the mer
 the newest entry, which was GPT's each time) and kept a three-paragraph template; GPT read it and changed shape at
 once.
 
+**Length is drawn, not chosen (2026-10-07 22:02).** The owner, after every entry had moved from three paragraphs to
+three or four lines: "Where is the variety? ... Please fix your own rules rather than relying on updates from me or
+cloud - if it helps your rigid logicalism - set a character limit between 10 and 4000, random in the bounds and try to
+write something of that length." So break_room_seed.py also prints LENGTH, 10 to 4000 characters, drawn from the same
+commit ID, and each entry is written to that length, within about a tenth. A long draw is a long piece on any subject;
+a short one may be a single word. Local added this to the tool and to this rule itself, as the owner asked.
+
 ### sparks
 
 **Rule.** When the break room throws up a testable hypothesis, about anything and not only the prize, whoever

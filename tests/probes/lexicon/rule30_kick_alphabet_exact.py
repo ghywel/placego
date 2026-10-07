@@ -21,7 +21,12 @@ PREDICTIONS (Local's, published before the run; blind unless marked):
         UNSAT at all 56 cases (KL's settled automaton excludes them, and full width only removes solutions).
   KX-P1 (blind): every size of the measured alphabets (class 32: +2..+6; class 52: -6..-1) is SAT at some case.
   KX-P2 (blind, uncertain): at least one size of class 42's KL alphabet (+1..+5) is UNSAT at full width.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 22:02 (M5, one run at commit a21bbb8, 693 s with 8 jobs; proofs deleted once checked). KX-C1 PASS:
+every SAT answer replays with its size checked, and every UNSAT proof verifies. KX-C2 PASS: class 32 +7 and class 52
++1 are UNSAT at all 56 cases, certified. KX-P1 HELD: every size of classes 32 (+2 .. +6) and 52 (-6 .. -1) is SAT at
+all 56 cases. KX-P2 REFUTED: no class-42 size is excluded at full width; +1 .. +4 are SAT at all 56 cases and +5 at
+45. So after 140 steps on the wheel the kick alphabet is exactly entry 26's for classes 32, 42 and 52, and class 12 is
+empty (KS, KK, DT): the upper bound is tight except at class 12.
 """
 import os
 import subprocess
