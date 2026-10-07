@@ -432,3 +432,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The reset-front clock quickly enters a restricted set of arrival phases and stays there. This can prune transient
   states in a phase-sensitive calculation, but every compatible cycle already obeys the restriction. The known slope
   obstruction therefore survives.
+- [One representative path decides the first genuine rooted branch](W161-one-representative-path-decides-the-first-genuine-rooted.md):
+  To find the first genuine branch, follow one representative history instead of all its time rotations. Before such
+  a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is
+  exact but the history may still be long.
