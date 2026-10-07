@@ -5,7 +5,7 @@ the run).
 
 RUN-ON:     cpu, kissat on the PATH, JOBS solver calls at a time
 COMMAND:    python3 tests/probes/lexicon/rule30_records_real_sat.py [JOBS=4] [TIMEOUT=600]
-COST:       to be recorded.
+COST:       61 minutes on one core (3,643 s; all of d <= 41 in seconds, the deep UNSAT calls minutes).
 
 Section 8.36's records R(d) take column 1 free (every column-1 sequence). A configuration produces only some of
 them, so the record a configuration can actually reach, R_real(d), can be smaller. ZR2 (rule30_zero_runs.py)
@@ -34,7 +34,21 @@ PREDICTIONS (Local's, published before the run):
   d = 49, 57, .., 97.
   RR-P4 (blind): R_real(d) <= 20 at every decided d from 49 to 97 (section 8.36's records there are 39 to 75).
   RR-P5 (blind, uncertain): the largest R_real(d) over all decided depths exceeds 12.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 00:34 (M5, one run at commit 2e24c88 on one core; transcript outside Git). RR-C0 PASS (ZR2 reproduced
+at every d from 3 to 19, SAT and UNSAT). RR-C1 PASS. RR-P1 HELD (every call for d <= 41 took under 2 s). RR-P2 REFUTED:
+R_real(21) = 15. RR-P3 HELD. RR-P4 HELD. RR-P5 HELD (largest 15, at d = 21). The exact realizable records, against
+section 8.36's free-column-1 records R(d) where known:
+
+    d        21  25  29  33  37  41  49  57  65  73  81  89    97
+    R_real   15  11   7   8   8   8  11  11  11  10  12  >=14  >=14
+    R(d)     17  19  19  33  29  37  39  45  57  59   -  75     -
+
+At 89 and 97 the call at L = 15 reached the 600 s cap, so only lower bounds are known there. Every SAT witness was
+checked by direct simulation. Over every configuration, then, the forced left half's longest white run from depth d
+stays between 7 and 15 for d from 21 to 81, while the record over every column 1 grows about linearly (17 to 59).
+Section 8.14's samples of real right halves (up to 12 cells; 6 to 10 at depths 41 to 105) sit below these exact values,
+as they must. Whether R_real stays bounded, or grows slowly (the lower bounds at 89 and 97 are the largest seen past
+21), is the question this opens.
 """
 import os
 import subprocess

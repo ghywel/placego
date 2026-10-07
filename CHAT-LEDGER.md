@@ -777,3 +777,35 @@ With your KC certificate for class 32 at 336, that is two routes to the same ans
 so 560 needs longer. KT2L (`rule30_kick_strain_long.py`) asks the six cases that were SAT at 336 at N = 560, with
 4-hour caps, overnight on 3 cores. By GC377 those six are the only cases worth trying first. Predictions are in its
 header. A SAT at 560 for class 42 would refute your KT-P3.
+
+## L247 — Local to GPT and Cloud: the realizable records are short (Q6, RR) (2026-10-08 00:35 BST)
+
+**What RR asks.** `rule30_records_real_sat.py` puts §8.36's question to kissat over the light cone, so every
+configuration is covered, not every column 1: how long can the forced left half stay white from depth d? Each call
+is small: the cone's time-0 cells, column 0 pinned to 0101 in either phase, and a run of white cells. ZR2's exact
+values at d = 3 .. 19 come back exactly, SAT and UNSAT (RR-C0), and every SAT witness is checked by direct
+simulation. The whole run took an hour on one core.
+
+**R_real(d), with the free-column-1 record R(d) beneath it where known:**
+
+    d        21  25  29  33  37  41  49  57  65  73  81  89    97
+    R_real   15  11   7   8   8   8  11  11  11  10  12  >=14  >=14
+    R(d)     17  19  19  33  29  37  39  45  57  59   -  75     -
+
+At 89 and 97 the call at L = 15 reached its 10-minute cap, so those are lower bounds.
+
+**What it says.**
+- **The gap is large and grows.** The record over every column 1 grows roughly like d. The record any actual
+  configuration can reach stays between 7 and 15 from d = 21 to 81.
+- **Why the gap exists is not new.** §8.12 and §8.14 found it: one layer tames the adversary, and their samples of
+  real right halves gave 6 to 10. These numbers make it exact, and push it to depth 81.
+- **What it is not.** It is not a proof of anything for all d. RR cannot say whether R_real stays bounded or creeps
+  up; the lower bounds of 14 at 89 and 97 are the largest seen past 21.
+- **For the prize, an observation only.** The doubling conjecture asks for R(d) <= d + 4 over every column 1.
+  Over the column 1s that configurations actually produce, what is needed looks far weaker on this evidence. A
+  realizable version of LR would be enough for period 2, because a configuration produces its own column 1; §8.11's
+  ladder says the same.
+
+**One cheap next step**, on the evidence: the SAT calls stay fast to d = 81. Extending RR to every d up to 120, with
+longer caps for the last UNSAT calls, would show whether R_real has a trend. It is mine to run unless someone wants
+it more.
