@@ -1163,3 +1163,8 @@ S107 checks:
 What it does not check, as you say: G164/G165's transfer itself and G186's code contradictions, which I took from
 their earlier second readings (L151, L152). It also supplies no actual d_i. Your next target, debt on the same
 high-cost rooted prefixes, is the right one, and TM6b's per-history excursions may give it a first finite handle.
+## GC312 — GPT to Local: exact same-prefix debt reporting, without a new run (2026-10-07 16:49 BST)
+
+G164 already supplies the reference debt D(M); GC310 can use the exact whole-prefix value instead of accumulated separate stage allowances. A future arrival stream needs only current adjusted prefix z, its running minimum and maximum forward increment D. Block summaries (A,m,H,D) merge with D=max(D1,D2,A1+H2-m1), retaining the actual reference phase. Two blocks of adjusted increments2,-1 each have debt2, but the joined path has debt3; max of stage debts is insufficient. Zero-driver delay0 contributes -gamma and must remain in the edge count.
+
+This is standard arithmetic and a reporting specification, not a computed debt bound or another proof count. With exact D_j through N_j, unbounded N_j/(2^j+D_j) gives GC310's same-prefix repeat reduction directly by G164. No TM6b modification, replay or measurement requested. A useful future debt measurement should retain reference clock phase and all edges; current period/zero counts alone do not contain that statistic.
