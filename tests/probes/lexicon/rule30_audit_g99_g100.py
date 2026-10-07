@@ -211,6 +211,11 @@ CHECKS (GPT's claims at 827e006):
      (trace of the product over a period, raised to m), is 1 for every m when a cyclic run of ones has length 1 mod 3,
      else 2 for every m when the number N of runs of length 2 mod 3 is even, else 2 for even m and 0 for odd m; and the
      three literal controls (001 <- 101; 011 <- 001010 and its translate by 3; 000111 <- 000010 and 111001).
+  S46 (G151, added 2026-10-07 at 8ecebee): for every nonconstant cyclic output of least period p <= 12 whose
+     predecessors double (G150's odd case), both period-2p predecessors (found by the descending recursion on a ring of
+     size 2p and confirmed by forward steps) contain the cyclic factor 010 and have exactly one predecessor on rings of
+     size 2p and 4p; on every ring up to size 24, each row reaching zero first at time T >= 2 has least period 1 or
+     3 * 2^a with a <= floor((T - 2) / 2); and the literal six-site trajectory 101011 -> ... -> 000000.
 """
 import random
 from fractions import Fraction as F
@@ -2069,4 +2074,59 @@ ok45 &= ring_step([0, 0, 1, 0, 1, 0]) == [0, 1, 1] * 2 and ring_step([0, 1, 0, 0
 ok45 &= ring_step([0, 0, 0, 0, 1, 0]) == [0, 0, 0, 1, 1, 1] and ring_step([1, 1, 1, 0, 0, 1]) == [0, 0, 0, 1, 1, 1]
 check('S45 G150: periodic predecessor counts on rings of size m p follow the zero-gap parity rule exactly', ok45,
       'outputs by kind (p <= 14): %s' % kinds45)
+def ring_preds(Y):
+    n = len(Y)
+    out = []
+    for a in (0, 1):
+        for b in (0, 1):
+            x = [None] * n
+            x[0], x[1] = a, b
+            for i in range(0, -(n - 2), -1):          # x_(i-1) = Y_i XOR (x_i OR x_(i+1)), indices mod n
+                x[(i - 1) % n] = Y[i % n] ^ (x[i % n] | x[(i + 1) % n])
+            if ring_step(x) == Y:
+                out.append(x)
+    return out
+
+
+def has_010(x):
+    n = len(x)
+    return any(x[i] == 0 and x[(i + 1) % n] == 1 and x[(i + 2) % n] == 0 for i in range(n))
+
+
+ok46 = True
+n_odd = 0
+for p_ in range(2, 13):
+    for v in range(1, (1 << p_) - 1):
+        y = [(v >> i) & 1 for i in range(p_)]
+        if least_period(y) != p_ or g150_predict(y) != 'odd':
+            continue
+        n_odd += 1
+        xs_ = ring_preds(y * 2)
+        ok46 &= len(xs_) == 2 and all(least_period(x) == 2 * p_ for x in xs_)
+        for x in xs_:
+            H = ltr_matrix(x)
+            ok46 &= has_010(x) and sum(H[i][i] for i in range(4)) == 1 and sum(_mm(H, H)[i][i] for i in range(4)) == 1
+for n in range(1, 25):
+    m = (1 << n) - 1
+    cur = _np.arange(1 << n, dtype=_np.uint32)
+    hit = _np.full(1 << n, -1, dtype=_np.int32)
+    for T in range(0, 3 * n + 4):
+        hit[(cur == 0) & (hit < 0)] = T
+        rl = ((cur << 1) | (cur >> (n - 1))) & m
+        rr = ((cur >> 1) | (cur << (n - 1))) & m
+        cur = (rl ^ (cur | rr)) & m
+    for v in _np.nonzero(hit >= 2)[0][:6000]:
+        w = [(int(v) >> i) & 1 for i in range(n)]
+        P = least_period(w)
+        T = int(hit[v])
+        a = 0
+        q = P // 3
+        while q > 1 and q % 2 == 0:
+            q //= 2
+            a += 1
+        ok46 &= P % 3 == 0 and q == 1 and a <= (T - 2) // 2
+traj = [[1, 0, 1, 0, 1, 1], [0, 0, 1, 0, 1, 0], [0, 1, 1, 0, 1, 1], [0, 1, 0, 0, 1, 0], [1] * 6, [0] * 6]
+ok46 &= all(ring_step(traj[i]) == traj[i + 1] for i in range(5)) and has_010(traj[0])
+check('S46 G151: doubled predecessors carry 010 and have one predecessor; the floor((T-2)/2) bound on rings to 24',
+      ok46, '%d doubling outputs checked' % n_odd)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
