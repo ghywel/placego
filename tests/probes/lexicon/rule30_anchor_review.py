@@ -138,6 +138,31 @@ def gc401():
     print('RW-L2', 'HELD' if pos and good == pos else 'REFUTED')
 
 
+def gc405():
+    """Enumeration control for L245's second reading of GC405's hand bridge (the proof is by hand; this checks it)."""
+    def step(row, wall):
+        return [wall] + [row[i - 1] ^ (row[i] | row[i + 1]) for i in range(1, len(row) - 1)]
+    ok, n, pos = True, 0, 0
+    for a in (0, 1):
+        for free in range(1 << 9):
+            row = [1] + [a, 1, 1 - a, a, 0] + [(free >> i) & 1 for i in range(9)]    # time 3, columns 0 .. 14
+            for t in range(3, 8):
+                row = step(row, (t + 1) % 2)
+            n += 1
+            if row[6]:
+                pos += 1
+                ok &= row[1:8] == [0, 1, 0, 1, 1, 1, 0] or [row[1], row[2], row[3], row[4], row[6]] == [1, 1, 1, 0, 1]
+    ok2 = True
+    for a in (0, 1):
+        for free in range(1 << 6):
+            row = [0, a, 1, 1, 1, 0, 0] + [(free >> i) & 1 for i in range(6)]       # time 0, columns 0 .. 12
+            for t in range(3):
+                row = step(row, (t + 1) % 2)
+            ok2 &= row[1:6] == [a, 1, 1 - a, a, 0]
+    print('bridge: %d time-3 rows, %d with the antecedent, all A or B: %s; anchor reaches the prefix: %s'
+          % (n, pos, ok, ok2))
+
+
 if __name__ == '__main__':
     import sys
-    gc401() if sys.argv[1:] == ['gc401'] else main()
+    {'gc401': gc401, 'gc405': gc405}.get(sys.argv[1] if len(sys.argv) > 1 else '', main)()
