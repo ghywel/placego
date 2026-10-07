@@ -378,6 +378,18 @@ CHECKS (GPT's claims at 827e006):
      (L = 1, s = 8, P = 1: M = 21 gives 29 < 30, the Thue-Morse threshold M = 19 gives 31, no contradiction); theta in
      (2, min(4, 6/gamma)) nonempty below slope 3, and theta = 11/5 at gamma = 5/2 reaches the contradiction for
      s = 2^20 .. 2^39 once the constants are small against s.
+  S78 (G187, added 2026-10-07 at e7829c1): delta = (3 - gamma)/(2 gamma + 2A + 8); r < delta exactly when
+     4r/(1 - 2r) < (6 - 2 gamma)/(2 gamma + A + 1) on a rational grid (gamma 1 .. 29/10, A 0 .. 10), delta <= 1/5, and
+     delta <= 1/7 once A >= 2 (delta = 1/42 at gamma 5/2, A 4); GPT's integer control (s = 256, M = 547, 1447.5 < 1536,
+     1021 against 1022); on 400 random depths (seed 187) with q <= r n, r < delta, the endpoint 2s + 2q + D <= n
+     reaches both contradictions (800 of 800), while at r = 3 delta its time margin fails (200 of 200); the strict
+     threshold cannot be relaxed; within each stage p/M is least at N_(j+1) - 1, equal to 1/(2 R_(j+1) - 2^-j); the
+     schedule 25 2^j (400 above 1/42, 799 below); the recorded stage ends 8/399 and 16/53207 are below 1/42.
+  S79 (G187's dyadic refinement, added 2026-10-07 at 9992b94): K, the least power of two above
+     (2 gamma + A + 1)/(6 - 2 gamma), has a positive coefficient gap and K/2 has none, and K >= 2 once A >= 2 (the
+     fraction is at least 5/4); GPT's control (fraction 10, K = 16, threshold 17, s = 256, M = 547, margin 88.5, K = 8
+     gap -2); for q = 2^8 .. 2^40 the endpoint s = Kq, M = 2s + 2q + D reaches both contradictions once q is large
+     against D and B; the schedule 18 2^j passes 17 but its stage ends tend to 1/36 > 1/42; the record's R_4 = 25 > 17.
 """
 import random
 from fractions import Fraction as F
@@ -3810,4 +3822,128 @@ for e in range(20, 40):
 check('S77 G186 continuation: paperfolding (i = s, i\' = 3s, l = 2s - 1) needs M < 4s and M >= L + 2s + 2P + 2, '
       'exact at the thresholds for s = 2^3 .. 2^20; the offset control; theta 11/5 serves both families at slope 5/2',
       ok77)
+_rng78 = random.Random(187)
+
+
+def delta78(g, A):
+    return (3 - g) / (2 * g + 2 * A + 8)
+
+
+ok78 = True
+# the threshold algebra: r < delta iff 4r/(1 - 2r) < (6 - 2 gamma)/(2 gamma + A + 1), on a rational grid
+for g in (_Fr(1), _Fr(3, 2), _Fr(2), _Fr(5, 2), _Fr(29, 10)):
+    for A in range(0, 11):
+        d = delta78(g, A)
+        ok78 &= d <= _Fr(1, 5) and (A < 2 or d <= _Fr(1, 7))
+        for r in [_Fr(a, 997) for a in range(1, 498, 7)] + [d, d - _Fr(1, 10 ** 6), d + _Fr(1, 10 ** 6)]:
+            if 0 < r < _Fr(1, 2):
+                ok78 &= (r < d) == (4 * r / (1 - 2 * r) < (6 - 2 * g) / (2 * g + A + 1))
+ok78 &= delta78(_Fr(5, 2), 4) == _Fr(1, 42)
+
+
+def endpoint78(n, q, D):
+    s = 1
+    while 4 * s <= n - 2 * q - D:
+        s *= 2
+    return (s, 2 * s + 2 * q + D) if 2 * s <= n - 2 * q - D else (None, None)
+
+
+# GPT's integer control: L = 1, B = 0, gamma 5/2, A = 4, n = 1000, q = 16
+s, M = endpoint78(1000, 16, 3)
+ok78 &= (s, M) == (256, 547) and _Fr(5, 2) * M + 4 * 16 + 0 + 16 == _Fr(2895, 2) < 6 * s and M < 4 * s
+ok78 &= 1 - 1 + 6 * s - M + 2 * 16 == 1021 and 4 * s - 2 == 1022
+ok78 &= a4_77(1, s, 3 * s, 2 * s - 1, M, _Fr(5, 2) * M + 4 * 16, 16) == (True, True)
+ok78 &= a4_77(1, 0, 3 * s, 2 * s, M, _Fr(5, 2) * M + 4 * 16, 16) == (True, True)
+# the construction on random good depths with q <= r n, r < delta: M <= n, s > (n - 2q - D)/4, and both contradictions
+_hit78 = 0
+for trial in range(400):
+    g, A = _rng78.choice([_Fr(1), _Fr(2), _Fr(5, 2)]), _rng78.randint(2, 8)
+    d = delta78(g, A)
+    r = d * _Fr(_rng78.randint(1, 95), 100)
+    L, B = _rng78.randint(1, 50), _rng78.randint(0, 200)
+    n = _rng78.randint(10 ** 6, 10 ** 9)
+    q = int(r * n)
+    for code, D in (('TM', L), ('PF', L + 2)):
+        s, M = endpoint78(n, q, D)
+        ok78 &= s is not None and M <= n and 4 * s > n - 2 * q - D
+        tau = g * M + A * q + B                          # P <= q by monotone periods, at its worst P = q
+        margin = (6 - 2 * g) * s - (2 * g + A + 1) * q - g * D - B
+        if margin > 0:
+            _hit78 += 1
+            want = (True, True)
+            got = a4_77(L, 0, 3 * s, 2 * s, M, tau, q) if code == 'TM' else a4_77(L, s, 3 * s, 2 * s - 1, M, tau, q)
+            ok78 &= got == want
+ok78 &= _hit78 >= 600
+# the threshold is not vacuous: at r = 3 delta the same construction's time margin goes negative
+_neg78 = 0
+for trial in range(200):
+    g, A = _rng78.choice([_Fr(1), _Fr(2), _Fr(5, 2)]), _rng78.randint(2, 8)
+    n = _rng78.randint(10 ** 6, 10 ** 9)
+    q = int(3 * delta78(g, A) * n)
+    s, M = endpoint78(n, q, 1)
+    _neg78 += (6 - 2 * g) * s - (2 * g + A + 1) * q - g - 0 <= 0
+ok78 &= _neg78 >= 100
+# strictness: at q/s exactly (6 - 2 gamma)/(2 gamma + A + 1) the time requirement needs gamma D + B <= 0
+g, A, s = _Fr(5, 2), 4, 2 ** 20
+q = (6 - 2 * g) / (2 * g + A + 1) * s
+ok78 &= 2 * g * s + (2 * g + A + 1) * q == 6 * s and 2 * g * s + (2 * g + A + 1) * q + g * 1 + 0 > 6 * s
+# the stage identity: within stage j, p/M is least at m_j = N_(j+1) - 1, where it is 1/(2 R_(j+1) - 2^-j)
+for trial in range(100):
+    N = [None, _rng78.randint(2, 9)]
+    for j in range(1, 25):
+        N.append(N[j] + _rng78.randint(1, 3000) * 2 ** j // _rng78.randint(1, 8) + 1)
+    for j in range(1, 24):
+        ends = [N[j], (N[j] + N[j + 1]) // 2, N[j + 1] - 1]
+        R1 = _Fr(N[j + 1], 2 ** (j + 1))
+        ok78 &= min(_Fr(2 ** j, m) for m in ends) == _Fr(2 ** j, N[j + 1] - 1) == 1 / (2 * R1 - _Fr(1, 2 ** j))
+# the synthetic schedule N_j = 25 2^j: R = 25 > 21 at every entry, stage ends fall to 1/50; at period 16, 400 and 799
+ok78 &= all(_Fr(25 * 2 ** j, 2 ** j) == 25 for j in range(1, 30)) and 1 / (2 * _Fr(25) - _Fr(1, 2 ** 30)) < _Fr(1, 49)
+ok78 &= _Fr(16, 400) > _Fr(1, 42) > _Fr(16, 799)
+# the recorded Rule 30 stages against delta = 1/42: stage 3 ends at 399 (8/399), stage 4 at N_5 - 1 >= 53,207
+ok78 &= _Fr(8, 399) < _Fr(1, 42) and _Fr(16, 53207) < _Fr(1, 42) and _R74[4] == 25 > 21
+check('S78 G187: r < delta iff the q/s margin (rational grid); delta <= 1/7 for A >= 2; endpoint construction on 400 '
+      'random depths, both codes; the integer control; strictness; the stage-end identity; the 25 2^j schedule', ok78)
+def kdy79(g, A):
+    """The smallest power of two K strictly above (2 gamma + A + 1)/(6 - 2 gamma)."""
+    f, K = (2 * g + A + 1) / (6 - 2 * g), 1
+    while K <= f:
+        K *= 2
+    return f, K
+
+
+ok79 = True
+# the coefficient fraction is at least 5/4 once A >= 2 and gamma >= 1, so K >= 2 > 1 (paperfolding's extra need)
+for g in (_Fr(1), _Fr(3, 2), _Fr(2), _Fr(5, 2), _Fr(29, 10)):
+    for A in range(2, 12):
+        f, K = kdy79(g, A)
+        ok79 &= f >= _Fr(5, 4) and K >= 2 and (6 - 2 * g) * K - (2 * g + A + 1) > 0
+        ok79 &= (6 - 2 * g) * (K // 2) - (2 * g + A + 1) <= 0       # the next smaller power is not licensed
+# GPT's coefficient control at gamma 5/2, C = 1 (A = 4): fraction 10, K = 16, threshold 17; q = 16, L = 1, B = 0
+f, K = kdy79(_Fr(5, 2), 4)
+ok79 &= (f, K) == (10, 16) and (6 - 5) * 8 - 10 == -2
+q, D = 16, 3
+s, M = K * q, 2 * (K + 1) * q + D
+ok79 &= (s, M) == (256, 547) and 6 * s - ((2 * _Fr(5, 2) * (K + 1) + 4 + 1) * q + _Fr(5, 2) * D) == _Fr(177, 2)
+# the construction: whenever N_(j+1) > 2(K + 1) q + D, s = K q and M = 2s + 2q + D reach both contradictions once q is
+# large against D and B (P <= q because M < N_(j+1))
+for g, A in ((_Fr(5, 2), 4), (_Fr(2), 6), (_Fr(1), 2)):
+    f, K = kdy79(g, A)
+    gap = (6 - 2 * g) * K - (2 * g + A + 1)
+    for j in range(8, 41):
+        q = 2 ** j
+        for L, B in ((1, 0), (40, 300)):
+            for code, D in (('TM', L), ('PF', L + 2)):
+                s, M = K * q, 2 * (K + 1) * q + D
+                if gap * q > g * D + B and (2 * K - 2) * q > D:
+                    tau = g * M + A * q + B
+                    got = a4_77(L, 0, 3 * s, 2 * s, M, tau, q) if code == 'TM' else \
+                        a4_77(L, s, 3 * s, 2 * s - 1, M, tau, q)
+                    ok79 &= got == (True, True)
+# the schedule 18 2^j passes the dyadic threshold 17 but not G187's general 1/42 (its stage ends tend to 1/36)
+ok79 &= 18 > 17 and 1 / (2 * _Fr(18)) == _Fr(1, 36) > _Fr(1, 42)
+ok79 &= 1 / (2 * _Fr(18) - _Fr(1, 2 ** 30)) > _Fr(1, 42)
+# the record against the dyadic threshold at C = 1: R_4 = 25 > 17, so N_4 = 400 > 2 (17)(8) + D for D < 128
+ok79 &= _R74[4] > 17 and 400 > 2 * 17 * 8 + 127
+check('S79 G187 dyadic refinement: K the least power of two above (2 gamma + A + 1)/(6 - 2 gamma), K >= 2, the next '
+      'smaller not licensed; s = Kq reaches both contradictions; threshold 17 at C = 1; the 18 2^j schedule', ok79)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

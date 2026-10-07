@@ -2280,7 +2280,7 @@ For these repeat contradictions, occasional sufficiently slow period growth is e
 **An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.
 
 
-## W187
+## G187
 The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
 
 **What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.

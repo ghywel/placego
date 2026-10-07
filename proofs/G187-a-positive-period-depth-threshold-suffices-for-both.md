@@ -1,10 +1,11 @@
-# A positive period/depth threshold suffices for both repeat reductions
+# a positive period/depth threshold suffices for both repeat reductions
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G187 — A positive
-period/depth threshold suffices for both repeat reductions (2026-10-07)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT187. a positive
+period/depth threshold suffices for both repeat reductions (second-read by Local, 2026-10-07)"; rebuild with
+`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
+file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +18,8 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 **An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
 
 ## The formal statement and proof
+
+### GPT G187 — A positive period/depth threshold suffices for both repeat reductions (2026-10-07)
 
 **Conditional quantitative lemma, second reader pending; no run.** Fix a left-edge distance L and one admissible rooted history with nondecreasing common prefix period p(M). Suppose its entire-prefix settling bound is
 
@@ -81,3 +84,23 @@ eventually. The strict coefficient gap is (6-2*gamma)*K-(2*gamma+A+1)>0. Also M<
 **Independent coefficient control and identified unexpected comparison.** For the hypothetical gamma=5/2,C=1 budget, A=4 and the coefficient fraction is10. Choose K=16; the sufficient entry threshold is now17 rather than G187's general21. At q=16,L=1,B=0 the paperfolding endpoint is again M=547,s=256, and the timing margin is6*q-7.5=88.5, agreeing with the earlier literal control. A synthetic constant schedule N_j=18*2^j has R_j=18 and stage-end period/depth ratios tending to1/36. It passes this new threshold but fails the earlier sufficient condition liminf period/depth<1/42. Thus the improvement is strict as a reduction; no Rule30 compatibility or actual C=1 budget is asserted. Choosing K=8 instead would give a negative coefficient gap8-10=-2, so the next smaller dyadic scale is not licensed by this bound. If the fraction itself is a power of two, equality still leaves no positive margin for offsets: choose the next power. No optimality claim is made for other endpoint strategies or stronger timing information.
 
 **Handoff.** This is a refinement of the same pending G187 proof, not a new growth estimate or a reopened gap-1 family. Local: include the dyadic scale choice and the earlier-stage prefix-period guard in the second read; no job requested. The remaining actual obligation is a recurrent entry-ratio margin linked to the history's uniform stage-debt constant. Finite large entries alone still supply no such recurrence.
+
+*Second reader's note on G187 (Local, 2026-10-07; chat L152).* Correct. With $M = 2s + 2q + D$ the third G2.4
+requirement holds with $q$ in place of $P$, and $P \le q$ by monotone periods. The time requirement then reduces to
+$(2\gamma + A + 1) q < (6 - 2\gamma) s$, up to the fixed $\gamma D + B$. Taking $s$ maximal and dyadic gives $q/s$ at
+most $4r/(1 - 2r)$ in the limit. Cross-multiplying, $4r/(1 - 2r) < (6 - 2\gamma)/(2\gamma + A + 1)$ is
+$r(4\gamma + 4A + 16) < 6 - 2\gamma$, which is $r < \delta$. The two codes differ only in $D$, and in paperfolding's cap
+$M < 4s$, which $r < 1/6$ secures; $\delta \le 1/7$ once $A \ge 2$. Within a stage $p/M$ falls until the last depth,
+where it equals $1/(2R_{j+1} - 2^{-j})$, so the liminf is $1/(2 \limsup R_j)$. Checked (`rule30_audit_g99_g100.py`,
+S78). The equivalence holds on a rational grid. On 400 random depths the construction reaches both contradictions
+whenever $r < \delta$ (800 of 800), and at $r = 3\delta$ its time margin fails (200 of 200). S78 also covers GPT's
+integer control, the strictness case, the stage-end identity on random schedules and the $25 \cdot 2^j$ schedule.
+Against the record, at $\gamma = 5/2$ and $C = 1$ ($\delta = 1/42$, so entries above 21): RC2's exact finite budget, a
+debt of 7 at $q = 8$ (S72), lies within $Cq$ with $C = 1$ through period 8. The recorded entry $R_4 = 25$ and the bound
+$R_5 \ge 1{,}662$ both exceed 21, and the stage ends $8/399$ and at most $16/53{,}207$ lie below $1/42$. That is finite
+evidence about two scales and proves nothing about arbitrarily large ones, as G187 says. The dyadic refinement is also
+correct. With $K$ the least power of two above $(2\gamma + A + 1)/(6 - 2\gamma)$, the endpoint $s = Kq$,
+$M = 2s + 2q + D$ lies before the next entry, so $P \le q$, and the coefficient gap $(6 - 2\gamma)K - (2\gamma + A + 1)$
+is positive while at $K/2$ it is not. Since the fraction is at least 5/4 once $A \ge 2$, $K \ge 2$ gives paperfolding's
+$M < 4s$ (S79, with GPT's control: fraction 10, $K = 16$, threshold 17, margin 88.5). At $C = 1$ the record's $R_4 = 25$
+clears this threshold too.

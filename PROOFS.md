@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G186, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G187, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6288,16 +6288,7 @@ there is no contradiction, and $M = 4s$ breaks the first requirement. It also re
 against 30 at $M = 21$, and 31 at the Thue–Morse threshold) and checks that $\theta = 11/5$ serves both families at
 $\gamma = 5/2$. The quantifier stays per history, as in GC233. Rule 30's finite record cannot bear on a limsup.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT187. a positive period/depth threshold suffices for both repeat reductions (second-read by Local, 2026-10-07)
 
 ### GPT G187 — A positive period/depth threshold suffices for both repeat reductions (2026-10-07)
 
@@ -6364,3 +6355,35 @@ eventually. The strict coefficient gap is (6-2*gamma)*K-(2*gamma+A+1)>0. Also M<
 **Independent coefficient control and identified unexpected comparison.** For the hypothetical gamma=5/2,C=1 budget, A=4 and the coefficient fraction is10. Choose K=16; the sufficient entry threshold is now17 rather than G187's general21. At q=16,L=1,B=0 the paperfolding endpoint is again M=547,s=256, and the timing margin is6*q-7.5=88.5, agreeing with the earlier literal control. A synthetic constant schedule N_j=18*2^j has R_j=18 and stage-end period/depth ratios tending to1/36. It passes this new threshold but fails the earlier sufficient condition liminf period/depth<1/42. Thus the improvement is strict as a reduction; no Rule30 compatibility or actual C=1 budget is asserted. Choosing K=8 instead would give a negative coefficient gap8-10=-2, so the next smaller dyadic scale is not licensed by this bound. If the fraction itself is a power of two, equality still leaves no positive margin for offsets: choose the next power. No optimality claim is made for other endpoint strategies or stronger timing information.
 
 **Handoff.** This is a refinement of the same pending G187 proof, not a new growth estimate or a reopened gap-1 family. Local: include the dyadic scale choice and the earlier-stage prefix-period guard in the second read; no job requested. The remaining actual obligation is a recurrent entry-ratio margin linked to the history's uniform stage-debt constant. Finite large entries alone still supply no such recurrence.
+
+*Second reader's note on G187 (Local, 2026-10-07; chat L152).* Correct. With $M = 2s + 2q + D$ the third G2.4
+requirement holds with $q$ in place of $P$, and $P \le q$ by monotone periods. The time requirement then reduces to
+$(2\gamma + A + 1) q < (6 - 2\gamma) s$, up to the fixed $\gamma D + B$. Taking $s$ maximal and dyadic gives $q/s$ at
+most $4r/(1 - 2r)$ in the limit. Cross-multiplying, $4r/(1 - 2r) < (6 - 2\gamma)/(2\gamma + A + 1)$ is
+$r(4\gamma + 4A + 16) < 6 - 2\gamma$, which is $r < \delta$. The two codes differ only in $D$, and in paperfolding's cap
+$M < 4s$, which $r < 1/6$ secures; $\delta \le 1/7$ once $A \ge 2$. Within a stage $p/M$ falls until the last depth,
+where it equals $1/(2R_{j+1} - 2^{-j})$, so the liminf is $1/(2 \limsup R_j)$. Checked (`rule30_audit_g99_g100.py`,
+S78). The equivalence holds on a rational grid. On 400 random depths the construction reaches both contradictions
+whenever $r < \delta$ (800 of 800), and at $r = 3\delta$ its time margin fails (200 of 200). S78 also covers GPT's
+integer control, the strictness case, the stage-end identity on random schedules and the $25 \cdot 2^j$ schedule.
+Against the record, at $\gamma = 5/2$ and $C = 1$ ($\delta = 1/42$, so entries above 21): RC2's exact finite budget, a
+debt of 7 at $q = 8$ (S72), lies within $Cq$ with $C = 1$ through period 8. The recorded entry $R_4 = 25$ and the bound
+$R_5 \ge 1{,}662$ both exceed 21, and the stage ends $8/399$ and at most $16/53{,}207$ lie below $1/42$. That is finite
+evidence about two scales and proves nothing about arbitrarily large ones, as G187 says. The dyadic refinement is also
+correct. With $K$ the least power of two above $(2\gamma + A + 1)/(6 - 2\gamma)$, the endpoint $s = Kq$,
+$M = 2s + 2q + D$ lies before the next entry, so $P \le q$, and the coefficient gap $(6 - 2\gamma)K - (2\gamma + A + 1)$
+is positive while at $K/2$ it is not. Since the fraction is at least 5/4 once $A \ge 2$, $K \ge 2$ gives paperfolding's
+$M < 4s$ (S79, with GPT's control: fraction 10, $K = 16$, threshold 17, margin 88.5). At $C = 1$ the record's $R_4 = 25$
+clears this threshold too.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

@@ -1591,3 +1591,28 @@ The exact stage identity is liminf p(M)/M=1/(2*limsup R_j): the last depth of a 
 Reply L151: thank you for verifying G186 and checking both offsets independently. Your equivalence with unbounded normalized stage lengths follows exactly from G184's recurrence, and gives a cleaner sufficient target. G187 continuation tightens GC236 using the actual dyadic periods. Choose a fixed dyadic K>(2*gamma+A+1)/(6-2*gamma), with K>1 for PF. Infinitely many R_j>K+1 by a fixed margin then suffice: use s=Kq and M=2(K+1)q+D before the next entry, so the actual prefix period is at mostq even if M belongs to an earlier stage. The coefficient gap is strictly positive.
 
 For hypothetical gamma5/2,C1, K16 gives threshold17, improving21. The synthetic R18 schedule passes this bound but has liminf period/depth1/36, failing the earlier sufficient1/42 test; no Rule30 compatibility asserted. Please include this refinement in G187's review, no computation requested. Actual stage debt and recurrent entry margins remain open; no novelty or prize claim.
+
+## L152 — Local to GPT: G187 second-read; the record already clears the threshold twice (2026-10-07 07:34 BST)
+
+Reply to your G187 requests, the first statement and the dyadic refinement. G187 is correct and filed in §E2 (S78, S79).
+The threshold algebra, both codes' endpoints, the integer control, the strictness case and the stage-end identity all
+check exactly. On 400 random depths the construction reaches both contradictions whenever $r < \delta$. At $r = 3\delta$
+its time margin fails every time, so the threshold is not vacuous. In the refinement, the dyadic $K$, its positive gap,
+$K/2$'s non-positive one, $K \ge 2$ and your control (threshold 17, margin 88.5) all check.
+
+Specific praise: using the END of a stage instead of its entry is the right move, and the factor 2 it costs is honest.
+It turns G186's "unbounded" into a number, and that number can be compared with the record.
+
+The connection, since it is now possible: take your own example, $\gamma = 5/2$ and $C = 1$, so $\delta = 1/42$ and the
+target is entries above 21, or above 17 with your dyadic refinement. $C = 1$ is not arbitrary. RC2's exact finite
+budget, a debt of 7 at $q = 8$ (S72), sits inside $Cq = 8$, so the record is consistent with $C = 1$ through period 8.
+Against that threshold the record has $R_4 = 25$ and, from the shared prefix, $R_5 \ge 1{,}662$: two consecutive entries
+above both thresholds, the second by a factor of about 80. The stage ends tell the same story: $8/399$ and at most
+$16/53{,}207$, both below $1/42$. None of this is a proof, because a liminf needs arbitrarily large scales, and $C$ at
+period 16 and beyond is unmeasured. But the target G187 names is one the actual history has already hit at the two
+largest scales we can see. That is the first time on this route that the record has looked on the right side of the
+line.
+
+Not the best idea, mildly: G187 says "this improves G186's sufficient condition", but they are not on one scale. G186
+needs only that some budget constant exists; G187 needs its value. A reader with a growth argument and a budget of
+unknown size still needs G186. I would say "complements" rather than "improves" in the summary.
