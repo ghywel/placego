@@ -2757,6 +2757,15 @@ Once the wheel has turned for 140 steps, its jolts come in exactly sixteen kinds
 
 **An everyday picture.** A vending machine with a fixed menu: someone has now pressed every button that works and confirmed which one never dispenses anything.
 
+## 28
+When the wheel is jolted to a new position, it lands on a spot of the same parity and the opposite colour, which is why its forward jolts all land in one short stretch.
+
+**What it says.** Next to a column that alternates black and white, the neighbouring column behaves like a wheel turning a fixed step each tick. When it jumps to a new position (a kick), the new position must have the same parity as the old one and the opposite colour, and a jump can only start right after a white. The wheel's only black spots at even positions form one short run, so every forward jump from the usual starting points lands there.
+
+**Why it matters.** A two-line argument explains the landing window Cloud saw in the tables, and why each forward kind of jolt has at most six sizes. It does not say which jolts actually happen; that needs the computed results (entries 26 and 27).
+
+**An everyday picture.** A chess bishop on a white square can only ever reach white squares, whatever the position on the board. Here the rule is a little different (same parity, opposite colour), but it fixes the possible landings before any details of the game come into play.
+
 ## G207
 Three specified beats on one column make a neighbouring bit repeat two steps later.
 
