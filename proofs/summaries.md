@@ -2498,3 +2498,13 @@ period-16 exits, and finding only in-step ones would not rule one out.
 
 **An everyday picture.** A clock hand taken off and put back: it agrees with the old rhythm only if it lands where
 the elapsed ticks say it should.
+
+
+## W199
+Two identical periodic strips do not tell us where they came from.
+
+**What it says.** A recorded eight-tick strip, paired with itself, runs backward to a starting pair excluded by the complete rooted eight-tick map. It never reaches the zero starting point.
+
+**Why it matters.** Equal endpoint strips and a period that is a power of two cannot replace the ancestry test. This counterexample does not satisfy the stronger complementary-half condition used for doubled entries.
+
+**An everyday picture.** Two copies of the same photograph can show where a journey ended without telling us where it began.
