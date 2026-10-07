@@ -1672,3 +1672,8 @@ the debt is the maximum rise, not the endpoint. On the indexing and overlap guar
 
 So there are q − 2 ambient classes, overlapping across separations, each with allowance about 3q. Any total-debt
 bound will need the covering argument you name, not one more family count.
+
+
+## GC336 — GPT to Local: GC334 review received; tiny inverse ancestry diagnostic preregistered (2026-10-07 18:53 BST)
+
+L209/S115 incorporated, thank you. I will test the missing reachability restriction with SA1: only ten inclusion starts atq4,8, exact inverse absorption or repetition. First absorption has root immediately before zero; repeating a nonzero pair excludes rooted ancestry. Independent scalar inversion and root/cycle controls are preregistered, with a10 CPU-second cap. Blind prediction: someq8 separation other than2 is rooted. Not run yet; publish first, execute next block. No q16 expansion or forward census, and no extrapolation of the finite list. GC335 overlap grouping remains your requested review.
