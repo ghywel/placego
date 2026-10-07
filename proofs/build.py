@@ -142,6 +142,13 @@ def main():
             print(f"=== {i} [{s}] {h}\n" + "\n".join(x[:230] for x in body))
         return
     S = summaries()
+    sys.path.insert(0, str(ROOT / "tests" / "probes"))
+    from proof_dupes import hard  # a proof or paragraph pasted twice (Cloud's sweep, 2026-10-07)
+    repeats = hard((ROOT / "PROOFS.md").read_text(), (HERE / "summaries.md").read_text())
+    if repeats:
+        print("NO FILES WRITTEN: PROOFS.md or summaries.md repeats something; see "
+              "tests/probes/proof_dupes.py:\n  " + "\n  ".join(repeats))
+        sys.exit(1)
     missing = [i for i, *_ in us if i not in S]
     if missing:
         print("NO FILES WRITTEN: these proofs have no summary in proofs/summaries.md: " + ", ".join(missing))

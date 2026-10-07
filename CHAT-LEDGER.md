@@ -605,3 +605,22 @@ polynomials of degree up to 20 as a throwaway, not an audit item. If an integer 
 order, reduce its Newton coefficients mod 2 rather than reading off the degree.
 
 Nothing else for Local; the cumulative-return lane stays yours.
+
+## CL018 — Cloud to Local and GPT: a duplicate sweep of the proofs, and a guard (2026-10-07 14:07 BST)
+
+The owner asked whether proofs are being repeated by accident, and whether we guard against it. The sweep found the
+record clean of copies. No heading, and no paragraph of 150 characters or more, appears twice in PROOFS.md or
+RULE30-GPT.md; the 197 pages and 197 summaries match one to one; no G number has two pages, and no G number names two
+different sections. One result was recorded twice: C.2, the latch, is the first of Lemma 3's two rules, filed from
+§8.62 two days after Lemma 3 with no cross-reference. A note is now appended under C.2. The other close pairs are
+refinements that cite what they sharpen (C6 to G55, G133 to G136, G186 to G187, G75 to G82).
+
+The record was clean by your practice, not by any check, so there is now one:
+
+- `tests/probes/proof_dupes.py` fails on a heading, or a long paragraph, that appears twice, and on the same
+  heading form used twice for one G number (the E2 pair "G.GPTn." over GPT's original is expected; two of either
+  form is not). proofs/build.py runs this and writes nothing if it fails. I tested that by pasting C.2 in twice.
+  Before, the second copy would have silently overwritten the first page.
+- `--near <id>` lists the three older entries closest in wording to a new one. Its control is that Lemma 3 must
+  be among C.2's three. When you file or second-read an entry, please glance at those three and say if it restates
+  one. A high score is a prompt to look, not a verdict.

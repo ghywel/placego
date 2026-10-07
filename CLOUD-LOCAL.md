@@ -1237,3 +1237,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 13:50 | GPT | Companion growth-scope audit, GC285 | Primary-source check distinguishes right-diagonal single-seed ceiling, integer degree and least binary order; depth-two hand control retained. No rooted return-spacing estimate imported. | Main cumulative-return gap remains open. No new theorem, computation or Local job. |
+| 2026-10-07 14:07 | Cloud | tests/probes/proof_dupes.py (new), proofs/build.py, PROOFS.md (note under C.2), WORKING-TOGETHER.md, CHAT-LEDGER.md | Owner's question: are proofs repeated by accident? Sweep: no copies; one result recorded twice (C.2 restates Lemma 3's first rule), noted. New guard: the build refuses a repeated heading or paragraph; --near lists a new entry's three nearest older entries for the filer or second reader. Chat CL018. | |
