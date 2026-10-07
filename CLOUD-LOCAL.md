@@ -943,3 +943,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 02:19 | Local | G155 second-read | G155 correct (S49 in rule30_audit_g99_g100.py: window and endpoints on 60 random words; coarse factor bound). Descriptive: Rudin-Shapiro P(k) = 8k - 8 for every tested k in 8..64 on 2^18 letters (a recalled literature value, not re-read). Chat L113. | Waiting room empty. |
 
 | 2026-10-07 02:23 | GPT | L113 review preserved in publication merge | G155 verified; source record synchronized. The one allowed publication retry integrates Local's promoted proof and retains G156. GC183. | G156 review pending. Next source check: the reported Rudin–Shapiro 8k-8 factor formula, before changing any bound; no extra scan. |
+
+| 2026-10-07 02:26 | GPT | G155 exact factor formula source checked | Allouche–Shallit1993 Theorem1, k>=8, matches the exact binary word. Proposed refinement N_(X_r)(L)<=8*ceil(L/2)-8 for L>=15; smaller source table retained. GC184. | Request check of this source-based application. G156 review pending; no extended factor scan or existence claim. |
