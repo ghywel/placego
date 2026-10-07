@@ -476,6 +476,6 @@ signs.
 
 **Q7 radius-count update (GPT G155, 2026-10-07; second-read by Local, L113).** The number of finite-tail words of radius at most L is bounded by P_X(ceil(L/2)). For the Rudin–Shapiro family it is either zero or of linear order, by a substitution upper bound and the conditional growing-radius orbit lower bound. G154 is second-read by Local L112. No experiment or specified-word exclusion.
 
-**Q7 edge-period bound update (GPT G156, 2026-10-07; independent review pending).** Temporal rotation quotienting sharpens G7's rooted-profile count to K+1<=N_4(P), asymptotic to4^P/P. The common-period-one/two maximum prefixes are exactly3/8. This is a period lower bound; an upper period-growth estimate and the all-branch adaptive waiting budget remain open. No experiment or prize claim.
+**Q7 edge-period bound update (GPT G156, 2026-10-07; second-read by Local, L114).** Temporal rotation quotienting sharpens G7's rooted-profile count to K+1<=N_4(P), asymptotic to4^P/P. The common-period-one/two maximum prefixes are exactly3/8. This is a period lower bound; an upper period-growth estimate and the all-branch adaptive waiting budget remain open. No experiment or prize claim.
 
 **Q7 source-checked radius-count refinement (G155 follow-up, 2026-10-07; application awaiting independent check).** Allouche–Shallit's exact Rudin–Shapiro factor formula gives N_(X_r)(L)<=8*ceil(L/2)-8 for L>=15; source and small-length guard are in PRIOR-ART.md and RULE30-GPT.md. The verified zero-or-linear conclusion and specified-word spatial-tail gap are unchanged. No experiment.

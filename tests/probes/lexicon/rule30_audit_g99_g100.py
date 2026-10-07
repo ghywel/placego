@@ -234,6 +234,11 @@ CHECKS (GPT's claims at 827e006):
      when L is odd (the free odd depth); depth 3 is 1 - c_1 and depth 4 is c_0 c_1; and on the first 2^18 letters of
      r the factor counts satisfy P(k) <= 16 h < 32 k for k <= 64 (h the least power of two >= k). Descriptive: the
      counts observed for 8 <= k <= 64 (the record's comparison with the known complexity is in the chat, not here).
+  S50 (G156, added 2026-10-07 at 9fcc564): for every period P <= 7, exhaustively over all 4^P pairs of P-periodic
+     temporal words, B(a, b) = (S b XOR (a OR b), a) commutes with rotation; the rooted tree (all pairs that reach the
+     root (0, 1^P)) has longest prefix K with K + 1 <= N_4(P), the all-necklace count; its pairs at different depths lie
+     in different rotation classes; K = 3 at P = 1 and K = 8 at P = 2 with G156's literal path; and the largest K by P
+     is reported.
 """
 import random
 from fractions import Fraction as F
@@ -2253,4 +2258,55 @@ for k in range(1, 65):
     ok49 &= pk <= 16 * h < 32 * k
 check('S49 G155: the growing determining window, its endpoints, and the coarse factor bound for Rudin-Shapiro', ok49,
       'P(k) for k = 8..16 and 64: %s' % ([pk49[k] for k in range(8, 17)] + [pk49[64]]))
+from math import gcd as _gcd
+
+
+def edge_B(a, b, P):
+    m = (1 << P) - 1
+    Sb = ((b >> 1) | (b << (P - 1))) & m             # value at time t moves to time t - 1
+    return (Sb ^ (a | b)) & m, a
+
+
+def rot_class(a, b, P):
+    m = (1 << P) - 1
+    best = None
+    for h in range(P):
+        ra = ((a >> h) | (a << (P - h))) & m
+        rb = ((b >> h) | (b << (P - h))) & m
+        best = (ra, rb) if best is None or (ra, rb) < best else best
+    return best
+
+
+ok50 = True
+K50 = {}
+for P in range(1, 8):
+    m = (1 << P) - 1
+    pairs = [(a, b) for a in range(1 << P) for b in range(1 << P)]
+    img = {x: edge_B(x[0], x[1], P) for x in pairs}
+    ok50 &= all(rot_class(*img[x], P) == rot_class(*img[rot_class(*x, P)], P) for x in pairs)
+    root = (0, m)
+    ok50 &= img[root] == (0, 0) and img[(0, 0)] == (0, 0)
+    pre = {}
+    for x, y in img.items():
+        pre.setdefault(y, []).append(x)
+    depth, frontier, d = {root: 0}, [root], 0
+    while frontier:
+        d += 1
+        nxt = [x for y in frontier for x in pre.get(y, []) if x not in depth and x[0] == y[1]]
+        for x in nxt:
+            depth[x] = d
+        frontier = nxt
+    K = max(depth.values()) + 1
+    N4 = sum(phi_ * 4 ** (P // dd) for dd in range(1, P + 1) if P % dd == 0
+             for phi_ in [sum(1 for t in range(1, dd + 1) if _gcd(t, dd) == 1)]) // P
+    classes = {}
+    for x, dx in depth.items():
+        classes.setdefault(rot_class(*x, P), set()).add(dx)
+    ok50 &= K + 1 <= N4 and all(len(v) == 1 for v in classes.values())
+    K50[P] = (K, N4)
+ok50 &= K50[1][0] == 3 and K50[2][0] == 8
+path = [(0, 3), (3, 3), (3, 0), (0, 1), (1, 3), (3, 1), (1, 1), (1, 0)]
+ok50 &= edge_B(*path[0], 2) == (0, 0) and all(edge_B(*path[i + 1], 2) == path[i] for i in range(7))
+check('S50 G156: rotation commutes with B; rooted edge depths sit in distinct classes; K + 1 <= N_4(P) for P <= 7', ok50,
+      'longest K and N_4 by period: %s' % K50)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

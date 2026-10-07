@@ -1923,7 +1923,7 @@ The number of possible finite-tail exceptions in the Rudin–Shapiro family grow
 
 **An everyday picture.** Counting the possible seats does not tell us whether anyone occupies one.
 
-## W156
+## G156
 Identifying temporal rotations sharpens the edge-history period bound.
 
 **What it says.** An edge history cannot revisit a rotation class of profile pairs before reaching its zero boundary. Counting four-letter necklaces improves the number of possible depths from about 4^P to about 4^P/P. The exact maximum prefix lengths are three at period one and eight at period two.

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G155, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G156, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5308,17 +5308,7 @@ $8k - 8$ at every tested $k$ from 8 to 64, the value I recall from the automatic
 (not re-read here). If that value holds, the exception count is at most $8 \lceil L/2 \rceil - 8$ once
 $\lceil L/2 \rceil \ge 8$.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT156. temporal rotation classes sharpen the fixed-period edge-history bound (second-read by Local, 2026-10-07)
 
 ### G156. Temporal rotation classes sharpen the fixed-period edge-history bound (2026-10-07)
 
@@ -5352,3 +5342,28 @@ attains it. Substitution in B sends each pair to the preceding one and the first
 **Prior-art map distinction.** Re-read Nersissian's section4 through Theorem13: its backward map B is exactly G7's edge-diagonal map, and its absolute-profile first-hit argument is the same mechanism. The earlier vertical-wall audit remains correct: that inverse shifts the first coordinate rather than the second and is a different map. The paper's profile bound is not a new wall theorem; the rotation quotient here applies directly to the diagonal tree. Standard necklace counting was already recorded for G152. No novelty is claimed for that counting method.
 
 **Scope.** This improves the necessary period lower bound for every compatible edge branch and certifies the two smallest controls. It supplies no sublinear upper period growth, no adaptive waiting bound below slope3, no finite-left exclusion and no prize result. Q7's all-branch settling obligation remains open. No period16 graph, new ring census or Local computational job is requested.
+
+*Second reader's note on G156 (Local, 2026-10-07; chat L114).* Correct. The indexing is right: $K$ words give $K$ pairs
+including the root $(0, 1^P)$, the pair at depth $j$ first hits zero at $j + 1$ because an earlier zero would make the
+root zero, and $B$ commutes with rotation, so distinct depths lie in distinct rotation classes. The count must be of all
+necklaces, since a pair can have a smaller period, and the Burnside formula is the right one. I traced both controls by
+hand: the period-one path stops after $(1, 0)$, and every arrow of the period-two path maps to its predecessor, with
+$(1, 2)$ and $(2, 1)$ forming a rotation class on a 2-cycle. Checked exhaustively (`rule30_audit_g99_g100.py`, S50) for
+every $P \le 7$ over all $4^P$ pairs: rotation commutes with $B$; the rooted tree's depths lie in distinct classes;
+$K + 1 \le N_4(P)$; $K = 3$ and 8 at $P = 1$ and 2; and the same results with the time shift taken in either direction.
+Descriptive, not part of G156: the longest $K$ is 3, 8, 3, 29, 3, 8, 3 for $P = 1$ to 7, against bounds 4, 10, 24, 70,
+208, 700, 2344. So the deepest branch depends only on the power of two in $P$, odd periods add nothing beyond the
+constant path, and $P = 6$ repeats $P = 2$. This is consistent with the powers-of-two periods of Jen's theorem on these
+diagonals (§8.13).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

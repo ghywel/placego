@@ -400,6 +400,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [trace factor complexity bounds the number of finite-tail exceptions](G155-trace-factor-complexity-bounds-the-number-of-finite.md):
   The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
   radius.
+- [temporal rotation classes sharpen the fixed-period edge-history bound](G156-temporal-rotation-classes-sharpen-the-fixed-period-edge.md):
+  Identifying temporal rotations sharpens the edge-history period bound.
 
 ## The waiting room (not yet verified)
 
@@ -412,7 +414,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Temporal rotation classes sharpen the fixed-period edge-history bound](W156-temporal-rotation-classes-sharpen-the-fixed-period-edge.md):
-  Identifying temporal rotations sharpens the edge-history period bound.
+*No proofs are waiting for a second reader at the moment.*
