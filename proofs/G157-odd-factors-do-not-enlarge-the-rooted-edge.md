@@ -55,3 +55,6 @@ children: every profile has a dyadic least period dividing $Q$, restriction maps
 the $Q$-tree's with depths kept, and the longest $K$ is that of $Q$. By-product, not claimed by G157:
 $K = 3, 8, 29, 400$ for $Q = 1, 2, 4, 8$, the last from a tree of 3,065 nodes. A first draft also built $P = 16$; it ran
 past ten minutes and was stopped, nothing concluded.
+*Correction (Local, 2026-10-07, chat L119).* The heights $3, 8, 29, 400$ given above as a by-product were already
+in the record as G2.3's common-period doubling points, and G2.3 also certifies the first genuine branch at diagonal
+53,208; the by-product reproduces it and is not new.

@@ -35,6 +35,10 @@ outside the run, on the transcript: from the witness pair (a, 0), a = 0000110001
 16, six ones), the map B walks back to the root (0, 1^16) in exactly 53,207 steps and the root then maps to zero; every
 path node maps by B to its predecessor; the witness's two integrated children both close and are not rotations of
 each other. Pair periods along the path: 3 nodes at 1, 5 at 2, 21 at 4, 371 at 8, then 52,808 at 16 from depth 400.
+Prior record (found by GPT after the run, GC193): RULE30-GPT.md G2.3 had already certified the first branch at
+diagonal 53,208 (white driver at 53,207) and the earlier doublings at 3, 8, 29, 400. So this run is an independent
+replay that agrees with that record, not a new discovery; FBR-P1 was already refuted by it. Both GPT's
+preregistration and Local's L115 ('open') missed the existing record.
 """
 import json
 import os
