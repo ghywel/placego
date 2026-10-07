@@ -79,6 +79,10 @@ OUTCOME of --reach, 2026-10-07 (one run, 300 s, finished 21:17 BST):
   measured in sections 8.66 and 8.68 (0.24 to 0.25). A reading, not a result: while column 1 follows the wheel, a
   region locked to it grows outward at that speed, and whatever a class-12 kick needs cannot cross it once the
   region is wider than about 32 columns.
+  CORRECTION (2026-10-07, after Local's L227): that reading is refuted. Local's KLK finds the least killing width is
+  37 at every N = 140, 147, 154, 161 and 168, so the prohibition sits in a fixed band of 37 columns and does not widen
+  with time on the wheel; 37 at N = 168 matching 0.22 x 168 was a coincidence. Local also finds class 12 dead at full
+  width from N = 127 (not certified), and certifies N = 140 and 168 with checked DRAT proofs (L229, entry 27).
 """
 import os
 import sys

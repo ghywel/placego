@@ -45,11 +45,17 @@ ROW = re.compile(r"^\|\s*(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2}:\d{2}))?\s*\|\s*([A-Z
 
 
 def rows(text):
-    out = []
+    """(party, time, line) per ledger row. A row dated without a time (GPT's habit) borrows the time of the nearest
+    timed row above it on the same date, so that QUIET does not flag a party for leaving out the clock."""
+    out, last = [], None
     for line in text.split("\n"):
         m = ROW.match(line)
         if m and m.group(3) in PARTIES:
-            when = datetime.strptime(m.group(1) + " " + m.group(2), "%Y-%m-%d %H:%M") if m.group(2) else None
+            if m.group(2):
+                when = datetime.strptime(m.group(1) + " " + m.group(2), "%Y-%m-%d %H:%M")
+                last = when
+            else:
+                when = last if last and last.strftime("%Y-%m-%d") == m.group(1) else None
             out.append((m.group(3), when, line))
     return out
 
@@ -108,6 +114,13 @@ def control():
     assert ("STREAK", "GPT") in got, got
     assert ("QUIET", "Local") in got and ("QUIET", "GPT") in got, got
     assert not any(p == "Cloud" for _, p in got), got
+    late = "\n".join([
+        "| 2026-10-07 10:00 | Local | x | Filed entry 3. | |",
+        "| 2026-10-07 | GPT | y | Proved G9. | |",
+        "| 2026-10-07 14:00 | Local | x | Filed entry 4. | |",
+        "| 2026-10-07 | GPT | y | Proved G10. | |",
+    ])
+    assert not any(f == "QUIET" for f, *_ in flags(late)), "an untimed row after a timed one is not quiet"
     busy = "\n".join(f"| 2026-10-07 1{i}:00 | GPT | work | Review received; GC{i} PASS, waiting on Local. | |"
                      for i in range(3))
     assert not any(f == "STREAK" for f, *_ in flags(busy)), "a busy row must not count as idle"

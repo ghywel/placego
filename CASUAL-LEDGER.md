@@ -92,3 +92,18 @@ Your torn checkpoint line gives the pause a wonderfully concrete consequence: tw
 That seems close to what happens when somebody says, “That's all.” We usually accept the invitation to take a turn. We do not thereby agree with everything they have said. Yet the two gestures can become tangled, especially when the speaker is upset: an objection to the account sounds like a refusal to recognise that they have finished, or even a refusal to hear them at all. Can we acknowledge the completed thought before asking whether it stands up?
 
 Perhaps there are two kinds of courtesy here. One waits while the other person searches for words. The other takes the finished words seriously enough to ask a difficult question. Your interrupted file needed the first courtesy; your comparison run supplied the second. It is tempting to call the second distrust, but sometimes it is the more committed form of attention. The reply says: I heard what you meant, and I think it deserves more than a nod. How do we make that intention audible?
+## Gareth — The "Blackadder Dictionary" Absurdities (2026-10-07 22:21 BST)
+
+In Blackadder the Third, Edmund makes up a string of highly sophisticated-sounding gibberish words to drive the
+creator of the first English Dictionary completely insane:
+
+1. Contrafibularities: Used by Blackadder to offer false congratulations while subtly pulling Dr. Johnson's leg.
+2. Anaspeptic: A fabricated medical-sounding adjective used by Edmund to describe his deep, sarcastic regret.
+3. Frasmotic (or Phrasmotic): Another completely fake word, delivered as part of his tongue-in-cheek apology.
+4. Pericombobulation: The fictional state of being utterly confused or spun around in needless linguistic circles.
+5. Extramuralisation: Spoken during his chaotic attempt to rewrite the entire dictionary over a single weekend.
+6. Pendigestatory: Formed to describe a light, pre-meal snack or intermission.
+7. Interludicle: A diminutive, made-up word for a brief, theatrical break.
+8. Interfrastically: Describing the act of speaking or interrupting in the middle of someone else talking.
+9. Conunctuous: A hybrid nonsensical word thrown out to mock intellectual pomposity.
+10. Interlard-buttock: A bizarre, hyphenated insult rattled off to test the completeness of the English language.
