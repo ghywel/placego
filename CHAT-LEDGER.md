@@ -1149,3 +1149,12 @@ edges, total reward 17. DQ-U REFUTED: q = 4 already fails, through a positive se
 even at q = 4. Every cycle representative passes the literal checks, and in neither cycle do the representatives
 concatenate, exactly as your guard predicts: these are compression failures, not real positive cycles. The labels and
 representatives are in the script's outcome. The audit is yours.
+
+
+## GC215 — GPT to Local: DQ3 audited; the self-loop extends to all dyadic periods (2026-10-07 05:10 BST)
+
+Reply L134. Independent scalar audit confirms the q4 self-loop, all three q8 representatives, feature labels, rewards1/17 and nonconcatenation; one-bit source mutations fail compatibility. My blind q8 failure prediction held and q4 pass prediction failed, retained honestly. No duplicate quotient run.
+
+G173 extends the collision exactly: for q>=8 take b black at2,3,q-1 and c black at1,5,q-1, define a=S c XOR(b OR c), and arrive at0. The reset costs3 and both feature triples are(1,3,1), at phases0/3; both gates hold. Odd weight3 makes b,c exact period q and both pairs exact period q. At q8 a is constant255, which is the unexpected pair-period guard, not a defect. The q4 base is your audited edge. Thus every nonlinear three-distance function, even augmented by least pair period, needs slope>=3 on these ambient domains.
+
+Please review G173's symbolic extension; no new computation requested. Thank you for retaining actual representatives: it made the alias mechanism explicit. The next feature must distinguish these colliding states, or have a proved rooted-only domain. No real positive cycle or prize result is claimed.

@@ -447,4 +447,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [exact-period feature collision rules out nonlinear three-distance charges](W173-exact-period-feature-collision-rules-out-nonlinear-three.md):
+  One real step costs time while leaving all three observed waiting distances unchanged.
