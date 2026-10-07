@@ -22,7 +22,7 @@ scripts are in `tests/probes/openai_math/`; their predictions were pushed before
 Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
 (that needs the toolchain and a mathlib build, and is the first of the hard ones).
 
-**Batch 1 (2026-10-07): 5 of 372 families imported, 2 at level A and 3 at level B.** Batch 2 adds 049b and 186.
+**Batch 1 (2026-10-07): 5 of 372 families imported, 2 at level A and 3 at level B.** Batch 2 adds 049b, 186 and 175.
 
 | Family | Result | Level | Script |
 |---|---|---|---|
@@ -30,6 +30,7 @@ Where the release says a Lean formalisation exists, the entry says so; Cloud has
 | 049 | A polynomial whose zero set is flat 3-space but which is not a coordinate | A | `om049_noncoordinate.py` |
 | 049b | A degree-5 stable coordinate that is not a coordinate; every fibre flat | A | `om049b_stable_coordinate.py` |
 | 186 | Symmetric properties: influence at least $(\log n)^{r/(r-1)}$ times the variance | A | `om186_influence.py` |
+| 175 | Discrete convexity: $2^{75}$ unions leave only a $p$-small family | A | `om175_discrete_convexity.py` |
 | 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
 | 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
 | 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
@@ -342,6 +343,66 @@ $r = 2$, where the bias factor is $\sigma^0$.
 cell. This theorem says symmetry alone forces the total influence up, and the method (restrict to a block, keep its
 symmetry, cancel the two $m/n$ factors) is the kind of argument a shift-invariant automaton might allow. The
 two-to-four bound at every bias, with its explicit $\rho = \sigma/4$, is usable on its own.
+
+---
+
+## 175. Talagrand's discrete convexity: 2^75 unions suffice (level A)
+
+*Preprint:* "Talagrand's discrete-convexity conjecture", 2026-09-23. Lean: the release lists a formalisation for
+the family.
+
+**Statement.** Let $\mu_p$ be the product measure on subsets of $[N]$, each element present with probability $p$.
+For a family $\mathcal D$, let $E_k(\mathcal D)$ be the sets contained in no union of $k$ members of $\mathcal D$.
+Call a family *$p$-small* if a family $\mathcal G$ with $\sum_{I \in \mathcal G} p^{|I|} \le 1/2$ has a member
+inside each of its sets (a union-bound certificate that it has measure at most 1/2). Then, with $k = 2^{75}$, for
+every $N$, every $p$ and every family $\mathcal D$, monotone or not,
+
+```math
+\mu_p(\mathcal D) \ge 1 - \frac1k \quad \Longrightarrow \quad E_k(\mathcal D) \text{ is } p\text{-small}.
+```
+
+This is Talagrand's 2010 conjecture (his Research Problem 13.3.2 in the 2021 book). For a positive selector process
+$\phi(S) = \sup_{t \in T} \sum_{i \in S} t_i$ it gives an explicit certificate:
+$\{S : \phi(S) \ge k^2\, \mathbb{E}\phi\}$ is $p$-small (Park and Pham proved this by other means).
+
+**How it works.** The key quantities are signed weights,
+
+```math
+b(U) = (1-q)^{|U|} \sum_{z \in \{0,1\}^U} (-1)^{\sum z}\, \mathbb{E}\big[f(z, Y)\big], \qquad
+\sum_{U} q^{|U|}\, b(U)^2 \le \mu_q(\mathcal F) \le 1,
+```
+
+where $f$ is the indicator of $\mathcal F$ and $Y$ is Bernoulli-$q$ off $U$. The weight bound is Parseval in the
+biased Fourier basis, since $\hat f(U) = (q/(1-q))^{|U|/2} b(U)$. A signed measure on 32-row arrays, which
+vanishes on any column that is all zeros, gives for every exceptional $S \in E_{32}(\mathcal F)$
+
+```math
+\sum_{U \subseteq S} (-1)^{|U|}\, b(U)^{32} = 0, \qquad\text{so}\qquad
+\sum_{\varnothing \ne U \subseteq S} b(U)^{32} \ge b(\varnothing)^{32} = \mu_q(\mathcal F)^{32} \ge 2^{-32}.
+```
+
+Sets with large weight are cheap generators. The rest are binned by size and weight, and an elementary covering
+lemma (select subsets of high weighted degree, sample unions of pairs, add the residual tuples) covers every set
+that contains too many members of one bin. The bins' sixteenth powers then fall short of $2^{-32}$. That covers
+$E_{32}(\mathcal F)$ at density $q/2^{70}$. A coupling of $2^{70}$ dependent rows, each exactly $\mu_p$, whose union
+is $\mu_{2^{70}p}$ (or everything), returns the density to $p$.
+
+**What it does.** It turns "a family is very likely" into "a few of its members' unions cover everything except an
+explicitly cheap exceptional family", with an explicit constant, for arbitrary families.
+
+**How it was checked.** Cloud read the proof, about 16,000 characters: correct, constants included. The script
+checks, with Cloud's own code: the signed identity, exactly, with 2 rows (Li's kernel) and with 32 rows, on 2,217
+exceptional pairs of family and set each; the weight bound and $b(\varnothing) = \mu_q$; both couplings' laws,
+exactly; and every constant ($6/(2^{64}-1) < 1/4$, $16/(15(2^{256}-1)) < 2^{-32}$, the lemma's
+$4h + 13rh + 1 \le 2^{4h}$). Control: off the exceptional sets the signed sum is nonzero for 99% of pairs, so the
+identity is not checking nothing. Cloud's loose guess that this share would be at least 90% was right. One change was
+made after the first run, and the script says so: half of the random families now avoid some coordinates, because
+purely random families gave only 26 exceptional pairs. The preprint's two-union corollary rests on outside results
+and is not imported.
+
+**For us.** A clean example of the "signed measure that vanishes on the forbidden configuration" technique. A
+pointwise-zero product, expanded, becomes an identity among Fourier-type weights. Rule 30's forbidden patterns might
+be attacked the same way.
 
 ---
 

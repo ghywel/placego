@@ -19,7 +19,7 @@ every S in E_(2t)(F) satisfies sum over U inside S of (-1)^|U| b(U)^(2t) = 0. Be
 this forces the sixteenth powers of w(U) = b(U)^2 to be large on S, while Parseval keeps sum q^|U| w(U) <= 1.
 Checks, by Cloud's own code:
   C1  the signed identity, exactly, for t = 1 (Li's kernel) and t = 16 (the preprint's 32 rows), on random families
-      of up to 6 coordinates, for every S in E_(2t)(F);
+      of up to 6 coordinates, half of them avoiding a random set of coordinates, for every S in E_(2t)(F);
   C2  the weight bound sum over U of q^|U| w(U) <= mu_q(F), exactly, and the identity f^(U) = (q/(1-q))^(|U|/2) b(U)
       squared;
   C3  both couplings of section 3 give each row the law mu_p, and the union the law mu_(Lp) or the full set, exactly
@@ -63,11 +63,14 @@ def exceptional(f, N, m):
 def main():
     rng = random.Random(175)
     res = {}
-    ok1, ctl_nonzero, ctl_total, ok2 = True, 0, 0, True
-    for trial in range(60):
+    ok1, ctl_nonzero, ctl_total, ok2, tested = True, 0, 0, True, {1: 0, 16: 0}
+    for trial in range(200):
         N = rng.randint(2, 6)
         q = Fr(rng.randint(1, 9), 10)
-        f = {x for x in range(1 << N) if rng.random() < rng.choice([0.2, 0.4, 0.6])}
+        # Half the families avoid a random set Z of coordinates, so every S meeting Z is exceptional. (Added after
+        # the first run, whose purely random families left only 26 exceptional pairs for each row count.)
+        Z = rng.randrange(1, 1 << N) if trial % 2 else 0
+        f = {x for x in range(1 << N) if x & Z == 0 and rng.random() < rng.choice([0.2, 0.4, 0.6])}
         if not f:
             continue
         b = b_weights(f, N, q)
@@ -80,10 +83,12 @@ def main():
                 val = sum((-1) ** bin(U).count("1") * b[U] ** (2 * t) for U in range(1 << N) if U & ~S == 0)
                 if S in E:
                     ok1 &= val == 0
+                    tested[t] += 1
                 elif t == 1:
                     ctl_total += 1
                     ctl_nonzero += val != 0
-    res["C1  signed identity vanishes on every exceptional set (t = 1 and t = 16)"] = ok1
+    res["C1  signed identity vanishes on every exceptional set (t = 1 and t = 16)"] = ok1 and min(tested.values()) > 50
+    print(f"   exceptional pairs (F, S) tested: {tested[1]} with 2 rows, {tested[16]} with 32 rows")
     res["C2  b(empty) = mu_q(F) and sum q^|U| w(U) <= mu_q(F)"] = ok2
     share = ctl_nonzero / max(1, ctl_total)
     print(f"   control: the t = 1 sum is nonzero for {ctl_nonzero} of {ctl_total} non-exceptional (F, S) "
