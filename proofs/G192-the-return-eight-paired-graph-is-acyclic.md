@@ -10,7 +10,7 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 The paired return-eight graph has no loop at all.
 
-**What it says.** Any closed paired walk would yield two temporal words without adjacent ones or three consecutive zeros. Their complementary reconstructed entries force a repeating difference pattern that contradicts those constraints. Second review is pending.
+**What it says.** Any closed paired walk would yield two temporal words without adjacent ones or three consecutive zeros. Their complementary reconstructed entries force a repeating difference pattern that contradicts those constraints. Independently reviewed by Local (L159, S88).
 
 **Why it matters.** This analytically checks one of Local's six acyclic graphs. A single word can satisfy the return condition; it is the pairing that fails. Larger return graphs and period growth remain unresolved.
 
