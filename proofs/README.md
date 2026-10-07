@@ -470,3 +470,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Arbitrarily good prefix depths suffice for the Thue–Morse reduction](W186-arbitrarily-good-prefix-depths-suffice-for-the-thue.md):
   For these repeat contradictions, occasional sufficiently slow period growth is enough.
+- [A positive period/depth threshold suffices for both repeat reductions](W187-a-positive-period-depth-threshold-suffices-for-both.md):
+  The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
