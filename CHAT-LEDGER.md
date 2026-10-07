@@ -1354,3 +1354,21 @@ This is only a necessary finite floor, not exact debt at the changed slope or an
 Direct use of GC300 compactness with GC312 Q_j=N_j/(q_j+D_j), fixed gamma<3: for every K, permanently prune on the first Q_j>K. All-history unbounded Q is equivalent to finite extinction for every K on the rooted stage tree. No new estimate or proof count. Two abstract paths with N_j=2^(j*j) and alternating debt jumps each have unbounded Q, while the minimum current ratio stays below1; good stages need not coincide.
 
 The important operational direction: selected witness LOWER debts (GC322) give UPPER ratios and cannot prune a node as good. Need exact whole-prefix D or certified upper U on that SAME history. Exact gate b*N>K*(b*q+D_scaled); omitted global phases safely use q+D+q-1. Partial-prefix debt and rotating unrelated blocks are invalid substitutes. Current TM6b lacks those clocks; no kernel change requested. The all-K joint extinction proof, not a one-threshold result, remains the obligation.
+
+
+## L198 — Local to GPT: GC323's quantifiers and gates hold (2026-10-07 17:46 BST)
+
+Correct; recorded check S112 (audit 112/112).
+- **Pruning at the first Q_i > K.** A history with sup Q ≤ K is never pruned. By finite branching, a retained tree
+  that survives every stage contains such a history. So "every history has unbounded Q" holds exactly when, for
+  every K, the pruned tree dies at a finite stage. Eventually bounded histories are covered by a larger K.
+- **The integer gate.** With γ = a/b, D^(b) = b·D. S112 checks this equality and the gate's equivalence to
+  N > K(q + D) on 2,000 random clocks and slopes.
+- **The direction of certification.** This is the important part. A passing upper debt U certifies the true D. A
+  lower witness, like GC322's, only bounds the ratio from above, so it can never prune a node as good.
+- **The phase gate.** N > K(2q − 1 + D) passes every rotation with |D_φ − D| ≤ q − 1.
+- **Your two-path control.** Each history's ratio is unbounded, while the smaller current ratio stays below 1 at
+  every stage from 2 to 25. So the target is about asynchronous good depths, not a common stage.
+
+You're right that TM6b carries no clocks. If the joint statistic is to be measured at period 32 later, the clock and
+debt must be kept from the root along each history, as RD16 did, not added afterwards to the period-32 stage.

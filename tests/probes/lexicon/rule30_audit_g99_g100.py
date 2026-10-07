@@ -584,6 +584,12 @@ CHECKS (GPT's claims at 827e006):
      columns to its left exactly; Theorem B's 2P - 2 <= 12 puts any bounded run plus its left boundary within 13
      columns at P <= 7, inside AW2's 40-column excess census; and every pair with a periodic right continuation
      (S108's _per108) keeps its bounded row-0 runs within AW's actual maxima to depth 200.
+  S112 (GC323, added 2026-10-07 at e3c2c40): on 2,000 random clocks and rational slopes 1 <= a/b < 3, D^(b) = max
+     b(T_v - T_u) - a(v - u) equals b D and the integer gate b N > K(b q + D^(b)) agrees with N > K(q + D); a passing
+     upper debt U >= D certifies D, while a lower bound only bounds the ratio from above; |D_phi - D| <= q - 1 makes N
+     > K(2q - 1 + D) pass every phase; GPT's two abstract schedules (q_j = 2^j, N_j = 2^(j^2), debt jumps on alternate
+     parities) have nondecreasing debts, both ratios unbounded, and the smaller current ratio below 1 at every stage j
+     = 2 .. 25.
 """
 import random
 from fractions import Fraction as F
@@ -6088,4 +6094,53 @@ for P in range(3, 8):
 check('S111 GC316: the forced left half is translation invariant (re-anchoring at any black column reproduces the '
       'columns to its left); bounded runs fit in 13 columns at P <= 7; periodic-admissible pairs stay within AW\'s '
       'maxima to depth 200', ok111)
+ok112 = True
+_rng112 = random.Random(323)
+# GC323's exact integer gate: with gamma = a/b and D^(b) = max over u <= v of b(T_v - T_u) - a(v - u) = b D, the test
+# b N > K (b q + D^(b)) is N > K (q + D); an upper debt U >= D that passes also certifies D; a lower bound L <= D only
+# bounds the ratio from above (random clocks)
+for trial in range(2000):
+    a, b = _rng112.randint(1, 29), _rng112.randint(1, 10)
+    if _Fr(a, b) >= 3 or _Fr(a, b) < 1:
+        continue
+    T = [0]
+    for _ in range(_rng112.randint(1, 30)):
+        T.append(T[-1] + _rng112.randint(0, 6))
+    Db = max(b * (T[v] - T[u]) - a * (v - u) for u in range(len(T)) for v in range(u, len(T)))
+    D = max(_Fr(T[v] - T[u]) - _Fr(a, b) * (v - u) for u in range(len(T)) for v in range(u, len(T)))
+    ok112 &= Db == b * D
+    N, q, K = _rng112.randint(1, 10 ** 6), 2 ** _rng112.randint(0, 6), _rng112.randint(1, 50)
+    ok112 &= (b * N > K * (b * q + Db)) == (N > K * (q + D))
+    U = D + _rng112.randint(0, 20)
+    if N > K * (q + U):
+        ok112 &= N > K * (q + D)
+    L = D - _rng112.randint(0, 20)
+    ok112 &= _Fr(N, q + max(L, 0)) >= _Fr(N, q + D) if L >= 0 else True
+# the all-phase gate: |D_phi - D| <= q - 1 gives q + D_phi <= 2q - 1 + D, so N > K(2q - 1 + D) passes every phase
+for trial in range(2000):
+    q = 2 ** _rng112.randint(0, 10)
+    D = _rng112.randint(0, 10 ** 5)
+    Dphi = max(0, D + _rng112.randint(-(q - 1), q - 1))
+    N, K = _rng112.randint(1, 10 ** 8), _rng112.randint(1, 100)
+    if N > K * (2 * q - 1 + D):
+        ok112 &= N > K * (q + Dphi)
+# GPT's asynchronous control: q_j = 2^j, N_j = 2^(j^2); history A has D_j = N_j at odd j (carried to the next even j),
+# B the reverse; each debt sequence is nondecreasing, each history's ratio is unbounded along alternate stages, and
+# the smaller of the two current ratios is below 1 at every stage
+def _hist112(odd, J):
+    D, out = 0, []
+    for j in range(2, J):
+        if j % 2 == odd:
+            D = 2 ** (j * j)
+        out.append((j, D))
+    return out
+_A112, _B112 = _hist112(1, 26), _hist112(0, 26)
+ok112 &= all(x[1] <= y[1] for h in (_A112, _B112) for x, y in zip(h, h[1:]))
+_QA = [_Fr(2 ** (j * j), 2 ** j + D) for j, D in _A112]
+_QB = [_Fr(2 ** (j * j), 2 ** j + D) for j, D in _B112]
+ok112 &= all(min(x, y) < 1 for x, y in zip(_QA, _QB))
+ok112 &= max(_QA) > 2 ** 40 and max(_QB) > 2 ** 40
+check('S112 GC323: the exact integer gate equals N > K(q + D); upper debt certifies, lower debt only bounds above; the '
+      'all-phase gate N > K(2q - 1 + D); the asynchronous two-path control (both unbounded, minimum current ratio < 1)',
+      ok112)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

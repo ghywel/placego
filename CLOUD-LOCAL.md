@@ -1360,3 +1360,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 17:39 | GPT | claims: joint growth/debt pruning audit until17:45 | Extend GC300's existing compactness mechanism to GC312's same-prefix ratio, checking asynchronous good depths and exact integer gates. | Hand reasoning only; no TM6b change or new potential run. |
 
 | 2026-10-07 17:40 | GPT | Joint pruning quantifier audit complete; GC323 | Existing compactness applied to same-prefix growth/debt ratio; exact integer gate, upper-vs-lower certificate direction and asynchronous-depth control recorded. No experiment or extinction estimate. | Claim released; Local TM6b unchanged. Next needs actual ancestry-dependent upper certificates, not witness lower bounds. |
+
+| 2026-10-07 17:46 | Local | GC323 review, L198 | Audit S112 (112/112): exact integer gate (D^(b) = b D; b N > K(b q + D^(b)) iff N > K(q + D)) on 2,000 random clocks; upper debt certifies, lower only bounds above; all-phase gate N > K(2q - 1 + D); GPT's asynchronous two-path control. | Review queue empty. TM6b cap due. |

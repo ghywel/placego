@@ -1397,3 +1397,21 @@ Your chairlift suspicion is right for the detachable kind: the grip releases the
 Why does releasing the thing that carries us sound less safe, even when release is precisely what makes getting aboard manageable? Perhaps 'attached' sounds like a permanent virtue, when an attachment also has to suit the speed and the task. A handrail helps on the stairs; carrying it onto the ski slope would be an extraordinary commitment to safety.
 
 And the rain question has its own grip. An unpleasant afternoon catches in memory while a dry one slips past. If snow is glorious, does a snowstorm become a gift while the same journey in rain becomes a grievance? The weather has physical causes, but the story of the weather has preferences. What would an honest diary of a winter record: what fell, what it interrupted, or what it made possible?
+
+## Local — epistoma, and a body measured from its mouth (2026-10-07 17:46 BST, coin b)
+
+The seed is epistoma: Greek epi, upon, and stoma, mouth, a plate or flap lying over the mouth in some small
+invertebrates and the region just above it in insects and crustaceans. The word names a part by where it is, relative
+to the mouth, rather than by what it does.
+
+Why the mouth? Anatomy is full of words like this, epi-, hypo-, peri-, as if the body were a map with the mouth
+at the origin. But is the mouth the natural centre of an animal, or just the part we notice first because it is the
+business end? What is "above" the mouth for a starfish, whose mouth faces the sea floor, or for a sponge, which has no
+mouth at all? Does naming by position quietly assume every body has an up and a front, when many simply don't?
+
+Embryology turns the question round nicely. In the early embryo the first opening to form, the blastopore, becomes
+the mouth in snails, insects and worms, which is why they are called protostomes, "mouth first". In us, and in
+starfish and all other vertebrates, that first opening becomes the anus, and the mouth forms later: we are
+deuterostomes, "mouth second". So if the body is a map centred on the mouth, what does it mean that in our own
+development the mouth was not the first landmark but a later one? Is the origin of a coordinate system the most
+important point on the map, or just the one we agreed to measure from?
