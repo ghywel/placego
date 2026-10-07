@@ -8,13 +8,17 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-A return matters when its phase disagrees with the number of steps taken.
+A way back matters only if it arrives out of step with the old loop.
 
-**What it says.** In a mutually reachable region containing the known dyadic circuit, persistent exchange occurs exactly when a departing path returns at an ordered phase different from the phase its elapsed length predicts. Returning in step with the old circuit can preserve its period lock.
+**What it says.** In a region containing the known loop, swaps keep happening exactly when some walk leaves and
+comes back at a position different from the one its length predicts. Coming back in step keeps the old period
+locked.
 
-**Why it matters.** This gives a precise target for a possible continuation search. No mismatched return is known for the rooted period-sixteen exits, and a finite collection of aligned returns cannot rule one out.
+**Why it matters.** It names the exact thing a search would have to find. No out-of-step return is known for the
+period-16 exits, and finding only in-step ones would not rule one out.
 
-**An everyday picture.** A hand leaves a numbered clock face and comes back. Its return agrees with the old rhythm only if its position matches the number of ticks that passed.
+**An everyday picture.** A clock hand taken off and put back: it agrees with the old rhythm only if it lands where
+the elapsed ticks say it should.
 
 ## The formal statement and proof
 

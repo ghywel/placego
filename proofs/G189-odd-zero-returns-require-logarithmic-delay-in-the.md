@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-An odd-length return to a completely white profile needs more steps as the repeat period grows.
+An odd-length return to an all-white stripe takes longer as the period grows.
 
-**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the number of doublings needed to reach period q, plus three steps (for periods that are powers of two). Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
+**What it says.** For a stripe whose period is a power of two, a first return to all white after an odd number of
+steps takes at least twice the number of doublings so far, plus three. Working backwards from the end, each new tick
+of the stripe is fixed by a few before it, so an odd return follows a set track. Even-length returns can branch, and
+escape the argument.
 
-**Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
+**Why it matters.** It gives a restriction that grows with the period, though only slowly, and isolates the even
+returns as the hard case.
 
-**An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
+**An everyday picture.** A row of switches where each setting decides the next must come round in a loop; allow one
+free choice and the counting no longer limits the journey.
 
 ## The formal statement and proof
 

@@ -8,13 +8,18 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Paths that exchange two starting patterns have a restricted eventual period behavior.
+Walks that swap the two halves either exist for every large period or for none.
 
-**What it says.** In a finite directed graph whose symmetry exchanges two halves, paths of half a dyadic period to the exchanged starting point either exist for every sufficiently large period, or all admitted periods are bounded by the number of vertices. The test uses mutually reachable regions and the classes that each edge advances through. An explicit, conservative cutoff is eight times the square of the number of vertices: checking admission at one dyadic period beyond it distinguishes the two alternatives. Independently reviewed by Local (L157, S85-S87).
+**What it says.** In a finite map with a swap symmetry, walks to the swapped start of half a period's length either
+exist for every large enough power-of-two period, or only for periods below the number of positions in the map.
+Checking one period beyond eight times the square of that number decides which. Local reviewed it (L157). In Rule
+30's maps, the first case needs a fork inside a region the walk can circle.
 
-**Why it matters.** Applied to G190, this characterizes the weaker question of whether absolute return delays grow. In the Rule30 graphs, a persistent component must contain branching within that component; a single cycle cannot suffice. The actual return graphs remain unclassified; it establishes neither normalized growth nor a path from the root.
+**Why it matters.** It turns 'do return delays keep growing?' into a finite check on each map. The real maps are
+still unclassified.
 
-**An everyday picture.** Two markers move around a circular track. Exchanging their starting positions can preserve their position in the repeating schedule, or shift it halfway around. Those two arrangements permit different journey lengths.
+**An everyday picture.** Two runners on a circular track, starting apart: whether they can ever swap places at a
+given lap depends on how the track's loops are arranged, not on luck.
 
 ## The formal statement and proof
 

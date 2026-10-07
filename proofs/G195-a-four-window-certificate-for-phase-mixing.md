@@ -8,13 +8,17 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-Four windows can certify local phase mixing, but a return path is essential.
+A small local pattern proves the swaps can mix, but only if a way back exists.
 
-**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194.
+**What it says.** Two steps from the same place with opposite order bits occur exactly at one small pattern of four
+windows. Inside a region a walk can circle, that pattern settles G194's test in favour of every large period. The
+length-eight map contains the pattern but has no loop, so there it proves nothing.
 
-**Why it matters.** This gives a concrete sufficient witness to seek without classifying a whole larger graph. The actual return-eight graph contains the local pattern but is acyclic, so local branching alone proves no persistence. Long overlap also excludes this pattern on the known short-period return walks themselves; a reachable detour would be needed. Rooted and normalized growth remain open.
+**Why it matters.** It gives something concrete to search for without classifying a whole map, and shows why a local
+fork alone is not enough.
 
-**An everyday picture.** Two routes can reach the same doorway with the cards exchanged differently. To repeat the choice, there must also be a way back to the departure point.
+**An everyday picture.** Two doors from the same hall lead to rooms where the cards end up in different orders; to
+choose again and again, there must also be a corridor back to the hall.
 
 ## The formal statement and proof
 

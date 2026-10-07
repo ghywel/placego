@@ -448,40 +448,40 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [form actual edge context before compression; conditional lift pays the first edge](G179-form-actual-edge-context-before-compression-conditional-lift.md):
   Check the real connections first, then simplify the labels.
 - [the finite RC2 certificate verified statically](G182-the-finite-rc2-certificate-verified-statically.md): The
-  small-period reached timing certificate passes independent verification.
+  period-8 timing budget passes a check from scratch, but it is almost a full list of the steps.
 - [compression fails exactly at positive label-balanced edge collections](G183-compression-fails-exactly-at-positive-label-balanced-edge.md):
-  A standard graph criterion, applied: the failed meters balance their labels while charging a positive amount of
-  time.
+  Every failed budget failed the same way: a round trip that looks closed to the labels but takes too long.
 - [the period-growth gap is an exponentially weighted stage-length condition](G184-the-period-growth-gap-is-an-exponentially-weighted.md):
-  Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
+  How fast periods must grow along an edge history: stages that are long only in proportion to their period are not
+  enough.
 - [maximal difference order can return three edges after a doubling](G185-maximal-difference-order-can-return-three-edges-after.md):
-  The difference-order deficit after a doubling can disappear in three steps.
+  After a doubling, a stripe can become maximally complex again in just three steps.
 - [arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions](G186-arbitrarily-good-prefix-depths-suffice-for-the-thue.md):
-  For these repeat contradictions, occasional sufficiently slow period growth is enough.
+  For the Thue–Morse and paperfolding cases, slow period growth only some of the time is enough.
 - [a positive period/depth threshold suffices for both repeat reductions](G187-a-positive-period-depth-threshold-suffices-for-both.md):
-  The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
+  The period need only be a small enough fraction of the depth, not a vanishing one.
 - [a doubled stage of period at least four cannot return to zero within eleven steps](G188-a-doubled-stage-of-period-at-least-four.md):
-  After a period doubles, the next completely white profile cannot appear within eleven steps.
+  After a period doubles, an all-white stripe cannot come back within eleven steps.
 - [odd zero returns require logarithmic delay in the entry period](G189-odd-zero-returns-require-logarithmic-delay-in-the.md):
-  An odd-length return to a completely white profile needs more steps as the repeat period grows.
+  An odd-length return to an all-white stripe takes longer as the period grows.
 - [even returns as paths between swapped temporal halves](G190-even-returns-as-paths-between-swapped-temporal-halves.md):
-  An even return can be described by keeping both temporal halves together.
-- [dyadic swap paths have an eventual dichotomy](G191-dyadic-swap-paths-have-an-eventual-dichotomy.md): Paths that
-  exchange two starting patterns have a restricted eventual period behavior.
-- [the return-eight paired graph is acyclic](G192-the-return-eight-paired-graph-is-acyclic.md): The paired
-  return-eight graph has no loop at all.
+  An even-length return can be followed by keeping the stripe's two halves together.
+- [dyadic swap paths have an eventual dichotomy](G191-dyadic-swap-paths-have-an-eventual-dichotomy.md): Walks that
+  swap the two halves either exist for every large period or for none.
+- [the return-eight paired graph is acyclic](G192-the-return-eight-paired-graph-is-acyclic.md): The map for returns
+  of length eight has no loop at all.
 - [prune paired windows and retain the swap bit in the quotient](G193-prune-paired-windows-and-retain-the-swap-bit.md):
-  The paired graph can be reduced while keeping a bit that records exchange.
+  The paired map can be shrunk, provided each step records whether the pair changed order.
 - [two binary potentials test the quotient persistent phase](G194-two-binary-potentials-test-the-quotient-persistent-phase.md):
-  Two binary equations expose the obstruction to persistent exchange.
-- [a four-window certificate for phase mixing](G195-a-four-window-certificate-for-phase-mixing.md): Four windows can
-  certify local phase mixing, but a return path is essential.
+  Two yes-or-no equations decide whether a loop region can keep swapping.
+- [a four-window certificate for phase mixing](G195-a-four-window-certificate-for-phase-mixing.md): A small local
+  pattern proves the swaps can mix, but only if a way back exists.
 - [a diagonal parity test for both temporal extensions](G196-a-diagonal-parity-test-for-both-temporal-extensions.md):
-  A backward diagonal tells whether a temporal window accepts both next bits.
+  A quick test says whether a window can be followed by either next tick.
 - [long overlap delays an exit return to the original circuit](G197-long-overlap-delays-an-exit-return-to-the.md): A
-  long window keeps an exit from quickly returning to the old circuit.
+  stripe that leaves the known loop cannot rejoin it quickly.
 - [a return with a phase mismatch decides the known component](G198-a-return-with-a-phase-mismatch-decides-the.md):
-  A return matters when its phase disagrees with the number of steps taken.
+  A way back matters only if it arrives out of step with the old loop.
 
 ## The waiting room (not yet verified)
 

@@ -8,13 +8,17 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-A long window keeps an exit from quickly returning to the old circuit.
+A stripe that leaves the known loop cannot rejoin it quickly.
 
-**What it says.** An unchanged prefix still identifies the original phase while the first flipped bit remains farther along the window. During that interval the window cannot match the old circuit, whatever bits are appended next. The known rooted period-sixteen exits need at least 26,396 steps before any rejoin.
+**What it says.** While the first changed tick is still inside the window, the unchanged part keeps recording the
+old phase, so the window cannot match the old loop whatever follows. For the known exits at period 16, that means at
+least 26,396 steps before any rejoining.
 
-**Why it matters.** A short detour search cannot find a return in this case. The bound does not guarantee a legal continuation, a return or persistence.
+**Why it matters.** It shows that a short search for a way back cannot succeed here. It does not show that a way
+back, or any legal continuation, exists.
 
-**An everyday picture.** A strip of paper moves through a frame. A changed mark remains visible beside the unchanged part until enough paper has passed through.
+**An everyday picture.** A changed letter on a ticker tape stays in view until enough tape has passed through the
+window.
 
 ## The formal statement and proof
 

@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Two binary equations expose the obstruction to persistent exchange.
+Two yes-or-no equations decide whether a loop region can keep swapping.
 
-**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur.
+**What it says.** For a region of the shrunken map that a walk can circle, two simple equations on the order bits
+decide everything: either swaps never happen, or they are locked to one period, or every large enough power-of-two
+period allows one.
 
-**Why it matters.** This expresses the known component phase test as finite binary equations, while retaining parallel edges. No larger actual component is classified and no growth bound follows.
+**Why it matters.** It turns the swap question for any one region into a quick finite test. No larger real region
+has been classified.
 
-**An everyday picture.** Marking a complete lap is different from marking every step. A two-track route can keep the tracks apart, exchange them only after one lap, or permit exchange after many lap counts.
+**An everyday picture.** On a two-lane running track, the lanes can stay apart, cross once a lap, or cross in ways
+that fit many lap counts; a lap chart shows which.
 
 ## The formal statement and proof
 

@@ -8,13 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-A standard graph criterion, applied: the failed meters balance their labels while charging a positive amount of time.
+Every failed budget failed the same way: a round trip that looks closed to the labels but takes too long.
 
-**What it says.** A budget based on chosen labels fails exactly when some collection of actual steps has equal arrivals and departures at every label but positive total timing reward. Actual states need not join. A label-balanced collection makes every budget term cancel.
+**What it says.** A budget built on chosen labels fails exactly when some collection of real steps arrives at and
+leaves every label equally often, so that it looks like a closed round trip, yet takes more time than the allowance.
+The real states along it need not join up at all.
 
-**Why it matters.** This unifies the specific compression failures without claiming all compression is impossible. A successful finite meter still needs a separate bound on its size as periods grow.
+**Why it matters.** It explains all the failed candidates of G166 to G182 at once, without claiming that every
+shortcut must fail. A budget that works would still need a bound on its size as the period grows.
 
-**An everyday picture.** A ledger balances station names but accidentally treats different stations as the same one. If the supposed round trip earns time, no allowance based on those names can pay it.
+**An everyday picture.** A map that gives two stations the same name shows a round trip that does not exist, and a
+fare chart built on the names cannot charge for it.
 
 ## The formal statement and proof
 

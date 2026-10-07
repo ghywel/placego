@@ -9,13 +9,17 @@ rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this sum
 
 ## In plain words
 
-For these repeat contradictions, occasional sufficiently slow period growth is enough.
+For the Thue–Morse and paperfolding cases, slow period growth only some of the time is enough.
 
-**What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
+**What it says.** Assume the timing budget of gap 1. Then to exclude Thue–Morse and the recorded paperfolding codes,
+it is enough that the period is very small compared with the depth at infinitely many depths, not at all of them.
+Local second-read it (L151).
 
-**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the conditional lemma was second-read by Local L151.
+**Why it matters.** It weakens what gap 2 has to prove. Neither this nor the budget is yet proved on the real
+histories.
 
-**An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.
+**An everyday picture.** A detective needs a clear fingerprint whenever one is asked for, not one on every surface
+of the room.
 
 ## The formal statement and proof
 

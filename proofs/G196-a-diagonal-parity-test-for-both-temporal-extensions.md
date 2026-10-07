@@ -8,13 +8,16 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-A backward diagonal tells whether a temporal window accepts both next bits.
+A quick test says whether a window can be followed by either next tick.
 
-**What it says.** Adding the shorter backward functions on successive suffixes gives the change in the final constraint when the next bit flips. Two paired windows have two successors precisely when each accepts both next bits. Their tails need not match.
+**What it says.** Adding up a few shorter backward checks shows how the final constraint changes when the next tick
+flips, and so whether a window accepts both. A pair of windows forks exactly when each accepts both.
 
-**Why it matters.** This tests general branching, beyond the earlier parallel-edge pattern. Persistence still requires both successors to lie inside a recurrent component; the actual return-eight example branches but has no cycle.
+**Why it matters.** It tests forking in general, beyond the pattern of G195. A fork matters only inside a region a
+walk can circle, and the length-eight map forks without one.
 
-**An everyday picture.** Two doors open from the same corridor. Their being open says nothing about whether either route can bring you back.
+**An everyday picture.** Two doors stand open from the same corridor; that says nothing about whether either leads
+back.
 
 ## The formal statement and proof
 

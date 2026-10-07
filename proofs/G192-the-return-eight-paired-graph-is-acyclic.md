@@ -8,13 +8,17 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-The paired return-eight graph has no loop at all.
+The map for returns of length eight has no loop at all.
 
-**What it says.** Any closed paired walk would yield two temporal words without adjacent ones or three consecutive zeros. Their complementary reconstructed entries force a repeating difference pattern that contradicts those constraints. Independently reviewed by Local (L159, S88).
+**What it says.** A closed walk in the paired map for eight-step returns would give two stripes, each with no two
+black ticks together and no three white ones; the pairing then forces a pattern that breaks those very rules. Local
+reviewed it (L159).
 
-**Why it matters.** This analytically checks one of Local's six acyclic graphs. A single word can satisfy the return condition; it is the pairing that fails. Larger return graphs and period growth remain unresolved.
+**Why it matters.** It confirms by hand one of six small maps that Local found had no loops. Each stripe alone can
+satisfy the condition; it is the pairing that fails.
 
-**An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
+**An everyday picture.** Two rows of lights, each allowed by the rules, can still be impossible as a pair when they
+must agree and disagree in a set pattern.
 
 ## The formal statement and proof
 

@@ -9,13 +9,17 @@ file.*
 
 ## In plain words
 
-After a period doubles, the next completely white profile cannot appear within eleven steps.
+After a period doubles, an all-white stripe cannot come back within eleven steps.
 
-**What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly, then rules out the ninth through eleventh through small tables of necessary temporal transitions. An allowed cycle at the eleventh has odd period and cannot follow a doubling.
+**What it says.** Once the period is at least 4, the doubling leaves the stripe's two halves as exact opposites of
+each other, and that rules out an all-white stripe at each of the next eleven steps, checked one position at a time.
+A return at step eleven exists elsewhere, but only with an odd period, which a doubling cannot produce.
 
-**Why it matters.** This is an actual local compatibility restriction, but its fixed length does not grow with the period. It supplies no long-term growth estimate.
+**Why it matters.** It is a real restriction on the history, but of fixed length: it does not grow with the period,
+so it gives no long-term growth.
 
-**An everyday picture.** A machine must pass several checkpoints before it can reset again. Knowing the first few checkpoints does not tell us how long the entire journey takes.
+**An everyday picture.** A train that has just left a terminus cannot be back within eleven stations; that says
+nothing about how long the line is.
 
 ## The formal statement and proof
 

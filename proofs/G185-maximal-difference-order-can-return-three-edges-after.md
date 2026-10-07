@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The difference-order deficit after a doubling can disappear in three steps.
+After a doubling, a stripe can become maximally complex again in just three steps.
 
-**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. Local verifies the q4 member on the rooted history; rootedness beyond it is unproved.
+**What it says.** One measure of a stripe is how many times it must be compared with itself shifted by one tick
+before nothing is left (its difference order). GPT builds a family of compatible histories that start a new stage
+one above the minimum and reach the maximum three steps later, the last step jumping almost the whole way. Local
+checked that the period-4 member lies on the real history.
 
-**Why it matters.** A general claim that higher differences recover only one order per step cannot bound stage length. Root-specific restrictions or the actual next zero-driver event are still needed.
+**Why it matters.** It kills the hope that this measure climbs one notch per step and so forces long stages.
+Something else must bound the stage lengths.
 
-**An everyday picture.** A gauge can jump to its maximum while the machine remains in the same operating stage. Reaching that reading does not tell us when the next stage begins.
+**An everyday picture.** A kettle's gauge can jump to full in a moment; that tells you nothing about when it will
+boil.
 
 ## The formal statement and proof
 

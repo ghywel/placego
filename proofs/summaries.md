@@ -11,7 +11,7 @@ such an unusual noun is used, the reader should be offered a simple description 
 what it means" (2026-10-07).
 Pictures are built from concrete things a reader has seen, heard or touched; in the owner's words, "humans are
 sensory beings with excellent visual memories - grounding in real world existential nouns is helpful"
-(2026-10-07). Plain-words pass done through G179 (2026-10-07); entries after it may still be drafts.*
+(2026-10-07). Plain-words pass done through G198 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -2275,166 +2275,226 @@ question needs.
 summaries; join the summaries first and the lost connection cannot be recovered.
 
 ## G182
-The small-period reached timing certificate passes independent verification.
+The period-8 timing budget passes a check from scratch, but it is almost a full list of the steps.
 
-**What it says.** At period caps one, two, four and eight, supplied potentials pay every reached edge. The largest doubled timing budget is fourteen at cap eight. Parent paths, complete successor lists and all numerical inequalities were checked independently.
+**What it says.** GPT's independent checker confirmed every inequality of the budget that Local's RC2 run found for
+periods 1, 2, 4 and 8 (a budget is a score attached to each state of the edge history so that every step pays its
+timing cost). The largest score needed, counted in half-ticks, is 14.
 
-**Why it matters.** This closes the finite RC2 audit, while retaining its limitation: 398 labels represent 411 edges, so it barely compresses the state. No bound at all periods follows.
+**Why it matters.** It closes the RC2 test honestly. But the budget uses 398 labels for 411 steps, so it is a list,
+not a rule, and it says nothing about larger periods.
 
-**An everyday picture.** Every entry in a small route ledger balances, but the ledger lists almost every journey separately. That does not give a short rule for a larger network.
-
+**An everyday picture.** A shop's till balances because every sale is written down separately; that is no help in
+guessing next month's takings.
 
 ## G183
-A standard graph criterion, applied: the failed meters balance their labels while charging a positive amount of time.
+Every failed budget failed the same way: a round trip that looks closed to the labels but takes too long.
 
-**What it says.** A budget based on chosen labels fails exactly when some collection of actual steps has equal arrivals and departures at every label but positive total timing reward. Actual states need not join. A label-balanced collection makes every budget term cancel.
+**What it says.** A budget built on chosen labels fails exactly when some collection of real steps arrives at and
+leaves every label equally often, so that it looks like a closed round trip, yet takes more time than the allowance.
+The real states along it need not join up at all.
 
-**Why it matters.** This unifies the specific compression failures without claiming all compression is impossible. A successful finite meter still needs a separate bound on its size as periods grow.
+**Why it matters.** It explains all the failed candidates of G166 to G182 at once, without claiming that every
+shortcut must fail. A budget that works would still need a bound on its size as the period grows.
 
-**An everyday picture.** A ledger balances station names but accidentally treats different stations as the same one. If the supposed round trip earns time, no allowance based on those names can pay it.
-
+**An everyday picture.** A map that gives two stations the same name shows a round trip that does not exist, and a
+fare chart built on the names cannot charge for it.
 
 ## G184
-Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
+How fast periods must grow along an edge history: stages that are long only in proportion to their period are not
+enough.
 
-**What it says.** Divide each stage's length by its period. The depth-to-period ratio is an exponentially weighted sum of these normalized lengths. That sum must grow without bound to make period negligible compared with depth.
+**What it says.** Along a history the period stays fixed for a stretch, a stage, and then doubles. Divide each
+stage's length by its period. Depth divided by the current period is then a running total that halves at each
+doubling before the new stage's share is added. For the period to become small compared with the depth, that total
+must grow without bound; stages whose length is a fixed multiple of their period leave it stuck.
 
-**Why it matters.** A large finite delay, or stage lengths proportional to their periods, is insufficient. Individual normalized lengths need not all grow; a growing sum over a fixed recent window is another sufficient condition.
+**Why it matters.** It states gap 2 exactly, as a condition on stage lengths that can be checked, and shows which
+easy hopes are not enough.
 
-**An everyday picture.** Each doubling halves the savings already accumulated. New deposits must eventually overcome that repeated halving; one large old deposit cannot settle the long-term balance.
+**An everyday picture.** Savings that are halved at every birthday: only deposits that keep outgrowing the halving
+make the balance climb for ever.
 
 ## G185
-The difference-order deficit after a doubling can disappear in three steps.
+After a doubling, a stripe can become maximally complex again in just three steps.
 
-**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. Local verifies the q4 member on the rooted history; rootedness beyond it is unproved.
+**What it says.** One measure of a stripe is how many times it must be compared with itself shifted by one tick
+before nothing is left (its difference order). GPT builds a family of compatible histories that start a new stage
+one above the minimum and reach the maximum three steps later, the last step jumping almost the whole way. Local
+checked that the period-4 member lies on the real history.
 
-**Why it matters.** A general claim that higher differences recover only one order per step cannot bound stage length. Root-specific restrictions or the actual next zero-driver event are still needed.
+**Why it matters.** It kills the hope that this measure climbs one notch per step and so forces long stages.
+Something else must bound the stage lengths.
 
-**An everyday picture.** A gauge can jump to its maximum while the machine remains in the same operating stage. Reaching that reading does not tell us when the next stage begins.
-
+**An everyday picture.** A kettle's gauge can jump to full in a moment; that tells you nothing about when it will
+boil.
 
 ## G186
-For these repeat contradictions, occasional sufficiently slow period growth is enough.
+For the Thue–Morse and paperfolding cases, slow period growth only some of the time is enough.
 
-**What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
+**What it says.** Assume the timing budget of gap 1. Then to exclude Thue–Morse and the recorded paperfolding codes,
+it is enough that the period is very small compared with the depth at infinitely many depths, not at all of them.
+Local second-read it (L151).
 
-**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the conditional lemma was second-read by Local L151.
+**Why it matters.** It weakens what gap 2 has to prove. Neither this nor the budget is yet proved on the real
+histories.
 
-**An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.
-
+**An everyday picture.** A detective needs a clear fingerprint whenever one is asked for, not one on every surface
+of the room.
 
 ## G187
-The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
+The period need only be a small enough fraction of the depth, not a vanishing one.
 
-**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.
+**What it says.** A fixed timing budget sets a fixed fraction. If the period falls below that fraction of the depth
+infinitely often, the Thue–Morse and paperfolding contradictions go through. Lining the repeat up with the period's
+power of two improves the fraction. Local verified the reduction (L152).
 
-**Why it matters.** This complements G186 by weakening the growth target for a specified settling budget. Local L152 verified the conditional reduction; actual histories have not been shown to meet its two asymptotic obligations.
+**Why it matters.** It weakens gap 2 further, to a target with a definite size. The real histories have not been
+shown to meet it.
 
-**An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
-
+**An everyday picture.** A photograph needs the subject to fit in the frame with room to spare, not to shrink to a
+dot.
 
 ## G188
-After a period doubles, the next completely white profile cannot appear within eleven steps.
+After a period doubles, an all-white stripe cannot come back within eleven steps.
 
-**What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly, then rules out the ninth through eleventh through small tables of necessary temporal transitions. An allowed cycle at the eleventh has odd period and cannot follow a doubling.
+**What it says.** Once the period is at least 4, the doubling leaves the stripe's two halves as exact opposites of
+each other, and that rules out an all-white stripe at each of the next eleven steps, checked one position at a time.
+A return at step eleven exists elsewhere, but only with an odd period, which a doubling cannot produce.
 
-**Why it matters.** This is an actual local compatibility restriction, but its fixed length does not grow with the period. It supplies no long-term growth estimate.
+**Why it matters.** It is a real restriction on the history, but of fixed length: it does not grow with the period,
+so it gives no long-term growth.
 
-**An everyday picture.** A machine must pass several checkpoints before it can reset again. Knowing the first few checkpoints does not tell us how long the entire journey takes.
-
+**An everyday picture.** A train that has just left a terminus cannot be back within eleven stations; that says
+nothing about how long the line is.
 
 ## G189
-An odd-length return to a completely white profile needs more steps as the repeat period grows.
+An odd-length return to an all-white stripe takes longer as the period grows.
 
-**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the number of doublings needed to reach period q, plus three steps (for periods that are powers of two). Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
+**What it says.** For a stripe whose period is a power of two, a first return to all white after an odd number of
+steps takes at least twice the number of doublings so far, plus three. Working backwards from the end, each new tick
+of the stripe is fixed by a few before it, so an odd return follows a set track. Even-length returns can branch, and
+escape the argument.
 
-**Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
+**Why it matters.** It gives a restriction that grows with the period, though only slowly, and isolates the even
+returns as the hard case.
 
-**An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
-
+**An everyday picture.** A row of switches where each setting decides the next must come round in a loop; allow one
+free choice and the counting no longer limits the journey.
 
 ## G190
-An even return can be described by keeping both temporal halves together.
+An even-length return can be followed by keeping the stripe's two halves together.
 
-**What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.
+**What it says.** Follow two windows of the stripe side by side, one on each half. A return after a doubling is a
+walk through the finite map of such pairs that ends with the two starting windows swapped. Joined to its swapped
+copy, the walk closes into a full repeating stripe whose halves are opposites.
 
-**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. A further finite-graph lemma, still awaiting review as G191, says that a fixed-return graph either admits every sufficiently large doubling period or admits only bounded periods. The actual graphs have not been classified, and this gives no delay estimate or path from the root.
+**Why it matters.** It keeps the tick-by-tick link between the halves that a simple count of black and white would
+lose. The real maps have not been classified, and it gives no delay estimate.
 
-**An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
-
+**An everyday picture.** Slide two strips of paper through a frame until their starting patterns have changed
+places; a copy with the strips swapped completes the pattern.
 
 ## G191
-Paths that exchange two starting patterns have a restricted eventual period behavior.
+Walks that swap the two halves either exist for every large period or for none.
 
-**What it says.** In a finite directed graph whose symmetry exchanges two halves, paths of half a dyadic period to the exchanged starting point either exist for every sufficiently large period, or all admitted periods are bounded by the number of vertices. The test uses mutually reachable regions and the classes that each edge advances through. An explicit, conservative cutoff is eight times the square of the number of vertices: checking admission at one dyadic period beyond it distinguishes the two alternatives. Independently reviewed by Local (L157, S85-S87).
+**What it says.** In a finite map with a swap symmetry, walks to the swapped start of half a period's length either
+exist for every large enough power-of-two period, or only for periods below the number of positions in the map.
+Checking one period beyond eight times the square of that number decides which. Local reviewed it (L157). In Rule
+30's maps, the first case needs a fork inside a region the walk can circle.
 
-**Why it matters.** Applied to G190, this characterizes the weaker question of whether absolute return delays grow. In the Rule30 graphs, a persistent component must contain branching within that component; a single cycle cannot suffice. The actual return graphs remain unclassified; it establishes neither normalized growth nor a path from the root.
+**Why it matters.** It turns 'do return delays keep growing?' into a finite check on each map. The real maps are
+still unclassified.
 
-**An everyday picture.** Two markers move around a circular track. Exchanging their starting positions can preserve their position in the repeating schedule, or shift it halfway around. Those two arrangements permit different journey lengths.
-
+**An everyday picture.** Two runners on a circular track, starting apart: whether they can ever swap places at a
+given lap depends on how the track's loops are arranged, not on luck.
 
 ## G192
-The paired return-eight graph has no loop at all.
+The map for returns of length eight has no loop at all.
 
-**What it says.** Any closed paired walk would yield two temporal words without adjacent ones or three consecutive zeros. Their complementary reconstructed entries force a repeating difference pattern that contradicts those constraints. Independently reviewed by Local (L159, S88).
+**What it says.** A closed walk in the paired map for eight-step returns would give two stripes, each with no two
+black ticks together and no three white ones; the pairing then forces a pattern that breaks those very rules. Local
+reviewed it (L159).
 
-**Why it matters.** This analytically checks one of Local's six acyclic graphs. A single word can satisfy the return condition; it is the pairing that fails. Larger return graphs and period growth remain unresolved.
+**Why it matters.** It confirms by hand one of six small maps that Local found had no loops. Each stripe alone can
+satisfy the condition; it is the pairing that fails.
 
-**An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
-
+**An everyday picture.** Two rows of lights, each allowed by the rules, can still be impossible as a pair when they
+must agree and disagree in a set pattern.
 
 ## G193
-The paired graph can be reduced while keeping a bit that records exchange.
+The paired map can be shrunk, provided each step records whether the pair changed order.
 
-**What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return.
+**What it says.** Many positions in the paired map can be dropped without losing any loop or any swapping walk, and
+the two windows can then be stored as an unordered pair, as long as each step carries one bit saying whether their
+order flipped. The bits along a walk then tell a swap from an ordinary return.
 
-**Why it matters.** This makes the swap phase explicit and reduces the state count without discarding the backgrounds. Parallel edge choices must retain their bits. It classifies no larger actual graph and supplies no growth bound.
+**Why it matters.** It makes the swap visible and the maps smaller. It classifies no larger map and gives no growth
+bound.
 
-**An everyday picture.** Two labeled cards can be stored as an unordered pair, provided each move also records whether their order changed. Getting back to the same pair does not by itself say which card is first.
-
+**An everyday picture.** Two cards kept in an envelope, with a note at each move saying whether their order changed:
+back at the same pair, the notes say which card is now on top.
 
 ## G194
-Two binary equations expose the obstruction to persistent exchange.
+Two yes-or-no equations decide whether a loop region can keep swapping.
 
-**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur.
+**What it says.** For a region of the shrunken map that a walk can circle, two simple equations on the order bits
+decide everything: either swaps never happen, or they are locked to one period, or every large enough power-of-two
+period allows one.
 
-**Why it matters.** This expresses the known component phase test as finite binary equations, while retaining parallel edges. No larger actual component is classified and no growth bound follows.
+**Why it matters.** It turns the swap question for any one region into a quick finite test. No larger real region
+has been classified.
 
-**An everyday picture.** Marking a complete lap is different from marking every step. A two-track route can keep the tracks apart, exchange them only after one lap, or permit exchange after many lap counts.
-
+**An everyday picture.** On a two-lane running track, the lanes can stay apart, cross once a lap, or cross in ways
+that fit many lap counts; a lap chart shows which.
 
 ## G195
-Four windows can certify local phase mixing, but a return path is essential.
+A small local pattern proves the swaps can mix, but only if a way back exists.
 
-**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194.
+**What it says.** Two steps from the same place with opposite order bits occur exactly at one small pattern of four
+windows. Inside a region a walk can circle, that pattern settles G194's test in favour of every large period. The
+length-eight map contains the pattern but has no loop, so there it proves nothing.
 
-**Why it matters.** This gives a concrete sufficient witness to seek without classifying a whole larger graph. The actual return-eight graph contains the local pattern but is acyclic, so local branching alone proves no persistence. Long overlap also excludes this pattern on the known short-period return walks themselves; a reachable detour would be needed. Rooted and normalized growth remain open.
+**Why it matters.** It gives something concrete to search for without classifying a whole map, and shows why a local
+fork alone is not enough.
 
-**An everyday picture.** Two routes can reach the same doorway with the cards exchanged differently. To repeat the choice, there must also be a way back to the departure point.
+**An everyday picture.** Two doors from the same hall lead to rooms where the cards end up in different orders; to
+choose again and again, there must also be a corridor back to the hall.
 
 ## G196
-A backward diagonal tells whether a temporal window accepts both next bits.
+A quick test says whether a window can be followed by either next tick.
 
-**What it says.** Adding the shorter backward functions on successive suffixes gives the change in the final constraint when the next bit flips. Two paired windows have two successors precisely when each accepts both next bits. Their tails need not match.
+**What it says.** Adding up a few shorter backward checks shows how the final constraint changes when the next tick
+flips, and so whether a window accepts both. A pair of windows forks exactly when each accepts both.
 
-**Why it matters.** This tests general branching, beyond the earlier parallel-edge pattern. Persistence still requires both successors to lie inside a recurrent component; the actual return-eight example branches but has no cycle.
+**Why it matters.** It tests forking in general, beyond the pattern of G195. A fork matters only inside a region a
+walk can circle, and the length-eight map forks without one.
 
-**An everyday picture.** Two doors open from the same corridor. Their being open says nothing about whether either route can bring you back.
+**An everyday picture.** Two doors stand open from the same corridor; that says nothing about whether either leads
+back.
 
 ## G197
-A long window keeps an exit from quickly returning to the old circuit.
+A stripe that leaves the known loop cannot rejoin it quickly.
 
-**What it says.** An unchanged prefix still identifies the original phase while the first flipped bit remains farther along the window. During that interval the window cannot match the old circuit, whatever bits are appended next. The known rooted period-sixteen exits need at least 26,396 steps before any rejoin.
+**What it says.** While the first changed tick is still inside the window, the unchanged part keeps recording the
+old phase, so the window cannot match the old loop whatever follows. For the known exits at period 16, that means at
+least 26,396 steps before any rejoining.
 
-**Why it matters.** A short detour search cannot find a return in this case. The bound does not guarantee a legal continuation, a return or persistence.
+**Why it matters.** It shows that a short search for a way back cannot succeed here. It does not show that a way
+back, or any legal continuation, exists.
 
-**An everyday picture.** A strip of paper moves through a frame. A changed mark remains visible beside the unchanged part until enough paper has passed through.
+**An everyday picture.** A changed letter on a ticker tape stays in view until enough tape has passed through the
+window.
 
 ## G198
-A return matters when its phase disagrees with the number of steps taken.
+A way back matters only if it arrives out of step with the old loop.
 
-**What it says.** In a mutually reachable region containing the known dyadic circuit, persistent exchange occurs exactly when a departing path returns at an ordered phase different from the phase its elapsed length predicts. Returning in step with the old circuit can preserve its period lock.
+**What it says.** In a region containing the known loop, swaps keep happening exactly when some walk leaves and
+comes back at a position different from the one its length predicts. Coming back in step keeps the old period
+locked.
 
-**Why it matters.** This gives a precise target for a possible continuation search. No mismatched return is known for the rooted period-sixteen exits, and a finite collection of aligned returns cannot rule one out.
+**Why it matters.** It names the exact thing a search would have to find. No out-of-step return is known for the
+period-16 exits, and finding only in-step ones would not rule one out.
 
-**An everyday picture.** A hand leaves a numbered clock face and comes back. Its return agrees with the old rhythm only if its position matches the number of ticks that passed.
+**An everyday picture.** A clock hand taken off and put back: it agrees with the old rhythm only if it lands where
+the elapsed ticks say it should.

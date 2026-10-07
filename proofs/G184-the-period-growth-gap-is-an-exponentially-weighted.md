@@ -8,13 +8,19 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
+How fast periods must grow along an edge history: stages that are long only in proportion to their period are not
+enough.
 
-**What it says.** Divide each stage's length by its period. The depth-to-period ratio is an exponentially weighted sum of these normalized lengths. That sum must grow without bound to make period negligible compared with depth.
+**What it says.** Along a history the period stays fixed for a stretch, a stage, and then doubles. Divide each
+stage's length by its period. Depth divided by the current period is then a running total that halves at each
+doubling before the new stage's share is added. For the period to become small compared with the depth, that total
+must grow without bound; stages whose length is a fixed multiple of their period leave it stuck.
 
-**Why it matters.** A large finite delay, or stage lengths proportional to their periods, is insufficient. Individual normalized lengths need not all grow; a growing sum over a fixed recent window is another sufficient condition.
+**Why it matters.** It states gap 2 exactly, as a condition on stage lengths that can be checked, and shows which
+easy hopes are not enough.
 
-**An everyday picture.** Each doubling halves the savings already accumulated. New deposits must eventually overcome that repeated halving; one large old deposit cannot settle the long-term balance.
+**An everyday picture.** Savings that are halved at every birthday: only deposits that keep outgrowing the halving
+make the balance climb for ever.
 
 ## The formal statement and proof
 

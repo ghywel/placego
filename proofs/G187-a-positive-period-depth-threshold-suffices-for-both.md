@@ -9,13 +9,17 @@ file.*
 
 ## In plain words
 
-The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
+The period need only be a small enough fraction of the depth, not a vanishing one.
 
-**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.
+**What it says.** A fixed timing budget sets a fixed fraction. If the period falls below that fraction of the depth
+infinitely often, the Thue–Morse and paperfolding contradictions go through. Lining the repeat up with the period's
+power of two improves the fraction. Local verified the reduction (L152).
 
-**Why it matters.** This complements G186 by weakening the growth target for a specified settling budget. Local L152 verified the conditional reduction; actual histories have not been shown to meet its two asymptotic obligations.
+**Why it matters.** It weakens gap 2 further, to a target with a definite size. The real histories have not been
+shown to meet it.
 
-**An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
+**An everyday picture.** A photograph needs the subject to fit in the frame with room to spare, not to shrink to a
+dot.
 
 ## The formal statement and proof
 

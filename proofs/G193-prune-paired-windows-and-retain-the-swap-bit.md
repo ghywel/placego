@@ -8,13 +8,17 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-The paired graph can be reduced while keeping a bit that records exchange.
+The paired map can be shrunk, provided each step records whether the pair changed order.
 
-**What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return.
+**What it says.** Many positions in the paired map can be dropped without losing any loop or any swapping walk, and
+the two windows can then be stored as an unordered pair, as long as each step carries one bit saying whether their
+order flipped. The bits along a walk then tell a swap from an ordinary return.
 
-**Why it matters.** This makes the swap phase explicit and reduces the state count without discarding the backgrounds. Parallel edge choices must retain their bits. It classifies no larger actual graph and supplies no growth bound.
+**Why it matters.** It makes the swap visible and the maps smaller. It classifies no larger map and gives no growth
+bound.
 
-**An everyday picture.** Two labeled cards can be stored as an unordered pair, provided each move also records whether their order changed. Getting back to the same pair does not by itself say which card is first.
+**An everyday picture.** Two cards kept in an envelope, with a note at each move saying whether their order changed:
+back at the same pair, the notes say which card is now on top.
 
 ## The formal statement and proof
 

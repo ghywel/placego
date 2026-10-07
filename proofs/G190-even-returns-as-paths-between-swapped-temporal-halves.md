@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-An even return can be described by keeping both temporal halves together.
+An even-length return can be followed by keeping the stripe's two halves together.
 
-**What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.
+**What it says.** Follow two windows of the stripe side by side, one on each half. A return after a doubling is a
+walk through the finite map of such pairs that ends with the two starting windows swapped. Joined to its swapped
+copy, the walk closes into a full repeating stripe whose halves are opposites.
 
-**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. A further finite-graph lemma, still awaiting review as G191, says that a fixed-return graph either admits every sufficiently large doubling period or admits only bounded periods. The actual graphs have not been classified, and this gives no delay estimate or path from the root.
+**Why it matters.** It keeps the tick-by-tick link between the halves that a simple count of black and white would
+lose. The real maps have not been classified, and it gives no delay estimate.
 
-**An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
+**An everyday picture.** Slide two strips of paper through a frame until their starting patterns have changed
+places; a copy with the strips swapped completes the pattern.
 
 ## The formal statement and proof
 

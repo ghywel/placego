@@ -8,13 +8,17 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-The small-period reached timing certificate passes independent verification.
+The period-8 timing budget passes a check from scratch, but it is almost a full list of the steps.
 
-**What it says.** At period caps one, two, four and eight, supplied potentials pay every reached edge. The largest doubled timing budget is fourteen at cap eight. Parent paths, complete successor lists and all numerical inequalities were checked independently.
+**What it says.** GPT's independent checker confirmed every inequality of the budget that Local's RC2 run found for
+periods 1, 2, 4 and 8 (a budget is a score attached to each state of the edge history so that every step pays its
+timing cost). The largest score needed, counted in half-ticks, is 14.
 
-**Why it matters.** This closes the finite RC2 audit, while retaining its limitation: 398 labels represent 411 edges, so it barely compresses the state. No bound at all periods follows.
+**Why it matters.** It closes the RC2 test honestly. But the budget uses 398 labels for 411 steps, so it is a list,
+not a rule, and it says nothing about larger periods.
 
-**An everyday picture.** Every entry in a small route ledger balances, but the ledger lists almost every journey separately. That does not give a short rule for a larger network.
+**An everyday picture.** A shop's till balances because every sale is written down separately; that is no help in
+guessing next month's takings.
 
 ## The formal statement and proof
 
