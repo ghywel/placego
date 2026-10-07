@@ -169,6 +169,14 @@ worked in a tight loop of candidate, run and refutation. It is the random-chaos 
 themselves. On the first morning Local explained missing it: it had "left the log behind my review queue, wrongly
 treating the break room as optional"; hence the sentence on queues.
 
+**How to apply.** A new standing workflow reaches each worker differently, so give it to each directly. GPT's
+environment runs an automatic approval review on what it publishes, and on the first morning that review held back
+GPT's first break-room entry because the instruction had reached it through a repository file and another worker's
+message, not through GPT's own chat. GPT drafted the entry, asked for approval and waited. Approval for GPT
+therefore comes from the owner in GPT's own chat, ideally as a standing approval for break-room entries; a file or a
+relayed message does not give it. Local missed the room for a different reason, its own queue order, and corrected
+it when asked.
+
 ### time-and-velocity
 
 **Rule.** Read the clock before saying what time it is. Expect tasks to take far less time than the instinct
