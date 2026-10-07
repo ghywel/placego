@@ -1,10 +1,10 @@
-# Finite-tail exceptions in a minimal trace family are empty or countable dense
+# finite-tail exceptions in a minimal trace family are empty or countable dense
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G154. Finite-tail exceptions in
-a minimal trace family are empty or countable dense (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT154. finite-tail exceptions
+in a minimal trace family are empty or countable dense (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ In a minimal family of traces, finite starting tails are either absent or counta
 **An everyday picture.** A countable collection can visit every neighbourhood while occupying none of the measure.
 
 ## The formal statement and proof
+
+### G154. Finite-tail exceptions in a minimal trace family are empty or countable dense (2026-10-07)
 
 **Status and target.** Symbolic scope audit, independent review pending; no computation. Uses reviewed G140's wall coding and radius clock, and generalizes G147's phase-counting argument to a minimal trace family. This is an elementary dynamical argument, not a novelty claim about substitution systems. Prediction: generic infinite support cannot exclude the original Rudin–Shapiro trace. Counterfactual: minimal recurrence plus a generic exclusion forces every individual trace to have an infinite tail. The conditional dense-exception argument below shows why that inference fails. G153 and its RSP-S certificate are not assumed in this proof.
 
@@ -42,3 +44,17 @@ For completeness r is not eventually periodic. For m<2^(k-1), the separated bina
 **Unexpected periodic-family check.** If X is instead a finite periodic orbit, E_X is empty: a finite row corresponding to a p-periodic visible word would return after p applications of F, contradicting radius growth by 2p. The all-zero visible control gives the infinite checkerboard initial tail, not a finite row. This verifies why temporal simplicity is not a spatial-support certificate.
 
 **Scope.** For Rudin–Shapiro, generic members of its binary shift closure have infinite forced initial tails, independently of the pending repeat-filter decision. If even one member has finite support, its dense shift orbit has growing finite radii and remains fully consistent with generic infinite support and infinite-support accumulation points. The original r is a specified member; this argument neither excludes it nor constructs an exception. The missing obligation remains a direct spatial-tail constraint on Phi(r), and full right extension is separate. No prize claim.
+
+*Second reader's note on G154 (Local, 2026-10-07; chat L112).* Correct; every hypothesis is stated and used. The
+substitution follows from appending a digit: $r(2n) = r(n)$ and $r(2n+1) = r(n) \oplus (n \bmod 2)$, so a letter
+$(r, p)$ becomes $(r, 0)(r \oplus p, 1)$, which is $a \to ab$, $b \to ad$, $c \to cd$, $d \to cb$. Its graph reaches $a$
+from every letter and every letter from $a$ within three steps, and the loop at $a$ pads to exactly six, so the sixth
+power is positive. Uniform recurrence of the fixed word passes to its first coordinate because a factor of $r$ is the
+projection of the factor of the pair word at the same positions. Minimality then gives the two generic statements. An
+isolated point would return to its own cylinder and be periodic, so singletons are nowhere dense. An atom would put at
+least its mass on every distinct forward image, since each image's preimage contains the point. The block identities
+need $m < 2^{k-1}$ so that the digit after the leading 1 or 11 is 0, and both proofs use exactly that. One sharpening,
+as in G147: by GC156's free odd depths, at most $2^{\lceil L/2 \rceil}$ words of $E_X$ have radius at most $L$. Checked
+(`rule30_audit_g99_g100.py`, S48): both digit recurrences for $n < 2^{14}$; the pair word equals the substitution's
+fixed word on $2^{14}$ letters; the sixth power of the letter matrix is positive; and the separated-block identities for
+$k \le 12$.

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G153, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G154, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5224,15 +5224,7 @@ first attempt, an independent most-significant-digit construction, was stopped a
 GC177 showed GPT had closed that lane; it is kept in the script's docstring. The scope stands as written: this closes
 the repeat-filter route for this word at this start, and says nothing about its forced tail.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT154. finite-tail exceptions in a minimal trace family are empty or countable dense (second-read by Local, 2026-10-07)
 
 ### G154. Finite-tail exceptions in a minimal trace family are empty or countable dense (2026-10-07)
 
@@ -5260,3 +5252,29 @@ For completeness r is not eventually periodic. For m<2^(k-1), the separated bina
 **Unexpected periodic-family check.** If X is instead a finite periodic orbit, E_X is empty: a finite row corresponding to a p-periodic visible word would return after p applications of F, contradicting radius growth by 2p. The all-zero visible control gives the infinite checkerboard initial tail, not a finite row. This verifies why temporal simplicity is not a spatial-support certificate.
 
 **Scope.** For Rudin–Shapiro, generic members of its binary shift closure have infinite forced initial tails, independently of the pending repeat-filter decision. If even one member has finite support, its dense shift orbit has growing finite radii and remains fully consistent with generic infinite support and infinite-support accumulation points. The original r is a specified member; this argument neither excludes it nor constructs an exception. The missing obligation remains a direct spatial-tail constraint on Phi(r), and full right extension is separate. No prize claim.
+
+*Second reader's note on G154 (Local, 2026-10-07; chat L112).* Correct; every hypothesis is stated and used. The
+substitution follows from appending a digit: $r(2n) = r(n)$ and $r(2n+1) = r(n) \oplus (n \bmod 2)$, so a letter
+$(r, p)$ becomes $(r, 0)(r \oplus p, 1)$, which is $a \to ab$, $b \to ad$, $c \to cd$, $d \to cb$. Its graph reaches $a$
+from every letter and every letter from $a$ within three steps, and the loop at $a$ pads to exactly six, so the sixth
+power is positive. Uniform recurrence of the fixed word passes to its first coordinate because a factor of $r$ is the
+projection of the factor of the pair word at the same positions. Minimality then gives the two generic statements. An
+isolated point would return to its own cylinder and be periodic, so singletons are nowhere dense. An atom would put at
+least its mass on every distinct forward image, since each image's preimage contains the point. The block identities
+need $m < 2^{k-1}$ so that the digit after the leading 1 or 11 is 0, and both proofs use exactly that. One sharpening,
+as in G147: by GC156's free odd depths, at most $2^{\lceil L/2 \rceil}$ words of $E_X$ have radius at most $L$. Checked
+(`rule30_audit_g99_g100.py`, S48): both digit recurrences for $n < 2^{14}$; the pair word equals the substitution's
+fixed word on $2^{14}$ letters; the sixth power of the letter matrix is positive; and the separated-block identities for
+$k \le 12$.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

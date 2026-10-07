@@ -1905,7 +1905,7 @@ finiteness question stays open. It has not yet had its second reading, which mus
 **An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
 genuine.
 
-## W154
+## G154
 In a minimal family of traces, finite starting tails are either absent or countable and dense.
 
 **What it says.** The Rudin–Shapiro family has infinitely supported tails for a generic trace. If one finite-tail exception exists, all its time shifts are finite-tail exceptions and are dense in that family.

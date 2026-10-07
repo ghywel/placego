@@ -225,6 +225,10 @@ CHECKS (GPT's claims at 827e006):
      only 3n + 3 steps, and on the 24-ring 2,592 rows reach zero later (up to step 147), so those checks were not
      exhaustive although S46's note said so. All three now use the exact basin from a backward search (zero_basin),
      cross-checked on the 24-ring against 1,500 forward steps; the verdicts are re-run on the complete sets.
+  S48 (G154, added 2026-10-07 at 5759564): r(n) = parity of overlapping 11s satisfies r(2n) = r(n) and
+     r(2n+1) = r(n) XOR (n mod 2) for n < 2^14; (r(n), n mod 2) is the fixed word of a -> ab, b -> ad, c -> cd, d -> cb
+     on its first 2^14 letters; the sixth power of that substitution's letter matrix is positive; and the separated-block
+     identities r(2^k + m) = r(m), r(3 * 2^k + m) = 1 XOR r(m) hold for k <= 12 and m < 2^(k-1).
 """
 import random
 from fractions import Fraction as F
@@ -2199,4 +2203,23 @@ for n in (3, 6, 12, 24):
 ok47 &= ring_step([0, 1, 1]) == [0, 1, 0] and ring_step([0, 1, 0]) == [1, 1, 1] and ring_step([1, 1, 1]) == [0, 0, 0]
 check('S47 G152: necklace counts, distinct rotation classes along first-hit trajectories, and T + 1 <= C_a', ok47,
       'largest first-hit time by ring size: %s; bounds C_a: %s' % (tmax47, Cbound))
+def r_rs(n):
+    return bin(n & (n >> 1)).count('1') % 2
+
+
+ok48 = all(r_rs(2 * n) == r_rs(n) and r_rs(2 * n + 1) == r_rs(n) ^ (n % 2) for n in range(1 << 14))
+SUB = {'a': 'ab', 'b': 'ad', 'c': 'cd', 'd': 'cb'}
+LET = {(0, 0): 'a', (0, 1): 'b', (1, 0): 'c', (1, 1): 'd'}
+wfix = 'a'
+while len(wfix) < (1 << 14):
+    wfix = ''.join(SUB[ch] for ch in wfix)
+ok48 &= wfix[:1 << 14] == ''.join(LET[(r_rs(n), n % 2)] for n in range(1 << 14))
+Mx = [[SUB[x].count(y) for y in 'abcd'] for x in 'abcd']
+M6 = Mx
+for _ in range(5):
+    M6 = [[sum(M6[i][k] * Mx[k][j] for k in range(4)) for j in range(4)] for i in range(4)]
+ok48 &= all(v > 0 for row in M6 for v in row)
+ok48 &= all(r_rs(2 ** k + m) == r_rs(m) and r_rs(3 * 2 ** k + m) == 1 ^ r_rs(m)
+            for k in range(1, 13) for m in range(2 ** (k - 1)))
+check('S48 G154: the Rudin-Shapiro substitution, its primitivity and the separated-block identities', ok48)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
