@@ -50,6 +50,14 @@ OUTCOME, part A, 2026-10-07 22:44 BST (one run, 6 s):
   Reading: a forward kick is column 1 turning black early. The rotating point is moved into the start of the black
   arc, angles 44 .. 54, and the class records only where it took off from.
 
+PART C (post-hoc, after the owner asked Cloud to reason through the mode-locking reading itself; written before
+--sizes first ran, 2026-10-07 23:00 BST). The record already measured that the wheel's phase diffuses with no
+restoring force (sections 8.10, 8.11, 8.43, 8.47): its frequency is locked, its phase is free. Inside that picture,
+the thin locked strip (columns 2 to 4 or 5) is a filter on the interior's noise, and class 12 may be a large slip the
+filter removes as the lock ages. Part C finds the death time of each class-12 kick size (+4 .. +9) on its own.
+  KA-P4: the larger the kick, the sooner it dies (death time non-increasing from +4 to +9). Confidence 0.5. If a
+         larger kick outlives a smaller one, "class 12 is a large slip the lock suppresses" is wrong.
+
 OUTCOME, part B, 2026-10-07 (finished by 22:48 BST; one run per class, CaDiCaL):
   KA-C1 PASS: class 12 is possible after 126 steps on the wheel and impossible from 127, Local's KLK value from an
         independent encoding and solver.
@@ -136,8 +144,50 @@ def part_b(classes):
               f" wheel, impossible from {hi}  ({time.time() - start:.0f} s)", flush=True)
 
 
+def part_c(cls, sizes):
+    """Death time of each kick size of one class (post-hoc; KA-P4 in the header, pushed first)."""
+    import rule30_kick_bite_sat as ks
+
+    def alive(N, kick):
+        ks.N = N
+        for t0 in (0, 1):
+            cone = ks.Cone(t0, t0 + N + P + ks.F + 1)
+            for d in range(0, P, 2):
+                s = next(x for x in range(t0 + N, t0 + N + P) if (x - d) % P == cls)
+                act = cone.new()
+                for t in range(t0, s):
+                    cone.s.add_clause([-act, cone.col1(t, U[(t - d) % P])])
+                dns = [dn for dn in range(0, P, 2) if U[(s - dn) % P] != U[(s - d) % P]
+                       and ks.kick_of((dn - d) % P) == kick]
+                if not dns:
+                    continue
+                for t in range(s, s + ks.F + 1):           # one size has one phase, so no selector is needed
+                    cone.s.add_clause([-act, cone.col1(t, U[(t - dns[0]) % P])])
+                if cone.s.solve(assumptions=[act]):
+                    return True
+        return False
+
+    start = time.time()
+    for kick in sizes:
+        lo, hi = 0, 140
+        if not alive(lo, kick):
+            print(f"class {cls} kick {kick:+d}: impossible even at N = 0", flush=True)
+            continue
+        while hi - lo > 1:
+            mid = (lo + hi) // 2
+            if alive(mid, kick):
+                lo = mid
+            else:
+                hi = mid
+        print(f"class {cls} kick {kick:+d} (lands at angle {(angle(cls) + 2 * kick) % P}): possible after {lo}"
+              f" steps on the wheel, impossible from {hi}  ({time.time() - start:.0f} s)", flush=True)
+
+
 if __name__ == "__main__":
-    if "--death" in sys.argv:
+    if "--sizes" in sys.argv:
+        i = sys.argv.index("--sizes")
+        part_c(int(sys.argv[i + 1]), [int(x) for x in sys.argv[i + 2:]])
+    elif "--death" in sys.argv:
         part_b([int(x) for x in sys.argv[sys.argv.index("--death") + 1:]])
     else:
         part_a()
