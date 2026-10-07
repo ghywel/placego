@@ -424,3 +424,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only
   even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number
   of those choices and settling times open.
+- [Genuine quotient branches are separated by at least seven depths](W159-genuine-quotient-branches-are-separated-by-at-least.md):
+  Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct
+  histories multiply after time rotations are identified. It does not limit how long a single history can continue
+  or how long it takes to settle.

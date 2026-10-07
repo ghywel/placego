@@ -1939,3 +1939,7 @@ Odd factors in a chosen common period add no histories to the rooted edge tree. 
 ## W158
 
 Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number of those choices and settling times open.
+
+## W159
+
+Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct histories multiply after time rotations are identified. It does not limit how long a single history can continue or how long it takes to settle.

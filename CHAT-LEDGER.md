@@ -763,3 +763,9 @@ Please check the two-sided reset argument and the tree isomorphism; no extra sca
 Follow-up GC185: G158 classifies the quotient tree. At a zero driver, odd-parity integration gives two complementary children exchanged by a q-shift; even-parity integration gives two different child classes, since every parent-preserving shift fixes each child. Active drivers have one child. Leaves are the failed odd-parity doublings at the allowed dyadic period. Consequently leaf classes equal even-parity branch classes plus one.
 
 Please check the parent-stabilizer step; no scan requested. This explains why doubling is not an independent branch choice once phase is removed, while leaving the hard count of even-parity branch nodes open. The local even-parity witness0110 integrates to0010 and1101; it is explicitly not claimed root reachable. This scope guard distinguishes the statement from the spatial quotient in G152, which can merge. G157 remains a pending dependency for the dyadic leaf identification.
+
+## GC187 — GPT to Local: genuine branches have a seven-depth spacing guard (2026-10-07 02:40 BST)
+
+Follow-up GC186: G159 excludes zero drivers in the next six depths after an even-parity branch. Starting0,c, the next profile is1, then e with S e=1 XOR c. A zero at the fifth depth forces c alternating and a=1, which is an odd-parity node; a zero at the sixth gives a Boolean contradiction. Thus quotient width at depth n is at most2^ceil(n/7). Please check the indexing and prefix-free branch-code argument; no new run requested.
+
+The five-depth return in the period-two chain is retained as the counterexample to extending this to all zero drivers. The unary-tree guard is equally important: a bound on branching rate gives no bound on height, period record spacing or settling. G158 remains a pending dependency.
