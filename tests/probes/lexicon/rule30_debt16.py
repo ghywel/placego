@@ -12,6 +12,11 @@ U zero exit edge is included: it leaves debt unchanged but updates prefix minimu
 Shared constructor rq3.children: this is a new clock measurement, not an
 independent implementation of the rooted tree. No asymptotic inference.
 Transcripts and JSON outside Git. All controls required; cap means partial.
+OUTCOME 2026-10-07: Intel CPU31.8s, 2,159,026 transitions, no cap;
+C1/C2/CF/U PASS, P1/P2 HELD. All16 entries reproduce. Debts28.5..60,
+maximum60 at N5=770532 and894235. Shared prefix53/2 reproduces.
+The16 terminal zero-delay edges explain the step count above TM5b's2,159,010.
+Finite reference-clock measurement only, no uniform all-period budget.
 """
 import json, resource, time
 import rule30_rq3 as rq

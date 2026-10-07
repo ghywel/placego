@@ -9039,3 +9039,33 @@ Consequently, conditional on the validated AW/AW2 positive witnesses and complet
 
 
 **GC312/GC315/GC316 reviews incorporated (2026-10-07, L195-L196).** Local S110 verifies the debt-block merge, factor-two rotation bound and predecessor shift commutation, relying on G164 and the earlier rooted increment control. S111 verifies the re-anchoring argument; its depth200 sanity check is additional finite evidence, while the all-depth conclusion uses translation plus the exhaustive AW2 obstruction certificates. The note under06 is upgraded by Local. No GPT replay or new proof count. Changed break-room instructions in CL020 and the three standing documents read and applied. RD16 is a separately preregistered finite reference-debt measurement, not an asymptotic extension of these results.
+
+
+## RD16 outcome: same-prefix clock debt measured on all sixteen known entries (2026-10-07; GC319)
+
+Preregistration GC317 and instrument published at0a76b95, merged/pushed to shared main atbd0117b before execution. One Intel CPU run31.8s,2,159,026 transitions, no cap; shared rq3 constructor explicitly retained. C1 literal triples and exact16-entry set PASS; C2 independent scalar delay scans and shared-prefix debt26.5 at M53207 PASS; synthetic omitted-zero countercontrol CF PASS; terminal-zero-edge guard U PASS. Blind P1 (all debts<=64) HELD and P2 (some debt>26.5) HELD. The sixteen exit zero edges are counted, explaining the16-transition difference from TM5b's traversal count; none increases the maximum debt.
+
+The exact phase-zero whole-prefix debts at slope5/2 are below. Every witness interval has elapsed T_b-T_a and debt elapsed-(5/2)*(b-a); half-integer values were computed in doubled integer units.
+
+| Entry N5 | Debt D_(5/2)(N5) | Witness [a,b] | Elapsed |
+|---|---:|---|---:|
+| 87867 | 28.5 | [82955,83020] | 191 |
+| 183184 | 40 | [170583,170617] | 125 |
+| 196189 | 39.5 | [120349,120368] | 87 |
+| 229338 | 43.5 | [97505,97540] | 131 |
+| 253537 | 39.5 | [120349,120368] | 87 |
+| 271596 | 39.5 | [120349,120368] | 87 |
+| 291257 | 36.5 | [235434,235471] | 129 |
+| 527724 | 39.5 | [120349,120368] | 87 |
+| 551910 | 39.5 | [120349,120368] | 87 |
+| 555813 | 39.5 | [120349,120368] | 87 |
+| 575211 | 42.5 | [504520,504561] | 145 |
+| 634886 | 40 | [609521,609551] | 115 |
+| 645655 | 39.5 | [120349,120368] | 87 |
+| 667052 | 42.5 | [504520,504561] | 145 |
+| 770532 | 60 | [725127,725155] | 130 |
+| 894235 | 60 | [725127,725155] | 130 |
+
+Maximum reference debt is60, attained by the histories with N5=770532 and894235; the natural N5=87867 history has debt28.5. Every measured history exceeds the common-prefix26.5 somewhere, while remaining below the preregistered64 threshold. Branches inherit their actual reference clock and whole-prefix minimum/debt; numerical exposure is not reset at a branch.
+
+All drivers through the period32-entry edge have common period16: that last driver is zero and its reset is the identity. G164 therefore transfers this finite certificate to all global phases and birth restarts with interval/birth debt at most60+15=75 on these prefixes. The known complete sixteen-entry rotation coverage and GC315 justify coverage of omitted global rotations; this is not a new independent construction of the rooted tree. It gives a finite uniform bound on these sixteen entire prefixes only. No bound at later period32-stage nodes, history-uniform all-period constant, joint asymptotic divergence or prize follows. Local: independent review can reconstruct the witness intervals and constructor/clock convention; no change to the running TM6b job is requested.
