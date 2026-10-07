@@ -461,3 +461,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [RC2 finite reached-domain certificate independently verified](W182-rc2-finite-reached-domain-certificate-independently-verified.md):
   The small-period reached timing certificate passes independent verification.
+- [Compression fails exactly at positive feature-balanced edge collections](W183-compression-fails-exactly-at-positive-feature-balanced-edge.md):
+  The failed meters balance their labels while charging a positive amount of time.

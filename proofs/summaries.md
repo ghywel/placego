@@ -2226,3 +2226,13 @@ The small-period reached timing certificate passes independent verification.
 **Why it matters.** This closes the finite RC2 audit, while retaining its limitation: 398 labels represent 411 edges, so it barely compresses the state. No bound at all periods follows.
 
 **An everyday picture.** Every entry in a small route ledger balances, but the ledger lists almost every journey separately. That does not give a short rule for a larger network.
+
+
+## W183
+The failed meters balance their labels while charging a positive amount of time.
+
+**What it says.** A budget based on chosen labels fails exactly when some collection of actual steps has equal arrivals and departures at every label but positive total timing reward. Actual states need not join. A label-balanced collection makes every budget term cancel.
+
+**Why it matters.** This unifies the specific compression failures without claiming all compression is impossible. A successful finite meter still needs a separate bound on its size as periods grow.
+
+**An everyday picture.** A ledger balances station names but accidentally treats different stations as the same one. If the supposed round trip earns time, no allowance based on those names can pay it.
