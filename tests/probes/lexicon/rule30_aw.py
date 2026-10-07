@@ -25,7 +25,19 @@ PREDICTIONS, Local's, published before the run:
         the formal pair tau = 01 (column 0), sigma = 11 (column 1) is not admissible.
   AW-U (the unexpected check): admissibility computed by pruning agrees with an explicit chain of 3P further columns
         for every surviving pair (a constructive witness), and fails to extend for a pruned pair.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 16:43 (M5, one run at commit d189991; CPU 0.1 s, peak RSS 20.7 MiB). Pairs with a periodic right
+continuation: 3 of 16 at P = 2, 15/64, 31/256, 48/1,024, 99/4,096, 108/16,384 at P = 3..7. Longest bounded row-0 runs
+on those pairs: P = 2 odd 1; P = 3 even 4, odd 1; P = 4 even 6, odd 1; P = 5 odd 5, even 2; P = 6 odd 5, even 4;
+P = 7 odd 5, even 6. AW-P1 HELD: 2P - 5 is attained at P = 5 (odd 5). AW-P2 HELD: 2P - 2 is attained at P = 3 (4)
+and P = 4 (6). AW-C1 PASS (never above the formal maxima). AW-C2 PASS (P = 2: singletons only; 01/11 excluded).
+AW-U PASS (explicit chains of 3P columns from surviving pairs; pruned pairs die out).
+DESIGN LIMIT, found by Local after the run: the pruning admits only PERIODIC right continuations (columns 2, 3, ...
+all P-periodic). That is sufficient for an actual right side but not necessary: column 2 is free at the times where
+column 1 is black. So the positive results stand (a periodic continuation is a real one): both bounds are attained by
+actual walls, 2P - 5 at P = 5 and 2P - 2 at P = 3 and 4. The negative readings are weaker than they look: that the
+formal witnesses at P = 4 (odd 3) and P = 7 (odd 9) have no PERIODIC continuation does not show they have none.
+AW-C2's exclusion of 01/11 is true for a stronger reason (GPT's GC309: its column-1 update fails at once), not
+because of this pruning. Settling the negatives needs a search over non-periodic right sides.
 """
 import resource
 import sys

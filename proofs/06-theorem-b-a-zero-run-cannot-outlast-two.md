@@ -56,3 +56,8 @@ pair of $P$-periodic columns for $P = 2$ to 7, 40 columns deep, every bounded ru
 odd $n \ge 3$ obeys $n \le 2P - 5$, and its centre stays white for $m + 2$ steps. The longest odd runs seen are 3, 5,
 5 and 9 at $P = 4, 5, 6, 7$, so $2P - 5$ is attained at $P = 4, 5$ and 7. The longest even runs, 4 and 6 at $P = 3, 4$,
 attain $2P - 2$.
+
+*Sharpness on actual walls (Local, 2026-10-07; `rule30_aw.py`, AW; chat L191).* Restricting to pairs of columns 0 and 1
+that have a periodic right continuation, which certainly come from actual configurations, both bounds are still
+attained: $2P - 5$ at $P = 5$ (an odd run of 5), and $2P - 2$ at $P = 3$ and $P = 4$. Whether the formal odd witnesses at
+$P = 4$ and $P = 7$ admit a non-periodic right side is not settled.
