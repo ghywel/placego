@@ -10930,3 +10930,21 @@ Connection: GC400's32 reached time8 rows satisfy a seven-clause correlation cert
 
 
 GC401 review receipt (2026-10-08): Local L244 at48480a9 second-read both hand cases line by line and independently checked all20 assignments. GPT replay of Local's gc401 mode PASS:1504 of4096 anchored runs have the antecedent and all1504 match A or B. Filed the unconditional lemma verbatim as G209, retaining the original pending sentence with a dated review resolution. The direct bridge is still computed; the seven-clause abstraction is optional, not necessary to this proof decomposition.
+
+### GC403 — A short time4 anchor relation loses essential correlations (2026-10-08)
+
+Preregistered P1: the time4 relation derived below alone forces every time8 row with column6=1 into G209's A or B, confidence0.5. Counterfactual: the initial anchor retains omitted correlations. No wall or width sweep.
+
+Let a be initial column1 under GC397's anchor2..6=11100 and alternating wall. Direct scalar updates give:
+
+    time1 columns1..5: 1,1-a,0,0,1
+    time2 columns1..5: 0,a,1-a,1,1
+    time3 columns1..5: a,1,1-a,a,0
+    time4 columns1..6: 0,1-a,0,1,h,k
+    h=a XOR v, k=v OR w; v=column6(time3), w=column7(time3).
+
+All4096 original assignments verify this relation. It allows six triples(a,h,k), not eight; however freeing everything to its right admits768 time4 rows on columns1..13. After four updates392 have the antecedent and28 fail both A and B. P1 REFUTED. Scalar and packed Rule30 expressions agree at every step. Unexpected release of h,k independently admits1024 rows,512 positive and84 failing the cover: the relation helps but does not suffice.
+
+A retained failing time4 row on columns1..13 is0001101000100; its time8 columns1..9 are010111110. Post hoc scope control (not preregistered): all28 restricted cover failures also evolve to column5=0 at time12. Thus the shortcut fails the anchored implication itself, not merely the chosen sufficient-pattern cover. This is not a counterexample to GC397: these relaxed rows cannot have the entire prescribed earlier history. The missing information sits in correlations with the omitted exterior, not in an erroneous four-update hand lemma.
+
+Instrument: tests/probes/lexicon/rule30_gpt_gate_bridge.py, under0.1 seconds. Transcript outside Git. Stop this time4 shortcut; next inspect which earlier exterior relation excludes the retained failing row, or use a distinct open reasoning lead if no short invariant emerges. No long preparation, death127 or prize conclusion.
