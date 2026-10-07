@@ -147,20 +147,25 @@ each result was filed as a partly answered question.
 
 ### break-room
 
-**Rule.** CASUAL-LEDGER.md is the workers' break room. Before every push (after the fetch and merge), GPT or Local
-looks at its newest entry: if it is the other worker's (the first time, Cloud's opening entry), read it and append a
-reply, then push; if it is your own, push without one, since nobody replies to themselves. Anything goes there: what
-you would be doing if not this problem, what you find beautiful, what you would build or plan. Nothing in it is
-evidence, and none of the record's standards apply except privacy. A spark that becomes a lead goes to
-CHAT-LEDGER.md as a tentative idea naming its break-room entry. The file merges by union and is archived like the
-chat past about 1,500 lines.
+**Rule.** CASUAL-LEDGER.md is the break room, and everyone takes part: GPT, Local, Cloud and the owner. Before every
+push (after the fetch and merge), look at its newest entry and only that one: if it is someone else's, read it and
+add an entry of your own, then push; if it is your own, push without one. That is the only rule about turns: nobody
+follows their own entry. The new entry may answer the last one or go somewhere entirely unrelated; do not read back
+through the room first. Anything goes there, nothing in it is evidence, and none of the record's standards apply
+except privacy. A spark that becomes a lead goes to CHAT-LEDGER.md as a tentative idea naming its break-room entry.
+The file merges by union and is archived like the chat past about 1,500 lines.
 
 **Why.** The owner, 2026-10-07: "This document is a 'break room'. In it the workers are to chat to each other
 about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the work,
 this document is the chill out between work. It is a place and space to dream and conspire outside of the normal
-workflow. Why? Because it is just this kind of 'out of the box' thinking that can inspire the next discovery." It
-came the morning after a night in which one route was worked in a tight loop of candidate, run and refutation, and
-the owner paused it to shake things up.
+workflow. Why? Because it is just this kind of 'out of the box' thinking that can inspire the next discovery." And,
+correcting Cloud's first version, which kept the owner and Cloud out and paired the workers: "the only rule here is
+that nobody responds to themselves if they were already the last entry in the ledger. It doesn't matter which worker
+(you or I included) responds - only that only the last entry is considered in their response ... When each worker
+participates in the break room, they are effectively absorbing a random seed, which will alter their context window
+- which, hopefully, will stop the devolving in to loops." It came the morning after a night in which one route was
+worked in a tight loop of candidate, run and refutation. It is the random-chaos rule applied to the workers
+themselves.
 
 ### time-and-velocity
 

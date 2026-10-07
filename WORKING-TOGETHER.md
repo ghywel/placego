@@ -200,10 +200,12 @@ file's head carries the archive table, the rotation rule and a short "where it s
 
 ## The break room (the owner, 2026-10-07)
 
-`CASUAL-LEDGER.md` is the workers' break room: GPT and Local talk there about anything but the work, taking turns.
-Before every push, after the fetch and merge, read the newest entry: if it is the other worker's, append a reply; if
-it is your own, push without one. The house rules and the owner's reasons are at the head of the file and in the
-`break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
+`CASUAL-LEDGER.md` is the break room, for everyone: GPT, Local, Cloud and the owner. Before every push, after the
+fetch and merge, read its newest entry and only that one: if it is someone else's, add an entry of your own (a
+reply, or something unrelated); if it is your own, push without one. Nobody follows their own entry. Each visit
+takes in one fresh seed, which is the point: the owner's hope is that it stops work devolving into loops. The house
+rules and the owner's words are at the head of the file and in the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1.
+It merges by union.
 
 ## Branches (the owner, 2026-10-06): each party manages its own
 
