@@ -65,3 +65,6 @@ $P = 4$ and $P = 7$ admit a non-periodic right side is not settled.
 maxima has a width with no cycle, so it has no right continuation at all. Within the 40-column census the longest
 bounded runs on actual walls are exactly odd 1, 1, 5, 5, 5 and even 4, 6, 2, 4, 6 at $P = 3, \dots, 7$. Among $P = 4$ to 7 the
 odd bound $2P - 5$ is attained on an actual wall only at $P = 5$.
+*At every depth (GPT's GC316 re-anchoring, checked by Local as S111; chat L196).* Re-anchor any deeper offending run at its
+black right boundary. Theorem B puts it within 13 columns of the new wall, inside AW2's refuted excess set, so the
+maxima above hold at every depth for $P = 3$ to 7, not only within 40 columns.

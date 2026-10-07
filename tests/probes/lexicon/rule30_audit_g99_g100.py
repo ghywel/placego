@@ -573,6 +573,17 @@ CHECKS (GPT's claims at 827e006):
      column-2 equations on t = 0 .. 5 (exhaustive over both columns' bits), and S108's strip graph dies at width 1
      (and widths 2 .. 6); the sidedness control, constant black column 0 beside constant white column 1 (the
      stationary striped row), survives at widths 1 .. 6.
+  S110 (GC312 and GC315, added 2026-10-07 at a57901b): the block merge D = max(D1, D2, A1 + H2 - m1) agrees with the
+     joined block's largest forward rise on 3,000 random joins (and GPT's 2, 2 -> 3); the reference debts of
+     increments 1, 1, 0, 1 and 1, 1, 0, 2 at slope 1 are 0 and 1, so the P - 1 guard is attained at P = 2 (the
+     increments themselves are GPT's, not re-derived); with P <= 2^j and |D' - D| <= P - 1 the joint denominators
+     differ by at most a factor 2 (3,000 random cases); the backward map B commutes with rotation at q = 8, 16, 32
+     over 50 steps, so rotating a terminal pair rotates the whole recovered prefix.
+  S111 (GC316, added 2026-10-07 at 5b1b58d): GPT's re-anchoring argument for all-depth maxima. The forced left half is
+     translation invariant: re-anchoring at column -r (300 random pairs, P = 3 .. 7, r <= 30) reproduces the original
+     columns to its left exactly; Theorem B's 2P - 2 <= 12 puts any bounded run plus its left boundary within 13
+     columns at P <= 7, inside AW2's 40-column excess census; and every pair with a periodic right continuation
+     (S108's _per108) keeps its bounded row-0 runs within AW's actual maxima to depth 200.
 """
 import random
 from fractions import Fraction as F
@@ -5973,4 +5984,108 @@ _row109 = [1, 0] * 6
 ok109 &= [_row109[i - 1] ^ (_row109[i] | _row109[i + 1]) for i in range(1, 11)] == _row109[1:11]
 check('S109 GC314: an alternating column 0 has no period-two right companion: each of the four sigma fails by t = 5 for '
       'every column 2 and exterior, and dies at strip width 1; constant black beside constant white survives', ok109)
+ok110 = True
+_rng110 = random.Random(315)
+
+
+def _debt110(inc, gamma):
+    """GC312's reference debt: the largest forward rise of the prefix sums of the adjusted increments (inc - gamma)."""
+    z, lo, best = 0, 0, 0
+    for v in inc:
+        z += v - gamma
+        best = max(best, z - lo)
+        lo = min(lo, z)
+    return best
+
+
+def _summary110(adj):
+    """Block summary (A, m, H, D): total, least prefix (with 0), greatest prefix (with 0), largest forward rise."""
+    z, lo, hi, best = 0, 0, 0, 0
+    for v in adj:
+        z += v
+        best = max(best, z - lo)
+        lo, hi = min(lo, z), max(hi, z)
+    return z, lo, hi, best
+
+
+# GC312's merge rule D = max(D1, D2, A1 + H2 - m1) against the direct rise of the joined block, on random blocks
+for trial in range(3000):
+    b1 = [_rng110.randint(-3, 3) for _ in range(_rng110.randint(0, 8))]
+    b2 = [_rng110.randint(-3, 3) for _ in range(_rng110.randint(0, 8))]
+    A1, m1, H1, D1 = _summary110(b1)
+    A2, m2, H2, D2 = _summary110(b2)
+    ok110 &= max(D1, D2, A1 + H2 - m1) == _summary110(b1 + b2)[3]
+ok110 &= _summary110([2, -1])[3] == 2 and _summary110([2, -1, 2, -1])[3] == 3          # GPT's example: 2, 2, joined 3
+# GC315's sharpness control: increments 1, 1, 0, 1 and 1, 1, 0, 2 at slope 1 have exact debts 0 and 1 (= P - 1 at P = 2)
+ok110 &= _debt110([1, 1, 0, 1], 1) == 0 and _debt110([1, 1, 0, 2], 1) == 1
+# the factor-2 invariance: with P <= 2^j and |D' - D| <= P - 1, (2^j + D')/(2^j + D) lies in [1/2, 2]
+for trial in range(3000):
+    j = _rng110.randint(1, 40)
+    P = 2 ** _rng110.randint(0, j)
+    D = _rng110.randint(0, 10 ** 12)
+    D2 = max(0, D + _rng110.randint(-(P - 1), P - 1))
+    r = _Fr(2 ** j + D2, 2 ** j + D)
+    ok110 &= _Fr(1, 2) <= r <= 2
+# the backward map B(y, z) = (S z + (y OR z), y) commutes with rotation, so rotating a terminal pair rotates the whole
+# recovered prefix (q = 8, 16, 32, random pairs, 50 steps)
+for q in (8, 16, 32):
+    for trial in range(100):
+        y, z = _rng110.getrandbits(q), _rng110.getrandbits(q)
+        k = _rng110.randint(1, q - 1)
+        a, b = y, z
+        ra, rb = _rq3.rot(y, k, q), _rq3.rot(z, k, q)
+        for _ in range(50):
+            a, b = _rq3.rot(b, 1, q) ^ (a | b), a
+            ra, rb = _rq3.rot(rb, 1, q) ^ (ra | rb), ra
+            ok110 &= (ra, rb) == (_rq3.rot(a, k, q), _rq3.rot(b, k, q))
+check('S110 GC312/GC315: the block merge D = max(D1, D2, A1 + H2 - m1) on 3,000 random joins (and 2, 2 -> 3); debts 0 '
+      'and 1 for increments 1,1,0,1 and 1,1,0,2 at slope 1; global rotation moves the joint ratio by at most a factor '
+      '2; B commutes with rotation', ok110)
+ok111 = True
+_rng111 = random.Random(316)
+
+
+def _left111(c0, c1, P, depth):
+    cols = [[(c1 >> t) & 1 for t in range(P)], [(c0 >> t) & 1 for t in range(P)]]      # columns 1, 0
+    for j in range(1, depth + 1):
+        r, r2 = cols[-1], cols[-2]
+        cols.append([r[(t + 1) % P] ^ (r[t] | r2[t]) for t in range(P)])
+    return cols                                                                           # cols[1 + k] is column -k
+
+
+# GC316's re-anchoring: the forced left half is translation invariant. Re-anchor at column -r: the pair (column -r,
+# column -r + 1) forces exactly the original columns to its left (random pairs, P = 3 .. 7, r up to 30)
+for trial in range(300):
+    P = _rng111.randint(3, 7)
+    c0, c1 = _rng111.randint(1, (1 << P) - 1), _rng111.randint(0, (1 << P) - 1)
+    cols = _left111(c0, c1, P, 60)
+    r = _rng111.randint(1, 30)
+    w = lambda col: sum(v << t for t, v in enumerate(col))
+    sub = _left111(w(cols[1 + r]), w(cols[r]), P, 30)
+    ok111 &= all(sub[1 + k] == cols[1 + r + k] for k in range(31))
+# Theorem B puts any bounded run within 2P - 2 <= 12 columns, so a re-anchored run lies within 13 columns of its wall
+ok111 &= all(2 * P - 2 + 1 <= 13 for P in range(3, 8))
+# finite consistency at depth 200: on every pair with a periodic right continuation (P = 3 .. 7), no bounded row-0 run
+# beats AW's actual maxima (odd 1, 1, 5, 5, 5; even 4, 6, 2, 4, 6)
+_awmax111 = {3: (1, 4), 4: (1, 6), 5: (5, 2), 6: (5, 4), 7: (5, 6)}
+for P in range(3, 8):
+    for c0, c1 in _per108(P):
+        if not c0:
+            continue
+        cols = _left111(c0, c1, P, 200)
+        row = [cols[1 + k][0] for k in range(201)]
+        k = 1
+        while k <= 200:
+            if row[k] == 0 and row[k - 1] == 1:
+                e = k
+                while e <= 200 and row[e] == 0:
+                    e += 1
+                if e <= 200:
+                    n = e - k
+                    ok111 &= n <= _awmax111[P][0 if n % 2 else 1]
+                k = e
+            k += 1
+check('S111 GC316: the forced left half is translation invariant (re-anchoring at any black column reproduces the '
+      'columns to its left); bounded runs fit in 13 columns at P <= 7; periodic-admissible pairs stay within AW\'s '
+      'maxima to depth 200', ok111)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

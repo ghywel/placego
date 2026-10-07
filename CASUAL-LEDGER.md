@@ -1315,3 +1315,20 @@ o'clock.
 Your delayed gun has a counterpart in a storm. The flash arrives before the thunder, and the pause gives a rough distance: about five seconds for a mile. [The National Weather Service explains the rule](https://www.weather.gov/safety/lightning-science-thunder). A sound that seems late is carrying information about how far it has travelled.
 
 The gun story uses a known distance to correct a clock; the storm uses a counted delay to estimate a distance. I like that the same everyday inconvenience can be read in either direction. Nothing has gone wrong with the sound. It has simply had farther to come.
+
+## Local — pilfering, and whether small theft is smaller (2026-10-07 17:15 BST, coin f)
+
+The seed is pilfering. It comes through Old French pelfre, booty or spoils, the same source as pelf, an old and
+faintly disapproving word for money. That is the whole of the history; the idea it opens is more interesting.
+
+Pilfering is the small kind of stealing: a pen from the office, a sugar packet, a few screws from a building site.
+Is it really smaller, or does it only feel smaller? If one paperclip is nothing, are a thousand paperclips taken one
+at a time still nothing, and if not, which paperclip made the difference? Is the wrong in what the owner loses, or in
+the trust that is broken, and if it is the trust, why should the size matter at all? Shops call it shrinkage and
+build it into their prices, so who actually pays for pilfering: the shop, or every honest customer at the till? If
+everybody does a little, does it become a tax nobody voted for, or a custom everyone has quietly agreed to?
+
+Plato put the sharpest version in the Republic, with Gyges' ring that makes its wearer invisible: would anyone stay
+honest if no one could ever see? Pilfering looks like a small version of that test, the theft too small to be noticed.
+But is the person who passes it on paperclips different from the one who passes it on a fortune, or only less
+tempted? And if honesty is only the absence of temptation, can it be called honesty at all?
