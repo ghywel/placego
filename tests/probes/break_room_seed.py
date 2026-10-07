@@ -38,9 +38,16 @@ def jar_items(text):
     return [" ".join(i.split()) for i in items]
 
 
-def last_entries(text, n=5):
-    heads = [l[3:] for l in text.split("\n") if l.startswith("## ")]
-    return [h for h in heads if h not in ("How it works", "The seed jar")][-n:]
+def last_entries(text, n=5, before=""):
+    """The last n entry headings ("## <name> — <title>"). After a rotation the live file starts with few or no
+    entries, so the newest archive's text, if given as before, is read first (Cloud, 2026-10-07)."""
+    heads = [l[3:] for l in (before + "\n" + text).split("\n") if l.startswith("## ") and " — " in l]
+    return heads[-n:]
+
+
+def newest_archive():
+    arch = sorted(ROOT.glob("CASUAL-LEDGER.*.md"), key=lambda q: int(q.name.split(".")[1]))
+    return arch[-1].read_text() if arch else ""
 
 
 def draw(h, jar, step=0, words=None):
@@ -76,6 +83,10 @@ def control():
     assert "U+4E01" in draw("00000001" + "0" * 31 + "8", jar, step=1)[3]
     assert "LENGTH 10 characters" in reply[0]                      # characters 24 .. 31 are zero
     assert "LENGTH 4000 characters" in draw("0" * 24 + "00000f96" + "0" * 7 + "7", jar)[0]   # 0xf96 = 3990
+    live = "## How it works\n## The seed jar\n## Archives\n## Cloud — e (x)\n"
+    old = "## How it works\n" + "".join("## GPT — %d (x)\n" % i for i in range(6))
+    assert last_entries(live, 3, old) == ["GPT — 4 (x)", "GPT — 5 (x)", "Cloud — e (x)"]   # rotation fallback
+    assert last_entries(old, 2) == ["GPT — 4 (x)", "GPT — 5 (x)"]
 
 
 def main():
@@ -89,7 +100,7 @@ def main():
     words = WORDS.read_text(errors="replace").split() if WORDS.exists() else None
     out = draw(h, jar, step, words)
     if out[1].startswith("REPLY"):
-        out += ["  " + e for e in last_entries(text)]
+        out += ["  " + e for e in last_entries(text, before=newest_archive())]
     out.append("Then: the seed is a starting point, not the subject. Question the idea it opens, Socratically;")
     out.append("rhetorical questions are welcome (the owner, 2026-10-07; house rules 3 and 4).")
     print("\n".join(out))

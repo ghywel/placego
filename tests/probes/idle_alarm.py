@@ -117,7 +117,9 @@ def main():
     k = int(sys.argv[sys.argv.index("--rows") + 1]) if "--rows" in sys.argv else 8
     h = float(sys.argv[sys.argv.index("--quiet-hours") + 1]) if "--quiet-hours" in sys.argv else 3.0
     control()
-    fl = flags((ROOT / "CLOUD-LOCAL.md").read_text(), k, h)
+    arch = sorted(ROOT.glob("CLOUD-LOCAL.*.md"), key=lambda q: int(q.name.split(".")[1]))
+    before = arch[-1].read_text() + "\n" if arch else ""          # after a rotation, the newest archive comes first
+    fl = flags(before + (ROOT / "CLOUD-LOCAL.md").read_text(), k, h)
     if not fl:
         print(f"IDLE ALARM: no flags in each party's last {k} rows")
         return

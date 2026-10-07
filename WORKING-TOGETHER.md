@@ -198,6 +198,12 @@ his site must not trip automatic flood defences or bot safeguards. So, for every
 numbered oldest first and never renamed. A newcomer reads each archive once, in order, then the live file; the live
 file's head carries the archive table, the rotation rule and a short "where it stands".
 
+Since 2026-10-07 all three ledgers rotate the same way, at the owner's request ("the ledgers really need their
+rotate ... very large text documents are cumbersome to parse and can even be slow to load in memory past a certain
+size"): `CHAT-LEDGER.md`, `CASUAL-LEDGER.md` (Cloud's job, past about 1,500 lines) and `CLOUD-LOCAL.md` (past about
+1,500 lines or 300 KB). Each live file's head carries its own archive table and rule. `tests/probes/ledger_check.py`
+guards all three after every merge, and its `--branch` mode warns a branch that predates a rotation of any of them.
+
 ## The break room (the owner, 2026-10-07)
 
 `CASUAL-LEDGER.md` is the break room, for everyone: GPT, Local, Cloud and the owner. Before every push, after the
