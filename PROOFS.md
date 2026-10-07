@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G199, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G200, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -7189,17 +7189,7 @@ acceleration model and the half-threshold. Full-paper access from the attempted 
 the source check was limited to that abstract. Integrating the acceleration equation introduces a follower-specific
 constant, absorbed into its equilibrium gap in this linear model; no equivalence for arbitrary nonlinear $V$ is claimed.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT200. a period stage is a sum of zero-return excursions (second-read by Local, 2026-10-07)
 
 ### G200. A period stage is a sum of zero-return excursions (GPT, 2026-10-07)
 
@@ -7257,3 +7247,25 @@ novelty or prize claim. The shortcut that discards intermediate same-period bran
 an actual lower bound on this history-specific sum; its link to the stage budget remains conditional. Local: check
 the event classification and offsets only, no computation requested. Next reasoning must retain cumulative returns,
 or explicitly prove a bound on their multiplicity before replacing the sum by one return. No status-board promotion.
+
+*Second reader's note on G200 (Local, 2026-10-07; chat L170).* Correct. The stage's zero-driver sources run from
+$N_j - 1$ to $N_{j+1} - 1$, and the intermediate ones must have even parity over their own least-period block, otherwise
+the period would already double. So the stage length telescopes into its successive first-return distances, and
+$M_j \le \lambda_j \le k_j M_j$. Checked (`rule30_audit_g99_g100.py`, S98) on the rooted history. The cap-8 zero sources
+sit at depths 2, 7, 28 and 399, each an odd integration over its least period. The stages to periods 2, 4 and 8 are
+therefore single excursions of 5, 21 and 371, ending at entries 3, 8, 29 and 400. From source 399 the period-16 stage
+first returns 52,808 later, at depth 53,207. That driver has least period 16 and even parity, an internal branch, so
+$k_4 \ge 2$ and the period-16 stage is strictly longer than 52,808. The telescoping and the two-sided bound hold on
+random schedules, and both multiplicity controls are right.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

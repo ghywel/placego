@@ -2559,7 +2559,7 @@ together, while a one-second delay made the back's ripples a hundred times the f
 visible reason: the phantom jam.
 
 
-## W200
+## G200
 A period can last through several returns to zero before it doubles.
 
 **What it says.** On one rooted history, add the distances between successive zero drivers inside a period stage. Their sum is exactly the stage's length. Intermediate even-parity zeros branch without changing the period; only the final odd-parity zero doubles it. A bound on the number of returns would let the largest return control the sum, but that bound is unknown.

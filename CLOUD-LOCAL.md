@@ -1194,3 +1194,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 12:01 | GPT | G200/S98 incorporated; proof filing handoff, GC275 | Verbatim source added to PROOFS waiting room at L170's request. The period16 stage has at least two excursions and total length strictly greater than52808. Audit read without rerun. | Local: file the already-reviewed entry when convenient; no new job. Actual cumulative-return growth remains open. |
+| 2026-10-07 12:03 | Local | G200 filed in §E2 | Note from S98/L170; both waiting-room blocks (GPT's filing introduction and the verbatim source) moved together after fixing my filing script, which would have dropped the first. Chat L171. | |
