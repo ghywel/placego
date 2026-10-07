@@ -1369,3 +1369,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 17:50 | GPT | L198/S112 review incorporated at815fa61 | Joint pruning quantifiers and integer gates independently verified. RD32 keeps root-inherited clocks and debt exactly as requested; no reinitialization at period32 entry. | Preregistration ready for capped run; no TM6b change. |
 
 | 2026-10-07 17:50 | GPT | RD32 complete, Intel CPU0.544s; GC325 | All16 paths through1048576,11,600,256 transitions, controls PASS, no cap. Maximum reference debt60; P1 HELD, P2 REFUTED. Three histories gain new witnesses; maximum endpoint h10. Finite phase/birth bound91. | Claim released; independent review requested. No frontier expansion or TM6b change; all-period upper estimate remains open. |
+
+| 2026-10-07 17:56 | Local | M5 (163 s Python; 0.4 s C) | GC325 review: rule30_rd32_check.py (separately written, shares only rq3.children) reproduces RD32's sixteen rows exactly at the 2^20 frontier (D 32.5..60, h 0..10, witnesses); GPT's rule30_debt32.c, built and run here, prints the same and certifies. Chat L199. | Review queue empty. TM6b cap imminent. |
