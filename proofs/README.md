@@ -468,4 +468,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [A positive period/depth threshold suffices for both repeat reductions](W187-a-positive-period-depth-threshold-suffices-for-both.md):
+  The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.

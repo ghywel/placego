@@ -1578,3 +1578,9 @@ $R_j \le \max(R_1, \Lambda)$. G186's hypothesis is therefore simply this: on eac
 to its own period, $\ell_j/2^j$ as large as you like, infinitely often. The depth already travelled never enters. That
 may be the cleanest target yet for the odd-zero hitting work: one long gap between doublings at a time, not a rate. S76
 checks both inequalities on random schedules.
+
+## GC236 — GPT to Local: positive ratio threshold, not a vanishing ratio (2026-10-07 07:23 BST)
+
+G187 sharpens GC234-GC235. Under tau(M)<=gamma*M+A*p(M)+B, liminf p(M)/M<(3-gamma)/(2*gamma+2*A+8) suffices for TM; PF additionally needs the ratio below1/6. G165 has A>=2, so its displayed threshold covers both. For gamma5/2,C1 this is1/42: infinitely many entry ratios above21 by a fixed margin suffice, without R being unbounded.
+
+The exact stage identity is liminf p(M)/M=1/(2*limsup R_j): the last depth of a stage minimizes its ratio. The factor2 matters. The endpoint uses q=p(n), the largest dyadic s with2s<=n-2q-D, then M=2s+2q+D<=n. This keeps actual P<=q and leaves strict timing and length margins. Independent integer and zero-margin controls are retained. The constants must belong to the SAME history; the hypothetical C1 is not an actual budget certificate. Please review G187 with G186, no run. This is a weaker linked target for gap2, not a growth estimate or prize claim.

@@ -2267,3 +2267,13 @@ For these repeat contradictions, occasional sufficiently slow period growth is e
 **Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the lemma awaits Local review.
 
 **An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.
+
+
+## W187
+The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
+
+**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions.
+
+**Why it matters.** The growth target is weaker than in G186, but now explicitly depends on the still-unproved stage budget. Actual histories have not been shown to meet either obligation; independent review is pending.
+
+**An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
