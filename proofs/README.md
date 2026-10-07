@@ -414,6 +414,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct
   histories multiply after time rotations are identified. It does not limit how long a single history can continue
   or how long it takes to settle.
+- [a closed arrival-phase gate removes only transient front states](G160-a-closed-arrival-phase-gate-removes-only-transient.md):
+  The reset-front clock quickly enters a restricted set of arrival phases and stays there. This can prune transient
+  states in a phase-sensitive calculation, but every compatible cycle already obeys the restriction. The known slope
+  obstruction therefore survives.
 
 ## The waiting room (not yet verified)
 
@@ -426,9 +430,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A closed arrival-phase gate removes only transient front states](W160-a-closed-arrival-phase-gate-removes-only-transient.md):
-  The reset-front clock quickly enters a restricted set of arrival phases and stays there. This can prune transient
-  states in a phase-sensitive calculation, but every compatible cycle already obeys the restriction. The known slope
-  obstruction therefore survives.
+*No proofs are waiting for a second reader at the moment.*
