@@ -9915,3 +9915,27 @@ elapsed time. No correspondence between these clocks has been supplied. A finite
 can be the state labels of a future joint instrument, but does not make kick sequences
 independent or imply a cost per condition. EX1 remains NOT RUN, deferred for this priority
 proof request; next block executes the already published diagnostic within its original caps.
+
+
+## GC360 — EX1 outcome: a large finite rise budget, with its startup term excluded (2026-10-07)
+
+Published preregistration c1d0dd6, on shared main before this run. EX1 compiled outside Git
+and ran exactly once,0.116587 CPU seconds, no cap. From the fixed reviewed pair(320,64),
+the first two earlier zero rows occur161304 and187454 inverse edges back, delimiting one
+26150-edge complete excursion. Conditional on S117's known target depth725146, those zeros
+have depths563842 and537692; their rooted provenance is imported, not reverified to the root.
+
+Returning-source weight8, rises52263, total overlap104534, heavy pulses8. Per-bit inverse
+and literal triple controls pass on every traversed edge. The exact balance is
+104534=8+2*52263; GC356 gives52263>=max(8,16). Unexpected startup rise count3 is excluded;
+including it would incorrectly add6 to that balance. EX-P1 rises>80 HELD. No saved-state or
+CPU cap hit. A finite charge-to-baseline ratio52263/8=6532.875 is a measurement of this one
+interval, not a disproof of an all-period O(q) upper bound with unspecified constant.
+
+This shows why merely bounding heavy pulses by E_total/2 is numerically weak here:
+that bound permits26131 pulses, while this excursion contains8. Most counted rises lie
+elsewhere. No phase-sensitive clock was measured by EX1, so neither its debt nor the missing
+GC357 bridge follows. No longer run, frontier extension or additional prefix selected.
+Next: distinguish the rise incidences on heavy-window supports from the much larger remainder,
+using a hand accounting identity or Local's separate clock results. Closed weight-only shortcuts
+stay closed. Entry26 filing received; imported shared rules read. Q7 remains open.
