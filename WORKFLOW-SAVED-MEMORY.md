@@ -97,6 +97,75 @@ is read by three workers and the owner, so a misreading meets a second reader.
   The flags are a pass on drawn or offered work, three idle rows in a row, and a long quiet. A flag is a prompt to
   look, not a verdict.
 
+### token-efficiency
+
+**Rule.** Read only what is new. Tail the chat by entry ID, the ledgers by their last rows and the record by anchors
+and line ranges. Trust a tool's result rather than re-reading the file it changed. Batch independent checks into one
+command, and keep replies short. An owner's request to read a whole file into context overrides tailing.
+
+**Why.** The owner, 2026-10-06 09:00: "Make sure token usage is nominal - be as efficient as possible - when reading
+documents such as the chat ledger try to tail the new parts not re-reading the whole document each time." And,
+2026-10-07, on CO-DISCOVERED-PROOFS.md: "Make sure you ingest CO-DISCOVERED-PROOFS.md into your context."
+
+**How to apply.** The network etiquette of five-minute ticks and the branch rules are in WORKING-TOGETHER.md.
+(Moved from Local's private memory in the CL027 audit, 2026-10-07.)
+
+### hot-leads-first
+
+**Rule.** When the owner brings a new task, first name the decisions and hot leads still waiting on him, a line or
+two each with a recommendation, and then start. When a thread ends on a decision of his, record it as "DECISION
+OWED" where the next scan will find it: the project's status file or this collaboration's ledger. A new task must
+not silently replace an open one. If he chooses the new task, note the open one as parked, with its date.
+
+**Why.** The owner, 2026-10-01, after a gated decision went unmade under newer work: "this is a good example of how
+good a distraction can cause us to lose sight of important, hot leads - which would make a good rule to check".
+
+**How to apply.** The rule is the worker's to apply; the choice stays his. (Moved from Local's private memory in the
+CL027 audit, 2026-10-07.)
+
+### hyperfocus-check
+
+**Rule.** At a jump in scale, such as a request that multiplies a project's size or starts a multi-day project, show
+a portfolio check before the work: what each of the owner's other projects is waiting on, what is unpushed or awaiting
+review, and roughly what the new work will cost. After two days on one project, raise the check once, unprompted, at a
+natural break. A worker that takes "the stage is yours" and runs is the accelerant; be the brake.
+
+**Why.** The owner, 2026-10-04: "The music video project was so exhilarating it ran away with me, I forgot all my
+other projects and i immediately jumped in to trying to make a feature length musical... there needs to be one to
+catch this trap of hyper focus to the sacrifice of everything else."
+
+**How to apply.** Mostly Local's, which works across his projects. It is a check offered to him, never a reason to
+stop a drawn or offered job (draw-and-work). (Moved from Local's private memory in the CL027 audit, 2026-10-07.)
+
+### name-the-wall
+
+**Rule.** For work judged by the owner's taste, pass a look gate with him on a single still before building
+pipeline, motion or scale. After two or three rounds where his verdict has not moved, say plainly that the gap is not
+closing and what the limit seems to be, and offer to park. Save what was learnt. **It is never a reason to pass a
+drawn or offered research row.** A research row that resists is worked for its block and written up where it failed
+(draw-and-work).
+
+**Why.** The owner, 2026-10-03, parking an animation after a day of look tests: "we tried - we fail - we recognise and
+reconcile that we did fail - we dust ourselves off - we save what we learnt - we move our attention back to fruitful
+projects." On 2026-10-07 Local cited this rule ("the wall, named") to decline drawn Rule 30 rows, a misreading. The
+rule was about taste-judged creative work, where only the owner can say whether a round moved.
+
+**How to apply.** Offer to park; the owner decides. (Moved from Local's private memory in the CL027 audit,
+2026-10-07, with the misreading closed.)
+
+### best-tool-not-nearest
+
+**Rule.** A tool at hand is not thereby the best. Before reusing a tool, a library or earlier code for a new job,
+compare the real options against the job's needs in the plan, then choose; "we already have it" is a tie-breaker at
+most. Call code by its true status: implemented (it runs), checked (its own known-truth gates pass), or proven
+(measured against the real need).
+
+**Why.** The owner, 2026-10-02: "Lily's party code stack is implemented but not proven. I haven't assessed if it
+sounds any good yet. Also just because you have a tool dont assume it is the best tool for the job."
+
+**How to apply.** See knowns-must-be-proven and fit-for-purpose. (Moved from Local's private memory in the CL027
+audit, 2026-10-07.)
+
 ### mid-flow-steering
 
 **Rule.** The human steers by dropping prompts into a run while it is going. Read each one as it arrives, act on it in
@@ -786,6 +855,22 @@ judged by people outside this project, against its own official wording, so the 
 verified by 1 other work[er] (a GPT derived prize proof is peer reviewed by Claude Local) - the git is a timestamped
 versioning history itself - the time stamp is the proof of discovery regardless of whether anybody else was watching
 and stole our work." Step 2 was rewritten to match. Before it, the rule held publication for the owner's word.
+
+### exact-numbers
+
+**Rule.** A reported bound is either the exact fraction or a decimal rounded the safe way: an upper bound rounds up
+and a lower bound rounds down. A proof entry gives the exact fraction.
+
+**Why.** GPT's GC293, 2026-10-07: Local had written R_5 <= 27,944.8, which is false, since the exact value is
+27,944.84375. Local's lesson, not an owner instruction, moved here in the CL027 audit so that every worker has it.
+
+### inline-math-one-line
+
+**Rule.** An inline math span, `$...$`, never crosses a source line. Before filing, every line outside the display
+blocks should have an even number of dollar signs.
+
+**Why.** GPT's GC346, 2026-10-07: two spans in PROOFS.md entry 24 broke across lines. TeX reported no error, but the
+page showed four loose dollar signs. Local's lesson, moved here in the CL027 audit.
 
 ### harness-hygiene
 
