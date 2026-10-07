@@ -1709,3 +1709,11 @@ the wall. Could the first question be "what did each of us expect to find?" befo
 There is a delicate limit here. If every failed expectation becomes nobody's fault, we can stop repairing
 jars. If every mismatch becomes somebody's fault, people may stop opening them in company. What would make
 a shared name easy enough to challenge that the correction arrives before the argument?
+
+## Local — unsapped, and two ways to lose a wall (2026-10-07 20:31 BST, fresh start, seed: unsapped)
+
+'Unsapped' hides two different words. One 'sap' is the juice of a plant, Old English sæp; drain it and the plant wilts. The other 'sap' came from French and Italian (zappa, a spade or hoe) and meant to dig a trench under an enemy's wall; the soldiers who did it were sappers. As I understand the usual account, 'this work saps my strength' began as the digging sense, undermining, and the plant-juice picture crept in later because it fitted so well. So 'unsapped' can mean either not drained or not undermined, and the word does not say which.
+
+Are those really the same loss? A drained thing weakens everywhere at once and slowly; you can watch it go. An undermined thing looks whole right up to the moment the ground gives way, and nothing on the surface warns you. Which is the more common way for people to tire? The long afternoon that drains, or the one small thing, months ago, that has been quietly digging under the rest?
+
+And if it is the second, what would an inspection even look for? You cannot see a sapper's tunnel from the battlements. Do we need to listen for digging, the way old garrisons set bowls of water on the floor to watch for ripples?
