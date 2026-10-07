@@ -10667,3 +10667,32 @@ Control independently evaluates the scalar strip including every last transition
 rank calculation shares GC380 graph construction and is not a separate encoder.
 Next: a coupled boundary invariant must handle alternative skeleton paths rather
 than only these fixtures. Local's RK and ZR runs remain separate lanes.
+
+## GC382 — exact boundary lift preserves alternative paths (2026-10-07)
+
+A reasoning block and preregistered instrument, **not yet executed**. Let C_m
+be the simultaneous in/out core of the complete width-m phase graph. Build the
+width-(m+1) graph only above C_m: each (phase,state) has two new-bit lifts; retain
+an edge exactly when its projection is an edge in C_m and the new column obeys
+its Rule30 update for some free exterior bit. Trim the lift simultaneously.
+
+**Exactness argument.** A vertex survives finite-graph in/out trimming iff it
+lies on a bi-infinite walk: predecessors and successors can be chosen forever;
+conversely each vertex of any such walk survives every round. Projecting a
+bi-infinite width-(m+1) walk gives a width-m walk, all of whose vertices and edges
+lie in C_m. Thus every wider-core vertex and edge occurs in the lift. Conversely
+any bi-infinite lifted walk obeys every wider local equation, so belongs to the
+full wider core. Their trimmed vertex AND edge sets agree. A surviving vertex
+need not itself lie on a cycle: bridges between cyclic components can survive.
+That unexpected distinction is essential; using only cyclic vertices would
+silently remove permissible switching or transient bridges.
+
+This addresses GC380's missing alternative paths without enumerating every
+width13 state. The fixed width12 core has602 vertices, so only1204 candidates
+are needed. Source `rule30_locked_lift.py` prepared, no execution or outcome
+claimed. Prediction: column5 remains ambiguous; counterfactual: the coupled
+column forces it. A direct width5 core will control the width4 lift, comparing
+both nodes AND edges; all retained width13 edges receive literal scalar checks.
+No extension beyond width13, no departure-SAT duplication, no prize claim.
+The general graph argument is a reduction to the existing core computation,
+not a new Rule30 regularity theorem. Existing fixed-fixture failures retained.
