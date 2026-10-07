@@ -10091,3 +10091,44 @@ spectral estimate was run. The population route remains open; the closed single-
 verdict does not close it. CZ1's finite tested-width transfer to actual stopping counts
 remains a separate condition, not an all-width theorem. Next: obtain a quantitative
 population estimate or boundary anti-concentration before promoting measured low modes.
+
+## GC365 — a boundary-controlled fixed-mode repair (2026-10-07)
+
+A conditional repair for GC364, not a new population estimate. Scale residues to t=x/Q
+on the unit circle. Let f(t)=+1 on [0,1/2), -1 on [1/2,1), and let B_eta consist
+of points within circular distance eta of either 0 or 1/2, 0<eta<1/4. For integer H>=1,
+use the nonnegative unit-integral kernel
+
+    K_H(s)=|sum_{j=0}^H exp(2*pi*i*j*s)|^2/(H+1)
+          =sum_{|h|<=H} (1-|h|/(H+1))*exp(2*pi*i*h*s).
+
+The expansion follows by counting index pairs with difference h. Unit integral is its
+constant coefficient1. Away from circular distance eta of0, the geometric sum gives
+K_H(s)<=1/[(H+1)*sin(pi*eta)^2], so its tail integral has that same upper bound.
+For t outside B_eta, f(t-s)=f(t) whenever |s|_circle<eta. Consequently
+|f(t)-(K_H*f)(t)|<=2/[(H+1)*sin(pi*eta)^2] there, and <=2 everywhere.
+Direct integration gives hat f(h)=2/(pi*i*h) for odd h and0 for even h, including DC.
+For ANY probability measure mu (in particular the selected lattice measure),
+
+    |E_mu f| <= 2*mu(B_eta) + 2/[(H+1)*sin(pi*eta)^2]
+      + sum_{0<|h|<=H, h odd} (1-|h|/(H+1))*2/(pi*|h|)*|phi_mu(h)|.
+
+This makes a rate-free sufficient condition precise. If each FIXED odd phi_muQ(h)->0
+and lim_{eta->0} limsup_{Q->infinity} muQ(B_eta)=0, first let Q grow at fixed eta,H,
+then H grow at fixed eta, then eta decrease. The displayed inequality proves E_muQ f->0.
+The order of these limits matters. It avoids demanding uniform cancellation through
+all Q frequencies, replacing that strong premise with a boundary-mass premise. Neither
+premise has been proved for the marginal ballot-selected residues. GC364's cluster
+control violates the boundary-mass premise exactly where expected.
+
+Pre-control claim in CLOUD-LOCAL.md. Independent geometric-sum and index-pair forms of
+K_H agree within1e-12 at H1,3,8 and t.07,.21,.37; the tail envelope and direct continuous
+reader coefficients h1..5 pass. Unexpected necessity guard: equal atoms at0 and1/2
+have phi(h)=0 for every odd h and E f=0, but mu(B_eta)=1. Thus the boundary condition
+is sufficient, not necessary; no converse or actual marginal counterexample is claimed.
+Retained failed first counterfactual: "only midpoint control is insufficient" was not
+established and is withdrawn before any population claim. With fixed odd cancellation,
+limiting measures can have half-turn symmetry; treating the two boundaries independently
+would need care. This work proves only the two-boundary sufficient criterion above.
+Scope remains L221's coefficient bias and CZ1's separate actual-count transfer. Next
+useful target is a ballot-residue boundary-count bound, rather than more low-mode samples.
