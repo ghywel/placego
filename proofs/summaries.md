@@ -2065,3 +2065,22 @@ fork that keeps the period earns no extra allowance.
 periods that grow more slowly than the depth. Neither is proved.
 
 **An everyday picture.** Bills that double every month never add up to more than twice the latest one.
+
+
+## W166
+A small timing budget can take a long route to become visible, and forgetting part of the state can invent a loop.
+
+**What it says.** The finite horizon is the shortest route through edges that spend the budget exactly, ending where the remaining budget is zero. A long route can coexist with a small budget. For the compatible domain considered here, forgetting the preceding word or the clock phase prevents the proposed timing certificate.
+
+**Why it matters.** It separates the size of a timing bound from the number of steps used to construct it, and checks whether a compressed state retains the information the bound needs.
+
+**An everyday picture.** A journey can stay within a small spending limit while taking many steps. A map that merges different junctions may also invent a circular route that cannot actually be followed.
+
+## W167
+A free step pays for a complete branch block, but can leave a temporary expense inside it.
+
+**What it says.** Combining the zero-cost branch step with its next three reset steps gives an exact endpoint charge. At the smaller periods that charge is nonpositive. The same block can still contain a costly shorter interval.
+
+**Why it matters.** An endpoint payment cannot replace the bound needed on every interval. Steps between branch blocks still need a separate argument.
+
+**An everyday picture.** A rebate balances a whole receipt, but an individual purchase on that receipt can still cost money before the rebate arrives.
