@@ -40,7 +40,15 @@ PREDICTIONS, Local's, published before this script's run (blind unless marked):
   KL-P2 (blind, uncertain): classes 12 and 42 are still allowed at m = MMAX.
   KL-P3 (blind): with the one-turn precondition at m = 16, the class set is larger than the settled one (it includes
         at least one class outside {12, 32, 42, 52}).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 20:26 (M5, one run at commit 11c2052, 20 s; transcript outside Git). KL-C0 PASS: the two codings
+agree on every settled set, class and kick set from m = 4 to 16. KL-C1 PASS: 408 real departures after a clean turn,
+each with 20 exact steps on a new phase, all inside the one-turn set at m = 16. KL-C2 PASS: settled at m = 16, classes
+{12, 32, 42, 52}; class 32 kicks +2 .. +6 and class 52 kicks -6 .. -1, the measured alphabets. KL-P1 HELD: unchanged
+at m = 17 .. 20. KL-P2 HELD: class 12 (+4 .. +8) and class 42 (+1 .. +5) still allowed at m = 20. KL-P3 HELD: with one
+turn before, the classes are 2, 12, 22, 32, 39, 42, 49 and 52, and class 32 may also kick +7. The settled tables
+narrow with m: the classes go from 12 at m = 4 to 4 at m = 16, and +7 leaves class 32 at m = 16. So, for every right
+side, after a settled wheel: departures only at four classes, each with an alphabet of at most six kicks, two of them
+exactly the measured ones. The interior chooses among them; the alphabets themselves are local.
 """
 import os
 import random

@@ -2720,3 +2720,12 @@ How heavy the row before a lone black cell is can be read off the row after it: 
 **Why it matters.** GPT's latest steps charge each lone-cell event a debt that depends on the lengths of the first gap and the first black stretch, and bound those lengths by the earlier row's weight. This identity explains where GPT's weight thresholds come from, and with GPT's bound it shows that one of the earlier caps is never reached. It does not count how many such events there are.
 
 **An everyday picture.** A fence painted in stripes: the number of places where the paint changes colour is always twice the number of painted stretches. Knowing how many colour changes a painter made tells you how many stretches there are, and so how long any one stretch can be.
+
+## 26
+The wheel's jolts can only be of a few fixed sizes, and the cells near the edge decide which sizes are possible, whatever happens further in.
+
+**What it says.** Next to the striped edge, the second column runs like a wheel. Now and then something arriving from the chaotic interior knocks it to a new position: a "kick". This result shows, by an exhaustive finite computation, that once the wheel has run for about two and a half turns, a kick can happen at only four points of its turn. At each of those points it can only be one of five or six sizes. For the two kick points actually seen in simulations, the allowed sizes are exactly the sizes that were measured on more than eleven thousand real kicks.
+
+**Why it matters.** It was thought the kick sizes came from the chaotic interior. They do, but only the choice among a short, fixed list does. The list itself is fixed by about sixteen columns of local structure. That bounds how much information a kick can carry. It does not say kicks must keep happening, which is what a full proof would need.
+
+**An everyday picture.** A gearbox: whatever the driver does with the pedal, the car can only be in one of the gears the box was built with. The driver chooses the gear; the gearbox decides what the gears are.

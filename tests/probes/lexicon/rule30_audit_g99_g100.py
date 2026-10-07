@@ -657,6 +657,10 @@ CHECKS (GPT's claims at 827e006):
      1, A(0) = 0 and L + M <= q - w + 1; the four-edge debt at every arrival is within q - 5/2 + max(0, q - w - 1/2);
      w + L + M = q + 3 is attained by exactly C(q - 2, 2) sources at each q (GPT's A = 255 at q = 8 and A = 15 at q =
      4 among them).
+  S124 (GC356, added 2026-10-07 at 915a07b): with R(b, c) = |S c AND NOT(b OR c)|, at every pulse B = e_0 (q = 4 ..
+     12, all sources) R(B, C) = (w - 1 + C(0))/2 (G202) and R(A, B) = 1 - A(q - 1); every source of weight above 3 has
+     R(B, C) >= 2, as entry 25's parity gives; for every nonzero c the startup prefix 0, c, one, e has e = one XOR
+     S^-1 c and no rise on either edge; GPT's q = 8 control A = 135, C = 5 gives R values 0 and 2.
 """
 import random
 from fractions import Fraction as F
@@ -6695,4 +6699,26 @@ ok123 &= _rq3.children(255, 1, 8) == [85] and _rq3.children(15, 1, 4) == [5]
 check('S123 GC349: a heavy source is zero on L + M - 3 forced cells, so L + M <= q - w + 3 (q - w + 1 when L = 1); '
       'the window debt is within q - 5/2 + max(0, q - w - 1/2) at every arrival; saturation by C(q - 2, 2) sources '
       'at each q = 4 .. 12', ok123)
+# S124 (GC356): with R(b, c) = |S c AND NOT(b OR c)|, at a pulse B = e_0 with source weight w, R(B, C) = (w - 1 +
+# C(0))/2 (G202) and R(A, B) = 1 - A(q - 1); every heavy source (w > 3) has R(B, C) >= 2 (entry 25's parity); the
+# startup prefix 0, c, one, e has e = one XOR S^-1 c and R(c, one) = R(one, e) = 0; GPT's q8 control A = 135
+ok124 = True
+_R124 = lambda b, c, q: bin(_rq3.rot(c, 1, q) & ~(b | c) & ((1 << q) - 1)).count('1')
+for q in range(4, 13):
+    full = (1 << q) - 1
+    for A in range(1 << q):
+        C = _rq3.children(A, 1, q)[0]
+        if C in (0, 1):
+            continue
+        w = bin(A).count('1')
+        ok124 &= 2 * _R124(1, C, q) == w - 1 + (C & 1) and _R124(A, 1, q) == 1 - ((A >> (q - 1)) & 1)
+        if w > 3:
+            ok124 &= _R124(1, C, q) >= 2
+    for c in range(1, 1 << q):
+        ok124 &= _rq3.children(0, c, q) == [full]
+        e = _rq3.children(c, full, q)[0]
+        ok124 &= e == full ^ _rq3.rot(c, q - 1, q) and _R124(c, full, q) == 0 and _R124(full, e, q) == 0
+ok124 &= _rq3.children(135, 1, 8) == [5] and _R124(135, 1, 8) == 0 and _R124(1, 5, 8) == 2
+check('S124 GC356: R(B, C) = (w - 1 + C(s))/2 and R(A, B) = 1 - A(s - 1) at every pulse, R(B, C) >= 2 for every '
+      'heavy source, startup e = one XOR S^-1 c with zero rises on both edges (q = 4 .. 12); A = 135 control', ok124)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
