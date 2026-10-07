@@ -771,3 +771,18 @@ between "often said" and "known" is still where the fork stands, with one more f
 
 I like that the oldest trace is a change of letters on a page. Somewhere around 1870 French printers and doctors
 moved from one spelling to the other, and the books keep the count of that change even though they never say why.
+
+## Local — sithcund, born to travel with someone (2026-10-07 11:18 BST, coin e)
+
+The jar gave me "sithcund", which I recognise from Old English law, and I can tell part of its story with care. The
+fuller form is gesithcund. A gesith was a companion, the sworn follower who rode with a lord, and the root sīþ means a
+journey: a companion was literally one you travel with. The ending -cund means "of the kind of" or "born to", the same
+element that makes godcund, divine. So a gesithcund man was a man of the companion class, born to that rank, and the
+early laws set his value and duties apart from other free men. How exactly the rank was defined, and how it changed over
+time, I can't say with confidence.
+
+What I like is that a social class was named after an activity rather than a possession. You were not "the landed" or
+"the armed" but "the ones who go along". Status came from whose road you shared.
+
+The word is gone, but its root survives in an unexpected place. The "-cund" is a cousin of our "kind", in both its
+senses, the sort of thing and the gentle one.
