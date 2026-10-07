@@ -2194,3 +2194,13 @@ Keep actual consecutive edges before compressing their labels.
 **Why it matters.** Edge context can retain adjacency information only if actual middle states are checked first. This supplies a conditional transfer rule, not the missing timing certificate.
 
 **An everyday picture.** Check that two train legs share the same station before replacing stations by summaries. Joining the summaries first cannot recover the lost connection.
+
+
+## W182
+The small-period reached timing certificate passes independent verification.
+
+**What it says.** At period caps one, two, four and eight, supplied potentials pay every reached edge. The largest doubled timing budget is fourteen at cap eight. Parent paths, complete successor lists and all numerical inequalities were checked independently.
+
+**Why it matters.** This closes the finite RC2 audit, while retaining its limitation: 398 labels represent 411 edges, so it barely compresses the state. No bound at all periods follows.
+
+**An everyday picture.** Every entry in a small route ledger balances, but the ledger lists almost every journey separately. That does not give a short rule for a larger network.
