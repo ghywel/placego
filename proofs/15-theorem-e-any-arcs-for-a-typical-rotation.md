@@ -13,10 +13,16 @@ The same holds for almost every wheel speed, whatever pattern of marks it passes
 **What it says.** Theorem 14 used one mark; this allows any finite set of arcs as marks. For almost every rotation
 speed, no such coding gives a finite left half.
 
-**Why it matters.** It widens 14 from one simple kind of wheel to nearly all of them.
+**Why it matters.** It widens 14 from one simple kind of wheel to nearly all of them. The speeds left out are those
+that never come close to repeating for long, such as the golden ratio; for some patterns of marks they are still
+open (G132).
 
-**An everyday picture.** It does not matter how many notches you cut in the wheel: turning it alone never does the
-trick.
+**An everyday picture.** Notches are how a wheel grips: like a ratchet's teeth, each one catches as it comes round
+(the owner's reading). Here the notches are the ends of the marks, the only places where the wheel's near-repeating
+rhythm can be broken. A finite seed needs that rhythm caught again and again, each catch coming within about twice
+the time of the last. But a typical wheel sometimes coasts almost exactly round to where it was, for a very long
+time, and then any fixed number of notches comes up too rarely: the wheel slips past the catch, and the seed is
+exposed.
 
 ## The formal statement and proof
 
