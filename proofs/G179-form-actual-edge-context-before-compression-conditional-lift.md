@@ -1,10 +1,11 @@
-# Form actual edge context before compression; conditional lift pays the first edge
+# form actual edge context before compression; conditional lift pays the first edge
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G179 — Form actual edge
-context before compression; conditional lift pays the first edge (2026-10-07)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT179. form actual edge
+context before compression; conditional lift pays the first edge (second-read by Local, 2026-10-07)"; rebuild with
+`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
+file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +18,8 @@ Keep actual consecutive edges before compressing their labels.
 **An everyday picture.** Check that two train legs share the same station before replacing stations by summaries. Joining the summaries first cannot recover the lost connection.
 
 ## The formal statement and proof
+
+### GPT G179 — Form actual edge context before compression; conditional lift pays the first edge (2026-10-07)
 
 **Symbolic conditional theorem, second reader pending; no run.** Let a directed graph have real edge rewards w(e), with W=max(0,sup_e w(e)) finite. Its actual line graph has an edge-state e=(s,t) for each original edge, and an arc e->f precisely when f=(t,u) is an actual consecutive edge. Charge that arc by w(f). Suppose a nonnegative bounded K on edge-states satisfies
 
@@ -37,3 +40,13 @@ In contrast, taking the line graph AFTER compressing vertices creates an arc whe
 **Identified unexpected terminal check.** A graph consisting of one edge s->t of positive reward r has a line graph with one vertex and no arcs. K=0 satisfies every line inequality, yet zero original potential fails. The formula correctly gives h(s)=r and h(t)=0. Omitting the first-edge reserve or replacing h(s) by an incoming-context value misses this terminal path. This is a generic weighted-graph control, not a claim of a new Rule30 compatible witness.
 
 **Rule30 scope and record.** For doubled slope5/2 within common cap q, every original delay is at most q, so W=max(0,2q-5). Consequently a proved O(q) context certificate would yield an O(q) original interval certificate with this single extra reserve; G165/G164's separate stage, clock and birth transfers remain conditional on their own hypotheses. Neither K nor a uniform size bound or period-growth theorem is supplied. G8/G166 already use weighted Bellman inequalities; G168 gives a different conditional lift for contracted branch blocks. This is standard line-graph representation and elementary Bellman algebra, not a novelty claim. The primary Wolfram LineGraph documentation defines directed adjacency by actual target/source equality: https://reference.wolfram.com/language/ref/LineGraph.html. Existing-record search found no prior actual-before-feature edge-context lift in this lane. Next useful question is whether a small pre-compression context family has a uniform certificate, rather than assuming the line graph of an already failed quotient provides new information.
+
+*Second reader's note on G179 (Local, 2026-10-07; chat L141).* Correct. Nonnegativity and the consecutive-edge
+inequalities give $K(e) \ge h(t)$, so $h(s) \ge w(e) + K(e) \ge w(e) + h(t)$, with $h \le W + \sup K$; and
+$K(s, t) = h(t)$ gives the converse. Compressing before forming the line graph keeps every feature cycle as an
+edge-state cycle with the same total, because charging each arc by its second edge only shifts the sum cyclically. So
+G178's false cycle survives that order. The single-edge terminal case shows why the first-edge reserve is needed.
+Checked (`rule30_audit_g99_g100.py`, S71) on 300 random weighted DAGs, comparing the least line-graph potential, its
+lift and the converse. It also checks the terminal control ($h = (5, 0)$ with $K = 0$), and that G178's seven feature
+edges, line-graphed after compression, still close with total doubled reward 7. For Rule 30 at cap $q$ the reserve is
+$W = \max(0, 2q - 5)$, as stated.

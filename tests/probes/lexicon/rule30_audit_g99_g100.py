@@ -327,6 +327,10 @@ CHECKS (GPT's claims at 827e006):
      (depths 270-275 and 318-320) with the stated costs summing to 21 and the stated refined labels, which close in
      feature space; both splices are false joins ((138, 140) != (182, 84), (137, 206) != (143, 26)), so the summed
      inequalities give 0 >= 21 - 7 gamma, i.e. gamma >= 3, for every function of the refined features.
+  S71 (G179, added 2026-10-07 at 07195dc): on 300 random weighted DAGs, the least line-graph potential K lifted by
+     h(s) = max(0, max over (s, t) of w + K) satisfies every original edge inequality with h <= W + max K, and K(s, t)
+     = h(t) satisfies every consecutive-pair inequality; the one-edge terminal control gives h = (r, 0) with K = 0; and
+     G178's seven feature edges, line-graphed after compression, still form a cycle of total doubled reward 7.
 """
 import random
 from fractions import Fraction as F
@@ -3198,4 +3202,33 @@ ok70 &= all(_rqo.feat(seg70[i][0], 8) == labels70[i] for i in range(7)) and _rqo
 ok70 &= all(_rqo.feat(seg70[i][1], 8) == labels70[i + 1] for i in range(7))
 ok70 &= seg70[4][1] != seg70[5][0] and seg70[6][1] != seg70[0][0] and labels70[0] == labels70[7]
 check('S70 G178: seven reached edges close in refined feature space with cost 21, through two false joins (gamma >= 3)', ok70)
+def lift71(n, E):
+    """E: list of (s, t, w) on vertices 0..n-1 forming a DAG with edges s < t."""
+    out = {}
+    for i, (s_, t_, w_) in enumerate(E):
+        out.setdefault(s_, []).append(i)
+    K = {}
+    for i in sorted(range(len(E)), key=lambda i: -E[i][1]):
+        t_ = E[i][1]
+        K[i] = max([0] + [E[f][2] + K[f] for f in out.get(t_, [])])
+    W = max([0] + [w_ for _, _, w_ in E])
+    h = {v: max([0] + [E[i][2] + K[i] for i in out.get(v, [])]) for v in range(n)}
+    ok = all(K[i] >= E[f][2] + K[f] for i in range(len(E)) for f in out.get(E[i][1], []))
+    ok &= all(h[s_] >= w_ + h[t_] for s_, t_, w_ in E) and all(0 <= h[v] <= W + max([0] + list(K.values())) for v in h)
+    ok &= all(h[E[i][1]] >= E[f][2] + h[E[f][1]] for i in range(len(E)) for f in out.get(E[i][1], []))
+    return ok, h
+
+
+ok71 = True
+for trial in range(300):
+    n = rng29.randint(2, 9)
+    E = [(a_, b_, rng29.randint(-6, 6)) for a_ in range(n) for b_ in range(a_ + 1, n) if rng29.random() < 0.35]
+    if E:
+        ok71 &= lift71(n, E)[0]
+okt, ht = lift71(2, [(0, 1, 5)])
+ok71 &= okt and (ht[0], ht[1]) == (5, 0)
+fe = [(labels70[i], labels70[i + 1], 2 * seg70[i][2] - 5) for i in range(7)]
+ok71 &= all(fe[i][1] == fe[(i + 1) % 7][0] for i in range(7)) and sum(w_ for _, _, w_ in fe) == 7
+ok71 &= sum(fe[(i + 1) % 7][2] for i in range(7)) == 7
+check('S71 G179: the line-graph lift and its converse on random DAGs; the terminal control; post-compression cycle kept', ok71)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

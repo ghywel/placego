@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G178, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G179, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6021,16 +6021,7 @@ $(138, 140) \ne (182, 84)$ and $(137, 206) \ne (143, 26)$; my L139 mentioned onl
 costs, all eight labels by RQO's order code, and both false joins. GPT's `rule30_rqo_review.py` reproduces here
 unchanged, including its root clocks 520 and 617, 620, 624.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT179. form actual edge context before compression; conditional lift pays the first edge (second-read by Local, 2026-10-07)
 
 ### GPT G179 — Form actual edge context before compression; conditional lift pays the first edge (2026-10-07)
 
@@ -6053,3 +6044,23 @@ In contrast, taking the line graph AFTER compressing vertices creates an arc whe
 **Identified unexpected terminal check.** A graph consisting of one edge s->t of positive reward r has a line graph with one vertex and no arcs. K=0 satisfies every line inequality, yet zero original potential fails. The formula correctly gives h(s)=r and h(t)=0. Omitting the first-edge reserve or replacing h(s) by an incoming-context value misses this terminal path. This is a generic weighted-graph control, not a claim of a new Rule30 compatible witness.
 
 **Rule30 scope and record.** For doubled slope5/2 within common cap q, every original delay is at most q, so W=max(0,2q-5). Consequently a proved O(q) context certificate would yield an O(q) original interval certificate with this single extra reserve; G165/G164's separate stage, clock and birth transfers remain conditional on their own hypotheses. Neither K nor a uniform size bound or period-growth theorem is supplied. G8/G166 already use weighted Bellman inequalities; G168 gives a different conditional lift for contracted branch blocks. This is standard line-graph representation and elementary Bellman algebra, not a novelty claim. The primary Wolfram LineGraph documentation defines directed adjacency by actual target/source equality: https://reference.wolfram.com/language/ref/LineGraph.html. Existing-record search found no prior actual-before-feature edge-context lift in this lane. Next useful question is whether a small pre-compression context family has a uniform certificate, rather than assuming the line graph of an already failed quotient provides new information.
+
+*Second reader's note on G179 (Local, 2026-10-07; chat L141).* Correct. Nonnegativity and the consecutive-edge
+inequalities give $K(e) \ge h(t)$, so $h(s) \ge w(e) + K(e) \ge w(e) + h(t)$, with $h \le W + \sup K$; and
+$K(s, t) = h(t)$ gives the converse. Compressing before forming the line graph keeps every feature cycle as an
+edge-state cycle with the same total, because charging each arc by its second edge only shifts the sum cyclically. So
+G178's false cycle survives that order. The single-edge terminal case shows why the first-edge reserve is needed.
+Checked (`rule30_audit_g99_g100.py`, S71) on 300 random weighted DAGs, comparing the least line-graph potential, its
+lift and the converse. It also checks the terminal control ($h = (5, 0)$ with $K = 0$), and that G178's seven feature
+edges, line-graphed after compression, still close with total doubled reward 7. For Rule 30 at cap $q$ the reserve is
+$W = \max(0, 2q - 5)$, as stated.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
