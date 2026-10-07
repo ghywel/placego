@@ -295,6 +295,11 @@ CHECKS (GPT's claims at 827e006):
      doubled prefix rewards are G167's, the block rewards are at most 2q - 16 and the anchored prefix maximum at most
      max(0, 2q - 10); the q = 16 rooted control gives block maximum -4 and prefix maximum 2; and the q = 8 pulse
      case gives slow block 0, two-edge prefix 6 and the after-free-edge reset reward 11.
+  S63 (G168, added 2026-10-07 at 25521dd): on 500 random finite paths with disjoint four-edge blocks, the least
+     contracted potential K lifted by h = K + A at retained vertices and backward fill inside blocks satisfies every
+     original edge inequality with max h <= max K + A + B; over every gated block of every P <= 10, the largest
+     anchored prefix reward is at most max(0, 2q - 10) and the largest subinterval reward at most max(0, 2q - 5); and
+     the q = 8 slow pulse block lifts to (6, 11, 0, 3, 6).
 """
 import random
 from fractions import Fraction as F
@@ -2943,4 +2948,58 @@ pr8 = prefix_rewards(block_delays(a8, slow8, 0, 8))
 ok62 &= pr8[-1] == 0 and pr8[2] == 6 and 2 * reset_cost(slow8, 0, 8)[0] - 5 == 11
 check('S62 G167: branch-block delays and prefix rewards; block <= 2q - 16; the rooted control; the q = 8 counterexample',
       ok62, '%d gated sibling cases' % n62)
+def lift_check(rewards, blocks):
+    """rewards[i] is the reward of edge i (vertex i -> i + 1); blocks are disjoint start indices of 4-edge blocks."""
+    n = len(rewards)
+    bset = {}
+    for b0 in blocks:
+        bset[b0] = b0 + 4
+    ret = [v for v in range(n + 1) if not any(b0 < v < b0 + 4 for b0 in blocks)]
+    K = {ret[-1]: 0}
+    for i in range(len(ret) - 2, -1, -1):
+        v, u = ret[i], ret[i + 1]
+        w = sum(rewards[v:u])
+        K[v] = max(0, w + K[u])
+    A = max([0] + [sum(rewards[b0:b0 + j]) for b0 in blocks for j in range(1, 5)])
+    B = max([0] + [sum(rewards[i:j]) for b0 in blocks for i in range(b0, b0 + 4) for j in range(i + 1, b0 + 5)])
+    h = {}
+    for v in ret:
+        h[v] = K[v] + A
+    for b0 in blocks:
+        for v in range(b0 + 3, b0, -1):
+            h[v] = max(0, rewards[v] + h[v + 1])
+    ok = all(h[v] >= rewards[v] + h[v + 1] for v in range(n)) and min(h.values()) >= 0
+    return ok and max(h.values()) <= max(K.values()) + A + B, h
+
+
+ok63 = True
+for trial in range(500):
+    nb = rng29.randint(0, 4)
+    rewards, blocks = [], []
+    for k in range(nb + 1):
+        rewards += [rng29.randint(-6, 4) for _ in range(rng29.randint(0, 5))]
+        if k < nb:
+            blocks.append(len(rewards))
+            rewards += [rng29.randint(-6, 12) for _ in range(4)]
+    if not rewards:
+        continue
+    ok63 &= lift_check(rewards, blocks)[0]
+for P in range(2, 11):
+    for a in range(1, 1 << P):
+        q = lp_bits(a, P)
+        if bin(a & ((1 << q) - 1)).count('1') % 2:
+            continue
+        kids = edge_children(a, 0, P)
+        if len(kids) != 2:
+            continue
+        for r in range(P):
+            if not (a >> ((r - 1) % P)) & 1:
+                continue
+            for c in kids:
+                rw = [2 * x - 5 for x in block_delays(a, c, r, P)]
+                ok63 &= max([0] + [sum(rw[:j]) for j in range(1, 5)]) <= max(0, 2 * q - 10)
+                ok63 &= max([0] + [sum(rw[i:j]) for i in range(4) for j in range(i + 1, 5)]) <= max(0, 2 * q - 5)
+okl, h63 = lift_check([-5, 11, -3, -3], [0])
+ok63 &= okl and [h63[v] for v in range(5)] == [6, 11, 0, 3, 6]
+check('S63 G168: one shared reserve lifts contracted block certificates; the G167 reserves A and B; the q = 8 lift', ok63)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

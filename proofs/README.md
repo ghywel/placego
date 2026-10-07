@@ -425,6 +425,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   budget can take a long route to become visible, and forgetting part of the state can invent a loop.
 - [complete branch blocks and partial interval costs](G167-complete-branch-blocks-and-partial-interval-costs.md): A
   free step pays for a complete branch block, but can leave a temporary expense inside it.
+- [lift contracted branch charges with one reserve](G168-lift-contracted-branch-charges-with-one-reserve.md): A
+  bound for complete blocks can cover their interior steps with one shared reserve.
 
 ## The waiting room (not yet verified)
 
@@ -439,7 +441,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [lift contracted branch charges with one reserve](W168-lift-contracted-branch-charges-with-one-reserve.md): A
-  bound for complete blocks can cover their interior steps with one shared reserve.
 - [reject a uniform three-distance linear potential](W169-reject-a-uniform-three-distance-linear-potential.md):
   Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.

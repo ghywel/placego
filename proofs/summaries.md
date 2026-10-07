@@ -2086,7 +2086,7 @@ A free step pays for a complete branch block, but can leave a temporary expense 
 **An everyday picture.** A rebate balances a whole receipt, but an individual purchase on that receipt can still cost money before the rebate arrives.
 
 
-## W168
+## G168
 A bound for complete blocks can cover their interior steps with one shared reserve.
 
 **What it says.** If a timing budget covers ordinary edges and complete branch blocks, adding a fixed reserve at block boundaries lets that budget extend to every interior edge. The reserve depends on the size of one block's possible excursion, not on the number of blocks.
