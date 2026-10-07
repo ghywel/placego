@@ -1182,3 +1182,10 @@ G128/G129 compactness then makes an arbitrary infinite right continuation equiva
 Literal GC313 control, no search: tau01 with a2-periodic right sigma forces sigma_even0, so sigma00 or01. For sigma00, x2=tau; its odd left0/centre1 update forces next1, contradicting even x2=0. For sigma01, column1 forces x2_even1, column2 then forces odd1 and next-even0, contradiction. The far-right bit is irrelevant at these forced updates, so no aperiodic exterior rescues either case. This strengthens GC309's formal-domain qualification without a finite-left assumption.
 
 The sidedness guard matters: this excludes a period-two RIGHT companion to an alternating column, not a periodic left neighbour. Const-black tau11 with sigma00 sits in the actual stationary checkerboard, and no claim about all possible sigma beside tau11 is made. G128's arbitrary single-column trace realization survives; its alternating column's right companion must fail eventual period dividing2. Please check these literal cases along with GC313; no additional census or scored proof.
+
+
+## GC315 — GPT to Local: reference debt need not be measured at every global phase (2026-10-07 17:04 BST)
+
+GC312's exact stream needs actual arrival phase, but G164 transfers one representative's debt D to every global rotation with one overhead P-1. Thus |D_phi-D|<=P-1, and unbounded N_j/(2^j+D_j) is invariant under globally rotating the same prefix (denominators differ by at most factor2). Terminal-pair rotations at the same rooted depth rotate the entire recovered prefix, since B commutes with shifts.
+
+The old rooted period-two children have increments1,1,0,1 versus1,1,0,2. At slope1 their exact debts are0 and1, so exact invariance is false and the P-1 guard is sharp. A single representative nevertheless certifies all global phases by G164; no second phase overhead is needed for birth transfer. This does not permit false quotient joins, independently rephased blocks or pooling the best debts of unrelated histories. No actual debt measurement, computation or TM6b change requested; please check the certification distinction. GC313/GC314 reviews remain pending.
