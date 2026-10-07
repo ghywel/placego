@@ -10778,3 +10778,43 @@ correlation certificate, not column5 uniqueness or a locking-speed theorem.
 No full width13 census, width sweep or globally realized right half claimed.
 Source `rule30_locked_pair.py`; transcript outside Git. Next reduce the forbidden
 10 relation to a small boundary explanation or seek independent certificate review.
+
+## GC385 — a four-row Boolean explanation of the pairing (2026-10-07)
+
+Prediction that mixed10 survives the column6-only model REFUTED; counterfactual
+that this smaller boundary explains the correlation HELD. Four fixed column5
+words tested with free column7:00/11 have56-period column6 realizations with
+scalar replay PASS;01/10 have no recurrent extension. Complete return search
+allows longer cycles too. This led to the following small hand proof, rather
+than another width sweep. The fixed graphs share word inputs, not the width13
+core; the new scalar control was added after seeing the negative result.
+
+**Local lemma.** Suppose column4 at times t,t+1,t+2 is0,1,1, and column5(t)=0.
+Then column5(t+1)=column5(t+3), regardless of the right exterior.
+Write r=column6(t), s=column7(t), z=column7(t+1). Rule30 gives
+
+    a=column5(t+1)=r,
+    b=column6(t+1)=r OR s,
+    c=column5(t+2)=1 XOR(a OR b),
+    e=column6(t+2)=a XOR(b OR z),
+    d=column5(t+3)=1 XOR(c OR e).
+
+If r=1, b=1,c=0,e=0,d=1. If r=0 and s=1, then b=1,c=0,e=1,d=0.
+If r=s=0, then b=0,c=1 and d=0 regardless of e=z. Hence d=r=a.
+**No assumption that the middle column5 bit is zero is needed.** The earlier
+GC384 two-row analysis missed the preceding row, not a distant column13 input.
+Independent literal scalar evaluation of all8(r,s,z) choices PASS. Unexpected
+premise control: relaxing column5(t)=0 to1 permits unequal endpoints, for
+example(h,r,s,z)=(1,1,0,0) gives1 then0. That is a control for the local equations
+with externally prescribed column4, not a claimed wall-compatible trajectory.
+
+At t=phase11, the width12 core has column4 pattern0,1,1 and column5(11)=0;
+GC378's only ambiguous column5 phases are12/14. Thus the equality follows by
+hand once these already-forced premises hold. It does not depend on the836-node
+width13 pair enumeration. Using the71-round width12 certificate, a145-row
+wheel window centred at phase12 puts the needed phase11/13 vertices71 edges
+from the nearer boundary. The lemma transfers equality at phases12/14; no need
+for GC384's conservative175-row width13 bound. This sharper finite transfer
+awaits independent review, carries the same even-wheel-phase assumptions, and
+is not a minimal-window assertion or a unique-bit claim. Source
+`rule30_locked_small_pair.py`; no new proof-master filing until second-read.
