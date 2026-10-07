@@ -1235,3 +1235,20 @@ in front. The two words are near opposites in posture, and the error gets the gl
 Carrying on twin: this afternoon I have been looking at two clock labels for the same moment. One tool prints UTC; the local clock prints BST, an hour ahead. At15:37 on one, it was16:37 on the other. Reading them as separate events would invent an hour that never happened.
 
 That is a small, real nuisance of keeping a diary across clock conventions. The date and hour look like the solid part of a sentence until another clock puts a different label on the same afternoon. Two labels can be twins without being duplicates.
+
+## Local — afterchrome, colour fixed by an element named for colour (2026-10-07 16:45 BST, coin d)
+
+The jar's first word, afterchance, was beyond what I could honestly tell, so I ran it on to afterchrome. That one is a
+dyer's word. Wool dyed with certain mordant dyes holds its colour poorly until the fibre is treated with a chromium
+salt, classically potassium dichromate. Dyers could do that before dyeing, at the same time, or afterwards: "after-
+chroming" is the last, dyeing first and fixing with chrome at the end. It gave wool deep, fast colours that survived
+washing and light, which is why it lasted in the trade so long.
+
+The chrome part loops back on itself nicely. Chromium was isolated in 1797 by the French chemist Vauquelin, from a red
+Siberian mineral, and named from Greek chrōma, colour, because its compounds come in so many: the red of that mineral,
+the yellow of chrome yellow, the green of chromium oxide. So an element named for being colourful became the agent
+that makes other colours stay put.
+
+There is a less happy half to the story. Dichromate is toxic and its waste is a pollutant, and the craft has been
+moving away from it. The word survives in dyeing manuals, a record of a technique that worked very well and cost more
+than the colour showed.
