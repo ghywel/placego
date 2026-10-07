@@ -22,7 +22,8 @@ scripts are in `tests/probes/openai_math/`; their predictions were pushed before
 Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
 (that needs the toolchain and a mathlib build, and is the first of the hard ones).
 
-**Batch 1 (2026-10-07): 5 of 372 families imported, 2 at level A and 3 at level B.** Batch 2 adds 049b, 186 and 175.
+**Imported so far (2026-10-07): 9 entries from 8 of the 372 families, 6 at level A and 3 at level B.** Batch 1 was
+088, 049, 205, 189 and 119; batch 2 is 049b, 186, 175 and 235.
 
 | Family | Result | Level | Script |
 |---|---|---|---|
@@ -31,6 +32,7 @@ Where the release says a Lean formalisation exists, the entry says so; Cloud has
 | 049b | A degree-5 stable coordinate that is not a coordinate; every fibre flat | A | `om049b_stable_coordinate.py` |
 | 186 | Symmetric properties: influence at least $(\log n)^{r/(r-1)}$ times the variance | A | `om186_influence.py` |
 | 175 | Discrete convexity: $2^{75}$ unions leave only a $p$-small family | A | `om175_discrete_convexity.py` |
+| 235 | Random 3-SAT's hitting time has variance $\Theta(n)$ (upper bound read in full) | A | `om235_sat_variance.py` |
 | 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
 | 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
 | 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
@@ -336,8 +338,15 @@ computed it: about $n = 9 \times 10^{19}$ for $r = 3$ ($\log N_3 \approx 46$, in
 an explicit $C_3 \approx 1.4 \times 10^4$; then $C_4 \approx 7.0 \times 10^3$, $C_5 \approx 5.4 \times 10^3$,
 $C_6 \approx 4.7 \times 10^3$. The step-1 cutoff $k = \sigma \log m / 64$ is below 1 until $m > e^{128}$. So with
 these constants the bound beats the trivial $\mathrm{Var} \le I/4$ only for astronomically large $n$: it is a
-qualitative tool, not a numerical one. *Cloud's reading, tentative:* steps 1 to 4 seem to go through unchanged at
-$r = 2$, where the bias factor is $\sigma^0$.
+qualitative tool, not a numerical one.
+
+Cloud also read the graph companion in full. Its Fourier lemma is the same, and its capture step uses the fact that
+an $s$-edge graph has a vertex of degree at most $\sqrt{2s}$. For every graph property, every $p$ and every
+$n \ge 2$ it gives $\mathrm{Var}_p(f) \le 2^{17} I_p(f)/(\log n)^2$ and the width bound with $2^{19}$; the
+constants are checked in F7 (added after the first run). So $r = 2$ is covered, and Cloud's earlier tentative
+reading, that the argument goes through there with bias factor $\sigma^0$, is what the companion does. Even with
+explicit constants the width bound is below 1 only once $(\log n)^2 > 2^{19}\log(1/2\varepsilon)$, about
+$n > e^{600}$ at $\varepsilon = 1/4$.
 
 **For us.** The nearest tool yet to Rule 30. Our influence probes ask how much one initial cell can change a later
 cell. This theorem says symmetry alone forces the total influence up, and the method (restrict to a block, keep its
@@ -403,6 +412,58 @@ and is not imported.
 **For us.** A clean example of the "signed measure that vanishes on the forbidden configuration" technique. A
 pointwise-zero product, expanded, becomes an identity among Fourier-type weights. Rule 30's forbidden patterns might
 be attacked the same way.
+
+---
+
+## 235. Random 3-SAT becomes unsatisfiable within a window of width $\Theta(\sqrt n)$ (level A for the upper bound)
+
+*Preprint:* "Linear Variance of the Random 3-SAT Hitting Time", 2026-10-05 (the family also holds the general-$k$
+companion, and Carenini's result settling the threshold's existence is credited there). Lean: the release lists a
+formalisation for the family.
+
+**Statement.** Add independent uniform proper 3-clauses on $n$ variables, and let $H_n$ be the first index at
+which the formula is unsatisfiable. Then
+
+```math
+c\,n \le \mathrm{Var}(H_n) \le C\,n, \qquad r_n(\eta) - r_n(1 - \eta) = \Theta_\eta(\sqrt n),
+```
+
+where $r_n(\eta)$ is the first clause count at which the formula is satisfiable with probability at most $\eta$.
+The upper bound is new (the previous bound was $O(n \log n)$). The lower bound is Wilson's 2002 window theorem,
+cited, not reproved.
+
+**How it works.** Let $q_j(S)$ be the probability that $j$ random 2-clauses leave no assignment of a set $S$ alive,
+and let $P_d(S) = \sum_{j<d} q_j(S) \le d$. The key inequality is that a potential's drift controls a power of a
+killing probability:
+
+```math
+\mathbf 1_{S \ne \varnothing}\, q_d(S)^{3/2}
+\le d^{1/2}\Big(3\,\mathbb{E}_C\big[P_d(S[C]) - P_d(S)\big] + d\,u^{-3}\Big),
+```
+
+which rests on the one-clause comparison $h_2(S)^{3/2} \le 3h_3(S) + u^{-3}$ (only frozen coordinates can kill).
+Efron–Stein by omitting one clause bounds the variance by $\sum_i \mathbb{E} D_i^2$, where $D_i$ is the delay. If
+the omitted clause is pivotal, flipping any of its three variables must be blocked by its "test" clauses. These are
+three independent kill events, worth $p^3$, against a remaining duration of $O(d^{3/2} p^{-3/2})$ from the
+potential, and $3 - 3/2 = 3/2$ leaves a bounded square. Collisions (clauses meeting two of the three variables) are
+rare enough to average out.
+
+**What it does.** It pins the width of the satisfiability transition to the square root of the number of variables:
+not sharper, not wider.
+
+**How it was checked.** Cloud read the whole upper-bound proof, constants included ($K = 7$, the moment bounds, the
+tail constant 120 and $2(7/8)^{10} < 1$): correct. The script checks the one-clause comparison exactly for every
+$b \le u \le 300$, and the drift inequality exactly on random assignment sets of 3 and 4 variables, by dynamic
+programming over surviving sets (control: it reproduces $q_1 = h_2$). It also checks the tail constants.
+*Simulation, not proof, and a missed prediction:* $\mathbb{E}H_n/n$ falls toward the threshold from above (4.71,
+4.48, 4.33, 4.28 at $n = 20, 40, 80, 160$), as predicted. But $\mathrm{Var}(H_n)/n$ fell from 11.7 to 3.8, a factor
+of 3.1, against the prediction that it would stay within a factor of 2. That does not contradict the theorem, whose
+upper bound allows a falling ratio, but Wilson's lower bound needs it to level off eventually. A repeat at $n = 160$ gave 3.87; a post-hoc run at
+$n = 320$ is in progress. Cloud's loose guess that the ratio would lie between 1 and 30 held.
+
+**For us.** We use SAT solvers. Here the transition from "almost surely satisfiable" to "almost surely not" for
+random 3-SAT takes about $\sqrt n$ clauses, which is useful when sizing random-instance controls. The potential
+$P_d$ (a bounded, monotone function whose drift pays for a power of a kill probability) is a reusable device.
 
 ---
 
