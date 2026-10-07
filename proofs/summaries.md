@@ -1931,3 +1931,7 @@ Identifying temporal rotations sharpens the edge-history period bound.
 **Why it matters.** It sharpens a necessary lower period bound. It does not provide the upper period bound or waiting-time estimate needed for settling; independent review is pending.
 
 **An everyday picture.** A clockface seen after a rotation is still the same clockface.
+
+## W157
+
+Odd factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many common periods. This does not bound settling times.

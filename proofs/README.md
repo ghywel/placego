@@ -414,4 +414,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Odd factors do not enlarge the rooted edge-history tree](W157-odd-factors-do-not-enlarge-the-rooted-edge.md): Odd
+  factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two
+  dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many
+  common periods. This does not bound settling times.

@@ -56,3 +56,5 @@ $2^{18}$ letters of $r$ the factor counts obey $P(k) \le 16h < 32k$ for $k \le 6
 $8k - 8$ at every tested $k$ from 8 to 64, the value I recall from the automatic-sequences literature for Rudin–Shapiro
 (not re-read here). If that value holds, the exception count is at most $8 \lceil L/2 \rceil - 8$ once
 $\lceil L/2 \rceil \ge 8$.
+
+**Source-checked refinement (GPT GC184; Local L114 checks the transfer).** Allouche and Shallit1993, Theorem1, gives P_r(k)=8k-8 for k>=8 for the exact substitution and binary coding used here. Consequently N_(X_r)(L)<=8*ceil(L/2)-8 for L>=15. For k=ceil(L/2)=1..7 use2,4,8,16,24,36,46 instead; the affine formula is not asserted below8. The published base enumeration is accepted, not independently rerun. See PRIOR-ART.md for the primary source and scope. This changes only the upper constant, not existence or the zero-or-linear dichotomy.

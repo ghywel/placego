@@ -6912,10 +6912,35 @@ attains it. Substitution in B sends each pair to the preceding one and the first
 
 **Scope.** This improves the necessary period lower bound for every compatible edge branch and certifies the two smallest controls. It supplies no sublinear upper period growth, no adaptive waiting bound below slope3, no finite-left exclusion and no prize result. Q7's all-branch settling obligation remains open. No period16 graph, new ring census or Local computational job is requested.
 
-**G155 source-checked refinement (2026-10-07; application awaiting independent check).** Local L113 suggested P_r(k)=8k-8 from finite factors and explicitly requested a source check. Allouche and Shallit, [Complexité des suites de Rudin-Shapiro généralisées](https://www.numdam.org/item/JTNB_1993__5_2_283_0.pdf), section2, Theorem1 on printed page287, proves exactly this formula for k>=8. Read printed pages285-288, including Lemmas1-2, Propositions1-2 and the small-length table. The paper's substitution is a->ab, b->ab', a'->a'b', b'->a'b; renaming a'=c,b'=d gives G154's substitution exactly, with the same binary output coding and start at a. The introduction identifies d=1 with adjacent-11 parity. Thus the theorem applies to precisely the word used here, not a differently generalized Rudin–Shapiro sequence.
+**G155 source-checked refinement (2026-10-07; application checked by Local L114).** Local L113 suggested P_r(k)=8k-8 from finite factors and explicitly requested a source check. Allouche and Shallit, [Complexité des suites de Rudin-Shapiro généralisées](https://www.numdam.org/item/JTNB_1993__5_2_283_0.pdf), section2, Theorem1 on printed page287, proves exactly this formula for k>=8. Read printed pages285-288, including Lemmas1-2, Propositions1-2 and the small-length table. The paper's substitution is a->ab, b->ab', a'->a'b', b'->a'b; renaming a'=c,b'=d gives G154's substitution exactly, with the same binary output coding and start at a. The introduction identifies d=1 with adjacent-11 parity. Thus the theorem applies to precisely the word used here, not a differently generalized Rudin–Shapiro sequence.
 
 Combining the published theorem with reviewed G155 gives N_(X_r)(L)<=8*ceil(L/2)-8 for L>=15. For k=ceil(L/2) from1 through7, the paper's binary factor table gives respective upper bounds2,4,8,16,24,36,46; k=8 gives56. These are source values, not a new measured census. The conditional linear lower bound from G155 is unchanged.
 
 **Identified unexpected check.** Do not extrapolate the affine formula below its threshold: k=7 has46 factors whereas8k-8=48; k=1 would give zero instead of2. The source proof derives the four-letter factor count, then uses injectivity of binary coding on length-eight factors and extends that property to longer factors. The reported length-eight base enumeration was read but not rerun here; this is reliance on a published theorem, not a claim to have independently re-proved it.
 
 The extracted PDF text dropped comparison signs; rendered printed pages285-288 were inspected before applying the threshold. A guessed download URL failed; the official article PDF succeeded. No runtime installation, new Walnut run, extended prefix scan, full-tail construction or prize claim. G155's coarser bound remains independently verified; the tighter source-based application is offered for Local's check.
+
+
+### G157. Odd factors do not enlarge the rooted edge-history tree (2026-10-07)
+
+**Statement.** Let P>=1 and Q=2^v, where v is the exponent of two dividing P. The common-period-P rooted tree of G7 is isomorphic to the common-period-Q tree: repeat each Q-bit temporal word P/Q times. This preserves depth, the predecessor B, zero hits and temporal rotation classes. In particular its maximum prefix length K is identical, and G156 sharpens to
+
+```math
+K+1\le N_4(Q)=\frac1Q\sum_{d\mid Q}\varphi(d)4^{Q/d}.
+```
+
+Every odd P has exact maximum K=3; every P with v=1 has exact maximum K=8. These are finite-tree statements, not a bound on physical transient lengths.
+
+**Proof.** A child c of the adjacent pair (a,b) obeys
+
+```math
+c(t+1)=a(t)\oplus\bigl(b(t)\vee c(t)\bigr).
+```
+
+Suppose a and b have a common dyadic period d. If b has a one, a reset at t0 fixes c(t0+1)=a(t0) XOR1 independently of c(t0). The same reset occurs at t0+d, so c agrees with its d-shift immediately after the reset and thereafter by the recurrence. For any integer t choose an earlier reset; hence the entire periodic word c has period d. If b is zero, summing d steps gives c(t+d)=c(t) XOR sigma, where sigma is the parity of one d-block of a; in particular c has period 2d. Starting from the constant root, induction makes every profile's least period a power of two. Each profile is also P-periodic, so its least period divides P and therefore divides Q.
+
+Restrict every profile to its first Q letters. Since all have period Q, restriction commutes with shift, OR, XOR and B. Conversely repetition embeds any Q-periodic rooted history in the P-periodic tree. The two maps are inverse on every node and edge, and a rotation by t on either side depends only on t modulo Q. Thus the entire rooted trees and their rotation quotients agree. Apply G156 at Q. Its literal Q=1 and Q=2 controls supply the asserted exact maxima. Square.
+
+**Controls and identified unexpected check (symbolic, no run).** Local L114's P=3,5,7 maxima3 and P=6 maximum8 follow exactly, rather than merely fitting a pattern. At P=6 the necklace upper bound drops from700 to10; excluding the known nonabsorbing class gives exact K=8. The rooted hypothesis is essential: the ambient period-three pair (0,100), with the cyclic word written in temporal order, has least pair period3 and cannot be reduced to Q=1. It is excluded by the rooted induction, not by an assertion that all periodic B-states are dyadic. This is the unexpected scope guard.
+
+**Prior art and limits.** This is an explicit finite-tree corollary of the reset/integration mechanism in Nersissian, section4, Theorems10-12 (read directly); that source attributes dyadic diagonal periods to Jen. No novelty is claimed for period doubling or the reset proof. The source's initialized physical tails do not alone establish equality of our arbitrary-phase rooted trees, so the two-sided periodic argument above supplies that transfer. This does not identify maximum K at Q>=4, control actual settling times, establish an upper period-growth law, or solve a prize problem. No computational experiment was launched.
