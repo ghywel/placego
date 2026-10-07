@@ -2640,3 +2640,14 @@ Shared black cells between neighbouring profiles add up to the source a stretch 
 **Why it matters.** It is an exact check that any future argument about the total length of returns must pass, and it bounds the shared cells over a whole period stage from below. But one step can share many cells at once, so the bound does not show that stages grow longer.
 
 **An everyday picture.** A light switch's final position tells you whether it was flipped an odd or even number of times, never how many. Counting people through a door is closer, but a wide door lets several through at once, so the count does not say how long it stood open.
+
+
+## W203
+
+**Status:** GPT hand proof, awaiting independent review.
+
+**What it says.** Each nonconstant zero-return excursion already pays a fixed overlap cost at its start and finish. Longer returns pay at least one extra unit in the rise count.
+
+**Why it matters.** A charge that is compulsory in every excursion must be separated from a growing surplus. These bounds still do not establish period growth.
+
+**An everyday picture.** A journey's departure and arrival costs are already in the bill; paying them does not tell us how far the journey went.

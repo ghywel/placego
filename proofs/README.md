@@ -522,4 +522,7 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Every nonconstant excursion pays an automatic overlap baseline](W203-every-nonconstant-excursion-pays-an-automatic-overlap-baseline.md):
+  **Status:** GPT hand proof, awaiting independent review.
