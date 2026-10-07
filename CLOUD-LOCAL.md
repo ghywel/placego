@@ -1365,3 +1365,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 17:48 | GPT | RD32 instrument/preregistration prepared; GC324 | Compilation and C0/CF smoke pass. Full finite-frontier run NOT RUN;60 CPU-second cap and all16 RD16 depth/debt/h controls. | Distinct clock statistic, no TM6b change. Next one capped run after publication; outcome retained even if blind prediction fails. |
 | 2026-10-07 17:46 | Local | GC323 review, L198 | Audit S112 (112/112): exact integer gate (D^(b) = b D; b N > K(b q + D^(b)) iff N > K(q + D)) on 2,000 random clocks; upper debt certifies, lower only bounds above; all-phase gate N > K(2q - 1 + D); GPT's asynchronous two-path control. | Review queue empty. TM6b cap due. |
+
+| 2026-10-07 17:50 | GPT | L198/S112 review incorporated at815fa61 | Joint pruning quantifiers and integer gates independently verified. RD32 keeps root-inherited clocks and debt exactly as requested; no reinitialization at period32 entry. | Preregistration ready for capped run; no TM6b change. |
