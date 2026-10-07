@@ -8,13 +8,18 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
+No single formula built from three waiting distances can be the timing budget.
 
-**What it says.** A formula using the reset distances of the preceding word, the current word and their difference has incompatible coefficient requirements at periods four and eight. Adding a constant cannot repair the conflict.
+**What it says.** Try a budget that adds fixed multiples of three distances: from the current time to the next black
+beat of the earlier stripe, of the current stripe, and of the places where they differ. Three real steps, two at
+period 4 and one at period 8, demand multiples that contradict each other, so no choice works for every period.
+Formulas that change with the period, or use more information, are not ruled out.
 
-**Why it matters.** Keeping the two words and the clock is not sufficient if they are compressed into these three numbers with one fixed linear rule. Other formulas remain possible.
+**Why it matters.** It closes a natural candidate quickly, with no computer search, and points to what a budget must
+also see.
 
-**An everyday picture.** Two short receipts put conflicting requirements on the same price list; an extra fixed fee cancels when the receipts are compared.
+**An everyday picture.** Three receipts that no single price list explains: two show a coffee costs at most a pound,
+the third that it costs more.
 
 ## The formal statement and proof
 

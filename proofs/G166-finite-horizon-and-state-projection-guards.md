@@ -8,13 +8,19 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-A small timing budget can take a long route to become visible, and forgetting part of the state can invent a loop.
+How long a timing budget takes to find says nothing about how large it is, and forgetting part of the state can
+invent a loop.
 
-**What it says.** The finite horizon is the shortest route through edges that spend the budget exactly, ending where the remaining budget is zero. A long route can coexist with a small budget. For the compatible domain considered here, forgetting the preceding word or the clock phase prevents the proposed timing certificate.
+**What it says.** GPT predicted that looking 4q steps ahead would find a timing budget for period q. Local's run
+(HG4) refuted that at period 8, where 85 steps were needed, although the budget itself stayed small. G166 explains
+why: the number of steps needed is the longest chain of steps that use up the allowance exactly, and it can be long
+while the budget is small. It also shows that a budget remembering only the current stripe and the clock fails,
+since one real step costs q yet seems to return to where it began; forgetting the clock fails as well.
 
-**Why it matters.** It separates the size of a timing bound from the number of steps used to construct it, and checks whether a compressed state retains the information the bound needs.
+**Why it matters.** It says what a successful budget must remember: both stripes and the clock.
 
-**An everyday picture.** A journey can stay within a small spending limit while taking many steps. A map that merges different junctions may also invent a circular route that cannot actually be followed.
+**An everyday picture.** A map that shows junctions but not which road you came in on can draw a roundabout where
+there is only a dead end.
 
 ## The formal statement and proof
 

@@ -8,13 +8,18 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-A bound for complete blocks can cover their interior steps with one shared reserve.
+One fixed reserve covers the overruns inside every block, however many blocks there are.
 
-**What it says.** If a timing budget covers ordinary edges and complete branch blocks, adding a fixed reserve at block boundaries lets that budget extend to every interior edge. The reserve depends on the size of one block's possible excursion, not on the number of blocks.
+**What it says.** Suppose a budget covers the steps between blocks and each whole block. Then one fixed reserve, set
+by the size of a single block's overrun (a few times the period), makes it cover every stretch, including those
+inside blocks. The reserve does not grow with the number of blocks. The budget for the steps between blocks is still
+to be proved.
 
-**Why it matters.** It gives the missing transfer from complete-block payments to arbitrary intervals, while keeping the unproved boundary budget explicit.
+**Why it matters.** It turns block-by-block payment, which G167 provides, into the every-stretch bound the settling
+question needs, leaving one named gap.
 
-**An everyday picture.** A reusable cash buffer covers the temporary expense before each rebate; it need not grow each time another receipt is processed.
+**An everyday picture.** A float in the till covers the change handed out before each sale is rung up; it need not
+grow with the number of customers.
 
 ## The formal statement and proof
 

@@ -8,13 +8,17 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 ## In plain words
 
-A free step pays for a complete branch block, but can leave a temporary expense inside it.
+A free step pays for a whole branch block, but not for every part of it.
 
-**What it says.** Combining the zero-cost branch step with its next three reset steps gives an exact endpoint charge. At the smaller periods that charge is nonpositive. The same block can still contain a costly shorter interval.
+**What it says.** At a real fork the branch step costs nothing, and with the three resets after it (G162) it makes a
+block whose total stays within the allowance for periods up to 8. A shorter stretch inside the block can still run
+over: by 11 in one period-8 case, and by 2 at the known period-16 fork, where every whole block pays.
 
-**Why it matters.** An endpoint payment cannot replace the bound needed on every interval. Steps between branch blocks still need a separate argument.
+**Why it matters.** Paying for whole blocks is not enough; the bound must hold on every stretch, and the steps
+between blocks are still open.
 
-**An everyday picture.** A rebate balances a whole receipt, but an individual purchase on that receipt can still cost money before the rebate arrives.
+**An everyday picture.** A shopping trip that comes out even after the refund at the till can still take the card
+over its limit halfway round the shop.
 
 ## The formal statement and proof
 

@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through G165 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through W170 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -2066,51 +2066,71 @@ periods that grow more slowly than the depth. Neither is proved.
 
 **An everyday picture.** Bills that double every month never add up to more than twice the latest one.
 
-
 ## G166
-A small timing budget can take a long route to become visible, and forgetting part of the state can invent a loop.
+How long a timing budget takes to find says nothing about how large it is, and forgetting part of the state can
+invent a loop.
 
-**What it says.** The finite horizon is the shortest route through edges that spend the budget exactly, ending where the remaining budget is zero. A long route can coexist with a small budget. For the compatible domain considered here, forgetting the preceding word or the clock phase prevents the proposed timing certificate.
+**What it says.** GPT predicted that looking 4q steps ahead would find a timing budget for period q. Local's run
+(HG4) refuted that at period 8, where 85 steps were needed, although the budget itself stayed small. G166 explains
+why: the number of steps needed is the longest chain of steps that use up the allowance exactly, and it can be long
+while the budget is small. It also shows that a budget remembering only the current stripe and the clock fails,
+since one real step costs q yet seems to return to where it began; forgetting the clock fails as well.
 
-**Why it matters.** It separates the size of a timing bound from the number of steps used to construct it, and checks whether a compressed state retains the information the bound needs.
+**Why it matters.** It says what a successful budget must remember: both stripes and the clock.
 
-**An everyday picture.** A journey can stay within a small spending limit while taking many steps. A map that merges different junctions may also invent a circular route that cannot actually be followed.
+**An everyday picture.** A map that shows junctions but not which road you came in on can draw a roundabout where
+there is only a dead end.
 
 ## G167
-A free step pays for a complete branch block, but can leave a temporary expense inside it.
+A free step pays for a whole branch block, but not for every part of it.
 
-**What it says.** Combining the zero-cost branch step with its next three reset steps gives an exact endpoint charge. At the smaller periods that charge is nonpositive. The same block can still contain a costly shorter interval.
+**What it says.** At a real fork the branch step costs nothing, and with the three resets after it (G162) it makes a
+block whose total stays within the allowance for periods up to 8. A shorter stretch inside the block can still run
+over: by 11 in one period-8 case, and by 2 at the known period-16 fork, where every whole block pays.
 
-**Why it matters.** An endpoint payment cannot replace the bound needed on every interval. Steps between branch blocks still need a separate argument.
+**Why it matters.** Paying for whole blocks is not enough; the bound must hold on every stretch, and the steps
+between blocks are still open.
 
-**An everyday picture.** A rebate balances a whole receipt, but an individual purchase on that receipt can still cost money before the rebate arrives.
-
+**An everyday picture.** A shopping trip that comes out even after the refund at the till can still take the card
+over its limit halfway round the shop.
 
 ## G168
-A bound for complete blocks can cover their interior steps with one shared reserve.
+One fixed reserve covers the overruns inside every block, however many blocks there are.
 
-**What it says.** If a timing budget covers ordinary edges and complete branch blocks, adding a fixed reserve at block boundaries lets that budget extend to every interior edge. The reserve depends on the size of one block's possible excursion, not on the number of blocks.
+**What it says.** Suppose a budget covers the steps between blocks and each whole block. Then one fixed reserve, set
+by the size of a single block's overrun (a few times the period), makes it cover every stretch, including those
+inside blocks. The reserve does not grow with the number of blocks. The budget for the steps between blocks is still
+to be proved.
 
-**Why it matters.** It gives the missing transfer from complete-block payments to arbitrary intervals, while keeping the unproved boundary budget explicit.
+**Why it matters.** It turns block-by-block payment, which G167 provides, into the every-stretch bound the settling
+question needs, leaving one named gap.
 
-**An everyday picture.** A reusable cash buffer covers the temporary expense before each rebate; it need not grow each time another receipt is processed.
-
+**An everyday picture.** A float in the till covers the change handed out before each sale is rung up; it need not
+grow with the number of customers.
 
 ## G169
-Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
+No single formula built from three waiting distances can be the timing budget.
 
-**What it says.** A formula using the reset distances of the preceding word, the current word and their difference has incompatible coefficient requirements at periods four and eight. Adding a constant cannot repair the conflict.
+**What it says.** Try a budget that adds fixed multiples of three distances: from the current time to the next black
+beat of the earlier stripe, of the current stripe, and of the places where they differ. Three real steps, two at
+period 4 and one at period 8, demand multiples that contradict each other, so no choice works for every period.
+Formulas that change with the period, or use more information, are not ruled out.
 
-**Why it matters.** Keeping the two words and the clock is not sufficient if they are compressed into these three numbers with one fixed linear rule. Other formulas remain possible.
+**Why it matters.** It closes a natural candidate quickly, with no computer search, and points to what a budget must
+also see.
 
-**An everyday picture.** Two short receipts put conflicting requirements on the same price list; an extra fixed fee cancels when the receipts are compared.
-
+**An everyday picture.** Three receipts that no single price list explains: two show a coffee costs at most a pound,
+the third that it costs more.
 
 ## W170
-Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
+Even a formula allowed to change with the period fails, because a long period still contains short-period patterns.
 
-**What it says.** Two repeated short-period edges and one long-period pulse edge impose incompatible requirements on the same three-distance formula. Changing its coefficients for each larger graph period does not repair that conflict.
+**What it says.** G169's two period-4 steps can be repeated inside any larger period q, where they keep their short
+waiting distances. Together with a period-q step they again contradict any choice of multiples for that q, unless
+the allowance is at least 3q/(q + 1), which at period 8 exceeds the 5/2 allowed. Formulas that use each state's own
+shortest period, or richer information, remain open. It awaits its second reading.
 
-**Why it matters.** A common-period graph contains shorter-period states too. A proposed timing certificate must cover them together, even though their actual waiting scales differ.
+**Why it matters.** It closes the obvious repair of G169 and says the next candidate must tell the period levels
+apart.
 
-**An everyday picture.** A larger timetable still includes frequent local services alongside a slow long-distance service; one shared price rule must handle both.
+**An everyday picture.** A long-distance timetable must still price the local stopping trains that share its track.
