@@ -2250,7 +2250,7 @@ Period must grow slowly compared with depth; exponentially long stages alone do 
 ## G185
 The difference-order deficit after a doubling can disappear in three steps.
 
-**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. These profiles are not proved reachable from the root.
+**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. Local verifies the q4 member on the rooted history; rootedness beyond it is unproved.
 
 **Why it matters.** A general claim that higher differences recover only one order per step cannot bound stage length. Root-specific restrictions or the actual next zero-driver event are still needed.
 

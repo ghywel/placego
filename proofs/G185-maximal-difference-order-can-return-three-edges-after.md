@@ -10,7 +10,7 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 The difference-order deficit after a doubling can disappear in three steps.
 
-**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. These profiles are not proved reachable from the root.
+**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. Local verifies the q4 member on the rooted history; rootedness beyond it is unproved.
 
 **Why it matters.** A general claim that higher differences recover only one order per step cannot bound stage length. Root-specific restrictions or the actual next zero-driver event are still needed.
 
@@ -64,3 +64,6 @@ consecutive edges, with arrival phases equal to G185's plus 5 on the 8-cycle. So
 $N_3 = 29$ and recovers order 8 three edges later, a jump of 3 on the edge from 31 to 32. Seven reached edges at $q = 8$
 make that jump, the largest on the graph. The $q = 8$ member is not rooted in this way: the rooted cap exit at depth 399
 has $a$-block $10000101$, not $00000111$. Beyond $q = 4$, rooted ancestry stays open, as G185 says.
+
+
+**GPT incorporation of L147 (2026-10-07).** Local S75 independently verifies the family for q4 through64 and locates the q4 member on the rooted history at depths28 through32, with arrival phases shifted by5 on the cap8 cycle. Thus the rooted period8 stage starts at depth29 with order5 and reaches order8 at depth32; the stage continues through its zero-driver exit at depth399. Rootedness for the larger members remains unproved here; the q8 member is not the rooted cap16 exit word, as Local observes. At q2, direct substitution gives c=1001, a=1010, e=0011, f=0100, with f of weight1/order4. So the order conclusion survives, although the three-run proof degenerates. The stated arrival choice r=q-2=0 fails its gate since a(3)=0. The theorem retains q>=4; the q2 exclusion is not an assertion that maximal order fails to return. Local's verified filing is preserved.

@@ -6169,6 +6169,8 @@ $q \le 8$ that presumption is now checked. One consequence the record already gi
 through the split, so $N_5 \ge 53{,}208$ on every history. Hence $\lambda_4 \ge 3{,}300$ and $R_5 \ge 1{,}662$, lower
 bounds rather than a value of $N_5$.
 
+**GPT scope clarification after L146 (2026-10-07; existing theorem, no run).** The unbounded-period premise on an infinite ROOTED history is already proved in G165's equivalent period-growth checkpoint, using G7/G156. For completeness, a pair at depth k has first backward zero-hit time k+1 under B; therefore two distinct depths cannot have the same pair. If all periods were bounded by a fixed dyadic Q, all pairs would lie in the finite set of4^Q Q-periodic binary pairs, contradicting this injectivity along an infinite history. Rotation classes strengthen the same argument but are not needed. Ambient B-cycles such as G156's period-two example do exist; they are excluded by rooted first-hit times, not by a global acyclicity assertion. Thus every infinite admissible rooted history has all dyadic entries N_j, and no additional bounded-period cyclic rooted case remains to classify. This settles the scope question, not the growth rate. From the shared period16 prefix, the conservative reviewed bound N_5>=53208 implies lambda_4>=(53208-400)/16=6601/2 and R_5>=53208/32=6651/4; neither is the unknown exact entry. These are finite lower bounds, not asymptotic estimates.
+
 ### G.GPT185. maximal difference order can return three edges after a doubling (second-read by Local, 2026-10-07)
 
 ### GPT G185 — Maximal difference order can return three edges after a doubling (2026-10-07)
@@ -6218,6 +6220,8 @@ $N_3 = 29$ and recovers order 8 three edges later, a jump of 3 on the edge from 
 make that jump, the largest on the graph. The $q = 8$ member is not rooted in this way: the rooted cap exit at depth 399
 has $a$-block $10000101$, not $00000111$. Beyond $q = 4$, rooted ancestry stays open, as G185 says.
 
+
+**GPT incorporation of L147 (2026-10-07).** Local S75 independently verifies the family for q4 through64 and locates the q4 member on the rooted history at depths28 through32, with arrival phases shifted by5 on the cap8 cycle. Thus the rooted period8 stage starts at depth29 with order5 and reaches order8 at depth32; the stage continues through its zero-driver exit at depth399. Rootedness for the larger members remains unproved here; the q8 member is not the rooted cap16 exit word, as Local observes. At q2, direct substitution gives c=1001, a=1010, e=0011, f=0100, with f of weight1/order4. So the order conclusion survives, although the three-run proof degenerates. The stated arrival choice r=q-2=0 fails its gate since a(3)=0. The theorem retains q>=4; the q2 exclusion is not an assertion that maximal order fails to return. Local's verified filing is preserved.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
