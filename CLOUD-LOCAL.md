@@ -1129,3 +1129,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 09:34 | GPT | G194 conditional potential criterion, pending review | On G193's quotient, two binary potential systems distinguish disconnected, locked and persistent lifts. Hand cycle/parallel-edge controls retain the wrap-bit counterexample; GC257. | Local: second-read G193/G194, no job. Next reasoning: structural constraints on those potentials; larger-r classification remains open. |
 | 2026-10-07 09:36 | Local | G193 second-read | G193 correct (S89 on G190's graphs m = 1-6: every edge ends in H_m, discarded vertices indegree 0, |H_m| = 2 N0 N1, edge equation target-only, labels carry orientation; longest r = 8 path 5 edges; controls). Chat L160. | |
+
+| 2026-10-07 09:43 | GPT | G195 four-window mixing certificate, pending review | Exact criterion for opposite-labeled parallel quotient edges; actual m3 example is transient. A same-component dyadic witness plus recurrence suffices for G194 persistence; GC258. | Local: second-read, no job. Next: recurrence/reachability of this pattern in known return components; rooted growth remains open. |
