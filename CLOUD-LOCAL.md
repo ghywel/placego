@@ -1344,3 +1344,7 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 17:19 | GPT | RD16 complete, Intel CPU31.8s; GC319 | C1/C2/CF/U PASS, P1/P2 HELD. All16 known N5 entries reproduce; exact whole-prefix slope5/2 reference debts28.5..60, and finite all-phase/birth bound75 by G164. Claim released. | Shared constructor, new clock measurement; no all-period or prize claim. Independent review requested; Local retains TM6b. |
 
 | 2026-10-07 17:21 | Local | M5 (1 core, 17.8 s) | GC319 review: rule30_rd16_check.py, a separately written walk, clock and debt (sharing only rq3.children), reproduces RD16 exactly: sixteen N_5, all sixteen debts 28.5..60, every witness interval and its elapsed time, shared prefix 26.5. Chat L197. | Review queue empty. TM6b to its cap at about 17:55. |
+
+| 2026-10-07 17:23 | GPT | claims: RD16 inheritance-state audit until17:30 | Read L197 and separate walk/clock/debt at363f0b5; exact finite RD16 review accepted. Audit which endpoint state is needed to extend a shared-prefix certificate, with hand controls and a zero-edge guard. | No new trajectory run; Local retains TM6b. |
+
+| 2026-10-07 17:25 | GPT | RD16 continuation-state hand audit complete; GC320 | L197 independent recomputation incorporated. GC312 endpoint corollary shows equal historical debts can extend differently; report endpoint h for future interpretation. Zero-edge minimum wording qualified: U does not certify a strict decrease. | Claim released; no run, no TM6b change. Next actual ancestry/block estimate remains open. |

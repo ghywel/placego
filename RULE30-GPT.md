@@ -9069,3 +9069,23 @@ The exact phase-zero whole-prefix debts at slope5/2 are below. Every witness int
 Maximum reference debt is60, attained by the histories with N5=770532 and894235; the natural N5=87867 history has debt28.5. Every measured history exceeds the common-prefix26.5 somewhere, while remaining below the preregistered64 threshold. Branches inherit their actual reference clock and whole-prefix minimum/debt; numerical exposure is not reset at a branch.
 
 All drivers through the period32-entry edge have common period16: that last driver is zero and its reset is the identity. G164 therefore transfers this finite certificate to all global phases and birth restarts with interval/birth debt at most60+15=75 on these prefixes. The known complete sixteen-entry rotation coverage and GC315 justify coverage of omitted global rotations; this is not a new independent construction of the rooted tree. It gives a finite uniform bound on these sixteen entire prefixes only. No bound at later period32-stage nodes, history-uniform all-period constant, joint asymptotic divergence or prize follows. Local: independent review can reconstruct the witness intervals and constructor/clock convention; no change to the running TM6b job is requested.
+
+
+**RD16 independent review incorporated (2026-10-07; L197 at363f0b5).** Local's separately written walk, clock and debt reproduces all sixteen entries, debts and witness elapsed times in17.8s on M5, sharing only the previously audited child constructor. The finite measurement is independently recomputed; the child constructor is still shared. No GPT replay or asymptotic upgrade.
+
+## RD16 continuation audit: inherited maximum is not the endpoint state (2026-10-07; GC320)
+
+**Bounded hand reasoning; implementation corollary of GC312, no new proof count.** L197 observes that seven measured histories share witness[120349,120368]. Prediction before this audit: the maximum debt alone cannot predict extension debt; the endpoint's distance above its running minimum is also needed. Counterfactual: two prefixes with the same maximum debt always respond identically to a common continuation. The explicit control below refutes that statement. Bears on Q7's missing same-history debt estimate, not period growth.
+
+Use doubled units z_d=2T_d-5d. At a prefix endpoint let h=z_end-min_prefix(z), and let D be the historical maximum rise. For the next actual joined block, measure relative adjusted prefixes s_0=0,...,s_k, with A=s_k, m=min(s), H=max(s), and E=max_{a<=b}(s_b-s_a). GC312's existing concatenation identity specializes to
+
+    D_new=max(D,E,h+H),
+    h_new=max(h+A,A-m).
+
+The three debt terms respectively cover an interval entirely in the old prefix, entirely in the new block, or crossing their genuine boundary. For the endpoint formula the new running minimum is the lesser of the old minimum and z_end+m. These expressions retain the actual inherited reference clock: abstract block increments are not permission to reset phase or join unrelated rooted histories.
+
+**Independent exact hand control.** Prefixes with doubled adjusted increments(3,-3) and(-3,3) both have D=3, but endpoint h=0 and3. A common next increment3 gives D_new=3 and6 respectively. These increments correspond to integer reset delays4,1 at slope5/2. They show algebraic insufficiency of D alone; they are not asserted to be two admissible rooted Rule30 histories. Direct enumeration of each short prefix gives the same results as the formula.
+
+**Unexpected zero-edge guard and scope correction.** A zero-delay edge contributes-5 in these units. Thus D_new=D and h_new=max(h-5,0). It lowers the running minimum strictly only if h<5; at h=5 it reaches the existing minimum, and at h>5 the minimum stays fixed. For example a delay6 followed by a zero delay yields adjusted increments(7,-5), h changing7 to2 with the minimum still0. RD16's U checks inclusion, delay0, adjusted recurrence and unchanged D; it does NOT test that every terminal edge strictly lowers the minimum. The earlier phrase 'updates prefix minimum' describes applying min, not a certified strict change. L197's 'moves the minimum' should receive this qualification. The measured debts and bound75 are unaffected.
+
+Consequently L197's shared witnesses establish inherited historical maxima on those finite prefixes, but do not certify small future debt: future crossing intervals also depend on h. A future extension instrument should preserve both D and h (RD16 already preserves the full minimum and clock) and report endpoint h if interpreting inheritance. The open obligation is a bound on the actual joined blocks and their endpoint states, not this algebraic identity. No further numerical run or TM6b change is requested.
