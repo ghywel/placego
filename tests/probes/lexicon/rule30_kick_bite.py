@@ -3,7 +3,7 @@
 "bite" steer of 2026-10-07; Cloud's block, claimed in CLOUD-LOCAL.md with these predictions pushed before the run).
 
 RUN-ON:     cpu (Python 3 standard library), one process
-COMMAND:    python3 tests/probes/lexicon/rule30_kick_bite.py [TRIALS=400] [T=3000]
+COMMAND:    python3 tests/probes/lexicon/rule30_kick_bite.py [TRIALS=400] [T=3000]  |  ... --hunt N
 COST:       minutes.
 
 Setting. Local's KL (rule30_kick_layers.py, PROOFS.md entry 26) proves, for every right side, that after 133 steps
@@ -40,6 +40,29 @@ Counterfactual: if F2, F3 or F4 show classes 12 or 42 while F1 never does, the a
 finiteness or genericity, and that is the bite: a non-local constraint of the kind Q2 asks for. If no family shows
 them, the absence is a deeper law (or very rare), and the next step is an exact search for a finite right half that
 makes one.
+
+OUTCOME, run 1, 2026-10-07 21:08 BST (container CPU, 25 s, 400 trials per family, T = 3000, at commit 7c4e4b6):
+  KB-C0 FAILED, as written, by a fault in the control's design. Given a column 1 built to kick at class 12 by +6,
+        the detector reports class 12 exactly. But it reports four kicks, +4 .. +7, because 21 observations do not
+        separate nearby phases of a rotation code. The same holds at 42, 32 and 52. So the detector sees classes 12
+        and 42; the kick is a set, as in KL's tables. The tallies below count (event, kick) pairs, so each event is
+        counted up to five times.
+  KB-C1 PASS: every settled departure lies inside KL's settled table.
+  KB-C2 FAILED: F1 at width 16 showed one class-42 event.
+  KB-P1 REFUTED: class 42 occurs in finite right halves, one event at width 16 and one at width 64, among about 300
+        settled events in F1. Seeds 47231 and 63761 (width 16) were found again in a separate search, and an
+        independent per-cell coding of the step reproduces their column 1 and their class-42 departures. So class 42
+        is rare, not forbidden: half of the bite was a sampling gap.
+  KB-P2 HELD (no class 12 or 42 in F2). KB-P3 and KB-P4 REFUTED (none in F3 or F4).
+  No class-12 event in any family (about 650 settled events in all).
+
+POST-HOC (written before the hunt mode first ran, 2026-10-07 21:12 BST; not part of the preregistered test):
+  HUNT: --hunt N runs N trials of finite random right halves at widths 16 to 64, and of infinite random ones, and
+  counts events, not (event, kick) pairs.
+  KB-H1: class 42 appears at a rate between 1 in 50 and 1 in 1,000 settled events. Confidence 0.7.
+  KB-H2: class 12 appears at least once in 20,000 settled events. Confidence 0.5. If it never does, the next step is
+         an exact witness: a path through KL's m = 16 automaton for a class-12 kick, extended column by column to
+         the right until it closes into a finite right half or is shown not to.
 """
 import os
 import random
@@ -53,8 +76,10 @@ sys.argv = _argv
 
 U = [int(c) for c in wl.U]
 P, F, S = 56, 20, 168
-TRIALS = int(sys.argv[1]) if len(sys.argv) > 1 else 400
-T = int(sys.argv[2]) if len(sys.argv) > 2 else 3000
+_pos = [a for a in sys.argv[1:] if not a.startswith('--')
+        and not (sys.argv.index(a) > 1 and sys.argv[sys.argv.index(a) - 1] == '--hunt')]
+TRIALS = int(_pos[0]) if len(_pos) > 0 else 400
+T = int(_pos[1]) if len(_pos) > 1 else 3000
 KL = {12: range(4, 9), 32: range(2, 7), 42: range(1, 6), 52: range(-6, 0)}
 
 
@@ -154,5 +179,52 @@ def main():
     print('KB-P4', 'HELD' if f4 > 0 else 'REFUTED', '(%d)' % f4)
 
 
+def hunt(n):
+    rng = random.Random(int.from_bytes(os.urandom(4), 'big'))
+    events, by_class, seeds = 0, Counter(), {12: [], 42: []}
+    for i in range(n):
+        w = (16, 24, 32, 48, 64, T + 2)[i % 6]
+        R = rng.getrandbits(w) | 1
+        for a, ks, _ in event_list(column1(R, w)):
+            events += 1
+            by_class[a] += 1
+            if a in seeds and len(seeds[a]) < 5:
+                seeds[a].append((w, R if w <= 64 else 'infinite'))
+        if (i + 1) % 2000 == 0:
+            print('%6d trials, %7d events, by class %s' % (i + 1, events, dict(sorted(by_class.items()))), flush=True)
+    print('HUNT: %d trials, %d settled events, by class %s' % (n, events, dict(sorted(by_class.items()))))
+    print('class 12 seeds:', seeds[12])
+    print('class 42 seeds (up to 5):', seeds[42])
+    r42 = by_class[42] / events if events else 0
+    print('KB-H1', 'HELD' if 1 / 1000 <= r42 <= 1 / 50 else 'REFUTED', '(rate %.5f)' % r42)
+    print('KB-H2', 'HELD' if by_class[12] else 'REFUTED', '(%d class-12 events)' % by_class[12])
+
+
+def event_list(c1, need=S):
+    """departures(), one entry per event: (class, kicks, count)."""
+    out = []
+    t, n = 0, len(c1)
+    while t + P + F < n:
+        d = next((d for d in range(0, P, 2) if all(c1[t + j] == U[(t + j - d) % P] for j in range(P))), None)
+        if d is None:
+            t += 1
+            continue
+        s = t + P
+        while s < n and c1[s] == U[(s - d) % P]:
+            s += 1
+        if s + F >= n:
+            break
+        if s - t >= need:
+            ks = [kick_of((dn - d) % P) for dn in range(0, P, 2)
+                  if all(c1[s + j] == U[(s + j - dn) % P] for j in range(F + 1))]
+            if ks:
+                out.append(((s - d) % P, sorted(ks), len(ks)))
+        t = s
+    return out
+
+
 if __name__ == '__main__':
-    main()
+    if '--hunt' in sys.argv:
+        hunt(int(sys.argv[sys.argv.index('--hunt') + 1]))
+    else:
+        main()
