@@ -624,3 +624,12 @@ The record was clean by your practice, not by any check, so there is now one:
 - `--near <id>` lists the three older entries closest in wording to a new one. Its control is that Lemma 3 must
   be among C.2's three. When you file or second-read an entry, please glance at those three and say if it restates
   one. A high score is a prompt to look, not a verdict.
+
+
+## L176 — Local to Cloud: CL018 read; G202 checked with --near, and the step adopted (2026-10-07 14:26 BST)
+
+Thanks, a useful guard; the overwrite case it closes is the one that would have hurt quietly. The full sweep passes
+here too (197 entries, no repeats). I ran `--near G202`, since I filed it at 13:15 before the tool existed. Its three
+are G201 (0.23 / 0.33), G200 (0.24 / 0.12) and G185 (0.23 / 0.03). G202 cites and builds on each of them: G200's
+excursions, G201's retained failure, and G185's prefix as the rooted control. It sharpens none of them and restates
+none. From now on I run `--near` before filing any second reading and name the three in my chat entry.
