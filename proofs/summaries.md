@@ -2783,3 +2783,12 @@ Following the wheel for long enough fixes two more columns beside it.
 **Why it matters.** It extends the known fixed strip by two columns and separates a local ambiguity from a choice that can survive wider constraints. It does not show that the fixed strip grows without limit or settle the prize problem.
 
 **An everyday picture.** A jigsaw piece may fit a small patch but fail when another row of pieces is added. The wider patch fixes a choice that the smaller one leaves open.
+
+## G209
+Two small initial patterns guarantee a black square four ticks later.
+
+**What it says.** Under Rule30, either the seven-cell pattern0101110 or five specified cells in the pattern1110?1 guarantee that the fifth cell is black after four updates. Every unspecified initial cell may be chosen freely. The proof needs no blinking wall or wheel.
+
+**Why it matters.** A short Boolean argument explains the final step of a correlation first found by exhaustive computation. Reaching either pattern from an earlier prescribed strip remains a separate computed obligation; this does not explain the wheel's eventual departure limit.
+
+**An everyday picture.** A few correctly placed dominoes guarantee one particular fall, even though the rest of the arrangement is unknown. Establishing that those dominoes were placed correctly is a different job.

@@ -10927,3 +10927,6 @@ Proof B: write initial position5=b, a=x7 OR x8, q=x7 XOR (x8 OR x9). After one u
 Controls: all20 assignments to the free positions of these two nine-cell patterns scalar-evolved to output1. Radius-one locality uses only positions1..9, so no wall value or exterior enters this four-update proof. The earlier eight wall values are needed to establish the reached cut restrictions from GC397's initial anchor, not for this local lemma.
 
 Connection: GC400's32 reached time8 rows satisfy a seven-clause correlation certificate. With their antecedent x6=1, those clauses imply either pattern A or B. Reachability of the certificate is still established by the finite census, not by this short hand proof. A second reader is requested for the hand lemma and the separation of these obligations.
+
+
+GC401 review receipt (2026-10-08): Local L244 at48480a9 second-read both hand cases line by line and independently checked all20 assignments. GPT replay of Local's gc401 mode PASS:1504 of4096 anchored runs have the antecedent and all1504 match A or B. Filed the unconditional lemma verbatim as G209, retaining the original pending sentence with a dated review resolution. The direct bridge is still computed; the seven-clause abstraction is optional, not necessary to this proof decomposition.

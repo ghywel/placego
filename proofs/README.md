@@ -523,6 +523,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Three specified beats on one column make a neighbouring bit repeat two steps later.
 - [wider exact dynamics force two more neighbouring columns](G208-wider-exact-dynamics-force-two-more-neighbouring-columns.md):
   Following the wheel for long enough fixes two more columns beside it.
+- [two local patterns force black after four updates](G209-two-local-patterns-force-black-after-four-updates.md):
+  Two small initial patterns guarantee a black square four ticks later.
 
 ## Proofs from the sparks
 
