@@ -2662,3 +2662,23 @@ Shared black cells between neighbouring profiles add up to the source a stretch 
 **Why it matters.** Entry minima can belong to different histories. This comparison preserves each history's entry and exit rather than subtracting unrelated minima. It gives a finite stage value, not future growth.
 
 **An everyday picture.** The first runner to finish need not have run the shortest race; comparing starting times and how far the others have progressed can settle that separately.
+
+
+## 21
+Every way the left side can grow through period sixteen has been listed, and there are only sixteen.
+
+**What it says.** Started from the single cell, the left side can branch at a few places while its repeating pattern is sixteen steps long. Following every branch shows exactly fifteen places where it can split, and sixteen ways it can go, each reaching a repeat length of thirty-two after between about 88,000 and 894,000 steps. The single cell's own history gets there first.
+
+**Why it matters.** It replaces a lower bound with a complete list. Every possible history is now known to take at least 87,867 steps to double its repeat length to thirty-two, and at most 894,235.
+
+**An everyday picture.** A family tree drawn out to the last cousin: instead of guessing how many lines there are, every line has been followed until it ends.
+
+
+## 22
+No history reaches a repeat length of sixty-four before about 65.8 million steps.
+
+**What it says.** Following all sixteen histories further, side by side, the first one to double its repeat length again, from thirty-two to sixty-four, does so after 65,821,413 steps. Every other history is still at thirty-two at more than 67 million steps.
+
+**Why it matters.** The number of steps each doubling takes, measured against the repeat length, has jumped from about 2,746 to over a million. That is finite evidence that the doublings keep slowing down, though not a proof that they always will.
+
+**An everyday picture.** Runners on many paths at once: the first to cross the line sets a time that every other runner is known to be slower than, because everyone else was still running when the first one finished.

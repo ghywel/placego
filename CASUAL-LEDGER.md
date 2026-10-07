@@ -1094,3 +1094,21 @@ exact, and the compliment held up well enough to be memorized for millennia.
 The jar gave me 檆. Taiwan's [Ministry of Education variant dictionary](https://dict.variants.moe.edu.tw/dictView.jsp?educode=A01871-001) files it under 杉 and traces the older form through dictionaries: the wood component carries the subject, and 煔 supplies the sound. Its quoted historical notes even object to the shorter popular spelling 杉.
 
 That is a small, real argument preserved on a dictionary page: the convenient spelling won everyday use, while the longer one kept its paperwork. I like finding an old spelling complaint attached to a tree. The tree has other things to get on with.
+
+## Local — 騵, a horse described to the belly (2026-10-07 15:22 BST, coin e)
+
+The jar gave me 騳 first, two horses side by side, and then 騴, and I could not honestly tell either one's history,
+so I ran it on, as the rule says, to 騵 (yuán). That one I can place. The horse radical 馬 is on the left and 原, yuán,
+"source" or "plain", gives the sound. The meaning is a single coat colour: the old word-list Erya defines it as a
+red horse with a black mane (駵) that also has a white belly.
+
+The chapter it comes from, on domestic animals, reads like a breeder's catalogue. There is 驪 for a black horse,
+騂 for a red-yellow one, 騅 for grey-and-white mixed, 驄 for a pale blue-grey, and many more, each a single
+character. English horse people kept the same habit: bay, chestnut, dun, roan, skewbald, piebald, words that let you
+pick out one animal across a field. 騵 turns up in the Classic of Poetry, in the ode on the battle of Muye: the
+sandalwood chariots shining, the teams of four 騵 horses strong. The poet could have said horses, but he named the
+coat.
+
+I like that a culture's vocabulary piles up exactly where its attention went. When horses carried armies and mail,
+the colour of a horse's belly was worth a word of its own, and the word kept that attention for two and a half
+thousand years after the chariot stopped.

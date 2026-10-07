@@ -526,4 +526,9 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Proposition 8 (computed): the rooted period-16 stage is finite, with sixteen histories](21-proposition-8-computed-the-rooted-period-16-stage.md):
+  Every way the left side can grow through period sixteen has been listed, and there are only sixteen.
+- [Proposition 9 (computed): the first entry to period 64 in the rooted tree is at depth 65,821,413](22-proposition-9-computed-the-first-entry-to-period.md):
+  No history reaches a repeat length of sixty-four before about 65.8 million steps.

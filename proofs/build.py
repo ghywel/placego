@@ -62,6 +62,8 @@ def units():
                     sink = known[3]
                 elif n and re.match(r"(GPT G\d+ —|G\d+\. )", h):
                     start = f"W{n.group(1)}"
+                elif nm:  # Local's numbered entries wait here under their final number ("21. Proposition 8 ...")
+                    start = f"{int(nm.group(1)):02d}"
             elif sec == "S":  # spark proofs, "SP01. ..." (S1, S2, ... already name Local's checks)
                 sp = re.match(r"(SP\d+)\. ", h)
                 start = sp.group(1) if sp else None
