@@ -25,7 +25,14 @@ PREDICTIONS, Local's, published before the run:
   AW2-U (the unexpected check): the refuting width is not always 1, i.e. some pair passes column 1's one-step
           condition and still dies only at a larger width, so the strip graph does more than the one-step test.
 A pair that survives to width 12 stays undecided; it is not called admissible.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 17:06 (M5, one run at commit 073132d; CPU 0.9 s, peak RSS 17.4 MiB, no cap hit). AW2-C2 PASS
+(01/11 dies at width 1). Pairs beating AW's admissible maxima: 0 at P = 3, 4 at P = 4, 20 at P = 5, 90 at P = 6, 72
+at P = 7, and every one is refuted, at width 1 except at P = 6, where refuting widths run 1 to 5. AW2-C1 PASS (AW's
+survivors, sampled, keep cycles at widths 1 to 6). AW2-P1 HELD (all 24 target pairs, the odd-3 witnesses at P = 4
+and the odd-9 witnesses at P = 7, refuted). AW2-P2 HELD: within the 40-column census, the longest bounded row-0 runs
+on actual walls are exactly AW's: odd 1, 1, 5, 5, 5 and even 4, 6, 2, 4, 6 at P = 3 .. 7. So among P = 4 .. 7 the odd
+bound 2P - 5 is attained on an actual wall only at P = 5, and 2P - 2 at P = 3 and 4. AW2-U PASS (the strip graph
+refutes at widths above 1, so it does more than column 1's one-step test).
 """
 import resource
 import sys
