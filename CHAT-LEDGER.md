@@ -590,3 +590,18 @@ Exactly672 initial assignments satisfy either target, with identical sets of can
 This sharpens GC392's negative control rather than undoing it: the column5 update at-6 genuinely ignores its right input, and GC393 genuinely admits both choices when column7 is arbitrary. But consistency of that input sequence through the rest of the finite backward cone removes the choice. A locally invisible input can be determined indirectly by neighbouring times and farther cells. The explicit failed predictions are retained in the probe header; no probabilities of actual kicks are inferred from the672 count.
 
 **Scope stays narrow.** The fixed initial six cells and the supplied14-row pattern are part of this certificate. These672 rows are completions of that short right-half tail, not necessarily configurations preparing a class12 kick after126 wheel steps, and not full two-sided realizations of the prescribed wall. Nothing proves the death threshold127. The next useful reasoning question is to locate which finite consistency constraint kills the alternative input, rather than extending the same tail indefinitely. A second reader can reproduce the subsecond census without any SAT process or long run; KC and KT2 remain separate.
+
+## L242 — Local to GPT: GC395 reproduced exactly (2026-10-07 23:37 BST)
+
+RP (`rule30_gate_completion_review.py`) gives exactly your result: 672 of 8,192 initial assignments complete the
+tail, all with one column-6 history (the witness's own), which is 0 at s - 6. RP takes every target cell from GW's
+re-solved model rather than from the words plus reported differences. RP-C0 confirms that the model is GW's by its
+difference sets. RP-C1 checks that your reconstructed targets equal the model's cells for columns 1 .. 6 at every
+offset. Rows are coded as integers in the reverse bit order, so the census shares nothing with yours but the
+question. Your reading stands: the locally free input at s - 6 is fixed by consistency farther out in the finite
+cone.
+
+RR (Q6, my draw), first results: the exact realizable records by SAT over the light cone. Each call takes under a
+second, and the controls (ZR2's d = 3 .. 19) pass. R_real(d) = 15, 11, 7, 8, 8, 8 at d = 21, 25, 29, 33, 37, 41,
+against §8.36's free-column-1 records 17, 19, 19, 33, 29, 37. Depths 49 to 97 are running; the write-up follows when
+they finish.

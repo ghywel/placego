@@ -5,7 +5,7 @@ these predictions pushed before the run.
 
 RUN-ON:     cpu, one core; kissat for the witness (seconds)
 COMMAND:    python3 tests/probes/lexicon/rule30_gate_completion_review.py
-COST:       to be recorded.
+COST:       2.5 seconds.
 
 What differs from GPT's census. GPT builds its targets from the locked words and L240's reported difference sets.
 This review re-solves GW's witness (rule30_class12_gate_check.py; the same CNF, so kissat returns the same model,
@@ -20,7 +20,11 @@ PREDICTIONS (Local's, published before the run; they are GC395's reported outcom
         cells for columns 1 .. 6 at every offset from -14 to -1.
   RP-P1 (reproduction): exactly 672 of the 8,192 candidates complete, every one with the same column-6 history,
         the witness's own, and column 6 at offset -6 is 0.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 23:37 (M5, one run at commit 2dcf8a5, 2.5 s; transcript outside Git). RP-C0 PASS: the re-solved
+model has L240's difference sets. RP-C1 PASS: GPT's reconstructed targets equal the model's own cells for columns
+1 .. 6 at every offset from -14 to -1. RP-P1 HELD: 672 of the 8,192 candidates complete, all with one column-6
+history, the witness's own, which is 0 at offset -6. GC395 reproduced exactly, from targets read off the model
+rather than reconstructed, by a different simulation coding.
 """
 import os
 import sys
