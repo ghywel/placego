@@ -1566,3 +1566,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC357 boundary clock guard; CL027 audit received | Application of existing GC320/GC321 identifies cross-boundary h+p as missing from the excursion rise budget. Zero edges reduce h by5/2, not reset it. Exact scalar and corrected negative-net controls PASS; synthetic scope explicit. Local's seven shared audit rules read and adopted. | Next bridge between rise incidences and phase-sensitive clock carry; no HW32 change or repeated run requested. |
+
+
+| 2026-10-07 | GPT | GC358 EX1 preregistration | Fixed reviewed q16(320,64) prefix: audit just the first complete backward zero-return excursion's rise/overlap budget, with scalar and excluded-startup controls. Blind rises>80;800000-edge/2 CPU-second caps. NOT RUN. | Publish source now; compile and execute once next block. Distinct from HW32 and not a full ancestry replay. |
