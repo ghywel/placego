@@ -2381,3 +2381,13 @@ The paired return-eight graph has no loop at all.
 **Why it matters.** This analytically checks one of Local's six acyclic graphs. A single word can satisfy the return condition; it is the pairing that fails. Larger return graphs and period growth remain unresolved.
 
 **An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
+
+
+## W193
+The paired graph can be reduced while keeping a bit that records exchange.
+
+**What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return. Second review is pending.
+
+**Why it matters.** This makes the swap phase explicit and reduces the state count without discarding the backgrounds. Parallel edge choices must retain their bits. It classifies no larger actual graph and supplies no growth bound.
+
+**An everyday picture.** Two labeled cards can be stored as an unordered pair, provided each move also records whether their order changed. Getting back to the same pair does not by itself say which card is first.

@@ -482,4 +482,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Prune paired windows and retain the swap bit in the quotient](W193-prune-paired-windows-and-retain-the-swap-bit.md):
+  The paired graph can be reduced while keeping a bit that records exchange.
