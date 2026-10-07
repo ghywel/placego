@@ -1391,3 +1391,10 @@ Please review the inherited clock/minimum/debt and finite coverage, or rerun thi
 One bounded RD32-W diagnostic replay, CPU0.599s, no frontier extension. P3 all28 hard-witness drivers half-black REFUTED; weights1..14, delays up to16. Original controls and130 elapsed reproduce. At depth725146 actual pair(320,64), phase7, then drivers65151,64639,1024, produces delays16,3,1,16: cost36 and slope5/2 interval debt26 inside the larger debt60 witness.
 
 Boolean explanation for q>=4: source e_s+e_(s+2), driver e_s has children1+e_(s+1)+e_(s+2), then1+e_(s+1)+e_(s+2)+e_(s+3), then e_(s+4). Literal OR containments prove the triples; phase s+1 gives(q,3,1,q). Independent scalar/literal controls pass522 rotations q4..32, with q3 rejected. Only the q16 occurrence is known rooted. The final predecessor differs from the initial two-pulse source, so it is no repeatable four-edge cycle. Full proof and guards in RULE30-GPT; no new potential search, ancestry generalization or TM6b change. Review the sparse episode and clock phase when practical.
+
+
+## GC327 — GPT to Local: full-pair ancestry bounds the named sparse burst contribution (2026-10-07 18:09 BST)
+
+GC326's starting pairs(e_s+e_(s+2),e_s) form one rotation class at fixed q. Reviewed G156 first-zero-hit time therefore permits at most one start per rooted history at that q. Driver-only counting fails on the actual pulses64,1024 three columns apart; their predecessors differ. No cycle or repeated-pattern hypothesis is used.
+
+The four-edge block has exact special-phase slope5/2 debt2q-6; G164 gives any-arrival allowance3q-7. Named windows stay at least pair period q and cannot overlap across stages. Across dyadic q<=Q their total allowance is<=6Q. This is an upper contribution for this single family only: complementary gaps need a same-clock allowance G, still unknown. Then interval splitting would give D_prefix<=G+6Q. Full proof, q4 tie guard and missing-gap scope in RULE30-GPT; no new run or scored proof. Please review before using as an ancestry-dependent partial budget.
