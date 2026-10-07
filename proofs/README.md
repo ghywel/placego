@@ -442,3 +442,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   history, with at most one temporal period minus one added. The existing restart theorem then includes birth
   delays. This removes extra phase and birth searches, but every genuinely different history still needs its own
   all-interval bound.
+- [Dyadic stage budgets stitch without a logarithmic loss](W165-dyadic-stage-budgets-stitch-without-a-logarithmic-loss.md):
+  If each stage with an unchanged dyadic period has a uniform interval budget proportional to that period, those
+  budgets add geometrically across doublings. Phase changes and birth restarts then cost only a constant times the
+  final period. The stage budget and sublinear period growth remain assumptions; a branch that keeps its period
+  gives no fresh allowance.
