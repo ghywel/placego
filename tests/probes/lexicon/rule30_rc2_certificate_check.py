@@ -6,6 +6,7 @@ checks pass. Negative controls: zero K and a removed known edge rejected.
 Unexpected guard: terminal edge labels remain present; lift need not attain
 Kmax+11. Artifact and producing commit/checksum are recorded outside this code.
 """
+import copy
 import hashlib
 import json
 import resource
@@ -15,7 +16,7 @@ import time
 EXPECTED_SHA='f8d57126f5601ec41295db803ba13271ac54523e4b39a6c5a749b3f30e76a2a7'
 
 
-def verify(data,q):
+def verify(data,q,verbose=True):
     mask=(1<<q)-1
     def bit(w,t): return (w>>(t%q))&1
     def rot(w,r): return sum(bit(w,t+r)<<t for t in range(q))
@@ -50,7 +51,7 @@ def verify(data,q):
     for i,v in enumerate(vertices):
         if i==root:assert v['parent_edge'] is None
         else:
-            pe=v['parent_edge'];assert type(pe)==int and 0<=pe<len(edges) and edges[pe][1]==i
+            pe=v['parent_edge'];assert type(pe)==int and 0<=pe<len(edges) and edges[pe][1]==i, 'parent certificate'
         seen=set();j=i
         while j!=root:
             assert j not in seen;seen.add(j)
@@ -66,10 +67,10 @@ def verify(data,q):
             target=(rot(b,d),rot(c,d));assert target in lookup
             expected.add((i,lookup[target],d))
         actual={edges[e] for e in outgoing[i]}
-        assert actual==expected
+        assert actual==expected, 'successor closedness'
         expected_by_source[i]=expected
         if not children:
-            assert b==0 and a.bit_count()%2==1
+            assert b==0 and bin(a).count('1')%2==1
             assert D(b)==0 and 2*D(b)-5==-5
             exits+=1
     assert len(outgoing[root])==1 and edges[outgoing[root][0]][2]==1
@@ -85,7 +86,7 @@ def verify(data,q):
     for i,(s,t,d) in enumerate(edges):
         for j in outgoing[t]:
             w=2*edges[j][2]-5
-            assert K[L[i]]>=w+K[L[j]]
+            assert K[L[i]]>=w+K[L[j]], 'context inequality'
             arcs.append((i,j,w))
     h=[0]*len(states)
     for i,(s,t,d) in enumerate(edges):h[s]=max(h[s],2*d-5+K[L[i]])
@@ -97,17 +98,49 @@ def verify(data,q):
         assert summary[key]==value
     if q==8:
         assert max(K.values())==max(h)==14
-        # Corruptions tested against the independently verified obligations.
-        assert any(w>0 for i,j,w in arcs), 'zero K must violate a context inequality'
-        s=lookup[(143,26)];t=lookup[(134,186)];known=(s,t,2)
-        assert known in expected_by_source[s]
-        assert {edges[e] for e in outgoing[s]}-{known}!=expected_by_source[s]
         terminal_labels={L[i] for i,(s,t,d) in enumerate(edges) if not outgoing[t]}
         assert terminal_labels and terminal_labels<=set(K)
         assert max(h)<max(K.values())+11
-    print('q%d: parent coverage PASS; successor closedness PASS; labels/K/context/lift PASS; '
-          '%d vertices/%d edges/%d labels/%d arcs; Kmax%d hmax%d; exits%d'%
-          (q,len(states),len(edges),len(K),len(arcs),max(K.values()),max(h),exits))
+    if verbose:
+        print('q%d: parent coverage PASS; successor closedness PASS; labels/K/context/lift PASS; '
+              '%d vertices/%d edges/%d labels/%d arcs; Kmax%d hmax%d; exits%d'%
+              (q,len(states),len(edges),len(K),len(arcs),max(K.values()),max(h),exits))
+
+
+def corruptions(original):
+    def reject(data,message):
+        try: verify(data,8,False)
+        except AssertionError as exc:
+            assert str(exc)==message, 'wrong rejection: %r'%str(exc)
+            return
+        raise AssertionError('corrupted certificate accepted')
+    zero=copy.deepcopy(original)
+    for row in zero['K']:row['K']=0
+    reject(zero,'context inequality')
+    states=[tuple(v['state']) for v in original['vertices']]
+    idx=next(i for i,e in enumerate(original['edges'])
+             if states[e['source']]==(143,26) and states[e['target']]==(134,186))
+    parents={v['parent_edge'] for v in original['vertices'] if v['parent_edge'] is not None}
+    assert idx in parents
+    missing_parent=copy.deepcopy(original)
+    # Delete the tree edge and reindex surviving pointers; its child's pointer
+    # intentionally remains stale, exposing the missing parent certificate.
+    del missing_parent['edges'][idx]
+    for row in missing_parent['vertices']:
+        pe=row['parent_edge']
+        if pe is not None and pe>idx:row['parent_edge']=pe-1
+    reject(missing_parent,'parent certificate')
+    # Remove a genuinely non-tree edge and reindex the surviving parent pointers.
+    non_tree=next(i for i in range(len(original['edges'])) if i not in parents)
+    missing=copy.deepcopy(original)
+    del missing['edges'][non_tree]
+    for row in missing['vertices']:
+        pe=row['parent_edge']
+        if pe is not None and pe>non_tree:row['parent_edge']=pe-1
+    reject(missing,'successor closedness')
+    print('actual corruptions: zero K REJECTED by context inequality; removed tree edge REJECTED '
+          'by parent certificate; removed non-tree edge REJECTED by successor closedness')
+
 
 
 def main():
@@ -116,9 +149,10 @@ def main():
     raw=open(sys.argv[1],'rb').read();assert hashlib.sha256(raw).hexdigest()==EXPECTED_SHA
     data=json.loads(raw)
     for q in (1,2,4,8):verify(data[str(q)],q)
+    corruptions(data['8'])
     rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1048576
     assert rss<=128 and time.process_time()-t0<120
-    print('checksum PASS; zero-K/missing-edge controls REJECTED; terminal-label/strict-bound guards PASS')
+    print('checksum PASS; terminal-label/strict-bound guards PASS')
     print('CPU %.4f s RSS %.1f MiB'%(time.process_time()-t0,rss))
 
 if __name__=='__main__':main()
