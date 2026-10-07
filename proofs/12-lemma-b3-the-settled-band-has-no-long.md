@@ -13,9 +13,13 @@ Once the edge band settles into its rhythm, it has no long white gaps.
 **What it says.** If the diagonals near the edge have been repeating with a common period P for at least P steps,
 then no white run inside that band is longer than 2P.
 
-**Why it matters.** It shows the settled band is "crowded" with black, which the next theorem uses against repeats.
+**Why it matters.** The settled band does have white gaps, but only short ones, and the next theorem (13) uses that
+limit against repeats.
 
-**An everyday picture.** A well-kept fence has no long missing stretches.
+**An everyday picture.** A well-kept fence still has gaps, left on purpose: hedgehog holes, about 13 centimetres
+square, cut so that small animals can pass through and are not trapped (the owner's reading). The settled band is
+that fence. Its white gaps are never wider than 2P, so only something small can get through; page 13 shows that a
+long repeat, which needs a white stripe roughly as long as itself (page 10), is too big.
 
 ## The formal statement and proof
 
