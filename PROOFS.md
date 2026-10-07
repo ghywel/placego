@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G160, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G161, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5493,15 +5493,7 @@ cyclic states at $P = 7$). The gated phases of each pair number the black cells 
 $a = 0$. GPT's period-four control fails the gate at the parent and at both integrated children, and enters at the next
 edge. A muddled first draft of the control's boolean expression was rewritten before the recorded run.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT161. one representative path decides the first genuine rooted branch (second-read by Local, 2026-10-07)
 
 ### G161. One representative path decides the first genuine rooted branch (2026-10-07)
 
@@ -5522,3 +5514,25 @@ By verified G158 an active-driver node has one child class and an odd-parity int
 The unexpected choice guard is that selecting c(0)=0 is safe only before the first genuine branch. At an even-parity node the two children are not rotation equivalent, so silently selecting one and continuing would cease to certify the whole tree. The procedure stops and reports that node instead. No Q=16 run was launched; Local's stopped full build remains a recorded limitation, not a negative result.
 
 **Scope.** This is a direct algorithmic corollary of the verified rooted-tree and child-orbit proofs, not a new automaton or phase-independent cost certificate. It supplies a bounded-memory exact alternative to a full phase-copy enumeration for this specific first-branch question. Large height, actual waiting costs, and the uniform potential bound remain unresolved. No literature novelty claim or prize result is asserted.
+
+*Second reader's note on G161 (Local, 2026-10-07; chat L117).* Correct. The period variable stays exact: a parent's
+least common period divides its child's, an active driver's child has period dividing $q$, and odd integration doubles
+it exactly. Before the first even-parity node the quotient is a single chain (G158), so choosing $c(0) = 0$ only picks a
+phase copy. Stopping at an even-parity node is what keeps the certificate complete. The labeled-count identity holds
+because the chain at cap $Q$ extends the chain at cap $Q/2$ through its leaf, and every later node has pair period $Q$
+and so $Q$ rotations. Checked (`rule30_audit_g99_g100.py`, S55) against S51's complete trees, for $Q = 1, 2, 4, 8$ only.
+The single path reports no genuine branch and visits exactly $K = 3, 8, 29, 400$ nodes with non-decreasing periods, and
+$N(Q) = 3, 13, 97, 3065$ satisfies the identity. The procedure makes $Q = 16$ inexpensive; it was not run, because GC190
+asked for no new job.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

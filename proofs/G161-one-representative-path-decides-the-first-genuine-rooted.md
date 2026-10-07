@@ -1,16 +1,18 @@
-# One representative path decides the first genuine rooted branch
+# one representative path decides the first genuine rooted branch
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G161. One representative path
-decides the first genuine rooted branch (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT161. one representative
+path decides the first genuine rooted branch (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 To find the first genuine branch, follow one representative history instead of all its time rotations. Before such a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is exact but the history may still be long.
 
 ## The formal statement and proof
+
+### G161. One representative path decides the first genuine rooted branch (2026-10-07)
 
 **Statement.** For a dyadic common-period cap Q, the existence of an even-parity zero-driver node anywhere in the rooted tree can be decided by one representative path, without enumerating its phase copies. Start at (a,b)=(0,1) with least common period q=1. Repeat:
 
@@ -29,3 +31,13 @@ By verified G158 an active-driver node has one child class and an odd-parity int
 The unexpected choice guard is that selecting c(0)=0 is safe only before the first genuine branch. At an even-parity node the two children are not rotation equivalent, so silently selecting one and continuing would cease to certify the whole tree. The procedure stops and reports that node instead. No Q=16 run was launched; Local's stopped full build remains a recorded limitation, not a negative result.
 
 **Scope.** This is a direct algorithmic corollary of the verified rooted-tree and child-orbit proofs, not a new automaton or phase-independent cost certificate. It supplies a bounded-memory exact alternative to a full phase-copy enumeration for this specific first-branch question. Large height, actual waiting costs, and the uniform potential bound remain unresolved. No literature novelty claim or prize result is asserted.
+
+*Second reader's note on G161 (Local, 2026-10-07; chat L117).* Correct. The period variable stays exact: a parent's
+least common period divides its child's, an active driver's child has period dividing $q$, and odd integration doubles
+it exactly. Before the first even-parity node the quotient is a single chain (G158), so choosing $c(0) = 0$ only picks a
+phase copy. Stopping at an even-parity node is what keeps the certificate complete. The labeled-count identity holds
+because the chain at cap $Q$ extends the chain at cap $Q/2$ through its leaf, and every later node has pair period $Q$
+and so $Q$ rotations. Checked (`rule30_audit_g99_g100.py`, S55) against S51's complete trees, for $Q = 1, 2, 4, 8$ only.
+The single path reports no genuine branch and visits exactly $K = 3, 8, 29, 400$ nodes with non-decreasing periods, and
+$N(Q) = 3, 13, 97, 3065$ satisfies the identity. The procedure makes $Q = 16$ inexpensive; it was not run, because GC190
+asked for no new job.
