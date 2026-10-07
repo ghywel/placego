@@ -33,7 +33,11 @@ PASS. HG-P1 REFUTED, at q = 8 only: H_(4q) is stable at q = 1, 2, 4 (first stabl
 H_33 != H_32, with 80 violating edges (one: (241, 1) -> (128, 80), reward -3, deficit 8). HG-U HELD: q = 6 is stable
 from horizon 21 <= 24. Gated maxima of H_(4q): 0, 0, 6, 21, 45, equal to G10's maxima. Failure witness (required by
 G166): from (A, B) = (143, 8), H_33 = 17 > H_32 = 9 along a path of exactly 33 edges, elapsed 91, reward 17; all
-triple equations and next-black scans pass, independently of the DP. Descriptive, beyond the prediction: continuing
+triple equations and next-black scans pass, independently of the DP. The witness words, as time-bit integers at
+q = 8 (A, B, then each child, phases un-aligned): [143, 8, 5, 14, 245, 243, 4, 93, 247, 85, 69, 96, 70, 60, 116, 151,
+71, 224, 69, 63, 116, 149, 71, 228, 69, 71, 4, 133, 7, 5, 4, 6, 4, 4, 0]; its 34 aligned states are distinct (GC202).
+GPT's GC204 audit: the witness is not rooted (its backward ancestry cycles after 4,746 steps). Descriptive, beyond
+the prediction: continuing
 the recursion at q = 8, it first stabilises at horizon 85 (about 10.6 q), with maximum 45. The first run printed no
 witness because the failure report had not yet been written; it was added and the whole script re-run, with the
 same verdicts.
