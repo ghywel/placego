@@ -2383,7 +2383,7 @@ The paired return-eight graph has no loop at all.
 **An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
 
 
-## W193
+## G193
 The paired graph can be reduced while keeping a bit that records exchange.
 
 **What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return. Second review is pending.

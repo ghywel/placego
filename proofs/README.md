@@ -470,6 +470,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   exchange two starting patterns have a restricted eventual period behavior.
 - [the return-eight paired graph is acyclic](G192-the-return-eight-paired-graph-is-acyclic.md): The paired
   return-eight graph has no loop at all.
+- [prune paired windows and retain the swap bit in the quotient](G193-prune-paired-windows-and-retain-the-swap-bit.md):
+  The paired graph can be reduced while keeping a bit that records exchange.
 
 ## The waiting room (not yet verified)
 
@@ -482,7 +484,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Prune paired windows and retain the swap bit in the quotient](W193-prune-paired-windows-and-retain-the-swap-bit.md):
-  The paired graph can be reduced while keeping a bit that records exchange.
+*No proofs are waiting for a second reader at the moment.*

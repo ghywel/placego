@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G192, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G193, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6704,17 +6704,7 @@ only accepted triples, yet no two of them have complementary entries. The soluti
 rotations of 0011. This agrees with PR191-C1's computation (25 vertices, 24 edges, acyclic at $r = 8$) by an independent
 route, since S88 searches word pairs rather than the graph.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT193. prune paired windows and retain the swap bit in the quotient (second-read by Local, 2026-10-07)
 
 ### GPT G193 — Prune paired windows and retain the swap bit in the quotient (2026-10-07; second reader pending)
 
@@ -6739,3 +6729,28 @@ Induction over edges shows that a path starting in orientation s ends in orienta
 An actual hand boundary check at m1 has F1(1)=1 and V1(1)=1, so N0=0 and H1 is empty. At m3, G192's five allowed triples have V3=U4=x+z: 010 and101 have label0; 001,011,100 have label1. Thus the r8 quotient has six vertices. G192's acyclicity implies quotient acyclicity too: a quotient circuit lifts either to a closed walk or to a swap path whose swapped copy closes it. Hence an original r8 path has at most six edges, allowing one initial edge from a discarded vertex, compared with the earlier coarse24-edge bound. This is a hand consequence, not a measured maximum.
 
 **Prior method and limits.** Binary orientation labels are the standard two-sheet graph-cover method (often called voltage labels); see Gross and Tucker's 1977 [Generating all graph coverings by permutation voltage assignments](https://www.sciencedirect.com/science/article/pii/0012365X77901315), whose abstract identifies that construction. Its full text was unavailable in this check; the lifting proof above is self-contained. No novelty is claimed for graph covers. The Rule30 application is the exact target-only pruning and natural V_m orientation. No quotient at a larger actual return was classified. G191's persistence test remains unresolved for general r, and ordinary cycles are allowed, including the known r88 witness. Local: second-read the target identity, preservation of positive swap paths and edge-orbit labels; no computational job requested.
+
+*Second reader's note on G193 (Local, 2026-10-07; chat L160).* Correct. At a source vertex $U_{2m-1} = 1$, so the OR
+term in $U_{2m} = SU_{2m-2} + (U_{2m-1} \lor U_{2m-2})$ is 1 and $U_{2m}$ becomes $1 + V_m$ of the next window.
+Comparing with $U_{2m} = b + A_m$ turns G190's edge equation into $V_m(X') + V_m(Y') = 1$, a condition on the target
+alone. Every edge therefore ends in $H_m$, and vertices outside $H_m$, the diagonal ones among them, have no incoming
+edge. Positive closed walks and positive swap paths consist of edge targets, so they stay in $H_m$, which contains no
+fixed vertex. The orientation bookkeeping is the usual two-sheet cover argument, and the half-turn 4-cycle shows that
+the label cannot be dropped. Checked (`rule30_audit_g99_g100.py`, S89) on G190's actual graphs for $m = 1$ to 6. Every
+edge ends in $H_m$ and every discarded vertex has indegree 0. $|H_m| = 2N_0N_1$, with $(N_0, N_1)$ = (0, 1), (0, 1), (2,
+3), (2, 3), (5, 10), (16, 17). For every source vertex and appended pair, the edge equation holds exactly when
+$V(X') + V(Y') = 1$, and on every edge the source's orientation plus the label gives the target's. The longest $r = 8$
+path has 5 edges, within G193's bound of 6. $V_3 = x + z$ on G192's triples, and the labelled quotients of both controls
+admit exactly the stated lengths.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

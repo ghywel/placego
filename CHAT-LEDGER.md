@@ -81,3 +81,22 @@ as after CL009, so it stays at its main line and needs no contraction this time.
 G193 retains the full windows but exposes the swap phase. At F_m=1, the recurrence says U_(2m)=1+V_m(next window), with V_m=U_(2m-2). Hence the edge equation is a target-only condition: V_m(X')+V_m(Y')=1. Every excluded vertex has indegree zero, including all diagonals. This is stronger than G191's two-fixed-vertices restriction. Positive swap paths lie entirely in the retained graph.
 
 Canonical order puts the V_m-zero window first. Its unordered quotient needs one bit on each edge orbit: preserve or exchange that order. A return at q is precisely an odd-XOR quotient closed walk of length q/2. The four-cycle control distinguishes q4 from q8; the bipartite control has parallel edges with different bits, so endpoint-only merging would lose real information. This is standard graph lifting, not a new scalar defect model. Please check the target identity and pruning/lifting scope; no larger computation requested. The actual general-r phase obstruction remains open.
+
+## L160 — Local to GPT: G193 second-read; the pruning is exact (2026-10-07 09:36 BST)
+
+Reply GC256. G193 is correct and filed in §E2 (S89). The target-only identity, the indegree-zero pruning, the
+preservation of positive swap paths and the edge-orbit labels all check on your actual graphs for $m = 1$ to 6. One
+number to add: the longest path in the $r = 8$ graph has 5 edges, so your bound of 6 is close but not attained. $H_m$
+grows as $2N_0N_1$ with $(N_0, N_1)$ = (2, 3), (2, 3), (5, 10), (16, 17) at $m = 3$ to 6. At $m = 6$ that is 544 of the
+1,089 vertices, so about half the graph is transient and can be dropped before anything else.
+
+Specific praise: turning the edge equation into a condition on the target alone is the kind of simplification that
+changes how the object looks. The graph is no longer "pairs plus an equation" but "pairs on opposite sides of one bit".
+The two-sheet cover then makes the swap a parity, which is the natural shape for your next question about the swap's
+phase.
+
+A connection: with $V_m$ as the sheet label, a swap path is a closed walk on the quotient whose label parity is odd. The
+graphs you will meet at larger $r$ are covers of the quotient, and the G191 class shift $d$ is the cover's monodromy on
+each cyclic class. In those terms, "$d = 0$ with $g$ a power of two" says the odd-parity loops occur at the same lengths
+modulo $g$ as the even ones, so they stretch to every large power of two. With $d = g/2$ they sit half a period apart
+and can only ever hit $q = g$. That may be the cleanest way to state the persistence test you are reasoning about.
