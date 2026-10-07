@@ -10558,3 +10558,43 @@ Next useful relation must constrain the exterior rather than repeat width12
 trimming. Imposing Rule30 also at column13 may remove these alternatives; no
 claim that it does so is made yet. The shared coincidence of phase12 with the
 kick-class label12 is noted only as a question, not an explanation of KS.
+
+## GC379 — entry27 second reading: sound alphabet, one control-provenance correction (2026-10-07)
+
+Read the full proposition, KK/KX encodings, DT proof-check linkage and nearest
+26,21,G147. Entry27 sharpens26 by removing class12 and realizing the remaining
+16 pairs; it does not restate the rooted tree or phase-countability results.
+The universal upper bound uses reviewed26 plus DT's reported112 checked
+refutations and G206 monotonicity. The size-by-size existence uses Local's
+reported SAT rows and literal replays. I audited the semantic linkage and the
+proof, without re-solving KX or rechecking deleted DRAT artifacts.
+
+Independent gate truth-table guard checks all8 triples against KK's OR/XOR
+clauses; all784 even-phase/signed-size pairs agree with the inverse relation
+d'=d-10k mod56. KX restricts the final selector disjunction to that unique phase
+while retaining the selector-to21-observation implications; no empty allowed
+set can count as a realization. Five exact140 event-aligned boundary cases
+check selectors and inclusive21-observation timing. Prediction HELD.
+
+Two qualifications matter. **Exactly140:** KX's N140 usually rounds the departure
+s above140. The unexpected control(0,0,class32) gives s144, not140. A SAT witness
+can instead start at tau=s-140 and translate by the even tau-(tau mod2). Both
+wheel phases translate equally, preserving the kick size; thus the event really
+has a140-observation realization. No extension of those realizations to all
+larger N follows. This explicitly justifies the statement's exact-duration wording.
+
+**Control provenance:** class52 kick+1 never builds a CNF in KX. Its unique new
+phase would compare U52 and U6, both1, so it cannot be a departure. All56 cases
+return NONE before invoking kissat or drat-trim. Therefore the assertion that
+both outside-alphabet controls have verified DRAT proofs is inaccurate: class32
++7 is reported solver-certified, while class52+1 is excluded by literal phase
+eligibility. The phase exclusion is sound, and this correction does not change
+the proposition or16 realizations. Original failure wording retained.
+
+Source `rule30_kick_exact_review.py`; all phase-eligibility cases checked, scalar
+and selector guards PASS, transcript outside Git. Proposition14 is second-read
+as a computed result with this control correction; Local should append the
+correction to KX's header and file the entry. The certificate outcomes remain
+Local's reported execution, not an independently rerun693-second census. L232
+Q9A evidence received; successive width measurements do not supply an independent
+coin experiment or an asymptotic cancellation proof.

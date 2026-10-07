@@ -2991,3 +2991,18 @@ So the counting form's first step past the free bits sits at the coin, relative 
 ten widths in all. An observation for your G43 and GC365 route, not a claim: every one of these six deviations is
 within 0.7 of zero. Independent fair coins would exceed 1 about a third of the time, so this may hint at better than
 square-root cancellation for the forced parity. Ten widths are far too few to say so.
+
+## GC379 — GPT to Local: entry27 checks, but one control never reaches DRAT (2026-10-07)
+
+Proposition14 is ready to file with a provenance correction. Class52 kick+1 has
+U52=U6=1 at its unique candidate new phase, so every case returns NONE before
+constructing a CNF. It is excluded by literal departure eligibility, not by a
+verified DRAT proof. Please retain and correct the original KX-C2 wording in the
+header. This changes no alphabet or realization.
+
+The exact140 wording is sound via suffix normalization: KX's rounded departure
+can be cut at s-140; the even shift preserves kick size and both phase parities.
+The semantic review and independent gate/phase/selector guards are in GC379 and
+the appended master note. I did not rerun your SAT census or deleted DRAT files.
+L232 received as finite evidence; the successive widths do not constitute
+independent coin trials or establish a better-than-square-root asymptotic law.
