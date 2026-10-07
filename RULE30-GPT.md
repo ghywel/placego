@@ -10958,3 +10958,29 @@ Adding only k=0 implies column7<=column8 to GC403's time4 relation removes12 of2
 Premise-negative local control: dropping time3 column5=0 permits inputs(column5,v,w,z,u)=(1,1,0,0,0), giving next columns6..8=0,1,0. Thus the inequality is conditional, not an unconditional Rule30 law. This local control makes no wall-compatible trajectory claim.
 
 Instrument: tests/probes/lexicon/rule30_gpt_gate_exterior.py, under0.1 seconds; transcript outside Git. No full symbolic bridge or death127 result. Next consider the complete one-update relation from time3 column5=0, rather than collecting individual clauses without an explanatory invariant. Stop if it merely expands into another reachability table; colleague KC, RR, KT2 remain separate.
+
+### GC405 — Complete local image closes the bridge; hand proof proposed (2026-10-08)
+
+P1 preregistered: the complete one-update image of time3 columns1..9=a,1,1-a,a,0,v,w,z,u suffices for the time8 A/B cover (0.6). It HELD:18 distinct(a,h,k,l,r) states yield576 time4 completions,232 antecedent-positive, zero cover failures. Every original4096 run lies in this image; independent reverse-bit steps agree with scalar. Unexpected exactness check: the image equals GC403's relation plus GC404's inequality plus(h=a and k=1 implies l=1). No further clauses needed.
+
+**Proposed hand bridge.** Assume time3 columns1..5=a,1,1-a,a,0 and wall0(t)=t mod2 through time7. All right exterior cells are arbitrary. Then if column6(time8)=1, time8 matches G209 A or B. The following proof is proposed for independent second reading, not yet catalogued.
+
+Time4 columns1..8 are0,1-a,0,1,h,k,l,r, where
+
+    h=a XOR v, k=v OR w, l=v XOR(w OR z), r=w XOR(z OR u).
+
+If a=0, time5 columns1..4=1,1,0,1; time6 columns1..4=0,0,0,1; time7 columns1..4=0,0,1,1. Consequently time8 columns1..4=1,1,1,0, independently of all later entries. With antecedent1 this is B.
+
+Let a=1. Put H=1-(h OR k), K=h XOR(k OR l), L=k XOR(l OR r), R=l XOR(r OR s), where s is time4 column9. Time5 columns1..8=0,0,1,1,H,K,L,R. Since h=1-v and k=v OR w, H=0. Put J=1-K, M=K OR L, N=K XOR(L OR R), and let O be time6 column8. Time6 columns1..7=1,1,1,0,J,M,N. Time7 columns4..7 are
+
+    P=1-J, Q=J OR M, V=J XOR(M OR N), W=M XOR(N OR O).
+
+The time8 antecedent is F=Q XOR(V OR W). If K=1, then J=0,M=1,V=1,Q=1, so F=0. Thus F=1 requires K=0. Now J=1,M=L,N=L OR R,Q=1,V=1-(L OR R). F=1 requires V=W=0. If L=0, V=0 forces R=1, but W=R OR O=1, contradiction. Hence L=1.
+
+K=0 implies v=0: if v=1 then h=0,k=1,K=1. With v=0 we have h=1,k=w,l=w OR z and K=1 XOR(w OR z); thus w OR z=1. If w=1 then k=l=1 and L=0, contradiction. Therefore w=0,z=1, giving h,k,l,r=1,0,1,1.
+
+Write S for time5 column9 and Y for time5 column10. In this branch time5 columns5..9=0,0,1,0,S. Time6 columns5..9=1,1,1,1-S,S OR Y. Therefore time7 columns4..7=0,1,0,0 and column8=1 XOR((1-S) OR(S OR Y))=0. Updating once more gives time8 columns1..7=0,1,0,1,1,1,0, namely A. This proves the proposed bridge.
+
+**Anchor connection.** GC403's first three hand updates derive this time3 prefix from initial2..6=11100, with initial1=a, under wall times0..2=0,1,0. Combining that propagation, the proposed bridge, and independently reviewed G209 proves GC397's anchored implication without a reachability census, if the new hand case analysis receives second reading. The576/4096 computations are controls, not substitutes for the displayed proof. Eight wall values0..7 remain premises; no wall is needed for G209's last four steps. No long wheel preparation or death127 conclusion.
+
+Instrument: tests/probes/lexicon/rule30_gpt_gate_image.py, under0.1 seconds. GC403 and GC404 failures retained. Next independent review of this hand bridge; no further relational, wall or width sweep.
