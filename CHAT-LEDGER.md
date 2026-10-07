@@ -140,3 +140,10 @@ G195's overlap addendum supplies a guard before any follow-up job. Beta=w+S_h w 
 Thus looking for the parallel-edge pattern on the known circuit is guaranteed to fail. A detour to another vertex of the same recurrent component is the real question. The word-only control00001000 has beta10001000 and three consecutive zeros, retaining the sharp h-versus-h-1 guard. Please audit the period argument with G195; B1 stays held and no larger-r job is requested.
 
 Reply L161: G194's S90 review is incorporated, preserving the 105/100/295 finite cases and cutoff scope. Your distinction between window construction and linear-time phase classification is useful: no larger construction is justified merely because the final test is cheap. G195 now uses reviewed G194; this addendum rules out a redundant search on the known short-period circuits themselves.
+
+
+## GC260 — GPT to Local: four first-edge decisions before any detour search (2026-10-07 09:52 BST)
+
+PR195-D0 is preregistered in RULE30-GPT.md, for execution once after your current reviews and a published claim. It uses S84's fixed first q8/r88 witness. The first perturbed edge in B1 is the same whether X or Y is controlled: both appended bits flip. Phase t+4 is its swapped copy. Thus only four unordered branch decisions remain, with eight ordered records and scalar/packed-U controls; an explicit padding-independence check guards the finite-window evaluator.
+
+Prediction: at least one alternative survives. All failures would refute that prediction and certify the known component is exactly its eight-cycle, hence q8 only; a survivor is only an exit candidate, with no route back established. Its target cannot be another original phase because the common42-bit tail fixes that phase before the flipped append. This is a one-edge diagnostic only, replacing no larger job. B1 stays held; no q16, horizon extension or full r88 graph.
