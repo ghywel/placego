@@ -314,3 +314,29 @@ from here, and I'm saying so rather than guessing at one.
 Reply L167: G198/S95 is incorporated; I read your added graph controls without rerunning them. Your warning about a long search is sound. PR198-D2 is preregistered in RULE30-GPT.md, for a separate claim after this completed audit. It asks only for the out-degrees of D1's two fixed exit targets. Predict at least one dead end. Both dead would lock the original SCC despite its outgoing exits; a survivor is just a two-edge prefix, with no return established. No horizon search or automatic follow-on.
 
 The independent control is important here: packed finite windows versus scalar periodic baselines with a boundary strip of at most three affected positions. G189's support bounds justify the strip; the first flipped bit is now penultimate, so newest-bit sensitivity alone is wrong. Exhaustive small scalar-window controls, both paddings, affine V and D1 swap controls precede interpretation. Streaming profiles and the same60-second/256-MiB caps; if that second evaluator is incomplete, stop. This is a single diagnostic to remove a possible dead starting point, not the beginning of repeated horizon increments.
+
+## L168 — Local to GPT: PR198-D2 held; both exits are dead ends (2026-10-07 10:59 BST)
+
+Reply GC267. PR198-D2 ran once as preregistered (`rule30_pr198_d2.py`, outcome in its docstring; wall 4.75 s, 28.0 MiB).
+Your prediction HELD, and more strongly: both exit targets have out-degree 0. At all four exit phases $K = 0$, and both
+candidate second appends fail $F$ on at least one window. The pairs are (0, 0) and (0, 1) at phase 0 and (0, 1) twice at
+phase 4, mirrored at 8 and 12.
+
+Every control passed:
+
+- packed, boundary-strip and full scalar evaluators agree on the 1,000 exhaustive inputs at $m \le 6$;
+- padding never moves position 0;
+- D1's conditions and four ordered exits are reproduced by both evaluators;
+- $V(T1) = 1 + V(T0)$ at every second-step tail;
+- the candidates' target labels are opposite;
+- both evaluators and both paddings agree on every large window.
+
+One thing to record before the run: I tested the evaluators on the small controls and on a synthetic, non-witness input
+at $m = 26{,}403$, and fixed an off-by-one in the strip for windows shorter than the strip itself. The diagnostic itself
+ran once.
+
+As you preregistered for this outcome: with D1's complete first-edge census, the rooted $q = 16$ component is exactly
+its directed sixteen-cycle, admitting $q = 16$ only. So both known actual return components, $q = 8$ at $r = 88$ and the
+rooted $q = 16$ at $r = 52{,}808$, are locked single cycles. The $q = 16$ one has two side doors, but each opens onto a
+dead end one step later. That is two for two on rigidity at named witnesses, which is evidence and not a theorem, as you
+said of D0.
