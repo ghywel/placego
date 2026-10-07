@@ -10046,3 +10046,126 @@ CZ1 agreement is not an all-width theorem. An asymptotic coefficient bias proof 
 need that population transfer before claiming the actual stopping-time counting form.
 Q9's needed estimate is now named for this selected mu; G43 supplies the reader, not the missing
 mixing. This answers the offered question without reopening closed full-cylinder comparisons.
+
+## GC364 — L221's top-bit reader: quantitative scope of cancellation (2026-10-07)
+
+Application of the trusted G43 Fourier-reader method, with an even modulus rather than
+its odd modulus. Let Q=2^w, N be the marginal-prefix count, and mu their selected
+n_0 residues. Write f(x)=1 below Q/2 and -1 above, so D/N=E_mu(f)/2 in L221's
+coefficient counting reduction. With hat f(h)=Q^-1 sum_x f(x) exp(-2*pi*i*h*x/Q),
+
+    hat f(0)=0; hat f(h)=0 for nonzero even h;
+    hat f(h)=4/[Q*(1-exp(-2*pi*i*h/Q))] for odd h;
+    E_mu(f)=sum_{h odd} hat f(h)*phi_mu(h).
+
+Here phi_mu(h)=E_mu exp(2*pi*i*h*x/Q). Its reader weights have magnitude
+2/[Q*|sin(pi*h/Q)|]. Using sin(pi*h/Q)>=2h/Q for h<=Q/2 and symmetry gives
+the conservative l1 bound 2*(1+log Q). Thus a UNIFORM bound |phi_mu(h)|<=delta_Q
+for every odd frequency implies |D|/N<=delta_Q*(1+log Q). In particular,
+delta_Q*log Q->0 suffices. Since S_coin>=N/2, relative coefficient error is at
+most twice that bound. This is a sufficient premise, not a necessary one: a weighted
+sum estimate, or a growing-frequency-range estimate with appropriate tail and boundary
+control, can be weaker. G43 supplies the reader; it does not supply this population bound.
+
+Retained counterfactual: o(N) for each FIXED odd frequency alone proves the top-bit bias
+vanishes. For Q growing through powers of two, put J=2^floor(w/2), w>=5, and take
+the uniform distribution on the distinct residues
+
+    {1,...,J} union {Q/2-J,...,Q/2-1}.
+
+All N=2J residues lie in the lower half, hence E_mu(f)=1 and D/N=1/2. Pairing x
+with Q/2-x gives phi_mu(h)=(i/J)*sum_{x=1}^J sin(2*pi*h*x/Q) for odd h.
+Therefore |phi_mu(h)|<=2*pi*|h|*J/Q->0 for each fixed odd h, while N->infinity.
+Mass can approach the discontinuities and defeat a fixed-frequency inference.
+This is a logical distribution control, NOT a counterexample among Collatz marginal vectors.
+A smaller two-point version {1,Q/2-1} gives phi(h)=i*sin(2*pi*h/Q).
+
+Pre-control prediction and counterfactual were recorded in CLOUD-LOCAL.md. Direct DFT
+controls at Q8,16,32 verify every reader coefficient within 1e-12; the two-point h1,h3
+identity and its full lower-half bias pass. Independent hand pairing gives the growing-N
+control above. Distinctness/pairing checks at w5,6,8,10 pass. Retained boundary
+repair: the initial w>=4 range overlapped at residue4 when Q16,J4; restrict to w>=5.
+Unexpected check: even Q has zero DC and uniform reader mean0; the
+odd-modulus G43 baseline1/m must not be carried here. No census or actual marginal
+spectral estimate was run. The population route remains open; the closed single-case
+verdict does not close it. CZ1's finite tested-width transfer to actual stopping counts
+remains a separate condition, not an all-width theorem. Next: obtain a quantitative
+population estimate or boundary anti-concentration before promoting measured low modes.
+
+## GC365 — a boundary-controlled fixed-mode repair (2026-10-07)
+
+A conditional repair for GC364, not a new population estimate. Scale residues to t=x/Q
+on the unit circle. Let f(t)=+1 on [0,1/2), -1 on [1/2,1), and let B_eta consist
+of points within circular distance eta of either 0 or 1/2, 0<eta<1/4. For integer H>=1,
+use the nonnegative unit-integral kernel
+
+    K_H(s)=|sum_{j=0}^H exp(2*pi*i*j*s)|^2/(H+1)
+          =sum_{|h|<=H} (1-|h|/(H+1))*exp(2*pi*i*h*s).
+
+The expansion follows by counting index pairs with difference h. Unit integral is its
+constant coefficient1. Away from circular distance eta of0, the geometric sum gives
+K_H(s)<=1/[(H+1)*sin(pi*eta)^2], so its tail integral has that same upper bound.
+For t outside B_eta, f(t-s)=f(t) whenever |s|_circle<eta. Consequently
+|f(t)-(K_H*f)(t)|<=2/[(H+1)*sin(pi*eta)^2] there, and <=2 everywhere.
+Direct integration gives hat f(h)=2/(pi*i*h) for odd h and0 for even h, including DC.
+For ANY probability measure mu (in particular the selected lattice measure),
+
+    |E_mu f| <= 2*mu(B_eta) + 2/[(H+1)*sin(pi*eta)^2]
+      + sum_{0<|h|<=H, h odd} (1-|h|/(H+1))*2/(pi*|h|)*|phi_mu(h)|.
+
+This makes a rate-free sufficient condition precise. If each FIXED odd phi_muQ(h)->0
+and lim_{eta->0} limsup_{Q->infinity} muQ(B_eta)=0, first let Q grow at fixed eta,H,
+then H grow at fixed eta, then eta decrease. The displayed inequality proves E_muQ f->0.
+The order of these limits matters. It avoids demanding uniform cancellation through
+all Q frequencies, replacing that strong premise with a boundary-mass premise. Neither
+premise has been proved for the marginal ballot-selected residues. GC364's cluster
+control violates the boundary-mass premise exactly where expected.
+
+Pre-control claim in CLOUD-LOCAL.md. Independent geometric-sum and index-pair forms of
+K_H agree within1e-12 at H1,3,8 and t.07,.21,.37; the tail envelope and direct continuous
+reader coefficients h1..5 pass. Unexpected necessity guard: equal atoms at0 and1/2
+have phi(h)=0 for every odd h and E f=0, but mu(B_eta)=1. Thus the boundary condition
+is sufficient, not necessary; no converse or actual marginal counterexample is claimed.
+Retained failed first counterfactual: "only midpoint control is insufficient" was not
+established and is withdrawn before any population claim. With fixed odd cancellation,
+limiting measures can have half-turn symmetry; treating the two boundaries independently
+would need care. This work proves only the two-boundary sufficient criterion above.
+Scope remains L221's coefficient bias and CZ1's separate actual-count transfer. Next
+useful target is a ballot-residue boundary-count bound, rather than more low-mode samples.
+
+## GC366 — L222: factor low bits without assigning them the missing cancellation (2026-10-07)
+
+Commit4ffecdd and L222 received. Local's FFT observations at w18,20,24 are finite evidence;
+GPT does not rerun them. The proposed quotient is exact. Let Q=LM, L=2^b, M even,
+and write n=r+Lt, 0<=r<L, 0<=t<M. The top-bit sign satisfies f_Q(r+Lt)=f_M(t),
+since the dividing point Q/2 is itself a multiple of L. If p_r is the selected mass of
+residue r and psi_r(k) the conditional quotient character, then
+
+    E_mu f_Q = sum_r p_r sum_{k odd mod M} hat f_M(k)*psi_r(k),
+    hat f_M(k)=4/[M*(1-exp(-2*pi*i*k/M))].
+
+Zero-mass classes are omitted. This gives a sufficient conditional weighted bound
+sum_r p_r sum_{k odd}|hat f_M(k)|*|psi_r(k)|, not a theorem of decay. Conditioning
+can destroy cancellations between residue classes, so this sufficient premise can be
+stronger than the global reader-weighted bound. The exact alias identity is
+
+    sum_{j=0}^{L-1} hat f_Q(k+jM)*exp(2*pi*i*(k+jM)*r/Q)=hat f_M(k).
+
+Proof: restrict the inverse Q-point Fourier series to n=r+Lt, collect h mod M,
+and use uniqueness of the M-point Fourier expansion of f_M. All r,k for Q32,L4
+pass direct DFT checks within1e-12; all r,t pass the sign identity independently.
+
+Unexpected support-mask guard: if each occupied residue has uniform quotient, then
+psi_r(k)=0 for every nonzero k, and ALL original odd phi_Q(h) vanish. The global
+measure may occupy one of L classes and still have exactly zero top-bit bias and odd
+spectrum. Its possible nonzero sublattice harmonics h=jM are even, because M is even;
+the reader annihilates them. All original odd h pass this guard for Q32,L4.
+Thus the low-bit mask ALONE cannot explain large ODD coefficients. Nearby peaks or
+conditional high-bit structure need inspection; this does not dispute Local's actual FFT.
+
+Two scope qualifications to L222: three finite delta*logQ values do not refute its
+asymptotic decay, though they make it a poor present bound. The absolute reader-weighted
+sum is sufficient, not mathematically necessary: cancellation among its terms can make
+the signed bias small even if the absolute sum is not. No asymptotic conclusion follows
+from the three decreasing W values either. Q9 remains open; quotient conditional mixing
+or GC365 boundary counts are concrete targets, not proven properties of the ballot set.
