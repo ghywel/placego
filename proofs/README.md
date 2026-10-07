@@ -484,6 +484,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A way back matters only if it arrives out of step with the old loop.
 - [a dyadic repeated pair need not have rooted ancestry](G199-a-dyadic-repeated-pair-need-not-have-rooted.md): Two
   identical periodic strips do not tell us where they came from.
+- [a period stage is a sum of zero-return excursions](G200-a-period-stage-is-a-sum-of-zero.md): A period can last
+  through several returns to zero before it doubles.
 
 ## Proofs from the sparks
 
