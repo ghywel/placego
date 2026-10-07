@@ -157,8 +157,8 @@ def main():
             for b in range(16):
                 for q in range(16):
                     expected = q>=1 and b>=a and all(
-                        ((s & (s>>1)).bit_count() ^
-                         ((s+q) & ((s+q)>>1)).bit_count()) % 2 == 0
+                        bin(s & (s>>1)).count('1') % 2 ==
+                        bin((s+q) & ((s+q)>>1)).count('1') % 2
                         for s in range(a,b+1))
                     assert bool(evaluate(rep,(a,b,q))) == expected, (a,b,q)
                     assert bool(evaluate(rep,(a,b,q),3)) == expected
@@ -175,7 +175,7 @@ def main():
     rs = read_machine(words / 'RS.txt')
     integers = list(range(4096)) + [2**k+d for k in range(1, 64) for d in (-1, 0, 1)]
     for n in integers:
-        expected = (n & (n >> 1)).bit_count() % 2
+        expected = bin(n & (n >> 1)).count('1') % 2
         assert evaluate(rs, (n,)) == expected
         assert evaluate(rs, (n,), 3) == expected
     print('RSP0: independent RS generator and padding controls pass', flush=True)
@@ -192,8 +192,8 @@ def main():
     for a in range(16):
         for b in range(a, 16):
             for q in range(1, 16):
-                expected = all(((s & (s>>1)).bit_count() ^
-                                ((s+q) & ((s+q)>>1)).bit_count()) % 2 == 0
+                expected = all(bin(s & (s>>1)).count('1') % 2 ==
+                               bin((s+q) & ((s+q)>>1)).count('1') % 2
                                for s in range(a, b+1))
                 assert bool(evaluate(rep, (a,b,q))) == expected, (a,b,q)
                 assert bool(evaluate(rep, (a,b,q), 3)) == expected

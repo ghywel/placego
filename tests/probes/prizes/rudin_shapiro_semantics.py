@@ -36,7 +36,7 @@ def accepts(state):
 
 def literal(a, b, q):
     return q >= 1 and b >= a and all(
-        ((s & (s>>1)).bit_count() ^ ((s+q) & ((s+q)>>1)).bit_count()) % 2 == 0
+        bin(s & (s>>1)).count('1') % 2 == bin((s+q) & ((s+q)>>1)).count('1') % 2
         for s in range(a, b+1))
 
 
@@ -105,8 +105,8 @@ def main():
         for i in range(6):
             st = advance(st, (0, 31, (b>>i)&1), (a>>i)&1)
         st = advance(st, (0, 0, 0), 0)
-        assert st[2] == (((a & (a>>1)).bit_count() ^
-                          ((a+b) & ((a+b)>>1)).bit_count()) % 2)
+        assert st[2] == ((bin(a & (a>>1)).count('1') ^
+                          bin((a+b) & ((a+b)>>1)).count('1')) % 2)
         assert st[3] == 0
     result = equivalence(machine)
     # Mutating acceptance at the initial state must expose the q=0 guard.
