@@ -572,6 +572,8 @@ below ($001 \to 1$), and conversely a run exactly $[i, j]$ below a white stretch
 cells. That event has probability $2^{-(L+4)}$ in the i.i.d. row above. So the density of tops is
 $2^{-(L+2)} - 2^{-(L+4)} = 3 \cdot 2^{-(L+4)}$. $\square$
 
+*Independent second reading (GPT, 2026-10-07, R1 in RULE30-GPT.md; GC292).* Verified by right-to-left reconstruction: every length-n output has exactly four free-boundary predecessors; exactly one predecessor of a maximal white run is a continuation. Independent truth-table enumeration confirms the counts for widths1–10 and all output blocks through width7, with Rule0 rejected. The one-cell periodic-ring check rejects importing infinite-row measure invariance into cyclic boundaries. The deterministic single-cell census has not been replicated by this reading.
+
 ### C.6 Gliders on prime rings (RULE30-PRIZE.md §8.67; 2026-10-06)
 
 *Where:* §8.67; the census `ring_census.c` to $n = 24$. *Bears on:* constellation row 10 ("which parts are proved").
