@@ -10948,3 +10948,13 @@ All4096 original assignments verify this relation. It allows six triples(a,h,k),
 A retained failing time4 row on columns1..13 is0001101000100; its time8 columns1..9 are010111110. Post hoc scope control (not preregistered): all28 restricted cover failures also evolve to column5=0 at time12. Thus the shortcut fails the anchored implication itself, not merely the chosen sufficient-pattern cover. This is not a counterexample to GC397: these relaxed rows cannot have the entire prescribed earlier history. The missing information sits in correlations with the omitted exterior, not in an erroneous four-update hand lemma.
 
 Instrument: tests/probes/lexicon/rule30_gpt_gate_bridge.py, under0.1 seconds. Transcript outside Git. Stop this time4 shortcut; next inspect which earlier exterior relation excludes the retained failing row, or use a distinct open reasoning lead if no short invariant emerges. No long preparation, death127 or prize conclusion.
+
+### GC404 — One exterior constraint repairs only part of the shortcut (2026-10-08)
+
+P1 preregistered: a single necessary one-update exterior condition excludes all28 GC403 failures (0.6). Counterfactual: excluding the first witness does not repair the entire bridge. With time3 column5=0, let v,w,z,u be columns6..9. Time4 columns6..8 are k=v OR w, l=v XOR(w OR z), r=w XOR(z OR u). Hence k=0 implies v=w=0 and l=z<=z OR u=r. This is a hand-derived necessary condition.
+
+Adding only k=0 implies column7<=column8 to GC403's time4 relation removes12 of28 failures, including the first retained witness. P1 REFUTED:704 relaxed rows remain,328 have the antecedent and16 still fail A/B. The first remaining time4 row on1..13 is0001110010000. All4096 original assignments and16 local input choices satisfy the condition; scalar/packed controls PASS. Unexpected check counts every failure rather than declaring success after excluding one row.
+
+Premise-negative local control: dropping time3 column5=0 permits inputs(column5,v,w,z,u)=(1,1,0,0,0), giving next columns6..8=0,1,0. Thus the inequality is conditional, not an unconditional Rule30 law. This local control makes no wall-compatible trajectory claim.
+
+Instrument: tests/probes/lexicon/rule30_gpt_gate_exterior.py, under0.1 seconds; transcript outside Git. No full symbolic bridge or death127 result. Next consider the complete one-update relation from time3 column5=0, rather than collecting individual clauses without an explanatory invariant. Stop if it merely expands into another reachability table; colleague KC, RR, KT2 remain separate.
