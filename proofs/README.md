@@ -439,6 +439,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   One real step costs time while leaving all three observed waiting distances unchanged.
 - [rooted word membership does not imply root-clock membership](G174-rooted-word-membership-does-not-imply-root-clock.md):
   A word can occur along a rooted history without every allowed clock occurring there.
+- [reached q8 feature collision: targeted independent audit](G176-reached-q8-feature-collision-targeted-independent-audit.md):
+  Even root-reached clocks lose essential timing information in the three-distance features.
 
 ## The waiting room (not yet verified)
 
@@ -451,7 +453,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Reached q8 feature collision: targeted independent audit](W176-reached-q8-feature-collision-targeted-independent-audit.md):
-  Even root-reached clocks lose essential timing information in the three-distance features.
+*No proofs are waiting for a second reader at the moment.*

@@ -319,6 +319,10 @@ CHECKS (GPT's claims at 827e006):
      (5,0), (0,9), (9,15), (15,12) is compatible and is the unique predecessor chain from (15, 12) to the root; carrying
      the full-line clock from root times 0, 1, 2, 3 reaches (15, 12) at times 9, 13, 13, 13 (phase 1 every time);
      there its triple is (1, 2, 1) and the next edge lands at phase 3 with (1, 3, 1), while phase 0 is gated but unreached.
+  S69 (G176, added 2026-10-07 at 0f15531): at q = 8 the pair (183, 176) has a unique predecessor chain of exactly 190
+     steps to the root (0, 255); its child 26 reaches (176, 26), aligned (133, 208) at phase 5; every forward triple
+     is compatible; from all eight root residues the clock reaches the source at 360 and the target at 365; both ends
+     are gated with distances (1, 5, 1) and pair least period 8; toggling the source's bit 0 breaks compatibility.
 """
 import random
 from fractions import Fraction as F
@@ -3149,4 +3153,30 @@ ok68 &= tri(15, 12, 1, 4) == (1, 2, 1) and reset_cost(12, 1, 4) == (2, 3) and tr
 ok68 &= gated3(15, 12, 0, 4) and tri(15, 12, 0, 4) == (1, 3, 1)
 check('S68 G174: the root chain to (15, 12) reaches it only at phase 1, where the (1, 3, 1) self-loop is absent', ok68,
       'root-clock arrivals %s' % arr)
+ok69 = True
+chain69 = [((183 << 8) | 176)]
+while chain69[-1] != 255:
+    chain69.append(predecessor_gpt(chain69[-1], 8))
+    if len(chain69) > 1000:
+        break
+ok69 &= len(chain69) - 1 == 190 and chain69[-1] == 255
+pairs69 = [(v >> 8, v & 255) for v in reversed(chain69)] + [(176, 26)]
+ok69 &= all(pairs69[i + 1][1] in edge_children(pairs69[i][0], pairs69[i][1], 8) and pairs69[i + 1][0] == pairs69[i][1]
+            for i in range(len(pairs69) - 1))
+ok69 &= (hg_rot(176, 5, 8), hg_rot(26, 5, 8)) == (133, 208)
+for t0 in range(8):
+    t = t0
+    arrive = []
+    for a_, b_ in pairs69[:-1]:
+        if b_:
+            while not (b_ >> (t % 8)) & 1:
+                t += 1
+            t += 1
+        arrive.append(t)
+    ok69 &= arrive[-2] == 360 and arrive[-1] == 365
+ok69 &= gated3(183, 176, 0, 8) and gated3(176, 26, 5, 8)
+ok69 &= tri(183, 176, 0, 8) == (1, 5, 1) and tri(176, 26, 5, 8) == (1, 5, 1)
+ok69 &= pair_lp(183, 176, 8) == 8 and pair_lp(176, 26, 8) == 8
+ok69 &= 26 not in edge_children(183 ^ 1, 176, 8)
+check('S69 G176: the reached q = 8 collision edge, its 190-step root chain, and arrivals 360, 365 from every root residue', ok69)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

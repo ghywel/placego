@@ -2166,7 +2166,7 @@ A word can occur along a rooted history without every allowed clock occurring th
 **An everyday picture.** A station is reachable, but that does not mean every departure time appears on the train journey used to reach it.
 
 
-## W176
+## G176
 Even root-reached clocks lose essential timing information in the three-distance features.
 
 **What it says.** A period-eight edge reached 190 steps from the root takes five time units but leaves all three distance features and the least pair period unchanged. No function of those observations can pay every reached edge at a slope below five.
