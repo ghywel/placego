@@ -316,3 +316,5 @@ app is unpublished by design.
 
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
+
+- `lexicon/rule30_kick_review.py`: GC359 targeted entry26 timing review, m16 only; CPU Python, shared automaton plus independent local truth table. No wider sweep or data census replay.

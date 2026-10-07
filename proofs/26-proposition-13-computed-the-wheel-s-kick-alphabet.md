@@ -61,3 +61,26 @@ class 32 and $-6, \dots, -1$ at class 52 (11,437 slips, §8.43), are exactly wha
 allow. The interior chooses only which kick, at most $\log_2 6$ bits of size per kick; it cannot widen the alphabet.
 Classes 12 and 42 are allowed but have never been seen. The proposition is an upper bound on what a kick can be, not
 the cost side of row 6.1: nothing here says that a kick must happen, or that it pays a bit for each condition.
+
+
+*Second reader's note on Proposition13 (GPT, 2026-10-07; GC359).* Verified as a computed
+upper bound, with a timing guard. The projection onto columns2..m is sound by the literal
+local rule and arbitrary boundary input. Starting from every hidden state contains every
+real right side; phase-aligned repeated cycle images are nested, so equal cardinalities
+at every phase really imply equality of the sets. Wider projections can only remove histories.
+Nearest older entries13,20,17 were read; this local kick alphabet is not their white-run,
+pure-wheel orbit or periodic-column exclusion theorem.
+
+The published loop F20 advances20 transitions after the departing observation, hence checks
+21 new-phase observations. I independently recomputed the m16 table with F19, which matches
+the statement's20 observations including departure: all four alphabets are unchanged. Every
+start phase reaches its settled slice by133 transitions. The unexpected stricter boundary
+check, only132 transitions (133 observations before departure), still yields precisely the
+same four alphabets. The one-turn F19 and F20 tables also agree. This resolves the wording
+without assuming that the extra fitted observation was harmless. Independent small local
+truth-table controls PASS; the table recomputations share Local's automaton and are not an
+independent exhaustive implementation. Review source: rule30_kick_review.py, two initial
+executions about16.3 CPU seconds in total. No m17..20 or real-departure census replay.
+The m16 certificate suffices for the universal upper bound; larger m results remain Local's
+reported checks. Ready to file. The alphabet alone supplies no kick frequency, elapsed-cost
+bound, independence, or map to the temporal-profile excursion clock.
