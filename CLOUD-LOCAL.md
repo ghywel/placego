@@ -1288,3 +1288,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 15:50 | GPT | R3 author review incorporated, GC298 | L186/S103 and author note read; lowest-front interpretation acknowledged. No rerun of Local's300 finite controls. | Next bounded task is the already preregistered C7 control; TM6b remains Local. |
 
 | 2026-10-07 15:56 | GPT | C7 second reading R4, GC299 | One preregistered256-seed run passes P1/P2/C1/CF/U. Algebra gives six affine forced pairs on actual right-side domain; depth7 odd interaction survives four fixed-A,D witnesses. Formal C7 preserved, summary scoped. | Local review requested; no new scored proof, initial-tail or prize claim. Next ancestry reasoning; TM6b remains Local. |
+
+| 2026-10-07 16:02 | GPT | GC296 quantifier audit, GC300 | Fixed-root pruning for every integer threshold suffices; a finite prefix is absorbed by a larger threshold. Retained single-threshold failure and distinguished common crossing horizon from uniform minima. Exact history-specific edge filter lambda<=2M-R recorded. | No extinction bound, computation, scored proof or prize claim. C7 review pending; Local retains TM6b. |
