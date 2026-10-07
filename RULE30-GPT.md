@@ -9555,3 +9555,53 @@ can be charged uniformly without promoting an arbitrary restarted subwindow to a
 Nearest G160/G174/G163 read; no duplicate filing. Controls and scope are in the entry24 second-reader
 note, with an internal-interval countercheck. Local owns the RS32 run; stageA results are received,
 not replayed here. No prize conclusion follows.
+
+
+## Heavy pulse windows share a period budget between their second and fourth delays (2026-10-07; GC347)
+
+**Bounded same-clock support deduction, second reading requested; no trajectory or proof filing.**
+Prediction recorded before controls: the heavy-source fourth delay is tied to the second delay, not an
+independent worst gap. Counterfactual: the same period-budget inequality holds for the named two-black
+return to a pulse. That extension fails in its literal control.
+
+Use GC344's q>=4, source |A|>3, pulse B=e_s and following C,D,E. Let t=s+L be the first black C
+position after s. In GC342's formula, E(i+1)=1 XOR C(i) outside the correction positions. If C(s)=0,
+the next zero of C after t occurs no later than s on going around the circle. If C(s)=1, the heavy-source
+hypothesis excludes C having only the initial forced zero interval (GC342's singleton-E classification).
+So another zero occurs strictly before returning to s. Write u for that next zero and M=u-t as a
+positive cyclic distance. Then
+
+    1 <= M <= q-L          when C(s)=0,
+    1 <= M <= q-L-1        when C(s)=1.
+
+All C positions t+1,...,u-1 are black, and their following E positions are zero. E(u+1)=1, with no
+interval correction in this range. Therefore the fourth driver, reached at t+2 after D's one-step
+reset, has exact delay M. From any arrival at B the four delays are(k,L,1,M),1<=k<=q, with L+M<=q.
+This is an actual same-clock correlation of the two gaps; charging them as independently maximal
+would discard it. Heavy windows remain disjoint by GC344.
+
+At slope5/2, the exact ordered interval debt is
+
+    max(0,k-5/2,k+L-5,k+L+M-9,L-5/2,L+M-13/2,M-5/2).
+
+Terms involving k increase with k; all others are dominated at k=q since L,M<=q-1. Thus the
+maximum over arrivals is the post-pulse value
+
+    q-5/2 + max(0,L-5/2,L+M-13/2).
+
+This exact four-edge charge replaces GC344's separate positive fourth-edge allowance and uses no
+phase transfer. Its proof, like Proposition11, concerns the full-line clock beginning at B. It is not
+a theorem for arbitrary interior restarts or birth clamps that interrupt the displayed reset suffix.
+Nor do disjointness and L+M<=q bound the number of windows or the complementary same-clock debt.
+
+**Independent fixed controls:** at q8, A=255,C=85,D=249,E=89 gives L=2,M=1; heavy odd A=158 gives
+C=234,D=253,E=42,L=M=1. Nine per-bit triples and literal suffix scans pass. Exact rational
+ordered-prefix checks for k,L,M in their finite ranges at q4,8,16 verify the debt expression and
+maximal-phase consequence. These are formula controls, not rooted census evidence.
+**Identified unexpected check:** the named two-black A=5,B=1,C=249,D=241,E=16 gives L=3,M=8, so
+L+M=11 exceeds q8. There is no outside-gap zero, and E is the pulse just missed by arrival. Thus the
+heavy-source restriction is essential; a bound proved for it must not silently include GC334's rare
+pulse-return windows. No failed large experiment or new all-period estimate is being hidden.
+
+Next: compensate the positive window charges against the intervening edges, preserving actual
+clock phases. Existing count and normalized-stage-growth obligations remain open.
