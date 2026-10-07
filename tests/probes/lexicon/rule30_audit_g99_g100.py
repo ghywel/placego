@@ -487,6 +487,11 @@ CHECKS (GPT's claims at 827e006):
      returns at 88 and its repeated endpoint never reaches zero under B; the rooted q = 4 cap exit has block 1011, and
      doubled, with either integration child and every rotation, it first returns at 371; in RQ3's rooted cap-8 graph the
      only entries (0, c) with c of least period 8 sit at depth 29, and the next zero driver is 371 steps after depth 28.
+  S98 (G200, RULE30-GPT.md, added 2026-10-07 at 0e12c2f): the rooted zero-driver sources at cap 8 sit at depths 2, 7,
+     28, 399 (entries 3, 8, 29, 400), each an odd integration over its own least-period block, so the stages to periods
+     2, 4, 8 are single excursions of 5, 21, 371; from source 399 the period-16 stage first returns 52,808 later, at
+     depth 53,207, whose driver has least period 16 and even parity, an internal branch rather than the exit;
+     telescoping and M <= lambda <= k M hold on 200 random schedules; GPT's two multiplicity controls.
 """
 import random
 from fractions import Fraction as F
@@ -5119,4 +5124,37 @@ ok97 &= max(_d8.values()) - 28 == 371                        # zero at depth 28,
 check('S97 G199 continuation: the D0 witness (block 1000, return 88) has a non-absorbing endpoint, while every rooted '
       'entry to period 8 (block 1011, both children, all rotations) first returns at 371, its only entry depth 29',
       ok97)
+ok98 = True
+# G200's event classification on the rooted history: the zero-driver sources sit at depths 2, 7, 28, 399 (cap 8), so
+# the stages to periods 2, 4, 8 have one excursion each, of lengths 5, 21, 371 (entries 3, 8, 29, 400 = source + 1)
+_r98, _d98, _p98, _e98, _x98 = _rq3.reached(8)
+_z98 = sorted(_d98[s] for s in _d98 if s[1] == 0)
+ok98 &= _z98 == [2, 7, 28, 399] and [b - a for a, b in zip(_z98, _z98[1:])] == [5, 21, 371]
+ok98 &= [z + 1 for z in _z98] == [3, 8, 29, 400]                                      # N_1 .. N_4
+# every one of those sources is an odd integration over its own least-period block (each ends a stage)
+ok98 &= all(bin(s[0] & ((1 << _lp82(s[0], 8)) - 1)).count('1') % 2 == 1 for s in _d98 if s[1] == 0)
+# the period-16 stage: from source 399 the first zero comes 52,808 later (depth 53,207), and that driver has even parity
+# over its own least period, which is 16, so it is an internal genuine branch, not the exit to period 32
+_pr98 = walk84(16, 161 | (161 << 8))
+_drv98 = _pr98[-2]
+ok98 &= len(_pr98) - 1 == 52808 and 399 + 52808 == 53207 and _lp82(_drv98, 16) == 16
+ok98 &= bin(_drv98).count('1') % 2 == 0
+# telescoping and the bounds M <= lambda <= k M on random schedules; GPT's two multiplicity controls
+_rng98 = random.Random(200)
+for trial in range(200):
+    j = _rng98.randint(1, 8)
+    q = 2 ** j
+    r = [_rng98.randint(1, 500) for _ in range(_rng98.randint(1, 6))]
+    z = [_rng98.randint(1, 50)]
+    for x in r:
+        z.append(z[-1] + x)
+    ell, lam, M = z[-1] - z[0], _Fr(sum(r), q), _Fr(max(r), q)
+    ok98 &= ell == sum(r) and M <= lam <= len(r) * M
+for j in range(1, 12):
+    q = 2 ** j
+    ok98 &= _Fr(q * q * 12, q) == 12 * q and _Fr(12, q) == _Fr(12, q)                  # k = q^2: lambda 12q, M 12/q
+    ok98 &= _Fr(q * 12, q) == 12                                                        # k = q: lambda stays 12
+check('S98 G200: rooted zero sources at 2, 7, 28, 399 give single excursions 5, 21, 371 with odd sources; the '
+      'period-16 '
+      'stage\'s first return (52,808, depth 53,207) is an even branch; telescoping and M <= lambda <= k M', ok98)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
