@@ -20,7 +20,16 @@ PREDICTIONS, Local's, published before the run (blind unless marked):
   AW3-C1 (control): the method reproduces AW/AW2's exact maxima at P = 3 .. 7 (odd 1, 1, 5, 5, 5; even 4, 6, 2, 4, 6).
   AW3-U (the unexpected check): some excess pair needs a refuting width above 5 (AW2's largest) at P = 8 or 9.
 A pair that survives to width 14 stays undecided and is reported, never called admissible.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 18:10 (M5, one run at commit 16d0665; CPU 14.0 s, peak RSS 164 MiB, no cap). AW3-C1 PASS
+(P = 3 .. 7 reproduce exactly). P = 8: 119 pairs with a periodic continuation give lower bounds odd 7, even 6; of 632
+excess pairs 631 are refuted (widths <= 5) and ONE survives every width to 14: (column 0, column 1) = (83, 157), whose
+forced left half has an odd run of 9 (and even runs <= 4). P = 9: 195 periodic-admissible pairs, lower bounds odd 7,
+even 6; all 1,794 excess pairs refuted (widths <= 7), so the exact actual-wall maxima at P = 9 are odd 7, even 6.
+The script's verdict lines printed P1 and P2 as UNDECIDED because its logic treated any undecided pair as undecided;
+scored against the predictions as worded, both HELD: the P = 8 odd maximum is 7 or 9, below 11 either way, and the
+even maximum is exactly 6 (the survivor's even runs are <= 4), below 14. AW3-P3 REFUTED (one survivor at width 14).
+AW3-U PASS (refuting widths up to 7). So among P = 4 .. 9, 2P - 5 is attained on an actual wall only at P = 5; the
+P = 8 odd maximum is undecided between 7 and 9 pending the survivor (83, 157).
 """
 import resource
 import sys
