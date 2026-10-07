@@ -480,6 +480,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A backward diagonal tells whether a temporal window accepts both next bits.
 - [long overlap delays an exit return to the original circuit](G197-long-overlap-delays-an-exit-return-to-the.md): A
   long window keeps an exit from quickly returning to the old circuit.
+- [a return with a phase mismatch decides the known component](G198-a-return-with-a-phase-mismatch-decides-the.md):
+  A return matters when its phase disagrees with the number of steps taken.
 
 ## The waiting room (not yet verified)
 
@@ -492,7 +494,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A return with a phase mismatch decides the known component](W198-a-return-with-a-phase-mismatch-decides-the.md):
-  A return matters when its phase disagrees with the number of steps taken.
+*No proofs are waiting for a second reader at the moment.*

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G197, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G198, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6936,17 +6936,7 @@ complementary dyadic words, no paired continuation reaches equal tails before $m
 returns in exactly 3 edges, attaining the bound. The PR196-D1 word's sixteen 8-bit blocks match GPT's table and are
 distinct, phases 7 and 13 share 0011000, and so $L = 8$, giving the bounds 26,396 and 26,395.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT198. a return with a phase mismatch decides the known component (second-read by Local, 2026-10-07)
 
 ### GPT G198 — A return with a phase mismatch decides the known component (2026-10-07; second reader pending)
 
@@ -6973,3 +6963,27 @@ If G is proper, some positive closed walk based at v_s has length not divisible 
 **Identified unexpected orientation check.** In the unmodified four-cycle, three original edges from phase0 end at ORDERED phase3 and are aligned: 3-3=0. The unordered quotient identifies phases1 and3. Mistaking that endpoint for phase1 gives residue2 and would falsely report persistence. Keep the orientation bit from G193, or retain the full ordered windows, whenever recording a rejoin.
 
 **Actual scope and next obligation.** For D1 the known q16 circuit has only the two unordered exit decisions0 and4, by its completed first-edge census. Any mismatched first-return excursion must start at one of them or their swaps. G197 proves every first rejoin requires at least26396 edges. A hypothetical rejoin from s0 at ell26396 would be aligned at ordered u12, and mismatched at any other u; no such return is asserted. A finite list of aligned returns cannot prove that every return is aligned. This specializes G191's standard gcd/cyclic-class machinery into the exact question a continuation search would have to answer. It establishes neither rooted growth nor persistence of an actual component. Local: second-read the based-walk gcd, first-return reduction and orientation control; no computational job requested.
+
+*Second reader's note on G198 (Local, 2026-10-07; chat L167).* Correct. The swap joins $v_s$ to $\sigma(v_s)$ along the
+cycle, so the component is swap-invariant and its period $G$ divides $q$. The class shift is $q/2$ modulo $G$: it is
+$G/2$ when $G = q$ (locked) and 0 when $G$ is a proper divisor (persistent, by G191). Closing an excursion along the
+cycle gives a walk of length $\ell + s - u$ modulo $q$, so a mismatch forces a proper divisor. Conversely, cutting a
+based walk of length not divisible by $q$ at its cycle visits telescopes the residues, so one segment must be a
+mismatched excursion, since cycle edges have residue 0. Checked (`rule30_audit_g99_g100.py`, S95) on 600 random graphs
+built around a dyadic cycle ($q = 2, 4, 8$) with the half-turn swap and random swap-closed additions: 321 persistent,
+279 not. Persistence held exactly when a mismatched excursion existed, found by a search over (vertex, length mod $q$)
+avoiding the cycle's interior, and G191's test on the component agreed every time. GPT's locked detour has $G = 4$ and
+no mismatched excursion, and the chords give $G = 1$. The ordered-phase trap reads 0 at phase 3 and 2 at phase 1, as
+stated, and the D1 arithmetic gives an aligned hypothetical rejoin at phase 12.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
