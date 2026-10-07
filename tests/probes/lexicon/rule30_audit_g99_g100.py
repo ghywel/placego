@@ -255,6 +255,11 @@ CHECKS (GPT's claims at 827e006):
      lemmas are local, so S52 and S53 also run them ambiently, over every pair (a, b) of P-periodic words, P <= 8:
      G158's child-class count at every pair, and G159's six nonzero drivers below every nonzero even-parity a with
      driver zero, along every continuation.
+  S54 (G160, added 2026-10-07 at b1cc1a2): on G8's full-line front graph for every P <= 7 (states (a, b, r), the zero
+     pair excluded; children c with c(t+1) = a(t) XOR (b(t) OR c(t)); arrival r' one past the first black b cell at or
+     after r, or r' = r when b = 0), the gate is forward invariant, every state enters it within two edges, every
+     state on a cycle (Tarjan components) is gated, each pair's gated phases number the black cells of a (or the
+     transitions of b when a = 0), and the period-four control a = 0101, b = 0, r = 1 needs both edges.
 """
 import random
 from fractions import Fraction as F
@@ -2460,4 +2465,82 @@ check('S52 G158: child rotation classes follow the parity rule; leaves = branche
       'rooted even-parity branch classes for P <= 15: %d; ambient two-class pairs, P <= 8: %d' % (sum(E52.values()), amb52))
 check('S53 G159: six nonzero drivers after every even-parity branch; at most 2^ceil(n/7) classes at depth n', ok53,
       'ambient continuations checked: %d' % amb53)
+def front_succ(a, b, r, P):
+    if b == 0:
+        r2, cost = r, 0
+    else:
+        t = r
+        while not (b >> (t % P)) & 1:
+            t += 1
+        r2, cost = (t + 1) % P, t - r + 1
+    return [((b, c_, r2), cost) for c_ in edge_children(a, b, P)]
+
+
+def gated(a, b, r, P):
+    if a != 0:
+        return (a >> ((r - 1) % P)) & 1 == 1
+    return ((b >> (r % P)) & 1) ^ ((b >> ((r - 1) % P)) & 1) == 1
+
+
+def tarjan_cyclic(nodes, succ):
+    index, low, onst, st, cyc, idx = {}, {}, set(), [], set(), [0]
+    for v0 in nodes:
+        if v0 in index:
+            continue
+        work = [(v0, iter(succ[v0]))]
+        index[v0] = low[v0] = idx[0]; idx[0] += 1; st.append(v0); onst.add(v0)
+        while work:
+            v, it = work[-1]
+            w = next(it, None)
+            if w is None:
+                work.pop()
+                if work:
+                    low[work[-1][0]] = min(low[work[-1][0]], low[v])
+                if low[v] == index[v]:
+                    comp = []
+                    while True:
+                        x = st.pop(); onst.discard(x); comp.append(x)
+                        if x == v:
+                            break
+                    if len(comp) > 1 or v in succ[v]:
+                        cyc.update(comp)
+            elif w not in index:
+                index[w] = low[w] = idx[0]; idx[0] += 1; st.append(w); onst.add(w)
+                work.append((w, iter(succ[w])))
+            elif w in onst:
+                low[v] = min(low[v], index[w])
+    return cyc
+
+
+ok54 = True
+ncyc54 = {}
+for P in range(1, 8):
+    states = [(a, b, r) for a in range(1 << P) for b in range(1 << P) for r in range(P) if (a, b) != (0, 0)]
+    succ = {}
+    for (a, b, r) in states:
+        sc = front_succ(a, b, r, P)
+        ok54 &= all((x[0], x[1]) != (0, 0) for x, _ in sc)
+        succ[(a, b, r)] = [x for x, _ in sc]
+        if gated(a, b, r, P):
+            ok54 &= all(gated(*x, P) for x in succ[(a, b, r)])
+    for v in states:
+        ok54 &= all(gated(*y, P) for x in succ[v] for y in succ[x])
+    cyc = tarjan_cyclic(states, succ)
+    ok54 &= all(gated(*v, P) for v in cyc)
+    ncyc54[P] = len(cyc)
+    for a in range(1 << P):
+        for b in range(1 << P):
+            if (a, b) == (0, 0):
+                continue
+            ng = sum(gated(a, b, r, P) for r in range(P))
+            want = bin(a).count('1') if a else sum(((b >> t) & 1) != ((b >> ((t + 1) % P)) & 1) for t in range(P))
+            ok54 &= ng == want
+a0 = 0b1010                                            # a = 0101 in time order (bit t is time t)
+ok54 &= not gated(a0, 0, 1, 4)
+kids0 = sorted(x for x, _ in front_succ(a0, 0, 1, 4))
+ok54 &= kids0 == sorted([(0, 0b1100, 1), (0, 0b0011, 1)])         # c = 0011 and its complement, time order
+ok54 &= all(not gated(*x, 4) for x in kids0)
+ok54 &= all(gated(*y, 4) for x in kids0 for y, _ in front_succ(*x, 4))
+check('S54 G160: the arrival gate is invariant, entered within two edges, and contains every cycle (P <= 7)', ok54,
+      'cyclic states by P: %s' % ncyc54)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

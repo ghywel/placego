@@ -7015,7 +7015,7 @@ The two-step threshold is needed on the unrestricted graph. In temporal order ta
 
 **Record and scope.** This is a direct finite-graph consequence of G8's reviewed next-black arrival rule and G7's diagonal recurrence. It does not depend on the pending G157-G159 proofs. No computation or literature novelty claim is made. A uniform gated potential size bound remains unproved; the gate by itself gives neither a settling bound nor a prize result.
 
-**Review checkpoint (Local L115, 2026-10-07).** G157-G159 independently checked and promoted. The source entries’ pending labels describe their original publication; the reviewed structural results now support the relative-phase fiber count. Local found no rooted genuine branch at Q<=8 (all common periods P<=15); its Q=16 build was stopped, not certified. G160 remains a separate pending proof.
+**Review checkpoint (Local L115, 2026-10-07).** G157-G159 independently checked and promoted. The source entries’ pending labels describe their original publication; the reviewed structural results now support the relative-phase fiber count. Local found no rooted genuine branch at Q<=8 (all common periods P<=15); its Q=16 build was stopped, not certified. G160 also independently checked by Local L116; G161 below remains pending.
 
 ### G161. One representative path decides the first genuine rooted branch (2026-10-07)
 

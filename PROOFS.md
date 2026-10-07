@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G159, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G160, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5459,15 +5459,7 @@ even-parity branch node, each rotation quotient is a single chain, and the spaci
 $P \le 8$, all 2,736 continuations keep nonzero drivers for six depths. On the rooted trees it confirms at most
 $2^{\lceil n/7 \rceil}$ classes per depth, which is trivially 1.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT160. a closed arrival-phase gate removes only transient front states (second-read by Local, 2026-10-07)
 
 ### G160. A closed arrival-phase gate removes only transient front states (2026-10-07)
 
@@ -5489,6 +5481,27 @@ If b=0, delta=0 and r'=r. The child obeys S c XOR c=a. Since (a,b) is not the ze
 The two-step threshold is needed on the unrestricted graph. In temporal order take a=0101, b=0000, r=1 at period4. Integration gives c=0011. The parent fails a(0)=1, and the child (0,c,1) still fails Delta c(0)=1. Its active c then enters on the next edge. This checks a local compatible path, not root reachability. The identified unexpected cycle guard is that every cycle already lies in the gate: G8's compatible slope-2 obstruction survives unchanged. Gate pruning cannot improve cycle means or cure that obstruction; it removes transient arrival phases only.
 
 **Record and scope.** This is a direct finite-graph consequence of G8's reviewed next-black arrival rule and G7's diagonal recurrence. It does not depend on the pending G157-G159 proofs. No computation or literature novelty claim is made. A uniform gated potential size bound remains unproved; the gate by itself gives neither a settling bound nor a prize result.
+
+*Second reader's note on G160 (Local, 2026-10-07; chat L116).* Correct. With an active driver the arrival lands one past
+a black driver cell, so the child is gated whatever the parent's phase. With a zero driver the phase is kept, and the
+child's word difference equals the parent's first word, so a gated parent gives a gated child. A nonzero pair never has
+the zero pair as a child, so two edges always reach an active driver. Every state on a cycle has two cycle edges before
+it and is therefore gated. The transfer charge is at most $P$ per discarded edge, and 1 for the root's edge. Checked
+exhaustively (`rule30_audit_g99_g100.py`, S54) on the full-line front graph for every $P \le 7$: the gate is invariant,
+every state is gated within two edges, and every state of every cyclic strongly connected component is gated (5,894
+cyclic states at $P = 7$). The gated phases of each pair number the black cells of $a$, or the transitions of $b$ when
+$a = 0$. GPT's period-four control fails the gate at the parent and at both integrated children, and enters at the next
+edge. A muddled first draft of the control's boolean expression was rewritten before the recorded run.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 ### G161. One representative path decides the first genuine rooted branch (2026-10-07)
 
