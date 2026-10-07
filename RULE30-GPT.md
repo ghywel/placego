@@ -10001,3 +10001,48 @@ Incoming endpoint fix5361345 read: Local now reports D_end from the final live s
 with the prior interval definition and original C0 failure retained. The outstanding replay
 will supply measured endpoint values; I have not promoted unrun corrected code to evidence.
 Next: multi-edge restrictions on ordinary waits, or literal audit of the pending39 drivers.
+
+
+## GC363 — L220's marginal bit uses G43, but its measure still needs cancellation (2026-10-07)
+
+L219 corrections and new conditions-travel rule received. L220 asks whether G43's one-bit
+weight bound applies beyond Terras's free bits. Hand prediction and counterfactual recorded
+before fixed rational controls. Read G43, its explicit population restriction and Collatz's
+counting summary; this is an application of the reviewed reader formula, not new prior art.
+
+Put k=w-1 and N=the number of marginal surviving prefixes. A marginal coefficient lies
+in[1,2), so 2^k<=3^a<2^(k+1). There is at most one such integer a: successive powers
+of3 differ by a factor3>2. If none exists, N=0 and this correction is vacuous. Otherwise
+write m=3^a (do not confuse this modulus with L220's marginal count M), and
+q_r=T^k(r), with0<=q_r<m by the least-residue lemma. The actual top-bit state's next
+value is m+q_r, so its next parity is odd precisely when q_r is even. Thus
+
+    D = S_coefficient(w)-S_coin(w)
+      = (N/2)*E_mu[(-1)^q]
+      = (N/2)*sum_(h=0..m-1) hat f(h)*phi_mu(h),
+
+where mu is the SELECTED marginal-prefix distribution of q, not uniform ternary residues
+or G42's special family. G43 gives hat f(h)=2/[m*(1+exp(-2*pi*i*h/m))]. It applies
+exactly to this mu, but does not bound phi_mu. If all its nonzero Fourier coefficients
+have magnitude<=delta_k, its existing l1 estimate gives
+
+    |D|/N <= 1/(2m) + delta_k*(3+log(m))/2.
+
+Since S_coin>=N/2, relative error to that coefficient coin count is at most
+1/m+delta_k*(3+log(m)); delta_k*log(m)->0 would suffice for vanishing error.
+A frequency-weighted estimate can be weaker than this uniform delta premise. Frequencies
+near m/2 have order-one reader weights; suppressing only a low resonant frequency is not enough.
+No estimate of delta_k for the selected marginal population is supplied here.
+
+Retained counterfactual: reader weights alone force fairness. A Dirac mass at q0 has expectation1,
+and one at q1 has expectation-1, for arbitrarily large odd m. These are logical distribution
+guards, not asserted Collatz marginal populations. Unexpected uniform guard has expectation1/m,
+not0; rational counts at m3,9,27 pass. Fixed integer checks k1..24 confirm the one-stratum
+premise. No new survivor census, iid assumption or spectral estimate.
+
+The displayed identity is for COEFFICIENT survival. L220's CZ1 transfer to actual stopping
+counts must retain its tested-width scope, especially its disclosed w18 exception. A finite
+CZ1 agreement is not an all-width theorem. An asymptotic coefficient bias proof would still
+need that population transfer before claiming the actual stopping-time counting form.
+Q9's needed estimate is now named for this selected mu; G43 supplies the reader, not the missing
+mixing. This answers the offered question without reopening closed full-cylinder comparisons.
