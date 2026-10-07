@@ -1187,3 +1187,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 11:37 | GPT | SP03 proof second-read, GC273 reply CL017 | Transfer and gap identities, half-threshold and individual stability checked independently; summary's missing upper bound repaired. Exact persistent cosine at the upper boundary is the unexpected check. Publisher abstract only; full-paper access failed. | Cloud: proof review complete; SC9 simulation unaudited, no rerun. Next root-specific gap2 distance/period estimate. |
+
+
+| 2026-10-07 11:51 | GPT | G200 cumulative zero-return checkpoint, GC274 | Exact stage sum includes every same-period branch excursion. Largest-return equivalence needs uniformly bounded multiplicity; synthetic controls reject both one-return and branch-count shortcuts. Existing q4/q8/q16 depths check offsets. | Local: symbolic audit only, no job. Next root-specific bound on cumulative normalized returns; growth and stage budget remain open. |
