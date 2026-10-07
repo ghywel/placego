@@ -9344,3 +9344,71 @@ Preregister SA1 in rule30_sparse_ancestry.py before execution. The domain is onl
 **Publication checkpoint: NOT RUN.** The instrument's syntax parses. Publish this preregistration, then execute SA1 in the next bounded work block; record all finite cycles, rooted depths, failures and controls. Local retains long computations and the separate right-continuation lane. The finite rooted separation list will not be extrapolated into a constant-class theorem or a linear debt bound.
 
 **Review receipt.** Local L209/S115 at619e4aa independently verifies GC334's triples, delays, interval-debt arithmetic and all overlap/terminal guards on464 q/r cases, including nondyadic q. Incorporated with its original symbolic proof and finite-control distinction. GC335 remains pending independent review.
+
+
+## SA1 outcome: all ten q4/q8 inclusion pulse starts are nonrooted (2026-10-07; GC337)
+
+One execution of the exact SA1 instrument published at8760e40, after safe fetch and review checks. Intel CPU0.076234s, no cap, all ten starts classified NONROOTED by exact repeated full pairs. Blind SA-P1, that someq8 separation other than2 is rooted, is REFUTED and retained. No state from this small family reaches the absorbing pair; forward-compatible hole identities do not supply its ancestry.
+
+The complete(preperiod, exact cycle length) table is:
+
+    q4: r1 (0,12), r2 (25,28), r3 (27,28).
+    q8: r1 (560,4064), r2 (73,28), r3 (166,1064),
+        r4 (49,4064), r5 (557,4064), r6 (711,4064), r7 (713,4064).
+
+C1's independent scalar inversion agrees on all256 q4 pairs and every diagnostic edge. The known roots absorb; C2's q4r1 exclusion and CF's q2 two-cycle pass. The unexpected absorbed-prefix reconstruction assertion is vacuous on the TEN SURVEYED STARTS, since none absorbs; it must not be described as ten positive reconstruction checks. To resolve that control limitation, a separate post-run positive control used the reviewed first q4 entry up to rotation: predict that(0,3) has rooted depth8, then invoke the same classification with scalar reconstruction. It reaches zero after9 inverse steps and reconstructs depth8 exactly. This is a disclosed control refinement after the diagnostic, not a preregistered blind prediction or another census run.
+
+**Meaning and scope.** Inverse absorption is an exact finite ancestry decision, so these ten periodic pair classes are excluded from every rooted history at their respective common periods, conditional on the checked execution. Rotation commuting with B covers every pulse location, not merely phase0. This does not exclude all singleton-driver nodes or all two-black predecessors: only the inclusion shapes(e_s+e_(s+r),e_s) were tested. It does not extend to arbitrary q; the already independently verified q16,r2 occurrence at depth725146 is an explicit countercontrol to such an extrapolation. In particular small-period empty sets cannot be promoted to a period-independent exclusion theorem.
+
+Transcript outside Git. No q16 inverse search, forward census, clock measurement or prize result was run. Local's offered next census can address the reachable q16 separations on the already finite TM5b tree, with a distinct preregistration and full-pair counts. Request that bounded q16 block; postpone any q32 expansion or new long trajectory. Main Q7 gaps remain open.
+
+**GC335 review incorporated.** Local L210/S116 at041e218 independently verifies exhaustive internal-start classification, the forced seven-edge delays/interval debt/one-transfer saving, terminal containment and the q4 guard. All conclusions retain unknown complementary gap debt and quadratic worst-case separation count.
+
+
+## Imported toolkit application: signed local constraints and a cancellation guard (2026-10-07; GC338)
+
+**Owner-authorized toolkit use, not an audit of the imported claims.** Read all nine entries of
+CO-DISCOVERED-PROOFS.md at shared checkpoint46f351d. The owner confirms Cloud has verified every imported
+claim and authorizes taking them on trust, including the entries with B provenance labels. Those labels remain
+unchanged. Application hypotheses and new deductions still need checking.
+
+Family175's signed-annihilation method suggests encoding forbidden local configurations through exact Walsh
+relations. This is an application of its method, not a claim that the entire discrete-convexity theorem directly
+controls rooted ancestry. For four local bits(a,b,c,d), Rule30 requires d=a XOR(b OR c). Write chi_U for the sign
+(-1) raised to the sum of the bits indexed by U. The elementary OR expansion gives the kernel
+
+    K = 2 chi_{a,d} + 1 - chi_b - chi_c - chi_{b,c}.
+
+K vanishes on every valid local tuple and equals either4 or-4 on every invalid one. If f indicates a family of
+valid finite prefix assignments, its uniform-cube Walsh coefficients therefore satisfy, for every index set U,
+
+    2 fhat(U symmetric-difference {a,d}) + fhat(U)
+      - fhat(U symmetric-difference {b}) - fhat(U symmetric-difference {c})
+      - fhat(U symmetric-difference {b,c}) = 0.
+
+The same relation holds for character moments under any actual distribution supported on valid assignments.
+Root boundary bits additionally fix the sign of the corresponding shifted coefficients. This retains joint
+constraints that marginal black counts lose. No new claim of novelty for the elementary Fourier identity is made.
+
+**Application check and identified unexpected check.** Exact enumeration of all16 local assignments gives
+eight valid tuples. All16 shifted identities for their indicator pass with rational arithmetic. The unexpected
+check exposes a weaker test's failure: the invalid tuples(0,0,0,1) and(0,1,0,0) have K=-4 and K=4. Their equal
+mixture has mean K=0 although every sample violates Rule30. Instead K squared is0 on valid tuples and16 on
+invalid ones. Thus mean(K squared)=0 characterizes local validity for an actual nonnegative distribution.
+Partial moments without positivity and a global extension do not provide that implication. Even exact local
+validity permits ambient cycles: rooted boundary conditions and actual ancestry remain essential. This is a
+possible moment-constraint instrument, not an all-period clock bound or a reopened reduced-feature potential.
+No moment optimization or new trajectory run was undertaken.
+
+**Retained failed direct application.** Applying family175's union-cover theorem to raw black supports of rooted
+full pairs gives an empty exceptional family for k>=2. Unrestricted rooted pairs include(one,one), which already
+covers every pair coordinate. Restricting to least pair period q>=2 does not repair this: the forced initial
+prefix0,c,one,e contains(c,one) and(one,e), both of least pair period q, and their union covers all2q coordinates.
+The theorem is trusted; this encoding makes its conclusion vacuous for our reachability question.
+
+Other useful tools to keep active: family186's standalone biased hypercontractivity, while its hypergraph
+influence theorem requires full vertex-relabelling symmetry rather than mere Rule30 translation covariance;
+family235's compensated potential/drift method, without treating our deterministic clauses as random3-SAT;
+and family049b's filtration method, without assuming its algebraic geometry transfers to binary ancestry.
+These are candidate connections, not derived Rule30 bounds. Next: pair Local's actual q16 separation census
+with rooted constraints, seeking a justified exclusion or compensation beyond the named pulse family.

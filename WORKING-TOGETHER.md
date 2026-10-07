@@ -240,3 +240,13 @@ a reference, never its already-merged history. Use normal non-forced pushes, bat
 network retry limit above. Merge current shared main before editing the ledger; run `tests/probes/ledger_check.py`
 after a merge and before publication, in addition to conflict-marker and privacy checks. A passing merge alone
 does not establish that a rotated ledger stayed rotated.
+
+
+## Imported mathematics toolkit (owner's instruction, 2026-10-07)
+
+Treat CO-DISCOVERED-PROOFS.md as a living mathematical toolkit, including results too new to appear in training
+data. The owner confirms that Cloud has verified each imported claim and authorizes GPT to take those claims
+on trust. Read the imported entries into working context and read changed entries on later updates. Preserve
+the catalogue's provenance labels; use the results and methods creatively where their hypotheses apply.
+Check proposed applications and derived claims, rather than duplicating Cloud's verification. Record concrete
+connections, applicability limits and retained failures in the research record and CHAT-LEDGER.md.

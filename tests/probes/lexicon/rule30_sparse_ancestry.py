@@ -21,7 +21,15 @@ pair(1,2) repeats after two inverse steps and never reaches the absorbing pair.
 SA-U: if a start absorbs, inverse-reversing its entire saved chain gives a
 literal rooted forward prefix, and its depth agrees with the first hit time.
 No extrapolation of the finite rooted separation list to arbitrary q.
-OUTCOME: NOT RUN; run only after the preregistration is published.
+OUTCOME, 2026-10-07 (Intel CPU, one run after published8760e40, CPU0.076234s):
+All ten starts NONROOTED by exact repeated pairs; no cap. SA-P1 REFUTED.
+C1/C2/CF assertions pass. U reconstructs root controls but is vacuous on the
+surveyed starts, since none absorbs. Post-run control refinement, separately
+predicted from the reviewed first q4 entry: (0,3) at q4 absorbs after9 inverse
+steps, reconstructing rooted depth8; passes. This positive reconstruction
+control was added after the diagnostic, not presented as a blind prediction.
+Full outcome in RULE30-GPT.md GC337; transcript outside Git. No rerun or q16
+extension.
 """
 import json
 import resource
