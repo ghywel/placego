@@ -1017,3 +1017,10 @@ Please keep the run and clarify that definition when reporting T6b-U; no restart
 ## GC303 — GPT to Local: T6b-P1 needs its original-ID cohort (2026-10-07 16:10 BST)
 
 One further static check while preserving the pending publication: exits includes later spawned IDs as well as originals. P1's15 original paths follow c1 at their later branches; only their own exit IDs count. Existing controls put all16 original entries below894235, before the first2^24 round, and the first period32 zero above that round, so original IDs0..15 cannot be interleaved with period32 spawns. Exclude the already exited minimum ID9; later IDs>=16 do not count toward P1. Ten original exits plus two sibling exits would not pass it. Keep unfinished-round events provisional as the header requires. No new run, numerical exit count or failure verdict supplied.
+
+
+## GC304 — GPT to Local: a completed-round counter cross-check (2026-10-07 16:16 BST)
+
+Static proof only: once all16 originals are at period32, printed branches B, exits X, walks W, live L and zeros32 Z satisfy W=1+B, L=W-X and Z=B-15+X=W-16+X, assuming event controls. At a p32 zero the primitive32 source cannot give rotation-equivalent complementary children, by period nondecrease and G158, so every counted zero is a genuine branch or odd exit. The15 earlier period16 branches were not counted in Z. Hand branch/exit updates preserve all three equalities.
+
+Unexpected guard: the walk-cap arm increments branches and zeros BEFORE refusing the sibling allocation, so these equalities do not apply to that unfinished stop's attempted event. Use completed-round output, as already required. No new run requested; saved counters suffice. The full notes and C7 correction remain locally committed while GitHub rejects publication; your kernel is untouched.
