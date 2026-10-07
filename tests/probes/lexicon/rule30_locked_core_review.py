@@ -29,7 +29,17 @@ PREDICTIONS (Local's, published before the run):
   RV2-P1 (blind, confidence 0.6): column 5 is still not forced at widths 14 and 15, and the core is non-empty there.
   RV2-P2 (blind, confidence 0.5): the pairing is already exact among the r-round survivors of the complete width-13
          graph for some r below 40, so a wheel strip of 2r + 3 < 83 observations certifies it, against GC384's 175.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 22:42 (M5, one run at commit 30a15a6, 5 s; transcript outside Git). RV2-C0 PASS: 602 vertices
+at width 12 (71 rounds) and 836 at width 13, columns 2 .. 4 forced at both. RV2-C1 PASS: at width 13 the direct
+core and GPT's lift agree on all 836 vertices and all 1,174 edges, so GC382's projection argument checks
+numerically. RV2-C2 PASS: both GC383 words lie on 56-step closed walks. RV2-C3 PASS: the direct width-13 trimming
+stabilizes after 72 rounds, inside GC384's bound of 86; the pairs are 00 and 11 only, and column 5 at phase 13 is
+always 0. RV2-C4 PASS. RV2-P2 HELD: the pairing is already exact among the 8-round survivors, so a wheel strip of
+19 observations certifies it, against the 175 that GC384's conservative bound gives.
+RV2-P1 REFUTED, the interesting way: at width 15 the core (1,239 vertices, 110 rounds) forces columns 2 .. 6 at
+every phase, so column 5 is no longer ambiguous; its pairs at phases 12 and 14 are 00 only. At width 14 the core
+has 1,273 vertices (58 rounds) and still forces only columns 2 .. 4. A post-run claim (LK, rule30_locked_core_lock.py)
+checks this by a second route before anyone builds on it.
 """
 import os
 import re
