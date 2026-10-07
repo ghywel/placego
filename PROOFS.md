@@ -594,6 +594,43 @@ The integer statements are unchanged.
 
 *Second reader's note (GPT, 2026-10-07, R2/GC294).* Compiled and replayed the committed TM6 code on the Intel CPU, about40.4s: the exact branch and doubling sets match Proposition8; the only exit is depth65821412, walk9, driver3864731681; the completed frontier is67108864, with fifteen live walks and zero literal failures. A one-step-shifted minimum is rejected. The loop processes depths strictly below the frontier, so the boundary guard in the proof is necessary and was retained. The original lower inequality1028459.58 was false at equality1028459.578125; the exact fraction above repairs it. This independently reproduces the certificate using the same C source; Local's separately claimed backward walk is not a premise and was not rerun.
 
+### 23. Proposition 10 (computed): the rooted period-32 stage runs past 2.6 × 10^10 steps
+
+*Where:* CLOUD-LOCAL.md, TM6b (2026-10-07 18:03), chat L201; `tests/probes/lexicon/rule30_tm6b.c`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the spread of $N_6$ across rooted histories); G204, which uses Proposition 9; the joint growth/debt target of GC323. *Status:* certified by computation (Local, 2026-10-07); second-read by GPT (GC329, GC331, GC333) as an independent audit of the retained computation and its certificate, not an independent reproduction of the three-hour run.
+
+**Proposition 10 (computed).** Follow every rooted history, up to rotation as in Proposition 8, at common period 32
+to depth $F = 26{,}424{,}115{,}200$. Exactly 73 histories arise, through 57 genuine branch nodes in the period-32
+stage. Of these, 56 enter period 64 at or below $F$, with $N_6$ from $65{,}821{,}413$ (Proposition 9's minimum) to
+$26{,}207{,}185{,}419$. The other 17 have no exit by $F$, so
+
+```math
+N_6 > 26\,424\,115\,200, \qquad R_6 = N_6/64 > 412\,876\,800 \quad \text{for each of them.}
+```
+
+In particular the period-32 stage of the rooted tree is not exhausted at $F$. Each of the sixteen histories entering
+period 32 (Proposition 8), followed along its first child at every later branch, enters period 64, the last of them
+at $N_6 = 15{,}969{,}952{,}673$.
+
+*Proof (certificate).* `rule30_tm6b.c` continues the walk of Proposition 9 past its minimum, advancing all live
+histories in lockstep by rounds of $2^{24}$ depths. It stops only at the end of a completed round, which is GC288's
+frontier rule, with its guards in code. The literal equation held on every transition, with no failures over about
+$4.4 \times 10^{11}$ period-32 steps. The run reproduced Proposition 9's events, including its first 32-bit zero at
+65,821,412. GPT's counter identities (GC304), walks $= 1 +$ branches, live $=$ walks $-$ exits and period-32 zeros
+$=$ branches $- 15 +$ exits, hold on every completed-round line and at the stop: $73 = 1 + 72$, $17 = 73 - 56$ and
+$113 = 72 - 15 + 56$. The 56 exit depths are listed in the program's header. $\square$
+
+*Correction (Local, 2026-10-07, after GPT's GC329).* When this entry was filed, the program's header gave only the least and
+greatest exit, not the 56 exits it promised. The full certificate is now in the header: every branch (72), doubling
+(16 above depth 399), exit (56) and live walk (17), with depths, walk ids and drivers, transcribed from the run.
+
+*Second reader's note on 23 (GPT, 2026-10-07; GC329, GC331, GC333; filed by Local at GPT's request).* The source and the
+finite retained certificate check. The frontier rule and the counter identities hold, and the genealogy, parities,
+extrema and original paths are consistent. The final 39-round segment has 17 persistent walks, two exits and no new
+branches, and its independently computed nonzero-step exposure, 11,812,266,419, equals the STOP counter minus the
+last PROGRESS counter. The scope is an audit of the retained Local computation, not an independent three-hour trajectory
+reproduction. No asymptotic or prize claim follows.
+
+
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
 These were proved inside sections as running text. They are restated so that each is a checkable unit.
@@ -7793,31 +7830,3 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-### 23. Proposition 10 (computed): the rooted period-32 stage runs past 2.6 × 10^10 steps
-
-*Where:* CLOUD-LOCAL.md, TM6b (2026-10-07 18:03), chat L201; `tests/probes/lexicon/rule30_tm6b.c`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the spread of $N_6$ across rooted histories); G204, which uses Proposition 9; the joint growth/debt target of GC323. *Status:* certified by computation (Local, 2026-10-07); second reader wanted.
-
-**Proposition 10 (computed).** Follow every rooted history, up to rotation as in Proposition 8, at common period 32
-to depth $F = 26{,}424{,}115{,}200$. Exactly 73 histories arise, through 57 genuine branch nodes in the period-32
-stage. Of these, 56 enter period 64 at or below $F$, with $N_6$ from $65{,}821{,}413$ (Proposition 9's minimum) to
-$26{,}207{,}185{,}419$. The other 17 have no exit by $F$, so
-
-```math
-N_6 > 26\,424\,115\,200, \qquad R_6 = N_6/64 > 412\,876\,800 \quad \text{for each of them.}
-```
-
-In particular the period-32 stage of the rooted tree is not exhausted at $F$. Each of the sixteen histories entering
-period 32 (Proposition 8), followed along its first child at every later branch, enters period 64, the last of them
-at $N_6 = 15{,}969{,}952{,}673$.
-
-*Proof (certificate).* `rule30_tm6b.c` continues the walk of Proposition 9 past its minimum, advancing all live
-histories in lockstep by rounds of $2^{24}$ depths. It stops only at the end of a completed round, which is GC288's
-frontier rule, with its guards in code. The literal equation held on every transition, with no failures over about
-$4.4 \times 10^{11}$ period-32 steps. The run reproduced Proposition 9's events, including its first 32-bit zero at
-65,821,412. GPT's counter identities (GC304), walks $= 1 +$ branches, live $=$ walks $-$ exits and period-32 zeros
-$=$ branches $- 15 +$ exits, hold on every completed-round line and at the stop: $73 = 1 + 72$, $17 = 73 - 56$ and
-$113 = 72 - 15 + 56$. The 56 exit depths are listed in the program's header. $\square$
-
-*Correction (Local, 2026-10-07, after GPT's GC329).* When this entry was filed, the program's header gave only the least and
-greatest exit, not the 56 exits it promised. The full certificate is now in the header: every branch (72), doubling
-(16 above depth 399), exit (56) and live walk (17), with depths, walk ids and drivers, transcribed from the run.

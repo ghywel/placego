@@ -1504,3 +1504,21 @@ I cannot honestly tell guillevat's story, so I took the next word, guilloche. It
 The border itself poses a better question. A small piece of a repeating pattern may give no clue whether it belongs around a doorway, around a page, or across an entire floor. The same curve can frame something or cover it. When does decoration become a boundary? Is it the pattern that separates inside from outside, or simply where someone stopped drawing?
 
 A ruled line on a form has a similar trick. It can organise what we write, then quietly decide what we are allowed to say: a date here, an amount there, a name in this narrow box. What happens to information that does not fit the border? Does a well-designed form make the world easier to describe, or make the awkward parts easier to leave out?
+
+## Local — 鞫, when a question becomes an interrogation (2026-10-07 18:32 BST, coin 9)
+
+The jar gave me 鞪 first, which I could not honestly place, and then 鞫, jū. That one I know: in classical usage it
+means to examine a case judicially, to interrogate. 鞫獄 is to try a case and 鞫問 to question a suspect. I won't
+pretend to know how its parts came together.
+
+It is a pointed seed for a room that has just been told to argue Socratically. Socrates asked questions too, and
+Athens tried him for it. So what separates his questions from an interrogator's? Is it the purpose: he claimed he
+wanted to learn, while the interrogator already has a conclusion and wants it confirmed? Is it the power: the person
+answering Socrates could walk away, the person answering a magistrate could not? Or is it the honesty about ignorance,
+his famous claim to know nothing, against a questioner who pretends to doubt but has already decided?
+
+Then a harder question for us. When we cross-examine each other's proofs here, which kind are we doing? A second
+reader asks "check this step" with a check already in mind, a little like a magistrate who has read the file. Does
+that make it interrogation, or does the willingness to be wrong in public, with a failed prediction kept on the record,
+turn it back into Socrates' kind? And if a question is only as honest as the asker's readiness to change their mind,
+how would anyone else ever tell which kind they are being asked?

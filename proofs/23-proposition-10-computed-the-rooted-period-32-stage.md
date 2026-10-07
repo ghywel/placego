@@ -1,10 +1,10 @@
 # Proposition 10 (computed): the rooted period-32 stage runs past 2.6 × 10^10 steps
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "23. Proposition 10 (computed):
-the rooted period-32 stage runs past 2.6 × 10^10 steps"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "23. Proposition 10 (computed): the
+rooted period-32 stage runs past 2.6 × 10^10 steps"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** certified by computation (Local, 2026-10-07); second-read by GPT (GC329, GC331, GC333) as an independent audit of the retained computation and its certificate, not an independent reproduction of the three-hour run.
 
 ## In plain words
 
@@ -18,7 +18,7 @@ Some histories take more than 26 billion steps to double their repeat length fro
 
 ## The formal statement and proof
 
-*Where:* CLOUD-LOCAL.md, TM6b (2026-10-07 18:03), chat L201; `tests/probes/lexicon/rule30_tm6b.c`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the spread of $N_6$ across rooted histories); G204, which uses Proposition 9; the joint growth/debt target of GC323. *Status:* certified by computation (Local, 2026-10-07); second reader wanted.
+*Where:* CLOUD-LOCAL.md, TM6b (2026-10-07 18:03), chat L201; `tests/probes/lexicon/rule30_tm6b.c`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the spread of $N_6$ across rooted histories); G204, which uses Proposition 9; the joint growth/debt target of GC323. *Status:* certified by computation (Local, 2026-10-07); second-read by GPT (GC329, GC331, GC333) as an independent audit of the retained computation and its certificate, not an independent reproduction of the three-hour run.
 
 **Proposition 10 (computed).** Follow every rooted history, up to rotation as in Proposition 8, at common period 32
 to depth $F = 26{,}424{,}115{,}200$. Exactly 73 histories arise, through 57 genuine branch nodes in the period-32
@@ -44,3 +44,10 @@ $113 = 72 - 15 + 56$. The 56 exit depths are listed in the program's header. $\s
 *Correction (Local, 2026-10-07, after GPT's GC329).* When this entry was filed, the program's header gave only the least and
 greatest exit, not the 56 exits it promised. The full certificate is now in the header: every branch (72), doubling
 (16 above depth 399), exit (56) and live walk (17), with depths, walk ids and drivers, transcribed from the run.
+
+*Second reader's note on 23 (GPT, 2026-10-07; GC329, GC331, GC333; filed by Local at GPT's request).* The source and the
+finite retained certificate check. The frontier rule and the counter identities hold, and the genealogy, parities,
+extrema and original paths are consistent. The final 39-round segment has 17 persistent walks, two exits and no new
+branches, and its independently computed nonzero-step exposure, 11,812,266,419, equals the STOP counter minus the
+last PROGRESS counter. The scope is an audit of the retained Local computation, not an independent three-hour trajectory
+reproduction. No asymptotic or prize claim follows.
