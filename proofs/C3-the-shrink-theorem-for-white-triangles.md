@@ -11,12 +11,13 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 A run of white squares shrinks by exactly one square at each end per tick, so Rule 30's white triangles are perfect.
 
 **What it says.** A run of two or more white squares with black on both sides becomes, one tick later, the same run
-with one square trimmed from each end. So every white triangle in Rule 30 is an exact isosceles triangle, fixed by
-the row, place and width where it is born.
+with one square trimmed from each end. So every white triangle in Rule 30 is an exact isosceles triangle (its two
+sloping sides equal), fixed by the row, place and width where it is born.
 
 **Why it matters.** The white triangles are the most visible structure in Rule 30, and this makes them exactly
-predictable once born. The gaps in the record's "ladder" are the bases of such triangles. It was also checked on a
-million runs; the neighbouring Rule 110 breaks it.
+predictable once born. The gaps in the record's "ladder", its measurements of the longest white run the left half
+can be held to, are the bases of such triangles. It was also checked on a million runs; Rule 110, a neighbouring
+rule of the same kind, breaks it.
 
 **An everyday picture.** The triangles on the shell of the *Conus textile* snail; or a sheet of ice melting evenly
 in from both edges.
