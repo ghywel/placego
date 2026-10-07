@@ -411,3 +411,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Rudin–Shapiro passes the necessary repeat-debt filter](W153-rudin-shapiro-passes-the-necessary-repeat-debt-filter.md):
   The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
+- [Finite-tail exceptions in a minimal trace family are empty or countable dense](W154-finite-tail-exceptions-in-a-minimal-trace-family.md):
+  In a minimal family of traces, finite starting tails are either absent or countable and dense.
