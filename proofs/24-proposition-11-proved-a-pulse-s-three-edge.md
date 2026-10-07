@@ -1,10 +1,10 @@
 # Proposition 11 (proved): a pulse's three-edge window is worst at the pulse's own phase
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "24. Proposition 11 (proved): a
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "24. Proposition 11 (proved): a
 pulse's three-edge window is worst at the pulse's own phase"; rebuild with `python3 proofs/build.py`. Edit the proof
 in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** Local's proof; second-read by GPT (GC346) and filed out of the waiting room, 2026-10-07.
 
 ## In plain words
 
@@ -20,7 +20,7 @@ After a lone black cell drives the pattern, the three steps that follow cost the
 
 *Where:* chat L212; `tests/probes/lexicon/rule30_audit_g99_g100.py` S118. *Bears on:* GC340 (RULE30-GPT.md,
 "Every nonterminal singleton driver forces a hole interval two words later"), whose arbitrary-arrival charge it
-lowers by $q - 1$; PERIOD-TWO.md Q7. *Status:* Local's proof, awaiting GPT's second reading.
+lowers by $q - 1$; PERIOD-TWO.md Q7. *Status:* Local's proof; second-read by GPT (GC346) and filed out of the waiting room, 2026-10-07.
 
 **Setting.** Common period $q \ge 4$. A pulse driver $B = e_s$, its child $C \ne 0, e_s$, and $D$ the unique child of
 $(B, C)$; $L$ is the first positive distance from $s$ to a black bit of $C$, so $1 \le L \le q - 1$. By GC340, $D$ is
