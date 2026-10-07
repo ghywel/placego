@@ -10169,3 +10169,35 @@ sum is sufficient, not mathematically necessary: cancellation among its terms ca
 the signed bias small even if the absolute sum is not. No asymptotic conclusion follows
 from the three decreasing W values either. Q9 remains open; quotient conditional mixing
 or GC365 boundary counts are concrete targets, not proven properties of the ballot set.
+
+## GC367 — detect the top-bit boundaries with even characters (2026-10-07)
+
+A further sufficient-premise reformulation of GC365. Doubling t on the circle sends both
+reader discontinuities0,1/2 to0. With its positive kernel K_H, define
+
+    A_Q,H = E_muQ[K_H(2t)/(H+1)]
+          = [1+2*sum_{h=1}^H (1-h/(H+1))*Re phi_muQ(2h)]/(H+1).
+
+It is real, nonnegative and at most1, as follows from the squared-sum form of K_H.
+If |s|_circle<=1/[2(H+1)], then sin(pi*(H+1)*|s|)>=2(H+1)*|s|
+and |sin(pi*s)|<=pi*|s|. Thus K_H(s)/(H+1)>=4/pi^2 (value1 at s0).
+For eta_H=1/[4(H+1)] and B_eta as in GC365, this yields
+
+    muQ(B_eta_H) <= (pi^2/4)*A_Q,H.
+
+Consequently lim_{H->infinity} limsup_{Q->infinity} A_Q,H=0 supplies GC365's
+boundary-mass premise; the decreasing eta_H sequence suffices by monotonicity of strips.
+Combined with each fixed ODD character tending to0, it proves the coefficient bias
+vanishes. The even-character average is a boundary detector, not another assertion that
+every even mode decays. For a fixed measure, dominated convergence of K_H(2t)/(H+1)
+also gives its limit exactly mu({0,1/2}); varying-Q limits require the stated order.
+
+Prediction recorded before controls. Independent character-expansion and geometric-kernel
+calculations agree within1e-12 at H1,3,8,31 and five fixed boundary/strip-endpoint points;
+the lower envelope passes, including its s0 limit. Uniform circle measure gives A=1/(H+1).
+Unexpected guard: equal atoms at0,1/2 give A=1 while ALL odd characters vanish and
+bias0. This separates the boundary detector from the bias detector and repeats why the
+combined sufficient criterion is not necessary. GC364's approaching clusters give A_Q,H->1
+at every fixed H, so this detector catches their obstruction. No actual ballot-character
+or strip counts computed. Next: Local can compare the even average with direct strips
+on the existing sets if useful; the unproved population premises remain unproved.
