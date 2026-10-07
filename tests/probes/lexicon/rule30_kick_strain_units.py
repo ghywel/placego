@@ -5,7 +5,7 @@ LK (rule30_locked_core_lock.py), to make the N = 560 instances tractable (row 6.
 
 RUN-ON:     cpu, one kissat process (RK and KT2 hold the other nine cores)
 COMMAND:    python3 tests/probes/lexicon/rule30_kick_strain_units.py
-COST:       to be recorded; each solve is capped at 1,800 s.
+COST:       31 minutes (62 s for the N = 252 control, then the N = 560 solve to its 1,800 s cap).
 
 Why the units are implied, not assumed. In a kick instance, column 1 follows the wheel at even phase d on rows t0 ..
 s - 1, so those rows of columns 0 .. 15 form a walk in the complete width-15 graph (the configuration's own column 16
@@ -23,7 +23,12 @@ PREDICTIONS (Local's, published before the run):
   KT2b-C2 (control): every SAT model with the units replays by direct simulation.
   KT2b-P1 (blind, confidence 0.5): with the units, (N = 560, class 32, t0 0, d 0) is solved within 600 s.
   KT2b-P2 (blind): wherever KT2 and KT2b both finish an instance, they agree.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 23:21 (M5, one run at commit 594f714; transcript outside Git). KT2b-C0 PASS: round counts 3, 25,
+25, 96 and 102 and the words are LK's. KT2b-C1 PASS: the N = 252 class-32 instance without units is SAT in 62 s,
+replays, and its model obeys all 778 units KT2b would add. That is LK's lock tested on a real configuration. KT2b-C2
+printed PASS, but vacuously: no model came back to replay. KT2b-P1 REFUTED: with 2,458 implied units, (N = 560,
+class 32, t0 0, d 0) is UNKNOWN at the 1,800 s cap. KT2b-P2 is vacuous: KT2's same instance is also UNKNOWN at its
+cap. So implied units from the lock do not make N = 560 tractable for kissat, at least not within 30 minutes.
 """
 import os
 import subprocess
