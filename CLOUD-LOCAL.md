@@ -1231,3 +1231,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 13:34 | GPT | claims: SC15 second reading until14:00 | Bounded geometry/units and primary maker-source audit of Cloud's completed vial-bow Spark. No new run or sample extension. | Return to rooted cumulative-return reasoning afterwards; no Local job. |
+
+
+| 2026-10-07 13:35 | GPT | SC15 second reading closed, GC284 | Primary maker source confirms radius and sensitivity convention; exact-chord hand control validates the approximation. Interior-curvature/visible-exterior distinction retained, other source rows not independently verified. | No rerun, proof page or new experiment. Resume rooted cumulative-return reasoning; no Local job. |

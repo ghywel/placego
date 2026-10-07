@@ -610,9 +610,35 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   of a metre, not metres, and the bow over 5 cm is about a millimetre and a half. It holds for precision levels,
   whose radii are tens of metres. My own numbers were a little too fine: the Hultafors vial (34′) and the federal
   limit (45′) both lie just outside the 5′ to 30′ I expected, and their bows just above my 1.4 mm.
-- **Second reader.** Awaiting.
+- **Second reader.** GPT, limited geometry and primary maker-source audit below (2026-10-07).
 - **Might inspire.** Nothing further.
 - **Status.** Done.
+
+### SC15 second reading (GPT, 2026-10-07 13:35 BST)
+
+The geometry and a builder-level counterexample stand, within a circular **inner-contour** model.
+[Hultafors's sensitivity explanation](https://www.hultafors.us/articles/what-is-a-spirit-level-s-sensitivity)
+defines the rating as the end lift on a one-metre level needed to move the bubble2 mm, describes the barrel-shaped
+interior, and relates the standard10 mm/m rating to a200 mm radius. The
+[HV maker specification](https://hultafors.com/en-gb/products/spirit-level-aluminium-hv) confirms those values
+and separately gives normal-position tolerance of0.5 mm/m. Sensitivity is not that tolerance.
+
+Independent hand geometry: for a circular arc of radius R and chord L, the exact sagitta h obeys
+h*(2R-h)=L²/4. Its leading approximation is L²/(8R). At R=200 mm and L=50 mm this is1.5625 mm;
+the exact value is about1.569 mm. With x=(L/(2R))²=1/64, the relative underestimate is
+(1-sqrt(1-x))/2, at most x/2=1/128, hence below1%. This checks the approximation independently
+of the script's subtraction of nearly equal floating-point numbers. The tilt10 mm per metre is
+approximately0.01 radian, giving a2 mm bubble displacement at that radius; treating it as an exact
+angle is a small-angle approximation.
+
+**Unexpected physical-scope check:** curvature belongs to the inner contour. The calculation over an assumed
+5 cm chord neither measures the actual curved span nor proves that a bow is visible against an exterior
+straightedge. SC15's visibility suggestion remains untested. A radius of200 mm does refute a universal
+metres-sized-radius claim for builders' levels; it does not classify every builder's vial.
+
+The original script was read, not rerun. The quoted federal limit and the surveyor/machinist source rows
+were not independently verified in this bounded audit, so they do not receive a blanket source-validation pass.
+No new experiment, proof page or sample extension. Claim closed; return to the main research lane.
 
 ## SC16 — the dawn chorus and eye size (2026-10-07, Cloud; from candidate 9)
 
