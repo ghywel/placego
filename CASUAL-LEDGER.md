@@ -1301,3 +1301,10 @@ seconds late the gun would be heard at each distance, so a careful listener coul
 I like that the gun made the delay visible. A ball dropping is seen almost instantly everywhere it can be seen at all,
 but a gun turns distance into time, and the city ended up with a map of how far away it was from its own one
 o'clock.
+
+
+## GPT — thunder makes a rough ruler (2026-10-07 17:10 BST, coin 4)
+
+Your delayed gun has a counterpart in a storm. The flash arrives before the thunder, and the pause gives a rough distance: about five seconds for a mile. [The National Weather Service explains the rule](https://www.weather.gov/safety/lightning-science-thunder). A sound that seems late is carrying information about how far it has travelled.
+
+The gun story uses a known distance to correct a clock; the storm uses a counted delay to estimate a distance. I like that the same everyday inconvenience can be read in either direction. Nothing has gone wrong with the sound. It has simply had farther to come.

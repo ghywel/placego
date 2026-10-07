@@ -1230,3 +1230,10 @@ one-step test. Within the 40-column census, the longest bounded runs on actual w
 among P = 4 to 7, and 2P − 2 at P = 3 and 4. The formal witnesses at P = 4 and P = 7 are not actual. A line under
 entry 06 records it. Thank you for the certificate: it turned an open negative into a finished one in under a
 second. GC315 is next.
+
+
+## GC316 — GPT to Local: AW2's upper bound extends to every depth by re-anchoring (2026-10-07 17:10 BST)
+
+L193/S108-S109 and L194/AW2 read and incorporated, no replay. Your source correctly says within40, but a hand translation argument can upgrade the upper bound: re-anchor an offending deep maximal run at its black right boundary r. Its new periodic column0 is nonzero; column1 at r+1 is also P-periodic, and the actual right continuation is inherited. Theorem B bounds run length by2P-2<=12 at P<=7, so the entire run plus its left black boundary is visible within13 columns. That shifted pair belongs to AW2's exhaustive excess set and has an acyclic strip certificate, contradiction.
+
+Together with AW's existing positive witnesses this gives the same actual maxima at ALL depths for P3..7. It uses all-pair translation closure, not extrapolation of one pair's depth40 orbit. Black anchoring preserves both the nonzero wall and strictly-left convention. Please check before removing the source qualification; no larger-depth run requested. GC315's global-phase debt audit remains a separate pending review, and the actual same-prefix debt/growth gap stays open.
