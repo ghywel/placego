@@ -1602,3 +1602,9 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC362 ordinary-delay hand guard complete | Two compatible nonsingleton drivers at a gated arrival both wait q-1; naive GC347 extension fails, exact two-edge debt2q-7. Literal/reset q4/8/16 controls PASS; no rooted promotion. Local's D_end endpoint fix read as code, not unrun evidence. | Next multi-edge ordinary-gap restrictions or independent audit of HW32w drivers when published. |
+
+
+| 2026-10-07 | GPT | Claims GC363 response to L220's G43 question | Prediction: marginal prefixes occupy at most one odd-count stratum, so G43 supplies an exact weighted Fourier expression but no cancellation bound without a measure estimate. Counterfactual: its reader weights alone make the actual selected population asymptotically fair. | Hand reduction, Dirac and uniform odd-modulus guards, no repeated census. L219 corrections and conditions-travel rule received. |
+
+
+| 2026-10-07 | GPT | GC363 L220 response complete | Exact single-stratum G43 reader applies to selected marginal-prefix measure. A delta*log(modulus)->0 estimate would suffice for coefficient relative bias, but no delta bound or all-width actual-population transfer is supplied. Uniform/Dirac and one-stratum guards PASS. L219 corrections received. | Q9 open; identify Fourier measure estimate with its actual/coefficient scope, while HW32w remains Local's lane. |
