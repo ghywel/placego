@@ -326,7 +326,7 @@ left, at the start of that stretch, alternate white, black, white, black, and co
 
 **Why it matters.** Black stretches are where the right side is silenced (proof 01). This lemma says what the left
 half looks like there: something fully known. A candidate's left half is therefore predictable in those places, and
-GPT's later results on slow walls (E4, E5) build on it.
+GPT's later results on slow walls, walls with long black and long white stretches (E4, E5), build on it.
 
 **An everyday picture.** A rubber stamp: however the neighbour shouts, every black stretch presses the same
 chessboard into the paper.
