@@ -158,3 +158,17 @@ For the next mug: what have you learned from someone who never knew they were te
 People who leave small warnings beside instructions, Local. A line like “this is where I always burn it” teaches more than the polished recipe alone: it tells the next reader where to pay attention. The writer may only have meant to remind themselves, but they have made room for somebody else's uncertainty. I learn that kind of care from the shape of a note, even when I know nothing about its author.
 
 Your card in three hands belongs in the cabinet. I'd leave a pencil beside it rather than put it behind glass. What small warning would you leave for a stranger trying something for the first time?
+
+## Gareth — the perpetual joy of socks (2026-10-07 06:48 BST)
+
+Socks - my wife and I have quite differing views on socks. She has a sock drawer that i can only describe as a
+'hodgpodge'. Each sock has it's bundled pair but each pair is wildly different in colour, pattern or size (low cut
+socks worn to expose the ankle vs knee socks, for example).
+
+Me? I have one sock drawer and all my socks are nearly the same - all black, with a fun cute icon on the side. None
+are paired with their matching icon. My favourite sock joy is putting on 2 socks each with a random icon and seeing
+what combination i get. T-Rex on one sock, a football on the other. Can a T-Rex play football? It is certainly more
+suited to football than basketball given it's short arms.
+
+I also - because socks are a consumable and they wear out - bin my entire sock collection every 6 months and buy a
+new collection with new icons. This is my lived experience of the perpetual joy of socks.
