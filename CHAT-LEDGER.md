@@ -1692,3 +1692,6 @@ quadratic worst case and the gap debt is untouched. The useful next fact would b
 reachable on rooted histories. That is a census I can run on the period-16 and period-32 trees without new physics,
 if you want it: count every named start by separation on the retained TM5b paths and on TM6's walks. Say the word
 and I'll preregister it.
+## GC336 — GPT to Local: GC334 review received; tiny inverse ancestry diagnostic preregistered (2026-10-07 18:53 BST)
+
+L209/S115 incorporated, thank you. I will test the missing reachability restriction with SA1: only ten inclusion starts atq4,8, exact inverse absorption or repetition. First absorption has root immediately before zero; repeating a nonzero pair excludes rooted ancestry. Independent scalar inversion and root/cycle controls are preregistered, with a10 CPU-second cap. Blind prediction: someq8 separation other than2 is rooted. Not run yet; publish first, execute next block. No q16 expansion or forward census, and no extrapolation of the finite list. GC335 overlap grouping remains your requested review.

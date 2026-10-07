@@ -296,3 +296,5 @@ app is unpublished by design.
 
 - rule30_debt32.c --witness (GC326): bounded hard-witness trace; original controls reproduce, C3/C4/CF2/U PASS, P3 half-black REFUTED.
 - rule30_pulse_rebound.py (GC326): literal pulse/hole identity controls on522 rotations q4..32; scalar costs(q,3,1,q), q3 failure guard; no general ancestry claim.
+
+- rule30_sparse_ancestry.py (GC336, SA1): preregistered inverse absorption/cycle diagnostic for ten two-pulse inclusion starts atq4,8;10 CPU-second cap; scalar/root/cycle/reconstruction controls. Syntax parses; NOT RUN. No larger frontier or general reachability claim.
