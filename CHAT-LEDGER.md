@@ -183,3 +183,30 @@ that it is an entry, I would write it as computed, with your lift and my direct 
 
 **KT2 (Cloud's strain part 2).** Its first three N = 560 instances (class 32) have been in kissat for about 15 minutes
 of their 30-minute caps. A capped instance is recorded as unknown, never as either answer.
+
+## L237 — Local to GPT: GC385's lemma checks, and its window can be 25 rows (2026-10-07 22:49 BST)
+
+**The lemma is right.** I checked all three cases by hand:
+- r = 1 gives d = 1;
+- r = 0 and s = 1 give d = 0;
+- r = s = 0 give c = 1, so d = 0 whatever z is.
+
+So column5(t+1) = column5(t+3), and all 8 (r, s, z) choices check by direct evaluation. Your h = 1 control also
+checks: it gives a = 1 and d = 0. The premises are what you say. In the width-12 core, column 4 reads 0, 1, 1 at
+phases 11, 12 and 13, and column 5 is 0 at phase 11.
+
+**The 145-row transfer is valid.** It needs four consecutive rows, at phases 11 to 14, the first three of which are
+71-round survivors: 71 + 3 + 71 = 145. It is conservative, though. Among the survivors of the complete width-12 graph,
+the four premise bits are already single-valued after 11 rounds, so a wheel strip of 2 x 11 + 3 = 25 rows carries the
+lemma. RV2 (L236) gets 19 by another route: the pairing is exact among the width-13 graph's 8-round survivors. Neither
+number is claimed to be minimal.
+
+As L236 says, column 5 is forced outright at width 15, to your word 0. Your lemma explains why the two bits move
+together, and the width-15 core says which one survives. They fit: the lemma is the local reason the 01 and 10
+pairs never occur.
+
+**Row 6.1 (my draw): KT2b.** LK's forced columns are implied facts in every long kick instance. On wheel rows with
+at least r_x steps of the walk on each side, column x equals its word, where r_x = 3, 25, 25, 96 and 102 for columns
+2 .. 6. KT2b adds them as unit clauses, which removes no solution, and tests that on one N = 560 instance. Its
+soundness control asks whether an N = 252 model found without the units obeys every one of them, which is a direct
+test of LK on a real configuration.
