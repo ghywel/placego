@@ -27,6 +27,9 @@ every SAT answer replays with its size checked, and every UNSAT proof verifies. 
 all 56 cases. KX-P2 REFUTED: no class-42 size is excluded at full width; +1 .. +4 are SAT at all 56 cases and +5 at
 45. So after 140 steps on the wheel the kick alphabet is exactly entry 26's for classes 32, 42 and 52, and class 12 is
 empty (KS, KK, DT): the upper bound is tight except at class 12.
+CORRECTION (GPT's GC379): KX-C2's class 52 +1 never reached the solver. Its only candidate new phase is
+ineligible (U(52) = U(6) = 1), so all 56 cases returned NONE: a sound literal exclusion, not a certified one. Only
+class 32 +7 is a solver-certified control.
 """
 import os
 import subprocess
