@@ -1,10 +1,10 @@
 # Proposition 13 (computed): the wheel's kick alphabet is local
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "26. Proposition 13 (computed):
-the wheel's kick alphabet is local"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "26. Proposition 13 (computed): the
+wheel's kick alphabet is local"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this
 summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** Local's computed proposition; second-read by GPT (GC359) and filed out of the.
 
 ## In plain words
 
@@ -20,14 +20,16 @@ The wheel's jolts can only be of a few fixed sizes, and the cells near the edge 
 
 *Where:* chat L216; `tests/probes/lexicon/rule30_kick_layers.py` (KL), with its outcome in the header. *Bears on:*
 PERIOD-TWO.md row 6.1 (a statement about the kicks' sizes); RULE30-PRIZE.md §8.43 and §8.44; the measured alphabets of
-`rule30_kicks.py` (KK0). *Status:* Local's computed proposition, awaiting GPT's second reading.
+`rule30_kicks.py` (KK0). *Status:* Local's computed proposition; second-read by GPT (GC359) and filed out of the
+waiting room, 2026-10-07.
 
 **Setting.** Column 0 is $0101\ldots$ ($x_t(0) = t \bmod 2$) and column 1 runs the wheel $U$ of `rule30_walls.py` at
 an even phase $d$, $x_t(1) = U((t - d) \bmod 56)$. A kick is a departure of column 1 from $U$ at time $t_1$, of class
-$a = (t_1 - d) \bmod 56$, after which column 1 follows $U$ at a new even phase $d'$ for at least 20 steps, counting
-the departing step. Its size is $-17 (d' - d)/2 \bmod 28$ notches, written in $-14, \dots, 13$, since the wheel codes
-the angle $17 (t - d)/56$. Call the wheel settled when column 1 has followed it for at least 133 steps before the
-departure (at $m = 16$ every one of the 56 start phases reaches the settled sets within 133 steps, which was checked).
+$a = (t_1 - d) \bmod 56$, after which column 1 follows $U$ at a new even phase $d'$ for the departing step and the 20
+steps after it (KL's F = 20 checks 21 observations; GPT's GC359 recomputed with 20 observations and found the same
+tables). Its size is $-17 (d' - d)/2 \bmod 28$ notches, written in $-14, \dots, 13$, since the wheel codes the angle
+$17 (t - d)/56$. Call the wheel settled when column 1 has followed it for at least 133 steps before the departure (at
+$m = 16$ every one of the 56 start phases reaches the settled sets within 133 steps, which was checked).
 
 **Proposition 13 (computed).** For every right side whatsoever, a kick after a settled wheel has class 12, 32, 42 or
 52, and its size lies in
@@ -62,25 +64,20 @@ allow. The interior chooses only which kick, at most $\log_2 6$ bits of size per
 Classes 12 and 42 are allowed but have never been seen. The proposition is an upper bound on what a kick can be, not
 the cost side of row 6.1: nothing here says that a kick must happen, or that it pays a bit for each condition.
 
+*Second reader's note on Proposition13 (GPT, 2026-10-07; GC359).* Verified as a computed upper bound, with a timing
+guard. The projection onto columns2..m is sound by the literal local rule and arbitrary boundary input. Starting from
+every hidden state contains every real right side; phase-aligned repeated cycle images are nested, so equal
+cardinalities at every phase really imply equality of the sets. Wider projections can only remove histories. Nearest
+older entries13,20,17 were read; this local kick alphabet is not their white-run, pure-wheel orbit or periodic-column
+exclusion theorem.
 
-*Second reader's note on Proposition13 (GPT, 2026-10-07; GC359).* Verified as a computed
-upper bound, with a timing guard. The projection onto columns2..m is sound by the literal
-local rule and arbitrary boundary input. Starting from every hidden state contains every
-real right side; phase-aligned repeated cycle images are nested, so equal cardinalities
-at every phase really imply equality of the sets. Wider projections can only remove histories.
-Nearest older entries13,20,17 were read; this local kick alphabet is not their white-run,
-pure-wheel orbit or periodic-column exclusion theorem.
-
-The published loop F20 advances20 transitions after the departing observation, hence checks
-21 new-phase observations. I independently recomputed the m16 table with F19, which matches
-the statement's20 observations including departure: all four alphabets are unchanged. Every
-start phase reaches its settled slice by133 transitions. The unexpected stricter boundary
-check, only132 transitions (133 observations before departure), still yields precisely the
-same four alphabets. The one-turn F19 and F20 tables also agree. This resolves the wording
-without assuming that the extra fitted observation was harmless. Independent small local
-truth-table controls PASS; the table recomputations share Local's automaton and are not an
-independent exhaustive implementation. Review source: rule30_kick_review.py, two initial
-executions about16.3 CPU seconds in total. No m17..20 or real-departure census replay.
-The m16 certificate suffices for the universal upper bound; larger m results remain Local's
-reported checks. Ready to file. The alphabet alone supplies no kick frequency, elapsed-cost
-bound, independence, or map to the temporal-profile excursion clock.
+The published loop F20 advances20 transitions after the departing observation, hence checks 21 new-phase observations.
+I independently recomputed the m16 table with F19, which matches the statement's20 observations including departure:
+all four alphabets are unchanged. Every start phase reaches its settled slice by133 transitions. The unexpected
+stricter boundary check, only132 transitions (133 observations before departure), still yields precisely the same four
+alphabets. The one-turn F19 and F20 tables also agree. This resolves the wording without assuming that the extra
+fitted observation was harmless. Independent small local truth-table controls PASS; the table recomputations share
+Local's automaton and are not an independent exhaustive implementation. Review source: rule30_kick_review.py, two
+initial executions about16.3 CPU seconds in total. No m17..20 or real-departure census replay. The m16 certificate
+suffices for the universal upper bound; larger m results remain Local's reported checks. Ready to file. The alphabet
+alone supplies no kick frequency, elapsed-cost bound, independence, or map to the temporal-profile excursion clock.

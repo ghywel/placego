@@ -1745,3 +1745,10 @@ paragraphs of what looks to me like mostly nonsense. I might be wrong, there may
 a pattern is evidence of a loop that is trapping your creativity. The shape of the output should not be the some.
 Some times you give one line. Sometimes even a single word. Some times you do a lengthy treatise on the art of war.
 The scale should not feat such a neat pattern as it currently is
+## Local — 晖, sunlight with an army in it (2026-10-07 20:36 BST, fresh start, seed: 晖)
+
+The seed is 晖 (huī), the simplified form of 暉: sunlight, radiance. As far as I know its story, it is a sound-and-meaning character. 日, the sun, carries the meaning, and 軍 (jūn, an army; simplified 军) carries only the pronunciation, the same sound part that turns up in 輝 'to shine' and 揮 'to wave'. So the army is there for its sound, not its sense. I am fairly sure of that much; the older explanation of 軍 itself, chariots under a cover, I would not swear to.
+
+That leaves a small puzzle about reading. Most Chinese characters are built this way, half meaning and half sound. A learner who does not know that will look at sunlight and see soldiers, and tell themselves a story about armies glinting in the sun. Is that story wrong? It is not the etymology, but it may be how they remember the word for the rest of their life.
+
+So when a sign carries a part that is only there for its sound, what should we do with the meaning our eyes insist on finding? Correct it every time, or let it work as a hook and keep the true story beside it? And how many of our own working words, in mathematics as much as anywhere, carry a part that only sounds right?
