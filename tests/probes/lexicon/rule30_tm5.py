@@ -68,10 +68,10 @@ stopped = None
 steps = 0
 literal_ok = True
 histories = []                    # each: dict(events=[(depth, kind[, driver])], end=(kind, depth, x, y))
-stack = [((), 0, 0, FULL)]        # (event prefix, depth, x, y): the state (x, y) at depth
+stack = [((), (), 0, 0, FULL)]    # (event prefix, branch choices, depth, x, y): the state (x, y) at depth
 t0 = time.time()
 while stack and stopped is None:
-    events, d, x, y = stack.pop()
+    events, path, d, x, y = stack.pop()
     events = list(events)
     while True:
         if steps >= CAP_STEPS or cpu() > CAP_CPU or rss() > CAP_RSS:
@@ -81,14 +81,14 @@ while stack and stopped is None:
             kids = rq3.children(x, 0, Q)
             if not kids:
                 ok_odd = par(x) == 1
-                histories.append(dict(events=events + [(d, 'exit' if ok_odd else 'BAD')], end=('exit', d, x, y)))
+                histories.append(dict(events=events + [(d, 'exit' if ok_odd else 'BAD')], end=('exit', d, x, y), path=path))
                 break
             c1, c2 = kids
             literal_ok &= literal(x, 0, c1) and literal(x, 0, c2) and c2 == c1 ^ FULL and par(x) == 0
             if is_rot(c1, c2):
                 events.append((d, 'doubling'))
                 if d + 1 > BOUND:
-                    histories.append(dict(events=events, end=('alive', d, x, y)))
+                    histories.append(dict(events=events, end=('alive', d, x, y), path=path))
                     break
                 x, y, d = 0, c1, d + 1
             else:
@@ -97,15 +97,15 @@ while stack and stopped is None:
                     stopped = 'history cap'
                     break
                 if d + 1 <= BOUND:
-                    stack.append((tuple(events), d + 1, 0, c2))
-                    x, y, d = 0, c1, d + 1
+                    stack.append((tuple(events), path + (1,), d + 1, 0, c2))
+                    x, y, d, path = 0, c1, d + 1, path + (0,)
                 else:
-                    histories.append(dict(events=events, end=('alive', d, x, y)))
+                    histories.append(dict(events=events, end=('alive', d, x, y), path=path))
                     break
             steps += 1
             continue
         if d >= BOUND:
-            histories.append(dict(events=events, end=('alive', d, x, y)))
+            histories.append(dict(events=events, end=('alive', d, x, y), path=path))
             break
         kids = rq3.children(x, y, Q)
         if len(kids) != 1:
@@ -127,7 +127,6 @@ for i, h in enumerate(sorted(histories, key=lambda h: (h['end'][1], h['end'][0])
     print('  history %d: %s; ends %s at %d' % (i + 1, ev, h['end'][0], h['end'][1]))
 if stopped is None:
     m = exits[0] + 1 if exits else None
-    print('tree minimum N_5 within the bound:', m, '(R_5 = %.2f)' % (m / 32) if m else '')
     zero_low = [e for e in histories[0]['events'] if e[0] <= 399]
     c1 = [e[0] for e in zero_low] == [2, 7, 28, 399] and all(e[1] == 'doubling' for e in zero_low)
     first = [e for h in histories for e in h['events'] if e[1] == 'branch']
@@ -135,12 +134,19 @@ if stopped is None:
     c1 &= all(is_rot(e[2], W('0000110001010011')) for e in first if e[0] == 53207)
     print('TM-C1', 'PASS' if c1 else 'FAIL')
     sig = [[(e[0], e[1]) for e in h['events'] if e[0] > 399] for h in histories]
-    c2 = sum(s == [(53207, 'branch'), (58286, 'branch'), (87866, 'exit')] for s in sig) == 1
+    c2 = sum(s_ == [(53207, 'branch'), (58286, 'branch'), (87866, 'exit')] for s_ in sig) == 1
     print('TM-C2', 'PASS' if c2 else 'FAIL')
-    print('TM-P1', 'HELD' if m is not None and m < 87867 else 'REFUTED')
-    print('TM-P2', 'HELD' if len(histories) <= 8 else 'REFUTED', '(%d histories)' % len(histories))
-    # TM-U: below each genuine branch, the two sibling subtrees differ at their next record: the next zero (depth, kind,
-    # driver up to rotation) or, with no zero before the bound, the end state up to a common rotation
+    bad = any(e[1] == 'BAD' for h in histories for e in h['events'])
+    certified = literal_ok and c1 and c2 and not bad
+    print('tree minimum N_5 within the bound:', m, '(R_5 = %.2f)' % (m / 32) if m else '',
+          'CERTIFIED (all controls pass)' if certified else 'PROVISIONAL (a control failed; certifies nothing)')
+    if certified:
+        print('TM-P1', 'HELD' if m is not None and m < 87867 else 'REFUTED')
+        print('TM-P2', 'HELD' if len(histories) <= 8 else 'REFUTED', '(%d histories)' % len(histories))
+
+    # TM-U: each genuine branch node is identified by its branch path (the choices before it); below it, the two
+    # sibling subtrees (choice 0 and 1) differ at their next record: the next zero (depth, kind, driver up to
+    # rotation) or, with no zero before the bound, the end state up to a common rotation
     def nxt(h, i):
         if i + 1 < len(h['events']):
             e = h['events'][i + 1]
@@ -149,9 +155,12 @@ if stopped is None:
         return (kind, dd, min((rq3.rot(xx, k, Q), rq3.rot(yy, k, Q)) for k in range(Q)))
     sides = {}
     for h in histories:
+        k = 0
         for i, e in enumerate(h['events']):
-            if e[1] == 'branch' and e[0] < BOUND:
-                pre = tuple((f[0], f[1]) for f in h['events'][:i + 1])
-                sides.setdefault(pre, set()).add(nxt(h, i))
-    tu = all(len(v) >= 2 for v in sides.values())
-    print('TM-U', 'PASS' if tu else 'FAIL', '(%d genuine branches)' % len(sides))
+            if e[1] == 'branch':
+                if e[0] < BOUND:
+                    sides.setdefault(h['path'][:k], {}).setdefault(h['path'][k], set()).add(nxt(h, i))
+                k += 1
+    tu = bool(sides) and all(set(v) == {0, 1} and all(len(r) == 1 for r in v.values()) and v[0] != v[1]
+                            for v in sides.values())
+    print('TM-U', 'PASS' if tu else 'FAIL', '(%d genuine branch nodes)' % len(sides))
