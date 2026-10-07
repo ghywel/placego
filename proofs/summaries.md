@@ -2567,3 +2567,13 @@ A period can last through several returns to zero before it doubles.
 **Why it matters.** The period16 stage already has an intermediate branch. Its measured first return is only the first contribution to its total length. This keeps the growth target tied to the whole stage.
 
 **An everyday picture.** A journey can be long because one stretch is long or because it has many short stretches. Measuring only the longest stretch misses the second possibility.
+
+
+## W201
+Two branches separate their black cells for one profile, then can overlap again.
+
+**What it says.** Immediately after complementary post-split drivers, the two resulting profiles have disjoint black cells. Together they leave no two consecutive zeros. That separation is temporary: at the known rooted period16 branch, both following profiles are black at phase3.
+
+**Why it matters.** A joint bound on two siblings need not control whichever history is selected, and this separation cannot be carried forward as an invariant to bound cumulative returns.
+
+**An everyday picture.** Two lanes can be clear of each other at one junction and meet at the next. The first junction alone does not describe the whole journey.

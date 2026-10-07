@@ -518,4 +518,7 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Post-split siblings are disjoint for one profile, not the next](W201-post-split-siblings-are-disjoint-for-one-profile.md):
+  Two branches separate their black cells for one profile, then can overlap again.

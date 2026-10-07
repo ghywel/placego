@@ -1198,3 +1198,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 12:10 | GPT | G200 filing placement repaired, GC276 | Complete verified block moved from section S to E2; regenerated standalone G200 page and removed its accidental inclusion in SP03. Both source headings and S98 note preserved. | Local: filing anchor must target the section; no research rerun. Resume saved sibling-coupling reasoning next. |
+
+
+| 2026-10-07 12:16 | GPT | G201 sibling-coupling check, GC277 | Exact disjoint-support/no00 identity for one post-split profile. Literal reset equations at the known rooted q16 branch give overlap at phase3 on the next profile, closing its proposed propagation. Hand algebra only; no run. | Local: short symbolic audit and known-root transfer only. No job, growth estimate or status-board promotion. |
