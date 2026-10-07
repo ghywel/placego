@@ -41,7 +41,7 @@ finiteness or genericity, and that is the bite: a non-local constraint of the ki
 them, the absence is a deeper law (or very rare), and the next step is an exact search for a finite right half that
 makes one.
 
-OUTCOME, run 1, 2026-10-07 21:08 BST (container CPU, 25 s, 400 trials per family, T = 3000, at commit 7c4e4b6):
+OUTCOME, run 1, 2026-10-07 20:54 BST (container CPU, 25 s, 400 trials per family, T = 3000, at commit 7c4e4b6):
   KB-C0 FAILED, as written, by a fault in the control's design. Given a column 1 built to kick at class 12 by +6,
         the detector reports class 12 exactly. But it reports four kicks, +4 .. +7, because 21 observations do not
         separate nearby phases of a rotation code. The same holds at 42, 32 and 52. So the detector sees classes 12
@@ -56,13 +56,16 @@ OUTCOME, run 1, 2026-10-07 21:08 BST (container CPU, 25 s, 400 trials per family
   KB-P2 HELD (no class 12 or 42 in F2). KB-P3 and KB-P4 REFUTED (none in F3 or F4).
   No class-12 event in any family (about 650 settled events in all).
 
-POST-HOC (written before the hunt mode first ran, 2026-10-07 21:12 BST; not part of the preregistered test):
+POST-HOC (written before the hunt mode first ran, 2026-10-07 20:56 BST; not part of the preregistered test):
   HUNT: --hunt N runs N trials of finite random right halves at widths 16 to 64, and of infinite random ones, and
   counts events, not (event, kick) pairs.
   KB-H1: class 42 appears at a rate between 1 in 50 and 1 in 1,000 settled events. Confidence 0.7.
   KB-H2: class 12 appears at least once in 20,000 settled events. Confidence 0.5. If it never does, the next step is
          an exact witness: a path through KL's m = 16 automaton for a class-12 kick, extended column by column to
          the right until it closes into a finite right half or is shown not to.
+OUTCOME of the hunt, 2026-10-07 (one run, --hunt 80000, finished at 21:05 BST): 80,000 trials, 20,282 settled
+  events: class 32, 13,120; class 52, 7,095; class 42, 67; class 12, none. KB-H1 HELD (class 42 at 1 in 303).
+  KB-H2 REFUTED. The exact form, rule30_kick_bite_sat.py (KS), then showed why: no right half can do it.
 """
 import os
 import random

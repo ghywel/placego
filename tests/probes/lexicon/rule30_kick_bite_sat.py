@@ -2,7 +2,7 @@
 """rule30_kick_bite_sat.py: KS, the exact form of KB. Can ANY right half make the wheel kick at class 12?
 
 RUN-ON:     cpu; needs python-sat (pip install python-sat), CaDiCaL through it
-COMMAND:    python3 tests/probes/lexicon/rule30_kick_bite_sat.py [N=168]
+COMMAND:    python3 tests/probes/lexicon/rule30_kick_bite_sat.py [N=168]  |  ... --reach  |  ... --strain
 COST:       minutes (to be recorded below).
 
 Why this is exact (Cloud, 2026-10-07, while KB's hunt ran). A kick is an event in a finite window: column 1 on the
@@ -35,6 +35,35 @@ PREDICTIONS (Cloud's, pushed before the first run):
          forbidden by structure more than 20 columns out, which KL's m = 20 automaton cannot see. That would be a
          genuine bite, and the next step is the least N at which it closes.
   KS-P2: if class 12 is satisfiable, its kicks lie in KL's +4 .. +8. Confidence 0.9.
+
+OUTCOME, run 1, 2026-10-07 (container CPU, 720 s, at commit e37fb05, finished 21:11 BST; N = 168):
+  KS-C1 PASS: classes 42 and 32 satisfiable at all 28 phases, for t0 = 0 and t0 = 1.
+  KS-C2 PASS: class 22 unsatisfiable at all 56 (t0, phase) pairs.
+  KS-C3 PASS: every satisfying row, replayed by direct simulation, reproduces its event.
+  KS-P1 REFUTED: class 12 is unsatisfiable at all 56 pairs. So, as far as CaDiCaL's verdicts are trusted (no proof
+        file was checked), no right half, finite or infinite, with any history, makes column 1 leave the wheel at
+        class 12 after 168 steps on it and then hold a new phase for 21 observations. Entry 26's m = 20 automaton
+        allows exactly that event, so whatever forbids it lies more than 20 columns from the wall.
+  KS-P2: not applicable.
+
+STRAIN (post-hoc, the owner's "crow bar" steer, written after --reach showed class 12 alive at width 32 and dead
+at 40, 48 and 64, and before --strain first ran, 2026-10-07 21:16 BST):
+  KT-P1: the exact width at which class 12 dies, N = 168, is one of 33 .. 39 (bisected); no confidence attached,
+         it is a measurement.
+  KT-P2: classes 32 and 52 stay satisfiable at N = 336 and 560. Confidence 0.8. If either dies, column 1 cannot
+         be kicked at that class after a long enough stretch on the wheel.
+  KT-P3: class 42 dies by N = 560. Confidence 0.4.
+  If all three die at some N, no departure is possible after N steps on the wheel, so column 1 would stay periodic
+  for ever, which Jen's theorem forbids beside a finite left half: column 1 could never run the wheel that long in
+  any finite configuration with a 0101 centre.
+
+REACH (post-hoc, written after run 1's t0 = 0 half showed class 12 unsatisfiable at all 28 phases, and before
+--reach first ran, 2026-10-07 21:10 BST):
+  KR-C1 (control, agreement with entry 26): at width m = 20, with column 21 free, class 12 is satisfiable for some
+        phase at N = 168, as KL's m = 20 automaton allows it.
+  KR-P1: class 12 dies at some width between 21 and 64. Confidence 0.6; otherwise it needs more than 64 columns.
+  KR-P2: in the full cone, class 12 is still satisfiable at N = 56 (KL's one-turn set allows it) and dies by
+        N = 140. Confidence 0.5.
 """
 import os
 import sys
@@ -48,7 +77,7 @@ from pysat.solvers import Solver                             # noqa: E402
 
 U = [int(c) for c in wl.U]
 P, F = 56, 20
-N = int(sys.argv[1]) if len(sys.argv) > 1 else 168
+N = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith('--') else 168
 
 
 def kick_of(dn):
@@ -57,14 +86,19 @@ def kick_of(dn):
 
 
 class Cone:
-    def __init__(self, t0, E):
+    def __init__(self, t0, E, m=None):
+        """Column 1's light cone over [t0, E]. With m, only columns 1 .. m follow the rule and column m + 1 is a
+        free input at every step, as in KL's m-layer automaton."""
         self.t0, self.E, self.nv, self.var = t0, E, 0, {}
         self.s = Solver(name='cadical153')
+        cap = lambda t: 1 + E - t if m is None else min(1 + E - t, m + 1)
         for t in range(t0, E + 1):
-            for i in range(1, 2 + E - t):
+            for i in range(1, cap(t) + 1):
                 self.var[(t, i)] = self.new()
         for t in range(t0, E):
-            for i in range(1, 1 + E - t):
+            for i in range(1, min(E - t, cap(t + 1)) + 1):
+                if m is not None and i > m:
+                    continue
                 self.rule(t, i)
 
     def new(self):
@@ -165,5 +199,65 @@ def main():
     print('total %.0f s' % (time.time() - start))
 
 
+def reach():
+    """Post-hoc (predictions in the header's REACH block, pushed first): the least width m, and the least time N on
+    the wheel, at which class 12 dies."""
+    global N
+    start = time.time()
+    N = 168
+    for m in (20, 24, 28, 32, 40, 48, 64, 96):
+        alive = []
+        for t0 in (0, 1):
+            cone = Cone(t0, t0 + N + P + F + 1, m)
+            for d in range(0, P, 2):
+                act, s_, sels = instance(cone, 12, d)
+                if cone.s.solve(assumptions=[act]):
+                    alive.append((t0, d))
+        print('width m = %3d, N = 168: class 12 satisfiable at %2d of 56 (t0, phase) pairs  (%.0f s)'
+              % (m, len(alive), time.time() - start), flush=True)
+    for N in (56, 84, 112, 140):
+        alive, dead22 = [], True
+        for t0 in (0, 1):
+            cone = Cone(t0, t0 + N + P + F + 1)
+            for d in range(0, P, 2):
+                act, s_, sels = instance(cone, 12, d)
+                if cone.s.solve(assumptions=[act]):
+                    alive.append((t0, d))
+        print('full cone, N = %3d: class 12 satisfiable at %2d of 56 pairs  (%.0f s)'
+              % (N, len(alive), time.time() - start), flush=True)
+
+
+def strain():
+    """Post-hoc (predictions in the header's STRAIN block, pushed first): do the other classes die as the wheel
+    runs longer, and at exactly which width does class 12 die at N = 168."""
+    global N
+    start = time.time()
+    N = 168
+    for m in range(33, 40):
+        alive = 0
+        for t0 in (0, 1):
+            cone = Cone(t0, t0 + N + P + F + 1, m)
+            for d in range(0, P, 2):
+                act, s_, sels = instance(cone, 12, d)
+                alive += bool(cone.s.solve(assumptions=[act]))
+        print('width m = %2d, N = 168: class 12 satisfiable at %2d of 56 pairs  (%.0f s)'
+              % (m, alive, time.time() - start), flush=True)
+    for N in (336, 560):
+        for cls in (32, 52, 42):
+            alive = 0
+            for t0 in (0, 1):
+                cone = Cone(t0, t0 + N + P + F + 1)
+                for d in range(0, P, 2):
+                    act, s_, sels = instance(cone, cls, d)
+                    alive += bool(cone.s.solve(assumptions=[act]))
+            print('full cone, N = %3d: class %2d satisfiable at %2d of 56 pairs  (%.0f s)'
+                  % (N, cls, alive, time.time() - start), flush=True)
+
+
 if __name__ == '__main__':
-    main()
+    if '--reach' in sys.argv:
+        reach()
+    elif '--strain' in sys.argv:
+        strain()
+    else:
+        main()
