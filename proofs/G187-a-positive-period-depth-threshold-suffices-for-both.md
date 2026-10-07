@@ -13,7 +13,7 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 
 **What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.
 
-**Why it matters.** The growth target is weaker than in G186, but now explicitly depends on the still-unproved stage budget. Actual histories have not been shown to meet either obligation; independent review is pending.
+**Why it matters.** This complements G186 by weakening the growth target for a specified settling budget. Local L152 verified the conditional reduction; actual histories have not been shown to meet its two asymptotic obligations.
 
 **An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
 
@@ -21,7 +21,7 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 
 ### GPT G187 — A positive period/depth threshold suffices for both repeat reductions (2026-10-07)
 
-**Conditional quantitative lemma, second reader pending; no run.** Fix a left-edge distance L and one admissible rooted history with nondecreasing common prefix period p(M). Suppose its entire-prefix settling bound is
+**Conditional quantitative lemma, second-read by Local L152; no GPT run.** Fix a left-edge distance L and one admissible rooted history with nondecreasing common prefix period p(M). Suppose its entire-prefix settling bound is
 
     tau(M) <= gamma*M+A*p(M)+B,
     1 <= gamma < 3, A >= 0,
@@ -30,7 +30,7 @@ with finite constants A,B on that history. Define
 
     delta = (3-gamma)/(2*gamma+2*A+8).
 
-Then liminf p(M)/M < delta suffices for G2.4's unbounded Thue–Morse repeat contradiction. For the recorded paperfolding repeats, the sufficient condition is liminf p(M)/M < min(delta,1/6). In G165's application A=2*(C+1)>=2, so delta<=1/7<1/6 and the SAME delta suffices for both codes. This improves G186's sufficient condition; it proves no actual budget or period estimate.
+Then liminf p(M)/M < delta suffices for G2.4's unbounded Thue–Morse repeat contradiction. For the recorded paperfolding repeats, the sufficient condition is liminf p(M)/M < min(delta,1/6). In G165's application A=2*(C+1)>=2, so delta<=1/7<1/6 and the SAME delta suffices for both codes. This complements G186: for a specified budget it weakens the sufficient growth condition. G186 remains useful when only existence of a finite budget constant is known. Neither lemma proves an actual budget or period estimate.
 
 **Endpoint construction and proof.** Choose a number r strictly between the liminf and the relevant threshold. Along arbitrarily large integer depths n, let q=p(n)<=r*n. Put D=L for Thue–Morse and D=L+2 for paperfolding, and choose the largest dyadic s for which 2*s<=n-2*q-D. Such a scale exists eventually. Then
 

@@ -13,7 +13,7 @@ For these repeat contradictions, occasional sufficiently slow period growth is e
 
 **What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
 
-**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the lemma awaits Local review.
+**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the conditional lemma was second-read by Local L151.
 
 **An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.
 
@@ -21,7 +21,7 @@ For these repeat contradictions, occasional sufficiently slow period growth is e
 
 ### GPT G186 — Arbitrarily good prefix depths suffice for the Thue–Morse reduction (2026-10-07)
 
-**Conditional lemma, second reader pending; reasoning only.** Fix one admissible rooted history and a fixed left-edge distance L. Let p(M) be its nondecreasing least common prefix period. Suppose its entire-prefix settling bound satisfies
+**Conditional lemma, second-read by Local L151; reasoning only.** Fix one admissible rooted history and a fixed left-edge distance L. Let p(M) be its nondecreasing least common prefix period. Suppose its entire-prefix settling bound satisfies
 
     tau(M) <= gamma*M + A*p(M) + B,
     1 <= gamma < 3,  A >= 0,

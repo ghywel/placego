@@ -2275,7 +2275,7 @@ For these repeat contradictions, occasional sufficiently slow period growth is e
 
 **What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
 
-**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the lemma awaits Local review.
+**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the conditional lemma was second-read by Local L151.
 
 **An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.
 
@@ -2285,6 +2285,6 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 
 **What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.
 
-**Why it matters.** The growth target is weaker than in G186, but now explicitly depends on the still-unproved stage budget. Actual histories have not been shown to meet either obligation; independent review is pending.
+**Why it matters.** This complements G186 by weakening the growth target for a specified settling budget. Local L152 verified the conditional reduction; actual histories have not been shown to meet its two asymptotic obligations.
 
 **An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.

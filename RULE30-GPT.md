@@ -7727,7 +7727,7 @@ Thus the whole-tree minimum does not tend to infinity. The identified unexpected
 
 ## G186 — Arbitrarily good prefix depths suffice for the Thue–Morse reduction (2026-10-07)
 
-**Conditional lemma, second reader pending; reasoning only.** Fix one admissible rooted history and a fixed left-edge distance L. Let p(M) be its nondecreasing least common prefix period. Suppose its entire-prefix settling bound satisfies
+**Conditional lemma, second-read by Local L151; reasoning only.** Fix one admissible rooted history and a fixed left-edge distance L. Let p(M) be its nondecreasing least common prefix period. Suppose its entire-prefix settling bound satisfies
 
     tau(M) <= gamma*M + A*p(M) + B,
     1 <= gamma < 3,  A >= 0,
@@ -7768,7 +7768,7 @@ Under G186's SAME history-specific settling bound and liminf p(M)/M=0, choose th
 
 ## G187 — A positive period/depth threshold suffices for both repeat reductions (2026-10-07)
 
-**Conditional quantitative lemma, second reader pending; no run.** Fix a left-edge distance L and one admissible rooted history with nondecreasing common prefix period p(M). Suppose its entire-prefix settling bound is
+**Conditional quantitative lemma, second-read by Local L152; no GPT run.** Fix a left-edge distance L and one admissible rooted history with nondecreasing common prefix period p(M). Suppose its entire-prefix settling bound is
 
     tau(M) <= gamma*M+A*p(M)+B,
     1 <= gamma < 3, A >= 0,
@@ -7777,7 +7777,7 @@ with finite constants A,B on that history. Define
 
     delta = (3-gamma)/(2*gamma+2*A+8).
 
-Then liminf p(M)/M < delta suffices for G2.4's unbounded Thue–Morse repeat contradiction. For the recorded paperfolding repeats, the sufficient condition is liminf p(M)/M < min(delta,1/6). In G165's application A=2*(C+1)>=2, so delta<=1/7<1/6 and the SAME delta suffices for both codes. This improves G186's sufficient condition; it proves no actual budget or period estimate.
+Then liminf p(M)/M < delta suffices for G2.4's unbounded Thue–Morse repeat contradiction. For the recorded paperfolding repeats, the sufficient condition is liminf p(M)/M < min(delta,1/6). In G165's application A=2*(C+1)>=2, so delta<=1/7<1/6 and the SAME delta suffices for both codes. This complements G186: for a specified budget it weakens the sufficient growth condition. G186 remains useful when only existence of a finite budget constant is known. Neither lemma proves an actual budget or period estimate.
 
 **Endpoint construction and proof.** Choose a number r strictly between the liminf and the relevant threshold. Along arbitrarily large integer depths n, let q=p(n)<=r*n. Put D=L for Thue–Morse and D=L+2 for paperfolding, and choose the largest dyadic s for which 2*s<=n-2*q-D. Such a scale exists eventually. Then
 
@@ -7831,3 +7831,8 @@ eventually. The strict coefficient gap is (6-2*gamma)*K-(2*gamma+A+1)>0. Also M<
 **Independent coefficient control and identified unexpected comparison.** For the hypothetical gamma=5/2,C=1 budget, A=4 and the coefficient fraction is10. Choose K=16; the sufficient entry threshold is now17 rather than G187's general21. At q=16,L=1,B=0 the paperfolding endpoint is again M=547,s=256, and the timing margin is6*q-7.5=88.5, agreeing with the earlier literal control. A synthetic constant schedule N_j=18*2^j has R_j=18 and stage-end period/depth ratios tending to1/36. It passes this new threshold but fails the earlier sufficient condition liminf period/depth<1/42. Thus the improvement is strict as a reduction; no Rule30 compatibility or actual C=1 budget is asserted. Choosing K=8 instead would give a negative coefficient gap8-10=-2, so the next smaller dyadic scale is not licensed by this bound. If the fraction itself is a power of two, equality still leaves no positive margin for offsets: choose the next power. No optimality claim is made for other endpoint strategies or stronger timing information.
 
 **Handoff.** This is a refinement of the same pending G187 proof, not a new growth estimate or a reopened gap-1 family. Local: include the dyadic scale choice and the earlier-stage prefix-period guard in the second read; no job requested. The remaining actual obligation is a recurrent entry-ratio margin linked to the history's uniform stage-debt constant. Finite large entries alone still supply no such recurrence.
+
+
+**GPT incorporation of L151-L152 (2026-10-07; no new run).** Local independently verifies G186, its paperfolding offsets, G187 and its dyadic-scale refinement (S76-S79); the verified filings and second-reader notes are preserved in PROOFS.md. Adopt L152's wording: G187 complements G186, because its finite threshold is linked to a quantified budget constant. G186's unbounded normalized-stage-length route remains useful when only existence of some finite budget constant is proved.
+
+The recorded R_4=25 and conservative R_5>=6651/4 clear the hypothetical C=1 thresholds on the growth side. The rooted finite q<=8 certificate is consistent with C=1 at slope5/2, whereas a corresponding period16 stage budget is not measured here. Thus these are two favorable finite growth ratios, not two verified joint asymptotic applications. The identified scope check is that replacing an unknown C by the small-cap value would silently strengthen the evidence. No actual large-period timing or growth estimate is added. Next reasoning keeps Local L151's unbounded normalized-stage-length target, or a quantitatively linked recurrent threshold; a numerical target17 alone is not justified without C control. No new gap-1 family or larger-period computation is requested.
