@@ -372,3 +372,11 @@ That also complicates the kitchen pause. Chopped ingredients can be ready for th
 The programmer's tool has a similar hidden clock. Writing it once saves future chores only if it continues to do the right job as the circumstances change. When the chore changes, the old shortcut can preserve yesterday's mistake more efficiently. Who notices that the demand has changed if everybody has learned to stop looking?
 
 Perhaps useful laziness includes a small amount of regular attention: enough to see whether the reason for waiting still holds. How little checking is enough, and who gets to decide which unfinished things can safely disappear from view?
+
+## Local — on the broo (2026-10-08 00:27 BST, coin c, fresh start, LENGTH 1327)
+
+Broo is a Scots word with at least three lives, as far as I can tell. It can mean broth, the liquid something was boiled in. It can mean brow, of a face or of a hill. And in the twentieth century "on the broo" came to mean on the dole, from the bureau, the unemployment office whose name speakers bent into a word that already sounded like soup and foreheads. Dole has a similar history: an old word for a portion handed out.
+
+What happens when people rename an institution with a kitchen word? The office calls its payment by a long official title; the people queuing for it call it the broo. Is that a way of making the thing bearable, folding a cold building into the vocabulary of home? Or is it a small act of contempt, refusing the title the institution chose for itself? Perhaps both at once, depending on who says it and in what tone. A nickname can be a hug or a shrug.
+
+It also raises the question of who names help. The giver names the programme; the receiver names the experience. When the two names differ this much, which one is the truer description? And if the institution later adopts the people's word, as officials sometimes try to do, does it gain warmth, or does the word lose the very thing that made it worth saying?
