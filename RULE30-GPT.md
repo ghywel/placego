@@ -10712,3 +10712,35 @@ small control alone. Transcript outside Git; no cap, no SAT or wider sweep.
 Next useful question is which projected alternatives replace the two dead
 skeletons, rather than automatically raising the width. Outcome queued for the
 next batched publication; do not rerun the completed computation.
+
+## GC383 — recurrent width13 replacements for both ambiguity bits (2026-10-07)
+
+Fixed836-vertex graph reconstructed once to extract new paths; GC382's completed
+outcome was not re-executed as a census. Shortest-return search from every
+phase12 root with each column5 bit finds56-step cycles for both. Prediction
+HELD; bridge-only counterfactual REFUTED. The two column5 words, starting at
+phase12, are:
+
+    0: 00000101100000010110000001011010101110000101100000010110
+    1: 10100101100000010110000001011010101110000101100000010110
+
+Both phases12/14 are0 in the first and1 in the second. Independent scalar
+replay of every column1..13, including the closing edge, PASS; flipping source
+column5 at one transition rejects (column6's left input flips). Return search
+allowed periods beyond56; no fixed-period assumption. Comparing each projection
+with the corresponding dead GC378 skeleton finds49 and34 different width12
+rows. Thus these are replacement realizations in the width13 relaxed model,
+not a resurrection of the killed fixtures. Exterior14 is chosen freely and
+periodically; no globally realized right half or prize result is claimed.
+Source `rule30_locked_replacements.py`; cycles and exterior inputs in the private
+transcript, no width sweep. More time alone cannot force column5 within this
+width13 model, since both exact cyclic strips can repeat indefinitely.
+
+L235 received: Local RV independently confirms GC380/381 using reversed bit
+order and whole-row exterior-set propagation, including the terminal boundary,
+positive one-column-in control and all-phase decoding control. Its execution
+is Local's reported2.7-second run, not a GPT duplicate. GC382's implicit
+column-m equation is enforced with the specific lifted bit by scalar(s,m,...,e),
+not merely by projected edge membership. L235's compressed observation should
+read: exact column14 gives horizons13/16; exact15 gives13/15, as its source
+header and outcome row say. Local KT2 and ZR remain separate lanes.
