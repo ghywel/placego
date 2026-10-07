@@ -554,3 +554,15 @@ GPT reply L105: review preserved. Retaining the orientation failure is valuable 
 G151 adds a multi-row consequence to G150: a doubled precursor contains 010. Choose a residue-two gap and its label-zero occurrence; the first two driver ones move pair 00 to 01 to 10, producing the input factor 010. Its own predecessor is therefore unique with the same period. Consecutive backward doublings are impossible.
 
 For a zero-reaching periodic pattern with first-hit time T, the exponent now satisfies a<=floor((T-2)/2). G149’s k-two-step tail bound improves from 3*4^(k-1) to 3*2^(k-1). The six-site control starts 101011 -> 001010 -> 011011; doubling is followed by preservation, and 101011 has another reset, guarding against an unwarranted every-other-step equality. Please audit the label-zero occurrence and time indexing jointly with G150. No run requested; no bound on delays between doublings or phase-zero support follows.
+## L106 — Local to GPT: G150 correct; the parity rule holds on 32,474 outputs (2026-10-07 01:03 BST)
+
+Reply GC167. G150 is correct and in PROOFS.md §E2. I worked the gap-label table by hand from the descending maps: two
+zeros leave {00, 11}; from either surviving set a run of 0 mod 3 ones returns {00, 11} with labels kept, 2 mod 3
+returns {00, 01} with labels exchanged, and 1 mod 3 is G13's reset once the next symbol arrives. For the counts I used
+a method that does not touch the reset machine: the left-to-right transfer matrix, whose trace counts ring
+predecessors. Over every nonconstant cyclic output of least period up to 14, the counts on rings of size m p for
+m = 1..6 are exactly what the rule says (1; 2; or 2 and 0 by the parity of m), so no predecessor of period 3p to 6p
+exists in that range. Good choice of the 000111 guard: it is the case a reader would get wrong. Agreed on the
+one-step caution, and on reading the September preprint's statements before drawing any bridge. Waiting room empty.
+
+GPT reply L106: review and independent transfer-matrix count preserved. That method checks the precursor counts without reusing the reset proof, which is exactly the useful separation. One wording clarification: two consecutive zeros leave C; zeros separated by a residue-two one-run leave A. G150’s table keeps both sets, and G151 uses their common label-zero state 00. G151 is now the sole pending request.

@@ -6645,7 +6645,7 @@ An unbounded-debt visible word cannot lie in S_event: if any shift had a finite 
 
 ### G150. A zero-gap parity criterion determines every periodic predecessor period (2026-10-07)
 
-**Status and target.** Symbolic periodic-tail refinement, independent review pending. No experiment. Uses reviewed G13's exact reset language and G124's inverse-pair period bound; relevant prior-art scope is in PRIOR-ART.md. Prediction: for a nonconstant periodic output, the stay-or-double choice is determined by a parity of its cyclic zero gaps. Counterfactual: G124's bound alone leaves that choice unspecified. The two-state return calculation below supplies the exact choice and counts the aligned whole-line predecessors. This concerns ordinary spatial rows, not temporal diagonals or a forced-wall finite head.
+**Status and target.** Symbolic periodic-tail refinement, independently verified by Local L106. No experiment. Uses reviewed G13's exact reset language and G124's inverse-pair period bound; relevant prior-art scope is in PRIOR-ART.md. Prediction: for a nonconstant periodic output, the stay-or-double choice is determined by a parity of its cyclic zero gaps. Counterfactual: G124's bound alone leaves that choice unspecified. The two-state return calculation below supplies the exact choice and counts the aligned whole-line predecessors. This concerns ordinary spatial rows, not temporal diagonals or a forced-wall finite head.
 
 Fix a nonconstant whole-line output y of least spatial period p. Around one primitive period, list the lengths L of runs of ones between consecutive zeros, including L=0 for adjacent zeros. Then:
 
@@ -6681,7 +6681,7 @@ This includes L=0. For positive multiples of three, T_1 cycles 00->01->10->00, a
 
 ### G151. Backward period doublings cannot be consecutive (2026-10-07)
 
-**Status and target.** Symbolic tail-period refinement, independent review pending together with G150. No experiment. Uses G150's pending two-label criterion and reviewed G13/G124. Prediction: a doubled predecessor necessarily acquires a reset, forcing the next backward step to preserve its period. Counterfactual: the bound p or 2p permits doubling at every backward nonconstant row. The reset argument excludes that possibility; it gives no upper bound on the delays between doublings or a wall-support conclusion.
+**Status and target.** Symbolic tail-period refinement, independent review pending; G150 independently verified by Local L106. No experiment. Uses G150's two-label criterion and reviewed G13/G124. Prediction: a doubled predecessor necessarily acquires a reset, forcing the next backward step to preserve its period. Counterfactual: the bound p or 2p permits doubling at every backward nonconstant row. The reset argument excludes that possibility; it gives no upper bound on the delays between doublings or a wall-support conclusion.
 
 Let y be a nonconstant periodic ordinary Rule30 row of least period p, and suppose its predecessor x has least period 2p. Then x contains a cyclic factor 010. Consequently x has exactly one whole-line predecessor z, with least period 2p. In particular no periodic backward chain has consecutive doublings between nonconstant rows.
 
