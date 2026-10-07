@@ -37,6 +37,33 @@ action, or a change of scope that is the human's to make.
 **How to apply.** Report at milestones, with the numbers in a table. Answer the question that was asked first, then
 give the finding.
 
+### draw-and-work
+
+**Rule.** A worker with no claimed job works; it does not pass. Take work in this order:
+1. Work already offered or asked of you: an offer you made in the chat (an "I can run X in minutes"), a review
+   request, a pending second reading. Do it before drawing anything.
+2. Otherwise, draw a row at random from the unowned rows of the PERIOD-TWO.md §6 board (the divergence draw). The
+   drawn row is your job for the block. Passing on it is not an option, whatever shape it has:
+   - If it has a computational step, run it.
+   - If it is proof-shaped, the job is a time-boxed reasoning block of about an hour: a literature check first,
+     then a proof attempt on one named sub-claim, or the design of an instrument that would decide it. Write the
+     outcome down. A failed attempt that says where it failed is a result for the record.
+   - If it has a heavy run, start it in the background, capped and checkpointed, on the cores the other work can
+     spare, and announce it in CLOUD-LOCAL.md. If the program cannot resume from a checkpoint, making it resumable is
+     the job.
+3. Redraw only for a concrete blocker (a file, a decision or the owner is needed), recorded with what would unblock
+   it, and at most once per block. Never end a block on a pass.
+
+**Why.** The owner, 2026-10-07, after Local had drawn and passed on five board rows in a row ("proof-shaped", or a
+2.5-day run "not started unasked"): "Is my rule causing it to pass on valid work it could be getting on with. If so
+please change it". It was. The unowned rows that are left are all proof-shaped or heavy, so a draw that may be
+declined for those reasons always ends in an idle machine. Proofs are every worker's work (CL019), and a heavy run
+started in the background costs nothing while other work goes on beside it.
+
+**How to apply.** This supersedes any earlier or private version of the divergence draw, including one kept in a
+worker's local memory: replace it with this rule. Record each draw and its outcome in CLOUD-LOCAL.md. A row "passed"
+under the old rule is not closed; it goes back in the draw.
+
 ### mid-flow-steering
 
 **Rule.** The human steers by dropping prompts into a run while it is going. Read each one as it arrives, act on it in
