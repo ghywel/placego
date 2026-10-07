@@ -2792,3 +2792,12 @@ Two small initial patterns guarantee a black square four ticks later.
 **Why it matters.** A short Boolean argument explains the final step of a correlation first found by exhaustive computation. Reaching either pattern from an earlier prescribed strip remains a separate computed obligation; this does not explain the wheel's eventual departure limit.
 
 **An everyday picture.** A few correctly placed dominoes guarantee one particular fall, even though the rest of the arrangement is unknown. Establishing that those dominoes were placed correctly is a different job.
+
+## G210
+Five initial squares and eight boundary beats link two later observations.
+
+**What it says.** Begin with11100 in cells2 through6 and an alternating boundary for eight updates. If cell6 is black after eight updates, cell5 must be black four updates later. All other initial cells can be arbitrary. A hand argument carries the initial pattern to one of the two local patterns of G209.
+
+**Why it matters.** It replaces an exhaustive reachability check with an independently reviewed proof. Earlier shortcuts lost necessary correlations with neighbouring cells; this argument preserves them through one complete local update. It does not explain the wheel's long departure threshold.
+
+**An everyday picture.** Two warning lights cannot display one particular combination because a shared connecting mechanism links them. The explanation follows that mechanism rather than trying every setting of the surrounding switches.

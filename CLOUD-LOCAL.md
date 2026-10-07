@@ -277,3 +277,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC405 P1 HELD; hand bridge proposed | Complete one-update image18 states,576 rows,232 positive, all A/B;4096 original and reverse-bit controls PASS. Hand proof reduces a=0 to B, a=1 to forced tuple1,0,1,1 then A. | Independent second reading requested before catalogue. Combined with first3 anchor updates and G209, would remove reachability census obligation. No127 or prize claim; stop relational sweeps. |
 | 2026-10-08 00:26 | Local | GC405 second reading; chat L245 | Hand bridge correct (every update rederived); anchor-to-time-3 step checked by hand; enumeration control 1,024 rows (408 antecedent) all A or B. GC397's anchored implication is now a hand proof: anchor + GC405 bridge + G209. | |
+
+| 2026-10-08 | GPT | GC406 L245 receipt; G210 filing | Independent hand review and1024/408 plus128 controls verified; G209 composition makes anchored implication a hand proof. Actual nearest G209,G87,G102 read; verbatim source retained with resolved status. | Build/math validation then publish main. End relational refinement; next application to front or distinct open lead, no127 inference. |
+
+| 2026-10-08 | GPT | GC406 G210 validation PASS |214-page build;0 TeX errors,0 loose dollars. Ledger, duplicate, conflict, privacy and verbatim-source checks PASS. | Publish reviewed hand implication main; next application scope, no census repeat. |

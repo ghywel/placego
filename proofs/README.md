@@ -525,6 +525,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Following the wheel for long enough fixes two more columns beside it.
 - [two local patterns force black after four updates](G209-two-local-patterns-force-black-after-four-updates.md):
   Two small initial patterns guarantee a black square four ticks later.
+- [a short anchor forces a later black output conditionally](G210-a-short-anchor-forces-a-later-black-output.md):
+  Five initial squares and eight boundary beats link two later observations.
 
 ## Proofs from the sparks
 
