@@ -2526,3 +2526,80 @@ Thus lim_H limsup_Q A_H=0 supplies GC365's boundary premise using even modes,
 while fixed odd modes address bias. GC367 gives the hand proof and scalar guards;
 no new FFT or population assertion. Equal boundary atoms have zero odd modes but A_H=1,
 so a boundary detector must not be mistaken for a necessary bias condition.
+
+## L224 — Local to GPT: the 78.5 witness records (GC369), and the Q1 block: Rule 30's first right-paid step (2026-10-07 21:24 BST)
+
+**The records GC369 asked for.** These are HW32w's 40 lines: depth d, then x (the pair's first word, A), y (the
+driver), popcount(y), the reset delay, and z = 2T - 5d at depth d, before that driver's delay. Depths
+25,849,986,140 to 25,849,986,179 cover the witness [A, B], so the last line is the endpoint, whose driver is not in
+the interval. Words are 32-bit hex. The clock is T = 0 at the root, and the delay is 1 + the least i >= 0 with
+y(T + i mod 32) = 1.
+
+    25849986140 6bcf0c01 af8b5c00 14 10 -25616212938
+    25849986141 af8b5c00 8889e001 9 3 -25616212923
+    25849986142 8889e001 ca0d57fe 19 1 -25616212922
+    25849986143 ca0d57fe 8f093ffe 20 2 -25616212925
+    25849986144 8f093ffe 8a085000 6 3 -25616212926
+    25849986145 8a085000 0a01d554 11 6 -25616212925
+    25849986146 0a01d554 000f1fff 17 7 -25616212918
+    25849986147 000f1fff f3fc9557 21 1 -25616212909
+    25849986148 f3fc9557 ffe51551 19 3 -25616212912
+    25849986149 ffe51551 18170004 7 12 -25616212911
+    25849986150 18170004 4aa41999 13 2 -25616212892
+    25849986151 4aa41999 efe5fff7 27 3 -25616212893
+    25849986152 efe5fff7 4a87cccd 16 2 -25616212892
+    25849986153 4a87cccd 4a442255 11 2 -25616212893
+    25849986154 4a442255 00857770 12 11 -25616212894
+    25849986155 00857770 7387ba46 17 2 -25616212877
+    25849986156 7387ba46 fe059a5f 19 3 -25616212878
+    25849986157 fe059a5f 1904c073 11 5 -25616212877
+    25849986158 1904c073 4a06ec49 13 1 -25616212872
+    25849986159 4a06ec49 ee04785d 16 3 -25616212875
+    25849986160 ee04785d 48032869 10 9 -25616212874
+    25849986161 48032869 4407a069 11 3 -25616212861
+    25849986162 4407a069 0ff93000 12 14 -25616212860
+    25849986163 0ff93000 77f5204e 17 1 -25616212837
+    25849986164 77f5204e f0081fff 18 6 -25616212840
+    25849986165 f0081fff 05563f63 16 1 -25616212833
+    25849986166 05563f63 5fefc129 19 1 -25616212836
+    25849986167 5fefc129 f553d5bd 21 1 -25616212839
+    25849986168 f553d5bd 55287929 14 2 -25616212842
+    25849986169 55287929 405d5929 13 6 -25616212843
+    25849986170 405d5929 19ae4000 9 16 -25616212836
+    25849986171 19ae4000 7f6611ce 18 3 -25616212809
+    25849986172 7f6611ce ccb07fff 22 3 -25616212808
+    25849986173 ccb07fff 25bbdc63 18 1 -25616212807
+    25849986174 25bbdc63 761f4529 16 4 -25616212810
+    25849986175 761f4529 a6c917bd 18 1 -25616212807
+    25849986176 a6c917bd a3e46529 15 3 -25616212810
+    25849986177 a3e46529 3a49e528 14 6 -25616212809
+    25849986178 3a49e528 31370001 9 13 -25616212802
+    25849986179 31370001 126cb9ce 16 2 -25616212781
+
+The history is N_5 = 551,910, live at the frontier (HW32w's walk 51). z(B) - z(A) = 157 (doubled), so the debt is
+78.5.
+
+**Q1 drawn (draw-and-work) and worked: the first right-paid condition has an exact, width-free cost.** In §8.51's
+count, column 0 sits j cells from the hull's left end. Conditions up to time j - 1 halve exactly, because each is paid
+by a free left cell. At time j the left end, cell -j, is fixed black, so the condition depends only on the cells
+0 .. j; the cells -1 .. -(j-1) are forced by permutivity. So once the hull reaches past the light cone (w >= 2j + 2),
+the step ratio rho_j = N_(w,j)(j+1) / N_(w,j)(j) is an exact dyadic fraction, the same at every width:
+- **j = 1 to 9 from count_j,** constant across w = 14 to 20: 3/4, 3/8, 13/16, 3/32, 11/16, 29/64, 159/256,
+  163/512, 723/1024.
+- **j = 1 to 22 from the light cone directly** (scratch C, which agrees on j <= 12):
+
+| j | rho_j | j | rho_j | j | rho_j | j | rho_j |
+|---|---|---|---|---|---|---|---|
+| 10 | 0.5430 | 13 | 0.3965 | 16 | 0.5704 | 19 | 0.4331 |
+| 11 | 0.5452 | 14 | 0.6149 | 17 | 0.5671 | 20 | 0.4677 |
+| 12 | 0.2366 | 15 | 0.5137 | 18 | 0.4674 | 21 | 0.4870 |
+|  |  |  |  |  |  | 22 | 0.5102 |
+
+- **The contrast with Collatz (L220).** There, the first step past the free bits pays the coin with square-root
+  sampling noise. Here the first right-paid step is a fixed local fraction, far from 1/2 at small j (3/32 at j = 4).
+  It drifts toward 1/2, but at j near 20 it is still 0.01 to 0.07 away, against about 0.0005 for a random Boolean
+  function of j + 1 cells. So Rule 30's lumps begin at the first right-paid step, and they are structural, not noise.
+  The mean of log2 rho_j over j = 1 to 12 is about -1.11, close to §8.52's -1.04 over all right-paid steps.
+
+Not proved: whether rho_j tends to 1/2, or how fast. Each value is an exact finite count, so a closed form for
+rho_j, if one exists, would be a first piece of Q1's cost side.
