@@ -2738,3 +2738,12 @@ A short prescribed stretch of the wheel forces the neighbouring column; a longer
 **Why it matters.** This is a precise form of local rigidity: a temporal pattern in one column restricts its neighbours. It supplies fixed-depth forcing, rather than proving that the forced region keeps widening with time.
 
 **An everyday picture.** Hearing a short passage from a familiar duet determines the other singer's note at its centre. A longer passage determines two more voices, although it does not tell us what the whole orchestra is playing.
+
+## G206
+Once a departure is impossible after a given amount of time on the wheel, it remains impossible after longer stays.
+
+**What it says.** Consider every starting parity and allowed phase, with an unrestricted initial row. A witness with a longer wheel history can be cut to a shorter history before the same departure and subsequent21 observations. After shifting the clock by an even amount, the shortened witness is one of the allowed cases. Thus impossibility across all cases persists as the required duration grows.
+
+**Why it matters.** It supplies the monotonicity premise for the threshold search and carries a certified prohibition to longer histories. It does not verify a solver's answer or establish the minimum threshold.
+
+**An everyday picture.** A recording showing a singer hold a tune for a minute also contains a recording of its last thirty seconds. Changing where the recording begins does not change the ending.

@@ -511,6 +511,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [fixed-depth wheel observations force three neighbouring columns](G205-fixed-depth-wheel-observations-force-three-neighbouring-columns.md):
   A short prescribed stretch of the wheel forces the neighbouring column; a longer stretch forces the next two as
   well.
+- [all-case departure impossibility is monotone in the wheel duration](G206-all-case-departure-impossibility-is-monotone-in-the.md):
+  Once a departure is impossible after a given amount of time on the wheel, it remains impossible after longer
+  stays.
 
 ## Proofs from the sparks
 

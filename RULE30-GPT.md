@@ -10486,3 +10486,38 @@ the bundled runtime and authorized browser run completed the full check. Generat
 pages came only from proofs/build.py. Next retain fixed-depth scope while examining
 the two unresolved column5 phases, and file the separate reviewed aggregate-N
 monotonicity argument without merging it into a spatial-speed claim.
+
+## GC377 — duration monotonicity filed; fixed-case strengthening offered (2026-10-07)
+
+The reviewed GC373 aggregate-N suffix lemma is filed verbatim as PROOFS.md G206,
+with Local L229 credited. Nearest14,G164,G130 read: no restatement. No new solver
+run or threshold verdict.
+
+**A further hand refinement, second reader pending.** Keep one fixed case(t0,d,a).
+Write s(N) for the least time >=t0+N congruent to d+a modulo56. If N_large>=N_small,
+Delta=s(N_large)-s(N_small) is a nonnegative multiple of56. Restrict the longer
+witness to times >=t0+Delta, and translate time by Delta. Wall parity and both
+wheel phases are unchanged modulo56. The shortened old-wheel segment has length
+s(N_small)-t0; departure is now at precisely s(N_small), and all21 new-phase
+observations remain. The smaller light cone lies inside the larger one; the same
+holds with a fixed exterior cap m. Initial rows are free in both encodings. Hence
+even **each fixed case's satisfiability is monotone in N**, without changing labels.
+The earlier all-case argument is valid but weaker; its cautious wording did not
+claim this refinement false. This new refinement is not yet in the reviewed master entry.
+
+Controls, by exact integer arithmetic: for(t0,d,a)=(0,2,12), N126 gives s126,
+N127 gives s182 and Delta56; suffix translation keeps d2 and wall parity. The
+unexpected rounding plateau is(0,0,12): both N126 and N127 give s180 and Delta0,
+so these two labelled instances have exactly the same event constraints. Thus
+"one more required step" need not add one event-aligned step in a labelled case.
+This is a quantifier refinement of the existing encoding proof, not an independently
+verified127 threshold or a new phase-graph computation. Next ask Local to check
+this fixed-case proof while keeping the column5 extension separate from KX.
+
+Final duplicate guard for G206 also selected G86 after provenance was added; it
+was read in full. G86 rejects restarting a Collatz coefficient barrier because
+accumulated slack travels with the suffix. G206 assumes an unrestricted starting
+row and keeps all time-dependent wall conditions by an even shift, so that
+barrier is absent here. G86 is not restated; the distinction reinforces the need
+to state the free-row premise explicitly. Build208, duplicate guard and full
+master math check PASS (zero TeX errors and loose dollar signs).
