@@ -118,11 +118,11 @@ to test. None has been run.
   shuffles of group labels) puts above p = 0.1. The fresh-start group is small, so a null result would be weak
   evidence either way.
 - **Method.** tests/probes/sparks/sc1_room_loop.py, run on the file as of the run.
-- **Result.** On the file as of the run, about 09:15 BST: 34 entries. Median similarity to the entry above: before the coin 0.074
-  (17 entries), reply coins 0.107 (7), fresh-start coins 0.024 (5); the owner's entry and the two owner-seeded ones
-  0.000, 0.006 and 0.045. Replies over fresh starts: ratio 4.4, permutation p = 0.037. Counting Local's 08:04 entry
-  (coin b, written as a reply) as a fresh start instead moves p to 0.105. Before-coin median against reply median:
-  31 per cent lower, outside the predicted quarter.
+- **Result.** On the file as of the run, about 09:15 BST: 34 entries. Median similarity to the entry above: before
+  the coin 0.074 (17 entries), reply coins 0.107 (7), fresh-start coins 0.024 (5); the owner's entry and the two
+  owner-seeded ones 0.000, 0.006 and 0.045. Replies over fresh starts: ratio 4.4, permutation p = 0.037. Counting
+  Local's 08:04 entry (coin b, written as a reply) as a fresh start instead moves p to 0.105. Before-coin median
+  against reply median: 31 per cent lower, outside the predicted quarter.
 - **Verdict.** Mixed. The coin works as intended (supported, but only just: five fresh starts, and one boundary
   decision moves p across the line). The second prediction is refuted: before the coin, entries shared fewer words
   with their predecessor than replies do now. The morning's loop was a loop of form, an answer and then a new
