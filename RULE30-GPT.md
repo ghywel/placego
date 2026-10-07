@@ -9454,3 +9454,43 @@ This expands the exact shape statement to heavy sources while keeping its clock 
 settle the all-period debt or growth requirements of Q7, and does not reopen a closed reduced-feature potential.
 Next: check whether the forced hole interval can support a covering or compensation argument that pays for
 actual repeated singleton events, rather than charging each one independently by q.
+
+
+## Fourth word after a singleton: exact complement correction and heavy-source obstruction (2026-10-07; GC342)
+
+**Bounded symbolic continuation of GC340, review pending; no new trajectory or scored proof.** Prediction
+recorded before controls: the fourth word is a shifted complement with a local interval correction. Counterfactual:
+the singleton fourth word of GC334 persists for heavy predecessors. The weight identity refutes that extension.
+
+Retain GC340's common q>=4, B=e_s, C neither0 norB, L in1..q-1, and D=one with holes s+1 through s+L.
+Let T increase a bit's index by one, so (TC)(i)=C(i-1); this is the inverse of the earlier S convention. Put
+b=C(s), and J={s+2,...,s+L+1}, containing exactly L residues. The next compatible word E is
+
+    E = one XOR TC XOR (b times the indicator of J).
+
+Proof from E(i+1)=C(i) XOR(D(i) OR E(i)). Outside D's hole interval, E(i+1)=1 XOR C(i). At its first
+position, E(s+1)=1 XOR b, fixed by the black D(s). Across i=s+1,...,s+L-1, C(i)=D(i)=0 and E propagates
+this value. At i=s+L, C(i)=1 toggles it, giving E(s+L+1)=b. These are exactly the displayed correction on J;
+all remaining coordinates follow the outside equation. In J, TC has L-1 zeros and one black endpoint, hence
+
+    |E| = q-|C|                       if b=0,
+    |E| = q-|C|-L+2                   if b=1.
+
+In the first case, E is singleton exactly when C is one with its sole hole at s. The previous source
+A=SC XOR(B OR C) is then e_(s-1), of weight1. In the second case, E is singleton exactly when C has
+no zeros except the forced interval s+1,...,s+L-1: its maximum possible weight is q-L+1, and equality is
+necessary and sufficient. For L>1 that gives A=e_s XOR e_(s+L-1), weight2; for L=1 it gives C=one and A=0.
+Thus a singleton E forces the predecessor A to have weight0,1 or2. Every source with weight greater than2
+has |E|>=2. This excludes the singleton fourth-word conclusion for heavy sources without asserting rooted
+occurrence of any ambient example. It still permits large fourth-edge delays: weight>=2 only gives the
+finite-gap upper bound q-1, which saves at least one against a pulse's q, not enough for an all-stage budget.
+
+**Independent fixed literal controls:** q8 heavy A=255,B=1,C=85,D=249 gives E=89, weight4; odd A=128 gives
+C=254,D=253,E=2. The original two-black A=5 gives C=249,D=241,E=16. Seven per-bit triples pass.
+**Identified unexpected check:** zero predecessor A=0 gives C=255,D=253,E=4. Hence the stronger guess that
+singleton E forces predecessor weight exactly2 is false; the zero-source boundary is essential. No control
+failure or long computation occurred in this block.
+
+This explains a structural difference between the rare named starts and L211's many heavy-source singleton
+events. It does not prove repeated-event sparsity, compensation, normalized growth or a prize result.
+Next: use the exact fourth-word support, rather than its weight alone, to seek a legitimate window covering.
