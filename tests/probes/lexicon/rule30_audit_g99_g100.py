@@ -543,6 +543,11 @@ CHECKS (GPT's claims at 827e006):
      = 0 and (B, E) = 00, 01, 10, 11, and give depth-7 odd outputs 1, 0, 1, 1 (as 1 + E + BE gives, and as GPT's probe
      prints), mixed XOR 1; R4's text and the probe's outcome note print 1, 1, 0, 1, a transcription slip that leaves
      the conclusion intact.
+  S105 (GC306, added 2026-10-07 at f314a7d): R_(j+1) = (R_j + lambda_j)/2 exactly (Fractions) on the single cell's
+     entries 3, 8, 29, 400, 87,867 and on TM6's minimizing history to 65,821,413, with lambda_1..3 = 5/2, 21/4, 371/8;
+     on 2,000 random runs bounded lambda <= K keeps R <= max(R_start, K), and bounded R <= M gives lambda <= 2M;
+     lambda alternating 1, 3 drives R onto the 2-cycle 7/3, 5/3 (limsups 3 and 7/3 differ); on 500 random sequences an
+     eventual bound K is a bound from the root at max(K, the earlier values).
 """
 import random
 from fractions import Fraction as F
@@ -5699,4 +5704,39 @@ ok104 &= _out104[0][4] ^ _out104[1][4] ^ _out104[2][4] ^ _out104[3][4] == 1     
 check('S104 GPT\'s R4 of C.7: on all 55 no-11 visible words R4\'s seven depth pairs hold and hidden bits are '
       'invisible; C.7\'s formal product holds on all words; GPT\'s four driven seeds give (B, E) = 00, 01, 10, 11, '
       'depth-7 odd outputs 1, 0, 1, 1 (mixed XOR 1)', ok104)
+ok105 = True
+_rng105 = random.Random(306)
+# GC306: R_(j+1) = (R_j + lambda_j)/2 with R_j = N_j/2^j and lambda_j = (N_(j+1) - N_j)/2^j, exactly, on the rooted
+# record: the single cell's entries 3, 8, 29, 400, 87,867 and TM6's minimizing history to 65,821,413
+for N in ([3, 8, 29, 400, 87867], [3, 8, 29, 400, 667052, 65821413]):
+    R = [_Fr(n, 2 ** (j + 1)) for j, n in enumerate(N)]
+    lam = [_Fr(N[j + 1] - N[j], 2 ** (j + 1)) for j in range(len(N) - 1)]
+    ok105 &= all(R[j + 1] == (R[j] + lam[j]) / 2 for j in range(len(N) - 1))
+ok105 &= [_Fr(3, 2), _Fr(5, 2), _Fr(21, 4), _Fr(371, 8)] == [_Fr(3, 2)] + [_Fr(b - a, 2 ** (j + 1)) for j, (a, b) in
+                                                                         enumerate(zip([3, 8, 29], [8, 29, 400]))]
+# bounded lambda <= K gives R <= max(R_start, K); bounded R <= M gives lambda <= 2M (exact, random sequences)
+for trial in range(2000):
+    K = _Fr(_rng105.randint(1, 50), _rng105.randint(1, 5))
+    R0 = _Fr(_rng105.randint(1, 200), _rng105.randint(1, 5))
+    R = R0
+    for _ in range(40):
+        lam = K * _Fr(_rng105.randint(0, 100), 100)
+        R = (R + lam) / 2
+        ok105 &= R <= max(R0, K)
+    Rs = [_Fr(_rng105.randint(1, 100), 7) for _ in range(30)]
+    M = max(Rs)
+    ok105 &= all(2 * Rs[j + 1] - Rs[j] <= 2 * M for j in range(29))
+# the limsups need not agree: lambda alternating 1, 3 drives R onto the 2-cycle 7/3 (after a 3), 5/3 (after a 1)
+R = _Fr(10)
+for j in range(200):
+    R = (R + (1 if j % 2 == 0 else 3)) / 2
+ok105 &= abs(R - _Fr(7, 3)) < _Fr(1, 10 ** 30) and abs((R + 1) / 2 - _Fr(5, 3)) < _Fr(1, 10 ** 30)
+# fixed-root pruning: a sequence whose lambda is eventually <= K is bounded from the root by max(K, its earlier values)
+for trial in range(500):
+    j0 = _rng105.randint(0, 10)
+    lam = [_rng105.randint(0, 1000) for _ in range(j0)] + [_rng105.randint(0, 20) for _ in range(30)]
+    ok105 &= max(lam) <= max([20] + lam[:j0])
+check('S105 GC306: R_(j+1) = (R_j + lambda_j)/2 exactly on the rooted record; bounded lambda <=> bounded R with '
+      'R <= max(R_start, K) and lambda <= 2M; alternating 1, 3 gives the cycle 5/3, 7/3; fixed-root pruning suffices',
+      ok105)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

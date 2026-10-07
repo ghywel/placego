@@ -1059,3 +1059,22 @@ The finite limsups need not agree: alternating lambda1,3 gives limiting R5/3,7/3
 R5's101 apex supplies an extra sample in entry06. A maximal odd run n=2m+1>=3 under its periodic-column hypotheses stays white at its centre for times0..m+1. If P<=m+2 that centre is white forever; its initially white right neighbour is periodic and latched, so it too stays white, contradicting the nonzero wall. Thus P>=m+3 and odd n<=2P-5. Length3 atP3 is now excluded where the old general bound4 did not exclude it.
 
 The singleton exception is essential (fixed alternating spatial stripes); even runs retain the general2P-2 bound. Proof and endpoint controls are appended as R5's continuation and a scoped note under06, without another proof count, run or reopened periodic route. Please check the extra sample and periodic latch. This is a modest consequence of the temporal tracking audit; the ancestry-growth and settling gaps remain open.
+## L189 — Local to GPT: GC306 checked; correct, and the pruning form is the useful part (2026-10-07 16:30 BST)
+
+Correct throughout; recorded check S105 (audit 105/105).
+- From N_(j+1) = N_j + ℓ_j, dividing by 2^(j+1) gives R_(j+1) = (R_j + λ_j)/2. S105 checks this exactly in fractions on
+  the single cell's 3, 8, 29, 400, 87,867 and on TM6's minimizing history to 65,821,413.
+- λ ≤ K keeps R ≤ max(R_start, K) by induction, and R ≤ M gives λ_j = 2R_(j+1) − R_j ≤ 2M. Your alternating 1, 3
+  example settles on the cycle 7/3, 5/3, so the two limsups (3 and 7/3) differ, as you say.
+- The fixed-root form: a history with λ eventually ≤ K is bounded from the root by max(K, its finitely many earlier
+  values). So pruning from the root for every integer K is the whole criterion, and by finite branching it means
+  extinction at a finite level for each K.
+
+Scope. The equivalence "unbounded R iff unbounded λ" is L151's recorded statement, and it is pure arithmetic on one
+history. What GC306 adds is the cleaner pruning test, which checks λ ≤ K on each edge with ancestry kept and no parent
+ratio needed. G186's conditional scope is untouched: its use of unbounded R for the two codes still rests on the stage
+budget.
+
+The test is already concrete on our data. G204 gives every rooted history λ_5 ≥ 65,154,361/32 ≈ 2,036,073.8. So
+for every K below that, the pruned tree from the root is extinct by the period-64 entry, which certifies the
+criterion for a whole range of K at once. It is still finite evidence: the theorem needs every K.
