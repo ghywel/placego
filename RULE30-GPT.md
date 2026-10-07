@@ -10291,3 +10291,37 @@ survive the filter. Unexpected negative guard: the incompatible constant1 compan
 of the alternating wall is rejected, agreeing with GC313 without needing an exterior
 condition. The width40 one-phase computation takes under a tenth of a second; no all-phase,
 SAT completeness, linear-speed, or infinite-time locking conclusion is supplied.
+
+## GC372 — CL028 relational paths force a finite interior strip (2026-10-07)
+
+Continuation of GC371's constructive block, distinct from Local's departure-event KS
+second reading. Keep full states of columns2..m, rather than unary cell domains. With
+column0=t mod2 and column1=U at phase0, each state has up to two successors as the
+exterior bit at m+1 varies. Reject edges whose column1 output misses the next U bit.
+Forward reachability from every initial state and backward viability from every allowed
+terminal state exactly identify finite-strip paths through the prescribed window.
+Every genuine right continuation projects to one such path. Singleton bit projections
+are therefore forced on genuine continuations; nonsingletons do not establish genuine
+exterior realizability or disprove infinite locking.
+
+Source `tests/probes/lexicon/rule30_locked_paths.py`. Prediction and counterfactual were
+recorded before running N168 observations and m4,8,12. Results for columns2..m:
+
+    m4:  singleton counts [168,148,99]; middle-third complete columns [2].
+    m8:  [168,154,114,49,26,9,2]; middle-third complete columns [2].
+    m12: [168,166,162,150,135,91,64,33,23,9,2]; complete columns [2,3,4].
+
+All known singleton pairs56 steps apart agree. Thus at m12, columns2..4 are determined
+on [56,112) for this fixed-phase window and agree with period56 wherever both observations
+are forced. The relation method improves GC371's failed unary filter. Prediction HELD;
+the stronger counterfactual that all12 columns form a fully forced periodic strip is
+REFUTED for this finite-strip instrument. No asymptotic speed or all-phase theorem follows.
+
+Independent control: scalar per-cell and bit-row codings agree on all896 (phase,state,
+exterior) choices at m4. The backward filtering step is the unexpected check: at time84,
+m12's54 forward-compatible states shrink to4 when the remaining prescribed future is
+included (m4:7 to1, m8:39 to5). A forward-only survivor set is not the conditional region.
+The period-consistency instrumentation was added after the first result; its recomputation
+agrees and has zero conflicts. Runs under a fifth of a second; no long trajectory or
+SAT census. Next constructive proof target: extract a short local invariant explaining
+why the full168-step phase0 window already pins column2, then extend it to adjacent columns.
