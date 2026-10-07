@@ -476,6 +476,17 @@ CHECKS (GPT's claims at 827e006):
      back to the cycle has l + s - u != 0 mod q, and G191's component test agrees; GPT's locked detour has G = 4 and
      no mismatched excursion, the chords give G = 1; three edges from phase 0 end aligned at ordered phase 3, while
      phase 1 would read as residue 2; D1's hypothetical rejoin from 0 after 26,396 edges is aligned at phase 12.
+  S96 (G199, added 2026-10-07 at 6fa98c5): with B(a, b) = (S b + (a OR b), a), six and seven steps back from
+     (w, w) = (10100100, 10100100) reach (0, c) and (a, 0), c = 10010011, a = Delta c = 10110100 (weight 4, least
+     period 8); at caps 1 to 8 the only nonzero pair mapped to zero is (0, all ones); no rotation of (a, 0) lies in
+     RQ3's rooted cap-8 graph, whose zero drivers (depths 2, 7, 28, 399) all have odd parity over their own least-period
+     block while a's is even; iterating B from (w, w) enters a cycle of length 4,064 after 389 steps without reaching
+     zero; (01, 10) at cap 2 cycles without reaching zero too. A first draft of the check took parity over all 8 bits
+     and failed on the rooted doublings from periods 1, 2, 4; the block parity is the right notion.
+  S97 (G199's odd-domain continuation, added 2026-10-07 at 3e651f6): the D0 witness (source block 1000, odd) first
+     returns at 88 and its repeated endpoint never reaches zero under B; the rooted q = 4 cap exit has block 1011, and
+     doubled, with either integration child and every rotation, it first returns at 371; in RQ3's rooted cap-8 graph the
+     only entries (0, c) with c of least period 8 sit at depth 29, and the next zero driver is 371 steps after depth 28.
 """
 import random
 from fractions import Fraction as F
@@ -5024,4 +5035,88 @@ ok95 &= (3 + 0 - 3) % 4 == 0 and (3 + 0 - 1) % 4 == 2
 ok95 &= (26396 + 0 - 12) % 16 == 0                          # D1's hypothetical aligned rejoin from s = 0 at u = 12
 check('S95 G198: on 600 random graphs around a dyadic cycle (q = 2, 4, 8) the component is persistent exactly when a '
       'mismatched excursion exists, and G191 agrees; the locked detour, the chords, the ordered-phase trap, D1', ok95)
+def B96(pair, q):
+    """The backward pair map B(a, b) = (S b XOR (a OR b), a) on q-bit cyclic words."""
+    a, b = pair
+    return (_rq3.rot(b, 1, q) ^ (a | b), a)
+
+
+ok96 = True
+_W96 = lambda s: sum(int(ch) << t for t, ch in enumerate(s))
+w, c, a = _W96('10100100'), _W96('10010011'), _W96('10110100')
+x = (w, w)
+seq = [x]
+for k in range(7):
+    x = B96(x, 8)
+    seq.append(x)
+ok96 &= seq[6] == (0, c) and seq[7] == (a, 0)               # six and seven backward steps from (w, w)
+ok96 &= (c ^ _rq3.rot(c, 1, 8)) == a and bin(a).count('1') == 4 and _lp82(a, 8) == 8
+# the absorption identity: a nonzero pair maps to (0, 0) under B only from (0, all ones), at caps 1 to 8
+for q in range(1, 9):
+    full = (1 << q) - 1
+    pre = [(u, v) for u in range(1 << q) for v in range(1 << q) if (u, v) != (0, 0) and B96((u, v), q) == (0, 0)]
+    ok96 &= pre == [(0, full)]
+# (a, 0) in any rotation is absent from the rooted cap-8 graph (RQ3's reached set holds no even-parity zero driver)
+_rt96, _dp96, _pa96, _ed96, _ex96 = _rq3.reached(8)
+ok96 &= all((_rq3.rot(a, k, 8), 0) not in _dp96 for k in range(8))
+# parity is taken over the driver's own least-period block: the rooted zero drivers (255, 0), (170, 0), (221, 0) at
+# depths 2, 7, 28 are the odd doublings from periods 1, 2, 4 (even weight over all 8 bits, odd over their period)
+_zd96 = [s for s in _dp96 if s[1] == 0]
+_blockpar96 = lambda u: bin(u & ((1 << _lp82(u, 8)) - 1)).count('1') % 2
+ok96 &= all(_blockpar96(s[0]) == 1 for s in _zd96) and _blockpar96(a) == 0
+ok96 &= sorted(_dp96[s] for s in _zd96) == [2, 7, 28, 399]
+# and (w, w) never reaches zero: iterate B until the trajectory repeats
+seen, x, steps = {}, (w, w), 0
+while x not in seen:
+    seen[x] = steps
+    ok96 &= x != (0, 0)
+    x = B96(x, 8)
+    steps += 1
+_cyc96 = steps - seen[x]
+ok96 &= (0, 0) not in seen and (0, 255) not in seen
+# the cap-2 example (01, 10) also never reaches zero
+seen2, y = set(), (_W96('01'), _W96('10'))
+while y not in seen2:
+    seen2.add(y)
+    y = B96(y, 2)
+ok96 &= (0, 0) not in seen2 and (0, 3) not in seen2
+check('S96 G199: B^6 (w, w) = (0, c), B^7 (w, w) = (a, 0) with a = Delta c of weight 4 and period 8; only (0, 1) maps '
+      'to zero (caps 1-8); no rotation of (a, 0) is rooted at cap 8; (w, w) and (01, 10) never reach zero', ok96)
+ok97 = True
+
+
+def first_return97(q, a, child=0):
+    c = _rq3.children(a, 0, q)[child]
+    x, y, pos, prof = 0, c, 1, [0, c]
+    while y and pos < 5000:
+        x, y, pos = y, _rq3.children(x, y, q)[0], pos + 1
+        prof.append(y)
+    return pos if y == 0 else None, prof
+
+
+# the D0 witness: source block 1000 (odd parity), first return 88; its repeated endpoint never reaches zero under B
+_r97, _pr97 = first_return97(8, 17)
+ok97 &= _r97 == 88 and bin(17 & 15).count('1') % 2 == 1
+_ww97 = (_pr97[-2], _pr97[-2])
+seen, x = set(), _ww97
+while x not in seen:
+    seen.add(x)
+    x = B96(x, 8)
+ok97 &= (0, 0) not in seen and (0, 255) not in seen
+# the rooted period-8 entry: the q = 4 cap exit (block 1011) doubled; both children and every rotation first return
+# at 371; in RQ3's rooted cap-8 graph the only states (0, c) with c of least period 8 sit at depth 29
+_rt97, _dp97, _pa97, _ed97, _ex97 = _rq3.reached(4)
+_sink97 = [s for s in _dp97 if s[1] == 0 and _dp97[s] == max(_dp97.values())][0]
+_blk97 = _sink97[0]
+ok97 &= [(_blk97 >> t) & 1 for t in range(4)] == [1, 0, 1, 1]
+for k in range(4):
+    b = _rq3.rot(_blk97, k, 4)
+    a8 = b | (b << 4)
+    ok97 &= all(first_return97(8, a8, ch)[0] == 371 for ch in (0, 1))
+_r8, _d8, _p8, _e8, _x8 = _rq3.reached(8)
+ok97 &= sorted({_d8[s] for s in _d8 if s[0] == 0 and s[1] and _lp82(s[1], 8) == 8}) == [29]
+ok97 &= max(_d8.values()) - 28 == 371                        # zero at depth 28, next zero driver at 399
+check('S97 G199 continuation: the D0 witness (block 1000, return 88) has a non-absorbing endpoint, while every rooted '
+      'entry to period 8 (block 1011, both children, all rotations) first returns at 371, its only entry depth 29',
+      ok97)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

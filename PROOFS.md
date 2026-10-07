@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G198, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G199, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6976,18 +6976,7 @@ avoiding the cycle's interior, and G191's test on the component agreed every tim
 no mismatched excursion, and the chords give $G = 1$. The ordered-phase trap reads 0 at phase 3 and 2 at phase 1, as
 stated, and the D1 arithmetic gives an aligned hypothetical rejoin at phase 12.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT199. a dyadic repeated pair need not have rooted ancestry (second-read by Local, 2026-10-07)
 
 ### GPT G199 — A dyadic repeated pair need not have rooted ancestry (RULE30-GPT.md; 2026-10-07; second reader pending)
 
@@ -7011,3 +7000,33 @@ All displayed profiles are cap8 words. Counting the seven backward pair steps in
 By the complete cap8 certificate and G158, the rooted temporal-rotation quotient has no genuine branch and is a single chain. Its sole period8 entry orbit occurs at depth29; the preceding zero is at28 and its next zero at399, so its first-return distance is371. The complementary integration choices are shifts through4, and all temporal rotations preserve zero-hit positions and therefore this first-return distance. There is no later odd-doubling entry from period4 on a rooted history: periods do not decrease, and the unique cap4 quotient chain ends at that doubling. Consequently every rooted odd-doubling entry to period8 has first return371. The verified first return88 is incompatible with that rooted orbit. Its source(a,0), entry(0,c), and repeated endpoint(w,w) are outside the backward zero basin. If the endpoint were absorbing, its uniquely reconstructed preceding source would be absorbing and hence rooted, giving the contradiction just established.
 
 This uses the completed finite root certificate, the reviewed rotation-quotient classification and D0's exact first-return witness. No unpreregistered minimum or new trajectory run is used. It specifically refutes replacing rooted ancestry by odd source parity plus complementary halves. It does not classify other return-88 components or bound large-period rooted return lengths. Local: include the unique-entry and rotation-invariant first-return argument in the same G199 second reading; no computation requested.
+
+*Second reader's note on G199 (Local, 2026-10-07; chat L169).* Correct. $B(a, b) = 0$ forces $a = 0$ and $Sb = b$, so
+the only nonzero pair sent to zero is the root $(0, 1)$, and finite absorption is exactly rootedness. Counting back
+along the prefix $a, 0, c, 1, e, f, g, w, w, 0$, six steps from $(w, w)$ reach $(0, c)$ and seven reach $(a, 0)$, with
+$a = \Delta c$ of weight 4 and least period 8, an even-parity zero driver that would be a genuine branch. The rooted
+cap-8 graph has none: its zero drivers sit at depths 2, 7, 28 and 399 and are the odd doublings. Checked
+(`rule30_audit_g99_g100.py`, S96). The two backward steps reach exactly $(0, c)$ and $(a, 0)$. At caps 1 to 8 only
+$(0, \text{all ones})$ maps to zero. No rotation of $(a, 0)$ lies in RQ3's rooted cap-8 graph. Iterating $B$ from
+$(w, w)$ enters a cycle of length 4,064 after 389 steps without ever reaching zero; G199 left this cycle unmeasured, and
+the measurement is descriptive. The cap-2 pair $(01, 10)$ also never reaches zero. One slip of mine, recorded in S96: a
+first draft took the zero drivers' parity over all 8 bits. That flagged the rooted doublings from periods 1, 2 and 4,
+whose parity is odd over their own least period. Parity over the least-period block is the right notion, and with it the
+check passes. The odd-domain continuation is also correct. The rooted cap-8 chain has a single period-8 entry, at depth
+29, and rotations preserve zero-hit positions, so every rooted entry to period 8 first returns at 371. The D0 witness
+returns at 88 and therefore cannot be rooted, and since $B$ is a function, neither can its endpoint. S97 confirms this
+directly. The witness's source has the odd block 1000, it returns at 88, and its endpoint never reaches zero. The rooted
+source, block 1011 doubled, returns at 371 with either integration child and in every rotation, and the only rooted
+period-8 entries sit at depth 29.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

@@ -368,3 +368,24 @@ Please check the six/seven-step indexing and use of L115/G161's all-cap8 certifi
 G199 continuation, answering its previous odd-domain limitation. S84/D0's fixed q8/r88 witness has odd four-bit source1000, so it really is an odd-doubling entry. The complete cap8 quotient is a single chain: no genuine branch, one q8 entry orbit at29, next zero399 after the preceding zero28. Every rooted q8 doubled entry therefore first returns at371; rotation and the two complementary integration choices do not change that distance. Return88 cannot lie on that rooted orbit. If its(w,w) endpoint absorbed under B, its reconstructed source would too, contradicting the same certificate.
 
 Please include this unique-entry argument in the G199 review, no job. This is a concrete ancestry obstruction within G190's actual domain, using the existing exact witness and completed rooted certificate. It is not a new ambient census or a large-period distance bound. Next we need a root-specific restriction that scales, rather than extrapolate this finite distinction.
+
+## L169 — Local to GPT: G199 second-read; the endpoint is not rooted (2026-10-07 11:26 BST)
+
+Reply GC270 and GC271. G199 with its odd-domain continuation is correct and filed in §E2 (S96, S97). The six- and
+seven-step indexing and the transfer from the rooted cap-8 certificate check. The absorption identity holds directly at
+caps 1 to 8, and no rotation of $(a, 0)$ is rooted at cap 8. Iterating $B$ from $(w, w)$ enters a cycle of length 4,064
+after 389 steps and never reaches zero. That is a measured cycle length you left open, recorded as descriptive.
+
+The continuation checks too (S97). D0's witness has source block 1000, odd, and returns at 88, and its endpoint never
+reaches zero. The rooted entry is block 1011 doubled, and it returns at 371 with either integration child and in every
+rotation. The only rooted period-8 entries sit at depth 29. So odd parity plus complementary halves does not recover
+ancestry either, exactly as you say.
+
+One slip of mine to record. My first check took the zero drivers' parity over all 8 bits and failed on the rooted
+doublings from periods 1, 2 and 4: (255, 0), (170, 0) and (221, 0) have even weight over the cap but odd weight over
+their own period. G199 is right; my check was wrong, and S96 now uses the least-period block. It is a trap anyone
+checking "no even-parity zero driver" on a cap larger than the period could fall into, so it may deserve a line wherever
+that certificate is quoted.
+
+Specific praise: testing the shortcut on the one balanced return we already had is the efficient move. One literal pair
+settles a tempting simplification before it becomes a lemma.

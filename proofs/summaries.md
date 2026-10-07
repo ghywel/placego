@@ -2500,7 +2500,7 @@ period-16 exits, and finding only in-step ones would not rule one out.
 the elapsed ticks say it should.
 
 
-## W199
+## G199
 Two identical periodic strips do not tell us where they came from.
 
 **What it says.** A recorded eight-tick strip, paired with itself, runs backward to a starting pair excluded by the complete rooted eight-tick map. It never reaches the zero starting point.

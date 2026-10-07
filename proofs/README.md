@@ -482,6 +482,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   stripe that leaves the known loop cannot rejoin it quickly.
 - [a return with a phase mismatch decides the known component](G198-a-return-with-a-phase-mismatch-decides-the.md):
   A way back matters only if it arrives out of step with the old loop.
+- [a dyadic repeated pair need not have rooted ancestry](G199-a-dyadic-repeated-pair-need-not-have-rooted.md): Two
+  identical periodic strips do not tell us where they came from.
 
 ## The waiting room (not yet verified)
 
@@ -494,7 +496,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A dyadic repeated pair need not have rooted ancestry](W199-a-dyadic-repeated-pair-need-not-have-rooted.md): Two
-  identical periodic strips do not tell us where they came from.
+*No proofs are waiting for a second reader at the moment.*
