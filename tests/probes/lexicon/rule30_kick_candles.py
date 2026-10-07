@@ -28,6 +28,20 @@ PREDICTIONS (Cloud's, pushed before the first run):
   KC-P2: class 42 has a departure after a run of more than 336 steps. Confidence 0.5; it is rare (1 in 300 kicks).
   KC-P3: every one of entry 27's 16 surviving (class, kick) pairs is seen after some run of at least 140 steps.
          Confidence 0.4 (class 42's +5 is realized at only 45 of 56 cases, and some pairs may be very rare).
+
+OUTCOME, 2026-10-07 (by 23:16 BST; three runs of 4,000 trials, T = 6000, seeds 101, 202, 303; 835,089 departures
+after at least 56 steps on the wheel):
+  KC-C1 PASS and KC-C2 PASS in all three: no real kick contradicts a proved death. Class 12 is seen after runs of up
+  to 111 (death 127), class 39 up to 63 (death 70), class 49 at 56 (death 61); classes 2 and 22 not at all.
+  Longest run before a departure (any landing): class 32, 336, 300, 300; class 52, 264, 280, 316; class 42, 208 in all
+  three runs. With a clean landing (21 observations), class 32 reaches 336 (kicks +2 .. +5) and class 52 reaches 316
+  (-6 .. -3), so class 32 is lit at N = 336: that answers KS's strain case from below, with a real right half.
+  KC-P1 REFUTED (no run beyond 560), KC-P2 REFUTED (42 peaks at 208), KC-P3 REFUTED (15 of 16 pairs; class 42's +5
+  peaks at 106). The tails look exponential, so a long run is rare, not barred.
+  Two structures (exploratory): a run's length is fixed modulo 56 by its class and its landing angle, so record
+  values recur across seeds (class 42's 208 three times). The kicks at the landing window's edges (class 32's +6,
+  class 42's +5 and class 52's -1, landing at 52 or 42) have the shortest records, as class 12's +9 (landing at 54)
+  died first, at 40.
 """
 import os
 import random
