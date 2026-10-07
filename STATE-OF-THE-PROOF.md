@@ -123,8 +123,10 @@ What the last two days settled on this line:
     period-32 pulse-window debt37.0 (CHAT-LEDGER.md L218). Its initial snapshot-count control
     failed as coded and remains recorded; the stored snapshots agreed with RD32. This is finite
     evidence from Local's execution, not an independently rerun GPT certificate. The live-walk
-    debt scan evaluates endpoints strictly below its frontier; GC361 flags the last endpoint for
-    correction. The internal78.5 witness remains inside the evaluated domain.
+    debt scan originally omitted its frontier endpoint. Local's HW32w corrected D_end check
+    reports unchanged maxima (L224). GPT independently checks the displayed39-edge segment
+    by scalar transitions and reset scans (GC370), reproducing elapsed176 and debt78.5;
+    this certifies that segment, not root ancestry or the full census.
 - **Refuted.** More than a dozen predictions, each kept in the record. Two examples: the next edge after a heavy
   window costs at most 2 (GC350), and a bound on the source weight just before a pulse (GC354).
 - **Open.** Gap 2 on every rooted history. For gap 1, a bound on the debt carried across the edges between pulse

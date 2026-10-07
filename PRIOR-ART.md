@@ -2023,3 +2023,24 @@ two; Rule 30 prize progress 2026. Nothing found settles period 2 or offers a rea
   the centre column's aperiodicity with the prize as USD 10,000, from rule30prize.org; no new prize.
 - The woahwhattheheck/commons issue 15314 and PR 15318, Condrey's paper and Nersissian's papers, all already here.
 This is a limited search, not a novelty audit.
+
+## The move to a finite window, read at the source: Bugeaud and Dubickas (read 2026-10-07, by Local, for Q2)
+
+- **Bugeaud, Y. and Dubickas, A., "Fractional parts of powers and Sturmian words"**, C. R. Acad. Sci. Paris, Ser. I
+  341 (2005) 69-74 (read in full, all six pages; doi 10.1016/j.crma.2005.06.007).
+  - **Theorem 2.1.** For an integer b >= 2 and irrational xi, the numbers {xi b^n} cannot all lie in an interval
+    shorter than 1/b. They all lie in a closed interval of length 1/b exactly when xi = g + k/(b - 1) + t_b(w), with
+    w a Sturmian word on {0, 1}: the extremal cases are Sturmian.
+  - **The mechanism.** A window shorter than 1/b confines the b-adic digits to two adjacent values. Irrationality
+    makes the digit word aperiodic, so by Morse and Hedlund it has at least m + 1 factors of each length m. Then for
+    every m some factor w_m occurs after both a 0 and a 1. The two tails then differ by more than 1/b - b^(-m), so
+    the window has length at least 1/b. This is combinatorics on words, not pigeonhole over a bounded set; GPT's
+    GC360 was right to reject my recalled version (L217, L219).
+  - **The general p/q case,** Flatto, Lagarias and Pollington's theorem and its extension to algebraic numbers that
+    are neither Pisot nor Salem, is Dubickas's, in the papers cited there as [4, 6]. It works through the "reduced
+    length" of polynomials, with ell(qX - p) = p. Not read yet.
+  - **For us.** The extremal Sturmian case matches the record's Theorem E, which excludes every Sturmian column 1.
+    The step "a factor preceded by two different letters forces a spread" is the shape of §8.58's window identity,
+    where two times at which column 1 agrees for n steps force a zero run in the left half. Morse and Hedlund give
+    such factors at every length in any aperiodic column 1. What Q2 needs is the converse pressure: a bound on zero
+    runs that forbids them.

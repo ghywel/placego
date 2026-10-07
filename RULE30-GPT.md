@@ -10230,3 +10230,190 @@ partner Q-1 have reader magnitude tending to2/pi, exceeding0.63 at Q32,128,1024.
 They cannot be charged at order1/Q. The j0 band and its wrapped end must be excluded;
 otherwise the proposed envelope fails. No actual marginal FFT rerun or peak-width estimate.
 Next: bound the complement or derive concentration from ballot-conditioned quotient structure.
+
+## GC370 — independent literal audit of L224's HW32w debt witness (2026-10-07)
+
+Commit d9bd67c verified, L224's40 records read. The new independent scalar probe
+`tests/probes/lexicon/rule30_hw32_literal_audit.py` reads those displayed words,
+checks all32 equations c(i+1)=a(i) XOR (b(i) OR c(i)), and computes each reset
+by a direct bit scan at T=(z+5d)/2. It does not call the C rotation/child constructor.
+Prediction and endpoint counterfactual recorded in CLOUD-LOCAL.md before execution.
+
+All39 transitions,40 popcounts/reset records, pair links, integer clocks and39 updates
+z_next-z=2*delay-5 PASS. Direct pulse-pattern tests find no pulse among the39 drivers.
+Their popcount sum588 gives mean588/39=15.076923; total elapsed176 yields doubled
+debt2*176-5*39=157, hence78.5. The six delays10,12,11,14,16,13 contribute debt61;
+the other33 edges contribute17.5. Thus most of the positive net interval debt comes
+from those six arrivals, while the remaining edges have positive net debt too.
+
+Independent corruption guards reject a flipped child bit and a one-step clock shift.
+Unexpected endpoint guard: the40th line is the endpoint, not an edge of this interval.
+Including its delay2 gives debt78 rather than78.5, refuting the pre-control counterfactual.
+No failed control in execution; the false inclusion is retained explicitly.
+
+Scope: this is an independent certificate check of the displayed finite segment, not
+an independent replay from its root, proof of N_5 ancestry, global maximum certification,
+or re-execution of the1909-second census. L224 reports the corrected D_end scan does not
+raise any history's maximum; that execution outcome is received from Local. GC361's
+omitted-endpoint warning is closed for this reported run, with the original C0 failure
+still retained. Exact witness confirms actual ordinary gapped drivers incur clustered
+long waits; it does not prove an asymptotic stage-debt bound or a stochastic law.
+Next: use these literal arrivals to test proposed multiedge ordinary-gap restrictions.
+
+## GC371 — CL028 locked-region attempt: unary forcing stops early (2026-10-07)
+
+Cloud's locked-region question taken as constructive reasoning, not a repeat of KS's
+SAT census. Existing GC313's actual right-companion obstruction and CL028's prior-art
+scan read. Rule30 gives the inverse-local fact: at a known centre0, the right bit equals
+left XOR next-centre; at centre1, next-centre must equal1 XOR left and the right bit
+is locally free. This motivates monotone truth-table domain propagation.
+
+`tests/probes/lexicon/rule30_locked_domains.py` holds each spacetime cell's possible
+bits as {0},{1},or{0,1}. For every four-variable Rule30 constraint, it discards bit
+values unsupported by any compatible truth-table tuple and repeats to a fixed point.
+Soundness is inductive: every global solution consistent with the prescribed boundaries
+has one compatible tuple at each constraint, so no value it uses can be discarded.
+This is an over-approximation, not a complete satisfiability test. A nonsingleton domain
+does not certify that both values occur in actual global solutions.
+
+Before execution, prediction and counterfactual recorded in CLOUD-LOCAL. At wall t mod2,
+column1=U at phase0 on times0..N-1, width40 and an arbitrary exterior at41, N56,112,168:
+columns2,3,4 have respectively (50,31,4),(100,63,9),(150,95,14) singleton cells.
+Columns5..40 have none. No column2..40 is completely forced on the middle third;
+known singleton pairs56 times apart do not conflict. Prediction of some forcing HELD;
+counterfactual of a complete growing periodic region from unary propagation REFUTED
+for this instrument. This does NOT refute the true locked-region conjecture: correlations
+between unresolved cells have been thrown away. Next proof step needs relational domains
+or a named multi-cell invariant, rather than further iterations of the same unary filter.
+
+Independent exhaustive control: all8 valid two-step width2 assignments for column1=0
+survive the filter. Unexpected negative guard: the incompatible constant1 companion
+of the alternating wall is rejected, agreeing with GC313 without needing an exterior
+condition. The width40 one-phase computation takes under a tenth of a second; no all-phase,
+SAT completeness, linear-speed, or infinite-time locking conclusion is supplied.
+
+## GC372 — CL028 relational paths force a finite interior strip (2026-10-07)
+
+Continuation of GC371's constructive block, distinct from Local's departure-event KS
+second reading. Keep full states of columns2..m, rather than unary cell domains. With
+column0=t mod2 and column1=U at phase0, each state has up to two successors as the
+exterior bit at m+1 varies. Reject edges whose column1 output misses the next U bit.
+Forward reachability from every initial state and backward viability from every allowed
+terminal state exactly identify finite-strip paths through the prescribed window.
+Every genuine right continuation projects to one such path. Singleton bit projections
+are therefore forced on genuine continuations; nonsingletons do not establish genuine
+exterior realizability or disprove infinite locking.
+
+Source `tests/probes/lexicon/rule30_locked_paths.py`. Prediction and counterfactual were
+recorded before running N168 observations and m4,8,12. Results for columns2..m:
+
+    m4:  singleton counts [168,148,99]; middle-third complete columns [2].
+    m8:  [168,154,114,49,26,9,2]; middle-third complete columns [2].
+    m12: [168,166,162,150,135,91,64,33,23,9,2]; complete columns [2,3,4].
+
+All known singleton pairs56 steps apart agree. Thus at m12, columns2..4 are determined
+on [56,112) for this fixed-phase window and agree with period56 wherever both observations
+are forced. The relation method improves GC371's failed unary filter. Prediction HELD;
+the stronger counterfactual that all12 columns form a fully forced periodic strip is
+REFUTED for this finite-strip instrument. No asymptotic speed or all-phase theorem follows.
+
+Independent control: scalar per-cell and bit-row codings agree on all896 (phase,state,
+exterior) choices at m4. The backward filtering step is the unexpected check: at time84,
+m12's54 forward-compatible states shrink to4 when the remaining prescribed future is
+included (m4:7 to1, m8:39 to5). A forward-only survivor set is not the conditional region.
+The period-consistency instrumentation was added after the first result; its recomputation
+agrees and has zero conflicts. Runs under a fifth of a second; no long trajectory or
+SAT census. Next constructive proof target: extract a short local invariant explaining
+why the full168-step phase0 window already pins column2, then extend it to adjacent columns.
+
+## GC373 — a finite phase-graph certificate pins column2 (2026-10-07)
+
+GC372 continuation, prediction registered in CLOUD-LOCAL.md before execution. Lift
+width-m states (columns2..m) by the 56-phase clock. Put an edge from (p,s) to
+(p+1,s') exactly when a choice of the exterior cell makes the scalar Rule30 successor
+and column1 follows U. Column0 is p mod2. Iteratively delete every vertex lacking
+a predecessor or successor among the remaining vertices, simultaneously each round.
+
+**Sound finite-window lemma.** If trimming stabilizes after r rounds at core K,
+any actual strip path with at least r transitions on both sides of time t has its
+vertex at t in K. Proof: by induction, a path vertex at distance at least k from
+both ends survives k rounds: its adjacent path vertices survive k-1. Thus if the
+column2 projection of K is a singleton at every phase p, column2 at t equals that
+56-periodic singleton whenever the prescribed U window extends r steps either side.
+This applies to every real right continuation, since the exterior input was unrestricted.
+Nonempty K itself is not a claim of realizability by a global right half.
+
+Source `tests/probes/lexicon/rule30_locked_core.py`, fixed m4 and m8 runs:
+
+    m4: six trimming rounds, losses [222,68,39,23,12,6], core size78.
+    m8: nineteen rounds, core size302.
+    Both cores pin only column2 over all56 phases, to
+    V = 01110010110111001011011100101101110010110111001011001011.
+
+Hence **13 consecutive observations of column1=U pin column2 at the centre to V**,
+using only exact dynamics through column4. For x_t(1)=U((t-d) mod56), d even,
+translate p=t-d; wall parity agrees, giving x_t(2)=V((t-d) mod56) whenever
+[t-6,t+6] lies inside the prescribed window. This is a computed finite certificate
+with a soundness proof, not a linear-width locking-speed theorem. It improves the
+fixed168-window statement to a local forcing lemma. Prediction HELD; the stronger
+counterfactual that width4 pins columns2..4 is REFUTED for this phase-graph instrument.
+Width8 still does not pin column3 at every phase; no general extension is supplied.
+
+Controls: independently written scalar and bit-row steps agree on all15232 choices
+across m4,m8. Constant1 against the alternating wall yields empty core in one round,
+agreeing with GC313. Unexpected boundary check: for every start phase, the centre
+projection of a 2r+1-observation finite path equals the computed core's phase slice;
+forward/backward traversal shares the graph edges, explicitly not an independent encoder.
+Runs under a tenth of a second. Transcript stays outside Git. No SAT solver or
+Local's KLK threshold computation was duplicated. Next seek a relation that carries
+this fixed-depth forcing beyond column2; failure at column3 retained.
+
+**L227 aggregate-N monotonicity guard.** For KS/KK's free initial row and departure
+class a, existence at N_large implies existence at every N_small <= N_large,
+across the full set of (t0,d) cases. From a witness departing at s, retain its suffix
+starting at tau=s-N_small. Normalize time by the even shift tau-(tau mod2),
+so t0'=tau mod2 and d'=d-(tau-t0') mod56 is still even. The departure now occurs
+exactly at t0'+N_small, hence is the first class-a time at or after that threshold;
+the same 21 post-departure observations remain. The smaller light cone lies in the
+original one. The same projection works with fixed exterior cap m. Therefore all-case
+UNSAT is monotone in N. This uses free initial rows and all even phase/parity cases;
+it does not assert per-labelled-case inclusion or certify a solver's UNSAT verdict.
+The unexpected rounding guard is that cutting the suffix changes the case label,
+which is why the all-case predicate, rather than one fixed (t0,d), is used.
+
+## GC374 — fixed-depth forcing extends through column4 (2026-10-07)
+
+Before the run, GC372 already predicted the width12 bilateral core would pin
+columns2..4: each surviving core vertex has walks of arbitrary length in either
+direction, so projects to GC372's168-observation window with any desired phase
+at a middle-third time. That middle third covers every phase. This is a deduction
+from the prior finite result, not a fresh blind prediction. The new computation
+measures a sufficient window length; the preregistered stronger counterfactual
+was that the same core pins column5 as well.
+
+The fixed width12 phase graph has114688 vertices. Synchronous trimming stabilizes
+after71 rounds at602 vertices. Its singleton phase projections are exactly:
+
+    column2: 01110010110111001011011100101101110010110111001011001011
+    column3: 11000110101100011010110001101011000110101100011000011010
+    column4: 10111101101011110110101111011010111101101011110011110110
+
+Applying GC373's induction gives a computed **143-observation local certificate**:
+if column1 follows U at even phase d throughout [t-71,t+71], columns2..4 at
+t equal the corresponding bits of these period56 words at (t-d) mod56. Equivalently
+a longer prescribed window pins these three columns after removing71 observations
+from each end. This covers all start phases with the wall-compatible even alignment.
+It is a sufficient radius, not the least possible radius; column2 already needs
+only the six-step radius certified in GC373. It does not establish linear spatial
+growth, infinite locking, a departure prohibition, or a genuine exterior realization
+for the surviving core states. Column5 is not pinned at every phase: the stronger
+counterfactual is REFUTED for this graph, not for every larger exact width.
+
+Source `rule30_locked_core.py --wide` (same graph construction as GC373). Independent
+scalar and bit-row transitions agree on229376 choices. All56 start phases pass the
+finite-window centre/core equality guard; that traversal shares graph edges, not an
+independent encoder. The unexpected comparison checks column2's word is identical
+to width4's despite the much larger trimming radius: whole-core stabilization is
+not a minimal bit-forcing bound. The direct fixed-width run took about2.4 seconds;
+transcript outside Git. No SAT census duplicated. Next isolate a composable relation
+for column5, or extract smaller bit-specific radii without claiming a speed theorem.
