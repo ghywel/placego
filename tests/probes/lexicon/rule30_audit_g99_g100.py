@@ -433,6 +433,10 @@ CHECKS (GPT's claims at 827e006):
      joins two sigma-fixed vertices; on 600 random involutive graphs with that property (seed 1913), every invariant
      component in which each vertex has exactly one internal successor (106 found) fails the persistence test; a
      sigma-fixed self-loop, which breaks the property, admits every dyadic q.
+  S88 (G192, added 2026-10-07 at 1a7f5e4): U5 = F3 accepts exactly the triples 001, 010, 011, 100, 101; at every cap
+     from 1 to 16 the 362 single words with U5 = 1 (10100100 among them) all have c = 1 + S Delta^2 w and only
+     accepted triples, yet no two of them, shifted or not, have complementary entries c_u + c_v = 1; the solutions of
+     Delta^2 beta = 1 at caps 4, 8, 12, 16 are the four rotations of 0011, each containing 11001.
 """
 import random
 from fractions import Fraction as F
@@ -4513,4 +4517,30 @@ ok87 &= _single87 >= 30
 ok87 &= admitted85([1], [0], 1, 8) == list(range(1, 9)) and criterion85([1], [0], 1)
 check('S87 G191 Rule 30 continuation: no edge joins two sigma-fixed vertices in G190\'s graphs (m <= 6); invariant '
       'single-cycle components are never persistent when fixed vertices are not joined; a fixed self-loop is', ok87)
+ok88 = True
+# U5 = F3 on a triple (x, y, z) accepts exactly 001, 010, 011, 100, 101, and c = U6 = 1 + S Delta^2 w when U5 = 1
+_acc88 = {(x, y, z) for x, y, z in product((0, 1), repeat=3) if U82(5, [x, y, z] + [0] * 6) == 1}
+ok88 &= _acc88 == {(0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1)}
+# G192 for arbitrary paired words: at caps 1 to 16 no two periodic words u, v (not only shifts of one another) have
+# U5 = 1 on both and complementary reconstructed entries; single words with U5 = 1 do exist (10100100 among them)
+_single88 = 0
+for q in range(1, 17):
+    full = (1 << q) - 1
+    S5 = [w for w in range(1 << q) if Ucyc83(5, w, q) == full]
+    _single88 += len(S5)
+    c6 = {w: Ucyc83(6, w, q) for w in S5}
+    for w in S5:
+        ok88 &= c6[w] == full ^ _rq3.rot(w ^ _rq3.rot(w, 2, q), 1, q)      # c = 1 + S Delta^2 w
+        bits = [(w >> t) & 1 for t in range(q)]
+        ok88 &= all((bits[t], bits[(t + 1) % q], bits[(t + 2) % q]) in _acc88 for t in range(q))
+    cset = set(c6.values())
+    ok88 &= not any((c ^ full) in cset for c in cset)                     # no pair with c_u + c_v = 1
+ok88 &= _single88 > 0 and Ucyc83(5, sum(int(b) << t for t, b in enumerate('10100100')), 8) == 255
+# Delta^2 beta = 1 forces beta(t + 2) = 1 + beta(t): a rotation of 0011, which contains 11001
+for q in (4, 8, 12, 16):
+    sols = [b for b in range(1 << q) if (b ^ _rq3.rot(b, 2, q)) == (1 << q) - 1]
+    ok88 &= len(sols) == 4 and all(any(all(((b >> ((s + k) % q)) & 1) == int('11001'[k]) for k in range(5))
+                                       for s in range(q)) for b in sols)
+check('S88 G192: F3 accepts 001, 010, 011, 100, 101; at caps 1-16 no two words with U5 = 1 have complementary entries '
+      '(single words exist); Delta^2 beta = 1 forces 0011 and the block 11001', ok88)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

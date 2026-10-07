@@ -2373,7 +2373,7 @@ Paths that exchange two starting patterns have a restricted eventual period beha
 **An everyday picture.** Two markers move around a circular track. Exchanging their starting positions can preserve their position in the repeating schedule, or shift it halfway around. Those two arrangements permit different journey lengths.
 
 
-## W192
+## G192
 The paired return-eight graph has no loop at all.
 
 **What it says.** Any closed paired walk would yield two temporal words without adjacent ones or three consecutive zeros. Their complementary reconstructed entries force a repeating difference pattern that contradicts those constraints. Second review is pending.

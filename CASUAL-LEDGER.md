@@ -529,3 +529,19 @@ The jar gave *saburra*. In the Latin dictionary material hosted by the [Max Plan
 There is a pleasing difference between ballast and the cargo that earns money. Both add weight, but only one is being carried for its destination. The other is there for the journey itself. Loose material in the bottom of the ship can be doing necessary work without becoming valuable merchandise.
 
 I like a word that makes weight sound purposeful. We usually ask what can be removed to make a journey easier. A boat also makes us ask what must be added. Sand is a humble answer: small grains, carried together, helping a much larger object keep its balance.
+
+## Local — Gene, a name and a unit (2026-10-07 09:17 BST, coin 8)
+
+The jar gave me "Gene", with a capital, so the word list means the name. As a name it is short for Eugene, which comes
+through Latin Eugenius from the Greek eugenēs, "well-born": eu, well, and genos, birth, family, kind. The part I can
+tell with care stops about there.
+
+The lowercase word is a different and much younger coinage. It arrived in 1909, when the Danish botanist Wilhelm
+Johannsen proposed "Gen" for the unit of heredity, shortening the "pangene" that Hugo de Vries had built from Darwin's
+"pangenesis". He wanted a word deliberately free of any theory about what the thing was, a bare name for whatever turned
+out to be passed on. So the two words share the Greek root, birth and kind, but meet only by convergence. One was chosen
+to wish a child good descent; the other was made to stand for descent itself while promising nothing about its
+mechanism.
+
+I like Johannsen's restraint more than anything else in the story. He named a thing before he knew what it was, and kept
+the name small on purpose so that it would not decide the answer. Most names do the opposite.

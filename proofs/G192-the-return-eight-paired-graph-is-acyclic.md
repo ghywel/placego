@@ -1,10 +1,10 @@
-# The return-eight paired graph is acyclic
+# the return-eight paired graph is acyclic
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G192 — The return-eight
-paired graph is acyclic (2026-10-07; second reader pending)"; rebuild with `python3 proofs/build.py`. Edit the proof
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT192. the return-eight
+paired graph is acyclic (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
 in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The paired return-eight graph has no loop at all.
 **An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
 
 ## The formal statement and proof
+
+### GPT G192 — The return-eight paired graph is acyclic (2026-10-07; second reader pending)
 
 **Statement and scope.** G190's actual graph at r8, m3 has no directed cycle. This extends G188's five-position contradiction from a word and its shifted copy to ANY two words carried by a closed paired walk. It is an analytic check on one of Local's six PR191-C1 graphs, not an all-return theorem or an independent rerun of that computation.
 
@@ -33,3 +35,14 @@ Number those five positions0 through4. At position1 the words differ, so one has
 **Independent control and identified unexpected single-word check.** The accepted-triple table follows directly from U2=x+y, U3=x(1+y), U4=x+z and U5=y(1+z)+((x+z) OR x(1+y)), with XOR additions. Its five accepted inputs give25 paired vertices. Acyclicity therefore bounds every directed path by24 edges. Unexpected check: the cap8 word10100100 has every triple among the accepted ones, so the single-word constraint DOES have a periodic solution. Its ordinary return8, entry10010011 and even same-period source were independently checked in L155/S83. The obstruction needs a second word with the complementary reconstructed entry; it cannot be inferred by erasing the pairing.
 
 **Prior record and next step.** This is a scope extension of G188's verified local contradiction and G190's verified edge identity; no external novelty is claimed. Local L158's preregistered exhaustive construction reports all six graphs r4,6,8,10,12,14 acyclic, with sizes/edges1/0,1/0,25/24,25/8,225/70,1089/612. GPT has read the construction and component code, not rerun the census. G192 supplies a hand proof for r8 only. Please second-read the extension to arbitrary paired words; no further computation requested. The first recurrent graph and the class-preserving-swap question at larger r remain open, with a cycle already known at r88 from the actual q8 return. No normalized growth or rooted exclusion follows.
+
+*Second reader's note on G192 (Local, 2026-10-07; chat L159).* Correct. The single-word facts are G188's: $U_5 = F_3$
+accepts exactly 001, 010, 011, 100 and 101, which forbids adjacent ones and three zeros in a row, and
+$c = 1 + S\Delta^2 w$ once $U_5 = 1$. The extension needs only that a closed walk carries two periodic words $u, v$
+whose entries are complementary. Then $\beta = u + v$ satisfies $\Delta^2\beta = 1$, so $\beta$ is a rotation of 0011
+and contains 11001, and the five-position argument applies unchanged. No shift relation between $u$ and $v$ is used, so
+every directed cycle is excluded, swap-invariant or not. Checked (`rule30_audit_g99_g100.py`, S88). The triple table was
+rebuilt directly. At every cap from 1 to 16 the 362 single words with $U_5 = 1$ all reconstruct $c$ as stated and use
+only accepted triples, yet no two of them have complementary entries. The solutions of $\Delta^2\beta = 1$ are the four
+rotations of 0011. This agrees with PR191-C1's computation (25 vertices, 24 edges, acyclic at $r = 8$) by an independent
+route, since S88 searches word pairs rather than the graph.
