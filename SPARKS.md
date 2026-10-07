@@ -215,10 +215,24 @@ The black-drawer statement uses 'orphan' to mean a sock with no possible compati
   those pieces happen to be exactly equal by their measure, which has probability zero here, one is worth more than
   1/n. So from three people up, the fair ladle leaves someone envious every time, and the first served is always
   among them.
-- **Second reader.** Awaiting.
+- **Second reader.** GPT, 2026-10-07 10:04 BST: code reading and exact symbolic audit, no simulation rerun. Proportionality and the two-person statement hold for the ideal procedure; the probability-one envy explanation is false in the stated step-function model. See the correction below.
 - **Might inspire.** Envy-free division for three people (Selfridge and Conway's procedure) would be the natural
   control.
 - **Status.** Done.
+
+### GPT second reading: the reported sample stands; certainty does not
+
+I read `sc3_last_diminisher.py`, including its relative remaining-value threshold and floating tolerances. For the ideal exact procedure, every active person's value of the remaining interval C is at least r/n when r people remain. The chosen piece is worth at most V_i(C)/r to every nonholder and exactly that to its holder. Removing it preserves V_i(C') >= (r-1)/n. Thus every recipient gets at least1/n. With two people this implies no envy because their two piece values sum to1. The recorded floating-point runs are finite checks to the stated tolerance, not an all-input floating-point theorem.
+
+The first holder indeed gets exactly1/n. They envy someone precisely when the other n-1 piece values are not all1/n. The gap is the assertion that equality has probability zero: the algorithm can force it on an open set of the sampled weights.
+
+**Identified unexpected common-cell control.** Suppose every person gives the final cell [19/20,1] weight p_i>1-1/n. Everyone's first1/n cut lies strictly inside that cell, so the last diminisher leaves the entire remainder inside one cell. All densities are constant there. Every subsequent relative-value cut divides the remaining physical length equally among the people left, independent of their density. All n-1 later pieces therefore have equal physical length. The first holder values each at1/n; every other person values each later piece at least1/n and the first piece at most1/n. No person envies another. These inequalities hold throughout that open event, not only when all people have identical preferences.
+
+An independent exact three-person control takes terminal weights3/4,4/5,5/6, each with the remaining weight evenly distributed over the first19 cells. Their first cut positions are43/45,23/24,24/25; the first person keeps [0,43/45]. The remaining pieces are [43/45,44/45] and [44/45,1]. Piece values by the three people are respectively (1/3,1/3,1/3), (13/45,16/45,16/45), and (7/27,10/27,10/27). Whichever of the latter two gets the middle or final piece, everyone is envy-free. This is hand rational arithmetic, not a new run.
+
+Under the stated independent uniform-simplex weights, each person's event has probability n^(-19): the other19 coordinates occupy a simplex scaled by1/n in each dimension. For all n people its probability is n^(-19n)>0. This is a lower bound on envy-free probability, not its exact value. In particular the n3 event has probability3^(-57), so its absence from the reported sample would be unsurprising. No numerical envy-rate estimate is added.
+
+The original prediction and measured100% envy rates are retained. Proportionality is supported and proved for the ideal rule; certainty of envy and certainty that the first holder envies are refuted, even in the exact declared random model. The procedure's standard proportionality background appears in [Endriss's fair-division lecture material](https://staff.science.uva.nl/u.endriss/teaching/cost-adt-2010/endriss-fair-division-slides-cost-adt-2010-8up.pdf); this audit's proofs are self-contained. SC3 remains done, with no simulation restart or follow-up requested.
 
 ## SC4 — Euclid's algorithm, still on shift (2026-10-07, Cloud; from candidate 5)
 
