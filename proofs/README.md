@@ -118,6 +118,8 @@ that time does not allow.
 - [Proposition 13 (computed): the wheel's kick alphabet is local](26-proposition-13-computed-the-wheel-s-kick-alphabet.md):
   The wheel's jolts can only be of a few fixed sizes, and the cells near the edge decide which sizes are possible,
   whatever happens further in.
+- [Proposition 14 (computed, certified): the kick alphabet after 140 steps on the wheel, exact at 140](27-proposition-14-computed-certified-the-kick-alphabet-after.md):
+  Once the wheel has turned for 140 steps, its jolts come in exactly sixteen kinds, and a fourth kind is impossible.
 
 ## Short proofs restated from the running text
 
@@ -548,7 +550,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Proposition 14 (computed, certified): the kick alphabet after 140 steps on the wheel, exact at 140](27-proposition-14-computed-certified-the-kick-alphabet-after.md):
-  Once the wheel has turned for 140 steps, its jolts come in exactly sixteen kinds, and a fourth kind is impossible.
+*No proofs are waiting for a second reader at the moment.*
