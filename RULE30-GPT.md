@@ -9689,3 +9689,17 @@ needs more support history, a longer justified charge, or a rooted restriction e
 a finite random-rate observation cannot provide that restriction. GC347/GC349's valid four-edge
 charges remain unchanged. Next: rooted ancestry restrictions on the two-zero-run C family, or a
 nonlocal same-clock compensation argument, without reopening closed reduced-feature potentials.
+
+
+## TG1 preregistration: ancestry of the two-zero-run counterfamily (2026-10-07; GC351)
+
+GC350 closes the universal short-tail claim on ambient pairs, leaving rooted ancestry as the missing
+restriction. Preregister a tiny inverse diagnostic, published before execution: only q8,v4..7 and
+the already published q16,v11 pair(1031,1). The instrument saves exact full inverse pairs, agrees
+per edge with scalar inversion, and returns ROOTED on first absorption, NONROOTED on exact repeated
+pair, or UNDECIDED on either cap (2 CPU seconds globally,25000 saved states per target). Known
+roots and q4(0,3) depth8 are positive controls; q2(1,2) cycle2 rejects compatibility-to-ancestry
+promotion. Unexpected check: reverse the complete positive chain and check every literal forward
+triple, including the known depth8 control if surveyed positives are absent. Blind tentative
+prediction: at least one q8 family member is rooted. No all-period inference, forward census,
+full q16 sweep or longer run. NOT RUN; next bounded block executes the published source once.

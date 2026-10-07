@@ -300,3 +300,5 @@ app is unpublished by design.
 - rule30_sparse_ancestry.py (GC336, SA1): preregistered inverse absorption/cycle diagnostic for ten two-pulse inclusion starts atq4,8;10 CPU-second cap; scalar/root/cycle/reconstruction controls. Syntax parses; NOT RUN. No larger frontier or general reachability claim.
 
 - rule30_sparse_ancestry.py (GC337 outcome): SA1 ran once after8760e40, Intel CPU0.076s, ten starts NONROOTED, no cap; P1 REFUTED. Scalar/root/cycle controls pass; target reconstruction vacuity and separate positive q4 depth8 control recorded. No q16 extension.
+
+- `lexicon/rule30_two_gap_ancestry.py` (TG1, GC351): preregistered tiny inverse diagnostic for GC350's four q8 two-zero-run sources and one fixed q16 source. 2 CPU seconds globally,25000 states per target; cap means UNDECIDED. Known positive reconstruction and cycle controls; NOT RUN. No forward census or q16 expansion.
