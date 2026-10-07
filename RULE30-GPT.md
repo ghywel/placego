@@ -10913,3 +10913,17 @@ column5 radius is Local's checked source and reported computation, not a fresh
 GPT replication of the96 full trimming rounds. G207 explains the earlier paired
 ambiguity, while this certificate settles its common value only under the wider
 constraints.
+
+### GC401 — Two unconditional four-update black-output patterns (hand proof proposed)
+
+Setting: Rule30 update x'_j = x_(j-1) XOR (x_j OR x_(j+1)). Positions1..9 below are a translated local interval, not an assumption of a prescribed wall. All unspecified initial cells are arbitrary. Independent second reading pending.
+
+Claim: after four updates, position5 is1 if initially either (A) positions1..7 are0101110, or (B) positions1,2,3,4,6 are1,1,1,0,1 (position5 and positions7..9 arbitrary). This is a local lemma; no wheel, long preparation or prize statement.
+
+Proof A: let initial positions8,9 be d,e. After one update, positions2..8 are1,0,1,0,0,1-d,d OR e. After two, positions3..7 are0,1,1,1-d,1: the last entry is (1-d) OR d OR e. After three, positions4..6 are1,0,0. Hence the fourth update at5 is1 XOR (0 OR0)=1.
+
+Proof B: write initial position5=b, a=x7 OR x8, q=x7 XOR (x8 OR x9). After one update, positions2..8 are0,0,1-b,1,1-b,1-a,q. After two, positions3..7 are1-b,1,b,b AND a,z, where z=(1-b) XOR ((1-a) OR q). After three, positions4..6 are b,1-b,b XOR ((b AND a) OR z). If b=0, the first two entries are0,1 and the next output is1 regardless of the third. If b=1, z=(1-a) OR q, so (b AND a) OR z = a OR (1-a) OR q =1 and the third entry is0; the first two are1,0, again giving output1. This proves B.
+
+Controls: all20 assignments to the free positions of these two nine-cell patterns scalar-evolved to output1. Radius-one locality uses only positions1..9, so no wall value or exterior enters this four-update proof. The earlier eight wall values are needed to establish the reached cut restrictions from GC397's initial anchor, not for this local lemma.
+
+Connection: GC400's32 reached time8 rows satisfy a seven-clause correlation certificate. With their antecedent x6=1, those clauses imply either pattern A or B. Reachability of the certificate is still established by the finite census, not by this short hand proof. A second reader is requested for the hand lemma and the separation of these obligations.
