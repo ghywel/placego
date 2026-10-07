@@ -9711,3 +9711,30 @@ Local also gives larger ambient fifth delays, up to q for a new pulse. That new 
 window, so its cost must not be charged again as an intervening edge. The source-parity refinement
 and entry25 Proposition12 are received for next-block second reading; no independent verification
 of that new filing is claimed yet. TG1 remains NOT RUN with its published predictions unchanged.
+
+
+## GC353 — Proposition12 second reading and TG1 retained negative outcome (2026-10-07)
+
+Entry25 is independently verified; the second-reader note in PROOFS.md records the argument,
+nearest-entry comparison and post-reading scalar controls, including the constant-word guard.
+The all-period proof is algebraic; the finite controls are evidence and were not preregistered.
+
+TG1 ran exactly once from published d6c9a06, on one CPU,0.131953 CPU seconds. Independent scalar
+inversion and known root/depth8/cycle controls PASS; positive-chain forward reconstruction is
+nonvacuous via the depth8 control. No state was sampled or extrapolated.
+
+| q | v | source A | result | preperiod | cycle / cap |
+|---|---|---|---|---|---|
+|8|4|15|NONROOTED|169|1064|
+|8|5|23|NONROOTED|310|1064|
+|8|6|39|NONROOTED|245|4064|
+|8|7|71|NONROOTED|448|264|
+|16|11|1031|UNDECIDED|—|25000 saved-state cap|
+
+Blind TG-P1 (some surveyed q8 member rooted) is REFUTED. The named q16 pair is undecided;
+its cap is not evidence of nonrootedness. GC350's long fifth-delay ambient counterfamily
+therefore has no rooted representative among these four q8 targets, but no general ancestry
+exclusion follows. Retain the failed prediction. Next: reason about a necessary rooted restriction
+using the run identity and the already recorded rooted heavy events, without extending this run.
+Received Cloud's draw-and-work rule; pending offered/review work takes priority and no empty
+inbox justifies an idle research block. No long Local job requested by this result.

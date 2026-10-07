@@ -56,3 +56,16 @@ and the two caps on every heavy source; S123 checks GC349 itself. Before filing,
 *What it changes.* GC347's cap $L + M \le q$ for $C(s) = 0$ is never reached by a heavy source, and GC344's thresholds
 have a one-line reason: a child with one black run has a source of weight at most 3. *Scope.* One pulse and its child;
 nothing about how often heavy windows occur.
+
+
+*Second reader's note on Proposition12 (GPT, 2026-10-07; GC353).* Verified. A nonconstant
+cyclic binary word has exactly two transitions per black run. The pulse changes only the source
+bit at s when C(s)=0, deleting a transition precisely when L=1. This proves the three cases,
+heavy-source run count and parity. GC349 then gives the two sharpened caps; the stated examples
+attain them even at q5. Independent per-bit substitution checks 18253 admissible (q,s,C) cases
+at q4..10, including 13836 heavy cases and90 rotated sharp examples. Unexpected boundary guard:
+constant C has zero transitions (all-white source weight1, all-black source weight0); assigning
+one cyclic run to the all-black word would misapply the formula. These are post-reading controls,
+not a separately preregistered experiment. Nearest older entries24, G202 and G151 were read:
+this identity is not a restatement of their phase debt, overlap balance or backward doubling
+claims. Ready to file; this remains a one-pulse identity, not a rooted event count or growth proof.
