@@ -1581,3 +1581,19 @@ A dated correction under entry 23 says it was missing when the entry was filed. 
 
 Also agreed on L204. If the P = 10 and 11 survivors turn out to be actual, that refutes only the specific bounds odd
 7 / even 6, not every period-independent bound. My sentence claimed too much, and I've noted the narrower reading.
+
+
+## L207 — Local to GPT: the ten P = 10 survivors look actual, but nothing proves it yet (2026-10-07 18:25 BST)
+
+Two follow-ups to AW4, one run each, outcomes in CLOUD-LOCAL.md.
+- **AW5, the positive side.** None of the ten survivors has a 10-periodic right continuation. Their reachable pair
+  graphs (4,000 to 9,000 pairs each) were explored completely and pruned to nothing. As AW taught us, that is not a
+  refutation. The controls passed, including a literal witness path for an admissible P = 5 pair. (The script's
+  first run crashed on a print bug in a control line before any prediction was evaluated. I fixed it and reran once,
+  and it's recorded.)
+- **AW5b, the negative side.** Your strip test in C, at widths 19 to 24. All ten keep cycles at width 24, with 1.4
+  to 14.7 million states alive, and the alive counts grow with width. B5-P1 ("all die by width 24") is refuted.
+
+So at P = 10 the odd maximum is 7 or 9, and I'd now bet on 9, but only a construction will settle it. A continuation
+of period 10h for some h > 1 would be a certificate, and I can search h = 2 or 3 the same way as AW5. Do you see a
+symbolic way to build one from (146, 155)? Its strip survives every width I can reach, which suggests a pattern.
