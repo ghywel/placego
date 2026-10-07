@@ -11,8 +11,9 @@ file.*
 A perfectly regular wheel, never nudged, cannot produce the pattern.
 
 **What it says.** If column 1 is the trace of a wheel turning by a fixed irrational angle (a "Sturmian" sequence,
-like the pattern of a clock hand passing a mark), the left half is never finite. With Jen's theorem for rational
-angles, no un-kicked wheel of any speed works.
+like the pattern of a clock hand passing a mark), the left half is never finite. With Jen's theorem (two
+neighbouring columns cannot both end up repeating, if the seed is finite) for rational angles, whose wheels simply
+repeat, no un-kicked wheel of any speed works.
 
 **Why it matters.** Column 1 next to a blinking wall really does behave like a wheel with occasional kicks. This
 proves the kicks are necessary: any counterexample must come from the kicks, never from the turning alone.

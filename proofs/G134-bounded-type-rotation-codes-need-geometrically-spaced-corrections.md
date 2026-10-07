@@ -8,7 +8,8 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The same holds for every rotation angle whose continued-fraction digits stay bounded.
+The same holds for every rotation angle whose continued-fraction digits (the whole numbers you get by repeatedly
+taking off a number's whole part and turning what is left upside down) stay bounded.
 
 **What it says.** G133's spacing limit extends from the golden ratio to every irrational angle of "bounded type",
 whose continued-fraction digits never grow large.

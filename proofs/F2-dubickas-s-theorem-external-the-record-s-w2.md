@@ -8,14 +8,16 @@ rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this sum
 
 ## In plain words
 
-A Collatz number that ran off to infinity would have to change its step pattern endlessly: it could not loop or repeat.
+A Collatz number that ran off to infinity would have to change its step pattern endlessly: it could not loop or
+repeat.
 
 **What it says.** A published theorem (Dubickas, 2009): if an orbit grew for ever, its sequence of odd and even
 steps would have at least about 1.7 n different patterns of length n. Repeating or nearly repeating step patterns
 are impossible.
 
-**Why it matters.** It is Collatz's counterpart of Jen's theorem for Rule 30: it rules out the simple
-counterexamples and says any real one must look irregular.
+**Why it matters.** It is Collatz's counterpart of Jen's theorem (two neighbouring columns cannot both end up
+repeating, if the seed is finite) for Rule 30: it rules out the simple counterexamples and says any real one must
+look irregular.
 
 **An everyday picture.** A getaway car that can never settle into a fixed route: any repeating loop would get it
 caught.

@@ -8,12 +8,14 @@ in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-Mahler's 3/2 problem needs two conditions at once, and its known cellular-automaton form works differently from Rule 30.
+Mahler's 3/2 problem needs two conditions at once, and its known cellular-automaton form (a rule of Rule 30's kind,
+repainting a row of squares) works differently from Rule 30.
 
 **What it says.** Mahler asked whether some number, multiplied by 3/2 again and again, always has a fractional part
 below a half. GPT showed this needs both an integer step pattern and a fractional-part condition. For example, two
 odd steps in a row are forbidden, and a repeating pattern can satisfy the fractional part while matching no whole
-number. The known cellular automaton for the problem is not of Rule 30's "left-invertible" kind.
+number. The known cellular automaton for the problem is not of Rule 30's "left-invertible" kind, where the right
+side and the middle fix everything to the left (the crossword quirk of the primer).
 
 **Why it matters.** It sets out honestly what transfers from the record's methods to Mahler's problem, and warns
 where it does not.

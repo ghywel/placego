@@ -27,9 +27,9 @@ The words the summaries use:
 - **Periodic.** Repeating like a drumbeat. *Eventually periodic* means repeating from some point on.
 - **Entropy.** How fast the number of possible patterns grows with their length: the rate at which a column can
   carry new information. Zero entropy means almost nothing new ever arrives.
-- **Relatives of Rule 30.** *Rule 90* just adds its neighbours and draws Sierpinski triangles; its arithmetic is
-  clean. *Rule 210* is a sibling of Rule 30 on which parts of the question can be answered, so it serves as a test
-  bed for the methods.
+- **Relatives of Rule 30.** *Rule 90* just adds its neighbours and draws Sierpinski triangles (a triangle with its
+  middle cut out, then the middle of each piece left, and so on); its arithmetic is clean. *Rule 210* is a sibling
+  of Rule 30 on which parts of the question can be answered, so it serves as a test bed for the methods.
 - **Collatz.** Take a number. If it is even, halve it. If it is odd, triple it, add one, then halve. The conjecture
   says every start eventually falls to 1. The **step pattern** is the sequence of odd and even steps. The **growth
   factor** after some steps, three to the number of odd steps divided by two to the number of steps, says roughly

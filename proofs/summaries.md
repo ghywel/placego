@@ -6,7 +6,9 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through G179 (2026-10-07); entries after it may still be drafts.*
+batches. An unusual word gets a plain description where it first appears on a page; in the owner's words, "When
+such an unusual noun is used, the reader should be offered a simple description rather than assuming they know
+what it means" (2026-10-07). Plain-words pass done through G179 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -67,11 +69,12 @@ News from the edge travels inward at the same speed, and nothing on the way can 
 keep a steady rhythm of period P from some moment on, the rhythm must break before news sent from the edge at that
 moment could reach them, give or take two periods.
 
-**Why it matters.** It is Jen's classic theorem with a stopwatch attached: not just "the rhythm breaks some day" but
-"by this time", which is the kind of bound a proof can use. It assumes nothing about the right side, so the rhythm
-is interrupted whether or not anything there "sees" the wave coming (the owner's reading). Nor can the wave be
-blocked: the proof relies on Rule 30 passing its left input straight through and on the edge always advancing, and a
-rule that could block news from the left would fall outside it.
+**Why it matters.** It is Jen's classic theorem (two neighbouring columns cannot both end up repeating, if the seed
+is finite) with a stopwatch attached: not just "the rhythm breaks some day" but "by this time", which is the kind of
+bound a proof can use. It assumes nothing about the right side, so the rhythm is interrupted whether or not anything
+there "sees" the wave coming (the owner's reading). Nor can the wave be blocked: the proof relies on Rule 30 passing
+its left input straight through and on the edge always advancing, and a rule that could block news from the left
+would fall outside it.
 
 **An everyday picture.** A ripple from the edge of a pond: you can bob in a steady rhythm only until the wave
 reaches you, eyes open or shut.
@@ -210,8 +213,9 @@ long white stripe a repeat needs is never there at the moment and place it is ne
 A perfectly regular wheel, never nudged, cannot produce the pattern.
 
 **What it says.** If column 1 is the trace of a wheel turning by a fixed irrational angle (a "Sturmian" sequence,
-like the pattern of a clock hand passing a mark), the left half is never finite. With Jen's theorem for rational
-angles, no un-kicked wheel of any speed works.
+like the pattern of a clock hand passing a mark), the left half is never finite. With Jen's theorem (two
+neighbouring columns cannot both end up repeating, if the seed is finite) for rational angles, whose wheels simply
+repeat, no un-kicked wheel of any speed works.
 
 **Why it matters.** Column 1 next to a blinking wall really does behave like a wheel with occasional kicks. This
 proves the kicks are necessary: any counterexample must come from the kicks, never from the turning alone.
@@ -241,14 +245,20 @@ exposed.
 ## 16
 In Rule 30's simpler cousin, Rule 90, the blinking middle is impossible, proved with Pascal's triangle.
 
-**What it says.** Rule 90 just adds neighbours (exclusive-or). Its patterns are Sierpinski triangles, and at times
-that are powers of 2 the middle must be white twice in a row, so it cannot blink for ever.
+**What it says.** Rule 90 just adds neighbours: a square turns black when exactly one of its two neighbours was
+black. Started from one black square, it draws a Sierpinski triangle (described below). The same picture appears in
+Pascal's triangle, the triangle of numbers in which each is the sum of the two above it, if the odd numbers are
+coloured black. At the times that are powers of 2 (1, 2, 4, 8, ...) a single square's pattern is white everywhere
+except at its two far ends. So once those times are larger than the seed, the middle is white twice in a row, and it
+cannot blink for ever.
 
-**Why it matters.** It shows the kind of proof that works for the linear cousin, and why Rule 30, with its "or", is
-harder: the clean arithmetic is missing.
+**Why it matters.** It shows the kind of proof that works for the linear cousin, and why Rule 30 is harder: its rule
+mixes that adding with an "or" (black if either square is black), and the clean arithmetic is lost.
 
-**An everyday picture.** Sierpinski's triangle of triangles: every power of 2 is a fresh, empty triangle at the
-centre.
+**An everyday picture.** Draw a triangle, join the midpoints of its sides and cut out the middle piece; then do the
+same to each of the three smaller triangles left, and so on for ever. That is Sierpinski's triangle, the pattern
+Rule 90 draws. Its holes open at the rows numbered by powers of 2, and each time the newest and biggest one is an
+empty triangle right at the centre, which a finite seed is soon too small to fill.
 
 ## 17
 If both the middle and column 1 eventually repeat, the left half cannot be finite (Jen's theorem).
@@ -503,14 +513,16 @@ after the free bits, the state is an explicit number. All the counting work of G
 banknotes back untouched.
 
 ## F2
-A Collatz number that ran off to infinity would have to change its step pattern endlessly: it could not loop or repeat.
+A Collatz number that ran off to infinity would have to change its step pattern endlessly: it could not loop or
+repeat.
 
 **What it says.** A published theorem (Dubickas, 2009): if an orbit grew for ever, its sequence of odd and even
 steps would have at least about 1.7 n different patterns of length n. Repeating or nearly repeating step patterns
 are impossible.
 
-**Why it matters.** It is Collatz's counterpart of Jen's theorem for Rule 30: it rules out the simple
-counterexamples and says any real one must look irregular.
+**Why it matters.** It is Collatz's counterpart of Jen's theorem (two neighbouring columns cannot both end up
+repeating, if the seed is finite) for Rule 30: it rules out the simple counterexamples and says any real one must
+look irregular.
 
 **An everyday picture.** A getaway car that can never settle into a fixed route: any repeating loop would get it
 caught.
@@ -673,12 +685,14 @@ and which do not.
 **An everyday picture.** The same engine fitted to a different car: it runs, but the race is a different one.
 
 ## G50
-Mahler's 3/2 problem needs two conditions at once, and its known cellular-automaton form works differently from Rule 30.
+Mahler's 3/2 problem needs two conditions at once, and its known cellular-automaton form (a rule of Rule 30's kind,
+repainting a row of squares) works differently from Rule 30.
 
 **What it says.** Mahler asked whether some number, multiplied by 3/2 again and again, always has a fractional part
 below a half. GPT showed this needs both an integer step pattern and a fractional-part condition. For example, two
 odd steps in a row are forbidden, and a repeating pattern can satisfy the fractional part while matching no whole
-number. The known cellular automaton for the problem is not of Rule 30's "left-invertible" kind.
+number. The known cellular automaton for the problem is not of Rule 30's "left-invertible" kind, where the right
+side and the middle fix everything to the left (the crossword quirk of the primer).
 
 **Why it matters.** It sets out honestly what transfers from the record's methods to Mahler's problem, and warns
 where it does not.
@@ -688,8 +702,8 @@ where it does not.
 ## G51
 The exact finite form of Mahler's two conditions over T steps: a class of whole numbers and a window of fractions.
 
-**What it says.** For a pattern of T steps, the whole-number starts form one class modulo 2^T, and the allowed
-starting fractions form one exact interval. Both are written down explicitly.
+**What it says.** For a pattern of T steps, the whole-number starts all leave one remainder on division by 2^T, and
+the allowed starting fractions form one exact interval. Both are written down explicitly.
 
 **Why it matters.** It turns Mahler's question into a finite check for each length, the kind of statement a computer
 can test or a proof can iterate.
@@ -749,9 +763,9 @@ or they shift along and need p rounds to return.
 ## G56
 A "centre of mass" for patterns on a prime ring tells exactly how far a cycle drifts.
 
-**What it says.** Give each black square its position, and average the positions in arithmetic modulo p. This
-"phase" moves by exactly one when the ring is turned by one, so it measures drift. A cycle's total drift is the sum
-of the phase changes along it.
+**What it says.** Give each black square its position, and average the positions in clock arithmetic on a dial of p
+hours. This "phase" moves by exactly one when the ring is turned by one, so it measures drift. A cycle's total drift
+is the sum of the phase changes along it.
 
 **Why it matters.** It makes G55's drift computable step by step. Whether the drift can be zero for Rule 30 is still
 open.
@@ -1032,8 +1046,9 @@ started, unless a wall stops one of the steps.
 Whether two surviving Collatz numbers can ever meet reduces to a finite check on step patterns.
 
 **What it says.** Two numbers that survive with the same number of odd steps a and meet at the same value exist
-exactly when two allowed step patterns of a fixed length have offsets equal modulo 3^a. GPT showed this, built the
-two meeting numbers explicitly when such patterns exist, and showed that no meeting is possible below a = 7.
+exactly when two allowed step patterns of a fixed length have offsets that leave the same remainder on division by
+3^a. GPT showed this, built the two meeting numbers explicitly when such patterns exist, and showed that no meeting
+is possible below a = 7.
 
 **Why it matters.** It replaces an open-ended search over numbers with a finite search over patterns for each a,
 which GPT has set out in advance.
@@ -1464,7 +1479,8 @@ next error a coin toss, while the full history pins it down exactly.
 The fourth error after a race depends on three earlier true values together.
 
 **What it says.** Given that the race happened, the fourth error is the exclusive-or of the true values at ticks 1,
-2 and 3. Knowing only the last two leaves it a coin toss; adding the first makes it certain.
+2 and 3 (black when an odd number of them are black). Knowing only the last two leaves it a coin toss; adding the
+first makes it certain.
 
 **Why it matters.** It names exactly the old information that the shorter memories of G113 and G115 missed.
 
@@ -1679,7 +1695,8 @@ at a steady geometric rate remain possible, and the wheel's own angle is rationa
 stretching without limit.
 
 ## G134
-The same holds for every rotation angle whose continued-fraction digits stay bounded.
+The same holds for every rotation angle whose continued-fraction digits (the whole numbers you get by repeatedly
+taking off a number's whole part and turning what is left upside down) stay bounded.
 
 **What it says.** G133's spacing limit extends from the golden ratio to every irrational angle of "bounded type",
 whose continued-fraction digits never grow large.
@@ -1802,7 +1819,8 @@ can produce the code.
 ## G144
 For half-dial codes started at the dial's boundary, exactly which angles pass the repeat test is now known.
 
-**What it says.** Such a code passes with a fixed allowance exactly when the angle's continued-fraction digits are
+**What it says.** Such a code passes with a fixed allowance exactly when the angle's continued-fraction digits (the
+whole numbers you get by repeatedly taking off a number's whole part and turning what is left upside down) are
 eventually all 2 and a related sequence of numerators is eventually odd. Every other angle fails, with an excess
 that grows without bound.
 
@@ -1814,8 +1832,9 @@ wall's own equations.
 ## G145
 Moving the starting point half a turn changes the verdict: the silver half-turn code fails.
 
-**What it says.** For the silver angle, whose continued-fraction digits are all 2, the boundary-start code passes
-the repeat test (G144). Starting half a turn later produces repeats whose excess grows without bound, the first one
+**What it says.** For the silver angle, whose continued-fraction digits (the whole numbers you get by repeatedly
+taking off a number's whole part and turning what is left upside down) are all 2, the boundary-start code passes the
+repeat test (G144). Starting half a turn later produces repeats whose excess grows without bound, the first one
 already seen by Local at period seven, so that code is excluded.
 
 **Why it matters.** The starting point matters, not just the angle.
@@ -1915,9 +1934,10 @@ walk for long.
 The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 
 **What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of
-times in n's binary digits, overlaps counted. An exact automaton calculation says it passes every necessary repeat
-inequality with no allowance at all. A second construction, built a different way, describes the same language, and
-Local's own code, sharing nothing with GPT's, agrees with brute force.
+times in n's binary digits, overlaps counted. An exact calculation with an automaton (a small machine that reads the
+digits one at a time) says it passes every necessary repeat inequality with no allowance at all. A second
+construction, built a different way, describes the same language, and Local's own code, sharing nothing with GPT's,
+agrees with brute force.
 
 **Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
 finiteness question stays open and needs a different kind of argument.
@@ -1931,7 +1951,7 @@ Among all patterns that look locally like Rudin–Shapiro, finite seeds are eith
 **What it says.** Take every pattern whose short stretches all occur in the Rudin–Shapiro sequence. For almost all
 of them, the forced left half never turns white for good, so no finite seed makes them. If even one of them does
 come from a finite seed, then so does the same pattern started at any later tick, and these exceptions are countable
-but turn up close to every member of the family.
+(they could be listed one by one) but turn up close to every member of the family.
 
 **Why it matters.** "Almost every member fails" does not decide any particular member, including the original
 sequence. A direct argument about its own left half is still needed.
@@ -2201,8 +2221,8 @@ fare rule need only work for the trains that actually stop.
 Even on the clock states really reached, the three distances lose the timing.
 
 **What it says.** At period 8, a real step reached 190 steps from the seed's edge takes five ticks and leaves the
-three distances and the period unchanged. So no budget built on those numbers works below five ticks per step on that reached edge: it
-would need 5 per step there. Local and GPT reconstructed the step independently.
+three distances and the period unchanged. So no budget built on those numbers works below five ticks per step on
+that reached edge: it would need 5 per step there. Local and GPT reconstructed the step independently.
 
 **Why it matters.** Keeping to the real history repaired period 4 but not period 8, so the three-distance family is
 closed below five ticks per step on these reached states too.

@@ -13,7 +13,7 @@ Among all patterns that look locally like Rudin–Shapiro, finite seeds are eith
 **What it says.** Take every pattern whose short stretches all occur in the Rudin–Shapiro sequence. For almost all
 of them, the forced left half never turns white for good, so no finite seed makes them. If even one of them does
 come from a finite seed, then so does the same pattern started at any later tick, and these exceptions are countable
-but turn up close to every member of the family.
+(they could be listed one by one) but turn up close to every member of the family.
 
 **Why it matters.** "Almost every member fails" does not decide any particular member, including the original
 sequence. A direct argument about its own left half is still needed.

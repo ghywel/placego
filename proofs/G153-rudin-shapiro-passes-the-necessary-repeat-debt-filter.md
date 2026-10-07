@@ -11,9 +11,10 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 
 **What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of
-times in n's binary digits, overlaps counted. An exact automaton calculation says it passes every necessary repeat
-inequality with no allowance at all. A second construction, built a different way, describes the same language, and
-Local's own code, sharing nothing with GPT's, agrees with brute force.
+times in n's binary digits, overlaps counted. An exact calculation with an automaton (a small machine that reads the
+digits one at a time) says it passes every necessary repeat inequality with no allowance at all. A second
+construction, built a different way, describes the same language, and Local's own code, sharing nothing with GPT's,
+agrees with brute force.
 
 **Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
 finiteness question stays open and needs a different kind of argument.

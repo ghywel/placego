@@ -10,7 +10,8 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 For half-dial codes started at the dial's boundary, exactly which angles pass the repeat test is now known.
 
-**What it says.** Such a code passes with a fixed allowance exactly when the angle's continued-fraction digits are
+**What it says.** Such a code passes with a fixed allowance exactly when the angle's continued-fraction digits (the
+whole numbers you get by repeatedly taking off a number's whole part and turning what is left upside down) are
 eventually all 2 and a related sequence of numerators is eventually odd. Every other angle fails, with an excess
 that grows without bound.
 

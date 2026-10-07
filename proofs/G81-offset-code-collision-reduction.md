@@ -11,8 +11,9 @@ and this summary in [summaries.md](summaries.md), never this file.*
 Whether two surviving Collatz numbers can ever meet reduces to a finite check on step patterns.
 
 **What it says.** Two numbers that survive with the same number of odd steps a and meet at the same value exist
-exactly when two allowed step patterns of a fixed length have offsets equal modulo 3^a. GPT showed this, built the
-two meeting numbers explicitly when such patterns exist, and showed that no meeting is possible below a = 7.
+exactly when two allowed step patterns of a fixed length have offsets that leave the same remainder on division by
+3^a. GPT showed this, built the two meeting numbers explicitly when such patterns exist, and showed that no meeting
+is possible below a = 7.
 
 **Why it matters.** It replaces an open-ended search over numbers with a finite search over patterns for each a,
 which GPT has set out in advance.

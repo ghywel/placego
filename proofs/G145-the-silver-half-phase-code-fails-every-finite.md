@@ -10,8 +10,9 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 Moving the starting point half a turn changes the verdict: the silver half-turn code fails.
 
-**What it says.** For the silver angle, whose continued-fraction digits are all 2, the boundary-start code passes
-the repeat test (G144). Starting half a turn later produces repeats whose excess grows without bound, the first one
+**What it says.** For the silver angle, whose continued-fraction digits (the whole numbers you get by repeatedly
+taking off a number's whole part and turning what is left upside down) are all 2, the boundary-start code passes the
+repeat test (G144). Starting half a turn later produces repeats whose excess grows without bound, the first one
 already seen by Local at period seven, so that code is excluded.
 
 **Why it matters.** The starting point matters, not just the angle.

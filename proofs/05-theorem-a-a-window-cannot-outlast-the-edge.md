@@ -15,11 +15,12 @@ News from the edge travels inward at the same speed, and nothing on the way can 
 keep a steady rhythm of period P from some moment on, the rhythm must break before news sent from the edge at that
 moment could reach them, give or take two periods.
 
-**Why it matters.** It is Jen's classic theorem with a stopwatch attached: not just "the rhythm breaks some day" but
-"by this time", which is the kind of bound a proof can use. It assumes nothing about the right side, so the rhythm
-is interrupted whether or not anything there "sees" the wave coming (the owner's reading). Nor can the wave be
-blocked: the proof relies on Rule 30 passing its left input straight through and on the edge always advancing, and a
-rule that could block news from the left would fall outside it.
+**Why it matters.** It is Jen's classic theorem (two neighbouring columns cannot both end up repeating, if the seed
+is finite) with a stopwatch attached: not just "the rhythm breaks some day" but "by this time", which is the kind of
+bound a proof can use. It assumes nothing about the right side, so the rhythm is interrupted whether or not anything
+there "sees" the wave coming (the owner's reading). Nor can the wave be blocked: the proof relies on Rule 30 passing
+its left input straight through and on the edge always advancing, and a rule that could block news from the left
+would fall outside it.
 
 **An everyday picture.** A ripple from the edge of a pond: you can bob in a steady rhythm only until the wave
 reaches you, eyes open or shut.

@@ -10,8 +10,8 @@ coupling window"; rebuild with `python3 proofs/build.py`. Edit the proof in PROO
 
 The exact finite form of Mahler's two conditions over T steps: a class of whole numbers and a window of fractions.
 
-**What it says.** For a pattern of T steps, the whole-number starts form one class modulo 2^T, and the allowed
-starting fractions form one exact interval. Both are written down explicitly.
+**What it says.** For a pattern of T steps, the whole-number starts all leave one remainder on division by 2^T, and
+the allowed starting fractions form one exact interval. Both are written down explicitly.
 
 **Why it matters.** It turns Mahler's question into a finite check for each length, the kind of statement a computer
 can test or a proof can iterate.

@@ -10,9 +10,9 @@ coordinate"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md
 
 A "centre of mass" for patterns on a prime ring tells exactly how far a cycle drifts.
 
-**What it says.** Give each black square its position, and average the positions in arithmetic modulo p. This
-"phase" moves by exactly one when the ring is turned by one, so it measures drift. A cycle's total drift is the sum
-of the phase changes along it.
+**What it says.** Give each black square its position, and average the positions in clock arithmetic on a dial of p
+hours. This "phase" moves by exactly one when the ring is turned by one, so it measures drift. A cycle's total drift
+is the sum of the phase changes along it.
 
 **Why it matters.** It makes G55's drift computable step by step. Whether the drift can be zero for Rule 30 is still
 open.

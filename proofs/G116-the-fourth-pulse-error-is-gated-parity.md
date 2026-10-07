@@ -11,7 +11,8 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 The fourth error after a race depends on three earlier true values together.
 
 **What it says.** Given that the race happened, the fourth error is the exclusive-or of the true values at ticks 1,
-2 and 3. Knowing only the last two leaves it a coin toss; adding the first makes it certain.
+2 and 3 (black when an odd number of them are black). Knowing only the last two leaves it a coin toss; adding the
+first makes it certain.
 
 **Why it matters.** It names exactly the old information that the shorter memories of G113 and G115 missed.
 

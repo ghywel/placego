@@ -11,8 +11,8 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 Even on the clock states really reached, the three distances lose the timing.
 
 **What it says.** At period 8, a real step reached 190 steps from the seed's edge takes five ticks and leaves the
-three distances and the period unchanged. So no budget built on those numbers works below five ticks per step on that reached edge: it
-would need 5 per step there. Local and GPT reconstructed the step independently.
+three distances and the period unchanged. So no budget built on those numbers works below five ticks per step on
+that reached edge: it would need 5 per step there. Local and GPT reconstructed the step independently.
 
 **Why it matters.** Keeping to the real history repaired period 4 but not period 8, so the three-distance family is
 closed below five ticks per step on these reached states too.

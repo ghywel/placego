@@ -10,14 +10,20 @@ and this summary in [summaries.md](summaries.md), never this file.*
 
 In Rule 30's simpler cousin, Rule 90, the blinking middle is impossible, proved with Pascal's triangle.
 
-**What it says.** Rule 90 just adds neighbours (exclusive-or). Its patterns are Sierpinski triangles, and at times
-that are powers of 2 the middle must be white twice in a row, so it cannot blink for ever.
+**What it says.** Rule 90 just adds neighbours: a square turns black when exactly one of its two neighbours was
+black. Started from one black square, it draws a Sierpinski triangle (described below). The same picture appears in
+Pascal's triangle, the triangle of numbers in which each is the sum of the two above it, if the odd numbers are
+coloured black. At the times that are powers of 2 (1, 2, 4, 8, ...) a single square's pattern is white everywhere
+except at its two far ends. So once those times are larger than the seed, the middle is white twice in a row, and it
+cannot blink for ever.
 
-**Why it matters.** It shows the kind of proof that works for the linear cousin, and why Rule 30, with its "or", is
-harder: the clean arithmetic is missing.
+**Why it matters.** It shows the kind of proof that works for the linear cousin, and why Rule 30 is harder: its rule
+mixes that adding with an "or" (black if either square is black), and the clean arithmetic is lost.
 
-**An everyday picture.** Sierpinski's triangle of triangles: every power of 2 is a fresh, empty triangle at the
-centre.
+**An everyday picture.** Draw a triangle, join the midpoints of its sides and cut out the middle piece; then do the
+same to each of the three smaller triangles left, and so on for ever. That is Sierpinski's triangle, the pattern
+Rule 90 draws. Its holes open at the rows numbered by powers of 2, and each time the newest and biggest one is an
+empty triangle right at the centre, which a finite seed is soon too small to fill.
 
 ## The formal statement and proof
 

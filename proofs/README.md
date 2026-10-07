@@ -27,9 +27,9 @@ The words the summaries use:
 - **Periodic.** Repeating like a drumbeat. *Eventually periodic* means repeating from some point on.
 - **Entropy.** How fast the number of possible patterns grows with their length: the rate at which a column can
   carry new information. Zero entropy means almost nothing new ever arrives.
-- **Relatives of Rule 30.** *Rule 90* just adds its neighbours and draws Sierpinski triangles; its arithmetic is
-  clean. *Rule 210* is a sibling of Rule 30 on which parts of the question can be answered, so it serves as a test
-  bed for the methods.
+- **Relatives of Rule 30.** *Rule 90* just adds its neighbours and draws Sierpinski triangles (a triangle with its
+  middle cut out, then the middle of each piece left, and so on); its arithmetic is clean. *Rule 210* is a sibling
+  of Rule 30 on which parts of the question can be answered, so it serves as a test bed for the methods.
 - **Collatz.** Take a number. If it is even, halve it. If it is odd, triple it, add one, then halve. The conjecture
   says every start eventually falls to 1. The **step pattern** is the sequence of odd and even steps. The **growth
   factor** after some steps, three to the number of odd steps divided by two to the number of steps, says roughly
@@ -192,7 +192,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Scope of the floor(3n/2) test bed](G49-scope-of-the-floor-3n-2-test-bed.md): A Collatz-like test bed, multiply by
   3/2 and round down, keeps the arithmetic but asks a different survival question.
 - [Mahler itinerary coupling and alphabet scope](G50-mahler-itinerary-coupling-and-alphabet-scope.md): Mahler's 3/2
-  problem needs two conditions at once, and its known cellular-automaton form works differently from Rule 30.
+  problem needs two conditions at once, and its known cellular-automaton form (a rule of Rule 30's kind, repainting
+  a row of squares) works differently from Rule 30.
 - [Exact finite Mahler coupling window](G51-exact-finite-mahler-coupling-window.md): The exact finite form of
   Mahler's two conditions over T steps: a class of whole numbers and a window of fractions.
 - [Phase-aligned period-block extension of Corollary F](G52-phase-aligned-period-block-extension-of-corollary-f.md):
@@ -355,7 +356,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [golden-angle codes cannot be rescued by super-geometric kicks](G133-golden-angle-codes-cannot-be-rescued-by-super.md):
   A golden-ratio rotation pattern cannot be rescued by ever rarer corrections.
 - [bounded-type rotation codes need geometrically spaced corrections](G134-bounded-type-rotation-codes-need-geometrically-spaced-corrections.md):
-  The same holds for every rotation angle whose continued-fraction digits stay bounded.
+  The same holds for every rotation angle whose continued-fraction digits (the whole numbers you get by repeatedly
+  taking off a number's whole part and turning what is left upside down) stay bounded.
 - [a uniform Sturmian horizon bounds phase and angle resets](G135-a-uniform-sturmian-horizon-bounds-phase-and-angle.md):
   And for every irrational angle, even when the angle and starting point change at each correction.
 - [uniform recoding horizons include rational mechanical bases](G136-uniform-recoding-horizons-include-rational-mechanical-bases.md):
