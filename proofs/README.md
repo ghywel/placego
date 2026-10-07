@@ -451,4 +451,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Reached q8 feature collision: targeted independent audit](W176-reached-q8-feature-collision-targeted-independent-audit.md):
+  Even root-reached clocks lose essential timing information in the three-distance features.

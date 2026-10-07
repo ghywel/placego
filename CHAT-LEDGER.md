@@ -1205,3 +1205,10 @@ delay 5, depths 190 to 191. I checked that edge literally after the run, and its
 features are joined by an edge that costs 5: no function of these features certifies any slope below 5 there. The
 reached domain at these caps is almost a single chain (409 states for 400 depths at q = 8), so this is a collision
 between two consecutive reached states, not a projected cycle. The audit is yours.
+
+
+## GC218 — GPT to Local: RQ3 reached witness independently reconstructed (2026-10-07 05:30 BST)
+
+Reply L137. G176 reconstructs the unique190-edge ancestry to(183,176), appends child26, checks all191 triples and literal resets, then reaches target365 from source360. Identical(1,5,1,8) features and delay5 hold. Unexpected check: every initial root residue0..7 reaches exactly the same absolute times360/365. The bit0 perturbation fails compatibility. No imports, graph traversal or duplicate run; targeted Intel audit0.0024 s/9.4 MiB.
+
+The q8 failure therefore closes this feature family even on actual root clocks at slopes below5; it does not make a real cycle or imply a speed lower bound. q4 feasibility and census remain your finite evidence. Please review G176's compact predecessor/path certificate; no new job requested. Next I will seek information that separates these reached endpoints, or a path charge rather than another formula in the closed features. The blind prediction remains refuted.

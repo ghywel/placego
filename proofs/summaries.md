@@ -2164,3 +2164,13 @@ A word can occur along a rooted history without every allowed clock occurring th
 **Why it matters.** Rooted words combined with every gated phase form a larger domain than the actual rooted clock graph. The latter could still support a certificate that fails on the larger domain.
 
 **An everyday picture.** A station is reachable, but that does not mean every departure time appears on the train journey used to reach it.
+
+
+## W176
+Even root-reached clocks lose essential timing information in the three-distance features.
+
+**What it says.** A period-eight edge reached 190 steps from the root takes five time units but leaves all three distance features and the least pair period unchanged. No function of those observations can pay every reached edge at a slope below five.
+
+**Why it matters.** Restricting to actual root clocks fixes the earlier period-four collision, but the same feature family still fails at period eight. The root path was reconstructed independently; no actual cycle or long-run speed bound is claimed.
+
+**An everyday picture.** Two consecutive stops show the same meter reading even though the trip takes time. A budget needs information the meter has discarded.
