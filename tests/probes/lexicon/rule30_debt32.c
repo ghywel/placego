@@ -25,6 +25,19 @@
  * Other thirteen match RD16; maximum60 remains inherited from period16.
  * Single-party finite statistic, independent review pending; no later bound.
  */
+/* DIAGNOSTIC ADDENDUM RD32-W (2026-10-07), before diagnostic replay:
+ * --witness captures existing interval[725127,725155] on history N5=770532.
+ * P3 blind uncertain: all28 driver words have8 black bits in common period16.
+ * C3 the retained actual interval has elapsed130 and doubled debt120.
+ * C4 scalar black-count agreement and original RD32 controls required.
+ * CF2 two least-period16 words of weight8 have different reset delays atT0.
+ * U each actual delay obeys delta<=16-weight+1; phase-aligned gaps inspected.
+ * Same frontier/caps; no extension or changed original blind outcomes.
+ * DIAGNOSTIC OUTCOME: Intel CPU0.599s, all original controls reproduced.
+ * C3/C4/CF2/U PASS; P3 REFUTED, weights1..14, maximum delay16.
+ * Two actual one-hot drivers at725146 and725149 each wait16.
+ * Full diagnostic trace outside Git; no larger-period ancestry claim.
+ */
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -41,7 +54,8 @@ static int isrot(uint32_t a,uint32_t b){for(int k=1;k<32;k++)if(rot(a,k)==b)retu
 static int period(uint32_t a){for(int p=1;p<32;p*=2)if(rot(a,p)==a)return p;return 32;}
 static int delay(uint32_t y,int64_t T){return y?__builtin_ctz(rot(y,T&31))+1:0;}
 static int scalar(uint32_t y,int64_t T){if(!y)return 0;for(int i=0;i<32;i++)if((y>>((T+i)&31))&1)return i+1;return -1;}
-typedef struct{uint32_t x,y;int64_t d,T,m,D,md,mT,wa,wb,wt,entry;} Walk;
+typedef struct{uint32_t x,y;int64_t T;int dt;} Frame;
+typedef struct{Frame frames[28];int captured;uint32_t x,y;int64_t d,T,m,D,md,mT,wa,wb,wt,entry;} Walk;
 static Walk walks[MAXW];
 static const int64_t ns[16]={87867,183184,196189,229338,253537,271596,291257,527724,551910,555813,575211,634886,645655,667052,770532,894235};
 static const int64_t ds[16]={57,80,79,87,79,79,73,79,79,79,85,80,79,85,120,120};
@@ -58,7 +72,13 @@ int main(int argc,char**argv){
  assert(delay(1u<<31,31)==1&&delay(1u<<31,0)==32);
  assert((7-5)>0); /* zero edge after adjusted+7 leaves the old minimum unchanged */
  puts("C0 CF preflight PASS");
- if(argc>1){assert(!strcmp(argv[1],"--smoke"));return 0;}
+ int diagnostic=argc>1&&!strcmp(argv[1],"--witness");
+ if(argc>1&&!diagnostic){assert(!strcmp(argv[1],"--smoke"));return 0;}
+ if(diagnostic){
+  assert(period(0xff00ff00u)==16&&period(0xaaa9aaa9u)==16);
+  assert(__builtin_popcount(0xff00ff00u)==16&&__builtin_popcount(0xaaa9aaa9u)==16);
+  assert(delay(0xff00ff00u,0)==9&&delay(0xaaa9aaa9u,0)==1);
+ }
  clock_t start=clock();int nw=1,branches=0,doublings=0;uint32_t seen=0;
  int64_t steps=0,maxD=0;walks[0]=(Walk){.y=0xffffffffu};
  for(int i=0;i<nw;i++){
@@ -68,6 +88,9 @@ int main(int argc,char**argv){
     puts("CAP partial: no frontier certificate");return 2;
    }
    int dt=delay(w.y,w.T);assert(dt==scalar(w.y,w.T));
+   if(diagnostic&&w.d>=725127&&w.d<725155){
+    w.frames[w.d-725127]=(Frame){w.x,w.y,w.T,dt};w.captured++;
+   }
    int64_t oldD=w.D,oldh=2*w.T-5*w.d-w.m;
    uint32_t c=0;int fork=0,doubled=0;
    if(w.y)c=child(w.x,w.y);
@@ -92,6 +115,19 @@ int main(int argc,char**argv){
   }
   assert(w.entry&&w.d==END);assert(w.D==2*w.wt-5*(w.wb-w.wa));
   walks[i]=w;if(w.D>maxD)maxD=w.D;
+  if(diagnostic&&w.entry==770532){
+   assert(w.captured==28);int total=0,balanced=1,minweight=16,maxweight=0,maxdelay=0;
+   for(int k=0;k<28;k++){
+    Frame f=w.frames[k];assert(period(f.y)<=16);int count=__builtin_popcount(f.y&65535u),scan=0;
+    for(int t=0;t<16;t++)scan+=(f.y>>t)&1u;assert(scan==count);
+    assert(f.dt<=16-count+1);total+=f.dt;balanced&=count==8;
+    if(count<minweight)minweight=count;if(count>maxweight)maxweight=count;if(f.dt>maxdelay)maxdelay=f.dt;
+    printf("FRAME depth=%d x16=%u y16=%u aligned16=%u T=%lld delay=%d weight=%d\n",
+     725127+k,f.x&65535u,f.y&65535u,rot(f.y,f.T&31)&65535u,(long long)f.T,f.dt,count);
+   }
+   assert(total==130&&2*total-5*28==120);
+   printf("DIAGNOSTIC C3 C4 CF2 U PASS P3=%d minWeight=%d maxWeight=%d maxDelay=%d elapsed=%d\n",balanced,minweight,maxweight,maxdelay,total);
+  }
   printf("PREFIX N5=%lld debt2=%lld h2=%lld witness=%lld,%lld elapsed=%lld clock=%lld\n",
    (long long)w.entry,(long long)w.D,(long long)(2*w.T-5*w.d-w.m),(long long)w.wa,(long long)w.wb,(long long)w.wt,(long long)w.T);
  }

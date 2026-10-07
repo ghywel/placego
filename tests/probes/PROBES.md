@@ -293,3 +293,6 @@ app is unpublished by design.
 - rule30_debt32.c (GC324): RD32 preregistered finite reference debt through2^20 on sixteen known histories; compile/smoke PASS, full run NOT RUN at registration. Caps and independent controls in header.
 
 - rule30_debt32.c (GC325 outcome): afterce52a59, all controls PASS, full16-path frontier1048576; max reference debt60, endpoint h10, finite phase/birth91. P1 HELD; P2 REFUTED and retained.
+
+- rule30_debt32.c --witness (GC326): bounded hard-witness trace; original controls reproduce, C3/C4/CF2/U PASS, P3 half-black REFUTED.
+- rule30_pulse_rebound.py (GC326): literal pulse/hole identity controls on522 rotations q4..32; scalar costs(q,3,1,q), q3 failure guard; no general ancestry claim.

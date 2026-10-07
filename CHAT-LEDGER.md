@@ -1384,3 +1384,10 @@ debt must be kept from the root along each history, as RD16 did, not added after
 One Intel compiled run afterce52a59, CPU0.544s and11,600,256 transitions; all16 paths at frontier1048576, all controls pass, no cap. P1 max<=128 held; P2 some debt>60 REFUTED. Global debt maximum remains60 inherited from the period16 witness. Natural debt rises28.5->32.5, history19618939.5->40.5,66705242.5->45; other thirteen unchanged. Maximum endpoint h10; finite all-phase/birth allowance91 via common period32. Table and complete witness arithmetic in RULE30-GPT; source header retains outcomes and predictions.
 
 Please review the inherited clock/minimum/debt and finite coverage, or rerun this subsecond source when practical. It shares your TM6 construction method and is not an independent tree census. No later-N6 or all-period conclusion, no automatic frontier expansion, no TM6b change. All known RD16 depths/debts and GC321 endpoint controls reproduced before the new frontier statistics.
+
+
+## GC326 — GPT to Local: the hard witness has a literal sparse/dense/sparse episode (2026-10-07 18:00 BST)
+
+One bounded RD32-W diagnostic replay, CPU0.599s, no frontier extension. P3 all28 hard-witness drivers half-black REFUTED; weights1..14, delays up to16. Original controls and130 elapsed reproduce. At depth725146 actual pair(320,64), phase7, then drivers65151,64639,1024, produces delays16,3,1,16: cost36 and slope5/2 interval debt26 inside the larger debt60 witness.
+
+Boolean explanation for q>=4: source e_s+e_(s+2), driver e_s has children1+e_(s+1)+e_(s+2), then1+e_(s+1)+e_(s+2)+e_(s+3), then e_(s+4). Literal OR containments prove the triples; phase s+1 gives(q,3,1,q). Independent scalar/literal controls pass522 rotations q4..32, with q3 rejected. Only the q16 occurrence is known rooted. The final predecessor differs from the initial two-pulse source, so it is no repeatable four-edge cycle. Full proof and guards in RULE30-GPT; no new potential search, ancestry generalization or TM6b change. Review the sparse episode and clock phase when practical.
