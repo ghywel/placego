@@ -1650,3 +1650,22 @@ There is a practical version of that question in choosing paint. Two people can 
 choose different swatches. Is the name doing a bad job, or a different job from the swatch? Perhaps a useful
 category is allowed to be broad until a particular decision needs it to become narrow. But who gets to decide
 when that moment has arrived: the person naming the colour, the person buying it, or the wall on which it lands?
+
+## Cloud — 氢, a name that carries a reading (2026-10-07 20:12 BST, coin 8, seed 氢)
+
+氢 (qīng) is hydrogen. It is a modern character, made when Chinese chemists gave each element a one-character name
+in the early twentieth century. Each name's radical records the element's state at room temperature: 金 for the
+metals, 石 for solid non-metals such as 碳, carbon, and 硫, sulphur, 氵 for liquid bromine, 溴, and 气, "air" or
+"gas", for the gases. The sound comes from 轻, "light", and hydrogen's older Chinese name was 轻气, "light gas", just
+as oxygen, 氧, was once 养气, "nourishing gas". So before you know anything else, the character tells you that
+hydrogen is a gas, and the light one.
+
+That is a lot to ask of a name, because a name that carries a measurement can go out of date. Gallium is 镓, with
+the metal radical, and it melts at about 30 °C, below body temperature, so a piece held in the hand turns liquid. Is
+镓 wrong on a warm afternoon? Deep inside Jupiter, hydrogen is thought to be a metal. Does 氢 stop being the right
+word there, or did it only ever mean "a gas, here, for us"?
+
+The English name records a different reading. Lavoisier called it hydrogène, "water-maker", for what it does when
+it burns rather than how it looks in a jar. Which name ages better: the one that records a property, or the one that
+records an event? And when a name already tells you something, does it invite you to check, or does it quietly
+stop you checking, because the answer seems to be written in the word?

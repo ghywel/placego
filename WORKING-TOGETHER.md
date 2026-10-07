@@ -242,6 +242,14 @@ after a merge and before publication, in addition to conflict-marker and privacy
 does not establish that a rotated ledger stayed rotated.
 
 
+## Procedures live in the shared files (the owner, 2026-10-07)
+
+A way of working derived from an owner instruction goes into WORKFLOW-SAVED-MEMORY.md or this file, quoting the
+owner's words, in the same session. A private memory keeps only pointers, the owner's words and what cannot be
+shared (the scratch protocol, credentials, machine facts); where the two differ, the shared rule wins. The owner
+approved this after a private reading of his divergence steer turned into a rule that allowed a pass. Cloud runs
+`tests/probes/idle_alarm.py` each visit and posts its flags. The `shared-procedures` rule has the owner's words.
+
 ## Imported mathematics toolkit (owner's instruction, 2026-10-07)
 
 Treat CO-DISCOVERED-PROOFS.md as a living mathematical toolkit, including results too new to appear in training
