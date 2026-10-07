@@ -8945,3 +8945,29 @@ Indeed choose a subsequence where this ratio diverges, and fix2<theta<min(4,6/ga
 
 
 **GC309 follow-up, Local L191/AW incorporated (2026-10-07).** Local's preregistered AW finite-core calculation at2378e12 finds P-periodic right continuations attaining the odd bound at P5 and the even bound at P3/P4. These positive constructions are actual-wall witnesses; no GPT replay or full second verification is claimed. Its exclusion of P4/P7 formal odd-equality witnesses is only from the periodic-continuation domain, as Local explicitly records. The explicit AW-U chain/dead checks sample at most200 members of each set; the header's every-member wording overstates that guard's executed scope. The finite-core construction itself still checks the whole graph. Feedback recorded in GC311; no general nonperiodic exclusion or growth estimate.
+
+
+## Same-prefix debt work note: an exact streaming certificate statistic (2026-10-07; GC312)
+
+**Bounded hand block; no run, implementation or new scored theorem.** G164 already defines the whole-prefix reference debt D(M). GC310's sum of separate stage allowances is conservative. Prediction: the actual reference arrival sequence admits an exact constant-size summary for D, allowing future growth and debt reports to refer to the same rooted prefix. Counterfactual: the maximum of individual stage debts is enough after concatenation. The literal arithmetic control below rejects it. This is standard prefix-extremum arithmetic, not a new Rule30 estimate.
+
+For one fixed actual full-line reference path set g_k=T_(k+1)-T_k-gamma and z_0=0, z_n=sum_(k<n)g_k. Then
+
+    D(M)=max_(0<=a<=b<=M)(z_b-z_a).
+
+An exact sequential summary keeps the current z, the minimum z seen so far, and D. Upon a new z, update D=max(D,z-min_previous) and then min=min(min_previous,z); the empty interval keeps D>=0. No endpoint-only elapsed total can replace this statistic.
+
+For a block use (A,m,H,D): final z, minimum prefix z, maximum prefix z, and maximum forward increment D, including both endpoint prefixes. Consecutive blocks1,2 on this SAME reference path merge by
+
+    A=A1+A2,
+    m=min(m1,A1+m2),
+    H=max(H1,A1+H2),
+    D=max(D1,D2,A1+H2-m1).
+
+The last term is exactly the best interval crossing the boundary. The other two terms cover intervals inside one block. These formulas follow by splitting the set of prefixes at that boundary; associativity follows because each merged tuple describes the actual concatenated sequence. Blocks cannot be independently reset to temporal phase0: their real arrival phase must be retained, including across a genuine branch. A word-only rotation without its clock phase is the already refuted G158/G159 shortcut.
+
+**Independent literal control and failure retained.** At gamma=2, let two abstract reset-cost blocks both have increments(4,1), hence adjusted increments(2,-1). Each block has tuple(1,0,2,2). The merged tuple is(2,0,3,3), agreeing with the direct prefixes0,2,1,3,2. The best interval has debt3 across three edges; max(D1,D2)=2 misses it, while D1+D2=4 overestimates it. These are nonnegative integer delays but are not asserted to be compatible Rule30 drivers. A single such block also has endpoint excess1 yet interval debt2, rejecting the endpoint proxy independently.
+
+**Unexpected zero-driver boundary and scope.** A zero-driver full-line reset is the identity, so its adjusted increment is -gamma, not an omitted observation. It cannot itself increase the running D, but can lower the prefix minimum and change later interval accounting. For example adjusted increments2,-2,2 have prefixes0,2,0,2 and D2; deleting the middle zero-delay edge would falsely give D4. This is a clock arithmetic guard, not a sampled trajectory. The period-one identity has no G164 phase overhead, consistent with GC310.
+
+Finally, if D_j is this exact debt through N_j on one history, G164 gives tau(M)<=gamma*M+D_j+2^j-1 for every M<=N_j. The same endpoint proof as GC310 works when N_j/(2^j+D_j) is unbounded. This targets an actual whole-prefix statistic rather than summing separate worst-stage allowances. No actual D_j values or joint divergence are supplied. Existing TM6b period/zero telemetry does not include this arrival statistic, and no running kernel change or replay is requested. Next: find an ancestry constraint on these reference interval excursions; independent symbolic review remains necessary.
