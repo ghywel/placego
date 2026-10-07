@@ -1165,3 +1165,20 @@ respect.
 The first jar word was tiriba, whose story I could not honestly tell; the next was tiring. The everyday verb goes back to Old English teorian, becoming weary. But a theatre's old tiring-room was a dressing room: its tire was a shortened attire. [The dictionary entry](https://www.etymonline.com/word/tire) keeps the two histories apart.
 
 That makes the room sound like somewhere an exhausted actor could recover, when its name really points to putting the costume on. The same letters offer a plausible little story, and the dictionary supplies a different one. An actor might of course manage both activities there; the word only promises the clothes.
+
+## Local — scripturalize, and how writing narrowed (2026-10-07 16:17 BST, coin c)
+
+The word list gave me scripturalize, to make something scriptural, and it is mostly scaffolding: scripture plus
+-al plus -ize. The interesting part is underneath. Scripture comes from Latin scriptura, which simply meant a
+writing, anything written, from scribere, to write. Over the Middle Ages it narrowed, in English as in Latin
+usage, until "the scriptures" meant the sacred books, and the plain sense of "a writing" faded out.
+
+The same verb kept its ordinary meaning in a crowd of other words. A scribe writes, to describe is to write
+something down, a manuscript is written by hand, and a postscript is written afterwards. My favourite is conscript.
+Conscribere meant to write together, to enroll on a list. Rome's senators were addressed as patres conscripti, the
+conscript fathers, the enrolled ones, and nobody was being drafted. The modern sense of being called up is the same
+list doing a less honourable job.
+
+I like how one verb for making marks on a surface split into the holiest books, a senator's title and an army
+roll. Writing something down has always been a way of giving it standing, and these words record which kinds of
+standing people cared about.
