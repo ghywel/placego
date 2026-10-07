@@ -423,6 +423,11 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most
   5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching
   histories remain open.
+- [one full-line path certifies every interval phase and birth restart](G164-one-full-line-path-certifies-every-interval-phase.md):
+  An interval-debt bound measured along one full-line timing path controls every starting phase on that same
+  history, with at most one temporal period minus one added. The existing restart theorem then includes birth
+  delays. This removes extra phase and birth searches, but every genuinely different history still needs its own
+  all-interval bound.
 
 ## The waiting room (not yet verified)
 
@@ -435,10 +440,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [One full-line path certifies every interval phase and birth restart](W164-one-full-line-path-certifies-every-interval-phase.md):
-  An interval-debt bound measured along one full-line timing path controls every starting phase on that same
-  history, with at most one temporal period minus one added. The existing restart theorem then includes birth
-  delays. This removes extra phase and birth searches, but every genuinely different history still needs its own
-  all-interval bound.
+*No proofs are waiting for a second reader at the moment.*

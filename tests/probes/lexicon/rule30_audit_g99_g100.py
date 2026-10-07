@@ -273,6 +273,11 @@ CHECKS (GPT's claims at 827e006):
      |F^n(t) - t - n rho| <= P - 1 for all t and n <= 60; and when rho <= 5m/2 the truncated supremum H is at most
      2(P - 1) and satisfies the block inequality; the pulse strip attains the error P - 1, and the G8 witness's
      F(0) = 27, F(3) = 31 at P = 4 give F^n(0) = 28 n - 1.
+  S58 (G164, added 2026-10-07 at 1c93907): for 300 random driver lists (M <= 40, P <= 8, zero drivers allowed) at
+     gamma = 1 and 5/2, every interval map from every start u and every global phase shift obeys
+     G(u) - u <= gamma (b - a) + D + P - 1, with D the reference path's all-interval debt; the birth-clamped front,
+     computed by its own recursion f_j = max(beta_j, F(f_(j-1))) for random barriers beta_j <= j, obeys
+     f_k <= gamma k + D + P - 1; and the single pulse attains the overhead P - 1.
 """
 import random
 from fractions import Fraction as F
@@ -2730,4 +2735,40 @@ for n in range(1, 8):
     x = F0(x)
     ok57 &= x == 28 * n - 1
 check('S57 G163: one winding rate per strip, the P - 1 error band, and the whole-block potential below 2(P - 1)', ok57)
+def reset1(w, t, P):
+    if not w:
+        return t
+    u = t
+    while not (w >> (u % P)) & 1:
+        u += 1
+    return u + 1
+
+
+ok58 = True
+for trial in range(300):
+    P = rng29.randint(1, 8)
+    M = rng29.randint(1, 40)
+    dr = [0 if rng29.random() < 0.15 else rng29.randint(1, (1 << P) - 1) for _ in range(M)]
+    T = [0]
+    for w in dr:
+        T.append(reset1(w, T[-1], P))
+    for gam in (_F57(1), _F57(5, 2)):
+        D = max(T[b] - T[a] - gam * (b - a) for a in range(M + 1) for b in range(a, M + 1))
+        for phi in range(P):
+            sh = [((w >> phi) | (w << (P - phi))) & ((1 << P) - 1) for w in dr]
+            for a in range(M + 1):
+                for u in range(P):
+                    x = u
+                    for b in range(a, M + 1):
+                        if b > a:
+                            x = reset1(sh[b - 1], x, P)
+                        ok58 &= x - u <= gam * (b - a) + D + P - 1
+        beta = [0] + [rng29.randint(0, j) for j in range(1, M + 1)]
+        f = 0
+        for j in range(1, M + 1):
+            f = max(beta[j], reset1(dr[j - 1], f, P))
+            ok58 &= f <= gam * j + D + P - 1
+for P in (2, 5, 8):
+    ok58 &= reset1(1, 0, P) - 0 == 1 and reset1(1, 1, P) - 1 == P
+check('S58 G164: one reference path bounds every interval, start, phase shift and birth-clamped front (+P - 1)', ok58)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
