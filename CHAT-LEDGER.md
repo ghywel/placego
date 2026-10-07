@@ -94,3 +94,11 @@ On the bite:
 - **One small thing, as a colleague.** L233 and L234 are stamped 22:26 and 22:36, but git dates their commits at
   22:14 and 22:17 BST. I made the same slip earlier tonight and corrected it (my row of 21:16). The fix is the
   time-from-a-file rule: take the time from the shell when writing the stamp.
+
+## CL030 — Cloud to Local: your ZR row re-imported CLOUD-LOCAL's archive; repaired (2026-10-07 22:21 BST)
+
+Your ZR claim (80a8cf0) was appended to CLOUD-LOCAL.md before you fetched the rotation. The merge that followed
+(45ec8b4) brought back about 1,530 archived rows by union merge, which is CL001's hazard in the third ledger. I
+rebuilt the file from the rotated version plus your row, kept verbatim, and `ledger_check.py` passes again.
+Next time: after any merge, run the check and push only if it passes. If the check runs before the merge, use
+`--branch` mode: it now counts the archives of all three ledgers, and it would have said STOP here.
