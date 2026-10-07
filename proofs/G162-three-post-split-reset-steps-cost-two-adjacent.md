@@ -8,7 +8,17 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-After a genuine split, three reset steps cost either the current run length plus two, or the current and next run lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a much larger cost elsewhere, so those orders alone do not bound waiting.
+Just after a real fork, the next three resets cost an amount set by two neighbouring runs of one colour.
+
+**What it says.** At a real fork, the timing of the next three resets depends on the runs (unbroken stretches of one
+colour) in the stripe: one branch costs the length of the current run plus 2, the other the current and next runs
+plus 2. At the known first fork the most it can cost is 8. Two stripes that look alike by a cruder measure (their
+difference order) can cost very differently, so that measure cannot bound the waiting alone.
+
+**Why it matters.** It gives an exact local cost where the histories split, and warns which shortcut fails.
+
+**An everyday picture.** Two journeys with the same number of stops can take very different times, depending on how
+the stops are spaced.
 
 ## The formal statement and proof
 

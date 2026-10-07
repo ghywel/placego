@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through G160 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through G165 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -1977,8 +1977,9 @@ forks there are, and how long the histories take to settle, stays open.
 Real forks in the tree of edge histories are at least seven steps apart.
 
 **What it says.** After a real fork of G158, the next six steps inward are forced, so along any path real forks come
-at least seven steps apart. At depth n there are at most 2 to the power n/7 different histories. Local found that
-the rooted trees up to period 15 have no real forks at all: each is a single chain.
+at least seven steps apart. At depth n there are at most 2 to the power n/7 different histories. The rooted trees up
+to period 15 have no real forks at all, each being a single chain; at period 16 the first one comes 53,207 steps in,
+as an earlier result (G2.3) had already recorded.
 
 **Why it matters.** It limits how fast the histories can multiply. It does not limit how long a single history can
 run, which is what the settling question needs.
@@ -1999,21 +2000,68 @@ already lies inside the set, so the known obstacle to a fast settling bound (G8'
 visitor, never the daily traffic.
 
 ## G161
+To find the first real fork, follow one history, not all its time-shifted copies.
 
-To find the first genuine branch, follow one representative history instead of all its time rotations. Before such a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is exact but the history may still be long.
+**What it says.** Before the first real fork of G158, every apparent choice is the same history shifted in time, so
+following one of them is enough. The walk stops either at a real fork or at the dead end where the period would grow
+too large, and either answer is exact. It is cheap: at period 16 it took about a second and found the first fork
+53,207 steps in, agreeing with the earlier record (G2.3).
+
+**Why it matters.** It turns a search that ran out of time into a quick, complete test. It says nothing about how
+long the history can be.
+
+**An everyday picture.** To find the first junction on a road, you need only drive one lane of it.
 
 ## G162
+Just after a real fork, the next three resets cost an amount set by two neighbouring runs of one colour.
 
-After a genuine split, three reset steps cost either the current run length plus two, or the current and next run lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a much larger cost elsewhere, so those orders alone do not bound waiting.
+**What it says.** At a real fork, the timing of the next three resets depends on the runs (unbroken stretches of one
+colour) in the stripe: one branch costs the length of the current run plus 2, the other the current and next runs
+plus 2. At the known first fork the most it can cost is 8. Two stripes that look alike by a cruder measure (their
+difference order) can cost very differently, so that measure cannot bound the waiting alone.
+
+**Why it matters.** It gives an exact local cost where the histories split, and warns which shortcut fails.
+
+**An everyday picture.** Two journeys with the same number of stops can take very different times, depending on how
+the stops are spaced.
 
 ## G163
+When one block of stripes repeats for ever, the timing settles to a single average rate, whatever the start.
 
-For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most 5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching histories remain open.
+**What it says.** Repeat a fixed block for ever, and the reset clock of G8 runs at one long-run rate from every
+starting position, never straying from it by more than one period at the block boundaries. If that rate is within
+the allowance (5/2 per step), the block's total debt stays bounded. Costs inside a block, and along histories that
+fork, are not covered: an example Rule 30 itself does not allow (GC198) balances at every block boundary yet runs
+ever deeper into debt inside.
+
+**Why it matters.** It settles the repeating part of the timing problem and isolates what is left.
+
+**An everyday picture.** Walk the same circular route at your own pace and your average speed comes out the same
+whichever gate you set off from.
 
 ## G164
+A timing budget checked along one path holds, give or take one period, for every starting phase and restart.
 
-An interval-debt bound measured along one full-line timing path controls every starting phase on that same history, with at most one temporal period minus one added. The existing restart theorem then includes birth delays. This removes extra phase and birth searches, but every genuinely different history still needs its own all-interval bound.
+**What it says.** Suppose the reset clock's debt is bounded, by D, over every stretch of one timing path. Then on
+the same history every other starting phase has debt at most D plus one period, and an earlier theorem (G9) extends
+this to restarts after a birth. Only one path per history needs checking, but every truly different history needs
+its own check.
+
+**Why it matters.** It removes whole families of separate searches over phases and births.
+
+**An everyday picture.** A timetable checked for one train holds, to within one departure interval, for every train
+on the same line.
 
 ## G165
+If each stretch with a fixed period has a budget in proportion to that period, the budgets add up to a constant
+times the last period.
 
-If each stage with an unchanged dyadic period has a uniform interval budget proportional to that period, those budgets add geometrically across doublings. Phase changes and birth restarts then cost only a constant times the final period. The stage budget and sublinear period growth remain assumptions; a branch that keeps its period gives no fresh allowance.
+**What it says.** Along an edge history the period stays the same for a stretch, then doubles. If every such stretch
+keeps its timing debt within a fixed multiple of its period, the totals add up like 1 + 2 + 4 + ..., less than twice
+the last, so the whole history stays within a constant times its final period, phases and restarts included. A real
+fork that keeps the period earns no extra allowance.
+
+**Why it matters.** It reduces the settling question to two named assumptions: the budget for each stretch, and
+periods that grow more slowly than the depth. Neither is proved.
+
+**An everyday picture.** Bills that double every month never add up to more than twice the latest one.

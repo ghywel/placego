@@ -411,28 +411,16 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The clock that times the resets settles into a narrower set of positions within two steps, but every repeating
   loop was already inside it.
 - [one representative path decides the first genuine rooted branch](G161-one-representative-path-decides-the-first-genuine-rooted.md):
-  To find the first genuine branch, follow one representative history instead of all its time rotations. Before such
-  a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is
-  exact but the history may still be long.
+  To find the first real fork, follow one history, not all its time-shifted copies.
 - [three post-split reset steps cost two adjacent run lengths](G162-three-post-split-reset-steps-cost-two-adjacent.md):
-  After a genuine split, three reset steps cost either the current run length plus two, or the current and next run
-  lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a
-  much larger cost elsewhere, so those orders alone do not bound waiting.
+  Just after a real fork, the next three resets cost an amount set by two neighbouring runs of one colour.
 - [one winding rate controls repeated-strip block debt](G163-one-winding-rate-controls-repeated-strip-block-debt.md):
-  For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern
-  boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most
-  5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching
-  histories remain open.
+  When one block of stripes repeats for ever, the timing settles to a single average rate, whatever the start.
 - [one full-line path certifies every interval phase and birth restart](G164-one-full-line-path-certifies-every-interval-phase.md):
-  An interval-debt bound measured along one full-line timing path controls every starting phase on that same
-  history, with at most one temporal period minus one added. The existing restart theorem then includes birth
-  delays. This removes extra phase and birth searches, but every genuinely different history still needs its own
-  all-interval bound.
+  A timing budget checked along one path holds, give or take one period, for every starting phase and restart.
 - [dyadic stage budgets stitch without a logarithmic loss](G165-dyadic-stage-budgets-stitch-without-a-logarithmic-loss.md):
-  If each stage with an unchanged dyadic period has a uniform interval budget proportional to that period, those
-  budgets add geometrically across doublings. Phase changes and birth restarts then cost only a constant times the
-  final period. The stage budget and sublinear period growth remain assumptions; a branch that keeps its period
-  gives no fresh allowance.
+  If each stretch with a fixed period has a budget in proportion to that period, the budgets add up to a constant
+  times the last period.
 
 ## The waiting room (not yet verified)
 

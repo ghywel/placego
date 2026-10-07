@@ -8,7 +8,18 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-If each stage with an unchanged dyadic period has a uniform interval budget proportional to that period, those budgets add geometrically across doublings. Phase changes and birth restarts then cost only a constant times the final period. The stage budget and sublinear period growth remain assumptions; a branch that keeps its period gives no fresh allowance.
+If each stretch with a fixed period has a budget in proportion to that period, the budgets add up to a constant
+times the last period.
+
+**What it says.** Along an edge history the period stays the same for a stretch, then doubles. If every such stretch
+keeps its timing debt within a fixed multiple of its period, the totals add up like 1 + 2 + 4 + ..., less than twice
+the last, so the whole history stays within a constant times its final period, phases and restarts included. A real
+fork that keeps the period earns no extra allowance.
+
+**Why it matters.** It reduces the settling question to two named assumptions: the budget for each stretch, and
+periods that grow more slowly than the depth. Neither is proved.
+
+**An everyday picture.** Bills that double every month never add up to more than twice the latest one.
 
 ## The formal statement and proof
 

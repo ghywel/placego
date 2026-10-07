@@ -8,7 +8,18 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most 5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching histories remain open.
+When one block of stripes repeats for ever, the timing settles to a single average rate, whatever the start.
+
+**What it says.** Repeat a fixed block for ever, and the reset clock of G8 runs at one long-run rate from every
+starting position, never straying from it by more than one period at the block boundaries. If that rate is within
+the allowance (5/2 per step), the block's total debt stays bounded. Costs inside a block, and along histories that
+fork, are not covered: an example Rule 30 itself does not allow (GC198) balances at every block boundary yet runs
+ever deeper into debt inside.
+
+**Why it matters.** It settles the repeating part of the timing problem and isolates what is left.
+
+**An everyday picture.** Walk the same circular route at your own pace and your average speed comes out the same
+whichever gate you set off from.
 
 ## The formal statement and proof
 

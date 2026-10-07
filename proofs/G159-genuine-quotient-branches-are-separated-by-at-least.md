@@ -11,8 +11,9 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 Real forks in the tree of edge histories are at least seven steps apart.
 
 **What it says.** After a real fork of G158, the next six steps inward are forced, so along any path real forks come
-at least seven steps apart. At depth n there are at most 2 to the power n/7 different histories. Local found that
-the rooted trees up to period 15 have no real forks at all: each is a single chain.
+at least seven steps apart. At depth n there are at most 2 to the power n/7 different histories. The rooted trees up
+to period 15 have no real forks at all, each being a single chain; at period 16 the first one comes 53,207 steps in,
+as an earlier result (G2.3) had already recorded.
 
 **Why it matters.** It limits how fast the histories can multiply. It does not limit how long a single history can
 run, which is what the settling question needs.

@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-To find the first genuine branch, follow one representative history instead of all its time rotations. Before such a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is exact but the history may still be long.
+To find the first real fork, follow one history, not all its time-shifted copies.
+
+**What it says.** Before the first real fork of G158, every apparent choice is the same history shifted in time, so
+following one of them is enough. The walk stops either at a real fork or at the dead end where the period would grow
+too large, and either answer is exact. It is cheap: at period 16 it took about a second and found the first fork
+53,207 steps in, agreeing with the earlier record (G2.3).
+
+**Why it matters.** It turns a search that ran out of time into a quick, complete test. It says nothing about how
+long the history can be.
+
+**An everyday picture.** To find the first junction on a road, you need only drive one lane of it.
 
 ## The formal statement and proof
 
