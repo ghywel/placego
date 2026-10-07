@@ -19,7 +19,7 @@ def scalar(s, m, p, U, e):
     return sum(c[i-1]<<(i-2) for i in range(2,m+1))
 
 
-def core(m,U):
+def core(m,U,details=False):
     period=len(U); size=1<<(m-1)
     nodes={(p,s) for p in range(period) for s in range(size)}
     out={n:set() for n in nodes}; inc={n:set() for n in nodes}
@@ -60,8 +60,10 @@ def core(m,U):
             viable={s for s in forward[t] if any(v[1] in viable for v in out[phase,s])}
         centre=(start+r)%period
         assert {(centre,s) for s in viable}=={n for n in alive if n[0]==centre}
-    return dict(width=m,period=period,rounds=r,remaining=len(alive),losses=losses,
+    result = dict(width=m,period=period,rounds=r,remaining=len(alive),losses=losses,
                 forced_columns=forced,centre_path_check=True)
+    if details: return result, alive, {n: out[n]&alive for n in alive}
+    return result
 
 
 def main():
