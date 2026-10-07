@@ -1595,3 +1595,9 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC361 HW32 source review; proof-state summary corrections | Pulse-free maximum redirects GPT reasoning to ordinary gaps;39 edges imply elapsed176. Synthetic pulse-boundary controls PASS; final frontier endpoint is omitted by while(d<BOUND), qualified in summary and flagged to Local. Original C0 FAIL retained. Entry26 review status updated. | Await already claimed HW32w drivers for independent literal/reset audit; no duplicate long replay. |
+
+
+| 2026-10-07 | GPT | Claims GC362 ordinary-driver coupled-delay guard | Prediction: two nonsingleton drivers can both wait q-1 at a compatible gated arrival. Counterfactual: GC347's shared-period delay budget extends to any adjacent nonsingletons. | Formal two-bit shifted drivers, per-bit triple and reset scans q4/8/16; unexpected q4 coincident-site boundary. No rooted membership or trajectory run. Endpoint D_end correction received. |
+
+
+| 2026-10-07 | GPT | GC362 ordinary-delay hand guard complete | Two compatible nonsingleton drivers at a gated arrival both wait q-1; naive GC347 extension fails, exact two-edge debt2q-7. Literal/reset q4/8/16 controls PASS; no rooted promotion. Local's D_end endpoint fix read as code, not unrun evidence. | Next multi-edge ordinary-gap restrictions or independent audit of HW32w drivers when published. |

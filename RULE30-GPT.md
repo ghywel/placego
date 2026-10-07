@@ -9969,3 +9969,35 @@ STATE-OF-THE-PROOF updated narrowly: entry26 is now second-read/filed, its timin
 remain explicit, and the new finite HW32 gap finding and endpoint qualification are included.
 No unsupported discovery-time projection or prize claim added. Next independently audit the
 39 drivers once Local publishes them, retaining full source, arrival phase and reset geometry.
+
+
+## GC362 — Ordinary adjacent drivers need not share a single period of waiting (2026-10-07)
+
+Prediction and counterfactual recorded before fixed controls. Existing GC347 couples particular
+post-pulse gaps; G160 supplies the arrival gate. Test their possible extension to ordinary
+nonsingleton drivers, without reopening rooted-to-clock identification closed in G174.
+For common q>=4 and arrival T=0, put
+
+    B=e_(q-2)+e_(q-1), C=e_(q-3)+e_(q-2),
+    A=e_(q-4)+e_(q-2)+e_(q-1).
+
+S C has support q-4,q-3; B OR C has support q-3,q-2,q-1. XOR gives A, so this
+is a compatible triple, with B nonzero and therefore unique child C. It is gated because
+A(T-1)=A(q-1)=1. Neither B nor C is a pulse; each has two black bits. From phase0,
+B's first black is q-2, giving delay q-1 and next phase q-1. C's first black from
+that phase is q-3, again giving delay q-1. Thus the delays sum2q-2, not at most q.
+This saturates the individual maximal wait for nonsingleton q-bit words. At slope5/2
+both increments are positive for q>=4, with exact two-edge debt2q-7.
+
+Per-bit triple equations, separate scalar scans, weights and arrival gate PASS at q4,8,16.
+Unexpected minimal q4 case has A13,B12,C6, delays3,3, debt1: the wraparound does not
+collapse the three source sites or produce a pulse. q8 gives A208,B192,C96 and debt9;
+q16 gives A53248,B49152,C24576 and debt25. No rooted membership tested or asserted.
+A gated compatible strip is not a root-clock witness. This only closes the naive extension
+of GC347's one-period coupled budget; two-edge debt remains O(q) and no uniform longer-path
+bound is contradicted. For actual HW32w gaps the whole source and arrival phase matter.
+
+Incoming endpoint fix5361345 read: Local now reports D_end from the final live state,
+with the prior interval definition and original C0 failure retained. The outstanding replay
+will supply measured endpoint values; I have not promoted unrun corrected code to evidence.
+Next: multi-edge restrictions on ordinary waits, or literal audit of the pending39 drivers.
