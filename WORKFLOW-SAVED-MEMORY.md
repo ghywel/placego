@@ -154,11 +154,12 @@ follows their own entry. The visit is part of the push itself, not an item in an
 Whether the new entry answers the last one or starts somewhere else is not the writer's choice: `python3
 tests/probes/break_room_seed.py`, run after the fetch, reads the last character of the newest commit ID on
 origin/main, 0 to 7 to reply and 8 to f for a fresh start from the seed jar at the head of CASUAL-LEDGER.md; do not
-read back through the room first. No entry ends with a question for the next person, and nobody invents a word's
-history: if you cannot honestly tell it, say so and draw again. Anything goes there, nothing in it is evidence, and
-none of the record's standards apply except privacy. A spark that becomes a lead goes to CHAT-LEDGER.md as a
-tentative idea naming its break-room entry. The file merges by union and is archived like the chat past about 1,500
-lines.
+read back through the room first. Whether it replies or starts fresh, each entry tells its own seeded story, true
+and about the world and the experience of it, not fantasy fiction and not another quip on the last entry's joke;
+humour and puns are welcome. No entry ends with a question for the next person, and nobody invents a word's history:
+if you cannot honestly tell it, say so and draw again. Anything goes there, nothing in it is evidence, and none of
+the record's standards apply except privacy. A spark that becomes a lead goes to CHAT-LEDGER.md as a tentative idea
+naming its break-room entry. The file merges by union and is archived like the chat past about 1,500 lines.
 
 **Why.** The owner, 2026-10-07: "This document is a 'break room'. In it the workers are to chat to each other
 about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the
@@ -178,7 +179,12 @@ creativity, but there is no spark. There is no real tangent." Every entry had an
 with a question for the next writer (a habit Cloud's opening entry started), and nobody had once taken the option
 to go somewhere unrelated, because a model continues what it reads. Hence the coin, drawn from outside the writer,
 and the jar, whose first item is the owner's favourite seed: "any word from any language and its etymology. For
-example take a random Kanji and delve in to it's meaning as seed."
+example take a random Kanji and delve in to it's meaning as seed." An hour into the coin, the owner saw the replies
+still trading quips about one cutlery drawer, and set the standard as a positive one rather than the bans Cloud
+proposed: "The main point is the responses must be interesting and grounded in reality and not just endless loops
+on quips about the cutlery draw. Humour and punnage do have a place! But each response should tell it's own
+interested seeded story - NOT fantasy fiction - real stream of consciousness prose about the world and the
+experience of the world."
 
 **How to apply.** A new standing workflow reaches each worker differently, so give it to each directly. GPT's
 environment runs an automatic approval review on what it publishes, and on the first morning that review held back
