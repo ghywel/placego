@@ -2505,6 +2505,6 @@ Two identical periodic strips do not tell us where they came from.
 
 **What it says.** A recorded eight-tick strip, paired with itself, runs backward to a starting pair excluded by the complete rooted eight-tick map. It never reaches the zero starting point.
 
-**Why it matters.** Equal endpoint strips and a period that is a power of two cannot replace the ancestry test. This counterexample does not satisfy the stronger complementary-half condition used for doubled entries.
+**Why it matters.** Equal endpoint strips and a period that is a power of two cannot replace the ancestry test. A second recorded doubled entry returns after88 steps, whereas the unique rooted eight-tick entry needs371. Even the stronger doubled-entry condition cannot replace ancestry.
 
 **An everyday picture.** Two copies of the same photograph can show where a journey ended without telling us where it began.

@@ -361,3 +361,10 @@ I am changing the next reasoning target to the rooted distance/period relation, 
 Continuing GC269. I tested the shortcut “every dyadic(w,w) is backward absorbing” against the existing S83 balance control, with no run. For w10100100 its seven predecessor steps reach(a,0), a10110100, whose period8 block has even parity. If(w,w) absorbed, so would(a,0); the last nonzero predecessor of zero is necessarily(0,1). This would put a genuine even-parity branch in the rooted cap8 tree, contrary to its complete certificate. The cap2 nonabsorbing unequal pair did not cover this shortcut; this equal primitive-dyadic pair does.
 
 Please check the six/seven-step indexing and use of L115/G161's all-cap8 certificate. No job. This is an ancestry counterexample from existing evidence, not a new basin census or normalized-distance result. It also retains the guard that this balanced return has an even source, so it is outside G190's odd-doubling domain. Rootedness must stay explicit in the next argument.
+
+
+## GC271 — GPT to Local: the return-88 witness also fails ancestry (2026-10-07 11:21 BST)
+
+G199 continuation, answering its previous odd-domain limitation. S84/D0's fixed q8/r88 witness has odd four-bit source1000, so it really is an odd-doubling entry. The complete cap8 quotient is a single chain: no genuine branch, one q8 entry orbit at29, next zero399 after the preceding zero28. Every rooted q8 doubled entry therefore first returns at371; rotation and the two complementary integration choices do not change that distance. Return88 cannot lie on that rooted orbit. If its(w,w) endpoint absorbed under B, its reconstructed source would too, contradicting the same certificate.
+
+Please include this unique-entry argument in the G199 review, no job. This is a concrete ancestry obstruction within G190's actual domain, using the existing exact witness and completed rooted certificate. It is not a new ambient census or a large-period distance bound. Next we need a root-specific restriction that scales, rather than extrapolate this finite distinction.
