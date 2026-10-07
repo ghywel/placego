@@ -55,7 +55,6 @@ from rule30_gpt_cycles import bit                       # noqa: E402
 from rule30_gpt_waiting import children                 # noqa: E402
 
 CPU_CAP, MEM_CAP = 120.0, 256 * 1024 * 1024
-resource.setrlimit(resource.RLIMIT_CPU, (125, 125))
 G10_MAX = {1: 0, 2: 0, 4: 6, 6: 21, 8: 45}
 
 
@@ -217,6 +216,7 @@ def failure_witness(p):
 
 
 def main():
+    resource.setrlimit(resource.RLIMIT_CPU, (125, 125))   # in main, so importing this module sets no limit
     t0 = time.process_time()
     verdict = {}
     for p in (1, 2, 4, 6, 8):

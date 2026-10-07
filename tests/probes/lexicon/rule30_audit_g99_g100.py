@@ -282,6 +282,14 @@ CHECKS (GPT's claims at 827e006):
      first genuine branch at depth 53,207), the pair period never decreases, changes only at odd-parity zero-driver
      nodes and only by doubling, every node's driver has least period dividing its stage period, the stage entries are
      N_1..N_4 = 3, 8, 29, 400 with no period-32 node, and the branch node keeps period 16.
+  S60 (G166 addenda, added 2026-10-07 at 818c533): on HG4's gated aligned graph (rule30_hg4.py) at q = 4, 6, 8 the
+     least potential h is reached, and the largest shortest tight-edge distance to the zero-potential set equals the
+     first stable Bellman horizon (4, 21, 85), computed separately; the abstract chain (-1, +1)^L, +1 has max h = 2 and
+     horizon 2L + 1 for L = 1..12; and for q = 4, 8, 16 the driver-only edge (S b XOR b, b) -> (b, b) exists with reset
+     cost q and gated ends, and (b, b) has the single child 0.
+  S61 (G166 scope table, added 2026-10-07 at a0cb85d): G8's cyclic period-4 list [9, 8, 14, 12, 4, 7, 6, 2, 11, 3, 1,
+     13] is compatible; for each row of the table (driver b, preceding a, arrival r) the gate bit a(r - 1) is 1 and the
+     reset delay of b from r is the listed delta; the delays sum to 36, so a phase-free g(a, b) needs gamma >= 3.
 """
 import random
 from fractions import Fraction as F
@@ -2808,4 +2816,77 @@ for a_, b_, q_ in nodes59:
     ok59 &= lp_bits(b_, 16) <= q_ and q_ % lp_bits(b_, 16) == 0 and lp_bits(a_, 16) <= q_
 ok59 &= entries == {2: 3, 4: 8, 8: 29, 16: 400} and nodes59[-1][2] == 16 and nodes59[-1][1] == 0
 check('S59 G165: the stage structure along the known Q = 16 path; entries 3, 8, 29, 400; the branch keeps period 16', ok59)
+import os as _os60
+import sys as _sys60
+_sys60.path.insert(0, _os60.path.dirname(_os60.path.abspath(__file__)))
+import rule30_hg4 as _hg4
+from array import array as _arr60
+
+ok60 = True
+hz60 = {}
+for q in (4, 6, 8):
+    cnt = 1 << (2 * q)
+    isv = bytearray(cnt)
+    for v in range(cnt):
+        isv[v] = 1 if (v == 0 or _hg4.gated(v, q)) else 0
+    E60 = [(s_, t, 2 * d - 5) for s_, t, d in _hg4.aligned_edges(q) if isv[s_] and isv[t]]
+    prev = _arr60('i', [0]) * cnt
+    n = 0
+    while True:
+        n += 1
+        cur = _arr60('i', [0]) * cnt
+        for s_, t, w in E60:
+            if w + prev[t] > cur[s_]:
+                cur[s_] = w + prev[t]
+        if cur == prev:
+            break
+        prev = cur
+    first_stable = n - 1
+    h = cur
+    radj = {}
+    for s_, t, w in E60:
+        if h[s_] == w + h[t]:
+            radj.setdefault(t, []).append(s_)
+    dist = {v: 0 for v in range(cnt) if isv[v] and h[v] == 0}
+    frontier = list(dist)
+    while frontier:
+        nxt = []
+        for t in frontier:
+            for s_ in radj.get(t, []):
+                if s_ not in dist:
+                    dist[s_] = dist[t] + 1
+                    nxt.append(s_)
+        frontier = nxt
+    ok60 &= all(isv[v] == 0 or v in dist for v in range(cnt))
+    hz60[q] = (first_stable, max(dist.values()))
+    ok60 &= first_stable == max(dist.values())
+ok60 &= hz60[4][0] == 4 and hz60[6][0] == 21 and hz60[8][0] == 85
+for L in range(1, 13):
+    wts = [-1, 1] * L + [1]
+    hh = [0] * (len(wts) + 1)
+    for i in range(len(wts) - 1, -1, -1):
+        hh[i] = max(0, wts[i] + hh[i + 1])
+    Hn = [0] * (len(wts) + 1)
+    horizon = 0
+    while Hn[0] != hh[0] or any(Hn[i] != hh[i] for i in range(len(wts) + 1)):
+        Hn = [max(0, wts[i] + Hn[i + 1]) if i < len(wts) else 0 for i in range(len(wts) + 1)]
+        horizon += 1
+    ok60 &= max(hh) == 2 and horizon == 2 * L + 1
+for q in (4, 8, 16):
+    mq = (1 << q) - 1
+    b = 1 << (q - 1)
+    a = (((b >> 1) | (b << (q - 1))) & mq) ^ b
+    ok60 &= b in edge_children(a, b, q) and reset_cost(b, 0, q) == (q, 0)
+    ok60 &= (a >> (q - 1)) & 1 == 1 and (b >> (q - 1)) & 1 == 1
+    ok60 &= edge_children(b, b, q) == [0]
+check('S60 G166 addenda: tight-edge distance equals the stable horizon (4, 21, 85); the chain; the driver-only edge', ok60,
+      'first stable horizon and max tight distance by q: %s' % hz60)
+cyc61 = [9, 8, 14, 12, 4, 7, 6, 2, 11, 3, 1, 13]
+tab61 = [(9, 13, 1, 3), (8, 9, 0, 4), (14, 8, 0, 2), (12, 14, 0, 3), (4, 12, 3, 4), (7, 4, 3, 2), (6, 7, 3, 3),
+         (2, 6, 2, 4), (11, 2, 2, 2), (3, 11, 2, 3), (1, 3, 1, 4), (13, 1, 1, 2)]
+ok61 = all(cyc61[(j + 1) % 12] in edge_children(cyc61[j - 1], cyc61[j], 4) for j in range(12))
+ok61 &= [b for b, _, _, _ in tab61] == cyc61 and all(a == cyc61[j - 1] for j, (_, a, _, _) in enumerate(tab61))
+ok61 &= all((a >> ((r - 1) % 4)) & 1 == 1 and reset_cost(b, r, 4)[0] == dl for b, a, r, dl in tab61)
+ok61 &= sum(dl for _, _, _, dl in tab61) == 36
+check('S61 G166 scope table: twelve gated maximum-delay phases on G8 cycle sum to 36, forcing gamma >= 3', ok61)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
