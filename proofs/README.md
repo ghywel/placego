@@ -486,6 +486,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   identical periodic strips do not tell us where they came from.
 - [a period stage is a sum of zero-return excursions](G200-a-period-stage-is-a-sum-of-zero.md): A period can last
   through several returns to zero before it doubles.
+- [post-split siblings are disjoint for one profile, not the next](G201-post-split-siblings-are-disjoint-for-one-profile.md):
+  Two branches separate their black cells for one profile, then can overlap again.
 
 ## Proofs from the sparks
 
@@ -518,7 +520,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Post-split siblings are disjoint for one profile, not the next](W201-post-split-siblings-are-disjoint-for-one-profile.md):
-  Two branches separate their black cells for one profile, then can overlap again.
+*No proofs are waiting for a second reader at the moment.*

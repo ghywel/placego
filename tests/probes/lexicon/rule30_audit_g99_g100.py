@@ -492,6 +492,12 @@ CHECKS (GPT's claims at 827e006):
      2, 4, 8 are single excursions of 5, 21, 371; from source 399 the period-16 stage first returns 52,808 later, at
      depth 53,207, whose driver has least period 16 and even parity, an internal branch rather than the exit;
      telescoping and M <= lambda <= k M hold on 200 random schedules; GPT's two multiplicity controls.
+  S99 (G201, added 2026-10-07 at ab7f4f2): after every even-parity zero driver at caps 4 and 8, and 400 sampled at 16
+     (534 in all, seed 201), the two continuations give c and 1 + c, then 1, then e and 1 + e, and the next profiles
+     f, f' are disjoint with no cyclic 00 in their union, so their weights sum to at least q/2; GPT's rooted control
+     a = 0000110001010011 (Delta c with c = 0000010000110001, weight 6, least period 16, a rotation of D1's driver)
+     gives e = 1, 0, 1, 1 at phases 15, 0, 1, 2, f = 0, 1, 0 and f' = 0, 1 as stated, and the following profiles share
+     phase 3 (g(3) = g'(3) = 1).
 """
 import random
 from fractions import Fraction as F
@@ -5157,4 +5163,61 @@ for j in range(1, 12):
 check('S98 G200: rooted zero sources at 2, 7, 28, 399 give single excursions 5, 21, 371 with odd sources; the '
       'period-16 '
       'stage\'s first return (52,808, depth 53,207) is an even branch; telescoping and M <= lambda <= k M', ok98)
+def sib99(a, q, depth):
+    """Both continuations after an even zero driver (a, 0): profiles 0, c, 1, ... and 0, 1 + c, 1, ... ."""
+    out = []
+    for c in sorted(_rq3.children(a, 0, q)):
+        x, y, prof = 0, c, [0, c]
+        for _ in range(depth):
+            kids = _rq3.children(x, y, q)
+            if len(kids) != 1:
+                break
+            x, y = y, kids[0]
+            prof.append(y)
+        out.append(prof)
+    return out
+
+
+ok99, _n99 = True, 0
+full99 = lambda q: (1 << q) - 1
+# on every even-parity source at caps 4, 8 (and a sample at 16), the next profiles f, f' are disjoint and their union
+# has no cyclic 00, so weight(f) + weight(f') >= q/2
+_rng99 = random.Random(201)
+for q in (4, 8, 16):
+    srcs = [a for a in range(1, 1 << q) if bin(a).count('1') % 2 == 0]
+    if q == 16:
+        srcs = _rng99.sample(srcs, 400)
+    for a in srcs:
+        s = sib99(a, q, 4)
+        if len(s) != 2 or min(len(p) for p in s) < 6:
+            continue
+        P, Pp = s
+        c, cp = P[1], Pp[1]
+        if cp != c ^ full99(q):
+            P, Pp = Pp, P
+            c, cp = P[1], Pp[1]
+        ok99 &= cp == c ^ full99(q) and P[2] == Pp[2] == full99(q) and Pp[3] == P[3] ^ full99(q)
+        f, fp = P[4], Pp[4]
+        D = f ^ fp
+        ok99 &= (f & fp) == 0
+        ok99 &= all(((D >> t) & 1) or ((D >> ((t + 1) % q)) & 1) for t in range(q))
+        ok99 &= bin(f).count('1') + bin(fp).count('1') >= q // 2
+        _n99 += 1
+ok99 &= _n99 >= 300
+# GPT's rooted control: a = 0000110001010011 (a rotation of D1's driver), c = 0000010000110001
+_W99 = lambda s_: sum(int(ch) << t for t, ch in enumerate(s_))
+a, c = _W99('0000110001010011'), _W99('0000010000110001')
+ok99 &= (c ^ _rq3.rot(c, 1, 16)) == a and bin(a).count('1') == 6 and _lp82(a, 16) == 16
+ok99 &= any(_rq3.rot(a, k, 16) == _W99('1000101001100001') for k in range(16))
+s = sib99(a, 16, 4)
+P = [p for p in s if p[1] == c][0]
+Pp = [p for p in s if p[1] == c ^ 0xFFFF][0]
+e, f, g = P[3], P[4], P[5]
+fp, gp = Pp[4], Pp[5]
+bit = lambda u, t: (u >> (t % 16)) & 1
+ok99 &= [bit(e, t) for t in (15, 0, 1, 2)] == [1, 0, 1, 1]
+ok99 &= [bit(f, t) for t in (0, 1, 2)] == [0, 1, 0] and [bit(fp, t) for t in (1, 2)] == [0, 1]
+ok99 &= bit(g, 2) == 0 and bit(g, 3) == 1 and bit(gp, 3) == 1 and (g & gp) != 0
+check('S99 G201: after every even zero driver at caps 4, 8 (and 400 at 16) the next sibling profiles are disjoint with '
+      'no cyclic 00 in their union; on the rooted q = 16 source the following profiles share phase 3', ok99)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -1,10 +1,10 @@
-# Post-split siblings are disjoint for one profile, not the next
+# post-split siblings are disjoint for one profile, not the next
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G201 — Post-split siblings
-are disjoint for one profile, not the next (2026-10-07; second reader pending)"; rebuild with `python3
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT201. post-split siblings
+are disjoint for one profile, not the next (second-read by Local, 2026-10-07)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Two branches separate their black cells for one profile, then can overlap again.
 **An everyday picture.** Two lanes can be clear of each other at one junction and meet at the next. The first junction alone does not describe the whole journey.
 
 ## The formal statement and proof
+
+### GPT G201 — Post-split siblings are disjoint for one profile, not the next (2026-10-07; second reader pending)
 
 **Question and hand prediction; no run.** G200 requires cumulative returns on each selected history. Can the two
 children of an even-parity zero supply a joint constraint that persists along their continuations? G162 already
@@ -68,3 +70,14 @@ prove G200's cumulative normalized growth. Nor does this control rule out every 
 Local: second-read the reset indexing at phases0 to3 and the transfer from the known rooted c only; no job requested.
 Next reasoning must retain the source backgrounds and each history's actual returns, rather than propagate this
 one-step support separation as an invariant. The shared growth status remains open.
+
+*Second reader's note on G201 (Local, 2026-10-07; chat L172).* Correct. By De Morgan, $Sf = (1 + e)(1 + f)$ and
+$Sf' = e(1 + f')$, so their product contains $e(1 + e) = 0$ and $ff' = 0$. Where both vanish, the equations give
+$D(t + 1) = (1 + e(t)) + e(t) = 1$, so the union has no cyclic 00 and weighs at least $q/2$. In the rooted control,
+$e(t) = 1 + c(t - 1)$ gives $e = 1, 0, 1, 1$ at phases 15, 0, 1, 2. The resets then give $f = 0, 1, 0$ at phases 0, 1, 2
+and $f' = 0, 1$ at phases 1, 2, and the next equations give $g(2) = 0$, $g(3) = 1$ and $g'(3) = 1$, as stated. Checked
+(`rule30_audit_g99_g100.py`, S99). After every even-parity zero driver at caps 4 and 8, and 400 sampled at 16 (534 in
+all), the actual children give $c, 1 + c$, then 1, then $e, 1 + e$. The next profiles are disjoint, with no cyclic 00 in
+their union. GPT's source $a$ is $\Delta c$ for the stated $c$, has weight 6 and least period 16, and is a rotation of
+D1's rooted driver. Computed by the actual child map, its continuations share phase 3 at the following profile, so the
+disjointness indeed stops after one step.

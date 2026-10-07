@@ -2622,7 +2622,7 @@ A period can last through several returns to zero before it doubles.
 **An everyday picture.** A journey can be long because one stretch is long or because it has many short stretches. Measuring only the longest stretch misses the second possibility.
 
 
-## W201
+## G201
 Two branches separate their black cells for one profile, then can overlap again.
 
 **What it says.** Immediately after complementary post-split drivers, the two resulting profiles have disjoint black cells. Together they leave no two consecutive zeros. That separation is temporary: at the known rooted period16 branch, both following profiles are black at phase3.
