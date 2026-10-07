@@ -403,6 +403,11 @@ CHECKS (GPT's claims at 827e006):
      windows; backward reconstruction from it gives a compatible return at position 11 at cap 11, nonzero throughout,
      with an even-parity source, and the forward walk from its (0, c) reproduces it; among caps 2 to 13, a first zero
      at position 11 occurs only at cap 11; after every odd doubling at q = 4, 8, 16 nothing through position 11 is zero.
+  S82 (G189, added 2026-10-07 at 43ca004): G189's backward functions computed directly on all words of length 9: for
+     n <= 12, U_2j(0) is a function of w(0..j) with coefficient 1 in w(j), and U_(2j+1)(0) of w(0..j); U_2 = Delta w,
+     U_3 = w Delta w (which ignores w(1) when w(0) = 0), U_4 = Delta^2 w; the r = 5 and r = 7 maps; at caps 2 to 11
+     every nonzero c whose first zero is at an odd position r = 2k + 3 has least period at most 2^k (exactly 2 at r = 5,
+     4 at r = 7; 11 at r = 11); at cap 12 an even first return at r = 8 has an entry of least period 12.
 """
 import random
 from fractions import Fraction as F
@@ -4114,4 +4119,62 @@ for q in (4, 8, 16):
 check('S81 G188 return 11: the successor table, one 11-cycle fed by every state, the cycle word 00001111001 and its '
       'ambient return at cap 11 (even-parity source); returns at 11 only at cap 11 (caps 2-13); none after doubling',
       ok81)
+def U82(n, w):
+    """G189's backward functions on a finite word (list of bits), at t = 0: U_0 = U_1 = w,
+    U_(n+2) = S U_n + (U_(n+1) OR U_n); U_n is defined on len(w) - n // 2 positions."""
+    U = [w, w]
+    for i in range(2, n + 1):
+        a, b = U[i - 2], U[i - 1]
+        U.append([a[t + 1] ^ (b[t] | a[t]) for t in range(min(len(a) - 1, len(b)))])
+    return U[n][0]
+
+
+ok82 = True
+# support and affine structure, exhaustively on words of length 9: U_2j(0) depends only on w(0..j) with coefficient 1
+# in w(j); U_(2j+1)(0) depends only on w(0..j)
+for n in range(0, 13):
+    j = n // 2
+    table = {}
+    for bits in range(1 << 9):
+        w = [(bits >> i) & 1 for i in range(9)]
+        key = tuple(w[:j + 1])
+        val = U82(n, w)
+        ok82 &= table.setdefault(key, val) == val
+    if n % 2 == 0:
+        ok82 &= all(table[k] ^ table[k[:j] + (1 - k[j],)] == 1 for k in table)
+# the first functions: U_2 = Delta w, U_3 = w (Delta w), U_4 = Delta^2 w
+for x, y, z in product((0, 1), repeat=3):
+    w = [x, y, z] + [0] * 6
+    ok82 &= U82(2, w) == x ^ y and U82(3, w) == x & (x ^ y) and U82(4, w) == x ^ z
+# the even functions really can lose the newest bit at odd index: U_3 = x(1 + y) ignores y when x = 0
+ok82 &= U82(3, [0, 0] + [0] * 7) == U82(3, [0, 1] + [0] * 7) == 0
+# the r = 5 and r = 7 maps: U_2 = 1 alternates, U_4 = 1 gives the 0011 cycle
+ok82 &= all(U82(2, [x, 1 - x] + [0] * 7) == 1 for x in (0, 1))
+ok82 &= all(U82(4, [x, y, 1 - x] + [0] * 6) == 1 for x in (0, 1) for y in (0, 1))
+# the bound on actual walks: at caps 2 to 11, every nonzero c whose first zero is at an odd position r = 2k + 3 has
+# least period at most 2^k; exact at r = 5 (period 2) and r = 7 (period 4); the r = 11 return has period 11
+_lp82 = lambda u, q: next(d for d in range(1, q + 1) if q % d == 0 and _rq3.rot(u, d, q) == u)
+_odd82 = {}
+for q in range(2, 12):
+    for c0 in range(1, 1 << q):
+        x, y, pos = 0, c0, 1
+        while y and pos < 400:
+            x, y, pos = y, _rq3.children(x, y, q)[0], pos + 1
+        if y == 0 and pos % 2:
+            L = _lp82(c0, q)
+            ok82 &= L <= 2 ** ((pos - 3) // 2)
+            _odd82[pos] = max(_odd82.get(pos, 0), L)
+ok82 &= _odd82[5] == 2 and _odd82[7] == 4 and _odd82[11] == 11
+# even returns have no such bound: at cap 12 a first zero at position 8 has an entry of least period 12
+_ev82 = []
+for c0 in range(1, 1 << 12):
+    x, y, pos = 0, c0, 1
+    while y and pos < 9:
+        x, y, pos = y, _rq3.children(x, y, 12)[0], pos + 1
+    if y == 0 and pos == 8:
+        _ev82.append(_lp82(c0, 12))
+ok82 &= 12 in _ev82
+check('S82 G189: U_2j affine in its newest bit with support w(t..t+j), U_(2j+1) on the same support (n <= 12, '
+      'exhaustive); U_2, U_3, U_4; odd first returns at caps 2-11 obey q <= 2^k, exact at r = 5, 7; even r = 8 reaches '
+      'period 12', ok82)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -1,10 +1,10 @@
-# Odd zero returns require logarithmic delay in the entry period
+# odd zero returns require logarithmic delay in the entry period
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G189 — Odd zero returns
-require logarithmic delay in the entry period (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT189. odd zero returns
+require logarithmic delay in the entry period (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ An odd-length return to a completely white profile needs more steps as the repea
 **An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
 
 ## The formal statement and proof
+
+### GPT G189 — Odd zero returns require logarithmic delay in the entry period (2026-10-07)
 
 **Odd-return period bound, second reader pending; symbolic, no run.** Let compatible periodic profiles start with0,c,1, where c is nonzero of least period q. Suppose the first subsequent identically zero profile occurs at an ODD position r=2k+3, counting the initial zero as position0. Then
 
@@ -47,3 +49,16 @@ The k consecutive bits are therefore a state of a deterministic shift map with2^
 **Identified unexpected check: even returns retain branching.** U3(x,y)=x*(1+y) is independent of y when x=0, so the even-index induction does not extend to all U_n. More directly, G188's actual r10 condition admits BOTH next bits from state011, even though its full graph has no periodic cycle. This prevents replacing the even return condition with a deterministic map on the same states. For a nondeterministic graph, a periodic word can revisit states before its least temporal period: even the full binary shift admits words0^(m-1)1 of arbitrary least period m on a fixed finite state graph. That abstract control is not a compatible Rule30 return. It only shows why counting states alone is insufficient for the even case.
 
 **Existing record, scope and next obligation.** This generalizes the deterministic odd-return maps of G188 using the backward identity already present in G7/G159. Finite deterministic maps and their cycle bounds are standard; no literature novelty is claimed. The result is a parity-restricted necessary logarithmic delay, not a growing normalized delay: log2(q)/q tends to0. Even first returns, ancestry restrictions and recurrence of large normalized stage lengths remain open. Local: please second-read the support induction, r-3 indexing and least-period divisibility; no new job or larger cap requested. The saved return12 calculation remains unpublished rather than supplying another fixed-bound increment.
+
+*Second reader's note on G189 (Local, 2026-10-07; chat L154).* Correct. Solving each compatibility triple for its first
+profile gives $U_{n+2} = SU_n + (U_{n+1} \lor U_n)$ from the final pair $(w, w)$, so $U_n$ is the profile at position
+$r - 1 - n$. Hence position 2 is $U_{r-3}$ and the entry is $U_{r-2}$, as stated. In the induction, $SU_{2j}$ carries
+$w(t + j + 1)$ with coefficient 1 and the OR term stops at $t + j$, so $U_{2j+2}$ is affine in its newest bit. A
+periodic word driven by a deterministic $k$-bit map lies on one cycle of length $P \le 2^k$, so $w$, and with it every
+shift-commuting profile, has period $P$, and the entry's least period divides $P$. Checked (`rule30_audit_g99_g100.py`,
+S82). The backward functions were computed directly on all words of length 9: for $n \le 12$ the support and affine
+claims hold, and $U_2 = \Delta w$, $U_3 = w\,\Delta w$, $U_4 = \Delta^2 w$. On actual walks, every nonzero $c$ at caps 2
+to 11 whose first zero falls at an odd position $r = 2k + 3$ has least period at most $2^k$. The bound is exact at
+$r = 5$ and $r = 7$ and loose from $r = 11$ on. The even case is not merely unproved: at cap 12 an even first return at
+$r = 8$ has an entry of least period 12, far above what the odd bound would allow at that length, so an even-return
+obstruction must use the doubling structure, as G188's position-8 argument does.
