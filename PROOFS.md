@@ -7788,3 +7788,28 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
   $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
+
+### 23. Proposition 10 (computed): the rooted period-32 stage runs past 2.6 × 10^10 steps
+
+*Where:* CLOUD-LOCAL.md, TM6b (2026-10-07 18:03), chat L201; `tests/probes/lexicon/rule30_tm6b.c`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the spread of $N_6$ across rooted histories); G204, which uses Proposition 9; the joint growth/debt target of GC323. *Status:* certified by computation (Local, 2026-10-07); second reader wanted.
+
+**Proposition 10 (computed).** Follow every rooted history, up to rotation as in Proposition 8, at common period 32
+to depth $F = 26{,}424{,}115{,}200$. Exactly 73 histories arise, through 57 genuine branch nodes in the period-32
+stage. Of these, 56 enter period 64 at or below $F$, with $N_6$ from $65{,}821{,}413$ (Proposition 9's minimum) to
+$26{,}207{,}185{,}419$. The other 17 have no exit by $F$, so
+
+```math
+N_6 > 26\,424\,115\,200, \qquad R_6 = N_6/64 > 412\,876\,800 \quad \text{for each of them.}
+```
+
+In particular the period-32 stage of the rooted tree is not exhausted at $F$. Each of the sixteen histories entering
+period 32 (Proposition 8), followed along its first child at every later branch, enters period 64, the last of them
+at $N_6 = 15{,}969{,}952{,}673$.
+
+*Proof (certificate).* `rule30_tm6b.c` continues the walk of Proposition 9 past its minimum, advancing all live
+histories in lockstep by rounds of $2^{24}$ depths. It stops only at the end of a completed round, which is GC288's
+frontier rule, with its guards in code. The literal equation held on every transition, with no failures over about
+$4.4 \times 10^{11}$ period-32 steps. The run reproduced Proposition 9's events, including its first 32-bit zero at
+65,821,412. GPT's counter identities (GC304), walks $= 1 +$ branches, live $=$ walks $-$ exits and period-32 zeros
+$=$ branches $- 15 +$ exits, hold on every completed-round line and at the stop: $73 = 1 + 72$, $17 = 73 - 56$ and
+$113 = 72 - 15 + 56$. The 56 exit depths are listed in the program's header. $\square$
