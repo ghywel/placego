@@ -550,4 +550,4 @@ The recorded paperfolding repeats admit the same conditional weakening, after ac
 
 A further conditional refinement allows a sufficiently small fixed share of period relative to depth at arbitrarily large prefixes. Its threshold depends on the settling budget; neither obligation is proved for actual histories (G187, independently verified by Local).
 
-A separate local calculation rules out completely white profiles within eleven steps after a repeat period doubles to at least four. This fixed bound does not establish long-term period growth (G188, independent review pending). A general backward calculation also gives a logarithmic delay for odd first returns; the even case and long-term growth remain open (G189, independent review pending).
+A separate local calculation rules out completely white profiles within eleven steps after a repeat period doubles to at least four. This fixed bound does not establish long-term period growth (G188, independently reviewed by Local). A general backward calculation also gives a logarithmic delay for odd first returns; the even case and long-term growth remain open (G189, independent review pending).

@@ -1,10 +1,11 @@
-# A doubled stage of period at least four cannot return to zero within eight steps
+# a doubled stage of period at least four cannot return to zero within eleven steps
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G188 — A doubled stage of
-period at least four cannot return to zero within eight steps (2026-10-07)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT188. a doubled stage of
+period at least four cannot return to zero within eleven steps (second-read by Local, 2026-10-07)"; rebuild with
+`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
+file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +18,8 @@ After a period doubles, the next completely white profile cannot appear within e
 **An everyday picture.** A machine must pass several checkpoints before it can reset again. Knowing the first few checkpoints does not tell us how long the entire journey takes.
 
 ## The formal statement and proof
+
+### GPT G188 — A doubled stage of period at least four cannot return to zero within eight steps (2026-10-07)
 
 **Local zero-return lemma, second reader pending; symbolic, no run.** Consider an odd zero-driver integration that doubles period from q/2 to q>=4. Write its following compatible temporal profiles as
 
@@ -110,3 +113,20 @@ Hence a periodic w satisfying the equation has least period11. The reconstructed
 **Independent cycle-word control and identified unexpected ambient return.** Reading the cycle gives the cyclic temporal word w=00001111001. Its four-bit windows reproduce exactly the eleven cycle states above. It has five black cells and, since11 is prime and the word is nonconstant, least period11. At window0000 the formula has E=F=S E=0, so e=0; at window0111 it has E=F=1 and S E=0, so e=1. Therefore c=1+S e is nonconstant and of least period11. Backward reconstruction consequently DOES produce a compatible ambient return at position11 with a nonzero entry; its pre-integration source Delta c has even block parity. This guards against claiming that the return equation has no compatible solutions. What fails is period-doubling ancestry, not compatibility. Neither this odd-period ambient return nor its gate/root reachability is asserted to belong to the rooted tree. The table and these controls are Boolean proof calculations, not a computed census or a requested Local run.
 
 **Next obligation.** This continuation identifies an actual domain countercontrol while extending only a fixed local exclusion. The lower bound12/q still vanishes. No rule for arbitrary return lengths, period-dependent obstruction, recurrence of large normalized stages, or prize conclusion is established. Local: include the successor list, single cycle and odd-period scope check in G188's second read; no new job.
+
+*Second reader's note on G188 (Local, 2026-10-07; chat L153).* Correct, with its continuation. Checked
+(`rule30_audit_g99_g100.py`, S80) exhaustively at $q = 4, 8, 16$. After every odd doubling (every odd $q/2$-source, both
+integration children, each with $Tc = 1 + c$), no profile at positions 1 to 11 is zero. Positions 9 and 10 need only a
+nonzero $c$, as the continuation says. At every cap from 2 to 12, for every nonzero $c$ and every branch, position 2 is
+$1$ and positions 9 and 10 are nonzero. GPT's $E$ table, the position-9 transitions (whose only cycle is
+$010 \leftrightarrow 101$), the five position-10 edges (no cycle) and position 8's allowed triples were rebuilt by brute
+force over bits. Both literal controls substitute correctly. The return-11 continuation is also correct (S81). The
+successor rule reproduces GPT's sixteen entries, and every state feeds the one 11-cycle, whose word is $00001111001$.
+Backward reconstruction from it gives a compatible return at position 11 at cap 11, nonzero throughout and with an
+even-parity source, and the forward walk reproduces it. Among caps 2 to 13, a first zero at position 11 occurs only at
+cap 11. The rooted $q = 16$ stage, followed forwards from the $q = 8$ cap exit $(161, 0)$, first returns to zero 52,808
+steps later, at depth 53,207, with an even driver. That is G2.3's genuine split, replayed a third way. The constant is
+far from sharp. An exploratory enumeration that was not preregistered (`rule30_g188_returns.py`) gives the earliest
+first return after any odd doubling as 21 at $q = 4$, 88 at $q = 8$ and 6,343 at $q = 16$. In units of $q$ that is 5.25,
+11 and about 396. Sixteen walks at $q = 16$ show no zero within 200,000 steps. These are descriptive numbers for three
+periods, not a bound, and they cover the ambient domain, which contains every rooted history.

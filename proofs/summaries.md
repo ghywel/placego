@@ -8,7 +8,10 @@ without one: the hook, then What it says, Why it matters and An everyday picture
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
 batches. An unusual word gets a plain description where it first appears on a page; in the owner's words, "When
 such an unusual noun is used, the reader should be offered a simple description rather than assuming they know
-what it means" (2026-10-07). Plain-words pass done through G179 (2026-10-07); entries after it may still be drafts.*
+what it means" (2026-10-07).
+Pictures are built from concrete things a reader has seen, heard or touched; in the owner's words, "humans are
+sensory beings with excellent visual memories - grounding in real world existential nouns is helpful"
+(2026-10-07). Plain-words pass done through G179 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -348,12 +351,13 @@ same latch with its reset written in.
 A run of white squares shrinks by exactly one square at each end per tick, so Rule 30's white triangles are perfect.
 
 **What it says.** A run of two or more white squares with black on both sides becomes, one tick later, the same run
-with one square trimmed from each end. So every white triangle in Rule 30 is an exact isosceles triangle, fixed by
-the row, place and width where it is born.
+with one square trimmed from each end. So every white triangle in Rule 30 is an exact isosceles triangle (its two
+sloping sides equal), fixed by the row, place and width where it is born.
 
 **Why it matters.** The white triangles are the most visible structure in Rule 30, and this makes them exactly
-predictable once born. The gaps in the record's "ladder" are the bases of such triangles. It was also checked on a
-million runs; the neighbouring Rule 110 breaks it.
+predictable once born. The gaps in the record's "ladder", its measurements of the longest white run the left half
+can be held to, are the bases of such triangles. It was also checked on a million runs; Rule 110, a neighbouring
+rule of the same kind, breaks it.
 
 **An everyday picture.** The triangles on the shell of the *Conus textile* snail; or a sheet of ice melting evenly
 in from both edges.
@@ -2329,7 +2333,7 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 **An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
 
 
-## W188
+## G188
 After a period doubles, the next completely white profile cannot appear within eleven steps.
 
 **What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly, then rules out the ninth through eleventh through small tables of necessary temporal transitions. An allowed cycle at the eleventh has odd period and cannot follow a doubling.
@@ -2342,8 +2346,8 @@ After a period doubles, the next completely white profile cannot appear within e
 ## W189
 An odd-length return to a completely white profile needs more steps as the repeat period grows.
 
-**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the base-two logarithm of q, plus three steps. Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
+**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the number of doublings needed to reach period q, plus three steps (for periods that are powers of two). Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
 
 **Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
 
-**An everyday picture.** A machine with a fixed number of states cannot follow a longer cycle without revisiting a state. The odd-return equation fixes the next move; the even-return equation can offer a choice.
+**An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.

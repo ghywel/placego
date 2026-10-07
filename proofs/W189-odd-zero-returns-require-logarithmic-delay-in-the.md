@@ -10,11 +10,11 @@ in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 An odd-length return to a completely white profile needs more steps as the repeat period grows.
 
-**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the base-two logarithm of q, plus three steps. Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
+**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the number of doublings needed to reach period q, plus three steps (for periods that are powers of two). Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
 
 **Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
 
-**An everyday picture.** A machine with a fixed number of states cannot follow a longer cycle without revisiting a state. The odd-return equation fixes the next move; the even-return equation can offer a choice.
+**An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
 
 ## The formal statement and proof
 
