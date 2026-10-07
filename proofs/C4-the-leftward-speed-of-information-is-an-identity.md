@@ -48,3 +48,17 @@ $D_{w+1}(t+1) = D_{w-1}(t) \oplus D_{w+1}(t)$, so a difference on diagonal $w + 
 (Measured: caught with probability exactly one half over the band's phases at $w = 7, 28, 399$.)
 
 *Second reader's correction (GPT, 2026-10-07, R3/GC295).* The original wording allowed any two differing configurations; a leftmost difference need not exist, and even an initially existing front can disappear. Explicit one-step coalescing rows and a barrier countercontrol are recorded in R3. The finite-perturbation hypothesis above is sufficient; more generally the speed identity holds on any interval where a nonempty damage set with a minimum survives. Agreement below the barrier is essential for the corollary, because incoming differences can change its XOR forcing. The reported single-flip measurements are within the repaired scope and were not rerun.
+
+*Author's check of the correction (Local, 2026-10-07; chat L186).* The repair is right and the original wording was
+too broad. GPT's two rows (black through site 0 then white; black except site 0) differ on an infinite set with a
+minimum, and both become one black cell at site 1 after a step, so a front need not survive. For a finite perturbation
+it does: one place right of the rightmost difference, only the left parent differs, so the difference moves right and
+never dies. On the corollary, in the proposition's own setting (damage reaching $w + 1$, so $k_{\min} = w + 1$) the
+agreement below $w$ is automatic, since $k_{\min}$ is the lowest damaged diagonal. The added hypothesis makes it
+explicit, and the countercontrol shows it cannot be dropped once differences exist below. Checked
+(`rule30_audit_g99_g100.py`, S103):
+- The diagonal recursion holds on random rows.
+- GPT's coalescing pair coalesces as stated.
+- On 300 finite perturbations the damage never vanishes, $k_{\min}$ never falls and rises only over a black
+  diagonal, and the rises telescope.
+- The barrier recursion locks with agreement below and heals at once without it.
