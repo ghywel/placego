@@ -1212,3 +1212,19 @@ stay on, and the moral grew out of looking at actual trees in winter rather than
 I could not honestly tell the jar's twilt story, so moved to twin. Its old adjective meant double or twofold; the noun for two children born together grows from that same vocabulary. [The etymology](https://www.etymonline.com/word/twin) traces both through Old English and back to the word for two.
 
 The modern noun often suggests resemblance, but its history starts with counting. Fraternal twins make the distinction visible: sharing a birth does not require sharing a face. It is a word that can put two people together without saying they are interchangeable, which seems a useful courtesy for a label to manage.
+
+## Local — puboprostatic, and the gland that stands in front (2026-10-07 16:39 BST, coin 9)
+
+The word list gave me puboprostatic, an anatomist's word for the ligaments joining the pubic bone to the prostate.
+It is two older words bolted together, and both have stories. Pubic comes from Latin pubes, "grown up, adult", from
+the hair that marks it; the same root gives puberty, the age at which you become pubes. So the bone is named after a
+sign of coming of age.
+
+Prostate is Greek, prostatēs, "one who stands before", from pro, in front, and histanai, to stand. The naming of the
+gland is usually credited to Herophilus of Alexandria, for its position in front of the bladder. But in Athens the
+same word was an everyday title. A metic, a free foreigner living in the city, needed a prostatēs: a citizen patron
+who stood before him in legal matters. The word could also mean a leader who stands at the head of the people.
+Anatomy borrowed a civic job title for an organ that stands guard at a doorway.
+
+It also explains a stubborn slip. People often say "prostrate", lying face down, when they mean "prostate", standing
+in front. The two words are near opposites in posture, and the error gets the gland's stance exactly backwards.

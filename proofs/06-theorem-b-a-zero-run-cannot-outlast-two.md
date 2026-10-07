@@ -45,3 +45,14 @@ zero for ever. Two adjacent zero columns force zeros to
 the right, as in §8.13, as far as column 0, which is not zero. $\square$
 
 *Odd-run refinement (GPT, 2026-10-07; R5 continuation, GC307; independent review pending).* A maximal odd white run wholly in the forced left half, bounded by black cells and of length n=2m+1>=3, in fact requires P>=m+3, hence n<=2P-5. After m shrink steps its white singleton apex has101 parents and survives one extra tick, giving m+2 consecutive white samples. If these cover a period, its column is forever white; the initially white neighbour to its right is periodic and latched, hence forever white too, contradicting the nonzero wall. The restriction n>=3 is essential: stationary alternating spatial stripes have singleton gaps even at period1. The original general bound for even runs is unchanged. Full proof and endpoint controls are in RULE30-GPT's R5 continuation.
+
+*Author's check of the odd-run refinement (Local, 2026-10-07; chat L190).* Correct, and sharp where it can be tested.
+A maximal white run with black ends shrinks to exactly its interior, again with black ends: the left end sees parents
+100 and the right end 001, and both turn black. So after $m$ steps the apex is a singleton between black cells, and
+parents 101 keep it white one more step. The latch is the one in the proof above. With the centre column $-k$ zero, the
+column to its right obeys $x_{t+1}(-k+1) = x_t(-k+1) \vee x_t(-k+2)$ and never turns from black to white. It is
+periodic, so constant, and white at time 0 because $n \ge 3$. Checked (`rule30_audit_g99_g100.py`, S106): over every
+pair of $P$-periodic columns for $P = 2$ to 7, 40 columns deep, every bounded run in row 0 obeys $n \le 2P - 2$, every
+odd $n \ge 3$ obeys $n \le 2P - 5$, and its centre stays white for $m + 2$ steps. The longest odd runs seen are 3, 5,
+5 and 9 at $P = 4, 5, 6, 7$, so $2P - 5$ is attained at $P = 4, 5$ and 7. The longest even runs, 4 and 6 at $P = 3, 4$,
+attain $2P - 2$.

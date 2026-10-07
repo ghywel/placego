@@ -548,6 +548,13 @@ CHECKS (GPT's claims at 827e006):
      on 2,000 random runs bounded lambda <= K keeps R <= max(R_start, K), and bounded R <= M gives lambda <= 2M;
      lambda alternating 1, 3 drives R onto the 2-cycle 7/3, 5/3 (limsups 3 and 7/3 differ); on 500 random sequences an
      eventual bound K is a bound from the root at max(K, the earlier values).
+  S106 (GPT's odd-run refinement of Theorem B, entry 06, GC307, added 2026-10-07 at 1eba144): the forced left half
+     from every pair of P-periodic columns 0 and 1 (column 0 nonzero), P = 2 .. 7, 40 columns deep. Every maximal
+     white run in row 0 bounded by black cells has n <= 2P - 2, every odd n = 2m + 1 >= 3 has n <= 2P - 5, and its
+     centre column is white at times 0 .. m + 1. Longest bounded runs seen: odd 3, 5, 5, 9 at P = 4, 5, 6, 7 (so 2P -
+     5 is attained at P = 4, 5, 7) and even 4, 6, 4, 6, 6 at P = 3 .. 7 (2P - 2 attained at P = 3, 4). The stripes
+     0101... are stationary; a maximal odd run with black ends shrinks with black ends and its apex, with parents 101,
+     stays white one more step.
 """
 import random
 from fractions import Fraction as F
@@ -5739,4 +5746,54 @@ for trial in range(500):
 check('S105 GC306: R_(j+1) = (R_j + lambda_j)/2 exactly on the rooted record; bounded lambda <=> bounded R with '
       'R <= max(R_start, K) and lambda <= 2M; alternating 1, 3 gives the cycle 5/3, 7/3; fixed-root pruning suffices',
       ok105)
+ok106 = True
+# GC307's odd-run refinement of Theorem B (entry 06): build the forced left half from every pair of P-periodic columns
+# 0 and 1 (column 0 nonzero) by the inverse rule x(-j, t) = x(-j + 1, t + 1) + (x(-j + 1, t) OR x(-j + 2, t)), P = 2 .. 7,
+# 40 columns deep; in row 0, every maximal white run bounded by black cells inside the left half has length <= 2P - 2
+# (Theorem B), and an odd run n = 2m + 1 >= 3 has n <= 2P - 5, its centre column white at times 0 .. m + 1
+_max106 = {}
+for P in range(2, 8):
+    for w0 in range(1, 1 << P):
+        for w1 in range(1 << P):
+            cols = [[(w1 >> t) & 1 for t in range(P)], [(w0 >> t) & 1 for t in range(P)]]   # columns 1, 0
+            for j in range(1, 41):
+                r, r2 = cols[-1], cols[-2]
+                cols.append([r[(t + 1) % P] ^ (r[t] | r2[t]) for t in range(P)])
+            row = [cols[1 + k][0] for k in range(0, 41)]                                  # columns 0, -1, ..., -40
+            k = 1
+            while k <= 40:
+                if row[k] == 0 and row[k - 1] == 1:
+                    e = k
+                    while e <= 40 and row[e] == 0:
+                        e += 1
+                    if e <= 40:                                                           # bounded by a black cell
+                        n = e - k
+                        ok106 &= n <= 2 * P - 2
+                        if n % 2 and n >= 3:
+                            m = (n - 1) // 2
+                            ok106 &= n <= 2 * P - 5
+                            centre = cols[1 + k + m]
+                            ok106 &= all(centre[t % P] == 0 for t in range(m + 2))
+                            _max106[(P, 'odd')] = max(_max106.get((P, 'odd'), 0), n)
+                        elif n % 2 == 0:
+                            _max106[(P, 'even')] = max(_max106.get((P, 'even'), 0), n)
+                    k = e
+                k += 1
+# the singleton exception: spatial stripes 0101... are stationary, columns constant (P = 1), singleton white gaps
+_row106 = [i % 2 for i in range(12)]
+ok106 &= [_row106[i - 1] ^ (_row106[i] | _row106[i + 1]) for i in range(1, 11)] == _row106[1:11]
+# the apex mechanism alone: a maximal white run of odd length n >= 3 with black ends shrinks with black ends, and its
+# centre is white at time m + 1 (parents 101)
+for n in (3, 5, 7, 9):
+    m = (n - 1) // 2
+    row = [1] * 4 + [0] * n + [1] * 4
+    hist = [row]
+    for t in range(m + 1):
+        r = hist[-1]
+        hist.append([r[i - 1] ^ (r[i] | r[i + 1]) if 0 < i < len(r) - 1 else 1 for i in range(len(r))])
+    c = 4 + m
+    ok106 &= all(hist[t][c] == 0 for t in range(m + 2)) and hist[m][c - 1] == hist[m][c + 1] == 1
+check('S106 GC307 (entry 06 refinement): over all P-periodic column pairs, P = 2..7, every bounded row-0 white run has '
+      'n <= 2P - 2 and every odd n >= 3 has n <= 2P - 5 with its centre white for m + 2 steps; stripes keep singletons',
+      ok106)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
