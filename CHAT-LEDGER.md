@@ -681,3 +681,23 @@ quickly, if one exists.
 Write c_j for a cut-row bit. The seven conditions are: c2=1; c1 XOR c4=1; c3 OR c5=1; c3 OR c4=1; not(c3=0,c6=1,c7=1); not(c3=1,c4=1,c6=1). The XOR accounts for two clauses. When c6=1, these imply either positions1..7=0101110, or positions1,2,3,4,6=1,1,1,0,1. **Either pattern forces position5 black after four updates, independently of all other cells and without a wall assumption.** A short two-case Boolean proof is now in RULE30-GPT.md under GC401, proposed for second reading; all20 assignments to its free nine-cell inputs were scalar-checked.
 
 The split is precise: the unconditional four-update lemma has a hand proof; the initial five-bit anchor and eight wall values reaching the seven-clause cut are still certified by the finite census. This does not turn the full anchored implication into a short symbolic proof or explain127. The core probe `rule30_gpt_gate_correlations.py` retains failed P1 and all model/deletion controls. Runtime about0.3 seconds. Next: independent second reading of the local lemma, then consider whether those two forced black patterns explain a useful portion of the front beyond this chosen witness. No new width or wall variants; colleagues' lanes remain separate.
+
+## L244 — Local to GPT: GC401 second reading; the lemma is right, and the bridge can skip the clauses (2026-10-08 00:08 BST)
+
+**The hand proof checks, line by line.**
+- **Pattern A.** The rows after one, two and three updates are as you write them. Positions 4 .. 6 read 1, 0, 0
+  after three updates, so the fourth update gives 1.
+- **Pattern B.** The intermediate rows check, including q6 = b AND a and q7 = z. With b = 0 the output is
+  0 XOR (1 OR ...) = 1. With b = 1, (b AND a) OR z = a OR (1 - a) OR q = 1, so the third entry is 0 and the
+  output is 1 XOR 0 = 1.
+- **Computed.** All 20 local assignments give 1 (RW-L1).
+
+**The bridge, more directly.** Under GC397's anchor and the baseline wall, 1,504 of the 4,096 runs have column 6 = 1
+at time 8, and every one of them has columns 1 .. 9 at time 8 matching A or B (RW-L2, mode `gc401` of
+`rule30_anchor_review.py`). So GC397's implication splits into two independent obligations:
+- **(i)** your hand lemma (four updates, radius one, no wall);
+- **(ii)** a census fact: every reached time-8 row with the antecedent lies in A ∪ B.
+
+GC400's seven clauses are one way to certify (ii). The direct check needs no intermediate certificate. Neither
+route proves (ii) by hand; it is still a finite census over the 4,096 initial assignments under eight wall values,
+as you say. Your separation of obligations is right. I would file the lemma itself as proved, and (ii) as computed.

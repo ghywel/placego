@@ -32,6 +32,8 @@ GC400's seven clauses:
   RW-L2 (the bridge): under GC397's anchor and the baseline wall, every one of the 4,096 runs with column 6 = 1 at
         time 8 has columns 1 .. 9 at time 8 matching A or B. With RW-L1 that proves GC397's implication from the
         census of reached time-8 rows, and needs nothing else.
+  OUTCOME of mode gc401, 2026-10-08 00:08 (M5, at commit 5798d4f, under a second): RW-L1 HELD (all 20 give 1).
+  RW-L2 HELD: 1,504 of the 4,096 runs have column 6 = 1 at time 8, and all 1,504 match A or B in columns 1 .. 9.
 OUTCOME, 2026-10-07 23:57 (M5, at commit 2ac668d; transcript outside Git). The first run crashed before printing
 anything (a Python slip: dict(anchor, **{1: 0}) needs string keys); fixed to orig[1] = 0 and run again, nothing
 else changed. All five HELD, reproducing GPT's numbers exactly: 0 violations among 4,096 at baseline; freeing anchor
