@@ -16,6 +16,10 @@
  *   W-C1 (control): on the printed history, z(B) - z(A) = 157 (doubled units), and no driver in [A, B - 1] is a pulse.
  *   W-P1 (blind, uncertain): the 39 drivers' mean popcount is below 16 (long resets from lighter words).
  *   W-P2 (blind, uncertain): at least one driver in the witness has a reset delay of 10 or more.
+ * CHANGED after the claim, before a completed run (GPT's GC361): the loop never processes depth BOUND itself, so
+ * intervals ending at the frontier were left out of D. The program now also reports, per history, D_end, the debt
+ * including the frontier endpoint; D's definition and every prediction above are unchanged. A first launch at 20:48
+ * was stopped after 6 minutes to add this, and its partial output was discarded.
  * OUTCOME: not yet run.
  */
 #include <pthread.h>
@@ -34,6 +38,7 @@ typedef struct {
     uint32_t x, y; int64_t d; int id, parent, p32;
     int64_t T, zmin, zmin_d, D, wa, wb, last_pulse, gap_lo, Dfree, n5;
     int wpulse, snapown;
+    int64_t Dend;
     int64_t D20, h20;
     int nrec; int64_t rec[64][5];
 } walk_t;
@@ -173,6 +178,11 @@ static void run_walk(int i) {
         }
         x = 0; y = c1; d++;
     }
+    w.Dend = w.D;                                                 /* GC361: include the frontier endpoint itself */
+    if (d == BOUND) {
+        int64_t zF = 2 * w.T - 5 * d, lo = w.zmin < zF ? w.zmin : zF;
+        if (zF - lo > w.Dend) w.Dend = zF - lo;
+    }
     pthread_mutex_lock(&mu);
     w.x = x; w.y = y; w.d = d < BOUND ? -1 - d : d;               /* exited walks keep -(exit depth) - 1 */
     W[i] = w;
@@ -248,9 +258,10 @@ int main(int argc, char **argv) {
     int arg = -1, pulsewit = 0;
     for (int i = 0; i < nw; i++) {
         walk_t *v = &W[i];
-        printf("HIST walk %d parent %d N5 %lld end %s %lld D %.1f D_free %.1f witness [%lld, %lld] pulse %d\n", v->id,
+        printf("HIST walk %d parent %d N5 %lld end %s %lld D %.1f D_free %.1f witness [%lld, %lld] pulse %d "
+               "D_end %.1f\n", v->id,
                v->parent, (long long)v->n5, v->d >= 0 ? "live" : "exit", (long long)(v->d >= 0 ? v->d : -1 - v->d),
-               v->D / 2.0, v->Dfree / 2.0, (long long)v->wa, (long long)v->wb, v->wpulse);
+               v->D / 2.0, v->Dfree / 2.0, (long long)v->wa, (long long)v->wb, v->wpulse, v->Dend / 2.0);
         if (v->D > Dmax) { Dmax = v->D; arg = i; }
         if (v->Dfree > Dfmax) Dfmax = v->Dfree;
     }

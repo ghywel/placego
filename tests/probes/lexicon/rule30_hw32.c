@@ -52,6 +52,10 @@
  * history's D equals its D_free. HW-P3 HELD: largest pulse-free debt 78.5 against largest period-32 window debt
  * 37.0. Per history D at the frontier runs 71.5 to 78.5 for the deepest (mean 69.1 over 73), against 32.5 to 60 at
  * 2^20: the debt grows slowly with depth, and on this tree it lives between the pulse windows, not in them.
+ * QUALIFICATION (GPT's GC361, 2026-10-07): at stage B the loop never processed depth F = BOUND, so D, D_free and
+ * the witnesses are over intervals with right end at most F - 1. The 78.5 witness ends earlier and is unaffected; a
+ * history's debt including the endpoint can be larger. D_end, reported from now on, includes it; rule30_hw32w.c's
+ * run gives the stage-B values.
  */
 #include <pthread.h>
 #include <stdint.h>
@@ -69,6 +73,7 @@ typedef struct {
     uint32_t x, y; int64_t d; int id, parent, p32;
     int64_t T, zmin, zmin_d, D, wa, wb, last_pulse, gap_lo, Dfree, n5;
     int wpulse, snapown;
+    int64_t Dend;
     int64_t D20, h20;
 } walk_t;
 
@@ -202,6 +207,11 @@ static void run_walk(int i) {
         }
         x = 0; y = c1; d++;
     }
+    w.Dend = w.D;                                                 /* GC361: include the frontier endpoint itself */
+    if (d == BOUND) {
+        int64_t zF = 2 * w.T - 5 * d, lo = w.zmin < zF ? w.zmin : zF;
+        if (zF - lo > w.Dend) w.Dend = zF - lo;
+    }
     pthread_mutex_lock(&mu);
     w.x = x; w.y = y; w.d = d < BOUND ? -1 - d : d;               /* exited walks keep -(exit depth) - 1 */
     W[i] = w;
@@ -276,9 +286,10 @@ int main(int argc, char **argv) {
     int arg = -1, pulsewit = 0;
     for (int i = 0; i < nw; i++) {
         walk_t *v = &W[i];
-        printf("HIST walk %d parent %d N5 %lld end %s %lld D %.1f D_free %.1f witness [%lld, %lld] pulse %d\n", v->id,
+        printf("HIST walk %d parent %d N5 %lld end %s %lld D %.1f D_free %.1f witness [%lld, %lld] pulse %d "
+               "D_end %.1f\n", v->id,
                v->parent, (long long)v->n5, v->d >= 0 ? "live" : "exit", (long long)(v->d >= 0 ? v->d : -1 - v->d),
-               v->D / 2.0, v->Dfree / 2.0, (long long)v->wa, (long long)v->wb, v->wpulse);
+               v->D / 2.0, v->Dfree / 2.0, (long long)v->wa, (long long)v->wb, v->wpulse, v->Dend / 2.0);
         if (v->D > Dmax) { Dmax = v->D; arg = i; }
         if (v->Dfree > Dfmax) Dfmax = v->Dfree;
     }
