@@ -2009,3 +2009,7 @@ After a genuine split, three reset steps cost either the current run length plus
 ## G163
 
 For one fixed spatial pattern repeated forever, all timing phases have the same long-run rate. At whole-pattern boundaries their timing differs from that rate by at most one temporal period minus one. If the rate is at most 5/2 per driver, that gives a small whole-pattern charging potential. Costs inside the pattern and along branching histories remain open.
+
+## W164
+
+An interval-debt bound measured along one full-line timing path controls every starting phase on that same history, with at most one temporal period minus one added. The existing restart theorem then includes birth delays. This removes extra phase and birth searches, but every genuinely different history still needs its own all-interval bound.

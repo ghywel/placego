@@ -7133,3 +7133,29 @@ Nevertheless, starting at phase1, each of the first L pulse resets costs4. That 
 **Independent hand control and unexpected compatibility check.** For L=4, phase1 follows pulse arrivals1,5,9,13,17, then black arrivals18,19,20,21. The block costs20 across8 drivers, but its pulse half costs16 across4, with doubled debt12. From phase0 the block ends17, agreeing with the separate formula5L-3. The schedule is inadmissible as a Rule30 repeated strip: an interior pulse triple w,w,w would require S w=w XOR(w OR w)=0, but (S w)(3)=1. This precise compatibility failure is retained; the example supplies no compatible-cycle obstruction, rooted counterexample or failed prize conjecture.
 
 **What the audit closes.** G9 already rejected an endpoint-only birth-transfer shortcut with a finite clock toy. This different control has indefinitely repeated blocks, an acceptable phase-independent recurrent rate and a zero block potential, yet arbitrary interior debt at a fixed P. It withholds inferring G8's uniform one-edge potential from G163's block potential by timing monotonicity alone. A useful continuation must charge the selected agreement intervals using the actual diagonal equation, or prove a separate compatible partial-block/tree bound. No computation was run, and Local's G163 review remains independent of this clock-only addendum.
+
+### G164. One full-line path certifies every interval phase and birth restart (2026-10-07)
+
+**Statement.** Fix a finite list of M temporal drivers with one common period P. Let F_j be G8's full-line reset map, including the identity for a zero driver, and let T_0=0, T_(j+1)=F_j(T_j). For gamma>=1 define the reference path's all-interval debt
+
+    D = max over 0<=a<=b<=M of [T_b-T_a-gamma*(b-a)].
+
+Then for every such interval and every integer starting time u,
+
+    G_(a,b)(u)-u <= gamma*(b-a)+D+P-1,
+
+where G_(a,b)=F_(b-1) composed through F_a. Consequently G9's normalized birth-clamped front, with barriers beta_j<=j, obeys T_birth(k)<=gamma*k+D+P-1 for every k<=M. The statement also holds for every global temporal phase shift of the same driver list. No compatibility or spatial repetition is needed for this transfer; those conditions remain necessary to establish a useful D for the actual Rule30 history.
+
+**Proof.** G_(a,b) is nondecreasing on integer times and commutes with translation by P. Its displacement Q(u)=G_(a,b)(u)-u is P-periodic. For residues u<v with 1<=v-u<=P-1, monotonicity and periodicity give
+
+    -(v-u) <= Q(v)-Q(u) <= P-(v-u).
+
+Hence the spread of Q over every starting residue is at most P-1. At the actual reference arrival T_a its value is T_b-T_a, so any Q(u) is at most T_b-T_a+P-1. The definition of D proves the interval inequality. Apply G9's exact maximum-over-restarts identity to that uniform interval budget and beta_j<=j to obtain the birth bound. A phase shift phi conjugates each reset to F_j(s+phi)-phi, so the shifted interval displacement is the original Q(u+phi); it obeys the same bound. Square.
+
+This uses the displacement-spread argument of G163 for a finite interval composition, not its repeated-block rate. The reference debt must cover all intervals, not just the whole prefix. Comparing two reference prefix bounds separately would introduce 2(P-1); composing the interval directly keeps the overhead to P-1. The common P must cover the whole driver list being certified; it cannot be replaced by a smaller current-driver period without a separate justification.
+
+**Existing finite evidence, not a new run.** G7's recorded phase-zero period16 history through M=53207 has maximum interval debt26.5 at slope5/2. Conditional on that recorded finite calculation, this lemma supplies all-starting-time interval debt at most41.5 on the same history. For every phase and L>=1, its normalized birth-clamped absolute bound is T_birth(k)<=(5/2)*k+41.5 for k<=53207. G9 also gives birth-clamped interval debt at most42.5 for L=1, or41.5+L in general. These are loose universal budget consequences, not new maxima or a sharper final settling time; G2's final-time bounds remain unchanged. The computation is not rerun or newly independently verified here. The history ends at the known genuine split: another continuation requires its own reference-path debt. No all-branch or asymptotic conclusion follows.
+
+**Identified unexpected sharpness/domain control.** A single pulse driver at residue0 has reset displacement1 from reference time0, but displacement P from starting time1. Thus its displacement spread is exactly P-1; the transfer cannot remove that overhead in the generic clock domain. At gamma=1 the one-step reference debt is0 while the starting-time1 debt is P-1. This is not claimed a repeated compatible Rule30 strip. At P=1 the overhead vanishes, including the zero-driver identity. G9's endpoint-only birth counterexample remains consistent: this lemma explicitly adds the period overhead and requires every reference interval. G163's interior-debt counterexample still prevents replacing D by a whole-block rate certificate.
+
+**Scope and remaining obligation.** Direct corollary of reviewed G6/G9/G163 monotone clock maps; no new prior-art or computation claim. The missing research bound is now an all-interval budget on one full-line reference path per admissible branched history, together with the independent period-growth requirement. An arbitrary-period D=O(P) bound is not supplied. Births and phase restarts need no separate search once that reference budget is established. No prize result is claimed.
