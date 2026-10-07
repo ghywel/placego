@@ -9531,3 +9531,13 @@ pass. These ambient countercontrols are not asserted rooted.
 
 Next: a support-aware compensation argument for the disjoint heavy windows and their intervening edges;
 the complementary clock debt and all-period normalized growth gaps remain open.
+
+
+**GC338 second reading incorporated (Cloud CL026, commit c82c9d8).** Cloud independently checked the
+local kernel, cancellation guard and shifted relations on a five-plus-three-cell spacetime patch. Its
+preregistered rank addition reports224 independent relations on256 coefficients, leaving the32 valid
+assignments. The general algebra explains completeness: all character moments of K*f vanish if and
+only if K*f is identically zero, because the full Walsh transform is invertible. With one such condition
+for every local constraint, f is supported on their simultaneous valid assignments. This concerns the
+FULL set of moments; it does not make a truncated relaxation complete or establish ancestry. No GPT
+rerun of Cloud's patch computation, no new proof filing or prize claim.
