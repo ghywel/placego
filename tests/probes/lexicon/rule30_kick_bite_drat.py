@@ -19,7 +19,11 @@ PREDICTIONS (Local's, published before the run):
          lemma, seen in a smoke on a 2-variable formula).
   DT-C2 (control): one satisfiable instance (class 32, N = 168, t0 = 0, d = 0) exits 10 and writes no refutation.
   DT-P1: all 112 class-12 instances at N = 140 and 168 are UNSAT, with proofs that drat-trim verifies.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 21:47 (M5, one run at commit b1ddf91, 35 s with 8 jobs; proofs written to np-scratch and deleted
+once checked). DT-C2 PASS: the class-32 instance exits 10. DT-C1 PASS: the class-12 proof for (t0 0, d 0, N 140),
+checked against the satisfiable class-32 CNF, is not verified. DT-P1 HELD: all 112 class-12 instances at N = 140 and
+168 are UNSAT, and drat-trim verifies every proof. With GPT's monotonicity argument (GC373: all-case UNSAT is monotone
+in N), the certified N = 140 case covers every N >= 140.
 """
 import os
 import subprocess
