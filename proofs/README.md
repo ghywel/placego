@@ -532,4 +532,7 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Proposition 10 (computed): the rooted period-32 stage runs past 2.6 × 10^10 steps](23-proposition-10-computed-the-rooted-period-32-stage.md):
+  Some histories take more than 26 billion steps to double their repeat length from thirty-two to sixty-four.

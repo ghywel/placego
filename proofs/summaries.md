@@ -2692,3 +2692,13 @@ describe the same thing. It is a classical result, written out here so that it c
 
 **An everyday picture.** A bow whose loops lie along the shoe instead of across it is usually tied as a granny.
 Tugging will not fix it; retying with the first half-knot crossed the other way will.
+
+
+## 23
+Some histories take more than 26 billion steps to double their repeat length from thirty-two to sixty-four.
+
+**What it says.** All the histories were followed side by side, through every place where one splits into two, for about 26.4 billion steps. Fifty-six of the seventy-three that arose doubled their repeat length to sixty-four along the way. The first did so after about 66 million steps, the last of them after about 26.2 billion. Seventeen had still not doubled when the count stopped.
+
+**Why it matters.** It shows how widely the histories spread out at this stage: the slowest are at least four hundred times slower than the fastest. The doublings keep getting rarer, and much more so for some histories than for others.
+
+**An everyday picture.** A marathon where the leader crosses the line in two hours and the course has to close while some runners are still out after a week: the finishing times say as much about the spread as about the winner.

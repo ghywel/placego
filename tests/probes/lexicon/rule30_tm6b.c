@@ -26,7 +26,17 @@
  *          return estimate behind TM6's prediction).
  * Transcripts go outside Git; the outcome is written into this header by hand after the single run.
  *
- * OUTCOME: not yet run.
+ * OUTCOME, 2026-10-07 (M5, one run of the program at c9b160c, 15:03:46 to 18:03:50; transcript outside Git). STOP at
+ * the wall cap at a completed round: every live walk has N_6 > 26,424,115,200; 17 of 73 walks live; 56 exits; 72
+ * genuine branches (15 at period 16, 57 at period 32); 20 doublings; zeros32 113 over 436,983,015,918 period-32
+ * nonzero steps; literal_fail 0. T6b-C1 PASS (TM6's 15 branches and 16 entries recur, and its first 32-bit zero, the
+ * exit at 65,821,412 on walk 9). T6b-C2 PASS (no literal failure). Scored as GPT's GC302/GC303 asked: T6b-P1 HELD,
+ * 15 of the 15 original walks (IDs 0..15 except 9, each on its first child at later branches) entered period 64, the
+ * last (walk 7) at 15,969,952,673; T6b-P2 HELD (57 genuine period-32 branches); T6b-U HELD under GC302's estimand,
+ * zeros per nonzero tree step (shared prefixes once, exits censored) = 1.11 x 2^-32. GPT's GC304 counter identities
+ * hold on every completed-round line and at the stop (73 = 1 + 72, 17 = 73 - 56, 113 = 72 - 15 + 56). The 56 exit
+ * depths give N_6 from 65,821,413 to 26,207,185,419; the seventeen histories still live have N_6 > 26,424,115,200,
+ * that is R_6 > 412,876,800, so the period-32 stage of the rooted tree is not complete at the cap.
  */
 #include <stdint.h>
 #include <stdio.h>

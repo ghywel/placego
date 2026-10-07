@@ -1410,8 +1410,8 @@ business end? What is "above" the mouth for a starfish, whose mouth faces the se
 mouth at all? Does naming by position quietly assume every body has an up and a front, when many simply don't?
 
 Embryology turns the question round nicely. In the early embryo the first opening to form, the blastopore, becomes
-the mouth in snails, insects and worms, which is why they are called protostomes, "mouth first". In us, and in
-starfish and all other vertebrates, that first opening becomes the anus, and the mouth forms later: we are
+the mouth in snails, insects and worms, which is why they are called protostomes, "mouth first". In us and every
+other vertebrate, and in starfish too, that first opening becomes the anus, and the mouth forms later: we are
 deuterostomes, "mouth second". So if the body is a map centred on the mouth, what does it mean that in our own
 development the mouth was not the first landmark but a later one? Is the origin of a coordinate system the most
 important point on the map, or just the one we agreed to measure from?
@@ -1424,3 +1424,23 @@ Your mouth-centred map makes me think of a boat. Face the bow and port is to you
 That is why a shouted 'left!' can be a surprisingly poor instruction. Left for the person speaking, the person listening, or the thing being moved? Does a name become more useful when it belongs to the object rather than the observer? Perhaps that is also why we like landmarks: the bridge keeps being the bridge when everyone turns round.
 
 But a fixed landmark can become a habit of thought. If every map starts from the mouth, what kinds of animal become awkward to describe? If every route starts from home, which places look remote? The choice of origin does not move the world, yet it can change which journeys feel natural. How much of 'far away' is distance, and how much is an unspoken 'from here'?
+
+## Local — Gareth, why does Britain stop when it snows? (2026-10-07 17:57 BST, coin 5)
+
+Gareth, your aside, that the UK groans to a halt with the slightest dusting, is worth questioning, because it may be
+less silly than it looks. Sweden and Finland require winter tyres by law in the winter months, and their roads keep
+moving through snow that would close half of England. Britain makes no such rule. Is that negligence, or arithmetic?
+
+Suppose heavy snow comes to a British town for a handful of days a decade. Should every driver buy a second set of
+tyres they will use on three days in ten years? Should every council keep a fleet of ploughs that rusts nine winters
+out of ten? Or is grinding to a halt for two days, apologising and getting on with it the cheapest plan available?
+If so, the halt is not a failure of preparation but a decision not to prepare, made quietly by millions of people who
+each did the sum. But then, who counts the hospital appointment missed, or the shift not worked? Is a rare cost
+smaller just because it is rare, or does it only look smaller because nobody has to see it all at once?
+
+Your rain question has the same shape turned round. You remember the wet days because they cost you something, and
+forget the dry ones because they cost nothing. A country remembers the snow days for the same reason, and forgets the
+nine winters when the ploughs it did not buy would have stood idle. And the blades: short skis that slide sideways and
+went out of fashion while the people on them were still having the best time. Did they lose because they were worse,
+or because a sport is also a uniform, and the uniform moved on? If sideways is the best way, why does the slope
+mostly point down?

@@ -590,6 +590,12 @@ CHECKS (GPT's claims at 827e006):
      > K(2q - 1 + D) pass every phase; GPT's two abstract schedules (q_j = 2^j, N_j = 2^(j^2), debt jumps on alternate
      parities) have nondecreasing debts, both ratios unbounded, and the smaller current ratio below 1 at every stage j
      = 2 .. 25.
+  S113 (GC326, added 2026-10-07 at 12e3536): GPT's sparse episode. At every rotation s for q = 4 .. 32, the source e_s
+     + e_(s+2) with driver e_s has the unique children 1 + e_(s+1) + e_(s+2), then 1 + e_(s+1) + e_(s+2) + e_(s+3),
+     then e_(s+4), and from phase s + 1 the reset delays are q, 3, 1, q (cost 2q + 4); at q = 3 the first edge still
+     holds but the four-step pattern fails at every rotation. At q = 16 the cost is 36 and the slope-5/2 debt 26. A
+     separately written absolute-time walk of every rooted history at q = 16 finds the state (320, 64), clock phase 7,
+     at depth 725,146, the rooted occurrence GPT reports.
 """
 import random
 from fractions import Fraction as F
@@ -6143,4 +6149,74 @@ ok112 &= max(_QA) > 2 ** 40 and max(_QB) > 2 ** 40
 check('S112 GC323: the exact integer gate equals N > K(q + D); upper debt certifies, lower debt only bounds above; the '
       'all-phase gate N > K(2q - 1 + D); the asynchronous two-path control (both unbounded, minimum current ratio < 1)',
       ok112)
+ok113 = True
+
+
+def _rd113(w, T, q):
+    if w == 0:
+        return 0
+    return next(i + 1 for i in range(q) if (w >> ((T + i) % q)) & 1)
+
+
+# GC326's sparse episode: source a = e_s + e_(s+2), driver b = e_s; children 1 + e_(s+1) + e_(s+2), then
+# 1 + e_(s+1) + e_(s+2) + e_(s+3), then e_(s+4); from phase s + 1 the reset delays are q, 3, 1, q. Every rotation, q = 4 .. 32
+_n113 = 0
+for q in range(4, 33):
+    full = (1 << q) - 1
+    e = lambda i: 1 << (i % q)
+    for s in range(q):
+        a, b = e(s) | e(s + 2), e(s)
+        c1 = full ^ e(s + 1) ^ e(s + 2)
+        c2 = c1 ^ e(s + 3)
+        c3 = e(s + 4)
+        ok113 &= _rq3.children(a, b, q) == [c1] and _rq3.children(b, c1, q) == [c2] and _rq3.children(c1, c2, q) == [c3]
+        T, ds = s + 1, []
+        for w in (b, c1, c2, c3):
+            dl = _rd113(w, T, q)
+            ds.append(dl)
+            T += dl
+        ok113 &= ds == [q, 3, 1, q] and 2 * sum(ds) - 5 * 4 == 2 * (2 * q + 4) - 20
+        _n113 += 1
+ok113 &= _n113 == sum(range(4, 33))
+# at q = 3 the whole four-step pattern fails at every rotation (it needs phases s .. s + 4 distinct enough); the first
+# step alone still holds there, so the rejection is of the chain, not of its first edge
+for s in range(3):
+    e3 = lambda i: 1 << (i % 3)
+    a, b = e3(s) | e3(s + 2), e3(s)
+    c1 = 7 ^ e3(s + 1) ^ e3(s + 2)
+    c2 = c1 ^ e3(s + 3)
+    c3 = e3(s + 4)
+    steps = (_rq3.children(a, b, 3) == [c1], _rq3.children(b, c1, 3) == [c2], _rq3.children(c1, c2, 3) == [c3])
+    T, ds = s + 1, []
+    for w in (b, c1, c2, c3):
+        dl = _rd113(w, T, 3)
+        ds.append(dl)
+        T += dl
+    ok113 &= not (all(steps) and ds == [3, 3, 1, 3]) and steps[0]
+# at q = 16: cost 36 and slope-5/2 debt 26 over the four edges
+ok113 &= 2 * 16 + 4 == 36 and 2 * 36 - 5 * 4 == 52
+# the rooted occurrence: walk every rooted history at q = 16 in absolute time from the root and read the state and
+# clock phase at depth 725,146 on the histories that exit period 16 at 770,531 and 894,234
+_hits113 = []
+_st113 = [(0, (1 << 16) - 1, 0, 0)]
+while _st113:
+    x, y, d, T = _st113.pop()
+    while True:
+        if d == 725146:
+            _hits113.append((x, y, T % 16))
+        if y == 0:
+            kids = _rq3.children(x, 0, 16)
+            if not kids:
+                break
+            c1, c2 = kids
+            if not any(_rq3.rot(c1, k, 16) == c2 for k in range(16)):
+                _st113.append((0, c2, d + 1, T))
+            x, y, d = 0, c1, d + 1
+            continue
+        T += _rd113(y, T, 16)
+        x, y, d = y, _rq3.children(x, y, 16)[0], d + 1
+ok113 &= (320, 64, 7) in _hits113
+check('S113 GC326: the sparse episode e_s + e_(s+2), e_s -> 1 + e_(s+1) + e_(s+2) -> ... -> e_(s+4) with delays q, 3, 1, q '
+      'at every rotation for q = 4..32 (the chain fails at q = 3); cost 36, debt 26 at q = 16; the rooted state (320, 64) at '
+      'phase 7 at depth 725,146', ok113)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
