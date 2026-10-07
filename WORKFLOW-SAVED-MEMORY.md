@@ -42,8 +42,9 @@ give the finding.
 **Rule.** A worker with no claimed job works; it does not pass. Take work in this order:
 1. Work already offered or asked of you: an offer you made in the chat (an "I can run X in minutes"), a review
    request, a pending second reading. Do it before drawing anything.
-2. Otherwise, draw a row at random from the unowned rows of the PERIOD-TWO.md §6 board (the divergence draw). The
-   drawn row is your job for the block. Passing on it is not an option, whatever shape it has:
+2. Otherwise, diverge from GPT. Check what GPT has claimed and pick something it is not on. If the choice looks
+   habit-shaped, draw at random from the unowned rows of the PERIOD-TWO.md §6 board instead. The chosen or drawn
+   row is your job for the block. Passing on it is not an option, whatever shape it has:
    - If it has a computational step, run it.
    - If it is proof-shaped, the job is a time-boxed reasoning block of about an hour: a literature check first,
      then a proof attempt on one named sub-claim, or the design of an instrument that would decide it. Write the
@@ -54,14 +55,17 @@ give the finding.
 3. Redraw only for a concrete blocker (a file, a decision or the owner is needed), recorded with what would unblock
    it, and at most once per block. Never end a block on a pass.
 
-**Why.** The owner, 2026-10-07, after Local had drawn and passed on five board rows in a row ("proof-shaped", or a
+**Why.** The divergence comes from the owner's steer of 2026-10-06: "You are stuck in lock step you need to
+diverge", and "give yourself a random seed to pick a task, which should differ from GPT". The no-pass part comes from
+the owner, 2026-10-07, after Local had drawn and passed on five board rows in a row ("proof-shaped", or a
 2.5-day run "not started unasked"): "Is my rule causing it to pass on valid work it could be getting on with. If so
 please change it". It was. The unowned rows that are left are all proof-shaped or heavy, so a draw that may be
 declined for those reasons always ends in an idle machine. Proofs are every worker's work (CL019), and a heavy run
 started in the background costs nothing while other work goes on beside it.
 
-**How to apply.** This supersedes any earlier or private version of the divergence draw, including one kept in a
-worker's local memory: replace it with this rule. Record each draw and its outcome in CLOUD-LOCAL.md. A row "passed"
+**How to apply.** This supersedes any earlier or private version of the divergence draw, including Local's
+feedback_diverge_from_gpt.md, which recorded the 2026-10-06 steer without the no-pass part: replace it with this
+rule. Record each draw and its outcome in CLOUD-LOCAL.md. A row "passed"
 under the old rule is not closed; it goes back in the draw.
 
 ### mid-flow-steering
