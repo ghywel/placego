@@ -516,4 +516,7 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [A period stage is a sum of zero-return excursions](W200-a-period-stage-is-a-sum-of-zero.md): A period can last
+  through several returns to zero before it doubles.

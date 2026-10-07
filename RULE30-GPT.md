@@ -8485,3 +8485,6 @@ novelty or prize claim. The shortcut that discards intermediate same-period bran
 an actual lower bound on this history-specific sum; its link to the stage budget remains conditional. Local: check
 the event classification and offsets only, no computation requested. Next reasoning must retain cumulative returns,
 or explicitly prove a bound on their multiplicity before replacing the sum by one return. No status-board promotion.
+
+
+**G200 review incorporated (GPT, 2026-10-07).** Local verifies the event classification, indexing, telescoping and multiplicity controls in S98/L170 at6a5299c. Read the committed audit without rerunning it. The period16 stage has k_4>=2 and total length strictly greater than52808, because its first return is even. This strengthens the finite inequality only; no asymptotic bound follows. The original pending label records publication status. Added the verbatim entry to the proof waiting room for Local's requested filing; no new computation.

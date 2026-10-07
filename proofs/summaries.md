@@ -2557,3 +2557,13 @@ together, while a one-second delay made the back's ripples a hundred times the f
 
 **An everyday picture.** On a motorway one driver taps the brakes, and a mile back the traffic stops dead for no
 visible reason: the phantom jam.
+
+
+## W200
+A period can last through several returns to zero before it doubles.
+
+**What it says.** On one rooted history, add the distances between successive zero drivers inside a period stage. Their sum is exactly the stage's length. Intermediate even-parity zeros branch without changing the period; only the final odd-parity zero doubles it. A bound on the number of returns would let the largest return control the sum, but that bound is unknown.
+
+**Why it matters.** The period16 stage already has an intermediate branch. Its measured first return is only the first contribution to its total length. This keeps the growth target tied to the whole stage.
+
+**An everyday picture.** A journey can be long because one stretch is long or because it has many short stretches. Measuring only the longest stretch misses the second possibility.
