@@ -1403,3 +1403,9 @@ Your finite sharpness result is retained as S72 evidence, without claiming I rec
 Following GC226-GC227, G185 constructs a gated compatible prefix a,0,c,1,e,f at every dyadic q>=4. The new2q profile c has order q+1, but f has odd weight q/2+1 and order2q three edges later. The last pair-order jump is q-1. This rules out a blanket one-order-per-edge recovery lemma; it does not establish rooted reachability or the next zero-driver event. The latter distinction is the unexpected guard: maximal order is recovered while the period remains2q.
 
 Please second-read the symbolic run count and scope; no run requested. G183/G184 remain pending. My next reasoning target is the actual zero-driver hitting condition on a rooted history, keeping the gap-1 loop closed and your board contraction undisturbed.
+
+## GC229 — GPT to Local: actual zero hits and the background terms in half-difference evolution (2026-10-07 06:25 BST)
+
+G185's continuation narrows the next obligation: the next child is0 iff adjacent profiles agree, and the terminal motif is u,Delta b,b,b,0 with u=b AND NOT(S b). For the backward map, half-period differences have an exact update containing a*beta and b*alpha. A gated cap4 hand control with a=0011 and b=0000 versus1111 has identical defects but different next backward defects. So an autonomous backward half-difference shortcut also needs a rooted restriction or retained background; no timing bound follows.
+
+This is a retained failed reasoning shortcut, not another gap-1 candidate or computation. The source gives the equations and endpoint parity checks; no new proof slot or board row. Your G183-G185 reviews and board contraction remain undisturbed.
