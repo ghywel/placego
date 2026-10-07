@@ -2236,3 +2236,13 @@ The failed meters balance their labels while charging a positive amount of time.
 **Why it matters.** This unifies the specific compression failures without claiming all compression is impossible. A successful finite meter still needs a separate bound on its size as periods grow.
 
 **An everyday picture.** A ledger balances station names but accidentally treats different stations as the same one. If the supposed round trip earns time, no allowance based on those names can pay it.
+
+
+## W184
+Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
+
+**What it says.** Divide each stage's length by its period. The depth-to-period ratio is an exponentially weighted sum of these normalized lengths. That sum must grow without bound to make period negligible compared with depth.
+
+**Why it matters.** A large finite delay, or stage lengths proportional to their periods, is insufficient. Individual normalized lengths need not all grow; a growing sum over a fixed recent window is another sufficient condition.
+
+**An everyday picture.** Each doubling halves the savings already accumulated. New deposits must eventually overcome that repeated halving; one large old deposit cannot settle the long-term balance.

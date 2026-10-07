@@ -463,3 +463,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The small-period reached timing certificate passes independent verification.
 - [Compression fails exactly at positive feature-balanced edge collections](W183-compression-fails-exactly-at-positive-feature-balanced-edge.md):
   The failed meters balance their labels while charging a positive amount of time.
+- [Period-growth gap is an exponentially weighted stage-length condition](W184-period-growth-gap-is-an-exponentially-weighted-stage.md):
+  Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
