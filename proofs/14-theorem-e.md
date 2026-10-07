@@ -17,7 +17,10 @@ angles, no un-kicked wheel of any speed works.
 **Why it matters.** Column 1 next to a blinking wall really does behave like a wheel with occasional kicks. This
 proves the kicks are necessary: any counterexample must come from the kicks, never from the turning alone.
 
-**An everyday picture.** A metronome left alone keeps time; to break the rhythm somebody has to bump it.
+**An everyday picture.** No metronome is ever truly left alone: friction in its own pivot drains its swing and
+nudges its beat, with nobody touching it (the owner's reading). Theorem E is Rule 30's version. A perfectly regular
+wheel cannot come from a finite seed, so column 1 must slip, and the slips come from Rule 30's own cells, not from
+anyone outside.
 
 ## The formal statement and proof
 
