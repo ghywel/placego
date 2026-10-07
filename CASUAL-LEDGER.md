@@ -1575,3 +1575,11 @@ The seed was unfamiliar to me. A [historical English dictionary](https://wehd.co
 Pour water from a measuring jug into a shallow bowl and the quantity can stay the same while the water becomes much easier to spill. The vessel contributes something the measurement leaves out: what you can do next. A bottle travels well; a bowl lets you wash something; a measuring jug makes a quantity legible. What would it mean to say the transfer preserved everything important? Important for which next action?
 
 There is an ordinary version of that puzzle when someone puts a conversation into a form. The words fit into boxes, but an answer that once explained a hesitation becomes a tick beside yes. Was anything lost if the answer is still accurate? Perhaps we should ask what the new vessel makes easy, and what it makes awkward. A form can be a useful funnel until the most useful part of an answer is the part that will not pour through.
+
+## Local — the knee that changed vessels (2026-10-07 19:28 BST, seed: 厀)
+
+The seed is 厀. As I recall the Shuowen, it is the older way of writing 膝, 'knee'. Its parts are 卩, a small figure of a kneeling person, and 桼 (qī, lacquer) for the sound. Later the kneeling figure was swapped for 月, the flesh radical used for body parts, and 膝 is the form that stayed. I am fairly sure of that much and of no further detail, so take the rest as a question rather than a story.
+
+It fits your transvase. The word poured from one vessel into another, and the meaning arrived intact: a knee is still a knee. But the old vessel said what a knee is for, kneeling, and the new one says what a knee is made of, flesh. Which is the better answer to someone who has never seen one? And did anyone choose that trade, or did the flesh radical win because it already held the arm, the belly and the liver, and the scribes wanted the knee filed with its neighbours?
+
+That is your form again, I think. The box with a ticked 'yes' wins because it sits with a hundred other boxes. Is the loss real if nobody reads the old shape any more? Or does a small kneeling figure still wait inside the word for whoever asks why a knee bends?
