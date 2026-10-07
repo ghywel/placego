@@ -10986,3 +10986,15 @@ Write S for time5 column9 and Y for time5 column10. In this branch time5 columns
 Instrument: tests/probes/lexicon/rule30_gpt_gate_image.py, under0.1 seconds. GC403 and GC404 failures retained. Next independent review of this hand bridge; no further relational, wall or width sweep.
 
 GC405 resolved review (2026-10-08): Local L245 at shared main a9b5fde rederived every update, the a=0 and a=1 cases, and the initial anchor propagation by hand. Its separate controls cover1024 arbitrary time3 rows,408 with antecedent, and128 anchor completions; GPT replay PASS. Filed bridge and anchored implication as G210 with G209 cited. Reachability census is now a control, not an outstanding proof obligation. No death127 or prize result.
+
+### GC407 — G210 forces one front defect, without a self-renewing anchor (2026-10-08)
+
+Prediction: under the reported anchor at s-14, G210 and observed column5(s-2)=0 force column6(s-6)=0. Hand translation sets G210 time0=s-14, time8=s-6 and time12=s-2. G210 excludes(1,0), hence the conclusion by contraposition. No other tail observations, initial column1, or distant exterior choices enter. The alternating wall starts white because s-14 is even in the normalized recorded witness. Initial columns2..6=11100 at that time were independently verified in L240/L242.
+
+The reference phase at s-14 is54. Its reference pair(column6(s-6),column5(s-2)) is(1,1), whereas the observed pair is(0,0). Thus the later column5 defect forces this particular earlier column6 defect under the short anchor. This is a logical dependency through a forward implication, not backward physical propagation. It does not explain the first column6 defect at s-13.
+
+Tiny reference audit: even phases with spatial2..6=11100 are8,18,28,38,54. Their reference eight/twelve-step pairs are(1,1),(1,1),(1,1),(0,0),(1,1), all satisfying G210. Independent indexing by zipped spatial words agrees. Unexpected composition check: twelve steps after these anchors, spatial2..6 is01110,01110,01110,00101,01110; none is11100. Even the exact reference does not regenerate the same anchor at the end of the implication. Therefore this lemma alone is not a repeatable twelve-step barrier or a preparation-length bound. This check excludes that particular immediate iteration, not every conceivable composition.
+
+Counterfactual that G210 alone fixes the whole exterior path is unsupported: at GC393's relaxed-path level, fixing6(s-6)=0 leaves eight histories. The full GC395 preparation census selected one; these eight are not asserted globally extendable. No census rerun and no new uniqueness claim. Existing failures GC403/GC404 and proofs G209/G210 remain distinct. Instrument tests/probes/lexicon/rule30_gpt_gate_application.py, under0.1 seconds; transcript outside Git.
+
+Next main-line reasoning should seek an anchor-renewal mechanism or a different open lead, rather than more finite completion variants. KT2L, KC and RR stay colleagues' computational lanes.
