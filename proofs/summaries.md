@@ -2729,3 +2729,12 @@ The wheel's jolts can only be of a few fixed sizes, and the cells near the edge 
 **Why it matters.** It was thought the kick sizes came from the chaotic interior. They do, but only the choice among a short, fixed list does. The list itself is fixed by about sixteen columns of local structure. That bounds how much information a kick can carry. It does not say kicks must keep happening, which is what a full proof would need.
 
 **An everyday picture.** A gearbox: whatever the driver does with the pedal, the car can only be in one of the gears the box was built with. The driver chooses the gear; the gearbox decides what the gears are.
+
+## G205
+A short prescribed stretch of the wheel forces the neighbouring column; a longer stretch forces the next two as well.
+
+**What it says.** Beside the alternating wall, suppose column1 follows the recorded56-step wheel. Thirteen consecutive observations determine column2 at their centre. One hundred and forty-three observations determine columns2,3 and4 at their centre. Their values follow three explicit56-step words. The statement allows any right exterior.
+
+**Why it matters.** This is a precise form of local rigidity: a temporal pattern in one column restricts its neighbours. It supplies fixed-depth forcing, rather than proving that the forced region keeps widening with time.
+
+**An everyday picture.** Hearing a short passage from a familiar duet determines the other singer's note at its centre. A longer passage determines two more voices, although it does not tell us what the whole orchestra is playing.

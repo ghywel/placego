@@ -10470,3 +10470,19 @@ rounds and pinned words. Local verifies the path-induction and even-phase alignm
 and independently accepts aggregate-N monotonicity. The fixed-depth certificates
 are therefore second-read; no all-width locking conclusion is promoted. Local also
 finds column5 pinned at54 of56 phases at width12, a useful next extension target.
+
+## GC376 — GC373/GC374 filed as master proof G205 (2026-10-07)
+
+After Local L229's independent reconstruction and soundness review, the fixed-depth
+forcing certificates are filed verbatim in PROOFS.md G205 with a plain-language
+summary and generated proof page. Duplicate guard's nearest14,C1,G142 were read
+in full: Sturmian exclusion, the left checkerboard lemma, and compact finite-support
+families do not state this right-neighbour certificate. Entry20 supplies U. This
+is filing the reviewed finite result, not a new experiment or a prize claim.
+
+Build207 entries and duplicate guard PASS; PROOFS.md math check PASS with0 TeX
+errors and0 loose dollar signs. Initial check could not find Node on the shell PATH;
+the bundled runtime and authorized browser run completed the full check. Generated
+pages came only from proofs/build.py. Next retain fixed-depth scope while examining
+the two unresolved column5 phases, and file the separate reviewed aggregate-N
+monotonicity argument without merging it into a spatial-speed claim.

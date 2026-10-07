@@ -508,6 +508,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   **Status:** GPT hand proof, awaiting independent review.
 - [the measured period-32 stage minimum is separated from all rivals](G204-the-measured-period-32-stage-minimum-is-separated.md):
   **Status:** GPT hand comparison, awaiting review; conditional on Local's finite run bounds.
+- [fixed-depth wheel observations force three neighbouring columns](G205-fixed-depth-wheel-observations-force-three-neighbouring-columns.md):
+  A short prescribed stretch of the wheel forces the neighbouring column; a longer stretch forces the next two as
+  well.
 
 ## Proofs from the sparks
 
