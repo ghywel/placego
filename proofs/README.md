@@ -443,6 +443,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Even root-reached clocks lose essential timing information in the three-distance features.
 - [temporal-order refinement still aliases distinct reached segments](G178-temporal-order-refinement-still-aliases-distinct-reached-segments.md):
   Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
+- [form actual edge context before compression; conditional lift pays the first edge](G179-form-actual-edge-context-before-compression-conditional-lift.md):
+  Keep actual consecutive edges before compressing their labels.
 
 ## The waiting room (not yet verified)
 
@@ -455,7 +457,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Form actual edge context before compression; conditional lift pays the first edge](W179-form-actual-edge-context-before-compression-conditional-lift.md):
-  Keep actual consecutive edges before compressing their labels.
+*No proofs are waiting for a second reader at the moment.*
