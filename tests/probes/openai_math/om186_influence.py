@@ -28,6 +28,9 @@ Unexpected check: the proof's constant is not numerical, because it takes n beyo
 the least n from which the proof's four conditions hold, and so an explicit C_r, for r = 3 to 6. Guess before
 the run: log N_3 lies between 40 and 60, so the proof only bites for n above about 10^17.
 Control: F2's ratio is exactly 1 for constant g, and F5's count is checked against a direct enumeration.
+Added after the first run, when Cloud read the graph companion ("A Sharp Threshold Bound for Monotone Graph
+Properties"): F7 checks its explicit constants, Var <= 2^17 I / (log n)^2 for every n >= 2 and threshold width
+<= 2^19 log(1/(2 eps)) / (log n)^2.
 """
 import itertools, math, random
 from fractions import Fraction as Fr
@@ -182,6 +185,15 @@ def main():
     res["F5  capture probability >= m/(2n) under the preprint's condition"] = f5()
     ok6, cnt = f6()
     res[f"F6  Margulis-Russo exact for all {cnt} monotone functions of 4 bits"] = ok6
+    e = math.e
+    ok7 = (256 * e ** -8 < 0.5 and 4 * 2 ** 0.25 * 256 * e ** -2 < 256 and 8192 * 9 == 73728
+           and 73728 + 256 <= 2 ** 17 and 64 / 16 ** 2 >= 0.25 and 4 * 2 ** 17 == 2 ** 19
+           and all(4 * ep * (1 - ep) <= 1 for ep in [Fr(k, 1000) for k in range(1, 500)])
+           and all(math.log((1 - x) / x) <= 2 * math.log(1 / (2 * x)) + 1e-12
+                   for x in [k / 1000 for k in range(1, 500)])
+           and all((t * t * math.exp(-t / 8)) >= ((t + 0.5) ** 2 * math.exp(-(t + 0.5) / 8)) for t in range(16, 400))
+           and all(m ** 0.5 / 2 <= math.isqrt(m) for m in range(4, 100000)))
+    res["F7  the graph companion's explicit constants (2^17 and 2^19)"] = ok7
     for r in (3, 4, 5, 6):
         Nr, C = threshold(r)
         print(f"   r = {r}: the proof's conditions hold for good from n = {Nr:.3e} (log n = {math.log(Nr):.1f}); "
