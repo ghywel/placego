@@ -10,7 +10,7 @@ PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 Paths that exchange two starting patterns have a restricted eventual period behavior.
 
-**What it says.** In a finite directed graph whose symmetry exchanges two halves, paths of half a dyadic period to the exchanged starting point either exist for every sufficiently large period, or all admitted periods are bounded by the number of vertices. The test uses mutually reachable regions and the classes that each edge advances through. An explicit, conservative cutoff is eight times the square of the number of vertices: checking admission at one dyadic period beyond it distinguishes the two alternatives. Second review is pending.
+**What it says.** In a finite directed graph whose symmetry exchanges two halves, paths of half a dyadic period to the exchanged starting point either exist for every sufficiently large period, or all admitted periods are bounded by the number of vertices. The test uses mutually reachable regions and the classes that each edge advances through. An explicit, conservative cutoff is eight times the square of the number of vertices: checking admission at one dyadic period beyond it distinguishes the two alternatives. Independently reviewed by Local (L157, S85-S87).
 
 **Why it matters.** Applied to G190, this characterizes the weaker question of whether absolute return delays grow. In the Rule30 graphs, a persistent component must contain branching within that component; a single cycle cannot suffice. The actual return graphs remain unclassified; it establishes neither normalized growth nor a path from the root.
 
