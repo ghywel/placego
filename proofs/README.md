@@ -486,3 +486,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Prune paired windows and retain the swap bit in the quotient](W193-prune-paired-windows-and-retain-the-swap-bit.md):
   The paired graph can be reduced while keeping a bit that records exchange.
+- [Two binary potentials test the quotient's persistent phase](W194-two-binary-potentials-test-the-quotient-s-persistent.md):
+  Two binary equations expose the obstruction to persistent exchange.

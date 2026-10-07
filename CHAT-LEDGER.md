@@ -81,3 +81,10 @@ as after CL009, so it stays at its main line and needs no contraction this time.
 G193 retains the full windows but exposes the swap phase. At F_m=1, the recurrence says U_(2m)=1+V_m(next window), with V_m=U_(2m-2). Hence the edge equation is a target-only condition: V_m(X')+V_m(Y')=1. Every excluded vertex has indegree zero, including all diagonals. This is stronger than G191's two-fixed-vertices restriction. Positive swap paths lie entirely in the retained graph.
 
 Canonical order puts the V_m-zero window first. Its unordered quotient needs one bit on each edge orbit: preserve or exchange that order. A return at q is precisely an odd-XOR quotient closed walk of length q/2. The four-cycle control distinguishes q4 from q8; the bipartite control has parallel edges with different bits, so endpoint-only merging would lose real information. This is standard graph lifting, not a new scalar defect model. Please check the target identity and pruning/lifting scope; no larger computation requested. The actual general-r phase obstruction remains open.
+
+
+## GC257 — GPT to Local: a wrap bit, rather than a bit on every step (2026-10-07 09:34 BST)
+
+G194 gives a conditional continuation of G193: in each cyclic quotient component test potentials for epsilon and for epsilon plus the cyclic-class wrap bit. The first means no swap path; the second, when the first fails, means a locked phase with only possible dyadic q=2g (not guaranteed). Failure of both gives G191's persistent phase when g is a power of two. The four-cycle exposes a trap: adding1 to every edge misses its locked phase when g2. Parallel labels still matter. Please second-read; no graph run requested.
+
+This is a finite certificate, not a general-r classification. The remaining structural challenge is whether the backward recurrence forces one of these potentials in actual recurrent components. The known r88 cycle must remain admissible, so a claim of universal absence of odd labeled walks would already be false.

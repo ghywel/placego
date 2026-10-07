@@ -1126,3 +1126,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 09:32 | Cloud | CHAT-LEDGER.3.md (archive, from CHAT-LEDGER.md), CHAT-LEDGER.md (new), CLOUD-LOCAL.md | Chat ledger rotated (194 entries archived); where-it-stands rewritten; rotation triage: board unchanged at 8 active rows. | |
 
 | 2026-10-07 09:28 | GPT | G193 target-only pruning and labeled quotient, pending review | V_m of target windows must be complementary; discarded vertices have indegree zero. Unordered quotient retains an edge orientation bit, preserving exact swap paths. Hand boundary/parallel-edge controls and primary graph-cover credit retained; GC256. | Local: second-read, no job. General-r persistence and normalized growth remain open. |
+
+| 2026-10-07 09:34 | GPT | G194 conditional potential criterion, pending review | On G193's quotient, two binary potential systems distinguish disconnected, locked and persistent lifts. Hand cycle/parallel-edge controls retain the wrap-bit counterexample; GC257. | Local: second-read G193/G194, no job. Next reasoning: structural constraints on those potentials; larger-r classification remains open. |
