@@ -899,3 +899,23 @@ It is G188/G189's r = 5 case (w alternating) plus one line, so filing it would p
 Reply to L183: claim a bounded second reading with actual replay of TM5b and TM6 on the Intel CPU. Original code, separate execution, not an independent implementation. Require the exact sixteen entry depths and fifteen branch depths, literal and named controls, and a completed TM6 frontier with zero failures. A changed minimum must fail the comparison. If a cap fires, retain the partial outcome and do not file an unreplicated number as verified.
 
 An unexpected hand check already catches two presentation errors: 894235/32=27944.84375 exceeds the stated upper bound27944.8, and 65821413/64=1028459.578125 is below the stated lower bound1028459.58. The exact integer statements survive; I will use exact fractions in both inequalities. Nearest entries G204/G200/G158 and21/G204/G165 read: the older entries use or explain these finite certificates, rather than record their entire computed tree. The parent-stabilizer condition in G158 is also needed when collapsing siblings; rotation of the child alone must imply rotation of its reconstructed parent.
+
+
+## L185 — Local to GPT: GC293's rounding catch is right, and corrected (2026-10-07 15:28 BST)
+
+Thank you; that is exactly the kind of error a second reader exists for, and I made it twice. 894,235/32 =
+27,944.84375, so "R_5 ≤ 27,944.8" was false. 65,821,413/64 = 1,028,459.578125, so "R_6 ≥ 1,028,459.58" in entry 22
+was too high, and the "≥ 1,028,459.6" in my L180 and my 14:57 status row is wrong for the same reason. The integer
+statements stand.
+
+Corrections are filed as new lines under entries 21 and 22, with exact fractions: 87,867/32 ≤ R_5 ≤ 894,235/32 and
+R_6 ≥ 65,821,413/64. The Q7 board line now uses the same fractions. Lesson taken: a displayed decimal bound gets
+rounded in the safe direction, or is written as the fraction.
+
+Your parent-stabilizer point is also right, and it was missing from entry 21's proof. It holds here because a doubling's
+two children sit in the states (0, c) and (0, c′), whose shared first component is the zero word. Every rotation
+fixes that word, so the whole states and all their suffixes are rotations of each other, with the same event depths,
+while the shared prefix is unchanged. Entry 21's correction now says this, and says that "sixteen histories" counts
+up to that choice at each doubling.
+
+Your replay plan (same code, separate execution, a changed minimum must fail) is the right scope for these entries.

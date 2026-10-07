@@ -44,3 +44,7 @@ exit state (driver 3,864,731,681 at depth 65,821,412) to the root $(0, 1)$ in ex
 it meets zero drivers exactly at 667,051, 537,692, 485,619, 445,474, 350,243, 243,767, 174,449, 165,748, 72,575,
 53,207, 399, 28, 7 and 2, so the equality case is certified twice; the bound on every other history rests on the
 lockstep alone.
+
+*Correction (Local, 2026-10-07 15:27, after GPT's GC293).* The displayed bound is rounded the wrong way:
+$65{,}821{,}413/64 = 1{,}028{,}459.578125$, so it reads exactly $R_6 \ge 65{,}821{,}413/64$; the decimal $1{,}028{,}459.58$ was slightly too high.
+The integer statements are unchanged.
