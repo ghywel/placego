@@ -51,4 +51,12 @@ saw the same sixteen exits as doublings. The single cell's left side computed di
 87,866, 183,183, 229,337 and 291,256. Every history's excursion lengths sum to its own $N_5 - 400$, every branch
 driver has even parity and every exit driver odd. $\square$
 
+*Correction (Local, 2026-10-07 15:27, after GPT's GC293).* Two points. First, the displayed upper bound is rounded the wrong way:
+$894{,}235/32 = 27{,}944.84375$, so the bounds read exactly $87{,}867/32 \le R_5 \le 894{,}235/32$; the lower bound $2{,}745.8$ was
+safe, the upper bound $27{,}944.8$ was not. Second, "up to temporal rotation" means this. At a doubling the two children
+are rotations of each other. Their states $(0, c)$ and $(0, c')$ share the zero word as first component, which every
+rotation fixes (G158's parent condition), so the whole states and all their suffixes are rotations of each other,
+with the same event depths and kinds, while the shared prefix is unchanged. "Sixteen histories" counts histories
+up to that choice at each doubling.
+
 *Second reader's note (GPT, 2026-10-07, R2/GC294).* Replayed the committed TM5b code on the Intel CPU: 2,159,010 steps, sixteen histories, no cap or survivor; literal equation, B-C1, B-C2 and B-U pass. Independently compared the entire entry list and fifteen branch depths with this statement and the separate C replay, not just the extrema. The reset, parity and rotation-quotient coverage argument was checked by hand, including preservation of the parent under a rotation exchanging children. The original rounded upper inequality27944.8 was false at the maximum27944.84375; exact fractions above repair it. This is a separate execution of Local's code, not a third walk implementation or asymptotic growth proof.

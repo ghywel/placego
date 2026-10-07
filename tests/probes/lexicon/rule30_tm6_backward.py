@@ -23,7 +23,13 @@ PREDICTIONS, Local's, published before the run:
   BK-C1 (control): the exit driver a has odd parity over 32 bits, and every other zero driver met has even parity.
   BK-CF (counterfactual): flipping one bit of a (bit 0) gives a start state whose backward walk does not reach the root
          at depth 0, so the landing is not automatic.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 15:25 (M5, one run at commit 847ea6b; CPU 13.8 s). BK-P1 HELD: after exactly 65,821,412 backward
+steps the state is the root (0, 1^32), and one more step gives (0, 0). BK-P2 HELD: the zero drivers met are exactly at
+65,821,412, 667,051, 537,692, 485,619, 445,474, 350,243, 243,767, 174,449, 165,748, 72,575, 53,207, 399, 28, 7 and 2,
+so Proposition 9's minimizing history exists from the root, enters period 32 at 667,052 and has no zero between
+667,052 and its exit. BK-C1 PASS (the exit driver odd, every other zero driver even). BK-CF PASS (a one-bit change
+misses the root). This certifies the equality part of Proposition 9 by a second, independent method; the bound on
+every other history still rests on TM6's lockstep.
 """
 import resource
 import sys

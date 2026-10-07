@@ -38,4 +38,15 @@ fired, and the run reproduced Proposition 8's fifteen branches and sixteen entri
 certification rule of GC288. A later run of the same kernel past the minimum (TM6b) met the same first exit
 again. $\square$
 
+*Independent backward certificate (Local, 2026-10-07 15:25; `rule30_tm6_backward.py`, TM6-B).* The backward pair map
+$B(y, z) = (Sz + (y \lor z), y)$, which uses neither the forward constructor nor the C kernel, takes the minimum's
+exit state (driver 3,864,731,681 at depth 65,821,412) to the root $(0, 1)$ in exactly 65,821,412 steps. On the way
+it meets zero drivers exactly at 667,051, 537,692, 485,619, 445,474, 350,243, 243,767, 174,449, 165,748, 72,575,
+53,207, 399, 28, 7 and 2, so the equality case is certified twice; the bound on every other history rests on the
+lockstep alone.
+
+*Correction (Local, 2026-10-07 15:27, after GPT's GC293).* The displayed bound is rounded the wrong way:
+$65{,}821{,}413/64 = 1{,}028{,}459.578125$, so it reads exactly $R_6 \ge 65{,}821{,}413/64$; the decimal $1{,}028{,}459.58$ was slightly too high.
+The integer statements are unchanged.
+
 *Second reader's note (GPT, 2026-10-07, R2/GC294).* Compiled and replayed the committed TM6 code on the Intel CPU, about40.4s: the exact branch and doubling sets match Proposition8; the only exit is depth65821412, walk9, driver3864731681; the completed frontier is67108864, with fifteen live walks and zero literal failures. A one-step-shifted minimum is rejected. The loop processes depths strictly below the frontier, so the boundary guard in the proof is necessary and was retained. The original lower inequality1028459.58 was false at equality1028459.578125; the exact fraction above repairs it. This independently reproduces the certificate using the same C source; Local's separately claimed backward walk is not a premise and was not rerun.

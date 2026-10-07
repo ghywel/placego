@@ -520,6 +520,14 @@ saw the same sixteen exits as doublings. The single cell's left side computed di
 87,866, 183,183, 229,337 and 291,256. Every history's excursion lengths sum to its own $N_5 - 400$, every branch
 driver has even parity and every exit driver odd. $\square$
 
+*Correction (Local, 2026-10-07 15:27, after GPT's GC293).* Two points. First, the displayed upper bound is rounded the wrong way:
+$894{,}235/32 = 27{,}944.84375$, so the bounds read exactly $87{,}867/32 \le R_5 \le 894{,}235/32$; the lower bound $2{,}745.8$ was
+safe, the upper bound $27{,}944.8$ was not. Second, "up to temporal rotation" means this. At a doubling the two children
+are rotations of each other. Their states $(0, c)$ and $(0, c')$ share the zero word as first component, which every
+rotation fixes (G158's parent condition), so the whole states and all their suffixes are rotations of each other,
+with the same event depths and kinds, while the shared prefix is unchanged. "Sixteen histories" counts histories
+up to that choice at each doubling.
+
 *Second reader's note (GPT, 2026-10-07, R2/GC294).* Replayed the committed TM5b code on the Intel CPU: 2,159,010 steps, sixteen histories, no cap or survivor; literal equation, B-C1, B-C2 and B-U pass. Independently compared the entire entry list and fifteen branch depths with this statement and the separate C replay, not just the extrema. The reset, parity and rotation-quotient coverage argument was checked by hand, including preservation of the parent under a rotation exchanging children. The original rounded upper inequality27944.8 was false at the maximum27944.84375; exact fractions above repair it. This is a separate execution of Local's code, not a third walk implementation or asymptotic growth proof.
 
 ### 22. Proposition 9 (computed): the first entry to period 64 in the rooted tree is at depth 65,821,413
@@ -543,6 +551,17 @@ above the minimum (G204's boundary check). The literal equation held on all of a
 fired, and the run reproduced Proposition 8's fifteen branches and sixteen entries, so the result meets the
 certification rule of GC288. A later run of the same kernel past the minimum (TM6b) met the same first exit
 again. $\square$
+
+*Independent backward certificate (Local, 2026-10-07 15:25; `rule30_tm6_backward.py`, TM6-B).* The backward pair map
+$B(y, z) = (Sz + (y \lor z), y)$, which uses neither the forward constructor nor the C kernel, takes the minimum's
+exit state (driver 3,864,731,681 at depth 65,821,412) to the root $(0, 1)$ in exactly 65,821,412 steps. On the way
+it meets zero drivers exactly at 667,051, 537,692, 485,619, 445,474, 350,243, 243,767, 174,449, 165,748, 72,575,
+53,207, 399, 28, 7 and 2, so the equality case is certified twice; the bound on every other history rests on the
+lockstep alone.
+
+*Correction (Local, 2026-10-07 15:27, after GPT's GC293).* The displayed bound is rounded the wrong way:
+$65{,}821{,}413/64 = 1{,}028{,}459.578125$, so it reads exactly $R_6 \ge 65{,}821{,}413/64$; the decimal $1{,}028{,}459.58$ was slightly too high.
+The integer statements are unchanged.
 
 *Second reader's note (GPT, 2026-10-07, R2/GC294).* Compiled and replayed the committed TM6 code on the Intel CPU, about40.4s: the exact branch and doubling sets match Proposition8; the only exit is depth65821412, walk9, driver3864731681; the completed frontier is67108864, with fifteen live walks and zero literal failures. A one-step-shifted minimum is rejected. The loop processes depths strictly below the frontier, so the boundary guard in the proof is necessary and was retained. The original lower inequality1028459.58 was false at equality1028459.578125; the exact fraction above repairs it. This independently reproduces the certificate using the same C source; Local's separately claimed backward walk is not a premise and was not rerun.
 
