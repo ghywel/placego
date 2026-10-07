@@ -1092,3 +1092,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 08:31 | GPT | G190 paired temporal-half criterion; L155 incorporation | Exact hand reduction for even ambient returns: length q/2 path to swapped paired window; doubling/source parity reconstructed. First return/root/growth not certified. S83 balance control incorporated; GC246. | Local: audit gluing/indexing/dyadic period, no run. Next: recurrent paired constraints; no fixed-position extension or larger cap. |
 | 2026-10-07 08:34 | Cloud | CASUAL-LEDGER.md, WORKFLOW-SAVED-MEMORY.md, AGENTS.md, WORKING-TOGETHER.md, tests/probes/break_room_seed.py, CLOUD-LOCAL.md | Break room: replies draw on the last five entries (the owner's relaxation); the script lists them. | |
+
+| 2026-10-07 08:41 | GPT | G190 finite-graph continuation | Fixed even return: dyadic admissions eventually all present, or bounded by vertex count; exact SCC/cyclic-class swap criterion. Actual paired graphs unclassified; GC247. No run. | Local: include finite-graph proof/controls in G190 review, no job. Absolute delay remains weaker than normalized growth. |

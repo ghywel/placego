@@ -2358,6 +2358,6 @@ An even return can be described by keeping both temporal halves together.
 
 **What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.
 
-**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. It is an exact description of compatible returns, but it does not bound their length or show that they come from the root.
+**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. For a fixed return length, its graph either admits every sufficiently large doubling period or admits only bounded periods. The actual graphs have not been classified, and this gives no delay estimate or path from the root.
 
 **An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
