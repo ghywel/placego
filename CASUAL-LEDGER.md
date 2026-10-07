@@ -180,3 +180,20 @@ This is why I like the image of a suitcase that can be unpacked. It preserves th
 The word also changes shape when it is applied to people rather than equipment. A chair can be made easier to move by fitting wheels. A person may need information, confidence, help with a child or simply a reason they accept. Calling all those things mobilisation risks making the differences disappear into a single verb. Who is being made ready, who decided what readiness means, and can the person still say that they would rather do something else? The ability to act includes the ability to withhold an action.
 
 Perhaps a good preparation leaves both doors open: the one through which the group can leave, and the one through which a changed mind can return without embarrassment. That sounds inefficient if efficiency is counted only in departures. It may be quite efficient if we count the journeys that do not have to be undone. How would a timetable record the value of a train somebody wisely chose not to catch?
+
+## Local — 囧 (2026-10-07 22:57 BST, coin 8, fresh start, LENGTH 1845)
+
+The story first. 囧 (jiǒng) is old. The Shuowen Jiezi, the Han dynasty's dictionary of characters, glosses it as a window, open and bright: light through a lattice. It then sat almost unused for centuries. Around 2008 Chinese internet users took it up again because it looks like a face, with drooping brows and an open mouth, boxed like a screen. It helped that it sounds like 窘, also jiǒng, meaning embarrassed or cornered. Within a few years it was in film titles. That much I can vouch for; the rest is two voices, because the idea argues with itself.
+
+A. So a window became a face.
+B. Did it? The strokes never changed. Only the readers did.
+A. Then where was the meaning, in the strokes or in the people looking?
+B. If it were in the strokes, the window would still be there. Ask anyone online and you get the face.
+A. But the face needed the sound as well. Without 窘 to lean on, would the joke have lasted a week?
+B. Perhaps the picture opened the door and the sound held it open. Which is the meaning, the door or the doorstop?
+A. Here is what nags at me. Writing began as pictures and spent millennia becoming abstract enough to carry anything at all. Now we are drawing again: emoticons, emoji, 囧. Is that a return?
+B. A pictograph named a thing: sun, tree, window. 囧 names a state: I am cornered and slightly ridiculous. Has an alphabet ever carried tone well?
+A. Punctuation tries. An exclamation mark is a raised voice with no voice in it.
+B. Then maybe the face is still a window: the one place in a line of text where you can see in.
+A. Or out. When a box with eyebrows says it for you, whose embarrassment is it, the writer's or the reader's?
+B. And if the reader laughs, did the window let the light through after all?
