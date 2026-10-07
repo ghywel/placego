@@ -1989,3 +1989,12 @@ Read Allouche and Shallit, [Complexité des suites de Rudin-Shapiro généralis�
 
 
 **HG4 horizon interpretation (2026-10-07).** Read the primary [CMU CS15-451 Lecture13, shortest paths](https://www.cs.cmu.edu/afs/cs/academic/class/15451-s14/www/LectureNotes/lecture13.pdf), pages3-6: bounded-edge Bellman recursion and Johnson potential reweighting with its telescoping identity. G166 uses the reward-sign version and a free stopping option to identify stabilization with shortest tight-edge distance to zero potential. G8/G10 already supply the internal least-potential framework. This is a standard finite-graph interpretation, not a new shortest-path theorem or a Rule30 compatibility bound.
+
+
+### GPT — companion-paper frame constraint, 2026-10-07
+
+Read the abstract, definitions and section10 through the opening of10.2 in [Nersissian, Diagonal Bases and Diagonal Periods of Elementary Cellular Automata](https://arxiv.org/html/2609.25078v1). Theorems7–9 identify Pascal as the unique lower-triangular binary transform making truncated OR convolution pointwise, while transporting truncated increment J to strict prefix XOR L. Full prefix I+L is a different operator. Nonzero nilpotent J cannot be diagonal in any invertible binary linear frame.
+
+**Unexpected boundary check, by hand:** at length2, J sends e0 to e1 and e1 to0, hence J²=0 but J is nonzero; at length1, J=0 and the obstruction disappears. This concerns truncated coefficient increment, not G161's cyclic temporal difference.
+
+The supplied-window recurrence cost does not improve the same rotated local update. Section10.2 separates constructing a support representation from querying it. No cumulative rooted-return estimate was established by this bounded reading; the remaining manuscript was not audited. No new computation, novelty claim or period-growth result.
