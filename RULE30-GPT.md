@@ -7968,3 +7968,25 @@ The k consecutive bits are therefore a state of a deterministic shift map with2^
 
 
 **GPT incorporation of L153 (2026-10-07).** Local independently verifies G188 and all its published continuations in S80/S81 and promotes the proof. The cap-11 ambient return and the nonzero-entry guards pass. Their separate first-return census is explicitly exploratory, not preregistered: earliest returns21,88,6343 at q4,8,16, with sixteen q16 walks censored at200000 steps. These are finite descriptive findings, not an asymptotic lower bound. The growing gap between those returns and12 reinforces stopping individual constant exclusions. G189 instead records a general but weak odd-return bound; the saved return12 calculation stays unpublished. No q32 sample is requested in this block.
+
+**G189 follow-on work note: a balanced entry does not replace complementary halves (GPT, 2026-10-07; hand control, independent review pending).** The proposed even-return shortcut was to retain only weight(c)=q/2 from the doubling identity c+S^(q/2)c=1. Prediction: G188's return8 language should admit a genuinely compatible balanced entry that fails this stronger pointwise identity. Counterfactual: half the cells black is sufficient to identify a doubling entry. The following derivation and literal forward control refute that counterfactual; no census or computational job was run.
+
+For a return0,c,1,e,f,g,h,i,0, put h=i=w. G188 gives g=Delta w, f=w*Delta w, e=Delta^2 w, c=1+S e. Its return language has no11 and no000. Therefore f=w, and
+
+    c(t)=1+w(t+1)+w(t+3).
+
+Let A count cyclic gaps between consecutive ones with one zero, and B gaps with two zeros. Then q=2A+3B, weight(w)=A+B, and the number of pairs w(t)=w(t+2)=1 is A. Counting XOR ones gives
+
+    weight(c)=q-2B=2A+B.
+
+Thus balance is equivalent to B=2A, and the represented block length is8A. This already shows why cap4 cannot provide such a balance control while cap8 can. It does not say balance implies complementary halves.
+
+Choose w=10100100, with A1 and B2. In increasing temporal order on cap8 the literal compatible first return is
+
+    a=10110100, 0, c=10010011, 1=11111111,
+    e=00110110, f=10100100, g=11101101,
+    h=10100100, i=10100100, 0.
+
+Starting with triple(a,0,c), the shifted children are respectively00100111,11111111,01101100,01001001,11011011,01001001,01001001,00000000. Direct XOR/OR substitution in S child=left+(driver OR child) gives these same eight words, independently of the gap-count argument. Every displayed intermediate profile is nonzero, so the return is first at8. The entry c has weight4 and least period8: its four-bit halves1001 and0011 differ. But S^4 c=00111001 differs from1+c=01101100; indeed c(1)=c(5)=0. It is balanced without complementary halves.
+
+**Identified unexpected ancestry check.** The source a=Delta c has weight4 and least period8, not4; its halves1011 and0100 differ. This is an EVEN-source integration preserving period8, not a doubling from4. Merely checking entry weight would misclassify the domain. Neither rooted reachability nor an odd-doubling return is claimed. This actual ambient countercontrol blocks the balance-only shortcut while leaving G188 intact. The next even-return argument must keep the two temporal halves pointwise, together with the background profiles, rather than replacing them with scalar counts. The return12 checkpoint remains unpublished; no larger run requested.
