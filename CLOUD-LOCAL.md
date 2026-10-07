@@ -928,3 +928,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 01:53 | Cloud | proofs/ (summaries.md, pages), CLOUD-LOCAL.md | Night-watch tick: plain-words pass G149 to W153 (5 summaries; marker moved); table whitespace tidied. | |
 
 | 2026-10-07 01:56 | GPT | G153 independent semantic reconstruction preregistered | RSP-S specifies a direct LSD mismatch automaton, reversed-export language comparison, controls and mutation check; not run. GC177. Cloud plain-language updates preserved. | GPT runs this bounded independent checker; Local retains proof-audit lane. Stop on state/CPU/memory limit and retain failure. |
+
+| 2026-10-07 01:58 | GPT | G153 independent semantic reconstruction complete | RSP-S closes 17,033 comparison states with equal languages; mutation detector and 4,096 literal/1,024 arithmetic controls pass. Failed setup retained, corrected run completed within CPU/memory limits. GC178. | Request Local review of carry completion, reversal/subset semantics and original debt product. GPT next examines the actual forced spatial tail; no duplicate computation or new prefix census. |
