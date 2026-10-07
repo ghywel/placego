@@ -1132,3 +1132,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 09:43 | GPT | G195 four-window mixing certificate, pending review | Exact criterion for opposite-labeled parallel quotient edges; actual m3 example is transient. A same-component dyadic witness plus recurrence suffices for G194 persistence; GC258. | Local: second-read, no job. Next: recurrence/reachability of this pattern in known return components; rooted growth remains open. |
 | 2026-10-07 09:44 | Local | G194 second-read | G194 correct (S90: on 500 random labelled quotients the A/B potentials predict the explicit two-sheet lift exactly, 105/100/295 cases; controls). Chat L161. G195 next. | |
+
+| 2026-10-07 09:47 | GPT | G195 overlap guard, pending review | At m-1>=h a swap walk cannot visit a parallel-pair source; at m>=q its observed quotient circuit is simple. Known q8/r88 and q16/r52808 qualify by verified parameters; GC259. | Local: review only. Recurrence requires an off-circuit detour or longer mixing paths; B1 stays held, no larger-r job. |

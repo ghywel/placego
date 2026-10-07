@@ -10,15 +10,15 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 Four windows can certify local phase mixing, but a return path is essential.
 
-**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, conditional on G194. Independent review is pending.
+**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194. G195 independent review is pending.
 
-**Why it matters.** This gives a concrete sufficient witness to seek without classifying a whole larger graph. The actual return-eight graph contains the local pattern but is acyclic, so local branching alone proves no persistence. Rooted and normalized growth remain open.
+**Why it matters.** This gives a concrete sufficient witness to seek without classifying a whole larger graph. The actual return-eight graph contains the local pattern but is acyclic, so local branching alone proves no persistence. Long overlap also excludes this pattern on the known short-period return walks themselves; a reachable detour would be needed. Rooted and normalized growth remain open.
 
 **An everyday picture.** Two routes can reach the same doorway with the cards exchanged differently. To repeat the choice, there must also be a way back to the departure point.
 
 ## The formal statement and proof
 
-**Statement, conditional on pending G194.** In G193's quotient at m>=1, two distinct edge orbits have the same source and target exactly when there is an (m-1)-bit word T such that
+**Statement, using independently reviewed G194.** In G193's quotient at m>=1, two distinct edge orbits have the same source and target exactly when there is an (m-1)-bit word T such that
 
     F_m(0T)=F_m(1T)=F_m(T0)=F_m(T1)=1,
     V_m(0T)+V_m(1T)=1.
@@ -42,3 +42,15 @@ If a known dyadic return q occurs in that component, its quotient closed walk ha
 Unexpected check: G192 proves this actual graph acyclic. The parallel pair is therefore transient and gives no persistent component. The missing return path is a mathematical requirement, not an optional computational check. G194's abstract bipartite control supplies the contrasting recurrent example, with both labels in each direction and dyadic admissions at all q>=4.
 
 **Record and limits.** G193/G194 already retain parallel choices; this adds their exact Rule30 window criterion and the same-component witness shortcut. No novelty is claimed for generic graph potentials. No larger-r window or recurrent component has been tested, including r88. Local: second-read the necessity of equal tails and the transient guard; no job requested. The next bounded structural question is whether a known return component can reach one of these four-window pairs and return from its target. That question remains open, and absence of this sufficient certificate would not rule out persistence by longer oppositely labeled paths.
+
+**G195 continuation: long overlap excludes the certificate on the observed walk (GPT, 2026-10-07; second reader pending).** On any dyadic swap walk of length h=q/2 in G190, if m-1>=h, none of its source vertices can have equal tails. Hence none can be the source of G195's parallel edge pair. This does not exclude other vertices in the same strongly connected component.
+
+**Prediction and counterfactual before controls.** The difference between the two temporal halves should have period h; a whole h-block of zeros should therefore be impossible. The counterfactual that the known short-period witness itself is a suitable place to search for the local certificate fails in this overlap regime. No computation runs.
+
+Close the walk by its swapped copy, as in reviewed G190, to obtain a q-periodic word w. Put beta(t)=w(t)+w(t+h). Then beta(t+h)=beta(t). If the source windows at some t share a tail, beta is zero at t+1 through t+m-1. When m-1>=h, that interval contains a full h-block; h-periodicity forces beta identically zero. But w would then be h-periodic, and so would c=U_(2m)(w), contradicting c(t+h)=1+c(t). This proves the exclusion.
+
+A further simple-cycle guard applies when m>=q. The word w has least period q: it is q-periodic and its derived c has least period q. If two unordered quotient vertices at times0<=s<t<h coincide, their m-bit first windows either coincide or are exchanged. At least one full q-block then shows that shifting w by t-s or t-s-h preserves w. Neither shift is0 modulo q, contrary to least period q. Thus the h vertices on this particular quotient walk are distinct. The component can still contain additional edges and vertices; a simple observed circuit is not a certificate that the entire component is a simple cycle.
+
+**Actual controls and identified unexpected sharp-length guard.** The reviewed q8/r88 witness has h4,m43; the rooted q16/r52808 witness has h8,m26403. Both therefore exclude the four-window certificate on their observed paths and have simple quotient circuits of length4 and8 respectively. These are hand consequences of their verified parameters, not new graph runs. Unexpected check: an h-periodic nonzero difference can contain h-1 consecutive zeros. For h4, take the word-only control w=00001000; beta=w+S4w=10001000, which has three consecutive zeros. This is not asserted to satisfy the return graph. It checks why the zero-block argument requires h zeros and cannot silently use h-1.
+
+The next recurrence question must therefore concern a detour from a known return component to a four-window pair and back, or a longer pair of equal-length paths with opposite labels. Inspecting only the known periodic circuit cannot answer it. No detour search, PR191-B1 restart or larger-r census is requested.
