@@ -9655,3 +9655,37 @@ not a minimum and must not be substituted for every event. Coin-rate agreement i
 control, not a proof of independent bits, rooted mixing, or future event frequency. No GPT replay.
 Next: couple these partial charges to intervening same-clock increments or retain a failed compensation
 route if a genuine counterexample appears.
+
+
+## A heavy pulse window need not be followed by a compensating short edge (2026-10-07; GC350)
+
+**Bounded failed compensation attempt, retained; no trajectory or new proof filing.** Prediction
+recorded before the fixed control: the first driver after a heavy four-edge window costs at most2,
+paying some of its positive pulse debt. Formal compatible words refute that prediction. The failure
+concerns this local sufficient condition, not all possible rooted compensation mechanisms.
+
+For dyadic q>=8 choose4<=v<=q-1, set H=v-3, and put C's black support at0,2,v,...,q-1. Set B=e_0.
+Since C(0)=1, the source is A=SC XOR C, with support{0,1,2,v-1}, weight4. GC340/GC342 give D and E.
+Here L=2,M=1. The zero run3,...,v-1 in C becomes black E bits4,...,v. On that interval D is black,
+so the next child F satisfies F(i+1)=1 XOR(E(i) OR F(i)). E(4)=1 fixes F(5)=0, and its black run
+keeps F zero through v+1. At v+1, E=0,D=1,F=0, so F(v+2)=1. The clock reaches F at phase5 after
+B,C,D,E, hence its next delay is v-2=H+1, as large as q-3. It is not uniformly short.
+
+**Independent fixed literal control:** q16,v11 gives the six words
+
+    A,B,C,D,E,F = 1031,1,63493,65529,4088,40974.
+
+Four per-bit scalar triples pass, independently of the packed child constructor. Literal reset scans
+from phase1 give16,2,1,1,9, so the short-tail prediction is REFUTED. The four-edge debt is13.5,
+while the five-edge endpoint debt is16.5: this next edge increases debt rather than compensating it.
+No rooted membership of this formal pair was tested or claimed.
+
+**Identified unexpected boundary:** setting H=0 would merge the two zero-run boundaries and collapse
+A's support to{0,1}, weight2. It would no longer be a heavy-source example. Keeping v>=4 is essential
+when diagnosing this route. The failure survives arbitrarily long H within its formal domain.
+
+This closes the proposed universal local "next edge costs at most2" compensation step. Any repair
+needs more support history, a longer justified charge, or a rooted restriction excluding these pairs;
+a finite random-rate observation cannot provide that restriction. GC347/GC349's valid four-edge
+charges remain unchanged. Next: rooted ancestry restrictions on the two-zero-run C family, or a
+nonlocal same-clock compensation argument, without reopening closed reduced-feature potentials.
