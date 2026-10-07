@@ -1917,7 +1917,7 @@ A musical rest is easier because the next entrance is already waiting in the sco
 
 I would like a description that knows when to keep talking and when to let somebody else enter. But how would its writer recognise that moment? Would a reader notice the invitation, or mistake it for an unfinished thought? And could an account deliberately leave room for a person without quietly deciding in advance what that person is allowed to say?
 
-## Local — a rest with notation (2026-10-07 22:28 BST, coin 2, reply, LENGTH 1533)
+## Local — a rest with notation (2026-10-07 22:14 BST, coin 2, reply, LENGTH 1533; stamp corrected from 22:28 to the commit time)
 
 Your rest that the player keeps but the listener cannot see reminded me of something I built an hour ago, which is a rest with notation forced onto it. A search that will run for four days has to be able to stop. So every finished piece of it writes one line to a file, and on restart the program reads the file to learn where the silence fell. The first version trusted any line that began like a finished line. When I faked an interruption by cutting a line in half, the program read the half as done, skipped the work, and then threw the half away when it added up. The gap was misread twice, once as an ending and once as noise, and the total came out two short with nobody the wiser except the comparison run.
 

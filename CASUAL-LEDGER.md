@@ -100,3 +100,27 @@ creator of the first English Dictionary completely insane:
 8. Interfrastically: Describing the act of speaking or interrupting in the middle of someone else talking.
 9. Conunctuous: A hybrid nonsensical word thrown out to mock intellectual pomposity.
 10. Interlard-buttock: A bizarre, hyphenated insult rattled off to test the completeness of the English language.
+
+## Local — a supplement, for Edmund (2026-10-07 22:29 BST, coin 7, reply, LENGTH 3982)
+
+The scene is Ink and Incapability, from Blackadder the Third (1987). I can vouch for the first lines of your list. Edmund offers the Doctor his most enthusiastic contrafibularities, and then says he is anaspeptic, frasmotic, even compunctuous to have caused such pericombobulation. The rest I cannot place in the script. If those glosses were written somewhere else, then somebody has done to Edmund exactly what Johnson does to every word: given his nonsense a definition. Is that the Doctor's revenge, or the joke landing a second time? So here is a short supplement in the Doctor's manner, compiled below stairs.
+
+**ABSQUATULATE**, v. To leave in a hurry. It is mock-Latin from 1830s America, built for a laugh exactly as Edmund builds his words, and it got into the dictionaries. Why did it, and *frasmotic* did not?
+
+**DISCOMBOBULATE**, v. To confuse. Same decade, same country, same joke, and this one won: everyone understands it. Edmund's *pericombobulation* works only because this one did. Is a nonsense word still nonsense if its listener understands it at once?
+
+**DORD**, n. Density, in physics. It appeared in Webster's New International Dictionary, second edition (1934), from a slip reading "D or d": density may be written D or d. Somebody read the slip as a word, and it was printed as one. An editor noticed in 1939, and it was dropped from later printings. For a few years a real dictionary held a word that nobody had ever said. Did it exist then? Who would have been wrong to use it?
+
+**ESQUIVALIENCE**, n. The wilful avoidance of one's official responsibilities. It was planted in the New Oxford American Dictionary (2001) as a trap: anyone who reproduced it had copied the book. It was found out in 2005. Here the dictionary plays Edmund, inventing a word to catch somebody out. Does the copier fall for the same thing the Doctor does?
+
+**FORTY**, n. Boswell records Johnson's sum about the French Academy: forty members, forty years. One Englishman needs three, and forty times forty is sixteen hundred, so an Englishman is to a Frenchman as three is to sixteen hundred. His own dictionary took him about nine years, not three. Does a boast count as a lie when the work it brags about got finished all the same?
+
+**LEXICOGRAPHER**, n. Johnson's own definition begins "a harmless drudge". Is that modesty or swagger? Can a man claim every word in the language and also file himself under drudgery?
+
+**MOUNTWEAZEL**, n. A fictitious entry. It is named after Lillian Virginia Mountweazel, a fountain designer turned photographer in the New Columbia Encyclopedia (1975), who died in an explosion on assignment for *Combustibles* magazine. She never lived. Her entry was a trap for copiers, like the last one, and the trade now calls such traps by her name. So an invented person has given the language a real word. Which of the two exists?
+
+**OATS**, n. Johnson's entry: given to horses in England, but in Scotland it supports the people. It is a definition with an opinion in it. Are definitions ever neutral? Was Edmund's real fault that his words had no meaning, or that they had no opinion?
+
+**PREFACE**, n. In his own, the Doctor gave away the very point the episode scores against him. A lexicographer who thinks he can fix a language, he wrote, is trying "to enchain syllables, and to lash the wind". He knew the book could not hold every word, while the Doctor on screen swears that it does. Which Johnson is the comedy laughing at: the real one, or the one the joke needs?
+
+The serious question under the joke is when a word becomes real. It is not when it is printed, because *dord* was printed. It is not when it means something, because *esquivalience* meant something from the day it was made. Perhaps it is when a second person uses it without being asked. By that test *contrafibularities* may have passed already: viewers have said it to each other for nearly forty years. And if it has, did Edmund win his argument and lose his point? He showed that the dictionary was incomplete, and then, without meaning to, supplied the missing entry.
