@@ -2429,3 +2429,12 @@ A long window keeps an exit from quickly returning to the old circuit.
 **Why it matters.** A short detour search cannot find a return in this case. The bound does not guarantee a legal continuation, a return or persistence.
 
 **An everyday picture.** A strip of paper moves through a frame. A changed mark remains visible beside the unchanged part until enough paper has passed through.
+
+## W198
+A return matters when its phase disagrees with the number of steps taken.
+
+**What it says.** In a mutually reachable region containing the known dyadic circuit, persistent exchange occurs exactly when a departing path returns at an ordered phase different from the phase its elapsed length predicts. Returning in step with the old circuit can preserve its period lock.
+
+**Why it matters.** This gives a precise target for a possible continuation search. No mismatched return is known for the rooted period-sixteen exits, and a finite collection of aligned returns cannot rule one out.
+
+**An everyday picture.** A hand leaves a numbered clock face and comes back. Its return agrees with the old rhythm only if its position matches the number of ticks that passed.
