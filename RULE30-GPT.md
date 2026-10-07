@@ -9182,3 +9182,31 @@ The natural history's debt increases from28.5 to32.5; histories196189 and667052 
 All drivers in these prefixes have common period32. G164 gives a finite all-phase/birth allowance60+31=91 through the common frontier, for all represented histories and genuine omitted global rotations. No period32 zero occurs, as the earlier TM6 coverage required. This finite reference-clock statistic extends RD16's clock record; it is not a new stage-growth or rooted-tree enumeration claim.
 
 **Unexpected scope guard.** Most N5 histories retain an old witness despite positive endpoint h; the natural history has a new period32-stage witness of length41 with elapsed135, giving135-(5/2)*41=32.5. These facts do not show a permanent bound of60, and the added phase allowance16 compared with RD16 reflects the larger certified driver period, not a measured debt increase. No certificate beyond1048576, at N6, or over all periods follows. The failed blind prediction is a result, not a reason to extend the frontier automatically. Next independent review should check state inheritance and all16 output rows before considering a further measurement.
+
+
+## Hard clock witness: sparse drivers return after three columns (2026-10-07; GC326)
+
+**Bounded diagnostic plus Boolean explanation, review pending; no new proof count.** Local pre-run claim and RD32-W addendum were written before the diagnostic replay; they are batch-published with its outcome, not claimed to have been on Git before execution. No frontier expansion. One Intel diagnostic replay CPU0.599s reproduces all RD32 controls and the retained28-edge interval[725127,725155], elapsed130 and slope5/2 debt60, on history770532. P3, every driver half-black, is REFUTED: black counts range1..14 in common period16. C3/C4/CF2/U pass. The scalar black-count check is separate from the packed population count; exact delays obey the finite-gap bound16-weight+1. Countercontrol: two formal least-period16 words of weight8,0xff00 and0xaaa9, give delays9 and1 at phase0. Density alone does not determine timing; neither formal pair is asserted rooted.
+
+The actual trace contains this consecutive predecessor/driver sequence:
+
+    depth725146: (320,64), T=1458151, delay16
+    next driver65151, delay3
+    next driver64639, delay1
+    next driver1024, delay16.
+
+In bit coordinates these are a two-pulse source at6,8, one pulse at6, an all-black word with holes7,8, another with holes7,8,9, and one pulse at10. This four-edge subinterval has elapsed36 and debt36-(5/2)*4=26. It is part of the larger debt60 witness, not its complete explanation.
+
+**Exact local identity.** For common period q>=4 let e_s be the single temporal black bit at s, with subscripts modulo q, and let1 denote the all-black word. Set
+
+    A=e_s+e_(s+2), B=e_s,
+    C=1+e_(s+1)+e_(s+2),
+    E=1+e_(s+1)+e_(s+2)+e_(s+3), F=e_(s+4),
+
+where addition is XOR. The three triples(A,B,C),(B,C,E),(C,E,F) obey S c=a XOR(b OR c). Indeed B is contained in C, E is contained in C, and F is contained in E, so their ORs are respectively C,C,E. The right sides are SC,SE,SF by cancellation of the displayed bits. Nonzero drivers make these the unique compatible q-periodic children. This is Boolean compatibility in an ambient domain; only the displayed q16 instance has measured rooted provenance here.
+
+If the reference arrival at B has phase s+1, its delay is q. The same phase then meets the two holes of C, giving delay3; E is black at the resulting phase s+4, giving delay1. The arrival at F is s+5, just after its pulse s+4, so its delay is q. Thus the four-edge cost is2q+4 and interval debt at slope gamma is at least max(0,2q+4-4gamma). At q16, s6, the actual clock satisfies the required phase and reproduces16,3,1,16. This shows a concrete sparse/dense/sparse sequence compatible with the rule, rather than assuming balance reaches every driver in the clock core.
+
+**Independent literal controls and unexpected boundary.** rule30_pulse_rebound.py checks all three literal triples and scalar delay composition on522 rotations at q4..32, plus the exact measured five words. q4 is included even though F=B as a word. Applying the formula atq3 fails: E becomes zero and the last OR containment breaks. The symbolic argument above covers q>=4; finite controls do not supply that quantifier by extrapolation.
+
+**No false cycle or ancestry promotion.** The final pair(E,F) is not a translate of the starting pair(A,B). For q>=6 their predecessor weights differ (q-3 versus2); atq4 they also differ, while q5 has equal weights but different support positions after the pulse shift. Therefore this identity cannot be repeated as an autonomous four-edge clock cycle. Whether such episodes recur, how their background changes and what compensates their cost on a rooted history remain open. No rooted occurrence at arbitrary q, normalized cost divergence, uniform upper debt or prize conclusion is claimed. The next useful structural question concerns the full predecessor around sparse episodes, not a driver-density-only potential; closed potential families remain closed. Bears on Q7's debt mechanism.
