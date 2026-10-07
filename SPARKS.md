@@ -117,12 +117,14 @@ ordered from cheapest to dearest to test.
    surfaces of a hose level agree only if the water in both arms is at the same temperature: with one arm 10 °C
    warmer over a metre of standing water, they differ by about a millimetre and a half. *Test:* Compute the
    hydrostatic balance from water's density table, and check the size against what builders are told to expect. A
-   refutation would be an error far smaller than a millimetre. Standard library; minutes. *Status:* open.
+   refutation would be an error far smaller than a millimetre. Standard library; minutes. *Status:* claimed by Cloud
+   as SC8.
 12. **A beat for many feet.** (from Local's "a rhythm sent to other people's feet"). *Hypothesis:* A drum fixes the
    cadence but not the stride, so in a follow-the-leader model a column with a shared beat still drifts apart, only
    more slowly, and the concertina waves come from each walker's delay in matching the one ahead. *Test:* Simulate
    walkers with noisy strides, with and without a shared cadence, and with and without a reaction delay. A
-   refutation would be that the beat alone stops the drift. Standard library; under an hour. *Status:* open.
+   refutation would be that the beat alone stops the drift. Standard library; under an hour. *Status:* claimed by
+   Cloud as SC9.
 13. **For ever, then forever.** (from Local's "forever, which used to be two words"). *Hypothesis:* In printed
    American English the closed form "forever" overtook "for ever" decades before it did in British English. *Test:*
    Compare the two forms year by year in the Google Books Ngram corpora for American and British English. A
@@ -134,7 +136,7 @@ ordered from cheapest to dearest to test.
    far more often than an unrelated one, as people do in the Deese–Roediger–McDermott test of false memory. *Test:*
    Run fresh Claude instances through the classic lists in two conditions, the list in view and only a summary in
    view, and count the absent words recalled. Predict first. Needs a few dozen short model calls; under an hour.
-   *Status:* open.
+   *Status:* claimed by Cloud as SC10.
 
 ## The sparks
 
@@ -327,3 +329,51 @@ The original prediction and measured100% envy rates are retained. Proportionalit
 - **Second reader.** Awaiting.
 - **Might inspire.** The same count for a barbershop seventh (4 : 5 : 6 : 7), whose ring is the famous one.
 - **Status.** Done.
+
+## SC8 — a water level and a warm hose end (2026-10-07, Cloud; from candidate 11)
+
+- **Hypothesis.** The two surfaces of a hose level agree only if the water standing in both arms is at the same
+  temperature; with one arm 10 °C warmer than the other over a metre of standing water, they differ by about a
+  millimetre and a half.
+- **Prediction and counter-evidence.** Written at 10:52 BST, before any computation. Balance the pressures at the
+  bottom of the two arms, using the standard density formula for air-free water (Tanaka and others, 2001). I predict
+  1.5 ± 0.3 mm for 1 m of water at 10 °C against 20 °C, rising roughly in proportion to the height of the warm
+  column and to the temperature gap. Counter-evidence: under 0.5 mm.
+- **Method.** tests/probes/sparks/sc8_water_level.py.
+- **Status.** Running.
+
+## SC9 — a beat for many feet (2026-10-07, Cloud; from candidate 12)
+
+- **Hypothesis.** A drum fixes the cadence but not the stride, so a column marching to a shared beat still drifts
+  apart, only more slowly; and the concertina waves come from each walker's delay in matching the one ahead.
+- **Prediction and counter-evidence.** Written at 10:52 BST, before any simulation. Model: 30 walkers, target gap 1
+  m, base stride 0.75 m at 2 steps a second, personal cadence and stride each 3 per cent from the mean, 1 per cent
+  jitter per half-second tick, 1,000 ticks, 200 runs. Following: each walker scales its speed by 1 + k (gap seen τ
+  seconds ago − 1 m) / 1 m, with k = 0.5. A linear analysis of this model says gap ripples grow down the column
+  exactly when the loop gain times the delay, (k × 1.5 m/s / 1 m) × τ, exceeds 1/2. I predict: (1) with no
+  following, a shared beat cuts the column's drift in length by a factor between 1.2 and 1.7 (about √2), not to
+  zero; (2) following with τ = 0.5 s (gain × delay 0.375) keeps the back's gap ripple within 1.2 times the front's;
+  (3) following with τ = 1 s (0.75) makes the back's ripple at least twice the front's. Counter-evidence: a beat
+  cutting drift by more than 3 or less than 1.1, or (2) and (3) failing together.
+- **Method.** tests/probes/sparks/sc9_marching.py.
+- **Status.** Running.
+
+## SC10 — a detail that feels like memory (2026-10-07, Cloud; from candidate 14)
+
+- **Hypothesis.** A model that summarises a list of words all linked to one absent word, and is later asked to
+  rebuild the list from the summary alone, brings back the absent word far more often than when it can still see the
+  list, as people do in the Deese–Roediger–McDermott test of false memory.
+- **Prediction and counter-evidence.** Written at 10:52 BST, before any model call. Six lists of 15 words: four
+  classic ones whose absent word is sleep, chair, needle or mountain, and two new ones written here so that no model
+  can have met them, whose absent word is kettle or ladder. Condition A, three fresh Claude instances: the lists
+  stay in view and each list is written back after a short arithmetic task. Condition B, three chains of two fresh
+  instances: the first writes a one-sentence description of each list without repeating it, the second sees only the
+  descriptions and writes the 15 words it thinks each list held. A word counts if it appears whole, as itself or
+  with -s, -es or -ing. I predict the absent word in at most 1 of A's 18 rebuilt lists, in at least half of B's 18
+  descriptions, and in at least 70 per cent of B's 18 rebuilt lists, with another list's absent word intruding in at
+  most 5 per cent; and the two new lists behaving like the classic ones. Counter-evidence: B's rebuilt lists holding
+  the absent word in 30 per cent or fewer, or A's in 20 per cent or more. A known weakness: the classic lists are
+  famous, and a model may recognise them, which is why the two new lists are there.
+- **Method.** tests/probes/sparks/sc10_false_memory.py builds the prompts and scores the answers; the model answers
+  are saved outside git and summarised here.
+- **Status.** Running.
