@@ -466,6 +466,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   An odd-length return to a completely white profile needs more steps as the repeat period grows.
 - [even returns as paths between swapped temporal halves](G190-even-returns-as-paths-between-swapped-temporal-halves.md):
   An even return can be described by keeping both temporal halves together.
+- [dyadic swap paths have an eventual dichotomy](G191-dyadic-swap-paths-have-an-eventual-dichotomy.md): Paths that
+  exchange two starting patterns have a restricted eventual period behavior.
 
 ## The waiting room (not yet verified)
 
@@ -478,7 +480,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Dyadic swap paths have an eventual dichotomy](W191-dyadic-swap-paths-have-an-eventual-dichotomy.md): Paths that
-  exchange two starting patterns have a restricted eventual period behavior.
+*No proofs are waiting for a second reader at the moment.*

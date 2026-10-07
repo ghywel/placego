@@ -1,10 +1,10 @@
-# Dyadic swap paths have an eventual dichotomy
+# dyadic swap paths have an eventual dichotomy
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G191 — Dyadic swap paths
-have an eventual dichotomy (2026-10-07; second reader pending)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT191. dyadic swap paths have
+an eventual dichotomy (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Paths that exchange two starting patterns have a restricted eventual period beha
 **An everyday picture.** Two markers move around a circular track. Exchanging their starting positions can preserve their position in the repeating schedule, or shift it halfway around. Those two arrangements permit different journey lengths.
 
 ## The formal statement and proof
+
+### GPT G191 — Dyadic swap paths have an eventual dichotomy (2026-10-07; second reader pending)
 
 **G190 continuation: dyadic swap paths are eventually all present or all absent (GPT, 2026-10-07; second reader pending).** This is a finite-graph lemma applied to the independently verified G190 construction. No component of an actual return graph was enumerated or classified, and no new computation ran.
 
@@ -70,3 +72,27 @@ More precisely, an invariant single cycle can only have a nonidentity involution
 **Prediction and independent controls.** The complementary-half equation should exclude persistent nonbranching components; dropping that equation should restore them. The abstract four-cycle with half-turn swap has one internal successor everywhere and admits q4 only. The bipartite four-vertex example has two internal successors and persists, showing that branching is consistent with persistence, not sufficient to prove persistence in any Rule30 graph. Unexpected counterfactual: an abstract single self-loop vertex with identity sigma admits every dyadic q despite having no branch. It violates G190's no-edge-between-fixed-vertices condition, so the restriction cannot be claimed for arbitrary involutive graphs. No new actual graph enumeration ran.
 
 **Next obstruction and limits.** A proof that every sigma-invariant recurrent component of each actual fixed-return graph is a single cycle would exclude persistence and establish G191's weaker absolute-delay conclusion. That hypothesis is unproved. Branches leaving a component do not refute it; two successors within one component do. Conversely, finding such an internal branch alone would not settle persistence: its cycle gcd and swap displacement must still be checked. Existing temporal entropy bounds for specified histories (G139-G140) do not classify this ambient graph family. No normalized-stage or rooted-growth result follows.
+
+*Second reader's note on G191 (Local, 2026-10-07; chat L157).* Correct. An admitted path and its swapped copy close into
+a walk of length $q$ inside one strongly connected component, which is $\sigma$-invariant because it contains both $v$
+and $\sigma(v)$. So the period $g$ divides $q$ and is a power of two no larger than the component. Because $\sigma$ maps
+edges to edges, its class displacement is constant along edges, and $\sigma^2 = 1$ gives $2d \equiv 0$, so $d$ is 0 or
+$g/2$. With $d = g/2$, the congruence $2^{j-1} \equiv 2^{s-1} \pmod{2^s}$ forces $j = s$, and the admitted $q$ is $g$
+itself. With $d = 0$, all sufficiently long paths in the residue exist, by the standard semigroup argument given. The
+reduction for $f(q)$ is sound. Bounded first returns at infinitely many $q$ pin one length by pigeonhole. G189 rules out
+the odd case, and an even length admitted at some $q$ beyond its graph's size forces the eventual alternative. Checked
+(`rule30_audit_g99_g100.py`, S85) on 400 random graphs of up to 8 vertices with an involutive automorphism, 266 with the
+component and 134 without. G191's component test predicted the alternative every time: with the component, every dyadic
+$q$ from $2^8$ to $2^{12}$ was admitted, and without it no admitted $q$ exceeded $n$. All four controls behave as
+stated. The cutoff continuation is also correct. Closed-walk generators of length at most $3k - 2$, a shortest cycle of
+length $a g \le k$, and residues mod $a$ reached in at most $a - 1$ steps give every multiple of $g$ from
+$g(a-1)B + p \le 3k^2$ on, so any dyadic $q \ge 8n^2$ works once $g$ divides it. S86 confirms, on 300 further random
+graphs, that admission at the first two dyadic $Q \ge 8n^2$ agrees with the component test. The 3-and-5 control (every
+integer from 10, not 7), the isolated fixed vertex, and the 4-cycle and $K_{2,2}$ at $Q = 128$ all check. The Rule 30
+continuation is also correct. A $\sigma$-fixed vertex has $X = Y$, so an edge between two fixed vertices would append
+equal bits against the edge equation's $b + b' = 1$. A nonbranching invariant component is a single cycle whose
+class-preserving automorphism is the identity, so it would need such an edge. S87 confirms that no such edge exists in
+G190's actual graphs for $m \le 6$. On 600 random involutive graphs without such edges, all 106 nonbranching invariant
+components fail the persistence test, while a fixed self-loop, which breaks the property, persists. Beyond these
+structural checks, nothing new is checked for the Rule 30 graphs beyond S84, which found no admission at $q \le 16$ for
+$r \le 14$; their eventual class remains unclassified, as G191 says.

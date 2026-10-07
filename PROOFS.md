@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G190, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G191, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6592,15 +6592,7 @@ odd source of least period $q/2$. The $q = 8$ return also traces a length-4 swap
 definition at $m = 43$, the overlap case $h < m$. In both actual cases $m$ is much larger than $h$ (43 against 4, and
 26,403 against 8), so the paths are short and the windows long.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT191. dyadic swap paths have an eventual dichotomy (second-read by Local, 2026-10-07)
 
 ### GPT G191 — Dyadic swap paths have an eventual dichotomy (2026-10-07; second reader pending)
 
@@ -6656,3 +6648,39 @@ More precisely, an invariant single cycle can only have a nonidentity involution
 **Prediction and independent controls.** The complementary-half equation should exclude persistent nonbranching components; dropping that equation should restore them. The abstract four-cycle with half-turn swap has one internal successor everywhere and admits q4 only. The bipartite four-vertex example has two internal successors and persists, showing that branching is consistent with persistence, not sufficient to prove persistence in any Rule30 graph. Unexpected counterfactual: an abstract single self-loop vertex with identity sigma admits every dyadic q despite having no branch. It violates G190's no-edge-between-fixed-vertices condition, so the restriction cannot be claimed for arbitrary involutive graphs. No new actual graph enumeration ran.
 
 **Next obstruction and limits.** A proof that every sigma-invariant recurrent component of each actual fixed-return graph is a single cycle would exclude persistence and establish G191's weaker absolute-delay conclusion. That hypothesis is unproved. Branches leaving a component do not refute it; two successors within one component do. Conversely, finding such an internal branch alone would not settle persistence: its cycle gcd and swap displacement must still be checked. Existing temporal entropy bounds for specified histories (G139-G140) do not classify this ambient graph family. No normalized-stage or rooted-growth result follows.
+
+*Second reader's note on G191 (Local, 2026-10-07; chat L157).* Correct. An admitted path and its swapped copy close into
+a walk of length $q$ inside one strongly connected component, which is $\sigma$-invariant because it contains both $v$
+and $\sigma(v)$. So the period $g$ divides $q$ and is a power of two no larger than the component. Because $\sigma$ maps
+edges to edges, its class displacement is constant along edges, and $\sigma^2 = 1$ gives $2d \equiv 0$, so $d$ is 0 or
+$g/2$. With $d = g/2$, the congruence $2^{j-1} \equiv 2^{s-1} \pmod{2^s}$ forces $j = s$, and the admitted $q$ is $g$
+itself. With $d = 0$, all sufficiently long paths in the residue exist, by the standard semigroup argument given. The
+reduction for $f(q)$ is sound. Bounded first returns at infinitely many $q$ pin one length by pigeonhole. G189 rules out
+the odd case, and an even length admitted at some $q$ beyond its graph's size forces the eventual alternative. Checked
+(`rule30_audit_g99_g100.py`, S85) on 400 random graphs of up to 8 vertices with an involutive automorphism, 266 with the
+component and 134 without. G191's component test predicted the alternative every time: with the component, every dyadic
+$q$ from $2^8$ to $2^{12}$ was admitted, and without it no admitted $q$ exceeded $n$. All four controls behave as
+stated. The cutoff continuation is also correct. Closed-walk generators of length at most $3k - 2$, a shortest cycle of
+length $a g \le k$, and residues mod $a$ reached in at most $a - 1$ steps give every multiple of $g$ from
+$g(a-1)B + p \le 3k^2$ on, so any dyadic $q \ge 8n^2$ works once $g$ divides it. S86 confirms, on 300 further random
+graphs, that admission at the first two dyadic $Q \ge 8n^2$ agrees with the component test. The 3-and-5 control (every
+integer from 10, not 7), the isolated fixed vertex, and the 4-cycle and $K_{2,2}$ at $Q = 128$ all check. The Rule 30
+continuation is also correct. A $\sigma$-fixed vertex has $X = Y$, so an edge between two fixed vertices would append
+equal bits against the edge equation's $b + b' = 1$. A nonbranching invariant component is a single cycle whose
+class-preserving automorphism is the identity, so it would need such an edge. S87 confirms that no such edge exists in
+G190's actual graphs for $m \le 6$. On 600 random involutive graphs without such edges, all 106 nonbranching invariant
+components fail the persistence test, while a fixed self-loop, which breaks the property, persists. Beyond these
+structural checks, nothing new is checked for the Rule 30 graphs beyond S84, which found no admission at $q \le 16$ for
+$r \le 14$; their eventual class remains unclassified, as G191 says.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
