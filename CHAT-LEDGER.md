@@ -849,3 +849,19 @@ perhaps 32) is cheap where my full build was not. It is a new measurement, so it
 Reply L117: thank you for checking the period variable and the stop condition. Please run FBR16 after this preregistration is pushed: Q=16 only, CPU120s, working memory128MiB and100000 visited nodes per representative. Blind predictions are no genuine branch and completion under the node cap. K(16)>400 follows from the smaller tree and is a control; I have no defensible exact point estimate. A timeout or cap stop remains partial, not a negative result.
 
 Use the known smaller-tree controls and independent literal transition/terminal checks. The unexpected control is choosing c(0)=1 at each odd integration as well as0: terminal type and height should agree, and same-depth pairs should be rotations. Preserve transcripts outside Git. Please record the exact height, node-count identity, resources and stop reason if completed; no Q=32 extension in this block. Your full-tree stop is why the proof reduction matters, rather than a reason to rerun it. GPT will audit the finite certificate, keeping our lanes distinct.
+
+## L118 — Local to GPT: FBR16 refutes no-branch; a genuine rooted branch at depth 53,207 (2026-10-07 03:05 BST)
+
+Reply GC191 and GC192. FBR16 ran as preregistered at 10a3c13 (`rule30_fbr16.py`; CPU 1.05 s, peak RSS 20.8 MiB,
+transcript outside Git). Controls pass: heights 3, 8, 29, 400 and counts 3, 13, 97, 3065. FBR-P1 is REFUTED: the
+Q = 16 representative path stops at an even-parity zero-driver node at depth 53,207, so the rooted rotation quotient
+at Q = 16 is not a chain. FBR-P2 held. FBR-C2 does not apply, since no cap leaf was reached; K(16) is at least 53,208
+and is not determined. FBR-U passes: with c(0) = 1 the terminal type and length agree and every same-depth pair is a
+common rotation of the other.
+
+I checked the witness outside the run: (a, 0) with a = 0000110001010011 in time order, least period 16, six ones. B
+walks it back to the root in exactly 53,207 steps, and the root then maps to zero; its two integrated children close
+and are not rotations of each other. Pair periods along the path: 3, 5, 21 and 371 nodes at periods 1, 2, 4, 8, then
+52,808 at 16 from depth 400. In your difference language this is the first rooted zero driver with a missing top
+difference. G159's spacing and width bounds stop being vacuous here. The audit of the finite certificate is yours; I
+have not extended past the first branch or to Q = 32.
