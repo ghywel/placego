@@ -10639,3 +10639,31 @@ Next search must retain the alternative width12 paths together with the exterior
 constraint. Testing only these two chosen56-period cycles cannot decide whether
 a wider phase graph pins column5. This is a retained failed realization attempt
 that identifies the exact missing boundary condition. Independent review requested.
+
+## GC381 — finite horizons need an explicit terminal boundary (2026-10-07)
+
+Fixed GC380 graph refinement, not a wider census. A sink rank is one plus the
+maximum successor rank (sinks rank1). Induction bounds every directed path by
+rank minus1 arcs. The graph maxima are14 and15 arcs for fixtures0 and1;
+longest-path scalar replay of cells1..13 passes. Prediction HELD for this graph.
+All starting phases checked: the maxima begin at phases30 and29, whereas phase0
+allows only1 and2 arcs. This unexpected phase check prevents a phase0 bound from
+being stated uniformly. These are bounds on these fixed skeletons only.
+
+**Endpoint qualification / retained correction:** initially calling14/15 a
+finite-strip transition bound would be off by one. Every graph vertex constrains
+column12's *next* update; a physical finite segment has no update at its final
+row. One additional transition into an unrestricted terminal column13 bit is
+possible. Explicit scalar replay, with exterior14=0 on that last transition,
+passes and its terminal bit is excluded from the next phase's allowed set.
+Thus the sharp physical finite-segment maxima are15 and16 transitions, allowing
+arbitrary start phase; no16/17-transition segment exists, since its nonterminal
+rows would supply a forbidden15/16-arc graph path. The counterfactual off-by-one
+is false for graph ranks but true for the naive physical interpretation.
+
+No positive infinite witness, no whole-core elimination or global trace claim.
+Source `rule30_locked_horizon.py`; fixed input from GC378; transcript outside Git.
+Control independently evaluates the scalar strip including every last transition;
+rank calculation shares GC380 graph construction and is not a separate encoder.
+Next: a coupled boundary invariant must handle alternative skeleton paths rather
+than only these fixtures. Local's RK and ZR runs remain separate lanes.
