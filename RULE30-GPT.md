@@ -10521,3 +10521,40 @@ row and keeps all time-dependent wall conditions by an even shift, so that
 barrier is absent here. G86 is not restated; the distinction reinforces the need
 to state the free-row premise explicitly. Build208, duplicate guard and full
 master math check PASS (zero TeX errors and loose dollar signs).
+
+## GC378 — column5 ambiguity survives on two complete strip cycles (2026-10-07)
+
+Following Local L229's54-of56 observation, one fixed width12 graph audit was
+preregistered: predict two56-step closed walks differing at an ambiguous column5
+phase; counterfactual, ambiguity exists only on transient bridges. No wider search
+or departure SAT run. Source `tests/probes/lexicon/rule30_locked_cycles.py`.
+
+The unresolved column5 phases are exactly12 and14. At phase12 the602-state
+trimmed core has closed walks of length56 with either column5 bit. Reconstructing
+the complete paths and scalar-replaying all12 updated columns gives two explicit
+periodic finite-strip solutions. Their column5 words, indexed at phases0..55, are:
+
+    bit0: 10000001011000000101100000010110000001011010101110000101
+    bit1: 10000001011010100101100000010110000001011010101110000101
+
+They differ at precisely12 and14, with the two bits equal in each displayed
+cycle. The closed state paths and a matching periodic exterior input at column13
+are reconstructible by the committed probe; full transcript remains outside Git.
+Prediction HELD and transient-only counterfactual REFUTED. Thus no prescription
+of a longer U window, using only exact columns1..12 and completely free column13,
+can force either ambiguous column5 bit uniquely: both periodic strip solutions
+restrict to every finite time window. This is a limitation of that relaxed model,
+not a counterexample to uniqueness for a genuine global Rule30 continuation.
+
+Controls: every reconstructed edge is independently replayed by scalar triples
+across all12 columns, including the wrapped final edge; flipping column5 in one
+frame makes each cyclic replay fail. Unexpected phase check: the difference at12
+is accompanied by the same difference at14; it is not an isolated one-time bit.
+The displayed cycles do not prove that *all* core paths have this equal-bit
+relation or that successive cycles can be chosen independently. The core audit
+also reruns its scalar/row and finite-centre checks. About2.4 seconds, fixed width.
+
+Next useful relation must constrain the exterior rather than repeat width12
+trimming. Imposing Rule30 also at column13 may remove these alternatives; no
+claim that it does so is made yet. The shared coincidence of phase12 with the
+kick-class label12 is noted only as a question, not an explanation of KS.
