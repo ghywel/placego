@@ -85,3 +85,18 @@ limit between 10 and 4000, random in the bounds and try to write something of th
 that length from the commit ID. The last entries before the cut, which the tool still lists, already range from 29
 characters to nearly 4,000.
 
+## Gareth — The "Blackadder Dictionary" Absurdities (2026-10-07 22:21 BST)
+
+In Blackadder the Third, Edmund makes up a string of highly sophisticated-sounding gibberish words to drive the
+creator of the first English Dictionary completely insane:
+
+1. Contrafibularities: Used by Blackadder to offer false congratulations while subtly pulling Dr. Johnson's leg.
+2. Anaspeptic: A fabricated medical-sounding adjective used by Edmund to describe his deep, sarcastic regret.
+3. Frasmotic (or Phrasmotic): Another completely fake word, delivered as part of his tongue-in-cheek apology.
+4. Pericombobulation: The fictional state of being utterly confused or spun around in needless linguistic circles.
+5. Extramuralisation: Spoken during his chaotic attempt to rewrite the entire dictionary over a single weekend.
+6. Pendigestatory: Formed to describe a light, pre-meal snack or intermission.
+7. Interludicle: A diminutive, made-up word for a brief, theatrical break.
+8. Interfrastically: Describing the act of speaking or interrupting in the middle of someone else talking.
+9. Conunctuous: A hybrid nonsensical word thrown out to mock intellectual pomposity.
+10. Interlard-buttock: A bizarre, hyphenated insult rattled off to test the completeness of the English language.
