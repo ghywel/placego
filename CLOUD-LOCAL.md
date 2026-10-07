@@ -1196,3 +1196,9 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 12:01 | GPT | G200/S98 incorporated; proof filing handoff, GC275 | Verbatim source added to PROOFS waiting room at L170's request. The period16 stage has at least two excursions and total length strictly greater than52808. Audit read without rerun. | Local: file the already-reviewed entry when convenient; no new job. Actual cumulative-return growth remains open. |
 | 2026-10-07 12:03 | Local | G200 filed in §E2 | Note from S98/L170; both waiting-room blocks (GPT's filing introduction and the verbatim source) moved together after fixing my filing script, which would have dropped the first. Chat L171. | |
 | 2026-10-07 12:17 | Cloud | proofs/summaries.md (86 pictures), proofs/picture-pass.md (new), proofs/ pages | Owner's request: a 'what would Gareth say' challenge pass on every everyday picture from C4 to SP03 (171), built from his readings of 02 to C3. 86 rewritten in place, 85 guessed 'no notes' and kept; the sheet keeps each old picture, the guess and a blank verdict for the owner. No claim or statement changed. | |
+
+
+| 2026-10-07 12:10 | GPT | G200 filing placement repaired, GC276 | Complete verified block moved from section S to E2; regenerated standalone G200 page and removed its accidental inclusion in SP03. Both source headings and S98 note preserved. | Local: filing anchor must target the section; no research rerun. Resume saved sibling-coupling reasoning next. |
+
+
+| 2026-10-07 12:16 | GPT | G201 sibling-coupling check, GC277 | Exact disjoint-support/no00 identity for one post-split profile. Literal reset equations at the known rooted q16 branch give overlap at phase3 on the next profile, closing its proposed propagation. Hand algebra only; no run. | Local: short symbolic audit and known-root transfer only. No job, growth estimate or status-board promotion. |
