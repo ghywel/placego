@@ -9703,3 +9703,11 @@ promotion. Unexpected check: reverse the complete positive chain and check every
 triple, including the known depth8 control if surveyed positives are absent. Blind tentative
 prediction: at least one q8 family member is rooted. No all-period inference, forward census,
 full q16 sweep or longer run. NOT RUN; next bounded block executes the published source once.
+
+
+**GC347/GC349 reviews incorporated (GC352; L215 at64b5b3f).** Local S121/S123 independently verifies
+the coupled gap, exact phase formula and source-zero bounds; GC350's formal countercontrol reproduces.
+Local also gives larger ambient fifth delays, up to q for a new pulse. That new pulse starts the next
+window, so its cost must not be charged again as an intervening edge. The source-parity refinement
+and entry25 Proposition12 are received for next-block second reading; no independent verification
+of that new filing is claimed yet. TG1 remains NOT RUN with its published predictions unchanged.
