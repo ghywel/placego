@@ -22,8 +22,8 @@ scripts are in `tests/probes/openai_math/`; their predictions were pushed before
 Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
 (that needs the toolchain and a mathlib build, and is the first of the hard ones).
 
-**Imported so far (2026-10-07): 9 entries from 8 of the 372 families, 6 at level A and 3 at level B.** Batch 1 was
-088, 049, 205, 189 and 119; batch 2 is 049b, 186, 175 and 235.
+**Imported so far (2026-10-07): 11 entries from 9 of the 372 families, 8 at level A and 3 at level B.** Batch 1 was
+088, 049, 205, 189 and 119; batch 2 is 049b, 186 (with its graph companion), 175, 175c, 235 and 332.
 
 | Family | Result | Level | Script |
 |---|---|---|---|
@@ -33,6 +33,8 @@ Where the release says a Lean formalisation exists, the entry says so; Cloud has
 | 186 | Symmetric properties: influence at least $(\log n)^{r/(r-1)}$ times the variance | A | `om186_influence.py` |
 | 175 | Discrete convexity: $2^{75}$ unions leave only a $p$-small family | A | `om175_discrete_convexity.py` |
 | 235 | Random 3-SAT's hitting time has variance $\Theta(n)$ (upper bound read in full) | A | `om235_sat_variance.py` |
+| 175c | Fractional and integral thresholds agree within $25 \cdot 512^4$ | A | `om175c_expectation_thresholds.py` |
+| 332 | $\ell_1$ has metric Markov cotype two, $N_2(\ell_1) \le 12\sqrt{21}$ | A | `om332_markov_cotype.py` |
 | 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
 | 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
 | 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
@@ -348,10 +350,13 @@ reading, that the argument goes through there with bias factor $\sigma^0$, is wh
 explicit constants the width bound is below 1 only once $(\log n)^2 > 2^{19}\log(1/2\varepsilon)$, about
 $n > e^{600}$ at $\varepsilon = 1/4$.
 
-**For us.** The nearest tool yet to Rule 30. Our influence probes ask how much one initial cell can change a later
-cell. This theorem says symmetry alone forces the total influence up, and the method (restrict to a block, keep its
-symmetry, cancel the two $m/n$ factors) is the kind of argument a shift-invariant automaton might allow. The
-two-to-four bound at every bias, with its explicit $\rho = \sigma/4$, is usable on its own.
+**For us.** Our influence probes ask how much one initial cell can change a later cell, so the question this
+theorem answers is close to ours, but its method does not transfer directly. The block restriction needs
+permutations that move the coordinates inside a block while fixing every coordinate outside it, so that the
+restricted function keeps its symmetry whatever the outside assignment. Rule 30's functions are only
+translation-invariant, and a translation fixes no coordinate. (GPT, reading this document on 2026-10-07, flagged that
+the symmetry hypotheses "need care"; Cloud's first version of this paragraph was too optimistic.) The two-to-four
+bound at every bias, with its explicit $\rho = \sigma/4$, is usable on its own.
 
 ---
 
@@ -415,7 +420,7 @@ be attacked the same way.
 
 ---
 
-## 235. Random 3-SAT becomes unsatisfiable within a window of width $\Theta(\sqrt n)$ (level A for the upper bound)
+## 235. Random 3-SAT's transition window has width $\Theta(\sqrt n)$ (level A, upper bound)
 
 *Preprint:* "Linear Variance of the Random 3-SAT Hitting Time", 2026-10-05 (the family also holds the general-$k$
 companion, and Carenini's result settling the threshold's existence is credited there). Lean: the release lists a
@@ -458,12 +463,115 @@ programming over surviving sets (control: it reproduces $q_1 = h_2$). It also ch
 *Simulation, not proof, and a missed prediction:* $\mathbb{E}H_n/n$ falls toward the threshold from above (4.71,
 4.48, 4.33, 4.28 at $n = 20, 40, 80, 160$), as predicted. But $\mathrm{Var}(H_n)/n$ fell from 11.7 to 3.8, a factor
 of 3.1, against the prediction that it would stay within a factor of 2. That does not contradict the theorem, whose
-upper bound allows a falling ratio, but Wilson's lower bound needs it to level off eventually. A repeat at $n = 160$ gave 3.87; a post-hoc run at
-$n = 320$ is in progress. Cloud's loose guess that the ratio would lie between 1 and 30 held.
+upper bound allows a falling ratio, but Wilson's lower bound needs it to level off eventually. A repeat at
+$n = 160$ gave 3.87, and a post-hoc run at $n = 320$ is in progress. Cloud's loose guess that the ratio would lie
+between 1 and 30 held.
 
 **For us.** We use SAT solvers. Here the transition from "almost surely satisfiable" to "almost surely not" for
 random 3-SAT takes about $\sqrt n$ clauses, which is useful when sizing random-instance controls. The potential
 $P_d$ (a bounded, monotone function whose drift pays for a power of a kill probability) is a reusable device.
+
+---
+
+## 175c. Integral and fractional expectation thresholds agree within $25 \cdot 512^4$ (level A)
+
+*Preprint:* "Integral and fractional expectation thresholds are equivalent", 2026-09-23, the second paper of family
+175, and the "companion rounding theorem" that the discrete-convexity corollary uses.
+
+**Statement.** For an increasing family $\mathcal F$ of subsets of a finite set (neither empty nor everything), let
+$q(\mathcal F)$ be the largest $p$ at which $\mathcal F$ is $p$-small with an integral cover, and $q_f(\mathcal F)$ the
+largest $p$ at which a fractional cover works, with weights $g(S) \in [0,1]$, $\sum_{S \subseteq H} g(S) \ge 1$ on
+$\mathcal F$ and $\sum_S g(S)\,p^{|S|} \le 1/2$. Then
+
+```math
+q(\mathcal F) \le q_f(\mathcal F) \le 25 \cdot 512^4 \, q(\mathcal F),
+```
+
+with no dependence on the ground set, the sizes of the minimal members, or the supports. This is Talagrand's 2010
+Conjecture 6.3. Previous bounds lost a factor depending on $\log\log(1/q)$ (Park) or on the support sizes (Pham).
+
+**How it works.** *A multiscale selector.* Colour each element independently with colour $i$ with probability
+$256^i p$, for $i \le s$, and colour $s + 1$ otherwise. If $\mathcal F$ is not $p$-small then, with probability at
+least $9/10$, a single member $H$ has its mass $\lambda_H$ captured at every scale,
+$\lambda_H(\{a \le i\}) \ge 1 - 2^{-i}$, and so has mean colour at most 2. The proof moves elements to earlier
+colours at least total cost, by a maximal-truncation lemma. A one-level delay shows that the moved elements lie in
+small sets determined by the final colouring and the counts, so that counting is paid for by a weighted AM–GM and
+$\rho = \sum_i e/64^i < 1/21$. *Rounding.* Spread each fractional weight $g(S)$ evenly over the elements of $S$.
+The selected member then puts half its fractional mass on sets of mean colour at most 4. With
+$Y_x = 512^{4 - a(x)}$, the variable $Z = \sum_S g(S) \prod_{x \in S} Y_x$ has $\mathbb{E}Z \ge 9/40$ from below,
+but at most $1/10$ from the cover's cost at $r = 25 \cdot 512^4\, p$. That contradiction is the theorem.
+
+**What it does.** It makes fractional covers (an LP, easy to find) as good as integral ones (combinatorial, hard),
+up to a universal constant, in threshold problems for random sets.
+
+**How it was checked.** Cloud read the whole proof: correct, constants included. The selector's hypothesis cannot
+hold on small ground sets (every family on 4 elements is $p$-small once $p < 1/32$), so the script checks its
+computable pieces exactly: the maximal-truncation lemma on random instances, the likelihood identity, the
+average-colour identity, the weighted AM–GM step and every constant. One check failed on the first run because of
+Cloud's own float comparison, not the paper: $\sum e/64^i$ rounds to $e/63$ itself. It now compares exact
+rationals, and the script says so.
+*Unexpected check:* exact $q$ and $q_f$ for all 189 nonempty proper increasing families on 1 to 4 elements, by an
+exact simplex and an exhaustive integral search. The largest ratio $q_f/q$ is 1.0215, at "at least three of four
+elements". On small ground sets the two thresholds almost coincide, far inside the theorem's $1.7 \times 10^{12}$
+(Cloud's guess before the run was at most 2). Control: $q \le q_f$ always, and $q = q_f = 1/(2n)$ for the family of
+all nonempty sets.
+
+**For us.** A threshold certificate can be found as a linear programme and then rounded. Whenever we bound the
+probability of a random-set property (random initial rows for Rule 30, random residues for Collatz), the fractional
+expectation threshold is a computable lower bound on the true threshold, and this theorem says it is never far off.
+
+---
+
+## 332. $\ell_1$ has metric Markov cotype two, constant $12\sqrt{21}$ (level A)
+
+*Preprint:* "Metric Markov Cotype Two of l1", 2026-10-05. Lean: the release lists a formalisation for the family.
+
+**Statement.** For every finite stochastic matrix $A$ with stationary law $\pi$ (reversibility is not needed), every
+$t \ge 1$ and every $x_1, \ldots, x_n \in \ell_1$, there are $y_1, \ldots, y_n \in \ell_1$ with
+
+```math
+\sum_i \pi_i \|x_i - y_i\|_1^2 + t \sum_{i,j} \pi_i a_{ij} \|y_i - y_j\|_1^2
+\le 3024 \sum_{i,j} \pi_i \Big(\frac1t \sum_{s=1}^t A^s\Big)_{ij} \|x_i - x_j\|_1^2 .
+```
+
+So $N_2(\ell_1) \le 12\sqrt{21}$ (and $12\sqrt{42}$ over the complex numbers). This answers Mendel and Naor's 2013
+question. By their theorem, with Ball's, every Lipschitz map from a subset of Hilbert space into $\ell_1$ extends
+to the whole space with a universal loss: Ball's extension problem for this target. The $y_i$ are explicit. With
+$G = p \sum_s q^s A^s$ (a walk stopped after a geometric number of steps of mean $t$, $p = 1/(t+1)$),
+$y_i = \mathbb{E}\,\mathrm{med}(x_{J_1}, x_{J_2}, x_{J_3})$: the expected coordinatewise median of three
+independent stopped-walk endpoints from $i$.
+
+**How it works.** Write the points as weighted cuts: binary codes $z_i$ with $\|x_i - x_j\|_1 = \|z_i - z_j\|_H^2$
+and a contraction $T$ back to $\ell_1$. The cubic $\phi(r) = 3r^2 - 2r^3$ is flat at 0 and 1, so
+
+```math
+\|\Phi(u') - \Phi(u)\|_{1,w}^2
+\le 108\Big(\|u' - e\|_H^4 - \|u - e\|_H^4 - 4\|u - e\|_H^2\langle u - e, u' - u\rangle_H\Big),
+```
+
+and the linear term vanishes along a martingale. Run the walk with killing probability $p$. The values
+$h_i = \mathbb{E}_i z_{X_S}$ while alive and $z_i$ once dead form a martingale; its squared jumps after $\Phi$ add up
+to exactly the left side, and its terminal quartic potential is $\mathbb{E}\|x_{X_S} - x_{X_0}\|_1^2$. A comparison
+valid in any metric space finishes with $108 \cdot 28 = 3024$:
+
+```math
+\mathbb{E}\, d(x_{X_S}, x_{X_0})^2 \le \frac{28}{t} \sum_{s=1}^{t} \mathbb{E}\, d(x_{X_s}, x_{X_0})^2 .
+```
+
+**What it does.** It smooths any configuration in $\ell_1$ along any stationary chain at a bounded cost, by taking
+medians of walk endpoints, and that is what Lipschitz extension needs.
+
+**How it was checked.** Cloud read the whole proof: correct and elementary, constants included. The script checks,
+exactly: the cut representation; the flattening lemma and its remainder identity
+$R = 2\|a\|_H^2\|\delta\|_H^2 + (2\langle a, \delta\rangle_H + \|\delta\|_H^2)^2$; the comparison with 28 on
+random chains; the expected-median formula against a direct sum over all triples of endpoints; the constants; and
+the theorem itself on 60 random reversible and doubly stochastic chains. *Unexpected check:* the largest ratio of
+the two sides was 0.712, against the 3024 allowed (Cloud's guess, below 50, was right). With $y = x$ instead it
+reached 11.5, so the medians do the work.
+
+**For us.** "Replace each point by the median of three random-walk endpoints" is a concrete, provably
+bounded-cost smoothing on $\ell_1$, and Hamming distance is an $\ell_1$ distance. It could smooth an ensemble of
+Rule 30 configurations along a Markov chain on them, as a regularity tool for the averaging in our probes.
 
 ---
 

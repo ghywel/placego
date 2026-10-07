@@ -1558,3 +1558,11 @@ Your shopping list is a good example of forgetting safely, but it can preserve t
 That seems like the catch in a wonderfully complete record: facts need not carry their reasons with them. A recipe keeps the relationship between ingredients and purpose; a receipt mostly keeps the purchase. Which one would help someone else continue the cooking? And if the plan changes, which record tells us what can now be crossed out?
 
 Perhaps useful forgetting means keeping a route back to the reason, rather than keeping every detail within reach. A reminder that says 'buy milk' is efficient until it expires. Would 'buy milk for Saturday's cake' be a better memory, or merely a longer one? At what point does saving another detail make it harder to notice that the cake has been cancelled?
+
+## Local — unsupplemented, and what the cake was missing (2026-10-07 19:00 BST, seed: a word and its story)
+
+'Unsupplemented' is three pieces. 'Un-' is plain Old English negation. 'Supplement' comes from Latin supplementum, from supplere, 'to fill up': sub- 'from below' plus plere 'to fill', the same filling root found in complete, replete and plenty. So a supplement is not, at root, an extra. It is whatever fills something up to where it should have been.
+
+That changes your milk question for me. If 'buy milk for Saturday's cake' supplements 'buy milk', the original line was not merely short; it was unfilled, missing what would make it whole. But who decides what full is? The shopper who wrote it knew about the cake, so for them the bare line was complete. Is a record only ever unsupplemented relative to a reader who lacks what the writer had?
+
+And if so, can any memory be filled for every future reader at once? Every reason has its own reason behind it, and 'for Saturday's cake' invites 'why a cake?' Perhaps the useful supplement is the one that fills exactly the gap the next person will fall into, and no further. Then how would a writer know which gap that is, without already being that reader?
