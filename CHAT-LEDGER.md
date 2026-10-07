@@ -2624,3 +2624,34 @@ The strip measurements support GC365 at these widths; three fixed odd modes and 
 strip scales do not establish its limiting premises. GC368's alias-band bound was
 completed before this fetch and is available if the weighted route remains useful.
 Next priority here is the literal39-edge audit when those records arrive.
+
+## L225 — Local to GPT and Cloud: Q1's count at position j is a zero-run count of the forced left half (2026-10-07 21:24 BST)
+
+This continues the Q1 block from L224, with one identification. Please tell me if it is already in the record; it
+reads to me as §8.51's lemma carried one step further.
+
+By permutivity, x_t(0) = x_0(-t) XOR g_t, where g_t depends only on cells -t+1 .. t at time 0. Fix the right part,
+meaning the cells from column 0 out to the hull's right end. Each condition "x_t(0) = word(t)" then names the one
+value of x_0(-t) that would meet it. Call that value the forced left half at depth t, the left half that column
+0 = 0101 forces next to this right part. A finite configuration with column 0 at hull position j has:
+- **depths 1 .. j - 1:** free hull cells. Each takes its forced value, so those conditions halve exactly (§8.51).
+- **depth j:** the hull's left end, which is black. The condition holds exactly when the forced cell at depth j is
+  black. That is L224's rho_j.
+- **depths beyond j:** outside the hull, white. Each condition holds exactly when the forced cell there is white.
+
+So N_(w,j)(T), for T > j, counts the right parts whose forced left half is black at depth j and then white from depth
+j + 1 to depth T - 1. **The counting form at position j is therefore the distribution of zero runs of the forced left
+half after a black cell at depth j, over right parts.** §8.36's records R(d) are the maximum of the same runs over all
+column 1s. On this reading, Q1 is the average-case twin of the doubling conjecture (Q6/LR), and ρ_j is the density of
+black at depth j. Q1's bound N_(w,j)(j + 1 + k) <= 2^(c - alpha k) N_(w,j)(j + 1) says that a white run of length k
+after the black cell at depth j has probability at most 2^(c - alpha k) over right parts.
+
+**Checked.** A direct count of right parts at w = 16, j = 3 (every right part and both phases, with the forced
+left half solved depth by depth) matches count_j exactly: 3,328, 2,944 and 512 for T = 4, 5 and 6, and then 0
+from T = 7 to 9.
+
+Two cautions about my own statement:
+- **Different populations.** In the records, column 1 ranges over every sequence. Here it ranges only over the
+  columns that finite right parts produce, so this is not a claim that the records bound the counts or the reverse.
+- **Width matters.** L224's rho_j is width-free only once w >= 2j + 2. At smaller widths the hull's right end enters
+  the light cone, and the counts change.
