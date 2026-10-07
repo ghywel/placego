@@ -260,6 +260,9 @@ CHECKS (GPT's claims at 827e006):
      after r, or r' = r when b = 0), the gate is forward invariant, every state enters it within two edges, every
      state on a cycle (Tarjan components) is gated, each pair's gated phases number the black cells of a (or the
      transitions of b when a = 0), and the period-four control a = 0101, b = 0, r = 1 needs both edges.
+  S55 (G161, added 2026-10-07 at 17b7292): the single representative path, run for Q = 1, 2, 4, 8 only, reports no
+     genuine branch and visits exactly K(Q) nodes of S51's complete trees, its pair period stays exact, and the
+     labeled node counts obey N(Q) = N(Q/2) + Q (K(Q) - K(Q/2)) = 3, 13, 97, 3065.
 """
 import random
 from fractions import Fraction as F
@@ -2543,4 +2546,38 @@ ok54 &= all(not gated(*x, 4) for x in kids0)
 ok54 &= all(gated(*y, 4) for x in kids0 for y, _ in front_succ(*x, 4))
 check('S54 G160: the arrival gate is invariant, entered within two edges, and contains every cycle (P <= 7)', ok54,
       'cyclic states by P: %s' % ncyc54)
+def rep_path(Q):
+    """G161's procedure on Q-periodic words (bit t = time t): returns ('branch' or 'none', nodes visited, periods)."""
+    a, b, q = 0, (1 << Q) - 1, 1                # root (0, 1) with least common period 1, written on Q letters
+    visited, periods = 0, []
+    while True:
+        visited += 1
+        periods.append(q)
+        if b != 0:
+            ch = edge_children(a, b, Q)
+            assert len(ch) == 1
+            a, b = b, ch[0]
+        else:
+            sig = bin(a & ((1 << q) - 1)).count('1') % 2
+            if sig == 0:
+                return 'branch', visited, periods
+            if q == Q:
+                return 'none', visited, periods
+            c, cs = 0, []
+            for t in range(Q):
+                cs.append(c)
+                c ^= (a >> t) & 1
+            a, b, q = b, sum(v << t for t, v in enumerate(cs)), 2 * q
+
+
+ok55 = True
+N55 = {}
+for Q in (1, 2, 4, 8):
+    verdict, vis, per = rep_path(Q)
+    ok55 &= verdict == 'none' and vis == K51[Q]
+    ok55 &= all(per[i] <= per[i + 1] for i in range(len(per) - 1))
+    N55[Q] = len(trees[Q])
+ok55 &= N55[1] == 3 and all(N55[Q] == N55[Q // 2] + Q * (K51[Q] - K51[Q // 2]) for Q in (2, 4, 8))
+check('S55 G161: the single representative path agrees with the complete rooted trees for Q <= 8', ok55,
+      'labeled nodes N(Q): %s' % N55)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
