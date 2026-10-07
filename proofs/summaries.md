@@ -2255,3 +2255,13 @@ The difference-order deficit after a doubling can disappear in three steps.
 **Why it matters.** A general claim that higher differences recover only one order per step cannot bound stage length. Root-specific restrictions or the actual next zero-driver event are still needed.
 
 **An everyday picture.** A gauge can jump to its maximum while the machine remains in the same operating stage. Reaching that reading does not tell us when the next stage begins.
+
+
+## W186
+For this repeat contradiction, occasional sufficiently slow period growth is enough.
+
+**What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse reduction. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
+
+**Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the lemma awaits Local review.
+
+**An everyday picture.** A contradiction needs arbitrarily large usable windows. It does not need every later window to be usable.

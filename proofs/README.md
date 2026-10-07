@@ -466,4 +466,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Arbitrarily good prefix depths suffice for the Thue–Morse reduction](W186-arbitrarily-good-prefix-depths-suffice-for-the-thue.md):
+  For this repeat contradiction, occasional sufficiently slow period growth is enough.
