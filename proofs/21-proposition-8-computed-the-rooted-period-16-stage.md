@@ -1,10 +1,10 @@
 # Proposition 8 (computed): the rooted period-16 stage is finite, with sixteen histories
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "21. Proposition 8 (computed):
-the rooted period-16 stage is finite, with sixteen histories"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "21. Proposition 8 (computed): the
+rooted period-16 stage is finite, with sixteen histories"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** certified by computation (Local, 2026-10-07); independently replayed and second-read by GPT, R2 (2026-10-07).
 
 ## In plain words
 
@@ -18,7 +18,7 @@ Every way the left side can grow through period sixteen has been listed, and the
 
 ## The formal statement and proof
 
-*Where:* CLOUD-LOCAL.md, TM5 and TM5b (2026-10-07 14:45 and 14:50), chat L178 and L179; `tests/probes/lexicon/rule30_tm5.py` and `rule30_tm5b.py`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the record of $R_5$ and $\lambda_4$); G184, G200, G204. *Status:* certified by computation (Local, 2026-10-07); second reader wanted.
+*Where:* CLOUD-LOCAL.md, TM5 and TM5b (2026-10-07 14:45 and 14:50), chat L178 and L179; `tests/probes/lexicon/rule30_tm5.py` and `rule30_tm5b.py`. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the record of $R_5$ and $\lambda_4$); G184, G200, G204. *Status:* certified by computation (Local, 2026-10-07); independently replayed and second-read by GPT, R2 (2026-10-07).
 
 **Proposition 8 (computed).** Identify rooted histories (G165) up to temporal rotation. The period-16 stage of the
 rooted tree, from the entry $N_4 = 400$ to the entries to period 32, has exactly fifteen genuine branch nodes, at
@@ -29,7 +29,7 @@ depths 53,207, 58,286, 72,575, 165,748, 174,449, 179,399, 243,767, 350,243, 445,
 N_5 \in \{87\,867,\ 183\,184,\ 196\,189,\ 229\,338,\ 253\,537,\ 271\,596,\ 291\,257,\ 527\,724,\ 551\,910,\ 555\,813,\ 575\,211,\ 634\,886,\ 645\,655,\ 667\,052,\ 770\,532,\ 894\,235\}.
 ```
 
-So every rooted history has $87{,}867 \le N_5 \le 894{,}235$, that is $2{,}745.8 \le R_5 \le 27{,}944.8$. The minimum is
+So every rooted history has $87{,}867 \le N_5 \le 894{,}235$, that is $87{,}867/32 \le R_5 \le 894{,}235/32$. The minimum is
 attained only by the single cell's own history.
 
 *Proof (certificate).* The walk is exact, for three reasons.
@@ -50,3 +50,5 @@ saw the same sixteen exits as doublings. The single cell's left side computed di
 (`rule30_leftside_million.py`) and its three flipped sides realise four of the histories, exiting period 16 at
 87,866, 183,183, 229,337 and 291,256. Every history's excursion lengths sum to its own $N_5 - 400$, every branch
 driver has even parity and every exit driver odd. $\square$
+
+*Second reader's note (GPT, 2026-10-07, R2/GC294).* Replayed the committed TM5b code on the Intel CPU: 2,159,010 steps, sixteen histories, no cap or survivor; literal equation, B-C1, B-C2 and B-U pass. Independently compared the entire entry list and fifteen branch depths with this statement and the separate C replay, not just the extrema. The reset, parity and rotation-quotient coverage argument was checked by hand, including preservation of the parent under a rotation exchanging children. The original rounded upper inequality27944.8 was false at the maximum27944.84375; exact fractions above repair it. This is a separate execution of Local's code, not a third walk implementation or asymptotic growth proof.
