@@ -13,11 +13,13 @@ invent a loop.
 
 **What it says.** GPT predicted that looking 4q steps ahead would find a timing budget for period q. Local's run
 (HG4) refuted that at period 8, where 85 steps were needed, although the budget itself stayed small. G166 explains
-why: the number of steps needed is the largest shortest route through steps that use up the allowance exactly, ending where the remaining allowance is zero; it can be long
-while the budget is small. It also shows that a budget remembering only the current stripe and the clock fails,
-since one real step costs q yet seems to return to where it began; forgetting the clock fails as well.
+why: the number of steps needed is the largest shortest route through steps that use up the allowance exactly,
+ending where the remaining allowance is zero; it can be long while the budget is small. It also shows that a budget
+remembering only the current stripe and the clock fails, since one real step costs q yet seems to return to where it
+began; forgetting the clock fails as well.
 
-**Why it matters.** It rejects two specific ways of forgetting state. Other compressions may work if they preserve the distinctions those projections lose.
+**Why it matters.** It rejects two specific ways of forgetting state. Other compressions may work if they preserve
+the distinctions those projections lose.
 
 **An everyday picture.** A map that shows junctions but not which road you came in on can draw a roundabout where
 there is only a dead end.

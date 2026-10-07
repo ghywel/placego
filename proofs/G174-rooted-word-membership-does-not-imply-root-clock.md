@@ -8,13 +8,18 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-A word can occur along a rooted history without every allowed clock occurring there.
+A pattern can lie on the real history without every clock setting turning up there.
 
-**What it says.** The period-four collision's word pair lies ten steps from the root, but every initial root clock reaches it at phase one. The feature self-loop uses phase zero, which satisfies the gate but is not reached on that prefix.
+**What it says.** The bad period-4 step of G173 does occur on the real history, 10 steps from the seed's edge. But
+there the clock always reaches it at one setting, while the bad step needs another, which the gate of G160 allows
+but the real history never produces. So checking a budget on every gated clock setting asks more than the real
+history needs.
 
-**Why it matters.** Rooted words combined with every gated phase form a larger domain than the actual rooted clock graph. The latter could still support a certificate that fails on the larger domain.
+**Why it matters.** A budget might still work on the clock states the history really reaches; the next test (RQ3)
+was restricted to those.
 
-**An everyday picture.** A station is reachable, but that does not mean every departure time appears on the train journey used to reach it.
+**An everyday picture.** A train that serves your station does not stop there at every time on the timetable; the
+fare rule need only work for the trains that actually stop.
 
 ## The formal statement and proof
 

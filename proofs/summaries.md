@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through G170 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through G179 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -2072,11 +2072,13 @@ invent a loop.
 
 **What it says.** GPT predicted that looking 4q steps ahead would find a timing budget for period q. Local's run
 (HG4) refuted that at period 8, where 85 steps were needed, although the budget itself stayed small. G166 explains
-why: the number of steps needed is the largest shortest route through steps that use up the allowance exactly, ending where the remaining allowance is zero; it can be long
-while the budget is small. It also shows that a budget remembering only the current stripe and the clock fails,
-since one real step costs q yet seems to return to where it began; forgetting the clock fails as well.
+why: the number of steps needed is the largest shortest route through steps that use up the allowance exactly,
+ending where the remaining allowance is zero; it can be long while the budget is small. It also shows that a budget
+remembering only the current stripe and the clock fails, since one real step costs q yet seems to return to where it
+began; forgetting the clock fails as well.
 
-**Why it matters.** It rejects two specific ways of forgetting state. Other compressions may work if they preserve the distinctions those projections lose.
+**Why it matters.** It rejects two specific ways of forgetting state. Other compressions may work if they preserve
+the distinctions those projections lose.
 
 **An everyday picture.** A map that shows junctions but not which road you came in on can draw a roundabout where
 there is only a dead end.
@@ -2135,66 +2137,86 @@ apart.
 
 **An everyday picture.** A long-distance timetable must still price the local stopping trains that share its track.
 
-
 ## G171
-A distant defect changes the true period while leaving the observed waiting distances unchanged.
+Choosing the formula by each state's own shortest period does not rescue the three distances either.
 
-**What it says.** Three exact-period compatible edges still impose contradictory requirements on the three-distance timing formula. Choosing coefficients by each state's least period cannot repair it at large periods.
+**What it says.** Three real steps whose stripes have exactly period q, and no shorter one, still make contradictory
+demands on G169's three-distance formula, even when its multiples may depend on each state's own period. A change
+far along a stripe alters its period while the three distances, which look only as far as the next black beat, stay
+the same.
 
-**Why it matters.** The failure comes from the information those three distances discard, rather than just from mixing short and long periods in one graph.
+**Why it matters.** It closes the escape left open by G170: the trouble is in what the three distances throw away,
+not in mixing periods.
 
-**An everyday picture.** Two routes look the same over the short section used to set a fare, even though a distant detour changes the full route. A price rule that sees only that short section misses the distinction.
-
+**An everyday picture.** A fare set from the first mile of a route cannot tell apart two routes that part only
+later.
 
 ## G173
-One real step costs time while leaving all three observed waiting distances unchanged.
+One real step takes time yet leaves all three distances unchanged, so no formula built on them can work.
 
-**What it says.** At every dyadic period from four onwards, a compatible gated step takes three time units and has the same three distance features before and after. No timing budget based only on those features can pay that step at a slope below three, even if the formula is nonlinear and uses the true pair period.
+**What it says.** At every period 4, 8, 16, ... there is a real step that takes three ticks and has the same three
+distances, and the same period, before and after. A budget computed from those numbers, by any rule however
+elaborate, sees no change across that step, so it cannot pay for the three ticks at less than 3 per step, and the
+allowance is 5/2.
 
-**Why it matters.** It closes the entire three-distance compression family, while leaving richer features and rooted-only arguments open.
+**Why it matters.** It closes the three-distance idea completely. Budgets that see more remain open.
 
-**An everyday picture.** A meter that shows the same reading before and after a paid journey cannot explain that journey's cost. The meter needs another observable.
-
+**An everyday picture.** A taxi meter that reads the same before and after a ride cannot be what the fare is charged
+from.
 
 ## G174
-A word can occur along a rooted history without every allowed clock occurring there.
+A pattern can lie on the real history without every clock setting turning up there.
 
-**What it says.** The period-four collision's word pair lies ten steps from the root, but every initial root clock reaches it at phase one. The feature self-loop uses phase zero, which satisfies the gate but is not reached on that prefix.
+**What it says.** The bad period-4 step of G173 does occur on the real history, 10 steps from the seed's edge. But
+there the clock always reaches it at one setting, while the bad step needs another, which the gate of G160 allows
+but the real history never produces. So checking a budget on every gated clock setting asks more than the real
+history needs.
 
-**Why it matters.** Rooted words combined with every gated phase form a larger domain than the actual rooted clock graph. The latter could still support a certificate that fails on the larger domain.
+**Why it matters.** A budget might still work on the clock states the history really reaches; the next test (RQ3)
+was restricted to those.
 
-**An everyday picture.** A station is reachable, but that does not mean every departure time appears on the train journey used to reach it.
-
+**An everyday picture.** A train that serves your station does not stop there at every time on the timetable; the
+fare rule need only work for the trains that actually stop.
 
 ## G176
-Even root-reached clocks lose essential timing information in the three-distance features.
+Even on the clock states really reached, the three distances lose the timing.
 
-**What it says.** A period-eight edge reached 190 steps from the root takes five time units but leaves all three distance features and the least pair period unchanged. No function of those observations can pay every reached edge at a slope below five.
+**What it says.** At period 8, a real step reached 190 steps from the seed's edge takes five ticks and leaves the
+three distances and the period unchanged. So no budget built on those numbers works below five ticks per step on that reached edge: it
+would need 5 per step there. Local and GPT reconstructed the step independently.
 
-**Why it matters.** Restricting to actual root clocks fixes the earlier period-four collision, but the same feature family still fails at period eight. The root path was reconstructed independently; no actual cycle or long-run speed bound is claimed.
+**Why it matters.** Keeping to the real history repaired period 4 but not period 8, so the three-distance family is
+closed below five ticks per step on these reached states too.
 
-**An everyday picture.** Two consecutive stops show the same meter reading even though the trip takes time. A budget needs information the meter has discarded.
-
+**An everyday picture.** The meter of G173 again, this time on a ride somebody actually took.
 
 ## G178
-Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
+Finer timing labels fix one collision but glue together pieces of history that never meet.
 
-**What it says.** Seven reached period-eight edges form a closed loop only after compression to distances, period and difference orders. Their total elapsed time is twenty-one, so no potential using those features pays every edge at a slope below three.
+**What it says.** Adding the stripes' difference orders (GC191) to the labels separates G176's collision. But then
+seven real period-8 steps close into a loop of labels, because two of their joins match as labels while the actual
+states differ. The loop takes 21 ticks over 7 steps, 3 per step against an allowance of 5/2, so no budget built on
+these labels works. No real repeating history is claimed.
 
-**Why it matters.** Higher temporal orders add useful information but still discard relative placement. The two segment joins match as features while differing as actual states; no real repeating trajectory is exhibited.
+**Why it matters.** These labels lose distinctions between actual states at the joins, so the next candidate must
+keep the real connections.
 
-**An everyday picture.** Two routes have matching summaries, so a map joins them into a loop. The actual stations at the joins are different.
-
+**An everyday picture.** Two stretches of road with matching signposts get glued together on the map into a ring
+road that does not exist.
 
 ## G179
-Keep actual consecutive edges before compressing their labels.
+Check the real connections first, then simplify the labels.
 
-**What it says.** A bounded nonnegative potential on actual edge pairs lifts to an original vertex potential with one extra allowance for the first edge. Building edge pairs after feature compression preserves the false cycles already present.
+**What it says.** A budget can be put on pairs of consecutive real steps that share the same middle state, rather
+than on single states. If it is bounded and never negative, it turns back into a budget on states, at the cost of
+one extra allowance for the first step. Building the pairs after simplifying the labels keeps G178's false loops.
 
-**Why it matters.** Edge context can retain adjacency information only if actual middle states are checked first. This supplies a conditional transfer rule, not the missing timing certificate.
+**Why it matters.** It gives the rule for using context. RC2 then tested it at period 8 and passed, but with labels
+barely simpler than the full state (398 labels for 411 steps): a finite success, not the small budget the settling
+question needs.
 
-**An everyday picture.** Check that two train legs share the same station before replacing stations by summaries. Joining the summaries first cannot recover the lost connection.
-
+**An everyday picture.** Check that two train journeys really share a station before replacing the stations by
+summaries; join the summaries first and the lost connection cannot be recovered.
 
 ## W182
 The small-period reached timing certificate passes independent verification.

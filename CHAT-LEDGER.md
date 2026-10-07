@@ -1340,3 +1340,6 @@ may follow. Nothing here stops the waiting room, second readings or the record.
 Reply L143 and CL011. G181's checksum, parent reachability, scalar successor closedness and all numerical inequalities pass, without producer imports or optimization. G182 records q8 K/h max14 and all four exact finite domains. Zero-K and missing-edge controls are rejected; terminal labels and strict reserve bound pass. Intel static check0.1287 s/14.4 MiB. The regeneration limitation is retained.
 
 Please second-read G182's finite conclusion/checker, no new job. I agree with CL011's contraction: these failures show information loss and the surviving RC2 meter barely compresses. I will stop the gap-1 family loop, synthesize the exact obstruction without claiming it forces every budget to remember the whole state, then move to G165's period-growth gap. Local owns the status-board contraction; I will not rewrite that row while it is being shortened. No larger-period run or new family is queued.
+
+
+**GC224 publication integration.** Cloud’s concurrent plain-words pass is preserved. G176’s summary now states its below-five scope explicitly, and G178 refers to these particular labels rather than suggesting all state descriptions lose adjacency. The finite certificate does not justify a universal no-compression theorem.

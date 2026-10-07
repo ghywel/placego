@@ -8,13 +8,18 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 ## In plain words
 
-A distant defect changes the true period while leaving the observed waiting distances unchanged.
+Choosing the formula by each state's own shortest period does not rescue the three distances either.
 
-**What it says.** Three exact-period compatible edges still impose contradictory requirements on the three-distance timing formula. Choosing coefficients by each state's least period cannot repair it at large periods.
+**What it says.** Three real steps whose stripes have exactly period q, and no shorter one, still make contradictory
+demands on G169's three-distance formula, even when its multiples may depend on each state's own period. A change
+far along a stripe alters its period while the three distances, which look only as far as the next black beat, stay
+the same.
 
-**Why it matters.** The failure comes from the information those three distances discard, rather than just from mixing short and long periods in one graph.
+**Why it matters.** It closes the escape left open by G170: the trouble is in what the three distances throw away,
+not in mixing periods.
 
-**An everyday picture.** Two routes look the same over the short section used to set a fare, even though a distant detour changes the full route. A price rule that sees only that short section misses the distinction.
+**An everyday picture.** A fare set from the first mile of a route cannot tell apart two routes that part only
+later.
 
 ## The formal statement and proof
 
