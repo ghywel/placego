@@ -8,7 +8,7 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The failed meters balance their labels while charging a positive amount of time.
+A standard graph criterion, applied: the failed meters balance their labels while charging a positive amount of time.
 
 **What it says.** A budget based on chosen labels fails exactly when some collection of actual steps has equal arrivals and departures at every label but positive total timing reward. Actual states need not join. A label-balanced collection makes every budget term cancel.
 
