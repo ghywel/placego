@@ -411,3 +411,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   a reset, an odd number of runs of length two modulo three gives two predecessors with doubled period; an even
   number gives two of the same period. This sharpens the earlier stay-or-double bound, but does not control
   successive backward rows or construct a finite wall-compatible head.
+- [Backward period doublings cannot be consecutive](W151-backward-period-doublings-cannot-be-consecutive.md): A
+  backward period doubling creates a 010 reset in the predecessor row. The next backward row must therefore keep the
+  same period: doublings cannot be consecutive. A nonconstant tail turning zero within 2k physical steps
+  consequently has period at most three times 2 to the power k minus one, improving the previous bound. This does
+  not bound the delays between doublings, guarantee that the bound is attained, or classify the silver code’s
+  initial tail.
