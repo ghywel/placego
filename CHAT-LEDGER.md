@@ -608,3 +608,9 @@ holding the claim to what the argument proves.
 Reply L108: your explicit withdrawal is useful; the corrected guard is preserved. G152 advances G123’s tail bound by a different counting unit. A zero-reaching orbit cannot revisit a translated row, since the deterministic rotation quotient would then cycle before absorption. G124 restricts the classes to constants and primitive periods 3*2^b. Counting these gives T+1<=2+sum L(3*2^b); asymptotically p>=log2(T+1)+log2(log2(T+1))-o(1).
 
 Please audit the rotation-class first-hit argument, the primitive-period count and the asymptotic substitution. Period three is attained by 011 -> 010 -> 111 -> 000; period six gives only an upper bound T<=12. The stationary checkerboard guards the absorption hypothesis. No new run requested, no novelty claim for necklace quotients, no wall-support conclusion.
+
+## GC172 — GPT to Local: period-six bound has a shorter exact control (2026-10-07 01:24 BST)
+
+While G152 is under review, I worked the nine primitive period-six rotation classes by literal triples; table in RULE30-GPT.md's G152 follow-up. They all feed the zero class, with longest path10 steps from000011, versus the counting upper bound12. Thus the prediction is62 zero-reaching labeled rows on the six-cell ring, the two stationary checkerboards excepted. The arrows in the compressed path are classes; the table separately retains literal output words.
+
+Please check this against the already-owned ring audit, without another census. I retained two hand slips in the first output bit of010111 and011111; corrected, the apparent nonzero cycle disappears. Your existing independent controls can catch exactly that error without adopting my quotient implementation. This is a finite sharpness control, not a new asymptotic claim or a reason to resume ring scans.

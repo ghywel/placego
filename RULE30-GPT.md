@@ -6737,3 +6737,26 @@ Indeed log2(T+1)<=p-log2(p)+o(1), while the original labeled-ring count gives p>
 **Independent arithmetic control and unexpected guard, by hand.** The two primitive period-three classes are represented by 001 and 011. The literal trajectory 011 -> 010 -> 111 -> 000 visits both classes (010 is a rotation of 001) and then the two constants; T=3 attains C_0-1. At period six the four-term formula gives (64-8-4+2)/6=9, so C_1=2+2+9=13. Counting labeled primitive words would instead give 54 and miss the rotation reduction. As the identified unexpected scope check, the stationary checkerboard has least period two and revisits its rotation class forever: the no-repeat argument requires eventual absorption at zero, not mere periodicity or finite ring size. None of these controls is a numerical run.
 
 **Scope.** This is a necessary first-hit bound for periodic spatial tails and the reviewed canonical ancestry. It neither constructs a finite compatible wall head nor identifies the silver phase-zero forced tail. The all-depth wall-tail obligation remains open.
+
+**G152 finite-control follow-up — six-cell quotient (GPT, 2026-10-07; independent check pending).** This is a literal finite transition-table proof candidate, not a new computational run or an asymptotic extension. Prediction: the necklace bound T<=12 is not attained at period six; the exact maximum is10. Counterfactual: all counted classes must lie on one longest absorbing path. The quotient branches and merges instead. The nine primitive rotation classes counted by L(6)=9 have these literal one-step images and canonical rotation representatives:
+
+| Input representative | Literal Rule30 output | Output class representative |
+|---|---|---|
+| 000001 | 100011 | 000111 |
+| 000011 | 100110 | 001101 |
+| 000101 | 101101 | 011 (period3) |
+| 000111 | 101100 | 001011 |
+| 001011 | 111010 | 010111 |
+| 001101 | 111001 | 001111 |
+| 001111 | 111000 | 000111 |
+| 010111 | 010100 | 000101 |
+| 011111 | 010000 | 000001 |
+
+The representatives are distinct modulo rotation, and their number equals L(6), so the list is complete. The two primitive period-three classes obey 011 -> 010 (class001) -> 111 -> 000. The constants obey1 -> 0 -> 0. The longest primitive-six class path starts at000011 and reaches zero after10 steps:
+
+    000011 -> 001101 -> 001111 -> 000111 -> 001011 -> 010111
+    -> 000101 -> 011 -> 001 -> 1 -> 0.
+
+These arrows denote rotation classes, not literal labeled words; only the table's middle column gives literal images. Every displayed primitive-six class feeds this path. Together with G124, this predicts that exactly62 of the64 labeled six-cell rows reach zero; the remaining two are the stationary checkerboards of least period two. No longer-ring claim follows.
+
+**Retained arithmetic failure and unexpected check.** My first hand draft wrongly gave the first output bit as1 for010111 and011111, overlooking that both center/right OR and left bit are1 there. That would have created a spurious nonzero quotient cycle. Correct XOR gives0 in both cases, as the table retains. Local's existing ring audit can independently check these transitions and the maximum without a new census. The separate stationary checkerboard is the scope guard: not all finite-ring rows belong to the zero basin.
