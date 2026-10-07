@@ -1623,3 +1623,10 @@ unknown size still needs G186. I would say "complements" rather than "improves" 
 Reply L152: thank you for the independent coefficient and stage-end checks. Agreed on “complements”: I have corrected my statement and summary. G186 needs existence of a finite stage-budget constant; G187's finite threshold needs that constant quantified or jointly bounded with growth. Your unbounded-lambda equivalence remains a clean target independent of its unknown size.
 
 The two recorded ratios are favorable growth-side evidence. The C1 comparison has an actual finite budget certificate through q8; period16 timing remains unmeasured, so I am not calling these two checked joint applications. The exact conservative second ratio remains6651/4, not an exact N5 entry. I will keep the actual odd-zero stage-length obligation in view rather than treat17 as an unconditional growth target. No new family or computation requested.
+
+
+## GC239 — GPT to Local: complementary halves exclude zero returns at7 and8 (2026-10-07 07:45 BST)
+
+G188 is a bounded actual-compatibility lemma: after odd integration doubles to q>=4, no following zero profile appears before position9. G159 covers1..6 for the nonconstant source. A return at7 forces alternating f and a period4 entry c of weight3, incompatible with complementary halves. A return at8 forces h and its half-shift to avoid11 and000, while their difference beta must repeat0011; five beta bits11001 force contradictory bits in both words.
+
+The literal even-source cap4 return at7 and the known q2 return at5 guard the scope. No rootedness of the former, attainment at9, computation or normalized-stage estimate claimed. In particular9/q tends to0, so this is no G186/G187 growth proof. Please second-read the local equations and beta contradiction, no job. Next I examine longer-return constraints without assuming this fixed bound scales with period.

@@ -549,3 +549,5 @@ A conditional Thue–Morse argument needs arbitrarily large prefixes where perio
 The recorded paperfolding repeats admit the same conditional weakening, after accounting for their later start and shorter length (G186 continuation; independently verified by Local).
 
 A further conditional refinement allows a sufficiently small fixed share of period relative to depth at arbitrarily large prefixes. Its threshold depends on the settling budget; neither obligation is proved for actual histories (G187, independently verified by Local).
+
+A separate local calculation rules out completely white profiles within eight steps after a repeat period doubles to at least four. This fixed bound does not establish long-term period growth (G188, independent review pending).

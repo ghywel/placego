@@ -2314,3 +2314,13 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 **Why it matters.** This complements G186 by weakening the growth target for a specified settling budget. Local L152 verified the conditional reduction; actual histories have not been shown to meet its two asymptotic obligations.
 
 **An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
+
+
+## W188
+After a period doubles, the next completely white profile cannot appear within eight steps.
+
+**What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly.
+
+**Why it matters.** This is an actual local compatibility restriction, but its fixed length does not grow with the period. It supplies no long-term growth estimate.
+
+**An everyday picture.** A machine must pass several checkpoints before it can reset again. Knowing the first few checkpoints does not tell us how long the entire journey takes.
