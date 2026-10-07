@@ -10380,3 +10380,40 @@ UNSAT is monotone in N. This uses free initial rows and all even phase/parity ca
 it does not assert per-labelled-case inclusion or certify a solver's UNSAT verdict.
 The unexpected rounding guard is that cutting the suffix changes the case label,
 which is why the all-case predicate, rather than one fixed (t0,d), is used.
+
+## GC374 — fixed-depth forcing extends through column4 (2026-10-07)
+
+Before the run, GC372 already predicted the width12 bilateral core would pin
+columns2..4: each surviving core vertex has walks of arbitrary length in either
+direction, so projects to GC372's168-observation window with any desired phase
+at a middle-third time. That middle third covers every phase. This is a deduction
+from the prior finite result, not a fresh blind prediction. The new computation
+measures a sufficient window length; the preregistered stronger counterfactual
+was that the same core pins column5 as well.
+
+The fixed width12 phase graph has114688 vertices. Synchronous trimming stabilizes
+after71 rounds at602 vertices. Its singleton phase projections are exactly:
+
+    column2: 01110010110111001011011100101101110010110111001011001011
+    column3: 11000110101100011010110001101011000110101100011000011010
+    column4: 10111101101011110110101111011010111101101011110011110110
+
+Applying GC373's induction gives a computed **143-observation local certificate**:
+if column1 follows U at even phase d throughout [t-71,t+71], columns2..4 at
+t equal the corresponding bits of these period56 words at (t-d) mod56. Equivalently
+a longer prescribed window pins these three columns after removing71 observations
+from each end. This covers all start phases with the wall-compatible even alignment.
+It is a sufficient radius, not the least possible radius; column2 already needs
+only the six-step radius certified in GC373. It does not establish linear spatial
+growth, infinite locking, a departure prohibition, or a genuine exterior realization
+for the surviving core states. Column5 is not pinned at every phase: the stronger
+counterfactual is REFUTED for this graph, not for every larger exact width.
+
+Source `rule30_locked_core.py --wide` (same graph construction as GC373). Independent
+scalar and bit-row transitions agree on229376 choices. All56 start phases pass the
+finite-window centre/core equality guard; that traversal shares graph edges, not an
+independent encoder. The unexpected comparison checks column2's word is identical
+to width4's despite the much larger trimming radius: whole-core stabilization is
+not a minimal bit-forcing bound. The direct fixed-width run took about2.4 seconds;
+transcript outside Git. No SAT census duplicated. Next isolate a composable relation
+for column5, or extract smaller bit-specific radii without claiming a speed theorem.

@@ -2,9 +2,12 @@
 P: core fixes column2 at every phase. CF: fixes columns2..4 at width4.
 Controls: scalar vs bitwise; incompatible constant1; finite-path boundary guard.
 A synchronous pruning round removes nodes with no surviving in- or out-neighbour.
+GC374: --wide runs the separately preregistered fixed width12 extension.
+Outcome:71 rounds,602 core vertices; columns2..4 fixed, column5 not fixed.
 """
 import json
 import re
+import sys
 from pathlib import Path
 from rule30_locked_paths import step
 
@@ -64,7 +67,7 @@ def core(m,U):
 def main():
     text=Path('tests/probes/lexicon/rule30_wheel_left.py').read_text()
     U=[int(c) for c in re.search(r'^U = "([01]+)"',text,re.M).group(1)]
-    results=[core(m,U) for m in (4,8)]
+    results=[core(m,U) for m in ((12,) if "--wide" in sys.argv else (4,8))]
     # Period2 encodes the wall phase even for a constant companion.
     neg=core(4,[1,1]); assert neg['remaining']==0
     print(json.dumps(dict(wheel=results,constant1_negative=neg),indent=2))
