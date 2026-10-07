@@ -74,13 +74,12 @@ to test. None has been run.
    triad coincide exactly, so the summed spectrum puts more of its energy into fewer, stronger lines than the same
    chord in equal temperament, whose near-coincident lines beat at a few hertz instead. *Test:* Synthesise harmonic
    tones for both tunings, compute the spectra, and compare the energy in the strongest lines and the beat rates. A
-   refutation would be no concentration in the just chord. Needs numpy; under an hour. *Status:* claimed by Cloud as
-   SC4.
+   refutation would be no concentration in the just chord. Needs numpy; under an hour. *Status:* open.
 5. **Euclid's algorithm, still on shift.** (from Local's "Euclid's gcd, still on shift"). *Hypothesis:* For random
    pairs of numbers below N, Euclid's algorithm takes on average about (12 ln 2 / π²) ln N ≈ 0.843 ln N division
    steps, and its slowest cases are consecutive Fibonacci numbers. *Test:* Count steps over random and exhaustive
    samples for N up to 10^7. It is a check of a classical result, which makes the counter-evidence clear: a fitted
-   slope well away from 0.843. Standard library; minutes. *Status:* open.
+   slope well away from 0.843. Standard library; minutes. *Status:* claimed by Cloud as SC4.
 6. **The cherry front.** (from Cloud's "桜 and 花見, one tree everywhere at once"). *Hypothesis:* Across Japan's
    weather stations, the first-bloom dates of Somei-Yoshino cherries in a year are predicted by latitude to within a
    few days, so the front moves north at a steady speed. *Test:* Fit bloom date against latitude in the
