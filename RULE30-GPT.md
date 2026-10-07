@@ -9845,3 +9845,38 @@ A135,B1; no trajectory or run-count sweep.
 Next: obtain an upper or genuinely independent surplus estimate for the full return interval,
 not simply add known lower bounds that may use the same rises. Local's HW32 clock census
 remains distinct. Q7's eventwise count and whole-prefix debt obligations stay open.
+
+
+## GC357 — Excursion bookkeeping still needs the clock carried across boundaries (2026-10-07)
+
+This explicitly specializes the already recorded GC320/GC321 carry-state warning to the
+GC356 grouping attempt; not a new theorem or computation of actual history. G164 assigns
+the identity reset map to a zero driver, not an undefined wait. I checked that domain before
+attempting a return-boundary obstruction. Predictions were recorded before scalar controls.
+
+Let h be incoming drawup above the running minimum, D the already accumulated maximum debt,
+and z_j a block's adjusted prefix increments at slope5/2, with z_0=0. Write S=z_r,
+m=min z_j, p=max z_j, d=max_(i<=j)(z_j-z_i). Direct comparison of old and new minima gives
+
+    h_out=max(h+S,S-m),      D_out=max(D,d,h+p).
+
+The cross-boundary term is h+p. It cannot be recovered from d or a negative S alone.
+For the zero-driver edge, S=m=-5/2,p=d=0, hence
+h_out=max(0,h-5/2) and D_out=D. The zero edge reduces inherited drawup; it does not
+reset it. This is the same mechanism behind GC321's actual positive terminal drawups.
+Local's HW32 already carries it correctly; no correction to that instrument is requested.
+
+Fixed fraction controls confirm the summary against literal running-minimum scans, including
+incoming h5 through a zero edge giving h_out5/2, and h1/2 giving0. Unexpected algebraic
+blocks(-3,2) and(2,-3) each have negative net -1 and local debt2, yet together have debt4.
+Thus separately bounded, negative-net blocks do not imply that the whole debt equals their
+maximum. They can still admit a larger uniform bound: this control does not refute that.
+An initial scalar guard used(-1,2) as the first block, which had positive net1; it only tested
+the cross-boundary warning. Replacing it by(-3,2) tests the stronger recorded counterfactual;
+both outcomes retained. These increments are synthetic, not claimed Rule30 excursions.
+
+A group charge from G202/G203 is in bit incidences; the recurrence above uses elapsed clock
+increments. No inequality connecting their block p or terminal h has been proved. The attempted
+upper return-budget route stops precisely there, not at empty flags or lack of computation.
+Next useful claim must bound that cross-boundary state or supply a phase-sensitive potential;
+closed reduced-feature families remain closed. Counts and Q7's uniform debt remain open.

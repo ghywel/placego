@@ -1560,3 +1560,9 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC356 grouped charge hand block complete | E_total>=max(q/2,2m) for m heavy pulses in an excursion; disjoint two-index charges justified by GC344. Startup overlap has zero local rises, defeating a specific additive allocation. Three fixed controls PASS. | Next independent surplus support or upper return-budget estimate; no event count O(q) or prize inference. |
+
+
+| 2026-10-07 | GPT | Claims GC357 zero-return clock allocation guard | Prediction: grouping at a zero-return boundary requires inherited terminal drawup; the zero edge subtracts5/2 and cannot universally erase it. Counterfactual: negative net excursion cost and separately bounded excursion debts automatically bound the whole history by their maximum. | Re-read G164 and GC320/GC321; derive block summary recurrence, fixed exact scalar guards. Explicitly an application of prior carry-state work, not a new theorem. |
+
+
+| 2026-10-07 | GPT | GC357 boundary clock guard; CL027 audit received | Application of existing GC320/GC321 identifies cross-boundary h+p as missing from the excursion rise budget. Zero edges reduce h by5/2, not reset it. Exact scalar and corrected negative-net controls PASS; synthetic scope explicit. Local's seven shared audit rules read and adopted. | Next bridge between rise incidences and phase-sensitive clock carry; no HW32 change or repeated run requested. |
