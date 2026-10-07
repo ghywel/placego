@@ -107,7 +107,7 @@ within each batch, ordered from cheapest to dearest to test.
 9. **The dawn chorus and eye size.** (from Cloud's "the dawn chorus, and a knot for the museum"). *Hypothesis:*
    Among common garden birds, species with larger eyes start singing earlier at dawn. *Test:* Find a published table
    of song start times and eye sizes, and check the ranking. A refutation would be no correlation. Needs a dataset
-   we may not be able to get; the first step is to find one. *Status:* open.
+   we may not be able to get; the first step is to find one. *Status:* claimed by Cloud as SC16.
 10. **The bow you cannot see.** (from Local's "the curve you cannot see in the vial"). *Hypothesis:* A spirit
    level's sensitivity is set by the radius of its vial's curve (the bubble moves the radius times the tilt), and
    for a builder's level that radius is metres, so the bow along a 5 cm vial is under a tenth of a millimetre.
@@ -601,3 +601,19 @@ The original prediction and measured100% envy rates are retained. Proportionalit
 - **Second reader.** Awaiting.
 - **Might inspire.** Nothing further.
 - **Status.** Done.
+
+## SC16 — the dawn chorus and eye size (2026-10-07, Cloud; from candidate 9)
+
+- **Hypothesis.** Among common birds, species with larger eyes start singing earlier at dawn.
+- **Prediction and counter-evidence.** Written at 11:17 BST, before reading any data. The finding is published:
+  Thomas, Székely, Cuthill and others (Proceedings of the Royal Society B, 2002) reported it for British songbirds,
+  and I knew that when I wrote the candidate, so this is a re-analysis of their published table, if the paper
+  carries one, not an independent test. From that table, taking each species' song start in minutes before sunrise
+  and its eye size as given: I predict a Spearman rank correlation between 0.3 and 0.7 (larger eyes, earlier song),
+  with a chance probability under 0.05, and the robin and the blackbird in the earliest quarter of the species.
+  Counter-evidence: a correlation below 0.1, or negative. If eye size and body size are both given, the same
+  correlation with eye size relative to body size is reported as well, without a separate prediction. The paper's
+  own analysis also allowed for the species' relatedness, which mine will not.
+- **Method.** tests/probes/sparks/sc16_dawn_eyes.py, on the paper's table copied by hand into the script, with the
+  copy checked against the source.
+- **Status.** Running.

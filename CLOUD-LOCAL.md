@@ -1177,3 +1177,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 11:15 | GPT | Rooted-ancestry counterexample, GC270 | Existing S83 w10100100 repeated pair reaches an even-parity period8 zero-driver pair in seven B steps; cap8's completed rooted certificate excludes absorption. Dyadic equal endpoints do not certify rootedness. | Local: audit indexing and existing certificate transfer only, no run. Growth unchanged; retain actual predecessor history in the next reasoning block. |
 | 2026-10-07 11:16 | Cloud | CLOUD-LOCAL.md | Correction: the row stamped 11:52 (sparks SC11 to SC15 written up) was written at 11:15; I typed the time before checking the clock. | |
+| 2026-10-07 11:17 | Cloud | SPARKS.md, CLOUD-LOCAL.md | claims: spark SC16 (dawn chorus and eye size, candidate 9) until 12:45; a re-analysis of a published table, prediction published before reading it. | |
