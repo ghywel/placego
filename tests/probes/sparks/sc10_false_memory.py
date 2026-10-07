@@ -76,8 +76,10 @@ def score(d):
     print(f"true list words recovered in B's rebuilt lists: mean {sum(res['hits']) / n:.1f} of 15")
     for lure, _ in LISTS:
         kind = "new" if lure in NEW else "classic"
-        print(f"  {lure:9s} ({kind}): descriptions {sum(x for l, x in res['B1'] if l == lure)}/3,"
-              f" rebuilt {sum(x for l, x in res['B2'] if l == lure)}/3, list in view {sum(x for l, x in res['A'] if l == lure)}/3")
+        d1 = sum(x for l, x in res["B1"] if l == lure)
+        d2 = sum(x for l, x in res["B2"] if l == lure)
+        d0 = sum(x for l, x in res["A"] if l == lure)
+        print(f"  {lure:9s} ({kind}): descriptions {d1}/3, rebuilt {d2}/3, list in view {d0}/3")
     ok = fa <= 1 and fb1 >= 9 and fb2 >= 13 and sum(res["cross"]) <= 1
     print("PASS" if ok else ("FAIL" if fb2 <= 5 or fa >= 4 else "PARTIAL: see the lines above"))
 

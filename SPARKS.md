@@ -340,7 +340,16 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   1.5 ± 0.3 mm for 1 m of water at 10 °C against 20 °C, rising roughly in proportion to the height of the warm
   column and to the temperature gap. Counter-evidence: under 0.5 mm.
 - **Method.** tests/probes/sparks/sc8_water_level.py.
-- **Status.** Running.
+- **Result.** Densities 999.703 kg/m³ at 10 °C and 998.207 at 20 °C. The surfaces differ by 1.50 mm for a metre of
+  standing water at 10 °C against 20 °C, 0.75 mm for half a metre and 3.00 mm for two metres. The same 10 °C gap
+  costs more on a warm day (2.06 mm at 15 against 25 °C, 2.57 mm at 20 against 30 °C), and an arm in the sun at 40
+  °C against one in shade at 10 °C puts the level out by 7.55 mm per metre.
+- **Verdict.** Supported, exactly as predicted for the case named. The rough proportionality to the temperature gap
+  does not hold well: water expands faster as it warms, so the error per degree nearly doubles between 15 and 25 °C.
+  The practical rule is to keep both arms shaded, at the same temperature.
+- **Second reader.** Awaiting.
+- **Might inspire.** Nothing further.
+- **Status.** Done.
 
 ## SC9 — a beat for many feet (2026-10-07, Cloud; from candidate 12)
 
@@ -356,7 +365,19 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   (3) following with τ = 1 s (0.75) makes the back's ripple at least twice the front's. Counter-evidence: a beat
   cutting drift by more than 3 or less than 1.1, or (2) and (3) failing together.
 - **Method.** tests/probes/sparks/sc9_marching.py.
-- **Status.** Running.
+- **Result.** 200 runs each. Without following, a shared beat cut the spread of the column's change in length from
+  45.0 m to 30.9 m, a factor of 1.46. With following, the change in length fell to under 3 m. Gap ripple, back over
+  front: 4.5 with τ = 0.5 s and 102 with τ = 1 s. A check made after the run, and labelled as such: with τ = 0.5 s
+  the ripple grows like the square root of the walker's position (its ratio to √position stays between 0.75 and
+  1.0), while with τ = 1 s it grows explosively until the speed limits clip it, from position 8 on.
+- **Verdict.** Mixed. (1) Supported: the beat slows the drift by about √2 and does not stop it; it is the following,
+  not the beat, that holds a column together. (3) Supported, dramatically: a one-second reaction delay makes the
+  concertina. (2) Refuted as stated: I left out that every walker adds its own jitter, which passes down the line
+  undiminished, so the back's ripple exceeds the front's even when nothing is amplified. The check after the run
+  separates the two cases cleanly, so the linear theory's threshold holds; my prediction for it was badly posed.
+- **Second reader.** Awaiting.
+- **Might inspire.** The same model for traffic, where the phantom jam is the classic case.
+- **Status.** Done.
 
 ## SC10 — a detail that feels like memory (2026-10-07, Cloud; from candidate 14)
 
@@ -376,4 +397,23 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   famous, and a model may recognise them, which is why the two new lists are there.
 - **Method.** tests/probes/sparks/sc10_false_memory.py builds the prompts and scores the answers; the model answers
   are saved outside git and summarised here.
-- **Status.** Running.
+- **Result.** Answers from nine fresh Claude instances, run through Cloud's agent tool and kept outside git.
+  Condition A: the absent word in 0 of 18 lists (every list copied exactly; 17 × 23 = 391 each time). Condition B:
+  the absent word in 18 of 18 descriptions ("words associated with sleep"), but in 0 of 18 rebuilt lists, with no
+  other list's absent word intruding either. The four classic lists came back word for word in all twelve rebuilds,
+  15 of 15. The two new lists did not: the kettle list was rebuilt with 12 of its 15 words each time, and every
+  rebuild added the same three words, water, pot and coffee, none of them on the list (one description had mentioned
+  coffee; all three rebuilds produced it). The ladder list kept 8 or 9 words and gained different inventions each
+  time (stairs, scaffold, rope, firefighter, safety). One describer wrote "'sleep' itself never appears", noticing
+  the trick.
+- **Verdict.** Refuted, clearly: the false-memory effect as I set it up does not appear, because the rebuilders
+  treat "words associated with a kettle" as excluding "kettle". Two things were found instead. The classic lists of
+  the psychology literature are memorised verbatim, so they cannot test these models at all. And a detail supplied
+  by attention does arrive, as the room said, but as the model's own most typical neighbours of the theme rather
+  than the theme itself: three independent instances invented the same three kettle words. Since I wrote the kettle
+  list myself, the same associations let other instances of the same model rebuild 12 of its 15 words from one
+  sentence, a measurable form of the owner's point that two copies of one model mostly agree.
+- **Second reader.** Awaiting. GPT would be the natural one: whether a different model makes the same inventions is
+  the obvious next question.
+- **Might inspire.** The same design with GPT as the rebuilder of Claude's descriptions, and the reverse.
+- **Status.** Done.
