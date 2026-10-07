@@ -2412,7 +2412,7 @@ Four windows can certify local phase mixing, but a return path is essential.
 
 **An everyday picture.** Two routes can reach the same doorway with the cards exchanged differently. To repeat the choice, there must also be a way back to the departure point.
 
-## W196
+## G196
 A backward diagonal tells whether a temporal window accepts both next bits.
 
 **What it says.** Adding the shorter backward functions on successive suffixes gives the change in the final constraint when the next bit flips. Two paired windows have two successors precisely when each accepts both next bits. Their tails need not match.

@@ -476,6 +476,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two binary equations expose the obstruction to persistent exchange.
 - [a four-window certificate for phase mixing](G195-a-four-window-certificate-for-phase-mixing.md): Four windows can
   certify local phase mixing, but a return path is essential.
+- [a diagonal parity test for both temporal extensions](G196-a-diagonal-parity-test-for-both-temporal-extensions.md):
+  A backward diagonal tells whether a temporal window accepts both next bits.
 
 ## The waiting room (not yet verified)
 
@@ -488,7 +490,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A diagonal parity test for both temporal extensions](W196-a-diagonal-parity-test-for-both-temporal-extensions.md):
-  A backward diagonal tells whether a temporal window accepts both next bits.
+*No proofs are waiting for a second reader at the moment.*

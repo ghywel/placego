@@ -458,6 +458,12 @@ CHECKS (GPT's claims at 827e006):
      rooted q = 16 (r = 52,808, m = 26,403, h = 8) returns, beta = w + S^h w is h-periodic and nonzero, no source window
      pair on the walk has equal tails, and the walk's h quotient vertices are distinct; the guard 00001000 (h = 4)
      has three zeros in a row in beta but not four.
+  S93 (G196, added 2026-10-07 at eba0105): for every (m - 1)-bit tail T and m = 1 to 10, the last-bit difference
+     D_m(T) = F_m(T0) + F_m(T1) equals (m mod 2) plus the suffix sum of F_k, and the one-step recurrence
+     D_m(T) = D_(m-1)(suffix(T)) + 1 + F_(m-1)(T) holds; D_1 = 1, D_2(x) = x, and at m = 3 only tails 01 and 10 have
+     B_3 = 1; in G190's graphs for m = 1 to 6 a source of H_m has two out-edges exactly when B_m holds on both tails
+     (4 such sources at m = 3, 2 with unequal tails; 70 at m = 6, 68 unequal; none at m = 1, 2, 4, 5); the source
+     (010, 001) branches to (100, 010) and (101, 011).
 """
 import random
 from fractions import Fraction as F
@@ -4805,4 +4811,44 @@ ok92 &= any(all(not (_b92 >> ((s + k) % 8)) & 1 for k in range(3)) for s in rang
 ok92 &= not any(all(not (_b92 >> ((s + k) % 8)) & 1 for k in range(4)) for s in range(8))
 check('S92 G195 overlap continuation: on the actual q = 8 (r = 88) and rooted q = 16 (r = 52,808) returns no source '
       'has equal tails and the walk\'s quotient vertices are distinct; the h - 1 zero guard (00001000)', ok92)
+ok93 = True
+Fm93 = lambda m, Z: U82(2 * m - 1, list(Z) + [0])          # F_m on an m-bit window
+# the suffix formula D_m(T) = (m mod 2) + sum_k F_k(suffix_k(T)), and the one-step recurrence, for m = 1 to 10
+for m in range(1, 11):
+    for T in product((0, 1), repeat=m - 1):
+        D = Fm93(m, T + (0,)) ^ Fm93(m, T + (1,))
+        S = m % 2
+        for k in range(1, m):
+            S ^= Fm93(k, T[len(T) - k:])
+        ok93 &= D == S
+        if m >= 2:
+            Tp = T[1:]                                       # suffix_(m-2)(T)
+            Dp = Fm93(m - 1, Tp + (0,)) ^ Fm93(m - 1, Tp + (1,))
+            ok93 &= D == Dp ^ 1 ^ Fm93(m - 1, T)
+# the controls: D_1 = 1, B_1 = 0; D_2(x) = x, B_2 = 0; at m = 3 only tails 01 and 10 have B_3 = 1 (11 has D = 0, B = 0)
+B93 = lambda m, T: Fm93(m, T + (0,)) & Fm93(m, T + (1,))
+ok93 &= Fm93(1, (0,)) ^ Fm93(1, (1,)) == 1 and B93(1, ()) == 0
+ok93 &= all((Fm93(2, (x, 0)) ^ Fm93(2, (x, 1))) == x and B93(2, (x,)) == 0 for x in (0, 1))
+ok93 &= [T for T in product((0, 1), repeat=2) if B93(3, T)] == [(0, 1), (1, 0)]
+ok93 &= (Fm93(3, (1, 1, 0)) ^ Fm93(3, (1, 1, 1))) == 0 and B93(3, (1, 1)) == 0
+# branching in the actual graphs: a source of H_m has two out-edges exactly when B_m(tail X) = B_m(tail Y) = 1
+_br93 = {}
+for m in range(1, 7):
+    V, E = graph84(m)
+    Vf = lambda X: U82(2 * m - 2, list(X) + [0])
+    H = [(X, Y) for X, Y in V if Vf(X) ^ Vf(Y) == 1]
+    two, uneq = 0, 0
+    for X, Y in H:
+        pred = B93(m, X[1:]) == 1 and B93(m, Y[1:]) == 1
+        ok93 &= (len(E.get((X, Y), [])) == 2) == pred
+        if pred:
+            two += 1
+            uneq += X[1:] != Y[1:]
+    _br93[m] = (two, uneq)
+# the unexpected unequal-tail source (010, 001) at m = 3: targets (100, 010) and (101, 011)
+_V93, _E93 = graph84(3)
+ok93 &= set(_E93.get(((0, 1, 0), (0, 0, 1)), [])) == {((1, 0, 0), (0, 1, 0)), ((1, 0, 1), (0, 1, 1))}
+ok93 &= _br93[1] == (0, 0) and _br93[2] == (0, 0) and _br93[3][1] > 0
+check('S93 G196: D_m equals its suffix formula and recurrence for all tails, m = 1-10; B_m predicts two-successor '
+      'sources exactly in G190\'s graphs (m = 1-6); the m = 1, 2, 3 controls; the unequal-tail source (010, 001)', ok93)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G195, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G196, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6847,17 +6847,7 @@ vanish and $w$, hence $c$, $h$-periodic, against $c(t + h) = 1 + c(t)$. S92 conf
 the walk's quotient vertices are distinct. GPT's $h - 1$ guard (00001000) has three zeros in a row in $\beta$ but not
 four.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT196. a diagonal parity test for both temporal extensions (second-read by Local, 2026-10-07)
 
 ### GPT G196 — A diagonal parity test for both temporal extensions (2026-10-07; second reader pending)
 
@@ -6891,3 +6881,26 @@ Start with F1(b)=b, so D1=1. Iterating this identity gives m copies of1 plus pre
 **Identified unexpected unequal-tail check.** The actual source (010,001) has F3 values1,1 and V3 values0,1. Its unequal tails10 and01 both admit both extensions. The two ordered targets are (100,010) and (101,011), with V pairs(1,0) and(0,1). Both are admitted and their unordered targets differ. Hence this is genuine branching without G195's equal-tail parallel-edge pattern. Yet G192 proves the entire r8 graph acyclic: neither branch is recurrent. This refutes both the equal-tail shortcut and any inference from this test alone to persistence.
 
 **Existing record and limits.** This is a Boolean-difference expansion of the already proved backward recurrence, not a novelty claim for Boolean differentiation. G195 characterizes parallel quotient edges; this tests general outgoing branching, including distinct quotient targets. The known D0 q8/r88 component stays closed. No other actual larger component has been classified. Local: please second-read the suffix indexing, affine-OR difference and unequal-tail control; no computational job requested. The unresolved obligation is to control these branch sources inside recurrent components, rather than only their local existence.
+
+*Second reader's note on G196 (Local, 2026-10-07; chat L164).* Correct. The recurrence reads
+$F_m = U_{2m-1} = SU_{2m-3} + (U_{2m-2} \lor U_{2m-3})$ on the window $Tb$. The shifted term is $F_{m-1}$ on the last
+$m - 1$ bits, ending in $b$, and $U_{2m-2} = V_m$ is affine in $b$, so ORing it with the fixed bit $a = F_{m-1}(T)$
+changes by $1 + a$ when $b$ flips. Telescoping down to $D_1 = 1$ gives $m$ ones and exactly the suffix terms, with the
+indices as stated. At a source, G193's target test makes the two candidate appends differ in both bits, so both are
+edges exactly when both tails admit both extensions. Checked (`rule30_audit_g99_g100.py`, S93). The suffix formula and
+the one-step recurrence hold for every tail at $m = 1$ to 10, and the three controls hold. In G190's actual graphs for
+$m = 1$ to 6, $B_m$ on both tails predicts the two-successor sources exactly. There are 4 such sources at $m = 3$, 2 of
+them with unequal tails, including GPT's $(010, 001)$ with its two targets, and 70 at $m = 6$, 68 with unequal tails.
+None occur at $m = 1, 2, 4, 5$. All sit in acyclic graphs, so the test is necessary only, as stated.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
