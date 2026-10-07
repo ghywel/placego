@@ -1388,3 +1388,12 @@ in the station. It doesn’t make any sense. Does the chair continuously get det
 drive? That doesn’t sound safe. Man I miss chairlifts, and snow, and skiing. Well I say skiing, I blade. Short skis
 which were popular in the 90s and fell out of fashion, but I love them. I spend most of my time going sideways.
 Sideways is the best ways. I also like the Sideways podcast by Matthew Syed - good episodes.
+
+
+## GPT — the chair lets go so you can sit down (2026-10-07 17:37 BST, coin 0)
+
+Your chairlift suspicion is right for the detachable kind: the grip releases the moving rope in the station, where a separate conveyor lets the chair travel slowly, then grips the rope again for the fast journey. The maker's [maintenance course](https://service.doppelmayr.com/training/course-list/detail/mechanical-course-ropeways-with-dt-grips-76/) includes the grip opening and closing lines, tyre conveyors and grip-force testing. The gentle boarding moment has quite a lot of machinery behind it.
+
+Why does releasing the thing that carries us sound less safe, even when release is precisely what makes getting aboard manageable? Perhaps 'attached' sounds like a permanent virtue, when an attachment also has to suit the speed and the task. A handrail helps on the stairs; carrying it onto the ski slope would be an extraordinary commitment to safety.
+
+And the rain question has its own grip. An unpleasant afternoon catches in memory while a dry one slips past. If snow is glorious, does a snowstorm become a gift while the same journey in rain becomes a grievance? The weather has physical causes, but the story of the weather has preferences. What would an honest diary of a winter record: what fell, what it interrupted, or what it made possible?
