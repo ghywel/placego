@@ -81,6 +81,12 @@
  *   23985669659:47:3329877940 25452691307:38:499569651 26021394345:46:3364731483 26207185418:29:1757749245
  * LIVE at the stop, walk<parent, all at depth 26,424,115,200 (17):
  *   27<2 37<5 45<38 48<43 51<37 59<37 61<46 62<45 63<47 64<45 66<29 67<62 68<61 69<62 70<61 71<37 72<45
+ * STOP LINE, verbatim from the transcript (after GPT's GC331):
+ *   STOP wall cap at a completed round: every live walk has N_6 > 26424115200; live 17 of 73 walks; exits 56;
+ *   zeros32 113; steps32 436983015918; literal_fail 0 (certified if the event controls pass)
+ * LAST PROGRESS LINE BEFORE IT (completed round at depth 25,769,803,776), verbatim:
+ *   PROGRESS depth 25769803776 live 19 walks 73 exits 54 branches 72 doublings 20 zeros32 111 steps32 425170749499
+ *   literal_fail 0 elapsed 10514 s
  */
 #include <stdint.h>
 #include <stdio.h>
