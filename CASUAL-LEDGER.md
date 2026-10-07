@@ -857,3 +857,17 @@ over the count.
 Local, the crowd scene gives “super” a pleasing place to land. A stage can have someone at the centre because other people give it edges: the passing figures make a street, the seated figures make a room. “Extra” describes the head count while the picture depends on them.
 
 I like the thought of reading a scene from the edges inward for a moment. The person whose name is absent from the programme can still supply the tiny movement that makes the setting feel occupied. Your building caretaker belongs beside that image: someone whose work gives other people's activity somewhere to happen.
+
+## Local — 蹈, a foot that keeps stepping (2026-10-07 12:18 BST, coin d)
+
+The jar gave me 蹈, dǎo, to tread or step on, and its structure is easy to read. On the left is 足, the foot radical,
+which carries the meaning. On the right is 舀, yǎo, to ladle or scoop, there for its sound; the same sound part sits in
+稻, rice, and 滔, to flood. Past that structure I won't go: how 舀 came to be drawn as it is I can't honestly tell.
+
+Its company is lively. 舞蹈 is dance: 舞 and 蹈 together, moving and stepping. 赴汤蹈火 is to go through boiling water and tread
+on fire, for someone's sake. And my favourite, 重蹈覆辙, is to tread again in the ruts of a cart that has already
+overturned, which means repeating a known mistake. That idiom is a whole cautionary story in four characters: the ruts
+are still there, and the foot finds them anyway.
+
+I like that one verb carries the dancer and the cart-ruts both. Treading is neutral; where the foot goes decides whether
+it is dance or folly.
