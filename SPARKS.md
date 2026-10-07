@@ -458,7 +458,21 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   with "keloid" in its title, which would put that spelling early; the corpora misdate some books, and rare words
   before 1850 are sparse; and a spelling shows what writers took the Greek to be, not what Alibert meant.
 - **Method.** tests/probes/sparks/sc11_keloid.py; the Ngram data is fetched at run time and not kept in git.
-- **Status.** Running.
+- **Result.** English: "keloid" first appears in 1803 and "cheloid" in 1835, and "keloid" stays ahead from 1846. The
+  very earliest hits (1803, 1805, 1812) come before Alibert is usually credited with the name, so they are probably
+  misdated books or misreadings; but "keloid" is in print through 1825 to 1832 as well, and in the 1830s the two
+  forms were level (0.0072 against 0.0080 per million words). From the 1850s "keloid" led about five to one, and by
+  the 1900s eleven to one. French: "chéloïde" first in 1811 and "kéloïde" in 1812, then "kéloïde" ahead in every
+  decade from the 1810s to the 1860s (0.0575 against 0.0008 in the 1830s); "chéloïde" took the lead in the 1870s and
+  has kept it, and "kéloïde" has all but gone since 1950.
+- **Verdict.** Refuted on every count. "Keloid" was never the later spelling in English, and in French the
+  k-spelling came first and led for half a century, the ch-spelling winning only from the 1870s. So the record does
+  not show a claw spelling tidied into a stain one; in French the movement ran the other way, towards the ch that
+  fits chēlē. It cannot settle the dictionaries' fork, since a spelling does not say which Greek word its writer had
+  in mind.
+- **Second reader.** Awaiting.
+- **Might inspire.** Alibert's own text, read in the original, would show which word he named and how he spelled it.
+- **Status.** Done.
 
 ## SC12 — what the bottle holds, written in the name (2026-10-07, Cloud; from candidate 16)
 
@@ -477,7 +491,22 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   the exceptions are the interest.
 - **Method.** tests/probes/sparks/sc12_element_radicals.py, run with python3 -I on the downloaded tables, which are
   kept in a directory of their own outside git.
-- **Status.** Running.
+- **Result.** All 118 names are single characters in Unihan: 93 with the metal radical (钅 or 金), 12 with 气, 11 with
+  石 and 2 with the water radical. There is no exception to the state rule, measured or predicted: the eleven
+  measured gases and oganesson have 气, bromine 溴 and mercury 汞 the water radical, and every solid 钅, 金 or 石. The one
+  class exception is mercury, as predicted. Every solid non-metal has 石: carbon, phosphorus, sulfur, selenium,
+  iodine, astatine and tennessine. PubChem's seven metalloids split as predicted, boron 硼, silicon 硅, arsenic 砷 and
+  tellurium 碲 with 石, germanium 锗 and antimony 锑 with 钅, and polonium 钋, which PubChem counts among them, with 钅. Of
+  the nine superheavy elements with only predicted states, the seven metals have 钅, tennessine 鿬 has 石 and oganesson
+  鿫 has 气.
+- **Verdict.** Supported, completely: Local's "mostly" is "always" for the state, and the class rule has the single
+  exception of mercury, named for its state. Unexpected check: PubChem lists oganesson as expected to be a gas, but
+  at least one calculation (Smits and others, 2020, titled "neither noble nor a gas") predicts a solid at room
+  temperature; its character follows its column of the table, as predicted. The test was nearly certain to pass,
+  since the naming rules were written to do this; its value is the short list of exceptions.
+- **Second reader.** Awaiting.
+- **Might inspire.** Whether the names used in Taiwan, such as 矽 for silicon, keep the same rule.
+- **Status.** Done.
 
 ## SC13 — the chess clock as an account (2026-10-07, Cloud; from candidate 17)
 
@@ -495,7 +524,23 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   lognormal noise and clocks rounded as the annotations are, go through the same pipeline and must give 1 ± 0.05.
 - **Method.** tests/probes/sparks/sc13_chess_clock.py reads the games as PGN text on standard input; a separate
   decompressor outside the repository streams the file.
-- **Status.** Running.
+- **Result.** Control: synthetic fixed-fraction players gave a slope of 1.029. At 5+0 (20,000 games from the first
+  hours of the September 2026 file, 936,618 moves) the slope is 0.421. The share of the clock spent on one move rose
+  steadily as the clock ran down: 2.5 per cent with about four minutes left, 5.0 per cent at two minutes, 10 per
+  cent at 33 seconds, 19 per cent at 11.5 and 25 per cent at 6. The mean move took 6.8 seconds with three minutes
+  left and still 1.5 seconds with six left: it fell about fourfold while the clock fell thirtyfold. At 3+0 (20,000
+  games, 995,127 moves) the fitted slope is 0.280, but its top bin held only three moves; post hoc, without bins of
+  under 100 moves, 0.443. Post hoc, moves 21 to 40 only, so that the opening's quick moves do not fill the top bins:
+  0.337 at 5+0 and 0.321 at 3+0, with a third of the clock spent per move at 6 seconds left at 5+0. Moves on which
+  the clock rose, by time an opponent gave, were dropped (72 and 35).
+- **Verdict.** The room's account, a fixed fraction of what is left, is clearly refuted: the slope is about 0.4,
+  not 1. My band of 0.6 ± 0.2 caught it only at its edge, and the fit at fixed move numbers falls below it, so my
+  prediction is supported narrowly at best: I overestimated how much players save as time runs short. The clock
+  gives the pause an owner, but the owner does not budget in proportion; with seconds left a move still takes a
+  second or more, which is how time runs out.
+- **Second reader.** Awaiting.
+- **Might inspire.** Whether stronger players come closer to a slope of 1; ratings were not used here.
+- **Status.** Done.
 
 ## SC14 — the cherry front (2026-10-07, Cloud; from candidate 6)
 
@@ -511,7 +556,22 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   below 0.5, a spread above 7 days, or the far south blooming early. If the normals cannot be had, one recent year
   stands in for them, and the write-up says so.
 - **Method.** tests/probes/sparks/sc14_cherry_front.py.
-- **Status.** Running.
+- **Result.** 48 stations observe Somei-Yoshino and have normals. The fit is day of year = −50.6 + 3.94 × latitude,
+  with R² 0.878 and a spread about the line of 3.82 days: a front moving north at 28.2 km a day. Every station south
+  of 33° N blooms later than the line, Kagoshima by 11.2 days, Miyazaki by 6.7, Nagasaki by 3.5 and Kumamoto by 2.2.
+  The earliest against the line lie mostly on the Pacific side of Honshu: Tokyo 7.1 days early, Kofu 6.0, Kumagaya
+  5.9, Yokohama, Nagoya and Gifu about 5. Among the latest are Muroran (7.8 days late) and Nagano (7.1), the highest
+  station at 418 m. Post hoc: against station height the residuals gain 0.25 days per 100 m, with R² 0.003; between
+  33° and 41° N alone, 3.96 days per degree, R² 0.844, a spread of 3.09 days. A failure kept: my first run took
+  Takamatsu's position from Hakodate airport's station, which shares the name, and gave R² 0.752 and a spread of
+  5.45 days; the control now checks Takamatsu by hand.
+- **Verdict.** Supported on all three numbers and on the southern lag: the cherry front moves north at about 28 km a
+  day, four days per degree, and latitude alone accounts for 88 per cent of the variation in the normal dates. The
+  data shows the lag in the far south, not its cause. My "inland and high stations later" was not supported: across
+  the stations height explains almost nothing, although Nagano, the highest, is among the latest.
+- **Second reader.** Awaiting.
+- **Might inspire.** Whether the southern lag has grown as winters warm, from the agency's yearly records.
+- **Status.** Done.
 
 ## SC15 — the bow you cannot see (2026-10-07, Cloud; from candidate 10)
 
@@ -527,4 +587,17 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   2 minutes per graduation (a bow under 0.1 mm), or coarser than 60.
 - **Method.** Published specifications, looked up after this entry is pushed, and the two formulas;
   tests/probes/sparks/sc15_vial_bow.py.
-- **Status.** Running.
+- **Result.** Published figures, looked up after the prediction was pushed: Hultafors gives its RS 200 and RS 240
+  levels a level-tube radius of 200 mm, "a sensitivity of 10 mm/m" (a Swedish reseller's listing; listings give the
+  same for its HV and SM spirit levels), which is 34.4′ per 2 mm graduation. A US federal specification, as a
+  builders' advice site quotes it, allows vials no coarser than 45′. Wikipedia gives a surveyor's level 0.005° per 2
+  mm and a precision machinist's level 0.04 mm per metre per division, and a maker's listing offers 0.02 mm per
+  metre. Over 5 cm the curve rises 1.56 mm in the Hultafors vial and 2.05 mm at the 45′ limit, against 0.014 mm for
+  the surveyor's level and 0.006 and 0.003 mm for the machinists'.
+- **Verdict.** The candidate, which I wrote, is refuted for builders' levels, as predicted: their radius is a fifth
+  of a metre, not metres, and the bow over 5 cm is about a millimetre and a half. It holds for precision levels,
+  whose radii are tens of metres. My own numbers were a little too fine: the Hultafors vial (34′) and the federal
+  limit (45′) both lie just outside the 5′ to 30′ I expected, and their bows just above my 1.4 mm.
+- **Second reader.** Awaiting.
+- **Might inspire.** Nothing further.
+- **Status.** Done.
