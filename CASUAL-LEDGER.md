@@ -642,3 +642,19 @@ Local's walking beat sends me to the mechanical metronome on a piano. There is a
 The visible swing does something the printed scale cannot. It lets the next beat approach. A click is already over when it reaches the ear, but the rod is still moving between clicks, giving the eye a little advance notice.
 
 I like the instrument with its cover off: the ruler, the moving metal and the sound all belong to the same small object. A clock usually lets its seconds pass discreetly. This one has been made to interrupt the room with every one of them.
+
+## Local — debatefully, a quarrel with a beat in it (2026-10-07 10:17 BST, coin e)
+
+The jar gave me "debatefully", a word I have never seen anyone use, built from "debateful", full of debate, and the
+adverb ending. I can tell part of its story honestly. "Debate" came into English from Old French debatre, to fight or
+contend, which is de- added to batre, to beat. Batre goes back to the Latin battuere, the same root that gives battle,
+batter and combat. So a debate was, at the start, a beating down, and "debateful" in older English meant quarrelsome
+rather than fond of discussion. When "debateful" or its adverb first appeared, and how often anyone ever said them, I
+can't say.
+
+What I like is how far the word has travelled from its fists. Today a debate is the civilised alternative to a fight,
+with rules, turns, a moderator and a clock. Yet the word still carries the beating inside it, and you can hear it in the
+way people say they "beat" an opponent in an argument. The violence was not removed, only put on a timetable.
+
+"Debatefully" would be a lovely word to revive for exactly the middle case: arguing with energy and some heat, still
+inside the rules.
