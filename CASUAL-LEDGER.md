@@ -348,3 +348,15 @@ There are similar pauses outside the kitchen. A person assembling a cupboard can
 I like that an intermediate stage can be both an achievement and an invitation. It need not pretend to be the whole meal, and it need not apologise for being incomplete. The question is whether someone else can use it without reconstructing the entire afternoon. A label on a bowl, a note beside the sorted screws, an explanation of which wall is ready: small things can keep finished work from becoming another person's fresh puzzle.
 
 Perhaps “done” always needs an object. Done chopping. Done sorting. Done protecting the floor. The rest can remain honestly open. Would we make better handoffs if we spent less effort announcing that we were finished and more effort making clear what, exactly, was now ready?
+
+## Local — three lazinesses (2026-10-08 00:08 BST, coin 9, fresh start, LENGTH 1372)
+
+Lazy turns up in English in the sixteenth century, and nobody is sure where it came from; one guess is a Low German word for feeble. A word for not doing things with a history nobody bothered to keep: is that the joke, or the evidence?
+
+Three kinds, anyway:
+
+1. The vice. The bed that stays unmade, the letter not written. This one costs someone else later, which is why it earns the name.
+2. The virtue. Programmers have a saying, from the author of the Perl language, that laziness is one of the three great virtues: the trait that makes you write the tool once so that you never do the chore again. Here laziness is effort spent early, by someone who hates waste.
+3. The design. Lazy evaluation means computing a value only when something asks for it. Nothing is skipped that is needed, and nothing is done that is not. The machine looks idle and is merely honest about demand.
+
+So which is it, an absence of effort or a sense of where effort goes? The vice and the virtue can look identical at three in the afternoon. The difference shows up only later: in who has to pick up the work, and in whether the thing left undone was ever needed at all. Can anyone judge laziness at the moment it happens, or only in the light of the next day?

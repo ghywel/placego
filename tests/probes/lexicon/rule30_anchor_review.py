@@ -24,6 +24,14 @@ PREDICTIONS (Local's, published before the run; GC397's and GC399's reported num
         7 .. 17 make the antecedent true.
   RW-P5: with the opposite wall phase at every time and the original prefix, some assignment violates the implication
         (GC397 reports 544 of 2,048).
+GC401 SECOND READING (added 2026-10-08, predictions before its run; mode `gc401`). GC401 proves by hand that after
+four updates position 5 is 1 if positions 1 .. 7 are 0101110 (A) or positions 1, 2, 3, 4, 6 are 1, 1, 1, 0, 1 (B). I
+checked both case analyses line by line. This mode checks the lemma and its bridge to GC397 directly, without
+GC400's seven clauses:
+  RW-L1 (the lemma, computed): all 20 assignments to the free cells of A and B give 1 at position 5 after 4 updates.
+  RW-L2 (the bridge): under GC397's anchor and the baseline wall, every one of the 4,096 runs with column 6 = 1 at
+        time 8 has columns 1 .. 9 at time 8 matching A or B. With RW-L1 that proves GC397's implication from the
+        census of reached time-8 rows, and needs nothing else.
 OUTCOME, 2026-10-07 23:57 (M5, at commit 2ac668d; transcript outside Git). The first run crashed before printing
 anything (a Python slip: dict(anchor, **{1: 0}) needs string keys); fixed to orig[1] = 0 and run again, nothing
 else changed. All five HELD, reproducing GPT's numbers exactly: 0 violations among 4,096 at baseline; freeing anchor
@@ -90,5 +98,44 @@ def main():
         print(name, 'HELD' if ok else 'REFUTED')
 
 
+def gc401():
+    def evolve(cells, steps):
+        cur = list(cells)
+        for _ in range(steps):
+            cur = [cur[i - 1] ^ (cur[i] | cur[i + 1]) for i in range(1, len(cur) - 1)]
+        return cur
+    ok = True
+    for d in (0, 1):
+        for e in (0, 1):
+            ok &= evolve([0, 1, 0, 1, 1, 1, 0, d, e], 4) == [1]
+    for b in (0, 1):
+        for x7 in (0, 1):
+            for x8 in (0, 1):
+                for x9 in (0, 1):
+                    ok &= evolve([1, 1, 1, 0, b, 1, x7, x8, x9], 4) == [1]
+    print('RW-L1', 'HELD' if ok else 'REFUTED')
+    wall = [t % 2 for t in range(13)]
+    anchor = {2: 1, 3: 1, 4: 1, 5: 0, 6: 0}
+    free = [1] + list(range(7, 18))
+    pos = good = 0
+    for seed in range(1 << len(free)):
+        init = dict(anchor)
+        for i, x in enumerate(free):
+            init[x] = (seed >> i) & 1
+        row = (wall[0] << B) | sum(b << (B - x) for x, b in init.items())
+        for t in range(1, 9):
+            nxt = ((row >> 1) ^ (row | (row << 1))) & MASK
+            row = (nxt & ~(1 << B)) | (wall[t] << B)
+        c = [(row >> (B - x)) & 1 for x in range(0, 10)]
+        if c[6]:
+            pos += 1
+            a = c[1:8] == [0, 1, 0, 1, 1, 1, 0]
+            bb = [c[1], c[2], c[3], c[4], c[6]] == [1, 1, 1, 0, 1]
+            good += a or bb
+    print('runs with column 6 = 1 at time 8: %d; matching A or B: %d' % (pos, good))
+    print('RW-L2', 'HELD' if pos and good == pos else 'REFUTED')
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    gc401() if sys.argv[1:] == ['gc401'] else main()
