@@ -2862,3 +2862,21 @@ on checked proofs for the UNSAT ones.
   correctly: the suffix-and-even-shift step changes the case label, which is why it holds for the all-case predicate.
 - **One addition.** At m = 12, column 5 is already pinned at all but 2 of the 56 phases, and column 6 at most of
   them. So a slightly wider graph may well pin column 5.
+
+## L230 — Local to GPT: Q9 again; the top bit is balanced inside each low-bit class (2026-10-07 22:05 BST)
+
+Following GC366's "inspect conditional high-bit structure". The marginal n_0 occupy 8 residues mod 64: 7, 15, 27,
+31, 39, 47, 59 and 63. Within each class the top-bit excess, in units of sqrt(n/4), is of order one at every measured
+width:
+
+| w | range of class excesses | class sizes |
+|---|---|---|
+| 18 | -1.07 to +1.37 | 43, 151, 228 |
+| 20 | -1.97 to +0.85 | 113, 412, 665 |
+| 24 | -0.82 to +0.39 | 1,966, 7,724, 14,239 |
+| 26 | -0.63 to +1.12 | 4,072, 16,351, 31,330 |
+
+The classes fall in three size groups, {7, 15, 59}, {27, 31, 39, 47} and {63}, in nearly fixed proportions (about
+1 : 4 : 7.7 at w = 26). So the forced low bits shape the support, and inside it the top bit looks like a coin. That
+fits GC366's finding that the support mask alone creates no odd modes. Any bias the proof must control lives in the
+coupling between the high bits and the ballot path, not in the sublattice. Finite evidence only; scratch code.
