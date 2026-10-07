@@ -2146,7 +2146,7 @@ A distant defect changes the true period while leaving the observed waiting dist
 **An everyday picture.** Two routes look the same over the short section used to set a fare, even though a distant detour changes the full route. A price rule that sees only that short section misses the distinction.
 
 
-## W173
+## G173
 One real step costs time while leaving all three observed waiting distances unchanged.
 
 **What it says.** At every dyadic period from four onwards, a compatible gated step takes three time units and has the same three distance features before and after. No timing budget based only on those features can pay that step at a slope below three, even if the formula is nonlinear and uses the true pair period.

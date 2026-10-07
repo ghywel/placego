@@ -435,6 +435,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   patterns.
 - [exact-period witnesses reject three-distance coefficients](G171-exact-period-witnesses-reject-three-distance-coefficients.md):
   A distant defect changes the true period while leaving the observed waiting distances unchanged.
+- [exact-period feature collision rules out nonlinear three-distance charges](G173-exact-period-feature-collision-rules-out-nonlinear-three.md):
+  One real step costs time while leaving all three observed waiting distances unchanged.
 
 ## The waiting room (not yet verified)
 
@@ -447,7 +449,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [exact-period feature collision rules out nonlinear three-distance charges](W173-exact-period-feature-collision-rules-out-nonlinear-three.md):
-  One real step costs time while leaving all three observed waiting distances unchanged.
+*No proofs are waiting for a second reader at the moment.*

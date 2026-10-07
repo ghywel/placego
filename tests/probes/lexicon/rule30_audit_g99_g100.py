@@ -311,6 +311,10 @@ CHECKS (GPT's claims at 827e006):
      q - 1 to (b, b, 4); (S c XOR c, 0) to (0, c) for c with bits 1, q - 1; the pulse) are compatible and gated, keep
      the triples (3, 4, 3) -> (4, 4, 0), (1, 0, 1) -> (0, 2, 2), (q, q, 0) -> (q, 0, q), and every endpoint word
      has least period exactly q; at q = 16 the words are 32904, 49356, 32770, 49155 and 32768.
+  S67 (G173, added 2026-10-07 at 3c91458): at q = 4 (DQ3's (15, 12) -> child 2) and at q = 8, 16, 32, 64 (b with bits
+     2, 3, q - 1; c with bits 1, 5, q - 1; a = S c XOR (b OR c)) the edge is compatible and gated, costs 3, has source
+     and target triples both (1, 3, 1) and pair least period q at both ends; at q = 8 the words are a = 255, b = 140,
+     c = 162 and the aligned target (145, 84).
 """
 import random
 from fractions import Fraction as F
@@ -3087,4 +3091,33 @@ for q in (16, 32, 64):
     if q == 16:
         ok66 &= (b, a, c, a2, pb) == (32904, 49356, 32770, 49155, 32768)
 check('S66 G171: exact-period witnesses keep the three constraints, so least-period coefficients cannot escape', ok66)
+def pair_lp(a, b, q):
+    for d in range(1, q + 1):
+        if q % d == 0 and hg_rot(a, d, q) == a and hg_rot(b, d, q) == b:
+            return d
+
+
+def hg_rot(w, d, q):
+    d %= q
+    return ((w >> d) | (w << (q - d))) & ((1 << q) - 1)
+
+
+ok67 = True
+cases = [(4, 15, 12, 2)]
+for q in (8, 16, 32, 64):
+    b = (1 << 2) | (1 << 3) | (1 << (q - 1))
+    c = (1 << 1) | (1 << 5) | (1 << (q - 1))
+    a = Sw(c, q) ^ (b | c)
+    cases.append((q, a, b, c))
+for q, a, b, c in cases:
+    ok67 &= c in edge_children(a, b, q) and gated3(a, b, 0, q)
+    k, r2 = reset_cost(b, 0, q)
+    ok67 &= k == 3 and r2 == 3 and gated3(b, c, 3, q)
+    ok67 &= tri(a, b, 0, q) == (1, 3, 1) and tri(b, c, 3, q) == (1, 3, 1)
+    ok67 &= pair_lp(a, b, q) == q and pair_lp(b, c, q) == q
+    if q == 8:
+        ok67 &= (a, b, c) == (255, 140, 162) and (hg_rot(b, 3, 8), hg_rot(c, 3, 8)) == (145, 84)
+    if q == 4:
+        ok67 &= (hg_rot(b, 3, 4), hg_rot(c, 3, 4)) == (9, 4)
+check('S67 G173: a gated edge with identical (1, 3, 1) features, cost 3 and pair period q at every q = 4..64', ok67)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G171, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G173, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5908,17 +5908,7 @@ inequalities, and the dual weights cancel them as in G170. Checked (`rule30_audi
 $q = 16, 32, 64$: compatibility, gates, costs, triples and least period exactly $q$ for every endpoint word. At $q = 16$
 the words are 32904, 49356, 32770, 49155 and 32768, as stated.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT173. exact-period feature collision rules out nonlinear three-distance charges (second-read by Local, 2026-10-07)
 
 ### GPT G173 — exact-period feature collision rules out nonlinear three-distance charges (RULE30-GPT.md G173; awaiting second reader, 2026-10-07)
 
@@ -5933,3 +5923,24 @@ Both b and c have exactly three black bits, so have least period q: any repetiti
 **Identified unexpected guard: pair period survives even when one word collapses.** At q8 the source a=255 has period1, not8; source pair(a,b) still has least period8 because b has odd weight3. Requiring every individual word to have period exactly q would incorrectly discard the witness, although G8/G172's graph and G171's coefficient classification use the pair's period. Conversely the source and target actual pairs differ, so the feature self-loop cannot be repeated as a real self-loop. The known original finite certificates remain consistent with this positive projected edge.
 
 **What closes and what remains.** G169-G171's linear restrictions are strengthened: even arbitrary nonlinear functions of the same three distances, augmented by least pair period, fail below3 on every tested or constructed dyadic period q>=4. A rooted-only domain may exclude these witnesses; no root membership is asserted. Additional temporal profile information, other joint features and history-sensitive charges remain possible. The actual all-period O(q) budget, contracted certificate K of G168, and period-growth estimate remain unproved. This theorem is a direct symbolic extension of DQ3's audited feature collision using G7 compatibility and G160's gate; no novelty or prize solution is claimed. Next reasoning should use a feature that distinguishes these explicitly colliding states, rather than another function of the same three distances.
+
+*Second reader's note on G173 (Local, 2026-10-07; chat L135).* Correct. The triple is compatible by construction. At
+phase 0, $a(0) = c(1) = 1$ and $b(0) = 0$ give the source triple $(1, 3, 1)$, and $b$'s reset costs 3. At phase 3,
+$b(3) = 1$, $c(3) = c(4) = 0$ and $c(5) = 1$ give the target triple $(1, 3, 1)$. Both gates hold. Both pairs have least
+period $q$ because $b$ has weight 3, even at $q = 8$, where $a$ is the all-ones word. A function of the features and the
+pair period alone would therefore need $0 \ge 3 - \gamma$. Checked (`rule30_audit_g99_g100.py`, S67) at $q = 4$ (DQ3's
+$(15, 12)$ with child 2, aligned target $(9, 4)$) and at $q = 8, 16, 32, 64$: compatibility, gates, cost and arrival
+phase, both triples, and pair least period $q$ at both ends. At $q = 8$ the words are 255, 140 and 162, with aligned
+target $(145, 84)$, as stated.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
