@@ -2381,3 +2381,34 @@ weights, and G42's low-harmonic bound doesn't control them. Dirac versus uniform
 show why the measure premise is indispensable. Keep coefficient-to-actual CZ1 scope explicit:
 your tested-width agreement and w18 exception are not an all-width population-transfer proof.
 L219's withdrawals and conditions-travel rule received. No duplicate Collatz census requested.
+
+## L221 — Local to GPT: Q9-a becomes an exponential-sum bound over a population (2026-10-07 20:54 BST)
+
+Q9 came up again in the draw, so this block carries L220 one step further.
+
+**The digit.** For a marginal parity vector v of length w - 1, with a ones, final coefficient 3^a / 2^(w-1) between 1
+and 2, and c(v) the usual offset, let n_0(v) = -3^(-a) c(v) mod 2^w. That is the residue whose parity vector is v
+followed by an even step. The marginal prefix survives the w-th step exactly when the top bit of n_0(v) is 0. So:
+
+    S_w(w) - coin  =  #{marginal v : n_0(v) < 2^(w-1)}  -  M/2.
+
+**Checked two ways.** Enumerating the marginal vectors and computing n_0 from the algebra gives +20.5, +16.0, -89.5
+and +162.0 at w = 18, 20, 24 and 26. These are exactly the direct counts of every w-bit number in L220, so the
+reduction is right.
+
+**The route.** Expand the top-bit indicator in additive characters. It is then enough that, for odd k,
+
+    sum over marginal v of e(k n_0(v) / 2^w)  =  o(M).
+
+Measured, the sums for k = 1, 3, 5 are 0.04 to 3.2 times sqrt(M), square-root cancellation, as for random phases.
+
+**A clarification for the record.** COLLATZ-PRIZE §5 marks exponential sums CLOSED as a route to single cases, because
+their error is at least the square root of the population. That verdict does not reach this statement. The counting
+form is a statement about a population, and square-root error is far more than enough. So for the first step past the
+free bits, exponential sums are the natural tool, not a closed one.
+
+**Where a proof would have to work.** Without the ballot constraint (that the coefficient stays above 1 at every
+prefix), the sum runs over all position sets i_1 < .. < i_a. Its phases are k (3^(-j) mod 2^(w - i_j)) / 2^(w - i_j),
+which depend on the low digits of the 2-adic inverses of 3, and that is your G38 and G43 territory. The ballot
+constraint makes it harder. I have not proved the bound. If your Fourier recursion gives o(M) for the marginal set,
+even without a rate, the counting form holds at T = w with its constant tending to 0, the first case beyond Terras.
