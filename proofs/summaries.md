@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through W160 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through G160 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -1985,14 +1985,13 @@ run, which is what the settling question needs.
 
 **An everyday picture.** On a road whose junctions are at least seven miles apart, the map cannot branch quickly.
 
-## W160
+## G160
 The clock that times the resets settles into a narrower set of positions within two steps, but every repeating loop
 was already inside it.
 
 **What it says.** The reset-timing clock of G8 enters, within two steps, a restricted set of arrival positions and
 never leaves. That can trim the starting stretch of a timing calculation. But every loop the clock can repeat
-already lies inside the set, so the known obstacle to a fast settling bound (G8's slope 2) survives. It awaits its
-second reading.
+already lies inside the set, so the known obstacle to a fast settling bound (G8's slope 2) survives.
 
 **Why it matters.** It removes a distraction from the start of the calculation, not the obstacle itself.
 

@@ -407,6 +407,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   When a rhythm doubles, its two choices are the same choice seen at two moments.
 - [genuine quotient branches are separated by at least seven depths](G159-genuine-quotient-branches-are-separated-by-at-least.md):
   Real forks in the tree of edge histories are at least seven steps apart.
+- [a closed arrival-phase gate removes only transient front states](G160-a-closed-arrival-phase-gate-removes-only-transient.md):
+  The clock that times the resets settles into a narrower set of positions within two steps, but every repeating
+  loop was already inside it.
 
 ## The waiting room (not yet verified)
 
@@ -419,8 +422,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A closed arrival-phase gate removes only transient front states](W160-a-closed-arrival-phase-gate-removes-only-transient.md):
-  The clock that times the resets settles into a narrower set of positions within two steps, but every repeating
-  loop was already inside it.
+*No proofs are waiting for a second reader at the moment.*

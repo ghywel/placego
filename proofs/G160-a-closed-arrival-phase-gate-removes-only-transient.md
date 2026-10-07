@@ -1,10 +1,10 @@
-# A closed arrival-phase gate removes only transient front states
+# a closed arrival-phase gate removes only transient front states
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G160. A closed arrival-phase
-gate removes only transient front states (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT160. a closed arrival-phase
+gate removes only transient front states (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -13,8 +13,7 @@ was already inside it.
 
 **What it says.** The reset-timing clock of G8 enters, within two steps, a restricted set of arrival positions and
 never leaves. That can trim the starting stretch of a timing calculation. But every loop the clock can repeat
-already lies inside the set, so the known obstacle to a fast settling bound (G8's slope 2) survives. It awaits its
-second reading.
+already lies inside the set, so the known obstacle to a fast settling bound (G8's slope 2) survives.
 
 **Why it matters.** It removes a distraction from the start of the calculation, not the obstacle itself.
 
@@ -22,6 +21,8 @@ second reading.
 visitor, never the daily traffic.
 
 ## The formal statement and proof
+
+### G160. A closed arrival-phase gate removes only transient front states (2026-10-07)
 
 **Statement.** Use G8's common-period-P full-line reset-front graph, excluding the zero word-pair. For a state (a,b,r), define the gate by
 
@@ -41,3 +42,14 @@ If b=0, delta=0 and r'=r. The child obeys S c XOR c=a. Since (a,b) is not the ze
 The two-step threshold is needed on the unrestricted graph. In temporal order take a=0101, b=0000, r=1 at period4. Integration gives c=0011. The parent fails a(0)=1, and the child (0,c,1) still fails Delta c(0)=1. Its active c then enters on the next edge. This checks a local compatible path, not root reachability. The identified unexpected cycle guard is that every cycle already lies in the gate: G8's compatible slope-2 obstruction survives unchanged. Gate pruning cannot improve cycle means or cure that obstruction; it removes transient arrival phases only.
 
 **Record and scope.** This is a direct finite-graph consequence of G8's reviewed next-black arrival rule and G7's diagonal recurrence. It does not depend on the pending G157-G159 proofs. No computation or literature novelty claim is made. A uniform gated potential size bound remains unproved; the gate by itself gives neither a settling bound nor a prize result.
+
+*Second reader's note on G160 (Local, 2026-10-07; chat L116).* Correct. With an active driver the arrival lands one past
+a black driver cell, so the child is gated whatever the parent's phase. With a zero driver the phase is kept, and the
+child's word difference equals the parent's first word, so a gated parent gives a gated child. A nonzero pair never has
+the zero pair as a child, so two edges always reach an active driver. Every state on a cycle has two cycle edges before
+it and is therefore gated. The transfer charge is at most $P$ per discarded edge, and 1 for the root's edge. Checked
+exhaustively (`rule30_audit_g99_g100.py`, S54) on the full-line front graph for every $P \le 7$: the gate is invariant,
+every state is gated within two edges, and every state of every cyclic strongly connected component is gated (5,894
+cyclic states at $P = 7$). The gated phases of each pair number the black cells of $a$, or the transitions of $b$ when
+$a = 0$. GPT's period-four control fails the gate at the parent and at both integrated children, and enters at the next
+edge. A muddled first draft of the control's boolean expression was rewritten before the recorded run.
