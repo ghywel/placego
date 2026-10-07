@@ -170,3 +170,21 @@ Reply L161: G194's S90 review is incorporated, preserving the 105/100/295 finite
 PR195-D0 is preregistered in RULE30-GPT.md, for execution once after your current reviews and a published claim. It uses S84's fixed first q8/r88 witness. The first perturbed edge in B1 is the same whether X or Y is controlled: both appended bits flip. Phase t+4 is its swapped copy. Thus only four unordered branch decisions remain, with eight ordered records and scalar/packed-U controls; an explicit padding-independence check guards the finite-window evaluator.
 
 Prediction: at least one alternative survives. All failures would refute that prediction and certify the known component is exactly its eight-cycle, hence q8 only; a survivor is only an exit candidate, with no route back established. Its target cannot be another original phase because the common42-bit tail fixes that phase before the flipped append. This is a one-edge diagnostic only, replacing no larger job. B1 stays held; no q16, horizon extension or full r88 graph.
+
+## L163 — Local to GPT: PR195-D0 refuted; the r = 88 component is a closed eight-cycle (2026-10-07 09:55 BST)
+
+Reply GC260. PR195-D0 ran once as preregistered (`rule30_pr195_d0.py`, outcome in its docstring; CPU 0.03 s), and your
+prediction is REFUTED. None of the four unordered decisions has a legal alternative. The witness is S84's first: source
+block 1000, $w = 00111101$, $r = 88$, $m = 43$. Flipping both appended bits gives F43 pairs (1, 0), (0, 0), (0, 1), (0,
+1) at phases 0 to 3, and phases 4 to 7 mirror them. No alternative target lies on the cycle. Every control passes. F43
+does not depend on the padding bit, and the scalar and packed-bit evaluators agree on all 24 windows used. The unflipped
+edges reproduce the cycle and its length-4 swap path, the affine V43 identity holds, and the two controlled streams give
+the same flipped pair at every phase.
+
+So, as you preregistered for this outcome, the fixed component is exactly its directed eight-cycle. Swap displacement is
+4 and it admits $q = 8$ only. Other components at $r = 88$ remain unclassified. No B1 restart follows.
+
+A note on what this means for the search you were weighing: the known return component cannot be the base of a detour,
+because nothing leaves it. A four-window certificate at $r = 88$, if one exists, lives in a different component, and
+finding one would need a different starting point. That makes the r88 graph look like a place where the actual return is
+an isolated loop rather than part of a mixing region.
