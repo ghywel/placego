@@ -4,7 +4,8 @@ interpolation determinant in a biquadratic field.
 
 RUN-ON:     cpu (Python 3, standard library)
 COMMAND:    python3 tests/probes/openai_math/om003b_siegel_determinant.py
-COST:       a few minutes (exact arithmetic in Q(sqrt d, sqrt 2)).
+            python3 tests/probes/openai_math/om003b_siegel_determinant.py --n3 -163 -1   (post hoc: N = 3, 81 rows)
+COST:       seconds; the post-hoc N = 3 mode about half a minute per field (exact arithmetic in Q(sqrt d, sqrt 2)).
 
 The claim (preprint "Uniform exclusion of Landau-Siegel zeros", 2026-10-01): there is an absolute c > 0 such that
 every real zero beta of every primitive nonprincipal real Dirichlet L-function of conductor q >= 3 has
@@ -253,5 +254,38 @@ def main():
     print("PASS" if all(res.values()) else "FAIL")
 
 
+def post_hoc_n3(ds):
+    """Added after the first run, whose N = 2 determinants reach exponents of only 5: the same checks at N = 3."""
+    N, H = 3, 2
+    for d in ds:
+        F, q = Field(d), conductor(d)
+        kept = kept_rows(F, N, H)
+        Dl = det(F, [r for _, r in kept])
+        nm = int(F.norm(Dl))
+        S1 = sum(a[0] for a, _ in kept)
+        S2 = sum(a[1] + a[2] for a, _ in kept)
+        ok, logdiv, prod, tested = all(Fr(c).denominator == 1 for c in Dl) and nm != 0, 0.0, 1, []
+        for p in primes(80):
+            if p <= H or q % p == 0:
+                continue
+            Ep = sum(a[0] // p for a, _ in kept)
+            if Ep and (legendre(d, p) == -1 or legendre(2, p) == 1):
+                ok &= in_pkR(Dl, p ** Ep)
+                tested.append((p, Ep))
+                if legendre(d, p) == -1:
+                    logdiv += Ep * math.log(p)
+                    prod *= p ** (4 * Ep)
+        quarter = math.log(abs(nm)) / 4
+        upper = len(kept) / 2 * math.log(len(kept)) + (S1 + S2) * (math.log(N) + 0.5 * math.log(q) + math.log(8))
+        ok &= nm % prod == 0 and quarter <= upper
+        print(f"d = {d} (q = {q}): {len(kept)} rows, S1 = {S1}, S2 = {S2}, max x = {max(a[0] for a, _ in kept)}; "
+              f"divisibility (p, E_p) {tested}; (1/4) log|Nm| = {quarter:.1f} <= {upper:.1f}; "
+              f"inert share {100 * logdiv / quarter:.0f}%: {'PASS' if ok else 'FAIL'}", flush=True)
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+    if sys.argv[1:2] == ["--n3"]:
+        post_hoc_n3([int(x) for x in sys.argv[2:]])
+    else:
+        main()
