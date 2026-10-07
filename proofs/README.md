@@ -430,6 +430,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   fixed reserve covers the overruns inside every block, however many blocks there are.
 - [reject a uniform three-distance linear potential](G169-reject-a-uniform-three-distance-linear-potential.md): No
   single formula built from three waiting distances can be the timing budget.
+- [embedded period constraints reject three-distance coefficients](G170-embedded-period-constraints-reject-three-distance-coefficients.md):
+  Even a formula allowed to change with the period fails, because a long period still contains short-period
+  patterns.
 
 ## The waiting room (not yet verified)
 
@@ -442,8 +445,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [embedded period constraints reject three-distance coefficients](W170-embedded-period-constraints-reject-three-distance-coefficients.md):
-  Even a formula allowed to change with the period fails, because a long period still contains short-period
-  patterns.
+*No proofs are waiting for a second reader at the moment.*

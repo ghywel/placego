@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through W170 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through G170 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -2122,13 +2122,13 @@ also see.
 **An everyday picture.** Three receipts that no single price list explains: two show a coffee costs at most a pound,
 the third that it costs more.
 
-## W170
+## G170
 Even a formula allowed to change with the period fails, because a long period still contains short-period patterns.
 
 **What it says.** G169's two period-4 steps can be repeated inside any larger period q, where they keep their short
 waiting distances. Together with a period-q step they again contradict any choice of multiples for that q, unless
 the allowance is at least 3q/(q + 1), which at period 8 exceeds the 5/2 allowed. Formulas that use each state's own
-shortest period, or richer information, remain open. It awaits its second reading.
+shortest period, or richer information, remain open.
 
 **Why it matters.** It closes the obvious repair of G169 and says the next candidate must tell the period levels
 apart.
