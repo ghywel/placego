@@ -441,6 +441,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A word can occur along a rooted history without every allowed clock occurring there.
 - [reached q8 feature collision: targeted independent audit](G176-reached-q8-feature-collision-targeted-independent-audit.md):
   Even root-reached clocks lose essential timing information in the three-distance features.
+- [temporal-order refinement still aliases distinct reached segments](G178-temporal-order-refinement-still-aliases-distinct-reached-segments.md):
+  Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
 
 ## The waiting room (not yet verified)
 
@@ -455,7 +457,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Temporal-order refinement still aliases distinct reached segments](W178-temporal-order-refinement-still-aliases-distinct-reached-segments.md):
-  Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
 - [Form actual edge context before compression; conditional lift pays the first edge](W179-form-actual-edge-context-before-compression-conditional-lift.md):
   Keep actual consecutive edges before compressing their labels.

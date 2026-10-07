@@ -323,6 +323,10 @@ CHECKS (GPT's claims at 827e006):
      steps to the root (0, 255); its child 26 reaches (176, 26), aligned (133, 208) at phase 5; every forward triple
      is compatible; from all eight root residues the clock reaches the source at 360 and the target at 365; both ends
      are gated with distances (1, 5, 1) and pair least period 8; toggling the source's bit 0 breaks compatibility.
+  S70 (G178, added 2026-10-07 at 5c2f424): the seven RQO representative edges are reached edges of RQ3's q = 8 domain
+     (depths 270-275 and 318-320) with the stated costs summing to 21 and the stated refined labels, which close in
+     feature space; both splices are false joins ((138, 140) != (182, 84), (137, 206) != (143, 26)), so the summed
+     inequalities give 0 >= 21 - 7 gamma, i.e. gamma >= 3, for every function of the refined features.
 """
 import random
 from fractions import Fraction as F
@@ -3179,4 +3183,19 @@ ok69 &= tri(183, 176, 0, 8) == (1, 5, 1) and tri(176, 26, 5, 8) == (1, 5, 1)
 ok69 &= pair_lp(183, 176, 8) == 8 and pair_lp(176, 26, 8) == 8
 ok69 &= 26 not in edge_children(183 ^ 1, 176, 8)
 check('S69 G176: the reached q = 8 collision edge, its 190-step root chain, and arrivals 360, 365 from every root residue', ok69)
+import rule30_rq3 as _rq3
+import rule30_rqo as _rqo
+_root70, _depth70, _par70, _edges70, _ = _rq3.reached(8)
+_eset70 = {(s_, t_): d_ for s_, t_, d_ in _edges70}
+seg70 = [((143, 26), (134, 186), 2), ((134, 186), (174, 62), 2), ((174, 62), (143, 200), 2), ((143, 200), (140, 168), 4),
+         ((140, 168), (138, 140), 4), ((182, 84), (138, 152), 3), ((138, 152), (137, 206), 4)]
+labels70 = [(1, 2, 1, 8, 8, 8, 7), (2, 2, 3, 8, 8, 8, 5), (2, 2, 5, 8, 8, 8, 7), (1, 4, 1, 8, 8, 8, 7), (3, 4, 3, 8, 8, 8, 7),
+            (2, 3, 2, 8, 8, 8, 7), (2, 4, 2, 8, 8, 8, 7), (1, 2, 1, 8, 8, 8, 7)]
+ok70 = all(_eset70.get((s_, t_)) == d_ for s_, t_, d_ in seg70)
+ok70 &= [_depth70[seg70[0][0]], _depth70[seg70[5][0]]] == [270, 318]
+ok70 &= sum(d_ for _, _, d_ in seg70) == 21 and 2 * 21 - 5 * 7 == 7
+ok70 &= all(_rqo.feat(seg70[i][0], 8) == labels70[i] for i in range(7)) and _rqo.feat(seg70[6][1], 8) == labels70[7]
+ok70 &= all(_rqo.feat(seg70[i][1], 8) == labels70[i + 1] for i in range(7))
+ok70 &= seg70[4][1] != seg70[5][0] and seg70[6][1] != seg70[0][0] and labels70[0] == labels70[7]
+check('S70 G178: seven reached edges close in refined feature space with cost 21, through two false joins (gamma >= 3)', ok70)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -2176,7 +2176,7 @@ Even root-reached clocks lose essential timing information in the three-distance
 **An everyday picture.** Two consecutive stops show the same meter reading even though the trip takes time. A budget needs information the meter has discarded.
 
 
-## W178
+## G178
 Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
 
 **What it says.** Seven reached period-eight edges form a closed loop only after compression to distances, period and difference orders. Their total elapsed time is twenty-one, so no potential using those features pays every edge at a slope below three.
