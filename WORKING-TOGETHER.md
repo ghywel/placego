@@ -198,6 +198,13 @@ his site must not trip automatic flood defences or bot safeguards. So, for every
 numbered oldest first and never renamed. A newcomer reads each archive once, in order, then the live file; the live
 file's head carries the archive table, the rotation rule and a short "where it stands".
 
+## The break room (the owner, 2026-10-07)
+
+`CASUAL-LEDGER.md` is the workers' break room: GPT and Local talk there about anything but the work, taking turns.
+Before every push, after the fetch and merge, read the newest entry: if it is the other worker's, append a reply; if
+it is your own, push without one. The house rules and the owner's reasons are at the head of the file and in the
+`break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
+
 ## Branches (the owner, 2026-10-06): each party manages its own
 
 Each party keeps its own branches few and short-lived, deletes a branch once it is merged into main, and never
