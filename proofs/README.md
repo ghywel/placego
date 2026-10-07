@@ -421,4 +421,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+### W.GPT153. Rudin–Shapiro passes the necessary repeat-debt filter (awaiting second reader)
+
+*The pages:*
+
+- [Rudin–Shapiro passes the necessary repeat-debt filter](W153-rudin-shapiro-passes-the-necessary-repeat-debt-filter.md):
+  An exact automaton calculation says the Rudin–Shapiro word passes every necessary repeat-debt inequality with
+  allowance zero. A separate graph-product check agrees; review of the encoded predicate and certificate is pending.
+  The result would close that exclusion shortcut for this word, while leaving its forced wall tail unresolved. No
+  finite compatible row has been constructed.

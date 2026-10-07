@@ -1855,3 +1855,7 @@ A backward period doubling creates a 010 reset in the predecessor row. The next 
 ## G152
 
 A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern. Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the silver code’s support.
+
+## W153
+
+An exact automaton calculation says the Rudin–Shapiro word passes every necessary repeat-debt inequality with allowance zero. A separate graph-product check agrees; review of the encoded predicate and certificate is pending. The result would close that exclusion shortcut for this word, while leaving its forced wall tail unresolved. No finite compatible row has been constructed.
