@@ -2106,7 +2106,7 @@ Three waiting distances cannot share one linear timing formula at all the period
 **An everyday picture.** Two short receipts put conflicting requirements on the same price list; an extra fixed fee cancels when the receipts are compared.
 
 
-## W170
+## G170
 Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
 
 **What it says.** Two repeated short-period edges and one long-period pulse edge impose incompatible requirements on the same three-distance formula. Changing its coefficients for each larger graph period does not repair that conflict.

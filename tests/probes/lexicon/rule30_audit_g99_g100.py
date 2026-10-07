@@ -303,6 +303,10 @@ CHECKS (GPT's claims at 827e006):
   S64 (G169, added 2026-10-07 at 8d75ab4): the three witness edges are valid gated compatible edges with the stated
      costs and distance triples ((3, 4, 3) -> (4, 4, 0); (1, 0, 1) -> (0, 2, 2); (q, q, 0) -> (q, 0, q) for q = 4, 8, 16),
      and the resulting linear inequalities force beta - chi <= 1 and beta - chi >= 11/8 at q = 8, an empty system.
+  S65 (G170, added 2026-10-07 at 6b2cd29): at q = 8 and 16 the period-4 words (12, 8), (8, 8), (9, 0), (0, 14)
+     repeated q/4 times keep both edges compatible and gated with the same phase-0 delays and distance triples; with
+     the pulse edge, the dual combination (q/2, q/2, 1) leaves 0 >= 6q - 2 gamma (q + 1), so gamma >= 3q/(q + 1),
+     which is 8/3 > 5/2 at q = 8 and gives no contradiction at q = 4.
 """
 import random
 from fractions import Fraction as F
@@ -3040,4 +3044,23 @@ sumv = tuple(x + y for x, y in zip(lhs1, lhs2))
 ok64 &= sumv == (0, -2, 2) and 3 + (-5) == -2                     # 2 (chi - beta) >= -2, i.e. beta - chi <= 1
 ok64 &= _F57(2 * 8 - 5, 8) > 1                                     # q = 8 needs beta - chi >= 11/8 > 1
 check('S64 G169: three explicit gated edges make the shared three-distance potential infeasible at q = 4 and 8', ok64)
+def rep4(w4, q):
+    return sum(w4 << (4 * k) for k in range(q // 4))
+
+
+ok65 = True
+for q in (8, 16):
+    A1, B1, C1 = rep4(12, q), rep4(8, q), rep4(0, q)
+    A2, B2, C2 = rep4(9, q), rep4(0, q), rep4(14, q)
+    ok65 &= B1 in edge_children(A1, B1, q) and C2 in edge_children(A2, B2, q)
+    ok65 &= edge_children(B1, B1, q) == [C1] and gated3(A1, B1, 0, q) and gated3(B1, B1, 0, q)
+    ok65 &= gated3(A2, B2, 0, q) and gated3(B2, C2, 0, q)
+    ok65 &= reset_cost(B1, 0, q)[0] == 4 and tri(A1, B1, 0, q) == (3, 4, 3) and tri(B1, B1, 0, q) == (4, 4, 0)
+    ok65 &= tri(A2, B2, 0, q) == (1, 0, 1) and tri(B2, C2, 0, q) == (0, 2, 2)
+    for gam in (_F57(5, 2), _F57(3 * q, q + 1) - _F57(1, 1000), _F57(3 * q, q + 1)):
+        rhs = _F57(q, 2) * (8 - 2 * gam) + _F57(q, 2) * (-2 * gam) + (2 * q - 2 * gam)
+        ok65 &= rhs == 6 * q - 2 * gam * (q + 1)
+        ok65 &= (rhs > 0) == (gam < _F57(3 * q, q + 1))
+ok65 &= _F57(3 * 8, 9) == _F57(8, 3) > _F57(5, 2) and _F57(12, 5) < _F57(5, 2)
+check('S65 G170: embedded period-4 edges plus the pulse force gamma >= 3q/(q + 1) on the shared three-distance family', ok65)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

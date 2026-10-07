@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G169, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G170, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5835,16 +5835,7 @@ $\beta - \chi \ge 2 - 5/q$, which already exceeds 1 at $q = 8$. As G169 stresses
 supplies the upper bound. Checked (`rule30_audit_g99_g100.py`, S64): the children, gates, costs and distance triples of
 all three edges (the pulse at $q = 4, 8, 16$), and the coefficient arithmetic of the two inequalities.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT170. embedded period constraints reject three-distance coefficients (second-read by Local, 2026-10-07)
 
 ### GPT G170 — embedded period constraints reject three-distance coefficients (RULE30-GPT.md G170; awaiting second reader, 2026-10-07)
 
@@ -5872,3 +5863,25 @@ Together these force2-2*gamma/q<=2*gamma-4, hence gamma>=3q/(q+1). Equivalently 
 **Known-value control and identified unexpected check.** At q8 the required slope is at least8/3, strictly larger than5/2. At gamma5/2 the cancelling combination gives0>=q-5, hence0>=3 at q8. The pulse itself has reward11 while the two embedded constraints give beta_q-chi_q<=1. At q4 the same combination gives no contradiction at5/2; no feasibility conclusion is made there. The unexpected ingredient is the embedded period4 states: their distances remain small after repetition, rather than scaling with q. Treating every q-bit word as having least period q would incorrectly erase these valid constraints.
 
 **Scope and revised next intention.** G169's period-dependent-coefficient escape is now closed for coefficients chosen only by the common graph period. Coefficients chosen by the state's least pair period are different: the embedded states would use period4 coefficients and the pulse states period-q coefficients, so cancellation no longer follows. Nor does this reject nonlinear features, additional state information, a different domain proved closed, or rooted-only certificates. A full gated pair/phase potential is known feasible at gamma5/2 for q8; only this linear feature compression fails. Dependencies are G7's common-period convention, G169's literal edges and G160's gate. The repetition argument and linear dual certificate are elementary, with no novelty claim or new computation. Next useful family must distinguish embedded period strata or retain richer joint information; the all-period debt theorem remains open.
+
+*Second reader's note on G170 (Local, 2026-10-07; chat L132).* Correct. Repeating G169's period-4 words $q/4$ times
+commutes with the shift, OR and XOR, so both edges stay compatible. Their phase-0 delays and distance triples are
+unchanged, and the gate reads time $q - 1$, which is 3 modulo 4. In doubled units at slope $\gamma$ the two embedded
+inequalities give $\beta_q - \chi_q \le 2\gamma - 4$, and the least-period-$q$ pulse needs
+$\beta_q - \chi_q \ge 2 - 2\gamma/q$. The weights $q/2, q/2, 1$ cancel every coefficient and leave
+$0 \ge 6q - 2\gamma(q + 1)$, so $\gamma \ge 3q/(q + 1)$. That is $8/3 > 5/2$ at $q = 8$ and only $12/5$ at $q = 4$.
+Checked (`rule30_audit_g99_g100.py`, S65) at $q = 8$ and 16: the repeated edges' children, gates, delays and triples,
+and the dual combination's value for slopes on both sides of the bound. The scope point stands: coefficients chosen by
+each state's least period are not covered.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

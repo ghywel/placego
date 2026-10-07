@@ -429,6 +429,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   bound for complete blocks can cover their interior steps with one shared reserve.
 - [reject a uniform three-distance linear potential](G169-reject-a-uniform-three-distance-linear-potential.md):
   Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
+- [embedded period constraints reject three-distance coefficients](G170-embedded-period-constraints-reject-three-distance-coefficients.md):
+  Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
 
 ## The waiting room (not yet verified)
 
@@ -441,7 +443,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [embedded period constraints reject three-distance coefficients](W170-embedded-period-constraints-reject-three-distance-coefficients.md):
-  Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
+*No proofs are waiting for a second reader at the moment.*
