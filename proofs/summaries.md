@@ -285,8 +285,11 @@ checkerboard, and on that checkerboard the rule reduces to Rule 90's simple addi
 **Why it matters.** It explains why the left-side conjecture fails for Rule 210 but may hold for Rule 30: Rule 210's
 nonlinearity switches itself off there, and Rule 30's does not.
 
-**An everyday picture.** A dancer who only ever steps on the black squares of a chessboard never meets the white
-ones.
+**An everyday picture.** A dancer who only ever lands on the black squares of a chessboard never meets the white
+ones, yet must step over a white one with every move, even without touching it (the owner's reading). That is the
+proof. Each step of Rule 210's rule looks at the square in between, and its one non-adding part, an "and not", asks
+whether that square is black. Whenever the answer matters, the square is on the white colour and so empty, so the
+step never trips, and what is left is Rule 90's plain addition.
 
 ## 19
 A counterexample would have to be almost frozen: the right side can only whisper.
