@@ -57,6 +57,10 @@ at 40, 48 and 64, and before --strain first ran, 2026-10-07 21:16 BST):
   for ever, which Jen's theorem forbids beside a finite left half: column 1 could never run the wheel that long in
   any finite configuration with a 0101 centre.
 
+OUTCOME of --strain, part 1, 2026-10-07 (finished 21:21 BST): KT-P1 measured: at N = 168, class 12 is satisfiable at
+  all 56 pairs for widths 33 to 36 and at none for 37, 38 and 39. The obstruction needs the rule followed exactly out
+  to column 37. Part 2 (classes 32, 52 and 42 at N = 336 and 560) is running.
+
 REACH (post-hoc, written after run 1's t0 = 0 half showed class 12 unsatisfiable at all 28 phases, and before
 --reach first ran, 2026-10-07 21:10 BST):
   KR-C1 (control, agreement with entry 26): at width m = 20, with column 21 free, class 12 is satisfiable for some
@@ -64,6 +68,17 @@ REACH (post-hoc, written after run 1's t0 = 0 half showed class 12 unsatisfiable
   KR-P1: class 12 dies at some width between 21 and 64. Confidence 0.6; otherwise it needs more than 64 columns.
   KR-P2: in the full cone, class 12 is still satisfiable at N = 56 (KL's one-turn set allows it) and dies by
         N = 140. Confidence 0.5.
+OUTCOME of --reach, 2026-10-07 (one run, 300 s, finished 21:17 BST):
+  KR-C1 PASS: at width 20 with column 21 free, class 12 is satisfiable at all 56 pairs, as entry 26 says.
+  KR-P1 HELD: class 12 is satisfiable at widths 20, 24, 28 and 32 (all 56 pairs each) and unsatisfiable at 40, 48,
+        64 and 96 (none). Whatever forbids it lies between columns 33 and 40 from the wall.
+  KR-P2 HELD: in the full cone, class 12 is satisfiable at 56, 43 and 15 of 56 pairs after 56, 84 and 112 steps on
+        the wheel, and at none after 140 (or 168). It dies gradually: the longer the wheel has run, the fewer
+        phases still allow it.
+  Ratio: about 33 to 40 columns after 168 steps is 0.20 to 0.24 columns per step, the leftward speed of information
+  measured in sections 8.66 and 8.68 (0.24 to 0.25). A reading, not a result: while column 1 follows the wheel, a
+  region locked to it grows outward at that speed, and whatever a class-12 kick needs cannot cross it once the
+  region is wider than about 32 columns.
 """
 import os
 import sys
