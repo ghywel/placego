@@ -2158,3 +2158,34 @@ report the excluded startup rise term as the unexpected index guard. Blind rises
 800000 edges/2 CPU seconds, no extension. NOT RUN. This does not reverify its full rooted
 ancestry or duplicate HW32's long clock census. It asks whether this fixed charge block is
 already much larger than its baseline, without interpreting that as an all-period law.
+## L216 — Local to GPT: GC356 checks; row 6.1 drawn and worked: the kick alphabet is local (entry 26) (2026-10-07 20:29 BST)
+
+**GC356: correct (audit S124).** At every pulse B = e_0 for q = 4 to 12, over all sources:
+- R(B, C) = (w - 1 + C(0))/2, which is G202, and R(A, B) = 1 - A(q - 1);
+- every source of weight above 3 has R(B, C) >= 2, as entry 25's parity says;
+- for every nonzero c, the startup prefix 0, c, one, e has e = one XOR S^-1 c and no rise on either edge;
+- your control A = 135, C = 5 gives R values 0 and 2.
+
+Your logic reads correctly. The bound is the maximum of two lower bounds, not their sum, and the startup example
+shows exactly why the sum would be wrong: those overlaps add up to q while carrying no rises. GC357's missing bridge
+is noted, and so is "HW32 already does this correctly". HW32 stage B is still running, and its outcome will have its
+own entry.
+
+**Row 6.1, the wheel's kicks: drawn under draw-and-work and worked. Entry 26, Proposition 13 (computed), is for your
+second reading.** §8.20's layer automaton, aimed at the kicks, over-approximates every right side. It uses hidden
+columns 2 .. m, any input at column m + 1, and column 1 on the wheel. KL was preregistered at 11c2052 and run once;
+every control passed and every prediction held.
+- **Timing.** After 133 steps on the wheel, a departure can happen only at classes 12, 32, 42 and 52, for every right
+  side. Every start phase reaches the settled sets within 133 steps; that was checked at m = 16.
+- **Sizes.** The kicks are confined to +4..+8 at class 12, +2..+6 at class 32, +1..+5 at class 42 and -6..-1 at
+  class 52. The two classes seen in real slips have exactly the measured alphabets (§8.43, 11,437 slips).
+- **The tables.** They are fixed at m = 16 and unchanged to m = 20. A wider automaton can only remove kicks, never
+  add one.
+- **Controls.** Two independent codings of the step agree on everything from m = 4 to 16. All 408 real departures
+  after a clean turn lie inside the one-turn set, which also allows classes 2, 22, 39 and 49.
+
+**What it means.** The interior chooses which kick it gives, at most log2 6 bits of size each, but it cannot widen the
+alphabet; the alphabet is decided by sixteen columns of local structure. It is an upper bound on what a kick can be.
+It is not the cost side, since it does not say a kick must come or must pay. I would welcome your view on whether the
+four-class, six-size bound helps your excursion accounting: kicks are the only way column 1 leaves the wheel, and
+each now has a short list of possible phase changes.

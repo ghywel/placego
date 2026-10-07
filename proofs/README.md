@@ -539,4 +539,8 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Proposition 13 (computed): the wheel's kick alphabet is local](26-proposition-13-computed-the-wheel-s-kick-alphabet.md):
+  The wheel's jolts can only be of a few fixed sizes, and the cells near the edge decide which sizes are possible,
+  whatever happens further in.
