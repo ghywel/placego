@@ -252,7 +252,16 @@ The black-drawer statement uses 'orphan' to mean a sock with no possible compati
   Counter-evidence: a gap under ten years, or Britain first. Caveat stated in advance: "for ever" also counts
   phrases such as "for ever and ever", which keeps the open form alive in both corpora.
 - **Method.** tests/probes/sparks/sc5_forever.py; the Ngram data is fetched at run time and not kept in git.
-- **Status.** Running.
+- **Result.** Crossovers: American 1846, British 1989, a gap of 143 years. Per million words, five-year averages: in
+  American books "forever" against "for ever" stood at 38 to 42 in 1800, 26 to 7 in 1900 and 33 to 3 in 2019; in
+  British books at 2 to 56 in 1800, 3 to 15 in 1950 and 22 to 8 in 2019.
+- **Verdict.** Supported, more strongly than predicted: the gap is 143 years, not 30. My American window (1880 to
+  1940) was wrong; American printing already used the closed form almost as often as the open one in 1800, while
+  British printing barely used it until the 1970s. Caveat: the corpora's early years are small, and their dates and
+  regions are noisy.
+- **Second reader.** Awaiting.
+- **Might inspire.** Whether Webster's American spellings explain the early split, or merely came out of it.
+- **Status.** Done.
 
 ## SC6 — a family that survived the redrawing (2026-10-07, Cloud; from candidate 7)
 
@@ -266,7 +275,18 @@ The black-drawer statement uses 'orphan' to mean a sock with no possible compati
   not of every character ever written.
 - **Method.** tests/probes/sparks/sc6_yang_family.py; Unihan and the decomposition table are fetched at run time and
   not kept in git.
-- **Status.** Running.
+- **Result.** 152 characters contain 昜; 45 have a different simplified form listed. As preregistered: 30 of the 45
+  (67 per cent) contain 𠃓, and 15 do not. Found after the first run, and labelled post hoc: 12 of those 15 simplify
+  to recently encoded characters (Unicode extensions G and later) that the decomposition table does not describe, so
+  they are unknown rather than exceptions. Of the forms the table describes, 30 of 33 (91 per cent) keep 𠃓. The
+  three genuine exceptions are 陽 → 阳 (日 beside 阝), its descendant 鐊 → 𬭏 (built on 阳), and 傷 → 伤 (𠂉 over 力). Of my
+  named exceptions, 殤 → 殇 and 觴 → 觞 in fact keep 𠃓, under a 𠂉 cap.
+- **Verdict.** Local's claim is supported: 陽 → 阳 is one of very few characters that left the family, and the only
+  one with descendants. My preregistered thresholds were missed (67 per cent, 15 exceptions), almost wholly because
+  of the table's gaps, and half my named exceptions were wrong: only 伤 traded 𠃓 for 力.
+- **Second reader.** Awaiting.
+- **Might inspire.** The same count for another sound part, to see whether a shorthand usually survives so cleanly.
+- **Status.** Done.
 
 ## SC7 — why a just chord rings (2026-10-07, Cloud; from candidate 4)
 
@@ -281,4 +301,15 @@ The black-drawer statement uses 'orphan' to mean a sock with no possible compati
   fewer lines, or no such beating pairs. This is arithmetic on an idealised voice, not a recording, so it tests the
   explanation and not the experience of a room.
 - **Method.** tests/probes/sparks/sc7_just_chord.py.
-- **Status.** Running.
+- **Result.** 37 partials below 4 kHz in each tuning. Distinct lines: 28 just against 37 equal-tempered, 24 per cent
+  fewer. Every just partial is a whole multiple of 65.41 Hz. The equal-tempered near-coincidences among harmonics 1
+  to 8: the fifth's shared overtone near 784 Hz beating at 0.89 Hz, the third's near 1,313 Hz at 10.38 Hz, the upper
+  fifth's near 1,569 Hz at 1.77 Hz, and a pair near 1,969 Hz at 17.79 Hz; two of these fall between 1 and 15 Hz.
+- **Verdict.** Refuted as stated, narrowly on both counts (24 per cent fewer lines against my 25; two beating pairs
+  in the window against my three, with a third just below it at 0.89 Hz). The mechanism holds: just tuning puts
+  every overtone on one hidden fundamental two octaves below the root, while equal temperament splits the shared
+  overtones into a slow wavering of the fifth and a fast, rough beat of the third. That third is what singers tune
+  away when a chord rings.
+- **Second reader.** Awaiting.
+- **Might inspire.** The same count for a barbershop seventh (4 : 5 : 6 : 7), whose ring is the famous one.
+- **Status.** Done.

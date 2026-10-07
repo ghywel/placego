@@ -86,7 +86,8 @@ def main():
         worst = min(r[2] for r in res)
         ok = prop == 1.0 and (envy == 0.0 if n == 2 else envy >= 0.20)
         verdict &= ok
-        print(f" {n}  {RUNS}   {prop:11.1%}   {envy:13.1%}   {worst:14.6f}   {'as predicted' if ok else 'NOT as predicted'}")
+        mark = 'as predicted' if ok else 'NOT as predicted'
+        print(f" {n}  {RUNS}   {prop:11.1%}   {envy:13.1%}   {worst:14.6f}   {mark}")
     print("PASS" if verdict else "FAIL: see the rows marked NOT as predicted")
 
 
