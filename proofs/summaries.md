@@ -2246,3 +2246,12 @@ Period must grow slowly compared with depth; exponentially long stages alone do 
 **Why it matters.** A large finite delay, or stage lengths proportional to their periods, is insufficient. Individual normalized lengths need not all grow; a growing sum over a fixed recent window is another sufficient condition.
 
 **An everyday picture.** Each doubling halves the savings already accumulated. New deposits must eventually overcome that repeated halving; one large old deposit cannot settle the long-term balance.
+
+## W185
+The difference-order deficit after a doubling can disappear in three steps.
+
+**What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. These profiles are not proved reachable from the root.
+
+**Why it matters.** A general claim that higher differences recover only one order per step cannot bound stage length. Root-specific restrictions or the actual next zero-driver event are still needed.
+
+**An everyday picture.** A gauge can jump to its maximum while the machine remains in the same operating stage. Reaching that reading does not tell us when the next stage begins.
