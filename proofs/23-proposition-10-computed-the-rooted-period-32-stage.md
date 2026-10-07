@@ -51,3 +51,9 @@ extrema and original paths are consistent. The final 39-round segment has 17 per
 branches, and its independently computed nonzero-step exposure, 11,812,266,419, equals the STOP counter minus the
 last PROGRESS counter. The scope is an audit of the retained Local computation, not an independent three-hour trajectory
 reproduction. No asymptotic or prize claim follows.
+
+*Replay (Local, 2026-10-07; RS32 stage B, `tests/probes/lexicon/rule30_rs32.c`).* A restructured program, which shares
+TM6b's walk code but runs the histories on a pool of eight threads without lockstep rounds, re-ran the stage to $F$ in
+30 minutes. All 144 events (exits, branches and the doublings above depth 399) matched TM6b's as (depth, kind,
+driver), and so did every counter: 73 walks, 17 live, 56 exits, 72 branches, 20 doublings, 113 period-32 zeros and
+436,983,015,918 period-32 steps, with no literal failure. This is a second execution, not independent code.

@@ -39,7 +39,19 @@
  * failures 0, steps32 2,043,501,457. RS32-C1 PASS: (p 2, r 1) at depth 5 and (p 16, r 2) at 725,146, no other start
  * below p = 32. RS32-C2 PASS. RS32-P1 HELD: no start at p = 32. Singleton-driver states at p = 32: 13 against a
  * uniform 15.2; predecessor weights 8, 12, 13, 15 (3), 17 (2), 18 (3), 19, 20, median 17; the driver inside the
- * predecessor at 8 of 13. Stage B: running.
+ * predecessor at 8 of 13.
+ * OUTCOME, stage B, 2026-10-07 19:37 (M5, one run at commit 7b05961, 1,791 s on 8 threads; transcript outside Git).
+ * RS32-C0 PASS: 73 walks, 17 live, 56 exits, 72 branches, 20 doublings, zeros32 113, steps32 436,983,015,918,
+ * literal failures 0, and all 144 TM6b events reproduced exactly as (depth, kind, driver): a second execution of
+ * Proposition 10's period-32 stage by a restructured program (a thread pool, no lockstep rounds) sharing TM6b's
+ * walk code. RS32-C1 PASS (RS16's two starts, nothing else below p = 32). RS32-C2 PASS. RS32-P2 REFUTED: no start
+ * node at p = 32 at all. RS32-P3 REFUTED, narrowly: 3,260 singleton-driver states against the uniform 3,255.8,
+ * ratio 1.001, just above the predicted upper end 1. RS32-P4 HELD: median predecessor weight 16. Predecessor
+ * weights run from 5 to 27 (5: 1, 7: 1, 8: 5, 9: 20, 10: 41, 11: 70, 12: 175, 13: 284, 14: 373, 15: 436, 16: 444,
+ * 17: 398, 18: 373, 19: 282, 20: 183, 21: 93, 22: 46, 23: 20, 24: 8, 25: 5, 26: 1, 27: 1), the driver inside the
+ * predecessor at 1,640 of 3,260. So every singleton event of the stage has a source of weight above 3 (GC344). Why
+ * P2 failed: a coin predecessor is a named source with probability 31/2^32 per singleton event, so the stage
+ * expects about 2e-5 starts; scaling RS16's p = 16 fraction across periods ignored that 2^-q.
  */
 #include <pthread.h>
 #include <stdint.h>
