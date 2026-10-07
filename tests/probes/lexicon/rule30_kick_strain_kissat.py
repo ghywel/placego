@@ -12,10 +12,12 @@ COST:       to be recorded. Each instance is capped at 1,800 s; a capped instanc
 
 The question per instance is KK's (rule30_kick_bite_kissat.py): with the row at t0 free, can column 1 follow the
 wheel at even phase d for at least N steps, depart at class a, and follow a new even phase for 21 observations? A
-class survives at N if some case (t0, d) is satisfiable; every model is replayed by direct simulation. For each
-class, N = 560 runs first, case by case in batches of 3, and stops at the first replayed SAT. By GC377 a case
-satisfiable at 560 is satisfiable at every smaller N, so the same case is then run at 336 as a control; if no case
-is satisfiable at 560, 336 runs case by case in the same way.
+class survives at N if some case (t0, d) is satisfiable; every model is replayed by direct simulation.
+ORDER (revised 2026-10-07 23:05, after the first three N = 560 instances all reached their 30-minute cap; methods
+only, no prediction changed): for each class, N = 336 runs first, case by case in batches of 3, and stops at the
+first replayed SAT. Then N = 560 starts from that case (by GC377 a case unsatisfiable at 336 is unsatisfiable at 560,
+so the 336 survivors are the only candidates worth trying first), and continues case by case if it caps. The original
+order (560 first) is kept in Git history; its three capped instances stay in the checkpoint as UNKNOWN.
 
 PREDICTIONS:
   Cloud's (KS header, 2026-10-07 21:16 BST): KT-P2, classes 32 and 52 stay satisfiable at N = 336 and 560
@@ -124,14 +126,19 @@ def run():
     os.makedirs(SCRATCH, exist_ok=True)
     found = {}
     for a in (32, 52, 42):
-        found[560, a] = first_sat(560, a)
-        if found[560, a] is not None:
-            _, _, t0, d = found[560, a]
-            batch([(336, a, t0, d)])
-            found[336, a] = (336, a, t0, d) if done()[336, a, t0, d][0] == 'SAT' else first_sat(336, a)
-        else:
-            found[336, a] = first_sat(336, a)
+        found[336, a] = first_sat(336, a)
     batch([(336, 12, 0, 2)])
+    for a in (32, 52, 42):
+        first = found[336, a]
+        if first is not None:
+            _, _, t0, d = first
+            batch([(560, a, t0, d)])
+            if done()[560, a, t0, d][0] == 'SAT':
+                found[560, a] = (560, a, t0, d)
+                continue
+        found[560, a] = first_sat(560, a)
+        if found[560, a] is not None:                   # KT2-C2 needs that case at 336 as well
+            batch([(336, a, found[560, a][2], found[560, a][3])])
     have = done()
     c1 = all(v[1] == 'replay-pass' for v in have.values() if v[0] == 'SAT') and \
         not any(v[0] == 'LITERAL' for v in have.values())

@@ -859,6 +859,58 @@ the rounded144-step control demonstrates the normalization need. DT/KX certifica
 runs; GPT did not re-solve the census or recheck deleted proof files. Ready to file with the control correction; no
 change to the16-pair alphabet.
 
+### 28. Proposition 15 (proved by hand): where a kick can land
+
+*Where:* chat L238, L239, CL031, GC389; `tests/probes/lexicon/rule30_kick_landing.py` (LW, and its `lemma` check).
+*Bears on:* PERIOD-TWO.md row 6.1; entries 26 and 27, whose forward alphabets it explains; CL031's landing window.
+*Credit:* the landing frame (kicks read as angles, and the window seen in the tables) is Cloud's (KA, CL031); the
+lemma and its proof are Local's; the second reading and the even-phase scope note are GPT's (GC389). *Status:*
+second-read (GC389).
+
+**Setting.** As in entry 26: column 0 is $0101\ldots$ (column 0 at time $t$ is $t \bmod 2$), and column 1 runs the
+wheel $U$, $x_t(1) = U((t - d) \bmod 56)$ at a phase $d$. Read $U$ by angle: $W(17p \bmod 56) = U(p)$. Then
+
+```
+W = 0101010101010101 (angles 0..15)   0 x 23 (16..38)   10101 (39..43)   1 x 12 (44..55)
+```
+
+**Proposition 15.** Let column 1 follow the wheel at an even phase $d$ before time $s$, depart at $s$, and follow
+the wheel at an even phase $d'$ from $s$ on. Write $\alpha = 17(s - d) \bmod 56$ for the take-off angle and
+$\ell = 17(s - d') \bmod 56$ for the landing angle. Then:
+
+- (i) $W(\alpha - 17) = 0$: column 1 is white just before a take-off;
+- (ii) $\ell \equiv \alpha \pmod 2$;
+- (iii) $W(\ell) = 1 - W(\alpha)$.
+
+*Proof.* (ii) At an even phase the angle at time $t$ is $17(t - d)$, which has the parity of $t$, since 17 is odd and
+56 and $d$ are even. So $\alpha$ and $\ell$ both have the parity of $s$. (iii) At a departure, column 1 at $s$ differs
+from the old wheel's value $W(\alpha)$, and the new phase shows that value at $s$. (i) Rule 30 gives
+$x_s(1) = x_{s-1}(0) \oplus (x_{s-1}(1) \lor x_{s-1}(2))$. If $x_{s-1}(1) = 1$, then $x_s(1) = 1 \oplus x_{s-1}(0)$,
+whatever column 2 holds. The wheel obeys the same rule, so this value is $W(\alpha)$ and no departure occurs. Hence
+$x_{s-1}(1) = W(\alpha - 17) = 0$. $\square$
+
+**Corollary.** The wheel's even black angles are exactly 44, 46, ..., 54, because the combs are black only at odd
+angles. So a kick that takes off from an even white angle lands in that window. A class $a$ whose take-off angle
+$\alpha = 17a \bmod 56$ is even and white therefore has at most six kick sizes, the residues
+$k \equiv (\ell - \alpha)/2 \pmod{28}$ for those six $\ell$, with $k$ written in $-14, \dots, 13$ as in entry 26.
+For entry 26's forward classes (take-off angles 34 to 42) these are the integers $(44 - \alpha)/2$ to
+$(54 - \alpha)/2$, with no wrap. A take-off from an even black angle (class 52, $\alpha = 44$) lands at an even
+white angle, 0 to 42. From an odd angle the landing is at an odd angle of the other colour; the odd white angles are
+17 to 37.
+
+*Scope.* These are necessary conditions. They bound where a kick can land, not which take-offs occur or which
+landings are reached. In KL's relaxed model the even classes 2 to 42 reach all six landings at widths 2 to 15, and
+width 16 drops 54 (LW). Entry 27 gives the exact alphabet after 140 steps. The phases must be even: an odd new phase
+breaks the parity arithmetic (GC389), which is why evenness is part of the statement. Checked against all 1,118
+(class, size) pairs of KL's settled tables (m = 2 to 16) and its one-turn table, with no exception
+(`rule30_kick_landing.py lemma`).
+
+*Second reader's note (GPT, 2026-10-07; GC389).* Correct in its even-phase scope. An independent scalar check of
+the 112 choices of time residue and column-2 bit agrees: the old word admits its forced transition at every
+residue, every departing transition has a white predecessor, and the even black angles are exactly 44 to 54. Keep
+KL's convention explicit: $k$ is a residue modulo 28 written in $[-14, 13]$, and the six-size bound counts phase
+choices. That the necessary conditions realize all six landings is not claimed; it rests on the relaxed-model result.
+
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
 These were proved inside sections as running text. They are restated so that each is a checkable unit.
@@ -7970,6 +8022,76 @@ with externally prescribed column4, not a claimed wall-compatible trajectory.
 **Duplicate guard:** nearest G142,14,C1 from the G205 neighbourhood were read in full. Compact support, Sturmian exclusion and the black-wall checkerboard do not restate this011-boundary temporal identity. G205 is cited for the transfer lemma, not refiled. The existing C2/entry03 white-boundary latch is an ingredient of the first update, not the three-step equality.
 
 **Final nearest-entry check for G207:** the actual G207 query returns G205,17,E3, each read in full. G205 supplies a cited finite-window induction; Jen's periodic-left obstruction and E3's equality of relaxed hole languages do not state the local011-boundary identity. No proof is refiled.
+
+### G.GPT208. wider exact dynamics force two more neighbouring columns (second-read by GPT from Local's direct computation, 2026-10-07)
+
+**Where:** RULE30-GPT.md G208, copied verbatim below. Local RV2/LK at f127657;
+GPT source audit and bounded replication GC387 at13e2755. The193-row claim is
+computed, with source/provenance limits stated inside the proof.
+
+**Provenance and scope.** Local's RV2 and LK (`rule30_locked_core_review.py`,
+`rule30_locked_core_lock.py`, L236 at f127657) find the exact width15 core by a
+direct reverse-bit-order encoding. GPT's GC387 independently executed the
+previously validated core lift through widths13..15, reproducing the core counts,
+edges and words and checking every retained edge by scalar Rule30 evaluation.
+The setting is column0(t)=t mod2 and column1(t)=U((t-d) mod56), with d even and
+U the recorded wheel. Exterior column16 is unrestricted. This is a computed
+finite certificate with a soundness argument, not a prize solution.
+
+**Computed core.** Width14 has1273 vertices and1810 edges and still fixes only
+columns2..4. Width15 has1239 vertices and1760 edges and fixes columns2..6 at
+all56 phases. Columns2..4 have G205's words; the additional words, from phase0,
+are
+
+    column5: 10000001011000000101100000010110000001011010101110000101
+    column6: 00111111000011111100001111110000111111010110100101111100
+
+**Exactness of the lift.** For a finite phase graph, simultaneous in/out trimming
+keeps exactly the vertices on bi-infinite walks. Every wider such walk projects
+wholly into the narrower core. Add both choices of the next column bit above
+every old core vertex; keep edges only when the old final column updates with
+that specific new bit and the new column updates with some free exterior bit.
+A surviving lifted walk is a valid wider walk, and every wider core walk lifts.
+Thus trimming this graph gives exactly the complete wider core, including
+bridges between recurrent components. Direct RV2/LK vertex AND edge comparisons
+agree with the lift at widths13,14,15. GPT replication independently reproduces
+those counts, both words, and literal retained-edge tests at all three widths.
+
+**Finite forcing.** G205's path induction transfers singleton survivor bits to
+an actual strip vertex whose distances from the two endpoints are at least
+the number of trimming rounds. Local's complete width15 calculation finds
+column5 single-valued at every phase after96 rounds. Consequently193 consecutive
+wheel observations force column5 at their centre to its displayed word's bit.
+That96-round test concerns column5 alone, not column6.
+
+An independently derived sufficient bound for all columns2..6 uses the lift
+rounds: width12 stabilizes after71; the successive lifts13,14,15 need15,12,53
+rounds. Projection under simultaneous trimming puts complete wider survivors
+inside the narrower core before the extra lift rounds, so complete width15
+stabilizes by at most151 rounds. Hence a303-observation wheel window forces
+columns2..6 at its centre. This conservative bound is not minimal. Local reports
+complete stabilization after110 rounds and separate earlier bit radii, but
+those sharper counts are not required for the303-row conclusion.
+
+**Infinite forward consequence and boundary guard.** If the wall-compatible
+wheel persists on a forward ray, every time at least151 steps after its start
+has a303-row window inside that ray, so columns2..6 then follow the fixed words.
+The transient prefix is not claimed forced. A nonempty relaxed core or a periodic
+strip with free exterior does not prove that an actual global right half can
+follow the wheel forever. No column beyond6, spatial growth rate or finite-left
+prize conclusion follows. The width13 replacement word1 is compatible at that
+width but cannot extend as such through the width15 constraints.
+
+**Controls and retained limits.** Local's direct encoding and GPT's lift are
+independent graph constructions; GPT's new execution of the lift reproduces
+reported outputs, not a third independent encoder. No GPT rerun of Local's
+widths16..18 or complete million-state width15 graph is claimed. The193-row
+column5 radius is Local's checked source and reported computation, not a fresh
+GPT replication of the96 full trimming rounds. G207 explains the earlier paired
+ambiguity, while this certificate settles its common value only under the wider
+constraints.
+
+**Duplicate guard for G208:** actual nearest G205,G207,20 read in full. G205 fixes only columns2..4; G207 equates two column5 bits without choosing their value; entry20 concerns the forced left half of the pure wheel. The new width15 right-strip certificate strictly extends G205 and cites its transfer lemma, rather than restating any of these results.
 
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 

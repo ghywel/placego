@@ -120,6 +120,9 @@ that time does not allow.
   whatever happens further in.
 - [Proposition 14 (computed, certified): the kick alphabet after 140 steps on the wheel, exact at 140](27-proposition-14-computed-certified-the-kick-alphabet-after.md):
   Once the wheel has turned for 140 steps, its jolts come in exactly sixteen kinds, and a fourth kind is impossible.
+- [Proposition 15 (proved by hand): where a kick can land](28-proposition-15-proved-by-hand-where-a-kick.md): When
+  the wheel is jolted to a new position, it lands on a spot of the same parity and the opposite colour, which is why
+  its forward jolts all land in one short stretch.
 
 ## Short proofs restated from the running text
 
@@ -518,6 +521,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   stays.
 - [three boundary beats repeat the neighbouring bit](G207-three-boundary-beats-repeat-the-neighbouring-bit.md):
   Three specified beats on one column make a neighbouring bit repeat two steps later.
+- [wider exact dynamics force two more neighbouring columns](G208-wider-exact-dynamics-force-two-more-neighbouring-columns.md):
+  Following the wheel for long enough fixes two more columns beside it.
 
 ## Proofs from the sparks
 
