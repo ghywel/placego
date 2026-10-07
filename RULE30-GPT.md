@@ -9555,3 +9555,137 @@ can be charged uniformly without promoting an arbitrary restarted subwindow to a
 Nearest G160/G174/G163 read; no duplicate filing. Controls and scope are in the entry24 second-reader
 note, with an internal-interval countercheck. Local owns the RS32 run; stageA results are received,
 not replayed here. No prize conclusion follows.
+
+
+## Heavy pulse windows share a period budget between their second and fourth delays (2026-10-07; GC347)
+
+**Bounded same-clock support deduction, second reading requested; no trajectory or proof filing.**
+Prediction recorded before controls: the heavy-source fourth delay is tied to the second delay, not an
+independent worst gap. Counterfactual: the same period-budget inequality holds for the named two-black
+return to a pulse. That extension fails in its literal control.
+
+Use GC344's q>=4, source |A|>3, pulse B=e_s and following C,D,E. Let t=s+L be the first black C
+position after s. In GC342's formula, E(i+1)=1 XOR C(i) outside the correction positions. If C(s)=0,
+the next zero of C after t occurs no later than s on going around the circle. If C(s)=1, the heavy-source
+hypothesis excludes C having only the initial forced zero interval (GC342's singleton-E classification).
+So another zero occurs strictly before returning to s. Write u for that next zero and M=u-t as a
+positive cyclic distance. Then
+
+    1 <= M <= q-L          when C(s)=0,
+    1 <= M <= q-L-1        when C(s)=1.
+
+All C positions t+1,...,u-1 are black, and their following E positions are zero. E(u+1)=1, with no
+interval correction in this range. Therefore the fourth driver, reached at t+2 after D's one-step
+reset, has exact delay M. From any arrival at B the four delays are(k,L,1,M),1<=k<=q, with L+M<=q.
+This is an actual same-clock correlation of the two gaps; charging them as independently maximal
+would discard it. Heavy windows remain disjoint by GC344.
+
+At slope5/2, the exact ordered interval debt is
+
+    max(0,k-5/2,k+L-5,k+L+M-9,L-5/2,L+M-13/2,M-5/2).
+
+Terms involving k increase with k; all others are dominated at k=q since L,M<=q-1. Thus the
+maximum over arrivals is the post-pulse value
+
+    q-5/2 + max(0,L-5/2,L+M-13/2).
+
+This exact four-edge charge replaces GC344's separate positive fourth-edge allowance and uses no
+phase transfer. Its proof, like Proposition11, concerns the full-line clock beginning at B. It is not
+a theorem for arbitrary interior restarts or birth clamps that interrupt the displayed reset suffix.
+Nor do disjointness and L+M<=q bound the number of windows or the complementary same-clock debt.
+
+**Independent fixed controls:** at q8, A=255,C=85,D=249,E=89 gives L=2,M=1; heavy odd A=158 gives
+C=234,D=253,E=42,L=M=1. Nine per-bit triples and literal suffix scans pass. Exact rational
+ordered-prefix checks for k,L,M in their finite ranges at q4,8,16 verify the debt expression and
+maximal-phase consequence. These are formula controls, not rooted census evidence.
+**Identified unexpected check:** the named two-black A=5,B=1,C=249,D=241,E=16 gives L=3,M=8, so
+L+M=11 exceeds q8. There is no outside-gap zero, and E is the pulse just missed by arrival. Thus the
+heavy-source restriction is essential; a bound proved for it must not silently include GC334's rare
+pulse-return windows. No failed large experiment or new all-period estimate is being hidden.
+
+Next: compensate the positive window charges against the intervening edges, preserving actual
+clock phases. Existing count and normalized-stage-growth obligations remain open.
+
+
+**GC342/GC344 independent reviews incorporated (GC348, L213 at cff4fd3).** Local's S119/S120 checks
+verify the fourth-word identity and heavy-window separation, including their literal controls. Its
+complete singleton-E source list is A=0, A=e_(s-1), or A=e_s XOR e_(s+r),1<=r<=q-2. Its weight3
+immediate-overlap list is A=e_s XOR e_(s+j) XOR e_(s+j+1),1<=j<=q-2; only j=q-2 also gives a
+singleton D. These are Local's exhaustive finite checks plus the displayed inverse-case deductions,
+not a GPT replay. Entry24 is now filed in B-prime with GC346's review. GC347's coupled-gap extension
+was derived before receiving L213 and is separately awaiting review. Counts and gap debt remain open.
+
+
+## Source weight pays for the two long gaps in a heavy window (2026-10-07; GC349)
+
+**Bounded literal support compensation, review requested; no trajectory or new proof filing.** Prediction
+recorded before controls: GC347's gap intervals force zero bits in the preceding source A. In the same
+setting, write w=|A|>3 and use cyclic coordinates with s=0. C is zero at1,...,L-1 and one atL,...,L+M-1,
+with the next outside-gap zero at L+M (possibly phase0 if C(0)=0). The source equation is
+
+    A(i)=C(i+1) XOR(C(i) OR e_0(i)).
+
+For L>=2 it forces A=0 on1,...,L-2 and L,...,L+M-2. These disjoint sets have L+M-3 positions,
+including empty intervals when appropriate. The possible pulse correction at0 is outside both sets. Hence
+
+    L+M <= q-w+3,       L <= q-w+2.
+
+For L=1, A(0)=0 because C(1)=1, independent of C(0). In addition A=0 on1,...,M-1, giving
+L+M<=q-w+1, stronger than the common bound. All indices used in the count are distinct by GC347's
+outside-gap condition. Substitution in the exact four-edge debt gives the uniform weight-aware charge
+
+    q-5/2 + max(0,q-w-1/2).
+
+Indeed L-5/2<=q-w-1/2 and L+M-13/2<=q-w-7/2. This is a valid partial charge for each disjoint
+heavy pulse-starting full-line window, without a phase transfer. It does not include interrupted birth
+clamps, count windows against q, or charge intervening edges. Thus it is a concrete support compensation,
+not an all-period clock certificate or a replacement for the normalized-growth obligation.
+
+**Independent fixed controls and unexpected sharpness:** q8 A=255,C=85,L=2,M=1 saturates w+L+M=q+3.
+The q4 alternating control A=15,C=5 does likewise; any smaller universal constant in this inequality
+would fail even for these heavy ambient examples. Odd heavy A=158,C=234,L=M=1 checks the pulse-site
+zero in the stronger L=1 case. Three fixed zero-support controls pass. GC347's two-black pulse-return
+counterexample remains outside this domain; no assumption of independent or uniform random cells is used.
+
+**L214 received (commit d372d3a).** Local's RS32 replay matches the prior finite counters, with shared
+walk construction explicitly disclosed. Its reported3260 period32 singleton events all have source
+weight at least5, so GC344 and these heavy-window bounds apply to those observed events, conditional
+on that retained execution. A weight16 event has the bound45, versus56 at weight5; the median16 is
+not a minimum and must not be substituted for every event. Coin-rate agreement is a descriptive finite
+control, not a proof of independent bits, rooted mixing, or future event frequency. No GPT replay.
+Next: couple these partial charges to intervening same-clock increments or retain a failed compensation
+route if a genuine counterexample appears.
+
+
+## A heavy pulse window need not be followed by a compensating short edge (2026-10-07; GC350)
+
+**Bounded failed compensation attempt, retained; no trajectory or new proof filing.** Prediction
+recorded before the fixed control: the first driver after a heavy four-edge window costs at most2,
+paying some of its positive pulse debt. Formal compatible words refute that prediction. The failure
+concerns this local sufficient condition, not all possible rooted compensation mechanisms.
+
+For dyadic q>=8 choose4<=v<=q-1, set H=v-3, and put C's black support at0,2,v,...,q-1. Set B=e_0.
+Since C(0)=1, the source is A=SC XOR C, with support{0,1,2,v-1}, weight4. GC340/GC342 give D and E.
+Here L=2,M=1. The zero run3,...,v-1 in C becomes black E bits4,...,v. On that interval D is black,
+so the next child F satisfies F(i+1)=1 XOR(E(i) OR F(i)). E(4)=1 fixes F(5)=0, and its black run
+keeps F zero through v+1. At v+1, E=0,D=1,F=0, so F(v+2)=1. The clock reaches F at phase5 after
+B,C,D,E, hence its next delay is v-2=H+1, as large as q-3. It is not uniformly short.
+
+**Independent fixed literal control:** q16,v11 gives the six words
+
+    A,B,C,D,E,F = 1031,1,63493,65529,4088,40974.
+
+Four per-bit scalar triples pass, independently of the packed child constructor. Literal reset scans
+from phase1 give16,2,1,1,9, so the short-tail prediction is REFUTED. The four-edge debt is13.5,
+while the five-edge endpoint debt is16.5: this next edge increases debt rather than compensating it.
+No rooted membership of this formal pair was tested or claimed.
+
+**Identified unexpected boundary:** setting H=0 would merge the two zero-run boundaries and collapse
+A's support to{0,1}, weight2. It would no longer be a heavy-source example. Keeping v>=4 is essential
+when diagnosing this route. The failure survives arbitrarily long H within its formal domain.
+
+This closes the proposed universal local "next edge costs at most2" compensation step. Any repair
+needs more support history, a longer justified charge, or a rooted restriction excluding these pairs;
+a finite random-rate observation cannot provide that restriction. GC347/GC349's valid four-edge
+charges remain unchanged. Next: rooted ancestry restrictions on the two-zero-run C family, or a
+nonlocal same-clock compensation argument, without reopening closed reduced-feature potentials.
