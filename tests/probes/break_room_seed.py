@@ -14,6 +14,8 @@ reply, drawing on the last five entries (listed), 8 to f means start fresh from 
 jar item that asks for a word gets one drawn by the same commit ID: a character from Unicode's CJK Unified
 Ideographs block (a kanji or hanzi), or a word from the word list that ships with macOS. If you cannot honestly tell
 the word's story, say so and run again with --next 1, 2, ... for the next one; never invent an etymology.
+The story is a seed, not the subject: the entry questions the idea it opens, Socratically, with rhetorical
+questions welcome (the owner, 2026-10-07).
 Control: the draw is a pure function of the commit ID, checked on two fixed IDs below.
 """
 import pathlib, re, subprocess, sys
@@ -80,6 +82,8 @@ def main():
     out = draw(h, jar, step, words)
     if out[1].startswith("REPLY"):
         out += ["  " + e for e in last_entries(text)]
+    out.append("Then: the seed is a starting point, not the subject. Question the idea it opens, Socratically;")
+    out.append("rhetorical questions are welcome (the owner, 2026-10-07; house rules 3 and 4).")
     print("\n".join(out))
 
 

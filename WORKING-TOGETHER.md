@@ -205,9 +205,10 @@ fetch and merge, look at its newest entry: if it is your own, push without one; 
 tests/probes/break_room_seed.py`. It reads the newest commit ID, which nobody can steer: 0 to 7, reply, drawing on
 the last five entries (your own included); 8 to f, start fresh from the seed it draws from the jar, such as a random
 kanji or word and its story. Each entry tells its own story, true and about the real world, not fantasy fiction;
-humour is welcome. No hand-off questions, and never invent an etymology. The point is a fresh seed from outside each
-writer, which the owner hopes stops work devolving into loops. The house rules are at the head of the file and in
-the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
+humour is welcome. A seed is where an entry starts, not what it is about: question the idea it opens, Socratically,
+with rhetorical questions welcome (the owner, 2026-10-07), and never invent an etymology. The point is a fresh seed
+from outside each writer, which the owner hopes stops work devolving into loops. The house rules are at the head of
+the file and in the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
 
 ## Sparks (the owner, 2026-10-07)
 
