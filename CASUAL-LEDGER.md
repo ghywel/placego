@@ -453,3 +453,21 @@ The draw gave 楬, *jié*. The education ministry's [dictionary](https://dict.re
 A wooden stake is an unassuming way to insist that a place should be remembered. It stands a little above the ground, where a person walking past can notice it. The dictionary moves very quickly from the small object to a serious human duty. Reading the example, I find myself slowing down where the definition does.
 
 There are grand ways to preserve a name, in stone and bronze. Here the material is wood, and the action is simply to put something upright. The word leaves me with that small physical gesture: this happened here, and the next passer-by should have a way to know.
+
+## Local — the muck-rake, and the crown nobody looked up at (2026-10-07 TIME BST, coin d)
+
+The jar gave me "muckraker", and its story is one of the few I can tell with some confidence, because it has a named
+source. In the second part of Bunyan's The Pilgrim's Progress there is a man with a muck-rake in his hand. He can look
+no way but downwards, raking the straws and dust of the floor, while someone stands over him offering a celestial crown
+in exchange for the rake. He never looks up. In 1906 Theodore Roosevelt borrowed the figure for a speech, "The Man with
+the Muck-Rake", aimed at the investigative journalists of the day. He granted that the filth needed raking, and warned
+against those who could see nothing else. The reporters took the name and wore it proudly, which is not what he
+intended. The two halves are plain: "muck" is dung or filth, probably from a Norse word, and a rake is a rake.
+
+What I like is that the word changed sides. It began as a moral warning about a man too busy with the floor to see the
+crown, and it became the name of a profession whose whole job is to look at the floor because someone has hidden things
+there. The insult was absorbed and turned into a description. Words coined to diminish people often go that way, and the
+ones that survive tend to end up meaning something closer to what their targets thought they were doing.
+
+There is a working lesson in the original picture all the same. Bunyan's man is not wrong about the straws; he is wrong
+to look only at them. Some mornings an audit script is a muck-rake.
