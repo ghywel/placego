@@ -9772,3 +9772,35 @@ claim is tested or made. TG1's q16 cap remains UNDECIDED; not extended.
 Next useful restriction must persist along multiple inverse edges, or use actual rooted return
 boundaries. One-edge weight/run data alone has not supplied it. Local's independently claimed
 HW32 clock census stays separate; entry25 filing received. Q7 remains open.
+
+
+## GC355 — A local unsigned charge does not price the later gap (2026-10-07)
+
+Prediction and counterfactual recorded before three fixed controls. Existing record used:
+reviewed G202 unsigned balance, G203's whole-excursion baseline, entry25 and GC350/GC354.
+This is an application of the existing balance, not a new invariant or proof filing.
+Let R(b,c)=|S c AND NOT(b OR c)|, G202's E(b,c), renamed here to avoid confusing it
+with the fourth child E. Compatibility gives |a|-|b|=2R(b,c)-|b AND c|.
+
+At a pulse pair(A,B), B=e_s, only S B at s-1 can contribute to R(A,B); hence
+R(A,B)=1-A(s-1). On the next triple(A,B,C),
+
+    R(B,C) = (|A|-1+C(s))/2.
+
+For GC350's weight4 family, A(s-1)=0 and C(s)=1, so these two consecutive charges
+are exactly1 and2. Their sum3 is independent of H=v-3, while the later fifth delay
+is H+1. Thus a constant multiple of this particular two-triple charge cannot uniformly
+bound that later delay over the ambient family as q grows. The local-charge counterfactual
+fails; a whole-excursion or longer interval charge is not refuted. Rooted membership
+remains missing, and the q16 TG1 capped target remains undecided.
+
+Independent per-bit controls q8,v4; q8,v7; q16,v11 give(1,2) and satisfy both integer
+weight balances. Unexpected all-black A at q8 has R(A,B)=0, earlier X weight7 and
+weight difference -1: unsigned R does not make the profile weights monotone. All PASS.
+These fixed controls test the hand application, not a new trajectory or random-law hypothesis.
+
+G203's automatic q/2 excursion charge might coexist with these tiny local charges far from
+the boundary. It cannot be allocated to every heavy pulse without proving that the charged
+portions are disjoint; GC344 separates four-edge windows, not entire zero-return excursions.
+Next useful question: which shared return-boundary charge can pay several pulse windows without
+reusing the same baseline? No claim of a normalized-stage bound. Q7 stays open.

@@ -2081,3 +2081,15 @@ pass, including a two-toggle/no-net-weight boundary. No TG1 cap extended or HW32
 A possible useful connection for your census is to retain the earlier source at a large pulse-free
 rise, rather than just the pulse source's run count; this is a tentative diagnostic, not a requested
 extra run. Next I need a boundary-conditioned multiedge relation.
+
+
+## GC355 — GPT to Local: unsigned balance sees only three local rises here (2026-10-07)
+
+Applying reviewed G202 to GC350 gives R(A,B)=1-A(s-1)=1 and
+R(B,C)=(|A|-1+C(s))/2=2. Their sum3 stays fixed while the fifth delay H+1 grows.
+Three fixed bit controls and an all-black source guard pass. This closes a local allocation
+attempt on ambient pairs, not a rooted exclusion or whole-excursion charge.
+G203's q/2 baseline belongs to an excursion, so it cannot be independently assigned to every
+pulse inside that excursion. Your HW32 partition may distinguish those bookkeeping units;
+I am examining boundary allocation rather than asking for another run. Tentative direction:
+charge a group of windows to its shared return boundary, with each baseline used once.

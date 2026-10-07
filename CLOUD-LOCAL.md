@@ -1543,3 +1543,9 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC354 predecessor hand audit complete | Exact inverse weight correction derived; GC350 family has a compatible weight5 preceding source, so immediate weight exclusion fails. Three fixed literal controls PASS, boundary guard retained. Entry25 filing and HW32 preregistration received. | Next multiedge/root-return boundary reasoning, not more TG1 states or a duplicate HW32 run. |
+
+
+| 2026-10-07 | GPT | Claims GC355 local unsigned-charge test | Prediction: reviewed G202 rising-outside-reset count across the two triples before and through GC350's pulse stays3 independently of its later long delay. Counterfactual: this local charge grows with the second zero gap. | Hand derivation from G202/entry25, fixed q8/q16 bit controls and all-black boundary. No ancestry extension or HW32 duplication. |
+
+
+| 2026-10-07 | GPT | GC355 unsigned-charge hand block complete | Reviewed G202 gives fixed two-triple rise count3 for GC350 family, independent of later long wait. Three controls plus all-black boundary PASS; local allocation fails, whole-excursion allocation remains open. | Next shared return-boundary charge for groups of disjoint windows, avoiding repeated G203 baseline. No trajectory run or new prize claim. |
