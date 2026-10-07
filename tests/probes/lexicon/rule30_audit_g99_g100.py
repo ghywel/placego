@@ -263,6 +263,11 @@ CHECKS (GPT's claims at 827e006):
   S55 (G161, added 2026-10-07 at 17b7292): the single representative path, run for Q = 1, 2, 4, 8 only, reports no
      genuine branch and visits exactly K(Q) nodes of S51's complete trees, its pair period stays exact, and the
      labeled node counts obey N(Q) = N(Q/2) + Q (K(Q) - K(Q/2)) = 3, 13, 97, 3065.
+  S56 (G162, added 2026-10-07 at 2756706): by literal reset arithmetic (each driver's cost = steps to one past its
+     first black cell at or after arrival), at every even-parity zero-driver pair (a, 0) of every period P <= 10 and
+     every gated phase r, the three post-split costs of the two children are {l + 2, l + m + 2} for the adjacent runs of
+     c at r; the rooted control a = 0000110001010011 gives the six cost pairs of G162; the single-black-cell family
+     attains q + 2 at q = 4..16; and the pulse-difference family has orders q - 2 -> q - 1 and cost q + 2 at q = 8..16.
 """
 import random
 from fractions import Fraction as F
@@ -2580,4 +2585,80 @@ for Q in (1, 2, 4, 8):
 ok55 &= N55[1] == 3 and all(N55[Q] == N55[Q // 2] + Q * (K51[Q] - K51[Q // 2]) for Q in (2, 4, 8))
 check('S55 G161: the single representative path agrees with the complete rooted trees for Q <= 8', ok55,
       'labeled nodes N(Q): %s' % N55)
+def reset_cost(w, r, P):
+    t = r
+    while not (w >> (t % P)) & 1:
+        t += 1
+    return t - r + 1, (t + 1) % P
+
+
+def three_costs(a, c, r, P):
+    """Elapsed cost of the next three nonzero drivers below (a, 0) along child c: c, then d, then e."""
+    d = [x for x in edge_children(0, c, P)]
+    assert d == [(1 << P) - 1]
+    e = edge_children(c, d[0], P)
+    assert len(e) == 1
+    k1, r1 = reset_cost(c, r, P)
+    k2, r2 = reset_cost(d[0], r1, P)
+    k3, r3 = reset_cost(e[0], r2, P)
+    return k1 + k2 + k3
+
+
+def run_pair(c, r, P):
+    """(l, m): lengths of the constant run of c starting at r and of the next run."""
+    v = (c >> r) & 1
+    l = 0
+    while ((c >> ((r + l) % P)) & 1) == v and l < P:
+        l += 1
+    m = 0
+    while ((c >> ((r + l + m) % P)) & 1) != v and m < P:
+        m += 1
+    return l, m
+
+
+ok56 = True
+n56 = 0
+for P in range(2, 11):
+    for a in range(1, 1 << P):
+        q = lp_bits(a, P)
+        if bin(a & ((1 << q) - 1)).count('1') % 2:
+            continue
+        kids = edge_children(a, 0, P)
+        if len(kids) != 2:
+            continue
+        for r in range(P):
+            if not (a >> ((r - 1) % P)) & 1:
+                continue
+            c = kids[0]
+            l, m = run_pair(c, r, P)
+            costs = sorted(three_costs(a, k, r, P) for k in kids)
+            ok56 &= costs == sorted([l + 2, l + m + 2]) and l + m <= q
+            n56 += 1
+aW = int('0000110001010011'[::-1], 2)                  # time order -> bit t
+cW = int('0000010000110001'[::-1], 2)
+ok56 &= sorted(edge_children(aW, 0, 16)) == sorted([cW, cW ^ 0xFFFF])
+want = {0: (7, 8), 5: (3, 7), 6: (6, 8), 10: (4, 7), 12: (5, 6), 15: (3, 8)}
+gates = [r for r in range(16) if (aW >> ((r - 1) % 16)) & 1]
+ok56 &= gates == [0, 5, 6, 10, 12, 15]
+ok56 &= all(tuple(sorted(three_costs(aW, k, r, 16) for k in (cW, cW ^ 0xFFFF))) == want[r] for r in gates)
+for q in (4, 8, 16):
+    c1 = 1 << (q - 1)
+    a1 = c1 ^ (((c1 >> 1) | (c1 << (q - 1))) & ((1 << q) - 1))
+    ok56 &= lp_bits(a1, q) == q and max(three_costs(a1, k, 0, q) for k in edge_children(a1, 0, q)) == q + 2
+for q in (8, 16):
+    mq = (1 << q) - 1
+    dlt = lambda w: (w ^ (((w >> 1) | (w << (q - 1))) & mq)) & mq      # (Delta w)(t) = w(t) XOR w(t+1)
+    g = 1 << (q - 1)
+    cD, aD = dlt(g), dlt(dlt(g))
+
+    def nu(w):
+        k = 0
+        while w:
+            w = dlt(w)
+            k += 1
+        return k
+    ok56 &= nu(aD) == q - 2 and nu(cD) == q - 1 and bool((aD >> (q - 1)) & 1)
+    ok56 &= max(three_costs(aD, k, 0, q) for k in edge_children(aD, 0, q)) == q + 2
+check('S56 G162: three post-split costs are {l + 2, l + m + 2}; the rooted control; the q + 2 families', ok56,
+      '%d gated even-parity cases checked' % n56)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

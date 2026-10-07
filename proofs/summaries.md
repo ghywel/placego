@@ -2002,6 +2002,6 @@ visitor, never the daily traffic.
 
 To find the first genuine branch, follow one representative history instead of all its time rotations. Before such a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is exact but the history may still be long.
 
-## W162
+## G162
 
 After a genuine split, three reset steps cost either the current run length plus two, or the current and next run lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a much larger cost elsewhere, so those orders alone do not bound waiting.

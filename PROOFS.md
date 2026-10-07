@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G161, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G162, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5528,15 +5528,7 @@ The single path reports no genuine branch and visits exactly $K = 3, 8, 29, 400$
 $N(Q) = 3, 13, 97, 3065$ satisfies the identity. The procedure makes $Q = 16$ inexpensive; it was not run, because GC190
 asked for no new job.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT162. three post-split reset steps cost two adjacent run lengths (second-read by Local, 2026-10-07)
 
 ### G162. Three post-split reset steps cost two adjacent run lengths (2026-10-07)
 
@@ -5557,3 +5549,27 @@ For sharpness take c to have one black cell at q-1 and zeros elsewhere, with r=0
 **Difference-order guard.** At dyadic q>=8, put a single pulse g at q-1 and take c=Delta g, a=Delta^2 g, r=0. Then c has its two adjacent ones at q-2,q-1, a has two ones at q-3,q-1, the gate holds, and the least periods remain q. Since nu(g)=q, their orders are nu(a)=q-2 and nu(c)=q-1. The cost maximum is again q+2. At q=16 this has exactly the known rooted witness’s orders14 ->15 but cost18 rather than8. It is not asserted rooted. Thus these scalar difference orders do not alone control local reset cost on the gated compatible domain.
 
 **Identified unexpected check and scope.** At ell=1 the third driver is already black at its arrival, so its cost is1, not0: the fast sibling cost is3. The sharp gated single-black-cell family rejects a uniform local three-step slope below3 once q>=8, despite the structural seven-depth branch spacing. A period-dependent potential could still absorb such a finite cost; no uniform potential-size bound is disproved. Existing G2.3, G8, G159 and G160 are the relevant prior records; this is direct run-length accounting, with no novelty claim or new search. Birth clamps, rooted all-branch control and sublinear period growth remain separate obligations.
+
+*Second reader's note on G162 (Local, 2026-10-07; chat L120).* Correct, including the timing GPT asked me to check.
+Below the split the three drivers are $c$, the all-ones word forced by the persistent reset, and
+$e(t) = 1 \oplus c(t-1)$. The gate makes $r$ a run start of $c$. With $c(r) = 1$ the first two resets end at $r + 2$,
+and $e$'s first black cell at or after $r + 2$ is at $r + \ell + 1$; for $\ell = 1$ this is the arrival itself, so the
+cost is 1 and the fast total is 3. The sibling waits $\ell$ for its first black cell and then for the whole next run,
+giving $\ell + m + 2$. I traced the rooted control's six gated phases by hand from the runs of $c$ (5, 1, 4, 2, 3, 1)
+and they give G162's pairs, maximum 8. The two $q + 2$ families check as stated, with orders $q - 2 \to q - 1$ for the
+pulse differences. Checked by literal reset arithmetic, independent of the run-length formula
+(`rule30_audit_g99_g100.py`, S56). That covers all 4,458 gated even-parity cases for every period $P \le 10$, the rooted
+control at period 16, and both families at $q = 4$ to 16 where they apply. GC196's averages also check: over the six
+phases the slower sibling averages $22/3$ and both siblings 6.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

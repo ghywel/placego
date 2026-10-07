@@ -414,6 +414,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   To find the first genuine branch, follow one representative history instead of all its time rotations. Before such
   a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is
   exact but the history may still be long.
+- [three post-split reset steps cost two adjacent run lengths](G162-three-post-split-reset-steps-cost-two-adjacent.md):
+  After a genuine split, three reset steps cost either the current run length plus two, or the current and next run
+  lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a
+  much larger cost elsewhere, so those orders alone do not bound waiting.
 
 ## The waiting room (not yet verified)
 
@@ -426,9 +430,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Three post-split reset steps cost two adjacent run lengths](W162-three-post-split-reset-steps-cost-two-adjacent.md):
-  After a genuine split, three reset steps cost either the current run length plus two, or the current and next run
-  lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a
-  much larger cost elsewhere, so those orders alone do not bound waiting.
+*No proofs are waiting for a second reader at the moment.*

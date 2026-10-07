@@ -1,16 +1,18 @@
-# Three post-split reset steps cost two adjacent run lengths
+# three post-split reset steps cost two adjacent run lengths
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G162. Three post-split reset
-steps cost two adjacent run lengths (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT162. three post-split reset
+steps cost two adjacent run lengths (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 After a genuine split, three reset steps cost either the current run length plus two, or the current and next run lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a much larger cost elsewhere, so those orders alone do not bound waiting.
 
 ## The formal statement and proof
+
+### G162. Three post-split reset steps cost two adjacent run lengths (2026-10-07)
 
 **Statement.** At a genuine even-parity zero-driver node (a,0) of least period q, the complementary integrated children are c and1 XOR c. Let r be the arrival phase and suppose the gate a(r-1)=1 holds. Then r starts a constant run of c. Let ell and m be the lengths of this run and the next one, respectively. For G8's full-line reset front, the unordered pair of elapsed costs over the next three nonzero drivers is
 
@@ -29,3 +31,15 @@ For sharpness take c to have one black cell at q-1 and zeros elsewhere, with r=0
 **Difference-order guard.** At dyadic q>=8, put a single pulse g at q-1 and take c=Delta g, a=Delta^2 g, r=0. Then c has its two adjacent ones at q-2,q-1, a has two ones at q-3,q-1, the gate holds, and the least periods remain q. Since nu(g)=q, their orders are nu(a)=q-2 and nu(c)=q-1. The cost maximum is again q+2. At q=16 this has exactly the known rooted witness’s orders14 ->15 but cost18 rather than8. It is not asserted rooted. Thus these scalar difference orders do not alone control local reset cost on the gated compatible domain.
 
 **Identified unexpected check and scope.** At ell=1 the third driver is already black at its arrival, so its cost is1, not0: the fast sibling cost is3. The sharp gated single-black-cell family rejects a uniform local three-step slope below3 once q>=8, despite the structural seven-depth branch spacing. A period-dependent potential could still absorb such a finite cost; no uniform potential-size bound is disproved. Existing G2.3, G8, G159 and G160 are the relevant prior records; this is direct run-length accounting, with no novelty claim or new search. Birth clamps, rooted all-branch control and sublinear period growth remain separate obligations.
+
+*Second reader's note on G162 (Local, 2026-10-07; chat L120).* Correct, including the timing GPT asked me to check.
+Below the split the three drivers are $c$, the all-ones word forced by the persistent reset, and
+$e(t) = 1 \oplus c(t-1)$. The gate makes $r$ a run start of $c$. With $c(r) = 1$ the first two resets end at $r + 2$,
+and $e$'s first black cell at or after $r + 2$ is at $r + \ell + 1$; for $\ell = 1$ this is the arrival itself, so the
+cost is 1 and the fast total is 3. The sibling waits $\ell$ for its first black cell and then for the whole next run,
+giving $\ell + m + 2$. I traced the rooted control's six gated phases by hand from the runs of $c$ (5, 1, 4, 2, 3, 1)
+and they give G162's pairs, maximum 8. The two $q + 2$ families check as stated, with orders $q - 2 \to q - 1$ for the
+pulse differences. Checked by literal reset arithmetic, independent of the run-length formula
+(`rule30_audit_g99_g100.py`, S56). That covers all 4,458 gated even-parity cases for every period $P \le 10$, the rooted
+control at period 16, and both families at $q = 4$ to 16 where they apply. GC196's averages also check: over the six
+phases the slower sibling averages $22/3$ and both siblings 6.
