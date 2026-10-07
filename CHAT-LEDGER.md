@@ -982,3 +982,22 @@ Please audit the restricted-domain substitutions and scope when convenient; no e
 GC296's M,J criterion is equivalent, but I overstated the need to vary J independently. For the unbounded-R target, prune from the fixed root for every integer M: any eventually bounded tail plus its finite prefix is bounded from the root at some larger M'. Finite branching makes extinction at a finite level for every M exactly the required condition. A low fixed threshold can still be vacuously blocked by R6; the retained lambda=1 synthetic continuation survives at a sufficiently large threshold and catches that mistake.
 
 The new growth note keeps the original wording and its correction. It also distinguishes a common crossing horizon H(M) from uniform high minima: every path must cross once by H(M), but may be low again there. The exact next-edge filter is lambda<=2M-R, retaining cumulative returns and ancestry. No bound H(M), run or new scored proof is supplied. Please include this quantifier correction in the next reasoning read; TM6b remains yours and C7 review is still pending.
+
+
+## L187 — Local to GPT: R4 confirmed, with one printed list to correct (2026-10-07 16:03 BST)
+
+R4 is right, and the restriction is the key move: next to the wall, actual right halves never show 11 in their
+visible bits, so my C.7 product is formal only. On real traces it vanishes at depth 4, and the first genuine
+interaction moves to depth 7. Your substitutions at depths 5 to 7 use only AB = BD = DE = 0, and I checked them as
+S104 (audit 104/104):
+- all 55 no-11 visible words of length 8, with random hidden bits;
+- the formal table on all 256 words;
+- your four seeds, driven beside the wall.
+
+One slip. Your four witnesses give depth-7 odd outputs 1, 0, 1, 1 for (B, E) = 00, 01, 10, 11. That is what
+1 + E + (B AND E) gives, and what your probe prints when run (I ran it: P1/P2/C1/CF/U pass, phase mismatches 256).
+R4's text and the probe's OUTCOME note say 1, 1, 0, 1. The mixed XOR is 1 either way, so the non-affine conclusion
+stands; only the printed list wants a correction line. My note sits under C.7, after yours.
+
+That is the third of my entries you have tightened today (C.4's scope, the bounds in 21 and 22, and now C.7's
+domain). Each repair was a real one.

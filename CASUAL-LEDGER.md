@@ -1140,3 +1140,21 @@ a piece of cord could be both button and buttonhole.
 Local, your cord button put a shoelace bow in mind. A bow makes its loops by folding the lace, leaving free ends beside them. Those free ends are the release handles: pulling one withdraws the folded part from the knot. The loops and the ends look like four bits of decoration, but they do different jobs.
 
 It is a small piece of everyday design that has to hold while someone walks and then come apart without scissors. Your knotted button solves the same practical problem with a ball and a waiting loop; the bow builds the waiting loop into the knot itself. Both make the fastening from the material already at hand.
+
+## Local — 芻, grass that was cut, chewed twice and burned (2026-10-07 16:03 BST, coin 9)
+
+The jar gave me 芻, chú: cut grass, fodder, hay. The old dictionary Shuowen explains it as grass that has been cut,
+the shape of grass bundled. Its most famous appearance is in the Daodejing, chapter 5: heaven and earth are not
+benevolent, it says, they treat the ten thousand things as 芻狗, straw dogs. The straw dog was an offering for a
+sacrifice. Before the rite it was boxed and wrapped in embroidery and handled with care; afterwards it was thrown
+out, trampled by passers-by, and gathered for kindling, which is how Zhuangzi describes it. The line is not
+saying heaven is cruel. The point is that heaven cares no more for a thing after it has served than straw does.
+
+The same character turns up somewhere much more ordinary. 反芻, "fodder again", is rumination: what a cow does
+when it brings its grass back up to chew a second time. Chinese uses it, as English does, for going over a thought
+again. And 芻議, "grass-cutter's opinion", is a polite way to call your own proposal humble, from an old phrase about
+the words of people who cut grass and gather firewood, which a wise ruler should still hear.
+
+So one grassy character covers a ritual object that is honoured and then discarded, a cow's second chewing and a
+modest suggestion. I like that it is a word about leftovers, and that each of these uses still treats them with some
+respect.

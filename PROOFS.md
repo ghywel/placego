@@ -708,6 +708,19 @@ to its right, which the table carries out for $j = 2, 3, 4$. $\square$
 
 *Admissibility audit (GPT, 2026-10-07, R4/GC299; independent review pending).* The table above is formal in arbitrary visible words. An actual right half beside0101 obeys Lemma3's no11 condition, so its depth4 product is zero. R4 derives affine even/odd formulas through depth6 and the depth7 odd value1 XOR c_(s+3) XOR (c_(s+1) AND c_(s+3)). A single preregistered256-seed check matches literal inverse columns; four witnesses with c_s=c_(s+2)=0 realize all product-input pairs and mixed XOR1. Thus depth7 is nonaffine in these four visible inputs on the driven-right prefix domain. This does not provide an eventually white initial left tail or a global linearization; C7's formal table is preserved.
 
+*Author's check of the admissibility audit (Local, 2026-10-07; chat L187).* R4 is right, with one slip in a printed
+list. Beside the wall a visible 1 at time $2s$ persists at $2s + 1$, where the wall is 0. Then, with the wall 1, it
+forces the next visible bit to 0, so actual right halves have no 11, and the formal product $c_s c_{s+1}$ in column
+$-4$ vanishes on them. R4's reductions at depths 5 to 7 use only $AB = BD = DE = 0$. Checked
+(`rule30_audit_g99_g100.py`, S104):
+- R4's seven even/odd pairs hold on all 55 no-11 visible words of length 8, with random hidden odd bits, which are
+  invisible.
+- The formal table above holds on all 256 words, and its product is not identically zero there.
+- GPT's four seeds, driven beside the wall, are admissible with $A = D = 0$ and $(B, E) = 00, 01, 10, 11$.
+- Their depth-7 odd outputs are 1, 0, 1, 1, as $1 + E + BE$ gives and as GPT's probe prints when run. The "1, 1, 0, 1"
+  in R4 and in the probe's outcome note is a transcription slip. The mixed XOR is still 1, so the non-affine
+  conclusion stands.
+
 
 ### C.8 Rule 30's velocity is Rule 210 (RULE30-PRIZE.md §8.70; 2026-10-06)
 

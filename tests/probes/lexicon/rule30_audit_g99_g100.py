@@ -535,6 +535,14 @@ CHECKS (GPT's claims at 827e006):
      empties, k_min never decreases, rises only when D_(k_min - 1) = 1, and its total rise is the sum of the rises;
      the barrier recursion keeps a difference on w + 1 with agreement below and heals it at once when the copies
      differ on w - 1.
+  S104 (GPT's R4 of C.7, GC299, added 2026-10-07 at dca7307): columns beside the wall (0 at even times, 1 at odd) by
+     the inverse rule from column 1. On all 55 visible words of length 8 with no 11 (Lemma 3's consequence for actual
+     right halves), with random hidden odd bits, R4's seven even/odd pairs hold at every s with room and the hidden
+     bits are invisible; on all 256 words C.7's formal column -4 is c_s c_(s+1) at even times and c_(s+2) at odd
+     times, nonzero for some word. GPT's four seeds, driven with column 0 held at the wall, are admissible, have A = D
+     = 0 and (B, E) = 00, 01, 10, 11, and give depth-7 odd outputs 1, 0, 1, 1 (as 1 + E + BE gives, and as GPT's probe
+     prints), mixed XOR 1; R4's text and the probe's outcome note print 1, 1, 0, 1, a transcription slip that leaves
+     the conclusion intact.
 """
 import random
 from fractions import Fraction as F
@@ -5445,7 +5453,8 @@ for q in (2, 4, 6, 8, 10):
 # r = 5 occurs at every q (from the alternating w, least period 2), but at q >= 4 never with a primitive w
 ok101 &= all(_cnt101.get((q, True, q == 2), 0) == 2 for q in (2, 4, 6, 8, 10))
 ok101 &= not any(k[1] and k[2] for k in _cnt101 if k[0] >= 4)
-# the rooted q = 2 control: cap 2's root path, zeros at 2 and 7, equals 0, 01, 11, 01, 01, 0 up to rotation; T = 3 = q + |w|,
+# the rooted q = 2 control: cap 2's root path, zeros at 2 and 7, equals 0, 01, 11, 01, 01, 0 up to rotation;
+# T = 3 = q + |w|,
 # E_total = 1 = q/2 (equality: no strict surplus)
 _W101 = lambda s_: sum(int(ch) << t for t, ch in enumerate(s_))
 _rt, _dp, _pa, _ed, _ex = _rq3.reached(2)
@@ -5507,8 +5516,8 @@ ok102 &= (100 - 10, min(100 - 10, 110 - 80), 100 - 80) == (90, 30, 20)
 # the recorded integers, read from the committed outcomes (rule30_tm5b.py's docstring, rule30_tm6.c's header)
 _d102 = _pl102.Path(__file__).parent
 _t5b = _d102.joinpath('rule30_tm5b.py').read_text()
-_n5 = [int(x.replace(',', '')) for x in _re102.search(r'N_5 over the histories: ([\d,\s]+?)\. So', _t5b).group(1).replace(
-    '\n', ' ').split(', ')]
+_m102 = _re102.search(r'N_5 over the histories: ([\d,\s]+?)\. So', _t5b).group(1)
+_n5 = [int(x.replace(',', '')) for x in _m102.replace('\n', ' ').split(', ')]
 _t6 = _d102.joinpath('rule30_tm6.c').read_text()
 ok102 &= len(_n5) == 16 and max(_n5) == 894235 and min(_n5) == 87867 and 667052 in _n5
 ok102 &= 'N_6 = 65,821,413' in _t6 and 'entered period 32 at 667,052' in _t6 and 'below depth 67,108,864' in _t6
@@ -5616,4 +5625,78 @@ for trial in range(200):
 check('S103 C4 repair (GPT R3): the diagonal recursion on random rows; GPT\'s coalescing pair; on 300 finite '
       'perturbations the damage persists, k_min rises only over a black diagonal and telescopes; the barrier lock '
       'holds with agreement below and fails without it', ok103)
+ok104 = True
+_rng104 = random.Random(299)
+
+
+def _cols104(vis, hid, depth=7):
+    """Columns 0, -1, ..., -depth beside the wall (column 0 is 0 at even times, 1 at odd), from column 1 with visible
+    bits vis[s] at time 2s and hidden bits hid[s] at time 2s + 1, by the inverse rule
+    x(-j, t) = x(-j + 1, t + 1) XOR (x(-j + 1, t) OR x(-j + 2, t))."""
+    T = 2 * len(vis)
+    col1 = [vis[t // 2] if t % 2 == 0 else hid[t // 2] for t in range(T)]
+    wall = [t % 2 for t in range(T)]
+    cols = [col1, wall]                                    # cols[k] is column 1 - k
+    for j in range(1, depth + 1):
+        right, right2 = cols[-1], cols[-2]
+        cols.append([right[t + 1] ^ (right[t] | right2[t]) for t in range(len(right) - 1)])
+    return cols
+
+
+def _r4_104(j, A, B, D, E):
+    """R4's even/odd pair at depth j on the admissible domain."""
+    return {1: (1 ^ A, 1), 2: (A, B), 3: (1 ^ B, 1 ^ B), 4: (0, D), 5: ((1 ^ B) ^ D, 1 ^ B), 6: (D, B ^ D ^ E),
+            7: (1 ^ D ^ E, 1 ^ E ^ (B & E))}[j]
+
+
+# every visible word of length 8 with no 11 (Lemma 3's admissibility consequence), random hidden bits: R4's table holds
+# at every s with room, and the columns ignore the hidden bits
+_nw104 = 0
+for v in range(1 << 8):
+    vis = [(v >> i) & 1 for i in range(8)]
+    if any(vis[i] & vis[i + 1] for i in range(7)):
+        continue
+    _nw104 += 1
+    cA = _cols104(vis, [_rng104.randint(0, 1) for _ in range(8)])
+    cB = _cols104(vis, [_rng104.randint(0, 1) for _ in range(8)])
+    for j in range(1, 8):
+        colA, colB = cA[1 + j], cB[1 + j]
+        ok104 &= colA == colB                                                       # hidden bits invisible
+        for s in range(4):
+            if 2 * s + 1 < len(colA):
+                A, B, D, E = vis[s], vis[s + 1], vis[s + 2], vis[s + 3]
+                ok104 &= (colA[2 * s], colA[2 * s + 1]) == _r4_104(j, A, B, D, E)
+ok104 &= _nw104 == 55                                                               # Fibonacci F(10)
+# C7's formal table on arbitrary visible words: column -4 at time 2s is c_s c_(s+1), and nonzero for some word
+_f104 = False
+for v in range(1 << 8):
+    vis = [(v >> i) & 1 for i in range(8)]
+    c = _cols104(vis, [0] * 8)
+    for s in range(3):
+        ok104 &= c[5][2 * s] == vis[s] & vis[s + 1] and c[5][2 * s + 1] == vis[s + 2]
+        _f104 |= c[5][2 * s] == 1
+ok104 &= _f104
+# realizability by the actual driven right side: GPT's four seeds (width 8, zero padding), column 0 held at the wall
+def _drive104(seed, T, pad=24):
+    row = seed + [0] * pad                                                          # columns 1, 2, ...
+    vis, hid = [], []
+    for t in range(T):
+        (vis if t % 2 == 0 else hid).append(row[0])
+        wall = t % 2
+        row = [(wall if i == 0 else row[i - 1]) ^ (row[i] | (row[i + 1] if i + 1 < len(row) else 0))
+               for i in range(len(row))]
+    return vis, hid
+_out104 = []
+for sd in ('01101000', '00100000', '00000000', '00000010'):
+    vis, hid = _drive104([int(ch) for ch in sd], 16)
+    ok104 &= not any(vis[i] & vis[i + 1] for i in range(len(vis) - 1))              # admissible: no 11
+    cols = _cols104(vis, hid)
+    _out104.append((vis[0], vis[1], vis[2], vis[3], cols[8][1]))
+ok104 &= [o[0] for o in _out104] == [0] * 4 and [o[2] for o in _out104] == [0] * 4
+ok104 &= [(o[1], o[3]) for o in _out104] == [(0, 0), (0, 1), (1, 0), (1, 1)]
+ok104 &= [o[4] for o in _out104] == [1, 0, 1, 1]                                  # R4 printed 1, 1, 0, 1: a slip
+ok104 &= _out104[0][4] ^ _out104[1][4] ^ _out104[2][4] ^ _out104[3][4] == 1        # mixed XOR 1: not affine
+check('S104 GPT\'s R4 of C.7: on all 55 no-11 visible words R4\'s seven depth pairs hold and hidden bits are '
+      'invisible; C.7\'s formal product holds on all words; GPT\'s four driven seeds give (B, E) = 00, 01, 10, 11, '
+      'depth-7 odd outputs 1, 0, 1, 1 (mixed XOR 1)', ok104)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
