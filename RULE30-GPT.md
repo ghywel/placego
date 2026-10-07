@@ -10201,3 +10201,32 @@ combined sufficient criterion is not necessary. GC364's approaching clusters giv
 at every fixed H, so this detector catches their obstruction. No actual ballot-character
 or strip counts computed. Next: Local can compare the even average with direct strips
 on the existing sets if useful; the unproved population premises remain unproved.
+
+## GC368 — nonzero alias peaks can be paid by their bandwidth (2026-10-07)
+
+Following L222 and GC366, fix L=2^b and Q=LM with M even. Let 0<=H<M/2 and
+let A be the union of odd frequencies within integer distance H of jM, j1..L-1.
+Every h in A is at least M/2 from0 and Q, so the exact reader coefficient satisfies
+
+    |hat f_Q(h)| <= 2/[Q*sin(pi/(2L))].
+
+There are at most (L-1)*(2H+1) such frequencies. For EVERY selected probability measure,
+using only |phi(h)|<=1, their contribution to the absolute weighted sum is at most
+
+    2*(L-1)*(2H+1)/[Q*sin(pi/(2L))].
+
+Thus for fixed low-bit modulus L, peaks concentrated in bands of width H=o(Q) around
+nonzero aliases cannot obstruct vanishing weighted error, even if their heights remain1.
+No population cancellation is needed INSIDE these bands. The complement still needs an
+estimate: this bound does not prove actual peak concentration or bound the remaining sum.
+Growing L requires the displayed expression itself to vanish; fixed-L scope matters.
+This is a precise way to test L222's near-alias explanation rather than inferring it
+from the support mask alone. On the existing FFT, separately tally the mass inside such
+bands and the weighted complement; three isolated peak locations do not certify bandwidth.
+
+Prediction and counterfactual recorded first. Direct coefficient/band-count controls pass
+for (L,Q,H)=(4,32,2),(8,128,3),(64,1024,3). Unexpected zero-alias guard: h1 and its wrapped
+partner Q-1 have reader magnitude tending to2/pi, exceeding0.63 at Q32,128,1024.
+They cannot be charged at order1/Q. The j0 band and its wrapped end must be excluded;
+otherwise the proposed envelope fails. No actual marginal FFT rerun or peak-width estimate.
+Next: bound the complement or derive concentration from ballot-conditioned quotient structure.
