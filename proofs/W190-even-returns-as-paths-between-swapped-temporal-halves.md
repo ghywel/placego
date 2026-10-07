@@ -1,0 +1,55 @@
+# Even returns as paths between swapped temporal halves
+
+*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G190 — Even returns as
+paths between swapped temporal halves (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+
+**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+
+## In plain words
+
+An even return can be described by keeping both temporal halves together.
+
+**What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.
+
+**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. It is an exact description of compatible returns, but it does not bound their length or show that they come from the root.
+
+**An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
+
+## The formal statement and proof
+
+**Exact ambient reformulation, second reader pending; hand proof, no run.** Fix an even return position r=2m+2>=4 and a dyadic target period q=2^j>=2; put h=q/2. There is a compatible q-periodic prefix0,c,1,...,w,w,0 returning to zero at position r, entered by odd integration from least period h, if and only if the finite paired-window graph below has a path of length h from some vertex v to its swapped vertex sigma(v). The return need not be FIRST, and no root reachability or growth bound follows.
+
+**Prediction and counterfactual.** The affine newest-bit identity of reviewed G189 should fix the XOR of the two appended bits, leaving up to two candidates before filtering. The counterfactual that complementarity alone fixes BOTH bits is false. The exact path construction must also force least period q, not merely a representation on cap q; the nondyadic guard below checks this obligation.
+
+**Graph definition retaining the full background.** Use G189's exact backward functions U0=U1=w and
+
+    U_(n+2)=S U_n+(U_(n+1) OR U_n).
+
+For m-bit windows X, let F_m(X) be U_(2m-1), which uses only those m bits. Write
+
+    U_(2m)(w)(t)=w(t+m)+A_m(w(t),...,w(t+m-1)).
+
+Vertices are pairs v=(X,Y) with F_m(X)=F_m(Y)=1. An edge appends bits b,b', drops the oldest bit of each window, and requires both the new vertex condition and
+
+    b+b'=1+A_m(X)+A_m(Y).
+
+All additions are XOR. There are at most4^m vertices and at most two outgoing candidates before the new vertex test. Swapping X,Y and b,b' preserves every condition, so sigma is a graph symmetry. This stores the actual backward functions, including their OR backgrounds; it is not an autonomous difference-order approximation.
+
+**Necessity.** In the stated prefix the final zero forces its preceding profiles equal to w. Backward reconstruction places U_(2m-1)=1 at position2 and U_(2m)=c at position1. Since w is q-periodic and c(t+h)=1+c(t), its paired windows X(t) and Y(t)=X(t+h) obey the edge equation. After h shifts their order is swapped. Thus they supply the required length-h path. In particular an actual FIRST even return after doubling to q satisfies this condition: reset uniqueness keeps its profiles q-periodic until that return.
+
+**Sufficiency and overlap audit.** Given v0->...->v_h=sigma(v0), follow it by its swapped copy. This is a closed walk of length2h=q. Extend it periodically in both time directions. The shift-and-append edges make the first windows consistent with a temporal word w, even if h<m; closed-window consistency handles overlapping indices. The second window at time t is the first window at time t+h, because the second half of the walk is the swapped first half. Define c=U_(2m)(w). The edge equation gives c(t+h)=1+c(t), and the vertex equation gives U_(2m-1)(w)=1.
+
+All reconstructed profiles have period dividing q. Since q is a power of two, every proper divisor of q divides h. Hence c's complementary halves force its least period to be EXACTLY q. Its source a=Delta c is h-periodic, and its h-block parity is
+
+    XOR_(t=0)^(h-1) a(t)=c(0)+c(h)=1.
+
+A smaller period dividing h would repeat an even number of times in the h-block, contradicting that odd parity. Thus a has least period h. This is genuinely odd period-doubling integration, rather than the balanced same-period control of GC244.
+
+Backward reconstruction supplies every interior compatibility triple and the final triple(w,w,0). At the other end, U_(2m+1)=S1+(c OR1)=0, so the initial zero is also correct. If an earlier zero appears, it is part of this compatible q-periodic prefix; the construction makes no first-return claim. Its first return is at most r. Arrival-clock gates and rooted ancestry are not supplied by this ambient statement.
+
+**Independent boundary control and identified unexpected nondyadic check.** At r4, m1, F1=w forces both windows to1. Then A1(X)=X=1, so the complementary edge needs b+b'=1, whereas new vertices force b=b'=1. The graph has no edge, consistently excluding this return. GC244's literal balanced cap8 return8 satisfies the constant-one reconstruction but fails c(1)+c(5)=1; the paired condition rejects precisely what scalar balance admitted. Its eight forward triples were independently verified by Local S83, L155.
+
+The dyadic assumption in the least-period conclusion is essential: c=010101 on cap6 has c(t+3)=1+c(t), yet least period2 and source Delta c=111111 of least period1. This is a word-level countercontrol, not an asserted even-return graph path. An ordinary closed walk alone does not certify primitive period; dyadic complementarity supplies that extra conclusion here.
+
+**Record, prior method and limitations.** G7/G159 supply backward compatibility; G188 supplies short-return languages and the complementary-half guard; G189 supplies exact support and affine functions. The record already uses standard finite-window path graphs for precursor blocks (G127); no novelty is claimed for that representation or for closing a path with its swapped copy. The new application retains the exact doubling domain for even returns. Neither candidate branching nor a state count establishes recurrent branching, a period-dependent delay, uniform normalized growth or a prize result. Local: please audit the overlap closure, initial-zero indexing and dyadic least-period/source-parity steps; no census or larger run requested. Next reasoning concerns the recurrent part of this paired relation, not fixed-position table extensions.

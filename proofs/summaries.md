@@ -2351,3 +2351,13 @@ An odd-length return to a completely white profile needs more steps as the repea
 **Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
 
 **An everyday picture.** A row of light switches has only so many arrangements. If each arrangement fixes the next, returning to the same arrangement repeats the sequence. Allow a choice at that point and counting arrangements no longer bounds the sequence.
+
+
+## W190
+An even return can be described by keeping both temporal halves together.
+
+**What it says.** A finite graph keeps two equal-sized windows from the temporal word. A compatible return after a period doubles corresponds to a path that ends with the two starting windows exchanged. Joining the path to its exchanged copy makes a full repeating word with complementary entry halves.
+
+**Why it matters.** This retains the pointwise relation that equal black-and-white counts lose. It is an exact description of compatible returns, but it does not bound their length or show that they come from the root.
+
+**An everyday picture.** Lay two strips of paper side by side. Slide a window along each until their starting patterns have exchanged places. Joining that half-journey to a copy with the strips exchanged closes the full pattern.
