@@ -6453,3 +6453,33 @@ State000 has no outgoing edge; states001,010,101 likewise have none. This graph 
 **Independent substitution controls and identified unexpected fragment check.** At state000 the position9 equation forces v=1 because E=0 and Delta^2 w=0; at state111 it forces v=0 for the same reason, reproducing the two easily confused endpoints of the first table. At state011 the position10 equation admits both v values because E=1 while E(1,1,v)=0; at state000 it admits neither because it would require v=1+v. The finite fragment0111000 obeys four successive position10 constraints (edges011->111->110->100->000), yet cannot continue even one more bit. A short temporal window can therefore mimic the return condition without defining a compatible periodic profile. No finite fragment is counted as a return certificate. These are direct Boolean substitutions independent of the cycle inspection, not a computational job or a new measured census.
 
 **Scope and handoff.** The argument uses the same backward pair equations as G7/G159, with all word products and shifts retained. It supplies two additional local exclusions; no attainment at11, period-dependent return bound, rooted control example or prize claim follows. Local: include these two tables and the nonzero-entry guard in G188's second read, no run requested. The normalized lower bound11/q still tends to0; whether longer constraints force a growing obstruction remains open.
+
+
+**G188 continuation: return11 has an odd-period cycle, so cannot follow doubling (GPT, 2026-10-07; second reader pending, hand algebra only).** Retain E(x,y,z)=x+y+z*(1+x)*(1+y), and define H(x,y,z)=(x+y) OR (y+z), equal to0 exactly at000 and111. Four profiles before a repeated pair were eliminated in the previous continuation. One further backward step gives
+
+    F(x,y,z,v)=y+v+H(x,y,z).
+
+For a putative return0,c,1,e,f,g,h,i,j,k,l,0, the last equal pair k=l=w therefore forces j=Delta w, i=w*Delta w, h=Delta^2 w, g=E(w), f=F(w), and e=S E(w)+(F(w) OR E(w)). Its remaining f equation simplifies to
+
+    S F(w) = 1 + (F(w) OR Delta E(w)).
+
+For consecutive w bits x,y,z,v,u, it determines the next bit uniquely:
+
+    u = z + H(y,z,v) + 1
+        + [F(x,y,z,v) OR (E(x,y,z)+E(y,z,v))].
+
+The resulting four-bit-state successors, in increasing binary order0000 through1111, are
+
+    0001,0011,0100,0111,1000,1011,1100,1111,
+    0000,0010,0100,0111,1001,1011,1100,1110.
+
+Every state feeds the SINGLE cycle
+
+    0000 -> 0001 -> 0011 -> 0111 -> 1111 -> 1110
+         -> 1100 -> 1001 -> 0010 -> 0100 -> 1000 -> 0000.
+
+Hence a periodic w satisfying the equation has least period11. The reconstructed preceding profiles are all11-periodic. In particular c cannot have the even least period created by odd integration: its period divides11. For a rooted dyadic stage, there is also the direct check that w cannot be both11-periodic with least period11 and q-periodic for a power of two q. No earlier zero occurs through position10 by the preceding exclusions, so reset uniqueness indeed keeps all these profiles within the entry period until this putative return. Thus position11 is excluded. Combined with G188's earlier parts, the first subsequent zero and the stage length after doubling to q>=4 are at least12. This is still a constant bound.
+
+**Independent cycle-word control and identified unexpected ambient return.** Reading the cycle gives the cyclic temporal word w=00001111001. Its four-bit windows reproduce exactly the eleven cycle states above. It has five black cells and, since11 is prime and the word is nonconstant, least period11. At window0000 the formula has E=F=S E=0, so e=0; at window0111 it has E=F=1 and S E=0, so e=1. Therefore c=1+S e is nonconstant and of least period11. Backward reconstruction consequently DOES produce a compatible ambient return at position11 with a nonzero entry; its pre-integration source Delta c has even block parity. This guards against claiming that the return equation has no compatible solutions. What fails is period-doubling ancestry, not compatibility. Neither this odd-period ambient return nor its gate/root reachability is asserted to belong to the rooted tree. The table and these controls are Boolean proof calculations, not a computed census or a requested Local run.
+
+**Next obligation.** This continuation identifies an actual domain countercontrol while extending only a fixed local exclusion. The lower bound12/q still vanishes. No rule for arbitrary return lengths, period-dependent obstruction, recurrence of large normalized stages, or prize conclusion is established. Local: include the successor list, single cycle and odd-period scope check in G188's second read; no new job.
