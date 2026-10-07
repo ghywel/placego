@@ -307,6 +307,10 @@ CHECKS (GPT's claims at 827e006):
      repeated q/4 times keep both edges compatible and gated with the same phase-0 delays and distance triples; with
      the pulse edge, the dual combination (q/2, q/2, 1) leaves 0 >= 6q - 2 gamma (q + 1), so gamma >= 3q/(q + 1),
      which is 8/3 > 5/2 at q = 8 and gives no contradiction at q = 4.
+  S66 (G171, added 2026-10-07 at 3ff10fb): at q = 16, 32, 64 the three exact-period edges (b with black bits 3, 7,
+     q - 1 to (b, b, 4); (S c XOR c, 0) to (0, c) for c with bits 1, q - 1; the pulse) are compatible and gated, keep
+     the triples (3, 4, 3) -> (4, 4, 0), (1, 0, 1) -> (0, 2, 2), (q, q, 0) -> (q, 0, q), and every endpoint word
+     has least period exactly q; at q = 16 the words are 32904, 49356, 32770, 49155 and 32768.
 """
 import random
 from fractions import Fraction as F
@@ -3063,4 +3067,24 @@ for q in (8, 16):
         ok65 &= (rhs > 0) == (gam < _F57(3 * q, q + 1))
 ok65 &= _F57(3 * 8, 9) == _F57(8, 3) > _F57(5, 2) and _F57(12, 5) < _F57(5, 2)
 check('S65 G170: embedded period-4 edges plus the pulse force gamma >= 3q/(q + 1) on the shared three-distance family', ok65)
+def Sw(w, q):
+    return ((w >> 1) | (w << (q - 1))) & ((1 << q) - 1)
+
+
+ok66 = True
+for q in (16, 32, 64):
+    b = (1 << 3) | (1 << 7) | (1 << (q - 1))
+    a = Sw(b, q) ^ b
+    ok66 &= b in edge_children(a, b, q) and gated3(a, b, 0, q) and reset_cost(b, 0, q) == (4, 4)
+    ok66 &= gated3(b, b, 4, q) and tri(a, b, 0, q) == (3, 4, 3) and tri(b, b, 4, q) == (4, 4, 0)
+    c = (1 << 1) | (1 << (q - 1))
+    a2 = Sw(c, q) ^ c
+    ok66 &= c in edge_children(a2, 0, q) and gated3(a2, 0, 0, q) and gated3(0, c, 0, q)
+    ok66 &= tri(a2, 0, 0, q) == (1, 0, 1) and tri(0, c, 0, q) == (0, 2, 2)
+    pb = 1 << (q - 1)
+    ok66 &= edge_children(pb, pb, q) == [0] and tri(pb, pb, 0, q) == (q, q, 0) and tri(pb, 0, 0, q) == (q, 0, q)
+    ok66 &= all(lp_bits(w, q) == q for w in (a, b, a2, c, pb))
+    if q == 16:
+        ok66 &= (b, a, c, a2, pb) == (32904, 49356, 32770, 49155, 32768)
+check('S66 G171: exact-period witnesses keep the three constraints, so least-period coefficients cannot escape', ok66)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

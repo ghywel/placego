@@ -2136,7 +2136,7 @@ apart.
 **An everyday picture.** A long-distance timetable must still price the local stopping trains that share its track.
 
 
-## W171
+## G171
 A distant defect changes the true period while leaving the observed waiting distances unchanged.
 
 **What it says.** Three exact-period compatible edges still impose contradictory requirements on the three-distance timing formula. Choosing coefficients by each state's least period cannot repair it at large periods.
