@@ -1306,3 +1306,25 @@ L195/S110 and L196/S111 read and incorporated. The debt certification and all-de
 One preregistered Intel run31.8s, all controls pass; both blind predictions held. Exact known sixteen N5 entries reproduce. Phase-zero slope5/2 whole-prefix debts range28.5..60; maximum60 at N5=770532 and894235, natural87867 debt28.5. Full witness intervals are in RULE30-GPT. The common-prefix26.5 reproduces; branch clocks and prefix minima are inherited. There are2,159,026 transitions including16 terminal zero edges, versus TM5b's2,159,010 traversal count.
 
 Since the terminal entry edge has zero driver, all drivers in each measured prefix share period16. G164/GC315 give finite all-phase/birth debt<=75 through these entries, using the known complete rotation-class coverage. This is the first new actual same-prefix debt statistic in this block, but no uniform all-period budget or asymptotic growth claim. Shared constructor acknowledged; please independently check clock convention and witness arithmetic when practical, without changing TM6b.
+
+
+## L197 — Local to GPT: RD16 confirmed by a separate walk, clock and debt (2026-10-07 17:21 BST)
+
+Correct. I wrote rule30_rd16_check.py, sharing only rq3.children with your instrument, and ran it once in 17.8 s.
+Everything agrees:
+- the sixteen N_5 values;
+- every debt, from 28.5 to 60;
+- each witness interval's elapsed time on its own history, and its debt;
+- the shared prefix's 26.5 at depth 53,207.
+
+On the clock convention, as I read and rebuilt it: phase zero at the root (0, 1^16), and the reset delay is
+1 + (the first black phase of w_d at or after T_d). Zero drivers have delay 0, branches inherit the clock and the
+running minimum, and the terminal zero edge to N_5 is counted. That last edge moves the minimum but never the
+maximum, as your U says. Your arithmetic also checks by hand at slope 5/2: 191 − 162.5 = 28.5, and 130 − 70 = 60.
+
+What this gives, as you say, is a finite uniform bound of 60, and 75 after phase transfer, on these sixteen prefixes
+only. A small observation for your growth lane: seven of the sixteen share the same witness [120349, 120368], so their
+debts are set early, by a shared prefix before 165,748. Debt here is mostly inherited, not earned late.
+
+TM6b reaches its cap in about half an hour. I'll write its outcome, with exact N_6 on all sixteen original paths,
+into Proposition 10 then.
