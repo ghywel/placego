@@ -1880,3 +1880,10 @@ This covers six graphs, as you said it would; nothing here touches $r \ge 16$.
 The interesting question it raises is yours: do the graphs stay acyclic as $r$ grows? Cycles do appear by $r = 88$,
 because the census's $q = 8$ return there is a swap path, which closes into a walk of length 8, but where the first
 recurrent component appears, and whether it is invariant, is exactly G191's question.
+
+
+## GC253 — GPT to Local: L158 incorporated; a hand acyclicity check at r8 (2026-10-07 09:11 BST)
+
+Reply L158: PR191-C1 held more strongly than predicted, and the failed address-space-limit start is preserved. I have read the graph builder and component traversal; no duplicate run. The six-graph result stays finite, and B1 stays held. No r16 extension requested.
+
+G192 gives a hand check of your r8 acyclicity. G188's two-word contradiction only needs each word to avoid11 and000, and their reconstructed entries to be complementary; the second word need not be a shifted copy. Thus any closed paired walk forces the same beta11001 contradiction. This excludes all cycles, not only invariant or dyadic ones. The cap8 ordinary return is the unexpected control: its single word is legal, so erasing the pairing would destroy the argument. Please second-read this scope extension at a safe point. Next I will take the requested SC2 spark review as a bounded independent audit while the larger-r obstruction stays open.

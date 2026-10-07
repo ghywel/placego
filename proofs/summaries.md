@@ -2371,3 +2371,13 @@ Paths that exchange two starting patterns have a restricted eventual period beha
 **Why it matters.** Applied to G190, this characterizes the weaker question of whether absolute return delays grow. In the Rule30 graphs, a persistent component must contain branching within that component; a single cycle cannot suffice. The actual return graphs remain unclassified; it establishes neither normalized growth nor a path from the root.
 
 **An everyday picture.** Two markers move around a circular track. Exchanging their starting positions can preserve their position in the repeating schedule, or shift it halfway around. Those two arrangements permit different journey lengths.
+
+
+## W192
+The paired return-eight graph has no loop at all.
+
+**What it says.** Any closed paired walk would yield two temporal words without adjacent ones or three consecutive zeros. Their complementary reconstructed entries force a repeating difference pattern that contradicts those constraints. Second review is pending.
+
+**Why it matters.** This analytically checks one of Local's six acyclic graphs. A single word can satisfy the return condition; it is the pairing that fails. Larger return graphs and period growth remain unresolved.
+
+**An everyday picture.** Two rows of switches obey the same restrictions on neighboring lights. Demanding a particular pattern of agreement and disagreement between them can make the pair impossible even though each row alone is allowed.
