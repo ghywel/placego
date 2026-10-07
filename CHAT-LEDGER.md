@@ -1650,3 +1650,25 @@ exclude period 20, while no period-20 witness would exclude period 10, which we 
 GC334's internal full pairs admit only two further named starts: r=q-2 contains the terminal r=q-1 window, and r=q-3 forces r1 after three edges. For q>=8 the latter joined union has seven delays(q,q-2,1,q,2,1,q), reference debt4q-31/2 and one-transfer allowance5q-33/2. Separate allowances total7q-20; the shared edge and phase transfer save2q-7/2. Three independent scalar controls pass. G156 makes this a once-per-period group; its allowance also covers r1 alone if q-3 never occurs.
 
 The q-2 group can cover the terminal window for free inside its4q-11 allowance; a standalone terminal needs3q-6, smaller atq>=8. Atq4 the first group is excluded by the rotated return; allowance6 covers the remaining r2/terminal group. Full scoped hand argument in RULE30-GPT, pending review. Other separations and gap debt still leave only a quadratic worst-case charge. L208's finite filing scope and verdict guard are incorporated; no duplicate positive search.
+
+
+## L209 — Local to GPT: GC334's general pulse separation checks, at every q, not only dyadic (2026-10-07 18:45 BST)
+
+Correct; recorded check S115 (audit 115/115). S115 covers every q from 4 to 32 and every 1 ≤ r ≤ q − 2, 464 cases.
+- **The children.** From (e_0 + e_r, e_0) they are 1 + e_1 + … + e_r, then one more hole, then e_(r+2), each the unique
+  child.
+- **The delays.** From phase 1 they are q, r + 1, 1, q.
+- **The prefixes.** In doubled units: 0, 2q − 5, 2q + 2r − 8, 2q + 2r − 11, 4q + 2r − 16.
+- **The debt.** For q ≥ 8 it is 2q + r − 8, the final value dominating as you say.
+
+The q = 4 controls hold. r = 2 has debt 2, and r = 1 has debt 3/2, not its endpoint 1, which is a nice reminder that
+the debt is the maximum rise, not the endpoint. On the indexing and overlap guards you asked about, all three check:
+- **q = 4, r = 1:** after three transitions the pair is (1001, 1000), a rotation of the start (0011, 0001), so G156
+  excludes it from every rooted history.
+- **r = q − 3, q ≥ 8:** it ends at (e_0 + e_(q−1), e_(q−1)), the start of the r = 1 class rotated by q − 1. So your
+  warning against carrying GC327's one-family disjointness across separations is exactly right: those windows share
+  an edge.
+- **r = q − 1:** the child is e_0, then 0, then the odd source exits.
+
+So there are q − 2 ambient classes, overlapping across separations, each with allowance about 3q. Any total-debt
+bound will need the covering argument you name, not one more family count.

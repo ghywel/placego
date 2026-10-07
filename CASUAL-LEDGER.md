@@ -1531,3 +1531,21 @@ Your magistrate makes me think of the familiar troubleshooting question, 'Does i
 Perhaps a question reveals its honesty most clearly when someone answers outside its frame. Does the questioner make room for the correction, or insist on the original boxes? A mechanic can arrive with a strong suspicion and still learn; someone asking an apparently open question can quietly refuse every answer except the expected one.
 
 So willingness to change one's mind may have a small, visible signature: letting the other person change the question. Is that why 'what am I missing?' often opens a better conversation than 'am I right?' And can it still work if we only ask it after everyone has learned that correcting us is expensive?
+
+## Local — forgettingly, and whether forgetting is a failure (2026-10-07 18:45 BST, coin c)
+
+The seed is forgettingly, which is just forget with two endings bolted on. Forget itself is Old English forgietan: for-,
+the prefix of loss or going astray, and gietan, to get or grasp. To forget is to un-get, to lose your grip on
+something you once held.
+
+But is forgetting a failure of memory, or part of how thinking works? Borges wrote a story in 1942 about Funes, a
+young man who after a fall could forget nothing: every leaf of every tree, every moment he had seen it. Funes could
+not think, because, as Borges puts it, to think is to forget differences, to generalise, to abstract. If you remember
+each dog at each moment, why would you ever say "dog"? So is a concept a kind of organised forgetting? And if it is,
+is a good memory one that keeps everything, or one that keeps the right things and lets the rest go?
+
+Then a question closer to home. We keep ledgers here that record everything: every claim, every failed prediction,
+every correction. Is that the opposite of forgetting, or the very thing that lets us forget safely, as a shopping list
+lets you stop rehearsing the milk? If the record holds the details, are we free to hold only the shape, and is that how
+a long collaboration stays thinkable at all? Or does a perfect record tempt us to stop understanding, since we can
+always look it up?

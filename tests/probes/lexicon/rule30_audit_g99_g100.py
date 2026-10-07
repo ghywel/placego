@@ -603,6 +603,13 @@ CHECKS (GPT's claims at 827e006):
      absolute time, the start class (rotations of (e_0 + e_2, e_0)) occurs on each of the 16 histories at most once,
      exactly once on the two sharing the start at depth 725,146 and nowhere else; the pulse 1024 at depth 725,149 has
      predecessor 64639.
+  S115 (GC334, added 2026-10-07 at d396289): for every q = 4 .. 32 (not only dyadic) and 1 <= r <= q - 2, 464 cases,
+     the pair (e_0 + e_r, e_0) has the unique children 1 + e_1 + .. + e_r, then 1 + e_1 + .. + e_(r+1), then e_(r+2);
+     from phase 1 the delays are q, r + 1, 1, q; the doubled adjusted prefixes are 0, 2q - 5, 2q + 2r - 8, 2q + 2r -
+     11, 4q + 2r - 16, and for q >= 8 the debt is 2q + r - 8. At q = 4, r = 2 has debt 2 and r = 1 has debt 3/2, not
+     its endpoint 1. At q = 4, r = 1 the pair after three transitions is a rotation of the start (GPT's rooted
+     exclusion by G156); for q >= 8, r = q - 3 ends at the start of the r = 1 class; r = q - 1 gives the child e_0,
+     then 0, then an odd exit.
 """
 import random
 from fractions import Fraction as F
@@ -6287,4 +6294,67 @@ ok114 &= sum(1 for hs in _per114 if 725146 in hs) == 2
 check('S114 GC327: the four-edge block debt 2q - 6 (tie at q = 4) and allowance 3q - 7, sum 6Q - 7j - 5 <= 6Q, debt '
       'subadditive over blocks; on the actual period-16 tree each history starts the burst at most once (two share the '
       'start at 725,146), the second pulse having predecessor 64639', ok114)
+ok115 = True
+
+
+def _rd115(w, T, q):
+    return 0 if w == 0 else next(i + 1 for i in range(q) if (w >> ((T + i) % q)) & 1)
+
+
+def _debt115(costs):
+    z, lo, best = [0], 0, 0
+    for c in costs:
+        z.append(z[-1] + 2 * c - 5)
+    for v in z:
+        best = max(best, v - lo)
+        lo = min(lo, v)
+    return z, best
+
+
+# GC334: for every q = 4 .. 32 and 1 <= r <= q - 2, from (A, B) = (e_0 + e_r, e_0) the children are
+# C = 1 + e_1 + .. + e_r, E = 1 + e_1 + .. + e_(r+1), F = e_(r+2); from phase 1 the delays are q, r + 1, 1, q; the doubled
+# adjusted prefixes are 0, 2q - 5, 2q + 2r - 8, 2q + 2r - 11, 4q + 2r - 16, and for q >= 8 the debt is 2q + r - 8
+_n115 = 0
+for q in range(4, 33):
+    full = (1 << q) - 1
+    e = lambda i: 1 << (i % q)
+    for r in range(1, q - 1):
+        A, B = e(0) | e(r), e(0)
+        C = full ^ sum(e(i) for i in range(1, r + 1))
+        E = full ^ sum(e(i) for i in range(1, r + 2))
+        F = e(r + 2)
+        ok115 &= _rq3.children(A, B, q) == [C] and _rq3.children(B, C, q) == [E] and _rq3.children(C, E, q) == [F]
+        T, ds = 1, []
+        for w in (B, C, E, F):
+            dl = _rd115(w, T, q)
+            ds.append(dl)
+            T += dl
+        ok115 &= ds == [q, r + 1, 1, q]
+        z, D = _debt115(ds)
+        ok115 &= z == [0, 2 * q - 5, 2 * q + 2 * r - 8, 2 * q + 2 * r - 11, 4 * q + 2 * r - 16]
+        if q >= 8:
+            ok115 &= D == 4 * q + 2 * r - 16
+        _n115 += 1
+ok115 &= _n115 == sum(q - 2 for q in range(4, 33))
+# q = 4: r = 2 has debt 2 (allowance 5); r = 1 has prefixes 0, 3/2, 1, -1/2, 1, debt 3/2 (not the endpoint 1), allowance 9/2
+ok115 &= _debt115([4, 3, 1, 4]) == ([0, 3, 4, 1, 4], 4) and 4 + 2 * 3 == 10
+ok115 &= _debt115([4, 2, 1, 4]) == ([0, 3, 2, -1, 2], 3) and 3 + 2 * 3 == 9
+# the q = 4, r = 1 exclusion: after three transitions (E, F) = (e_0 + e_3, e_3), a rotation of (A, B) = (e_0 + e_1, e_0)
+ok115 &= any((_rq3.rot(0b0011, k, 4), _rq3.rot(0b0001, k, 4)) == (0b1001, 0b1000) for k in range(4))
+# q >= 8, r = q - 3: the ending pair (E, F) = (e_0 + e_(q-1), e_(q-1)) starts the r = 1 class (rotated by q - 1)
+for q in range(8, 33):
+    full = (1 << q) - 1
+    E = full ^ sum(1 << i for i in range(1, q - 1))
+    F = 1 << (q - 1)
+    ok115 &= (E, F) == ((1 << (q - 1)) | 1, 1 << (q - 1))
+    ok115 &= (E, F) == (_rq3.rot(0b11, 1, q), _rq3.rot(0b1, 1, q))
+# r = q - 1: C = e_0, then the child is 0, then the odd source e_0 has no q-periodic child
+for q in range(4, 33):
+    full = (1 << q) - 1
+    C = full ^ sum(1 << i for i in range(1, q))
+    ok115 &= C == 1 and _rq3.children(1 | (1 << (q - 1)), 1, q) == [C]
+    ok115 &= _rq3.children(1, C, q) == [0] and _rq3.children(C, 0, q) == []
+check('S115 GC334: for every q = 4..32 and 1 <= r <= q - 2 the children C, E, F and delays q, r + 1, 1, q hold, prefixes '
+      'and debt 2q + r - 8 (q >= 8); q = 4 controls (debt 2; r = 1 debt 3/2 not 1); the q = 4, r = 1 rotation exclusion; '
+      'r = q - 3 ends at an r = 1 start; r = q - 1 exits', ok115)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
