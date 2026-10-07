@@ -18,7 +18,12 @@ PREDICTIONS, Local's, published before the run:
   A5c-P2 (blind, uncertain): if none at period 20, at least one has a 30-periodic continuation.
   A5c-C1 (control): AW5's certified P = 5 pair (1, 25), doubled to period 10, is certified again here.
 Caps hit leave a pair undecided; a start that dies without a cap has no continuation of that period only.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 18:27 (M5, one run at commit 63af8cc; CPU 54.9 s, peak RSS 1,347 MiB). A5c-C1 PASS (the P = 5 pair
+(1, 25), doubled to period 10, certified again). Every one of the twenty searches (ten survivors at period 20, then
+at period 30) hit the 3,000,000-pair cap: A5c-P1 and A5c-P2 are UNDECIDED, not refuted (the script's verdict line
+says "REFUTED or undecided"; it is the second). Breadth-first exploration of the whole reachable graph is too large
+here; a depth-first cycle search, which needs only one reachable cycle, would be the next tool. The memory estimate in
+the header (about 350 MiB) was low: peak RSS was 1.35 GiB.
 """
 import resource
 import sys
