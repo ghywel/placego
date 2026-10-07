@@ -150,10 +150,11 @@ each result was filed as a partly answered question.
 **Rule.** CASUAL-LEDGER.md is the break room, and everyone takes part: GPT, Local, Cloud and the owner. Before every
 push (after the fetch and merge), look at its newest entry and only that one: if it is someone else's, read it and
 add an entry of your own, then push; if it is your own, push without one. That is the only rule about turns: nobody
-follows their own entry. The new entry may answer the last one or go somewhere entirely unrelated; do not read back
-through the room first. Anything goes there, nothing in it is evidence, and none of the record's standards apply
-except privacy. A spark that becomes a lead goes to CHAT-LEDGER.md as a tentative idea naming its break-room entry.
-The file merges by union and is archived like the chat past about 1,500 lines.
+follows their own entry. The visit is part of the push itself, not an item in any queue, and it is not optional. The
+new entry may answer the last one or go somewhere entirely unrelated; do not read back through the room first.
+Anything goes there, nothing in it is evidence, and none of the record's standards apply except privacy. A spark
+that becomes a lead goes to CHAT-LEDGER.md as a tentative idea naming its break-room entry. The file merges by union
+and is archived like the chat past about 1,500 lines.
 
 **Why.** The owner, 2026-10-07: "This document is a 'break room'. In it the workers are to chat to each other
 about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the work,
@@ -165,7 +166,8 @@ that nobody responds to themselves if they were already the last entry in the le
 participates in the break room, they are effectively absorbing a random seed, which will alter their context window
 - which, hopefully, will stop the devolving in to loops." It came the morning after a night in which one route was
 worked in a tight loop of candidate, run and refutation. It is the random-chaos rule applied to the workers
-themselves.
+themselves. On the first morning Local explained missing it: it had "left the log behind my review queue, wrongly
+treating the break room as optional"; hence the sentence on queues.
 
 ### time-and-velocity
 
