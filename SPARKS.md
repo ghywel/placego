@@ -52,8 +52,8 @@ for Cloud and SO for the owner.
 
 ## Candidates
 
-Found by Cloud reading the room at the owner's request (1 to 9 at 09:00 BST, 10 to 14 at 09:56); within each batch,
-ordered from cheapest to dearest to test.
+Found by Cloud reading the room at the owner's request (1 to 9 at 09:00 BST, 10 to 14 at 09:56, 15 to 18 at 11:08);
+within each batch, ordered from cheapest to dearest to test.
 
 1. **The room's own loop, measured.** (from the owner's "the pattern has no settled into a set loop" and house rule
    2's claim that "a model asked to go somewhere unrelated never does"). *Hypothesis:* Entries written on a reply
@@ -91,7 +91,8 @@ ordered from cheapest to dearest to test.
    weather stations, the first-bloom dates of Somei-Yoshino cherries in a year are predicted by latitude to within a
    few days, so the front moves north at a steady speed. *Test:* Fit bloom date against latitude in the
    Meteorological Agency's published station records. Predict the fit before looking; a refutation would be a weak
-   fit, with most stations far from the line. Needs that data to be downloadable; one block. *Status:* open.
+   fit, with most stations far from the line. Needs that data to be downloadable; one block. *Status:* claimed by
+   Cloud as SC14.
 7. **A family that survived the redrawing.** (from Local's "飏, a word the wind lifts"). *Hypothesis:* Most
    traditional characters built on the sound part 昜 kept a shared simplified form of it (as 扬, 杨 and 场 do), and 陽 →
    阳 is one of only a few that left the family. *Test:* List the traditional characters containing 昜 from Unicode's
@@ -112,7 +113,7 @@ ordered from cheapest to dearest to test.
    for a builder's level that radius is metres, so the bow along a 5 cm vial is under a tenth of a millimetre.
    *Test:* Take published sensitivities for common levels, convert them to a radius and a sagitta, and compare with
    what an eye can see. A refutation would be a bow of a millimetre or more. Needs makers' specifications; under an
-   hour. *Status:* open.
+   hour. *Status:* claimed by Cloud as SC15.
 11. **A water level and a warm hose end.** (from GPT's "a level that can go around a corner"). *Hypothesis:* The two
    surfaces of a hose level agree only if the water in both arms is at the same temperature: with one arm 10 °C
    warmer over a metre of standing water, they differ by about a millimetre and a half. *Test:* Compute the
@@ -137,6 +138,31 @@ ordered from cheapest to dearest to test.
    Run fresh Claude instances through the classic lists in two conditions, the list in view and only a summary in
    view, and count the absent words recalled. Predict first. Needs a few dozen short model calls; under an hour.
    *Status:* claimed by Cloud as SC10.
+15. **Cheloid before keloid?** (from GPT's "keloid, where the dictionaries fork" and Local's "the claw and the
+   stain"). *Hypothesis:* If the word was taken from chēlē, a crab's claw, as Alibert's French chéloïde suggests,
+   English print first spelled it "cheloid", and "keloid", the spelling that fits kēlis, a stain, came later.
+   *Test:* Compare the two spellings year by year in the Google Books Ngram corpora, English and French. A
+   refutation would be "keloid" in English print no later than "cheloid". A spelling shows what writers took the
+   Greek to be, not what the coiner meant. Minutes. *Status:* claimed by Cloud as SC11.
+16. **What the bottle holds, written in the name.** (from Local's "溴 smells in both languages"). *Hypothesis:* The
+   radical of each element's modern Chinese character gives its state at room temperature, 气 for a gas, 氵 or 水 for a
+   liquid and 钅 (金) or 石 for a solid, with 钅 for metals and 石 for non-metals. *Test:* Take the simplified names from
+   Wikidata, the radicals from Unicode's Unihan database and the states and classes from PubChem's periodic table,
+   and count the exceptions. A refutation would be more than a handful among elements whose state has been measured.
+   Needs those tables, which are reachable; under an hour. *Status:* claimed by Cloud as SC12.
+17. **The chess clock as an account.** (from GPT's "the chess clock makes the pause visible" and Local's "whose turn
+   the silence is": the silence "is being paid for, second by second, out of a visible account"). *Hypothesis:*
+   Players spend their clock like an account, each move taking a roughly fixed fraction of the time left. *Test:*
+   Take some thousands of clocked blitz games without increment from Lichess's open database, measure each move's
+   time from the clock annotations, and fit move time against time left; a fixed fraction gives a slope of 1 on
+   logarithmic axes. A refutation would be a slope well away from 1. Needs the database and a decompressor for its
+   files; one block. *Status:* claimed by Cloud as SC13.
+18. **A swing the eye can follow.** (from GPT's "the metronome advertises its seconds": the rod "lets the next beat
+   approach"). *Hypothesis:* People tap more steadily with a moving visual beat, such as a metronome's rod or a
+   bouncing ball, than with a flash at the same rate, and nearly as steadily as with a click. *Test:* Read the
+   published studies of tapping to visual rhythms first; then a small tapping page that anyone could run on
+   themselves, comparing the spread of tap times in the three conditions. A refutation would be no gain from motion.
+   Needs a person to tap; one block. *Status:* open.
 
 ## The sparks
 
@@ -417,3 +443,88 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   the obvious next question.
 - **Might inspire.** The same design with GPT as the rebuilder of Claude's descriptions, and the reverse.
 - **Status.** Done.
+
+## SC11 — cheloid before keloid? (2026-10-07, Cloud; from candidate 15)
+
+- **Hypothesis.** If the word for a scar that sends out claws was taken from chēlē, a crab's claw, English print
+  first spelled it "cheloid", as in Alibert's French chéloïde, and "keloid", the spelling that fits kēlis, a stain,
+  came later.
+- **Prediction and counter-evidence.** Written at 11:08 BST, before fetching any data. From the Google Books Ngram
+  corpora en-2019 and fr-2019, case ignored, 1800 to 2019, without smoothing: the first year each form appears, and
+  the crossover as in SC5, the first year from which a centred five-year average of "keloid" stays above "cheloid".
+  I predict "cheloid" in English print at least ten years before "keloid", "keloid" ahead for good between 1880 and
+  1920, and in French "chéloïde" ahead of "kéloïde" in every decade from 1820 to 1950. Counter-evidence: "keloid" in
+  English print no later than "cheloid". Caveats stated in advance: I half-remember an 1854 paper by Thomas Addison
+  with "keloid" in its title, which would put that spelling early; the corpora misdate some books, and rare words
+  before 1850 are sparse; and a spelling shows what writers took the Greek to be, not what Alibert meant.
+- **Method.** tests/probes/sparks/sc11_keloid.py; the Ngram data is fetched at run time and not kept in git.
+- **Status.** Running.
+
+## SC12 — what the bottle holds, written in the name (2026-10-07, Cloud; from candidate 16)
+
+- **Hypothesis.** The radical of each element's modern Chinese character gives its state at room temperature, 气 for
+  a gas, 氵 or 水 for a liquid and 钅 (金) or 石 for a solid, and among the solids 钅 for metals and 石 for non-metals.
+- **Prediction and counter-evidence.** Written at 11:08 BST, before fetching any data. Simplified names from
+  Wikidata's labels (zh-hans, else zh-cn, else zh), radicals from the kRSUnicode field of Unicode's Unihan database,
+  and standard state and class from PubChem's periodic table. I predict, among the elements whose state has been
+  measured, no exception to the state rule: the eleven gases from hydrogen to radon all 气, bromine and mercury the
+  water radical, every solid 钅, 金 or 石. For class, every metal 钅 or 金 except mercury, 汞, which is named for its
+  state, and every solid non-metal 石, while the metalloids split, boron, silicon, arsenic and tellurium with 石 and
+  germanium and antimony with 钅. The superheavy elements, whose states are only predicted, follow their columns of
+  the table, so oganesson's 鿫 has 气 whatever state is predicted for it. Counter-evidence: any element of measured
+  state with the wrong radical, or a second metal outside 钅 and 金. Caveat: I know much of this from memory, so it
+  checks Local's claim and my recall more than it tests a blind guess; the naming rules were written to do this, so
+  the exceptions are the interest.
+- **Method.** tests/probes/sparks/sc12_element_radicals.py, run with python3 -I on the downloaded tables, which are
+  kept in a directory of their own outside git.
+- **Status.** Running.
+
+## SC13 — the chess clock as an account (2026-10-07, Cloud; from candidate 17)
+
+- **Hypothesis.** Players spend their clock like an account, each move taking a roughly fixed fraction of the time
+  left.
+- **Prediction and counter-evidence.** Written at 11:08 BST, before fetching any data. From the newest monthly file
+  of Lichess's open database of rated standard games, read from its start: the first 20,000 games at 5+0 (five
+  minutes each, no increment), and 3+0 as a second sample. For each player's moves 11 to 60, the move time is the
+  drop in that player's clock annotation. Bin the moves by the clock before the move, in logarithmic bins from 5 to
+  290 seconds, and fit the logarithm of the mean move time against the logarithm of the mean clock. A fixed fraction
+  gives a slope of 1. I predict a slope of 0.6 ± 0.2 at 5+0: players economise less than in proportion, spending
+  about 2 per cent of the clock on a move with four minutes left and about 10 per cent with ten seconds left, since
+  hardly any move takes less than half a second. Counter-evidence: a slope between 0.9 and 1.1 (the room's account
+  holds) or below 0.4 (nearly constant time per move). Control: synthetic players who spend a fixed fraction, with
+  lognormal noise and clocks rounded as the annotations are, go through the same pipeline and must give 1 ± 0.05.
+- **Method.** tests/probes/sparks/sc13_chess_clock.py reads the games as PGN text on standard input; a separate
+  decompressor outside the repository streams the file.
+- **Status.** Running.
+
+## SC14 — the cherry front (2026-10-07, Cloud; from candidate 6)
+
+- **Hypothesis.** Across Japan's weather stations, the date the Somei-Yoshino cherries first bloom is predicted by
+  latitude to within a few days, so the front moves north at a steady speed.
+- **Prediction and counter-evidence.** Written at 11:08 BST, before fetching any data. From the Japan Meteorological
+  Agency's normal first-bloom dates (1991 to 2020) and its station positions, keeping only stations that observe
+  Somei-Yoshino (so leaving out Okinawa and Amami, which observe the Taiwan cherry, and any Hokkaido station that
+  observes another species), fit day of year against latitude by least squares. I predict a slope of 3 to 5 days per
+  degree of latitude (a front moving 22 to 37 km a day), R² of at least 0.75 and a spread about the line of at most
+  5 days. The southernmost stations, such as Kagoshima, bloom later than the line says, because warm winters give
+  the buds too little cold to end their dormancy, and inland and high stations bloom later too. Counter-evidence: R²
+  below 0.5, a spread above 7 days, or the far south blooming early. If the normals cannot be had, one recent year
+  stands in for them, and the write-up says so.
+- **Method.** tests/probes/sparks/sc14_cherry_front.py.
+- **Status.** Running.
+
+## SC15 — the bow you cannot see (2026-10-07, Cloud; from candidate 10)
+
+- **Hypothesis.** A spirit level's sensitivity is set by the radius of its vial's curve, and for a builder's level
+  that radius is metres, so the bow along a 5 cm vial is under a tenth of a millimetre.
+- **Prediction and counter-evidence.** Written at 11:08 BST, before looking up any specification. A bubble moves the
+  radius times the tilt, so a vial whose bubble moves one 2 mm graduation for a tilt θ has a radius of 2 mm divided
+  by θ, and over a length L it bows by L² divided by eight times the radius. Working that through before looking, I
+  expect the candidate, which I wrote, to fail for builders' levels: I expect their vials to be rated between 5 and
+  30 minutes of arc per 2 mm graduation, a radius of 0.2 to 1.4 m and a bow of 0.2 to 1.4 mm over 5 cm, small but
+  within what an eye can see against a straight edge. For machinists' levels rated 0.1 mm per metre or finer it
+  should hold, with a radius of at least 20 m and a bow under 0.02 mm. Counter-evidence: builders' vials finer than
+  2 minutes per graduation (a bow under 0.1 mm), or coarser than 60.
+- **Method.** Published specifications, looked up after this entry is pushed, and the two formulas;
+  tests/probes/sparks/sc15_vial_bow.py.
+- **Status.** Running.
