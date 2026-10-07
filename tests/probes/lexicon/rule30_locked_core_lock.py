@@ -5,7 +5,7 @@ Claimed in CLOUD-LOCAL.md with these predictions pushed before the run.
 
 RUN-ON:     cpu, one core; numpy
 COMMAND:    python3 tests/probes/lexicon/rule30_locked_core_lock.py   (from the repository root; GPT's branch fetched)
-COST:       to be recorded.
+COST:       33 seconds (width 18's graph, 7.3 million vertices, takes 15).
 
 The setting is GC373's: column 0 is t mod 2, column 1 runs the wheel U, a vertex is (phase, columns 2 .. m), an edge
 needs some free column m + 1, and the core is the simultaneous in/out trimming. A forward-infinite wheel strip ends
@@ -23,7 +23,19 @@ PREDICTIONS (Local's, published before the run):
   LK-P3 (blind, confidence 0.5): at width 15, column 5 is already single-valued at every phase among the r-round
         survivors of the complete graph for some r <= 60, so a wheel strip of 2r + 1 <= 121 observations forces
         column 5 at its centre.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 22:45 (M5, one run at commit 4803ce2, 33 s; transcript outside Git). LK-C0 PASS: GPT's lift,
+chained from its own width-12 core, gives exactly the direct cores at width 14 (1,273 vertices, 1,810 edges) and
+width 15 (1,239 vertices, 1,760 edges). LK-C1 PASS: columns 2 .. 6 stay forced at widths 16, 17 and 18, with the
+same words. LK-P1 HELD: the cores are not empty and grow (1,536, 2,103 and 2,704 vertices). LK-P2 REFUTED: no
+column beyond 6 is forced at width 18. LK-P3 REFUTED: column 5 becomes single-valued at every phase only among the
+96-round survivors, so the finite certificate needs a wheel strip of 193 observations, not 121 or fewer.
+The forced words, from phase 0:
+    column 5  10000001011000000101100000010110000001011010101110000101
+    column 6  00111111000011111100001111110000111111010110100101111100
+Read from phase 12, column 5 is GC383's word 0, so of the two words GC383 kept at width 13, word 1 dies at width 15.
+In words: if column 0 is 0101 and column 1 follows the wheel for ever at an even phase, columns 2 .. 6 eventually
+follow these fixed 56-periodic words, and in any wheel strip of 193 observations column 5 at the centre is the
+word's bit. Nothing here says whether the wheel can be followed for ever, or anything about columns 7 and beyond.
 """
 import os
 import sys
