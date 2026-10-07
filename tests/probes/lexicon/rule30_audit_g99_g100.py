@@ -511,6 +511,15 @@ CHECKS (GPT's claims at 827e006):
      sit at depths 28 to 32 on consecutive reached edges, delays consistent with one absolute rotation; summaries (0,
      0, 0) at depths 30 and 31 with next parities 0 and 1; |e AND f| = 2, E(e, f) = 3, 8 - 4 = 2*3 - 2, and -4 without
      E.
+  S101 (G203, added 2026-10-07 at 730de91): on every first-zero-return excursion from an even zero driver, both
+     children, at q = 2, 4, 6, 8, 10 (exhaustive) with c and w nonconstant: r >= 5, u_(r-2) = u_(r-1) = w, the prefix
+     0, c, 1, e with e = 1 + S^-1 c and startup overlaps summing to q, T = |w| + 2 E_total, T >= q + |w| and E_total
+     >= q/2; when r >= 6, u_(r-3) = w + S w, its overlap is V(w)/2, T >= q + |w| + V(w)/2 and E_total >= q/2 + 1; r =
+     5 occurs exactly twice at each q, always with the alternating w (least period 2), so never with a primitive w at
+     q >= 4; no excursion ends at w = 1. The rooted cap-2 path's excursion from depth 2 to 7 is 0, 01, 11, 01, 01, 0
+     up to rotation, with overlaps 1, 1, 1, 0, T = 3 = q + |w| and E_total = 1 = q/2; GPT's retained sketch 0, 01, 11,
+     10, 10, 0 is incompatible. S97's q = 8 (r = 88) and S98's rooted q = 16 (r = 52,808) returns satisfy every bound
+     with r >= 6; a single-one word has V = 2 at q = 2 .. 32.
 """
 import random
 from fractions import Fraction as F
@@ -5360,4 +5369,101 @@ ok100 &= _wt100(e & f) == 2 and _E100(e, f, 8) == 3 and 8 - 4 == 2 * _E100(e, f,
 ok100 &= _wt100(e) - _wt100(one) == -4
 check('S100 G202: pi(a) = pi(b) + pi(b AND c) and |a| - |b| = 2E - |b AND c| on every compatible triple '
       '(q <= 8) and rooted edge; syndrome 1 only at exits; overlap = |a_next| + 2 sum E; S75 transfer at 28-32', ok100)
+ok101 = True
+_wt101 = lambda u: bin(u).count('1')
+
+
+def _exc101(prof, q):
+    """G203's quantities on one excursion u_0 = 0, ..., u_r = 0: r, T, E_total, w, V(w)."""
+    r, full = len(prof) - 1, (1 << q) - 1
+    T = sum(_wt101(prof[n] & prof[n + 1]) for n in range(1, r))
+    E = sum(_wt101(_rq3.rot(prof[n + 1], 1, q) & ~(prof[n] | prof[n + 1]) & full) for n in range(1, r))
+    w = prof[r - 1]
+    return r, T, E, w, _wt101(w ^ _rq3.rot(w, 1, q))
+
+
+def _check101(prof, q):
+    """Every G203 statement on one first-return excursion with c and w nonconstant."""
+    full = (1 << q) - 1
+    r, T, E, w, V = _exc101(prof, q)
+    c = prof[1]
+    good = r >= 5 and prof[r - 2] == w and T == _wt101(w) + 2 * E
+    good &= prof[2] == full and prof[3] == full ^ _rq3.rot(c, -1, q)                    # 0, c, 1, e = 1 + S^-1 c
+    good &= _wt101(prof[1] & prof[2]) + _wt101(prof[2] & prof[3]) == q                  # startup charge q
+    good &= T >= q + _wt101(w) and 2 * E >= q
+    if r >= 6:
+        good &= prof[r - 3] == w ^ _rq3.rot(w, 1, q)                                   # u_(r-3) = w + S w
+        good &= _wt101(prof[r - 3] & w) * 2 == V and T >= q + _wt101(w) + V // 2 and 4 * E >= 2 * q + V
+        good &= E >= q // 2 + 1
+    else:                                                                               # r = 5: w alternating
+        good &= (w ^ _rq3.rot(w, 1, q)) == full
+    return good, r
+
+
+# ambient: every first-return excursion from an even zero driver (a, 0), both children, at even q = 2 .. 10, when c
+# and w are nonconstant; r = 5 only where w alternates, and w = 1 never ends an excursion
+_cnt101 = {}
+for q in (2, 4, 6, 8, 10):
+    full = (1 << q) - 1
+    for a in range(1, 1 << q):
+        if _wt101(a) % 2:
+            continue
+        for c in _rq3.children(a, 0, q):
+            if c in (0, full):
+                continue
+            prof, x, y = [0, c], 0, c
+            while y:
+                x, y = y, _rq3.children(x, y, q)[0]
+                prof.append(y)
+            w = prof[-2]
+            ok101 &= w != full
+            if w == 0 or w == full:
+                continue
+            g, r = _check101(prof, q)
+            ok101 &= g
+            prim = _lp82(w, q) == q
+            _cnt101[(q, r == 5, prim)] = _cnt101.get((q, r == 5, prim), 0) + 1
+            if r == 5:
+                ok101 &= (w ^ _rq3.rot(w, 1, q)) == full and _lp82(w, q) == 2              # alternating
+            if q >= 4 and prim:
+                ok101 &= r >= 6                                                         # primitive w: never r = 5
+# r = 5 occurs at every q (from the alternating w, least period 2), but at q >= 4 never with a primitive w
+ok101 &= all(_cnt101.get((q, True, q == 2), 0) == 2 for q in (2, 4, 6, 8, 10))
+ok101 &= not any(k[1] and k[2] for k in _cnt101 if k[0] >= 4)
+# the rooted q = 2 control: cap 2's root path, zeros at 2 and 7, equals 0, 01, 11, 01, 01, 0 up to rotation; T = 3 = q + |w|,
+# E_total = 1 = q/2 (equality: no strict surplus)
+_W101 = lambda s_: sum(int(ch) << t for t, ch in enumerate(s_))
+_rt, _dp, _pa, _ed, _ex = _rq3.reached(2)
+_sk = [s_ for s_ in _dp if not _rq3.children(s_[0], s_[1], 2)][0]
+_ch, s_ = [], _sk
+while _pa[s_] is not None:
+    par, d, c = _pa[s_]
+    _ch.append((par, c, d))
+    s_ = par
+_ch.reverse()
+# literal profiles in absolute time: undo the per-edge delays
+_prof, shift = [], 0
+for n, (st, c, d) in enumerate(_ch):
+    if n == 0:
+        _prof += [_rq3.rot(st[0], -shift, 2), _rq3.rot(st[1], -shift, 2)]
+    _prof.append(_rq3.rot(c, -shift, 2))
+    shift += d
+_z = [n for n, u in enumerate(_prof) if u == 0]                      # index n is depth n - 1 (the root's w_-1 first)
+_seg = _prof[_z[1]:_z[2] + 1]
+ok101 &= [z - 1 for z in _z[1:3]] == [2, 7]
+_tgt = [_W101(s_) for s_ in ('00', '01', '11', '01', '01', '00')]
+ok101 &= any([_rq3.rot(u, k, 2) for u in _seg] == _tgt for k in range(2))
+ok101 &= _exc101(_tgt, 2)[:3] == (5, 3, 1) and _check101(_tgt, 2) == (True, 5)
+ok101 &= [_wt101(_tgt[n] & _tgt[n + 1]) for n in range(1, 5)] == [1, 1, 1, 0]
+# GPT's retained failure: the mixed-phase sketch 0, 01, 11, 10, 10, 0 breaks compatibility
+_bad = [_W101(s_) for s_ in ('00', '01', '11', '10', '10', '00')]
+ok101 &= not all(_bad[i + 2] in _rq3.children(_bad[i], _bad[i + 1], 2) for i in range(4))
+# the two recorded first returns (S97's q = 8, r = 88; S98's rooted q = 16, r = 52,808): r >= 6 and every bound
+for prof, q in ((_pr97, 8), (_pr98, 16)):
+    g, r = _check101(prof, q)
+    ok101 &= g and r >= 6
+# units control: a primitive word with a single one has V = 2 at every q >= 2
+ok101 &= all(_wt101(1 ^ _rq3.rot(1, 1, q)) == 2 for q in range(2, 33))
+check('S101 G203: on every first return from an even zero (q = 2 .. 10, c and w nonconstant) and the rooted returns, '
+      'T >= q + |w| (+ V(w)/2 when r >= 6), r >= 5, r = 5 only with w alternating; rooted q = 2 equality', ok101)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

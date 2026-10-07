@@ -2642,7 +2642,7 @@ Shared black cells between neighbouring profiles add up to the source a stretch 
 **An everyday picture.** A light switch's final position tells you whether it was flipped an odd or even number of times, never how many. Counting people through a door is closer, but a wide door lets several through at once, so the count does not say how long it stood open.
 
 
-## W203
+## G203
 
 **Status:** GPT hand proof, awaiting independent review.
 

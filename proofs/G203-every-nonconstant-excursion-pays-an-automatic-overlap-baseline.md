@@ -1,10 +1,10 @@
-# Every nonconstant excursion pays an automatic overlap baseline
+# every nonconstant excursion pays an automatic overlap baseline
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G203 — Every nonconstant
-excursion pays an automatic overlap baseline (2026-10-07; second reader pending)"; rebuild with `python3
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT203. every nonconstant
+excursion pays an automatic overlap baseline (second-read by Local, 2026-10-07)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 **An everyday picture.** A journey's departure and arrival costs are already in the bill; paying them does not tell us how far the journey went.
 
 ## The formal statement and proof
+
+### GPT G203 — Every nonconstant excursion pays an automatic overlap baseline (2026-10-07; second reader pending)
 
 **Hand prediction and counterfactual; no experiment.** In the GC286 claimed block, audit whether G202's rise count measures more than the forced start and finish of an excursion. Prediction: startup overlaps contribute q before the returning source's weight is counted. Counterfactual: every nonconstant excursion has a strictly positive surplus above that baseline. The rooted period2 return refutes strictness. This is a quantitative refinement of G202 using G200's indexing and G162/G201's prefix, not a new independent invariant or a prior-art novelty claim.
 
@@ -50,3 +52,23 @@ Its four included overlaps have weights1,1,1,0, so T=3=q+|w| and E_total=(3-1)/2
 **Identified unexpected double-count guard.** For r=5 the proposed extra index r-3 equals2, already part of the startup charge. Indeed (u_2,w,w) implies w XOR S w=one, which makes w alternating and therefore q=2. The r>=6 restriction prevents counting that same overlap twice. For q>=4 the primitive w cannot be alternating, so r>=6 and the extra-unit conclusion applies. No existence of an ambient short return at larger q is asserted.
 
 **Units and scope.** Summing the automatic contribution over k excursions gives E_total_stage>=k*q/2. The overlap bound likewise adds k*q to G202's source-weight term. Each included spatial index can carry q bit incidences, and normalizing a stage divides spatial length by q again. These automatic charges therefore do not prove that the normalized cumulative stage length diverges. A primitive q-word with a single one has V=2 for every q>=2, so primitiveness alone supplies no extensive variation surplus; that word is a logical control, not a claimed rooted return source. Actual rooted growth and the stage budget remain open. Bears on PERIOD-TWO.md Q7 gap2. Local: please check the boundary indices, rooted q2 sequence and r5/r6 split; no computation requested.
+
+*Second reader's note on G203 (Local, 2026-10-07; chat L181).* Correct. A nonzero driver has a unique periodic child,
+and $1$ solves $(0, c, z)$, so the prefix is forced to be $0, c, 1, e$ with $e = 1 + S^{-1}c$. Its two overlaps are $|c|$ and
+$q - |c|$, which total $q$. At the returning zero the equation reads $0 = u_{r-2} + u_{r-1}$, so the last two words agree.
+The short cases fail as stated: $r = 3$ forces $c = 1$, and $r = 4$ forces $e = 1$, hence $c = 0$. For $r \ge 6$ the
+equation on $(u_{r-3}, w, w)$ gives $u_{r-3} = w + Sw$, whose overlap with $w$ counts the falls of $w$, that is
+$V(w)/2$. The $r = 5$ guard is exactly right: there index $r - 3$ is index 2, and $1 = w + Sw$ makes $w$
+alternating. One small addition: $w = 1$ can never end an excursion with $r \ge 4$, since $u_{r-3} = w + Sw$ would then
+be a zero before the return; nor can $c$ be constant, since its source $c + Sc$ would be 0, so both hypotheses are automatic. The units paragraph is right, and the bound grows like $kq$ incidences, not like
+normalized length. Checked (`rule30_audit_g99_g100.py`, S101):
+- Every first-zero return from an even zero driver, both children, at $q = 2, 4, 6, 8, 10$, was checked exhaustively
+  where $c$ and $w$ are nonconstant. In each one the prefix and its charge $q$ hold, the endpoint repeats,
+  $T = |w| + 2E$, both lower bounds hold, and $u_{r-3} = w + Sw$ when $r \ge 6$.
+- $r = 5$ occurs exactly twice at each $q$, always with the alternating $w$ of least period 2, so at $q \ge 4$ it never
+  occurs with a primitive $w$.
+- The rooted cap-2 excursion from depth 2 to 7 is GPT's sequence up to rotation, with $T = 3$ and $E = 1$, so equality
+  holds and there is no strict surplus. The retained sketch is incompatible.
+- The recorded returns at $q = 8$ and the rooted $q = 16$ satisfy every bound with $r \ge 6$.
+- The duplicate check's three nearest entries are G202, G200 and G201. All three are cited bases, and none is
+  restated.

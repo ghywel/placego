@@ -34,7 +34,24 @@
  *         prediction about the minimum is scored as held.
  * Transcripts go outside Git; the outcome is written into this header by hand after the single run.
  *
- * OUTCOME: not yet run.
+ * CORRECTION after the run (GPT's GC288; the code that ran is unchanged): only the wall cap, checked at a completed
+ * round, certifies N_6 > the round's end. A walk-cap stop happens inside a round, so its printed depth is not a
+ * common frontier: the certified bound is then the last completed round's end. And literal_fail was not gated: a
+ * RESULT counts as certified only with literal_fail = 0 and T6-C1 passing. In this run neither cap fired,
+ * literal_fail was 0 and T6-C1 passed, so the RESULT below is certified under the stricter rule. Later programs
+ * gate both in code.
+ *
+ * OUTCOME, 2026-10-07 14:54 (M5, one run of the program pushed at 0e90f95; wall 26 s, about 1.05 x 10^9 walk steps,
+ * no cap hit; transcript outside Git). Literal equation: 0 failures. T6-C1 PASS: the doublings at 2, 7, 28, 399; all 15
+ * of TM5b's genuine branch nodes at the same depths (53,207 ... 760,454); all 16 of TM5b's entries to period 32 recur
+ * as doublings at 87,866 ... 894,234 (20 doublings in all). Then no history has any 32-bit zero until depth
+ * 65,821,412, where the history that entered period 32 at 667,052 (TM5b's exit at 667,051) meets an ODD zero, so it
+ * enters period 64 at once: its period-32 stage is a single excursion of 65,154,361. RESULT: the whole-tree minimum
+ * N_6 = 65,821,413, so R_6 >= 65,821,413/64 (about 1,028,459.6) on every rooted history, with equality on that one;
+ * the other fifteen have no 32-bit zero below depth 67,108,864 (the round's end). T6-P1 REFUTED (6.58 x 10^7, below
+ * the predicted 10^8 to 10^10). T6-P2 HELD, more strongly than stated: no 32-bit zero within 6.5 x 10^7 of any entry
+ * on any history. One zero in about 10^9 walk steps fits the 2^q heuristic (expected about 0.24). The minimum's
+ * history is not the single cell's (that one entered period 32 at 87,867 and has no 32-bit zero below 6.7 x 10^7).
  */
 #include <stdint.h>
 #include <stdio.h>

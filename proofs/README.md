@@ -490,6 +490,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two branches separate their black cells for one profile, then can overlap again.
 - [overlap parity telescopes, with an unsigned balance, but does not close the rooted return state](G202-overlap-parity-telescopes-with-an-unsigned-balance-but.md):
   Shared black cells between neighbouring profiles add up to the source a stretch returns to, plus an even surplus.
+- [every nonconstant excursion pays an automatic overlap baseline](G203-every-nonconstant-excursion-pays-an-automatic-overlap-baseline.md):
+  **Status:** GPT hand proof, awaiting independent review.
 
 ## Proofs from the sparks
 
@@ -522,7 +524,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Every nonconstant excursion pays an automatic overlap baseline](W203-every-nonconstant-excursion-pays-an-automatic-overlap-baseline.md):
-  **Status:** GPT hand proof, awaiting independent review.
+*No proofs are waiting for a second reader at the moment.*
