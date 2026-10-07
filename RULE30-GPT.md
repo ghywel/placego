@@ -7242,3 +7242,27 @@ This is impossible when gamma<q. In particular no such potential can certify slo
 **Identified unexpected check: the projected loop is not an actual repeatable cycle.** The target(b,b) has unique period-q child0: a black b resets c to0 and all intervening white times preserve c. Thus the actual next target is(b,0), not another copy of(b,b). The second reset also costs q, and the next zero-driver reset costs0. Forgetting a creates a positive self-loop in the projected driver graph from a valid edge, while the actual pair graph has no such self-loop here. Repeating that projected loop is invalid. The actual two-edge cost2q is a finite period-scale charge, consistent with an O(q) pair potential. At q4 the source is(12,8), its target(8,8), and then(8,0): both delays4 and rewards3, agreeing with HG4's known H0 rejection and G10's maximum6. At q2 the edge reward at slope5/2 is negative, so this specific obstruction does not apply; the dyadic q>=4 condition matters. No numerical run or new cycle census was used.
 
 **Prior record and next intention.** G7's scalar compatibility/reset rule and G160's gate supply the calculation; G8 already keeps both words. This sharpens the earlier phase-loss guard by showing that preserving phase while discarding the preceding word also fails on the ambient gated domain. It is elementary state-projection reasoning, with no novelty claim. Next candidate charges must retain preceding-word information or explicitly exploit a proved rooted restriction. No claim is made that the rooted domain contains this family, and no additional Local computation is requested.
+
+
+**G8 phase-free obstruction survives the arrival gate (2026-10-07; symbolic scope audit, review requested).** G8.2 already rejects a phase-free two-word potential on the full compatible domain at every slope gamma<3. It is not a new cycle discovery. The remaining scope question is whether G160's gate removes the individually maximizing phases used in that proof. It does not. For G8's cyclic list of period4 words the following exact table supplies a gated maximum-delay phase on each edge; a is the preceding cyclic word and b the listed driver. Time bits are least-significant first.
+
+| b | a | arrival r | a(r-1) | delta(b,r) |
+|---|---|---|---|---|
+|9|13|1|1|3|
+|8|9|0|1|4|
+|14|8|0|1|2|
+|12|14|0|1|3|
+|4|12|3|1|4|
+|7|4|3|1|2|
+|6|7|3|1|3|
+|2|6|2|1|4|
+|11|2|2|1|2|
+|3|11|2|1|3|
+|1|3|1|1|4|
+|13|1|1|1|2|
+
+Each source is gated, each triple is the existing compatible G8 triple, and each target is gated by G160 closure. A finite phase-free g(a,b) that satisfies the edge inequalities for all gated states must satisfy each independently chosen row. Summing cancels the cyclic pair potentials and gives36<=12*gamma. Hence gamma>=3 remains necessary even on the gated domain, at dyadic q4. The existing phase-sensitive q4 certificate at gamma5/2 is consistent with this distinction.
+
+**Identified unexpected check and counterfactual.** The selected phases need not concatenate into one physical front. Their use is valid precisely because g forgets phase and must satisfy all gated instances separately. Claiming a real36-step compatible clock cycle would be false: G8's coherent recurrent circuit has elapsed28. If even one of the displayed maximizing phases were excluded by the gate, the old unrestricted proof could not simply be imported; all twelve gate bits have instead been checked explicitly. No new computation was run. This is an exact scope extension of G8, using G160, not a new general potential theorem.
+
+**Working restriction after the two projection guards.** On the full gated domain, neither discarding a while retaining(b,r), nor discarding r while retaining(a,b), can support the desired below3 certificate. These facts do not prove that every successful statistic must store the full pair and phase; other compressions or a rooted-only restriction remain possible. The next direct-charge argument must preserve the distinction each proposed compression erases, rather than transfer an unrestricted graph result without checking its gate. No rooted debt lower bound or prize conclusion is claimed.
