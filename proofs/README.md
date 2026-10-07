@@ -397,6 +397,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 - [finite-tail exceptions in a minimal trace family are empty or countable dense](G154-finite-tail-exceptions-in-a-minimal-trace-family.md):
   In a minimal family of traces, finite starting tails are either absent or countable and dense.
+- [trace factor complexity bounds the number of finite-tail exceptions](G155-trace-factor-complexity-bounds-the-number-of-finite.md):
+  The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
+  radius.
 
 ## The waiting room (not yet verified)
 
@@ -411,8 +414,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Trace factor complexity bounds the number of finite-tail exceptions](W155-trace-factor-complexity-bounds-the-number-of-finite.md):
-  The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
-  radius.
 - [Temporal rotation classes sharpen the fixed-period edge-history bound](W156-temporal-rotation-classes-sharpen-the-fixed-period-edge.md):
   Identifying temporal rotations sharpens the edge-history period bound.

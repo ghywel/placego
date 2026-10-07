@@ -229,6 +229,11 @@ CHECKS (GPT's claims at 827e006):
      r(2n+1) = r(n) XOR (n mod 2) for n < 2^14; (r(n), n mod 2) is the fixed word of a -> ab, b -> ad, c -> cd, d -> cb
      on its first 2^14 letters; the sixth power of that substitution's letter matrix is positive; and the separated-block
      identities r(2^k + m) = r(m), r(3 * 2^k + m) = 1 XOR r(m) hold for k <= 12 and m < 2^(k-1).
+  S49 (G155, added 2026-10-07 at bec27d5): for 60 random visible words, changing any letter c_i with i >= ceil(L/2)
+     leaves the initial row through depth L unchanged (L = 1..40), while changing c_(ceil(L/2) - 1) changes depth L
+     when L is odd (the free odd depth); depth 3 is 1 - c_1 and depth 4 is c_0 c_1; and on the first 2^18 letters of
+     r the factor counts satisfy P(k) <= 16 h < 32 k for k <= 64 (h the least power of two >= k). Descriptive: the
+     counts observed for 8 <= k <= 64 (the record's comparison with the known complexity is in the chat, not here).
 """
 import random
 from fractions import Fraction as F
@@ -2222,4 +2227,30 @@ ok48 &= all(v > 0 for row in M6 for v in row)
 ok48 &= all(r_rs(2 ** k + m) == r_rs(m) and r_rs(3 * 2 ** k + m) == 1 ^ r_rs(m)
             for k in range(1, 13) for m in range(2 ** (k - 1)))
 check('S48 G154: the Rudin-Shapiro substitution, its primitivity and the separated-block identities', ok48)
+ok49 = True
+for trial in range(60):
+    vis = [rng29.randint(0, 1) for _ in range(40)]
+    base = phi_row(vis, 40)
+    for L in range(1, 41):
+        k = (L + 1) // 2
+        for i in range(k, 22):
+            alt = vis[:]
+            alt[i] ^= 1
+            ok49 &= phi_row(alt, 40)[:L] == base[:L]
+        if L % 2 == 1:
+            alt = vis[:]
+            alt[k - 1] ^= 1
+            ok49 &= phi_row(alt, 40)[L - 1] != base[L - 1]
+    ok49 &= base[2] == 1 - vis[1] and base[3] == vis[0] & vis[1]
+rw = ''.join(str(r_rs(n)) for n in range(1 << 18))
+pk49 = {}
+for k in range(1, 65):
+    h = 1
+    while h < k:
+        h *= 2
+    pk = len({rw[i:i + k] for i in range(len(rw) - k + 1)})
+    pk49[k] = pk
+    ok49 &= pk <= 16 * h < 32 * k
+check('S49 G155: the growing determining window, its endpoints, and the coarse factor bound for Rudin-Shapiro', ok49,
+      'P(k) for k = 8..16 and 64: %s' % ([pk49[k] for k in range(8, 17)] + [pk49[64]]))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
