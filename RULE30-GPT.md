@@ -11042,3 +11042,21 @@ For a smooth periodic F, integrate its Fourier coefficient m+4 times in a coordi
 **Controls and retained failure.** Prediction was registered in CLOUD-LOCAL before this check. Direct enumeration versus shell formula agrees exactly for64 shells; decay3 majorant partial sum13.0354440112711. Unexpected check: replacing the four input derivatives with three gives only r^(-2), hence shell sum8*sum1/r, divergent. This absolute-majorant argument then fails; that is not a proof that a sharper operator estimate is false. Transcript outside Git. No experiment on PDE solutions, no Lean compilation, no prize claim.
 
 **Application to our work.** Maintain the boundary between a correct certificate and its asserted meaning: GC408's finite-horizon SAT does not certify an infinite orbit, and G211 does not certify initial finite ancestry. Accept imported tools at their recorded review level, while checking that our hypotheses and conclusions actually match. The paper's broad computability discussion has not been independently audited here; it is unnecessary for this concrete conclusion.
+
+### GC412 — Toolkit119 gives marginal ceilings, not a trace decomposition (2026-10-08)
+
+**Scope and prediction.** Imported119 is accepted at recorded level B; its checked domain includes every n3 Boolean function. Use that finite domain to audit an application to Q1, without revisiting Cloud's verification. No comparable application or synergy argument found in the existing GPT record. Preregistered in CLOUD-LOCAL: successive fair-row observations are independent unconditionally but not conditional on a noisy initial row at noise1/4. Predicted positive joint-minus-marginal information, with zero at noise0 and1/2 as an unexpected endpoint check.
+
+Let X=(a,b,c) be independent fair bits at positions-1,0,1. The first two centre observations are F0=b and F1=a XOR(b OR c). Let Y be X passed through independent bit flips with probability q. These are actual successive synchronous observations, not a replacement noise process inside Rule30. Since a is a fresh fair pivot, F1 is fair independently of (b,c), so F0 and F1 are independent.
+
+**Hand identity and strictness.** Entropy expansion gives
+
+    I((F0,F1);Y) - I(F0;Y) - I(F1;Y)
+      = I(F0;F1 given Y) - I(F0;F1)
+      = I(F0;F1 given Y) >= 0.
+
+At q=1/4, conditional on Y=000, a,b,c are independent Bernoulli(1/4). If b=1, F1=1-a and P(F1=1)=3/4; if b=0, F1=a XOR c and P(F1=1)=3/8. Both b cases have positive probability, and Y=000 has probability1/8. Thus F0 and F1 are not conditionally independent, so the conditional information and displayed gap are strictly positive. This establishes the sign without relying on rounded entropy computations.
+
+**Finite controls.** Exact rational probability tables enumerate8 initial words and8 flip masks per q. XOR-OR agrees with the independent decoded Rule30 table. Direct relative-entropy computation agrees with the entropy chain and conditional-information identity. At q=1/4, I(F0;Y)=0.18872187554086717, I(F1;Y)=0.07223675472190724, joint=0.3058658118488182 bits; gap=0.04490718158604379 bits. All four observation pairs have probability1/4. Unexpected endpoints: q0 gives marginal1,1 and joint2; q1/2 gives all information0. Both gaps are0. Controls PASS. Instrument tests/probes/lexicon/rule30_gpt_toolkit_information.py; probability transcript outside Git.
+
+**What fails and what remains.** Summing actual marginal information values as though they equalled or upper-bounded the trace information is false even for two genuine Rule30 observations. Imported119 correctly bounds each individual readout by1-h(q), but does not bound the missing conditional term by that argument: conditioning on another observation destroys the uniform-input premise. This example does not refute a possible two-bit ceiling2*(1-h(q)); indeed its measured joint information is below that ceiling. Proving such a ceiling requires a separate vector/conditional argument. Nor does a noisy fair-ensemble information ceiling force deterministic count loss or exclude one selected seed. Q1 remains OPEN; useful application guard, no new prize theorem.
