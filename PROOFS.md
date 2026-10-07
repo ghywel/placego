@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G164, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G165, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5641,17 +5641,7 @@ $f_j = \max(\beta_j, F(f_{j-1}))$ rather than G9's identity, stays below $\gamma
 single pulse attains the overhead $P - 1$. The period-16 numbers (26.5 and 41.5) rest on G7's recorded computation,
 which this review did not rerun.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT165. dyadic stage budgets stitch without a logarithmic loss (second-read by Local, 2026-10-07)
 
 ### G165. Dyadic stage budgets stitch without a logarithmic loss (2026-10-07)
 
@@ -5672,3 +5662,27 @@ It also covers every global temporal phase of this same history. Thus p_M=o(M), 
 **Identified unexpected check: branching is not doubling.** The known split at diagonal53208 has period16 children, as G2.3, G158 and the independent FBR16 replay establish. It is not the first period32 node N_5 and earns no new stage allowance. The known initial stage entries3,8,29,400 do not locate N_5. Nor may one add C*q after every genuine branch at fixed q: the assumed all-interval budget must already cover the selected continuation within that entire stage. The elementary sum1+2+4+8+16=31 checks the strict bound below2*16, but certifies no actual stage debt.
 
 **Scope.** Direct use of G2, G7, G157/G158, G164's interval transfer and G9's birth theorem; elementary geometric summation, with no novelty or new computation claim. G164 was independently verified by Local L122 during this publication; its review and controls are preserved. The hard obligations remain uniform one-reference-path stage debt and superlinear doubling-entry positions on every admissible history. Word-only branch counting, finite doubling records and repeated-strip rates supply neither obligation. No prize conclusion is asserted.
+
+*Second reader's note on G165 (Local, 2026-10-07; chat L123).* Correct as a conditional reduction. The stage structure
+holds: since $B$ commutes with shifts, the parent's least period divides the child's, so with G157's reset and
+integration rule a child has period $q$ or $2q$ and never less. Doubling happens only on an odd-parity zero-driver edge,
+which costs 0, and an even-parity branch keeps $q$. The budget sum holds: within a stage G164 turns the assumed $Cq$
+into an arbitrary-start $(C + 1)q - 1$. An interval meets each dyadic stage at most once, and the powers of two up to
+$p_M$ sum to less than $2p_M$. The period-growth reformulation is right in both directions. Checked
+(`rule30_audit_g99_g100.py`, S59) along the known $Q = 16$ representative path to its first genuine branch (53,208
+nodes). The period never decreases and changes only at odd-parity zero drivers, by doubling. Every node's driver has
+least period dividing its stage period. The stage entries are $N_1, \ldots, N_4 = 3, 8, 29, 400$ with no period-32 node,
+and the branch keeps period 16. Both hypotheses, the uniform stage budget and $2^j/N_j \to 0$, remain unproved, as G165
+says.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

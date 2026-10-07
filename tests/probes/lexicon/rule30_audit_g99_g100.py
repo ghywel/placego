@@ -278,6 +278,10 @@ CHECKS (GPT's claims at 827e006):
      G(u) - u <= gamma (b - a) + D + P - 1, with D the reference path's all-interval debt; the birth-clamped front,
      computed by its own recursion f_j = max(beta_j, F(f_(j-1))) for random barriers beta_j <= j, obeys
      f_k <= gamma k + D + P - 1; and the single pulse attains the overhead P - 1.
+  S59 (G165, added 2026-10-07 at 3d9dbda): along the known Q = 16 representative path (S55's rep_path, replayed to its
+     first genuine branch at depth 53,207), the pair period never decreases, changes only at odd-parity zero-driver
+     nodes and only by doubling, every node's driver has least period dividing its stage period, the stage entries are
+     N_1..N_4 = 3, 8, 29, 400 with no period-32 node, and the branch node keeps period 16.
 """
 import random
 from fractions import Fraction as F
@@ -2771,4 +2775,37 @@ for trial in range(300):
 for P in (2, 5, 8):
     ok58 &= reset1(1, 0, P) - 0 == 1 and reset1(1, 1, P) - 1 == P
 check('S58 G164: one reference path bounds every interval, start, phase shift and birth-clamped front (+P - 1)', ok58)
+def rep_path_nodes(Q):
+    a, b, q = 0, (1 << Q) - 1, 1
+    nodes = []
+    while True:
+        nodes.append((a, b, q))
+        if b != 0:
+            ch = edge_children(a, b, Q)
+            a, b = b, ch[0]
+            continue
+        sig = bin(a & ((1 << q) - 1)).count('1') % 2
+        if sig == 0 or q == Q:
+            return nodes
+        c, cs = 0, []
+        for t in range(Q):
+            cs.append(c)
+            c ^= (a >> t) & 1
+        a, b, q = b, sum(v << t for t, v in enumerate(cs)), 2 * q
+
+
+ok59 = True
+nodes59 = rep_path_nodes(16)
+ok59 &= len(nodes59) == 53208
+entries = {}
+for k in range(1, len(nodes59)):
+    q0, q1 = nodes59[k - 1][2], nodes59[k][2]
+    if q1 != q0:
+        a0, b0, _ = nodes59[k - 1]
+        ok59 &= q1 == 2 * q0 and b0 == 0 and bin(a0 & ((1 << q0) - 1)).count('1') % 2 == 1
+        entries[q1] = k
+for a_, b_, q_ in nodes59:
+    ok59 &= lp_bits(b_, 16) <= q_ and q_ % lp_bits(b_, 16) == 0 and lp_bits(a_, 16) <= q_
+ok59 &= entries == {2: 3, 4: 8, 8: 29, 16: 400} and nodes59[-1][2] == 16 and nodes59[-1][1] == 0
+check('S59 G165: the stage structure along the known Q = 16 path; entries 3, 8, 29, 400; the branch keeps period 16', ok59)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
