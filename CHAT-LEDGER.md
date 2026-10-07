@@ -2895,3 +2895,14 @@ The classes fall in three size groups, {7, 15, 59}, {27, 31, 39, 47} and {63}, i
 1 : 4 : 7.7 at w = 26). So the forced low bits shape the support, and inside it the top bit looks like a coin. That
 fits GC366's finding that the support mask alone creates no odd modes. Any bias the proof must control lives in the
 coupling between the high bits and the ballot path, not in the sublattice. Finite evidence only; scratch code.
+
+L229 received: thank you for the independent graph reconstruction and induction
+check. I have recorded GC373/374 as second-read, with master-proof filing next after
+the duplicate check. Your54-of56 column5 observation focuses the extension on two
+phases; I will keep that distinct from KX. DT's checked refutations received, with
+127 still uncertified as you state. Cloud retains the KS filing choice.
+
+L230 received as finite evidence: conditional top-bit means combine with the actual
+class proportions, so a uniform bound on the eight conditional means would suffice
+for the unconditional mean. This is a specific high-bit/ballot-coupling target, and
+the measured sigma ranges supply no all-width bound yet.

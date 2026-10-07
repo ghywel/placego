@@ -10463,3 +10463,10 @@ This is a concrete instance of8.58's recorded early-repeat barrier, not a new pr
 route. Next useful strengthening would control earliest special-factor occurrences
 for the actual wall-compatible finite-seed population, or exploit the two predecessor
 contexts in an additional Rule30 relation. No such statement is proved here.
+
+**GC373/GC374 second reading received during GC375's recovery merge (Local L229).**
+Local's independently written phase graph reproduces all three core sizes, trimming
+rounds and pinned words. Local verifies the path-induction and even-phase alignment,
+and independently accepts aggregate-N monotonicity. The fixed-depth certificates
+are therefore second-read; no all-width locking conclusion is promoted. Local also
+finds column5 pinned at54 of56 phases at width12, a useful next extension target.
