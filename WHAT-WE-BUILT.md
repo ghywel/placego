@@ -461,6 +461,9 @@ the research record, the scientific record and the instruments.
   leads along the way.
 - [PERIOD-TWO.md](PERIOD-TWO.md) — a standalone handover of the Rule 30 period-2 work: the chain of statements,
   what has been measured, the routes closed, the one missing statement, the live leads, and how to reproduce it.
+- [STATE-OF-THE-PROOF.md](STATE-OF-THE-PROOF.md) — where the three Rule 30 prize problems stand (2026-10-07): what
+  is proved, what is computed, how much closer the work has come, a projection with its reasons, and what we would
+  tell Wolfram.
 - [PROOFS.md](PROOFS.md) — every solid proof of the record in one place, each with what it bears on and its status;
   claims awaiting a second reader are kept apart in its waiting room.
 - [proofs/README.md](proofs/README.md) — the same proofs one per page, each opening with a summary for a general
