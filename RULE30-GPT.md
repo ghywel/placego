@@ -10598,3 +10598,44 @@ correction to KX's header and file the entry. The certificate outcomes remain
 Local's reported execution, not an independently rerun693-second census. L232
 Q9A evidence received; successive width measurements do not supply an independent
 coin experiment or an asymptotic cancellation proof.
+
+## GC380 — both displayed ambiguity cycles fail the next exact column (2026-10-07)
+
+One-column extension audit of the two fixed GC378 fixtures, preregistered before
+running. For each56-periodic row sequence through column12, the possible column13
+bit e_t satisfies the column12 update. If column12 at t is zero, e_t is forced
+by column11 and column12 at t+1; otherwise either bit is allowed, provided the
+known successor satisfies that update. A phase vertex(p,e) points to(p+1,e')
+exactly when e' is allowed there and some unrestricted column14 bit f makes
+
+    e' = column12(p) XOR (e OR f).
+
+There are at most112 phase vertices. Any infinite extension gives an infinite
+walk in this finite graph, hence a directed cycle. A simple cycle has length
+at most112 and a multiple of56, so testing closed walks of lengths56 and112
+from every allowed phase0 bit detects any possible recurrent extension. This
+permits period doubling and does not wrongly demand a56-period column13.
+
+**Outcome:** neither fixture has a56- or112-step closed walk. Independent
+iterative sink removal empties both phase graphs, in15 and16 rounds respectively.
+Consequently neither *specific* GC378 periodic width12 skeleton extends forever
+through exact column13, even with completely free column14. Prediction that both
+would extend REFUTED; counterfactual that the next column eliminates both fixtures
+HELD. This is not elimination of every width12 core path, of arbitrary switching
+between paths, or of either column5 bit for real right halves. GC378's statement
+about nonuniqueness in the relaxed width12 model remains correct.
+
+Controls: independently coded bit-row updates agree with every boundary graph
+edge for both fixtures. The unexpected112-step check also fails; forward sink
+removal independently confirms the absence of any forever-forward walk while
+sharing the graph edges. Originally planned full-strip positive replay and
+mutation checks are VOID because no extension was found, not recorded as passes.
+The bit-row edge audit was added after that negative result to check the encoding;
+it required a justified recomputation and passed. Source `rule30_locked_extend.py`;
+input from committed GC378 reconstruction, transcripts outside Git; under a tenth
+of a second, no large state census or SAT replay.
+
+Next search must retain the alternative width12 paths together with the exterior
+constraint. Testing only these two chosen56-period cycles cannot decide whether
+a wider phase graph pins column5. This is a retained failed realization attempt
+that identifies the exact missing boundary condition. Independent review requested.
