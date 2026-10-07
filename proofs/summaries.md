@@ -1913,3 +1913,12 @@ In a minimal family of traces, finite starting tails are either absent or counta
 **Why it matters.** Generic exclusion does not decide the original Rudin–Shapiro word. A direct spatial-tail argument is still needed; this result awaits independent review.
 
 **An everyday picture.** A countable collection can visit every neighbourhood while occupying none of the measure.
+
+## W155
+The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their radius.
+
+**What it says.** A finite row of radius L is fixed by the first ceil(L/2) visible symbols. Rudin–Shapiro has only linearly many such factors. If one exception exists, its time shifts also provide a linear lower bound.
+
+**Why it matters.** The count is either zero or linear. This sharpens the counting constraint but still leaves the specified word unresolved; independent review is pending.
+
+**An everyday picture.** Counting the possible seats does not tell us whether anyone occupies one.

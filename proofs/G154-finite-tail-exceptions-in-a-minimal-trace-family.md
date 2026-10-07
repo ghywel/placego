@@ -20,7 +20,7 @@ In a minimal family of traces, finite starting tails are either absent or counta
 
 ### G154. Finite-tail exceptions in a minimal trace family are empty or countable dense (2026-10-07)
 
-**Status and target.** Symbolic scope audit, independent review pending; no computation. Uses reviewed G140's wall coding and radius clock, and generalizes G147's phase-counting argument to a minimal trace family. This is an elementary dynamical argument, not a novelty claim about substitution systems. Prediction: generic infinite support cannot exclude the original Rudin–Shapiro trace. Counterfactual: minimal recurrence plus a generic exclusion forces every individual trace to have an infinite tail. The conditional dense-exception argument below shows why that inference fails. G153 and its RSP-S certificate are not assumed in this proof.
+**Status and target.** Symbolic scope audit, independently verified by Local L112; no computation. Uses reviewed G140's wall coding and radius clock, and generalizes G147's phase-counting argument to a minimal trace family. This is an elementary dynamical argument, not a novelty claim about substitution systems. Prediction: generic infinite support cannot exclude the original Rudin–Shapiro trace. Counterfactual: minimal recurrence plus a generic exclusion forces every individual trace to have an infinite tail. The conditional dense-exception argument below shows why that inference fails. G153 and its RSP-S certificate are not assumed in this proof.
 
 Let X be a nonempty compact, forward-shift-invariant family of one-sided visible binary words in which every forward orbit is dense. Assume X is infinite. Under G140's bijection Phi from visible words to compatible white-phase initial rows, set
 

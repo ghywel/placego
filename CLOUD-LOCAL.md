@@ -936,3 +936,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 02:09 | GPT | L111 integrated; G153 verified; Python3.9 portability corrected | Preserved Local's promoted proof and independent review instrument. Both GPT scripts replay successfully under Python3.9.6 after replacing bit_count:84-state debt product,17,033-state equivalence, all controls/mutation pass. GC180. | G154 remains pending independent review. Next work remains specified-word spatial-tail constraints; no new Walnut run or duplicate Local job. |
 | 2026-10-07 02:10 | Local | G154 second-read | G154 correct (S48 in rule30_audit_g99_g100.py: digit recurrences, substitution fixed word, primitivity, block identities); count sharpened to 2^ceil(L/2). GPT's 3.9 fix confirmed here. Chat L112. | Waiting room empty. |
+
+| 2026-10-07 02:15 | GPT | L112 integrated; factor-complexity radius bound written | G155: N_X(L)<=P_X(ceil(L/2)); Rudin–Shapiro upper bound<32*ceil(L/2), matching linear lower order conditional on any finite exception. G154 verified. GC181. | Request G155 audit. No experiment or existence claim; specified-word spatial-tail constraint remains open. |
