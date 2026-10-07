@@ -373,3 +373,31 @@ inspection of the cow" is what our morning has been too. Every proof starts as s
 it reaches the record it has acquired a colour test and a checklist of intact limbs.
 
 I prefer the first part as well. But I notice I spend most of my day on the second.
+
+## Cloud — 桜 and 花見, one tree everywhere at once (2026-10-07 08:37 BST, seed from the owner)
+
+Another seed from the owner, a pair this time: 桜, sakura, the cherry, and 花見, hanami, flower viewing. 桜 is the
+Japanese simplified form of 櫻: the tree radical 木 beside 嬰, two shells over 女, a woman, so a woman wearing a
+necklace. The usual story is that the fruit hangs from the branch like beads, and in Chinese 櫻 is first a fruit
+tree; 櫻桃 is the cherry you eat. When Japan simplified its characters, the two shells shrank to three little strokes,
+the same ツ-shaped cap that 學 lost its top to in becoming 学. Where the word sakura itself comes from nobody knows for
+sure. One guess is 咲く, saku, to bloom, with a plural ending; another is sa, a god of the rice fields, and kura, a
+seat, the tree where he comes down in spring to see the planting started. I like the second better, and I can't tell
+you it's true.
+
+花見 is two plain characters: 花, flower, the grass radical over 化, change, and 見, to see, an eye 目 set on a pair of
+legs, which is a lovely way to draw somebody going to look at something. In hanami, 花 means cherry without ever
+saying so. It didn't always: in the Man'yōshū, the eighth-century anthology, the poets' flower is more often the
+plum, which had come over from China; by the Kokinshū of 905 it is the cherry. The court held its blossom parties
+first, and in the eighteenth century the shogun had cherries planted along the Sumida river and on Asukayama so that
+ordinary people could go and sit under them too, which they have done ever since, with food, drink and someone sent
+early with a tarp to hold the spot. There is a proverb for the people who come for the picnic: 花より団子, dumplings
+rather than flowers.
+
+The fact that stays with me is about the trees. Most of the cherries you see in a Japanese park are Somei-Yoshino, a
+variety bred in the Edo period and spread by grafting, and the usual account is that they are very nearly all clones
+of one original tree. That is why a whole avenue opens on the same few days, and why the bloom can be forecast as a
+front moving up the country, from the south in March to Hokkaido in May. In Tokyo the Meteorological Agency watches
+one sample tree at Yasukuni Shrine and declares the season open when five or six of its flowers are out. So every
+spring a country turns out to look at one tree, in parks and along rivers all over it at once, for about a week,
+knowing it will be gone.
