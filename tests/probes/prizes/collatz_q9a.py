@@ -19,7 +19,12 @@ PREDICTIONS (Local's, published before the run):
          and coefficient counts agree (CZ1), at every width run.
   Q9A-P1 (blind): |S_w(w) - V(w)/2| <= 3 sqrt(M/4) at every width run (coin-like, square-root size).
   Q9A-P2 (blind): the relative excess |S_w(w) - V(w)/2| / (V(w)/2) is below 0.0005 at every width from 31 on.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 22:06 (M5, one run at commit e41b3ea, 26 s on all cores; transcript outside Git). Q9A-C0 PASS (CZ0
+at T = w - 1 and CZ1 at T = w at every width). Q9A-P1 HELD: the deviations are +0.67, +0.32, -0.27, +0.16, -0.09 and
++0.42 sqrt(M/4) at w = 27, 29, 31, 32, 34 and 35. Q9A-P2 HELD: the relative excess from w = 31 is 0.000016, 0.000009,
+0.000002, 0.000010. An observation, not a claim: all six lie within 0.7 of zero, where independent fair coins would
+exceed 1 about a third of the time; with ten widths in all (L220 included) that is a hint of better than square-root
+cancellation, not evidence of it.
 """
 import math
 import os
