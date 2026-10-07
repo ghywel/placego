@@ -300,6 +300,9 @@ CHECKS (GPT's claims at 827e006):
      original edge inequality with max h <= max K + A + B; over every gated block of every P <= 10, the largest
      anchored prefix reward is at most max(0, 2q - 10) and the largest subinterval reward at most max(0, 2q - 5); and
      the q = 8 slow pulse block lifts to (6, 11, 0, 3, 6).
+  S64 (G169, added 2026-10-07 at 8d75ab4): the three witness edges are valid gated compatible edges with the stated
+     costs and distance triples ((3, 4, 3) -> (4, 4, 0); (1, 0, 1) -> (0, 2, 2); (q, q, 0) -> (q, 0, q) for q = 4, 8, 16),
+     and the resulting linear inequalities force beta - chi <= 1 and beta - chi >= 11/8 at q = 8, an empty system.
 """
 import random
 from fractions import Fraction as F
@@ -3002,4 +3005,39 @@ for P in range(2, 11):
 okl, h63 = lift_check([-5, 11, -3, -3], [0])
 ok63 &= okl and [h63[v] for v in range(5)] == [6, 11, 0, 3, 6]
 check('S63 G168: one shared reserve lifts contracted block certificates; the G167 reserves A and B; the q = 8 lift', ok63)
+def Dd(w, r, P):
+    return reset_cost(w, r, P)[0] if w else 0
+
+
+def gated3(a, b, r, P):
+    if a:
+        return (a >> ((r - 1) % P)) & 1 == 1
+    return ((b >> (r % P)) & 1) ^ ((b >> ((r - 1) % P)) & 1) == 1
+
+
+def tri(a, b, r, P):
+    return (Dd(a, r, P), Dd(b, r, P), Dd(a ^ b, r, P))
+
+
+ok64 = True
+ok64 &= 8 in edge_children(12, 8, 4) and edge_children(8, 8, 4) == [0]
+ok64 &= gated3(12, 8, 0, 4) and gated3(8, 8, 0, 4) and reset_cost(8, 0, 4) == (4, 0)
+ok64 &= tri(12, 8, 0, 4) == (3, 4, 3) and tri(8, 8, 0, 4) == (4, 4, 0)
+ok64 &= 14 in edge_children(9, 0, 4) and gated3(9, 0, 0, 4) and gated3(0, 14, 0, 4)
+ok64 &= tri(9, 0, 0, 4) == (1, 0, 1) and tri(0, 14, 0, 4) == (0, 2, 2)
+for q in (4, 8, 16):
+    b = 1 << (q - 1)
+    ok64 &= edge_children(b, b, q) == [0] and gated3(b, b, 0, q) and gated3(b, 0, 0, q)
+    ok64 &= reset_cost(b, 0, q) == (q, 0) and tri(b, b, 0, q) == (q, q, 0) and tri(b, 0, 0, q) == (q, 0, q)
+# inequalities h(src) >= reward + h(tgt) with h = alpha D(a) + beta D(b) + chi D(a^b):
+#   edge 1: (3,4,3) - (4,4,0) >= 3  ->  -alpha + 3 chi >= 3
+#   edge 2: (1,0,1) - (0,2,2) >= -5 ->  alpha - 2 beta - chi >= -5
+#   pulse:  (q,q,0) - (q,0,q) >= 2q - 5 -> q (beta - chi) >= 2q - 5
+lhs1 = tuple(x - y for x, y in zip((3, 4, 3), (4, 4, 0)))
+lhs2 = tuple(x - y for x, y in zip((1, 0, 1), (0, 2, 2)))
+ok64 &= lhs1 == (-1, 0, 3) and lhs2 == (1, -2, -1)
+sumv = tuple(x + y for x, y in zip(lhs1, lhs2))
+ok64 &= sumv == (0, -2, 2) and 3 + (-5) == -2                     # 2 (chi - beta) >= -2, i.e. beta - chi <= 1
+ok64 &= _F57(2 * 8 - 5, 8) > 1                                     # q = 8 needs beta - chi >= 11/8 > 1
+check('S64 G169: three explicit gated edges make the shared three-distance potential infeasible at q = 4 and 8', ok64)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

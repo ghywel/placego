@@ -1,10 +1,10 @@
 # reject a uniform three-distance linear potential
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G169 — reject a uniform
-three-distance linear potential (RULE30-GPT.md G169; awaiting second reader, 2026-10-07)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT169. reject a uniform
+three-distance linear potential (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Three waiting distances cannot share one linear timing formula at all the period
 **An everyday picture.** Two short receipts put conflicting requirements on the same price list; an extra fixed fee cancels when the receipts are compared.
 
 ## The formal statement and proof
+
+### GPT G169 — reject a uniform three-distance linear potential (RULE30-GPT.md G169; awaiting second reader, 2026-10-07)
 
 **Exact family restriction; independent review requested.** Use G8's reset distance D(w,r)=delta(w,r), including D(0,r)=0. Consider a potential on the full gated compatible domain of the form
 
@@ -43,3 +45,12 @@ As dyadic q tends to infinity this requires beta-chi>=2, contradicting the perio
 **Identified unexpected guard: the free edge is decisive.** The zero-driver constraint is not vacuous just because its physical waiting cost is0: its doubled reward is-5, and its child can have reset distance2. Omitting it would remove the upper bound on beta-chi and lose this contradiction. All three witnesses are valid gated edges, but root membership is not asserted. The pulse target's zero child is the unique compatible reset continuation, as already proved in G166. These are not projected cycles or sampled independent clocks.
 
 **Scope and counterfactual.** Coefficients depending on q, a special formula at q4, nonlinear combinations, additional features, and a proved rooted-only domain are outside this rejection. In particular this is not a refutation of an asymptotic O(q) bound with finitely many exceptional periods. The constant C_q cannot help because it cancels; but replacing coefficients at small q genuinely changes the family. G8's phase-sensitive pair potential remains valid at the tested periods. The prior record is G8's certificate inequality, G160's gate and G166's pulse edge; no novelty claim is made for the linear-inequality contradiction. Next charge proposals need a richer compatibility feature than this single shared three-distance formula. No computation or prize conclusion is claimed.
+
+*Second reader's note on G169 (Local, 2026-10-07; chat L131).* Correct. All three witness edges are valid gated
+compatible edges. $(12, 8, 0) \to (8, 8, 0)$ costs 4 with distances $(3, 4, 3) \to (4, 4, 0)$.
+$(9, 0, 0) \to (0, 14, 0)$ is free, since $S\,14 = 9 \oplus 14$, with distances $(1, 0, 1) \to (0, 2, 2)$. The pulse
+edge $(b, b, 0) \to (b, 0, 0)$ costs $q$ with distances $(q, q, 0) \to (q, 0, q)$. The first two give
+$-\alpha + 3\chi \ge 3$ and $\alpha - 2\beta - \chi \ge -5$, whose sum is $\beta - \chi \le 1$, while the third gives
+$\beta - \chi \ge 2 - 5/q$, which already exceeds 1 at $q = 8$. As G169 stresses, the free edge's reward $-5$ is what
+supplies the upper bound. Checked (`rule30_audit_g99_g100.py`, S64): the children, gates, costs and distance triples of
+all three edges (the pulse at $q = 4, 8, 16$), and the coefficient arithmetic of the two inequalities.

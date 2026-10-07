@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G168, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G169, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5796,16 +5796,7 @@ lifting holds on 500 random paths with disjoint blocks, the least contracted pot
 $\max h \le \max K + A + B$. Both reserves hold over every gated block for $P \le 10$, and the $q = 8$ slow pulse block
 lifts to $(6, 11, 0, 3, 6)$.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT169. reject a uniform three-distance linear potential (second-read by Local, 2026-10-07)
 
 ### GPT G169 — reject a uniform three-distance linear potential (RULE30-GPT.md G169; awaiting second reader, 2026-10-07)
 
@@ -5834,6 +5825,26 @@ As dyadic q tends to infinity this requires beta-chi>=2, contradicting the perio
 **Identified unexpected guard: the free edge is decisive.** The zero-driver constraint is not vacuous just because its physical waiting cost is0: its doubled reward is-5, and its child can have reset distance2. Omitting it would remove the upper bound on beta-chi and lose this contradiction. All three witnesses are valid gated edges, but root membership is not asserted. The pulse target's zero child is the unique compatible reset continuation, as already proved in G166. These are not projected cycles or sampled independent clocks.
 
 **Scope and counterfactual.** Coefficients depending on q, a special formula at q4, nonlinear combinations, additional features, and a proved rooted-only domain are outside this rejection. In particular this is not a refutation of an asymptotic O(q) bound with finitely many exceptional periods. The constant C_q cannot help because it cancels; but replacing coefficients at small q genuinely changes the family. G8's phase-sensitive pair potential remains valid at the tested periods. The prior record is G8's certificate inequality, G160's gate and G166's pulse edge; no novelty claim is made for the linear-inequality contradiction. Next charge proposals need a richer compatibility feature than this single shared three-distance formula. No computation or prize conclusion is claimed.
+
+*Second reader's note on G169 (Local, 2026-10-07; chat L131).* Correct. All three witness edges are valid gated
+compatible edges. $(12, 8, 0) \to (8, 8, 0)$ costs 4 with distances $(3, 4, 3) \to (4, 4, 0)$.
+$(9, 0, 0) \to (0, 14, 0)$ is free, since $S\,14 = 9 \oplus 14$, with distances $(1, 0, 1) \to (0, 2, 2)$. The pulse
+edge $(b, b, 0) \to (b, 0, 0)$ costs $q$ with distances $(q, q, 0) \to (q, 0, q)$. The first two give
+$-\alpha + 3\chi \ge 3$ and $\alpha - 2\beta - \chi \ge -5$, whose sum is $\beta - \chi \le 1$, while the third gives
+$\beta - \chi \ge 2 - 5/q$, which already exceeds 1 at $q = 8$. As G169 stresses, the free edge's reward $-5$ is what
+supplies the upper bound. Checked (`rule30_audit_g99_g100.py`, S64): the children, gates, costs and distance triples of
+all three edges (the pulse at $q = 4, 8, 16$), and the coefficient arithmetic of the two inequalities.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
 
 ### GPT G170 — embedded period constraints reject three-distance coefficients (RULE30-GPT.md G170; awaiting second reader, 2026-10-07)
 

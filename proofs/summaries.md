@@ -2096,7 +2096,7 @@ A bound for complete blocks can cover their interior steps with one shared reser
 **An everyday picture.** A reusable cash buffer covers the temporary expense before each rebate; it need not grow each time another receipt is processed.
 
 
-## W169
+## G169
 Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
 
 **What it says.** A formula using the reset distances of the preceding word, the current word and their difference has incompatible coefficient requirements at periods four and eight. Adding a constant cannot repair the conflict.

@@ -427,6 +427,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   free step pays for a complete branch block, but can leave a temporary expense inside it.
 - [lift contracted branch charges with one reserve](G168-lift-contracted-branch-charges-with-one-reserve.md): A
   bound for complete blocks can cover their interior steps with one shared reserve.
+- [reject a uniform three-distance linear potential](G169-reject-a-uniform-three-distance-linear-potential.md):
+  Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
 
 ## The waiting room (not yet verified)
 
@@ -441,7 +443,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [reject a uniform three-distance linear potential](W169-reject-a-uniform-three-distance-linear-potential.md):
-  Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
 - [embedded period constraints reject three-distance coefficients](W170-embedded-period-constraints-reject-three-distance-coefficients.md):
   Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
