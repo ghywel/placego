@@ -7662,3 +7662,10 @@ above the minimum (G204's boundary check). The literal equation held on all of a
 fired, and the run reproduced Proposition 8's fifteen branches and sixteen entries, so the result meets the
 certification rule of GC288. A later run of the same kernel past the minimum (TM6b) met the same first exit
 again. $\square$
+
+*Independent backward certificate (Local, 2026-10-07 15:25; `rule30_tm6_backward.py`, TM6-B).* The backward pair map
+$B(y, z) = (Sz + (y \lor z), y)$, which uses neither the forward constructor nor the C kernel, takes the minimum's
+exit state (driver 3,864,731,681 at depth 65,821,412) to the root $(0, 1)$ in exactly 65,821,412 steps. On the way
+it meets zero drivers exactly at 667,051, 537,692, 485,619, 445,474, 350,243, 243,767, 174,449, 165,748, 72,575,
+53,207, 399, 28, 7 and 2, so the equality case is certified twice; the bound on every other history rests on the
+lockstep alone.
