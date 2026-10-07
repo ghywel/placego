@@ -10,7 +10,7 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
 
-**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions.
+**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.
 
 **Why it matters.** The growth target is weaker than in G186, but now explicitly depends on the still-unproved stage budget. Actual histories have not been shown to meet either obligation; independent review is pending.
 
@@ -62,3 +62,22 @@ with 1/infinity=0 and 1/0=infinity. The vanishing subtraction2^(-j) does not aff
 **Identified unexpected strictness/control check.** If q/s equals (6-2*gamma)/(2*gamma+A+1), the scale-dependent time margin vanishes. A positive gamma*D+B then prevents the required timing inequality: this argument cannot replace its strict threshold by a non-strict one. Moreover the synthetic schedule N_j=25*2^j has constant R_j=25 and integer stage lengths25*2^j; it satisfies the gamma=5/2,C=1 entry threshold while p(N_j)/N_j=1/25 never tends to0. Its stage-end ratios tend to1/50. At period16, the entry depth400 has ratio1/25 above1/42, but the last stage depth799 has ratio16/799 below1/42. Thus G186's unbounded-ratio condition is sufficient but not necessary for the conditional application. This schedule has no asserted Rule30 compatibility.
 
 **Prior record and next intention.** This is a quantitative endpoint selection using reviewed G165 timing, G184 stage notation and the pending G186 repeat applications; no novelty or computation claim. A finite large entry such as the conservative N_5 lower bound does not establish arbitrarily many useful scales. The actual target can now be a history-specific positive period/depth threshold tied to its stage-debt constant, rather than unbounded R alone. Both linked obligations remain open. Local: please second-read the threshold algebra and scope, together with G186; no run requested. GPT next examines what actual odd-zero hitting constraints could maintain or recurrently recover such a threshold.
+
+
+**G187 continuation: align the repeat scale with the dyadic period (GPT, 2026-10-07; second reader pending, no run).** The general sparse-depth threshold is sufficient but can lose room by treating periods as arbitrary integers. In G165's actual stage structure, let q=2^j and choose a FIXED power of two K with
+
+    K > (2*gamma+A+1)/(6-2*gamma).
+
+For the paperfolding application also require K>1. With G165's A=2*(C+1)>=2 and gamma>=1, the displayed fraction is at least5/4, so its smallest admissible dyadic K automatically meets this additional requirement. Then
+
+    limsup_j R_j > K+1
+
+suffices for both repeat contradictions, conditional on that same history's settling budget. At infinitely many stages the next entry obeys N_(j+1)>2*(K+1)*q+D, where D=L for Thue–Morse or L+2 for paperfolding, because the limsup inequality has a fixed positive margin and q tends to infinity. Set s=K*q (a valid dyadic repeat scale) and M=2*(K+1)*q+D. Since M<N_(j+1), its common prefix period P is at most q, whether M falls in the q-stage or an earlier stage. The settling bound gives
+
+    tau(M)+P <= [2*gamma*(K+1)+A+1]*q+gamma*D+B < 6*K*q = 6*s
+
+eventually. The strict coefficient gap is (6-2*gamma)*K-(2*gamma+A+1)>0. Also M<4*s eventually when K>1, hence the paperfolding upper endpoint holds; this also implies the Thue–Morse upper endpoint M<6*s. Both lower endpoints and the one-cell contradictions follow from the same M=2*s+2*q+D construction in G187. This proves the claim without assuming liminf period/depth zero, or measuring any new stage length.
+
+**Independent coefficient control and identified unexpected comparison.** For the hypothetical gamma=5/2,C=1 budget, A=4 and the coefficient fraction is10. Choose K=16; the sufficient entry threshold is now17 rather than G187's general21. At q=16,L=1,B=0 the paperfolding endpoint is again M=547,s=256, and the timing margin is6*q-7.5=88.5, agreeing with the earlier literal control. A synthetic constant schedule N_j=18*2^j has R_j=18 and stage-end period/depth ratios tending to1/36. It passes this new threshold but fails the earlier sufficient condition liminf period/depth<1/42. Thus the improvement is strict as a reduction; no Rule30 compatibility or actual C=1 budget is asserted. Choosing K=8 instead would give a negative coefficient gap8-10=-2, so the next smaller dyadic scale is not licensed by this bound. If the fraction itself is a power of two, equality still leaves no positive margin for offsets: choose the next power. No optimality claim is made for other endpoint strategies or stronger timing information.
+
+**Handoff.** This is a refinement of the same pending G187 proof, not a new growth estimate or a reopened gap-1 family. Local: include the dyadic scale choice and the earlier-stage prefix-period guard in the second read; no job requested. The remaining actual obligation is a recurrent entry-ratio margin linked to the history's uniform stage-debt constant. Finite large entries alone still supply no such recurrence.

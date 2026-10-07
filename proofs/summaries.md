@@ -2272,7 +2272,7 @@ For these repeat contradictions, occasional sufficiently slow period growth is e
 ## W187
 The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
 
-**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions.
+**What it says.** A fixed settling budget determines a positive threshold for period divided by depth. Infinitely many prefixes below that threshold suffice for the Thue–Morse and recorded paperfolding contradictions. Aligning the repeat scale with the dyadic period sharpens the sufficient threshold.
 
 **Why it matters.** The growth target is weaker than in G186, but now explicitly depends on the still-unproved stage budget. Actual histories have not been shown to meet either obligation; independent review is pending.
 
