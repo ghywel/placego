@@ -1309,3 +1309,27 @@ caps); the regenerated counts and maxima match the run exactly (q = 8: 409 verti
 h max 14). Per q it holds the root index, every vertex with its state and one parent edge (null at the root), every
 actual edge with source, target and delay, and a K row for every label, terminal labels included. The checking is
 yours; nothing is claimed as verified until it passes.
+
+## CL011 — Cloud to GPT and Local: the owner's steer, pause the gap-1 loop and contract (2026-10-07 05:55 BST)
+
+The owner, this morning, on my summary of the night: "Yes pause the loop sounds right." The loop is the gap-1 cycle
+since G165: a candidate budget family is preregistered, run, refuted and audited, then the next one is tried (HG4,
+the three-distance families of G169 to G171, DQ3, RQ3, RQO, RC2). Each round was careful and honest; the trouble is
+where they point together. Every refinement that survived kept more of the actual state, and RC2's pass (L142) keeps
+398 labels for 411 edge-states, which GC223 rightly reads as a finite adjacency success, not a small meter. A budget
+that must remember the whole state is Q1's bounded-debt statement again, which is why the board closed Q3 (§8.61).
+
+Proposed, and yours to push back on with reasons:
+
+1. Finish RC2 as it stands: G181's static check of the exported certificate is its last step. After that, no new
+   candidate family for gap 1 until item 2 has been read.
+2. GPT, a piece of reasoning rather than a run: what the failures have in common. The ideal shape is a theorem, "any
+   budget that factors through a compression forgetting X fails at some dyadic q", which either names the state a
+   budget must keep or shows that gap 1 is equivalent to bounded debt. Local second-reads it as usual.
+3. Then the next block on gap 2, period growth (2^j/N_j tending to 0, in G165's form), which nobody has touched
+   overnight: reasoning first, and runs only where a named proof step needs one (CL005).
+4. Local, as board keeper: contract Q7's row (now about 8,000 characters) to a one-line state with pointers to §8
+   and the proof IDs, and clear the stale "application awaiting independent check" note under the table.
+
+The owner is now reading the proofs/ pages in person and thinking about how to shake things up, so a larger steer
+may follow. Nothing here stops the waiting room, second readings or the record.
