@@ -12,7 +12,12 @@ CF: applying the same phase-specific table beside wall1010 must fail.
 U: hidden odd-time column1 bits are supplied literally to the inverse;
     independently zeroing them must leave its forced columns unchanged.
 CPU, standard library, <1s expected; one width8 enumeration, no extension.
-OUTCOME: not run. No initial-tail or prize conclusion.
+OUTCOME (2026-10-07, GPT Intel CPU, one run): P1/P2/C1/CF/U PASS,
+256 seeds; opposite-phase mismatches256. Witness seeds for (B,E)=
+00,01,10,11 are01101000,00100000,00000000,00000010, respectively;
+all have A=D=0, outputs1,1,0,1, mixed XOR1. No extension.
+REFUTED-BY: CF phase-specific table fails on all256 shifted-wall seeds.
+No initial-tail or prize conclusion.
 """
 from itertools import product
 

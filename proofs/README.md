@@ -130,7 +130,7 @@ These were proved inside sections as running text. They are restated so that eac
 - [Gliders on prime rings](C6-gliders-on-prime-rings.md): On a ring with a prime number of squares, any rhythm that
   is rare must be a pattern travelling round the ring.
 - [The first three columns are affine in column 1](C7-the-first-three-columns-are-affine-in-column.md): The first
-  three columns left of the middle just copy or flip column 1; the first real mixing happens in the fourth.
+  three columns left of the middle copy or flip visible bits; the fourth introduces a formal product.
 - [Rule 30's velocity is Rule 210](C8-rule-30-s-velocity-is-rule-210.md): Rule 30's change from one tick to the next
   follows Rule 210, its closest sibling.
 

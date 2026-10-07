@@ -8797,3 +8797,26 @@ Fix integers M>=1 and J. Retain stage-entry histories only while Rj<=M at every 
 **Exact finite control.** The certified N6>=65821413 and monotone entries give Rj>=65821413/2^j for every continuation at j>=6. At j21, 17*2^21=35651584 is below that numerator; at j22, 17*2^22=71303168 is above it. Hence the known record keeps every history above17 through j21, but this inherited floor cannot certify j22. Applying G184's already recorded synthetic constant-lambda control with future lambdaj=1 gives N22=65821413+(2^22-64)=69815653, below17*2^22; R tends to1 thereafter. This is not a compatible Rule30 history. It demonstrates exactly why the finite threshold clearance is insufficient, while keeping positive integer stage lengths and the existing constant short-return lower bound.
 
 **Unexpected quantifier guard and retained failure.** A successful finite emptiness check for J<=6 can be caused solely by the recorded high R6. It says nothing about a bounded tail beginning after that crossing; J must range independently. The attempted deduction from a large finite record is rejected. A useful future certificate would bound the length of a threshold-avoiding stage path using actual compatibility and ancestry, for arbitrary starting J. Merely increasing the next measured minimum does not prove that family. Growth remains open; no board promotion, computation request or prize conclusion.
+
+
+## Independent second reading R4: C7's product on the admissible right-side domain (2026-10-07)
+
+**Scope and overlap.** C7 and G138 already derive the formal depth4 product and depth5 continuation from arbitrary visible words. This audit keeps that formal statement and asks what survives for a right half actually evolving beside wall0101. Nearest older entries01/C2/19 were read: hidden-bit invisibility, the latch and the entropy squeeze are existing ingredients, not new claims here. GC297 and the probe were published in dfc562d before execution. Prediction: the first six forced columns simplify to affine functions; the odd depth7 product survives. Counterfactual: the same phase-specific table works beside1010. Independent control uses lookup-table forward evolution and literal inverse reconstruction; unexpected check removes every hidden odd-time right bit.
+
+Write A=c_s, B=c_(s+1), D=c_(s+2), E=c_(s+3). Lemma3 gives AB=BD=DE=0: a visible1 persists at the next odd time because the wall is0, then forces the following visible bit0 because the wall is1. Apply the inverse recurrence v_(j+1)(t)=v_j(t+1) XOR (v_j(t) OR v_(j-1)(t)). The resulting even/odd pairs are:
+
+| Depth j | time2s | time2s+1 |
+|---|---|---|
+| 1 | 1-A | 1 |
+| 2 | A | B |
+| 3 | 1-B | 1-B |
+| 4 | 0 | D |
+| 5 | (1-B) XOR D | 1-B |
+| 6 | D | B XOR D XOR E |
+| 7 | 1 XOR D XOR E | 1 XOR E XOR (B AND E) |
+
+**Algebra, rather than inference from the enumeration.** C7's AB vanishes. In G138's depth5 even expression, A OR(1-B)=1-B since AB=0. At depth6, (1-B) OR D=1-B under BD=0, so its odd value reduces to B XOR D XOR E; its even value is D. At depth7, D OR((1-B) XOR D)=1-B under BD=0, giving the even value1 XOR D XOR E. For the odd value, set X=B XOR D XOR E and Y=1-B. The Boolean identity X OR Y=X XOR Y XOR XY and BD=0 give X OR Y=1 XOR (B AND E). XOR with E gives the stated result. These substitutions prove the table for every right trace on this domain, beyond the finite controls.
+
+**One preregistered finite control, no extension.** rule30_affine_wall_audit.py enumerated all256 width8 seeds, with10 zero padding cells beyond the sampled causal cone. P1 matches all seven pairs; P2 realizes all four (B,E) combinations at D=0; C1 checks all eight Rule30 triples independently; CF rejects the phase-specific table on all256 opposite-phase traces; unexpected U passes all256 hidden-bit removals. Exit0. The four printed witnesses also have A=0: seeds01101000,00100000,00000000,00000010 give (B,E)=00,01,10,11 and odd-depth7 outputs1,1,0,1. Their mixed XOR is1. Because A=D=0 is fixed, no affine function of the four visible inputs A,B,D,E can match those outputs. This supplies an actual admissible-prefix obstruction, rather than merely pointing to a formal product that the allowed language might erase.
+
+**Verdict and limits.** Formal arbitrary-word mixing begins at depth4; on the real right-side domain it vanishes there, the first six pairs have affine formulas, and depth7's odd value is not affine in these four visible inputs. This is a scoped second-reading note, awaiting Local review, not an additional scored theorem or a global linearization. The witnesses are driven-right prefixes; they do not certify an eventually white forced initial left tail, a centre-column counterexample, normalized growth or a prize. No failed prediction was discarded. Local retains TM6b; next reasoning returns to the ancestry obligation in GC296.

@@ -706,6 +706,9 @@ column is the inverse rule $x(-j, t) = x(-j+1, t+1) \oplus (x(-j+1, t) \vee x(-j
 to its right, which the table carries out for $j = 2, 3, 4$. $\square$
 
 
+*Admissibility audit (GPT, 2026-10-07, R4/GC299; independent review pending).* The table above is formal in arbitrary visible words. An actual right half beside0101 obeys Lemma3's no11 condition, so its depth4 product is zero. R4 derives affine even/odd formulas through depth6 and the depth7 odd value1 XOR c_(s+3) XOR (c_(s+1) AND c_(s+3)). A single preregistered256-seed check matches literal inverse columns; four witnesses with c_s=c_(s+2)=0 realize all product-input pairs and mixed XOR1. Thus depth7 is nonaffine in these four visible inputs on the driven-right prefix domain. This does not provide an eventually white initial left tail or a global linearization; C7's formal table is preserved.
+
+
 ### C.8 Rule 30's velocity is Rule 210 (RULE30-PRIZE.md §8.70; 2026-10-06)
 
 *Where:* §8.70 (the owner's question about velocity and acceleration). *Bears on:* why Rule 210 is Rule 30's closest
