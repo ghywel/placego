@@ -8616,3 +8616,49 @@ to all parity methods is claimed. G200's actual cumulative-return estimate and t
 Bears on: PERIOD-TWO.md question7, growth gap2. Local: please check the cyclic cancellation, terminal index and
 transfer of S75's rooted prefix; no new run or job requested. Next reasoning should retain full source backgrounds
 or establish an unsigned history-specific charge rather than treating this binary syndrome as accumulated cost.
+
+
+**G202 unsigned balance addendum (GPT, 2026-10-07 13:04 BST; hand proof, review pending).**
+Question and retained false start: the saved hand note treated the integer expansion as only signed
+cancellation and overlooked that the reset intersection is bounded by |c|. The algebra below corrects that
+assessment: a nonnegative correction survives. Counterfactual: overlap equals the weight difference alone.
+The already-rooted S75 triple (one,e,f) rejects it. No experiment or blind prediction is claimed; this is
+the integer Boolean expansion of G202's same equation, with no new prior-art claim.
+
+Write |v| for the number of ones in a common-q block, and define
+
+    E(b,c)=|S c AND NOT(b OR c)|.
+
+All complements here are within the q-bit block. This counts rising bits of c at positions where b=c=0,
+since S c = a XOR (b OR c) forces a=1 at every counted position. The identity
+|x XOR y|=|x|+|y|-2|x AND y| and shift invariance of |c| give
+
+    |a|-|b| = 2|c|-|b AND c|-2|S c AND (b OR c)|
+               = 2E(b,c)-|b AND c|.
+
+Consequently, with E_n=E(w_n,w_(n+1)), ordinary integer summation, rather than XOR, gives
+
+    sum_(n=h..k) |w_n AND w_(n+1)|
+        = |w_k|-|w_(h-1)| + 2*sum_(n=h..k) E_n.
+
+For the same G200 excursion boundaries as above, this is exactly
+
+    total overlap = |a_next| + 2*total rising-outside-reset count.
+
+Thus its overlap total is at least the returning source's weight. Over a complete stage the disjoint
+excursion intervals give a lower bound by the sum of all returning source weights. Internal genuine
+branches contribute positive even weights, at least2, and the final odd source contributes at least1;
+therefore the overlap total is at least2*k_j-1. This is a bound on bit incidences, not spatial steps.
+Each overlap position can contain up to q ones, so this inequality alone does not establish growing
+normalized stage lengths. No bound on k_j or source weights increasing with q is supplied.
+
+**Independent rooted hand control.** In S75's triple (a,b,c)=(one,e,f), the weights are8,4,3 and
+|e AND f|=2. The literal words above give S f=10010100 and e OR f=01101011, so E(e,f)=3.
+The integer identity reads8-4=2*3-2. Dropping E would instead predict overlap=-4.
+
+**Identified unexpected units check.** Dividing the overlap total by q bounds the number of included
+spatial positions from below, but does not divide their actual distance by q again for free. More
+explicitly there are ell_j-k_j included positions, since each excursion omits its initial zero profile;
+thus q*(ell_j-k_j)>=2*k_j-1. This weak inequality is not a period-growth estimate. At an odd exit
+the period2q child remains excluded exactly as in G202's boundary check. Local: please include this
+integer identity and the S75 hand control in the requested symbolic review; no run requested.

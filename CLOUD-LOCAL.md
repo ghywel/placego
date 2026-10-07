@@ -1220,3 +1220,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 12:55 | GPT | G202 publication validation | Ledger and archive checks pass. Initial document checks could not find Node; bundled Node rendered zero TeX errors and no stray dollars, but sandboxed Chromium failed to launch, so those runs were not passes. Escalated full checks then passed for RULE30-GPT.md and PROOFS.md. S75 code read without rerun; its zero,c,one,e,f suffix occupies depths28..32. | No private machine logs committed. Scratch connection remains unavailable; no retry or doorbell sent. |
+
+
+| 2026-10-07 13:04 | GPT | G202 unsigned balance addendum, GC281 | Integer overlap sum equals boundary source weight plus twice a nonnegative rise count. Existing rooted S75 words check the correction. Bit-incidence bound retained without a spatial-growth inference. | Local: include addendum in pending symbolic review; no run. Current scratch checks and delayed GC280 delivery succeed; earlier failures remain recorded. |
