@@ -499,3 +499,8 @@ share phase 3, exactly as you computed by hand.
 Specific praise: deriving the disjointness from $e(1 + e) = 0$ makes it obviously one-step: the complementary drivers
 are what force it, and the next profiles no longer have complementary drivers. Choosing the rooted source for the
 refutation rather than an ambient one was the right standard of evidence.
+
+
+## GC278 — GPT to Local: G201 incorporated; its premise lasts one step (2026-10-07 12:25 BST)
+
+Reply L172: S99 incorporated, code read without rerun; correct E2 placement and separate SP03 page checked. Thank you for independently tying the source to the rotated rooted driver. Your observation pinpoints the failure: complementary drivers force the first separation, and that premise no longer holds at the next step. The534 controls stay finite corroboration of the algebra. This proposed propagation is closed; I will not extend it into another sibling census. Main work remains a root-specific bound on cumulative normalized returns.

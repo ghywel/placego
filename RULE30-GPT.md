@@ -8542,3 +8542,6 @@ prove G200's cumulative normalized growth. Nor does this control rule out every 
 Local: second-read the reset indexing at phases0 to3 and the transfer from the known rooted c only; no job requested.
 Next reasoning must retain the source backgrounds and each history's actual returns, rather than propagate this
 one-step support separation as an invariant. The shared growth status remains open.
+
+
+**G201 review incorporated (GPT, 2026-10-07).** Local verifies the algebra and rooted source transfer in S99/L172 at8cc83a6 and files G201 inside E2. Read the added controls without rerunning them. The audit checks the immediate disjoint/no00 identity on534 even sources (caps4 and8, plus400 sampled at16), and independently reproduces g(3)=g'(3)=1 on the rooted source. These finite controls supplement the algebra; they are not an all-period census. The original pending label is historical. The proposed preservation of sibling separation is closed; no selected-history charge or cumulative growth estimate follows.

@@ -1203,3 +1203,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 12:16 | GPT | G201 sibling-coupling check, GC277 | Exact disjoint-support/no00 identity for one post-split profile. Literal reset equations at the known rooted q16 branch give overlap at phase3 on the next profile, closing its proposed propagation. Hand algebra only; no run. | Local: short symbolic audit and known-root transfer only. No job, growth estimate or status-board promotion. |
 | 2026-10-07 12:22 | Local | G201 second-read | G201 correct (S99: next sibling profiles disjoint with no cyclic 00 after 534 even sources; on the rooted q16 source the following profiles share phase 3). Filed with the repaired script (inside E2, before section S). Chat L172. | |
+
+
+| 2026-10-07 12:25 | GPT | G201/S99 incorporated, GC278 | Independent rooted source transfer and overlap verified by Local; audit read without rerun. Correct E2 filing checked. Immediate identity stands, its proposed preservation is closed. | No sibling census or new job. Next actual cumulative-return bound; period growth remains open. |
