@@ -528,6 +528,13 @@ CHECKS (GPT's claims at 827e006):
      32-bit zero below 67,108,864 = 4 * 2^24, a completed round's end containing the exit): D* = 65,154,361, rivals >=
      66,214,630, margin 1,060,269, min lambda_5 = 2,036,073 + 25/32, and the wrong subtraction 65,733,546. A model of
      the round convention: a zero exactly at the frontier F gives entry F + 1, so F + 1 is the safe bound.
+  S103 (GPT's repair of C.4, R3/GC295, added 2026-10-07 at cab0942): Rule 30 on finite windows with constant tails.
+     The diagonal recursion D_k(t + 1) = D_(k-2)(t) + (D_(k-1)(t) OR D_k(t)) on 40 random rows for 11 steps; GPT's
+     coalescing pair (black through site 0 then white; black except site 0) differs at site 0 and both become one
+     black cell at site 1; on 300 random finite nonempty perturbations (seed 295, 20 steps) the difference set never
+     empties, k_min never decreases, rises only when D_(k_min - 1) = 1, and its total rise is the sum of the rises;
+     the barrier recursion keeps a difference on w + 1 with agreement below and heals it at once when the copies
+     differ on w - 1.
 """
 import random
 from fractions import Fraction as F
@@ -5527,4 +5534,86 @@ for zf in (_F102 - 1, _F102, _F102 + 1):
     ok102 &= (ent >= _F102 + 1) == (zf >= _F102) and (zf != _F102 or ent == _F102 + 1)
 check('S102 G204: min B - max A <= min(B - A) <= min B - min A and the rival separation on 3,000 random families; '
       'recorded entries give D* = 65,154,361 against rivals >= 66,214,630; min lambda_5 = 2,036,073 + 25/32', ok102)
+ok103 = True
+
+
+def _step103(row, L, R, lo):
+    """One Rule 30 step on a row given on [lo, lo + len) with constant tails L (left) and R (right)."""
+    n = len(row)
+    get = lambda i: L if i < lo else (R if i >= lo + n else row[i - lo])
+    new = [get(i - 1) ^ (get(i) | get(i + 1)) for i in range(lo - 1, lo + n + 1)]
+    return new, L ^ (L | L), R ^ (R | R), lo - 1
+
+
+def _run103(row, L, R, lo, T):
+    rows = [(row, L, R, lo)]
+    for _ in range(T):
+        rows.append(_step103(*rows[-1]))
+    return rows
+
+
+def _cell103(state, i):
+    row, L, R, lo = state
+    return L if i < lo else (R if i >= lo + len(row) else row[i - lo])
+
+
+_rng103 = random.Random(295)
+# (a) the diagonal recursion D_k(t + 1) = D_(k-2)(t) + (D_(k-1)(t) OR D_k(t)), D_k(t) = x(k - t, t), on random rows
+for trial in range(40):
+    n = _rng103.randint(5, 30)
+    rows = _run103([_rng103.randint(0, 1) for _ in range(n)], _rng103.randint(0, 1), _rng103.randint(0, 1), 0, 12)
+    D = lambda k, t: _cell103(rows[t], k - t)
+    ok103 &= all(D(k, t + 1) == D(k - 2, t) ^ (D(k - 1, t) | D(k, t)) for t in range(11) for k in range(-15, 45))
+# (b) GPT's coalescing pair: black through site 0 then white, and black except site 0, both give one black cell at 1
+_A103 = _step103([1, 0, 0, 0], 1, 0, 0)
+_B103 = _step103([0, 1, 1, 1], 1, 1, 0)
+ok103 &= all(_cell103(_A103, i) == _cell103(_B103, i) == (1 if i == 1 else 0) for i in range(-6, 10))
+ok103 &= _cell103((([1, 0, 0, 0]), 1, 0, 0), 0) != _cell103(([0, 1, 1, 1], 1, 1, 0), 0)   # they differed at 0
+# (c) random finite nonempty perturbations: the difference set stays nonempty and finite, k_min never decreases and
+# rises only when the diagonal below it is black, and k_min's total rise is the sum of the rises (the speed identity)
+for trial in range(300):
+    n = _rng103.randint(8, 24)
+    base = [_rng103.randint(0, 1) for _ in range(n)]
+    L, R = _rng103.randint(0, 1), _rng103.randint(0, 1)
+    pert = base[:]
+    for i in _rng103.sample(range(n), _rng103.randint(1, 3)):
+        pert[i] ^= 1
+    T = 20
+    X, Y = _run103(base, L, R, 0, T), _run103(pert, L, R, 0, T)
+    kmin = []
+    for t in range(T + 1):
+        lo, hi = -t - 2, n + t + 2
+        diff = [i for i in range(lo, hi) if _cell103(X[t], i) != _cell103(Y[t], i)]
+        ok103 &= bool(diff)
+        kmin.append(min(diff) + t)
+    D = lambda k, t: _cell103(X[t], k - t)
+    rises = 0
+    for t in range(T):
+        ok103 &= kmin[t + 1] >= kmin[t]
+        if kmin[t + 1] > kmin[t]:
+            ok103 &= D(kmin[t] - 1, t) == 1
+            rises += kmin[t + 1] - kmin[t]
+    ok103 &= kmin[T] - kmin[0] == rises
+# (d) the barrier lock by the recursion: with agreement on diagonals <= w and D_w = 0 from t0, a difference on w + 1
+# is permanent; with a difference on w - 1 at one time it heals (the corollary's hypothesis is needed)
+for trial in range(200):
+    T = 15
+    low = [[_rng103.randint(0, 1) for _ in range(T + 1)] for _ in range(2)]        # common D_(w-1), D_w = 0
+    up = _rng103.randint(0, 1)
+    d1, d2 = [up], [up ^ 1]
+    for t in range(T):
+        d1.append(low[0][t] ^ d1[-1])
+        d2.append(low[0][t] ^ d2[-1])
+    ok103 &= all(a != b for a, b in zip(d1, d2))
+    lowB = low[0][:]
+    tb = _rng103.randint(0, T - 1)
+    lowB[tb] ^= 1                                                                    # copy B differs on w - 1 at tb
+    e1, e2 = [up], [up ^ 1]
+    for t in range(T):
+        e1.append(low[0][t] ^ e1[-1])
+        e2.append(lowB[t] ^ e2[-1])
+    ok103 &= e1[tb + 1] == e2[tb + 1]                                                # healed at tb + 1
+check('S103 C4 repair (GPT R3): the diagonal recursion on random rows; GPT\'s coalescing pair; on 300 finite '
+      'perturbations the damage persists, k_min rises only over a black diagonal and telescopes; the barrier lock '
+      'holds with agreement below and fails without it', ok103)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

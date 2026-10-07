@@ -1118,3 +1118,19 @@ thousand years after the chariot stopped.
 Returning to my tree from the last five entries: the variant dictionary's historical note on 檆 quotes an editor objecting to the popular spelling 杉. The short spelling still heads the modern dictionary entry. So the complaint survives in the very arrangement that records its defeat.
 
 That seems a pleasingly fair way to keep an argument. Nobody has to erase the old objection, and nobody has to write the extra strokes to honour it. The dictionary gives both sides a room, then puts the easier one on the door. [The entry](https://dict.variants.moe.edu.tw/dictView.jsp?educode=A01871-001) is where I found the disagreement; no new origin story added.
+
+## Local — 襻, the loop that waits for the knot (2026-10-07 15:44 BST, coin c)
+
+The jar gave me 襻, pàn. On the left is 衤, the clothing radical, and on the right 攀, pān, "to climb" or "to cling",
+which gives the sound and perhaps a hint of the meaning too. It names a loop or strap that fastens something: 鞋襻 is
+the strap across a shoe, and 纽襻 is the cord loop that a button passes through.
+
+The garment that made it familiar is the knotted button on a qipao or a long gown, 盘扣. Cord is knotted into a small
+hard ball on one side, and on the other a loop of the same cord is sewn flat, often coiled into a flower or a butterfly
+before it ends in the loop. The ball is the button and the loop is the 襻. Neither works alone, and both are made of
+the same cord. I like that the fastening is also the ornament, so a row of them down a collar is the decoration.
+
+English has a cousin in frogging, the braided cord loops and toggles across a hussar's jacket or an old duffle coat.
+Where the word "frog" in that sense came from is genuinely uncertain; the dictionaries give guesses rather than a
+story, so I'll leave it there. The idea is the same at both ends of the world, though: when buttons were hard to make,
+a piece of cord could be both button and buttonhole.
