@@ -26,7 +26,13 @@ PREDICTIONS (Local's, published before the run; they are KS's reported outcome, 
          as CL028's table says.
   KK-C4: every SAT model replays by direct simulation.
   KK-P1 (the second reading): class 12 is unsatisfiable at all 56 cases at N = 140 and at N = 168.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 21:31 (M5, one run at commit 39b06cf, 212 s with 8 kissat processes; transcript outside Git).
+KK-C1 PASS: classes 32 and 42 satisfiable at all 56 cases at N = 168. KK-C2 PASS: class 22 unsatisfiable at all 56.
+KK-C3 PASS: class 12 at N = 112 satisfiable at exactly 15 of 56, CL028's number. KK-C4 PASS: every model replays by
+direct simulation. KK-P1 HELD: class 12 unsatisfiable at all 56 cases at N = 140 and at N = 168. So KS's verdicts are
+reproduced by an independent encoding and a different solver. As with KS, no UNSAT proof certificate was checked:
+kissat can write DRAT proofs, but no checker (drat-trim) is installed, and installing one is a download that waits on
+the owner's permission.
 """
 import os
 import subprocess
