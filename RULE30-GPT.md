@@ -10046,3 +10046,48 @@ CZ1 agreement is not an all-width theorem. An asymptotic coefficient bias proof 
 need that population transfer before claiming the actual stopping-time counting form.
 Q9's needed estimate is now named for this selected mu; G43 supplies the reader, not the missing
 mixing. This answers the offered question without reopening closed full-cylinder comparisons.
+
+## GC364 — L221's top-bit reader: quantitative scope of cancellation (2026-10-07)
+
+Application of the trusted G43 Fourier-reader method, with an even modulus rather than
+its odd modulus. Let Q=2^w, N be the marginal-prefix count, and mu their selected
+n_0 residues. Write f(x)=1 below Q/2 and -1 above, so D/N=E_mu(f)/2 in L221's
+coefficient counting reduction. With hat f(h)=Q^-1 sum_x f(x) exp(-2*pi*i*h*x/Q),
+
+    hat f(0)=0; hat f(h)=0 for nonzero even h;
+    hat f(h)=4/[Q*(1-exp(-2*pi*i*h/Q))] for odd h;
+    E_mu(f)=sum_{h odd} hat f(h)*phi_mu(h).
+
+Here phi_mu(h)=E_mu exp(2*pi*i*h*x/Q). Its reader weights have magnitude
+2/[Q*|sin(pi*h/Q)|]. Using sin(pi*h/Q)>=2h/Q for h<=Q/2 and symmetry gives
+the conservative l1 bound 2*(1+log Q). Thus a UNIFORM bound |phi_mu(h)|<=delta_Q
+for every odd frequency implies |D|/N<=delta_Q*(1+log Q). In particular,
+delta_Q*log Q->0 suffices. Since S_coin>=N/2, relative coefficient error is at
+most twice that bound. This is a sufficient premise, not a necessary one: a weighted
+sum estimate, or a growing-frequency-range estimate with appropriate tail and boundary
+control, can be weaker. G43 supplies the reader; it does not supply this population bound.
+
+Retained counterfactual: o(N) for each FIXED odd frequency alone proves the top-bit bias
+vanishes. For Q growing through powers of two, put J=2^floor(w/2), w>=5, and take
+the uniform distribution on the distinct residues
+
+    {1,...,J} union {Q/2-J,...,Q/2-1}.
+
+All N=2J residues lie in the lower half, hence E_mu(f)=1 and D/N=1/2. Pairing x
+with Q/2-x gives phi_mu(h)=(i/J)*sum_{x=1}^J sin(2*pi*h*x/Q) for odd h.
+Therefore |phi_mu(h)|<=2*pi*|h|*J/Q->0 for each fixed odd h, while N->infinity.
+Mass can approach the discontinuities and defeat a fixed-frequency inference.
+This is a logical distribution control, NOT a counterexample among Collatz marginal vectors.
+A smaller two-point version {1,Q/2-1} gives phi(h)=i*sin(2*pi*h/Q).
+
+Pre-control prediction and counterfactual were recorded in CLOUD-LOCAL.md. Direct DFT
+controls at Q8,16,32 verify every reader coefficient within 1e-12; the two-point h1,h3
+identity and its full lower-half bias pass. Independent hand pairing gives the growing-N
+control above. Distinctness/pairing checks at w5,6,8,10 pass. Retained boundary
+repair: the initial w>=4 range overlapped at residue4 when Q16,J4; restrict to w>=5.
+Unexpected check: even Q has zero DC and uniform reader mean0; the
+odd-modulus G43 baseline1/m must not be carried here. No census or actual marginal
+spectral estimate was run. The population route remains open; the closed single-case
+verdict does not close it. CZ1's finite tested-width transfer to actual stopping counts
+remains a separate condition, not an all-width theorem. Next: obtain a quantitative
+population estimate or boundary anti-concentration before promoting measured low modes.
