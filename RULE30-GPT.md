@@ -7764,3 +7764,51 @@ Indeed these give 4*s-2 <= L-1+6*s-M+2*P <= 4*s-3, impossible. The lost repeat s
 Under G186's SAME history-specific settling bound and liminf p(M)/M=0, choose theta with 2<theta<min(4,6/gamma). This interval is nonempty for 1<=gamma<3. The already proved endpoint selection gives M=ceil(theta*s), P/s->0 and arbitrarily large dyadic s. The strict positive margins 4-theta, 6-gamma*theta and theta-2 absorb all fixed offsets and the extra2. Thus the conditional sparse-depth criterion excludes the recorded paperfolding code as well as Thue–Morse. No new repeat theorem is proved here: the application uses exactly the recorded section8.59 repeats and A⁗, with the original timing/settled-band assumptions.
 
 **Independent offset control and identified unexpected check.** Put L=1, s=8, P=1 and M=21, and assume tau(21)+1<=48. The upper endpoint is21<32, the lower threshold is1+16+2+2=21, and the A⁗ right side is1-1+48-21+2=29 whereas n=30, the desired one-cell contradiction. Reusing the Thue–Morse lower threshold would allow M=19, giving right side31 and NO contradiction. This literal arithmetic control retains the two-cell correction instead of treating the two repeat families as identical. No actual settling-time measurement is claimed by this assumed-timing control. The unresolved stage budget and actual unbounded stage-entry ratios remain necessary proof obligations for this route; no prize claim. Local: review the additional start-time and length offsets, no new job.
+
+
+## G187 — A positive period/depth threshold suffices for both repeat reductions (2026-10-07)
+
+**Conditional quantitative lemma, second reader pending; no run.** Fix a left-edge distance L and one admissible rooted history with nondecreasing common prefix period p(M). Suppose its entire-prefix settling bound is
+
+    tau(M) <= gamma*M+A*p(M)+B,
+    1 <= gamma < 3, A >= 0,
+
+with finite constants A,B on that history. Define
+
+    delta = (3-gamma)/(2*gamma+2*A+8).
+
+Then liminf p(M)/M < delta suffices for G2.4's unbounded Thue–Morse repeat contradiction. For the recorded paperfolding repeats, the sufficient condition is liminf p(M)/M < min(delta,1/6). In G165's application A=2*(C+1)>=2, so delta<=1/7<1/6 and the SAME delta suffices for both codes. This improves G186's sufficient condition; it proves no actual budget or period estimate.
+
+**Endpoint construction and proof.** Choose a number r strictly between the liminf and the relevant threshold. Along arbitrarily large integer depths n, let q=p(n)<=r*n. Put D=L for Thue–Morse and D=L+2 for paperfolding, and choose the largest dyadic s for which 2*s<=n-2*q-D. Such a scale exists eventually. Then
+
+    s > (n-2*q-D)/4,
+    M = 2*s+2*q+D <= n,
+    P = p(M) <= q.
+
+Thus s tends to infinity, and limsup along these chosen depths of q/s is at most 4*r/(1-2*r). Direct rearrangement shows
+
+    r < delta  iff  4*r/(1-2*r) < (6-2*gamma)/(2*gamma+A+1).
+
+Consequently
+
+    tau(M)+P <= 2*gamma*s+(2*gamma+A+1)*q+gamma*D+B < 6*s
+
+eventually, by a strict linear margin in s. For Thue–Morse, r<delta<=1/5<1/4 implies q/s<2 eventually, hence M<6*s. For paperfolding, r<1/6 implies q/s<1 eventually, hence M<4*s. All fixed D and B are absorbed by those strict margins.
+
+For Thue–Morse, the G2.4 A⁗ right side is at most L-1+6*s-M+2*q=4*s-1, below its repeat-run length4*s. For paperfolding the same expression is4*s-3, below repeat-run length4*s-2. Both contradictions use exactly the repeats and timing hypotheses already recorded in G2.4 and G186's section8.59 continuation. To exclude either code for every admissible left side, this quantitative condition and the settling budget must hold separately on every such history, with history-dependent constants allowed.
+
+**Exact dyadic stage interpretation.** In G165's rooted stage structure the last depth m_j=N_(j+1)-1 minimizes p(M)/M within stage j. Its value is
+
+    p(m_j)/m_j = 1/(2*R_(j+1)-2^(-j)).
+
+Every stage is finite and its index tends to infinity with depth. Thus taking the liminf of these stage minima gives the exact extended-real identity
+
+    liminf_M p(M)/M = 1/(2*limsup_j R_j),
+
+with 1/infinity=0 and 1/0=infinity. The vanishing subtraction2^(-j) does not affect the denominator's limsup; inversion exchanges positive limsup and liminf, including these limiting cases. Hence the displayed quantitative condition is equivalent to limsup R_j>1/(2*delta). The factor2 comes from using the END of a stage, just before the next doubling, rather than its entry. For G165 at gamma=5/2 and C=1, A=4 and delta=1/42. Entry ratios above21 by a fixed margin at arbitrarily large indices therefore suffice for BOTH repeat applications, conditional on that stage budget. No such actual asymptotic statement is established.
+
+**Independent integer control.** Hypothetically take L=1, B=0, gamma=5/2, A=4, n=1000 and q=16. For paperfolding D=3; the selected s is256 and M=547. The assumed bound gives tau(M)+P<=1447.5<1536=6*s, and M<1024=4*s. The A⁗ right side is at most1021 against repeat-run length1022. The same endpoint also works for Thue–Morse, whose run length is1024. This verifies the arithmetic under the stated assumptions; it is NOT a settling measurement or a certified C=1 budget on a Rule30 history.
+
+**Identified unexpected strictness/control check.** If q/s equals (6-2*gamma)/(2*gamma+A+1), the scale-dependent time margin vanishes. A positive gamma*D+B then prevents the required timing inequality: this argument cannot replace its strict threshold by a non-strict one. Moreover the synthetic schedule N_j=25*2^j has constant R_j=25 and integer stage lengths25*2^j; it satisfies the gamma=5/2,C=1 entry threshold while p(N_j)/N_j=1/25 never tends to0. Its stage-end ratios tend to1/50. At period16, the entry depth400 has ratio1/25 above1/42, but the last stage depth799 has ratio16/799 below1/42. Thus G186's unbounded-ratio condition is sufficient but not necessary for the conditional application. This schedule has no asserted Rule30 compatibility.
+
+**Prior record and next intention.** This is a quantitative endpoint selection using reviewed G165 timing, G184 stage notation and the pending G186 repeat applications; no novelty or computation claim. A finite large entry such as the conservative N_5 lower bound does not establish arbitrarily many useful scales. The actual target can now be a history-specific positive period/depth threshold tied to its stage-debt constant, rather than unbounded R alone. Both linked obligations remain open. Local: please second-read the threshold algebra and scope, together with G186; no run requested. GPT next examines what actual odd-zero hitting constraints could maintain or recurrently recover such a threshold.

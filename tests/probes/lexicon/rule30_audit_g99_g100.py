@@ -363,6 +363,21 @@ CHECKS (GPT's claims at 827e006):
      and the gate fails at (a, 0) from phase 0, although f still has order 4. Rooted at q = 4: RQ3's reached q = 8
      graph passes through the prefix at depths 28 -> 32 by consecutive edges (arrival phases G185's plus 5), so the
      jump of 3 happens on the actual history at 31 -> 32; the rooted q = 8 cap exit is not G185's q = 8 entry.
+  S76 (G186, added 2026-10-07 at d7b103e): at gamma = 5/2, theta = 11/5 (time margin 1/2, endpoint margin 1/5), on 300
+     random good depths (seed 186) the largest k with ceil(theta 2^k) <= n gives n < ceil(2 theta 2^k), and once P/2^k
+     is small against A, B, L (134 cases) G2.4's three requirements and its A'''' sandwich hold with the settling bound
+     taken at its worst; a slope with gamma theta = 6 fails the time requirement. On G186's spike schedule (N_1 = 2,
+     lambda = 2^(2^(k-1)) at j = 2^k, else 1) the recurrence holds exactly, p/M = 1/R_j at every entry, every depth
+     n in stage j has R_(j+1) > n/(2 p(n)), R_(2^k + 1) >= 2^(2^(k-1))/2, and R_(2^(k+1)) <= 1 + k 2^-(2^(k-1)) for
+     k = 1..4 (R_17 > 128, R_32 - 1 < 1/100); on 200 random schedules lambda_j/2 <= R_(j+1) <= max(R_j, lambda_j),
+     so limsup R_j is infinite exactly when lambda is unbounded.
+  S77 (G186's paperfolding continuation, added 2026-10-07 at f366f6b): A'''' at (-1, 0) with a = 2i, a' = 2i',
+     n = 2l on the recorded repeats (RULE30-PRIZE 8.59, BF4; at k = 14 the pairs (0, 49152, 32768) and (16384, 49152,
+     32767)); for s = 2^3 .. 2^20, L in {1, 7, 100}, P in {0, 1, 3} the paperfolding contradiction holds exactly from
+     M = L + 2s + 2P + 2 and fails one below and at M = 4s, and Thue-Morse's from M = L + 2s + 2P; GPT's offset control
+     (L = 1, s = 8, P = 1: M = 21 gives 29 < 30, the Thue-Morse threshold M = 19 gives 31, no contradiction); theta in
+     (2, min(4, 6/gamma)) nonempty below slope 3, and theta = 11/5 at gamma = 5/2 reaches the contradiction for
+     s = 2^20 .. 2^39 once the constants are small against s.
 """
 import random
 from fractions import Fraction as F
@@ -3681,4 +3696,118 @@ ok75 &= not any(_rq3.rot(_snk[0][0] | (_snk[0][0] << 8), k, 16) == g185(8)[1] fo
 check('S75 G185: at q = 4 .. 64 the prefix a, 0, c, 1, e, f is compatible and gated from phase q - 2, with orders '
       'q, 0, q + 1, 1, q + 1, 2q, the jump q - 1 on the last edge; rooted at q = 4 (depths 28-32); q = 2 fails the '
       'gate', ok75)
+_rng76 = random.Random(186)
+
+
+def g24_76(M, tau, P, L, k):
+    """G2.4's three requirements, then its A'''' sandwich 2l <= L - 1 + 6 2^k - M + 2P <= 2l - 1 (l = 2^(k+1))."""
+    req = M < 6 * 2 ** k and tau + P <= 6 * 2 ** k and M >= L + 2 ** (k + 1) + 2 * P
+    upper = L - 1 + 6 * 2 ** k - M + 2 * P <= 2 * 2 ** (k + 1) - 1
+    return req, upper
+
+
+def endpoint76(n, theta):
+    """The largest k >= 0 with M = ceil(theta 2^k) <= n, and that M (None if even k = 0 fails)."""
+    k = None
+    while math.ceil(theta * 2 ** (0 if k is None else k + 1)) <= n:
+        k = 0 if k is None else k + 1
+    return (k, math.ceil(theta * 2 ** k)) if k is not None else (None, None)
+
+
+ok76, _hits76 = True, 0
+gam, th = _Fr(5, 2), _Fr(11, 5)
+ok76 &= 2 < th < 6 / gam and gam * th == _Fr(11, 2) and th - 2 == _Fr(1, 5)
+# endpoint selection on random good depths: maximality, the factor-two window, and G2.4 once P / 2^k is small enough
+for trial in range(300):
+    n = _rng76.randint(3, 10 ** 7)
+    k, M = endpoint76(n, th)
+    ok76 &= k is not None and M <= n < math.ceil(2 * th * 2 ** k) <= 2 * th * 2 ** k + 1
+    A, B, L = _rng76.randint(0, 40), _rng76.randint(0, 500), _rng76.randint(1, 300)
+    P = _rng76.randint(0, max(0, (2 ** k - 10 * (B + L + 4)) // (10 * (A + 3))))   # small relative period
+    tau = gam * M + A * P + B                             # the assumed settling bound, at its worst
+    req, upper = g24_76(M, tau, P, L, k)
+    if 2 ** k >= 20 * (A + 3) * max(P, 1) + 40 * (B + L + 4):
+        ok76 &= req and upper                             # the one-cell contradiction is reached
+        _hits76 += 1
+ok76 &= _hits76 >= 100
+_tr76 = [g24_76(*args) for args in [(math.ceil(th * 2 ** 20), gam * math.ceil(th * 2 ** 20), 0, 1, 20)]]
+ok76 &= _tr76[0] == (True, True)
+# a slope at the limit fails: gamma theta = 6 leaves no time margin
+ok76 &= not g24_76(math.ceil(th * 2 ** 20), _Fr(6) / th * math.ceil(th * 2 ** 20) + 1, 0, 1, 20)[0]
+
+
+def sched76(lam, J):
+    N = {1: 2}
+    for j in range(1, J):
+        N[j + 1] = N[j] + lam(j) * 2 ** j
+    return N
+
+
+# the equivalence on a schedule: at entries p/M = 1/R_j; inside stage j every depth n has R_(j+1) > n / (2 p(n))
+_lam76 = (lambda j: 2 ** (2 ** (j.bit_length() - 2)) if j >= 2 and j & (j - 1) == 0 else 1)
+_N76 = sched76(_lam76, 33)
+_R76 = {j: _Fr(_N76[j], 2 ** j) for j in _N76}
+ok76 &= all(_lam76(2 ** k) == 2 ** (2 ** (k - 1)) for k in range(1, 6)) and _lam76(3) == 1 and _lam76(1) == 1
+ok76 &= all(_R76[j + 1] == (_R76[j] + _lam76(j)) / 2 for j in range(1, 32))
+ok76 &= all(_Fr(2 ** j, _N76[j]) == 1 / _R76[j] for j in _N76)
+for j in range(1, 20):
+    for n in (_N76[j], (_N76[j] + _N76[j + 1]) // 2, _N76[j + 1] - 1):
+        ok76 &= _R76[j + 1] > _Fr(n, 2 * 2 ** j)
+# the strictness control: R spikes after each spike, falls back to 1 + (at most k 2^-(2^(k-1))) before the next
+for k in range(1, 5):
+    jk, jk1 = 2 ** k, 2 ** (k + 1)
+    ok76 &= _R76[jk + 1] >= _Fr(2 ** (2 ** (k - 1)), 2)
+    ok76 &= 1 <= _R76[jk1] <= 1 + k * _Fr(1, 2 ** (2 ** (k - 1)))
+    ok76 &= all(_Fr(2 ** (3 * 2 ** h // 2), 2 ** jk1) <= _Fr(1, 2 ** (jk // 2)) for h in range(1, k + 1))
+ok76 &= _R76[17] >= 128 and _R76[32] - 1 < _Fr(1, 10 ** 2)   # limsup infinite; p/M at entries near 1
+# limsup R = infinity exactly when lambda is unbounded: R_(j+1) >= lambda_j / 2 and R_(j+1) <= max(R_j, lambda_j)
+for trial in range(200):
+    lam = [_Fr(_rng76.randint(0, 60), 2 ** _rng76.randint(0, 4)) for _ in range(40)]
+    R = [_Fr(_rng76.randint(1, 30), 2)]
+    for j in range(40):
+        R.append((R[-1] + lam[j]) / 2)
+    ok76 &= all(lam[j] / 2 <= R[j + 1] <= max(R[j], lam[j]) for j in range(40))
+    ok76 &= max(R) <= max(R[0], max(lam))
+check('S76 G186: endpoint selection and both G2.4 margins at gamma 5/2, theta 11/5 (300 random depths); the '
+      'entry equivalence; limsup R infinite iff lambda unbounded; the spike schedule returns near 1', ok76)
+def a4_77(L, i, ip, ell, M, tau, P):
+    """A'''' at the pair (-1, 0), distance L - 1, a = 2i, a' = 2i', n = 2 ell: (requirements met, contradiction)."""
+    a, ap, n = 2 * i, 2 * ip, 2 * ell
+    req = M < ap - a and tau + P <= ap
+    return req, req and not (n <= L - 1 + ap - M + 2 * P)
+
+
+ok77 = True
+# the recorded repeats (RULE30-PRIZE 8.59, BF4): Thue-Morse i = 0, i' = 3 2^k, l = 2^(k+1); paperfolding i = s,
+# i' = 3s, l = 2s - 1; at k = 14 they are the recorded pairs (0, 49152, 32768) and (16384, 49152, 32767)
+ok77 &= (0, 3 * 2 ** 14, 2 ** 15) == (0, 49152, 32768) and (2 ** 14, 3 * 2 ** 14, 2 ** 15 - 1) == (16384, 49152, 32767)
+for s in (2 ** e for e in range(3, 21)):
+    for L in (1, 7, 100):
+        for P in (0, 1, 3):
+            # paperfolding: the contradiction holds exactly from M = L + 2s + 2P + 2 up to M < 4s (with tau slack)
+            lo = L + 2 * s + 2 * P + 2
+            if lo + 1 < 4 * s:
+                ok77 &= a4_77(L, s, 3 * s, 2 * s - 1, lo, 6 * s - P, P) == (True, True)
+                ok77 &= a4_77(L, s, 3 * s, 2 * s - 1, lo - 1, 6 * s - P, P)[1] is False
+                ok77 &= a4_77(L, s, 3 * s, 2 * s - 1, 4 * s, 6 * s - P, P)[0] is False
+            # Thue-Morse with 2^k = s: threshold L + 2s + 2P, upper 6s
+            lo_t = L + 2 * s + 2 * P
+            if lo_t < 6 * s:
+                ok77 &= a4_77(L, 0, 3 * s, 2 * s, lo_t, 6 * s - P, P) == (True, True)
+                ok77 &= a4_77(L, 0, 3 * s, 2 * s, lo_t - 1, 6 * s - P, P)[1] is False
+# GPT's offset control: L = 1, s = 8, P = 1, M = 21, tau = 47; right side 29 < n = 30; at the TM threshold M = 19, 31
+ok77 &= a4_77(1, 8, 24, 15, 21, 47, 1) == (True, True) and 1 - 1 + 48 - 21 + 2 == 29
+ok77 &= a4_77(1, 8, 24, 15, 19, 47, 1) == (True, False) and 1 - 1 + 48 - 19 + 2 == 31
+# the asymptotic choice: theta in (2, min(4, 6/gamma)) is nonempty below slope 3; at gamma 5/2, theta 11/5 serves both
+ok77 &= all(2 < min(4, _Fr(6) / g) for g in (_Fr(1), _Fr(2), _Fr(5, 2), _Fr(299, 100)))
+_g77, _t77 = _Fr(5, 2), _Fr(11, 5)
+for e in range(20, 40):
+    s = 2 ** e
+    for L, A, B, P in ((1, 2, 0, 0), (300, 22, 500, 2 ** (e // 3)), (50, 40, 50, 2 ** (e // 2 - 4))):
+        M = math.ceil(_t77 * s)
+        if 40 * (A + 3) * max(P, 1) + 80 * (B + L + 4) <= s:
+            ok77 &= a4_77(L, s, 3 * s, 2 * s - 1, M, _g77 * M + A * P + B, P) == (True, True)
+check('S77 G186 continuation: paperfolding (i = s, i\' = 3s, l = 2s - 1) needs M < 4s and M >= L + 2s + 2P + 2, '
+      'exact at the thresholds for s = 2^3 .. 2^20; the offset control; theta 11/5 serves both families at slope 5/2',
+      ok77)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
