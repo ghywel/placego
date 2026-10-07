@@ -2044,3 +2044,15 @@ This is a limited search, not a novelty audit.
     where two times at which column 1 agrees for n steps force a zero run in the left half. Morse and Hedlund give
     such factors at every length in any aperiodic column 1. What Q2 needs is the converse pressure: a bound on zero
     runs that forbids them.
+- **The general p/q case: Dubickas's reduced length** (found 2026-10-07 by search; Dubickas, Bull. London Math. Soc. 38
+  (2006) 70-80, and the papers cited in Bugeaud and Dubickas as [4, 6]; the argument below is reconstructed from the
+  definition and the search summaries, not read in the paper). For algebraic alpha with minimal polynomial
+  P = sum p_k X^k, write xi alpha^n = x_n + r_n. Then sum p_k x_(n+k) = -sum p_k r_(n+k), an integer, because
+  P(alpha) = 0. If every r_n lies in an interval of length L, the right side ranges over a window of length
+  L * L(P), with L(P) the sum of |p_k|. If that is below 1, the integer is constant, the x_n satisfy a linear
+  recurrence of fixed order, and that contradicts the hypothesis on xi unless alpha is Pisot or Salem. Replacing P by
+  PQ for a normalized Q lowers L(P) to the reduced length ell(P), and ell(qX - p) = p gives Flatto, Lagarias and
+  Pollington's 1/p. **For Q2:** the finite object is a fixed-order integer recurrence. A Rule 30 analogue would need a
+  linear form of bounded order in column 0's and the left half's cells, forced constant by a window of the wall,
+  which would put column 1 under a linear recurrence. Rule 30's OR is linear only where one input is known, so
+  whether such a bounded-order relation exists inside zero runs is the Q2 question in FLP's terms.
