@@ -415,7 +415,7 @@ be attacked the same way.
 
 ---
 
-## 235. Random 3-SAT becomes unsatisfiable within a window of width $\Theta(\sqrt n)$ (level A for the upper bound)
+## 235. Random 3-SAT's transition window has width $\Theta(\sqrt n)$ (level A, upper bound)
 
 *Preprint:* "Linear Variance of the Random 3-SAT Hitting Time", 2026-10-05 (the family also holds the general-$k$
 companion, and Carenini's result settling the threshold's existence is credited there). Lean: the release lists a
