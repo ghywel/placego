@@ -10,7 +10,7 @@ the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never t
 
 Two binary equations expose the obstruction to persistent exchange.
 
-**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. G194's independent review is pending; Local has verified G193.
+**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. Local independently verified the two-potential criterion (S90/L161).
 
 **Why it matters.** This expresses the known component phase test as finite binary equations, while retaining parallel edges. No larger actual component is classified and no growth bound follows.
 

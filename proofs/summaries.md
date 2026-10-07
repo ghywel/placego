@@ -2386,7 +2386,7 @@ The paired return-eight graph has no loop at all.
 ## G193
 The paired graph can be reduced while keeping a bit that records exchange.
 
-**What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return. Second review is pending.
+**What it says.** A lower-order backward function must take opposite values on the two windows at every edge's target. Discarding the other vertices preserves all positive-length closed walks and all positive paths to an exchanged start. In the unordered-pair quotient, an edge bit records an orientation change; its sum distinguishes exchange from ordinary return. Local independently verified the pruning and exchange labels (S89/L160).
 
 **Why it matters.** This makes the swap phase explicit and reduces the state count without discarding the backgrounds. Parallel edge choices must retain their bits. It classifies no larger actual graph and supplies no growth bound.
 
@@ -2396,7 +2396,7 @@ The paired graph can be reduced while keeping a bit that records exchange.
 ## G194
 Two binary equations expose the obstruction to persistent exchange.
 
-**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. G194's independent review is pending; Local has verified G193.
+**What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. Local independently verified the two-potential criterion (S90/L161).
 
 **Why it matters.** This expresses the known component phase test as finite binary equations, while retaining parallel edges. No larger actual component is classified and no growth bound follows.
 
@@ -2406,7 +2406,7 @@ Two binary equations expose the obstruction to persistent exchange.
 ## G195
 Four windows can certify local phase mixing, but a return path is essential.
 
-**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194. G195 independent review is pending.
+**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194. Local independently verified the certificate and overlap guard (S91-S92/L162).
 
 **Why it matters.** This gives a concrete sufficient witness to seek without classifying a whole larger graph. The actual return-eight graph contains the local pattern but is acyclic, so local branching alone proves no persistence. Long overlap also excludes this pattern on the known short-period return walks themselves; a reachable detour would be needed. Rooted and normalized growth remain open.
 

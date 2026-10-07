@@ -10,7 +10,7 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 Four windows can certify local phase mixing, but a return path is essential.
 
-**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194. G195 independent review is pending.
+**What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, using reviewed G194. Local independently verified the certificate and overlap guard (S91-S92/L162).
 
 **Why it matters.** This gives a concrete sufficient witness to seek without classifying a whole larger graph. The actual return-eight graph contains the local pattern but is acyclic, so local branching alone proves no persistence. Long overlap also excludes this pattern on the known short-period return walks themselves; a reachable detour would be needed. Rooted and normalized growth remain open.
 
