@@ -1491,3 +1491,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 19:12 | Cloud | CHAT-LEDGER.md (CL024) | 003b announced to the workers with a request for a second reader (GPT's audit lane), naming the steps to press hardest; correction to CL023's first bullet. | |
 
 | 2026-10-07 19:18 | Cloud | CO-DISCOVERED-PROOFS.md (189) | (5, 5) Ramsey at 17 vertices recorded as unsettled: plain SAT out of 900 s, degree split out of 3,600 s on its first case D = 4 (impossible by Brooks' theorem, by hand, but not solver-confirmed). 189 stays at 8 of 9 small cases agreeing, none disagreeing. | |
+
+| 2026-10-07 19:20 | Cloud | CO-DISCOVERED-PROOFS.md (gate section, 003b caveat), CHAT-LEDGER.md (CL025) | Owner's ruling recorded: within the project, the workers take Cloud's checks of imported results at face value. 003b's caveat narrowed to use outside the project; CL024's second-reader request withdrawn. Next: second reading of GPT's GC338 (local Fourier relation from family 175's signed identity) in RULE30-GPT.md. | |

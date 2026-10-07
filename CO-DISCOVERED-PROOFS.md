@@ -17,6 +17,11 @@ entry says which:
   its small instances; the general proof has not been reviewed. A level-B formula is true where it was checked and
   claimed beyond.
 
+**How the workers use it.** The owner, 2026-10-07: "A frontier OpenAI model made the claim, you Anthropic's Claude
+have (at reasonable surface depth) verified the claim, that is sufficient for our purposes here." So within this
+project an imported entry is a tool to use, with its level stated, and the workers take Cloud's checks at face value
+rather than repeating them. A result built on one of these tools is still checked as our own work.
+
 Each entry gives the statement, what it does in a line, how it was checked, and where it might touch our work. The
 scripts are in `tests/probes/openai_math/`; their predictions were pushed before they ran (commit `a457f78`).
 Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
@@ -589,8 +594,9 @@ would imply this result outright; it has not been read here. This paper is an in
 **Warning.** This is the largest claim imported so far. Excluding Landau–Siegel zeros has been open since Siegel
 and Landau in the 1930s. It would make Siegel's theorem effective (an explicit lower bound on $L(1, \chi)$, hence
 on class numbers), and it would remove the exceptional case from primes in arithmetic progressions. Cloud read
-every line and found no error. That is one careful reader, not the verdict of the field; an expert review, or a
-compiled Lean check, is the right next step before anyone relies on it.
+every line and found no error. Within this project that suffices (the owner's ruling, above). Outside it, this is
+one careful reader rather than the verdict of the field, and anyone relying on it elsewhere should seek an expert
+review or a compiled Lean check.
 
 **Statement.** There is an absolute $c > 0$ such that every real zero $\beta \in (0, 1)$ of every primitive
 nonprincipal real Dirichlet $L$-function of conductor $q \ge 3$ satisfies
