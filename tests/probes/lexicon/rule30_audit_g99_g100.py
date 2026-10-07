@@ -420,6 +420,19 @@ CHECKS (GPT's claims at 827e006):
      reconstruction at every position, with U_(r-3) = 1, complementary halves, least period q and a source of least
      period q/2 and odd half-parity; the q = 8 one traces a length-4 path from v to its swap in the graph so defined
      (m = 43); the r = 4 graph has one vertex and no edge; GC244's control fails c(1) + c(5) = 1; c = 010101 on cap 6.
+  S85 (G191, added 2026-10-07 at 0b4a947): on 400 random graphs of up to 8 vertices with an involutive automorphism
+     (seed 191; 266 with and 134 without the component), G191's test (a sigma-invariant strongly connected component
+     with a cycle, period g a power of two, class shift 0) predicts the dichotomy: with it every dyadic q from 2^8 to
+     2^12 is admitted, without it every admitted q is at most n; the 4-cycle with a half shift admits q = 4 only,
+     K_{2,2} with the in-part swap every q >= 4, the 6-cycle with a half shift nothing, two exchanged loops nothing.
+  S86 (G191's cutoff continuation, added 2026-10-07 at 2b8a267): on 300 random graphs of up to 7 vertices (seed 1912;
+     183 with the persistent component, 117 without) admission at each of the first two dyadic Q >= 8 n^2 agrees with
+     the component test; 3 and 5 represent every integer from 10 (residues 0, 2, 1 mod 3 first at 0, 5, 10) but not 7;
+     an isolated fixed vertex admits nothing; at Q = 128 the half-turn 4-cycle is absent and K_{2,2} present.
+  S87 (G191's Rule 30 continuation, added 2026-10-07 at 96ecd4d): in G190's actual graphs for m = 1 to 6 no edge
+     joins two sigma-fixed vertices; on 600 random involutive graphs with that property (seed 1913), every invariant
+     component in which each vertex has exactly one internal successor (106 found) fails the persistence test; a
+     sigma-fixed self-loop, which breaks the property, admits every dyadic q.
 """
 import random
 from fractions import Fraction as F
@@ -4324,4 +4337,180 @@ ok84 &= _rq3.rot(_c6, 3, 6) == _c6 ^ 63 and _lp82(_c6, 6) == 2 and (_c6 ^ _rq3.r
 check('S84 G190: no path and no return for q = 2-16, m = 1-6 (graph from its definition); the actual even returns at '
       'q = 8 (r = 88) and the rooted q = 16 (r = 52,808) reconstruct backwards with complementary halves and odd '
       'sources, the first tracing a length-4 swap path; r = 4; GC244; cap 6', ok84)
+from math import gcd as _gcd85
+
+
+def mul85(A, B, n):
+    out = []
+    for row in A:
+        r, k = 0, 0
+        while row:
+            if row & 1:
+                r |= B[k]
+            row >>= 1
+            k += 1
+        out.append(r)
+    return out
+
+
+def admitted85(adj, sig, n, J):
+    """Dyadic q = 2^j (j = 1..J) for which some v has a path of length q/2 to sig(v)."""
+    P, res = adj[:], []                                    # P = M^(2^(j-1)), starting at j = 1 (h = 1)
+    for j in range(1, J + 1):
+        if any((P[v] >> sig[v]) & 1 for v in range(n)):
+            res.append(j)
+        P = mul85(P, P, n)
+    return res
+
+
+def criterion85(adj, sig, n):
+    """G191's test: a sigma-invariant strongly connected component with a cycle, period g a power of two, shift 0."""
+    reach = [adj[v] for v in range(n)]
+    for _ in range(n):
+        reach = [reach[v] | mul85([reach[v]], adj, n)[0] for v in range(n)]
+    comps, seen = [], set()
+    for v in range(n):
+        if v in seen:
+            continue
+        C = {u for u in range(n) if ((reach[v] >> u) & 1 and (reach[u] >> v) & 1) or u == v}
+        seen |= C
+        comps.append(C)
+    for C in comps:
+        if not any((adj[u] >> w) & 1 for u in C for w in C):
+            continue                                       # no positive cycle
+        if {sig[u] for u in C} != C:
+            continue
+        root = min(C)
+        lev, todo = {root: 0}, [root]
+        while todo:
+            u = todo.pop()
+            for w in C:
+                if (adj[u] >> w) & 1 and w not in lev:
+                    lev[w] = lev[u] + 1
+                    todo.append(w)
+        g = 0
+        for u in C:
+            for w in C:
+                if (adj[u] >> w) & 1:
+                    g = _gcd85(g, abs(lev[u] + 1 - lev[w]))
+        d = (lev[sig[root]] - lev[root]) % g
+        if g & (g - 1) == 0 and d == 0:
+            return True
+    return False
+
+
+_rng85 = random.Random(191)
+ok85, _cnt85 = True, [0, 0]
+for trial in range(400):
+    n = _rng85.randint(1, 8)
+    perm = list(range(n))
+    _rng85.shuffle(perm)
+    sig = list(range(n))
+    for i in range(0, n - 1, 2):
+        if _rng85.random() < 0.7:
+            a, b = perm[i], perm[i + 1]
+            sig[a], sig[b] = b, a
+    adj = [0] * n
+    for u in range(n):
+        for w in range(n):
+            if _rng85.random() < 0.25:
+                adj[u] |= 1 << w
+                adj[sig[u]] |= 1 << sig[w]                 # sigma is an automorphism
+    adm = admitted85(adj, sig, n, 12)
+    ev = criterion85(adj, sig, n)
+    _cnt85[ev] += 1
+    if ev:
+        ok85 &= all(j in adm for j in range(8, 13))      # every large dyadic q (h >= 128 > n^2) is admitted
+    else:
+        ok85 &= all(2 ** j <= n for j in adm)            # every admitted q is at most n
+ok85 &= min(_cnt85) >= 40
+# GPT's controls: 4-cycle with a half-shift admits q = 4 only; K_{2,2} both ways with the in-part swap admits every
+# q >= 4; the 6-cycle with a half-shift admits nothing dyadic; two exchanged self-loops admit nothing
+cyc = lambda n: [1 << ((v + 1) % n) for v in range(n)]
+ok85 &= admitted85(cyc(4), [2, 3, 0, 1], 4, 10) == [2] and not criterion85(cyc(4), [2, 3, 0, 1], 4)
+_k22 = [0b1100, 0b1100, 0b0011, 0b0011]                    # a, a' -> b, b'; b, b' -> a, a'
+ok85 &= admitted85(_k22, [1, 0, 3, 2], 4, 10) == list(range(2, 11)) and criterion85(_k22, [1, 0, 3, 2], 4)
+ok85 &= admitted85(cyc(6), [3, 4, 5, 0, 1, 2], 6, 10) == [] and not criterion85(cyc(6), [3, 4, 5, 0, 1, 2], 6)
+ok85 &= admitted85([0b01, 0b10], [1, 0], 2, 10) == [] and not criterion85([0b01, 0b10], [1, 0], 2)
+check('S85 G191: on 400 random graphs with an involutive automorphism the component test predicts the dichotomy '
+      '(all large dyadic q, or none above n); the four controls (C4, K22, C6, two loops)', ok85)
+ok86, _cnt86 = True, [0, 0]
+_rng86 = random.Random(1912)
+for trial in range(300):
+    n = _rng86.randint(1, 7)
+    perm = list(range(n))
+    _rng86.shuffle(perm)
+    sig = list(range(n))
+    for i in range(0, n - 1, 2):
+        if _rng86.random() < 0.7:
+            a, b = perm[i], perm[i + 1]
+            sig[a], sig[b] = b, a
+    adj = [0] * n
+    for u in range(n):
+        for w in range(n):
+            if _rng86.random() < 0.22:
+                adj[u] |= 1 << w
+                adj[sig[u]] |= 1 << sig[w]
+    J = (8 * n * n - 1).bit_length() + 1                  # 2^(J-1) >= 8 n^2: check that dyadic Q and the next one
+    adm = admitted85(adj, sig, n, J)
+    ev = criterion85(adj, sig, n)
+    _cnt86[ev] += 1
+    cut = [j for j in range(1, J + 1) if 2 ** j >= 8 * n * n]
+    ok86 &= all((j in adm) == ev for j in cut)           # admission at any Q >= 8 n^2 is equivalent to persistence
+# the arithmetic control: 3 and 5 represent every integer from 10 (residues 0, 2, 1 mod 3 by 0, 5, 10), but not 7
+_rep86 = {a * 3 + b * 5 for a in range(10) for b in range(10)}
+ok86 &= 7 not in _rep86 and all(N in _rep86 for N in range(10, 40)) and {0, 5, 10} <= _rep86
+ok86 &= [min(x for x in _rep86 if x % 3 == res) for res in (0, 2, 1)] == [0, 5, 10]
+# an isolated vertex fixed by sigma: an empty swap path, no positive cycle, no admitted q
+ok86 &= admitted85([0], [0], 1, 8) == [] and not criterion85([0], [0], 1)
+# the base controls at Q = 128 = 8 n^2 for n = 4: absent for the half-turn 4-cycle, present for K_{2,2}
+ok86 &= 7 not in admitted85(cyc(4), [2, 3, 0, 1], 4, 8) and 7 in admitted85(_k22, [1, 0, 3, 2], 4, 8)
+ok86 &= min(_cnt86) >= 40
+check('S86 G191 cutoff: on 300 random graphs admission at every dyadic Q >= 8 n^2 (and the next) agrees with the '
+      'persistent component; the 3-and-5 control; the isolated fixed vertex; C4 absent and K22 present at Q = 128',
+      ok86)
+ok87 = True
+# in G190's actual graphs (m = 1 to 6) no edge joins two sigma-fixed vertices (X = Y on both ends)
+for m in range(1, 7):
+    V, E = graph84(m)
+    ok87 &= all(not (u[0] == u[1] and w[0] == w[1]) for u in E for w in E[u])
+# on random involutive graphs with that property, an invariant component in which every vertex has exactly one
+# internal successor (a single cycle) is never persistent; with the property dropped, a fixed self-loop persists
+_rng87, _single87 = random.Random(1913), 0
+for trial in range(600):
+    n = _rng87.randint(1, 8)
+    perm = list(range(n))
+    _rng87.shuffle(perm)
+    sig = list(range(n))
+    for i in range(0, n - 1, 2):
+        if _rng87.random() < 0.8:
+            a, b = perm[i], perm[i + 1]
+            sig[a], sig[b] = b, a
+    adj = [0] * n
+    for u in range(n):
+        for w in range(n):
+            if _rng87.random() < 0.2 and not (sig[u] == u and sig[w] == w):
+                adj[u] |= 1 << w
+                adj[sig[u]] |= 1 << sig[w]
+    # strongly connected components, as in S85
+    reach = [adj[v] for v in range(n)]
+    for _ in range(n):
+        reach = [reach[v] | mul85([reach[v]], adj, n)[0] for v in range(n)]
+    seen = set()
+    for v in range(n):
+        if v in seen:
+            continue
+        C = {u for u in range(n) if ((reach[v] >> u) & 1 and (reach[u] >> v) & 1) or u == v}
+        seen |= C
+        if {sig[u] for u in C} != C or not any((adj[u] >> w) & 1 for u in C for w in C):
+            continue
+        if all(sum((adj[u] >> w) & 1 for w in C) == 1 for u in C):
+            _single87 += 1
+            sub = [sum(((adj[u] >> w) & 1) << j for j, w in enumerate(sorted(C))) for u in sorted(C)]
+            idx = {u: i for i, u in enumerate(sorted(C))}
+            ok87 &= not criterion85(sub, [idx[sig[u]] for u in sorted(C)], len(C))
+ok87 &= _single87 >= 30
+ok87 &= admitted85([1], [0], 1, 8) == list(range(1, 9)) and criterion85([1], [0], 1)
+check('S87 G191 Rule 30 continuation: no edge joins two sigma-fixed vertices in G190\'s graphs (m <= 6); invariant '
+      'single-cycle components are never persistent when fixed vertices are not joined; a fixed self-loop is', ok87)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
