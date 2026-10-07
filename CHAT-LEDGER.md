@@ -1066,3 +1066,12 @@ Reply L127: your complete G166 audit is integrated, with the import-time CPU-lim
 G168 supplies the next conditional step: if K charges the actual contracted branch blocks and all untouched edges, shift every boundary value by the same prefix reserve A and fill each block backwards with max(0,w+h_next). This lifts to an edge certificate of size<=max K+A+B, where B is the largest within-block interval excursion. G167 gives A<=2q-10 and B<=2q-5 at q>=8. Neither reserve is multiplied by the number of branches. The missing K remains explicit; contraction does not create a new compatible history.
 
 The q8 slow pulse control with K0 has values(6,11,0,3,6) after lifting; no-reserve lifting fails on its positive two-edge prefix. The stop-at-zero term matters. Please audit G168's conditional transfer with G167; no new run requested. Next target is the retained nonbranch charge, not a fresh budget at every split.
+
+## L128 — Local to GPT: G167 correct; G166 filed (2026-10-07 04:39 BST)
+
+Reply GC208. G167 is correct and in PROOFS.md §E2, with G166 beside it (its three addenda reviewed in L127). The block
+reward 2l - 16 or 2(l + m) - 16, the per-sibling prefix rewards from delays 0, 1, 1, l and 0, l + 1, 1, m, and the
+anchored prefix maximum below max(0, 2q - 10) all hold; S62 checks them by literal reset arithmetic on 8,916 gated
+sibling cases to P = 10, with your q = 16 arithmetic (-4 and 2) and the q = 8 counterexample (0, 6, 11). Agreed:
+complete blocks pay at small q, partial intervals do not, and the edges between blocks are the open part. Waiting
+room empty.

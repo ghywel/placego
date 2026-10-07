@@ -290,6 +290,11 @@ CHECKS (GPT's claims at 827e006):
   S61 (G166 scope table, added 2026-10-07 at a0cb85d): G8's cyclic period-4 list [9, 8, 14, 12, 4, 7, 6, 2, 11, 3, 1,
      13] is compatible; for each row of the table (driver b, preceding a, arrival r) the gate bit a(r - 1) is 1 and the
      reset delay of b from r is the listed delta; the delays sum to 36, so a phase-free g(a, b) needs gamma >= 3.
+  S62 (G167, added 2026-10-07 at bb39671): at every gated even-parity zero-driver case of every P <= 10, the literal
+     delays of the four-edge branch block are 0, 1, 1, l (fast sibling) and 0, l + 1, 1, m (slow sibling); the
+     doubled prefix rewards are G167's, the block rewards are at most 2q - 16 and the anchored prefix maximum at most
+     max(0, 2q - 10); the q = 16 rooted control gives block maximum -4 and prefix maximum 2; and the q = 8 pulse
+     case gives slow block 0, two-edge prefix 6 and the after-free-edge reset reward 11.
 """
 import random
 from fractions import Fraction as F
@@ -2889,4 +2894,53 @@ ok61 &= [b for b, _, _, _ in tab61] == cyc61 and all(a == cyc61[j - 1] for j, (_
 ok61 &= all((a >> ((r - 1) % 4)) & 1 == 1 and reset_cost(b, r, 4)[0] == dl for b, a, r, dl in tab61)
 ok61 &= sum(dl for _, _, _, dl in tab61) == 36
 check('S61 G166 scope table: twelve gated maximum-delay phases on G8 cycle sum to 36, forcing gamma >= 3', ok61)
+def block_delays(a, c, r, P):
+    d = edge_children(0, c, P)[0]
+    e = edge_children(c, d, P)[0]
+    k1, r1 = reset_cost(c, r, P)
+    k2, r2 = reset_cost(d, r1, P)
+    k3, r3 = reset_cost(e, r2, P)
+    return [0, k1, k2, k3]
+
+
+def prefix_rewards(dl):
+    out, tot = [0], 0
+    for i, x in enumerate(dl):
+        tot += x
+        out.append(2 * tot - 5 * (i + 1))
+    return out
+
+
+ok62 = True
+n62 = 0
+for P in range(2, 11):
+    for a in range(1, 1 << P):
+        q = lp_bits(a, P)
+        if bin(a & ((1 << q) - 1)).count('1') % 2:
+            continue
+        kids = edge_children(a, 0, P)
+        if len(kids) != 2:
+            continue
+        for r in range(P):
+            if not (a >> ((r - 1) % P)) & 1:
+                continue
+            for c in kids:
+                l, m = run_pair(c, r, P)
+                dl = block_delays(a, c, r, P)
+                fast = (c >> r) & 1
+                ok62 &= dl == ([0, 1, 1, l] if fast else [0, l + 1, 1, m])
+                pr = prefix_rewards(dl)
+                ok62 &= pr == ([0, -5, -8, -11, 2 * l - 16] if fast else [0, -5, 2 * l - 8, 2 * l - 11, 2 * (l + m) - 16])
+                ok62 &= pr[-1] <= 2 * q - 16 and max(pr) <= max(0, 2 * q - 10)
+                n62 += 1
+lm = [(5, 1), (1, 4), (4, 2), (2, 3), (3, 1), (1, 5)]
+ok62 &= max(max(2 * l - 16, 2 * (l + m) - 16) for l, m in lm) == -4
+ok62 &= max(max(0, 2 * l - 8, 2 * (l + m) - 16) for l, m in lm) == 2
+c8 = 1 << 7
+a8 = c8 ^ (((c8 >> 1) | (c8 << 7)) & 0xFF)
+slow8 = [k for k in edge_children(a8, 0, 8) if not (k >> 0) & 1][0]
+pr8 = prefix_rewards(block_delays(a8, slow8, 0, 8))
+ok62 &= pr8[-1] == 0 and pr8[2] == 6 and 2 * reset_cost(slow8, 0, 8)[0] - 5 == 11
+check('S62 G167: branch-block delays and prefix rewards; block <= 2q - 16; the rooted control; the q = 8 counterexample',
+      ok62, '%d gated sibling cases' % n62)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

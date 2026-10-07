@@ -2076,7 +2076,7 @@ A small timing budget can take a long route to become visible, and forgetting pa
 
 **An everyday picture.** A journey can stay within a small spending limit while taking many steps. A map that merges different junctions may also invent a circular route that cannot actually be followed.
 
-## W167
+## G167
 A free step pays for a complete branch block, but can leave a temporary expense inside it.
 
 **What it says.** Combining the zero-cost branch step with its next three reset steps gives an exact endpoint charge. At the smaller periods that charge is nonpositive. The same block can still contain a costly shorter interval.
