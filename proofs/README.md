@@ -433,6 +433,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [embedded period constraints reject three-distance coefficients](G170-embedded-period-constraints-reject-three-distance-coefficients.md):
   Even a formula allowed to change with the period fails, because a long period still contains short-period
   patterns.
+- [exact-period witnesses reject three-distance coefficients](G171-exact-period-witnesses-reject-three-distance-coefficients.md):
+  A distant defect changes the true period while leaving the observed waiting distances unchanged.
 
 ## The waiting room (not yet verified)
 
@@ -445,7 +447,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [exact-period witnesses reject three-distance coefficients](W171-exact-period-witnesses-reject-three-distance-coefficients.md):
-  A distant defect changes the true period while leaving the observed waiting distances unchanged.
+*No proofs are waiting for a second reader at the moment.*

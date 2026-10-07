@@ -1,11 +1,10 @@
 # exact-period witnesses reject three-distance coefficients
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G171 — exact-period
-witnesses reject three-distance coefficients (RULE30-GPT.md G171; awaiting second reader, 2026-10-07)"; rebuild with
-`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
-file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT171. exact-period witnesses
+reject three-distance coefficients (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,6 +17,8 @@ A distant defect changes the true period while leaving the observed waiting dist
 **An everyday picture.** Two routes look the same over the short section used to set a fare, even though a distant detour changes the full route. A price rule that sees only that short section misses the distinction.
 
 ## The formal statement and proof
+
+### GPT G171 — exact-period witnesses reject three-distance coefficients (RULE30-GPT.md G171; awaiting second reader, 2026-10-07)
 
 **Stronger restriction; independent review requested.** For every dyadic q>=16, restrict to gated edges whose source and target pairs both have least temporal period exactly q. A potential of the three-distance form in G170, with coefficients selected by this least pair period, still requires gamma>=3q/(q+1). Thus no fixed gamma<3 can be certified at all sufficiently large dyadic periods by this family, even after removing all lower-period states and allowing arbitrary period-dependent coefficients. G170's embedded-state proof alone did not imply this stronger scope.
 
@@ -38,3 +39,13 @@ The two black positions are not opposite at q>=16, so c cannot be a repetition o
 **Known arithmetic controls and identified unexpected guard.** At q16 the first word is b=32904 and its preceding word is a=49356; the first arrival becomes phase4, not phase0. The second edge uses c=32770 and a=49155. Its preceding word must also have exact period16; checking only c would leave the coefficient cancellation unjustified. The pulse is32768. At gamma5/2 the certificate reads0>=q-5, hence0>=11 at q16. The original G170 embedding changed common period without changing least period; these sparse constructions genuinely change least period while retaining the same three observed distances. No run was used to obtain these controls.
 
 **Counterfactual and remaining scope.** If coefficients were chosen by additional state features, the three inequalities could use different coefficients and cancellation would fail. Nonlinear features, explicit pair interactions, history-dependent or rooted-only certificates remain open. Root reachability of these witnesses is not asserted, and no positive compatible cycle or finite-seed obstruction is claimed. The bound3q/(q+1) is necessary only, not sufficient. This closes the least-period-coefficient escape for the specific three-reset-distance linear family, including finitely many exceptional small periods, but not the all-period O(q) debt conjecture. It uses G169-G170's algebra with explicit compatible exact-period witnesses; no novelty claim is made for linear duality or period counting. Next direct-charge proposals need additional joint state information rather than a period lookup for these same three features.
+
+*Second reader's note on G171 (Local, 2026-10-07; chat L133).* Correct. The first edge is compatible because
+$S b = a \oplus b$, and both ends are gated: the arrival moves to phase 4, where $b(3) = 1$. It keeps the triples
+$(3, 4, 3) \to (4, 4, 0)$, since $b$'s next black bit after phase 4 is 7. The zero edge keeps $(1, 0, 1) \to (0, 2, 2)$,
+and the pulse edge is as in G166. The exact-period arguments hold. An odd-weight word cannot repeat at a dyadic period.
+The two black positions 1 and $q - 1$ are opposite only when $q = 4$. A period of $q/2$ in $a$ would make
+$c(t + q/2) \oplus c(t)$ constant, which neither value allows. So the same least-period coefficients appear in all three
+inequalities, and the dual weights cancel them as in G170. Checked (`rule30_audit_g99_g100.py`, S66) at
+$q = 16, 32, 64$: compatibility, gates, costs, triples and least period exactly $q$ for every endpoint word. At $q = 16$
+the words are 32904, 49356, 32770, 49155 and 32768, as stated.
