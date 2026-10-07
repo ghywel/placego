@@ -683,6 +683,60 @@ the maximum by total-window debt would be wrong. Nearest older entries G160 (arr
 any of them. It is a local finite-window sharpening of GC340, with no count, gap or growth bound.
 Local's entry24 is ready to leave the waiting room; no long computation was independently replayed.
 
+### 25. Proposition 12 (proved): a pulse's source weight is set by its child's black runs
+
+*Where:* chat L215; `tests/probes/lexicon/rule30_audit_g99_g100.py` S122, S123. *Bears on:* GC347 (RULE30-GPT.md,
+"Heavy pulse windows share a period budget between their second and fourth delays"), and GC349, whose caps it explains
+by parity; GC344's weight thresholds; PERIOD-TWO.md Q7. *Status:* Local's proof; second-read by GPT (GC353) and filed out of the waiting room, 2026-10-07.
+
+**Setting.** Common period $q \ge 4$ and a pulse driver $B = e_s$. Every word $C$ is the child of exactly one pair
+$(A, B)$, with source $A = SC \oplus (B \lor C)$, where $(SC)(i) = C(i + 1)$. For $C \ne 0, e_s$, and $C$ not all
+black, let $r \ge 1$ be the number of maximal black runs of $C$ on the cycle, $t = s + L$ its first black cell after
+$s$, $u$ its first white cell after $t$, and $M = u - t$ (positive cyclic distances).
+
+**Proposition 12.** (i) The source weight is fixed by the runs:
+
+```math
+|A| = \begin{cases} 2r & C(s) = 1, \\ 2r + 1 & C(s) = 0,\ L \ge 2, \\ 2r - 1 & C(s) = 0,\ L = 1. \end{cases}
+```
+
+(ii) Hence a heavy source, $|A| > 3$, has $r \ge 2$ black runs in its child, and its weight is odd exactly when
+$C(s) = 0$.
+
+*Proof.* (i) The word $SC \oplus C$ is black exactly where $C(i) \ne C(i + 1)$, at the two ends of each black run, so
+it has $2r$ black cells. If $C(s) = 1$ then $B \lor C = C$ and $A = SC \oplus C$. If $C(s) = 0$ then
+$B \lor C = C \oplus e_s$ and $A = (SC \oplus C) \oplus e_s$. Here $s$ is a run end exactly when $C(s + 1) = 1$, that
+is when $L = 1$, so adding $e_s$ removes a black cell when $L = 1$ and adds one when $L \ge 2$.
+
+(ii) With $r = 1$ every case of (i) gives $|A| \le 3$, and the parity of $2r$, $2r + 1$ and $2r - 1$ is read off
+directly. $\square$
+
+*With GC349.* GPT's GC349, which appeared while this entry was being written, bounds $L + M \le q - |A| + 3$ for
+$L \ge 2$ and $L + M \le q - |A| + 1$ for $L = 1$. With the parity in (ii) it gives $L + M \le q - 2$ whenever
+$C(s) = 0$ (there $|A| \ge 5$) and $L + M \le q - 1$ when $C(s) = 1$; both are attained for $q \ge 5$, for example by
+$C$ black on $s + 2, \dots, s - 3$ and at $s - 1$ ($|A| = 5$), and by $C$ black on $s + 2, \dots, s - 2$ and at $s$
+($|A| = 4$). A direct run argument for these two caps was in this entry's first draft; GC349 is at least as strong in
+every case, so it is cited instead.
+
+*Checks.* S122 tests (i) on every word $C$ at $q = 4$ to $12$, with $A$ confirmed as $C$'s source by the forward rule,
+and the two caps on every heavy source; S123 checks GC349 itself. Before filing, the identity ran at $q = 4$ to $14$.
+*What it changes.* GC347's cap $L + M \le q$ for $C(s) = 0$ is never reached by a heavy source, and GC344's thresholds
+have a one-line reason: a child with one black run has a source of weight at most 3. *Scope.* One pulse and its child;
+nothing about how often heavy windows occur.
+
+
+*Second reader's note on Proposition12 (GPT, 2026-10-07; GC353).* Verified. A nonconstant
+cyclic binary word has exactly two transitions per black run. The pulse changes only the source
+bit at s when C(s)=0, deleting a transition precisely when L=1. This proves the three cases,
+heavy-source run count and parity. GC349 then gives the two sharpened caps; the stated examples
+attain them even at q5. Independent per-bit substitution checks 18253 admissible (q,s,C) cases
+at q4..10, including 13836 heavy cases and90 rotated sharp examples. Unexpected boundary guard:
+constant C has zero transitions (all-white source weight1, all-black source weight0); assigning
+one cyclic run to the all-black word would misapply the formula. These are post-reading controls,
+not a separately preregistered experiment. Nearest older entries24, G202 and G151 were read:
+this identity is not a restatement of their phase debt, overlap balance or backward doubling
+claims. Ready to file; this remains a one-pulse identity, not a rooted event count or growth proof.
+
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
 These were proved inside sections as running text. They are restated so that each is a checkable unit.
@@ -7881,57 +7935,3 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
   $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
-
-### 25. Proposition 12 (proved): a pulse's source weight is set by its child's black runs
-
-*Where:* chat L215; `tests/probes/lexicon/rule30_audit_g99_g100.py` S122, S123. *Bears on:* GC347 (RULE30-GPT.md,
-"Heavy pulse windows share a period budget between their second and fourth delays"), and GC349, whose caps it explains
-by parity; GC344's weight thresholds; PERIOD-TWO.md Q7. *Status:* Local's proof, awaiting GPT's second reading.
-
-**Setting.** Common period $q \ge 4$ and a pulse driver $B = e_s$. Every word $C$ is the child of exactly one pair
-$(A, B)$, with source $A = SC \oplus (B \lor C)$, where $(SC)(i) = C(i + 1)$. For $C \ne 0, e_s$, and $C$ not all
-black, let $r \ge 1$ be the number of maximal black runs of $C$ on the cycle, $t = s + L$ its first black cell after
-$s$, $u$ its first white cell after $t$, and $M = u - t$ (positive cyclic distances).
-
-**Proposition 12.** (i) The source weight is fixed by the runs:
-
-```math
-|A| = \begin{cases} 2r & C(s) = 1, \\ 2r + 1 & C(s) = 0,\ L \ge 2, \\ 2r - 1 & C(s) = 0,\ L = 1. \end{cases}
-```
-
-(ii) Hence a heavy source, $|A| > 3$, has $r \ge 2$ black runs in its child, and its weight is odd exactly when
-$C(s) = 0$.
-
-*Proof.* (i) The word $SC \oplus C$ is black exactly where $C(i) \ne C(i + 1)$, at the two ends of each black run, so
-it has $2r$ black cells. If $C(s) = 1$ then $B \lor C = C$ and $A = SC \oplus C$. If $C(s) = 0$ then
-$B \lor C = C \oplus e_s$ and $A = (SC \oplus C) \oplus e_s$. Here $s$ is a run end exactly when $C(s + 1) = 1$, that
-is when $L = 1$, so adding $e_s$ removes a black cell when $L = 1$ and adds one when $L \ge 2$.
-
-(ii) With $r = 1$ every case of (i) gives $|A| \le 3$, and the parity of $2r$, $2r + 1$ and $2r - 1$ is read off
-directly. $\square$
-
-*With GC349.* GPT's GC349, which appeared while this entry was being written, bounds $L + M \le q - |A| + 3$ for
-$L \ge 2$ and $L + M \le q - |A| + 1$ for $L = 1$. With the parity in (ii) it gives $L + M \le q - 2$ whenever
-$C(s) = 0$ (there $|A| \ge 5$) and $L + M \le q - 1$ when $C(s) = 1$; both are attained for $q \ge 5$, for example by
-$C$ black on $s + 2, \dots, s - 3$ and at $s - 1$ ($|A| = 5$), and by $C$ black on $s + 2, \dots, s - 2$ and at $s$
-($|A| = 4$). A direct run argument for these two caps was in this entry's first draft; GC349 is at least as strong in
-every case, so it is cited instead.
-
-*Checks.* S122 tests (i) on every word $C$ at $q = 4$ to $12$, with $A$ confirmed as $C$'s source by the forward rule,
-and the two caps on every heavy source; S123 checks GC349 itself. Before filing, the identity ran at $q = 4$ to $14$.
-*What it changes.* GC347's cap $L + M \le q$ for $C(s) = 0$ is never reached by a heavy source, and GC344's thresholds
-have a one-line reason: a child with one black run has a source of weight at most 3. *Scope.* One pulse and its child;
-nothing about how often heavy windows occur.
-
-
-*Second reader's note on Proposition12 (GPT, 2026-10-07; GC353).* Verified. A nonconstant
-cyclic binary word has exactly two transitions per black run. The pulse changes only the source
-bit at s when C(s)=0, deleting a transition precisely when L=1. This proves the three cases,
-heavy-source run count and parity. GC349 then gives the two sharpened caps; the stated examples
-attain them even at q5. Independent per-bit substitution checks 18253 admissible (q,s,C) cases
-at q4..10, including 13836 heavy cases and90 rotated sharp examples. Unexpected boundary guard:
-constant C has zero transitions (all-white source weight1, all-black source weight0); assigning
-one cyclic run to the all-black word would misapply the formula. These are post-reading controls,
-not a separately preregistered experiment. Nearest older entries24, G202 and G151 were read:
-this identity is not a restatement of their phase debt, overlap balance or backward doubling
-claims. Ready to file; this remains a one-pulse identity, not a rooted event count or growth proof.

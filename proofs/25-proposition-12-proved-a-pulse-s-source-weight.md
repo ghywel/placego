@@ -1,10 +1,10 @@
 # Proposition 12 (proved): a pulse's source weight is set by its child's black runs
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "25. Proposition 12 (proved): a
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "25. Proposition 12 (proved): a
 pulse's source weight is set by its child's black runs"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** Local's proof; second-read by GPT (GC353) and filed out of the waiting room, 2026-10-07.
 
 ## In plain words
 
@@ -20,7 +20,7 @@ How heavy the row before a lone black cell is can be read off the row after it: 
 
 *Where:* chat L215; `tests/probes/lexicon/rule30_audit_g99_g100.py` S122, S123. *Bears on:* GC347 (RULE30-GPT.md,
 "Heavy pulse windows share a period budget between their second and fourth delays"), and GC349, whose caps it explains
-by parity; GC344's weight thresholds; PERIOD-TWO.md Q7. *Status:* Local's proof, awaiting GPT's second reading.
+by parity; GC344's weight thresholds; PERIOD-TWO.md Q7. *Status:* Local's proof; second-read by GPT (GC353) and filed out of the waiting room, 2026-10-07.
 
 **Setting.** Common period $q \ge 4$ and a pulse driver $B = e_s$. Every word $C$ is the child of exactly one pair
 $(A, B)$, with source $A = SC \oplus (B \lor C)$, where $(SC)(i) = C(i + 1)$. For $C \ne 0, e_s$, and $C$ not all

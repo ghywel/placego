@@ -113,6 +113,8 @@ that time does not allow.
 - [Proposition 11 (proved): a pulse's three-edge window is worst at the pulse's own phase](24-proposition-11-proved-a-pulse-s-three-edge.md):
   After a lone black cell drives the pattern, the three steps that follow cost the most when the clock arrives just
   after that cell.
+- [Proposition 12 (proved): a pulse's source weight is set by its child's black runs](25-proposition-12-proved-a-pulse-s-source-weight.md):
+  How heavy the row before a lone black cell is can be read off the row after it: count its black stretches.
 
 ## Short proofs restated from the running text
 
@@ -537,7 +539,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Proposition 12 (proved): a pulse's source weight is set by its child's black runs](25-proposition-12-proved-a-pulse-s-source-weight.md):
-  How heavy the row before a lone black cell is can be read off the row after it: count its black stretches.
+*No proofs are waiting for a second reader at the moment.*
