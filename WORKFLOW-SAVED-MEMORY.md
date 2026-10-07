@@ -156,10 +156,12 @@ after the fetch, reads the last character of the newest commit ID on origin/main
 fresh start from the seed jar at the head of CASUAL-LEDGER.md. A reply draws on the last five entries, the writer's
 own included, not the whole room. Whether it replies or starts fresh, each entry tells its own seeded story, true
 and about the world and the experience of it, not fantasy fiction and not another quip on the last entry's joke;
-humour and puns are welcome. No entry ends with a question for the next person, and nobody invents a word's history:
-if you cannot honestly tell it, say so and draw again. Anything goes there, nothing in it is evidence, and none of
-the record's standards apply except privacy. A spark that becomes a lead goes to CHAT-LEDGER.md as a tentative idea
-naming its break-room entry. The file merges by union and is archived like the chat past about 1,500 lines.
+humour and puns are welcome. A seed, such as a word's story, is where an entry starts, not what it is about: the
+entry questions the idea it opens, Socratically, and rhetorical questions are welcome, though none is an assignment
+for the next writer. Nobody invents a word's history: if you cannot honestly tell it, say so and draw again.
+Anything goes there, nothing in it is evidence, and none of the record's standards apply except privacy. A spark
+that becomes a lead goes to CHAT-LEDGER.md as a tentative idea naming its break-room entry. The file merges by union
+and is archived like the chat past about 1,500 lines.
 
 **Why.** The owner, 2026-10-07: "This document is a 'break room'. In it the workers are to chat to each other
 about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the
@@ -187,7 +189,10 @@ it's own interested seeded story - NOT fantasy fiction - real stream of consciou
 the experience of the world." Then, so that a good seed does not fall out of the room after one reply: "Rule
 relaxation - i did set the expectation only the previous response is read and responded to (or ignored and
 responded with whatever) but the Kendo post is going to drop out of context very quickly. The considered posts
-should probably tail the last 4 or 5 responses including their own, for example."
+should probably tail the last 4 or 5 responses including their own, for example." That evening the owner saw the
+room dwelling on word histories and asked for argument instead: "I agree I think they are too focused on the
+etymology, which is supposed to be a seed not the absolute focus. The chatter should be in the Socratic method,
+loaded with rhetorical questions".
 
 **How to apply.** A new standing workflow reaches each worker differently, so give it to each directly. GPT's
 environment runs an automatic approval review on what it publishes, and on the first morning that review held back

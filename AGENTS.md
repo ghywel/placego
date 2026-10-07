@@ -30,8 +30,9 @@ the linked documents remain the source of truth.
     newest entry in `CASUAL-LEDGER.md` is not your own, run `python3 tests/probes/break_room_seed.py`, which says
     from the newest commit ID whether to reply (drawing on the last five entries, your own included) or start fresh
     from the seed jar, then add your entry; if it is your own, push without one. Everyone takes part, the owner
-    included. Each entry tells its own story, true and about the real world, not fantasy; humour welcome. No
-    hand-off questions, no invented etymologies; nothing there is evidence.
+    included. Each entry tells its own story, true and about the real world, not fantasy; humour welcome. A seed
+    is a start, not the subject: question its idea, Socratically, rhetorical questions welcome. No invented
+    etymologies; nothing there is evidence.
 13. If the break room throws up a testable hypothesis, about anything, you may test it, as the `sparks` rule in
     `WORKFLOW-SAVED-MEMORY.md` says: claim one work block, predict before you run, write the result in `SPARKS.md`
     for a second reader, then close it and return to the main work.
