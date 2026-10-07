@@ -2630,3 +2630,13 @@ Two branches separate their black cells for one profile, then can overlap again.
 **Why it matters.** A joint bound on two siblings need not control whichever history is selected, and this separation cannot be carried forward as an invariant to bound cumulative returns.
 
 **An everyday picture.** Two lanes can be clear of each other at one junction and meet at the next. The first junction alone does not describe the whole journey.
+
+
+## G202
+Shared black cells between neighbouring profiles add up to the source a stretch returns to, plus an even surplus.
+
+**What it says.** Take one stretch of history between two all-white profiles and count the black cells each profile shares with the next. Counted odd or even, the total matches the source the stretch returns to: even for a branch that keeps the period, odd for the exit that doubles it. Counted exactly, the total is that source's number of black cells plus twice the number of moments when the next profile turns from white to black while the current one is white. Three odd-or-even counts of a pair do not predict the next profile's count: the actual history has two pairs that agree on all three and are followed by profiles that differ.
+
+**Why it matters.** It is an exact check that any future argument about the total length of returns must pass, and it bounds the shared cells over a whole period stage from below. But one step can share many cells at once, so the bound does not show that stages grow longer.
+
+**An everyday picture.** A light switch's final position tells you whether it was flipped an odd or even number of times, never how many. Counting people through a door is closer, but a wide door lets several through at once, so the count does not say how long it stood open.

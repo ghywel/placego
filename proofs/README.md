@@ -488,6 +488,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   through several returns to zero before it doubles.
 - [post-split siblings are disjoint for one profile, not the next](G201-post-split-siblings-are-disjoint-for-one-profile.md):
   Two branches separate their black cells for one profile, then can overlap again.
+- [overlap parity telescopes, with an unsigned balance, but does not close the rooted return state](G202-overlap-parity-telescopes-with-an-unsigned-balance-but.md):
+  Shared black cells between neighbouring profiles add up to the source a stretch returns to, plus an even surplus.
 
 ## Proofs from the sparks
 

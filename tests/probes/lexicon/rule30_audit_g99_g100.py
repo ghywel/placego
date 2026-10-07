@@ -498,6 +498,19 @@ CHECKS (GPT's claims at 827e006):
      a = 0000110001010011 (Delta c with c = 0000010000110001, weight 6, least period 16, a rotation of D1's driver)
      gives e = 1, 0, 1, 1 at phases 15, 0, 1, 2, f = 0, 1, 0 and f' = 0, 1 as stated, and the following profiles share
      phase 3 (g(3) = g'(3) = 1).
+  S100 (G202 and its unsigned addendum, added 2026-10-07 at 3176844): on every q-periodic compatible triple at q = 1
+     to 8 (exhaustive), pi(a) = pi(b) + pi(b AND c) and |a| - |b| = 2 E(b, c) - |b AND c| with E = |S c AND NOT (b OR
+     c)|, every counted rise having a = 1; pi(c) cancels (from q = 3 each parity class of (a, b) admits both parities
+     of c); both identities fail on some incompatible q = 4 triples. On every edge of the rooted reached graphs at
+     caps 1, 2, 4, 8 both hold, no state (0, 0) is reached, and along the root path to the single cap exit the
+     excursion syndromes are pi_q of the returning sources: 1 / 0, 1 / 0, 0, 1 / 0, 0, 0, 1 with zeros at 2, 7, 28,
+     399, overlap totals |a_next| + 2 sum E; each exit source is odd with no q-periodic child and a doubled child of
+     least period 2q. The two known first returns: S97's q = 8 witness (r = 88) ends at the odd driver 00111101, an
+     exit (syndrome 1), and S98's rooted q = 16 return (r = 52,808) at an even driver with two q-periodic children
+     (syndrome 0). G202's S75 control: masks 238, 180, 255, 150, 82, weights 4, 8, 4, 3, S f = 1 + (e OR f); the pairs
+     sit at depths 28 to 32 on consecutive reached edges, delays consistent with one absolute rotation; summaries (0,
+     0, 0) at depths 30 and 31 with next parities 0 and 1; |e AND f| = 2, E(e, f) = 3, 8 - 4 = 2*3 - 2, and -4 without
+     E.
 """
 import random
 from fractions import Fraction as F
@@ -5220,4 +5233,131 @@ ok99 &= [bit(f, t) for t in (0, 1, 2)] == [0, 1, 0] and [bit(fp, t) for t in (1,
 ok99 &= bit(g, 2) == 0 and bit(g, 3) == 1 and bit(gp, 3) == 1 and (g & gp) != 0
 check('S99 G201: after every even zero driver at caps 4, 8 (and 400 at 16) the next sibling profiles are disjoint with '
       'no cyclic 00 in their union; on the rooted q = 16 source the following profiles share phase 3', ok99)
+ok100 = True
+_pi100 = lambda u: bin(u).count('1') & 1
+_wt100 = lambda u: bin(u).count('1')
+
+
+def _E100(b, c, q):
+    """G202 addendum: rises of c outside resets, |S c AND NOT (b OR c)| within the q-bit block."""
+    return _wt100(_rq3.rot(c, 1, q) & ~(b | c) & ((1 << q) - 1))
+
+
+# every q-periodic compatible triple S c = a XOR (b OR c), q = 1 .. 8 exhaustively: the mod-2 identity
+# pi(a) = pi(b) XOR pi(b AND c), the integer identity |a| - |b| = 2 E(b, c) - |b AND c|, and a = 1 at every counted rise
+for q in range(1, 9):
+    cls = {}
+    for a in range(1 << q):
+        for b in range(1 << q):
+            for c in _rq3.children(a, b, q):
+                ok100 &= _pi100(a) == _pi100(b) ^ _pi100(b & c)
+                ok100 &= _wt100(a) - _wt100(b) == 2 * _E100(b, c, q) - _wt100(b & c)
+                ok100 &= (_rq3.rot(c, 1, q) & ~(b | c) & ~a & ((1 << q) - 1)) == 0
+                cls.setdefault((_pi100(a), _pi100(b)), set()).add(_pi100(c))
+    # pi(c) cancels: from q = 3 every class (pi(a), pi(b)) admits both parities of c (at q = 2 class (1, 0) forces 1)
+    if q >= 3:
+        ok100 &= len(cls) == 4 and all(v == {0, 1} for v in cls.values())
+# not vacuous: at q = 4 both identities fail on some incompatible triples
+ok100 &= any(_pi100(a) != _pi100(b) ^ _pi100(b & c) for a, b, c in product(range(16), repeat=3))
+ok100 &= any(_wt100(a) - _wt100(b) != 2 * _E100(b, c, 4) - _wt100(b & c) and _pi100(a) == _pi100(b) ^ _pi100(b & c)
+             for a, b, c in product(range(16), repeat=3))
+
+
+def _bal100(prof, q):
+    """One excursion prof = [0, w_(z+1), ..., a_next, 0]: XOR and integer sums of overlaps over n = z+1 .. z_next-1."""
+    I = [prof[n] & prof[n + 1] for n in range(1, len(prof) - 1)]
+    E = [_E100(prof[n], prof[n + 1], q) for n in range(1, len(prof) - 1)]
+    x = 0
+    for v in I:
+        x ^= _pi100(v)
+    return x, sum(_wt100(v) for v in I), sum(E)
+
+
+# the rooted reached graphs at caps 1, 2, 4, 8: every edge obeys both identities; no state (0, 0) is reached (so every
+# returning source is nonzero); along the root path to the single cap exit, each excursion's syndrome is pi_q of its
+# returning source and its overlap total is |a_next| + 2 sum E. The doubled period-q/2 exits are even over q bits
+# (syndrome 0); only the cap exit is odd, and it has no q-periodic child while its doubled child has least period 2q
+for q, zexp, synexp in ((1, [2], [1]), (2, [2, 7], [0, 1]), (4, [2, 7, 28], [0, 0, 1]),
+                        (8, [2, 7, 28, 399], [0, 0, 0, 1])):
+    _rt100, _dp100, _pa100, _ed100, _ex100 = _rq3.reached(q)
+    ok100 &= (0, 0) not in _dp100 and _ex100 == 1
+    for (a, b), tgt, d in _ed100:
+        c = _rq3.rot(tgt[1], -d, q)
+        ok100 &= _rq3.rot(tgt[0], -d, q) == b and _pi100(b & c) == _pi100(a) ^ _pi100(b)
+        ok100 &= _wt100(b & c) == _wt100(b) - _wt100(a) + 2 * _E100(b, c, q)
+    _snk100 = [s_ for s_ in _dp100 if not _rq3.children(s_[0], s_[1], q)]
+    ok100 &= len(_snk100) == 1
+    chain, s_ = [], _snk100[0]
+    while _pa100[s_] is not None:                   # literal triples (in each source state's frame) back to the root
+        par, d, c = _pa100[s_]
+        chain.append((par, c))
+        s_ = par
+    chain.reverse()
+    w = {-1: 0}                                     # the root (0, 1...1) is (w_-1, w_0)
+    for n, (st, c) in enumerate(chain):
+        w[n], w[n + 1] = st[1], c
+    zeros = [n for n in range(len(chain) + 1) if w[n] == 0]
+    ok100 &= zeros == zexp
+    syn = []
+    for zp, zn in zip([-1] + zeros, zeros):
+        x, tot = 0, 0
+        for n in range(zp + 1, zn):
+            x ^= _pi100(chain[n][0][1] & chain[n][1])
+            tot += _wt100(chain[n][0][1] & chain[n][1]) - 2 * _E100(chain[n][0][1], chain[n][1], q)
+        syn.append(x)
+        ok100 &= x == _pi100(w[zn - 1]) and tot == _wt100(w[zn - 1]) and w[zn - 1] != 0
+    ok100 &= syn == synexp
+    a_ex = w[zexp[-1] - 1]
+    ok100 &= _pi100(a_ex) == 1 and not _rq3.children(a_ex, 0, q)
+    _k2 = _rq3.children(a_ex | (a_ex << q), 0, 2 * q)
+    ok100 &= len(_k2) == 2 and all(_rq3.pair_lp(k, 0, 2 * q) == 2 * q for k in _k2)
+    if q == 8:                                      # the period-8 stage: one excursion, l = 371, k = 1
+        tot = 0
+        for n in range(29, 399):
+            tot += _wt100(chain[n][0][1] & chain[n][1])
+        ok100 &= 399 - 28 == 371 and 8 * (371 - 1) >= tot >= 2 * 1 - 1 and tot >= _wt100(a_ex)
+# the two known first returns after odd doublings: S97's q = 8 witness (r = 88) ends at the odd driver 00111101, an
+# exit with no q-periodic child (syndrome 1); S98's rooted q = 16 (r = 52,808) ends at an even driver, an internal
+# branch (syndrome 0), where extending one index to the zero's q-periodic child keeps the identity. Both balances exact
+for prof, q, rr, par in ((_pr97, 8, 88, 1), (_pr98, 16, 52808, 0)):
+    x, tot, Es = _bal100(prof, q)
+    drv = prof[-2]
+    ok100 &= len(prof) - 1 == rr and drv != 0 and _pi100(drv) == par == x
+    ok100 &= tot == _wt100(drv) + 2 * Es and tot >= _wt100(drv)
+    _kd100 = _rq3.children(drv, 0, q)
+    ok100 &= (not _kd100) if par else (len(_kd100) == 2 and all(_pi100(drv) == _pi100(0 & k) for k in _kd100))
+ok100 &= _pr97[-2] == sum(int(ch) << t for t, ch in enumerate('00111101'))
+# G202's literal rooted control (G185 / S75, q = 4 on cap 8), time 0 in the low bit: masks, weights, the equation for f
+_W100 = lambda s_: sum(int(ch) << t for t, ch in enumerate(s_))
+a, c, one, e, f = (_W100(s_) for s_ in ('01110111', '00101101', '11111111', '01101001', '01001010'))
+ok100 &= [a, c, one, e, f] == [238, 180, 255, 150, 82] and [_wt100(u) for u in (c, one, e, f)] == [4, 8, 4, 3]
+ok100 &= (e | f) == _W100('01101011') and _rq3.rot(f, 1, 8) == _W100('10010100') == one ^ (e | f)
+_sq100 = [a, 0, c, one, e, f]
+ok100 &= all(_sq100[i + 2] in _rq3.children(_sq100[i], _sq100[i + 1], 8) for i in range(4))
+# rooted: some choice of per-state rotations puts the five pairs at depths 28 .. 32 on consecutive reached edges, with
+# k_(i+1) = k_i + delay_i, so in absolute time the suffix is the literal words under one common rotation
+_rt100, _dp100, _pa100, _ed100, _ex100 = _rq3.reached(8)
+_Ed100 = {(s_, t_): d for s_, t_, d in _ed100}
+_pr100 = lambda i, k: (_rq3.rot(_sq100[i], k, 8), _rq3.rot(_sq100[i + 1], k, 8))
+_ch100 = [ks for ks in product(range(8), repeat=5)
+          if all(_dp100.get(_pr100(i, ks[i])) == 28 + i for i in range(5))
+          and all((_pr100(i, ks[i]), _pr100(i + 1, ks[i + 1])) in _Ed100 for i in range(4))]
+# each k_i is fixed only modulo its pair's least period (the state at depth 28 has pair period 4), so delays agree
+# modulo the gcd of source and target pair periods on every chain, and exactly (mod 8) on at least one
+_dl100 = lambda ks, i: (ks[i] + _Ed100[(_pr100(i, ks[i]), _pr100(i + 1, ks[i + 1]))] - ks[i + 1])
+_pp100 = lambda i: _rq3.pair_lp(_sq100[i], _sq100[i + 1], 8)
+ok100 &= bool(_ch100) and all(_dl100(ks, i) % math.gcd(_pp100(i), _pp100(i + 1)) == 0
+                              for ks in _ch100 for i in range(4))
+ok100 &= any(all(_dl100(ks, i) % 8 == 0 for i in range(4)) for ks in _ch100)
+_sm100 = lambda x, y: (_pi100(x), _pi100(y), _pi100(x & y))
+for ks in _ch100:
+    s30, s31 = _pr100(2, ks[2]), _pr100(3, ks[3])
+    ok100 &= _sm100(*s30) == _sm100(*s31) == (0, 0, 0)
+    ok100 &= {_pi100(k) for k in _rq3.children(*s30, 8)} == {0}
+    ok100 &= {_pi100(k) for k in _rq3.children(*s31, 8)} == {1}
+# the addendum's hand control on (one, e, f): |e AND f| = 2, E(e, f) = 3, 8 - 4 = 2*3 - 2; without E, overlap -4
+ok100 &= _wt100(e & f) == 2 and _E100(e, f, 8) == 3 and 8 - 4 == 2 * _E100(e, f, 8) - _wt100(e & f)
+ok100 &= _wt100(e) - _wt100(one) == -4
+check('S100 G202: pi(a) = pi(b) + pi(b AND c) and |a| - |b| = 2E - |b AND c| on every compatible triple '
+      '(q <= 8) and rooted edge; syndrome 1 only at exits; overlap = |a_next| + 2 sum E; S75 transfer at 28-32', ok100)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
