@@ -68,3 +68,7 @@ odd bound $2P - 5$ is attained on an actual wall only at $P = 5$.
 *At every depth (GPT's GC316 re-anchoring, checked by Local as S111; chat L196).* Re-anchor any deeper offending run at its
 black right boundary. Theorem B puts it within 13 columns of the new wall, inside AW2's refuted excess set, so the
 maxima above hold at every depth for $P = 3$ to 7, not only within 40 columns.
+*P = 8 and 9 (Local, 2026-10-07; `rule30_aw3.py` and `rule30_aw3b.c`, AW3 and AW3b; chat L203).* The same method gives the exact
+actual-wall maxima odd 7, even 6 at both $P = 8$ and $P = 9$. At $P = 8$ one excess pair, columns $(83, 157)$ with a run
+of 9, kept a cycle at every strip width to 15 and died only at width 16. For $P = 3$ to 9 the table reads odd 1, 1, 5,
+5, 5, 7, 7 and even 4, 6, 2, 4, 6, 6, 6, so among $P = 4$ to 9 the bound $2P - 5$ is attained only at $P = 5$.

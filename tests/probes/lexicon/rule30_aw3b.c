@@ -18,7 +18,12 @@
  *        more than width 3 there, (19, 29) at width 5 and (29, 41) at width 4, and keeps a cycle at every width 1 .. 16
  *        for a pair with a periodic continuation, (c0, c1) = (1, 0) at P = 1.
  *   B-C2 (control): (83, 157) survives every width 1 .. 14 here too, as in Python.
- * OUTCOME: not yet run.
+ * OUTCOME, 2026-10-07 18:12 (M5, one run of the program at 28768cc; seconds). B-C1 PASS: (19, 29) dies at width 5 and
+ * (29, 41) at width 4 at P = 6, as in rule30_aw2.py; (1, 0) at P = 1 keeps cycles at every width to 16. B-C2 PASS:
+ * (83, 157) keeps cycles at widths 1 .. 15 (alive 13, 13, 17, 21, 32, 41, 51, 78, 108, 169, 276, 360, 417, 475, 525).
+ * B-P1 HELD: at width 16 nothing is alive, so (83, 157) has no right continuation. With AW3, entry 06's exact actual-wall
+ * maxima at P = 8 are odd 7 and even 6 (at every depth, by GC316's re-anchoring), and the table for P = 3 .. 9 reads
+ * odd 1, 1, 5, 5, 5, 7, 7 and even 4, 6, 2, 4, 6, 6, 6: 2P - 5 is attained only at P = 5 among P = 4 .. 9.
  */
 #include <stdint.h>
 #include <stdio.h>
