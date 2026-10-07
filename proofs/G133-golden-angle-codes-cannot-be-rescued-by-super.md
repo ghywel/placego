@@ -19,8 +19,8 @@ at a steady geometric rate; ever sparser ones cannot keep the middle blinking.
 **Why it matters.** It reaches beyond exact rotation codes to kicked ones, close to the measured wheel (6.1). Kicks
 at a steady geometric rate remain possible, and the wheel's own angle is rational, which G136 takes up.
 
-**An everyday picture.** A wobbling top needs a push every so often, and the gaps between pushes cannot keep
-stretching without limit.
+**An everyday picture.** A wobbling top needs a push every so often: the gaps between pushes may grow as it spins
+on, but never by more than a fixed multiple of how long it has been spinning.
 
 ## The formal statement and proof
 

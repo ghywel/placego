@@ -19,8 +19,8 @@ does not itself follow Rule 210.
 
 **Why it matters.** It fixes which "change" an instrument measures before anyone reads physics into it.
 
-**An everyday picture.** From the platform a passing train changes the view every moment; from inside the carriage
-nothing changes at all.
+**An everyday picture.** From the platform a passing train changes the view every moment; to a passenger looking
+round the carriage, nothing changes at all.
 
 ## The formal statement and proof
 

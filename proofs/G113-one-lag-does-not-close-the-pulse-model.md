@@ -15,7 +15,8 @@ information: in one case adding an earlier observation turns an error rate of 5/
 
 **Why it matters.** Short-memory models of the glitches are provably incomplete, so longer histories matter.
 
-**An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
+**An everyday picture.** A car that won't start this morning: checking what happened today and yesterday can miss
+the cause, a light left on three nights ago.
 
 ## The formal statement and proof
 

@@ -17,7 +17,8 @@ reach any column on the left.
 **Why it matters.** It is a quick, explicit bound for every rhythm at once. It is coarse, so it does not close the
 gap on its own.
 
-**An everyday picture.** A pipe made of sections of known width: the narrowest combination limits the flow.
+**An everyday picture.** A train of gears, each with a known ratio: multiply the ratios along the train and you know
+the most the last gear can turn for each turn of the first. It is a ceiling, not the actual speed.
 
 ## The formal statement and proof
 

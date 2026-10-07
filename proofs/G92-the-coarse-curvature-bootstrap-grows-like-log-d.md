@@ -17,8 +17,8 @@ bound that is wanted.
 **Why it matters.** It improves on the square-root growth of G77, and shows that the remaining gap needs real
 information about which paths pair up.
 
-**An everyday picture.** Assuming every repair costs the most it possibly could: the estimate still creeps up, only
-more slowly than before.
+**An everyday picture.** The builder's quote of G77 again, now with the worst cases paired off against each other:
+it still creeps up, only more slowly than before.
 
 ## The formal statement and proof
 

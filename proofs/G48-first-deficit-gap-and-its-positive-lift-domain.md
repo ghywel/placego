@@ -17,8 +17,8 @@ the start; a positive gap means it ended higher.
 **Why it matters.** It turns survival through a first dip into a short, exact calculation, which G48's certificate
 (next page) then carries out.
 
-**An everyday picture.** A lift that drops a fixed number of floors per extra passenger: whether you end above your
-floor is simple arithmetic.
+**An everyday picture.** A prepayment electricity meter: the credit left is the top-up minus a fixed price per unit
+used, so whether you are still in credit at the end is a single subtraction.
 
 ## The formal statement and proof
 

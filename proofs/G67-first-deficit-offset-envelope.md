@@ -16,7 +16,8 @@ rules allow. The offset is at most a third of a times 3^a.
 
 **Why it matters.** This envelope feeds the ceilings: with the offset bounded, so is the height limit of G45.
 
-**An everyday picture.** The heaviest load a lorry can carry and still pass the bridge's weighbridge.
+**An everyday picture.** Savings in an account that pays interest: money paid in early grows the most, so the
+largest possible balance comes from paying in as early as the rules allow.
 
 ## The formal statement and proof
 

@@ -17,8 +17,9 @@ length-eight map contains the pattern but has no loop, so there it proves nothin
 **Why it matters.** It gives something concrete to search for without classifying a whole map, and shows why a local
 fork alone is not enough.
 
-**An everyday picture.** Two doors from the same hall lead to rooms where the cards end up in different orders; to
-choose again and again, there must also be a corridor back to the hall.
+**An everyday picture.** A triangle of railway track (a wye) can turn a train round, putting its carriages in the
+opposite order; but to choose between turning and not turning again and again, there must be a line that brings the
+train back to the junction.
 
 ## The formal statement and proof
 

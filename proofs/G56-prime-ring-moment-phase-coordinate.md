@@ -17,7 +17,9 @@ is the sum of the phase changes along it.
 **Why it matters.** It makes G55's drift computable step by step. Whether the drift can be zero for Rule 30 is still
 open.
 
-**An everyday picture.** Tracking a crowd's centre to see whether it is drifting round a roundabout.
+**An everyday picture.** A clock dial of p hours on which each black square adds its own hour: the total moves on by
+exactly one hour when the ring is turned by one square, so watching that total shows how far the pattern has
+drifted.
 
 ## The formal statement and proof
 

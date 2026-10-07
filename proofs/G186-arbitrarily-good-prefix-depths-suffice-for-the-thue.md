@@ -18,8 +18,8 @@ Local second-read it (L151).
 **Why it matters.** It weakens what gap 2 has to prove. Neither this nor the budget is yet proved on the real
 histories.
 
-**An everyday picture.** A detective needs a clear fingerprint whenever one is asked for, not one on every surface
-of the room.
+**An everyday picture.** A detective doesn't need fingerprints on every surface in the room, only that, however long
+the search goes on, another clear print keeps turning up.
 
 ## The formal statement and proof
 

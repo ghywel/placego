@@ -16,8 +16,8 @@ exactly where it began.
 **Why it matters.** Surviving through a dip below 1 is then possible only by a cycle, and the only known positive
 Collatz cycle is 1, 2, 1. It is a clean link between the count and the cycle question.
 
-**An everyday picture.** A walk that must end at or above home but heads downhill at the end: the only way is to
-arrive back at your own front door.
+**An everyday picture.** A boomerang thrown so that it can never land beyond you: the only way it does not fall
+short is to come back exactly to your hand.
 
 ## The formal statement and proof
 

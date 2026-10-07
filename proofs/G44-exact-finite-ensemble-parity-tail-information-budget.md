@@ -18,7 +18,9 @@ patterns.
 **Why it matters.** It is an exact information budget: the Collatz state after the free bits can pay for about 1.58
 a fair coin tosses and no more.
 
-**An everyday picture.** A deck of cards can fake only so many coin tosses; deal enough and the deck repeats.
+**An everyday picture.** A shuffled deck of cards holds about 225 coin tosses' worth of chance: there are about 2 to
+the power 225 ways to order it. Read more tosses than that off it and the later ones are already decided by the
+earlier.
 
 ## The formal statement and proof
 

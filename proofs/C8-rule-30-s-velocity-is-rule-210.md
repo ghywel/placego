@@ -17,8 +17,8 @@ proof is two lines of algebra.
 **Why it matters.** It explains why Rule 210 keeps turning up as Rule 30's nearest relative in the record, and it
 lets the prize be written as a difference equation in the arithmetic of bits, where 1 + 1 = 0.
 
-**An everyday picture.** Watching a film by its changes from frame to frame instead of the frames themselves: the
-changes follow a simpler script.
+**An everyday picture.** Video compression: instead of storing every frame whole, a video file mostly stores what
+changed since the frame before, and here those changes follow a simpler rule than the pictures themselves.
 
 ## The formal statement and proof
 

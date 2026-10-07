@@ -16,8 +16,8 @@ can vanish at only a few others. Local's example then shows it at every rate in 
 **Why it matters.** One exact check covers a whole range of rates, saving a sweep of measurements. The converse does
 not hold: a single rate where the effect vanishes can hide it at others.
 
-**An everyday picture.** A cracked bell sounds wrong at almost every pitch; finding one pitch where it sounds true
-does not prove it is sound.
+**An everyday picture.** The railway wheel-tapper's hammer: a cracked wheel rings dull. It rings dull on almost
+every tap, and one tap that happens to sound clear proves nothing about the wheel.
 
 ## The formal statement and proof
 

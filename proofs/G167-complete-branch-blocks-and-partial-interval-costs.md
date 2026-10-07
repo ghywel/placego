@@ -17,8 +17,8 @@ over: by 11 in one period-8 case, and by 2 at the known period-16 fork, where ev
 **Why it matters.** Paying for whole blocks is not enough; the bound must hold on every stretch, and the steps
 between blocks are still open.
 
-**An everyday picture.** A shopping trip that comes out even after the refund at the till can still take the card
-over its limit halfway round the shop.
+**An everyday picture.** A bank account that comes out even once the salary lands can still go overdrawn in the week
+before payday.
 
 ## The formal statement and proof
 

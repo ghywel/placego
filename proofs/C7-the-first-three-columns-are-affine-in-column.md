@@ -19,8 +19,9 @@ results begin here. It also marks a difference from the Collatz twin: there, kno
 steps makes the whole orbit simple arithmetic (Terras's formula); here, knowing column 1 does so for only three
 columns.
 
-**An everyday picture.** A game of telephone in which the first three players pass the message on faithfully (some
-of them saying the opposite), and the fourth starts mixing two messages together.
+**An everyday picture.** A chain of parts on a circuit board: an inverter (out comes the opposite of what goes in),
+a delay, another inverter, and only at the fourth part a gate that combines two signals, giving 1 only when both are
+1.
 
 ## The formal statement and proof
 

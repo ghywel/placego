@@ -17,7 +17,8 @@ only at times 3, 15, 63, 255, ..., one less than a power of 4.
 **Why it matters.** It pins down where the right side can do anything interesting at all: rarely, at predictable
 times.
 
-**An everyday picture.** A night-watch who may only leave the post when the lighthouse flashes on.
+**An everyday picture.** A night-watch who may leave the post only when a lighthouse flashes on, and this lighthouse
+flashes less and less often: at minute 3, then 15, then 63, then 255.
 
 ## The formal statement and proof
 

@@ -16,8 +16,8 @@ about (log h)/√h, whatever the state.
 **Why it matters.** Late imbalances count for little. It controls the coin side only; the real Collatz imbalances
 still need their own bound.
 
-**An everyday picture.** On a long walk, one extra step makes little difference to where you end up, and less the
-longer the walk.
+**An everyday picture.** One point dropped in the first week of a long football season barely changes who ends up
+top; the more matches still to play, the less it matters.
 
 ## The formal statement and proof
 

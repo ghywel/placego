@@ -11,7 +11,9 @@ such an unusual noun is used, the reader should be offered a simple description 
 what it means" (2026-10-07).
 Pictures are built from concrete things a reader has seen, heard or touched; in the owner's words, "humans are
 sensory beings with excellent visual memories - grounding in real world existential nouns is helpful"
-(2026-10-07). Plain-words pass done through G198 (2026-10-07); entries after it may still be drafts.*
+(2026-10-07). Plain-words pass done through G198 (2026-10-07); entries after it may still be drafts.
+Pictures from C4 on have had Cloud's "what would Gareth say" pass (2026-10-07), awaiting the owner's verdicts
+in [picture-pass.md](picture-pass.md).*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -375,8 +377,9 @@ for good becomes a barrier: damage that crosses it never heals.
 **Why it matters.** It turns a measured speed into an exact identity, and explains why the band of white diagonals
 left of the middle acts as a one-way wall for information.
 
-**An everyday picture.** A rumour running down a queue: it moves one person per tick, except when it meets a
-sceptic, who knocks it back a few places.
+**An everyday picture.** A shopper walking down a busy aisle at full pace, knocked back a step or two each time a
+trolley cuts across them: their average pace is full pace minus the knocks. A white diagonal is a one-way turnstile:
+once through, nobody pushes them back.
 
 ## C5
 In a random row, Rule 30 keeps the row random, so white triangles of each width appear at an exact, predictable rate.
@@ -389,8 +392,9 @@ square of width halves the rate.
 proved for random rows. The single-cell pattern matches it to about 0.05% in its central region, a measured sign
 that the famous pattern behaves randomly there.
 
-**An everyday picture.** A well-shuffled deck: the chance of a run of L reds is a clean power of a half, and Rule 30
-is a shuffle that never undoes itself.
+**An everyday picture.** A bowl of coins, stirred: stirring never sorts the heads from the tails, so a run of L
+heads in a row turns up at the rate of a half multiplied by itself L times, however long you stir. Rule 30 is that
+kind of stirring.
 
 ## C6
 On a ring with a prime number of squares, any rhythm that is rare must be a pattern travelling round the ring.
@@ -404,8 +408,9 @@ the ring does the same as running time on. The census found every cycle length d
 **Why it matters.** It is an exact, structural fact about Rule 30 in small closed worlds, of the kind the record
 wants to tell apart from mere measurement.
 
-**An everyday picture.** A carousel: if a horse's ride is not repeated by any other horse, the ride must simply be
-the carousel going round.
+**An everyday picture.** A Mexican wave in a round stadium: if a pattern of standing fans is the only one of its
+kind, then moving one seat round can only show you the same pattern a moment later. It is a wave travelling round
+the ring.
 
 ## C7
 The first three columns left of the middle just copy or flip column 1; the first real mixing happens in the fourth.
@@ -419,8 +424,9 @@ results begin here. It also marks a difference from the Collatz twin: there, kno
 steps makes the whole orbit simple arithmetic (Terras's formula); here, knowing column 1 does so for only three
 columns.
 
-**An everyday picture.** A game of telephone in which the first three players pass the message on faithfully (some
-of them saying the opposite), and the fourth starts mixing two messages together.
+**An everyday picture.** A chain of parts on a circuit board: an inverter (out comes the opposite of what goes in),
+a delay, another inverter, and only at the fourth part a gate that combines two signals, giving 1 only when both are
+1.
 
 ## E1
 GPT found exactly which stretches of a row erase all memory when you rebuild the row before it.
@@ -434,8 +440,8 @@ first guess was wrong, and the failure is kept on record.
 **Why it matters.** A reset means two different pasts become identical from that point on: information from further
 away is wiped. This is an exact measure of when the right side's influence is forgotten.
 
-**An everyday picture.** Directions that get you to the town square from anywhere in town, even if you do not know
-where you started.
+**An everyday picture.** The reset button on a latch circuit, or on a broadband router: whatever state it was in,
+after the reset it is in the same one, and nothing about before survives.
 
 ## E2
 A single changed bit from the right side is forgotten at a steady rate as you go back in time: three squares per step.
@@ -448,7 +454,8 @@ squares.
 **Why it matters.** It measures exactly how quickly one bit of news from the right fades in the left half, a precise
 piece of the "how much can get through" accounting.
 
-**An everyday picture.** A footprint on a beach: each wave narrows it by the same amount, until it is gone.
+**An everyday picture.** A candle clock, a candle marked with the hours: each hour it burns down by the same length
+to the next mark, until there is nothing left. The protected checkerboard loses three squares for every step back.
 
 ## E3
 For walls with one white beat per period, checking three columns on the right rules out no more than checking two.
@@ -461,8 +468,8 @@ two black in a row; for p = 3, never black, white, white; for odd p of 5 or more
 **Why it matters.** It tests whether the right side's own rules squeeze the channel. Here the third column adds
 nothing visible, even though it changes what happens out of sight.
 
-**An everyday picture.** Checking an alibi with more witnesses: the third witness tells you nothing the second did
-not.
+**An everyday picture.** Checking an alibi with a third witness: they add nothing to what the first two saw at the
+door, although they saw other things further down the street.
 
 ## E4
 On a slow wall, the left half near the middle carries only "when did the switch go on", so there are just a + 1
@@ -500,8 +507,9 @@ possible. GPT predicted the opposite at width four, and the failed prediction is
 **Why it matters.** If Rule 30's own consistency rules out these walls at all, the evidence first appears at width
 five or more. It tells future searches where not to look.
 
-**An everyday picture.** A lock that gives way to none of the first four picks: if it can be opened, it needs a
-fifth.
+**An everyday picture.** A front-door lock with five spring-loaded pins: a key that lifts the first four pins to the
+right height still tells you nothing, because if it is the wrong key, only the fifth pin, or a later one, will stop
+it turning.
 
 ## E7
 Jen's classic argument works from the left half alone, without assuming anything about the right.
@@ -513,7 +521,8 @@ for its sibling Rule 210 with the blinking wall.
 
 **Why it matters.** It removes a hidden assumption, so the tool can be used exactly where the record needs it.
 
-**An everyday picture.** Proving there is a leak from inside the house, without having to inspect the pipes outside.
+**An everyday picture.** The water-meter test for a leak: turn off every tap in the house, and if the meter still
+turns there is a leak, proved without digging up a single pipe outside.
 
 ## F1
 After k Collatz steps, a number's remainder in base 2 has become a remainder in base 3, and the rest passes through
@@ -526,8 +535,8 @@ restated.
 **Why it matters.** It is the Collatz twin of the forced left half, and the avenue Collatz has that Rule 30 lacks:
 after the free bits, the state is an explicit number. All the counting work of GPT's G39 to G75 builds on it.
 
-**An everyday picture.** A bureau de change that converts your loose coins into another currency and hands your
-banknotes back untouched.
+**An everyday picture.** Changing pounds into euros: the notes are converted at a fixed rate, a straight
+multiplication, while the loose change is counted on its own and comes back as coins worth less than one new note.
 
 ## F2
 A Collatz number that ran off to infinity would have to change its step pattern endlessly: it could not loop or
@@ -556,8 +565,8 @@ patterns.
 **Why it matters.** It lets simple estimates about random step patterns be carried over to surviving ones at a
 small, known price. It is a basic transfer tool for the Collatz count (see the primer).
 
-**An everyday picture.** A circular hike that ends higher than it starts: begin at its lowest point, and you are
-never below where you set off.
+**An everyday picture.** A year's bank statement that ends in credit: read it round in a circle, starting just after
+the day of the lowest balance, and the running total never drops below where you began.
 
 ## G40
 Swapping neighbouring odd and even steps shifts a Collatz number's final value by an exact, predictable amount.
@@ -570,8 +579,8 @@ fingerprint is a product of simple factors.
 **Why it matters.** The Collatz count needs final values to spread out evenly. This gives an exact handle on that
 spreading, the Collatz analogue of a random walk built from independent steps.
 
-**An everyday picture.** A row of switches, each adding its own fixed amount to a meter: the spread of possible
-readings is the switches' spreads combined.
+**An everyday picture.** A mixing desk where each channel's mute button adds or removes that channel's fixed level
+on the master meter: the spread of possible readings is built from each channel's own on-or-off.
 
 ## G41
 Typical surviving Collatz patterns have plenty of those independent switches: a fixed fraction of their length.
@@ -594,8 +603,8 @@ many free pairs there are: its strength stays above 0.99.
 **Why it matters.** It closes a tempting short cut ("many free pairs, so the values spread evenly"). An honest no-go
 like this saves later work and shapes the next attempt.
 
-**An everyday picture.** A choir of many independent voices can still all hit one note together if each happens to
-be tuned to it; adding voices does not wash that note out.
+**An everyday picture.** Pushing a swing: a hundred pushes from a hundred different people still add up if every one
+lands in time with the swing. More pushes do not cancel that one rhythm.
 
 ## G43
 An exact translation table between base 3, where the Collatz state lives, and odd or even, which decides the next step.
@@ -607,8 +616,9 @@ that question, with an explicit formula.
 **Why it matters.** F1 puts the Collatz state in base 3, but the next step is decided by base 2. This is the exact
 bridge between them, and it says which frequencies matter most.
 
-**An everyday picture.** A phrasebook that tells you exactly how much each word of one language counts towards a yes
-or no in another.
+**An everyday picture.** The sliders of a graphic equaliser, read the other way round: for one sound, they show how
+much each band of frequencies contributes to it. Here the sound is the answer odd-or-even, and the bands are the
+patterns in a base-3 remainder.
 
 ## G44
 A remainder modulo 3^a can imitate only so many fair coin tosses; ask for more and the repetition shows.
@@ -621,7 +631,9 @@ patterns.
 **Why it matters.** It is an exact information budget: the Collatz state after the free bits can pay for about 1.58
 a fair coin tosses and no more.
 
-**An everyday picture.** A deck of cards can fake only so many coin tosses; deal enough and the deck repeats.
+**An everyday picture.** A shuffled deck of cards holds about 225 coin tosses' worth of chance: there are about 2 to
+the power 225 ways to order it. Read more tosses than that off it and the later ones are already decided by the
+earlier.
 
 ## G45
 For a given step pattern, the numbers that follow it and stay above their start are a fixed class with a height limit.
@@ -633,7 +645,8 @@ it is small: below a ceiling the pattern fixes exactly.
 **Why it matters.** It separates two notions the count uses: "the growth factor stays above 1" and "the number
 actually stays above its start". They differ only for small numbers, below the ceilings.
 
-**An everyday picture.** A fairground ride with a maximum height: only those under the bar get on.
+**An everyday picture.** A soft-play area with a height bar at the door: only children under the bar get in, and the
+bar is set by the play area, not by the child.
 
 ## G46
 Those height limits can be as large as you like, because powers of 3 sometimes come very close to powers of 2.
@@ -659,8 +672,8 @@ exactly where it began.
 **Why it matters.** Surviving through a dip below 1 is then possible only by a cycle, and the only known positive
 Collatz cycle is 1, 2, 1. It is a clean link between the count and the cycle question.
 
-**An everyday picture.** A walk that must end at or above home but heads downhill at the end: the only way is to
-arrive back at your own front door.
+**An everyday picture.** A boomerang thrown so that it can never land beyond you: the only way it does not fall
+short is to come back exactly to your hand.
 
 ## G48
 A simple formula for how far above or below its start a number ends after its first dip.
@@ -672,8 +685,8 @@ the start; a positive gap means it ended higher.
 **Why it matters.** It turns survival through a first dip into a short, exact calculation, which G48's certificate
 (next page) then carries out.
 
-**An everyday picture.** A lift that drops a fixed number of floors per extra passenger: whether you end above your
-floor is simple arithmetic.
+**An everyday picture.** A prepayment electricity meter: the credit left is the top-up minus a fixed price per unit
+used, so whether you are still in credit at the end is a single subtraction.
 
 ## G48C
 A computer certificate: every number above 1 whose growth factor first dips below 1 within 16 steps really does drop
@@ -699,7 +712,9 @@ such a counter survives for ever with probability at least about 0.38, rather th
 **Why it matters.** It shows exactly which of the record's Collatz tools transfer to this famous unsolved test bed,
 and which do not.
 
-**An everyday picture.** The same engine fitted to a different car: it runs, but the race is a different one.
+**An everyday picture.** The same engine in a different race: the arithmetic runs just as before, but the question
+becomes a gambler who wins two pounds on heads and loses one on tails. Does the money ever run out? With a fair
+coin, more than a third of the time it never does.
 
 ## G50
 Mahler's 3/2 problem needs two conditions at once, and its known cellular-automaton form (a rule of Rule 30's kind,
@@ -725,8 +740,8 @@ the allowed starting fractions form one exact interval. Both are written down ex
 **Why it matters.** It turns Mahler's question into a finite check for each length, the kind of statement a computer
 can test or a proof can iterate.
 
-**An everyday picture.** A shooting target with two rings: one for the whole number and one for the fraction, both
-drawn exactly.
+**An everyday picture.** A delivery address: a postcode that fixes the street, and a range of house numbers along
+it, both written down exactly.
 
 ## G52
 Near-repeats in column 1 rule out a finite seed for every repeating wall, not only black-white.
@@ -748,7 +763,8 @@ new information reaches any fixed column on the left is at most the rate of thes
 
 **Why it matters.** It puts the squeeze (proof 19) into a form that works for every repeating wall.
 
-**An everyday picture.** Counting a parcel service's deliveries by the van-load rather than by the parcel.
+**An everyday picture.** Counting deliveries by the van-load: a depot that sends one van a week can deliver to a
+street no faster than one van-load a week, however the parcels are packed.
 
 ## G54
 A simple two-by-two calculation bounds the information reaching the left half, for every repeating wall.
@@ -760,7 +776,8 @@ reach any column on the left.
 **Why it matters.** It is a quick, explicit bound for every rhythm at once. It is coarse, so it does not close the
 gap on its own.
 
-**An everyday picture.** A pipe made of sections of known width: the narrowest combination limits the flow.
+**An everyday picture.** A train of gears, each with a known ratio: multiply the ratios along the train and you know
+the most the last gear can turn for each turn of the first. It is a ceiling, not the actual speed.
 
 ## G55
 On a prime ring, every Rule 30 cycle is a lifted copy of a simpler cycle, which explains when cycle lengths are
@@ -787,7 +804,9 @@ is the sum of the phase changes along it.
 **Why it matters.** It makes G55's drift computable step by step. Whether the drift can be zero for Rule 30 is still
 open.
 
-**An everyday picture.** Tracking a crowd's centre to see whether it is drifting round a roundabout.
+**An everyday picture.** A clock dial of p hours on which each black square adds its own hour: the total moves on by
+exactly one hour when the ring is turned by one square, so watching that total shows how far the pattern has
+drifted.
 
 ## G57
 How a Rule 30 pattern drifts round a prime ring is set exactly by where its "and" operations happen.
@@ -799,7 +818,8 @@ weighted by position.
 **Why it matters.** It ties the drift to Rule 30's non-linear part, the part that makes it hard. It does not yet say
 the drift is never zero.
 
-**An everyday picture.** A ship's drift is set entirely by where its rudder pushes: no push, no turn.
+**An everyday picture.** A shopping trolley with one sticky wheel: left alone it would roll straight, and every
+swerve it makes comes from where and when that wheel catches.
 
 ## G58
 For Rule 30's sibling Rule 210, GPT built an explicit left half that keeps a whole family of walls going.
@@ -833,7 +853,8 @@ right side needs infinitely many black squares, so this is not a finite seed.
 **Why it matters.** It settles that the left-half witness is not an empty shell: a whole consistent world exists
 around it. Whether a finite one exists is the remaining question.
 
-**An everyday picture.** A tapestry that can be finished, but only with an endless roll of thread.
+**An everyday picture.** A crossword that can be filled in completely and consistently, but only on a grid that runs
+on for ever to the right: a solution exists, just not one that would fit on a page.
 
 ## G61
 In Rule 210, column 1 can carry a hidden black bit only at moments when the visible signal switches on.
@@ -845,7 +866,8 @@ only at times 3, 15, 63, 255, ..., one less than a power of 4.
 **Why it matters.** It pins down where the right side can do anything interesting at all: rarely, at predictable
 times.
 
-**An everyday picture.** A night-watch who may only leave the post when the lighthouse flashes on.
+**An everyday picture.** A night-watch who may leave the post only when a lighthouse flashes on, and this lighthouse
+flashes less and less often: at minute 3, then 15, then 63, then 255.
 
 ## G62
 In Rule 210, the first pair of black squares next to the wall can appear only at a sparse list of even times: 0, 6,
@@ -857,7 +879,8 @@ and only where the visible signal switches off. For the signal of the initially 
 
 **Why it matters.** It restricts where Rule 210's non-linear term can act near the wall to a very thin set.
 
-**An everyday picture.** A train that can stop only at stations whose numbers come from a fixed, thinning timetable.
+**An everyday picture.** A request-stop bus allowed to stop only at the minutes 0, 6, 30, 126 and so on: the gaps
+keep growing, so the stops get ever rarer.
 
 ## G63
 While the visible signal holds steady, each column on the right is forced into a fixed rhythm too.
@@ -869,8 +892,8 @@ little at each end for each column further out.
 **Why it matters.** It replaces G61 and G62's single-square restrictions with a whole forced strip of the right
 half.
 
-**An everyday picture.** A row of dominoes: once the first stands still, the next ones must stand still too, except
-near the ends.
+**An everyday picture.** A row of meshed cogs: keep the first turning steadily and every cog down the line is forced
+to turn steadily too, though each one further out takes a little longer to settle and stops sooner after you let go.
 
 ## G64
 In that Rule 210 family, every fixed column on the right is almost completely predictable.
@@ -895,8 +918,9 @@ half a bit of new information per tick.
 **Why it matters.** It shows G64's "almost no information" depends on fixing the left half; vary it, and freedom
 returns. It clarifies what the earlier statements do and do not cover.
 
-**An everyday picture.** Two people pushing a swing from opposite sides at the same moment: their pushes cancel, and
-the swing keeps its rhythm.
+**An everyday picture.** Noise-cancelling headphones: a mirror-image copy of a sound, played at the same moment,
+cancels it. Here the mirrored right half cancels the left half's effect at the wall, so the wall hears only its own
+beat.
 
 ## G66
 If the left half's black squares stay within a fixed distance, the right side's columns are still almost predictable.
@@ -907,8 +931,8 @@ still has zero entropy, uniformly. In Rule 90 a finite disturbance is felt only 
 **Why it matters.** So G65's freedom comes only from letting the left half spread without limit, which pins down
 exactly where freedom lives.
 
-**An everyday picture.** A pebble dropped in a pond makes ripples you can see clearly only at certain moments; a
-fixed handful of pebbles cannot fill the pond with noise.
+**An everyday picture.** A bell rung once in a valley: its echoes come back off the hills only at certain moments,
+and a few bells, rung once, cannot fill the valley with a steady roar.
 
 ## G67
 The largest possible "offset" at a first dip, and the pattern that reaches it.
@@ -919,7 +943,8 @@ rules allow. The offset is at most a third of a times 3^a.
 
 **Why it matters.** This envelope feeds the ceilings: with the offset bounded, so is the height limit of G45.
 
-**An everyday picture.** The heaviest load a lorry can carry and still pass the bridge's weighbridge.
+**An everyday picture.** Savings in an account that pays interest: money paid in early grows the most, so the
+largest possible balance comes from paying in as early as the rules allow.
 
 ## G68
 At a first dip, the start and the end share the same height limit.
@@ -930,8 +955,8 @@ that read only the first few or the last few steps of a pattern and can rule out
 
 **Why it matters.** Two descriptions of the same exceptions agree, which makes them easier to count and check.
 
-**An everyday picture.** A door you may enter only if you are under a certain height, and leave only if you are
-under the same height.
+**An everyday picture.** A ticket barrier on the Underground: whether a journey was valid can be checked at the gate
+where you got on or at the gate where you get off, and the two checks always agree.
 
 ## G69
 A known theorem about how close powers of 2 and 3 can get gives a polynomial cap on every height limit.
@@ -942,8 +967,8 @@ close. From it, the ceiling at a first dip after t steps is below t^14.3 / 3.
 **Why it matters.** G46 showed the ceilings are unbounded; this shows they grow only polynomially. Exceptions are
 confined to fairly small numbers.
 
-**An everyday picture.** The clocks of G46 do nearly line up, but never closer than a known margin, which limits how
-bad a near miss can be.
+**An everyday picture.** The circle of fifths of G46 again: stacked fifths come close to an octave of the starting
+note, but never closer than a known margin, so no near miss can be too extreme.
 
 ## G70
 Above a polynomial size, "the growth factor stays above 1" and "the number stays above its start" pick out exactly
@@ -955,8 +980,8 @@ factor stays at least 1 for T steps. The two sets can differ only for numbers be
 **Why it matters.** It lets the team count the easier quantity (the growth factor) and know it matches the real one
 for large starting numbers.
 
-**An everyday picture.** Two exam markers who agree on every script except those from a small, known set of early
-candidates.
+**An everyday picture.** Two exam markers who agree on every script except the very short ones, under a known
+length: for every longer answer their marks are the same.
 
 ## G71
 The surviving count loses numbers only at the critical boundary, and the loss is set by whether the leftover number
@@ -969,8 +994,8 @@ bits, which boundary numbers are lost is decided by whether F1's base-3 remainde
 **Why it matters.** It locates exactly where real Collatz numbers can depart from fair coins in the count: an
 odd-even imbalance on the boundary.
 
-**An everyday picture.** A queue where only people standing on the line can be sent home, and a coin they carry
-decides who.
+**An everyday picture.** Line calls in tennis: only a ball that lands on the line is in doubt. Here only the numbers
+on the survival line can be lost, and what decides each one is whether a certain number is odd or even.
 
 ## G72
 Few surviving Collatz numbers can arrive at the same value: at most 1 + a/3 of them.
@@ -981,7 +1006,8 @@ floor(a/3) can end on the same value.
 **Why it matters.** Paths rarely merge, so counting end values nearly counts starts. The bookkeeping stays almost
 one to one.
 
-**An everyday picture.** Few trains can arrive at the same platform at the same minute.
+**An everyday picture.** A lift with a fixed limit: however many people set off from different floors, only so many
+can arrive at the ground floor together, and the limit is known in advance (here 1 plus a third of the odd steps).
 
 ## G73
 For a long stretch of surviving steps, the current value reveals the start from a short label.
@@ -1004,7 +1030,8 @@ odd step matters.
 **Why it matters.** It reduces the Collatz count's central question to controlling those imbalances, with exact
 weights.
 
-**An everyday picture.** A household budget: the final balance is the sum of every month's surplus or deficit.
+**An everyday picture.** A household budget kept in a foreign currency whose rate changes: the final balance is each
+month's surplus or deficit, converted at that month's rate, all added up.
 
 ## G75
 Those weights are uniformly small: about (log h)/√h, where h is the number of steps still to go.
@@ -1015,8 +1042,8 @@ about (log h)/√h, whatever the state.
 **Why it matters.** Late imbalances count for little. It controls the coin side only; the real Collatz imbalances
 still need their own bound.
 
-**An everyday picture.** On a long walk, one extra step makes little difference to where you end up, and less the
-longer the walk.
+**An everyday picture.** One point dropped in the first week of a long football season barely changes who ends up
+top; the more matches still to play, the less it matters.
 
 ## G77
 The simplest way of combining G74 and G75 cannot bound the Collatz count for all horizons: that route is closed.
@@ -1030,8 +1057,8 @@ data does not by itself rule out a useful bound.
 **Why it matters.** It closes one tempting route cleanly, and says what is left open: sharper estimates that use how
 the numbers are actually spread out, or real cancellation between plus and minus terms.
 
-**An everyday picture.** Estimating a household's spending by assuming every purchase cost the most it possibly
-could: the estimate keeps climbing even if the real budget is fine.
+**An everyday picture.** A builder's quote that prices every job at its worst case: add up enough jobs and the quote
+climbs far past what the work will really cost.
 
 ## G78
 Even a perfectly fair spread of numbers would leave that crude bound growing, so the route needs real cancellation.
@@ -1056,8 +1083,9 @@ example shows why.
 **Why it matters.** It is a structural reason for the cancellations seen in the data, and a first step on the route
 G77 and G78 left open.
 
-**An everyday picture.** A step forward then back, or back then forward: either way you end almost where you
-started, unless a wall stops one of the steps.
+**An everyday picture.** On a gentle hill, a step up then a step down, or down then up, leaves you at almost the
+same height; the little left over comes from the hill's curve. Against a wall one of the steps is blocked, and the
+cancelling fails.
 
 ## G81
 Whether two surviving Collatz numbers can ever meet reduces to a finite check on step patterns.
@@ -1083,8 +1111,8 @@ proof is two lines of algebra.
 **Why it matters.** It explains why Rule 210 keeps turning up as Rule 30's nearest relative in the record, and it
 lets the prize be written as a difference equation in the arithmetic of bits, where 1 + 1 = 0.
 
-**An everyday picture.** Watching a film by its changes from frame to frame instead of the frames themselves: the
-changes follow a simpler script.
+**An everyday picture.** Video compression: instead of storing every frame whole, a video file mostly stores what
+changed since the frame before, and here those changes follow a simpler rule than the pictures themselves.
 
 ## G82
 A sharper version of G75: the weights shrink like 1/√h, with no logarithm.
@@ -1111,8 +1139,8 @@ for every count up to 20, so no two can meet.
 
 **Why it matters.** It settles the first twenty cases by a short argument instead of a search, which had reached 17.
 
-**An everyday picture.** Two people who may only stand on every fourth paving stone cannot share a path shorter than
-four stones unless they stand on the same one.
+**An everyday picture.** A car park where you may use only every fourth bay: two cars told to park within three bays
+of each other can only be in the same bay, so they are the same car.
 
 ## G84
 At 21 odd steps, the first case left open, any meeting of two surviving numbers would have to take one exact form.
@@ -1123,8 +1151,8 @@ starting numbers must differ by exactly 4.
 
 **Why it matters.** It narrows any search for a meeting at 21 to one precise shape, instead of all patterns.
 
-**An everyday picture.** A detective who cannot yet name the culprit, but has proved it must be one of two twins who
-arrived four minutes apart.
+**An everyday picture.** A detective who cannot yet say whether the crime happened, but has proved that if it did,
+it took two accomplices, one from each of two families, arriving exactly four minutes apart.
 
 ## G85
 The two candidates of G84 must also take the same next two steps: both odd.
@@ -1174,8 +1202,9 @@ it cannot is cut, with the reason written down. If every branch is cut, no meeti
 **Why it matters.** It turns a search into a certificate: a list of reasons anyone can check, rather than "the
 computer found nothing".
 
-**An everyday picture.** Pruning a family tree: if no descendant of a branch could have been born in the right year,
-you need not trace that branch any further.
+**An everyday picture.** Tracing a family tree for an ancestor born in a certain year: if no one on a branch could
+have been born then, stop tracing it, and note why in the margin, so the next researcher can check your reasoning
+instead of redoing it.
 
 ## G89
 Two surviving numbers can meet after all: the first pair appears at 22 odd steps.
@@ -1214,8 +1243,8 @@ neighbouring coin weights, which is small far from the end. Paths with no partne
 **Why it matters.** It is an exact identity that shrinks part of the error, a real tool, though it does not yet say
 how many paths find partners.
 
-**An everyday picture.** Two overlapping charges on a bill reduced to the small difference between them; charges
-with no match stay in full.
+**An everyday picture.** A charge and a refund for nearly the same amount on a bank statement: together they come to
+the small difference between them, while a charge with no matching refund stays in full.
 
 ## G92
 Even with the pairing tool, the crude estimate still grows, slowly, with the length of the run.
@@ -1227,8 +1256,8 @@ bound that is wanted.
 **Why it matters.** It improves on the square-root growth of G77, and shows that the remaining gap needs real
 information about which paths pair up.
 
-**An everyday picture.** Assuming every repair costs the most it possibly could: the estimate still creeps up, only
-more slowly than before.
+**An everyday picture.** The builder's quote of G77 again, now with the worst cases paired off against each other:
+it still creeps up, only more slowly than before.
 
 ## G94
 A smooth-shape argument fails: the coin weights stop being a smooth single hump beyond 64 steps.
@@ -1253,7 +1282,8 @@ does pause twice breaks the smooth shape. The real one never pauses twice, yet G
 **Why it matters.** It sorts out which property matters and closes a suggested restriction, so the next attempt does
 not rely on it.
 
-**An everyday picture.** A staircase with no two landings in a row can still be uneven underfoot.
+**An everyday picture.** A path that never has two flat paces in a row before it climbs again can still be bumpy
+underfoot: the rule about how often it climbs says nothing about how smooth it is.
 
 ## G96
 Watching one square change and following a moving pattern are different measurements.
@@ -1267,8 +1297,8 @@ does not itself follow Rule 210.
 
 **Why it matters.** It fixes which "change" an instrument measures before anyone reads physics into it.
 
-**An everyday picture.** From the platform a passing train changes the view every moment; from inside the carriage
-nothing changes at all.
+**An everyday picture.** From the platform a passing train changes the view every moment; to a passenger looking
+round the carriage, nothing changes at all.
 
 ## G97
 An observer walking right through a random Rule 30 pattern sees more change than one standing still or walking left.
@@ -1316,7 +1346,8 @@ flips two ticks apart are linked, so a count of three flips varies more than thr
 **Why it matters.** "Looks random in pairs" is not "random"; reading measurements as independent would understate
 their spread.
 
-**An everyday picture.** In a queue you may not know the person next to you, yet know the person two places back.
+**An everyday picture.** Two conversations at a dinner table, interleaved remark by remark: one remark tells you
+nothing about the next, which belongs to the other conversation, but a good deal about the one after.
 
 ## G101
 The same hidden memory appears for an observer moving at three-quarter speed.
@@ -1326,7 +1357,8 @@ and fourth flips of each block linked in the same way.
 
 **Why it matters.** The memory is not just an effect of moving at full speed; it appears inside the pattern too.
 
-**An everyday picture.** The link in the queue is still there if you walk along it more slowly.
+**An everyday picture.** The two interleaved conversations of G100 are still there if you listen in with pauses: the
+second and fourth remarks you catch still belong together.
 
 ## G102
 A single race corrupts a square one time in eight; a chain of races changes that slightly.
@@ -1354,8 +1386,8 @@ cannot appear before about 1/√ε ticks.
 
 **Why it matters.** It is a guaranteed early-warning bound that needs no assumption about the pattern.
 
-**An everyday picture.** A dish comes out right if nothing anywhere in its chain of ingredients was spoiled; the
-longer the chain, the more chances for spoilage.
+**An everyday picture.** A champagne tower: a glass near the bottom fills with clean champagne only if no glass in
+the widening triangle above it was spoiled, and that triangle holds more glasses the further down you go.
 
 ## G104
 Races that read the right neighbour leave each row looking perfectly random; races that read the left leave a trace
@@ -1368,8 +1400,8 @@ they should.
 **Why it matters.** It explains how a glitching computation can look statistically perfect: inspecting one row
 cannot reveal right-reading races.
 
-**An everyday picture.** A tampered deck can still look perfectly shuffled; only the order in which the cards come
-out gives it away.
+**An everyday picture.** A counterfeit note with the right paper, size and colour passes every check you can make on
+the note in your hand; only comparing it with others gives it away.
 
 ## G105
 Joining the row into a ring changes an exact probability, even though large rings look fair.
@@ -1380,7 +1412,8 @@ race happened, so the exact probabilities differ from the fair ones.
 **Why it matters.** Results proved on the endless line cannot be assumed exact on the finite rings that computers
 actually run.
 
-**An everyday picture.** Joining the ends of a chain removes the free end you would use to rebuild it.
+**An everyday picture.** A bicycle chain laid out straight can be checked link by link from its loose end; joined
+into a loop it has no loose end, and counts that were exact on the straight chain come out slightly different.
 
 ## G106
 Snapshots can stay statistically unchanged while what a moving observer sees changes.
@@ -1413,8 +1446,8 @@ mask is fixed by earlier true samples. The relation can be undone step by step.
 **Why it matters.** Two random-looking signals can be completely related, so independence must never be assumed from
 appearances.
 
-**An everyday picture.** A message and its encrypted copy each look like gibberish, yet with the key either one
-gives back the other.
+**An everyday picture.** Two decks of cards, one shuffled and the other the same deck after a cut you know: each
+looks random on its own, yet knowing the cut, either one gives back the other.
 
 ## G109
 A race error can vanish at its square and come back the next tick without any new race.
@@ -1446,8 +1479,8 @@ can vanish at only a few others. Local's example then shows it at every rate in 
 **Why it matters.** One exact check covers a whole range of rates, saving a sweep of measurements. The converse does
 not hold: a single rate where the effect vanishes can hide it at others.
 
-**An everyday picture.** A cracked bell sounds wrong at almost every pitch; finding one pitch where it sounds true
-does not prove it is sound.
+**An everyday picture.** The railway wheel-tapper's hammer: a cracked wheel rings dull. It rings dull on almost
+every tap, and one tap that happens to sound clear proves nothing about the wheel.
 
 ## G112
 Two shared black squares in a row shield the next update from a race.
@@ -1469,7 +1502,8 @@ information: in one case adding an earlier observation turns an error rate of 5/
 
 **Why it matters.** Short-memory models of the glitches are provably incomplete, so longer histories matter.
 
-**An everyday picture.** Remembering yesterday as well as today can still miss an older cause.
+**An everyday picture.** A car that won't start this morning: checking what happened today and yesterday can miss
+the cause, a light left on three nights ago.
 
 ## G114
 Two incoming errors can cancel each other at a white square.
@@ -1501,7 +1535,9 @@ first makes it certain.
 
 **Why it matters.** It names exactly the old information that the shorter memories of G113 and G115 missed.
 
-**An everyday picture.** A lock that opens only when three digits are right: knowing two of them tells you nothing.
+**An everyday picture.** A landing light with three switches, any one of which turns it on or off (two-way switches
+with an intermediate one between): knowing two of the switches tells you nothing about the light until you know the
+third.
 
 ## G117
 A hidden starting bit that is never observed enters the fifth error.
@@ -1532,7 +1568,8 @@ so the information they share grows by one bit minus how uncertain the next erro
 
 **Why it matters.** It ties how unpredictable the glitch is to how well the raced copy keeps tracking the truth.
 
-**An everyday picture.** Two diaries of the same day agree on everything except what one writer misheard.
+**An everyday picture.** Two people keeping diaries of the same days: each new day adds one more day they agree on,
+less whatever one of them misheard that day.
 
 ## G120
 Once you know whether a rare race happened, the raced copy keeps at least 7/8 of a bit of each new sample.
@@ -1596,7 +1633,8 @@ repeating block is 1 square long, or three times a power of two. Every such leng
 **Why it matters.** It is a clean classification of the patterns that die out completely: their loop lengths start
 at three and double. It does not touch the blinking middle column.
 
-**An everyday picture.** A note and its octaves: start at three and keep doubling.
+**An everyday picture.** Organ pipes for one note in different octaves, each twice the length of the last: 3, 6, 12,
+24 and so on, with a single tiny pipe of length 1 standing apart.
 
 ## G125
 The sideways rule's repeating patterns are exactly Rule 30's repeating patterns on a ring.
@@ -1608,8 +1646,8 @@ squares whose row comes back to itself in time.
 **Why it matters.** It hands every repeating sideways pattern to the ring census, which already lists them all for
 rings of up to 29 squares, with no new computation.
 
-**An everyday picture.** A strip of wallpaper that repeats sideways can be rolled into a cylinder, provided the
-pattern also matches all the way through time.
+**An everyday picture.** Wallpaper printed from a roller: a pattern that repeats sideways can be printed by a
+cylinder one repeat wide, as long as the pattern also matches all the way down the roll.
 
 ## G126
 One sideways step can produce exactly the sequences that avoid six short forbidden words.
@@ -1633,7 +1671,8 @@ steps produce strictly less than one.
 **Why it matters.** Each sideways step genuinely narrows what can appear, though this does not say how far the
 narrowing goes.
 
-**An everyday picture.** Each pass through a sieve removes more grains; it does not say what is left at the end.
+**An everyday picture.** A stack of ever finer sieves: each one holds back more, but knowing that does not tell you
+how much will be left after the last.
 
 ## G128
 However many sideways steps you take, every possible sequence of black and white still appears in some column.
@@ -1644,7 +1683,8 @@ complete Rule 30 histories, and either column of such a pair can be any sequence
 **Why it matters.** It closes a broad route: narrowing by sideways steps alone can never rule out a blinking column.
 Any proof must use the blinking wall itself or the finiteness of the seed.
 
-**An everyday picture.** A sieve that, however often you shake it, still lets every single grain through on its own.
+**An everyday picture.** A seating plan with many rules about who may sit next to whom, yet every guest, taken
+alone, can still be seated: the rules bind pairs of neighbours, not any one person.
 
 ## G129
 For each seed size, whether a finite seed can keep the middle blinking is a finite check.
@@ -1656,8 +1696,8 @@ Each left seed allows at most one complete sequence of visible bits.
 **Why it matters.** It restates the prize's left-half question as one finite question per size, and Local showed the
 records already answer it up to size about 84 (L083). The open part is one statement covering every size.
 
-**An everyday picture.** Testing a key against locks of every size: each lock is a finite test, but the claim is
-about all of them.
+**An everyday picture.** A puzzle that comes in every size of board: for each size, whether it can be solved is a
+check you can finish, but the claim is about all the sizes at once.
 
 ## G130
 Fix the seed's right part, and any wall forces exactly one left part, though usually an infinite one.
@@ -1668,8 +1708,8 @@ middle column and any chosen right part. Even an all-white right part works, if 
 **Why it matters.** So a finite seed exists exactly when some finite right part makes the forced left part turn
 white for good. That is the precise target.
 
-**An everyday picture.** Given the film and one half of the opening frame, the other half is fixed, but it may need
-an endless canvas.
+**An everyday picture.** The primer's crossword again: write in the middle column and any right half, and the left
+half is forced, letter by letter, but it may run off the edge of the page.
 
 ## G131
 Recoding a rotation pattern through any fixed window still cannot keep the middle blinking.
@@ -1708,8 +1748,8 @@ at a steady geometric rate; ever sparser ones cannot keep the middle blinking.
 **Why it matters.** It reaches beyond exact rotation codes to kicked ones, close to the measured wheel (6.1). Kicks
 at a steady geometric rate remain possible, and the wheel's own angle is rational, which G136 takes up.
 
-**An everyday picture.** A wobbling top needs a push every so often, and the gaps between pushes cannot keep
-stretching without limit.
+**An everyday picture.** A wobbling top needs a push every so often: the gaps between pushes may grow as it spins
+on, but never by more than a fixed multiple of how long it has been spinning.
 
 ## G134
 The same holds for every rotation angle whose continued-fraction digits (the whole numbers you get by repeatedly
@@ -1720,7 +1760,8 @@ whose continued-fraction digits never grow large.
 
 **Why it matters.** A larger family of kicked patterns is excluded.
 
-**An everyday picture.** The same rule for every top that wobbles at a steadily irrational rate.
+**An everyday picture.** The same rule for every top whose wobble never falls into step with its spin, and never
+comes too close to doing so.
 
 ## G135
 And for every irrational angle, even when the angle and starting point change at each correction.
@@ -1754,8 +1795,8 @@ runs too long, and fails.
 **Why it matters.** It shows the limit of the repeat test: it cannot by itself rule out every sparse pattern.
 Passing the test does not mean Rule 30 can produce it.
 
-**An everyday picture.** A filter that turns away some impostors and lets one through, which still faces every other
-check.
+**An everyday picture.** The metal detector at an airport: it stops some people, but walking through it cleanly does
+not make you a passenger, and the passport desk is still ahead.
 
 ## G138
 The first place where Rule 30's "and" matters stays quiet for the powers-of-two pattern, but quiet is not enough.
@@ -1792,8 +1833,8 @@ still approach an infinite limit.
 **Why it matters.** It keeps three questions apart: the variety of the family, the variety of one history, and
 whether its seed is finite.
 
-**An everyday picture.** A library holds every story and one story can be very plain; neither tells you whether a
-book ends.
+**An everyday picture.** A soap opera: its possible plots are endless, and one storyline can be very plain, but
+neither tells you whether the show will ever end.
 
 ## G141
 Holding the wall fixed changes how the past works: an earlier row need not be unique, or finite.
@@ -1805,7 +1846,8 @@ merge into one.
 **Why it matters.** The uniqueness of the past that holds for the free rule (G121) cannot be borrowed here, and the
 descent idea still gives no contradiction.
 
-**An everyday picture.** A gatekeeper who lets two different visitors into the same room erases which one came.
+**An everyday picture.** Two roads into town that join at one roundabout: once you are past it, nothing on the road
+ahead shows which way you came.
 
 ## G142
 A finite seed that kept the middle blinking would still have rows approaching an infinite pattern.
@@ -1856,7 +1898,8 @@ already seen by Local at period seven, so that code is excluded.
 
 **Why it matters.** The starting point matters, not just the angle.
 
-**An everyday picture.** The same tune started on the off-beat clashes with the band.
+**An everyday picture.** The same tune started half a bar late: every note is the same, but now it clashes with the
+band.
 
 ## G146
 Codes that pass the test can come as close as you like to one that fails.
@@ -1906,7 +1949,8 @@ the property.
 **Why it matters.** It turns "eventually finite" into a concrete test on the far-left tail. Such rows are rare
 (countably many) and, if any exist, they lie arbitrarily close to every candidate. None has been built.
 
-**An everyday picture.** A distant drumbeat can fall silent only if it was a repeating rhythm already fading away.
+**An everyday picture.** A dropped ping-pong ball comes to rest only through a run of bounces that was already dying
+away, each bounce a smaller copy of the last.
 
 ## G150
 How a repeating row's past repeats is decided by counting its gaps.
@@ -1932,7 +1976,8 @@ step back keeps the same period. A pattern that dies out within 2k steps therefo
 **Why it matters.** It tightens the limit on how complicated a dying pattern's past can be; Local notes it halves
 the exponent of the earlier bound.
 
-**An everyday picture.** A staircase that can only climb on every other step.
+**An everyday picture.** A path that may never climb two steps in a row: after every rise comes at least one flat
+tread, so it can only gain height so fast.
 
 ## G152
 A pattern on its way to dying out never returns even to a shifted copy of itself, which limits how long the dying
@@ -1959,8 +2004,8 @@ agrees with brute force.
 **Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
 finiteness question stays open and needs a different kind of argument.
 
-**An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
-genuine.
+**An everyday picture.** Another traveller who walks cleanly through the metal detector of G137: the passport desk
+must catch them, or show they are genuine.
 
 ## G154
 Among all patterns that look locally like Rudin–Shapiro, finite seeds are either absent or rare but everywhere.
@@ -2014,7 +2059,9 @@ period allows exactly 3 stripes, and every period twice an odd number exactly 8.
 **Why it matters.** It answers infinitely many periods at once from the two smallest cases. It says nothing about
 how long the stripes take to settle.
 
-**An everyday picture.** In a scale built only from octaves, a note three times the base frequency never sounds.
+**An everyday picture.** Folding a strip of paper in half, then in half again: the creases divide it into 2, 4, 8 or
+16 parts, never 3 or 6. Every rhythm here is made by that kind of folding, so a period with an odd factor behaves
+just like its power of two.
 
 ## G158
 When a rhythm doubles, its two choices are the same choice seen at two moments.
@@ -2149,8 +2196,8 @@ over: by 11 in one period-8 case, and by 2 at the known period-16 fork, where ev
 **Why it matters.** Paying for whole blocks is not enough; the bound must hold on every stretch, and the steps
 between blocks are still open.
 
-**An everyday picture.** A shopping trip that comes out even after the refund at the till can still take the card
-over its limit halfway round the shop.
+**An everyday picture.** A bank account that comes out even once the salary lands can still go overdrawn in the week
+before payday.
 
 ## G168
 One fixed reserve covers the overruns inside every block, however many blocks there are.
@@ -2191,7 +2238,8 @@ shortest period, or richer information, remain open.
 **Why it matters.** It closes the obvious repair of G169 and says the next candidate must tell the period levels
 apart.
 
-**An everyday picture.** A long-distance timetable must still price the local stopping trains that share its track.
+**An everyday picture.** A fare chart for the long-distance line must still price the local stopping trains that
+share its track.
 
 ## G171
 Choosing the formula by each state's own shortest period does not rescue the three distances either.
@@ -2231,8 +2279,9 @@ history needs.
 **Why it matters.** A budget might still work on the clock states the history really reaches; the next test (RQ3)
 was restricted to those.
 
-**An everyday picture.** A train that serves your station does not stop there at every time on the timetable; the
-fare rule need only work for the trains that actually stop.
+**An everyday picture.** Your station is on the line, but the trains that actually call there all arrive on the
+hour: a rule about trains arriving at twenty past need never be tested there, although the map of the line allows
+it.
 
 ## G176
 Even on the clock states really reached, the three distances lose the timing.
@@ -2271,8 +2320,9 @@ one extra allowance for the first step. Building the pairs after simplifying the
 barely simpler than the full state (398 labels for 411 steps): a finite success, not the small budget the settling
 question needs.
 
-**An everyday picture.** Check that two train journeys really share a station before replacing the stations by
-summaries; join the summaries first and the lost connection cannot be recovered.
+**An everyday picture.** Check that two train journeys really change at the same station before you replace station
+names with zone numbers: do it the other way round, and two different stations in the same zone look like a
+connection that isn't there.
 
 ## G182
 The period-8 timing budget passes a check from scratch, but it is almost a full list of the steps.
@@ -2339,8 +2389,8 @@ Local second-read it (L151).
 **Why it matters.** It weakens what gap 2 has to prove. Neither this nor the budget is yet proved on the real
 histories.
 
-**An everyday picture.** A detective needs a clear fingerprint whenever one is asked for, not one on every surface
-of the room.
+**An everyday picture.** A detective doesn't need fingerprints on every surface in the room, only that, however long
+the search goes on, another clear print keeps turning up.
 
 ## G187
 The period need only be a small enough fraction of the depth, not a vanishing one.
@@ -2379,8 +2429,9 @@ escape the argument.
 **Why it matters.** It gives a restriction that grows with the period, though only slowly, and isolates the even
 returns as the hard case.
 
-**An everyday picture.** A row of switches where each setting decides the next must come round in a loop; allow one
-free choice and the counting no longer limits the journey.
+**An everyday picture.** A model railway whose points (the switches where the track divides) are all fixed follows
+one set route, and you can count how long a circuit takes; make one set of points free to go either way, and the
+count no longer limits the journey.
 
 ## G190
 An even-length return can be followed by keeping the stripe's two halves together.
@@ -2392,8 +2443,8 @@ copy, the walk closes into a full repeating stripe whose halves are opposites.
 **Why it matters.** It keeps the tick-by-tick link between the halves that a simple count of black and white would
 lose. The real maps have not been classified, and it gives no delay estimate.
 
-**An everyday picture.** Slide two strips of paper through a frame until their starting patterns have changed
-places; a copy with the strips swapped completes the pattern.
+**An everyday picture.** A barn dance where two partners end a figure on each other's spots: dance the figure again
+and they are back where they started, and the two figures together make one full repeat of the dance.
 
 ## G191
 Walks that swap the two halves either exist for every large period or for none.
@@ -2406,8 +2457,9 @@ Checking one period beyond eight times the square of that number decides which. 
 **Why it matters.** It turns 'do return delays keep growing?' into a finite check on each map. The real maps are
 still unclassified.
 
-**An everyday picture.** Two runners on a circular track, starting apart: whether they can ever swap places at a
-given lap depends on how the track's loops are arranged, not on luck.
+**An everyday picture.** A model railway with sidings and loops: whether two trains can end up in each other's
+places after a given number of laps depends on how the track is laid, and checking up to a known number of laps
+settles it for good.
 
 ## G192
 The map for returns of length eight has no loop at all.
@@ -2445,8 +2497,8 @@ period allows one.
 **Why it matters.** It turns the swap question for any one region into a quick finite test. No larger real region
 has been classified.
 
-**An everyday picture.** On a two-lane running track, the lanes can stay apart, cross once a lap, or cross in ways
-that fit many lap counts; a lap chart shows which.
+**An everyday picture.** Two strands of rope coiled together: they may never cross, cross once every turn of the
+coil, or cross in a way that fits coils of almost any length; a quick count on one turn shows which.
 
 ## G195
 A small local pattern proves the swaps can mix, but only if a way back exists.
@@ -2458,8 +2510,9 @@ length-eight map contains the pattern but has no loop, so there it proves nothin
 **Why it matters.** It gives something concrete to search for without classifying a whole map, and shows why a local
 fork alone is not enough.
 
-**An everyday picture.** Two doors from the same hall lead to rooms where the cards end up in different orders; to
-choose again and again, there must also be a corridor back to the hall.
+**An everyday picture.** A triangle of railway track (a wye) can turn a train round, putting its carriages in the
+opposite order; but to choose between turning and not turning again and again, there must be a line that brings the
+train back to the junction.
 
 ## G196
 A quick test says whether a window can be followed by either next tick.
@@ -2483,8 +2536,8 @@ least 26,396 steps before any rejoining.
 **Why it matters.** It shows that a short search for a way back cannot succeed here. It does not show that a way
 back, or any legal continuation, exists.
 
-**An everyday picture.** A changed letter on a ticker tape stays in view until enough tape has passed through the
-window.
+**An everyday picture.** A typo in the scrolling news ticker at the bottom of a television screen stays in view
+until enough text has scrolled past.
 
 ## G198
 A way back matters only if it arrives out of step with the old loop.
@@ -2507,7 +2560,7 @@ Two identical periodic strips do not tell us where they came from.
 
 **Why it matters.** Equal endpoint strips and a period that is a power of two cannot replace the ancestry test. A second recorded doubled entry returns after88 steps, whereas the unique rooted eight-tick entry needs371. Even the stronger doubled-entry condition cannot replace ancestry.
 
-**An everyday picture.** Two copies of the same photograph can show where a journey ended without telling us where it began.
+**An everyday picture.** Two identical shells on a beach tell you nothing about which tide brought them in.
 
 ## SP01
 How many odd socks a laundry loss leaves, and how long a wait for a matching pair takes.

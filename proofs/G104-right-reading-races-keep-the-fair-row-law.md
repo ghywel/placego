@@ -18,8 +18,8 @@ they should.
 **Why it matters.** It explains how a glitching computation can look statistically perfect: inspecting one row
 cannot reveal right-reading races.
 
-**An everyday picture.** A tampered deck can still look perfectly shuffled; only the order in which the cards come
-out gives it away.
+**An everyday picture.** A counterfeit note with the right paper, size and colour passes every check you can make on
+the note in your hand; only comparing it with others gives it away.
 
 ## The formal statement and proof
 

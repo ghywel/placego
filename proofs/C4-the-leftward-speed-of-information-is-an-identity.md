@@ -20,8 +20,9 @@ for good becomes a barrier: damage that crosses it never heals.
 **Why it matters.** It turns a measured speed into an exact identity, and explains why the band of white diagonals
 left of the middle acts as a one-way wall for information.
 
-**An everyday picture.** A rumour running down a queue: it moves one person per tick, except when it meets a
-sceptic, who knocks it back a few places.
+**An everyday picture.** A shopper walking down a busy aisle at full pace, knocked back a step or two each time a
+trolley cuts across them: their average pace is full pace minus the knocks. A white diagonal is a one-way turnstile:
+once through, nobody pushes them back.
 
 ## The formal statement and proof
 

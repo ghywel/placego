@@ -16,7 +16,8 @@ whose continued-fraction digits never grow large.
 
 **Why it matters.** A larger family of kicked patterns is excluded.
 
-**An everyday picture.** The same rule for every top that wobbles at a steadily irrational rate.
+**An everyday picture.** The same rule for every top whose wobble never falls into step with its spin, and never
+comes too close to doing so.
 
 ## The formal statement and proof
 

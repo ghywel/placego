@@ -19,8 +19,9 @@ one extra allowance for the first step. Building the pairs after simplifying the
 barely simpler than the full state (398 labels for 411 steps): a finite success, not the small budget the settling
 question needs.
 
-**An everyday picture.** Check that two train journeys really share a station before replacing the stations by
-summaries; join the summaries first and the lost connection cannot be recovered.
+**An everyday picture.** Check that two train journeys really change at the same station before you replace station
+names with zone numbers: do it the other way round, and two different stations in the same zone look like a
+connection that isn't there.
 
 ## The formal statement and proof
 

@@ -17,8 +17,9 @@ it cannot is cut, with the reason written down. If every branch is cut, no meeti
 **Why it matters.** It turns a search into a certificate: a list of reasons anyone can check, rather than "the
 computer found nothing".
 
-**An everyday picture.** Pruning a family tree: if no descendant of a branch could have been born in the right year,
-you need not trace that branch any further.
+**An everyday picture.** Tracing a family tree for an ancestor born in a certain year: if no one on a branch could
+have been born then, stop tracing it, and note why in the margin, so the next researcher can check your reasoning
+instead of redoing it.
 
 ## The formal statement and proof
 

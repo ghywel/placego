@@ -18,8 +18,9 @@ history needs.
 **Why it matters.** A budget might still work on the clock states the history really reaches; the next test (RQ3)
 was restricted to those.
 
-**An everyday picture.** A train that serves your station does not stop there at every time on the timetable; the
-fare rule need only work for the trains that actually stop.
+**An everyday picture.** Your station is on the line, but the trains that actually call there all arrive on the
+hour: a rule about trains arriving at twenty past need never be tested there, although the map of the line allows
+it.
 
 ## The formal statement and proof
 

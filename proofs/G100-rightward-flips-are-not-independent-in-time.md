@@ -16,7 +16,8 @@ flips two ticks apart are linked, so a count of three flips varies more than thr
 **Why it matters.** "Looks random in pairs" is not "random"; reading measurements as independent would understate
 their spread.
 
-**An everyday picture.** In a queue you may not know the person next to you, yet know the person two places back.
+**An everyday picture.** Two conversations at a dinner table, interleaved remark by remark: one remark tells you
+nothing about the next, which belongs to the other conversation, but a good deal about the one after.
 
 ## The formal statement and proof
 

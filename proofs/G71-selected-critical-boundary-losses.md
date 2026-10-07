@@ -18,8 +18,8 @@ bits, which boundary numbers are lost is decided by whether F1's base-3 remainde
 **Why it matters.** It locates exactly where real Collatz numbers can depart from fair coins in the count: an
 odd-even imbalance on the boundary.
 
-**An everyday picture.** A queue where only people standing on the line can be sent home, and a coin they carry
-decides who.
+**An everyday picture.** Line calls in tennis: only a ball that lands on the line is in doubt. Here only the numbers
+on the survival line can be lost, and what decides each one is whether a certain number is odd or even.
 
 ## The formal statement and proof
 

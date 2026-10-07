@@ -17,7 +17,8 @@ steps produce strictly less than one.
 **Why it matters.** Each sideways step genuinely narrows what can appear, though this does not say how far the
 narrowing goes.
 
-**An everyday picture.** Each pass through a sieve removes more grains; it does not say what is left at the end.
+**An everyday picture.** A stack of ever finer sieves: each one holds back more, but knowing that does not tell you
+how much will be left after the last.
 
 ## The formal statement and proof
 

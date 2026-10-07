@@ -16,7 +16,8 @@ floor(a/3) can end on the same value.
 **Why it matters.** Paths rarely merge, so counting end values nearly counts starts. The bookkeeping stays almost
 one to one.
 
-**An everyday picture.** Few trains can arrive at the same platform at the same minute.
+**An everyday picture.** A lift with a fixed limit: however many people set off from different floors, only so many
+can arrive at the ground floor together, and the limit is known in advance (here 1 plus a third of the odd steps).
 
 ## The formal statement and proof
 

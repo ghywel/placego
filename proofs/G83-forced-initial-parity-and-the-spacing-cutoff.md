@@ -19,8 +19,8 @@ for every count up to 20, so no two can meet.
 
 **Why it matters.** It settles the first twenty cases by a short argument instead of a search, which had reached 17.
 
-**An everyday picture.** Two people who may only stand on every fourth paving stone cannot share a path shorter than
-four stones unless they stand on the same one.
+**An everyday picture.** A car park where you may use only every fourth bay: two cars told to park within three bays
+of each other can only be in the same bay, so they are the same car.
 
 ## The formal statement and proof
 

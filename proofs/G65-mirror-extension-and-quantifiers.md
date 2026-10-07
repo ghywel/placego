@@ -17,8 +17,9 @@ half a bit of new information per tick.
 **Why it matters.** It shows G64's "almost no information" depends on fixing the left half; vary it, and freedom
 returns. It clarifies what the earlier statements do and do not cover.
 
-**An everyday picture.** Two people pushing a swing from opposite sides at the same moment: their pushes cancel, and
-the swing keeps its rhythm.
+**An everyday picture.** Noise-cancelling headphones: a mirror-image copy of a sound, played at the same moment,
+cancels it. Here the mirrored right half cancels the left half's effect at the wall, so the wall hears only its own
+beat.
 
 ## The formal statement and proof
 

@@ -16,8 +16,8 @@ that read only the first few or the last few steps of a pattern and can rule out
 
 **Why it matters.** Two descriptions of the same exceptions agree, which makes them easier to count and check.
 
-**An everyday picture.** A door you may enter only if you are under a certain height, and leave only if you are
-under the same height.
+**An everyday picture.** A ticket barrier on the Underground: whether a journey was valid can be checked at the gate
+where you got on or at the gate where you get off, and the two checks always agree.
 
 ## The formal statement and proof
 

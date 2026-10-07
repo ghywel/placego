@@ -18,8 +18,8 @@ two black in a row; for p = 3, never black, white, white; for odd p of 5 or more
 **Why it matters.** It tests whether the right side's own rules squeeze the channel. Here the third column adds
 nothing visible, even though it changes what happens out of sight.
 
-**An everyday picture.** Checking an alibi with more witnesses: the third witness tells you nothing the second did
-not.
+**An everyday picture.** Checking an alibi with a third witness: they add nothing to what the first two saw at the
+door, although they saw other things further down the street.
 
 ## The formal statement and proof
 

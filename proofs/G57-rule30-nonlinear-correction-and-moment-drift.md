@@ -17,7 +17,8 @@ weighted by position.
 **Why it matters.** It ties the drift to Rule 30's non-linear part, the part that makes it hard. It does not yet say
 the drift is never zero.
 
-**An everyday picture.** A ship's drift is set entirely by where its rudder pushes: no push, no turn.
+**An everyday picture.** A shopping trolley with one sticky wheel: left alone it would roll straight, and every
+swerve it makes comes from where and when that wheel catches.
 
 ## The formal statement and proof
 

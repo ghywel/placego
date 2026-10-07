@@ -16,7 +16,9 @@ first makes it certain.
 
 **Why it matters.** It names exactly the old information that the shorter memories of G113 and G115 missed.
 
-**An everyday picture.** A lock that opens only when three digits are right: knowing two of them tells you nothing.
+**An everyday picture.** A landing light with three switches, any one of which turns it on or off (two-way switches
+with an intermediate one between): knowing two of the switches tells you nothing about the light until you know the
+third.
 
 ## The formal statement and proof
 

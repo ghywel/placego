@@ -15,7 +15,8 @@ new information reaches any fixed column on the left is at most the rate of thes
 
 **Why it matters.** It puts the squeeze (proof 19) into a form that works for every repeating wall.
 
-**An everyday picture.** Counting a parcel service's deliveries by the van-load rather than by the parcel.
+**An everyday picture.** Counting deliveries by the van-load: a depot that sends one van a week can deliver to a
+street no faster than one van-load a week, however the parcels are packed.
 
 ## The formal statement and proof
 

@@ -16,7 +16,8 @@ right side needs infinitely many black squares, so this is not a finite seed.
 **Why it matters.** It settles that the left-half witness is not an empty shell: a whole consistent world exists
 around it. Whether a finite one exists is the remaining question.
 
-**An everyday picture.** A tapestry that can be finished, but only with an endless roll of thread.
+**An everyday picture.** A crossword that can be filled in completely and consistently, but only on a grid that runs
+on for ever to the right: a solution exists, just not one that would fit on a page.
 
 ## The formal statement and proof
 

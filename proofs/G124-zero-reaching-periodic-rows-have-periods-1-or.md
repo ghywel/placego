@@ -16,7 +16,8 @@ repeating block is 1 square long, or three times a power of two. Every such leng
 **Why it matters.** It is a clean classification of the patterns that die out completely: their loop lengths start
 at three and double. It does not touch the blinking middle column.
 
-**An everyday picture.** A note and its octaves: start at three and keep doubling.
+**An everyday picture.** Organ pipes for one note in different octaves, each twice the length of the last: 3, 6, 12,
+24 and so on, with a single tiny pipe of length 1 standing apart.
 
 ## The formal statement and proof
 

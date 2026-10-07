@@ -15,7 +15,8 @@ and fourth flips of each block linked in the same way.
 
 **Why it matters.** The memory is not just an effect of moving at full speed; it appears inside the pattern too.
 
-**An everyday picture.** The link in the queue is still there if you walk along it more slowly.
+**An everyday picture.** The two interleaved conversations of G100 are still there if you listen in with pauses: the
+second and fourth remarks you catch still belong together.
 
 ## The formal statement and proof
 

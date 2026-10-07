@@ -17,8 +17,8 @@ restated.
 **Why it matters.** It is the Collatz twin of the forced left half, and the avenue Collatz has that Rule 30 lacks:
 after the free bits, the state is an explicit number. All the counting work of GPT's G39 to G75 builds on it.
 
-**An everyday picture.** A bureau de change that converts your loose coins into another currency and hands your
-banknotes back untouched.
+**An everyday picture.** Changing pounds into euros: the notes are converted at a fixed rate, a straight
+multiplication, while the loose change is counted on its own and comes back as coins worth less than one new note.
 
 ## The formal statement and proof
 

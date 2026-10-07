@@ -17,8 +17,8 @@ squares whose row comes back to itself in time.
 **Why it matters.** It hands every repeating sideways pattern to the ring census, which already lists them all for
 rings of up to 29 squares, with no new computation.
 
-**An everyday picture.** A strip of wallpaper that repeats sideways can be rolled into a cylinder, provided the
-pattern also matches all the way through time.
+**An everyday picture.** Wallpaper printed from a roller: a pattern that repeats sideways can be printed by a
+cylinder one repeat wide, as long as the pattern also matches all the way down the roll.
 
 ## The formal statement and proof
 

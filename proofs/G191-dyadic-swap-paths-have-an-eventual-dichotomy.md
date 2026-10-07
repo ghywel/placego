@@ -18,8 +18,9 @@ Checking one period beyond eight times the square of that number decides which. 
 **Why it matters.** It turns 'do return delays keep growing?' into a finite check on each map. The real maps are
 still unclassified.
 
-**An everyday picture.** Two runners on a circular track, starting apart: whether they can ever swap places at a
-given lap depends on how the track's loops are arranged, not on luck.
+**An everyday picture.** A model railway with sidings and loops: whether two trains can end up in each other's
+places after a given number of laps depends on how the track is laid, and checking up to a known number of laps
+settles it for good.
 
 ## The formal statement and proof
 

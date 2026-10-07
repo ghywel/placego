@@ -19,8 +19,8 @@ data does not by itself rule out a useful bound.
 **Why it matters.** It closes one tempting route cleanly, and says what is left open: sharper estimates that use how
 the numbers are actually spread out, or real cancellation between plus and minus terms.
 
-**An everyday picture.** Estimating a household's spending by assuming every purchase cost the most it possibly
-could: the estimate keeps climbing even if the real budget is fine.
+**An everyday picture.** A builder's quote that prices every job at its worst case: add up enough jobs and the quote
+climbs far past what the work will really cost.
 
 ## The formal statement and proof
 

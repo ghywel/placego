@@ -17,7 +17,8 @@ step back keeps the same period. A pattern that dies out within 2k steps therefo
 **Why it matters.** It tightens the limit on how complicated a dying pattern's past can be; Local notes it halves
 the exponent of the earlier bound.
 
-**An everyday picture.** A staircase that can only climb on every other step.
+**An everyday picture.** A path that may never climb two steps in a row: after every rise comes at least one flat
+tread, so it can only gain height so fast.
 
 ## The formal statement and proof
 

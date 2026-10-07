@@ -17,8 +17,8 @@ factor stays at least 1 for T steps. The two sets can differ only for numbers be
 **Why it matters.** It lets the team count the easier quantity (the growth factor) and know it matches the real one
 for large starting numbers.
 
-**An everyday picture.** Two exam markers who agree on every script except those from a small, known set of early
-candidates.
+**An everyday picture.** Two exam markers who agree on every script except the very short ones, under a known
+length: for every longer answer their marks are the same.
 
 ## The formal statement and proof
 

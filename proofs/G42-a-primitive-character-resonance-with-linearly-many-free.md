@@ -16,8 +16,8 @@ many free pairs there are: its strength stays above 0.99.
 **Why it matters.** It closes a tempting short cut ("many free pairs, so the values spread evenly"). An honest no-go
 like this saves later work and shapes the next attempt.
 
-**An everyday picture.** A choir of many independent voices can still all hit one note together if each happens to
-be tuned to it; adding voices does not wash that note out.
+**An everyday picture.** Pushing a swing: a hundred pushes from a hundred different people still add up if every one
+lands in time with the swing. More pushes do not cancel that one rhythm.
 
 ## The formal statement and proof
 

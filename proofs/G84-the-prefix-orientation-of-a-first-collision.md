@@ -16,8 +16,8 @@ starting numbers must differ by exactly 4.
 
 **Why it matters.** It narrows any search for a meeting at 21 to one precise shape, instead of all patterns.
 
-**An everyday picture.** A detective who cannot yet name the culprit, but has proved it must be one of two twins who
-arrived four minutes apart.
+**An everyday picture.** A detective who cannot yet say whether the crime happened, but has proved that if it did,
+it took two accomplices, one from each of two families, arriving exactly four minutes apart.
 
 ## The formal statement and proof
 

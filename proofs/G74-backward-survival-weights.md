@@ -18,7 +18,8 @@ odd step matters.
 **Why it matters.** It reduces the Collatz count's central question to controlling those imbalances, with exact
 weights.
 
-**An everyday picture.** A household budget: the final balance is the sum of every month's surplus or deficit.
+**An everyday picture.** A household budget kept in a foreign currency whose rate changes: the final balance is each
+month's surplus or deficit, converted at that month's rate, all added up.
 
 ## The formal statement and proof
 

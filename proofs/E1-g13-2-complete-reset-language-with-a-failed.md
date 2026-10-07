@@ -19,8 +19,8 @@ first guess was wrong, and the failure is kept on record.
 **Why it matters.** A reset means two different pasts become identical from that point on: information from further
 away is wiped. This is an exact measure of when the right side's influence is forgotten.
 
-**An everyday picture.** Directions that get you to the town square from anywhere in town, even if you do not know
-where you started.
+**An everyday picture.** The reset button on a latch circuit, or on a broadband router: whatever state it was in,
+after the reset it is in the same one, and nothing about before survives.
 
 ## The formal statement and proof
 

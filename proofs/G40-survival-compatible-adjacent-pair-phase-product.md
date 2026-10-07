@@ -18,8 +18,8 @@ fingerprint is a product of simple factors.
 **Why it matters.** The Collatz count needs final values to spread out evenly. This gives an exact handle on that
 spreading, the Collatz analogue of a random walk built from independent steps.
 
-**An everyday picture.** A row of switches, each adding its own fixed amount to a meter: the spread of possible
-readings is the switches' spreads combined.
+**An everyday picture.** A mixing desk where each channel's mute button adds or removes that channel's fixed level
+on the master meter: the spread of possible readings is built from each channel's own on-or-off.
 
 ## The formal statement and proof
 

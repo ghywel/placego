@@ -16,8 +16,8 @@ still has zero entropy, uniformly. In Rule 90 a finite disturbance is felt only 
 **Why it matters.** So G65's freedom comes only from letting the left half spread without limit, which pins down
 exactly where freedom lives.
 
-**An everyday picture.** A pebble dropped in a pond makes ripples you can see clearly only at certain moments; a
-fixed handful of pebbles cannot fill the pond with noise.
+**An everyday picture.** A bell rung once in a valley: its echoes come back off the hills only at certain moments,
+and a few bells, rung once, cannot fill the valley with a steady roar.
 
 ## The formal statement and proof
 

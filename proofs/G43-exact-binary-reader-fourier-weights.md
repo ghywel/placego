@@ -17,8 +17,9 @@ that question, with an explicit formula.
 **Why it matters.** F1 puts the Collatz state in base 3, but the next step is decided by base 2. This is the exact
 bridge between them, and it says which frequencies matter most.
 
-**An everyday picture.** A phrasebook that tells you exactly how much each word of one language counts towards a yes
-or no in another.
+**An everyday picture.** The sliders of a graphic equaliser, read the other way round: for one sound, they show how
+much each band of frequencies contributes to it. Here the sound is the answer odd-or-even, and the bands are the
+patterns in a base-3 remainder.
 
 ## The formal statement and proof
 

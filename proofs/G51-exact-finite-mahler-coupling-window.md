@@ -16,8 +16,8 @@ the allowed starting fractions form one exact interval. Both are written down ex
 **Why it matters.** It turns Mahler's question into a finite check for each length, the kind of statement a computer
 can test or a proof can iterate.
 
-**An everyday picture.** A shooting target with two rings: one for the whole number and one for the fraction, both
-drawn exactly.
+**An everyday picture.** A delivery address: a postcode that fixes the street, and a range of house numbers along
+it, both written down exactly.
 
 ## The formal statement and proof
 

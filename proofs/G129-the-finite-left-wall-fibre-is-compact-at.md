@@ -17,8 +17,8 @@ Each left seed allows at most one complete sequence of visible bits.
 **Why it matters.** It restates the prize's left-half question as one finite question per size, and Local showed the
 records already answer it up to size about 84 (L083). The open part is one statement covering every size.
 
-**An everyday picture.** Testing a key against locks of every size: each lock is a finite test, but the claim is
-about all of them.
+**An everyday picture.** A puzzle that comes in every size of board: for each size, whether it can be solved is a
+check you can finish, but the claim is about all the sizes at once.
 
 ## The formal statement and proof
 

@@ -17,8 +17,9 @@ possible. GPT predicted the opposite at width four, and the failed prediction is
 **Why it matters.** If Rule 30's own consistency rules out these walls at all, the evidence first appears at width
 five or more. It tells future searches where not to look.
 
-**An everyday picture.** A lock that gives way to none of the first four picks: if it can be opened, it needs a
-fifth.
+**An everyday picture.** A front-door lock with five spring-loaded pins: a key that lifts the first four pins to the
+right height still tells you nothing, because if it is the wrong key, only the fifth pin, or a later one, will stop
+it turning.
 
 ## The formal statement and proof
 

@@ -19,8 +19,8 @@ patterns.
 **Why it matters.** It lets simple estimates about random step patterns be carried over to surviving ones at a
 small, known price. It is a basic transfer tool for the Collatz count (see the primer).
 
-**An everyday picture.** A circular hike that ends higher than it starts: begin at its lowest point, and you are
-never below where you set off.
+**An everyday picture.** A year's bank statement that ends in credit: read it round in a circle, starting just after
+the day of the lowest balance, and the running total never drops below where you began.
 
 ## The formal statement and proof
 

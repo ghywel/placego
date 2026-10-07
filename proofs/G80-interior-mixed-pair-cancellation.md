@@ -18,8 +18,9 @@ example shows why.
 **Why it matters.** It is a structural reason for the cancellations seen in the data, and a first step on the route
 G77 and G78 left open.
 
-**An everyday picture.** A step forward then back, or back then forward: either way you end almost where you
-started, unless a wall stops one of the steps.
+**An everyday picture.** On a gentle hill, a step up then a step down, or down then up, leaves you at almost the
+same height; the little left over comes from the hill's curve. Against a wall one of the steps is blocked, and the
+cancelling fails.
 
 ## The formal statement and proof
 

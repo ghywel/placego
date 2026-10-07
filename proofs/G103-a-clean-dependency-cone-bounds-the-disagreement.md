@@ -16,8 +16,8 @@ cannot appear before about 1/√ε ticks.
 
 **Why it matters.** It is a guaranteed early-warning bound that needs no assumption about the pattern.
 
-**An everyday picture.** A dish comes out right if nothing anywhere in its chain of ingredients was spoiled; the
-longer the chain, the more chances for spoilage.
+**An everyday picture.** A champagne tower: a glass near the bottom fills with clean champagne only if no glass in
+the widening triangle above it was spoiled, and that triangle holds more glasses the further down you go.
 
 ## The formal statement and proof
 

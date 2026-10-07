@@ -16,7 +16,8 @@ complete Rule 30 histories, and either column of such a pair can be any sequence
 **Why it matters.** It closes a broad route: narrowing by sideways steps alone can never rule out a blinking column.
 Any proof must use the blinking wall itself or the finiteness of the seed.
 
-**An everyday picture.** A sieve that, however often you shake it, still lets every single grain through on its own.
+**An everyday picture.** A seating plan with many rules about who may sit next to whom, yet every guest, taken
+alone, can still be seated: the rules bind pairs of neighbours, not any one person.
 
 ## The formal statement and proof
 

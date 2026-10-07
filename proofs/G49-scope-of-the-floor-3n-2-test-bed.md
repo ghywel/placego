@@ -18,7 +18,9 @@ such a counter survives for ever with probability at least about 0.38, rather th
 **Why it matters.** It shows exactly which of the record's Collatz tools transfer to this famous unsolved test bed,
 and which do not.
 
-**An everyday picture.** The same engine fitted to a different car: it runs, but the race is a different one.
+**An everyday picture.** The same engine in a different race: the arithmetic runs just as before, but the question
+becomes a gambler who wins two pounds on heads and loses one on tails. Does the money ever run out? With a fair
+coin, more than a third of the time it never does.
 
 ## The formal statement and proof
 

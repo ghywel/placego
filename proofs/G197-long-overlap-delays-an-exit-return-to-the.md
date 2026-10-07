@@ -17,8 +17,8 @@ least 26,396 steps before any rejoining.
 **Why it matters.** It shows that a short search for a way back cannot succeed here. It does not show that a way
 back, or any legal continuation, exists.
 
-**An everyday picture.** A changed letter on a ticker tape stays in view until enough tape has passed through the
-window.
+**An everyday picture.** A typo in the scrolling news ticker at the bottom of a television screen stays in view
+until enough text has scrolled past.
 
 ## The formal statement and proof
 

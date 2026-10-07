@@ -15,7 +15,8 @@ so the information they share grows by one bit minus how uncertain the next erro
 
 **Why it matters.** It ties how unpredictable the glitch is to how well the raced copy keeps tracking the truth.
 
-**An everyday picture.** Two diaries of the same day agree on everything except what one writer misheard.
+**An everyday picture.** Two people keeping diaries of the same days: each new day adds one more day they agree on,
+less whatever one of them misheard that day.
 
 ## The formal statement and proof
 

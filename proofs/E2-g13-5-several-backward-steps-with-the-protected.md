@@ -18,7 +18,8 @@ squares.
 **Why it matters.** It measures exactly how quickly one bit of news from the right fades in the left half, a precise
 piece of the "how much can get through" accounting.
 
-**An everyday picture.** A footprint on a beach: each wave narrows it by the same amount, until it is gone.
+**An everyday picture.** A candle clock, a candle marked with the hours: each hour it burns down by the same length
+to the next mark, until there is nothing left. The protected checkerboard loses three squares for every step back.
 
 ## The formal statement and proof
 

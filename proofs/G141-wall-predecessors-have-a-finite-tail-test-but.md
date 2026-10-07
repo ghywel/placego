@@ -17,7 +17,8 @@ merge into one.
 **Why it matters.** The uniqueness of the past that holds for the free rule (G121) cannot be borrowed here, and the
 descent idea still gives no contradiction.
 
-**An everyday picture.** A gatekeeper who lets two different visitors into the same room erases which one came.
+**An everyday picture.** Two roads into town that join at one roundabout: once you are past it, nothing on the road
+ahead shows which way you came.
 
 ## The formal statement and proof
 

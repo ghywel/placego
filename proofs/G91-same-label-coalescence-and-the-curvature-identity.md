@@ -17,8 +17,8 @@ neighbouring coin weights, which is small far from the end. Paths with no partne
 **Why it matters.** It is an exact identity that shrinks part of the error, a real tool, though it does not yet say
 how many paths find partners.
 
-**An everyday picture.** Two overlapping charges on a bill reduced to the small difference between them; charges
-with no match stay in full.
+**An everyday picture.** A charge and a refund for nearly the same amount on a bank statement: together they come to
+the small difference between them, while a charge with no matching refund stays in full.
 
 ## The formal statement and proof
 

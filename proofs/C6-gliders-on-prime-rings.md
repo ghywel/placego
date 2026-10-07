@@ -19,8 +19,9 @@ the ring does the same as running time on. The census found every cycle length d
 **Why it matters.** It is an exact, structural fact about Rule 30 in small closed worlds, of the kind the record
 wants to tell apart from mere measurement.
 
-**An everyday picture.** A carousel: if a horse's ride is not repeated by any other horse, the ride must simply be
-the carousel going round.
+**An everyday picture.** A Mexican wave in a round stadium: if a pattern of standing fans is the only one of its
+kind, then moving one seat round can only show you the same pattern a moment later. It is a wave travelling round
+the ring.
 
 ## The formal statement and proof
 

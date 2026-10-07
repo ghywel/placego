@@ -16,8 +16,8 @@ close. From it, the ceiling at a first dip after t steps is below t^14.3 / 3.
 **Why it matters.** G46 showed the ceilings are unbounded; this shows they grow only polynomially. Exceptions are
 confined to fairly small numbers.
 
-**An everyday picture.** The clocks of G46 do nearly line up, but never closer than a known margin, which limits how
-bad a near miss can be.
+**An everyday picture.** The circle of fifths of G46 again: stacked fifths come close to an octave of the starting
+note, but never closer than a known margin, so no near miss can be too extreme.
 
 ## The formal statement and proof
 

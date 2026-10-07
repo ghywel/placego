@@ -17,7 +17,8 @@ and only where the visible signal switches off. For the signal of the initially 
 
 **Why it matters.** It restricts where Rule 210's non-linear term can act near the wall to a very thin set.
 
-**An everyday picture.** A train that can stop only at stations whose numbers come from a fixed, thinning timetable.
+**An everyday picture.** A request-stop bus allowed to stop only at the minutes 0, 6, 30, 126 and so on: the gaps
+keep growing, so the stops get ever rarer.
 
 ## The formal statement and proof
 

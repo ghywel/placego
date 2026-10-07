@@ -17,7 +17,9 @@ period allows exactly 3 stripes, and every period twice an odd number exactly 8.
 **Why it matters.** It answers infinitely many periods at once from the two smallest cases. It says nothing about
 how long the stripes take to settle.
 
-**An everyday picture.** In a scale built only from octaves, a note three times the base frequency never sounds.
+**An everyday picture.** Folding a strip of paper in half, then in half again: the creases divide it into 2, 4, 8 or
+16 parts, never 3 or 6. Every rhythm here is made by that kind of folding, so a period with an odd factor behaves
+just like its power of two.
 
 ## The formal statement and proof
 

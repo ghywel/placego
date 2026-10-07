@@ -17,7 +17,8 @@ does pause twice breaks the smooth shape. The real one never pauses twice, yet G
 **Why it matters.** It sorts out which property matters and closes a suggested restriction, so the next attempt does
 not rely on it.
 
-**An everyday picture.** A staircase with no two landings in a row can still be uneven underfoot.
+**An everyday picture.** A path that never has two flat paces in a row before it climbs again can still be bumpy
+underfoot: the rule about how often it climbs says nothing about how smooth it is.
 
 ## The formal statement and proof
 

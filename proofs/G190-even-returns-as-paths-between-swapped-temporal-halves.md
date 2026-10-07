@@ -17,8 +17,8 @@ copy, the walk closes into a full repeating stripe whose halves are opposites.
 **Why it matters.** It keeps the tick-by-tick link between the halves that a simple count of black and white would
 lose. The real maps have not been classified, and it gives no delay estimate.
 
-**An everyday picture.** Slide two strips of paper through a frame until their starting patterns have changed
-places; a copy with the strips swapped completes the pattern.
+**An everyday picture.** A barn dance where two partners end a figure on each other's spots: dance the figure again
+and they are back where they started, and the two figures together make one full repeat of the dance.
 
 ## The formal statement and proof
 

@@ -17,8 +17,8 @@ period allows one.
 **Why it matters.** It turns the swap question for any one region into a quick finite test. No larger real region
 has been classified.
 
-**An everyday picture.** On a two-lane running track, the lanes can stay apart, cross once a lap, or cross in ways
-that fit many lap counts; a lap chart shows which.
+**An everyday picture.** Two strands of rope coiled together: they may never cross, cross once every turn of the
+coil, or cross in a way that fits coils of almost any length; a quick count on one turn shows which.
 
 ## The formal statement and proof
 

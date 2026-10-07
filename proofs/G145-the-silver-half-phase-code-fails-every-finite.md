@@ -17,7 +17,8 @@ already seen by Local at period seven, so that code is excluded.
 
 **Why it matters.** The starting point matters, not just the angle.
 
-**An everyday picture.** The same tune started on the off-beat clashes with the band.
+**An everyday picture.** The same tune started half a bar late: every note is the same, but now it clashes with the
+band.
 
 ## The formal statement and proof
 

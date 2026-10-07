@@ -16,8 +16,8 @@ middle column and any chosen right part. Even an all-white right part works, if 
 **Why it matters.** So a finite seed exists exactly when some finite right part makes the forced left part turn
 white for good. That is the precise target.
 
-**An everyday picture.** Given the film and one half of the opening frame, the other half is fixed, but it may need
-an endless canvas.
+**An everyday picture.** The primer's crossword again: write in the middle column and any right half, and the left
+half is forced, letter by letter, but it may run off the edge of the page.
 
 ## The formal statement and proof
 

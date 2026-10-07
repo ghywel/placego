@@ -16,8 +16,8 @@ mask is fixed by earlier true samples. The relation can be undone step by step.
 **Why it matters.** Two random-looking signals can be completely related, so independence must never be assumed from
 appearances.
 
-**An everyday picture.** A message and its encrypted copy each look like gibberish, yet with the key either one
-gives back the other.
+**An everyday picture.** Two decks of cards, one shuffled and the other the same deck after a cut you know: each
+looks random on its own, yet knowing the cut, either one gives back the other.
 
 ## The formal statement and proof
 

@@ -18,8 +18,9 @@ square of width halves the rate.
 proved for random rows. The single-cell pattern matches it to about 0.05% in its central region, a measured sign
 that the famous pattern behaves randomly there.
 
-**An everyday picture.** A well-shuffled deck: the chance of a run of L reds is a clean power of a half, and Rule 30
-is a shuffle that never undoes itself.
+**An everyday picture.** A bowl of coins, stirred: stirring never sorts the heads from the tails, so a run of L
+heads in a row turns up at the rate of a half multiplied by itself L times, however long you stir. Rule 30 is that
+kind of stirring.
 
 ## The formal statement and proof
 

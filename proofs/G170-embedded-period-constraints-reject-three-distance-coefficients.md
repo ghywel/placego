@@ -18,7 +18,8 @@ shortest period, or richer information, remain open.
 **Why it matters.** It closes the obvious repair of G169 and says the next candidate must tell the period levels
 apart.
 
-**An everyday picture.** A long-distance timetable must still price the local stopping trains that share its track.
+**An everyday picture.** A fare chart for the long-distance line must still price the local stopping trains that
+share its track.
 
 ## The formal statement and proof
 

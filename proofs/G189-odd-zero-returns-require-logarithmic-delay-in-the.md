@@ -18,8 +18,9 @@ escape the argument.
 **Why it matters.** It gives a restriction that grows with the period, though only slowly, and isolates the even
 returns as the hard case.
 
-**An everyday picture.** A row of switches where each setting decides the next must come round in a loop; allow one
-free choice and the counting no longer limits the journey.
+**An everyday picture.** A model railway whose points (the switches where the track divides) are all fixed follows
+one set route, and you can count how long a circuit takes; make one set of points free to go either way, and the
+count no longer limits the journey.
 
 ## The formal statement and proof
 

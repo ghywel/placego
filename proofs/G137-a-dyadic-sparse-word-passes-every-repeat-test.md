@@ -17,8 +17,8 @@ runs too long, and fails.
 **Why it matters.** It shows the limit of the repeat test: it cannot by itself rule out every sparse pattern.
 Passing the test does not mean Rule 30 can produce it.
 
-**An everyday picture.** A filter that turns away some impostors and lets one through, which still faces every other
-check.
+**An everyday picture.** The metal detector at an airport: it stops some people, but walking through it cleanly does
+not make you a passenger, and the passport desk is still ahead.
 
 ## The formal statement and proof
 

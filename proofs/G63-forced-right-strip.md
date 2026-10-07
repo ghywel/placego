@@ -17,8 +17,8 @@ little at each end for each column further out.
 **Why it matters.** It replaces G61 and G62's single-square restrictions with a whole forced strip of the right
 half.
 
-**An everyday picture.** A row of dominoes: once the first stands still, the next ones must stand still too, except
-near the ends.
+**An everyday picture.** A row of meshed cogs: keep the first turning steadily and every cog down the line is forced
+to turn steadily too, though each one further out takes a little longer to settle and stops sooner after you let go.
 
 ## The formal statement and proof
 

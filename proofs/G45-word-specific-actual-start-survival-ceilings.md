@@ -17,7 +17,8 @@ it is small: below a ceiling the pattern fixes exactly.
 **Why it matters.** It separates two notions the count uses: "the growth factor stays above 1" and "the number
 actually stays above its start". They differ only for small numbers, below the ceilings.
 
-**An everyday picture.** A fairground ride with a maximum height: only those under the bar get on.
+**An everyday picture.** A soft-play area with a height bar at the door: only children under the bar get in, and the
+bar is set by the play area, not by the child.
 
 ## The formal statement and proof
 

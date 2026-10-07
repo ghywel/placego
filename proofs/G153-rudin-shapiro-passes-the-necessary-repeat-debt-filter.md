@@ -19,8 +19,8 @@ agrees with brute force.
 **Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
 finiteness question stays open and needs a different kind of argument.
 
-**An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
-genuine.
+**An everyday picture.** Another traveller who walks cleanly through the metal detector of G137: the passport desk
+must catch them, or show they are genuine.
 
 ## The formal statement and proof
 

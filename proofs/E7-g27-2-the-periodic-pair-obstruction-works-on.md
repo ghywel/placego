@@ -17,7 +17,8 @@ for its sibling Rule 210 with the blinking wall.
 
 **Why it matters.** It removes a hidden assumption, so the tool can be used exactly where the record needs it.
 
-**An everyday picture.** Proving there is a leak from inside the house, without having to inspect the pipes outside.
+**An everyday picture.** The water-meter test for a leak: turn off every tap in the house, and if the meter still
+turns there is a leak, proved without digging up a single pipe outside.
 
 ## The formal statement and proof
 

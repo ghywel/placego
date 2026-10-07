@@ -16,7 +16,8 @@ race happened, so the exact probabilities differ from the fair ones.
 **Why it matters.** Results proved on the endless line cannot be assumed exact on the finite rings that computers
 actually run.
 
-**An everyday picture.** Joining the ends of a chain removes the free end you would use to rebuild it.
+**An everyday picture.** A bicycle chain laid out straight can be checked link by link from its loose end; joined
+into a loop it has no loose end, and counts that were exact on the straight chain come out slightly different.
 
 ## The formal statement and proof
 

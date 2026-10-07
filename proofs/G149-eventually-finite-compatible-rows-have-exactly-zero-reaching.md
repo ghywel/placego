@@ -18,7 +18,8 @@ the property.
 **Why it matters.** It turns "eventually finite" into a concrete test on the far-left tail. Such rows are rare
 (countably many) and, if any exist, they lie arbitrarily close to every candidate. None has been built.
 
-**An everyday picture.** A distant drumbeat can fall silent only if it was a repeating rhythm already fading away.
+**An everyday picture.** A dropped ping-pong ball comes to rest only through a run of bounces that was already dying
+away, each bounce a smaller copy of the last.
 
 ## The formal statement and proof
 

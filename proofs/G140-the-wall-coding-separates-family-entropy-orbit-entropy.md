@@ -18,8 +18,8 @@ still approach an infinite limit.
 **Why it matters.** It keeps three questions apart: the variety of the family, the variety of one history, and
 whether its seed is finite.
 
-**An everyday picture.** A library holds every story and one story can be very plain; neither tells you whether a
-book ends.
+**An everyday picture.** A soap opera: its possible plots are endless, and one storyline can be very plain, but
+neither tells you whether the show will ever end.
 
 ## The formal statement and proof
 

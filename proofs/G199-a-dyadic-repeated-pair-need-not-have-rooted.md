@@ -14,7 +14,7 @@ Two identical periodic strips do not tell us where they came from.
 
 **Why it matters.** Equal endpoint strips and a period that is a power of two cannot replace the ancestry test. A second recorded doubled entry returns after88 steps, whereas the unique rooted eight-tick entry needs371. Even the stronger doubled-entry condition cannot replace ancestry.
 
-**An everyday picture.** Two copies of the same photograph can show where a journey ended without telling us where it began.
+**An everyday picture.** Two identical shells on a beach tell you nothing about which tide brought them in.
 
 ## The formal statement and proof
 
