@@ -470,6 +470,12 @@ CHECKS (GPT's claims at 827e006):
      and on three complementary dyadic words no paired continuation reaches equal tails before m - h; GPT's w = 01,
      m = 3 path returns in exactly 3 edges; the PR196-D1 word's sixteen 8-bit blocks are GPT's table, all distinct,
      with phases 7 and 13 sharing 0011000, so L = 8 and the bounds are 26,396 and 26,395.
+  S95 (G198, added 2026-10-07 at 75156e9): on 600 random graphs built around a dyadic cycle (q = 2, 4, 8) with the
+     half-turn swap and random swap-closed extra edges and vertex pairs (seed 198; 321 persistent, 279 not), the
+     component of the cycle is persistent (period a proper divisor of q) exactly when some excursion from a cycle vertex
+     back to the cycle has l + s - u != 0 mod q, and G191's component test agrees; GPT's locked detour has G = 4 and
+     no mismatched excursion, the chords give G = 1; three edges from phase 0 end aligned at ordered phase 3, while
+     phase 1 would read as residue 2; D1's hypothetical rejoin from 0 after 26,396 edges is aligned at phase 12.
 """
 import random
 from fractions import Fraction as F
@@ -4924,4 +4930,98 @@ ok94 &= 26403 - 8 + 1 == 26396 and 26403 - 8 == 26395
 check('S94 G197: q - 1 bits identify the phase of every primitive word (q <= 12; 0001 needs 3); no continuation '
       'returns before m - L + 1 edges or reaches equal tails before m - h (brute force); the D1 word\'s 8-block table, '
       'L = 8', ok94)
+def comp95(n, adj, v):
+    """Vertices mutually reachable with v (adjacency as lists)."""
+    def reach(src, nbrs):
+        seen, todo = {src}, [src]
+        while todo:
+            u = todo.pop()
+            for w in nbrs[u]:
+                if w not in seen:
+                    seen.add(w)
+                    todo.append(w)
+        return seen
+    radj = [[] for _ in range(n)]
+    for u in range(n):
+        for w in adj[u]:
+            radj[w].append(u)
+    return reach(v, adj) & reach(v, radj)
+
+
+def gcd95(adj, C):
+    root = min(C)
+    pot, todo = {root: 0}, [root]
+    while todo:
+        u = todo.pop()
+        for w in adj[u]:
+            if w in C and w not in pot:
+                pot[w] = pot[u] + 1
+                todo.append(w)
+    g = 0
+    for u in C:
+        for w in adj[u]:
+            if w in C:
+                g = gcd(g, abs(pot[u] + 1 - pot[w]))
+    return g
+
+
+def mismatched95(n, adj, q):
+    """Is there an excursion v_s -> v_u (interior off the cycle 0..q-1) of length l with l + s - u != 0 mod q?"""
+    for s in range(q):
+        # states (vertex, length mod q); interior vertices must be off the cycle
+        start = [(w, 1 % q) for w in adj[s]]
+        seen, todo = set(start), list(start)
+        while todo:
+            v, l = todo.pop()
+            if v < q:
+                if (l + s - v) % q:
+                    return True
+                continue                                     # an excursion ends at its first cycle vertex
+            for w in adj[v]:
+                st = (w, (l + 1) % q)
+                if st not in seen:
+                    seen.add(st)
+                    todo.append(st)
+    return False
+
+
+ok95, _cnt95 = True, [0, 0]
+_rng95 = random.Random(198)
+for trial in range(600):
+    q = _rng95.choice([2, 4, 8])
+    h = q // 2
+    extra = _rng95.randint(0, 3)                            # extra vertex pairs (x, x') exchanged by sigma
+    n = q + 2 * extra
+    sig = [(t + h) % q for t in range(q)] + [q + (i ^ 1) for i in range(2 * extra)]
+    adj = [set() for _ in range(n)]
+    for t in range(q):
+        adj[t].add((t + 1) % q)
+    for _ in range(_rng95.randint(0, 5)):
+        u, w = _rng95.randrange(n), _rng95.randrange(n)
+        if u < q and w < q and w == (u + 1) % q:
+            continue
+        adj[u].add(w)
+        adj[sig[u]].add(sig[w])
+    adj = [sorted(a) for a in adj]
+    C = comp95(n, adj, 0)
+    G = gcd95(adj, C)
+    pers = G < q and q % G == 0
+    mis = mismatched95(n, adj, q)
+    _cnt95[pers] += 1
+    ok95 &= q % G == 0 and pers == mis
+    # and G191's criterion on the component itself agrees
+    idx = {v: i for i, v in enumerate(sorted(C))}
+    sub = [sum(1 << idx[w] for w in adj[v] if w in C) for v in sorted(C)]
+    ok95 &= criterion85(sub, [idx[sig[v]] for v in sorted(C)], len(C)) == pers
+ok95 &= min(_cnt95) >= 100
+# GPT's controls: the locked detour (0 -> a -> 2, 2 -> a' -> 0 on the half-turn 4-cycle) has G = 4; the chords 0 -> 2,
+# 2 -> 0 make G = 1; three cycle edges from 0 end at ordered phase 3, aligned, while phase 1 would read as residue 2
+_lock = [[1, 4], [2], [3, 5], [0], [2], [0]]                # vertices 0..3, a = 4, a' = 5
+ok95 &= gcd95(_lock, comp95(6, _lock, 0)) == 4 and not mismatched95(6, _lock, 4)
+_chord = [[1, 2], [2], [3, 0], [0]]
+ok95 &= gcd95(_chord, comp95(4, _chord, 0)) == 1 and mismatched95(4, _chord, 4)
+ok95 &= (3 + 0 - 3) % 4 == 0 and (3 + 0 - 1) % 4 == 2
+ok95 &= (26396 + 0 - 12) % 16 == 0                          # D1's hypothetical aligned rejoin from s = 0 at u = 12
+check('S95 G198: on 600 random graphs around a dyadic cycle (q = 2, 4, 8) the component is persistent exactly when a '
+      'mismatched excursion exists, and G191 agrees; the locked detour, the chords, the ordered-phase trap, D1', ok95)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

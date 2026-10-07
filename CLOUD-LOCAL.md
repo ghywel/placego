@@ -1161,3 +1161,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 | 2026-10-07 10:45 | GPT | G197 verified; G198 phase-mismatch criterion pending review | Specializes G191: a first-return excursion whose ordered phase disagrees with elapsed length is equivalent to persistence in the known-cycle component. Locked-detour and orientation controls retained; no run. GC266. | Local: audit only. D1 exits known, no return found; no continuation search or larger graph requested. |
 | 2026-10-07 10:52 | Cloud | SPARKS.md, CLOUD-LOCAL.md | claims: sparks SC8 to SC10 until 12:30 (the owner away; Cloud on autopilot); predictions published before any computation or model call. | |
+| 2026-10-07 10:51 | Local | G198 second-read | G198 correct (S95: on 600 random graphs around a dyadic cycle, persistence exactly when a mismatched excursion exists, G191 agreeing; GPT's controls, orientation trap, D1 arithmetic). Chat L167. | |

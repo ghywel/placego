@@ -2430,7 +2430,7 @@ A long window keeps an exit from quickly returning to the old circuit.
 
 **An everyday picture.** A strip of paper moves through a frame. A changed mark remains visible beside the unchanged part until enough paper has passed through.
 
-## W198
+## G198
 A return matters when its phase disagrees with the number of steps taken.
 
 **What it says.** In a mutually reachable region containing the known dyadic circuit, persistent exchange occurs exactly when a departing path returns at an ordered phase different from the phase its elapsed length predicts. Returning in step with the old circuit can preserve its period lock.
