@@ -9285,3 +9285,26 @@ No symbolic construction for(146,155) was obtained in this audit. Local retains 
 
 
 **Entry23 second reading completed (GC333, 2026-10-07; source-and-certificate audit, no independent long replay).** The final verbatim STOP and preceding completed PROGRESS excerpts are now committed at39aac3e. They report literal_fail0, matching counts and the same frontier/event certificate already checked in GC329/GC331. An additional independent final-segment checksum ties them to the events: the frontier advances39 rounds from25769803776 to26424115200, with no new branches and only the exits at26021394345 and26207185418. Nonzero-step exposure must therefore increase by17*(26424115200-25769803776)+(26021394345-25769803776)+(26207185418-25769803776)=11812266419. The reported difference436983015918-425170749499 is exactly that; zeros rise111 to113, exits54 to56 and live19 falls to17. The provenance gap is repaired. Verdict: the stated finite certificate and its source logic pass this independent second reading, relying on the retained Local execution and literal checks; the three-hour trajectory was not independently rerun. This extends21/22 rather than restating them; G204 remains its conditional minimum-stage comparison. No stage exhaustion, all-period growth, clock upper bound or prize verification follows. Local may file entry23 with this explicit review scope.
+
+
+## General pulse separation gives hole intervals, with an excluded q4 class (2026-10-07; GC334)
+
+**Bounded symbolic extension of GC326, independent review pending; no trajectory or new proof filing.** GC330 left the relative separation r as the missing feature. Prediction: its compatible children are contiguous hole intervals. Counterfactual: all different-r windows are disjoint and their endpoint debt always equals all-interval debt. The exact boundary controls below refute those extensions. Subscripts are modulo dyadic q>=4; plus means XOR.
+
+For1<=r<=q-2, put
+
+    A=e_0+e_r, B=e_0,
+    C=one+sum_(i=1..r)e_i,
+    E=one+sum_(i=1..r+1)e_i, F=e_(r+2).
+
+The triples(A,B,C),(B,C,E),(C,E,F) satisfy S child=source XOR(driver OR child). Indeed B is contained in C, E is contained in C, and F is contained in E, including r=q-2 where F=e_0. Their right sides are respectively A+C, B+C and C+E; these equal SC, SE and SF by cancelling the indicated interval endpoints. Each driver is nonzero, so compatible periodic children are unique. This generalizes the r=2 identity already reviewed in GC326, but does not assert rooted occurrence of any new separation.
+
+At reference arrival phase1, the four successive drivers B,C,E,F have delays(q,r+1,1,q). C's first black phase after1 is r+1; the next arrival is r+2 modulo q, where E is black, and F lies one phase behind the following arrival. Thus elapsed cost is2q+r+2. At slope5/2 the adjusted prefixes are0,q-5/2,q+r-4,q+r-11/2,2q+r-8. For q>=8 all are nonnegative and the final value dominates, giving exact reference all-interval debt2q+r-8. G164 gives any-arrival/birth allowance3q+r-9 for that entire driver list. At q4,r2 this remains debt2 and allowance5. At q4,r1 the prefixes are0,3/2,1,-1/2,1: all-interval debt is3/2, not endpoint1, and the transferred allowance is9/2. This is an ambient arithmetic control, not a rooted observation.
+
+**Unexpected rooted exclusion and overlap guard.** At q4,r1, the pair after THREE transitions is(E,F)=(e_0+e_3,e_3), a simultaneous rotation of(A,B)=(e_0+e_1,e_0). G156 therefore excludes this whole class from any rooted history: different depths cannot have rotation-equivalent pairs. This is a finite literal ancestry exclusion, not a new observed cycle. For q>=8,r=q-3, the same ending pair has E=e_0+e_(q-1), F=e_(q-1), so it is instead a start of the DIFFERENT r=1 class. The two four-driver windows overlap in their singleton-driver edge. Hence disjointness of the one-family GC327 windows must not be transferred to all separations without a covering argument.
+
+**Terminal separation.** At r=q-1 the first child is C=e_0, then the next child is zero because source and driver both equal e_0. The next integration has odd source parity and leaves period q for2q. The nonterminal four-driver formula does not apply there. This is a compatible near-exit shape, not a claim that it occurs at every rooted stage.
+
+There are still q-2 nonterminal ambient start classes rather than a constant number; the q4,r1 exclusion removes one small-period class but supplies no all-q sparsity theorem. Their allowances scale with q, and overlap requires care, so this extension alone does not establish linear total clock debt. Next: inspect ancestry of the remaining relative separations or use an explicitly justified covering/compensation argument. Closed potential families stay closed.
+
+**GC334 literal verification before publication.** An independent scalar per-phase check atq4,8,16,32 verifies52 nonterminal support choices, all three triples, the four reset delays and maximum ordered prefix rise, plus the four terminal shapes. This finite verification checks the displayed algebra and arithmetic; it is neither a rooted trajectory run nor a proof by extrapolation.
