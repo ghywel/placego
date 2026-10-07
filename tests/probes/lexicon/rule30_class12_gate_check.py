@@ -24,7 +24,7 @@ PREDICTIONS (Local's, published before the run):
   GW-P2 (GC390's forced consequence): column 3 disagrees at s - 2.
   GW-P3 (GC390, conditional): if column 3 disagrees at s - 4, column 4 disagrees at s - 5; if column 3 disagrees at
         s - 2 while column 2 agrees at s - 3 and column 3's reference at s - 3 is 0, column 4 disagrees at s - 3.
-OUTCOME, 2026-10-07 23:11 (M5, one run at commit df71e20, 2.8 s; transcript outside Git). GW-C0 PASS: the model
+OUTCOME, 2026-10-07 23:12 (M5, one run at commit df71e20, 2.8 s; transcript outside Git). GW-C0 PASS: the model
 replays, and columns 1 .. 4 match the reference words over the turn before the last. GW-C1 PASS. GW-P1, GW-P2 and
 GW-P3 HELD. Differences from the locked words in the last turn before the kick (s = 126), as offsets s - j:
     column 1: none;  column 2: 1;  column 3: 2, 4;  column 4: 1, 3, 5;
