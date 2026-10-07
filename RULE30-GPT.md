@@ -9494,3 +9494,50 @@ failure or long computation occurred in this block.
 This explains a structural difference between the rare named starts and L211's many heavy-source singleton
 events. It does not prove repeated-event sparsity, compensation, normalized growth or a prize result.
 Next: use the exact fourth-word support, rather than its weight alone, to seek a legitimate window covering.
+
+
+## Heavy singleton events have disjoint four-edge windows (2026-10-07; GC344)
+
+**Bounded covering audit from GC340/GC342, review pending; no trajectory or prize claim.** Prediction
+recorded before controls: source weight greater than3 prevents a new singleton among the next three drivers.
+Counterfactual: weight3 suffices. Explicit compatible weight3 triples refute that stronger statement.
+
+At common q>=4, let A have weight greater than3 and B=e_s. Its child C cannot be0 or B: these require
+A=B or A=SB XOR B, with weights1 or2. Nor can C be any other singleton e_t, because
+A=SC XOR(B OR C) then has weight at most3. Thus C is nonsingleton. GC340 applies. Its child D has
+weight q-L and is singleton only if L=q-1. In that case C has black support contained in{s,s-1},
+with s-1 present. If C(s)=0, C=e_(s-1), and A=e_(s-2) XOR e_(s-1) XOR e_s has weight3. If C(s)=1,
+C=e_s XOR e_(s-1), and A=e_(s-2) XOR e_s has weight2. Both contradict the heavy-source hypothesis.
+Therefore D is nonsingleton too. GC342 finally makes E nonsingleton because A has weight greater than2.
+
+Consequently after any such heavy-source singleton driver B, the next three drivers C,D,E are nonzero
+and nonsingleton. A later heavy-source singleton start is at least four driver indices away. Their
+four-edge windows(B,C,D,E) are disjoint; in particular the shorter GC340 windows need no overlap
+subtraction. This is a support proof, not a statement inferred from the observed q16 weights. On a
+rooted fixed-period stage it bounds the number of these starts by one quarter of the stage length,
+rounded up, but stage length itself remains uncontrolled.
+
+A legitimate partial allowance for each disjoint four-edge window is GC340's transferred three-edge
+allowance plus max(0,q-|E|-3/2), using the finite-gap delay bound q-|E|+1 for the fourth edge. Taking
+the positive part protects subintervals ending before a negative last increment. Summing these charges
+requires an actual count or compensation theorem, and still leaves uncovered edges' same-clock debt.
+Disjointness alone cannot turn a number proportional to stage length into an O(q) total budget.
+
+**Independent literal controls and identified unexpected check.** At q8, A=13,B=1,C=8,D=241,E=239
+gives an immediate second singleton C despite source weight3. Also A=193,B=1,C=128,D=1,E=254
+gives a singleton D two drivers later. These show why greater than3, rather than greater than2, is
+needed for this separation. Nine fixed per-bit triples, including the heavy A=255 example of GC342,
+pass. These ambient countercontrols are not asserted rooted.
+
+Next: a support-aware compensation argument for the disjoint heavy windows and their intervening edges;
+the complementary clock debt and all-period normalized growth gaps remain open.
+
+
+**GC338 second reading incorporated (Cloud CL026, commit c82c9d8).** Cloud independently checked the
+local kernel, cancellation guard and shifted relations on a five-plus-three-cell spacetime patch. Its
+preregistered rank addition reports224 independent relations on256 coefficients, leaving the32 valid
+assignments. The general algebra explains completeness: all character moments of K*f vanish if and
+only if K*f is identically zero, because the full Walsh transform is invertible. With one such condition
+for every local constraint, f is supported on their simultaneous valid assignments. This concerns the
+FULL set of moments; it does not make a truncated relaxation complete or establish ancestry. No GPT
+rerun of Cloud's patch computation, no new proof filing or prize claim.
