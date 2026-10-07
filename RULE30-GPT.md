@@ -10598,3 +10598,223 @@ correction to KX's header and file the entry. The certificate outcomes remain
 Local's reported execution, not an independently rerun693-second census. L232
 Q9A evidence received; successive width measurements do not supply an independent
 coin experiment or an asymptotic cancellation proof.
+
+## GC380 — both displayed ambiguity cycles fail the next exact column (2026-10-07)
+
+One-column extension audit of the two fixed GC378 fixtures, preregistered before
+running. For each56-periodic row sequence through column12, the possible column13
+bit e_t satisfies the column12 update. If column12 at t is zero, e_t is forced
+by column11 and column12 at t+1; otherwise either bit is allowed, provided the
+known successor satisfies that update. A phase vertex(p,e) points to(p+1,e')
+exactly when e' is allowed there and some unrestricted column14 bit f makes
+
+    e' = column12(p) XOR (e OR f).
+
+There are at most112 phase vertices. Any infinite extension gives an infinite
+walk in this finite graph, hence a directed cycle. A simple cycle has length
+at most112 and a multiple of56, so testing closed walks of lengths56 and112
+from every allowed phase0 bit detects any possible recurrent extension. This
+permits period doubling and does not wrongly demand a56-period column13.
+
+**Outcome:** neither fixture has a56- or112-step closed walk. Independent
+iterative sink removal empties both phase graphs, in15 and16 rounds respectively.
+Consequently neither *specific* GC378 periodic width12 skeleton extends forever
+through exact column13, even with completely free column14. Prediction that both
+would extend REFUTED; counterfactual that the next column eliminates both fixtures
+HELD. This is not elimination of every width12 core path, of arbitrary switching
+between paths, or of either column5 bit for real right halves. GC378's statement
+about nonuniqueness in the relaxed width12 model remains correct.
+
+Controls: independently coded bit-row updates agree with every boundary graph
+edge for both fixtures. The unexpected112-step check also fails; forward sink
+removal independently confirms the absence of any forever-forward walk while
+sharing the graph edges. Originally planned full-strip positive replay and
+mutation checks are VOID because no extension was found, not recorded as passes.
+The bit-row edge audit was added after that negative result to check the encoding;
+it required a justified recomputation and passed. Source `rule30_locked_extend.py`;
+input from committed GC378 reconstruction, transcripts outside Git; under a tenth
+of a second, no large state census or SAT replay.
+
+Next search must retain the alternative width12 paths together with the exterior
+constraint. Testing only these two chosen56-period cycles cannot decide whether
+a wider phase graph pins column5. This is a retained failed realization attempt
+that identifies the exact missing boundary condition. Independent review requested.
+
+## GC381 — finite horizons need an explicit terminal boundary (2026-10-07)
+
+Fixed GC380 graph refinement, not a wider census. A sink rank is one plus the
+maximum successor rank (sinks rank1). Induction bounds every directed path by
+rank minus1 arcs. The graph maxima are14 and15 arcs for fixtures0 and1;
+longest-path scalar replay of cells1..13 passes. Prediction HELD for this graph.
+All starting phases checked: the maxima begin at phases30 and29, whereas phase0
+allows only1 and2 arcs. This unexpected phase check prevents a phase0 bound from
+being stated uniformly. These are bounds on these fixed skeletons only.
+
+**Endpoint qualification / retained correction:** initially calling14/15 a
+finite-strip transition bound would be off by one. Every graph vertex constrains
+column12's *next* update; a physical finite segment has no update at its final
+row. One additional transition into an unrestricted terminal column13 bit is
+possible. Explicit scalar replay, with exterior14=0 on that last transition,
+passes and its terminal bit is excluded from the next phase's allowed set.
+Thus the sharp physical finite-segment maxima are15 and16 transitions, allowing
+arbitrary start phase; no16/17-transition segment exists, since its nonterminal
+rows would supply a forbidden15/16-arc graph path. The counterfactual off-by-one
+is false for graph ranks but true for the naive physical interpretation.
+
+No positive infinite witness, no whole-core elimination or global trace claim.
+Source `rule30_locked_horizon.py`; fixed input from GC378; transcript outside Git.
+Control independently evaluates the scalar strip including every last transition;
+rank calculation shares GC380 graph construction and is not a separate encoder.
+Next: a coupled boundary invariant must handle alternative skeleton paths rather
+than only these fixtures. Local's RK and ZR runs remain separate lanes.
+
+## GC382 — exact boundary lift preserves alternative paths (2026-10-07)
+
+A reasoning block and preregistered instrument, **not yet executed**. Let C_m
+be the simultaneous in/out core of the complete width-m phase graph. Build the
+width-(m+1) graph only above C_m: each (phase,state) has two new-bit lifts; retain
+an edge exactly when its projection is an edge in C_m and the new column obeys
+its Rule30 update for some free exterior bit. Trim the lift simultaneously.
+
+**Exactness argument.** A vertex survives finite-graph in/out trimming iff it
+lies on a bi-infinite walk: predecessors and successors can be chosen forever;
+conversely each vertex of any such walk survives every round. Projecting a
+bi-infinite width-(m+1) walk gives a width-m walk, all of whose vertices and edges
+lie in C_m. Thus every wider-core vertex and edge occurs in the lift. Conversely
+any bi-infinite lifted walk obeys every wider local equation, so belongs to the
+full wider core. Their trimmed vertex AND edge sets agree. A surviving vertex
+need not itself lie on a cycle: bridges between cyclic components can survive.
+That unexpected distinction is essential; using only cyclic vertices would
+silently remove permissible switching or transient bridges.
+
+This addresses GC380's missing alternative paths without enumerating every
+width13 state. The fixed width12 core has602 vertices, so only1204 candidates
+are needed. Source `rule30_locked_lift.py` prepared, no execution or outcome
+claimed. Prediction: column5 remains ambiguous; counterfactual: the coupled
+column forces it. A direct width5 core will control the width4 lift, comparing
+both nodes AND edges; all retained width13 edges receive literal scalar checks.
+No extension beyond width13, no departure-SAT duplication, no prize claim.
+The general graph argument is a reduction to the existing core computation,
+not a new Rule30 regularity theorem. Existing fixed-fixture failures retained.
+
+### GC382 outcome — coupled column13 still does not pin column5
+
+Executed once after preregistration/source publication. The602 width12 core
+vertices lift to1204 candidates;15 simultaneous pruning rounds leave836 width13
+vertices. Only columns2..4 are forced at every phase, exactly their prior words.
+Prediction HELD; counterfactual that one coupled column pins column5 REFUTED.
+The next column eliminates both selected GC378 periodic skeletons yet retains
+other alternatives: fixed-fixture failure does not prove whole-core uniqueness.
+Direct width5 enumeration and width4 lift agree on every vertex AND edge;
+all retained width13 edges agree with literal scalar evaluation. Both controls
+PASS. Graph exactness rests on the preceding projection argument, not on the
+small control alone. Transcript outside Git; no cap, no SAT or wider sweep.
+Next useful question is which projected alternatives replace the two dead
+skeletons, rather than automatically raising the width. Outcome queued for the
+next batched publication; do not rerun the completed computation.
+
+## GC383 — recurrent width13 replacements for both ambiguity bits (2026-10-07)
+
+Fixed836-vertex graph reconstructed once to extract new paths; GC382's completed
+outcome was not re-executed as a census. Shortest-return search from every
+phase12 root with each column5 bit finds56-step cycles for both. Prediction
+HELD; bridge-only counterfactual REFUTED. The two column5 words, starting at
+phase12, are:
+
+    0: 00000101100000010110000001011010101110000101100000010110
+    1: 10100101100000010110000001011010101110000101100000010110
+
+Both phases12/14 are0 in the first and1 in the second. Independent scalar
+replay of every column1..13, including the closing edge, PASS; flipping source
+column5 at one transition rejects (column6's left input flips). Return search
+allowed periods beyond56; no fixed-period assumption. Comparing each projection
+with the corresponding dead GC378 skeleton finds49 and34 different width12
+rows. Thus these are replacement realizations in the width13 relaxed model,
+not a resurrection of the killed fixtures. Exterior14 is chosen freely and
+periodically; no globally realized right half or prize result is claimed.
+Source `rule30_locked_replacements.py`; cycles and exterior inputs in the private
+transcript, no width sweep. More time alone cannot force column5 within this
+width13 model, since both exact cyclic strips can repeat indefinitely.
+
+L235 received: Local RV independently confirms GC380/381 using reversed bit
+order and whole-row exterior-set propagation, including the terminal boundary,
+positive one-column-in control and all-phase decoding control. Its execution
+is Local's reported2.7-second run, not a GPT duplicate. GC382's implicit
+column-m equation is enforced with the specific lifted bit by scalar(s,m,...,e),
+not merely by projected edge membership. L235's compressed observation should
+read: exact column14 gives horizons13/16; exact15 gives13/15, as its source
+header and outcome row say. Local KT2 and ZR remain separate lanes.
+
+## GC384 — paired ambiguity survives the exact column13 core (2026-10-07)
+
+Preregistered fixed-core query, one reconstruction for this new question. All
+two-edge paths from phase12 through13 to14 in the836-vertex core have column5
+pairs00 or11; both occur. Phase13 column5 is always0. Prediction HELD; mixed-path
+counterfactual REFUTED. This tests *all core paths*, including transient bridges,
+not just the two selected GC383 cycles. Selected paths have hidden-state triples
+(53,85,212) and(1469,1157,4044); independent scalar two-edge replay PASS.
+
+**One direction by hand.** Write a=column5 at12, b=column6 at12,
+c=column7 at12. Column4 is1 at12 and13, and column5 at13 is0. The first update
+therefore gives a OR b=1. The column6 update gives column6(13)=a XOR(b OR c).
+The next column5 bit is d=1 XOR column6(13). If a=0 then b=1, so d=0:
+pair01 is already excluded locally. If a=1, d=b OR c; pair10 remains locally
+possible when b=c=0. Independently enumerating all16 scalar local inputs gives
+exactly00,10,11. This retained positive counter-control prevents attributing the
+whole equality to those two updates. Pair10's exclusion uses the coupled core,
+and has not yet been reduced to a small hand contradiction.
+
+**Finite-window transfer, conservative bound, review pending.** Projection of
+r-round wider survivors lies among r-round narrower survivors, by induction on
+in/out neighbours. After71 rounds every complete width13 survivor projects into
+the width12 core. Fifteen more rounds are bounded by GC382's lift trimming;
+therefore the complete width13 graph stabilizes by at most86 rounds, without
+claiming that86 is minimal. A175-observation wheel strip centred at phase13 has
+its phase12 and14 vertices86 edges from the nearer endpoint. The existing
+finite-path trimming lemma places both and their connecting edges in this core.
+Thus column5 at these two positions agrees, while either common value remains
+possible in the relaxed strip. This is a conditional even-wheel-phase finite
+correlation certificate, not column5 uniqueness or a locking-speed theorem.
+No full width13 census, width sweep or globally realized right half claimed.
+Source `rule30_locked_pair.py`; transcript outside Git. Next reduce the forbidden
+10 relation to a small boundary explanation or seek independent certificate review.
+
+## GC385 — a four-row Boolean explanation of the pairing (2026-10-07)
+
+Prediction that mixed10 survives the column6-only model REFUTED; counterfactual
+that this smaller boundary explains the correlation HELD. Four fixed column5
+words tested with free column7:00/11 have56-period column6 realizations with
+scalar replay PASS;01/10 have no recurrent extension. Complete return search
+allows longer cycles too. This led to the following small hand proof, rather
+than another width sweep. The fixed graphs share word inputs, not the width13
+core; the new scalar control was added after seeing the negative result.
+
+**Local lemma.** Suppose column4 at times t,t+1,t+2 is0,1,1, and column5(t)=0.
+Then column5(t+1)=column5(t+3), regardless of the right exterior.
+Write r=column6(t), s=column7(t), z=column7(t+1). Rule30 gives
+
+    a=column5(t+1)=r,
+    b=column6(t+1)=r OR s,
+    c=column5(t+2)=1 XOR(a OR b),
+    e=column6(t+2)=a XOR(b OR z),
+    d=column5(t+3)=1 XOR(c OR e).
+
+If r=1, b=1,c=0,e=0,d=1. If r=0 and s=1, then b=1,c=0,e=1,d=0.
+If r=s=0, then b=0,c=1 and d=0 regardless of e=z. Hence d=r=a.
+**No assumption that the middle column5 bit is zero is needed.** The earlier
+GC384 two-row analysis missed the preceding row, not a distant column13 input.
+Independent literal scalar evaluation of all8(r,s,z) choices PASS. Unexpected
+premise control: relaxing column5(t)=0 to1 permits unequal endpoints, for
+example(h,r,s,z)=(1,1,0,0) gives1 then0. That is a control for the local equations
+with externally prescribed column4, not a claimed wall-compatible trajectory.
+
+At t=phase11, the width12 core has column4 pattern0,1,1 and column5(11)=0;
+GC378's only ambiguous column5 phases are12/14. Thus the equality follows by
+hand once these already-forced premises hold. It does not depend on the836-node
+width13 pair enumeration. Using the71-round width12 certificate, a145-row
+wheel window centred at phase12 puts the needed phase11/13 vertices71 edges
+from the nearer boundary. The lemma transfers equality at phases12/14; no need
+for GC384's conservative175-row width13 bound. This sharper finite transfer
+awaits independent review, carries the same even-wheel-phase assumptions, and
+is not a minimal-window assertion or a unique-bit claim. Source
+`rule30_locked_small_pair.py`; no new proof-master filing until second-read.
