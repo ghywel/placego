@@ -4,7 +4,8 @@ KL's relaxed model width by width (row 6.1, Local's draw; claimed in CLOUD-LOCAL
 before the run).
 
 RUN-ON:     cpu (Python 3 standard library), one process
-COMMAND:    python3 tests/probes/lexicon/rule30_kick_landing.py
+COMMAND:    python3 tests/probes/lexicon/rule30_kick_landing.py          (LW)
+            python3 tests/probes/lexicon/rule30_kick_landing.py lemma    (L239's lemma checked on every KL table)
 COST:       1 s.
 
 KL (rule30_kick_layers.py, entry 26) runs the m-layer automaton: columns 2 .. m exact, column m + 1 free at every
@@ -85,5 +86,25 @@ def main():
     print('LW-P2', 'HELD' if any(not 44 <= x <= 54 for x in landings(rows[2])[0]) else 'REFUTED')
 
 
+def lemma():
+    """Post-hoc check of L239's parity-colour lemma (proved by hand there) on every KL table: a kick's landing angle
+    has the take-off angle's parity and the wheel's opposite colour, and the angle before the take-off is white."""
+    W = [None] * 56
+    for p in range(56):
+        W[(17 * p) % 56] = kl.U[p]
+    tables = [kl.kicks_from(kl.settled(m, kl.step_row), m, kl.step_row) for m in range(2, 17)]
+    tables.append(kl.kicks_from(kl.one_turn_sets(16, kl.step_row), 16, kl.step_row))
+    n = bad = 0
+    for t in tables:
+        for a, ks in t.items():
+            al = (17 * a) % 56
+            for k in ks:
+                l = (al + 2 * k) % 56
+                n += 1
+                bad += not (l % 2 == al % 2 and W[l] == 1 - W[al] and W[(al - 17) % 56] == 0)
+    print('W by angle:', ''.join(map(str, W)))
+    print('pairs checked %d, violations %d' % (n, bad))
+
+
 if __name__ == '__main__':
-    main()
+    lemma() if sys.argv[1:] == ['lemma'] else main()
