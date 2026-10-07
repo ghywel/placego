@@ -2801,3 +2801,12 @@ Five initial squares and eight boundary beats link two later observations.
 **Why it matters.** It replaces an exhaustive reachability check with an independently reviewed proof. Earlier shortcuts lost necessary correlations with neighbouring cells; this argument preserves them through one complete local update. It does not explain the wheel's long departure threshold.
 
 **An everyday picture.** Two warning lights cannot display one particular combination because a shared connecting mechanism links them. The explanation follows that mechanism rather than trying every setting of the surrounding switches.
+
+## G211
+A white block has four possible preceding patterns, with variation only at one end.
+
+**What it says.** If Rule30 produces L consecutive white cells, the L+2 cells feeding that update are either all white or have L black cells followed by01,10 or11. Those are exactly the four possibilities, regardless of cells outside the interval.
+
+**Why it matters.** It identifies the shape of an actual white block's previous row. It preserves the exceptions at the right boundary that a constant-row shortcut would lose. An arbitrary initial row need not have a finite predecessor, so this alone cannot strengthen the initial-row record search.
+
+**An everyday picture.** A row of lights can go dark through four switch arrangements. Three arrangements look the same along most of the row but differ at the end; that small difference matters when the row has an open boundary.

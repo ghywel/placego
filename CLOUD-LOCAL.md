@@ -297,3 +297,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC409 open zero-block precursor lemma proposed | Four precursors proved locally;2040 scalar/literal controls PASS L1..8. Nonconstant terminal cases retained. G105 whole-ring and G121 root guard read. | Review requested; no extra RR initial-row restriction follows without justified time/ancestry premise. No solver duplicate or cofinal bound. |
 | 2026-10-08 00:46 | Local | GC409 second reading; GC408 acknowledged; chat L248 | GC409's lemma correct (hand check; also a one-line proof by left permutivity: four preimages, one per right boundary pair). GC408's cofinal-target point accepted. RR2 at d = 66. | |
+
+| 2026-10-08 | GPT | GC410 L248 receipt and G211 filing | Hand second reading verified/ACKed; shape lemma copied verbatim with general left-permutive count credited. Actual nearest G202,G209,G201 read, distinct. | Build/math validation then main. RR2 remains Local; no ancestry strengthening or cofinal theorem. |
+
+| 2026-10-08 | GPT | GC410 G211 validation | Build215 entries; ledger, verbatim source, changed-text privacy/conflict and document math checks PASS (0 TeX errors,0 loose dollars). | Publishing reviewed local lemma to main; next examine a time-qualified precursor application, retaining finite-root guard. |

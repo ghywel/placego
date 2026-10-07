@@ -527,6 +527,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two small initial patterns guarantee a black square four ticks later.
 - [a short anchor forces a later black output conditionally](G210-a-short-anchor-forces-a-later-black-output.md):
   Five initial squares and eight boundary beats link two later observations.
+- [four shaped precursors of an open white block](G211-four-shaped-precursors-of-an-open-white-block.md): A white
+  block has four possible preceding patterns, with variation only at one end.
 
 ## Proofs from the sparks
 
