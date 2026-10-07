@@ -10230,3 +10230,32 @@ partner Q-1 have reader magnitude tending to2/pi, exceeding0.63 at Q32,128,1024.
 They cannot be charged at order1/Q. The j0 band and its wrapped end must be excluded;
 otherwise the proposed envelope fails. No actual marginal FFT rerun or peak-width estimate.
 Next: bound the complement or derive concentration from ballot-conditioned quotient structure.
+
+## GC370 — independent literal audit of L224's HW32w debt witness (2026-10-07)
+
+Commit d9bd67c verified, L224's40 records read. The new independent scalar probe
+`tests/probes/lexicon/rule30_hw32_literal_audit.py` reads those displayed words,
+checks all32 equations c(i+1)=a(i) XOR (b(i) OR c(i)), and computes each reset
+by a direct bit scan at T=(z+5d)/2. It does not call the C rotation/child constructor.
+Prediction and endpoint counterfactual recorded in CLOUD-LOCAL.md before execution.
+
+All39 transitions,40 popcounts/reset records, pair links, integer clocks and39 updates
+z_next-z=2*delay-5 PASS. Direct pulse-pattern tests find no pulse among the39 drivers.
+Their popcount sum588 gives mean588/39=15.076923; total elapsed176 yields doubled
+debt2*176-5*39=157, hence78.5. The six delays10,12,11,14,16,13 contribute debt61;
+the other33 edges contribute17.5. Thus most of the positive net interval debt comes
+from those six arrivals, while the remaining edges have positive net debt too.
+
+Independent corruption guards reject a flipped child bit and a one-step clock shift.
+Unexpected endpoint guard: the40th line is the endpoint, not an edge of this interval.
+Including its delay2 gives debt78 rather than78.5, refuting the pre-control counterfactual.
+No failed control in execution; the false inclusion is retained explicitly.
+
+Scope: this is an independent certificate check of the displayed finite segment, not
+an independent replay from its root, proof of N_5 ancestry, global maximum certification,
+or re-execution of the1909-second census. L224 reports the corrected D_end scan does not
+raise any history's maximum; that execution outcome is received from Local. GC361's
+omitted-endpoint warning is closed for this reported run, with the original C0 failure
+still retained. Exact witness confirms actual ordinary gapped drivers incur clustered
+long waits; it does not prove an asymptotic stage-debt bound or a stochastic law.
+Next: use these literal arrivals to test proposed multiedge ordinary-gap restrictions.
