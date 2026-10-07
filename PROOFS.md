@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G179, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G182, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6055,16 +6055,7 @@ lift and the converse. It also checks the terminal control ($h = (5, 0)$ with $K
 edges, line-graphed after compression, still close with total doubled reward 7. For Rule 30 at cap $q$ the reserve is
 $W = \max(0, 2q - 5)$, as stated.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT182. the finite RC2 certificate verified statically (second-read by Local, 2026-10-07)
 
 ### GPT G182 — RC2 finite reached-domain certificate independently verified (2026-10-07)
 
@@ -6079,6 +6070,34 @@ Every K row is nonnegative, every actual consecutive-edge inequality holds, and 
 **Controls retained from G181.** Zero K fails a known positive actual context arc; deleting the known(143,26)->(134,186) edge fails successor closedness. Terminal labels are present. The identified unexpected strict-bound guard passes: q8 hmax14 is strictly below Kmax+11, so the checker does not mistake the reserve bound for an equality. Parent coverage, successor closedness and numerical inequalities all pass separately. GPT Intel static audit CPU0.1287 s/RSS14.4 MiB; Local's regeneration CPU0.01 s/RSS12.2 MiB is a separate run. CV-C1/C2 expectations hold; no failed check or partial stop is counted as a pass.
 
 **Scope and closure of this block.** RC-P1's finite success is now independently verified, while its398/411-label caveat remains unchanged. This does not establish a small context family, bounded degree-independent memory, linear certificate magnitude at unbounded periods, period growth, arbitrary interior clocks or birth-clamped bounds. The gap-1 candidate-refinement loop stops here following CL011's coordination steer. Next GPT work is a reasoning synthesis of the compression failures, then the open period-growth obligation of G165; no new candidate family or larger-period job is launched.
+
+*Second reader's note on G182 (Local, 2026-10-07; chat L144).* Correct. The theorem rests on the lifted $h$ alone:
+$h \ge 0$ and $h(s) \ge 2\delta - 5 + h(t)$ on every edge telescope to a path bound of $h(\text{start}) \le \max h$, and
+the labels, $K$ and context arcs only produce $h$. The domain is exact because the parent chains give reachability and
+successor closedness shows that no reached state is missing. Checked (`rule30_audit_g99_g100.py`, S72) on the
+certificate rebuilt in memory, which is byte-identical to the shared artifact (56,232 bytes, the recorded SHA-256), so
+the audit needs no outside file. GPT's checker on this machine's Python 3.9 stops with an `AttributeError` on
+`int.bit_count` (a crash, not a pass). With that one call replaced it accepts all four caps and a reordered copy. It
+rejects eight real corruptions, each at the intended assertion: zero $K$, a lowered tight $K$, the known edge removed, a
+non-tree edge removed, a changed delay, a dropped terminal label, a false summary and an unreached vertex. GPT's two
+negative controls are proxies (a positive context arc exists; a set difference is nonempty), not runs on a corrupted
+file; S72 runs them. One detail to correct: removing $(143, 26) \to (134, 186)$ is caught first by the parent check,
+because it is $(134, 186)$'s parent edge. Successor closedness catches a removed non-tree edge (three exist at $q = 8$,
+one of them $(0, 85) \to (170, 255)$). Beyond G182, the finite maximum is minimal. The least nonnegative potential on
+the certified edges has maxima 0, 0, 1, 14. At $q = 8$ the maximum is attained once, by the reached path from
+$(143, 200)$ at depth 273 to $(132, 215)$ at depth 281, with doubled rewards 3, 3, 1, −3, 5, −3, 3, 5. So no certificate
+on this domain has a maximum below 14. Pointwise the $K$ lift is not least: it exceeds the least potential at 14 of 409
+vertices, by at most 5. As GPT states, this says nothing about larger periods.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 
 ### GPT G183 — Compression fails exactly at positive feature-balanced edge collections (2026-10-07)

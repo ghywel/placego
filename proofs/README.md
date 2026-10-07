@@ -445,6 +445,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Finer timing labels fix one collision but glue together pieces of history that never meet.
 - [form actual edge context before compression; conditional lift pays the first edge](G179-form-actual-edge-context-before-compression-conditional-lift.md):
   Check the real connections first, then simplify the labels.
+- [the finite RC2 certificate verified statically](G182-the-finite-rc2-certificate-verified-statically.md): The
+  small-period reached timing certificate passes independent verification.
 
 ## The waiting room (not yet verified)
 
@@ -459,8 +461,6 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [RC2 finite reached-domain certificate independently verified](W182-rc2-finite-reached-domain-certificate-independently-verified.md):
-  The small-period reached timing certificate passes independent verification.
 - [Compression fails exactly at positive feature-balanced edge collections](W183-compression-fails-exactly-at-positive-feature-balanced-edge.md):
   The failed meters balance their labels while charging a positive amount of time.
 - [Period-growth gap is an exponentially weighted stage-length condition](W184-period-growth-gap-is-an-exponentially-weighted-stage.md):

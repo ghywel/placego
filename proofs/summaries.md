@@ -2218,7 +2218,7 @@ question needs.
 **An everyday picture.** Check that two train journeys really share a station before replacing the stations by
 summaries; join the summaries first and the lost connection cannot be recovered.
 
-## W182
+## G182
 The small-period reached timing certificate passes independent verification.
 
 **What it says.** At period caps one, two, four and eight, supplied potentials pay every reached edge. The largest doubled timing budget is fourteen at cap eight. Parent paths, complete successor lists and all numerical inequalities were checked independently.

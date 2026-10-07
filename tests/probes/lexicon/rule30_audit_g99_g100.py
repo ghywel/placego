@@ -331,6 +331,14 @@ CHECKS (GPT's claims at 827e006):
      h(s) = max(0, max over (s, t) of w + K) satisfies every original edge inequality with h <= W + max K, and K(s, t)
      = h(t) satisfies every consecutive-pair inequality; the one-edge terminal control gives h = (r, 0) with K = 0; and
      G178's seven feature edges, line-graphed after compression, still form a cycle of total doubled reward 7.
+  S72 (G182, added 2026-10-07 at 7407ea9): the RC2 certificate rebuilt in memory as rule30_rc2_export.py writes it is
+     byte-identical to the shared artifact (56,232 bytes, the recorded SHA-256); GPT's checker (int.bit_count replaced
+     on Python < 3.10, nothing else) accepts all four caps, still accepts a reordered copy, and rejects eight real
+     corruptions, each at the intended assertion (zero K, a lowered tight K, the known tree edge removed, a non-tree
+     edge removed, a changed delay, a dropped terminal label, a false summary, an unreached vertex); the exact least
+     potential on the certified edges has maxima 0, 0, 1, 14, so the finite budget 14 is attained, once, by the actual
+     reached path (143, 200) -> (132, 215), depths 273 -> 281, rewards 3, 3, 1, -3, 5, -3, 3, 5; the K lift dominates
+     it, looser at 14 of 409 vertices by at most 5.
 """
 import random
 from fractions import Fraction as F
@@ -3231,4 +3239,191 @@ fe = [(labels70[i], labels70[i + 1], 2 * seg70[i][2] - 5) for i in range(7)]
 ok71 &= all(fe[i][1] == fe[(i + 1) % 7][0] for i in range(7)) and sum(w_ for _, _, w_ in fe) == 7
 ok71 &= sum(fe[(i + 1) % 7][2] for i in range(7)) == 7
 check('S71 G179: the line-graph lift and its converse on random DAGs; the terminal control; post-compression cycle kept', ok71)
+import copy as _cp72
+import hashlib as _hl72
+import json as _js72
+import sys as _sys72
+import traceback as _tb72
+import rule30_rc2 as _rc72
+
+_SHA72 = 'f8d57126f5601ec41295db803ba13271ac54523e4b39a6c5a749b3f30e76a2a7'
+
+
+def cert72():
+    """The RC2 certificate rebuilt in memory exactly as rule30_rc2_export.py writes it (c5d24a0)."""
+    out = {'producer': 'tests/probes/lexicon/rule30_rc2_export.py', 'note': 'regenerated (RC2 kept no arrays)'}
+    for q in (1, 2, 4, 8):
+        root, depth, parent, edges, exits = _rq3.reached(q)
+        verts = sorted(depth, key=lambda s: (depth[s], s))
+        vid = {s: i for i, s in enumerate(verts)}
+        eidx = {(s, t, d): i for i, (s, t, d) in enumerate(edges)}
+        lab = {s: _rqo.feat(s, q) for s in depth}
+        feas, K, quot, cyc, n_arcs, L = _rc72.context_test(edges, lambda v: lab[v], lambda e: 2 * e[2] - 5)
+        ok, h = _rc72.lift(edges, L, K, lambda e: 2 * e[2] - 5, list(depth))
+        vrows = [{'state': list(s), 'parent_edge': None if parent[s] is None else
+                  eidx[(parent[s][0], s, parent[s][1])]} for s in verts]
+        out[str(q)] = {'root': vid[root], 'vertices': vrows,
+                       'edges': [{'source': vid[s], 'target': vid[t], 'delay': d} for s, t, d in edges],
+                       'K': [{'label': [list(x[0]), list(x[1])], 'K': K[x]} for x in sorted(K)],
+                       'summary': {'vertices': len(verts), 'edges': len(edges), 'labels': len(K), 'cap_exits': exits,
+                                   'K_max': max(K.values()), 'h_max': max(h.values())}}
+    return out
+
+
+_raw72 = _js72.dumps(cert72(), sort_keys=True, separators=(',', ':')).encode()
+ok72 = _hl72.sha256(_raw72).hexdigest() == _SHA72 and len(_raw72) == 56232
+# GPT's checker, unmodified except int.bit_count (Python 3.10) where this interpreter lacks it.
+_src72 = open(_os60.path.join(_os60.path.dirname(_os60.path.abspath(__file__)),
+                              'rule30_rc2_certificate_check.py')).read()
+if _sys72.version_info < (3, 10):
+    ok72 &= _src72.count('a.bit_count()') == 1
+    _src72 = _src72.replace('a.bit_count()', "bin(a).count('1')")
+_ns72 = {'__name__': 'rc2_certificate_check'}
+exec(compile(_src72, 'rule30_rc2_certificate_check.py', 'exec'), _ns72)
+_data72 = _js72.loads(_raw72)
+
+
+def verdict72(d, q):
+    """None if GPT's verify accepts; else the checker line that rejected (an AssertionError only)."""
+    try:
+        _ns72['verify'](d, q)
+        return None
+    except AssertionError:
+        return _src72.splitlines()[_tb72.extract_tb(_sys72.exc_info()[2])[-1].lineno - 1].strip()
+    except Exception as ex_:
+        return 'non-assert %s' % type(ex_).__name__
+
+
+import contextlib as _cl72
+import io as _io72
+with _cl72.redirect_stdout(_io72.StringIO()):
+    ok72 &= all(verdict72(_data72[str(q)], q) is None for q in (1, 2, 4, 8))
+
+
+def mutate72(fn):
+    d = _cp72.deepcopy(_data72['8'])
+    fn(d)
+    with _cl72.redirect_stdout(_io72.StringIO()):
+        return verdict72(d, 8)
+
+
+_st72 = [tuple(v['state']) for v in _data72['8']['vertices']]
+_e143 = next(i for i, e in enumerate(_data72['8']['edges'])
+             if (_st72[e['source']], _st72[e['target']]) == ((143, 26), (134, 186)))
+
+
+def drop_edge72(d):
+    del d['edges'][_e143]
+    for v in d['vertices']:
+        if v['parent_edge'] is not None and v['parent_edge'] > _e143:
+            v['parent_edge'] -= 1
+        elif v['parent_edge'] == _e143:
+            v['parent_edge'] = None
+
+
+def zero_k72(d):
+    for r in d['K']:
+        r['K'] = 0
+
+
+def tight_k72(d):
+    next(r for r in d['K'] if r['K'] == 14)['K'] = 13
+
+
+def delay72(d):
+    next(e for e in d['edges'] if e['delay'] == 2)['delay'] = 3
+
+
+def drop_terminal72(d):
+    st = [tuple(v['state']) for v in d['vertices']]
+    outs = {e['source'] for e in d['edges']}
+    lab = {}
+    e = next(e for e in d['edges'] if e['target'] not in outs)
+    tl = [list(_ns72_phi(st[e['source']])), list(_ns72_phi(st[e['target']]))]
+    d['K'] = [r for r in d['K'] if r['label'] != tl]
+
+
+def _ns72_phi(s):
+    return _rqo.feat(s, 8)
+
+
+def summary72(d):
+    d['summary']['h_max'] = 13
+
+
+def orphan72(d):
+    have = {tuple(v['state']) for v in d['vertices']}
+    s = next((a, b) for a in range(256) for b in range(256) if (a, b) not in have and a & 128)
+    d['vertices'].append({'state': list(s), 'parent_edge': None})
+
+
+def permute72(d):
+    """Positive control: reversing the edge list and the K rows (parent indices remapped) must still pass."""
+    n = len(d['edges'])
+    d['edges'].reverse()
+    d['K'].reverse()
+    for v in d['vertices']:
+        if v['parent_edge'] is not None:
+            v['parent_edge'] = n - 1 - v['parent_edge']
+
+
+def drop_nontree72(d):
+    tree = {v['parent_edge'] for v in d['vertices']}
+    i = next(i for i in range(len(d['edges'])) if i not in tree)
+    del d['edges'][i]
+    for v in d['vertices']:
+        if v['parent_edge'] is not None and v['parent_edge'] > i:
+            v['parent_edge'] -= 1
+
+
+_mut72 = [('zero K', zero_k72, 'K[L[i]]>=w+K[L[j]]'), ('the known edge removed', drop_edge72, 'edges[pe][1]==i'),
+          ('a non-tree edge removed', drop_nontree72, 'actual==expected'),
+          ('one tight K lowered', tight_k72, 'K[L[i]]>=w+K[L[j]]'), ('one delay changed', delay72, 'd==D(b)'),
+          ('terminal label dropped', drop_terminal72, 'set(K)==set(L)'),
+          ('summary h max', summary72, 'summary[key]==value'), ('unreached vertex added', orphan72, 'type(pe)==int')]
+_rej72 = {name: mutate72(fn) for name, fn, _ in _mut72}
+ok72 &= all(isinstance(_rej72[name], str) and frag in _rej72[name] for name, _, frag in _mut72)
+ok72 &= mutate72(permute72) is None
+
+
+def least72(cert, q):
+    """Exact least nonnegative potential on the certified edge list itself (longest path, Bellman-Ford)."""
+    E = [(e['source'], e['target'], 2 * e['delay'] - 5) for e in cert['edges']]
+    h = [0] * len(cert['vertices'])
+    for r in range(len(h) + 2):
+        ch = False
+        for s, t, w in E:
+            if w + h[t] > h[s]:
+                h[s], ch = w + h[t], True
+        if not ch:
+            return h
+    return None
+
+
+_least72 = {q: least72(_data72[str(q)], q) for q in (1, 2, 4, 8)}
+ok72 &= all(_least72[q] is not None for q in _least72)
+ok72 &= [max(_least72[q]) for q in (1, 2, 4, 8)] == [0, 0, 1, 14]
+# the K lift dominates the least potential; the q = 8 maximum is attained once, by an actual 8-edge reached path
+_c72 = _data72['8']
+_s72 = [tuple(v['state']) for v in _c72['vertices']]
+_l72 = _least72[8]
+_hk72 = [0] * len(_s72)
+_k72 = {(tuple(r['label'][0]), tuple(r['label'][1])): r['K'] for r in _c72['K']}
+for e in _c72['edges']:
+    _hk72[e['source']] = max(_hk72[e['source']], 2 * e['delay'] - 5 +
+                             _k72[(_rqo.feat(_s72[e['source']], 8), _rqo.feat(_s72[e['target']], 8))])
+ok72 &= all(_hk72[i] >= _l72[i] for i in range(len(_s72))) and max(_hk72) == 14
+ok72 &= sum(x > y for x, y in zip(_hk72, _l72)) == 14 and max(x - y for x, y in zip(_hk72, _l72)) == 5
+_i72 = [i for i in range(len(_l72)) if _l72[i] == 14]
+ok72 &= len(_i72) == 1 and _s72[_i72[0]] == (143, 200)
+_p72, _w72 = [_i72[0]], []
+while _l72[_p72[-1]] > 0:
+    e = next(e for e in _c72['edges'] if e['source'] == _p72[-1] and 2 * e['delay'] - 5 + _l72[e['target']]
+             == _l72[_p72[-1]])
+    _w72.append(2 * e['delay'] - 5)
+    _p72.append(e['target'])
+ok72 &= _w72 == [3, 3, 1, -3, 5, -3, 3, 5] and _s72[_p72[-1]] == (132, 215)
+ok72 &= [_depth70[_s72[_p72[0]]], _depth70[_s72[_p72[-1]]]] == [273, 281]
+check('S72 G182: the certificate rebuilt byte-identical; GPT checker accepts it and rejects eight real corruptions at '
+      'the intended assertion; the finite budget 14 is exact', ok72)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
