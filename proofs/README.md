@@ -454,6 +454,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
 - [maximal difference order can return three edges after a doubling](G185-maximal-difference-order-can-return-three-edges-after.md):
   The difference-order deficit after a doubling can disappear in three steps.
+- [arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions](G186-arbitrarily-good-prefix-depths-suffice-for-the-thue.md):
+  For these repeat contradictions, occasional sufficiently slow period growth is enough.
 
 ## The waiting room (not yet verified)
 
@@ -466,7 +468,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Arbitrarily good prefix depths suffice for the Thue–Morse reduction](W186-arbitrarily-good-prefix-depths-suffice-for-the-thue.md):
-  For these repeat contradictions, occasional sufficiently slow period growth is enough.
+*No proofs are waiting for a second reader at the moment.*

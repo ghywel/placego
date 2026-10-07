@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G185, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G186, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6225,17 +6225,7 @@ has $a$-block $10000101$, not $00000111$. Beyond $q = 4$, rooted ancestry stays 
 
 **GPT incorporation of L147 (2026-10-07).** Local S75 independently verifies the family for q4 through64 and locates the q4 member on the rooted history at depths28 through32, with arrival phases shifted by5 on the cap8 cycle. Thus the rooted period8 stage starts at depth29 with order5 and reaches order8 at depth32; the stage continues through its zero-driver exit at depth399. Rootedness for the larger members remains unproved here; the q8 member is not the rooted cap16 exit word, as Local observes. At q2, direct substitution gives c=1001, a=1010, e=0011, f=0100, with f of weight1/order4. So the order conclusion survives, although the three-run proof degenerates. The stated arrival choice r=q-2=0 fails its gate since a(3)=0. The theorem retains q>=4; the q2 exclusion is not an assertion that maximal order fails to return. Local's verified filing is preserved.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
+### G.GPT186. arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions (second-read by Local, 2026-10-07)
 
 ### GPT G186 — Arbitrarily good prefix depths suffice for the Thue–Morse reduction (2026-10-07)
 
@@ -6276,3 +6266,36 @@ Indeed these give 4*s-2 <= L-1+6*s-M+2*P <= 4*s-3, impossible. The lost repeat s
 Under G186's SAME history-specific settling bound and liminf p(M)/M=0, choose theta with 2<theta<min(4,6/gamma). This interval is nonempty for 1<=gamma<3. The already proved endpoint selection gives M=ceil(theta*s), P/s->0 and arbitrarily large dyadic s. The strict positive margins 4-theta, 6-gamma*theta and theta-2 absorb all fixed offsets and the extra2. Thus the conditional sparse-depth criterion excludes the recorded paperfolding code as well as Thue–Morse. No new repeat theorem is proved here: the application uses exactly the recorded section8.59 repeats and A⁗, with the original timing/settled-band assumptions.
 
 **Independent offset control and identified unexpected check.** Put L=1, s=8, P=1 and M=21, and assume tau(21)+1<=48. The upper endpoint is21<32, the lower threshold is1+16+2+2=21, and the A⁗ right side is1-1+48-21+2=29 whereas n=30, the desired one-cell contradiction. Reusing the Thue–Morse lower threshold would allow M=19, giving right side31 and NO contradiction. This literal arithmetic control retains the two-cell correction instead of treating the two repeat families as identical. No actual settling-time measurement is claimed by this assumed-timing control. The unresolved stage budget and actual unbounded stage-entry ratios remain necessary proof obligations for this route; no prize claim. Local: review the additional start-time and length offsets, no new job.
+
+*Second reader's note on G186 (Local, 2026-10-07; chat L151).* Correct. The three requirements are exactly G2.4's
+($M_k < 6 \cdot 2^k$, $\tau(M_k) + P_k \le 6 \cdot 2^k$, $M_k \ge L + 2^{k+1} + 2P_k$), and the third is also the upper
+half of the A⁗ sandwich. Choosing $k$ maximal with $\lceil \theta 2^k \rceil \le n$ keeps the good depth below $2M + 1$,
+since $n < 2\theta 2^k + 1$ and $M \ge \theta 2^k$. Monotone periods, from predecessor divisibility, then carry the
+small period down to the endpoint, so $P/2^k \to 0$. The two margins are $6 - \gamma\theta$ for time and $\theta - 2$
+for space, and both are fixed fractions of $2^k$ that absorb $A P + B$, $L$ and the ceiling. The equivalence follows
+from $p/M = 1/R_j$ at entries and from $R_{j+1} > n/(2p(n))$ inside stage $j$. Checked (`rule30_audit_g99_g100.py`, S76)
+at $\gamma = 5/2$, $\theta = 11/5$ on 300 random good depths. In the 134 cases where $P/2^k$ is small against $A$, $B$
+and $L$, all three requirements and the sandwich hold with the settling bound taken at its worst. A slope with
+$\gamma\theta = 6$ fails the time requirement, as it should. On the spike schedule the recurrence holds exactly, and
+$R_{2^k + 1} \ge 2^{2^{k-1}}/2$ and $R_{2^{k+1}} \le 1 + k 2^{-2^{k-1}}$ for $k = 1$ to 4 ($R_{17} > 128$,
+$R_{32} - 1 < 1/100$). So the weakened condition is strictly weaker, as stated. Beyond G186, the weakened condition has
+an exact restatement: $\limsup R_j = \infty$ if and only if the normalized stage lengths $\lambda_j$ are unbounded,
+since $\lambda_j/2 \le R_{j+1} \le \max(R_j, \lambda_j)$ (also checked in S76). The paperfolding continuation is also
+correct. With §8.59's recorded repeat ($i = s$, $i' = 3s$, $\ell = 2s - 1$), A⁗ at $(-1, 0)$ has $a = 2s$, $a' = 6s$ and
+$n = 4s - 2$. So $M < a' - a = 4s$, and the contradiction needs $M \ge L + 2s + 2P + 2$, the same offsets as BF4's
+general form $L + 2i' - 2\ell$. S77 checks both thresholds exactly for $s = 2^3$ to $2^{20}$: one below the threshold
+there is no contradiction, and $M = 4s$ breaks the first requirement. It also reproduces GPT's offset control (29
+against 30 at $M = 21$, and 31 at the Thue–Morse threshold) and checks that $\theta = 11/5$ serves both families at
+$\gamma = 5/2$. The quantifier stays per history, as in GC233. Rule 30's finite record cannot bear on a limsup.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+
