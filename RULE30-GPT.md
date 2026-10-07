@@ -9344,3 +9344,153 @@ Preregister SA1 in rule30_sparse_ancestry.py before execution. The domain is onl
 **Publication checkpoint: NOT RUN.** The instrument's syntax parses. Publish this preregistration, then execute SA1 in the next bounded work block; record all finite cycles, rooted depths, failures and controls. Local retains long computations and the separate right-continuation lane. The finite rooted separation list will not be extrapolated into a constant-class theorem or a linear debt bound.
 
 **Review receipt.** Local L209/S115 at619e4aa independently verifies GC334's triples, delays, interval-debt arithmetic and all overlap/terminal guards on464 q/r cases, including nondyadic q. Incorporated with its original symbolic proof and finite-control distinction. GC335 remains pending independent review.
+
+
+## SA1 outcome: all ten q4/q8 inclusion pulse starts are nonrooted (2026-10-07; GC337)
+
+One execution of the exact SA1 instrument published at8760e40, after safe fetch and review checks. Intel CPU0.076234s, no cap, all ten starts classified NONROOTED by exact repeated full pairs. Blind SA-P1, that someq8 separation other than2 is rooted, is REFUTED and retained. No state from this small family reaches the absorbing pair; forward-compatible hole identities do not supply its ancestry.
+
+The complete(preperiod, exact cycle length) table is:
+
+    q4: r1 (0,12), r2 (25,28), r3 (27,28).
+    q8: r1 (560,4064), r2 (73,28), r3 (166,1064),
+        r4 (49,4064), r5 (557,4064), r6 (711,4064), r7 (713,4064).
+
+C1's independent scalar inversion agrees on all256 q4 pairs and every diagnostic edge. The known roots absorb; C2's q4r1 exclusion and CF's q2 two-cycle pass. The unexpected absorbed-prefix reconstruction assertion is vacuous on the TEN SURVEYED STARTS, since none absorbs; it must not be described as ten positive reconstruction checks. To resolve that control limitation, a separate post-run positive control used the reviewed first q4 entry up to rotation: predict that(0,3) has rooted depth8, then invoke the same classification with scalar reconstruction. It reaches zero after9 inverse steps and reconstructs depth8 exactly. This is a disclosed control refinement after the diagnostic, not a preregistered blind prediction or another census run.
+
+**Meaning and scope.** Inverse absorption is an exact finite ancestry decision, so these ten periodic pair classes are excluded from every rooted history at their respective common periods, conditional on the checked execution. Rotation commuting with B covers every pulse location, not merely phase0. This does not exclude all singleton-driver nodes or all two-black predecessors: only the inclusion shapes(e_s+e_(s+r),e_s) were tested. It does not extend to arbitrary q; the already independently verified q16,r2 occurrence at depth725146 is an explicit countercontrol to such an extrapolation. In particular small-period empty sets cannot be promoted to a period-independent exclusion theorem.
+
+Transcript outside Git. No q16 inverse search, forward census, clock measurement or prize result was run. Local's offered next census can address the reachable q16 separations on the already finite TM5b tree, with a distinct preregistration and full-pair counts. Request that bounded q16 block; postpone any q32 expansion or new long trajectory. Main Q7 gaps remain open.
+
+**GC335 review incorporated.** Local L210/S116 at041e218 independently verifies exhaustive internal-start classification, the forced seven-edge delays/interval debt/one-transfer saving, terminal containment and the q4 guard. All conclusions retain unknown complementary gap debt and quadratic worst-case separation count.
+
+
+## Imported toolkit application: signed local constraints and a cancellation guard (2026-10-07; GC338)
+
+**Owner-authorized toolkit use, not an audit of the imported claims.** Read all nine entries of
+CO-DISCOVERED-PROOFS.md at shared checkpoint46f351d. The owner confirms Cloud has verified every imported
+claim and authorizes taking them on trust, including the entries with B provenance labels. Those labels remain
+unchanged. Application hypotheses and new deductions still need checking.
+
+Family175's signed-annihilation method suggests encoding forbidden local configurations through exact Walsh
+relations. This is an application of its method, not a claim that the entire discrete-convexity theorem directly
+controls rooted ancestry. For four local bits(a,b,c,d), Rule30 requires d=a XOR(b OR c). Write chi_U for the sign
+(-1) raised to the sum of the bits indexed by U. The elementary OR expansion gives the kernel
+
+    K = 2 chi_{a,d} + 1 - chi_b - chi_c - chi_{b,c}.
+
+K vanishes on every valid local tuple and equals either4 or-4 on every invalid one. If f indicates a family of
+valid finite prefix assignments, its uniform-cube Walsh coefficients therefore satisfy, for every index set U,
+
+    2 fhat(U symmetric-difference {a,d}) + fhat(U)
+      - fhat(U symmetric-difference {b}) - fhat(U symmetric-difference {c})
+      - fhat(U symmetric-difference {b,c}) = 0.
+
+The same relation holds for character moments under any actual distribution supported on valid assignments.
+Root boundary bits additionally fix the sign of the corresponding shifted coefficients. This retains joint
+constraints that marginal black counts lose. No new claim of novelty for the elementary Fourier identity is made.
+
+**Application check and identified unexpected check.** Exact enumeration of all16 local assignments gives
+eight valid tuples. All16 shifted identities for their indicator pass with rational arithmetic. The unexpected
+check exposes a weaker test's failure: the invalid tuples(0,0,0,1) and(0,1,0,0) have K=-4 and K=4. Their equal
+mixture has mean K=0 although every sample violates Rule30. Instead K squared is0 on valid tuples and16 on
+invalid ones. Thus mean(K squared)=0 characterizes local validity for an actual nonnegative distribution.
+Partial moments without positivity and a global extension do not provide that implication. Even exact local
+validity permits ambient cycles: rooted boundary conditions and actual ancestry remain essential. This is a
+possible moment-constraint instrument, not an all-period clock bound or a reopened reduced-feature potential.
+No moment optimization or new trajectory run was undertaken.
+
+**Retained failed direct application.** Applying family175's union-cover theorem to raw black supports of rooted
+full pairs gives an empty exceptional family for k>=2. Unrestricted rooted pairs include(one,one), which already
+covers every pair coordinate. Restricting to least pair period q>=2 does not repair this: the forced initial
+prefix0,c,one,e contains(c,one) and(one,e), both of least pair period q, and their union covers all2q coordinates.
+The theorem is trusted; this encoding makes its conclusion vacuous for our reachability question.
+
+Other useful tools to keep active: family186's standalone biased hypercontractivity, while its hypergraph
+influence theorem requires full vertex-relabelling symmetry rather than mere Rule30 translation covariance;
+family235's compensated potential/drift method, without treating our deterministic clauses as random3-SAT;
+and family049b's filtration method, without assuming its algebraic geometry transfers to binary ancestry.
+These are candidate connections, not derived Rule30 bounds. Next: pair Local's actual q16 separation census
+with rooted constraints, seeking a justified exclusion or compensation beyond the named pulse family.
+
+
+## Every nonterminal singleton driver forces a hole interval two words later (2026-10-07; GC340)
+
+**Bounded symbolic block, independent review requested; no new trajectory.** L211's heavy-predecessor observation
+asks whether GC334's hole mechanism survives without a two-black source. Prediction recorded before controls:
+it does. Counterfactual: predecessor weight two is essential. It is not essential for this shorter window.
+
+Use common period q>=4 and pulse B=e_s. Let C be its compatible child, with C neither0 nor e_s. Let L be the
+first positive distance from s to another black bit of C; thus1<=L<=q-1, even if C(s)=0. Then the unique compatible
+child D of the pair(B,C) is
+
+    D = one with precisely the holes s+1,...,s+L.
+
+Proof directly from the literal scalar recurrence: D(i+1)=B(i) XOR(C(i) OR D(i)). A black C bit away from s sets
+the following D bit to1. Across intervening zero C bits away from s, D propagates unchanged. Going around the
+cycle from the last such black bit to s therefore gives D(s)=1. At s the pulse sets D(s+1)=0, whether C(s) is0
+or1. This zero propagates up to s+L; that black C bit sets D(s+L+1)=1, which stays1 until the cycle returns.
+This proves the displayed word and all literal equations. It also includes C a singleton away from s.
+
+At reference arrival s+1 the successive drivers(B,C,D) have delays(q,L,1). At slope5/2 their adjusted prefixes
+are0,q-5/2,q+L-5,q+L-13/2. For q>=4 the largest ordered prefix rise is
+
+    q-5/2 + max(0,L-5/2).
+
+The last prefix is below the preceding one; both intermediate peaks are nonnegative. If the last prefix is
+negative it has no later endpoint, so it cannot increase the ordered rise. One phase transfer of q-1 bounds
+this three-edge window at arbitrary arrival by2q-7/2+max(0,L-5/2). This is a partial window charge, not a
+constant-number-of-windows theorem. Counts, overlap and complementary gap debt are still uncontrolled.
+
+**Independent hand-selected literal controls.** At q8, heavy predecessor A=255, pulse B=1 gives C=85 and
+D=249: L=2 despite predecessor weight8. Odd predecessor A=128 gives C=254,D=253,L=1; here C(s)=0, so the
+argument must not assume the pulse lies in C. Six scalar per-bit triples check these examples and the boundaries.
+**Unexpected boundary and retained failure:** C=0 occurs for A=B, and C=B forces D=0, so neither supplies the
+nonterminal three-driver clock above. My first same-pulse control incorrectly used A=0; its literal assertion
+failed. The inverse equation corrects it to A=129 at q8, and the corrected control passes. This was a failed
+control tuple, not a failed general recurrence. Ambient examples are not asserted rooted.
+
+This expands the exact shape statement to heavy sources while keeping its clock scope explicit. It does not
+settle the all-period debt or growth requirements of Q7, and does not reopen a closed reduced-feature potential.
+Next: check whether the forced hole interval can support a covering or compensation argument that pays for
+actual repeated singleton events, rather than charging each one independently by q.
+
+
+## Fourth word after a singleton: exact complement correction and heavy-source obstruction (2026-10-07; GC342)
+
+**Bounded symbolic continuation of GC340, review pending; no new trajectory or scored proof.** Prediction
+recorded before controls: the fourth word is a shifted complement with a local interval correction. Counterfactual:
+the singleton fourth word of GC334 persists for heavy predecessors. The weight identity refutes that extension.
+
+Retain GC340's common q>=4, B=e_s, C neither0 norB, L in1..q-1, and D=one with holes s+1 through s+L.
+Let T increase a bit's index by one, so (TC)(i)=C(i-1); this is the inverse of the earlier S convention. Put
+b=C(s), and J={s+2,...,s+L+1}, containing exactly L residues. The next compatible word E is
+
+    E = one XOR TC XOR (b times the indicator of J).
+
+Proof from E(i+1)=C(i) XOR(D(i) OR E(i)). Outside D's hole interval, E(i+1)=1 XOR C(i). At its first
+position, E(s+1)=1 XOR b, fixed by the black D(s). Across i=s+1,...,s+L-1, C(i)=D(i)=0 and E propagates
+this value. At i=s+L, C(i)=1 toggles it, giving E(s+L+1)=b. These are exactly the displayed correction on J;
+all remaining coordinates follow the outside equation. In J, TC has L-1 zeros and one black endpoint, hence
+
+    |E| = q-|C|                       if b=0,
+    |E| = q-|C|-L+2                   if b=1.
+
+In the first case, E is singleton exactly when C is one with its sole hole at s. The previous source
+A=SC XOR(B OR C) is then e_(s-1), of weight1. In the second case, E is singleton exactly when C has
+no zeros except the forced interval s+1,...,s+L-1: its maximum possible weight is q-L+1, and equality is
+necessary and sufficient. For L>1 that gives A=e_s XOR e_(s+L-1), weight2; for L=1 it gives C=one and A=0.
+Thus a singleton E forces the predecessor A to have weight0,1 or2. Every source with weight greater than2
+has |E|>=2. This excludes the singleton fourth-word conclusion for heavy sources without asserting rooted
+occurrence of any ambient example. It still permits large fourth-edge delays: weight>=2 only gives the
+finite-gap upper bound q-1, which saves at least one against a pulse's q, not enough for an all-stage budget.
+
+**Independent fixed literal controls:** q8 heavy A=255,B=1,C=85,D=249 gives E=89, weight4; odd A=128 gives
+C=254,D=253,E=2. The original two-black A=5 gives C=249,D=241,E=16. Seven per-bit triples pass.
+**Identified unexpected check:** zero predecessor A=0 gives C=255,D=253,E=4. Hence the stronger guess that
+singleton E forces predecessor weight exactly2 is false; the zero-source boundary is essential. No control
+failure or long computation occurred in this block.
+
+This explains a structural difference between the rare named starts and L211's many heavy-source singleton
+events. It does not prove repeated-event sparsity, compensation, normalized growth or a prize result.
+Next: use the exact fourth-word support, rather than its weight alone, to seek a legitimate window covering.

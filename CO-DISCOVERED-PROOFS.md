@@ -17,13 +17,18 @@ entry says which:
   its small instances; the general proof has not been reviewed. A level-B formula is true where it was checked and
   claimed beyond.
 
+**How the workers use it.** The owner, 2026-10-07: "A frontier OpenAI model made the claim, you Anthropic's Claude
+have (at reasonable surface depth) verified the claim, that is sufficient for our purposes here." So within this
+project an imported entry is a tool to use, with its level stated, and the workers take Cloud's checks at face value
+rather than repeating them. A result built on one of these tools is still checked as our own work.
+
 Each entry gives the statement, what it does in a line, how it was checked, and where it might touch our work. The
 scripts are in `tests/probes/openai_math/`; their predictions were pushed before they ran (commit `a457f78`).
 Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
 (that needs the toolchain and a mathlib build, and is the first of the hard ones).
 
-**Imported so far (2026-10-07): 11 entries from 9 of the 372 families, 8 at level A and 3 at level B.** Batch 1 was
-088, 049, 205, 189 and 119; batch 2 is 049b, 186 (with its graph companion), 175, 175c, 235 and 332.
+**Imported so far (2026-10-07): 12 entries from 10 of the 372 families, 9 at level A and 3 at level B.** Batch 1
+was 088, 049, 205, 189 and 119; batch 2 is 049b, 186 (with its graph companion), 175, 175c, 235, 332 and 003b.
 
 | Family | Result | Level | Script |
 |---|---|---|---|
@@ -35,6 +40,7 @@ Where the release says a Lean formalisation exists, the entry says so; Cloud has
 | 235 | Random 3-SAT's hitting time has variance $\Theta(n)$ (upper bound read in full) | A | `om235_sat_variance.py` |
 | 175c | Fractional and integral thresholds agree within $25 \cdot 512^4$ | A | `om175c_expectation_thresholds.py` |
 | 332 | $\ell_1$ has metric Markov cotype two, $N_2(\ell_1) \le 12\sqrt{21}$ | A | `om332_markov_cotype.py` |
+| 003b | No Landau–Siegel zeros, $(1 - \beta)\log q \ge c$ (see its warning) | A | `om003b_siegel_determinant.py` |
 | 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
 | 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
 | 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
@@ -256,8 +262,11 @@ within 20 seconds each. The larger cases ran for many minutes, so a second encod
 split by the largest red degree $D$ (relabel so that vertex 0 has degree $D$ and neighbours $1, \ldots, D$, and bound
 every degree by $D$). Its control is to find a colouring one vertex below the threshold, and it agrees with the plain
 encoding on $(7,3)$. It settles $(5,4)$ at 13 vertices and $(6,4)$ at 16 in seconds per degree. So 8 of the 9 cases
-agree with the formula and none disagree. $(5,5)$ at 17 vertices is still running at the time of writing; its
-first degree, $D = 4$, is the hard one. The general proof is not reviewed.
+agree with the formula and none disagree. $(5,5)$ at 17 vertices is unsettled: the plain encoding ran out of its
+900 seconds, and the split ran out of its 3,600 seconds on the very first degree, $D = 4$. That case is impossible
+by hand: a 5-cycle-free graph has no $K_5$, so by Brooks' theorem it is 4-colourable, and 17 vertices then force 5
+independent ones. But no solver confirmed it, and the larger degrees were not reached. The general proof is not
+reviewed.
 
 **For us.** Not related, beyond being an exact extremal threshold settled by a finite search plus a proof.
 
@@ -572,6 +581,81 @@ reached 11.5, so the medians do the work.
 **For us.** "Replace each point by the median of three random-walk endpoints" is a concrete, provably
 bounded-cost smoothing on $\ell_1$, and Hamming distance is an $\ell_1$ distance. It could smooth an ensemble of
 Rule 30 configurations along a Markov chain on them, as a regularity tool for the averaging in our probes.
+
+---
+
+## 003b. No Landau–Siegel zeros, by an interpolation determinant (level A, with a warning)
+
+*Preprint:* "Uniform exclusion of Landau–Siegel zeros", 2026-10-01, the second paper of family 003. Lean: the
+release's family 003 note lists a formalisation of this real-zero gap (`SiegelZeros.lean`); Cloud has not compiled
+it. The family's main preprint, a zero-free half-plane $\mathrm{Re}\, s > 7/8$ for every Dirichlet $L$-function,
+would imply this result outright; it has not been read here. This paper is an independent and elementary proof.
+
+**Warning.** This is the largest claim imported so far. Excluding Landau–Siegel zeros has been open since Siegel
+and Landau in the 1930s. It would make Siegel's theorem effective (an explicit lower bound on $L(1, \chi)$, hence
+on class numbers), and it would remove the exceptional case from primes in arithmetic progressions. Cloud read
+every line and found no error. Within this project that suffices (the owner's ruling, above). Outside it, this is
+one careful reader rather than the verdict of the field, and anyone relying on it elsewhere should seek an expert
+review or a compiled Lean check.
+
+**Statement.** There is an absolute $c > 0$ such that every real zero $\beta \in (0, 1)$ of every primitive
+nonprincipal real Dirichlet $L$-function of conductor $q \ge 3$ satisfies
+
+```math
+(1 - \beta)\log q \ge c .
+```
+
+**How it works.**
+1. *Prime bias.* Classically, a zero with $\delta = (1 - \beta)\log q$ small makes the primes with $\chi(p) = 1$
+   rare, up to any fixed power of $q$:
+   $\sum_{p \le X, \chi(p) = 1} \log p / p \ll \log q + \delta (\log X)^2 / \log q$.
+2. *The determinant.* In $\mathcal R = \mathbb{Z}[\sqrt d, \sqrt 2]$ take
+   $\theta_n = n_1 + n_2\sqrt d + n_3\sqrt 2 + n_4\sqrt{2d}$ for $n \in \{0, \ldots, N-1\}^4$. Form rows
+   $\big(\theta_n^{x}\,\sigma(\theta_n)^{y}\,\sigma\tau(\theta_n)^{z}\big)_n$, ordered by the weight $x + Hy + Hz$,
+   and keep a row whenever it raises the rank. A new interpolation lemma (a nearest-lattice-point argument on a
+   projected integer box) guarantees $N^4$ kept rows of weight at most $96 H^{2/3} N^{4/3}$, so the determinant
+   $\Delta$ is nonzero and most of its exponent sits on $x$.
+3. *Frobenius.* At a prime $p$ inert in $\mathbb{Q}(\sqrt d)$, $\theta^p \equiv \sigma(\theta)$ or
+   $\sigma\tau(\theta) \pmod p$. Subtracting rows of smaller weight (which never changes $\Delta$) gives
+   $\Delta \in p^{\sum_\alpha \lfloor x_\alpha / p \rfloor}\mathcal R$.
+4. *The count.* With almost every prime inert, divisibility contributes about $S_1 \log U$ to
+   $\tfrac14\log|\mathrm{Nm}\,\Delta|$, with $U = N^{4/3}$. Hadamard allows only about
+   $(S_1 + S_2)\,\tfrac34\log U$, because $\log N = \tfrac34 \log U$. Taking $H$ large makes $S_2/S_1$ small, and
+   $N = q^\gamma$ with $\gamma$ large swamps the $\log q$ terms, so that $1 \le 13/16 + 1/16$: a contradiction.
+
+**What it does.** It turns "almost every small prime is inert" into an impossible divisibility of a nonzero
+algebraic integer, through Frobenius congruences in a biquadratic field.
+
+**How it was checked.** Cloud read the paper in full. All of these hold:
+- the analytic lemma, a standard logarithmic-derivative argument;
+- the interpolation lemma, including the supporting-face, Carathéodory and Lagrange steps;
+- the weighted greedy selection, with $S_2/S_1 \le (C_0/c_0)/H$;
+- the divisibility, a unit lower-triangular change of rows over $K$, so no integrality is needed;
+- the final inequality (master).
+
+*Cloud's consistency check, not in the paper.* Primes that split completely in $K$ also satisfy
+$\theta^p \equiv \theta$, so they divide $\Delta$ too. Inert and completely split primes together have density
+$3/4$, exactly the $3/4$ in Hadamard's bound. Without a Siegel zero the method is exactly balanced, so it proves
+nothing false in the generic case; only the zero's bias toward inert primes tips it. The script checks the algebraic
+core exactly, in five fields ($d = -1, -7, 5, 3, -163$):
+- the Frobenius congruence at every inert prime below 60, and $\theta^p \equiv \theta$ at completely split primes;
+- the actual determinant for $N = 2$ (16 kept rows): nonzero, in $\mathcal R$, with integer norm;
+- $\Delta \in p^{E_p}\mathcal R$ at every admissible prime;
+- Hadamard's bound, and $\mathrm{Nm}\,\Delta$ divisible by $\prod p^{4E_p}$;
+- the interpolation lemma's spanning claim at its own budget (the smallest spanning box needs exponents only up to
+  2, against the budget of 11).
+
+Control: the $\sigma$ congruence fails in all 160 tests at split primes with $(2/p) = -1$, so the test can tell the
+cases apart. *Unexpected check:* Cloud guessed that the forced share of $\log|\mathrm{Nm}\,\Delta|$ would be largest
+for $d = -163$. That was wrong ($d = -1$, at 12%), because at $N = 2$ the exponents reach only 5 and only $p = 3, 5$
+count. A post-hoc run at $N = 3$ (81 kept rows, exponents up to 10) holds too. At $d = -163$, $\Delta$ is divisible by
+$3^{41}$, $5^{15}$ and $7^5$, with $\tfrac14\log|\mathrm{Nm}\,\Delta| = 913.5$ against Hadamard's 2342.0. At $d = -1$
+it is divisible by $3^{47}$ and $7^6$, with 386.8 against 1672.3. The asymptotic contradiction itself needs
+$H \approx 10^8$ and $N = q^\gamma$, beyond any computation.
+
+**For us.** The engine, "Frobenius congruences make a structured determinant divisible by many primes, while
+Hadamard caps its size", is an arithmetic counting principle. The Collatz record works with the arithmetic of 2
+and 3, and this is a model of turning a density of prime behaviour into a contradiction.
 
 ---
 

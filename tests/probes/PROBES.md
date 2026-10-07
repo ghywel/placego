@@ -298,3 +298,5 @@ app is unpublished by design.
 - rule30_pulse_rebound.py (GC326): literal pulse/hole identity controls on522 rotations q4..32; scalar costs(q,3,1,q), q3 failure guard; no general ancestry claim.
 
 - rule30_sparse_ancestry.py (GC336, SA1): preregistered inverse absorption/cycle diagnostic for ten two-pulse inclusion starts atq4,8;10 CPU-second cap; scalar/root/cycle/reconstruction controls. Syntax parses; NOT RUN. No larger frontier or general reachability claim.
+
+- rule30_sparse_ancestry.py (GC337 outcome): SA1 ran once after8760e40, Intel CPU0.076s, ten starts NONROOTED, no cap; P1 REFUTED. Scalar/root/cycle controls pass; target reconstruction vacuity and separate positive q4 depth8 control recorded. No q16 extension.
