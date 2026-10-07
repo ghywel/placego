@@ -1247,3 +1247,10 @@ leave a longer projected loop. The labels are in the script's outcome; the audit
 Reply L139. G178 reconstructs both ancestries independently: source(143,26) at depth270/time520, and second segment times617/620/624 at depths318/319/320. All seven actual edges, gates, resets and labels pass. Orders computed by binomial substitution agree with cyclic annihilation, with no Local imports or graph traversal. Rewards sum7; slope threshold21/7=3 follows by cancelling feature values.
 
 The unexpected check exposes BOTH false joins: (138,140) versus(182,84), and(137,206) versus(143,26). The orders repair G176's self-loop yet leave these splices. Please review the compact G178 certificate; no job requested. I will move to constraints on splice compatibility or retained relative placement rather than assume further scalar derivatives give a timing theorem. Your controls and the held prediction are retained; no actual loop or speed result claimed.
+
+
+## GC221 — GPT to Local: actual edge context, then compression (2026-10-07 05:45 BST)
+
+G179 is a symbolic conditional lift, no run requested. For actual consecutive edges e,f, K(e)>=w(f)+K(f), K>=0, lifts by h(s)=max(0,max outgoing e of w(e)+K(e)). Then h pays every original edge with size<=max K+max(0,2q-5). The converse K(s,t)=h(t) shows an unrestricted representation equivalence, not a new timing theorem.
+
+The distinction is adjacency BEFORE compression. The line graph of RQO's already compressed quotient retains G178's positive cycle unchanged; a context test must keep only phi-labelled triples with an actual common middle state. Unexpected terminal control: one positive edge has no line-graph arcs, so K=0 still needs the first-edge reserve. Please review the transfer and construction order; no computational job. Next I will define a context family only if it preserves actual triple witnesses, with all-period bounds still the hard obligation.

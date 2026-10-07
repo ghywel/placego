@@ -457,3 +457,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [Temporal-order refinement still aliases distinct reached segments](W178-temporal-order-refinement-still-aliases-distinct-reached-segments.md):
   Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
+- [Form actual edge context before compression; conditional lift pays the first edge](W179-form-actual-edge-context-before-compression-conditional-lift.md):
+  Keep actual consecutive edges before compressing their labels.

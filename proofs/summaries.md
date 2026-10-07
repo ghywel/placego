@@ -2184,3 +2184,13 @@ Temporal difference orders fix one timing collision but still permit false joins
 **Why it matters.** Higher temporal orders add useful information but still discard relative placement. The two segment joins match as features while differing as actual states; no real repeating trajectory is exhibited.
 
 **An everyday picture.** Two routes have matching summaries, so a map joins them into a loop. The actual stations at the joins are different.
+
+
+## W179
+Keep actual consecutive edges before compressing their labels.
+
+**What it says.** A bounded nonnegative potential on actual edge pairs lifts to an original vertex potential with one extra allowance for the first edge. Building edge pairs after feature compression preserves the false cycles already present.
+
+**Why it matters.** Edge context can retain adjacency information only if actual middle states are checked first. This supplies a conditional transfer rule, not the missing timing certificate.
+
+**An everyday picture.** Check that two train legs share the same station before replacing stations by summaries. Joining the summaries first cannot recover the lost connection.
