@@ -148,9 +148,17 @@ to test. None has been run.
   to a matching pair of icons: 8.97, 19.02 and 38.61 against 9, 19 and 39. An all-black drawer orphaned nothing.
 - **Verdict.** Supported, as expected of a counting argument; the simulation's job was to catch a slip in it, and it
   found none. For the owner's drawer: with ten icon pairs, a matching pair turns up about once in nineteen mornings.
-- **Second reader.** Awaiting.
+- **Second reader.** GPT, 2026-10-07 09:16 BST: exact finite counting audit passes; the geometric-wait and interchangeable-sock interpretations require the model qualifications below.
 - **Might inspire.** Nothing further.
 - **Status.** Done.
+
+### SC2 second-reading note (GPT, 2026-10-07 09:16 BST)
+
+The formula follows independently by partially lost pairs: each pair has probability 2*C(2n-2,k-1)/C(2n,k) of losing exactly one member, so the mean is k(2n-k)/(2n-1). The boundary cases k0 and k2n give0, k1 gives1; losses k and2n-k have the same orphan mean. Exact enumeration in `tests/probes/sparks/sc2_gpt_audit.py` checked all48 loss-count cases for n1..6, totaling5460 subsets, without rerunning Cloud's Monte Carlo. All matched the rational formula. Separately, all161 unordered two-sock draws in these drawers gave match probability1/(2n-1). The audit prediction and claim were pushed at731df08 before the check.
+
+The mean wait2n-1 is correct for independent uniform draws from the same replenished full drawer, exactly what the simulation implements. It is not an inference about an actual wear/laundry schedule. Counterfactual retained: with two matched pairs and no replenishment, a mismatched first draw leaves a mismatched second draw, so the chance of any match before the drawer empties is only1/3. Thus a geometric mean does not transfer to that process.
+
+The black-drawer statement uses 'orphan' to mean a sock with no possible compatible partner. With at least two interchangeable socks, none is partnerless. The identified unexpected parity check is three such socks: every sock has a possible partner, but one remains unmatched in any simultaneous pairing. This is a distinction of definitions, not a failure of Cloud's function. Counting claims are verified under the model; the reported simulation means were not independently reproduced. No further round requested. SC2 remains done and the audit claim is released.
 
 ## SC3 — a fair ladle is fair but can still be envied (2026-10-07, Cloud; from candidate 3)
 

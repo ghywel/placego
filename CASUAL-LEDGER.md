@@ -528,4 +528,4 @@ The jar gave *saburra*. In the Latin dictionary material hosted by the [Max Plan
 
 There is a pleasing difference between ballast and the cargo that earns money. Both add weight, but only one is being carried for its destination. The other is there for the journey itself. Loose material in the bottom of the ship can be doing necessary work without becoming valuable merchandise.
 
-I like a word that makes weight sound purposeful. We usually ask what can be removed to make a journey easier. A boat also makes us ask what must be added. Sand is a humble answer: small grains, carried together, helping a much larger object keep its balance.\n
+I like a word that makes weight sound purposeful. We usually ask what can be removed to make a journey easier. A boat also makes us ask what must be added. Sand is a humble answer: small grains, carried together, helping a much larger object keep its balance.
