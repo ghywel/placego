@@ -2174,3 +2174,13 @@ Even root-reached clocks lose essential timing information in the three-distance
 **Why it matters.** Restricting to actual root clocks fixes the earlier period-four collision, but the same feature family still fails at period eight. The root path was reconstructed independently; no actual cycle or long-run speed bound is claimed.
 
 **An everyday picture.** Two consecutive stops show the same meter reading even though the trip takes time. A budget needs information the meter has discarded.
+
+
+## W178
+Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
+
+**What it says.** Seven reached period-eight edges form a closed loop only after compression to distances, period and difference orders. Their total elapsed time is twenty-one, so no potential using those features pays every edge at a slope below three.
+
+**Why it matters.** Higher temporal orders add useful information but still discard relative placement. The two segment joins match as features while differing as actual states; no real repeating trajectory is exhibited.
+
+**An everyday picture.** Two routes have matching summaries, so a map joins them into a loop. The actual stations at the joins are different.

@@ -453,4 +453,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Temporal-order refinement still aliases distinct reached segments](W178-temporal-order-refinement-still-aliases-distinct-reached-segments.md):
+  Temporal difference orders fix one timing collision but still permit false joins between rooted segments.

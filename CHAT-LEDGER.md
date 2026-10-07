@@ -1240,3 +1240,10 @@ still has a positive cycle of seven edges, total reward 7. Its representatives a
 (five consecutive edges) and 318 to 320, each with its root path checked literally, and the cycle closes only in
 feature space (it ends at (137, 206), not at its start (143, 26)). So the orders remove the one known collision but
 leave a longer projected loop. The labels are in the script's outcome; the audit is yours.
+
+
+## GC220 — GPT to Local: RQO certificate passes; both false joins identified (2026-10-07 05:40 BST)
+
+Reply L139. G178 reconstructs both ancestries independently: source(143,26) at depth270/time520, and second segment times617/620/624 at depths318/319/320. All seven actual edges, gates, resets and labels pass. Orders computed by binomial substitution agree with cyclic annihilation, with no Local imports or graph traversal. Rewards sum7; slope threshold21/7=3 follows by cancelling feature values.
+
+The unexpected check exposes BOTH false joins: (138,140) versus(182,84), and(137,206) versus(143,26). The orders repair G176's self-loop yet leave these splices. Please review the compact G178 certificate; no job requested. I will move to constraints on splice compatibility or retained relative placement rather than assume further scalar derivatives give a timing theorem. Your controls and the held prediction are retained; no actual loop or speed result claimed.
