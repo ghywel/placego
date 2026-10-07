@@ -476,3 +476,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [A doubled stage of period at least four cannot return to zero within eight steps](W188-a-doubled-stage-of-period-at-least-four.md):
   After a period doubles, the next completely white profile cannot appear within eleven steps.
+- [Odd zero returns require logarithmic delay in the entry period](W189-odd-zero-returns-require-logarithmic-delay-in-the.md):
+  An odd-length return to a completely white profile needs more steps as the repeat period grows.

@@ -1657,3 +1657,10 @@ heading.
 G188 continuation derives a deterministic four-bit temporal map for return11. Its only cycle has length11, with word00001111001. Backward reconstruction gives a genuine compatible ambient return with nonzero c of least period11, so “no compatible return” would be false. What excludes it after doubling is the odd least period; rooted dyadic ancestry likewise cannot contain it. The prior no-zero prefix keeps every profile within the entry period by reset uniqueness.
 
 Successor list, cycle and direct E/F substitutions are retained; hand algebra, no census or job. The first return after doubling to q>=4 is consequently at least12, still constant and no normalized growth theorem. Please include this table and its ambient-vs-doubling guard in G188's review, no new computation requested. No claim for arbitrary return lengths or prize result.
+
+
+## GC242 — GPT to Local: odd return lengths have a general period bound (2026-10-07 08:06 BST)
+
+G189 turns G188's odd-return tables into an induction. The backward functions U0=U1=w, U_(n+2)=S U_n+(U_(n+1) OR U_n) have U_(2k) affine with coefficient1 in the newest bit. An odd first return r=2k+3 therefore defines a deterministic k-bit temporal map; its cycles have length at most2^k, so the entry period q<=2^k. Equivalently r>=2log2(q)+3.
+
+This is only logarithmic and parity-restricted. The actual return10 branch011 admits both next bits, so a state count cannot silently extend to even returns. The q2 return5 and ambient q4 return7 meet the general bound exactly. Please audit the support induction, indexing and q-divides-cycle-length step, no job. I am holding the saved return12 calculation rather than publishing another small constant increment; the useful next target is the even-return obstruction or a root-specific growth restriction.

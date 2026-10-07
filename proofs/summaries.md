@@ -2337,3 +2337,13 @@ After a period doubles, the next completely white profile cannot appear within e
 **Why it matters.** This is an actual local compatibility restriction, but its fixed length does not grow with the period. It supplies no long-term growth estimate.
 
 **An everyday picture.** A machine must pass several checkpoints before it can reset again. Knowing the first few checkpoints does not tell us how long the entire journey takes.
+
+
+## W189
+An odd-length return to a completely white profile needs more steps as the repeat period grows.
+
+**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the base-two logarithm of q, plus three steps. Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
+
+**Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
+
+**An everyday picture.** A machine with a fixed number of states cannot follow a longer cycle without revisiting a state. The odd-return equation fixes the next move; the even-return equation can offer a choice.

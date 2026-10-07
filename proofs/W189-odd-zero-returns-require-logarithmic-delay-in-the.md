@@ -1,0 +1,49 @@
+# Odd zero returns require logarithmic delay in the entry period
+
+*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G189 — Odd zero returns
+require logarithmic delay in the entry period (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+
+**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+
+## In plain words
+
+An odd-length return to a completely white profile needs more steps as the repeat period grows.
+
+**What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the base-two logarithm of q, plus three steps. Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
+
+**Why it matters.** This gives a period-dependent restriction for odd returns. Even returns can branch, and this slow-growing bound does not establish long-term period growth.
+
+**An everyday picture.** A machine with a fixed number of states cannot follow a longer cycle without revisiting a state. The odd-return equation fixes the next move; the even-return equation can offer a choice.
+
+## The formal statement and proof
+
+**Odd-return period bound, second reader pending; symbolic, no run.** Let compatible periodic profiles start with0,c,1, where c is nonzero of least period q. Suppose the first subsequent identically zero profile occurs at an ODD position r=2k+3, counting the initial zero as position0. Then
+
+    q <= 2^k; equivalently r >= 2*log2(q)+3.
+
+This applies to a doubled dyadic stage when its first zero return is odd. It does not assert that first returns are always odd, or that logarithmic delay supplies the normalized growth required by G186/G187.
+
+**Prediction and counterfactual before the hand checks.** The backward profile functions at even indices should be affine with coefficient1 in their newest temporal bit, so a constant-one condition determines that bit. At odd indices this coefficient can vanish. The counterfactual that every return constraint is deterministic should fail at G188's return10 branch. The controls below check these three claims without a census or computational job.
+
+**Backward functions and their temporal support.** At the final zero the preceding two profiles must be equal; call them w,w. Define U0(w)=U1(w)=w and, for n>=0,
+
+    U_(n+2)(w) = S U_n(w) + (U_(n+1)(w) OR U_n(w)).
+
+Here S w(t)=w(t+1), addition is XOR, and OR is pointwise. This is exactly the compatibility equation solved for the preceding profile, not a model that drops its background. By induction, U_(2j) and U_(2j+1) depend only on bits w(t)..w(t+j). Moreover
+
+    U_(2j)(w)(t) = w(t+j) + A_j(w(t),...,w(t+j-1))
+
+for a Boolean function A_j (A0=0). For the induction step, S U_(2j) has the new bit w(t+j+1) with coefficient1; the OR term in U_(2j+2) depends only on bits through t+j and cannot cancel it. The odd function U_(2j+3) has support through t+j+1, because it is S U_(2j+1) plus an OR term on that same support. This proves both support and affine claims.
+
+In a return of length r, the profile at position2 is U_(r-3)(w), and the entry at position1 is U_(r-2)(w). Thus odd r=2k+3 forces U_(2k)(w)=1. For k>=1 this fixes
+
+    w(t+k) = 1 + A_k(w(t),...,w(t+k-1)).
+
+The k consecutive bits are therefore a state of a deterministic shift map with2^k states. Because w is periodic, its state sequence is a directed cycle, of length P<=2^k. Its temporal word repeats with period P. Every reconstructed profile, including c=U_(r-2)(w), also repeats with P, since these functions commute with time shift. Hence the least period q of c divides P and q<=2^k. For k=0, U0(w)=1 gives w=1 and q=1, yielding the same bound directly. No root reachability assumption is needed for this necessary bound.
+
+**Independent literal and formula controls.** The first functions are U2=Delta w, U3=w*Delta w and U4=Delta^2 w, where Delta=I+S. Thus the r=5 equation fixes w(t+1)=1+w(t), and the r=7 equation fixes w(t+2)=1+w(t), matching G188's alternating and0011 cycles. The literal first return0,01,11,01,01,0 has q2,r5 and meets the bound exactly. Direct forward substitution checks its four interior triples: the right-hand sides are11,10,10,00, respectively, equal to the shifted children. Its preceding source is constant1, so this also guards the essential q2 exception in G188. The ambient r7 control there has entry1101 of least period4 and also meets the bound exactly, but is not an odd-source doubling. G188's ambient r11 entry has period11<=16, consistent with the bound and inconsistent with a blanket dyadic claim for ambient histories.
+
+**Identified unexpected check: even returns retain branching.** U3(x,y)=x*(1+y) is independent of y when x=0, so the even-index induction does not extend to all U_n. More directly, G188's actual r10 condition admits BOTH next bits from state011, even though its full graph has no periodic cycle. This prevents replacing the even return condition with a deterministic map on the same states. For a nondeterministic graph, a periodic word can revisit states before its least temporal period: even the full binary shift admits words0^(m-1)1 of arbitrary least period m on a fixed finite state graph. That abstract control is not a compatible Rule30 return. It only shows why counting states alone is insufficient for the even case.
+
+**Existing record, scope and next obligation.** This generalizes the deterministic odd-return maps of G188 using the backward identity already present in G7/G159. Finite deterministic maps and their cycle bounds are standard; no literature novelty is claimed. The result is a parity-restricted necessary logarithmic delay, not a growing normalized delay: log2(q)/q tends to0. Even first returns, ancestry restrictions and recurrence of large normalized stage lengths remain open. Local: please second-read the support induction, r-3 indexing and least-period divisibility; no new job or larger cap requested. The saved return12 calculation remains unpublished rather than supplying another fixed-bound increment.
