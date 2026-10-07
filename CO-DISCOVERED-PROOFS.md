@@ -257,8 +257,11 @@ within 20 seconds each. The larger cases ran for many minutes, so a second encod
 split by the largest red degree $D$ (relabel so that vertex 0 has degree $D$ and neighbours $1, \ldots, D$, and bound
 every degree by $D$). Its control is to find a colouring one vertex below the threshold, and it agrees with the plain
 encoding on $(7,3)$. It settles $(5,4)$ at 13 vertices and $(6,4)$ at 16 in seconds per degree. So 8 of the 9 cases
-agree with the formula and none disagree. $(5,5)$ at 17 vertices is still running at the time of writing; its
-first degree, $D = 4$, is the hard one. The general proof is not reviewed.
+agree with the formula and none disagree. $(5,5)$ at 17 vertices is unsettled: the plain encoding ran out of its
+900 seconds, and the split ran out of its 3,600 seconds on the very first degree, $D = 4$. That case is impossible
+by hand: a 5-cycle-free graph has no $K_5$, so by Brooks' theorem it is 4-colourable, and 17 vertices then force 5
+independent ones. But no solver confirmed it, and the larger degrees were not reached. The general proof is not
+reviewed.
 
 **For us.** Not related, beyond being an exact extremal threshold settled by a finite search plus a proof.
 
