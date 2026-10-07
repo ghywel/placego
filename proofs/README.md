@@ -490,4 +490,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Long overlap delays an exit's return to the original circuit](W197-long-overlap-delays-an-exit-s-return-to.md): A
+  long window keeps an exit from quickly returning to the old circuit.

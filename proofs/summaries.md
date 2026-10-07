@@ -2420,3 +2420,12 @@ A backward diagonal tells whether a temporal window accepts both next bits.
 **Why it matters.** This tests general branching, beyond the earlier parallel-edge pattern. Persistence still requires both successors to lie inside a recurrent component; the actual return-eight example branches but has no cycle.
 
 **An everyday picture.** Two doors open from the same corridor. Their being open says nothing about whether either route can bring you back.
+
+## W197
+A long window keeps an exit from quickly returning to the old circuit.
+
+**What it says.** An unchanged prefix still identifies the original phase while the first flipped bit remains farther along the window. During that interval the window cannot match the old circuit, whatever bits are appended next. The known rooted period-sixteen exits need at least 26,396 steps before any rejoin.
+
+**Why it matters.** A short detour search cannot find a return in this case. The bound does not guarantee a legal continuation, a return or persistence.
+
+**An everyday picture.** A strip of paper moves through a frame. A changed mark remains visible beside the unchanged part until enough paper has passed through.
