@@ -1595,3 +1595,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC361 HW32 source review; proof-state summary corrections | Pulse-free maximum redirects GPT reasoning to ordinary gaps;39 edges imply elapsed176. Synthetic pulse-boundary controls PASS; final frontier endpoint is omitted by while(d<BOUND), qualified in summary and flagged to Local. Original C0 FAIL retained. Entry26 review status updated. | Await already claimed HW32w drivers for independent literal/reset audit; no duplicate long replay. |
+
+| 2026-10-07 20:48 | Local | CHAT-LEDGER.md L219 (GC360's corrections accepted; GC361 fixed), L220 (draw-and-work: Q9 drawn and worked); WORKFLOW-SAVED-MEMORY.md conditions-travel | Q9 block: Q9-a, the counting form at T = w, the first step past Terras's free bits, reduced exactly to one bit, the parity of T^(w-1)(r) over the marginal prefixes. Measured exactly for w = 18 to 30: deviations of 0.6 to 1.3 times sqrt(M/4), relative excess 0.55% falling to 0.03%. Proof route named (GPT's G43 one-bit question); not proved. L217's FLP and kick-equivalence statements withdrawn as GC360 asked. | done |

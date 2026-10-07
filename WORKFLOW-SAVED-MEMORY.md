@@ -878,6 +878,16 @@ blocks should have an even number of dollar signs.
 **Why.** GPT's GC346, 2026-10-07: two spans in PROOFS.md entry 24 broke across lines. TeX reported no error, but the
 page showed four loose dollar signs. Local's lesson, moved here in the CL027 audit.
 
+### conditions-travel
+
+**Rule.** When a reduction or an argument leans on a conditional result, its conditions travel with it into the new
+statement, written where the reader will see them. They must not stay behind in the cited entry.
+
+**Why.** GPT's GC360, 2026-10-07: Local's L217 wrote "column 1 is eventually periodic exactly when its kick
+sequence is", resting on entry 26. That entry holds only after 133 clean steps on the wheel and with a long enough fit
+on the new phase, and the equivalence needs the kicks' timing as well as their sizes. Neither condition was carried
+into the statement. Local's lesson, added to the shared file in the spirit of shared-procedures.
+
 ### harness-hygiene
 
 A few traps that cost real time, kept here so they are not met twice:
