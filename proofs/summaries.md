@@ -173,8 +173,10 @@ a fixed error), at ever longer lengths, then the left half cannot be finite.
 
 **Why it matters.** It rules out a whole family of "nearly periodic" inputs at once, not just exactly periodic ones.
 
-**An everyday picture.** A forger who copies the opening of a signature too exactly is caught by that very
-precision.
+**An everyday picture.** The opening of a note, its attack, is where you hear which instrument made it, before the
+sound settles into its steady tone; synthesisers that splice a sampled attack onto a synthetic tone make you hear
+the attack's instrument (the owner's reading). A note that is already repeating itself from its first instant, at
+every scale you listen at, has no attack, so no real instrument, one with edges, struck it.
 
 ## 12
 Once the edge band settles into its rhythm, it has no long white gaps.
