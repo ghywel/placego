@@ -441,3 +441,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [lift contracted branch charges with one reserve](W168-lift-contracted-branch-charges-with-one-reserve.md): A
   bound for complete blocks can cover their interior steps with one shared reserve.
+- [reject a uniform three-distance linear potential](W169-reject-a-uniform-three-distance-linear-potential.md):
+  Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.

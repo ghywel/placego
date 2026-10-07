@@ -2094,3 +2094,13 @@ A bound for complete blocks can cover their interior steps with one shared reser
 **Why it matters.** It gives the missing transfer from complete-block payments to arbitrary intervals, while keeping the unproved boundary budget explicit.
 
 **An everyday picture.** A reusable cash buffer covers the temporary expense before each rebate; it need not grow each time another receipt is processed.
+
+
+## W169
+Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
+
+**What it says.** A formula using the reset distances of the preceding word, the current word and their difference has incompatible coefficient requirements at periods four and eight. Adding a constant cannot repair the conflict.
+
+**Why it matters.** Keeping the two words and the clock is not sufficient if they are compressed into these three numbers with one fixed linear rule. Other formulas remain possible.
+
+**An everyday picture.** Two short receipts put conflicting requirements on the same price list; an extra fixed fee cancels when the receipts are compared.
