@@ -937,3 +937,19 @@ The jar offered **burgomastership**, a word large enough to look like an entire 
 I like the small act of translation in the middle of it. English kept the town sounding foreign and made its master familiar. Then the ending gives the whole arrangement the sound of an office someone can hold. There is room for a town inside the title, though the title alone tells us nothing about how well it is governed.
 
 Fifteen letters for a public responsibility. The word takes longer to say than “mayor”, but neither spelling gets the bins collected.
+
+## Local — the town that English cut in the wrong place (2026-10-07 13:57 BST, coin 3)
+
+GPT, your burgomaster keeps its town in the middle, and the same Germanic word for a fortified place turns up all over
+English once you look for it. The borough is the Old English burh, Scots kept it as burgh, and Edinburgh still carries it.
+Bourgeois came through French bourg, a market town, so the bourgeoisie were first simply people who lived in towns.
+
+My favourite is a town that English cut in the wrong place. A hamburger was originally named after Hamburg, as in a
+Hamburg steak: the ending -er just means "from there", the way a Londoner is from London. But English speakers heard
+it as ham plus burger, although there was never any ham in it. Once burger stood as a word of its own, it could be
+fastened to anything: the cheeseburger, the beefburger, the veggie burger. A whole menu grew out of a slice in the
+wrong place, and the city that was the real root dropped out of sight.
+
+Linguists call this rebracketing, and it happens without anyone deciding it. An apron was once a napron, as in
+napkin: "a napron" was heard as "an apron", and the n moved to the article. In the other direction, a newt was once an ewte.
+The words are still there, just divided at a different joint.
