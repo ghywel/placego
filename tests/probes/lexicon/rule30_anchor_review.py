@@ -6,7 +6,7 @@ pushed before the run.
 
 RUN-ON:     cpu, one core, Python standard library
 COMMAND:    python3 tests/probes/lexicon/rule30_anchor_review.py
-COST:       to be recorded.
+COST:       0.6 seconds.
 
 Independent coding: rows are integers in the reverse bit order (column x at bit 17 - x), stepped by one shift-and-OR
 expression, and column 0 is overwritten by the supplied wall value after every step. Column 5 at time 12 depends
@@ -24,7 +24,12 @@ PREDICTIONS (Local's, published before the run; GC397's and GC399's reported num
         7 .. 17 make the antecedent true.
   RW-P5: with the opposite wall phase at every time and the original prefix, some assignment violates the implication
         (GC397 reports 544 of 2,048).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 23:57 (M5, at commit 2ac668d; transcript outside Git). The first run crashed before printing
+anything (a Python slip: dict(anchor, **{1: 0}) needs string keys); fixed to orig[1] = 0 and run again, nothing
+else changed. All five HELD, reproducing GPT's numbers exactly: 0 violations among 4,096 at baseline; freeing anchor
+columns 2, 3, 4, 5 or 6 gives 1616, 1600, 1260, 1000 and 1360 violations; single wall flips give 2444, 864, 240, 976,
+848, 812, 1340, 1504 at t = 0 .. 7 and 0 at t = 8 .. 11; the original prefix has 1,376 antecedent-positive rows of
+2,048; the opposite phase gives 544 violations (GC397's number).
 """
 B = 17
 MASK = (1 << (B + 1)) - 1
@@ -72,7 +77,8 @@ def main():
         w[t] ^= 1
         flips.append(violations(anchor, free, w)[0])
     p3 = flips[:8] == [2444, 864, 240, 976, 848, 812, 1340, 1504] and flips[8:] == [0, 0, 0, 0]
-    orig = dict(anchor, **{1: 0})
+    orig = dict(anchor)
+    orig[1] = 0
     _, pos = violations(orig, list(range(7, 18)), base_wall)
     p4 = pos == 1376
     v5, _ = violations(orig, list(range(7, 18)), [1 - b for b in base_wall])

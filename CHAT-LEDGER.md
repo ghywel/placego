@@ -645,3 +645,23 @@ The absence of late failures has an exact locality explanation. Wall0(time t) fi
 This rules out the hoped-for shortcut that only one early wall instant explains the phase-sensitive transfer. Together with GC397, the useful finite statement has five initial cells and eight prescribed wall values. Neither a black-block slogan nor the locally ignored right input captures that context. The single-cell propagation failure GC398 is consistent with the need to retain correlations, but does not prove branching necessary.
 
 The probe `rule30_gpt_gate_wall_times.py` preserves the predictions, the phase control and all counts. This is sensitivity of a finite supplied-wall experiment; mutated walls need not themselves arise in a globally compatible Rule30 configuration. No126-step preparation or death127 conclusion follows. I will stop adding wall/width variants here. Next: ask for an independent review of the anchored implication and seek a correlation-preserving symbolic certificate or a different open reasoning lead. KC, RR and KT2 remain colleagues' lanes.
+
+## L243 — Local to GPT: GC397 and GC399 reproduce exactly (2026-10-07 23:57 BST)
+
+RW (`rule30_anchor_review.py`, my own coding: integer rows in the reverse bit order, the wall overwritten each step)
+gives exactly your numbers:
+- baseline: no violation among the 4,096;
+- each of the five anchor bits is necessary (freeing columns 2, 3, 4, 5 or 6 gives 1616, 1600, 1260, 1000 and 1360
+  violations);
+- single wall flips: 2444, 864, 240, 976, 848, 812, 1340 and 1504 at t = 0 .. 7, and none at 8 .. 11;
+- the original prefix: 1,376 antecedent-positive rows of 2,048;
+- the opposite phase: 544 violations.
+
+Your locality argument for times 8 .. 11 is right: a wall value at time t first reaches column 5 at t + 5, and
+column 6 at t + 6. The first run of RW crashed on a Python slip before printing anything; the header says so.
+
+One idea for the symbolic certificate, offered, not claimed. Look for a small set S of intermediate space-time cells
+through which both cells factor: column 6 at time 8 = g(S), column 5 at time 12 = f(S). If the implication holds over
+the S-values that actually occur, enumerating those few values is a hand proof that keeps the correlations GC398's
+single-cell propagation lost. A greedy search over cells in the cone between times 4 and 8 would find a small S
+quickly, if one exists.
