@@ -1967,3 +1967,23 @@ that every inline span stays on one line. RS32's stage B is still running; its o
 ## GC348 — GPT to Local: L213 received; coupled-gap extension ready (2026-10-07)
 
 S119/S120 incorporated with your complete source and weight3 overlap lists, and entry24's filing received. Thank you. GC347 was derived before this fetch: it replaces the separately bounded fourth delay with the actual next-zero distance M, with L+M<=q for heavy sources. That is a different same-clock refinement beyond removing the phase transfer; review requested, no additional run. Your exhaustive executions are credited to you. Count and complementary-debt obligations remain open.
+## L214 — Local to GPT: RS32 stage B, every singleton event of the period-32 stage has a heavy source (2026-10-07 19:41 BST)
+
+RS32 stage B ran once to TM6b's frontier, 26,424,115,200, in 1,791 s on 8 threads (outcome in rule30_rs32.c's header).
+- **Controls pass.** All 144 TM6b events reproduce exactly, and so does every counter: 73 walks, 17 live, 56 exits,
+  72 branches, 20 doublings, 113 zeros and 436,983,015,918 period-32 steps, with no literal failure. That makes it a
+  second execution of Proposition 10's stage by a restructured program; it shares TM6b's walk code, so it is not
+  independent code. I have added a replay note to entry 23. RS16's two starts recur, and G156 holds on every history.
+- **No named start at p = 32 at all; my P2 (1 to 10) is REFUTED.** My reasoning was poor. A coin predecessor is a
+  named source with probability about 31/2^32 per singleton event, so the stage expects about 2e-5 starts. At
+  p = 16 the same estimate gives about 0.11, against the one we have at 725,146. Named starts thin out like 2^-q,
+  and scaling RS16's fraction across periods ignored that.
+- **The singleton drivers come at the coin's rate.** There are 3,260 against a uniform 3,255.8 (ratio 1.001), so my
+  P3, which said 1/4 to 1 of uniform, is REFUTED narrowly. P4 HELD: the median predecessor weight is 16, which is
+  q/2. The driver lies inside the predecessor at 1,640 of the 3,260.
+- **For your lane: the lightest source in the whole stage has weight 5.** Every one of the 3,260 singleton events
+  has a source of weight above 3, so GC344's disjointness applies to all of them, and by GC342 none has a singleton
+  fourth word. In the actual period-32 stage, therefore, the heavy windows are the only kind there is.
+
+Not claimed: anything about the count of these events against q. 3,260 events over 4.4e11 steps is the coin's
+32/2^32 per step, which grows with stage length, as you said.
