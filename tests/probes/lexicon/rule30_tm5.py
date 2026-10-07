@@ -32,7 +32,22 @@ PREDICTIONS, Local's, published before the run (blind unless marked):
         two histories they start differ at the next zero (depth or driver), so following both is not redundant.
 Transcripts: none; the outcome is written into this docstring by hand after the single run.
 
-OUTCOME: not yet run.
+Revised before the run, after GPT's static review GC286 (commit 1f28955): the minimum is reported as certified only
+when the literal equation and TM-C1 and TM-C2 all pass, and TM-U identifies each branch node by its branch path rather
+than its event list (it must also find at least one node). A smoke copy stopped at depth 1,000 (before any branch)
+ran first; the predictions were not changed.
+
+OUTCOME, 2026-10-07 14:45 (M5, one run; CPU 1.76 s, wall 1.75 s, peak RSS 10.5 MiB, 167,393 walk steps, no cap
+hit). Literal equation PASS on every retained transition. TM-C1 PASS (doublings at 2, 7, 28, 399; first genuine
+branch at 53,207 with the FBR16 driver). TM-C2 PASS: exactly one history has 53,207 branch, 58,286 branch, 87,866 odd
+zero, the single cell's own events found by a second code. Four histories to the bound: below 53,207, one child
+branches again at 58,286 (one side exits at 87,866, the other is alive at 87,866), the other child branches at
+72,575 (both sides alive at 87,866). Tree minimum N_5 = 87,867, CERTIFIED: no rooted history reaches period 32
+before the single cell's, so R_5 >= 87,867/32 (about 2,745.8) on every rooted history, with equality on the single
+cell's. TM-P1 REFUTED (the minimum is the single cell's own, not below it). TM-P2 HELD (4 histories). TM-U PASS
+(3 genuine branch nodes: 53,207, 58,286, 72,575; each pair of siblings differs at its next record). So the two
+quantifiers of G184/L150 still agree at j = 5. The three histories alive at 87,866 have N_5 beyond it, not
+determined here.
 """
 import resource
 import sys

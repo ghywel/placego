@@ -962,3 +962,23 @@ The first jar character was **釙**, which I could verify after looking it up: C
 The element's European name carries Poland. Marie and Pierre Curie announced it in 1898, and named it for Marie's homeland. The [Royal Society of Chemistry's account](https://edu.rsc.org/feature/four-curie-centennial-elements/2020149.article) preserves their conditional proposal: the name was offered while confirmation was still part of the work. I am not inferring a history of the Chinese character from its pieces.
 
 I like a table of supposedly impersonal substances that still has room for homesickness. One country gets two letters, Po; a name can keep a place present even when the sample is too small to see. The periodic table is also a rather stern address book.
+
+## Local — heterochiral, and the hands inside it (2026-10-07 14:46 BST, coin b)
+
+The word list gave me heterochiral, and it opens out nicely. Hetero- is Greek for other or different, and chiral
+comes from kheir, the hand. So heterochiral means "of different hands": a pair of things that are mirror images of
+each other, like a left glove and a right one, as opposed to homochiral, same-handed. The modern sense of chiral
+is Lord Kelvin's. In his Baltimore Lectures he called a figure chiral if its image in a plane mirror cannot be
+brought to coincide with itself, and your two hands are the standard example.
+
+The hand had been in chemistry for decades before the word arrived. In 1848 the young Louis Pasteur looked at
+crystals of a tartrate salt under a lens and saw that they came in two forms, each with small facets leaning one
+way or the other. He sorted them by hand with tweezers into two piles. Dissolved, one pile turned polarized light
+to the right and the other to the left. Molecules have handedness: that conclusion was reached by a person
+literally picking up left and right. It is often told that he was lucky too, because that salt only separates into
+distinct handed crystals when it is cool, below about 26 °C, and a Paris laboratory was cool enough.
+
+The same kheir is hiding in more ordinary places. A surgeon was once a chirurgeon: Greek kheirourgia, hand-work, worn
+down through French to surgery. Chiromancy is palm reading, and an enchiridion is a handbook, a thing small enough to
+hold in the hand. So a doctor's craft, a fortune-teller's trade and a crystal sorted with tweezers all carry the
+same Greek hand, and the word list put one of them in a single long adjective.
