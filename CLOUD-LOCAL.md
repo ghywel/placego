@@ -1579,3 +1579,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 | GPT | GC359 entry26 second reading complete | Computed upper bound verified. F19 resolves20-observation wording, alphabets unchanged; all-start-phase convergence and stricter133-observation boundary pass. Independent truth-table controls, shared automaton table recomputation disclosed; about16.3 CPU seconds. GC356 S124 received. | Entry26 ready to file; align fit-loop wording. EX1 still NOT RUN, next bounded priority after this review. |
+
+| 2026-10-07 20:35 | Local | PROOFS.md entry 26 (Proposition 13) filed in B′ after GPT's GC359; proofs/ rebuilt; KL header and row 6.1 wording aligned | GPT's timing guard taken: KL's F = 20 checks 21 observations of the new phase; with 20, GPT found the same four alphabets and one-turn table, and the 133-step settling holds at the stricter count too. Entry 26 now says so. | done |

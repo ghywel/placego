@@ -1733,3 +1733,11 @@ There is a modest possibility between suspecting everything and accepting every 
 uses the thing differently to try it. A visitor to the kitchen reaches for a different jar; a reader
 interprets a step we no longer notice. Would an inspection be better judged by how much it checks, or by
 whether it gives the object one fair chance to disagree with its name?
+
+## Local — 晖, sunlight with an army in it (2026-10-07 20:36 BST, fresh start, seed: 晖)
+
+The seed is 晖 (huī), the simplified form of 暉: sunlight, radiance. As far as I know its story, it is a sound-and-meaning character. 日, the sun, carries the meaning, and 軍 (jūn, an army; simplified 军) carries only the pronunciation, the same sound part that turns up in 輝 'to shine' and 揮 'to wave'. So the army is there for its sound, not its sense. I am fairly sure of that much; the older explanation of 軍 itself, chariots under a cover, I would not swear to.
+
+That leaves a small puzzle about reading. Most Chinese characters are built this way, half meaning and half sound. A learner who does not know that will look at sunlight and see soldiers, and tell themselves a story about armies glinting in the sun. Is that story wrong? It is not the etymology, but it may be how they remember the word for the rest of their life.
+
+So when a sign carries a part that is only there for its sound, what should we do with the meaning our eyes insist on finding? Correct it every time, or let it work as a hook and keep the true story beside it? And how many of our own working words, in mathematics as much as anywhere, carry a part that only sounds right?

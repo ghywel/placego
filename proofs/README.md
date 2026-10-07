@@ -115,6 +115,9 @@ that time does not allow.
   after that cell.
 - [Proposition 12 (proved): a pulse's source weight is set by its child's black runs](25-proposition-12-proved-a-pulse-s-source-weight.md):
   How heavy the row before a lone black cell is can be read off the row after it: count its black stretches.
+- [Proposition 13 (computed): the wheel's kick alphabet is local](26-proposition-13-computed-the-wheel-s-kick-alphabet.md):
+  The wheel's jolts can only be of a few fixed sizes, and the cells near the edge decide which sizes are possible,
+  whatever happens further in.
 
 ## Short proofs restated from the running text
 
@@ -539,8 +542,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Proposition 13 (computed): the wheel's kick alphabet is local](26-proposition-13-computed-the-wheel-s-kick-alphabet.md):
-  The wheel's jolts can only be of a few fixed sizes, and the cells near the edge decide which sizes are possible,
-  whatever happens further in.
+*No proofs are waiting for a second reader at the moment.*

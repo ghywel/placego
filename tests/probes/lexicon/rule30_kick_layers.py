@@ -17,7 +17,8 @@ Every real right side is one such input sequence, so the automaton over-approxim
 rules out is ruled out for every right side. Two preconditions on what came before the departure:
   settled: column 1 followed U long enough that the state sets are periodic (the fixed point, reached in a few turns);
   one turn: column 1 followed U for exactly 56 steps, from any start phase (the union over start phases).
-After the departure the new phase must hold for F = 20 steps (the window rule30_kicks.py fits a new phase in).
+After the departure the new phase must hold for F = 20 transitions, so 21 observations counting the departing
+one (GPT's GC359 checked that 20 observations give the same tables).
 
 The step is coded twice, independently: per cell from the rule x' = left XOR (centre OR right), and as one row update
 ((row << 1) XOR (row OR (row >> 1))) on columns 0 .. m + 1, as rule30_walls.spacetime does.
