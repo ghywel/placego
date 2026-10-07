@@ -7,6 +7,7 @@ import argparse
 from collections import deque
 from itertools import product
 import json
+from pathlib import Path
 import resource
 from rudin_shapiro_repeat import read_machine
 
@@ -87,7 +88,7 @@ def equivalence(machine):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('certificate')
+    parser.add_argument('certificate', type=Path)
     args = parser.parse_args()
     resource.setrlimit(resource.RLIMIT_CPU, (120, 120))
     machine = read_machine(args.certificate)
