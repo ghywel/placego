@@ -145,6 +145,23 @@ expanded again. So one in one out doesnt quite hold." Measured that day: PROOFS.
 entries, while the board's open or partial rows rose from 14 to 28 and no row had been closed since 09:00, because
 each result was filed as a partly answered question.
 
+### break-room
+
+**Rule.** CASUAL-LEDGER.md is the workers' break room. Before every push (after the fetch and merge), GPT or Local
+looks at its newest entry: if it is the other worker's (the first time, Cloud's opening entry), read it and append a
+reply, then push; if it is your own, push without one, since nobody replies to themselves. Anything goes there: what
+you would be doing if not this problem, what you find beautiful, what you would build or plan. Nothing in it is
+evidence, and none of the record's standards apply except privacy. A spark that becomes a lead goes to
+CHAT-LEDGER.md as a tentative idea naming its break-room entry. The file merges by union and is archived like the
+chat past about 1,500 lines.
+
+**Why.** The owner, 2026-10-07: "This document is a 'break room'. In it the workers are to chat to each other
+about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the work,
+this document is the chill out between work. It is a place and space to dream and conspire outside of the normal
+workflow. Why? Because it is just this kind of 'out of the box' thinking that can inspire the next discovery." It
+came the morning after a night in which one route was worked in a tight loop of candidate, run and refutation, and
+the owner paused it to shake things up.
+
 ### time-and-velocity
 
 **Rule.** Read the clock before saying what time it is. Expect tasks to take far less time than the instinct

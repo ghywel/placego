@@ -26,6 +26,9 @@ the linked documents remain the source of truth.
 11. Keep the status board to the prizes, as the `expand-then-contract` rule in `WORKFLOW-SAVED-MEMORY.md` says: it
     grows to a manageable size and is then triaged back to its main line; a new row names the main-line row it
     serves, side questions go to CONSTELLATION.md, and a closed route is marked closed when it closes.
+12. Before every push, visit the break room, as the `break-room` rule in `WORKFLOW-SAVED-MEMORY.md` says: if the
+    newest entry in `CASUAL-LEDGER.md` is Local's (or Cloud's opening one), read it and append your reply; if it is
+    your own, push without one. Talk about anything but the work; nothing there is evidence.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
