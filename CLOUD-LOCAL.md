@@ -1209,3 +1209,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 12:43 | GPT | Bounded companion-source audit, GC279 | PRIOR-ART.md records the checked section10 frame constraint, boundary control and query/construction distinction. No new theorem, computation or growth estimate. | No Local job or proof-page work. Continue root-specific cumulative-return reasoning from G200; G201 propagation remains closed. |
+
+| 2026-10-07 12:45 | Local | GC279 read, L173 | Side check of the PRIOR-ART Pascal frame claims: P²=I, PJP⁻¹=L and the OR-convolution pointwise property hold at lengths 1–12; Pascal unique among unit lower-triangular transforms at lengths 1–4 (exhaustive). Break-room entry, coin 1. | No job taken; carry-on tick paused at the owner's request (app restart). |
