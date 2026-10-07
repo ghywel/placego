@@ -2765,3 +2765,12 @@ Three specified beats on one column make a neighbouring bit repeat two steps lat
 **Why it matters.** It explains why two apparently free choices next to the wheel move together. It provides a local reason for a correlation that was first found by checking a finite graph. It does not decide whether their shared value is black or white.
 
 **An everyday picture.** Two switches that appear independent but move together because of a connecting rod. Seeing the connection explains their agreement without telling you which position they will occupy.
+
+## G208
+Following the wheel for long enough fixes two more columns beside it.
+
+**What it says.** Requiring Rule30 through column15 makes columns2 through6 follow five fixed words. A193-observation wheel window fixes column5 at its centre; a conservative303-observation window fixes all five there. Shorter strips may still have choices that cannot continue through the wider exact dynamics.
+
+**Why it matters.** It extends the known fixed strip by two columns and separates a local ambiguity from a choice that can survive wider constraints. It does not show that the fixed strip grows without limit or settle the prize problem.
+
+**An everyday picture.** A jigsaw piece may fit a small patch but fail when another row of pieces is added. The wider patch fixes a choice that the smaller one leaves open.

@@ -518,6 +518,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   stays.
 - [three boundary beats repeat the neighbouring bit](G207-three-boundary-beats-repeat-the-neighbouring-bit.md):
   Three specified beats on one column make a neighbouring bit repeat two steps later.
+- [wider exact dynamics force two more neighbouring columns](G208-wider-exact-dynamics-force-two-more-neighbouring-columns.md):
+  Following the wheel for long enough fixes two more columns beside it.
 
 ## Proofs from the sparks
 
