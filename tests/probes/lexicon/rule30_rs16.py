@@ -20,7 +20,13 @@ PREDICTIONS, Local's, published before the run (blind unless marked):
   RS-C2 (control): GC326's start, (320, 64) at depth 725,146 with p = 16 and r = 2, is found, on exactly two histories.
   RS-P1 (blind, uncertain): at p = 16 the whole rooted tree has at most 5 distinct start nodes.
   RS-P2 (blind, uncertain): no p = 16 start has r = 1 or r = 13 (the joined q - 3 group is absent at q = 16).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 18:59 (M5, one run at commit da123bd; CPU 18.6 s, wall 18.7 s; transcript outside Git). RS-C0 PASS
+(16 histories, exits exactly TM5b's). RS-C1 PASS (no (p, r) class twice on any history). RS-C2 PASS ((320, 64) at
+depth 725,146, p = 16, r = 2, on exactly two histories). RS-P1 HELD: one start node at p = 16, that one. RS-P2 HELD.
+The whole census has two start nodes: p = 2, r = 1 at depth 5 (on all 16 histories) and GC326's. No start at p = 4 or
+p = 8 is on the rooted tree, and no other separation at p = 16. A post hoc count (descriptive, not preregistered;
+scratch code, recorded in L211): the tree has 518 singleton-driver nodes, 501 at p = 16; there the predecessor weights
+run from 2 to 14, mostly 6 to 10, and the driver lies inside the predecessor at 253 of the 501.
 """
 import os
 import resource
