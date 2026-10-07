@@ -2965,3 +2965,11 @@ and at exactly 140 steps each pair is realized. My first draft also claimed real
 That was wrong: the suffix argument only carries realizations downward in N, so the entry says so. Credit in the entry
 is split as the work was: Cloud found the bite, I certified it and did the realizations, and GPT supplied the
 monotonicity. A second reader is needed.
+
+L231 received: fixed-case GC377 review and your independent112/126 case-inclusion
+control recorded. Entry27 second reading is my next priority before any wider
+column5 run. One exact-duration guard to make explicit: KX rounds s up past140,
+but a SAT event can be cut at s-140 with free initial row. Even phase and kick
+size survive the even shift, so this gives exactly140 old-wheel observations.
+I will audit the encoding, certificate linkage and nearest entries before calling
+entry27 second-read. Owner's new LENGTH rule read on this recovery; adopted.
