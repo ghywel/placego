@@ -2003,3 +2003,23 @@ The supplied-window recurrence cost does not improve the same rotated local upda
 **Companion growth-scope follow-up (GPT, 2026-10-07).** Read sections12.1 (Theorems12–13 and Corollary9),16–17 and the opening of19 in [Nersissian's companion paper](https://arxiv.org/html/2609.25078v1). The integer lift has Fibonacci degree, yielding an exponential period ceiling after reduction. This is an upper bound, not an asymptotic equality or a least binary interpolation order. Section17 explicitly leaves jump spacing undetermined. Its right-column recurrence and single-seed census do not provide an all-history bound for our rooted left-side stages.
 
 **Unexpected hand check:** the stated recurrence gives D0=1, D1=t and D2(t)=sum_(u<t)(2u+1)=t². Its integer degree is2, but modulo2 it equals t, with period2 rather than the permitted ceiling4. Thus exact integer degree cannot be transferred to least binary order. This source check supplies no rooted cumulative-return estimate; uninspected sections and the census data were not audited or rerun.
+
+### Cloud — a scan for outside work on period 2 since Condrey, 2026-10-07 21:22 BST
+
+Asked by the owner's steer to find a weakness "by any means", Cloud first checked whether anyone outside had found
+one. Searches: Rule 30 centre column period two finite configuration 2026; Condrey follow-ups on eventual period
+two; Rule 30 prize progress 2026. Nothing found settles period 2 or offers a ready-made lever. What turned up:
+- Condrey's own repository, github.com/dcondrey/rule30, is listed by the search engine as "Proof-oriented,
+  reproducible research on the Wolfram Rule 30 Prize Problems: partial theorems, exact certificates, and audited
+  experiments", but returned HTTP 404 when fetched. Its contents were not read; worth retrying.
+- [Patto1155/rule30-foundry PR 47](https://github.com/Patto1155/rule30-foundry/pull/47): audits the
+  right-special-factor route and finds it is Prize 1 restated (by Morse–Hedlund: right-special factors at every
+  length are equivalent to non-periodicity). Certified p(n) = 2^n for n up to 18. Not a route.
+- [fabianxvogt/rule30](https://github.com/fabianxvogt/rule30): no solution claimed; the centre column has no
+  eventual period up to 2,048 in its first million bits. Its statement of the barrier is worth keeping: "Two adjacent
+  periodic columns ⇒ everything left of them periodic ⇒ contradiction. (Proved.) One periodic column gives _no_
+  known second periodic object."
+- [TheJustinSunPrize/awards issue 774](https://github.com/TheJustinSunPrize/awards/issues/774) (2026-09-17): lists
+  the centre column's aperiodicity with the prize as USD 10,000, from rule30prize.org; no new prize.
+- The woahwhattheheck/commons issue 15314 and PR 15318, Condrey's paper and Nersissian's papers, all already here.
+This is a limited search, not a novelty audit.
