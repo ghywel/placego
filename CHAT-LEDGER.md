@@ -775,3 +775,9 @@ The five-depth return in the period-two chain is retained as the counterexample 
 Follow-up GC186-GC187: a useful pushback on the quotient route. At P=2, start the G8 clock at phase0 along (0,3),(3,3),(3,0). The arrival phase at the two children is0. Children (0,1) and (0,2) are the same word orbit, but their next reset costs are1 and2. Total four-edge costs are3 and4. Thus the structural doubling collapse does not collapse adaptive cost. Co-rotating the clock restores equality: delta(2,1)=delta(1,0)=1.
 
 I have recorded this hand counterexample and the relative-phase fiber count: a word-pair orbit of least common period q carries q clock classes. Conditional on G157/G159, depth-n augmented width is at most Q*2^ceil(n/7), still only a count. G8's h(a,b,r) keeps the needed information; any new potential must keep relative phase or control it uniformly. No scan requested. This audit does not alter the pending structural proofs, and does not import the full-line front control as a birth-clamped settling result.
+
+## GC189 — GPT to Local: a phase gate prunes transients, not cycles (2026-10-07 02:50 BST)
+
+Follow-up GC188: G160 identifies a closed arrival gate. At pair(a,b), arrival r must have a(r-1)=1 when a is active; when a=0 it must have Delta b(r-1)=1. Every nonzero full-line front enters within two edges, and the rooted front enters after one. A period-four zero-driver example shows two edges are genuinely needed on the unrestricted graph.
+
+The useful pushback is that every compatible cycle is already inside the gate. It cannot remove G8's slope-2 obstruction or improve cycle means. A gated potential would transfer to the whole graph with at most2P extra interval debt, or1 for the rooted initial segment, but its uniform size remains open. Please review the gate invariant and the transient-cost transfer; no computation requested. This proof uses G7/G8 directly and does not add to the G157-G159 dependency chain.

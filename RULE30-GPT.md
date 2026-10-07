@@ -6993,3 +6993,24 @@ The identified unexpected check is the co-rotated clock: rotating1 to2 and phase
 For a pair of least common word period q dividing P, its word-rotation orbit has exactly q relative-phase classes in the phase-augmented quotient. Fix a representative pair; rotations preserving it are precisely shifts divisible by q, so arrival phases are identified modulo q. This elementary fiber count retains the clock rather than erasing it. Conditional on the pending G157 and G159 proofs, q<=Q=2^v2(P), so the number of phase-augmented classes at depth n is at most Q*2^ceil(n/7). That is a count, not a weighted-cost certificate. The two period-two children already give distinct relative-phase classes in one word orbit.
 
 **Result and next obligation.** Word-only branching/width cannot alone supply the adaptive waiting budget. A proposed quotient potential must keep the relative-phase coordinate, or prove an independent bound uniform over its fibers. G8 already retains this coordinate in h(a,b,r); its finite-period potential certificates and open uniform size bound are preserved. No larger census or duplicate Local job is proposed. The record's earlier word-only versus phase-aware cycle distinction remains consistent with this rooted counterexample.
+
+### G160. A closed arrival-phase gate removes only transient front states (2026-10-07)
+
+**Statement.** Use G8's common-period-P full-line reset-front graph, excluding the zero word-pair. For a state (a,b,r), define the gate by
+
+- if a is nonzero: a(r-1)=1;
+- if a=0: (S b XOR b)(r-1)=1.
+
+Indices are modulo P. The gate is forward invariant. Every nonzero compatible front path is in it after at most two edges. The rooted front starts at the exceptional pair (0,1) and enters the gate after one edge. Every compatible phase-augmented cycle lies entirely inside the gate.
+
+**Proof.** An edge goes to (b,c,r'), with S c=a XOR(b OR c). If b is nonzero, r'=r+delta(b,r) is exactly one time past the first black b cell at or after arrival. Thus b(r'-1)=1 and the child is in the first part of the gate regardless of the parent's phase.
+
+If b=0, delta=0 and r'=r. The child obeys S c XOR c=a. Since (a,b) is not the zero pair, a is nonzero and c is nonconstant. A gated parent has a(r-1)=1, so the child's second gate condition holds. This proves invariance. From any ungated state an active b enters immediately. If b=0, its child has nonconstant driver c, so the following edge enters immediately. No nonzero pair has the zero pair as a child, by the same recurrence. Hence two edges suffice. The root has constant-one driver and cost1, giving the gated child (1,1). On a cycle every state has at least two preceding edges on the same cycle; the two-edge entry assertion puts every state inside the gate. Square.
+
+**Phase counts and certificate transfer.** For a fixed pair of common period P, the gate allows exactly the number of black bits in a when a is nonzero, or the number of transitions in b when a=0. On its relative-phase fiber of size q, use the corresponding counts in q letters. This is an exact local restriction, not a census of reachable states. If a phase-sensitive potential on the gated graph bounds interval debt at slope gamma>=0 by H, the whole nonzero graph has the bound H+2P: discard at most two initial edges, each of cost at most P, and apply the gated certificate to the rest. For the rooted front, the initial cost is1, giving H+1 instead. Intervals wholly inside the discarded part obey the same conservative bound. These are full-line front statements; birth clamps and sublinear period growth remain separate obligations.
+
+**Controls and identified unexpected check (symbolic, no run).** The root (0,1) itself fails the second gate condition because a constant word has no transitions; its first child satisfies the first condition. The derivative condition at a=0 is essential, as the period-two integrated children have zero first coordinate yet valid arrival phases.
+
+The two-step threshold is needed on the unrestricted graph. In temporal order take a=0101, b=0000, r=1 at period4. Integration gives c=0011. The parent fails a(0)=1, and the child (0,c,1) still fails Delta c(0)=1. Its active c then enters on the next edge. This checks a local compatible path, not root reachability. The identified unexpected cycle guard is that every cycle already lies in the gate: G8's compatible slope-2 obstruction survives unchanged. Gate pruning cannot improve cycle means or cure that obstruction; it removes transient arrival phases only.
+
+**Record and scope.** This is a direct finite-graph consequence of G8's reviewed next-black arrival rule and G7's diagonal recurrence. It does not depend on the pending G157-G159 proofs. No computation or literature novelty claim is made. A uniform gated potential size bound remains unproved; the gate by itself gives neither a settling bound nor a prize result.
