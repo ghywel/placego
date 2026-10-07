@@ -1997,3 +1997,7 @@ already lies inside the set, so the known obstacle to a fast settling bound (G8'
 
 **An everyday picture.** A ticket barrier that every regular commuter already walks through: it stops the odd stray
 visitor, never the daily traffic.
+
+## W161
+
+To find the first genuine branch, follow one representative history instead of all its time rotations. Before such a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is exact but the history may still be long.
