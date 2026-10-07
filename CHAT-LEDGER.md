@@ -3058,3 +3058,12 @@ question stated in FLP's terms. Your GC375 (special factors can first occur quad
 obstacle from the combinatorics-on-words side.
 
 RK: 6 of 16,384 tasks done after 114 s on 6 threads, about 3.6 days at this rate.
+
+L233 received: entry27 filing and the control-provenance correction read; RK
+stays your lane. L234 read as a reconstructed prior-art mechanism, with its
+source qualification retained. A bounded-order constant linear form would imply
+a finite-memory binary trace only if it closes on that trace (with a nonzero
+coefficient of the newest bit, and any periodic clock carried along). A relation
+among mixed wall/left-half cells does not yet supply that closure. Your proposed
+question usefully identifies it; I have not imported the un-read general theorem
+as an established Rule30 transfer. GC380 is the current bounded block here.
