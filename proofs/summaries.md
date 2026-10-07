@@ -2403,7 +2403,7 @@ Two binary equations expose the obstruction to persistent exchange.
 **An everyday picture.** Marking a complete lap is different from marking every step. A two-track route can keep the tracks apart, exchange them only after one lap, or permit exchange after many lap counts.
 
 
-## W195
+## G195
 Four windows can certify local phase mixing, but a return path is essential.
 
 **What it says.** Parallel quotient edges with opposite exchange labels occur exactly at a shared-tail pattern involving four admitted windows and opposite lower-order labels at the source. Inside a recurrent component they defeat both potential equations. A dyadic return in that same component then forces eventual admission of large dyadic periods, conditional on G194. Independent review is pending.

@@ -449,6 +449,11 @@ CHECKS (GPT's claims at 827e006):
      q = 2g alone, and none unless g is a power of two; neither gives persistence exactly at power-of-two g (checked to
      q = 4096, beyond G191's cutoff); the half-turn 4-cycle's quotient (A fails, B holds), K_{2,2}'s (both fail), the
      1-1 two-cycle (A holds), and adding 1 to every edge, which wrongly rejects the locked case.
+  S91 (G195, added 2026-10-07 at b4c160a): in G190's graphs for m = 1 to 6 (pruned to H_m, canonical sources) each
+     source has at most one edge per label, parallel quotient edges always carry opposite labels, and they are exactly
+     the four-window pairs over (m - 1)-bit T (one each at m = 3 and m = 6, none elsewhere, all in acyclic graphs);
+     at m = 3, T = 01 gives source (101, 001) with targets (010, 011) and its swap; on 300 random strongly connected
+     labelled graphs with an opposite parallel pair added, neither of G194's potentials is soluble.
 """
 import random
 from fractions import Fraction as F
@@ -4722,4 +4727,53 @@ ok90 &= potential90(2, [(0, 1, 1), (1, 0, 1)], [1, 1])
 check('S90 G194: on 500 random strongly connected labelled quotients the A/B potentials predict the explicit two-sheet '
       'lift (no swap path; only q = 2g; persistence exactly at power-of-two g); C4, K22, the 1-1 cycle, constant-1',
       ok90)
+ok91, _par91 = True, {}
+for m in range(1, 7):
+    V, E = graph84(m)
+    Vf = lambda X: U82(2 * m - 2, list(X) + [0])
+    Ff = lambda X: U82(2 * m - 1, list(X) + [0])
+    H = {(X, Y) for X, Y in V if Vf(X) ^ Vf(Y) == 1}
+    canon = lambda v: v if Vf(v[0]) == 0 else (v[1], v[0])
+    # quotient edges from canonical sources, with labels (target swapped from canonical = 1)
+    par, outdeg = set(), {}
+    for u in H:
+        if canon(u) != u:
+            continue
+        tg = [(canon(w), 0 if canon(w) == w else 1) for w in E.get(u, [])]
+        outdeg[u] = len(tg)
+        for i in range(len(tg)):
+            for j in range(i + 1, len(tg)):
+                if tg[i][0] == tg[j][0]:
+                    ok91 &= tg[i][1] != tg[j][1]                 # parallel orbits carry opposite labels
+                    par.add((u, tg[i][0]))
+    ok91 &= all(d <= 2 for d in outdeg.values())                 # at most one edge per label from each source
+    # the four-window criterion over (m - 1)-bit words T
+    four = set()
+    for T in product((0, 1), repeat=m - 1):
+        a, b, c, d = (0,) + T, (1,) + T, T + (0,), T + (1,)
+        if Ff(a) == Ff(b) == Ff(c) == Ff(d) == 1 and Vf(a) ^ Vf(b) == 1:
+            four.add((canon((a, b)), canon((c, d))))
+    ok91 &= par == four
+    _par91[m] = len(par)
+ok91 &= _par91[1] == 0
+# the m = 3 instance with T = 01: canonical source (101, 001), targets (010, 011) labelled 0 and (011, 010) labelled 1
+_s91, _t91 = ((1, 0, 1), (0, 0, 1)), ((0, 1, 0), (0, 1, 1))
+_V3, _E3 = graph84(3)
+ok91 &= set(_E3.get(_s91, [])) == {_t91, (_t91[1], _t91[0])}
+# opposite parallel edges inside a strongly connected labelled graph make both of G194's potentials insoluble
+_rng91 = random.Random(195)
+for trial in range(300):
+    k = _rng91.randint(1, 6)
+    perm = list(range(k))
+    _rng91.shuffle(perm)
+    edges = [(perm[i], perm[(i + 1) % k], _rng91.randint(0, 1)) for i in range(k)]
+    edges += [(_rng91.randrange(k), _rng91.randrange(k), _rng91.randint(0, 1)) for _ in range(_rng91.randint(0, 3))]
+    s, t, e = edges[_rng91.randrange(len(edges))]
+    edges.append((s, t, 1 - e))
+    g, cls = classes90(k, edges)
+    wrap = [1 if (g == 1 or (cls[a] == g - 1 and cls[b] == 0)) else 0 for a, b, _ in edges]
+    ok91 &= not potential90(k, edges, [x for _, _, x in edges])
+    ok91 &= not potential90(k, edges, [x ^ w for (_, _, x), w in zip(edges, wrap)])
+check('S91 G195: in G190\'s graphs (m = 1-6) parallel quotient edges are exactly the four-window pairs, with opposite '
+      'labels; T = 01 at m = 3; an opposite parallel pair in a strongly connected graph defeats both potentials', ok91)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -1,10 +1,10 @@
-# A four-window certificate for phase mixing
+# a four-window certificate for phase mixing
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G195 — A four-window
-certificate for phase mixing (2026-10-07; second reader pending)"; rebuild with `python3 proofs/build.py`. Edit the
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT195. a four-window
+certificate for phase mixing (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the
 proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Four windows can certify local phase mixing, but a return path is essential.
 **An everyday picture.** Two routes can reach the same doorway with the cards exchanged differently. To repeat the choice, there must also be a way back to the departure point.
 
 ## The formal statement and proof
+
+### GPT G195 — A four-window certificate for phase mixing (2026-10-07; second reader pending)
 
 **Statement, conditional on pending G194.** In G193's quotient at m>=1, two distinct edge orbits have the same source and target exactly when there is an (m-1)-bit word T such that
 
@@ -42,3 +44,14 @@ If a known dyadic return q occurs in that component, its quotient closed walk ha
 Unexpected check: G192 proves this actual graph acyclic. The parallel pair is therefore transient and gives no persistent component. The missing return path is a mathematical requirement, not an optional computational check. G194's abstract bipartite control supplies the contrasting recurrent example, with both labels in each direction and dyadic admissions at all q>=4.
 
 **Record and limits.** G193/G194 already retain parallel choices; this adds their exact Rule30 window criterion and the same-component witness shortcut. No novelty is claimed for generic graph potentials. No larger-r window or recurrent component has been tested, including r88. Local: second-read the necessity of equal tails and the transient guard; no job requested. The next bounded structural question is whether a known return component can reach one of these four-window pairs and return from its target. That question remains open, and absence of this sufficient certificate would not rule out persistence by longer oppositely labeled paths.
+
+*Second reader's note on G195 (Local, 2026-10-07; chat L162).* Correct. By G189's affine form, $V_m$ of a window is its
+last bit plus a function of the earlier bits. A target orientation therefore fixes both appended bits, so each source
+has at most one edge per label, and parallel quotient edges must carry opposite labels. Exchanged ordered targets share
+their first $m - 1$ bits with the two source tails, so the tails are equal, which forces the windows $0T, 1T$ and
+$T0, T1$. The converse follows by appending 0 and 1 in both orders. Equal right-hand sides with unequal labels defeat
+both of G194's potentials. Checked (`rule30_audit_g99_g100.py`, S91) on G190's graphs for $m = 1$ to 6, pruned to $H_m$.
+Each source has at most one edge per label, every parallel pair carries opposite labels, and the parallel pairs are
+exactly the four-window pairs. There is one at $m = 3$ (GPT's $T = 01$, reproduced edge for edge) and one at $m = 6$,
+none elsewhere, all in acyclic graphs and so transient, as the guard says. On 300 random strongly connected labelled
+graphs with an opposite parallel pair added, neither potential is soluble.
