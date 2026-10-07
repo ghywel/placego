@@ -617,6 +617,18 @@ CHECKS (GPT's claims at 827e006):
      final prefix, all prefixes nonnegative), one-transfer allowance 5q - 33/2, a saving of 2q - 7/2 against the
      separate 7q - 20, and still above 3q - 8. The terminal window alone has delays q, q, debt 2q - 5, allowance 3q -
      6, below the containing 4q - 11 for q >= 8; at q = 4 the group needs 6.
+  S117 (GC337, added 2026-10-07 at c839d75): GPT's SA1 table recomputed by Local's own backward map B(y, z) = (S z XOR
+     (y OR z), y), each step checked against the forward equation: the starts (e_s + e_(s+r), e_s) at q = 4 (r = 1 ..
+     3) and q = 8 (r = 1 .. 7) are all NONROOTED, with exactly GPT's (preperiod, exact cycle length), and every
+     rotation gives the same; the positive control (0, 3) at q = 4 is rooted at depth 8, the root at 0. The same
+     inverse map ties RS16's forward census: (3, 1) at q = 2 is rooted at depth 5 and (320, 64) at q = 16 at depth
+     725,146, the depths the forward walk found.
+  S118 (GC340, added 2026-10-07 at d1db781): for the pulse B = e_0 and every word C other than 0 and e_0 (so heavy and
+     odd predecessors, and C(0) = 0, are all covered), q = 4 .. 12, the unique child of (B, C) is one with holes 1 ..
+     L, L the first black bit of C after 0; from phase 1 the delays are q, L, 1 and the slope-5/2 debt is q - 5/2 +
+     max(0, L - 5/2); GPT's three q = 8 controls (A = 255, 128, 129) reproduce. Local's sharpening, PROOFS.md entry
+     24: over all q arrival phases the window's debt is greatest at phase 1, so its arbitrary-arrival charge needs no
+     phase transfer.
 """
 import random
 from fractions import Fraction as F
@@ -6431,4 +6443,63 @@ ok116 &= max(5, 3 * 4 - 6) == 6
 check('S116 GC335: internal named starts occur only at r = q - 2 (terminal) and r = q - 3 (separation 1); the joined '
       'r = q - 3 window has delays q, q-2, 1, q, 2, 1, q, debt 4q - 31/2, allowance 5q - 33/2 (saving 2q - 7/2); the '
       'terminal window (debt 2q - 5) is covered; q = 4 group 6', ok116)
+# S117 (GC337): SA1's inverse table recomputed by an independent backward map, plus inverse ties for RS16's two
+# rooted starts (the forward census, rule30_rs16.py)
+def _back117(y, z, q):
+    return (_rq3.rot(z, 1, q) ^ (y | z), y)
+
+
+def _cls117(x, y, q, cap=10 ** 6):
+    full, seen, st, k = (1 << q) - 1, {}, (x, y), 0
+    while st not in seen and k <= cap:
+        if st == (0, full):
+            return ('ROOTED', k)
+        seen[st] = k
+        pa = _back117(st[0], st[1], q)
+        if _rq3.rot(st[1], 1, q) != pa[0] ^ (pa[1] | st[1]):
+            return ('LITERAL FAIL',)
+        st, k = pa, k + 1
+    return ('NONROOTED', seen[st], k - seen[st]) if st in seen else ('CAP',)
+
+
+_gpt117 = {4: {1: (0, 12), 2: (25, 28), 3: (27, 28)},
+           8: {1: (560, 4064), 2: (73, 28), 3: (166, 1064), 4: (49, 4064), 5: (557, 4064), 6: (711, 4064),
+               7: (713, 4064)}}
+ok117 = True
+for q, tab in _gpt117.items():
+    for r, (pre, cyc) in tab.items():
+        base = _cls117(1 | (1 << r), 1, q)
+        ok117 &= base == ('NONROOTED', pre, cyc)
+        for sh in range(q):
+            ok117 &= _cls117(_rq3.rot(1 | (1 << r), sh, q), _rq3.rot(1, sh, q), q) == base
+ok117 &= _cls117(0, 3, 4) == ('ROOTED', 8) and _cls117(0, 15, 4) == ('ROOTED', 0)
+ok117 &= _cls117(3, 1, 2) == ('ROOTED', 5) and _cls117(320, 64, 16) == ('ROOTED', 725146)
+check('S117 GC337: SA1 recomputed independently, all ten q4/q8 inclusion starts NONROOTED with GPT\'s exact '
+      '(preperiod, cycle) at every rotation; (0, 3) rooted at depth 8; RS16\'s starts (3, 1) at q 2 and (320, 64) at '
+      'q 16 rooted at depths 5 and 725,146 by the inverse map', ok117)
+# S118 (GC340): for a pulse B = e_0 and every child C other than 0 and e_0 (all words, q = 4 .. 12), the child of
+# (B, C) is one with holes 1 .. L; from phase 1 the delays are q, L, 1 with doubled debt 2q - 5 + max(0, 2L - 5);
+# Local's sharpening (PROOFS.md entry 24): no arrival phase gives more debt than phase 1
+ok118 = _rq3.children(255, 1, 8) == [85] and _rq3.children(1, 85, 8) == [249]
+ok118 &= _rq3.children(128, 1, 8) == [254] and _rq3.children(1, 254, 8) == [253]
+ok118 &= _rq3.children(129, 1, 8) == [1] and _rq3.children(1, 1, 8) == [0]
+for q in range(4, 13):
+    full = (1 << q) - 1
+    for C in range(2, 1 << q):
+        L = next(j for j in range(1, q) if (C >> j) & 1)
+        D = full & ~(((1 << L) - 1) << 1)
+        ok118 &= _rq3.children(1, C, q) == [D]
+        debts = []
+        for T0 in range(q):
+            T, ds = T0, []
+            for w in (1, C, D):
+                dl = _rd115(w, T, q)
+                ds.append(dl)
+                T += dl
+            debts.append(_debt115(ds)[1])
+            if T0 == 1:
+                ok118 &= ds == [q, L, 1]
+        ok118 &= debts[1] == 2 * q - 5 + max(0, 2 * L - 5) and max(debts) == debts[1]
+check('S118 GC340: one with holes s+1 .. s+L after every pulse child (heavy and odd sources included), delays q, L, 1, '
+      'debt q - 5/2 + max(0, L - 5/2); GPT\'s q8 controls; and phase s+1 is a worst arrival (entry 24)', ok118)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

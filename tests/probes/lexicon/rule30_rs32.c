@@ -34,7 +34,12 @@
  *           uniform expectation 32 * steps32 / 2^32 (about 3,256 at TM6b's steps32).
  *   RS32-P4 (blind, uncertain): at stage B the median predecessor weight over those singleton-driver states lies
  *           between 12 and 20 (RS16's post hoc count put most at 6 to 10 of 16 bits, near q/2).
- * OUTCOME: not yet run.
+ * OUTCOME, stage A, 2026-10-07 19:07 (M5, one run at commit 7b05961, 8 s on 8 threads; transcript outside Git).
+ * RS32-C0 PASS: 16 walks, the 33 TM6b events below 2^27 reproduced exactly as (depth, kind, driver), literal
+ * failures 0, steps32 2,043,501,457. RS32-C1 PASS: (p 2, r 1) at depth 5 and (p 16, r 2) at 725,146, no other start
+ * below p = 32. RS32-C2 PASS. RS32-P1 HELD: no start at p = 32. Singleton-driver states at p = 32: 13 against a
+ * uniform 15.2; predecessor weights 8, 12, 13, 15 (3), 17 (2), 18 (3), 19, 20, median 17; the driver inside the
+ * predecessor at 8 of 13. Stage B: running.
  */
 #include <pthread.h>
 #include <stdint.h>

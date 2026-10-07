@@ -534,4 +534,8 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Proposition 11 (proved): a pulse's three-edge window is worst at the pulse's own phase](24-proposition-11-proved-a-pulse-s-three-edge.md):
+  After a lone black cell drives the pattern, the three steps that follow cost the most when the clock arrives just
+  after that cell.

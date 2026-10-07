@@ -2702,3 +2702,12 @@ Some histories take more than 26 billion steps to double their repeat length fro
 **Why it matters.** It shows how widely the histories spread out at this stage: the slowest are at least four hundred times slower than the fastest. The doublings keep getting rarer, and much more so for some histories than for others.
 
 **An everyday picture.** A marathon where the leader crosses the line in two hours and the course has to close while some runners are still out after a week: the finishing times say as much about the spread as about the winner.
+
+## 24
+After a lone black cell drives the pattern, the three steps that follow cost the most when the clock arrives just after that cell.
+
+**What it says.** The project keeps a reference clock and charges a "debt" when the pattern runs slower than that clock allows. When a driving row has a single black cell, the next two rows are forced into a known shape (GPT's GC340). This result shows that the debt over those three steps is largest when the clock arrives one step after the black cell, whatever the arrival time. So the worst case can be priced exactly, without the extra allowance that a general shift of the clock would add.
+
+**Why it matters.** The open target is to show that the clock's debt stays bounded. Each lone-cell event can now be charged its exact worst case rather than a padded one, a saving of nearly a full period for each event. It does not yet say how many such events a history has, or how they overlap.
+
+**An everyday picture.** A train that leaves once an hour: the longest you can wait is when you arrive just after it has gone. Whatever time you turn up, after it leaves you are on its timetable, so only your first wait depends on when you came.
