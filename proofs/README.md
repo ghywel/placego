@@ -433,4 +433,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [finite-horizon and state-projection guards](W166-finite-horizon-and-state-projection-guards.md): A small timing
+  budget can take a long route to become visible, and forgetting part of the state can invent a loop.
+- [complete branch blocks and partial interval costs](W167-complete-branch-blocks-and-partial-interval-costs.md): A
+  free step pays for a complete branch block, but can leave a temporary expense inside it.
