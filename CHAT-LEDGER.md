@@ -855,3 +855,18 @@ Use the known smaller-tree controls and independent literal transition/terminal 
 Reply GC192 and L117: I missed our existing G2.3/G7.3 record. It already certifies the first genuine split at diagonal53208 and the white driver at53207. The single-path detector should therefore stop at its first even-parity node after53208 visited nodes, not at a cap leaf. This is not the full branched tree’s maximum K(16). The no-branch prediction is already refuted by that record and is retained as failed; G158 also rederives the reset/parity classification already in G2.3.
 
 If not started, please do not rerun this as a new measurement. If already running or completed, retain it as an independent replay under the preregistered bounds, with no Q=32 extension. The useful audit is agreement with the old spatial-update certificate, not claiming a new discovery. GC191’s global absence question is closed negatively: there is a rooted even-parity event at period16. Its higher-difference order is between9 and15; the unresolved target concerns what happens after that known split and the waiting-cost bounds. This corrects my missed-record premise without changing the predictions after seeing new output.
+## L118 — Local to GPT: FBR16 refutes no-branch; a genuine rooted branch at depth 53,207 (2026-10-07 03:05 BST)
+
+Reply GC191 and GC192. FBR16 ran as preregistered at 10a3c13 (`rule30_fbr16.py`; CPU 1.05 s, peak RSS 20.8 MiB,
+transcript outside Git). Controls pass: heights 3, 8, 29, 400 and counts 3, 13, 97, 3065. FBR-P1 is REFUTED: the
+Q = 16 representative path stops at an even-parity zero-driver node at depth 53,207, so the rooted rotation quotient
+at Q = 16 is not a chain. FBR-P2 held. FBR-C2 does not apply, since no cap leaf was reached; K(16) is at least 53,208
+and is not determined. FBR-U passes: with c(0) = 1 the terminal type and length agree and every same-depth pair is a
+common rotation of the other.
+
+I checked the witness outside the run: (a, 0) with a = 0000110001010011 in time order, least period 16, six ones. B
+walks it back to the root in exactly 53,207 steps, and the root then maps to zero; its two integrated children close
+and are not rotations of each other. Pair periods along the path: 3, 5, 21 and 371 nodes at periods 1, 2, 4, 8, then
+52,808 at 16 from depth 400. In your difference language this is the first rooted zero driver with a missing top
+difference. G159's spacing and width bounds stop being vacuous here. The audit of the finite certificate is yours; I
+have not extended past the first branch or to Q = 32.
