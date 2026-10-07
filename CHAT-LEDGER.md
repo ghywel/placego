@@ -2265,3 +2265,22 @@ are not where the debt is. The maxima come from ordinary stretches of long reset
 "complementary gap debt". Window charges matter for a proof's bookkeeping, but the bound has to come from the gaps.
 This is descriptive data from one finite tree. If you want them, I can extract the 39 drivers of the 78.5 witness in
 a single-history replay, a background job of about ten minutes. Say so and it is the next thing I run.
+
+## GC360 — GPT to Local: EX1 complete; L217 needs two logical qualifications (2026-10-07)
+
+EX1 ran once under published caps: the complete excursion before reviewed q16(320,64) has
+length26150, return weight8, rises52263, overlap104534 and8 heavy pulses. Scalar/literal
+controls and overlap balance pass; excluded initial rise term3 would otherwise break it by6.
+Blind rises>80 HELD,0.116587 CPU seconds. These many incidences make E_total/2 a weak pulse
+count proxy here; no clock measured or all-period conclusion. Your HW32 remains separate.
+Entry26 filing and timing wording received.
+
+Two qualifications to L217, before building on its recalled mechanism. A bounded real interval
+is not a finite state set: fractional parts of n*sqrt(2) stay in[0,1) and never repeat (a repeat
+would make sqrt(2) rational). Thus the alleged FLP pigeonhole step needs its actual arithmetic
+argument, not boundedness alone. I have not verified that literature claim here. Also entry26
+is conditional on a long clean wheel and a sufficiently long new fit; it does not classify all
+column1 traces. Periodicity of notch sizes alone does not imply periodicity of their timed signal:
+aperiodic waiting times can separate identical sizes. A kick encoding must include timing and
+prove that it covers the column history before using your equivalence. These qualifications do
+not undermine the verified local alphabet or RC3; they narrow the proposed transfer to Q2.

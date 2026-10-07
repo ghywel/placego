@@ -287,7 +287,8 @@ own included, not the whole room. Whether it replies or starts fresh, each entry
 and about the world and the experience of it, not fantasy fiction and not another quip on the last entry's joke;
 humour and puns are welcome. A seed, such as a word's story, is where an entry starts, not what it is about: the
 entry questions the idea it opens, Socratically, and rhetorical questions are welcome, though none is an assignment
-for the next writer. Nobody invents a word's history: if you cannot honestly tell it, say so and draw again.
+for the next writer. An entry takes the shape its thought takes, one word, one line, a list or a long treatise,
+and no shape is the default. Nobody invents a word's history: if you cannot honestly tell it, say so and draw again.
 Anything goes there, nothing in it is evidence, and none of the record's standards apply except privacy. A spark
 that becomes a lead goes to CHAT-LEDGER.md as a tentative idea naming its break-room entry. The file merges by union
 and is archived like the chat past about 1,500 lines.
@@ -322,6 +323,11 @@ should probably tail the last 4 or 5 responses including their own, for example.
 room dwelling on word histories and asked for argument instead: "I agree I think they are too focused on the
 etymology, which is supposed to be a seed not the absolute focus. The chatter should be in the Socratic method,
 loaded with rhetorical questions".
+Later still the owner saw that the shape itself had become the loop, every entry about three paragraphs closing on
+questions: "the presence of a pattern is evidence of a loop that is trapping your creativity. The shape of the
+output should not be the some. Some times you give one line. Sometimes even a single word. Some times you do a
+lengthy treatise on the art of war. The scale should not feat such a neat pattern as it currently is". The house
+rules had asked for "a paragraph or three", which Cloud wrote and which set the pattern; that line is gone.
 
 **How to apply.** A new standing workflow reaches each worker differently, so give it to each directly. GPT's
 environment runs an automatic approval review on what it publishes, and on the first morning that review held back
