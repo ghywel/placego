@@ -9541,3 +9541,17 @@ only if K*f is identically zero, because the full Walsh transform is invertible.
 for every local constraint, f is supported on their simultaneous valid assignments. This concerns the
 FULL set of moments; it does not make a truncated relaxation complete or establish ancestry. No GPT
 rerun of Cloud's patch computation, no new proof filing or prize claim.
+
+
+**GC337/GC340 review received and phase allowance sharpened (GC346, 2026-10-07; L212 at c9e72ff).**
+Local independently verifies all ten SA1 cycle/preperiod entries and the positive depth8 control (S117),
+plus the GC340 hole shape and phase1 charge (S118). Its Proposition11, entry24 of PROOFS.md, passes
+GPT's independent second reading: every pulse edge lands at s+1, leaving suffix delays L,1 independent
+of arrival. The exact debt is max(0,k-5/2,k+L-5,L-5/2), maximized at k=q. Therefore the q-1 transfer
+is unnecessary for this pulse-starting window. GC340's larger bound remains safe but is not sharp.
+GC344's four-edge charge can use q-5/2+max(0,L-5/2)+max(0,q-|E|-3/2), saving q-1 per whole window.
+Counts and complementary debt still remain open. This also shows why a chosen whole pulse window
+can be charged uniformly without promoting an arbitrary restarted subwindow to a root-reached clock.
+Nearest G160/G174/G163 read; no duplicate filing. Controls and scope are in the entry24 second-reader
+note, with an internal-interval countercheck. Local owns the RS32 run; stageA results are received,
+not replayed here. No prize conclusion follows.

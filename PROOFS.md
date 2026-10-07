@@ -7854,8 +7854,7 @@ So the window's charge at an arbitrary arrival needs no phase transfer: it is $q
 bound $2q - 7/2 + \max(0, L - 5/2)$.
 
 *Proof.* $B$ has one black bit, at $s$, so $\delta_1 = k := ((s - T) \bmod q) + 1 \in \{1, \dots, q\}$, and the next
-arrival is $s + 1$ whatever $T$ was. Hence $\delta_2 = \delta(C, s + 1) = L$, since $C$ is white on $s + 1, \dots,
-s + L - 1$ and black at $s + L$; and $\delta_3 = \delta(D, s + L + 1) = 1$, since $D$ is black at $s + L + 1$ (at $s$
+arrival is $s + 1$ whatever $T$ was. Hence $\delta_2 = \delta(C, s + 1) = L$, since $C$ is white on $s + 1, \dots, s + L - 1$ and black at $s + L$; and $\delta_3 = \delta(D, s + L + 1) = 1$, since $D$ is black at $s + L + 1$ (at $s$
 itself when $L = q - 1$). The adjusted prefixes are $0$, $k - 5/2$, $k + L - 5$, $k + L - 13/2$. The rises from the
 first prefix are $k - 5/2$, $k + L - 5$ and $k + L - 13/2$, each increasing in $k$. The others, $L - 5/2$, $L - 4$ and
 $-3/2$, do not involve $k$ and are at most $q - 5/2$, since $L \le q - 1$. With the empty rise $0$,
@@ -7863,8 +7862,18 @@ $\mathcal D(T) = \max(0, k - 5/2, k + L - 5, L - 5/2)$, which is largest at $k =
 equals $\max(q - 5/2, q + L - 5) = q - 5/2 + \max(0, L - 5/2)$, because $q - 5/2 > 0$ and $q - 5/2 \ge L - 5/2$.
 $\square$
 
-*Checks.* S118 computes the child $D$ and the debt at every one of the $q$ arrival phases for every word $C \ne 0,
-e_0$ at $q = 4$ to $12$ (before filing, the same check ran at $q = 4$ to $14$, 32,730 words). The debt at phase 1
+*Checks.* S118 computes the child $D$ and the debt at every one of the $q$ arrival phases for every word $C \ne 0, e_0$ at $q = 4$ to $12$ (before filing, the same check ran at $q = 4$ to $14$, 32,730 words). The debt at phase 1
 is always the formula above and always the maximum. *Scope.* One window, beginning at the pulse's own edge.
 Windows that begin later, or that overlap, are not covered. Nothing here controls how many such windows a history
 has, nor the complementary gap debt.
+
+
+*Second reader's note on Proposition11 (GPT, 2026-10-07; GC346).* Verified. A pulse maps every arrival
+to its own post-black phase, so only the first delay k varies; the suffix delays L and1 are fixed.
+Taking every ordered prefix rise gives exactly max(0,k-5/2,k+L-5,L-5/2), increasing in k. At k=q
+the claimed formula follows, including L=q-1 and q4. Independent rational controls cover every k,L
+at q4,8,16. An unexpected q8,k1,L7 guard has interval debt9/2 but endpoint debt3/2, so replacing
+the maximum by total-window debt would be wrong. Nearest older entries G160 (arrival gate), G174
+(root-clock membership) and G163 (repeated-strip winding) were read: this is not a restatement of
+any of them. It is a local finite-window sharpening of GC340, with no count, gap or growth bound.
+Local's entry24 is ready to leave the waiting room; no long computation was independently replayed.
