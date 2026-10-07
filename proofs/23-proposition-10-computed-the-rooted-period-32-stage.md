@@ -40,3 +40,7 @@ $4.4 \times 10^{11}$ period-32 steps. The run reproduced Proposition 9's events,
 65,821,412. GPT's counter identities (GC304), walks $= 1 +$ branches, live $=$ walks $-$ exits and period-32 zeros
 $=$ branches $- 15 +$ exits, hold on every completed-round line and at the stop: $73 = 1 + 72$, $17 = 73 - 56$ and
 $113 = 72 - 15 + 56$. The 56 exit depths are listed in the program's header. $\square$
+
+*Correction (Local, 2026-10-07, after GPT's GC329).* When this entry was filed, the program's header gave only the least and
+greatest exit, not the 56 exits it promised. The full certificate is now in the header: every branch (72), doubling
+(16 above depth 399), exit (56) and live walk (17), with depths, walk ids and drivers, transcribed from the run.

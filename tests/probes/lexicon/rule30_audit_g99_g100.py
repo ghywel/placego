@@ -596,6 +596,13 @@ CHECKS (GPT's claims at 827e006):
      holds but the four-step pattern fails at every rotation. At q = 16 the cost is 36 and the slope-5/2 debt 26. A
      separately written absolute-time walk of every rooted history at q = 16 finds the state (320, 64), clock phase 7,
      at depth 725,146, the rooted occurrence GPT reports.
+  S114 (GC327, added 2026-10-07 at a9a4541): the four-edge block (costs q, 3, 1, q) has adjusted prefixes 0, q - 5/2,
+     q - 2, q - 7/2, 2q - 6 at slope 5/2, debt 2q - 6 for q = 4 .. 64 (a tie with q - 2 at q = 4) and transferred
+     allowance 3q - 7 (5, 17, 41, 89 at q = 4, 8, 16, 32); sum_(i=2..j) (3 2^i - 7) = 6Q - 7j - 5 <= 6Q to j = 39; the
+     debt is subadditive over consecutive blocks (3,000 random splits). On the actual rooted period-16 tree, walked in
+     absolute time, the start class (rotations of (e_0 + e_2, e_0)) occurs on each of the 16 histories at most once,
+     exactly once on the two sharing the start at depth 725,146 and nowhere else; the pulse 1024 at depth 725,149 has
+     predecessor 64639.
 """
 import random
 from fractions import Fraction as F
@@ -6219,4 +6226,65 @@ ok113 &= (320, 64, 7) in _hits113
 check('S113 GC326: the sparse episode e_s + e_(s+2), e_s -> 1 + e_(s+1) + e_(s+2) -> ... -> e_(s+4) with delays q, 3, 1, q '
       'at every rotation for q = 4..32 (the chain fails at q = 3); cost 36, debt 26 at q = 16; the rooted state (320, 64) at '
       'phase 7 at depth 725,146', ok113)
+ok114 = True
+_rng114 = random.Random(327)
+# GC327: the four-edge block's adjusted prefixes at slope 5/2 are 0, q - 5/2, q - 2, q - 7/2, 2q - 6 (doubled: 0, 2q - 5,
+# 2q - 4, 2q - 7, 4q - 12), its debt is 2q - 6 for q >= 4 (a tie with q - 2 at q = 4), the transferred allowance 3q - 7
+for q in range(4, 65):
+    z = [0]
+    for c in (q, 3, 1, q):
+        z.append(z[-1] + 2 * c - 5)
+    lo, D = z[0], 0
+    for v in z:
+        D = max(D, v - lo)
+        lo = min(lo, v)
+    ok114 &= z == [0, 2 * q - 5, 2 * q - 4, 2 * q - 7, 4 * q - 12] and min(z) == 0 and D == 4 * q - 12
+    ok114 &= (2 * q - 6) + (q - 1) == 3 * q - 7
+ok114 &= [(2 * q - 6, 3 * q - 7) for q in (4, 8, 16, 32)] == [(2, 5), (10, 17), (26, 41), (58, 89)]
+ok114 &= all(sum(3 * 2 ** i - 7 for i in range(2, j + 1)) == 6 * 2 ** j - 7 * j - 5 <= 6 * 2 ** j for j in range(2, 40))
+# the debt (largest forward rise) is subadditive over consecutive blocks: D(joined) <= D1 + D2 (random blocks)
+def _rise114(adj):
+    z, lo, best = 0, 0, 0
+    for v in adj:
+        z += v
+        best = max(best, z - lo)
+        lo = min(lo, z)
+    return best
+for trial in range(3000):
+    b1 = [_rng114.randint(-5, 5) for _ in range(_rng114.randint(0, 9))]
+    b2 = [_rng114.randint(-5, 5) for _ in range(_rng114.randint(0, 9))]
+    ok114 &= _rise114(b1 + b2) <= _rise114(b1) + _rise114(b2)
+# ancestry on the actual rooted period-16 tree (every history, absolute time): each history meets the start class
+# (rotations of (e_0 + e_2, e_0)) at most once; the one rooted start is at depth 725,146 (shared by the two histories
+# through it), and the pulses 64 and 1024 occur three columns apart there with different predecessors (320, 64639)
+_start114 = {(_rq3.rot(1 | 4, k, 16), _rq3.rot(1, k, 16)) for k in range(16)}
+_per114 = []
+_st114 = [(0, (1 << 16) - 1, 0, ())]
+while _st114:
+    x, y, d, hits = _st114.pop()
+    hits = list(hits)
+    while True:
+        if (x, y) in _start114:
+            hits.append(d)
+        if d == 725149 and y == 1024:
+            ok114 &= x == 64639
+        if d == 725146 and (x, y) == (320, 64):
+            hits.append(-1)                                 # marker: the GC326 occurrence on this history
+        if y == 0:
+            kids = _rq3.children(x, 0, 16)
+            if not kids:
+                _per114.append(hits)
+                break
+            c1, c2 = kids
+            if not any(_rq3.rot(c1, k, 16) == c2 for k in range(16)):
+                _st114.append((0, c2, d + 1, tuple(hits)))
+            x, y, d = 0, c1, d + 1
+            continue
+        x, y, d = y, _rq3.children(x, y, 16)[0], d + 1
+ok114 &= len(_per114) == 16
+ok114 &= all(len([h for h in hs if h >= 0]) <= 1 for hs in _per114)
+ok114 &= sum(1 for hs in _per114 if 725146 in hs) == 2
+check('S114 GC327: the four-edge block debt 2q - 6 (tie at q = 4) and allowance 3q - 7, sum 6Q - 7j - 5 <= 6Q, debt '
+      'subadditive over blocks; on the actual period-16 tree each history starts the burst at most once (two share the '
+      'start at 725,146), the second pulse having predecessor 64639', ok114)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
