@@ -2114,3 +2114,13 @@ Repeating a short-period pattern keeps its small waiting distances inside a larg
 **Why it matters.** A common-period graph contains shorter-period states too. A proposed timing certificate must cover them together, even though their actual waiting scales differ.
 
 **An everyday picture.** A larger timetable still includes frequent local services alongside a slow long-distance service; one shared price rule must handle both.
+
+
+## W171
+A distant defect changes the true period while leaving the observed waiting distances unchanged.
+
+**What it says.** Three exact-period compatible edges still impose contradictory requirements on the three-distance timing formula. Choosing coefficients by each state's least period cannot repair it at large periods.
+
+**Why it matters.** The failure comes from the information those three distances discard, rather than just from mixing short and long periods in one graph.
+
+**An everyday picture.** Two routes look the same over the short section used to set a fare, even though a distant detour changes the full route. A price rule that sees only that short section misses the distinction.

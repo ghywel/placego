@@ -445,3 +445,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [embedded period constraints reject three-distance coefficients](W170-embedded-period-constraints-reject-three-distance-coefficients.md):
   Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
+- [exact-period witnesses reject three-distance coefficients](W171-exact-period-witnesses-reject-three-distance-coefficients.md):
+  A distant defect changes the true period while leaving the observed waiting distances unchanged.
