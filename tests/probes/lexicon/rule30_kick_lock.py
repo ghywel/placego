@@ -22,7 +22,13 @@ PREDICTIONS, Local's, published before the run:
   KLK-P1 (blind): the least m grows with N, and at N = 140, 147, 154, 161 it lies within 3 of 0.22 N (Cloud's
          reading of a locked region growing at about 0.22 columns per step).
   KLK-P2 (blind, uncertain): the least full-width N lies in 120 .. 135.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 21:38 (M5, one run at commit 04255b2, 277 s with 8 kissat processes; transcript outside Git).
+KLK-C2 PASS: at full width class 12 is alive at 15 of 56 cases at N = 112 and dead at N = 140. Bisection: 1 case alive
+at N = 126, none at 127, 129, 133, so the least full-width N is 127 (KLK-P2 HELD). KLK-C1 PASS: at N = 168 the least m
+is 37. KLK-P1 REFUTED: the least m is 37 at every N = 140, 147, 154, 161, 168. It does not grow with the time on the
+wheel, so the reading of a locked region spreading at about 0.22 columns per step does not survive. Whatever forbids
+class 12 lies in a fixed band of 37 columns once N >= 140. Caveat: the bisection over N assumes that deaths stay dead
+as N grows, which was not proved (a wider m can only remove solutions, so the bisection over m is sound).
 """
 import os
 import subprocess
