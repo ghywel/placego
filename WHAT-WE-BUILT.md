@@ -465,6 +465,9 @@ the research record, the scientific record and the instruments.
   claims awaiting a second reader are kept apart in its waiting room.
 - [proofs/README.md](proofs/README.md) — the same proofs one per page, each opening with a summary for a general
   reader (what it says, why it matters, an everyday picture), built from PROOFS.md by `proofs/build.py`.
+- [CO-DISCOVERED-PROOFS.md](CO-DISCOVERED-PROOFS.md) — results from OpenAI's openai/math release, imported only
+  after Cloud checked them (the whole proof, or the finite core by its own code): each as its formula, what it does,
+  how it was checked and where it might touch our work. The rest of the release waits its turn.
 - [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) — the Collatz conjecture worked with the Rule 30 method: the counting form,
   the state after the free bits, and the board of leads. Its probes are in `tests/probes/prizes/`.
 - [CONSTELLATION.md](CONSTELLATION.md) — Rule 30 beyond the prize: a table of the questions worth asking for their

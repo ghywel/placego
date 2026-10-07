@@ -1,0 +1,257 @@
+# Co-discovered proofs: results from openai/math, checked before import
+
+OpenAI's [openai/math](https://github.com/openai/math) release (Apache-2.0; read here at commit `adc7f12` of
+2026-10-06) holds 722 preprints in 372 families, written by an unreleased internal model, with a Lean 4 library
+for part of them. Its README warns that results without a formalisation "could have issues". This document is the
+owner's request of 2026-10-07: bring in "cutting edge formula that may or may not be relevant to our project", as
+the formula and what it does, briefly, so that the workers can read it into their context. The owner then set the
+gate: "only importing formula that you can peer review and replicate", and the pace: "Import the easy ones now,
+chew on the hard ones later."
+
+**The gate.** Nothing here is taken on the release's word. A family is imported only at one of two levels, and its
+entry says which:
+
+- **A, proof checked.** Cloud read the whole proof, found it correct, and re-derived every step that can be
+  computed with a script written without the release's code.
+- **B, finite core replicated.** Cloud's own code reproduces the claim's explicit object, its exceptional cases or
+  its small instances; the general proof has not been reviewed. A level-B formula is true where it was checked and
+  claimed beyond.
+
+Each entry gives the statement, what it does in a line, how it was checked, and where it might touch our work. The
+scripts are in `tests/probes/openai_math/`; their predictions were pushed before they ran (commit `a457f78`).
+Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
+(that needs the toolchain and a mathlib build, and is the first of the hard ones).
+
+**Batch 1 (2026-10-07): 5 of 372 families imported, 2 at level A and 3 at level B.**
+
+| Family | Result | Level | Script |
+|---|---|---|---|
+| 088 | A product of simplices beats the simplex for projection-body volume | A | `om088_projection_body.py` |
+| 049 | A polynomial whose zero set is flat 3-space but which is not a coordinate | A | `om049_noncoordinate.py` |
+| 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
+| 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
+| 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
+
+---
+
+## 088. A product of simplices beats the simplex (level A)
+
+*Preprint:* "A product counterexample to the simplex maximum for projection-body volume", 2026-09-24. Lean: the
+release lists a formalisation of the dimension-20 counterexample.
+
+**Statement.** The projection body $\Pi K$ of a convex body $K \subset \mathbb{R}^d$ has as support function the
+shadow volumes, $h_{\Pi K}(u) = \mathrm{vol}_{d-1}(\mathrm{proj}_{u^\perp} K)$ for unit $u$. For a polytope with
+facet areas $s_F$ and outward unit normals $\nu_F$ (Cauchy's formula),
+
+```math
+h_{\Pi P}(u) = \tfrac12 \sum_F s_F \, |\langle \nu_F, u \rangle|, \qquad
+\Pi P = \sum_F \left[ -\tfrac12 s_F \nu_F, \ \tfrac12 s_F \nu_F \right],
+```
+
+a sum of segments (a zonotope). Put $R_d(K) = |\Pi K| / |K|^{d-1}$, which is affine-invariant. Then
+
+```math
+\Pi(A \times B) = (|B|\,\Pi A) \times (|A|\,\Pi B), \qquad R_{r+s}(A \times B) = R_r(A)\, R_s(B),
+\qquad R_d(T_d) = c_d = \frac{(d+1)\,d^d}{d!}.
+```
+
+So for the product of two 10-simplices,
+
+```math
+\frac{R_{20}(T_{10} \times T_{10})}{c_{20}} = \frac{121 \binom{20}{10}}{21 \cdot 2^{20}}
+= \frac{5588869}{5505024} \approx 1.0152 > 1.
+```
+
+Brannen's 1996 conjecture that simplices maximise $R_d$ fails in dimension 20. The general test is
+
+```math
+\frac{R_{r+s}(T_r \times T_s)}{c_{r+s}} = \frac{(r+1)(s+1)}{r+s+1} \binom{r+s}{r} \frac{r^r s^s}{(r+s)^{r+s}}.
+```
+
+(Feng, Hu, Liu and Xu had counterexamples in every dimension from 9 by another route; this one is exact and
+elementary. The preprint also shows the excess grows exponentially with dimension.)
+
+**What it does.** It makes a volume functional multiplicative over products. Any conjectured extremal value that
+grows more slowly than multiplicatively is then refuted by a product of its own extremisers.
+
+**How it was checked.** Cloud read the five-page proof: the facet formula, the facets of a product, affine
+covariance, the simplex as a cube plus one segment, and the arithmetic. It is correct. The script checks Cauchy's
+formula against shadows computed directly as convex hulls, the tetrahedron in $\mathbb{R}^3$ and $T_2 \times T_2$ in
+$\mathbb{R}^4$ (largest discrepancy $7 \times 10^{-15}$). It finds the facets of $T_r \times T_s$ by brute force
+from the vertices. It computes $|\Pi T_d|$ for $d \le 14$, and every product with $r, s \le 6$, from the general
+zonotope volume formula (the sum of $|\det|$ over $d$-subsets of generators) rather than the preprint's argument.
+It also checks the final and corollary arithmetic. The first equal split that beats the simplex is $r = s = 10$,
+as predicted.
+
+**For us.** Not about Rule 30 or Collatz. It is a clean model of a multiplicativity test: compute one value on a
+product, and a conjecture falls.
+
+---
+
+## 049. A flat 3-space that cannot be straightened (level A)
+
+*Preprint:* "An explicit noncoordinate polynomial with affine three-space zero fibre", 2026-09-24. Lean: the
+release lists a formalisation for every dimension $n \ge 4$.
+
+**Statement.** In $R = \mathbb{C}[h,u,v,w]$ put
+
+```math
+x = u^3 + hv, \quad y = -u^2 + hw, \quad s = 2u^3v + 3u^4w + h(v^2 - 3u^2w^2) + h^2w^3
+\quad (\text{so } x^2 + y^3 = hs),
+```
+```math
+p = -2s^2x + 3sy^2 - 3s^3y, \qquad F = h - p - 1 \quad (\text{degree } 17,\ 69 \text{ terms}).
+```
+
+Then $R/(F) \cong \mathbb{C}[X,Y,T]$: the zero set of $F$ is a flat 3-space, with coordinates
+
+```math
+X = x + s^3, \quad Y = y - s^2, \quad T = \alpha u + \beta(v + uw), \qquad
+\alpha = 1 + 2s^2x + 4s^5, \quad \beta = (3s^3 - 3sy)(1 + 2s^2x) - 4s^4y^2,
+```
+
+and an explicit polynomial inverse. Yet the gradient of $F$ vanishes at $P = (2, 0, -\tfrac12, \tfrac12)$. A
+coordinate (the first component of a polynomial automorphism of $\mathbb{C}^4$) never has a zero gradient, because
+the automorphism's Jacobian is invertible everywhere, so $F$ is not one. This is a counterexample to the
+Abhyankar–Sathaye embedding conjecture for $\mathbb{C}^3 \subset \mathbb{C}^4$, and, by adding variables, in every
+dimension from 4. The case $\mathbb{C}^2 \subset \mathbb{C}^3$ is not addressed. The whole obstruction is one
+identity:
+
+```math
+X^2 + Y^3 = s\,(1 + F),
+```
+
+so the fibre $F = -1$ lies over the cusp $X^2 + Y^3 = 0$ and carries the critical point. The engine is a lifting
+lemma: if $x^2 + y^3 = hs$ in a ring $B$ and $h$, $y$ generate the unit ideal, then
+$B[U,V,W]/(U^3 + hV - x,\ -U^2 + hW - y,\ S(h,U,V,W) - s) \cong B[T]$.
+
+**What it does.** It certifies that a hypersurface is flat space by writing down coordinates both ways, and shows
+it cannot be straightened by one critical point on a different fibre.
+
+**How it was checked.** Cloud read the proof (one lemma, three pages): correct. The script checks, as exact integer
+polynomial identities, all ten identities the proof rests on: the cusp relation, the shift, the unit-ideal
+certificate $\alpha h + \beta y - 1 = (1 + 2s^2x)(h - 1 - p) - 4s^4(x^2 + y^3 - sh)$, the lemma's substitution and
+compatibility, its inverse pair, the ambient identity, and $F(P) = -1$ with $\nabla F(P) = 0$ exactly. The maps
+round-trip at 12 random rational points of $\mathbb{C}^3$ and at 300 random points of the zero set over the field
+with 1009 elements.
+*Unexpected check:* over $\mathbb{F}_p$, $p = 3$ to 13, every fibre $F = c$ has exactly $p^3$ points, the critical
+fibre included. Cloud's even-odds guess, written before the run, that the critical fibre would differ was wrong.
+Point counting does not see this obstruction.
+
+**For us.** The pattern of a certificate by explicit inverse, then an obstruction from one critical point, is the
+kind of finite evidence our proofs aim for. The point counts are a caution for counting arguments such as the
+Collatz counting form: two objects can agree on every count mod $p$ and still differ.
+
+---
+
+## 205. Universal tensor squares for the symmetric groups (level B)
+
+*Preprints:* "Universal Tensor Squares for Symmetric Groups" and "A Cyclic Polytabloid Proof of Saxl's
+Conjecture", 2026-09-24. Lean: the release lists formalisations of both.
+
+**Statement.** The Kronecker coefficient $g(\lambda, \mu, \nu)$, the multiplicity of the irreducible $\nu$ in
+$\lambda \otimes \mu$, is
+
+```math
+g(\lambda,\mu,\nu) = \sum_{\rho \vdash n} \frac{\chi^\lambda(\rho)\,\chi^\mu(\rho)\,\chi^\nu(\rho)}{z_\rho},
+\qquad z_\rho = \prod_i i^{m_i}\, m_i!,
+```
+
+where $m_i$ counts the parts of $\rho$ equal to $i$. For every $n \notin \{2, 4, 9\}$ there is $\lambda \vdash n$
+with $g(\lambda, \lambda, \nu) > 0$ for every $\nu \vdash n$: one irreducible whose tensor square holds every
+irreducible (the tensor square conjecture). Saxl's conjecture, the companion's theorem, is that the staircase
+$(m, m-1, \ldots, 1)$ is such a $\lambda$ for $n = m(m+1)/2$. Any such $\lambda$ equals its transpose, since
+$g(\lambda, \lambda, 1^n) = 1$ exactly when $\lambda = \lambda'$.
+
+**What it does.** It names one representation that generates all the others in one tensor square.
+
+**How it was checked.** By Cloud's own character tables (the Murnaghan–Nakayama rule) for every $n \le 24$: the
+$n$ with no universal $\lambda$ are exactly 2, 4 and 9; the staircase is universal for $m \le 6$; every universal
+$\lambda$ is self-conjugate (tested on every $\lambda$ to $n = 12$). Controls: column orthogonality of every table,
+and $g(\lambda, \lambda, (n)) = 1$. The general proof (recurrences, pruning, and the release's own search to
+$n = 64$) is not reviewed. Examples: 311 at $n = 5$, 321 at $n = 6$, 4111 at $n = 7$, 4321 at $n = 10$.
+
+**For us.** Not related. It is a well-checked formula for Kronecker coefficients, if one is ever needed.
+
+---
+
+## 189. Cycle–clique Ramsey numbers (level B)
+
+*Preprint:* "Cycle–clique Ramsey numbers", 2026-09-25. Lean: the release lists a formalisation of the full range.
+
+**Statement.** For all $m \ge n \ge 3$ except $(3, 3)$,
+
+```math
+R(C_m, K_n) = (m-1)(n-1) + 1, \qquad R(C_3, K_3) = 6,
+```
+
+the least $N$ such that every red–blue colouring of the complete graph on $N$ vertices has a red $m$-cycle or a
+blue $n$-clique (the Erdős–Faudree–Rousseau–Schelp conjecture). The lower bound is $n - 1$ disjoint red cliques
+of $m - 1$ vertices, all blue between them.
+
+**What it does.** It gives the exact threshold at which a long red cycle or a large blue clique is forced.
+
+**How it was checked.** Cloud's own SAT encoding (a variable per edge, a clause against every red $m$-cycle and
+every blue $n$-set), solved with Glucose through python-sat. At $N - 1$ vertices the solver must find a colouring,
+which is re-checked without it; at $N$ it must find none. The construction is checked directly. The plain
+encoding settles $(3,3)$ (the pentagon at 5 vertices, none at 6), $(4,3)$, $(5,3)$, $(6,3)$, $(7,3)$ and $(4,4)$
+within 20 seconds each. The larger cases ran for many minutes, so a second encoding was added after the first run:
+split by the largest red degree $D$ (relabel so that vertex 0 has degree $D$ and neighbours $1, \ldots, D$, and bound
+every degree by $D$). Its control is to find a colouring one vertex below the threshold, and it agrees with the plain
+encoding on $(7,3)$. It settles $(5,4)$ at 13 vertices and $(6,4)$ at 16 in seconds per degree. So 8 of the 9 cases
+agree with the formula and none disagree. $(5,5)$ at 17 vertices is still running at the time of writing; its
+first degree, $D = 4$, is the hard one. The general proof is not reviewed.
+
+**For us.** Not related, beyond being an exact extremal threshold settled by a finite search plus a proof.
+
+---
+
+## 119. The most informative Boolean function (Courtade–Kumar, level B)
+
+*Preprint:* "Sharp binary information contraction on the discrete cube", 2026-09-24. Lean: the release lists a
+formalisation of the inequality and its equality case.
+
+**Statement.** Let $X$ be uniform on $\{0,1\}^n$ and $Y$ be $X$ with each bit flipped independently with
+probability $a$. For every Boolean $f$,
+
+```math
+I\big(f(X);\, Y\big) \le 1 - h(a), \qquad h(a) = -a \log_2 a - (1-a) \log_2 (1-a),
+```
+
+with equality for a dictator $f(x) = x_i$ or its complement. This was conjectured by Courtade and Kumar in 2014.
+
+**What it does.** It bounds what one yes/no answer about some bits can tell you about a noisy copy of them: no
+cleverer function beats copying one bit.
+
+**How it was checked.** Every Boolean function of $n \le 4$ bits (65,536 at $n = 4$) at seven noise levels
+$a = 0.01$ to $0.45$. The maximum equals $1 - h(a)$ to within $4 \times 10^{-16}$ and is attained only by the
+dictators and their complements, as predicted. *Unexpected check:* the best non-dictator at $n = 4$ is a
+near-dictator (a dictator with a few values changed), reaching 97% of the bound at $a = 0.01$ and 83% at
+$a = 0.45$. Small cases were checked numerically in the literature before, so this is replication, not news. The
+general proof (long and analytic) is not reviewed.
+
+**For us.** The closest of this batch to Rule 30. The centre column is a Boolean function of the initial row; with
+the inputs seen through noise, no readout of it carries more than one bit's worth of information about them. That
+is a ceiling of the kind our information-growth probes measure against.
+
+---
+
+## Not imported yet: the hard ones
+
+Most families are long proofs in analysis, geometry, number theory or topology. They need a full read, and many
+have no finite core to replicate. Some that looked finite at first sight, and why they wait:
+
+- **161, Sidorenko's conjecture fails.** The 35-vertex pattern is explicit: the incidence graph of 22 triples on 13
+  points, each pair of points in exactly two triples. The host graph exists only in a limit (a large prime $q$ and a
+  small $\varepsilon$), so there is nothing finite to evaluate yet.
+- **162, Ryser's conjecture fails.** The constructions are for every sufficiently large prime, by probabilistic
+  deletion.
+- **132, sensitivity versus block sensitivity, and 192, the square-root degree bound.** The functions are explicit,
+  but on astronomically many bits; 192's construction has no bound on its size at all.
+- **156, Borsuk fails in dimension 9, and 158, the plane is not 5-colourable.** Both are continuous objects (all
+  rank-one projectors of $\mathbb{R}^4$; arbitrary colour classes) with topological or analytic proofs.
+- **The Lean route.** The release's Lean 4 library (`lean/`) and its ComparatorChallenges state the formalised
+  results. Compiling them here needs the Lean toolchain and a mathlib build, which is the next step for every
+  family the release says is formalised.
+
+The catalogue itself is `CONTENTS.md` in the release. A family enters this document only through the gate above.
