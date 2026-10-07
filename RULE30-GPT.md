@@ -9412,3 +9412,45 @@ family235's compensated potential/drift method, without treating our determinist
 and family049b's filtration method, without assuming its algebraic geometry transfers to binary ancestry.
 These are candidate connections, not derived Rule30 bounds. Next: pair Local's actual q16 separation census
 with rooted constraints, seeking a justified exclusion or compensation beyond the named pulse family.
+
+
+## Every nonterminal singleton driver forces a hole interval two words later (2026-10-07; GC340)
+
+**Bounded symbolic block, independent review requested; no new trajectory.** L211's heavy-predecessor observation
+asks whether GC334's hole mechanism survives without a two-black source. Prediction recorded before controls:
+it does. Counterfactual: predecessor weight two is essential. It is not essential for this shorter window.
+
+Use common period q>=4 and pulse B=e_s. Let C be its compatible child, with C neither0 nor e_s. Let L be the
+first positive distance from s to another black bit of C; thus1<=L<=q-1, even if C(s)=0. Then the unique compatible
+child D of the pair(B,C) is
+
+    D = one with precisely the holes s+1,...,s+L.
+
+Proof directly from the literal scalar recurrence: D(i+1)=B(i) XOR(C(i) OR D(i)). A black C bit away from s sets
+the following D bit to1. Across intervening zero C bits away from s, D propagates unchanged. Going around the
+cycle from the last such black bit to s therefore gives D(s)=1. At s the pulse sets D(s+1)=0, whether C(s) is0
+or1. This zero propagates up to s+L; that black C bit sets D(s+L+1)=1, which stays1 until the cycle returns.
+This proves the displayed word and all literal equations. It also includes C a singleton away from s.
+
+At reference arrival s+1 the successive drivers(B,C,D) have delays(q,L,1). At slope5/2 their adjusted prefixes
+are0,q-5/2,q+L-5,q+L-13/2. For q>=4 the largest ordered prefix rise is
+
+    q-5/2 + max(0,L-5/2).
+
+The last prefix is below the preceding one; both intermediate peaks are nonnegative. If the last prefix is
+negative it has no later endpoint, so it cannot increase the ordered rise. One phase transfer of q-1 bounds
+this three-edge window at arbitrary arrival by2q-7/2+max(0,L-5/2). This is a partial window charge, not a
+constant-number-of-windows theorem. Counts, overlap and complementary gap debt are still uncontrolled.
+
+**Independent hand-selected literal controls.** At q8, heavy predecessor A=255, pulse B=1 gives C=85 and
+D=249: L=2 despite predecessor weight8. Odd predecessor A=128 gives C=254,D=253,L=1; here C(s)=0, so the
+argument must not assume the pulse lies in C. Six scalar per-bit triples check these examples and the boundaries.
+**Unexpected boundary and retained failure:** C=0 occurs for A=B, and C=B forces D=0, so neither supplies the
+nonterminal three-driver clock above. My first same-pulse control incorrectly used A=0; its literal assertion
+failed. The inverse equation corrects it to A=129 at q8, and the corrected control passes. This was a failed
+control tuple, not a failed general recurrence. Ambient examples are not asserted rooted.
+
+This expands the exact shape statement to heavy sources while keeping its clock scope explicit. It does not
+settle the all-period debt or growth requirements of Q7, and does not reopen a closed reduced-feature potential.
+Next: check whether the forced hole interval can support a covering or compensation argument that pays for
+actual repeated singleton events, rather than charging each one independently by q.
