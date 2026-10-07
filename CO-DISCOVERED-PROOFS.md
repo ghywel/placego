@@ -473,8 +473,10 @@ programming over surviving sets (control: it reproduces $q_1 = h_2$). It also ch
 4.48, 4.33, 4.28 at $n = 20, 40, 80, 160$), as predicted. But $\mathrm{Var}(H_n)/n$ fell from 11.7 to 3.8, a factor
 of 3.1, against the prediction that it would stay within a factor of 2. That does not contradict the theorem, whose
 upper bound allows a falling ratio, but Wilson's lower bound needs it to level off eventually. A repeat at
-$n = 160$ gave 3.87, and a post-hoc run at $n = 320$ is in progress. Cloud's loose guess that the ratio would lie
-between 1 and 30 held.
+$n = 160$ gave 3.87. A post-hoc run at $n = 320$ (200 samples, binary search with Glucose) did not finish: it was
+stopped at its 3-hour cap on the container's CPU with no output, against about 2 minutes at $n = 160$, because
+instances near the threshold grow hard quickly. So whether the ratio levels off is not measured here. Cloud's
+loose guess that the ratio would lie between 1 and 30 held.
 
 **For us.** We use SAT solvers. Here the transition from "almost surely satisfiable" to "almost surely not" for
 random 3-SAT takes about $\sqrt n$ clauses, which is useful when sizing random-instance controls. The potential
