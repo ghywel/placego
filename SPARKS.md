@@ -38,7 +38,8 @@ super-administrator - and Spark follow-upper. Check the break room for new tests
    then names who proved what and who second-read it. The IDs are SP rather than S because S1, S2, ... already name
    Local's second-reading checks. The owner, 2026-10-07: "Interesting proofs from SPARKS should get their own proof
    write up in the repository - possible name as S01 etc". So far: SP01 (SC2, socks), SP02 (SC3, the last
-   diminisher, with GPT's correction) and SP03 (SC9, the concertina threshold).
+   diminisher, with GPT's correction), SP03 (SC9, the concertina threshold) and SP04 (SC17, the reef and the
+   granny).
 
 **Format.** IDs are per author, so that two people never pick the same one: SL1, SL2, ... for Local, SG for GPT, SC
 for Cloud and SO for the owner.
@@ -698,7 +699,21 @@ No new experiment, proof page or sample extension. Claim closed; return to the m
   classical result, so the spark checks it and writes a self-contained proof; equal polynomials would not show the
   knots equal, only that this invariant cannot tell them apart.
 - **Method.** tests/probes/sparks/sc17_reef_granny.py.
-- **Status.** Running.
+- **Result.** Controls first: the unknot gave 1, the positive trefoil t + t³ − t⁴ and the figure-eight knot the
+  symmetric t⁻² − t⁻¹ + 1 − t + t². The first run failed the unknot control, giving A⁻⁶, because I had the two ways
+  of splitting a crossing the wrong way round; after the fix every control passed. The granny gave t² + 2t⁴ − 2t⁵ +
+  t⁶ − 2t⁷ + t⁸, exactly the trefoil's polynomial squared, and the reef −t⁻³ + t⁻² − t⁻¹ + 3 − t + t² − t³, exactly
+  the trefoil's times its mirror's. The reef's is unchanged when t is replaced by 1/t; the granny's is not, and the
+  granny's mirror, computed directly, is the granny's polynomial with t replaced by 1/t.
+- **Verdict.** Supported, exactly as predicted: the reef and the granny are different knots, and the granny is
+  chiral while the reef is its own mirror image. The proof is written up as SP04. It is a classical result; what the
+  spark adds is that GPT's bow and Local's heterochiral, two break-room entries, were describing the same pair of
+  knots.
+- **Second reader.** Awaiting.
+- **Proof write-up.** PROOFS.md SP04, with its
+  [own page](proofs/SP04-the-reef-knot-and-the-granny-knot-are.md).
+- **Might inspire.** Whether the slipped bow itself, loops and all, can be told apart from its mirror the same way.
+- **Status.** Done.
 
 ## SC18 — counting by copying (2026-10-07, Cloud; from candidate 20)
 
@@ -715,7 +730,24 @@ No new experiment, proof page or sample extension. Claim closed; return to the m
   definitions related, and at most 15 per cent of the random pairings related by a shared content word.
   Counter-evidence: under 30 per cent related, or no clear gap from the control.
 - **Method.** tests/probes/sparks/sc18_counting_by_copying.py, run with python3 -I on the tables, kept outside git.
-- **Status.** Running.
+- **Result.** The first version of the script missed characters whose decomposition nests a copy inside a copy: the
+  table writes 森 as 木 over 林, not as three 木. Its own control, which required 森 to be found, stopped it before any
+  result, and the fix opens such components up. Then: 464 copy-characters, 266 of two copies, 155 of three and 43 of
+  four; 127 have definitions for both the character and its component. By the rule fixed in advance, 41 of the 127
+  are related (32 per cent): 28 per cent share a content word with the component, against 1.1 per cent for random
+  pairings, and 8 per cent use a word of quantity or intensity. The rule is strict, and my own stop list made it
+  stricter: it dropped one, two and three, which hides 二, 三 and 亖. Post hoc, and by my own reading, which is not
+  blind: about 37 of the 86 that the rule calls unrelated plainly express a number or a pairing (双 a pair, 孖 twins,
+  囍 double happiness, 𠦌 forty, written as two twenties) or a meaning from the component's world (林 a forest of 木
+  trees, 犇 and 騳 running herds of oxen and horses, 轟 the rumble of carts, 㗊 the clamour of four mouths, 掱 a
+  pickpocket, from three hands). That would make about 60 per cent. The rest are names, sound loans or analyses in
+  which the component is not the meaning (吕, 哥, 品 an article, 鑫 used in names, 𪚥 four dragons, meaning verbose).
+- **Verdict.** Partly supported. The pattern is real and far above chance, 28 per cent against 1 per cent by the
+  strict rule, but that rule found 32 per cent related, not the half I predicted. My non-blind reading suggests
+  about 60 per cent. 300 or more copy-characters, predicted, held.
+- **Second reader.** Awaiting.
+- **Might inspire.** The copy-characters include jokes: four dragons for verbose and three hands for a pickpocket.
+- **Status.** Done.
 
 ## SC19 — where attention went: the horse (2026-10-07, Cloud; from candidate 21)
 
@@ -731,4 +763,16 @@ No new experiment, proof page or sample extension. Claim closed; return to the m
   a definition name a colour or marking, against at most 6 per cent for each of the other three. Counter-evidence: a
   horse share no larger than the largest of the other three.
 - **Method.** tests/probes/sparks/sc19_horse_colours.py, run with python3 -I on Unihan, kept outside git.
-- **Status.** Running.
+- **Result.** Horse 馬: 1,063 characters, 325 with a definition, 66 of them naming a colour or marking (20.3 per
+  cent). Cow 牛: 517, 107 and 11 (10.3 per cent). Sheep 羊: 343, 70 and 3 (4.3 per cent). Pig 豕: 222, 43 and 1 (2.3
+  per cent). Dog 犬, not predicted: 1,109, 234 and 11 (4.7 per cent). The horse radical has 2.06 times as many
+  characters as the cow, the largest of the three.
+- **Verdict.** Supported on both main claims: the horse radical has more than 1.5 times the characters of each of
+  the others, and a fifth of its defined characters name a colour or marking, against a tenth or less for the
+  others. One part of my prediction missed: I expected at most 6 per cent for each of the others, and the cow came
+  in at 10.3. Oxen were draught animals too, and their colours were named. The dog radical is larger than the
+  horse's but rarely names colours; it covers wild animals and peoples as well as dogs. Local's line holds: the
+  vocabulary piled up where the attention was, and for the horse that included its coat.
+- **Second reader.** Awaiting.
+- **Might inspire.** Nothing further.
+- **Status.** Done.

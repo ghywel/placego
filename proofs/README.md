@@ -518,6 +518,8 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   Taking turns to trim a cake always gives everyone a fair share, but not always a share nobody envies.
 - [When a following column turns into a concertina](SP03-when-a-following-column-turns-into-a-concertina.md): Why a
   line of marchers or cars ripples like a concertina when people react too slowly.
+- [The reef knot and the granny knot are different, and only the granny is chiral](SP04-the-reef-knot-and-the-granny-knot-are.md):
+  Why a granny bow can't be tugged into a reef bow: they are different knots, and only one is its own mirror image.
 
 ## The waiting room (not yet verified)
 

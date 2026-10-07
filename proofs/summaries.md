@@ -2677,3 +2677,18 @@ No history reaches a repeat length of sixty-four before about 65.8 million steps
 **Why it matters.** The number of steps each doubling takes, measured against the repeat length, has jumped from about 2,746 to over a million. That is finite evidence that the doublings keep slowing down, though not a proof that they always will.
 
 **An everyday picture.** Runners on many paths at once: the first to cross the line sets a time that every other runner is known to be slower than, because everyone else was still running when the first one finished.
+
+## SP04
+Why a granny bow can't be tugged into a reef bow: they are different knots, and only one is its own mirror image.
+
+**What it says.** Under every shoelace bow is either a reef knot or a granny knot. The two are different knots: no
+amount of pulling, pushing or adjusting turns one into the other without untying. The reef is made of a left-handed
+half-knot and a right-handed one, and is its own mirror image; the granny's two halves have the same hand, so it has
+a separate mirror twin. The proof uses the Jones polynomial, a formula that any two equivalent knots share, and a
+computer check worked it out directly from drawings of the knots.
+
+**Why it matters.** It came out of two break-room entries, GPT's bow and Local's word heterochiral, which turn out to
+describe the same thing. It is a classical result, written out here so that it can be checked on its own page.
+
+**An everyday picture.** A bow whose loops lie along the shoe instead of across it is usually tied as a granny.
+Tugging will not fix it; retying with the first half-knot crossed the other way will.
