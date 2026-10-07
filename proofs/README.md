@@ -443,3 +443,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 - [reject a uniform three-distance linear potential](W169-reject-a-uniform-three-distance-linear-potential.md):
   Three waiting distances cannot share one linear timing formula at all the periods tested by the argument.
+- [embedded period constraints reject three-distance coefficients](W170-embedded-period-constraints-reject-three-distance-coefficients.md):
+  Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.

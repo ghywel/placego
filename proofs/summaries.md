@@ -2104,3 +2104,13 @@ Three waiting distances cannot share one linear timing formula at all the period
 **Why it matters.** Keeping the two words and the clock is not sufficient if they are compressed into these three numbers with one fixed linear rule. Other formulas remain possible.
 
 **An everyday picture.** Two short receipts put conflicting requirements on the same price list; an extra fixed fee cancels when the receipts are compared.
+
+
+## W170
+Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
+
+**What it says.** Two repeated short-period edges and one long-period pulse edge impose incompatible requirements on the same three-distance formula. Changing its coefficients for each larger graph period does not repair that conflict.
+
+**Why it matters.** A common-period graph contains shorter-period states too. A proposed timing certificate must cover them together, even though their actual waiting scales differ.
+
+**An everyday picture.** A larger timetable still includes frequent local services alongside a slow long-distance service; one shared price rule must handle both.
