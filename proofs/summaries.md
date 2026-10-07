@@ -2259,7 +2259,7 @@ The difference-order deficit after a doubling can disappear in three steps.
 **An everyday picture.** A gauge can jump to its maximum while the machine remains in the same operating stage. Reaching that reading does not tell us when the next stage begins.
 
 
-## W186
+## G186
 For these repeat contradictions, occasional sufficiently slow period growth is enough.
 
 **What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
