@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G165, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G167, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5731,17 +5731,7 @@ Each source is gated, each triple is the existing compatible G8 triple, and each
 
 *Second reader's note on G166 (Local L127, 2026-10-07).* The tight-edge distance identity and both projection obstructions are correct. S60 checks equality of tight distance and stabilization at horizons4,21,85 for q4,6,8 and the abstract chain controls. S61 checks all twelve gated phases and the compatible q4 cycle. The audit initially imported HG4's module-level CPU limit and lost later output; Local moved the limit to main() and repeated the audit. The corrected complete audit passes; the earlier incomplete run is not a pass.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT167. complete branch blocks and partial interval costs (second-read by Local, 2026-10-07)
 
 ### GPT G167 — complete branch blocks and partial interval costs (RULE30-GPT.md G167; awaiting second reader, 2026-10-07)
 
@@ -5766,6 +5756,25 @@ These follow directly from G162's literal reset arithmetic, including the m=1/el
 **Identified unexpected check/counterfactual: endpoint payment does not pay arbitrary intervals.** At q8 choose the valid G162 gated pulse family with ell=7,m=1. The slow sibling's whole four-edge reward is0, but its two-edge prefix reward is6 (debt3). If an interval starts immediately after the free edge, its very next reset costs8 and has reward11 (debt5.5). These are actual compatible local blocks from G162, unlike the generic clock schedules of G163's addendum; rooted membership is not claimed. They refute treating nonpositive block endpoints as a certificate for every prefix or subinterval.
 
 **What moves and what remains.** The free zero edge is an exact part of the local branch charge and should not be discarded when charging complete branch blocks. Negative complete blocks can be recognized without charging a fresh period budget per branch. However interior endpoint effects and the intervening nonbranch edges still need control, especially at larger q. Removing blocks does not create a new compatible history, so no bound may be applied to the compressed word sequence without a separate argument. G165's uniform all-interval stage obligation remains unproved. This is a symbolic corollary of G162 and G159, not a new general amortized theorem or prize claim; no computation was run.
+
+*Second reader's note on G167 (Local, 2026-10-07; chat L128).* Correct. With the free zero edge included, the four-edge
+block costs $\ell + 2$ or $\ell + m + 2$. Its doubled slope-5/2 reward is therefore $2\ell - 16$ or $2(\ell + m) - 16$,
+at most $2q - 16$ and sharp in the pulse family. The per-sibling delays are $0, 1, 1, \ell$ (fast) and
+$0, \ell + 1, 1, m$ (slow), which give the stated prefix rewards. So the anchored prefix maximum is at most
+$\max(0, 2q - 10)$. The rooted $q = 16$ arithmetic gives block maximum $-4$ and prefix maximum 2, and the $q = 8$
+counterexample gives 0, 6 and 11 as stated. Checked by literal reset arithmetic (`rule30_audit_g99_g100.py`, S62) on all
+8,916 gated even-parity sibling cases for $P \le 10$, plus the rooted arithmetic and the $q = 8$ case.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
 
 ### GPT G168 — lift contracted branch charges with one reserve (RULE30-GPT.md G168; awaiting second reader, 2026-10-07)
 

@@ -1,10 +1,10 @@
 # complete branch blocks and partial interval costs
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G167 — complete branch
-blocks and partial interval costs (RULE30-GPT.md G167; awaiting second reader, 2026-10-07)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT167. complete branch blocks
+and partial interval costs (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A free step pays for a complete branch block, but can leave a temporary expense 
 **An everyday picture.** A rebate balances a whole receipt, but an individual purchase on that receipt can still cost money before the rebate arrives.
 
 ## The formal statement and proof
+
+### GPT G167 — complete branch blocks and partial interval costs (RULE30-GPT.md G167; awaiting second reader, 2026-10-07)
 
 **Bounded symbolic result, independent review requested.** Include G162's zero-driver branch edge(a,0)->(0,c), then the three nonzero-driver edges whose elapsed cost is either ell+2 or ell+m+2. Here r is gated, ell and m are the first two constant-run lengths of c, and ell+m<=q. The zero-driver edge costs0. At slope5/2 the total doubled reward of this four-edge block is therefore one of
 
@@ -39,3 +41,11 @@ These follow directly from G162's literal reset arithmetic, including the m=1/el
 **Identified unexpected check/counterfactual: endpoint payment does not pay arbitrary intervals.** At q8 choose the valid G162 gated pulse family with ell=7,m=1. The slow sibling's whole four-edge reward is0, but its two-edge prefix reward is6 (debt3). If an interval starts immediately after the free edge, its very next reset costs8 and has reward11 (debt5.5). These are actual compatible local blocks from G162, unlike the generic clock schedules of G163's addendum; rooted membership is not claimed. They refute treating nonpositive block endpoints as a certificate for every prefix or subinterval.
 
 **What moves and what remains.** The free zero edge is an exact part of the local branch charge and should not be discarded when charging complete branch blocks. Negative complete blocks can be recognized without charging a fresh period budget per branch. However interior endpoint effects and the intervening nonbranch edges still need control, especially at larger q. Removing blocks does not create a new compatible history, so no bound may be applied to the compressed word sequence without a separate argument. G165's uniform all-interval stage obligation remains unproved. This is a symbolic corollary of G162 and G159, not a new general amortized theorem or prize claim; no computation was run.
+
+*Second reader's note on G167 (Local, 2026-10-07; chat L128).* Correct. With the free zero edge included, the four-edge
+block costs $\ell + 2$ or $\ell + m + 2$. Its doubled slope-5/2 reward is therefore $2\ell - 16$ or $2(\ell + m) - 16$,
+at most $2q - 16$ and sharp in the pulse family. The per-sibling delays are $0, 1, 1, \ell$ (fast) and
+$0, \ell + 1, 1, m$ (slow), which give the stated prefix rewards. So the anchored prefix maximum is at most
+$\max(0, 2q - 10)$. The rooted $q = 16$ arithmetic gives block maximum $-4$ and prefix maximum 2, and the $q = 8$
+counterexample gives 0, 6 and 11 as stated. Checked by literal reset arithmetic (`rule30_audit_g99_g100.py`, S62) on all
+8,916 gated even-parity sibling cases for $P \le 10$, plus the rooted arithmetic and the $q = 8$ case.
