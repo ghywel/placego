@@ -59,7 +59,10 @@ at 40, 48 and 64, and before --strain first ran, 2026-10-07 21:16 BST):
 
 OUTCOME of --strain, part 1, 2026-10-07 (finished 21:21 BST): KT-P1 measured: at N = 168, class 12 is satisfiable at
   all 56 pairs for widths 33 to 36 and at none for 37, 38 and 39. The obstruction needs the rule followed exactly out
-  to column 37. Part 2 (classes 32, 52 and 42 at N = 336 and 560) is running.
+  to column 37. Part 2 (classes 32, 52 and 42 at N = 336 and 560) did not finish: the process ended, found gone at
+  23:42 BST after about two and a half hours with no output past part 1, cause unknown (memory is the guess; it ran
+  beside three other solver jobs). KT-P2 and KT-P3 are untested. Class 32 at N = 336 is answered from below by a
+  real right half in rule30_kick_candles.py (KC); classes 52 and 42 at 336 and 560 stay open.
 
 REACH (post-hoc, written after run 1's t0 = 0 half showed class 12 unsatisfiable at all 28 phases, and before
 --reach first ran, 2026-10-07 21:10 BST):
