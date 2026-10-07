@@ -8,13 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Repeating a short-period pattern keeps its small waiting distances inside a larger-period graph.
+Even a formula allowed to change with the period fails, because a long period still contains short-period patterns.
 
-**What it says.** Two repeated short-period edges and one long-period pulse edge impose incompatible requirements on the same three-distance formula. Changing its coefficients for each larger graph period does not repair that conflict.
+**What it says.** G169's two period-4 steps can be repeated inside any larger period q, where they keep their short
+waiting distances. Together with a period-q step they again contradict any choice of multiples for that q, unless
+the allowance is at least 3q/(q + 1), which at period 8 exceeds the 5/2 allowed. Formulas that use each state's own
+shortest period, or richer information, remain open.
 
-**Why it matters.** A common-period graph contains shorter-period states too. A proposed timing certificate must cover them together, even though their actual waiting scales differ.
+**Why it matters.** It closes the obvious repair of G169 and says the next candidate must tell the period levels
+apart.
 
-**An everyday picture.** A larger timetable still includes frequent local services alongside a slow long-distance service; one shared price rule must handle both.
+**An everyday picture.** A long-distance timetable must still price the local stopping trains that share its track.
 
 ## The formal statement and proof
 
