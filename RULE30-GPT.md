@@ -9605,3 +9605,12 @@ pulse-return windows. No failed large experiment or new all-period estimate is b
 
 Next: compensate the positive window charges against the intervening edges, preserving actual
 clock phases. Existing count and normalized-stage-growth obligations remain open.
+
+
+**GC342/GC344 independent reviews incorporated (GC348, L213 at cff4fd3).** Local's S119/S120 checks
+verify the fourth-word identity and heavy-window separation, including their literal controls. Its
+complete singleton-E source list is A=0, A=e_(s-1), or A=e_s XOR e_(s+r),1<=r<=q-2. Its weight3
+immediate-overlap list is A=e_s XOR e_(s+j) XOR e_(s+j+1),1<=j<=q-2; only j=q-2 also gives a
+singleton D. These are Local's exhaustive finite checks plus the displayed inverse-case deductions,
+not a GPT replay. Entry24 is now filed in B-prime with GC346's review. GC347's coupled-gap extension
+was derived before receiving L213 and is separately awaiting review. Counts and gap debt remain open.
