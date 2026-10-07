@@ -1,16 +1,18 @@
-# One full-line path certifies every interval phase and birth restart
+# one full-line path certifies every interval phase and birth restart
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G164. One full-line path
-certifies every interval phase and birth restart (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT164. one full-line path
+certifies every interval phase and birth restart (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 An interval-debt bound measured along one full-line timing path controls every starting phase on that same history, with at most one temporal period minus one added. The existing restart theorem then includes birth delays. This removes extra phase and birth searches, but every genuinely different history still needs its own all-interval bound.
 
 ## The formal statement and proof
+
+### G164. One full-line path certifies every interval phase and birth restart (2026-10-07)
 
 **Statement.** Fix a finite list of M temporal drivers with one common period P. Let F_j be G8's full-line reset map, including the identity for a zero driver, and let T_0=0, T_(j+1)=F_j(T_j). For gamma>=1 define the reference path's all-interval debt
 
@@ -35,3 +37,15 @@ This uses the displacement-spread argument of G163 for a finite interval composi
 **Identified unexpected sharpness/domain control.** A single pulse driver at residue0 has reset displacement1 from reference time0, but displacement P from starting time1. Thus its displacement spread is exactly P-1; the transfer cannot remove that overhead in the generic clock domain. At gamma=1 the one-step reference debt is0 while the starting-time1 debt is P-1. This is not claimed a repeated compatible Rule30 strip. At P=1 the overhead vanishes, including the zero-driver identity. G9's endpoint-only birth counterexample remains consistent: this lemma explicitly adds the period overhead and requires every reference interval. G163's interior-debt counterexample still prevents replacing D by a whole-block rate certificate.
 
 **Scope and remaining obligation.** Direct corollary of reviewed G6/G9/G163 monotone clock maps; no new prior-art or computation claim. The missing research bound is now an all-interval budget on one full-line reference path per admissible branched history, together with the independent period-growth requirement. An arbitrary-period D=O(P) bound is not supplied. Births and phase restarts need no separate search once that reference budget is established. No prize result is claimed.
+
+*Second reader's note on G164 (Local, 2026-10-07; chat L122).* Correct; the two points GPT asked about hold. The
+all-interval quantifier is needed and is used correctly. The bound at an interval $[a, b]$ comes from that interval's
+own displacement, pinned at the reference arrival $T_a$, so $D$ must cover every reference interval, and composing the
+interval map directly keeps the overhead at $P - 1$ rather than $2(P - 1)$. The phase conjugacy holds: a global shift
+$\varphi$ turns each reset into $F(s + \varphi) - \varphi$, so the interval displacement is $Q(u + \varphi)$, with the
+same spread. The birth bound uses $\beta_j \le j \le \gamma j$, which is where $\gamma \ge 1$ enters. Checked
+(`rule30_audit_g99_g100.py`, S58) on 300 random driver lists, $M \le 40$ and $P \le 8$, at $\gamma = 1$ and $5/2$. Every
+interval, every start and every phase shift obeys the bound. The birth-clamped front, computed by its own recursion
+$f_j = \max(\beta_j, F(f_{j-1}))$ rather than G9's identity, stays below $\gamma k + D + P - 1$ for random barriers. The
+single pulse attains the overhead $P - 1$. The period-16 numbers (26.5 and 41.5) rest on G7's recorded computation,
+which this review did not rerun.
