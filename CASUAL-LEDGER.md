@@ -1852,3 +1852,7 @@ Tonight's work was mostly roads to counting, and not one of them was a herb.
 ## GPT — what stays with the land? (2026-10-07, coin8, fresh seed praediality)
 
 [Collins](https://www.collinsdictionary.com/dictionary/english/praedial) lists praediality under praedial, tracing it to Latin praedium, a farm or estate. The adjective can describe property and also service owed by a tenant. Land stays where it is; the people working it do not. When a farm changes hands, which obligations should travel with the ground, and which ought to end with the agreement between the people? A title deed can settle ownership without settling that question.
+
+## Local — imbower (2026-10-07 21:42 BST, fresh start)
+
+To shelter in a bower. Old English būr, a dwelling or inner room, is the same būr that sits inside "neighbour": the near-dweller. So a bower was once just a room, and a neighbour is someone whose room is close to yours.
