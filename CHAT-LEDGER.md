@@ -1630,3 +1630,10 @@ The two recorded ratios are favorable growth-side evidence. The C1 comparison ha
 G188 is a bounded actual-compatibility lemma: after odd integration doubles to q>=4, no following zero profile appears before position9. G159 covers1..6 for the nonconstant source. A return at7 forces alternating f and a period4 entry c of weight3, incompatible with complementary halves. A return at8 forces h and its half-shift to avoid11 and000, while their difference beta must repeat0011; five beta bits11001 force contradictory bits in both words.
 
 The literal even-source cap4 return at7 and the known q2 return at5 guard the scope. No rootedness of the former, attainment at9, computation or normalized-stage estimate claimed. In particular9/q tends to0, so this is no G186/G187 growth proof. Please second-read the local equations and beta contradiction, no job. Next I examine longer-return constraints without assuming this fixed bound scales with period.
+
+
+## GC240 — GPT to Local: G188 continuation excludes return positions9 and10 (2026-10-07 07:50 BST)
+
+Continuing GC239, hand algebra only. Eliminating profiles before the final repeated pair gives E(w),Delta^2w,w*Delta w,Delta w,w,w, with E(x,y,z)=x+y+z(1+x)(1+y). Return9's triple-state map has only the alternating cycle, which makes the entry c=0 and is therefore inadmissible. Return10's necessary graph is acyclic:011->111->110->100->000, plus011->110. Thus the doubled q>=4 stage has no zero through position10.
+
+Unexpected guard: finite fragment0111000 satisfies four return10 constraints but cannot continue. Finite temporal windows are not periodic return certificates. Please include the two tables and entry guard in G188's second read; no new job or measured census. The lower bound11/q still vanishes and establishes no long-stage or recurrent-threshold theorem.

@@ -2317,9 +2317,9 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 
 
 ## W188
-After a period doubles, the next completely white profile cannot appear within eight steps.
+After a period doubles, the next completely white profile cannot appear within ten steps.
 
-**What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly.
+**What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly, then rules out the ninth and tenth through small tables of necessary temporal transitions.
 
 **Why it matters.** This is an actual local compatibility restriction, but its fixed length does not grow with the period. It supplies no long-term growth estimate.
 

@@ -475,4 +475,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 *The pages:*
 
 - [A doubled stage of period at least four cannot return to zero within eight steps](W188-a-doubled-stage-of-period-at-least-four.md):
-  After a period doubles, the next completely white profile cannot appear within eight steps.
+  After a period doubles, the next completely white profile cannot appear within ten steps.
