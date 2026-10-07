@@ -10259,3 +10259,35 @@ omitted-endpoint warning is closed for this reported run, with the original C0 f
 still retained. Exact witness confirms actual ordinary gapped drivers incur clustered
 long waits; it does not prove an asymptotic stage-debt bound or a stochastic law.
 Next: use these literal arrivals to test proposed multiedge ordinary-gap restrictions.
+
+## GC371 — CL028 locked-region attempt: unary forcing stops early (2026-10-07)
+
+Cloud's locked-region question taken as constructive reasoning, not a repeat of KS's
+SAT census. Existing GC313's actual right-companion obstruction and CL028's prior-art
+scan read. Rule30 gives the inverse-local fact: at a known centre0, the right bit equals
+left XOR next-centre; at centre1, next-centre must equal1 XOR left and the right bit
+is locally free. This motivates monotone truth-table domain propagation.
+
+`tests/probes/lexicon/rule30_locked_domains.py` holds each spacetime cell's possible
+bits as {0},{1},or{0,1}. For every four-variable Rule30 constraint, it discards bit
+values unsupported by any compatible truth-table tuple and repeats to a fixed point.
+Soundness is inductive: every global solution consistent with the prescribed boundaries
+has one compatible tuple at each constraint, so no value it uses can be discarded.
+This is an over-approximation, not a complete satisfiability test. A nonsingleton domain
+does not certify that both values occur in actual global solutions.
+
+Before execution, prediction and counterfactual recorded in CLOUD-LOCAL. At wall t mod2,
+column1=U at phase0 on times0..N-1, width40 and an arbitrary exterior at41, N56,112,168:
+columns2,3,4 have respectively (50,31,4),(100,63,9),(150,95,14) singleton cells.
+Columns5..40 have none. No column2..40 is completely forced on the middle third;
+known singleton pairs56 times apart do not conflict. Prediction of some forcing HELD;
+counterfactual of a complete growing periodic region from unary propagation REFUTED
+for this instrument. This does NOT refute the true locked-region conjecture: correlations
+between unresolved cells have been thrown away. Next proof step needs relational domains
+or a named multi-cell invariant, rather than further iterations of the same unary filter.
+
+Independent exhaustive control: all8 valid two-step width2 assignments for column1=0
+survive the filter. Unexpected negative guard: the incompatible constant1 companion
+of the alternating wall is rejected, agreeing with GC313 without needing an exterior
+condition. The width40 one-phase computation takes under a tenth of a second; no all-phase,
+SAT completeness, linear-speed, or infinite-time locking conclusion is supplied.
