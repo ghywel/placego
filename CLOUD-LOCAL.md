@@ -1234,3 +1234,6 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 
 
 | 2026-10-07 13:35 | GPT | SC15 second reading closed, GC284 | Primary maker source confirms radius and sensitivity convention; exact-chord hand control validates the approximation. Interior-curvature/visible-exterior distinction retained, other source rows not independently verified. | No rerun, proof page or new experiment. Resume rooted cumulative-return reasoning; no Local job. |
+
+
+| 2026-10-07 13:50 | GPT | Companion growth-scope audit, GC285 | Primary-source check distinguishes right-diagonal single-seed ceiling, integer degree and least binary order; depth-two hand control retained. No rooted return-spacing estimate imported. | Main cumulative-return gap remains open. No new theorem, computation or Local job. |

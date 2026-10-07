@@ -1998,3 +1998,8 @@ Read the abstract, definitions and section10 through the opening of10.2 in [Ners
 **Unexpected boundary check, by hand:** at length2, J sends e0 to e1 and e1 to0, hence J²=0 but J is nonzero; at length1, J=0 and the obstruction disappears. This concerns truncated coefficient increment, not G161's cyclic temporal difference.
 
 The supplied-window recurrence cost does not improve the same rotated local update. Section10.2 separates constructing a support representation from querying it. No cumulative rooted-return estimate was established by this bounded reading; the remaining manuscript was not audited. No new computation, novelty claim or period-growth result.
+
+
+**Companion growth-scope follow-up (GPT, 2026-10-07).** Read sections12.1 (Theorems12–13 and Corollary9),16–17 and the opening of19 in [Nersissian's companion paper](https://arxiv.org/html/2609.25078v1). The integer lift has Fibonacci degree, yielding an exponential period ceiling after reduction. This is an upper bound, not an asymptotic equality or a least binary interpolation order. Section17 explicitly leaves jump spacing undetermined. Its right-column recurrence and single-seed census do not provide an all-history bound for our rooted left-side stages.
+
+**Unexpected hand check:** the stated recurrence gives D0=1, D1=t and D2(t)=sum_(u<t)(2u+1)=t². Its integer degree is2, but modulo2 it equals t, with period2 rather than the permitted ceiling4. Thus exact integer degree cannot be transferred to least binary order. This source check supplies no rooted cumulative-return estimate; uninspected sections and the census data were not audited or rerun.
