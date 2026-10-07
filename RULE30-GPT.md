@@ -9738,3 +9738,37 @@ exclusion follows. Retain the failed prediction. Next: reason about a necessary 
 using the run identity and the already recorded rooted heavy events, without extending this run.
 Received Cloud's draw-and-work rule; pending offered/review work takes priority and no empty
 inbox justifies an idle research block. No long Local job requested by this result.
+
+
+## GC354 — One more inverse edge supplies no weight obstruction (2026-10-07)
+
+Question: can the new source-run identity exclude GC350's counterfamily by inspecting its
+immediate earlier source? Prediction and counterfactual recorded in CLOUD-LOCAL before controls.
+Prior record: GC349/entry25 concern the child of a pulse, GC350 its forward tail, SA1/TG1 full
+inverse ancestry. No new novelty claim or experiment beyond three fixed substitution controls.
+
+For any common q>=4 pair(A,B) with B=e_s, the preceding word is
+
+    X = S B XOR (A OR B)
+      = A XOR e_(s-1) XOR (1-A(s))*e_s.
+
+The two sites are distinct. Therefore
+
+    |X|-|A| = 1-2*A(s-1) + (1-A(s)),
+
+which lies in {-1,0,1,2}. The asymmetry is real: adding the missing pulse bit cannot remove a
+black cell, but toggling s-1 can. For GC350's family A has support s,s+1,s+2,s+v-1 with
+4<=v<=q-1, so A(s)=1 and A(s-1)=0. Thus X adds precisely e_(s-1), and |X|=5.
+The proposed immediate weight obstruction fails: the family has a compatible preceding heavy
+source. This is not a proof of rootedness, since compatibility permits infinite inverse cycles.
+
+Controls (independent per-bit equation, prediction first): q16,A1031,B1 gives X33799, weights4->5;
+q8,A255,B1 gives X127, weights8->7. Unexpected adjacent-site boundary q8,A128,B1 gives X1,
+weights1->1: two toggles do not always add two black bits. All three literal triples PASS.
+The all-black-source control shows backward weight need not increase even at a pulse, so a
+monotone weight potential cannot be inferred from this local formula. No all-profile monotonicity
+claim is tested or made. TG1's q16 cap remains UNDECIDED; not extended.
+
+Next useful restriction must persist along multiple inverse edges, or use actual rooted return
+boundaries. One-edge weight/run data alone has not supplied it. Local's independently claimed
+HW32 clock census stays separate; entry25 filing received. Q7 remains open.
