@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G196, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G197, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6893,17 +6893,7 @@ $m = 1$ to 6, $B_m$ on both tails predicts the two-successor sources exactly. Th
 them with unequal tails, including GPT's $(010, 001)$ with its two targets, and 70 at $m = 6$, 68 with unequal tails.
 None occur at $m = 1, 2, 4, 5$. All sit in acyclic graphs, so the test is necessary only, as stated.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT197. long overlap delays an exit return to the original circuit (second-read by Local, 2026-10-07)
 
 ### GPT G197 — Long overlap delays an exit's return to the original circuit (2026-10-07; second reader pending)
 
@@ -6933,3 +6923,27 @@ They are all distinct. Phases7 and13 have the same seven-bit prefix0011000, so t
 **Independent word-only boundary control and identified unexpected weight guard.** For w=0001, phases0 and1 share the first two bits00, so q-2 bits do not identify phases, whereas q-1 bits do; the weight argument's universal length cannot be lowered. For w=01, m3, the initial pair(010,101), flipped first target(100,011), then targets(001,110) and(010,101) return after exactly3 edges. Here L1, so m-L+1=3 is attained. These arbitrary append paths are NOT asserted to lie in any Rule30 return graph. They check the counting convention, retention of the injected bit and the strict boundary in the bound.
 
 **Record and limits.** This extends G195's original-circuit overlap argument to arbitrary continuations, using standard cyclic-word phase identification and no external novelty claim. It does not classify the rooted strongly connected component. D1's legal exits refute outgoing isolation; the component itself can still be the original sixteen-cycle if no exit returns. A short detour search cannot establish a return here. Local: audit the untouched-prefix indexing, eight-block table and both word-only guards; no continuation job is requested. General recurrence and normalized stage growth remain open.
+
+*Second reader's note on G197 (Local, 2026-10-07; chat L166).* Correct. After $\ell$ edges the first window begins with
+the untouched block $w(\ell), \dots, w(m-1)$ and then the flipped bit $w(m) + 1$. If $m - \ell \ge L$, that block fixes
+the phase as $\ell$, and the flipped bit contradicts it; both orientations of an unordered pair occur among the $q$
+phases, so the pair gives no escape. Equal weight of rotations makes $q - 1$ bits enough. The paired tails keep
+$\beta(\ell + 1), \dots, \beta(m - 1)$ untouched, so a full $h$-block of zeros, which G195 forbids, would be needed
+before $\ell \ge m - h$. Checked (`rule30_audit_g99_g100.py`, S94). Every primitive word of length up to 12 is
+phase-identified by $q - 1$ bits, and 0001 needs exactly 3. By brute force over every continuation, on five small
+primitive words with $m = q$ to $q + 3$ and every exit phase, no first window returns before $m - L + 1$ edges. On three
+complementary dyadic words, no paired continuation reaches equal tails before $m - h$. GPT's $w = 01$, $m = 3$ path
+returns in exactly 3 edges, attaining the bound. The PR196-D1 word's sixteen 8-bit blocks match GPT's table and are
+distinct, phases 7 and 13 share 0011000, and so $L = 8$, giving the bounds 26,396 and 26,395.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

@@ -464,6 +464,12 @@ CHECKS (GPT's claims at 827e006):
      B_3 = 1; in G190's graphs for m = 1 to 6 a source of H_m has two out-edges exactly when B_m holds on both tails
      (4 such sources at m = 3, 2 with unequal tails; 70 at m = 6, 68 unequal; none at m = 1, 2, 4, 5); the source
      (010, 001) branches to (100, 010) and (101, 011).
+  S94 (G197, added 2026-10-07 at 0b7eaae): every primitive binary word of length q <= 12 is phase-identified by q - 1
+     bits (0001 needs exactly 3); by brute force over every continuation after a flipped append (five small primitive
+     words, m = q to q + 3, every exit phase) no first window returns to an original window before m - L + 1 edges,
+     and on three complementary dyadic words no paired continuation reaches equal tails before m - h; GPT's w = 01,
+     m = 3 path returns in exactly 3 edges; the PR196-D1 word's sixteen 8-bit blocks are GPT's table, all distinct,
+     with phases 7 and 13 sharing 0011000, so L = 8 and the bounds are 26,396 and 26,395.
 """
 import random
 from fractions import Fraction as F
@@ -4851,4 +4857,71 @@ ok93 &= set(_E93.get(((0, 1, 0), (0, 0, 1)), [])) == {((1, 0, 0), (0, 1, 0)), ((
 ok93 &= _br93[1] == (0, 0) and _br93[2] == (0, 0) and _br93[3][1] > 0
 check('S93 G196: D_m equals its suffix formula and recurrence for all tails, m = 1-10; B_m predicts two-successor '
       'sources exactly in G190\'s graphs (m = 1-6); the m = 1, 2, 3 controls; the unequal-tail source (010, 001)', ok93)
+def phase_id94(bits):
+    """The least L such that the q cyclic length-L blocks of the word are distinct."""
+    q = len(bits)
+    for L in range(1, q + 1):
+        if len({tuple(bits[(t + i) % q] for i in range(L)) for t in range(q)}) == q:
+            return L
+
+
+def primitive94(bits):
+    q = len(bits)
+    return all(bits[d:] + bits[:d] != bits for d in range(1, q))
+
+
+ok94 = True
+# the q - 1 anchor: every primitive binary word of length q <= 12 is phase-identified by q - 1 bits; 0001 needs all 3
+for q in range(2, 13):
+    for v in range(1 << q):
+        bits = [(v >> i) & 1 for i in range(q)]
+        if primitive94(bits):
+            ok94 &= phase_id94(bits) <= q - 1
+ok94 &= phase_id94([0, 0, 0, 1]) == 3
+# the return bound: after an exit that flips the first appended bit, no continuation's first window equals any original
+# window before ell = m - L + 1 edges (brute force over every continuation, small primitive words, m >= q)
+for bits in ([0, 1], [0, 0, 1, 1], [0, 0, 0, 1], [0, 1, 1, 1, 0, 1, 0, 0], [0, 0, 0, 1, 0, 1, 1, 1]):
+    q = len(bits)
+    L = phase_id94(bits)
+    for m in range(q, q + 4):
+        orig = {tuple(bits[(t + i) % q] for i in range(m)) for t in range(q)}
+        for t0 in range(q):
+            prefix = [bits[(t0 + i) % q] for i in range(m)] + [1 - bits[(t0 + m) % q]]
+            first = None
+            for ell in range(1, m - L + 2):
+                for tail in range(1 << max(0, ell - 1)):
+                    extra = [(tail >> i) & 1 for i in range(ell - 1)]
+                    win = tuple((prefix + extra)[ell:ell + m])
+                    if win in orig:
+                        first = ell if first is None else min(first, ell)
+            ok94 &= first is None or first >= m - L + 1
+# GPT's word-only controls: w = 01, m = 3: (010, 101) -> (100, 011) -> (001, 110) -> (010, 101), returning in 3 edges
+_seq94 = [((0, 1, 0), (1, 0, 1)), ((1, 0, 0), (0, 1, 1)), ((0, 0, 1), (1, 1, 0)), ((0, 1, 0), (1, 0, 1))]
+ok94 &= all(_seq94[i + 1][0][:2] == _seq94[i][0][1:] and _seq94[i + 1][1][:2] == _seq94[i][1][1:] for i in range(3))
+ok94 &= _seq94[1][0][2] == 1 - 1 and phase_id94([0, 1]) == 1 and 3 - 1 + 1 == 3       # flipped append, L = 1, bound 3
+# the equal-tail bound: on a dyadic circuit, the paired tails cannot agree before ell = m - h (brute force, q = 4, 8)
+for bits in ([0, 0, 1, 1], [0, 0, 0, 1], [0, 1, 1, 1, 0, 1, 0, 0]):
+    q, h = len(bits), len(bits) // 2
+    if all(bits[t] == bits[(t + h) % q] for t in range(q)):
+        continue                                             # beta = 0: not a complementary circuit word
+    for m in range(q, q + 3):
+        for t0 in range(q):
+            X = [bits[(t0 + i) % q] for i in range(m)]
+            Y = [bits[(t0 + h + i) % q] for i in range(m)]
+            for ell in range(0, m - h):
+                for ext in range(1 << (2 * ell)):
+                    ex = [(ext >> i) & 1 for i in range(ell)]
+                    ey = [(ext >> (ell + i)) & 1 for i in range(ell)]
+                    Xw, Yw = (X + ex)[ell:ell + m], (Y + ey)[ell:ell + m]
+                    ok94 &= Xw[1:] != Yw[1:]
+# the PR196-D1 rooted word: its sixteen 8-bit blocks are GPT's table, all distinct; L = 8 (phases 7, 13 share 0011000)
+_w94 = [int(b) for b in '1000101001100001']
+_blk94 = [''.join(str(_w94[(t + i) % 16]) for i in range(8)) for t in range(16)]
+ok94 &= _blk94 == ['10001010', '00010100', '00101001', '01010011', '10100110', '01001100', '10011000', '00110000',
+                   '01100001', '11000011', '10000110', '00001100', '00011000', '00110001', '01100010', '11000101']
+ok94 &= len(set(_blk94)) == 16 and phase_id94(_w94) == 8 and _blk94[7][:7] == _blk94[13][:7] == '0011000'
+ok94 &= 26403 - 8 + 1 == 26396 and 26403 - 8 == 26395
+check('S94 G197: q - 1 bits identify the phase of every primitive word (q <= 12; 0001 needs 3); no continuation '
+      'returns before m - L + 1 edges or reaches equal tails before m - h (brute force); the D1 word\'s 8-block table, '
+      'L = 8', ok94)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

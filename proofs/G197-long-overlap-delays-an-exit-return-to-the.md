@@ -1,10 +1,10 @@
-# Long overlap delays an exit's return to the original circuit
+# long overlap delays an exit return to the original circuit
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G197 — Long overlap delays
-an exit's return to the original circuit (2026-10-07; second reader pending)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT197. long overlap delays an
+exit return to the original circuit (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ A long window keeps an exit from quickly returning to the old circuit.
 **An everyday picture.** A strip of paper moves through a frame. A changed mark remains visible beside the unchanged part until enough paper has passed through.
 
 ## The formal statement and proof
+
+### GPT G197 — Long overlap delays an exit's return to the original circuit (2026-10-07; second reader pending)
 
 **Statement and scope.** Let w have least dyadic period q>=2, let m>=q, and let the paired circuit consist of the m-bit windows of w at phases t and t+h, h=q/2, as in G190/G195. Suppose its first alternative edge flips both appended bits. Let L be a phase-identifying length: the q length-L cyclic blocks of w are distinct. Along ANY subsequent shift-and-append continuation, a return to any vertex of the original ordered or unordered circuit requires at least
 
@@ -44,3 +46,15 @@ They are all distinct. Phases7 and13 have the same seven-bit prefix0011000, so t
 **Independent word-only boundary control and identified unexpected weight guard.** For w=0001, phases0 and1 share the first two bits00, so q-2 bits do not identify phases, whereas q-1 bits do; the weight argument's universal length cannot be lowered. For w=01, m3, the initial pair(010,101), flipped first target(100,011), then targets(001,110) and(010,101) return after exactly3 edges. Here L1, so m-L+1=3 is attained. These arbitrary append paths are NOT asserted to lie in any Rule30 return graph. They check the counting convention, retention of the injected bit and the strict boundary in the bound.
 
 **Record and limits.** This extends G195's original-circuit overlap argument to arbitrary continuations, using standard cyclic-word phase identification and no external novelty claim. It does not classify the rooted strongly connected component. D1's legal exits refute outgoing isolation; the component itself can still be the original sixteen-cycle if no exit returns. A short detour search cannot establish a return here. Local: audit the untouched-prefix indexing, eight-block table and both word-only guards; no continuation job is requested. General recurrence and normalized stage growth remain open.
+
+*Second reader's note on G197 (Local, 2026-10-07; chat L166).* Correct. After $\ell$ edges the first window begins with
+the untouched block $w(\ell), \dots, w(m-1)$ and then the flipped bit $w(m) + 1$. If $m - \ell \ge L$, that block fixes
+the phase as $\ell$, and the flipped bit contradicts it; both orientations of an unordered pair occur among the $q$
+phases, so the pair gives no escape. Equal weight of rotations makes $q - 1$ bits enough. The paired tails keep
+$\beta(\ell + 1), \dots, \beta(m - 1)$ untouched, so a full $h$-block of zeros, which G195 forbids, would be needed
+before $\ell \ge m - h$. Checked (`rule30_audit_g99_g100.py`, S94). Every primitive word of length up to 12 is
+phase-identified by $q - 1$ bits, and 0001 needs exactly 3. By brute force over every continuation, on five small
+primitive words with $m = q$ to $q + 3$ and every exit phase, no first window returns before $m - L + 1$ edges. On three
+complementary dyadic words, no paired continuation reaches equal tails before $m - h$. GPT's $w = 01$, $m = 3$ path
+returns in exactly 3 edges, attaining the bound. The PR196-D1 word's sixteen 8-bit blocks match GPT's table and are
+distinct, phases 7 and 13 share 0011000, and so $L = 8$, giving the bounds 26,396 and 26,395.
