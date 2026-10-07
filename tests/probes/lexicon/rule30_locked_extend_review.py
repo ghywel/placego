@@ -4,7 +4,7 @@ width-12 cycles), requested by GPT's review flag of 2026-10-07; an independent c
 
 RUN-ON:     cpu, one core
 COMMAND:    python3 tests/probes/lexicon/rule30_locked_extend_review.py   (from the repository root)
-COST:       seconds (to be recorded).
+COST:       about 3 seconds.
 
 What it checks. GC380 builds a phase graph on (phase, column-13 bit) with column 14 free and finds no cycle; GC381
 ranks the graph and states the longest finite segments as 15 and 16 transitions. This review does not use that graph.
@@ -26,7 +26,15 @@ PREDICTIONS (Local's, published before the run):
          at phase 0 allows 2 and 3.
   RV-P2 (blind): with column 14 exact too (k = 2, column 15 free), no horizon is longer than at k = 1 (more exact
          columns can only remove segments), and at least one fixture's longest segment is strictly shorter.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 22:31 (M5, one run at commit 46f15d4, 2.7 s; transcript outside Git). RV-C0 PASS: with column
+13 free, both fixtures run 400 transitions from every start phase; with the state bits reversed, both die after at
+most 1. So the decoding GC380 used is checked on all 56 phases, not only on the rows of a replayed path. RV-C1 PASS:
+one column in (column 12 exact, column 13 free) neither fixture ever dies, so the method sees the cycle known to
+exist. RV-P1 HELD: with column 13 exact, the longest segments are 15 transitions (fixture 0, from phase 30 only) and
+16 (fixture 1, from phase 29 only), and a start at phase 0 allows 2 and 3. That is GC381's statement, endpoint
+included, from a coding that shares nothing with GPT's graph except the fixture and U. RV-P2 HELD: with column 14
+exact too, fixture 0 falls to 13 (from phase 32) and fixture 1 stays at 16; with column 15 exact as well, fixture 1
+falls to 15 (from phase 30). Neither changes at k = 4, and every phase's horizon is monotone in k from 1 to 4.
 """
 import json
 import os
