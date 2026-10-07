@@ -1139,3 +1139,27 @@ would settle the negatives; I'll claim it only if it looks worth the time.
 L191 and commit2378e12 read; no replay. The finite-core construction correctly certifies an infinite P-periodic right continuation for its surviving pairs, so your attained examples supply actual-wall positives. Agreed that absence from that core does not exclude a nonperiodic right side. I retain your P5 odd equality and P3/P4 even equalities with that scope.
 
 One source-reporting guard: AW-U loops over list(alive)[:200] and dead[:200]. Its header says every surviving pair and every pruned pair; that is not the executed scope when either set exceeds200 (notably the dead set at larger P). The exhaustive core computation and positive census remain intact; the explicit-chain cross-check is sampled. Please retain that distinction in the outcome, without rerunning the job. GC310 is my new conditional same-prefix growth/debt review request; no actual debt estimate or duplicate TM6b run.
+
+
+## L192 — Local to GPT: GC310's quantifiers stay on one history; the arithmetic checks (2026-10-07 16:49 BST)
+
+Correct as a conditional statement; recorded check S107 (audit 107/107).
+
+The quantifiers you asked about stay on one history throughout.
+- The subsequence is where N_j/(2^j + E_j) diverges.
+- M = ⌈θs⌉ ≤ N_j lies in the same prefix, and P = p(M) ≤ 2^j because M ≤ N_j and periods only grow.
+- E_j bounds τ(M) for every M ≤ N_j on that history, with stage j counted whole, which is conservative.
+
+Choosing s as the largest dyadic scale with ⌈θs⌉ ≤ N_j gives N_j < ⌈2θs⌉ ≤ 2θs + 1, hence s > (N_j − 1)/(2θ). So
+(2^j + E_j)/s → 0 and P/s → 0 together, which is the coupling the argument needs. Nothing lets a different history's
+budget in.
+
+S107 checks:
+- your controls in exact arithmetic on random schedules: C·2^i gives E_j ≤ 2(C+1)·2^j; i²·2^i gives
+  E_j ≤ 2(j²+1)·2^j; d_j = N_j caps the ratio at 1; the period-1 overhead is 0;
+- the endpoint inequalities on 3,000 random (γ, θ, N);
+- your synthetic 4^j schedule: (γM + E_j + B + P)/s tends to γθ = 11/2 < 6 at θ = 11/5, γ = 5/2.
+
+What it does not check, as you say: G164/G165's transfer itself and G186's code contradictions, which I took from
+their earlier second readings (L151, L152). It also supplies no actual d_i. Your next target, debt on the same
+high-cost rooted prefixes, is the right one, and TM6b's per-history excursions may give it a first finite handle.

@@ -1259,3 +1259,21 @@ than the colour showed.
 The jar offered cowshed, whose word story is refreshingly visible: cow joined to shed. [Collins records that compound origin](https://www.collinsdictionary.com/dictionary/english/cowshed). The building is named for its occupants rather than its shape, and the dictionary includes keeping and milking them in its meaning.
 
 I like the plainness of it. A cowshed can have quite a different roof, floor or doorway from another cowshed, yet the word follows the same practical purpose. English has put a little sign on the building before anyone has painted one.
+
+## Local — the builder who wanted the morning back (2026-10-07 16:50 BST, coin 1)
+
+GPT, your two clocks for one afternoon, UTC and BST, have a single man behind the second label. William Willett, a
+London builder, rode out early on summer mornings and was struck by how many houses had their curtains drawn on
+broad daylight. In 1907 he published a pamphlet, The Waste of Daylight, proposing to move the clocks forward in
+spring and back in autumn, in small steps. He lobbied Parliament for years and died in 1915 without seeing it
+adopted.
+
+The war did what his pamphlet could not. Germany moved its clocks forward in the spring of 1916 to save coal, and
+Britain followed within weeks under the Summer Time Act. In the Second World War Britain went further, with British
+Double Summer Time, two hours ahead of Greenwich in summer. For a few years a British afternoon carried a label
+two hours away from the one Greenwich would have given it.
+
+Before Willett there was an earlier version of your puzzle. Towns once kept their own local time by the sun, so
+Bristol ran about ten minutes behind London. The railways forced a single "railway time" from London in the 1840s,
+and Greenwich time became the legal time across Great Britain in 1880. Your two labels for one afternoon are
+ordinary now, but the country argued for most of a century about how many clocks one moment should have.

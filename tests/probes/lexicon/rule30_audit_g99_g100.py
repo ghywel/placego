@@ -555,6 +555,13 @@ CHECKS (GPT's claims at 827e006):
      5 is attained at P = 4, 5, 7) and even 4, 6, 4, 6, 6 at P = 3 .. 7 (2P - 2 attained at P = 3, 4). The stripes
      0101... are stationary; a maximal odd run with black ends shrinks with black ends and its apex, with parents 101,
      stays white one more step.
+  S107 (GC310, added 2026-10-07 at 1c26430): exact arithmetic for the variable-debt refinement of G186. On random
+     schedules E_j = sum_(i<=j) (d_i + 2^i - 1) obeys E_j <= 2(C + 1) 2^j for d_i = C 2^i and E_j <= 2(j^2 + 1) 2^j
+     for d_i <= i^2 2^i; d_j = N_j forces N_j/(2^j + E_j) <= 1; the period-1 overhead is 0. On 3,000 random cases (1
+     <= gamma < 3, theta in (2, min(4, 6/gamma))) the largest dyadic s with ceil(theta s) <= N satisfies N < ceil(2
+     theta s) <= 2 theta s + 1 and s > (N - 1)/(2 theta). On the synthetic schedule N_j = 4^j with d_i = i^2 2^i,
+     gamma = 5/2, theta = 11/5, (2^j + E_j)/s falls to below 10^-9 and (gamma M + E_j + B + P)/s tends to gamma theta
+     = 11/2 < 6.
 """
 import random
 from fractions import Fraction as F
@@ -5796,4 +5803,49 @@ for n in (3, 5, 7, 9):
 check('S106 GC307 (entry 06 refinement): over all P-periodic column pairs, P = 2..7, every bounded row-0 white run has '
       'n <= 2P - 2 and every odd n >= 3 has n <= 2P - 5 with its centre white for m + 2 steps; stripes keep singletons',
       ok106)
+ok107 = True
+_rng107 = random.Random(310)
+_E107 = lambda d: [sum(d[i] + 2 ** i - 1 for i in range(j + 1)) for j in range(len(d))]
+# GC310's controls: d_i = C 2^i gives E_j <= 2(C + 1) 2^j; d_i <= i^2 2^i gives E_j <= 2(j^2 + 1) 2^j; period 1 adds
+# overhead 2^0 - 1 = 0; assigning d_j = N_j makes N_j/(2^j + E_j) <= 1
+for trial in range(200):
+    C = _rng107.randint(0, 20)
+    J = _rng107.randint(1, 60)
+    E = _E107([C * 2 ** i for i in range(J)])
+    ok107 &= all(E[j] <= 2 * (C + 1) * 2 ** j for j in range(J))
+    E2 = _E107([_rng107.randint(0, i * i) * 2 ** i for i in range(J)])
+    ok107 &= all(E2[j] <= 2 * (j * j + 1) * 2 ** j for j in range(J))
+    N = sorted(_rng107.randint(1, 10 ** 12) for _ in range(J))
+    E3 = _E107(N)
+    ok107 &= all(_Fr(N[j], 2 ** j + E3[j]) <= 1 for j in range(J))
+ok107 &= 2 ** 0 - 1 == 0
+# the endpoint selection: for theta in (2, min(4, 6/gamma)) and s the largest power of 2 with ceil(theta s) <= N,
+# N < ceil(2 theta s) <= 2 theta s + 1, so s > (N - 1)/(2 theta)
+for trial in range(3000):
+    gamma = _Fr(_rng107.randint(10, 29), 10)                                        # 1 <= gamma < 3
+    hi = min(_Fr(4), _Fr(6) / gamma)
+    theta = 2 + (hi - 2) * _Fr(_rng107.randint(1, 99), 100)
+    N = _rng107.randint(10, 10 ** 15)
+    s = 1
+    while -((-theta * 2 * s) // 1) <= N:
+        s *= 2
+    c2 = -((-2 * theta * s) // 1)
+    ok107 &= -((-theta * s) // 1) <= N < c2 <= 2 * theta * s + 1 and s > _Fr(N - 1) / (2 * theta)
+# the joint test on a synthetic schedule (N_j = 4^j with polynomial allowances d_i = i^2 2^i, gamma = 5/2,
+# theta = 11/5): (2^j + E_j)/s and P/s tend to 0 and (gamma M + E_j + B + P)/s tends to gamma theta < 6
+gamma, theta, B = _Fr(5, 2), _Fr(11, 5), 100
+E = _E107([i * i * 2 ** i for i in range(80)])
+vals = []
+for j in range(20, 80, 10):
+    Nj = 4 ** j
+    s = 1
+    while -((-theta * 2 * s) // 1) <= Nj:
+        s *= 2
+    M = -((-theta * s) // 1)
+    vals.append((_Fr(2 ** j + E[j], s), _Fr(gamma * M + E[j] + B + 2 ** j, s)))
+ok107 &= all(a > b for (a, _), (b, _) in zip(vals, vals[1:])) and vals[-1][0] < _Fr(1, 10 ** 9)
+ok107 &= gamma * theta < 6 and abs(vals[-1][1] - gamma * theta) < _Fr(1, 10 ** 6)
+check('S107 GC310: E_j bounds for d_i = C 2^i and i^2 2^i, zero overhead at period 1, d_j = N_j fails the joint test; '
+      'the dyadic endpoint selection N < ceil(2 theta s) <= 2 theta s + 1; the synthetic schedule meets the joint test',
+      ok107)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

@@ -38,6 +38,9 @@ actual walls, 2P - 5 at P = 5 and 2P - 2 at P = 3 and 4. The negative readings a
 formal witnesses at P = 4 (odd 3) and P = 7 (odd 9) have no PERIODIC continuation does not show they have none.
 AW-C2's exclusion of 01/11 is true for a stronger reason (GPT's GC309: its column-1 update fails at once), not
 because of this pruning. Settling the negatives needs a search over non-periodic right sides.
+CORRECTION (after GPT's GC311): AW-U as worded says "for every surviving pair"; the code samples at most 200 per side.
+Every survivor was in fact checked (at most 108 survive at any P <= 7); pruned pairs were sampled, 200 per P, so
+AW-U certifies the survivors' chains for all of them and the pruned side's extinction only on that sample.
 """
 import resource
 import sys
