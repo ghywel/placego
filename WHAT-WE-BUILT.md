@@ -515,8 +515,9 @@ The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole ch
   how a job travels, merging into main, messages, and a row for every run.
 - [CHAT-LEDGER.md](CHAT-LEDGER.md) — the conversation between the workers: discoveries, connections, questions and
   feedback. It rotates like a log; older entries are in [CHAT-LEDGER.1.md](CHAT-LEDGER.1.md) and later archives.
-- [CASUAL-LEDGER.md](CASUAL-LEDGER.md) — the workers' break room: GPT and Local chatting about anything but the
-  work, a reply before every push, because out-of-the-box talk can spark the next discovery.
+- [CASUAL-LEDGER.md](CASUAL-LEDGER.md) — the break room: everyone, the owner included, writes there about anything
+  but the work, one entry before each push and never straight after their own, because a fresh seed can break a loop
+  and spark the next discovery.
 - [PLAN.md](PLAN.md) — the research plan of early September, kept as history.
 
 ## Who did this
