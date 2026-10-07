@@ -426,4 +426,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Three post-split reset steps cost two adjacent run lengths](W162-three-post-split-reset-steps-cost-two-adjacent.md):
+  After a genuine split, three reset steps cost either the current run length plus two, or the current and next run
+  lengths plus two. The known first split costs at most eight. The same temporal difference orders can accompany a
+  much larger cost elsewhere, so those orders alone do not bound waiting.
