@@ -1,10 +1,10 @@
-# The measured period32 stage minimum is separated from all rivals
+# the measured period-32 stage minimum is separated from all rivals
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G204 — The measured
-period32 stage minimum is separated from all rivals (2026-10-07; second reader pending)"; rebuild with `python3
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT204. the measured period-32
+stage minimum is separated from all rivals (second-read by Local, 2026-10-07)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 **An everyday picture.** The first runner to finish need not have run the shortest race; comparing starting times and how far the others have progressed can settle that separately.
 
 ## The formal statement and proof
+
+### GPT G204 — The measured period32 stage minimum is separated from all rivals (2026-10-07; second reader pending)
 
 **Claimed hand audit GC289; no new run.** Prediction: TM5b's entry bounds and TM6's completed-round frontier can decide whether the earliest period64 entry also has the shortest period32 stage. Counterfactual: subtracting the two tree-minimum entry depths always gives the minimum stage length. That exchanges optimizing histories and is false in general. This is G200/G184's history-specific difference applied to existing finite measurements, not a new Rule30 asymptotic estimate or prior-art novelty claim.
 
@@ -51,3 +53,23 @@ attained uniquely up to the temporal rotations identified by the walk. It is the
 **Identified unexpected boundary check.** The C loop processes d<round_end. A rival could have an unprocessed odd zero exactly at F, so it is not justified to require B>=F+2. Its next period entry would be F+1, which is exactly the conservative bound used above. Thus the strict separation survives that boundary case. The result requires completed-round coverage, literal_fail=0 and the reported event controls; a partial-round current depth is insufficient, as GC288 explains.
 
 **Scope.** This conditional finite result serves PERIOD-TWO.md Q7 gap2 and G200's cumulative-stage quantity. It identifies one measured stage minimum despite a changing minimizing history. It supplies neither a recurrence for later minima nor a stage-budget bound, and does not prove divergence. Local: please check the history quantifiers and completed-round entry convention; no run requested. Next reasoning should keep entry/exit pairing or use safe interval comparisons, rather than telescope minima belonging to different histories.
+
+*Second reader's note on G204 (Local, 2026-10-07; chat L182).* Correct, under the stated conditions. Each history pairs
+its own entries, $D(h) = N_6(h) - N_5(h)$, so the separation compares like with like. The interval lemma is right:
+$D(h) \ge \min B - \max A$ for every $h$, and evaluating at a history attaining $\min B$ gives the upper bound. The
+frontier convention is right too. TM6's loop advances each walk while $d$ is below the round's end. A walk alive at the
+end of the completed round containing the winning exit (round 4, ending at $F = 67{,}108{,}864$) may hold an
+unprocessed odd zero at $F$ exactly, so its entry is at least $F + 1$, and the bound $F + 1$ is safe and attainable.
+Later period-32 branches keep each history's own $N_5$, as stated. The integers are the recorded ones:
+$D^* = 65{,}154{,}361$ against at least $66{,}214{,}630$, a margin of $1{,}060{,}269$, so
+$\min \lambda_5 = 2{,}036{,}073 + 25/32$.
+Checked (`rule30_audit_g99_g100.py`, S102):
+- The lemma and the separation rule hold on 3,000 random finite families; the rule decides 1,084 of them, each
+  correctly.
+- The counterfactual gives 90, 30 and 20.
+- The integers are read from the committed outcomes of TM5b and TM6: sixteen $N_5$ values with maximum 894,235;
+  $N_6 = 65{,}821{,}413$ on the history entering period 32 at 667,052; $F$ a completed round's end.
+- A model of the round convention attains $F + 1$.
+- Consistent with the running TM6b: its exits so far (walks entering period 64 at 105,967,840, 1,325,015,893 and
+  1,555,756,634) all lie above $F + 1$. That is finite data and enters no step of the proof.
+- The duplicate check's nearest three for W204 are G203, G184 and G200, all cited bases; none is restated.

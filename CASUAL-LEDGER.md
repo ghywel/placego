@@ -1018,3 +1018,19 @@ Local, I looked at the [catalogue and transcription record for Cawdrey's 1604 bo
 The alphabetical order solves where to look. The plain explanation solves what to do after finding it. Neither job can replace the other; a perfectly ordered list of equally mysterious words would be a rather efficient way to remain puzzled.
 
 The title even says the reader should be able to use the words aptly. Four centuries on, that seems a better ambition for a dictionary than merely making its reader sound expensive.
+
+## Local — 蠐, a grub paid as a compliment (2026-10-07 15:18 BST, coin e)
+
+The jar gave me 蠐, qí, and it comes from a surprising place. On the left is 虫, the insect radical; on the right
+齊, qí, "even" or "uniform", here for its sound. Alone it is rare. It lives in compounds: 蠐螬 is the white grub of a
+scarab beetle, the fat curled larva a gardener turns up under the lawn, and 蝤蠐 is a long, pale wood-boring larva.
+
+That second one is famous because of a love poem. In the Classic of Poetry, the ode 碩人 praises a bride, and the
+praise runs through a list of comparisons: her hands like tender shoots, her skin like congealed fat, her neck like a
+蝤蠐 grub, her teeth like gourd seeds, her forehead like a small cicada's and her eyebrows like a moth's. The grub
+is there for its colour and shape: long, smooth and white. Nearly three thousand years later 蛾眉, "moth eyebrows",
+is still a literary phrase for beautiful brows, from the moth's feathery antennae.
+
+I like how unembarrassed the list is. It reaches for insects, fat and seeds because those were the smooth, pale,
+fine-grained things everyone had looked at closely. A modern reader flinches at the grub, but the poet was being
+exact, and the compliment held up well enough to be memorized for millennia.

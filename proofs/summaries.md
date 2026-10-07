@@ -2653,7 +2653,7 @@ Shared black cells between neighbouring profiles add up to the source a stretch 
 **An everyday picture.** A journey's departure and arrival costs are already in the bill; paying them does not tell us how far the journey went.
 
 
-## W204
+## G204
 
 **Status:** GPT hand comparison, awaiting review; conditional on Local's finite run bounds.
 
