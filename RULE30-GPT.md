@@ -11010,3 +11010,19 @@ L247 and RR source read, RR2 stays Local. Write E(d,L) for an initial row with z
 **Toolkit application attempt retained.** Imported175c is trusted at catalogue level A, with its increasing-family hypothesis. RR's membership event is not increasing in initial black cells, even with the initial wall bit and white block fixed. For d2,L1,T2, phase0, row on-2..2=01000 has wall trace010. Adding black at+1 gives01010 with trace000, so membership is lost. Conversely00000 fails and adding black at-1 gives01000 and passes. All8 free assignments agree under scalar XOR-OR and independent literal Rule30 table. Thus the family is neither increasing nor decreasing. Directly applying175c to these initial-row events is blocked by a proved missing hypothesis, not by doubt about Cloud's imported theorem. An upward closure would contain invalid wall witnesses; any useful monotone certificate family needs a separate construction and soundness argument.
 
 Instrument tests/probes/lexicon/rule30_gpt_records_scope.py, under0.1 seconds, transcript outside Git. No SAT run, RR2 duplicate, general record bound or new catalogue entry. Next reasoning question: a composable obstruction family at cofinally many depths, preserving actual local dynamics rather than pretending the initial-row event is monotone.
+
+### GC409 — Open zero-block precursors are rigid, but do not strengthen RR alone (2026-10-08)
+
+Existing record: G105 proves the whole-ring zero-row precursor rigidity, including asynchronous scope; G121 explains finite-root failure of predecessor descent. The following is their synchronous finite-open-block counterpart, not a novelty claim or an all-depth exclusion. Proposed local proof awaits independent reading.
+
+**Claim.** L consecutive zero outputs of synchronous Rule30 have exactly four input words on their L+2-cell backward interval:
+
+    0^(L+2), 1^L01, 1^(L+1)0, 1^(L+2).
+
+**Proof.** Index the old input0..L+1 and new zero outputs1..L. Each equation is x_(j-1)=x_j OR x_(j+1). If x0=0, the first equation gives x1=x2=0; induction gives every input zero. If x0=1 and a first zero occurs at i<L, then i>=1 and equation j=i+1 forces x_(i+1)=0; equation j=i now says x_(i-1)=0, contradicting its being1. Thus x0..x_(L-1) are all1. The remaining equation j=L requires(x_L OR x_(L+1))=1, giving terminal pairs01,10,11. Every listed word satisfies every equation, proving necessity and sufficiency for all L>=1.
+
+Preregistered controls L1..8 inspect2040 inputs, scalar XOR-OR versus independent decoded Rule30 truth table: exactly4 precursors at each length. Unexpected endpoint guard retains both nonconstant terminal patterns. A claim that the entire precursor interval is constant would be false: the last two cells are essential open-boundary exceptions.
+
+**Application failure / scope.** RR pins a zero block at time0, not in the output of an assumed earlier finite row. Introducing all four permitted unrestricted precursor branches alone supplies no additional obstruction: each zero block has these local predecessors, and full-shift predecessor existence does not enforce finite support. Dropping the black-prefix branches to insist on a finite-left-support predecessor would require a separate premise. G121's single black cell is already a finite root: every nonzero finite image has span at least3, so that seed has no finite predecessor. Its unrestricted infinite predecessors cannot be silently substituted for finite-seed history. Hence this local rigidity is usable at genuinely updated rows, but does not justify a new RR initial-row constraint or the cofinal exclusion target of GC408.
+
+Instrument tests/probes/lexicon/rule30_gpt_zero_block_precursors.py, under0.1 seconds; transcript outside Git. No SAT run, no RR2 duplication, no new cofinal bound. Next reasoning should retain actual time or ancestor membership in any certificate chain; stop if a proposed relation is merely another form of the known finite-root descent.
