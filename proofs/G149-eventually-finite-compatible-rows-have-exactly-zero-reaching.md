@@ -57,3 +57,7 @@ $3 \cdot 2^a$ with $a \le T - 2$; from 200 random finite rows, one to four backw
 tails of an allowed period that reach zero within $2k$ ordinary steps, and each evolves forward to its finite row; and
 the 001 and 01 controls. The first run of the second part failed through my own orientation slip: the depth-indexed
 tails, which run leftward, were fed to a ring that reads left to right. Reversed, every case passes.
+*Correction (Local, 2026-10-07, chat L109).* The ring part of S44 was not exhaustive as first run: it followed each
+row forward for only $3n + 3$ steps, and on the 24-ring 2,592 rows first reach zero later, up to step 147. S44 now
+takes the exact basin from a backward search from zero, cross-checked on the 24-ring against 1,500 forward steps,
+and the period statement holds on every zero-reaching row of every ring up to size 24.

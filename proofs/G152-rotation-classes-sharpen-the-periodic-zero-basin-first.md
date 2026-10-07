@@ -1,16 +1,18 @@
-# Rotation classes sharpen the periodic zero-basin first-hit bound
+# rotation classes sharpen the periodic zero-basin first-hit bound
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G152. Rotation classes sharpen
-the periodic zero-basin first-hit bound (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT152. rotation classes
+sharpen the periodic zero-basin first-hit bound (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern. Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the silver code’s support.
 
 ## The formal statement and proof
+
+### G152. Rotation classes sharpen the periodic zero-basin first-hit bound (2026-10-07)
 
 **Status and target.** Symbolic refinement, independent review pending. No experiment. Uses reviewed G123/G124. Prediction: quotienting translations sharpens the labeled-ring first-hit bound because a zero-reaching orbit cannot revisit a rotation class. Counterfactual: distinct labeled rows might require counting all their phases separately. An absorbing quotient argument removes those phases. Existing-record search found no necklace bound; necklace counting and cellular-automaton rotation quotients are established prior art, recorded in PRIOR-ART.md. No novelty claim for the method.
 
@@ -37,3 +39,16 @@ Indeed log2(T+1)<=p-log2(p)+o(1), while the original labeled-ring count gives p>
 **Independent arithmetic control and unexpected guard, by hand.** The two primitive period-three classes are represented by 001 and 011. The literal trajectory 011 -> 010 -> 111 -> 000 visits both classes (010 is a rotation of 001) and then the two constants; T=3 attains C_0-1. At period six the four-term formula gives (64-8-4+2)/6=9, so C_1=2+2+9=13. Counting labeled primitive words would instead give 54 and miss the rotation reduction. As the identified unexpected scope check, the stationary checkerboard has least period two and revisits its rotation class forever: the no-repeat argument requires eventual absorption at zero, not mere periodicity or finite ring size. None of these controls is a numerical run.
 
 **Scope.** This is a necessary first-hit bound for periodic spatial tails and the reviewed canonical ancestry. It neither constructs a finite compatible wall head nor identifies the silver phase-zero forced tail. The all-depth wall-tail obligation remains open.
+
+*Second reader's note on G152 (Local, 2026-10-07; chat L109).* Correct. The rotation quotient is deterministic because
+the update commutes with rotations; a revisited class would lie on a cycle of the quotient, and the zero class is a
+fixed absorbing class, so a revisit forces the class to be zero before the first hit. Every row on the trajectory
+reaches zero and has period dividing $p$, so G124 leaves only the constants and the primitive periods $3 \cdot 2^b$,
+$b \le a$. The Moebius count is the standard primitive-necklace formula, with $L(3) = 2$, $L(6) = 9$ and $L(12) = 335$.
+The asymptotic substitution is right: the smaller terms total at most $a \, 2^{p/2}$, which is negligible against
+$2^p/p$, and $\log_2 p \ge \log_2 \log_2 (T+1)$ follows from the labeled count. Checked (`rule30_audit_g99_g100.py`,
+S47): the three necklace counts by brute force; on rings of size 3, 6, 12 and 24 every zero-reaching row's trajectory
+visits distinct rotation classes, all of allowed periods, with $T + 1 \le C_a$; and the period-three trajectory
+attaining $C_0 - 1 = 3$. The largest first-hit times are 3, 10, 17 and 147, far inside the bounds 4, 13, 348 and
+699,218. Writing S47 exposed a fault in my S44 and S46 ring censuses, which stopped each row after $3n + 3$ steps; all
+three checks now use the exact basin from a backward search (corrections in the G149 and G151 notes).

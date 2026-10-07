@@ -216,6 +216,15 @@ CHECKS (GPT's claims at 827e006):
      size 2p and confirmed by forward steps) contain the cyclic factor 010 and have exactly one predecessor on rings of
      size 2p and 4p; on every ring up to size 24, each row reaching zero first at time T >= 2 has least period 1 or
      3 * 2^a with a <= floor((T - 2) / 2); and the literal six-site trajectory 101011 -> ... -> 000000.
+  S47 (G152, added 2026-10-07 at aba4501): the primitive-necklace counts L(3) = 2, L(6) = 9, L(12) = 335 by brute
+     force; on rings of size 3, 6, 12 and 24 every zero-reaching row's first-hit trajectory visits pairwise distinct
+     rotation classes, every class on it has least period 1 or 3 * 2^b, and T + 1 <= C_a for its least period
+     3 * 2^a; the trajectory 011 -> 010 -> 111 -> 000 attains C_0 - 1 = 3; and the largest first-hit time at each
+     ring size is reported.
+  Instrument fault found 2026-10-07 while checking S47: the ring censuses of S44, S46 and S47 ran the forward map for
+     only 3n + 3 steps, and on the 24-ring 2,592 rows reach zero later (up to step 147), so those checks were not
+     exhaustive although S46's note said so. All three now use the exact basin from a backward search (zero_basin),
+     cross-checked on the 24-ring against 1,500 forward steps; the verdicts are re-run on the complete sets.
 """
 import random
 from fractions import Fraction as F
@@ -1980,25 +1989,58 @@ def allowed(P, T):
     return q == 1 and a <= T - 2
 
 
-ok44 = True
+
+def basin_preds(Y):
+    """All predecessors of the ring row Y (cells left to right, Rule 30)."""
+    n = len(Y)
+    if n <= 2:
+        cands = [[(v >> i) & 1 for i in range(n)] for v in range(1 << n)]
+        return [x for x in cands if ring_step(x) == Y]
+    out = []
+    for a in (0, 1):
+        for b in (0, 1):
+            x = [None] * n
+            x[0], x[1] = a, b
+            for i in range(0, -(n - 2), -1):          # x_(i-1) = Y_i XOR (x_i OR x_(i+1)), indices mod n
+                x[(i - 1) % n] = Y[i % n] ^ (x[i % n] | x[(i + 1) % n])
+            if ring_step(x) == Y:
+                out.append(x)
+    return out
+
+
+def zero_basin(n):
+    """Exact first-hit times of every row of the n-ring that reaches zero: breadth-first search backward from zero.
+    The forward map is deterministic, so the backward distance is the first-hit time. No step cap is involved."""
+    hit, frontier, T = {0: 0}, [0], 0
+    while frontier:
+        T += 1
+        nxt = []
+        for v in frontier:
+            for x in basin_preds([(v >> i) & 1 for i in range(n)]):
+                u = sum(b << i for i, b in enumerate(x))
+                if u not in hit:
+                    hit[u] = T
+                    nxt.append(u)
+        frontier = nxt
+    return hit
+
+
+BASIN = {n: zero_basin(n) for n in range(1, 25)}
+m24 = (1 << 24) - 1                                   # forward cross-check of the 24-ring basin, 1,500 steps
+cur24 = _np.arange(1 << 24, dtype=_np.uint32)
+hit24 = _np.full(1 << 24, -1, dtype=_np.int32)
+for T in range(1500):
+    hit24[(cur24 == 0) & (hit24 < 0)] = T
+    cur24 = ((((cur24 << 1) | (cur24 >> 23)) & m24) ^ (cur24 | (((cur24 >> 1) | (cur24 << 23)) & m24))) & m24
+fw24 = {int(v): int(hit24[v]) for v in _np.nonzero(hit24 >= 0)[0]}
+BASIN_FORWARD_AGREES = fw24 == BASIN[24]
+del cur24, hit24
+
+ok44 = BASIN_FORWARD_AGREES
 for n in range(1, 25):
-    m = (1 << n) - 1
-    x = _np.arange(1 << n, dtype=_np.uint32)
-    hit = _np.full(1 << n, -1, dtype=_np.int32)
-    cur = x.copy()
-    for T in range(0, 3 * n + 4):
-        newly = (cur == 0) & (hit < 0)
-        hit[newly] = T
-        rl = ((cur << 1) | (cur >> (n - 1))) & m          # bit i <- bit i-1: left neighbour
-        rr = ((cur >> 1) | (cur << (n - 1))) & m          # bit i <- bit i+1: right neighbour
-        cur = (rl ^ (cur | rr)) & m
-    for v in _np.nonzero(hit >= 0)[0][:4000]:
-        w = [(int(v) >> i) & 1 for i in range(n)]
-        ok44 &= allowed(least_period(w), int(hit[v]))
-    if n <= 16:
-        for v in _np.nonzero(hit >= 0)[0]:
-            w = [(int(v) >> i) & 1 for i in range(n)]
-            ok44 &= first_hit(w, 3 * n + 4) == int(hit[v])
+    for v, T in BASIN[n].items():
+        w = [(v >> i) & 1 for i in range(n)]
+        ok44 &= allowed(least_period(w), T) and first_hit(w, T + 1) == T
 for trial in range(200):
     k = 1 + trial % 4
     L = rng29.randint(1, 12)
@@ -2106,19 +2148,14 @@ for p_ in range(2, 13):
         for x in xs_:
             H = ltr_matrix(x)
             ok46 &= has_010(x) and sum(H[i][i] for i in range(4)) == 1 and sum(_mm(H, H)[i][i] for i in range(4)) == 1
+n_basin46 = 0
 for n in range(1, 25):
-    m = (1 << n) - 1
-    cur = _np.arange(1 << n, dtype=_np.uint32)
-    hit = _np.full(1 << n, -1, dtype=_np.int32)
-    for T in range(0, 3 * n + 4):
-        hit[(cur == 0) & (hit < 0)] = T
-        rl = ((cur << 1) | (cur >> (n - 1))) & m
-        rr = ((cur >> 1) | (cur << (n - 1))) & m
-        cur = (rl ^ (cur | rr)) & m
-    for v in _np.nonzero(hit >= 2)[0][:6000]:
-        w = [(int(v) >> i) & 1 for i in range(n)]
+    for v, T in BASIN[n].items():
+        if T < 2:
+            continue
+        n_basin46 += 1
+        w = [(v >> i) & 1 for i in range(n)]
         P = least_period(w)
-        T = int(hit[v])
         a = 0
         q = P // 3
         while q > 1 and q % 2 == 0:
@@ -2128,5 +2165,38 @@ for n in range(1, 25):
 traj = [[1, 0, 1, 0, 1, 1], [0, 0, 1, 0, 1, 0], [0, 1, 1, 0, 1, 1], [0, 1, 0, 0, 1, 0], [1] * 6, [0] * 6]
 ok46 &= all(ring_step(traj[i]) == traj[i + 1] for i in range(5)) and has_010(traj[0])
 check('S46 G151: doubled predecessors carry 010 and have one predecessor; the floor((T-2)/2) bound on rings to 24',
-      ok46, '%d doubling outputs checked' % n_odd)
+      ok46, '%d doubling outputs checked; %d basin rows with T >= 2 on rings to 24' % (n_odd, n_basin46))
+def canon(w):
+    return min(tuple(w[i:] + w[:i]) for i in range(len(w)))
+
+
+def L_neck(q):
+    return len({canon([(v >> i) & 1 for i in range(q)]) for v in range(1 << q)
+                if least_period([(v >> i) & 1 for i in range(q)]) == q})
+
+
+ok47 = True
+Ls = {3: L_neck(3), 6: L_neck(6), 12: L_neck(12)}
+ok47 &= Ls == {3: 2, 6: 9, 12: 335}
+Cbound = {3: 2 + 2, 6: 2 + 2 + 9, 12: 2 + 2 + 9 + 335, 24: 2 + 2 + 9 + 335 + (2 ** 24 - 2 ** 12 - 2 ** 8 + 2 ** 4) // 24}
+tmax47 = {}
+for n in (3, 6, 12, 24):
+    for v, T in BASIN[n].items():
+        if T < 1:
+            continue
+        w = [(v >> i) & 1 for i in range(n)]
+        P = least_period(w)
+        if P == 1:
+            continue
+        traj, x = [], w
+        for _ in range(T + 1):
+            traj.append(canon(x))
+            x = ring_step(x)
+        ok47 &= len(set(traj)) == len(traj)
+        ok47 &= all(least_period(list(c_)) in (1, 3, 6, 12, 24) for c_ in traj)
+        ok47 &= T + 1 <= Cbound[P]
+        tmax47[n] = max(tmax47.get(n, 0), T)
+ok47 &= ring_step([0, 1, 1]) == [0, 1, 0] and ring_step([0, 1, 0]) == [1, 1, 1] and ring_step([1, 1, 1]) == [0, 0, 0]
+check('S47 G152: necklace counts, distinct rotation classes along first-hit trajectories, and T + 1 <= C_a', ok47,
+      'largest first-hit time by ring size: %s; bounds C_a: %s' % (tmax47, Cbound))
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

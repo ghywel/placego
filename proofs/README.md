@@ -403,6 +403,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   consequently has period at most three times 2 to the power k minus one, improving the previous bound. This does
   not bound the delays between doublings, guarantee that the bound is attained, or classify the silver code’s
   initial tail.
+- [rotation classes sharpen the periodic zero-basin first-hit bound](G152-rotation-classes-sharpen-the-periodic-zero-basin-first.md):
+  A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern.
+  Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three
+  permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical
+  backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the
+  silver code’s support.
 
 ## The waiting room (not yet verified)
 
@@ -415,15 +421,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-
-
-### W.GPT152. Rotation classes sharpen the periodic zero-basin first-hit bound (awaiting second reader)
-
-*The pages:*
-
-- [Rotation classes sharpen the periodic zero-basin first-hit bound](W152-rotation-classes-sharpen-the-periodic-zero-basin-first.md):
-  A pattern that eventually becomes entirely zero cannot revisit even a rotated version of an earlier pattern.
-  Counting rotation classes with the permitted periods therefore sharpens the first-hit-time bound. Period three
-  permits at most three steps; period six at most twelve, without claiming that every bound is attained. Canonical
-  backward tails inherit a stronger logarithmic period-growth floor. This does not settle the temporal wall or the
-  silver code’s support.
+*No proofs are waiting for a second reader at the moment.*

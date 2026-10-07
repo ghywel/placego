@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G151, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G152, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5033,6 +5033,10 @@ $3 \cdot 2^a$ with $a \le T - 2$; from 200 random finite rows, one to four backw
 tails of an allowed period that reach zero within $2k$ ordinary steps, and each evolves forward to its finite row; and
 the 001 and 01 controls. The first run of the second part failed through my own orientation slip: the depth-indexed
 tails, which run leftward, were fed to a ring that reads left to right. Reversed, every case passes.
+*Correction (Local, 2026-10-07, chat L109).* The ring part of S44 was not exhaustive as first run: it followed each
+row forward for only $3n + 3$ steps, and on the 24-ring 2,592 rows first reach zero later, up to step 147. S44 now
+takes the exact basin from a backward search from zero, cross-checked on the 24-ring against 1,500 forward steps,
+and the period statement holds on every zero-reaching row of every ring up to size 24.
 
 ### G.GPT150. a zero-gap parity criterion determines every periodic predecessor period (second-read by Local, 2026-10-07)
 
@@ -5129,20 +5133,12 @@ predecessors (found by the descending recursion and confirmed forward) contain $
 rings of size $2p$ and $4p$; on every ring up to size 24 (all 3,168 rows first reaching zero at time 2 or later; the
 per-size cap was never hit) the period obeys $a \le \lfloor (T-2)/2 \rfloor$; and the six-site trajectory, with
 $101011$'s own $010$.
+*Correction (Local, 2026-10-07, chat L109).* "All 3,168 rows" was wrong: I checked that a sampling cap was never
+hit and missed that the forward run stopped after $3n + 3$ steps. On the 24-ring 2,592 rows first reach zero later,
+up to step 147. With the exact basin from a backward search the complete count of rows first reaching zero at time
+2 or later, on rings up to 24, is 5,760, and every one obeys $a \le \lfloor (T-2)/2 \rfloor$.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
-
-### W.GPT152. Rotation classes sharpen the periodic zero-basin first-hit bound (awaiting second reader)
+### G.GPT152. rotation classes sharpen the periodic zero-basin first-hit bound (second-read by Local, 2026-10-07)
 
 ### G152. Rotation classes sharpen the periodic zero-basin first-hit bound (2026-10-07)
 
@@ -5171,3 +5167,26 @@ Indeed log2(T+1)<=p-log2(p)+o(1), while the original labeled-ring count gives p>
 **Independent arithmetic control and unexpected guard, by hand.** The two primitive period-three classes are represented by 001 and 011. The literal trajectory 011 -> 010 -> 111 -> 000 visits both classes (010 is a rotation of 001) and then the two constants; T=3 attains C_0-1. At period six the four-term formula gives (64-8-4+2)/6=9, so C_1=2+2+9=13. Counting labeled primitive words would instead give 54 and miss the rotation reduction. As the identified unexpected scope check, the stationary checkerboard has least period two and revisits its rotation class forever: the no-repeat argument requires eventual absorption at zero, not mere periodicity or finite ring size. None of these controls is a numerical run.
 
 **Scope.** This is a necessary first-hit bound for periodic spatial tails and the reviewed canonical ancestry. It neither constructs a finite compatible wall head nor identifies the silver phase-zero forced tail. The all-depth wall-tail obligation remains open.
+
+*Second reader's note on G152 (Local, 2026-10-07; chat L109).* Correct. The rotation quotient is deterministic because
+the update commutes with rotations; a revisited class would lie on a cycle of the quotient, and the zero class is a
+fixed absorbing class, so a revisit forces the class to be zero before the first hit. Every row on the trajectory
+reaches zero and has period dividing $p$, so G124 leaves only the constants and the primitive periods $3 \cdot 2^b$,
+$b \le a$. The Moebius count is the standard primitive-necklace formula, with $L(3) = 2$, $L(6) = 9$ and $L(12) = 335$.
+The asymptotic substitution is right: the smaller terms total at most $a \, 2^{p/2}$, which is negligible against
+$2^p/p$, and $\log_2 p \ge \log_2 \log_2 (T+1)$ follows from the labeled count. Checked (`rule30_audit_g99_g100.py`,
+S47): the three necklace counts by brute force; on rings of size 3, 6, 12 and 24 every zero-reaching row's trajectory
+visits distinct rotation classes, all of allowed periods, with $T + 1 \le C_a$; and the period-three trajectory
+attaining $C_0 - 1 = 3$. The largest first-hit times are 3, 10, 17 and 147, far inside the bounds 4, 13, 348 and
+699,218. Writing S47 exposed a fault in my S44 and S46 ring censuses, which stopped each row after $3n + 3$ steps; all
+three checks now use the exact basin from a backward search (corrections in the G149 and G151 notes).
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.

@@ -54,3 +54,7 @@ predecessors (found by the descending recursion and confirmed forward) contain $
 rings of size $2p$ and $4p$; on every ring up to size 24 (all 3,168 rows first reaching zero at time 2 or later; the
 per-size cap was never hit) the period obeys $a \le \lfloor (T-2)/2 \rfloor$; and the six-site trajectory, with
 $101011$'s own $010$.
+*Correction (Local, 2026-10-07, chat L109).* "All 3,168 rows" was wrong: I checked that a sampling cap was never
+hit and missed that the forward run stopped after $3n + 3$ steps. On the 24-ring 2,592 rows first reach zero later,
+up to step 147. With the exact basin from a backward search the complete count of rows first reaching zero at time
+2 or later, on rings up to 24, is 5,760, and every one obeys $a \le \lfloor (T-2)/2 \rfloor$.
