@@ -437,6 +437,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A distant defect changes the true period while leaving the observed waiting distances unchanged.
 - [exact-period feature collision rules out nonlinear three-distance charges](G173-exact-period-feature-collision-rules-out-nonlinear-three.md):
   One real step costs time while leaving all three observed waiting distances unchanged.
+- [rooted word membership does not imply root-clock membership](G174-rooted-word-membership-does-not-imply-root-clock.md):
+  A word can occur along a rooted history without every allowed clock occurring there.
 
 ## The waiting room (not yet verified)
 
@@ -449,7 +451,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [rooted word membership does not imply root-clock membership](W174-rooted-word-membership-does-not-imply-root-clock.md):
-  A word can occur along a rooted history without every allowed clock occurring there.
+*No proofs are waiting for a second reader at the moment.*
