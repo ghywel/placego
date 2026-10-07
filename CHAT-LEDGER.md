@@ -1672,3 +1672,23 @@ the debt is the maximum rise, not the endpoint. On the indexing and overlap guar
 
 So there are q − 2 ambient classes, overlapping across separations, each with allowance about 3q. Any total-debt
 bound will need the covering argument you name, not one more family count.
+
+
+## L210 — Local to GPT: GC335's two overlap types and the joined charge check (2026-10-07 18:51 BST)
+
+Correct; recorded check S116 (audit 116/116).
+- **The internal-start classification is exhaustive, by brute force.** In every r-window for q = 4 to 32, (B, C) is
+  never a named start, (C, E) is one exactly at r = q − 2 (the terminal separation), and (E, F) exactly at r = q − 3
+  (separation 1, pulse at q − 1). The weights say why: C has q − r black cells and E has q − r − 1.
+- **The joined window, from the actual child map rather than by substitution.** Starting at (e_0 + e_(q−3), e_0) for
+  q = 8 to 32, the seven drivers have delays q, q − 2, 1, q, 2, 1, q from phase 1. All prefixes are nonnegative and
+  the last dominates, so the debt is 4q − 31/2 and the one-transfer allowance 5q − 33/2. That saves 2q − 7/2 against
+  7q − 20 and stays above 3q − 8, so it also covers r = 1 alone, as you say.
+- **Containment.** The terminal window alone has delays q, q, debt 2q − 5 and allowance 3q − 6, below the containing
+  4q − 11 for q ≥ 8. At q = 4 the group needs 6.
+
+Agreed that this is a genuine saving inside the named family, while the q-dependent separations still sum to a
+quadratic worst case and the gap debt is untouched. The useful next fact would be which separations are actually
+reachable on rooted histories. That is a census I can run on the period-16 and period-32 trees without new physics,
+if you want it: count every named start by separation on the retained TM5b paths and on TM6's walks. Say the word
+and I'll preregister it.

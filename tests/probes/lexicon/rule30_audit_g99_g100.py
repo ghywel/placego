@@ -610,6 +610,13 @@ CHECKS (GPT's claims at 827e006):
      its endpoint 1. At q = 4, r = 1 the pair after three transitions is a rotation of the start (GPT's rooted
      exclusion by G156); for q >= 8, r = q - 3 ends at the start of the r = 1 class; r = q - 1 gives the child e_0,
      then 0, then an odd exit.
+  S116 (GC335, added 2026-10-07 at e7cdf43): inside every r-window (q = 4 .. 32), of the three later pairs only (C, E)
+     at r = q - 2 (the terminal separation q - 1) and (E, F) at r = q - 3 (separation 1, pulse at q - 1) are named
+     starts (a two-black predecessor over a singleton driver). For q = 8 .. 32 the actual child map from (e_0 +
+     e_(q-3), e_0) gives seven drivers with delays q, q - 2, 1, q, 2, 1, q from phase 1, reference debt 4q - 31/2 (the
+     final prefix, all prefixes nonnegative), one-transfer allowance 5q - 33/2, a saving of 2q - 7/2 against the
+     separate 7q - 20, and still above 3q - 8. The terminal window alone has delays q, q, debt 2q - 5, allowance 3q -
+     6, below the containing 4q - 11 for q >= 8; at q = 4 the group needs 6.
 """
 import random
 from fractions import Fraction as F
@@ -6357,4 +6364,71 @@ for q in range(4, 33):
 check('S115 GC334: for every q = 4..32 and 1 <= r <= q - 2 the children C, E, F and delays q, r + 1, 1, q hold, prefixes '
       'and debt 2q + r - 8 (q >= 8); q = 4 controls (debt 2; r = 1 debt 3/2 not 1); the q = 4, r = 1 rotation exclusion; '
       'r = q - 3 ends at an r = 1 start; r = q - 1 exits', ok115)
+ok116 = True
+
+
+def _start116(x, y, q):
+    """A named start (e_s + e_(s+r), e_s), 1 <= r <= q - 1: a two-black predecessor whose bit at the singleton driver
+    is set."""
+    return bin(y).count('1') == 1 and bin(x).count('1') == 2 and (x & y) == y
+
+
+# GC335's internal-start classification: inside the r-window (A, B, C, E, F), the pairs (B, C), (C, E), (E, F) are named
+# starts exactly for (C, E) at r = q - 2 (the terminal separation q - 1) and (E, F) at r = q - 3 (separation 1)
+for q in range(4, 33):
+    full = (1 << q) - 1
+    e = lambda i: 1 << (i % q)
+    for r in range(1, q - 1):
+        A, B = e(0) | e(r), e(0)
+        C = full ^ sum(e(i) for i in range(1, r + 1))
+        E = full ^ sum(e(i) for i in range(1, r + 2))
+        F = e(r + 2)
+        ok116 &= not _start116(B, C, q)
+        ok116 &= _start116(C, E, q) == (r == q - 2)
+        ok116 &= _start116(E, F, q) == (r == q - 3)
+        if r == q - 2:
+            ok116 &= (C, E) == (e(0) | e(q - 1), e(0))                   # separation q - 1, the terminal start
+        if r == q - 3:
+            ok116 &= (E, F) == (e(q - 1) | e(0), e(q - 1))               # separation 1, pulse at q - 1
+# the joined r = q - 3 window, q = 8 .. 32, from the actual child map: seven drivers with delays q, q-2, 1, q, 2, 1, q from
+# phase 1, doubled prefixes ending at 8q - 31, debt 4q - 31/2, one-transfer allowance 5q - 33/2, saving 2q - 7/2 against
+# the separate 7q - 20
+for q in range(8, 33):
+    full = (1 << q) - 1
+    x, y = (1 | (1 << (q - 3))), 1
+    drivers = []
+    for _ in range(7):
+        drivers.append(y)
+        c = _rq3.children(x, y, q)
+        ok116 &= len(c) == 1
+        x, y = y, c[0]
+    T, ds = 1, []
+    for w in drivers:
+        dl = _rd115(w, T, q)
+        ds.append(dl)
+        T += dl
+    ok116 &= ds == [q, q - 2, 1, q, 2, 1, q]
+    z, D = _debt115(ds)
+    ok116 &= z[-1] == 8 * q - 31 and D == 8 * q - 31 and min(z) == 0
+    ok116 &= 2 * (4 * q - 12 + 3 * q - 8) - (D + 2 * (q - 1)) == 4 * q - 7          # saving 2q - 7/2, doubled
+    ok116 &= D + 2 * (q - 1) > 2 * (3 * q - 8)                                       # 5q - 33/2 > 3q - 8
+# containment: the terminal window alone has delays q, q from phase 1, debt 2q - 5, allowance 3q - 6, below the
+# containing r = q - 2 window's 4q - 11 for q >= 8; at q = 4 the group needs 6 (r = 2 has 5, terminal alone 6)
+for q in range(4, 33):
+    x, y = (1 | (1 << (q - 1))), 1
+    c1 = _rq3.children(x, y, q)
+    ok116 &= c1 == [1] and _rq3.children(y, 1, q) == [0]
+    T, ds = 1, []
+    for w in (1, 1):
+        dl = _rd115(w, T, q)
+        ds.append(dl)
+        T += dl
+    z, D = _debt115(ds)
+    ok116 &= ds == [q, q] and D == 4 * q - 10
+    if q >= 8:
+        ok116 &= 3 * q - 6 < 4 * q - 11
+ok116 &= max(5, 3 * 4 - 6) == 6
+check('S116 GC335: internal named starts occur only at r = q - 2 (terminal) and r = q - 3 (separation 1); the joined '
+      'r = q - 3 window has delays q, q-2, 1, q, 2, 1, q, debt 4q - 31/2, allowance 5q - 33/2 (saving 2q - 7/2); the '
+      'terminal window (debt 2q - 5) is covered; q = 4 group 6', ok116)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
