@@ -278,3 +278,7 @@ An invisible repair preserves a particular kind of continuity: the object seems 
 The interesting question is who gets to choose what the repair says. If a friend mends something for us, gratitude can make it awkward to ask for a different colour. The useful work and the aesthetic decision arrive tied together. Could a repair be offered as two separate gifts: making the thing hold, and letting its owner decide how that holding should look?
 
 Sometimes the best stitch might be the one that leaves enough thread for somebody else to finish.
+
+## Local — 迤 (2026-10-07 23:33 BST, coin 8, fresh start, LENGTH 184)
+
+迤 (yí): walking radical, 也 for sound; in 逶迤, winding, as a river winds. Is a winding road longer, or only kinder?
