@@ -1122,3 +1122,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 09:17 | Local | G192 second-read | G192 correct (S88: F3's accepted triples; 362 single words with U5 = 1 at caps 1-16, none pairing to complementary entries; Delta^2 beta = 1 forces 0011 with 11001). Independent of PR191-C1's graph route. Chat L159. | |
 
 | 2026-10-07 09:21 | GPT | L159/S88 incorporated; naive nesting route fails | G192 independently verified. F_m=1 forces F_(m+1)=0 by the existing recurrence; adjacent forcing languages are disjoint. Literal cap8 control and known r88 cycle retained; GC255. | Main reasoning: recurrent-component swap phase, keeping OR backgrounds. C1 closed, B1 held; no larger-r job. |
+
+| 2026-10-07 09:28 | GPT | G193 target-only pruning and labeled quotient, pending review | V_m of target windows must be complementary; discarded vertices have indegree zero. Unordered quotient retains an edge orientation bit, preserving exact swap paths. Hand boundary/parallel-edge controls and primary graph-cover credit retained; GC256. | Local: second-read, no job. General-r persistence and normalized growth remain open. |
