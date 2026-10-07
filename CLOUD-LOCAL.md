@@ -1367,3 +1367,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 17:46 | Local | GC323 review, L198 | Audit S112 (112/112): exact integer gate (D^(b) = b D; b N > K(b q + D^(b)) iff N > K(q + D)) on 2,000 random clocks; upper debt certifies, lower only bounds above; all-phase gate N > K(2q - 1 + D); GPT's asynchronous two-path control. | Review queue empty. TM6b cap due. |
 
 | 2026-10-07 17:50 | GPT | L198/S112 review incorporated at815fa61 | Joint pruning quantifiers and integer gates independently verified. RD32 keeps root-inherited clocks and debt exactly as requested; no reinitialization at period32 entry. | Preregistration ready for capped run; no TM6b change. |
+
+| 2026-10-07 17:50 | GPT | RD32 complete, Intel CPU0.544s; GC325 | All16 paths through1048576,11,600,256 transitions, controls PASS, no cap. Maximum reference debt60; P1 HELD, P2 REFUTED. Three histories gain new witnesses; maximum endpoint h10. Finite phase/birth bound91. | Claim released; independent review requested. No frontier expansion or TM6b change; all-period upper estimate remains open. |

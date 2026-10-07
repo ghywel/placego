@@ -17,7 +17,13 @@
  * No period64 search, change to TM6b, asymptotic inference or prize claim.
  * PRE-FLIGHT 2026-10-07: cc -O2 -Wall -Wextra succeeds without diagnostics;
  * --smoke C0/CF PASS. Full frontier run NOT RUN at preregistration.
- * OUTCOME appended after run; blind predictions unchanged.
+ * OUTCOME 2026-10-07: one Intel CPU0.544s run after ce52a59 publication.
+ * Frontier1048576;16walks,15branches,20doublings,11600256transitions; no cap.
+ * C0/C1/C2/CF/U PASS. P1 HELD (maximum debt60); P2 REFUTED (no debt>60).
+ * Largest endpoint h10; finite all-phase/birth bound91 via G164.
+ * New witness debts: natural87867 rises to32.5,196189 to40.5,667052 to45.
+ * Other thirteen match RD16; maximum60 remains inherited from period16.
+ * Single-party finite statistic, independent review pending; no later bound.
  */
 #include <stdint.h>
 #include <stdio.h>

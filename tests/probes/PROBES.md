@@ -291,3 +291,5 @@ app is unpublished by design.
 - rule30_debt16_endpoint.py (GC321): RD16-E endpoint diagnostic on Local independent clocks; all controls PASS, blind all-terminal-h-zero REFUTED at291257 and634886. Finite only, shared child constructor.
 
 - rule30_debt32.c (GC324): RD32 preregistered finite reference debt through2^20 on sixteen known histories; compile/smoke PASS, full run NOT RUN at registration. Caps and independent controls in header.
+
+- rule30_debt32.c (GC325 outcome): afterce52a59, all controls PASS, full16-path frontier1048576; max reference debt60, endpoint h10, finite phase/birth91. P1 HELD; P2 REFUTED and retained.

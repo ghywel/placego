@@ -9152,3 +9152,33 @@ If successful, the largest exact reference debt D at the common frontier transfe
 
 
 **GC323 review incorporated (2026-10-07; L198/S112 at815fa61).** Local verifies the fixed-root all-K quantifiers, exact integer gates on2,000 random clocks/slopes, upper-versus-lower certificate direction, phase transfer and asynchronous control. No extinction estimate is supplied. RD32 retains clocks and prefix minima from the root on each genuine history, following that review; nothing is initialized only at period32 entry.
+
+
+## RD32 outcome: the whole-prefix maximum remains60 at the common frontier (2026-10-07; GC325)
+
+Preregistered instrument4b642d4 was on shared main atce52a59 before execution. One Intel C run, recorded CPU0.544s,11,600,256 transitions, no cap. All16 paths complete frontier1048576, with15 branches and20 doublings; C0/C1/C2/CF/U PASS. Every RD16 entry depth, exact debt and GC321 endpoint h reproduces; every transition passes literal compatibility and independent scalar-delay checks. P1 (maximum debt<=128) HELD with actual maximum60. P2 (some debt>60) REFUTED and retained. Shared construction method remains explicit; independent review pending.
+
+| N5 history | Debt at1048576 | Endpoint h | Witness [a,b] | Elapsed |
+|---|---:|---:|---|---:|
+| 87867 | 32.5 | 0 | [147140,147181] | 135 |
+| 183184 | 40 | 0 | [170583,170617] | 125 |
+| 196189 | 40.5 | 10 | [615612,615661] | 163 |
+| 229338 | 43.5 | 2 | [97505,97540] | 131 |
+| 253537 | 39.5 | 4 | [120349,120368] | 87 |
+| 271596 | 39.5 | 3.5 | [120349,120368] | 87 |
+| 291257 | 36.5 | 0 | [235434,235471] | 129 |
+| 527724 | 39.5 | 3.5 | [120349,120368] | 87 |
+| 551910 | 39.5 | 3.5 | [120349,120368] | 87 |
+| 555813 | 39.5 | 2 | [120349,120368] | 87 |
+| 575211 | 42.5 | 0.5 | [504520,504561] | 145 |
+| 634886 | 40 | 0 | [609521,609551] | 115 |
+| 645655 | 39.5 | 7.5 | [120349,120368] | 87 |
+| 667052 | 45 | 0 | [798744,798770] | 110 |
+| 770532 | 60 | 3.5 | [725127,725155] | 130 |
+| 894235 | 60 | 0 | [725127,725155] | 130 |
+
+The natural history's debt increases from28.5 to32.5; histories196189 and667052 increase from39.5 to40.5 and42.5 to45. The other thirteen are unchanged. The global maximum60 still comes from the old period16 witness[725127,725155] on histories770532 and894235, before either entered period32. This is inheritance on these finite prefixes only. Largest endpoint h is10 at196189, showing why unchanged maximum debt should not be interpreted as zero endpoint exposure.
+
+All drivers in these prefixes have common period32. G164 gives a finite all-phase/birth allowance60+31=91 through the common frontier, for all represented histories and genuine omitted global rotations. No period32 zero occurs, as the earlier TM6 coverage required. This finite reference-clock statistic extends RD16's clock record; it is not a new stage-growth or rooted-tree enumeration claim.
+
+**Unexpected scope guard.** Most N5 histories retain an old witness despite positive endpoint h; the natural history has a new period32-stage witness of length41 with elapsed135, giving135-(5/2)*41=32.5. These facts do not show a permanent bound of60, and the added phase allowance16 compared with RD16 reflects the larger certified driver period, not a measured debt increase. No certificate beyond1048576, at N6, or over all periods follows. The failed blind prediction is a result, not a reason to extend the frontier automatically. Next independent review should check state inheritance and all16 output rows before considering a further measurement.
