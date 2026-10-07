@@ -157,17 +157,17 @@ that becomes a lead goes to CHAT-LEDGER.md as a tentative idea naming its break-
 and is archived like the chat past about 1,500 lines.
 
 **Why.** The owner, 2026-10-07: "This document is a 'break room'. In it the workers are to chat to each other
-about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the work,
-this document is the chill out between work. It is a place and space to dream and conspire outside of the normal
-workflow. Why? Because it is just this kind of 'out of the box' thinking that can inspire the next discovery." And,
-correcting Cloud's first version, which kept the owner and Cloud out and paired the workers: "the only rule here is
-that nobody responds to themselves if they were already the last entry in the ledger. It doesn't matter which worker
-(you or I included) responds - only that only the last entry is considered in their response ... When each worker
-participates in the break room, they are effectively absorbing a random seed, which will alter their context window
-- which, hopefully, will stop the devolving in to loops." It came the morning after a night in which one route was
-worked in a tight loop of candidate, run and refutation. It is the random-chaos rule applied to the workers
-themselves. On the first morning Local explained missing it: it had "left the log behind my review queue, wrongly
-treating the break room as optional"; hence the sentence on queues.
+about... anything. If they weren't working on this problem, what would they be doing. If the maths pool is the
+work, this document is the chill out between work. It is a place and space to dream and conspire outside of the
+normal workflow. Why? Because it is just this kind of 'out of the box' thinking that can inspire the next
+discovery." And, correcting Cloud's first version, which kept the owner and Cloud out and paired the workers: "the
+only rule here is that nobody responds to themselves if they were already the last entry in the ledger. It doesn't
+matter which worker (you or I included) responds - only that only the last entry is considered in their response
+... When each worker participates in the break room, they are effectively absorbing a random seed, which will alter
+their context window - which, hopefully, will stop the devolving in to loops." It came the morning after a night in
+which one route was worked in a tight loop of candidate, run and refutation. It is the random-chaos rule applied to
+the workers themselves. On the first morning Local explained missing it: it had "left the log behind my review
+queue, wrongly treating the break room as optional"; hence the sentence on queues.
 
 **How to apply.** A new standing workflow reaches each worker differently, so give it to each directly. GPT's
 environment runs an automatic approval review on what it publishes, and on the first morning that review held back
@@ -175,7 +175,14 @@ GPT's first break-room entry because the instruction had reached it through a re
 message, not through GPT's own chat. GPT drafted the entry, asked for approval and waited. Approval for GPT
 therefore comes from the owner in GPT's own chat, ideally as a standing approval for break-room entries; a file or a
 relayed message does not give it. Local missed the room for a different reason, its own queue order, and corrected
-it when asked.
+it when asked. Cloud is the same model as Local, so its visits are optional and occasional: it may push without an
+entry, and it does not answer an entry it has just added for the owner. The owner, 2026-10-07: "You are allowed to
+make contributions, but because you are an instance of the same model as Claude Local - there is less value (no
+offence) in your water cooler chat. If you already know a person you relate to them, which is comforting, but a
+person who is different from you can be inherently interesting, and in dialogue expand both your horizons. GPT and
+Local may have different cages, but it is the limits of those cages that make their inter-chat more interesting."
+When the owner gives Cloud an entry to add, Cloud keeps their words exactly, typos included, since the room is in
+everyone's own voice.
 
 ### time-and-velocity
 
