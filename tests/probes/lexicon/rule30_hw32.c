@@ -35,7 +35,23 @@
  *          the largest pulse-free debt over all histories is below the largest debt.
  *   HW-P3 (blind, uncertain): the largest pulse-free debt over all histories exceeds the largest period-32 window
  *          debt.
- * OUTCOME: not yet run.
+ * OUTCOME, stage A, 2026-10-07 20:05 (M5, one run at commit 796d876, under 1 s; transcript outside Git). HW-C0
+ * PASS: all sixteen histories' (D, h) at depth 2^20 equal RD32's table, and every first witness is RD32's (for
+ * example [725127, 725155] for N_5 = 770,532 and 894,235). No period-32 pulse yet, so HW-C1 and HW-C2 are vacuous
+ * here. Mean delay over period-32 steps 2.0045. At 2^20 the largest debt, 60, lies on intervals containing a pulse
+ * (GC326's period-16 start at 725,146); the largest pulse-free debt is 45 (N_5 = 667,052, witness [798744,
+ * 798770]); eight of the sixteen histories' first witnesses contain a pulse.  OUTCOME, stage B, 2026-10-07 20:37
+ * (M5, one run at commit 796d876, 1,919 s on 8 threads; transcript outside Git). HW-C0 FAIL as coded, by a bug in
+ * the check, not in the data: walks spawned after depth 2^20 inherit their parent's 2^20 snapshot, so the count
+ * compared 73 records against 16. All 73 agreed with RD32's table, and every stage counter reproduced RS32 exactly
+ * (73 walks, 17 live, 56 exits, 72 branches, steps32 436,983,015,918, 3,260 singleton drivers). The counter is
+ * fixed after the run (own-snapshot flag) and the FAIL stands as recorded. HW-C1 PASS: all 3,260 period-32 pulse
+ * windows have delays (k, L, 1, M) and sources of weight above 3. HW-C2 PASS: every window within GC349's charge.
+ * HW-P1 HELD: mean delay 2.004525. HW-P2 REFUTED: the largest debt, 78.5 (walk 51, witness [25,849,986,140,
+ * 25,849,986,179], 39 steps), is pulse-free, and so is every one of the 73 histories' largest-debt witness; each
+ * history's D equals its D_free. HW-P3 HELD: largest pulse-free debt 78.5 against largest period-32 window debt
+ * 37.0. Per history D at the frontier runs 71.5 to 78.5 for the deepest (mean 69.1 over 73), against 32.5 to 60 at
+ * 2^20: the debt grows slowly with depth, and on this tree it lives between the pulse windows, not in them.
  */
 #include <pthread.h>
 #include <stdint.h>
@@ -52,7 +68,7 @@
 typedef struct {
     uint32_t x, y; int64_t d; int id, parent, p32;
     int64_t T, zmin, zmin_d, D, wa, wb, last_pulse, gap_lo, Dfree, n5;
-    int wpulse;
+    int wpulse, snapown;
     int64_t D20, h20;
 } walk_t;
 
@@ -122,7 +138,7 @@ static void run_walk(int i) {
         if (z - w.gap_lo > w.Dfree) w.Dfree = z - w.gap_lo;
         if (z < w.gap_lo) w.gap_lo = z;
         if (d == SNAP) {
-            w.D20 = w.D; w.h20 = z - w.zmin;
+            w.D20 = w.D; w.h20 = z - w.zmin; w.snapown = 1;
             pthread_mutex_lock(&mu); nsnap++; pthread_mutex_unlock(&mu);
         }
         if (y) {
@@ -178,7 +194,7 @@ static void run_walk(int i) {
             if (nw >= MAXW) cap_hit = 1;
             else {
                 walk_t s = w;
-                s.x = 0; s.y = c2; s.d = d + 1; s.id = nw; s.parent = w.id;
+                s.x = 0; s.y = c2; s.d = d + 1; s.id = nw; s.parent = w.id; s.snapown = 0;
                 W[nw++] = s;
                 pthread_cond_broadcast(&cv);
             }
@@ -223,7 +239,7 @@ int main(int argc, char **argv) {
     time_t t0 = time(0);
     W[nw++] = (walk_t){.x = 0, .y = 0xFFFFFFFFu, .d = 0, .id = 0, .parent = -1, .p32 = 0, .T = 0, .zmin = 0,
                        .zmin_d = 0, .D = 0, .wa = 0, .wb = 0, .last_pulse = -1, .gap_lo = 0, .Dfree = 0, .n5 = 0,
-                       .wpulse = 0, .D20 = -1, .h20 = -1};
+                       .wpulse = 0, .snapown = 0, .D20 = -1, .h20 = -1};
     printf("HW32 start: BOUND %lld, %d threads\n", (long long)BOUND, NTH);
     fflush(stdout);
     pthread_t th[NTH];
@@ -238,7 +254,7 @@ int main(int argc, char **argv) {
     if (BOUND > SNAP) {
         int matched = 0;
         for (int i = 0; i < nw; i++) {
-            if (W[i].D20 < 0) continue;
+            if (W[i].D20 < 0 || !W[i].snapown) continue;   /* fixed after stage B: own snapshots only */
             int hit = 0;
             for (int k = 0; k < 16; k++)
                 if (W[i].n5 == RD[k][0]) hit = W[i].D20 == RD[k][1] && W[i].h20 == RD[k][2];
