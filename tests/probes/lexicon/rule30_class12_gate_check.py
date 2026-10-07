@@ -5,7 +5,7 @@ CLOUD-LOCAL.md with these predictions pushed before the run.
 
 RUN-ON:     cpu, one kissat process (seconds)
 COMMAND:    python3 tests/probes/lexicon/rule30_class12_gate_check.py
-COST:       to be recorded.
+COST:       3 seconds.
 
 The witness: KK's instance (rule30_kick_bite_kissat.py) for class 12 after N = 126 steps, at the one case alive there
 (t0 = 0, phase d = 2; L231, CL031), solved by kissat and replayed. Its columns 1 .. 6 over the last turn before the
@@ -24,7 +24,15 @@ PREDICTIONS (Local's, published before the run):
   GW-P2 (GC390's forced consequence): column 3 disagrees at s - 2.
   GW-P3 (GC390, conditional): if column 3 disagrees at s - 4, column 4 disagrees at s - 5; if column 3 disagrees at
         s - 2 while column 2 agrees at s - 3 and column 3's reference at s - 3 is 0, column 4 disagrees at s - 3.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 23:11 (M5, one run at commit df71e20, 2.8 s; transcript outside Git). GW-C0 PASS: the model
+replays, and columns 1 .. 4 match the reference words over the turn before the last. GW-C1 PASS. GW-P1, GW-P2 and
+GW-P3 HELD. Differences from the locked words in the last turn before the kick (s = 126), as offsets s - j:
+    column 1: none;  column 2: 1;  column 3: 2, 4;  column 4: 1, 3, 5;
+    column 5: 2, 3, 4, 6, 8, 10;  column 6: 1, 2, 3, 6, 7, 9, 11, 13.
+So GC390's forced cells (column 3 at s - 2, column 4 at s - 3 and s - 5) are present in a witness solved afresh, and
+the front's first differences step inward: column 6 at s - 13, 5 at s - 10, 4 at s - 5, 3 at s - 4, 2 at s - 1 and
+1 at s. In this witness columns 5 and 6 also follow LK's width-15 words until 13 steps before the kick, which fits
+LK's lock (rows that close to the departure are not covered by its finite window).
 """
 import os
 import subprocess

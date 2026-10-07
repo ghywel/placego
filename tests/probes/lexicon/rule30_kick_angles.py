@@ -57,6 +57,12 @@ the thin locked strip (columns 2 to 4 or 5) is a filter on the interior's noise,
 filter removes as the lock ages. Part C finds the death time of each class-12 kick size (+4 .. +9) on its own.
   KA-P4: the larger the kick, the sooner it dies (death time non-increasing from +4 to +9). Confidence 0.5. If a
          larger kick outlives a smaller one, "class 12 is a large slip the lock suppresses" is wrong.
+OUTCOME, part C, 2026-10-07 (by 23:13 BST; three processes, CaDiCaL): kicks +4, +5, +6, +7 and +8 (landing at
+  angles 44 to 52) are each possible after 126 steps on the wheel and impossible from 127; kick +9 (landing at 54)
+  dies at 40. KA-P4 held only by its letter, since the times never increase but are tied. The reading it tested is
+  refuted: there is no size cutoff tightening with time. All of class 12's kicks die together, so what dies at 127
+  is the take-off at angle 36 itself, wherever it would land. The early death of +9 is the landing window's top
+  edge, 54, the one that settling removes.
 
 OUTCOME, part B, 2026-10-07 (finished by 22:48 BST; one run per class, CaDiCaL):
   KA-C1 PASS: class 12 is possible after 126 steps on the wheel and impossible from 127, Local's KLK value from an
