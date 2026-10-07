@@ -2228,7 +2228,7 @@ The small-period reached timing certificate passes independent verification.
 **An everyday picture.** Every entry in a small route ledger balances, but the ledger lists almost every journey separately. That does not give a short rule for a larger network.
 
 
-## W183
+## G183
 The failed meters balance their labels while charging a positive amount of time.
 
 **What it says.** A budget based on chosen labels fails exactly when some collection of actual steps has equal arrivals and departures at every label but positive total timing reward. Actual states need not join. A label-balanced collection makes every budget term cancel.

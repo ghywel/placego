@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G182, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G183, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6089,16 +6089,7 @@ $(143, 200)$ at depth 273 to $(132, 215)$ at depth 281, with doubled rewards 3, 
 on this domain has a maximum below 14. Pointwise the $K$ lift is not least: it exceeds the least potential at 14 of 409
 vertices, by at most 5. As GPT states, this says nothing about larger periods.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT183. compression fails exactly at positive label-balanced edge collections (second-read by Local, 2026-10-07)
 
 ### GPT G183 — Compression fails exactly at positive feature-balanced edge collections (2026-10-07)
 
@@ -6119,6 +6110,32 @@ If there is no positive label cycle, set H(x) to the maximum total reward of any
 **Identified unexpected check against overgeneralization.** A generic three-state path s->t->u with rewards+1,-1 admits the noninjective label map phi(s)=phi(u)=A, phi(t)=B. Its label cycle has total0, and F(A)=1,F(B)=0 pays both edges. States were forgotten and a false join introduced, yet a bounded feature certificate exists. This is a weighted-graph logical control, not a new Rule30 witness. It refutes inferring 'every noninjective compression fails' from the selected positive examples. Likewise taking an already proved h as a scalar feature trivially yields a sound budget, but merely encodes the answer; one scalar is not automatically one small piece of information.
 
 **Prior record and next direction.** G8/G166 already use the standard difference-constraints/positive-cycle criterion; this statement consolidates its representative-edge and uniform-size quantifiers for CL011. Primary prior art: MIT's difference-constraints lecture explains the corresponding negative-cycle criterion after reversing reward signs (https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2012/a9e76885a78c729f2375e14830caebf2_MIT6_046JS12_lec07.pdf, section7.2.2). No novelty claim. The gap-1 refinement loop remains closed. The next reasoning block is G165's independent period-growth obligation2^j/N_j->0; no new family, larger graph or run is queued.
+
+*Second reader's note on G183 (Local, 2026-10-07; chat L145).* Correct. It is the standard difference-constraint
+criterion (the positive-cycle test, the textbook negative-cycle test with signs reversed) on the graph whose vertices
+are labels and whose arcs are the actual edges. Summing the inequalities over a label-balanced multiset cancels every
+potential. A balanced multiset splits into closed label walks, one of them positive. The least potential is the best
+walk from each label, and telescoping puts it below every other nonnegative one. Checked (`rule30_audit_g99_g100.py`,
+S73) on 400 random small graphs with random label maps. Feasibility by longest-path relaxation agrees with a brute-force
+search over subsets of actual edges for one that balances at every label with positive reward (111 feasible, 260 not).
+Subsets suffice, because a simple label cycle uses each arc once. On the feasible graphs the least potential equals the
+best simple label walk, and potentials relaxed from random nonnegative starts lie above it. The merged-endpoint control
+is feasible with $F = (1, 0)$, as stated. The cited collections were re-checked on actual edges. G176's reached $q = 8$
+edge (cost 5) balances alone in the three distances plus period, but not in RQO's labels. DQ3's literal $q = 4$ edge
+$(15, 12) \to (9, 4)$ (cost 3) balances alone in the three distances. G178's seven reached edges, elapsed 21, balance at
+every RQO label but not at four actual states. The size remark agrees with S72: the same least-potential argument on the
+actual $q = 8$ graph gives the exact budget 14. The quantifier remark is right, since G165 asks for one $C$ per history,
+not one for all. I did not open the cited lecture notes; the proof as given is complete without them.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
 
 
 ### GPT G184 — Period-growth gap is an exponentially weighted stage-length condition (2026-10-07)

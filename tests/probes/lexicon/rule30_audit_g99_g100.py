@@ -332,13 +332,20 @@ CHECKS (GPT's claims at 827e006):
      = h(t) satisfies every consecutive-pair inequality; the one-edge terminal control gives h = (r, 0) with K = 0; and
      G178's seven feature edges, line-graphed after compression, still form a cycle of total doubled reward 7.
   S72 (G182, added 2026-10-07 at 7407ea9): the RC2 certificate rebuilt in memory as rule30_rc2_export.py writes it is
-     byte-identical to the shared artifact (56,232 bytes, the recorded SHA-256); GPT's checker (int.bit_count replaced
-     on Python < 3.10, nothing else) accepts all four caps, still accepts a reordered copy, and rejects eight real
+     byte-identical to the shared artifact (56,232 bytes, the recorded SHA-256); GPT's checker (any int.bit_count
+     replaced on Python < 3.10, nothing else; GPT made it portable at 25a64b5) accepts all four caps, still accepts a reordered copy, and rejects eight real
      corruptions, each at the intended assertion (zero K, a lowered tight K, the known tree edge removed, a non-tree
      edge removed, a changed delay, a dropped terminal label, a false summary, an unreached vertex); the exact least
      potential on the certified edges has maxima 0, 0, 1, 14, so the finite budget 14 is attained, once, by the actual
      reached path (143, 200) -> (132, 215), depths 273 -> 281, rewards 3, 3, 1, -3, 5, -3, 3, 5; the K lift dominates
      it, looser at 14 of 409 vertices by at most 5.
+  S73 (G183, added 2026-10-07 at fcedaa4): on 400 random small weighted graphs with random label maps (seed 183), a
+     nonnegative label potential exists (longest-path relaxation) exactly when no subset of actual edges, found by
+     brute force, balances at every label with positive reward (111 feasible, 260 not); the least potential equals
+     the best simple label walk and lies below every other feasible potential found; the +1, -1 merged-endpoint
+     control is feasible with F = (1, 0); G176's reached q = 8 edge (cost 5) is a balanced singleton in RQ3's labels
+     but not in RQO's; DQ3's literal q = 4 edge (15, 12) -> (9, 4) (cost 3) is one in the three distances; G178's
+     seven reached edges balance at every RQO label but not at four actual states, with elapsed 21.
 """
 import random
 from fractions import Fraction as F
@@ -3275,8 +3282,8 @@ ok72 = _hl72.sha256(_raw72).hexdigest() == _SHA72 and len(_raw72) == 56232
 # GPT's checker, unmodified except int.bit_count (Python 3.10) where this interpreter lacks it.
 _src72 = open(_os60.path.join(_os60.path.dirname(_os60.path.abspath(__file__)),
                               'rule30_rc2_certificate_check.py')).read()
-if _sys72.version_info < (3, 10):
-    ok72 &= _src72.count('a.bit_count()') == 1
+if _sys72.version_info < (3, 10):                      # GPT's checker dropped it at 25a64b5; kept for older copies
+    ok72 &= _src72.count('a.bit_count()') <= 1
     _src72 = _src72.replace('a.bit_count()', "bin(a).count('1')")
 _ns72 = {'__name__': 'rc2_certificate_check'}
 exec(compile(_src72, 'rule30_rc2_certificate_check.py', 'exec'), _ns72)
@@ -3426,4 +3433,89 @@ ok72 &= _w72 == [3, 3, 1, -3, 5, -3, 3, 5] and _s72[_p72[-1]] == (132, 215)
 ok72 &= [_depth70[_s72[_p72[0]]], _depth70[_s72[_p72[-1]]]] == [273, 281]
 check('S72 G182: the certificate rebuilt byte-identical; GPT checker accepts it and rejects eight real corruptions at '
       'the intended assertion; the finite budget 14 is exact', ok72)
+_rng73 = random.Random(183)
+
+
+def bf73(m, arcs, init=None):
+    """Least nonnegative label potential above init by longest-path relaxation; None on a positive cycle."""
+    F = list(init) if init else [0] * m
+    for _ in range(m + 2):
+        ch = False
+        for x, y, w in arcs:
+            if w + F[y] > F[x]:
+                F[x], ch = w + F[y], True
+        if not ch:
+            return F
+    return None
+
+
+def walkmax73(m, arcs, x):
+    """Maximum reward over simple label paths from x (the empty path included), by exhaustive search."""
+    out = {}
+    for a, b, w in arcs:
+        out.setdefault(a, []).append((b, w))
+    best = 0
+
+    def go(v, seen, tot):
+        nonlocal best
+        best = max(best, tot)
+        for b, w in out.get(v, []):
+            if b not in seen:
+                go(b, seen | {b}, tot + w)
+    go(x, {x}, 0)
+    return best
+
+
+ok73, _n73 = True, [0, 0]
+for trial in range(400):
+    n = _rng73.randint(2, 6)
+    E = [(a_, b_, _rng73.randint(-4, 3)) for a_ in range(n) for b_ in range(n) if _rng73.random() < 0.3][:11]
+    if not E:
+        continue
+    m = _rng73.randint(1, n)
+    lab = [_rng73.randrange(m) for _ in range(n)]
+    arcs = [(lab[a_], lab[b_], w_) for a_, b_, w_ in E]
+    Fl = bf73(m, arcs)
+    # independent side: some subset of actual edges is balanced at every label and has positive total reward
+    pos = False
+    for mask in range(1, 1 << len(E)):
+        sub = [arcs[i] for i in range(len(E)) if mask >> i & 1]
+        bal = [0] * m
+        for x, y, _ in sub:
+            bal[x] += 1
+            bal[y] -= 1
+        if not any(bal) and sum(w_ for _, _, w_ in sub) > 0:
+            pos = True
+            break
+    ok73 &= (Fl is None) == pos
+    _n73[pos] += 1
+    if Fl is not None:
+        H = [walkmax73(m, arcs, x) for x in range(m)]
+        ok73 &= Fl == H and all(H[x] >= w_ + H[y] for x, y, w_ in arcs)
+        G = bf73(m, arcs, [_rng73.randint(0, 5) for _ in range(m)])
+        ok73 &= G is not None and all(G[x] >= H[x] for x in range(m)) and all(G[x] >= w_ + G[y] for x, y, w_ in arcs)
+ok73 &= min(_n73) >= 50
+# G183's control: s -> t -> u with rewards +1, -1 and phi(s) = phi(u) = A, phi(t) = B is feasible with F = (1, 0)
+ok73 &= bf73(2, [(0, 1, 1), (1, 0, -1)]) == [1, 0]
+# the Rule 30 collections: G176's reached q = 8 edge is balanced alone in RQ3's labels (cost 5), not in RQO's
+_e76 = ((183, 176), (133, 208), 5)
+ok73 &= _rq3.feat(_e76[0], 8) == _rq3.feat(_e76[1], 8) and _rqo.feat(_e76[0], 8) != _rqo.feat(_e76[1], 8)
+ok73 &= _e76 in set(_edges70)
+# DQ3's q = 4 edge (15, 12) -> (9, 4), delay 3: literal, equal three-distance labels, so slope >= 3 at q = 4
+_c73 = _rq3.rot(4, -3, 4)
+ok73 &= _c73 in _rq3.children_brute(15, 12, 4) and (_rq3.rot(12, 3, 4), _rq3.rot(_c73, 3, 4)) == (9, 4)
+ok73 &= _rq3.feat((15, 12), 4)[:3] == _rq3.feat((9, 4), 4)[:3] == (1, 3, 1) and _rq3.D(12, 4) == 3
+# G178's seven reached edges: balanced at every RQO label, unbalanced at exactly four actual states, elapsed 21
+_lb73, _sb73 = {}, {}
+for s_, t_, d_ in seg70:
+    for key, v in ((_rqo.feat(s_, 8), 1), (_rqo.feat(t_, 8), -1)):
+        _lb73[key] = _lb73.get(key, 0) + v
+    _sb73[s_] = _sb73.get(s_, 0) + 1
+    _sb73[t_] = _sb73.get(t_, 0) - 1
+ok73 &= not any(_lb73.values()) and sorted(k for k, v in _sb73.items() if v) == [(137, 206), (138, 140), (143, 26),
+                                                                                  (182, 84)]
+ok73 &= sum(d_ for _, _, d_ in seg70) == 21
+ok73 &= all(sum(d_ - g for _, _, d_ in seg70) > 0 for g in (_Fr(5, 2), _Fr(29, 10)))   # slopes below 3 fail
+check('S73 G183: feasibility iff no positive label-balanced edge set (400 random graphs, brute force); least potential '
+      '= best walk; the merged-endpoint control; G176, DQ3 and G178 collections balanced at labels only', ok73)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

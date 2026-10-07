@@ -447,6 +447,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Check the real connections first, then simplify the labels.
 - [the finite RC2 certificate verified statically](G182-the-finite-rc2-certificate-verified-statically.md): The
   small-period reached timing certificate passes independent verification.
+- [compression fails exactly at positive label-balanced edge collections](G183-compression-fails-exactly-at-positive-label-balanced-edge.md):
+  The failed meters balance their labels while charging a positive amount of time.
 
 ## The waiting room (not yet verified)
 
@@ -461,8 +463,6 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Compression fails exactly at positive feature-balanced edge collections](W183-compression-fails-exactly-at-positive-feature-balanced-edge.md):
-  The failed meters balance their labels while charging a positive amount of time.
 - [Period-growth gap is an exponentially weighted stage-length condition](W184-period-growth-gap-is-an-exponentially-weighted-stage.md):
   Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
 - [Maximal difference order can return three edges after a doubling](W185-maximal-difference-order-can-return-three-edges-after.md):
