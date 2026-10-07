@@ -17,7 +17,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 HERE = ROOT / "proofs"
 SECTIONS = {"A": "The wall form", "B": "Windows, zero runs and the left band", "B′": "Siblings, Jen and the squeeze",
             "C": "Short proofs restated from the running text", "E": "Theorems proved by GPT", "F": "Collatz",
-            "E2": "GPT's proofs, second-read by Local", "G": "The waiting room (not yet verified)"}
+            "E2": "GPT's proofs, second-read by Local", "S": "Proofs from the sparks",
+            "G": "The waiting room (not yet verified)"}
 
 
 PROVENANCE = r"\s*\([^)]*(\.md|§|20\d\d-|awaiting)[^)]*\)"  # "(RULE30-PRIZE.md §8.18; 2026-10-05)" and the like
@@ -61,6 +62,9 @@ def units():
                     sink = known[3]
                 elif n and re.match(r"(GPT G\d+ —|G\d+\. )", h):
                     start = f"W{n.group(1)}"
+            elif sec == "S":  # spark proofs, "SP01. ..." (S1, S2, ... already name Local's checks)
+                sp = re.match(r"(SP\d+)\. ", h)
+                start = sp.group(1) if sp else None
             elif nm:
                 start = f"{int(nm.group(1)):02d}"
             elif cm:
@@ -145,13 +149,13 @@ def main():
     stale = [k for k in S if k not in {i for i, *_ in us}]
     if stale:
         print("note: summaries with no proof in PROOFS.md (renamed or moved?): " + ", ".join(stale))
-    for old in HERE.glob("*.md"):  # only generated pages: an id such as 01, C1, G48C or W77, then a slug
-        if re.match(r"^(\d\d|[CEFGW]\d+[A-Z]?)-.+\.md$", old.name):
+    for old in HERE.glob("*.md"):  # only generated pages: an id such as 01, C1, G48C, W77 or SP1, then a slug
+        if re.match(r"^(\d\d|[CEFGW]\d+[A-Z]?|SP\d+)-.+\.md$", old.name):
             old.unlink()
     index = []
     for i, s, h, b in us:
-        title = re.sub(PROVENANCE, "", re.sub(r"^(\d+\.|[CEF]\.\d+\.?|G\.GPT\d+[A-Z]?\.|GPT G\d+ —|G\d+\.(?!\d))\s*",
-                                              "", h))
+        lead = r"^(\d+\.|[CEF]\.\d+\.?|G\.GPT\d+[A-Z]?\.|GPT G\d+ —|G\d+\.(?!\d)|SP\d+\.)\s*"
+        title = re.sub(PROVENANCE, "", re.sub(lead, "", h))
         name = f"{i}-{slug(title)}.md"
         note = (f"*{SECTIONS.get(s, s)}. Derived from [PROOFS.md](../PROOFS.md), entry \"{h}\"; rebuild with "
                 f"`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in "

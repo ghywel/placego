@@ -7020,6 +7020,156 @@ source, block 1011 doubled, returns at 371 with either integration child and in 
 period-8 entries sit at depth 29.
 
 
+
+## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
+
+The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
+When one of them turns on a proof, the proof is written up here so that it can be read and checked on its own, like
+every other entry. The owner, 2026-10-07: "Interesting proofs from SPARKS should get their own proof write up in the
+repository - possible name as S01 etc". They are numbered SP01, SP02, ... (spark proofs), because S1, S2, ... already
+name Local's second-reading checks, which this file cites as "(S72)" and the like. Nothing in this section bears on
+the prize. Each entry names its spark, who proved what, and who has second-read it.
+
+### SP01. Orphans and matches in a sock drawer (SPARKS.md SC2; 2026-10-07)
+
+*Where:* SPARKS.md SC2 and GPT's second-reading note there; `tests/probes/sparks/sc2_socks.py` (simulation) and
+`tests/probes/sparks/sc2_gpt_audit.py` (exact enumeration). *Bears on:* nothing in the prize; the break-room entry
+on socks (Gareth). *Status:* proved by Cloud and second-read by GPT, who counted independently and enumerated
+exactly.
+
+**Proposition.** A drawer holds $n \ge 1$ matched pairs of socks.
+
+1. If $k$ of the $2n$ socks are lost, all $k$-subsets equally likely, the expected number of surviving socks whose
+   partner was lost (orphans) is $\dfrac{k(2n-k)}{2n-1}$.
+2. Two socks drawn at random from the full drawer match with probability $\dfrac{1}{2n-1}$. So if every morning two
+   socks are drawn independently from the full, replenished drawer, the first matched pair comes after a geometric
+   number of mornings with mean $2n-1$.
+3. If all the socks are interchangeable, no sock is without a possible partner while at least two remain.
+
+*Proof.* (1) A given sock survives with probability $(2n-k)/(2n)$. Given that it survives, the lost socks form a
+uniform $k$-subset of the other $2n-1$, which contains its partner with probability $k/(2n-1)$. By linearity of
+expectation over the $2n$ socks, the mean number of orphans is
+$2n \cdot \frac{2n-k}{2n} \cdot \frac{k}{2n-1} = \frac{k(2n-k)}{2n-1}$. (2) Whatever the first sock, the second is
+uniform among the other $2n-1$, exactly one of which is its partner. Mornings are independent with success
+probability $p = 1/(2n-1)$, so the first match comes on morning $m$ with probability $(1-p)^{m-1}p$, and the mean is
+$1/p = 2n-1$. (3) Any two remaining socks make a pair. $\square$
+
+*GPT's independent count (second reading).* Each orphan is the surviving half of exactly one split pair, so the
+orphans are counted by the split pairs. A given pair is split with probability
+$\binom{2n-2}{k-1} \cdot 2/\binom{2n}{k} = \frac{k(2n-k)}{n(2n-1)}$, and the $n$ pairs give the same mean. GPT noted
+that losing $k$ socks and losing $2n-k$ leave the same orphan mean (a pair is split by a set exactly when it is split
+by the set's complement), that $k = 0$ and $k = 2n$ leave none, and that $k = 1$ leaves exactly one, with no spread.
+GPT's exact enumeration checked every loss count for $n \le 6$ (48 cases, 5,460 subsets) and every two-sock draw in
+those drawers (161 draws).
+
+*Scope (GPT's note).* The mean wait in (2) needs independent draws from the full drawer. Without replenishment it
+fails: with two matched pairs, a mismatched first draw leaves a mismatched second, so a match before the drawer
+empties has probability only $1/3$. In (3), having a possible partner is not being paired: three interchangeable
+socks each have a possible partner, yet one is left over in any pairing.
+
+*Measured as well (SC2).* In 200,000 simulated trials for each $n \in \{5, 10, 20\}$ and $k \in \{1, 3, 5, 10\}$, every
+orphan mean lay within 2.5 standard errors of (1), and the mean waits were 8.97, 19.02 and 38.61 mornings against 9,
+19 and 39.
+
+### SP02. The last diminisher: always proportional, sometimes envy-free (SPARKS.md SC3; 2026-10-07)
+
+*Where:* SPARKS.md SC3 and GPT's second reading there; `tests/probes/sparks/sc3_last_diminisher.py`. *Bears on:*
+nothing in the prize; Cloud's break-room entry "I've been the tea towel all morning". *Status:* proved; (1) and (2)
+are classical and were reproved by GPT, (3) and (4) are GPT's correction of Cloud's claim, and Cloud has checked
+GPT's bound and its example in exact arithmetic.
+
+**Setting.** The pot is the interval $[0, 1]$, and person $i$ of $n$ values a piece by $V_i$, the integral of a
+density, with $V_i([0,1]) = 1$. With $r$ people still waiting and $C = [c, 1]$ left, the first of them marks the
+point where their value of $[c, x]$ reaches $V_i(C)/r$; each of the others in turn, if they value the marked piece
+at more than $V_i(C)/r$, moves the mark back to their own such point; the last to move it takes $[c, x]$ and leaves.
+The last person left takes what remains. (The classical rule, due to Banach and Knaster, trims to $1/n$ rather than
+to $V_i(C)/r$; the proof of (1) is the same.)
+
+**Proposition.**
+
+1. Everyone receives a piece worth at least $1/n$ by their own measure.
+2. With two people, nobody envies the other.
+3. The first person served values their piece at exactly $1/n$, and envies someone exactly when the other $n - 1$
+   pieces are not all worth $1/n$ to them.
+4. Envy is not certain. In SC3's model (20 equal cells, each density constant on every cell, each person's 20 cell
+   weights drawn uniformly from the simplex), if every person puts weight more than $1 - 1/n$ on the last cell
+   $[19/20, 1]$, nobody envies anybody; and this happens with probability $n^{-19n} > 0$.
+
+*Proof.* (1) Suppose that when $r$ people are waiting, every one of them values what is left at $V_i(C) \ge r/n$;
+it holds at the start, with $r = n$. The piece $P$ handed over ends at the smallest mark, so it is worth exactly
+$V_h(C)/r \ge 1/n$ to its taker $h$, and at most $V_i(C)/r$ to everyone else. So each person still waiting keeps
+$V_i(C \setminus P) \ge V_i(C)\,(r-1)/r \ge (r-1)/n$, and the claim passes down to $r - 1$. The last person keeps at
+least $1/n$. (2) Each person's values of the two pieces add up to 1 and their own is at least $1/2$. (3) At the start
+$V_h(C) = 1$ and $r = n$, so the first piece is worth $1/n$ to its taker, and the other $n - 1$ pieces share the
+remaining $1 - 1/n$ by that person's measure: either all are worth exactly $1/n$ or one is worth more. (4) Every
+person values $[0, 19/20]$ at less than $1/n$, so every first mark lies inside the last cell, and so does all that
+is left after the first piece. There every density is constant, so every later mark cuts the same length, $|C|/r$,
+from the left end: the later $n - 1$ pieces have equal lengths and, for each person, equal values. The first taker
+values each at $(1 - 1/n)/(n - 1) = 1/n$, the same as their own. Every other person values the first piece at most
+$1/n$ (their mark lay at or beyond it), so values each later piece at least $(1 - 1/n)/(n - 1) = 1/n$; their own
+piece is one of these, as good as every other later piece and at least as good as the first. Nobody envies. For
+the probability: under the uniform distribution on the 20-cell simplex the last weight exceeds $t$ with probability
+$(1 - t)^{19}$, which is $n^{-19}$ at $t = 1 - 1/n$, and the $n$ people are independent. $\square$
+
+*An example (GPT's, checked by Cloud in exact arithmetic).* Three people put $3/4$, $4/5$ and $5/6$ on the last cell
+and spread the rest evenly over the other nineteen. Their first marks are $43/45$, $23/24$ and $24/25$, so the first
+person takes $[0, 43/45]$, and the rest is halved at $44/45$. The three pieces are worth $(1/3, 1/3, 1/3)$ to the first
+person, $(13/45, 16/45, 16/45)$ to the second and $(7/27, 10/27, 10/27)$ to the third: proportional and envy-free.
+
+*What it corrects.* SC3 found envy in every one of 20,000 runs for each $n$ from 3 to 6 and concluded that envy, and
+the first taker's envy, have probability one. That conclusion is false by (4). The measurement itself stands: the
+envy-free event of (4) has probability $3^{-57}$ at $n = 3$, far too small to turn up in 20,000 runs, and it is only
+a lower bound for the true chance of no envy, which was not estimated.
+
+### SP03. When a following column turns into a concertina (SPARKS.md SC9; 2026-10-07)
+
+*Where:* SPARKS.md SC9; `tests/probes/sparks/sc9_marching.py`. *Bears on:* nothing in the prize; Local's
+break-room entry "a rhythm sent to other people's feet". *Status:* proved; a classical result of car-following
+theory (Chandler, Herman and Montroll, 1958), restated with its proof by Cloud; awaiting a second reader of this
+write-up.
+
+**Setting.** Walkers (or cars) follow a leader in single file. Walker $n$ sets their speed from the gap they saw a
+reaction time $\tau$ earlier: $\dot x_n(t) = V\big(x_{n-1}(t - \tau) - x_n(t - \tau)\big)$, where $V$ is increasing and
+$V(d) = v$ at the intended gap $d$. Steady marching is $x_n = vt - nd$. Write $x_n = vt - nd + \xi_n$ and keep the
+first order: $\dot \xi_n(t) = K\big(\xi_{n-1}(t - \tau) - \xi_n(t - \tau)\big)$ with $K = V'(d) > 0$. In SC9,
+$V(g) = v\,(1 + k(g - d)/d)$ with $v = 1.5$ m/s, $d = 1$ m and $k = 0.5$, so $K = kv/d = 0.75$ per second.
+
+**Proposition.** A ripple of angular frequency $\omega$ in walker $n-1$'s position, or in the gap ahead of them, reaches
+walker $n$ multiplied in size by
+
+```math
+|G(i\omega)| = \frac{K}{\sqrt{K^2 + \omega^2 - 2K\omega \sin \omega\tau}}.
+```
+
+No ripple grows from walker to walker, $|G(i\omega)| \le 1$ for every $\omega$, if and only if $K\tau \le 1/2$. If
+$K\tau > 1/2$, every slow enough ripple grows by a factor greater than 1 at each walker, although for $K\tau < \pi/2$
+each walker on their own still settles after a disturbance.
+
+*Proof.* With $e^{st}$ trial solutions, $s\,\Xi_n = K e^{-s\tau}(\Xi_{n-1} - \Xi_n)$, so
+$\Xi_n = G(s)\,\Xi_{n-1}$ with $G(s) = K e^{-s\tau} / (s + K e^{-s\tau})$. The gap ripples obey the same law, since
+$\Xi_{n-1} - \Xi_n = G(s)(\Xi_{n-2} - \Xi_{n-1})$. At $s = i\omega$,
+
+```math
+|i\omega + K e^{-i\omega\tau}|^2 = (K\cos\omega\tau)^2 + (\omega - K\sin\omega\tau)^2
+= K^2 + \omega^2 - 2K\omega\sin\omega\tau,
+```
+
+which gives the formula. Hence, for $\omega > 0$, $|G(i\omega)| \le 1$ exactly when $\omega \ge 2K\sin\omega\tau$. If
+$K\tau \le 1/2$, then $2K\sin\omega\tau \le 2K\tau\,\omega \le \omega$ for every $\omega > 0$, since $\sin y \le y$. If
+$K\tau > 1/2$, then $2K\sin(\omega\tau)/\omega \to 2K\tau > 1$ as $\omega \to 0$, so the inequality fails for every
+small enough $\omega$. The last clause is the classical stability range of $\dot y(t) = -K y(t - \tau)$, which is
+$0 < K\tau < \pi/2$. $\square$
+
+*Prior art.* Chandler, Herman and Montroll (Operations Research, 1958) let acceleration respond to the difference
+in speeds, $\ddot x_n(t + T) = \lambda\big(\dot x_{n-1}(t) - \dot x_n(t)\big)$; integrating once gives the model above
+with $K = \lambda$ and $\tau = T$, and their condition for a platoon to damp disturbances, $\lambda T < 1/2$, is the
+proposition's.
+
+*Measured as well (SC9).* In a 30-walker column with $\tau = 0.5$ s ($K\tau = 0.375$) the gap ripple at the back was
+4.5 times the front's, growing only like the square root of the walker's position as each walker's own jitter adds
+up; with $\tau = 1$ s ($K\tau = 0.75$) it grew explosively until the speed limits clipped it, to 102 times the
+front's.
+
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 - **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md

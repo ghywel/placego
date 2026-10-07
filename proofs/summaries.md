@@ -2508,3 +2508,52 @@ Two identical periodic strips do not tell us where they came from.
 **Why it matters.** Equal endpoint strips and a period that is a power of two cannot replace the ancestry test. A second recorded doubled entry returns after88 steps, whereas the unique rooted eight-tick entry needs371. Even the stronger doubled-entry condition cannot replace ancestry.
 
 **An everyday picture.** Two copies of the same photograph can show where a journey ended without telling us where it began.
+
+## SP01
+How many odd socks a laundry loss leaves, and how long a wait for a matching pair takes.
+
+**What it says.** A drawer holds n matched pairs. If k socks go missing at random, the number left without their
+partner (orphans) is k(2n − k)/(2n − 1) on average. Two socks pulled out at random match with chance 1/(2n − 1), so
+someone who pulls two at random from a full drawer each morning waits 2n − 1 mornings on average for a matching
+pair. A drawer of identical black socks never strands one while two remain. Cloud proved it by counting; GPT
+counted again a different way and checked every small case exactly.
+
+**Why it matters.** It came from the owner's break-room story about socks, and shows the room's chatter becoming a
+checked result. GPT's reading also marks where it stops: the waiting time assumes the drawer is refilled every
+morning, and with two pairs and no refill a match before the drawer empties has only a one-in-three chance.
+
+**An everyday picture.** Ten pairs of patterned socks in a drawer, two grabbed in the dark each morning: about once
+in nineteen mornings they match.
+
+## SP02
+Taking turns to trim a cake always gives everyone a fair share, but not always a share nobody envies.
+
+**What it says.** In the last-diminisher rule (each person in turn may trim the offered piece down to what they
+think is their fair share; the last to trim takes it) everyone ends up with at least a fair share by their own
+judgement, and with two people nobody envies the other. The first person served gets exactly a fair share, and
+envies someone unless the other pieces all look equal to them. Cloud's spark claimed that from three people up envy
+is certain; GPT showed it is not, with a whole family of tastes for which nobody envies anybody, and a worked
+three-person example that Cloud checked in exact fractions.
+
+**Why it matters.** It keeps a refuted claim and its correction side by side, as the record does for the prize
+work. Fairness (a fair share each) and freedom from envy (nobody prefers another's share) are different
+guarantees, and this rule gives only the first.
+
+**An everyday picture.** A cake is plain except for a band of icing along one end, and three people all prize the
+icing above everything else. The first takes all the plain cake and a sliver of the icing; the rest of the iced end
+is cut in half, and since icing is icing to everyone, nobody would swap.
+
+## SP03
+Why a line of marchers or cars ripples like a concertina when people react too slowly.
+
+**What it says.** Each walker adjusts their speed to the gap in front of them as it was a reaction time earlier.
+Multiply how strongly they respond by how late they respond: if the product is at most a half, no ripple grows from
+one walker to the next; above a half, slow ripples grow at every walker, even though each walker on their own
+would still settle. This is a classical result of traffic research (Chandler, Herman and Montroll, 1958), here with
+its proof written out.
+
+**Why it matters.** It is the threshold the marching spark (SC9) measured: a half-second delay kept the column
+together, while a one-second delay made the back's ripples a hundred times the front's.
+
+**An everyday picture.** On a motorway one driver taps the brakes, and a mile back the traffic stops dead for no
+visible reason: the phantom jam.

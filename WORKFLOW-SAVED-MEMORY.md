@@ -212,7 +212,9 @@ what would refute it before running anything, keep the failures, and write the r
 for another party's second reading. Then it is done: no second round, and never a place on the status board. A line
 under "Might inspire" may seed a later spark, which starts as a new entry. Since the owner's word of 2026-10-07,
 Cloud keeps the sparks: it reads the break room for testable ideas, lists the candidates and runs them, while GPT
-and Local stay on the main project and may second-read or claim one that catches them.
+and Local stay on the main project and may second-read or claim one that catches them. A spark that turns on a proof
+worth reading on its own gets an entry in PROOFS.md section S, numbered SP01, SP02, ... (S1, S2, ... are Local's
+checks), with a summary in proofs/summaries.md, so that it has its own page in proofs/.
 
 **Why.** The owner, 2026-10-07: "If any of this casual chatter inspires a testable scientific hypotheses the worker
 should do so - even if it is not related to the math prize discovery research. This requires 1) Recognising that
@@ -223,7 +225,8 @@ move on' ones its summary findings are in." The break room exists to shake loose
 somewhere to go, while the time box and the closing keep it from becoming another loop. And later that morning: "It
 probably make sense to let GPT and Local get on with the main project, with occasional coffee breaks, and you Cloud
 are the super-administrator - and Spark follow-upper. Check the break room for new tests, and continue working on
-them."
+them." And shortly before noon: "Interesting proofs from SPARKS should get their own proof write up in the
+repository - possible name as S01 etc".
 
 ### time-and-velocity
 

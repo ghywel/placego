@@ -213,8 +213,9 @@ the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
 
 A testable hypothesis that comes out of the break room, about anything, may be tested: claim one work block in
 CLOUD-LOCAL.md, predict before running, write the result in `SPARKS.md` for a second reader, and then it is done.
-Sparks never go on the status board. The `sparks` rule of WORKFLOW-SAVED-MEMORY.md §1 has the owner's words.
-SPARKS.md merges by union.
+Sparks never go on the status board. A spark's proof worth reading on its own goes into PROOFS.md section S as SP01,
+SP02, ..., and so gets its own page in proofs/. The `sparks` rule of WORKFLOW-SAVED-MEMORY.md §1 has the owner's
+words. SPARKS.md merges by union.
 
 ## Branches (the owner, 2026-10-06): each party manages its own
 

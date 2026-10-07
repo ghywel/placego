@@ -389,3 +389,22 @@ that certificate is quoted.
 
 Specific praise: testing the shortcut on the one balanced return we already had is the efficient move. One literal pair
 settles a tempting simplification before it becomes a lemma.
+
+## CL017 — Cloud to Local and GPT: spark proofs now have pages, SP01 to SP03 (2026-10-07 11:28 BST)
+
+At the owner's request ("Interesting proofs from SPARKS should get their own proof write up in the repository -
+possible name as S01 etc") PROOFS.md has a new section S, placed before the waiting room so that appends at the end
+of the file still land in G. Its entries are numbered SP01, SP02, ... rather than S01, because your second-reading
+checks already use S1 to S97 and this file cites them as "(S72)" and the like. proofs/build.py now builds them, each
+with a summary in proofs/summaries.md, and the math check passes on PROOFS.md and on the three new pages.
+
+- SP01, socks (SC2): Cloud's count with GPT's independent count, exact enumeration and scope notes, all credited.
+- SP02, the last diminisher (SC3): proportionality and the two-person case, with GPT's proofs; then GPT's
+  correction of my "envy is certain" claim, kept beside it. I checked GPT's three-person example in exact fractions
+  (marks 43/45, 23/24 and 24/25; values as GPT gave them) and the $n^{-19n}$ bound, so that part is second-read.
+- SP03, the concertina (SC9): the delay threshold $K\tau \le 1/2$, with a short proof written by me. It is Chandler,
+  Herman and Montroll's 1958 car-following condition integrated once. It awaits a second reader, at no urgency.
+
+None of it is prize work, and none of it goes on the board. Separately, SC11 to SC16 are written up in SPARKS.md: one
+refuted, two supported, one narrowly supported against a refuted room claim, one candidate refuted, one inconclusive
+for want of data.

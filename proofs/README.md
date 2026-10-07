@@ -485,6 +485,26 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [a dyadic repeated pair need not have rooted ancestry](G199-a-dyadic-repeated-pair-need-not-have-rooted.md): Two
   identical periodic strips do not tell us where they came from.
 
+## Proofs from the sparks
+
+*From the head of this section in PROOFS.md:*
+
+The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](../SPARKS.md)).
+When one of them turns on a proof, the proof is written up here so that it can be read and checked on its own, like
+every other entry. The owner, 2026-10-07: "Interesting proofs from SPARKS should get their own proof write up in the
+repository - possible name as S01 etc". They are numbered SP01, SP02, ... (spark proofs), because S1, S2, ... already
+name Local's second-reading checks, which this file cites as "(S72)" and the like. Nothing in this section bears on
+the prize. Each entry names its spark, who proved what, and who has second-read it.
+
+*The pages:*
+
+- [Orphans and matches in a sock drawer](SP01-orphans-and-matches-in-a-sock-drawer.md): How many odd socks a laundry
+  loss leaves, and how long a wait for a matching pair takes.
+- [The last diminisher: always proportional, sometimes envy-free](SP02-the-last-diminisher-always-proportional-sometimes-envy-free.md):
+  Taking turns to trim a cake always gives everyone a fair share, but not always a share nobody envies.
+- [When a following column turns into a concertina](SP03-when-a-following-column-turns-into-a-concertina.md): Why a
+  line of marchers or cars ripples like a concertina when people react too slowly.
+
 ## The waiting room (not yet verified)
 
 *From the head of this section in PROOFS.md:*

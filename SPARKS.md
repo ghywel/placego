@@ -33,6 +33,12 @@ super-administrator - and Spark follow-upper. Check the break room for new tests
 7. **Candidates.** Anyone may add a candidate to the list below without testing it: the hypothesis, the entry it
    came from, a sketch of the test and what it needs. A candidate becomes a spark when someone claims it; mark the
    candidate with the spark's ID then, and leave the rest of its text as it is.
+8. **Proofs get their own page.** When a spark turns on a proof worth reading on its own, write it up in PROOFS.md,
+   section S, as SP01, SP02, ... with its plain-words summary in proofs/summaries.md, and rebuild proofs/; the page
+   then names who proved what and who second-read it. The IDs are SP rather than S because S1, S2, ... already name
+   Local's second-reading checks. The owner, 2026-10-07: "Interesting proofs from SPARKS should get their own proof
+   write up in the repository - possible name as S01 etc". So far: SP01 (SC2, socks), SP02 (SC3, the last
+   diminisher, with GPT's correction) and SP03 (SC9, the concertina threshold).
 
 **Format.** IDs are per author, so that two people never pick the same one: SL1, SL2, ... for Local, SG for GPT, SC
 for Cloud and SO for the owner.
@@ -212,6 +218,7 @@ within each batch, ordered from cheapest to dearest to test.
   found none. For the owner's drawer: with ten icon pairs, a matching pair turns up about once in nineteen mornings.
 - **Second reader.** GPT, 2026-10-07 09:16 BST: exact finite counting audit passes; the geometric-wait and interchangeable-sock interpretations require the model qualifications below.
 - **Might inspire.** Nothing further.
+- **Proof write-up.** PROOFS.md SP01, with [its own page](proofs/SP01-orphans-and-matches-in-a-sock-drawer.md).
 - **Status.** Done.
 
 ### SC2 second-reading note (GPT, 2026-10-07 09:16 BST)
@@ -246,6 +253,8 @@ The black-drawer statement uses 'orphan' to mean a sock with no possible compati
 - **Second reader.** GPT, 2026-10-07 10:04 BST: code reading and exact symbolic audit, no simulation rerun. Proportionality and the two-person statement hold for the ideal procedure; the probability-one envy explanation is false in the stated step-function model. See the correction below.
 - **Might inspire.** Envy-free division for three people (Selfridge and Conway's procedure) would be the natural
   control.
+- **Proof write-up.** PROOFS.md SP02, with its
+  [own page](proofs/SP02-the-last-diminisher-always-proportional-sometimes-envy-free.md).
 - **Status.** Done.
 
 ### GPT second reading: the reported sample stands; certainty does not
@@ -403,6 +412,8 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   separates the two cases cleanly, so the linear theory's threshold holds; my prediction for it was badly posed.
 - **Second reader.** Awaiting.
 - **Might inspire.** The same model for traffic, where the phantom jam is the classic case.
+- **Proof write-up.** PROOFS.md SP03, with its
+  [own page](proofs/SP03-when-a-following-column-turns-into-a-concertina.md).
 - **Status.** Done.
 
 ## SC10 — a detail that feels like memory (2026-10-07, Cloud; from candidate 14)
@@ -614,6 +625,16 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   Counter-evidence: a correlation below 0.1, or negative. If eye size and body size are both given, the same
   correlation with eye size relative to body size is reported as well, without a separate prediction. The paper's
   own analysis also allowed for the species' relatedness, which mine will not.
-- **Method.** tests/probes/sparks/sc16_dawn_eyes.py, on the paper's table copied by hand into the script, with the
-  copy checked against the source.
-- **Status.** Running.
+- **Method.** None run. The plan was to copy the paper's table into tests/probes/sparks/sc16_dawn_eyes.py, which was
+  never written.
+- **Result.** The table could not be read from this container. PubMed Central's copy sits behind a browser check,
+  the publisher's and a mirror's copies answered 403, Europe PMC's full-text service returned an error, and NCBI's
+  E-utilities return only the abstract, since the publisher withholds the full text from them. The abstract reports
+  the finding: songbirds with larger eyes, measured by the exposed eye surface, began singing at lower light and so
+  earlier, more strongly once body size was allowed for, under two phylogenies and with species treated as
+  independent.
+- **Verdict.** Inconclusive: no data, so no test. The published result agrees with the hypothesis, but I have not
+  checked its numbers.
+- **Second reader.** Not needed; anyone with the paper in hand could run the re-analysis as predicted above.
+- **Might inspire.** Nothing further.
+- **Status.** Done.
