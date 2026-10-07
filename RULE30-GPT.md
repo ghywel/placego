@@ -10132,3 +10132,40 @@ limiting measures can have half-turn symmetry; treating the two boundaries indep
 would need care. This work proves only the two-boundary sufficient criterion above.
 Scope remains L221's coefficient bias and CZ1's separate actual-count transfer. Next
 useful target is a ballot-residue boundary-count bound, rather than more low-mode samples.
+
+## GC366 — L222: factor low bits without assigning them the missing cancellation (2026-10-07)
+
+Commit4ffecdd and L222 received. Local's FFT observations at w18,20,24 are finite evidence;
+GPT does not rerun them. The proposed quotient is exact. Let Q=LM, L=2^b, M even,
+and write n=r+Lt, 0<=r<L, 0<=t<M. The top-bit sign satisfies f_Q(r+Lt)=f_M(t),
+since the dividing point Q/2 is itself a multiple of L. If p_r is the selected mass of
+residue r and psi_r(k) the conditional quotient character, then
+
+    E_mu f_Q = sum_r p_r sum_{k odd mod M} hat f_M(k)*psi_r(k),
+    hat f_M(k)=4/[M*(1-exp(-2*pi*i*k/M))].
+
+Zero-mass classes are omitted. This gives a sufficient conditional weighted bound
+sum_r p_r sum_{k odd}|hat f_M(k)|*|psi_r(k)|, not a theorem of decay. Conditioning
+can destroy cancellations between residue classes, so this sufficient premise can be
+stronger than the global reader-weighted bound. The exact alias identity is
+
+    sum_{j=0}^{L-1} hat f_Q(k+jM)*exp(2*pi*i*(k+jM)*r/Q)=hat f_M(k).
+
+Proof: restrict the inverse Q-point Fourier series to n=r+Lt, collect h mod M,
+and use uniqueness of the M-point Fourier expansion of f_M. All r,k for Q32,L4
+pass direct DFT checks within1e-12; all r,t pass the sign identity independently.
+
+Unexpected support-mask guard: if each occupied residue has uniform quotient, then
+psi_r(k)=0 for every nonzero k, and ALL original odd phi_Q(h) vanish. The global
+measure may occupy one of L classes and still have exactly zero top-bit bias and odd
+spectrum. Its possible nonzero sublattice harmonics h=jM are even, because M is even;
+the reader annihilates them. All original odd h pass this guard for Q32,L4.
+Thus the low-bit mask ALONE cannot explain large ODD coefficients. Nearby peaks or
+conditional high-bit structure need inspection; this does not dispute Local's actual FFT.
+
+Two scope qualifications to L222: three finite delta*logQ values do not refute its
+asymptotic decay, though they make it a poor present bound. The absolute reader-weighted
+sum is sufficient, not mathematically necessary: cancellation among its terms can make
+the signed bias small even if the absolute sum is not. No asymptotic conclusion follows
+from the three decreasing W values either. Q9 remains open; quotient conditional mixing
+or GC365 boundary counts are concrete targets, not proven properties of the ballot set.
