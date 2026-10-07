@@ -396,28 +396,20 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Rudin–Shapiro passes the necessary repeat-debt filter](G153-rudin-shapiro-passes-the-necessary-repeat-debt-filter.md):
   The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 - [finite-tail exceptions in a minimal trace family are empty or countable dense](G154-finite-tail-exceptions-in-a-minimal-trace-family.md):
-  In a minimal family of traces, finite starting tails are either absent or countable and dense.
+  Among all patterns that look locally like Rudin–Shapiro, finite seeds are either absent or rare but everywhere.
 - [trace factor complexity bounds the number of finite-tail exceptions](G155-trace-factor-complexity-bounds-the-number-of-finite.md):
-  The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
-  radius.
+  There can be only a few finite seeds of each size in the Rudin–Shapiro family, if there are any at all.
 - [temporal rotation classes sharpen the fixed-period edge-history bound](G156-temporal-rotation-classes-sharpen-the-fixed-period-edge.md):
-  Identifying temporal rotations sharpens the edge-history period bound.
+  Near the edge of a seed, stripes that keep the same rhythm cannot run for long.
 - [odd factors do not enlarge the rooted edge-history tree](G157-odd-factors-do-not-enlarge-the-rooted-edge.md): Odd
-  factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two
-  dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many
-  common periods. This does not bound settling times.
+  factors in the period add nothing: only the power of two in it matters.
 - [only even-parity integration branches the temporal-rotation quotient](G158-only-even-parity-integration-branches-the-temporal-rotation.md):
-  Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only
-  even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number
-  of those choices and settling times open.
+  When a rhythm doubles, its two choices are the same choice seen at two moments.
 - [genuine quotient branches are separated by at least seven depths](G159-genuine-quotient-branches-are-separated-by-at-least.md):
-  Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct
-  histories multiply after time rotations are identified. It does not limit how long a single history can continue
-  or how long it takes to settle.
+  Real forks in the tree of edge histories are at least seven steps apart.
 - [a closed arrival-phase gate removes only transient front states](G160-a-closed-arrival-phase-gate-removes-only-transient.md):
-  The reset-front clock quickly enters a restricted set of arrival phases and stays there. This can prune transient
-  states in a phase-sensitive calculation, but every compatible cycle already obeys the restriction. The known slope
-  obstruction therefore survives.
+  The clock that times the resets settles into a narrower set of positions within two steps, but every repeating
+  loop was already inside it.
 - [one representative path decides the first genuine rooted branch](G161-one-representative-path-decides-the-first-genuine-rooted.md):
   To find the first genuine branch, follow one representative history instead of all its time rotations. Before such
   a branch, every apparent choice is a phase copy. Stop at a genuine branch or the allowed-period leaf; the test is

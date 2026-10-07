@@ -8,7 +8,16 @@ Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), ne
 
 ## In plain words
 
-Odd factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many common periods. This does not bound settling times.
+Odd factors in the period add nothing: only the power of two in it matters.
+
+**What it says.** Every rhythm in the edge stripes of G156 repeats with a period that is a power of two. So stripes
+with period 6 behave exactly like stripes with period 2, and those with period 3, 5 or 7 like period 1. Every odd
+period allows exactly 3 stripes, and every period twice an odd number exactly 8.
+
+**Why it matters.** It answers infinitely many periods at once from the two smallest cases. It says nothing about
+how long the stripes take to settle.
+
+**An everyday picture.** In a scale built only from octaves, a note three times the base frequency never sounds.
 
 ## The formal statement and proof
 

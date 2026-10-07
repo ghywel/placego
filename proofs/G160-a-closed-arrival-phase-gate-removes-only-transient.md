@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The reset-front clock quickly enters a restricted set of arrival phases and stays there. This can prune transient states in a phase-sensitive calculation, but every compatible cycle already obeys the restriction. The known slope obstruction therefore survives.
+The clock that times the resets settles into a narrower set of positions within two steps, but every repeating loop
+was already inside it.
+
+**What it says.** The reset-timing clock of G8 enters, within two steps, a restricted set of arrival positions and
+never leaves. That can trim the starting stretch of a timing calculation. But every loop the clock can repeat
+already lies inside the set, so the known obstacle to a fast settling bound (G8's slope 2) survives.
+
+**Why it matters.** It removes a distraction from the start of the calculation, not the obstacle itself.
+
+**An everyday picture.** A ticket barrier that every regular commuter already walks through: it stops the odd stray
+visitor, never the daily traffic.
 
 ## The formal statement and proof
 

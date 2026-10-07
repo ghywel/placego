@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their radius.
+There can be only a few finite seeds of each size in the Rudin–Shapiro family, if there are any at all.
 
-**What it says.** A finite row of radius L is fixed by the first ceil(L/2) visible symbols. Rudin–Shapiro has only linearly many such factors. If one exception exists, its time shifts also provide a linear lower bound.
+**What it says.** A finite seed reaching L squares out is fixed by the first half of that many beats of the column
+it makes, so there are no more such seeds than there are different stretches of that length. Rudin–Shapiro has
+exactly 8k − 8 different stretches of each length k from 8 on (Allouche and Shallit, 1993), so at most about 4L
+seeds reach L squares or less. If one exists, its later rows give about L/2 more.
 
-**Why it matters.** The count is either zero or linear. This sharpens the counting constraint but still leaves the specified word unresolved; independent review is pending.
+**Why it matters.** The number of candidates is either zero or grows in proportion to L. That bounds the search but
+does not say which, so the question for the original sequence stays open.
 
-**An everyday picture.** Counting the possible seats does not tell us whether anyone occupies one.
+**An everyday picture.** A song can be named from its opening notes, so there can be no more songs than different
+openings. Counting openings still does not say whether the song exists.
 
 ## The formal statement and proof
 

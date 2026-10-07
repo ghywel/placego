@@ -6,7 +6,7 @@ id; the first paragraph is the one-line hook used in the index. Rebuild with `py
 *How it is kept. Whoever adds or moves a PROOFS.md entry writes a first draft here, since the build refuses to run
 without one: the hook, then What it says, Why it matters and An everyday picture, with no control names or review
 status (the page's status line carries those). Cloud rewrites drafts into plain words for a general reader in
-batches. Plain-words pass done through W153 (2026-10-07); entries after it may still be drafts.*
+batches. Plain-words pass done through G160 (2026-10-07); entries after it may still be drafts.*
 
 ## 01
 When the middle square is black, the right side cannot be heard on the left at all.
@@ -1897,56 +1897,106 @@ The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certi
 
 **What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of
 times in n's binary digits, overlaps counted. An exact automaton calculation says it passes every necessary repeat
-inequality with no allowance at all, and a separate check agrees.
+inequality with no allowance at all. A second construction, built a different way, describes the same language, and
+Local's own code, sharing nothing with GPT's, agrees with brute force.
 
 **Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
-finiteness question stays open. It has not yet had its second reading, which must check how the test was encoded.
+finiteness question stays open and needs a different kind of argument.
 
 **An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
 genuine.
 
 ## G154
-In a minimal family of traces, finite starting tails are either absent or countable and dense.
+Among all patterns that look locally like Rudin–Shapiro, finite seeds are either absent or rare but everywhere.
 
-**What it says.** The Rudin–Shapiro family has infinitely supported tails for a generic trace. If one finite-tail exception exists, all its time shifts are finite-tail exceptions and are dense in that family.
+**What it says.** Take every pattern whose short stretches all occur in the Rudin–Shapiro sequence. For almost all
+of them, the forced left half never turns white for good, so no finite seed makes them. If even one of them does
+come from a finite seed, then so does the same pattern started at any later tick, and these exceptions are countable
+but turn up close to every member of the family.
 
-**Why it matters.** Generic exclusion does not decide the original Rudin–Shapiro word. A direct spatial-tail argument is still needed; this result awaits independent review.
+**Why it matters.** "Almost every member fails" does not decide any particular member, including the original
+sequence. A direct argument about its own left half is still needed.
 
-**An everyday picture.** A countable collection can visit every neighbourhood while occupying none of the measure.
+**An everyday picture.** Fractions sit next to every number on the line yet take up none of its length. Knowing that
+a number picked at random is almost never a fraction says nothing about whether one given number is.
 
 ## G155
-The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their radius.
+There can be only a few finite seeds of each size in the Rudin–Shapiro family, if there are any at all.
 
-**What it says.** A finite row of radius L is fixed by the first ceil(L/2) visible symbols. Rudin–Shapiro has only linearly many such factors. If one exception exists, its time shifts also provide a linear lower bound.
+**What it says.** A finite seed reaching L squares out is fixed by the first half of that many beats of the column
+it makes, so there are no more such seeds than there are different stretches of that length. Rudin–Shapiro has
+exactly 8k − 8 different stretches of each length k from 8 on (Allouche and Shallit, 1993), so at most about 4L
+seeds reach L squares or less. If one exists, its later rows give about L/2 more.
 
-**Why it matters.** The count is either zero or linear. This sharpens the counting constraint but still leaves the specified word unresolved; independent review is pending.
+**Why it matters.** The number of candidates is either zero or grows in proportion to L. That bounds the search but
+does not say which, so the question for the original sequence stays open.
 
-**An everyday picture.** Counting the possible seats does not tell us whether anyone occupies one.
+**An everyday picture.** A song can be named from its opening notes, so there can be no more songs than different
+openings. Counting openings still does not say whether the song exists.
 
 ## G156
-Identifying temporal rotations sharpens the edge-history period bound.
+Near the edge of a seed, stripes that keep the same rhythm cannot run for long.
 
-**What it says.** An edge history cannot revisit a rotation class of profile pairs before reaching its zero boundary. Counting four-letter necklaces improves the number of possible depths from about 4^P to about 4^P/P. The exact maximum prefix lengths are three at period one and eight at period two.
+**What it says.** Next to the seed's edge, each diagonal stripe repeats in time. If the first K stripes all repeat
+with period P, every pair of neighbouring stripes is different, even after sliding it in time. So K is less than the
+number of necklaces of P beads in four colours, about 4^P divided by P. For period one the most is exactly 3
+stripes, and for period two exactly 8.
 
-**Why it matters.** It sharpens a necessary lower period bound. It does not provide the upper period bound or waiting-time estimate needed for settling; independent review is pending.
+**Why it matters.** The deeper the stripes, the longer their rhythm must be: a sharper floor on how fast periods
+grow (G7). The ceiling, which the settling question needs, is still missing.
 
-**An everyday picture.** A clockface seen after a rotation is still the same clockface.
+**An everyday picture.** Turning a necklace round does not make a new necklace, so there are fewer necklaces than
+strings of beads, and fewer steps before one must repeat.
 
 ## G157
+Odd factors in the period add nothing: only the power of two in it matters.
 
-Odd factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many common periods. This does not bound settling times.
+**What it says.** Every rhythm in the edge stripes of G156 repeats with a period that is a power of two. So stripes
+with period 6 behave exactly like stripes with period 2, and those with period 3, 5 or 7 like period 1. Every odd
+period allows exactly 3 stripes, and every period twice an odd number exactly 8.
+
+**Why it matters.** It answers infinitely many periods at once from the two smallest cases. It says nothing about
+how long the stripes take to settle.
+
+**An everyday picture.** In a scale built only from octaves, a note three times the base frequency never sounds.
 
 ## G158
+When a rhythm doubles, its two choices are the same choice seen at two moments.
 
-Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number of those choices and settling times open.
+**What it says.** Going inward from the edge, a stripe can split into two possible next stripes. When the period
+doubles, the two are the same stripe shifted in time, so counting time-shifted copies once removes the choice. Only
+one kind of step, which keeps the period and has an even count of black beats, gives a real fork. Dead ends
+outnumber real forks by exactly one.
+
+**Why it matters.** Period doubling is not a free choice, which simplifies the tree of edge histories. How many real
+forks there are, and how long the histories take to settle, stays open.
+
+**An everyday picture.** A fork whose two roads are one road seen an hour apart is not a fork.
 
 ## G159
+Real forks in the tree of edge histories are at least seven steps apart.
 
-Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct histories multiply after time rotations are identified. It does not limit how long a single history can continue or how long it takes to settle.
+**What it says.** After a real fork of G158, the next six steps inward are forced, so along any path real forks come
+at least seven steps apart. At depth n there are at most 2 to the power n/7 different histories. Local found that
+the rooted trees up to period 15 have no real forks at all: each is a single chain.
+
+**Why it matters.** It limits how fast the histories can multiply. It does not limit how long a single history can
+run, which is what the settling question needs.
+
+**An everyday picture.** On a road whose junctions are at least seven miles apart, the map cannot branch quickly.
 
 ## G160
+The clock that times the resets settles into a narrower set of positions within two steps, but every repeating loop
+was already inside it.
 
-The reset-front clock quickly enters a restricted set of arrival phases and stays there. This can prune transient states in a phase-sensitive calculation, but every compatible cycle already obeys the restriction. The known slope obstruction therefore survives.
+**What it says.** The reset-timing clock of G8 enters, within two steps, a restricted set of arrival positions and
+never leaves. That can trim the starting stretch of a timing calculation. But every loop the clock can repeat
+already lies inside the set, so the known obstacle to a fast settling bound (G8's slope 2) survives.
+
+**Why it matters.** It removes a distraction from the start of the calculation, not the obstacle itself.
+
+**An everyday picture.** A ticket barrier that every regular commuter already walks through: it stops the odd stray
+visitor, never the daily traffic.
 
 ## G161
 

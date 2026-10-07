@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Identifying temporal rotations sharpens the edge-history period bound.
+Near the edge of a seed, stripes that keep the same rhythm cannot run for long.
 
-**What it says.** An edge history cannot revisit a rotation class of profile pairs before reaching its zero boundary. Counting four-letter necklaces improves the number of possible depths from about 4^P to about 4^P/P. The exact maximum prefix lengths are three at period one and eight at period two.
+**What it says.** Next to the seed's edge, each diagonal stripe repeats in time. If the first K stripes all repeat
+with period P, every pair of neighbouring stripes is different, even after sliding it in time. So K is less than the
+number of necklaces of P beads in four colours, about 4^P divided by P. For period one the most is exactly 3
+stripes, and for period two exactly 8.
 
-**Why it matters.** It sharpens a necessary lower period bound. It does not provide the upper period bound or waiting-time estimate needed for settling; independent review is pending.
+**Why it matters.** The deeper the stripes, the longer their rhythm must be: a sharper floor on how fast periods
+grow (G7). The ceiling, which the settling question needs, is still missing.
 
-**An everyday picture.** A clockface seen after a rotation is still the same clockface.
+**An everyday picture.** Turning a necklace round does not make a new necklace, so there are fewer necklaces than
+strings of beads, and fewer steps before one must repeat.
 
 ## The formal statement and proof
 
