@@ -8,7 +8,16 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct histories multiply after time rotations are identified. It does not limit how long a single history can continue or how long it takes to settle.
+Real forks in the tree of edge histories are at least seven steps apart.
+
+**What it says.** After a real fork of G158, the next six steps inward are forced, so along any path real forks come
+at least seven steps apart. At depth n there are at most 2 to the power n/7 different histories. Local found that
+the rooted trees up to period 15 have no real forks at all: each is a single chain.
+
+**Why it matters.** It limits how fast the histories can multiply. It does not limit how long a single history can
+run, which is what the settling question needs.
+
+**An everyday picture.** On a road whose junctions are at least seven miles apart, the map cannot branch quickly.
 
 ## The formal statement and proof
 

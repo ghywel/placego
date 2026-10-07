@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-In a minimal family of traces, finite starting tails are either absent or countable and dense.
+Among all patterns that look locally like Rudin–Shapiro, finite seeds are either absent or rare but everywhere.
 
-**What it says.** The Rudin–Shapiro family has infinitely supported tails for a generic trace. If one finite-tail exception exists, all its time shifts are finite-tail exceptions and are dense in that family.
+**What it says.** Take every pattern whose short stretches all occur in the Rudin–Shapiro sequence. For almost all
+of them, the forced left half never turns white for good, so no finite seed makes them. If even one of them does
+come from a finite seed, then so does the same pattern started at any later tick, and these exceptions are countable
+but turn up close to every member of the family.
 
-**Why it matters.** Generic exclusion does not decide the original Rudin–Shapiro word. A direct spatial-tail argument is still needed; this result awaits independent review.
+**Why it matters.** "Almost every member fails" does not decide any particular member, including the original
+sequence. A direct argument about its own left half is still needed.
 
-**An everyday picture.** A countable collection can visit every neighbourhood while occupying none of the measure.
+**An everyday picture.** Fractions sit next to every number on the line yet take up none of its length. Knowing that
+a number picked at random is almost never a fraction says nothing about whether one given number is.
 
 ## The formal statement and proof
 

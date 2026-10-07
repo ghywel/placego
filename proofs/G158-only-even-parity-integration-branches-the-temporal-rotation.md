@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number of those choices and settling times open.
+When a rhythm doubles, its two choices are the same choice seen at two moments.
+
+**What it says.** Going inward from the edge, a stripe can split into two possible next stripes. When the period
+doubles, the two are the same stripe shifted in time, so counting time-shifted copies once removes the choice. Only
+one kind of step, which keeps the period and has an even count of black beats, gives a real fork. Dead ends
+outnumber real forks by exactly one.
+
+**Why it matters.** Period doubling is not a free choice, which simplifies the tree of edge histories. How many real
+forks there are, and how long the histories take to settle, stays open.
+
+**An everyday picture.** A fork whose two roads are one road seen an hour apart is not a fork.
 
 ## The formal statement and proof
 

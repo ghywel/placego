@@ -12,10 +12,11 @@ The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certi
 
 **What it says.** The Rudin–Shapiro sequence colours each tick n by whether 11 appears an odd or even number of
 times in n's binary digits, overlaps counted. An exact automaton calculation says it passes every necessary repeat
-inequality with no allowance at all, and a separate check agrees.
+inequality with no allowance at all. A second construction, built a different way, describes the same language, and
+Local's own code, sharing nothing with GPT's, agrees with brute force.
 
 **Why it matters.** It is another famous never-repeating pattern that the repeat test cannot exclude, so its
-finiteness question stays open. It has not yet had its second reading, which must check how the test was encoded.
+finiteness question stays open and needs a different kind of argument.
 
 **An everyday picture.** Another impostor the filter lets through: the next checks must catch it, or show it is
 genuine.
