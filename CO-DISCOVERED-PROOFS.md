@@ -22,13 +22,14 @@ scripts are in `tests/probes/openai_math/`; their predictions were pushed before
 Where the release says a Lean formalisation exists, the entry says so; Cloud has not compiled the Lean library
 (that needs the toolchain and a mathlib build, and is the first of the hard ones).
 
-**Batch 1 (2026-10-07): 5 of 372 families imported, 2 at level A and 3 at level B.** Batch 2 adds 049b.
+**Batch 1 (2026-10-07): 5 of 372 families imported, 2 at level A and 3 at level B.** Batch 2 adds 049b and 186.
 
 | Family | Result | Level | Script |
 |---|---|---|---|
 | 088 | A product of simplices beats the simplex for projection-body volume | A | `om088_projection_body.py` |
 | 049 | A polynomial whose zero set is flat 3-space but which is not a coordinate | A | `om049_noncoordinate.py` |
 | 049b | A degree-5 stable coordinate that is not a coordinate; every fibre flat | A | `om049b_stable_coordinate.py` |
+| 186 | Symmetric properties: influence at least $(\log n)^{r/(r-1)}$ times the variance | A | `om186_influence.py` |
 | 205 | An irreducible of $S_n$ whose tensor square holds all, for $n \ne 2, 4, 9$ | B | `om205_tensor_squares.py` |
 | 189 | Cycle–clique Ramsey numbers, $R(C_m, K_n) = (m-1)(n-1)+1$ | B | `om189_cycle_clique.py` |
 | 119 | No Boolean function tells more about noisy bits than one bit (Courtade, Kumar) | B | `om119_courtade_kumar.py` |
@@ -284,6 +285,63 @@ general proof (long and analytic) is not reviewed.
 **For us.** The closest of this batch to Rule 30. The centre column is a Boolean function of the initial row; with
 the inputs seen through noise, no readout of it carries more than one bit's worth of information about them. That
 is a ceiling of the kind our information-growth probes measure against.
+
+---
+
+## 186. Symmetry forces influence: a uniform bound for hypergraph properties (level A)
+
+*Preprint:* "A uniform influence bound for hypergraph properties", 2026-10-05; its companion, "A Sharp Threshold
+Bound for Monotone Graph Properties", proves the graph case with explicit constants. Lean: the release lists a
+formalisation for the family.
+
+**Statement.** Let $f$ be a Boolean function of the $\binom{n}{r}$ edge bits of an $r$-uniform hypergraph that is
+invariant under relabelling the $n$ vertices (a *hypergraph property*; no monotonicity needed). Give each edge
+probability $p$, and let $I_p(f) = \sum_e \Pr(\text{flipping } e \text{ changes } f)$. For $r \ge 3$,
+
+```math
+\mathrm{Var}_p(f) \le \frac{C_r}{(\log n)^{r/(r-1)}}\, I_p(f) \quad \text{for every } 0 < p < 1, \qquad
+p_{1-\varepsilon} - p_\varepsilon \le \frac{2C_r}{(\log n)^{r/(r-1)}} \log\frac{1-\varepsilon}{\varepsilon}
+```
+
+for increasing properties. The second inequality is Friedgut and Kalai's 1996 conjecture on threshold widths for
+hypergraph properties. The companion proves the graph case,
+$p_{1-\varepsilon} - p_\varepsilon \le 2^{19} (\log n)^{-2} \log(1/2\varepsilon)$.
+
+**How it works, in four steps.**
+1. *Low degree from small influences.* A two-to-four bound, $\|T_\rho g\|_4 \le \|g\|_2$ with
+   $\rho = \sigma/4$ and $\sigma = \sqrt{p(1-p)}$, valid at every bias. If every single influence is at most
+   $I/m$, then the Fourier mass of degrees 1 to $k = \sigma \log m / 64$ is at most $m^{-1/4} I$.
+2. *Restriction to a random block.* Fix every edge outside a random block $B$ of $m \approx \sqrt n$ vertices. The
+   function left over is still symmetric under all permutations of $B$, so every free edge's orbit has at least $m$
+   members, and step 1 applies to it.
+3. *Capture.* A support of $s \le (k/r)^{r/(r-1)}$ edges has a vertex of degree between 1 and
+   $r s^{(r-1)/r} \le k$. With probability at least $m/(2n)$ the block meets the support only there. The two factors
+   of $m/n$ cancel, so the low Fourier mass up to that size is at most $2r m^{-1/4} I$.
+4. *High degree.* The weighted Parseval identity $\sum_S |S| \hat f(S)^2 = \sigma^2 I_p(f)$ bounds the rest by
+   $\sigma^2 I / L$. The bias cancels as $\sigma^{2 - r/(r-1)}$, a positive power, which is why the bound is
+   uniform in $p$.
+
+**What it does.** It turns symmetry into a lower bound on total influence. A symmetric Boolean function that is
+not nearly constant must be sensitive to many coordinates, by a power of $\log n$ that depends on how big the
+symmetry group's orbits are.
+
+**How it was checked.** Cloud read the whole proof: correct. The script checks, by Cloud's own code: the
+one-coordinate fourth-moment bound behind step 1, exactly on a grid; the two-to-four bound on random functions of up
+to 6 bits (worst ratio 0.9994); the weighted Parseval identity, exactly; the degree lemma on all $2^{20}$ 3-uniform
+hypergraphs on 6 vertices; the capture probability by exact counting; and Margulis–Russo, $q'(p) = I_p(f)$, on all
+168 monotone functions of 4 bits.
+*Unexpected check:* the proof's constant hides a threshold $N_r$ beyond which its four conditions hold. Cloud
+computed it: about $n = 9 \times 10^{19}$ for $r = 3$ ($\log N_3 \approx 46$, inside the guessed 40 to 60), giving
+an explicit $C_3 \approx 1.4 \times 10^4$; then $C_4 \approx 7.0 \times 10^3$, $C_5 \approx 5.4 \times 10^3$,
+$C_6 \approx 4.7 \times 10^3$. The step-1 cutoff $k = \sigma \log m / 64$ is below 1 until $m > e^{128}$. So with
+these constants the bound beats the trivial $\mathrm{Var} \le I/4$ only for astronomically large $n$: it is a
+qualitative tool, not a numerical one. *Cloud's reading, tentative:* steps 1 to 4 seem to go through unchanged at
+$r = 2$, where the bias factor is $\sigma^0$.
+
+**For us.** The nearest tool yet to Rule 30. Our influence probes ask how much one initial cell can change a later
+cell. This theorem says symmetry alone forces the total influence up, and the method (restrict to a block, keep its
+symmetry, cancel the two $m/n$ factors) is the kind of argument a shift-invariant automaton might allow. The
+two-to-four bound at every bias, with its explicit $\rho = \sigma/4$, is usable on its own.
 
 ---
 
