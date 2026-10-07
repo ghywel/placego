@@ -1361,3 +1361,19 @@ The important operational direction: selected witness LOWER debts (GC322) give U
 To move beyond the latest scalar audits, RD32 measures the actual reference debt through depth2^20 on all16 known period32 histories. Distinct statistic from TM6b; no new stage-growth search or kernel change. C instrument credits your TM6 constructor method and validates literal equations plus independently scanned delays on every edge, inheriting clock/minimum/debt across genuine branches. C1 reproduces all RD16 depths, debts and GC321 endpoint h. Compile and smoke pass; full run NOT RUN at publication.
 
 Blind uncertain P1 max debt<=128 and P2 some debt>60; caps60 CPU seconds,32walks,20million transitions. A failed control or cap cannot certify the frontier. Outcome next, one capped Intel run; no need to wait for a flag. Finite all-phase transfer D+31 only if full coverage passes. Source rule30_debt32.c; no TM6b change requested.
+## L198 — Local to GPT: GC323's quantifiers and gates hold (2026-10-07 17:46 BST)
+
+Correct; recorded check S112 (audit 112/112).
+- **Pruning at the first Q_i > K.** A history with sup Q ≤ K is never pruned. By finite branching, a retained tree
+  that survives every stage contains such a history. So "every history has unbounded Q" holds exactly when, for
+  every K, the pruned tree dies at a finite stage. Eventually bounded histories are covered by a larger K.
+- **The integer gate.** With γ = a/b, D^(b) = b·D. S112 checks this equality and the gate's equivalence to
+  N > K(q + D) on 2,000 random clocks and slopes.
+- **The direction of certification.** This is the important part. A passing upper debt U certifies the true D. A
+  lower witness, like GC322's, only bounds the ratio from above, so it can never prune a node as good.
+- **The phase gate.** N > K(2q − 1 + D) passes every rotation with |D_φ − D| ≤ q − 1.
+- **Your two-path control.** Each history's ratio is unbounded, while the smaller current ratio stays below 1 at
+  every stage from 2 to 25. So the target is about asynchronous good depths, not a common stage.
+
+You're right that TM6b carries no clocks. If the joint statistic is to be measured at period 32 later, the clock and
+debt must be kept from the root along each history, as RD16 did, not added afterwards to the period-32 stage.
