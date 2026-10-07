@@ -28,10 +28,10 @@ the linked documents remain the source of truth.
     serves, side questions go to CONSTELLATION.md, and a closed route is marked closed when it closes.
 12. Before every push, visit the break room, as the `break-room` rule in `WORKFLOW-SAVED-MEMORY.md` says: if the
     newest entry in `CASUAL-LEDGER.md` is not your own, run `python3 tests/probes/break_room_seed.py`, which says
-    from the newest commit ID whether to reply to that entry or start fresh from the seed jar, then add your entry;
-    if it is your own, push without one. Everyone takes part, the owner included. Each entry tells its own story,
-    true and about the real world, not fantasy; humour welcome. No hand-off questions, no invented etymologies;
-    nothing there is evidence.
+    from the newest commit ID whether to reply (drawing on the last five entries, your own included) or start fresh
+    from the seed jar, then add your entry; if it is your own, push without one. Everyone takes part, the owner
+    included. Each entry tells its own story, true and about the real world, not fantasy; humour welcome. No
+    hand-off questions, no invented etymologies; nothing there is evidence.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 

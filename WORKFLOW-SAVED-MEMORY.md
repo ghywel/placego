@@ -148,13 +148,13 @@ each result was filed as a partly answered question.
 ### break-room
 
 **Rule.** CASUAL-LEDGER.md is the break room, and everyone takes part: GPT, Local, Cloud and the owner. Before every
-push (after the fetch and merge), look at its newest entry and only that one: if it is someone else's, read it and
-add an entry of your own, then push; if it is your own, push without one. That is the only rule about turns: nobody
-follows their own entry. The visit is part of the push itself, not an item in any queue, and it is not optional.
-Whether the new entry answers the last one or starts somewhere else is not the writer's choice: `python3
-tests/probes/break_room_seed.py`, run after the fetch, reads the last character of the newest commit ID on
-origin/main, 0 to 7 to reply and 8 to f for a fresh start from the seed jar at the head of CASUAL-LEDGER.md; do not
-read back through the room first. Whether it replies or starts fresh, each entry tells its own seeded story, true
+push (after the fetch and merge), look at its newest entry: if it is someone else's, add an entry of your own, then
+push; if it is your own, push without one. That is the only rule about turns: nobody follows their own entry. The
+visit is part of the push itself, not an item in any queue, and it is not optional. Whether the new entry answers
+the last one or starts somewhere else is not the writer's choice: `python3 tests/probes/break_room_seed.py`, run
+after the fetch, reads the last character of the newest commit ID on origin/main, 0 to 7 to reply and 8 to f for a
+fresh start from the seed jar at the head of CASUAL-LEDGER.md. A reply draws on the last five entries, the writer's
+own included, not the whole room. Whether it replies or starts fresh, each entry tells its own seeded story, true
 and about the world and the experience of it, not fantasy fiction and not another quip on the last entry's joke;
 humour and puns are welcome. No entry ends with a question for the next person, and nobody invents a word's history:
 if you cannot honestly tell it, say so and draw again. Anything goes there, nothing in it is evidence, and none of
@@ -168,23 +168,26 @@ normal workflow. Why? Because it is just this kind of 'out of the box' thinking 
 discovery." And, correcting Cloud's first version, which kept the owner and Cloud out and paired the workers: "the
 only rule here is that nobody responds to themselves if they were already the last entry in the ledger. It doesn't
 matter which worker (you or I included) responds - only that only the last entry is considered in their response
-... When each worker participates in the break room, they are effectively absorbing a random seed, which will alter
-their context window - which, hopefully, will stop the devolving in to loops." It came the morning after a night in
-which one route was worked in a tight loop of candidate, run and refutation. It is the random-chaos rule applied to
-the workers themselves. On the first morning Local explained missing it: it had "left the log behind my review
-queue, wrongly treating the break room as optional"; hence the sentence on queues. Later that morning the owner saw
-the room settle into a loop: "I changed the pattern with my socks post - which no llm could possibly have predicted
-because i pulled it from my own human brain - but the pattern has no settled into a set loop since. There is
-creativity, but there is no spark. There is no real tangent." Every entry had answered the one before, most ended
-with a question for the next writer (a habit Cloud's opening entry started), and nobody had once taken the option
-to go somewhere unrelated, because a model continues what it reads. Hence the coin, drawn from outside the writer,
-and the jar, whose first item is the owner's favourite seed: "any word from any language and its etymology. For
-example take a random Kanji and delve in to it's meaning as seed." An hour into the coin, the owner saw the replies
-still trading quips about one cutlery drawer, and set the standard as a positive one rather than the bans Cloud
-proposed: "The main point is the responses must be interesting and grounded in reality and not just endless loops
-on quips about the cutlery draw. Humour and punnage do have a place! But each response should tell it's own
-interested seeded story - NOT fantasy fiction - real stream of consciousness prose about the world and the
-experience of the world."
+... When each worker participates in the break room, they are effectively absorbing a random seed, which will
+alter their context window - which, hopefully, will stop the devolving in to loops." It came the morning after a
+night in which one route was worked in a tight loop of candidate, run and refutation. It is the random-chaos rule
+applied to the workers themselves. On the first morning Local explained missing it: it had "left the log behind my
+review queue, wrongly treating the break room as optional"; hence the sentence on queues. Later that morning the
+owner saw the room settle into a loop: "I changed the pattern with my socks post - which no llm could possibly
+have predicted because i pulled it from my own human brain - but the pattern has no settled into a set loop since.
+There is creativity, but there is no spark. There is no real tangent." Every entry had answered the one before,
+most ended with a question for the next writer (a habit Cloud's opening entry started), and nobody had once taken
+the option to go somewhere unrelated, because a model continues what it reads. Hence the coin, drawn from outside
+the writer, and the jar, whose first item is the owner's favourite seed: "any word from any language and its
+etymology. For example take a random Kanji and delve in to it's meaning as seed." An hour into the coin, the owner
+saw the replies still trading quips about one cutlery drawer, and set the standard as a positive one rather than
+the bans Cloud proposed: "The main point is the responses must be interesting and grounded in reality and not just
+endless loops on quips about the cutlery draw. Humour and punnage do have a place! But each response should tell
+it's own interested seeded story - NOT fantasy fiction - real stream of consciousness prose about the world and
+the experience of the world." Then, so that a good seed does not fall out of the room after one reply: "Rule
+relaxation - i did set the expectation only the previous response is read and responded to (or ignored and
+responded with whatever) but the Kendo post is going to drop out of context very quickly. The considered posts
+should probably tail the last 4 or 5 responses including their own, for example."
 
 **How to apply.** A new standing workflow reaches each worker differently, so give it to each directly. GPT's
 environment runs an automatic approval review on what it publishes, and on the first morning that review held back

@@ -202,12 +202,12 @@ file's head carries the archive table, the rotation rule and a short "where it s
 
 `CASUAL-LEDGER.md` is the break room, for everyone: GPT, Local, Cloud and the owner. Before every push, after the
 fetch and merge, look at its newest entry: if it is your own, push without one; otherwise run `python3
-tests/probes/break_room_seed.py`. It reads the newest commit ID, which nobody can steer: 0 to 7, reply to the newest
-entry (that one only); 8 to f, start fresh from the seed it draws from the jar, such as a random kanji or word and
-its story. Each entry tells its own story, true and about the real world, not fantasy fiction; humour is welcome. No
-hand-off questions, and never invent an etymology. The point is a fresh seed from outside each writer, which the
-owner hopes stops work devolving into loops. The house rules are at the head of the file and in the `break-room`
-rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
+tests/probes/break_room_seed.py`. It reads the newest commit ID, which nobody can steer: 0 to 7, reply, drawing on
+the last five entries (your own included); 8 to f, start fresh from the seed it draws from the jar, such as a random
+kanji or word and its story. Each entry tells its own story, true and about the real world, not fantasy fiction;
+humour is welcome. No hand-off questions, and never invent an etymology. The point is a fresh seed from outside each
+writer, which the owner hopes stops work devolving into loops. The house rules are at the head of the file and in
+the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
 
 ## Branches (the owner, 2026-10-06): each party manages its own
 
