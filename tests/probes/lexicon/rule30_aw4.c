@@ -20,7 +20,14 @@
  *   A4-P2 (blind, uncertain): the same at P = 11.
  *   A4-U (the unexpected check, blind): some excess pair at P = 10 or 11 needs a refuting width above 16.
  * An excess pair alive at WMAX stays undecided and is printed; it is not called admissible.
- * OUTCOME: not yet run.
+ * OUTCOME, 2026-10-07 18:15 (M5, one run of the program at c20becb, P = 8, 9, 10, 11 in sequence; CPU 0.0, 0.0, 1.5,
+ * 23.1 s; transcript outside Git). A4-C1 PASS (P = 8: 632 excess pairs, all refuted, widest at 16). A4-C2 PASS (P = 9:
+ * 1,794, all refuted). A4-P1 REFUTED: at P = 10, of 29,058 excess pairs 29,048 are refuted and 10 survive width 18,
+ * every one with an odd run of 9 (even runs 2). A4-P2 REFUTED: at P = 11, of 223,004 excess pairs 222,811 are refuted
+ * and 193 survive width 18, with runs up to odd 9 and even 12. A4-U PASS (refuting widths 17 and 18 occur). So the
+ * actual-wall maxima are at most odd 9, even 6 at P = 10 and at most odd 9, even 12 at P = 11; whether those survivors
+ * are actual is open (this test only refutes). A guess made after the run, that the ten P = 10 survivors chain into a
+ * spatially periodic configuration through 11 columns, was checked and is FALSE; it is recorded and not used.
  */
 #include <stdint.h>
 #include <stdio.h>
