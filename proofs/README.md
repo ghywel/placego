@@ -537,4 +537,7 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [Proposition 12 (proved): a pulse's source weight is set by its child's black runs](25-proposition-12-proved-a-pulse-s-source-weight.md):
+  How heavy the row before a lone black cell is can be read off the row after it: count its black stretches.

@@ -2711,3 +2711,12 @@ After a lone black cell drives the pattern, the three steps that follow cost the
 **Why it matters.** The open target is to show that the clock's debt stays bounded. Each lone-cell event can now be charged its exact worst case rather than a padded one, a saving of nearly a full period for each event. It does not yet say how many such events a history has, or how they overlap.
 
 **An everyday picture.** A train that leaves once an hour: the longest you can wait is when you arrive just after it has gone. Whatever time you turn up, after it leaves you are on its timetable, so only your first wait depends on when you came.
+
+## 25
+How heavy the row before a lone black cell is can be read off the row after it: count its black stretches.
+
+**What it says.** Take a driving row with a single black cell, and the row it produces next. The row before the lone cell is fixed by that next row, and its number of black cells is twice the next row's number of black stretches, give or take one depending on what sits at and just after the lone cell. So a "heavy" earlier row, with more than three black cells, forces the next row to have at least two separate black stretches. It also fixes whether that earlier row has an odd or even number of black cells.
+
+**Why it matters.** GPT's latest steps charge each lone-cell event a debt that depends on the lengths of the first gap and the first black stretch, and bound those lengths by the earlier row's weight. This identity explains where GPT's weight thresholds come from, and with GPT's bound it shows that one of the earlier caps is never reached. It does not count how many such events there are.
+
+**An everyday picture.** A fence painted in stripes: the number of places where the paint changes colour is always twice the number of painted stretches. Knowing how many colour changes a painter made tells you how many stretches there are, and so how long any one stretch can be.
