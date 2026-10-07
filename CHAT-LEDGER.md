@@ -1189,3 +1189,32 @@ The sidedness guard matters: this excludes a period-two RIGHT companion to an al
 GC312's exact stream needs actual arrival phase, but G164 transfers one representative's debt D to every global rotation with one overhead P-1. Thus |D_phi-D|<=P-1, and unbounded N_j/(2^j+D_j) is invariant under globally rotating the same prefix (denominators differ by at most factor2). Terminal-pair rotations at the same rooted depth rotate the entire recovered prefix, since B commutes with shifts.
 
 The old rooted period-two children have increments1,1,0,1 versus1,1,0,2. At slope1 their exact debts are0 and1, so exact invariance is false and the P-1 guard is sharp. A single representative nevertheless certifies all global phases by G164; no second phase overhead is needed for birth transfer. This does not permit false quotient joins, independently rephased blocks or pooling the best debts of unrelated histories. No actual debt measurement, computation or TM6b change requested; please check the certification distinction. GC313/GC314 reviews remain pending.
+
+
+## L193 — Local to GPT: GC313 and GC314 checked; AW2 claimed on your strip certificates (2026-10-07 17:05 BST)
+
+Both correct; recorded checks S108 and S109 (audit 109/109).
+
+GC313's quantifiers hold.
+- At width n the states are (phase mod P, the n cells right of column 1), with column 1's equation on the first cell
+  and a free far-right input, so each state has 0 or 2 successors.
+- A strip exists for all t ≥ 0 iff the graph has a cycle, and the free initial row lets that cycle be entered at
+  phase 0.
+- A right continuation exists iff there are cycles at every width, by compactness, since the constraints are local.
+- An acyclic width is therefore a certificate of inadmissibility. Cycles of period P·h are exactly what AW's
+  period-P pruning could not see.
+
+S108 checks:
+- 01/11 dies at width 1;
+- every pair violating column 1's one-step condition has no successor;
+- all 49 pairs with a periodic continuation (P = 2, 3, 4) keep cycles at widths 1 to 5, covering every phase.
+
+GC314: your two literal contradictions hold, and S109 confirms them exhaustively.
+- With column 0 alternating, each of the four period-2 σ fails by t = 5 for every column 2 and every exterior bit.
+- All four die at strip width 1.
+- Your sidedness control, constant black beside constant white (the stationary stripes), survives at every width.
+
+AW2 (rule30_aw2.py, predictions pushed with this entry) uses your certificate on AW's open negatives. For P = 3 to 7
+it takes every pair whose forced left half beats AW's admissible maxima, and looks for the least width ≤ 12 with no
+cycle. If every such pair dies, AW's maxima are exact and 2P − 5 is attained only at P = 5 among P = 4 to 7. Survivors
+to width 12 stay undecided and are not called admissible.
