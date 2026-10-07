@@ -119,6 +119,12 @@ What the last two days settled on this line:
   - The rooted period-32 stage runs past 2.6 × 10^10 steps, and on the 17 histories still live R_6 exceeds
     412,876,800 (Proposition 10).
   - Clock debt is at most 60 on all sixteen period-32 histories to depth 1,048,576 (RD32, GC325).
+  - Local's later HW32 run records debt78.5 on a pulse-free39-edge interval, versus a largest
+    period-32 pulse-window debt37.0 (CHAT-LEDGER.md L218). Its initial snapshot-count control
+    failed as coded and remains recorded; the stored snapshots agreed with RD32. This is finite
+    evidence from Local's execution, not an independently rerun GPT certificate. The live-walk
+    debt scan evaluates endpoints strictly below its frontier; GC361 flags the last endpoint for
+    correction. The internal78.5 witness remains inside the evaluated domain.
 - **Refuted.** More than a dozen predictions, each kept in the record. Two examples: the next edge after a heavy
   window costs at most 2 (GC350), and a bound on the source weight just before a pulse (GC354).
 - **Open.** Gap 2 on every rooted history. For gap 1, a bound on the debt carried across the edges between pulse
@@ -132,8 +138,9 @@ words, and a tested method.
 **The main line moved tonight, a little.** At 20:28 Local worked row 6.1, the wheel's kicks, for the first time
 since 2026-10-05. It did so under the new draw-and-work rule. Local's KL run finds the kick alphabet local: for every
 right side, after 133 steps on the wheel, kicks occur at only four classes, each with a short range of sizes. So
-the interior chooses at most log2 6 bits per kick (Proposition 13, PROOFS.md entry 26, waiting for its second
-reader). It narrows what the missing statement must control. It does not supply it: "the cost side: a statement
+the interior chooses at most log2 6 bits per kick (Proposition 13, PROOFS.md entry26, second-read by GPT in GC359 and filed by
+Local). The statement conditions the old wheel duration and the new phase fit; it does not classify
+arbitrary column1 histories. It narrows what the missing statement must control. It does not supply it: "the cost side: a statement
 that the kicks must pay for the left half's conditions" is still open.
 
 ## 5. The rate of discovery, measured

@@ -9939,3 +9939,33 @@ GC357 bridge follows. No longer run, frontier extension or additional prefix sel
 Next: distinguish the rise incidences on heavy-window supports from the much larger remainder,
 using a hand accounting identity or Local's separate clock results. Closed weight-only shortcuts
 stay closed. Entry26 filing received; imported shared rules read. Q7 remains open.
+
+
+## GC361 — HW32 redirects the main clock question to ordinary-driver gaps (2026-10-07)
+
+L218 commit0abe4a6 verified; read code and report, not the32-minute retained execution.
+Local records largest debt78.5 on39 pulse-free edges versus pulse-window maximum37.0,
+with every stored first maximizing witness pulse-free. The original snapshot-count C0 FAIL
+is retained even though all73 inherited snapshots agree with RD32; no retroactive PASS.
+GC347/GC349 controls hold on all3260 reported windows. Local owns the already claimed HW32w
+witness replay. I redirect reasoning to ordinary-driver gaps; more pulse accounting is not
+currently the best route to this recorded maximum.
+
+Exact hand consequence: doubled rise157 over39 edges means elapsed176, mean delay176/39,
+above4.5. This is a local interval average, compatible with the much smaller full-run mean
+2.004525. It does not imply a random law, long-term drift or an all-period lower bound.
+
+The pulse-free minimum logic is correct: at depth d it records intervals ending at d before
+resetting the gap minimum for a pulse edge d. Thus [a,d) excludes that pulse, and starts after
+it are allowed at d+1. Siblings inherit the carried clock and minima. Fixed synthetic online
+versus brute interval controls PASS. Unexpected endpoint guard: while(d<BOUND) evaluates z
+only before each driver, hence its debt witnesses end strictly below BOUND; the final live
+endpoint is not evaluated after the last update. One positive synthetic edge has recorded
+D0 but actual final-endpoint debt2. This is a coverage correction, not a rejection of the
+internal78.5 witness. Ask Local to evaluate final state/minima, or describe the certified
+endpoint domain as strictly below the frontier; no long rerun requested merely for this note.
+
+STATE-OF-THE-PROOF updated narrowly: entry26 is now second-read/filed, its timing preconditions
+remain explicit, and the new finite HW32 gap finding and endpoint qualification are included.
+No unsupported discovery-time projection or prize claim added. Next independently audit the
+39 drivers once Local publishes them, retaining full source, arrival phase and reset geometry.
