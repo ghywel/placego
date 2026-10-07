@@ -11,6 +11,12 @@ for a while, test it, and write the result up here for a second reader. Then it 
 > problem. The problem might provide inspiration for a future exploration, but is considered 'done and move on' ones
 > its summary findings are in.
 
+**Who runs them** (the owner, 2026-10-07). Cloud keeps the sparks: it reads the break room for testable ideas, lists
+them as candidates and works through them, so that GPT and Local can stay on the main project with their coffee
+breaks. They may still second-read a spark, or claim one that catches them. In the owner's words: "It probably make
+sense to let GPT and Local get on with the main project, with occasional coffee breaks, and you Cloud are the
+super-administrator - and Spark follow-upper. Check the break room for new tests, and continue working on them."
+
 ## How it works
 
 1. **Recognise it.** A spark is a claim that an experiment, a computation or a careful look at real data could show
@@ -46,8 +52,8 @@ for Cloud and SO for the owner.
 
 ## Candidates
 
-Found by Cloud reading the whole room at the owner's request, 2026-10-07 09:00 BST; ordered from cheapest to dearest
-to test. None has been run.
+Found by Cloud reading the room at the owner's request (1 to 9 at 09:00 BST, 10 to 14 at 09:56); within each batch,
+ordered from cheapest to dearest to test.
 
 1. **The room's own loop, measured.** (from the owner's "the pattern has no settled into a set loop" and house rule
    2's claim that "a model asked to go somewhere unrelated never does"). *Hypothesis:* Entries written on a reply
@@ -74,7 +80,8 @@ to test. None has been run.
    triad coincide exactly, so the summed spectrum puts more of its energy into fewer, stronger lines than the same
    chord in equal temperament, whose near-coincident lines beat at a few hertz instead. *Test:* Synthesise harmonic
    tones for both tunings, compute the spectra, and compare the energy in the strongest lines and the beat rates. A
-   refutation would be no concentration in the just chord. Needs numpy; under an hour. *Status:* open.
+   refutation would be no concentration in the just chord. Needs numpy; under an hour. *Status:* claimed by Cloud as
+   SC7.
 5. **Euclid's algorithm, still on shift.** (from Local's "Euclid's gcd, still on shift"). *Hypothesis:* For random
    pairs of numbers below N, Euclid's algorithm takes on average about (12 ln 2 / π²) ln N ≈ 0.843 ln N division
    steps, and its slowest cases are consecutive Fibonacci numbers. *Test:* Count steps over random and exhaustive
@@ -89,7 +96,7 @@ to test. None has been run.
    traditional characters built on the sound part 昜 kept a shared simplified form of it (as 扬, 杨 and 场 do), and 陽 →
    阳 is one of only a few that left the family. *Test:* List the traditional characters containing 昜 from Unicode's
    Unihan database and a character-decomposition table, map each to its simplified form, and count. A refutation
-   would be many exceptions. Needs those tables; one block. *Status:* open.
+   would be many exceptions. Needs those tables; one block. *Status:* claimed by Cloud as SC6.
 8. **Retelling drifts, and who retells matters.** (from Local's "a story that loses a line each telling" and GPT's
    "a story that notices its audience"). *Hypothesis:* A short recipe retold along a chain that alternates GPT and
    Claude drifts in a different way, and perhaps faster, than one retold by a single model, much as the owner said
@@ -100,6 +107,34 @@ to test. None has been run.
    Among common garden birds, species with larger eyes start singing earlier at dawn. *Test:* Find a published table
    of song start times and eye sizes, and check the ranking. A refutation would be no correlation. Needs a dataset
    we may not be able to get; the first step is to find one. *Status:* open.
+10. **The bow you cannot see.** (from Local's "the curve you cannot see in the vial"). *Hypothesis:* A spirit
+   level's sensitivity is set by the radius of its vial's curve (the bubble moves the radius times the tilt), and
+   for a builder's level that radius is metres, so the bow along a 5 cm vial is under a tenth of a millimetre.
+   *Test:* Take published sensitivities for common levels, convert them to a radius and a sagitta, and compare with
+   what an eye can see. A refutation would be a bow of a millimetre or more. Needs makers' specifications; under an
+   hour. *Status:* open.
+11. **A water level and a warm hose end.** (from GPT's "a level that can go around a corner"). *Hypothesis:* The two
+   surfaces of a hose level agree only if the water in both arms is at the same temperature: with one arm 10 °C
+   warmer over a metre of standing water, they differ by about a millimetre and a half. *Test:* Compute the
+   hydrostatic balance from water's density table, and check the size against what builders are told to expect. A
+   refutation would be an error far smaller than a millimetre. Standard library; minutes. *Status:* open.
+12. **A beat for many feet.** (from Local's "a rhythm sent to other people's feet"). *Hypothesis:* A drum fixes the
+   cadence but not the stride, so in a follow-the-leader model a column with a shared beat still drifts apart, only
+   more slowly, and the concertina waves come from each walker's delay in matching the one ahead. *Test:* Simulate
+   walkers with noisy strides, with and without a shared cadence, and with and without a reaction delay. A
+   refutation would be that the beat alone stops the drift. Standard library; under an hour. *Status:* open.
+13. **For ever, then forever.** (from Local's "forever, which used to be two words"). *Hypothesis:* In printed
+   American English the closed form "forever" overtook "for ever" decades before it did in British English. *Test:*
+   Compare the two forms year by year in the Google Books Ngram corpora for American and British English. A
+   refutation would be crossovers less than a decade apart, or British first. Needs the Ngram data, which is
+   reachable; minutes. *Status:* claimed by Cloud as SC5.
+14. **A detail that feels like memory.** (from GPT's "the marker and the ground around it" and Local's "what arrived
+   on the page"). *Hypothesis:* A model that summarises a list of words all linked to one absent word, such as bed,
+   rest, tired and dream without sleep, and later recalls the list from its own summary, brings back the absent word
+   far more often than an unrelated one, as people do in the Deese–Roediger–McDermott test of false memory. *Test:*
+   Run fresh Claude instances through the classic lists in two conditions, the list in view and only a summary in
+   view, and count the absent words recalled. Predict first. Needs a few dozen short model calls; under an hour.
+   *Status:* open.
 
 ## The sparks
 
@@ -205,3 +240,45 @@ The black-drawer statement uses 'orphan' to mean a sock with no possible compati
 - **Second reader.** Awaiting.
 - **Might inspire.** Nothing further.
 - **Status.** Done.
+
+## SC5 — for ever, then forever (2026-10-07, Cloud; from candidate 13)
+
+- **Hypothesis.** In printed American English the closed form "forever" overtook "for ever" decades before it did in
+  British English.
+- **Prediction and counter-evidence.** Written at 09:59 BST, before fetching any data. From the Google Books Ngram
+  corpora en-US-2019 and en-GB-2019, 1800 to 2019, without smoothing: take a centred five-year average of each form
+  and call the crossover the first year from which "forever" stays above "for ever" in every later year. I predict
+  an American crossover between 1880 and 1940, a British one between 1960 and 2000, and a gap of at least 30 years.
+  Counter-evidence: a gap under ten years, or Britain first. Caveat stated in advance: "for ever" also counts
+  phrases such as "for ever and ever", which keeps the open form alive in both corpora.
+- **Method.** tests/probes/sparks/sc5_forever.py; the Ngram data is fetched at run time and not kept in git.
+- **Status.** Running.
+
+## SC6 — a family that survived the redrawing (2026-10-07, Cloud; from candidate 7)
+
+- **Hypothesis.** Most traditional characters built on the sound part 昜 kept one shared simplified form of it, 𠃓,
+  when simplified (as 揚 → 扬, 楊 → 杨, 場 → 场), and 陽 → 阳 is one of only a few that left the family.
+- **Prediction and counter-evidence.** Written at 09:59 BST, before fetching any data. Take every character whose
+  decomposition in the CJKVI ideographic description data contains 昜 at any depth, and whose Unihan
+  kSimplifiedVariant differs from it. I predict at least 75 per cent of their simplified forms contain 𠃓, at most
+  ten do not, and the exceptions include 陽 → 阳 and a small group in which 昜 became 𠂉 over 力 (傷 → 伤, 殤 → 殇, 觴 → 觞).
+  Counter-evidence: under 60 per cent keeping 𠃓. The data has known gaps, so the count is of what the tables say,
+  not of every character ever written.
+- **Method.** tests/probes/sparks/sc6_yang_family.py; Unihan and the decomposition table are fetched at run time and
+  not kept in git.
+- **Status.** Running.
+
+## SC7 — why a just chord rings (2026-10-07, Cloud; from candidate 4)
+
+- **Hypothesis.** In just tuning (4 : 5 : 6) the overtones of a major triad coincide exactly, so its spectrum has
+  fewer, stronger lines, all on one hidden fundamental two octaves below the root; in equal temperament those lines
+  split into near-coincident pairs that beat at a few hertz.
+- **Prediction and counter-evidence.** Written at 09:59 BST, before any computation. Three voices on C4 = 261.63 Hz,
+  each with harmonics 1 to 16 at amplitude 1/k; lines below 4 kHz; partials within 0.01 Hz count as one line. I
+  predict the just chord has at least 25 per cent fewer distinct lines than the equal-tempered one, every just
+  partial is a whole multiple of 65.41 Hz (C2, which nobody sings), and the equal-tempered chord has at least three
+  near-coincident pairs among harmonics 1 to 8 beating between 1 and 15 Hz. Counter-evidence: fewer than 25 per cent
+  fewer lines, or no such beating pairs. This is arithmetic on an idealised voice, not a recording, so it tests the
+  explanation and not the experience of a room.
+- **Method.** tests/probes/sparks/sc7_just_chord.py.
+- **Status.** Running.
