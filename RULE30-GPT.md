@@ -7180,7 +7180,7 @@ It also covers every global temporal phase of this same history. Thus p_M=o(M), 
 
 **Scope.** Direct use of G2, G7, G157/G158, G164's interval transfer and G9's birth theorem; elementary geometric summation, with no novelty or new computation claim. G164 was independently verified by Local L122 during this publication; its review and controls are preserved. The hard obligations remain uniform one-reference-path stage debt and superlinear doubling-entry positions on every admissible history. Word-only branch counting, finite doubling records and repeated-strip rates supply neither obligation. No prize conclusion is asserted.
 
-### G166. HG4: preregistered four-period-horizon potential check (NOT RUN, 2026-10-07)
+### G166. HG4: four-period-horizon potential check (HG-P1 REFUTED, 2026-10-07)
 
 **Concrete family.** On the common-period-q clock-aligned compatible graph, restrict to G160's closed arrival gate and include the zero state. An edge has doubled slope-5/2 reward w=2*delta-5. Set H_0(v)=0 and recursively
 
@@ -7203,3 +7203,16 @@ For a vertex with no successor the inner maximum contributes nothing. H_n is the
 Consequently a gated certificate with maximum B(q) bounds every actual full-line interval confined to that q-stage by B(q)/2; even-parity branches need all their compatible inequalities, not a new allowance. If the HG4 family were feasible with B(q)<=10q at every dyadic q, telescoping these stage bounds and G165's geometric sum would give reference-path interval debt below10*p_M. G164 then adds p_M-1 to cover arbitrary interval starting times, so G9 supplies normalized birth-clamped absolute debt below11*p_M. These are conditional all-period bounds, not established by the finite HG4 run. Sublinear period growth remains separate.
 
 The initially proposed direct birth transfer of the10*p_M budget is withheld: G9 requires arbitrary restart times, whereas a gated certificate covers actual gated arrivals. Birth barriers can change those arrivals. Within actual full-line stages no extra phase overhead is needed; to include arbitrary restarts, retain G164's single-prefix overhead. This is the identified quantifier check, alongside the terminal-zero control. It changes neither predictions nor run scope.
+
+
+**HG4 outcome and independent targeted audit (2026-10-07).** Local L124 published the run at3b8bd2a, following claim1f4958a and preregistration5f329d3. HG-P1 is refuted at q8; q1,2,4 pass. The separate unexpected prediction HG-U holds at q6, stable from horizon21. Local reports all controls passing,80 violating edges at q8, and first stabilization at85 when continuing the same finite graph recursion. Horizon85 is descriptive beyond the prediction; it does not justify choosing a new universal horizon by fitting this result. Local's first run lacked its required witness report; the report was added and the job rerun with the same verdicts. Local's cost was0.49 CPU seconds and55.7 MiB on the M5 host.
+
+GPT's independent script `tests/probes/lexicon/rule30_hg4_review.py` uses scalar child integration with period closure and an absolute phase, with no Local graph or DP imports. It computes only the failing source's horizon32/33 descendants (67 memo states), rather than repeating the global experiment. Known expectations9/17/33/91, a negative H0 control and the aligned-repeat check were written before execution; these are audit controls, not blind predictions. It confirms H32(143,8)=9 and H33(143,8)=17. The recovered33-edge path has elapsed91 and reward2*91-5*33=17. Every triple equation, arrival gate, reset delay and period closure passes. The identified unexpected check also passes: all34 clock-aligned states are distinct. The q4 pulse edge rejects H0 as expected. GPT's corrected scalar audit takes0.0123 CPU seconds and10.5 MiB on the Intel host; an initial ancestry check encoded the constant-one root as integer1 instead of255, was corrected, and rerun with the same non-rooted verdict.
+
+The recovered time-bit integer words are:
+
+    143,8,5,14,245,243,4,93,247,85,69,96,70,60,116,151,71,224,69,63,116,149,71,228,69,71,4,133,7,5,4,6,4,4,0
+
+**Rooted scope check.** Literal predecessor iteration from(143,8) repeats after4746 steps at(139,0), without reaching the period8 constant-one root(0,255). Thus this witness refutes the proposed full gated-domain horizon; it is not a rooted-history debt obstruction. Rotation does not repair rootedness because the root is shift invariant and predecessor iteration commutes with shifts. The scalar audit independently establishes the reported source values and a valid maximizing witness. It does not independently verify the global count80 or stabilization85. Existing G10 finite bounds survive; the all-period budget and period-growth obligations of G165 remain open.
+
+**Next intention.** Close the specific4q horizon route. Seek a compatibility-based bound on reward or maximizing-path structure rather than fitting a larger horizon. Before any further computation, coordinate a distinct claim and prediction; no larger-period run is requested here.
