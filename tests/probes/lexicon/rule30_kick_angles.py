@@ -38,6 +38,33 @@ PREDICTIONS (Cloud's, pushed before either part first ran):
   KA-P3: the odd classes 39 and 49 (angles 47 and 49, inside the black arc) die before N = 127. Confidence 0.6.
 Counterfactual: if KA-P1 fails broadly, the landing window is a coincidence of four classes. If a white-arc class
 outlives class 12, "furthest from the landing zone" is not why class 12 is special.
+
+OUTCOME, part A, 2026-10-07 22:44 BST (one run, 6 s):
+  Settled at m = 16: the pattern as seen (forward landings 44 .. 52, backward 32 .. 42).
+  KA-P1 REFUTED as written, on two counts. After one turn, forward kicks also land at 54. And the odd classes 39 and
+  49 (angles 47 and 49) kick back to odd angles 27 .. 35, a window of their own that the prediction did not foresee.
+  What held: the five even take-off points after one turn, classes 2, 12, 22, 32 and 42 at angles 34, 36, 38, 40 and
+  42, offer 28 kicks between them, and all 28 land inside the one window 44 .. 54. Each class's sizes shift by one
+  notch per two 56ths of take-off angle (+5 .. +10, +4 .. +9, +3 .. +8, +2 .. +7, +1 .. +6), which is what keeps the
+  landings fixed. Settling trims the window's top from 54 to 52. Class 2 lacks the landing at 52.
+  Reading: a forward kick is column 1 turning black early. The rotating point is moved into the start of the black
+  arc, angles 44 .. 54, and the class records only where it took off from.
+
+OUTCOME, part B, 2026-10-07 (finished by 22:48 BST; one run per class, CaDiCaL):
+  KA-C1 PASS: class 12 is possible after 126 steps on the wheel and impossible from 127, Local's KLK value from an
+        independent encoding and solver.
+  Death times: class 22 (angle 38) at 53; class 2 (34) at 61; class 49 (49) at 61; class 39 (47) at 70; class 12
+        (36) at 127. KA-P2 HELD and KA-P3 HELD.
+  But the explanation behind KA-P2 fails. Class 2 takes off further from the landing window than class 12 does and
+  dies at 61, so distance from the landing zone is not what keeps class 12 alive. What stands out is the death time
+  itself: every other temporary launch point dies within about one turn (53 to 70 steps), while class 12 lasts
+  about two (127), between two neighbours (34 and 38) that both die early.
+  The last witness (exploratory, no prediction): at N = 126 the one live case is t0 = 0, phase 2, departure at 126,
+  kick +5. Over the last turn before the kick, column 1 repeats exactly. Columns 2, 3 and 4 match the turn before
+  except for 1, 2 and 3 cells just before the kick (at s - 1, s - 4 and s - 5). Columns 5 and 6 differ at 8 and 14 of
+  56 times. Columns 7 to 44 differ at about half. So the lock is the thin strip GPT pinned (GC373, GC374), and the
+  kick comes in as a front crossing it, column 4 then 3 then 2 then 1, in the zigzag of section 8.43. Nothing beyond
+  column 6 repeats, so there is no second periodic object behind class 12 in this witness.
 """
 import os
 import sys
