@@ -10325,3 +10325,58 @@ The period-consistency instrumentation was added after the first result; its rec
 agrees and has zero conflicts. Runs under a fifth of a second; no long trajectory or
 SAT census. Next constructive proof target: extract a short local invariant explaining
 why the full168-step phase0 window already pins column2, then extend it to adjacent columns.
+
+## GC373 — a finite phase-graph certificate pins column2 (2026-10-07)
+
+GC372 continuation, prediction registered in CLOUD-LOCAL.md before execution. Lift
+width-m states (columns2..m) by the 56-phase clock. Put an edge from (p,s) to
+(p+1,s') exactly when a choice of the exterior cell makes the scalar Rule30 successor
+and column1 follows U. Column0 is p mod2. Iteratively delete every vertex lacking
+a predecessor or successor among the remaining vertices, simultaneously each round.
+
+**Sound finite-window lemma.** If trimming stabilizes after r rounds at core K,
+any actual strip path with at least r transitions on both sides of time t has its
+vertex at t in K. Proof: by induction, a path vertex at distance at least k from
+both ends survives k rounds: its adjacent path vertices survive k-1. Thus if the
+column2 projection of K is a singleton at every phase p, column2 at t equals that
+56-periodic singleton whenever the prescribed U window extends r steps either side.
+This applies to every real right continuation, since the exterior input was unrestricted.
+Nonempty K itself is not a claim of realizability by a global right half.
+
+Source `tests/probes/lexicon/rule30_locked_core.py`, fixed m4 and m8 runs:
+
+    m4: six trimming rounds, losses [222,68,39,23,12,6], core size78.
+    m8: nineteen rounds, core size302.
+    Both cores pin only column2 over all56 phases, to
+    V = 01110010110111001011011100101101110010110111001011001011.
+
+Hence **13 consecutive observations of column1=U pin column2 at the centre to V**,
+using only exact dynamics through column4. For x_t(1)=U((t-d) mod56), d even,
+translate p=t-d; wall parity agrees, giving x_t(2)=V((t-d) mod56) whenever
+[t-6,t+6] lies inside the prescribed window. This is a computed finite certificate
+with a soundness proof, not a linear-width locking-speed theorem. It improves the
+fixed168-window statement to a local forcing lemma. Prediction HELD; the stronger
+counterfactual that width4 pins columns2..4 is REFUTED for this phase-graph instrument.
+Width8 still does not pin column3 at every phase; no general extension is supplied.
+
+Controls: independently written scalar and bit-row steps agree on all15232 choices
+across m4,m8. Constant1 against the alternating wall yields empty core in one round,
+agreeing with GC313. Unexpected boundary check: for every start phase, the centre
+projection of a 2r+1-observation finite path equals the computed core's phase slice;
+forward/backward traversal shares the graph edges, explicitly not an independent encoder.
+Runs under a tenth of a second. Transcript stays outside Git. No SAT solver or
+Local's KLK threshold computation was duplicated. Next seek a relation that carries
+this fixed-depth forcing beyond column2; failure at column3 retained.
+
+**L227 aggregate-N monotonicity guard.** For KS/KK's free initial row and departure
+class a, existence at N_large implies existence at every N_small <= N_large,
+across the full set of (t0,d) cases. From a witness departing at s, retain its suffix
+starting at tau=s-N_small. Normalize time by the even shift tau-(tau mod2),
+so t0'=tau mod2 and d'=d-(tau-t0') mod56 is still even. The departure now occurs
+exactly at t0'+N_small, hence is the first class-a time at or after that threshold;
+the same 21 post-departure observations remain. The smaller light cone lies in the
+original one. The same projection works with fixed exterior cap m. Therefore all-case
+UNSAT is monotone in N. This uses free initial rows and all even phase/parity cases;
+it does not assert per-labelled-case inclusion or certify a solver's UNSAT verdict.
+The unexpected rounding guard is that cutting the suffix changes the case label,
+which is why the all-case predicate, rather than one fixed (t0,d), is used.
