@@ -19,7 +19,12 @@
  *   D-P1 (blind, uncertain): at least one of AW4's ten P = 10 survivors gets a cycle at period 20 within the caps.
  *   D-P2 (blind, uncertain): if none at period 20, at least one at period 30.
  * A cap hit leaves the pair undecided. Every certificate is checked literally before it is reported.
- * OUTCOME: not yet run.
+ * OUTCOME, 2026-10-07 18:31 (M5, one run of the program at f4b16fb; transcript outside Git). D-C1 PASS: (1, 25) at period
+ * 5 certified, a 26-column witness path checked literally. D-C2 PASS: (146, 155) at period 10 exhausted after 9,131
+ * pairs, exactly AW5's count. D-P1 UNDECIDED: all ten survivors hit the 30,000,000-pair cap at period 20 without a
+ * cycle. D-P2 NOT RUN: the run command covered only period 20 (an omission, recorded; not scored). The P = 10 actual odd
+ * maximum stays 7 or 9. Breadth- and depth-first positive searches both exhaust their budgets here; this thread is
+ * parked until a symbolic construction or a better certificate idea appears.
  */
 #include <stdint.h>
 #include <stdio.h>
