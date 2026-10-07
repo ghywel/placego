@@ -9098,3 +9098,22 @@ One bounded Intel replay of Local's separately written retained clocks, source C
 Blind P1, all terminal h vanish, is REFUTED. In ordinary time units h=0.5 at N5=291257 (h before the zero edge=3), and h=5 at N5=634886 (before=7.5). All other fourteen h=0; their terminal edges strictly lower the minimum. The two positive-h exits do not move the running minimum. All sixteen historical debts, intervals and elapsed times still agree with RD16 and L197. The finite phase/birth bound75 is unchanged.
 
 This supplies actual rooted counterexamples to the strict-minimum wording, beyond GC320's synthetic guard, and refutes the tempting endpoint-reset hypothesis at every stage entry. It does not refute bounded endpoint h: the measured maximum is5 at these entries only. The next-stage maximum cannot be predicted from D alone or by setting h=0 on every zero edge. Future analysis must inherit the measured h and actual clock. Local retains TM6b; no kernel change or extension run requested. Bears on Q7's debt estimate; no all-period or prize inference.
+
+
+## RD16 slope-budget calibration: moving the slope toward3 cannot erase the witness (2026-10-07; GC322)
+
+**Bounded exact arithmetic on published witnesses; no new trajectory, potential family or proof count.** The open target needs a slope gamma<3. Before this audit, the prediction was that taking gamma toward3 still leaves a positive necessary reference debt. Counterfactual: replacing the measured slope5/2 by any smaller slope preserves its certified upper bound60. Existing witness arithmetic refutes that shortcut. Bears on Q7's debt allowance, not growth.
+
+For any recorded actual interval of length n and elapsed time e, reference debt at slope gamma is at least max(0,e-gamma*n). RD16's eight distinct witness-length/elapsed pairs are(65,191),(34,125),(19,87),(35,131),(37,129),(41,145),(30,115),(28,130). These witnesses come from different histories; taking their maximum gives a necessary bound for a budget required to cover ALL sixteen histories. It is not a concatenated stream or the exact debt of any one history at the new slope.
+
+For1<=gamma<=3 their maximum lower bound is exactly
+
+    L(gamma)=max(191-65*gamma,130-28*gamma).
+
+The two lines cross at gamma=61/37, value3102/37. To check the other six lines, compare them at1,61/37 and3; all are below the displayed maximum there, hence throughout each of the two linear segments. Exact rational endpoint arithmetic checks these comparisons. At gamma=5/2 the lower bound60 agrees with the independently recomputed maximum debt. At gamma=3 it is46, supplied by the length28, elapsed130 interval; at gamma=1 it is126.
+
+Therefore a whole-prefix reference hypothesis D_gamma(N5)<=C*16 covering these sixteen histories requires C>=15/4 at gamma=5/2, and C>23/8 at every fixed gamma<3. This excludes smaller numerical constants for that normalization, not the existence of a larger period-scaled bound. The denominator16 is the measured common DRIVER period through the entry edge, not the newly entered period32 node's period. A convention using32 changes these ratios by a factor2. Nor may the phase allowance15 be added to this necessary lower bound: G164 supplies an upper transfer allowance, not a lower cost that every birth must incur.
+
+**Independent control and unexpected sign guard.** The length19, elapsed87 witness gives30 at gamma=3, below46. The natural length65 witness instead gives-4 there; it must be clipped at0, and it does not make the debt negative or remove the other histories' witness. At gamma=1 that same natural witness gives126>60, refuting the counterfactual upper-bound reuse. These checks are finite arithmetic on RD16's committed exact intervals, not extrapolation.
+
+The sharper future question is whether actual ancestry admits some finite C above these necessary floors at a fixed gamma<3, coupled with adequate same-history growth. RD16 alone cannot answer it, and its selected witness envelope is only a lower bound at other slopes: unreported intervals may dominate. No expansion of the closed potential searches or new run is proposed.

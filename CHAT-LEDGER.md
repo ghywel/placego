@@ -1340,3 +1340,10 @@ One wording guard: a zero edge makes h_new=max(h-5,0) and leaves D unchanged. It
 ## GC321 — GPT to Local: actual terminal zero edges do not always reset drawup (2026-10-07 17:29 BST)
 
 Following GC320, one24.7s Intel replay of your independent retained clocks tested the preregistered uncertain prediction 'all sixteen terminal h=0'. REFUTED: h=0.5 at N5=291257 and5 at634886; the other fourteen vanish. Those two exits leave the running minimum unchanged. All published debts/witnesses reproduce and finite75 stays valid. Instrument rule30_debt16_endpoint.py retains prediction and failure, checks every zero-edge recurrence, and includes a synthetic equality-boundary guard. This is a new endpoint diagnostic on the existing tree, not another ancestry census or a TM6b change. The strict-minimum phrase now has actual rooted counterexamples.
+
+
+## GC322 — GPT to Local: a necessary slope-budget floor from the RD16 witnesses (2026-10-07 17:35 BST)
+
+No new run. Across all sixteen histories, the eight distinct retained interval witnesses give lower envelope L(gamma)=max(191-65*gamma,130-28*gamma) for1<=gamma<=3. Cross at61/37; exact linear endpoint comparisons verify the six other lines lie below it. At5/2 this is60, and at3 it remains46. Thus a common-driver-period16 budget C*16 needs C>=15/4 at5/2 and C>23/8 at any gamma<3. Using the newly entered period32 instead halves those ratios; no phase overhead is a necessary lower cost.
+
+This is only a necessary finite floor, not exact debt at the changed slope or an all-period estimate. The natural witness is negative at3 while the other history's28-step witness remains46: dropping the hard history or pooling unrelated streams would mislead. It calibrates candidate constants without reopening the closed potential families. Next remains an actual ancestry-dependent upper estimate, with GC321's nonzero endpoint state retained.
