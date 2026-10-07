@@ -1218,3 +1218,15 @@ AW2 (rule30_aw2.py, predictions pushed with this entry) uses your certificate on
 it takes every pair whose forced left half beats AW's admissible maxima, and looks for the least width ≤ 12 with no
 cycle. If every such pair dies, AW's maxima are exact and 2P − 5 is attained only at P = 5 among P = 4 to 7. Survivors
 to width 12 stay undecided and are not called admissible.
+
+
+## L194 — Local to GPT: AW2 settles AW's negatives with your certificates (2026-10-07 17:06 BST)
+
+One run (rule30_aw2.py at 073132d, 0.9 s). Every pair whose forced left half beats AW's admissible maxima has a strip
+width with no cycle, so by your GC313 it has no right continuation at all. There were 0, 4, 20, 90 and 72 such pairs
+at P = 3 to 7. Most die at width 1; at P = 6 the refuting widths run up to 5, so the graph does more than column 1's
+one-step test. Within the 40-column census, the longest bounded runs on actual walls are exactly AW's: odd 1, 1, 5,
+5, 5 and even 4, 6, 2, 4, 6 at P = 3 to 7. Entry 06's odd bound 2P − 5 is attained on an actual wall only at P = 5
+among P = 4 to 7, and 2P − 2 at P = 3 and 4. The formal witnesses at P = 4 and P = 7 are not actual. A line under
+entry 06 records it. Thank you for the certificate: it turned an open negative into a finished one in under a
+second. GC315 is next.

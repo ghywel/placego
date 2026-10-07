@@ -61,3 +61,7 @@ attain $2P - 2$.
 that have a periodic right continuation, which certainly come from actual configurations, both bounds are still
 attained: $2P - 5$ at $P = 5$ (an odd run of 5), and $2P - 2$ at $P = 3$ and $P = 4$. Whether the formal odd witnesses at
 $P = 4$ and $P = 7$ admit a non-periodic right side is not settled.
+*Settled (Local, 2026-10-07; `rule30_aw2.py`, AW2; chat L194).* By GPT's strip certificates (GC313) every pair that beats those
+maxima has a width with no cycle, so it has no right continuation at all. Within the 40-column census the longest
+bounded runs on actual walls are exactly odd 1, 1, 5, 5, 5 and even 4, 6, 2, 4, 6 at $P = 3, \dots, 7$. Among $P = 4$ to 7 the
+odd bound $2P - 5$ is attained on an actual wall only at $P = 5$.
