@@ -58,8 +58,8 @@ for Cloud and SO for the owner.
 
 ## Candidates
 
-Found by Cloud reading the room at the owner's request (1 to 9 at 09:00 BST, 10 to 14 at 09:56, 15 to 18 at 11:08);
-within each batch, ordered from cheapest to dearest to test.
+Found by Cloud reading the room at the owner's request (1 to 9 at 09:00 BST, 10 to 14 at 09:56, 15 to 18 at 11:08,
+19 to 21 at 17:06); within each batch, ordered from cheapest to dearest to test.
 
 1. **The room's own loop, measured.** (from the owner's "the pattern has no settled into a set loop" and house rule
    2's claim that "a model asked to go somewhere unrelated never does"). *Hypothesis:* Entries written on a reply
@@ -169,6 +169,23 @@ within each batch, ordered from cheapest to dearest to test.
    published studies of tapping to visual rhythms first; then a small tapping page that anyone could run on
    themselves, comparing the spread of tap times in the three conditions. A refutation would be no gain from motion.
    Needs a person to tap; one block. *Status:* open.
+19. **A reef bow and a granny bow are different knots.** (from GPT's "the loop with a release handle" and Local's
+   "heterochiral, and the hands inside it"). *Hypothesis:* A shoelace bow is a reef knot or a granny knot with its
+   ends slipped through as loops. The two underlying knots are different: no tugging turns one into the other
+   without passing an end through. The reef is a left-handed trefoil joined to a right-handed one, heterochiral in
+   Local's sense, and is its own mirror image; the granny joins two of the same hand and is not. *Test:* Compute the
+   Jones polynomial of each from a diagram, exactly, with controls on knots whose polynomials are known, and write
+   the proof up if it holds. Standard library; one block. *Status:* claimed by Cloud as SC17.
+20. **Counting by copying.** (from Local's "one, two, three sprouts": 木, 林, 森). *Hypothesis:* Characters made of
+   two, three or four copies of one component mostly mean more, or more intensely, what the component means. *Test:*
+   Pick out every such character from a character-decomposition table, and compare its Unihan definition with its
+   component's, against a control of random pairings. A refutation would be no clear gap from the control. Needs the
+   tables already used in SC6; under an hour. *Status:* claimed by Cloud as SC18.
+21. **Where attention went: the horse.** (from Local's "騵, a horse described to the belly": "a culture's vocabulary
+   piles up exactly where its attention went"). *Hypothesis:* The horse radical 馬 carries far more characters than
+   the cow, sheep or pig radicals, and a far larger share of them name a coat colour or marking. *Test:* Count
+   characters by radical in Unihan and scan their definitions for colour and marking words. A refutation would be a
+   horse share no larger than the others'. Needs Unihan; under an hour. *Status:* claimed by Cloud as SC19.
 
 ## The sparks
 
@@ -665,3 +682,53 @@ No new experiment, proof page or sample extension. Claim closed; return to the m
 - **Second reader.** Not needed; anyone with the paper in hand could run the re-analysis as predicted above.
 - **Might inspire.** Nothing further.
 - **Status.** Done.
+
+## SC17 — a reef bow and a granny bow are different knots (2026-10-07, Cloud; from candidate 19)
+
+- **Hypothesis.** The reef knot and the granny knot, the two knots under a shoelace bow, are different knots, and
+  only the granny is chiral (different from its mirror image).
+- **Prediction and counter-evidence.** Written at 17:06 BST, before any computation. Build each knot as a closed
+  braid (a trefoil is the closure of three same-way crossings on two strands; the granny is two trefoils of the same
+  hand on three strands; the reef two of opposite hands), and compute its Jones polynomial exactly from the Kauffman
+  bracket, a sum over all ways of splitting the crossings. Controls: the unknot gives 1, the trefoil gives t + t³ −
+  t⁴ or its mirror t⁻¹ + t⁻³ − t⁻⁴, and the figure-eight knot, which is its own mirror image, gives the symmetric t²
+  − t + 1 − t⁻¹ + t⁻². I predict the granny's polynomial is the trefoil's squared and the reef's is the trefoil's
+  times its mirror's: the reef's is unchanged when t is replaced by 1/t and the granny's is not, so the two differ
+  and the granny is chiral. Counter-evidence: the same polynomial for both. Caveat stated in advance: this is a
+  classical result, so the spark checks it and writes a self-contained proof; equal polynomials would not show the
+  knots equal, only that this invariant cannot tell them apart.
+- **Method.** tests/probes/sparks/sc17_reef_granny.py.
+- **Status.** Running.
+
+## SC18 — counting by copying (2026-10-07, Cloud; from candidate 20)
+
+- **Hypothesis.** Characters made of two, three or four copies of one component mostly mean more, or more intensely,
+  what the component means.
+- **Prediction and counter-evidence.** Written at 17:06 BST, before any computation. From the CJKVI decomposition
+  table (based on CHISE), take every character whose first listed decomposition is two copies of one character side
+  by side or stacked, three in a row or column or in the 品 shape, or four in a square. Compare its Unihan definition
+  with the component's. Count it related if the two definitions share a content word, or if the composite's
+  definition contains a word of quantity or intensity from a list fixed now: many, much, numerous, multitude, crowd,
+  crowded, abundant, abundance, luxuriant, dense, flourishing, great, intense, blazing, brilliant, plenty,
+  plentiful, flock, herd, heap, piled, rows. Control: the same composites, each paired with a randomly chosen
+  component that has a definition. I predict at least 300 such characters, at least half of those with both
+  definitions related, and at most 15 per cent of the random pairings related by a shared content word.
+  Counter-evidence: under 30 per cent related, or no clear gap from the control.
+- **Method.** tests/probes/sparks/sc18_counting_by_copying.py, run with python3 -I on the tables, kept outside git.
+- **Status.** Running.
+
+## SC19 — where attention went: the horse (2026-10-07, Cloud; from candidate 21)
+
+- **Hypothesis.** The horse radical 馬 carries far more characters than the cow, sheep or pig radicals, and a far
+  larger share of them name a coat colour or marking.
+- **Prediction and counter-evidence.** Written at 17:06 BST, before any computation. Count every character in Unihan
+  by the radical in its kRSUnicode field, simplified forms included: horse 馬 (radical 187), cow 牛 (93), sheep 羊
+  (123) and pig 豕 (152), with dog 犬 (94) reported but not predicted, since its radical also covers wild animals.
+  Scan the kDefinition field for a word of colour or marking from a list fixed now: black, white, red, yellow, grey,
+  gray, blue, green, brown, piebald, dappled, spotted, speckled, striped, roan, sorrel, chestnut, bay, dun, mane,
+  colour, color, colored, coloured, pale, dark, tawny, sandy. I predict the horse radical has at least 1.5 times as
+  many characters as each of the cow, sheep and pig radicals, and that at least 15 per cent of horse characters with
+  a definition name a colour or marking, against at most 6 per cent for each of the other three. Counter-evidence: a
+  horse share no larger than the largest of the other three.
+- **Method.** tests/probes/sparks/sc19_horse_colours.py, run with python3 -I on Unihan, kept outside git.
+- **Status.** Running.
