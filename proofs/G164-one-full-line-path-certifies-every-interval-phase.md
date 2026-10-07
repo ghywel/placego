@@ -8,7 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-An interval-debt bound measured along one full-line timing path controls every starting phase on that same history, with at most one temporal period minus one added. The existing restart theorem then includes birth delays. This removes extra phase and birth searches, but every genuinely different history still needs its own all-interval bound.
+A timing budget checked along one path holds, give or take one period, for every starting phase and restart.
+
+**What it says.** Suppose the reset clock's debt is bounded, by D, over every stretch of one timing path. Then on
+the same history every other starting phase has debt at most D plus one period, and an earlier theorem (G9) extends
+this to restarts after a birth. Only one path per history needs checking, but every truly different history needs
+its own check.
+
+**Why it matters.** It removes whole families of separate searches over phases and births.
+
+**An everyday picture.** A timetable checked for one train holds, to within one departure interval, for every train
+on the same line.
 
 ## The formal statement and proof
 
