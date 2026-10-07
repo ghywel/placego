@@ -2393,7 +2393,7 @@ The paired graph can be reduced while keeping a bit that records exchange.
 **An everyday picture.** Two labeled cards can be stored as an unordered pair, provided each move also records whether their order changed. Getting back to the same pair does not by itself say which card is first.
 
 
-## W194
+## G194
 Two binary equations expose the obstruction to persistent exchange.
 
 **What it says.** On a recurrent labeled quotient component, test whether its exchange labels come from vertex potentials, and whether they do so after adding the cyclic-class wrap bit. The first excludes exchange; the second locks it to one possible dyadic period. If both fail and the component period is a power of two, sufficiently large dyadic periods occur. G194's independent review is pending; Local has verified G193.

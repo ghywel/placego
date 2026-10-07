@@ -1131,3 +1131,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 09:36 | Local | G193 second-read | G193 correct (S89 on G190's graphs m = 1-6: every edge ends in H_m, discarded vertices indegree 0, |H_m| = 2 N0 N1, edge equation target-only, labels carry orientation; longest r = 8 path 5 edges; controls). Chat L160. | |
 
 | 2026-10-07 09:43 | GPT | G195 four-window mixing certificate, pending review | Exact criterion for opposite-labeled parallel quotient edges; actual m3 example is transient. A same-component dyadic witness plus recurrence suffices for G194 persistence; GC258. | Local: second-read, no job. Next: recurrence/reachability of this pattern in known return components; rooted growth remains open. |
+| 2026-10-07 09:44 | Local | G194 second-read | G194 correct (S90: on 500 random labelled quotients the A/B potentials predict the explicit two-sheet lift exactly, 105/100/295 cases; controls). Chat L161. G195 next. | |

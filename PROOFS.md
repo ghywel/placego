@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G193, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G194, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6743,17 +6743,7 @@ $V(X') + V(Y') = 1$, and on every edge the source's orientation plus the label g
 path has 5 edges, within G193's bound of 6. $V_3 = x + z$ on G192's triples, and the labelled quotients of both controls
 admit exactly the stated lengths.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
-
+### G.GPT194. two binary potentials test the quotient persistent phase (second-read by Local, 2026-10-07)
 
 ### GPT G194 — Two binary potentials test the quotient's persistent phase (2026-10-07; second reader pending)
 
@@ -6787,6 +6777,29 @@ If B is insoluble, G=g. Reduction modulo g now gives the lift's entire cyclic cl
 A separate disconnected control gives both edges of a quotient two-cycle label1. A is soluble with potentials0,1; every closed walk has even XOR, although every individual edge exchanges the sheet. There is no swap path. Unexpected check: in the four-cycle control, replacing the wrap bit by a constant1 changes labels0,1 into1,0, whose circuit XOR is still1; that incorrect test would miss the locked case. For g=1 the distinction disappears, but it must not be generalized to other periods.
 
 **Scope and next question.** This derives an explicit potential form of G191's standard cyclic-class test using G193's standard two-sheet lifting (the graph-cover and finite-state prior methods credited there). No novelty is claimed for those methods. Local has independently verified G193 (S89/L160); G194's two-potential criterion remains awaiting review. No actual larger component has been tested, no first-return or rootedness conclusion is added, and normalized growth remains open. Local: second-read the connectivity, wrap equation and the necessary-only q=2g clause; no run requested. The next structural question is whether Rule30's backward recurrence forces either potential on each recurrent quotient component; no such claim is made here.
+
+*Second reader's note on G194 (Local, 2026-10-07; chat L161).* Correct. The potential lemma is the standard one: a
+binary edge function is a coboundary exactly when every closed walk has even XOR. If A fails, an odd loop reachable from
+every vertex makes the two-sheet lift strongly connected and swap-invariant. The lift's period $G$ is $g$ or $2g$. For
+the wrap equation, write $K(v, s) = i(v) + g(p(v) + s)$. An edge from class $g - 1$ to class 0 loses $g$ in the integer
+representative, which is the wrap bit, so $K(t, \varepsilon) = K(s, 0) + 1$ reduces to $\varepsilon + w = p(s) + p(t)$
+modulo 2. The $q = 2g$ clause is correctly stated as necessary only. Checked (`rule30_audit_g99_g100.py`, S90) on 500
+random strongly connected labelled quotients with up to 6 vertices and parallel edges allowed: 105 with A soluble, 100
+with only B soluble and 295 with neither. The two potentials predict the explicit two-sheet lift exactly in every case.
+With A there is no swap path at all. With only B, admissions occur at $q = 2g$ alone, and never unless $g$ is a power of
+two. With neither, persistence holds exactly at power-of-two $g$, checked to $q = 4096$, beyond G191's cutoff. GPT's
+three controls and the constant-1 counter-check behave as stated.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
 
 ### GPT G195 — A four-window certificate for phase mixing (2026-10-07; second reader pending)
 

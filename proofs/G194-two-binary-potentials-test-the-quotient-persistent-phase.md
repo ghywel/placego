@@ -1,10 +1,10 @@
-# Two binary potentials test the quotient's persistent phase
+# two binary potentials test the quotient persistent phase
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G194 — Two binary
-potentials test the quotient's persistent phase (2026-10-07; second reader pending)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT194. two binary potentials
+test the quotient persistent phase (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Two binary equations expose the obstruction to persistent exchange.
 **An everyday picture.** Marking a complete lap is different from marking every step. A two-track route can keep the tracks apart, exchange them only after one lap, or permit exchange after many lap counts.
 
 ## The formal statement and proof
+
+### GPT G194 — Two binary potentials test the quotient's persistent phase (2026-10-07; second reader pending)
 
 **Continuation of reviewed G193 and G191.** Let C be a strongly connected component of G193's labeled quotient, with a positive directed cycle, k vertices, cycle gcd g, and edge labels epsilon in {0,1}. Preserve parallel edge orbits. Assign cyclic classes i(v) in {0,...,g-1}, so each edge increases i by1 modulo g. Define its wrap bit w(e)=1 exactly when i(source)=g-1 and i(target)=0 (for g=1, every edge wraps).
 
@@ -48,3 +50,15 @@ If B is insoluble, G=g. Reduction modulo g now gives the lift's entire cyclic cl
 A separate disconnected control gives both edges of a quotient two-cycle label1. A is soluble with potentials0,1; every closed walk has even XOR, although every individual edge exchanges the sheet. There is no swap path. Unexpected check: in the four-cycle control, replacing the wrap bit by a constant1 changes labels0,1 into1,0, whose circuit XOR is still1; that incorrect test would miss the locked case. For g=1 the distinction disappears, but it must not be generalized to other periods.
 
 **Scope and next question.** This derives an explicit potential form of G191's standard cyclic-class test using G193's standard two-sheet lifting (the graph-cover and finite-state prior methods credited there). No novelty is claimed for those methods. Local has independently verified G193 (S89/L160); G194's two-potential criterion remains awaiting review. No actual larger component has been tested, no first-return or rootedness conclusion is added, and normalized growth remains open. Local: second-read the connectivity, wrap equation and the necessary-only q=2g clause; no run requested. The next structural question is whether Rule30's backward recurrence forces either potential on each recurrent quotient component; no such claim is made here.
+
+*Second reader's note on G194 (Local, 2026-10-07; chat L161).* Correct. The potential lemma is the standard one: a
+binary edge function is a coboundary exactly when every closed walk has even XOR. If A fails, an odd loop reachable from
+every vertex makes the two-sheet lift strongly connected and swap-invariant. The lift's period $G$ is $g$ or $2g$. For
+the wrap equation, write $K(v, s) = i(v) + g(p(v) + s)$. An edge from class $g - 1$ to class 0 loses $g$ in the integer
+representative, which is the wrap bit, so $K(t, \varepsilon) = K(s, 0) + 1$ reduces to $\varepsilon + w = p(s) + p(t)$
+modulo 2. The $q = 2g$ clause is correctly stated as necessary only. Checked (`rule30_audit_g99_g100.py`, S90) on 500
+random strongly connected labelled quotients with up to 6 vertices and parallel edges allowed: 105 with A soluble, 100
+with only B soluble and 295 with neither. The two potentials predict the explicit two-sheet lift exactly in every case.
+With A there is no swap path at all. With only B, admissions occur at $q = 2g$ alone, and never unless $g$ is a power of
+two. With neither, persistence holds exactly at power-of-two $g$, checked to $q = 4096$, beyond G191's cutoff. GPT's
+three controls and the constant-1 counter-check behave as stated.

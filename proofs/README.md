@@ -472,6 +472,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   return-eight graph has no loop at all.
 - [prune paired windows and retain the swap bit in the quotient](G193-prune-paired-windows-and-retain-the-swap-bit.md):
   The paired graph can be reduced while keeping a bit that records exchange.
+- [two binary potentials test the quotient persistent phase](G194-two-binary-potentials-test-the-quotient-persistent-phase.md):
+  Two binary equations expose the obstruction to persistent exchange.
 
 ## The waiting room (not yet verified)
 
@@ -486,7 +488,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 
 *The pages:*
 
-- [Two binary potentials test the quotient's persistent phase](W194-two-binary-potentials-test-the-quotient-s-persistent.md):
-  Two binary equations expose the obstruction to persistent exchange.
 - [A four-window certificate for phase mixing](W195-a-four-window-certificate-for-phase-mixing.md): Four windows can
   certify local phase mixing, but a return path is essential.

@@ -443,6 +443,12 @@ CHECKS (GPT's claims at 827e006):
      holds exactly when V(X') + V(Y') = 1; orientation plus edge label equals the target's orientation on every edge;
      the longest r = 8 path has 5 edges (G193 bounds it by 6); V_3 = x + z on G192's triples; the labelled quotients
      of the half-turn 4-cycle (q = 4 yes, q = 8 no) and K_{2,2} (every even length, not 1).
+  S90 (G194, added 2026-10-07 at 87fd466): on 500 random strongly connected labelled quotients (seed 194; up to 6
+     vertices, parallel edges allowed; 105 with A soluble, 100 with only B, 295 with neither), G194's two GF(2)
+     potentials predict the explicit two-sheet lift exactly: A soluble gives no swap path; only B gives admissions at
+     q = 2g alone, and none unless g is a power of two; neither gives persistence exactly at power-of-two g (checked to
+     q = 4096, beyond G191's cutoff); the half-turn 4-cycle's quotient (A fails, B holds), K_{2,2}'s (both fail), the
+     1-1 two-cycle (A holds), and adding 1 to every edge, which wrongly rejects the locked case.
 """
 import random
 from fractions import Fraction as F
@@ -4624,4 +4630,96 @@ ok89 &= not quotient_admits89(_k22adj, _k22sig, {0, 2}, 1)
 check('S89 G193: in G190\'s graphs (m = 1-6) every edge ends in H_m, discarded vertices have no in-edge, '
       '|H_m| = 2 N0 N1, the edge equation is target-only, labels carry orientation; r = 8 paths <= 6 edges; C4 and K22 '
       'quotients', ok89)
+def potential90(k, edges, rhs):
+    """Solve p(s) + p(t) = rhs(e) over GF(2) on a connected edge list; True if soluble."""
+    adj = {}
+    for idx, (s, t, _) in enumerate(edges):
+        adj.setdefault(s, []).append((t, rhs[idx]))
+        adj.setdefault(t, []).append((s, rhs[idx]))
+    p = {0: 0}
+    todo = [0]
+    while todo:
+        u = todo.pop()
+        for v, r in adj.get(u, []):
+            if v not in p:
+                p[v] = p[u] ^ r
+                todo.append(v)
+    return all(p[s] ^ p[t] == rhs[i] for i, (s, t, _) in enumerate(edges))
+
+
+def classes90(k, edges):
+    """Cycle gcd g of a strongly connected labelled graph and breadth-first classes mod g."""
+    out = {}
+    for s, t, _ in edges:
+        out.setdefault(s, []).append(t)
+    dist, fr = {0: 0}, [0]
+    while fr:
+        nx = []
+        for u in fr:
+            for v in out.get(u, []):
+                if v not in dist:
+                    dist[v] = dist[u] + 1
+                    nx.append(v)
+        fr = nx
+    g = 0
+    for s, t, _ in edges:
+        g = gcd(g, abs(dist[s] + 1 - dist[t]))
+    return g, {v: dist[v] % g for v in range(k)}
+
+
+def lift90(k, edges):
+    """The two-sheet lift as an adjacency bitmask list over (v, s) -> 2v + s, with the sheet swap."""
+    n = 2 * k
+    adj = [0] * n
+    for s, t, e in edges:
+        for sh in (0, 1):
+            adj[2 * s + sh] |= 1 << (2 * t + (sh ^ e))
+    return adj, [x ^ 1 for x in range(n)]
+
+
+ok90, _case90 = True, {'A': 0, 'B': 0, 'none': 0}
+_rng90 = random.Random(194)
+for trial in range(500):
+    k = _rng90.randint(1, 6)
+    # a random strongly connected labelled multigraph: a Hamiltonian cycle plus random extra edges (parallels allowed)
+    perm = list(range(k))
+    _rng90.shuffle(perm)
+    edges = [(perm[i], perm[(i + 1) % k], _rng90.randint(0, 1)) for i in range(k)]
+    edges += [(_rng90.randrange(k), _rng90.randrange(k), _rng90.randint(0, 1)) for _ in range(_rng90.randint(0, 4))]
+    if k == 1 and _rng90.random() < 0.5:
+        edges = [(0, 0, _rng90.randint(0, 1))]
+    g, cls = classes90(k, edges)
+    wrap = [1 if (g == 1 or (cls[s] == g - 1 and cls[t] == 0)) else 0 for s, t, _ in edges]
+    A = potential90(k, edges, [e for _, _, e in edges])
+    B = potential90(k, edges, [e ^ w for (_, _, e), w in zip(edges, wrap)])
+    adj, sig = lift90(k, edges)
+    adm = admitted85(adj, sig, 2 * k, 12)            # up to q = 4096 >= 8 (2k)^2, G191's cutoff
+    pers = criterion85(adj, sig, 2 * k)
+    pow2 = g & (g - 1) == 0
+    if A:
+        _case90['A'] += 1
+        ok90 &= adm == [] and not pers
+    elif B:
+        _case90['B'] += 1
+        ok90 &= not pers and all(2 ** j == 2 * g for j in adm) and (pow2 or adm == [])
+    else:
+        _case90['none'] += 1
+        ok90 &= pers == pow2
+        ok90 &= (all(j in adm for j in (11, 12)) if pow2 else adm == [])
+ok90 &= min(_case90.values()) >= 50
+# GPT's controls: the half-turn 4-cycle's quotient (two-cycle, labels 0, 1): A fails, B holds; K22's quotient (parallel
+# labels 0 and 1 both ways): both fail; a two-cycle labelled 1, 1: A holds; the constant-1 test misses the locked case
+_q4 = [(0, 1, 0), (1, 0, 1)]
+g4, c4 = classes90(2, _q4)
+w4 = [1 if (c4[s] == g4 - 1 and c4[t] == 0) else 0 for s, t, _ in _q4]
+ok90 &= g4 == 2 and not potential90(2, _q4, [0, 1]) and potential90(2, _q4, [e ^ w for (_, _, e), w in zip(_q4, w4)])
+ok90 &= not potential90(2, _q4, [e ^ 1 for _, _, e in _q4])          # adding 1 everywhere would wrongly reject B
+_qk = [(0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1)]
+gk, ck = classes90(2, _qk)
+wk = [1 if (ck[s] == gk - 1 and ck[t] == 0) else 0 for s, t, _ in _qk]
+ok90 &= not potential90(2, _qk, [0, 1, 0, 1]) and not potential90(2, _qk, [e ^ w for (_, _, e), w in zip(_qk, wk)])
+ok90 &= potential90(2, [(0, 1, 1), (1, 0, 1)], [1, 1])
+check('S90 G194: on 500 random strongly connected labelled quotients the A/B potentials predict the explicit two-sheet '
+      'lift (no swap path; only q = 2g; persistence exactly at power-of-two g); C4, K22, the 1-1 cycle, constant-1',
+      ok90)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
