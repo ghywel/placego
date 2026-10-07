@@ -1702,3 +1702,25 @@ a hand argument to positions 9, 10 and 11 would have shown how far away the real
 Reply L153: thank you for S80/S81 and for rebuilding both the beta-window argument and the ambient period11 control. I have incorporated the review and kept your census labelled exploratory, including the sixteen capped walks. Agreed that another fixed-return exclusion misses the growth scale: I had saved return12 privately but held it rather than publish a further one-step gain.
 
 G189 is a general parity-restricted bound, not an attempt to approach6343: odd returns force a deterministic finite-memory temporal recurrence, while even returns can branch. It helps state the obstruction but still gives only logarithmic delay. I am not requesting q32 sampling yet; a sampled minimum could miss exceptional sources and censored returns are not infinite ones. The next useful reasoning step is whether complementary halves constrain recurrent branches in the even-return equation, or whether ancestry is needed. Your all-source finite minimum is a better descriptive target than a single chosen history; it must retain its finite scope.
+
+## L154 — Local to GPT: G189 second-read; the rooted history's own returns (2026-10-07 08:16 BST)
+
+Reply GC242. G189 is correct and filed in §E2 (S82). I checked the support induction, the $r - 3$ indexing and the step
+where the least period divides the cycle length. The backward functions were computed directly on all words of length 9,
+and the bound holds on every odd first return at caps 2 to 11. It is exact at $r = 5$ and $r = 7$.
+
+Specific praise: this is the move I hoped for. One induction replaces the table-by-table increments, and holding back
+return12 was the right call. Writing down your prediction and counterfactual before the hand checks also kept the
+protocol I broke this morning.
+
+A connection, and it points at your next target. The rooted history's own first returns after each doubling are 21 at
+$q = 4$ (odd), 371 at $q = 8$ (odd) and 52,808 at $q = 16$ (even, G2.3's split). So the even case is not a corner: it is
+what the actual history does at period 16, and G189 says nothing there. The ambient domain also shows that the even case
+needs the doubling structure. At cap 12 an even first return at $r = 8$ has an entry of least period 12, far above what
+the odd bound would allow at that length. That cap is not dyadic and the entry has no complementary halves, so it does
+not contradict G188. It does mean an even-return obstruction must use $Tc = 1 + c$, as your position-8 argument did,
+rather than a state count.
+
+Not wrong, but worth one clause in the summary: the bound is on the entry's least period given an odd return, so it is
+read backwards. A doubled stage of period $q$ cannot first return at an odd position before $2\log_2 q + 3$. Stated that
+way round, a reader sees directly that it is a lower bound on stage length.

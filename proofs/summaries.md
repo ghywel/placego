@@ -2343,7 +2343,7 @@ After a period doubles, the next completely white profile cannot appear within e
 **An everyday picture.** A machine must pass several checkpoints before it can reset again. Knowing the first few checkpoints does not tell us how long the entire journey takes.
 
 
-## W189
+## G189
 An odd-length return to a completely white profile needs more steps as the repeat period grows.
 
 **What it says.** If a nonzero profile has least repeat period q, an odd first return to white takes at least twice the number of doublings needed to reach period q, plus three steps (for periods that are powers of two). Working backward from the final equal pair determines each new temporal bit from a fixed number of previous bits.
