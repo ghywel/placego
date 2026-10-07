@@ -3,6 +3,7 @@
 
 RUN-ON:     cpu (Python 3 and the python-sat package: pip install python-sat)
 COMMAND:    python3 tests/probes/openai_math/om189_cycle_clique.py [SECONDS per instance, default 600]
+            python3 tests/probes/openai_math/om189_cycle_clique.py --sym M N [SECONDS]   (one case, split by degree)
 COST:       minutes; the largest case dominates, and an instance that runs out of time is reported as such.
 
 The claim (preprint "Cycle-clique Ramsey numbers", 2026-09-25): for all m >= n >= 3 except (3, 3),
@@ -18,6 +19,11 @@ Predictions (written before the run): every case below agrees with the formula; 
 colouring on 5 vertices (the pentagon) and none on 6. Fail: a colouring at N, or none at N - 1. An instance that
 times out confirms nothing and is reported as unsettled.
 Control: R(C_3, K_3) = 6 is classical, and the solver's own colourings are re-checked without the solver.
+Added after the first run, when the larger cases ran long (--sym): the "no colouring at N" instance is split by the
+largest red degree D. Every graph can be relabelled so that vertex 0 has the largest degree and its neighbours are
+1..D, so it suffices that each instance "vertex 0 adjacent to exactly 1..D, every degree at most D" has no
+solution, for every D from ceil(N/(n-1)) - 1 (below that, greedy colouring gives n independent vertices) to N - 1.
+Its control: the same split, one vertex below the threshold, must find a colouring, re-checked without the solver.
 """
 import itertools, sys, threading, time
 
@@ -77,7 +83,50 @@ def solve(N, m, n, seconds):
     return ans, adj, time.time() - t0
 
 
+def solve_split(N, m, n, seconds):
+    """No colouring at N, case by case on the largest red degree D (see the docstring). True, False or None."""
+    from pysat.card import CardEnc, EncType
+    from pysat.solvers import Solver
+    base = clauses(N, m, n)
+    top = var(N - 2, N - 1, N)
+    for D in range(max(0, -(-N // (n - 1)) - 1), N):
+        cls = list(base) + [[var(0, j, N)] for j in range(1, D + 1)] + [[-var(0, j, N)] for j in range(D + 1, N)]
+        t = top
+        for v in range(1, N):
+            enc = CardEnc.atmost([var(v, u, N) for u in range(N) if u != v], bound=D, top_id=t,
+                                 encoding=EncType.seqcounter)
+            cls += enc.clauses
+            t = max(t, enc.nv)
+        s = Solver(name="glucose4", bootstrap_with=cls)
+        timer = threading.Timer(seconds, s.interrupt)
+        timer.start()
+        t0 = time.time()
+        ans = s.solve_limited(expect_interrupt=True)
+        timer.cancel()
+        if ans:
+            red = {x for x in s.get_model() if 0 < x <= top}
+            adj = [{j for j in range(N) if j != i and var(i, j, N) in red} for i in range(N)]
+            assert not has_cycle(adj, m) and not has_blue_clique(adj, n)
+        s.delete()
+        print(f"  R(C{m}, K{n}) at {N} vertices, largest degree {D}: "
+              f"{ {False: 'none', True: 'COLOURING', None: 'timed out'}[ans] } ({time.time() - t0:.1f} s)", flush=True)
+        if ans is not False:
+            return ans
+    return False
+
+
 def main():
+    if sys.argv[1:2] == ["--sym"]:
+        m, n = int(sys.argv[2]), int(sys.argv[3])
+        seconds = float(sys.argv[4]) if len(sys.argv) > 4 else 3600
+        N = (m - 1) * (n - 1) + 1
+        # Control: the same split must find (and re-check) a colouring one vertex below the threshold.
+        assert solve_split(N - 1, m, n, seconds) is True, "the split encoding missed a colouring at N - 1"
+        print(f"control: the split finds a colouring at {N - 1} vertices", flush=True)
+        ans = solve_split(N, m, n, seconds)
+        verdict = {False: "proved by the split", None: "NOT settled", True: "FALSE"}[ans]
+        print(f"R(C{m}, K{n}) <= {N}: {verdict}")
+        return
     seconds = float(sys.argv[1]) if len(sys.argv) > 1 else 600
     results = []
     for m, n in CASES:

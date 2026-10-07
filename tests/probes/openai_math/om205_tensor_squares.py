@@ -2,8 +2,8 @@
 """om205_tensor_squares.py: openai/math family 205, universal tensor squares for the symmetric groups.
 
 RUN-ON:     cpu (Python 3, standard library)
-COMMAND:    python3 tests/probes/openai_math/om205_tensor_squares.py [NMAX, default 20]
-COST:       about a minute at NMAX = 20 (the character tables dominate).
+COMMAND:    python3 tests/probes/openai_math/om205_tensor_squares.py [NMAX, default 24]
+COST:       about a minute at NMAX = 24 (the character tables dominate; the time grows as their size squared).
 
 The claim (preprint "Universal Tensor Squares for Symmetric Groups", 2026-09-24): for every n other than 2, 4 and 9
 there is a partition lambda of n whose Kronecker coefficients g(lambda, lambda, nu) are all positive, that is, one
@@ -64,7 +64,7 @@ def transpose(lam):
 
 
 def main():
-    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 20
+    nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 24
     exceptions, staircase_ok, control_ok, selfconj_ok = [], True, True, True
     for n in range(1, nmax + 1):
         P = list(partitions(n))
