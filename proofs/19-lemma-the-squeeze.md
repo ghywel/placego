@@ -11,12 +11,13 @@ this file.*
 A counterexample would have to be almost frozen: the right side can only whisper.
 
 **What it says.** Next to a blinking wall, every column on the left carries at most 0.0646 bits of new information
-per tick, a certified bound computed exactly.
+per tick (a bit is the answer to one yes-or-no question), a certified bound computed exactly.
 
 **Why it matters.** A counterexample cannot look random on the left; it must be nearly frozen. It shrinks the
 haystack the needle could be in.
 
-**An everyday picture.** A walkie-talkie that can transmit about six letters per hundred seconds.
+**An everyday picture.** A walkie-talkie that can send about six yes-or-no answers every hundred seconds: not quite
+enough for one letter of the alphabet a minute.
 
 ## The formal statement and proof
 
