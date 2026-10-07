@@ -2333,7 +2333,7 @@ The conditional repeat argument needs a sufficiently small ratio, not a vanishin
 **An everyday picture.** A usable window needs enough room for its repeating pattern. The pattern need not become negligible; it can occupy a sufficiently small fixed share.
 
 
-## W188
+## G188
 After a period doubles, the next completely white profile cannot appear within eleven steps.
 
 **What it says.** Once the repeat period is at least four, the two complementary temporal halves created by doubling rule out these short returns. The proof checks the seventh and eighth positions directly, then rules out the ninth through eleventh through small tables of necessary temporal transitions. An allowed cycle at the eleventh has odd period and cannot follow a doubling.

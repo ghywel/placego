@@ -460,6 +460,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   For these repeat contradictions, occasional sufficiently slow period growth is enough.
 - [a positive period/depth threshold suffices for both repeat reductions](G187-a-positive-period-depth-threshold-suffices-for-both.md):
   The conditional repeat argument needs a sufficiently small ratio, not a vanishing one.
+- [a doubled stage of period at least four cannot return to zero within eleven steps](G188-a-doubled-stage-of-period-at-least-four.md):
+  After a period doubles, the next completely white profile cannot appear within eleven steps.
 
 ## The waiting room (not yet verified)
 
@@ -472,7 +474,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [A doubled stage of period at least four cannot return to zero within eight steps](W188-a-doubled-stage-of-period-at-least-four.md):
-  After a period doubles, the next completely white profile cannot appear within eleven steps.
+*No proofs are waiting for a second reader at the moment.*

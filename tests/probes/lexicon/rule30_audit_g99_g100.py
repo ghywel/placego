@@ -390,6 +390,19 @@ CHECKS (GPT's claims at 827e006):
      fraction is at least 5/4); GPT's control (fraction 10, K = 16, threshold 17, s = 256, M = 547, margin 88.5, K = 8
      gap -2); for q = 2^8 .. 2^40 the endpoint s = Kq, M = 2s + 2q + D reaches both contradictions once q is large
      against D and B; the schedule 18 2^j passes 17 but its stage ends tend to 1/36 > 1/42; the record's R_4 = 25 > 17.
+  S80 (G188 with its continuation, added 2026-10-07 at 46e23c5 and ea8fd3f): after every odd doubling at q = 4, 8, 16
+     (every odd q/2-source, both children, T c = 1 + c) no profile at positions 1 to 10 is zero (the first returns are
+     21 at q = 4 and 88 at q = 8); for every nonzero c at caps 2 to 12, every branch has the profile 1 at position 2
+     and no zero at positions 9 or 10; GPT's E table, the position-9 transitions (one cycle, 010 <-> 101) and the
+     position-10 edges (five, acyclic), and position 8's allowed triples 001, 010, 011, 100, 101, all by brute force;
+     the even-source seven-step control at cap 4 and the q = 2 five-step return; the rooted q = 16 stage from the
+     q = 8 cap exit (161, 0) first returns 52,808 steps later (depth 53,207) with an even driver, G2.3's split.
+     The ambient first returns at q = 16 are in rule30_g188_returns.py (exploratory, not preregistered).
+  S81 (G188's return-11 continuation, added 2026-10-07 at bdfc1f6): H and F as stated; the successor rule's table
+     equals GPT's sixteen entries, every state feeds one 11-cycle, and the cycle word 00001111001 has exactly those
+     windows; backward reconstruction from it gives a compatible return at position 11 at cap 11, nonzero throughout,
+     with an even-parity source, and the forward walk from its (0, c) reproduces it; among caps 2 to 13, a first zero
+     at position 11 occurs only at cap 11; after every odd doubling at q = 4, 8, 16 nothing through position 11 is zero.
 """
 import random
 from fractions import Fraction as F
@@ -3946,4 +3959,159 @@ ok79 &= 1 / (2 * _Fr(18) - _Fr(1, 2 ** 30)) > _Fr(1, 42)
 ok79 &= _R74[4] > 17 and 400 > 2 * 17 * 8 + 127
 check('S79 G187 dyadic refinement: K the least power of two above (2 gamma + A + 1)/(6 - 2 gamma), K >= 2, the next '
       'smaller not licensed; s = Kq reaches both contradictions; threshold 17 at C = 1; the 18 2^j schedule', ok79)
+def walk80(q, a, cap):
+    """After the zero driver (a, 0): positions 1, 2, ... starting at a child c; deterministic until a zero.
+    Returns, per child c, the first zero position (None if none by cap) and the parity of the driver before it."""
+    out = []
+    for c in _rq3.children(a, 0, q):
+        x, y, pos = 0, c, 1
+        while y and pos < cap:
+            ch = _rq3.children(x, y, q)
+            x, y, pos = y, ch[0], pos + 1
+        out.append((pos, bin(x).count('1') % 2) if y == 0 else (None, None))
+    return out
+
+
+def branches80(q, x, y, depth):
+    """Every compatible continuation of the pair (x, y) for depth more profiles, as lists of profiles."""
+    if depth == 0:
+        return [[]]
+    res = []
+    for z in _rq3.children(x, y, q):
+        for rest in branches80(q, y, z, depth - 1):
+            res.append([z] + rest)
+    return res
+
+
+ok80 = True
+# G188 and its continuation on every odd doubling entry: q = 4, 8, 16, every odd q/2-source, both children
+_min80 = {}
+for q in (4, 8, 16):
+    h = q // 2
+    for blk in range(1, 1 << h):
+        if bin(blk).count('1') % 2 == 0:
+            continue
+        a = blk | (blk << h)
+        kids = _rq3.children(a, 0, q)
+        ok80 &= len(kids) == 2 and all(_rq3.rot(c, h, q) == c ^ ((1 << q) - 1) for c in kids)     # T c = 1 + c
+        if q <= 8:
+            for pos, par in walk80(q, a, 10 ** 4):
+                _min80[q] = min(_min80.get(q, 10 ** 9), pos)
+        else:
+            ok80 &= all(pos is None for pos, par in walk80(q, a, 11))           # no zero at positions 1..10
+ok80 &= _min80 == {4: 21, 8: 88}
+# positions 9 and 10 need only a nonzero c: every nonzero c at caps 2 .. 12, every branch, no zero at 9 or 10
+for q in range(2, 13):
+    for c in range(1, 1 << q):
+        for br in branches80(q, 0, c, 9):
+            seq = [c] + br                                  # positions 1 .. 10
+            ok80 &= seq[1] == (1 << q) - 1 and seq[8] != 0 and seq[9] != 0
+# GPT's E table and the two return tables, by brute force over bits
+E80 = lambda x, y, z: x ^ y ^ (z & (1 - x) & (1 - y))
+ok80 &= [E80(*map(int, '{:03b}'.format(t))) for t in range(8)] == [0, 1, 1, 1, 1, 1, 0, 0]
+t9 = {}
+for x, y, z in product((0, 1), repeat=3):
+    for v in (0, 1):
+        d2 = x ^ z                                          # (Delta^2 w)(t) = w(t) + w(t + 2)
+        if (y ^ v) == 1 ^ (E80(x, y, z) | d2):              # S(Delta^2 w)(t) = 1 + (E(w) OR Delta^2 w)(t)
+            t9.setdefault((x, y, z), []).append(v)
+ok80 &= all(len(v) == 1 for v in t9.values()) and len(t9) == 8
+_nx9 = {k: (k[1], k[2], v[0]) for k, v in t9.items()}
+ok80 &= _nx9[(0, 1, 0)] == (1, 0, 1) and _nx9[(1, 0, 1)] == (0, 1, 0) and _nx9[(1, 0, 0)] == (0, 0, 0)
+ok80 &= _nx9[(0, 0, 0)] == (0, 0, 1) and _nx9[(1, 1, 1)] == (1, 1, 0)
+_cyc9 = set()
+for k in _nx9:
+    s_ = _nx9[k]
+    for _ in range(8):
+        if s_ == k:
+            _cyc9.add(k)
+            break
+        s_ = _nx9[s_]
+ok80 &= _cyc9 == {(0, 1, 0), (1, 0, 1)}
+e10 = set()
+for x, y, z, v in product((0, 1), repeat=4):
+    Ea, Eb = E80(x, y, z), E80(y, z, v)
+    if (Ea == 1 and Eb == 0) or (Ea == 0 and Eb == 1 ^ x ^ y ^ z ^ v):
+        e10.add(((x, y, z), (y, z, v)))
+ok80 &= e10 == {((0, 1, 1), (1, 1, 0)), ((0, 1, 1), (1, 1, 1)), ((1, 1, 1), (1, 1, 0)), ((1, 1, 0), (1, 0, 0)),
+                ((1, 0, 0), (0, 0, 0))}
+# position 8's f-equation: y(1 + z) = 1 + [(x + z) OR x(1 + y)] allows exactly 001, 010, 011, 100, 101
+_al8 = {(x, y, z) for x, y, z in product((0, 1), repeat=3) if (y & (1 - z)) == 1 ^ ((x ^ z) | (x & (1 - y)))}
+ok80 &= _al8 == {(0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1)}
+# the literal controls: the even-source seven-step return at cap 4, and the q = 2 five-step return
+w4 = lambda s: sum(int(b) << t for t, b in enumerate(s))
+_ctl = [w4(s) for s in ('0110', '0000', '1101', '1111', '0001', '0101', '0011', '0011', '0000')]
+ok80 &= all(_rq3.rot(_ctl[i + 2], 1, 4) == _ctl[i] ^ (_ctl[i + 1] | _ctl[i + 2]) for i in range(7))
+ok80 &= _ctl[0] == _ctl[2] ^ _rq3.rot(_ctl[2], 1, 4) and _rq3.rot(_ctl[2], 2, 4) != _ctl[2] ^ 15
+_q2 = [w4(s) for s in ('00', '01', '11', '01', '01', '00')]
+ok80 &= all(_rq3.rot(_q2[i + 2], 1, 2) == _q2[i] ^ (_q2[i + 1] | _q2[i + 2]) for i in range(4))
+# the rooted q = 16 stage: from the q = 8 cap exit (161, 0), doubled, the first zero is 52,808 steps later
+# (depth 399 + 52,808 = 53,207, G2.3's white driver), with an even-parity driver (a genuine split, not a doubling)
+_rt16 = walk80(16, 161 | (161 << 8), 60000)
+ok80 &= _rt16 == [(52808, 0), (52808, 0)]
+check('S80 G188 with its continuation: no zero at positions 1 to 10 after any odd doubling at q = 4, 8, 16 (first '
+      'returns 21 and 88 at q = 4, 8); 9 and 10 for every nonzero c at caps 2-12; E and the return tables; the '
+      'controls; the rooted q = 16 return at 53,207', ok80)
+ok81 = True
+H81 = lambda x, y, z: (x ^ y) | (y ^ z)
+F81 = lambda x, y, z, v: y ^ v ^ H81(x, y, z)
+ok81 &= [H81(*map(int, '{:03b}'.format(t))) for t in range(8)] == [0, 1, 1, 1, 1, 1, 1, 0]
+# the return-11 successor rule u = z + H(y, z, v) + 1 + [F(x, y, z, v) OR (E(x, y, z) + E(y, z, v))]
+_succ81 = []
+for t in range(16):
+    x, y, z, v = map(int, '{:04b}'.format(t))
+    u = z ^ H81(y, z, v) ^ 1 ^ (F81(x, y, z, v) | (E80(x, y, z) ^ E80(y, z, v)))
+    _succ81.append('{}{}{}{}'.format(y, z, v, u))
+ok81 &= _succ81 == ['0001', '0011', '0100', '0111', '1000', '1011', '1100', '1111',
+                    '0000', '0010', '0100', '0111', '1001', '1011', '1100', '1110']
+_nx81 = {'{:04b}'.format(t): _succ81[t] for t in range(16)}
+_cy81, s_ = ['0000'], _nx81['0000']
+while s_ != '0000':
+    _cy81.append(s_)
+    s_ = _nx81[s_]
+ok81 &= _cy81 == ['0000', '0001', '0011', '0111', '1111', '1110', '1100', '1001', '0010', '0100', '1000']
+for t in _nx81:                                           # every state feeds that one cycle
+    s_ = t
+    for _ in range(16):
+        s_ = _nx81[s_]
+    ok81 &= s_ in _cy81
+# the cycle word w = 00001111001 and the ambient return at position 11 it reconstructs, at cap 11
+_w81 = [int(b) for b in '00001111001']
+ok81 &= ['{}{}{}{}'.format(*[_w81[(i + k) % 11] for k in range(4)]) for i in range(11)] == _cy81
+W = lambda bits: sum(b << t for t, b in enumerate(bits))
+w = W(_w81)
+S = lambda u: _rq3.rot(u, 1, 11)
+dw = w ^ S(w)
+Ew = W([E80(_w81[t], _w81[(t + 1) % 11], _w81[(t + 2) % 11]) for t in range(11)])
+Fw = W([F81(*[_w81[(t + k) % 11] for k in range(4)]) for t in range(11)])
+e = S(Ew) ^ (Fw | Ew)
+c = 2047 ^ S(e)
+seq = [0, c, 2047, e, Fw, Ew, dw ^ S(dw), w & dw, dw, w, w, 0]  # 0, c, 1, e, f, g, h, i, j, k, l, 0
+ok81 &= all(S(seq[i + 2]) == seq[i] ^ (seq[i + 1] | seq[i + 2]) for i in range(10))
+ok81 &= c not in (0, 2047) and bin(c ^ S(c)).count('1') % 2 == 0 and all(seq[k] for k in range(1, 11))
+# forwards from (0, c) at cap 11 the walk is that sequence, returning to zero at position 11
+x, y, path = 0, c, [c]
+while y and len(path) < 12:
+    x, y = y, _rq3.children(x, y, 11)[0]
+    path.append(y)
+ok81 &= path == seq[1:] and len(path) == 11
+# without an earlier zero, a position-11 return occurs only at cap 11 among caps 2 to 13
+_caps81 = set()
+for q in range(2, 14):
+    for c0 in range(1, 1 << q):
+        x, y, pos = 0, c0, 1
+        while y and pos < 11:
+            x, y, pos = y, _rq3.children(x, y, q)[0], pos + 1
+        if pos == 11 and y == 0:
+            _caps81.add(q)
+ok81 &= _caps81 == {11}
+# and after an odd doubling at q = 4, 8, 16 no profile through position 11 is zero
+for q in (4, 8, 16):
+    h = q // 2
+    for blk in range(1, 1 << h):
+        if bin(blk).count('1') % 2:
+            ok81 &= all(pos is None for pos, par in walk80(q, blk | (blk << h), 12))
+check('S81 G188 return 11: the successor table, one 11-cycle fed by every state, the cycle word 00001111001 and its '
+      'ambient return at cap 11 (even-parity source); returns at 11 only at cap 11 (caps 2-13); none after doubling',
+      ok81)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
