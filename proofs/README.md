@@ -397,6 +397,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The Rudin–Shapiro sequence passes the repeat test, by a computer-checked certificate.
 - [finite-tail exceptions in a minimal trace family are empty or countable dense](G154-finite-tail-exceptions-in-a-minimal-trace-family.md):
   In a minimal family of traces, finite starting tails are either absent or countable and dense.
+- [trace factor complexity bounds the number of finite-tail exceptions](G155-trace-factor-complexity-bounds-the-number-of-finite.md):
+  The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
+  radius.
 
 ## The waiting room (not yet verified)
 
@@ -409,8 +412,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Trace factor complexity bounds the number of finite-tail exceptions](W155-trace-factor-complexity-bounds-the-number-of-finite.md):
-  The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
-  radius.
+*No proofs are waiting for a second reader at the moment.*

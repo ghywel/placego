@@ -1914,7 +1914,7 @@ In a minimal family of traces, finite starting tails are either absent or counta
 
 **An everyday picture.** A countable collection can visit every neighbourhood while occupying none of the measure.
 
-## W155
+## G155
 The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their radius.
 
 **What it says.** A finite row of radius L is fixed by the first ceil(L/2) visible symbols. Rudin–Shapiro has only linearly many such factors. If one exception exists, its time shifts also provide a linear lower bound.

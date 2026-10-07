@@ -1,10 +1,10 @@
-# Trace factor complexity bounds the number of finite-tail exceptions
+# trace factor complexity bounds the number of finite-tail exceptions
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G155. Trace factor complexity
-bounds the number of finite-tail exceptions (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT155. trace factor
+complexity bounds the number of finite-tail exceptions (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The number of possible finite-tail exceptions in the Rudin–Shapiro family grow
 **An everyday picture.** Counting the possible seats does not tell us whether anyone occupies one.
 
 ## The formal statement and proof
+
+### G155. Trace factor complexity bounds the number of finite-tail exceptions (2026-10-07)
 
 **Status and target.** Symbolic deduction, independent review pending; no computation. Uses reviewed G139 inverse locality, G140 coding/radius growth and G154 (Local L112). The record search found G147/G154's exponential fixed-radius count and G139's fixed-depth temporal factor bound, but not this growing-radius exception count. This is an elementary application of substitution factor counting, not a new general complexity theorem. Prediction: Rudin–Shapiro's exception count is at most linear in radius. Counterfactual: temporal zero entropy alone resolves whether there is even one finite-tail exception; the matching conditional lower bound shows the remaining gap.
 
@@ -40,3 +42,17 @@ Consequently N_(X_r) is either identically zero or grows linearly in L, with mat
 **Unexpected endpoint check.** Replacing ceil(L/2) by floor(L/2) is wrong. At depth three G138 gives v_3(0)=1-c_1: words with the same c_0 but different c_1 have different depth-three cells. At even depth four the determining prefix has two symbols, as v_4(0)=c_0*c_1. Thus the count uses the actual growing window, not a fixed-depth entropy limit or an omitted endpoint. The bound is compatible with a dense countable exceptional set and unbounded radii from G154.
 
 **Scope.** This counts hypothetical finite-tail rows within the Rudin–Shapiro family. It excludes neither the original word nor any specified shift and gives no full right extension. The necessary count is linear, not positive entropy. A spatial invariant forcing N_(X_r) to be zero is still missing; another prefix census cannot establish that invariant. No prize conclusion.
+
+*Second reader's note on G155 (Local, 2026-10-07; chat L113).* Correct. The determining window is the one from my G140
+note: depth $j$ at time 0 needs the wall-neighbour column at times 0 to $j - 1$, whose even times carry
+$\lceil j/2 \rceil$ visible letters, so two words sharing $\lceil L/2 \rceil$ letters share the row through depth $L$.
+Two finite rows that agree through $L$ and vanish beyond it are equal, and injectivity of $\Phi$ finishes. The two-block
+coverage holds because the fixed word is tiled by level-$m$ blocks of length $h \ge k$, so a factor of length $k$ lies
+in two consecutive blocks and is fixed by the pair and an offset. The lower bound uses the radius clock, and the
+depth-three endpoint check is right. Checked (`rule30_audit_g99_g100.py`, S49): on 60 random words, for $L$ up to 40,
+changing any letter from position $\lceil L/2 \rceil$ on leaves depths 1 to $L$ unchanged, while changing letter
+$\lceil L/2 \rceil - 1$ changes depth $L$ when $L$ is odd. Depth 3 is $1 - c_1$ and depth 4 is $c_0 c_1$, and on
+$2^{18}$ letters of $r$ the factor counts obey $P(k) \le 16h < 32k$ for $k \le 64$. Descriptive: those counts equal
+$8k - 8$ at every tested $k$ from 8 to 64, the value I recall from the automatic-sequences literature for Rudin–Shapiro
+(not re-read here). If that value holds, the exception count is at most $8 \lceil L/2 \rceil - 8$ once
+$\lceil L/2 \rceil \ge 8$.
