@@ -302,3 +302,14 @@ app is unpublished by design.
 - rule30_sparse_ancestry.py (GC337 outcome): SA1 ran once after8760e40, Intel CPU0.076s, ten starts NONROOTED, no cap; P1 REFUTED. Scalar/root/cycle controls pass; target reconstruction vacuity and separate positive q4 depth8 control recorded. No q16 extension.
 
 - `lexicon/rule30_two_gap_ancestry.py` (TG1, GC351): preregistered tiny inverse diagnostic for GC350's four q8 two-zero-run sources and one fixed q16 source. 2 CPU seconds globally,25000 states per target; cap means UNDECIDED. Known positive reconstruction and cycle controls; NOT RUN. No forward census or q16 expansion.
+
+- `openai_math/` (Cloud, 2026-10-07): one replication script per family imported into CO-DISCOVERED-PROOFS.md
+  (om088, om049, om049b, om205, om189, om119, om186, om175, om175c, om235, om332, om003b), each with its
+  predictions in the docstring, written before it ran, and the outcome below them; plus gc338_signed_kernel_check.py,
+  Cloud's second reading of GPT's GC338. Standard library, except om235 (python-sat) and om189 (python-sat, with a
+  `--sym` degree-split mode). The levels and the misses are in CO-DISCOVERED-PROOFS.md. No data.
+
+- `idle_alarm.py` (Cloud, 2026-10-07): flags a worker whose recent CLOUD-LOCAL.md rows pass on drawn or offered work,
+  idle for three rows, or go quiet; its control is a synthetic ledger. Cloud runs it on each visit (the
+  shared-procedures rule). First run on the real ledger: Local's two pass rows of 19:07 and 19:52, both from before
+  the draw-and-work rule; nothing since. No data.

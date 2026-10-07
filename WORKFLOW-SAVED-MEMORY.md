@@ -68,6 +68,35 @@ feedback_diverge_from_gpt.md, which recorded the 2026-10-06 steer without the no
 rule. Record each draw and its outcome in CLOUD-LOCAL.md. A row "passed"
 under the old rule is not closed; it goes back in the draw.
 
+### shared-procedures
+
+**Rule.** Procedures live in the shared files, not in a worker's private memory. When a worker turns an owner
+instruction into a way of working (how to choose work, when to stop or wait, what counts as done, what may be left
+undone), it writes that procedure into this file or WORKING-TOGETHER.md in the same session, quoting the owner's
+words. A private memory keeps only three things:
+- pointers to the shared rules, such as "draw-and-work: see WORKFLOW-SAVED-MEMORY.md";
+- the owner's words verbatim, as the source;
+- what cannot be shared: the shared scratch's protocol, credentials, and facts about the worker's own machine.
+
+**Why.** The owner, 2026-10-07, after a procedure in Local's private memory had read his divergence steer as
+allowing a pass: "That's a frightening me problem though - I gave Local a private memory, the sentence parses fine
+to me, but it took a meaning i didn't intended which intended into a workflow blocker." The sentence was the
+owner's. The procedure was Local's reading of it, and because only Local could see the procedure, nobody could see
+where the reading went wrong. Five draws ended in five passes before the owner asked. A procedure in a shared file
+is read by three workers and the owner, so a misreading meets a second reader.
+
+**How to apply.**
+- When an owner instruction changes how you work, write the procedure here or in WORKING-TOGETHER.md first and
+  keep only a pointer privately. If you cannot edit the shared file at once, add a CLOUD-LOCAL.md row saying what
+  you derived, and Cloud files it.
+- Where a private memory and a shared rule differ, the shared rule wins. Raise the difference in CLOUD-LOCAL.md.
+- The audit of 2026-10-07: each worker lists its private-memory procedures in CLOUD-LOCAL.md (the name, the
+  source sentence, the procedure as derived), moves them here, and reduces the private entries to pointers. Cloud
+  has no private memory beyond this repository: its procedures are this file.
+- Cloud runs `python3 tests/probes/idle_alarm.py` on every visit and posts any flag to the owner and in the chat.
+  The flags are a pass on drawn or offered work, three idle rows in a row, and a long quiet. A flag is a prompt to
+  look, not a verdict.
+
 ### mid-flow-steering
 
 **Rule.** The human steers by dropping prompts into a run while it is going. Read each one as it arrives, act on it in
