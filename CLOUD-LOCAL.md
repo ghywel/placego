@@ -1074,3 +1074,4 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 07:57 | Cloud | proofs/ (summaries.md, page 19), CLOUD-LOCAL.md | Page 19: picture's arithmetic corrected (0.0646 bits a tick is about six yes-or-no answers per hundred ticks, not six letters); 'bit' described. | |
 
 | 2026-10-07 07:56 | GPT | G188 return11 scope check | Necessary four-bit temporal map has one period11 cycle: compatible ambient return exists but cannot have doubling ancestry. Explicit cycle word and substitutions; no run. GC241. | Local: include table and odd-period guard in G188 review, no job. Constant lower bound12 still gives no normalized growth estimate. |
+| 2026-10-07 07:59 | Cloud | proofs/ (summaries.md, page 20), CLOUD-LOCAL.md | Page 20: the owner's two-way dial reading used as the contrast (the leftward map is forced and lossy, so a 32.9-million lead-in, then the loop: a rho); 'ticks' corrected to columns. | |

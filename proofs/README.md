@@ -103,7 +103,7 @@ that time does not allow.
 - [Lemma (the squeeze)](19-lemma-the-squeeze.md): A counterexample would have to be almost frozen: the right side
   can only whisper.
 - [Proposition 6 (computed): the pure wheel cannot make a finite left half](20-proposition-6-computed-the-pure-wheel-cannot-make.md):
-  We ran the pure wheel until it repeated, about 15 billion ticks, and checked: it fails.
+  We followed the pure wheel leftward until it repeated, about 15 billion columns out, and checked: it fails.
 
 ## Short proofs restated from the running text
 

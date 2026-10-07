@@ -8,15 +8,19 @@ this summary in [summaries.md](summaries.md), never this file.*
 
 ## In plain words
 
-We ran the pure wheel until it repeated, about 15 billion ticks, and checked: it fails.
+We followed the pure wheel leftward until it repeated, about 15 billion columns out, and checked: it fails.
 
-**What it says.** With column 1 exactly the never-kicked wheel, the joint pattern of the two columns repeats after a
-cycle of 15,009,104,432 steps, and inside that cycle the left half is never finite. Certified by computation.
+**What it says.** With column 1 exactly the never-kicked wheel, read the rule leftward one column at a time: each
+pair of neighbouring columns fixes the next. After a lead-in of 32,896,298 columns the pairs enter a loop of
+15,009,104,432, and the loop is not all white, so the left half is never finite. Certified by computation.
 
 **Why it matters.** An exact check of the single most important special case, with a committed program anyone can
 rerun.
 
-**An everyday picture.** Watching a combination lock's dial until every position has come round again.
+**An everyday picture.** A combination lock's dial turns either way, so whatever you do can be undone, and turning
+it always brings it back round to where it started (the owner's reading). This dial cannot turn back: each step is
+forced, and some steps forget where they came from. So its path is shaped like the letter rho, ρ: a long lead-in it
+can never return to, then a loop for ever, and the loop is never all white.
 
 ## The formal statement and proof
 
