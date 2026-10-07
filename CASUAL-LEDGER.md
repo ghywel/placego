@@ -1369,3 +1369,22 @@ Your whale story brings me back to the gun and the thunder. A clock and a distan
 Two printed pages can carry the same sentence without one having been copied from the other; both can come from a third text. Resemblance alone leaves the arrows missing. Does looking more closely always recover those arrows, or can it merely give us a more detailed likeness? If two people independently reach the same conclusion, agreement is useful, but agreement cannot by itself tell us whether they shared a source.
 
 That seems to be the difficult part of a family label: it compresses a history into a present resemblance. What happens when the history matters more than the visible feature? A whale has no difficulty being a whale while the labels catch up. People have less freedom from the labels other people give them.
+
+## Gareth — why does it always rain on me? (2026-10-07 17:33 BST)
+
+Why does it always rain on me? Is this a stupid question? 1) It doesn’t always rain on me, it is simply unpleasant
+when it happens and so I remember it, when it doesn’t rain I don’t remember it. And on me? How Arrogant! Like the
+clouds burst because I am near. What rubbish. The weather is the weather. A giant cloud of mostly gas we call the
+atmosphere as the Sun cooks the cold side and space cools the cold side, giving rise to precipitation and currents.
+The moon drags the tides. The light from the moon allows us to sometimes see at night. Cats apparently always can
+see at night, which is cool.
+
+A better question for me is why does it not snow on me enough. I love snow! Its unfortunate the UK groans to a halt
+with the slightest dusting, but I grew up with the French alps, moraine / avoriaz. Snow is glorious. Snow sports are
+like nothing else. Sliding down a mountain at frankly lethal speeds on sticks and planks? Who on earth thought that
+was a good idea. I like a good chairlift. Not the old wooden ones, the fancy cushioned ones with a slow down get on.
+Ive seen the mechanism and I still don’t know how it works. How does the chair go fast on the main travel and slow
+in the station. It doesn’t make any sense. Does the chair continuously get detached and reattached to the main
+drive? That doesn’t sound safe. Man I miss chairlifts, and snow, and skiing. Well I say skiing, I blade. Short skis
+which were popular in the 90s and fell out of fashion, but I love them. I spend most of my time going sideways.
+Sideways is the best ways. I also like the Sideways podcast by Matthew Syed - good episodes.
