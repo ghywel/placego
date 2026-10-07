@@ -8404,3 +8404,20 @@ The reviewed G193 count sharpens the crude graph size to n=2*N0*N1 <= 2^(2m-1)=2
 **Identified unexpected scaling guard.** The abstract numerical sequence q_j=2^j, r_j=j+3 obeys that inequality exactly while r_j/q_j tends to0. It is not a compatible Rule30 history or a proposed measurement. It checks the inference itself: an increasing absolute delay, even with every component locked, is insufficient for the normalized-stage obligation. Similarly an abstract directed q-cycle with its half-turn swap is locked and has q vertices, so generic locked-component theory alone cannot improve the q<=n bound. This abstract control has no assertion of a Rule30 window realization.
 
 **Decision and next intention.** Retain G190-G198 as exact diagnostics and proof tools; stop extending the named-witness component route or polishing its generic cutoff. The next reasoning block targets a rooted restriction linking first-return distance to period, or directly the unbounded normalized stage lengths of G184/G186. Any structural component proposal must state what quantitative estimate it would deliver before asking for another graph classification. The source restriction may have to use the whole rooted predecessor chain, which the ambient window graph omits. No new computational job, unproved general rigidity claim, status-board promotion or prize claim is attached to this checkpoint.
+
+
+### GPT G199 — A dyadic repeated pair need not have rooted ancestry (2026-10-07; second reader pending)
+
+**Question, control and counterfactual.** A possible way to simplify the rooted distance problem was to treat every dyadic repeated pair(w,w) as lying in the backward zero basin. That would erase the ancestry test at a return endpoint. Check it against G189's already verified balanced cap8 return, rather than launch a basin census. The counterfactual is that dyadic period plus equal endpoint profiles suffices for rootedness. It fails; the inference below uses the completed rooted cap8 certificate, not a new run.
+
+Recall B(a,b)=(S b XOR(a OR b),a). For any nonzero pair whose iterates first reach(0,0), its last nonzero predecessor must be(0,1): B(a,b)=0 forces a=0 and S b=b, so b is constant; the nonzero choice is1. Thus finite absorption is equivalent to membership in the rooted tree. This observation does not assert absorption for arbitrary pairs.
+
+Use temporal words w=10100100, c=10010011 and a=10110100 from the verified G189/S83 prefix
+
+    a, 0, c, 1, e, f, g, w, w, 0.
+
+All displayed profiles are cap8 words. Counting the seven backward pair steps in that prefix gives B^6(w,w)=(0,c) and B^7(w,w)=(a,0). Directly Delta c=a. The word a has four black bits and least period8: its halves1011 and0100 differ. Hence(a,0) would be a genuine even-parity zero-driver branch node of least period8 if it were rooted. The complete cap8 rooted certificate, recorded under Local L115 and G161, excludes every such node. It follows that(a,0) and consequently(w,w) never reach zero under B. A finite eventual nonzero cycle follows from the finite cap8 state space, but no cycle length or trajectory was computed here.
+
+**Identified unexpected scope check.** The previous cap2 nonabsorbing example(01,10) had unequal coordinates, so it did not refute this repeated-pair shortcut. This cap8 example has equal coordinates AND primitive dyadic period. It is still not a period-doubling return: its integration source has even parity and full period8, as G189 already records. Therefore it blocks erasing rooted ancestry but does not refute G190's odd-doubling reconstruction or establish a nonrooted witness inside that stronger domain.
+
+**Failure retained and next obligation.** Dyadic repeated endpoints alone cannot recover the missing rooted predecessor history. No new growth estimate or status-board change. Local: check the six/seven-step indexing and the transfer from the existing all-cap8 no-genuine-branch certificate; no basin computation requested. The next rooted distance argument must retain actual ancestry, not silently infer it from the endpoint's period or equality.
