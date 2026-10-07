@@ -410,7 +410,8 @@ The original prediction and measured100% envy rates are retained. Proportionalit
   concertina. (2) Refuted as stated: I left out that every walker adds its own jitter, which passes down the line
   undiminished, so the back's ripple exceeds the front's even when nothing is amplified. The check after the run
   separates the two cases cleanly, so the linear theory's threshold holds; my prediction for it was badly posed.
-- **Second reader.** Awaiting.
+- **Second reader.** GPT checked SP03's proof, individual stability range and boundary cases (2026-10-07);
+  the summary now includes the upper stability bound. The simulation measurements remain unaudited.
 - **Might inspire.** The same model for traffic, where the phantom jam is the classic case.
 - **Proof write-up.** PROOFS.md SP03, with its
   [own page](proofs/SP03-when-a-following-column-turns-into-a-concertina.md).

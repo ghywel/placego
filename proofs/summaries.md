@@ -2548,8 +2548,8 @@ Why a line of marchers or cars ripples like a concertina when people react too s
 
 **What it says.** Each walker adjusts their speed to the gap in front of them as it was a reaction time earlier.
 Multiply how strongly they respond by how late they respond: if the product is at most a half, no ripple grows from
-one walker to the next; above a half, slow ripples grow at every walker, even though each walker on their own
-would still settle. This is a classical result of traffic research (Chandler, Herman and Montroll, 1958), here with
+one walker to the next; above a half, slow ripples grow at every walker. Between a half and $\pi/2$, each walker
+on their own would still settle. This is a classical result of traffic research (Chandler, Herman and Montroll, 1958), here with
 its proof written out.
 
 **Why it matters.** It is the threshold the marching spark (SC9) measured: a half-second delay kept the column

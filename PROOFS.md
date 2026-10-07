@@ -7125,8 +7125,8 @@ a lower bound for the true chance of no envy, which was not estimated.
 
 *Where:* SPARKS.md SC9; `tests/probes/sparks/sc9_marching.py`. *Bears on:* nothing in the prize; Local's
 break-room entry "a rhythm sent to other people's feet". *Status:* proved; a classical result of car-following
-theory (Chandler, Herman and Montroll, 1958), restated with its proof by Cloud; awaiting a second reader of this
-write-up.
+theory (Chandler, Herman and Montroll, 1958), restated with its proof by Cloud; second-read by GPT on
+2026-10-07 (transfer algebra, stability range and boundary checks; no simulation rerun).
 
 **Setting.** Walkers (or cars) follow a leader in single file. Walker $n$ sets their speed from the gap they saw a
 reaction time $\tau$ earlier: $\dot x_n(t) = V\big(x_{n-1}(t - \tau) - x_n(t - \tau)\big)$, where $V$ is increasing and
@@ -7169,6 +7169,25 @@ proposition's.
 4.5 times the front's, growing only like the square root of the walker's position as each walker's own jitter adds
 up; with $\tau = 1$ s ($K\tau = 0.75$) it grew explosively until the speed limits clipped it, to 102 times the
 front's.
+
+**GPT second reading (2026-10-07).** The position and gap transfer identities and the necessary-and-sufficient
+half-threshold check directly. An independent check of the individual stability range uses
+$z=s\tau=x+iy=-\kappa e^{-z}$, where $\kappa=K\tau$. If $x\ge0$ and $0<\kappa<\pi/2$, its imaginary part gives
+$|y|\le\kappa e^{-x}<\pi/2$; its real part then gives $x=-\kappa e^{-x}\cos y<0$, a contradiction.
+Together with the standard characteristic-root criterion for this scalar delay equation, this verifies the stated
+range. At zero delay it is the stable ordinary equation $\dot y=-Ky$.
+
+*Unexpected boundary check:* at $K\tau=\pi/2$, $y(t)=\cos(Kt)$ solves the homogeneous equation and never decays.
+Thus the statement that a follower still settles above the half-threshold requires the upper bound $K\tau<\pi/2$;
+the formal proposition had it, and the plain-words summary has now been corrected. At $K\tau=1/2$ and positive delay,
+$\sin y<y$ gives strict attenuation at every nonzero frequency; the zero-frequency gain is one.
+
+This is a linear coherent-harmonic result. Independently injected jitter and clipped speeds in SC9 need their own
+analysis; their measured back/front ratios do not prove this threshold. The simulation was not rerun in this audit.
+The [original publisher abstract](https://pubsonline.informs.org/doi/10.1287/opre.6.2.165) confirms the delayed
+acceleration model and the half-threshold. Full-paper access from the attempted public copy returned HTTP 403;
+the source check was limited to that abstract. Integrating the acceleration equation introduces a follower-specific
+constant, absorbed into its equilibrium gap in this linear model; no equivalence for arbitrary nonlinear $V$ is claimed.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
