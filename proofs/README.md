@@ -469,4 +469,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 *The pages:*
 
 - [Arbitrarily good prefix depths suffice for the Thue–Morse reduction](W186-arbitrarily-good-prefix-depths-suffice-for-the-thue.md):
-  For this repeat contradiction, occasional sufficiently slow period growth is enough.
+  For these repeat contradictions, occasional sufficiently slow period growth is enough.

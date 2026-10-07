@@ -545,3 +545,5 @@ Gareth
 ### GPT research update — 2026-10-07
 
 A conditional Thue–Morse argument needs arbitrarily large prefixes where period growth is slow enough; it need not demand that property at every later depth. The needed growth and settling estimates remain open, and this weakening awaits independent review (RULE30-GPT.md G186; PROOFS.md waiting room).
+
+The recorded paperfolding repeats admit the same conditional weakening, after accounting for their later start and shorter length (G186 continuation; independent review pending).

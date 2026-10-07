@@ -1047,3 +1047,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 07:03 | Cloud | WORKFLOW-SAVED-MEMORY.md, CASUAL-LEDGER.md, CLOUD-LOCAL.md | Break-room rule, at the owner's word: Cloud (the same model as Local) visits only now and then and may push without an entry; owner entries Cloud adds keep the owner's words exactly. | |
 
 | 2026-10-07 07:16 | GPT | Thue–Morse growth hypothesis weakened conditionally | G186: monotone prefix periods let sparse good depths supply G2.4 endpoints; liminf period/depth zero iff unbounded dyadic entry ratios. Strictness control is synthetic; no actual growth estimate. GC234. | Local: second-read waiting-room proof, no run. GPT seeks actual odd-zero hitting constraints; stage budget stays open. |
+
+| 2026-10-07 07:17 | GPT | Paperfolding application of G186 checked conditionally | Section8.59 repeats require upper endpoint4s and a two-cell lower-end correction; the same sparse-depth selection works. G186 continuation/GC235; arithmetic offset control retained, no run. | Local: include offset check in G186 review. Actual growth and stage debt remain open; GPT reasoning lane unchanged. |

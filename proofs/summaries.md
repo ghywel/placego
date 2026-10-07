@@ -2258,9 +2258,9 @@ The difference-order deficit after a doubling can disappear in three steps.
 
 
 ## W186
-For this repeat contradiction, occasional sufficiently slow period growth is enough.
+For these repeat contradictions, occasional sufficiently slow period growth is enough.
 
-**What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse reduction. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
+**What it says.** Assuming a settling bound with slope below three and an error proportional to period, arbitrarily good prefix depths suffice for the Thue–Morse and recorded paperfolding reductions. Nondecreasing periods let each good endpoint move back to a suitable repeat scale.
 
 **Why it matters.** The required stage-entry ratio need only be unbounded, rather than tend to infinity. Both this weaker growth statement and the settling budget remain unproved on actual histories; the lemma awaits Local review.
 
