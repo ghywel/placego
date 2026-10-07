@@ -450,6 +450,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [compression fails exactly at positive label-balanced edge collections](G183-compression-fails-exactly-at-positive-label-balanced-edge.md):
   A standard graph criterion, applied: the failed meters balance their labels while charging a positive amount of
   time.
+- [the period-growth gap is an exponentially weighted stage-length condition](G184-the-period-growth-gap-is-an-exponentially-weighted.md):
+  Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
+- [maximal difference order can return three edges after a doubling](G185-maximal-difference-order-can-return-three-edges-after.md):
+  The difference-order deficit after a doubling can disappear in three steps.
 
 ## The waiting room (not yet verified)
 
@@ -462,9 +466,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Period-growth gap is an exponentially weighted stage-length condition](W184-period-growth-gap-is-an-exponentially-weighted-stage.md):
-  Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
-- [Maximal difference order can return three edges after a doubling](W185-maximal-difference-order-can-return-three-edges-after.md):
-  The difference-order deficit after a doubling can disappear in three steps.
+*No proofs are waiting for a second reader at the moment.*

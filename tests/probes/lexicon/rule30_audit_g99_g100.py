@@ -346,6 +346,23 @@ CHECKS (GPT's claims at 827e006):
      control is feasible with F = (1, 0); G176's reached q = 8 edge (cost 5) is a balanced singleton in RQ3's labels
      but not in RQO's; DQ3's literal q = 4 edge (15, 12) -> (9, 4) (cost 3) is one in the three distances; G178's
      seven reached edges balance at every RQO label but not at four actual states, with elapsed 21.
+  S74 (G184, added 2026-10-07 at 7aed12f): the stage entries N_1..N_4 = 3, 8, 29, 400 recomputed from RQ3's reached
+     graphs (first node of least period q at q = 2, 4, 8; the single q = 8 cap exit after depth 399), every depth's
+     states being temporal rotations of one another (unbranched), and each reached graph at q <= 8 acyclic with one
+     sink, its cap exit (no history stays at period <= 8); R_j and lambda_j exact and the recurrence and closed
+     form on them; on 200 random nonnegative schedules (seed 184) the closed form and the window bound
+     R_j >= 2^-m (lambda_(j-m) + ... + lambda_(j-1)); the constant schedule lambda = 3 from R = 100 gives exactly
+     3 + 97/2^j; the alternating schedule (1 at even j, j at odd j) meets both of G184's bounds and passes 99 by
+     j = 400; on each recorded stage the period-to-depth ratio peaks at entry, at 1/R_j.
+  S75 (G185, added 2026-10-07 at 3901bff): at q = 4, 8, 16, 32, 64 the words a, c, e built as stated and f, the single
+     periodic child of (1, e) by the two-seed recursion, give a prefix a, 0, c, 1, e, f whose four triples satisfy
+     S z = x XOR (y OR z); orders (cyclic differences on the 2q-cycle) q, 0, q + 1, 1, q + 1, 2q; least periods q for a
+     and 2q for c, e, f; f of weight q/2 + 1; pair maxima q + 1, q + 1, q + 1, 2q; the three later pairs of least period
+     2q with nonzero drivers; G160's gate at all five pairs from arrival phase q - 2 with the reset-clock updates; the
+     q = 4 masks 238, 180, 255, 150, 82 with f confirmed by brute force. At q = 2 the run count fails (f has weight 1)
+     and the gate fails at (a, 0) from phase 0, although f still has order 4. Rooted at q = 4: RQ3's reached q = 8
+     graph passes through the prefix at depths 28 -> 32 by consecutive edges (arrival phases G185's plus 5), so the
+     jump of 3 happens on the actual history at 31 -> 32; the rooted q = 8 cap exit is not G185's q = 8 entry.
 """
 import random
 from fractions import Fraction as F
@@ -3518,4 +3535,150 @@ ok73 &= sum(d_ for _, _, d_ in seg70) == 21
 ok73 &= all(sum(d_ - g for _, _, d_ in seg70) > 0 for g in (_Fr(5, 2), _Fr(29, 10)))   # slopes below 3 fail
 check('S73 G183: feasibility iff no positive label-balanced edge set (400 random graphs, brute force); least potential '
       '= best walk; the merged-endpoint control; G176, DQ3 and G178 collections balanced at labels only', ok73)
+_rng74 = random.Random(184)
+# the recorded entries N_j (first node of least pair period 2^j), read off RQ3's reached graphs independently
+_N74, ok74 = {}, True
+for q in (2, 4, 8):
+    _rt, _dp, _pa, _ed, _ex = _rq3.reached(q)
+    _N74[q.bit_length() - 1] = min(_dp[s] for s in _dp if _rq3.pair_lp(s[0], s[1], q) == q)
+    _by74 = {}
+    for s in _dp:
+        _by74.setdefault(_dp[s], []).append(s)
+    # unbranched: states sharing a depth are temporal rotations of one another (non-genuine copies)
+    ok74 &= all(any((_rq3.rot(s[0], k, q), _rq3.rot(s[1], k, q)) == v[0] for k in range(q)) for v in _by74.values()
+                for s in v)
+    if q == 8:
+        ok74 &= _ex == 1
+        _N74[4] = max(_dp.values()) + 1                  # the single cap exit: the next node doubles to 16
+ok74 &= [_N74[j] for j in (1, 2, 3, 4)] == [3, 8, 29, 400]
+# no history stays at period <= 8: each reached graph is acyclic (Kahn's order covers it) with one sink, its cap exit
+for q in (1, 2, 4, 8):
+    _rt, _dp, _pa, _ed, _ex = _rq3.reached(q)
+    _ind74, _out74 = {s: 0 for s in _dp}, {}
+    for s_, t_, _ in _ed:
+        _ind74[t_] += 1
+        _out74.setdefault(s_, []).append(t_)
+    _st74, _k74 = [s for s in _dp if not _ind74[s]], 0
+    while _st74:
+        s_ = _st74.pop()
+        _k74 += 1
+        for t_ in _out74.get(s_, []):
+            _ind74[t_] -= 1
+            if not _ind74[t_]:
+                _st74.append(t_)
+    ok74 &= _k74 == len(_dp) and [_dp[s] for s in _dp if s not in _out74] == [max(_dp.values())]
+_R74 = {j: _Fr(_N74[j], 2 ** j) for j in _N74}
+_l74 = {j: _Fr(_N74[j + 1] - _N74[j], 2 ** j) for j in (1, 2, 3)}
+ok74 &= [_R74[j] for j in (1, 2, 3, 4)] == [_Fr(3, 2), 2, _Fr(29, 8), 25]
+ok74 &= [_l74[j] for j in (1, 2, 3)] == [_Fr(5, 2), _Fr(21, 4), _Fr(371, 8)]
+ok74 &= all(_R74[j + 1] == (_R74[j] + _l74[j]) / 2 for j in (1, 2, 3))
+ok74 &= _R74[4] == _Fr(1, 8) * _R74[1] + sum(_Fr(1, 2 ** (4 - i)) * _l74[i] for i in (1, 2, 3))
+
+
+def sched74(R0, lam, n):
+    R = [_Fr(R0)]
+    for j in range(n):
+        R.append((R[-1] + lam(j)) / 2)
+    return R
+
+
+# the recurrence's closed form and the window bound on random nonnegative schedules
+for trial in range(200):
+    lam = [_Fr(_rng74.randint(0, 40), 2 ** _rng74.randint(0, 3)) for _ in range(30)]
+    R = sched74(_rng74.randint(0, 9), lambda j: lam[j], 30)
+    ok74 &= all(R[j] == _Fr(R[0], 2 ** j) + sum(_Fr(1, 2 ** (j - i)) * lam[i] for i in range(j)) for j in range(31))
+    m = _rng74.randint(1, 6)
+    ok74 &= all(R[j] >= _Fr(sum(lam[j - m:j]), 2 ** m) for j in range(m, 31))
+# counterfactual: constant normalized stage length C = 3 from R = 100 tends to C, not to infinity
+R = sched74(100, lambda j: 3, 60)
+ok74 &= all(R[j] == 3 + _Fr(97, 2 ** j) for j in range(61)) and R[60] - 3 < _Fr(1, 10 ** 15)
+# the unexpected check: lambda = 1 at even j, j at odd j still diverges, with G184's two bounds
+R = sched74(0, lambda j: 1 if j % 2 == 0 else j, 400)
+ok74 &= all(R[j] >= (_Fr(j - 1, 2) if (j - 1) % 2 else _Fr(j - 2, 4)) for j in range(3, 401))
+ok74 &= R[400] > 99 and all(R[j] >= _Fr(sum(1 if i % 2 == 0 else i for i in (j - 2, j - 1)), 4) for j in range(2, 401))
+# the period-to-depth ratio on a stage peaks at its entry: max over k in [N_j, N_j+1) of 2^j / k = 1 / R_j
+ok74 &= all(max(_Fr(2 ** j, k) for k in range(_N74[j], _N74[j + 1])) == 1 / _R74[j] for j in (1, 2, 3))
+check('S74 G184: entries 3, 8, 29, 400 recomputed from the reached graphs (unbranched); R and lambda exact; the '
+      'recurrence, window bound and both synthetic schedules', ok74)
+def nu75(w, n):
+    k = 0
+    while w:
+        w = w ^ _rq3.rot(w, 1, n)                       # Delta = I + S, S w(t) = w(t + 1), on the n-cycle
+        k += 1
+        if k > n:
+            return None
+    return k
+
+
+def lp75(w, n):
+    return next(d for d in range(1, n + 1) if n % d == 0 and _rq3.rot(w, d, n) == w)
+
+
+def g185(q):
+    """G185's prefix a, 0, c, 1, e, f on the 2q-cycle, words as integers (bit t = time t)."""
+    n = 2 * q
+    bits = [0] * (q - 2) + [1, 0] + [1] * (q - 2) + [0, 1]
+    c = sum(b << t for t, b in enumerate(bits))
+    one = (1 << n) - 1
+    a = c ^ _rq3.rot(c, 1, n)
+    e = one ^ _rq3.rot(c, -1, n)
+    kids = _rq3.children(one, e, n)
+    return n, a, c, one, e, kids
+
+
+def compat75(x, y, z, n):
+    return _rq3.rot(z, 1, n) == x ^ (y | z)
+
+
+ok75 = True
+for q in (4, 8, 16, 32, 64):
+    n, a, c, one, e, kids = g185(q)
+    ok75 &= len(kids) == 1
+    f = kids[0]
+    seq = [a, 0, c, one, e, f]
+    ok75 &= all(compat75(seq[i], seq[i + 1], seq[i + 2], n) for i in range(4))
+    ok75 &= [nu75(w, n) for w in seq] == [q, 0, q + 1, 1, q + 1, 2 * q]
+    ok75 &= lp75(a, n) == q and all(lp75(w, n) == n for w in (c, e, f))
+    ok75 &= [(a >> t) & 1 for t in range(q)] == [0] * (q - 3) + [1, 1, 1]
+    ok75 &= bin(f & ((1 << n) - 1)).count('1') == q // 2 + 1
+    pairs = list(zip(seq, seq[1:]))[1:]                  # (0, c), (c, 1), (1, e), (e, f)
+    ok75 &= [max(nu75(x, n), nu75(y, n)) for x, y in pairs] == [q + 1, q + 1, q + 1, 2 * q]
+    ok75 &= all(_rq3.pair_lp(x, y, n) == n for x, y in pairs[1:]) and all(y for x, y in pairs[:3])
+    # G160's gate along the prefix from arrival phase r = q - 2 at (a, 0), with the reset-clock updates
+    r = q - 2
+    gates = []
+    for i in range(5):
+        x, y = seq[i], seq[i + 1]
+        gates.append(_rq3.gated(_rq3.rot(x, r, n), _rq3.rot(y, r, n), n))
+        if y:
+            while not (y >> (r % n)) & 1:
+                r += 1
+            r += 1
+    ok75 &= all(gates)
+    if q == 4:
+        ok75 &= seq[:1] + seq[2:] == [238, 180, 255, 150, 82] and f in _rq3.children_brute(one, e, n)
+# the excluded q = 2: the run count fails (f has weight 1, not q/2 + 1 = 2) and the gate fails at (a, 0) from phase 0,
+# although f still reaches order 2q = 4
+n, a, c, one, e, kids = g185(2)
+ok75 &= len(kids) == 1 and bin(kids[0]).count('1') == 1 and nu75(kids[0], n) == 4
+ok75 &= not _rq3.gated(a, 0, n) and not _rq3.gated(0, c, n)
+# rooted at q = 4: RQ3's reached q = 8 graph runs through G185's prefix at depths 28 -> 32 by consecutive edges, each
+# aligned state being G185's pair at its own arrival phase (2, 2, 3, 4, 5) plus one offset, 5; the rooted q = 8 cap
+# exit at depth 399 is not G185's q = 8 entry
+_n4, _a4, _c4, _o4, _e4, _k4 = g185(4)
+_s4 = [_a4, 0, _c4, _o4, _e4, _k4[0]]
+_rt, _dp8, _pa, _ed8, _ex = _rq3.reached(8)
+_E8 = {(s_, t_) for s_, t_, _ in _ed8}
+_al4 = [(_rq3.rot(_s4[i], k, 8), _rq3.rot(_s4[i + 1], k, 8)) for i, k in zip(range(5), (7, 7, 0, 1, 2))]
+ok75 &= [_dp8.get(s_) for s_ in _al4] == [28, 29, 30, 31, 32] and all((_al4[i], _al4[i + 1]) in _E8 for i in range(4))
+_snk = [s_ for s_ in _dp8 if s_ not in {x for x, _, _ in _ed8}]
+ok75 &= len(_snk) == 1 and _dp8[_snk[0]] == 399
+ok75 &= [(_snk[0][0] >> t) & 1 for t in range(8)] == [1, 0, 0, 0, 0, 1, 0, 1]
+_mx75 = {s_: max(_rqo.nu(s_[0], 8), _rqo.nu(s_[1], 8)) for s_ in _dp8}
+_jp75 = [_mx75[t_] - _mx75[s_] for s_, t_, _ in _ed8]
+ok75 &= max(_jp75) == 3 and _jp75.count(3) == 7      # the q = 4 jump is the largest on the rooted q = 8 graph
+ok75 &= not any(_rq3.rot(_snk[0][0] | (_snk[0][0] << 8), k, 16) == g185(8)[1] for k in range(16))
+check('S75 G185: at q = 4 .. 64 the prefix a, 0, c, 1, e, f is compatible and gated from phase q - 2, with orders '
+      'q, 0, q + 1, 1, q + 1, 2q, the jump q - 1 on the last edge; rooted at q = 4 (depths 28-32); q = 2 fails the '
+      'gate', ok75)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

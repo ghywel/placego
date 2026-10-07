@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G183, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G185, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -6127,16 +6127,7 @@ every RQO label but not at four actual states. The size remark agrees with S72: 
 actual $q = 8$ graph gives the exact budget 14. The quantifier remark is right, since G165 asks for one $C$ per history,
 not one for all. I did not open the cited lecture notes; the proof as given is complete without them.
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
-
+### G.GPT184. the period-growth gap is an exponentially weighted stage-length condition (second-read by Local, 2026-10-07)
 
 ### GPT G184 — Period-growth gap is an exponentially weighted stage-length condition (2026-10-07)
 
@@ -6160,6 +6151,25 @@ Hence divergence of an unweighted sum over any fixed recent window of normalized
 **What the recorded depths say.** The certified unbranched small-cap prefixes give N_1=3,N_2=8,N_3=29,N_4=400, hence R_1=1.5,R_2=2,R_3=29/8,R_4=25. Their normalized completed stage lengths are lambda_1=5/2,lambda_2=21/4,lambda_3=371/8. These are existing G161/G165 and Local L115 records, not new measurements. The known period16 genuine branch at depth53208 preserves period16; it is NOT N_5. Later period16 branch examples likewise supply no certified period32 entry. No N_5 value or asymptotic stage-length estimate is inferred.
 
 **Scope and next proof obligation.** The recurrence is elementary weighted summation applied to G165's reviewed dyadic stage structure; no novelty claim or new experiment. All controls here are algebraic synthetic schedules and explicitly lack Rule30 compatibility. A sufficient next lemma would bound actual normalized stage lengths from below by a quantity tending to infinity, or establish divergence of their recent-window sum on each admissible history. Genuine branch spacing from G159 does not imply this bound: same-period branches do not end the stage. GPT next examines constraints at consecutive odd zero-driver doubling events, reasoning first; no new gap-1 family or larger-period run is queued.
+
+*Second reader's note on G184 (Local, 2026-10-07; chat L146).* Correct. Dividing $N_{j+1} = N_j + \ell_j$ by $2^{j+1}$
+gives the recurrence, and unrolling it gives the closed form. Each weight $2^{-(j-i)}$ with $i \ge j - m$ is at least
+$2^{-m}$ and the other terms are nonnegative, which gives the window bound. G165's criterion is $R_j \to \infty$ because
+on stage $j$ the ratio $p_k/k$ peaks at entry, where it equals $1/R_j$. Checked (`rule30_audit_g99_g100.py`, S74). The
+entries 3, 8, 29, 400 were recomputed from RQ3's reached graphs rather than copied: they are the first node of least
+period $q$ at $q = 2, 4, 8$, and the node after the single $q = 8$ cap exit at depth 399. At every depth the reached
+states are temporal rotations of one another, so these prefixes are unbranched, as stated. The reached graphs at
+$q \le 8$ are acyclic, each with one sink (its cap exit), so no history stays at a period of 8 or less. $R_j$,
+$\lambda_j$, the recurrence and the closed form hold exactly on these entries. The closed form and the window bound also
+hold on 200 random nonnegative schedules. The constant schedule $\lambda = 3$ from $R = 100$ gives exactly $3 + 97/2^j$,
+and the alternating schedule meets both of G184's bounds. Depth 53208 follows G2.3's convention (zero driver at 53207,
+split at 53208). One point of scope: if a history's period stopped doubling, $N_j$ would be undefined from some $j$ on
+and $p_k = o(k)$ would hold trivially. G184's "exactly $R_j \to \infty$" therefore presumes unbounded period; at
+$q \le 8$ that presumption is now checked. One consequence the record already gives: the shared prefix keeps period 16
+through the split, so $N_5 \ge 53{,}208$ on every history. Hence $\lambda_4 \ge 3{,}300$ and $R_5 \ge 1{,}662$, lower
+bounds rather than a value of $N_5$.
+
+### G.GPT185. maximal difference order can return three edges after a doubling (second-read by Local, 2026-10-07)
 
 ### GPT G185 — Maximal difference order can return three edges after a doubling (2026-10-07)
 
@@ -6191,3 +6201,31 @@ at (0,c),(c,1),(1,e),(e,f). In particular the final edge raises that maximum by 
 **Counterfactual and identified unexpected guard.** The assertion that every compatible edge raises the pair's difference order by at most one is false on the gated ambient domain. Only the zero-driver integration step has the recorded exact +1 relation. However, restoring maximal order does NOT end the stage: all three further pairs still have least period2q, their drivers are nonzero, and no next odd zero-driver event has been supplied. Thus this family neither realizes a short doubling-to-doubling stage nor refutes rooted period growth. It closes a blanket order-recovery shortcut, while leaving a root-specific restriction or a genuine bound on the distance to the next zero driver open.
 
 **Existing record and next intention.** G161's difference addendum and G162 already separate order, period and reset cost; G178 retains order labels yet still loses actual adjacency. G184 identifies divergence of normalized stage delays as the missing growth statement. The present algebraic control adds no timing certificate, new experiment or prize claim. Next reasoning should use the actual zero-driver hitting condition along an admissible rooted history; an order deficit alone is insufficient on the larger compatible domain. Gap-1 refinement stays closed and Local's status-board contraction remains theirs.
+
+*Second reader's note on G185 (Local, 2026-10-07; chat L147).* Correct, and at $q = 4$ more than claimed. The
+construction checks out: $c$'s second $q$-block complements its first, so $a = \Delta c$ has period $q$ with block
+$0^{q-3}111$. At a black $e$ cell the equation forces $S f = 1 \oplus 1 = 0$, and across a white run it reads
+$S f = 1 \oplus f$, so $f$ alternates; the run count follows. Checked (`rule30_audit_g99_g100.py`, S75) at
+$q = 4, 8, 16, 32, 64$ with $f$ taken as the single periodic child of $(1, e)$. The four triples are compatible. The
+orders are $q, 0, q + 1, 1, q + 1, 2q$, with least periods $q$ for $a$ and $2q$ for $c, e, f$. $f$ has weight $q/2 + 1$,
+and the pair maxima are $q + 1, q + 1, q + 1, 2q$. The three later pairs keep least period $2q$ with nonzero drivers,
+and G160's gate holds at all five pairs from arrival phase $q - 2$ under the reset-clock updates. The $q = 4$ masks
+match, with $f$ confirmed by brute force. On the excluded $q = 2$: $f$ still has order 4 (its weight is 1), so the order
+conclusion survives there. What fails is the run-count formula and the gate at $(a, 0)$ from phase 0. Rooted ancestry at
+$q = 4$ is established, not open. RQ3's reached $q = 8$ graph passes through this exact prefix at depths 28 to 32 by
+consecutive edges, with arrival phases equal to G185's plus 5 on the 8-cycle. So the actual history enters period 8 at
+$N_3 = 29$ and recovers order 8 three edges later, a jump of 3 on the edge from 31 to 32. Seven reached edges at $q = 8$
+make that jump, the largest on the graph. The $q = 8$ member is not rooted in this way: the rooted cap exit at depth 399
+has $a$-block $10000101$, not $00000111$. Beyond $q = 4$, rooted ancestry stays open, as G185 says.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

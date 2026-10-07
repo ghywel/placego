@@ -2238,7 +2238,7 @@ A standard graph criterion, applied: the failed meters balance their labels whil
 **An everyday picture.** A ledger balances station names but accidentally treats different stations as the same one. If the supposed round trip earns time, no allowance based on those names can pay it.
 
 
-## W184
+## G184
 Period must grow slowly compared with depth; exponentially long stages alone do not guarantee it.
 
 **What it says.** Divide each stage's length by its period. The depth-to-period ratio is an exponentially weighted sum of these normalized lengths. That sum must grow without bound to make period negligible compared with depth.
@@ -2247,7 +2247,7 @@ Period must grow slowly compared with depth; exponentially long stages alone do 
 
 **An everyday picture.** Each doubling halves the savings already accumulated. New deposits must eventually overcome that repeated halving; one large old deposit cannot settle the long-term balance.
 
-## W185
+## G185
 The difference-order deficit after a doubling can disappear in three steps.
 
 **What it says.** A constructed compatible family starts the new period2q stage at order q+1 and reaches order2q three edges later. The last edge jumps by q-1. These profiles are not proved reachable from the root.

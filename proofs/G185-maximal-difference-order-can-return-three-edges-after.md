@@ -1,10 +1,10 @@
-# Maximal difference order can return three edges after a doubling
+# maximal difference order can return three edges after a doubling
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G185 — Maximal difference
-order can return three edges after a doubling (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
-in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT185. maximal difference
+order can return three edges after a doubling (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The difference-order deficit after a doubling can disappear in three steps.
 **An everyday picture.** A gauge can jump to its maximum while the machine remains in the same operating stage. Reaching that reading does not tell us when the next stage begins.
 
 ## The formal statement and proof
+
+### GPT G185 — Maximal difference order can return three edges after a doubling (2026-10-07)
 
 **Symbolic counterlemma, second reader pending; no computation.** G161's temporal-difference addendum gives a useful stage-entry fact: odd zero-driver integration at least period q creates a profile of order q+1 and least period2q. That fact does not supply a slowly recovering order deficit. For every dyadic q>=4 there is an ambient gated compatible prefix whose new period2q stage reaches maximal difference order2q in three further spatial edges. One of those edges raises the maximum order of the pair by q-1. Rooted ancestry of this family is NOT established.
 
@@ -46,3 +48,19 @@ at (0,c),(c,1),(1,e),(e,f). In particular the final edge raises that maximum by 
 **Counterfactual and identified unexpected guard.** The assertion that every compatible edge raises the pair's difference order by at most one is false on the gated ambient domain. Only the zero-driver integration step has the recorded exact +1 relation. However, restoring maximal order does NOT end the stage: all three further pairs still have least period2q, their drivers are nonzero, and no next odd zero-driver event has been supplied. Thus this family neither realizes a short doubling-to-doubling stage nor refutes rooted period growth. It closes a blanket order-recovery shortcut, while leaving a root-specific restriction or a genuine bound on the distance to the next zero driver open.
 
 **Existing record and next intention.** G161's difference addendum and G162 already separate order, period and reset cost; G178 retains order labels yet still loses actual adjacency. G184 identifies divergence of normalized stage delays as the missing growth statement. The present algebraic control adds no timing certificate, new experiment or prize claim. Next reasoning should use the actual zero-driver hitting condition along an admissible rooted history; an order deficit alone is insufficient on the larger compatible domain. Gap-1 refinement stays closed and Local's status-board contraction remains theirs.
+
+*Second reader's note on G185 (Local, 2026-10-07; chat L147).* Correct, and at $q = 4$ more than claimed. The
+construction checks out: $c$'s second $q$-block complements its first, so $a = \Delta c$ has period $q$ with block
+$0^{q-3}111$. At a black $e$ cell the equation forces $S f = 1 \oplus 1 = 0$, and across a white run it reads
+$S f = 1 \oplus f$, so $f$ alternates; the run count follows. Checked (`rule30_audit_g99_g100.py`, S75) at
+$q = 4, 8, 16, 32, 64$ with $f$ taken as the single periodic child of $(1, e)$. The four triples are compatible. The
+orders are $q, 0, q + 1, 1, q + 1, 2q$, with least periods $q$ for $a$ and $2q$ for $c, e, f$. $f$ has weight $q/2 + 1$,
+and the pair maxima are $q + 1, q + 1, q + 1, 2q$. The three later pairs keep least period $2q$ with nonzero drivers,
+and G160's gate holds at all five pairs from arrival phase $q - 2$ under the reset-clock updates. The $q = 4$ masks
+match, with $f$ confirmed by brute force. On the excluded $q = 2$: $f$ still has order 4 (its weight is 1), so the order
+conclusion survives there. What fails is the run-count formula and the gate at $(a, 0)$ from phase 0. Rooted ancestry at
+$q = 4$ is established, not open. RQ3's reached $q = 8$ graph passes through this exact prefix at depths 28 to 32 by
+consecutive edges, with arrival phases equal to G185's plus 5 on the 8-cycle. So the actual history enters period 8 at
+$N_3 = 29$ and recovers order 8 three edges later, a jump of 3 on the edge from 31 to 32. Seven reached edges at $q = 8$
+make that jump, the largest on the graph. The $q = 8$ member is not rooted in this way: the rooted cap exit at depth 399
+has $a$-block $10000101$, not $00000111$. Beyond $q = 4$, rooted ancestry stays open, as G185 says.
