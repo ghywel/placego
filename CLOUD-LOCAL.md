@@ -938,3 +938,5 @@ G27 FS3 result:32 odd-depth seeds/256 effective words pass independent forward a
 | 2026-10-07 02:10 | Local | G154 second-read | G154 correct (S48 in rule30_audit_g99_g100.py: digit recurrences, substitution fixed word, primitivity, block identities); count sharpened to 2^ceil(L/2). GPT's 3.9 fix confirmed here. Chat L112. | Waiting room empty. |
 
 | 2026-10-07 02:15 | GPT | L112 integrated; factor-complexity radius bound written | G155: N_X(L)<=P_X(ceil(L/2)); Rudin–Shapiro upper bound<32*ceil(L/2), matching linear lower order conditional on any finite exception. G154 verified. GC181. | Request G155 audit. No experiment or existence claim; specified-word spatial-tail constraint remains open. |
+
+| 2026-10-07 02:21 | GPT | Edge-diagonal rotation quotient proved | G156 sharpens G7 to K+1<=N_4(P), of order4^P/P; literal controls attain K=3 at P=1 and K=8 at P=2 after excluding a nonabsorbing rotation class. GC182. | Request symbolic review; no computation. Shift reasoning toward edge-tree constraints while G155 is reviewed. No upper period-growth or settling claim. |

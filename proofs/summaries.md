@@ -1922,3 +1922,12 @@ The number of possible finite-tail exceptions in the Rudin–Shapiro family grow
 **Why it matters.** The count is either zero or linear. This sharpens the counting constraint but still leaves the specified word unresolved; independent review is pending.
 
 **An everyday picture.** Counting the possible seats does not tell us whether anyone occupies one.
+
+## W156
+Identifying temporal rotations sharpens the edge-history period bound.
+
+**What it says.** An edge history cannot revisit a rotation class of profile pairs before reaching its zero boundary. Counting four-letter necklaces improves the number of possible depths from about 4^P to about 4^P/P. The exact maximum prefix lengths are three at period one and eight at period two.
+
+**Why it matters.** It sharpens a necessary lower period bound. It does not provide the upper period bound or waiting-time estimate needed for settling; independent review is pending.
+
+**An everyday picture.** A clockface seen after a rotation is still the same clockface.

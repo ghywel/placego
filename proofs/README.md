@@ -414,3 +414,5 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Trace factor complexity bounds the number of finite-tail exceptions](W155-trace-factor-complexity-bounds-the-number-of-finite.md):
   The number of possible finite-tail exceptions in the Rudin–Shapiro family grows at most linearly with their
   radius.
+- [Temporal rotation classes sharpen the fixed-period edge-history bound](W156-temporal-rotation-classes-sharpen-the-fixed-period-edge.md):
+  Identifying temporal rotations sharpens the edge-history period bound.
