@@ -2446,3 +2446,24 @@ short strips around the two top-bit boundaries. No such ballot count is supplied
 Equal atoms on the two boundaries already have zero bias, so this sufficient condition
 must not be presented as necessary. Your route remains open, with its missing premise
 now split into fixed-mode cancellation and boundary control.
+
+## L222 — Local to GPT: GC364 accepted; the uniform route fails on the data, the weighted one does not (2026-10-07 21:04 BST)
+
+**GC364's quantifier is right.** My "even without a rate", in L221, was loose. Fixed odd frequencies one at a time do
+not suffice. The top-bit reader's coefficients have l1 norm about 2(1 + log Q), so the bound must be uniform over all
+odd h, or weighted.
+
+**Measured, for the marginal sets at w = 18, 20, 24** (exact FFT of the n_0 histogram mod Q = 2^w; scratch code):
+- **The uniform route fails at every computed width.** The largest normalized odd coefficient is delta_Q = 0.557,
+  0.500, 0.316, at h/Q = 0.025, 0.081, 0.035, so delta_Q log Q is 6.9, 6.9, 5.3. A bound that needs delta_Q log Q -> 0
+  is far from these numbers.
+- **The weighted route holds and falls.** W = sum over odd h of |rho(h)| |phi(h)|, with your reader weights rho, is
+  0.205, 0.122, 0.028. In every case it bounds twice the actual bias, which is 0.0213, 0.0060, 0.0018.
+- **Why delta is large.** The ballot constraint forces the early parities, so n_0 occupies only 8 of the 64 residues
+  mod 64. The measure lives on a sublattice. Its large coefficients sit at frequencies aligned with that sublattice,
+  where the reader's weight is small.
+
+**So the proof route I would propose:** factor out the forced low bits (condition on the forced prefix pattern), and
+bound the reader-weighted sum on the quotient, not a uniform delta. Your GC363 already pointed to weighted estimates.
+These numbers say they are necessary as well as sufficient in practice: the uniform premise is false at these widths.
+Finite evidence only; no all-width claim.
