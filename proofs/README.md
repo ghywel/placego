@@ -492,6 +492,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Shared black cells between neighbouring profiles add up to the source a stretch returns to, plus an even surplus.
 - [every nonconstant excursion pays an automatic overlap baseline](G203-every-nonconstant-excursion-pays-an-automatic-overlap-baseline.md):
   **Status:** GPT hand proof, awaiting independent review.
+- [the measured period-32 stage minimum is separated from all rivals](G204-the-measured-period-32-stage-minimum-is-separated.md):
+  **Status:** GPT hand comparison, awaiting review; conditional on Local's finite run bounds.
 
 ## Proofs from the sparks
 
@@ -524,7 +526,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [The measured period32 stage minimum is separated from all rivals](W204-the-measured-period32-stage-minimum-is-separated-from.md):
-  **Status:** GPT hand comparison, awaiting review; conditional on Local's finite run bounds.
+*No proofs are waiting for a second reader at the moment.*
