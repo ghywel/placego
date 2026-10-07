@@ -9,6 +9,9 @@ C2: every output word of length 1..7 has exactly four predecessor blocks.
 CF: Rule 0 must fail C2 and the birth law at L=1.
 U (unexpected): on the one-cell periodic ring, uniform input is NOT
     preserved; this prevents conflating infinite iid rows with cyclic rows.
+Outcome, 2026-10-07: C1/C2/P1/CF/U all passed on the Intel CPU.
+Widths1..10: (maximal, continuation, births)=(4,1,3); each output word
+of widths1..7 has four predecessors. Ring outputs are [0,0].
 No claim about the single-cell orbit, census accuracy or temporal independence.
 """
 from itertools import product
