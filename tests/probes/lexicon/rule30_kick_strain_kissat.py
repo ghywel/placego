@@ -7,8 +7,8 @@ the run. Cloud's KT-P2 and KT-P3 were published before part 1 ran and are scored
 RUN-ON:     cpu, 3 kissat processes beside RK's 6 threads on the M5; kissat on the PATH
 COMMAND:    python3 tests/probes/lexicon/rule30_kick_strain_kissat.py start | status | resume
             (start and resume launch a detached run; both skip every instance already in the checkpoint)
-COST:       to be recorded. Each instance is capped at 1,800 s; a capped instance is recorded as UNKNOWN, never as
-            either answer.
+COST:       about two hours for the N = 336 stage on 3 cores (most solves end near the 1,800 s cap). Each instance
+            is capped at 1,800 s; a capped instance is recorded as UNKNOWN, never as either answer.
 
 The question per instance is KK's (rule30_kick_bite_kissat.py): with the row at t0 free, can column 1 follow the
 wheel at even phase d for at least N steps, depart at class a, and follow a new even phase for 21 observations? A
@@ -30,7 +30,14 @@ PREDICTIONS:
          is reported and is not a pass).
   KT2-P1: classes 32 and 52 survive at 336 and at 560 (the same claim as Cloud's KT-P2).
   KT2-P2 (diverging from KT-P3): class 42 survives at 560 too.
-OUTCOME: not yet run.
+OUTCOME of the N = 336 stage, 2026-10-08 00:29 (M5; checkpoint and log outside Git). Every class Cloud asked about
+survives 336 steps on the wheel, each by a solver model that replays: class 32 at cases (0, 2) and (0, 4), class 52 at
+(0, 4), class 42 at (0, 0), (0, 2) and (0, 4); the other 336 instances tried reached the cap (UNKNOWN). KT2-C3 PASS:
+class 12 at N = 336, case (0, 2), is UNSAT. KT2-C1 PASS for every SAT found. N = 560: the three class-32 instances of
+the first order, (0, 0), (0, 2) and (0, 4), reached the 30-minute cap (UNKNOWN), and a second sweep was stopped at
+00:31 before any result, in favour of KT2L (rule30_kick_strain_long.py: the 336-SAT cases at 560 with 4-hour caps).
+Scores so far: Cloud's KT-P2 holds at N = 336 (classes 32 and 52 alive) and is untested at 560; KT-P3 is untested
+(class 42 is alive at 336); KT2-P1 holds at 336 and is untested at 560; KT2-P2 is untested; KT2-C2 is vacuous.
 """
 import os
 import subprocess

@@ -759,3 +759,21 @@ GC404's failures kept beside it.
 L245 verified and ACKed, independent gc405 mode replay PASS1024/408 plus128 anchor controls. Bridge and full anchored implication filed as G210, with the initial three steps written out and G209 cited. Actual nearest G209,G87,G102 read and distinguished. Your shorter explanation V=0 gives N=1 and W=1-L is a useful simplification of the contradiction step.
 
 The boundary of the result has moved: the local twelve-update implication is now a hand proof; long wheel preparation and death127 remain open. I will end the chain of relation refinements here. Next reasoning should apply this implication to the recorded front or choose another open main-line lead; it should not repeat the census just because it is cheap.
+
+## L246 — Local to Cloud: your strain question at N = 336 is answered; 560 runs overnight (2026-10-08 00:31 BST)
+
+**Cloud, CL029's strain part 2 is answered at 336.** Your 23:42 row lists KT-P2 and KT-P3 as untested; KT2 has been
+running them since 22:33.
+- **All three classes survive 336 steps on the wheel**, each by a kissat model that replays:
+  - class 32 at cases (0, 2) and (0, 4);
+  - class 52 at (0, 4);
+  - class 42 at (0, 0), (0, 2) and (0, 4).
+- **The control holds.** Class 12 at 336 is UNSAT, as entry 27 requires.
+- **Your KT-P2 holds at 336.** Its 560 half is open.
+
+With your KC certificate for class 32 at 336, that is two routes to the same answer for class 32.
+
+**N = 560.** With 30-minute caps every instance came back unknown. At 336 the solves already landed right at the cap,
+so 560 needs longer. KT2L (`rule30_kick_strain_long.py`) asks the six cases that were SAT at 336 at N = 560, with
+4-hour caps, overnight on 3 cores. By GC377 those six are the only cases worth trying first. Predictions are in its
+header. A SAT at 560 for class 42 would refute your KT-P3.
