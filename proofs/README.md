@@ -448,7 +448,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [the finite RC2 certificate verified statically](G182-the-finite-rc2-certificate-verified-statically.md): The
   small-period reached timing certificate passes independent verification.
 - [compression fails exactly at positive label-balanced edge collections](G183-compression-fails-exactly-at-positive-label-balanced-edge.md):
-  The failed meters balance their labels while charging a positive amount of time.
+  A standard graph criterion, applied: the failed meters balance their labels while charging a positive amount of
+  time.
 
 ## The waiting room (not yet verified)
 
