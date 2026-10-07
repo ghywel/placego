@@ -434,17 +434,17 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Even a formula allowed to change with the period fails, because a long period still contains short-period
   patterns.
 - [exact-period witnesses reject three-distance coefficients](G171-exact-period-witnesses-reject-three-distance-coefficients.md):
-  A distant defect changes the true period while leaving the observed waiting distances unchanged.
+  Choosing the formula by each state's own shortest period does not rescue the three distances either.
 - [exact-period feature collision rules out nonlinear three-distance charges](G173-exact-period-feature-collision-rules-out-nonlinear-three.md):
-  One real step costs time while leaving all three observed waiting distances unchanged.
+  One real step takes time yet leaves all three distances unchanged, so no formula built on them can work.
 - [rooted word membership does not imply root-clock membership](G174-rooted-word-membership-does-not-imply-root-clock.md):
-  A word can occur along a rooted history without every allowed clock occurring there.
+  A pattern can lie on the real history without every clock setting turning up there.
 - [reached q8 feature collision: targeted independent audit](G176-reached-q8-feature-collision-targeted-independent-audit.md):
-  Even root-reached clocks lose essential timing information in the three-distance features.
+  Even on the clock states really reached, the three distances lose the timing.
 - [temporal-order refinement still aliases distinct reached segments](G178-temporal-order-refinement-still-aliases-distinct-reached-segments.md):
-  Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
+  Finer timing labels fix one collision but glue together pieces of history that never meet.
 - [form actual edge context before compression; conditional lift pays the first edge](G179-form-actual-edge-context-before-compression-conditional-lift.md):
-  Keep actual consecutive edges before compressing their labels.
+  Check the real connections first, then simplify the labels.
 
 ## The waiting room (not yet verified)
 

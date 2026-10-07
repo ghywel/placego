@@ -8,13 +8,18 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-Temporal difference orders fix one timing collision but still permit false joins between rooted segments.
+Finer timing labels fix one collision but glue together pieces of history that never meet.
 
-**What it says.** Seven reached period-eight edges form a closed loop only after compression to distances, period and difference orders. Their total elapsed time is twenty-one, so no potential using those features pays every edge at a slope below three.
+**What it says.** Adding the stripes' difference orders (GC191) to the labels separates G176's collision. But then
+seven real period-8 steps close into a loop of labels, because two of their joins match as labels while the actual
+states differ. The loop takes 21 ticks over 7 steps, 3 per step against an allowance of 5/2, so no budget built on
+these labels works. No real repeating history is claimed.
 
-**Why it matters.** Higher temporal orders add useful information but still discard relative placement. The two segment joins match as features while differing as actual states; no real repeating trajectory is exhibited.
+**Why it matters.** Labels that describe each state on its own lose how states connect, so the next candidate must
+keep the real connections.
 
-**An everyday picture.** Two routes have matching summaries, so a map joins them into a loop. The actual stations at the joins are different.
+**An everyday picture.** Two stretches of road with matching signposts get glued together on the map into a ring
+road that does not exist.
 
 ## The formal statement and proof
 

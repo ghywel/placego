@@ -9,13 +9,18 @@ file.*
 
 ## In plain words
 
-Keep actual consecutive edges before compressing their labels.
+Check the real connections first, then simplify the labels.
 
-**What it says.** A bounded nonnegative potential on actual edge pairs lifts to an original vertex potential with one extra allowance for the first edge. Building edge pairs after feature compression preserves the false cycles already present.
+**What it says.** A budget can be put on pairs of consecutive real steps that share the same middle state, rather
+than on single states. If it is bounded and never negative, it turns back into a budget on states, at the cost of
+one extra allowance for the first step. Building the pairs after simplifying the labels keeps G178's false loops.
 
-**Why it matters.** Edge context can retain adjacency information only if actual middle states are checked first. This supplies a conditional transfer rule, not the missing timing certificate.
+**Why it matters.** It gives the rule for using context. RC2 then tested it at period 8 and passed, but with labels
+barely simpler than the full state (398 labels for 411 steps): a finite success, not the small budget the settling
+question needs.
 
-**An everyday picture.** Check that two train legs share the same station before replacing stations by summaries. Joining the summaries first cannot recover the lost connection.
+**An everyday picture.** Check that two train journeys really share a station before replacing the stations by
+summaries; join the summaries first and the lost connection cannot be recovered.
 
 ## The formal statement and proof
 

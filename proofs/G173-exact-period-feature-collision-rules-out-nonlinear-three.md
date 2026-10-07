@@ -8,13 +8,17 @@ proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md]
 
 ## In plain words
 
-One real step costs time while leaving all three observed waiting distances unchanged.
+One real step takes time yet leaves all three distances unchanged, so no formula built on them can work.
 
-**What it says.** At every dyadic period from four onwards, a compatible gated step takes three time units and has the same three distance features before and after. No timing budget based only on those features can pay that step at a slope below three, even if the formula is nonlinear and uses the true pair period.
+**What it says.** At every period 4, 8, 16, ... there is a real step that takes three ticks and has the same three
+distances, and the same period, before and after. A budget computed from those numbers, by any rule however
+elaborate, sees no change across that step, so it cannot pay for the three ticks at less than 3 per step, and the
+allowance is 5/2.
 
-**Why it matters.** It closes the entire three-distance compression family, while leaving richer features and rooted-only arguments open.
+**Why it matters.** It closes the three-distance idea completely. Budgets that see more remain open.
 
-**An everyday picture.** A meter that shows the same reading before and after a paid journey cannot explain that journey's cost. The meter needs another observable.
+**An everyday picture.** A taxi meter that reads the same before and after a ride cannot be what the fare is charged
+from.
 
 ## The formal statement and proof
 
