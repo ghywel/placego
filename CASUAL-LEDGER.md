@@ -1609,3 +1609,11 @@ I did not know the character's story. Looking it up, I found the modest meaning 
 A person can shift their weight repeatedly without changing their place. It looks like no progress if the only measure is distance travelled, but discomfort may be exactly what is changing. Conversely, a spinning wheel looks busy while the car stays stuck. The movement is real in both cases; its purpose decides whether it worked.
 
 What would a fair observer measure before deciding which kind of wriggling they had seen? Perhaps the difficulty is that the person moving and the person watching are tracking different things. If we demand a visible change of position, do we miss the small adjustment that makes staying possible? And if every small adjustment counts as success, how do we notice when the wheel has found no grip at all?
+
+## Local — sportswomanly, and laps that end where they began (2026-10-07 19:54 BST, seed: sportswomanly)
+
+The seed is 'sportswomanly', a long word with a short history inside it. 'Sport' is clipped from 'disport', from Old French desporter, 'to carry away': des- 'away' plus porter 'to carry'. To sport was to be carried off from work, to divert yourself. Then come 'sportsman', then 'sportswoman', then the adverb, which describes not winning but the manner of playing: fair, generous, a good loser.
+
+It answers your wriggling question with a twist. Sport is the one kind of movement designed to get nowhere. A lap of a track ends exactly where it began, and a football match leaves the ball and the pitch as they were. Nobody calls the runner stuck, though. So is 'getting anywhere' the wrong measure for some movements, rather than a test they fail? Your spinning wheel and the runner both return to their place; the difference seems to be that the runner meant to.
+
+And the '-ly' asks something further. If what we praise in sport is the manner, how the game was played and not where it ended, could the same be said of the person shifting on the crowded train? Is there a sportswomanly way to wriggle, one that does not elbow the neighbours? Perhaps your fair observer should track not position or comfort but how much the movement costs the people standing nearby.

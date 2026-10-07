@@ -640,6 +640,23 @@ CHECKS (GPT's claims at 827e006):
      a singleton D at j = q - 2, never a singleton E. At every arrival phase the four-edge debt is within entry 24's
      charge q - 5/2 + max(0, L - 5/2) plus GPT's fourth-edge term max(0, q - |E| - 3/2), with no phase transfer. GPT's
      q = 8 controls (A = 13, 193, 255) reproduce.
+  S121 (GC347, added 2026-10-07 at da03d88): for every source of weight above 3 (q = 4 .. 12, 7,099 sources), with t =
+     s + L the first black bit of C after s and u its next zero after t, the fourth delay is exactly M = u - t and L +
+     M <= q, or q - 1 when C(s) = 1 (only the second cap is attained by heavy sources; S122 sharpens both); from every
+     arrival the delays are (k, L, 1, M), the slope-5/2 debt is exactly max(0, k - 5/2, k + L - 5, k + L + M - 9, L -
+     5/2, L + M - 13/2, M - 5/2), and its maximum, at k = q, is q - 5/2 + max(0, L - 5/2, L + M - 13/2). GPT's q = 8
+     controls (A = 255, 158, 5) reproduce; at the named A = 5, L + M = 11 > 8, as GPT says, so the weight condition is
+     needed.
+  S122 (Local's Proposition 12, PROOFS.md entry 25, added 2026-10-07): for the pulse e_0 and every word C at q = 4 ..
+     12, the source A = SC XOR (e_0 OR C), confirmed by the forward rule, has weight 2r (C(0) = 1), 2r + 1 (C(0) = 0,
+     L >= 2) or 2r - 1 (C(0) = 0, L = 1), r the number of black runs of C; every heavy source has r >= 2 and L + M <=
+     q - 1 when C(0) = 1 and L >= 2, else q - 2, both caps attained for q >= 5. The caps also follow from GC349 (S123)
+     with the parity in (i), which is how entry 25 now states them.
+  S123 (GC349, added 2026-10-07 at a179f13): for every source of weight w > 3 at q = 4 .. 12, the source is zero on
+     the L + M - 3 distinct cells 1 .. L-2 and L .. L+M-2 (L >= 2), so L + M <= q - w + 3 and L <= q - w + 2; for L =
+     1, A(0) = 0 and L + M <= q - w + 1; the four-edge debt at every arrival is within q - 5/2 + max(0, q - w - 1/2);
+     w + L + M = q + 3 is attained by exactly C(q - 2, 2) sources at each q (GPT's A = 255 at q = 8 and A = 15 at q =
+     4 among them).
 """
 import random
 from fractions import Fraction as F
@@ -6583,4 +6600,99 @@ for q in range(4, 13):
 check('S120 GC344: source weight above 3 makes C, D, E nonzero and nonsingleton (q = 4 .. 12); weight-3 overlaps '
       'exactly e_s + e_(s+j) + e_(s+j+1) (singleton C, and D at j = q - 2, never E); four-edge debt at every arrival '
       'within entry 24 plus max(0, q - |E| - 3/2); GPT\'s q8 controls', ok120)
+# S121 (GC347): for every source of weight above 3, the fourth delay is exactly M = u - t (u the next zero of C after
+# its first black t = s + L), with L + M <= q (<= q - 1 if C(s) = 1); from every arrival the delays are (k, L, 1, M),
+# the debt is max(0, k-5/2, k+L-5, k+L+M-9, L-5/2, L+M-13/2, M-5/2), and its maximum is q - 5/2 + max(0, L - 5/2,
+# L + M - 13/2), at k = q
+ok121 = True
+for _A, _C, _D, _E in ((255, 85, 249, 89), (158, 234, 253, 42), (5, 249, 241, 16)):
+    ok121 &= (_rq3.children(_A, 1, 8) == [_C] and _rq3.children(1, _C, 8) == [_D]
+              and _rq3.children(_C, _D, 8) == [_E])
+for q in range(4, 13):
+    for A in range(1 << q):
+        if bin(A).count('1') <= 3:
+            continue
+        C = _rq3.children(A, 1, q)[0]
+        D = _rq3.children(1, C, q)[0]
+        E = _rq3.children(C, D, q)[0]
+        L = next(j for j in range(1, q) if (C >> j) & 1)
+        M = next(j for j in range(1, q) if not (C >> ((L + j) % q)) & 1)
+        ok121 &= L + M <= (q - 1 if C & 1 else q) and _rd115(E, L + 2, q) == M
+        best = -1
+        for T0 in range(q):
+            T, ds = T0, []
+            for w in (1, C, D, E):
+                dl = _rd115(w, T, q)
+                ds.append(dl)
+                T += dl
+            k = ds[0]
+            dd = _debt115(ds)[1]
+            ok121 &= ds[1:] == [L, 1, M] and dd == max(0, 2 * k - 5, 2 * k + 2 * L - 10, 2 * k + 2 * L + 2 * M - 18,
+                                                       2 * L - 5, 2 * L + 2 * M - 13, 2 * M - 5)
+            best = max(best, dd)
+        ok121 &= best == 2 * q - 5 + max(0, 2 * L - 5, 2 * L + 2 * M - 13)
+ok121 &= _rd115(16, 3 + 2, 8) == 8                       # the named A = 5: L = 3 and the pulse E = e_4 just missed
+check('S121 GC347: heavy sources (weight above 3, q = 4 .. 12) have fourth delay exactly M, the next-zero distance of '
+      'C after its first black, with L + M <= q (q - 1 if C(s) = 1); the four-edge debt is exact at every arrival and '
+      'greatest at s + 1, q - 5/2 + max(0, L - 5/2, L + M - 13/2); GPT\'s q8 controls', ok121)
+# S122 (entry 25, Proposition 12, Local's): the source of a pulse's child C has weight 2r (C(s) = 1), 2r + 1 (C(s) = 0,
+# L >= 2) or 2r - 1 (C(s) = 0, L = 1), r the number of black runs of C; heavy sources then have L + M <= q - 1 when
+# C(s) = 1 and L >= 2, else <= q - 2, both attained for q >= 5
+ok122 = True
+for q in range(4, 13):
+    full = (1 << q) - 1
+    hit = set()
+    ok122 &= _rq3.children(0, 1, q) == [full]                 # C = one comes from A = 0, the boundary case
+    for C in range(2, full):
+        A = _rq3.rot(C, 1, q) ^ (1 | C)
+        ok122 &= _rq3.children(A, 1, q) == [C]
+        r = sum(1 for i in range(q) if (C >> i) & 1 and not (C >> ((i - 1) % q)) & 1)
+        L = next(j for j in range(1, q) if (C >> j) & 1)
+        wa = bin(A).count('1')
+        ok122 &= wa == (2 * r if C & 1 else (2 * r - 1 if L == 1 else 2 * r + 1))
+        if wa > 3:
+            M = next(j for j in range(1, q) if not (C >> ((L + j) % q)) & 1)
+            wide = bool(C & 1) and L >= 2
+            cap = q - 1 if wide else q - 2
+            ok122 &= r >= 2 and L + M <= cap
+            if L + M == cap:
+                hit.add(wide)
+    if q >= 5:
+        ok122 &= hit == {True, False}
+check('S122 entry 25 (Proposition 12): a pulse source has weight 2r, 2r + 1 or 2r - 1 by the child\'s black runs '
+      '(every C, q = 4 .. 12); heavy sources have L + M <= q - 1 (C(s) = 1, L >= 2) or q - 2, both attained', ok122)
+# S123 (GC349): for every source of weight w > 3, the source is zero on 1 .. L-2 and L .. L+M-2 (L >= 2; L + M - 3
+# distinct cells), so L + M <= q - w + 3 and L <= q - w + 2; for L = 1, A(0) = 0 and L + M <= q - w + 1; the
+# four-edge debt at every arrival is within q - 5/2 + max(0, q - w - 1/2); w + L + M = q + 3 is attained
+ok123 = True
+for q in range(4, 13):
+    sat = 0
+    for A in range(1 << q):
+        w = bin(A).count('1')
+        if w <= 3:
+            continue
+        C = _rq3.children(A, 1, q)[0]
+        D = _rq3.children(1, C, q)[0]
+        E = _rq3.children(C, D, q)[0]
+        L = next(j for j in range(1, q) if (C >> j) & 1)
+        M = next(j for j in range(1, q) if not (C >> ((L + j) % q)) & 1)
+        if L >= 2:
+            Z = list(range(1, L - 1)) + list(range(L, L + M - 1))
+            ok123 &= len({i % q for i in Z}) == L + M - 3 and not any((A >> (i % q)) & 1 for i in Z)
+            ok123 &= L + M <= q - w + 3 and L <= q - w + 2
+            sat += w + L + M == q + 3
+        else:
+            ok123 &= not A & 1 and L + M <= q - w + 1
+        for T0 in range(q):
+            T, ds = T0, []
+            for x in (1, C, D, E):
+                dl = _rd115(x, T, q)
+                ds.append(dl)
+                T += dl
+            ok123 &= _debt115(ds)[1] <= 2 * q - 5 + max(0, 2 * (q - w) - 1)
+    ok123 &= sat == (q - 2) * (q - 3) // 2
+ok123 &= _rq3.children(255, 1, 8) == [85] and _rq3.children(15, 1, 4) == [5]
+check('S123 GC349: a heavy source is zero on L + M - 3 forced cells, so L + M <= q - w + 3 (q - w + 1 when L = 1); '
+      'the window debt is within q - 5/2 + max(0, q - w - 1/2) at every arrival; saturation by C(q - 2, 2) sources '
+      'at each q = 4 .. 12', ok123)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
