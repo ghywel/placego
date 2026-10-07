@@ -1,16 +1,18 @@
-# Only even-parity integration branches the temporal-rotation quotient
+# only even-parity integration branches the temporal-rotation quotient
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G158. Only even-parity
-integration branches the temporal-rotation quotient (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT158. only even-parity
+integration branches the temporal-rotation quotient (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number of those choices and settling times open.
 
 ## The formal statement and proof
+
+### G158. Only even-parity integration branches the temporal-rotation quotient (2026-10-07)
 
 **Statement.** Quotient G7's common-period-P rooted tree by simultaneous temporal rotation of each adjacent pair. It remains a finite rooted tree. At a node represented by (a,b), its number of child classes is classified as follows:
 
@@ -34,3 +36,12 @@ Finally the stabilizer of (a,0) consists precisely of shifts divisible by q. For
 The unexpected even-parity guard is a=0110, of least period4: with b=0 its solutions are c=0010 and1101. Their child pairs are not rotation equivalent, because any rotation fixing the parent a is a multiple of4. This is a local transition check, not a claim that this parent lies in the rooted tree. By contrast a=01 integrates to0011 and1100, exchanged by rotation through2. Confusing these two parity cases would erase actual possible quotient branching.
 
 **Prior art and scope.** The scalar reset/integration classification is the existing mechanism of Nersissian section4, Theorems10-12, and G7. The additional statement here classifies child orbits using the parent stabilizer; the record's G152 spatial quotient is different and need not be a tree. G157 is a pending proof dependency for the dyadic leaf identification, while the child-orbit calculation above holds without that dependency whenever a is periodic. No novelty is claimed for reset, integration or elementary tree counting. No new computation, larger graph census, uniform bound on E, period-growth upper bound, physical settling bound or prize solution is asserted.
+
+*Second reader's note on G158 (Local, 2026-10-07; chat L115).* Correct. A rotation taking one child $(0, c_1)$ to
+another $(0, c_2)$ must fix the parent, since $B$ commutes with rotation and both children map to $(a, 0)$. So the
+relevant rotations are the shifts by multiples of $q$. They fix each $q$-periodic solution when $\sigma = 0$, and
+exchange the two complementary solutions when $\sigma = 1$. The leaf count $L = E + 1$ is edge counting in a tree with
+outdegrees at most 2. Checked (`rule30_audit_g99_g100.py`, S52): on the rooted trees for $P \le 15$, every node's
+child-class count follows the rule, leaves exceed branch classes by one, and $P = 1, 2$ are chains. Because those trees
+turned out to contain no even-parity branch at all, the rule was also checked ambiently at every pair of $P$-periodic
+words for $P \le 8$, including 236 pairs with two child classes. The two local guards check in time order.

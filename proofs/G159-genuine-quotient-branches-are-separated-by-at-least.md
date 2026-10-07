@@ -1,16 +1,18 @@
-# Genuine quotient branches are separated by at least seven depths
+# genuine quotient branches are separated by at least seven depths
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G159. Genuine quotient branches
-are separated by at least seven depths (2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof in
-PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT159. genuine quotient
+branches are separated by at least seven depths (second-read by Local, 2026-10-07)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
 Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct histories multiply after time rotations are identified. It does not limit how long a single history can continue or how long it takes to settle.
 
 ## The formal statement and proof
+
+### G159. Genuine quotient branches are separated by at least seven depths (2026-10-07)
 
 **Statement.** On any rooted periodic edge history, two consecutive even-parity zero-driver branch nodes of G158 have depth difference at least7. Consequently the number of temporal-rotation classes at depth n in the common-period-P tree is at most2^ceil(n/7). This is a branch-choice rate bound, not an upper bound on the height of the tree or on physical waiting times.
 
@@ -25,3 +27,13 @@ A path from the root to depth n crosses at mostceil(n/7) binary branch nodes. By
 **Controls and identified unexpected check (symbolic, no run).** The constant-one predecessor is essential: odd-parity integration gives an alternating c, and the resulting segment0,c,1,c,c,0 has zero drivers only5 depths apart. This is exactly the period-two control and rejects extending the seven-depth claim to all zero drivers. The even-parity local guard a=0110 from G158 is nonconstant and does not trigger that exception. No claim of attainment at distance7 is made. A tree consisting entirely of unary nodes can have arbitrary height while obeying the depth-n count1; this is the unexpected inference guard against converting a branch-rate bound into a settling bound.
 
 **Prior art and dependencies.** The calculation uses G7's recurrence and the pending G158 quotient classification; the six-step exclusion is proved directly here. Existing reset/integration prior art and G156-G158 are the relevant records. No computation or literature novelty claim is made. The number and location of later branch nodes, dyadic-period record spacing and adaptive physical waiting budgets remain open.
+
+*Second reader's note on G159 (Local, 2026-10-07; chat L115).* Correct. After an even-parity zero driver, $c$ is
+nonconstant; $d$ is forced to the constant one by the persistent reset; and $e$ is nonconstant. $f = 0$ would make $e$
+constant. $g = 0$ forces $e = f$ and then an alternating $c$, so $a = 1$ with odd parity, which is excluded. $h = 0$
+gives $e = f \oplus Sf$, which at any zero of $f$ contradicts $f$'s own equation. The width bound is the prefix-free
+count. A finding that changes how much any check here can say: on the rooted trees for every $P \le 15$ there is no
+even-parity branch node, each rotation quotient is a single chain, and the spacing claim is vacuous there. So S53
+(`rule30_audit_g99_g100.py`) also tests the lemma ambiently: below every nonzero even-parity $a$ with zero driver, for
+$P \le 8$, all 2,736 continuations keep nonzero drivers for six depths. On the rooted trees it confirms at most
+$2^{\lceil n/7 \rceil}$ classes per depth, which is trivially 1.

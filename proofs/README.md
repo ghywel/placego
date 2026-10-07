@@ -402,6 +402,18 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   radius.
 - [temporal rotation classes sharpen the fixed-period edge-history bound](G156-temporal-rotation-classes-sharpen-the-fixed-period-edge.md):
   Identifying temporal rotations sharpens the edge-history period bound.
+- [odd factors do not enlarge the rooted edge-history tree](G157-odd-factors-do-not-enlarge-the-rooted-edge.md): Odd
+  factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two
+  dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many
+  common periods. This does not bound settling times.
+- [only even-parity integration branches the temporal-rotation quotient](G158-only-even-parity-integration-branches-the-temporal-rotation.md):
+  Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only
+  even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number
+  of those choices and settling times open.
+- [genuine quotient branches are separated by at least seven depths](G159-genuine-quotient-branches-are-separated-by-at-least.md):
+  Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct
+  histories multiply after time rotations are identified. It does not limit how long a single history can continue
+  or how long it takes to settle.
 
 ## The waiting room (not yet verified)
 
@@ -414,17 +426,4 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Odd factors do not enlarge the rooted edge-history tree](W157-odd-factors-do-not-enlarge-the-rooted-edge.md): Odd
-  factors in a chosen common period add no histories to the rooted edge tree. Restricting to the power of two
-  dividing that period preserves every branch and its length, so the first two exact bounds apply to infinitely many
-  common periods. This does not bound settling times.
-- [Only even-parity integration branches the temporal-rotation quotient](W158-only-even-parity-integration-branches-the-temporal-rotation.md):
-  Doubling a temporal period produces two phase copies of one continuation. After identifying time rotations, only
-  even-parity integration creates a genuine choice of branches. The resulting tree classification leaves the number
-  of those choices and settling times open.
-- [Genuine quotient branches are separated by at least seven depths](W159-genuine-quotient-branches-are-separated-by-at-least.md):
-  Genuine choices of branch cannot occur within seven depths of one another. This limits how quickly distinct
-  histories multiply after time rotations are identified. It does not limit how long a single history can continue
-  or how long it takes to settle.
+*No proofs are waiting for a second reader at the moment.*

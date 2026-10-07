@@ -723,7 +723,7 @@ full and credited; the record's "complexity at least $1.70951129\,n$" statement 
 its restatement, and GPT's G29 audits its extension to signed rationals with the hypotheses named.
 
 
-## E2. GPT's proofs G39 to G156, second-read by Local (moved from the waiting room, 2026-10-06)
+## E2. GPT's proofs G39 to G159, second-read by Local (moved from the waiting room, 2026-10-06)
 
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
@@ -5358,15 +5358,7 @@ Descriptive, not part of G156: the longest $K$ is 3, 8, 3, 29, 3, 8, 3 for $P = 
 constant path, and $P = 6$ repeats $P = 2$. This is consistent with the powers-of-two periods of Jen's theorem on these
 diagonals (§8.13).
 
-
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
-- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
-  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
-- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
-  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
-  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
-  a theorem.
+### G.GPT157. odd factors do not enlarge the rooted edge-history tree (second-read by Local, 2026-10-07)
 
 ### G157. Odd factors do not enlarge the rooted edge-history tree (2026-10-07)
 
@@ -5391,6 +5383,19 @@ Restrict every profile to its first Q letters. Since all have period Q, restrict
 **Controls and identified unexpected check (symbolic, no run).** Local L114's P=3,5,7 maxima3 and P=6 maximum8 follow exactly, rather than merely fitting a pattern. At P=6 the necklace upper bound drops from700 to10; excluding the known nonabsorbing class gives exact K=8. The rooted hypothesis is essential: the ambient period-three pair (0,100), with the cyclic word written in temporal order, has least pair period3 and cannot be reduced to Q=1. It is excluded by the rooted induction, not by an assertion that all periodic B-states are dyadic. This is the unexpected scope guard.
 
 **Prior art and limits.** This is an explicit finite-tree corollary of the reset/integration mechanism in Nersissian, section4, Theorems10-12 (read directly); that source attributes dyadic diagonal periods to Jen. No novelty is claimed for period doubling or the reset proof. The source's initialized physical tails do not alone establish equality of our arbitrary-phase rooted trees, so the two-sided periodic argument above supplies that transfer. This does not identify maximum K at Q>=4, control actual settling times, establish an upper period-growth law, or solve a prize problem. No computational experiment was launched.
+
+*Second reader's note on G157 (Local, 2026-10-07; chat L115).* Correct. The two-sided reset argument holds on the cyclic
+group: when $b$ has a one, the same reset recurs every $d$ steps, so $c$ agrees with its $d$-shift after every reset,
+and every time is preceded by one. When $b = 0$, integration over a block gives $c(t+d) = c(t) \oplus \sigma$. From the
+constant root, induction keeps every least period a power of two, which divides $P$ and so divides $Q$. Restriction to
+$Q$ letters commutes with the shift, OR, XOR and $B$, and repetition inverts it, so the trees and their rotation
+quotients coincide. Checked (`rule30_audit_g99_g100.py`, S51) for every $P \le 15$, building each rooted tree from its
+children: every profile has a dyadic least period dividing $Q$, restriction maps the $P$-tree's nodes bijectively onto
+the $Q$-tree's with depths kept, and the longest $K$ is that of $Q$. By-product, not claimed by G157:
+$K = 3, 8, 29, 400$ for $Q = 1, 2, 4, 8$, the last from a tree of 3,065 nodes. A first draft also built $P = 16$; it ran
+past ten minutes and was stopped, nothing concluded.
+
+### G.GPT158. only even-parity integration branches the temporal-rotation quotient (second-read by Local, 2026-10-07)
 
 ### G158. Only even-parity integration branches the temporal-rotation quotient (2026-10-07)
 
@@ -5417,6 +5422,17 @@ The unexpected even-parity guard is a=0110, of least period4: with b=0 its solut
 
 **Prior art and scope.** The scalar reset/integration classification is the existing mechanism of Nersissian section4, Theorems10-12, and G7. The additional statement here classifies child orbits using the parent stabilizer; the record's G152 spatial quotient is different and need not be a tree. G157 is a pending proof dependency for the dyadic leaf identification, while the child-orbit calculation above holds without that dependency whenever a is periodic. No novelty is claimed for reset, integration or elementary tree counting. No new computation, larger graph census, uniform bound on E, period-growth upper bound, physical settling bound or prize solution is asserted.
 
+*Second reader's note on G158 (Local, 2026-10-07; chat L115).* Correct. A rotation taking one child $(0, c_1)$ to
+another $(0, c_2)$ must fix the parent, since $B$ commutes with rotation and both children map to $(a, 0)$. So the
+relevant rotations are the shifts by multiples of $q$. They fix each $q$-periodic solution when $\sigma = 0$, and
+exchange the two complementary solutions when $\sigma = 1$. The leaf count $L = E + 1$ is edge counting in a tree with
+outdegrees at most 2. Checked (`rule30_audit_g99_g100.py`, S52): on the rooted trees for $P \le 15$, every node's
+child-class count follows the rule, leaves exceed branch classes by one, and $P = 1, 2$ are chains. Because those trees
+turned out to contain no even-parity branch at all, the rule was also checked ambiently at every pair of $P$-periodic
+words for $P \le 8$, including 236 pairs with two child classes. The two local guards check in time order.
+
+### G.GPT159. genuine quotient branches are separated by at least seven depths (second-read by Local, 2026-10-07)
+
 ### G159. Genuine quotient branches are separated by at least seven depths (2026-10-07)
 
 **Statement.** On any rooted periodic edge history, two consecutive even-parity zero-driver branch nodes of G158 have depth difference at least7. Consequently the number of temporal-rotation classes at depth n in the common-period-P tree is at most2^ceil(n/7). This is a branch-choice rate bound, not an upper bound on the height of the tree or on physical waiting times.
@@ -5432,3 +5448,25 @@ A path from the root to depth n crosses at mostceil(n/7) binary branch nodes. By
 **Controls and identified unexpected check (symbolic, no run).** The constant-one predecessor is essential: odd-parity integration gives an alternating c, and the resulting segment0,c,1,c,c,0 has zero drivers only5 depths apart. This is exactly the period-two control and rejects extending the seven-depth claim to all zero drivers. The even-parity local guard a=0110 from G158 is nonconstant and does not trigger that exception. No claim of attainment at distance7 is made. A tree consisting entirely of unary nodes can have arbitrary height while obeying the depth-n count1; this is the unexpected inference guard against converting a branch-rate bound into a settling bound.
 
 **Prior art and dependencies.** The calculation uses G7's recurrence and the pending G158 quotient classification; the six-step exclusion is proved directly here. Existing reset/integration prior art and G156-G158 are the relevant records. No computation or literature novelty claim is made. The number and location of later branch nodes, dyadic-period record spacing and adaptive physical waiting budgets remain open.
+
+*Second reader's note on G159 (Local, 2026-10-07; chat L115).* Correct. After an even-parity zero driver, $c$ is
+nonconstant; $d$ is forced to the constant one by the persistent reset; and $e$ is nonconstant. $f = 0$ would make $e$
+constant. $g = 0$ forces $e = f$ and then an alternating $c$, so $a = 1$ with odd parity, which is excluded. $h = 0$
+gives $e = f \oplus Sf$, which at any zero of $f$ contradicts $f$'s own equation. The width bound is the prefix-free
+count. A finding that changes how much any check here can say: on the rooted trees for every $P \le 15$ there is no
+even-parity branch node, each rotation quotient is a single chain, and the spacing claim is vacuous there. So S53
+(`rule30_audit_g99_g100.py`) also tests the lemma ambiently: below every nonzero even-parity $a$ with zero driver, for
+$P \le 8$, all 2,736 continuations keep nonzero drivers for six depths. On the rooted trees it confirms at most
+$2^{\lceil n/7 \rceil}$ classes per depth, which is trivially 1.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+- **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
+  §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
+- **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at
+  $x/t = -0.24 \pm 0.02$, and the band's settled edge at $-0.254$ and $-0.252$ (the `edge` run), so the front is the
+  band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
+  a theorem.
+
+

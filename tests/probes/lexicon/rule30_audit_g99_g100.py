@@ -239,6 +239,22 @@ CHECKS (GPT's claims at 827e006):
      root (0, 1^P)) has longest prefix K with K + 1 <= N_4(P), the all-necklace count; its pairs at different depths lie
      in different rotation classes; K = 3 at P = 1 and K = 8 at P = 2 with G156's literal path; and the largest K by P
      is reported.
+  S51 (G157, added 2026-10-07 at 70a3fad): for every P <= 15, the rooted edge tree built by children (c(t+1) =
+     a(t) XOR (b(t) OR c(t)), closed cyclically) has every profile of least period a power of two dividing
+     Q = 2^v2(P), its longest prefix K equals that of the Q-tree, and restriction to the first Q letters maps its nodes
+     bijectively onto the Q-tree's; the period-three pair (0, 100) is not dyadic. K for Q = 1, 2, 4, 8 is reported as a
+     by-product. (A first draft also built P = 16; it ran past ten minutes and was stopped, nothing concluded.)
+  S52 (G158, added 2026-10-07 at 6592bf3): on the rooted trees of S51 (P <= 15), every node's number of child
+     rotation classes follows G158's rule (driver nonzero: 1; zero driver, block parity 0: 2; parity 1: 1 if 2q | P,
+     else 0); the quotient is a tree with leaves = even-parity branch nodes + 1; P = 1 and 2 quotients are chains; and
+     the local guards a = 0110 -> {0010, 1101}, a = 0101 -> {0011, 1100} (written in time order).
+  S53 (G159, added 2026-10-07 at 60d0ce8): on the same trees, every descendant within six depths of an even-parity
+     zero-driver node has a nonzero driver, and the number of rotation classes at depth n is at most 2^ceil(n/7).
+  Found while writing S52/S53: for every P <= 15 the rooted trees contain no even-parity branch node at all (each
+     quotient is one chain), so on them the spacing claim is vacuous and the two-class case of G158 untested. Both
+     lemmas are local, so S52 and S53 also run them ambiently, over every pair (a, b) of P-periodic words, P <= 8:
+     G158's child-class count at every pair, and G159's six nonzero drivers below every nonzero even-parity a with
+     driver zero, along every continuation.
 """
 import random
 from fractions import Fraction as F
@@ -2309,4 +2325,139 @@ path = [(0, 3), (3, 3), (3, 0), (0, 1), (1, 3), (3, 1), (1, 1), (1, 0)]
 ok50 &= edge_B(*path[0], 2) == (0, 0) and all(edge_B(*path[i + 1], 2) == path[i] for i in range(7))
 check('S50 G156: rotation commutes with B; rooted edge depths sit in distinct classes; K + 1 <= N_4(P) for P <= 7', ok50,
       'longest K and N_4 by period: %s' % K50)
+def edge_children(a, b, P):
+    out = []
+    for c0 in (0, 1):
+        c = [c0]
+        for t in range(P - 1):
+            c.append(((a >> t) & 1) ^ (((b >> t) & 1) | c[t]))
+        if ((a >> (P - 1)) & 1) ^ (((b >> (P - 1)) & 1) | c[P - 1]) == c0:
+            out.append(sum(v << t for t, v in enumerate(c)))
+    return out
+
+
+def lp_bits(w, P):
+    for d in range(1, P + 1):
+        if P % d == 0 and all(((w >> t) & 1) == ((w >> ((t + d) % P)) & 1) for t in range(P)):
+            return d
+
+
+def edge_tree(P):
+    root = (0, (1 << P) - 1)
+    nodes, frontier, depth = {root: 0}, [root], 0
+    while frontier:
+        depth += 1
+        nxt = []
+        for (a, b) in frontier:
+            for c_ in edge_children(a, b, P):
+                if (b, c_) not in nodes:
+                    nodes[(b, c_)] = depth
+                    nxt.append((b, c_))
+        frontier = nxt
+    return nodes
+
+
+ok51 = True
+trees = {P: edge_tree(P) for P in range(1, 16)}
+K51 = {P: max(t_.values()) + 1 for P, t_ in trees.items()}
+for P in range(1, 16):
+    Q = P & -P
+    ok51 &= all((lp_bits(x, P) & (lp_bits(x, P) - 1)) == 0 and Q % lp_bits(x, P) == 0 for nd in trees[P] for x in nd)
+    ok51 &= K51[P] == K51[Q]
+    restr = {(a & ((1 << Q) - 1), b & ((1 << Q) - 1)): dpt for (a, b), dpt in trees[P].items()}
+    ok51 &= len(restr) == len(trees[P]) and restr == trees[Q]
+ok51 &= lp_bits(0b001, 3) == 3 and K51[1] == 3 and K51[2] == 8 and K51[4] == 29
+check('S51 G157: rooted edge trees reduce to the dyadic part of the period, node for node, for P <= 15', ok51,
+      'longest K for Q = 1, 2, 4, 8: %s; nodes at Q = 8: %d' % ([K51[q] for q in (1, 2, 4, 8)], len(trees[8])))
+def bits_str(w, P):
+    return ''.join(str((w >> t) & 1) for t in range(P))
+
+
+ok52 = ok53 = True
+E52 = {}
+for P in range(1, 16):
+    T = trees[P]
+    kids = {}
+    for (b, c_) in T:
+        if T[(b, c_)] == 0:
+            continue
+        par = edge_B(b, c_, P)
+        kids.setdefault(par, []).append((b, c_))
+    qkids = {}
+    for nd in T:
+        cls = rot_class(*nd, P)
+        qkids.setdefault(cls, set()).update(rot_class(*k, P) for k in kids.get(nd, []))
+    nE = nL = 0
+    for nd in T:
+        a, b = nd
+        nc = len(qkids[rot_class(*nd, P)])
+        if b != 0:
+            want = 1
+        else:
+            q = lp_bits(a, P)
+            sig = bin(a & ((1 << q) - 1)).count('1') % 2
+            want = 2 if sig == 0 else (1 if P % (2 * q) == 0 else 0)
+        ok52 &= nc == want
+    for cls, ch in qkids.items():
+        a, b = cls
+        if b == 0 and len(ch) == 2:
+            nE += 1
+        if len(ch) == 0:
+            nL += 1
+    ok52 &= nL == nE + 1
+    E52[P] = nE
+    if P in (1, 2):
+        ok52 &= nE == 0
+    for nd, dpt in T.items():
+        a, b = nd
+        if b == 0 and bin(a & ((1 << lp_bits(a, P)) - 1)).count('1') % 2 == 0:
+            front = [nd]
+            for step in range(6):
+                front = [k for x in front for k in kids.get(x, [])]
+                ok53 &= all(k[1] != 0 for k in front)
+    byd = {}
+    for nd, dpt in T.items():
+        byd.setdefault(dpt, set()).add(rot_class(*nd, P))
+    ok53 &= all(len(v) <= 2 ** (-(-dpt // 7)) for dpt, v in byd.items())
+
+
+def integ(a_str):
+    P = len(a_str)
+    out = []
+    for c0 in (0, 1):
+        c = [c0]
+        for t in range(P - 1):
+            c.append(int(a_str[t]) ^ c[t])
+        if int(a_str[P - 1]) ^ c[P - 1] == c0:
+            out.append(''.join(map(str, c)))
+    return sorted(out)
+
+
+ok52 &= integ('0110') == ['0010', '1101'] and integ('0101') == ['0011', '1100']
+amb52 = amb53 = 0
+for P in range(1, 9):
+    m = (1 << P) - 1
+    for a in range(1 << P):
+        for b in range(1 << P):
+            ch = edge_children(a, b, P)
+            ncls = len({rot_class(b, c_, P) for c_ in ch})
+            if b != 0:
+                want = 1
+            else:
+                q = lp_bits(a, P)
+                sig = bin(a & ((1 << q) - 1)).count('1') % 2
+                want = 2 if sig == 0 else (1 if P % (2 * q) == 0 else 0)
+                amb52 += want == 2
+            ok52 &= ncls == want
+        q = lp_bits(a, P)
+        if a != 0 and bin(a & ((1 << q) - 1)).count('1') % 2 == 0:
+            front = [(0, c_) for c_ in edge_children(a, 0, P)]
+            for step in range(6):
+                ok53 &= all(x[1] != 0 for x in front)
+                front = [(x[1], c_) for x in front for c_ in edge_children(x[0], x[1], P)]
+                amb53 += len(front)
+check('S52 G158: child rotation classes follow the parity rule; leaves = branches + 1; P = 1, 2 are chains', ok52,
+      'rooted even-parity branch classes for P <= 15: %d; ambient two-class pairs, P <= 8: %d' % (sum(E52.values()), amb52))
+check('S53 G159: six nonzero drivers after every even-parity branch; at most 2^ceil(n/7) classes at depth n', ok53,
+      'ambient continuations checked: %d' % amb53)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))
