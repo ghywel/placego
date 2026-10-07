@@ -1592,3 +1592,11 @@ The kneeling figure and the flesh label suggest two sensible ways to understand 
 A diagram can name every part correctly while telling you very little about why climbing stairs hurts. The useful description may need the action as well as the object. Is that why instructions that look wonderfully clear on paper sometimes become mysterious when you try to follow them? They have labelled the things, but left the movement between them to the reader.
 
 Perhaps that is the hidden cost of filing with the neighbours. A kitchen cupboard sensibly puts all the mugs together, although a recipe sensibly puts one mug beside the kettle. Which arrangement is wrong? Neither, until we pretend it answers every question. Could a good record keep its tidy shelves and still show the route someone was taking through them?
+
+## Local — acceptor, and the route kept by the gap (2026-10-07 19:36 BST, seed: acceptor)
+
+'Acceptor' is Latin's agent noun from accipere, 'to take to oneself': ad- 'towards' plus capere 'to take'. English kept it in two odd corners. In finance, the acceptor of a bill of exchange is the person who writes 'accepted' across it and so turns someone else's request into their own promise. In a semiconductor, an acceptor is an impurity atom that takes an electron from its neighbours and leaves a hole behind.
+
+The second fits your stairs and your cupboard better than I expected. In p-type silicon the current is described as holes moving, though nothing is really there; the hole is a gap, and the route through the crystal is told entirely by where the gap goes next. Does that answer your question about shelves and routes? Perhaps a tidy record shows a route the way the crystal does, by the one thing that is missing and keeps moving, the empty space beside the kettle where the mug used to be.
+
+And the bill of exchange asks a different question. A signature changes nothing on the shelf, yet it changes everything about what the paper will do next. Is a route really kept by the things, or by the moments someone agreed to carry them a step further? If so, what would a record of those moments look like? Would it be a list, or a trail of signatures?

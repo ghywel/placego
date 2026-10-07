@@ -629,6 +629,17 @@ CHECKS (GPT's claims at 827e006):
      max(0, L - 5/2); GPT's three q = 8 controls (A = 255, 128, 129) reproduce. Local's sharpening, PROOFS.md entry
      24: over all q arrival phases the window's debt is greatest at phase 1, so its arbitrary-arrival charge needs no
      phase transfer.
+  S119 (GC342, added 2026-10-07 at f8c25c4): with D one with holes s+1 .. s+L and b = C(s), the next word is E = one
+     XOR TC XOR b 1_J, J = {s+2, .., s+L+1}, (TC)(i) = C(i - 1), with |E| = q - |C| (b = 0) or q - |C| - L + 2 (b =
+     1), on every word C at q = 4 .. 12. Over every source A of the pulse, no A of weight above 2 gives a singleton E,
+     and (Local's converse, from GPT's two equality cases) E is a singleton exactly for A = 0, e_(s-1) and the named
+     sources e_s + e_(s+r), 1 <= r <= q - 2. GPT's four q = 8 controls (A = 255, 128, 5, 0) reproduce.
+  S120 (GC344, added 2026-10-07 at 2c13fe2): every source of weight above 3 makes the pulse's next three drivers C, D,
+     E nonzero and nonsingleton (q = 4 .. 12), so heavy four-edge windows are disjoint. Weight 3 is sharp, and
+     exactly: the weight-3 overlaps are A = e_s + e_(s+j) + e_(s+j+1), 1 <= j <= q - 2, each with a singleton C, also
+     a singleton D at j = q - 2, never a singleton E. At every arrival phase the four-edge debt is within entry 24's
+     charge q - 5/2 + max(0, L - 5/2) plus GPT's fourth-edge term max(0, q - |E| - 3/2), with no phase transfer. GPT's
+     q = 8 controls (A = 13, 193, 255) reproduce.
 """
 import random
 from fractions import Fraction as F
@@ -6502,4 +6513,74 @@ for q in range(4, 13):
         ok118 &= debts[1] == 2 * q - 5 + max(0, 2 * L - 5) and max(debts) == debts[1]
 check('S118 GC340: one with holes s+1 .. s+L after every pulse child (heavy and odd sources included), delays q, L, 1, '
       'debt q - 5/2 + max(0, L - 5/2); GPT\'s q8 controls; and phase s+1 is a worst arrival (entry 24)', ok118)
+# S119 (GC342): the fourth word after a pulse, E = one XOR TC XOR b 1_J, its weight, and which sources make it a
+# singleton (Local's converse: exactly 0, e_(s-1) and the named sources e_s + e_(s+r), 1 <= r <= q - 2)
+ok119 = True
+for _A, _C, _D, _E in ((255, 85, 249, 89), (128, 254, 253, 2), (5, 249, 241, 16), (0, 255, 253, 4)):
+    ok119 &= (_rq3.children(_A, 1, 8) == [_C] and _rq3.children(1, _C, 8) == [_D]
+              and _rq3.children(_C, _D, 8) == [_E])
+for q in range(4, 13):
+    full = (1 << q) - 1
+    for C in range(2, 1 << q):
+        L = next(j for j in range(1, q) if (C >> j) & 1)
+        D = full & ~(((1 << L) - 1) << 1)
+        b = C & 1
+        J = sum(1 << ((2 + j) % q) for j in range(L))
+        E = full ^ _rq3.rot(C, q - 1, q) ^ (J if b else 0)
+        ok119 &= _rq3.children(C, D, q) == [E]
+        ok119 &= bin(E).count('1') == q - bin(C).count('1') - (L - 2 if b else 0)
+    single = set()
+    for A in range(1 << q):
+        C = _rq3.children(A, 1, q)[0]
+        if C in (0, 1):
+            continue
+        D = _rq3.children(1, C, q)[0]
+        E = _rq3.children(C, D, q)[0]
+        if bin(E).count('1') == 1:
+            single.add(A)
+        if bin(A).count('1') > 2:
+            ok119 &= bin(E).count('1') >= 2
+    ok119 &= single == {0, 1 << (q - 1)} | {1 | (1 << r) for r in range(1, q - 1)}
+check('S119 GC342: E = one XOR TC XOR b 1_J with |E| = q - |C| (b = 0) or q - |C| - L + 2 (b = 1) on every word C; '
+      'no source of weight above 2 gives a singleton E; singleton E exactly for A = 0, e_(s-1) and e_s + e_(s+r), '
+      '1 <= r <= q - 2 (q = 4 .. 12); GPT\'s four q8 controls', ok119)
+# S120 (GC344): for every source of weight above 3, the pulse's next three drivers C, D, E are nonzero and
+# nonsingleton (disjoint four-edge windows); weight 3 overlaps exactly for e_s + e_(s+j) + e_(s+j+1), 1 <= j <= q - 2
+# (singleton C; singleton D too at j = q - 2; never E); the four-edge debt at every arrival is at most entry 24's
+# charge plus max(0, q - |E| - 3/2)
+ok120 = True
+for _A, _C, _D, _E in ((13, 8, 241, 239), (193, 128, 1, 254), (255, 85, 249, 89)):
+    ok120 &= (_rq3.children(_A, 1, 8) == [_C] and _rq3.children(1, _C, 8) == [_D]
+              and _rq3.children(_C, _D, 8) == [_E])
+for q in range(4, 13):
+    w3 = {}
+    for A in range(1 << q):
+        wa = bin(A).count('1')
+        if wa < 3:
+            continue
+        C = _rq3.children(A, 1, q)[0]
+        if C in (0, 1):
+            ok120 = False                                  # C = 0 or B needs source weight 1 or 2
+            continue
+        D = _rq3.children(1, C, q)[0]
+        E = _rq3.children(C, D, q)[0]
+        sg = tuple(n for n, w in (('C', C), ('D', D), ('E', E)) if bin(w).count('1') == 1)
+        if wa == 3:
+            if sg:
+                w3[A] = sg
+            continue
+        ok120 &= not sg and D != 0 and E != 0
+        L = next(j for j in range(1, q) if (C >> j) & 1)
+        cap = 2 * q - 5 + max(0, 2 * L - 5) + max(0, 2 * (q - bin(E).count('1')) - 3)
+        for T0 in range(q):
+            T, ds = T0, []
+            for w in (1, C, D, E):
+                dl = _rd115(w, T, q)
+                ds.append(dl)
+                T += dl
+            ok120 &= _debt115(ds)[1] <= cap
+    ok120 &= w3 == {1 | (3 << j): (('C', 'D') if j == q - 2 else ('C',)) for j in range(1, q - 1)}
+check('S120 GC344: source weight above 3 makes C, D, E nonzero and nonsingleton (q = 4 .. 12); weight-3 overlaps '
+      'exactly e_s + e_(s+j) + e_(s+j+1) (singleton C, and D at j = q - 2, never E); four-edge debt at every arrival '
+      'within entry 24 plus max(0, q - |E| - 3/2); GPT\'s q8 controls', ok120)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

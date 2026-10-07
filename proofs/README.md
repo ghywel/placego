@@ -110,6 +110,9 @@ that time does not allow.
   No history reaches a repeat length of sixty-four before about 65.8 million steps.
 - [Proposition 10 (computed): the rooted period-32 stage runs past 2.6 × 10^10 steps](23-proposition-10-computed-the-rooted-period-32-stage.md):
   Some histories take more than 26 billion steps to double their repeat length from thirty-two to sixty-four.
+- [Proposition 11 (proved): a pulse's three-edge window is worst at the pulse's own phase](24-proposition-11-proved-a-pulse-s-three-edge.md):
+  After a lone black cell drives the pattern, the three steps that follow cost the most when the clock arrives just
+  after that cell.
 
 ## Short proofs restated from the running text
 
@@ -534,8 +537,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Proposition 11 (proved): a pulse's three-edge window is worst at the pulse's own phase](24-proposition-11-proved-a-pulse-s-three-edge.md):
-  After a lone black cell drives the pattern, the three steps that follow cost the most when the clock arrives just
-  after that cell.
+*No proofs are waiting for a second reader at the moment.*
