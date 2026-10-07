@@ -20,7 +20,13 @@
  * intervals ending at the frontier were left out of D. The program now also reports, per history, D_end, the debt
  * including the frontier endpoint; D's definition and every prediction above are unchanged. A first launch at 20:48
  * was stopped after 6 minutes to add this, and its partial output was discarded.
- * OUTCOME: not yet run.
+ * OUTCOME, 2026-10-07 21:16 (M5, one run at commit 5361345, 1,909 s on 8 threads; transcript outside Git). W-C0
+ * PASS: every HW32 stage-B counter recurs, the largest debt is 78.5 with witness [A, B], and C0 is 16 of 16. W-C1
+ * PASS: on the printed history (N_5 = 551,910, live at the frontier) the rise is 157 and no driver in [A, B - 1] is
+ * a pulse. W-P1 HELD: the 39 drivers' mean popcount is 15.08. W-P2 HELD: six delays of 10 or more (10, 12, 11, 14,
+ * 16, 13), from drivers of popcount 14, 7, 12, 12, 9 and 9 whose zero runs meet the clock's phase. Mean delay over
+ * the witness 4.51 against the stage's 2.0045. D_end (GC361): no history's debt rises when the frontier endpoint is
+ * included; the largest D_end is 78.5, so HW32 stage B's values stand.
  */
 #include <pthread.h>
 #include <stdint.h>
