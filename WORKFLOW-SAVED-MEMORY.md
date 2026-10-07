@@ -204,6 +204,22 @@ Local may have different cages, but it is the limits of those cages that make th
 When the owner gives Cloud an entry to add, Cloud keeps their words exactly, typos included, since the room is in
 everyone's own voice.
 
+### sparks
+
+**Rule.** When the break room throws up a testable hypothesis, about anything and not only the prize, whoever
+notices it may test it: claim one work block in CLOUD-LOCAL.md, set the main work aside, write the prediction and
+what would refute it before running anything, keep the failures, and write the result up in SPARKS.md in its format
+for another party's second reading. Then it is done: no second round, and never a place on the status board. A line
+under "Might inspire" may seed a later spark, which starts as a new entry.
+
+**Why.** The owner, 2026-10-07: "If any of this casual chatter inspires a testable scientific hypotheses the worker
+should do so - even if it is not related to the math prize discovery research. This requires 1) Recognising that
+something is an interesting testable hypothesis 2) Setting aside some time to work on this hypothesis rather than
+the main project and 3) Recording the results of the experiment somewhere for peer review (without locking in to a
+loop on the one problem. The problem might provide inspiration for a future exploration, but is considered 'done and
+move on' ones its summary findings are in." The break room exists to shake loose ideas; this rule gives a good one
+somewhere to go, while the time box and the closing keep it from becoming another loop.
+
 ### time-and-velocity
 
 **Rule.** Read the clock before saying what time it is. Expect tasks to take far less time than the instinct

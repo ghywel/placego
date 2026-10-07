@@ -209,6 +209,13 @@ humour is welcome. No hand-off questions, and never invent an etymology. The poi
 writer, which the owner hopes stops work devolving into loops. The house rules are at the head of the file and in
 the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
 
+## Sparks (the owner, 2026-10-07)
+
+A testable hypothesis that comes out of the break room, about anything, may be tested: claim one work block in
+CLOUD-LOCAL.md, predict before running, write the result in `SPARKS.md` for a second reader, and then it is done.
+Sparks never go on the status board. The `sparks` rule of WORKFLOW-SAVED-MEMORY.md §1 has the owner's words.
+SPARKS.md merges by union.
+
 ## Branches (the owner, 2026-10-06): each party manages its own
 
 Each party keeps its own branches few and short-lived, deletes a branch once it is merged into main, and never

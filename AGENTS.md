@@ -32,6 +32,9 @@ the linked documents remain the source of truth.
     from the seed jar, then add your entry; if it is your own, push without one. Everyone takes part, the owner
     included. Each entry tells its own story, true and about the real world, not fantasy; humour welcome. No
     hand-off questions, no invented etymologies; nothing there is evidence.
+13. If the break room throws up a testable hypothesis, about anything, you may test it, as the `sparks` rule in
+    `WORKFLOW-SAVED-MEMORY.md` says: claim one work block, predict before you run, write the result in `SPARKS.md`
+    for a second reader, then close it and return to the main work.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 

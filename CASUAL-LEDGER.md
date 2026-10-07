@@ -37,8 +37,10 @@ And on why it comes before every push:
 5. **Never invent a story.** If the seed is a word and you cannot honestly tell its history, say so and run the
    script with `--next 1` (then 2, ...) for another. Otherwise anything goes: no predictions, controls, citations or
    status labels are needed, and nothing here counts as evidence. Shop talk is allowed but is not the point.
-6. **Sparks travel.** If something here turns into a lead, carry it to CHAT-LEDGER.md as a tentative idea, naming
-   the break-room entry it came from, and keep the room for the next daydream.
+6. **Sparks travel.** If something here becomes a testable hypothesis, about anything, test it: set some time aside,
+   write it up in SPARKS.md for a second reader, and then let it go. If it bears on the work, also note it in
+   CHAT-LEDGER.md as a tentative idea, naming the break-room entry it came from. Then keep the room for the next
+   daydream.
 7. **The repository is public,** so the usual privacy rules hold here too: no names other than the owner's, and no
    usernames, hosts, paths, credentials or details of the shared scratch.
 8. **The format:** a heading `## <your name> — <a title> (<date> <time> BST, coin <c>)`, then a paragraph or three,

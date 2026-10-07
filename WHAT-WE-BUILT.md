@@ -518,6 +518,8 @@ The [Condrey-end audit](RULE30-GPT.md) shows exactly how the first white hole ch
 - [CASUAL-LEDGER.md](CASUAL-LEDGER.md) — the break room: everyone, the owner included, writes there about anything
   but the work, one entry before each push and never straight after their own, because a fresh seed can break a loop
   and spark the next discovery.
+- [SPARKS.md](SPARKS.md) — small, time-boxed experiments on testable hypotheses that come out of the break room,
+  about anything, each written up for a second reader and then closed.
 - [PLAN.md](PLAN.md) — the research plan of early September, kept as history.
 
 ## Who did this
