@@ -33,7 +33,20 @@ PREDICTIONS, Local's, published before the run:
         on actual data), and each odd exit's driver has odd parity over 16 bits while every branch driver's is even.
 Transcripts: none; the outcome is written into this docstring by hand after the single run.
 
-OUTCOME: not yet run.
+OUTCOME, 2026-10-07 14:50 (M5, one run at commit 0006978; CPU 22.3 s, wall 22.3 s, peak RSS 10.3 MiB, 2,159,010
+walk steps, no cap hit). Literal equation PASS on every retained transition. B-C1 PASS (TM5's branches and the single
+cell's exit at 87,866 recur). B-C2 PASS: the million run's three flipped sides are reproduced by this second code,
+exits 183,183, 229,337 and 291,256 and the branch at 165,748, each on exactly one history. B-U PASS (every history's
+excursions sum to its N_5 - 400; branch drivers even, exit drivers odd over 16 bits). B-P1 HELD: the unrealised side
+at 165,748 reaches period 32 below a million, on every one of its histories. B-P2 REFUTED: 16 histories, not at most
+8; the unrealised side branches again and again (174,449, 179,399, 243,767, 350,243, 445,474, 482,608, 485,619,
+537,692, 563,842, 603,582, 760,454), giving 12 histories of its own. None is alive at the bound, so the rooted
+period-16 stage is finite and complete: 15 genuine branch nodes, 16 histories up to rotation, every one entering
+period 32 by depth 894,235. N_5 over the histories: 87,867, 183,184, 196,189, 229,338, 253,537, 271,596, 291,257,
+527,724, 551,910, 555,813, 575,211, 634,886, 645,655, 667,052, 770,532, 894,235. So R_5 = N_5/32 runs from 2,745.8 (the
+single cell's, the whole-tree minimum, as TM5 found) to 27,944.8; lambda_4 = (N_5 - 400)/16 from 5,466.7 to 55,864.7;
+the excursion counts k from 3 to 12; the longest single excursion is 218,681 (on the history exiting at 291,256).
+Per-history excursion lists are printed by the script.
 """
 import resource
 import sys
