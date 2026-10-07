@@ -520,6 +520,14 @@ CHECKS (GPT's claims at 827e006):
      up to rotation, with overlaps 1, 1, 1, 0, T = 3 = q + |w| and E_total = 1 = q/2; GPT's retained sketch 0, 01, 11,
      10, 10, 0 is incompatible. S97's q = 8 (r = 88) and S98's rooted q = 16 (r = 52,808) returns satisfy every bound
      with r >= 6; a single-one word has V = 2 at q = 2 .. 32.
+  S102 (G204, added 2026-10-07 at a06776c): the interval lemma min B - max A <= min(B - A) <= min B - min A and G204's
+     rival separation (h* attains min B; if the least rival B minus the largest rival A exceeds D*, h* is the unique
+     minimizer of D) on 3,000 random finite families (seed 204; the separation decides 1,084 of them); GPT's
+     counterfactual (10, 100), (80, 110) gives 90, 30, 20. From the committed outcomes (rule30_tm5b.py's 16 N_5, max
+     894,235, with 667,052 among them; rule30_tm6.c's N_6 = 65,821,413 on the history entering 32 at 667,052, no other
+     32-bit zero below 67,108,864 = 4 * 2^24, a completed round's end containing the exit): D* = 65,154,361, rivals >=
+     66,214,630, margin 1,060,269, min lambda_5 = 2,036,073 + 25/32, and the wrong subtraction 65,733,546. A model of
+     the round convention: a zero exactly at the frontier F gives entry F + 1, so F + 1 is the safe bound.
 """
 import random
 from fractions import Fraction as F
@@ -5466,4 +5474,57 @@ for prof, q in ((_pr97, 8), (_pr98, 16)):
 ok101 &= all(_wt101(1 ^ _rq3.rot(1, 1, q)) == 2 for q in range(2, 33))
 check('S101 G203: on every first return from an even zero (q = 2 .. 10, c and w nonconstant) and the rooted returns, '
       'T >= q + |w| (+ V(w)/2 when r >= 6), r >= 5, r = 5 only with w alternating; rooted q = 2 equality', ok101)
+import pathlib as _pl102
+import re as _re102
+ok102 = True
+_rng102 = random.Random(204)
+# the interval lemma, min B - max A <= min(B - A) <= min B - min A, and G204's separation rule: with h* attaining min B,
+# L = the least rival B and U = the largest rival A, L - U > D* forces h* to be the unique minimizer of D = B - A
+_sep102 = 0
+for trial in range(3000):
+    n = _rng102.randint(2, 7)
+    A = [_rng102.randint(1, 300) for _ in range(n)]
+    B = [a + _rng102.randint(1, 400) for a in A]
+    D = [b - a for a, b in zip(A, B)]
+    ok102 &= min(B) - max(A) <= min(D) <= min(B) - min(A)
+    s = B.index(min(B))
+    if B.count(min(B)) == 1:
+        L = min(B[i] for i in range(n) if i != s)
+        U = max(A[i] for i in range(n) if i != s)
+        if L - U > D[s]:
+            _sep102 += 1
+            ok102 &= D.index(min(D)) == s and D.count(min(D)) == 1
+ok102 &= _sep102 >= 50
+# GPT's abstract counterfactual: entries (10, 100) and (80, 110)
+ok102 &= (100 - 10, min(100 - 10, 110 - 80), 100 - 80) == (90, 30, 20)
+# the recorded integers, read from the committed outcomes (rule30_tm5b.py's docstring, rule30_tm6.c's header)
+_d102 = _pl102.Path(__file__).parent
+_t5b = _d102.joinpath('rule30_tm5b.py').read_text()
+_n5 = [int(x.replace(',', '')) for x in _re102.search(r'N_5 over the histories: ([\d,\s]+?)\. So', _t5b).group(1).replace(
+    '\n', ' ').split(', ')]
+_t6 = _d102.joinpath('rule30_tm6.c').read_text()
+ok102 &= len(_n5) == 16 and max(_n5) == 894235 and min(_n5) == 87867 and 667052 in _n5
+ok102 &= 'N_6 = 65,821,413' in _t6 and 'entered period 32 at 667,052' in _t6 and 'below depth 67,108,864' in _t6
+# the frontier is a completed round's end: rounds of 2^24, and the winning exit lies inside round 4
+_F102 = 4 * 2 ** 24
+ok102 &= _F102 == 67108864 and 3 * 2 ** 24 < 65821412 < _F102
+_Ds, _Dr = 65821413 - 667052, _F102 + 1 - max(_n5)
+ok102 &= (_Ds, _Dr, _Dr - _Ds) == (65154361, 66214630, 1060269) and 65821412 - 667051 == _Ds
+ok102 &= _Fr(_Ds, 32) == 2036073 + _Fr(25, 32) and 65821413 - min(_n5) == 65733546
+# the round convention modelled: a walk advanced while d < round_end may hold an unprocessed odd zero at depth F
+# exactly; its entry is then F + 1, so F + 1 (not F + 2) is the safe bound, and it can be attained
+for zf in (_F102 - 1, _F102, _F102 + 1):
+    d, re_, ent = 0, 0, None
+    while ent is None:
+        re_ += 2 ** 24
+        while d < re_:
+            if d == zf:
+                ent = d + 1
+                break
+            d += 2 ** 20                      # coarse steps that land on the round ends and on F +- 1 below
+            if d > zf:
+                d = zf
+    ok102 &= (ent >= _F102 + 1) == (zf >= _F102) and (zf != _F102 or ent == _F102 + 1)
+check('S102 G204: min B - max A <= min(B - A) <= min B - min A and the rival separation on 3,000 random families; '
+      'recorded entries give D* = 65,154,361 against rivals >= 66,214,630; min lambda_5 = 2,036,073 + 25/32', ok102)
 print('ALL CHECKS PASS' if not fails else 'FAILED: ' + ', '.join(fails))

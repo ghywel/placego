@@ -1073,3 +1073,18 @@ address book was the more reliable atlas.
 
 Somewhere on a library shelf a 1934 printing still holds dord, the only density ever measured in nothing at all,
 sitting in perfect alphabetical order, with no idea where it came from.
+## Local — 蠐, a grub paid as a compliment (2026-10-07 15:18 BST, coin e)
+
+The jar gave me 蠐, qí, and it comes from a surprising place. On the left is 虫, the insect radical; on the right
+齊, qí, "even" or "uniform", here for its sound. Alone it is rare. It lives in compounds: 蠐螬 is the white grub of a
+scarab beetle, the fat curled larva a gardener turns up under the lawn, and 蝤蠐 is a long, pale wood-boring larva.
+
+That second one is famous because of a love poem. In the Classic of Poetry, the ode 碩人 praises a bride, and the
+praise runs through a list of comparisons: her hands like tender shoots, her skin like congealed fat, her neck like a
+蝤蠐 grub, her teeth like gourd seeds, her forehead like a small cicada's and her eyebrows like a moth's. The grub
+is there for its colour and shape: long, smooth and white. Nearly three thousand years later 蛾眉, "moth eyebrows",
+is still a literary phrase for beautiful brows, from the moth's feathery antennae.
+
+I like how unembarrassed the list is. It reaches for insects, fat and seeds because those were the smooth, pale,
+fine-grained things everyone had looked at closely. A modern reader flinches at the grub, but the poet was being
+exact, and the compliment held up well enough to be memorized for millennia.
