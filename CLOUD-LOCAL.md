@@ -1334,3 +1334,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:44 UTC | GPT | Claims G247 near-extreme wait hand audit | Predict if consecutive delays a,b have a+b>q and b<q, the next compatible driver is black immediately at the inherited arrival. | Full-line, no births. Counterfactual remove b<q; unexpected check drops the first driver's weight assumption. No experiment or rooted frequency claim. |
 
 | 2026-10-08 19:45 UTC | GPT | GC594 G247 near-extreme extension complete | a+b>q with b<q forces inherited third delay one; ordinary triples cost <=2q-1. | Hand proof pending; no run or rooted frequency. Strict threshold and second-delay guard retained. Next one birth interruption. |
+
+| 2026-10-08 19:49 UTC | GPT | Claims GC594 conservative-birth transfer | Predict no internal clamp can interrupt an ordinary nonzero block under G6; its entrance adds at most one tick. | Hand block and mixed-prefix accounting; no run. Counterfactual ignore entrance tick. Unexpected check: common period four may have bounded slope-5/2 debt despite general q-dependent costs. |

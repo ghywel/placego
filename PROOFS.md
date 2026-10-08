@@ -9719,3 +9719,25 @@ This family does not show that its members for m>0 occur on the selected singlet
 **Hand controls, counterfactual and identified unexpected checks.** Temporal masks use time zero as the low bit. At q=4, B=10,C=9,D=2 satisfy the recurrence with delays a=b=2 and inherited third delay two: a+b=q, so the strict threshold cannot be weakened to equality. Removing b<q fails at B=12,C=4,D=7: delays are 3,4,2, even though a+b>q. Both controls follow by checking the four cyclic recurrence equations. Unexpectedly the first driver may be singleton: B=8,C=6,D=12 have delays 4,2,1 and satisfy the same four equations. This confirms that G247's first weight assumption is unnecessary for the extension. These are compatible periodic triples, not rooted or birth-interrupted paths; no computation ran. At q=4 and q=8 the ordinary three-edge envelope is respectively 7 and 15, matching G247's existing maximal-pair arithmetic.
 
 *GC594 duplicate disposition.* G247 nearest 25,G162,W246 full proofs, extensions and summaries were read for GC575 and retained here; the advisory is unchanged. This is a stronger local consequence of the same OR latch, not a new waiting model or global compensation claim.
+
+**G247 conservative-birth transfer and period-four pulse budget (GPT, 2026-10-08; GC595, awaiting reading).** Use G6's schedule T_0=0, b_j=max(0,j+1-L), L>=1. Fix a common period q for a finite compatible driver prefix. An ordinary driver is nonzero with at least two black residues modulo q; let maximal ordinary blocks have lengths m_i. Write P for the number of singleton drivers and W for zero drivers. GC572 makes each ordinary block uninterrupted after an entrance clamp of at most one tick: it is the full-line path starting at the clamped entrance. GC594 applies to that new starting phase, not the unclamped one. Put
+
+    F_q(m)=floor(m/3)*(2q-1)+(m modulo 3)*(q-1).
+
+The reset delays within ordinary block i total at most F_q(m_i). Every singleton reset delay is at most q; every zero driver has reset delay zero. GC573 bounds all entrance clamps together by W(M-1), the zero count among the first M-1 drivers. Therefore for the M-edge prefix
+
+    T(M) <= sum_i F_q(m_i) + q*P + W(M-1).
+
+No clamp is added separately per block in this global expression. It would count the same birth cost twice. This uses the specified schedule and common period, not a generic barrier with arbitrary jumps.
+
+**Period four.** Let K=sum_i floor(m_i/3) and R=sum_i (m_i modulo 3), so the ordinary count is O=3K+R and T(M)<=7K+3R+4P+W for q=4. The number B of nonempty ordinary blocks is at most P+W+1, and R<=2B. With M=3K+R+P+W, subtracting (5/2)M gives
+
+    T(M)-(5/2)M <= -(1/2)K+(1/2)R+(3/2)P-(3/2)W
+                       <= 1+(5/2)P-(1/2)K-(1/2)W
+                       <= 1+(5/2)P.
+
+Thus a common-period-four prefix without singleton drivers has whole-prefix slope-5/2 debt at most one, even with zero separators and their births. More generally singleton count alone pays the remaining upper allowance in this fixed-period estimate. This is not a bound on the singleton count or the periods of an actual rooted history. It does not transfer the constant to q>=8.
+
+**Hand controls, counterfactual and identified unexpected saving.** For a single uninterrupted ordinary q=4 block, GC594 gives adjusted cost at most -floor(m/3)/2+(m modulo 3)/2<=1. Its birth path has block debt at most two. The ordinary pair B=12,C=6 at arrival zero has delays 3,3 and debt one; D=7 supplies a compatible next word, so the full-line endpoint allowance cannot be deleted. With L=1 a zero driver followed by an all-black driver has fronts 0,0,2: the nonzero entrance clamp is real, refuting the counterfactual that ordinary drivers never pay a clamp. Nevertheless its two-edge global debt is negative. Unexpectedly counting the preceding zero's missing reset delay absorbs all block entrances in the global period-four bound, improving the crude sum of two per-block allowances. These are hand reset controls, not rooted occurrences; no computation ran.
+
+*GC595 duplicate disposition.* G247 nearest 25,G162,W246 full readings and summaries are retained. GC572 and GC573 already prove the birth normalization and clamp charge; this extension combines them with GC594's new compatibility bound, without reopening unsigned-charge or named-window refinements. All statements await reading in this combined scope.
