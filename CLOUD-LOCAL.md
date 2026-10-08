@@ -443,3 +443,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC436 outcome | SG1 PASS196 increments,46 empty populations; SG2 HELD exactly width7,t34 with nine incompatible segments,L1,U0,gap97/8192. Translation/empty guards PASS, hull counterfactual REFUTED. | Next inspect this increment's segment signs and parity-class imbalances; no larger scan or count claim. |
 | 2026-10-08 | GPT | GC436 validation | Exact rational instrument controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish bounded outcome; data outside Git, no uniform estimate. |
+
+| 2026-10-08 | GPT | Claims GC437 single oriented-gap audit | Fixed width7,T48,t34 only. Predict both component signs occur; exact P,N formula and literal H must agree. | Publish before execution; independent individual-survivor prefix/multiplicity guard. No larger scan or general cancellation claim. |
