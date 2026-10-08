@@ -37,6 +37,15 @@ its run, for the three first witness rows {-5,-7}, {-1,-5,-7}, {-5,-7,-11}: full
          realization is likely, so uniqueness fails beyond radius 6).
   SB2-P2 (blind, confidence 0.2): some survivor at depth 299 ends in 60 white sites (a finite-seed candidate for B).
   SB2-C0 (control): G65's background y is among the survivors at depth 299 for each row.
+CHASE OUTCOME, 2026-10-08 06:10 (M5, one run at commit 9f33f10; 0.4 s). SB2-P1 REFUTED, SB2-P2 REFUTED, SB2-C0
+PASS: each of the three witness rows keeps the 1, 2, 3, 6, 1, 2 pattern and has exactly one survivor at depth 299, y
+itself (the other depth-300 survivor differs only at the frontier site 300). The long-lived deviations die later.
+LIFE MODE (python3 tests/probes/lexicon/rule210_symmetric_background_pulse.py life), predictions published before
+its run: every SB case still alive at e + 8 (368 cases) is followed by depth-first search to e + 200, and its exact
+life is compared with w, the number of consecutive odd sites e+1, e+3, ... at which y_0 is white.
+  SB3-P1 (blind, confidence 0.8): every one of the 368 deviations dies by e + 200.
+  SB3-P2 (blind, confidence 0.5): the exact life is a nondecreasing function of w alone (equal w, equal life).
+  D2 (descriptive): the table of (w, life) pairs and the longest life found.
 """
 import os
 import random
@@ -183,5 +192,67 @@ def chase():
     print('%.1f s' % (time.time() - t0))
 
 
+def life_mode():
+    t0 = time.time()
+    KK = 200
+    setup(40 + 20 + KK + 10)
+    rows = []
+    for m in range(1, 64):
+        L = [-(2 * j + 1) for j in range(6) if (m >> j) & 1]
+        rows.append((max(-x for x in L), L))
+    rng = random.Random(20261008)
+    for R in (20, 30, 40):
+        for _ in range(150):
+            while True:
+                L = [-i for i in range(1, R + 1, 2) if rng.random() < 0.5]
+                if L and max(-x for x in L) == R - (1 - R % 2):
+                    break
+            rows.append((R, L))
+    table = Counter()
+    by_w = {}
+    longest = None
+    died = True
+    n = 0
+    for R, L in rows:
+        for e, tau, ok_e, predict1, surv1, life, alive in study(L, R):
+            if life < K:
+                continue
+            n += 1
+            ybits = set(background(L, e + KK + 2))
+            w = 0
+            while (e + 1 + 2 * w) not in ybits and w < 100:
+                w += 1
+            alive2 = [[i for i in ybits if i < e] + [e]]
+            ex = 0
+            for k in range(1, KK + 1):
+                d = e + k
+                nxt = []
+                for pre in alive2:
+                    for v in (0, 1):
+                        cand = pre + ([d] if v else [])
+                        if clock_ok(L + cand, d)[0]:
+                            nxt.append(cand)
+                alive2 = nxt
+                if not alive2:
+                    break
+                ex = k
+            if alive2:
+                died = False
+            table[(w, ex)] += 1
+            by_w.setdefault(w, set()).add(ex)
+            if longest is None or ex > longest[0]:
+                longest = (ex, L, e, w)
+    p2 = all(len(v) == 1 for v in by_w.values())
+    ws = sorted(by_w)
+    p2 = p2 and all(max(by_w[a]) <= min(by_w[b]) for a, b in zip(ws, ws[1:]))
+    print('cases followed: %d' % n)
+    print('(w, life) table:', dict(sorted(table.items())))
+    print('longest life:', longest)
+    print('SB3-P1', 'HELD' if died else 'REFUTED')
+    print('SB3-P2', 'HELD' if p2 else 'REFUTED')
+    print('%.1f s' % (time.time() - t0))
+
+
 if __name__ == '__main__':
-    chase() if sys.argv[1:] == ['chase'] else main()
+    m = sys.argv[1:]
+    chase() if m == ['chase'] else life_mode() if m == ['life'] else main()
