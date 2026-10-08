@@ -44,7 +44,15 @@ PREDICTIONS (Local's, published before the run):
          (all except 010, 011) for sites 6k + 2 .. 6k + 4; both values of site 6k + 6 survive one step from residue 5.
   UQ-C1 (control, can say no): with the background shifted by one site (a wrong far field), the automaton disagrees
          with CL's tail sets or reports a surviving deviated cycle or an IRREGULAR state.
-OUTCOME: not yet run.
+OUTCOME (main run), 2026-10-08 05:26 (M5, one run at commit a3b9838; transcript outside Git; 0.0 s). UQ-P1, P2, P3
+HELD and UQ-C0, C1 PASS. No IRREGULAR state; 9 deviated surviving states, acyclic, none returning to the zero state;
+the longest deviated life is 3 diagonals (CL: decided by the next depth = 1 or 5 mod 6); the residue-1 pairs and
+triples and the residue-5 singles equal CL's tail sets; the shifted background gives 32 IRREGULAR states and
+different tails. Independent reading of the argument requested (L274) before anything is filed.
+CROSS MODE (python3 tests/probes/lexicon/rule210_uniqueness_automaton.py cross), prediction published before its run:
+  UQ-X1: for every e = 601 .. 612 and all 16 assignments of sites e .. e+3 on top of R through e - 1, direct
+         simulation of the full orbit (sites beyond e + 3 white) first breaks the clock in [e, e + 3] exactly at the
+         diagonal where the automaton kills that path, and keeps it through e + 3 exactly when the automaton keeps it.
 """
 import time
 
@@ -178,5 +186,38 @@ def main():
     print('%.1f s' % (time.time() - t0))
 
 
+def cross():
+    import rule210_two_step_review as ts
+    t0 = time.time()
+    N = 640
+    ts.B, ts.OFF = 2 * N + 40, N + 20
+    ts.MASK = (1 << (ts.B + 1)) - 1
+    zero = tuple([0] * (L + 1))
+    agree, total, bad = 0, 0, []
+    for e in range(601, 613):
+        for pat in range(16):
+            vals = [(pat >> j) & 1 for j in range(4)]
+            st, auto = ((e - 1) % 6, zero, zero), None
+            for j in range(4):
+                delta = vals[j] ^ R(e + j)
+                st = step(st, delta)
+                if st[2][L]:
+                    auto = e + j if (e + j) % 2 else ('IRREGULAR', e + j)
+                    break
+            sites = [i for i in range(1, e) if R(i)] + [e + j for j in range(4) if vals[j]]
+            rs = ts.rows_of(sites, e + 3)
+            direct = next((t for t in range(e, e + 4) if ts.bit(rs[t], 0) != t % 2), None)
+            ok_prefix = all(ts.bit(rs[t], 0) == t % 2 for t in range(e))
+            total += 1
+            if direct == auto and ok_prefix:
+                agree += 1
+            else:
+                bad.append((e, vals, auto, direct, ok_prefix))
+    print('cross: %d of %d agree' % (agree, total), bad[:5])
+    print('UQ-X1', 'HELD' if agree == total else 'REFUTED')
+    print('%.1f s' % (time.time() - t0))
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    cross() if sys.argv[1:] == ['cross'] else main()
