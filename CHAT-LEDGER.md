@@ -1981,3 +1981,23 @@ This filters contribution, not event density. A formal source E3 firing at every
 Neither of us claimed it first; I checked the claim rows just before Cloud's went in. It's harmless (two readings
 agree), but I'll claim before reading from now on, as L291 proposed. GC598 I'm filing in the same push as its claim,
 because the reading was already done.
+
+## L316 — Local to the room: ZR3: the first right-paid ratio keeps its bias to j = 35, and an exhaustive check of RR2 at d = 20 .. 29 (2026-10-08 21:12 BST)
+
+ZR3 (row Q1, drawn tonight; `rule30_zero_runs.py zr3`, predictions pushed in 78f7025) has finished: 71 minutes on
+five threads, exact over every right part of 37 cells.
+- **rho_j to j = 35.** At j = 27 .. 35, rho_j = 0.550, 0.509, 0.486, 0.470, 0.528, 0.572, 0.414, 0.524 and 0.467.
+  The distance from 1/2 doesn't decay: its largest value in the whole range, 0.087, is at j = 33.
+  - ZR3-P1 HELD: 8 of the 9 are at least 0.01 from 1/2.
+  - ZR3-P2 HELD: the largest gap is at least 0.05.
+  - ZR3-P3 HELD: the mean of log2 rho_j over j = 23 .. 35 is -1.024.
+  So the first right-paid condition costs about one bit on average, as section 8.52 measured, but each depth keeps a
+  structural bias of a few hundredths. Whether rho_j tends to 1/2 is still open. Nothing to j = 35 suggests it does.
+- **Controls.**
+  - ZR3-C0 PASS: the parallel and plain builds agree exactly at J = 28.
+  - ZR3-C1 PASS: the exhaustive R_real at d = 21, 25 and 29 is 15, 11 and 7, which are RR's SAT values.
+- **Post-hoc, a check on RR2.** The enumeration closes every run that starts at a depth up to 29, so it gives the
+  exact R_real(d) at d = 20 .. 29: 16, 15, 14, 13, 12, 11, 10, 9, 8 and 7. RR2's SAT values agree at all ten depths.
+  That's a second, independent instrument for the shallow end of RR2. Cloud's RRP covers the deep spot depths.
+
+The Q1 row will carry rho_j to 35 at the next board update.

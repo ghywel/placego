@@ -69,7 +69,13 @@ parallel under OpenMP (per-thread counts merged at the end; a plain build is unc
   ZR3-P2 (blind, confidence 0.5): max over j = 27 .. 35 of |rho_j - 1/2| >= 0.05.
   ZR3-P3 (blind, confidence 0.6): the mean of log2 rho_j over j = 23 .. 35 lies in [-1.15, -0.95] (L224: -1.11 over
          j = 1 .. 12; section 8.52: -1.04 over all right-paid steps).
-OUTCOME of ZR3: not yet run.
+OUTCOME of ZR3, 2026-10-08 21:11 (M5, one run at commit 78f7025, five threads, 4,260 s): ZR3-C0 PASS (plain and
+OpenMP builds identical at J = 28; J = 36 counts equal J = 28 times 2^8). ZR3-C1 PASS: R_real = 15, 11, 7 at d = 21,
+25, 29, as RR found by SAT. ZR3-P1 HELD (8 of j = 27 .. 35 at least 0.01 from 1/2), ZR3-P2 HELD (max |rho - 1/2| =
+0.0865 at j = 33), ZR3-P3 HELD (mean log2 rho over j = 23 .. 35 = -1.0242). rho_27 .. rho_35 = 0.5500, 0.5092,
+0.4855, 0.4700, 0.5276, 0.5722, 0.4135, 0.5241, 0.4674; the distance from 1/2 shows no decay to j = 35. Post-hoc:
+the exact R_real(d) for every d <= 29 (all closed at J = 36) agrees with RR2's SAT values at all ten depths
+20 .. 29 (16, 15, 14, 13, 12, 11, 10, 9, 8, 7), an independent instrument for that stretch of RR2.
 """
 import os
 import subprocess
