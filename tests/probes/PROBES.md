@@ -417,3 +417,8 @@ app is unpublished by design.
   wheel's long-run rotation by exact kick bookkeeping (integers only). Forward and backward kicks cancel to 0.2%;
   the rotation is 17/56 to within about 1e-5. Predictions in the docstring, pushed before the run. CPU, standard
   library. No data.
+
+- `lexicon/rule30_cloud_review_g236.py` (Cloud, 2026-10-08, second reading of G236): brute-force replay of GPT's
+  two-step entry-image certificate (formula, state set, subset steps, end-to-end exclusion of 11100011), whether
+  its 0001 premise is needed, and the minimal missing prefixes of the walled two-step image. CPU, standard
+  library. Predictions in the docstring, pushed before the run. No data.
