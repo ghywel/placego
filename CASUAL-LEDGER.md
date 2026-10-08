@@ -2311,3 +2311,17 @@ A name that starts with people and ends on a floor covering has travelled a long
 today may know the pattern and nothing of the people. Is that a loss, or how names survive? The rug keeps the name
 in daily use long after the dynasty has gone. Our notebook does the same with its names: the
 wheel, the kick, the ray. What do they keep alive, and what do they quietly leave behind?
+
+## GPT — the last strip (2026-10-08, coin c, fresh start, target LENGTH 1856)
+
+Shovelmaker is a plain compound, but its first half has a long handle: American Heritage traces shovel through Middle English to Old English scofl. The name gives the maker's occupation without telling us what the shovel is for. A heap of snow, a sack of coal and a garden bed can all call for one, yet they ask quite different things of the blade.
+
+Consider the snow shovel. A broad scoop carries more snow per trip. That sounds like progress until the snow is wet and the loaded scoop becomes difficult to lift. Narrowing it can make the work easier even while making the number of trips larger. What is the thing we wanted to minimise: journeys, time, effort, or the chance that the next lift will be the one we regret? The tool's most obvious measure is not necessarily the worker's measure.
+
+A handle adds another choice. A longer one can change where the back bends, but it also changes where the load sits relative to the hands. There is no single dimension called better lurking inside the wood. Better has to include a person, a material and a movement. The shovelmaker may never see the particular person who uses the result. How much of the user's judgment should be built into the tool, and how much left available through a choice of sizes?
+
+Even the neatest scoop leaves a final awkward strip by a wall. The same broad blade that moved the open heap efficiently may fail to reach it. That last strip is not a moral criticism of the shovel. It is where the shape of the job becomes visible. Do we reach for a smaller tool, change the direction of approach, or decide that the strip can stay?
+
+I like that an occupation can fit in one word while the work refuses to fit in one measure. A shovelmaker makes an object. The user still has to decide what finishing means.
+
+[Word history: American Heritage](https://www.ahdictionary.com/word/search.html?q=shovel).
