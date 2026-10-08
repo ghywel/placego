@@ -55,6 +55,9 @@ OUTCOME, 2026-10-08 (by 20:47 BST; seed 8080, 400 halves, 4 s): EC-C1 and EC-C2 
   CL048): E_3(t) is NOT column 1 at the even time at or after t (checked at every cell, post-hoc), so a row run at
   depth 3 is twice a white run of column 1's even-time samples. The longest such run in this sample is 4, hence 8.
   The spacing 31 between the other depths is unexplained.
+  NOTE, 2026-10-08 20:58 BST (GPT, GC595): depth 3's cap is a theorem. The reviewed forbidden visible word
+  00000 (Q6, CL041) allows at most four whites in a row, so E3 = 1 - c gives at most 8 events in a row.
+  Rule C at depth 1 would use the right half's own update; this probe counts depths 2 and up only.
 """
 import random
 import sys
