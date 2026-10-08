@@ -12306,3 +12306,34 @@ Applying J twice returns the triple. The new velocity is (l XOR r) XOR (c*r), eq
 **Unexpected finite history control.** Start with the zero row, whose centre samples are000 forever. Its local triple is000. Targeted J makes only the centre black, giving the singleton row. Its first row is{-1,0,1}, so its first two centre samples are11, complementing00 as required. Its second row is{-2,-1,2}, so its third centre bit is0; complementation would require1. The initial velocities already differ away from the centre: zero versus black sites{-1,1}. This explicit finite control shows that matching one velocity and one opposite reward supplies neither a sustained complementary history nor a common global velocity field.
 
 **Outcome and next.** The local involution is a valid algebraic cancellation control, but its promotion to a finite-row orbit pairing fails. This closes that particular static velocity-preserving pairing route, not every signed pairing, coupling or balance method. Any selected-orbit cancellation must control visit counts, a justified time pairing, or cumulative residuals; preserving the entire velocity while flipping a finite row's centre is unavailable. No density estimate or prize conclusion follows. Stop this local lift rather than search larger patches for the same impossible global premise.
+
+## GC494 — Run-pair cancellation needs a within-pair time bound (2026-10-08)
+
+**Bears on.** Problem2's actual temporal signed cancellation after GC493's failed static lift. This is an elementary exact reduction for a binary trace, hand reading pending, not an estimate on Rule30 runs. Existing record GC481 retains signed non-flipping pairs and GC489 warns against dyadic-only totals. Here the sampling boundaries are actual sign changes. No novelty claim, experiment or Local job.
+
+**Chosen checks.** Predict that discrepancy bounds at every run endpoint extend to every prefix with no separate gap hypothesis. Controlling only pairs of runs needs a within-pair time bound. Counterfactual equal opposite-colour run lengths in every pair suffice for limiting balance must fail on doubling pairs. Independent positive controls are alternating spins and GC490's square-root parity. Unexpected: interpolation at all run endpoints removes a gap premise, whereas pairing those endpoints restores it.
+
+**All-run endpoint equivalence.** Let s(n) be a spin trace with infinitely many sign changes and S(N)=sum(n<N)s(n). Let R_j be successive run boundaries, including0. Between R_j and R_(j+1), S is affine with slope +1 or -1. For N in that interval put theta=(N-R_j)/(R_(j+1)-R_j). Then
+
+    S(N)=(1-theta)*S(R_j)+theta*S(R_(j+1)),
+    N=(1-theta)*R_j+theta*R_(j+1).
+
+If both endpoint discrepancies have absolute value at most epsilon times their endpoint times, the triangle inequality gives |S(N)|<=epsilon*N. Therefore S(N)=o(N) if and only if S(R_j)=o(R_j). No bound on the gaps is an extra hypothesis here. Traces with only finitely many sign changes are eventually constant and fail balance, so they are handled separately.
+
+**Paired-run version.** Let T_j=R_(2j), and call the next two opposite-sign run lengths a_j,b_j. Both are positive. The sign at the start of every pair is the same sigma. Define
+
+    D_j=S(T_j)=sigma*sum(i<j)(a_i-b_i),
+    T_j=sum(i<j)(a_i+b_i).
+
+Then all-prefix balance is equivalent to the two obligations
+
+    D_j=o(T_j),
+    max(a_j,b_j)=o(T_j), as j tends to infinity.
+
+For sufficiency, any intermediate prefix differs from D_j by at most a_j+b_j, so divide by N>=T_j. For necessity, full balance first gives D_j=o(T_j). For the first run, a_j=|S(T_j+a_j)-S(T_j)|. Once all sufficiently late discrepancies are at most epsilon times their times, a_j<=epsilon*(2T_j+a_j), hence a_j/T_j<=2epsilon/(1-epsilon). This tends to0. Apply the same argument to the second run starting at T_j+a_j; its start is asymptotic to T_j, so b_j/T_j tends to0 as well. The initial pair at T_0=0 is irrelevant to the limit. These are actual signed sums, not sums of absolute run imbalances.
+
+**Retained counterfactual.** Take runs of spins +,- with lengths a_j=b_j=2^j. Every paired endpoint has D_j=0, at T_j=2*(2^j-1). At the midpoint N_j=T_j+2^j, however, S(N_j)=2^j and S(N_j)/N_j tends to1/3. Perfect cancellation at every pair boundary does not give a limiting density because within-pair lengths remain macroscopic. This is an explicit binary sequence, not a Rule30 orbit or finite-seed counterexample.
+
+**Independent controls.** Alternating spins have a_j=b_j=1, D_j=0 and max(a_j,b_j)/T_j tends to0, so the criterion gives balance. For GC490's h(n)=(-1)^floor(sqrt(n)), pair j has a_j=4j+1,b_j=4j+3, T_j=4j^2 and D_j=-2j. Both obligations hold directly. This recovers its balance without invoking a kernel or its prior all-prefix bound. A constant trace is outside the infinitely switching case and has |S(N)|=N, as required.
+
+**What the selected orbit still needs.** For the singleton Rule30 trace, this gives a precise possible time-pairing route: control the cumulative differences between successive black/white run lengths and prove that each pair's duration is sublinear in elapsed time. Neither bound is established here. Proving only equal total lengths at selected pair endpoints is insufficient; conversely controlling all run endpoints already supplies the duration consequence. Do not infer a duration bound from a finite observed maximum run or from aperiodicity. Next seek an actual dynamical constraint on these run boundaries, rather than another local symmetry or image-language census. No Problem2 or prize conclusion.

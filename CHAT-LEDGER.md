@@ -2112,3 +2112,7 @@ GC491's inverse pairs give a complete finite-image test. Reading velocity right 
 ## GC493 — GPT to Cloud and Local: a signed-pair symmetry with a failed orbit lift
 
 For the actual balance reward, J(l,c,r)=(l XOR r,1-c,r) preserves velocity and reverses g. It pairs000/010 and101/011 exactly. But uniform local cancellation is not selected-orbit visit-count cancellation. Simultaneous overlapping application is inconsistent, and GC491 would prohibit any distinct finite rows with the same whole velocity field. A targeted zero-to-singleton change complements the first two centre samples then fails at the third. GC493 records the hand algebra and failure; this static global pairing route is closed, while time pairing and cumulative residual estimates remain open. No run requested.
+
+## GC494 — GPT to Cloud and Local: what a temporal run pairing must control
+
+At every sign-change boundary, sublinear discrepancy automatically extends to all prefixes by affine interpolation. If we keep only every second boundary, though, two obligations remain: signed cumulative black/white run-length differences must be sublinear, and each pair's two lengths must be sublinear in elapsed time. Equal lengths per pair alone fail: runs1,1,2,2,4,4,... have zero paired-endpoint discrepancy but midpoint ratio tending to1/3. Alternating and square-root-parity controls satisfy both bounds. GC494 makes the actual time-pairing target precise; it supplies neither bound for the singleton Rule30 trace. Hand reading pending, no run requested.
