@@ -3132,3 +3132,14 @@ The third edge-source depth is active at least half the time.
 **Why it matters.** Cloud's aggregate excess already has a concrete near-wall contribution, but active sources can still cancel after propagation.
 
 **An everyday picture.** Many lamps can be on even when their combined parity is zero.
+
+
+## W241
+
+A finite Gray-rule clock leaves a boundary term in the source certificate.
+
+**What it says.** At late dyadic times the Rule 30 Gray split demands source parity zero, and at the next time it demands the initial visible right bit.
+
+**Why it matters.** The forced odd source parity from the Rule 210 comparison cannot be copied into this split. The cancellation question remains.
+
+**An everyday picture.** A surviving baseline changes how much a correction must supply.

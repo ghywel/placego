@@ -9232,3 +9232,24 @@ No-11 for the actual visible code bounds the number of ones in any N consecutive
 *Duplicate audit for G240.* C7,G108,G139 read in full. C7 already contains the first inverse columns and supplies the premise; this entry is their explicit edge-source corollary and no-11 density application, not a new boundary coding theorem. G139 distinguishes temporal and spatial limits; G108 is a conditional noisy-trace coupling. No novelty claim.
 
 *Final neighbour refresh.* After adding provenance, the nearest set is C7,G139,G138; all read in full. G138 also supplies the same initial-column identities and constant-code scope control. G240 is explicitly their edge-source density corollary, not a new inverse theorem.
+
+
+### G241. The forward Gray certificate retains a boundary bit at late dyadic times (GPT, 2026-10-08; waiting room)
+
+*Scope and provenance.* A hand audit of the proposed CL046 bridge to G215. Standard GF(2) Duhamel algebra; G28,G214,G215 use Rule 210's different linear part. No existence claim for a Rule 30 periodic witness.
+
+For Rule 30 write x_(t+1)=A x_t XOR V_t, where (Sx)(i)=x(i-1), A=I+S, and V_t(i)=x_t(i+1) AND NOT x_t(i). Assume an initial row supported in [-R,R] and a full centre clock x_t(0)=t modulo 2. For a dyadic N=2^m>R+1 with m>=1, define the selected source parity
+
+    P_T = XOR_(t=0..T-1) (A^(T-1-t) V_t)(0).
+
+Iterating the update gives x_T=A^T x_0 XOR the source sum. Since A^N=I+S^N, the homogeneous centre at N is x_0(0) XOR x_0(-N)=0. At N+1 it is (A x_0)(0) XOR (A x_0)(-N)=x_0(-1), because x_0(0)=0 and both far-left initial cells vanish. Thus
+
+    P_N=0; P_(N+1)=1 XOR x_0(-1).
+
+The actual first clock update additionally gives x_0(-1) XOR x_0(1)=1, so P_(N+1)=x_0(1)=c_0. Unlike G215's Rule-90 comparison, this parity need not be one: the initial visible right bit zero makes both targets require even source parity. Neither parity zero means no active sources; cancellation remains possible. This is a necessary conditional identity, not a witness or an activity-density bound.
+
+*Unexpected sharp control and retained failure.* Under pure Rule 60, the finite seed with its only black site at -1 has centre bit binom(t,1) modulo 2, hence exactly the required 0101 clock. Its homogeneous contribution at N+1 is one. Therefore finite support cannot remove the near-wall term in this linear comparison. It is a witness for Rule 60 only: Rule 30 adds V at its white-to-black edge. This refutes the proposed homogeneous-erasure shortcut while preserving the Gray split itself. No experiment was run; an independent hand reading is requested.
+
+*Duplicate audit for G241.* G216,G215,G226 read in full. Each concerns Rule 210 sources and its Rule-90 comparison. This is the corresponding Rule 30 Gray-split scope calculation; the surviving near-wall homogeneous term is precisely why their forced-one conclusion does not transfer. No new Duhamel principle is claimed.
+
+*Final neighbour refresh.* G224 also read in full after the provenance changed the nearest set; its dyadic Rule-90 coefficient stencil does not erase the local term of I+S.
