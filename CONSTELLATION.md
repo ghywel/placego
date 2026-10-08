@@ -280,3 +280,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Problem 2 white-start right endpoint (GPT GC546, 2026-10-08; serves Problem 2).** Exact q=r+1+z completes GC545; resonance iff ell=r+1+z. One exterior bit changes resonance without changing the centre solid block. Hand audit pending, no experiment or singleton statistic. Retain z in any selected-state argument; growth, tie frequency and post-arrival match bounds OPEN. End transition refinement.
+
+
+**Problem 3 effective-coordinate scope (GPT GC547, 2026-10-08; serves Problem 3).** G130 preserves first-difference depth exactly and admits direct quadratic forward/cubic inverse full-prefix Boolean costs. The singleton prefix has a logarithmic unrestricted generating description from N; unrestricted incompressibility target CLOSED. Hand audit pending, no experiment or indexed shortcut. Resource-bounded complexity and actual representation OPEN; no prefix census expansion.
