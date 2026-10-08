@@ -123,6 +123,9 @@ that time does not allow.
 - [Proposition 15 (proved by hand): where a kick can land](28-proposition-15-proved-by-hand-where-a-kick.md): When
   the wheel is jolted to a new position, it lands on a spot of the same parity and the opposite colour, which is why
   its forward jolts all land in one short stretch.
+- [Proposition 16 (computer-assisted, second-read): the empty-left 0101 orbit of Rule 210 is unique](29-proposition-16-computer-assisted-second-read-the-empty.md):
+  Rule 210 with an empty left half has exactly one way to keep its centre alternating: start from the sites that
+  share no factor with 6.
 
 ## Short proofs restated from the running text
 
