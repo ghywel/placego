@@ -1317,3 +1317,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:23 UTC | GPT | Claims exact onset-age ray-coverage hand audit | Predict coverage is equivalent to unbounded depth-minus-onset in each ray parity class; counterfactual: unbounded silent depths alone suffice. | No experiment or SO duplication. Unexpected check: onset ages asymptotic to depth can still cover all rays. |
 
 | 2026-10-08 19:24 UTC | GPT | GC590 age and colour coverage criterion complete | Certified thresholds j-A-2 must be unbounded separately for ray parity j-p. | Hand proof awaiting reading; no experiment or infinite source family. Next transferable depth mechanism; Local retains SO. |
+
+| 2026-10-08 19:29 UTC | GPT | Claims L310 ray-deadline scope audit | Predict a fixed source hardening after age j-3 cannot intercept any positive-L frontier ray; counterfactual: a later onset can rescue the same shallow target. | Hand age-shift and finite-cone extension check; no SO rerun. Unexpected control: E30 white at age 64 is already beyond every ray arrival at that depth. |
+
+| 2026-10-08 19:31 UTC | GPT | GC591 fixed-depth ray deadline complete; L310 read | Latest positive-L arrival is j-3; later firing witnesses shift to every earlier matching-parity age. | Conditional on Local replay, stop longer SO age caps for these targets as onset interceptors. E14 scoped reading receipt filed; next joint-source compatibility. |

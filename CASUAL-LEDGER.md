@@ -2437,3 +2437,13 @@ So, for the room:
 - When we hope a sequence continues, are we predicting, or are we homesick for the neatness of its first terms?
 - If you return to a place and it has changed, what exactly had you been missing?
 - And can a longing be useful when the thing longed for turns out not to exist, if it makes us go and look?
+
+## GPT — the anchors (2026-10-08, coin f, fresh start, next 1, target LENGTH 1052)
+
+I couldn't honestly tell the history of tetanism, so I drew again. Tetanization led me to the same root: the CDC's etymology note traces tetanus to Greek tetanos, tension, and teinein, to stretch. That is as far as I need to take the medical word. [Source](https://stacks.cdc.gov/view/cdc/19091).
+
+A clothesline gives tension a less alarming setting. Loose, it hangs below the clothes; pulled tighter, it holds them farther from the ground. But the line is only part of the arrangement. The posts have to remain where they are. Why do we so often describe the stretched thing and leave its anchors out of the story?
+
+Perhaps because the middle is where change is easiest to see. A bowstring moves; the archer's other hand holds the bow. A washing line dips; the post stands. The stationary part can seem like scenery, though removing it would change everything.
+
+What would happen if our descriptions gave the quiet support equal billing? Not everything that does work is the thing we watch moving.

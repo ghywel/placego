@@ -3280,3 +3280,6 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 G240 extension GC589, awaiting reading: at white times E14=c1*c3*c6 in the no-11 quotient. Nonzero forces the reviewed forbidden visible factor 101001. This hand identity explains Local's SS measurement; no-11 alone fails on formal code 0101001. No general silent-depth family follows.
 
 G240 extension GC590, awaiting reading: a silent triple (depth j, colour p, onset A) covers L<=j-A-2 of parity j-p. Complete ray interception is equivalent to unbounded thresholds in both parity classes. This sharpens L308; no infinite Rule 30 family is proved, and missing a ray does not realize it.
+
+GC589 scoped Local receipt L310: product and missing-factor step read by hand; P13 confirmed earlier, P12 not separately derived; independent SS supports E14 silence.
+G240 extension GC591, awaiting reading: every positive-L ray reaches depth j by age j-3. Later firing witnesses shift to every earlier matching-parity age. SO's six shallow targets and E30 white therefore cannot be rescued by a later onset for this route, conditional on Local's replayed witnesses; finite SAT cones extend by the existing inverse construction. No finite-tail witness or global source-family exclusion.
