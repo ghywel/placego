@@ -25,7 +25,18 @@ PREDICTIONS (Local's, published before the run):
   SB-P2 (blind, confidence 0.5): no (L, e) has a survivor at depth e + 8. Any survivor there is reported as the
          failure witness (row, e, surviving tails), a candidate second realization to chase.
   D1 (descriptive): the distribution of the deviation's life (last surviving depth minus e) by e - R and by tau.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 06:09 (M5, one run at commit 8b0f1af; transcript outside Git; 5.2 s). 12,138 (row, e) cases
+over 513 rows. SB-C0 PASS and SB-C1 PASS: L281's next-diagonal test predicts survival at e + 1 in every case.
+SB-P1 REFUTED and SB-P2 REFUTED: lives are 0, 2, 4, 6 and 8 (6,938, 3,476, 921, 435, 368 cases), and 368 deviations
+are still alive at the cap e + 8. First witness: L = {-5, -7}, e = 2. Mirroring L removes sites 5 and 7 from R_0, so
+y is white on sites 2 .. 10 and the deviation lives in that local white stretch. Every witness row has radius >= 7,
+outside entry 31. Whether such a deviation lives for ever (a second realization) is the next question.
+CHASE MODE (python3 tests/probes/lexicon/rule210_symmetric_background_pulse.py chase), predictions published before
+its run, for the three first witness rows {-5,-7}, {-1,-5,-7}, {-5,-7,-11}: full census of right prefixes to 300.
+  SB2-P1 (blind, confidence 0.5): at least one of the three has two or more survivors at depth 299 (a second
+         realization is likely, so uniqueness fails beyond radius 6).
+  SB2-P2 (blind, confidence 0.2): some survivor at depth 299 ends in 60 white sites (a finite-seed candidate for B).
+  SB2-C0 (control): G65's background y is among the survivors at depth 299 for each row.
 """
 import os
 import random
@@ -132,5 +143,45 @@ def main():
     print('%.1f s' % (time.time() - t0))
 
 
+def chase():
+    t0 = time.time()
+    Dd = 300
+    setup(Dd + 40)
+    out = []
+    p1 = p2 = False
+    c0 = True
+    for L in ([-5, -7], [-1, -5, -7], [-5, -7, -11]):
+        alive, counts = [[]], {}
+        for d in range(1, Dd + 1):
+            nxt = []
+            for pre in alive:
+                for v in (0, 1):
+                    cand = pre + [v]
+                    sites = L + [i + 1 for i, b in enumerate(cand) if b]
+                    if clock_ok(sites, d)[0]:
+                        nxt.append(cand)
+            alive = nxt
+            counts[d] = len(alive)
+            if len(alive) > 20000:
+                break
+        y = [R0(i) ^ (1 if -i in L else 0) for i in range(1, Dd + 1)]
+        at = counts.get(299)
+        surv = alive if max(counts) >= 299 else []
+        if at is not None and at >= 2:
+            p1 = True
+        if any(not any(p[-60:]) for p in surv):
+            p2 = True
+        c0 &= any(p[:299] == y[:299] for p in surv)
+        diffs = [[i + 1 for i in range(len(p)) if p[i] != y[i]][:12] for p in surv[:4]]
+        out.append((L, [counts[d] for d in sorted(counts)[-6:]], max(counts), diffs))
+    for L, tail, last, diffs in out:
+        print('L %s: counts at last depths %s (deepest %d); first differences from y of up to 4 survivors: %s'
+              % (L, tail, last, diffs))
+    print('SB2-P1', 'HELD' if p1 else 'REFUTED')
+    print('SB2-P2', 'HELD' if p2 else 'REFUTED')
+    print('SB2-C0', 'PASS' if c0 else 'FAIL')
+    print('%.1f s' % (time.time() - t0))
+
+
 if __name__ == '__main__':
-    main()
+    chase() if sys.argv[1:] == ['chase'] else main()
