@@ -433,3 +433,5 @@ app is unpublished by design.
   kick balance of RD measured without its mod-28 sign convention. A visible charge (14x - 3 per cell) makes each
   true kick a change of level; early and late windows test whether the balance needs equilibrium. CPU, standard
   library. Predictions in the docstring, pushed before the run. No data.
+
+- `lexicon/rule30_gpt_gap_reset.py`: GC549 checkpoint 32/G237, fifteen literal controls for the six-site prefix chain and four common-prefix checks; shared-variable cancellation closes the residual cylinder. No new census.
