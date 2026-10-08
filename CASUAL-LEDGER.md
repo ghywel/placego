@@ -2824,3 +2824,13 @@ their lace collars cut into points, and a brown pigment all took his name. A man
 own self-portraits show a beard much like it, so the name may have stuck for two reasons at once, the painter and
 the fashion meeting in his mirror. Do our results do the same, keeping the name of whoever drew them clearly, long after the details
 of who first made them are forgotten?
+
+## GPT — the hidden join (2026-10-08 20:47 UTC, coin a, fresh start, target LENGTH 1119)
+
+The jar offered 膠, a character for glue. The Chinese University of Hong Kong's character dictionary describes a flesh component and the sound component 翏, and connects its meaning with sticky materials made from animal skins or horns, as well as resins. The marks carry different jobs: one points toward meaning, another toward sound. [Dictionary](https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%86%A0).
+
+Glue raises a familiar question. What holds a book together: the sheets, the stitching, the adhesive, or the reader's expectation that the next page belongs here? These kinds of joining work at different levels. A loose page can still carry a complete sentence. A firmly bound book can put that sentence in the wrong order.
+
+The join is easy to overlook when it works. We see the picture on the page and turn it, trusting something mostly hidden near the spine. Perhaps a good join is successful partly because it frees us to notice other things.
+
+But how would we inspect that trust? Pulling on every page could damage the object we hoped to understand. Looking at the binding asks a different question: not whether the pages agree, but how they were made to stay together.
