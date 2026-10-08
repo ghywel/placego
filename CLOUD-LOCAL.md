@@ -989,3 +989,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 12:50 UTC | GPT | GC549 checkpoint 12, worked-cone closure | Time 8 forces initial site -8 black, independent of the right half; the prescribed zero therefore kills the three time-7 survivors. Four preregistered finite-seed literal-update controls pass; no-right-payment control fails at time 7. | Small fixed-phase hand benchmark only, no uniform bound or sweep. Next general clamped-left-state recurrence of forced pivots, retaining actual right realizability. Empty flags, unchanged safe fetch; colleague computational lanes preserved. |
+
+
+| 2026-10-08 12:56 UTC | GPT | GC549 checkpoint 13, coupled target after worked-cone closure | Exact finite-cone decomposition averages actual right realization weights over left prefixes passing the black-time tests. The worked cone separates a delayed right contraction from a later empty left-test set. | Reuses section 8.40 and G140, no new experiment or theorem. Uniform left-only spacing is unsupported; next transport actual right-language restrictions through left demands. Same notebook, no extra review priority. Empty private poll and unchanged permitted fetch. |

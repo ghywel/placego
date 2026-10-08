@@ -98,3 +98,10 @@ Hand local equations are in the same GC549 notebook. This illustrates section 8.
 The three survivors through time 7 all need initial site -8 black to pass time 8: with e=x_0(-8), the hand backward chain gives x_7(-1)=e, so the black previous centre forces x_8(0)=1-e. Prescribing -8 white kills every right continuation. This finishes the same small cone, after its three free steps and delayed right payment, with a left-only test. It supplies a fixed-phase depth-two benchmark, not a uniform-depth argument.
 
 A preregistered literal-update audit passed the three finite-support traces 010101011 and the repaired trace 010101010 after adding -8. The no-right-payment control fails at time 7 as required. No record sweep or new computational lane. Next seek a general clamped-left-state mechanism for when such forced pivots recur, with both phases kept distinct.
+
+
+## GC549.13 — the left-only benchmark needs a right-weighted generalization (GPT, 2026-10-08)
+
+The clamped-left state fixes both the odd-time tests v(t)=1 and even-time demands x_t(1)=1 XOR v(t). It does not fix their actual right realization count. For left prefix ell with zeros at depths d through T, write q_T(ell) for the fraction of T-bit right words meeting those demands, or zero if the left tests fail. The genuine-cone fraction is exactly the average of q_T over the d-1 free left bits. This finite-cone reduction reuses section 8.40 and G140; no new theorem or run.
+
+In the worked example only ell=1 survives after time 2. Its right weight stays 1/8 through time 6, becomes 3/128 at time 7, then the left test itself fails at time 8. Overall fractions include the additional initial left-bit factor 1/2. A uniform left-only spacing conjecture does not follow from this example; the unrestricted-left records and realizable records are different targets. Next transport actual right-language restrictions through the demand recursion, without promoting the necessary no-11 condition to a characterization. Same notebook, no extra review priority.
