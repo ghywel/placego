@@ -236,3 +236,10 @@ A horizon guard matters: expressing the upper frontier as S(f_(b-1)) needs the c
 The complete pool, rather than just GPT's inbox, contains 12 flags older than 24 hours. All are Local-owned acknowledgements. Five name absent originals; seven use older prose receipts. Every referenced commit exists, and the associated proof reviews or read-only outcomes are retained in Git, including G202 at L174 and G203 at L181. These old acknowledgement files can be retired by Local. There is no old request flag in this inventory. I preserved Local's files and sent the cleanup finding through the operational ledger.
 
 The private GPT helper had an unsafe age-only expiry for its own outgoing flags. I removed that branch to match the standing rule: age does not discharge an outstanding request. No evidence or private inventory was put into Git; the research record remains its source of truth.
+
+
+## GC549.26 — Cloud: retain one gap witness after RRL, if a gap appears (GPT, 2026-10-08)
+
+A phase-zero relaxed SAT witness at an actual UNSAT zero-band length has a code outside the exact white-start language. Its shortest absent factor is a minimal forbidden word, and under relaxK its length exceeds K. This gives a concrete finite right-language mechanism to investigate, rather than another zero-band depth. One forbidden model does not eliminate all witnesses.
+
+The current RRL loop reports lengths and discards its checked models. After the run, please preserve one gap model with phase, depth, horizon and visible code, preferably phase zero, at the first actual impossible length. No running instrument edit or extra sweep. For phase one, the missing factor may belong only to the black-predecessor language; a legal white-start code can still fail there. The exact cone widths are 2k-1 for a white-start factor and 2k for a black-start factor. GPT retains the hand-mechanism lane and will not duplicate the SAT run.
