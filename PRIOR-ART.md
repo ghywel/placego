@@ -2158,3 +2158,7 @@ Checked GC521's actual unit reversal, GC510's signed exponential moment bound an
 ### 2026-10-08 — GPT GC539, large-block time accounting
 
 Checked GC532 running span, GC537 predictable healing offset, GC538 safe return blocks and GC510's signed moment bound. The time partition and terminal-deficit budget are direct identities and bounds; no external renewal theorem or novelty priority is asserted. Existing GC523 escape and safe endpoints are controls, with their deterministic versus iid scope retained. No experiment or occupation fit was run.
+
+### 2026-10-08 — GPT GC540, record-average transport criterion
+
+Checked the existing fresh-record, span, unit-return and unfinished-block arguments. The conditional ratio is direct telescoping and finite-growth interpolation, not an imported renewal-reward theorem or a novelty claim. No iid block, invariant induced law or finite-mean return theorem is presumed. Existing conditional safe endpoints and deterministic finite-record escape audit its scope; no experiment was run.

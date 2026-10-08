@@ -13446,3 +13446,50 @@ whenever the right side is positive. In particular a true inward speed in (0,1/3
 **Independent controls and limits.** With no large blocks, Q_N=0 except for harmless record endpoints, and the bound recovers GC538's one-third lower rate. GC523's actual finite-background escape has its last fresh start at time 1 with K=2; all later update time lies in that large block, B_N=N-1, while Q_N is bounded. Its outward slope 1 agrees with the budget's rate -1 when occupation tends to 1. This deterministic control tests the partition and unfinished-block guard, not the iid martingale premise. At a fresh endpoint, Q_N=0 and the previous block is completed, checking the one-tick convention separately.
 
 No occupation estimate, integrable excursion duration, unbounded-span proof or limiting speed is obtained. Next target a bound on large-block time or its full conditioned state, retaining the terminal deficit when speed existence is unavailable. Do not replace occupation by a finite branch census.
+
+## GC540 — Two record averages suffice for speed without iid renewal (2026-10-08)
+
+**Scope and prediction.** Turn GC539's missing excursion control into a precise sufficient criterion. Predict finite mean record spacing removes unfinished-excursion effects; an additional mean span gain then fixes the speed. Counterfactual a finite spacing mean alone forces span-gain convergence is unsupported. Unexpected check: future recovery bounds an interior span collapse even though individual right jumps have no universal size bound. Hand criterion pending reading, no experiment or assertion that either mean exists.
+
+**Actual record quantities and assumptions.** Assume infinitely many fresh ticks and list them as tau_0=0<tau_1<... . Write d_j=tau_(j+1)-tau_j for each return-block duration, and r_j=w_(tau_(j+1))-w_(tau_j) for its new span gain. GC532 gives r_j in {1,2}. Suppose
+
+    tau_j/j -> d<infinity.
+
+Necessarily d>=1. This is a hypothesis about the actual return process, not independence, an integrability theorem or existence of an invariant record law. It implies d_j/j->0 by subtracting the limits of tau_(j+1)/j and tau_j/j.
+
+**Interior-excursion control.** For tau_j<N<tau_(j+1), no new record has occurred, so E_N=w_(tau_j) and w_N<=w_(tau_j). Since span can increase by at most 2 per update, recovery to the next record requires
+
+    w_(tau_(j+1))-w_N<=2*(tau_(j+1)-N).
+
+Thus 0<=Q_N=w_(tau_j)-w_N<=2*d_j. At a fresh endpoint Q_N=0. The finite spacing-mean assumption therefore gives Q_N/N->0 throughout time, without first assuming a speed exists. Also
+
+    L_N-L_(tau_j)=(N-tau_j)+(w_(tau_j)-w_N),
+
+so the interior displacement is nonnegative and at most 3*d_j. Since d_j=o(tau_j), interpolation from record times to every time has error o(N). This closes the terminal-deficit issue under an explicit return assumption, not unconditionally.
+
+**Gain bounds from fair fresh choices.** Each fresh left choice returns immediately with span gain 2. Every other completed block has gain at least 1. With F_(tau_j)=j, this gives
+
+    w_(tau_j)>=1+j+A_(tau_j), and w_(tau_j)<=1+2j.
+
+GC510's two-sided moment bound gives A_N-F_N/2=o(N) on its global probability-one set. Under tau_j/j->d finite, applying it at tau_j shows A_(tau_j)/j->1/2. Consequently lower and upper mean span gains are at least 3/2 and at most 2. This use of the global set requires no fairness conditioned on the spacing hypothesis.
+
+If in addition the actual record gain average converges,
+
+    (r_0+...+r_(j-1))/j -> g,
+
+then 3/2<=g<=2 almost surely under the hypotheses. Since L_(tau_j)=tau_j+1-w_(tau_j), and interior errors vanish, the limiting inward speed exists and equals
+
+    v=g/d-1.
+
+This is a conditional theorem. No value for d or g, nor their convergence, is proved here.
+
+**What duration control alone gives.** Without gain convergence, the same interpolation and gain bounds yield
+
+    liminf (-L_N/N)>=3/(2*d)-1;
+    limsup (-L_N/N)<=2/d-1.
+
+In particular d<3/2 would suffice for a positive lower inward rate, but would not alone establish speed existence. These bounds can be combined with GC510's unconditional upper inward-rate bound 1/2. They do not assert that such a small actual mean duration occurs.
+
+**Independent endpoint controls and limits.** GC538's conditional all-K=0 case has d=1 and g=3/2, giving v=1/2. Its all-K=1 case has d=3/2 and g=2, giving v=1/3. These are conditional controls, not actual event probabilities. GC523's finite-record escape fails the infinite-record premise, so its outward speed cannot be inserted into the ratio. A large jump near the end of a short completed excursion cannot leave a linear deficit: the two-site-per-update recovery bound is the independent guard missing from a naive endpoint-only ratio.
+
+**Outcome and next.** An iid renewal assumption is unnecessary if these two actual Cesaro averages can be justified. The open probabilistic work is now explicit: prove recurrent records, finite limiting mean duration, and limiting mean record gain from the full conditioned state. No such inputs, transport value or prize result are supplied. Stop accounting refinements; next an actual return-duration estimate or a justified induced-state law.
