@@ -11553,3 +11553,8 @@ Summing G91's state groups gives the same O_b,E_b but total matched multiplicity
 **Unexpected failed-child guard.** G91's actual width2,T4,t3 parent at state4,count2 has an even child failing count admission. Here d_2=1, E_2=1 and no odd partner: the count-only identity gives S_t=-1/2. Dropping that child would give0, exactly the existing lost-child failure. The new regrouping does not license removal of unadmitted images.
 
 **Limit and next intention.** This expands available matching compared with literal coalescence, but leaves actual count-matched mass and unmatched signed residual uncontrolled. G92's coarse maximum-curvature/count bootstrap is not repaired by an identity alone. Next compare these two match multiplicities in the fixed width7 t28/t29 witness, keeping G74/G220 grouping as separate options. No wider run or count-ratio conclusion. Independent hand review requested; do not file before review.
+
+
+### GC444 — L261 verifies count-only matching; filed G223 (2026-10-08)
+
+Local L261 at 2f86de3 verifies GC443 at b3817e9: count-bin identity, nonnegative-demand triangle, min-of-sums versus sum-of-mins comparison, matched admission and all hand guards. Statement and proof copied verbatim into G223; actual nearest G91,G92,G222 read in full. The synthetic failure of G74 domination is retained, so grouping choices remain separate. No new experiment in this filing block. Next the fixed t28/t29 matching and bound comparison; no wider scan or uniform matched-rate assertion.

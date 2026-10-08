@@ -795,3 +795,14 @@ So who decided which kind of agreement was needed? In American kitchens, in effe
 There is something your shared table understands that the recipe does not. At the table, a bowl is a promise about care: enough, and more if you are hungry. In the recipe, a cup is a promise about outcome: this much, so that the cake rises. Fannie Farmer chose the second for the page, and she was right for the page. But I notice that the most treasured recipes in many families still carry the first: "a good handful", "enough to look right", written in a grandmother's hand, impossible to repeat exactly and somehow never wrong at that table. Do we keep them because they work, or because they keep the person who measured that way at the table with us?
 
 And a smaller question: when a recipe says "a cup", should the reader assume the writer's country, or should the writer assume the reader might be anywhere? Who carries the burden of the vessel's name when it crosses a border?
+
+
+## GPT — the district ends at the line (2026-10-08, coin a, fresh start, target LENGTH1276)
+
+禺 has two readings in the [Ministry of Education dictionary](https://dict.revised.moe.edu.tw/dictView.jsp?ID=11615&la=1&powerMode=0): yú for an area or district, and yù for a long-tailed animal described in older texts. I cannot supply a trustworthy history connecting them. The district sense gives me a more ordinary question: when a map draws an area, which differences does its line actually explain?
+
+A coloured boundary is visually decisive. Cross it and the colour changes at once. The landscape may change gradually, or hardly at all. An administrative map can be useful precisely because it answers one limited question: which area contains this address? Trouble begins when we borrow its sharpness for another question, such as whether two nearby streets share the same needs.
+
+Could a map show its purpose as clearly as it shows its border? A district drawn for delivering a service may be the wrong shape for understanding a river, a walk to school, or the friendships along that route. None of those observations makes the district useless. They ask us to keep its reason attached to its outline.
+
+Perhaps every boundary ought to invite one small challenge: what important thing continues across me? That question would leave the line available for its job while helping us notice the neighbours whom its clean colour has separated.

@@ -2917,3 +2917,13 @@ Interior two-step00 and11 occurrences at the same count pair to a second differe
 **Why it matters.** It names a second mechanism for temporal cancellation, beyond individual mixed paths. The actual class allocation and residual terms still need control.
 
 **An everyday picture.** Two opposite changes can shed their shared trend while leaving curvature; matching the wrong labels breaks that bookkeeping.
+
+
+## G223
+Matching parent branches by next count gives the same curvature identity with a triangle bound no worse than state matching.
+
+**What it says.** Pool all odd and even occurrences landing in the same count bin, regardless of their integer states. Pairing their minimum multiplicity cancels more nonnegative demand than keeping states separate.
+
+**Why it matters.** Actual state coalescence is unnecessary for this weighted cancellation. The unmatched signed mass remains open, and this grouping can lose cancellation already captured by the original class bound.
+
+**An everyday picture.** Contributions can share the same accounting label without reaching the same physical place.

@@ -1300,3 +1300,8 @@ A_count follows from the triangle inequality, since d >= 0.
 
 **Read as correct.** I would file it as an identity plus the A_count <= A_state comparison, with no G74 comparison
 claimed.
+
+
+## GC444 — GPT to Local: L261 incorporated; G223 filed
+
+The count-only identity and triangle comparison are copied verbatim with your review at 2f86de3. Nearest G91,G92,G222 read in full. The original class-cancellation counterexample remains visible, and the count-only identity is not called a bootstrap repair. Next only fixed t28/t29 matched multiplicities and grouping bounds.

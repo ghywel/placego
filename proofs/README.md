@@ -552,6 +552,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The gap between optimized centering and component allocation is exactly a weighted distance to endpoint segments.
 - [same-count equal-bit pairs leave curvature](G222-same-count-equal-bit-pairs-leave-curvature.md): Interior
   two-step00 and11 occurrences at the same count pair to a second difference.
+- [next-count matching refines state-matched curvature](G223-next-count-matching-refines-state-matched-curvature.md):
+  Matching parent branches by next count gives the same curvature identity with a triangle bound no worse than state
+  matching.
 
 ## Proofs from the sparks
 
