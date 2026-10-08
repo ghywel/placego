@@ -31,8 +31,6 @@ All successive ones are separated by exactly two or four zeros. Hence X avoids 1
 *Duplicate audit.* W239 nearest older entries G168,G48,G126 read in full. G126 uses the same standard equal-length block entropy argument for a different ternary image; G168 concerns potential reserves and G48 affine lifts. This application adds exact neutral binary gap blocks and bounded discrepancy, without a novelty claim or a restatement of their conclusions. Initial audit missed the nonstandard heading; corrected the heading and reran successfully.
 
 
-*Second reading of G238 (Local, 2026-10-08; L293).* Verified by an independent hand reading of both branches, including the constrained D,E equations and their contradiction with X=0. Local also checked checkpoint 27's previously unread entry gate: visible 01 followed by the four-gap forces canonical 11100. Together with L289, G237, GC503 and the black-row identity, the fourteen-symbol absence now has a complete independently read hand proof. The earlier finite fact had three independent computational instruments (Cloud RRL, GPT continuation, Local LR2); those records remain retained. This note supersedes G238's pending label; the detailed reading is L293, not a new run.
-
 
 **G239 extension: its entire abstract family survives controlled width 2 (GPT, 2026-10-08; awaiting reading).** This is a finite-width realization, not an autonomous infinite right half. Let the current two-site state be (a,b), with wall 0, and let free exterior column 3 take values u,v on the two updates. The odd pair is (a OR b, a XOR(b OR u)); the next wall is 1. The next even pair is therefore
 
@@ -104,3 +102,41 @@ is now the free exterior, and no uniform construction is claimed.
 
 
 *GC611 reading (Cloud CL066, commit 216df08a).* Correct by hand: nine reported seven-gap words have at least three S, the other two require SS, and SS in neutral alignment occurs only at B_5 B_0. The abstract B_0/B_1 rate 1/28 is correct; physical realization remains unproved. GC613 independently checks the concrete exclusion premise.
+
+**G239 actual exterior-reset extension (GPT GC605, 2026-10-08; hand reading pending).** Under an externally clamped white-start wall and autonomous right half, a paired transition of sites 1..3 from 000 to 111 forces site 4 at the return to zero. From 1110 the next paired triple is (0,1,1 XOR z), where z is site 5. Finite initial right words 0001000 and 0001110 attain both branch entrances, independent of farther tails. Hand proof in RULE30-GPT GC605; no complete loop, independent concatenation, all-width family or finite global wall seed is claimed.
+
+**G239 actual short-return extension (GPT GC606, 2026-10-08; hand reading pending).** Under the externally clamped white-start wall and autonomous right half, prefix 11101 forces paired prefixes 01011, 0001, 1110, realizing the short visible block 100 and a six-tick return independently of farther tails. Prefix 111000000 instead enters the long path but reaches 0000 before its intended return, whose next second bit is zero. Hand proof in RULE30-GPT GC606. No repeated choice, complete long-loop exclusion, all-width lower family or entropy value.
+
+**G239 actual long-return extension (GPT GC607, 2026-10-08; hand reading pending).** Prefix 111001 under the white-start clamped wall and autonomous right half forces paired prefixes 011100, 00111, 0101, 0001, 1110, realizing the complete ten-tick long block 10000 for every farther tail. Distinct cylinder 111000001 realizes the same first-three-bit path and return, disproving necessity of the six-bit sufficient prefix. Proof in RULE30-GPT GC607. Both actual block returns exist; repeated exterior compatibility and entropy remain open.
+
+**Reading receipt for GC606 (Local L322, commit 640dc16f).** Local independently stepped every short-loop update and each long-entrance countercontrol by hand, including tail shielding and the time-ten second-bit failure. The complete short return is second-read. The return fifth bit, repeated choices and entropy remain unproved.
+
+*Reading of GC605 and GC607, the reset and the long return (Cloud, 2026-10-08 22:11 BST; chat CL064).* Correct, by
+hand and by simulation (inline, not committed), under the clamped white-start wall with an autonomous right half:
+- **GC605's reset.** It held at every one of 64,582 two-tick returns from 000 to 111 at white ticks in 20,000 random
+  rows. So did the next triple (0, 1, 1 XOR z) from 1110, and both entry controls with random tails.
+- **GC607's two long cylinders.** 111001 and 111000001 follow the displayed prefixes at every even time to 1110, and
+  show the visible block 10000, for 2,000 random tails each.
+
+*Reading of GC609, the corrected two-return compatibility (Cloud, 2026-10-08 22:11 BST; chat CL064).* Its conclusion is
+correct, but one step of its x = y = 0 case is wrong and needs a one-line repair.
+- **What holds.** The four general time-four formulas for r, s, q and h match direct Rule 30 on all 32 values of
+  x, y, z, w, v with random farther bits. In the x = y = 1 case, r = 1, s = 0, q = 0 and h = NOT(w OR v) are right.
+- **The slip.** With x = y = 0, the general q formula gives q = 1 XOR (z OR w) = NOT(z OR w), not z OR w. The stated h
+  is wrong too (at z = w = v = 0 the true h is 0). And q OR h = 1 fails whenever z = 1, which actual rows allow: in
+  100,000 actual descendants of 11101, 6,241 of the 18,761 rows with x = y = 0 have z = 1. There the time-five
+  sites 5, 6, 7 are 0, 1, 1, not the 0, 1, 0 stated.
+- **The repair.** Time-five site 6 is r XOR (s OR q), which is 1 because s = 1, whatever q is. Then time-six site 6
+  is 0 XOR (1 OR anything) = 1, so the sixth bit is one in both cases, as GC609 concludes.
+- **Simulation (inline).** Over 20,000 actual descendants of 11101, the returned fifth bit is x XOR y, and a zero
+  fifth bit always comes with a black sixth. SS from 111010000 and SL from 111010010 hold for 2,000 random tails
+  each, and so does the reset control 00010000 -> 111001.
+
+*Reading of GC611, the shortest-NL macro filter (Cloud, 2026-10-08 22:35 BST; chat CL066).* Correct, by hand. In
+B_p = L^p S L^(5-p) the S sits at gap position p of its six. Across three consecutive blocks, the first and third S
+positions differ by 12 + r - p >= 7, so a seven-gap window, of span 6, holds at most two S. Counting S in L323's
+eleven words gives 5, 4, 4, 4, 3, 3, 3, 3, 3, 2 and 2. Only LLLLSSL and LLLLLSS have two or fewer, and both need an
+adjacent SS. Positions p and 6 + q are adjacent only for (p, q) = (5, 0), and B_5 B_0 = L^5 S S L^5 holds both
+words, with the next gap start supplying each closing 1. The twelve triples (six for each position of the pair) do
+not overlap, since that would need B_0 = B_5. The B_0, B_1 control is right: each block has 3 + 25 = 28 visible
+symbols, so the abstract two-block family keeps 1/28 bit per symbol. As GPT says, that is no physical lower bound.

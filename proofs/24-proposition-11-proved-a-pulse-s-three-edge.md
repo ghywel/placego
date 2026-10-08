@@ -70,3 +70,69 @@ the maximum by total-window debt would be wrong. Nearest older entries G160 (arr
 (root-clock membership) and G163 (repeated-strip winding) were read: this is not a restatement of
 any of them. It is a local finite-window sharpening of GC340, with no count, gap or growth bound.
 Local's entry24 is ready to leave the waiting room; no long computation was independently replayed.
+
+**Pulse reset extension (GPT GC570, 2026-10-08; awaiting reading).** On a full-line reference clock, take a fixed finite list of nonzero q-periodic drivers beginning with the singleton e_s. Its first delay is k in {1,...,q}, and every arrival lands at phase s+1 after that edge. All subsequent delays are therefore independent of the initial arrival. For any fixed slope, every adjusted interval beginning at the first edge increases with k, while every interval starting later is independent of k. Their maximum, including the empty interval, is nondecreasing in k. Thus the whole list's maximum interval debt over all arrivals equals its debt at arrival s+1, where k=q. This extends Proposition 11's reset argument to a fixed suffix; it does not assert the same clock after a birth clamp or an independent interior restart.
+
+Apply it to reviewed GC335's joined seven-driver list at dyadic q>=8. Its suffix delays are q-2,1,q,2,1,q, so the initial delay q gives adjusted prefixes at slope 5/2:
+
+    0, q-5/2, 2q-7, 2q-17/2, 3q-11, 3q-23/2, 3q-13, 4q-31/2.
+
+All are nonnegative and the final prefix is maximal for q>=8. The exact whole-list interval debt at every arrival is therefore at most 4q-31/2, attained at s+1. GC335's full-line any-arrival charge 5q-33/2 can be lowered by q-1. Its generic phase/birth allowance is not silently lowered: an interrupted suffix requires separate justification. The unknown complementary gap budget and quadratic separation count are unchanged; no rooted occurrence of this joined family is asserted.
+
+**Controls and identified unexpected restart guard.** At q=8 the prefixes are 0,11/2,9,15/2,13,25/2,11,33/2; their largest ordered rise is 33/2. At q=16 they are 0,27/2,25,47/2,37,73/2,35,97/2, giving 97/2. These are hand arithmetic checks against GC335's already independently verified delays, not a run. At q=8,r=5 the third driver E has holes 1 through 6. Its actual arrival in the joined clock is phase 7 and its delay is 1; restarting that driver alone at phase 1 gives delay 7. Hence inherited suffix delays cannot be assumed for an interior restart. q=4 lies outside the joined-family formula and keeps GC335's separate guard. No new count, settling bound or prize claim.
+
+*GC570 duplicate audit.* Entry 24 nearest 21, 05 and 03 and their summaries were read in full. None states this fixed-suffix reset consequence; entry 24 supplies its mechanism. GC335 supplies the seven-edge list and exact reference debt and is explicitly reused. This is an extension attached to the existing proof, not another scored entry.
+
+**Joined-window birth audit (GPT GC571, 2026-10-08; awaiting reading).** Fix GC335's seven nonzero drivers at dyadic q>=8, in pulse coordinates s=0:
+
+    B=e_0,
+    C=one with holes 1,...,q-3,
+    E=one with holes 1,...,q-2,
+    F=e_(q-1),
+    C'=one with hole 0,
+    E'=one with holes 0,1,
+    F'=e_2.
+
+GC570 bounds intervals on a whole-window trajectory by D=4q-31/2. For birth transfer, G9 requires each subinterval at an independently chosen starting time; the following additional audit supplies that stronger bound. Resetting C lands at phase 1, q-1 or 0. These three cases have C/E combined delays respectively q, at most q-1, and 2. Hence delta_C+delta_E<=q. Resetting F always lands at phase 0, after which C',E',F' have delays 2,1,q. Also delta_E<=q-1 and delta_F<=q. For C' followed by E', the combined delay is at most 4: C' never lands at phase 1; landing at 0 gives delays 1,3, and every other landing gives E' delay 1 with C' delay at most 2. Finally delta_E'<=3 and delta_F'<=q.
+
+Every subinterval is a prefix of one of these seven suffixes. At slope 5/2 the resulting upper bounds on its adjusted cost, including an empty prefix, are
+
+| First driver | Bound for every prefix and every starting phase |
+|---|---:|
+| B | 4q-31/2 |
+| C | 3q-12 |
+| E | 3q-21/2 |
+| F | 2q-7 |
+| C' | q-7/2 |
+| E' | q-2 |
+| F' | q-5/2 |
+
+For example the C-prefix cumulative delays are bounded by q-2, q, 2q, 2q+2, 2q+3, 3q+3. Subtracting 5/2 times the respective lengths gives a maximum at most 3q-12 for q>=8. The E-prefix bounds are q-1, 2q-1, 2q+1, 2q+2, 3q+2, whose adjusted maximum is at most 3q-21/2. The remaining rows follow from the fixed post-F suffix and the C'/E' four-tick bound. All rows are at most D for q>=8. Therefore D is the exact uniform all-subinterval, all-starting-time budget for this fixed list; equality occurs on the complete reference list in GC570.
+
+G9 now applies: for this list with normalized barriers beta_j<=j and initial front 0, its birth-clamped front obeys T_birth(k)<=5k/2+D for 0<=k<=7. No generic q-1 phase overhead is needed. This is a local certificate for the specified list and normalized barriers, not a new whole-history bound, count of rooted occurrences or control of complementary gaps. A block at an arbitrary position in a global history must retain its actual normalization; do not assume its shifted barriers satisfy the premise without checking it.
+
+**Independent hand controls and unexpected repair.** At q=8 the table is 33/2,12,27/2,9,9/2,6,11/2; each is below or equal to 33/2. At q=16 it is 97/2,36,75/2,25,25/2,14,27/2, each below or equal to 97/2. GC570's restarted E at phase 1 really has delay q-1, not the inherited delay 1; the E row explicitly pays it. This identifies why the earlier guard was valid but not decisive: it refuted inherited suffix delays, while this uniform larger budget still covers the restart. The counterfactual that the reset argument alone supplied the G9 premise remains false. No experiment or rooted census was run; q=4 remains outside this list's certificate.
+
+*GC571 duplicate scope.* Entry 24 nearest 21, 05 and 03 and their summaries were read in full during GC570. This extends the same pulse reset and applies G9 to a fixed list after checking the previously missing independent subintervals. GC335 supplies the list, GC570 its sharp reference value. No new scored entry or novel general transfer theorem.
+
+**Actual block birth normalization (GPT GC572, 2026-10-08; awaiting reading).** Use the conservative front T_(j+1)=F_j(max(T_j,b_j)), T_0=0, with b_j=max(0,j+1-L), L>=1. Take a consecutive nonzero-driver block starting at index a. If a>=1, then T_a>=b_(a-1), since even an identically zero preceding driver has F(s)=s. Therefore its initial clamp c=max(0,b_a-T_a) is at most b_a-b_(a-1)<=1. For a=0 the clamp is zero. Set U=max(T_a,b_a). After j edges of the nonzero block the front is at least U+j: every nonzero reset advances by at least one. Meanwhile b_(a+j)<=b_a+j<=U+j. Thus no further birth clamp interrupts the block. Its actual path is the full-line path starting at U, with an initial time loss c<=1 relative to T_a.
+
+For GC335's seven-driver joined list, GC570 bounds every interval on that full-line path by D=4q-31/2 for dyadic q>=8. Intervals of the actual birth path beginning after the first edge obey D; intervals beginning at its block entrance obey D+c. Hence the whole block has actual birth-path all-interval debt at most D+1=4q-29/2, independently of L. If T_a>=b_a, its exact local bound is D. This discharges the previously retained global block-normalization issue for this birth schedule. It supplies no count of occurrences or allowance on the complementary gaps, and relies on the specified consecutive drivers all being nonzero. No rooted occurrence of the joined family is newly asserted.
+
+**Independent controls and unexpected endpoint.** At a=0, b_0=0, so there is no extra tick. At a=1,L=1,T_1=0, b_1=1, the initial clamp is exactly one. In the formal reset system put a zero driver before the joined list and choose its first pulse at time 0 modulo q. The clamp moves its arrival to phase 1; its first actual elapsed delay becomes q+1, and the complete joined block has debt D+1. This attains the extra tick in the reset-system domain, not necessarily on a rooted Rule 30 history. A zero driver inside a block could leave the front unchanged while the next barrier grows; therefore the nonzero hypothesis cannot be omitted from the no-further-clamp argument. G9's generic restart expansion remains necessary for such mixed blocks. No experiment, new census or settling theorem.
+
+*GC572 scope/duplicate note.* Extension of G6's birth schedule and G9's transfer, attached to the entry 24 pulse-window audit. Entry 24 neighbours 21, 05 and 03 and summaries were read in full in GC570. The one-tick initial-clamp argument keeps the exact global block index and supplies the normalization absent from GC571; no separate scored entry.
+
+**Mixed-gap birth accounting (GPT GC573, 2026-10-08; awaiting reading).** Under G6's conservative schedule T_0=0, b_j=max(0,j+1-L), L>=1, write c_j=max(0,b_j-T_j). Nonzero drivers advance the clamped front by at least one; identically zero drivers leave it at the clamped time. For j>=1, always T_j>=b_(j-1), hence 0<=c_j<=1. If w_(j-1) is nonzero, then T_j>=b_(j-1)+1>=b_j, so c_j=0. Also c_0=0. Therefore every positive clamp is charged injectively to the immediately preceding zero driver. For an M-edge prefix with M>=1, sum(c_j,j<M)<=W(M-1)<=W(M), taking W(0)=0. G6.2's exact identity consequently gives T(M)<=M+sum(z_j,j<M). The birth contribution can be absorbed into the base steps missing at zero drivers, without a separate growing birth allowance. This is an upper bound for every actual selected path under the stated schedule, not a bound on its selected zero waits.
+
+**Independent controls and identified unexpected index check.** With L=1 and three formal zero drivers, fronts are 0,0,1,2 and clamps are 0,1,1. Consecutive clamps are possible in this reset domain; their predecessors are distinct zero drivers. With a zero driver followed by an all-black driver, fronts are 0,0,2 and clamps are 0,1. Thus a clamp may occur on a nonzero-driver edge: it is the preceding driver that must be zero. The counterfactual that a current nonzero driver alone suppresses its entrance clamp fails. These are hand reset controls, not rooted Rule 30 witnesses, and no experiment or rooted occurrence claim is made. The result does not compare a clamped path's waits to those of an unclamped path; birth can change the selected phase and therefore the waits themselves.
+
+*GC573 scope/duplicate note.* G6.2 accounting and GC572 supply this mixed-gap extension. The entry 24 neighbours 21, 05 and 03 and their summaries were read in full in GC570; no pulse-window charge is restated or separately scored.
+
+*Reading of GC571, the joined-window birth audit (Cloud, 2026-10-08 21:27 BST; chat CL062).* Correct, and its table is
+sharp. With GC570's delay model (a driver W met at phase p waits d = 1 + (r - p) ticks to its first black r at or
+after p, and the front lands at r + 1), the reference arrival reproduces GC570's delays q, q - 2, 1, q, 2, 1, q. An
+inline brute force (not committed) took every first driver and every starting phase. It found the maximum adjusted
+prefix cost at slope 5/2 for q = 8, 16, 32, 64 and 128. Every row equals GC571's bound exactly (at q = 8: 33/2, 12,
+27/2, 9, 9/2, 6, 11/2), so each bound is attained, and the overall maximum is D = 4q - 31/2. The G9 application then
+follows as stated, for this list and normalized barriers only.

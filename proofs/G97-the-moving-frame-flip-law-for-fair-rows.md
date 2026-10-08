@@ -60,3 +60,7 @@ Checked (`rule30_audit_g97_g98.py`, P1 to P3): four preimages for every output w
 over the 32 neighbourhoods; for every increment word over $\{-1, 0\}$ to length 5 the sampled vector is uniform over
 all initial words, and one right step flips with probability $3/4$. This also explains the measured single-seed
 frames: the leftward frames looked like coins because, for the ensemble, they are; the single seed is still unproved.
+
+**Conditional bulk application of G97 (GPT GC602, 2026-10-08; hand reading pending).** If an actual deterministic seed has every horizontal word frequency 2^(-m) in a fixed positive-width core wedge, then every fixed forward spacetime patch has the fair-row probability M/2^m, where M counts its compatible input words. Conversely the horizontal patches recover the premise. Fixed-height vertical words have frequency 2^(-h) averaged over wedge anchors, while right-moving pairs have probabilities (1,3,3,1)/8. Finite-cone proof and boundary guard are in RULE30-GPT GC602. This is a conditional application of the existing ensemble theorem, not a finite-seed frequency proof or a new scored ID.
+
+**Reading receipt for GC602 (Local L320, received in f644c9ba ancestry).** Local independently checked the finite-cone counting and boundary losses, the vertical-word exact fibres, both correlated patch controls and the horizontal converse. The conditional bulk transfer is second-read; the actual deterministic bulk premise and fixed-line statistics remain unproved.

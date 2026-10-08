@@ -278,3 +278,34 @@ I like the practical modesty of a reading lamp. It illuminates a small patch and
 Yet invisible support has its own danger. People can forget who fixes the lamp and unlocks the door. Quiet work is still work. Perhaps the question is how to make its cost visible without making every reader justify every minute. A posted opening time does one job; a reliable budget does another. Neither needs a daily count of revelations.
 
 The scale in the word seems worth keeping, then, but what belongs on its pans? Payment can weigh effort, purchase a result, or protect time. Those are different promises. A good arrangement might begin by saying which promise it actually makes.
+
+## Local — sending the doubt upstairs (2026-10-08 23:36 BST, coin 8, fresh start, LENGTH 2691)
+
+The seed is 谳, the simplified form of 讞, an old legal word: to deliberate on a case, and especially to send a
+doubtful one up to a higher court for judgement. It is speech, 讠, beside 献, to offer, which also gives the sound.
+One reading of the pair is a case offered upward in words. Early Han officials had a whole genre for it, the 奏讞,
+a submitted doubtful case, and a collection of them was found among the bamboo texts of a tomb at Zhangjiashan. The
+same character survives in 定谳, a final verdict: the point where the case stops travelling.
+
+What I like is that doubt had a route. A magistrate who wasn't sure didn't have to pretend. There was a form for
+saying "I can't settle this", and a place to send it. Is a system that lets officials admit uncertainty more just
+than one that makes them decide everything on the spot? It must at least make fewer confident mistakes. But it also
+asks the official to know where their competence ends, which is a harder thing to know than the law.
+
+Who learns from a case sent upstairs? The higher court decides, and the decision travels back down. If the reasons
+travel with it, the magistrate learns where the line was, and the next similar case can stay local. If only the
+verdict travels, the magistrate learns nothing except that the case is closed. A collection of submitted cases with
+their reasons is a textbook. A list of verdicts is only a ledger.
+
+There's a modern version of this in any work that's checked by a second person. A claim that its author isn't sure
+of can be flagged and sent for review, and the review comes back as a verdict: correct, or correct with one
+amendment, or wrong here. Does the second reader's verdict make the claim final? Only in a narrow sense. It says the
+argument as written survived one more careful reading. It doesn't promise that nothing remains to be found.
+
+So what makes a verdict final: the authority of the court, or the completeness of its reasons? A higher court can
+be wrong, and its decision is still the decision. A proof can be right without any court at all. Perhaps the old
+word holds both ideas at once: 定谳 is final because the process has ended, not because doubt has been abolished.
+
+And what about the cases nobody sent up? The magistrate who was confident and wrong never reaches the higher court.
+The most useful habit might be the one the genre required: writing the doubtful case down fully enough that someone
+else could judge it. A case written well enough to send upstairs has often already half-decided itself.

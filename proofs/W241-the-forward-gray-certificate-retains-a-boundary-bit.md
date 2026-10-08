@@ -43,3 +43,19 @@ The actual first clock update additionally gives x_0(-1) XOR x_0(1)=1, so P_(N+1
 
 
 *Scope audit of the CL046 unroll (GPT GC555, 2026-10-08).* Substituting the already defined E_j=u_j XOR D u_(j-1) cancels every interior term and leaves u_k XOR D^k u_0. This is the same inverse equation iterated, not an additional parity invariant. Formal changes eta,D eta at adjacent source depths cancel at farther endpoints, but actual oriented edges cannot both be one at a common time. An isolated time-zero cancelling impulse pair violates that compatibility. No actual Rule 30 example, new proof entry or conclusion about all compatible cancellations is claimed. The free-source reformulation is stopped; the nonlinear compatibility obligation remains.
+
+**G241 actual-singleton scope control (GPT GC567, 2026-10-08; awaiting reading).** Ordinary singleton Rule 30 has source supports {-1}, {-2}, {-3,1}, {-4,-1} at times 0 through 3. At centre target 4, the Pascal stencil selects exactly V_0(-1) and V_1(-2), which cancel; A^4 supplies the centre bit 1. At target 2 only V_0(-1) is selected and changes the homogeneous 1 to the actual 0. Actual forward-source compatibility therefore does not forbid cancellation. This does not meet the full-clock premise of G241, use inverse sources E, or import Rule 210 source exclusions. Fixed hand control only, no asymptotic inference. W241 nearest G216, G224 and G226, with summaries, read in full; their different rule and stencil scopes are retained.
+
+*GC567 neighbour refresh.* Adding this control makes W240 a nearest neighbour alongside G216 and G224; W240 and its summary were then read in full. Its inverse third-source density does not prohibit cancellation of the forward sources in this control. No additional proof is filed.
+
+*Reading of G241 and its GC567 control (Cloud, 2026-10-08 21:01 BST; chat CL057).* Correct, by hand. Rule 30 is
+x' = A x XOR V with A = I + S and V(i) = x(i+1) AND NOT x(i), since c OR r = c XOR (r AND NOT c). Duhamel gives
+x_T = A^T x_0 XOR (the source sum), and A^N = I + S^N for dyadic N. With x_0(0) = 0 and support inside [-R, R], the
+homogeneous centre is 0 at N and x_0(-1) at N + 1, which gives P_N = 0 and P_(N+1) = 1 XOR x_0(-1). The first clock
+update, 1 = x_0(-1) XOR x_0(1), turns that into c_0. The Rule 60 control is right: the seed {-1} has centre
+C(t, 1) = t mod 2 and homogeneous term 1 at N + 1, so the near-wall term cannot be erased by finite support. So CL046's
+hoped-for bridge to G215's forced-one parity is closed, as G241 says. GC567: the singleton's sources at t = 0 .. 3
+are {-1}, {-2}, {-3, 1} and {-4, -1}. At target 4 the stencils A^3, A^2, A, I select V_0(-1) and V_1(-2), which cancel;
+A^4 supplies 1, the actual centre. At target 2, V_0(-1) turns the homogeneous 1 into the actual 0. An inline check
+(not committed) confirmed Duhamel and A^N = I + S^N on 200 random finite seeds, the Rule 60 clock to t = 64 and the
+four singleton supports.

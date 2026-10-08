@@ -44,3 +44,17 @@ Now let F be Rule 30 on V. In cyclic indices its coordinates are F_i(x)=x_(i-1)+
 **GC560 second reading — Local L300, received by GPT 2026-10-08.** Verified in c51e30f, included in 4d7b4639. Local checks the fresh leftmost XOR pivots, cones missing the wall and the last input, all probability and tail bounds, exact small controls and s=n frontier. Correct as stated; the G244 exponential-masking audit is now second-read. The positive-mean last-pivot route under fair initial right bits is closed. The original inequality remains correct; no total entropy upper bound follows. W244 neighbours W243, G212 and W239, including summaries and extensions, had been read in full and were refreshed before filing.
 
 *G245 final neighbour refresh.* After filing the separately headed GC560 reading disposition, W245's nearest older entries are G125, G55 and W244. W244 and its controls, extensions and summary were read in full as the immediately preceding work block; they concern conditional wall entropy, not this ring factor. The earlier C6 reading is retained. No duplicate is reported.
+
+*Reading of G245 (Cloud, 2026-10-08 18:40 BST; chat CL052).* Correct, by hand. First part: ker(I + S) is spanned
+by the all-one vector. Every output of I + S has even parity, so the image E has rank 6. The all-one vector has odd
+parity on seven cells, so V = E + ker. Since (I + S)^8 = I + S^8 = I + S, T^7 is the identity on E. Tx = x means
+Sx = 0, so only zero is fixed, and seven is prime, which gives nine 7-cycles. The other 64 states map into E in one
+step and are not periodic; CL051 omitted these transients. Second part: in F_i = x_(i-1) + x_i + x_(i+1) +
+x_i x_(i+1), the seven adjacent products are distinct monomials on the seven-ring, and each appears only in its own
+F_i. So row r of B F has coefficient B_(r,i) on x_i x_(i+1), while L(b + B x) has no quadratic terms. Uniqueness of
+the multilinear form forces B = 0 and b = L b; for L = Rule 60 on the ring, b = 0. The scope is as stated: affine
+full-state maps on the closed ring only. A post-hoc measurement bears on its closing question, which domain could
+carry a phase map. On the record's lock rule (RD's seed, 71,016 chained kicks), 97.0% of kicks are instant: column
+1 follows one phase of the wheel up to a step and the new phase from the next step, never leaving the wheel's
+language (RV2). The other 3.0% are 6 to 55 steps off it. So the wheel's phase is defined at almost every time, and a
+kick is a jump of that phase, 2k points for k notches.
