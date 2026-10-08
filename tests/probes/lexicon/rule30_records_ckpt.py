@@ -4,6 +4,12 @@ records_bits_ckpt.c (row Q6, drawn under draw-and-work on 2026-10-07: a heavy ru
 and checkpointed; Local's run, claimed in CLOUD-LOCAL.md with these predictions pushed before it started).
 
 RUN-ON:     cpu, 6 of the M5's 10 cores (the rest stay free for other work); Homebrew libomp
+            Moved 2026-10-08 15:37 to a spare machine of the owner's (6 cores, Linux, gcc 14 -O3 -fopenmp build of the
+            same C source, in a container), after the owner's laptop shutdown had stopped it at 1,926 tasks (resumed
+            on the M5 at 15:22 meanwhile, 1,932 at the move). Validated first: checkpoint lines and R, H and W output
+            identical to the M5's at D 53 (1,024 tasks) and D 61 (4,096 tasks); depth-93 tasks 0 .. 5 were held
+            back from the moved checkpoint, recomputed there, and match the M5's lines exactly. The status command
+            here reads the M5's copy, which stops at 1,932; the live checkpoint is on that machine.
 COMMAND:    python3 tests/probes/lexicon/rule30_records_ckpt.py start | status | resume
             (start launches a detached process; resume relaunches it after any interruption; both append to the same
             checkpoint, so no finished task is lost)
