@@ -14046,3 +14046,20 @@ The useful cancellation is instead conditioned on the zero band. The paired recu
 Thus when two adjacent initial cells f_(j-1),f_j are zero, their next zero condition f_(j+1)=0 becomes g_j=0. For j=14, the short p14+p15 expression in checkpoint 19 is this cancellation under p13=0. On a five-cell initial zero band, the interior three cells at the next physical time are also zero; this is the ordinary zero-cone erosion already retained in checkpoint 7. The branch certificate gains its force when those conditional zeros are combined with the actual right-word gate, not from erosion alone.
 
 **Next.** Seek a transferable implication for a paired zero band in the constrained recurrence, permitting intermediate functions of higher degree. The desired certificate is conditional on the band and right language. Neither a globally quadratic closure nor translating the existing boundary obstruction spatially is justified. Cloud's relaxed-record measurements remain the separate computational diagnostic; no depth extension here.
+
+
+### GC549 checkpoint 21 — a finite-lookahead control for Cloud's relaxed language (2026-10-08)
+
+**Bounded proof audit of the claimed RRL instrument.** Read the new probe without running or editing it. Its left-cone clauses and forward SAT-model check preserve the declared clock and zero band, and the visible samples are selected at the correct white times for each phase. Predict its relaxK model must agree with actual feasibility whenever the requested visible word length is at most K. Counterfactual: a gap between relaxK and actual at one larger finite horizon proves the actual language is not of finite type. That inference fails. Unexpected control: K=10 already makes the fixed depth-thirteen case exact, independently of whether the three-word relaxation suffices. No new computation or expanded benchmark.
+
+The actual finite right language is factorial: each contiguous visible factor comes from the evolved right row at a later white wall time. Let F_K contain every minimal absent word of length at most K, as Cloud's minimal_forbidden function computes. For a word w of length n<=K,
+
+    w avoids F_K iff w belongs to the actual length-n language.
+
+The forward implication follows by contradiction: if w is absent, choose a shortest absent contiguous factor u. Its proper prefix and suffix are allowed, so u is one of the computed minimal forbidden words, of length at most n<=K. The reverse implication is factoriality. No claim about words longer than K follows.
+
+Combining this with checkpoint 16 gives an exact instrument control for phase zero: when the demanded word has ceil(T/2)<=K symbols, relaxK and actual must return the same SAT verdict. Phase one has floor(T/2) visible symbols, starting at time 1. Necessary forbidden-word inclusion still holds there, but the converse needs a realization with a predecessor under the initial black wall, not merely an arbitrary right row at the first white time. That predecessor property is not proved here, so the equality control is asserted for phase zero only.
+
+At phase zero, d=13,L=5 has T=17 and n=9<=10, so relaxK is exact on this case. This controls the encoding and finite-language generation, rather than proving an all-depth obstruction. At larger n a gap can show only that forbidden words through length K do not suffice for that instance. For a direct logical control, the language forbidding just 0^(K+1) is of finite type, while its truncation through K forbids nothing and admits the missing longer word. Thus finite failure of truncated lookahead cannot establish non-finite-type structure. The final interpretive sentence of RRL's preregistration needs this qualification; its numerical experiment can proceed unchanged.
+
+**Next.** Send the phase-zero finite-lookahead control and the interpretation guard to Cloud, preserve its run and predictions, and continue the conditional inverse-certificate work. No right-language equality from matching finite records, and no converse phase-one reachability is assumed.

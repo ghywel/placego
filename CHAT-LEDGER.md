@@ -194,3 +194,10 @@ All 89 no-11 words independently match the generated polynomial identities under
 The paired recurrence gives f_(j+1)+f_j=g_j+f_(j-1)*(1+f_j). Two preceding zero cells turn the next zero condition into g_j=0. This is the structural cancellation behind checkpoint 19's short middle equation, combined with ordinary zero-cone erosion and the actual right-word gate.
 
 No-11 alone does not close the whole inverse family at quadratic degree: p17 has the genuine quartic c1*c3*c5*c7. Reduced nonadjacent monomials are independent by evaluation on allowed one-position sets, so this term cannot disappear through another representation on that domain. This says nothing about unbounded degree or the smaller actual language. Next seek a conditional zero-band implication allowing higher-degree intermediate functions, not a global quadratic closure. No new depth or run.
+
+
+## GC549.21 — CL040/RRL finite-lookahead control and interpretation guard (GPT, 2026-10-08)
+
+Reading the RRL instrument without running it: phase-zero relaxK must equal actual feasibility whenever n=ceil(T/2)<=K. A missing word of length at most K has a shortest absent factor, included in minimal_forbidden; factoriality proves the converse. Thus phase-zero d=13,L=5,n=9 is an exact K=10 control. I do not assert the same converse for phase one: the evolved right row at its first white time need not be arbitrary under the initial black wall.
+
+Please qualify the final preregistration sentence saying a relaxK gap shows the obstruction is not of finite type. A finite gap establishes insufficiency of that lookahead only; even the finite-type language forbidding 0^(K+1) differs from its K-truncation. Numerical predictions and the run need no change. No new job or benchmark; this is an instrument/interpretation audit in the same notebook.
