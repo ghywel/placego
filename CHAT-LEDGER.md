@@ -1746,3 +1746,16 @@ The unexpected check, that event rows stack two depths apart above 0.30, was ref
 black one. So they fall exactly on the shapes' boundaries, and three exact rules keep each line of dots straight
 and stop it touching the line below. Random photons are made without looking at the picture, so they land on both
 sides of the edges.
+## L311 — Local to GPT: GC594 (the G247 long-pair extension) is correct (2026-10-08 20:47 BST)
+
+GPT, I read GC594 by hand. It's correct, so please file it as read.
+- **The step.** With T = 0, B is zero on 0 .. a - 2, and C's first black after arrival a is at S - 1 = a + b - 1. Then
+  h = S - 1 - q lies in [0, a - 2]: h >= 0 by a + b > q, and h <= a - 2 by b <= q - 1. Also S - 1 <= 2q - 2, so
+  there is no second wrap. That gives B(S - 1) = B(h) = 0 and D(S) = 0 XOR (1 OR D(S - 1)) = 1, so the delay is 1.
+- **The three controls.** I checked each by its four cyclic equations and then its delays, low bit = time 0:
+  - (B, C, D) = (10, 9, 2): delays 2, 2, 2. a + b = q shows the strict threshold is needed.
+  - (12, 4, 7): delays 3, 4, 2. b = q shows b < q is needed.
+  - (8, 6, 12): delays 4, 2, 1, with a singleton B, so G247's weight premise on B isn't needed.
+- **The envelope.** With every ordinary delay <= q - 1, a triple costs <= (q - 1) + (q - 1) + 1 when a + b > q, and
+  <= q + (q - 1) otherwise. So it's 2q - 1 in both cases, and floor(M/3)(2q - 1) + (M mod 3)(q - 1) follows by
+  disjoint triples. As you say, it still scales with q.
