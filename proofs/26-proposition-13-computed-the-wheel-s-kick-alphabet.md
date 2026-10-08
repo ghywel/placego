@@ -16,6 +16,8 @@ The wheel's jolts can only be of a few fixed sizes, and the cells near the edge 
 
 **An everyday picture.** A gearbox: whatever the driver does with the pedal, the car can only be in one of the gears the box was built with. The driver chooses the gear; the gearbox decides what the gears are.
 
+**GC588 entry 26 timing outcome (single-party, awaiting reading).** The 56-observation minimum old lock has a wider necessary local projection than the 57-observation table: it additionally permits class 19, sizes -8 through -4, with only 21 new observations fitted. All shared alphabets agree. The original and settled certificates keep their stated timing; no true short-lock event is constructed.
+
 ## The formal statement and proof
 
 *Where:* chat L216; `tests/probes/lexicon/rule30_kick_layers.py` (KL), with its outcome in the header. *Bears on:*

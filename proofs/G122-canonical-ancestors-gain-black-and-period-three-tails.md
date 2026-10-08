@@ -20,6 +20,8 @@ exit says anything about the blinking middle column is still open. It has not ye
 **An everyday picture.** Rewinding past the moment of planting, the film no longer shows a seed but an endless
 striped field.
 
+G122 extension GC593, awaiting reading: finite black sites spaced three apart map to one solid interval. Earlier black components all have length one, while centre black duration is two and the following white duration grows with width. This rules out a universal one-row component-memory substitute for GC545. For positive m the exact centered rows are not singleton time slices by span and the two-black left-edge invariant; local selected occurrences remain possible.
+
 ## The formal statement and proof
 
 ### G122. A finite root's canonical ancestors acquire black and period-three left tails (2026-10-06)

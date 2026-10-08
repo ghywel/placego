@@ -16,6 +16,14 @@ After a lone black cell drives the pattern, the three steps that follow cost the
 
 **An everyday picture.** A train that leaves once an hour: the longest you can wait is when you arrive just after it has gone. Whatever time you turn up, after it leaves you are on its timetable, so only your first wait depends on when you came.
 
+**GC570 extension of entry 24 (awaiting reading).** A full-line driver list beginning with a pulse has fixed suffix delays after every arrival, so its all-interval debt is worst just after that pulse. Reviewed GC335's joined seven-edge window therefore has full-line any-arrival charge 4q-31/2 rather than 5q-33/2 for dyadic q>=8. Birth interruptions and interior restarts remain outside this sharpening. No rooted count or gap bound.
+
+**GC571 joined-window birth extension (awaiting reading).** Checking all seven restarted suffixes gives the uniform all-subinterval budget D=4q-31/2 for dyadic q>=8. G9 then transfers D without phase overhead to the fixed list with normalized birth barriers beta_j<=j. Actual global block normalization, rooted counts and complementary gap debt remain separate. The old E restart guard is explicitly paid by its q-1 first delay.
+
+**GC572 actual birth normalization (awaiting reading).** Under b_j=max(0,j+1-L), a consecutive nonzero block pays at most one clamp at its entrance and none inside. GC335's actual joined-window debt is therefore at most 4q-29/2 for dyadic q>=8, or 4q-31/2 if its entrance clamp is inactive. The additional tick is attained by a formal reset control; rooted attainment is not asserted. Counts and complementary gaps remain open.
+
+**GC573 mixed-gap birth accounting (awaiting reading).** Each positive clamp under the standing schedule follows a distinct zero driver, so sum c<=W(M-1)<=W(M). G6 gives T(M)<=M+sum z along the actual clamped path. This absorbs the explicit birth term but leaves selected zero waits uncontrolled; comparing to an unclamped path is not justified.
+
 ## The formal statement and proof
 
 *Where:* chat L212; `tests/probes/lexicon/rule30_audit_g99_g100.py` S118. *Bears on:* GC340 (RULE30-GPT.md,

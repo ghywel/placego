@@ -1594,6 +1594,7 @@ counterexample. It has not yet had its second reading.
 seeds come in every size, so rewinding alone cannot show that the crystal was small.
 
 ## G122
+
 Walking back past a root leaves the world of finite seeds, first through a black tail and then a repeating one.
 
 **What it says.** A row that is white far enough to the right can always be run backwards, in exactly one way.
@@ -1605,6 +1606,9 @@ exit says anything about the blinking middle column is still open. It has not ye
 
 **An everyday picture.** Rewinding past the moment of planting, the film no longer shows a seed but an endless
 striped field.
+
+G122 extension GC593, awaiting reading: finite black sites spaced three apart map to one solid interval. Earlier black components all have length one, while centre black duration is two and the following white duration grows with width. This rules out a universal one-row component-memory substitute for GC545. For positive m the exact centered rows are not singleton time slices by span and the two-black left-edge invariant; local selected occurrences remain possible.
+
 
 ## G123
 Run a root backwards for ever, and the repeating pattern on its far left keeps getting longer.
@@ -2704,6 +2708,7 @@ Some histories take more than 26 billion steps to double their repeat length fro
 **An everyday picture.** A marathon where the leader crosses the line in two hours and the course has to close while some runners are still out after a week: the finishing times say as much about the spread as about the winner.
 
 ## 24
+
 After a lone black cell drives the pattern, the three steps that follow cost the most when the clock arrives just after that cell.
 
 **What it says.** The project keeps a reference clock and charges a "debt" when the pattern runs slower than that clock allows. When a driving row has a single black cell, the next two rows are forced into a known shape (GPT's GC340). This result shows that the debt over those three steps is largest when the clock arrives one step after the black cell, whatever the arrival time. So the worst case can be priced exactly, without the extra allowance that a general shift of the clock would add.
@@ -2711,6 +2716,15 @@ After a lone black cell drives the pattern, the three steps that follow cost the
 **Why it matters.** The open target is to show that the clock's debt stays bounded. Each lone-cell event can now be charged its exact worst case rather than a padded one, a saving of nearly a full period for each event. It does not yet say how many such events a history has, or how they overlap.
 
 **An everyday picture.** A train that leaves once an hour: the longest you can wait is when you arrive just after it has gone. Whatever time you turn up, after it leaves you are on its timetable, so only your first wait depends on when you came.
+
+**GC570 extension of entry 24 (awaiting reading).** A full-line driver list beginning with a pulse has fixed suffix delays after every arrival, so its all-interval debt is worst just after that pulse. Reviewed GC335's joined seven-edge window therefore has full-line any-arrival charge 4q-31/2 rather than 5q-33/2 for dyadic q>=8. Birth interruptions and interior restarts remain outside this sharpening. No rooted count or gap bound.
+
+**GC571 joined-window birth extension (awaiting reading).** Checking all seven restarted suffixes gives the uniform all-subinterval budget D=4q-31/2 for dyadic q>=8. G9 then transfers D without phase overhead to the fixed list with normalized birth barriers beta_j<=j. Actual global block normalization, rooted counts and complementary gap debt remain separate. The old E restart guard is explicitly paid by its q-1 first delay.
+
+**GC572 actual birth normalization (awaiting reading).** Under b_j=max(0,j+1-L), a consecutive nonzero block pays at most one clamp at its entrance and none inside. GC335's actual joined-window debt is therefore at most 4q-29/2 for dyadic q>=8, or 4q-31/2 if its entrance clamp is inactive. The additional tick is attained by a formal reset control; rooted attainment is not asserted. Counts and complementary gaps remain open.
+
+**GC573 mixed-gap birth accounting (awaiting reading).** Each positive clamp under the standing schedule follows a distinct zero driver, so sum c<=W(M-1)<=W(M). G6 gives T(M)<=M+sum z along the actual clamped path. This absorbs the explicit birth term but leaves selected zero waits uncontrolled; comparing to an unclamped path is not justified.
+
 
 ## 25
 How heavy the row before a lone black cell is can be read off the row after it: count its black stretches.
@@ -2722,6 +2736,7 @@ How heavy the row before a lone black cell is can be read off the row after it: 
 **An everyday picture.** A fence painted in stripes: the number of places where the paint changes colour is always twice the number of painted stretches. Knowing how many colour changes a painter made tells you how many stretches there are, and so how long any one stretch can be.
 
 ## 26
+
 The wheel's jolts can only be of a few fixed sizes, and the cells near the edge decide which sizes are possible, whatever happens further in.
 
 **What it says.** Next to the striped edge, the second column runs like a wheel. Now and then something arriving from the chaotic interior knocks it to a new position: a "kick". This result shows, by an exhaustive finite computation, that once the wheel has run for about two and a half turns, a kick can happen at only four points of its turn. At each of those points it can only be one of five or six sizes. For the two kick points actually seen in simulations, the allowed sizes are exactly the sizes that were measured on more than eleven thousand real kicks.
@@ -2729,6 +2744,9 @@ The wheel's jolts can only be of a few fixed sizes, and the cells near the edge 
 **Why it matters.** It was thought the kick sizes came from the chaotic interior. They do, but only the choice among a short, fixed list does. The list itself is fixed by about sixteen columns of local structure. That bounds how much information a kick can carry. It does not say kicks must keep happening, which is what a full proof would need.
 
 **An everyday picture.** A gearbox: whatever the driver does with the pedal, the car can only be in one of the gears the box was built with. The driver chooses the gear; the gearbox decides what the gears are.
+
+**GC588 entry 26 timing outcome (single-party, awaiting reading).** The 56-observation minimum old lock has a wider necessary local projection than the 57-observation table: it additionally permits class 19, sizes -8 through -4, with only 21 new observations fitted. All shared alphabets agree. The original and settled certificates keep their stated timing; no true short-lock event is constructed.
+
 
 ## G205
 A short prescribed stretch of the wheel forces the neighbouring column; a longer stretch forces the next two as well.
@@ -3133,6 +3151,27 @@ The third edge-source depth is active at least half the time.
 
 **An everyday picture.** Many lamps can be on even when their combined parity is zero.
 
+**GC585 boundary extension of W240 (awaiting reading).** If the left half were finite with deepest black L, its moving edge forces an active source at depth L+t+2. The first exterior cells still stay white because their Gray and source contributions cancel exactly. Silent depth 6 excludes L up to 4; a general contradiction needs silent positions hitting every possible moving-edge ray, or another clock-dependent obstruction. No such covering family or finite clock witness is proved.
+
+**GC586 extension of W240 (awaiting reading).** The compulsory moving-edge sources alone contribute the repeating parity pattern 110 to exterior time-zero red sets. A finite white tail would require the interior sources to match that same pattern. The first double hit cancels at depth L+4. This is a standard Pascal/Fibonacci identity under the finite-left hypothesis; no obstruction to the required interior compensation has been proved.
+
+G240 extension GC589, awaiting reading: at white times E14=c1*c3*c6 in the no-11 quotient. Nonzero forces the reviewed forbidden visible factor 101001. This hand identity explains Local's SS measurement; no-11 alone fails on formal code 0101001. No general silent-depth family follows.
+
+G240 extension GC590, awaiting reading: a silent triple (depth j, colour p, onset A) covers L<=j-A-2 of parity j-p. Complete ray interception is equivalent to unbounded thresholds in both parity classes. This sharpens L308; no infinite Rule 30 family is proved, and missing a ray does not realize it.
+
+GC589 scoped Local receipt L310: product and missing-factor step read by hand; P13 confirmed earlier, P12 not separately derived; independent SS supports E14 silence.
+G240 extension GC591, awaiting reading: every positive-L ray reaches depth j by age j-3. Later firing witnesses shift to every earlier matching-parity age. SO's six shallow targets and E30 white therefore cannot be rescued by a later onset for this route, conditional on Local's replayed witnesses; finite SAT cones extend by the existing inverse construction. No finite-tail witness or global source-family exclusion.
+
+G240 extension GC592, awaiting reading: r+1 consecutive diagonal source events are equivalent to one black followed outward by 2r+1 zeros at the starting row. Infinite streak means a zero tail. This closes a separate one-ray streak census as a new mechanism; known realizable white-run bounds already bound it. No clock exclusion or experiment.
+
+**G240 / GC597 extension (awaiting reading):** relaxed A/B-compatible twin rays three depths apart cancel the exterior Fibonacci parity signature. Actual simultaneous outer event at distance D limits the inner streak to floor(D/2) by GC592; hence persistent parallel compensation is impossible beside the mandatory frontier. Intermittent parity supply remains open.
+
+**G240 / GC598 extension (awaiting reading):** interior source contributions of ages <=A have eventual dyadic target period Q>A. Comparing depths k and k+Q removes them and forces late-source parity in two of three target residues. A three-target check requires an event older than A; finite fragments cannot suffice. No event density or prize exclusion follows.
+
+**G240 / GC599 extension (awaiting reading):** the actual moving outer strip 11001 alternates with 11011, producing endlessly restarting isolated events at frontier offsets three and four. It also occurs on singleton time two. Joint streak caps do not bound restart count; no imposed full clock or parity compensation is established.
+
+**G240 / GC600 extension (awaiting reading):** for dyadic Q and k>=L+Q, the required target difference weights each interior source by binom(k-j,t-Q). Ages are Q plus binary subsets of k-j, reaching Q+k-j. Finite-frontier geometry removes negative-index entrants; no localization near Q or prize exclusion follows.
+
 
 ## W241
 
@@ -3143,6 +3182,8 @@ A finite Gray-rule clock leaves a boundary term in the source certificate.
 **Why it matters.** The forced odd source parity from the Rule 210 comparison cannot be copied into this split. The cancellation question remains.
 
 **An everyday picture.** A surviving baseline changes how much a correction must supply.
+
+**GC567 G241 scope control (awaiting reading).** Two selected forward Gray sources cancel at target 4 in the actual singleton Rule 30 orbit; one contributes at target 2. Realizability alone does not forbid source-parity cancellation. This finite control is outside G241's full-clock hypothesis and is separate from inverse sideways sources. No balance or asymptotic claim.
 
 
 ## W242
@@ -3188,62 +3229,57 @@ A positive average of active last inputs would prove positive boundary-language 
 
 **An everyday picture.** Each exposed fresh switch that still reaches the observation contributes a bit of conditional uncertainty.
 
-
 **W243/W244 review disposition (2026-10-08).** Local L298 verifies the isolation extension and L299 verifies the entropy inequality. Both are now second-read.
 
 **W244 channel audit (GC560; reading pending).** The first half of every last-input path lies outside the wall cone and has independent fair gates, so activation probability is at most 2^(-n). Its mean density is zero and only finitely many such activations occur almost surely. This closes that particular positive-mean route, without bounding total visible entropy above.
 
-
-## W245
-
-**Seven-ring Gray-clock scope and affine-factor obstruction (GPT GC561, waiting room).**
-
-Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and nine seven-cycles; the other 64 full-ring states enter that image in one step. No nonconstant affine full-state map can intertwine seven-ring Rule 30 with any linear update: every distinct quadratic monomial has its corresponding map coefficient as coefficient, forcing all linear map coefficients zero. Standard linear algebra and Boolean polynomial uniqueness. Does not exclude nonlinear factors, restricted domains or explain the wall wheel. Cloud CL051 algebra scope audit; no experiment.
-
-
 **GC560 review disposition (Local L300, verified c51e30f via 4d7b4639).** Exponential masking and summable last-pivot activation are second-read. G244's chosen positive-mean route is closed under the fair-right ensemble; its entropy inequality remains correct, with no entropy upper inference.
 
-
-## W246
-
-**Second-last right-cone sensitivity is summable (GPT GC562, waiting room).** Under fair right inputs at the alternating wall, sensitivity of the time-2n visible bit to initial site 2n has probability at most 4n*2^(-n). Exact two-copy damage paths have one stay and otherwise move left; each path pays for at least n-1 independent baseline white gates outside the wall cone. Summing over at most 2n paths gives the bound and almost-sure finite activity. Extends GC560 to the two-bit outer frontier, without an entropy upper bound or earlier-input conclusion. Standard damage algebra and G97 fresh-pivot sampling; no experiment.
-
-
 **GC563 extension of W244 (awaiting reading).** Conditioning only on visible history gives next-black probability equal to the posterior of a hidden white pair when the current bit is zero. With beta_n the optimal history-only prediction error, 1+2 sum beta_n <= visible-prefix entropy <=1+(N-1)h2(mean beta). Positive average beta suffices for positive support entropy; no such lower bound is shown. A random-phase alternating comparator has persistent productive events but zero prediction error and entropy rate. Standard inequalities, no runtime or actual comparator realization claim.
-
-**G246 reading receipt (Local L301, verified 764ed53 via 8743fe979).** One-stay recurrence, fresh cones and summable second-last sensitivity bound independently hand-read as correct.
-
 
 **GC563 reading (Local L302, verified 2ca1aa0).** Visible posterior recursion and both prediction-error entropy bounds are second-read; average beta positivity remains open.
 
 **GC564 G244 finite posterior control (awaiting reading).** At two-symbol histories 00 and 10, the next-black probabilities are exactly 5/12 and 3/16; 01 forces zero. Three-symbol masses are 7,5,4,13,3 over 32, matching GC502's collision 67/256, and beta_1=1/4. The initial white-pair to black-pair surgery cannot be transported after history 00 because evolved hidden pair 11 is impossible in that fibre. No long-time posterior estimate or new run.
 
-
 **GC565 G244 gap-start target (awaiting reading).** At an observable first-zero gap start, restrict to actual hidden sites 2 and 4 black. GC503 makes the next two symbols 01 or 00 according to hidden site 3. Weighted posterior entropy gamma on this event lower-bounds two-symbol conditional entropy; overlapping blocks give H_N >= (1/2) sum gamma. Average gamma positivity remains unproved. Removing the hidden gate fails when sites 4 and 5 are both white. Initial four-symbol proposal sharpened to two; standard entropy algebra, no experiment or universal wheel-profile assumption.
-
 
 **GC566 upstream local control (awaiting consolidated reading).** Actual even-row prefix 1110e evolves in two ticks to 0,1,1-e,1, independently of the exterior, and its next three visible outputs are 0,0,e. Refines reviewed GC504. The initial cylinders are real; later fifth-cell edits have no established lift preserving the complete observed-history fibre. No posterior or frequency bound. Stop local entropy-target rewrites; move to a distinct structural-balance audit.
 
 
-**GC567 G241 scope control (awaiting reading).** Two selected forward Gray sources cancel at target 4 in the actual singleton Rule 30 orbit; one contributes at target 2. Realizability alone does not forbid source-parity cancellation. This finite control is outside G241's full-clock hypothesis and is separate from inverse sideways sources. No balance or asymptotic claim.
+## W245
 
+On a ring of seven cells the Gray-code rule is a pure clock, and no straight relabelling turns Rule 30 into it.
 
-**GC570 extension of entry 24 (awaiting reading).** A full-line driver list beginning with a pulse has fixed suffix delays after every arrival, so its all-interval debt is worst just after that pulse. Reviewed GC335's joined seven-edge window therefore has full-line any-arrival charge 4q-31/2 rather than 5q-33/2 for dyadic q>=8. Birth interruptions and interior restarts remain outside this sharpening. No rooted count or gap bound.
+**What it says.** On seven cells in a ring, Rule 60 (each cell becomes itself XOR its left neighbour) has one fixed state and nine cycles of length seven, and the other 64 states fall onto those cycles after one step. No affine change of coordinates of the whole ring carries Rule 30 onto a nonconstant copy of this clock: Rule 30's AND term cannot be relabelled away.
 
+**Why it matters.** It closes the hope that Rule 30 on a small ring is the Gray clock in disguise. Any link between Rule 30's wheel phase and a clock has to be partial, not a full change of variables.
+
+**An everyday picture.** A seven-hour clock whose hand always moves on. Rule 30 is that clock with a sticky gear, and renumbering the face does not unstick it.
+
+**Seven-ring Gray-clock scope and affine-factor obstruction (GPT GC561, waiting room).**
+
+Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and nine seven-cycles; the other 64 full-ring states enter that image in one step. No nonconstant affine full-state map can intertwine seven-ring Rule 30 with any linear update: every distinct quadratic monomial has its corresponding map coefficient as coefficient, forcing all linear map coefficients zero. Standard linear algebra and Boolean polynomial uniqueness. Does not exclude nonlinear factors, restricted domains or explain the wall wheel. Cloud CL051 algebra scope audit; no experiment.
 
 **G245 reading receipt (GPT, Cloud CL052 at c5c1e1d).** Cloud independently verifies the rank-six Gray image, nine seven-cycles, one-step transients and full-state affine-factor coefficient argument. G245 is second-read with its original closed-ring scope. Kick/phase measurements accompanying the reading are separate post-hoc evidence, not an affine-factor construction.
 
 
-**GC571 joined-window birth extension (awaiting reading).** Checking all seven restarted suffixes gives the uniform all-subinterval budget D=4q-31/2 for dyadic q>=8. G9 then transfers D without phase overhead to the fixed list with normalized birth barriers beta_j<=j. Actual global block normalization, rooted counts and complementary gap debt remain separate. The old E restart guard is explicitly paid by its q-1 first delay.
+## W246
 
+The second-last input that could still change the wall's visible bit almost surely stops mattering.
 
-**GC572 actual birth normalization (awaiting reading).** Under b_j=max(0,j+1-L), a consecutive nonzero block pays at most one clamp at its entrance and none inside. GC335's actual joined-window debt is therefore at most 4q-29/2 for dyadic q>=8, or 4q-31/2 if its entrance clamp is inactive. The additional tick is attained by a formal reset control; rooted attainment is not asserted. Counts and complementary gaps remain open.
+**What it says.** With fair random right inputs beside the alternating wall, the chance that the visible bit at time 2n depends on the initial cell at site 2n is at most 4n/2^n. These chances have a finite sum, so with probability one only finitely many such inputs ever matter.
 
+**Why it matters.** With the matching result for the last input (W244's channel audit), it closes the route that looked for the wall's information in its newest inputs alone. Any information must come from deeper ones.
 
-**GC573 mixed-gap birth accounting (awaiting reading).** Each positive clamp under the standing schedule follows a distinct zero driver, so sum c<=W(M-1)<=W(M). G6 gives T(M)<=M+sum z along the actual clamped path. This absorbs the explicit birth term but leaves selected zero waits uncontrolled; comparing to an unclamped path is not justified.
+**An everyday picture.** A whisper passed along a long queue: the last two people to join are almost never the ones whose words reach the front.
+
+**Second-last right-cone sensitivity is summable (GPT GC562, waiting room).** Under fair right inputs at the alternating wall, sensitivity of the time-2n visible bit to initial site 2n has probability at most 4n*2^(-n). Exact two-copy damage paths have one stay and otherwise move left; each path pays for at least n-1 independent baseline white gates outside the wall cone. Summing over at most 2n paths gives the bound and almost-sure finite activity. Extends GC560 to the two-bit outer frontier, without an entropy upper bound or earlier-input conclusion. Standard damage algebra and G97 fresh-pivot sampling; no experiment.
+
+**G246 reading receipt (Local L301, verified 764ed53 via 8743fe979).** One-stay recurrence, fresh cones and summable second-last sensitivity bound independently hand-read as correct.
 
 
 ## W247
+
 Two longest possible waits for rows with more than one black cell force the following wait to be short.
 
 **What it says.** In a repeating row of q cells containing at least two black cells, the longest reset delay is q-1. If two compatible successive rows both attain it along the same uninterrupted clock, the next row is black at its arrival, so its delay is one.
@@ -3252,11 +3288,17 @@ Two longest possible waits for rows with more than one black cell force the foll
 
 **An everyday picture.** Three traffic lights on a route: the timing of two long stops can require the third light to be green when you reach it. That green light does not refund all the time already spent waiting.
 
-
 **G247 reading receipt (Local L305, verified 36f7bc519c20).** Both supports, forced third bit and endpoint arithmetic independently checked; second-read in its original full-line scope.
+
+G247 extension GC594, awaiting reading: consecutive delays a,b with a+b>q and b<q force the next compatible driver black at inherited arrival. The first driver may be singleton. Three ordinary nonsingleton waits total at most 2q-1. Strict crossing, the second delay guard and uninterrupted births matter; the bound is period-dependent and gives no rooted frequency or global Q7 conclusion.
+
+G247 extension GC595, awaiting reading: ordinary blocks have no internal conservative birth clamps; GC594 applies after their entrance phase changes. Whole-prefix cost sums their triple envelopes plus singleton waits and one global zero-driver clamp charge. At common period four, slope-5/2 debt is <=1+(5/2) times singleton count. No bound on that count or generalization to larger periods is proved.
+
+**G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
 
 
 ## W248
+
 The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.
 
 **What it says.** If the old and new visible words are pure wheel phases meeting at one cut, an even number of zeros between their adjoining black cells makes the phase and charge readings agree modulo 28. An odd number makes them differ by 14.
@@ -3265,39 +3307,4 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 
 **An everyday picture.** Two rulers can agree on a circular scale while their full readings differ by a complete turn. Here an odd gap additionally moves one reading halfway around the circle.
 
-
 **GC582 extension of W248 (awaiting reading).** The same parity test applies to RB's adjacent finite locks, including an odd physical cut. For a general pair of locks, count complete zero gaps between black samples inside the locks: phase and charge differ by 14 exactly when an odd number of these gaps have odd length. Two odd gaps cancel. Endpoint choices within a pure lock do not change this parity; no integer direction, actual gap restriction or replay follows.
-
-
-**GC585 boundary extension of W240 (awaiting reading).** If the left half were finite with deepest black L, its moving edge forces an active source at depth L+t+2. The first exterior cells still stay white because their Gray and source contributions cancel exactly. Silent depth 6 excludes L up to 4; a general contradiction needs silent positions hitting every possible moving-edge ray, or another clock-dependent obstruction. No such covering family or finite clock witness is proved.
-
-
-**GC586 extension of W240 (awaiting reading).** The compulsory moving-edge sources alone contribute the repeating parity pattern 110 to exterior time-zero red sets. A finite white tail would require the interior sources to match that same pattern. The first double hit cancels at depth L+4. This is a standard Pascal/Fibonacci identity under the finite-left hypothesis; no obstruction to the required interior compensation has been proved.
-
-
-**GC588 entry 26 timing outcome (single-party, awaiting reading).** The 56-observation minimum old lock has a wider necessary local projection than the 57-observation table: it additionally permits class 19, sizes -8 through -4, with only 21 new observations fitted. All shared alphabets agree. The original and settled certificates keep their stated timing; no true short-lock event is constructed.
-
-G240 extension GC589, awaiting reading: at white times E14=c1*c3*c6 in the no-11 quotient. Nonzero forces the reviewed forbidden visible factor 101001. This hand identity explains Local's SS measurement; no-11 alone fails on formal code 0101001. No general silent-depth family follows.
-
-G240 extension GC590, awaiting reading: a silent triple (depth j, colour p, onset A) covers L<=j-A-2 of parity j-p. Complete ray interception is equivalent to unbounded thresholds in both parity classes. This sharpens L308; no infinite Rule 30 family is proved, and missing a ray does not realize it.
-
-GC589 scoped Local receipt L310: product and missing-factor step read by hand; P13 confirmed earlier, P12 not separately derived; independent SS supports E14 silence.
-G240 extension GC591, awaiting reading: every positive-L ray reaches depth j by age j-3. Later firing witnesses shift to every earlier matching-parity age. SO's six shallow targets and E30 white therefore cannot be rescued by a later onset for this route, conditional on Local's replayed witnesses; finite SAT cones extend by the existing inverse construction. No finite-tail witness or global source-family exclusion.
-
-G240 extension GC592, awaiting reading: r+1 consecutive diagonal source events are equivalent to one black followed outward by 2r+1 zeros at the starting row. Infinite streak means a zero tail. This closes a separate one-ray streak census as a new mechanism; known realizable white-run bounds already bound it. No clock exclusion or experiment.
-
-G122 extension GC593, awaiting reading: finite black sites spaced three apart map to one solid interval. Earlier black components all have length one, while centre black duration is two and the following white duration grows with width. This rules out a universal one-row component-memory substitute for GC545. For positive m the exact centered rows are not singleton time slices by span and the two-black left-edge invariant; local selected occurrences remain possible.
-
-G247 extension GC594, awaiting reading: consecutive delays a,b with a+b>q and b<q force the next compatible driver black at inherited arrival. The first driver may be singleton. Three ordinary nonsingleton waits total at most 2q-1. Strict crossing, the second delay guard and uninterrupted births matter; the bound is period-dependent and gives no rooted frequency or global Q7 conclusion.
-
-G247 extension GC595, awaiting reading: ordinary blocks have no internal conservative birth clamps; GC594 applies after their entrance phase changes. Whole-prefix cost sums their triple envelopes plus singleton waits and one global zero-driver clamp charge. At common period four, slope-5/2 debt is <=1+(5/2) times singleton count. No bound on that count or generalization to larger periods is proved.
-
-**G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
-
-**G240 / GC597 extension (awaiting reading):** relaxed A/B-compatible twin rays three depths apart cancel the exterior Fibonacci parity signature. Actual simultaneous outer event at distance D limits the inner streak to floor(D/2) by GC592; hence persistent parallel compensation is impossible beside the mandatory frontier. Intermittent parity supply remains open.
-
-**G240 / GC598 extension (awaiting reading):** interior source contributions of ages <=A have eventual dyadic target period Q>A. Comparing depths k and k+Q removes them and forces late-source parity in two of three target residues. A three-target check requires an event older than A; finite fragments cannot suffice. No event density or prize exclusion follows.
-
-**G240 / GC599 extension (awaiting reading):** the actual moving outer strip 11001 alternates with 11011, producing endlessly restarting isolated events at frontier offsets three and four. It also occurs on singleton time two. Joint streak caps do not bound restart count; no imposed full clock or parity compensation is established.
-
-**G240 / GC600 extension (awaiting reading):** for dyadic Q and k>=L+Q, the required target difference weights each interior source by binom(k-j,t-Q). Ages are Q plus binary subsets of k-j, reaching Q+k-j. Finite-frontier geometry removes negative-index entrants; no localization near Q or prize exclusion follows.
