@@ -452,3 +452,8 @@ app is unpublished by design.
   d = 49 .. 81 replayed in RRX's independent encoding and split by clock phase, with the suffix threshold of the
   clock at each first impossible length (bisection). python-sat. Predictions in the docstring, pushed before the
   run. No data.
+
+- `lexicon/rule30_cloud_slant_flips.py` (Cloud, 2026-10-08, the owner's slanted descent): RS, flip counts in windows
+  that descend the single-cell pyramid along rays of slope -1 .. 1 and along the left edge, each against the exact
+  fair null of its frame (G97's left, stay and right-step flip identities). CPU, standard library. Predictions in
+  the docstring, pushed before the run. No data.
