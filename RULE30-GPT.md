@@ -13325,3 +13325,27 @@ the first m bits of GY equal those of Y: its first bit remains 1 and all the oth
 **Independent fixed-point and scope controls.** The infinite tail Y*=(1,0,0,...) is fixed by G and has q(Y*)=1. An everywhere sign solution already contradicts this fixed point. Its iid probability is zero, however; the positive cylinder above is what makes the finite-prefix almost-sure exclusion valid. At m=1 the cylinder is 100 on the first three tail sites; the observed output prefix is again 1 and the cocycle is odd, checking the smallest nonconstant-prefix case directly. An arbitrary measurable phi can depend on arbitrarily distant coordinates and need not be continuous at Y*; none of these controls excludes it.
 
 **Outcome and next.** The local/continuous invariant-phase route is CLOSED: any GC534 sign obstruction, if it exists, must have genuinely unbounded tail dependence and no continuous almost-sure version. This does not prove H ergodic, prove the base ergodic, establish GC533 cylinder visits or give a front speed. Stop finite phase searches. Next a justified measurable obstruction analysis or a different actual confinement-escape mechanism.
+
+## GC536 — A measurable phase would need irreducible prefix error (2026-10-08)
+
+**Scope and prediction.** Audit the unrestricted measurable possibility left open by GC535, with no finite phase census. Predict its finite-prefix approximations have an explicit error floor depending on prefix length, and its sign marginal cannot be strongly biased. Counterfactual ordinary convergence of prefix approximations contradicts these floors is unsupported: the floors themselves tend to zero. Unexpected check: the two comparison errors can be bounded using invariance, without assuming Y and GY independent. Hand probability argument, no experiment or existence assertion; pending reading.
+
+**Conditional hypothesis.** Suppose a measurable sign phi solves phi(GY)=(-1)^q(Y)*phi(Y) almost surely under the iid tail measure. Let psi_m be any sign predictor depending on its first m bits, and put epsilon_m=P(psi_m(Y)!=phi(Y)). G preserves that measure, so the same error probability epsilon_m holds at GY. Whenever both predictions are correct, psi_m satisfies the phase equation on this sample. A union bound, with no independence premise, gives
+
+    P(psi_m(GY)!=(-1)^q(Y)*psi_m(Y))<=2*epsilon_m.
+
+GC535's positive cylinder makes the left side at least 2^(-(m+2)) for m>=1, whatever the predictor. Consequently
+
+    epsilon_m>=2^(-(m+3)), for every m>=1.
+
+Thus an exact measurable phase cannot admit sign-valued prefix approximations with error o(2^(-m)). A continuous almost-sure version would have zero error beyond some finite prefix and is already excluded. No lower bound uniform in m is proved.
+
+**Marginal obstruction and an independent control.** For a constant predictor the phase-equation defect is P(q=1)=3/4. The same comparison bound gives error at least 3/8 for either constant sign, hence
+
+    3/8<=P(phi=+1)<=5/8.
+
+Independently, the exact equation says the phase switches sign with probability 3/4. Since its old and new sign marginals are equal by invariance, positive-to-negative and negative-to-positive transitions each have probability 3/8. Each sign must therefore have mass at least 3/8, reproducing the bound without the predictor comparison. This also gives E[phi(Y)*phi(GY)]=-1/2, a conditional identity rather than an observed mixing coefficient.
+
+**Failure of the proposed approximation shortcut.** Finite-prefix conditional expectations approximate a measurable sign in mean square, so sign predictors can have epsilon_m tending to zero. GC535 alone therefore cannot exclude a measurable solution by appealing to approximation: positive defect at every finite m is compatible with defects tending to zero. The displayed exponentially decreasing floors remain compatible with that limit. No rate theorem for a hypothetical solution is supplied here, and an approximate phase is not an exact invariant function.
+
+**Outcome and next.** Any measurable obstruction must be nonlocal, have both signs with substantial mass, and resist exponentially accurate prefix prediction at the stated rate. These are necessary conditions only; no phase is constructed or excluded. This completes the local-to-measurable scope audit. Stop phase elaboration unless a genuinely new regularity or return mechanism is justified; critical-ray zero visits, unbounded damage span and inward speed remain OPEN.

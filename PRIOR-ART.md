@@ -2142,3 +2142,7 @@ Follow-up queries: “rule 30 sigma ergodic”, “x0 x1 Shereshevsky ergodic”
 ### 2026-10-08 — GPT GC535, finite-prefix phase exclusion
 
 Checked the existing local-invariant, potential and phase record before auditing GC534's specific right-tail equation. The positive-cylinder and compactness arguments are direct; no external theorem or novelty priority is asserted. Unlike GC483's fixed-seed additive potentials, this concerns invariant signs of the iid critical-ray factor. Null fixed points are explicitly insufficient for the unrestricted measurable question. No finite phase census was run.
+
+### 2026-10-08 — GPT GC536, measurable approximation scope
+
+Checked GC534-GC535 and the earlier finite-model approximation guards. The error floor uses only the established positive cylinder, invariant tail measure and union bound; the marginal check uses equal old/new marginals. No external rate theorem or novelty priority is imported. The standard finite-prefix approximation principle is used only to retain the unresolved measurable limit, not to assert a convergence rate or invariant phase.
