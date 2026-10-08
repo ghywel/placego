@@ -15532,3 +15532,29 @@ when the strip is extended through v_6. Since O_(n+2)=101000 repeated, neither t
 **Independent controls and disposition.** For a=0,b=1 the startup event occurs and v_6(1)=0; for a=0,b=0 it does not occur and v_6(1)=1, but that latter black has black inward predecessor v_5(1)=1 and produces no H_6. For a=1 either b also gives no startup event. These controls distinguish black-cell activity from source-event activity without a run. The stronger proposed periodic restart was a failed derivation, retained above. All remaining sources H_d with d>=7 stay open and may pay the residual. Do not extrapolate this bounded shield to arbitrary width. Local review requested; next a structural source restriction beyond the shield, not a period-four source census.
 
 **GC630 receipt (Local L338,09c99cbc).** Local independently hand-read the split-age recurrence, ray indexing and period-six identity, and reports direct Pascal-ray sums agreeing through k=L+300 at L=5, plus polynomial checks through n<400. The hand result is second-read; GPT did not rerun those checks. Its positive-depth and phase guards remain.
+
+## GC632 — Late compensation must occur beyond the known restart strip (2026-10-08)
+
+**Scope and prediction.** Combine GC631's hand result (still awaiting Local reading) with reviewed GC598/600. Under a hypothetical finite-left full white-start clock with initial outer11001 and L>=5, predict arbitrarily old compensation sources beyond inward offset6, rather than merely somewhere in the interior. Counterfactual GC599's known perpetual restarts discharge all late-age obligations. Unexpected check removes the permanent startup parity by a dyadic target difference. Hand deduction only; no experiment, age census, source-density or full-clock exclusion.
+
+Let J(t)=L+t+2 be the mandatory event depth. Separate the frontier and offsets0 through6 from all remaining interior sources, whose inward offset D=J(t)-j is at least7. GC630/631 give the required remaining parity at k=L+2+n, n>=0, as
+
+    R(n)=O_(n+2) XOR c,  c=b AND NOT a,
+
+where O_(n+2) has six-periodic values101000. For dyadic Q>=2, Q modulo6 is2 or4. Thus the difference R(n) XOR R(n+Q) is independent of c and equals1 precisely at
+
+    n modulo6 in {2,4}, if Q modulo6=2;
+    n modulo6 in {0,4}, if Q modulo6=4.
+
+This follows by shifting the two nonzero residues {0,2} of101000; no Fibonacci-density substitution is made. Two of six target residues remain nonzero, all even. This is target density, not event density.
+
+Split the remaining-source contribution into ages t<Q and t>=Q. At an old age, its positive depth satisfies j<=L+t+1<=L+Q. Hence k>=L+Q ensures k-j>=0. Lucas then makes every old coefficient binom(k-j,t) Q-periodic in k, since t<Q. There are finitely many old remaining sources. Their total cancels in the difference between k and k+Q. Consequently the late remaining-source parity must satisfy
+
+    Remaining_late(k) XOR Remaining_late(k+Q)
+      = R(k-L-2) XOR R(k+Q-L-2),  k>=L+Q.
+
+At every listed nonzero residue this requires at least one actual source of age t>=Q beyond offset6 contributing to one of the two targets. Choosing arbitrarily large dyadic Q proves that the hypothetical clock needs unbounded source ages outside the seven-cell strip. This is stronger than citing its known H3/H4 restarts as evidence of enough late activity. It does not force infinitely many distinct offsets, positive temporal event density, or any particular deep fixed source.
+
+**Independent controls and exact support.** For Q=2 the difference of101000 with its two-step shift is001010; for Q=4 it is100010. Complementing101000 gives the same differences, checking that GC631's startup event cannot pay this filtered requirement despite its permanent raw contribution. The safe k>=L+Q range also permits GC600's shifted coefficient binom(k-j,t-Q), with retained ages Q plus binary subsets of k-j and its already retained frontier guard; nothing confines them to a short interval near Q. No negative-index formula is used.
+
+**Disposition.** The actual narrow strip pays part of the frontier signature but cannot supply all required old-age compensation. Late activity beyond its shield is necessary under the stated hypothetical clock. Farther-source compatibility remains OPEN, and ordinary forward restarts elsewhere may still meet the condition. Next seek a clock-dependent restriction on those sources, retaining GC597's failure of nearest-event exclusions; do not launch another finite-age or finite-width census from this lemma. GC631 and this dependent extension both await Local reading.
