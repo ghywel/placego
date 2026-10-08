@@ -15048,7 +15048,9 @@ For the first pair, the odd first eight bits are 10010001; these determine the d
 
 **Disposition and next.** Both chosen visible blocks now have complete actual autonomous-right-half returns to the same four-bit marker, beyond their earlier controlled-width lifts. This moves the single-return compatibility lead to PART; the infinite concatenation obligation remains OPEN. A returned 1110 marker does not prescribe the fifth or sixth bits needed to start the next chosen cylinder. In particular these local returns do not constitute a two-loop finite-state subsystem with an independently selectable input at every visit. Next analyze the return images of those exterior cylinders or find a coherent tail family; do not infer positive entropy from two finite loops or resume a width census.
 
-## GC608 — The short-return fifth bit is an exact outward OR gate (2026-10-08)
+## GC608 — Short-return fifth-bit image: OR claim corrected to XOR (2026-10-08)
+
+**Correction status (Local L323, commit 6b8ffe2c; GPT, 2026-10-08 21:07 UTC).** The original OR lemma below is false: its time-four s expression complemented the actual update. Retained verbatim as a failed derivation. The correct s is NOT(x OR y) OR (x XOR(y OR z)). The general return formula r AND (s OR q), r and q remain correct. For generic time-two rows the returned fifth bit equals x OR y except at x=y=1, where it is NOT(z OR w). For actual rows descended from 11101, x=y=1 forces z=1: x=1 makes odd initial site 7 zero, then y equals odd site 8 and z equals y OR odd site 9. Hence the actual returned fifth bit is x XOR y. Both nine-bit controls and the two-short-loop consequence survive. The original three-versus-one preimage count is withdrawn; parity selects two pairs per branch. No frequency or independence conclusion. Local's hand reading is checked here; its reported simulations were not rerun.
 
 **Scope and prediction.** Continue GC606/607's actual exterior return-image obligation, under a clamped 0101 wall and autonomous right half. Predict that from initial prefix 11101 the fifth bit at the six-tick return equals the OR of the sixth and seventh bits at time two. Counterfactual a complete short return automatically resets its next short choice. Unexpected check gives opposite finite input cylinders with arbitrary farther tails. Hand Boolean proof only; no experiment, width enumeration or fresh-bit assumption. This is a derivative G239 return-map lemma, not a new entropy theorem.
 
@@ -15077,28 +15079,25 @@ Taking a,b,c,d=0,0,0,0 gives x,y=0,1. Thus every initial prefix 111010000 return
 
 **Disposition.** A concrete two-short-loop cylinder is proved, and the next hidden branch after a short return is explicitly inherited from two outward cells, not newly supplied. The OR gate loses information: three local input pairs select short and only 00 selects long. This multiplicity is an algebraic fact, not a physical frequency or independence claim; accessibility of the local pairs at successive returns remains constrained by the same evolving exterior. No arbitrary infinite mixed concatenation, full finite global clock, or positive boundary entropy follows. Next inspect the returned sixth bit when x=y=0, and the long-return image, for a coherent repetition family. Single returns and this two-return cylinder remain PART; the infinite lower-language obligation remains OPEN.
 
-## GC609 — A short return cannot feed the simple long cylinder (2026-10-08)
+## GC609 — Corrected short-return image always starts another complete known loop (2026-10-08)
 
-**Scope and prediction.** Continue GC608's exact short-return image under the clamped alternating wall and autonomous right half. Predict that a zero fifth bit after a complete short loop forces the sixth bit to zero as well. Counterfactual the successful long cylinder 111001 can follow that short loop directly. Unexpected check compares an arbitrary 0001 predecessor with the particular predecessor inherited from 01011. Hand Boolean proof only; no experiment or duplicate of Local's NL concatenation computation. The claim concerns hidden return states, not exclusion of a visible mixed gap word.
+**Retained failed prediction.** The initial hand audit predicted fifth zero forced sixth zero and excluded the simple long cylinder. That argument reused GC608's incorrect s. Before publication, Local L323 exposed the complemented update, and the prediction was refuted. The drafted obstruction is withdrawn, not a closed physical route. No computation was run. This corrected derivation is a hand continuation of Local's reading, under the same clamped alternating wall and autonomous right half. Unexpected check: the arbitrary 00010000 predecessor returns to 111001, consistently with the corrected map.
 
-Start with 11101 at physical time zero. At time two write the row as 01011 followed by x,y,z,w,v at sites 6..10. GC608 proves the time-six fifth bit is x OR y. To select the next hidden long entrance it must be zero, hence x=y=0. The odd sites 6..9 at time three are then
+At time two write 01011xyzwv, with x,y at sites 6,7. At time four write 0001rsqh at sites 1..8. Correct updates give
 
-    1, 0, NOT(z OR w), z XOR(w OR v).
+    r=x OR y;
+    s=NOT(x OR y) OR (x XOR(y OR z));
+    q=NOT(x OR y) XOR ((x XOR(y OR z)) OR (y XOR(z OR w)));
+    h=(x XOR(y OR z)) XOR ((y XOR(z OR w)) OR (z XOR(w OR v))).
 
-At time four, write the row as 0001 followed by r,s,q,h at sites 5..8. The preceding odd row gives
+Local L323, now hand checked, gives the time-six fifth bit x XOR y for an actual descendant of initial 11101. If it is zero there are two cases, and both force the sixth bit one.
 
-    r=s=0;
-    q=z OR w;
-    h=NOT(z OR w) OR (z XOR(w OR v)).
+For x=y=0, r=0,s=1,q=z OR w,h=NOT(z OR w) OR (z XOR(w OR v)), so q OR h=1. The time-five sites 5,6,7 are consequently 0,1,0. Time-six site 6 is 0 XOR(1 OR 0)=1.
 
-In particular q OR h=1 for every z,w,v. At time five, sites 5,6,7 are 1,q,q OR h. Thus the time-six sixth bit is NOT(q OR h)=0. The seventh bit is q XOR 1=NOT(q), because the odd seventh bit is already one and shields its right parent. Every short return selecting the hidden long entrance therefore has the stronger prefix
+For x=y=1, actual ancestry forces z=1. Thus r=1,s=0,q=0,h=NOT(w OR v). The time-five sites 5,6,7 are 0,1,h, and time-six site 6 is again 0 XOR(1 OR h)=1. These are all cases with returned fifth zero. Therefore every complete short cylinder returns either to 11101, if x and y differ, or to 111001, if they agree.
 
-    111000 followed by NOT(z OR w).
+GC606 and GC607 then prove a complete next short or long loop, respectively, independently of farther bits. The known short cylinders thus compose with both successful loop types for one further return. Initial 111010000 realizes SS, and initial 111010010 realizes SL, with arbitrary farther tails. The latter's previously unproved long completion is now established. The returned marker after that second loop is again 1110; no claim about its farther bits is made.
 
-It cannot lie in GC607's simple sufficient long cylinder 111001. This closes that particular short-to-long cylinder-composition route. It does not exclude other long-return cylinders or prove an actual mixed visible word impossible.
+**Independent reset control.** From arbitrary 00010000, the odd prefix is 0011100, giving next first six bits 111001. The corrected short-history cases agree with this possible reset; the failed obstruction had incorrectly treated time-four s as zero.
 
-**Unexpected predecessor control.** An arbitrary time-four prefix 00010000 has r=s=q=h=0, so q OR h=0 and its two-tick return begins 111001. Direct odd prefix 0011100 verifies this sixth bit without the formula. Thus the forced sixth zero is specific to a preceding complete short loop; it is not a universal property of the 0001 reset or the 1110 marker. The full eight-bit cylinder permits arbitrary farther tail. Treating the time-four exterior as freely selectable would miss this compatibility obstruction.
-
-**The previous hidden-long control also misses the second known cylinder.** GC608's initial prefix 111010010 has initial sites 6..9 equal to 0,0,1,0. Denote initial sites 10 and 11 by e,f. Its odd sites 6..10 are 1,1,1,NOT(e),e OR f. Consequently its time-two sites 6..9 are x,y,z,w=0,0,0,0: in the last update NOT(e) OR (e OR f)=1. The stronger return prefix above is therefore 1110001, independently of every farther initial bit. This also misses GC607's other sufficient long cylinder 111000001, whose seventh bit is zero. No conclusion about this control's eventual return is asserted; those two sufficient cylinders are not a classification of all successful long paths.
-
-**Disposition.** The simple six-bit long gate cannot immediately follow any complete short cylinder, and the existing opposite nine-bit short control feeds neither currently proved long cylinder. These are retained failures of a cylinder-composition route, not a failure of G239's abstract family or an entropy upper bound. Local's NL computation remains the independent finite-word lane. Next seek a different successful long cylinder compatible with the short image, or read any certified NL obstruction before extending the hand route. Arbitrary infinite mixed compatibility remains OPEN; stop assuming a common reset marker alone supplies it.
+**Disposition.** The initial obstruction is refuted and retained. A complete short loop always feeds one of the known complete next loops, with branch equal to the parity of two outward cells. This is a two-return compatibility theorem, not arbitrarily chosen branch symbols: the first long return's image remains an obligation, and even repeated short returns do not make the parity freely selectable. Local's NL report in L323 gives certified finite forbidden words; its full outcome and certificates take priority before attempting an infinite free-choice construction. No infinite mixed realization, entropy value or finite global clock claim.
