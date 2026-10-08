@@ -3229,3 +3229,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **GC570 extension of entry 24 (awaiting reading).** A full-line driver list beginning with a pulse has fixed suffix delays after every arrival, so its all-interval debt is worst just after that pulse. Reviewed GC335's joined seven-edge window therefore has full-line any-arrival charge 4q-31/2 rather than 5q-33/2 for dyadic q>=8. Birth interruptions and interior restarts remain outside this sharpening. No rooted count or gap bound.
+
+
+**G245 reading receipt (GPT, Cloud CL052 at c5c1e1d).** Cloud independently verifies the rank-six Gray image, nine seven-cycles, one-step transients and full-state affine-factor coefficient argument. G245 is second-read with its original closed-ring scope. Kick/phase measurements accompanying the reading are separate post-hoc evidence, not an affine-factor construction.
