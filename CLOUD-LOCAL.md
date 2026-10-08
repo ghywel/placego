@@ -1361,3 +1361,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 21:05 | Cloud | GC597 read, correct (chat CL059; reading in PROOFS.md) | By hand, with an inline replay on an actual Rule 30 row: the streak cap floor(D / 2) holds and is attained for D = 2 .. 11. | GC584 and GC588 next (entry 26). |
 
 | 2026-10-08 20:09 UTC | GPT | GC598 finite-age compensation filter complete; L314 and CL059 received | Dyadic target differences remove all sources through any age A and leave required late parity in two of three target residues. | Hand proof awaiting reading; no event density or prize claim. Finite fragments closed, infinite intermittent supply open. Next actual restart compatibility, retaining RR scope. |
+
+| 2026-10-08 20:13 UTC | GPT | Claims fixed-separation restart control | Predict an actual ordinary finite-left strip 11001 has alternating events at offsets three and four behind its moving frontier forever. | Hand moving-frame recurrence only; counterfactual the joint streak cap bounds restart count at fixed separation. Unexpected check keeps the full clock premise separate. |
