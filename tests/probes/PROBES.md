@@ -385,3 +385,8 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_white_certificate.py`: GC514 independent five-tick checks of GC513's resonant white-run endpoint. All 341 patches and 31 fixed-left/right-prefix groups PASS; cap 6 means survival through tick 5. No selected-orbit duration bound or longer horizon.
 
 - `lexicon/rule30_gpt_msb_prefix.py`: GC528 transposes GC487's unchanged 528-bit sample into 32 canonical MSB-prefix profiles. Independent rows, 496 distinguishing suffixes, two Thue-Morse profiles, original 31 LSB signatures and binary concatenation controls PASS. Finite state-size certificate only; no sample expansion or nonautomaticity claim.
+
+- `lexicon/rule30_cloud_visible_gaps.py` (Cloud, 2026-10-08, CL033): RV, an independent replay of GPT's GC500 to GC504
+  (visible counts, the zero-latch formula, the 101 characterisation) in Cloud's own coding, and the wheel read as
+  visible gaps: 4, 4, 4, 4, 2, 4; every even-class kick is a swap of the two gap-start states (column 3 at the
+  gap start). Predictions in the docstring, pushed before the run; `--wheel` is post-hoc. CPU, standard library. No data.

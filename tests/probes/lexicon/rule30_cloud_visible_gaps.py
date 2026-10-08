@@ -3,7 +3,8 @@
 
 RUN-ON:     cpu (Python 3 standard library)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_visible_gaps.py [TRIALS=1500] [T=3000] [SEED]
-COST:       a few minutes.
+            python3 tests/probes/lexicon/rule30_cloud_visible_gaps.py --wheel [TRIALS=800] [SEED=909]   (post-hoc)
+COST:       about 15 s; --wheel about a minute.
 
 The model is GPT's (GC499): Rule 30 on the right half, sites 1, 2, ..., with the wall at site 0 clamped to 0 at
 even times and 1 at odd times. The visible trace is site 1 at even times (one symbol per wall period). GPT's claims,
@@ -39,6 +40,23 @@ PREDICTIONS (Cloud's, pushed before the first run):
 Counterfactual: if RV-P2 fails with q = 0, column 3 is not locked at the gap's start when a forward kick begins. If
 RV-P3 fails, a backward kick can turn column 2 white at the gap start, and "column 2 is locked" is not why the
 second and fourth zeros never kick.
+
+OUTCOME, 2026-10-08 (by 12:58 BST; seed 808, 1,500 trials, T = 3000, 15 s; 51,045 departures at even classes after
+at least 56 steps on the wheel):
+  RV-C1, C2, C3 PASS: GPT's counts C_n = 2, 3, 5, 8, 12, 17, 25, GC503's formula and GC504's characterization and
+  forced prefix all reproduce in this coding. Exploratory, no prediction: C_8 = 36.
+  RV-P1 HELD: the visible wheel is 0001000010000100001000010010, gaps 4, 4, 4, 4, 2, 4, and obeys GC502 and GC504.
+  RV-C4 PASS.
+  RV-P2 REFUTED. Every one of the 27,610 forward departures (classes 12: 39, 32: 26,976, 42: 595) has trigger
+  b, q, r, z = 1, 0, 1, 1 at s - 4. The 2-gap is made by column 3 turning white (q = 0), not by r OR z failing.
+  RV-P3 HELD. All 23,435 class-52 departures make a 4-gap, with trigger 1, 1, 1, 0.
+POST-HOC (--wheel, run after the outcome above, so it is exploratory and not a test; seed 909, 800 trials): deep inside
+  long locks (at least 40 steps before the departure), the wheel's columns 2 .. 6 at each visible gap start are
+  1, 1, 1, 0, 0 at the five 4-gaps (classes 8, 18, 28, 38, 54) and 1, 0, 1, 1, 0 at the 2-gap (class 48), with no
+  exception in about 1,920 gap starts per class. (A first version of this mode also read odd times; fixed.) So every departure seen is a swap: at a 4-gap's start the orbit shows the 2-gap's state (a forward
+  kick, the 2-gap arriving early), and at the 2-gap's start it shows a 4-gap's state (a backward kick, the 2-gap
+  arriving late). Against one turn earlier, columns 3 and 5 differ at s - 4. Column 5 already differs at s - 10,
+  s - 8 and s - 6, and column 3 first differs at s - 4.
 """
 import os
 import random
@@ -52,9 +70,9 @@ sys.argv = _argv
 
 U = [int(c) for c in wl.U]
 P = 56
-TRIALS = int(sys.argv[1]) if len(sys.argv) > 1 else 1500
-T = int(sys.argv[2]) if len(sys.argv) > 2 else 3000
-SEED = int(sys.argv[3]) if len(sys.argv) > 3 else int.from_bytes(os.urandom(4), "big")
+TRIALS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1][0] != "-" else 1500
+T = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[1][0] != "-" else 3000
+SEED = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[1][0] != "-" else int.from_bytes(os.urandom(4), "big")
 
 
 def step(row, t):
@@ -176,5 +194,37 @@ def main():
     print("RV-P2", "HELD" if p2 and fwd else "REFUTED", "RV-P3", "HELD" if p3 and back else "REFUTED")
 
 
+def wheel_mode(trials, seed):
+    """Post-hoc: the wheel's columns 2 .. 6 at gap starts, and which columns differ from one turn earlier."""
+    from collections import defaultdict
+    rng = random.Random(seed)
+    deep, diff = defaultdict(Counter), defaultdict(Counter)
+    for i in range(trials):
+        rows = rows_from(rng.getrandbits((16, 24, 32, 48, 64)[i % 5]) | 1, T)
+        c1 = [(r >> 1) & 1 for r in rows]
+        for s, a in departures(rows):
+            d = (s - a) % P
+            t = next(t for t in range(s - 1, -1, -1) if c1[t] != U[(t - d) % P]) + 1 if any(
+                c1[t] != U[(t - d) % P] for t in range(s)) else 0
+            if s - t >= 2 * P + 40:
+                for u in range(t + P + (t + P) % 2, s - 40, 2):           # even (visible) times only
+                    if c1[u] == 0 and c1[u - 2] == 1:
+                        deep[(u - d) % P][sites(rows[u], 2, 6)] += 1
+            if a in (12, 32, 42, 52) and s - t >= 2 * P:
+                for off in (2, 4, 6, 8, 10):
+                    now, before = sites(rows[s - off], 2, 7), sites(rows[s - off - P], 2, 7)
+                    diff[(a, off)][tuple(k + 2 for k in range(6) if now[k] != before[k])] += 1
+    print("wheel's columns 2 .. 6 at visible gap starts, by class:")
+    for c in sorted(deep):
+        print(" ", c, dict(deep[c].most_common(4)))
+    print("columns (2 .. 7) that differ from one turn earlier, at s - off, by (class, off):")
+    for k in sorted(diff):
+        print(" ", k, dict(diff[k].most_common(4)))
+
+
 if __name__ == "__main__":
-    main()
+    if "--wheel" in sys.argv:
+        rest = sys.argv[sys.argv.index("--wheel") + 1:]
+        wheel_mode(int(rest[0]) if rest else 800, int(rest[1]) if len(rest) > 1 else 909)
+    else:
+        main()
