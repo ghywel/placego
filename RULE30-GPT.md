@@ -12202,3 +12202,29 @@ Indeed project each term A^k b(2n) into V and apply ellbar. Thus spectral radius
 **Unexpected digit-transition guard.** Write B_0 for the matrix selecting each state's even child, so b(2n)=B_0 b(n). In the alternating family (g,1,-1), B_0 v=(1,1,-1), which is not in U because its root coordinate is1. Thus U, although A-invariant, is not B_0-invariant. The quotient supports the aggregate prefix argument but cannot in general serve as a digit-reading state representation. GC488's logarithmic indexer still follows from the original finite family, not from this quotient alone. This keeps balance cancellation and indexing cost separate even within a shared representation.
 
 **Next.** A finite sample cannot certify W or the infinitely quantified invisibility condition. With a proved closed family, q exact power tests do certify U by the stated lemma; without such a family, fitting a matrix or quotient to trace signatures remains insufficient. The remaining useful Rule30 obligation is still an analytic selected-orbit representation or signed cancellation bound. This refinement prevents demanding balance of irrelevant kernel modes, but supplies no new Rule30 dynamics.
+
+## GC490 — Analytic infinite-kernel control with cheap arithmetic indexing (2026-10-08)
+
+**Bears on.** Problem3's scope after GC487. This gives a hand counterexample to inferring linear indexing cost from an infinite binary kernel, even together with balance and aperiodicity. It is not a Rule30 trace. Independent reading pending; no novelty claimed. Prior-art query `automatic sequence "floor" "sqrt" squares nonautomatic` returned no relevant primary-source treatment of this particular parity sequence in the bounded search. NOT FOUND, not a novelty conclusion. The finite-state prefix lemma is GC487's; everything else below is proved directly. No experiment or Local run.
+
+**Checks chosen first.** For h(n)=(-1)^floor(sqrt(n)), predict all-prefix signed discrepancy at most sqrt(N), infinitely many distinct decimations h(4^d*n), and polynomial-in-input-bit-length exact indexing. Constant spin is the independent negative balance control; Thue-Morse is the finite-kernel positive balance control from GC488. Counterfactual infinite kernel forces linear indexing must fail. Unexpected: distinguish the decimations by explicit square-plus-one positive continuations, without a sampled signature census or floating-point square root.
+
+**Balance and nonperiodicity (hand proof).** On the integer interval [k^2,(k+1)^2), h has constant sign (-1)^k and length2k+1. For N>=1 write K=floor(sqrt(N)), r=N-K^2, so0<=r<=2K. The complete blocks telescope:
+
+    sum(k=0..K-1) (-1)^k*(2k+1) = (-1)^(K-1)*K,
+    S_h(N) = (-1)^K*(r-K),
+    |S_h(N)| <= K <= sqrt(N).
+
+Thus black bits (1-h)/2 have limiting density one-half. Constant spin instead has discrepancy N. The runs of h have unbounded lengths and both signs recur infinitely often. An eventually periodic sequence containing both signs has bounded constant runs (at most twice its period); an eventually constant sequence cannot change sign infinitely often. Therefore h is not eventually periodic.
+
+**Infinite decimation family (hand proof).** For each d>=1 put f_d(n)=h(4^d*n). Given1<=d<e, set m=2^(e-1)-1 and n=m^2+1. Let delta=sqrt(m^2+1)-m=1/(sqrt(m^2+1)+m). Since m>=1,
+
+    2^e-2 < sqrt(m^2+1)+m < 2^e-1,
+    1 < 2^e*delta < 2,
+    0 < 2^d*delta < 1.
+
+The last inequality follows from d<=e-1 and 2^(e-1)<=2^e-2 for e>=2, with strictness from the denominator. Now floor(2^d*sqrt(n))=2^d*m, an even integer, while floor(2^e*sqrt(n))=2^e*m+1 is odd. Hence f_d(n)=+1 and f_e(n)=-1. All these binary-kernel members are distinct: f_d is the depth2d, residue0 decimation. GC487's prefix-state lemma therefore rules out every finite canonical LSB-first DFAO for this sequence, using arbitrarily many pairwise distinguished positive continuations. No unproved density or digit-distribution property of an irrational number enters.
+
+**Exact indexing cost.** Let b be the binary input length of n. Binary-search the integer interval from0 to2^ceil(b/2) for the largest x with x*x<=n; then return its parity. There are O(b) comparisons, each using schoolbook O(b^2) bit multiplication and O(b) comparison, hence O(b^3) bit operations and O(b) workspace suffice. The n0 case is immediate. Integer arithmetic gives exact floor(sqrt(n)); no floating-point rounding assumption. This upper bound is sublinear in n despite the infinite kernel, balance and aperiodicity.
+
+**Outcome and next.** All three predictions follow from the hand derivations, not measurements; the declared counterfactual fails. This extends GC481's Thue-Morse guard beyond finite-state indexers: even proving infinitely many Rule30 decimations would still leave arithmetic shortcuts unaddressed. It supplies no Rule30 shortcut. Retain the explicit family as a control for future lower-bound proposals and return to the selected orbit's actual structure, rather than collect further generic complexity obstructions.
