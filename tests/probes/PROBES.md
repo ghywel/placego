@@ -422,3 +422,5 @@ app is unpublished by design.
   two-step entry-image certificate (formula, state set, subset steps, end-to-end exclusion of 11100011), whether
   its 0001 premise is needed, and the minimal missing prefixes of the walled two-step image. CPU, standard
   library. Predictions in the docstring, pushed before the run. No data.
+
+- `lexicon/rule30_gpt_gap_continuation.py`: GC549 checkpoint 29, one conditional thirteen-symbol target from prefix 11100; complete shrinking-cone source extension and independent literal/paired updates. No language census, SAT or death-time run.
