@@ -12543,3 +12543,33 @@ For the first transition, odd sites 3,4 are 1,1; odd sites 5,6 are 1-F and F OR 
 Probe `rule30_gpt_gap_pair.py` checks the 101 characterization on all 32 initial five-bit patches in both earlier independent implementations. It checks both canalized transitions for all four choices of initial sites 6,7 with packed updates and literal decimal-set updates: 8 transitions, all PASS. These are fixed local controls; quantified independence is supplied by the displayed substitutions. No horizon growth or asymptotic claim is made.
 
 **Outcome and next.** Independent gap choices already fail at a length-six visible word, before an entropy estimate. Keep GC501's conditioned-background warning: a renewal model needs an actual invariant law or justified regeneration, not just a list of allowed gap lengths. Stop this finite motif branch after the local obstruction; next derive a structural extension criterion or return to a distinct open reasoning lead rather than catalogue longer forbidden words.
+
+## GC505 — The random damage front sees a biased background after one tick (2026-10-08)
+
+**Bears on.** Owner's portfolio question 2, constellation row 3. Changed lane from the stopped short companion-gap motifs to an exact random-front calculation. Read RULE30-PRIZE section 8.66, its retained long-jump failure, and GC295's nonempty finite-damage scope correction. This derives an early selection effect behind that existing measured mechanism; no novelty claim, speed fit or long-run experiment. Hand reading pending.
+
+**Predictions and controls.** Before fixed controls, predict first-front displacements -1,0,+1 with probabilities 1/2,1/4,1/4, and that the +1 branch forces a -1 displacement on the next tick. Counterfactual fresh-fair healing bits at the selected front on every tick must fail at the second update. Unexpected: the bias appears exactly after one tick, although the unconditioned background is the fair-row ensemble. Enumerate only the 512 initial patches on sites -4 through 4 and their single flips, through two ticks, in independent sitewise XOR/OR and literal decimal updates. No detached job or speed run is duplicated.
+
+**Setup and exact first tick.** Let u be an infinite iid fair initial row and flip only site 0 in the second copy. Let L_t be the leftmost disagreement, so L_0=0. A finite nonempty perturbation stays finite and nonempty by the existing rightmost XOR argument. At the first update the only possible disagreement sites are -1,0,1, with indicators
+
+    D_(-1)=1-u_(-1),
+    D_0=1-u_1,
+    D_1=1.
+
+Thus L_1=-1 if u_(-1)=0; L_1=0 if u_(-1)=1,u_1=0; and L_1=1 if u_(-1)=u_1=1. Their probabilities are 1/2,1/4,1/4, and E[L_1]=-1/4. This is an exact first-step mean, not an asymptotic velocity or an explanation of the measured approximately -0.246 displacement per tick.
+
+**Front conditioning at the second tick.** For any finite disagreement with leftmost site L, the next leftmost site is L-1 exactly when the common background at L-1 is white. The new difference there is the derivative of c OR r in its right input, namely 1-c. Farther-left sites still agree. If that common bit is black, the front cannot move left on that update; subsequent rightward jump sizes need not be bounded by one or two.
+
+Condition on the three first-step branches. If L_1=-1, the common bit below the new front is u_(-3) XOR u_(-2), since u_(-1)=0. It is fair given that branch. If L_1=0, the bit below it is 1-u_(-2), since u_(-1)=1. This too is fair given the branch. If L_1=1, the common site-0 value after the first tick is
+
+    u_(-1) XOR (u_0 OR u_1)=1 XOR 1=0.
+
+It is deterministically white. The first rightward front move is therefore undone at the next tick: L_2=0. Combining these branches gives
+
+    P(L_2=L_1-1)=(1/2)*(1/2)+(1/4)*(1/2)+(1/4)*1=5/8.
+
+The second-update healing probability is 3/8, versus 1/2 on the first update. This is an exact finite-time conditional-law change. It neither proves convergence to the measured healing rate nor justifies independence across later encounters.
+
+**Independent finite controls and scope.** Probe `rule30_gpt_front_selection.py` checks 512 nine-site patches in two independent update implementations through both ticks, all PASS. First displacement counts are 256,128,128. Conditional second left-advance counts are 128 of 256,64 of 128,128 of 128 in the three respective branches; total 320 of 512. The fresh-fair-front CF is REFUTED. Site values outside the patch cannot affect disagreement through two ticks: damage lies in [-2,2], whose backward cones lie in [-4,4]. This supplies exact iid probabilities, not a finite-background approximation to a long-run speed.
+
+**Outcome and next.** Full-row fairness does not give a fresh fair bit at a random damage front. The invariant-law or regeneration obligation in portfolio question 2 is concrete: track the background as selected by surviving damage, and retain the distribution of entire jumps. The first-step value -1/4 happens to be close to the empirical velocity, but substituting it for the limit is unjustified. Next seek a justified front-environment state or prove a restricted renewal lemma; do not rerun a speed fit or import independent healing events.

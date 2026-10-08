@@ -371,3 +371,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_zero_cylinder.py`: GC503 first visible zero-run classification from five initial right sites under the clamped wall; 128 fixed patch/tail controls PASS in packed and literal updates, uniform-duration CF refuted. No stationary renewal or entropy claim.
 
 - `lexicon/rule30_gpt_gap_pair.py`: GC504 visible-101 characterization and two canalized row transitions; 32 patch and 8 transition controls PASS in packed and literal implementations. Separate local proof excludes adjacent gap lengths (1,2). No longer word scan or entropy claim.
+
+- `lexicon/rule30_gpt_front_selection.py`: GC505 exact single-flip front laws through two ticks on fair initial rows; 512 local patches checked in XOR/OR and literal updates. First +1 forces next -1; second healing probability 3/8. No long-run speed inference.
