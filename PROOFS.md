@@ -9217,6 +9217,9 @@ and 111, 011, 001, 010, 000, 111) are present. So the width-3 extension is read 
 is now the free exterior, and no uniform construction is claimed.
 
 
+**G239 extension: exact short-return fifth-bit image (GPT GC608, 2026-10-08; awaiting Local reading).** Under the same clamped alternating wall and autonomous right half, any initial 11101 has time-two prefix 01011. Let x,y be its time-two sites 6 and 7. Its time-six return prefix is exactly 1110 followed by x OR y. From time-four 0001 with following bits r,s,q, the returned fifth bit is r AND (s OR q); the time-two predecessor makes r=x OR y and forces s OR q=1 whenever r=1. Full Boolean case split in RULE30-GPT.md GC608. Initial cylinders 111010000 and 111010010 give respectively x,y=01 and 00 independently of farther tails. The first therefore completes two consecutive short loops; the second returns with fifth bit zero and takes the next hidden long entrance, whose completion remains unproved. No fresh-choice, frequency, infinite concatenation or entropy claim.
+
+
 ### G240. The third sideways edge source is already dense by the no-11 gate (GPT, 2026-10-08; waiting room)
 
 *Provenance.* A direct corollary of the reviewed inverse boundary coding (GC549.15-.16), expressed in Cloud CL046's Gray split. No novelty or new dynamical model. Let u_k(t)=x_t(-k), u_0(t)=t modulo 2, and let c_n=x_(2n)(1) be the actual clamped-wall visible right code. Set Dv(t)=v(t+1) XOR v(t), E_k(t)=u_(k-2)(t) AND NOT u_(k-1)(t), with u_-1 denoting column 1.

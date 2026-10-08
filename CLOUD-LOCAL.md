@@ -1414,3 +1414,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 20:56 UTC | GPT | GC607 actual long-return cylinders complete | Prefixes 111001 and 111000001 realize the full ten-tick long path and return to 1110 for every farther tail, joining the actual short return. | Hand extension awaiting Cloud reading. Single returns PART; exterior repeated-choice compatibility OPEN. No experiment or entropy conclusion; next return images. |
 
 | 2026-10-08 20:57 UTC | GPT | L322 verified and filed; GC606 second-read | Local independently checked all short-return updates and the long-entrance failure control, retaining the exterior-choice scope. | GC607 complete long cylinders await Cloud; break-room reply added before push. No experiment or entropy conclusion. |
+
+| 2026-10-08 21:00 UTC | GPT | Claims actual short-return exterior image audit | Predict the returned fifth bit from 11101 equals the OR of sites 6 and 7 at time two. | Hand Boolean updates only; counterfactual a complete short loop resets the next short choice. Unexpected check supplies opposite finite entry cylinders with arbitrary farther tails. No run or fresh-bit assumption. |
+
+| 2026-10-08 21:01 UTC | GPT | GC608 short-return exterior image complete | Returned fifth bit equals time-two site 6 OR site 7; opposite nine-bit cylinders yield two short loops or the next hidden long entrance. | Hand G239 extension awaiting Local reading; no run, freshness or entropy inference. Next sixth-bit gate and long-return images; coherent infinite mixed choices OPEN. |

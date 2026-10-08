@@ -15047,3 +15047,32 @@ For the first pair, the odd first eight bits are 10010001; these determine the d
 **Independent failure guard.** GC606's 111000000 cylinder differs from the second control only at initial site 9 and misses the prescribed return. The ninth bit can therefore matter for a long return when the simple six-bit sufficient gate is absent. This does not classify all successful long returns or give a minimal determining cone. The short control still returns after six ticks; no common fixed physical duration is imposed on the two branches.
 
 **Disposition and next.** Both chosen visible blocks now have complete actual autonomous-right-half returns to the same four-bit marker, beyond their earlier controlled-width lifts. This moves the single-return compatibility lead to PART; the infinite concatenation obligation remains OPEN. A returned 1110 marker does not prescribe the fifth or sixth bits needed to start the next chosen cylinder. In particular these local returns do not constitute a two-loop finite-state subsystem with an independently selectable input at every visit. Next analyze the return images of those exterior cylinders or find a coherent tail family; do not infer positive entropy from two finite loops or resume a width census.
+
+## GC608 — The short-return fifth bit is an exact outward OR gate (2026-10-08)
+
+**Scope and prediction.** Continue GC606/607's actual exterior return-image obligation, under a clamped 0101 wall and autonomous right half. Predict that from initial prefix 11101 the fifth bit at the six-tick return equals the OR of the sixth and seventh bits at time two. Counterfactual a complete short return automatically resets its next short choice. Unexpected check gives opposite finite input cylinders with arbitrary farther tails. Hand Boolean proof only; no experiment, width enumeration or fresh-bit assumption. This is a derivative G239 return-map lemma, not a new entropy theorem.
+
+By GC606, the time-two row starts 01011. Write its next four bits x,y,z,w at sites 6..9. On the next odd row, sites 4..8 are
+
+    1, 0, NOT(x OR y), x XOR(y OR z), y XOR(z OR w).
+
+Thus at time four the row starts 0001, and its sites 5..7 are r,s,q, where
+
+    r = x OR y;
+    s = r AND NOT(x XOR(y OR z));
+    q = NOT(x OR y) XOR ((x XOR(y OR z)) OR (y XOR(z OR w))).
+
+For any row beginning 0001 followed by r,s,q, the next odd sites 4..6 are 1, NOT(r OR s), r XOR(s OR q). Its returned fifth bit is consequently
+
+    NOT(NOT(r OR s) OR (r XOR(s OR q))) = r AND (s OR q).
+
+The equality is checked by splitting r=0 and r=1: at r=0 the left expression is s AND NOT(s OR q)=0; at r=1 it is s OR q. For the particular 01011 predecessor, s OR q is one whenever r is one. Indeed x,y=0,1 gives s=0,q=1; x,y=1,0 gives s=z,q=1; x,y=1,1 gives s=1. If x=y=0, r=0 suffices regardless of z,w. Therefore the returned fifth bit is exactly x OR y. Every farther cell cancels from this expression; the returned first four bits are still 1110.
+
+**Independent opposite entry controls.** For initial prefix 11101, call initial sites 6..9 a,b,c,d. Their odd sites 6..8 are NOT(a OR b), a XOR(b OR c), b XOR(c OR d), while odd site 5 is one. Hence the time-two sixth and seventh bits satisfy
+
+    x = NOT(NOT(a OR b) OR (a XOR(b OR c)));
+    y = NOT(a OR b) XOR ((a XOR(b OR c)) OR (b XOR(c OR d))).
+
+Taking a,b,c,d=0,0,0,0 gives x,y=0,1. Thus every initial prefix 111010000 returns after six ticks with prefix 11101, and by GC606 completes a second short loop after another six ticks. Taking a,b,c,d=0,0,1,0 instead gives x,y=0,0. Every initial prefix 111010010 still completes its first short loop, but returns with prefix 11100 and then takes the hidden long entrance 011 by GC605. These two nine-bit cylinders have finite right-row representatives and arbitrary farther tails. The latter does not guarantee a complete next long return: GC607's sixth-bit gate or another sufficient condition still needs checking.
+
+**Disposition.** A concrete two-short-loop cylinder is proved, and the next hidden branch after a short return is explicitly inherited from two outward cells, not newly supplied. The OR gate loses information: three local input pairs select short and only 00 selects long. This multiplicity is an algebraic fact, not a physical frequency or independence claim; accessibility of the local pairs at successive returns remains constrained by the same evolving exterior. No arbitrary infinite mixed concatenation, full finite global clock, or positive boundary entropy follows. Next inspect the returned sixth bit when x=y=0, and the long-return image, for a coherent repetition family. Single returns and this two-return cylinder remain PART; the infinite lower-language obligation remains OPEN.
