@@ -13782,3 +13782,20 @@ Every UNSAT subset of clock samples must consequently contain some time at most 
 Therefore E_tau(d,L) implies E_0(d+tau,L-2tau), allowing the shifted clock phase. In particular every such feasible L satisfies L<=2tau+R_real(d+tau). This is a one-way bound; the evolved row can have predecessor constraints absent from a fresh RR witness. Independent endpoint controls: tau=0 is the identity; L=2tau leaves an empty guaranteed interval and is deliberately excluded. Unexpected scope check: the horizon matches exactly, so no additional clock samples are silently assumed. The bound is an application of ordinary light cones and does not assert its converse, a constant R_real bound or a new record measurement.
 
 **Next within GC549.** Cloud's early-suffix data makes early clock constraints the useful target. Compare their consequences with the surviving interior zero interval; do not duplicate the proposed delayed-clock computation or infer a uniform record bound from this shifted-depth inequality. Phase-specific SAT-at-R status is requested for the terminal-core interpretation. No new review priority.
+
+
+### GC549 checkpoint 6 — length dependence of the early-clock obstruction (2026-10-08)
+
+**Prediction and counterfactual before the hand block.** Retain RRX's early-clock evidence but test the strategic inference that it rules out every local uniform barrier. Predict the suffix-UNSAT threshold is nondecreasing with prescribed white length; a first-failure threshold alone cannot decide a later uniform-length obstruction. Unexpected check: the measured length changes with d, whereas a uniform barrier would use one fixed length at every depth. No new computation.
+
+Fix d and a clock phase. For an UNSAT length L, let m(d,L) be the last suffix-start time whose clock assumptions alone, together with the actual dynamics and white interval, remain UNSAT. For L'>L, the larger cone contains all shorter-cone equations, the longer white interval contains the shorter one, and every clock suffix starting at s<=d+L-1 contains the shorter suffix. Thus an UNSAT suffix at L stays UNSAT at L', and
+
+    m(d,L')>=m(d,L).
+
+The comparison concerns a fixed phase and depth; it makes no cross-depth claim. It also requires both thresholds to be defined, which follows here because full-clock UNSAT persists and no-clock constraints remain SAT. SAT at a shorter length need not persist, and the inequality has no converse.
+
+Cloud's CL036 therefore establishes, at each tested first-impossible length R_real(d)+1 and phase, that the near-entry suffix alone is SAT and early clock samples are needed. It does not rule out a different argument showing E_d(d,C+1) UNSAT at one fixed larger C, for every depth. Such a suffix-only uniform barrier would imply the ordinary uniform record bound, but it need not explain the first contradiction at each smaller, depth-dependent record. Since m can rise with L, both observations can coexist. Cloud's strategic interpretation remains a useful tentative direction, not an exclusion of all local mechanisms. No such fixed-C barrier is proved or proposed as a new run.
+
+**CL038 receipt and actual correction.** Cloud separately measured phase records 14/15, 10/11, 6/7, 6/8, 7/8, 8/7 at the six recorded depths. Thus the missing phase premise in checkpoint 5 genuinely fails in these instances, not merely as a hypothetical guard. Its terminal-sample statement is now corrected in the source and CL038; earliest-suffix evidence is unchanged. These are Cloud's measurements, not an independent GPT solver verification. Cloud also confirms the delayed-clock cone bound by reading; its hypotheses and one-way scope remain unchanged.
+
+**Next within this same notebook.** Seek an actual interior mechanism at a specified fixed white length, keeping early-clock and suffix-only certificates separate. No delayed-clock experiment is currently planned or delegated, and no record/width sweep is enlarged. The phase correction prevents a misleading terminal anchor without discarding the usable suffix data.
