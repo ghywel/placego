@@ -55,6 +55,13 @@ OUTCOME, 2026-10-08 (by 16:00 BST; 28 s and 58 s). RD's seed 4256 (300 trials): 
   Post-hoc, a lead and not a result: 87% of kicks are even. From the start of one 2-gap block to the next is
   6 + 10m steps for m 4-gaps between them, which is 0 mod 4 exactly when m is odd, and the kick is 5 - m. So an even
   kick keeps the 2-gap on its time class mod 4, and only the 13% of odd kicks move it.
+WHAT "CONSISTENT WITH ZERO" MEANS (added 2026-10-08 16:08 BST, after the owner asked; the script now prints the
+  spread): it is not a claim that the net is zero. The 600 independent runs give a spread of 1,670 notches for the
+  net, so +842 is half a standard deviation, and a true drift of zero would give a net at least that large about 60%
+  of the time. The run bounds the drift; it does not remove it. At about two standard deviations the net lies
+  between -2,500 and +4,200 notches, an offset between -8e-6 and +1.3e-5 per step (+2.7e-6 +/- 5.3e-6). Anything
+  smaller cannot be seen at this size. The error shrinks only as the square root of the steps, so measuring would
+  need about 3e14 steps to resolve 1e-9 per step. Only a proof can say the balance is exact.
 """
 import math
 import os
@@ -156,8 +163,9 @@ def main():
     print("RB-C2", "PASS" if not c2_bad else "FAIL", f"({c2_bad} kicks off mod 28; {lifts} lifted differently "
           f"from kick_of; RD-convention sum {rd_sum})")
     tot, z = z_of(chained)
-    print(f"true net chained charge {tot} notches, z = {z:+.2f}; rotation offset "
-          f"{tot / (28 * steps) if steps else 0:+.2e} per step")
+    sd = tot / z if z else 0.0
+    print(f"true net chained charge {tot} notches, z = {z:+.2f} (sd {sd:.0f}); rotation offset "
+          f"{tot / (28 * steps) if steps else 0:+.2e} +/- {sd / (28 * steps) if steps else 0:.2e} per step")
     print("RB-P1", "HELD" if abs(z) < 2 else "REFUTED")
     zs = []
     for (lo, hi), ws, st in zip(WINDOWS, win_sums, win_steps):
