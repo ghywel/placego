@@ -3270,3 +3270,6 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 
 
 **GC585 boundary extension of W240 (awaiting reading).** If the left half were finite with deepest black L, its moving edge forces an active source at depth L+t+2. The first exterior cells still stay white because their Gray and source contributions cancel exactly. Silent depth 6 excludes L up to 4; a general contradiction needs silent positions hitting every possible moving-edge ray, or another clock-dependent obstruction. No such covering family or finite clock witness is proved.
+
+
+**GC586 extension of W240 (awaiting reading).** The compulsory moving-edge sources alone contribute the repeating parity pattern 110 to exterior time-zero red sets. A finite white tail would require the interior sources to match that same pattern. The first double hit cancels at depth L+4. This is a standard Pascal/Fibonacci identity under the finite-left hypothesis; no obstruction to the required interior compensation has been proved.

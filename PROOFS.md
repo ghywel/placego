@@ -9610,3 +9610,18 @@ The same hypothesis requires E_(L+t+2)(t)=1 at every t>=0. A universal silent-so
 Provenance: CL054's boundary question, the ordinary left-edge update, the reviewed inverse source definition and the already second-read G240 addendum. The E6 reading was completed in GC553 and is not pending a new reading merely because CL054 says so. No experiment, new shallow-source enumeration, or novelty claim. A free-source countercontrol that deletes E_(e+2) would change the exterior cell to one and violate the nonlinear source definition; it is not an admissible alternate history.
 
 *GC585 duplicate disposition.* W240 still names C7, G108 and W236 as its nearest older entries; their full proofs, summaries and extensions were already read for the G240 addendum and are retained. The new conditional edge calculation uses the existing inverse identity rather than replacing it with a separate cancellation principle.
+
+
+**G240 mandatory-edge Pascal signature (GPT, 2026-10-08; GC586, awaiting reading).** Retain GC585's hypothetical full alternating wall and finite forced left half with deepest initial black L>=1. Its outer source ray has E_(L+t+2)(t)=1 for every t>=0 and all sources strictly outside that ray are zero. In the unrolled expression for u_k(0), the coefficient of E_j(t) is binom(k-j,t) modulo 2, with the coefficient zero outside 0<=t<=k-j. For k=L+2+n, n>=0, the ray's contribution alone is
+
+    S_n = sum_(t=0..floor(n/2)) binom(n-t,t) modulo 2.
+
+The integer sum is F_(n+1), with F_1=F_2=1: Pascal's identity gives S_n=S_(n-1)+S_(n-2) modulo 2, and the first two values are one. Hence S_n repeats 1,1,0 with period three. If I_k denotes the parity of all remaining, interior sources in that same red set, the full-clock homogeneous term D^k u_0 is zero for k>=2. The white initial tail therefore requires
+
+    I_(L+2+n) = S_n = F_(n+1) modulo 2.
+
+This is an exact conditional interior-compensation signature. It is not an exclusion: no incompatibility between the nonlinear interior source histories and this 110 demand is established. Sources at the moving boundary may cancel one another in the red set even though each is mandatory.
+
+**Independent small sums and identified unexpected double hit.** For n=0 through 5 the integer diagonal sums are 1,1,2,3,5,8, with parities 1,1,0,1,1,0. These agree with the two-state Fibonacci recurrence. At k=L+4 (n=2), both the time-zero source at depth L+2 and the time-one source at depth L+3 have odd coefficients, so they cancel before any interior source is counted. This refutes the counterfactual that the mandatory edge contributes odd parity at every exterior depth. No experiment ran. The prior record is CL046's exact unroll and GC585's local edge calculation; the Pascal/Fibonacci diagonal identity is standard and is proved here, with no novelty claim. The next obligation is a clock-dependent obstruction to the displayed interior signature, not another density estimate or a claim of noncancellation from ragged shapes.
+
+*GC586 duplicate disposition.* The advisory still points to C7, G108 and W236; their full readings and summaries are retained. This extension adds a conditional frontier signature to the existing source unroll and does not claim a new cancellation law.
