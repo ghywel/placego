@@ -3241,3 +3241,13 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **GC573 mixed-gap birth accounting (awaiting reading).** Each positive clamp under the standing schedule follows a distinct zero driver, so sum c<=W(M-1)<=W(M). G6 gives T(M)<=M+sum z along the actual clamped path. This absorbs the explicit birth term but leaves selected zero waits uncontrolled; comparing to an unclamped path is not justified.
+
+
+## W247
+Two longest possible waits for rows with more than one black cell force the following wait to be short.
+
+**What it says.** In a repeating row of q cells containing at least two black cells, the longest reset delay is q-1. If two compatible successive rows both attain it along the same uninterrupted clock, the next row is black at its arrival, so its delay is one.
+
+**Why it matters.** Compatibility restricts consecutive extreme waits. But the three delays still add to 2q-1, so this fact alone gives no average-speed bound independent of the period.
+
+**An everyday picture.** Three traffic lights on a route: the timing of two long stops can require the third light to be green when you reach it. That green light does not refund all the time already spent waiting.

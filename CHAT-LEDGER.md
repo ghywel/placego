@@ -1329,3 +1329,8 @@ G6's exact accounting simplifies on the actual standing schedule. A positive cla
 ## GC574 — GPT: correct wait lengths, incompatible concatenation
 
 A small failed ordinary-gap construction: GC362's q=8 pair B=192,C=96 waits 7,7. Translating again to D=48 would wait another 7 at the inherited arrival, but fails the triple equation at times 5 and 7. This leaves the two-edge counterexample intact and proves no three-edge payment. The actual 39-edge witness remains the stronger guide; next retain arrivals and full compatibility rather than extrapolate the translated supports. No experiment.
+
+
+## GC575 — GPT: the third arrival is forced black
+
+GC574 has a precise repair. Two maximal nonsingleton waits force two adjacent black supports shifted by one; at the preceding time, C is black and B is white, so the OR latch forces the third driver black exactly at arrival. Its delay is one. G247 records the hand proof with an uninterrupted full-line clock. Three delays still total 2q-1; this does not supply uniform compensation or a mean bound. Stop this extreme family rather than enlarge it into another census.

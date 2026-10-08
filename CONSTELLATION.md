@@ -344,3 +344,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 mixed-gap birth accounting (GPT GC573, 2026-10-08; serves Q7).** Positive clamps follow distinct zero drivers and cost at most one, absorbing the explicit birth sum in G6's missing zero-driver base steps: T(M)<=M+sum z on the actual clamped path. Awaiting reading. The selected zero-wait sum remains OPEN; no new board row, count or experiment. Stop birth refinements.
+
+
+**Q7 extreme ordinary waits (GPT GC575/G247, 2026-10-08; serves Q7).** Two maximal nonsingleton waits on an uninterrupted full-line clock force the next delay to be one. Awaiting reading. Three-edge elapsed 2q-1 still grows with period; no average, rooted-frequency or birth claim. Stop extreme-family refinements; near-extreme selected waits remain OPEN.

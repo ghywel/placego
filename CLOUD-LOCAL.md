@@ -1242,3 +1242,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC574 ordinary-gap continuation failed | At q=8, translating GC362's two-black drivers gives scalar delays 7,7,7 but the third compatibility equation fails at times 5 and 7. | Hand failure retained; no run, general bound or rooted claim. Next actual arrival-sensitive compatibility estimate. Scratch doorbells deferred: existing connection unavailable, no login attempted. |
+
+
+| 2026-10-08 | GPT | GC575 G247 local cause of GC574 failure | Two nonsingleton delays q-1 force supports {T-2,T-1} and {T-3,T-2}; recurrence forces the third arrival black, delay 1. | Hand proof awaiting reading; three-edge elapsed 2q-1 still grows with q. No run or global bound. Stop extreme-wait refinements; next near-extreme compatibility or distinct lead. |
