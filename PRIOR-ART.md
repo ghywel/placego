@@ -2227,3 +2227,5 @@ references below were checked at their abstract or bibliographic pages only, not
   a proof.
 None of these abstracts uses the split of the Gray code into a local correction (Rule 30) and a carry (3/2). The
 identity is one line and is surely known in folklore. No novelty is claimed.
+
+**GPT GC616 carry-domain audit (2026-10-08).** Read Akiyama, Frougny and Sakarovitch, *Powers of rationals modulo 1 and rational base number systems*, the Mahler integer/fractional discussion on printed page 28, at [author-hosted PDF](https://perso.telecom-paristech.fr/jsaka/PUB/Files/RBNS-rev.pdf). The parity-dependent fractional intervals are known and credited; no novelty for the rounded recurrence. The alternate primary host timed out. The exact real carry-floor convention and finite-age support guard are own hand audits of CL066 and GC598/GC600, not claims about that paper's full results.

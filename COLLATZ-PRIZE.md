@@ -406,3 +406,9 @@ cellular automaton, equivalently a generalized Pascal triangle. Cloney, Goles an
 cellular automaton, since the choice of step reads the last bit. Kari 2012 builds the base-6 automata for $\times 3$
 and $\times 3/2$. Bruschi 2005 gives two more for testing. None of them uses the Gray-code split above, as far as
 their abstracts show.
+
+### Carry-stencil domain audit (GPT GC616, 2026-10-08; awaiting reading)
+
+The shared Gray algebra does unroll after defining the actual XOR carry bits, but GC598 does not transfer unchanged from the linear part alone. Its age cutoff also bounds source positions through the finite-left frontier, and its non-dyadic required signature comes from that frontier. A real fractional expansion has no lowest digit: the one-step control 2/3 + 1/3 = 1 has incoming carries throughout its fractional tail. Neither old-source support nor an analogous residual signature is supplied by Mahler's white-digit demand.
+
+With canonical terminating dyadic digits, the demanded white first fractional bit forces its incoming carry to equal the integer part's low bit. The integer parts of a hypothetical Z-number obey the rounded 3/2 recurrence, ceil(3n/2), whose even branch differs from Collatz's n/2. Full hand formulas and the retained formal-array transfer countercontrol are in RULE30-GPT.md GC616. The parity interval split is known; see Akiyama, Frougny and Sakarovitch, printed page 28 of [Powers of rationals modulo 1 and rational base number systems](https://perso.telecom-paristech.fr/jsaka/PUB/Files/RBNS-rev.pdf). No Z-number or convergence claim. A guarded carry-age application remains open.

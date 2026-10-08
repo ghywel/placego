@@ -15218,3 +15218,37 @@ Since M_K=sum_s M_K(s) is at most (K+1) times its largest bin, any subsequence s
 **Finite-growth countercontrol.** For any fixed N, the compact forward-shift-invariant binary family of all sequences with arbitrary first N bits and an all-zero tail realizes every binary word up to length N, but its word counts are eventually bounded by 2^N and its entropy is zero. Therefore even a complete large finite collection of growing counts does not certify positive asymptotic entropy. NL's finite counts are valuable lower counts at their individual lengths and suggest candidate mechanisms; calling their normalized slope a proved lower entropy would exceed their scope. This is a generic language control, not a Rule 30 counterexample.
 
 **Disposition.** Existing NL data can be reported by (K,s,n) bins to compare descriptive slopes with the certified ceiling; Local owns that computational outcome, so no duplicate run is started. Neither the finite ratio nor this compatibility inequality settles positive or zero physical entropy or Q1's signed cost. Next read the full outcome, including its actual binary lengths and any persistent constrained family, rather than deriving more generic entropy criteria.
+
+## GC616 — The carry-stencil bridge needs an XOR field and a spatial-support guard (2026-10-08)
+
+**Scope and prediction.** CL066's first Mahler-side notch, using COLLATZ-PRIZE.md section 8 and the actual hypotheses of GC598/GC600. Predict Pascal unrolling transfers, but finite-age compensation does not follow from the linear map alone. Counterfactual carry density is the only reason the proposed filter might be vacuous. Unexpected check: x=2/3 has a dyadic image and carries arriving from arbitrarily deep fractional positions. Hand arithmetic and formal-array controls; no experiment or claim about existence of Z-numbers.
+
+**Exact real digit and carry convention.** For x>=0 and i any integer, define a_i(x)=floor(x/2^i) modulo 2, choosing terminating zeros at dyadic endpoints. Put alpha_i={x/2^i}. When adding x and x/2, the carry into position i is
+
+    kappa_i(x)=floor(alpha_i + {x/2^(i+1)})
+              =floor((3*alpha_i+a_i(x))/2),
+
+which is a bit. Integer/fractional decomposition gives the exact full-adder equations
+
+    a_i(3x/2)=a_i(x) XOR a_(i+1)(x) XOR kappa_i(x);
+    kappa_(i+1)(x)=floor((a_i(x)+a_(i+1)(x)+kappa_i(x))/2).
+
+This defines the incoming carry from the actual real value without assuming a lowest fractional digit. It is the true XOR correction field. The arithmetic identity g(n)+2*(n AND floor(n/2)) does not make that integer addend the GF(2) source; its own additions must ripple. For finite integers the same formula fixes incoming carry at bit zero to zero, while an odd Collatz +1 changes that boundary condition.
+
+Let (S a)_i=a_(i+1), A=I+S, and x_t=xi*(3/2)^t. Then a(t+1)=A a(t) XOR kappa(t), so for every finite T
+
+    a(T)=A^T a(0) XOR sum_(t=0..T-1) A^(T-1-t) kappa(t)
+
+over GF(2). Each coordinate uses only finitely many terms even for infinite fractional tails. Lucas selects the shift indices in each power of A. This algebra transfers; no locality of kappa is implied.
+
+**Mahler's white digit gives an exact carry obligation.** If a_-1(x_t)=0 at every t, then the full-adder equation at i=-1 forces kappa_-1(x_t)=a_0(x_t). The carry recurrence then gives kappa_0(x_t)=a_0(x_t), and consequently a_0(x_(t+1))=a_1(x_t). Thus the white fractional bit forces a definite integer-boundary carry polarity. It is not a proof that the carries must have unbounded ages or a quantitative density.
+
+For comparison, writing x_t=n_t+f_t with 0<=f_t<1/2 yields the familiar integer/fractional constraints directly. Even n_t requires f_t<1/3 and gives n_(t+1)=3*n_t/2; odd n_t requires 1/3<=f_t<1/2 and gives n_(t+1)=(3*n_t+1)/2. Hence n_(t+1)=ceil(3*n_t/2). This is the rounded 3/2 recurrence, not the shortcut Collatz map's even branch n/2. The parity interval split is already described in Akiyama, Frougny and Sakarovitch's discussion of Mahler on printed page 28. [Primary paper](https://perso.telecom-paristech.fr/jsaka/PUB/Files/RBNS-rev.pdf). No novelty for that reduction.
+
+**Unexpected endpoint control.** For x=2/3, x/2=1/3, their binary fractional expansions alternate complementarily, and their sum is 1. The actual terminating output has every fractional bit zero. The full-adder formula has kappa_i=1 at every i<=0. Thus zero carry at a fictitious least fractional position would give the wrong endpoint. This is a one-step control, not a Z-number: x itself has first fractional bit one. It demonstrates that even one carry age can have unbounded fractional spatial support.
+
+**Why GC598 does not transfer unchanged.** Its old sources obey j<=L+t+1, so an age cutoff t<=A bounds j and leaves finitely many old source positions. Beyond them the Lucas coefficients are Q-periodic in target depth. The finite-left frontier also prevents new source positions entering GC600's shifted target. Neither spatial-support guard comes from Gray algebra alone. A formal age-zero array already shows the failure: with coefficients binom(k-j,0)=1 for j<=k, its cumulative target is XOR_(j<=k) E_j(0). Choose E_j(0)=R(j) XOR R(j-1) to obtain any desired target R(k), including a non-dyadic-periodic signature, using only one age and unbounded positions. This array is not asserted to be an actual carry history. It refutes only the unrestricted algebraic transfer.
+
+Furthermore Mahler's demanded digit is zero, not GC586's finite-frontier Fibonacci signature. Its source residual includes A^T a(0) with an infinite fractional initial tail. No non-dyadic residual demand analogous to GC598 has been established. Therefore the proposed first notch stops at a precise boundary-carry identity and identifies two missing premises: a suitable old-source spatial bound and a target residual that survives the dyadic filter. Carry density is not the only issue.
+
+**Disposition and source limitation.** GC600's coefficient identity remains universal for nonnegative upper indices; whole-source sums and finite-age obstructions require their domain guards. This audit closes the claim of an unchanged GC598 transfer based only on a common linear part; a genuinely guarded Mahler application remains OPEN. No Collatz convergence, Z-number exclusion or prize result. The first primary-paper host timed out; the author's alternate host was read at the Mahler discussion. Next any carry-age proposal must name these two premises before another calculation or run.
