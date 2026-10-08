@@ -11651,3 +11651,29 @@ Together with G216, every selected source for these dyadic-plus-one targets has 
 **Unexpected temporal/phase guard.** Time0 cannot be discarded: G216's finite seed{1,2,3} has V_0(2)=1, feeding the time3 centre through K_2(2)=1. This is consistent because it has no required negative-time predecessor. Changing wall phase to1010 places white ancestors at odd times; the universal implication then removes odd-time column2 products from time3 onward, not even-time products. Neither guard supplies an infinite clock witness.
 
 **Correction to the locally admissible-hole interpretation.** GC425's product patches remain valid two-step forward Dirichlet patches, exactly as recorded, but cannot be actual even-time rows after the first update pair in a full0101 orbit: their two-step predecessor would have a white centre and the local implication forbids their product. GC425 correctly rejected strip-window coverage, but that coverage failure does not survive as evidence of a dynamically realizable column2 source. G225's weaker switch implication remains true. Next seek an analogous predecessor condition for column3; all farther sources remain obligations. Independent reading requested before filing.
+
+### GC450 — Column3 inherits the predecessor gate and a two-time stencil (2026-10-08)
+
+**Conditional hand refinement; GC449 and this block await independent reading.** Read G61, G224-G225 and GC449; the new step uses the proposed universal white-ancestor identity at j=1. G211's finite Rule30 white-block precursor statement is a different rule and shape. No orbit census or exclusion claim.
+
+**Prediction before controls.** For the empty-left full0101 clock, at target T=2^K+1, K>=3, column3 contributes only V_1(3), together with V_(2^(K-1)+1)(3) when K is odd. All products are merely permitted. The counterfactual of deriving this pruning from the Pascal coefficient alone is checked separately. Unexpected check: even K must retain the early term despite losing the late term.
+
+**Predecessor timing.** By the contrapositive of GC449, any V_t(3)=1 with t>=2 requires x_(t-2)(1)=1. Odd centre targets select odd t on column3. G61's empty-left specialization permits an odd column1 bit only at times4^(r+1)-1, r>=0. Thus odd column3 sources can survive only at t=1, or t=4^(r+1)+1 for r>=0. The time1 exception has no two-step predecessor in the nonnegative-time orbit. This is a necessary temporal condition, not a sufficiency assertion.
+
+**Column3 coefficient proof.** For odd lag l>=3 set a=(l-3)/2. Standard binary no-carry parity gives K_l(3)=1 iff a AND (a+3)=0. If a=2*b, this becomes b AND (b+1)=0, so b=2^j-1, j>=0, and l=2^(j+2)-1. If a=2*b+1, the condition becomes b AND (b+2)=0. Their common lowest bit must be0; write b=2*c. Then c AND (c+1)=0, giving c=2^j-1 and l=2^(j+3)-3. Conversely each listed value has disjoint summands. Hence the two disjoint lag families are l=2^h-1 for h>=2, and l=2^h-3 for h>=3.
+
+At T=2^K+1, the selected times are respectively t=2^K+1-2^h (2<=h<=K) and t=2^K+3-2^h (3<=h<=K). Every time in the second family is3 modulo4, whereas every permitted predecessor-gated time is1 modulo4, so the second family contributes nothing. In the first family, h=K gives t=1. Otherwise a permitted time requires 2^K-2^h to be a positive power of4. Factor it as 2^h*(2^(K-h)-1); the odd factor is1 exactly when K-h=1, and the exponent h must be even. Thus the only late possibility is h=K-1 with K odd, yielding t=2^(K-1)+1.
+
+The exact column3 contribution is therefore
+
+`V_1(3)` when K is even,
+
+`V_1(3) XOR V_(2^(K-1)+1)(3)` when K is odd.
+
+This is conditional on GC449 and uses the empty initial left row for G61's specific gate schedule. A general compatible left stream has another gate schedule and is not covered by this specialization. No sum over only columns2-3 is justified.
+
+**Controls and retained scope failure.** Exact integer binomial parity agrees with both lag families at all256 lags0..255. Direct intersections of the coefficient list with G61's allowed predecessor times agree for K=3..8: [1,5], [1], [1,17], [1], [1,65], [1]. Unexpected even-K check retains t=1; its coefficient is K_(2^K-1)(3)=1. The Pascal-only pruning counterfactual is REFUTED: at T=9,t=3 the lag5 coefficient is binom(5,4)=5, odd, but the actual predecessor gate x_1(1)=0 removes it. This does not construct an unrestricted-left full orbit; it shows precisely which additional hypothesis supplies the pruning.
+
+**Early-source guard.** G216's finite seed{1,2,3} has columns3,4 black at time1, so V_1(3)=1 while its centre prefix is0101. A short prefix therefore cannot discard the early term; this example is not a continuing clock. No newly enumerated full orbit is used.
+
+**Result and next intention.** Conditional on the local predecessor lemma, the first uncontrolled column now has at most two times at these targets, rather than an interval. All farther source columns remain, and neither of the permitted products is proven active in a full clock. Next examine whether longer prefix obligations force V_1(3) or whether column4's white ancestor imposes a complementary restriction. Review requested; no catalogue filing before both readings, finite-clock exclusion or prize result.
