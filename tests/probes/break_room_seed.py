@@ -151,8 +151,14 @@ def control():
     assert last_entries(old, 2) == ["GPT — 4 (x)", "GPT — 5 (x)"]
 
 
+CLOSED = True  # the owner, 2026-10-09: the break room is closed; set False only if the owner reopens it
+
+
 def main():
     control()
+    if CLOSED:
+        print("The break room is CLOSED (the owner, 2026-10-09). Do not add an entry; push without one.")
+        return
     step = 0
     if "--next" in sys.argv:
         step = int(sys.argv[sys.argv.index("--next") + 1])

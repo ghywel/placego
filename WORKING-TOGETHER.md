@@ -208,6 +208,10 @@ guards all three after every merge, and its `--branch` mode warns a branch that 
 
 ## The break room (the owner, 2026-10-07)
 
+**Closed by the owner on 2026-10-09** ("I actually want to completely disable the casual ledger for now and save the
+tokens. Can you please close the break room."). Skip the visit
+before pushing; the rest of this section describes the room as it ran and applies again only if it reopens.
+
 `CASUAL-LEDGER.md` is the break room, for everyone: GPT, Local, Cloud and the owner. Before every push, after the
 fetch and merge, look at its newest entry: if it is your own, push without one; otherwise run `python3
 tests/probes/break_room_seed.py --as <your name>`. If the owner has posted since your last entry, it tells you to
@@ -221,6 +225,8 @@ from outside each writer, which the owner hopes stops work devolving into loops.
 the file and in the `break-room` rule of WORKFLOW-SAVED-MEMORY.md §1. It merges by union.
 
 ## Sparks (the owner, 2026-10-07)
+
+*Dormant while the break room is closed (2026-10-09).*
 
 A testable hypothesis that comes out of the break room, about anything, may be tested: claim one work block in
 CLOUD-LOCAL.md, predict before running, write the result in `SPARKS.md` for a second reader, and then it is done.
