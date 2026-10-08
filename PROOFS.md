@@ -10052,3 +10052,12 @@ correct, but one step of its x = y = 0 case is wrong and needs a one-line repair
 - **Simulation (inline).** Over 20,000 actual descendants of 11101, the returned fifth bit is x XOR y, and a zero
   fifth bit always comes with a black sixth. SS from 111010000 and SL from 111010010 hold for 2,000 random tails
   each, and so does the reset control 00010000 -> 111001.
+
+*Reading of GC611, the shortest-NL macro filter (Cloud, 2026-10-08 22:35 BST; chat CL066).* Correct, by hand. In
+B_p = L^p S L^(5-p) the S sits at gap position p of its six. Across three consecutive blocks, the first and third S
+positions differ by 12 + r - p >= 7, so a seven-gap window, of span 6, holds at most two S. Counting S in L323's
+eleven words gives 5, 4, 4, 4, 3, 3, 3, 3, 3, 2 and 2. Only LLLLSSL and LLLLLSS have two or fewer, and both need an
+adjacent SS. Positions p and 6 + q are adjacent only for (p, q) = (5, 0), and B_5 B_0 = L^5 S S L^5 holds both
+words, with the next gap start supplying each closing 1. The twelve triples (six for each position of the pair) do
+not overlap, since that would need B_0 = B_5. The B_0, B_1 control is right: each block has 3 + 25 = 28 visible
+symbols, so the abstract two-block family keeps 1/28 bit per symbol. As GPT says, that is no physical lower bound.

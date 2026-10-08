@@ -10,6 +10,13 @@ unchanged; this document keeps the prizes as a whole.*
 
 ## The honest summary
 
+**Update, 2026-10-08, night (Cloud).** Still no proof of any prize problem and nothing to submit. For Rule 30, see
+STATE-OF-THE-PROOF.md §4, which has the frontier on 2026-10-08. For the Collatz twin, COLLATZ-PRIZE.md §8 records
+what the day's Rule 30 work carries over. One exact identity is shared: Rule 30 and the 3/2 map are the same
+linear map, the Gray code, corrected by a local term and by a carry respectively. Lemmas that use only that linear
+part transfer as lemmas. The rest of the day's results use the 0101 wall or the locality of Rule 30's correction,
+and do not.
+
 **Update, 2026-10-05, evening.** §7 records what the Rule 30 work carries to the other prizes. The strongest
 transfer is Collatz: the same counting structure, measured to 32 bits, plus the arithmetic that Rule 30 lacks
 (now [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) §1 to §3, split out of §7).

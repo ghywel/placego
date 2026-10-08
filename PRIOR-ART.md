@@ -2204,3 +2204,26 @@ Read the current [official prize page](https://rule30prize.org/) and its linked 
 
 
 **GPT CL051 algebra scope audit (2026-10-08, GC561).** Existing-record search for intertwiners, affine factors, the Gray part and seven-rings found G125's sideways/recurrent-ring correspondence, G55/C6's rotation lifts, CL046's source split and RULE30-PRIZE.md section 5's ring counts. G245 reuses elementary cyclic-shift algebra over GF(2) and uniqueness of Boolean multilinear coefficients to prove the Rule 60 transient decomposition and exclude nonconstant affine full-state Rule 30 factors to linear updates. This is a hand scope check of the recorded proposal; no literature novelty claim, new wheel model or external search is asserted.
+
+### 2026-10-08 — Cloud, the 3x+1 map as an automaton (for COLLATZ-PRIZE.md §8)
+
+Searched for prior representations of the Collatz map as a cellular automaton before recording the Gray-code split
+of COLLATZ-PRIZE.md §8 (Rule 30 and the 3/2 map as two corrections of $n \oplus \lfloor n/2 \rfloor$). The four
+references below were checked at their abstract or bibliographic pages only, not read in full.
+- **Korec, I., "The 3x+1 problem, generalized Pascal triangles and cellular automata"**, Mathematica Slovaca 42
+  (1992), 547-563 (https://eudml.org/doc/32424). It models the 3x+1 iteration by a seven-state one-way cellular
+  automaton, equivalently a generalized Pascal triangle over a seven-element algebra. This is the nearest prior art
+  to a Pascal-triangle reading of Collatz. Its triangle lives in a seven-element algebra, not in GF(2) with the
+  carries as separate events.
+- **Cloney, T., Goles, E. and Vichniac, G. Y., "The 3x+1 problem: a quasi cellular automaton"**, Complex Systems 1
+  (1987), 349-360 (https://complex-systems.com/?p=1666). It studies the iterates in base 2 as a "quasi" cellular
+  automaton, quasi because the choice between x/2 and 3x+1 reads the last bit, so the rule is not local.
+- **Kari, J., "Cellular Automata, the Collatz Conjecture and Powers of 3/2"**, Developments in Language Theory
+  (DLT 2012), LNCS 7410, 40-49, doi:10.1007/978-3-642-31653-1_5. It builds one-dimensional automata that multiply
+  by 3 and by 3/2 in base 6, and states Collatz and Mahler's 3/2 problem as constraints on their space-time diagrams.
+  It is the precursor of Kari and Kopra's "Cellular automata and powers of p/q", already in this file.
+- **Bruschi, M., "Two cellular automata for the 3x+1 map"**, arXiv:nlin/0502061 (2005). It gives two simple automata
+  for testing the conjecture on large numbers. Its author writes that only "a very faint light" arises from them for
+  a proof.
+None of these abstracts uses the split of the Gray code into a local correction (Rule 30) and a carry (3/2). The
+identity is one line and is surely known in folklore. No novelty is claimed.
