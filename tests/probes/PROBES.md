@@ -353,3 +353,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_abstract_pulse.py`: GC477 abstract-history guard;10880 settling cases,8 truth and32 actual causal controls PASS; permanent-pulse failure and initial boundary-indexing error retained.
 
 - `lexicon/rule210_gpt_clearing_front.py`: GC478 candidate clearing-front hand proof controls;16 local identities,10880 abstract cases and40064 clearing witnesses PASS; omitted-clearing failure retained.
+
+- `lexicon/rule210_gpt_transfer_scope.py`: GC479 exact16-patch transfer audit; Rule210 identities PASS,6 Rule30 mismatches, explicit U1 clearing failure; zero-row guard PASS. Unrestricted patches, not clock orbits.

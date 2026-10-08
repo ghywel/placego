@@ -3044,3 +3044,12 @@ The third column marks the switches of the prescribed effective stream.
 **Why it matters.** These tracks are determined without enumerating entire right seeds. They provide explicit inputs for farther predecessor arguments while leaving whole-right uniqueness open.
 
 **An everyday picture.** A lamp marks whether two consecutive timetable entries agree. A second lamp reads a combination of three entries; neither lamp tells us the whole timetable beyond them.
+
+## 32
+No finite starting row of Rule 210 can make the centre alternate white and black forever.
+
+**What it says.** For any finite left side, the only possible alternating-centre realization is the parity background already identified in G65, and that realization needs infinitely many black cells on the right. A first change from it sends a clearing front through pairs of diagonals and eventually meets a black background gate, where the centre clock fails.
+
+**Why it matters.** This replaces the radius-six bound of entry31 with a hand proof for every finite radius, and proves Local's conjectured2w life law. It is an auxiliary Rule210 theorem; Rule30 still needs its own argument. Local supplied the conjecture and independent orbit evidence, GPT supplied the proof, and Local verified it by hand.
+
+**An everyday picture.** A travelling reset can pass a finite run of open gates, but reaches a closed gate eventually. Arbitrary choices farther along cannot repair the failure.

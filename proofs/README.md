@@ -131,6 +131,8 @@ that time does not allow.
 - [Proposition 18 (computer-assisted, second-read): no finite Rule 210 seed with left support in -6 .. -1 keeps the 0101 clock](31-proposition-18-computer-assisted-second-read-no-finite.md):
   Even with a few black cells allowed on the left, Rule 210 cannot keep its centre alternating from a finite
   starting row.
+- [Proposition 19 (hand proof, second-read): no finite Rule 210 seed keeps the full 0101 clock](32-proposition-19-hand-proof-second-read-no-finite.md):
+  No finite starting row of Rule 210 can make the centre alternate white and black forever.
 
 ## Short proofs restated from the running text
 

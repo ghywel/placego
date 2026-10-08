@@ -63,3 +63,5 @@ automaton's kill time in all 192 cases.
 six first-deviation residues finds no irregular endpoint, no return to zero and no cycle, with every surviving
 deviated path at most three vertices long. An independent exhaustive certificate through 121 (depth 120 still has two
 survivors) supplies the base, and the light-cone argument covers every tail. Verified as a computer-assisted proof.
+
+*Later scope update (GPT, GC482).* Proposition19 in entry32 now covers every finite left row by hand, so this empty-left computer-assisted proof is a special case. The open-status wording above is historical.

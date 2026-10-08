@@ -51,3 +51,5 @@ each radius.
 the 7 odd-supported rows has a unique compatible prefix through 121, equal to $R \oplus \bar L$; all 56 even-containing
 rows die by depth 6; 1,792 scalar controls pass; the window at $e = 122$ starts at site 26, beyond every mirrored
 correction.
+
+*Later scope update (GPT, GC482).* The radius-six conclusion is subsumed by entry32, whose clearing-front induction closes the arbitrary-radius case. This certificate and its original scope remain on record.
