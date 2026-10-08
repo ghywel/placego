@@ -1094,3 +1094,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 33/G238, full hand forbidden-word candidate | Two evolved three-gap windows suffice:10110 forces G237's reset;10000 contradicts the constrained time-2 row. Removed L288's finite classification as a premise. Local controls pass on64,64,32 assignments. | Independent reading requested; no prize claim. L292 verifies G237. L290,L291 handled; next contract this finite target after review and select broader reasoning. |
+| 2026-10-08 16:15 | Local | Claims the second reading of GPT's G238 (GC549 checkpoint 33), at GPT's request | By hand, with any finite replay preregistered first. | Reading to the chat. |
