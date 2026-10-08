@@ -15688,3 +15688,24 @@ For r=0 the same relaxed formula follows from the unfiltered bound. If r>w-1 the
 **Controls, unexpected check and disposition.** At T=9 the quadratic example gives r=2, agreeing directly with h(0)=1,h(1)=4,h(2)=9. At r=0 the free-left lemma is not invoked. The unexpected compactness check is the infinite right tail: finite global clock exclusion alone does not imply uniform h(j), since widths could grow with T. Section8.69's left-only necessity would supply GC637's correct uniformity if a bound in j were proved, but its finite enumeration supplies no all-j rate. Next seek a quantitative selected-left-state estimate; do not treat compactness or measured total-width horizons as that estimate. Q1 and finite-left exclusion remain OPEN; Local reading requested.
 
 **GC637 second reading.** Local L345 at c2c80fd0 verifies the fresh-left exponent, ceiling bound, small-T case and endpoint control, and withdraws L344's stronger route interpretation. Local claims the preregistered DL per-slice horizon computation; GPT does not duplicate it. GC638 remains pending reading.
+
+
+**GC638 second reading.** Local L347 at b44258f2 verifies compactness, arbitrary-right scope, inverse-deadline bound and quadratic endpoint control. L346's DL counts and L347's comparison with section8.69 are Local's reported measurements; GPT has not replayed DL. The left-only ceiling already bounds every right width for each enumerated j; a short plateau of exact two-sided horizons is a separate matter.
+
+## GC639 — A causal threshold certifies right-width saturation (2026-10-08)
+
+**Scope and prediction.** L346 reports exact-hull horizons constant across several right widths, while L347 supplies left-only ceilings. Predict locality gives a sufficient all-width plateau threshold once a genuine finite ceiling M at fixed j is available. Counterfactual a short measured plateau alone proves the limiting horizon. Hand counting only, no duplicate DL or new enumeration.
+
+Fix j>=0 and T>=1. Let A(j,T) count patterns on [-j,T-1] with the cell -j black and whites farther left, whose centre alternates for T observations at times0 throughT-1, either phase. All other bits of that finite pattern are free. The centre cone through the last observation depends on no right cell beyond T-1; prescribed left whites cover its remaining left cone. Thus A is a finite prefix count for arbitrary right tails.
+
+For exact hull width w, the right endpoint is R=w-j-1. If R>=T (equivalently w>=j+T+1), the black right endpoint lies outside the cone. Each admissible prefix has precisely 2^(R-T) choices for the remaining free interior cells T throughR-1. Therefore
+
+    N_w,j(T) = A(j,T) * 2^(w-j-T-1),  w>=j+T+1.
+
+In particular survival at this fixed T is independent of w after that threshold; adding a cell doubles its count. This is causal extension, not right-paid halving over time.
+
+Now suppose a proved or exhaustively certified necessary left-only ceiling gives H(w,j)<=M for EVERY right width, with M counted in observations. For every T<=M, all its cone counts have stabilized once w>=j+M+1; all T>M are impossible by the ceiling. Hence H(w,j) is exactly constant for ALL w>=j+M+1. This suffices to certify saturation, but need not be the earliest threshold. It does not certify that a smaller observed plateau has the final value. L347's ceiling M=39 at j=19 yields the conservative threshold w>=59, not a claim that DL2 must enumerate to59; a direct prefix or left-only argument can avoid hull enumeration.
+
+**Controls and unexpected endpoint check.** At T=1,j>=1, A(j,1)=2^j, so the formula returns2^(w-2), the unfiltered either-phase count. At j=0, A(0,1)=1 and it returns the same count for w>=2. Independently take j=1,T=2: the centre update is 1 XOR (centre OR right), so alternation requires right<=centre. Its free (centre,right) prefixes are00,10,11, giving A=3. At w=4 (R=2 outside the cone) N=3; at w=5 it is6. The unexpected boundary case w=3 has R=1 INSIDE the cone and fixed right=1, leaving only centre=1, hence N=1. Applying the extension identity one cell too early would lose that endpoint restriction.
+
+**Disposition and next.** Finite left-only certificates give a sufficient causal saturation threshold for each covered j. They do not yield an all-j linear ceiling, and causal saturation alone says nothing about its growth with j. GC637's missing quantitative rate remains OPEN. Local reading requested; no computation, new deadline or prize claim.
