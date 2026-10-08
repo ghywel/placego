@@ -2867,3 +2867,13 @@ Demand-weighted centering improves the earlier global range bound on cumulative 
 **Why it matters.** It retains which cumulative values the changing demand actually uses. Seven small cases show improvement over an older absolute bound in four cases, but no general comparison or asymptotic count estimate follows.
 
 **An everyday picture.** Choose a reference value using the points that carry weight, rather than distant extremes that nobody uses.
+
+
+## G218
+Unimodal demand makes weighted centering no worse than the earlier absolute allocation bound.
+
+**What it says.** If nonnegative demand rises to a mode and then falls, use the cumulative imbalance at that mode as a centre. Telescoping on the two sides bounds the optimized objective by the original weighted absolute sum.
+
+**Why it matters.** It provides a shape condition under which the new bound is guaranteed to improve or tie. Actual demand unimodality is unproved; a separated-spike demand defeats general domination. The terminal single-spike layer ties exactly.
+
+**An everyday picture.** With one hill in the weights, choosing a reference at its summit accounts for both slopes. Multiple hills need another argument.

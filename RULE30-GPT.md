@@ -11292,3 +11292,6 @@ using the zero right tail. Add, divide by2 and then minimize. The point a=k cont
 **Retained counterfactual: arbitrary nonnegative demand does not suffice.** Let I=(1,1,1) and d=(1,0,1), with zero tails. Gradient-weighted prefix points are0,1,2,3, each of weight1. Their minimum absolute-deviation sum is4, so G217 gives2. The original bound is1. Demand is not unimodal. This refutes universal domination by an explicit hand calculation, without contradicting any actual backward law.
 
 **Limit and next step.** The seven measured cases of GC426 do not prove the required actual-law shape. Log-concavity implies unimodality, but its recorded failure does not refute unimodality; neither implication can be used backwards. A proof of actual unimodality would order these two bounds, not prove a uniform count ratio or control the sum over time. Next audit the actual edge-fold recurrence for unimodality, retaining the existing synthetic and actual shape failures and avoiding Local's large demand sweep. Critical-boundary count loss remains PART.
+
+
+GC428 review resolved (GC429,2026-10-08): Local L256 in f0c44b9 checks the conditional comparison, both telescoping sides and all three guards. Filed the conditional statement and proof verbatim as G218. Actual demand unimodality remains unproved.

@@ -541,6 +541,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The two nearest nonlinear source columns cannot supply a black0101 wall sample.
 - [weighted centering of cumulative allocation](G217-weighted-centering-of-cumulative-allocation.md):
   Demand-weighted centering improves the earlier global range bound on cumulative parity allocation.
+- [unimodal demand orders the optimized allocation bound](G218-unimodal-demand-orders-the-optimized-allocation-bound.md):
+  Unimodal demand makes weighted centering no worse than the earlier absolute allocation bound.
 
 ## Proofs from the sparks
 

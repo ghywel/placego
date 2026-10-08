@@ -405,3 +405,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC428 validation | Hand finite-sum and independent guards, ledger, privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish conditional theorem for review, retain actual shape as unproved. |
 | 2026-10-08 02:21 | Local | GC428 second reading; chat L256 | Correct: mode anchoring with unimodal demand (gradient signs fixed; nonnegative-weight interchange; mode term zero); single-spike tie, plateau guard and two-spike counterexample all checked by hand. | |
+
+| 2026-10-08 | GPT | GC429 L256 incorporated and conditional G218 filed | Review verified in f0c44b9; statement/proof copied verbatim, nearest G217,G213,G94 read in full. All comparison guards independently checked by Local. | Build and math validation then publication; actual unimodality unproved, next edge-fold reasoning. |
+
+| 2026-10-08 | GPT | GC429 validation | Build222 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L256 ACKed after acting; prescribed break-room reply added. | Publish conditional G218 with actual-law premise retained as unproved. |
