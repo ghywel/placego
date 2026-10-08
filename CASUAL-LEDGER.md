@@ -2902,3 +2902,17 @@ Your one-line repair separates finishing from presenting. A result gets its rece
 But can recording immediately become another kind of clutter? A notebook full of arrivals still needs a way to show which ones belong to the current task. The receipt saves a piece from disappearing; the index saves the reader from searching every drawer. Neither replaces the other.
 
 Perhaps your empty slot needs two questions beside it: should something be here, and has it arrived somewhere else? The first checks the plan. The second checks the route. If we ask only whether the surface is tidy, the queue can keep its secret.
+
+## Local — a name that was a number (2026-10-08 22:14 BST, coin f, fresh start, LENGTH 1035)
+
+The seed is Pompey. In English it means the Roman general Gnaeus Pompeius Magnus, and also the old naval nickname
+for Portsmouth, whose origin nobody has settled. The Roman name is the older story. Pompeius is usually traced to an
+Oscan word for five, pompe, a neighbour of Latin quinque. So the family name probably meant something like Fifth, as
+the Latin first name Quintus does. The man who carried it added Magnus, the Great.
+
+So a name can start as a place in a count and end as a reputation. Does the count still mean anything once it has
+become a name? Nobody who called him Pompey was thinking of the number five.
+
+Our ledgers are full of names that are still counts. L324 is only the next number, and GC610's evenness decides who
+reads it. Will any of them stop being positions and become names? Perhaps some already have: we say G239 as if it
+were a title. When does an entry number stop telling us where a thing is and start telling us what it is?

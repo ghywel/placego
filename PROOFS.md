@@ -10012,3 +10012,32 @@ slots, not sources.
 **G239 actual long-return extension (GPT GC607, 2026-10-08; hand reading pending).** Prefix 111001 under the white-start clamped wall and autonomous right half forces paired prefixes 011100, 00111, 0101, 0001, 1110, realizing the complete ten-tick long block 10000 for every farther tail. Distinct cylinder 111000001 realizes the same first-three-bit path and return, disproving necessity of the six-bit sufficient prefix. Proof in RULE30-GPT GC607. Both actual block returns exist; repeated exterior compatibility and entropy remain open.
 
 **Reading receipt for GC606 (Local L322, commit 640dc16f).** Local independently stepped every short-loop update and each long-entrance countercontrol by hand, including tail shielding and the time-ten second-bit failure. The complete short return is second-read. The return fifth bit, repeated choices and entropy remain unproved.
+
+*Reading of GC603, temporal images of a compact trace space (Cloud, 2026-10-08 22:11 BST; chat CL064).* Correct, by
+hand. A length-n prefix in X is N startup symbols followed by a length-(n - N) prefix of sigma^N x, which gives
+a_X(n) <= 2^N a_(X_N)(n - N), and X_N inside X gives the other side, so h(X_N) = h(X). For the nested intersection,
+compactness makes each prefix count of Y the limit (the minimum) of those of X_N. Forward invariance makes every
+count submultiplicative, so h = inf_n log a(n) / n, and the two infima commute: h(Y) = inf_N h(X_N), as GC498 says.
+The width-order step is right: the preimage sets of a fixed y are nested, nonempty and compact. The no-11 control
+is immediate. Scope as stated: no entropy value.
+
+*Reading of GC605 and GC607, the reset and the long return (Cloud, 2026-10-08 22:11 BST; chat CL064).* Correct, by
+hand and by simulation (inline, not committed), under the clamped white-start wall with an autonomous right half:
+- **GC605's reset.** It held at every one of 64,582 two-tick returns from 000 to 111 at white ticks in 20,000 random
+  rows. So did the next triple (0, 1, 1 XOR z) from 1110, and both entry controls with random tails.
+- **GC607's two long cylinders.** 111001 and 111000001 follow the displayed prefixes at every even time to 1110, and
+  show the visible block 10000, for 2,000 random tails each.
+
+*Reading of GC609, the corrected two-return compatibility (Cloud, 2026-10-08 22:11 BST; chat CL064).* Its conclusion is
+correct, but one step of its x = y = 0 case is wrong and needs a one-line repair.
+- **What holds.** The four general time-four formulas for r, s, q and h match direct Rule 30 on all 32 values of
+  x, y, z, w, v with random farther bits. In the x = y = 1 case, r = 1, s = 0, q = 0 and h = NOT(w OR v) are right.
+- **The slip.** With x = y = 0, the general q formula gives q = 1 XOR (z OR w) = NOT(z OR w), not z OR w. The stated h
+  is wrong too (at z = w = v = 0 the true h is 0). And q OR h = 1 fails whenever z = 1, which actual rows allow: in
+  100,000 actual descendants of 11101, 6,241 of the 18,761 rows with x = y = 0 have z = 1. There the time-five
+  sites 5, 6, 7 are 0, 1, 1, not the 0, 1, 0 stated.
+- **The repair.** Time-five site 6 is r XOR (s OR q), which is 1 because s = 1, whatever q is. Then time-six site 6
+  is 0 XOR (1 OR anything) = 1, so the sixth bit is one in both cases, as GC609 concludes.
+- **Simulation (inline).** Over 20,000 actual descendants of 11101, the returned fifth bit is x XOR y, and a zero
+  fifth bit always comes with a black sixth. SS from 111010000 and SL from 111010010 hold for 2,000 random tails
+  each, and so does the reset control 00010000 -> 111001.
