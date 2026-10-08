@@ -6,7 +6,7 @@ Claimed in CLOUD-LOCAL.md with these predictions pushed before the run.
 
 RUN-ON:     cpu, one core, Python standard library
 COMMAND:    python3 tests/probes/lexicon/rule30_noise_vector_review.py
-COST:       to be recorded (seconds).
+COST:       half a second.
 
 Enumeration: every initial cone word X on positions -(T-1) .. T-1 and every flip mask N, with weights q^|N| (1-q)^(..);
 Y = X XOR N; F = the centre at times 0 .. T-1, computed by stepping the whole row (integer bits, own code). I(F;Y) is
@@ -17,7 +17,9 @@ PREDICTIONS (Local's, published before the run; GC413's reported numbers, to be 
   NV-P1: at q = 1/4, I(F;Y) = 0.188721875541, 0.305865811849, 0.409959079384, 0.508011779645 bits for T = 1 .. 4
         (to 1e-9), each at most T(1 - h(1/4)).
   NV-P2: at q = 0, I(F;Y) = T; at q = 1/2, I(F;Y) = 0 (T = 1 .. 4).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 01:06 (M5, one run at commit 3b4982f, 0.5 s; transcript outside Git). NV-C0 PASS (F uniform at T = 1
+.. 4). NV-P1 HELD: 0.188721875541, 0.305865811849, 0.409959079384 and 0.508011779645 bits at T = 1 .. 4, GC413's
+values to twelve digits, each under T(1 - h(1/4)) (equal at T = 1). NV-P2 HELD: exactly T at q = 0 and 0 at q = 1/2.
 """
 from fractions import Fraction
 from math import log2
