@@ -13349,3 +13349,30 @@ Independently, the exact equation says the phase switches sign with probability 
 **Failure of the proposed approximation shortcut.** Finite-prefix conditional expectations approximate a measurable sign in mean square, so sign predictors can have epsilon_m tending to zero. GC535 alone therefore cannot exclude a measurable solution by appealing to approximation: positive defect at every finite m is compatible with defects tending to zero. The displayed exponentially decreasing floors remain compatible with that limit. No rate theorem for a hypothetical solution is supplied here, and an approximate phase is not an exact invariant function.
 
 **Outcome and next.** Any measurable obstruction must be nonlocal, have both signs with substantial mass, and resist exponentially accurate prefix prediction at the stated rate. These are necessary conditions only; no phase is constructed or excluded. This completes the local-to-measurable scope audit. Stop phase elaboration unless a genuinely new regularity or return mechanism is justified; critical-ray zero visits, unbounded damage span and inward speed remain OPEN.
+
+## GC537 — A fresh tick chooses between two known damage words (2026-10-08)
+
+**Scope and prediction.** Return to the actual iid single-flip pair and GC509's exposure procedure. Conditional on a fresh tick, expose its intervening initial bits but leave the pivot X_(J_t) unrevealed. Predict the entire next damage at sites at least L_t is already determined, not just a left-move probability. Counterfactual this supplies the same law at reused pivots or restarts the whole state is unsupported. Unexpected check: next damage words differ by one site, but the selected background and future history can differ. Hand argument conditional on GC509's fresh-pivot proof, pending joint independent reading; no experiment or novelty claim.
+
+**Known healing branch.** For sites i>=L_t, the exact damage derivative in GC507 uses only the known current damage word and background values u_i(t),u_(i+1)(t). Their initial cone endpoints are at least L_t-t=J_t+1. After revealing the intervening bits down to J_t+1, all these inputs are known without X_(J_t). Let A_t be the resulting next damage set restricted to sites at least L_t. This set is finite and nonempty: the rightmost next damage is t+1. Define
+
+    K_t=min(A_t)-L_t, so 0<=K_t<=w_t,
+
+where w_t=t-L_t+1. Both A_t and K_t are measurable before revealing the pivot. No site farther left than L_t-1 can become damaged, and the derivative at L_t-1 is 1-u_(L_t-1)(t).
+
+**Exact conditional two-branch law.** GC509's triangular cone makes this below-front background bit fair after the intervening reveals, independently of the already determined A_t. Hence the full next damage set is, with equal conditional probabilities,
+
+    A_t union {L_t-1}, or A_t.
+
+The corresponding displacement Delta_t is -1 or K_t. In particular
+
+    E[Delta_t | pre-pivot information]=(K_t-1)/2;
+    Var(Delta_t | pre-pivot information)=(K_t+1)^2/4.
+
+This is a conditional statement on fresh ticks only. K_t is a function of the selected background and complete damage word, not an iid random jump drawn anew. Reused ticks retain their known pivot and need a separate law.
+
+**Independent first-step controls.** At time 0, A_0 contains site 1 unconditionally and contains site 0 exactly when X_1=0. Thus K_0=0 for X_1=0 and K_0=1 for X_1=1. The two conditional means are -1/2 and 0; averaging gives -1/4, exactly GC505's independently checked first-step expectation. Combining the fair pivot with the fair X_1 gives its probabilities 1/2,1/4,1/4 for displacements -1,0,+1. No new finite enumeration was run.
+
+**Limits and next.** The one-site difference between the next damage branches does not make their full background states identical. The pivot also enters the background update at and around the old front, so the branches can select different future environments. GC508's singleton-reset guard and GC506's position-only failure still apply. The conditional variance grows with K_t; this formula supplies no bounded-jump concentration estimate or integrable excursion law. Actual finite span at a tick bounds K_t, but the span is not uniformly bounded.
+
+The useful missing input is now explicit: control the known healing jump and later reused-state recovery at fresh encounters, while retaining the full selected state. No bound on their frequency, weighted budget, general recurrence or inward-speed existence is established. Stop scalar closure or phase reformulation; next a justified reachable-state constraint on this healing branch.

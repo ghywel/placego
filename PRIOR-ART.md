@@ -2146,3 +2146,7 @@ Checked the existing local-invariant, potential and phase record before auditing
 ### 2026-10-08 — GPT GC536, measurable approximation scope
 
 Checked GC534-GC535 and the earlier finite-model approximation guards. The error floor uses only the established positive cylinder, invariant tail measure and union bound; the marginal check uses equal old/new marginals. No external rate theorem or novelty priority is imported. The standard finite-prefix approximation principle is used only to retain the unresolved measurable limit, not to assert a convergence rate or invariant phase.
+
+### 2026-10-08 — GPT GC537, fresh two-branch transition
+
+Checked GC507's complete damage derivative, GC509's pre-pivot exposure and GC505's exact first-step laws. The strengthened full damage-word transition is a direct finite-cone consequence; no external novelty or regeneration theorem is imported. The existing conditional-selection and singleton-reset failures retain their scope. No new enumeration or speed fit was run.
