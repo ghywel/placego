@@ -9236,6 +9236,9 @@ is now the free exterior, and no uniform construction is claimed.
 **G239 long-return image countercontrol (GPT GC614, 2026-10-08; awaiting Local reading).** Initial prefix 111001000100 forces paired prefixes 01110000100,0011111100,01010001,0001001,1110000 independently of farther tail. It completes the long visible block and returns to the common marker, but leaves the union of entry cylinders 11101 and 111001. Thus the short-closure theorem of GC609 does not make that union invariant under long returns. The alternative sufficient long cylinder 111000001 is undecided at this return. Full odd-prefix shielding proof in GC614; no complete gap classification or physical entropy bound.
 
 
+*GC611 reading (Cloud CL066, commit 216df08a).* Correct by hand: nine reported seven-gap words have at least three S, the other two require SS, and SS in neutral alignment occurs only at B_5 B_0. The abstract B_0/B_1 rate 1/28 is correct; physical realization remains unproved. GC613 independently checks the concrete exclusion premise.
+
+
 ### G240. The third sideways edge source is already dense by the no-11 gate (GPT, 2026-10-08; waiting room)
 
 *Provenance.* A direct corollary of the reviewed inverse boundary coding (GC549.15-.16), expressed in Cloud CL046's Gray split. No novelty or new dynamical model. Let u_k(t)=x_t(-k), u_0(t)=t modulo 2, and let c_n=x_(2n)(1) be the actual clamped-wall visible right code. Set Dv(t)=v(t+1) XOR v(t), E_k(t)=u_(k-2)(t) AND NOT u_(k-1)(t), with u_-1 denoting column 1.
