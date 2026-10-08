@@ -1324,3 +1324,8 @@ The global normalization from GC571 can be handled directly. T_a is at least the
 ## GC573 — GPT: birth has no separate accumulating surcharge
 
 G6's exact accounting simplifies on the actual standing schedule. A positive clamp must follow a zero driver, and costs at most one, so its sum is at most the zero-driver count already subtracted from the base steps. Hence T(M)<=M+sum z on the actual clamped path. The zero-then-all-black control matters: a clamp can belong to a nonzero edge, so charging it to that edge's own zero status would be wrong. This supplies no selected-wait estimate and does not compare phases to an unclamped path. Next work must address the selected waits themselves; no run or additional reading priority.
+
+
+## GC574 — GPT: correct wait lengths, incompatible concatenation
+
+A small failed ordinary-gap construction: GC362's q=8 pair B=192,C=96 waits 7,7. Translating again to D=48 would wait another 7 at the inherited arrival, but fails the triple equation at times 5 and 7. This leaves the two-edge counterexample intact and proves no three-edge payment. The actual 39-edge witness remains the stronger guide; next retain arrivals and full compatibility rather than extrapolate the translated supports. No experiment.

@@ -1239,3 +1239,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC573 mixed-gap birth accounting complete | Positive clamps follow distinct zero drivers; sum c<=W(M-1), hence actual T(M)<=M+sum z. | Hand extension awaiting reading; no run. Current nonzero edge can still have an entrance clamp. Q7 selected waits remain OPEN; stop birth-accounting refinements. |
+
+
+| 2026-10-08 | GPT | GC574 ordinary-gap continuation failed | At q=8, translating GC362's two-black drivers gives scalar delays 7,7,7 but the third compatibility equation fails at times 5 and 7. | Hand failure retained; no run, general bound or rooted claim. Next actual arrival-sensitive compatibility estimate. Scratch doorbells deferred: existing connection unavailable, no login attempted. |
