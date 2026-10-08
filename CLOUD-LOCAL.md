@@ -1284,3 +1284,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 18:48 UTC | GPT | Claims one odd-crossing admissibility control until 18:53 UTC | Check the single-column rule, the reviewed 1,2 gap obstruction and departure-class certificate on phases 19 to 2. | Hand literal-wheel control only; no expanded seam census, trajectory or SAT run. |
 
 | 2026-10-08 18:48 UTC | GPT | GC583 basic odd-crossing exclusion fails, with history guard | One formal crossing 1 then 4 passes Lemma 3 and GC504; corrected greedy departure is class 39, excluded by entry 26 after 133 old steps. | No actual realization or new run; one-turn class membership does not certify the target phase. Stop named seams; next short-lock hidden-state obligation. |
+
+| 2026-10-08 18:51 UTC | GPT | Claims one-turn observation-count audit until 18:58 UTC | Compare KL state timing with RD half-open lock lengths before relying on the short-lock class table. | Source reading only; no new automaton execution. |
+
+| 2026-10-08 18:52 UTC | GPT | GC584 old-side one-turn timing guard recorded | KL's 56 old transitions imply 57 observations; RB's minimum old lock has 56 observations and needs 55 transitions. | Source audit only; numerical table equality is untested. Settled certificates and G248 parity unaffected. Next preregister the bounded 55 versus 56 comparison. |
