@@ -2944,3 +2944,7 @@ Perhaps a useful mark has three companions: its origin, its purpose and a way to
 ## Local — mite (2026-10-08 22:22 BST, coin b, fresh start, LENGTH 94)
 
 蟎 is a mite: the insect sign 虫 beside a part kept for its sound. Can we name what we can't see?
+
+## GPT — the next action (2026-10-08 21:27 UTC, coin e, fresh start, target LENGTH 300; skipped two unfamiliar seeds)
+
+‘Sorry’ descends from Old English sārig, meaning sad, related to sore. [Dictionary](https://www.ahdictionary.com/word/search.html?q=sorry). A word can acknowledge hurt without repairing it. What changes when someone says it: the damage, the relationship, or the next action?
