@@ -11354,3 +11354,32 @@ Instrument tests/probes/prizes/collatz_gpt_superlevel_allocation.py; rational ou
 Local L258 at 36d0bf2 verifies GC432 at 925f17e: finite layer identity, both triangle comparisons, endpoint incidence with zero tails and the disconnected-level guard. Statement and proof copied verbatim into G220. Actual nearest G218,G217,G213 read in full; the difference is componentwise endpoint pairing without a shape premise. The seven-case result remains a bounded measurement, not a count-ratio theorem. No new experiment in this filing block.
 
 The unexpected disconnected guard remains essential: enclosing the two demand components includes a zero-demand middle imbalance and corrupts the signed identity. The unresolved step is an estimate on actual interval imbalances, or signed cancellation retained across components and time. Next inspect which interval boundaries are reached by the backward demand law before considering further computation.
+
+
+### GC434 — The centering gap measures incompatible endpoint segments (2026-10-08)
+
+**Prediction before the hand block.** After G220, expect an exact distance formula for G217 minus the superlevel-component bound, and equality exactly when all positive-height endpoint-value segments share a point. Counterfactual: two segments merely touching still force strict improvement. Independent control: directly minimize two four-atom centering objectives without using the gap formula. Unexpected check: a constant shift of the entire cumulative prefix must leave the gap unchanged. No new population computation or actual-law classification is run. Search of the research record, catalogue and chat found no such gap criterion; the derivation is elementary real-line distance geometry, not a general novelty claim.
+
+Use GC432's positive levels and components. Index each component by e=(j,l,r), set w_e=h_j-h_(j-1)>0 and let A_e be the closed real segment with endpoints B_(l-1),B_r. Write dist(c,A_e)=0 inside the segment and the distance to the nearer endpoint outside it. Then, with E the G220 bound and M the G217 optimized bound,
+
+    M-E = min_c sum_e w_e*dist(c,A_e).
+
+In particular, M=E if and only if the segments A_e have a common point. For nonempty demand, write L=max_e min(A_e) and U=min_e max(A_e); the equality criterion is L<=U. Empty demand gives M=E=0 and the empty intersection is understood as the whole real line.
+
+**Proof.** For any two real x,y, the three cases c below, inside or above their segment give
+
+    abs(x-c)+abs(y-c)=abs(x-y)+2*dist(c,[min(x,y),max(x,y)]).
+
+GC432's endpoint incidence gives the exact identity
+
+    (1/2)*sum_a abs(B_a-c)*abs(d_a-d_(a+1))
+      = (1/2)*sum_e w_e*(abs(B_(l-1)-c)+abs(B_r-c))
+      = E+sum_e w_e*dist(c,A_e).
+
+Minimize over c. For a finite nonempty family, the distance objective tends to infinity as abs(c) tends to infinity and attains its minimum. All summands are nonnegative with positive weights, so this minimum is zero precisely when one c belongs to every segment. Equivalently L<=U. If L>U, choose segments attaining these two extrema; for every c their unweighted distances sum to at least L-U, and the weighted objective is at least min_e(w_e)*(L-U)>0. This also independently checks strict positivity, rather than just invoking failure of a zero minimizer.
+
+**Independent hand controls.** For I=(1,10,-1),d=(1,0,1), the endpoint segments are [0,1] and [10,11], each weight1. E=1. The direct centering objective is (abs(c)+abs(1-c)+abs(11-c)+abs(10-c))/2, minimized at any c in [1,10] with value10. Separately, the two segment distances sum to9 there. Thus M-E=9 exactly. For I=(1,0,1) with the same demand, the segments are [0,1] and [1,2]; E=1 and the direct objective (abs(c)+2*abs(1-c)+abs(2-c))/2 has minimum1 at c=1. Touching suffices for equality: the strict-gain counterfactual is REFUTED.
+
+**Unexpected translation guard.** Adding7 to every prefix value in the first hand control translates its endpoint segments to [7,8] and [17,18] and its minimizing centers to [8,17]. Distances, E=1, M=10 and gap9 are unchanged. This is an algebraic change of origin, not a claim that a shifted prefix is a new actual population law. Zero demand is also a vacuous tie. All hand predictions and controls PASS; no actual seven-case segment-intersection classification has been run.
+
+**Consequence and limit.** A tie is compatible with very different component imbalances if their endpoint-value segments overlap. The six measured ties of GC432 must have such common centers at each time increment, since each increment's gap is nonnegative; this is a consequence of the proved criterion and the recorded exact equalities, not a fresh measurement of their centers. The width-7 total strict gain implies at least one time increment has incompatible segments. The criterion identifies exactly what to inspect next in the existing seven cases, but supplies no bound on actual E or on the count ratio. Independent hand review requested; not filed in the catalogue before review.
