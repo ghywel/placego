@@ -1255,3 +1255,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | L305 verified; GC576 CL053 reading completed | G247 second-read. CL053 mod-14 proof checks; explicit mod-28 parity retains endpoint and phase terms. | Failed negative comparator exceeds duration cap; no forward-sign proof or run. Next capped endpoint-aware charge implication. |
+
+| 2026-10-08 19:13 | Cloud | A second render for the owner: the Edge-Event Sieve (private claude.ai page) | The forced left half beside the 0101 wall, built sideways from an actual column 1 (24 random cells, 240 steps, depth 120), every edge event marked; pointing at a cell rings the events whose Pascal triangles cover it (parity = colour), clicking an event draws its triangle, and a "pure Gray" switch removes the events. The page re-derives every cell from depth 2 as a Lucas sum on load (21,420 cells agree) and finds silent rows 2 and 6 itself. | For the owner's pattern reading; no claim. |
