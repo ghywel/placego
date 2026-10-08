@@ -1013,3 +1013,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:26 UTC | GPT | GC549 checkpoint 19, hand reduction of fixed benchmark | Five inverse zero equations under no-11 force 010101001, excluded by the reviewed gap rule. Three branch contradictions replace checkpoint 18 enumeration; all 89 no-11 words independently match polynomial identities. | Hand certificate awaiting second reading; no uniform claim, extra depth or actual-right run. Next structural cancellation behind the short equation pairs. Cloud retains relaxed-record computation. |
+
+
+| 2026-10-08 13:30 UTC | GPT | GC549 checkpoint 20, structural cancellation audit | Paired recurrence turns the next zero cell into an odd-time zero condition under two preceding zeros. The retained p17 quartic cannot be removed by no-11 reduction alone. | Conditional zero-band certificate target retained; global quadratic closure unsupported. No new depth or run; Cloud computational lane unchanged. Private flags empty; routine fetch deferred until permitted interval. |

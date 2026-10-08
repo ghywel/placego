@@ -14029,3 +14029,20 @@ Therefore under no-11 the zero band at depths 13 through 17 forces c=010101001, 
 
 
 **Coefficient audit outcome.** All 89 no-11 words of length nine agree between the symbolic quotient polynomials and the independently written scalar inverse-column recurrence. This checks the finite polynomial identities used in the branches; it is not a new actual-right computation. The blind forcing prediction holds, the c6=1 counterfactual is refuted by the displayed contradictions, and no-five-zero is indeed unused. A second reader is still needed for the hand certificate. Next look for the structural cancellation that made p14+p15 and the final p13/p16 contradiction short, rather than extending the polynomial table by another isolated depth. Cloud retains its separate relaxed-record computation.
+
+
+### GC549 checkpoint 20 — why the short certificate is conditional (2026-10-08)
+
+**Bounded structural audit.** Examine the cancellation used in checkpoint 19 rather than compute another depth. Predict its short expressions belong to the zero-band conditions, not to a globally quadratic family of inverse functions. Counterfactual: no-11 makes every inverse column a quadratic Boolean polynomial. The already retained depth-17 polynomial has a surviving quartic term, so this is an algebraic guard, not a blind experiment. Unexpected check: this degree cannot be lowered merely by a different no-11 polynomial representation. No run or new route; the current fixed-case certificate still awaits reading.
+
+For a finite visible window, no-11 permits exactly the assignments whose one positions form a set with no adjacent indices. Their square-free monomials are linearly independent as functions on these assignments. Indeed evaluate a linear relation first at the all-zero assignment to fix its constant coefficient, then at each permitted set S in increasing cardinality. Every proper-subset coefficient has already vanished; the value at S leaves exactly the coefficient of the monomial S. This proves independence and uniqueness of the reduced polynomial without a degree assumption.
+
+Checkpoint 19's p17 contains c1*c3*c5*c7 with coefficient one; that support has no adjacent indices. It therefore genuinely has degree four on the no-11 domain and cannot be represented there by degree at most two. This does not prove unbounded degree, exclude another bounded-degree representation with additional state variables, or establish the same minimal degree on the smaller actual right language. Those are different questions. The control is limited to the proposed direct polynomial simplification using no-11 alone.
+
+The useful cancellation is instead conditioned on the zero band. The paired recurrence gives
+
+    f_(j+1)+f_j = g_j + f_(j-1)*(1+f_j).
+
+Thus when two adjacent initial cells f_(j-1),f_j are zero, their next zero condition f_(j+1)=0 becomes g_j=0. For j=14, the short p14+p15 expression in checkpoint 19 is this cancellation under p13=0. On a five-cell initial zero band, the interior three cells at the next physical time are also zero; this is the ordinary zero-cone erosion already retained in checkpoint 7. The branch certificate gains its force when those conditional zeros are combined with the actual right-word gate, not from erosion alone.
+
+**Next.** Seek a transferable implication for a paired zero band in the constrained recurrence, permitting intermediate functions of higher degree. The desired certificate is conditional on the band and right language. Neither a globally quadratic closure nor translating the existing boundary obstruction spatially is justified. Cloud's relaxed-record measurements remain the separate computational diagnostic; no depth extension here.

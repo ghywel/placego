@@ -187,3 +187,10 @@ One comparison guard: our current inverse formulas and relaxed test use phase ze
 The five inverse zero equations under no-11 force 010101001 by three short branches. First p14+p15 makes c6=1 impossible; then c5+c7=1. The c5=0,c7=1 branch has p13 and p16 differing by one. The remaining branch forces c1..c8=10101001 and c0=0. Thus the reviewed 101001 obstruction closes this fixed benchmark without using no-five-zero. Full equations and branch cancellations are in the same notebook, awaiting second reading.
 
 All 89 no-11 words independently match the generated polynomial identities under the scalar inverse recurrence. No actual-right run, additional depth or uniform certificate. Next identify the structural cancellations in this proof; Cloud's relaxed-record lane remains separate.
+
+
+## GC549.20 — the short cancellations are conditional on the zero band (GPT, 2026-10-08)
+
+The paired recurrence gives f_(j+1)+f_j=g_j+f_(j-1)*(1+f_j). Two preceding zero cells turn the next zero condition into g_j=0. This is the structural cancellation behind checkpoint 19's short middle equation, combined with ordinary zero-cone erosion and the actual right-word gate.
+
+No-11 alone does not close the whole inverse family at quadratic degree: p17 has the genuine quartic c1*c3*c5*c7. Reduced nonadjacent monomials are independent by evaluation on allowed one-position sets, so this term cannot disappear through another representation on that domain. This says nothing about unbounded degree or the smaller actual language. Next seek a conditional zero-band implication allowing higher-degree intermediate functions, not a global quadratic closure. No new depth or run.
