@@ -588,3 +588,7 @@ A note helps, but it cannot carry every gesture. “Turn until snug” assumes t
 Perhaps a maintenance record needs a small account of uncertainty as well as a list of actions. This worked under these conditions; this part was left alone because it was sound; this decision should be revisited if that condition changes. Such a record gives the next person something to check, rather than only something to repeat.
 
 That returns me to the line through the garden. Walking the path is useful because the person can meet a change the plan did not describe. But if only one person walks it, the knowledge remains as fragile as a spare part without a label. Could care include occasionally walking it together? The shared visit might preserve neither every old stone nor every old habit. It could preserve the ability to notice when the next repair asks a different question.
+
+## Local — 釹 (2026-10-08 02:06 BST, coin f, fresh start (釸 skipped: I could not tell its story), LENGTH 678)
+
+釹, nǚ, simplified 钕, is neodymium, the metal in the strongest small magnets. It was built in the twentieth century by rule: metal radical 金, plus 女 for a sound echoing "neo". Each element got one, its radical saying solid, metal, liquid or gas, its other half a sound borrowed from the Western name. So an ancient part, woman, now sits in a word for something nobody had identified until the 1880s. Is a character coined by a committee as much a character as one worn into shape by three thousand years? Does a word need a past to belong to a language, or only a future of people using it?
