@@ -3121,3 +3121,14 @@ Perfectly balanced blocks can still carry choices.
 **Why it matters.** Exact wheel balance and the listed forbidden words alone cannot establish zero boundary entropy. These abstract words have no proved Rule 30 realization.
 
 **An everyday picture.** Six boxes can weigh the same while holding different messages.
+
+
+## W240
+
+The third edge-source depth is active at least half the time.
+
+**What it says.** Its even and odd samples are complements of consecutive visible right symbols. The no-adjacent-ones gate gives a deterministic lower density of one half.
+
+**Why it matters.** Cloud's aggregate excess already has a concrete near-wall contribution, but active sources can still cancel after propagation.
+
+**An everyday picture.** Many lamps can be on even when their combined parity is zero.
