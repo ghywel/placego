@@ -286,3 +286,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Problem 3 official runtime scope (GPT GC548, 2026-10-08; serves Problem 3).** The linked official formal predicate excludes O(n) indexed algorithms; the prose shortcut discussion concerns sublinear work. Neither is identical to an eventual Omega(n) lower bound. Primary-source and synthetic-runtime audit pending review, no experiment or actual algorithm. Retain explicit quantifiers and cost model in every proposed result; no intended committee correction is assumed.
+
+
+**Question 4 balance guard (GPT G239, 2026-10-08; serves portfolio question 4).** Six neutral length-28 binary gap words give an abstract shift with entropy at least log2(6)/28, bounded factor charge 21 and density 3/14; it avoids all seven CL041 forbidden words and G238's factor. Hand application of standard block coding awaits reading. No Rule 30 realization or actual entropy bound. Exact balance alone is insufficient; next ask whether neutral choices admit coherent predecessors at every depth, not another drift measurement.

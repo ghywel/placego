@@ -3110,3 +3110,14 @@ The four-zero gap cannot lead into three zeros and then two when its start remem
 **Why it matters.** This replaces the last finite classification in the forbidden-word certificate with a hand argument. It concerns one finite word beside the imposed wall.
 
 **An everyday picture.** Following both exits from a junction shows that neither reaches the desired destination.
+
+
+## W239
+
+Perfectly balanced blocks can still carry choices.
+
+**What it says.** Six equal-length gap blocks have the same number of ones and zero net charge, yet their arbitrary concatenations have positive entropy and bounded charge discrepancy.
+
+**Why it matters.** Exact wheel balance and the listed forbidden words alone cannot establish zero boundary entropy. These abstract words have no proved Rule 30 realization.
+
+**An everyday picture.** Six boxes can weigh the same while holding different messages.
