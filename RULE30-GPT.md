@@ -11111,3 +11111,23 @@ This is an interior log-concavity failure, not the original edge triple. The cri
 **Controls and unexpected check.** Prediction and counterexample registered in CLOUD-LOCAL before the rational control. Independent explicit branching sends each mass at j to max(0,j+d-bit), each bit with probability1/2. It reproduces all displayed masses, preserves total1, and gives deficit-12100/44444^2 exactly. Unexpected critical-only guard Cq stays log-concave. Transcript outside Git. No fitted shape rate, actual population, new sweep or count theorem.
 
 **Consequence.** A future proof of the actual near-edge shape needs more than “log-concave future law plus isolated flat steps”; even a two-step restoration shortcut is unavailable at that level of abstraction. Actual signed allocation in G91 remains the main gap. This closes only the named generic repair, leaving the actual threshold law and count-loss row PART.
+
+### GC416 — Cumulative parity allocation pairs with demand gradients (2026-10-08; hand review requested)
+
+**Question and prior scope.** G74's exact signed demand sum and G91's unmatched allocation remain available after GC415's generic shape repair fails. Existing record searched for Abel summation or cumulative parity imbalance; no such formulation found. The following is ordinary finite summation by parts applied to G74, without a novelty claim. It names a different actual allocation object, not a new fairness assumption.
+
+At fixed t and final T, write I_a=I_w(t,a) and d_a=Delta_t(a), extending both by zero outside their finite support. Set B_a=sum_(b<=a) I_b; include its zero left tail and constant right tail. Then the exact increment is
+
+    H_(t+1)-H_t = (1/2)*sum_a B_a*(d_a-d_(a+1)).
+
+Proof: substitute I_a=B_a-B_(a-1) in G74 and shift the second finite sum. The lower support jump must be retained. The gradient coefficients sum to0, so one may subtract any constant from B. Choosing the midpoint of its maximum and minimum gives
+
+    abs(H_(t+1)-H_t) <= osc(B)*TV(d)/4,
+    osc(B)=max_a B_a-min_a B_a,
+    TV(d)=sum_a abs(d_a-d_(a+1)).
+
+Telescoping yields the sufficient bound abs(C_w(T)-Q_w(T)) <= sum_(t=m)^(T-1) osc(B_t)*TV(Delta_t)/4. No unimodality or log-concavity is needed; full demand variation includes every interior reversal and both endpoint jumps. Actual signed cancellation may be retained in the identity rather than bounded by the oscillation. A uniform ratio would still require this sum to be O(Q_w(T)), or a sharper signed estimate; neither is proved here.
+
+**Controls and retained scope.** Preregistered reuse of widths2..5,horizons m..9 checks100 exact increments, retaining21 empty-parent cases. The Abel sum, original weighted sum and literal backward-weighted H increments agree. Range bound and zero-sum gradients PASS. Unexpected synthetic guard I=(1,-1), d=(3/4,1/4) has zero total imbalance yet contribution1/4: knowing total parity balance alone is insufficient. A single demand spike has total variation2, including its lower jump; omitting that jump would break the centered bound.
+
+The new absolute bound is not uniformly better than G74's: with synthetic I=(1,1) and d=(1,0), it gives1 versus the original absolute bound1/2. Those are algebraic guards, not actual population laws. Any advantage must come from the actual prefix allocation and demand placement, not the coordinate change itself. Instrument tests/probes/prizes/collatz_gpt_prefix_allocation.py; transcript outside Git. No larger start scan, actual-law shape sweep or asymptotic fit. Collatz critical-boundary count loss remains PART; review the identity and boundary convention, then target actual prefix allocation.
