@@ -38,6 +38,23 @@ UNEXPECTED CHECK (the owner's note that antimatter falls the same way as matter,
   not repelled by the lock. The mean length of the lock that follows a forward kick equals that after a backward
   kick to within 10%. Confidence 0.4.
 Also reported, without predictions: the true kick sizes, and the whole-run charge including off-wheel stretches.
+
+OUTCOME, 2026-10-08 (by 16:00 BST; 28 s and 58 s). RD's seed 4256 (300 trials): RB-C1 PASS, and RB-C2 PASS with no
+  kick lifted differently from kick_of, so RD's +301 is exact and not an artefact of its sign convention. Fresh seed
+  5601 (600 trials, 139,972 chained kicks over 11,318,622 steps): RB-C1 PASS. RB-C2 FAILED by one kick, so its
+  prediction is REFUTED by one. At t = 71 in trial 133 a transient holds a visible 1-gap (gaps 4, 1, 4, 4), where the
+  charge and the phase disagree by 14 notches (delta lambda +4, kick_of -10). It is the first 1-gap seen inside a
+  transient; RV2 saw none in 19,177. Every other kick satisfies the identity exactly.
+  RB-P1 HELD: forward kicks total +257,339 notches and backward -256,497, net +842, z = +0.50, an offset of
+  +2.7e-6 per step. RB-P2 REFUTED: the windows 0 .. 1000, 1000 .. 5000 and 5000 .. T give z = -0.45, +1.08 and +0.15.
+  The counterfactual is the outcome. The balance holds from the first thousand steps, so it is not an equilibrium
+  effect of this kind, and a structural reason is more likely than a statistical one. The unexpected check HELD:
+  the lock after a forward kick lasts 81.0 steps on average and after a backward kick 79.0 (seed 4256: 80.7, 79.0).
+  True kick sizes (seed 5601): forward +4: 43,107, +2: 27,568, +3: 3,067, +1: 2,546, +8: 1,868, +6: 408, +7: 47,
+  +10: 17, +12: 11, +5: 1; backward -6: 19,973, -2: 14,612, -4: 13,952, -5: 8,188, -3: 3,040, -1: 1,567.
+  Post-hoc, a lead and not a result: 87% of kicks are even. From the start of one 2-gap block to the next is
+  6 + 10m steps for m 4-gaps between them, which is 0 mod 4 exactly when m is odd, and the kick is 5 - m. So an even
+  kick keeps the 2-gap on its time class mod 4, and only the 13% of odd kicks move it.
 """
 import math
 import os
