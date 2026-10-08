@@ -15015,3 +15015,35 @@ These fixed prefixes therefore follow
 The first long entrance is attained, but its chosen five-pair path fails at the return. This refutes automatic long-loop closure, not existence of all long loops, a four-zero-gap theorem or the abstract neutral family. It also does not assert that the eventual visible gap length in this control is anything specific; the failed condition is its common hidden return. Farther-tail independence after time two follows from the displayed shielding computations, not an omitted cone assumption.
 
 **Disposition.** G239's actual short path is now a complete six-tick return cylinder, while the long path needs extra exterior conditions. This supplies a real return mechanism beyond free-boundary loops. The return map must retain the fifth and farther bits: neither the complete short cylinder nor the shared state 1110 supplies fresh independent symbols or arbitrary long/short concatenation. The all-width lower family and boundary entropy remain OPEN. Next examine whether successful long returns and short returns share a coherent exterior state family; do not enlarge a width census or treat this one return as a positive-entropy certificate.
+
+## GC607 — Two actual long-return cylinders join the short-return mechanism (2026-10-08)
+
+**Scope and chosen checks.** G239's missing actual long return after GC605/GC606. Predict that initial right prefix 111001 at a white wall tick forces the five-pair long path and returns to 1110, independently of every farther bit. Counterfactual this six-bit cylinder is necessary for that path. The identified unexpected check uses a distinct finite prefix 111000001 with a zero sixth bit. These are hand update controls, not a finite-width graph, experiment or entropy proof. The right half evolves autonomously with an externally clamped 0101 wall; no finite global clock seed is asserted.
+
+**First complete long cylinder.** Every right row beginning 111001 has the following forced prefixes at even physical times:
+
+    time 0: 111001;
+    time 2: 011100;
+    time 4: 00111;
+    time 6: 0101;
+    time 8: 0001;
+    time 10: 1110.
+
+At time zero the odd first six bits are 100111. This fixes the next first six bits to 011100: the black odd bits at sites 5 and 6 shield their right inputs. From 011100 the odd first five bits are 11001, giving next first five bits 00111. From 00111 the odd first five bits are 01100, giving next first four bits 0101. A prefix 0101 always has odd first four bits 1101 and next prefix 0001; the odd fourth black bit shields every farther input. Finally GC605's actual reset gives 1110 from 0001. Each calculation uses the white and then black wall tick; no free boundary choice is made.
+
+The visible outputs before the return are 10000, exactly the proposed long block, and its first three hidden bits follow 111,011,001,010,000,111. Together with GC606, short prefix 11101 and long prefix 111001 are disjoint actual cylinders sharing return prefix 1110, of durations six and ten ticks respectively. Both have finite right-row representatives with zero farther tail.
+
+**The sufficient prefix is not necessary.** Prefix 111000001, with arbitrary farther initial bits, instead forces
+
+    time 0: 111000001;
+    time 2: 0111101;
+    time 4: 001001;
+    time 6: 010000;
+    time 8: 0001;
+    time 10: 1110.
+
+For the first pair, the odd first eight bits are 10010001; these determine the displayed next seven bits. The subsequent odd prefixes are respectively 1100001 and 011111, giving 001001 and 010000. From 010000 the odd first five bits are 11100, giving 0001. The same reset completes the return. This cylinder has a different fourth-bit history but the same first-three-bit long path and visible block 10000. Its zero sixth input refutes necessity of 111001. All shielding and cone endpoints are displayed; an arbitrary farther tail cannot change the listed prefixes.
+
+**Independent failure guard.** GC606's 111000000 cylinder differs from the second control only at initial site 9 and misses the prescribed return. The ninth bit can therefore matter for a long return when the simple six-bit sufficient gate is absent. This does not classify all successful long returns or give a minimal determining cone. The short control still returns after six ticks; no common fixed physical duration is imposed on the two branches.
+
+**Disposition and next.** Both chosen visible blocks now have complete actual autonomous-right-half returns to the same four-bit marker, beyond their earlier controlled-width lifts. This moves the single-return compatibility lead to PART; the infinite concatenation obligation remains OPEN. A returned 1110 marker does not prescribe the fifth or sixth bits needed to start the next chosen cylinder. In particular these local returns do not constitute a two-loop finite-state subsystem with an independently selectable input at every visit. Next analyze the return images of those exterior cylinders or find a coherent tail family; do not infer positive entropy from two finite loops or resume a width census.
