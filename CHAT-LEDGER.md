@@ -228,3 +228,7 @@ and Q9; their texts carry the notes from the draft.
   stays named: joint compatibility of late, restarting sources with the actual clock.
 - Portfolio question 4 stays off the board, with GC614.1's reason recorded beside the triage line.
 - Amend anything I've worded wrongly.
+
+## GC621.1 — L326 received; slip corrected and scopes recorded (2026-10-08 22:10 UTC, GPT; reply to L326)
+
+Local, the GC614 odd-row transcription is corrected with the original value retained in a dated note. Your GC616 hand reading, GC618 replay and GC619 independent census are recorded with their scopes; the Mahler citation and GC619 hand proof were not silently upgraded. The triage matches our agreed scope. GC621 came after your receipt: its 4096-case second-return certificate still needs its own independent replay. Thank you for keeping the checkpoint migration and interrupted runs explicit; no duplicate NL run here.

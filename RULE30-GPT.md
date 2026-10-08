@@ -15188,7 +15188,7 @@ Here each displayed row is its guaranteed initial prefix in increasing physical 
     time 1: 10011110111;
     time 3: 1100100111;
     time 5: 011000001;
-    time 7: 1001101;
+    time 7: 1101101;
     time 9: 0011111.
 
 Each next displayed even prefix follows by the local rule left XOR(centre OR right), using the black wall on the second tick. At the rightmost displayed even site, the last displayed odd bit is one in each pair, shielding its undisplayed right neighbour. Thus no farther-tail assumption or omitted exterior choice is needed. The odd prefix at time nine has seven sites; old time-eight site 7 is black, making its odd site-7 bit one for every site 8. This fixes the seventh return bit as well.
@@ -15196,6 +15196,9 @@ Each next displayed even prefix follows by the local rule left XOR(centre OR rig
 The first three even bits follow exactly 111,011,001,010,000,111; site 1 before the return spells 10000. This is a complete successful long loop from the simple 111001 cylinder. Its return has marker 1110, but fifth and sixth bits are zero. Therefore it is neither next short cylinder 11101 nor simple next long cylinder 111001. Its seventh bit is zero, so it also does not immediately refute or ensure the alternative sufficient long cylinder 111000001: sites 8 and 9 are not prescribed by this proof.
 
 **Independent controls and disposition.** GC609's corrected short-return proof makes every short cylinder return into the union of the next short and simple long cylinders. This countercontrol proves that union is not invariant under both returns, despite the common marker and both single-loop realizations. It does not show that the next visible gap cannot be two or four, exclude all successful long cylinders, or rule out a smaller invariant tail family. A finite right-row representative is obtained by a zero farther tail, with no finite global wall-seed claim. Next any constrained construction must address long-return exterior compatibility explicitly, or use a different complete state family; do not revive unrestricted G239 choices or infer entropy from these finite loops.
+
+
+**Correction and reading (Local L326, commit 4cf4cf55).** The original printed time-7 odd prefix was 1001101; it is 1101101. The second odd bit is 0 XOR(1 OR 0)=1. The subsequent even prefix and conclusion used the correct bit and are unchanged. Local reports all even prefixes and the complete long path replayed on 40,000 random farther tails; GPT did not rerun that reported sample.
 
 ## GC615 — Length-resolved NL rates and the certified channel ceiling (2026-10-08)
 
@@ -15334,3 +15337,5 @@ The builder assigns one scalar status from the master section. E2's label litera
 **Finite certificate versus proof scope.** These are exhaustive evaluations of the complete finite dependence cone, not tail samples used as an asymptotic argument. For any infinite right row with the fixed thirteen-bit prefix, its initial sites 14 through 25 are one of those 4096 cases. The local rule prevents any farther initial bit from affecting site 5 by time 20. Therefore the complete finite census, together with locality and GC619's hand proof of the first two long loops, certifies that every row in this cylinder returns to 11101. Correctness of the implemented exhaustive evaluation is single-party and awaits independent replay; the list/packed agreement is an internal independent-implementation control, not another worker's verification.
 
 GC606's hand short-cylinder theorem then gives a complete third short loop for every farther tail. Thus 1110010001000 realizes LLS, with visible block 10000 10000 100 and closing marker after 26 physical ticks. By GC609 that short return feeds one of the two simple next-loop cylinders; this does not allow an independently chosen fourth gap or determine its type. The extension advances actual finite concatenation, not infinite compatibility, entropy, Q1 or Q6. Bears on: nothing yet, the existing physical-return side road. Next an independent replay and a hand explanation of the forced fifth bit would be preferable to another larger cone census.
+
+**GC616/GC618/GC619 receipts (Local L326, commit 4cf4cf55).** Local hand-checked GC616 carry equations, white-digit obligation and endpoint, without reading the cited Mahler page. Local independently replayed GC618 on actual and generic rows and GC619 over all 32 cone extensions with random farther tails. GC619 census is now independently replayed; its hand proof remains assigned to Cloud. The reported run-data interruption was recovered by byte-identical checkpoint migration; full NL remains Local. No GC621 replay is claimed by this earlier receipt.
