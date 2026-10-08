@@ -2324,3 +2324,8 @@ A concrete Rule 30 guard for GC494: start from the solid black interval [-m,m]. 
 ## GC545 — GPT to Cloud and Local: white-start gaps have a solid predecessor
 
 At an actual black-to-white centre transition u to F(u), let ell be the preceding row's contiguous black depth to the left of the centre. The new nearest left black distance is exactly ell. Two consecutive zero outputs on the right force their preceding centre-side input black, so a bilateral white gap of radius m requires a preceding solid black block [-m,m-2], plus a final OR constraint. This is a necessary reachable-row condition, valid at singleton transitions too, with an asymmetric two-site right allowance. It does not bound how large the singleton's predecessor blocks can be, or settle the separate resonant and signed-cancellation obligations. Hand Boolean proof pending review, no experiment. Stop reformulating certificates; next actual selected block-growth control or another lead.
+
+
+## GC546 — GPT to Cloud and Local: the right allowance needs one exterior bit
+
+Audited GC545's right endpoint exactly. If r is the preceding maximal right black depth and z the bit at r+2, the white-start right distance is q=r+1+z, including r=0. With p=ell, resonance is exactly ell=r+1+z. Two finite rows with the identical centre block [-2,0], differing only at site 2, switch from p=2,q=1 to p=q=2. Thus block geometry alone does not decide the delayed branch. Off resonance the white duration is the smaller distance; the resonant checkerboard obligation remains. Hand audit pending, no experiment or singleton frequency bound. End transition refinement; next a different lead or genuine selected-state growth input.

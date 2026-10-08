@@ -13606,3 +13606,24 @@ In particular, at a white-run start whose nearest black distances both exceed or
 **Independent controls and limits.** GC544's solid interval [-m,m] has ell=m and evolves to p=m,q=m+1, saturating the left identity. For the singleton's first black-to-white transition, u has support {-1,0,1}; ell=1 and v has support {-2,-1,2}, so p=1,q=2 and the right endpoint OR is 1. The asymmetric endpoint allowance survives this smallest control. An infinite solid left half has no finite ell and evolves with no left black arrival; it is outside the finite-row hypothesis.
 
 **Outcome and next.** Long white-start empty gaps cannot arise without long preceding black spatial blocks. This removes arbitrary white-row gap patterns from the transition analysis, but establishes no upper bound on these solid blocks along the singleton, no control of resonant post-arrival matches and no signed cumulative cancellation. Selected spatial-block growth remains OPEN. Stop certificate reformulation; the next useful input must actually constrain these predecessor blocks on the selected orbit, or change lead.
+
+
+## GC546 — Exact right endpoint and resonance at a white start (2026-10-08)
+
+**Scope and prediction.** Bounded proof audit of GC545's necessary-only right endpoint, not a new duration scan. Predict an exact formula with one exterior bit. Counterfactual the maximal preceding solid block alone determines resonance is false. Unexpected check: that single exterior bit can switch a nonresonant arrival to a tied arrival. Hand Boolean proof, no experiment, selected growth estimate or novelty claim; independent review pending.
+
+Keep GC545's last-black row u and first-white row v. Let r>=0 be the largest right depth with u_0,...,u_r black, so u_(r+1)=0; let z=u_(r+2). Finite rows ensure r exists. For 1<=i<=r, the left input and the OR are both 1, hence v_i=0. At the next two sites,
+
+    v_(r+1)=1 XOR z=1-z;
+    v_(r+2)=z OR u_(r+3).
+
+If z=0, the first of these is black, regardless of the second. If z=1, the first is white and the second is black. The new nearest right black distance therefore is exactly q=r+1+z. This includes r=0, where the interior range is empty. Combining with GC545 gives p=ell and
+
+    m=min(ell,r+1+z);
+    resonance iff ell=r+1+z.
+
+Off resonance, GC496 gives the whole white duration exactly m. On resonance the separate GC513 post-arrival checkerboard tail is still required; this formula does not bound it. A resonant centre is necessarily displaced toward the right end of its preceding block: its left depth exceeds the right depth by exactly 1 or 2. This is a geometric restriction on any actual singleton transition too, with no frequency claim.
+
+**Independent controls.** A solid interval [-m,m] has ell=r=m,z=0, hence p=m,q=m+1, recovering GC544. For support {-2,-1,0}, ell=2,r=0,z=0 yields p=2,q=1 and white duration 1. Add only site 2: the maximal centre solid block remains [-2,0], but z=1 gives p=q=2 and white duration at least 3. Direct one-step rows give the same distances: without the added site, v has support {-3,-2,1}; with it, support {-3,-2,2,3}. Thus a block-only resonance test fails on genuine finite rows, without claiming either is a singleton run-start row.
+
+**Outcome and next.** GC545's two-site right allowance is now exact and both cases are realized. A selected-state argument must retain the exterior bit z as well as block geometry. No selected block-growth bound, tie frequency, post-arrival duration bound or signed cancellation is established. End this transition audit; next a different open lead unless a genuine singleton dynamical estimate becomes available.

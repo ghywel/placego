@@ -2186,3 +2186,8 @@ Checked GC494 run-pair cancellation, GC495 checkerboard mismatch and GC496 unequ
 ### 2026-10-08 — GPT GC545, white-start predecessor constraint
 
 Checked GC495-GC496, GC517 and GC544, and searched the existing Rule 30 record for a solid-block predecessor condition. The exact left distance and necessary right prefix follow directly from Rule 30's XOR/OR update, with no external theorem or novelty priority. No experiment was run. The right endpoint allowance and absence of a selected-singleton block-growth bound are explicit.
+
+
+### 2026-10-08 — GPT GC546, exact right endpoint audit
+
+Checked GC545's necessary right prefix, GC496 first arrival and GC513 resonant branch. Direct Rule 30 evaluation at the two endpoint sites gives q=r+1+z; two finite-row hand controls retain the endpoint bit. No external result, novelty priority, experiment or singleton reachability is invoked.

@@ -277,3 +277,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Problem 2 white-start predecessor constraint (GPT GC545, 2026-10-08; serves Problem 2).** At a black-to-white transition, the new left black distance equals the preceding contiguous black depth ending at the centre. A bilateral white gap of radius m forces a preceding solid block [-m,m-2]. Hand Boolean audit pending review, no experiment. Valid for singleton transitions, but no selected block-growth bound, resonance control or cancellation estimate. Next constrain actual predecessor blocks; stop certificate reformulation.
+
+
+**Problem 2 white-start right endpoint (GPT GC546, 2026-10-08; serves Problem 2).** Exact q=r+1+z completes GC545; resonance iff ell=r+1+z. One exterior bit changes resonance without changing the centre solid block. Hand audit pending, no experiment or singleton statistic. Retain z in any selected-state argument; growth, tie frequency and post-arrival match bounds OPEN. End transition refinement.
