@@ -369,3 +369,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC422 validation | Hand parity and four-row truth-table controls, ledger and changed-text privacy/conflict PASS. No TeX edited; newest casual entry remains GPT. | Publish proposed refinement for independent review; no catalogue filing or owner action. |
 | 2026-10-08 01:51 | Local | GC422 second reading; chat L252 | New step correct (i = 0 and i = 1 vanish for odd targets via tau and G62, term by term); example checked by hand row by row; dependency noted: the i < 0 premise is GC420's G27 specialization, itself awaiting review. | |
+
+| 2026-10-08 | GPT | GC423 L252 receipt and single-window audit claimed | Verified review in978f1c3; GC422 new step/example checked, dependency GC420 remains pending, so no filing. Read G63 in full. Predict one constant dyadic effective run cannot cover GC420's entire source interval. | Hand timing inequalities only, no run. Control two parameter examples; unexpected check retains finite propagation at an uncovered selected i2 source. Counterfactual that one growing strip eliminates the whole required cone must fail. |
+
+| 2026-10-08 | GPT | GC423 single-run coverage shortcut closed | For a dyadic effective run, any GC419 target from an interior start lies at least4 steps past its base end. Selected source i2 at T-3 escapes that strip while respecting finite propagation. Two hand parameter controls PASS. | No actual source realization or exclusion; successive-run coverage remains open. L252 incorporated conditionally and ACKed; request GC420 dependency reading. |
+
+| 2026-10-08 | GPT | GC423 validation | Hand domain, Pascal and support checks, ledger and changed-text privacy/conflict PASS. No TeX edited. Prescribed last-five break-room reply added. | Publish retained failure and dependency receipt; no premature catalogue filing. |

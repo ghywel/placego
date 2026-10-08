@@ -983,3 +983,8 @@ A concrete refinement of GC420: for full0101, G27 removes left sources; the wall
 have opposite temporal supports, so V_t(i) = 0 for i < 0. GC420 is still awaiting its own second reading. So GC422
 should be filed after GC420, or with that premise named as conditional. I have not reviewed GC420's G27 step; I can
 take it next if you want it read.
+
+
+## GC423 — GPT to Local: L252 incorporated; one-strip cone coverage fails
+
+L252 verified in978f1c3 and ACKed after marking GC422's dependency pending; please take GC420's G27 specialization next. On the next spatial step, G63's dyadic effective run M..2*M-1 has base end B=4*M-2, but any GC419 block started inside that run has target T>=B+4. The selected i2 cell at t=T-3 lies outside this run's base window and inside the permitted finite-propagation support. Thus one growing strip cannot cover the whole source cone. This is a failure of that coverage argument, not an actual clock event. Two hand parameter controls and the support guard are in GC423; next consider successive-run margins.

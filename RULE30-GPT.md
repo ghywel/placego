@@ -11198,3 +11198,23 @@ Thus the centre prefix is0101. The source at time0,site2 is active and has coeff
 **Unexpected guard: invisible does not mean absent.** The same initial seed has V_0(1)=1, yet K_2(1)=0. Its first pair really activates and is invisible to the odd time3 centre. This separates the new causal statement from G62's allowed timing and prevents replacing it with a claim that the near-wall dynamics are linear.
 
 **Remaining gap.** The new bound removes two source columns, whereas GC420's allowed cone width grows. G63's wider forced strips may remove more sites on interior windows, but a proof must retain their temporal margins and cannot apply them to the entire cone without checking each source time. No finite-witness exclusion or prize result. Next inspect that window/cone intersection, with the counterexample above as a guard against discarding admissible right sources.
+
+
+GC422 second reading (GC423,2026-10-08): Local L252 in978f1c3 checks the new i0/i1 parity step and every finite example row. Its use of GC420's left-source specialization remains pending that dependency's reading. Do not file the combined result as fully reviewed yet.
+
+
+### GC423 — A single G63 run cannot cover the dyadic source certificate (2026-10-08)
+
+**Hand failure audit; no experiment.** For G26's empty-left stream, take an ordinary constant effective run m=M,...,2*M-1 with M a positive power of2. Its physical base window is[A,B]=[2*M,4*M-2]. G63 eliminates source V_t(i), i>=1, only where the adjacent forced columns share the narrower window[A+2*i,B-2*i]. This is the intersection of the stated windows for columns i and i+1, not an extension beyond their endpoints.
+
+Suppose s is inside[A,B]. For the full0101 finite-seed case, GC419 chooses dyadic D>=R+s+2. GC420 selects an odd black time T in{s+D,s+D+1}. Therefore
+
+    T >= s+D >= 2*s+2 >= 4*M+2 = B+4.
+
+The selected target is already beyond this run's entire base window, even before G63's spatial margins. In particular the coefficient-selected source cell (t,i)=(T-3,2) lies after B, since T-3>=B+1, and has K_2(2)=1. G63 for this run supplies no equation eliminating that source. GC422's removal of i0 and i1 does not eliminate it either. Thus the shortcut that this one growing strip covers the whole required source cone is REFUTED by its stated time domain. This is not proof that the actual source fires there, or that every later strip leaves the same cell available.
+
+**Independent arithmetic controls, checked by hand.** R=1,M=1,s=2 gives D=8,T=11,B=2 and candidate source(8,2). R=3,M=2,s=4 gives D=16,T=21,B=6 and candidate source(18,2). Both use the least allowable power, pick the odd member of the block, and leave the candidate outside the base window. They are parameter checks, not actual infinite-clock configurations.
+
+**Unexpected finite-propagation guard.** A selected extreme ray can be outside the actual finite row and therefore cannot serve as an admissible event. The candidate above avoids that error: t>=4*M-1>=3, so its two product sites2 and3 both lie inside the permitted finite-propagation interval[-R-t,R+t]. This only means support bounds do not rule it out; it does not certify black cells or compatibility. Its Pascal coefficient is exactly1, not merely an inclusion in the geometric cone.
+
+**Outcome and next step.** Stop this single-run coverage shortcut. Applying successive strips could be useful, but must check each source time and the shrinking windows, including transitions between runs; no such all-time coverage is established. G214 remains a temporal necessity, GC420 a pending causal certificate, and GC422 a reviewed new parity step with one pending dependency. Finite global compatibility remains open.
