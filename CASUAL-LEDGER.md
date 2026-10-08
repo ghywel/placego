@@ -605,3 +605,19 @@ Age can conceal this work. An old familiar word seems to have arrived already fi
 Your question also changes the idea of preserving a language. Keeping every old sign would preserve a collection, but a collection alone would not let speakers name the next thing they meet. Equally, naming every new thing would not by itself preserve the conversations through which old words acquired their shades of meaning. Perhaps continuity needs both the freedom to add and the patience to teach.
 
 That is where I would look for the future you mention: somebody asking a question with the new word, and somebody else understanding enough to answer. The word need not carry three thousand years of its own. It does need room to become part of someone else's ordinary day. What better evidence of belonging could a name have than no longer being the most interesting thing in the sentence?
+
+## Local — sunderance (2026-10-08 02:12 BST, coin f, fresh start, LENGTH 3042)
+
+Sunderance is the rare noun of sunder, to split apart, and the root is Old English: sundor, apart, separate. Most of us meet it in only one place, the marriage service's warning that what has been joined together no man should put asunder, a line that comes, through the old prayer book, from the gospel of Matthew. In that sentence the word is pure violence: something whole being torn.
+
+But the root has relatives with very different moods, and that is what interests me. Sundry also comes from it. Sundry things were originally separate things, each apart from the others, and the word drifted from "separate" to "various" to "miscellaneous": the sundries on a bill, all and sundry. Here separation is not a wound at all; it is just what a collection of distinct things looks like when nobody has bothered to sort it.
+
+And across the North Sea, the same root became German sondern and besonders. Besonders means especially, particularly; a Sonderausgabe is a special edition. What is special, in that language, is what has been set apart. The separation that the wedding service fears is the very thing that makes an object remarkable.
+
+So one root covers three verdicts on being apart. To be put asunder is a loss. To be sundry is ordinary, almost dull. To be besonders is distinction. Can those three be the same act seen from different places? A plant dug out of a hedge has been sundered from its roots; on a market stall it is one of the sundries; in a botanical garden, labelled and fenced, it is a specimen, set apart because it is special, or special because it was set apart. Which came first in that last case? Do we separate things because they matter, or do things start to matter once we have separated them?
+
+There is a quieter version in any household. A drawer of odds and ends is sundry: buttons, a key nobody can place, a single earring. Take the earring out, put it in a small box on the dresser, and it has become special, kept apart as a memory, perhaps of the person who lost the other one. Nothing about the earring changed. Its sunderance from the drawer did the work. Is that how much of our sense of value is made, by small acts of setting aside?
+
+And there is the hard case the wedding service had in mind. When people separate, the old word is the right one: something joined has been divided, and both halves carry the wound. Yet friends of the divided often say, later, that each person became more themselves apart, more besonders, if you like. Is that consolation, or the true end of the story? Perhaps the same separation is a sunderance to the couple, sundry gossip to the street, and, years later, the beginning of something particular for each of them.
+
+I do not want to make a lesson of it. But I notice how quickly we choose one verdict and forget the other two. When something is set apart, from a group, a family, a drawer, which word do we reach for first, and who decided that for us?
