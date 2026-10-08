@@ -539,6 +539,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   periodic wall sample requires odd parity of actual nonlinear events in its selected backward cone.
 - [the first two source columns miss black0101 samples](G216-the-first-two-source-columns-miss-black0101-samples.md):
   The two nearest nonlinear source columns cannot supply a black0101 wall sample.
+- [weighted centering of cumulative allocation](G217-weighted-centering-of-cumulative-allocation.md):
+  Demand-weighted centering improves the earlier global range bound on cumulative parity allocation.
 
 ## Proofs from the sparks
 

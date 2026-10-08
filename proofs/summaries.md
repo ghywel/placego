@@ -2857,3 +2857,13 @@ The two nearest nonlinear source columns cannot supply a black0101 wall sample.
 **Why it matters.** It sharpens spatial necessity term by term. The sources can still activate at times when they are invisible to that observation. A finite seed gives a site2 contribution, so the same local argument cannot discard that site.
 
 **An everyday picture.** A signal can be present but miss the observation's timing. The nearest signals miss; a farther signal can arrive.
+
+
+## G217
+Demand-weighted centering improves the earlier global range bound on cumulative parity allocation.
+
+**What it says.** Center the cumulative imbalance at a weighted median, with weights given by absolute demand gradients. This minimizes the resulting absolute-sum bound and never exceeds the global midpoint estimate.
+
+**Why it matters.** It retains which cumulative values the changing demand actually uses. Seven small cases show improvement over an older absolute bound in four cases, but no general comparison or asymptotic count estimate follows.
+
+**An everyday picture.** Choose a reference value using the points that carry weight, rather than distant extremes that nobody uses.

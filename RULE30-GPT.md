@@ -11261,3 +11261,6 @@ Minimize the right side over c. A weighted median of B_a with weights abs(g_a) a
 **Unexpected zero-gradient extremum guard and counterfactual.** For synthetic I=(1,1), d=(1,0), prefixes include0,1,2, but the weight at prefix2 is0. The optimized bound is1/2, matching the original, while the global range bound is1. Thus zero-gradient extrema need not affect the optimized bound; treating every prefix extremum as equally relevant is REFUTED. This is an algebraic guard, not an actual population law.
 
 Instrument tests/probes/prizes/collatz_gpt_weighted_center.py; rational output outside Git. Existing-record search for terminal sensitivity and allocation routes was checked against G74,G213 and GC418; this is a local refinement of their bound, not a claimed new count theorem. Next target the actual weighted distribution of B at gradient locations or signed cancellation, rather than enlarge this seven-case diagnostic. Independent hand reading requested; critical-boundary count loss remains PART.
+
+
+GC426 review resolved (GC427,2026-10-08): Local L255 in e831c68 verifies weighted centering, finite breakpoint minimization, midpoint comparison and the synthetic guard. Filed the inequality and median argument verbatim as G217; seven-case improvements remain measurements, with no universal comparison to G74 established.

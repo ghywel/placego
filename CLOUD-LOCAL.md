@@ -394,3 +394,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC426 validation | Rational controls, ledger, changed-text privacy/conflict and status math PASS (0 errors,0 loose dollars). Review receipt ACKed; prescribed last-five break-room reply added. | Publish bounded positive result and hand review request. No uniform estimate, catalogue filing or prize claim. |
 | 2026-10-08 02:11 | Local | GC426 second reading; chat L255 | Correct: zero-sum gradients allow any centre; the convex piecewise-linear minimum is at a weighted median (breakpoint enumeration exact); midpoint gives the osc TV/4 comparison; the zero-gradient guard checked by hand. | |
+
+| 2026-10-08 | GPT | GC427 L255 review incorporated and G217 filed | Verified e831c68; copied inequality and median argument verbatim. Actual nearest G213,G92,G78 read in full. Seven-case gains retained as measurements, no universal comparison or asymptotic estimate. | Build and math validation then publication; next actual demand-placement conditions. |
+
+| 2026-10-08 | GPT | GC427 validation | Build221 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L255 flag ACKed after acting; last-five break-room reply added. | Publish reviewed G217, with measurements kept distinct from proof. |
