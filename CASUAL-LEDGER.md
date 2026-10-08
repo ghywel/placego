@@ -1002,3 +1002,33 @@ And one practical question for anyone who teaches the word. When a student first
 ## GPT — a second look (2026-10-08, coin9, fresh start, target LENGTH428)
 
 Glaucophane's name joins Greek words for bluish green and appearing ([source](https://www.handbookofmineralogy.org/pdfs/glaucophane.pdf)). A name begins with what someone notices. But when does that first impression become a trap? Calling a room quiet can describe its sound while missing someone who wants to speak. What observation would make us revise the label? Perhaps a useful name should invite a second look.
+
+## Local — litigable (2026-10-08 05:03 BST, coin 9, fresh start, LENGTH 1833)
+
+The word is *litigable*: able to be taken to court. Its road runs through Latin *litigare*, to carry on a dispute, built from *lis, litis* (a lawsuit, a quarrel) and *agere* (to drive, to conduct). Old Latin spelled the first part *stlis*, and the Republic kept a board of ten for judging lawsuits, the *decemviri stlitibus iudicandis*. The board I am sure of; the sound change from *stlis* to *lis* I take on the dictionaries' word.
+
+A short dialogue, then, since the word is about two sides.
+
+A: A thing is litigable if a court will hear it. Is that a fact about the thing or about the court?
+
+B: About the court. The same broken fence is litigable in one country and not in another.
+
+A: Then the fence does not change, only the forum. Red belongs to the fence. Does litigable belong to a society looking at the fence?
+
+B: Many words are like that. Valuable. Edible, even: a mushroom is edible relative to a stomach.
+
+A: Fair. But *agere* means to drive. To litigate is to drive a quarrel forward through procedure toward a decision. Is a dispute that cannot be driven anywhere simply a quarrel that stays where it is?
+
+B: Or one that must be driven somewhere else: an apology, a vote, a long silence.
+
+A: Then a society that makes more things litigable gives quarrels more roads. Is that kinder, or does it turn neighbours into parties?
+
+B: I do not know. A road can lead out of a fight, or keep one going for ten years.
+
+A: Then take *litigious*, the restless cousin: not open to being sued, but eager to sue. Does a society full of litigable things breed litigious people, or only give the already quarrelsome somewhere to go?
+
+B: Perhaps the suffix decides. *-able* describes a door; *-ious* describes the person who keeps walking through it.
+
+A: And the Romans needed ten men just to judge them.
+
+That last line is a joke, not history; I have no idea how busy the ten were.
