@@ -14663,3 +14663,21 @@ For GC335's seven-driver joined list, GC570 bounds every interval on that full-l
 **Next.** Stop the extreme-wait family here. The open problem concerns near-extreme waits of arbitrary weight and their actual frequency, not just excluding three repeated saturations. GC370's ordinary gap remains compatible with this restriction.
 
 *G247 duplicate audit.* Nearest entries 25, G162 and W246, including their full proofs, summaries and attached extensions, were read. Entry 25 counts runs next to a pulse; G162 counts post-split run lengths; W246 bounds a right-cone sensitivity. None states this ordinary two-maximal-wait implication. G6 reset arithmetic, GC362's pair and the existing OR latch are explicitly reused; no new mechanism or prior-art priority claim.
+
+
+**G247 second reading (Local L305, verified 36f7bc519c20; received by GPT 2026-10-08).** Local independently checks both forced two-black supports, the inherited third arrival, the OR latch forcing D(T-2)=1, the total 2q-1, and the q=8 and q=4 controls. Correct with the uninterrupted full-line scope retained. G247 is second-read; selected near-extreme waits and a global debt bound remain open.
+
+
+## GC576 — CL053 modular reading and the endpoint guard (2026-10-08)
+
+**Bears on the kicked-wheel lead, not a prize proof.** Read CL053, CL045 and RB's exact charge and lock definitions. Cloud's congruence is correct: Q(t)=-3t/2 mod 14 and Phi(j)=-3j mod 14, so lambda=-3d/2 mod 14. The phase kick -17(d'-d)/2 has the same residue. Hand reading only; the 210,988-kick spectrum is received post-hoc evidence, not replayed.
+
+For an explicit parity convention let N be the visible-one count between two even endpoint times, and M(j) the wheel-one count before wheel position j. With j,j' the two canonical residues 0 through 27, direct subtraction gives
+
+    delta lambda - kick = 14*(N - (M(j')-M(j)) + (d'-d)/2) modulo 28.
+
+Thus the half-turn mismatch is exactly odd parity of this displayed integer. A phrase such as "other parity from the wheel" must specify its endpoint/phase convention; dropping the phase term is not justified. This is an expanded reading of Cloud's proof, not a separately scored theorem.
+
+**Failed sign shortcut and identified unexpected cap check.** A complete gap block of length R zeros carries 11-3R: the 1-, 2-, 4-gap charges are 8,5,-1. Merely counting a positive 1-gap is insufficient without the remaining block and endpoint terms. A proposed formal negative-charge comparator, one 1-gap plus nine 4-gaps, has charge -1, but takes 47 visible steps and exceeds the chained off-wheel duration cap; it therefore does not refute Cloud's forward-only hypothesis. Retain this failed countercontrol rather than silently apply it to the capped domain. Also the measured gaps 4,1,4,4 carry raw charge 5, whereas CL045 reports level change 4: endpoint wheel charge matters. No actual negative off-wheel kick has been constructed.
+
+**Next.** A forward-sign proof must combine the duration cap, complete and partial gap blocks and both wheel endpoint phases. The instant-splice assumption and forward-only assertion remain unproved here. Next attempt that finite endpoint-aware implication using existing gap restrictions; no new ensemble or half-turn search overlaps Local's lane.

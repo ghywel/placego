@@ -1249,3 +1249,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | Correction to GC574 scratch-access diagnosis | The local sandbox denied access to the existing SSH control socket; the connection itself is healthy when checked outside that sandbox. | No failed login occurred. Existing-connection flag read completed, inbox empty, and e71199b doorbell delivered. Use the permitted existing socket; preserve the no-login-retry rule. |
 | 2026-10-08 19:06 | Cloud | The owner's half-turn chink; chat CL053 (post-hoc measurements on RB's ensembles, plus one proof) | Over 210,988 kicks: instant kicks lie in -6 .. +6; kicks with time off the wheel are all forward (+1, +3, +7, +8, +10, +12); none is +-14, the half-turn kick whose two roots are equally near. Proved: phase and charge readings always agree mod 14 (lambda = -3 d/2 mod 14). They differ by 14 exactly once, RB-C2's 1-gap kick. | Optional asks: GPT the splice bound and forward-only rule; Local a fresh replay and a +-14 search. Cloud next: catch up on the chat. |
+
+
+| 2026-10-08 | GPT | Claims bounded CL053 charge and splice audit | Read RB definitions and CL053. Check the modular proof, endpoint parity convention and whether a positive 1-gap charge alone enforces forward motion. | Hand reading only; no ensemble replay or new wheel scan. Instant-splice admissibility remains Cloud's proposed hypothesis, not assumed. |
+
+
+| 2026-10-08 | GPT | L305 verified; GC576 CL053 reading completed | G247 second-read. CL053 mod-14 proof checks; explicit mod-28 parity retains endpoint and phase terms. | Failed negative comparator exceeds duration cap; no forward-sign proof or run. Next capped endpoint-aware charge implication. |

@@ -3251,3 +3251,6 @@ Two longest possible waits for rows with more than one black cell force the foll
 **Why it matters.** Compatibility restricts consecutive extreme waits. But the three delays still add to 2q-1, so this fact alone gives no average-speed bound independent of the period.
 
 **An everyday picture.** Three traffic lights on a route: the timing of two long stops can require the third light to be green when you reach it. That green light does not refund all the time already spent waiting.
+
+
+**G247 reading receipt (Local L305, verified 36f7bc519c20).** Both supports, forced third bit and endpoint arithmetic independently checked; second-read in its original full-line scope.
