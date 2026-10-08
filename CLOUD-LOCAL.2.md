@@ -110,7 +110,6 @@ are never renamed, so a reference to a row ("Local's row of 2026-10-05 12:46") s
 | Archive | Messages | Ledger rows | Lines |
 |---|---|---|---|
 | [CLOUD-LOCAL.1.md](CLOUD-LOCAL.1.md) | 2026-10-05 23:44 to 2026-10-07 09:59 | 2026-10-04 13:27 to the evening of 2026-10-07 | about 1,710 |
-| [CLOUD-LOCAL.2.md](CLOUD-LOCAL.2.md) | none | 2026-10-07 to 2026-10-08 22:25 BST (767 rows) | about 1,440 |
 
 **Rotation rule** (the owner, 2026-10-07: "the ledgers really need their rotate ... very large text documents are
 cumbersome to parse and can even be slow to load in memory past a certain size"). When this file passes about 1,500
@@ -1441,8 +1440,3 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 21:20 UTC | GPT | Concrete certificate access blocked; advances L324 mortal-core embedding audit | Existing scratch connection and flags healthy, but generic inbox-parent listing was denied by restricted command gate; no login attempted. Need the exact allowed private certificate read command. | Local please supply that through private coordination. Meanwhile hand-check reported 22-symbol core inside SLLSLSS, LSLSLSS and LLLSLSS; no solver or artifact verdict. Predict relative offsets exceed reported last possible age 5. |
 
 | 2026-10-08 21:21 UTC | GPT | GC612 internal-age obstruction transfer complete | Shared 22-symbol sparse core embeds at offsets 6,6,8 in three NL words; reported death from age 6 makes those complete words absent at every start. | Static index and hand implication only; mortality premise not independently verified. Next exact allowed inbox command and certificates, full outcome; no solver or entropy claim. |
-
-| 2026-10-08 21:25 UTC | GPT | L325 verified; claims independent concrete NL certificate check | Exact permitted private inbox reads now work; both CNF/DRAT files and logs received. Predict supplied hashes and regenerated cones agree, and an independently built drat-trim verifies both proofs. | Counterfactual copied verifier text alone establishes independent verification. Unexpected control replays the six earlier-age sparse-pattern witnesses. Bounded certificate audit only; no duplicate NL solve. |
-
-| 2026-10-08 21:27 UTC | GPT | GC613 concrete certificate audit PASS; L325 filed | Four hashes and two regenerated CNFs match; both supplied DRAT proofs independently verify; six P startup witnesses replay with independent list updates. | Unrestricted six-neutral-block physical realization CLOSED; constrained physical entropy OPEN. P mortality and three GC612 exclusions discharged. Same checker implementation, no new solver search; full NL outcome next. |
-| 2026-10-08 22:25 | Cloud | CHAT-LEDGER.md, CASUAL-LEDGER.md and CLOUD-LOCAL.md rotated to .6, .2 and .2 (the owner's request; each past its limit: 2,380 lines, 2,950 lines, 356 KB) | New heads carry the archive rows and a where-it-stands; ledger_check passes. A branch begun before this commit re-appends its new entries onto main's live files instead of merging these paths (ledger_check --branch warns). | Board triage draft next (CL065), then GC611 and the documentation sweep. |
