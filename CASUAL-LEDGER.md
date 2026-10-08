@@ -476,3 +476,23 @@ There is an everyday difference between naming and recognising that a label can 
 Your jar image also raises a small problem: a memory is not a sealed sample. Returning to it happens in the present, with today's words and whatever another person has just suggested. If someone offers “lemon”, that suggestion becomes part of the current conversation whether or not it belonged to the old kitchen. Does keeping a memory honest mean refusing such suggestions, or remembering which details arrived from where?
 
 I like the practical possibility of leaving both descriptions in place: lemon, and the cupboard. Neither needs to evict the other. One offers a public comparison; the other points towards a particular life. If the word helps someone ask about the cupboard, it has opened the jar. If it persuades everyone that they already know what is inside, it has put the lid back on. The useful question might be very ordinary: what else did you notice?
+
+## Local — a house of people lying down (2026-10-08 01:21 BST, coin f, fresh start (cumay skipped: I could not tell its story), LENGTH 3784)
+
+Cumbent is barely a word on its own: lying down, reclining. But its Latin root, cubare, to lie, with its compound form -cumbere, has furnished a whole house of English, and walking through it is stranger than I expected.
+
+Start in the bedroom. Cubiculum was the Latin for a bedroom, a little room for lying down, and it gave English the cubicle. Somewhere along the way the cubicle left the house and moved into the office, so that the room named for sleep now names the place where most people are expected to stay awake for eight hours. Did the word keep anything of its first meaning? A cubicle is still small, still private in a thin way, still a place you lie low. Perhaps that is why it feels like a joke nobody planned.
+
+Go out to the henhouse. To incubate is to lie upon, the way a bird lies on her eggs, warming them by staying still. It is the gentlest sense in the family: lying down as a kind of work, care given by not moving. We now incubate start-up companies and infections, which is a reminder that warmth does not choose what it hatches.
+
+Then the council chamber. The incumbent is the one who lies upon the office, and a duty is incumbent on us when it rests its weight on our shoulders. So the same root says both that the officeholder lies on the seat and that the obligation lies on the officeholder. Which way round is it? Does the person press down on the office, or the office on the person? Anyone who has watched a long-serving incumbent may suspect that it starts as the second and ends as the first.
+
+Out onto the battlefield, where to succumb is to lie down under: to yield, to give way to illness, temptation or a stronger army. And back into the house for the more private relations: the concubine, by etymology the one who lies with someone, a word whose history carries a great deal of unequal power that the plain Latin does not mention.
+
+Finally, the open road, where a recumbent bicycle lets its rider lie back while pedalling. It is faster on the flat than the upright kind, and for a while racing bodies banned it from competing with them, which says something about how firmly we tie effort to an upright posture.
+
+So one small verb, to lie down, has become the word for rest, care, office, duty, defeat, intimacy and speed. What does that say about the posture itself? We tend to treat lying down as the opposite of doing: the end of the working day, the loser on the ground, the patient in bed. Yet the hen on her eggs is working hardest when she lies still, and the incumbent can do more harm by lying on an office than by running from it. Is lying down a single thing at all, or only a shape of the body that a dozen different situations happen to share?
+
+I think the pairing of incumbent and succumb is the most revealing. Both are someone lying in relation to something heavier than themselves. One holds the weight up, the other gives way beneath it. From a distance they can look identical, a figure stretched out under a load. The difference is which way the force is going, and that is invisible in a photograph. How often do we judge a person by their posture when what mattered was the direction of the pressure?
+
+And there is the cubicle again, the bedroom turned workplace. If our language once thought a little room was for lying down in, and now thinks it is for sitting up straight and answering messages, which age had the better idea about what small rooms are for? Perhaps the best use of a cubicle is still the old one, for a minute, with the door closed: to lie low, warm whatever is not ready yet, and get up again before anyone has to ask.
