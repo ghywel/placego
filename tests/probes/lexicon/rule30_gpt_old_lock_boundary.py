@@ -20,6 +20,20 @@ UNEXPECTED OLD-U: report state-set differences even if kick tables coincide;
         equal output alphabets must not be reported as equal hidden histories.
 REFUTED-BY: any control failure, cap, or contrary blind outcome is retained.
 OUTCOME: NOT RUN. Publish this header before executing once in the next block.
+
+OUTCOME ADDENDUM, 2026-10-08 19:10 UTC, GPT Intel CPU, one run after 62736df1:
+  5.350276 CPU seconds, exit 0; no cap. OLD-C1 PASS, OLD-C2 PASS, OLD-CF rejected.
+  OLD-P1 HELD: class39, kick -9 survives both projections.
+  OLD-P2 REFUTED: 55 transitions additionally allow class19, kicks -8..-4.
+  OLD-U: 252 extra shorter-history states, 94 at terminal phase18 and158 at30;
+         only phase18 adds a departure alphabet (class19). Other phases equal.
+  Exact 55-transition table:
+    2:[5,6,7,8,10],12:[4,5,6,7,8,9],19:[-8,-7,-6,-5,-4],
+    22:[3,4,5,6,7,8],32:[2,3,4,5,6,7],39:[-10,-9,-8,-7,-6],
+    42:[1,2,3,4,5,6],49:[-11,-10,-9,-8,-7],52:[-6,-5,-4,-3,-2,-1].
+  Exact 56-transition table is identical except class19 is absent.
+  Shared KL projection only. Nonempty sets do not establish a true right half
+  or the required full 56-observation new lock; this fit uses21 new observations.
 """
 import json
 import resource

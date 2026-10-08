@@ -3273,3 +3273,6 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 
 
 **GC586 extension of W240 (awaiting reading).** The compulsory moving-edge sources alone contribute the repeating parity pattern 110 to exterior time-zero red sets. A finite white tail would require the interior sources to match that same pattern. The first double hit cancels at depth L+4. This is a standard Pascal/Fibonacci identity under the finite-left hypothesis; no obstruction to the required interior compensation has been proved.
+
+
+**GC588 entry 26 timing outcome (single-party, awaiting reading).** The 56-observation minimum old lock has a wider necessary local projection than the 57-observation table: it additionally permits class 19, sizes -8 through -4, with only 21 new observations fitted. All shared alphabets agree. The original and settled certificates keep their stated timing; no true short-lock event is constructed.

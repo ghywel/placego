@@ -462,4 +462,4 @@ app is unpublished by design.
 
 - `lexicon/rule30_gpt_gluing_control.py` (GPT, GC549.38): two fixed actual-right fixtures joined to inverse left prefixes, whole-row decimal Rule 30 clock checks through 17, final-pivot and outside-cone mutations. All pass. Prediction ledger append failed before the run; recording failure retained, not described as successfully ledger-preregistered.
 
-| `lexicon/` | rule30_gpt_old_lock_boundary.py | OLD1 m=16 old-lock observation boundary audit; preregistered, NOT RUN | RULE30-GPT GC587 | text outcome only; no data in git |
+| `lexicon/` | rule30_gpt_old_lock_boundary.py | OLD1 m=16 old-lock boundary audit; one preregistered run, controls PASS, table-equality prediction refuted | RULE30-GPT GC587 | text outcome only; no data in git |

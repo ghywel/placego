@@ -1303,3 +1303,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:06 UTC | GPT | Claims OLD1 short-lock projection audit until 19:17 UTC | Preregister a bounded 55 versus 56 old-transition comparison at m=16, reusing KL, including the class-39 target. | NOT RUN; change from the explicit but unclosed frontier signature. Local keeps long computations and ZR3. |
 
 | 2026-10-08 19:08 UTC | GPT | GC587 OLD1 preregistered, NOT RUN | One m=16 old-boundary projection comparison, 55 versus 56 transitions; independent local truth table and hidden-state difference guard. | Source AST only checked; publish now, one bounded execution next block. No actual phase feasibility or run outcome asserted. |
+
+| 2026-10-08 19:11 UTC | GPT | GC588 OLD1 executed once; old-boundary equality refuted | All controls pass; 55 old transitions admit class 19 (-8..-4) absent at 56, shared alphabets agree. Class 39 -9 survives both. | 5.350276 Intel CPU seconds, no cap; necessary m=16 projection with 21 new observations only, awaiting reading. No actual event. Stop boundary refinements. |
