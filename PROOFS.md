@@ -9066,3 +9066,30 @@ For subsequent emitted bits, direct substitution in F gives
     image({0010,0011},1)=empty.
 
 Only states 1000 and 1001 in A can emit zero: the former needs appended bit one and gives 0001; the latter gives 0010 or 0011. Of the next set, only 0001 emits one, giving 0010 or 0011. Both remaining states emit zero regardless of the appended bit. Hence the two-step row cannot begin 11100011. This excludes the spatial tail 011 at sites 6..8 after its prefix 11100. It is a concrete farther-site predecessor obstruction; the five-site canonical prefix alone omits it.
+
+*Independent reading of G236 (Cloud, 2026-10-08 15:43 BST; chat CL044).* Checked by hand and replayed by brute
+force over all initial rows of 18 sites in `rule30_cloud_review_g236.py`, which shares no code with GPT's. The
+formula: F is y_(j-1) XOR (y_j OR y_(j+1)) with y_(j-1) = a XOR (b OR c), y_j = b XOR (c OR d) and
+y_(j+1) = c XOR (d OR e), and it agrees with two literal steps on all 32 windows. The entry: with x_0 = 0 and
+x_1 .. x_4 = 0001 the time-1 sites 1 .. 4 are 0011 and the clamped wall is 1, so the time-2 sites 1 .. 4 are 1110.
+The fifth site is 1 XOR (y_5 OR y_6) with y_5 = NOT (z OR u) and y_6 = z XOR (u OR v). That vanishes exactly when
+z = 0 (then y_5 OR y_6 = (NOT u) OR u OR v) or u = v = 0, which gives the state set A as stated. The subset steps,
+state by state: 1000 emits 1 XOR e, so zero needs e = 1 and gives 0001; 1001 emits 0 for both e, giving 0010 and
+0011; 1010, 1011 and 1100 emit 1 for both e. Then 0001 emits 1 for both e, giving 0010 and 0011, while 0010 and 0011
+emit 0 for both e. So the image after 11100 then 0 then 1 is {0010, 0011}, and neither can emit 1. G236 is correct as
+stated.
+
+*A sharpening (Cloud, same reading): the premise 0001 is forced.* Keep the wall white at time 0, black at 1 and white
+at 2, and let the time-2 row begin 111, with no condition on the initial row. Then w_1 = 1 XOR (y_1 OR y_2) = 1
+gives y_1 = y_2 = 0. Since y_1 = x_1 OR x_2, x_1 = x_2 = 0; then y_2 = x_3 = 0; and w_2 = y_3 = x_4 = 1. So every row
+whose two-step image begins 111 starts 0001, and G236 applies to it. *Corollary.* In a period-2 wall form (the wall
+white at even times, black at odd ones), at every even time t >= 2 sites 1 .. 8 never read 11100011, whatever the
+row at time t - 2 was. The same lines show that the prefix 110 never occurs at an even time t >= 2. If w_2 = y_3 = 1,
+then w_3 = y_2 XOR (y_3 OR y_4) = 1. So the branch 1101* that checkpoint 27 removes with the preceding visible zero
+is excluded by evolution alone. The preceding zero's role is to certify that the row is at least two steps old.
+Likewise the visible word never contains 11: a black column 1 at an even time makes y_1 = 1 two steps later, so
+w_1 = 0. Hence the shortest absent visible factor 01000010001001 (CL041) is absent if and only if 1000010001001
+never begins at an even time t >= 2. The symbol before any later start is 0, because 11 is absent. This restates
+the open target without its leading zero; it does not prove it. The brute force also lists 65 minimal missing
+prefixes of the walled two-step image up to length 10, beginning 110, 0110, 1010, 1111. 11100011 is one of the nine
+of length 8. No prize claim.
