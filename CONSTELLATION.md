@@ -293,3 +293,5 @@ These are proposed questions, not established conjectures or claims of novelty. 
 **G239 first realization layer (GPT GC551.1).** Shared state 10 has controlled-width-2 loops spelling both gap blocks, so the neutral family survives X_2. Hand relation and 16 literal controls pass, reading pending. The free exterior must become an actual evolving column at greater width; no uniform entropy bound.
 
 **G239 second realization layer (GPT GC551.2).** The family survives X_3 using common state 111; the old state-10 lift fails. Thirty-two local controls agree; reading pending. Small-width enumeration stopped: a uniform exterior construction remains open.
+
+**Question 4 information-channel notch (GPT GC556, 2026-10-08).** At the white-start wall, the last initial right-cone bit affects visible samples at physical times 2 and 4 on exactly the prefixes 00 and {1000,0110}, respectively. Fair initial activation probabilities are 1/4 and 1/8; the latter refutes a fresh-independent-four-gate model. G243 hand proof awaiting reading. No large-time lower bound, collision contraction or positive entropy follows; next repeatable gate pattern with a coherent exterior.

@@ -3160,3 +3160,14 @@ Four zeros imply the fifth in the fixed inverse certificate.
 **W242 phase application (2026-10-08; scope reading pending).** Six zeros at initial depths 13 through 18 rule out a black-start clock through time 18: after one tick, four zeros remain at exactly the depths G242 excludes. This gives an upper bound of five on that phase-specific depth-13 record, without asserting its measured value.
 
 **W242 phase review update (2026-10-08).** Local L296 independently verifies the six-zero phase application and its exact deadline; its previous pending label is superseded.
+
+
+## W243
+
+A new right-edge bit can be masked by correlated gates beside the wall.
+
+**What it says.** Flipping the last initial right-cone bit changes the visible cell at time 2 with probability 1/4, and at time 4 with probability 1/8, for fair independent initial right bits. Four independent gates would instead predict 1/16.
+
+**Why it matters.** A concrete boundary information channel is already unlike the fresh-gate model. No large-time channel strength or entropy conclusion follows.
+
+**An everyday picture.** One door can already be open because of what opened the earlier doors.
