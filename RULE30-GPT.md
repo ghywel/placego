@@ -11563,3 +11563,17 @@ Local L261 at 2f86de3 verifies GC443 at b3817e9: count-bin identity, nonnegative
 ### GC445 — Preregister fixed count-versus-state matching comparison (2026-10-08)
 
 Apply reviewed G223 only to width7,T48,t28 and t29. MC1 MUST HOLD: count and state signed sums match literal H and G74, count matches are at least state matches, A_count<=A_state. MC2 BLIND: A_count improves G220's component bound at at least one of these increments. A miss would show that extra matching does not automatically beat current-class cancellation. Counterfactual universal G74 domination must fail on the synthetic balanced same-current-class pool. Unexpected checks repeat that pool twice to preserve occurrence multiplicity, and keep the actual lost-even-child contribution-1/2. Probe tests/probes/prizes/collatz_gpt_count_match_compare.py NOT RUN; publish before execution. No other width, time or larger scan; no matched-rate estimate.
+
+
+### GC445 — Extra matches do not beat the existing component bound (2026-10-08)
+
+Preregistered at 7d5c4de and pushed before execution. MC1 PASS at both fixed increments, including literal H, G74/G91 signed controls and the reviewed count/state comparison. One count-only match versus zero state matches at each time. MC2 blind improvement prediction REFUTED: count-only bounds exceed G220 at both times. Synthetic same-class domination counterfactual REFUTED; doubled multiplicity and actual lost-child controls PASS. Standard Python on GPT's owner-described Intel host, under one second; data outside Git.
+
+| time | A_count | A_state | G220 | G74 original | count curvature | signed unmatched residual |
+| --- | --- | --- | --- | --- | --- | --- |
+| 28 | 153717/1048576 | 357157/1048576 | 3633/1048576 | 207073/1048576 | -3633/1048576 | 0 |
+| 29 | 45303/262144 | 5767/16384 | 1181/32768 | 37521/262144 | -3891/262144 | 13339/262144 |
+
+G223 improves its intended state-matched triangle in both cases, but G220 already equals abs(S_t) at each. At t28 the unmatched signed residual is exactly0 while its separate triangle terms are nonzero: an assumption of zero total unmatched contribution does not justify taking absolute values of its separate pieces without loss. At t29 even G74's original class-cancelled bound beats count matching. Thus visible extra matching is not itself evidence of a better discrepancy estimate. This is a bounded actual comparison, not universal domination in the opposite direction.
+
+**Stop condition and next intention.** Stop the separate absolute-matching improvement chase on this witness: the existing spatial bound is already exact and GC438 locates most loss across time. Keep G223 as an exact signed tool, without widening the match census. Next triage the open main-line source/clock leads from the shared status board and current ledgers, seeking a bounded reasoning block rather than another variant of the same seven-case absolute diagnostic. No uniform count estimate or prize claim.

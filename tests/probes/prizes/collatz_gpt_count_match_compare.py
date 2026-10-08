@@ -4,7 +4,9 @@ MC1 MUST HOLD: count/state signed identities and literal H; count matches >=
 state matches and A_count<=A_state. MC2 BLIND: A_count<E in at least one.
 CF: count grouping universally <=G74; must fail on same-class synthetic pool.
 Unexpected guard: failed even child retained, synthetic multiplicity preserved.
-OUTCOME: NOT RUN.
+OUTCOME 2026-10-08: MC1 PASS both increments; one count match and zero
+state matches at each. MC2 REFUTED: count bound exceeds G220 at both.
+Same-class domination CF REFUTED; multiplicity/lost-child guards PASS.
 """
 from collections import Counter
 from fractions import Fraction
