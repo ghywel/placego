@@ -17,7 +17,10 @@ PREDICTIONS (Local's, published before the run):
   KT2M-P1 (blind, confidence 0.6): at least one of the three is SAT at N = 448 within its cap.
   KT2M-P2 (blind, confidence 0.7): none of the three is UNSAT at 448 (class 42's 560 UNSATs all came within minutes;
           a quick UNSAT here would be the same signature and would point to death before 560).
-OUTCOME: not yet run.
+OUTCOME: not yet run. First launch 2026-10-08 05:34; the owner's laptop shutdown killed it with nothing recorded.
+Its class-52 case had finished at about 07:07 (its instance file was deleted then), but KT2's batch() reported in
+submission order, so the answer waited behind the two class-32 cases and was lost. batch() now writes each result
+as it finishes. Relaunched from an empty checkpoint at 15:22 with the same tasks, caps and predictions.
 """
 import os
 import subprocess
