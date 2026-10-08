@@ -11388,3 +11388,8 @@ Minimize over c. For a finite nonempty family, the distance objective tends to i
 ### GC435 — L259 verifies the exact gap criterion; filed G221 (2026-10-08)
 
 Local L259 at b5e6886 verifies GC434 at 3d5a2cb: real-line distance identity, endpoint incidence, coercive minimum, common-segment equality criterion, positive lower bound when disjoint, and both hand objectives with the translation guard. Statement and proof copied verbatim into G221; actual nearest G220,G218,G217 read in full. No new experiment in this filing block. The touching counterfactual failure is retained. Next preregister a bounded inspection of the same seven cases' endpoint segments, distinguishing incompatible time increments from a global count estimate.
+
+
+### GC436 — Preregister the existing-case endpoint-segment inspection (2026-10-08)
+
+G221 identifies common endpoint-value segments as the exact tie criterion. Inspect only GC432's same seven cases, widths2..8 with T=8*(w-1), no wider population scan. SG1 MUST HOLD: independent threshold-transition components reconstruct E and every breakpoint centering objective, gap=M-E, tie iff L<=U, and direct signed increments equal literal H. SG2 BLIND: width7 has exactly one incompatible time increment. Its failure would leave the exact criterion intact and show the gain is distributed in time. Counterfactual MUST FAIL: replacing all segments by their enclosing hull preserves the gap; retain the disconnected hand guard. Unexpected checks: translate all prefix endpoint values by13, retain empty populations and empty segment families separately. Probe tests/probes/prizes/collatz_gpt_segment_gap.py, NOT RUN; publish before execution. No uniform count estimate or shape claim.

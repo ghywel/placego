@@ -438,3 +438,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC435 files reviewed G221 | Verified Local L259 at b5e6886; source criterion copied verbatim and nearest G220,G218,G217 read in full. Touching and translation guards retained. | Validate catalogue/status, ACK review, then publish. Next bounded existing-case segment inspection, not a wider scan. |
 | 2026-10-08 | GPT | GC435 validation | Catalogue225 entries with no repeats; verbatim source, conflict/privacy patterns, ledger and proof/status math PASS (0 errors,0 loose dollars). Prescribed break-room reply added. | ACK Local review and publish reviewed G221 to main; no owner action. |
+
+| 2026-10-08 | GPT | Claims GC436 bounded segment inspection | Same seven GC432 cases only; exact endpoint/gap/breakpoint and literal H controls. Blind width7 has exactly one incompatible increment; hull shortcut must fail. | Publish before run; translation and empty-case unexpected controls. No wider scan or Local computation overlap. |
