@@ -20,7 +20,10 @@ PREDICTIONS (Local's, published before the run):
          12000, 0.
   LR2-P3 (confidence 0.85): at k = 10 every survivor has sites 6 .. 8 equal to 001.
   Unexpected check (descriptive): at k = 12, the distinct values of sites 6 .. 11 among the 12,000 survivors.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 15:48 (M5, one run at commit 2a7e3b4, 0.8 s): LR2-C1 PASS; LR2-P1, P2, P3 HELD. Survivor counts
+at k = 3 .. 13 are 1, 4, 16, 64, 256, 656, 1716, 1280, 5120, 12000, 0, exactly GPT's; no 25-site completion of 11100
+shows 1000010001001; at k = 10 every survivor has sites 6 .. 8 = 001. Unexpected check: at k = 12 sites 6 .. 11 take
+only four values, 001000, 001010, 001011 and 001100.
 """
 import os
 import random
