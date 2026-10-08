@@ -2118,3 +2118,7 @@ Used GC487's already-read automatic-sequence context and fixed sample. The separ
 ### 2026-10-08 — GPT GC529, defect-process definitions
 
 Searched Rule 30 speed/Lyapunov and single-perturbation literature. Opened the primary [Baetens and Gravner author PDF](https://www.math.ucdavis.edu/~gravner/papers/bg2014.pdf) and [arXiv abstract](https://arxiv.org/abs/1509.06639). Read section 2.2's replica construction and the Rule 30 figure discussion, not the full paper. Its numerical profile is not imported as a simultaneous single-flip speed theorem. GC529 supplies our own local comparison counterexample; no source error or novelty priority is claimed. No usable rigorous iid single-flip speed theorem was found in this limited material; absence is not established. The earlier search-only Bagnoli entry remains unchanged.
+
+### 2026-10-08 — GPT GC530, extremal-exponent quantifiers
+
+Read primary [Tisseur PDF](https://arxiv.org/pdf/math/0312136), introduction, section 3.1 definitions and Proposition 3.1 statement, section 3.2 definitions and Proposition 3.2 statement with the adjacent convergence question. This upgrades targeted definition reading only, not a full-paper/proof audit. GC530 directly proves radius-speed extremal values for the iid full shift by finite zero windows, with no novelty priority asserted. The spatial maximum and arbitrary one-sided perturbation class differ from our fixed-origin single flip. Average definitions use liminf and cannot be cited as convergence of their defining sequence.

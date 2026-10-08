@@ -13192,3 +13192,23 @@ Hence any exact canonical MSB-first DFAO for the singleton trace needs at least 
 Only the initial five background bits at -2 through 2 enter this local calculation, namely (1,1,0,0,1). Hence the embedding also occurs on an iid cylinder of probability 1/32; it is not confined to an iid-null finite background. No asymptotic probability or speed is inferred.
 
 **Outcome and limits.** This refutes pointwise support/count domination by the replica process for our simultaneous two-copy damage. It does not prove its cone endpoints differ, contradict the source's stated profile, or invalidate every Lyapunov notion. Any comparison theorem must specify the process and establish the relevant endpoint relation separately. Next inspect primary definitions of extremal perturbation exponents before importing an existence result; the actual iid single-flip recurrence and speed remain OPEN. Hand scope audit pending independent reading.
+
+## GC530 — Shift-maximized exponents see rare zero windows (2026-10-08)
+
+**Source and scope.** Targeted reading of [Tisseur, Cellular automata and Lyapunov exponents](https://arxiv.org/pdf/math/0312136): introduction, section 3.1 definitions and Proposition 3.1 statement, section 3.2 definitions and Proposition 3.2 statement with the adjacent convergence question. Not a full-paper or proposition-proof audit. The extremal quantities maximize over spatial shifts and allow arbitrary one-sided perturbations. Average quantities are defined using a liminf of normalized integrals; their definition does not assert convergence of that sequence. Neither definition is the fixed-origin single-flip front.
+
+**Prediction and counterfactual.** Predict the extremal quantities for Rule 30 on fair iid rows attain radius speed 1 in both directions. Counterfactual an extremal limit existence theorem establishes our selected pair's speed is unsupported. Unexpected check: the infinite zero row has probability zero, yet arbitrarily long finite zero windows occur somewhere almost surely. This is a hand proof with two independent bounds, not a numerical experiment.
+
+**Definitions used.** Write W_0^+(x) for rows agreeing with x at every coordinate at least 0, and W_0^-(x) for rows agreeing at every coordinate at most 0. Let tilde-Lambda_n^+ be the least nonnegative s guaranteeing agreement at all coordinates at least s, for every allowed W_0^+ perturbation and all updates 1 through n. Define tilde-Lambda_n^- analogously with agreement at coordinates at most -s. Lambda_n^+ and Lambda_n^- maximize these quantities over spatial shifts of x. Radius-one locality gives both Lambda_n values at most n for every row.
+
+**Matching lower bounds on iid rows.** Fix n at least 1. Almost surely an iid row has a translate whose coordinates -2n through 2n are all zero: disjoint windows each have positive probability, so the probability none is zero tends to zero. At this translate flip only site -1. This is allowed in W_0^+. At update n the background output at coordinate n-1 is zero, while the perturbed output is 1. Its entire initial cone [-1,2n-1] lies in the zero window, so outside bits cannot affect the calculation. The isolated seed's rightmost black cell advances one site every update, since the local triple at its next right edge is 100. Any threshold s at most n-1 therefore fails, proving tilde-Lambda_n^+=n there.
+
+For W_0^- flip site 1 instead. At update n the disagreement at coordinate 1-n persists. Its initial cone [1-2n,1] also lies inside the window. The isolated seed's next left-edge triple is 001, with output 1. Any s at most n-1 includes this disagreement in the purported agreement region. Hence tilde-Lambda_n^-=n at this translate.
+
+Taking the countable intersection of the probability-one zero-window events gives, simultaneously for every n,
+
+    Lambda_n^+=Lambda_n^-=n almost surely.
+
+Consequently both corresponding extremal exponents are 1. The radius bound and the explicit isolated-seed light-cone witnesses are separate upper and lower controls. This direct derivation does not rely on importing the proof of Tisseur's existence proposition.
+
+**Outcome and limits.** Spatial maximization selects worst-case finite windows arbitrarily far away. It supplies no typical speed for the actual fixed-origin simultaneous damage pair; GC529 already guards the distinct replica notion. The result is a quantifier audit, with no novelty priority or prize claim, pending independent reading. General iid single-flip recurrence, weighted large-jump control and inward-speed existence remain OPEN. Next inspect a source only if its process actually retains simultaneous damage and the fixed-origin quantifiers; otherwise return to actual front-state reasoning.
