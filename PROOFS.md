@@ -9147,3 +9147,36 @@ From A=B=C=0 obtain U OR V=1 and P=Q=0, hence U=V OR W and V=W OR X. The additio
 Both evolved three-gap branches are exhausted; neither permits the final two-gap. Therefore visible 1000010001001 cannot start from right prefix 11100. Checkpoint 27's exact entry gate forces precisely that prefix after a leading visible 01, so 01000010001001 is absent, now without L288's computational classification premise.
 
 *Validation.* `rule30_gpt_gap_classification.py` checks the three displayed finite implications on 64,64,32 local assignments by literal decimal Rule 30, all passing. The forbidden A=1,B=0 premise fails its derived order control. These are local identity controls, not a new trace census. G237 has Local's independent hand reading in L292; this combined branch proof still awaits its own second reading. No singleton-prize inference.
+
+
+### G239. Neutral gap blocks do not force zero entropy (GPT, 2026-10-08; waiting room)
+
+*Scope.* An abstract binary gap language only. This is a standard equal-length block construction applied to CL045's charge, not a Rule 30 realization or a lower bound for portfolio question 4.
+
+Let S=100 and L=10000. Take the six length-28 words formed by placing one S among five L blocks. Every word has six ones and charge 14*6-3*28=0. Their positions of successive ones distinguish all six words. Arbitrary concatenation therefore supplies at least 6^k distinct length-28k factors in the shift closure X of these concatenations. Thus its topological entropy is at least log2(6)/28 bits per symbol, strictly positive. Equal lengths suffice for this count; no claim about ambiguous variable-length parsing is needed.
+
+For charge Q(n)=14*ones(prefix n)-3*n, each complete S contributes +5 and each complete L contributes -1. Before the short block, complete-block charge runs from 0 down to at worst -5; afterwards it runs from at most +5 back to 0. Within any block its initial one raises charge by 11 and each following zero lowers it by 3. Consequently -5<=Q(n)<=16 for every concatenation prefix, since each 28-symbol group resets charge to zero. Every factor, including factors in the shift closure, has absolute charge at most 21, by subtraction of two prefix charges. Every member of X therefore has density 3/14 with uniformly bounded discrepancy, a stronger requirement than a limiting balance.
+
+All successive ones are separated by exactly two or four zeros. Hence X avoids 11 and 00000, as well as CL041's 101001,0100101,010010001,0101000101,0101010000: each of these last five contains an internal one-zero or three-zero gap. G238's 01000010001001 contains an internal three-zero gap and is also avoided. Thus these finite necessary restrictions together with bounded charge still permit positive entropy abstractly.
+
+*Unexpected check and counterfactual.* The stronger bounded-prefix requirement holds, not merely density at group endpoints. There are uncountably many distinct one-sided concatenations but only countably many eventually periodic binary words; some concatenations are not eventually periodic. Exact charge balance therefore does not force periodicity either. No experiment was run. Additional Rule 30 predecessor constraints may exclude this entire construction; their absence here is precisely the missing realization obligation. No statement about the actual wheel's entropy, kick drift or singleton trace follows.
+
+*Duplicate audit.* W239 nearest older entries G168,G48,G126 read in full. G126 uses the same standard equal-length block entropy argument for a different ternary image; G168 concerns potential reserves and G48 affine lifts. This application adds exact neutral binary gap blocks and bounded discrepancy, without a novelty claim or a restatement of their conclusions. Initial audit missed the nonstandard heading; corrected the heading and reran successfully.
+
+
+*Second reading of G238 (Local, 2026-10-08; L293).* Verified by an independent hand reading of both branches, including the constrained D,E equations and their contradiction with X=0. Local also checked checkpoint 27's previously unread entry gate: visible 01 followed by the four-gap forces canonical 11100. Together with L289, G237, GC503 and the black-row identity, the fourteen-symbol absence now has a complete independently read hand proof. The earlier finite fact had three independent computational instruments (Cloud RRL, GPT continuation, Local LR2); those records remain retained. This note supersedes G238's pending label; the detailed reading is L293, not a new run.
+
+
+**G239 extension: its entire abstract family survives controlled width 2 (GPT, 2026-10-08; awaiting reading).** This is a finite-width realization, not an autonomous infinite right half. Let the current two-site state be (a,b), with wall 0, and let free exterior column 3 take values u,v on the two updates. The odd pair is (a OR b, a XOR(b OR u)); the next wall is 1. The next even pair is therefore
+
+    (1 XOR ((a OR b) OR (a XOR (b OR u))),
+     (a OR b) XOR ((a XOR (b OR u)) OR v)).
+
+Varying u,v yields the complete relation
+
+    00 -> {10,11,01}; 01 -> {00};
+    10 -> {00,01};    11 -> {00,01}.
+
+Consequently state 10 has loops 10,01,00,10 and 10,01,00,01,00,10. Their visible bits between visits to 10 are 100 and 10000. Every succession of two- and four-zero gaps can concatenate these loops, choosing the free exterior inputs separately for each edge. In particular G239's six neutral length-28 blocks and every infinite concatenation have a controlled width-2 realization. Shift invariance supplies the shift closure too. Thus h(X_2) is at least log2(6)/28, but this gives no uniform lower bound as width increases.
+
+*Checks and limits.* Prediction of a shared black state holds. All 16 source/input assignments agree between literal decimal Rule 30 and the paired formula, and their four successor sets match the hand split. The unexpected hidden-neighbour check retains state 01 rather than collapsing all white samples: it is needed for the four-gap loop. As a further scope control, fixing both exterior inputs to zero removes edge 00 to 01 and this four-gap loop. The preregistered wider-extension counterfactual is unsupported: at width 3 those exterior bits become interior and must obey a new Rule 30 equation, which the width-2 graph never checked. No assertion that every extension fails, or succeeds, is made. Next identify a compatible exterior coding or an actual obstruction, retaining that equation; do not extrapolate this graph to all widths. This is an extension of the same G239 guard, not a new numbered lead.
