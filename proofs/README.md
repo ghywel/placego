@@ -563,6 +563,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   square prevents a particular neighbouring black pair two steps later.
 - [column3 predecessor gates prune the dyadic stencil](G227-column3-predecessor-gates-prune-the-dyadic-stencil.md):
   The next column has a short timetable inherited from its required past.
+- [even column2 up-gates remove column4 dyadic sources](G228-even-column2-up-gates-remove-column4-dyadic-sources.md):
+  The fourth column's candidate source times miss the required predecessor times.
 
 ## Proofs from the sparks
 

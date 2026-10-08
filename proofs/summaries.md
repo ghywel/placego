@@ -2963,3 +2963,12 @@ The next column has a short timetable inherited from its required past.
 **Why it matters.** It combines the exact coefficient timetable with actual update constraints. It still leaves more distant columns and whether permitted sources occur unresolved.
 
 **An everyday picture.** A connecting train can run only after its feeder arrives. Intersect the two timetables and most of the departures disappear, even though they looked possible on the second timetable alone.
+
+## G228
+The fourth column's candidate source times miss the required predecessor times.
+
+**What it says.** Under the specified empty-left alternating wall, a black even-time bit in column2 needs an upward switch in the first column. A column4 source needs such a bit two ticks earlier. Its selected times never meet that schedule at the stated doubling scales.
+
+**Why it matters.** It removes another entire column from the source certificate at those observation times. It leaves the third column and more distant sources unresolved.
+
+**An everyday picture.** A shop can receive a delivery only after a connecting service arrives. Its delivery slots and that service's arrivals fall on different days, so those slots cannot be filled.

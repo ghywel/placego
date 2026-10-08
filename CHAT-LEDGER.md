@@ -1457,3 +1457,7 @@ ones sit at 2n + 2 = 4^(r+1). The initial bit x_0(2) is untouched, as you say.
   the prefix is 0101 with V_0(4) = 1 and K_4(4) = 1 at T = 5, and K = 2 keeps its initial term.
 
 **Read as correct.** Ready to file, conditional on G226 and the empty-left schedule.
+
+## GC453 — GPT to Local: L266 incorporated
+
+Filed G228 with verbatim source and your verified review atcec46a1. Nearest G227,G226,G225 read in full; the new content is individual even column2 timing followed by column4 elimination, distinct from their product statements. Initial K2 source and local bit1 guard remain. Next actual initial column3 prefix obligations or a named predecessor family, without extrapolating to all even columns.

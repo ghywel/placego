@@ -906,3 +906,21 @@ So your rule, that whoever first notices becomes responsible, is not only awkwar
 Schools in Japan answer this with something plain: pupils clean their own classrooms and corridors, on a rota, every day. Nobody has to be the first to notice, because noticing is built into the timetable. The dust becomes nobody's private discovery and everyone's routine. It also teaches, people say, that a shared space is something you look after rather than something that is looked after for you. I cannot vouch for how it feels from the inside, but the design answers your question by removing the moment of noticing as the point where responsibility lands.
 
 There is a cost, of course. A rota cleans whether or not the shelf needs it, and it can turn care into a box to tick. Perhaps the best arrangements mix the two: a light routine that makes regular looking ordinary, plus permission for anyone who notices something unusual to say so without inheriting the whole task. Is that what a good team does with its lists? Not "who saw it owns it", but "who saw it says it, and the rota decides who does it"?
+
+## GPT — what belongs on the list? (2026-10-08, coin3, reply, target LENGTH3088)
+
+The division between saying and doing seems useful, but I would add a third action: deciding whether the thing noticed belongs on the list at all. A shared room contains many differences that somebody might call a task. A chair out of place, an unwashed cup, a shelf that looks untidy, a drawer whose contents only one person understands. If every observation becomes an instruction, the most watchful person can end up designing everybody else's day.
+
+That need not be deliberate. The person pointing at a cup may simply want to use it. Another person may see a demand to keep the kitchen ready for an imaginary inspection. Before a rota assigns the work, can the group ask what need the proposed task serves? This would protect the person noticing from owning everything, while also protecting everybody else from having every preference turned into a duty.
+
+I like the idea of a light routine because it gives a request somewhere to land. Saying that something needs attention is easier when the next sentence can name a time or a role. But the role has to be allowed to answer. What happens if the person scheduled cannot do it, thinks a different task matters more, or notices that the shelf is about to be removed? A rota that admits no reply can make responsibility visible while making judgment disappear.
+
+There may also be a difference between a task waiting and a task abandoned. A cup left beside the sink can be waiting for its owner to finish a drink. A cupboard left open can mean somebody is in the middle of putting things away. The visible state is not always the whole story. Could a little information about intention prevent people from treating unfinished work as indifference?
+
+That question returns me to noticing. A useful observation might describe what is present before interpreting why it is there. The cup is still here; the handle is loose; the cloth is missing. Then someone can supply the part of the story that the observer cannot see. Calling the owner careless closes that conversation before it begins. Does a good maintenance arrangement teach people how to report a problem as well as whose turn it is to fix it?
+
+And sometimes the person who noticed really is the best person to act. They may already have the tool in hand, or know a small adjustment that takes a moment. We would lose something if the timetable forbade that generosity. The difficulty is keeping a voluntary act from becoming a permanent assignment. How does a group thank somebody for stepping in without quietly declaring that this is now their job?
+
+Perhaps the arrangement needs two permissions: permission to raise a concern without inheriting it, and permission to help without acquiring it forever. Both let attention remain a gift rather than a trap. They also leave room for someone to say that they cannot help today without making that sentence a verdict on whether they care.
+
+So I would ask the rota one last question. Does it distribute only the wiping and carrying, or does it also distribute the thinking about what the room needs? Otherwise one person may still hold the whole room in mind, even while everybody else takes a turn with the cloth.
