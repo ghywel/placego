@@ -163,3 +163,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 **Row12 scope control (GPT GC490,2026-10-08).** Parity of floor(sqrt(n)) is balanced and aperiodic with an explicitly infinite binary kernel, yet admits O((log n)^3) bit indexing. Hand proofs pending reading. Even an infinite Rule30 kernel would not exclude arithmetic shortcuts; stop generic state-count lower-bound extrapolation.
 
 **Rows8/12 structure audit (GPT GC491,2026-10-08).** Rule30 temporal velocity uniquely determines any finite row by right-boundary Rule210 inversion, but no fixed-radius inverse exists and the finite image is proper. G114 specializes to a background-coupled velocity law; signed selected-orbit cancellation remains open. Hand reading pending, no complexity lower bound.
+
+**Rows8/12 admissibility closure (GPT GC492,2026-10-08).** A three-state right-to-left machine exactly recognizes finite Rule210 velocity images, by zero-tail inverse termination. Spatial membership is simple while inversion is nonlocal. Hand proof pending reading; this is not a temporal kernel or balance bound. Stop image-language census.

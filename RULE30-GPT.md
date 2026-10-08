@@ -12257,3 +12257,32 @@ Choose a right boundary beyond both supports, put the two rightmost u bits to0, 
 **No bounded local inverse (hand counterexample).** Fix any proposed radius r. The infinite checkerboard with black even sites is fixed by Rule30: triples010 and101 preserve their centre values. Its velocity is therefore identically zero. Truncate that checkerboard to [-r-2,r+2], giving a finite row with u(0)=1. Every radius-one input determining v on [-r,r] still lies inside the checkerboard patch, so v is zero throughout that window. The all-zero finite row also has zero velocity there but u(0)=0. This refutes every uniform fixed-radius inverse, on actual finite-row images. It does not contradict global injectivity: the truncation boundaries give different velocity farther away. Nor does it rule out a faster nonlocal reconstruction algorithm.
 
 **What changes.** Velocity alone has not thrown away information on the finite-row domain; after full reconstruction it can be evolved by G composed with F30 composed with G inverse on the proper image of G. The image is forward invariant because Rule30 preserves finite support. But the inverse cannot be a fixed-radius local rule, and the coupled law retains the background explicitly. The selected singleton orbit lies in this domain at every finite time. Any balance proposal based on its velocity still needs signed orbit-conditioned cancellation; replacing the background by an autonomous Rule210 orbit remains invalid. Next inspect that coupled cancellation rather than infer randomness from invertibility or locality from information preservation.
+
+## GC492 — Exact three-state test for finite velocity admissibility (2026-10-08)
+
+**Bears on.** GC491's actual Rule30 velocity representation and its proper finite image. Complete that scope obligation, then return to signed temporal cancellation. This is elementary finite-row inverse algebra, independent reading pending; not a Rule30 balance or fast-indexing theorem. It uses GC491's recurrence and standard deterministic state merging, with no external theorem or novelty claim. No experiment or Local job.
+
+**Chosen hand checks.** Predict a fixed finite machine recognizes which finite velocity words reconstruct finite rows. Independent controls: zero field and the singleton row's velocity101. Counterfactual every finite velocity word is admissible fails on1. Unexpected: inverse pairs10 and11 have identical future transitions and can be merged for acceptance, even though they are different reconstructed bit pairs. Check all eight pair/input cases before claiming the merge.
+
+**Exact inverse states.** Process velocity sites from right to left, starting beyond its support with pair(a,b)=(0,0). Reading z=v(j) produces x=u(j-1)=z XOR ((1-a)*b) and the next pair(x,a). The full pair transitions are
+
+| Pair | Read0 | Read1 |
+|---|---|---|
+| 00 | 00 | 10 |
+| 01 | 10 | 00 |
+| 10 | 01 | 11 |
+| 11 | 01 | 11 |
+
+These eight entries follow directly by substituting a,b,z, independently of any sampled row. Merge10 and11 into A; call00 C and01 B. The resulting machine is
+
+| State | Read0 | Read1 |
+|---|---|---|
+| C | C | A |
+| A | B | A |
+| B | A | C |
+
+Start at C and accept only C. After the supplied finite word, all remaining velocity cells to the left are0. State C then stays at00, giving a finite preimage. The other states alternate A,B forever (the full pair11 first enters01), so the reconstructed left tail contains infinitely many black cells. Therefore acceptance is equivalent to the existence of a finite preimage. GC491 gives uniqueness. Padding the supplied word by zeros on either end does not change acceptance, so the statement is well-defined for finite fields rather than an arbitrary word boundary.
+
+**Controls and minimality.** Zero stays C and accepts;1 ends A and rejects. The singleton row's velocity has black cells at-1 and1, so its word101 gives C,A,B,C and accepts. More generally two pulses separated by k zero cells give word1*0^k*1 and accept exactly when k is odd; this checks the alternating tail mechanism at every separation by hand. All three states are reachable (empty word,1,10). C is distinguished from the other states by immediate acceptance; A and B are distinguished by continuation1. Thus any deterministic recognizer for this right-to-left finite-word language needs at least three states. This is a spatial admissibility state count, not a time-indexing lower bound.
+
+**Outcome and limit.** The full finite image of Rule210 has a three-state membership test, despite its inverse not being a fixed-radius local map. This illustrates a distinction GC491 needs: nonlocal reconstruction does not imply a complicated membership language. The machine supplies acceptance only; the original inverse recurrence recovers the bits by retaining the actual pair and emitting x. It does not make the selected Rule30 centre trace automatic, turn velocity evolution into Rule210, or estimate its signed non-flipping rewards. The spatial word is a velocity row, not the temporal trace's binary index. This admissibility subproblem is now closed conditionally on the written hand proof; next use the background-coupled law for actual signed temporal cancellation, without adding image-language censuses.
