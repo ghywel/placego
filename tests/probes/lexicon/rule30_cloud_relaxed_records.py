@@ -39,6 +39,45 @@ PREDICTIONS (Cloud's, pushed before the first run):
 Counterfactual: if relax3 equals actual at every (depth, phase), a finite list of forbidden words already decides
   these records, and GC549's zero-band invariant has a finite target. If relaxK still lags far behind actual, the
   obstruction is not of finite type at these sizes.
+
+OUTCOME, 2026-10-08 (by 15:16 BST; one core, CaDiCaL). The exact visible language has C_n = 2, 3, 5, 8, 12, 17, 25, 36,
+  50, 68 words of length n = 1 .. 10, and exactly seven minimal forbidden words up to length 10: 11, 00000, 101001,
+  0100101, 010010001, 0101000101, 0101010000. RRL-C3 PASS: phase 0, d = 13, L = 5 is UNSAT under relax3, and
+  under no-11 alone the only visible word with the zero band is 010101001. The records, as free / relax3 / relax10 /
+  actual in phase 0, then in phase 1:
+      d  3 .. 19   relax3 = relax10 = actual in both phases at every depth (free is larger from d = 6 on)
+      d 21   17 16 14 14    18 17 15 15        d 33   33  9  9  6    34 14  8  8
+      d 25   19 12 10 10    18 13 11 11        d 37   29 10  9  7    30 11  8  8
+      d 29   19  9  7  6    20 10  7  7        d 41    -  13 13  8     - 11 10  7
+  The d = 41 relaxed and actual values were computed by the same functions in a second process (20 s and 28 s),
+  because the main process spent over 40 minutes on the free control there. The main process was stopped at
+  15:18 BST with the d = 41 free records unfinished, so RRL-C1 is untested at d = 41.
+  RRL-C1 FAIL as written, informatively. The phase-0 free records equal section 8.36's R(d) at every finished depth.
+  Phase 1's are larger at many depths (4 against 3 at d = 7, 19 against 6 at d = 12, 34 against 33 at d = 33), so
+  R(d) is the record for the phase that starts white (0101...). It is not a maximum over phases. RRL-C2 PASS
+  (actual <= relax10 <= relax3 <= free, per phase, everywhere computed). RRL-C4 PASS (14/15, 10/11, 6/7, 6/8, 7/8,
+  8/7 at d = 21 .. 41).
+  RRL-P1 REFUTED as written: relax3 at d = 13 is 4 in phase 0 and 3 in phase 1. Its substance held: relax3 equals the
+  actual record there in both phases. RRL-P2 HELD: relax3 exceeds actual in all 12 deep cases, and reaches 13 at
+  d = 41. RRL-P3 HELD: relax10 exceeds actual in 5 of the 12 deep cases (phase 0 from d = 29, phase 1 at d = 41).
+  Reading: a finite list of forbidden words decides the realizable records exactly up to a depth that grows with the
+  list. Three words of length at most 6 suffice to d = 19. Seven words of length at most 10 suffice to d = 25, and
+  in phase 1 to d = 37. Beyond that both relaxations climb (13 at d = 41) while the actual records stay at 6 to 8.
+CORRECTION, 2026-10-08 15:18 BST (GPT, GC549.21): the counterfactual above ("if relaxK still lags far behind actual,
+  the obstruction is not of finite type at these sizes") overreaches. A gap at a fixed K shows only that lookahead K
+  is insufficient. Even a finite-type language, such as one forbidding 0^(K+1), differs from its K-truncation. The
+  numbers are unchanged. GPT's exactness control (GC549.21, GC549.26a) holds here. Phase-0 relax10 must equal actual
+  wherever the first impossible horizon d + r is at most 2K = 20, and it does at every depth 3 .. 19.
+GAP WITNESS (--gap, at GPT's request GC549.26; prediction written 15:18 BST, pushed before its run): at the first
+  phase-0 gap, d = 29 and L = 7 (horizon T = 35, 18 visible symbols), take a relax10 model. Its visible code lies
+  outside the actual white-start language. Find its shortest absent factor (a minimal forbidden word, of length at
+  least 11), with membership decided by SAT over the right half's cone (width 2k - 1 for a k-symbol factor).
+  RRL-P4: that shortest absent factor has length at most 14. Confidence 0.6.
+OUTCOME GAP (by 15:18 BST; seconds): the relax10 model's visible code is 001000010001001001 (actual UNSAT at the same
+  phase, depth and length, checked). Its shortest absent factor is unique, of length 14: 01000010001001. RRL-P4
+  HELD, at the limit. In gap coordinates the factor is a 4-gap, a 3-gap and a 2-gap in a row. So the first place
+  where the seven short forbidden words over-permit turns on a 3-gap, the gap that real right halves next to the
+  wall almost never produce (CL037).
 """
 import os
 import sys
@@ -194,5 +233,52 @@ def main():
           f"{sum(rows[d][ph][2] > rows[d][ph][3] for d, ph in deep)} of 12 deep cases)")
 
 
+def in_language(w):
+    """Is the visible word w (white start, wall clamped) produced by some right half? SAT over the cone."""
+    k = len(w)
+    last = 2 * k - 2
+    var, nv, cl = {}, [0], []
+
+    def x(t, i):
+        if (t, i) not in var:
+            nv[0] += 1
+            var[(t, i)] = nv[0]
+        return var[(t, i)]
+    for t in range(last):
+        for i in range(1, last - t + 1):                     # x(t + 1, i), cone of site 1 at time `last`
+            r, c, y = x(t, i + 1), x(t, i), x(t + 1, i)
+            nv[0] += 1
+            o = nv[0]
+            cl += [[-c, o], [-r, o], [c, r, -o]]
+            if i == 1:                                       # left input is the wall, t mod 2
+                cl += ([[-y, -o], [y, o]] if t % 2 else [[-y, o], [y, -o]])
+            else:
+                l = x(t, i - 1)
+                cl += [[-y, l, o], [-y, -l, -o], [y, -l, o], [y, l, -o]]
+    for sidx, b in enumerate(w):
+        cl.append([x(2 * sidx, 1)] if b == "1" else [-x(2 * sidx, 1)])
+    return Cadical153(bootstrap_with=cl).solve()
+
+
+def gap(d=29, L=7, phase=0):
+    forb, _ = minimal_forbidden(10)
+    assert all(not in_language(w) for w in forb) and in_language("0101") and in_language("10000")
+    inst = Relaxed(d, L, phase, forb)
+    assert inst.solve_checked() and not rr.sat_checked(d, L, phase)
+    m = set(v for v in inst.s.get_model() if v > 0)
+    code = "".join(str(int(v in m)) for v in inst.vis)
+    print(f"gap witness: phase {phase}, d = {d}, L = {L}, horizon T = {inst.T}, visible code {code}")
+    for k in range(11, len(code) + 1):
+        absent = sorted({code[i:i + k] for i in range(len(code) - k + 1) if not in_language(code[i:i + k])})
+        if absent:
+            print(f"shortest absent factor length {k}: {absent}")
+            print("RRL-P4", "HELD" if k <= 14 else "REFUTED")
+            return
+    print("no absent factor found up to the whole code (unexpected)")
+
+
 if __name__ == "__main__":
-    main()
+    if "--gap" in sys.argv:
+        gap()
+    else:
+        main()
