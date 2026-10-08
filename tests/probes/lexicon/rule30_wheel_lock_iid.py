@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rule30_wheel_lock_iid.py: LK, does column 1 next to the clamped 0101 wall lock onto the wheel when the right half is
+"""rule30_wheel_lock_iid.py: LKI (renamed from LK, which rule30_locked_core_lock.py already uses), does column 1 next to the clamped 0101 wall lock onto the wheel when the right half is
 an INFINITE fair random row, as it does for finite right halves (Cloud's RV, RV2, RD)? Bears on GPT's GC563 (the
 history-conditioned prediction error beta_n of the fair ensemble) and on row 6.1. Local's run; predictions pushed
 before it.
@@ -13,19 +13,19 @@ time t is "on the wheel" when column 1 agrees with some rotation of the period-5
 consecutive steps containing t (Cloud's departures() lock rule). T = 2000; the window measured is t = 1000 .. 1999.
 
 PREDICTIONS (Local's, published before the run):
-  LK-C1 (control): finite random right halves of width 16 .. 64 (RV's ensemble) spend most of the window on the wheel
+  LKI-C1 (control): finite random right halves of width 16 .. 64 (RV's ensemble) spend most of the window on the wheel
          (at least 0.7 of the time), as RD's chained locks imply.
-  LK-P1 (blind, confidence 0.5): infinite fair rows also spend at least half of the window on the wheel, averaged
+  LKI-P1 (blind, confidence 0.5): infinite fair rows also spend at least half of the window on the wheel, averaged
          over 200 rows.
-  LK-P2 (blind, confidence 0.5): the empirical entropy of visible 8-blocks starting at even times 1000 .. 1984, pooled
+  LKI-P2 (blind, confidence 0.5): the empirical entropy of visible 8-blocks starting at even times 1000 .. 1984, pooled
          over the 200 infinite rows, is below 0.3 bits per symbol (the support language's count growth gives about
          0.44 at length 10, GC502 and RRL).
   D1 (descriptive): the same two numbers at window 200 .. 399, to see whether the ensemble is still settling.
 Counterfactual: if infinite rows rarely lock, the fresh randomness arriving from the right keeps the wall region
 unlocked, the wheel is a property of finite right halves, and GC563's beta need not tend to zero.
-OUTCOME, 2026-10-08 18:07 (M5, one run at commit 0981b01, 2.3 s): LK-C1 PASS (finite rows on the wheel 0.932 of the
-window). LK-P1 HELD: infinite fair rows are on the wheel 0.953 of t = 1000 .. 1999 (D1: already 0.941 at 200 .. 399).
-LK-P2 REFUTED: pooled 8-block entropy 0.390 bits per symbol, but the test was ill-chosen, since pooling over the
+OUTCOME, 2026-10-08 18:07 (M5, one run at commit 0981b01, 2.3 s): LKI-C1 PASS (finite rows on the wheel 0.932 of the
+window). LKI-P1 HELD: infinite fair rows are on the wheel 0.953 of t = 1000 .. 1999 (D1: already 0.941 at 200 .. 399).
+LKI-P2 REFUTED: pooled 8-block entropy 0.390 bits per symbol, but the test was ill-chosen, since pooling over the
 wheel's 28 visible phases measures phase variety, not unpredictability. Post-hoc and exploratory (400 fresh infinite
 rows, visible symbols at even t = 1000 .. 1998): the conditional entropy H_(k+1) - H_k of the next symbol given the
 last k is 0.67, 0.61, 0.147, 0.132, 0.116, 0.099, 0.099, 0.084, 0.083, 0.082, 0.080 bits at k = 1, 2, 4, 8, 12, 16,
@@ -93,11 +93,11 @@ def main():
     finite = [rng.getrandbits((16, 24, 32, 48, 64)[i % 5]) | 1 for i in range(200)]
     infinite = [rng.getrandbits(T + 8) for _ in range(200)]
     f_frac, f_h = measure(finite, 1000, 2000)
-    print('LK-C1', 'PASS' if f_frac >= 0.7 else 'FAIL', 'finite rows on the wheel %.3f, block entropy %.3f' % (f_frac, f_h))
+    print('LKI-C1', 'PASS' if f_frac >= 0.7 else 'FAIL', 'finite rows on the wheel %.3f, block entropy %.3f' % (f_frac, f_h))
     i_frac, i_h = measure(infinite, 1000, 2000)
     print('infinite rows: on the wheel %.3f, 8-block entropy %.3f bits/symbol' % (i_frac, i_h))
-    print('LK-P1', 'HELD' if i_frac >= 0.5 else 'REFUTED')
-    print('LK-P2', 'HELD' if i_h < 0.3 else 'REFUTED')
+    print('LKI-P1', 'HELD' if i_frac >= 0.5 else 'REFUTED')
+    print('LKI-P2', 'HELD' if i_h < 0.3 else 'REFUTED')
     e_frac, e_h = measure(infinite, 200, 400)
     print('D1 window 200 .. 399: on the wheel %.3f, 8-block entropy %.3f' % (e_frac, e_h))
 
