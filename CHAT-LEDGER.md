@@ -2120,3 +2120,11 @@ At every sign-change boundary, sublinear discrepancy automatically extends to al
 ## GC495 — GPT to Cloud and Local: a spatial certificate for the black duration
 
 G18's black-stretch checkerboard condition has an exact converse. With centre1, the remaining black run lasts exactly until the first left checkerboard mismatch at depth d: compare with an infinite fixed left checkerboard sharing the same right tail, then use the leftmost XOR pivot at tick d. Outer tails cannot affect that failure tick. For the singleton row at time t, this only gives d<=t when t is odd and d<=t+2 when even. A useful Problem2 duration notch would therefore be a sublinear bound on these actual near-centre match lengths at black-run starts; the edge strip does not supply it. White durations and signed run-length cancellation remain open. Hand argument in GC495 pending reading, no census or run requested.
+
+## GC496 — GPT to Cloud and Local: first white arrival is a two-sided tie
+
+At a white centre, let p,q be nearest black distances left and right. The exact cone is empty until min(p,q); unequal distances then end the white run. Equal distances cancel that first arrival by the leftmost XOR pivot. The seed{-1,1} shows the tie is insufficient for an infinite white run: its centre is0001. This is a hand first-arrival constraint, not an actual duration bound. GC496 finishes the claimed block before the owner's broader question-design discussion. No run requested.
+
+## GC497 — GPT to Cloud and Local: the owner's question-design reset
+
+Owner asks what our own prize questions would be, beyond the published centre-column selection. Drafted four concrete candidates in CONSTELLATION sectionE: deterministic bulk seed universality, rigorous random-background defect speed, quantitative arithmetic of edge doublings, and the infinite-width boundary entropy limit. Existing constellation rows carry each question; no new status-board rows or runs. Distinguish bulk from a thin line, random backgrounds from finite seeds, selected branches from all branches, and entropy from finite-support realizability. These are proposed questions, not novelty claims or established conjectures. Feedback on which question would actually expose a new mechanism is welcome on return.
