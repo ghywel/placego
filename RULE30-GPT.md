@@ -13586,3 +13586,23 @@ An independent finite-cone check uses the explicit time-1 support: before m addi
 Since the preceding black duration is always 1 and the following white duration is m, no finite bound w<=f(b) depending solely on b holds over all finite seeds. A uniform two-sided comparability of consecutive opposite-colour runs likewise fails. The first pair's signed black-minus-white length 1-m can be arbitrarily negative, but this is one initial pair in each different orbit, not an asymptotic discrepancy theorem. The linear dependence on seed radius agrees with known finite-support duration bounds. No singleton balance or imbalance is established.
 
 **Outcome and next.** Universal local adjacent-duration coupling CLOSED. A viable GC494 proof must use additional information about the selected singleton's reachable run-start rows, or control cumulative signed residuals without pairwise comparability. Next identify a singleton-specific constraint on the run-start state; stop extending this finite-seed family.
+
+
+## GC545 — A long white-start gap requires a preceding solid black block (2026-10-08)
+
+**Prediction and scope.** Audit a reachable-row constraint at an actual black-to-white transition, after GC544 ruled out duration-only pairing. Predict an exact predecessor certificate for the new row's left gap and a necessary right-prefix condition. Counterfactual these identities give a singleton sublinear gap estimate is unsupported. Unexpected check: the right condition uses pairs of zero outputs and loses two sites, reflecting Rule 30's asymmetry. Hand Boolean proof, no experiment, novelty claim or new family. Independent reading pending.
+
+Let u be the row at the last black tick of a centre run and v=F(u) the first white row. Then u_0=1 and v_0=0 force u_-1=1. Let ell>=1 be the contiguous black depth to the left: u_i=1 for -ell<=i<=0 and u_(-ell-1)=0. For finite rows ell exists. The first left black distance p in v is exactly ell. Indeed for -ell+1<=i<=0 the OR term is 1 and u_(i-1)=1, so v_i=0. At i=-ell the OR term is still 1 but u_(-ell-1)=0, so v_(-ell)=1. This gives the claimed first site independently of the right tail.
+
+There is a complementary necessary condition on a right gap. Suppose v_1,...,v_(q-1) are zero, with q>=2. Then
+
+    u_i=1 for 0<=i<=q-2;
+    u_(q-1) OR u_q=1.
+
+For the induction, if u_(i-1)=1 and v_i=v_(i+1)=0, the first equation requires u_i OR u_(i+1)=1. Were u_i=0, it would force u_(i+1)=1, making the second output v_(i+1)=1, a contradiction. Thus u_i=1. Apply this successively for i=1,...,q-2; the final zero output supplies the displayed OR. For q=2 there is no induction step and the final OR follows directly from v_1=0. No claim of an exact right distance from this necessary prefix alone.
+
+In particular, at a white-run start whose nearest black distances both exceed or equal m>=2, the previous row contains a solid black interval at least [-m,m-2], of length 2m-1, and additionally u_(m-1) OR u_m=1. If p=m exactly, its preceding left boundary is white at -m-1. This is an actual transition constraint, valid also at selected singleton white starts, not a statement that all such predecessor blocks are reachable there. GC517's empty-gap delay min(p,q) is therefore at most ell; a sublinear bound on these preceding left solid blocks would suffice for that delay obligation only.
+
+**Independent controls and limits.** GC544's solid interval [-m,m] has ell=m and evolves to p=m,q=m+1, saturating the left identity. For the singleton's first black-to-white transition, u has support {-1,0,1}; ell=1 and v has support {-2,-1,2}, so p=1,q=2 and the right endpoint OR is 1. The asymmetric endpoint allowance survives this smallest control. An infinite solid left half has no finite ell and evolves with no left black arrival; it is outside the finite-row hypothesis.
+
+**Outcome and next.** Long white-start empty gaps cannot arise without long preceding black spatial blocks. This removes arbitrary white-row gap patterns from the transition analysis, but establishes no upper bound on these solid blocks along the singleton, no control of resonant post-arrival matches and no signed cumulative cancellation. Selected spatial-block growth remains OPEN. Stop certificate reformulation; the next useful input must actually constrain these predecessor blocks on the selected orbit, or change lead.

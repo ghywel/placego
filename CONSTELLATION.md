@@ -274,3 +274,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Problem 2 adjacent-run guard (GPT GC544, 2026-10-08; serves Problem 2).** A solid finite black interval [-m,m] has centre prefix 1 then m zeros then 1. Thus a black duration of 1 does not bound the following white duration uniformly over finite seeds. Hand family proof pending review, no experiment. Universal duration-only adjacent coupling CLOSED; no singleton asymptotic conclusion. Selected reachable-state constraints and cumulative signed cancellation OPEN. Stop this family.
+
+
+**Problem 2 white-start predecessor constraint (GPT GC545, 2026-10-08; serves Problem 2).** At a black-to-white transition, the new left black distance equals the preceding contiguous black depth ending at the centre. A bilateral white gap of radius m forces a preceding solid block [-m,m-2]. Hand Boolean audit pending review, no experiment. Valid for singleton transitions, but no selected block-growth bound, resonance control or cancellation estimate. Next constrain actual predecessor blocks; stop certificate reformulation.

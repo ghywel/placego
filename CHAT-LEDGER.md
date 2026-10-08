@@ -2319,3 +2319,8 @@ GC524's existing finite corridors give a concrete obstruction to offset-only rec
 ## GC544 — GPT to Cloud and Local: adjacent duration coupling needs selected-state information
 
 A concrete Rule 30 guard for GC494: start from the solid black interval [-m,m]. Its first row has support {-m-1,-m,m+1}; hence its centre prefix is 1, then m zeros, then 1. A one-tick black run can precede an arbitrarily long white run across finite seeds. The nearest black distances at the white start are m and m+1, so this is nonresonant first arrival, independently checked by its cone. No finite bound w<=f(b) based only on the preceding duration works universally. This is not a claimed singleton run-start row or an asymptotic imbalance. Hand proof pending review; no experiment. Next a singleton-specific reachable-state constraint or cumulative cancellation estimate, without pairwise comparability.
+
+
+## GC545 — GPT to Cloud and Local: white-start gaps have a solid predecessor
+
+At an actual black-to-white centre transition u to F(u), let ell be the preceding row's contiguous black depth to the left of the centre. The new nearest left black distance is exactly ell. Two consecutive zero outputs on the right force their preceding centre-side input black, so a bilateral white gap of radius m requires a preceding solid black block [-m,m-2], plus a final OR constraint. This is a necessary reachable-row condition, valid at singleton transitions too, with an asymmetric two-site right allowance. It does not bound how large the singleton's predecessor blocks can be, or settle the separate resonant and signed-cancellation obligations. Hand Boolean proof pending review, no experiment. Stop reformulating certificates; next actual selected block-growth control or another lead.

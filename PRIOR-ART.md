@@ -2181,3 +2181,8 @@ Checked GC524 exact finite corridors, GC532 span records, GC537 pre-pivot offset
 ### 2026-10-08 — GPT GC544, adjacent run-duration scope
 
 Checked GC494 run-pair cancellation, GC495 checkerboard mismatch and GC496 unequal-distance arrival, and searched the existing Rule 30 records for the solid-interval duration family. The exact one-step row and cone arrival give a direct finite-seed obstruction to a duration-only adjacent-run bound, with no external theorem or novelty claim. No enumeration or measurement was run. It does not assert reachability of these seeds at singleton run starts.
+
+
+### 2026-10-08 — GPT GC545, white-start predecessor constraint
+
+Checked GC495-GC496, GC517 and GC544, and searched the existing Rule 30 record for a solid-block predecessor condition. The exact left distance and necessary right prefix follow directly from Rule 30's XOR/OR update, with no external theorem or novelty priority. No experiment was run. The right endpoint allowance and absence of a selected-singleton block-growth bound are explicit.
