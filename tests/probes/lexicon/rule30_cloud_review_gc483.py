@@ -26,6 +26,13 @@ Unexpected check (Cloud's, predicted before the run, confidence 0.9): by GC491's
   row whose black cells run from L to R has velocity running exactly from L - 1 to R + 1, the machine accepts
   exactly 2^(n-4) velocity words of length n with both ends black for n >= 4, one at n = 3 and none below. So among
   words with black ends only a quarter are admissible, at every length from 4 on.
+
+OUTCOME, 2026-10-08 (by 12:51 BST; under a second): R483, R484, R485, R486, R487, R491 and R492 PASS; the unexpected
+  check HELD (0, 0, 1, 1, 2, 4, 8, 16, 32, 64). R492 first printed FAIL because this script keyed preimages by the
+  trimmed velocity word, which merges a row with its translates; injectivity is a statement at fixed positions.
+  With rows taken up to translation it passes. That failure was this script's, not GC491's. R491 meets 24 of the 32
+  input patterns on real rows; by hand, eliminating u_l = v_c XOR (1 - u_c) u_r makes GC491's coupled law an
+  identity in all 32 (CL034), so the sample is a control, not the proof.
 """
 from itertools import product
 
@@ -161,7 +168,7 @@ def r492():
         v = "".join(str(G(u << 2, i)) for i in range(W + 4))   # sites shifted by 2 so the row's edges are inside
         bad_img += not accepts(v)
         key = v.strip("0") and v[v.index("1"):len(v) - v[::-1].index("1")]
-        pre.setdefault(key, set()).add(u)
+        pre.setdefault(key, set()).add(u // (u & -u) if u else 0)        # rows up to translation
     unique = all(len(x) == 1 for k, x in pre.items() if k)
     bad_lang, counts = 0, []
     for n in range(1, 11):

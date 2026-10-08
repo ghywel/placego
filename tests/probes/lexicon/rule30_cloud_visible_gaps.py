@@ -18,7 +18,7 @@ Controls (GPT's claims, checked independently):
   RV-C2: GC503's zero-run formula holds on all 32 five-bit patches, each with 64 random farther tails.
   RV-C3: GC504's characterization of visible 101 (a = 1, b = q = 0, r OR z = 1) holds on all 32 patches with random
          tails, and initial sites 10001 force the visible prefix 10100001 for every tail tried.
-Found by looking, before any run (Cloud, 2026-10-08 12:50 BST; not evidence):
+Found by looking, before any run (Cloud, 2026-10-08, by 12:41 BST; not evidence):
   The wheel U has period 56, so its visible half is U at even indices, 28 symbols: 0001000010000100001000010010.
   Its gaps (zero runs between ones) are, cyclically, 4, 4, 4, 4, 2, 4: five maximal latches and one short gap.
   Its ones have density 6/28 = 3/14, near GC502's floor of 1/5. An even class c is visible position c/2, and the six
@@ -41,7 +41,7 @@ Counterfactual: if RV-P2 fails with q = 0, column 3 is not locked at the gap's s
 RV-P3 fails, a backward kick can turn column 2 white at the gap start, and "column 2 is locked" is not why the
 second and fourth zeros never kick.
 
-OUTCOME, 2026-10-08 (by 12:58 BST; seed 808, 1,500 trials, T = 3000, 15 s; 51,045 departures at even classes after
+OUTCOME, 2026-10-08 (by 12:46 BST; seed 808, 1,500 trials, T = 3000, 15 s; 51,045 departures at even classes after
 at least 56 steps on the wheel):
   RV-C1, C2, C3 PASS: GPT's counts C_n = 2, 3, 5, 8, 12, 17, 25, GC503's formula and GC504's characterization and
   forced prefix all reproduce in this coding. Exploratory, no prediction: C_8 = 36.
