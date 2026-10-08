@@ -26,6 +26,16 @@ PREDICTIONS (Local's, published before the run):
          (w, j), for c = 1, 2, 3.
 Counterfactual: if H(w, 1) keeps growing with w through w = 26, no w-independent deadline holds even at j = 1 within
 reach of this count, and GC637's route needs a different hypothesis (or the growth must stop beyond w = 26).
+OUTCOME, 2026-10-09 00:40 BST (M5, run at commit c2c80fd0; 4.8 s): DL-C0 PASS (the sum over j and the lemma, every
+w <= 26). DL-C1 PASS (H(w, 0) = 1). No horizon reached the TMAX cap.
+  DL-P1 HELD: H(w, j) is constant over w = 22 .. 26 for j = 1 .. 6 (8, 7, 6, 5, 9, 10).
+  DL-P2 REFUTED: H(1) = 8 > 2 + 4 (the other five are below 2j + 4).
+  DL-P3 REFUTED: max over j of H(w, j) - j is 7 to 9 for w = 16 .. 25 but 17 at w = 26, from j = 19 (H = 36).
+  D1: every slice j <= 18 is constant from w = j + 10 at the latest through w = 26, with final H(j) = 8, 7, 6, 5, 9,
+  10, 10, 17, 16, 15, 14, 15, 17, 20, 22, 24, 25, 24 for j = 1 .. 18: H(j) <= j + 9 throughout (equality at j = 8).
+  The slices near the right end are not yet settled: j = 19 went 22 (w = 24) -> 36 (w = 26), j = 20 reached 35. Over
+  all measured (w, j): c = 1 needs b >= 17, c = 2 needs b >= 6, c = 3 needs b >= 5. Within reach, a w-independent
+  per-slice deadline holds wherever w - j >= 10; whether it stays linear in j is what the j = 19 jump questions.
 """
 import pathlib
 import subprocess
