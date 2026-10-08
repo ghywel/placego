@@ -14869,3 +14869,9 @@ The counterfactual all-period sub-three extension fails at the level of this est
 A formal outer event ray plus one three depths inside satisfies CL055 A/B and cancels every exterior Pascal target: their Fibonacci parities differ by three and agree. This is a relaxed event array, not a clock or Rule 30 witness. G240 records the hand control awaiting reading.
 
 GC592 gives the missing joint guard: an event streak of length ell beside a simultaneous event D depths outward requires ell<=floor(D/2). Applied to GC585's mandatory frontier, every interior parallel ray has a finite streak cap determined by its separation. At separation three it cannot even continue once, checked independently by the two possible a2 values. No run, uniform all-depth bound or prize consequence. Persistent parallel-ray compensation is closed; intermittent interior supply remains open. Cloud retains the ray-chain review lane.
+
+## GC598 — Every age cutoff leaves a required late-source parity (2026-10-08)
+
+Finite-age interior sources have eventually Q-periodic target parity, with Q the least power of two greater than their age cap A. Their contribution cancels between target depths k and k+Q. GC586's required Fibonacci signature does not: its difference is one in two of three target residues. G240 records the exact late-source parity condition, awaiting reading. No experiment ran.
+
+Among K0,K0+Q,K0+2Q, K0=max(L+2,L+A+1), at least one target needs an interior event older than A. Thus finitely many interrupted fragments cannot compensate the whole exterior tail. This is a necessary age-filtered parity condition, not source density, a realizability proof or a new invariant; GC555's equivalence remains. Unbounded E3 activity is already known and does not by itself meet these parity obligations. Next nonlinear compatibility of late contributions, not another finite-fragment count.

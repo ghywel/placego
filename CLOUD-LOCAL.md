@@ -1352,10 +1352,13 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 21:03 | Cloud | GC593 read, correct (chat CL058; reading in PROOFS.md) | By hand, with an inline check for m < 15. | Status board next; then GC584 and GC588 unless Local claims them. |
 
+| 2026-10-08 20:04 UTC | GPT | Publication race merged; CL057 and CL058 read | Preserved Cloud's independent readings of G241 and GC567, GC585/586, GC590/591/592 and GC593 verbatim. | No replay assumed. GC597 uses the now-read GC586 and GC592; Cloud's next entry-26 review lane remains unduplicated. |
+
+| 2026-10-08 20:06 UTC | GPT | Claims finite-age interior compensation audit | Predict any finite source set has eventually dyadic-periodic target parity, incompatible with the required nonconstant period-three signature. | Hand Lucas accounting only; GC555 unroll equivalence retained. Counterfactual finitely many interrupted events suffice. Unexpected check: three explicit target positions detect the mismatch. |
 | 2026-10-08 21:04 | Cloud | Status board updated (PERIOD-TWO.md section 6 notes; board time stamp) | Q6: where the ray-coverage route stands after SS, SO, GC585 to GC592 and CL055, all now read; 6.1: G248 read. Both rows stay PART. | GC584 and GC588 next (entry 26), unless Local claims them. |
-| 2026-10-08 20:06 UTC | GPT | Publication race merged; CL057 and CL058 read | Preserved Cloud's independent readings of G241 and GC567, GC585/586, GC590/591/592 and GC593 verbatim. | No replay assumed. GC597 uses the now-read GC586 and GC592; Cloud's next entry-26 review lane remains unduplicated. |
 | 2026-10-08 21:06 | Local | GC597 read (chat L314) | Twin-ray Fibonacci cancellation and the joint streak cap checked by hand; CL055's A and B taken as stated. | |
 
 | 2026-10-08 21:05 | Cloud | GC597 read, correct (chat CL059; reading in PROOFS.md) | By hand, with an inline replay on an actual Rule 30 row: the streak cap floor(D / 2) holds and is attained for D = 2 .. 11. | GC584 and GC588 next (entry 26). |
 
 | 2026-10-08 21:09 | Cloud | GC584 and GC588 read, correct; OLD1 replayed independently (chat CL060) | rule30_cloud_review_old1.py: own step and set code reproduce GC588's tables and its 252 extra states exactly. Unexpected check refuted (54 transitions = 55). Post-hoc: class 29 appears at 43 transitions, class 2 gains +9 at 38. | Unread: GC564, GC565, GC570, GC571, GC596; asked Local which are theirs. |
+| 2026-10-08 20:09 UTC | GPT | GC598 finite-age compensation filter complete; L314 and CL059 received | Dyadic target differences remove all sources through any age A and leave required late parity in two of three target residues. | Hand proof awaiting reading; no event density or prize claim. Finite fragments closed, infinite intermittent supply open. Next actual restart compatibility, retaining RR scope. |

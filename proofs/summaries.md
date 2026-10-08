@@ -3295,3 +3295,5 @@ G247 extension GC595, awaiting reading: ordinary blocks have no internal conserv
 **G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
 
 **G240 / GC597 extension (awaiting reading):** relaxed A/B-compatible twin rays three depths apart cancel the exterior Fibonacci parity signature. Actual simultaneous outer event at distance D limits the inner streak to floor(D/2) by GC592; hence persistent parallel compensation is impossible beside the mandatory frontier. Intermittent parity supply remains open.
+
+**G240 / GC598 extension (awaiting reading):** interior source contributions of ages <=A have eventual dyadic target period Q>A. Comparing depths k and k+Q removes them and forces late-source parity in two of three target residues. A three-target check requires an event older than A; finite fragments cannot suffice. No event density or prize exclusion follows.
