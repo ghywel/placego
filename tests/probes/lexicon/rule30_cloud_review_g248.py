@@ -24,6 +24,16 @@ UNEXPECTED CHECK: among unchained consecutive lock pairs (56 or more steps apart
   long transients. Confidence 0.5.
 Counterfactual: if many unchained pairs have odd sums, odd visible gaps are common off the wheel, and RV2's "gaps 2
   and 4 only" is a property of short transients.
+
+OUTCOME, 2026-10-08 (by 20:57 BST; 56 s and 28 s): RG248-C1 PASS: the hand controls, and G248 on all 784 formal
+  splices. RG248-C2 PASS: GC582's identity at all 139,972 consecutive lock pairs of seed 5601 and all 71,016 of RD's
+  seed 4256, with the nearest blacks and with random blacks inside each lock, always the same parity. RG248-P1
+  REFUTED in its detail. Exactly one chained pair has an odd gap sum, RB's trial 133 at t = 71 (L = +4, K = -10), as
+  predicted. But between the nearest blacks its only complete gap is the 1-gap, not 4, 1, 4, 4. GC582's list also
+  counts wheel gaps on either side, which add 12 and leave the parity alone, so both readings are right and only my
+  wording of the prediction was wrong. Seed 4256 has no odd pair, so P1 does not apply there. The unexpected check
+  is UNTESTED: every consecutive lock pair in both runs is chained (fewer than 56 steps apart), so there were no
+  unchained pairs and the printed HELD is vacuous. GC582's separated-lock case is checked by hand only.
 """
 import os
 import random

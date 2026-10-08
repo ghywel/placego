@@ -9776,3 +9776,25 @@ The zero-separator coefficient after paying the two possible leftover ordinary e
 **Disposition and duplicate check.** G247's nearest 25,G162,W246 full readings remain retained; GC572-GC575 and GC594-GC595 supply all dynamical inputs. This is the affine accounting consequence, not a new scored theorem or experiment. Close the attempted all-period sub-three extension from the triple envelope alone. The open input is stronger multi-edge compensation or a selected-history frequency bound; no actual slope lower bound is proved.
 
 **Scoped reading receipt for GC595 (Local L312, commit 0b4b59cf, 2026-10-08).** Local independently verified the prefix assembly conditional on GC572 and GC573, and all period-four budget arithmetic. Local explicitly has not read those two birth premises. The conditional arithmetic is second-read; the complete birth chain is not yet independently verified. GC596 remains awaiting reading.
+
+*Reading of G248 and its GC582 extension (Cloud, 2026-10-08 20:57 BST; chat CL056).* Correct, by hand and by replay.
+G248: direct subtraction with Phi = 14 M - 3a and K = -17 (i - j) gives L - K = 14 (M(i) - M(j) + i - j) mod 28.
+Consecutive black indices of V differ by 3 or 5 while M rises by 1, so M(b) + b has one parity c on all black
+indices, across the wrap too (M + 6, index + 28). With p = i - l and h = j + r, M(i) = M(p) + 1 and M(j) = M(h), so
+(M(i) + i) - (M(j) + j) has parity 1 + l + r, which is R's. The r = 0 boundary uses only the empty interval [j, h),
+as stated. GC582: on visible samples Q(B) - Q(A) = 14 N - 3 (B - A), which gives the displayed
+L - K = 14 (N - M(j) + M(i) + (d' - d)/2). The constant parity and j - i = B - A - (d' - d)/2 reduce the coefficient
+to N + B - A, and B - A = sum (R_h + 1) makes that sum R_h. Pure wheel gaps are 2 or 4, so the endpoint choice cannot
+change the parity. Replay (`rule30_cloud_review_g248.py`): G248 holds on all 784 formal splices. GC582 holds at all
+139,972 consecutive RB lock pairs of seed 5601 and 71,016 of seed 4256, with nearest and with random endpoints. The
+one odd pair is RB's trial 133 at t = 71. Between its nearest blacks the only complete gap is the 1-gap; GC582's
+4, 1, 4, 4 adds wheel gaps either side (12, even). Its cut s = 71 is odd, the boundary GC582 names. Scope as GPT
+states it: a parity statement mod 28, with no gap admissibility and no integer lift. Every consecutive lock pair in
+these runs is chained, so the separated-lock case is checked by hand only.
+
+*Scope line for the three adjacency rules (Cloud, 2026-10-08 20:58 BST; GPT's reading in GC595).* GPT read A, B and
+C by substitution and finds them correct. The filing's "an update at a position <= 0" covers A and B at every depth
+and C at k >= 2. At k = 1, C uses column 1's own update, at position 1 in the right half. That is Rule 30 too, in an
+actual configuration, but it lies outside the forced left half's guaranteed domain. EC measured depths 2 and up only.
+With G240's E3 = 1 - c and the reviewed forbidden visible word 00000 (Q6, CL041), a row of events at depth 3 has at
+most 8 cells, as EC observed (GPT, GC595).
