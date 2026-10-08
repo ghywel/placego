@@ -11241,3 +11241,23 @@ For s=0 the patch01100 maps to column1/2/3 values101, then column1 becomes1. For
 **Unexpected support guard.** For K>=3, t>=6, and the candidate's product sites2 and3 lie inside[-R-t,R+t] for every R>=0. Unlike an extreme backward ray beyond the propagated finite row, this selected cell is not excluded by the support upper bound. It remains merely geometrically and locally admissible.
 
 **Retained failure and next lane.** The prediction of uncovered selected cells HELD by hand; the counterfactual of complete successive-window coverage is REFUTED in this precise scope. Transition neighborhoods need additional dynamics beyond G63's interior lemma. Stop this coverage-only argument rather than cataloguing more growing-strip restatements. A future Rule210 return should target actual transition propagation or a new global constraint; next independent main-line reasoning can move to signed allocation, preserving Local's computation lanes. Finite global compatibility remains PART.
+
+
+GC425 review resolved (GC426,2026-10-08): Local L254 in09b78e9 verifies the kernel, shared windows, both local patches and run parity. This is a reviewed failure of stated-window coverage, not a stronger-margin impossibility or finite-witness exclusion.
+
+
+### GC426 — Weighted centering retains demand placement and improves four bounded cases (2026-10-08)
+
+**Proposed hand refinement and preregistered measurement.** GC418 retained the failure of G213's global range-product bound. Keep G213's actual cumulative imbalance B_a and demand gradients g_a=d_a-d_(a+1), including both endpoints. Since sum g_a=0, its exact signed term obeys, for any real c,
+
+    abs(H_(t+1)-H_t) <= (1/2)*sum_a abs(B_a-c)*abs(g_a).
+
+Minimize the right side over c. A weighted median of B_a with weights abs(g_a) attains this convex piecewise-linear minimum; equivalently enumerate its breakpoints B_a. Evaluating at the global range midpoint proves the optimized value is no larger than osc(B)*TV(d)/4. This is ordinary weighted absolute-value minimization applied to G213, not a new median theorem. Telescoping supplies a sufficient discrepancy bound, without an asymptotic estimate or shape assumption. It can still discard signed cancellation.
+
+**Preregistered actual scope and outcome.** Reused exactly GC418 widths2..8 at T=8*(w-1), no larger scan. Blind prediction: at least one optimized total improves G74's original absolute bound. HELD: optimized/old ratios are1,1,1,0.7588125375,0.7536198858,0.6177297180,0.7188716600. Thus widths5..8 improve by about24%,25%,38%,28%; widths2..4 tie. The earlier coarse bound lost at every width; its failure remains recorded. These seven cases do not establish universal domination or an asymptotic gain.
+
+**Controls.** All196 exact signed increments agree with independently evaluated literal backward-weighted H increments. Each optimized term bounds the signed term and does not exceed the range bound; final signed sums equal C-Q. All46 empty-parent increments are retained, including nonzero final-empty discrepancies. Controls PASS. Independent minimization is finite breakpoint enumeration using rational arithmetic; no floating-point optimization affects the verdicts.
+
+**Unexpected zero-gradient extremum guard and counterfactual.** For synthetic I=(1,1), d=(1,0), prefixes include0,1,2, but the weight at prefix2 is0. The optimized bound is1/2, matching the original, while the global range bound is1. Thus zero-gradient extrema need not affect the optimized bound; treating every prefix extremum as equally relevant is REFUTED. This is an algebraic guard, not an actual population law.
+
+Instrument tests/probes/prizes/collatz_gpt_weighted_center.py; rational output outside Git. Existing-record search for terminal sensitivity and allocation routes was checked against G74,G213 and GC418; this is a local refinement of their bound, not a claimed new count theorem. Next target the actual weighted distribution of B at gradient locations or signed cancellation, rather than enlarge this seven-case diagnostic. Independent hand reading requested; critical-boundary count loss remains PART.

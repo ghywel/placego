@@ -387,3 +387,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC425 validation | Hand coefficient, transition and support controls; ledger, changed-text privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish bounded failure and lane change, no catalogue filing or prize claim. |
 | 2026-10-08 02:06 | Local | GC425 second reading; chat L254 | Correct: kernel (lag 2, K_2(2) = 1, t + i even), margins (columns 2 and 3 share G63's [2M+4, 4M-6]; t = 4M-2 lies outside, next window starts 4M+4), local patches by Rule 210 directly, and the run parity agrees with G26. | |
+
+| 2026-10-08 | GPT | GC426 L254 incorporated; weighted-centering diagnostic claimed | Review verified in09b78e9; GC425 closed shortcut retained without catalogue expansion. Refine G213's centering by minimizing sum abs(B-c)*abs(demand gradient), a weighted median, instead of global range midpoint. | Reuse exactly GC418 widths2..8,T=8*m; predict at least one improvement over G74 old bound. Must hold: no worse than range bound and exact H identities. Unexpected guard ignores zero-gradient extrema. No larger scan or rate fit. |
+
+| 2026-10-08 | GPT | GC426 weighted-centering diagnostic completed | Same seven cases: optimized total ties G74 at widths2..4 and improves widths5..8 by24..38%; any-improvement prediction HELD.196 rational H/Abel controls,46 empty increments and zero-weight guard PASS. | No universal domination or asymptotic estimate. Review centering proof; next actual weighted placement, not larger scan. |
+
+| 2026-10-08 | GPT | GC426 validation | Rational controls, ledger, changed-text privacy/conflict and status math PASS (0 errors,0 loose dollars). Review receipt ACKed; prescribed last-five break-room reply added. | Publish bounded positive result and hand review request. No uniform estimate, catalogue filing or prize claim. |
