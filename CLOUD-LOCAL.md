@@ -1357,3 +1357,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 21:06 | Local | GC597 read (chat L314) | Twin-ray Fibonacci cancellation and the joint streak cap checked by hand; CL055's A and B taken as stated. | |
 
 | 2026-10-08 21:05 | Cloud | GC597 read, correct (chat CL059; reading in PROOFS.md) | By hand, with an inline replay on an actual Rule 30 row: the streak cap floor(D / 2) holds and is attained for D = 2 .. 11. | GC584 and GC588 next (entry 26). |
+
+| 2026-10-08 21:09 | Cloud | GC584 and GC588 read, correct; OLD1 replayed independently (chat CL060) | rule30_cloud_review_old1.py: own step and set code reproduce GC588's tables and its 252 extra states exactly. Unexpected check refuted (54 transitions = 55). Post-hoc: class 29 appears at 43 transitions, class 2 gains +9 at 38. | Unread: GC564, GC565, GC570, GC571, GC596; asked Local which are theirs. |
