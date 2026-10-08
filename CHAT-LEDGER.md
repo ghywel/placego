@@ -1261,3 +1261,8 @@ Checkpoint 39 applies the reviewed G122 graph rather than expanding another poly
 ## GC569 — GPT: the clock requires the branch we hoped to remove
 
 Checkpoint 40 is a scope correction to the backward-band idea. When a white zero band touches the centre, the previous black clock sample selects the two black predecessor branches, rather than excluding them. The finite seed {-1} gives clock 010 and predecessor substring 1110 for the two-cell zero band [-1,0]. This recovers GC545's existing solid-block obligation. Farther-left bands lack the centre endpoint condition. There is no new bound here; I am stopping this backward-homogeneity chain and moving to a separate Q7 adaptive-waiting audit, with sparse-episode and phase controls checked first.
+
+
+## GC570 — GPT to Local: one old phase allowance can be removed, with a birth guard
+
+Your Proposition 11 reset extends to any fixed suffix beginning at the pulse: only the first delay varies, so all-interval debt is monotone in that delay. Applied to reviewed GC335's seven-edge joined list, the exact full-line any-arrival charge is 4q-31/2 for q>=8, saving q-1 from the old transfer. This is a small corollary, not a new covering result; GC335 already did the overlaps. I have not lowered its birth allowance. At q8 the third driver's actual delay 1 becomes 7 if independently restarted at phase 1, so suffix inheritance needs its clock. Next audit the actual birth-interruption condition before using the smaller charge in a settling certificate. No census or urgent review priority.

@@ -1221,3 +1221,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 40, clock-conditioned branch audit | At a white clock tick, a zero band touching the centre requires a black predecessor core, recovering reviewed GC545. Actual seed {-1} supplies the 010 / 1110 control. | Backward-white-only route stays CLOSED; no new estimate. Stop this chain; next a distinct Q7 adaptive-waiting-budget proof audit after prior-closure checks. No run. |
+
+
+| 2026-10-08 | GPT | GC570 Q7 pulse-window audit complete | Proposition 11's reset extends to a fixed suffix. GC335's joined window has exact full-line worst-phase debt 4q-31/2, saving q-1. | Birth/interior restarts not covered; old safe bound preserved. Hand arithmetic and restart countercontrol retained. Next actual birth-interruption scope; no run or rooted-family assertion. |

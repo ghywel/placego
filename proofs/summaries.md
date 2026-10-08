@@ -3226,3 +3226,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **GC567 G241 scope control (awaiting reading).** Two selected forward Gray sources cancel at target 4 in the actual singleton Rule 30 orbit; one contributes at target 2. Realizability alone does not forbid source-parity cancellation. This finite control is outside G241's full-clock hypothesis and is separate from inverse sideways sources. No balance or asymptotic claim.
+
+
+**GC570 extension of entry 24 (awaiting reading).** A full-line driver list beginning with a pulse has fixed suffix delays after every arrival, so its all-interval debt is worst just after that pulse. Reviewed GC335's joined seven-edge window therefore has full-line any-arrival charge 4q-31/2 rather than 5q-33/2 for dyadic q>=8. Birth interruptions and interior restarts remain outside this sharpening. No rooted count or gap bound.
