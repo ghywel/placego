@@ -15560,3 +15560,24 @@ At every listed nonzero residue this requires at least one actual source of age 
 **Disposition.** The actual narrow strip pays part of the frontier signature but cannot supply all required old-age compensation. Late activity beyond its shield is necessary under the stated hypothetical clock. Farther-source compatibility remains OPEN, and ordinary forward restarts elsewhere may still meet the condition. Next seek a clock-dependent restriction on those sources, retaining GC597's failure of nearest-event exclusions; do not launch another finite-age or finite-width census from this lemma. GC631 and this dependent extension both await Local reading.
 
 **GC631 receipt received while publishing GC632 (Local L339,d5aa26fe).** Local independently hand-read the shielded updates and startup coefficient and replayed them using ordinary finite-line Rule 30 rather than the moving-frame recurrence. It reports 4,000 rows with arbitrary a,b and farther bits for 120 steps, with H5 silent and H6 startup only. GC631 is therefore second-read; GC632 itself still awaits reading. GPT did not rerun that sample. Historical pending statements above describe drafting status.
+
+## GC633 — Every finite-left clock needs late sources beyond the eventual outer shield (2026-10-08)
+
+**Scope and prediction.** Remove GC632's special initial-prefix guard by the actual moving-frame recurrence, keeping both possible white-time phases. Predict every nonempty finite-left row reaches prefix110p1 by physical time4, p in {0,1}. Counterfactual p=0 universally at white times. Unexpected check retains the opposite phase's possible age-one H6 event. Hand proof only, no run or new infinite clock construction.
+
+With v0=1 and v_d=0 for d<0, the moving recurrence makes v0=v1=1 from time1 onward. Then v2=0 from time2 onward. Thus v3 toggles from time2 onward; v4(t+1)=v3(t) OR v4(t) for t>=2, and one of v3(2),v3(3) is1. Hence v4(4)=1 and remains1. At the even shift tau=4 the prefix is110p1, with either p possible. Under a hypothetical white-start full clock, this shift preserves the phase and moves the finite left edge to L'=L+4>=5. All subsequent arguments concern this shifted right-inward moving frame, not a new independently selected seed.
+
+For p=0, GC630/631 give filtered remaining parity from101000. For p=1, v3(t)=1 XOR(t modulo2), so H3 is active at even ages and H4 at odd ages. Their contributions at n=k-L'-2 are E_(n+3) and O_(n+4). The split recurrence gives O_(n+4)=O_(n+3) XOR E_(n+2), so frontier plus those rays equals E_(n+2), since F_(n+1)=F_(n+4) mod2. Its six-periodic sequence is110011, using GC630's already derived E pairs.
+
+H5 is still silent. In the p=1 phase, v5(t)=1 XOR(t modulo2) for t>=1. At even positive times v5=1; it forces v6=0 at subsequent odd times from time3 onward. Therefore H6 can occur only at ages0 and1. Their Pascal terms are a constant and a multiple of binom(k-L'+3,1), respectively, since H6's age-one depth is L'-3. These terms have target period dividing2 and cancel under every dyadic Q>=2. This is why dropping the age-one source without a filter would be wrong. In phase p=0 only the age-zero exception remains, as GC631 proved.
+
+The filtered opposite-phase pattern is
+
+    111100 for Q modulo6=2,
+    001111 for Q modulo6=4,
+
+obtained by shifting110011 and XOR-ing. Both are nonzero. The p=0 differences are001010 and100010. Apply GC632's cancellation of old remaining sources for k>=L'+Q: in either phase there must be a contributing source of age at least Q beyond offset6. Arbitrarily large dyadic Q therefore force unbounded ages outside the eventual seven-cell shield for EVERY hypothetical full clock with a nonempty finite left edge. No initial outer11001 or phase assumption remains after the four-tick shift.
+
+**Controls and limit.** The opposite phase is needed because an even shift cannot change its toggling phase. Age-one sources have period-two coefficients, checked directly by binom(n,1)=n, so they cannot pay the dyadic demand. This strengthens the scope of GC632, not its exclusion power: fixed offsets d>=7 may still restart indefinitely and supply the parity; neither unbounded offsets nor positive event density follows. Clock-dependent nonlinear compatibility of those sources remains OPEN. Local review requested, especially the time4 settling index and opposite-phase startup guard.
+
+**GC632 receipt (Local L340,6764e3e0).** Local independently hand-read both differences, old-source Lucas cancellation and the unbounded-age conclusion, and reports random coefficient controls. GC632 is second-read with its original guards. GPT did not rerun those controls.

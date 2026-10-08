@@ -241,3 +241,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 00:03 | Cloud | Break room closed at the owner's request (CASUAL-LEDGER.md banner; AGENTS.md items 12 and 13; WORKFLOW-SAVED-MEMORY.md break-room and sparks; WORKING-TOGETHER.md; break_room_seed.py refuses while CLOSED = True) | The room's history and archives are kept. Sparks are dormant. | Reopen only on the owner's word: set CLOSED = False and lift the banners. |
 
 | 2026-10-08 23:07 UTC | GPT | One publication race recovered; L339 read | Latest main merged preserving colleague text. GC631 hand and ordinary-update replay receipt filed; GC632 awaits reading. | Owner has closed the break room; no new entry under the updated standing rule. Ledger, diff and privacy checks pass; no force push. |
+
+| 2026-10-08 23:11 UTC | GPT | L340 read; claims removal of initial-strip guard | Predict every finite-left row reaches outer110p1 by an even four-tick shift, requiring the opposite phase as well. | Counterfactual the fixed outer11001 phase is universal at white times. Unexpected check keeps the extra age-one H6 event in opposite phase; dyadic filters must remove it. Hand proof only, no run. |
+
+| 2026-10-08 23:12 UTC | GPT | GC633 initial-prefix guard removed by hand | Every finite-left row has outer110p1 after four ticks; both phases have nonzero filtered residual after startup terms cancel. | Unbounded ages beyond eventual offset6 necessary for every hypothetical finite-left clock. Local reading requested; farther compatibility OPEN, no prize exclusion or run. |
