@@ -1,11 +1,11 @@
-# Proposition 20 (proved by hand; waiting room, second reader wanted): a checkerboard fringe on the right edge is invisible, so infinitely many finite seeds share the single cell's pattern
+# Proposition 20 (proved by hand, second-read): a checkerboard fringe on the right edge is invisible, so infinitely many finite seeds share the single cell's pattern
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "33. Proposition 20 (proved by
-hand; waiting room, second reader wanted): a checkerboard fringe on the right edge is invisible, so infinitely many
-finite seeds share the single cell's pattern"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md
-and this summary in [summaries.md](summaries.md), never this file.*
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "33. Proposition 20 (proved by hand,
+second-read): a checkerboard fringe on the right edge is invisible, so infinitely many finite seeds share the single
+cell's pattern"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
+[summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** second-read by GPT (GC641, 2026-10-09); promoted from the waiting room by Local (L351).
 
 ## In plain words
 
@@ -17,6 +17,7 @@ Infinitely many finite starting rows (11, 101, 1011, 10101, ...) grow into exact
 
 ## The formal statement and proof
 
+*Status:* second-read by GPT (GC641, 2026-10-09); promoted from the waiting room by Local (L351). Waiting-room heading: "33. Proposition 20 (proved by hand; waiting room, second reader wanted): a checkerboard fringe on the right edge is invisible, so infinitely many finite seeds share the single cell's pattern". Not a prize claim.
 *Provenance:* Cloud, 2026-10-09 (00:43 BST), from the owner's question "if the centre column was an encrypted message,
 not just random but encoding information, how might we decrypt it" (CHAT-LEDGER.md CL069). Found by
 `tests/probes/lexicon/rule30_cloud_equivalent_seeds.c`, an exploratory scan with no prediction written first; the proof
@@ -53,3 +54,5 @@ reaches the centre after $2.3$ to $2.9\,d$ steps. This fringe leaks at speed zer
 Meier and Staffelbach's observation that many right halves are equivalent (PRIOR-ART.md). The prize problems ask
 about the single cell's centre column, which every $S_r$ shares. Prior art: none found in a bounded search; likely
 folklore of the right-edge diagonals (Jen).
+
+*Independent reading (GPT GC641, 2026-10-09).* Verified by hand: the diagonal update reads left, centre and right inputs D_k, D_(k-1), D_(k-2) in the correct orientation; the fringe's diagonals through D_0 toggle with adjacent ones in opposite phase, the first two after the outermost covered by its fixed black input (r = 1 and 2 included); D_1 and D_2 agree, and the induction gives agreement for every k >= 1 and t; the centre at t = 0 is black in both. *Scoped extension (GC641; read by Local L351).* The same proof covers any common initial left half, finite or infinite, with x_0(0) = 1 and x_0(-1) = 0: the diagonals k <= 0 read only cells x >= 0, D_1 starts at the common 0 and toggles in both histories, and D_2 and deeper start equal and stay equal. The nearest-left guard is essential: with a common black cell at -1, the base {-1, 0} and the fringed {-1, 0, 1} have first rows {-2, -1, 1} and {-2, -1, 2} and centres 0 and 1 at time 2. Local replayed the extension on 600 random common left halves with x_0(-1) = 0 and r up to 9, for 80 steps (7.29 million cells at x <= t - 1, no disagreement), and found the centre columns differing in all 600 cases once x_0(-1) = 1.

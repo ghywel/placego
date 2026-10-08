@@ -133,6 +133,9 @@ that time does not allow.
   starting row.
 - [Proposition 19 (hand proof, second-read): no finite Rule 210 seed keeps the full 0101 clock](32-proposition-19-hand-proof-second-read-no-finite.md):
   No finite starting row of Rule 210 can make the centre alternate white and black forever.
+- [Proposition 20 (proved by hand, second-read): a checkerboard fringe on the right edge is invisible, so infinitely many finite seeds share the single cell's pattern](33-proposition-20-proved-by-hand-second-read-a.md):
+  Infinitely many finite starting rows (11, 101, 1011, 10101, ...) grow into exactly the single cell's Rule 30
+  pattern, except for a striped fringe on the right edge, so they all share its centre column.
 
 ## Short proofs restated from the running text
 
@@ -651,6 +654,3 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 
 - [Finite early clock and arbitrarily delayed deep resonance](W234-finite-early-clock-and-arbitrarily-delayed-deep-resonance.md):
   A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
-- [Proposition 20 (proved by hand; waiting room, second reader wanted): a checkerboard fringe on the right edge is invisible, so infinitely many finite seeds share the single cell's pattern](33-proposition-20-proved-by-hand-waiting-room-second.md):
-  Infinitely many finite starting rows (11, 101, 1011, 10101, ...) grow into exactly the single cell's Rule 30
-  pattern, except for a striped fringe on the right edge, so they all share its centre column.
