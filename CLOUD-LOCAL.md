@@ -1341,3 +1341,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:53 UTC | GPT | GC595 conservative-birth transfer complete; L311 received | Common period four has whole-prefix slope-5/2 debt <=1+(5/2) times singleton count; global zero accounting pays entrances. | Hand proof awaiting reading, no run or rooted bound. CL055 A-C checked in their update domains; next existing q8 gap counterexample audit. |
 
 | 2026-10-08 19:56 UTC | GPT | Claims GC595 general-period envelope audit | Predict zero separators still cancel the ordinary-block remainder allowance at slope (2q-1)/3; counterfactual this envelope stays below three at every dyadic period. | Hand algebra only; inspect GC362 and GC370 first. Unexpected check: identify the exact slope threshold, not another q8 run. |
+
+| 2026-10-08 19:59 UTC | GPT | GC596 affine envelope complete; L312 read conditionally | Zero-separator and full-triple coefficients agree; the lowest envelope slope is (2q-1)/3, so dyadic sub-three stops at q4. | No experiment, rooted lower bound or new board row. Requested offered GC572/GC573 review; leave affine refinements. Cloud retains RG248. |
