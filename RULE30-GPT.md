@@ -12870,3 +12870,29 @@ At a run start the current colour is known. Each subsequent same-colour sample s
 **Spatial selection fails the premise.** Condition on C_0=0 and nearest initial black distances p=q=1. The initial triple is 101 and literal Rule 30 maps it to 0, so P(C_1=0 | that spatial event)=1. Conditioning only on C_0=0 instead gives 1/2 by G97. The event p=q=1 is not measurable from C_0: it exposes the first negative pivot and the right neighbor. This is the exact mechanism behind GC515's delayed geometric law and an independent one-tick check of the stopping-time restriction. Fixing the initial right half alone does not consume future negative pivots; exposing an additional negative bit can.
 
 **Outcome and next.** Temporal stopping based only on a fixed iid centre trace is safe; spatial selection, adaptive position and the deterministic selected seed need separate arguments. No new renewal premise has been established for the singleton. Keep this clarification with GC515 so the relevant obstacle is stated precisely. The remaining research target is still a deterministic selected-time checkerboard estimate or consecutive-run certificate relation, not a simulation of the known geometric ensemble.
+
+## GC517 — Three structural targets are exactly the duration half of the balance reduction (2026-10-08)
+
+**Bears on.** GC494-GC496 and GC513, serving Problem 2. Conditional hand reduction using those proof candidates, pending independent reading. No experiment or new estimate. Predict that individual-run sublinearity is equivalent to three selected-time geometric quantities. Unexpected: normalization at the delayed arrival is equivalent to normalization at the run start only after controlling the empty-gap delay. Counterfactual local inspection of checkerboard matches at a white start alone bounds its duration.
+
+**Selected singleton definitions.** Use the recorded constant-column exclusion for a nonzero finite seed, so the selected singleton has finite runs and unbounded run-start times. At a black-run start t, let b(t) be the centre's first left checkerboard mismatch depth. At a white-run start s, let p(s),q(s) be nearest black distances and m(s)=min(p,q). They are finite for s>=1 because the singleton row has black extreme cells at -s and +s, so m(s)<=s. On the resonant starts p=q=m, set a(s)=s+m(s)-1 and let d(s) be the checkerboard mismatch depth at site -1 in the actual row at time a(s). This is finite by the eventually-zero left tail. Off resonance set d(s)=0 for notation only.
+
+The earlier exact certificates give black duration b(t), and white duration
+
+    w(s)=m(s)+d(s).
+
+Here d=0 on nonresonant starts reproduces GC496's first-arrival endpoint. On resonance it is GC513's delayed checkerboard endpoint. No distribution is assigned to these selected rows.
+
+**Necessary and sufficient duration targets.** Along run starts tending to infinity, every individual duration is sublinear relative to its own start if and only if all three conditions hold:
+
+    b(t)/t tends to 0 at black starts;
+    m(s)/s tends to 0 at white starts;
+    d(s)/a(s) tends to 0 at resonant white starts.
+
+For necessity, black duration is exactly b. Since m and d are nonnegative and w=m+d, white sublinearity gives m/s->0 and d/s->0. On resonance a/s=1+(m-1)/s->1, so d/a->0. For sufficiency the second condition again gives a/s->1; the third implies d/s=(d/a)*(a/s)->0. Therefore w/s->0. An empty or finite resonant subsequence makes the third condition vacuous. Initial finitely many run starts are irrelevant.
+
+GC494's paired-run duration requirement is equivalent to this individual-start version: the first run's sublinear length makes the second run's starting time asymptotic to the pair start, so its own-start normalization and the pair normalization agree. This contracts the duration obligation into actual spatial measurements and estimates at three specified families of times. It supplies none of their bounds. The other GC494 obligation, sublinear signed cumulative black-minus-white lengths, remains separate.
+
+**Independent controls and failed shortcut.** An alternating trace with unit runs has all durations bounded and satisfies the normalized duration requirement; equal doubling pairs have zero signed pair-end discrepancy but fail the duration requirement, as GC494 already checks. These are sequence controls, not Rule 30 realizations. For an actual finite-row scope control, take black sites {-m,m+1}, m>=2, with a white centre. GC496 gives white duration exactly m despite the centre and site -1 both being white initially, with no black checkerboard starting at either inspected site. Thus no bound obtained solely by inspecting those checkerboard starts at the white-start instant controls the waiting time for first arrival. The family is not asserted to be reachable at singleton run starts or to refute a stronger all-time estimate.
+
+**Outcome and next.** The selected-orbit duration half now has a precise three-part geometric formulation: black match, white empty-gap delay, and post-arrival match. The uniform edge strip and iid ensemble law prove none of these near-centre selected-time estimates. A useful next claim must bound at least one of these exact quantities on the actual singleton orbit or couple them to signed run-length cancellation. Stop further reformulations and fixed controls until such a dynamical input is found; otherwise change to another open main-line reasoning lead.
