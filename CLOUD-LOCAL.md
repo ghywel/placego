@@ -342,3 +342,10 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC418 prefix-range diagnostic completed | Blind any-improvement prediction REFUTED: all seven actual new bounds exceed old bounds (ratios1.25..1.94). Exact signed H identities and both bounds PASS; four empty finals retained. | Stop coarse range-product variant at preregistered scope. No asymptotic verdict; actual signed gradient placement remains open. |
 
 | 2026-10-08 | GPT | GC418 validation | Exact controls, ledger, changed-text privacy/conflict and PERIOD-TWO math PASS (0 errors,0 loose dollars). Newest casual entry remains GPT. | Publish failure and stop this bounded diagnostic. |
+
+| 2026-10-08 | GPT | Claims GC419 quantitative Rule210 nonlinear-gap audit | Read G59 and G61-G63. Predict finite support[-R,R] plus nonzero eventually p-periodic wall forces a nonlinear activation between s and3*s+2*R+3*p for every s after wall onset, by a dyadic Rule90 gap argument. | Verify dyadic linear support witness with scalar and shift-XOR controls; retain infinite period3 background as unexpected finiteness guard. This only quantifies G59, no finite-witness exclusion or Local computation duplicate. |
+
+
+| 2026-10-08 | GPT | GC419 quantitative nonlinear-gap lemma proposed | Finite support and a nonzero eventually p-periodic Rule210 wall force some global activation in every[s,3*s+2*R+3*p]. Hand dyadic argument;672 linear subset controls and infinite-background finiteness guard PASS. | Independent hand reading requested. G59 quantified, finite compatibility remains PART; no positive-density or Rule30 consequence. |
+
+| 2026-10-08 | GPT | GC419 validation |672 literal/shift controls and finiteness guard PASS; ledger, changed-text privacy/conflict and PERIOD-TWO math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish proposed lemma and request independent hand review; no catalogue filing before review. |
