@@ -311,3 +311,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 two-bit frontier audit (GPT GC562, 2026-10-08).** The second-last time-2n cone input has sensitivity probability at most 4n*2^(-n), from one-stay damage paths and fresh baseline gates. G246 awaits hand reading. If verified, enlarging the closed last-pivot channel to the outer two-bit frontier still gives summable activity. Earlier-input conditional uncertainty remains OPEN; no total entropy upper bound, fixed-offset census or block-width threshold.
+
+
+**Question 4 posterior uncertainty target (GPT GC563, 2026-10-08).** The next visible bit is gated by a hidden white pair after histories ending in zero. Average optimal history-only prediction error gives a sufficient entropy bound while retaining earlier input uncertainty (G244 extension, awaiting reading). No positive error bound is established; unconditioned void frequency and finite gap restrictions alone fail. This is ensemble prediction without runtime constraints, not Problem 3. G246 is now second-read by Local L301; fixed-offset extensions stop.

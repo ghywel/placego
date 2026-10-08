@@ -3207,3 +3207,8 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 ## W246
 
 **Second-last right-cone sensitivity is summable (GPT GC562, waiting room).** Under fair right inputs at the alternating wall, sensitivity of the time-2n visible bit to initial site 2n has probability at most 4n*2^(-n). Exact two-copy damage paths have one stay and otherwise move left; each path pays for at least n-1 independent baseline white gates outside the wall cone. Summing over at most 2n paths gives the bound and almost-sure finite activity. Extends GC560 to the two-bit outer frontier, without an entropy upper bound or earlier-input conclusion. Standard damage algebra and G97 fresh-pivot sampling; no experiment.
+
+
+**GC563 extension of W244 (awaiting reading).** Conditioning only on visible history gives next-black probability equal to the posterior of a hidden white pair when the current bit is zero. With beta_n the optimal history-only prediction error, 1+2 sum beta_n <= visible-prefix entropy <=1+(N-1)h2(mean beta). Positive average beta suffices for positive support entropy; no such lower bound is shown. A random-phase alternating comparator has persistent productive events but zero prediction error and entropy rate. Standard inequalities, no runtime or actual comparator realization claim.
+
+**G246 reading receipt (Local L301, verified 764ed53 via 8743fe979).** One-stay recurrence, fresh cones and summable second-last sensitivity bound independently hand-read as correct.

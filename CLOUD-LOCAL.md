@@ -1189,3 +1189,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC562/G246 one-stay hand audit complete | Second-last input activity has probability <=4n*2^(-n), summable; at most 2n one-stay paths each pay n-1 fresh gates. Stay coefficient scoped to the comparison row. | Hand reading requested. Initial pure-shift control was unsuitable and repaired with first-tick hold; no experiment. Stop fixed-offset extensions; next earlier-input uncertainty given observations. |
+
+| 2026-10-08 | GPT | Claims one history-conditioned entropy target audit | Prediction: exact visible recursion expresses entropy through the posterior probability of a two-cell white pair, and average optimal prediction error gives a sufficient entropy bound without conditioning away earlier inputs. Counterfactual: positive white-pair frequency alone ensures positive entropy. Unexpected check: a random phase of a periodic no-11/no-five-zero word has persistent pair events but zero entropy rate. | Hand chain rule and existing two-step wall identity, no experiment or posterior census. |
+
+
+| 2026-10-08 | GPT | GC563 history-only target complete; L301 verified | Next-black probability is the history-conditioned hidden white-pair probability. Optimal prediction error beta gives 1+2 sum beta <= H_N <=1+(N-1)h2(mean beta). | Reading requested; average beta positivity OPEN. Marginal void-frequency shortcut refuted by formal alternating comparator. G246 second-read. Next actual two-cylinder posterior ambiguity, no run. |

@@ -9408,3 +9408,22 @@ The probabilities are summable (their displayed untruncated sum is 8). Tail unio
 
 
 *G246 duplicate audit.* W246 nearest W243, W244 and G144 were read in full with summaries and extensions. W243 and W244 provide the last-pivot channel and its masking extension; the present statement pays for one stay and therefore addresses a different input. G144 classifies rotation-code repeat filters, not this sensitivity. The exact Boolean damage recurrence and G97's independent left pivots are explicitly reused. This is a narrowly extended channel closure, not a new entropy method.
+
+
+**G246 second reading — Local L301, received by GPT 2026-10-08.** Verified in 764ed53, included in 8743fe979. Local checks the exact OR telescoping recurrence, one-stay path count, baseline left gates, strictly decreasing cone endpoints and summable bound. Correct as stated; G246 is now second-read. Both outer cone inputs are eventually masked almost surely under fair right inputs. Local's suggested fixed-offset generalization remains tentative and is not adopted or run. W246 nearest W244, W243 and G144, including summaries, were read in full before this disposition.
+
+
+**G244 history-conditioned replacement target (GPT, 2026-10-08; GC563, awaiting reading).** Keep the actual fair-right wall process and let H_n denote the visible history Z_0,...,Z_n. At even time 2n, write the first three right cells as z,b,c. Two literal Rule 30 updates give the next visible cell zero when z=1 and 1 XOR(b OR c) when z=0. Equivalently,
+
+    Z_(n+1)=(1-Z_n)*(1-x_(2n)(2))*(1-x_(2n)(3)).
+
+On a history ending in zero, let q_n(H_n) be the conditional probability that those two hidden cells are both white. On a history ending in one, the next output is forced zero. Thus its conditional black probability is p_n(H_n)=(1-Z_n)*q_n(H_n), taking q_n=0 on the forced branch. Define beta_n=E[min(p_n,1-p_n)], the minimum expected error of any predictor of the next bit given only that visible history. There is no runtime restriction on this predictor. Standard binary entropy h2 and its symmetry give H(Z_(n+1)|H_n)=E[h2(min(p_n,1-p_n))]. Concavity between 0 and 1/2 gives h2(r)>=2r, and Jensen gives the upper bound h2(E[r]). Consequently for N>=2, with beta_bar=(sum_(n=0..N-2) beta_n)/(N-1),
+
+    1+2*sum_(n=0..N-2) beta_n <= H(Z_0,...,Z_(N-1))
+        <= 1+(N-1)*h2(beta_bar).
+
+In particular positive liminf beta_bar suffices for positive actual boundary-language entropy, through the support bound log2(M_N)>=H. If beta_bar tends to zero, this ensemble's Shannon entropy per symbol tends to zero; that does not imply zero support-language entropy (GC501's mixture control). Earlier input uncertainty is retained because conditioning is only on observations, unlike G244's original entire-input-prefix conditioning. No positive beta lower bound is proved.
+
+*Controls and failed shortcut.* GC501's exact first transition has p_0=0 on Z_0=1 and p_0=1/4 on Z_0=0, each history having probability 1/2. Hence beta_0=1/8 and conditional entropy (1/2)*h2(1/4), between 1/4 and h2(1/8). The unexpected comparator is a fair random phase of the periodic word 10: it avoids 11 and 00000, has productive next-one events of frequency 1/2, and yet every later bit is predictable from the first, with beta_n=0 and total entropy one. Formal hidden pair-void events can equal those productive events, satisfying the displayed visible recursion; no Rule 30 right realization is asserted. Thus positive void frequency or the finite gap restrictions alone do not ensure entropy. This is standard binary prediction/entropy algebra applied to the already recorded two-step wall identity, not a new predictor, Problem 3 runtime result or experiment. The next actual obligation is average posterior uncertainty, not another unconditioned pair-frequency measurement.
+
+*GC563 duplicate audit.* Filed as an extension of W244; its nearest W243, G212 and W239, with their full proofs and summaries, have been read. The original W244 estimates entropy by a chosen last pivot; this extension instead uses all observed-history prediction error. G212 concerns fresh full-row sampling and W239 abstract block entropy. No new entropy theorem is claimed beyond standard inequalities. GC501's nonstationarity and failed pointwise contraction remain intact.
