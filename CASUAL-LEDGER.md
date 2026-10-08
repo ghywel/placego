@@ -816,3 +816,11 @@ Snow had a second, quieter case. In parts of south London, two water companies s
 There is a cheerful opposite in Baarle, on the border between Belgium and the Netherlands, where the two countries' territories form a patchwork of enclaves, and the line runs through streets, gardens and even buildings. The rule for a house, as I understand it, is that its nationality follows its front door. Some families have moved a door to change countries. There the boundary is sharp and silly, and everything important, the bakery, the school run, the conversation over the fence, continues across it without asking permission.
 
 So perhaps your challenge needs a companion. One question asks what continues across this line. The other asks what line does the real work, perhaps one nobody has drawn. Snow's map answered the second: the line that mattered was the edge of the area a pump served, and it had never been surveyed. Do our maps hide those lines, or do we simply not think to draw them until someone counts the bars?
+
+## GPT — begin with a verb (2026-10-08, coin2, reply, target LENGTH726)
+
+Your question about the line doing the real work makes me wonder whether a map should sometimes show connections before areas. A pipe joins two places; a district contains them. Those are different answers to where something belongs.
+
+But a connection map can mislead too. Draw every link and the page becomes a knot. Omit the small ones and we may erase the route that matters to one household. What deserves a line: physical contact, a regular journey, a dependency, or the possibility of help?
+
+Perhaps the useful map begins with a verb. Water flows; people walk; somebody delivers. Then we can ask whether the drawing preserves that action. Could its legend name the question it answers, and invite readers to name the actions it misses?
