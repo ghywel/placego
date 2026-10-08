@@ -12695,3 +12695,57 @@ At t=0, J_0=-1<B_0. The first possible front locations -1,0,+1 give J_1=-3,-2,-1
 For the unexpected same-position check, GC506's history A=(L_1=-1,L_2=0) has B_2=-3 and J_2=-3: no freshness certificate, and its known next left-move probability is 1. History B=(L_1=0,L_2=0) has B_2=-2 and J_2=-3: a fresh pivot, with next probability 1/2. Both hand index controls agree with the previously independent exact three-tick computations. A reused pivot need not always be biased; the criterion deliberately makes no converse assertion.
 
 **Outcome and remaining obligation.** This supplies a genuine sufficient fresh-background condition on the actual iid reachable experiment, addressing GC508's missing conditional-law premise. It does not restart the entire background-and-damage state: damage shape, revealed environment and jump correlations persist. No frequency of fresh records, bound on excursions through reused information, integrability of jumps or limiting speed has been proved. The next useful analytic step is to control the exposure deficit J_t-B_t and its recovery, or show why that scalar also needs the full damage word. Do not enlarge a finite history census to infer either result.
+
+## GC510 — Exposure accounting bounds the iid front's leftward speed (2026-10-08)
+
+**Bears on.** Portfolio question 2 and constellation row 3, using GC509's adaptive fresh-pivot proof candidate. Hand derivation pending independent reading. This supplies a one-sided rigorous bound conditional on that audited proof, not existence of transport speed or a derivation of the measured value. No new experiment or long run.
+
+**Prediction and counterfactual.** Retain the signed exposure deficit Z_t=J_t-B_t and predict an exact accounting identity implying L_N>=-A_N, where A_N counts left advances at fresh records. Unexpected: fresh-bit fairness then gives a half-speed ceiling without an excursion or jump-tail estimate. Counterfactual: knowing this scalar recursion restarts the full front law. Nothing below establishes that closure; GC506-GC508's environment guards remain.
+
+**Pathwise accounting.** Set Delta_t=L_(t+1)-L_t, which is at least -1, and use B_(t+1)=min(B_t,J_t). Then
+
+    Z_0=-1, Z_(t+1)=max(Z_t,0)+Delta_t-1.
+
+Consequently Z_t>=-2. A fresh-record tick is exactly Z_t<0, hence Z_t=-1 or -2. Let F_N count these ticks for 0<=t<N; let A_N count their left advances Delta_t=-1; let T_N count left advances at ties Z_t=0. These definitions are pathwise, without probabilities.
+
+The number of newly exposed negative initial sites through N updates is E_N=-B_N. Each fresh tick exposes -Z_t sites, so E_N equals F_N plus the number of ticks in that range with Z_t=-2. The recursion says Z_(t+1)=-2 exactly when Z_t<=0 and Delta_t=-1. Since Z_0=-1,
+
+    E_N=F_N+A_N+T_N-1{Z_N=-2}.
+
+Also J_N=L_N-1-N=B_N+Z_N, so
+
+    L_N=N+1-F_N-A_N-T_N+Z_N+1{Z_N=-2}.
+
+For every allowed Z_N, the final two terms are at least -1. T_N<=N-F_N because ties are not fresh. Thus the promised pointwise bound is
+
+    L_N>=N-F_N-A_N-T_N>=-A_N.
+
+Large jumps can be followed by many left moves through reused information; the accounting includes those moves via the deficit and tie terms. It never assumes they are independently fair.
+
+**Finite-time expectation.** GC509 gives conditional probability 1/2 for a left move on each fresh tick, relative to its pre-reveal exposure history. The fresh indicator is known at that time. Therefore E[A_N]=E[F_N]/2<=N/2 and
+
+    E[L_N]>=-N/2 for every N.
+
+This is an expectation under the iid initial-background experiment only. It is not a claim for every deterministic initial row or every ambient finite perturbation.
+
+**A concentration proof and almost-sure bound.** Put M_N=A_N-F_N/2. At a fresh tick its increment is a conditionally fair choice of -1/2 and +1/2; at any other tick it is zero. Thus, for every real lambda, its conditional exponential moment is at most cosh(lambda/2)<=exp(lambda squared/8). Iterating conditional expectations gives E[exp(lambda M_N)]<=exp(N lambda squared/8). The elementary bound on cosh follows by integrating tanh(x)<=x for x>=0, with symmetry for negative x.
+
+For epsilon>0, exponential Markov inequality with lambda=4 epsilon yields
+
+    P(M_N>epsilon N)<=exp(-2 epsilon squared N).
+
+Since L_N>=-A_N=-F_N/2-M_N>=-N/2-M_N,
+
+    P(L_N<-(1/2+epsilon)N)<=exp(-2 epsilon squared N).
+
+The right side is summable in N. For each positive rational epsilon the probability of infinitely many such violations is zero: the probability of any violation after n is bounded by the tail of that convergent sum, tending to zero. Intersecting these countably many probability-one events proves
+
+    liminf as N tends to infinity of L_N/N >= -1/2 almost surely.
+
+No assumption on the number of fresh ticks or on positive-deficit recovery enters this argument. If a limiting inward speed v=-lim L_N/N exists, it is at most 1/2. This does not prove v exists or is positive; the reported approximately 0.246 remains a measurement.
+
+**Independent hand and scope controls.** An all-left displacement path has Z_0=-1, all later Z=-2, F_N=A_N=N, T_N=0, E_N=2N-1 and L_N=-N: accounting is exact and the pathwise bound is sharp. An all-stationary path keeps Z=-1, F_N=N, A_N=T_N=0, E_N=N and L_N=0. The actual GC505 +1 then -1 path has Z=(-1,0,-2), F_2=1, A_2=0, T_2=1 and L_2=0, showing that a certain reused-pivot left move is not counted as a fresh fair trial. These checks derive independently from displacements and reproduce the endpoint correction in the identity.
+
+For an unexpected limit of the method, an abstract displacement process taking only -1 and 0 with equal independent probabilities stays fresh at every tick and has limiting position slope -1/2. It satisfies all accounting and fairness premises. This abstract process is not asserted to be realizable by Rule 30; it shows that those premises alone cannot improve the half-speed ceiling. Deterministic all-left rows are also outside the iid fairness premise, so their sharp pathwise equality does not contradict the probabilistic bound.
+
+**Outcome and next.** The exposure criterion has a concrete transport consequence: all finite-time expected positions and an almost-sure lower asymptotic position bound, without a speed existence claim. Request a joint second reading of GC509's filtration and this accounting before filing a verified proposition. Next seek an actual dynamical constraint beyond fresh-bit bookkeeping that controls record frequency, positive deficit, or stationarity of the augmented state. No finite-history enlargement or fitting of the measured speed.
