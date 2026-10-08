@@ -12363,3 +12363,29 @@ Let a row have centre0. Let p,q be its nearest black-cell distances on the left 
 A pulse at-1 or1 individually gives initial centre01; together the seed{-1,1} gives0001. Direct hand rows are{-2,-1,1,2} at tick1 and{-3,-2,1,3} at tick2, whose left/right centre neighbours0,1 force black at tick3. The tie cancels the first arrival but does not guarantee sustained cancellation. Exterior input outside[-m,m] is outside the exact first-arrival cone, so no sampled-tail assumption enters.
 
 Consequently a white run lasting beyond its nearest initial black distance must begin with equal nearest distances on the two sides. This is only its first resonance condition. Repeated cancellation can involve farther sites and background evolution; no bound on its frequency or duration follows. Together with GC495 it gives explicit, asymmetric spatial certificates for black durations and for the first obstruction to ending a white duration. Both sublinear run-duration and signed run-length cancellation estimates remain open.
+
+## GC498 — Compact-language meaning of the infinite-width entropy question (2026-10-08)
+
+**Bears on.** Owner-directed portfolio GC497 question4, CONSTELLATION rows5/6. Standard elementary compactness and word-count argument, no novelty claim; hand reading pending. Existing G129 supplies compact trace classes, G53 distinguishes upper entropy bounds from physical equality, and G66 warns about support/length quantifiers. No entropy census, spectral fit or Local job.
+
+**Chosen checks.** Predict that nested closed shift spaces have entropy equal to the infimum of their entropies, because finite languages stabilize and both operations are infima. Counterfactual positive entropy at every finite width forces a positive infinite-width limit must fail on shifts whose ones are increasingly separated. Independent controls: full binary shift and a single fixed periodic orbit. Unexpected: a zero-entropy language can still contain an aperiodic trace; check Thue-Morse by a direct factor-count bound.
+
+**Precise model and theorem.** On a fixed finite alphabet, let X_1 contain X_2 contain ... be nonempty closed one-sided shift-invariant sets. For the period2 wall, the intended alphabet is one visible symbol per complete wall period, with a fixed phase and common endpoint conventions. Define X_infinity as their intersection. Let a_w(n) count its width-w allowed length-n words; by shift invariance these can be placed at the start of an element of X_w. Compactness implies
+
+    language_n(X_infinity)=intersection_w language_n(X_w).
+
+Indeed for a word admitted at every width, intersect the nested nonempty compact sets of width-w traces starting with that word. They have a common trace. The reverse inclusion is immediate. At fixed n, the finite decreasing word sets eventually stabilize, so a_infinity(n)=inf_w a_w(n).
+
+Word counts obey a(n+m)<=a(n)*a(m), since a concatenated word is determined by its prefix and suffix. Hence h(X)=inf_n log2(a(n))/n, the usual subadditive word-count entropy. It follows exactly that
+
+    h(X_infinity)=inf_n inf_w log2(a_w(n))/n
+                 =inf_w inf_n log2(a_w(n))/n
+                 =inf_w h(X_w).
+
+All sets here are nonempty, so no logarithm of zero or empty-system convention is hidden. This identifies the limiting quantity; it does not determine its value or a convergence rate.
+
+**Positive-finite-width failure.** Let X_w forbid two ones with fewer than w intervening zeros. It is closed, shift-invariant, nonempty, and the family is nested. Concatenate arbitrary blocks0^(w+1) or1 followed by w zeros. There are at least2^floor(n/(w+1)) allowed words of length n, so h(X_w)>=1/(w+1)>0. But X_infinity contains only sequences with at most one1. Its length-n language has n+1 words, so its entropy is0. Thus every finite-width entropy can be positive while the infinite-width entropy is zero. A finite plateau supplies no uniform lower bound.
+
+**Independent and unexpected controls.** A constant family of full binary shifts gives a(n)=2^n and entropy1 at every stage and in the intersection. A constant family consisting of the shifts of a fixed periodic word has bounded word counts and entropy0. For Thue-Morse, choose2^k with n<=2^k<2n. Each length-n factor lies inside two adjacent length2^k substitution blocks, each either the standard block or its complement. There are at most four adjacent block types and2^k offsets, so factor count is at most4*2^k<8n. Its orbit closure therefore has entropy0, while its generating trace is aperiodic by GC481's argument. This explicitly rejects identifying zero entropy with periodicity.
+
+**Application obligation and next.** Before applying the theorem to the reported wall automata, identify their actual closed infinite-trace languages, prune paths that have no infinite continuation, verify nesting under the same visible-period shift, and match the certified matrix quantity to word-count entropy (or retain it only as an upper bound). These hypotheses are not certified here for every width. If they hold, a uniform positive lower bound implies positive entropy for genuinely infinite-width compatible traces. It still supplies no finite-support initial row. A zero value would mean subexponential language growth, not periodicity or a prize proof. Next audit one existing automaton's endpoint and infinite-continuation conventions against this model before extending any numerical width.
