@@ -8161,6 +8161,27 @@ Preregistered controls L1..8 inspect2040 inputs, scalar XOR-OR versus independen
 
 **Duplicate guard for G211:** actual nearest G202,G209,G201 read in full. Their temporal overlap balance, four-update output patterns and post-split sibling support do not state this finite one-update precursor shape. G105's whole-ring count and G104's general right-to-left inversion are cited methods, not new count claims; the open-boundary terminal exceptions are the statement filed here.
 
+### G.GPT212. a fresh-pivot vector information ceiling for initial-row noise (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC413 at65a882c; claim and proof copied verbatim. Local L249 at4365e6d checked every conditioning step and independently reproduced the values. Explicit premise: the initial bits are independent and fair, and the channel noises are independent of them and of each other. This is an ensemble theorem, not fixed-seed complexity.
+
+**Claim.** Let X be iid fair on the initial cone[-(T-1),T-1], let F=(F0,...,F_(T-1)) be the centre samples of synchronous Rule30 at times0..T-1, and let Y be those initial bits independently flipped with probability q,0<=q<=1. With h(q) the binary entropy,
+
+    I(F;Y) <= T*(1-h(q)).
+
+If G is the same centre trace obtained by evolving initial row Y, then also
+
+    I(F;G) <= I(F;Y) <= T*(1-h(q)).
+
+**Proof.** Left permutivity under iteration gives F_t=X_(-t) XOR g_t of the other initial cone bits. No earlier F_s uses X_(-t), because its leftmost input is at-s>-t. Let E_t be the vector of all initial cone bits except X_(-t). Then the earlier observed prefix is determined by E_t. Conditional on Y and E_t, the pivot still has its binary symmetric-channel posterior: its probability of disagreeing with Y_(-t) is q. Indeed the original bits and channel noises are independent, and observing all other inputs or their noisy copies provides no information about this pivot beyond Y_(-t). Once E_t is fixed, g_t is fixed; XOR does not change entropy. Therefore
+
+    H(F_t given F_<t,Y,E_t)=h(q),
+    H(F_t given F_<t,Y)>=h(q).
+
+Summing the conditional-entropy chain yields H(F given Y)>=T*h(q). G97's independent fresh fair pivots give H(F)=T, proving the first bound. G is a deterministic function of Y, so data processing gives the second. Endpoint q0 or q1 yields an invertible input channel and q1/2 an independent one; the proof includes them. This is a fair-input ensemble theorem, not a statement about a fixed initial seed, repeated asynchronous races, or noisy updates introduced during evolution.
+
+**Duplicate guard for G212:** nearest G108,G119,G205 read in full. G108 conditions on the shared initial pivots' environment for racing copies; G119 derives a paired-error increment for a shared initial row. Here distinct initial rows are coupled by independent bit flips and the posterior pivot uncertainty supplies an upper ceiling. G205 is a fixed-depth wheel certificate. G97 supplies the existing fresh-pivot marginal law; it is cited, not refiled.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

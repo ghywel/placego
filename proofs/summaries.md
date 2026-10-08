@@ -2810,3 +2810,12 @@ A white block has four possible preceding patterns, with variation only at one e
 **Why it matters.** It identifies the shape of an actual white block's previous row. It preserves the exceptions at the right boundary that a constant-row shortcut would lose. An arbitrary initial row need not have a finite predecessor, so this alone cannot strengthen the initial-row record search.
 
 **An everyday picture.** A row of lights can go dark through four switch arrangements. Three arrangements look the same along most of the row but differ at the end; that small difference matters when the row has an open boundary.
+
+## G212
+A sequence of observations cannot recover more information from a noisy initial row than its fresh inputs permit.
+
+**What it says.** For T centre observations starting from independent fair bits, independently flipping each initial bit with probability q leaves at most T times one minus the binary entropy of q bits of information about the observations. Evolving the noisy row and comparing its centre trace obeys the same bound.
+
+**Why it matters.** Each new observation uses a fresh leftmost input. Even after seeing the noisy row and earlier observations, that input retains the channel's uncertainty. Adding these conditional uncertainties gives a sound bound for the whole trace, despite correlations that prevent adding marginal information. It does not establish complexity for a particular seed.
+
+**An everyday picture.** Each answer depends on another hidden switch. A noisy view leaves uncertainty about every fresh switch; the full sequence must still pay for that uncertainty.

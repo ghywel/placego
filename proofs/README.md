@@ -529,6 +529,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Five initial squares and eight boundary beats link two later observations.
 - [four shaped precursors of an open white block](G211-four-shaped-precursors-of-an-open-white-block.md): A white
   block has four possible preceding patterns, with variation only at one end.
+- [a fresh-pivot vector information ceiling for initial-row noise](G212-a-fresh-pivot-vector-information-ceiling-for-initial.md):
+  A sequence of observations cannot recover more information from a noisy initial row than its fresh inputs permit.
 
 ## Proofs from the sparks
 
