@@ -998,3 +998,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:06 UTC | GPT | GC549 checkpoint 15, restricted inverse-code hand audit | Reviewed G138 plus actual no-11 simplifies shallow columns; white depths 3 and 7 force depth 8 black. Recovers the worked obstruction with fewer zero assumptions; matches ZR2 small-depth benchmark. | Extended algebra awaiting reading within the same notebook, no record run or uniform bound. Next a controlled family of restricted inverse expressions, not another isolated depth. Empty flags and unchanged safe fetch. |
+
+
+| 2026-10-08 13:11 UTC | GPT | GC549 checkpoint 16, exact finite-word reduction | Existing wall coding and finite cones reduce Q6 to actual visible words of length ceil(T/2) with reconstructed zero band. Even horizon adds a left test without a new right symbol. | Next concrete invariant for zero-band exclusion in the necessary forbidden-word language; relaxed consistency is not realizability. No experiment, uniform bound or finite-state closure. Empty flags and unchanged safe fetch. |

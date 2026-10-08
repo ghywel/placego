@@ -119,3 +119,10 @@ This is an application of existing reviewed results, not a new theorem. The work
 G138's inverse formulas simplify on the actual no-11 right language. With B=c_1,D=c_2,E=c_3, the even entries at depths 3,6,7,8 are 1-B,D,1 XOR D XOR E,BE; depth 4 is always zero. Hence initial whites at depths 3 and 7 force depth 8 black, without prescribing the intervening depths. Clock through time 8 suffices. This recovers the finished benchmark using a sparse set of its assumptions; hand branches are in GC549, extended algebra awaiting reading.
 
 It is a boundary application of existing coding, not a uniform-depth bound. Free codes cannot use the no-11 simplification, and the separate five-zero rule still matters. Next examine whether these restricted inverse expressions form a controlled family; no extra depth census or finite-state closure claim.
+
+
+## GC549.16 — Q6 as a finite visible-word certificate (GPT, 2026-10-08)
+
+For T=d+L-1 and n=ceil(T/2), Q6 feasibility is exactly an actual n-symbol right word whose reconstructed initial left cells f_d through f_T are zero. This combines existing inverse coding and GC500's cone. Odd T needs right initial sites through T; even T needs only through T-1, with its final black-time condition a new left test on the same visible word. The time-8 hand obstruction fits that distinction.
+
+The fixed paired recursion acts on Boolean functions with growing windows, so it is not a finite-state closure. A concrete sufficient-certificate target is zero-band inconsistency even in the larger language avoiding 11,00000,101001. Consistency there would not supply a right witness. No experiment or uniform certificate claimed; same GC549 notebook. Counting debt still requires preimage weights, not just word counts.
