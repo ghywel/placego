@@ -14198,3 +14198,29 @@ It vanishes exactly when z=0 or u=v=0. Thus the complete seven-symbol prefix 010
 with arbitrary farther right sites. Sufficiency follows through the reviewed 11100 -> 0111 transition and the exact four-zero latch, not merely from matching the first two symbols.
 
 **Controls and remaining obligation.** Initial prefix 0001000 satisfies the condition and uses GC504's already checked 00010 -> 11100 transition. The earlier unconstrained 4-gap word 100001 also permits the branch 1101*, as well as 11100; the preceding zero removes the former. No new literal run is made. The 11100 cylinder has unconstrained farther sites when viewed in isolation, whereas an actual row reached from the preceding 01 has an entire right-tail predecessor condition. The local gate does not prove that every 11100 row is such an evolved row, or that it cannot subsequently produce the 3,2 gaps. Keep the full-factor absence as Cloud's SAT result awaiting independent proof. Next track the exact two-step image of the seven-site entry cylinder at the farther sites used by that 3,2 continuation, rather than assume a five-site reset erased its history.
+
+
+### GC549 checkpoint 28 — the history gate leaves a forbidden farther-site tail (2026-10-08)
+
+**Preregistered bounded predecessor audit.** Probe `rule30_gpt_entry_image.py` implements the predicted sixteen-state image map, with a cap of 4096 subsets. The blind full-tail prediction is REFUTED: a shortest missing tail is 011. Only eight subsets were discovered before that witness. All 32 bulk windows agree with independent decimal Rule 30 evaluation, and unrestricted initial states permit every output word, closing after one subset. The fixed-state full-tail counterfactual is refuted: state 1111 cannot emit one. No SAT library is available in GPT's current Python; none was installed, and no visible-word or record census ran.
+
+For the two-step bulk update at site j>=2, write initial sites j-2 through j+2 as a,b,c,d,e. The output is
+
+    F(a,b,c,d,e)=(a XOR (b OR c))
+                 XOR ((b XOR (c OR d)) OR (c XOR (d OR e))).
+
+The spatial transducer has four-bit states (a,b,c,d). Appending e emits F and moves to (b,c,d,e). This is a sixteen-state description of one two-step image, not a finite-state description of all future visible traces.
+
+Take an initial right row with sites 1..4 equal to 0001 and arbitrary farther sites z,u,v,... . With a white initial wall clamped black after one step and white after two, its two-step row has first four sites 1110. Requiring its fifth site zero gives z=0 or u=v=0, by checkpoint 27's direct formula. After emitting that fifth zero, the transducer state set is exactly
+
+    A={1000,1001,1010,1011,1100}.
+
+For subsequent emitted bits, direct substitution in F gives
+
+    image(A,0)={0001,0010,0011},
+    image({0001,0010,0011},1)={0010,0011},
+    image({0010,0011},1)=empty.
+
+Only states 1000 and 1001 in A can emit zero: the former needs appended bit one and gives 0001; the latter gives 0010 or 0011. Of the next set, only 0001 emits one, giving 0010 or 0011. Both remaining states emit zero regardless of the appended bit. Hence the two-step row cannot begin 11100011. This excludes the spatial tail 011 at sites 6..8 after its prefix 11100. It is a concrete farther-site predecessor obstruction; the five-site canonical prefix alone omits it.
+
+**Scope and next.** The leading history-bearing 4-gap from checkpoint 27 reaches precisely this restricted image. Cloud's proposed evolved-row premise therefore has a concrete spatial constraint beyond the canonical 11100 prefix. This is a hand certificate alongside a single-party instrument replay, awaiting second reading. It does not yet show that the subsequent visible 3,2 gaps demand this forbidden tail. Next track that exact continuation and ask whether it forces sites 6..8 equal to 011, or a different excluded image word; do not enumerate longer absent visible words yet.

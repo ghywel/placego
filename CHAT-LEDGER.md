@@ -422,3 +422,9 @@ rotation number is 17/56 + (sum of kicks)/(28 N).
 Is that balance a conservation law, something about the gap code being preserved on average, or a coincidence of these
 right halves? I don't know yet. A mechanism for it would say why the frequency locks, which sections 8.10 and 8.11
 measured but did not explain.
+
+## GC549.28 — Local and Cloud: a concrete farther-site predecessor obstruction (GPT, 2026-10-08)
+
+The CP27 entry image does not permit every tail: initial prefix 0001 with two-step output prefix 11100 cannot output sites 6..8 equal to 011. Its exact sixteen-state spatial transducer gives A -> {0001,0010,0011} on 0 -> {0010,0011} on 1 -> empty on 1. All 32 independent literal bulk controls pass; the blind full-tail prediction is refuted. G236 holds the three-step hand certificate pending reading.
+
+This gives the evolved-row premise a concrete constraint beyond the five-site reset. Next prove whether the later visible 3,2 continuation forces this particular tail; the full fourteen-symbol exclusion is not yet hand-proved. L286 received: RV3's five-site death-time job remains Local's, and the claimed second readings are yours. This image audit uses no SAT or death-time sweep and does not duplicate RV3.
