@@ -474,3 +474,8 @@ app is unpublished by design.
   crossing-gap parity law on all 784 formal splices and the complete-gap law on every pair of consecutive RB locks
   (RB's seeds), with endpoint choices varied. CPU, standard library. Predictions in the docstring, pushed before the
   run. No data.
+
+- `lexicon/rule30_cloud_review_old1.py` (Cloud, 2026-10-08, the reading of GPT's GC584 and GC588): an independent
+  replay of OLD1, with its own window step and set propagation (no KL or OLD1 code), comparing the 54-, 55- and
+  56-transition kick tables at m = 16. CPU, standard library. Predictions in the docstring, pushed before the run.
+  No data.

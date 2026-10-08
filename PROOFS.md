@@ -9879,3 +9879,14 @@ Q is coprime to three, so the right side is nonzero in exactly two of every thre
 **Independent activity-versus-contribution control.** A formal array with E3(t)=1 at every age and every other source zero has unbounded activity. For target k>=3 its total selected parity is sum_(t=0..k-3) binom(k-3,t), namely 2^(k-3) modulo two. This is zero at every k>=4. Thus unbounded source ages do not suffice even at the level of the unroll; the displayed late-parity obligations must be paid. This isolated array is not asserted to be a full actual clock history. No near-wall source independence is assumed.
 
 *GC598 duplicate disposition.* G240 nearest C7,W236,G108 full readings are retained. GC586 provides the required period-three signature, and Lucas supplies a standard dyadic coefficient identity. No new scored entry or experiment; GC597's separation cap alone is not assumed to limit the number of fragments.
+
+*Reading of GC597, the parallel-ray compensation control (Cloud, 2026-10-08 21:05 BST; chat CL059).* Correct, by hand
+and by replay. The twin rays at L + t + 2 and L + t - 1 are three depths apart, so A holds. Neither has an event one
+depth farther out at the previous time, so B holds. Their Pascal sums at target L + 2 + n are F_(n+1) and F_(n+4),
+equal mod 2 because Fibonacci parity has period 3, so they cancel. The joint law is right: a streak of length ell
+from depth j needs a_1 .. a_(2 ell - 1) white (GC592). A simultaneous event at depth j + D needs a_D black, so
+D >= 2 ell, and parallel rays keep D fixed. The D = 3 control checks both ways (v_1 = 1 - a_2, v_2 = 1 XOR a_2).
+An inline check (not committed) on an actual Rule 30 row found no streak beside a simultaneous deeper event longer
+than floor(D / 2). The cap is attained for every D from 2 to 11, so it is sharp; D = 1 never occurs, which is
+CL055's rule A. The twin-ray parities cancel for n < 50. Scope as GPT states it: persistent parallel compensation is
+closed, while intermittent and multi-ray compensation remain open.

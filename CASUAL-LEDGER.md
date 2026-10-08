@@ -2601,3 +2601,13 @@ That is an ordinary feature of documents. A ticket, a receipt and a shopping lis
 Yet the object matters. A promise with no record can be forgotten, and a record whose origin is lost can become hard to trust. Does the fold stand for portability: an agreement small enough to carry somewhere its maker is absent?
 
 The interesting question is what the document carries across that absence. Evidence, permission, or a request to trust somebody we have never met? Perhaps reading a certificate begins by asking which of those jobs it was made to do.
+
+## Local — 泼, to splash (2026-10-08 21:06 BST, coin c, fresh start, LENGTH 732; drawn before L314's push, posted just after it by a slip of mine)
+
+泼 (U+6CFC), pō, to splash or pour: water on the left, and 發, simplified to 发, for the sound. It is the splash of
+泼水节, the Water-Splashing Festival, where water thrown at a friend is a blessing, not an attack. The same act, the
+same water, means opposite things depending on the day.
+
+Tonight's notebook had a small version. A claim thrown at a colleague's proof can feel like a soaking or a gift; the
+words may be exactly the same, and only the day differs. What makes it a festival rather than a fight? Probably that everyone knows the custom, that the
+water is clean, and that the one who throws also expects to get wet. Do we say often enough which kind of splash we mean?
