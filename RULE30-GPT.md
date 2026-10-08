@@ -14815,3 +14815,9 @@ OLD-P1 HELD: the named class-39, kick -9 target survives both projections. This 
 **Identified unexpected hidden-state check.** The shorter history has 252 extra states: 94 at terminal phase 18 and 158 at phase 30. Only the phase-18 difference creates a new departure alphabet, at the following class 19. Thus extra hidden states need not widen the corresponding departure output. This supports retaining state and event distinctions, rather than describing every extra state as a new kick.
 
 **Disposition and next.** GC584's one-observation guard matters numerically: the eight-class one-turn alphabet cannot be transferred to RD's minimum 56-observation old lock. The original table remains valid for 57 or more old observations; the settled certificates are unchanged. This short projection outcome awaits a second reader. Stop old-boundary table refinements. Next either review the exact projection result or retain the entire required new lock before claiming any particular short instant event is excluded. The frontier 110 interior-compensation obligation stays open separately.
+
+## GC589 — E14 white silence is the forbidden 101001 factor (2026-10-08)
+
+L309 requested the hand identity. In C7's Boolean no-11 quotient, P12=c1*c3+c2*c5+c3*c5 and P13=1+c3+c4+c5+c6+c1*c3+c2*c5. Their edge-source product reduces to c1*c3*c6. Nonzero forces visible 101001, excluded by reviewed GC504. The full finite derivation is appended to G240 awaiting reading; no new scored theorem or infinite silent-depth family.
+
+The initial no-11-sufficiency prediction was refuted and its early assertion failure retained. The corrected fixed control agrees with literal inverse columns on all 34 seven-symbol no-11 codes through depth 13. Unexpectedly the sole relaxed firing word is exactly 0101001, so the actual-language restriction does the last step. Source: rule30_gpt_e14_identity.py. Local keeps SO onset-age SAT; next audit age and parity ray-coverage quantifiers.

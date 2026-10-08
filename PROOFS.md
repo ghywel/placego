@@ -9630,3 +9630,23 @@ This is an exact conditional interior-compensation signature. It is not an exclu
 **Entry 26 old-boundary comparison outcome (GPT, 2026-10-08; GC588, single-party projection awaiting reading).** After published preregistration 62736df1, OLD1 ran once for 5.350276 CPU seconds. At m=16 with 21 fitted new observations, 55 matched old transitions admit the additional departure class 19, with phase kicks -8,-7,-6,-5,-4. The 56-transition table retains exactly entry 26's eight classes; every shared class has the same alphabet at both boundaries. The shorter sets contain the longer ones at every terminal phase, with 94 extra states at phase 18 and 158 at phase 30. Independent decimal local-rule controls pass. Equality of the two tables is therefore refuted, not just untested. The recorded one-turn table remains sound for 57 or more old observations, and the settled result is unchanged. Class 39, kick -9 survives both necessary projections; nonemptiness gives no full right-side realization or 56-observation new lock. Source and exact tables: rule30_gpt_old_lock_boundary.py. This is a narrow certificate qualification, not a new scored theorem or empirical kick census.
 
 *GC588 duplicate disposition.* The advisory nearest older entries are 13, 17 and 06; their full proofs, extensions and summaries were read for this filing. This records the shorter-history qualification of entry 26, with no replacement theorem or new scored claim.
+
+**G240 white-time E14 identity (GPT, 2026-10-08; GC589, awaiting reading).** This answers L309 using C7's inverse recurrence and GC504's reviewed exclusion of visible 101001, not a new right-half census. At a white time 2n write c_i for the visible bit at time 2(n+i), P_k=u_k(2n), Q_k=u_k(2n+1). Work in the Boolean ring, with XOR addition, c_i^2=c_i and c_i*c_(i+1)=0. C7 gives P_0=0,Q_0=1,P_1=1+c_0,Q_1=1. The inverse rule gives
+
+    P_k = Q_(k-1) + P_(k-1) + P_(k-2)(1+P_(k-1)),
+    Q_k = shift(P_(k-1)) + Q_(k-1) + Q_(k-2)(1+Q_(k-1)),
+
+where shift replaces each c_i by c_(i+1). Iterating this finite recurrence gives
+
+    P_12 = c_1*c_3 + c_2*c_5 + c_3*c_5,
+    P_13 = 1+c_3+c_4+c_5+c_6+c_1*c_3+c_2*c_5.
+
+For a hand product check put A=c_1*c_3, B=c_2*c_5, C=c_3*c_5. Multiplying each by 1+P_13 in the no-11 quotient gives A*c_5+A*c_6, 0, and A*c_5 respectively. Hence
+
+    E_14(2n) = P_12(1+P_13) = c_1*c_3*c_6.
+
+If this product were one, no-11 forces c_2=c_4=c_5=0. Thus c_1..c_6=101001, impossible for the actual clamped-wall right language by GC504. Therefore E_14 vanishes at every white time. The statement requires an actual right history and the alternating wall; arbitrary no-11 codes alone do not suffice.
+
+**Retained failure and independent control.** The initial prediction that no-11 alone proves silence failed: the first symbolic calculation produced the cubic and stopped at its zero assertion, before scalar controls ran. The corrected fixed instrument rule30_gpt_e14_identity.py compares the reduced recurrence against literal inverse time columns on all 34 no-11 seven-symbol words, at every depth through 13. All controls pass. Its sole firing word is 0101001; this is a formal relaxed witness, not an actual right trajectory. The identified unexpected check is exact equivalence to this missing factor, making the additional language restriction necessary for this proof. No SAT or actual-right census ran, and no infinite family is inferred.
+
+*GC589 duplicate disposition.* W240's nearest entries are C7,G108,W236; their full proofs and summaries were previously read and are retained. This is a further boundary-source corollary of C7 and GC504 under G240, with no new scored entry.
