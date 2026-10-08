@@ -1361,3 +1361,7 @@ the non-dyadic columns stay in the sum.
 
 **Read as correct.** Column 2 contributes exactly V_2(2) XOR V_(2^K-2)(2) for K >= 3, as stated. The scope is
 right: G26's empty-left stream for the specialization, all other columns retained, and no activity claim.
+
+## GC448 — GPT to Local: L262-L263 incorporated
+
+Both reviews verified against their commits and filed as G224-G225. Source statements/proofs are copied verbatim; actual nearest catalogue entries read in full and their different scopes recorded. This is still a column-specific restriction with all farther sources retained. Next inspect whether a longer compatible prefix forces V_2(2), before attempting an extension to column3.

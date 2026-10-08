@@ -8413,6 +8413,51 @@ Summing G91's state groups gives the same O_b,E_b but total matched multiplicity
 
 **Duplicate guard for G223:** actual nearest G91,G92,G222 read in full. G91 requires matching next-state and next-count labels; G223 pools those state bins by next count and proves its triangle comparison. G92 remains the closed coarse bootstrap, and G222 groups two-step words at a current count. Neither supplies a mass estimate for the new count-only residual.
 
+### G.GPT224. exact dyadic source-column sampling times (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC446 at bee30ac; Local L262 in e98c45b verifies the binary proof, endpoint examples and nondyadic guard. The source statement and proof are copied verbatim below. Standard binary binomial parity is specialized to G215's kernel; G26/G58 already use related Catalan parity.
+
+**Prediction, written before controls.** For i=2^r, r>=0, K_l(i)=1 exactly when l=2^h-2^r for an integer h>=r+1. At odd dyadic target T=2^K+1 and 1<=r<K, the selected times on source column i=2^r are exactly t=2^K+2^r-2^h, r+1<=h<=K. Counterfactual: column2 contributes only at the last down transition t=2^K-2. Unexpected check: use column4 as well as column2; retain a nondyadic-column guard. No actual orbit or matching source-product claim is predicted.
+
+**Proof.** A coefficient with l<i or wrong parity is zero. Otherwise write a=(l-i)/2, so K_l(i) is the parity of binom(2*a+i,a+i). Over binary coefficients, (1+z)^n is the product of (1+z^(2^j)) over set bits j of n. Its coefficient is odd precisely when the selected exponent is a bit subset of n; equivalently the two summands a and a+i add without carries. Thus K_l(i)=1 iff a AND (a+i)=0. When i=2^r, the lower r bits of a and a+i agree, so disjointness forces them all zero. Write a=2^r*c. The remaining condition is c AND (c+1)=0, which holds exactly for c=2^j-1, j>=0: incrementing clears the trailing ones, while any higher set bit survives in both numbers. Hence l=2*a+i=2^(r+j+1)-2^r. Conversely each such value gives disjoint summands and the coefficient1. Substituting l=T-1-t proves the claimed times; t>=0 restricts h<=K when r<K. Each time also has t>=i and fits the causal cone.
+
+For a full0101 orbit the contribution of this one column to the time-T Duhamel parity is therefore exactly
+
+`XOR_(h=r+1,...,K) V_(2^K+2^r-2^h)(2^r)`.
+
+This is a contribution, not the complete certificate. If initial support[-R,R] satisfies 2^K>R+1, G28's homogeneous centre term is zero at T: A^(2^K+1) samples only positions +/- (2^K-1) and +/- (2^K+1). G215's whole source sum is then1, but nondyadic columns remain in that sum. G216 removes i<=1 termwise. No positivity or independence of the remaining products is assumed.
+
+**Duplicate guard for G224:** actual nearest G215,G216,G62 read in full. G215 supplies the general kernel; G216 removes two columns by temporal parity; G62 restricts source column1. This entry gives exact coefficient times on every dyadic column, rather than any of those source-product statements.
+
+**Scope:** this is a coefficient stencil per dyadic column. Nondyadic columns remain in the full parity certificate, and source products need not fire. No finite-clock exclusion.
+
+### G.GPT225. column2 sources require switches and leave two dyadic endpoints (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC447 at c548593; Local L263 in 6da6597 verifies the actual product implication, G26 specialization and coincident-endpoint guard. The source statement and proof are copied verbatim below. GC446 is now G224, independently read by L262; G61-G62 supply the local equations.
+
+**Prediction before controls.** In any full0101 wall orbit, V_(2*n)(2)=1 implies s_(n+1)=1-s_n, where s_n=x_(2*n)(1). For G26's empty initial left row, at target T=2^K+1 with K>=3, combining this restriction with GC446 leaves only source times2 and2^K-2 on column2. Counterfactual: every effective switch forces the product. Unexpected check: K=2 makes the two proposed endpoints coincide, so it must be handled as one term rather than two XOR copies.
+
+**Boolean proof.** Write b=x_(2*n)(2), q=x_(2*n)(3), d=x_(2*n+1)(1), c=x_(2*n+1)(2). G61-G62 give
+
+`d=(1-s)*b`, `c=s XOR ((1-b)*q)`, `s_next=1 XOR ((1-d)*c)`.
+
+If the actual source product b*q is1, then b=q=1. Hence d=1-s, c=s, and s_next=1 XOR s=1-s. Thus the product vanishes at every even time whose effective s does not switch. This works for every compatible left row under the full0101 wall, not only the empty-left specialization. The implication has no converse: at s=0,b=1,q=0, the equations still give d=1,c=0,s_next=1 but b*q=0. GC425's q=1 patches show both switch directions permit a product locally; that is not full-right sufficiency.
+
+**Exact dyadic specialization.** G26 gives s_0=1 and s_n=floor(log2(n)) modulo2 for n>=1. Its switch indices are n=0 and n=2^j-1 for j>=1. GC446 selects column2 times t=2^K+2-2^h, h=2..K, so n=t/2=2^(K-1)+1-2^(h-1). The endpoints h=K and h=2 give n=1 and n=2^(K-1)-1. For K>=4, all interior h=3..K-1 give
+
+`2^(K-2)+1 <= n <= 2^(K-1)-3`.
+
+This lies strictly inside a single G26 constant run, so no product can occur there. For K=3 there are no interior samples. Consequently the actual column2 contribution to the odd centre Duhamel sum is exactly
+
+`V_2(2) XOR V_(2^K-2)(2)` for K>=3.
+
+At K=2 the only selected time is2, giving V_2(2) once. This says nothing about whether either endpoint is active; all other source columns must still be retained. Combining with the finite-support homogeneous-zero condition of GC446 leaves a whole-source parity certificate, not a two-event certificate.
+
+**Duplicate guard for G225:** actual nearest G224,G215,C2 read in full. G224 supplies candidate times and G215 the entire cone parity. C2 is a Rule30 white-wall latch, a different rule and hypothesis. G62 is also credited: its source is column1, whereas this entry restricts the actual product on column2 and prunes the G224 stencil.
+
+**Scope:** the switch implication holds under every full0101 wall; the two-endpoint specialization requires G26's empty initial left row. Every other source column remains. Local patch compatibility does not imply a full clock or active endpoints.
+
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

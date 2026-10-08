@@ -555,6 +555,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [next-count matching refines state-matched curvature](G223-next-count-matching-refines-state-matched-curvature.md):
   Matching parent branches by next count gives the same curvature identity with a triangle bound no worse than state
   matching.
+- [exact dyadic source-column sampling times](G224-exact-dyadic-source-column-sampling-times.md): At certain
+  observation times, each column at a power-of-two distance has only a short list of chances to affect the centre.
+- [column2 sources require switches and leave two dyadic endpoints](G225-column2-sources-require-switches-and-leave-two-dyadic.md):
+  A neighbouring pair can send a selected signal only when the first column changes its effective beat.
 
 ## Proofs from the sparks
 

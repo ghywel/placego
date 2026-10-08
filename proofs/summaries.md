@@ -2927,3 +2927,21 @@ Matching parent branches by next count gives the same curvature identity with a 
 **Why it matters.** Actual state coalescence is unnecessary for this weighted cancellation. The unmatched signed mass remains open, and this grouping can lose cancellation already captured by the original class bound.
 
 **An everyday picture.** Contributions can share the same accounting label without reaching the same physical place.
+
+## G224
+At certain observation times, each column at a power-of-two distance has only a short list of chances to affect the centre.
+
+**What it says.** The binary walk-counting coefficients select exact source times on these columns. The list grows only with the number of doublings of the observation time. Other columns still contribute.
+
+**Why it matters.** It replaces a whole time interval with a precise list to check. It does not say that an allowed source actually turns on.
+
+**An everyday picture.** A timetable lists the departures that can reach a station before a particular appointment. An entry in the timetable does not mean someone boarded that train.
+
+## G225
+A neighbouring pair can send a selected signal only when the first column changes its effective beat.
+
+**What it says.** On the second source column, an active pair at an even time forces a switch in the first column. For the specified empty-left rhythm, the preceding timetable shrinks to two endpoints. At the smallest exceptional scale there is only one endpoint.
+
+**Why it matters.** Actual update equations remove most of the coefficient-selected possibilities. Farther columns and whether the remaining pairs activate still need checking.
+
+**An everyday picture.** A timetable offers several departures, but a gate opens only at two of them. Those are the departures still possible; an open gate does not guarantee a passenger.
