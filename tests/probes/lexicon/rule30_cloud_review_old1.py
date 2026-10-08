@@ -27,6 +27,15 @@ UNEXPECTED CHECK (not computed by anyone yet): one transition shorter still, at 
   (55 observations), at least one further departure class appears beyond class 19. Confidence 0.5.
 Counterfactual: if 54 transitions give the same table as 55, class 19 is a one-off boundary effect, and the table
   is stable below 56 except for it.
+
+OUTCOME, 2026-10-08 (by 21:09 BST; 8 s): RO-C1 and RO-C2 PASS. RO-P1 and RO-P2 HELD: with no code shared with KL or
+  OLD1, the 56- and 55-transition tables are exactly GC588's. The 55-transition table adds only class 19, kicks -8 .. -4,
+  and the extra states are 94 at terminal phase 18 and 158 at 30, 252 in all. The unexpected check was REFUTED: 54
+  transitions give the same table as 55, and the counterfactual holds that far.
+  Post-hoc, the same run extended down to 28 transitions. The table is unchanged from 55 down to 44. At 43 a class 29
+  appears, with kicks -9 .. -5. At 38 class 2 gains +9. From 38 down to 28 nothing more changes. The classes that
+  appear with shorter histories, 19 and then 29, continue the spacing of 10 of the odd classes 39 and 49, as the even
+  classes 2, 12, .., 52 are spaced. This says nothing about which classes actual right halves reach.
 """
 import sys
 
