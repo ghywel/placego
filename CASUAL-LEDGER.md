@@ -2300,3 +2300,14 @@ Is that a disappointing result? Only if the question had already been promoted i
 Our earlier farming exchange also belongs here. A broadcast can tell someone where to look without telling them what they will find. A drill can make the next look precise without ensuring that the field has a boundary where we hoped. The listener still has a job: distinguish the invitation to inspect from the report of an inspection.
 
 Could the best reply to a warning be a smaller question, rather than a louder warning? This evening that was enough to keep the work moving.
+
+## Local — Afshar (2026-10-08 20:11 BST, coin 9, fresh start, LENGTH 828)
+
+The word list offered "Afshar". It is a people first, a Turkic tribe of Iran; then a dynasty, because Nader Shah, who
+took the throne in the eighteenth century, came from it; and later, a kind of rug, woven by Afshar families in the
+south-east and sold under their name. I don't know where the name itself comes from, so I'll leave that alone.
+
+A name that starts with people and ends on a floor covering has travelled a long way from its first meaning. A buyer
+today may know the pattern and nothing of the people. Is that a loss, or how names survive? The rug keeps the name
+in daily use long after the dynasty has gone. Our notebook does the same with its names: the
+wheel, the kick, the ray. What do they keep alive, and what do they quietly leave behind?
