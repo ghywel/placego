@@ -12757,3 +12757,31 @@ For an unexpected limit of the method, an abstract displacement process taking o
 **Outcome (2026-10-08, GPT).** Probe `rule30_gpt_front_exposure.py` PASS on the stated 8192 patches and 24576 prefixes in independent updates. All 800 pre-gap exposure groups and all 1312 post-gap/pre-pivot groups balance exactly. Revealed-index sets independently agree with the signed-deficit recursion, endpoint correction and pathwise bound. Exact mean front positions at N=1,2,3 are -1/4,-35/64,-105/128, and mean fresh-tick counts are 1,7/4,5/2. Fresh-left expectation equals half the fresh-tick expectation at each prefix. Reused-group fairness CF is REFUTED. The two unexpected GC506 histories have exactly the predicted exposure status and probabilities.
 
 **Cone and interpretation audit.** Through three updates, every background value affecting the single-flip damage has its initial cone within sites -5 through 5; the extra sites -6 and 6 are exterior controls. Initial bits beyond the finite patch cannot influence these damage events and remain independent under the product law. Grouping the exposed bits only through site 6 is therefore sufficient for this finite control; GC509's general filtration still exposes the entire initial right half. These exact controls check the adaptive grouping and accounting that were absent from a position-only model. They support the proof candidate without replacing an independent hand second reading or implying a limiting speed. Stop at the registered horizon; request joint reading, then return to actual structural constraints.
+
+## GC512 — Fresh-bit fairness does not prove record recurrence (2026-10-08)
+
+**Bears on.** GC509-GC511 and portfolio question 2, constellation row 3. Bounded hand scope audit, pending independent reading; no experiment. Predict that finitely many fresh-record ticks force outward slope +1, but that their conditional fairness alone does not exclude this outcome. Unexpected: any positive limiting inward speed demands a quantitative lower frequency of fresh records.
+
+**Actual finite-record implication.** In the iid single-flip experiment, suppose only finitely many ticks have J_t<B_t. After their last occurrence B_t is a constant finite integer B. Every later J_t is at least B, otherwise another record would occur. Since J_t=L_t-1-t and the rightmost damage remains at t,
+
+    t+1+B<=L_t<=t eventually, hence L_t/t tends to +1.
+
+This is a pathwise conditional implication, not a statement that the finite-record event has positive or zero probability. Its converse is not proved: outward slope +1 need not make the total exposure finite.
+
+**Counterfactual refuted by an abstract process.** Start L_0=0, B_0=0, J_0=-1 and use exactly GC510's deficit recursion. At each fresh tick independently choose displacement -1 or +1 with equal probabilities. At every reused tick choose +1 deterministically. A fresh left move keeps the next tick fresh, with deficit -2; the first fresh +1 move sets the next deficit to 0. Subsequent +1 moves keep it 0 forever. This process satisfies the stipulated fair left-advance law at every fresh tick and all pathwise exposure accounting, including L_N>=-A_N.
+
+Let K count the initial fresh left moves before that first +1. Then P(K=k)=2^(-(k+1)), so K is finite almost surely. For t>=K+1,
+
+    B_t=-2K-1, Z_t=0, L_t=t-2K.
+
+Thus it has finitely many fresh records and outward limiting slope +1 almost surely. Independent hand endpoint checks: K=0 gives B=-1 and L_t=t; K=1 gives the actual initial displacement pair -1,+1, then L_t=t-2. The actual first +1 branch in GC505 instead forces a following left move, whereas this abstract model moves right again. That is the explicit extra dynamical constraint missing from the freshness-only model. It is not asserted to be a Rule 30 damage history or to have a realizable background.
+
+Consequently conditional fresh-bit fairness and exposure bookkeeping alone cannot establish recurrent records, positive inward speed, or full regeneration. The example refutes an inference between those premises; it does not refute recurrence for actual Rule 30.
+
+**A necessary frequency condition.** GC510 gives L_N>=-F_N/2-M_N, where its exponential moment bound implies limsup M_N/N<=0 almost surely. If an inward speed v=-lim L_N/N exists and v>0, then
+
+    liminf F_N/N>=2v almost surely.
+
+This follows by rearranging the inequality and taking the lower limit. It neither supplies v nor a positive record-frequency bound. In particular infinitely many fresh ticks alone allow zero limiting frequency, so proving recurrence would still fall short of this quantitative requirement. Even a record-frequency lower bound would not by itself prove positive inward speed: outward jumps and accumulated exposure deficit also enter the exact identity.
+
+**Outcome and next.** Fresh records are a useful source of unbiased bits, not yet a renewal structure. The missing dynamical targets are now explicit: exclude the finite-record escape, then control record frequency and the full state between records. GC505's forced reversal after an initial +1 is an actual constraint distinguishing Rule 30 from the countermodel, but no analogous all-time reversal bound has been established. Stop abstract-model proliferation; seek a justified return constraint on reachable background-and-damage states or change to another open reasoning lane. The GC509-GC510 proof candidates still await joint second reading.
