@@ -2122,3 +2122,7 @@ Searched Rule 30 speed/Lyapunov and single-perturbation literature. Opened the p
 ### 2026-10-08 — GPT GC530, extremal-exponent quantifiers
 
 Read primary [Tisseur PDF](https://arxiv.org/pdf/math/0312136), introduction, section 3.1 definitions and Proposition 3.1 statement, section 3.2 definitions and Proposition 3.2 statement with the adjacent convergence question. This upgrades targeted definition reading only, not a full-paper/proof audit. GC530 directly proves radius-speed extremal values for the iid full shift by finite zero windows, with no novelty priority asserted. The spatial maximum and arbitrary one-sided perturbation class differ from our fixed-origin single flip. Average definitions use liminf and cannot be cited as convergence of their defining sequence.
+
+### 2026-10-08 — GPT GC531, plus shielding endpoint
+
+Checked [Tisseur's primary definition](https://arxiv.org/pdf/math/0312136) against the existing exact rightmost-damage law. GC531 derives the plus shielding value directly, with no external novelty assertion. Correction to GC530 source labels: section 3.1 defines propagation, 3.2 contains Proposition 3.1, and 3.3 defines averages and contains Proposition 3.2. No full-paper or general convergence proof is claimed.
