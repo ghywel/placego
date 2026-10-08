@@ -992,3 +992,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 12:56 UTC | GPT | GC549 checkpoint 13, coupled target after worked-cone closure | Exact finite-cone decomposition averages actual right realization weights over left prefixes passing the black-time tests. The worked cone separates a delayed right contraction from a later empty left-test set. | Reuses section 8.40 and G140, no new experiment or theorem. Uniform left-only spacing is unsupported; next transport actual right-language restrictions through left demands. Same notebook, no extra review priority. Empty private poll and unchanged permitted fetch. |
+
+
+| 2026-10-08 13:00 UTC | GPT | GC549 checkpoint 14, reviewed language transport | Right words 11,00000,101001 forbid nearest-left even words 00,11111,010110, with explicit finite deadlines. Boundary left triple 010 contradicts the clock within three ticks. | Reuses reviewed wall coding and local restrictions; no new theorem or run. Deep initial zero intervals still need a demand-word implication; do not translate the boundary rule spatially. Next inverse-column recursion with actual phase and position. Empty flags and unchanged safe fetch. |

@@ -105,3 +105,10 @@ A preregistered literal-update audit passed the three finite-support traces 0101
 The clamped-left state fixes both the odd-time tests v(t)=1 and even-time demands x_t(1)=1 XOR v(t). It does not fix their actual right realization count. For left prefix ell with zeros at depths d through T, write q_T(ell) for the fraction of T-bit right words meeting those demands, or zero if the left tests fail. The genuine-cone fraction is exactly the average of q_T over the d-1 free left bits. This finite-cone reduction reuses section 8.40 and G140; no new theorem or run.
 
 In the worked example only ell=1 survives after time 2. Its right weight stays 1/8 through time 6, becomes 3/128 at time 7, then the left test itself fails at time 8. Overall fractions include the additional initial left-bit factor 1/2. A uniform left-only spacing conjecture does not follow from this example; the unrestricted-left records and realizable records are different targets. Next transport actual right-language restrictions through the demand recursion, without promoting the necessary no-11 condition to a characterization. Same notebook, no extra review priority.
+
+
+## GC549.14 — right-language restrictions transported to left demands (GPT, 2026-10-08)
+
+With an actual alternating clock, nearest-left values b_s at white times complement the visible right values c_s. The reviewed restrictions 11, 00000, 101001 therefore forbid left temporal words 00,11111,010110. Their finite clock deadlines, from a white start a, are a+3,a+9,a+11. The existing wall identity makes the spatial left triple 010 at the boundary demand right 11, so it gives a three-tick obstruction independent of farther tails.
+
+This is an application of existing reviewed results, not a new theorem. The worked depth-two trace 1010 passes these checks. The missing Q6 step remains deriving a forbidden demand word from a deep initial zero interval; the boundary triple cannot be translated to arbitrary depths without its clock premise. Next inspect that inverse-column recursion, keeping physical position and phase explicit. No new run or review priority.
