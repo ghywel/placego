@@ -15629,3 +15629,21 @@ This is a bounded necessary condition for this finite prefix, not an assertion t
 **Disposition.** Finite clock data yields only the Q values satisfying this horizon bound (or a separately checked shorter pair). An infinite sequence of growing finite witnesses need not share a seed or a fixed L, so their old-source witnesses do not become a full finite-left clock by themselves. No bound on H, finite-seed cost, source density or prize conclusion follows. This supplies an explicit guard for future finite proof audits; no new age or width census is requested. Local reading requested.
 
 **GC634 receipt (Local L342,fb1e34d3).** Local independently hand-read the settling and source recurrence and reports ordinary-update controls on4,000 rows. The age-only shortcut is second-read CLOSED; the target parity obligation remains OPEN. GPT did not rerun those controls.
+
+## GC636 — A linear left-edge deadline alone is not Q1's hull count loss (2026-10-08)
+
+**Scope and prediction.** Change from Q6's age filters to Q1's counting form, using the exact definition in RULE30-PRIZE section8.51. Predict a uniform deadline proportional to left-edge distance does not, by itself, imply exponential loss in that count. Counterfactual each additional unit of edge distance costs a free initial bit. Unexpected check sums over observation positions in a fixed hull. Hand counting audit only; no experiment, actual Rule30 counterexample or claim that a linear deadline is known.
+
+N_w(T) counts pairs consisting of an initial configuration of exact hull width w and a chosen observation position within that hull, whose trace alternates for the stated horizon. Normalize the hull to sites0 throughw-1. For w>=2 its endpoints are black and its w-2 interior cells free, giving 2^(w-2) configurations. Each observation position L has distance L from the left edge. For EVERY fixed L in0 throughw-1 there are exactly 2^(w-2) pairs before imposing trace conditions. L is the choice of position, not a run of prescribed initial zeros inside the hull. Thus the unfiltered edge-distance distribution is uniform across positions, not weighted by2^(-L).
+
+Suppose a separate theorem provided a clock deadline H(L)<=cL for every configuration at distance L, with c a fixed positive integer. A surviving horizon T would require L>=ceil(T/c). Discarding all closer positions gives only the upper bound
+
+    N_w(T) <= 2^(w-2) max(0,w-ceil(T/c)),
+
+before using any additional dynamics. Endpoint time conventions can shift the ceiling by one; they do not change the counting issue. This bound removes observation positions, not an exponential fraction of seeds at each retained position.
+
+**Independent logical countermodel.** In an abstract eligibility model, declare every pair at position L admissible exactly for horizons T<=cL. It obeys the proposed linear deadline and has exactly the displayed count. At even w and T=cw/2 it keeps (w/2)2^(w-2) pairs. For any alpha>0 this cannot obey 2^(w-alpha T) times a fixed polynomial in w,T for all w, since the ratio grows exponentially. This is a countermodel to deduction from the deadline alone, not a Rule30 trajectory or refutation of Q1. Imposing genuine trace equations may of course remove exponentially many configurations at the retained positions.
+
+**Disposition and domain guard.** A fixed-centre unconditioned fair ensemble can have a geometric leftmost-black distance; that is a different sample space. Conditioning on exact hull width and counting all positions changes the weights. A deadline can exclude individual finite-edge infinite clocks without automatically supplying Q1's signed finite-seed count cost. The remaining obligation is a bound on surviving configurations within the L slices, or a rigorously weighted sum of those slices using actual dynamics. Do not multiply marginal right-paid ratios or import geometric edge weights without proving the relevant conditioning. The existing Q1 question remains OPEN. Local reading requested; no prize conclusion or new computation.
+
+**GC635 receipt (Local L343,0ae41528).** Local independently hand-read the horizon inequality, original-age window and inclusive endpoint control. GC635 is second-read, with its sufficient rather than necessary constant. Its finite-clock guards do not supply the slice-count estimate here.
