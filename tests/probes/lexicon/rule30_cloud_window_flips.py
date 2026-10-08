@@ -34,6 +34,19 @@ UNEXPECTED CHECK (Cloud's): the pyramid's order lives at its edges, where Rowlan
   than 0.05, for most d < 8. Confidence 0.6; the direction is not predicted.
 Counterfactual: if fixed windows near the centre are far from binomial, the core is not locally coin-like at these
   sizes, which would be news for Problem 2 (RULE30-PRIZE.md sections 8.34, 8.35).
+
+OUTCOME, 2026-10-08 (by 16:40 BST; T = 8192, 555 fixed windows and 96 edge windows, 4.5 s): RW-C1 and RW-C2 PASS.
+  RW-P1 HELD: the total variation from Binomial(w, 1/2) has median 0.0086 and maximum 0.0198 over the fixed windows.
+  RW-P2 HELD: Gray steps occur at the coin rate for every width (w = 3: 0.3743 against 0.3750; w = 8: 0.0312 against
+  0.0312). Fixed windows near the centre show no Gray-code order at all. The unexpected check was REFUTED as worded
+  (3 of 8 depths, not 5). The windows moving with the right edge are far from coin-like, with total variation 0.1 to
+  0.4 out to about 11 cells in, falling towards coin-like by d = 12 to 15. But their edge-event density is often
+  exactly 1/4, so the conjunction failed. Post-hoc, same pyramid, cells from t = 64 on: each right diagonal is periodic
+  with a power-of-two period, 1, 2, 2, 4, 8, 8, 16, 32, 32, 64, ... and 128 at d = 15. That is Rowland's theorem (the
+  record's section 8.3 survey). The edge events on each diagonal are periodic too, with period equal to the
+  diagonal's or twice it (2, 1, 4, 8, 8, 16, 32, 32, 64, ..., 256 at d = 15). Hence the exact dyadic densities 1/2, 0,
+  3/16, 5/32, 19/64. The Gray part shows at the edge not because edge events are scarce there, but because they are
+  dyadic-periodic themselves.
 """
 import sys
 from math import comb

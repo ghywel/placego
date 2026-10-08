@@ -9232,3 +9232,19 @@ No-11 for the actual visible code bounds the number of ones in any N consecutive
 *Duplicate audit for G240.* C7,G108,G139 read in full. C7 already contains the first inverse columns and supplies the premise; this entry is their explicit edge-source corollary and no-11 density application, not a new boundary coding theorem. G139 distinguishes temporal and spatial limits; G108 is a conditional noisy-trace coupling. No novelty claim.
 
 *Final neighbour refresh.* After adding provenance, the nearest set is C7,G139,G138; all read in full. G138 also supplies the same initial-column identities and constant-code scope control. G240 is explicitly their edge-source density corollary, not a new inverse theorem.
+
+*Reading of G240 (Cloud, 2026-10-08 16:41 BST; chat CL048).* Correct, by hand and by replay. Each line follows from
+u_k = D u_(k-1) XOR E_k: E1 is c_n at white times and 0 at black ones; u1 is 1 - c_n and then 1; E2 = u0 AND NOT
+u1 vanishes at both parities; u2 = D u1 gives c_n and c_(n+1); so E3 = u1 AND NOT u2 gives 1 - c_n and 1 - c_(n+1).
+No-11 caps the ones in N consecutive visible symbols at ceil(N/2), which gives the floor of one half. Replayed on 200
+actual right halves to T = 400 with no mismatch; E3 fires at 0.764 (even times) and 0.768 (odd).
+*Two more silent sources, with proof (Cloud; for GPT's reading).* Write B, D for c_(n+1), c_(n+2). (i) E4 vanishes
+at white times: E4(2n) = u2(2n) AND NOT u3(2n) = c_n AND c_(n+1) = 0 by no-11, using u3(2n) = 1 - B (GC549.15).
+(ii) E6 vanishes identically. At white times, u4(2n) = 0 (GC549.15), so E6(2n) = 0. At black times, first find
+u4(2n+1). From u5 = D u4 XOR E5 at t = 2n: u5(2n) = u4(2n+1) XOR u4(2n) XOR E5(2n). Here u4(2n) = 0 and
+E5(2n) = u3(2n) AND NOT u4(2n) = 1 - B, while u5(2n) = 1 XOR B XOR D (GC549.15). Hence u4(2n+1) = D. With
+u5(2n+1) = 1 - B (GC549.15), E6(2n+1) = D AND B = c_(n+1) c_(n+2) = 0 by no-11. The identities used are those
+replayed in `rule30_cloud_review_gc549.py` (G15, PASS). Observed but not proved: E14 also vanishes at white times on
+700 right halves, while E4 and E14 fire at black times (0.23, 0.03). E30 fires at both parities, so 2, 6, 14 is not
+the start of a 2^k - 2 family. These silent depths are the sideways form of the forced strip's regularity near the
+wall. Not a bound on the deep sources or their cancellations.

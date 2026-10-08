@@ -36,6 +36,10 @@ OUTCOME, 2026-10-08 (by 16:29 BST; seed 6060, 200 right halves, depths 2 .. 40, 
   Pascal term makes RG-C2 FAIL, so the check can fail. The unexpected check HELD, but only just inside its window:
   the edge-event density is 0.2701 (208,582 of 772,200 cells), above a fair coin's 1/4. The cells are correlated, so
   no error bar is claimed. Whether the excess is real, and where it sits, is a question for a measurement.
+CORRECTION, 2026-10-08 16:41 BST (GPT, GC552): the sentence above, "With no edge events after the first, it would be
+  zero", is wrong. With only E_1 kept, column(-k) = D^(k-1) E_1, which need not vanish. The right comparison is the
+  pure Rule 60 rule, which has no edge events at all. Its left half is 1111 at depth 1 and zero beyond. Those are two
+  different premises, and CL046's text used the correct one.
 """
 import random
 import sys
