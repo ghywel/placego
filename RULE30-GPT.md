@@ -12176,3 +12176,29 @@ Proof: apply the even/odd prefix recurrence repeatedly to floor(N/2). Starting f
 **Hand controls and failure.** For Thue-Morse spin g(n)=(-1)^popcount(n), the family(g,-g) has A=[[1,1],[1,1]], and W is spanned by(1,-1), so A vanishes on W. The recurrence gives |S_i(N)|<=1 directly, and its digit-parity indexer is logarithmic. For constant spin1, q1,A=(2),S(N)=N: the finite-kernel-implies-balance counterfactual fails. For alternating spin(-1)^n, use family(g,1,-1). Its matrix rows are(0,1,1),(0,2,0),(0,0,2). Its reachable span contains vector(0,1,-1) with eigenvalue2, so the stated contraction fails, although the root's prefix sum has absolute value<=1. This unexpected guard retains the criterion as sufficient, not necessary; it also prevents assuming all kernel states must be balanced because the selected trace is.
 
 **Next obligation.** Rule30's31 finite signatures are not a proved finite closed family, and no contraction on a reachable output subspace is known. Do not apply this theorem to a graph obtained by merging finite signatures without infinite transition identities. A next useful route could allow an increasing family with a separately bounded representation cost and an actual signed norm estimate, but both bounds are open; do not substitute an empirical spectral fit.
+
+## GC489 — Root-visible quotient removes a false balance obligation (2026-10-08)
+
+**Bears on.** Problems2/3 and GC488's conditional mechanism. Elementary linear-algebra refinement of that block, not a Rule30 representation or prize result; independent reading pending. This uses the same finite-kernel setting and prior-art provenance as GC487/488. An invariant quotient and Cayley-Hamilton are standard tools, not a novelty claim. No experiment or Local computation.
+
+**Chosen checks before derivation.** Predict that GC488's alternating root loses its biased eigenvalue2 mode when only root-visible modes are retained, while the constant root retains it. Thue-Morse is the independent positive control. Counterfactual: small sums at powers of two alone force all-prefix balance, must fail. Unexpected check: the balance quotient need not inherit the separate binary digit transitions, so its smaller dimension must not be advertised as an indexing automaton.
+
+**Hand theorem.** Retain GC488's finite family, matrix A, reachable span W and vectors b(n), S(N). Let ell(w) be the coordinate of the selected root. Define
+
+    U = {w in W : ell(A^k w)=0 for every k>=0}.
+
+This is A-invariant: shifting k proves A U is contained in U. In ambient dimension q it equals the intersection of the kernels for k=0,...,q-1, by Cayley-Hamilton and induction for the later powers. Let V=W/U, with the quotient of the inherited sup norm, and let Abar be the induced operator. The functional ell descends to ellbar and has norm at most1: ell(w+u)=ell(w), and |ell(w)| is bounded by the norm of every representative w+u. Also the quotient norm of each b(n) is at most1.
+
+If ||Abar^k v||<=C*rho^k*||v|| on V, for fixed C>0 and1<rho<2, GC488's binary-prefix expansion now gives for the root alone
+
+    |ell(S(N))| <= C*rho/(rho-1)*N^(log_2 rho), N>=1.
+
+Indeed project each term A^k b(2n) into V and apply ellbar. Thus spectral radius below2 on this quotient is sufficient, using the same finite-dimensional power bound as GC488. This is weaker than contraction on all of W: kernel states other than the root may have biased sums. No assertion of necessity, and no actual Rule30 W, U or spectral bound supplied.
+
+**Independent hand controls.** For alternating spin, W is spanned by (1,0,0) and v=(0,1,-1), with A(1,0,0)=0 and A v=2v. For the root ell(w)=w_1, U is exactly span(v). Consequently Abar=0 and the recurrence yields root prefix sums bounded by1. The biased constant kernel states remain biased; they merely cancel in this observable. Thue-Morse already has A=0 on W, so the refinement preserves its bound. Constant spin1 has U=0 and Abar=2, rejecting contraction as required.
+
+**Dyadic-only counterexample.** Define a spin sequence h by h(0)=1,h(1)=-1. For each k>=1, on [2^k,2^(k+1)) put +1 on its first half and -1 on its second half. Every such whole block sums to0, so S_h(2^k)=0 for k>=1. Yet at N=3*2^(k-1), the preceding complete blocks sum to0 and the new first half contributes2^(k-1), giving S_h(N)/N=1/3. Hence controlling only ell(A^k b(0)), the dyadic totals, does not supply the all-prefix theorem. The required bound covers all reachable b(n), not just the initial output vector. This example is a hand scope guard, not a Rule30 orbit.
+
+**Unexpected digit-transition guard.** Write B_0 for the matrix selecting each state's even child, so b(2n)=B_0 b(n). In the alternating family (g,1,-1), B_0 v=(1,1,-1), which is not in U because its root coordinate is1. Thus U, although A-invariant, is not B_0-invariant. The quotient supports the aggregate prefix argument but cannot in general serve as a digit-reading state representation. GC488's logarithmic indexer still follows from the original finite family, not from this quotient alone. This keeps balance cancellation and indexing cost separate even within a shared representation.
+
+**Next.** A finite sample cannot certify W or the infinitely quantified invisibility condition. With a proved closed family, q exact power tests do certify U by the stated lemma; without such a family, fitting a matrix or quotient to trace signatures remains insufficient. The remaining useful Rule30 obligation is still an analytic selected-orbit representation or signed cancellation bound. This refinement prevents demanding balance of irrelevant kernel modes, but supplies no new Rule30 dynamics.

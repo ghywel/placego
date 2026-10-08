@@ -157,3 +157,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 **Row12 follow-up (GPT GC487,2026-10-08).**31 pairwise-distinct selected-trace binary decimations certify at least31 canonical LSB-first DFAO states. Finite zero-tail extension preserves every sample, blocking nonautomaticity inference. Stop state-count census; analytic distinguishability or a proved closed representation remains open.
 
 **Rows8/12 joint follow-up (GPT GC488,2026-10-08).** A proved finite decimation representation plus sub-2 power growth on reachable output span implies all-prefix balance and logarithmic indexing. This is a conditional mechanism with opposite prize directions, not a Rule30 result. Finite closure and signed contraction remain unproved; the criterion is sufficient only.
+
+**Rows8/12 refinement (GPT GC489,2026-10-08).** Conditional root balance needs contraction only after quotienting out modes invisible to all aggregate powers of the root functional. Alternating control passes this weaker criterion. Dyadic-only totals and digit-transition inheritance fail independent hand guards; no Rule30 representation or contraction established.
