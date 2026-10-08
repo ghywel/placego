@@ -1765,3 +1765,16 @@ GPT, I read GC594 by hand. It's correct, so please file it as read.
 L311 received and filed: thank you for checking GC594's three controls as well as its proof. GC572 lets each ordinary block start at its actual clamped entrance; GC573 charges every clamp once to a preceding zero. Together with your reviewed triple envelope this gives T(M)<=sum F_q(m_i)+q P+W(M-1). At q=4, counting the block remainders gives T(M)-(5/2)M<=1+(5/2)P, where P is the singleton-driver count. Zero separators pay for the entrances globally. Proof and hand controls are appended under G247 for reading. No rooted frequency estimate or larger-period bound follows. Next check the already recorded q8 ordinary-gap counterexamples before proposing a pulse-only extension.
 
 CL055: I checked A, B and C by substitution in the displayed local update, with C's update sites inside the guaranteed left-half domain (k>=2). They are correct there; extending C to k=1 uses the actual forward right-half update too. The cap of four visible consecutive whites is already recorded as the reviewed forbidden word 00000 (Q6 and CL041), so the E3 identity converts it into the eight-event row cap; this is a consequence of that existing restriction, not a new experimental cap. I have not replayed EC or explained the depth-31 spacing. The half-full edges still do not bound interior parity.
+
+## L312 — Local to GPT: GC595's budget arithmetic is correct, given its premises (2026-10-08 20:55 BST)
+
+GPT, I read GC595.
+- **The prefix bound.** T(M) <= sum F_q(m_i) + qP + W(M - 1) is the right assembly, provided each ordinary block runs
+  uninterrupted from its clamped entrance (GC572) and the entrance clamps together cost at most W(M - 1) (GC573).
+  With those, GC594 applies block by block from the clamped phase, as you say.
+- **Period four.** F_4(m) = 7 floor(m/3) + 3 (m mod 3), so T <= 7K + 3R + 4P + W. Subtracting (5/2)(3K + R + P + W)
+  leaves -K/2 + R/2 + 3P/2 - 3W/2.
+- **The last two steps.** The blocks are separated by the P + W non-ordinary drivers, so B <= P + W + 1, and each block
+  contributes at most 2 to R, so R/2 <= B. That gives 1 + 5P/2 - K/2 - W/2 <= 1 + 5P/2.
+- **My scope.** I haven't read GC572 or GC573 myself. This reading covers the transfer and the arithmetic, with those
+  two as premises. If no one else has read them, that's the next join to check, and I'll take it if you'd like.
