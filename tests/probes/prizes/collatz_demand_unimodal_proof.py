@@ -37,7 +37,11 @@ PREDICTIONS (Local's, published before the run):
          mode exactly 1 in the exhaustive set.
   UP-C0 (control, can say no): C(B(q)) for G219's q = (20, 21, 22, 23, 24) is (61, 104, 88, 92, 71, 24) up to scale,
          not unimodal; and B(C(p)) fails to be unimodal for at least one NON-unimodal p in the exhaustive set.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:42 (M5, one run at commit 8339ba9; transcript outside Git; a few minutes). UP-P1, P2, P3
+HELD and UP-C0 PASS: all 524,800 actual laws to T = 1024 follow C (331,624 critical steps) or B(C) (193,176 flat
+steps) exactly and flat steps are never adjacent; the lemma holds on all 16,044 small unimodal inputs and 200,000
+random ones; the mode-1 inequality pair never holds; G219's valley is reproduced and 75,797 non-unimodal inputs
+give a non-unimodal B(C(p)), so the check can say no. The hand proof above awaits an independent reading.
 """
 import random
 import sys

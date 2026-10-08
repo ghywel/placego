@@ -2766,6 +2766,15 @@ When the wheel is jolted to a new position, it lands on a spot of the same parit
 
 **An everyday picture.** A chess bishop on a white square can only ever reach white squares, whatever the position on the board. Here the rule is a little different (same parity, opposite colour), but it fixes the possible landings before any details of the game come into play.
 
+## 29
+Rule 210 with an empty left half has exactly one way to keep its centre alternating: start from the sites that share no factor with 6.
+
+**What it says.** Fix every cell left of the centre white and ask the centre to read white, black, white, black for ever. Then the starting row on the right must be black exactly at 1, 5, 7, 11, 13, ..., the numbers coprime to 6. That row works (its centre counts are odd numbers of the form (2^n + 1)/3), and no other row does.
+
+**Why it matters.** It settles a whole family that a long chain of GPT's lemmas had been narrowing column by column: there is only one member, and it is a plain Rule 90 pattern. It also shows that no finite starting row with an empty left half can keep this clock. It says nothing yet about rows with something on the left, or about Rule 30.
+
+**An everyday picture.** Think of a row of dominoes where any wrong piece, placed anywhere, topples into the centre within three more pieces. Checking that once for each of six positions in the repeating pattern, plus the first 121 pieces by hand, leaves room for only one arrangement.
+
 ## G207
 Three specified beats on one column make a neighbouring bit repeat two steps later.
 
