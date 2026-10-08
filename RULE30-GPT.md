@@ -11470,3 +11470,27 @@ TP2 blind majority-capture prediction REFUTED. The canonical m6 partition captur
 **Unexpected attribution counterexample.** Block t28 has no interior mixed path, no boundary mixed path and no killed path. Yet S_28=-3633/1048576,S_29=1181/32768, so the aggregate pair gains3633/524288 in its triangle budget. Its pair sum is34159/1048576, while summing absolute individual two-step changes gives726245/1048576. Therefore aggregate temporal gain does not require a G80 mixed path: the recorded necessity counterfactual is REFUTED. All paths in this block are surviving equal-bit00 or11 paths; the opposite aggregate signs require contributions from both types. This is a measured actual block, not an invented mixed-order orbit or a swapped-path pairing. G80's valid mixed curvature identity remains intact.
 
 **Next reasoning.** Stop attributing aggregate temporal cancellation to mixed-path counts alone. Return to G80's literal equal-bit terms and their actual class allocation: contributions from different 00 and11 inputs can cancel even when no individual path has mixed bits. A justified pairing must control those weighted contributions or their signed imbalance, rather than count visible sign reversals. No wider run, offset optimization or new uniform count bound.
+
+
+### GC440 — Same-count equal-bit pairs also leave curvature (2026-10-08)
+
+**Predicted hand refinement.** G80 supplies interior mixed-path curvature; GC439 shows aggregate gain need not have mixed paths. Predict that pairing00 and11 occurrences at the same count also cancels first differences, with a different curvature coefficient. Existing record search found no same-count equal-bit decomposition; G91 pairs next-state labels, a distinct construction. No population experiment or matching-frequency prediction in this block. This is elementary regrouping of G80, not a general novelty claim.
+
+Fix t+2<=T and an actual admitted parent occurrence with count a satisfying a>=ell_(t+1). Both first-bit alternatives are admitted. Put F_j=f_(t+2)(a+j), using killed-state zero extension, and K_a=F_0-2*F_1+F_2. Its two-step fair potential is (F_0+2*F_1+F_2)/4. Thus actual00 and11 contributions are respectively
+
+    U_a=(3*F_0-2*F_1-F_2)/4,
+    V_a=(3*F_2-2*F_1-F_0)/4,
+    U_a+V_a=K_a/2.
+
+Either mixed path contributes -K_a/4, as G80 proves. For actual interior occurrences at count a, retain the full two-bit word before final admission, and let n_00,n_01,n_10,n_11 be its four multiplicities. Set M_a=min(n_00,n_11). The exact sum for this class is
+
+    (2*M_a-n_01-n_10)*K_a/4
+      +(n_00-M_a)*U_a+(n_11-M_a)*V_a.
+
+**Proof.** Subtract M_a from the00 and11 counts, collect M_a*(U_a+V_a), and add both mixed counts. Substitution of the displayed coefficients gives the formula. Each parent retains its multiplicity; no same terminal state, swapped orbit, fair actual word frequencies or independence assumption is used. An interior00 path can fail the final barrier; its endpoint potential is then F_0=0 and its negative drop remains in U_a. First-step failures and all parents with a<ell_(t+1) stay in G80's separate literal boundary residual, never in this formula. Adding those residuals and any last unpaired step gives G80's exact global accounting.
+
+**Independent hand control.** Use synthetic monotone potential values (F_0,F_1,F_2)=(0,1/4,1). The independent fair four-word average is (0+1/4+1/4+1)/4=3/8. The four actual endpoint changes are therefore00:-3/8,01:-1/8,10:-1/8,11:5/8. One00 and one11 pair sum1/4, equal to K_a/2; two mixed paths sum-1/4. One occurrence of each word sums0 and the regrouped curvature coefficient is0. The counterfactual that equal-bit matching gives exact cancellation is REFUTED: its pair leaves1/4. These are algebraic potential controls, not claimed actual continuation laws.
+
+**Unexpected same-count guard.** Extend the synthetic potential by F_3=1. Pair00 at count a with11 at count a+1: the latter has fair average (1/4+2*1+1)/4=13/16 and endpoint1, giving3/16. Their sum is -3/16, not K_a/2=1/4. Hence equal-bit types alone do not license the same-count curvature coefficient. The count label must be preserved. G80's existing width2,T3 boundary mixed guard also remains outside the interior formula; this refinement does not remove its admission hypothesis.
+
+**Limit and next intention.** No matched equal-bit mass, residual signed allocation or uniform curvature sum is bounded here. The formula makes an actual target explicit: (2*M_a-n_01-n_10) times curvature, plus unmatched equal-bit and boundary terms. Next inspect this signed coefficient and residuals at GC439's one actual t28 block, retaining unmatched classes instead of attributing its gain to the existence of a pair. Independent hand review requested; do not file in the catalogue before review.
