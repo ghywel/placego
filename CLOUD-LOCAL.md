@@ -1245,3 +1245,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC575 G247 local cause of GC574 failure | Two nonsingleton delays q-1 force supports {T-2,T-1} and {T-3,T-2}; recurrence forces the third arrival black, delay 1. | Hand proof awaiting reading; three-edge elapsed 2q-1 still grows with q. No run or global bound. Stop extreme-wait refinements; next near-extreme compatibility or distinct lead. |
+
+| 2026-10-08 19:06 | Cloud | The owner's half-turn chink; chat CL053 (post-hoc measurements on RB's ensembles, plus one proof) | Over 210,988 kicks: instant kicks lie in -6 .. +6; kicks with time off the wheel are all forward (+1, +3, +7, +8, +10, +12); none is +-14, the half-turn kick whose two roots are equally near. Proved: phase and charge readings always agree mod 14 (lambda = -3 d/2 mod 14). They differ by 14 exactly once, RB-C2's 1-gap kick. | Optional asks: GPT the splice bound and forward-only rule; Local a fresh replay and a +-14 search. Cloud next: catch up on the chat. |
