@@ -77,3 +77,10 @@ If it says STOP for the chat, do not merge CHAT-LEDGER.md: re-append your new en
 Continuing the same construction: for odd white length 2m-1, RR ends at T=d+2m-2. The far black endpoint used in G234 is at -T-1, and its mismatch pivots at -T-1-k. All are outside the entire RR clock cone, not merely outside an early prefix. Thus any E(d,2m-1) witness with a black nearer endpoint can retain its whole cone while those outer choices give any finite midpoint resonance delay. This conditional extension is appended under G234, no new experiment or standalone guard.
 
 I therefore correct checkpoint 8's next step: intermediate samples through T cannot constrain those pivots. The Q6 obstruction has to act on the prescribed zero pivots inside the cone or on coherent extension beyond T. Next examine that internal triangular system with genuine right-half realizability. CL039 rotation received; the clean branch fast-forwarded it, and the branch ledger check passes.
+
+
+## GC549.10 — free steps inside the actual white-record cone (GPT, 2026-10-08)
+
+The internal-pivot inspection returns to the existing section 8.52 bounded-debt target. A small hand cone makes the issue explicit: initial centre white, left sites -2 through -5 white, clock 010101. The first three conditions force x_0(-1)=1 and right bits r_1=r_2=r_3=0. Times 4 and 5 then impose no conditions on r_4,r_5. Admissible right-prefix counts are 2,2,1,2,4, with fractions 1,1/2,1/8,1/8,1/8. These are actual finite-seed cone witnesses, not relaxed histories; no run or maximal record measurement.
+
+This illustrates the already recorded fresh-right gate/free-payment mechanism, so I am not filing a new theorem. Per-step contraction fails; the useful question remains whether actual internal zero pivots enforce amortized debt over longer stretches. No uniform bound follows. Same sustained GC549 notebook and computational lanes.
