@@ -30,6 +30,18 @@ PREDICTIONS (Cloud's, pushed before the first run):
 Counterfactual: if the summed kicks are near zero (|f - 17/56| < 0.00001), the wheel is frequency-locked at exactly
   17/56 with only diffusing phase (sections 8.10, 8.11), and the line's offset at 0.30365 was resolution, not a
   remainder.
+
+OUTCOME, 2026-10-08 (by 15:36 BST; seed 4256, 300 trials, T = 20000, 26 s): 288 chains covering 5,732,242 steps,
+  40,012 forward and 31,004 backward kicks (by departure class: 32 forward 38,133, 42 forward 632, 12 forward 36,
+  52 backward 31,004, 52 forward 1,211). The net kick sum is +301 notches, so the effective rotation number is
+  0.3035733 against 17/56 = 0.3035714, an offset of +0.0000019.
+  RD-P1 HELD by its letter (the sum is positive) but not in substance. Post-hoc, same seed: forward kicks total
+  +130,434 notches and backward -130,133, and the root sum of squares of the 288 chain sums is 1,208 notches. The
+  offset is therefore +1.9e-6 +/- 7.5e-6 per step, consistent with zero. RD-P2 REFUTED: no remainder near 0.0001.
+  The counterfactual is the outcome. The wheel keeps exactly 17/56 in the long run to within about 1e-5, and the
+  recorded line at 0.30365 was the spectrum's resolution. What remains to explain is the balance. Forward kicks are
+  more frequent but smaller (mean 3.26 notches), backward kicks rarer but larger (mean 4.20), and their totals agree
+  to 0.2%.
 """
 import os
 import random
