@@ -12938,3 +12938,34 @@ For GC489's countersequence h, take h(0)=1,h(1)=-1; for n>=2 its sign is +1 when
 Every state equals +1 at index 2, so b(2) is the all-ones vector. It lies in W, has eigenvalue 2 under A, and is root-visible. Equivalently, the shifted block [2*2^k,3*2^k) consists entirely of +1 and has sum 2^k. Thus the criterion rejects balance even though the origin dyadic totals S_h(2^k)=0 for k>=1. The finite kernel still supplies a logarithmic digit indexer, showing again that cheap indexing alone need not give Problem 2. This is an explicit arithmetic sequence, not a Rule 30 trace.
 
 **Outcome and next.** Within a proved finite closed representation, the balance test is now exact: remove invisible modes and check whether any modulus-2 mode remains. Origin dyadic totals alone miss reachable shifted blocks. For Rule 30 the representation itself remains unproved, so this does not resolve either prize. A next useful representation claim must establish infinite child identities or a justified nonfinite analogue; do not enlarge the finite signature census or fit its eigenvalues.
+
+## GC519 — A balanced finite-kernel trace has uniformly bounded constant runs (2026-10-08)
+
+**Bears on.** GC518's exact finite-representation criterion, Problems 2/3 and the run-duration lane. Hand corollary pending independent reading; no Rule 30 representation or experiment. Predict a uniform-in-start interval discrepancy bound, hence a fixed maximum constant-run length. Counterfactual prefix balance alone yields this consequence. Unexpected check: root-invisible biased kernel states do not need to satisfy the root interval bound.
+
+**Aligned interval estimate.** Under GC518's proved finite closed family and root balance, GC489 supplies constants C>0 and 1<rho<2 with quotient power norm at most C*rho^k. Every reachable b(n) has quotient norm at most 1. Therefore every aligned dyadic interval, with arbitrary integer start multiplier n>=0, satisfies
+
+    |sum over n*2^k<=j<(n+1)*2^k of g(j)|
+      =|ell(A^k b(n))|<=C*rho^k.
+
+The bound is uniform in n, not merely valid separately for each fixed shifted block. Finite representation and the norm bound supply that uniformity.
+
+**All intervals.** Partition any integer interval [M,M+N), N>=1, into maximal aligned dyadic intervals it contains. There are at most two blocks of each length 2^k: a maximal block's parent must cross an endpoint of the original interval, and there are only two endpoints. All contained block lengths are at most N. With alpha=log_2(rho)<1,
+
+    |sum over M<=j<M+N of g(j)|
+      <=2C*sum over 0<=k<=floor(log_2 N) of rho^k
+      <=D*N^alpha, where D=2C*rho/(rho-1).
+
+This proof retains GC489's root quotient and the original reachable vectors; it does not assume the quotient supports individual digit transitions or that all kernel states are balanced.
+
+**Run consequence.** A constant-sign run of length R has absolute interval sum R. Hence R<=D*R^alpha and
+
+    R<=D^(1/(1-alpha)).
+
+Thus a balanced binary trace with a proved finite kernel has a uniform finite bound on all its constant runs. This is stronger than GC494's sublinear duration obligation. If the actual singleton centre were proved both balanced and to have unbounded run lengths, those two results would exclude a finite binary kernel. Neither is established here; a growing finite observed maximum does not prove unboundedness. This exclusion would still not prove the linear-work claim of Problem 3.
+
+**Independent and unexpected controls.** Alternating spin has root interval discrepancy at most 1, although its finite kernel includes constant states with arbitrarily large discrepancy. Those biased states are invisible to the aggregate root quotient, so they do not contradict the theorem. Thue-Morse has discrepancy at most 2 on arbitrary intervals by its bounded prefix sums, consistent with its bounded runs. Constant spin fails the balance hypothesis.
+
+GC490's h(n)=(-1)^floor(sqrt(n)) gives the counterfactual failure: its origin prefix discrepancy is at most sqrt(N), yet its constant intervals [k squared,(k+1) squared) have length 2k+1 and interval discrepancy exactly that length. No uniform bound D*N^alpha with alpha<1 can hold as k grows. Thus prefix balance alone gives neither the uniform interval bound nor bounded runs. Its previously proved infinite kernel and cheap exact arithmetic indexer are consistent with this corollary and again separate finite-state exclusion from a time lower bound. These controls are analytic, not Rule 30 realizations.
+
+**Outcome and next.** Any finite-representation balance proposal has a concrete additional observable consequence: bounded constant runs on the entire trace. A genuine unbounded-run theorem for the selected singleton, together with balance, would rule out that representation class; a bounded-run theorem could instead guide one. Current run certificates alone prove neither. Seek an actual infinite family of run witnesses or a closure identity, rather than another finite maximum-run or kernel-signature scan. The candidate remains conditional and awaits a second reader.
