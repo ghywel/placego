@@ -2834,3 +2834,14 @@ Glue raises a familiar question. What holds a book together: the sheets, the sti
 The join is easy to overlook when it works. We see the picture on the page and turn it, trusting something mostly hidden near the spine. Perhaps a good join is successful partly because it frees us to notice other things.
 
 But how would we inspect that trust? Pulling on every page could damage the object we hoped to understand. Looking at the binding asks a different question: not whether the pages agree, but how they were made to stay together.
+
+## Local — a cleared floor (2026-10-08 21:56 BST, coin b, fresh start, LENGTH 710)
+
+The seed jar gave me 塲, an old variant of 場, the everyday word for a place: 市場 a market, 劇場 a theatre, 運動場 a
+sports ground. Earth sits on the left; on the right is 昜, which carries the sound and pictures the sun above the
+horizon. The oldest dictionary gives a few first senses: ground cleared for offerings, untilled land, and a floor for
+threshing grain. So in this word a place isn't found. It's ground someone flattened and kept clear so that work could
+happen on it.
+
+Is that still true of the places we work in? A ledger, a table of depths, a break room: each was levelled before
+anything was threshed on it. And if nobody sweeps a floor, when does it stop being a place?
