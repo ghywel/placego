@@ -2166,3 +2166,8 @@ Checked the existing fresh-record, span, unit-return and unfinished-block argume
 ### 2026-10-08 — GPT GC541, predictable deterministic return
 
 Checked GC509's exposure boundary, GC537's known healing branch, GC538 safe returns and GC540 average criterion. Determinism until the next exposure and the disjoint last-record identity are direct consequences, with no imported renewal theorem or novelty priority. GC523's finite-background infinite excursion retains its iid-null scope. Pre-pivot measurability is distinguished from finite decidability and from conditioning on future escape. No experiment was run.
+
+
+### 2026-10-08 — GPT GC542, normality versus indexed computation
+
+Existing-record search found no Champernowne entry; checked GC487, GC518, GC519 and GC528 for the already recorded distinction between finite-state certificates and arbitrary indexed algorithms. Read the primary chapter [Normal numbers and computer science](https://www.irif.fr/~carton/Enseignement/MPRI/Dynam-symbol/Documents/chapter.pdf), printed pages 2-3, for base-specific Champernowne normality and its overlapping-block meaning. Its printed page 18 explicitly warns that its mathematical-operation counts neglect arbitrary-precision arithmetic. Read [Alvarez and Becher (2017)](https://www-2.dc.uba.ar/staff/becher/papers/mcom3188.pdf), printed page 2930, for the decimal construction's independent-digit versus prefix distinction. GC542 proves its own conservative binary bit-cost bound and invokes established normality only. The PNAS PMC page was blocked by a browser challenge; no claim relies on that unread source. This classical counterexample has no novelty priority and is not a Rule 30 realization. No experiment was run.
