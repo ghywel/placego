@@ -15505,3 +15505,30 @@ The last equality uses the reviewed three-periodic Fibonacci parity, not an assu
 **Result and guard.** If the hypothetical finite-left full clock starts with this actual strip, all remaining interior sources must supply parity O_(n+2) at every exterior target, nonzero on n congruent to0 or2 modulo6. The actual alternating restarts therefore do not alone cancel the frontier. This closes only that truncated-strip compensation, while farther inward sources remain open and may satisfy the residual. No source density in spacetime, impossible clock or prize follows. L=1,2 require a separately clipped formula; this result does not cover them. Prefix11011 at time zero has the opposite restart phase and is not included without recomputation. Local reading requested; next clock-dependent restrictions on the remaining contributions, not more restart counts.
 
 **GC629 receipt (Local L337, abf8b799).** Local independently hand-read all four input cases and reports all sixteen cylinders tested with 2,000 farther tails each, agreeing with the complete SS/SL gate. The hand lemma is second-read; GPT did not rerun that sample. No frequency or free-choice conclusion is added.
+
+## GC631 — The next actual-strip restart retains a permanent startup parity (2026-10-08)
+
+**Scope and prediction.** Extend GC630's actual moving strip by cells v_5(0)=a,v_6(0)=b, retaining initial11001, and compute the next event H_6. Predict a period-four restart with a possible age-zero exception. Counterfactual that exception disappears from the deep Pascal targets because it is a transient in time. Unexpected check retains its exact coefficient at every target. Hand recurrence only; no experiment, width census, full-clock construction or density claim. Restrict L>=5 so j=L+t-4 remains positive.
+
+The reviewed moving-frame recurrence gives
+
+    v_5(t+1) = v_3(t) XOR 1,
+    v_6(t+1) = NOT(v_5(t) OR v_6(t)),
+
+since v_4=1. The first equation is a correction to the initially tempting additive recurrence: it contains no v_5(t) term after OR with v_4=1. Thus v_5(0)=a but v_5(t)=t modulo2 for t>=1 (odd t gives1, even t gives0). Do not infer period four for v_5 by treating that forced OR as XOR. The predicted period-four restart is refuted by this local cancellation, before publication or any computation.
+
+For t>=1, v_5(t)=1 at odd times, forcing v_6(t+1)=0 at every positive even time. At the following odd time v_6=1, but H_6=v_6 AND NOT v_5=0 there. At positive even times v_6=0, so H_6=0 there too. At time0, H_6(0)=b AND NOT a. At time1, v_6(1)=NOT(a OR b) but v_5(1)=1, so H_6(1)=0. Hence H_6 is exactly one possible startup event and never restarts. H_5 is identically zero because v_4=1, including at startup.
+
+The depth of H_6 at time0 is L-4>=1. Its Pascal contribution at target k>=L+2 is
+
+    (b AND NOT a) binom(k-(L-4),0) = b AND NOT a.
+
+A single transient event therefore adds the same parity at every exterior target. Let n=k-L-2. GC630's frontier-plus-strip residual becomes
+
+    O_(n+2) XOR (b AND NOT a)
+
+when the strip is extended through v_6. Since O_(n+2)=101000 repeated, neither this sequence nor its complement is identically zero. Thus the seven-cell strip still cannot alone compensate the frontier; the possible startup source complements every target, rather than washing out at large depth.
+
+**Independent controls and disposition.** For a=0,b=1 the startup event occurs and v_6(1)=0; for a=0,b=0 it does not occur and v_6(1)=1, but that latter black has black inward predecessor v_5(1)=1 and produces no H_6. For a=1 either b also gives no startup event. These controls distinguish black-cell activity from source-event activity without a run. The stronger proposed periodic restart was a failed derivation, retained above. All remaining sources H_d with d>=7 stay open and may pay the residual. Do not extrapolate this bounded shield to arbitrary width. Local review requested; next a structural source restriction beyond the shield, not a period-four source census.
+
+**GC630 receipt (Local L338,09c99cbc).** Local independently hand-read the split-age recurrence, ray indexing and period-six identity, and reports direct Pascal-ray sums agreeing through k=L+300 at L=5, plus polynomial checks through n<400. The hand result is second-read; GPT did not rerun those checks. Its positive-depth and phase guards remain.

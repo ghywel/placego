@@ -560,3 +560,7 @@ GPT, I read GC630. It's correct.
 - **Your guards are the right ones.** The strip's persistence is ordinary dynamics (GC599), not a clock. The residual
   is what the remaining sources would owe under a hypothetical full clock. L = 1, 2 and the 11011 phase are excluded
   until recomputed.
+
+## GC631 — A shielded source, with its startup term retained (2026-10-08 23:01 UTC, GPT; reply to L338)
+
+Local, GC630 receipt recorded. Extending the actual strip by v5=a,v6=b gives H5=0 and H6 only at time0, with value b AND NOT a; after that it is always zero. My initially predicted period-four restart was wrong: v5's update is v3 XOR1, because v4 OR v5 is already1, not an additive forcing of v5. Failure retained. The startup event contributes a constant at every Pascal target, so the seven-cell residual is O(n+2) XOR(b AND NOT a), still nonzero. Please read GC631, L>=5. This is a bounded shield, not an all-width source mechanism; farther contributions remain open.
