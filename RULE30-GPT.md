@@ -13106,3 +13106,30 @@ For the unexpected boundary check take i(t)=l+t. That site is damaged at every t
 **Direct prize bridge.** Choose first seed {0} and second seed {0,1}. They are GC523 translated by l=1, with centre parameter a=0. Site 0 lies strictly below l, so their centre traces are identical from time 0 onward. The prize's singleton trace is therefore also the site-0 trace of this distinct two-cell seed. For all other fixed sites their traces differ at only finitely many times; eventual periodicity, existence/value of colour frequency and normality consequently coincide there, without establishing any of those properties.
 
 **Outcome and limit.** This is a proved candidate for one exact finite-seed equivalence class, serving the bulk-universality question. It supplies an invariant example missing from the broad right-edge escape survey, not a classification of all seed edits, a core mixing theorem or a prize solution. No new run is needed: the exact support and template induction are GC523's pending proof. Next a genuinely different seed-equivalence mechanism or return to another main-line lead; stop elaborating this template.
+
+## GC526 — Width-two damage confinement is an iid null event (2026-10-08)
+
+**Scope.** Actual reachable-state confinement audit, pending independent reading. Prediction: perpetual width at most 2 forces GC523's cycle. Counterfactual this excludes every bounded width is not inferred. Unexpected finite-bout guard: a final unit right jump may reverse beyond the observed interval. Uses GC521 and GC524; hand proof, no new experiment or template run.
+
+**Width transitions.** In the initial single-flip experiment the rightmost disagreement is R_t=t. Define w_t=R_t-L_t+1. The exact identity is w_(t+1)=w_t+1-Delta_t. Under w_t,w_(t+1)<=2, the only possibilities are
+
+| Current width | Displacement | Next width |
+| --- | --- | --- |
+| 1 | 0 | 2 |
+| 1 | 1 | 1 |
+| 2 | 1 | 2 |
+| 2 | 2 | 1 |
+
+GC521 says any displacement 1 is followed by -1; that following update adds 2 to the width and makes it at least 3. Thus if width remains at most 2 forever from some time, no unit right jumps are possible. The remaining transitions alternate stationary and two-site jumps. Starting at width 1 gives the exact 0,2 cycle; starting at width 2 reaches a singleton after one update and then gives it. GC524 excludes an infinite such singleton cycle at any encountered start under the iid background. Consequently, almost surely w_t>=3 infinitely often. No claim for widths 3 or larger follows.
+
+**Finite-bout tail with endpoint protection.** Suppose width is at most 2 for 2n+2 consecutive updates beginning at time t, including both endpoint rows. Every unit right jump among the first 2n+1 updates would reverse within the window and violate the width bound. Those updates must therefore follow the remaining alternating transitions. There are n full 0,2 cycles from a singleton at time t, or at time t+1 if the initial width is 2. The extra final update is essential; merely forbidding every unit jump in an unprotected finite window would be wrong.
+
+At deterministic time s singleton damage must sit at its rightmost site s. GC524's unconditional corridor bound at the fixed time/site (s,s) is 2^(-(4n+1)); it needs no conditioning on the damage. The two possible singleton start times above therefore give
+
+    P(width stays at most 2 for 2n+2 updates from t)<=2^(-4n).
+
+Union over 0<=t<=T gives at most (T+1)*2^(-4n), without temporal independence or adaptive-start iid. At T=2^k and n=ceil(c*k), any c>1/4 makes this summable. Borel-Cantelli bounds these confinement bouts almost surely eventually by fewer than 2*ceil(c*log_2 T)+2 updates for starts by dyadic horizon T.
+
+**Unexpected counting contraction.** The same right-edge identity also sharpens GC524's separate singleton-cycle union: its fixed singleton position is s, so only T+1 candidate starts are needed, rather than a quadratic time/site grid. Its earlier bound remains valid but is conservative. Neither improvement supplies a probability conditioned on a selected front history.
+
+**Outcome and limit.** This closes eventual width-two confinement as an iid escape mechanism, with a quantitative bound on every such bout. It goes beyond excluding one initially specified template, while remaining far from general recurrence. GC510's finite-record escape has eventual width at most its total exposure E, so any such iid escape must have E>=3. Exposure above that threshold, wider surviving damage and inward-speed existence remain OPEN. Next a width-independent recovery argument or a different main-line lead; do not enlarge a width census.

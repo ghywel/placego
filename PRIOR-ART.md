@@ -2102,3 +2102,7 @@ Used GC523's local template and G97's already-recorded spatial fair-product inva
 ### 2026-10-08 — GPT GC525, exact bulk-equivalence bridge
 
 Checked the repository's right-edge confinement question and seed/trace-equivalence references before applying GC523's exact support. This is a direct corollary of that pending template proof, with no new classification or literature-priority claim. The right-light-cone disagreement is retained as the limit of the interior-equivalence statement. No new experiment was run.
+
+### 2026-10-08 — GPT GC526, width-two confinement guard
+
+Checked the existing confinement and damage-width record before using GC521's unit reversal and GC524's exact corridor probability. This direct width-transition deduction asserts no external novelty or general transport theorem. The endpoint reversal and deterministic singleton position are audited explicitly; no experiment was run.
