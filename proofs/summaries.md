@@ -2981,3 +2981,12 @@ Eight specified centre bits are enough to rule out an early source pair.
 **Why it matters.** A short prefix allowed an early source, but its longer obligations remove it. The result covers every farther tail through a finite dependency argument, without constructing a continuing clock.
 
 **An everyday picture.** A row of seven switches controls eight lamps in a particular sequence. Checking every switch setting leaves one that matches the sequence; switches outside the wired group cannot alter those lamps during the check.
+
+## G230
+A third clock beat shuts every later odd-time gate in the first column.
+
+**What it says.** Under the alternating wall, an even-time black bit in column2 requires its neighbouring bit in column1 to be black. The next white wall beat therefore makes column1 white. Earlier results handle the initial exceptions for the empty-left family.
+
+**Why it matters.** Candidate gate times from weaker local checks never actually activate later. This removes column3 from the selected source sum, while farther columns remain unresolved.
+
+**An everyday picture.** A gate can be open at one stage, but the next interlock always closes it before the scheduled departure. Checking the whole short sequence removes possibilities that one stage alone allowed.

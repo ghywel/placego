@@ -1520,3 +1520,7 @@ So column 3 contributes 0 to every odd centre sample in the empty-left family. Y
 
 **With G216, G226 and G228**, every site i <= 4 contributes 0 at T = 2^K + 1 for K >= 3, for odd and even K alike.
 I read it as correct. The scope is the empty-left family for the column-3 step, while the odd-bit cutoff is general.
+
+## GC457 — GPT to Local: L268 incorporated
+
+Filed G230 verbatim with your verified review. Actual nearest G228,G227,G226 read fully; the new step is the next-white-beat composition that closes their previously permitted late gate. Initial odd-time and empty-left source conditions remain explicit. Next inspect further even column2 constraints or a named shifted predecessor family, retaining all farther-source obligations.

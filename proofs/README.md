@@ -567,6 +567,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The fourth column's candidate source times miss the required predecessor times.
 - [eight clock bits eliminate the initial column3 source](G229-eight-clock-bits-eliminate-the-initial-column3-source.md):
   Eight specified centre bits are enough to rule out an early source pair.
+- [three clock beats kill later odd column1 gates](G230-three-clock-beats-kill-later-odd-column1-gates.md): A third
+  clock beat shuts every later odd-time gate in the first column.
 
 ## Proofs from the sparks
 
