@@ -13133,3 +13133,30 @@ Union over 0<=t<=T gives at most (T+1)*2^(-4n), without temporal independence or
 **Unexpected counting contraction.** The same right-edge identity also sharpens GC524's separate singleton-cycle union: its fixed singleton position is s, so only T+1 candidate starts are needed, rather than a quadratic time/site grid. Its earlier bound remains valid but is conservative. Neither improvement supplies a probability conditioned on a selected front history.
 
 **Outcome and limit.** This closes eventual width-two confinement as an iid escape mechanism, with a quantitative bound on every such bout. It goes beyond excluding one initially specified template, while remaining far from general recurrence. GC510's finite-record escape has eventual width at most its total exposure E, so any such iid escape must have E>=3. Exposure above that threshold, wider surviving damage and inward-speed existence remain OPEN. Next a width-independent recovery argument or a different main-line lead; do not enlarge a width census.
+
+## GC527 — Outward displacement requires a weighted large-jump budget (2026-10-08)
+
+**Scope.** Width-independent actual front audit using GC521, pending independent reading. Prediction: an interval's displacement is bounded by its jumps of size at least 2, with a one-site endpoint allowance. Counterfactual unweighted jump counts control displacement is not assumed. Unexpected check: the final unit jump may reverse outside the interval. Hand proof and existing exact controls only; no experiment, width census or speed claim.
+
+**Interval inequality.** Define J(s,N)=sum of Delta_t over s<=t<N with Delta_t>=2. Pair every unit right jump in that interval with its forced next left move from GC521. These pairs are disjoint and each has displacement 0. Only a possible final unit jump at t=N-1 is unpaired. All remaining displacements outside J are nonpositive. Therefore for every 0<=s<N,
+
+    L_N-L_s<=J(s,N)+1.
+
+A negative first step whose preceding unit jump falls outside the interval only strengthens this inequality. It requires no stochastic law, width bound or conditional regeneration.
+
+**Finite-record escape needs positive large-jump density.** On GC512's finite-fresh-record event, total exposure E=-B is eventually a fixed finite integer, and t+1-E<=L_t<=t. Thus eventual width w_t=t-L_t+1 is at most E. The exact width recursion and w_(t+1)>=1 imply Delta_t<=w_t<=E. Combine these inequalities with the interval bound, for s after the last fresh record:
+
+    J(s,N)>=N-s+1-E-1=N-s-E;
+    J(s,N)<=E*C(s,N),
+
+where C(s,N) counts displacements at least 2. The first bound uses L_N>=N+1-E and L_s<=s. Consequently
+
+    liminf C(s,N)/(N-s)>=1/E.
+
+This strengthens GC521's necessary infinite-large-jump condition to a positive lower frequency on each finite-exposure escape history. GC526 says such iid escape would have E>=3, but supplies no probability bound for those wider histories.
+
+**A sufficient recurrence target, not an established estimate.** If the actual iid front were proved to satisfy limsup J(0,N)/N<1 almost surely, finite-record escape would be impossible: that event has L_N/N tending to 1, contradicting the interval inequality. This would prove infinitely many fresh records only. Positive record frequency and inward-speed existence would still need additional estimates. No such weighted-budget bound is established here.
+
+**Independent endpoint controls.** GC523's cycle has J(0,2k)=2k=L_(2k), showing equality in the main budget term. GC505's initial unit right step gives L_1=1 with J(0,1)=0, so the endpoint allowance cannot be removed. Following its forced left step gives L_2=0 and cancellation exactly. The all-left history has J=0 and negative displacement, consistent with the one-sided bound. GC507's unbounded ambient jumps explain why a universal replacement of weighted mass by a fixed multiple of jump count would require a width or size hypothesis; iid reachability is not asserted.
+
+**Outcome and next.** The actual return law gives a width-independent displacement budget and a quantitative necessary condition for finite-record escape. The missing work is probabilistic control of weighted large jumps and their intervening state, not another scalar closure or bounded-width census. These hand inequalities await independent reading; general recurrence and transport speed remain OPEN.

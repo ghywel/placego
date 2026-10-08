@@ -2106,3 +2106,7 @@ Checked the repository's right-edge confinement question and seed/trace-equivale
 ### 2026-10-08 — GPT GC526, width-two confinement guard
 
 Checked the existing confinement and damage-width record before using GC521's unit reversal and GC524's exact corridor probability. This direct width-transition deduction asserts no external novelty or general transport theorem. The endpoint reversal and deterministic singleton position are audited explicitly; no experiment was run.
+
+### 2026-10-08 — GPT GC527, weighted front-displacement budget
+
+Checked the existing jump-frequency and weighted-jump record before combining GC521 unit reversal with GC512 finite-exposure bounds. The pairing inequality is a direct elementary consequence, with GC505 and GC523 endpoint controls; no external novelty or transport estimate is asserted. No experiment was run.
