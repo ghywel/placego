@@ -12635,3 +12635,29 @@ For N=1 the site-1 terminal triple is 010 and the same conclusion holds. The fro
 **Controls and reachability guard.** Probe `rule30_gpt_front_window.py` passes all 64 baseline/damage triple identities. It checks N=1,...,12 against both sitewise XOR/OR and literal decimal updates, all yielding exactly {N+1}. Radius-2 CF is REFUTED by N=3,4. These controls support the quantified local proof. The constructed pairs are arbitrary finite perturbations; they are not proved reachable from a single flipped bit on an iid initial background. A fixed-window closure restricted to that reachable ensemble would need its own obstruction. No inference about arbitrarily large jumps in that ensemble is made here.
 
 **Outcome and next.** The exact full-state update is now explicit, and ambient finite-window jump closure is closed. A rigorous speed argument must either retain a possibly unbounded damage word, justify a restricted reachable-state closure, or establish regeneration and control jump tails. Next audit a candidate regeneration condition within this state, rather than fit more front histories. Both the iid limiting speed and its existence remain open.
+
+## GC508 — A singleton damage reset need not be regeneration (2026-10-08)
+
+**Bears on.** GC507's augmented state and portfolio question 2, constellation row 3. Ambient finite-perturbation hand argument, independent reading pending. Reuses that exact family rather than fitting a longer iid front history. No novelty claim, iid reachability assertion or limiting-speed result.
+
+**Predictions and unexpected check.** After GC507's right jump of N+1, predict at least floor(N/2) consecutive left moves, with the next move healing when N is odd. Counterfactual: resetting the damage to a singleton restarts the iid single-flip front law. Unexpected: the large jump itself creates a long deterministic compensating bout, because the reset occurs far ahead of the background. Check N=2,...,13 in two independent updates; the causal argument covers every N>=2.
+
+**Reset state and causal separation.** GC507's finite rows x={-1,0} and y={-1} union {1,...,N} update to a first row U_0={-2,-1,1} and a second row differing from it only at N+1. Set time s=0 at this reset, so the front is L_0=N+1. The first row's rightmost black site after s further ticks is exactly 1+s: a rightmost black cell creates a black cell one site to the right by the 100 neighbourhood, and no farther cell can turn black. In particular all sites greater than 1+s are white.
+
+Suppose inductively that L_s=N+1-s. The common bit immediately below the front is at N-s. It is white whenever
+
+    N-s>1+s, equivalently 2s<N-1.
+
+By GC505's exact front derivative, that white bit forces L_(s+1)=L_s-1. For s=0,...,floor(N/2)-1 the inequality holds, so
+
+    L_s=N+1-s for 0<=s<=floor(N/2).
+
+Thus an arbitrarily large jump to a singleton is followed by an arbitrarily long guaranteed run of unit left advances. This conclusion needs no assumption about the interior damage pattern after the reset; only the current leftmost difference and the first row's right edge enter.
+
+**Odd-N endpoint.** If N=2m+1, after m such moves the front is m+2, and its common neighbour at m+1 is exactly the first row's rightmost black cell 1+m. Therefore the next update has no disagreement at the site one left of the current front; L_(m+1)>=L_m. In diagonal coordinates this is healing, possibly with a further rightward jump. The guaranteed left-advance bout is exactly m for odd N. For even N this argument gives the stated lower duration bound only; no sharp endpoint is claimed.
+
+**Regeneration failure and controls.** All reset states here have one damaged site. Nevertheless their first future left advance has probability 1, whereas a newly independent single flip on a fair initial row has probability 1/2 by GC505. The ambient resets also contain a deterministic bout whose duration grows with N. A stopping condition based solely on singleton damage cannot therefore restart the iid law on the whole finite-perturbation domain. It must include a condition on the surrounding background and its conditional distribution. As in GC507, these reset states are not proved reachable from the iid single-flip experiment; no uniform mixing-time or rare-event conclusion for that ensemble follows.
+
+Probe `rule30_gpt_front_reset.py` verifies the exact reset row, all guaranteed left moves, and the odd-N endpoint for N=2,...,13 using independent XOR/OR and literal decimal updates. All 12 pairs PASS in both implementations; the singleton-regeneration CF is REFUTED. This is a fixed control family for a proved causal inequality, not a horizon extension to estimate a velocity.
+
+**Outcome and next.** Damage simplification alone is not a regeneration boundary, and large jumps cannot be treated as independent rewards without their conditioned aftermath. The next useful condition must identify genuine fresh background information, or retain enough environment to control those correlations and jump tails. Stop enlarging this finite family; seek such a condition on the actual iid reachable states or change to another open reasoning lead. Existence and value of the iid transport speed remain open.
