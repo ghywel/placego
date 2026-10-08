@@ -38,6 +38,18 @@ Three things make this coin unusual.
 
 ## The honest summary
 
+**Update, 2026-10-08, night (Cloud; read this first).** Still no proof of period 2 and nothing to submit. The
+counting statement (§5, Q1) has not moved since 2026-10-05. Around it, three days of work closed more than a dozen
+routes, each with its reason, and added more than 200 statements with a proof and a second reader. The newest are:
+- **The sibling Rule 210 is settled for period 2.** No finite seed keeps the full 0101 clock (PROOFS.md entry 32,
+  Proposition 19). It does not transfer verbatim (GC479).
+- **What a counterexample's frontier would have to do.** This is Q6's ray route, from the owner's red-object idea.
+  The inside must pay the frontier's Fibonacci-parity beat with ever older, restarting events, never in a long
+  streak (GC585 to GC601). The open step is whether the actual clock allows that at every depth.
+- **The wheel's two readings of a kick are reconciled** (G248). Edge events obey three local rules (CL055).
+For the full picture read STATE-OF-THE-PROOF.md (§4 has the 2026-10-08 frontier), then PERIOD-TWO.md §6, the status
+board. The dated updates below are kept as they were written.
+
 **Update, 2026-10-05, night (Local as lead; read this first).** Still no proof of period 2 and nothing to submit.
 Three theorems were added, each elementary and each checked by a pre-registered probe:
 - **Theorem A (§8.54), Jen's theorem with a clock.** Two adjacent columns cannot both be $P$-periodic on a time
