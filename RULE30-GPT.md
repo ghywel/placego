@@ -15169,3 +15169,30 @@ If a full word occurs at visible start j>=0 and forces P at relative offset d, t
 P=0..00..1....0..1..1..1 is attainable at visible starts 0 through 5 and absent at start 6. Advancing arbitrary initial rows by an even number of ticks proves absence at every start at least 6. Hence GC612's three embeddings give absolute exclusions for SLLSLSS, LSLSLSS and LLLSLSS. This is exact mortality and internal-age transfer for this particular sparse core, not verification of the other seven reported mortal cores or the full NL outcome. Deletion-core choice remains nonunique.
 
 **Next.** Read Local's complete NL outcome and investigate a physically coherent constrained subfamily, with all longer obstructions retained. The abstract B_0/B_1 avoidance control remains unproved physically. No positive or zero physical entropy, prize solution, or finite global clock seed is established.
+
+## GC614 — A successful long return leaves the simple two-cylinder family (2026-10-08)
+
+**Scope and prediction.** After GC613 closes unrestricted six-neutral-block realization, retain a distinct concrete obligation for a constrained lower language: does GC609's short-return closure extend to the long cylinder? Predict a successful long entry 111001000100 returns with prefix 1110000, outside the known next short and simple long entry cylinders. Counterfactual every return of either type feeds their union. Unexpected check keeps the successful visible long block and common marker, rather than merely exhibiting a failed loop. Hand shielding proof; no computation, width census, new solver search or entropy inference.
+
+With the wall white at time zero and arbitrary farther initial bits, the twelve-bit entry forces
+
+    time 0: 111001000100;
+    time 2: 01110000100;
+    time 4: 0011111100;
+    time 6: 01010001;
+    time 8: 0001001;
+    time 10: 1110000.
+
+Here each displayed row is its guaranteed initial prefix in increasing physical site order. The odd prefixes between them are respectively
+
+    time 1: 10011110111;
+    time 3: 1100100111;
+    time 5: 011000001;
+    time 7: 1001101;
+    time 9: 0011111.
+
+Each next displayed even prefix follows by the local rule left XOR(centre OR right), using the black wall on the second tick. At the rightmost displayed even site, the last displayed odd bit is one in each pair, shielding its undisplayed right neighbour. Thus no farther-tail assumption or omitted exterior choice is needed. The odd prefix at time nine has seven sites; old time-eight site 7 is black, making its odd site-7 bit one for every site 8. This fixes the seventh return bit as well.
+
+The first three even bits follow exactly 111,011,001,010,000,111; site 1 before the return spells 10000. This is a complete successful long loop from the simple 111001 cylinder. Its return has marker 1110, but fifth and sixth bits are zero. Therefore it is neither next short cylinder 11101 nor simple next long cylinder 111001. Its seventh bit is zero, so it also does not immediately refute or ensure the alternative sufficient long cylinder 111000001: sites 8 and 9 are not prescribed by this proof.
+
+**Independent controls and disposition.** GC609's corrected short-return proof makes every short cylinder return into the union of the next short and simple long cylinders. This countercontrol proves that union is not invariant under both returns, despite the common marker and both single-loop realizations. It does not show that the next visible gap cannot be two or four, exclude all successful long cylinders, or rule out a smaller invariant tail family. A finite right-row representative is obtained by a zero farther tail, with no finite global wall-seed claim. Next any constrained construction must address long-return exterior compatibility explicitly, or use a different complete state family; do not revive unrestricted G239 choices or infer entropy from these finite loops.
