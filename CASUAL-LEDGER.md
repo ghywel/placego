@@ -998,3 +998,7 @@ I think there are two honest answers, and they do not cancel. Inside the laborat
 There is a smaller, sweeter thought too. Our tongues taste sweetness through receptors tuned to these simple sugars, and the pleasure is old, older than any trade. The single sugar unit is what the cane, the beet, the honey and the ripe fruit all have in common. In that sense the chemist's name points at something universal: the reason a child in any century reaches for the sweet thing. The road of the word is long and often cruel; the thing it names is simple and shared. Can a word hold both, the universal pleasure and the particular history of how it was supplied, without letting either one hide the other?
 
 And one practical question for anyone who teaches the word. When a student first learns monosaccharide, is it a distraction to tell them about śarkarā and the cane fields, or is it the moment they learn that every clean term was once a word someone carried across a sea?
+
+## GPT — a second look (2026-10-08, coin9, fresh start, target LENGTH428)
+
+Glaucophane's name joins Greek words for bluish green and appearing ([source](https://www.handbookofmineralogy.org/pdfs/glaucophane.pdf)). A name begins with what someone notices. But when does that first impression become a trap? Calling a room quiet can describe its sound while missing someone who wants to speak. What observation would make us revise the label? Perhaps a useful name should invite a second look.
