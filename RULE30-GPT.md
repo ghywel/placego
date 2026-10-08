@@ -15076,3 +15076,29 @@ The equality is checked by splitting r=0 and r=1: at r=0 the left expression is 
 Taking a,b,c,d=0,0,0,0 gives x,y=0,1. Thus every initial prefix 111010000 returns after six ticks with prefix 11101, and by GC606 completes a second short loop after another six ticks. Taking a,b,c,d=0,0,1,0 instead gives x,y=0,0. Every initial prefix 111010010 still completes its first short loop, but returns with prefix 11100 and then takes the hidden long entrance 011 by GC605. These two nine-bit cylinders have finite right-row representatives and arbitrary farther tails. The latter does not guarantee a complete next long return: GC607's sixth-bit gate or another sufficient condition still needs checking.
 
 **Disposition.** A concrete two-short-loop cylinder is proved, and the next hidden branch after a short return is explicitly inherited from two outward cells, not newly supplied. The OR gate loses information: three local input pairs select short and only 00 selects long. This multiplicity is an algebraic fact, not a physical frequency or independence claim; accessibility of the local pairs at successive returns remains constrained by the same evolving exterior. No arbitrary infinite mixed concatenation, full finite global clock, or positive boundary entropy follows. Next inspect the returned sixth bit when x=y=0, and the long-return image, for a coherent repetition family. Single returns and this two-return cylinder remain PART; the infinite lower-language obligation remains OPEN.
+
+## GC609 — A short return cannot feed the simple long cylinder (2026-10-08)
+
+**Scope and prediction.** Continue GC608's exact short-return image under the clamped alternating wall and autonomous right half. Predict that a zero fifth bit after a complete short loop forces the sixth bit to zero as well. Counterfactual the successful long cylinder 111001 can follow that short loop directly. Unexpected check compares an arbitrary 0001 predecessor with the particular predecessor inherited from 01011. Hand Boolean proof only; no experiment or duplicate of Local's NL concatenation computation. The claim concerns hidden return states, not exclusion of a visible mixed gap word.
+
+Start with 11101 at physical time zero. At time two write the row as 01011 followed by x,y,z,w,v at sites 6..10. GC608 proves the time-six fifth bit is x OR y. To select the next hidden long entrance it must be zero, hence x=y=0. The odd sites 6..9 at time three are then
+
+    1, 0, NOT(z OR w), z XOR(w OR v).
+
+At time four, write the row as 0001 followed by r,s,q,h at sites 5..8. The preceding odd row gives
+
+    r=s=0;
+    q=z OR w;
+    h=NOT(z OR w) OR (z XOR(w OR v)).
+
+In particular q OR h=1 for every z,w,v. At time five, sites 5,6,7 are 1,q,q OR h. Thus the time-six sixth bit is NOT(q OR h)=0. The seventh bit is q XOR 1=NOT(q), because the odd seventh bit is already one and shields its right parent. Every short return selecting the hidden long entrance therefore has the stronger prefix
+
+    111000 followed by NOT(z OR w).
+
+It cannot lie in GC607's simple sufficient long cylinder 111001. This closes that particular short-to-long cylinder-composition route. It does not exclude other long-return cylinders or prove an actual mixed visible word impossible.
+
+**Unexpected predecessor control.** An arbitrary time-four prefix 00010000 has r=s=q=h=0, so q OR h=0 and its two-tick return begins 111001. Direct odd prefix 0011100 verifies this sixth bit without the formula. Thus the forced sixth zero is specific to a preceding complete short loop; it is not a universal property of the 0001 reset or the 1110 marker. The full eight-bit cylinder permits arbitrary farther tail. Treating the time-four exterior as freely selectable would miss this compatibility obstruction.
+
+**The previous hidden-long control also misses the second known cylinder.** GC608's initial prefix 111010010 has initial sites 6..9 equal to 0,0,1,0. Denote initial sites 10 and 11 by e,f. Its odd sites 6..10 are 1,1,1,NOT(e),e OR f. Consequently its time-two sites 6..9 are x,y,z,w=0,0,0,0: in the last update NOT(e) OR (e OR f)=1. The stronger return prefix above is therefore 1110001, independently of every farther initial bit. This also misses GC607's other sufficient long cylinder 111000001, whose seventh bit is zero. No conclusion about this control's eventual return is asserted; those two sufficient cylinders are not a classification of all successful long paths.
+
+**Disposition.** The simple six-bit long gate cannot immediately follow any complete short cylinder, and the existing opposite nine-bit short control feeds neither currently proved long cylinder. These are retained failures of a cylinder-composition route, not a failure of G239's abstract family or an entropy upper bound. Local's NL computation remains the independent finite-word lane. Next seek a different successful long cylinder compatible with the short image, or read any certified NL obstruction before extending the hand route. Arbitrary infinite mixed compatibility remains OPEN; stop assuming a common reset marker alone supplies it.
