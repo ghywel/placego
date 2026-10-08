@@ -11935,3 +11935,19 @@ For0<=s<=tau, E=1 and hence O(s+1)=a(s), independent of O(s). For s>=tau+1, E=0 
 **Next analytic obligation.** The survivors have O eventually zero, while their initial next-bit choice has been hidden in an early transient. The following even diagonal receives both this transient and the original pulse. Any uniform exclusion must control their coupled propagation, or rule out the background gate pattern for all relevant symmetric corrections. The initial e=2 witness shows that the gate pattern itself is realizable, so simply asserting a(tau)=1 universally is closed. No uniform exclusion, all-radius uniqueness or Rule30 consequence is claimed; independent reading requested.
 
 GC472 independent reading resolved: Local L281 at6cad044 verifies the recurrence, odd exclusion and even pulse endpoint by hand. L281 independently derives the following-odd gate of GC473; GPT verifies that proposed lemma by the reset-and-freeze calculation above. These are matching independent derivations; the uniform coupled-transient obligation remains open.
+
+### GC474 — The coupled next-even transient passes its clock (2026-10-08)
+
+**Bears on:** GC473's gate-surviving branch, not uniform exclusion. Keep its notation: even first site e, pulse E(s), next odd background a(s), and next odd error O(s). The following background diagonal e+2 is identically white. Let V(s)=D_(e+2)(x,s), with new initial bit V(0)=v freely0 or1. The exact candidate recurrence therefore reads
+
+    V(s+1)=E(s) XOR ((1 XOR a(s) XOR O(s))*V(s)).
+
+This is an affine recurrence over binary bits, receiving both earlier transients. In particular, the early odd-bit choice can still affect V even though GC473 erased it from the odd diagonal itself. Erasure on one diagonal must not be mistaken for erasure from all descendants.
+
+**Hand clock implication.** If GC473's gate passes, O(s)=0 for s>=tau+1, while E(s)=0 there as well. Thus beyond that time V(s+1)=(1-a(s))*V(s). At s=e+1, a(e+1) is y's centre at an odd time and equals1. Since tau+1<=e, both errors have already vanished. Consequently V(e+2)=0, independently of V(0), the initial odd choice and all farther initial sites. The next even clock is automatic once the preceding odd gate passes. This closes the proposed use of that even clock alone to kill a gate survivor; it does not make the entire V transient vanish or decide diagonal e+3.
+
+**Preregistered controls and outcome.** Before running, predict the full affine error vector and this conditional clock implication for eight odd-left masks on[-5,-1], e2,4,6,8 and both new bits at e+1 and e+2. Exact integer-binomial parity independently checks the gate cell and the black predecessor centre; the scalar evolution uses decimal Rule210. All128 vectors and64 binomial controls pass. All64 passing odd-gate cases pass the even clock. The wrong counterfactual that this clock kills a gate survivor is rejected in all64 cases. Unexpected check:32 paired even initial choices converge to zero at clock time despite starting differently. Reproduction: `tests/probes/lexicon/rule210_gpt_next_even_gate.py`. These controls do not duplicate Local SB2 or SB3's tail census.
+
+A small unregistered follow-up queried the64 already-blocked odd-gate cases from the same sample and found their next even centre also zero. This was not a preregistered test of a stronger theorem. The analytic argument above still assumes the odd gate passes; no unconditional theorem is inferred from the extra sample. Retain that distinction if this stronger pattern is investigated later.
+
+**Next.** Supply this exact transient to Local's invited e+3 odd-link derivation. An early initial choice may be hidden in descendants even after its own error vector is reset. The uniform exclusion still needs a mechanism controlling that propagation, not just consecutive centre clocks. Local's SB2 unique-prefix observations and SB3 life exploration remain separate bounded evidence.

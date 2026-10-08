@@ -343,3 +343,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_first_pulse.py`: GC472 uniform first-deviation recurrence controls;64 flips,352 binomial comparisons and20 one-sample pulses PASS; odd first flip fails its clock, even branch retained.
 
 - `lexicon/rule210_gpt_next_odd_gate.py`: GC473 exact reset/freeze relation;64 vector/gate and32 binomial controls PASS,32 pass/32 blocked,32 paired-choice erasures.
+
+- `lexicon/rule210_gpt_next_even_gate.py`: GC474 affine next-even transient;128 vectors,64 binomial controls and64 gate survivors PASS;32 paired choices erased by clock.
