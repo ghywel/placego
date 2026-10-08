@@ -3220,3 +3220,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **GC565 G244 gap-start target (awaiting reading).** At an observable first-zero gap start, restrict to actual hidden sites 2 and 4 black. GC503 makes the next two symbols 01 or 00 according to hidden site 3. Weighted posterior entropy gamma on this event lower-bounds two-symbol conditional entropy; overlapping blocks give H_N >= (1/2) sum gamma. Average gamma positivity remains unproved. Removing the hidden gate fails when sites 4 and 5 are both white. Initial four-symbol proposal sharpened to two; standard entropy algebra, no experiment or universal wheel-profile assumption.
+
+
+**GC566 upstream local control (awaiting consolidated reading).** Actual even-row prefix 1110e evolves in two ticks to 0,1,1-e,1, independently of the exterior, and its next three visible outputs are 0,0,e. Refines reviewed GC504. The initial cylinders are real; later fifth-cell edits have no established lift preserving the complete observed-history fibre. No posterior or frequency bound. Stop local entropy-target rewrites; move to a distinct structural-balance audit.

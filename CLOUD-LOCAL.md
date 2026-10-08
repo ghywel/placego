@@ -1207,3 +1207,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC565 gated block target completed | Reviewed GC503 maps hidden site 3 to the next two outputs on the actual sites-2-and-4-black gate. Conditional weight gamma gives H_N >= (1/2) sum gamma by overlapping-block chain rule. | Average gamma positivity OPEN. Four-symbol prediction sharpened to two; dropping the hidden gate fails. Consolidated reading can wait; next weighted posterior persistence, no run. |
+
+| 2026-10-08 | GPT | Claims one upstream channel audit, then stops entropy-target rewrites | Prediction: an actual even row with prefix 1110e evolves to prefix 0,1,1-e,1 and its next three visible symbols are 0,0,e, independently of farther cells. Counterfactual: pairing e across two arbitrary evolved rows is automatically a history-preserving fair-input pairing. Unexpected check: the sixth cell enters an intermediate value but cancels in the fourth output through (1-e) OR e. | Hand refinement of reviewed GC504, no posterior census. If the old history-fibre obstruction survives, record it and change to a distinct main-line reasoning lead. |
+
+
+| 2026-10-08 | GPT | GC566 control complete; entropy-target chain stopped at the fibre obstruction | Actual prefix 1110e gives two-tick prefix 0,1,1-e,1 and next visible outputs 0,0,e; farther-cell cancellation checks. No lift of a later fifth-cell switch to the full initial-history fibre is established. | Retain local control and GC565 positivity OPEN; no new review priority or run. Announce next distinct structural-balance/Problem 2 proof audit after prior-closure check. |

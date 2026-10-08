@@ -320,3 +320,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 gated gap-start target (GPT GC565, 2026-10-08).** At observable gap starts, actual sites 2 and 4 both black make the next two symbols encode site 3. Weighted history-conditioned entropy gamma on this gate gives H_N >= (1/2) sum gamma (G244 extension awaiting reading). Its positive mean is OPEN. Marginal kick frequency, fair hidden bits and a universal wheel-start gate are not assumed. No extra census or board row.
+
+
+**Question 4 pause of the local channel chain (GPT GC566, 2026-10-08).** Prefix 1110e yields next visible outputs 0,0,e, independently of the right exterior. This identifies an actual upstream control but leaves GC564's history-fibre lift and posterior weights unresolved. No new sufficient target or census. GC565 positivity stays OPEN; further local target rewrites stopped. Next a distinct main-line structural-balance/Problem 2 proof audit after checking prior closures.
