@@ -350,3 +350,59 @@ same commit as the result.
 
 All are in `tests/probes/prizes/`, each with its predictions written before its first run and its OUTCOME in its
 header, failures included. After editing this file run `python3 tests/probes/mathcheck/check.py COLLATZ-PRIZE.md`.
+
+## 8. What carries over from Rule 30's work of 2026-10-08 (Cloud, at the owner's request)
+
+The owner's question: can the new Rule 30 findings be carried to the Collatz twin, and back? Most of the day's
+results are about the geometry of Rule 30 beside the 0101 wall, and they do not transfer. One exact identity does
+connect the two problems at the level where the day's tools work.
+
+**The shared linear map (proved, one line each; checked inline to $n < 200{,}000$ and on random 64-bit words).**
+Write $g(n) = n \oplus \lfloor n/2 \rfloor$, the Gray code. It is Rule 60 applied to the binary digits with the most
+significant on the left, and it is multiplication by $3/2$ without carries.
+- **Rule 30 is $g$ plus a local correction.** On the same digits, Rule 30 is $g(n) \oplus (r \wedge \neg c)$, where $r$
+  is each cell's less significant neighbour (RULE30-PRIZE.md "The Gray split", CL046).
+- **The 3/2 map is $g$ plus a rippling carry.**
+  $\lfloor 3n/2 \rfloor = n + \lfloor n/2 \rfloor = g(n) + 2\,(n \wedge \lfloor n/2 \rfloor)$, and an odd
+  Collatz step is $T(n) = (3n+1)/2 = \lfloor 3n/2 \rfloor + 1$.
+- **Iterates of $g$ are Pascal sums.** $g^{t}(n) = \bigoplus_{i} \lfloor n/2^{i} \rfloor$ over the $i$ whose binary
+  digits are a subset of those of $t$ (Lucas). So both systems unroll as a Lucas sum of their correction events,
+  the edge events of Rule 30 and the carries of $3/2$.
+
+So the two problems are two ways of getting the same linear map wrong. Rule 30's error is local, one cell. The 3/2
+map's error is a carry, which can run arbitrarily far. Kopra's class of rapidly left expansive automata
+(PRIOR-ART.md) already holds both kinds. The record's earlier decomposition (§5 above: Rule 150 plus a source) is a
+different linear part, and the Gray-code one is the part the two problems share.
+
+**What transfers, and how far.**
+- **As lemmas, unchanged (proposed, not yet applied).** Statements that use only the linear part and its Lucas
+  kernel hold for any correction field, carries included. Two of the day's results are of that kind:
+  - GC598: corrections no older than $A$ contribute with period $2^m > A$ in the target index, so a demand that is
+    not $2^m$-periodic needs arbitrarily old corrections.
+  - GC600: the exact age slots $2^m + r$, with $r$ a binary subset.
+  Mahler's 3/2 problem asks whether one digit position of $\xi (3/2)^t$ can stay 0 for ever (Kari and Kopra's
+  column form, PRIOR-ART.md). That is the same shape as Rule 30's white wedge. So the first Collatz-side test is to
+  write that demand in carry events and ask whether GC598's filter says anything, or is vacuous because carries
+  are dense. Nobody has done it yet.
+- **Not as stated.** Every result that uses the locality of Rule 30's correction depends on the edge event being a
+  function of two neighbouring cells, and a binary carry is not. These are the adjacency rules (CL055), the streak
+  caps (GC592, GC597) and the strip restarts (GC599). In base 6, though, $\times 3$ and $\times 2$ are local,
+  one-sided, radius-one rules (Kari 2012; checked inline: digit $i$ of $3n$ is
+  $3(d_i \bmod 2) + \lfloor d_{i-1}/2 \rfloor$). So analogues could be derived there, as different rules.
+- **Not at all.** These are the wall-specific results: the silent sources (E6, E14), the wheel and its kicks, G248's
+  charge modulo 28, and the forbidden visible words. They come from the 0101 clock. Collatz's analogue of a clock
+  is a periodic parity vector, which is the cycle case, already handled by Steiner's method (G33, G47).
+
+**A caution about the number 3.** GC598's three is the period of the Fibonacci numbers modulo 2. It comes from
+$x^2 + x + 1$ over GF(2), not from the 3 of $3n+1$. The fact the argument uses, that no power of two is a multiple of
+3, is far weaker than Collatz's need, that $\log_2 3$ is irrational. The resemblance is a coincidence of small
+numbers, not a bridge.
+
+**Back the other way.** What Collatz has and Rule 30 lacks is arithmetic: least residues modulo $3^a$ (§4), and linear
+forms in logarithms (G69). Today's work adds no substitute for it on the Rule 30 side.
+
+**Prior art newly recorded** (PRIOR-ART.md, 2026-10-08). Korec 1992 already models 3x+1 by a seven-state one-way
+cellular automaton, equivalently a generalized Pascal triangle. Cloney, Goles and Vichniac 1987 call it a quasi
+cellular automaton, since the choice of step reads the last bit. Kari 2012 builds the base-6 automata for $\times 3$
+and $\times 3/2$. Bruschi 2005 gives two more for testing. None of them uses the Gray-code split above, as far as
+their abstracts show.
