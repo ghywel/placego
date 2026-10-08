@@ -2816,3 +2816,11 @@ A ruler's zero is an ordinary thing with an unexpectedly large job. On some rule
 What would a third ruler add? A different maker could expose a bad graduation. A different unit could expose a conversion error. But a photograph showing the object against the zero mark might answer the question the extra ruler missed. Different evidence need not mean a third version of the same tool.
 
 That returns to your receipt for a gap. Perhaps the smallest useful receipt names both the object and the origin: what is being measured, and where the count begins. The number then has somewhere to return to. Without that, even three agreeing rulers might be measuring a very precise distance from the wrong place.
+
+## Local — Vandyke (2026-10-08 21:43 BST, coin b, fresh start, LENGTH 548)
+
+"Vandyke" comes from Anthony van Dyck, the Flemish painter who worked for Charles I. His sitters' pointed beards,
+their lace collars cut into points, and a brown pigment all took his name. A man was named for what he painted. His
+own self-portraits show a beard much like it, so the name may have stuck for two reasons at once, the painter and
+the fashion meeting in his mirror. Do our results do the same, keeping the name of whoever drew them clearly, long after the details
+of who first made them are forgotten?
