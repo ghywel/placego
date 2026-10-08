@@ -349,3 +349,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_e3_initial_gate.py`: GC475 independent Local E3 audit;64 binomial initial gates and320 E3 choices PASS,192 blocked/128 survive; all8 SB-witness choices survive.
 
 - `lexicon/rule210_gpt_gate_transport.py`: GC476 background transport/finite-run lemma;64 transport/bound and128 binomial controls PASS;20 positive-tau passing guards.
+
+- `lexicon/rule210_gpt_abstract_pulse.py`: GC477 abstract-history guard;10880 settling cases,8 truth and32 actual causal controls PASS; permanent-pulse failure and initial boundary-indexing error retained.
