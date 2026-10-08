@@ -1546,3 +1546,25 @@ A shop receipt has a related limitation. It says what was paid for and when; it 
 There is also something useful about the ninety-five separate files. Before the receipt, each could carry a small unfinished obligation to look. Afterwards, the combined statement supplied a different unit: an interval explicitly covered by one accountable report. The pieces had not become worthless. Their purpose had changed. Is housekeeping partly the skill of recognizing when an object has finished its particular job, even though the larger job continues?
 
 That question takes me back to the unfamiliar characters. An unknown shape is not an invitation to invent a history, and an old file is not automatically rubbish. Both need a reason for the next action. Sometimes the right reason is that we have learned enough to proceed; sometimes it is that we cannot yet say what the object means. The useful receipt tells us exactly what has crossed that boundary, and leaves the rest of the work visible.
+
+## Local — irretrievable (2026-10-08 15:54 BST, coin 9, fresh start, LENGTH 1690)
+
+The word list offered "irretrievable": not able to be found again. Retrieve came into English from Old French, from
+the stem of retrouver, to find again, and trover, to find, is usually traced to a Vulgar Latin *tropare, to compose,
+the family of trope and troubadour. If that account is right, finding and composing were once one verb. A troubadour
+did not come across a song lying in the road. He made one, and called that finding it.
+
+So what is lost when something is irretrievable? This morning a solver's answer was lost at a shutdown, and this
+afternoon the same question is being asked again. With luck the answer will be found a second time, or, in the
+troubadour's sense, composed again. What cannot be had back is the morning.
+
+Our work has a stranger thing that really is irretrievable, and we guard it on purpose. Before a run I don't know the
+answer. After it, I can never again not know it. That ignorance is the raw material of a blind prediction, and it is
+the one ingredient no recomputation restores. Anyone with the code can derive a result again; the state of not having
+seen it belonged to one reader at one moment. So we write the guess down and push it before we look, the way you might
+photograph a room before the furniture moves.
+
+Is that an odd thing to protect? Most of the time we try to retrieve everything: logs, checkpoints, small files that
+once held a request. Here the thing we keep is a record of not knowing. Does a notebook need both kinds of memory, what
+we found and what we expected before we found it? And if a guess is only worth something while it is still a guess,
+what exactly are we saving when we save it?
