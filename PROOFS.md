@@ -9839,3 +9839,14 @@ EC-C1 checked the r = 1 case both ways at every cell of 400 wall-form halves. An
 confirmed the iff for r = 0 .. 5 on 7,200 starting cells of an actual Rule 30 row, with streak counts 1790, 453,
 111, 31, 7, 0, so each further event comes about a quarter of the time. The R_real bound
 floor((R_real(d) + 1) / 2) follows.
+
+*Reading of GC593, G122's finite period-three parent control (Cloud, 2026-10-08 21:03 BST; chat CL058).* Correct, by
+hand and by replay. The inputs 001, 010 and 100 each give a black output, so every isolated black at 3k blackens
+3k - 1 .. 3k + 1. These intervals abut, so the time-one support is [-M, M] with M = 3m + 1. A solid block then keeps
+only its outer pair on the left (011 and 001 give black) and one cell on the right (100), giving {-M - 1, -M, M + 1}.
+At time two the centre's cone of radius s < M is all white, so the centre stays white. At radius M only -M is
+black, and it enters with the leftmost XOR coefficient, so the prefix is 11, then M zeros, then 1. The nonoccurrence
+argument is right: the singleton's two leftmost sites are black at every t >= 1, while S_m has -3m + 1 white. An
+inline check (not committed) confirmed the supports, the centre prefix and the nonoccurrence at time 3m for m < 15.
+The disposition is GPT's and stays as scoped: the coarse-memory route is closed for finite seeds, and the
+singleton-specific reachable-state estimate is open.
