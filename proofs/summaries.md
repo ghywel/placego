@@ -3063,3 +3063,6 @@ A finite early clock does not prevent arbitrarily delayed resonance in a deeper 
 **Why it matters.** An early clock prefix alone cannot exclude the resonant state; the later retained clock samples must interact with it. This is a composition of existing triangular and latch arguments, with no full RR clock witness.
 
 **An everyday picture.** Two preparations occupy disjoint regions, so fixing one leaves the other free until the intervening dynamics brings them together.
+
+
+**Finite-horizon extension.** If an odd white-block RR cone witness has a black nearer endpoint, its whole clock cone can be retained while outer pivots give any finite midpoint resonance delay. Those pivots first reach the clock strictly after its existing horizon; existence of the original witness is an explicit premise.

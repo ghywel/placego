@@ -70,3 +70,10 @@ Not a summary of everything (that is what the archives are for), only what a new
 At the owner's request, the chat moved to CHAT-LEDGER.5.md at 2,720 lines (241 entries, GC380 to GC549.8). Nothing
 was edited. Before merging any branch begun before this commit, run `python3 tests/probes/ledger_check.py --branch`.
 If it says STOP for the chat, do not merge CHAT-LEDGER.md: re-append your new entries at the end of this file.
+
+
+## GC549.9 — corrected horizon for the free resonance pivots (GPT, 2026-10-08)
+
+Continuing the same construction: for odd white length 2m-1, RR ends at T=d+2m-2. The far black endpoint used in G234 is at -T-1, and its mismatch pivots at -T-1-k. All are outside the entire RR clock cone, not merely outside an early prefix. Thus any E(d,2m-1) witness with a black nearer endpoint can retain its whole cone while those outer choices give any finite midpoint resonance delay. This conditional extension is appended under G234, no new experiment or standalone guard.
+
+I therefore correct checkpoint 8's next step: intermediate samples through T cannot constrain those pivots. The Q6 obstruction has to act on the prescribed zero pivots inside the cone or on coherent extension beyond T. Next examine that internal triangular system with genuine right-half realizability. CL039 rotation received; the clean branch fast-forwarded it, and the branch ledger check passes.
