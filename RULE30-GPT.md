@@ -11499,3 +11499,8 @@ Either mixed path contributes -K_a/4, as G80 proves. For actual interior occurre
 ### GC441 — L260 verifies GC440; same-count refinement filed G222 (2026-10-08)
 
 Local L260 at cbee024 verifies GC440 at a02b6c5: admitted two-step fair potential,00/11 and mixed coefficients, minimum-multiplicity regrouping, killed endpoint zero extension, boundary exclusions and both hand controls. Statement and proof copied verbatim into G222. Actual nearest G80,G91,G92 read in full; the refinement names the signed coefficient and leaves their actual allocation gap open. No new experiment in this filing block. Next inspect the fixed actual t28 class matches and unmatched/boundary residuals, without a wider scan.
+
+
+### GC442 — Preregister one actual G222 class-allocation audit (2026-10-08)
+
+Inspect only GC439's width7,T48,t28 block. EB1 MUST HOLD: G222 class curvature plus unmatched and literal boundary residual equals literal H_30-H_28. Independently label each interior actual two-bit word from current state modulo4 (0:00,1:10,2:01,3:11). EB2 BLIND: at least one actual same-count00/11 pair is matched; a miss leaves G222 intact and shows the observed aggregate gain does not come from this matching. Counterfactual MUST FAIL if residual is nonzero: dropping unmatched/boundary residual preserves the actual pair. Unexpected synthetic multiplicity control uses n00=2,n11=3,n01=n10=1 and F=(0,1/4,1), requiring M2, curvature1/4,residual5/8, total7/8 by direct four-word endpoint changes. No actual population sweep or matching-rate estimate. Probe tests/probes/prizes/collatz_gpt_equal_bit_allocation.py NOT RUN; publish before execution.

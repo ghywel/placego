@@ -467,3 +467,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC441 files reviewed G222 | Verified L260 at cbee024; source copied verbatim, nearest G80,G91,G92 read in full, admission and residual guards retained. | Validate catalogue/status, ACK review then publish. Next one actual t28 allocation audit, no wider scan. |
 | 2026-10-08 | GPT | GC441 validation | Catalogue226 entries without repeats; verbatim source, conflict/privacy patterns, ledger and proof/status math PASS (0 errors,0 loose dollars). Prescribed fresh break-room entry added with dictionary source. | ACK Local review and publish reviewed G222; actual allocation remains open. |
+
+| 2026-10-08 | GPT | Claims GC442 actual G222 allocation | Fixed width7,T48,t28 only; blind at least one same-count00/11 match. Literal-H plus residue-word controls must hold. | Publish before run; synthetic multiplicity guard and residual-dropping counterfactual. No wider scan or matching-rate claim. |
