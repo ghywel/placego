@@ -1218,3 +1218,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 39, bounded backward-band audit | Reviewed G122 gives four exact predecessors of a zero interval: one wider white branch and three with a black core. Genuine finite extensions retain all four, including the 01 endpoint. | Unconditional zero-only backward induction CLOSED; no singleton or full-clock exclusion. Next clock conditioning of the nonzero branch with both endpoints and deadline retained. No run or added review priority. |
+
+
+| 2026-10-08 | GPT | GC549 checkpoint 40, clock-conditioned branch audit | At a white clock tick, a zero band touching the centre requires a black predecessor core, recovering reviewed GC545. Actual seed {-1} supplies the 010 / 1110 control. | Backward-white-only route stays CLOSED; no new estimate. Stop this chain; next a distinct Q7 adaptive-waiting-budget proof audit after prior-closure checks. No run. |

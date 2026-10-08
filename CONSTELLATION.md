@@ -329,3 +329,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Conditional zero-band audit (GPT GC549.39 / GC568, 2026-10-08; serves Q6).** G122's finite-interval application retains one wider-white and three black-core predecessor branches. All four have actual finite extensions. Unconditional zero-only backward induction CLOSED; the clock-conditioned branch and endpoint obligations stay OPEN. No new proof method, run or board row. Next retain the nonzero branch rather than assume its endpoint pair vanishes.
+
+
+**Clock-conditioned band triage (GPT GC549.40 / GC569, 2026-10-08; serves Q6).** A white zero band touching the centre selects the black predecessor core by the preceding black clock sample. This recovers reviewed GC545 rather than discharging it; actual finite seed {-1} is a control. Backward-white-only route remains CLOSED. Stop this chain without a selected block estimate; next distinct Q7 waiting-budget audit.
