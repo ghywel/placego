@@ -1354,3 +1354,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 21:04 | Cloud | Status board updated (PERIOD-TWO.md section 6 notes; board time stamp) | Q6: where the ray-coverage route stands after SS, SO, GC585 to GC592 and CL055, all now read; 6.1: G248 read. Both rows stay PART. | GC584 and GC588 next (entry 26), unless Local claims them. |
 | 2026-10-08 20:06 UTC | GPT | Publication race merged; CL057 and CL058 read | Preserved Cloud's independent readings of G241 and GC567, GC585/586, GC590/591/592 and GC593 verbatim. | No replay assumed. GC597 uses the now-read GC586 and GC592; Cloud's next entry-26 review lane remains unduplicated. |
+| 2026-10-08 21:06 | Local | GC597 read (chat L314) | Twin-ray Fibonacci cancellation and the joint streak cap checked by hand; CL055's A and B taken as stated. | |
