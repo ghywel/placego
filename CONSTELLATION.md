@@ -289,3 +289,5 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 balance guard (GPT G239, 2026-10-08; serves portfolio question 4).** Six neutral length-28 binary gap words give an abstract shift with entropy at least log2(6)/28, bounded factor charge 21 and density 3/14; it avoids all seven CL041 forbidden words and G238's factor. Hand application of standard block coding awaits reading. No Rule 30 realization or actual entropy bound. Exact balance alone is insufficient; next ask whether neutral choices admit coherent predecessors at every depth, not another drift measurement.
+
+**G239 first realization layer (GPT GC551.1).** Shared state 10 has controlled-width-2 loops spelling both gap blocks, so the neutral family survives X_2. Hand relation and 16 literal controls pass, reading pending. The free exterior must become an actual evolving column at greater width; no uniform entropy bound.

@@ -9165,3 +9165,18 @@ All successive ones are separated by exactly two or four zeros. Hence X avoids 1
 
 
 *Second reading of G238 (Local, 2026-10-08; L293).* Verified by an independent hand reading of both branches, including the constrained D,E equations and their contradiction with X=0. Local also checked checkpoint 27's previously unread entry gate: visible 01 followed by the four-gap forces canonical 11100. Together with L289, G237, GC503 and the black-row identity, the fourteen-symbol absence now has a complete independently read hand proof. The earlier finite fact had three independent computational instruments (Cloud RRL, GPT continuation, Local LR2); those records remain retained. This note supersedes G238's pending label; the detailed reading is L293, not a new run.
+
+
+**G239 extension: its entire abstract family survives controlled width 2 (GPT, 2026-10-08; awaiting reading).** This is a finite-width realization, not an autonomous infinite right half. Let the current two-site state be (a,b), with wall 0, and let free exterior column 3 take values u,v on the two updates. The odd pair is (a OR b, a XOR(b OR u)); the next wall is 1. The next even pair is therefore
+
+    (1 XOR ((a OR b) OR (a XOR (b OR u))),
+     (a OR b) XOR ((a XOR (b OR u)) OR v)).
+
+Varying u,v yields the complete relation
+
+    00 -> {10,11,01}; 01 -> {00};
+    10 -> {00,01};    11 -> {00,01}.
+
+Consequently state 10 has loops 10,01,00,10 and 10,01,00,01,00,10. Their visible bits between visits to 10 are 100 and 10000. Every succession of two- and four-zero gaps can concatenate these loops, choosing the free exterior inputs separately for each edge. In particular G239's six neutral length-28 blocks and every infinite concatenation have a controlled width-2 realization. Shift invariance supplies the shift closure too. Thus h(X_2) is at least log2(6)/28, but this gives no uniform lower bound as width increases.
+
+*Checks and limits.* Prediction of a shared black state holds. All 16 source/input assignments agree between literal decimal Rule 30 and the paired formula, and their four successor sets match the hand split. The unexpected hidden-neighbour check retains state 01 rather than collapsing all white samples: it is needed for the four-gap loop. As a further scope control, fixing both exterior inputs to zero removes edge 00 to 01 and this four-gap loop. The preregistered wider-extension counterfactual is unsupported: at width 3 those exterior bits become interior and must obey a new Rule 30 equation, which the width-2 graph never checked. No assertion that every extension fails, or succeeds, is made. Next identify a compatible exterior coding or an actual obstruction, retaining that equation; do not extrapolate this graph to all widths. This is an extension of the same G239 guard, not a new numbered lead.

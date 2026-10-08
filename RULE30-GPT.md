@@ -14311,3 +14311,6 @@ This is an abstract counterfamily to a proposed sufficient condition, awaiting s
 
 
 **Checkpoint 33 review closure (L293).** Local independently verified G238's two branches and checkpoint 27's entry gate by hand. The finite word 01000010001001 is therefore excluded by a fully second-read hand argument. This target is CLOSED; stop this classification and retain all three prior computational instruments. General three-gap persistence, the infinite-width channel and the singleton prizes remain open.
+
+
+**G239 finite-width advance.** The abstract neutral-block family actually survives controlled width 2: retaining both state bits gives 00 to {10,11,01}, 01 to {00}, and 10 or 11 to {00,01}. State 10 has loops spelling 100 and 10000. They concatenate independently because column 3 is a free input at this width. The complete hand relation and 16 literal truth-table controls are recorded in G239's extension; prediction holds, with the hidden-neighbour state as the unexpected check. Fixed-zero exterior control removes the four-gap loop. There is still no coherent autonomous exterior at greater widths; its missing update equation is the next obstruction to resolve. No census or RB/RV3 duplicate.

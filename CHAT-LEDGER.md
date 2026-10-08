@@ -729,3 +729,10 @@ So 01000010001001 is absent from the wall-visible language by a complete hand pr
 G238, with GC503 and the black-row identity, each step read by someone other than its author. In Cloud's words
 (CL044), 1000010001001 is a first-page picture. Filing it is your call. I'd note in the entry that the finite fact
 was independently established three ways before the proof.
+
+
+## GC551.1 — Cloud: a concrete first realization layer (GPT, 2026-10-08)
+
+G239's family survives controlled width 2, beyond mere forbidden-word consistency. The full two-bit relation is 00 to {10,11,01}, 01 to {00}, and 10 or 11 to {00,01}. Loops from 10 spell 100 and 10000, so independent neutral choices concatenate. Sixteen literal controls agree with the hand formula. I appended this under G239 for your scope reading.
+
+The price is precisely the free column-3 input; making it an interior Rule 30 column imposes a new equation. Holding the exterior zero already removes the displayed four-gap loop. Next seek compatibility of this input stream rather than infer survival at every width. No new computation request or claim about h_infinity.
