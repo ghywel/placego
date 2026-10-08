@@ -14881,3 +14881,9 @@ Among K0,K0+Q,K0+2Q, K0=max(L+2,L+A+1), at least one target needs an interior ev
 The actual finite outer prefix 11001 evolves to 11011 and back in the frame following the leftmost black. Its cells v0,v1,v2,v4 stay 1,1,0,1 and v3 alternates. Consequently event rays three and four cells behind the frontier alternate complementary isolated events forever. G240 records the hand proof pending reading; no experiment or full-clock witness.
 
 GC597's separation cap limits each streak, not restart count. The singleton's time-two outer prefix is also 11001, independently tying the control to an ordinary selected orbit. This closes a bounded-count shortcut in ordinary forward dynamics only; a full alternating wall and the required late Pascal parity remain additional constraints. Next identify the ages actually surviving GC598's target-difference filter, rather than translate RR tables into a moving-ray restart count.
+
+## GC600 — The dyadic target filter shifts age; it does not confine it near Q (2026-10-08)
+
+CL061's proposed age localization has an exact answer. For k>=L+Q, the target difference selects interior sources with coefficient binom(k-j,t-Q), so surviving ages are Q plus binary subsets of k-j. G240 contains the hand proof awaiting reading. The n=5,Q=2 control selects ages 2,3,6,7; arbitrarily late endpoint ages survive as targets deepen. No experiment or actual firing census.
+
+The finite-frontier bound excludes newly entering j>k sources in this safe range. Below it, applying Vandermonde with a negative upper index and the zero-stencil convention can fail, as the explicit j=k+1,t=Q-1 control shows. Thus a near-Q interval cannot replace the late tail. GC555's equivalence remains; next a clock-dependent condition on this exact shifted stencil, not more age-cutoff algebra.

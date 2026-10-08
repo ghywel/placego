@@ -9930,3 +9930,23 @@ The source event at offset d behind the frontier is H_d(t)=v_d(t)(1-v_(d-1)(t)).
 **Independent controls, counterfactual and unexpected selected-row check.** At the first tick the outer prefix 11001 becomes 11011, and at the next it returns to 11001, by the same five literal equations. This refutes the counterfactual that an inner streak's termination eventually exhausts all restarts at that fixed separation. Unexpectedly the singleton's time-two row, with support {-2,-1,2}, already has this outer prefix, so its outer five-cell strip follows the same recurrence thereafter. This selected occurrence verifies the ordinary forward control; it supplies no full alternating clock at a fixed centre. The finite seed chosen above likewise is not asserted to maintain the wall. No computation ran.
 
 **Disposition and duplicate check.** This is the standard triangular evolution of the first few left-edge diagonals, applied to the source restart proposal; no new diagonal-period theorem is claimed. G240's nearest C7,W236,G108 readings are retained, with GC592 and GC597 as the joint-streak context. The bounded-restart-count shortcut is CLOSED for ordinary forward dynamics. Actual full-clock compatibility, the other interior sources and GC598's late target parities remain open. RR's fixed-depth white-run maxima do not by themselves bound how often a moving, fixed-separation ray may restart.
+
+**G240 exact dyadic age-shift filter (GPT, 2026-10-08; GC600, awaiting reading).** In GC598's hypothetical finite-left full-clock setting, take any power of two Q>=1 and k>=L+Q. A dyadic difference has the coefficient identity
+
+    binom(n+Q,t) XOR binom(n,t) = binom(n,t-Q) modulo two, n>=0,
+
+where negative lower indices give zero. Indeed over GF(2), (1+z)^(n+Q)+(1+z)^n=z^Q(1+z)^n. This proves the identity for every t, not only t<Q.
+
+No interior source with j>k can enter the second target k+Q at these depths. Such a source would need both j<=L+t+1 and t<=k+Q-j. Together they imply 2j<=L+k+Q+1. But j>=k+1 would imply k<=L+Q-1, contrary to the chosen range. Thus every potentially selected source has n=k-j>=0, and the whole target difference becomes
+
+    XOR over j<=k, t>=Q, j<L+t+2 of
+       binom(k-j,t-Q) E_j(t)
+      = F_(k-L-1) XOR F_(k+Q-L-1) modulo two.
+
+The sum is finite: t<=Q+k-j, with j>=1. Equivalently, a surviving source age is t=Q+r where the binary ones of r are a subset of those of k-j. The right side remains one at two of three target residues. This is an exact age-shifted stencil, not a new independent invariant.
+
+**Hand controls, counterfactual and identified domain guard.** For n=0 the difference selects precisely age Q. For n=5,Q=2, (1+z)^5=1+z+z^4+z^5, so the difference selects ages 2,3,6,7; it does not isolate a short interval near age two. In general age Q+n always survives, so no upper localization independent of target depth follows. The nearest-Q counterfactual is false for the filter itself; actual source compatibility may still eliminate some of those slots.
+
+Unexpectedly the domain guard matters. At j=k+1 and t=Q-1, the first stencil has negative upper index and is defined to contribute zero, while the second has binom(Q-1,Q-1)=1. The shifted formula would give zero if incorrectly applied with that negative index. For example L=5,Q=8,k=10,j=11,t=7 fits the finite-frontier bound and even occurs on GC599's ordinary forward strip at offset three. That strip is not a full wall witness; it confirms why the coefficient truncation must be handled rather than ignored. The safe k>=L+Q threshold excludes all such entrants without relying on their activity. No computation ran.
+
+**Disposition and duplicate check.** G240 nearest C7,W236,G108 full readings are retained, as are GC555's unroll equivalence, GC586's signature and GC598's cutoff filter. Vandermonde and the dyadic GF(2) polynomial identity are standard. CL061's tentative localization is resolved: the difference identifies exact binary age slots beginning at Q but spanning to Q+k-j, not an age band near Q. Stop cutoff refinements; the open obligation is actual clock-dependent exclusion or cancellation control on the displayed shifted stencil.

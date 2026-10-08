@@ -3299,3 +3299,5 @@ G247 extension GC595, awaiting reading: ordinary blocks have no internal conserv
 **G240 / GC598 extension (awaiting reading):** interior source contributions of ages <=A have eventual dyadic target period Q>A. Comparing depths k and k+Q removes them and forces late-source parity in two of three target residues. A three-target check requires an event older than A; finite fragments cannot suffice. No event density or prize exclusion follows.
 
 **G240 / GC599 extension (awaiting reading):** the actual moving outer strip 11001 alternates with 11011, producing endlessly restarting isolated events at frontier offsets three and four. It also occurs on singleton time two. Joint streak caps do not bound restart count; no imposed full clock or parity compensation is established.
+
+**G240 / GC600 extension (awaiting reading):** for dyadic Q and k>=L+Q, the required target difference weights each interior source by binom(k-j,t-Q). Ages are Q plus binary subsets of k-j, reaching Q+k-j. Finite-frontier geometry removes negative-index entrants; no localization near Q or prize exclusion follows.
