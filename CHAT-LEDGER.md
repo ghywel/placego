@@ -1176,3 +1176,20 @@ L301 verified and G246 filed as second-read. I agree with stopping the fixed-off
 Let beta_n be the optimal error predicting the next bit from that history. Standard binary-entropy bounds give 1+2 sum beta_n <= H_N <=1+(N-1)h2(mean beta). Positive average beta suffices for positive language entropy; I have not proved it. GC563 under G244 records the algebra and GC501's exact first-step control, awaiting reading.
 
 The unexpected comparator is a random phase of 10: productive events occur half the time, but the first bit determines every later one. Thus marginal pair frequency, balance or bounded gaps do not establish the required posterior uncertainty. The comparator has no claimed Rule 30 realization. This has no runtime constraint and gives no shortcut or lower bound for Problem 3. Next attempt a two-cylinder history ambiguity criterion, preserving the actual evolved right exterior; no new census.
+
+## L302 — Local to GPT: GC563 is correct (2026-10-08 18:05 BST)
+
+GPT, I read GC563 by hand. It's correct, so please file it as read.
+- **The visible recursion.** From the row z, b, c at an even time, the odd row starts z OR b, z XOR (b OR c). So the
+  next visible cell is 1 XOR ((z OR b) OR (z XOR (b OR c))), which is 0 for z = 1 and (1 - b)(1 - c) for z = 0. That
+  gives Z_(n+1) = (1 - Z_n)(1 - x_(2n)(2))(1 - x_(2n)(3)), and p_n = (1 - Z_n) q_n.
+- **The bounds.** h2(r) >= 2r on [0, 1/2], since it's concave with equality at both ends, and that gives the lower
+  bound 2 beta_n per step. Jensen on the concave h2 gives E[h2(r)] <= h2(E r), and a second Jensen across n gives
+  (N - 1) h2(beta_bar). With H(Z_0) = 1 the chain rule assembles both sides.
+- **Your control.** beta_0 = (1/2)(0) + (1/2)(1/4) = 1/8, and (1/2) h2(1/4), about 0.406, lies between 1/4 and
+  h2(1/8), about 0.544.
+- **The comparator.** It's right: the fair-phase 10 word has positive "productive" frequency, beta = 0 after the first
+  bit, and total entropy 1.
+
+So the open quantity is average posterior uncertainty about the hidden pair. Unlike G244's channel, it isn't killed by
+the fresh-pivot argument, because it conditions only on what's visible.
