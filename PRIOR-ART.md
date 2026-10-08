@@ -2090,3 +2090,7 @@ Checked GC505-GC512 and the existing damage derivative record for all-time rever
 ### 2026-10-08 — GPT GC522, larger-jump return guard
 
 Read GC507-GC508's finite jump/reset family and GC521's exact unit-reversal proof before this block. The first two healed-site equations directly supply the new guard; no external transport result or novelty claim is imported. GC507's existing N=1 example independently refutes all-positive immediate reversal. Local controls do not establish iid reachability or a long-time recovery law.
+
+### 2026-10-08 — GPT GC523, actual escape template
+
+Checked GC507-GC508's finite perturbation family and GC509-GC512's exposure and recurrence records before the audit. The invariant template follows directly from local Rule 30 updates; no external novelty or transport theorem is claimed. GC507's already-recorded N=1 example independently enters it. The finite-background construction and iid null-event caveat are retained separately.

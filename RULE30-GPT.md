@@ -13031,3 +13031,30 @@ Site 1 has healed, so v'_1=1 also. This proves the common prefix 0,1. For an exa
 GC507's N=1 finite pair u black at {-1,0}, v black at {-1,1} gives a hand counterexample to the all-positive reversal claim: after a jump 2 the common background is {-2,-1,1} and damage is {2}. At the next update damage is {2,3}, so the next displacement is 0. It is an ambient finite-pair example, not a claimed iid single-flip history.
 
 **Outcome and next.** Larger-jump recovery cannot be inferred by extending unit reversal. Exact two-site jumps actively block the immediate left move, while larger jumps preserve only a prefix far behind their new front. GC508's long compensating bout concerns its separate finite family, not all jumps. Quantitative recovery needs the intervening common background and surviving damage. Stop further small-jump enumeration; next a genuine multi-step recovery argument retaining that state, or another main-line lead. No record-frequency or speed conclusion follows.
+
+## GC523 — A genuine single-flip pair escapes with displacement cycle 0,2 (2026-10-08)
+
+**Scope.** Multi-step recovery audit after GC521-GC522, pending independent reading. Prediction: a finite-background edge template restores singleton damage every two updates, with displacements 0,2. Counterfactual every actual single-flip pair has recurrent fresh records should fail. Unexpected check: GC507's N=1 maximal-jump example enters this template. Two fixed finite pairs through 16 updates were preregistered; no iid speed experiment or small-jump census.
+
+**Invariant template and proof.** Translate the current singleton damage to site 0. Let the first background row have u_-2=0, u_-1=1, u_0=a in {0,1}, and every positive site white; its farther negative sites may be arbitrary. The second row differs only at 0. On the first update, the first row has
+
+    (u'_-1,u'_0,u'_1)=(1,1-a,a), and u'_i=0 for i>=2.
+
+Direct local evaluation gives damage {0,1}. On the second update,
+
+    (u''_0,u''_1,u''_2)=(0,1,a), and u''_i=0 for i>=3.
+
+The two damaged sites heal and the rightmost derivative creates the sole damage at 2. Thus the template is restored after translation by 2, including the unchanged parameter a. Farther-left bits cannot affect any of these listed outputs. Induction proves the two-update cycle for all time.
+
+Take the finite first row black at {-1} when a=0, or {-1,0} when a=1, and flip site 0. These are genuine finite backgrounds with one initial flipped bit, not an abstract displacement model. At time t,
+
+    D(t)={t} for even t, and D(t)={t-1,t} for odd t;
+    L_t=t for even t, and L_t=t-1 for odd t.
+
+Hence L_t/t tends to +1. GC509's exposure indices are J_t=-1 at even times and -2 at odd times. Starting from B_0=0, exactly ticks 0 and 1 are fresh; thereafter B_t=-2 and J_t>=B_t. This realizes finite-record escape in an actual deterministic single-flip experiment. It is compatible with GC521: the cycle contains jumps 2 and 0, never a unit right jump. It also matches GC522's prohibition of immediate left return after a jump 2.
+
+**Independent controls.** For each a, evolved both finite rows with literal decimal-rule-table and XOR/OR updates through time 16. All 17 full rows agree between methods. Exact damage sets, the restored edge template at each even time, and the exposure assertion that only the first two ticks are fresh all PASS. Universal time coverage comes from the template induction, not the finite test.
+
+**Unexpected existing-family connection.** GC507's N=1 pair updates to first row {-2,-1,1} with damage {2}. Recenter at 2: its common sites -2,-1 are 0,1, its centre and positive half are white. Thus it enters the a=0 template and escapes forever. This is outside GC508's N>=2 compensating-bout statement and supplies no contradiction to that family calculation.
+
+**Measure guard and outcome.** The invariant family prescribes an infinite all-zero initial positive half, an event of probability zero under the iid fair background. Every finite prescribed corridor has positive probability, but that does not give positive probability to infinite escape. Consequently this refutes universal deterministic recurrence and universal recovery for single flips, while leaving almost-sure iid recurrence and inward-speed existence open. The iid problem must exclude or control such special escape environments probabilistically; finite damage and singleton resets alone cannot do it. Next a conditioned large-jump recovery argument or another main-line lead; do not extend these two fixed controls.
