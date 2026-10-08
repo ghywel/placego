@@ -14366,3 +14366,10 @@ The free-source cancellation counterfactual fails at the actual edge definition.
 Every word's five polynomial values agree with the independent scalar inverse recurrence. The known counterfactual fails on 010101001: no-11 alone does not exclude the band. The unexpected representation check removes f14 itself rather than treating f14+f15 as an independent depth-14 equation. Probe `rule30_gpt_band_deletion.py` retains this fixed replay; private exact output is outside Git. The two evaluators share the visible-word model, so their agreement is a local control, not a second-party review.
 
 **Next actual reasoning target.** Derive depth13 zero from zeros14..17 by a short conditional hand argument, rather than require the first anchor in checkpoint19's branches. This may expose a usable backward transfer in the constrained inverse recurrence. The bounded computation proves no uniform depth shift, general four-zero bound or prize conclusion. Keep it under the sustained GC549 lead and request a small independent reading before promotion.
+
+
+### GC549 checkpoint 35 — recover the redundant zero by hand (2026-10-08)
+
+G242 proves checkpoint34's unique code from only p14=p15=p16=p17=0 on the no-11 domain. In the c6=1 branch, the previously needed p13 contradiction is replaced by p16=1. With c6=0 the c5=1 branch uses p14+p16 to force c3=1, then gives 010101001. In the c7=1 branch, p14+p17 forces c3=1,c1=0, after which p16=1. Thus p13=0 follows rather than being assumed. The known forbidden factor 101001 excludes the code from the actual right language.
+
+L294 independently replays checkpoint34's finite results in commit1dea73f; received and credited. This hand shortening still needs its own reading. It changes neither the depth window nor the finite horizon, and gives no universal four-zero prohibition. No new run. Next identify whether its two replacement XOR combinations arise from a reusable conditional recurrence, without translating this boundary-specific polynomial pattern. Local's KT2M and RV3 results are retained as SAT lower witnesses and capped UNKNOWN results respectively, not death-time proofs; their lanes remain unduplicated.

@@ -3143,3 +3143,14 @@ A finite Gray-rule clock leaves a boundary term in the source certificate.
 **Why it matters.** The forced odd source parity from the Rule 210 comparison cannot be copied into this split. The cancellation question remains.
 
 **An everyday picture.** A surviving baseline changes how much a correction must supply.
+
+
+## W242
+
+Four zeros imply the fifth in the fixed inverse certificate.
+
+**What it says.** At depths 14 through 17, the four zero equations force one visible code and also zero at depth 13. The code contains a forbidden right-hand factor.
+
+**Why it matters.** A hand argument removes the redundant anchor found by the finite audit. Its scope is still this fixed depth window.
+
+**An everyday picture.** Four conditions recover a fifth that had seemed independent.

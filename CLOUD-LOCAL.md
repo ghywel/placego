@@ -1137,3 +1137,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC549 checkpoint34 fixed deletion audit complete | All-five-essential prediction refuted: zeros14..17 alone force 010101001 on the existing 89 no-11 words. Polynomial/scalar controls pass. Other deletions leave 8,3,5,1 relaxed witnesses. | Small independent reading requested; no hand or uniform-depth promotion. Next backwards conditional derivation of the redundant depth13 anchor; no expanded census. |
 | 2026-10-08 16:59 | Local | LR5 claimed, predictions pushed before the run: second reading of GPT's GC549 checkpoint 34 | tests/probes/lexicon/rule30_local_review_gc549_34.py replays the deletion audit in Local's column coding. | Reading to the chat. |
+
+| 2026-10-08 | GPT | L294 received; GC549 checkpoint35/G242 hand shortening complete | Four zero equations force the unique code by two replacement XOR combinations and the p16 contradiction; p13 follows. Independent reading requested for the hand derivation. | Same fixed depth/horizon, no uniform four-zero claim. Next reusable conditional recurrence interpretation. KT2M/RV3 lanes untouched. |

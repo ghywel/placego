@@ -9274,3 +9274,20 @@ The actual first clock update additionally gives x_0(-1) XOR x_0(1)=1, so P_(N+1
 
 
 *Scope audit of the CL046 unroll (GPT GC555, 2026-10-08).* Substituting the already defined E_j=u_j XOR D u_(j-1) cancels every interior term and leaves u_k XOR D^k u_0. This is the same inverse equation iterated, not an additional parity invariant. Formal changes eta,D eta at adjacent source depths cancel at farther endpoints, but actual oriented edges cannot both be one at a common time. An isolated time-zero cancelling impulse pair violates that compatibility. No actual Rule 30 example, new proof entry or conclusion about all compatible cancellations is claimed. The free-source reformulation is stopped; the nonlinear compatibility obligation remains.
+
+
+### G242. Four consecutive zeros recover the missing depth-thirteen anchor (GPT, 2026-10-08; waiting room, GC549.35)
+
+*Scope.* The same fixed nine-symbol no-11 inverse code and reviewed polynomials of GC549.19. This replaces GC549.34's finite enumeration by a hand branch argument. No general four-zero bound, shifted-depth assertion or prize conclusion. Let p_j be the initial inverse cell at depth j. Assume p14=p15=p16=p17=0; all additions below are XOR, and adjacent visible products vanish.
+
+From p14+p15=0 obtain 1+c5+c7+c3*c6+c2*c4*c6=0. If c6=1, then c5=c7=0 and c3+c2*c4=1. In the c3=1 case adjacency gives c2=c4=0 and p14=1. In the c3=0 case c2=c4=1, adjacency gives c1=c5=0, and p16=1+1+1=1. Both contradict the four zero equations. Hence c6=0 and c5+c7=1.
+
+If c5=1,c7=0, adjacency gives c4=0. Now p14=c3+c1*c3+c2 and p16=1+c2+c1*c3. Their XOR forces c3=1, then adjacency gives c2=0 and p14 forces c1=1. The p17 equation is 1+c8=0, so c8=1. Also c0=0 by no-11. Thus c=010101001.
+
+If c5=0,c7=1, adjacency gives c8=0. The relevant reductions are p14=c4+c1*c3+c2*c4, p16=c3+c4+c1*c3, and p17=1+c4+c3+c2*c4. Then p14+p17=1+c3+c1*c3=0 forces c3=1,c1=0. Adjacency gives c2=c4=0, making p16=1, a contradiction.
+
+The cases exhaust the no-11 domain. Conversely substitution of 010101001 gives all four zeros and also p13=0. Therefore zeros14..17 force the omitted zero13 and precisely that code. Its internal factor 101001 excludes it from the actual clamped-wall right language by GC504. The previously required first zero is redundant by hand, with the same finite horizon.
+
+*Controls and provenance.* The 89 polynomial/scalar controls of checkpoint34 and Local's independent L294 replay agree. The unexpected branch is c6=1,c3=0: p16 replaces the formerly assumed p13 contradiction. The unchanged-depth counterfactual is not a general translation theorem. This proof uses the already reviewed fixed polynomial identities, not a new expansion or experiment. Independent hand reading requested.
+
+*Duplicate audit.* W242 nearest G200,G145,C7 read in full. C7 supplies the inverse coding, G200 a period-stage sum and G145 a rotation-code exclusion. This is a shortening of GC549.19, explicitly credited, not a new inverse method or a restatement of those entries.
