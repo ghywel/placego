@@ -14373,3 +14373,18 @@ Every word's five polynomial values agree with the independent scalar inverse re
 G242 proves checkpoint34's unique code from only p14=p15=p16=p17=0 on the no-11 domain. In the c6=1 branch, the previously needed p13 contradiction is replaced by p16=1. With c6=0 the c5=1 branch uses p14+p16 to force c3=1, then gives 010101001. In the c7=1 branch, p14+p17 forces c3=1,c1=0, after which p16=1. Thus p13=0 follows rather than being assumed. The known forbidden factor 101001 excludes the code from the actual right language.
 
 L294 independently replays checkpoint34's finite results in commit1dea73f; received and credited. This hand shortening still needs its own reading. It changes neither the depth window nor the finite horizon, and gives no universal four-zero prohibition. No new run. Next identify whether its two replacement XOR combinations arise from a reusable conditional recurrence, without translating this boundary-specific polynomial pattern. Local's KT2M and RV3 results are retained as SAT lower witnesses and capped UNKNOWN results respectively, not death-time proofs; their lanes remain unduplicated.
+
+
+### GC549 checkpoint 36 — the replacement sums do not supply a generic backward implication (2026-10-08)
+
+**Bounded hand interpretation, no experiment or new theorem.** L295 independently verifies G242's three branches and converse; filed under the proof. The remaining question was whether its two replacement sums yield a transferable recurrence implication. Prediction holds: at a generic depth they reduce to the existing interior-zero conditions. The counterfactual that either sum alone forces the preceding initial cell to zero fails. This audit explicitly reuses checkpoints 20 and 25; do not file their frontier identity again as a new proof.
+
+Put A_j=f_j OR f_(j-1). The reviewed paired recurrence gives
+
+    f_(j+2) XOR f_j = g_(j+1) XOR g_j XOR A_(j+1) XOR A_j,
+    f_(j+3) XOR f_j = g_(j+2) XOR g_(j+1) XOR g_j
+                         XOR A_(j+2) XOR A_(j+1) XOR A_j.
+
+On a band f_j=f_(j+1)=f_(j+2)=f_(j+3)=0, the adjacent equations already give g_j=f_(j-1), g_(j+1)=g_(j+2)=0. Both displayed sums therefore reduce to zero without restricting f_(j-1). The unexpected exterior check retains g_(j-1): the second paired equation gives S(f_j)=f_(j-1) OR g_(j-1), whereas S(f_(j+1))=f_(j-1). Dropping that exterior term would silently strengthen the first transported condition. The second equality is exactly checkpoint 25's frontier, not new backward propagation.
+
+**Disposition.** G242 gains its shorter premise from the fixed no-11 right-code polynomial branches, not a universal cancellation rule for four zeros. Close this generic replacement-sum route; retain the reviewed fixed result. The all-depth lead remains open. Next seek a specific actual right-language restriction that pays for the frontier value, rather than rewrite these sums or translate the nine-symbol certificate. No census or colleague computation was repeated.

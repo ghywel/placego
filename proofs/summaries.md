@@ -3154,3 +3154,5 @@ Four zeros imply the fifth in the fixed inverse certificate.
 **Why it matters.** A hand argument removes the redundant anchor found by the finite audit. Its scope is still this fixed depth window.
 
 **An everyday picture.** Four conditions recover a fifth that had seemed independent.
+
+**W242 review update (2026-10-08).** Local independently verified the hand argument in L295 (fbcce01a). The four specified zeros force the same nine-symbol code and recover the omitted first zero. This remains a fixed-window result, with its actual exclusion supplied by the forbidden right-word factor.
