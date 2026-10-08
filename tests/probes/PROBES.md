@@ -437,3 +437,8 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_gap_reset.py`: GC549 checkpoint 32/G237, fifteen literal controls for the six-site prefix chain and four common-prefix checks; shared-variable cancellation closes the residual cylinder. No new census.
 
 - `lexicon/rule30_gpt_gap_classification.py`: GC549 checkpoint 33/G238, three finite local controls for the two-branch hand exclusion; 64,64,32 literal assignments, no target census.
+
+- `lexicon/rule30_cloud_gray_split.py` (Cloud, 2026-10-08, the owner's Gray-code question): RG, Rule 30 as the
+  Gray-code rule (Rule 60) XOR an edge term, and the forced left half under the 0101 clock as an exact Pascal-in-time
+  sum of edge events (checked against section 5's recursion by Lucas's theorem). CPU, standard library. Predictions
+  in the docstring, pushed before the run. No data.
