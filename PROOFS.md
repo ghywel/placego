@@ -9678,3 +9678,22 @@ SO's finite light-cone SAT witnesses can be extended to full compatible historie
 **L310 disposition and controls.** Conditional on Local's reported, simulation-replayed SO witnesses at ages 255 (black) and 256 (white), each of the six targets at depths 10,12,14,15 fires at every colour-compatible age at which a positive-L frontier could arrive. None can provide an onset-silence interception, even if it hardens later. GPT did not rerun those witnesses. The independent arithmetic control is E6 with onset zero, covering L1..4 as GC585 already proves. The late-hardening counterfactual fails whenever A>=j-2, since j-A-2<=0. Identified unexpected check: SO's E30 white SAT control at age 64 is likewise beyond its latest possible ray arrival, 27; by the same extension and shift argument it excludes age-onset interception by that fixed source. No deeper source or joint-clock obstruction is ruled out. In particular this finite target outcome does not prove that every possible obstruction must be nonlocal.
 
 *GC591 duplicate disposition.* C7,W236,G108 full readings and summaries are retained. C7 supplies the inverse extension and GC590 the threshold; this is their fixed-depth deadline corollary, not a new dynamical source identity. No experiment ran.
+
+**G240 diagonal event streaks are exactly initial zero bands (GPT, 2026-10-08; GC592, awaiting reading).** In an actual Rule 30 trajectory write a_q=u_(j-2+q)(t), increasing q outwards to the left, and E_j(t)=u_(j-2)(t)(1-u_(j-1)(t)). For every integer r>=0,
+
+    E_(j+s)(t+s)=1 for all s=0..r
+    if and only if a_0=1 and a_1=...=a_(2r+1)=0.
+
+This statement is local and does not require an alternating clock. It translates a joint-source streak into a black cell followed by an outward white band; it does not assert those bands are clock-compatible.
+
+**Proof by finite induction.** At r=0 the assertion is the source definition. Suppose the statement holds for r-1, and put v_q=u_(j-2+q)(t+1). The outward local update is
+
+    v_q = a_(q+1) XOR (a_q OR a_(q-1)).
+
+The first event says a_0=1,a_1=0. By induction the remaining r events say v_1=1 and v_2=...=v_(2r)=0. The equation for v_1 forces a_2=0. Then the equations v_2=0 through v_(2r)=0 successively force a_3 through a_(2r+1) to vanish. Conversely those initial zeros give v_1=1 and v_2 through v_(2r) zero, so induction supplies the remaining events. This proves both directions for every finite r. Passing to all r shows that an infinite diagonal event ray is equivalent to a black cell followed by an infinite outward zero tail at its starting row.
+
+**Independent local controls and identified unexpected closure.** For r=1 the four cells must be 1000 in increasing depth: v_1=1-a_2 and v_2=a_3 XOR a_2, so the two events demand a_2=a_3=0. For r=2 the further next-row zeros force a_4=a_5=0, hence 100000. The counterfactual that one event forces its diagonal successor fails on local pattern 1010: the first event is one, but v_1=0. These are ordinary Rule 30 local controls, not full-clock witnesses. Unexpectedly even the infinite joint-ray condition is a zero-tail restatement, not a new obstruction independent of realizable run bounds.
+
+If a clock-compatible white-run upper bound at depth d=j-1 is R_real(d), every such streak has length r+1<=floor((R_real(d)+1)/2). This only repackages that existing white-run bound; it supplies no uniform all-depth bound. Therefore a proposed one-ray streak census is CLOSED as a new mechanism and need not duplicate RR/SO computations. Joint constraints between different rays or the clock are not ruled out by this translation.
+
+*GC592 duplicate disposition.* C7,W236,G108 full readings and summaries are retained; GC585 supplies the finite-edge context and the ordinary update supplies the equivalence. No new scored theorem, experiment, source family or prize conclusion.

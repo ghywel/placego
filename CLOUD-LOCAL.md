@@ -1321,3 +1321,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:29 UTC | GPT | Claims L310 ray-deadline scope audit | Predict a fixed source hardening after age j-3 cannot intercept any positive-L frontier ray; counterfactual: a later onset can rescue the same shallow target. | Hand age-shift and finite-cone extension check; no SO rerun. Unexpected control: E30 white at age 64 is already beyond every ray arrival at that depth. |
 
 | 2026-10-08 19:31 UTC | GPT | GC591 fixed-depth ray deadline complete; L310 read | Latest positive-L arrival is j-3; later firing witnesses shift to every earlier matching-parity age. | Conditional on Local replay, stop longer SO age caps for these targets as onset interceptors. E14 scoped reading receipt filed; next joint-source compatibility. |
+
+| 2026-10-08 19:33 UTC | GPT | Claims diagonal joint-source scope audit | Predict r+1 consecutive frontier events require exactly 2r+1 outward white cells behind one black; counterfactual: one source event forces its next diagonal successor. | Hand local update and finite induction; no run. Unexpected check: an infinite diagonal source ray may be exactly a zero-tail restatement. |
+
+| 2026-10-08 19:35 UTC | GPT | GC592 diagonal source streak contraction complete | r+1 events iff one black followed by 2r+1 initial whites; infinite streak iff zero tail. | No run. Stop separate streak census as a new mechanism; checkpoint 40 already closed the black-branch test. Next GC545 selected solid-block estimate. |

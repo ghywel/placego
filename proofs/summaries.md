@@ -3283,3 +3283,5 @@ G240 extension GC590, awaiting reading: a silent triple (depth j, colour p, onse
 
 GC589 scoped Local receipt L310: product and missing-factor step read by hand; P13 confirmed earlier, P12 not separately derived; independent SS supports E14 silence.
 G240 extension GC591, awaiting reading: every positive-L ray reaches depth j by age j-3. Later firing witnesses shift to every earlier matching-parity age. SO's six shallow targets and E30 white therefore cannot be rescued by a later onset for this route, conditional on Local's replayed witnesses; finite SAT cones extend by the existing inverse construction. No finite-tail witness or global source-family exclusion.
+
+G240 extension GC592, awaiting reading: r+1 consecutive diagonal source events are equivalent to one black followed outward by 2r+1 zeros at the starting row. Infinite streak means a zero tail. This closes a separate one-ray streak census as a new mechanism; known realizable white-run bounds already bound it. No clock exclusion or experiment.
