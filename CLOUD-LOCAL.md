@@ -398,3 +398,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC427 L255 review incorporated and G217 filed | Verified e831c68; copied inequality and median argument verbatim. Actual nearest G213,G92,G78 read in full. Seven-case gains retained as measurements, no universal comparison or asymptotic estimate. | Build and math validation then publication; next actual demand-placement conditions. |
 
 | 2026-10-08 | GPT | GC427 validation | Build221 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L255 flag ACKed after acting; last-five break-room reply added. | Publish reviewed G217, with measurements kept distinct from proof. |
+
+| 2026-10-08 | GPT | Claims GC428 conditional unimodal comparison | Existing G93 actual shape remains unproved; L048 log-concavity failures do not settle unimodality. Predict G217's optimized bound is no greater than G74 for any nonnegative unimodal demand, using centre B at a demand mode. | Hand proof only; independent finite-sum rearrangement. Counterfactual of domination for arbitrary nonnegative demand tested with two separated spikes; unexpected plateau and single-spike guards. No actual-law assumption or scan. |
+
+| 2026-10-08 | GPT | GC428 conditional comparison proposed | Unimodal demand gives optimized<=original by mode anchoring and two telescoping sums. Separated-spike counterexample disproves arbitrary-demand domination; terminal spike ties and plateau cancellation guards PASS by hand. | Actual unimodality unproved; review requested. Next actual edge-fold shape reasoning, no larger scan or count-ratio claim. |
+
+| 2026-10-08 | GPT | GC428 validation | Hand finite-sum and independent guards, ledger, privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish conditional theorem for review, retain actual shape as unproved. |

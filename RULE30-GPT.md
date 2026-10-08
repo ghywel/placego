@@ -11264,3 +11264,31 @@ Instrument tests/probes/prizes/collatz_gpt_weighted_center.py; rational output o
 
 
 GC426 review resolved (GC427,2026-10-08): Local L255 in e831c68 verifies weighted centering, finite breakpoint minimization, midpoint comparison and the synthetic guard. Filed the inequality and median argument verbatim as G217; seven-case improvements remain measurements, with no universal comparison to G74 established.
+
+
+### GC428 — Unimodal demand makes weighted centering no worse than the original absolute bound (2026-10-08)
+
+**Proposed conditional hand theorem; review pending; no experiment.** Keep G213's finitely supported signed I_j, its cumulative B_j, and a nonnegative finitely supported demand d_j. Suppose d is unimodal: for some mode k it is nondecreasing up to k and nonincreasing thereafter. Plateaux are allowed, and the zero demand is trivial. Then G217's optimized bound is no greater than G74's original absolute sum:
+
+    (1/2)*min_c sum_a abs(B_a-c)*abs(d_a-d_(a+1))
+        <= (1/2)*sum_j abs(I_j)*d_j.
+
+This is conditional on demand shape, not an actual Collatz shape theorem. Existing-record search found G93's bounded shape observations and L048's later log-concavity failures, but no general unimodality proof or this weighted-centering comparison. The derivation below is elementary finite-sum rearrangement applied to G213-G217, with no novelty claim.
+
+**Proof.** Evaluate the left objective at c=B_k. For a<k, abs(B_a-B_k)<=sum_(j=a+1)^k abs(I_j); the gradient weight is d_(a+1)-d_a. Interchanging the finite sums yields
+
+    sum_(a<k) abs(B_a-B_k)*(d_(a+1)-d_a)
+        <= sum_(j<=k) abs(I_j)*d_j,
+
+since sum_(a<j)(d_(a+1)-d_a)=d_j after zero extension on the left. For a>=k, abs(B_a-B_k)<=sum_(j=k+1)^a abs(I_j), and the gradient weight is d_a-d_(a+1). Reordering gives
+
+    sum_(a>=k) abs(B_a-B_k)*(d_a-d_(a+1))
+        <= sum_(j>k) abs(I_j)*d_j,
+
+using the zero right tail. Add, divide by2 and then minimize. The point a=k contributes0, so the endpoint convention does not double-count its imbalance. This proves the comparison without a log-concavity assumption or any sign restriction on I.
+
+**Independent analytic guards.** A single demand spike at k gives only two nonzero gradients, at k-1 and k. Its optimized objective is exactly abs(B_k-B_(k-1))/2=abs(I_k)/2, tying the original bound. Thus the terminal backward-demand layer, which is a threshold spike in G74, gains no smoothing from this refinement alone. Unexpected plateau guard I=(1,-1), d=(1,1) has equal endpoint prefixes and optimized bound0, whereas the original bound is1; signed prefix placement can matter even when either index is a mode. Direct original signed sum is0, independently confirming the optimized value.
+
+**Retained counterfactual: arbitrary nonnegative demand does not suffice.** Let I=(1,1,1) and d=(1,0,1), with zero tails. Gradient-weighted prefix points are0,1,2,3, each of weight1. Their minimum absolute-deviation sum is4, so G217 gives2. The original bound is1. Demand is not unimodal. This refutes universal domination by an explicit hand calculation, without contradicting any actual backward law.
+
+**Limit and next step.** The seven measured cases of GC426 do not prove the required actual-law shape. Log-concavity implies unimodality, but its recorded failure does not refute unimodality; neither implication can be used backwards. A proof of actual unimodality would order these two bounds, not prove a uniform count ratio or control the sum over time. Next audit the actual edge-fold recurrence for unimodality, retaining the existing synthetic and actual shape failures and avoiding Local's large demand sweep. Critical-boundary count loss remains PART.
