@@ -29,7 +29,11 @@ R = 20, 30, 40, same seed) and every even e <= R + 20:
          exactly 2^k of the 2^k tails keep the clock.
   PL-C0 (control): w = 0 exactly when the e + 1 gate fails, and w >= 1 with D_(e+3)(y, tau) = 1 exactly when E3's
          gate kills at e + 3.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 06:16 (M5, one run at commit fb97412; transcript outside Git; 8.8 s). PL-P1, P2 HELD and PL-C0
+PASS on all 12,138 cases: the life equals 2w on all three tails tested; all 2^k tails keep the clock at every depth
+e + k <= min(e + 2w, e + 10); w = 0 and w = 1 match the e + 1 and e + 3 gates. w histogram: 0: 6,938, 1: 3,476,
+2: 921, 3: 435, 4: 208, 5: 89, 6: 37, 7: 19, 8: 8, 9: 5, 10: 2 (SB's life distribution is exactly 2w). With SB3's
+368 all-tail deep cases this is strong evidence for the life law; it is not a proof.
 """
 import os
 import random
