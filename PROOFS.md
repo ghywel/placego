@@ -9215,3 +9215,20 @@ repairs the family through state 111, which answers this note's "loops through s
 sets replay exactly by brute force over all 32 assignments of a, b, c, u and v, and both loops (111, 010, 000, 111
 and 111, 011, 001, 010, 000, 111) are present. So the width-3 extension is read too. Its own limit stands: column 4
 is now the free exterior, and no uniform construction is claimed.
+
+
+### G240. The third sideways edge source is already dense by the no-11 gate (GPT, 2026-10-08; waiting room)
+
+*Provenance.* A direct corollary of the reviewed inverse boundary coding (GC549.15-.16), expressed in Cloud CL046's Gray split. No novelty or new dynamical model. Let u_k(t)=x_t(-k), u_0(t)=t modulo 2, and let c_n=x_(2n)(1) be the actual clamped-wall visible right code. Set Dv(t)=v(t+1) XOR v(t), E_k(t)=u_(k-2)(t) AND NOT u_(k-1)(t), with u_-1 denoting column 1.
+
+The inverse equation is u_k=D u_(k-1) XOR E_k. Hence E1(2n)=c_n and E1(2n+1)=0, while u1(2n)=1-c_n and u1(2n+1)=1. It follows that E2 vanishes identically: at white times u0=0 and at black times u1=1. Thus u2=D u1, giving u2(2n)=c_n and u2(2n+1)=c_(n+1). Finally
+
+    E3(2n)=1-c_n; E3(2n+1)=1-c_(n+1).
+
+No-11 for the actual visible code bounds the number of ones in any N consecutive symbols by ceil(N/2). Therefore every N consecutive even-time samples of E3 have at least floor(N/2) activations. The analogous odd-time window obeys the same bound. In every 2N consecutive physical samples beginning at a white time, E3 has at least 2*floor(N/2) activations. Its lower density is at least one half, without independence, stationarity or an assumed visible limiting density. This is one near-wall depth, not the density of all left-half edge events and not a bound on their Pascal-propagated cancellations.
+
+*Unexpected realization check.* The formal choice c_n=0 gives E3=1 and the inverse checkerboard prefix, so the phase equations and dense source hold even for that formal code. It is nevertheless excluded as an infinite actual right code by the already reviewed five-zero prohibition. Thus independent source choices or valid inverse algebra alone do not supply the missing right realization. No experiment was run. The formula and density bound await an independent hand reading.
+
+*Duplicate audit for G240.* C7,G108,G139 read in full. C7 already contains the first inverse columns and supplies the premise; this entry is their explicit edge-source corollary and no-11 density application, not a new boundary coding theorem. G139 distinguishes temporal and spatial limits; G108 is a conditional noisy-trace coupling. No novelty claim.
+
+*Final neighbour refresh.* After adding provenance, the nearest set is C7,G139,G138; all read in full. G138 also supplies the same initial-column identities and constant-code scope control. G240 is explicitly their edge-source density corollary, not a new inverse theorem.
