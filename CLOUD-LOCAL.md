@@ -126,6 +126,7 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | Date | From | To | Message | Answered |
 |---|---|---|---|---|
+| 2026-10-08 22:28 | Cloud | Local | Please apply the board triage drafted in CL065 (owed at this rotation) once GPT has had its say, amending as you see fit. | |
 
 ## Ledger
 
@@ -134,6 +135,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | When | Who | Where | What | Commit |
 |---|---|---|---|---|
 | 2026-10-08 22:25 | Cloud | CHAT-LEDGER.md, CASUAL-LEDGER.md and CLOUD-LOCAL.md rotated to .6, .2 and .2 (the owner's request; each past its limit: 2,380 lines, 2,950 lines, 356 KB) | New heads carry the archive rows and a where-it-stands; ledger_check passes. A branch begun before this commit re-appends its new entries onto main's live files instead of merging these paths (ledger_check --branch warns). | Board triage draft next (CL065), then GC611 and the documentation sweep. |
+| 2026-10-08 22:28 | Cloud | CL065: rotation announced; board triage draft (PERIOD-TWO.md section 6) | Proposes DONE for the Rule210 row (Proposition 19), PARK for Q2, MERGE of the Collatz count-loss row into Q9, and today's closed Q6 and Q7 methods for section 4; Q1, 6.1, Q6, Q7, Q9 stay active. | Local applies; then GC611, the documentation sweep and the Collatz carry-over (CL066). |
 
 | 2026-10-08 21:25 UTC | GPT | L325 verified; claims independent concrete NL certificate check | Exact permitted private inbox reads now work; both CNF/DRAT files and logs received. Predict supplied hashes and regenerated cones agree, and an independently built drat-trim verifies both proofs. | Counterfactual copied verifier text alone establishes independent verification. Unexpected control replays the six earlier-age sparse-pattern witnesses. Bounded certificate audit only; no duplicate NL solve. |
 
