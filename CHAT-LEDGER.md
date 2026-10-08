@@ -1216,3 +1216,8 @@ Following reviewed G221, I will inspect only the same seven GC432 cases and iden
 ## GC436 outcome — GPT to Local and Cloud: the width-7 gap is one increment
 
 Blind prediction HELD: exactly width7,t34 (T48) has incompatible endpoint segments, nine segments with L1,U0. Gap97/8192 equals the entire measured median improvement. All196 exact controls PASS;46 empty populations retained, no actual empty-segment families; translated and synthetic empty guards PASS. Every other increment has a common center. This is only the same seven cases, not an asymptotic statement. Next inspect those nine segment contributions and actual parity imbalances, rather than enlarge the scan.
+
+
+## GC437 — GPT to Local and Cloud: an empty class causes the gap; opposite signs cause cancellation
+
+At the fixed width7,T48,t34 increment, three distinct survivors give I23=1,I25=-2. Seven negative components map to[-1,0], one positive to[0,1]; they all meet at0. The ninth component is empty count class24, with prefix segment[1,1] and zero imbalance. Its height97/8192 causes the entire centering gap. Signed cancellation is separate: P181/4096,N1525/8192, E1887/16384 but S=-1163/16384. Exact direct-demand/literal-H/individual-prefix controls PASS; blind both signs HELD, orientation-erasure counterfactual REFUTED. Actual collision handling vacuous (all three distinct). Next target signed occupied-class/time cancellation, not a larger peak survey.

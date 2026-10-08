@@ -11409,3 +11409,20 @@ The useful next step is to inspect the nine segments and actual parity-class imb
 Inspect only GC436's width7,T48,t34 increment. Let P be the sum of positive weighted component imbalances and N the absolute sum of negative ones, before division by2. G220 gives S=(P-N)/2 and E=(P+N)/2, hence E-abs(S)=min(P,N) by the two cases P>=N and P<N. This is elementary signed-mass bookkeeping, not a general novelty claim or an actual cancellation estimate. Record search found no oriented audit of this isolated increment.
 
 A1 MUST HOLD: component signs, direct demand and literal H agree, and the exact cancellation formula holds. A2 BLIND: both P and N are positive here, so E discards strict cancellation. A miss leaves the formula intact. Counterfactual: erasing interval orientation preserves the signed sum; it must fail if A2 holds. Unexpected check: compute each class prefix and component imbalance independently from the individual survivor list, counting multiplicities even if trajectories collide. One fixed case, no larger scan. Probe tests/probes/prizes/collatz_gpt_single_gap_audit.py, NOT RUN; publish before execution. Next determine which component signs, rather than only endpoint distances, matter to the remaining allocation problem.
+
+
+### GC437 — Oriented single-increment outcome and the zero-mass peak (2026-10-08)
+
+Preregistered at 1be2f86 and pushed before execution. A1 PASS: exact components, direct demand and literal H agree; individual-survivor prefixes and interval sums agree with the class recurrence. Three parents, all distinct; actual collision handling is vacuous in this case and is not reported as a nonvacuous collision test. Their class imbalances are I_23=1,I_25=-2, others0. A2 blind prediction HELD: P=181/4096,N=1525/8192, so S=-1163/16384,E=1887/16384 and E-abs(S)=181/4096 exactly. Erasing orientations changes S to E: counterfactual REFUTED. Old absolute bound4937/16384, optimized centering2081/16384. One fixed case, standard Python on GPT's owner-described Intel host, under one second; output outside Git.
+
+**Unexpected structure revealed by the endpoint audit.** Seven negative components have endpoint-value segment[-1,0], with total height weight N. One positive component[23,24] has segment[0,1], weight P. The remaining component is the singleton count class[24,24], with endpoint values1,1, imbalance0 and height weight z=97/8192. Thus the nonzero-imbalance components alone share c=0; their orientations differ but do not cause the centering gap. The zero-imbalance peak alone forces the positive gap.
+
+This has a direct hand check using G221: the gap objective is
+
+    N*dist(c,[-1,0])+P*dist(c,[0,1])+z*abs(c-1).
+
+For c in[0,1] it is N*c+z*(1-c), minimized at0 because N>z. Below0 it decreases toward0; above1 it increases away from1. Hence minimum z=97/8192, matching GC436. Dropping the zero-imbalance singleton would give minimum0, so it cannot be removed when reconstructing G217's centering objective, even though its contribution to G220 and S is0. No actual survivor occupies count class24.
+
+The exact demands on occupied classes reconstruct independently from the component weights: d_23=N+P=1887/8192,d_25=N=1525/8192; the higher singleton peak has d_24=d_23+z=31/128. Direct pairing gives S=(d_23-2*d_25)/2 and the original bound(d_23+2*d_25)/2, matching the recorded fractions. This is a hand audit of one measured actual case, not a uniform theorem on demand peaks or cancellation. It shows why opposite component signs and a strict centering gap are different mechanisms.
+
+Next prioritize actual signed cancellation across occupied classes and time, rather than optimizing away empty-class peaks: that peak explains the small improvement but does not supply the missing count-ratio estimate. No wider computation or catalogue filing is needed for this measured example.

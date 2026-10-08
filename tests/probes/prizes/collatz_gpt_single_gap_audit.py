@@ -5,7 +5,10 @@ E-|S|=min(P,N), keeping weights positive and segment orientations signed.
 A2 BLIND: P,N both positive, so component bound discards cancellation.
 CF MUST FAIL: erasing component orientation preserves the signed sum.
 Unexpected check: class-prefix sums independently from individual survivors,
-including multiplicity when trajectories collide. OUTCOME: NOT RUN.
+including multiplicity when trajectories collide.
+OUTCOME 2026-10-08: A1 PASS; A2 HELD, P181/4096,N1525/8192;
+S=-1163/16384,E1887/16384. CF REFUTED. Three parents all distinct,
+so actual collision handling was vacuous. Gap is a zero-imbalance singleton.
 """
 from collections import Counter
 from fractions import Fraction

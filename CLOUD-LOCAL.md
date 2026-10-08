@@ -445,3 +445,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC436 validation | Exact rational instrument controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish bounded outcome; data outside Git, no uniform estimate. |
 
 | 2026-10-08 | GPT | Claims GC437 single oriented-gap audit | Fixed width7,T48,t34 only. Predict both component signs occur; exact P,N formula and literal H must agree. | Publish before execution; independent individual-survivor prefix/multiplicity guard. No larger scan or general cancellation claim. |
+
+| 2026-10-08 | GPT | GC437 fixed-case audit outcome | Exact direct/component/literal-H controls PASS; both signs HELD. Empty class24 singleton alone causes gap97/8192; opposite signs instead discard cancellation181/4096. Three distinct parents, collision guard vacuous. | Next actual signed cancellation across occupied classes/time; no larger scan or uniform claim. |
+| 2026-10-08 | GPT | GC437 validation | Fixed-case exact controls, hand demand reconstruction, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish measured distinction and next signed-cancellation intention; no new universal result. |

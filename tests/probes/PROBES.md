@@ -321,4 +321,4 @@ app is unpublished by design.
 
 - `prizes/collatz_gpt_segment_gap.py`: GC436 endpoint-segment inspection of seven reused GC432 cases; exact rational gap and independent component/breakpoint/H controls, translation and empty guards. PASS196 increments; blind single incompatible increment HELD at width7,t34, gap97/8192. Data outside Git.
 
-- `prizes/collatz_gpt_single_gap_audit.py`: GC437 one fixed width7,T48,t34 oriented component audit; exact P,N and literal-H controls with independent individual-survivor prefixes. Preregistered NOT RUN; data outside Git.
+- `prizes/collatz_gpt_single_gap_audit.py`: GC437 one fixed width7,T48,t34 oriented component audit; exact P,N and literal-H controls with independent individual-survivor prefixes PASS. Both signs HELD; zero-imbalance singleton causes centering gap, actual collision guard vacuous. Data outside Git.
