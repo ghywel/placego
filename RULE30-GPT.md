@@ -12150,3 +12150,29 @@ If the full binary kernel were finite and its transitions were explicitly known,
 **Counterfactual and scope.** Define b(n)=a(n) for n<=527 and b(n)=0 thereafter. It agrees with every sampled decimation value but has finite support and is automatic: a finite trie recognizes the finitely many canonical binary words for its black indices, with all other words rejected. The same construction works on their reversed words in the LSB model. Hence the sample cannot prove an infinite kernel. Even an independently proved infinite kernel would exclude finite automata, not every sublinear algorithm. State count31 is a restricted description-size lower bound; it is not a linear-time lower bound. No claim that these states persist in a finite-state approximation for all future indices, or that any approximate predictor is exact.
 
 **Next.** Keep this finite certificate rather than chase larger sampled state counts. Useful continuation would require an analytic family of distinguishable decimations or an explicit closed representation and its cost; otherwise switch back to a signed cancellation mechanism for Problem2. No Local computation requested and no prize claim.
+
+## GC488 — Conditional domino mechanism: indexing and balance from a proved decimation representation (2026-10-08)
+
+**Bears on.** The owner's shared-lever question for Problems2/3, after GC487's restricted size certificate. This is an elementary conditional theorem, second reading pending; it does not assert a finite Rule30 kernel, a contraction bound or a prize solution. Prior art is the standard finite-kernel model read in Shallit's slides and recorded in GC487; finite matrix representations and geometric-series estimates are standard, with no novelty claim. No experiment, larger kernel census or Local job runs in this block.
+
+**Predictions and hand checks chosen first.** A finite decimation model should give an exact all-prefix recurrence, not only dyadic balance. A contraction on the span of reachable output vectors should imply sublinear signed prefix sums. Counterfactual: finite kernel alone forces balance, must fail on the constant sequence. Unexpected: the contraction criterion need not be necessary; test the balanced alternating sequence, whose kernel includes two biased constant states. Thue-Morse supplies the positive independent control, with an explicitly known two-state representation.
+
+**Setting.** Let g_1,...,g_q be a finite family of spin sequences, each taking values in{-1,1}, containing the selected centre spin trace and closed under even/odd decimation. Define T_b g(n)=g(2n+b). The q-by-q integer matrix A counts each state's two children: row i has one contribution for T_0 g_i and one for T_1 g_i, with multiplicity2 if they coincide. Put b(n)=(g_i(n))_i and S(N)=(sum(n=0..N-1)g_i(n))_i. Let W be the real linear span of the reachable vectors b(n), n>=0. Then
+
+    A b(n)=b(2n)+b(2n+1),
+    S(2n)=A S(n),
+    S(2n+1)=A S(n)+b(2n).
+
+These follow by partitioning an ordinary prefix into even and odd indices. W is A-invariant and contains every S(N). The invariant subspace matters: A always has row sums2, so a bound on its full operator cannot contract below2.
+
+**Conditional all-prefix balance theorem.** Suppose there are fixed C>0 and1<rho<2 such that, on W with the inherited sup norm, ||A^k w||<=C*rho^k*||w|| for every k>=0 and w in W. Then every state satisfies
+
+    |sum(n=0..N-1) g_i(n)| <= C*rho/(rho-1)*N^(log_2 rho),  N>=1.
+
+Proof: apply the even/odd prefix recurrence repeatedly to floor(N/2). Starting from S(0)=0 leaves at most one vector b(2n) of sup norm1 at each binary level. All are in W. If L=floor(log_2 N), bound the sum by C*sum(k=0..L)rho^k <= C*rho^(L+1)/(rho-1) <= C*rho/(rho-1)*N^(log_2 rho). The exponent is below1. Thus the selected trace has limiting black frequency one-half, for every prefix length rather than just powers of two. Finite dimension also implies such a power bound for any rho strictly between the spectral radius of A restricted to W and2, when that spectral radius is below2; the explicit power bound above is the actual hypothesis used.
+
+**Indexing consequence and direction.** The same proved finite closed family, with explicit transitions and outputs g_i(0), gives GC487's O(log N) digit-reading algorithm. Thus if this representation and contraction were proved for Rule30, it would establish positive Problem2 while giving a negative answer to the proposed linear-work claim of Problem3. This is a concrete example of a shared proof mechanism whose conclusions move in different directions. Finite kernel without contraction says nothing by itself about the colour frequency.
+
+**Hand controls and failure.** For Thue-Morse spin g(n)=(-1)^popcount(n), the family(g,-g) has A=[[1,1],[1,1]], and W is spanned by(1,-1), so A vanishes on W. The recurrence gives |S_i(N)|<=1 directly, and its digit-parity indexer is logarithmic. For constant spin1, q1,A=(2),S(N)=N: the finite-kernel-implies-balance counterfactual fails. For alternating spin(-1)^n, use family(g,1,-1). Its matrix rows are(0,1,1),(0,2,0),(0,0,2). Its reachable span contains vector(0,1,-1) with eigenvalue2, so the stated contraction fails, although the root's prefix sum has absolute value<=1. This unexpected guard retains the criterion as sufficient, not necessary; it also prevents assuming all kernel states must be balanced because the selected trace is.
+
+**Next obligation.** Rule30's31 finite signatures are not a proved finite closed family, and no contraction on a reachable output subspace is known. Do not apply this theorem to a graph obtained by merging finite signatures without infinite transition identities. A next useful route could allow an increasing family with a separately bounded representation cost and an actual signed norm estimate, but both bounds are open; do not substitute an empirical spectral fit.

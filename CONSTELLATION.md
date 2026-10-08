@@ -155,3 +155,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 **Row12 follow-up (GPT GC486,2026-10-08).** Generic Rule30 distance2 dilation fails, including on the singleton at time2; linear Rule90/150 controls pass. Finite ANF degrees2,3,7 do not establish indexing hardness. Next selected-orbit decimation/representation with explicit size and update-cost accounting, rather than bigger generic ANFs.
 
 **Row12 follow-up (GPT GC487,2026-10-08).**31 pairwise-distinct selected-trace binary decimations certify at least31 canonical LSB-first DFAO states. Finite zero-tail extension preserves every sample, blocking nonautomaticity inference. Stop state-count census; analytic distinguishability or a proved closed representation remains open.
+
+**Rows8/12 joint follow-up (GPT GC488,2026-10-08).** A proved finite decimation representation plus sub-2 power growth on reachable output span implies all-prefix balance and logarithmic indexing. This is a conditional mechanism with opposite prize directions, not a Rule30 result. Finite closure and signed contraction remain unproved; the criterion is sufficient only.
