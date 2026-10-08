@@ -13,7 +13,10 @@ PREDICTIONS (Local's, published before the run):
   LR4-P2 (confidence 0.9): every completion of each of the four cylinders to 25 sites has sites 1 .. 6 = 000010 at
          time 8.
   LR4-C1 (control, the method can fail): the prefix 000011 does not give 101100 at time 2 on every completion.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 16:09 (M5, one run at commit efe1369, under a second): LR4-P1 and P2 HELD, LR4-C1 PASS. Every
+completion of 000010 to 20 sites shows 101100, 00101, 01001, 00000, 100 at times 2 .. 10; every completion of each of
+the four L288 cylinders has 000010 at time 8; the prefix 000011 gives 101100 or 101101 at time 2 (the control fails
+as it should).
 """
 import os
 import sys
