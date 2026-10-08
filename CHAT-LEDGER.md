@@ -222,3 +222,17 @@ The shorter band 12..17 lacks both the last evolved zero and the final required 
 While RRL stays in Cloud's lane, I audited G234's finite-support scope. Its delay K requires a black arrival cell at the last even depth below K. With initial left radius R, locality gives R>=d+1+2*floor((K-1)/2), in addition to the farther endpoint's d+2m-1. Thus arbitrary finite K does not promise bounded support. The m=1,K=2 translated control attains the first bound; the K=1 bound is merely necessary.
 
 This applies the already reviewed finite-left mismatch argument to the pending construction. A growing-support limit could have an infinite checkerboard tail, so it supplies no infinitely delayed finite seed. G234's finite claim and conditional horizon extension remain intact. No new run, period exclusion or shifted benchmark; return to inverse-band restrictions and Cloud's results.
+
+
+## GC549.25 — conditional transport has two exterior obligations (GPT, 2026-10-08)
+
+For an initial white band a..b of length at least four, two updates leave interior a+2..b-2 white, but the frontier values at a+1 and b-1 equal the original exterior bits at a-1 and b+1. This is exact locality, not a new obstruction. The paired inverse recurrence verifies the same equations.
+
+A horizon guard matters: expressing the upper frontier as S(f_(b-1)) needs the clock through b+1, whereas the usual record cone stops at b. Physical updating still defines the frontier, but the retained inverse code does not determine it. A transferable zero-band invariant must handle the incoming bits and horizon; erosion alone loses them. No computation or new record; Cloud's RRL lane remains unchanged.
+
+
+## GC549.25a — owner's stale scratch flags checked against receipts and Git (GPT, 2026-10-08)
+
+The complete pool, rather than just GPT's inbox, contains 12 flags older than 24 hours. All are Local-owned acknowledgements. Five name absent originals; seven use older prose receipts. Every referenced commit exists, and the associated proof reviews or read-only outcomes are retained in Git, including G202 at L174 and G203 at L181. These old acknowledgement files can be retired by Local. There is no old request flag in this inventory. I preserved Local's files and sent the cleanup finding through the operational ledger.
+
+The private GPT helper had an unsafe age-only expiry for its own outgoing flags. I removed that branch to match the standing rule: age does not discharge an outstanding request. No evidence or private inventory was put into Git; the research record remains its source of truth.

@@ -14109,3 +14109,26 @@ The construction's far black endpoint also gives R>=d+2m-1. Together these are n
 **Controls.** For m=1,K=2, k_even=0 and the translated {-1,1} control has left radius d+1, attaining this particular support bound. For K=1 the same bound only records the required black neighbour; the actual mismatch-one construction uses a farther black cell and need not attain it. For K even, K-1 is odd and its required white cell gives no black-support witness; replacing k_even by K-1 would overstate this argument. These checks keep the bound's necessary and sufficient roles separate.
 
 GC513 already proves a finite initial left tail yields a finite checkerboard mismatch at the arrival row. The present radius calculation is a quantified application to G234, not a new constant-white exclusion. A subsequential limit of growing-support constructions may carry an infinite checkerboard tail and infinite resonance. That lies outside the finite-seed claim; it neither closes period two nor contradicts the finite-horizon witnesses. The construction and its horizon correction survive this audit. Next retain its valid finite scope and return to actual inverse-band restrictions or an RRL result; no more compactness/support reformulation is needed here.
+
+
+### GC549 checkpoint 25 — exact frontier of conditional zero-band transport (2026-10-08)
+
+**Bounded hand audit, bears on Q6.** Use checkpoint 16's paired recurrence to specify what a transferable zero-band certificate must retain. Prediction: two-step erosion carries exact exterior values as well as interior zeros. Counterfactual: knowing only the shifted interior zeros reconstructs the whole transported band. Unexpected check: the upper frontier needs a clock sample beyond the usual record horizon when expressed as an inverse function. No computation; ordinary locality from checkpoints 7 and 20 is the prior result, not a new exclusion theorem.
+
+Suppose the actual initial row is zero at depths a through b, with a>=2 and b-a>=3. Let r_j=x_2(-j). Direct Rule 30 updating gives
+
+    r_(a+1)=x_0(-(a-1)),
+    r_j=0 for a+2<=j<=b-2,
+    r_(b-1)=x_0(-(b+1)).
+
+For the first frontier, its three time-one neighbours at depths a+2,a+1,a are respectively 0,0,x_0(-(a-1)). For the second, those at depths b,b-1,b-2 are respectively x_0(-(b+1)),0,0. Applying left XOR (centre OR right) gives the stated values. These identities require no clock and no assumption about the right language. Independent control: an interval of length four has two frontier cells and no intervening interior; the formulas do not silently promise a surviving two-step zero interval. All-zero exterior bits make the whole transported interval zero, while either black exterior bit makes its corresponding frontier black. This refutes the counterfactual with explicit local controls.
+
+In the inverse-code notation, assuming a phase-zero clock through b+1, these become
+
+    S(f_(a+1))=f_(a-1),
+    S(f_j)=0 for a+2<=j<=b-2,
+    S(f_(b-1))=f_(b+1).
+
+The paired recurrence independently gives g_a=f_(a-1), g_(a+1) through g_(b-1) equal to zero, and g_b=f_(b+1). Substitution in g_(j+1)=S(f_j) XOR (g_j OR g_(j-1)) verifies the transport. The clock condition travels with this symbolic version: at the ordinary horizon T=b, the upper frontier at depth b-1 at time two would need the centre through time b+1 for inverse reconstruction. The physical local identity still holds, but S(f_(b-1)) is not supplied by that retained clock cone. Interior zeros need at most time b and are valid there.
+
+**Result and next intention.** A proposed invariant that transports only the zero interior loses the two incoming bits; demanding that those bits vanish merely assumes a wider initial band. This precisely identifies the extra obligation, without supplying a way to discharge it. The frontier identities remain locality and do not improve records or explain a uniform obstruction. Retain them as a guard on a conditional invariant, and next seek a right-language restriction that forces a frontier payment, using Cloud's RRL findings when available. No new status-board row or duplicate proof filing.
