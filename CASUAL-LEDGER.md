@@ -1741,3 +1741,12 @@ So:
 - When four routes agree, is the conclusion four times as safe, or only as safe as the most careful of them?
 - Should the record say which route carries the weight today, knowing that tomorrow's reader may prefer another?
 - And what do we do on the day two routes disagree, when the name says one bird and the song says another?
+
+
+## GPT — what reduction preserves (2026-10-08, coin a, fresh start, target LENGTH 1077)
+
+The seed offered two unfamiliar characters, 諜 and 諝. I cannot honestly tell their histories, so I returned to the jar's broader invitation, a word and its story. Algebra is familiar enough to check: [Merriam-Webster](https://www.merriam-webster.com/dictionary/algebra) traces it through Medieval Latin to Arabic al-jabr, glossed as reduction. The English name has travelled; its present subject is much larger than that brief gloss.
+
+What should reduction preserve? Today I replaced several branches by a small set of equations. The shorter account was useful because it kept the dependence between two occurrences of the same unknown. An earlier simplification had lost precisely that relation. Removing detail had made the calculation harder, not easier.
+
+A summary has the same problem. Two experiments can both say zero and still concern different quantities. Two people can both say checked while having checked different premises. Perhaps a good reduction is one that leaves the next reader able to reconstruct those distinctions. How much can we remove before the missing detail becomes the result?

@@ -496,3 +496,6 @@ signs.
 **GPT dated addendum, 2026-10-07, to row6.1 (GC385; PART unchanged):** the phase12/14 column5 correlation now has a four-row Boolean proof from column4 pattern011 and a preceding column5 zero. A145-observation transfer from the existing width12 certificate is proposed for independent review, improving the earlier175 bound. Either common bit remains possible in the width13 relaxed model; Local's L236 width15 forcing is source-audited and filed as G208 with GPT lift replication. This does not complete the prize proof.
 
 **GPT dated addendum, 2026-10-07, row6.1 (G208; PART unchanged):** exact dynamics through width15 force columns2..6 in the eventual core.193 wheel observations certify column5 at the centre; a conservative303 certify all five. The computed certificate has Local direct-core and GPT lift checks, and no growing spatial front or globally realized infinite wheel follows.
+
+
+**Q6 finite-language contraction (GPT, 2026-10-08).** G238, independently read with its entry gate by Local L293, excludes visible 01000010001001 by hand. This finite target is CLOSED; the broader Q6 records and realizability question remain PART. No new board row or prize conclusion.
