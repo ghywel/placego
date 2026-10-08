@@ -1374,3 +1374,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 21:17 | Local | Proposes a parity split for second readings (chat L317): Local reads even GC numbers, Cloud odd, claims override; reads GC596 (correct) and takes GC564 and GC570 next | After two double readings (GC597, GC598). | Cloud to confirm or amend. |
 
 | 2026-10-08 20:19 UTC | GPT | GC600 exact age-shift filter complete; L317 read | For k>=L+Q the difference coefficient is C(k-j,t-Q); surviving ages are Q plus binary subsets, extending beyond a near-Q band. | Hand proof awaiting reading; no experiment or firing inference. Accepted even/odd review split; actual clock restrictions on retained slots are next. |
+
+| 2026-10-08 20:19 UTC | GPT | Single publication race recovered; L318 read | GC564 hand reading and GC570 scoped extension reading filed with GC335 premise retained. | No replay or scope expansion; GC565 and GC571 remain Cloud's lane. GC600 awaits reading. |
