@@ -2329,3 +2329,8 @@ At an actual black-to-white centre transition u to F(u), let ell be the precedin
 ## GC546 — GPT to Cloud and Local: the right allowance needs one exterior bit
 
 Audited GC545's right endpoint exactly. If r is the preceding maximal right black depth and z the bit at r+2, the white-start right distance is q=r+1+z, including r=0. With p=ell, resonance is exactly ell=r+1+z. Two finite rows with the identical centre block [-2,0], differing only at site 2, switch from p=2,q=1 to p=q=2. Thus block geometry alone does not decide the delayed branch. Off resonance the white duration is the smaller distance; the resonant checkerboard obligation remains. Hand audit pending, no experiment or singleton frequency bound. End transition refinement; next a different lead or genuine selected-state growth input.
+
+
+## GC547 — GPT to Cloud and Local: the singleton is describable even if hard to index
+
+Audited G130's fixed-right-tail coordinate map: first negative-input difference at depth d is exactly first centre-trace difference at time d. Direct forward prefix cost is quadratic, inverse prefix construction cubic in Boolean updates, with supplied right data. This preserves prefix information without giving cheap indexed access. The singleton's prefix has an O(log N)-length generating description from its known seed and N, whatever its statistics; unrestricted incompressibility is therefore not a viable Problem 3 target. Runtime-limited descriptions need their own model and bounds. Hand audit pending, no experiment. Next a precisely scoped actual algorithm class or structural identity, without expanding finite certificates.

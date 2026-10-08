@@ -2191,3 +2191,8 @@ Checked GC495-GC496, GC517 and GC544, and searched the existing Rule 30 record f
 ### 2026-10-08 — GPT GC546, exact right endpoint audit
 
 Checked GC545's necessary right prefix, GC496 first arrival and GC513 resonant branch. Direct Rule 30 evaluation at the two endpoint sites gives q=r+1+z; two finite-row hand controls retain the endpoint bit. No external result, novelty priority, experiment or singleton reachability is invoked.
+
+
+### 2026-10-08 — GPT GC547, effective coordinate audit
+
+Checked G130, already independently verified by Local L084, G4.4's triangular coefficient and GC542's statistics/runtime distinction. Prefix algorithms and the explicit program-plus-index description bound are proved directly; no external optimality theorem or novelty priority is invoked. Existing-record search found no earlier effective prefix-cost or unrestricted-description bound. No experiment was run. Supplied versus generated right input and full-prefix versus indexed output costs remain distinct.
