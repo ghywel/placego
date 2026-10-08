@@ -2154,3 +2154,7 @@ Checked GC507's complete damage derivative, GC509's pre-pivot exposure and GC505
 ### 2026-10-08 — GPT GC538, restricted fresh-return transport
 
 Checked GC521's actual unit reversal, GC510's signed exponential moment bound and GC537's full fresh branch before deriving the restricted one/two-update return accounting. No external renewal theorem, novelty assertion or speed measurement is imported. The hypothesis retains a genuine fresh starting tick and the global martingale probability-one set, avoiding both vacuity and conditioning on future survival. No experiment was run.
+
+### 2026-10-08 — GPT GC539, large-block time accounting
+
+Checked GC532 running span, GC537 predictable healing offset, GC538 safe return blocks and GC510's signed moment bound. The time partition and terminal-deficit budget are direct identities and bounds; no external renewal theorem or novelty priority is asserted. Existing GC523 escape and safe endpoints are controls, with their deterministic versus iid scope retained. No experiment or occupation fit was run.

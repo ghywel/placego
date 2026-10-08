@@ -13408,3 +13408,41 @@ almost surely on S. Speed existence is not supplied; these are bounds on lower a
 If an actual inward speed v exists with 0<v<1/3, GC532 gives unbounded span and infinitely many fresh ticks. There must then be infinitely many fresh encounters with K>=2: otherwise take a fresh start after the last one and apply the bound above. This is a conditional consequence, not an inference from a finite measured value or a positive-density claim. The reported approximate value 0.246 is not treated as a proven limit.
 
 **Outcome and next.** A clean reachable-state restriction would suffice for positive inward rate, but its lower bound would exclude any true speed below one third. Thus a derivation of the observed lower rate must retain large healing branches and their recoveries; an eventual small-branch closure cannot represent it. No restriction, recurrence or speed theorem is established for actual iid Rule 30. Next control those large fresh branches and ensuing reused states, rather than discard them.
+
+## GC539 — Large fresh branches have a necessary occupation cost (2026-10-08)
+
+**Scope and predictions.** Keep arbitrary actual large healing branches rather than impose GC538's safe restriction. Predict a transport budget in terms of time spent in their fresh-to-fresh blocks and the current unfinished span deficit. Counterfactual counting their starts controls transport is unsupported; a few long blocks can dominate time. Unexpected check: a terminal jump can make span collapse before return, so retain its deficit explicitly. Hand proof conditional on GC509, pending independent reading; no experiment or asserted limiting speed.
+
+**Block partition.** Start a block at each fresh tick s. It consists of updates s through r-1, where r is the next fresh tick; the last block can be infinite. Classify it as safe if its known healing offset K_s<=1, and large otherwise. This uses K before its pivot is revealed, regardless of which branch the pivot later chooses. Let B_N be the number of updates before N that belong to large blocks, including any unfinished prefix. Let G_N count safe starts before N and A_N^safe their fresh left choices. Put Q_N=max(E_N-w_N,0), with GC532's exposure maximum E_N and span w_N. These are counts of update time, starts, choices and deficit respectively, not interchangeable frequencies.
+
+**Safe contribution and fair selection.** A safe block lasts one update on a left branch or K=0 healing, and two on K=1 healing. Its net displacement is -1 on the left branch and 0 otherwise. A final unfinished safe block can contribute +1, from the unit right step awaiting reversal. Thus its total displacement is at most -A_N^safe+1, and its total occupied time satisfies
+
+    N-B_N<=2*G_N-A_N^safe.
+
+The safe indicator is known after gap reveals but before the pivot. GC509's fair-pivot proof therefore applies with this predictable selection: each selected centered increment is a fair sign of size 1/2, otherwise zero. The same two-sided exponential-moment argument as GC510 gives
+
+    A_N^safe-G_N/2=o(N) almost surely.
+
+No independence of selected states, conditioning on future return, or positive safe-start frequency is assumed. Combining the two displays yields A_N^safe>=(N-B_N)/3-o(N).
+
+**Large contribution and terminal guard.** At a fresh start s, w_s is a strict record. Until the next fresh tick r, span is at most w_s. At r it exceeds w_s by 1 or 2, since each update can increase span by at most 2. A completed large block consequently has displacement
+
+    L_r-L_s=(r-s)-(w_r-w_s)<=(r-s).
+
+If a large block is unfinished at N>s, its revealed running maximum is E_N=w_s. Its displacement is (N-s)+(E_N-w_N), so its excess over duration is exactly Q_N. Hence the sum of all large-block displacements is at most B_N+Q_N. This bound deliberately retains the terminal deficit; no uniform upper bound on jump size is introduced.
+
+Adding both contributions, with L_0=0, proves on the martingale probability-one set
+
+    -L_N>=N/3-(4/3)*B_N-Q_N-o(N).
+
+The bounded safe endpoint is absorbed in o(N). This is an actual-history occupation budget, not a new recurrence premise.
+
+**Necessary condition if speed exists.** If L_N/N tends to -v, GC532 gives w_N/N and E_N/N both tending to 1+v. Thus Q_N/N tends to zero. Rearranging the budget then gives
+
+    liminf B_N/N >= (1-3v)/4,
+
+whenever the right side is positive. In particular a true inward speed in (0,1/3) requires positive lower time occupation in large-start blocks, strengthening GC538's infinite-large-start conclusion. It does not give a positive lower frequency of their starts: their durations may be arbitrarily long. The measured approximately 0.246 is not substituted for a proven v.
+
+**Independent controls and limits.** With no large blocks, Q_N=0 except for harmless record endpoints, and the bound recovers GC538's one-third lower rate. GC523's actual finite-background escape has its last fresh start at time 1 with K=2; all later update time lies in that large block, B_N=N-1, while Q_N is bounded. Its outward slope 1 agrees with the budget's rate -1 when occupation tends to 1. This deterministic control tests the partition and unfinished-block guard, not the iid martingale premise. At a fresh endpoint, Q_N=0 and the previous block is completed, checking the one-tick convention separately.
+
+No occupation estimate, integrable excursion duration, unbounded-span proof or limiting speed is obtained. Next target a bound on large-block time or its full conditioned state, retaining the terminal deficit when speed existence is unavailable. Do not replace occupation by a finite branch census.
