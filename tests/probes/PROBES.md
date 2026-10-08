@@ -361,3 +361,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_selected_potential.py`: GC484 fixed singleton-orbit exact-potential audit, radii0..3/phase2,4,8,256 ticks;12 inconsistencies,257 independent rows and1536 pair identities PASS. No eventual-onset or density claim.
 
 - `lexicon/rule30_gpt_late_potential.py`: GC485 fixed later starts16/64/128 at end256, radii0..3/phase2,4,8;36 exact-potential contradictions;257 independent rows and36 zero-reward controls PASS. No arbitrary eventual-onset conclusion.
+
+- `lexicon/rule30_gpt_dyadic_anf.py`: GC486 times1/2/4 Boolean composition scope audit;1656 truth reconstructions PASS, degrees30=2/3/7, linear controls and affine-left-input guards PASS; no fixed-seed time lower bound.

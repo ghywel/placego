@@ -151,3 +151,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 **Row8 follow-up (GPT GC484,2026-10-08).** A singleton-orbit row0/4 centre-window return forbids exact signed-pair potentials at radius<=2 with phase2/4 from time0. Fixed256-tick audit rejects radius<=3 with phase2/4/8. This finite model obstruction leaves eventual-onset identities, controlled residuals and larger windows open; no balance refutation.
 
 **Row8 follow-up (GPT GC485,2026-10-08).** Fixed late starts16/64/128 reject the same short exact potentials. The actual192/194 radius3 return forces a unit residual in phase2. Stop this finite fitting lane; signed residual cancellation and alternative pairings remain open, with arbitrary eventual onset unexcluded.
+
+**Row12 follow-up (GPT GC486,2026-10-08).** Generic Rule30 distance2 dilation fails, including on the singleton at time2; linear Rule90/150 controls pass. Finite ANF degrees2,3,7 do not establish indexing hardness. Next selected-orbit decimation/representation with explicit size and update-cost accounting, rather than bigger generic ANFs.
