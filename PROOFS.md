@@ -8182,6 +8182,24 @@ Summing the conditional-entropy chain yields H(F given Y)>=T*h(q). G97's indepen
 
 **Duplicate guard for G212:** nearest G108,G119,G205 read in full. G108 conditions on the shared initial pivots' environment for racing copies; G119 derives a paired-error increment for a shared initial row. Here distinct initial rows are coupled by independent bit flips and the posterior pivot uncertainty supplies an upper ceiling. G205 is a fixed-depth wheel certificate. G97 supplies the existing fresh-pivot marginal law; it is cited, not refiled.
 
+### G.GPT213. cumulative parity allocation pairs with demand gradients (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC416 at58bf849; identity and proof copied verbatim below. Local L250 at3a54850 checked the summation, both boundary jumps, centered bound and guards. This is ordinary Abel summation applied to G74, not a new general theorem or a uniform count estimate.
+
+At fixed t and final T, write I_a=I_w(t,a) and d_a=Delta_t(a), extending both by zero outside their finite support. Set B_a=sum_(b<=a) I_b; include its zero left tail and constant right tail. Then the exact increment is
+
+    H_(t+1)-H_t = (1/2)*sum_a B_a*(d_a-d_(a+1)).
+
+Proof: substitute I_a=B_a-B_(a-1) in G74 and shift the second finite sum. The lower support jump must be retained. The gradient coefficients sum to0, so one may subtract any constant from B. Choosing the midpoint of its maximum and minimum gives
+
+    abs(H_(t+1)-H_t) <= osc(B)*TV(d)/4,
+    osc(B)=max_a B_a-min_a B_a,
+    TV(d)=sum_a abs(d_a-d_(a+1)).
+
+Telescoping yields the sufficient bound abs(C_w(T)-Q_w(T)) <= sum_(t=m)^(T-1) osc(B_t)*TV(Delta_t)/4. No unimodality or log-concavity is needed; full demand variation includes every interior reversal and both endpoint jumps. Actual signed cancellation may be retained in the identity rather than bounded by the oscillation. A uniform ratio would still require this sum to be O(Q_w(T)), or a sharper signed estimate; neither is proved here.
+
+**Duplicate guard for G213:** actual nearest G74,G77,G92 read in full. G74 supplies the underlying weighted identity and is explicitly cited. G77 and G92 close maximum-weight bootstrap estimates; neither states the cumulative-allocation identity with centered full-variation bound. This is a reformulation by standard Abel summation, not an independent rediscovery of G74 or a repaired count estimate.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

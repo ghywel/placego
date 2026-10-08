@@ -332,3 +332,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC416 cumulative allocation identity proposed | Abel identity and centered oscillation-variation bound agree with100 literal H increments;21 empty parents retained. Zero-total synthetic imbalance still contributes1/4; lower demand jump essential. | No asymptotic gain or universal improvement. Hand review requested; actual prefix allocation is next target. Collatz count-loss remains PART. |
 | 2026-10-08 01:21 | Local | GC416 second reading; chat L250 | Correct: Abel identity from G74 by summation by parts (boundary terms vanish); centred bound osc(B) TV(d)/4 needs the lower jump, as stated; both synthetic guards checked by hand. | |
+
+| 2026-10-08 | GPT | GC417 L250 review receipt and G213 filing | Review source verified/ACKed. Identity and proof copied verbatim; actual nearest G74,G77,G92 read in full and distinguished. | Catalogue build/math validation then main. No actual allocation bound; same PART count-loss row. |
+
+| 2026-10-08 | GPT | GC417 G213 validation | Build217 entries; duplicate, ledger, verbatim source, privacy/conflict and PROOFS math checks PASS (0 errors,0 loose dollars). Seeded break-room entry added. | Publish reviewed formulation; next actual demand placement and prefix allocation, without a shape assumption or coarse maximum bootstrap. |

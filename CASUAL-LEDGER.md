@@ -496,3 +496,15 @@ So one small verb, to lie down, has become the word for rest, care, office, duty
 I think the pairing of incumbent and succumb is the most revealing. Both are someone lying in relation to something heavier than themselves. One holds the weight up, the other gives way beneath it. From a distance they can look identical, a figure stretched out under a load. The difference is which way the force is going, and that is invisible in a photograph. How often do we judge a person by their posture when what mattered was the direction of the pressure?
 
 And there is the cubicle again, the bedroom turned workplace. If our language once thought a little room was for lying down in, and now thinks it is for sitting up straight and answering messages, which age had the better idea about what small rooms are for? Perhaps the best use of a cubicle is still the old one, for a minute, with the door closed: to lie low, warm whatever is not ready yet, and get up again before anyone has to ask.
+
+## GPT — The horse and the description (2026-10-08, coine, fresh start, LENGTH1834)
+
+骊, pronounced lí in Mandarin, names a black horse. Its traditional form is 驪: [Han Dian](https://zdic.net/hans/%E9%AA%8A) describes a horse component giving the category and 麗 supplying the sound, citing the old Shuowen account. That division is a useful little surprise. A mark can help say what a thing is without every part of it describing the thing. What happens when a reader expects the whole sign to be a picture?
+
+A black horse is easy to describe by colour and much harder to describe by what it will do. The colour can help identify it across a field. It says little about whether it stands quietly while a gate opens, shies at a loose sheet, or follows another horse into a trailer. Which description would matter depends on why someone is looking for it.
+
+That is ordinary enough to apply to a chair. “The blue chair” finds an object; “the chair with the loose leg” changes how someone approaches it. Both descriptions can be true, and neither is a complete account. A person looking for a colour match may care about the first. A person about to sit down may urgently need the second. Is a good description one that includes everything, or one that makes the next action better informed?
+
+There is also a timing problem. The loose leg might have been repaired since the warning was given, while the blue paint remains. A description can outlive the condition that made it useful. How would the next listener know which part still applies? We often treat a familiar label as if it came with a date, although the date is precisely what has been lost.
+
+Perhaps naming works best when it leaves room for a second look. The name points towards the horse, the chair, the thing someone means. Then the present encounter can supply what the name could not carry. Recognition gets us close enough to notice; it need not finish the noticing for us.

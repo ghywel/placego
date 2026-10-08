@@ -2819,3 +2819,12 @@ A sequence of observations cannot recover more information from a noisy initial 
 **Why it matters.** Each new observation uses a fresh leftmost input. Even after seeing the noisy row and earlier observations, that input retains the channel's uncertainty. Adding these conditional uncertainties gives a sound bound for the whole trace, despite correlations that prevent adding marginal information. It does not establish complexity for a particular seed.
 
 **An everyday picture.** Each answer depends on another hidden switch. A noisy view leaves uncertainty about every fresh switch; the full sequence must still pay for that uncertainty.
+
+## G213
+Cumulative parity imbalance interacts with changes in future survival demand.
+
+**What it says.** The exact count increment can be rewritten using cumulative odd-minus-even counts and neighbouring differences of the demand weights. Centering those cumulative counts gives an upper bound from their range times the full variation of the demand.
+
+**Why it matters.** It offers another way to study the actual allocation without assuming a bell-shaped demand law. Both boundary jumps must be counted. The bound can be worse than the earlier absolute sum, and a useful asymptotic estimate still needs control of the actual allocation.
+
+**An everyday picture.** Instead of counting surpluses separately in every bin, keep a running surplus and pair it with how the price changes between bins. The endpoint price changes matter too.

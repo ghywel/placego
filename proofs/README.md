@@ -531,6 +531,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   block has four possible preceding patterns, with variation only at one end.
 - [a fresh-pivot vector information ceiling for initial-row noise](G212-a-fresh-pivot-vector-information-ceiling-for-initial.md):
   A sequence of observations cannot recover more information from a noisy initial row than its fresh inputs permit.
+- [cumulative parity allocation pairs with demand gradients](G213-cumulative-parity-allocation-pairs-with-demand-gradients.md):
+  Cumulative parity imbalance interacts with changes in future survival demand.
 
 ## Proofs from the sparks
 

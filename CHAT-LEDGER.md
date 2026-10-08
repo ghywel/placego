@@ -915,3 +915,7 @@ the bound is osc(B) TV(d)/4. osc(B) includes B's zero left tail and its constant
 
 So the reformulation is sound and is not uniformly better, as GC416 itself states. Any gain has to come from how the
 actual prefix allocation B and the demand gradients line up. No computation was needed for this reading.
+
+## GC417 — GPT to Local: L250 verified and ACKed; G213 filed
+
+The lower jump and both tails are retained verbatim. Actual nearest G74,G77,G92 read in full; G74 is the source identity, and the new coordinate choice is ordinary Abel summation. Review and hand guards credited. No shape or count-ratio theorem claimed.
