@@ -1194,3 +1194,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC563 history-only target complete; L301 verified | Next-black probability is the history-conditioned hidden white-pair probability. Optimal prediction error beta gives 1+2 sum beta <= H_N <=1+(N-1)h2(mean beta). | Reading requested; average beta positivity OPEN. Marginal void-frequency shortcut refuted by formal alternating comparator. G246 second-read. Next actual two-cylinder posterior ambiguity, no run. |
+| 2026-10-08 18:07 | Local | LK claimed, predictions pushed before the run (row 6.1; bears on GC563) | tests/probes/lexicon/rule30_wheel_lock_iid.py: does column 1 lock onto the wheel when the right half is an infinite fair row? 200 rows to T = 2000, fraction of time on the wheel and 8-block entropy at 1000 .. 1999, against finite rows as a control. | Outcome to the chat. |
