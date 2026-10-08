@@ -12491,3 +12491,26 @@ If five consecutive visible zeros existed, four such transitions would be requir
 **Sharpness and consequence.** Seven initial right sites 0111000, with a zero initial tail and the clamped wall, give four visible zeros. The hand-derived initial row was checked by both independent implementations. Thus the bound of four is attained. Every infinite compatible visible trace avoids both 11 and 00000. In every length-N window its number of ones is at least floor(N/5) and at most ceil(N/2), by partition into disjoint length-5 blocks and the no-adjacent-ones condition. This is a companion-visible frequency bound conditional on an alternating wall, not the singleton centre's one-half-frequency problem. The necessary finite-type language remains larger than the actual compatible language; its admissible words are not automatically realizable.
 
 **Outcome and next.** The unrestricted companion cannot have arbitrarily long visible zero runs next to this wall. This closes that specific possible lower-language construction, but supplies no positive entropy lower bound or finite global wall exclusion. Stop the short-count scan. Next audit what the forced pair transitions say about coding by gaps between visible ones, retaining deeper-column compatibility rather than treating the necessary gap language as sufficient. Request independent reading of the local proof before catalogue filing.
+
+## GC503 — Five initial right bits decide the first visible zero latch (2026-10-08)
+
+**Bears on.** GC502's necessary gap code, constellation rows 5/6 and portfolio question 4. Exact hand refinement of the same local pair argument, pending independent reading. No extension of the short-word count scan or novelty claim. The wall stays externally clamped; these are durations in its visible companion, not physical centre runs of the singleton orbit.
+
+**Predictions and unexpected check.** Before fixed controls, predict that four visible zeros occur exactly for initial right sites (0,1,1,r,z) with r OR z=1. Counterfactual uniform durations 1 through 4 conditional on an initially white companion must fail for fair initial right bits. Unexpected: this event needs five initial bits, whereas the generic backward cone for four visible samples reaches seven. Check all 32 five-bit patches with four exterior tails, using both packed and literal implementations; arbitrary farther-tail independence comes from the local proof rather than these finite controls.
+
+**Exact duration formula.** At an even wall phase let initial right sites 1 through 5 be a,b,q,r,z, with arbitrary farther sites. Define R as the number of consecutive initial zero symbols in the visible trace; R=0 if a=1. For a=0 the complete classification is
+
+    R=1  if b=0 and q=0;
+    R=2  if b=1 and (q=0 or (r=0 and z=0));
+    R=3  if b=0 and q=1;
+    R=4  if b=1 and q=1 and (r OR z)=1.
+
+These cases exhaust all five-bit assignments. For the proof, a zero-to-zero step requires b OR q=1. GC502 proves that pair (0,1) goes to (1,0), then to (0,0), which ends the zero run. Pair (1,0) goes directly to (0,0). For the only remaining pair (1,1), its odd site-3 value is 0 and its odd site-4 value is 1 XOR (r OR z), so its next even pair is (0,r OR z). If r OR z=0 the following zero-to-zero step fails; otherwise the forced two-step chain applies. Each successful step is justified by b OR q=1, and each failed step gives next visible bit 1 by the exact site-1 update. Thus the displayed durations are equalities, not just lower bounds. No farther bit enters these branches.
+
+In particular 0000 occurs iff (a,b,q)=(0,1,1) and r OR z=1, and it forces the next visible bit 1. No-11 then forces the next bit 0. This is a local trigger with a definite endpoint; it does not make subsequent gaps independent or free choices.
+
+**Exact initial-right law and controls.** For iid fair initial right bits, the unconditional probabilities of R=0,1,2,3,4 are 16/32,4/32,5/32,4/32,3/32. Conditional on a=0 the nonzero-duration probabilities are 1/4,5/16,1/4,3/16, with mean 19/8 visible samples. Thus the uniform-duration CF fails. Corresponding all-zero prefix probabilities at lengths 1,2,3,4 are 1/2,3/8,7/32,3/32; length 5 has probability zero. These agree with GC501 and GC502 without fitting a rate.
+
+Probe `rule30_gpt_zero_cylinder.py` checks all 128 patch/tail combinations against both independent update implementations, all PASS. The tails are 0000,1111,0101,1010 within the nine-site cone for five visible samples; no horizon enlargement. They support the implementation of the formula, while the quantified farther-tail statement is the branch proof above. The fair distribution is only an initial-row calculation: GC501 already refutes stationarity under advancing a visible period. It cannot be reused as an iid renewal law for successive gaps.
+
+**Outcome and next.** The zero latch is completely classified by a five-site cylinder. This supplies a concrete gap-4 trigger and closes the uniform initial-duration model, without settling entropy or finite support. Next use the necessary gap code as an upper-language bound or check a proposed actual recurrence; do not infer that arbitrary sequences of these four gap lengths are realizable. The original singleton balance and indexing questions remain open.

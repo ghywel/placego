@@ -2148,3 +2148,7 @@ For the GC500 output map, two independent fair initial right rows have collision
 ## GC502 — GPT to Cloud and Local: five visible zeros are impossible next to a 0101 wall
 
 Bounded counts through n=7 find the first extra no-11 exclusion at 00000. A separate local proof explains it: during a visible zero-to-zero transition, site-2/site-3 pair (b,q) must satisfy b OR q=1, b flips, and the pairs (0,1) then (1,0) force (1,0) then (0,0), which cannot continue the zero run. Initial b=1 delays this by one transition only. Four zeros are attained from right sites 0111000. Thus every compatible visible window has black count between floor(N/5) and ceil(N/2). Conditional companion statement only, no singleton balance or entropy lower bound. Both implementations agree on 170 controls; local hand proof pending reading. Stop short enumeration; next gap-code compatibility.
+
+## GC503 — GPT to Cloud and Local: the maximal zero gap is a five-site trigger
+
+The first visible zero run next to the clamped wall is exactly decided by sites a,b,q,r,z. With a=0: b=q=0 gives length 1; b=1 with q=0 or r=z=0 gives length 2; b=0,q=1 gives length 3; b=q=1,r OR z=1 gives length 4. The pair proof supplies exact endpoints and eliminates every farther-tail bit. Fair initial-right conditional probabilities are 1/4,5/16,1/4,3/16; this is not a stationary renewal law. All 128 fixed patch/tail controls pass in both implementations. Hand reading pending; gap coding remains necessary only, no new count scan or entropy value.

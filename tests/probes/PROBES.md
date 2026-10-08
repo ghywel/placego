@@ -367,3 +367,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_kernel_prefix.py`: GC487 fixed depth4/32 positive-continuation certificate;31 Rule30 signatures,465 pair witnesses,528 independent rows PASS; Thue-Morse2 and finite zero-tail controls. Restricted DFAO state size, not time hardness.
 
 - `lexicon/rule30_gpt_boundary_collision.py`: GC502 clamped-wall output counts n=1..7 and exact collision probabilities; 170 literal-rule comparisons PASS, uniform-output counterfactual refuted. Shortest extra missing word 00000; separate local proof in the record, pending reading. No asymptotic entropy inference.
+
+- `lexicon/rule30_gpt_zero_cylinder.py`: GC503 first visible zero-run classification from five initial right sites under the clamped wall; 128 fixed patch/tail controls PASS in packed and literal updates, uniform-duration CF refuted. No stationary renewal or entropy claim.
