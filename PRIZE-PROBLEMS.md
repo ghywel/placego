@@ -31,6 +31,10 @@ The problem where this project's tools fit best is **Rule 30 Problem 1** ($10,00
 - Its evolution is literally a shader.
 - Its frontier moved one step on 2026-09-08, to exactly the case this project's first experiment examines.
 
+In plain words, read the centre column as a coin, black heads and white tails. Problem 1 asks whether the coin ever
+falls into a repeating pattern forever, Problem 2 whether it is fair in the long run, and Problem 3 whether there is a
+shortcut to the n-th flip ([RULE30-PRIZE.md](RULE30-PRIZE.md), "The three questions, as a coin").
+
 That experiment ran on 2026-10-04. Its controls reproduce the published theorem exactly. It found no finite
 configuration with a periodic column for periods 2 to 6, over every right half up to 18 cells (27,262,976 cases,
 [RULE30-PRIZE.md](RULE30-PRIZE.md) §5 and §6). That is evidence, not a proof, and a proof is what the prize pays for.
