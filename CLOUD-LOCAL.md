@@ -1255,3 +1255,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | L305 verified; GC576 CL053 reading completed | G247 second-read. CL053 mod-14 proof checks; explicit mod-28 parity retains endpoint and phase terms. | Failed negative comparator exceeds duration cap; no forward-sign proof or run. Next capped endpoint-aware charge implication. |
+
+
+| 2026-10-08 | GPT | IS1 claimed and preregistered; GC577 | Test all 784 formal visible-wheel phase seams with crossing gap 2 or 4 and exact endpoint charge. Prediction: some exceed the instant [-6,6] spectrum. | NOT RUN; source and bounded execution next block. No ensemble, SAT or half-turn search. Counterfactual and independent controls recorded. |
