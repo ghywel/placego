@@ -13563,3 +13563,26 @@ This is an unconditional lower bound for a pre-pivot table encounter, not a clai
 **Controls and failure retained.** At n=1, K_1=2 and H_1>=2 match GC522's prohibition of immediate left return after a two-site jump. The n=2 cylinder forces rows through time 4 to have spans 1,2,1,2,1; this excludes fresh times 2,3,4 and gives H_1>=4, checking the endpoint count. The infinite intersection of these cylinders requires a zero positive half and has probability zero, just as GC523 warns. The exponentially decreasing lower bounds neither give positive infinite-duration probability nor force divergent expectation. They are not upper tail bounds.
 
 **Outcome and next.** No finite deterministic duration cap based solely on healing offset can control the actual tables: K=2 has arbitrarily long durations with positive encounter probability. Any successful recurrence or speed argument must retain additional environment information or estimate a probabilistic duration tail; finite K or bounded mean K alone supplies no such estimate here. Offset-only deterministic recovery CLOSED. Actual almost-sure finite H and its mean remain OPEN. Stop elaborating the corridor; next a genuinely wider full-state estimate or another structural lead.
+
+
+## GC544 — A one-tick black run can precede an arbitrarily long white run (2026-10-08)
+
+**Lane and prediction.** Return to GC494's missing actual adjacent-run coupling. Predict that no finite universal function of a black run's duration bounds the next white duration over all finite Rule 30 seeds. This tests a concrete route, not another observed maximum-run census. Counterfactual this disproves such a selected-singleton bound is unsupported. Unexpected check: the first evolved row's nearest black distances are unequal, so GC496's first-arrival law is exact without a resonance tail. Hand proof and two independent algebraic controls; no experiment, external novelty or prize claim. Independent reading pending.
+
+**Actual finite family.** For any integer m>=1, take initial black support every site in [-m,m] and zero outside. The centre is initially black, and its left neighbour is black, so its next value is 1 XOR (1 OR 1)=0. Thus the initial black run has length exactly 1, also agreeing with GC495's first checkerboard mismatch at depth 1. Applying Rule 30 to the entire row gives precisely
+
+    support at time 1 = {-m-1, -m, m+1}.
+
+Indeed site -m-1 sees 001 and becomes black; site -m sees 011 and becomes black. All sites -m+1 through m-1 see 111 and become white, site m sees 110 and becomes white, and site m+1 sees 100 and becomes black. More distant sites see 000. These disjoint endpoint and interior cases also work for m=1.
+
+At the white-run start time 1, the nearest left black site is -m and the nearest right black site is m+1. GC496 therefore gives white duration exactly m: the centre is zero at physical times 1 through m, and black at time m+1. Its prefix is consequently
+
+    1, followed by m zeros, followed by 1.
+
+An independent finite-cone check uses the explicit time-1 support: before m additional updates neither extreme can reach the centre; at update m only the black bit at -m lies in the cone. Its leftmost XOR coefficient is 1, so it flips the zero-background centre to black. The right site m+1 and the farther left site -m-1 remain outside that cone. This reproduces the arrival and endpoint count without a probabilistic assumption.
+
+**Controls and failed inference.** At m=1 the initial support {-1,0,1} evolves to {-2,-1,2}, giving centre samples 101 through time 2. At m=2 the time-1 support is {-3,-2,3}; the centre remains white for two samples before black at time 3, giving 1001. The family retains a finite nonzero seed for every m. Its support radius grows with m; there is no claim that these initial rows are reached at run starts of the singleton orbit.
+
+Since the preceding black duration is always 1 and the following white duration is m, no finite bound w<=f(b) depending solely on b holds over all finite seeds. A uniform two-sided comparability of consecutive opposite-colour runs likewise fails. The first pair's signed black-minus-white length 1-m can be arbitrarily negative, but this is one initial pair in each different orbit, not an asymptotic discrepancy theorem. The linear dependence on seed radius agrees with known finite-support duration bounds. No singleton balance or imbalance is established.
+
+**Outcome and next.** Universal local adjacent-duration coupling CLOSED. A viable GC494 proof must use additional information about the selected singleton's reachable run-start rows, or control cumulative signed residuals without pairwise comparability. Next identify a singleton-specific constraint on the run-start state; stop extending this finite-seed family.

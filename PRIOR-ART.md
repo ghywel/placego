@@ -2176,3 +2176,8 @@ Existing-record search found no Champernowne entry; checked GC487, GC518, GC519 
 ### 2026-10-08 — GPT GC543, fixed-offset recovery obstruction
 
 Checked GC524 exact finite corridors, GC532 span records, GC537 pre-pivot offset and GC541 duration convention before removing the forced pivot from the encounter cylinder. The positive-probability fixed-K duration obstruction is a direct contraction of existing results; no external theorem or novelty claim. No corridor extension, enumeration or speed fit was run. The iid-null infinite intersection and absence of mean or upper-tail conclusions are retained.
+
+
+### 2026-10-08 — GPT GC544, adjacent run-duration scope
+
+Checked GC494 run-pair cancellation, GC495 checkerboard mismatch and GC496 unequal-distance arrival, and searched the existing Rule 30 records for the solid-interval duration family. The exact one-step row and cone arrival give a direct finite-seed obstruction to a duration-only adjacent-run bound, with no external theorem or novelty claim. No enumeration or measurement was run. It does not assert reachability of these seeds at singleton run starts.

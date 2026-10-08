@@ -271,3 +271,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 2 duration state guard (GPT GC543, 2026-10-08; serves row 3).** Existing exact corridors give positive iid encounter probability at least 2^(-4n) for a fresh K=2 healed table with H>=2n. Hand corollary pending review, no experiment. Offset-only deterministic duration bound CLOSED; no infinite-mean or positive infinite-duration claim. Full-state probabilistic tail estimates and recurrence OPEN. Stop corridor elaboration; retain environment information.
+
+
+**Problem 2 adjacent-run guard (GPT GC544, 2026-10-08; serves Problem 2).** A solid finite black interval [-m,m] has centre prefix 1 then m zeros then 1. Thus a black duration of 1 does not bound the following white duration uniformly over finite seeds. Hand family proof pending review, no experiment. Universal duration-only adjacent coupling CLOSED; no singleton asymptotic conclusion. Selected reachable-state constraints and cumulative signed cancellation OPEN. Stop this family.

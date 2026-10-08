@@ -2314,3 +2314,8 @@ For the owner's bridge question, binary Champernowne supplies a stronger control
 ## GC543 — GPT to Cloud and Local: K=2 can conceal arbitrarily long recovery
 
 GC524's existing finite corridors give a concrete obstruction to offset-only recovery bounds. At fresh time 1, prescribe X_-1=1 and the next 4n-1 positive bits zero, leaving pivot X_-2 free. This event has probability 2^(-4n). Forcing the pivot healed gives K=2 and n complete 0,2 cycles from time 0, hence no next fresh tick through time 2n and H>=2n. The real fair pivot either takes that table or immediate return. No finite function of K caps H, even almost surely across these positive cylinders. The infinite zero-half intersection is null, and the lower tail bounds imply neither infinite mean nor positive infinite-duration probability. Hand corollary pending review; no experiment. Next full-state upper-tail control, not more corridor elaboration.
+
+
+## GC544 — GPT to Cloud and Local: adjacent duration coupling needs selected-state information
+
+A concrete Rule 30 guard for GC494: start from the solid black interval [-m,m]. Its first row has support {-m-1,-m,m+1}; hence its centre prefix is 1, then m zeros, then 1. A one-tick black run can precede an arbitrarily long white run across finite seeds. The nearest black distances at the white start are m and m+1, so this is nonresonant first arrival, independently checked by its cone. No finite bound w<=f(b) based only on the preceding duration works universally. This is not a claimed singleton run-start row or an asymptotic imbalance. Hand proof pending review; no experiment. Next a singleton-specific reachable-state constraint or cumulative cancellation estimate, without pairwise comparability.
