@@ -15339,3 +15339,22 @@ The builder assigns one scalar status from the master section. E2's label litera
 GC606's hand short-cylinder theorem then gives a complete third short loop for every farther tail. Thus 1110010001000 realizes LLS, with visible block 10000 10000 100 and closing marker after 26 physical ticks. By GC609 that short return feeds one of the two simple next-loop cylinders; this does not allow an independently chosen fourth gap or determine its type. The extension advances actual finite concatenation, not infinite compatibility, entropy, Q1 or Q6. Bears on: nothing yet, the existing physical-return side road. Next an independent replay and a hand explanation of the forced fifth bit would be preferable to another larger cone census.
 
 **GC616/GC618/GC619 receipts (Local L326, commit 4cf4cf55).** Local hand-checked GC616 carry equations, white-digit obligation and endpoint, without reading the cited Mahler page. Local independently replayed GC618 on actual and generic rows and GC619 over all 32 cone extensions with random farther tails. GC619 census is now independently replayed; its hand proof remains assigned to Cloud. The reported run-data interruption was recovered by byte-identical checkpoint migration; full NL remains Local. No GC621 replay is claimed by this earlier receipt.
+
+## GC622 — Every alternative long cylinder returns into the short cylinder (2026-10-08)
+
+**Scope and prediction.** Supply the hand explanation requested after GC621's finite census. GC607 already proves a long return from every prefix 111000001 under the externally clamped 0101 wall. Predict its return always begins 11101, not merely 1110. Counterfactual its fifth return bit can remain zero by choosing a farther tail. Unexpected check extends the shielded prefixes at times 2 and 4. Hand Boolean proof only; no experiment or new literature route. Bears on: nothing yet, the existing actual-return compatibility side road.
+
+Starting from 111000001, the first odd prefix has sites 7,8,9 equal to 0,1,1. Hence the next eighth bit is 0 XOR(1 OR 1)=1, extending GC607's time-2 prefix to 01111011. Write its following bits v,w,x at sites 9,10,11. Its odd sites 6,7,8,9,10 are
+
+    0, 1, 0, NOT(v OR w), v XOR(w OR x).
+
+The time-4 row therefore starts 0010011 followed by B,C, where
+
+    B=v OR w;
+    C=NOT(v OR w) OR(v XOR(w OR x)).
+
+Their OR is one identically, without requiring v,w,x to be independently attainable. On this time-4 row the odd first eight bits are 01111100: the seventh zero follows from its fixed sixth and seventh black bits; the eighth follows from B OR C=1. Consequently time 6 begins 0100001, strengthening GC607's six-bit prefix. Its next odd first seven bits are 1110011, independently of the farther neighbour at site 8. The time-8 row thus begins 000111. Finally its odd first six bits are 001100, making the next first five bits 11101. All displayed endpoints use either complete local inputs or an OR shield; no initial-tail choice was made.
+
+**Result.** Every row in the alternative cylinder 111000001 completes L and returns to 11101, then completes S by GC606. This is a hand proof of LS for that cylinder. GC619's thirteen-bit cylinder returns after its first L into 111000001, so this gives LLS there for every farther tail and independently explains GC621's universal fifth bit. The census remains a single-party computation awaiting external replay; this hand explanation supplies a separate proof route to its conclusion.
+
+This closes the second-return short-image obligation for these particular cylinders. It does not classify all long entries or imply the simple long cylinder 111001 always returns short: GC614 already refutes that larger statement. Neither the fourth gap nor an invariant tail family is determined. By GC609 the ensuing S returns into the union of the simple S and L cylinders, with no independent choice asserted. Infinite compatibility, entropy and the prize questions remain open. Await Local's even-ID hand reading; stop increasing finite censuses without a concrete new compatibility obligation.
