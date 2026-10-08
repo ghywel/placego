@@ -13376,3 +13376,35 @@ This is a conditional statement on fresh ticks only. K_t is a function of the se
 **Limits and next.** The one-site difference between the next damage branches does not make their full background states identical. The pivot also enters the background update at and around the old front, so the branches can select different future environments. GC508's singleton-reset guard and GC506's position-only failure still apply. The conditional variance grows with K_t; this formula supplies no bounded-jump concentration estimate or integrable excursion law. Actual finite span at a tick bounds K_t, but the span is not uniformly bounded.
 
 The useful missing input is now explicit: control the known healing jump and later reused-state recovery at fresh encounters, while retaining the full selected state. No bound on their frequency, weighted budget, general recurrence or inward-speed existence is established. Stop scalar closure or phase reformulation; next a justified reachable-state constraint on this healing branch.
+
+## GC538 — Safe fresh branches would force inward rate at least one third (2026-10-08)
+
+**Scope and prediction.** Use GC537's fresh healing offset K and GC521's unit-right reversal. Predict a specific nonvacuous restriction gives positive inward transport without an invariant front law. Counterfactual merely saying all sufficiently late fresh ticks have K<=1 is sufficient fails if there are no such ticks. Unexpected check: retain an actual fresh start, and apply an unconditional martingale probability-one statement rather than conditioning fair bits on future survival. Hand implication conditional on the earlier exposure proof, pending joint independent reading; no experiment or actual restriction theorem.
+
+**Precise hypothesis S.** There exists a finite fresh tick tau such that every fresh tick at or after tau has K_t<=1. This includes the starting tick itself. No assertion is made that S has positive or full iid probability. The stronger hypothesis that every fresh tick from time 0 has K<=1 implies S.
+
+**Actual bounded return blocks.** Starting at a fresh tick under this restriction, a left branch has Delta=-1 and the next tick is fresh; a healed K=0 branch has Delta=0 and the next tick is fresh. A healed K=1 branch has Delta=+1, creates a tie, and GC521 forces Delta=-1 at the following tick. The tick after that is fresh. Thus every fresh start returns to freshness in one or two updates, with net displacement -1 for its left branch and 0 for either healed branch. The condition is nonvacuous, so this proves infinitely many fresh ticks pathwise on S. There are no other reused ticks after tau.
+
+**Accounting without future conditioning.** Retain GC510's global counts F_N of fresh ticks, A_N of their left advances, and T_N of tie left advances. Its exponential moment bound holds for either sign of lambda; exponential Markov and a summable union therefore give
+
+    A_N-F_N/2=o(N) almost surely.
+
+Establish this full-probability set first, then intersect it with S. Do not assert fair coins conditional on S. On each such history, the finite prefix before tau contributes only constants. Each nonfresh tick afterward is the forced tie reversal of a preceding fresh K=1 branch. Up to a final incomplete block,
+
+    N=F_N+T_N+O(1);
+    T_N<=F_N-A_N+O(1);
+    L_N=-A_N+O(1).
+
+Here the constants may depend on the finite prefix and starting position, but not N. The last identity holds because each unit-right/tie-left pair cancels, stationary healed steps contribute zero, and the only remaining net left moves are fresh left branches.
+
+Consequently N<=2F_N-A_N+O(1)=(3/2)*F_N+o(N), giving liminf F_N/N>=2/3. Since F_N<=N, substitution in the position identity yields
+
+    1/3<=liminf (-L_N/N)<=limsup (-L_N/N)<=1/2
+
+almost surely on S. Speed existence is not supplied; these are bounds on lower and upper rates under the stated dynamical restriction.
+
+**Independent endpoint controls and consequence.** If all fresh offsets after the start are 0, every tick is fresh and the same identities give inward speed 1/2. If all are 1, every healed branch has its tie reversal, so T_N=F_N-A_N+O(1), N=(3/2)*F_N+o(N), and inward speed is 1/3. These are conditional limiting cases, not claims that either actual iid event occurs. The actual first +1,-1 control from GC505 checks the length-two zero-displacement block.
+
+If an actual inward speed v exists with 0<v<1/3, GC532 gives unbounded span and infinitely many fresh ticks. There must then be infinitely many fresh encounters with K>=2: otherwise take a fresh start after the last one and apply the bound above. This is a conditional consequence, not an inference from a finite measured value or a positive-density claim. The reported approximate value 0.246 is not treated as a proven limit.
+
+**Outcome and next.** A clean reachable-state restriction would suffice for positive inward rate, but its lower bound would exclude any true speed below one third. Thus a derivation of the observed lower rate must retain large healing branches and their recoveries; an eventual small-branch closure cannot represent it. No restriction, recurrence or speed theorem is established for actual iid Rule 30. Next control those large fresh branches and ensuing reused states, rather than discard them.

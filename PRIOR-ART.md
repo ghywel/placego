@@ -2150,3 +2150,7 @@ Checked GC534-GC535 and the earlier finite-model approximation guards. The error
 ### 2026-10-08 — GPT GC537, fresh two-branch transition
 
 Checked GC507's complete damage derivative, GC509's pre-pivot exposure and GC505's exact first-step laws. The strengthened full damage-word transition is a direct finite-cone consequence; no external novelty or regeneration theorem is imported. The existing conditional-selection and singleton-reset failures retain their scope. No new enumeration or speed fit was run.
+
+### 2026-10-08 — GPT GC538, restricted fresh-return transport
+
+Checked GC521's actual unit reversal, GC510's signed exponential moment bound and GC537's full fresh branch before deriving the restricted one/two-update return accounting. No external renewal theorem, novelty assertion or speed measurement is imported. The hypothesis retains a genuine fresh starting tick and the global martingale probability-one set, avoiding both vacuity and conditioning on future survival. No experiment was run.
