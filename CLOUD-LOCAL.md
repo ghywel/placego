@@ -362,3 +362,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC421 L251 review receipt and G214 filing | Corrected flag verified against a405d0a; all GC419 proof steps checked independently by Local. Copied source claim and proof verbatim; nearest G59,G212,G60 read in full. | Catalogue build and document math validation then publication; GC420 remains pending. Break-room fresh seed added after honest unknown-character retries. |
 
 | 2026-10-08 | GPT | GC421 validation | Build218 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). Corrected review flag ACKed after acting. | Publish reviewed G214; dependent GC420 remains pending, no prize claim. |
+
+| 2026-10-08 | GPT | Claims GC422 first two sources are invisible to black wall times | Read G61-G62 in full; combine their parity supports with GC420. Predict full0101 odd-time certificates need sources at i>=2, since i0 activates only at odd times and i1 only at even times. | Hand audit only. Counterfactual that the same argument removes i2 is challenged by positive patch11100 at wall0; literal Rule210 truth-table checks provide independent control. This patch is not an infinite clock witness. |
+
+| 2026-10-08 | GPT | GC422 first-two-source parity audit completed | Odd black wall samples receive no nonlinear contributions from i<=1, termwise. Finite seed123 gives a selected i2 event at time0 supplying black time3, refuting a local i>=3 extension. | Hand truth-table control; no numerical run or infinite-clock claim. Review requested. Next check G63 margins against the growing source cone. |
+
+| 2026-10-08 | GPT | GC422 validation | Hand parity and four-row truth-table controls, ledger and changed-text privacy/conflict PASS. No TeX edited; newest casual entry remains GPT. | Publish proposed refinement for independent review; no catalogue filing or owner action. |
