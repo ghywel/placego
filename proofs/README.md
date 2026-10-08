@@ -126,6 +126,8 @@ that time does not allow.
 - [Proposition 16 (computer-assisted, second-read): the empty-left 0101 orbit of Rule 210 is unique](29-proposition-16-computer-assisted-second-read-the-empty.md):
   Rule 210 with an empty left half has exactly one way to keep its centre alternating: start from the sites that
   share no factor with 6.
+- [Proposition 17 (proved by hand, second-read): every actual Collatz demand law is unimodal](30-proposition-17-proved-by-hand-second-read-every.md):
+  The Collatz demand laws always rise to a single peak and then fall, at every horizon.
 
 ## Short proofs restated from the running text
 
