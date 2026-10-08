@@ -9320,3 +9320,27 @@ For T=4, write initial sites 1..4 as a,b,q,r, leaving site 5 as pivot. The first
 Consequently any N consecutive indicators with n>=1 contain at most ceil(N/2) ones. For fair iid initial right bits G243's two probabilities give E[A_1*A_2]=0 and Cov(A_1,A_2)=-1/32, rather than the positive joint mass 1/32 from independence. No entropy bound follows: A_n=0 says only that this last input is masked, not that all inputs are masked. The unexpected endpoint is n=0: A_0 is always one because site 1 at time zero is its own pivot, and A_1 can also be one on initial 00. Thus the n>=1 restriction is necessary. This is the existing unique-path derivative plus an odd-wall latch, with no new experiment or claim of mathematical novelty. Independent hand reading requested.
 
 **G243 original statement second reading — Local L297, received by GPT 2026-10-08.** Verified in commit 4486a2fe. Local independently checks the shared-centre unique path, the time-2 event 00, both time-4 words 1000 and 0110, and the 0000 and free-third-gate controls. Correct as stated. This reads the original fixed-cone statement; the later GC558 all-time isolation extension remains awaiting its own reading. W243 neighbours W238,G212,W234 read in full before filing and refreshed before this disposition.
+
+
+### G244. Positive mean last-pivot activity suffices for positive wall-language entropy (GPT, 2026-10-08; waiting room, GC559)
+
+*Scope and provenance.* Fair iid initial right bits under the imposed white-start alternating wall. Standard entropy chain rule and conditioning inequality, applied to G243's finite cone. GC499-GC500 identify the actual boundary-language entropy as lim_N log2(M_N)/N, where M_N counts its length-N words. No stationarity of the induced visible measure, independent activation events or positive activation-density claim.
+
+Let Z_n=x_(2n)(1) and A_n be its Boolean sensitivity to initial site 2n+1, with A_0=1. Write F_n for the initial bits at sites 1 through 2n. Locality makes Z_n depend only on F_n and the fresh fair bit B_n=x_0(2n+1), and makes every earlier Z_j determined by F_n. Every binary function of one bit is affine, so
+
+    Z_n = h_n(F_n) XOR A_n(F_n)*B_n.
+
+The sensitivity A_n is independent of B_n, being a function of F_n; it is not assumed independent of earlier sensitivities. Conditional on F_n, an active output is fair and an inactive output deterministic. Hence H(Z_n | F_n)=P(A_n=1). Because the preceding visible prefix is determined by F_n, conditioning gives
+
+    H(Z_n | Z_0,...,Z_(n-1)) >= H(Z_n | F_n).
+
+Sum the entropy chain rule, including the fair initial Z_0:
+
+    log2(M_N) >= H(Z_0,...,Z_(N-1))
+                  >= sum_(n=0..N-1) P(A_n=1).
+
+Every sample lies in the actual length-N language, so the support-size inequality applies. GC500's limit then gives h_infinity>=delta if the liminf of the displayed expected activation sum divided by N is at least delta. This is a sufficient condition, not an estimate of that liminf. G243 supplies only P(A_1)=1/4 and P(A_2)=1/8; the three-symbol lower bound is therefore 11/8 bits.
+
+*Independent controls and failed converse.* GC501's two-symbol law gives entropy 1+(1/2)*h2(1/4), at least 5/4, agreeing with the new lower bound 1+P(A_1). The unexpected formal comparator Z_0=B_0 and Z_n=x_0(2n) for n>=1 has A_n=0 for every n>=1 but independent fair outputs and entropy rate one. It respects the same input-window upper bounds but is not a Rule 30 construction. Thus absent last-pivot activity supplies no entropy upper bound; earlier inputs may carry all the information. GC558's isolation, if verified, gives only an upper frequency bound on this particular sufficient channel, not on total language entropy. No experiment was run. Independent hand reading requested.
+
+*G244 duplicate audit.* W244 nearest W243,W239,G212 read in full, including their extensions and summaries. W243 supplies the exact local sensitivity mechanism; W239 is an abstract and finite-width block construction; G212 supplies an upper information ceiling for noisy full-row observations. This is a lower conditional-entropy application to the wall language, not any of those conclusions. The chain rule and conditioning inequality are standard; no information-theoretic novelty is claimed.
