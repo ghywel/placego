@@ -333,3 +333,5 @@ app is unpublished by design.
 
 - `lexicon/rule210_gpt_deviation_audit.py`: GC466 independent decimal-rule integer-vector certificate;9 states, life3, no irregular endpoint/return/cycle; shifted-background rejection PASS.
 - `lexicon/rule210_gpt_base_certificate.py`: GC467 exact121-prefix base for L274; unique R, depth120 two survivors,256 scalar and3 tail controls PASS.
+
+- `prizes/collatz_gpt_schedule_shape_guard.py`: GC468 terminal-generated no-NN words through14 folds;2581 unimodal laws, exact mass controls PASS; generic-N dip retained.
