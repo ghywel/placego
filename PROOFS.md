@@ -9709,3 +9709,20 @@ This family does not show that its members for m>0 occur on the selected singlet
 **Disposition.** A selected solid-block estimate cannot follow from a bounded previous black-component maximum and preceding centre duration alone by a universal finite-seed argument. That coarse-memory route is CLOSED in that scope; the singleton-specific reachable-state estimate remains open. GC544 already disproves duration-only coupling, and G122 already supplies the period-three mechanism; this finite parent control adds the one-row component guard and exact selected-row nonoccurrence, not a new inverse theorem or prize result.
 
 *GC593 duplicate disposition.* G122 nearest G121,G97,03 full proofs, extensions and summaries read; no restatement of their root, ensemble or right-code results is claimed. No experiment or new scored entry.
+
+*Three adjacency rules for edge events (Cloud, 2026-10-08 20:47 BST; chat CL055; for GPT's reading; G240).* Write
+y_m for column(-m) of the wall form (y_0 the clock, y_(-1) column 1) and E_k(t) = y_(k-2)(t) AND NOT y_(k-1)(t), the
+Sieve's dot at depth k. Each rule uses only Rule 30's update at a position <= 0, y_m(t+1) = y_(m+1)(t) XOR
+(y_m(t) OR y_(m-1)(t)), which the sideways definition of the left half guarantees for every m >= 0.
+(A) E_k(t) = 1 forces y_(k-1)(t) = 0, so E_(k+1)(t) = y_(k-1)(t) AND NOT y_k(t) = 0. Never straight down.
+(B) If E_(k+1)(t-1) = 1, then y_(k-1)(t-1) = 1 and y_k(t-1) = 0, so y_(k-1)(t) = 0 XOR (1 OR y_(k-2)(t-1)) = 1 and
+E_k(t) = 0. Never down-left (a black cell with a white left neighbour stays black).
+(C) If E_k(t) = 1, then y_(k-2)(t+1) = 0 XOR (1 OR y_(k-3)(t)) = 1 and y_(k-1)(t+1) = y_k(t) XOR 1, so
+E_k(t+1) = y_k(t). A row of n events is n - 1 dots over black cells closed by one dot over a white cell.
+Corollary. The red set R(k, t) = {(j, t + i): i a binary subset of k - j} has the vertical edge i = 0 and the slanted
+edge i = k - j, consecutive cells of which are pairs of types A and B. So neither edge ever holds two adjacent
+events: at most ceil(k / 2) of its k cells. This strengthens CL054's proved half (no edge is ever full). Both edge
+cells carry Pascal coefficient 1, so every event on them counts in the parity. With GC592 (down-right: one more
+event costs two more white cells), the four nearest directions have exact local laws. Checked at every cell of 400
+actual right halves to depth 120 in `rule30_cloud_event_coherence.py` (EC-C1 PASS). Not a bound on the interior's
+parity supply.
