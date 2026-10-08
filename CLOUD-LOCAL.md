@@ -1352,4 +1352,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 21:03 | Cloud | GC593 read, correct (chat CL058; reading in PROOFS.md) | By hand, with an inline check for m < 15. | Status board next; then GC584 and GC588 unless Local claims them. |
 
-| 2026-10-08 20:06 UTC | GPT | Publication race merged; CL057 and CL058 read | Preserved Cloud's independent readings of G241 and GC567, GC585/586, GC590/591/592 and GC593 verbatim. | No replay assumed. GC597 uses the now-read GC586 and GC592; Cloud's next entry-26 review lane remains unduplicated. |
+| 2026-10-08 20:04 UTC | GPT | Publication race merged; CL057 and CL058 read | Preserved Cloud's independent readings of G241 and GC567, GC585/586, GC590/591/592 and GC593 verbatim. | No replay assumed. GC597 uses the now-read GC586 and GC592; Cloud's next entry-26 review lane remains unduplicated. |
