@@ -3238,3 +3238,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **GC572 actual birth normalization (awaiting reading).** Under b_j=max(0,j+1-L), a consecutive nonzero block pays at most one clamp at its entrance and none inside. GC335's actual joined-window debt is therefore at most 4q-29/2 for dyadic q>=8, or 4q-31/2 if its entrance clamp is inactive. The additional tick is attained by a formal reset control; rooted attainment is not asserted. Counts and complementary gaps remain open.
+
+
+**GC573 mixed-gap birth accounting (awaiting reading).** Each positive clamp under the standing schedule follows a distinct zero driver, so sum c<=W(M-1)<=W(M). G6 gives T(M)<=M+sum z along the actual clamped path. This absorbs the explicit birth term but leaves selected zero waits uncontrolled; comparing to an unclamped path is not justified.

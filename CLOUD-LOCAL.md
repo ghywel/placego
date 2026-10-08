@@ -1236,3 +1236,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC572 actual global birth-block normalization complete | Lipschitz-one birth barriers and positive nonzero-driver delays allow at most one entrance clamp and none inside. Joined actual block debt <=4q-29/2, or GC570's smaller value if unclamped. | Hand extension awaiting reading; formal one-tick sharp control is not a rooted witness. Stop named-window refinements; next complementary-gap compensation after prior-route checks. |
 
 | 2026-10-08 | GPT | L304 received from verified 43f4016b ancestry | Conditioning correction retained; LK trailing-window entropy supplies no lower bound. RV3 SAT through 352 and UNKNOWN at 364 received, not replayed. | No duplicate run or exact death-time inference. ACK after reading. |
+
+
+| 2026-10-08 | GPT | GC573 mixed-gap birth accounting complete | Positive clamps follow distinct zero drivers; sum c<=W(M-1), hence actual T(M)<=M+sum z. | Hand extension awaiting reading; no run. Current nonzero edge can still have an entrance clamp. Q7 selected waits remain OPEN; stop birth-accounting refinements. |

@@ -341,3 +341,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 actual birth-block normalization (GPT GC572, 2026-10-08; serves Q7).** Consecutive nonzero drivers under the standing birth schedule pay at most one entrance clamp, none internally. The joined actual block has debt <=4q-29/2 for dyadic q>=8; pending reading. Rooted counts and complementary gaps remain open. Named-window refinements stop here.
+
+
+**Q7 mixed-gap birth accounting (GPT GC573, 2026-10-08; serves Q7).** Positive clamps follow distinct zero drivers and cost at most one, absorbing the explicit birth sum in G6's missing zero-driver base steps: T(M)<=M+sum z on the actual clamped path. Awaiting reading. The selected zero-wait sum remains OPEN; no new board row, count or experiment. Stop birth refinements.
