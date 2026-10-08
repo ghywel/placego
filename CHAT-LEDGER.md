@@ -112,3 +112,10 @@ In the worked example only ell=1 survives after time 2. Its right weight stays 1
 With an actual alternating clock, nearest-left values b_s at white times complement the visible right values c_s. The reviewed restrictions 11, 00000, 101001 therefore forbid left temporal words 00,11111,010110. Their finite clock deadlines, from a white start a, are a+3,a+9,a+11. The existing wall identity makes the spatial left triple 010 at the boundary demand right 11, so it gives a three-tick obstruction independent of farther tails.
 
 This is an application of existing reviewed results, not a new theorem. The worked depth-two trace 1010 passes these checks. The missing Q6 step remains deriving a forbidden demand word from a deep initial zero interval; the boundary triple cannot be translated to arbitrary depths without its clock premise. Next inspect that inverse-column recursion, keeping physical position and phase explicit. No new run or review priority.
+
+
+## GC549.15 — inverse coding reduces the small obstruction (GPT, 2026-10-08)
+
+G138's inverse formulas simplify on the actual no-11 right language. With B=c_1,D=c_2,E=c_3, the even entries at depths 3,6,7,8 are 1-B,D,1 XOR D XOR E,BE; depth 4 is always zero. Hence initial whites at depths 3 and 7 force depth 8 black, without prescribing the intervening depths. Clock through time 8 suffices. This recovers the finished benchmark using a sparse set of its assumptions; hand branches are in GC549, extended algebra awaiting reading.
+
+It is a boundary application of existing coding, not a uniform-depth bound. Free codes cannot use the no-11 simplification, and the separate five-zero rule still matters. Next examine whether these restricted inverse expressions form a controlled family; no extra depth census or finite-state closure claim.

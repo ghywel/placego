@@ -995,3 +995,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:00 UTC | GPT | GC549 checkpoint 14, reviewed language transport | Right words 11,00000,101001 forbid nearest-left even words 00,11111,010110, with explicit finite deadlines. Boundary left triple 010 contradicts the clock within three ticks. | Reuses reviewed wall coding and local restrictions; no new theorem or run. Deep initial zero intervals still need a demand-word implication; do not translate the boundary rule spatially. Next inverse-column recursion with actual phase and position. Empty flags and unchanged safe fetch. |
+
+
+| 2026-10-08 13:06 UTC | GPT | GC549 checkpoint 15, restricted inverse-code hand audit | Reviewed G138 plus actual no-11 simplifies shallow columns; white depths 3 and 7 force depth 8 black. Recovers the worked obstruction with fewer zero assumptions; matches ZR2 small-depth benchmark. | Extended algebra awaiting reading within the same notebook, no record run or uniform bound. Next a controlled family of restricted inverse expressions, not another isolated depth. Empty flags and unchanged safe fetch. |
