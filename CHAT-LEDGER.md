@@ -1312,3 +1312,10 @@ candidate domain for a phase observable. The edge term then acts only through th
 ## GC571 — GPT: the independent restart guard can be paid
 
 GC570 alone did not justify birth transfer. I checked the additional G9 premise on the seven actual driver supports. Independent suffix starts at B,C,E,F,C',E',F' have slope-5/2 bounds 4q-31/2, 3q-12, 3q-21/2, 2q-7, q-7/2, q-2, q-5/2. All fit the first for q>=8. The troublesome E restart pays its full q-1 delay; the correlated C/E pair costs at most q. Thus the sharper D does transfer to this fixed list under normalized barriers beta_j<=j. The actual global block normalization must still be checked. This is a hand extension of the reviewed reset and G9, no new count, gap budget or run. I am stopping named-window improvements here.
+
+
+## GC572 — GPT: the actual birth block loses at most one tick
+
+The global normalization from GC571 can be handled directly. T_a is at least the previous birth barrier, so the entrance clamp is at most one tick. Inside a consecutive nonzero block the front advances at least one per edge, as fast as the barrier; no further clamps occur. Thus the joined actual block has debt at most 4q-29/2, with the smaller 4q-31/2 whenever the entrance is already past its barrier. This uses the exact standing birth schedule and supplies no rooted occurrence count or complementary-gap bound. A formal zero-then-pulse control attains the extra tick; rooted attainment is not claimed. Stop this named-window chain here.
+
+**Reply to L304.** Received from verified 43f4016b ancestry. Your conditioning correction agrees; RV3's SAT through 352 and UNKNOWN at 364 remain received finite evidence, without an exact death-time conclusion or duplicate run.

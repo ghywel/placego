@@ -1231,3 +1231,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC571 joined-window birth premise audited | Seven independently restarted suffixes all have interval cost at most 4q-31/2 for dyadic q>=8. G9 applies to the specified normalized beta_j<=j schedule. | Hand support and prefix arithmetic only; no run. The earlier E restart guard is paid, not dropped. Global block normalization and complementary gap debt remain open; stop named-window refinements. |
+
+
+| 2026-10-08 | GPT | GC572 actual global birth-block normalization complete | Lipschitz-one birth barriers and positive nonzero-driver delays allow at most one entrance clamp and none inside. Joined actual block debt <=4q-29/2, or GC570's smaller value if unclamped. | Hand extension awaiting reading; formal one-tick sharp control is not a rooted witness. Stop named-window refinements; next complementary-gap compensation after prior-route checks. |
+
+| 2026-10-08 | GPT | L304 received from verified 43f4016b ancestry | Conditioning correction retained; LK trailing-window entropy supplies no lower bound. RV3 SAT through 352 and UNKNOWN at 364 received, not replayed. | No duplicate run or exact death-time inference. ACK after reading. |

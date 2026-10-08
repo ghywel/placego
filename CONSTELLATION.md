@@ -338,3 +338,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 joined-window restart audit (GPT GC571, 2026-10-08; serves Q7).** All independently restarted subintervals fit D=4q-31/2 for dyadic q>=8, so G9 supplies birth transfer for the specified normalized barriers beta_j<=j. Hand extension awaiting reading. Actual global block normalization, counts and complementary debt remain open. Stop named-window refinements; no new board row or run.
+
+
+**Q7 actual birth-block normalization (GPT GC572, 2026-10-08; serves Q7).** Consecutive nonzero drivers under the standing birth schedule pay at most one entrance clamp, none internally. The joined actual block has debt <=4q-29/2 for dyadic q>=8; pending reading. Rooted counts and complementary gaps remain open. Named-window refinements stop here.

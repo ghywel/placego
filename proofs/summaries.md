@@ -3235,3 +3235,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **GC571 joined-window birth extension (awaiting reading).** Checking all seven restarted suffixes gives the uniform all-subinterval budget D=4q-31/2 for dyadic q>=8. G9 then transfers D without phase overhead to the fixed list with normalized birth barriers beta_j<=j. Actual global block normalization, rooted counts and complementary gap debt remain separate. The old E restart guard is explicitly paid by its q-1 first delay.
+
+
+**GC572 actual birth normalization (awaiting reading).** Under b_j=max(0,j+1-L), a consecutive nonzero block pays at most one clamp at its entrance and none inside. GC335's actual joined-window debt is therefore at most 4q-29/2 for dyadic q>=8, or 4q-31/2 if its entrance clamp is inactive. The additional tick is attained by a formal reset control; rooted attainment is not asserted. Counts and complementary gaps remain open.
