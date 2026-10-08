@@ -26,6 +26,15 @@ UNEXPECTED CHECK (extends RRX-P1): e is at most 10 at every depth and phase, so 
   the clock from its first beats while d grows to 81. At d = 21 .. 41, e was 4 to 7. Confidence 0.6.
 Counterfactual: if e grows with d, beyond d / 4 say, the samples near the run's own entry suffice to end it, which
   would point to a local synchronization mechanism (the RRX counterfactual, at depth).
+
+OUTCOME, 2026-10-08 (by 17:22 BST; 36 min on one core, CaDiCaL): RRP-C1 PASS. The per-phase records, phase 0 / phase
+  1, are 10/11 at d = 49, 10/11 at 57, 11/10 at 65, 9/10 at 73 and 11/12 at 81, each SAT with a simulated model and
+  UNSAT one longer. Their maxima reproduce RR's 11, 11, 11, 10, 12 in an independent encoding and solver. RRP-P1 HELD:
+  the phases differ by exactly 1 at every depth. RRP-P2 HELD: phase 1 leads at 4 of 5 (phase 0 at d = 65). The
+  unexpected check was REFUTED, by one. The suffix thresholds e, phase 0 / phase 1, are 2/4, 11/8, 2/7, 0/1 and 8/11:
+  twice 11, against the predicted ceiling of 10. Its substance holds and the counterfactual did not occur. e stays
+  between 0 and 11 while d runs from 49 to 81, nowhere near d / 4, so ending a realizable run still needs the clock
+  from its first dozen beats. At d = 73, phase 0 needs it from time 0.
 """
 import os
 import sys
