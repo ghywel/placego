@@ -379,3 +379,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_front_window.py`: GC507 exact damage derivative on 64 triples and 12 finite-pair one-tick controls, all PASS. Arbitrarily wide finite damage has a hand-proved maximal jump to a singleton; ambient fixed-window CF refuted. No iid single-flip reachability or speed claim.
 
 - `lexicon/rule30_gpt_front_reset.py`: GC508 causal aftermath of 12 finite-pair singleton resets, all PASS in independent updates. Guaranteed floor(N/2) left advances and odd-N healing endpoint; no iid reachability, regeneration or speed theorem.
+
+- `lexicon/rule30_gpt_front_exposure.py`: GC511 fixed three-tick audit on the existing 8192 patches. Independent rules, 800 pre-gap and 1312 post-gap fresh groups, and 24576 exposure-accounting prefixes PASS. Reused fairness CF refuted; supports GC509-GC510 pending hand review, no speed fit or longer horizon.
