@@ -31,7 +31,35 @@ PREDICTIONS (Local's, published before the run):
   TS-C0 (control): the integer coding agrees with a scalar truth-table evolution on every survivor's cone.
   TS-C1 (control): the identity holds at every (t, j) in every survivor's cone with x_t(j+1) = 0 and t + 2 <= T
          (a failure here would be a coding fault or a false identity).
-OUTCOME: not yet run.
+OUTCOME (first run), 2026-10-08 05:05 (M5, one run at commit 657ed9c; transcript outside Git; 0.0 s).
+  TS-P1 HELD: 16 white inputs; the 4 that need the h z correction are exactly those with h = z = 1.
+  TS-P2 HELD: G231's two vanishings and GC459's application hold at every n with 2n + 5 <= 48 on every survivor; no
+         frontier failure.
+  TS-P3 REFUTED: survivor counts by depth run 1, 2, 3, 6, 1, 2 with period 6 from depth 1. Exactly one survivor at
+         every depth = 1 or 5 (mod 6); at the other depths up to six, differing only in trailing sites not yet decided.
+         The unique depth-47 prefix is the set of sites 1 .. 47 coprime to 6, {1, 5, 7, 11, 13, ..., 43, 47}.
+  TS-P4 HELD. TS-C0 and TS-C1 PASS.
+  TS-P5 HELD as stated, but only through a frontier artefact: its single witness (t 0, j 44, patch 00011) lies on the
+         depth-48 survivor whose undecided site 48 is black. On the forced prefix (sites 1 .. 47, coprime to 6) no cone
+         cell with a white intervening bit has h z = 1.
+Observation after the run (not predicted; hand proof, to be filed through review). Every site coprime to 6 is odd, so
+the row R(i) = [i >= 1 and gcd(i, 6) = 1] has black cells only where t + i is odd at t = 0. G26's parity argument then
+runs over the whole line: adjacent cells are never both black, (1 - c) r = r, and the orbit is exactly Rule 90. Even
+times leave the centre white. At odd t = 2m + 1 the centre is the sum of C(2m+1, j) over m + 1 <= j <= 2m + 1 with
+j != m + 2 (mod 3) (site i = 2j - 2m - 1). That index set is symmetric under j -> 2m + 1 - j, and the trisection
+formula gives the j = m + 2 class the total (2^(2m+1) - 2)/3, so the sum is (2^(2m+1) + 1)/3, a Jacobsthal number,
+always odd (1, 3, 11, 43, ...). So R gives an empty-left full 0101 Rule 210 orbit: the family GC454 .. GC459 speak of is
+not empty. Every member equals R exactly when every member has all even initial sites white: those then run Rule 90,
+whose odd sites the centre fixes triangularly (site t enters time t with coefficient 1). The census forces R through
+site 47.
+
+DEEP MODE (python3 tests/probes/lexicon/rule210_two_step_review.py deep), predictions published before its run:
+  TS-P6: the seed R restricted to sites 1 .. 3000 gives centre x_t(0) = t mod 2 for every t <= 3000.
+  TS-P7: the census continued to depth 240 keeps the count pattern by depth mod 6 (1:1, 2:2, 3:3, 4:6, 5:1, 0:2), and
+         every unique survivor (depths = 1, 5 mod 6) is R restricted to sites 1 .. d.
+  TS-P8: inside R's determined cone through 3000 (i + t <= 3000), every black cell has t + i odd and no two adjacent
+         cells are black, so every product V_t(i) vanishes and Rule 210 acts as Rule 90 throughout.
+  TS-C2 (control): for m < 300 the exact integer sum above equals (2^(2m+1) + 1)/3.
 """
 import time
 
@@ -153,5 +181,60 @@ def main():
     print('%.1f s' % (time.time() - t0))
 
 
+def deep():
+    global B, MASK, OFF, T
+    t0 = time.time()
+    N, D = 3000, 240
+    B, OFF = 2 * N + 40, N + 20
+    MASK = (1 << (B + 1)) - 1
+    R = [i for i in range(1, N + 1) if i % 6 in (1, 5)]
+    rs = rows_of(R, N)
+    p6 = all(bit(rs[t], 0) == t % 2 for t in range(N + 1))
+    print('TS-P6', 'HELD' if p6 else 'REFUTED')
+    pos_par = [sum(1 << p for p in range(B + 1) if p % 2 == k) for k in (0, 1)]
+    p8 = True
+    for t in range(N + 1):
+        cone = MASK & ~((1 << (B - (N - t + OFF))) - 1)
+        row = rs[t] & cone
+        # site i at bit p = B - i - OFF; t + i even <=> p = t + B - OFF (mod 2)
+        if row & pos_par[(t + B - OFF) % 2] or row & (row >> 1):
+            p8 = False
+            print('P8 fails at t', t)
+            break
+    print('TS-P8', 'HELD' if p8 else 'REFUTED')
+    c2 = True
+    for m in range(300):
+        n = 2 * m + 1
+        s, c = 0, 1
+        for j in range(n + 1):
+            if j >= m + 1 and (j - m - 2) % 3:
+                s += c
+            c = c * (n - j) // (j + 1)
+        c2 &= s == (2 ** n + 1) // 3 and (2 ** n + 1) % 3 == 0
+    print('TS-C2', 'PASS' if c2 else 'FAIL')
+    B, OFF, T = 2 * D + 40, D + 20, D
+    MASK = (1 << (B + 1)) - 1
+    alive, counts = census()
+    want = {1: 1, 2: 2, 3: 3, 4: 6, 5: 1, 0: 2}
+    pat = all(counts[d] == want[d % 6] for d in range(1, D + 1))
+    uniq = True
+    alive, _ = [[]], None
+    for d in range(1, D + 1):
+        nxt = []
+        for pre in alive:
+            for v in (0, 1):
+                sites = [i + 1 for i, b in enumerate(pre + [v]) if b]
+                r2 = rows_of(sites, d)
+                if all(bit(r2[t], 0) == t % 2 for t in range(d + 1)):
+                    nxt.append(pre + [v])
+        alive = nxt
+        if d % 6 in (1, 5):
+            uniq &= len(alive) == 1 and [i + 1 for i, b in enumerate(alive[0]) if b] == [i for i in R if i <= d]
+    print('counts', ' '.join(str(counts[d]) for d in range(1, D + 1)))
+    print('TS-P7', 'HELD' if pat and uniq else 'REFUTED', '(pattern %s, unique-and-R %s)' % (pat, uniq))
+    print('%.1f s' % (time.time() - t0))
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    deep() if sys.argv[1:] == ['deep'] else main()
