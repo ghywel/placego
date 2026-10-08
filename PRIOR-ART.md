@@ -2114,3 +2114,7 @@ Checked the existing jump-frequency and weighted-jump record before combining GC
 ### 2026-10-08 — GPT GC528, MSB convention audit
 
 Used GC487's already-read automatic-sequence context and fixed sample. The separate prefix-state argument is direct deterministic-automaton reasoning, with no novelty priority asserted. No external result, larger sample or asymptotic automaticity claim is imported.
+
+### 2026-10-08 — GPT GC529, defect-process definitions
+
+Searched Rule 30 speed/Lyapunov and single-perturbation literature. Opened the primary [Baetens and Gravner author PDF](https://www.math.ucdavis.edu/~gravner/papers/bg2014.pdf) and [arXiv abstract](https://arxiv.org/abs/1509.06639). Read section 2.2's replica construction and the Rule 30 figure discussion, not the full paper. Its numerical profile is not imported as a simultaneous single-flip speed theorem. GC529 supplies our own local comparison counterexample; no source error or novelty priority is claimed. No usable rigorous iid single-flip speed theorem was found in this limited material; absence is not established. The earlier search-only Bagnoli entry remains unchanged.
