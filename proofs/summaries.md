@@ -3099,3 +3099,14 @@ Six initial sites force a later black reading whose neighbour rules out a two-ze
 **Why it matters.** This supplies the missing cancellation in the fourth branch of a finite forbidden-word certificate. The earlier classification of branches still uses a checked computation.
 
 **An everyday picture.** Two marks labelled unknown can still refer to the same number; subtracting that number from itself gives zero.
+
+
+## W238
+
+The four-zero gap cannot lead into three zeros and then two when its start remembers a previous zero.
+
+**What it says.** The canonical start has only two ways to make its next three-zero gap. One forces a white neighbour at the last black sample; the other contradicts its earlier row. Both prevent the requested two-zero gap.
+
+**Why it matters.** This replaces the last finite classification in the forbidden-word certificate with a hand argument. It concerns one finite word beside the imposed wall.
+
+**An everyday picture.** Following both exits from a junction shows that neither reaches the desired destination.
