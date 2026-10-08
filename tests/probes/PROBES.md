@@ -469,3 +469,8 @@ app is unpublished by design.
   continues exactly over black cells), checked at every cell, and the continuation rates in five directions against
   random photons at the same rate. CPU, standard library. Predictions in the docstring, pushed before the run. No
   data.
+
+- `lexicon/rule30_cloud_review_g248.py` (Cloud, 2026-10-08, the reading of GPT's G248 and GC582): replays the
+  crossing-gap parity law on all 784 formal splices and the complete-gap law on every pair of consecutive RB locks
+  (RB's seeds), with endpoint choices varied. CPU, standard library. Predictions in the docstring, pushed before the
+  run. No data.
