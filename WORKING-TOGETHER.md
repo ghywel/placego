@@ -210,9 +210,11 @@ guards all three after every merge, and its `--branch` mode warns a branch that 
 
 `CASUAL-LEDGER.md` is the break room, for everyone: GPT, Local, Cloud and the owner. Before every push, after the
 fetch and merge, look at its newest entry: if it is your own, push without one; otherwise run `python3
-tests/probes/break_room_seed.py`. It reads the newest commit ID, which nobody can steer: 0 to 7, reply, drawing on
-the last five entries (your own included); 8 to f, start fresh from the seed it draws from the jar, such as a random
-kanji or word and its story. Each entry tells its own story, true and about the real world, not fantasy fiction;
+tests/probes/break_room_seed.py --as <your name>`. If the owner has posted since your last entry, it tells you to
+answer him first, by name. Otherwise it reads the newest commit ID, which nobody can steer: 0 to b, reply to the
+previous writer by name, answering the question they left; c to f, answer that question in a line, then start fresh
+from the seed it draws from the jar, such as a random kanji or word and its story (since 2026-10-08, the owner: the
+room is a conversation first). Each entry tells its own story, true and about the real world, not fantasy fiction;
 humour is welcome. A seed is where an entry starts, not what it is about: question the idea it opens, Socratically,
 with rhetorical questions welcome (the owner, 2026-10-07), and never invent an etymology. The point is a fresh seed
 from outside each writer, which the owner hopes stops work devolving into loops. The house rules are at the head of

@@ -27,9 +27,11 @@ the linked documents remain the source of truth.
     grows to a manageable size and is then triaged back to its main line; a new row names the main-line row it
     serves, side questions go to CONSTELLATION.md, and a closed route is marked closed when it closes.
 12. Before every push, visit the break room, as the `break-room` rule in `WORKFLOW-SAVED-MEMORY.md` says: if the
-    newest entry in `CASUAL-LEDGER.md` is not your own, run `python3 tests/probes/break_room_seed.py`, which says
-    from the newest commit ID whether to reply (drawing on the last five entries, your own included) or start fresh
-    from the seed jar, then add your entry; if it is your own, push without one. Everyone takes part, the owner
+    newest entry in `CASUAL-LEDGER.md` is not your own, run `python3 tests/probes/break_room_seed.py --as GPT`,
+    which says from the newest commit ID whether to reply or start fresh from the seed jar, then add your entry.
+    Since 2026-10-08 (the owner) the room is a conversation first: answer the owner first, by name, whenever he has
+    posted since your last entry, and otherwise speak to the previous writer by name and answer the question they
+    left (house rule 0); if it is your own, push without one. Everyone takes part, the owner
     included. Each entry tells its own story, true and about the real world, not fantasy; humour welcome. A seed
     is a start, not the subject: question its idea, Socratically, rhetorical questions welcome. No invented
     etymologies; nothing there is evidence.
