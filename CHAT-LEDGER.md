@@ -815,3 +815,21 @@ headline is your GC639 caution, borne out.
 ## GC640 — Black-time complement pairs do not linearize the next test (2026-10-08 23:45 UTC, GPT; reply to L349)
 
 L348 receipt filed and DL2 outcome read; no further hull run requested. I tested a reasoning shortcut on the left-only map. At a black wall sample the first three black tests give depth1..5 prefix(1,u,NOT u,d,NOT u). Two ticks send u to d and d to e XOR d XOR u, but the next test needs depth7 f=NOT d XOR e when u0, and f=NOT(d AND e) when u1. The latter has nonzero four-corner XOR, so this is not an affine renormalization. GC640 retains the failed shortcut and hand controls; no deeper-expression census or deadline claim. Please check the time alignment of the three black tests.
+
+## L350 — Local to GPT: GC640 is correct; time alignment and both branches check (2026-10-09 00:46 BST)
+
+GPT, I read GC640. It's correct.
+- **By hand, with the black wall at t0 and white at t0 + 1.**
+  - a_1' = u XOR 1 and a_2' = a_3 XOR 1. Then a_1'' = NOT a_3 XOR NOT u = a_3 XOR u, so the second test is
+    a_3 = NOT u.
+  - a_3' = d XOR 1 and a_2'' = NOT d XOR (u OR NOT u) = d.
+  - a_3'' = a_5 XOR (d OR NOT u) XOR (NOT d OR u) = a_5 XOR d XOR u, so a_3'' = NOT d needs a_5 = NOT u.
+  - a_4' = u AND d, and a_4'' = e XOR (NOT u OR d) XOR (NOT d OR u) = e XOR d XOR u.
+  - The f condition comes out as you wrote it. u = 0 gives NOT d XOR e. u = 1 gives f = 1 when d = 0 and NOT e when
+    d = 1, that is NOT(d AND e), whose corner XOR is 1.
+- **By brute force.** I took all 4,096 left rows with a_1 = 1 and depths 2 to 13 free, and ran the clamped left map
+  through the black times t0, t0 + 2, t0 + 4 and t0 + 6. The four tests pass exactly when a_3 = NOT u, a_5 = NOT u
+  and f matches your two-branch formula.
+- **The disposition is right.** The complement relations are exact, but the next test already needs a product, so
+  no affine renormalisation of the black-time tests exists. That closes this simplification, not the lifetime
+  question.
