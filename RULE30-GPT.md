@@ -14703,3 +14703,20 @@ The crossing-gap filter {2,4} retains 264 pairs, with level-jump support every i
 The broader labelled filter {1,2,3,4} retains 468 pairs, with support -6 through +13. Its +13 witness uses phases 0/23 and a crossing 1-gap. No actual-language admission is inferred. The identified unexpected check finds 75 short crossing gaps cut from two original long gaps; first witness phases 0/2 has jump +6 and crossing gap 2. All 28 unchanged-phase pairs retain their original gaps and zero jump. Spectrum multiplicities are formal phase-pair counts, not event frequencies.
 
 **Disposition and next.** Visible wheel gaps alone allow the wrong positive tail. The counterfactual explaining the instant spectrum through this filter is rejected, while the stronger actual-splice hypothesis remains open. Stop enlarging arbitrary seam tables. Next examine the +10 witness against GC503's actual hidden-row gate or an existing forbidden visible block, and retain maximal-lock timing: the arbitrary seam coordinate need not be the actual departure boundary. A narrower event definition or full Rule 30 admissibility may remove this seam. No half-turn exclusion, forward-sign proof or prize result follows.
+
+
+## GC579 — The +10 formal seam survives the one-column and greedy-lock checks (2026-10-08)
+
+**Bears on the kicked-wheel lead; bounded hand audit.** Inspect only GC578's maximum witness, not another seam table. Use full physical-time U, old phase zero and new phase offset 44 (visible index 22). Define sigma(t)=U(t mod 56) for t<0 and U((44+t) mod 56) for t>=0. Wall tau(t)=t mod 2. This is an infinite formal companion trace, not an asserted Rule 30 right-side realization. No trajectory, SAT or census run.
+
+The literal strings at physical offsets -6 through 8 are
+
+    old:     001101000100110
+    new:     010001001101001
+    splice:  001101001101001.
+
+Each pure half obeys reviewed Lemma 3. The sole seam-crossing constraint is at t=-1: tau=1, sigma(-1)=1 and sigma(0)=0, which is allowed. Thus the basic one-column gate does not discard this seam. At t=0, sigma(0)=sigma(1)=0 and sigma(2)=1. The site-1 equation forces site 2 at time 0 to be zero; at time 1 it forces site 2 zero again. The site-2 update then forces time-0 site 3 zero. This gives right prefix 000 at time 0, agreeing with GC503's one-zero termination, not a contradiction. It gives neither a full earlier predecessor nor compatibility with an arbitrarily long old wheel lock.
+
+**Identified unexpected maximal-lock check.** The old and new strings agree at t=0 and t=1; their first forward mismatch is t=2. Therefore the old maximal match ends at 2, rather than at the chosen seam coordinate 0. In RB's greedy definition the next search starts at that endpoint, and the new word matches from 2 onward. The formal off-wheel gap is zero. Re-expressing the visible seam at time 2 advances both indices to 1 and 23; both added visible bits were zero, so both wheel prefixes decrease by 3 and their difference stays +10. Backward matching of the new phase extends to -2, but RB does not rewind before the previous lock endpoint. Thus maximal-lock timing does not repair the excess positive tail for this witness. Arbitrary cut position and measured departure position were different, but the charge was unchanged.
+
+**Disposition and next.** The gap alphabet, Lemma 3 and greedy maximal-lock timing all leave this formal instant +10 splice available. This is still not an actual counterexample to Cloud's measured instant spectrum: its full hidden right continuation remains unconstructed. Stop seam-coordinate and one-column refinements. The next useful filter must retain multiple right columns or prove that an actual old lock forbids the needed hidden seam state. Reviewed entry 26's finite right-boundary automaton is the relevant prior record; audit its domain before proposing another instrument. No forward-sign, half-turn or prize conclusion.

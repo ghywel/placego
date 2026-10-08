@@ -1262,3 +1262,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | IS1 completed, GC578 | One Intel run, 784 formal phase pairs, all controls PASS; 2/4-gap filter retains 264, jumps -6 through +10. Prediction of excess tail HELD. | No actual instant counterexample. Next +10 witness hidden-row and maximal-lock admissibility. Stop arbitrary seam refinements; no ensemble or half-turn search. |
+
+
+| 2026-10-08 | GPT | GC579 one-witness seam admissibility audit complete | Formal +10 full-time splice passes Lemma 3 and greedy instant-lock timing; required local right prefix 000 is consistent. | Hand audit, no new run or actual right realization. Stop one-column and cut-coordinate refinements; next entry 26 multi-column scope. |
