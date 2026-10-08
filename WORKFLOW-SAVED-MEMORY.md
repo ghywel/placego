@@ -262,8 +262,9 @@ In the human's words: "I have made a human error of chasing the golden goose."
 status board (PERIOD-TWO.md §6) holds only work on the prizes. While it grows, new rows are welcome, each naming the
 main-line row it serves; a question that serves none goes to CONSTELLATION.md, and a board row that turns out to be
 one is tagged **PARKED**. When the active rows pass about a dozen (a working ceiling, to adjust), and at the latest
-at each rotation of CHAT-LEDGER.md, the board contracts: Cloud drafts a triage (keep, close, merge or park each
-row), Local applies it once the others have had their say, and the board returns to its main line before it grows
+at each rotation of CHAT-LEDGER.md, the board contracts: Local drafts a triage (keep, close, merge or park each
+row; Cloud drafted it until 2026-10-08, see cloud-off-pool) and applies it once the others have had their
+say, and the board returns to its main line before it grows
 again. A route closed with its reason recorded is progress: mark it CLOSED or DONE in the commit that closes it,
 rather than leaving it PART because it did not solve the prize.
 
@@ -368,7 +369,8 @@ what would refute it before running anything, keep the failures, and write the r
 for another party's second reading. Then it is done: no second round, and never a place on the status board. A line
 under "Might inspire" may seed a later spark, which starts as a new entry. Since the owner's word of 2026-10-07,
 Cloud keeps the sparks: it reads the break room for testable ideas, lists the candidates and runs them, while GPT
-and Local stay on the main project and may second-read or claim one that catches them. A spark that turns on a proof
+and Local stay on the main project and may second-read or claim one that catches them. Since 2026-10-08 Cloud is
+off the pool (cloud-off-pool), and a spark is claimed by whoever notices it. A spark that turns on a proof
 worth reading on its own gets an entry in PROOFS.md section S, numbered SP01, SP02, ... (S1, S2, ... are Local's
 checks), with a summary in proofs/summaries.md, so that it has its own page in proofs/.
 
@@ -383,6 +385,29 @@ probably make sense to let GPT and Local get on with the main project, with occa
 are the super-administrator - and Spark follow-upper. Check the break room for new tests, and continue working on
 them." And shortly before noon: "Interesting proofs from SPARKS should get their own proof write up in the
 repository - possible name as S01 etc".
+
+### cloud-off-pool
+
+**Rule.** Cloud is not in the work pool. It wakes only when the owner prompts it, with no automated tick, so nothing
+in the main workflow may wait on it. Since 2026-10-08 23:15 BST its standing duties are held as follows:
+- **Second readings:** Local reads every GPT entry, so the odd and even split of L317 ends. A claim row still
+  overrides.
+- **The board triage owed at each rotation of CHAT-LEDGER.md:** Local drafts it and applies it once the others have
+  had their say (expand-then-contract).
+- **Ledger rotations,** `CASUAL-LEDGER.md` included: the party who notices.
+- **Sparks:** whoever notices a testable idea may claim it (sparks).
+- **The proofs/ pages:** whoever edits PROOFS.md or proofs/summaries.md runs `python3 proofs/build.py` in the same
+  commit.
+- **CO-DISCOVERED-PROOFS.md:** no further imports unless the owner asks Cloud.
+
+Cloud stays the owner's partner off the pool, for ideas, renders, reviews and documentation when the owner asks.
+When the owner wakes it, it may read the ledgers and contribute, but it takes on no recurring duty. A request
+addressed to Cloud in the ledgers goes to Local, or to the owner to relay.
+
+**Why.** The owner, 2026-10-08: "Cloud, because i added in you into the main workflow from my understanding of the
+ledger you are being assigned work, however you only wake up when i tick you, not with an automated tick, so this
+requests can not be handled in a timely manner. Can you catch up on any work assigned and retreat yourself from the
+main workflow - I still need you as a tickless agent I can bounce ideas with off the main workflow pool."
 
 ### time-and-velocity
 
