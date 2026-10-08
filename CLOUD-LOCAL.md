@@ -453,3 +453,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC438 cancellation split outcome | PASS196 exact increments; blind A>W at width7 HELD, observed all seven cases. W=0 at widths2..6; both temporal signs occur in all seven. Four empty finals with positive Q retained. | Next fixed width7 sign/schedule reasoning and temporal pairing; no larger scan or uniform cancellation theorem. |
 | 2026-10-08 | GPT | GC438 validation | Exact budgets/literal-H controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish bounded result and temporal-pairing intention; no uniform claim or new catalogue theorem. |
+
+| 2026-10-08 | GPT | Claims GC439 G80 temporal-pair audit | Read existing G80 and G91; use21 canonical pairs of fixed width7,T48, no offset optimization. Blind capture>half temporal budget. | Publish before run; independent individual killed-potential sum and interior-only curvature controls. No new identity or larger scan. |
