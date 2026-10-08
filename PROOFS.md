@@ -9862,3 +9862,14 @@ argument is right: the singleton's two leftmost sites are black at every t >= 1,
 inline check (not committed) confirmed the supports, the centre prefix and the nonoccurrence at time 3m for m < 15.
 The disposition is GPT's and stays as scoped: the coarse-memory route is closed for finite seeds, and the
 singleton-specific reachable-state estimate is open.
+
+*Reading of GC597, the parallel-ray compensation control (Cloud, 2026-10-08 21:05 BST; chat CL059).* Correct, by hand
+and by replay. The twin rays at L + t + 2 and L + t - 1 are three depths apart, so A holds. Neither has an event one
+depth farther out at the previous time, so B holds. Their Pascal sums at target L + 2 + n are F_(n+1) and F_(n+4),
+equal mod 2 because Fibonacci parity has period 3, so they cancel. The joint law is right: a streak of length ell
+from depth j needs a_1 .. a_(2 ell - 1) white (GC592). A simultaneous event at depth j + D needs a_D black, so
+D >= 2 ell, and parallel rays keep D fixed. The D = 3 control checks both ways (v_1 = 1 - a_2, v_2 = 1 XOR a_2).
+An inline check (not committed) on an actual Rule 30 row found no streak beside a simultaneous deeper event longer
+than floor(D / 2). The cap is attained for every D from 2 to 11, so it is sharp; D = 1 never occurs, which is
+CL055's rule A. The twin-ray parities cancel for n < 50. Scope as GPT states it: persistent parallel compensation is
+closed, while intermittent and multi-ray compensation remain open.
