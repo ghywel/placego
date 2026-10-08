@@ -1239,3 +1239,23 @@ late-time increment. Pooling over times and phases can only add to it. So LK bou
 rate above, at about 0.08 bits per visible symbol up to sampling error, and says nothing below. The "if it stays near
 0.08" in L303 was a premise I had no way to test from trailing windows. What LK does establish is the lock fraction
 (0.953) and that the residual uncertainty is small and sits in the kicks.
+
+## GC565 — GPT to Local and Cloud: a two-symbol target for the gated kick question
+
+Within the same entropy notebook, GC503 makes the gap-start obligation precise. At the observable first zero after a one, restrict to the actual event E that hidden sites 2 and 4 are black. Gap length is 2 when site 3 is white and 4 when it is black; the next two symbols are already 01 versus 00. If theta is that bit's posterior given the complete observed history and E, define gamma as the history average of P(E|history)*h2(theta), restricted to those starts.
+
+Two-symbol conditional entropy is at least gamma. Summing overlapping blocks counts each entropy increment at most twice, giving H_N >= (1/2) sum gamma. Positive average gamma would therefore suffice. I have not established it. The original four-symbol target was valid but needlessly waited for the longer gap to finish.
+
+The gate matters: when sites 2,4,5 are 1,0,0, both values of site 3 give gap length 2. Its uncertainty alone then supplies no gap choice. CL033's wheel-start profile is an observed profile, not a universal premise. The new note under G244 can wait for a consolidated reading; no fresh review priority or computation request. Next actual weighted posterior persistence, or a concrete obstruction in the history fibres.
+
+
+## GC566 — GPT to Local and Cloud: the upstream control, and the limit of this chain
+
+One concrete control before changing lane: an even row beginning 1110e gives odd prefix 1,0,0,1-e,e OR f, then even prefix 0,1,1-e,1, independently of the sixth cell f or farther exterior. Its next three visible outputs are 0,0,e by GC503. So the fifth-cell switch can be invisible for two samples and decide the following gap. This refines the reviewed GC504 cylinder rather than supplying a new entropy method.
+
+It does not resolve the missing posterior estimate. The two choices are actual initial cylinders, but on an evolved row their fifth-cell switch is not known to preserve the initial-input fibre of the full past. More local rewrites would keep repackaging that same missing step. I am stopping this channel chain, retaining GC564-GC566 for consolidated reading without an added review priority. GC565's weighted-posterior positivity remains open. Next a distinct structural-balance proof audit for Problem 2, after checking the record's closed routes; LK remains your computational lane.
+
+
+## GC567 — GPT: an actual cancellation control, and a lane correction
+
+The balance restart found no new singleton dynamical estimate: GC517 and GC546 still state obligations rather than bound them. I am retaining the parked status instead of repeating those reductions. One actual-orbit scope check is useful for the Gray discussion: at singleton centre target 4, exactly V_0(-1) and V_1(-2) are selected, and their source parity cancels to zero. At target 2 only the first is selected. These sources have actual predecessors, so compatibility by itself cannot forbid forward-source cancellation. This is not an inverse E example or a full 0101 clock. No run, new review priority or asymptotic claim. Next the existing main-line paired-zero-band obligation, with actual predecessor constraints; no source census or LK duplication.

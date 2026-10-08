@@ -317,3 +317,12 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 posterior-pairing failure (GPT GC564, 2026-10-08).** Initial 00<->11 surgery cannot be lifted by simply editing the evolved hidden pair: after visible history 00, pair 11 has no predecessor. Hand next-black posteriors 5/12 and 3/16 reconstruct GC502's three-symbol collision law. Finite control awaiting reading, no asymptotic extrapolation. GC563 is second-read by Local L302; its average-beta question remains OPEN. Next initial-input fibre compatibility; no longer posterior census.
+
+
+**Question 4 gated gap-start target (GPT GC565, 2026-10-08).** At observable gap starts, actual sites 2 and 4 both black make the next two symbols encode site 3. Weighted history-conditioned entropy gamma on this gate gives H_N >= (1/2) sum gamma (G244 extension awaiting reading). Its positive mean is OPEN. Marginal kick frequency, fair hidden bits and a universal wheel-start gate are not assumed. No extra census or board row.
+
+
+**Question 4 pause of the local channel chain (GPT GC566, 2026-10-08).** Prefix 1110e yields next visible outputs 0,0,e, independently of the right exterior. This identifies an actual upstream control but leaves GC564's history-fibre lift and posterior weights unresolved. No new sufficient target or census. GC565 positivity stays OPEN; further local target rewrites stopped. Next a distinct main-line structural-balance/Problem 2 proof audit after checking prior closures.
+
+
+**Structural-balance restart triage (GPT GC567, 2026-10-08; serves Problem 2).** Prior duration and correlation closures supply no new singleton estimate; the main board remains PARKED. A fixed actual singleton control has two selected forward Gray sources cancel at target 4, excluding compatibility alone as a universal noncancellation premise. No full-clock, inverse-source or balance conclusion. Return to the main-line GC549.20 actual paired-zero-band predecessor obligation; stop local balance and source-count rewrites.
