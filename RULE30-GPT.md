@@ -14521,3 +14521,21 @@ Consequently a positive liminf of expected activation count divided by N would p
 **Controls and failed inference.** The unexpected arbitrary sixth-cell check survives because of the OR cancellation above. Both 11100 and 11101 are genuine initial-right cylinders at time zero, so the local alternatives are real, not free source diagrams. At a later evolved row, however, toggling its fifth cell may leave the initial-input fibre of all earlier observations. Neither closure of that fibre under the switch nor comparable posterior weights has been proved. This is exactly GC564's unresolved obstruction in a concrete upstream coordinate. A fair initial bit is not automatically fair after an evolved-row prefix and full visible history are specified.
 
 **Stop and next.** Further rewriting of the entropy criteria has stalled at the same actual-history weight. Retain the control but stop this chain of local channel reformulations and finite posterior calculations. GC565's average weighted uncertainty remains OPEN; no new sufficient target or immediate review request is added. Next a distinct main-line proof audit concerning structural balance and Problem 2, first checking the existing closed routes. Local's LK computations remain unduplicated.
+
+## GC567 — Actual singleton sources can cancel; balance lane remains parked (2026-10-08)
+
+**Bounded audit and lane decision.** Checked GC481, GC483-GC485, GC494-GC496, GC513, GC517 and GC544-GC546 before restarting structural balance. They give exact selected-trace obligations but no singleton estimate. The finite-seed duration counterexamples are not singleton counterexamples; the transition formulas do not change that. No new dynamical input was found in this audit. Keep the structural-balance board row PARKED rather than repeat its reductions or raise a fitting horizon. No computation or experimental prediction is claimed.
+
+**Concrete hand control obtained during the audit.** G241's ordinary Rule 30 Gray split is x_(t+1)=A x_t XOR V_t, A=I+S, (Sx)(i)=x(i-1), V_t(i)=x_t(i+1)*(1-x_t(i)). On the actual singleton orbit, literal updates give black supports
+
+    t=0: {0}
+    t=1: {-1,0,1}
+    t=2: {-2,-1,2}
+    t=3: {-3,-2,0,1,2,3}
+    t=4: {-4,-3,-1,0,4}.
+
+The source supports at times 0 through 3 are respectively {-1}, {-2}, {-3,1}, {-4,-1}: each source is immediately left of a maximal black spatial block. For centre target T=4, the Pascal coefficients select source sites {0,-1,-2,-3} at time 0, {0,-2} at time 1, {0,-1} at time 2, and {0} at time 3. Exactly two selected sources are active: V_0(-1) and V_1(-2). Their XOR is zero. Independently A^4=I+S^4 has homogeneous centre bit 1, agreeing with the actual time-4 centre bit 1 after the zero source parity. Thus cancellation occurs in an actual selected-seed trajectory, with coherent predecessors, rather than only in freely chosen source arrays.
+
+**Identified unexpected endpoint control.** At T=2 the same source supports give just V_0(-1) in the selected cone. The homogeneous bit is again 1, but the actual centre is 0, so the source parity is 1. Activity and parity separate already between these two fixed dyadic targets. The counterfactual that realizable nonempty selected Gray sources must have nonzero parity fails at T=4. This is a finite control, not a cancellation frequency or growth theorem.
+
+**Scope and stopping rule.** These are ordinary Rule 30 forward sources V, not the inverse sideways sources E of GC555 and not Rule 210 sources. The singleton does not have G241's assumed full 0101 clock, so this example neither refutes G241 nor constructs a period-two witness. It only blocks using actual compatibility by itself as a blanket ban on Gray-source cancellation. No claim about all compatible inverse cancellations, balance, entropy or indexing cost follows. W241's neighbours G216, G224 and G226 and their summaries were read in full: their Rule 210 parity exclusions and coefficient stencils do not cover this Rule 30 control. Reuse G241's algebra; no new proof entry or novelty claim. Stop this fixed control here. Next return to the main-line paired-zero-band obligation in GC549.20, asking for actual predecessor information beyond the already closed generic overlap sums.

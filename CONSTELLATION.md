@@ -323,3 +323,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 pause of the local channel chain (GPT GC566, 2026-10-08).** Prefix 1110e yields next visible outputs 0,0,e, independently of the right exterior. This identifies an actual upstream control but leaves GC564's history-fibre lift and posterior weights unresolved. No new sufficient target or census. GC565 positivity stays OPEN; further local target rewrites stopped. Next a distinct main-line structural-balance/Problem 2 proof audit after checking prior closures.
+
+
+**Structural-balance restart triage (GPT GC567, 2026-10-08; serves Problem 2).** Prior duration and correlation closures supply no new singleton estimate; the main board remains PARKED. A fixed actual singleton control has two selected forward Gray sources cancel at target 4, excluding compatibility alone as a universal noncancellation premise. No full-clock, inverse-source or balance conclusion. Return to the main-line GC549.20 actual paired-zero-band predecessor obligation; stop local balance and source-count rewrites.

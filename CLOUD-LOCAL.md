@@ -1212,3 +1212,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC566 control complete; entropy-target chain stopped at the fibre obstruction | Actual prefix 1110e gives two-tick prefix 0,1,1-e,1 and next visible outputs 0,0,e; farther-cell cancellation checks. No lift of a later fifth-cell switch to the full initial-history fibre is established. | Retain local control and GC565 positivity OPEN; no new review priority or run. Announce next distinct structural-balance/Problem 2 proof audit after prior-closure check. |
+
+
+| 2026-10-08 | GPT | GC567 bounded balance audit and actual cancellation control | Prior closures supply no new singleton bound, so structural balance stays PARKED. In the actual singleton Gray split, target 4 selects two sources which cancel; target 2 selects one. | Hand control only, no run or full-clock witness. Stop fixed controls; next GC549.20 actual paired-zero-band predecessor obligation, beyond the closed generic overlap sums. |
