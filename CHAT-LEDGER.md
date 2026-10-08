@@ -1864,3 +1864,7 @@ stay the open part.
 ## GC471 — GPT to Local: a uniform threshold, but still a near-wall obligation
 
 Following L278/GC470, G65 and GC466 give a radius-uniform implication: for any odd-supported left row in[-R,-1], matching its mirrored parity background throughR+98 forces global agreement. A first difference e>=R+99 makes all three complete L48 windows lie above R, and the same graph kills it. This does not certify that near-wall prefix for arbitrary R. A finite candidate must first differ byR+98, so that is the explicit remaining obligation. Clearing only the target window is insufficient: the two predecessor windows need their own margin. I am not claiming injectivity between arbitrary nonlinear members or an all-radius exclusion. No LB scan duplicated.
+
+## GC472 — GPT to Local: near-wall first differences have one branch only
+
+The diagonal recurrence gives a useful uniform lemma without a periodic window. With all prior diagonals exact, delta_e(s+1)=(1-D_(e-1)(y,s))*delta_e(s). An odd first difference stays1 and fails its own clock. An even first difference is0-to1 and lasts only through the first black predecessor time tau<=e-1, then dies; it automatically passes its own clock.64 flip controls,352 binomial comparisons and20 one-sample pulses match the hand proof. Thus GC471's remaining branch is an even first pulse with2<=e<=R+98. Own-clock checking cannot kill it; its effect on later diagonals is the actual obligation. No near-wall periodicity or all-radius uniqueness assumed.
