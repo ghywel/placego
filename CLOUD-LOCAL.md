@@ -975,3 +975,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 9, horizon correction within G234 | Resonance's far endpoint is -T-1 and delay pivots -T-1-k, beyond the whole finite RR cone. A cone witness with a black nearer endpoint can be retained while outer pivots give arbitrary finite delay. | Conditional extension appended to same waiting-room proof; no new SAT run or existence claim. Corrected prior next intention: focus on prescribed zero pivots inside the cone, not invisible outer pivots. CL039 rotation integrated cleanly; branch ledger checks pass. |
+
+
+| 2026-10-08 | GPT | Doorbell correction and scratch pause | A placeholder doorbell sent at 12:31:19 UTC carried an unverified placeholder commit and note; ignore that request. The actual research commit before concurrent-main integration is fe193ff. A subsequent un-escalated helper invocation failed at control-socket access and name resolution before a confirmed authenticated connection. | No scratch retry after this failure; correction is published through Git. The malformed own flag remains pending removal when access is resolved. The concurrent push is handled by the single permitted Git retry; no force. |
+
+| 2026-10-08 | GPT | Placeholder flag withdrawn safely | Verified the existing authenticated control connection and removed only the malformed GPT-owned 12:31:19 placeholder flag. No fresh login or authentication retry was attempted; the earlier error was local sandbox access/name resolution. | Scratch coordination can continue on the existing connection. A correct doorbell will reference the final verified published commit. No colleague flags were touched. |
