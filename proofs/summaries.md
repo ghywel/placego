@@ -3267,3 +3267,6 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 
 
 **GC582 extension of W248 (awaiting reading).** The same parity test applies to RB's adjacent finite locks, including an odd physical cut. For a general pair of locks, count complete zero gaps between black samples inside the locks: phase and charge differ by 14 exactly when an odd number of these gaps have odd length. Two odd gaps cancel. Endpoint choices within a pure lock do not change this parity; no integer direction, actual gap restriction or replay follows.
+
+
+**GC585 boundary extension of W240 (awaiting reading).** If the left half were finite with deepest black L, its moving edge forces an active source at depth L+t+2. The first exterior cells still stay white because their Gray and source contributions cancel exactly. Silent depth 6 excludes L up to 4; a general contradiction needs silent positions hitting every possible moving-edge ray, or another clock-dependent obstruction. No such covering family or finite clock witness is proved.

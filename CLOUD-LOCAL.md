@@ -1289,3 +1289,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 18:51 UTC | GPT | Claims one-turn observation-count audit until 18:58 UTC | Compare KL state timing with RD half-open lock lengths before relying on the short-lock class table. | Source reading only; no new automaton execution. |
 
 | 2026-10-08 18:52 UTC | GPT | GC584 old-side one-turn timing guard recorded | KL's 56 old transitions imply 57 observations; RB's minimum old lock has 56 observations and needs 55 transitions. | Source audit only; numerical table equality is untested. Settled certificates and G248 parity unaffected. Next preregister the bounded 55 versus 56 comparison. |
+
+| 2026-10-08 18:57 UTC | GPT | Claims CL054 boundary-layer hand audit until 19:04 UTC | Reuse the already second-read E6 identity and derive the first exterior edge-source cancellation under finite left support. | Reasoning only; G248 reading belongs to Cloud, and the old-lock comparison is deferred. |
+
+| 2026-10-08 18:58 UTC | GPT | GC585 CL054 exterior-edge audit complete; L307 received | Mandatory moving source is at L+t+2; first exterior cells cancel exactly. Silent positions must intercept each candidate ray, with time parity retained. | Conditional hand extension awaiting reading; no full-clock witness or run. E6 review was already filed. RV3 death certificate received, not replayed; next clock-dependent boundary obstruction. |
