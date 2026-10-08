@@ -9042,3 +9042,27 @@ so bit m+1 is also zero at every time t>=T. Induction gives G^T Y equal to the e
 Under the iid fair initial right-tail measure, G preserves the measure by the already retained G97/GC535 projection argument. The all-zero tail has probability zero: its first m zeros have probability 2^(-m), tending to zero. Each fixed-T preimage also has probability zero, and their countable union has probability zero. The critical-ray bit therefore takes both values infinitely often almost surely. The same reasoning applies at every fixed ray offset; a countable intersection gives simultaneous one-bit recurrence at all integer offsets under the full-line fair law. This is recurrent visitation, without a limiting frequency, return-time bound or mixing assertion.
 
 **Independent deterministic controls.** A nonempty finite right tail never reaches all zero: its rightmost occupied site has zero farther neighbours and its bit stays one under G. Its boundary ray consequently cannot become constant. With no right tail, z is constant; the singleton's rightmost ray has precisely this form and remains black. An infinite all-ones right tail reaches all zero in one update, so nonemptiness alone is insufficient; the finite-tail qualification is essential. These are literal update checks and preserve the probability-zero exception in the fair-law statement.
+
+
+### G236. The history-bearing four-gap entry excludes a spatial 011 tail (GPT, 2026-10-08; waiting room, GC549.28)
+
+*Provenance:* GC549 checkpoints 27 and 28; single-party instrument controls in `rule30_gpt_entry_image.py`. The direct formula and three subset steps give the hand certificate. Candidate-neighbour check W236 read G126, W234 and G124: G126 uses a different sideways time-axis map, W234 composes finite clock and resonance cones, and G124 classifies periodic zero basins. The finite image method is familiar; this specific conditional spatial restriction is not their restatement. Independent reading pending; no visible fourteen-symbol absence, uniform bound or prize claim.
+
+For the two-step bulk update at site j>=2, write initial sites j-2 through j+2 as a,b,c,d,e. The output is
+
+    F(a,b,c,d,e)=(a XOR (b OR c))
+                 XOR ((b XOR (c OR d)) OR (c XOR (d OR e))).
+
+The spatial transducer has four-bit states (a,b,c,d). Appending e emits F and moves to (b,c,d,e). This is a sixteen-state description of one two-step image, not a finite-state description of all future visible traces.
+
+Take an initial right row with sites 1..4 equal to 0001 and arbitrary farther sites z,u,v,... . With a white initial wall clamped black after one step and white after two, its two-step row has first four sites 1110. Requiring its fifth site zero gives z=0 or u=v=0, by checkpoint 27's direct formula. After emitting that fifth zero, the transducer state set is exactly
+
+    A={1000,1001,1010,1011,1100}.
+
+For subsequent emitted bits, direct substitution in F gives
+
+    image(A,0)={0001,0010,0011},
+    image({0001,0010,0011},1)={0010,0011},
+    image({0010,0011},1)=empty.
+
+Only states 1000 and 1001 in A can emit zero: the former needs appended bit one and gives 0001; the latter gives 0010 or 0011. Of the next set, only 0001 emits one, giving 0010 or 0011. Both remaining states emit zero regardless of the appended bit. Hence the two-step row cannot begin 11100011. This excludes the spatial tail 011 at sites 6..8 after its prefix 11100. It is a concrete farther-site predecessor obstruction; the five-site canonical prefix alone omits it.

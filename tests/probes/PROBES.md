@@ -410,3 +410,5 @@ app is unpublished by design.
   the actual language up to length 10; the actual right half). Also the exact visible language to length 10,
   and (`--gap`) a gap witness with its shortest absent factor found by SAT. python-sat. Predictions in the
   docstring, pushed before each run. No data.
+
+- `lexicon/rule30_gpt_entry_image.py`: GC549 checkpoint 28, exact two-step sixteen-state predecessor image; 32 independent literal controls and a shortest missing spatial tail, no visible-word census or SAT.
