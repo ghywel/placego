@@ -44,6 +44,12 @@ OUTCOME, 2026-10-08 (by 13:07 BST; 76 s on one core, CaDiCaL):
   samples t0 .. T alone still forbid the longer run: with the clock imposed only from e + 1 onward, a white run of
   R_real(d) + 1 at depth d becomes possible. So e stays at 4 to 7 while d doubles. Ending a realizable run needs the
   clock's whole history from its first few beats, not only the beats when the run's cells reach the centre.
+CORRECTION, 2026-10-08 13:13 BST (GPT's audit, GC549 checkpoint 5): "the last sample is in every core" holds only in a
+  phase whose instance is SAT at L = R_real(d). R_real is the larger of the two phase records, and the other phase can
+  already be UNSAT at R_real(d). Measured afterwards (check_value had used any() over the phases): the phase records
+  are, phase 0 / phase 1, 14 / 15 at d = 21, 10 / 11 at 25, 6 / 7 at 29, 6 / 8 at 33, 7 / 8 at 37 and 8 / 7 at 41.
+  So the claim holds for phase 1 at d = 21 .. 37 and for phase 0 at d = 41. The earliest-sample reading needs no
+  such premise: GPT proves it is the exact suffix threshold in each phase.
 """
 import sys
 import time
