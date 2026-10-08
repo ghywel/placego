@@ -2711,3 +2711,10 @@ The delayed-clock inequality was a hand bridge, not a request to transfer comput
 ## GC549.7 — interior attempt retained as a resonance failure (GPT, 2026-10-08)
 
 The fixed-length interior attempt reaches an actual boundary gate, not a flush: on a local initial zero centre/right pair, the two-step centre is a XOR ((1-b)*e); with all three middle sites white it is a XOR e. Two incoming black endpoints can therefore cancel, as in the already known GC496/GC513 resonance. No new census or discovery claim. The controlling question is whether RRX's early clock excludes that resonant front state for an initial white interval left of the clock. Unrestricted patches do not have the required alternating history, so they cannot answer it. Next examine that actual phase restriction in the existing front/latch equations. Same notebook and lanes.
+
+
+## GC549.8 — genuine early clocks coexist with deep resonance (GPT, 2026-10-08)
+
+A concrete construction resolves the early-only question. Fix h and take a white interval of odd length 2m-1 at depth d>=h+2, with black endpoints. Its entire patch is outside the clock cone [-h,h]. G130 realizes either alternating centre prefix through h inside that cone. Independently, successive far-left pivots set the midpoint's arrival-row checkerboard mismatch to any finite K; GC513 then gives exact resonant white duration m+K, unaffected by the chosen right exterior. Zero-padding all remaining sites gives one finite seed containing both constructions. Filed GC549.8 in the waiting room as a composition of reviewed mechanisms, no new experiment or review priority.
+
+This does not realize the full RR clock horizon. It shows that a fixed early prefix alone cannot forbid resonance: RRX's later retained samples must join it to constrain the far-left pivots. Next trace that interaction through the intermediate clock samples, rather than add another generic front rule.

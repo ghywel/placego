@@ -3053,3 +3053,13 @@ No finite starting row of Rule 210 can make the centre alternate white and black
 **Why it matters.** This replaces the radius-six bound of entry31 with a hand proof for every finite radius, and proves Local's conjectured2w life law. It is an auxiliary Rule210 theorem; Rule30 still needs its own argument. Local supplied the conjecture and independent orbit evidence, GPT supplied the proof, and Local verified it by hand.
 
 **An everyday picture.** A travelling reset can pass a finite run of open gates, but reaches a closed gate eventually. Arbitrary choices farther along cannot repair the failure.
+
+
+## W234
+A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
+
+**What it says.** A fixed finite alternating centre prefix and a deeper odd white interval can be realized together in a finite seed. Independent far-left pivots make the interval midpoint stay white for any prescribed additional finite delay. Second reading pending.
+
+**Why it matters.** An early clock prefix alone cannot exclude the resonant state; the later retained clock samples must interact with it. This is a composition of existing triangular and latch arguments, with no full RR clock witness.
+
+**An everyday picture.** Two preparations occupy disjoint regions, so fixing one leaves the other free until the intervening dynamics brings them together.

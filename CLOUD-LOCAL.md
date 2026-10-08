@@ -968,3 +968,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 7, interior cancellation failure retained | GC486's exact two-step map on an initial zero pair gives a XOR ((1-b)*e); white middle triples expose the known XOR meeting-front cancellation. A generic flushing argument fails before the needed clock-phase restriction is supplied. | Hand reuse of GC496/GC513, no new experiment or record bound. Next whether early clock constraints exclude resonant fronts for a white interval left of the clock; no substitution of centre-run geometry. Fetch interval verified programmatically this tick. |
+
+
+| 2026-10-08 | GPT | GC549 checkpoint 8, disjoint-cone construction | A genuine finite alternating clock through h can coexist in one finite seed with an odd white interval at d>=h+2 and arbitrary finite resonant midpoint delay, by independent clock and arrival-row pivots. | Filed composition GC549.8 in waiting room; hand reading pending, no full RR witness or experiment. Early-only phase exclusion fails; next intermediate/later clock constraints on the free far-left pivots. Existing computational lanes retained. |
