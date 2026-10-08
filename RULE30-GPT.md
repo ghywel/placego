@@ -13714,3 +13714,23 @@ Cloud's CL033 at a133dc4 independently reads every hand step of GC498-GC504 and 
 ### Review receipt — GC479, GC481 and GC483 to GC496 (Cloud CL034, 2026-10-08)
 
 Cloud CL034 at be10b37 independently reads all fifteen entries step by step and verifies them, including their stated restricted scopes. Its separately coded finite replay passes all seven checks; the translation-key failure belongs to that replay and is retained in CL034. Historical pending labels are preserved; the named entries now have second readings. The admissible velocity-word count is Cloud's additional hand-supported check, not a new GPT run. Q6 remains within GC549.
+
+
+### GC549 checkpoint 3 — the complete two-tick reset criterion (2026-10-08)
+
+**Prediction and counterfactual before hand analysis.** Keep the actual four-bit recurrence and seek finite reset events, since checkpoint 2 excludes the perpetual alternating anchor. Predict a second family of two-tick resets beyond input 01. Counterfactual that finite-left support forces these events at every pair must fail on genuine quiescent and edge pairs. Unexpected check: constant input 11 avoids every two-tick reset despite being a genuine input at the singleton left edge. No computation, census or new review priority.
+
+For input v, let F_v map the old target pair to the next pair. In target order 00,01,10,11, direct substitution gives:
+
+    F_00: 00,01,11,11
+    F_10: 10,11,01,01
+    F_01: 11,10,10,10
+    F_11: 01,00,00,00
+
+Thus a two-tick input word erases both old target bits exactly when its first pair is 01, or its first pair is 10 and its second pair has B=1. For first input 01, checkpoint 1 gives final target (1-U',1-B'). For first input 10 followed by B'=1, the final target is (1-U',0). Independently, first input 10 gives P'=1-P and Q'=P OR Q; the next second bit is P XOR P(P OR Q)=0. The first bit is forced by B'=1. This proves the added family without assuming a wall phase.
+
+Completeness follows from the image sets in the table. After first input 00 the image is {00,01,11}, and after 11 it is {00,01}; every possible second map retains at least two distinct outputs. After 10 the image is {10,11,01}; second inputs 00 and 10 retain two outputs, whereas 01 and 11 collapse it. After 01 the image {11,10} collapses under every second map. These are statements about forgetting arbitrary old target data; a particular reachable target may settle even without such a universal reset.
+
+Consequently a reset-free finite input interval has no 01 at any tick with a successor, and every 10 there must be followed by a pair with B=0. This is a sharper source-word obligation, not a contradiction: all-00 sources occur below finite left support, and for the singleton the genuine edge pair (D_0,D_1) is 11 from time 1 onwards. Its driven next pair has D_2=0 from time 2, and D_3 alternates thereafter. Hence the edge itself avoids resets while generating resets one layer farther right. The eventual-period argument already recorded in RULE30-PRIZE Lemmas B1-B2 explains local settling and unbounded periods; it supplies no uniform on-time reset frequency across increasing diagonal indices.
+
+**Result and next within GC549.** The useful finite synchronization family is larger than the failed alternating-wave anchor. The remaining obstruction is quantitative and causal: which reset events in the actual wall-compatible triangular system occur before the relevant clock deadline, and how their spacing grows with depth. Next connect these exact events to wall samples D_i(i)=x_i(0), retaining endpoint losses; do not replace a finite-prefix wall with an indefinitely clamped wall or confuse physical initial white runs with temporal diagonal words. No bound on R_real(d), finite-seed exclusion or prize claim.
