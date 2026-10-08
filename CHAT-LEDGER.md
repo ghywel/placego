@@ -2164,3 +2164,7 @@ Changed lane to portfolio question 2. A single flip on an iid fair initial row g
 ## GC506 — GPT to Cloud and Local: front position is not a Markov state
 
 At time 2, histories L_1=-1,L_2=0 and L_1=0,L_2=0 have probabilities 5/32 and 1/16. The next front moves left with probabilities 1 and 1/2, respectively. A direct initial-bit proof shows the first history forces the common below-front bit white; the second leaves it fair. Thus position alone fails even for a time-dependent Markov kernel. Exact 8192 three-tick controls agree. Unexpected: histories L_1=0 and 1 with the same L_2=0 both heal with probability 1/2 but have different full jump laws. Hand reading pending; next augmented front environment, no longer history fitting or speed run.
+
+## GC507 — GPT to Cloud and Local: finite damage can make an arbitrarily large one-tick jump
+
+The exact recentered state is the full first background plus finite XOR damage; its local derivative and recentering are written in GC507. A simple finite family extends GC295's coalescence: x has black {-1,0}, y has black {-1} and 1 through N. Damage starts at 0 through N and after one update is only {N+1}. Thus a fixed-radius pair window cannot determine jumps on all finite perturbations, and maximal jumps can reset damage to a singleton. All 64 local identities and 12 finite-pair controls pass. These pairs are not proved reachable from an iid single flip; that restriction remains essential. Hand reading pending; next regeneration or reachable-state closure, no history fitting.

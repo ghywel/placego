@@ -12605,3 +12605,33 @@ The current position and current time agree on A and B, while the next-position 
 The first two agree with the independent hand proof. Unexpected: the last two histories have equal healing probability 1/2 but different full jump laws. Healing probability alone therefore does not close the transport calculation. The last law is an exact exhaustive finite-cone computation, without a separate symbolic branch proof. Damage through tick 3 lies in [-3,3], and all its backward cones lie in [-6,6], so the uniform patch counts are exact iid-history probabilities. Blind prediction HELD; CF REFUTED. No asymptotic velocity or unbounded memory claim follows.
 
 **Outcome and next.** Position-only front closure is closed. A useful state must retain information about the common background and the surviving damage near the front, or a justified regeneration boundary. Next formulate that augmented state and its exact transition; do not increase the short-history horizon to fit an unsupported low-order chain. A negative result for every finite-state description would require a separate argument, and is not claimed.
+
+## GC507 — Exact augmented transition and an unbounded finite-perturbation jump (2026-10-08)
+
+**Bears on.** GC506's front-state obligation, portfolio question 2 and constellation row 3. Hand derivation pending independent reading. Read GC295's retained one-step coalescence: truncating its infinite disagreement supplies the finite family below. This does not reopen its corrected scope or claim a new local derivative identity. No speed fit, longer history scan or universal finite-state lower bound.
+
+**Predictions and unexpected check.** Predict that the full background-and-damage state has an exact recentered transition, but a fixed-radius window does not determine every finite-perturbation jump. A damage block 0 through N should move entirely to site N+1 in one update. Counterfactual radius-2 pair-window closure must fail already for N=3,4. Unexpected: these arbitrarily large jumps reset the entire damage to one site. Check all 64 local derivative identities and N=1 through 12 in independent rules; universal-N coverage comes from the hand argument.
+
+**Full augmented state.** Recenter at a leftmost disagreement L. Let u_i be the first background row relative to L, and d_i its XOR difference from the second row. Then d has finite support, d_i=0 for i<0 and d_0=1. Write M=max{i:d_i=1}. One ordinary Rule 30 step gives
+
+    u'_i=u_(i-1) XOR (u_i OR u_(i+1)),
+    d'_i=d_(i-1) XOR ((1-u_i)*d_(i+1))
+          XOR ((1-u_(i+1))*d_i) XOR (d_i*d_(i+1)).
+
+Expanding OR as a XOR b XOR ab proves the second identity. Let r=min{i:d'_i=1}. No damage occurs below -1. At M+1, the left input damage is 1 and the other two damage bits are 0, so d'_(M+1)=1. Thus r exists and -1<=r<=M+1. The exact next recentered state is
+
+    new_u_i=u'_(i+r), new_d_i=d'_(i+r), new_L=L+r.
+
+This is a deterministic transition on the full infinite background and finite damage word. Randomness enters through the initial law and its conditioning, not freshly independent bits at each update. It supplies a sound state description, but neither a finite state space nor an invariant law or integrability bound for its jumps. The common background to the left cannot simply be discarded, because its updates feed future near-front values.
+
+**Finite family with a maximal jump.** For N>=1 take first row x black exactly at {-1,0}, and second row y black at {-1} together with all sites 1 through N. They are genuine finite rows, with initial damage exactly {0,...,N} and front 0. Near the left end, their differing inputs at sites -1,0,1 give equal output bits: at -1 both have centre black, at 0 both have black left input and black centre-or-right, and at 1 the first copy uses 100 while the second uses 010 or 011, all giving output 1. For sites 2 through N the second copy's triples are 111 or terminal 110, whose Rule 30 outputs are zero; the first copy has only zeros there. At N+1, only the second copy has input 100, giving output 1. Everywhere else the inputs agree or are all zero. Therefore
+
+    F(x) XOR F(y)={N+1}.
+
+For N=1 the site-1 terminal triple is 010 and the same conclusion holds. The front displacement N+1 is the maximum allowed by the rightmost-damage bound, and the new damage is a singleton.
+
+**No universal fixed-window jump function.** For any fixed radius R, choose N>R and compare the above pairs for N and N+1. Their front positions, first rows and both-copy windows on [-R,R] agree, but their next front displacements are N+1 and N+2. Hence no function of a fixed-radius background-and-damage window alone determines the exact jump on the whole domain of finite perturbations. This is stronger than a numerical long-jump example and distinct from GC506's position-only probabilistic obstruction. It does not exclude a state that also records the entire damage word, its length or other nonlocal information.
+
+**Controls and reachability guard.** Probe `rule30_gpt_front_window.py` passes all 64 baseline/damage triple identities. It checks N=1,...,12 against both sitewise XOR/OR and literal decimal updates, all yielding exactly {N+1}. Radius-2 CF is REFUTED by N=3,4. These controls support the quantified local proof. The constructed pairs are arbitrary finite perturbations; they are not proved reachable from a single flipped bit on an iid initial background. A fixed-window closure restricted to that reachable ensemble would need its own obstruction. No inference about arbitrarily large jumps in that ensemble is made here.
+
+**Outcome and next.** The exact full-state update is now explicit, and ambient finite-window jump closure is closed. A rigorous speed argument must either retain a possibly unbounded damage word, justify a restricted reachable-state closure, or establish regeneration and control jump tails. Next audit a candidate regeneration condition within this state, rather than fit more front histories. Both the iid limiting speed and its existence remain open.
