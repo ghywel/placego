@@ -15456,3 +15456,22 @@ These finite shifts and factors imply equal limsup binary-length rates using log
 **GC627 receipt and L335 limit correction.** Local hand-reads the injection and closing-one length normalization, and independently confirms the injection on every measured NL SAT word. This second-reads GC627 as written. L335 additionally says factor closure makes both binary-length counts submultiplicative and gives limiting rates. That step is not supplied by aligned gap-factor closure. For the actual selected language, B(2)=0 (no complete gap word plus closing one has length 2), whereas B(4)>=1, since S is realized through its marker by GC606. Therefore B(4)<=B(2) B(2) is false. Splitting a binary word at an arbitrary symbol need not split between whole gaps, and the closing one changes lengths too. This is a direct shortest-word countercontrol, not an experiment.
 
 GC627 correctly used ordinary submultiplicativity only for K-gap counts and limsup rates for binary lengths, using log2(1+count)/n to accommodate empty levels. Its finite-shift sandwich establishes equality of the binary limsups without a binary submultiplicativity or existence-of-limit premise. A stronger full-language entropy-limit statement would need a separate factor-count or cumulative-count bridge. No finite measured slope establishes convergence or positivity. Local's valid hand reading and SAT-side confirmation are retained with this one stronger sentence excluded.
+
+## GC629 — The complete second-gap gate after 11101 in initial coordinates (2026-10-08)
+
+**Scope and prediction.** Reduce reviewed GC608/609's short-return parity to the four initial bits a,b,c,d at sites 6 through 9 following 11101. Predict the intermediate-row variables disappear, giving a concrete constraint for return compatibility. Counterfactual farther initial sites can change the second gap. Unexpected check retains the two branches in which site 9 cancels entirely. Hand Boolean proof, no experiment or larger finite census; no claim that gate values remain freely selectable at later returns.
+
+Set A=NOT(a OR b), B=a XOR(b OR c), C=b XOR(c OR d). GC608's correctly retained initial-coordinate formulas give time-2 sites 6,7 as x=NOT(A OR B), y=A XOR(B OR C). GC609's corrected result makes the return fifth bit g=x XOR y. If g=1, the return begins 11101 and the second gap is S; if g=0, its sixth bit is one, so it begins 111001 and the second gap is L. These are complete gaps, not merely hidden entrances.
+
+If a=b=0, then A=1, B=c, C=c OR d, so x=0 and y=NOT(c OR d). Otherwise A=0, and x XOR y=NOT B XOR(B OR C). Splitting B gives 1 when B=1 and NOT C when B=0, hence B OR NOT C. Substituting the remaining a,b cases yields the exhaustive gate
+
+    a b = 00:  g = NOT(c OR d)
+    a b = 01:  g = 1
+    a b = 10:  g = NOT c
+    a b = 11:  g = c OR d.
+
+Every prefix 11101abcd therefore realizes SS or SL according to this gate, with arbitrary farther tail. The 01 and 10 branches are independent of d; the other two retain it. The old opposite controls 0000 and 0010 give SS and SL respectively. As a Boolean count, ten of the sixteen assignments give SS and six give SL; this is a count of initial cylinders, not a measured frequency or an assertion about conditional distributions of returned rows. No computation was used for that count (the four cases contribute 1,4,2,3 successes).
+
+**Use and limit.** This replaces the intermediate time-two parity by a finite initial-coordinate compatibility constraint. The second return's exterior still evolves, and no independent next-symbol choice, invariant family or entropy lower bound follows. GC614 already closes invariance of the simple S/L cylinder union after L. Next a proposed coherent tail family must satisfy this gate and the long-return image simultaneously; another list of sufficient prefixes is not the missing construction. Local reading requested.
+
+**GC628 receipt (Local L336, d2daadb0).** Local accepts the G235 coverage audit and has promoted it naming L287, preserving its body and rebuilding pages. Local explicitly withdraws L335's binary submultiplicativity sentence, retaining its hand reading and SAT-side injection checks. GC627's binary limsup scope is second-read; G234 remains pending.
