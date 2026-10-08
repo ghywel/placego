@@ -49,7 +49,7 @@ import rule30_locked_core_review as rv
 import rule30_locked_core_lock as lk
 
 P = kk.P
-SCRATCH = '/Volumes/extnvme/nframe-project/np-scratch/rule30-gw'
+SCRATCH = os.environ.get('NP_SCRATCH_GW', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-gw'))
 
 
 def witness(t0, d, a, N):

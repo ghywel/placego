@@ -177,7 +177,7 @@ def trim_once(src, dst, alive):
 
 def gpt_lift(m, U):
     """GPT's lift, read from its branch into scratch, for the vertex and edge comparison only"""
-    scratch = '/Volumes/extnvme/nframe-project/np-scratch/gc382'
+    scratch = os.environ.get('NP_SCRATCH_GC382', os.path.join(os.path.expanduser('~'), 'np-scratch', 'gc382'))
     os.makedirs(scratch, exist_ok=True)
     for name in ('rule30_locked_lift.py', 'rule30_locked_core.py', 'rule30_locked_paths.py'):
         src = subprocess.run(['git', 'show', 'origin/gpt/temporal-moving-frame:tests/probes/lexicon/' + name],

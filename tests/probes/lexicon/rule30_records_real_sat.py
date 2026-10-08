@@ -56,7 +56,7 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
 
-SCRATCH = '/Volumes/extnvme/nframe-project/np-scratch/rule30-rr'
+SCRATCH = os.environ.get('NP_SCRATCH_RR', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-rr'))
 JOBS = int(sys.argv[1]) if len(sys.argv) > 1 else 4
 TIMEOUT = int(sys.argv[2]) if len(sys.argv) > 2 else 600
 ZR2 = {1: 1, 2: 6, 3: 5, 4: 4, 5: 3, 6: 3, 7: 3, 8: 2, 9: 8, 10: 7, 11: 6, 12: 5, 13: 4, 14: 3, 15: 5, 16: 6,

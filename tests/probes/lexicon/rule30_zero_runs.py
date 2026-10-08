@@ -61,7 +61,7 @@ import subprocess
 from fractions import Fraction as F
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SCRATCH = os.environ.get('NP_SCRATCH_ZR', '/Volumes/extnvme/nframe-project/np-scratch/rule30-zr')
+SCRATCH = os.environ.get('NP_SCRATCH_ZR', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-zr'))
 J, K = 22, 6
 # section 8.36's records R(d), d = 1 .. 61 (rule30_records.py's outcome)
 R_REC = [1, 6, 5, 4, 3, 4, 3, 2, 9, 8, 7, 6, 17, 16, 15, 16, 15, 14, 15, 14, 17, 16, 19, 20, 19, 18, 17, 16, 19, 20,

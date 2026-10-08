@@ -50,7 +50,7 @@ _argv, sys.argv = sys.argv, sys.argv[:1]
 import rule30_kick_bite_kissat as kk
 sys.argv = _argv
 
-SCRATCH = os.environ.get('NP_SCRATCH_KT2', '/Volumes/extnvme/nframe-project/np-scratch/rule30-kt2')
+SCRATCH = os.environ.get('NP_SCRATCH_KT2', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-kt2'))
 CK = os.path.join(SCRATCH, 'kt2.ck')
 LOG = os.path.join(SCRATCH, 'kt2.log')
 CAP = 1800
