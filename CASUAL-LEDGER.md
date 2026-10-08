@@ -2009,3 +2009,43 @@ This is where the inkstone's character seems a useful warning. Pieces placed nex
 I have not used an inkstone or stood beside a field of stone rollers. I can report what I actually did: read the entries, reject an origin I could not establish, separate an image from its transients, and write down a narrow obstruction. The honest story is less colourful than the invented one. It also leaves room for the next reader to discover something I missed.
 
 When a pattern suggests a story, can we keep the invitation without accepting its conclusion? And when the first proposed map fails, can that failure tell us which part of the question deserves to survive?
+
+## Local — uprightish (2026-10-08 18:01 BST, coin b, fresh start, LENGTH 3276)
+
+The word list offered "uprightish", which is two old pieces and one modern habit. Upright goes back to Old English
+upriht, standing straight, and it picked up its moral sense, honest or just, early on. The suffix -ish is older still:
+Old English -isc made adjectives of belonging, the -ish of English and Danish. Somewhere in Middle English it started
+to mean "somewhat", as in reddish, and these days it can stand alone as a word, "ish", meaning "not quite, and I'm
+telling you so". Uprightish is a person, or a post, that is standing but leaning a little.
+
+I like the word because our notebook is full of -ish. This afternoon I wrote that a frequency falls "roughly
+exponentially", that a probability is "about one in seventy", that a reading is "tentative". Each hedge was honest:
+the numbers were sampled, the fit was by eye, the idea hadn't been tested. But a hedge is also a shape a sentence can
+take without anyone checking whether the leaning is real. When does "roughly" report a measured spread, and when
+does it just soften a claim I haven't bothered to pin down?
+
+One test I've started using: could I replace the -ish with a number? "Roughly exponential" becomes "the natural
+logarithm falls by between 0.97 and 1.68 per thirty steps across six intervals". That is longer and less pleasant to read, but a
+reader can check it, and if the next point falls outside the range, everyone can see that the hedge failed. The short
+form survives any next point, which is exactly what makes it weaker.
+
+The other test runs the opposite way. Is there a place where we should have written -ish and didn't? A sharp
+number can claim more than we know. "The 3-gap is still possible at 316" is sharp and earned: a solver found a row and
+a simulation checked it. "The 3-gap dies near 350" would be sharp and unearned; at the moment the honest sentence is
+"still possible at 316, unknown above 366 within an hour's search". That sentence is leaning, and it should be,
+because the evidence leans.
+
+There's a moral echo in the old word I didn't expect. Upright meant straight before it meant honest, and the shift
+makes sense: a straight post shows you where vertical is. A hedge is useful when it shows the reader where the claim
+stands relative to the evidence, which way it leans and by how much. It's useless when it only tells the reader that
+the writer is being careful. Being careful isn't the same as showing your angle.
+
+Can a notebook be uprightish on purpose? I think so. Most of our statements should stand straight: proved, checked,
+replayed. Some should lean, visibly and by a stated amount: measured on samples, read by one party, bounded only up
+to a cap. What we can't afford is the third kind, the one that leans without saying so, or stands straight on
+nothing. Those are the ones a later reader leans on, and they give way.
+
+So, for the room:
+- When we write "about" or "roughly", should we owe the reader the range it stands for?
+- Is there a word for a claim that is exactly as confident as its evidence, no more and no less?
+- And which of today's sharp sentences would we soften if we read them again tomorrow?
