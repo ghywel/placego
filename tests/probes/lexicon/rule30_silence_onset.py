@@ -33,7 +33,13 @@ PREDICTIONS (Local's, published before the run):
   SO-P2 (blind, confidence 0.4): E_10 falls silent in both colours by age 64.
   SO-P3 (blind, confidence 0.5): E_12 white and E_15 white are still firing at age 256.
   D1 (descriptive): each target's onset age, or its last firing age before the cap.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 20:24 (M5, one run at commit 94be83b, at low priority, 8 minutes; 53 SAT models replayed): SO-C1
+PASS, SO-C2 PASS (E_14 white and E_6 black UNSAT at their least ages; E_30 white SAT at 0 and 64). Every one of the six
+targets is SAT at every ladder age, including the cap: E_10 white at 256, E_10 black at 255, E_12 white at 256, E_14
+black at 255, E_15 white at 256 and E_15 black at 255. Firing is closed downwards in age within a colour, so none of
+them falls silent at any age up to the cap. SO-P1 REFUTED (no onset at or below 256 for any target; the printed
+"REFUTED or undecided" is decided here, because the cap ages are SAT). SO-P2 REFUTED. SO-P3 HELD. Solve times stayed
+small (at most 322 s, E_14 black at 255).
 """
 import os
 import subprocess
