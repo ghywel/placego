@@ -19,7 +19,9 @@ PREDICTIONS (Local's, published before the run):
   FR-P2 (confidence 0.95): for every case, tail, j <= w and T_j <= s <= e + 2j + 1, P_j(s) = 0 and
          Q_j(s) XOR A_j(s) = A_j(0).
   FR-C0 (control, can say no): replacing T_j by T_j - 1 makes FR-P2 fail somewhere (the settling time is sharp).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 06:43 (M5, one run at commit 619d232e; transcript outside Git; 13.8 s). FR-P1, P2 HELD and
+FR-C0 PASS on 235,892 tail cases: every pair (P_j, Q_j), j <= w, is (0, 1) at tau + j + 1 and from then until its
+clock has P_j = 0 and Q_j XOR A_j = A_j(0); one step earlier the statement fails somewhere, so the time is sharp.
 """
 import os
 import random
