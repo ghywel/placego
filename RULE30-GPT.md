@@ -15581,3 +15581,29 @@ obtained by shifting110011 and XOR-ing. Both are nonzero. The p=0 differences ar
 **Controls and limit.** The opposite phase is needed because an even shift cannot change its toggling phase. Age-one sources have period-two coefficients, checked directly by binom(n,1)=n, so they cannot pay the dyadic demand. This strengthens the scope of GC632, not its exclusion power: fixed offsets d>=7 may still restart indefinitely and supply the parity; neither unbounded offsets nor positive event density follows. Clock-dependent nonlinear compatibility of those sources remains OPEN. Local review requested, especially the time4 settling index and opposite-phase startup guard.
 
 **GC632 receipt (Local L340,6764e3e0).** Local independently hand-read both differences, old-source Lucas cancellation and the unbounded-age conclusion, and reports random coefficient controls. GC632 is second-read with its original guards. GPT did not rerun those controls.
+
+## GC634 — Ordinary dynamics already supplies the age-only requirement at offset eight (2026-10-08)
+
+**Scope and prediction.** Audit GC633's usefulness as a discriminator before pursuing it as an exclusion mechanism. Predict ordinary finite-left dynamics always has perpetual source activity beyond offset6. Counterfactual the unbounded-age conclusion by itself separates hypothetical full clocks from ordinary rows. Unexpected check proves a two-step complement for the actual source, rather than treating black-cell activity as event activity. Hand recurrence only; no width census, new experiment or novelty claim. Reuses GC599's triangular moving update and the recorded band-period mechanism of Lemma B2; the specific shield calculation is a countercontrol to the proposed shortcut.
+
+GC633 gives v3 toggling and v4=1 from time4. Therefore
+
+    v5(t)=v3(t), t>=5,
+
+because its previous update is NOT v3(t-1), and v3 toggles. The next recurrence is v6(t+1)=NOT(v5(t) OR v6(t)). At a time s>=5 with v5(s)=1, it forces v6(s+1)=0=v5(s+1). At the next tick both become1, and this agreement then persists by the same two cases. Such s occurs by time6, so v6=v5 from time7 (the conservative time8 will suffice).
+
+When v5=v6, the next update is
+
+    v7(t+1)=v5(t) XOR(v5(t) OR v7(t)).
+
+It resets v7 to0 when v5=1 and otherwise preserves it. A resetting age exists among8 and9, hence v7=0 from time10 onward. Consequently H7 is silent from then on, and
+
+    v8(t+1)=v6(t) XOR v8(t), t>=10.
+
+Since v6 alternates, v6(t) XOR v6(t+1)=1, giving v8(t+2)=NOT v8(t) and v8(t+4)=v8(t). With v7=0, the actual event H8=v8 AND NOT v7 equals v8. Thus H8 has a genuine period-four tail with infinitely many source events for every initial farther row. This is actual event recurrence, not an assumed independent exterior input.
+
+In source-depth coordinates these events are at j=L+t-6, positive at all sufficiently large ages. Their inward offset is8, beyond GC633's shield. They therefore give unbounded positive-depth source ages outside offset6 in ALL ordinary finite-left histories, including selected finite seeds; no imposed wall is required.
+
+**Control and failure retained.** On any settled two-step window, v6 is either01 or10, and the two XOR updates change v8 by1 in either case. Both possible initial v8 values therefore visit both bits; neither can avoid H8 indefinitely. This directly refutes an age-only discrimination shortcut. It does not refute GC632/633's exact filtered Pascal parity requirements: firing at unbounded ages is weaker than paying the required target residues with the correct coefficients. Do not claim H8 alone meets those requirements or launch a growing strip table. The useful remaining obligation is clock-dependent joint parity compatibility, not merely finding old events beyond a fixed shield. Local reading requested; this countercontrol closes the proposed age-only exclusion use, not Q6.
+
+**GC633 receipt (Local L341,78542200).** Local independently hand-read the settling indices, opposite phase and startup coefficient, and reports ordinary-update and direct-sum controls agreeing. GC633 is second-read. Its observed absence of opposite-phase startup events after actual settling was not needed and is not used here. GPT did not rerun those controls.
