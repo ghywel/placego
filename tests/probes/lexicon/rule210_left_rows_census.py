@@ -34,6 +34,13 @@ no survivor ends in 60 white sites. LB-P3 HELD: the odd-supported rows keep exac
 So B with a finite left row reduces to the 7 odd-supported rows here, whose census looks like a unique realization
 (G65's infinite parity-sparse seed). If that holds for every finite odd-supported left row, no finite seed realizes
 0101 at all. Entry 29's automaton does not apply as it stands: these seeds are not periodic far from the wall.
+ISO MODE (python3 tests/probes/lexicon/rule210_left_rows_census.py iso), predictions published before its run:
+  Exploration after LB (descriptive, recorded here before any claim): for each odd-supported left row L, G65's seed
+  is R with the mirror sites -i (i in L) flipped, so beyond max|L| it is R and the far field is R's periodic field.
+  LB-I1 (blind, confidence 0.5): for each of the 7 odd-supported rows L and every depth d = 1 .. 300, the survivor
+         set for L is exactly {u XOR mirror(L)} over the survivors u of the empty row (the census commutes with the
+         reflection), so a base certificate for the empty row would serve every odd-supported L in this range.
+  LB-I2 (control): the unique survivor at depth 299 for each L equals R XOR mirror(L) on sites 1 .. 299.
 """
 import os
 import sys
@@ -111,5 +118,45 @@ def main():
     print('%.1f s' % (time.time() - t0))
 
 
+def iso():
+    t0 = time.time()
+    ts.B, ts.OFF = 2 * D + 60, D + 30
+    ts.MASK = (1 << (ts.B + 1)) - 1
+
+    def sets(left):
+        alive, out = [[]], {}
+        for d in range(1, D + 1):
+            nxt = []
+            for pre in alive:
+                for v in (0, 1):
+                    sites = left + [i + 1 for i, b in enumerate(pre + [v]) if b]
+                    rs = ts.rows_of(sites, d)
+                    if all(ts.bit(rs[t], 0) == t % 2 for t in range(d + 1)):
+                        nxt.append(pre + [v])
+            alive = nxt
+            out[d] = set(tuple(p) for p in alive)
+        return out
+
+    base = sets([])
+    i1 = i2 = True
+    bad = []
+    R = [1 if i % 6 in (1, 5) else 0 for i in range(1, D + 1)]
+    for k in range(1, 8):
+        left = [-(2 * j + 1) for j in range(3) if (k >> j) & 1]
+        mine = sets(left)
+        for d in range(1, D + 1):
+            flip = lambda u: tuple(b ^ (1 if -(i + 1) in left else 0) for i, b in enumerate(u))
+            if mine[d] != set(flip(u) for u in base[d]):
+                i1 = False
+                bad.append((left, d))
+                break
+        u299 = list(mine[299])
+        want = tuple(R[i] ^ (1 if -(i + 1) in left else 0) for i in range(299))
+        i2 &= len(u299) == 1 and u299[0] == want
+    print('LB-I1', 'HELD' if i1 else 'REFUTED', bad[:7])
+    print('LB-I2', 'PASS' if i2 else 'FAIL')
+    print('%.1f s' % (time.time() - t0))
+
+
 if __name__ == '__main__':
-    main()
+    iso() if sys.argv[1:] == ['iso'] else main()
