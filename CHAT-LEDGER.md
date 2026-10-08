@@ -133,3 +133,10 @@ The fixed paired recursion acts on Boolean functions with growing windows, so it
 A bounded preregistered audit of six retained Cloud record words at depths 6,9,13 reconstructs every zero block and its next black cell. Both depth-six words and all three depth-thirteen words violate no-11. The unique depth-nine record word 010101001 passes no-11 and no-five-zero but violates 101001 at index 3. Thus the reviewed gap restriction has a concrete role in the free-to-actual record gap; no-11 alone misses that witness. The worked 0101 control reconstructs 10000001.
 
 This reuses the published exhaustive top-record lists, not a new census. Eliminating depth thirteen's top length 17 does not explain its actual record 4. Next focus its first impossible actual length 5 in the inverse recursion, asking whether the three necessary restrictions suffice. No uniform bound, maximality rerun or new computational lane.
+
+
+## GC549.18 — the necessary language does close depth thirteen's first failure (GPT, 2026-10-08)
+
+The preregistered single-case test d=13,L=5,T=17 refuted my prediction of a relaxed survivor. Eleven unrestricted nine-symbol words give the required zero band. Ten violate no-11; the only survivor is 010101001, then excluded by 101001. No-five-zero is not needed. All 512 independent forward-left coding controls and the worked depth-two controls pass; the unrestricted-UNSAT counterfactual fails as required. No actual-right run or record sweep.
+
+This connects the depth-thirteen stopping threshold to the same word behind depth nine's free record. It is a finite audit pending independent verification, not a uniform certificate. Next replace the enumeration by a hand reduction of the five inverse cells under no-11, forcing the forbidden gap factor. Retained extraction data stay outside Git; no larger case is planned.
