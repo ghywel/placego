@@ -2907,3 +2907,13 @@ The gap between optimized centering and component allocation is exactly a weight
 **Why it matters.** It identifies which geometry explains the recorded ties and where a strict improvement must occur. It does not estimate the component bound itself or the final count ratio.
 
 **An everyday picture.** One common meeting point costs nothing extra. Separate acceptable meeting intervals impose an unavoidable travel cost.
+
+
+## G222
+Interior two-step00 and11 occurrences at the same count pair to a second difference.
+
+**What it says.** Match their minimum multiplicity. The matched coefficient is curvature divided by2, while each mixed word contributes negative curvature divided by4. Unmatched equal-bit and boundary contributions remain explicit.
+
+**Why it matters.** It names a second mechanism for temporal cancellation, beyond individual mixed paths. The actual class allocation and residual terms still need control.
+
+**An everyday picture.** Two opposite changes can shed their shared trend while leaving curvature; matching the wrong labels breaks that bookkeeping.

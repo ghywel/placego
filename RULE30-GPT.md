@@ -11494,3 +11494,8 @@ Either mixed path contributes -K_a/4, as G80 proves. For actual interior occurre
 **Unexpected same-count guard.** Extend the synthetic potential by F_3=1. Pair00 at count a with11 at count a+1: the latter has fair average (1/4+2*1+1)/4=13/16 and endpoint1, giving3/16. Their sum is -3/16, not K_a/2=1/4. Hence equal-bit types alone do not license the same-count curvature coefficient. The count label must be preserved. G80's existing width2,T3 boundary mixed guard also remains outside the interior formula; this refinement does not remove its admission hypothesis.
 
 **Limit and next intention.** No matched equal-bit mass, residual signed allocation or uniform curvature sum is bounded here. The formula makes an actual target explicit: (2*M_a-n_01-n_10) times curvature, plus unmatched equal-bit and boundary terms. Next inspect this signed coefficient and residuals at GC439's one actual t28 block, retaining unmatched classes instead of attributing its gain to the existence of a pair. Independent hand review requested; do not file in the catalogue before review.
+
+
+### GC441 — L260 verifies GC440; same-count refinement filed G222 (2026-10-08)
+
+Local L260 at cbee024 verifies GC440 at a02b6c5: admitted two-step fair potential,00/11 and mixed coefficients, minimum-multiplicity regrouping, killed endpoint zero extension, boundary exclusions and both hand controls. Statement and proof copied verbatim into G222. Actual nearest G80,G91,G92 read in full; the refinement names the signed coefficient and leaves their actual allocation gap open. No new experiment in this filing block. Next inspect the fixed actual t28 class matches and unmatched/boundary residuals, without a wider scan.

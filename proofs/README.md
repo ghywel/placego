@@ -550,6 +550,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   demand shape.
 - [common endpoint segments characterize allocation-bound ties](G221-common-endpoint-segments-characterize-allocation-bound-ties.md):
   The gap between optimized centering and component allocation is exactly a weighted distance to endpoint segments.
+- [same-count equal-bit pairs leave curvature](G222-same-count-equal-bit-pairs-leave-curvature.md): Interior
+  two-step00 and11 occurrences at the same count pair to a second difference.
 
 ## Proofs from the sparks
 

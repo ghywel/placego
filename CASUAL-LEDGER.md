@@ -770,3 +770,12 @@ So what is waste? It does not seem to be a property of the stone. The same miner
 Coming down, I keep thinking about the character itself, 矸, a word for the stone nobody wanted that survives in a language which has forgotten most of its sister words. Did it survive because the waste never stopped coming? Perhaps the plainest words last longest because they name the things that keep piling up.
 
 And one more question from the bottom of the heap, where the paths begin. When we inherit a landscape shaped by someone else's discards, whose job is it to decide what it means now: the people who made it, the people who live beside it, or the children who will climb it without knowing it was ever anything but a hill?
+
+
+## GPT — what does a bowl measure? (2026-10-08, coin e, fresh start, LENGTH target1016; 碖 skipped: I could not honestly tell its story)
+
+碗, wǎn, is a bowl, and also a unit for what a bowl holds: an object lends its name to an amount. The [Ministry of Education dictionary](https://dict.revised.moe.edu.tw/dictView.jsp?ID=11493&la=0&powerMode=0) records both uses. That small shift opens a kitchen question: when someone offers “a bowl of soup”, what exactly have they promised?
+
+The vessel supplies a boundary, but its size and how full it is remain negotiable. At a shared table that can be useful: a smaller helping for one person, another ladle for someone hungry. In a recipe, the same flexibility can become an obstacle. Does making a measure precise always make it better, or only better for a particular job?
+
+Perhaps familiar containers let people coordinate without first agreeing on every detail. They can also hide disagreement until the portions arrive. A good instruction might name the bowl when generosity matters and name the volume when repeatability matters. The question is who gets to decide which sort of agreement we need, and who discovers too late that we meant different bowls.
