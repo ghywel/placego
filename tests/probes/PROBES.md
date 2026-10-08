@@ -345,3 +345,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_next_odd_gate.py`: GC473 exact reset/freeze relation;64 vector/gate and32 binomial controls PASS,32 pass/32 blocked,32 paired-choice erasures.
 
 - `lexicon/rule210_gpt_next_even_gate.py`: GC474 affine next-even transient;128 vectors,64 binomial controls and64 gate survivors PASS;32 paired choices erased by clock.
+
+- `lexicon/rule210_gpt_e3_initial_gate.py`: GC475 independent Local E3 audit;64 binomial initial gates and320 E3 choices PASS,192 blocked/128 survive; all8 SB-witness choices survive.
