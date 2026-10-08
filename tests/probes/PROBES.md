@@ -426,3 +426,8 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_gap_continuation.py`: GC549 checkpoint 29, one conditional thirteen-symbol target from prefix 11100; complete shrinking-cone source extension and independent literal/paired updates. No language census, SAT or death-time run.
 
 - `lexicon/rule30_gpt_three_gap_gate.py`: GC549 checkpoint 30, fixed fifteen-site cone for the canonical branch's next 3-gap; 1024 independent literal/paired controls, necessary 001 gate and retained reset failure.
+
+- `lexicon/rule30_cloud_wheel_balance.py` (Cloud, 2026-10-08, the owner's matter and antimatter question): RB, the
+  kick balance of RD measured without its mod-28 sign convention. A visible charge (14x - 3 per cell) makes each
+  true kick a change of level; early and late windows test whether the balance needs equilibrium. CPU, standard
+  library. Predictions in the docstring, pushed before the run. No data.
