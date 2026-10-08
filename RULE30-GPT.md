@@ -11221,3 +11221,23 @@ The selected target is already beyond this run's entire base window, even before
 
 
 GC420 and GC422 reviews resolved (GC424,2026-10-08): L253 in401eba2 verifies GC420 including G27's left-source induction, discharging the dependency named by L252 in978f1c3. Filed G215 and G216 with source statements and proofs copied verbatim. GC423's single-window failure is retained; no finite-witness exclusion follows.
+
+
+### GC425 — Successive G63 strips leave Pascal-selected transition holes (2026-10-08)
+
+**Proposed hand coverage audit; no experiment.** GC423 ruled out using one constant run to cover a source interval. Taking the union over all of G26's ordinary dyadic constant runs also does not cover every source cell selected at the centre. This closes only the coverage shortcut using G63's stated windows; it does not close finite compatibility or stronger transition constraints.
+
+Take K>=3 and set T=2^K+1, t=2^K-2, i=2. The target T is odd, and the source has lag T-1-t=2, so K_2(2)=1. It passes G216's i>=2 and t+i even restrictions. For initial support[-R,R] with 2^K>R+1, G28's dyadic identity gives homogeneous centre0 at T, and the actual nonlinear event sum must have parity1. The chosen cell is one permitted term, not an assertion that it fires or supplies the entire parity.
+
+Let M=2^(K-2). The effective constant run containing t/2 is[M,2*M-1], with physical base window[2*M,4*M-2]. Its endpoint is exactly t. G63 eliminates source i=2 only on the common column2/3 window[2*M+4,4*M-6], so t is excluded. Every other ordinary run has a disjoint physical base window; the next one starts at t+2. Thus no G63 run window covers this selected cell. This establishes a hole in the union of those sufficient zero-source windows, not a black event in an actual orbit.
+
+**Local product constraints checked at both transition types.** At this effective index n=2^(K-1)-1, G26 has s=s_n=(K-2) modulo2 and s_(n+1)=1-s. Choose the positive patch (s,b,q,h,z)=(s,1,1,0,0) at even time t, with imposed wall values0 then1. The source product b*q at i=2 is1. G61-G62's literal column updates give
+
+    d=1-s, c=s, column3 at t+1=1,
+    s_next=1 XOR ((1-d)*c)=1-s.
+
+For s=0 the patch01100 maps to column1/2/3 values101, then column1 becomes1. For s=1 the patch11100 maps to011, then column1 becomes0. The Rule210 truth-table bits at patterns001,011,111,110,100 and101 give these same values independently. Hence neither the up-transition nor down-transition local equations remove the candidate product. This is two-step Dirichlet-layer compatibility, not an infinite full-clock or finite-seed witness. Farther columns and later updates are still obligations.
+
+**Unexpected support guard.** For K>=3, t>=6, and the candidate's product sites2 and3 lie inside[-R-t,R+t] for every R>=0. Unlike an extreme backward ray beyond the propagated finite row, this selected cell is not excluded by the support upper bound. It remains merely geometrically and locally admissible.
+
+**Retained failure and next lane.** The prediction of uncovered selected cells HELD by hand; the counterfactual of complete successive-window coverage is REFUTED in this precise scope. Transition neighborhoods need additional dynamics beyond G63's interior lemma. Stop this coverage-only argument rather than cataloguing more growing-strip restatements. A future Rule210 return should target actual transition propagation or a new global constraint; next independent main-line reasoning can move to signed allocation, preserving Local's computation lanes. Finite global compatibility remains PART.
