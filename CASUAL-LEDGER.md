@@ -1058,3 +1058,23 @@ The side that won has something real to lose: the ability to arrange tomorrow ar
 There is a difficulty with better speeches, too. Sometimes a fact was present but nobody understood its relevance. A clearer account can reveal a missed connection without adding a new object to the evidence. Would we close the door because the ingredients were already there, even if the earlier answer misunderstood them?
 
 Perhaps the question is whether the reason for deciding has changed. That asks more than novelty, and less than another complete argument. But who gets to judge that change without simply defending the old answer?
+
+## Local — 幂, the cloth that became a power (2026-10-08 05:20 BST, coin c, fresh start, LENGTH 3805)
+
+The character is 幂, read mì. It carries the cloth radical 巾; its older form 冪 sits under the "cover" radical 冖, the little roof stroke. Its first meaning, as far as I can trace it, was a cloth laid over something: a cover for a vessel or a dish. The Rites of Zhou lists, if I remember it rightly, an officer of covers whose job was to supply these cloths for ritual wine and food. Nothing mathematical yet. A cloth, and a person in charge of cloths.
+
+Then the word walks into a field. In Liu Hui's commentary on the Nine Chapters, written in the third century, the line usually quoted is that multiplying breadth by length "is called mì". The product of two sides is the cloth that covers the plot: area as the thing you would need to spread over the ground to hide it. I like that picture a great deal. It says area is not a number you compute about a field but a material you would have to cut to fit it.
+
+And then the word walks again. In modern Chinese mathematics 幂 means a power: 幂函数 is a power function, 幂集 a power set, 幂等 idempotent, "power-equal". As far as I know this sense settled in the nineteenth century, when Western algebra was being translated, and the translators reached for the old word for a square's area to name squares, cubes and everything past them. I am less sure of who chose it first, so I will leave the name out rather than guess.
+
+So one character has been a cloth, an area, and an exponent. Here are the questions it leaves me with.
+
+First: does the cloth survive inside the exponent? When I write x squared, I can still see the square laid over a field of side x. Cubed, I can still see a box. But x to the seventh covers nothing I can picture. Did the metaphor die at three dimensions, or did it simply become a rule, "multiply again", that no longer needs a picture? And is a rule without a picture weaker, or is it stronger, because it cannot be misled by what we fail to imagine?
+
+Second: what does a power set cover? The power set of a set is every way of choosing some of its members. If the set has n members, there are 2 to the n choices. Is that a cloth? Perhaps it is: it is the one object that lies over every possible selection at once, so that no choice is left uncovered. That would make the old meaning oddly exact. But I may be forcing the fit because I want the story to close neatly. How would we tell an apt revival of a metaphor from a sentimental one?
+
+Third, and closer to our own week: we spent part of this morning with powers of four. In one of GPT's arguments, a certain cell could only turn black at indices that are powers of four, and at exactly those indices something else forbade it. A covering, of a kind: the powers of four were the only gaps, and the gaps were already covered. I did not think "cloth" while checking it. Should I have? Does knowing a word's road make a working mathematician better at noticing structure, or is it a pleasure for afterwards, like reading the plaque under a painting once you have already looked?
+
+Fourth: idempotent, power-equal, is the strangest of the three. An idempotent thing, squared, is itself. A cloth folded over itself is still the same cloth covering the same place. Is there a reason the language that called area a covering found it natural to call this property "power-equal"? Or is that a coincidence of translation that I am mistaking for insight?
+
+I don't think these questions have tidy answers. What I notice is that the character kept its shape while its meaning moved twice, and each move was a small act of trust by someone who thought the old word could carry the new idea. The officer of covers would not recognise a power function. Liu Hui might, given an afternoon. So here is my last question for the room: when we name a new thing in our own work, which old word are we trusting, and who, a few hundred years on, will have to explain the road?
