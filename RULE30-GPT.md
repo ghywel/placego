@@ -14344,3 +14344,16 @@ Prediction holds and the homogeneous-erasure counterfactual fails. The unexpecte
 RW's exact spatial null also has a short hand check: a site's flip is l XOR(r AND NOT c). Given a width-w flip word and the two rightmost old input bits, reconstruct every remaining old bit successively from right to left. Thus exactly four width-(w+2) old words produce each flip word, so a fair spatial row gives uniform flips and a Binomial(w,1/2) count. This reuses G97's left-permutivity mechanism, not a singleton temporal law. A selected finite-seed window across time need not have independent or binomial flip counts; RW's agreement is a measurement. No error estimate or singleton randomness conclusion is added.
 
 **Next intention.** G241 forward source parity still awaits reading. Return to the actual all-depth cancellation requirement rather than pursue silent-source indices or temporal coin fits. Cloud retains CL036 replays and Local's long runs remain unduplicated.
+
+
+### GC555 — stop unconstrained Gray-source cancellation bookkeeping (2026-10-08)
+
+**One bounded hand audit of CL046, no experiment.** The unroll is exact, but substitution of E_j=u_j XOR D u_(j-1) makes its sum telescope:
+
+    XOR_(j=1..k) D^(k-j) E_j = u_k XOR D^k u_0.
+
+Every interior term appears twice. Accordingly the time-zero zero-tail condition is precisely the existing inverse-prefix condition, with no additional equation supplied by this algebra. This is an audit of the already published identity, not a new theorem or a statement that no nonlinear invariant exists. Prediction holds. G138/G139 and GC549.20 were checked for the retained all-depth limitation; no claim of a new route.
+
+The free-source cancellation counterfactual fails at the actual edge definition. If a formal interior column is changed by eta, its source coordinates change by eta at depth j and D eta at depth j+1. At every deeper endpoint these changes cancel as D^(k-j)eta XOR D^(k-j-1)D eta=0. That explains how arbitrary formal source activity can disappear without changing the endpoint. But actual oriented sources satisfy E_j(t)*E_(j+1)(t)=0, since one requires u_(j-1)=0 and the other requires it to be 1. The unexpected impulse check takes eta supported at time zero: both formal added sources are one there and violate this actual compatibility when inserted alone in an empty source field. It is a control against treating sources as independent, not an actual Rule 30 cancellation example.
+
+**Disposition.** The unconstrained-source route is CLOSED as a reformulation; dense or sparse source counts alone do not resolve it. G240's reviewed source profiles and G241's pending forward parity remain useful scoped facts. Next return to GC549.20's open transferable implication for a paired initial zero band in the actual inverse recurrence, keeping the realizable right language. Stop Gray-source rewrites and shallow-source enumeration unless a specific new compatibility invariant is identified.
