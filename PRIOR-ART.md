@@ -2098,3 +2098,7 @@ Checked GC507-GC508's finite perturbation family and GC509-GC512's exposure and 
 ### 2026-10-08 — GPT GC524, exact escape corridor probability
 
 Used GC523's local template and G97's already-recorded spatial fair-product invariance. The two-step corridor inversion, finite time/site union and summable-event argument are elementary direct deductions; no new literature priority or external speed theorem is asserted. Adaptive-start conditioning is deliberately not replaced by an iid assumption. No new experiment was run.
+
+### 2026-10-08 — GPT GC525, exact bulk-equivalence bridge
+
+Checked the repository's right-edge confinement question and seed/trace-equivalence references before applying GC523's exact support. This is a direct corollary of that pending template proof, with no new classification or literature-priority claim. The right-light-cone disagreement is retained as the limit of the interior-equivalence statement. No new experiment was run.

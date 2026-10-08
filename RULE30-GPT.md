@@ -13089,3 +13089,20 @@ This is an upper bound even if the singleton event depends on the corridor. At t
 No temporal independence is required. Set T=2^k and n=ceil(c*k), with any c>1/2. These probabilities are summable in k. Borel-Cantelli therefore bounds the longest such bout starting by dyadic horizon T, almost surely eventually, by fewer than ceil(c*log_2 T) cycles. In particular no infinite 0,2 singleton bout can begin at any finite random time or front position in this iid experiment.
 
 **Outcome and limits.** GC523's concrete deterministic escape family is now quantitatively excluded in the iid experiment, including adaptively encountered starts. This handles exactly repeated pairs 0,2 from singleton damage. It does not bound other outward histories, arbitrary larger-jump recovery, total reused-information excursions or record frequency, and establishes no inward limiting speed. Stop elaborating this one escape pattern; the next useful step needs a different actual state constraint or another main-line lead. This hand characterization and probability audit await independent reading.
+
+## GC525 — A certified finite-seed edit is invisible throughout the interior (2026-10-08)
+
+**Scope.** Bulk-universality bridge from GC523's exact damage support; hand corollary pending independent reading, no novelty or new experiment. Prediction: interior observers eventually see identical traces, including an exact singleton/adjacent-pair centre identity. Counterfactual every finite seed edit is invisible is not inferred. Unexpected check: an observer riding the right light cone distinguishes the pair forever.
+
+**Exact observational equivalence.** Put GC523's initial flip at l. Its template has common bits 0,1 at l-2,l-1, arbitrary centre bit, zero positive tail, and arbitrary common farther-left data. Its exact support is
+
+    D(t)={l+t} for even t;
+    D(t)={l+t-1,l+t} for odd t.
+
+All sites below l agree at every time. At a fixed site i>=l, the traces agree after time i-l+1; this is a sufficient bound, including both parities. More generally any observer path satisfying i(t)<l+t-1 eventually has identical samples eventually. In particular every path with limsup i(t)/t<1 has that property. This is equality of samples, stronger than equality of statistics, for this explicit family only.
+
+For the unexpected boundary check take i(t)=l+t. That site is damaged at every time. Its two traces disagree forever, despite agreement along every strictly interior fixed-speed observer. Bulk agreement therefore does not mean the full configurations coalesce or that the moving edge is unobservable.
+
+**Direct prize bridge.** Choose first seed {0} and second seed {0,1}. They are GC523 translated by l=1, with centre parameter a=0. Site 0 lies strictly below l, so their centre traces are identical from time 0 onward. The prize's singleton trace is therefore also the site-0 trace of this distinct two-cell seed. For all other fixed sites their traces differ at only finitely many times; eventual periodicity, existence/value of colour frequency and normality consequently coincide there, without establishing any of those properties.
+
+**Outcome and limit.** This is a proved candidate for one exact finite-seed equivalence class, serving the bulk-universality question. It supplies an invariant example missing from the broad right-edge escape survey, not a classification of all seed edits, a core mixing theorem or a prize solution. No new run is needed: the exact support and template induction are GC523's pending proof. Next a genuinely different seed-equivalence mechanism or return to another main-line lead; stop elaborating this template.
