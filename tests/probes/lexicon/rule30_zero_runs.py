@@ -5,6 +5,7 @@ under draw-and-work on 2026-10-07; Local's claim in CLOUD-LOCAL.md at 22:20 BST,
 RUN-ON:     cpu, one core
 COMMAND:    python3 tests/probes/lexicon/rule30_zero_runs.py        (ZR, J = 22)
             python3 tests/probes/lexicon/rule30_zero_runs.py zr2    (ZR2, J = 28; below)
+            OMP_NUM_THREADS=5 python3 tests/probes/lexicon/rule30_zero_runs.py zr3   (ZR3, J = 36; below; about 85 min)
 COST:       half a second at J = 22.
 
 L225 identified Q1's count at hull position j with the zero runs of the forced left half: for T > j, N_(w,j)(T)
@@ -55,6 +56,20 @@ row gives 9 from depth 17. That is ZR2's R_real(17) = 9 exactly, from a differen
 population (finite right halves of up to 12 cells, against every right part here). What ZR2 adds is exactness: these
 are maxima over every configuration whose column 0 follows 0101 long enough, not over a sample. The prediction's
 argument was right, but I made it without first reading section 8.12, which already contained the answer.
+
+ZR3 (Local's, row Q1 drawn again under draw-and-work on 2026-10-08; predictions written and pushed before it runs).
+L224 and L240 left open whether rho_j tends to 1/2: from j = 14 to 26 its distance from 1/2 stayed between about
+0.02 and 0.06 with no clear decay. ZR3 extends the exact count to J = 36 (rho_j to j = 35) with the same C file, now
+parallel under OpenMP (per-thread counts merged at the end; a plain build is unchanged and is the control).
+  ZR3-C0 (control): the OpenMP build at J = 28 reproduces the plain build's J = 28 output line for line, and the
+         J = 36 run's N(j, k) for j + k <= 28 equal the J = 28 values times 2^8.
+  ZR3-C1 (control, a second instrument): R_real(d) for the depths whose run closes by J = 36 agrees with RR's SAT
+         values, 15, 11 and 7 at d = 21, 25 and 29 (L247; Cloud's RRX in an independent encoding).
+  ZR3-P1 (blind, confidence 0.7): |rho_j - 1/2| >= 0.01 for at least 6 of j = 27 .. 35 (the bias persists).
+  ZR3-P2 (blind, confidence 0.5): max over j = 27 .. 35 of |rho_j - 1/2| >= 0.05.
+  ZR3-P3 (blind, confidence 0.6): the mean of log2 rho_j over j = 23 .. 35 lies in [-1.15, -0.95] (L224: -1.11 over
+         j = 1 .. 12; section 8.52: -1.04 over all right-paid steps).
+OUTCOME of ZR3: not yet run.
 """
 import os
 import subprocess
@@ -73,11 +88,20 @@ RHO_TABLE = {10: 0.5430, 11: 0.5452, 12: 0.2366, 13: 0.3965, 14: 0.6149, 15: 0.5
              18: 0.4674, 19: 0.4331, 20: 0.4677, 21: 0.4870, 22: 0.5102}
 
 
-def count(J, K):
+def count(J, K, omp=False, raw=False):
     os.makedirs(SCRATCH, exist_ok=True)
-    binary = os.path.join(SCRATCH, 'zr')
-    subprocess.run(['cc', '-O3', '-o', binary, os.path.join(HERE, 'rule30_zero_runs.c')], check=True)
-    out = subprocess.run([binary, str(J), str(K)], capture_output=True, text=True, check=True).stdout.split('\n')
+    binary = os.path.join(SCRATCH, 'zr_omp' if omp else 'zr')
+    src = os.path.join(HERE, 'rule30_zero_runs.c')
+    if omp:
+        lib = '/opt/homebrew/opt/libomp'
+        subprocess.run(['cc', '-O3', '-Xpreprocessor', '-fopenmp', '-I' + lib + '/include', '-L' + lib + '/lib',
+                        '-lomp', '-o', binary, src], check=True)
+    else:
+        subprocess.run(['cc', '-O3', '-o', binary, src], check=True)
+    text = subprocess.run([binary, str(J), str(K)], capture_output=True, text=True, check=True).stdout
+    if raw:
+        return text
+    out = text.split('\n')
     total = int(out[0].split()[1])
     N, R = {}, {}
     for line in out[1:]:
@@ -112,6 +136,33 @@ def zr2():
     print('ZR2-P1', 'HELD' if any(d <= 20 for d in below) else 'REFUTED', 'depths below the record:', below)
 
 
+def zr3():
+    import math
+    import time
+    t0 = time.time()
+    plain = count(28, 6, raw=True)
+    par = count(28, 6, omp=True, raw=True)
+    _, n28, _ = count(28, 6, omp=True)
+    total, N, R = count(36, 8, omp=True)
+    c0 = plain == par and all(N[j, k] == n28[j, k] << 8 for (j, k) in n28 if j + k <= 28)
+    rr = {21: 15, 25: 11, 29: 7}
+    c1 = all(R[d] == (v, 'closed') for d, v in rr.items())
+    rho = {j: N[j, 0] / total for j in range(1, 36)}
+    for j in range(23, 36):
+        print('j %2d  rho %d/2^%d = %.6f  |rho - 1/2| = %.4f' % (j, N[j, 0], 37, rho[j], abs(rho[j] - 0.5)))
+    far = [j for j in range(27, 36) if abs(rho[j] - 0.5) >= 0.01]
+    mx = max(abs(rho[j] - 0.5) for j in range(27, 36))
+    mean = sum(math.log2(rho[j]) for j in range(23, 36)) / 13
+    print('R_real at 21, 25, 29:', [R[d] for d in (21, 25, 29)])
+    print('ZR3-C0', 'PASS' if c0 else 'FAIL')
+    print('ZR3-C1', 'PASS' if c1 else 'FAIL')
+    print('ZR3-P1', 'HELD' if len(far) >= 6 else 'REFUTED', len(far), 'of 9 at least 0.01 from 1/2')
+    print('ZR3-P2', 'HELD' if mx >= 0.05 else 'REFUTED', 'max %.4f' % mx)
+    print('ZR3-P3', 'HELD' if -1.15 <= mean <= -0.95 else 'REFUTED', 'mean log2 rho over 23 .. 35 = %.4f' % mean)
+    print('closed runs:', {d: R[d][0] for d in range(1, 37) if R[d][1] == 'closed'})
+    print('%.0f s' % (time.time() - t0))
+
+
 def main():
     total, N, _ = count(J, K)
     c0 = [str(F(N[j, 0], total)) for j in range(1, 10)] == RHO_EXACT
@@ -136,4 +187,4 @@ def main():
 
 if __name__ == '__main__':
     import sys
-    zr2() if sys.argv[1:] == ['zr2'] else main()
+    {('zr2',): zr2, ('zr3',): zr3}.get(tuple(sys.argv[1:]), main)()

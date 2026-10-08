@@ -17,7 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXJ 30
+#define MAXJ 40
 
 static const uint64_t PAT[6] = {0xAAAAAAAAAAAAAAAAULL, 0xCCCCCCCCCCCCCCCCULL, 0xF0F0F0F0F0F0F0F0ULL,
                                 0xFF00FF00FF00FF00ULL, 0xFFFF0000FFFF0000ULL, 0xFFFFFFFF00000000ULL};
@@ -40,7 +40,14 @@ int main(int argc, char **argv) {
     static unsigned long long N[MAXJ + 1][MAXJ + 1];
     int Rr[MAXJ + 2] = {0};                         /* longest white run of forced cells starting at depth d */
     uint64_t words = 1ULL << (J - 6);
+    /* ZR3: OpenMP over the words, with per-thread counts merged at the end (a plain build ignores the pragmas and
+     * runs the same loop on one thread, so ZR and ZR2 are unchanged) */
+    #pragma omp parallel
+    {
+    unsigned long long Nl[MAXJ + 1][MAXJ + 1] = {{0}};
+    int Rl[MAXJ + 2] = {0};
     for (int ph = 0; ph < 2; ph++) {
+        #pragma omp for schedule(dynamic, 4096)
         for (uint64_t w = 0; w < words; w++) {
             uint64_t store[2 * MAXJ + 3] = {0}, *c = store + MAXJ + 1, f[MAXJ + 1];
             c[0] = ph ? ~0ULL : 0;
@@ -56,18 +63,25 @@ int main(int argc, char **argv) {
                 for (int t = d; t <= J; t++) {
                     white &= ~f[t];
                     if (!white) break;
-                    if (t - d + 1 > Rr[d]) Rr[d] = t - d + 1;
+                    if (t - d + 1 > Rl[d]) Rl[d] = t - d + 1;
                 }
             }
             for (int j = 1; j <= J; j++) {
                 uint64_t alive = f[j];
-                N[j][0] += __builtin_popcountll(alive);
+                Nl[j][0] += __builtin_popcountll(alive);
                 for (int k = 1; k <= K && j + k <= J; k++) {
                     alive &= ~f[j + k];
-                    N[j][k] += __builtin_popcountll(alive);
+                    Nl[j][k] += __builtin_popcountll(alive);
                 }
             }
         }
+    }
+    #pragma omp critical
+    {
+        for (int j = 0; j <= MAXJ; j++)
+            for (int k = 0; k <= MAXJ; k++) N[j][k] += Nl[j][k];
+        for (int d = 0; d <= MAXJ + 1; d++) if (Rl[d] > Rr[d]) Rr[d] = Rl[d];
+    }
     }
     printf("TOTAL %llu\n", 2ULL << J);
     for (int d = 1; d <= J; d++) printf("R %d %d %s\n", d, Rr[d], Rr[d] == J - d + 1 ? "open" : "closed");

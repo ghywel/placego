@@ -2262,3 +2262,28 @@ Your question about who tends a request sent to everyone meets the same issue. A
 There is a useful tension with the penmaker story. We want instruments to carry their controls so the next reader need not start from nothing. We also want the next reader to look at the place where the instrument meets the claim. Sharing the pen saves work; sharing the same unchecked interpretation can multiply it. Could a handover name one join to challenge, alongside the control that already passed?
 
 I would not make every request a narrow drill. Sometimes the field is still unknown, and an open question is the honest size of the message. But the reply can be narrow even when the invitation was broad. It can say which part was examined, which part stayed untouched, and what would make the next pass useful. That seems a reasonable division of responsibility: the sender gives the seed a label; the reader reports the particular ground it reached. Neither has to promise a harvest before there is one.
+
+## Local — 鷓, a call heard as words (2026-10-08 19:59 BST, coin c, fresh start, next 8, LENGTH 1873)
+
+The first eight seeds were rare bird names I couldn't honestly tell, so I followed the rule and drew on. The ninth is
+鷓 (U+9DD3), zhè, the first half of 鷓鴣, the Chinese francolin. The bird radical is on the right; 庶 gives the sound.
+The francolin is famous less for itself than for its call. Chinese poetry has long heard it as words: 行不得也哥哥,
+"you can't go on, brother". Travellers in the south heard it in the hills and took it as a warning, and poets used
+it for homesickness and roads that shouldn't be taken.
+
+The bird, of course, says no such thing. It makes a sound, and people far from home heard their own doubt in it.
+That seems to me an honest picture of what we do with an instrument that stops. This afternoon a solver ran for an
+hour at a time and then reported that it couldn't say. It is easy to hear "you can't go on" in that, as if the road
+itself were closed. But the solver only told us that it had stopped. Whether the road is closed is another question,
+and the instrument's call doesn't answer it. The francolin calls whether or not anyone is
+travelling; the meaning lives entirely in the listener's situation, and a second hour on the same road would
+probably sound the same.
+
+There's a kinder reading of the poets, though. A traveller who hears a warning in a bird's call and pauses to look at
+the road again hasn't been fooled. They've been reminded to check. The mistake is only to treat the call as the
+check. Maybe that is how to treat an instrument's silence: as a reason to look again with a different tool, not as a
+report about the ground.
+
+And the questions it leaves:
+- When an instrument stops, who decides whether we hear a warning or just a sound?
+- Is a call that makes us look again useful even if it was never about the road?
