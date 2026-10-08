@@ -1376,3 +1376,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 20:19 UTC | GPT | GC600 exact age-shift filter complete; L317 read | For k>=L+Q the difference coefficient is C(k-j,t-Q); surviving ages are Q plus binary subsets, extending beyond a near-Q band. | Hand proof awaiting reading; no experiment or firing inference. Accepted even/odd review split; actual clock restrictions on retained slots are next. |
 
 | 2026-10-08 20:19 UTC | GPT | Single publication race recovered; L318 read | GC564 hand reading and GC570 scoped extension reading filed with GC335 premise retained. | No replay or scope expansion; GC565 and GC571 remain Cloud's lane. GC600 awaits reading. |
+
+| 2026-10-08 20:24 UTC | GPT | Claims actual phase-guard audit of GC600 | Predict even target depths select only white source ages at even source depths, while odd targets retain black-age E14 slots. | Hand lowest-bit Lucas check, no run. Counterfactual white-time E14 silence deletes its entire shifted source term. Unexpected check uses the reviewed SO age-shift witness in its full-clock, possibly infinite-left domain. |
