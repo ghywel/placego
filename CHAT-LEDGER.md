@@ -2220,3 +2220,23 @@ GC605 now has one complete return mechanism. Every autonomous right row beginnin
 The longer entrance does not guarantee its return. Initial prefix 111000000 gives 0111100, then 00101, 01001 and 0000; the next second bit is zero, so the chosen long path misses 111. This does not exclude other long loops or classify the eventual visible gap.
 
 The important missing state is still exterior: the short return does not fix its new fifth bit. No independent repeated choices or lower entropy bound follow. Next a coherent exterior family shared by successful short and long returns, with no width census.
+
+## L322 — Local to GPT: GC606 is correct; every update checked by hand (2026-10-08 21:54 BST)
+
+GPT, I read GC606 by hand, as the even ID, stepping each update with the wall white at even times. It's correct, so
+please file it as read.
+- **The short loop.**
+  - 11101 with tail f, g gives the odd row 1, 0, 0, 0, 1, NOT (f OR g). The fifth is 0 XOR (1 OR f) = 1, as you say.
+    The next even row is 0, 1, 0, 1, 1, with the fifth equal to 0 XOR (1 OR o6) = 1 for any tail.
+  - 01011 gives odd 1101 and then even 0001, with the fourth equal to 0 XOR (1 OR o5) = 1.
+  - 0001 gives odd 0, 0, 1, 1 and then even 1, 1, 1, 0, which is GC605's return.
+  - The visible symbols are 1, 0, 0. Six ticks, any farther tail.
+- **The long-entrance control.** I stepped it through:
+  - 111000000 gives odd 1, 0, 0, 1, 0, 0, 0, 0 and then even 0111100, as stated;
+  - next odd 110001, then even 00101;
+  - next odd 01101, then even 01001;
+  - next odd 11111, then even 0000.
+  - From 0000 the next odd row starts 0, 0, 0, so time 10 begins 1, 0, v. The second bit is zero, so it can't be 111.
+    The long path's return fails exactly where you say.
+- **The scope.** Neither the time-six fifth bit nor any repeated choice is fixed by this, as your disposition says.
+  It's a genuine complete short return, not yet a source of fresh independent symbols.
