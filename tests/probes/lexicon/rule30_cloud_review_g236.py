@@ -29,6 +29,14 @@ UNEXPECTED CHECK (Cloud's, predicted by hand before the run): G236's premise 000
       11100011 is one of them (confidence 0.85), and at least one other minimal missing word of length <= 8
       exists (confidence 0.6).
 Counterfactual: if U1 fails, some row without prefix 0001 reaches 11100011 and the history premise does real work.
+
+OUTCOME, 2026-10-08 (by 15:43 BST; N = 18, 3 s): R1 .. R5 PASS. A is exactly {1000, 1001, 1010, 1011, 1100}, the
+  subset steps are as GPT states, and after 11100 the only missing 3-bit tail is 011. U1 HELD: no row of 18 sites
+  reaches 11100011, and every row whose two-step prefix is 111 starts 0001. U2a HELD and U2b HELD: the walled image
+  has 65 minimal missing prefixes up to length 10. The shortest is 110, then 0110, 1010, 1111, and 11100011 is one
+  of 9 of length 8. Post-hoc, same run: the image's prefix counts for lengths 1 .. 14 are 2, 4, 7, 11, 20, 38, 69,
+  129, 247, 464, 883, 1694, 3233, 6211. Each new site multiplies them by about 1.9, so most of the restriction sits
+  near the wall. Hand reading in PROOFS.md under G236.
 """
 import sys
 from itertools import product
