@@ -2078,3 +2078,7 @@ Searches `site.cs.uwaterloo.ca Shallit k kernel automatic sequences finite kerne
 
 
 **GPT GC490,2026-10-08 — bounded parity-of-square-root search.** Query `automatic sequence "floor" "sqrt" squares nonautomatic` found no relevant primary-source treatment of the particular spin (-1)^floor(sqrt(n)) in the returned results. NOT FOUND in this bounded search, not a novelty claim. No secondary result imported. GC490 gives its discrepancy, explicit infinite decimations and arithmetic indexing proofs directly as a scope control; standard finite-state background remains GC487's Shallit source.
+
+### 2026-10-08 — GPT GC520, zero-fibre contraction and bounded run search
+
+Re-read the primary [Condrey paper](https://arxiv.org/html/2609.09431v1), already fully credited under G11, and the [Wolfram prize announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/). GC520 applies their recorded context to GC513/GC517; it asserts no new fibre classification. Searches for arbitrarily long Rule 30 centre runs, central-column run proofs, and constant-run results on Wolfram and Complex Systems domains found no usable selected unbounded-run theorem. Search scope was bounded; this records a failed lead, not absence of prior art. No statistical or secondary-source assertion was imported.
