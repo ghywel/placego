@@ -22,7 +22,13 @@ PREDICTIONS (Local's, published before the run):
          clock s = e + 2i.
   FV-C0 (control): the frozen value on c = e + 2w + 1 is 1 (the failing gate), and on c = e + 2i + 1, i < w, it is 0.
   D1 (descriptive): if FV-P1 fails only on its start time, the latest settling time observed, relative to tau.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 06:19 (M5, one run at commit b7468d0; transcript outside Git; 13.1 s). FV-P1, P2 HELD and FV-C0
+PASS on 235,892 tail cases (every tail when 2w + 1 <= 9): every odd diagonal e + 2i + 1, i = 0 .. w, carries an error
+equal to D_(e+2i+1)(y, tau) on the whole range s = tau + 1 + 2i .. e + 2i + 1 (never settling later); every even
+diagonal e + 2i carries no error at its clock; the frozen value is 0 for i < w and 1 at i = w. By hand, the
+constancy part is immediate once the previous odd error is frozen at 0 and the even transient is 0:
+Delta_c(s+1) = Delta_(c-2)(s) XOR Delta_c(s) XOR Delta_(c-1)(s) (D_c(y, s) XOR Delta_c(s)). The open step is the
+value at s = tau + 1 + 2i.
 """
 import os
 import random
