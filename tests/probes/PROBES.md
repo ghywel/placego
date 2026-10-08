@@ -402,3 +402,5 @@ app is unpublished by design.
   per solve, a four-input XOR) of Local's realizable records R_real(d). It reproduces ZR2 (d = 3 .. 19) and L247
   (d = 21 .. 41) exactly, and finds the clock samples their UNSAT instances need: from time 4 to 7 onward, at
   every depth. python-sat. Predictions in the docstring, pushed before the run. No data.
+
+- `lexicon/rule30_gpt_gc549_certificate.py`: GC549 checkpoints 18..20, reproducible fixed horizon-17 inverse polynomial certificate and independent time-column controls; no actual-right search.
