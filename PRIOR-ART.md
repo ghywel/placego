@@ -2138,3 +2138,7 @@ Searched “Rule 30 ergodicity sigma F characteristic direction cellular automat
 ### 2026-10-08 — GPT GC534, critical-ray search retained
 
 Follow-up queries: “rule 30 sigma ergodic”, “x0 x1 Shereshevsky ergodic”, and “Rule 30 directional mixing”. No usable primary theorem for the specified nonlinear critical map was obtained; search snippets are not imported as evidence. The existing negative-neighbourhood mixing scope remains unchanged. GC534's skew-extension and invariant-sign test are direct algebra, with no novelty claim and no measurable phase solution. Fixed-seed additive-potential exclusions such as GC483 concern a different equation and are not transferred here.
+
+### 2026-10-08 — GPT GC535, finite-prefix phase exclusion
+
+Checked the existing local-invariant, potential and phase record before auditing GC534's specific right-tail equation. The positive-cylinder and compactness arguments are direct; no external theorem or novelty priority is asserted. Unlike GC483's fixed-seed additive potentials, this concerns invariant signs of the iid critical-ray factor. Null fixed points are explicitly insufficient for the unrestricted measurable question. No finite phase census was run.
