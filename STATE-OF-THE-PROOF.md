@@ -27,6 +27,12 @@ which statement is missing: one of a kind that no field has a method for.
 
 Wolfram offers 10,000 US dollars for each (PRIZE-PROBLEMS.md §1).
 
+**In coin terms** (added 2026-10-08 at the owner's request; RULE30-PRIZE.md, "The three questions, as a coin"). Read
+the centre column as a coin, black heads and white tails. Problem 1 asks whether the coin ever falls into a repeating
+pattern forever. The same face forever is ruled out (Condrey), and heads, tails, heads, tails, forever is the open
+case worked here. Problem 2 asks whether the coin is fair in the long run. Problem 3 asks whether there is a shortcut
+to the n-th flip. The coin is not random, so each answer is simply true or false, and only a proof settles it.
+
 ## 3. Where we started, and where we are
 
 **On 2026-10-04 at 21:09 BST**, the first Rule 30 commit, the record held three things:

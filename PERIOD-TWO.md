@@ -18,6 +18,10 @@ stronger than the prize needs.
 - **Period 2 is open.** That is the case worked on here: can a finite configuration's centre column be 0101...
   from some time on? Condrey's own conclusion names it as the next unresolved case.
 
+In coin terms (RULE30-PRIZE.md, "The three questions, as a coin"; added 2026-10-08): read the centre column as a coin,
+black heads and white tails. Period 1 asks whether the coin can land on the same face forever, and Condrey proved it
+cannot. Period 2 asks whether it can settle into heads, tails, heads, tails, forever. That is this file's question.
+
 Rule 30 is $x_{t+1}(i) = x_t(i-1) \oplus (x_t(i) \lor x_t(i+1))$. It is permutive in its left neighbour, so it can be
 run sideways: given columns 0 and 1 for all times, every column to the left is determined (the *forced left half*,
 RULE30-PRIZE.md §5).

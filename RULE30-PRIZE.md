@@ -6,6 +6,36 @@ a computer take part in a proof). This one holds the Rule 30 work, with its sect
 reference to "PRIZE-PROBLEMS.md §8.36" written before the split means §8.36 here. For the period-2 work in one place,
 with its reading order and how to reproduce it, see [PERIOD-TWO.md](PERIOD-TWO.md).*
 
+## The three questions, as a coin
+
+*Added 2026-10-08 at the owner's request, from a conversation about coin flips. It restates the problems in plain
+words and adds no result.* Start Rule 30 from one black cell and read its centre column one cell per step, as a
+coin: black is heads, white is tails. Wolfram's three prize problems ([rule30prize.org](https://rule30prize.org/),
+official wording quoted) then ask:
+
+1. **Does the coin ever fall into a repeating pattern forever?** Officially: "Does the center column always remain
+   non-periodic?" Open. Taken one cycle length at a time:
+   - *the same face forever* (period 1): no. Condrey proved it for every finite starting row (arXiv:2609.09431);
+   - *heads, tails, heads, tails, forever* (period 2): open. This is the case the record works on
+     ([PERIOD-TWO.md](PERIOD-TWO.md));
+   - *any longer cycle* (period 3 and up): open, parked behind period 2.
+2. **Is the coin fair in the long run?** Officially: "Does each color of cell occur on average equally often in the
+   center column?" Open. Every measurement agrees with a fair coin (§8.34, §8.35); nothing is proved.
+3. **Is there a shortcut to the n-th flip, or must you in effect make every flip before it?** Officially: "Does
+   computing the nth cell of the center column require at least O(n) computational effort?" Open, and untouched
+   here. A coin that repeats has a shortcut, since you can look its cycle up, so proving there is no shortcut
+   would settle Problem 1 too (§8.34).
+
+Three things make this coin unusual.
+- **It is not chance.** Every flip is fixed by the rule, so each question has a true-or-false answer. A measurement
+  can only make an answer look likely, and the prizes pay for proofs. For a truly random coin, "the same face
+  forever" has probability zero but is not impossible. For Rule 30's coin it is impossible, because it is proved.
+- **The endless grid matters.** A simulation on a finite grid has finitely many states, so its coin must eventually
+  repeat. Mathematica used this column for random numbers for years (§8.15). The prizes ask about the endless grid,
+  where the pattern keeps growing and that argument does not apply.
+- **The record asks more than the prize.** It works one period at a time for every finite starting row, not only
+  the single black cell (PERIOD-TWO.md §1).
+
 ## The honest summary
 
 **Update, 2026-10-05, night (Local as lead; read this first).** Still no proof of period 2 and nothing to submit.
