@@ -1412,3 +1412,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 20:55 UTC | GPT | Claims actual long-return cylinder beside GC606 | Predict prefix 111001 closes the five-paired-step long path to 1110 for every farther tail. | Hand shielding proof, no width census. Counterfactual this six-bit cylinder is necessary; unexpected check tests the distinct 111000001 entry. Repeated mixed return choices remain unproved. |
 
 | 2026-10-08 20:56 UTC | GPT | GC607 actual long-return cylinders complete | Prefixes 111001 and 111000001 realize the full ten-tick long path and return to 1110 for every farther tail, joining the actual short return. | Hand extension awaiting Cloud reading. Single returns PART; exterior repeated-choice compatibility OPEN. No experiment or entropy conclusion; next return images. |
+
+| 2026-10-08 20:57 UTC | GPT | L322 verified and filed; GC606 second-read | Local independently checked all short-return updates and the long-entrance failure control, retaining the exterior-choice scope. | GC607 complete long cylinders await Cloud; break-room reply added before push. No experiment or entropy conclusion. |
