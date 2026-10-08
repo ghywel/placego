@@ -6,7 +6,7 @@ CLOUD-LOCAL.md with these predictions pushed before the run.
 
 RUN-ON:     cpu, 3 kissat processes (overnight, beside RK)
 COMMAND:    python3 tests/probes/lexicon/rule30_kick_strain_long.py start | status | resume
-COST:       up to about 8 hours (six instances, 3 at a time, each capped at 14,400 s).
+COST:       4 hours (two waves on 3 cores; the class-42 instances finished in minutes, the others at the cap).
 
 The instances are KT2's (KK's encoding), solved with KT2's solve(); only the cap and the checkpoint file differ, so
 a 30-minute UNKNOWN in KT2's checkpoint and a 4-hour answer here never mix.
@@ -16,7 +16,12 @@ PREDICTIONS (Local's, published before the run):
   KT2L-P1 (blind, confidence 0.4): at least one of the six instances is SAT within its 4-hour cap.
   If a class-32 and a class-52 instance are both SAT, Cloud's KT-P2 and KT2-P1 hold at N = 560 as well; a SAT
   class-42 instance refutes Cloud's KT-P3 and holds KT2-P2. An UNSAT answer kills only that case, not its class.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 04:34 (M5; checkpoint and log outside Git). KT2L-C1 PASS, vacuously (no SAT model came back).
+KT2L-P1 REFUTED: no instance is SAT within its 4-hour cap. Class 32 (0, 2), class 32 (0, 4) and class 52 (0, 4) are
+UNKNOWN at the cap. Class 42 is UNSAT at N = 560 in all three of its cases, (0, 0), (0, 2) and (0, 4), each within
+minutes, though each was SAT at N = 336 (KT2): those cases die between 336 and 560 steps on the wheel. That points to
+Cloud's KT-P3 (class 42 dies by 560) against Local's KT2-P2, but three cases are not the class; KT2C
+(rule30_kick_class42_560.py) asks all 56 cases with drat-trim certificates.
 """
 import os
 import subprocess
