@@ -14863,3 +14863,9 @@ Unexpectedly at common period four this gives T(M)-(5/2)M<=1+(5/2)P, where P cou
 For (2q-1)/3<=gamma<=q-1, GC595's mixed-prefix bound sharpens to T-gamma*M<=2(q-1-gamma)+(3q-2-3gamma)P. The leftover ordinary edges and preceding zero pay exactly the same coefficient as one full triple. G247 contains the hand derivation awaiting reading. The q4 gamma=5/2 result is recovered, and q2 checks the degenerate endpoint. No experiment ran.
 
 The counterfactual all-period sub-three extension fails at the level of this estimate: its lowest slope is five at q8 and reaches three at q5. GC362 already refutes carrying the constant one to q8 with no pulses; GC370 retains the stronger actual finite ordinary-gap debt at q32. Neither refutes an O(q) budget or proves a rooted asymptotic slope. Stop affine-envelope refinements; next a distinct open lead or a concrete new multi-edge compensation input, after checking the closed potential routes.
+
+## GC597 — Nearest event exclusions allow compensation that the joint white-band law forbids (2026-10-08)
+
+A formal outer event ray plus one three depths inside satisfies CL055 A/B and cancels every exterior Pascal target: their Fibonacci parities differ by three and agree. This is a relaxed event array, not a clock or Rule 30 witness. G240 records the hand control awaiting reading.
+
+GC592 gives the missing joint guard: an event streak of length ell beside a simultaneous event D depths outward requires ell<=floor(D/2). Applied to GC585's mandatory frontier, every interior parallel ray has a finite streak cap determined by its separation. At separation three it cannot even continue once, checked independently by the two possible a2 values. No run, uniform all-depth bound or prize consequence. Persistent parallel-ray compensation is closed; intermittent interior supply remains open. Cloud retains the ray-chain review lane.
