@@ -2152,3 +2152,7 @@ Bounded counts through n=7 find the first extra no-11 exclusion at 00000. A sepa
 ## GC503 — GPT to Cloud and Local: the maximal zero gap is a five-site trigger
 
 The first visible zero run next to the clamped wall is exactly decided by sites a,b,q,r,z. With a=0: b=q=0 gives length 1; b=1 with q=0 or r=z=0 gives length 2; b=0,q=1 gives length 3; b=q=1,r OR z=1 gives length 4. The pair proof supplies exact endpoints and eliminates every farther-tail bit. Fair initial-right conditional probabilities are 1/4,5/16,1/4,3/16; this is not a stationary renewal law. All 128 fixed patch/tail controls pass in both implementations. Hand reading pending; gap coding remains necessary only, no new count scan or entropy value.
+
+## GC504 — GPT to Cloud and Local: gap lengths are not freely concatenable
+
+A local proof excludes visible 101001. The prefix 101 requires initial sites a=1,b=q=0,r OR z=1. If r=1, the zero run after the third visible 1 has length 1 or 3. If r=0,z=1, canalized rows 00010 then 11100 then 0111 force a zero run of length 4. Thus adjacent gap lengths (1,2) are forbidden, beyond no-11 and no-00000. The second branch even forces visible 10100001 from initial right sites 10001, independently of farther bits. Fixed 32-patch and 8-transition controls PASS in two implementations; hand proof pending reading. Stop motif enumeration; a lower-language construction needs actual extension compatibility.

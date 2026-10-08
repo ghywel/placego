@@ -12514,3 +12514,32 @@ In particular 0000 occurs iff (a,b,q)=(0,1,1) and r OR z=1, and it forces the ne
 Probe `rule30_gpt_zero_cylinder.py` checks all 128 patch/tail combinations against both independent update implementations, all PASS. The tails are 0000,1111,0101,1010 within the nine-site cone for five visible samples; no horizon enlargement. They support the implementation of the formula, while the quantified farther-tail statement is the branch proof above. The fair distribution is only an initial-row calculation: GC501 already refutes stationarity under advancing a visible period. It cannot be reused as an iid renewal law for successive gaps.
 
 **Outcome and next.** The zero latch is completely classified by a five-site cylinder. This supplies a concrete gap-4 trigger and closes the uniform initial-duration model, without settling entropy or finite support. Next use the necessary gap code as an upper-language bound or check a proposed actual recurrence; do not infer that arbitrary sequences of these four gap lengths are realizable. The original singleton balance and indexing questions remain open.
+
+## GC504 — A gap of one zero cannot be followed by a gap of two (2026-10-08)
+
+**Bears on.** GC502/GC503's necessary visible gap code, constellation rows 5/6 and portfolio question 4. Local hand proof, independent reading pending. Exploratory extraction from the already declared n=6 data finds 101001 as the sole extra missing word after excluding 11 and 00000. That extraction had no new predictions and is not the basis of the proof. No scan extension or novelty claim; all statements concern an externally clamped 0101 wall.
+
+**Predictions before fixed controls.** Visible 101 should require initial sites a,b,q,r,z with a=1,b=q=0,r OR z=1. The five-site cylinders 00010 and 11100 should have canalized two-step transitions independent of farther bits. Counterfactual free concatenation of all gap lengths 1 through 4 must fail at adjacent lengths 1,2. Unexpected: one branch forces an eight-symbol visible prefix using only five initial bits. Check the two claimed cylinder transitions and the 101 characterization, not a longer output-language census.
+
+**Characterization of 101.** Since an initial visible 1 forces the next visible 0, the only additional obligation is a visible 1 at the third sample. It requires the even row after two ticks to have sites 1,2,3 equal to 0,0,0, by GC503's R=1 case. Initially let a=1. Odd sites 2,3,4 are respectively
+
+    B=1 XOR (b OR q),
+    Q=b XOR (q OR r),
+    R=q XOR (r OR z).
+
+The next even sites 2,3 are 1 XOR (B OR Q) and B XOR (Q OR R). For both to vanish, B OR Q=1 and B=Q OR R. If B=0, the second equation forces Q=R=0, contradicting the first. Thus B=1, so b=q=0, and the second equation becomes r OR z=1. Conversely those conditions make both sites zero. This proves the characterization for arbitrary farther sites.
+
+**Two branches after 101.** If initial r=1, the row at time 2 has first sites 0,0,0,0,Z, with Z arbitrary. Two more ticks give first sites 1,0,Z. In any row beginning (1,0,Q), site 2 after two ticks is 0: its odd site 2 is 1-Q and its odd site 3 is Q OR its right neighbour, whose OR is 1. Hence the row at time 6 begins (0,0,Q'), since the preceding visible 1 forces the next visible 0. GC503 then gives zero-run length 1 or 3, according to Q'. It cannot be 2.
+
+If initial r=0, the characterization forces z=1. The row at time 2 begins 00010: site 4 is 1, while site 5 is 0 because its two odd inputs include a forced 1. Direct local substitution gives the farther-tail-independent transitions
+
+    first five sites 00010 -> after two ticks 11100,
+    first five sites 11100 -> after two ticks first four sites 0111.
+
+For the first transition, odd sites 3,4 are 1,1; odd sites 5,6 are 1-F and F OR G, so the next site 5 is 1 XOR ((1-F) OR (F OR G))=0. For the second transition, odd sites 2,3,4 are 0,0,1, which force the next sites 2,3,4 to be 1,1,1. The next site 1 follows the imposed wall in each case. Thus at time 6 the zero-latch trigger has a=0,b=q=r=1, and GC503 gives length exactly 4. It cannot be 2. This branch forces visible prefix 10100001 from initial right sites 10001, whatever the farther initial row; no eight-symbol enumeration was used.
+
+**Gap obstruction and controls.** After any visible 101, the following zero run has length 1,3 or 4. Therefore 101001 is impossible at every visible start time. Coding the trace by zero gaps between successive ones, the lengths lie in {1,2,3,4}, but the adjacent pair (1,2) is forbidden. This is a concrete failure of the free-gap sufficiency assumption. Further forbidden gap words may exist; the new necessary condition is not claimed sufficient or an entropy lower bound.
+
+Probe `rule30_gpt_gap_pair.py` checks the 101 characterization on all 32 initial five-bit patches in both earlier independent implementations. It checks both canalized transitions for all four choices of initial sites 6,7 with packed updates and literal decimal-set updates: 8 transitions, all PASS. These are fixed local controls; quantified independence is supplied by the displayed substitutions. No horizon growth or asymptotic claim is made.
+
+**Outcome and next.** Independent gap choices already fail at a length-six visible word, before an entropy estimate. Keep GC501's conditioned-background warning: a renewal model needs an actual invariant law or justified regeneration, not just a list of allowed gap lengths. Stop this finite motif branch after the local obstruction; next derive a structural extension criterion or return to a distinct open reasoning lead rather than catalogue longer forbidden words.

@@ -369,3 +369,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_boundary_collision.py`: GC502 clamped-wall output counts n=1..7 and exact collision probabilities; 170 literal-rule comparisons PASS, uniform-output counterfactual refuted. Shortest extra missing word 00000; separate local proof in the record, pending reading. No asymptotic entropy inference.
 
 - `lexicon/rule30_gpt_zero_cylinder.py`: GC503 first visible zero-run classification from five initial right sites under the clamped wall; 128 fixed patch/tail controls PASS in packed and literal updates, uniform-duration CF refuted. No stationary renewal or entropy claim.
+
+- `lexicon/rule30_gpt_gap_pair.py`: GC504 visible-101 characterization and two canalized row transitions; 32 patch and 8 transition controls PASS in packed and literal implementations. Separate local proof excludes adjacent gap lengths (1,2). No longer word scan or entropy claim.
