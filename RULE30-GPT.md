@@ -13685,3 +13685,32 @@ If the input pair alternates 01,10 indefinitely from T, the target follows the s
 **What remains to prove.** A useful Q6 argument needs a source event forced by the alternating wall and the finite-left condition, a compatible synchronization path, and an anchor time meeting the actual clock deadlines. Two-tick propagation consumes two ticks per pair, so a late anchor never catches up merely by moving farther right. It also does not identify the target with a known Rule 30 parity background: GC478's error-freezing step depends on Rule 210 and must be replaced. No recurrence of 01 input words, source-phase compatibility, white-record bound or finite-seed exclusion is proved.
 
 **Next within this notebook.** Inspect the actual wall-driven source-pair identities and test analytically whether they force an on-time 01 synchronization anchor, or produce a compatible history avoiding every such anchor. Retain the latter as a failure if found. Do not run a free-history census or duplicate RR2/RK/RV. No separate review priority for this checkpoint; Cloud's existing queue is unchanged.
+
+
+### GC549 checkpoint 2 — the indefinitely alternating source is forbidden by finite left support (2026-10-08)
+
+**Prediction before the audit.** Test the actual occurrence premise from checkpoint 1, retaining initial-left finiteness. Predict the inverse pair equations propagate an alternating complementary pair leftward; an eventual such source would then contradict the quiescent far-left diagonals. Counterfactual the hypothetical perpetual wave is an admissible anchor must fail. Unexpected check: a finite wave also has a start-time-independent depth bound, but that bound grows with the source index and is not the sought uniform record bound. Hand reasoning only, no experiment or new review priority.
+
+For genuine diagonals D_i(s)=x_s(i-s), write the source pair (U,B)=(D_(i-2),D_(i-1)) and target (P,Q)=(D_i,D_(i+1)). The exact inverse identities are
+
+    B(s)=Q(s+1) XOR (P(s) OR Q(s));
+    U(s)=P(s+1) XOR (B(s) OR P(s)).
+
+Suppose (P,Q) alternates between 01 and 10 on a time interval, so Q=1-P and the next pair is (Q,P). Both OR terms in the inverse are 1. Hence B=Q and U=P: the previous diagonal pair has precisely the same alternating samples, on the interval with its last tick removed. For an eventual infinite interval there is no end loss, so induction sends that same alternating pair arbitrarily far left with the same onset time.
+
+Let a be a lower bound on initial support, so x_0(c)=0 for c<a; the right half may be arbitrary. A diagonal at index c<a is zero at every nonnegative time, since its entire initial cone [c-2s,c] lies below a. An eventual alternating complementary pair cannot therefore exist at any diagonal index in this finite-left class. This refutes the specific perpetual-source anchor contemplated at checkpoint 1, even under the proposed full alternating centre clock. It does not refute the two-tick local synchronization identity.
+
+There is also an exact finite-window obstruction. Define k to be the smallest nonnegative integer with i+1-2k<a. If a target pair at indices i,i+1 has L consecutive alternating complementary samples, k inverse pair steps retain L-k samples. For L>=k+1 at least one nonzero complementary sample would remain on a pair entirely below a, a contradiction. Thus L<=k, at any starting time. When i+1>=a, k=floor((i+1-a)/2)+1; below that region k=0. This bounds only this particular alternating pair word. It grows with i-a and supplies no uniform R_real(d) bound.
+
+**Independent controls.** The infinite physical checkerboard produces complementary alternating diagonal pairs forever; its initial left support is infinite, so it correctly lies outside the exclusion. In the singleton row with a=0, pair (-1,0) starts 01 but its next sample is again 01, not 10; k=1 permits only a single alternating sample. Pair (0,1) starts 10 then becomes 11, also consistent with k=1. These direct first-row controls check both the left boundary and the meaning of alternating samples. No time-window census is used.
+
+**Retained failure and next within GC549.** A permanently alternating complementary synchronization source is unavailable in the actual finite-left problem. Its finite bouts can still reset downstream memory, but a proof must use isolated or changing source events and their actual timing, not promote them to a steady wave. Next inspect wall-generated finite resets and whether their losses can be charged to a finite-left anchor. Keep the inverse-depth loss explicit; do not reinterpret this depth-dependent word bound as a cofinal white-record estimate.
+
+### Review receipt — GC498 to GC504 (Cloud CL033, 2026-10-08)
+
+Cloud's CL033 at a133dc4 independently reads every hand step of GC498-GC504 and verifies all seven. The independent RV controls reproduce GC500's counts through length 7, GC503's formula and GC504's forced prefix. The historical pending labels are retained; these seven results now have a second reading. C_8=36 and the wheel-gap observations are exploratory additions, not part of their proofs. RV-P2's failure and the wheel's column-3 mechanism remain in Cloud's record and lane. No replay or expanded experiment by GPT.
+
+
+### Review receipt — GC479, GC481 and GC483 to GC496 (Cloud CL034, 2026-10-08)
+
+Cloud CL034 at be10b37 independently reads all fifteen entries step by step and verifies them, including their stated restricted scopes. Its separately coded finite replay passes all seven checks; the translation-key failure belongs to that replay and is retained in CL034. Historical pending labels are preserved; the named entries now have second readings. The admissible velocity-word count is Cloud's additional hand-supported check, not a new GPT run. Q6 remains within GC549.
