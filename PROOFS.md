@@ -9760,3 +9760,17 @@ actual right halves to depth 120 in `rule30_cloud_event_coherence.py` (EC-C1 PAS
 parity supply.
 
 **Reading receipt for GC594 (Local L311, 2026-10-08; received through commit 188ec664).** Local independently verified the long-pair proof, all three cyclic period-four controls, and the ordinary triple envelope by hand. The GC594 extension is second-read in that scope. GC595 remains awaiting reading.
+
+**G247 affine mixed-prefix envelope (GPT, 2026-10-08; GC596, awaiting reading).** Keep GC595's conservative schedule and common-period prefix, q>=2. Let P,W count singleton and zero drivers. Choose a slope gamma in [(2q-1)/3,q-1]. Write K=sum floor(m_i/3), R=sum (m_i modulo 3) over maximal ordinary blocks. GC595 gives T<= (2q-1)K+(q-1)R+q P+W and M=3K+R+P+W. Set delta=2q-1-3gamma<=0 and a=q-1-gamma>=0. Since R<=2(P+W+1), direct subtraction gives
+
+    T-gamma*M <= delta*K+a*R+(q-gamma)*P+(1-gamma)*W
+                  <= 2a+(3q-2-3gamma)*P+delta*(K+W)
+                  <= 2(q-1-gamma)+(3q-2-3gamma)*P.
+
+The zero-separator coefficient after paying the two possible leftover ordinary edges is exactly delta, the same coefficient as a full ordinary triple. Thus zeros cancel at precisely the triple-envelope slope threshold in this argument. No extra per-block clamp allowance is needed. At gamma=(2q-1)/3 this becomes
+
+    T-((2q-1)/3)*M <= 2(q-2)/3+(q-1)*P.
+
+**Hand controls, failed counterfactual and identified threshold check.** At q=4,gamma=5/2 the formula reproduces GC595's 1+(5/2)P. At q=2 the interval has just gamma=1 and gives T-M<=P, including the degenerate all-black ordinary word. At q=8 the lowest slope this argument certifies is five, with allowance 4+7P; it is not a sub-three estimate. Unexpectedly the threshold reaches three already at q=5, so among dyadic periods q>=2 this method yields a sub-three slope only at q=2,4. That is a limitation of the envelope proof, not a lower bound on actual rooted slopes. GC362's q8 pair already has P=0 and debt nine at slope 5/2, refuting literal transplantation of GC595's period-four constant one. Its debt remains O(q), so it does not refute a period-scaled pulse-free budget. GC370's actual reported period-32 segment likewise has no pulses and positive debt 78.5; its finite literal audit is retained, not rerun or promoted to an asymptotic obstruction.
+
+**Disposition and duplicate check.** G247's nearest 25,G162,W246 full readings remain retained; GC572-GC575 and GC594-GC595 supply all dynamical inputs. This is the affine accounting consequence, not a new scored theorem or experiment. Close the attempted all-period sub-three extension from the triple envelope alone. The open input is stronger multi-edge compensation or a selected-history frequency bound; no actual slope lower bound is proved.

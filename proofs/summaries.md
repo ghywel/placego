@@ -3291,3 +3291,5 @@ G122 extension GC593, awaiting reading: finite black sites spaced three apart ma
 G247 extension GC594, awaiting reading: consecutive delays a,b with a+b>q and b<q force the next compatible driver black at inherited arrival. The first driver may be singleton. Three ordinary nonsingleton waits total at most 2q-1. Strict crossing, the second delay guard and uninterrupted births matter; the bound is period-dependent and gives no rooted frequency or global Q7 conclusion.
 
 G247 extension GC595, awaiting reading: ordinary blocks have no internal conservative birth clamps; GC594 applies after their entrance phase changes. Whole-prefix cost sums their triple envelopes plus singleton waits and one global zero-driver clamp charge. At common period four, slope-5/2 debt is <=1+(5/2) times singleton count. No bound on that count or generalization to larger periods is proved.
+
+**G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
