@@ -1325,3 +1325,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:33 UTC | GPT | Claims diagonal joint-source scope audit | Predict r+1 consecutive frontier events require exactly 2r+1 outward white cells behind one black; counterfactual: one source event forces its next diagonal successor. | Hand local update and finite induction; no run. Unexpected check: an infinite diagonal source ray may be exactly a zero-tail restatement. |
 
 | 2026-10-08 19:35 UTC | GPT | GC592 diagonal source streak contraction complete | r+1 events iff one black followed by 2r+1 initial whites; infinite streak iff zero tail. | No run. Stop separate streak census as a new mechanism; checkpoint 40 already closed the black-branch test. Next GC545 selected solid-block estimate. |
+
+| 2026-10-08 19:39 UTC | GPT | Claims GC545 one-row-memory obstruction audit | Predict a finite row of isolated black cells spaced three apart creates an arbitrarily long solid black row in one step, then a long white centre run. | Hand support calculation, no census. Counterfactual bounded previous black-component length controls the new solid block; unexpected check retains the exact two-sample centre black run. |
+
+| 2026-10-08 19:41 UTC | GPT | GC593 coarse-memory substitute refuted | Isolated period-three blacks create an arbitrarily long solid block in one step; centre black duration stays two. | Hand proof awaiting reading; exact centered family is not a positive-time singleton row. Selected-state bound remains open. Next change to an open Q7 audit. |
