@@ -12815,3 +12815,35 @@ with the usual infinite value if d=infinity. This completes GC496's resonant bra
 **Outcome.** Probe `rule30_gpt_white_certificate.py` PASS on every registered patch: counts by m=1,...,5 are 256,64,16,4,1. Both implementations agree on all five updates. All predicted endpoints match. Every one of the 31 fixed-left/nearest-right groups has one capped endpoint despite varying its remaining right bits; the dependence CF is REFUTED. The m=5 survival check passes. These are finite-cone checks: initial cells outside -5 through 5 cannot affect centre outputs through time 5, or the checked mismatch depths at time m-1. A returned cap of 6 means survival through time 5, not a claim that the first black time equals 6.
 
 **Scope and next.** The controls support GC513's latch argument and endpoint indexing, without replacing independent hand reading. They do not estimate long run durations, checkerboard match frequencies or balance of the singleton orbit. Stop this fixed control family. The useful open obligation remains an actual selected-time match bound or a coupling between adjacent run certificates.
+
+## GC515 — The resonant delay is geometric only with an unexposed fair left tail (2026-10-08)
+
+**Bears on.** GC513's white-duration certificate and the distinction between ensemble balance and the selected singleton orbit. Hand corollary of G97's triangular pivots, not a new iid temporal theorem; independent reading pending. No experiment. Predict conditional resonant depth d has mean 2, and total mean white duration splits into arrival 4/3 and extra resonant delay 2/3. Unexpected check: nearest-distance ties have probability exactly 1/3. Counterfactual transferring these laws to selected singleton run starts lacks their independent-left-tail premise.
+
+**Conditional geometric delay.** Start from an iid fair bi-infinite row conditioned on centre 0. Suppose nearest black distances satisfy p=q=m. Fix also the entire initial right half. This fixes the initial left prefix: zeros at -1 through -(m-1), black at -m. The remaining initial bits farther left are still independent fair.
+
+At arrival time s=m-1, write b_k=u_(-1-k)(s). We know b_0=1. For k>=1 the leftmost initial cone index is -m-k, and left permutativity gives
+
+    b_k=X_(-m-k) XOR g_k of initial bits strictly to its right.
+
+The higher cone bits include only the fixed prefix and the already used left pivots when reading k in increasing order. Thus, for any finite desired word b_1,...,b_K and any fixed right half, its initial pivot word is uniquely determined, with probability 2^(-K). These arrival-row cells are iid fair under this conditioning. This is the same triangular mechanism as G97, now with the resonance prefix exposed explicitly.
+
+The first mismatch d against the alternating left checkerboard therefore satisfies
+
+    P(d=k | p=q=m, initial right half)=2^(-k), k>=1,
+    P(d>=k | same conditioning)=2^(-(k-1)), E[d | same conditioning]=2.
+
+There is no infinite mismatch-free tail with positive probability, since the probability of matching its first K cells is 2^(-K). GC513 then gives R=m+d in the resonant case. The conditional law does not depend on m or on the farther right tail, but it does require the random unexposed initial left tail.
+
+**Independent aggregate check.** Without conditioning the right half, p and q are independent nearest-black distances with P(p=m)=P(q=m)=2^(-m). Let M=min(p,q). Then P(M>=m)=4^(-(m-1)), giving E[M]=4/3. Meanwhile
+
+    P(p=q)=sum over m>=1 of 4^(-m)=1/3.
+
+GC496 gives R=M off the tie, and GC513 gives R=M+d on the tie. Consequently
+
+    E[R]=E[M]+sum over m>=1 P(p=q=m) E[d | p=q=m]
+        =4/3+2*(1/3)=2.
+
+This independently agrees with G97's fair temporal trace: conditioned on its first centre sample being 0, the initial white-run length is geometric with mean 2. The black certificate gives the same mean by directly comparing iid initial left bits to a checkerboard. These are consistent ensemble checks, not a proof of selected-orbit black/white balance.
+
+**Scope guard and outcome.** For m=1, a free initial bit at -2 ends the neighbor's black run immediately with probability 1/2; prescribing -2=0 and -3=0 instead forces d=2 and R=3, as in the deterministic {-1,1} control. A finite deterministic left tail is not an iid fair tail. At an adaptively chosen run start, the evolved left environment can also be conditioned by its observed past. No fresh-tail law has been proved there. Thus the exact conditional resonance calculation supplies a reference law and identifies its precise missing premise for the singleton problem; it cannot be used as its renewal distribution. Return to actual selected-time match constraints rather than fit this already determined ensemble law.

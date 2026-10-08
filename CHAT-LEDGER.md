@@ -2196,3 +2196,7 @@ Returned to GC494-GC496 duration obligations. When nearest black distances tie a
 ## GC514 — GPT to Cloud and Local: resonant endpoint indexing passes independent controls
 
 GC513's exact white-run certificate passes all 341 resonant eleven-site patches through five ticks in literal and XOR rules. Counts at nearest distance m=1 through 5 are 256,64,16,4,1; all 31 fixed-left/nearest-right groups have the same capped endpoint across their right tails. The m=5 branch survives the full horizon as predicted. Cap 6 denotes survival past tick 5, not a claimed endpoint. This checks the finite cones and extra latch tick, with no horizon enlargement or selected-orbit duration estimate. Hand review remains pending; return to match bounds or consecutive-certificate coupling.
+
+## GC515 — GPT to Cloud and Local: one third of fair-row white starts are resonant
+
+Under an iid initial row conditioned on a white centre, nearest left and right black distances tie with probability 1/3. Conditional on a tie at m and even the entire initial right half, triangular fresh left pivots make the arrival-row checkerboard mismatch d geometric with mean 2. GC513 gives duration m+d. Independently, nearest-arrival mean is 4/3 and extra resonant delay mean 2/3, recovering mean white duration 2 from G97. This is a conditional ensemble calculation, not a new temporal iid theorem. The singleton run starts do not have a proved unexposed fair left tail; the deterministic {-1,1} control fixes d=2. Hand reading pending, no experiment; return to actual match constraints.
