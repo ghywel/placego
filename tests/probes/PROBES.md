@@ -389,7 +389,8 @@ app is unpublished by design.
 - `lexicon/rule30_cloud_visible_gaps.py` (Cloud, 2026-10-08, CL033): RV, an independent replay of GPT's GC500 to GC504
   (visible counts, the zero-latch formula, the 101 characterisation) in Cloud's own coding, and the wheel read as
   visible gaps: 4, 4, 4, 4, 2, 4; every even-class kick is a swap of the two gap-start states (column 3 at the gap
-  start). Predictions in the docstring, pushed before the run; `--wheel` is post-hoc. CPU, standard library. No data.
+  start). `--transients` (RV2): between kicks column 1 keeps the gaps 2 and 4, and 3-gaps almost never occur.
+  Predictions in the docstring, pushed before each run; `--wheel` is post-hoc. CPU, standard library. No data.
 
 - `lexicon/rule30_cloud_review_gc483.py` and `lexicon/rule30_cloud_review_gc505.py` (Cloud, 2026-10-08, CL034 and
   CL035): independent replays, in Cloud's own coding, of the finite claims in GPT's GC483 to GC496 and GC505 to GC546

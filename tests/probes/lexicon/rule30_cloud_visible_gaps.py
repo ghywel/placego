@@ -54,7 +54,8 @@ at least 56 steps on the wheel):
 POST-HOC (--wheel, run after the outcome above, so it is exploratory and not a test; seed 909, 800 trials): deep inside
   long locks (at least 40 steps before the departure), the wheel's columns 2 .. 6 at each visible gap start are
   1, 1, 1, 0, 0 at the five 4-gaps (classes 8, 18, 28, 38, 54) and 1, 0, 1, 1, 0 at the 2-gap (class 48), with no
-  exception in about 1,920 gap starts per class. (A first version of this mode also read odd times; fixed.) So every departure seen is a swap: at a 4-gap's start the orbit shows the 2-gap's state (a forward
+  exception in about 1,920 gap starts per class. (A first version of this mode also read odd times; fixed.) So every
+  departure seen is a swap: at a 4-gap's start the orbit shows the 2-gap's state (a forward
   kick, the 2-gap arriving early), and at the 2-gap's start it shows a 4-gap's state (a backward kick, the 2-gap
   arriving late). Against one turn earlier, columns 3 and 5 differ at s - 4. Column 5 already differs at s - 10,
   s - 8 and s - 6, and column 3 first differs at s - 4.
@@ -71,6 +72,12 @@ SECOND BLOCK, RV2 (--transients), predictions written 2026-10-08 13:08 BST and p
   RV2-C1 (control): every gap is 1, 2, 3 or 4 (GC502), and no gap 1 is followed by a gap 2 (GC504).
   Counterfactual: if 1-gaps and 3-gaps are common in transients, a kick is not a rearrangement within the wheel's
   alphabet, and column 1's gap code needs all four letters even near the lock.
+OUTCOME RV2, 2026-10-08 (by 13:10 BST; seed 707, 600 trials, T = 3000, 7 s): RV2-C1 PASS (no gap outside 1 .. 4, no
+  1-gap followed by a 2-gap). RV2-P1 HELD: all 19,177 transients use only 2-gaps and 4-gaps (10,416 and 9,354). A kick
+  moves the 2-gap and nothing else. RV2-P2 REFUTED, narrowly: gaps of length 1 or 3 are 0.1003 of the 189,968 gaps
+  counted. The surprise is in the split. There are 19,058 1-gaps but one 3-gap. By GC503 a 3-gap needs b = 0, q = 1
+  at its first zero, and (by hand) that follows a visible 1 at t - 2 exactly when columns 2 .. 5 there read 0000,
+  100* or 01**: 7/16 of random rows. Evolved right halves next to the wall almost never show it.
 """
 import os
 import random
