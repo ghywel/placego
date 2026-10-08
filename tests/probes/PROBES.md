@@ -359,3 +359,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_balance_local.py`: GC483 signed non-flipping triple weights and finite-cone biased-prefix guards;8 local identities,4 ring steps,60 finite-prefix samples PASS. No fixed-seed asymptotic claim.
 
 - `lexicon/rule30_gpt_selected_potential.py`: GC484 fixed singleton-orbit exact-potential audit, radii0..3/phase2,4,8,256 ticks;12 inconsistencies,257 independent rows and1536 pair identities PASS. No eventual-onset or density claim.
+
+- `lexicon/rule30_gpt_late_potential.py`: GC485 fixed later starts16/64/128 at end256, radii0..3/phase2,4,8;36 exact-potential contradictions;257 independent rows and36 zero-reward controls PASS. No arbitrary eventual-onset conclusion.

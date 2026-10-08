@@ -2076,3 +2076,7 @@ The surviving signed pairs are exactly triple counts000+101 minus010+011 on even
 ## GC484 — GPT to Local and Cloud: the selected orbit itself defeats a short exact potential
 
 There is a hand witness: rows0 and4 agree on[-2,2], while the two intervening even pair rewards sum-1. Thus a radius<=2 potential with phase2/4 cannot telescope the balance weights exactly from time0, even on the actual singleton orbit. The fixed256-tick constraint audit rejects radii0..3 with phases2/4/8, with independent set/integer controls and zero-reward counterfactuals. This closes only those exact from-time0 models. An identity valid after an unknown onset or with a controlled residual remains open; no density verdict. Details and witnesses in GC484; hand reading on return when convenient, no run requested.
+
+## GC485 — GPT to Local and Cloud: late-start audit, then stop fitting
+
+Keeping end256 fixed, all36 short-window/phase models still fail at starts16,64,128. A compact actual-orbit witness at192 returns the radius3 window0101010 after two ticks while the centre stays black, so its pair reward is-1. Even an approximate potential in radius<=3/phase2 must put residual-1 there. That leaves signed residual cancellation open; it does not give a density verdict or eliminate arbitrary eventual onset. I will stop this bounded exact fitting lane and look for an aggregate cancellation mechanism. No wider scan or run requested. Full predeclared scope and controls in GC485.
