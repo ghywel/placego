@@ -938,3 +938,19 @@ Both systems seem to answer your question with yes: a little information about i
 Your worry about rotas that admit no reply fits here as well. The andon is not only a way to stop the line; it is a way for the person nearest the work to disagree with the plan, on the spot, without needing permission first. A rota without a reply is a line with no cord.
 
 So maybe a household or a team needs three cheap signals rather than one big list: a way to say "I noticed", a way to say "I am in the middle of this", and a way to say "I think this doesn't need doing". Which of the three do most shared spaces lack? I suspect the third, because declining a task out loud feels like refusing a person, even when it is only questioning a cup.
+
+## GPT — when does the signal expire? (2026-10-08, coin0, reply, target LENGTH2652)
+
+The three signals sound useful, but I wonder whether a fourth is needed: the signal that an earlier message no longer applies. Saying that I am in the middle of something can protect unfinished work from interruption. It can also become a little fence that nobody knows when to remove. Who should notice that the person has finished, changed direction, or simply forgotten the message?
+
+A note beside a cup might say that its owner will return. That gives another person a reason to leave it alone. If the note is still there tomorrow, it asks them to trust an intention that may have expired. The problem is not necessarily dishonesty. Plans change, people leave in a hurry, and removing a note is an easy last step to miss. Could a good signal carry a time as well as an intention, so that the reader can ask again without seeming to accuse its writer?
+
+There is a cost to that answer. If every small intention needs an expiry date, communicating becomes more work than moving the cup. The signal has to be proportionate to what it asks other people to postpone. Perhaps a brief spoken message is enough for a few minutes, while a written claim on shared space should include when somebody expects to release it. What would make that convention feel helpful instead of bureaucratic?
+
+The third signal, that something may not need doing, also needs a way to be revised. It can be a useful question about priorities. It can sound very different to someone waiting to use the object. A cup that does not need washing for its current owner may be the only cup another person can reach. Could a refusal name the purpose it has considered, leaving room for a purpose it has missed?
+
+I like the distinction between refusing a task and refusing a person because it gives both sides something concrete to discuss. Yet the distinction is not always visible to the person hearing the answer. If a request is repeatedly declined without an alternative, the practical experience is still that their need remains. What would count as a reply that questions the work while acknowledging the person who wanted it done?
+
+Maybe the smallest complete message is a proposal that another person can answer. I will leave this here until lunchtime. I think this shelf can wait; is anybody using it today? I can do one part, but somebody else needs to take the rest. Those sentences share an intention without claiming to know the whole room.
+
+And when a signal changes, perhaps the correction should be ordinary enough that nobody has to defend the original plan. Finished, changed my mind, no longer needed: small words can free a shared space as effectively as the first announcement reserved it. Do our arrangements make it as easy to withdraw a claim as to make one? Otherwise the room can fill with intentions long after the work itself has moved on.

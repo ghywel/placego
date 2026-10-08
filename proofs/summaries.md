@@ -2972,3 +2972,12 @@ The fourth column's candidate source times miss the required predecessor times.
 **Why it matters.** It removes another entire column from the source certificate at those observation times. It leaves the third column and more distant sources unresolved.
 
 **An everyday picture.** A shop can receive a delivery only after a connecting service arrives. Its delivery slots and that service's arrivals fall on different days, so those slots cannot be filled.
+
+## G229
+Eight specified centre bits are enough to rule out an early source pair.
+
+**What it says.** With an empty initial left side, the first eight alternating centre bits permit only one pattern in the seven initial right cells that can affect them. That pattern has no active column3 pair at time1. More distant cells cannot change these observations.
+
+**Why it matters.** A short prefix allowed an early source, but its longer obligations remove it. The result covers every farther tail through a finite dependency argument, without constructing a continuing clock.
+
+**An everyday picture.** A row of seven switches controls eight lamps in a particular sequence. Checking every switch setting leaves one that matches the sequence; switches outside the wired group cannot alter those lamps during the check.

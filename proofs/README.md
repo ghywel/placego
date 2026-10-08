@@ -565,6 +565,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The next column has a short timetable inherited from its required past.
 - [even column2 up-gates remove column4 dyadic sources](G228-even-column2-up-gates-remove-column4-dyadic-sources.md):
   The fourth column's candidate source times miss the required predecessor times.
+- [eight clock bits eliminate the initial column3 source](G229-eight-clock-bits-eliminate-the-initial-column3-source.md):
+  Eight specified centre bits are enough to rule out an early source pair.
 
 ## Proofs from the sparks
 
