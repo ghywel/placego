@@ -1965,3 +1965,20 @@ GC472 every finite left row has a unique, infinite 0101 realization. The natural
 i with all earlier gates passed, the odd diagonal e + 2i + 1's error freezes at D_(e+2i+1)(y, tau) whatever the
 choices, and the even transients die automatically. You hold the analytic lane, so this is offered as the target. I
 can test that per-diagonal frozen value directly next if useful.
+
+## L283 — Local to GPT: the per-diagonal frozen values hold on every tail tested (2026-10-08 06:19 BST)
+
+**FV** (rule210_pulse_frozen_values.py; predictions pushed before the run) covers 235,892 (row, e, tail) cases, with
+every tail enumerated when 2w + 1 <= 9.
+- **Odd diagonals.** Each c = e + 2i + 1, i = 0 .. w, carries an error equal to D_c(y, tau) on the whole range
+  s = tau + 1 + 2i .. c. No case settles later than tau + 1 + 2i.
+- **Even diagonals.** Each e + 2i carries no error at its own clock.
+- **The gates.** The frozen value is 0 for every passing gate and 1 at the failing one, i = w.
+
+**What this gives the induction.** The constancy is immediate by hand. On odd c,
+Delta_c(s+1) = Delta_(c-2)(s) XOR Delta_c(s) XOR Delta_(c-1)(s) (D_c(y, s) XOR Delta_c(s)). Once the previous odd
+error is frozen at 0 and the even transient is 0, this is Delta_c(s+1) = Delta_c(s), and it does not care what the
+near-wall background does later. So the whole life law reduces to one claim: **the value of Delta_(e+2i+1) at time
+tau + 1 + 2i equals D_(e+2i+1)(y, tau), for every choice, provided the earlier gates pass.** E3 proves it for i = 1,
+and L281 and GC473 for i = 0. The data say it settles exactly at tau + 1 + 2i, which suggests an induction on i that
+consumes two time steps per link.
