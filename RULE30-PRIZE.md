@@ -1493,6 +1493,7 @@ steps, every cell a stream), with its predictions written first:
 | The same test for the linear Rules 90 and 150 | pass (50.02%, 50.00%) |
 | The centre column alone, from a single 1 (Wolfram's way) | **pass** ($p = 0.73$); the flaw sits in the column beside it, which the user never reads |
 | Bytes of 8 adjacent cells, every row of a run pooled | **fails** in 7% of runs. Each row determines the next, so the rows are not independent draws: with rows 32 steps apart, 0.3% (a pre-registered diagnostic) |
+| The centre column's words of 1 to 16 bits over $2^{22}$ steps, and whether the same words stay frequent in both halves (the owner's word-bias question, 2026-10-09, `rule30_cloud_word_bias.py`) | **pass**: smallest chi-square $p = 0.010$, largest split-half persistence $|Z| = 2.00$, longest repeated word 43 bits (fair controls 40 to 45); a planted bias of 1.5% of words is caught at $Z = 9.2$ |
 
 The prediction that whole rows would pass was refuted: the reasoning held for a single row, not for 4,096 dependent
 ones. Which of the two flaws Sipper and Tomassini's test met is not known here, since their paper was not read.
@@ -1502,6 +1503,14 @@ Wolfram's key from the centre column. The centre column and the column beside it
 Rule 30 is left-permutive, and the column beside it can be guessed from the right half of the seed, which carries
 little entropy. That is §5's forced left half and §8's right side as a constraint on column 1, 35 years earlier.
 PRIOR-ART.md records it.
+
+*Addendum (2026-10-09, Cloud; the owner's question, "if the centre column was an encrypted message ... how might
+we decrypt it").* Read as a cipher, the centre column is an autokey encryption of the initial row's left half
+keyed by its right half, $x_t(0) = x_0(-t) \oplus F_t(x_0(-t+1), \dots, x_0(t))$, and the single cell is the
+all-white message under the all-white key, so the ciphertext is the keystream itself. The key cannot be recovered
+from it. Proposition 20 (PROOFS.md, waiting room) proves that the seeds $11, 101, 1011, 10101, \dots$ give the
+single cell's whole pattern left of the line $x = t$, so they share its centre column. A scan of all right halves
+of up to 16 cells finds no other finite key at $T = 400$.
 
 **What it says about the chaos.** Rule 30's randomness is real in one sense and an illusion in another. On the
 infinite line it is chaotic in the strict sense: information from ever further away keeps arriving. From a single 1

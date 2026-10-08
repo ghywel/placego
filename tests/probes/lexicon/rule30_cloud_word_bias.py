@@ -64,6 +64,23 @@ Counterfactual: if Rule 30's column favours some words, Z_split is large and pos
   rare words are better seen by p_top. A longest repeat well above the controls' would mean a stretch of the column
   that recurs, which a deterministic rule could produce and fair coins rarely do.
 REFUTED-BY: WB-C1 to WB-C4 failing (the instrument); WB1 to WB4 failing.
+
+OUTCOME of the first run, 2026-10-09 (00:33 to 00:43 BST, 9 min 52 s on four cores; a duplicate run started by
+  mistake at 00:34 was stopped at 00:41 before it printed anything): ALL CHECKS PASS. WB-C1 PASS (7, 52, 481, 5,032,
+  50,098, 500,768). WB-C2 PASS. WB-C3 PASS: the planted bias gives Z_split(12) = 9.24, as the formula said (chi-square
+  z 14.0; 63 of the leaderboard's 100 were planted words, 76 above E in half 2). WB-C4 PASS: 27 fair streams, 1.2% of
+  chi-square and p_top values below 0.01, Z_split mean +0.11 and standard deviation 0.975.
+  WB1 HELD: smallest chi-square p = 0.010 (k = 11); 0.016 at k = 9, 0.024 at k = 14, all others above 0.4 or so.
+  WB2 HELD: smallest p_top = 0.0044 (k = 12), from the word 111001000001, 133 times against 85.3 (z +5.16).
+  WB3 HELD: largest |Z_split| at k = 4 .. 16 is 2.00 (k = 14; the controls' largest there +1.88); the leaderboard
+  count is 53 (controls 44 .. 60, mean 50.9). The over-represented words of one half do not stay over-represented in
+  the other, at any length from 4 to 16 bits.
+  WB4 HELD (the unexpected check): the longest repeated word is 43 bits, at times 2,663,832 and 3,495,375 (controls
+  40 .. 45, median 43); 124 pairs of equal 36-bit windows against 128.0 expected.
+  So no word bias is seen at this scale. The one standout is 111001000001, high in both halves (65 and 68 against
+  42.7). Post hoc, some 12-bit word reaching 65 in both halves has a chance of about 1 in 300 for fair coins, and the
+  look across 16 values of k makes that unremarkable. It is a candidate to test in fresh bits (times 2^22 .. 2^23),
+  not a finding.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from concurrent.futures import ProcessPoolExecutor

@@ -3073,6 +3073,13 @@ No finite starting row of Rule 210 can make the centre alternate white and black
 **An everyday picture.** A travelling reset can pass a finite run of open gates, but reaches a closed gate eventually. Arbitrary choices farther along cannot repair the failure.
 
 
+## 33
+Infinitely many finite starting rows (11, 101, 1011, 10101, ...) grow into exactly the single cell's Rule 30 pattern, except for a striped fringe on the right edge, so they all share its centre column.
+
+**What it says.** Put a black cell, then an alternating white-black stretch, then a black cell. That fringe rides the pattern's right edge and flips every cell it touches at every step. Its two innermost stripes are always opposite, so the OR in Rule 30, the only way the fringe could reach inward, is already 1. The inside of the pattern never learns the fringe is there.
+
+**Why it matters.** It answers the owner's cipher question in miniature: the centre column is an autokey encryption of the starting row, and it cannot tell which of infinitely many finite keys made it. A scan of every right half up to 16 cells found no other such seed. It does not touch the prize problems' difficulty, since every one of these seeds has the same column as the single cell. Cloud proved it by hand after an exploratory scan; it waits for a second reader.
+
 ## W234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
