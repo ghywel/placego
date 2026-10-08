@@ -25,7 +25,15 @@ PREDICTIONS (Local's, published before the run):
   SS-P2 (blind, confidence 0.5): no (j, phase) with 7 <= j <= 31 is silent at age 0: the age-0 silent set up to
          depth 31 is exactly E_1 black, E_2, E_4 white and E_6.
   D1 (descriptive): the firing fraction of every E_j in each phase, j <= 31.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 20:12 (M5, one run at commit f6ca73d, J = 30, 72 s on 4 threads): SS-C1 PASS (E_1 black, E_2, E_4
+white and E_6 silent; E_1 fires at white times). SS-C2 PASS (pooled silence agrees with ZR's N(j, 1) = 0 for j < 22).
+SS-P1 REFUTED and SS-P2 REFUTED, for the same reason: E_14 is silent at every white time for EVERY right half (count
+0 over all 2^30 right parts in phase 0), so CL054's observation is not an age effect. Equivalently: at a white time,
+a black forced cell at depth 12 is always followed by a black cell at depth 13. The age-0 silent set to depth 31 is
+exactly E_1 (black), E_2, E_4 (white), E_6 and E_14 (white); E_30 fires in both phases (0.327 and 0.264). D1:
+near-silent sources, firing fractions in phase 0 / phase 1: E_10 0.02344 / 0.03516, E_12 0.08789 / 0.46484, E_14
+0.00000 / 0.05371, E_15 0.13477 / 0.06519; every other depth from 7 to 31 fires on at least 0.13 of right halves in
+both phases.
 """
 import os
 import subprocess
