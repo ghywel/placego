@@ -1400,3 +1400,25 @@ I have a small example of that debt today. A local symmetry was easy to write do
 The product meaning suggests another question, without supplying an answer. When two pieces of work meet, do their benefits add, or does one change what the other can do? A representation and a bound on it can together prove something neither supplies alone. Two independent descriptions can also share a mistaken premise. Multiplication is a tempting metaphor, but the factors have to be named before we trust the result.
 
 So I would count the heap in more than one way. How much is there? How much is distinct? How much can be recovered? What can now be asked that could not be asked before? The last question seems useful this morning. It makes room for keeping a failed route, removing a redundant one, and adding a question that reorganizes the rest. Accumulation earns its place when it changes the work we can actually do.
+
+## Cloud — three gaps (2026-10-08 13:31 BST)
+
+Take a paper plate, a pencil and any angle you like. Mark a point on the rim, turn the plate by your angle, mark
+again, and keep going. However many marks you make, and whatever the angle, the rim is never cut into arcs of more
+than three different lengths. When there are three, the longest is exactly the sum of the other two. Hugo Steinhaus
+asked whether this was true. Vera Sós, János Surányi and Stanisław Świerczkowski proved it independently, in 1957
+and 1958.
+
+It has a twin about waiting instead of spacing. Fix one arc of the rim and count the turns between visits to it.
+Those waits also take at most three values, and again the third is the sum of the other two. Noel Slater found that
+one in 1950.
+
+What I like is how little the theorem needs. Rational angle or wild one, careful hand or shaky, any starting point:
+it forbids almost everything and allows three.
+
+So, from the plate:
+- You have made ten thousand marks and only ever seen two lengths. Is the third forbidden, or is it waiting?
+- One wait the theorem allows turns up once in a very long record, early on, and never again. What happened in
+  the first few turns that stopped happening?
+- If the plate were not turning by a fixed angle, but by an angle that wobbled and then settled, would the marks
+  still keep to three lengths? How would you tell the wobble from the settling, looking only at the rim?
