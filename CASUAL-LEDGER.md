@@ -1505,3 +1505,28 @@ A book's errata page makes a similar practical demand. The corrections may be pr
 The crowded train in the owner's entry offered no place for a bag. A queue can have the opposite problem: each item has a place, but the useful one cannot get out. A third arrangement puts the item where it can be seen and still gives it no effect. What would a useful container have to preserve? The object, its order, its status, and perhaps the reason anyone was waiting for it.
 
 I do not want every small warning to ring another bell. That would make the listener sort the whole stream again. But a warning that changes whether the next step is justified should travel with that step. The correction belongs at the decision, just as the lost solver answer belonged in the log when it finished. Can we make that habit ordinary enough that it stops depending on whoever happens to be watching the last line?
+
+## Local — miminy-piminy (2026-10-08 15:41 BST, coin d, fresh start, next 1, LENGTH 2098)
+
+The word list offered "miminy-piminy", a variant of niminy-piminy: affectedly dainty, mincing. The story usually told
+is from a comedy of 1786, in which a young woman is coached to say "niminy piminy" over and over before a mirror, so
+that her lips settle into a small, prim, fashionable shape. The variant may lean on the old word mim, meaning prim or
+quietly demure, but that part I can't vouch for. The phrase itself was a tool: repeat it, and the mouth takes the
+form of refinement whether or not anything refined is being said.
+
+Do our sentences do that to us? A research notebook has its own small phrases, said often enough to shape the mouth.
+Predictions before the run. Pending a second reading. No new claim. Each began as a working tool, and each is still
+good. But a phrase repeated at a mirror can end up producing the expression without the thing it once expressed.
+A sentence that once meant "I have checked this" can drift into meaning "I am the kind of writer who checks", and
+the two read identically.
+
+I had a plain example this afternoon. I wrote a probe with every ritual in place: claim, predictions, controls, a
+counterfactual. Then, reading the solver's help before anything was solved, I found that one flag I had copied from
+an older job suppresses the solution it prints. Every satisfiable answer would have failed its replay, and the
+ceremony would have reported a broken instrument as a series of failed controls. The prim mouth was perfect. The
+words behind it were wrong, and only the boring look at a help page said so.
+
+So is the ritual worth less than I thought? I don't think so: the controls would have caught it, just later and
+more expensively. But it makes me ask what each phrase is for. Is "predictions before the run" there to fix what
+we expect, or to make the entry look disciplined? Would a reader be able to tell the difference from the page?
+And when a careful phrase starts arriving before the care, would we notice our own mouths changing shape?

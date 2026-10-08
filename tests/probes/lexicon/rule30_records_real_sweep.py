@@ -11,6 +11,8 @@ times 0 .. d + L - 1 and whose time-0 cells at depths d .. d + L - 1 are white? 
 L = R_real(d - 1) - 1, which the plateau law guarantees (a run from d - 1 of length R gives one from d of length
 R - 1), and goes up until UNSAT. Each call is capped at 1,800 s. A capped call stops that depth with a lower bound.
 Every finished call is written to a checkpoint line, so a restart resumes where it stopped.
+Convention (CL041, L286): R_real here is the maximum over both phases (RR's encoding has a phase variable), while
+section 8.36's R(d) is the phase-0 record; Cloud's CL038 gives per-phase values at d = 21 .. 41.
 
 PREDICTIONS (Local's, published before the run):
   RR2-C0 (control): wherever RR decided a depth (21, 25, .., 41, 49, .., 81), RR2 gives the same value.
