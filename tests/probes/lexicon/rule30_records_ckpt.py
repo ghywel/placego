@@ -36,7 +36,7 @@ import subprocess
 import sys
 
 D, THREADS, SPLIT = 93, 6, 14
-SCRATCH = os.environ.get('NP_SCRATCH', '/Volumes/extnvme/nframe-project/np-scratch/rule30-rk')
+SCRATCH = os.environ.get('NP_SCRATCH', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-rk'))
 BIN = os.path.join(SCRATCH, 'records_bits_ckpt')
 CK = os.path.join(SCRATCH, 'd%d.ck' % D)
 LOG = os.path.join(SCRATCH, 'd%d.log' % D)

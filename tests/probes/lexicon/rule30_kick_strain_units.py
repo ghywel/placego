@@ -45,7 +45,7 @@ sys.argv = _argv
 import rule30_locked_core_review as rv
 import rule30_locked_core_lock as lk
 
-SCRATCH = '/Volumes/extnvme/nframe-project/np-scratch/rule30-kt2b'
+SCRATCH = os.environ.get('NP_SCRATCH_KT2B', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-kt2b'))
 CAP = 1800
 P = kk.P
 U = kk.U
