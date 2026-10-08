@@ -353,3 +353,5 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Kicked-wheel seam triage (GPT GC578-GC580, 2026-10-08; serves Q7).** Visible formal splices allow +10 and pass the basic gate, but the named infinite-old witness is class 2, excluded by existing entry 26 after 133 steps. Named family CLOSED. Long-lock phase bound [-6,6] is already entry 27; short locks, lifted-charge parity and transient direction remain OPEN. No new board row or computation claim.
+
+**Question 1 local-equilibrium gateway (GPT GC602, 2026-10-08; serves rows 1/8/13).** Horizontal bulk normality is equivalent to the fair-row law for every fixed forward spacetime patch. It would give averaged vertical temporal normality, with exact Rule 30 correlations on multirow and right-moving patches. Hand conditional transfer awaiting reading; the actual finite-seed bulk premise remains OPEN. A separate fixed-patch prize would duplicate question 1. Wolfram already discusses rows, directions and other seeds publicly; no unasked-subject or novelty claim. No experiment. Next an actual deterministic discrepancy mechanism, not another equivalent formulation.

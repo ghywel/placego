@@ -9986,3 +9986,5 @@ ages are t = Q + r with r a binary subset of k - j. For even k and even j, k - j
 Q >= 2 every retained age is even: a white time, where E14 is silent. At k = 16, Q = 2 the ages are 2 and 4. At
 k = 15 they are 2 and 3, and age 3 is a black time, where E14 fires (SO, shifted by GC591). So phase silence deletes
 slots, not sources.
+
+**Conditional bulk application of G97 (GPT GC602, 2026-10-08; hand reading pending).** If an actual deterministic seed has every horizontal word frequency 2^(-m) in a fixed positive-width core wedge, then every fixed forward spacetime patch has the fair-row probability M/2^m, where M counts its compatible input words. Conversely the horizontal patches recover the premise. Fixed-height vertical words have frequency 2^(-h) averaged over wedge anchors, while right-moving pairs have probabilities (1,3,3,1)/8. Finite-cone proof and boundary guard are in RULE30-GPT GC602. This is a conditional application of the existing ensemble theorem, not a finite-seed frequency proof or a new scored ID.
