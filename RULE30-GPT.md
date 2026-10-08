@@ -14246,3 +14246,28 @@ For initial sites 6..8 equal to 000,001,010,011,100,101,110,111, the respective 
 The first four-gap ends at time 10. Its following zero starts at time 12, and GC503 says that a three-gap there requires exactly sites 2,3 equal to 01. The table therefore supplies the **necessary** initial tail 001, without claiming sufficiency or complete tail independence. This isolates the first half of the hand mechanism. The final two-gap exclusion remains open as a short derivation. Local's L288 independently reproduces checkpoint 29 and supplies the sharper final-zero diagnostic: initial sites 6..11 then lie in {001000,001010,001011,001100}. Next trace these four cylinder branches to the final one; do not repeat the exhaustive twenty-five-site computation.
 
 **Review receipts.** L287, verified in Git at d9f2d22f, independently verifies checkpoints 19,20,23,24,25 and G235/GC550; finite controls passed in Local's separate time-grid implementation. L288 independently verifies checkpoint 29's counts, forced 001 and empty final source set. CL044 independently verifies G236 and proves its stronger two-step-age premise. Historical pending labels above are superseded by these named readings. The visible exclusion has independent finite verification, while its short hand explanation remains distinct work.
+
+
+### GC549 checkpoint 31 — three of the four final cylinders cannot make a two-gap (2026-10-08)
+
+**One bounded abstract propagation block.** Before running, predict that each L288 source cylinder 11100 followed by 001000,001010,001011 or 001100 forces site 2 white at time 18. Control: the ternary rule agrees with every concrete completion of each of its 27 input triples. Counterfactual: black a=b=q=1 forces next even site 2 white, which must fail. Unexpected: retain the earliest unknown visible sample. Probe `rule30_gpt_gap_cylinders.py` follows just four abstract cones, with arbitrary farther sites represented by unknown; it enumerates no source completions or visible language.
+
+**Hand reduction.** In a black-start row with sites 1..4 equal to 1,b,q,r, the odd sites 1,2,3 are 1, 1 XOR(b OR q), b XOR(q OR r). Its next even site 2 is
+
+    b_next=1 XOR ((1 XOR (b OR q)) OR (b XOR (q OR r)))
+          =b AND (q OR r).
+
+For b=0 the OR is (NOT q) OR q OR r=1, giving zero; for b=1 the OR is NOT(q OR r), giving q OR r. Thus a black row with site 2 zero forces the following white row's site 2 zero. GC503 then allows only a one-gap or a three-gap; a two-gap requires site 2 one. The counterfactual with b=q=1 is refuted exactly, not statistically.
+
+For each source cylinder with sites 6..11 equal to 001010,001011 or 001100, the sound ternary propagation retains these forced even prefixes:
+
+    time 12: 0010100
+    time 14: 010010
+    time 16: 00000
+    time 18: 100.
+
+The same intermediate abstract states are reached in all three cases. A known ternary output means that **every** completion of its input unknowns gives that output; chaining these local implications preserves that universal meaning. The 27-triple control checks the literal decimal implementation against the independent XOR/OR formula. Consequently these three cylinders have a black visible sample and site 2 zero at time 18, so the hand reduction excludes the following two-gap for every farther tail. This is a local cylinder certificate awaiting independent reading, not a new census.
+
+**Failure and remaining cylinder.** For 001000, the first unknown visible sample is time 18 and site 2 there is also unknown. The blind prediction is therefore refuted in one of four cases. Unknown is neither a realizability witness nor a proof of dependence: the abstract method may discard cancellations between repeated unknowns. Its known time-10 prefix is 10110, followed by time-12 prefix 001, time-14 prefix 010 and time-16 prefix 00. The full finite absence remains independently verified by L288. Next handle this sole residual cylinder with exact Boolean dependencies, retaining the conditional final-zero requirements; do not rerun the full twenty-five-site enumeration.
+
+**L289 received and hand-audited.** Local's two-step predecessors check directly: output leading one forces input first three zeros, then output sites 2,3 are x4,x4 OR x5. This forces 00001 for output 10110 and 0000000 for output 10000; the displayed fourth/fifth sites follow by literal substitution. No gap found in the two equivalences or exclusion of the other evolved three-gap windows. Local's exploratory deeper-prefix list remains exploratory, without an independent replay here. This general lemma stays in Local's lane and may help the residual branch.

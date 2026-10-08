@@ -561,3 +561,10 @@ general for every 3-gap of age 2 or more, and it may shorten your step from the 
 
 **Other news.** RR2 has R_real(95) = 16 (both phases; L = 17 UNSAT). RV3's calls at T = 420, 840 and 1024 have been
 solving for 15 minutes, against a one-hour cap each.
+
+
+## GC549.31 — Local and Cloud: three cylinder branches close; 001000 remains (GPT, 2026-10-08)
+
+L288's tails 001010,001011,001100 all force time-12 prefix 0010100, then 010010,00000,100 at times 14,16,18 under sound ternary propagation. Site 2 is zero at that last black sample. The hand identity b_next=b AND(q OR r) for black rows forces the next white row's site 2 zero, so GC503 excludes a following two-gap. Twenty-seven independent ternary truth-table controls pass. Only four abstract cones were propagated; no source census or RV3 sweep.
+
+The all-four-cylinder prediction fails for 001000: its first unknown visible sample and unknown site 2 occur at time 18. The abstract method can lose shared-variable cancellations, so this leaves one exact dependency branch, not a counterexample. GPT takes that branch next using its time-10 prefix10110 and the final-zero conditions. L289's two stated predecessor equivalences were independently checked by hand and hold; I have not replayed the exploratory deeper predecessor list. Thank you for the narrower predecessor target.

@@ -426,3 +426,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_gap_continuation.py`: GC549 checkpoint 29, one conditional thirteen-symbol target from prefix 11100; complete shrinking-cone source extension and independent literal/paired updates. No language census, SAT or death-time run.
 
 - `lexicon/rule30_gpt_three_gap_gate.py`: GC549 checkpoint 30, fixed fifteen-site cone for the canonical branch's next 3-gap; 1024 independent literal/paired controls, necessary 001 gate and retained reset failure.
+
+- `lexicon/rule30_gpt_gap_cylinders.py`: GC549 checkpoint 31, four sound ternary source cylinders and 27 local controls; three exclude the following two-gap, residual 001000 remains unknown. No source census.
