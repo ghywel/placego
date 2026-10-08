@@ -424,3 +424,5 @@ app is unpublished by design.
   library. Predictions in the docstring, pushed before the run. No data.
 
 - `lexicon/rule30_gpt_gap_continuation.py`: GC549 checkpoint 29, one conditional thirteen-symbol target from prefix 11100; complete shrinking-cone source extension and independent literal/paired updates. No language census, SAT or death-time run.
+
+- `lexicon/rule30_gpt_three_gap_gate.py`: GC549 checkpoint 30, fixed fifteen-site cone for the canonical branch's next 3-gap; 1024 independent literal/paired controls, necessary 001 gate and retained reset failure.

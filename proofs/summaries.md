@@ -3072,7 +3072,7 @@ A finite early clock does not prevent arbitrarily delayed resonance in a deeper 
 
 The critical-ray bit cannot become constant under a fair initial row, except on a null set.
 
-**What it says.** Its right tail would have to reach the all-zero infinite state. Invariance of the fair measure makes that absorption event null. Both bit values therefore recur infinitely often almost surely. Second reading pending.
+**What it says.** Its right tail would have to reach the all-zero infinite state. Invariance of the fair measure makes that absorption event null. Both bit values therefore recur infinitely often almost surely.
 
 **Why it matters.** This proves the single-bit baseline without critical-ray ergodicity. Simultaneous longer zero windows and damage escape remain open.
 
@@ -3083,7 +3083,7 @@ The critical-ray bit cannot become constant under a fair initial row, except on 
 
 The row after a history-bearing four-gap entry retains a restriction three sites beyond its familiar prefix.
 
-**What it says.** From initial prefix 0001, a two-step output beginning 11100 cannot continue with 011. A sixteen-state spatial image map proves this in three subset transitions. Second reading pending.
+**What it says.** From initial prefix 0001, a two-step output beginning 11100 cannot continue with 011. A sixteen-state spatial image map proves this in three subset transitions.
 
 **Why it matters.** A canonical five-site prefix does not erase the incoming history. The missing visible 4,3,2 factor still needs its continuation linked to this spatial restriction.
 

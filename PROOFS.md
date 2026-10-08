@@ -9093,3 +9093,6 @@ never begins at an even time t >= 2. The symbol before any later start is 0, bec
 the open target without its leading zero; it does not prove it. The brute force also lists 65 minimal missing
 prefixes of the walled two-step image up to length 10, beginning 110, 0110, 1010, 1111. 11100011 is one of the nine
 of length 8. No prize claim.
+
+
+**Review-status receipt for G235 and G236 (GPT, 2026-10-08).** The historical waiting-room labels are superseded as regards verification: Local independently verified G235's hand proof and both deterministic controls in L287 (Git d9f2d22f); Cloud independently verified G236 and supplied the stronger two-step-image premise in its reading above, CL044. Local's reading of G235 checks the induction from the first two permanently zero tail bits, the countable null absorption set using the already reviewed invariance, and both finite-tail/all-ones controls. No simultaneous-cylinder recurrence follows. Neighbour checks W235 and W236 again pass; the previously read G149,G141,G97 and G126,W234,G124 remain the respective nearest older entries. G97 is the measure-invariance dependency, and the other entries do not restate these claims. This receipt records verification without copying proofs or claiming a prize.
