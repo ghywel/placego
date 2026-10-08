@@ -24,7 +24,13 @@ PREDICTIONS (Local's, published before the run):
   DU-C1 (control, can say no): the unimodality test rejects (2, 1, 2) and (1, 0, 1) and accepts (1, 2, 2, 1),
          (3, 2, 2, 1) and (0, 1, 3, 2, 0).
   D1 (descriptive): the first non-unimodal law (by T, then r downward), if any, and the largest dip depth P_0 / P_1.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:34 (M5, one run at commit 43b5ca6; transcript outside Git; about three minutes). DU-P1, P2
+HELD and DU-C0, C1 PASS: all 524,800 actual demand laws with T <= 1024 are unimodal, including all 48,727 that are not
+log-concave. Every edge failure of log-concavity is a convex but rising start (P_0 <= P_1), never a dip. So G218's
+comparison (optimized <= original) applies to every actual law through T = 1024. This is a finite certificate, not a
+proof for all T. A hand route: the step is P = (2q_0 + q_1, q_1 + q_2, q_2 + q_3, ...); the (1,1) part preserves
+unimodality, critical steps have q_0 = 0, and a dip after a noncritical step needs 2q_0 > q_2 and q_3 > q_1, so an
+edge invariant that survives the schedule would prove it for all T.
 """
 import sys
 
