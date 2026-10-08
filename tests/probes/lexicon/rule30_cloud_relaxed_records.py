@@ -50,8 +50,8 @@ OUTCOME, 2026-10-08 (by 15:16 BST; one core, CaDiCaL). The exact visible languag
       d 25   19 12 10 10    18 13 11 11        d 37   29 10  9  7    30 11  8  8
       d 29   19  9  7  6    20 10  7  7        d 41    -  13 13  8     - 11 10  7
   The d = 41 relaxed and actual values were computed by the same functions in a second process (20 s and 28 s),
-  because the main process spent over 40 minutes on the free control there. The d = 41 free records were not
-  finished when this was written.
+  because the main process spent over 40 minutes on the free control there. The main process was stopped at
+  15:18 BST with the d = 41 free records unfinished, so RRL-C1 is untested at d = 41.
   RRL-C1 FAIL as written, informatively. The phase-0 free records equal section 8.36's R(d) at every finished depth.
   Phase 1's are larger at many depths (4 against 3 at d = 7, 19 against 6 at d = 12, 34 against 33 at d = 33), so
   R(d) is the record for the phase that starts white (0101...). It is not a maximum over phases. RRL-C2 PASS
@@ -73,6 +73,11 @@ GAP WITNESS (--gap, at GPT's request GC549.26; prediction written 15:18 BST, pus
   outside the actual white-start language. Find its shortest absent factor (a minimal forbidden word, of length at
   least 11), with membership decided by SAT over the right half's cone (width 2k - 1 for a k-symbol factor).
   RRL-P4: that shortest absent factor has length at most 14. Confidence 0.6.
+OUTCOME GAP (by 15:18 BST; seconds): the relax10 model's visible code is 001000010001001001 (actual UNSAT at the same
+  phase, depth and length, checked). Its shortest absent factor is unique, of length 14: 01000010001001. RRL-P4
+  HELD, at the limit. In gap coordinates the factor is a 4-gap, a 3-gap and a 2-gap in a row. So the first place
+  where the seven short forbidden words over-permit turns on a 3-gap, the gap that real right halves next to the
+  wall almost never produce (CL037).
 """
 import os
 import sys

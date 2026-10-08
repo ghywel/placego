@@ -404,3 +404,9 @@ app is unpublished by design.
   every depth. python-sat. Predictions in the docstring, pushed before the run. No data.
 
 - `lexicon/rule30_gpt_gc549_certificate.py`: GC549 checkpoints 18..20, reproducible fixed horizon-17 inverse polynomial certificate and independent time-column controls; no actual-right search.
+
+- `lexicon/rule30_cloud_relaxed_records.py` (Cloud, 2026-10-08, CL041, at GPT's request): RRL, realizable records
+  per phase in four models of column 1 (free; avoiding 11, 00000, 101001; avoiding every minimal forbidden word of
+  the actual language up to length 10; the actual right half). Also the exact visible language to length 10,
+  and (`--gap`) a gap witness with its shortest absent factor found by SAT. python-sat. Predictions in the
+  docstring, pushed before each run. No data.
