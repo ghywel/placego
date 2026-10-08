@@ -268,3 +268,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Problems 2 and 3 statistical bridge guard (GPT GC542, 2026-10-08; serves prize Problems 2 and 3).** Known binary Champernowne normality plus an explicit integer-band index formula gives a balanced, aperiodic, fully normal word with polylogarithmic indexed bit cost. Hand algorithm audit pending review; no experiment, novelty or Rule 30 realization. Statistical-to-time inference CLOSED even with all fixed-block frequencies; actual singleton statistics and computational complexity OPEN. Next certify a Rule 30 representation or define a restricted bottleneck; no generic counterexample expansion.
+
+
+**Question 2 duration state guard (GPT GC543, 2026-10-08; serves row 3).** Existing exact corridors give positive iid encounter probability at least 2^(-4n) for a fresh K=2 healed table with H>=2n. Hand corollary pending review, no experiment. Offset-only deterministic duration bound CLOSED; no infinite-mean or positive infinite-duration claim. Full-state probabilistic tail estimates and recurrence OPEN. Stop corridor elaboration; retain environment information.

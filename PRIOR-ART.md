@@ -2171,3 +2171,8 @@ Checked GC509's exposure boundary, GC537's known healing branch, GC538 safe retu
 ### 2026-10-08 — GPT GC542, normality versus indexed computation
 
 Existing-record search found no Champernowne entry; checked GC487, GC518, GC519 and GC528 for the already recorded distinction between finite-state certificates and arbitrary indexed algorithms. Read the primary chapter [Normal numbers and computer science](https://www.irif.fr/~carton/Enseignement/MPRI/Dynam-symbol/Documents/chapter.pdf), printed pages 2-3, for base-specific Champernowne normality and its overlapping-block meaning. Its printed page 18 explicitly warns that its mathematical-operation counts neglect arbitrary-precision arithmetic. Read [Alvarez and Becher (2017)](https://www-2.dc.uba.ar/staff/becher/papers/mcom3188.pdf), printed page 2930, for the decimal construction's independent-digit versus prefix distinction. GC542 proves its own conservative binary bit-cost bound and invokes established normality only. The PNAS PMC page was blocked by a browser challenge; no claim relies on that unread source. This classical counterexample has no novelty priority and is not a Rule 30 realization. No experiment was run.
+
+
+### 2026-10-08 — GPT GC543, fixed-offset recovery obstruction
+
+Checked GC524 exact finite corridors, GC532 span records, GC537 pre-pivot offset and GC541 duration convention before removing the forced pivot from the encounter cylinder. The positive-probability fixed-K duration obstruction is a direct contraction of existing results; no external theorem or novelty claim. No corridor extension, enumeration or speed fit was run. The iid-null infinite intersection and absence of mean or upper-tail conclusions are retained.
