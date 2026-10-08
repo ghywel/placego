@@ -11623,3 +11623,31 @@ At K=2 the only selected time is2, giving V_2(2) once. This says nothing about w
 **Result and next intention.** This removes the K-3 interior column2 samples using an actual product implication. G62's published support restriction concerned source column1; this is a distinct extension to source column2, with the same local equations. The growing cone and sources i>=3 remain uncontrolled. Next examine whether the initial endpoint V_2(2) is forced by a longer compatible prefix or remains free, then whether any analogous argument controls nondyadic column3. No broader orbit census, catalogue filing before review, Rule30 consequence or prize claim.
 
 GC446-GC447 reviews resolved (GC448,2026-10-08): Local L262 in e98c45b verifies the stencil; L263 in6da6597 verifies the product implication and endpoint cases. Filed G224-G225 with source statements and proofs copied verbatim. All farther-source obligations and the K2 single-copy guard remain.
+
+### GC449 — A white ancestor kills the two-step right source (2026-10-08)
+
+**Proposed hand local identity; independent reading pending.** Read G61-G62, G224-G225 and GC425 before this block. The initial target was whether V_2(2) is forced under the empty-left clock. The preregistered32-patch check unexpectedly suggested a stronger local implication; the subsequent64-input extension and its dropped-hypothesis guard were separately announced before execution. The record search found G211's Rule30 white-block precursors, not this Rule210 product statement. No prior-art novelty claim.
+
+**Initial endpoint.** Under an empty initial left row and full0101 wall, G26 has s_0=1,s_1=0. G61 forces d_0=0 and c_0=1. Column2's next update is x_2(2)=d_0 XOR ((1-c_0)*x_1(3))=0. Thus the early source V_2(2) vanishes, independently of the farther right tail. Direct scalar evolution of32 positive five-bit seeds has12 centre prefixes0101, all with x_2(2)=0. No continuation beyond that prefix was inferred.
+
+**Stronger local claim.** In any Rule210 orbit, at any time t and site j,
+
+`x_t(j)=0 implies x_(t+2)(j+2)*x_(t+2)(j+3)=0`.
+
+There is no wall, left-support or eventual-periodicity hypothesis for this implication.
+
+**Proof.** Translate j,t to0. Let the six input bits be (0,s,b,q,h,z). The four relevant next-row bits are
+
+`d=(1-s)*b`, `c=s XOR ((1-b)*q)`, `r=b XOR ((1-q)*h)`, `v=q XOR ((1-h)*z)`.
+
+The next pair is B=d XOR ((1-c)*r), Q=c XOR ((1-r)*v). If c=1, then d=0: d=1 would require s=0,b=1, which gives c=0. Hence B=0. If c=0 and r=1, then Q=0. In the remaining case c=r=0, B=d and Q=v. For B=1, d=1 forces s=0,b=1. Then r=0 forces q=0,h=1, and therefore v=0. Thus B*Q=0 in every case. These cases prove the implication for unrestricted farther bits.
+
+**Clock consequence.** In every full0101 wall orbit, x_(2n)(0)=0. Applying the local claim at j=0,t=2n eliminates every column2 source V_(2n+2)(2). Consequently its even-time activity can occur only at time0. Odd source times on column2 are invisible to every odd centre target by G215's parity condition. The complete column2 contribution at odd target T is therefore K_(T-1)(2)*V_0(2). G224 makes its coefficient1 exactly at T=2^h-1, h>=2, and0 otherwise. In particular at T=2^K+1, K>=2, the column2 contribution is0. The early and late endpoints of G225 both vanish once an actual predecessor update is required.
+
+Together with G216, every selected source for these dyadic-plus-one targets has i>=3. Under the finite-support condition 2^K>R+1, the homogeneous centre term is0, so an odd number of selected active sources must occur at i>=3. This still leaves a growing cone; it is not a finite-clock exclusion. The i>=3 statement applies to these targets, not to all odd times.
+
+**Controls and counterfactuals.** The initial32 imposed-wall patches all have zero next-even column2 product; four nevertheless have B=1, so product-zero must not be strengthened to a universal column2-bit-zero claim. The64 unrestricted six-bit controls agree between the scalar decimal truth table and an independent XOR/AND-NOT implementation. All32 white-ancestor inputs have zero product. Dropping the white ancestor is REFUTED: input100001 gives next intermediate row1001, then B=Q=1. Sixteen black-ancestor inputs produce an active pair. These are exact local controls, not an orbit census.
+
+**Unexpected temporal/phase guard.** Time0 cannot be discarded: G216's finite seed{1,2,3} has V_0(2)=1, feeding the time3 centre through K_2(2)=1. This is consistent because it has no required negative-time predecessor. Changing wall phase to1010 places white ancestors at odd times; the universal implication then removes odd-time column2 products from time3 onward, not even-time products. Neither guard supplies an infinite clock witness.
+
+**Correction to the locally admissible-hole interpretation.** GC425's product patches remain valid two-step forward Dirichlet patches, exactly as recorded, but cannot be actual even-time rows after the first update pair in a full0101 orbit: their two-step predecessor would have a white centre and the local implication forbids their product. GC425 correctly rejected strip-window coverage, but that coverage failure does not survive as evidence of a dynamically realizable column2 source. G225's weaker switch implication remains true. Next seek an analogous predecessor condition for column3; all farther sources remain obligations. Independent reading requested before filing.
