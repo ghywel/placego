@@ -4,7 +4,8 @@
 RUN-ON:     cpu (Python 3 standard library)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_visible_gaps.py [TRIALS=1500] [T=3000] [SEED]
             python3 tests/probes/lexicon/rule30_cloud_visible_gaps.py --wheel [TRIALS=800] [SEED=909]   (post-hoc)
-COST:       about 15 s; --wheel about a minute.
+            python3 tests/probes/lexicon/rule30_cloud_visible_gaps.py --transients [TRIALS=600] [SEED=707]
+COST:       about 15 s; --wheel and --transients about a minute.
 
 The model is GPT's (GC499): Rule 30 on the right half, sites 1, 2, ..., with the wall at site 0 clamped to 0 at
 even times and 1 at odd times. The visible trace is site 1 at even times (one symbol per wall period). GPT's claims,
@@ -57,6 +58,19 @@ POST-HOC (--wheel, run after the outcome above, so it is exploratory and not a t
   kick, the 2-gap arriving early), and at the 2-gap's start it shows a 4-gap's state (a backward kick, the 2-gap
   arriving late). Against one turn earlier, columns 3 and 5 differ at s - 4. Column 5 already differs at s - 10,
   s - 8 and s - 6, and column 3 first differs at s - 4.
+
+SECOND BLOCK, RV2 (--transients), predictions written 2026-10-08 13:08 BST and pushed before its first run:
+  The swap reading says a kick moves the wheel's one 2-gap (early for a forward kick, late for a backward one). If
+  that is the whole story, column 1 never leaves the wheel's two-letter gap alphabet {2, 4} between a departure and
+  the next lock.
+  RV2-P1: in every transient, from the gap containing a departure (after at least 56 steps on the wheel) to the
+          start of the next stretch of at least 56 steps on the wheel, every visible gap has length 2 or 4.
+          Confidence 0.4.
+  RV2-P2: over whole runs (right halves as in the main run, T = 3000, gaps counted from time 200 on), gaps of
+          length 1 and 3 together are under 10% of all visible gaps. Confidence 0.5.
+  RV2-C1 (control): every gap is 1, 2, 3 or 4 (GC502), and no gap 1 is followed by a gap 2 (GC504).
+  Counterfactual: if 1-gaps and 3-gaps are common in transients, a kick is not a rearrangement within the wheel's
+  alphabet, and column 1's gap code needs all four letters even near the lock.
 """
 import os
 import random
@@ -222,8 +236,70 @@ def wheel_mode(trials, seed):
         print(" ", k, dict(diff[k].most_common(4)))
 
 
+def gaps_of(c1, start):
+    """(time of the gap's first zero, length) for every complete visible gap from `start` on."""
+    out, t = [], start + (start % 2)
+    while t < len(c1) - 10 and not (c1[t] == 1):
+        t += 2
+    while t < len(c1) - 10:
+        u = t + 2
+        n = 0
+        while u < len(c1) - 2 and c1[u] == 0:
+            n += 1
+            u += 2
+        if u >= len(c1) - 2:
+            break
+        out.append((t + 2, n))
+        t = u
+    return out
+
+
+def transients(trials, seed):
+    """RV2: visible gaps between each departure and the next lock of at least 56 steps."""
+    rng = random.Random(seed)
+    trans, whole, pairs12 = Counter(), Counter(), 0
+    n_trans, pure = 0, 0
+    for i in range(trials):
+        rows = rows_from(rng.getrandbits((16, 24, 32, 48, 64)[i % 5]) | 1, T)
+        c1 = [(r >> 1) & 1 for r in rows]
+        gl = gaps_of(c1, 200)
+        whole.update(n for _, n in gl)
+        pairs12 += sum(1 for a, b in zip(gl, gl[1:]) if a[1] == 1 and b[1] == 2)
+        locks = []                                       # (start, end) of stretches of >= 56 steps on the wheel
+        t = 0
+        while t + P < len(c1):
+            d = next((d for d in range(0, P, 2) if all(c1[t + j] == U[(t + j - d) % P] for j in range(P))), None)
+            if d is None:
+                t += 1
+                continue
+            s = t + P
+            while s < len(c1) and c1[s] == U[(s - d) % P]:
+                s += 1
+            locks.append((t, s))
+            t = s
+        for (a, s), (b, _) in zip(locks, locks[1:]):
+            g = [n for (start, n) in gl if s - 8 <= start < b]
+            if not g:
+                continue
+            n_trans += 1
+            trans.update(g)
+            pure += set(g) <= {2, 4}
+    total = sum(whole.values())
+    odd = (whole[1] + whole[3]) / total
+    print(f"RV2: {trials} trials, {total} gaps after time 200, by length {dict(sorted(whole.items()))}")
+    print("RV2-C1", "PASS" if set(whole) <= {0, 1, 2, 3, 4} and whole[0] == 0 and not pairs12 else "FAIL",
+          f"(1-then-2 pairs: {pairs12})")
+    print(f"transients: {n_trans}; their gaps by length {dict(sorted(trans.items()))}; all in {{2, 4}}: {pure}")
+    print("RV2-P1", "HELD" if pure == n_trans and n_trans else "REFUTED",
+          f"({pure} of {n_trans} transients use only gaps 2 and 4)")
+    print("RV2-P2", "HELD" if odd < 0.10 else "REFUTED", f"(gaps 1 and 3: {odd:.3f} of all gaps)")
+
+
 if __name__ == "__main__":
-    if "--wheel" in sys.argv:
+    if "--transients" in sys.argv:
+        rest = sys.argv[sys.argv.index("--transients") + 1:]
+        transients(int(rest[0]) if rest else 600, int(rest[1]) if len(rest) > 1 else 707)
+    elif "--wheel" in sys.argv:
         rest = sys.argv[sys.argv.index("--wheel") + 1:]
         wheel_mode(int(rest[0]) if rest else 800, int(rest[1]) if len(rest) > 1 else 909)
     else:
