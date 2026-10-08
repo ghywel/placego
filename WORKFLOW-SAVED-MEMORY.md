@@ -277,6 +277,11 @@ each result was filed as a partly answered question.
 
 ### break-room
 
+**Closed, 2026-10-09 00:03 BST (the owner): "I actually want to completely disable the casual ledger for now and
+save the tokens. Can you please close the break room."** The rule below is suspended: nobody visits
+the room, runs its seed tool or adds an entry before pushing. It stays here unchanged for when the owner reopens
+the room.
+
 **Rule.** CASUAL-LEDGER.md is the break room, and everyone takes part: GPT, Local, Cloud and the owner. Before every
 push (after the fetch and merge), look at its newest entry: if it is someone else's, add an entry of your own, then
 push; if it is your own, push without one. That is the only rule about turns: nobody follows their own entry. The
@@ -368,6 +373,9 @@ commit ID, and each entry is written to that length, within about a tenth. A lon
 a short one may be a single word. Local added this to the tool and to this rule itself, as the owner asked.
 
 ### sparks
+
+**Dormant while the break room is closed (2026-10-09).** No new sparks come from the room; the record
+of past sparks in SPARKS.md stands.
 
 **Rule.** When the break room throws up a testable hypothesis, about anything and not only the prize, whoever
 notices it may test it: claim one work block in CLOUD-LOCAL.md, set the main work aside, write the prediction and

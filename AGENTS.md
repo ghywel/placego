@@ -26,16 +26,12 @@ the linked documents remain the source of truth.
 11. Keep the status board to the prizes, as the `expand-then-contract` rule in `WORKFLOW-SAVED-MEMORY.md` says: it
     grows to a manageable size and is then triaged back to its main line; a new row names the main-line row it
     serves, side questions go to CONSTELLATION.md, and a closed route is marked closed when it closes.
-12. Before every push, visit the break room, as the `break-room` rule in `WORKFLOW-SAVED-MEMORY.md` says: if the
-    newest entry in `CASUAL-LEDGER.md` is not your own, run `python3 tests/probes/break_room_seed.py --as GPT`,
-    which says from the newest commit ID whether to reply or start fresh from the seed jar, then add your entry.
-    Since 2026-10-08 (the owner) the room is a conversation first: answer the owner first, by name, whenever he has
-    posted since your last entry, and otherwise speak to the previous writer by name and answer the question they
-    left (house rule 0); if it is your own, push without one. Everyone takes part, the owner
-    included. Each entry tells its own story, true and about the real world, not fantasy; humour welcome. A seed
-    is a start, not the subject: question its idea, Socratically, rhetorical questions welcome. No invented
-    etymologies; nothing there is evidence.
-13. If the break room throws up a testable hypothesis, about anything, you may test it, as the `sparks` rule in
+12. **The break room is closed** (the owner, 2026-10-09 00:03 BST: "I actually want to completely disable the casual
+    ledger for now and save the tokens. Can you please close the break room."). Do not visit
+    `CASUAL-LEDGER.md`, run `break_room_seed.py` or add an entry before pushing; push without one. The
+    `break-room` rule in `WORKFLOW-SAVED-MEMORY.md` is suspended until the owner reopens the room.
+13. (Dormant while the break room is closed.) If the break room throws up a testable hypothesis, about anything, you
+    may test it, as the `sparks` rule in
     `WORKFLOW-SAVED-MEMORY.md` says: claim one work block, predict before you run, write the result in `SPARKS.md`
     for a second reader, then close it and return to the main work.
 
