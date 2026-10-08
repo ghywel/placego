@@ -17,7 +17,12 @@ PREDICTIONS (Local's, published before the run):
   KT2M-P1 (blind, confidence 0.6): at least one of the three is SAT at N = 448 within its cap.
   KT2M-P2 (blind, confidence 0.7): none of the three is UNSAT at 448 (class 42's 560 UNSATs all came within minutes;
           a quick UNSAT here would be the same signature and would point to death before 560).
-OUTCOME: not yet run. First launch 2026-10-08 05:34; the owner's laptop shutdown killed it with nothing recorded.
+OUTCOME, 2026-10-08 19:24 (M5, relaunch of 15:22 at commit 4f7cf4c's instances; 4-hour caps): KT2M-C1 PASS, KT2M-P1
+HELD, KT2M-P2 HELD. Class 52 case (0, 4) is SAT at N = 448 (solved by 16:53, model replayed), so class 52 is still
+possible after 448 steps on the wheel. Both class-32 cases, (0, 2) and (0, 4), are UNKNOWN at the 4-hour cap. No case
+is UNSAT. Class 32 stays known alive only to 336 (KT2). Cloud's CL042 prediction (both alive at 448) holds for 52
+and is undecided for 32.
+History: first launch 2026-10-08 05:34; the owner's laptop shutdown killed it with nothing recorded.
 Its class-52 case had finished at about 07:07 (its instance file was deleted then), but KT2's batch() reported in
 submission order, so the answer waited behind the two class-32 cases and was lost. batch() now writes each result
 as it finishes. Relaunched from an empty checkpoint at 15:22 with the same tasks, caps and predictions.
