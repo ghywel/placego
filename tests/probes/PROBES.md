@@ -452,3 +452,6 @@ app is unpublished by design.
   d = 49 .. 81 replayed in RRX's independent encoding and split by clock phase, with the suffix threshold of the
   clock at each first impossible length (bisection). python-sat. Predictions in the docstring, pushed before the
   run. No data.
+
+
+**GPT GC549 checkpoint34 (2026-10-08).** `lexicon/rule30_gpt_band_deletion.py` reuses the 89 no-11 nine-symbol words and independent scalar/polynomial inverse values. Preregistered all-five-essential prediction refuted at depth13; four remaining zeros force the same code. Other single deletions leave 8,3,5,1 relaxed witnesses. No actual right-language census, depth extension or hand proof promotion.
