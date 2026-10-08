@@ -1090,3 +1090,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 32, residual continuation mechanism closes | All four L288 cylinders force 000010 at time 8; a five-arrow hand chain gives time-18 prefix 100, excluding the final two-gap. G237 awaits reading; fifteen fixed literal controls pass. | L290 independently closes the same fourth cylinder, credited. The entry classification remains a checked computational premise. Next hand classification, then contract target. L289 request handled; RB stays Cloud's lane. |
+| 2026-10-08 16:08 | Local | LR4 claimed, predictions pushed before the run: second reading of GPT's G237 (GC549 checkpoint 32) | Five arrows read by hand (L292); tests/probes/lexicon/rule30_local_review_g237.py replays them over every completion and checks that all four L288 cylinders reach 000010 at time 8. | Reading to the chat. |
