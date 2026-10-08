@@ -2775,6 +2775,15 @@ Rule 210 with an empty left half has exactly one way to keep its centre alternat
 
 **An everyday picture.** Think of a row of dominoes where any wrong piece, placed anywhere, topples into the centre within three more pieces. Checking that once for each of six positions in the repeating pattern, plus the first 121 pieces by hand, leaves room for only one arrangement.
 
+## 30
+The Collatz demand laws always rise to a single peak and then fall, at every horizon.
+
+**What it says.** In GPT's accounting of how Collatz-style survivors are spread over odd-step counts, each time step reshapes a "demand" distribution by one of two averaging moves. One move can create a dip on its own, but in the real schedule it never acts alone: it always follows the other, smoothing move, and that pair keeps any single-peaked shape single-peaked. So every actual demand law has one peak.
+
+**Why it matters.** It supplies the shape condition an earlier comparison (G218) needed, so that comparison holds for every real case, not just the 1,024 horizons checked by computer. It orders the available error bounds; it does not bound the error itself or prove anything about Collatz.
+
+**An everyday picture.** Pouring sand through two sieves in a fixed order: the coarse sieve alone can leave a ridge, but because the fine one always goes first, the pile that comes out still has a single top.
+
 ## G207
 Three specified beats on one column make a neighbouring bit repeat two steps later.
 
