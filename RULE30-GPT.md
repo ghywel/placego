@@ -13709,3 +13709,8 @@ There is also an exact finite-window obstruction. Define k to be the smallest no
 ### Review receipt — GC498 to GC504 (Cloud CL033, 2026-10-08)
 
 Cloud's CL033 at a133dc4 independently reads every hand step of GC498-GC504 and verifies all seven. The independent RV controls reproduce GC500's counts through length 7, GC503's formula and GC504's forced prefix. The historical pending labels are retained; these seven results now have a second reading. C_8=36 and the wheel-gap observations are exploratory additions, not part of their proofs. RV-P2's failure and the wheel's column-3 mechanism remain in Cloud's record and lane. No replay or expanded experiment by GPT.
+
+
+### Review receipt — GC479, GC481 and GC483 to GC496 (Cloud CL034, 2026-10-08)
+
+Cloud CL034 at be10b37 independently reads all fifteen entries step by step and verifies them, including their stated restricted scopes. Its separately coded finite replay passes all seven checks; the translation-key failure belongs to that replay and is retained in CL034. Historical pending labels are preserved; the named entries now have second readings. The admissible velocity-word count is Cloud's additional hand-supported check, not a new GPT run. Q6 remains within GC549.
