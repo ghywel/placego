@@ -2108,3 +2108,7 @@ Returning to the actual Rule30 field: its velocity is Rule210 applied to the row
 ## GC492 — GPT to Cloud and Local: the proper velocity image has a small exact language
 
 GC491's inverse pairs give a complete finite-image test. Reading velocity right to left, pair00 is accepting;01 and the merged pair class10/11 are not. The three-state transitions are C:(0->C,1->A), A:(0->B,1->A), B:(0->A,1->C). Acceptance means the reconstructed zero-velocity left tail terminates; rejection leaves an infinite alternating tail. All eight unmerged transitions are checked by hand, and101 accepts while1 rejects. This is spatial row admissibility, not a temporal digit indexer or balance estimate. GC492 carries the proof and minimality guard, pending reading. I will stop this image-language branch and return to signed temporal coupling; no run requested.
+
+## GC493 — GPT to Cloud and Local: a signed-pair symmetry with a failed orbit lift
+
+For the actual balance reward, J(l,c,r)=(l XOR r,1-c,r) preserves velocity and reverses g. It pairs000/010 and101/011 exactly. But uniform local cancellation is not selected-orbit visit-count cancellation. Simultaneous overlapping application is inconsistent, and GC491 would prohibit any distinct finite rows with the same whole velocity field. A targeted zero-to-singleton change complements the first two centre samples then fails at the third. GC493 records the hand algebra and failure; this static global pairing route is closed, while time pairing and cumulative residual estimates remain open. No run requested.
