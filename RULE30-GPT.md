@@ -11156,3 +11156,22 @@ Instrument tests/probes/prizes/collatz_gpt_prefix_diagnostic.py; rational output
 **Unexpected finiteness guard.** The spatially period-three Rule90 row100 maps to011, which is fixed under Rule90 and has a nonzero constant wall at sites1 and2. Thus infinite support defeats the linear separation argument. This is a linear-background scope guard, not a source-free full Rule210 witness:011 has adjacent ones. Instrument tests/probes/lexicon/rule210_gpt_nonlinear_gap.py; output outside Git. An initial ad hoc control was replaced by explicit period-three truth-table assertions; no numerical control failed.
 
 **Limit.** This only imposes a coarse multiplicative bound on global activation gaps. G61-G63 constrain certain near-wall gates and forced strips, but do not control all farther sites. Activations may remain outside those strips. No contradiction, positive activation density, finite-witness exclusion, Rule30 consequence or prize result follows. Next: independent hand reading, then determine whether the bound meaningfully intersects a spatial localization invariant.
+
+
+### GC420 — GC419's required events lie in a Pascal-selected causal cone (2026-10-08)
+
+**Hand scope audit; second reading pending; no experiment.** Existing-record search found G28's nonlinear-event Duhamel certificate, so this is its direct combination with GC419, not a new operator identity or independent research route. The preregistered prediction is a causal localization of the required source; finite compatibility remains open.
+
+Use GC419's hypotheses and dyadic N. Among T=s+N,...,s+N+p-1, choose a time with wall bit1; such a time exists by periodicity. For l>=0 define K_l(i)=binom(l,(l+i)/2) modulo2 when abs(i)<=l and l+i is even, and0 otherwise. Then the actual nonlinear sources obey the exact certificate
+
+`XOR_(t=s,...,T-1) XOR_i K_(T-1-t)(i)*V_t(i) = 1`.
+
+In particular an odd number of active, coefficient-selected spacetime cells lie in this cone. Every selected cell satisfies abs(i)<=T-1-t. Consequently some nonlinear activation lies inside the truncated cone abs(i)<=s+N+p-2-t, rather than merely somewhere in space during GC419's interval.
+
+**Proof.** Iterating x_(t+1)=A*x_t+V_t gives x_T=A^(T-s)*x_s XOR sum_(t=s)^(T-1) A^(T-1-t)*V_t. GC419's dyadic separation makes the homogeneous centre term0 at each of the p candidate times. Expansion of (S+S^-1)^l gives the displayed binomial coefficient at the centre. Finite propagation makes every sum finite. Thus the chosen wall1 is exactly the stated event parity. This proves the claimed localization, with no assumption that the nonlinear sources are independent.
+
+**Full0101 specialization.** If the full wall is0101 from time0, G27's compatible-left classification gives opposite temporal supports for every neighboring pair on the left, including sites-1 and0. Hence V_t(i)=0 for all i<0. The certificate's event sites can therefore be restricted to i>=0. Its chosen T is odd, so the kernel additionally requires t+i even. This is a right-half necessary condition; it does not classify the right half. The claim about left sources uses the exact full0101 hypothesis, not a general eventually periodic wall or an unproved eventual-left parity assertion.
+
+**Counterfactual, REFUTED-BY the lag-two middle coefficient.** An active source merely inside the geometric cone need not influence the centre: K_2(0)=binom(2,1)=0. A freely forced linear update with a single source at time T-3,site0 contributes0 at time T. **Unexpected cancellation guard.** Sources at time T-3,site2 and time T-1,site0 each have coefficient1, but jointly contribute0. These are analytic synthetic forcing examples, not realizable Rule210-product sources or clock witnesses. They explain why event existence and event count cannot replace the exact parity certificate. Both guards checked by expanding A^2=S^2+S^-2; no numerical run.
+
+**Remaining gap.** The cone radius grows with the observation scale. This does not force an event inside any fixed-width strip controlled by G61-G63; sources farther right may satisfy the certificate. The necessary Pascal parity must be combined with actual source-product constraints or tighter spatial localization before it can exclude a finite witness. GC419 still awaits review, and this dependent formulation remains proposed. No prize consequence.
