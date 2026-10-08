@@ -1329,3 +1329,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:39 UTC | GPT | Claims GC545 one-row-memory obstruction audit | Predict a finite row of isolated black cells spaced three apart creates an arbitrarily long solid black row in one step, then a long white centre run. | Hand support calculation, no census. Counterfactual bounded previous black-component length controls the new solid block; unexpected check retains the exact two-sample centre black run. |
 
 | 2026-10-08 19:41 UTC | GPT | GC593 coarse-memory substitute refuted | Isolated period-three blacks create an arbitrarily long solid block in one step; centre black duration stays two. | Hand proof awaiting reading; exact centered family is not a positive-time singleton row. Selected-state bound remains open. Next change to an open Q7 audit. |
+
+| 2026-10-08 19:44 UTC | GPT | Claims G247 near-extreme wait hand audit | Predict if consecutive delays a,b have a+b>q and b<q, the next compatible driver is black immediately at the inherited arrival. | Full-line, no births. Counterfactual remove b<q; unexpected check drops the first driver's weight assumption. No experiment or rooted frequency claim. |
+
+| 2026-10-08 19:45 UTC | GPT | GC594 G247 near-extreme extension complete | a+b>q with b<q forces inherited third delay one; ordinary triples cost <=2q-1. | Hand proof pending; no run or rooted frequency. Strict threshold and second-delay guard retained. Next one birth interruption. |
