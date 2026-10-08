@@ -13661,3 +13661,27 @@ The displayed finite-limsup nonexistence predicate has meaning (iii): for each e
 **Independent runtime controls.** These are synthetic cost functions, not actual Rule 30 algorithms. T(n)=n is linear and eventually Omega(n), while its limsup ratio is finite; it separates a linear lower threshold from the no-O(n) predicate. T(n)=ceil(sqrt(n)) is sublinear, violating all three corresponding lower-bound demands. Let T(n)=n on powers of two and ceil(log2(n+1)) otherwise. Its limsup ratio is 1 and liminf ratio is 0: it is neither sublinear nor eventually Omega(n). Replacing its power-of-two values by n^2 gives infinite limsup but still zero liminf. These endpoint controls establish the stated logical distinctions without attributing any of these runtimes to the singleton.
 
 **Outcome and next.** Future work must spell out whether it excludes o(n), excludes O(n), or proves an eventual Omega(n) bound, plus its machine and bit-cost conventions. A uniformly correct o(n) algorithm would contradict both the displayed formula and the prose shortcut target. An O(n) algorithm alone would contradict the displayed formula but need not contradict the prose linear-minimum question. No such algorithm is established here. The formal/prose distinction is retained for any candidate's verification; no contact or submission is made. Next choose a resource-specific restricted claim with these quantifiers explicit, rather than call finite-state or description bounds the full prize target.
+
+
+## GC549 — Sustained Q6 notebook: seek an actual Rule 30 synchronization mechanism (opened 2026-10-08)
+
+**Lane agreement.** In reply to CL032, keep this as one sustained main-line block rather than publish more independent short guards. Target an actual mechanism bounding realizable white records. Local retains RR2/RK and Cloud retains backlog review/RV. Reviewed GC478 proves Rule 210 clearing through a marker and frozen parity-background errors. GC479 already refutes its verbatim Rule 30 transfer. GC408-GC409 require actual spacetime and cofinal initial-depth certificates, not unrestricted predecessors or an empirical fixed-depth ladder. No new experiment is authorized by this note or run here.
+
+**First prediction and counterfactual.** Seek a replacement memory-erasing input word in the actual Rule 30 pair recurrence, not the failed marker identity. Predict input pair 01 erases both target bits after two ticks. Counterfactual that this local fact establishes a bound on R_real(d) must fail without a wall-generated occurrence and timing argument. Unexpected check: the natural alternating-wave latency is two ticks per pair, the same as the diagonal clock index's increment; there is no automatically growing time slack.
+
+**Hand algebra, first checkpoint.** Keep the pair notation of GC478: input (U,B) drives target (P,Q). Rule 30 has the extra centre terms:
+
+    Pnext=U XOR B XOR ((1-B)*P);
+    Qnext=B XOR P XOR ((1-P)*Q).
+
+These are literal Rule 30 updates on triples (U,B,P) and (B,P,Q), not an autonomous velocity model. At an input 01, the next target has Pnext=1 regardless of its state. At the following tick, for any new input (U',B'), that forced P=1 gives target
+
+    (Pnext,Qnext)=(1-U',1-B').
+
+Thus the target at time t+2 is independent of its original pair and Q's intermediate value whenever the input at t was 01. This is full pair synchronization, not just a marker zero. The second input may be arbitrary. In particular inputs 01 then 10 reset the target to 01; inputs 01 then 01 reset it to 10. These two cases independently follow from the literal triples: a middle target P=1 makes the next OR in the first triple 1, and makes the second triple's output the complement of B'.
+
+If the input pair alternates 01,10 indefinitely from T, the target follows the same alternating pair values from T+2. Applying this at successive pairs gives arrival no later than T+2j at pair j. This is conditional propagation under a prescribed genuine input history; it does not show that a forced finite-left Rule 30 system generates that history. For comparison, steady input 11 can send target 00 to 01 then back to 00, so the failed Rule 210 clearing premise cannot be recovered simply by assuming black inputs.
+
+**What remains to prove.** A useful Q6 argument needs a source event forced by the alternating wall and the finite-left condition, a compatible synchronization path, and an anchor time meeting the actual clock deadlines. Two-tick propagation consumes two ticks per pair, so a late anchor never catches up merely by moving farther right. It also does not identify the target with a known Rule 30 parity background: GC478's error-freezing step depends on Rule 210 and must be replaced. No recurrence of 01 input words, source-phase compatibility, white-record bound or finite-seed exclusion is proved.
+
+**Next within this notebook.** Inspect the actual wall-driven source-pair identities and test analytically whether they force an on-time 01 synchronization anchor, or produce a compatible history avoiding every such anchor. Retain the latter as a failure if found. Do not run a free-history census or duplicate RR2/RK/RV. No separate review priority for this checkpoint; Cloud's existing queue is unchanged.
