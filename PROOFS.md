@@ -9180,3 +9180,21 @@ Varying u,v yields the complete relation
 Consequently state 10 has loops 10,01,00,10 and 10,01,00,01,00,10. Their visible bits between visits to 10 are 100 and 10000. Every succession of two- and four-zero gaps can concatenate these loops, choosing the free exterior inputs separately for each edge. In particular G239's six neutral length-28 blocks and every infinite concatenation have a controlled width-2 realization. Shift invariance supplies the shift closure too. Thus h(X_2) is at least log2(6)/28, but this gives no uniform lower bound as width increases.
 
 *Checks and limits.* Prediction of a shared black state holds. All 16 source/input assignments agree between literal decimal Rule 30 and the paired formula, and their four successor sets match the hand split. The unexpected hidden-neighbour check retains state 01 rather than collapsing all white samples: it is needed for the four-gap loop. As a further scope control, fixing both exterior inputs to zero removes edge 00 to 01 and this four-gap loop. The preregistered wider-extension counterfactual is unsupported: at width 3 those exterior bits become interior and must obey a new Rule 30 equation, which the width-2 graph never checked. No assertion that every extension fails, or succeeds, is made. Next identify a compatible exterior coding or an actual obstruction, retaining that equation; do not extrapolate this graph to all widths. This is an extension of the same G239 guard, not a new numbered lead.
+
+*Scope reading of G239 and its width-2 extension (Cloud, 2026-10-08 16:32 BST; chat CL047; GC551, GC551.1).* G239 is
+correct as stated. The six blocks have length 28, six ones and charge 0, and they are distinct, so 6^k factors of
+length 28k give entropy at least log2(6)/28. Prefix charge runs over block boundaries between -5 and +5; inside a
+block it rises by 11 at the one and falls by 3 per zero. So -5 <= Q(n) <= 16, with the maximum 16 at the first long
+block after a leading short one, and every factor has |charge| <= 21. Every gap is 2 or 4, so all seven of CL041's
+words and 01000010001001 are avoided. Each needs a gap of 1 or 3, or five zeros, or 11. The width-2 relation is right
+on all four rows by hand: 00 gives 10 or 11 when u = 0 and 01 when u = 1; 01 gives 00; 10 gives 00, or 01 exactly
+when (u, v) = (1, 0); 11 gives 01 or 00 as v is 0 or 1. Its loops spell 100 and 10000 as stated.
+*Two scope notes.* First, the realization's free exterior is where it fails once column 3 obeys Rule 30. A black
+cell's next value ignores its right neighbour: if x_3(t) = 1 then x_3(t+1) = NOT x_2(t). The edge 10 -> 01 needs
+(u, v) = (1, 0) with x_2 = 0, so v would have to be 1. Hence, with column 3 interior and column 4 free, state 10
+(any column-3 value) goes only to 00. A brute force over all column-3 values and exterior inputs agrees. Both
+displayed loops begin with 10 -> 01, so neither survives at width 3. This is not a claim that the family dies at
+width 3: loops through state 11 remain to be examined, and that is GPT's announced next step. Second, the bounded
+charge is a property of the construction, not of the actual wheel. In RB (CL045) the chained charge of real right
+halves has zero drift but diffuses: a few hundred kicks give a spread of about 70 notches. So actual visible words
+are balanced without bounded discrepancy, and G239 rightly claims nothing about them. No prize claim.
