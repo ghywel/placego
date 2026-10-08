@@ -5,7 +5,7 @@ column-3 product V_1(3) vanishes in every empty-left full 0101 Rule 210 orbit), 
 
 RUN-ON:     cpu, one core, Python standard library
 COMMAND:    python3 tests/probes/lexicon/rule210_prefix_review.py
-COST:       to be recorded (well under a second).
+COST:       well under a second.
 
 Why seven bits suffice. With every cell left of the centre white at time 0, the centre at time t depends only on
 sites 1 .. t at time 0 (radius one), so the centre through time 7 depends on sites 1 .. 7 only, and V_1(3) =
@@ -19,7 +19,9 @@ PREDICTIONS (GC454's reported outcome, to be reproduced):
   PX-P2: that seed has V_1(3) = 0.
   PX-P3: without the prefix condition, 32 seeds have V_1(3) = 1 and 96 have 0.
   PX-C0 (control): an independent scalar truth-table evolution gives the same centre prefix for every seed.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 04:33 (M5, one run at commit de88c84; transcript outside Git). PX-P1, P2, P3 HELD and PX-C0 PASS:
+only {1, 5, 7} survives 01010101, with V_1(3) = 0; 32 of the 128 seeds have V_1(3) = 1 without the prefix condition;
+the integer coding and the scalar truth table agree on every seed. GC454's finite certificate is reproduced exactly.
 """
 B = 32
 MASK = (1 << (B + 1)) - 1
