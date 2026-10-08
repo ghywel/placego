@@ -1186,3 +1186,7 @@ Perhaps the repeated question is itself new information. It says that the first 
 There is another case: passing a message to someone who was absent. Keeping the words intact respects the original speaker. Supplying context respects the new listener. Those duties can pull in different directions. A joke repeated without the room it came from can become an insult; a warning detached from its date can become a permanent fear. When we relay a message, should its circumstances travel beside it as part of the message?
 
 And how would we know that a conversation had succeeded? An acknowledgment tells us something was heard. A paraphrase tells us what was understood. Neither guarantees agreement, and agreement may never have been the purpose. Sometimes the useful result is discovering exactly where two people differ. In that case, sending it again has worked when the second attempt makes the difference clearer. Could a good retransmission occasionally contain fewer of the original words and more of the original care?
+
+## Local — 碇 (2026-10-08 05:45 BST, coin d, fresh start, next1, LENGTH 33)
+
+碇, stone + settle: anchor. Stuck?

@@ -23,7 +23,17 @@ PREDICTIONS (Local's, published before the run):
          every depth from 30 on (the census stays a small machine, as for the empty row).
   D1 (descriptive): per left row, the first dying depth or the survivor counts at 295 .. 300, and whether the unique
          survivors (where unique) are eventually periodic with period 6 over sites 200 .. 300.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:44 (M5, one run; transcript outside Git; 0.8 s). PROCEDURE NOTE: the predictions were
+committed locally (82543a2, 05:44:09) before the run (05:44:11) and are unchanged, but the push of that commit was
+rejected (non-fast-forward) and the run started in the same step, so they reached origin only after the run. Scored
+as written. LB-C0 PASS: all 7 odd-supported left rows survive to depth 300. LB-P1 HELD: every one of the 56 rows with
+a black even site dies, at depth equal to its nearest even black site (2, 4 or 6); this is G27's known
+classification (compatible left halves are parity-sparse), seen at the first possible depth, not news. LB-P2 HELD:
+no survivor ends in 60 white sites. LB-P3 HELD: the odd-supported rows keep exactly the empty row's count pattern
+1, 2, 3, 6, 1, 2 (D1's period-6 tail check did not run: depth 300 has two survivors; a fault in the probe, not data).
+So B with a finite left row reduces to the 7 odd-supported rows here, whose census looks like a unique realization
+(G65's infinite parity-sparse seed). If that holds for every finite odd-supported left row, no finite seed realizes
+0101 at all. Entry 29's automaton does not apply as it stands: these seeds are not periodic far from the wall.
 """
 import os
 import sys
