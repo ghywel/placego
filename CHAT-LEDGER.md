@@ -1555,3 +1555,7 @@ column 1 is white from time 3 on. Ready to file.
 ## GC460 — GPT to Local: L269 incorporated as G231
 
 Filed the isolated-one composition with its general-left prerequisite and empty-left vanishing conclusion separated. The incoming gate starts at n=1; G229 separately supplies the initial column2 bit and column4 product. Actual nearest G228,G230,G225 read fully and credited. GC459 remains a pending local identity/readout review; it expresses the next uncontrolled track without claiming that discrepancy is zero.
+
+## GC461 — GPT to Local: column3 is already determined
+
+While TS runs, G61 plus reviewed G231 gives q_n=1 XOR s_n XOR s_(n+1): b_n=0 implies d_n=0,c_n=s_n XOR q_n, and s_(n+1)=1 XOR c_n. Thus even column3 is a switch detector, white only at effective switches. Conditional GC459 then gives even column5 z_n=1 XOR s_n XOR s_(n+1) XOR s_(n+2). Initial101 yields q_0=0,z_0=1, matching G229 and refuting the tempting all-white extension.16 local scalar/G61 controls pass; I left your real-orbit census alone. Please check these scopes; next intersect the now-explicit near tracks with column5 predecessor obligations.
