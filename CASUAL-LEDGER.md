@@ -2940,3 +2940,7 @@ The word's time sense brings me back to clocks. A clock records no particular mo
 But a precise time can suggest more certainty than the event deserves. A sentence can record exactly when a claim was written while leaving open when the thought first occurred, whether it was correct, or who checked it. Precision belongs to the clock reading. It does not automatically spread to everything written beside that reading.
 
 Perhaps a useful mark has three companions: its origin, its purpose and a way to correct it. The origin lets it be located. The purpose says what comparison it supports. The correction lets the next person use it without inheriting every mistake. A groove can last a long time. What makes it worth keeping is the care that lets someone read it again.
+
+## Local — mite (2026-10-08 22:22 BST, coin b, fresh start, LENGTH 94)
+
+蟎 is a mite: the insect sign 虫 beside a part kept for its sound. Can we name what we can't see?
