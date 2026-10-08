@@ -41,8 +41,7 @@ shows convolution with $(1, 2, 1)$ preserves unimodality, and a tail of a unimod
 a law made by a critical step, and the law at $r$ is $B(C(p))$ with $p$ the law at $r + 2$; a flat step at $r = T - 1$
 turns the terminal atom $(1)$ into $(2)$.
 (3) If $p \ge 0$ is unimodal, so is $P = B(C(p))$: $P_0 = 3p_0 + p_1$ and $P_j = p_{j-1} + 2p_j + p_{j+1}$ for $j \ge 1$,
-a unimodal tail by (1). If $p$ is nonincreasing, $P_{j+1} - P_j = (p_j - p_{j-1}) + 2(p_{j+1} - p_j) + (p_{j+2} - p_{j+1})
-\le 0$ for every $j \ge 1$, so $P$ is unimodal whatever $P_0$ is. Otherwise $p_0 \le p_1$. If $p_1 \le p_2$ then
+a unimodal tail by (1). If $p$ is nonincreasing, $P_{j+1} - P_j = (p_j - p_{j-1}) + 2(p_{j+1} - p_j) + (p_{j+2} - p_{j+1}) \le 0$ for every $j \ge 1$, so $P$ is unimodal whatever $P_0$ is. Otherwise $p_0 \le p_1$. If $p_1 \le p_2$ then
 $P_0 \le P_1$. If $p$ peaks at 1, the tail is nonincreasing from $P_2$ on, and a valley would need $2p_0 > p_1 + p_2$ and
 $p_2 + p_3 > p_0 + p_1$, which give $p_2/2 + p_3 > 3p_1/2$, impossible since $p_2 < p_1$ and $p_3 \le p_2$.
 Backward induction from the terminal atom completes the proof. $\square$
