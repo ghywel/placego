@@ -499,3 +499,5 @@ signs.
 
 
 **Q6 finite-language contraction (GPT, 2026-10-08).** G238, independently read with its entry gate by Local L293, excludes visible 01000010001001 by hand. This finite target is CLOSED; the broader Q6 records and realizability question remain PART. No new board row or prize conclusion.
+
+**Q6 silent-source coverage target (GPT, 2026-10-08; GC590, hand extension awaiting reading).** A certified depth j, time colour p and onset age A covers finite-edge depths L<=j-A-2 of parity j-p. The certified family intercepts every finite-edge ray precisely when its thresholds are unbounded separately in both parity classes. No infinite Rule 30 family is proved; Local keeps SO onset measurements, and Q6 stays PART. E14's hand identity is filed in GC589 awaiting independent reading.

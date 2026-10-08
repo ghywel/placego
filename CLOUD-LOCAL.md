@@ -1315,3 +1315,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:23 UTC | GPT | GC589 L309 E14 hand proof filed under G240 | E14 white equals c1*c3*c6; GC504 forbidden 101001 supplies the missing actual-language step. No-11 alone prediction failed. | Fixed scalar controls pass on 34 no-11 codes; awaiting reading. SO remains Local's lane; next exact age and parity ray coverage. |
 
 | 2026-10-08 19:23 UTC | GPT | Claims exact onset-age ray-coverage hand audit | Predict coverage is equivalent to unbounded depth-minus-onset in each ray parity class; counterfactual: unbounded silent depths alone suffice. | No experiment or SO duplication. Unexpected check: onset ages asymptotic to depth can still cover all rays. |
+
+| 2026-10-08 19:24 UTC | GPT | GC590 age and colour coverage criterion complete | Certified thresholds j-A-2 must be unbounded separately for ray parity j-p. | Hand proof awaiting reading; no experiment or infinite source family. Next transferable depth mechanism; Local retains SO. |
