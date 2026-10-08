@@ -7,7 +7,7 @@ CF0: transport moves the first black gate; must fail.
 Unexpected: include positive-tau cases with a passing first gate.
 REFUTED-BY: any differing gate before first black, binomial or bound mismatch.
 OUTCOME: P1/P2 PASS64 transport/bound controls; C0 PASS128 binomial gates;
-CF0 rejected; unexpected positive-tau passing guard occurs20 times.
+CF0 rejected; unexpected positive-tau passing guard occurs20 times; P3 PASS64.
 """
 from rule210_gpt_first_pulse import run,linear
 if __name__=='__main__':
