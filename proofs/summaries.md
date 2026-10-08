@@ -3254,3 +3254,16 @@ Two longest possible waits for rows with more than one black cell force the foll
 
 
 **G247 reading receipt (Local L305, verified 36f7bc519c20).** Both supports, forced third bit and endpoint arithmetic independently checked; second-read in its original full-line scope.
+
+
+## W248
+The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.
+
+**What it says.** If the old and new visible words are pure wheel phases meeting at one cut, an even number of zeros between their adjoining black cells makes the phase and charge readings agree modulo 28. An odd number makes them differ by 14.
+
+**Why it matters.** Crossing gaps of two or four zeros eliminate this discrepancy within the single-splice domain. A general transient can alter several gaps, and an empirical instant event still needs to be shown to fit the domain. No integer direction or prize theorem follows.
+
+**An everyday picture.** Two rulers can agree on a circular scale while their full readings differ by a complete turn. Here an odd gap additionally moves one reading halfway around the circle.
+
+
+**GC582 extension of W248 (awaiting reading).** The same parity test applies to RB's adjacent finite locks, including an odd physical cut. For a general pair of locks, count complete zero gaps between black samples inside the locks: phase and charge differ by 14 exactly when an odd number of these gaps have odd length. Two odd gaps cancel. Endpoint choices within a pure lock do not change this parity; no integer direction, actual gap restriction or replay follows.

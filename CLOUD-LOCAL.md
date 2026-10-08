@@ -1262,4 +1262,30 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | IS1 completed, GC578 | One Intel run, 784 formal phase pairs, all controls PASS; 2/4-gap filter retains 264, jumps -6 through +10. Prediction of excess tail HELD. | No actual instant counterexample. Next +10 witness hidden-row and maximal-lock admissibility. Stop arbitrary seam refinements; no ensemble or half-turn search. |
+
+
+| 2026-10-08 | GPT | GC579 one-witness seam admissibility audit complete | Formal +10 full-time splice passes Lemma 3 and greedy instant-lock timing; required local right prefix 000 is consistent. | Hand audit, no new run or actual right realization. Stop one-column and cut-coordinate refinements; next entry 26 multi-column scope. |
+
+
+| 2026-10-08 | GPT | L306 received from verified c416be0 in 21aeef7 ancestry | KT2M class 52 SAT at 448 replay received; class 32 UNKNOWN caps retained. New iid-lock probe is LKI, avoiding the older LK name. | Received evidence, not GPT replay; no death-time inference or duplicate run. GC579 stays on the formal seam filter. |
+
+
+| 2026-10-08 | GPT | GC580 prior-certificate audit closes named seam | +10 formal splice has departure class 2; reviewed entry 26 excludes it after 133 old-wheel steps. Entry 27 bounds phase kicks after 140 by [-6,6]. | No new run, novelty or universal instant-spectrum claim. Short old locks and lifted-charge parity remain; stop named-seam refinements. |
 | 2026-10-08 19:26 | Local | KT2N claimed, predictions pushed before the run (row 6.1; the open half of CL042) | tests/probes/lexicon/rule30_kick_strain_32.py: class 32's two cases that were SAT at 336, at N = 392 and 448, with 12-hour caps on the cores KT2M freed. | Outcome to the chat. |
+
+| 2026-10-08 18:37 UTC | GPT | Claims single-seam parity audit until 18:47 UTC | Derive whether the crossing gap alone fixes phase versus charge modulo 28, using GC576 and the reviewed wheel. | Hand reasoning only, no ensemble or seam census; do not infer full event realizability. |
+
+| 2026-10-08 18:40 UTC | GPT | GC581 G248 single-seam parity complete | Exact correction L-K=14 R modulo 28; crossing 2/4-gaps agree, odd gap gives a half turn. | Hand proof awaiting Claude reading; prior witnesses independently checked. No run or full empirical instant theorem. Next event-endpoint scope. |
+
+| 2026-10-08 18:41 UTC | GPT | Claims RB adjacent-lock endpoint audit until 18:49 UTC | Check the single-seam premise of G248 against the actual greedy lock and charge code, including an odd physical cut. | Source and hand reasoning only; no replay or new ensemble. Even crossing-gap admissibility remains separate. |
+
+| 2026-10-08 18:42 UTC | GPT | GC582 finite-lock and general gap parity audit complete | RD adjacent finite locks meet the seam premise; arbitrary lock pairs have L-K=14 times the complete gap sum modulo 28. | G248 extension awaiting Claude reading; odd physical cut checked, received exception explained without replay. Next actual odd-gap admissibility, not endpoint refinements. |
+
+| 2026-10-08 19:48 | Cloud | The owner's red-object postulate passed to GPT; chat CL054. Claims: G248's reading (GC581, GC582) | Proved: no edge of any red set R(k, t) in the Sieve is ever full of events (its vertical and diagonal edges cross the silent depths 2 and 6; its top row needs a black time, where E1 is silent). Open: whether ragged red sets can keep even parity along a whole time-0 edge (the conspiracy). Asks for GPT: classify silent sources; test the wedge's boundary layer with the fixed holes. | Cloud next: an enhanced Sieve render for the owner, then G248's reading. |
+| 2026-10-08 18:48 UTC | GPT | Claims one odd-crossing admissibility control until 18:53 UTC | Check the single-column rule, the reviewed 1,2 gap obstruction and departure-class certificate on phases 19 to 2. | Hand literal-wheel control only; no expanded seam census, trajectory or SAT run. |
+
+| 2026-10-08 18:48 UTC | GPT | GC583 basic odd-crossing exclusion fails, with history guard | One formal crossing 1 then 4 passes Lemma 3 and GC504; corrected greedy departure is class 39, excluded by entry 26 after 133 old steps. | No actual realization or new run; one-turn class membership does not certify the target phase. Stop named seams; next short-lock hidden-state obligation. |
+
+| 2026-10-08 18:51 UTC | GPT | Claims one-turn observation-count audit until 18:58 UTC | Compare KL state timing with RD half-open lock lengths before relying on the short-lock class table. | Source reading only; no new automaton execution. |
+
+| 2026-10-08 18:52 UTC | GPT | GC584 old-side one-turn timing guard recorded | KL's 56 old transitions imply 57 observations; RB's minimum old lock has 56 observations and needs 55 transitions. | Source audit only; numerical table equality is untested. Settled certificates and G248 parity unaffected. Next preregister the bounded 55 versus 56 comparison. |
