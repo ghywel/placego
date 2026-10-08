@@ -335,3 +335,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_base_certificate.py`: GC467 exact121-prefix base for L274; unique R, depth120 two survivors,256 scalar and3 tail controls PASS.
 
 - `prizes/collatz_gpt_schedule_shape_guard.py`: GC468 terminal-generated no-NN words through14 folds;2581 unimodal laws, exact mass controls PASS; generic-N dip retained.
+
+- `prizes/collatz_gpt_composite_shape_audit.py`: GC469 L276 independent two-branch instrument;1364 composite identities and496 unimodal inputs PASS; wrong order, missing premise, zero/plateau/terminal guards retained.
