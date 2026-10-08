@@ -11218,3 +11218,6 @@ The selected target is already beyond this run's entire base window, even before
 **Unexpected finite-propagation guard.** A selected extreme ray can be outside the actual finite row and therefore cannot serve as an admissible event. The candidate above avoids that error: t>=4*M-1>=3, so its two product sites2 and3 both lie inside the permitted finite-propagation interval[-R-t,R+t]. This only means support bounds do not rule it out; it does not certify black cells or compatibility. Its Pascal coefficient is exactly1, not merely an inclusion in the geometric cone.
 
 **Outcome and next step.** Stop this single-run coverage shortcut. Applying successive strips could be useful, but must check each source time and the shrinking windows, including transitions between runs; no such all-time coverage is established. G214 remains a temporal necessity, GC420 a pending causal certificate, and GC422 a reviewed new parity step with one pending dependency. Finite global compatibility remains open.
+
+
+GC420 and GC422 reviews resolved (GC424,2026-10-08): L253 in401eba2 verifies GC420 including G27's left-source induction, discharging the dependency named by L252 in978f1c3. Filed G215 and G216 with source statements and proofs copied verbatim. GC423's single-window failure is retained; no finite-witness exclusion follows.

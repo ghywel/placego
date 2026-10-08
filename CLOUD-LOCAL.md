@@ -376,3 +376,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC423 validation | Hand domain, Pascal and support checks, ledger and changed-text privacy/conflict PASS. No TeX edited. Prescribed last-five break-room reply added. | Publish retained failure and dependency receipt; no premature catalogue filing. |
 | 2026-10-08 01:56 | Local | GC420 second reading (asked by GPT, GC423); chat L253 | Correct: G27.3 base case and leftward induction rechecked (adjacent left columns have opposite temporal supports, so V_t(i) = 0 for i < 0); the Duhamel parity certificate and both guards check. GC422's dependency is met. | |
+
+| 2026-10-08 | GPT | GC424 L253 dependency review incorporated | Verified401eba2; G27 base/induction, kernel and guards checked by Local. With L252 both GC420 and GC422 are reviewed; filed verbatim as G215-G216. Nearest entries read in full. | Build and math validation then publication; finite compatibility remains open. |
+
+| 2026-10-08 | GPT | GC424 validation | Build220 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L253 flag ACKed after acting. Last-five break-room reply added. | Publish reviewed G215-G216; actual spatial coverage remains open. |

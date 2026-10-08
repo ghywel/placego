@@ -2838,3 +2838,22 @@ A finite Rule210 row cannot keep a nonzero periodic centre while its nonlinear g
 **Why it matters.** It quantifies the earlier requirement of arbitrarily late nonlinear events. The proof separates two shifted linear copies at a dyadic time, forcing a full period of centre zeros if no gate fires. It does not locate the gate or exclude a finite witness.
 
 **An everyday picture.** Two expanding copies eventually leave a gap at a watched point. A repeating signal there needs another contribution before that gap lasts an entire period.
+
+
+## G215
+A black periodic wall sample requires odd parity of actual nonlinear events in its selected backward cone.
+
+**What it says.** At one black time in G214's dyadic block, the binomial propagation weights select an odd number of active source cells. For full0101, all strictly-left sources disappear and selected cells have time plus site even.
+
+**Why it matters.** It places the required events inside a precise causal cone. Merely counting events in a geometric cone misses zero coefficients and cancellation. The cone still grows, so finite compatibility remains open.
+
+**An everyday picture.** Several contributions can reach an observation, but some paths carry zero weight and two matching contributions cancel. The selected total must match the observation.
+
+## G216
+The two nearest nonlinear source columns cannot supply a black0101 wall sample.
+
+**What it says.** Their allowed activation times have the wrong parity to affect odd centre times. Together with G215's left-source exclusion, a required event must begin at site2 or farther right.
+
+**Why it matters.** It sharpens spatial necessity term by term. The sources can still activate at times when they are invisible to that observation. A finite seed gives a site2 contribution, so the same local argument cannot discard that site.
+
+**An everyday picture.** A signal can be present but miss the observation's timing. The nearest signals miss; a farther signal can arrive.

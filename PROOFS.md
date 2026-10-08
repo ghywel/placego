@@ -8212,6 +8212,45 @@ This quantifies G59, rather than closing finite global compatibility. Suppose a 
 
 **Duplicate guard for G214:** actual nearest G59,G212,G60 read in full. G59 is the source qualitative obstruction; G214 adds an explicit gap endpoint from the time-s propagation radius. G60 constructs infinite linear right realizations and G212 bounds fair-input information; neither states this quantitative finite-row necessity. No new general operator identity claimed.
 
+### G.GPT215. nonlinear event parity in a dyadic causal cone (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC420 at1b40b1e, claim and proof copied verbatim below. Local L253 in401eba2 checks Duhamel, the kernel, both guards and G27's full0101 specialization. Hypotheses are G214's finite support[-R,R], nonzero eventually p-periodic centre, onset a and s>=a; N is its least dyadic power at least R+s+p. This refines G28's existing certificate using G214's quantitative block, not a new identity.
+
+Use GC419's hypotheses and dyadic N. Among T=s+N,...,s+N+p-1, choose a time with wall bit1; such a time exists by periodicity. For l>=0 define K_l(i)=binom(l,(l+i)/2) modulo2 when abs(i)<=l and l+i is even, and0 otherwise. Then the actual nonlinear sources obey the exact certificate
+
+`XOR_(t=s,...,T-1) XOR_i K_(T-1-t)(i)*V_t(i) = 1`.
+
+In particular an odd number of active, coefficient-selected spacetime cells lie in this cone. Every selected cell satisfies abs(i)<=T-1-t. Consequently some nonlinear activation lies inside the truncated cone abs(i)<=s+N+p-2-t, rather than merely somewhere in space during GC419's interval.
+
+**Proof.** Iterating x_(t+1)=A*x_t+V_t gives x_T=A^(T-s)*x_s XOR sum_(t=s)^(T-1) A^(T-1-t)*V_t. GC419's dyadic separation makes the homogeneous centre term0 at each of the p candidate times. Expansion of (S+S^-1)^l gives the displayed binomial coefficient at the centre. Finite propagation makes every sum finite. Thus the chosen wall1 is exactly the stated event parity. This proves the claimed localization, with no assumption that the nonlinear sources are independent.
+
+**Full0101 specialization.** If the full wall is0101 from time0, G27's compatible-left classification gives opposite temporal supports for every neighboring pair on the left, including sites-1 and0. Hence V_t(i)=0 for all i<0. The certificate's event sites can therefore be restricted to i>=0. Its chosen T is odd, so the kernel additionally requires t+i even. This is a right-half necessary condition; it does not classify the right half. The claim about left sources uses the exact full0101 hypothesis, not a general eventually periodic wall or an unproved eventual-left parity assertion.
+
+**Scope:** the selected source radius grows; it need not enter a fixed forced strip or exclude a finite witness. The left-source specialization requires full0101 from time0.
+
+**Duplicate guard for G215:** nearest G202,G214,G211 read in full. G214 supplies the dyadic zero block; this entry adds the exact selected causal parity and full0101 left-source specialization. G202 concerns temporal profile overlap and G211 finite white-block precursors. G28 is the credited Duhamel source, not reintroduced as a new identity.
+
+### G.GPT216. the first two source columns miss black0101 samples (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC422 at83b71ef; claim, proof and finite guards copied verbatim below. Local L252 in978f1c3 checks the new parity step and every example row; L253 in401eba2 verifies the G215 dependency. The necessary finite-row event uses G214-G215. No infinite clock witness is supplied.
+
+Combining G27,G62 and GC420 gives a sharper spatial necessary condition, without another search. In any full Rule210 orbit with centre0101 from time0, the nonlinear contribution to every odd centre sample has no terms from source sites i<=1. For a finite seed, GC420's dyadic block therefore requires a selected active source at i>=2, with t+i even and i<=T-1-t for the chosen odd T. This does not say the first two sources are inactive.
+
+**Proof.** G27 eliminates V_t(i) for i<0. At i=0, V_t(0)=tau(t)*x_t(1) can be nonzero only at odd t, since tau is0 at even times. At i=1, G62 proves V_t(1)=0 at odd t, so its activity is confined to even t. The Pascal coefficient for an odd target T requires t+i even. It therefore selects even t at i=0 and odd t at i=1, precisely the forbidden temporal parities. These two sources vanish term by term in the odd-time Duhamel sum. No cancellation assumption is used. GC420 then restricts its required event to i>=2.
+
+**Independent local truth-table control and retained counterfactual.** The attempted extension eliminating i=2 fails. Start from the finite seed{1,2,3}, with wall0 and empty left side, so the positive five-cell patch is11100. Literal Rule210 bits at patterns011,111,110 give respectively0,1,1 for columns1,2,3 after one update. Direct scalar truth-table evolution gives occupied sets
+
+    time0: {1,2,3}
+    time1: {0,2,3,4}
+    time2: {-1,3,4,5}
+    time3: {-2,0,2,4,5,6}.
+
+Thus the centre prefix is0101. The source at time0,site2 is active and has coefficient K_2(2)=1 for target T=3. The homogeneous Rule90 centre at time3 is0: seed sites1 and3 have binomial coefficients3 and1, which cancel modulo2. Other selected source terms are absent in these three updates, so this source supplies the black time3. This is a hand evaluation of four finite rows, not a computational run or a claim that the clock continues forever. It refutes only a local extension to i>=3; infinite compatibility may impose more constraints.
+
+**Unexpected guard: invisible does not mean absent.** The same initial seed has V_0(1)=1, yet K_2(1)=0. Its first pair really activates and is invisible to the odd time3 centre. This separates the new causal statement from G62's allowed timing and prevents replacing it with a claim that the near-wall dynamics are linear.
+
+**Duplicate guard for G216:** nearest G215,G214,G65 read in full. G215 supplies the cone and left-source exclusion, G214 the required event, and G65 a parity-sparse infinite mirror realization. This entry removes source columns0 and1 termwise at black sample times; it does not construct a finite realization.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

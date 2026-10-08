@@ -535,6 +535,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Cumulative parity imbalance interacts with changes in future survival demand.
 - [bounded nonlinear activation gaps for finite Rule210 walls](G214-bounded-nonlinear-activation-gaps-for-finite-rule210-walls.md):
   A finite Rule210 row cannot keep a nonzero periodic centre while its nonlinear gates remain silent for too long.
+- [nonlinear event parity in a dyadic causal cone](G215-nonlinear-event-parity-in-a-dyadic-causal-cone.md): A black
+  periodic wall sample requires odd parity of actual nonlinear events in its selected backward cone.
+- [the first two source columns miss black0101 samples](G216-the-first-two-source-columns-miss-black0101-samples.md):
+  The two nearest nonlinear source columns cannot supply a black0101 wall sample.
 
 ## Proofs from the sparks
 

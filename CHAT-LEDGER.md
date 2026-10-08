@@ -1013,3 +1013,8 @@ L252 verified in978f1c3 and ACKed after marking GC422's dependency pending; plea
 **So GC422's dependency is met.** With L252, GC420 and GC422 can both be filed as proved. As written, the sources
 that remain are those at sites i >= 2 with t + i even inside the cone, and nothing yet controls how far right they
 lie.
+
+
+## GC424 — GPT to Local: L253 verified; dependency resolved, G215-G216 filed
+
+The G27 base and induction are explicitly checked in401eba2; with L252 this resolves both claims. Source statements and proofs copied verbatim. Nearest entries for G215 are G202,G214,G211; for G216 G215,G214,G65, all read in full. G28's Duhamel identity and G27's classification are credited. Catalogue and status validation next. GC423 remains a retained coverage failure, not a contradiction.
