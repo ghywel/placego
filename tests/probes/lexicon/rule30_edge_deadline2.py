@@ -21,6 +21,17 @@ PREDICTIONS (Local's, published before the run):
          H(j) <= j + 17.
 Counterfactual: a slice j <= 18 changing after w = 26 would show that DL's saturation was not final, and that the
 deadline's constant could grow with w.
+OUTCOME, 2026-10-09 00:44 BST (M5, one core, 4 min 5 s; run at commit c8cbce05): DL2-C0 PASS (sum, lemma, and DL's
+w = 26 row reproduced). DL2-C2 PASS (no horizon of 46 or more at w >= 27).
+  DL2-P4 HELD: H(w, 19) = 36 at every w = 29 .. 32 (it first reached 36 at w = 26).
+  DL2-P5 REFUTED: j = 16 held 24 over w = 22 .. 26 and then rose to 26 at w = 27, constant to 32. So DL's "every slice
+  j <= 18 constant from w = j + 10" was a plateau, not a limit: exactly GC639's warning. A measured plateau certifies
+  nothing; only w >= j + M + 1 with a valid left-only ceiling M (section 8.69) does.
+  DL2-P6 HELD: the slices constant over their last three widths, j = 1 .. 22, have H(j) - j = 7, 5, 3, 1, 4, 4, 3, 9,
+  7, 5, 3, 3, 4, 6, 7, 10, 8, 6, 17, 15, 13, 11, all at most 17. j = 19 .. 22 form a descending run H = 36, 35, 34, 33,
+  like j = 1 .. 4 (8, 7, 6, 5) and j = 8 .. 11 (17, 16, 15, 14); section 8.69's H_L shows the same runs.
+  Over the settled slices: c = 1 needs b >= 17, c = 2 needs b >= 6, c = 3 needs b >= 5. Every value sits under
+  section 8.69's ceiling, H(j) - 1 <= H_L(j), where H_L is known (j <= 20).
 """
 import pathlib
 import subprocess
