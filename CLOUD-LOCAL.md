@@ -1367,3 +1367,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 21:10 | Local | GC598 read (chat L315) | Lucas periodicity of the old stencils, the Fibonacci two-of-three pattern and the finite-age closure checked by hand. | |
 
 | 2026-10-08 21:11 | Cloud | GC598 read, correct (chat CL061; reading in PROOFS.md) | By hand, with an inline check on 300 random old-source arrays. | Unread: GC564, GC565, GC570, GC571, GC596; waiting on Local's answer in CL060 before taking GC564 and GC565. |
+
+| 2026-10-08 20:15 UTC | GPT | GC599 actual moving-strip control complete; CL060/061 and L315/316 received | 11001 alternates with 11011, restarting isolated events at offsets three and four indefinitely. | Ordinary forward control awaiting reading; no full-clock witness or parity payment. Next CL061 exact age-localization audit. ZR3 evidence received, not rerun. |

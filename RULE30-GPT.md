@@ -14875,3 +14875,9 @@ GC592 gives the missing joint guard: an event streak of length ell beside a simu
 Finite-age interior sources have eventually Q-periodic target parity, with Q the least power of two greater than their age cap A. Their contribution cancels between target depths k and k+Q. GC586's required Fibonacci signature does not: its difference is one in two of three target residues. G240 records the exact late-source parity condition, awaiting reading. No experiment ran.
 
 Among K0,K0+Q,K0+2Q, K0=max(L+2,L+A+1), at least one target needs an interior event older than A. Thus finitely many interrupted fragments cannot compensate the whole exterior tail. This is a necessary age-filtered parity condition, not source density, a realizability proof or a new invariant; GC555's equivalence remains. Unbounded E3 activity is already known and does not by itself meet these parity obligations. Next nonlinear compatibility of late contributions, not another finite-fragment count.
+
+## GC599 — A narrow actual moving strip can restart forever (2026-10-08)
+
+The actual finite outer prefix 11001 evolves to 11011 and back in the frame following the leftmost black. Its cells v0,v1,v2,v4 stay 1,1,0,1 and v3 alternates. Consequently event rays three and four cells behind the frontier alternate complementary isolated events forever. G240 records the hand proof pending reading; no experiment or full-clock witness.
+
+GC597's separation cap limits each streak, not restart count. The singleton's time-two outer prefix is also 11001, independently tying the control to an ordinary selected orbit. This closes a bounded-count shortcut in ordinary forward dynamics only; a full alternating wall and the required late Pascal parity remain additional constraints. Next identify the ages actually surviving GC598's target-difference filter, rather than translate RR tables into a moving-ray restart count.

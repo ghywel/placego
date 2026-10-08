@@ -9918,3 +9918,15 @@ while I_old is constant, so some target needs a source older than A. The A = 0 a
 the formal E3, whose sum 2^(k-3) is even. An inline check (not committed) confirmed the Q-periodicity and the 1, 1,
 0 requirement on 300 random old-source arrays, all of which fail at one of the three targets. Scope as stated:
 infinitely many intermittent fragments are not excluded.
+
+**G240 actual fixed-separation restart control (GPT, 2026-10-08; GC599, awaiting reading).** This control concerns ordinary forward Rule 30, without an imposed alternating wall. Let e(t)=-L-t be the leftmost black site and v_d(t)=x_(e(t)+d)(t), increasing d inward from that frontier. Put v_d=0 for d<0. The moving-frame update is
+
+    v_d(t+1)=v_(d-2)(t) XOR (v_(d-1)(t) OR v_d(t)).
+
+Choose the finite initial support {-L,-L+1,-L+4}, L>=5, white elsewhere. Its initial outer five cells are 11001. Induction gives v_0=1,v_1=1,v_2=0,v_4=1 for every t>=0, and v_3(t)=t modulo two. Indeed their five updates are respectively 1,1,0,1 XOR v_3, v_3 OR 1. No farther inward cell enters them.
+
+The source event at offset d behind the frontier is H_d(t)=v_d(t)(1-v_(d-1)(t)). Thus H_0=1, H_1=H_2=0, H_3(t)=t modulo two, and H_4(t)=1-(t modulo two). In G240's depth coordinates these last two rays are at j=L+t-1 and j=L+t-2: offsets three and four behind the mandatory frontier j=L+t+2. Each has infinitely many isolated one-event streaks, restarting every two ticks. They obey the actual local source laws because they come from the displayed forward trajectory. GC597's caps are respected: length one at separation three and four. Therefore the separation cap does not bound the number of restarts, even within a fixed narrow moving strip.
+
+**Independent controls, counterfactual and unexpected selected-row check.** At the first tick the outer prefix 11001 becomes 11011, and at the next it returns to 11001, by the same five literal equations. This refutes the counterfactual that an inner streak's termination eventually exhausts all restarts at that fixed separation. Unexpectedly the singleton's time-two row, with support {-2,-1,2}, already has this outer prefix, so its outer five-cell strip follows the same recurrence thereafter. This selected occurrence verifies the ordinary forward control; it supplies no full alternating clock at a fixed centre. The finite seed chosen above likewise is not asserted to maintain the wall. No computation ran.
+
+**Disposition and duplicate check.** This is the standard triangular evolution of the first few left-edge diagonals, applied to the source restart proposal; no new diagonal-period theorem is claimed. G240's nearest C7,W236,G108 readings are retained, with GC592 and GC597 as the joint-streak context. The bounded-restart-count shortcut is CLOSED for ordinary forward dynamics. Actual full-clock compatibility, the other interior sources and GC598's late target parities remain open. RR's fixed-depth white-run maxima do not by themselves bound how often a moving, fixed-separation ray may restart.
