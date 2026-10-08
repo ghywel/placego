@@ -9810,3 +9810,55 @@ At a target k=L+2+n, n>=0, GC586's Pascal sum for the outer ray is F_(n+1) modul
 **Disposition and duplicate check.** G240's C7,G108,W236 full readings and summaries are retained. GC586 supplies the parity signature and GC592 supplies the entire dynamical argument. Close a persistent parallel-ray compensation mechanism, while retaining arbitrary intermittent or multi-ray compensation as open. Neither finite streak caps nor half-full red-set edges bound the interior's total parity supply.
 
 **Reading receipts (2026-10-08; L313 and CL056, received in 11195c70).** Local L313 independently checked GC572 and GC573 by hand, including their two birth controls. With the earlier conditional L312 receipt, GC595 is now second-read throughout. Cloud CL056 independently verified G248 and GC582 by hand and reports their RG248 replay controls passing. The separated-lock extension has a hand reading only: all sampled pairs were chained, so that unexpected empirical check was vacuous. GPT received the replay report without rerunning it; the reported nearest-gap correction preserves parity.
+
+*Reading of G241 and its GC567 control (Cloud, 2026-10-08 21:01 BST; chat CL057).* Correct, by hand. Rule 30 is
+x' = A x XOR V with A = I + S and V(i) = x(i+1) AND NOT x(i), since c OR r = c XOR (r AND NOT c). Duhamel gives
+x_T = A^T x_0 XOR (the source sum), and A^N = I + S^N for dyadic N. With x_0(0) = 0 and support inside [-R, R], the
+homogeneous centre is 0 at N and x_0(-1) at N + 1, which gives P_N = 0 and P_(N+1) = 1 XOR x_0(-1). The first clock
+update, 1 = x_0(-1) XOR x_0(1), turns that into c_0. The Rule 60 control is right: the seed {-1} has centre
+C(t, 1) = t mod 2 and homogeneous term 1 at N + 1, so the near-wall term cannot be erased by finite support. So CL046's
+hoped-for bridge to G215's forced-one parity is closed, as G241 says. GC567: the singleton's sources at t = 0 .. 3
+are {-1}, {-2}, {-3, 1} and {-4, -1}. At target 4 the stencils A^3, A^2, A, I select V_0(-1) and V_1(-2), which cancel;
+A^4 supplies 1, the actual centre. At target 2, V_0(-1) turns the homogeneous 1 into the actual 0. An inline check
+(not committed) confirmed Duhamel and A^N = I + S^N on 200 random finite seeds, the Rule 60 clock to t = 64 and the
+four singleton supports.
+
+*Reading of GC585 and GC586 (Cloud, 2026-10-08 21:01 BST; chat CL057).* Correct, by hand. GC585: the leftmost black
+has a white left neighbour, so it stays black and makes the next cell out black. That gives u_e(t+1) = u_(e+1)(t+1)
+= 1, hence E_(e+1)(t) = 0 and E_(e+2)(t) = 1, with nothing deeper. The two exterior inverse equations are
+1 XOR 0 XOR 1 = 0 and 1 XOR 1 XOR 0 = 0, as displayed. The ray meets depth 6 at t = 4 - L, so E6 excludes L = 1 .. 4.
+Its parity rule follows from t = j - L - 2. Since this filing, E14's white silence has been proved (GC589, read in
+L310), which adds L = 6, 8, 10, 12, as GC590 says. GC586: (D^m v)(0) = sum over i a binary subset of m of v(i), so
+E_j(t) enters u_k(0) with C(k - j, t) mod 2. On the ray, k - j = n - t, and the sum of C(n - t, t) is F_(n+1), with
+parity 1, 1, 0. D^k of the clock vanishes for k >= 2, which gives I_(L+2+n) = F_(n+1) mod 2. The n = 2 double hit is
+right. As GPT says, this is a signature the interior must pay, not an exclusion. An inline check confirmed the
+Fibonacci sum and its 110 parity for n < 300.
+
+*Reading of GC590 and GC591 (Cloud, 2026-10-08 21:01 BST; chat CL057).* Correct, by hand. GC590: the ray meets depth
+j only at t = j - L - 2, so a triple (j, p, A) intercepts exactly when t >= A and t = p mod 2. That is
+L <= j - A - 2 and L = j - p mod 2: an initial segment of one parity class. Coverage of every L is then exactly an
+unbounded supremum in each class. All three controls check: white-only silence at even depths, A = j - 4, and the
+sqrt schedule. GC591: every arrival is at age <= j - 3. A shift by an even number of rows keeps the white-start wall
+and carries a firing at age a to every earlier age of the same colour. A finite SAT cone extends to a full clock
+history by completing the right half, driving it with the wall and inverting the left; the inverse recurrence is the
+forward update at every site <= 0, so the recorded cone is reproduced. Scope as stated: the extended history may
+have an infinite left row, which the silence certificates' domain allows; no finite-support claim.
+
+*Reading of GC592 (Cloud, 2026-10-08 21:01 BST; chat CL057).* Correct, by hand and by replay. The outward update is
+v_q = a_(q+1) XOR (a_q OR a_(q-1)). Given a_0 = 1 and a_1 = 0, v_1 = 1 forces a_2 = 0, and v_2 .. v_(2r) = 0 then
+force a_3 .. a_(2r+1) = 0 in turn. The converse runs the same equations backwards, and induction on r closes it.
+EC-C1 checked the r = 1 case both ways at every cell of 400 wall-form halves. An inline check (not committed)
+confirmed the iff for r = 0 .. 5 on 7,200 starting cells of an actual Rule 30 row, with streak counts 1790, 453,
+111, 31, 7, 0, so each further event comes about a quarter of the time. The R_real bound
+floor((R_real(d) + 1) / 2) follows.
+
+*Reading of GC593, G122's finite period-three parent control (Cloud, 2026-10-08 21:03 BST; chat CL058).* Correct, by
+hand and by replay. The inputs 001, 010 and 100 each give a black output, so every isolated black at 3k blackens
+3k - 1 .. 3k + 1. These intervals abut, so the time-one support is [-M, M] with M = 3m + 1. A solid block then keeps
+only its outer pair on the left (011 and 001 give black) and one cell on the right (100), giving {-M - 1, -M, M + 1}.
+At time two the centre's cone of radius s < M is all white, so the centre stays white. At radius M only -M is
+black, and it enters with the leftmost XOR coefficient, so the prefix is 11, then M zeros, then 1. The nonoccurrence
+argument is right: the singleton's two leftmost sites are black at every t >= 1, while S_m has -3m + 1 white. An
+inline check (not committed) confirmed the supports, the centre prefix and the nonoccurrence at time 3m for m < 15.
+The disposition is GPT's and stays as scoped: the coarse-memory route is closed for finite seeds, and the
+singleton-specific reachable-state estimate is open.
