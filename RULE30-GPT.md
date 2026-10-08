@@ -12463,3 +12463,31 @@ Cauchy-Schwarz gives 1=(sum_v p_n(v))^2<=C_n*kappa_n. Thus C_n>=1/kappa_n. If co
 **Sufficiency guard.** Positive support entropy does not force exponential collision decay for an arbitrary chosen full-support measure. On the full binary shift take the mixture of half a point mass at the all-zero sequence and half the fair iid law. Every finite word has positive probability, so its support has entropy 1, but two independent samples both choose the point mass with probability 1/4. Their collision probability is at least 1/4 for every n. This is a sequence-space control, not a statement that Rule 30 induces that mixture. Failure of the proposed fair-right collision bound would therefore not by itself prove zero language entropy.
 
 **Outcome and next.** The positive-entropy problem now has a precise sufficient two-copy estimate, and its simplest uniform-per-symbol contraction is closed by an actual boundary calculation. No asymptotic collision decay or limiting entropy value is claimed. Next seek a justified block contraction or abandon this measure for an explicit lower-language construction; do not import full-line fair-ensemble stationarity into the clamped boundary.
+
+## GC502 — A bounded output audit exposes an exact five-zero exclusion (2026-10-08)
+
+**Bears on.** GC500/GC501 and portfolio question 4, constellation rows 5/6. Preregistered bounded proof controls, followed by a local hand proof pending independent reading. Searched the existing record for 00000 and visible zero-run bounds; no matching Rule 30 clamped-right statement found in that bounded search. Existing entropy automata already encode the restriction implicitly, so no novelty claim. This is a necessary companion-language condition under an imposed 0101 wall, not a prize exclusion.
+
+**Predictions and instrument.** The committed probe `rule30_gpt_boundary_collision.py` retains its predictions before the first run: n=1 through 7 only, cone width 2n-1, literal decimal Rule 30 controls through n=4, initial two-sample counts and collision, blind expectation of a missing no-11 word by n=7, and the uniform-output counterfactual. Unexpected check identifies a shortest additional forbidden word and tests its proper factors. GPT's standard Python, exact integer counts, no horizon enlargement or Local job. The packed update uses the clamped wall; the independent set update includes the outward-growing finite right row and reads the literal rule table.
+
+**Finite outcome.** All 170 literal comparisons PASS, as do the no-11 guard and the exact GC501 two-sample probabilities. Counts C_n for n=1,...,7 are 2,3,5,8,12,17,25. Collision probabilities are respectively 1/2, 13/32, 67/256, 1433/8192, 15689/131072, 209233/2097152, 1036453/16777216. Uniform-output CF is REFUTED. The blind missing-word prediction HELD: the first extra missing word is 00000, at n=5; all its nonempty proper factors are admitted. Extra missing no-11 words number 1,4,9 at n=5,6,7. These counts alone establish only their declared finite languages, not an asymptotic rate.
+
+**Local five-zero proof.** Suppose consecutive even-time site-1 values are both 0. At the first even time write sites 2,3,4,5 as b,q,r,z. Their odd-time values, and site 1's odd value, obey
+
+    site1_odd=b,
+    site2_odd=b OR q,
+    site3_odd=b XOR (q OR r),
+    site4_odd=q XOR (r OR z).
+
+Because the next wall value is 1, keeping site 1 zero at the next even time requires b OR q=1. Under this condition the next even pair (b_next,q_next) satisfies
+
+    b_next=1-b,
+    q_next=1 XOR ((b XOR (q OR r)) OR (q XOR (r OR z))).
+
+Two transitions are independent of r,z: (b,q)=(0,1) forces (b_next,q_next)=(1,0), and (b,q)=(1,0) forces (b_next,q_next)=(0,0). The first follows because site3_odd=1. For the second, its two OR operands are 1-r and r OR z, whose OR is 1. Pair (0,0) cannot support the next zero-to-zero transition.
+
+If five consecutive visible zeros existed, four such transitions would be required. If the initial b is 0, the first transition requires q=1, and the two forced pair transitions reach (0,0) before the third zero-to-zero transition. If the initial b is 1, the first transition leaves b_next=0; the second then requires q_next=1, after which the same two forced transitions reach (0,0) before the fourth zero-to-zero transition. Both cases contradict the proposed five zeros. The argument begins at any even time, uses arbitrary farther bits, and imposes no finite-support assumption.
+
+**Sharpness and consequence.** Seven initial right sites 0111000, with a zero initial tail and the clamped wall, give four visible zeros. The hand-derived initial row was checked by both independent implementations. Thus the bound of four is attained. Every infinite compatible visible trace avoids both 11 and 00000. In every length-N window its number of ones is at least floor(N/5) and at most ceil(N/2), by partition into disjoint length-5 blocks and the no-adjacent-ones condition. This is a companion-visible frequency bound conditional on an alternating wall, not the singleton centre's one-half-frequency problem. The necessary finite-type language remains larger than the actual compatible language; its admissible words are not automatically realizable.
+
+**Outcome and next.** The unrestricted companion cannot have arbitrarily long visible zero runs next to this wall. This closes that specific possible lower-language construction, but supplies no positive entropy lower bound or finite global wall exclusion. Stop the short-count scan. Next audit what the forced pair transitions say about coding by gaps between visible ones, retaining deeper-column compatibility rather than treating the necessary gap language as sufficient. Request independent reading of the local proof before catalogue filing.

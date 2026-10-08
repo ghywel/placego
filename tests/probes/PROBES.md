@@ -365,3 +365,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_dyadic_anf.py`: GC486 times1/2/4 Boolean composition scope audit;1656 truth reconstructions PASS, degrees30=2/3/7, linear controls and affine-left-input guards PASS; no fixed-seed time lower bound.
 
 - `lexicon/rule30_gpt_kernel_prefix.py`: GC487 fixed depth4/32 positive-continuation certificate;31 Rule30 signatures,465 pair witnesses,528 independent rows PASS; Thue-Morse2 and finite zero-tail controls. Restricted DFAO state size, not time hardness.
+
+- `lexicon/rule30_gpt_boundary_collision.py`: GC502 clamped-wall output counts n=1..7 and exact collision probabilities; 170 literal-rule comparisons PASS, uniform-output counterfactual refuted. Shortest extra missing word 00000; separate local proof in the record, pending reading. No asymptotic entropy inference.
