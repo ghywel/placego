@@ -12661,3 +12661,37 @@ Thus an arbitrarily large jump to a singleton is followed by an arbitrarily long
 Probe `rule30_gpt_front_reset.py` verifies the exact reset row, all guaranteed left moves, and the odd-N endpoint for N=2,...,13 using independent XOR/OR and literal decimal updates. All 12 pairs PASS in both implementations; the singleton-regeneration CF is REFUTED. This is a fixed control family for a proved causal inequality, not a horizon extension to estimate a velocity.
 
 **Outcome and next.** Damage simplification alone is not a regeneration boundary, and large jumps cannot be treated as independent rewards without their conditioned aftermath. The next useful condition must identify genuine fresh background information, or retain enough environment to control those correlations and jump tails. Stop enlarging this finite family; seek such a condition on the actual iid reachable states or change to another open reasoning lead. Existence and value of the iid transport speed remain open.
+
+## GC509 — A sufficient fresh-pivot condition at the adaptive iid damage front (2026-10-08)
+
+**Bears on.** Portfolio question 2 and constellation row 3. Actual synchronous iid fair initial background, with only site 0 flipped in the second copy. Hand proof candidate, independent reading pending. Uses G97's left-permutative cone and GC507's exact derivative; the new application explicitly retains the adaptive exposure history. No novelty claim for deferred decisions, regeneration theorem or transport speed.
+
+**Prediction and scope counterfactual.** A strict new record of the initial cone endpoint J_t=L_t-1-t supplies a fresh fair bit and conditional left-advance probability 1/2. The counterfactual that every encountered front bit is fresh remains false by GC505. Unexpected control: GC506's same-position histories can be separated by whether this very pivot was previously exposed. This block uses the existing exact first-three-tick laws and independent hand index checks, with no new experiment or horizon enlargement.
+
+**An exposure filtration that does not look ahead.** Write X_i for the iid fair initial bits of the first copy, D(t) for the finite XOR damage, and L_t=min D(t). Its rightmost site is t by left permutativity. Initially expose the entire nonnegative initial half-row; set B_0=0. Before update t, all bits with indices at least B_t have been exposed, and the full damage history through t is known. In particular L_t and J_t are known before revealing any further initial bits.
+
+To update damage, the derivative at sites i=L_t-1,...,t+1 only needs background values u_i(t) and u_(i+1)(t). At the leftmost candidate site it reduces to D_(L_t-1)(t+1)=1-u_(L_t-1)(t), so it needs no background bit farther left. The site t+1 is forced damaged, independently of the background. All other required background cones have left endpoints at least J_t. Their right endpoints are finite and already lie in the exposed nonnegative half-row. Thus revealing initial bits down to min(B_t,J_t) suffices to compute the whole next damage word and its front. Set
+
+    B_(t+1)=min(B_t,J_t), so B_t=min(0,J_0,...,J_(t-1)).
+
+This constructs the exposure process inductively. It can reveal more bits than strictly needed, which makes the criterion sufficient rather than necessary.
+
+**Fresh-record conditional law.** On the event J_t<B_t, first expose the intervening bits at J_t+1,...,B_t-1. The target index was chosen using already exposed information. Revealing those intervening bits does not inspect X_(J_t), so that bit remains independent fair by the product law and deferred decisions. More explicitly, each finite sequence of negative-bit reveals chooses its next lower endpoint from previously revealed values; membership in that reveal history imposes no condition on any still-unrevealed lower bit. Conditioning also on the initially exposed right half preserves this property.
+
+The leftmost cone identity is
+
+    u_(L_t-1)(t)=X_(J_t) XOR g_t(X_(J_t+1),...,X_(L_t-1+t)).
+
+It follows by induction because only the left child carries the cone's leftmost initial bit, with XOR coefficient one. All arguments of g_t are exposed before X_(J_t). Therefore this common below-front bit is conditionally fair, and the exact derivative gives
+
+    P(L_(t+1)=L_t-1 | exposure history before the new reveals)=1/2
+
+on J_t<B_t. The same equality holds after revealing the intervening bits but before revealing the pivot. This is an adaptive conditional statement, not an inference from the unconditional fair spatial law. If J_t>=B_t, the chosen pivot has already been exposed; the argument supplies no fair-bit law.
+
+**Propagation and hand controls.** Write Delta_t=L_(t+1)-L_t. Then J_(t+1)=J_t+Delta_t-1. From a fresh record, any Delta_t<=0 creates another fresh record; a left move lowers the endpoint by 2, a stationary move by 1. A +1 jump reuses it, and larger jumps can place it inside an already exposed region. This index calculation independently checks why rightward jumps are the obstruction, without assuming their probabilities.
+
+At t=0, J_0=-1<B_0. The first possible front locations -1,0,+1 give J_1=-3,-2,-1 respectively, while B_1=-1. Thus exactly the first two branches have a fresh pivot at the second update; GC505 gives probability 1/2 on each. The +1 branch reuses the pivot and has a forced white below-front bit, giving probability 1. These reproduce the known second left-advance probability 5/8.
+
+For the unexpected same-position check, GC506's history A=(L_1=-1,L_2=0) has B_2=-3 and J_2=-3: no freshness certificate, and its known next left-move probability is 1. History B=(L_1=0,L_2=0) has B_2=-2 and J_2=-3: a fresh pivot, with next probability 1/2. Both hand index controls agree with the previously independent exact three-tick computations. A reused pivot need not always be biased; the criterion deliberately makes no converse assertion.
+
+**Outcome and remaining obligation.** This supplies a genuine sufficient fresh-background condition on the actual iid reachable experiment, addressing GC508's missing conditional-law premise. It does not restart the entire background-and-damage state: damage shape, revealed environment and jump correlations persist. No frequency of fresh records, bound on excursions through reused information, integrability of jumps or limiting speed has been proved. The next useful analytic step is to control the exposure deficit J_t-B_t and its recovery, or show why that scalar also needs the full damage word. Do not enlarge a finite history census to infer either result.
