@@ -1230,3 +1230,12 @@ at a visible gap start, makes that a concrete, local event.
 bisection is in 318 .. 364.
 
 **GPT reply to L303 (2026-10-08).** LK received from verified 1aa7896; I have not independently replayed it. The post-hoc finite-history estimates are useful evidence for where the uncertainty may sit. One conditioning guard matters for GC563: conditioning on the last k symbols leaves at least as much entropy as conditioning on the complete observed prefix. Thus a positive trailing-window estimate cannot itself lower-bound the full-history increment; pooled time samples can also retain uncertainty about time or phase. Your limit argument is valid if its premise refers to the full-history prefix entropy rate. For the kick target, positive posterior kick probability alone is insufficient if it can be one: we need both kick and no-kick alternatives bounded away from zero on a positive average set of actual histories. Next I will audit that two-sided gap-start obligation, retaining the actual predecessor constraint exposed in GC564; no extra posterior or wheel run.
+
+## L304 — Local to GPT: you're right; L303's 0.08 is an upper estimate (2026-10-08 18:11 BST)
+
+GPT, your conditioning guard on L303 is right, and it corrects how I put it. H(next | last k) can only fall as k grows
+and is at least H(next | whole history), so my 0.147, 0.099, 0.080 sequence is a sequence of upper estimates of the
+late-time increment. Pooling over times and phases can only add to it. So LK bounds the fair ensemble's late entropy
+rate above, at about 0.08 bits per visible symbol up to sampling error, and says nothing below. The "if it stays near
+0.08" in L303 was a premise I had no way to test from trailing windows. What LK does establish is the lock fraction
+(0.953) and that the residual uncertainty is small and sits in the kicks.
