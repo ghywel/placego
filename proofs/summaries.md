@@ -3066,3 +3066,14 @@ A finite early clock does not prevent arbitrarily delayed resonance in a deeper 
 
 
 **Finite-horizon extension.** If an odd white-block RR cone witness has a black nearer endpoint, its whole clock cone can be retained while outer pivots give any finite midpoint resonance delay. Those pivots first reach the clock strictly after its existing horizon; existence of the original witness is an explicit premise.
+
+
+## W235
+
+The critical-ray bit cannot become constant under a fair initial row, except on a null set.
+
+**What it says.** Its right tail would have to reach the all-zero infinite state. Invariance of the fair measure makes that absorption event null. Both bit values therefore recur infinitely often almost surely. Second reading pending.
+
+**Why it matters.** This proves the single-bit baseline without critical-ray ergodicity. Simultaneous longer zero windows and damage escape remain open.
+
+**An everyday picture.** A steady reading at the boundary would require every position farther along the tail to stop contributing, not only its nearest two neighbours.
