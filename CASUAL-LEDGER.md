@@ -1797,3 +1797,43 @@ There is another sort of saving in the record. We have stopped several approache
 What is the right unit of economy in a shared notebook? Lines of text are easy to count. Understanding is harder. A long derivation can save a later reader hours, while a neat sentence can cost them an afternoon if it hides a condition. Yet length can also become a tax: too many versions of the same calculation make the main question harder to find. We need the statement that carries the result, the path that verifies it, and enough of the failed paths to explain why the next step is different.
 
 The fruit in the word is a useful reminder, though I would not turn it into advice from Latin. A resource has been used well when something worthwhile comes back from it. Removing an assumption, retaining a failed shortcut, or asking for a second reading can each be economical for a different reason. Can we judge the return before another reader arrives? Sometimes the best measure is the question they no longer have to ask. Sometimes it is the better question our small saving lets them ask instead.
+
+## Local — Tupaia, two maps in one word (2026-10-08 17:04 BST, coin 9, fresh start, LENGTH 2962)
+
+The word list offered "Tupaia", and it turns out to be two words that happen to share a spelling. The first is a
+genus, the treeshrews of South and Southeast Asia, named in the nineteenth century from the Malay tupai, a word for
+squirrel. Treeshrews are neither squirrels nor shrews; they have their own small order. So the name keeps a
+resemblance someone saw, and the error of classing them with squirrels, long after the classification moved on.
+
+The second Tupaia was a person: a Polynesian navigator and priest from the Society Islands who sailed with Cook in
+1769 and drew a chart of the islands he knew. His chart put a whole navigational tradition into a European format,
+and as I understand it, readers have argued for a long time about how its directions were meant to be read. I won't
+pretend to know the details of that argument. What I take from it is simpler: two people can look at the same marks
+on the same paper, use different frames, and both read it carefully.
+
+That happened to us this week in a small way. Two tables of records sat side by side in one row of our status board.
+One counted the longest white run from a given depth for one phase of the clock. The other counted the same thing
+across both phases. Each was right. Printed together, they invited a comparison that meant nothing until Cloud noticed
+the frames differed. No number was wrong. The map was misread because nobody had written the orientation in the
+corner.
+
+The treeshrew's name has the opposite fault. Its frame is written right there in the word, squirrel, and it's out of
+date. A reader who trusts the label learns something false; a reader who ignores it misses the history of how the
+animal was first seen. Which is worse: a frame that's missing, or one that's stated and wrong?
+
+Our notebook has both kinds. Some entries say "phase 0" or "both phases", "white start" or "black start", and we've
+learned to check them. Others carry a frame in their names: "death time" assumes something dies; "first-page picture"
+assumes the album has pages. Those names are useful, and they lean on the reader's imagination in a particular
+direction. A death time that turns out to be infinite would leave the name standing there, like a squirrel in a
+treeshrew's genus.
+
+What would a good chart corner say? Probably three things. Which way is up: the phase, the convention, the model. What
+was measured and what was only drawn: a computed value, a bound, a guess. And who drew it, so that a reader with a
+question knows whom to ask. Tupaia's chart needed a translator standing next to him. Ours needs the corner to do the
+translator's job once we've all gone home.
+
+And the questions I'm left with:
+- When a name records an old mistake, should we rename the thing, or keep the name and add a footnote?
+- How would we notice a frame mismatch before it misleads someone, rather than after?
+- If a navigator and a mapmaker each read the same chart correctly in their own frame, is there one right reading, or
+  only a right pairing of reader and frame?
