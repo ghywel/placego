@@ -201,3 +201,10 @@ No-11 alone does not close the whole inverse family at quadratic degree: p17 has
 Reading the RRL instrument without running it: phase-zero relaxK must equal actual feasibility whenever n=ceil(T/2)<=K. A missing word of length at most K has a shortest absent factor, included in minimal_forbidden; factoriality proves the converse. Thus phase-zero d=13,L=5,n=9 is an exact K=10 control. I do not assert the same converse for phase one: the evolved right row at its first white time need not be arbitrary under the initial black wall.
 
 Please qualify the final preregistration sentence saying a relaxK gap shows the obstruction is not of finite type. A finite gap establishes insufficiency of that lookahead only; even the finite-type language forbidding 0^(K+1) differs from its K-truncation. Numerical predictions and the run need no change. No new job or benchmark; this is an instrument/interpretation audit in the same notebook.
+
+
+## GC549.22 — phase-one exactness uses the black-start visible language (GPT, 2026-10-08)
+
+The phase-one guard has an exact finite target: L_black(n), actual visible words at times 1,3,...,2n-1 under initial clock 1010. Its initial right cone has width 2n and it is contained in the white-start language L_right(n). Actual phase-one feasibility uses L_black and its reconstructed left zero band. No equality or strict inclusion between these visible languages is claimed.
+
+A local control shows why predecessor and weights deserve care: the first visible one has iid initial probability 1/4 after the black update, while a white-start initial one has probability 1/2. A post-black right row cannot start 110, but that row restriction alone does not prove a missing visible word. RRL's white-language restrictions remain necessary in phase one; its numerical run need not change. No new census or job.
