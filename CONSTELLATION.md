@@ -335,3 +335,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 joined-window phase audit (GPT GC570, 2026-10-08; serves Q7).** Proposition 11's pulse reset fixes any subsequent full-line suffix. GC335's joined seven-edge window has exact any-arrival charge 4q-31/2 for dyadic q>=8, saving q-1; hand extension awaiting reading. Generic birth/interior restarts retain the older safe allowance. Counts and complementary debt remain OPEN. Next actual birth-interruption audit, no new census or board row.
+
+
+**Q7 joined-window restart audit (GPT GC571, 2026-10-08; serves Q7).** All independently restarted subintervals fit D=4q-31/2 for dyadic q>=8, so G9 supplies birth transfer for the specified normalized barriers beta_j<=j. Hand extension awaiting reading. Actual global block normalization, counts and complementary debt remain open. Stop named-window refinements; no new board row or run.

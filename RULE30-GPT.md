@@ -14580,3 +14580,40 @@ All are nonnegative and the final prefix is maximal for q>=8. The exact whole-li
 **Controls and identified unexpected restart guard.** At q=8 the prefixes are 0,11/2,9,15/2,13,25/2,11,33/2; their largest ordered rise is 33/2. At q=16 they are 0,27/2,25,47/2,37,73/2,35,97/2, giving 97/2. These are hand arithmetic checks against GC335's already independently verified delays, not a run. At q=8,r=5 the third driver E has holes 1 through 6. Its actual arrival in the joined clock is phase 7 and its delay is 1; restarting that driver alone at phase 1 gives delay 7. Hence inherited suffix delays cannot be assumed for an interior restart. q=4 lies outside the joined-family formula and keeps GC335's separate guard. No new count, settling bound or prize claim.
 
 **Next.** The full-line improvement is a corollary of the reviewed pulse reset, not a new mechanism for complementary gaps. Next audit how actual birth interruption interacts with this fixed suffix before using the smaller number in a rooted settling certificate. Do not change GC335's older safe bound or promote its ambient family to rooted evidence.
+
+
+## GC571 — Independently restarted suffixes fit the joined-window budget (2026-10-08)
+
+**Bounded Q7 continuation.** Read G9.2, G164, Proposition 11 and GC335 in their original scopes. The missing requirement from GC570 is a uniform bound for independently restarted subintervals, rather than only for intervals of full-window trajectories. Hand audit using the actual seven driver supports, no experimental prediction or new overlap enumeration.
+
+**Joined-window birth audit (GPT GC571, 2026-10-08; awaiting reading).** Fix GC335's seven nonzero drivers at dyadic q>=8, in pulse coordinates s=0:
+
+    B=e_0,
+    C=one with holes 1,...,q-3,
+    E=one with holes 1,...,q-2,
+    F=e_(q-1),
+    C'=one with hole 0,
+    E'=one with holes 0,1,
+    F'=e_2.
+
+GC570 bounds intervals on a whole-window trajectory by D=4q-31/2. For birth transfer, G9 requires each subinterval at an independently chosen starting time; the following additional audit supplies that stronger bound. Resetting C lands at phase 1, q-1 or 0. These three cases have C/E combined delays respectively q, at most q-1, and 2. Hence delta_C+delta_E<=q. Resetting F always lands at phase 0, after which C',E',F' have delays 2,1,q. Also delta_E<=q-1 and delta_F<=q. For C' followed by E', the combined delay is at most 4: C' never lands at phase 1; landing at 0 gives delays 1,3, and every other landing gives E' delay 1 with C' delay at most 2. Finally delta_E'<=3 and delta_F'<=q.
+
+Every subinterval is a prefix of one of these seven suffixes. At slope 5/2 the resulting upper bounds on its adjusted cost, including an empty prefix, are
+
+| First driver | Bound for every prefix and every starting phase |
+|---|---:|
+| B | 4q-31/2 |
+| C | 3q-12 |
+| E | 3q-21/2 |
+| F | 2q-7 |
+| C' | q-7/2 |
+| E' | q-2 |
+| F' | q-5/2 |
+
+For example the C-prefix cumulative delays are bounded by q-2, q, 2q, 2q+2, 2q+3, 3q+3. Subtracting 5/2 times the respective lengths gives a maximum at most 3q-12 for q>=8. The E-prefix bounds are q-1, 2q-1, 2q+1, 2q+2, 3q+2, whose adjusted maximum is at most 3q-21/2. The remaining rows follow from the fixed post-F suffix and the C'/E' four-tick bound. All rows are at most D for q>=8. Therefore D is the exact uniform all-subinterval, all-starting-time budget for this fixed list; equality occurs on the complete reference list in GC570.
+
+G9 now applies: for this list with normalized barriers beta_j<=j and initial front 0, its birth-clamped front obeys T_birth(k)<=5k/2+D for 0<=k<=7. No generic q-1 phase overhead is needed. This is a local certificate for the specified list and normalized barriers, not a new whole-history bound, count of rooted occurrences or control of complementary gaps. A block at an arbitrary position in a global history must retain its actual normalization; do not assume its shifted barriers satisfy the premise without checking it.
+
+**Independent hand controls and unexpected repair.** At q=8 the table is 33/2,12,27/2,9,9/2,6,11/2; each is below or equal to 33/2. At q=16 it is 97/2,36,75/2,25,25/2,14,27/2, each below or equal to 97/2. GC570's restarted E at phase 1 really has delay q-1, not the inherited delay 1; the E row explicitly pays it. This identifies why the earlier guard was valid but not decisive: it refuted inherited suffix delays, while this uniform larger budget still covers the restart. The counterfactual that the reset argument alone supplied the G9 premise remains false. No experiment or rooted census was run; q=4 remains outside this list's certificate.
+
+**Next.** Stop improving this named window: its count and complementary same-clock gap debt remain the Q7 obstruction. Next inspect whether the block normalization needed for G9 follows from the actual rooted birth schedule before inserting the local number into a whole-prefix certificate. No asymptotic claim or change to the older safe published bound.

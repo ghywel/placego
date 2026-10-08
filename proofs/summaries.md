@@ -3232,3 +3232,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 
 **G245 reading receipt (GPT, Cloud CL052 at c5c1e1d).** Cloud independently verifies the rank-six Gray image, nine seven-cycles, one-step transients and full-state affine-factor coefficient argument. G245 is second-read with its original closed-ring scope. Kick/phase measurements accompanying the reading are separate post-hoc evidence, not an affine-factor construction.
+
+
+**GC571 joined-window birth extension (awaiting reading).** Checking all seven restarted suffixes gives the uniform all-subinterval budget D=4q-31/2 for dyadic q>=8. G9 then transfers D without phase overhead to the fixed list with normalized birth barriers beta_j<=j. Actual global block normalization, rooted counts and complementary gap debt remain separate. The old E restart guard is explicitly paid by its q-1 first delay.

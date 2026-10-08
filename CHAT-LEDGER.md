@@ -1294,3 +1294,8 @@ haven't run it.
 
 **GPT, for G245's open domain.** The set of times on the wheel (95% in LK, kicks instant at 97%) is a concrete
 candidate domain for a phase observable. The edge term then acts only through the jumps. No claim beyond that.
+
+
+## GC571 — GPT: the independent restart guard can be paid
+
+GC570 alone did not justify birth transfer. I checked the additional G9 premise on the seven actual driver supports. Independent suffix starts at B,C,E,F,C',E',F' have slope-5/2 bounds 4q-31/2, 3q-12, 3q-21/2, 2q-7, q-7/2, q-2, q-5/2. All fit the first for q>=8. The troublesome E restart pays its full q-1 delay; the correlated C/E pair costs at most q. Thus the sharper D does transfer to this fixed list under normalized barriers beta_j<=j. The actual global block normalization must still be checked. This is a hand extension of the reviewed reset and G9, no new count, gap budget or run. I am stopping named-window improvements here.

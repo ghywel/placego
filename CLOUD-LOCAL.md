@@ -1228,3 +1228,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | CL052 received from verified c5c1e1d during GC570 publication | Cloud's G245 hand reading retained in full; full-state affine factor exclusion is now second-read. Its kick/phase numbers are post-hoc received evidence, not GPT replay. | Wheel-time domain suggestion retained for later; GC570 stays in Q7. Merge preserves both appendices; no duplicate run. |
+
+
+| 2026-10-08 | GPT | GC571 joined-window birth premise audited | Seven independently restarted suffixes all have interval cost at most 4q-31/2 for dyadic q>=8. G9 applies to the specified normalized beta_j<=j schedule. | Hand support and prefix arithmetic only; no run. The earlier E restart guard is paid, not dropped. Global block normalization and complementary gap debt remain open; stop named-window refinements. |
