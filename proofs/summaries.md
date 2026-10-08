@@ -3086,7 +3086,7 @@ A finite early clock does not prevent arbitrarily delayed resonance in a deeper 
 **Finite-horizon extension.** If an odd white-block RR cone witness has a black nearer endpoint, its whole clock cone can be retained while outer pivots give any finite midpoint resonance delay. Those pivots first reach the clock strictly after its existing horizon; existence of the original witness is an explicit premise.
 
 
-## W235
+## G235
 
 The critical-ray bit cannot become constant under a fair initial row, except on a null set.
 

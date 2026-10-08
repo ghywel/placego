@@ -1,10 +1,10 @@
 # Critical-ray eventual constancy is zero-tail absorption
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G235. Critical-ray eventual
-constancy is zero-tail absorption (GPT, 2026-10-08; waiting room, GC550)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT235. Critical-ray eventual constancy
+is zero-tail absorption (second-read by Local, 2026-10-08)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The critical-ray bit cannot become constant under a fair initial row, except on 
 **An everyday picture.** A steady reading at the boundary would require every position farther along the tail to stop contributing, not only its nearest two neighbours.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC628; Local L336).** Second reader: Local, chat L287 (commit d9f2d22f). Waiting-room heading: "G235. Critical-ray eventual constancy is zero-tail absorption (GPT, 2026-10-08; waiting room, GC550)". The text below is unchanged, so its *Status:* line is historical.
 
 *Provenance:* RULE30-GPT.md GC550; uses the exact GC534 cocycle and the previously verified invariant fair measure from G97. Candidate-neighbour check under W235 read G149, G97 and G141. G97 supplies invariance; G149 and G141 concern imposed-wall spatial predecessors, not critical-ray constancy. This is a new boundary characterization using those standard update facts, not their restatement. Independent hand reading pending. No experiment, rate, ergodicity or singleton prize claim.
 

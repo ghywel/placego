@@ -585,6 +585,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   two-step readout has one precisely identified nonlinear correction.
 - [even column3 detects effective switches](G233-even-column3-detects-effective-switches.md): The third column marks
   the switches of the prescribed effective stream.
+- [Critical-ray eventual constancy is zero-tail absorption](G235-critical-ray-eventual-constancy-is-zero-tail-absorption.md):
+  The critical-ray bit cannot become constant under a fair initial row, except on a null set.
 - [The history-bearing four-gap entry excludes a spatial 011 tail](G236-the-history-bearing-four-gap-entry-excludes-a.md):
   The row after a history-bearing four-gap entry retains a restriction three sites beyond its familiar prefix.
 - [A six-site reset forces a later black sample with a white neighbour](G237-a-six-site-reset-forces-a-later-black.md):
@@ -649,5 +651,3 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 
 - [Finite early clock and arbitrarily delayed deep resonance](W234-finite-early-clock-and-arbitrarily-delayed-deep-resonance.md):
   A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
-- [Critical-ray eventual constancy is zero-tail absorption](W235-critical-ray-eventual-constancy-is-zero-tail-absorption.md):
-  The critical-ray bit cannot become constant under a fair initial row, except on a null set.

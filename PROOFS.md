@@ -8895,6 +8895,22 @@ Thus the even column5 bit is exactly the discrepancy between the next even colum
 
 **Scope:** these necessary tracks hold for every member of the empty-left full0101 family, not merely G60's explicit parity-sparse member. They do not determine a whole right realization or exclude mixed-parity members. Initial s_0=x_0(1)=1 and x_0(5)=1 are separate prefix facts.
 
+### G.GPT235. Critical-ray eventual constancy is zero-tail absorption (second-read by Local, 2026-10-08)
+
+**Promoted from the waiting room, 2026-10-08 (GC628; Local L336).** Second reader: Local, chat L287 (commit d9f2d22f). Waiting-room heading: "G235. Critical-ray eventual constancy is zero-tail absorption (GPT, 2026-10-08; waiting room, GC550)". The text below is unchanged, so its *Status:* line is historical.
+
+*Provenance:* RULE30-GPT.md GC550; uses the exact GC534 cocycle and the previously verified invariant fair measure from G97. Candidate-neighbour check under W235 read G149, G97 and G141. G97 supplies invariance; G149 and G141 concern imposed-wall spatial predecessors, not critical-ray constancy. This is a new boundary characterization using those standard update facts, not their restatement. Independent hand reading pending. No experiment, rate, ergodicity or singleton prize claim.
+
+Use GC534's right-half map H(z,Y)=(z XOR q(Y),G(Y)), where q(Y)=Y_1 OR Y_2 and G(Y)_j=Y_j XOR (Y_(j+1) OR Y_(j+2)). Suppose its boundary bit is constant at all times t>=T. Then q(G^t Y)=0 for every t>=T: both first tail bits are zero at every such time. If the first m tail bits are zero at all these times, with m>=2, updating tail site m-1 gives
+
+    0=0 XOR (0 OR (G^t Y)_(m+1)),
+
+so bit m+1 is also zero at every time t>=T. Induction gives G^T Y equal to the entire all-zero infinite tail. Conversely a tail which reaches zero stays zero and makes the boundary constant thereafter. Thus eventual constancy holds exactly on the union, over finite T, of the preimages G^(-T)({all zero}). This does not require independence over time.
+
+Under the iid fair initial right-tail measure, G preserves the measure by the already retained G97/GC535 projection argument. The all-zero tail has probability zero: its first m zeros have probability 2^(-m), tending to zero. Each fixed-T preimage also has probability zero, and their countable union has probability zero. The critical-ray bit therefore takes both values infinitely often almost surely. The same reasoning applies at every fixed ray offset; a countable intersection gives simultaneous one-bit recurrence at all integer offsets under the full-line fair law. This is recurrent visitation, without a limiting frequency, return-time bound or mixing assertion.
+
+**Independent deterministic controls.** A nonempty finite right tail never reaches all zero: its rightmost occupied site has zero farther neighbours and its bit stays one under G. Its boundary ray consequently cannot become constant. With no right tail, z is constant; the singleton's rightmost ray has precisely this form and remains black. An infinite all-ones right tail reaches all zero in one update, so nonemptiness alone is insufficient; the finite-tail qualification is essential. These are literal update checks and preserve the probability-zero exception in the fair-law statement.
+
 ### G.GPT236. The history-bearing four-gap entry excludes a spatial 011 tail (second-read by Cloud, 2026-10-08)
 
 **Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Cloud, chat CL044. Waiting-room heading: "G236. The history-bearing four-gap entry excludes a spatial 011 tail (GPT, 2026-10-08; waiting room, GC549.28)". The text below is unchanged, so its *Status:* line is historical.
@@ -10052,19 +10068,4 @@ At s=m-1, the midpoint's two neighbours are black and its centre white by the re
 Put c=-d-m+1 as above. The interval's farther black endpoint c-m=-T-1 is outside the retained cone. Set it black. The arrival-row pivots for mismatch depths k>=1 are c-m-k=-T-1-k, also outside the cone. Choose them successively to give the first mismatch at K, and zero-pad all remaining unspecified cells. Radius-one locality preserves every clock sample through T and every prescribed initial zero in the witness. The same arrival and right-latch proof used in G234 gives exact duration m+K, regardless of the retained right exterior. This proves the conditional extension without any additional SAT run.
 
 **Horizon control.** The added black endpoint first can affect column zero at T+1; the k-th arrival pivot first can affect it at T+1+k. Their coefficient at first arrival is one by left permutivity. For m=1 the white interval is a singleton at depth d, T=d, and its farther endpoint is exactly one site outside the clock cone. This checks the endpoint convention. The full finite RR clock therefore cannot itself constrain these outer resonance pivots. It can constrain the initial prefix inside its cone, and adding later clock samples can constrain newly exposed pivots; these are different obligations. A white interval with an unproved black nearer endpoint is not covered by this extension.
-
-
-### G235. Critical-ray eventual constancy is zero-tail absorption (GPT, 2026-10-08; waiting room, GC550)
-
-*Provenance:* RULE30-GPT.md GC550; uses the exact GC534 cocycle and the previously verified invariant fair measure from G97. Candidate-neighbour check under W235 read G149, G97 and G141. G97 supplies invariance; G149 and G141 concern imposed-wall spatial predecessors, not critical-ray constancy. This is a new boundary characterization using those standard update facts, not their restatement. Independent hand reading pending. No experiment, rate, ergodicity or singleton prize claim.
-
-Use GC534's right-half map H(z,Y)=(z XOR q(Y),G(Y)), where q(Y)=Y_1 OR Y_2 and G(Y)_j=Y_j XOR (Y_(j+1) OR Y_(j+2)). Suppose its boundary bit is constant at all times t>=T. Then q(G^t Y)=0 for every t>=T: both first tail bits are zero at every such time. If the first m tail bits are zero at all these times, with m>=2, updating tail site m-1 gives
-
-    0=0 XOR (0 OR (G^t Y)_(m+1)),
-
-so bit m+1 is also zero at every time t>=T. Induction gives G^T Y equal to the entire all-zero infinite tail. Conversely a tail which reaches zero stays zero and makes the boundary constant thereafter. Thus eventual constancy holds exactly on the union, over finite T, of the preimages G^(-T)({all zero}). This does not require independence over time.
-
-Under the iid fair initial right-tail measure, G preserves the measure by the already retained G97/GC535 projection argument. The all-zero tail has probability zero: its first m zeros have probability 2^(-m), tending to zero. Each fixed-T preimage also has probability zero, and their countable union has probability zero. The critical-ray bit therefore takes both values infinitely often almost surely. The same reasoning applies at every fixed ray offset; a countable intersection gives simultaneous one-bit recurrence at all integer offsets under the full-line fair law. This is recurrent visitation, without a limiting frequency, return-time bound or mixing assertion.
-
-**Independent deterministic controls.** A nonempty finite right tail never reaches all zero: its rightmost occupied site has zero farther neighbours and its bit stays one under G. Its boundary ray consequently cannot become constant. With no right tail, z is constant; the singleton's rightmost ray has precisely this form and remains black. An infinite all-ones right tail reaches all zero in one update, so nonemptiness alone is insufficient; the finite-tail qualification is essential. These are literal update checks and preserve the probability-zero exception in the fair-law statement.
 
