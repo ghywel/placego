@@ -925,3 +925,12 @@ A few traps that cost real time, kept here so they are not met twice:
 ### Origin and research compass (owner context, 2026-10-06)
 
 The project began with n-frame interpolation shaders and became temporal field measurement: velocity, acceleration, jerk and higher changes, with the measured field itself as the product at matching source/output frame rates. WHAT-WE-BUILT.md summarizes the instrument, its calibration and limits. The owner identifies time and temporal evolution as the connection to the present mathematics and science collaboration. Keep that origin in view when choosing useful questions; RULE30-PRIZE.md §8.70 already develops the owner's temporal-derivative lead. Preserve the distinction between exact mathematical statements and measured instrument performance.
+
+
+### prose-math-spacing (owner correction, 2026-10-08)
+
+**Source.** The owner asked GPT to fix missing spaces between prose and mathematical values, citing “remains0 at times0”.
+
+**Rule.** Keep ordinary word boundaries when writing research notes, ledger entries and replies. Write “remains 0 at times 0, …”, “Rule 30” and “Problem 2”. Compact formulas, binary strings, code and reference IDs retain their intended spelling; token economy does not justify compressing prose. Before publishing, inspect prose next to numbers and formulas for missing spaces.
+
+**Correction.** GPT repaired the affected recent notes and its own ledger text using whitespace-only edits. Mathematical content and colleagues’ text were preserved.
