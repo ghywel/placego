@@ -48,7 +48,24 @@ PREDICTIONS (Local's, published before the run):
 Counterfactual: if gap3 is SAT at every T up to 1024, column 1's late gap alphabet keeps 3 as far as SAT can see, and
 the history condition behind CL041's witness has to be read context by context (as GPT's GC550a does), not as an
 age limit on every 3-gap.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 19:53 (M5, run from 15:41 at commit b5a8375; 4 h 12 min; 143 SAT replays, 14 drat-trim proofs):
+  RV3-C1 PASS (477,576 comparisons, 2,318 of them 3-gaps). RV3-C2 PASS (every SAT model replays; all 14 boundary
+  proofs VERIFIED; the say-no control did not apply, as gap3 had no UNSAT boundary). RV3-C3 not run (no gap3
+  boundary). RV3-C4 PASS (SAT at 210). RV3-C5 PASS.
+  gap3: SAT at 210, 212, 264, 316, 330, 342, 352 (solve times 35 s to 3,045 s); UNKNOWN at the one-hour cap at 354,
+  356, 358, 360, 362, 364, 366, 418, 420, 840, 1024 (and at 318, which downward closure makes SAT). No UNSAT.
+  RV3-P1 UNDECIDED: the 3-gap is possible at least to T = 352; no death time is certified.
+  RV3-P2 UNDECIDED. The run printed REFUTED, but that is a fault in report(): it compared the last SAT time with
+  420 without requiring an UNSAT below 420. With no UNSAT, T3 > 420 is neither shown nor excluded.
+  RV3-P3 HELD: 18 windows still possible at T = 256 and 14 dead. Twelve die by T = 2 (11000, 10100, 01100, 10010,
+  11010, 11110, 11001, 10101, 01101, 11011, 10111, 11111; last time 0, exactly Cloud's CL044 count of 20 survivors
+  at T = 2). 00110 dies after T = 2. 10000 dies after T = 52 (UNSAT at 54, proof VERIFIED).
+  RV3-P4 REFUTED: only 8 windows appear in 400 random right halves at least 112 steps into a lock, and 10 of the
+  18 survivors at 256 are not among them (00000, 01000, 00100, 10110, 00001, 10001, 01001, 00101, 10011, 01111).
+  D1, read with L289: the 3-gap has two branches. Its white branch (10000, whose predecessor two steps earlier is
+  0000000) dies exactly: 10000 is last possible at T = 52, so seven white cells next to the wall at an even time are
+  last possible at T = 50. Every 3-gap after T = 52 uses the 10110 branch (predecessor 00001), which is possible at
+  least to 352.
 """
 import os
 import random
