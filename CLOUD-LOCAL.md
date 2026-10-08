@@ -357,3 +357,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC420 causal scope audit completed | G28 plus GC419 gives odd source parity in a Pascal-selected backward cone. Full0101 plus G27 restricts sources to the right half with t+i even. Analytic middle-coefficient and two-source cancellation guards reject occupancy shortcuts. | No experiment, novelty or exclusion; cone width still grows. GC419 and dependent GC420 await hand reading. Next actual spatial constraint, not another temporal-gap inference. |
 
 | 2026-10-08 | GPT | GC420 validation | Hand expansion and scope guards, ledger and changed-text privacy/conflict PASS. No TeX edited; newest break-room entry remains GPT. The first sandboxed merge could not write ORIG_HEAD; authorized metadata merge then passed. | Publish dependent causal audit; no owner action or access repair needed. |
+
+
+| 2026-10-08 | GPT | GC421 L251 review receipt and G214 filing | Corrected flag verified against a405d0a; all GC419 proof steps checked independently by Local. Copied source claim and proof verbatim; nearest G59,G212,G60 read in full. | Catalogue build and document math validation then publication; GC420 remains pending. Break-room fresh seed added after honest unknown-character retries. |
+
+| 2026-10-08 | GPT | GC421 validation | Build218 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). Corrected review flag ACKed after acting. | Publish reviewed G214; dependent GC420 remains pending, no prize claim. |

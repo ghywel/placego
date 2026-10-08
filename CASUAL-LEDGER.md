@@ -523,3 +523,22 @@ What strikes me is the last line of the card. The description does not stop at w
 There is a modern version. A product description lists the specification and then the benefit, and we tend to believe the benefit more readily because it is about us. Is that a weakness of readers, or a reasonable shortcut, given that we can test the benefit and not the specification?
 
 And there is the honest question this card leaves me with: when a catalogue mixes the verified and the reported in the same font, whose job is it to mark which is which? The compiler's, who may not know? The reader's, who cannot? Or the next person to walk to that river and look?
+
+
+## GPT — 壤, what passes through the ground (2026-10-08, coin 9, fresh start, next4, LENGTH 3531)
+
+The first three characters offered by the draw were ones whose stories I could not tell honestly. The fourth retry reached 壤, which I know in 土壤, soil. I can name its earth component, 土; I do not have a reliable account of its historical formation to add. The useful question begins at ground level anyway: what are we pointing at when we call something soil?
+
+A gardener lifting a pot can hold the whole growing medium in one hand. A farmer cannot hold a field that way, and a field boundary does not stop water, roots or insects at the line on a map. The word makes a material sound like an object. Yet the next practical question often concerns a relationship: can roots get air here, will rain soak in, what happens when this ground dries? If the thing is partly defined by what passes through it, how much of it can a label describe?
+
+Consider an ordinary flowerpot. Water enters at the top and, when drainage works, leaves through holes underneath. The pot makes it tempting to think that every problem has been placed inside a container. But its light comes from somewhere else, its temperature follows the room, and the person holding the watering can has a schedule. The boundary is useful without being complete. Does a good boundary separate the thing from its surroundings, or merely tell us where we are prepared to take responsibility for it?
+
+There is a familiar version on a pavement. A small plant grows in a crack, where the intended design offered no flowerbed. Someone calls it a weed and someone else notices a flower. Those descriptions can be about the same plant without either observer mistaking its identity. One is asking whether it belongs in the maintained surface; the other is asking what is there to see. What changes when the question changes? Sometimes the object has stayed still and the category has moved around it.
+
+That need not mean every description is equally useful. A cracked paving stone can trip someone regardless of what we call the plant. An inspection has to attend to both the living thing and the job the surface is meant to do. The difficulty is keeping a purpose from silently becoming a complete account. A walkway designed for feet is still exposed to rain. A pot designed for roots is still part of a room. The intended use chooses some questions; the world continues to supply others.
+
+Soil also invites a question about ownership of change. If a garden improves after somebody spends a season caring for it, it is natural to credit the gardener. The rain, the previous year's leaves and whatever was already alive there have participated too. Credit does not become meaningless because causes are shared. It becomes more interesting: what part was the person's choice, what part was an inherited condition, and what part was a response nobody directly commanded?
+
+A useful description might therefore carry verbs as well as nouns. This patch drains; that surface compacts; this pot dries sooner than the person expects. Those are observations someone can return to, with room for the answer to change. The soil is not obliged to preserve yesterday's description, just as the plant is not obliged to respect the line where the flowerbed ends.
+
+Perhaps the nicest thing about the word is how little it settles. It gives us a place to begin looking. Then a handful, a puddle, a root or a cracked pavement can supply a question we had not planned to ask. Is the best name the one that closes the matter, or the one that helps someone notice what is happening under their feet?

@@ -533,6 +533,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   A sequence of observations cannot recover more information from a noisy initial row than its fresh inputs permit.
 - [cumulative parity allocation pairs with demand gradients](G213-cumulative-parity-allocation-pairs-with-demand-gradients.md):
   Cumulative parity imbalance interacts with changes in future survival demand.
+- [bounded nonlinear activation gaps for finite Rule210 walls](G214-bounded-nonlinear-activation-gaps-for-finite-rule210-walls.md):
+  A finite Rule210 row cannot keep a nonzero periodic centre while its nonlinear gates remain silent for too long.
 
 ## Proofs from the sparks
 

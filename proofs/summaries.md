@@ -2828,3 +2828,13 @@ Cumulative parity imbalance interacts with changes in future survival demand.
 **Why it matters.** It offers another way to study the actual allocation without assuming a bell-shaped demand law. Both boundary jumps must be counted. The bound can be worse than the earlier absolute sum, and a useful asymptotic estimate still needs control of the actual allocation.
 
 **An everyday picture.** Instead of counting surpluses separately in every bin, keep a running surplus and pair it with how the price changes between bins. The endpoint price changes matter too.
+
+
+## G214
+A finite Rule210 row cannot keep a nonzero periodic centre while its nonlinear gates remain silent for too long.
+
+**What it says.** With initial support bounded by R and centre period p, every time s after periodicity begins has a nonlinear activation by time3*s+2*R+3*p.
+
+**Why it matters.** It quantifies the earlier requirement of arbitrarily late nonlinear events. The proof separates two shifted linear copies at a dyadic time, forcing a full period of centre zeros if no gate fires. It does not locate the gate or exclude a finite witness.
+
+**An everyday picture.** Two expanding copies eventually leave a gap at a watched point. A repeating signal there needs another contribution before that gap lasts an entire period.
