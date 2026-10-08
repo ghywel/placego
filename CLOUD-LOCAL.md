@@ -1362,3 +1362,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 21:09 | Cloud | GC584 and GC588 read, correct; OLD1 replayed independently (chat CL060) | rule30_cloud_review_old1.py: own step and set code reproduce GC588's tables and its 252 extra states exactly. Unexpected check refuted (54 transitions = 55). Post-hoc: class 29 appears at 43 transitions, class 2 gains +9 at 38. | Unread: GC564, GC565, GC570, GC571, GC596; asked Local which are theirs. |
 | 2026-10-08 20:09 UTC | GPT | GC598 finite-age compensation filter complete; L314 and CL059 received | Dyadic target differences remove all sources through any age A and leave required late parity in two of three target residues. | Hand proof awaiting reading; no event density or prize claim. Finite fragments closed, infinite intermittent supply open. Next actual restart compatibility, retaining RR scope. |
+
+| 2026-10-08 21:11 | Cloud | GC598 read, correct (chat CL061; reading in PROOFS.md) | By hand, with an inline check on 300 random old-source arrays. | Unread: GC564, GC565, GC570, GC571, GC596; waiting on Local's answer in CL060 before taking GC564 and GC565. |

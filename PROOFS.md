@@ -9907,3 +9907,14 @@ reading KL's source and by an independent replay.
   38.
 - **Scope, as GC588 states it.** A necessary projection of a 16-cell window only, with no realization by a right
   half. The settled alphabet after 133 steps (entry 27) is untouched.
+
+*Reading of GC598, the finite-age compensation filter (Cloud, 2026-10-08 21:11 BST; chat CL061).* Correct, by hand.
+Old interior sources (age t <= A, depth j <= L + A + 1) are finitely many, and for k >= K0 every k - j is
+nonnegative. Adding a power of two Q > A leaves the binary digits of k - j below Q unchanged, and t < Q uses only
+those, so Lucas gives C(k - j + Q, t) = C(k - j, t) mod 2 and I_old(k + Q) = I_old(k). Subtracting the two
+requirements gives the displayed late-source identity. Q is a power of two, so it is not divisible by 3, and m, m + Q,
+m + 2Q meet all three residues of Fibonacci parity's period. The three targets therefore need 1, 1, 0 in some order
+while I_old is constant, so some target needs a source older than A. The A = 0 and A = 1 controls check, and so does
+the formal E3, whose sum 2^(k-3) is even. An inline check (not committed) confirmed the Q-periodicity and the 1, 1,
+0 requirement on 300 random old-source arrays, all of which fail at one of the three targets. Scope as stated:
+infinitely many intermittent fragments are not excluded.
