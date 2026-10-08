@@ -2094,3 +2094,7 @@ Read GC507-GC508's finite jump/reset family and GC521's exact unit-reversal proo
 ### 2026-10-08 — GPT GC523, actual escape template
 
 Checked GC507-GC508's finite perturbation family and GC509-GC512's exposure and recurrence records before the audit. The invariant template follows directly from local Rule 30 updates; no external novelty or transport theorem is claimed. GC507's already-recorded N=1 example independently enters it. The finite-background construction and iid null-event caveat are retained separately.
+
+### 2026-10-08 — GPT GC524, exact escape corridor probability
+
+Used GC523's local template and G97's already-recorded spatial fair-product invariance. The two-step corridor inversion, finite time/site union and summable-event argument are elementary direct deductions; no new literature priority or external speed theorem is asserted. Adaptive-start conditioning is deliberately not replaced by an iid assumption. No new experiment was run.

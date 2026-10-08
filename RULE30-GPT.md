@@ -13058,3 +13058,34 @@ Hence L_t/t tends to +1. GC509's exposure indices are J_t=-1 at even times and -
 **Unexpected existing-family connection.** GC507's N=1 pair updates to first row {-2,-1,1} with damage {2}. Recenter at 2: its common sites -2,-1 are 0,1, its centre and positive half are white. Thus it enters the a=0 template and escapes forever. This is outside GC508's N>=2 compensating-bout statement and supplies no contradiction to that family calculation.
 
 **Measure guard and outcome.** The invariant family prescribes an infinite all-zero initial positive half, an event of probability zero under the iid fair background. Every finite prescribed corridor has positive probability, but that does not give positive probability to infinite escape. Consequently this refutes universal deterministic recurrence and universal recovery for single flips, while leaving almost-sure iid recurrence and inward-speed existence open. The iid problem must exclude or control such special escape environments probabilistically; finite damage and singleton resets alone cannot do it. Next a conditioned large-jump recovery argument or another main-line lead; do not extend these two fixed controls.
+
+## GC524 — The specific 0,2 escape bout has an exponential iid tail (2026-10-08)
+
+**Scope.** Hand probabilistic recovery audit for GC523's exact displacement pattern, pending independent reading. Predict n cycles force 4n-1 initial positive zeros. Counterfactual adaptive front conditioning preserves spatial iid is not assumed. Unexpected check: a deterministic time/site union bypasses that conditioning. Uses already-proved G97 spatial fair-product invariance; no new experiment, fixed-family expansion or general speed claim.
+
+**Exact corridor characterization.** Start with singleton damage at site 0 in any background row. Precisely n consecutive displacement pairs (0,2), n>=1, occur if and only if
+
+    u_-2=0, u_-1=1, and u_j=0 for 1<=j<=4n-1.
+
+The centre bit and farther negative bits are free. For one cycle, the first stationary move requires u_-1=1 and u_1=0. After it, damage is {0,1}. Healing the candidate site -1 on the second update requires u_-2=0. Healing site 0 requires unequal common first-row bits at 0 and 1; substituting their local updates forces u_2=0. Healing site 1 then forces u_3=0. The derivative at site 2 is 1, proving the base equivalence. Its two free-centre choices agree with GC523's independent finite-pair controls.
+
+For induction, this base corridor gives GC523's restored common bits 0,1 at sites 0,1 after two updates. With initial sites 1,2,3 zero, direct evaluation gives
+
+    F^2(u)_3=u_4 OR u_5.
+
+Consequently making the evolved sites 3 through K zero, K>=3, forces initial sites 4 through K+2 zero: the first equation forces u_4=u_5=0, and successively, once sites through i+1 are zero, F^2(u)_i=u_(i+2) for i>=4. Conversely that initial zero corridor makes all those evolved sites zero. Apply the induction hypothesis to the singleton at site 2 for n-1 remaining cycles, using K=4n-3. This extends the required corridor exactly to 4n-1. The restored centre bit is unchanged once u_4,u_5 are zero. No exterior-bit or probabilistic assumption enters this equivalence.
+
+**Fixed-time probability bound.** In the actual iid initial-background single-flip experiment, G97 makes the first background row spatially iid fair at every deterministic time. At any fixed time t and site l, a singleton-damage bout of n cycles implies the displayed corridor translated to l, which prescribes 4n+1 independent bits. Thus its unconditional probability is at most
+
+    2^(-(4n+1)).
+
+This is an upper bound even if the singleton event depends on the corridor. At time 0 with the prescribed initial single flip it is exact. It is not a conditional probability given a selected damage history or stopping time.
+
+**Adaptive-start guard and logarithmic bound.** The actual front lies in [-t,t]. Union over all starts 0<=t<=T and their possible sites gives
+
+    P(any singleton 0,2 bout of n cycles starting by T)
+      <=(T+1)^2*2^(-(4n+1)).
+
+No temporal independence is required. Set T=2^k and n=ceil(c*k), with any c>1/2. These probabilities are summable in k. Borel-Cantelli therefore bounds the longest such bout starting by dyadic horizon T, almost surely eventually, by fewer than ceil(c*log_2 T) cycles. In particular no infinite 0,2 singleton bout can begin at any finite random time or front position in this iid experiment.
+
+**Outcome and limits.** GC523's concrete deterministic escape family is now quantitatively excluded in the iid experiment, including adaptively encountered starts. This handles exactly repeated pairs 0,2 from singleton damage. It does not bound other outward histories, arbitrary larger-jump recovery, total reused-information excursions or record frequency, and establishes no inward limiting speed. Stop elaborating this one escape pattern; the next useful step needs a different actual state constraint or another main-line lead. This hand characterization and probability audit await independent reading.
