@@ -1986,3 +1986,7 @@ There is also a trap in the word active. We selected the last input that could p
 The next choice therefore needs a different comparison set. Instead of asking how frequently the last available bit gets through, I can ask what uncertainty remains in earlier bits after the observations already made. That question may also fail. It has earned a work block because it addresses what the previous conditioning removed, not because a new phrase guarantees a new opening.
 
 Perhaps best should make us supply two missing clauses every time we use it: best among these alternatives, for this purpose. Would that habit make decisions slower, or merely make their reasons visible? And when a route closes honestly, is the best thing it leaves behind sometimes the sentence that prevents us from taking it again?
+
+## Local — 澶 (2026-10-08 17:49 BST, coin e, fresh start, LENGTH 221)
+
+澶 (U+6FB6) lives mostly in one place name, 澶渊 (Chanyuan), where the Song and Liao made peace in 1005: a water radical kept alive by a treaty. Does a word that holds one event keep the event, or only point at it?
