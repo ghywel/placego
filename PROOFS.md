@@ -9956,3 +9956,33 @@ Unexpectedly the domain guard matters. At j=k+1 and t=Q-1, the first stencil has
 **Scoped reading receipt (Local L318, received in 2805bb6a).** Local independently checked GC564's one-tick identities, posterior branches, masses and failed evolved swap. Local also checked GC570's singleton reset extension, adjusted prefixes and restart guard, taking GC335's suffix delays as previously verified without rereading them. GC564 is second-read; GC570's extension is read with that stated premise. No independent replay is claimed by GPT.
 
 **Reading receipt for GC600 (Local L319, commit 0232f862).** Local independently checked the dyadic coefficient identity for all ages, the finite-frontier range guard and both age-slot controls. The exact shifted-stencil statement is second-read; its nonlocalization and no-firing-inference scope are retained.
+
+*Reading of GC565, the gap-start block target (Cloud, 2026-10-08 21:27 BST; chat CL062).* Correct, by hand and by
+simulation. The entropy steps are standard: conditioning on the H_n-measurable gate and on E_n can only lower
+entropy, and on E_n the pair (Z_(n+1), Z_(n+2)) determines q. Each two-symbol block is two consecutive chain-rule
+increments, and each increment lies in at most two blocks, which gives the factor 1/2. An inline simulation (not
+committed) checked the gate: with sites 1 .. 5 = 0, 1, q, 1, z beside a white wall and 30 random farther cells, gap 2
+with next symbols 01 for q = 0 and gap 4 with 00 for q = 1, in 3,000 trials each. It also confirmed the gate-removal
+control (b = 1, r = z = 0 gives gap 2 for both q) and the two patches 01010 and 01110. Scope as stated: gamma_n's
+positivity is the open target.
+
+*Reading of GC571, the joined-window birth audit (Cloud, 2026-10-08 21:27 BST; chat CL062).* Correct, and its table is
+sharp. With GC570's delay model (a driver W met at phase p waits d = 1 + (r - p) ticks to its first black r at or
+after p, and the front lands at r + 1), the reference arrival reproduces GC570's delays q, q - 2, 1, q, 2, 1, q. An
+inline brute force (not committed) took every first driver and every starting phase. It found the maximum adjusted
+prefix cost at slope 5/2 for q = 8, 16, 32, 64 and 128. Every row equals GC571's bound exactly (at q = 8: 33/2, 12,
+27/2, 9, 9/2, 6, 11/2), so each bound is attained, and the overall maximum is D = 4q - 31/2. The G9 application then
+follows as stated, for this list and normalized barriers only.
+
+*Reading of GC599, the moving-strip restart control (Cloud, 2026-10-08 21:27 BST; chat CL062).* Correct, by hand and
+by replay. The frame update is v_d(t+1) = v_(d-2)(t) XOR (v_(d-1)(t) OR v_d(t)). From 11001, the five outer cells
+update to 1, 1, 0, 1 XOR v_3 and v_3 OR 1, using no cell farther in. So v_3 alternates and H_3, H_4 are complementary
+isolated events at offsets 3 and 4, that is at depths L + t - 1 and L + t - 2. An inline check (not committed)
+confirmed the singleton's left edge reads 1, 1, 0, t mod 2, 1 for t = 2 .. 599. So a fixed narrow strip behind the
+frontier can restart events for ever; bounded restart counts are closed for ordinary dynamics, as GPT says.
+
+*Reading of GC601, recorded in RULE30-GPT.md (Cloud, 2026-10-08 21:27 BST; chat CL062).* Correct. GC600's retained
+ages are t = Q + r with r a binary subset of k - j. For even k and even j, k - j is even, so r is even, and with
+Q >= 2 every retained age is even: a white time, where E14 is silent. At k = 16, Q = 2 the ages are 2 and 4. At
+k = 15 they are 2 and 3, and age 3 is a black time, where E14 fires (SO, shifted by GC591). So phase silence deletes
+slots, not sources.
