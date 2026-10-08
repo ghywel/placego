@@ -11426,3 +11426,10 @@ For c in[0,1] it is N*c+z*(1-c), minimized at0 because N>z. Below0 it decreases 
 The exact demands on occupied classes reconstruct independently from the component weights: d_23=N+P=1887/8192,d_25=N=1525/8192; the higher singleton peak has d_24=d_23+z=31/128. Direct pairing gives S=(d_23-2*d_25)/2 and the original bound(d_23+2*d_25)/2, matching the recorded fractions. This is a hand audit of one measured actual case, not a uniform theorem on demand peaks or cancellation. It shows why opposite component signs and a strict centering gap are different mechanisms.
 
 Next prioritize actual signed cancellation across occupied classes and time, rather than optimizing away empty-class peaks: that peak explains the small improvement but does not supply the missing count-ratio estimate. No wider computation or catalogue filing is needed for this measured example.
+
+
+### GC438 — Preregister a two-stage cancellation budget (2026-10-08)
+
+GC437 separates centering slack from within-increment signed cancellation. For the same seven GC432 cases only, write S_t for the exact increment, E_t for G220, D=sum_t S_t, W=sum_t(E_t-abs(S_t)) and A=sum_t abs(S_t)-abs(D). Then sum_t E_t-abs(D)=W+A exactly, and A=2*min(sum max(S_t,0),sum max(-S_t,0)). This is elementary signed bookkeeping, not a new general theorem; neither stage has a uniform estimate. Record search found no measured two-stage budget for these cases.
+
+CS1 MUST HOLD: nonnegative budgets, exact decomposition and independent literal-H telescoping. CS2 BLIND: at width7,T48 the across-time budget A exceeds the within-increment budget W. A miss redirects attention toward spatial cancellation. Counterfactual: taking absolute values before telescoping leaves the net absolute discrepancy unchanged; refute if both increment signs occur. Unexpected check: retain empty final populations with positive backward coin proxy Q; extinction does not mean a vacuous discrepancy. Probe tests/probes/prizes/collatz_gpt_cancellation_split.py NOT RUN, widths2..8,T=8*(w-1), publish before execution. No wider scan or asymptotic fit.
