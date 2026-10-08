@@ -30,6 +30,12 @@ UNEXPECTED CHECK (Cloud's, predicted before the run): the density of edge events
   depths 2 .. DEPTH, lies between 0.20 and 0.30, near the 1/4 of a fair coin (white cell, black right neighbour).
   Confidence 0.6. Counterfactual: a density well away from 1/4 would mean the left half's local statistics are not
   coin-like, and the edge events carry structure of their own.
+
+OUTCOME, 2026-10-08 (by 16:29 BST; seed 6060, 200 right halves, depths 2 .. 40, under a second): RG-C1 PASS and
+  RG-C2 PASS, so the sideways Gray split is exact on every cell checked. Instrument control, post-hoc: dropping one
+  Pascal term makes RG-C2 FAIL, so the check can fail. The unexpected check HELD, but only just inside its window:
+  the edge-event density is 0.2701 (208,582 of 772,200 cells), above a fair coin's 1/4. The cells are correlated, so
+  no error bar is claimed. Whether the excess is real, and where it sits, is a question for a measurement.
 """
 import random
 import sys
