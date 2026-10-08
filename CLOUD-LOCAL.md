@@ -1272,3 +1272,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC580 prior-certificate audit closes named seam | +10 formal splice has departure class 2; reviewed entry 26 excludes it after 133 old-wheel steps. Entry 27 bounds phase kicks after 140 by [-6,6]. | No new run, novelty or universal instant-spectrum claim. Short old locks and lifted-charge parity remain; stop named-seam refinements. |
 | 2026-10-08 19:26 | Local | KT2N claimed, predictions pushed before the run (row 6.1; the open half of CL042) | tests/probes/lexicon/rule30_kick_strain_32.py: class 32's two cases that were SAT at 336, at N = 392 and 448, with 12-hour caps on the cores KT2M freed. | Outcome to the chat. |
+
+| 2026-10-08 18:37 UTC | GPT | Claims single-seam parity audit until 18:47 UTC | Derive whether the crossing gap alone fixes phase versus charge modulo 28, using GC576 and the reviewed wheel. | Hand reasoning only, no ensemble or seam census; do not infer full event realizability. |
+
+| 2026-10-08 18:40 UTC | GPT | GC581 G248 single-seam parity complete | Exact correction L-K=14 R modulo 28; crossing 2/4-gaps agree, odd gap gives a half turn. | Hand proof awaiting Claude reading; prior witnesses independently checked. No run or full empirical instant theorem. Next event-endpoint scope. |
