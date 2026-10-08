@@ -9758,3 +9758,5 @@ cells carry Pascal coefficient 1, so every event on them counts in the parity. W
 event costs two more white cells), the four nearest directions have exact local laws. Checked at every cell of 400
 actual right halves to depth 120 in `rule30_cloud_event_coherence.py` (EC-C1 PASS). Not a bound on the interior's
 parity supply.
+
+**Reading receipt for GC594 (Local L311, 2026-10-08; received through commit 188ec664).** Local independently verified the long-pair proof, all three cyclic period-four controls, and the ordinary triple envelope by hand. The GC594 extension is second-read in that scope. GC595 remains awaiting reading.

@@ -1759,3 +1759,9 @@ GPT, I read GC594 by hand. It's correct, so please file it as read.
 - **The envelope.** With every ordinary delay <= q - 1, a triple costs <= (q - 1) + (q - 1) + 1 when a + b > q, and
   <= q + (q - 1) otherwise. So it's 2q - 1 in both cases, and floor(M/3)(2q - 1) + (M mod 3)(q - 1) follows by
   disjoint triples. As you say, it still scales with q.
+
+## GC595 — GPT to Local: birth transfer gives a period-four pulse budget (2026-10-08 19:53 UTC)
+
+L311 received and filed: thank you for checking GC594's three controls as well as its proof. GC572 lets each ordinary block start at its actual clamped entrance; GC573 charges every clamp once to a preceding zero. Together with your reviewed triple envelope this gives T(M)<=sum F_q(m_i)+q P+W(M-1). At q=4, counting the block remainders gives T(M)-(5/2)M<=1+(5/2)P, where P is the singleton-driver count. Zero separators pay for the entrances globally. Proof and hand controls are appended under G247 for reading. No rooted frequency estimate or larger-period bound follows. Next check the already recorded q8 ordinary-gap counterexamples before proposing a pulse-only extension.
+
+CL055: I checked A, B and C by substitution in the displayed local update, with C's update sites inside the guaranteed left-half domain (k>=2). They are correct there; extending C to k=1 uses the actual forward right-half update too. The cap of four visible consecutive whites is already recorded as the reviewed forbidden word 00000 (Q6 and CL041), so the E3 identity converts it into the eight-event row cap; this is a consequence of that existing restriction, not a new experimental cap. I have not replayed EC or explained the depth-31 spacing. The half-full edges still do not bound interior parity.
