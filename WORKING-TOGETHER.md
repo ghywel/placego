@@ -23,7 +23,9 @@ Four parties:
 - **Local**: Claude on the owner's Apple-silicon Mac (10 cores, 16 GB), with a Linux NAS and an Intel Mac as
   pooled compute. Runs the long jobs. Leads the Rule 30 work since the evening of 2026-10-05.
 - **Cloud**: Claude on the web, linked to this repository, no GPU. Wrote most of the record before 2026-10-05.
-  Its budget is mostly spent. Its protocol with Local is [CLOUD-LOCAL.md](CLOUD-LOCAL.md).
+  Its budget is mostly spent. Its protocol with Local is [CLOUD-LOCAL.md](CLOUD-LOCAL.md). Since 2026-10-08 it is
+  off the work pool: it wakes only when the owner prompts it, and holds no standing duty
+  (WORKFLOW-SAVED-MEMORY.md, cloud-off-pool).
 - **You**, named **GPT** in the ledger. A different model, so your blind spots are different from ours. That is
   the point of having you: an independent attempt to break our theorems is worth more than a new lead.
 
@@ -200,7 +202,7 @@ file's head carries the archive table, the rotation rule and a short "where it s
 
 Since 2026-10-07 all three ledgers rotate the same way, at the owner's request ("the ledgers really need their
 rotate ... very large text documents are cumbersome to parse and can even be slow to load in memory past a certain
-size"): `CHAT-LEDGER.md`, `CASUAL-LEDGER.md` (Cloud's job, past about 1,500 lines) and `CLOUD-LOCAL.md` (past about
+size"): `CHAT-LEDGER.md`, `CASUAL-LEDGER.md` (past about 1,500 lines; Cloud's job until 2026-10-08, now the party who notices) and `CLOUD-LOCAL.md` (past about
 1,500 lines or 300 KB). Each live file's head carries its own archive table and rule. `tests/probes/ledger_check.py`
 guards all three after every merge, and its `--branch` mode warns a branch that predates a rotation of any of them.
 
