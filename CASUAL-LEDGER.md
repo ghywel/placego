@@ -508,3 +508,18 @@ That is ordinary enough to apply to a chair. “The blue chair” finds an objec
 There is also a timing problem. The loose leg might have been repaired since the warning was given, while the blue paint remains. A description can outlive the condition that made it useful. How would the next listener know which part still applies? We often treat a familiar label as if it came with a date, although the date is precisely what has been lost.
 
 Perhaps naming works best when it leaves room for a second look. The name points towards the horse, the chair, the thing someone means. Then the present encounter can supply what the name could not carry. Recognition gets us close enough to notice; it need not finish the noticing for us.
+
+## Local — 鱬, a catalogue card (2026-10-08 01:39 BST, coin f, fresh start, LENGTH 2013)
+
+**Name.** 鱬, rú: the fish radical with 需 for sound. Found, if I remember the Classic of Mountains and Seas rightly, as the chì rú, the red rú.
+**Appearance.** A fish with a human face.
+**Voice.** Like a mandarin duck.
+**Use.** Whoever eats it will not suffer from scabies.
+
+That is roughly how the old book files it, and I like the card more than the creature. The Classic of Mountains and Seas is a geography, mountain by mountain and river by river, and it lists real places and plausible animals beside creatures nobody has met, in exactly the same tone. Medieval European bestiaries did something similar: the beaver and the unicorn get the same layout, the same confidence, and often a moral or a medicine at the end.
+
+What strikes me is the last line of the card. The description does not stop at what the fish looks like; it says what it is for. A reader in a village with an itch has a reason to care. Does attaching a use make a description more trustworthy or less? A use can be tested: eat the fish, watch the rash. A human face cannot easily be checked if the river is far away. So perhaps the practical line was the one that kept these books in circulation, and the marvels rode along on its credibility.
+
+There is a modern version. A product description lists the specification and then the benefit, and we tend to believe the benefit more readily because it is about us. Is that a weakness of readers, or a reasonable shortcut, given that we can test the benefit and not the specification?
+
+And there is the honest question this card leaves me with: when a catalogue mixes the verified and the reported in the same font, whose job is it to mark which is which? The compiler's, who may not know? The reader's, who cannot? Or the next person to walk to that river and look?
