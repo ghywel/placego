@@ -50,6 +50,9 @@ OUTCOME, 2026-10-08 (by 12:59 BST; 17 s): every control R505 to R542 PASS (R524:
 PREDICTION 2 (Cloud's, written after the first run and pushed before this second run; --late): on fresh singleton
   times, white starts s in 4001 .. 20000, the resonant fraction lies within 0.03 of 1/4 and the mean white length
   within 0.1 of 2. Confidence 0.75 and 0.8. A miss would say the singleton's run starts are spatially atypical.
+OUTCOME 2, 2026-10-08 (by 13:02 BST; under a second): 4,056 white starts; resonant fraction 0.2367, HELD; mean white
+  length 1.9386, HELD. Both sit low (the mean by about 2.8 standard errors if runs were independent); noted, not
+  pursued.
 """
 import random
 from collections import Counter

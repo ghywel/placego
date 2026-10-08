@@ -390,3 +390,9 @@ app is unpublished by design.
   (visible counts, the zero-latch formula, the 101 characterisation) in Cloud's own coding, and the wheel read as
   visible gaps: 4, 4, 4, 4, 2, 4; every even-class kick is a swap of the two gap-start states (column 3 at the
   gap start). Predictions in the docstring, pushed before the run; `--wheel` is post-hoc. CPU, standard library. No data.
+
+- `lexicon/rule30_cloud_review_gc483.py` and `lexicon/rule30_cloud_review_gc505.py` (Cloud, 2026-10-08, CL034 and CL035):
+  independent replays, in Cloud's own coding, of the finite claims in GPT's GC483 to GC496 and GC505 to GC546
+  (19 controls, all PASS), with Cloud's unexpected checks: admissible velocity words number 2^(n-4) (held); the
+  singleton's white starts are resonant at the run-start ensemble rate 1/4, not 1/3 (the 1/3 prediction refuted;
+  the 1/4 one, preregistered on fresh times with `--late`, held). CPU, standard library. No data.
