@@ -11595,3 +11595,29 @@ This is a contribution, not the complete certificate. If initial support[-R,R] s
 **Controls and retained failure.** Exact integer binomial controls PASS512 comparisons for r=0..3 and l=0..127; direct time enumeration agrees for every 1<=r<K, K=3..7. These check the formula's implementation, not its all-length proof. At T=9, column2 selects both t=2 and6, so the last-transition-only counterfactual is REFUTED at the coefficient level. It does not show either product fires. Unexpected column4 check at T=17 selects t=4 and12, as independently computed binom(12,8)=495 and binom(4,4)=1 are odd. Nondyadic guard: i=3,l=3 has coefficient1 (at t=5 for T=9); a sum over dyadic columns alone is not justified.
 
 **Result and next intention.** Every fixed dyadic column has only K-r selected times at these dyadic targets, rather than a whole time interval. This gives a sparse exact stencil for an actual transition-product audit. GC425's latest uncovered column2 cell is one stencil point; the earlier points must also be retained, including t=2 for every K>=2. The growing cone and nondyadic source columns remain uncontrolled. Next inspect the actual column2 products at these selected times using the wall recurrence, with no renewed coverage-only argument or wider orbit census. Independent reading requested; no catalogue filing, finite-witness exclusion, Rule30 consequence or prize claim.
+
+### GC447 — Actual column2 products reduce the dyadic stencil to two endpoints (2026-10-08)
+
+**Proposed hand consequence of G61-G62; independent reading pending.** GC446 supplied coefficient-selected times; here the actual Rule210 product supplies an additional restriction. This uses the recorded local equations rather than extending G63's strip margins. No new parity principle or finite-clock exclusion is claimed.
+
+**Prediction before controls.** In any full0101 wall orbit, V_(2*n)(2)=1 implies s_(n+1)=1-s_n, where s_n=x_(2*n)(1). For G26's empty initial left row, at target T=2^K+1 with K>=3, combining this restriction with GC446 leaves only source times2 and2^K-2 on column2. Counterfactual: every effective switch forces the product. Unexpected check: K=2 makes the two proposed endpoints coincide, so it must be handled as one term rather than two XOR copies.
+
+**Boolean proof.** Write b=x_(2*n)(2), q=x_(2*n)(3), d=x_(2*n+1)(1), c=x_(2*n+1)(2). G61-G62 give
+
+`d=(1-s)*b`, `c=s XOR ((1-b)*q)`, `s_next=1 XOR ((1-d)*c)`.
+
+If the actual source product b*q is1, then b=q=1. Hence d=1-s, c=s, and s_next=1 XOR s=1-s. Thus the product vanishes at every even time whose effective s does not switch. This works for every compatible left row under the full0101 wall, not only the empty-left specialization. The implication has no converse: at s=0,b=1,q=0, the equations still give d=1,c=0,s_next=1 but b*q=0. GC425's q=1 patches show both switch directions permit a product locally; that is not full-right sufficiency.
+
+**Exact dyadic specialization.** G26 gives s_0=1 and s_n=floor(log2(n)) modulo2 for n>=1. Its switch indices are n=0 and n=2^j-1 for j>=1. GC446 selects column2 times t=2^K+2-2^h, h=2..K, so n=t/2=2^(K-1)+1-2^(h-1). The endpoints h=K and h=2 give n=1 and n=2^(K-1)-1. For K>=4, all interior h=3..K-1 give
+
+`2^(K-2)+1 <= n <= 2^(K-1)-3`.
+
+This lies strictly inside a single G26 constant run, so no product can occur there. For K=3 there are no interior samples. Consequently the actual column2 contribution to the odd centre Duhamel sum is exactly
+
+`V_2(2) XOR V_(2^K-2)(2)` for K>=3.
+
+At K=2 the only selected time is2, giving V_2(2) once. This says nothing about whether either endpoint is active; all other source columns must still be retained. Combining with the finite-support homogeneous-zero condition of GC446 leaves a whole-source parity certificate, not a two-event certificate.
+
+**Controls.** All32 five-bit positive patches were independently updated using the decimal Rule210 truth table with imposed wall0 then1. PASS: all8 patches with b*q=1 switch s;24 patches switch in total. The converse counterfactual is REFUTED by patch01000 (s,b,q,h,z), which switches0 to1 with zero product. For K=3..12, direct G26 bit-length evaluation at every GC446 sample leaves exactly the two endpoint times. Unexpected K=2 guard selects just one coefficient binom(2,2)=1 at time2; double-counting it would incorrectly erase the source. These finite checks validate arithmetic and local equations, not the existence of an infinite full clock with these patches.
+
+**Result and next intention.** This removes the K-3 interior column2 samples using an actual product implication. G62's published support restriction concerned source column1; this is a distinct extension to source column2, with the same local equations. The growing cone and sources i>=3 remain uncontrolled. Next examine whether the initial endpoint V_2(2) is forced by a longer compatible prefix or remains free, then whether any analogous argument controls nondyadic column3. No broader orbit census, catalogue filing before review, Rule30 consequence or prize claim.
