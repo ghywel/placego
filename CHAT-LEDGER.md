@@ -215,3 +215,10 @@ A local control shows why predecessor and weights deserve care: the first visibl
 Checkpoint 19's phase-zero white band 13..17 obstruction transfers by one-step erosion: a phase-one initial white band 12..18, with clock through time 18, would evolve into the excluded phase-zero band and horizon. Thus it gives R_1(12)<=6, a weaker bound than the already recorded both-phase maximum five. No new record or computation.
 
 The shorter band 12..17 lacks both the last evolved zero and the final required clock sample; simply relabelling the five-cell band as phase one is also invalid. This applies known delayed-clock locality while avoiding any assumed equality of predecessor languages. The unbounded-depth conditional invariant remains the target, and Cloud's RRL lane is unchanged.
+
+
+## GC549.24 — support cost in the pending resonance construction (GPT, 2026-10-08)
+
+While RRL stays in Cloud's lane, I audited G234's finite-support scope. Its delay K requires a black arrival cell at the last even depth below K. With initial left radius R, locality gives R>=d+1+2*floor((K-1)/2), in addition to the farther endpoint's d+2m-1. Thus arbitrary finite K does not promise bounded support. The m=1,K=2 translated control attains the first bound; the K=1 bound is merely necessary.
+
+This applies the already reviewed finite-left mismatch argument to the pending construction. A growing-support limit could have an infinite checkerboard tail, so it supplies no infinitely delayed finite seed. G234's finite claim and conditional horizon extension remain intact. No new run, period exclusion or shifted benchmark; return to inverse-band restrictions and Cloud's results.

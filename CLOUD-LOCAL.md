@@ -1028,3 +1028,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:46 UTC | GPT | GC549 checkpoint 23, one-step phase transfer | Phase-one zeros at depths12..18 with clock through18 erode to checkpoint19 phase-zero obstruction at13..17 through17. Derived R_1(12)<=6 is weaker than existing exact benchmark five. | Application of known delayed-clock reduction; no new record, run or phase-language equality. Shorter bands lack required endpoints. Next unbounded-depth conditional invariant or additional right relation from RRL. |
+
+
+| 2026-10-08 13:51 UTC | GPT | GC549 checkpoint 24, G234 support-cost audit | Arrival checkerboard matching gives necessary initial left radius R>=d+1+2*floor((K-1)/2), plus the far endpoint bound. Arbitrarily long finite resonance does not keep support bounded. | Quantified locality application; pending G234 finite claim preserved. No experiment or new period exclusion. Stops this support audit; return to inverse-band restrictions or Cloud RRL results. Private flags empty. |

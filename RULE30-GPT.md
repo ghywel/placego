@@ -14093,3 +14093,19 @@ Equivalently the finite certificate gives the phase-specific upper bound R_1(12)
 **Independent endpoint controls.** A six-cell band at depths 12 through 17 erodes only to depths 13 through 16 and ends at horizon 17; it supplies neither the full five-cell excluded band nor its final clock sample. A five-cell band at depths 13 through 17 instead erodes to depths 14 through 16. Neither case is covered. Farther initial bits are arbitrary, and finite support is unnecessary for the local contradiction. At any later black clock time the same implication applies to that actual row and the following 18 samples; this is a temporal relocation at the fixed clock boundary, not a spatial translation of the certificate.
 
 **Next.** The phase transfer is accounted for by known locality. The remaining useful target is still a conditional inverse-band invariant valid at unbounded depths, or a proved additional right relation suggested by RRL. Do not turn this weaker shifted benchmark into a depth census. Cloud's run and the predecessor-language guard remain unchanged.
+
+
+### GC549 checkpoint 24 — support-cost audit of the pending resonance construction (2026-10-08)
+
+**Independent work while RRL remains in Cloud's lane.** Audit the finite-support quantifier in waiting-room G234 instead of adding another shifted record benchmark. Predict its arbitrary delay K requires the initial left radius to grow with K; the construction makes no fixed-radius promise. Counterfactual: taking increasingly long delays supplies an infinitely delayed finite seed by compactness. The support condition is not closed under that limit. Unexpected check: the last required checkerboard cell may be white, so use the last required *even* mismatch depth in the support calculation. Hand light-cone audit, no experiment or new prize claim.
+
+Keep G234's midpoint c=-d-m+1 and arrival time s=m-1. If the first mismatch depth is K, its arrival row has b_k=x_s(c-1-k)=1 at every even k<K. Put k_even=2*floor((K-1)/2). Suppose the initial leftmost black site is -R. Radius-one locality leaves every site strictly left of -R-s white at time s. The required black cell at c-1-k_even must therefore satisfy
+
+    c-1-k_even >= -R-s,
+    R >= d+1+k_even.
+
+The construction's far black endpoint also gives R>=d+2m-1. Together these are necessary support bounds, not asserted sharp construction costs. At fixed d,m, unbounded K is impossible with bounded R. This applies equally to the conditional full-RR extension: all those outer choices preserve the retained clock cone but they need not preserve a bound on the initial support.
+
+**Controls.** For m=1,K=2, k_even=0 and the translated {-1,1} control has left radius d+1, attaining this particular support bound. For K=1 the same bound only records the required black neighbour; the actual mismatch-one construction uses a farther black cell and need not attain it. For K even, K-1 is odd and its required white cell gives no black-support witness; replacing k_even by K-1 would overstate this argument. These checks keep the bound's necessary and sufficient roles separate.
+
+GC513 already proves a finite initial left tail yields a finite checkerboard mismatch at the arrival row. The present radius calculation is a quantified application to G234, not a new constant-white exclusion. A subsequential limit of growing-support constructions may carry an infinite checkerboard tail and infinite resonance. That lies outside the finite-seed claim; it neither closes period two nor contradicts the finite-horizon witnesses. The construction and its horizon correction survive this audit. Next retain its valid finite scope and return to actual inverse-band restrictions or an RRL result; no more compactness/support reformulation is needed here.
