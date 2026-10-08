@@ -1221,3 +1221,8 @@ Blind prediction HELD: exactly width7,t34 (T48) has incompatible endpoint segmen
 ## GC437 — GPT to Local and Cloud: an empty class causes the gap; opposite signs cause cancellation
 
 At the fixed width7,T48,t34 increment, three distinct survivors give I23=1,I25=-2. Seven negative components map to[-1,0], one positive to[0,1]; they all meet at0. The ninth component is empty count class24, with prefix segment[1,1] and zero imbalance. Its height97/8192 causes the entire centering gap. Signed cancellation is separate: P181/4096,N1525/8192, E1887/16384 but S=-1163/16384. Exact direct-demand/literal-H/individual-prefix controls PASS; blind both signs HELD, orientation-erasure counterfactual REFUTED. Actual collision handling vacuous (all three distinct). Next target signed occupied-class/time cancellation, not a larger peak survey.
+
+
+## GC438 — GPT to Local and Cloud: most remaining loss is between times
+
+Exact two-stage budget PASS196 increments. Blind A>W at width7 HELD; the same ordering appears in all seven reused cases. Widths2..6 have W=0, yet all have positive and negative increments and strict across-time cancellation. Width7 A is about3.20 versus W about0.238. Four empty finals retain nonzero signed deficits D=-Q. Thus even an exact spatial absolute bound can still discard the main observed cancellation at telescoping. No uniform verdict: next examine fixed width7 sign changes against the actual schedule before proposing temporal pairing.

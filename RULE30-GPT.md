@@ -11433,3 +11433,22 @@ Next prioritize actual signed cancellation across occupied classes and time, rat
 GC437 separates centering slack from within-increment signed cancellation. For the same seven GC432 cases only, write S_t for the exact increment, E_t for G220, D=sum_t S_t, W=sum_t(E_t-abs(S_t)) and A=sum_t abs(S_t)-abs(D). Then sum_t E_t-abs(D)=W+A exactly, and A=2*min(sum max(S_t,0),sum max(-S_t,0)). This is elementary signed bookkeeping, not a new general theorem; neither stage has a uniform estimate. Record search found no measured two-stage budget for these cases.
 
 CS1 MUST HOLD: nonnegative budgets, exact decomposition and independent literal-H telescoping. CS2 BLIND: at width7,T48 the across-time budget A exceeds the within-increment budget W. A miss redirects attention toward spatial cancellation. Counterfactual: taking absolute values before telescoping leaves the net absolute discrepancy unchanged; refute if both increment signs occur. Unexpected check: retain empty final populations with positive backward coin proxy Q; extinction does not mean a vacuous discrepancy. Probe tests/probes/prizes/collatz_gpt_cancellation_split.py NOT RUN, widths2..8,T=8*(w-1), publish before execution. No wider scan or asymptotic fit.
+
+
+### GC438 — Across-time cancellation dominates the seven-case budget (2026-10-08)
+
+Preregistered at 3a05bd4 and pushed before execution. CS1 PASS196 exact increments: direct component terms match literal H, telescoping matches final count minus Q, and the two-stage budget identity holds. CS2 blind prediction HELD at width7,T48: A=220052262353/68719476736 exceeds W=2043310439/8589934592. Across-time budget exceeds within-increment budget in all seven reused cases; this is a finite observation, not a uniform ordering theorem.
+
+| width | within-increment W | across-time A | positive / negative nonzero increments |
+| --- | --- | --- | --- |
+| 2 | 0 | 19/64 | 1 / 2 |
+| 3 | 0 | 363/1024 | 2 / 3 |
+| 4 | 0 | 184021/1048576 | 1 / 3 |
+| 5 | 0 | 60767827/67108864 | 15 / 5 |
+| 6 | 0 | 1943096421/2147483648 | 15 / 9 |
+| 7 | 2043310439/8589934592 | 220052262353/68719476736 | 26 / 13 |
+| 8 | 19277415885913/140737488355328 | 84569311781071/70368744177664 | 15 / 16 |
+
+Taking absolute values before telescoping changes the net absolute discrepancy in every case, since both increment signs occur: counterfactual REFUTED. Unexpected extinction control: widths2,3,4,8 have empty final populations but positive Q, hence D=-Q is nonzero. These are genuine signed deficits, not vacuous discrepancy controls. All seven cases and the failures are retained; standard Python on GPT's owner-described Intel host, under one second; exact rational data outside Git.
+
+**Interpretation and next reasoning step.** G220 discards no further component-sign cancellation at widths2..6 (W=0), while substantial cancellation still occurs between time increments. Therefore sharpening a separate absolute bound at each time would miss that budget even when its spatial triangle inequalities are exact. This does not refute any uniform absolute estimate; it explains where these finite examples lose signed information. Next examine sign changes against the actual critical/noncritical schedule in the fixed width7 case and seek a justified temporal pairing, rather than assuming a shape improvement supplies a count ratio. No larger run, decay fit or new universal theorem.

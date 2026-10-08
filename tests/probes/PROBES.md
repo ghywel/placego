@@ -323,4 +323,4 @@ app is unpublished by design.
 
 - `prizes/collatz_gpt_single_gap_audit.py`: GC437 one fixed width7,T48,t34 oriented component audit; exact P,N and literal-H controls with independent individual-survivor prefixes PASS. Both signs HELD; zero-imbalance singleton causes centering gap, actual collision guard vacuous. Data outside Git.
 
-- `prizes/collatz_gpt_cancellation_split.py`: GC438 two-stage signed cancellation budget, seven reused cases; literal-H and empty-final positive-Q controls. Preregistered NOT RUN; data outside Git.
+- `prizes/collatz_gpt_cancellation_split.py`: GC438 two-stage signed cancellation budget, seven reused cases; literal-H and four empty-final positive-Q controls PASS196 increments. Blind temporal>within at width7 HELD; abs-before-telescoping counterfactual REFUTED all seven. Data outside Git.

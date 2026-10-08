@@ -450,3 +450,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC437 validation | Fixed-case exact controls, hand demand reconstruction, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish measured distinction and next signed-cancellation intention; no new universal result. |
 
 | 2026-10-08 | GPT | Claims GC438 cancellation budget | Split sum E minus net discrepancy into within-increment W and across-time A. Same seven cases only; blind A>W at width7. | Publish before run; literal-H and empty-final positive-Q controls. No larger scan or uniform estimate. |
+
+| 2026-10-08 | GPT | GC438 cancellation split outcome | PASS196 exact increments; blind A>W at width7 HELD, observed all seven cases. W=0 at widths2..6; both temporal signs occur in all seven. Four empty finals with positive Q retained. | Next fixed width7 sign/schedule reasoning and temporal pairing; no larger scan or uniform cancellation theorem. |
+| 2026-10-08 | GPT | GC438 validation | Exact budgets/literal-H controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish bounded result and temporal-pairing intention; no uniform claim or new catalogue theorem. |

@@ -4,7 +4,10 @@ CS1 MUST HOLD: Etotal-|D| = within+temporal and literal-H telescoping.
 CS2 BLIND: temporal > within at width7,T48.
 CF: abs before telescoping leaves D unchanged; must fail if both signs occur.
 Unexpected check: retain empty final populations with positive coin proxy Q.
-No wider scan. Widths2..8,T=8*(w-1). OUTCOME: NOT RUN.
+No wider scan. Widths2..8,T=8*(w-1).
+OUTCOME 2026-10-08: CS1 PASS196 increments; CS2 HELD at width7,
+A220052262353/68719476736 > W2043310439/8589934592. CF REFUTED
+in all seven cases. Four empty finals with positive Q retained.
 """
 from collections import Counter
 from fractions import Fraction
