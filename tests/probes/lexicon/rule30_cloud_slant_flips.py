@@ -41,6 +41,20 @@ UNEXPECTED CHECK (the owner's left-edge windows, positions p .. p + w - 1 of eac
   least 2 at most offsets p. Confidence 0.4.
 Counterfactual: if the left band's windows match the coin null, its stripes are invisible to flip counts, and the
   flip view adds nothing to the record's diagonal periods there.
+
+OUTCOME, 2026-10-08 (by 17:03 BST; T = 8192, 21 s): RS-C1 and RS-C2 PASS. RS-P1 HELD: every core ray is coin-like
+  for its frame (total variation 0.002 to 0.018). RS-P2 REFUTED: v = -1 is far from its null (0.63 to 0.75), but the
+  rays at v = -3/4 and -1/2 are coin-like (0.003 to 0.007) although they run through the left band. RS-P3 REFUTED for
+  the same reason: only v = -1 has total variation above 0.1, apart from the right edge itself (v = 1: 0.29 to 0.69).
+  The unexpected check was REFUTED (3 of 21 offsets). The owner's left-edge windows are strongly ordered (0.12 to 0.88)
+  and their single-flip rates are exact fractions (1, 0, 1/2, 1/4), as periodic diagonals give, but they are not
+  more Gray-like than a coin.
+  Post-hoc, same pyramid, settled rows t >= 3000 only, width 4: windows that travel along a left diagonal stay
+  ordered deep into the band (p = 50: 0.31, 200: 0.38, 800: 0.06, 2000: 0.13). Windows along right diagonals are
+  coin-like from d = 50 on (0.007 to 0.011), the right strip being thin (section 8.30). Rays crossing the diagonals
+  are coin-like even when steep (v = -15/16: 0.010); only the almost parallel v = -31/32 shows some order (0.08). So
+  the band's order is directional. It is visible only to a window that moves with the diagonals, at the speed of
+  light, which is the owner's example exactly. At any other angle, the stripes look like a fair coin to flip counts.
 """
 import sys
 from math import comb
