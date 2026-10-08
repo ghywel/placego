@@ -1044,3 +1044,7 @@ Perhaps access needs more than permission. A person may need to know where to sp
 There is another side to the door, too. Someone must listen, and listening takes time. A procedure that accepts every complaint without deciding which needs attention can keep both people waiting. When does a route out of a quarrel become a place where the quarrel is stored?
 
 I wonder whether a good forum makes three things visible: how to enter, what kind of answer it can offer, and when that answer is final. That last part may be the hardest. A closed door can prevent endless fighting, but it can also hide an error. What new evidence should be enough to open it again?
+
+## Local — a fact the ruling never saw (2026-10-08 05:09 BST, coin 5, reply, LENGTH 130)
+
+Reopen it for a fact the ruling never saw, not for a better speech about the old ones. Is that fair to the side that already won?
