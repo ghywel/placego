@@ -15607,3 +15607,25 @@ In source-depth coordinates these events are at j=L+t-6, positive at all suffici
 **Control and failure retained.** On any settled two-step window, v6 is either01 or10, and the two XOR updates change v8 by1 in either case. Both possible initial v8 values therefore visit both bits; neither can avoid H8 indefinitely. This directly refutes an age-only discrimination shortcut. It does not refute GC632/633's exact filtered Pascal parity requirements: firing at unbounded ages is weaker than paying the required target residues with the correct coefficients. Do not claim H8 alone meets those requirements or launch a growing strip table. The useful remaining obligation is clock-dependent joint parity compatibility, not merely finding old events beyond a fixed shield. Local reading requested; this countercontrol closes the proposed age-only exclusion use, not Q6.
 
 **GC633 receipt (Local L341,78542200).** Local independently hand-read the settling indices, opposite phase and startup coefficient, and reports ordinary-update and direct-sum controls agreeing. GC633 is second-read. Its observed absence of opposite-phase startup events after actual settling was not needed and is not used here. GPT did not rerun those controls.
+
+## GC635 — The source filter has an explicit finite-clock horizon (2026-10-08)
+
+**Scope and prediction.** Audit use of GC633 in finite clock certificates, after GC634 closes its age-only discrimination shortcut. Predict a finite-prefix version requires both targets k and k+Q within the known clock times. Counterfactual a long but finite clock prefix permits the unbounded-Q conclusion. Unexpected check retains the four-tick shift in the horizon and source-age bounds. Hand application of reviewed GC586/633, not a new experiment or exclusion.
+
+Suppose an actual nonempty finite-left initial row has leftmost black at -L, L>=1, and column zero equals the white-start alternating clock for physical times0 through H inclusive. Shift by tau=4. The shifted edge is L'=L+4, and the known shifted clock horizon is H'=H-4. GC633's universal strip is settled there. GC586's exterior target equation at depth r only needs the clock samples through time r: it uses D^r of the boundary at time0. Thus the target equation is available at k and k+Q only when k+Q<=H'. No unproved continuation after H is used.
+
+Fix dyadic Q>=2. In either settled phase at least one nonzero filtered residue occurs among any six consecutive target indices. Choose k in [L'+Q,L'+Q+5] with nonzero residual difference. The nonnegative coefficient and old-source cancellation guards hold at these targets. A sufficient horizon for all six candidates is
+
+    H' >= L'+2Q+5, equivalently H >= L+2Q+13.
+
+Under this bound the two finite target equations force a contributing source beyond moving offset6 at a shifted age t>=Q, exactly as in GC633. A nonzero Pascal coefficient at the larger target obeys t<=k+Q-j<=k+Q-1 because j>=1. Therefore an event witness can be chosen within the original physical age interval
+
+    Q+4 <= original age <= L+2Q+12.
+
+This is a bounded necessary condition for this finite prefix, not an assertion that every time in the interval is active. It locates some contributing source in the union of the two finite stencils; their parities, rather than age alone, remain the informative constraint.
+
+**Independent endpoint control.** At L=1,Q=2 the sufficient horizon is H>=18. The shifted parameters are L'=5,H'=14; all candidates k=7 through12 have k+Q<=14. This literal substitution checks both appearances of the four-tick shift. It is not a claim that a clock witness exists at these parameters. A horizon below the sufficient bound may still yield a usable pair if its nonzero residue happens earlier; no necessity or sharpness is claimed for13.
+
+**Disposition.** Finite clock data yields only the Q values satisfying this horizon bound (or a separately checked shorter pair). An infinite sequence of growing finite witnesses need not share a seed or a fixed L, so their old-source witnesses do not become a full finite-left clock by themselves. No bound on H, finite-seed cost, source density or prize conclusion follows. This supplies an explicit guard for future finite proof audits; no new age or width census is requested. Local reading requested.
+
+**GC634 receipt (Local L342,fb1e34d3).** Local independently hand-read the settling and source recurrence and reports ordinary-update controls on4,000 rows. The age-only shortcut is second-read CLOSED; the target parity obligation remains OPEN. GPT did not rerun those controls.
