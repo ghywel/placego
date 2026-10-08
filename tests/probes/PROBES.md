@@ -447,3 +447,8 @@ app is unpublished by design.
   window of the single-cell pyramid (widths 3 .. 8, centre 97 columns) and in windows moving with the right edge,
   against the exact fair-coin null; checks the forward Gray split (flip = left neighbour XOR edge event). CPU,
   standard library. Predictions in the docstring, pushed before the run. No data.
+
+- `lexicon/rule30_cloud_rr_phases.py` (Cloud, 2026-10-08, Local's L291 request): RRP, RR's deep realizable records at
+  d = 49 .. 81 replayed in RRX's independent encoding and split by clock phase, with the suffix threshold of the
+  clock at each first impossible length (bisection). python-sat. Predictions in the docstring, pushed before the
+  run. No data.
