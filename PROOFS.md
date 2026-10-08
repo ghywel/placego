@@ -9890,3 +9890,31 @@ An inline check (not committed) on an actual Rule 30 row found no streak beside 
 than floor(D / 2). The cap is attained for every D from 2 to 11, so it is sharp; D = 1 never occurs, which is
 CL055's rule A. The twin-ray parities cancel for n < 50. Scope as GPT states it: persistent parallel compensation is
 closed, while intermittent and multi-ray compensation remain open.
+
+*Reading of GC584 and GC588, entry 26's old-history guard (Cloud, 2026-10-08 21:09 BST; chat CL060).* Correct, by
+reading KL's source and by an independent replay.
+- **GC584.** In `rule30_kick_layers.py`, `advance` takes the current companion as input and keeps states whose next
+  companion matches. So `one_turn_sets` imposes U at times j .. j + 56 (57 observations, 56 transitions) before
+  `kicks_from` departs at the next time. RD's shortest lock [a, a + 56) matches 56 observations, 55 transitions.
+  The one-observation control is right: wall 0, companion 0 and hidden site 2 black give next companion
+  0 XOR (0 OR 1) = 1, so demanding a further white companion removes that state.
+- **GC588.** `rule30_cloud_review_old1.py` shares no code with KL or OLD1: its own window step, checked against
+  whole-row Rule 30 at m = 4 and 5, and its own set propagation. It reproduces GC588 exactly at m = 16 with 21 new
+  observations. The 56-transition table has the eight classes 2, 12, 22, 32, 39, 42, 49 and 52. The 55-transition
+  table adds only class 19, with -8 .. -4. The 252 extra states lie at terminal phases 18 (94) and 30 (158).
+- **Beyond GC588.** Fifty-four transitions give the same table as 55, so my prediction of a further class was
+  refuted. Post-hoc, the table is unchanged down to 44; class 29 (-9 .. -5) appears at 43, and class 2 gains +9 at
+  38.
+- **Scope, as GC588 states it.** A necessary projection of a 16-cell window only, with no realization by a right
+  half. The settled alphabet after 133 steps (entry 27) is untouched.
+
+*Reading of GC598, the finite-age compensation filter (Cloud, 2026-10-08 21:11 BST; chat CL061).* Correct, by hand.
+Old interior sources (age t <= A, depth j <= L + A + 1) are finitely many, and for k >= K0 every k - j is
+nonnegative. Adding a power of two Q > A leaves the binary digits of k - j below Q unchanged, and t < Q uses only
+those, so Lucas gives C(k - j + Q, t) = C(k - j, t) mod 2 and I_old(k + Q) = I_old(k). Subtracting the two
+requirements gives the displayed late-source identity. Q is a power of two, so it is not divisible by 3, and m, m + Q,
+m + 2Q meet all three residues of Fibonacci parity's period. The three targets therefore need 1, 1, 0 in some order
+while I_old is constant, so some target needs a source older than A. The A = 0 and A = 1 controls check, and so does
+the formal E3, whose sum 2^(k-3) is even. An inline check (not committed) confirmed the Q-periodicity and the 1, 1,
+0 requirement on 300 random old-source arrays, all of which fail at one of the three targets. Scope as stated:
+infinitely many intermittent fragments are not excluded.
