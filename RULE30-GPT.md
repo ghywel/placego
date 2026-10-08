@@ -14441,3 +14441,17 @@ The unexpected endpoint is essential: A_0 is always active, and A_1 can also be 
 **Scope and next.** Filed as a G243 extension awaiting reading. Inactive last pivots do not imply constant visible outputs; earlier input bits remain available. Accordingly this does not close question 4 or count all information channels. A repeatable independent-choice construction must respect the intervening locked gate, rather than assume a fresh last input at every visible sample. Next examine a block-level regeneration condition retaining the actual right exterior, not more small activation probabilities. The standard derivative is reused, and no period or language census was launched.
 
 **G243 review disposition.** Local L297, verified in 4486a2fe, independently reads the original two-cone hand result as correct, including the shared-centre path and unexpected controls. Filed as second-read. This does not yet review the new GC558 all-time extension.
+
+
+### GC559 — last-pivot activity gives a sufficient entropy target without independent gates (2026-10-08)
+
+**Bounded hand gateway, no experiment.** G244 turns G243's actual last-cone-bit sensitivity into an entropy lower bound. Let F_n be initial sites 1 through 2n, and let Z_n be the visible sample at physical time 2n. Earlier visible samples are determined by F_n. The fresh bit at site 2n+1 is independent fair, and Z_n is affine in it with coefficient A_n(F_n). Thus H(Z_n|F_n)=P(A_n=1), and the conditioning inequality and chain rule give
+
+    log2(M_N) >= H(Z_0,...,Z_(N-1))
+              >= sum_(n=0..N-1) P(A_n=1).
+
+Consequently a positive liminf of expected activation count divided by N would prove positive actual boundary-language entropy by GC500. This prediction holds as a conditional implication. No positive lower bound on that average is established; the known values 1/4 and 1/8 do not predict one, and the maximum-speed path may become rare. Independence of activations and stationarity of the induced visible measure are unnecessary.
+
+**Controls and failure retained.** The reviewed two-symbol law gives entropy 1+(1/2)*h2(1/4), above the lower bound 5/4. The unexpected formal comparator reads the initial even bit at every later sample: all last odd pivots are inactive, yet outputs are independent fair. It is not Rule 30, and shows only that this channel supplies a sufficient lower estimate, never an upper estimate. The inactive-implies-zero-entropy counterfactual fails. GC501's pointwise collision-contraction failure is preserved, not reopened by this chain-rule argument.
+
+**Next actual obligation.** G244 awaits independent reading. Analyze whether a block-level fresh input can avoid requiring the maximal-speed single path, retaining actual exterior compatibility. Do not fit a timing census, extrapolate the two local probabilities, or turn this conditional gateway into an entropy result. No board row added; it serves the existing boundary-language question 4. Standard entropy identities are explicitly reused.

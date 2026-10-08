@@ -3176,3 +3176,14 @@ A new right-edge bit can be masked by correlated gates beside the wall.
 **W243 all-time extension (GC558; reading pending).** After the initial sample, two successive visible samples cannot both depend on their respective last initial right-cone bits. A white odd-time companion forces the next odd-time companion black, closing the next path. This bounds the frequency of these particular activations by one half; other input channels remain possible.
 
 **W243 reading update (2026-10-08).** Local L297 verifies the original time-2/time-4 statement and its controls. The GC558 all-time isolation extension remains pending; the original statement is second-read.
+
+
+## W244
+
+A positive average of active last inputs would prove positive boundary-language entropy.
+
+**What it says.** The visible-prefix entropy is at least the expected count of active last initial cone bits. If their average activation probability stays positive, the actual wall language has positive entropy.
+
+**Why it matters.** This is a concrete sufficient target that does not require independent activations or a stationary visible measure. Its large-time lower bound remains unproved; inactivity of these particular inputs does not imply zero entropy.
+
+**An everyday picture.** Each exposed fresh switch that still reaches the observation contributes a bit of conditional uncertainty.
