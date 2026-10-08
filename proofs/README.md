@@ -548,6 +548,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [superlevel components bound allocation without a shape premise](G220-superlevel-components-bound-allocation-without-a-shape-premise.md):
   Demand superlevel intervals give an allocation bound no worse than both earlier absolute bounds, without assuming
   demand shape.
+- [common endpoint segments characterize allocation-bound ties](G221-common-endpoint-segments-characterize-allocation-bound-ties.md):
+  The gap between optimized centering and component allocation is exactly a weighted distance to endpoint segments.
 
 ## Proofs from the sparks
 

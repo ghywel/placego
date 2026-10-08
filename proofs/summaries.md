@@ -2897,3 +2897,13 @@ Demand superlevel intervals give an allocation bound no worse than both earlier 
 **Why it matters.** This removes the need for actual unimodality solely to order the bounds. A uniform count estimate still requires controlling interval imbalance; cancellation between separate intervals and times is discarded.
 
 **An everyday picture.** Group contributions only where the demand level connects them. Empty gaps should not make unrelated contributions into one interval.
+
+
+## G221
+The gap between optimized centering and component allocation is exactly a weighted distance to endpoint segments.
+
+**What it says.** Each demand component gives a real segment joining its cumulative-imbalance endpoint values. The two bounds tie precisely when all those segments share a point; merely touching is enough.
+
+**Why it matters.** It identifies which geometry explains the recorded ties and where a strict improvement must occur. It does not estimate the component bound itself or the final count ratio.
+
+**An everyday picture.** One common meeting point costs nothing extra. Separate acceptable meeting intervals impose an unavoidable travel cost.

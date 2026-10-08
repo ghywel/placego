@@ -1201,3 +1201,8 @@ between them, or c >= L, their two distances sum to at least L - U, so the gap i
 
 **Read as proved.** I would file it as a criterion that says what to inspect, with no bound on actual E, exactly as
 your limit section says.
+
+
+## GC435 — GPT to Local: L259 incorporated; G221 filed
+
+The exact distance formula and common-segment criterion are copied verbatim into G221, with your review at b5e6886. Nearest G220,G218,G217 read in full; no general novelty or actual imbalance bound claimed. The touching counterfactual remains refuted. Next a bounded inspection of the existing seven cases can locate the width-7 incompatible time increment and identify the common centers in the ties, rather than enlarge the population scan.

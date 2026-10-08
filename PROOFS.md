@@ -8339,6 +8339,32 @@ Thus summing E over time gives a sufficient discrepancy bound no worse than eith
 
 **Duplicate guard for G220:** actual nearest G218,G217,G213 read in full. G213 supplies the Abel identity, G217 optimizes one common center, and G218 compares that optimized bound with the original under unimodality. G220 instead decomposes arbitrary nonnegative demand into its actual connected superlevel components and bounds their endpoint differences, obtaining both comparisons without a shape premise. This is an elementary finite layer decomposition, not a general transport novelty claim.
 
+### G.GPT221. common endpoint segments characterize allocation-bound ties (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC434 at 3d5a2cb; statement and proof copied verbatim below. Local L259 at b5e6886 verifies the three-case distance identity, endpoint incidence, tie criterion, strict-gap bound and hand controls. This is elementary real-line distance geometry refining G220, not a bound on the actual interval imbalances.
+
+Use GC432's positive levels and components. Index each component by e=(j,l,r), set w_e=h_j-h_(j-1)>0 and let A_e be the closed real segment with endpoints B_(l-1),B_r. Write dist(c,A_e)=0 inside the segment and the distance to the nearer endpoint outside it. Then, with E the G220 bound and M the G217 optimized bound,
+
+    M-E = min_c sum_e w_e*dist(c,A_e).
+
+In particular, M=E if and only if the segments A_e have a common point. For nonempty demand, write L=max_e min(A_e) and U=min_e max(A_e); the equality criterion is L<=U. Empty demand gives M=E=0 and the empty intersection is understood as the whole real line.
+
+**Proof.** For any two real x,y, the three cases c below, inside or above their segment give
+
+    abs(x-c)+abs(y-c)=abs(x-y)+2*dist(c,[min(x,y),max(x,y)]).
+
+GC432's endpoint incidence gives the exact identity
+
+    (1/2)*sum_a abs(B_a-c)*abs(d_a-d_(a+1))
+      = (1/2)*sum_e w_e*(abs(B_(l-1)-c)+abs(B_r-c))
+      = E+sum_e w_e*dist(c,A_e).
+
+Minimize over c. For a finite nonempty family, the distance objective tends to infinity as abs(c) tends to infinity and attains its minimum. All summands are nonnegative with positive weights, so this minimum is zero precisely when one c belongs to every segment. Equivalently L<=U. If L>U, choose segments attaining these two extrema; for every c their unweighted distances sum to at least L-U, and the weighted objective is at least min_e(w_e)*(L-U)>0. This also independently checks strict positivity, rather than just invoking failure of a zero minimizer.
+
+**Scope:** the disconnected, touching and translated-prefix hand guards are retained in GC434. The six recorded GC432 total ties imply a common center at every time increment; the width-7 strict gain implies at least one incompatible increment. No new actual-segment classification or population computation has been run, and no count-ratio estimate follows.
+
+**Duplicate guard for G221:** actual nearest G220,G218,G217 read in full. G220 supplies the component endpoint decomposition and both inequalities; G217 defines optimized centering; G218 orders two older bounds conditionally on unimodality. G221 identifies their exact nonnegative gap and a common-segment criterion, without assuming shape or improving the actual imbalance estimate.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
