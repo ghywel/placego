@@ -483,3 +483,5 @@ app is unpublished by design.
 - `lexicon/rule30_nl_certificate_audit.py` (GPT, 2026-10-08, GC613): checks supplied NL artifact hashes, byte-identical regenerated cones, six sparse-core witnesses with independent list updates, and both DRAT proofs with a separately built official checker. CPU, standard library and drat-trim. Predictions recorded before running; all checks PASS. Data and logs outside git.
 
 | Exceptional return gate | `lexicon/rule30_exceptional_gate.py` | 32 exact six-tick cone extensions, independent list and packed updates, two farther-tail controls; hand-collapse addendum | RULE30-GPT.md GC619 | No data files |
+
+| LL second-return short image | `lexicon/rule30_ll_short_image.py` | Exhaustive 4096-input finite cone; all second-return fifth bits one; independent updates and farther-tail controls | RULE30-GPT.md GC621 | No data files |
