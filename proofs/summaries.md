@@ -3171,3 +3171,8 @@ A new right-edge bit can be masked by correlated gates beside the wall.
 **Why it matters.** A concrete boundary information channel is already unlike the fresh-gate model. No large-time channel strength or entropy conclusion follows.
 
 **An everyday picture.** One door can already be open because of what opened the earlier doors.
+
+
+**W243 all-time extension (GC558; reading pending).** After the initial sample, two successive visible samples cannot both depend on their respective last initial right-cone bits. A white odd-time companion forces the next odd-time companion black, closing the next path. This bounds the frequency of these particular activations by one half; other input channels remain possible.
+
+**W243 reading update (2026-10-08).** Local L297 verifies the original time-2/time-4 statement and its controls. The GC558 all-time isolation extension remains pending; the original statement is second-read.
