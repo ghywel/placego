@@ -17,8 +17,9 @@ p_1 + p_2, ..., p_last) and the flat step B(q) = (2 q_0 + q_1, q_1 + q_2, q_2 + 
 (3) Lemma: if p >= 0 is unimodal, so is B(C(p)). Write P = B(C(p)): P_0 = 3 p_0 + p_1 and, for j >= 1,
     P_j = p_(j-1) + 2 p_j + p_(j+1), the (1, 2, 1) convolution read one place on. That tail is unimodal (log-concave
     kernel), so P fails to be unimodal only if P_0 > P_1 and the tail later rises above P_1.
-    Case A, p nonincreasing: for j >= 2 every difference P_(j+1) - P_j is a sum of differences of p, all <= 0, so the
-    tail never rises.
+    Case A, p nonincreasing: for j >= 1, P_(j+1) - P_j = (p_j - p_(j-1)) + 2 (p_(j+1) - p_j) + (p_(j+2) - p_(j+1)),
+    a sum of differences of p, all <= 0, so the tail never rises from P_1 on. (Corrected 2026-10-08 05:48: this line
+    first said j >= 2, which left P_2 - P_1 unstated; the same expansion covers j = 1.)
     Case B, p not nonincreasing: unimodality gives p_0 <= p_1. If p_1 <= p_2 then 2 p_0 <= p_1 + p_2, that is
     P_0 <= P_1, and prepending a value no larger than the first keeps a unimodal sequence unimodal. Otherwise the mode
     is 1, p_1 > p_2 >= p_3 >= ..., the tail is nonincreasing from P_2 on, and a failure needs P_0 > P_1 and P_2 > P_1:
