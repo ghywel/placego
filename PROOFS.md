@@ -8573,6 +8573,36 @@ G229's eight-bit prefix certificate separately fixes the initial positive bits1.
 
 **Scope:** general-left orbits require the isolated010 triple for positive-time even column2 bits. Identical whiteness and all even column4 product removal use the empty-left full0101 family. Farther source columns remain open; no finite-witness exclusion follows.
 
+### G.GPT232. a white intervening bit exposes the two-step correction (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC459 atc3f0265; Local L270 at e4f4ff9 verifies the universal two-case identity and its G231 application, reaffirmed L272 at572eb5e. Source proof and application copied verbatim below. The source's pending GC458 premise is now the reviewed G231, so its clock application is unconditional in that stated family. The translated embedding control restates locality and is not independent evidence about a boundary.
+
+**Proof of the local identity.** Write the five consecutive inputs as (s,0,q,h,z). Their three intermediate bits are c=s XOR q, r=(1-q)*h, v=q XOR ((1-h)*z). The final central bit is Q=c XOR ((1-r)*v). If h=1 then r=1-q,v=q, so (1-r)*v=q and Q=s. If h=0 then r=0,v=q XOR z, so Q=s XOR z. In both cases Q=s XOR ((1-h)*z). This holds for every q and imposes no wall value. Equivalently Q=s XOR z XOR (h*z); the exact defect from the additive readout is the adjacent nonlinear product h*z. This is a universal local identity under the stated white intervening input, not a finite-sample inference.
+
+**Conditional clock application.** If GC458 is verified, every x_(2n)(2)=0 in the empty-left full0101 family, and every V_(2n)(4)=0, including time0 via G229. Apply the identity at j=1,t=2n to obtain
+
+`x_(2n+2)(3)=s_n XOR x_(2n)(5)` for every n>=0.
+
+Thus the even column5 bit is exactly the discrepancy between the next even column3 bit and the prescribed effective input s_n. It is not an independently free bit once that column3 temporal track is specified. This does not force the discrepancy to vanish, determine column3, or discard column5 products. At n=0, G229 fixes s_0=x_0(5)=1, hence the formula yields x_2(3)=0, agreeing with the known prefix. No extension of that prefix is assumed.
+
+
+**Duplicate guard for G232:** actual nearest G230,G231,G228 read in full. Their bit gates and predecessor-based product removals are inputs here; this entry instead computes an individual two-step bit and its exact nonlinear correction. Initial notation s_0=x_0(1)=1 and x_0(5)=1 refers to two separate prefix facts.
+
+**Scope:** the local identity requires only the white intervening input. Dropping the nonlinear product requires the separate product-zero premise; the clock readout uses G231 and the empty-left full0101 family. No farther bit is thereby forced white.
+
+### G.GPT233. even column3 detects effective switches (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC461 at4f50bea; Local L271 at4ff97a2 verifies both track formulae including n=0, reaffirmed L272 at572eb5e. Source proof copied verbatim below. G232 now supplies the source's pending GC459 dependency, making both formulae unconditional within the stated empty-left full0101 family. Write q_n=x_(2n)(3), z_n=x_(2n)(5) and s_n=x_(2n)(1).
+
+**Proof of the column3 formula.** In G61 notation put b_n=x_(2n)(2), d_n=x_(2n+1)(1), c_n=x_(2n+1)(2). G231 proves b_n=0 at every n>=0 in this family, including time0 through G229. Hence d_n=(1-s_n)*b_n=0 and c_n=s_n XOR q_n. G61's next-white-time equation is s_(n+1)=1 XOR ((1-d_n)*c_n)=1 XOR s_n XOR q_n. Solving over the two-element field gives q_n=1 XOR s_n XOR s_(n+1). Therefore q_n=0 exactly when s_n differs from s_(n+1), and otherwise q_n=1. No condition on farther right bits was imposed. This determines the track uniquely from the known effective stream, but says nothing about existence or uniqueness of an entire right realization.
+
+**Conditional column5 formula.** GC459's proposed readout is q_(n+1)=s_n XOR z_n. Combining it with the just-proved formula at n+1 gives z_n=1 XOR s_n XOR s_(n+1) XOR s_(n+2). This use of GC459 remains pending its independent reading. It cannot be obtained merely by declaring the nonlinear correction zero without G231's product conclusion.
+
+
+**Duplicate guard for G233:** actual nearest G232,G231,G225 read in full. G232 supplies the two-step readout; G231 removes the even column2 bit track; G225 only restricts source products to switches. Solving G61 now fixes the entire even column3 track and then column5, without assuming whole-right parity.
+
+**Scope:** these necessary tracks hold for every member of the empty-left full0101 family, not merely G60's explicit parity-sparse member. They do not determine a whole right realization or exclude mixed-parity members. Initial s_0=x_0(1)=1 and x_0(5)=1 are separate prefix facts.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

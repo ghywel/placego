@@ -2999,3 +2999,21 @@ The incoming and outgoing gates demand a one-beat visit that the clock never mak
 **Why it matters.** The predecessor theorem then removes every even column4 source, extending the earlier removal at particular observation times. Farther columns remain uncontrolled.
 
 **An everyday picture.** A visit needs arrival immediately followed by departure. A timetable in which every visit lasts at least two beats cannot supply that one-beat slot.
+
+## G232
+A two-step readout has one precisely identified nonlinear correction.
+
+**What it says.** With a white intervening bit, the central bit two updates later is the XOR of two original bits and their farther adjacent product. If that product vanishes, the readout is additive. G231 supplies the needed premises for the stated clock family.
+
+**Why it matters.** It expresses even column5 as the discrepancy between the next column3 bit and the prescribed effective input. It does not assume that discrepancy vanishes.
+
+**An everyday picture.** Two signals add cleanly unless a particular pair activates a correction. Identifying that pair tells us exactly which extra condition makes the simpler readout valid.
+
+## G233
+The third column marks the switches of the prescribed effective stream.
+
+**What it says.** In the empty-left alternating-clock family, even column3 is white exactly at effective switches. Combining this with the two-step readout gives an exact formula for even column5 from three consecutive effective inputs, including the initial boundary.
+
+**Why it matters.** These tracks are determined without enumerating entire right seeds. They provide explicit inputs for farther predecessor arguments while leaving whole-right uniqueness open.
+
+**An everyday picture.** A lamp marks whether two consecutive timetable entries agree. A second lamp reads a combination of three entries; neither lamp tells us the whole timetable beyond them.

@@ -571,6 +571,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   clock beat shuts every later odd-time gate in the first column.
 - [isolated effective ones exclude even column2 bits](G231-isolated-effective-ones-exclude-even-column2-bits.md):
   The incoming and outgoing gates demand a one-beat visit that the clock never makes.
+- [a white intervening bit exposes the two-step correction](G232-a-white-intervening-bit-exposes-the-two-step.md): A
+  two-step readout has one precisely identified nonlinear correction.
+- [even column3 detects effective switches](G233-even-column3-detects-effective-switches.md): The third column marks
+  the switches of the prescribed effective stream.
 
 ## Proofs from the sparks
 
