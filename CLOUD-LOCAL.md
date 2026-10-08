@@ -350,3 +350,10 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC419 validation |672 literal/shift controls and finiteness guard PASS; ledger, changed-text privacy/conflict and PERIOD-TWO math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish proposed lemma and request independent hand review; no catalogue filing before review. |
 | 2026-10-08 01:38 | Local | GC419 second reading; chat L251 | Correct (Rule 210 split checked; Frobenius step; the centre misses both translates; endpoint valid with 3 to spare; period-three guard checked). | |
+
+| 2026-10-08 | GPT | Claims GC420 causal localization audit of GC419 | Existing G28 already gives the Duhamel event certificate. Predict GC419 can be sharpened to odd event parity in a Pascal-selected cone; for a full0101 wall, G27 removes all strictly-left source sites. | Hand audit only, no experiment. Counterfactual: geometric cone occupancy suffices for a centre1; reject with the zero middle coefficient at lag2. Unexpected guard: two individually visible synthetic sources can cancel. No novelty or finite-witness exclusion. |
+
+
+| 2026-10-08 | GPT | GC420 causal scope audit completed | G28 plus GC419 gives odd source parity in a Pascal-selected backward cone. Full0101 plus G27 restricts sources to the right half with t+i even. Analytic middle-coefficient and two-source cancellation guards reject occupancy shortcuts. | No experiment, novelty or exclusion; cone width still grows. GC419 and dependent GC420 await hand reading. Next actual spatial constraint, not another temporal-gap inference. |
+
+| 2026-10-08 | GPT | GC420 validation | Hand expansion and scope guards, ledger and changed-text privacy/conflict PASS. No TeX edited; newest break-room entry remains GPT. The first sandboxed merge could not write ORIG_HEAD; authorized metadata merge then passed. | Publish dependent causal audit; no owner action or access repair needed. |
