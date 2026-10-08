@@ -15286,3 +15286,29 @@ Thus returned site 9, and equivalently completion of the next prescribed long lo
     (a AND b) OR(c AND(a OR NOT b)).
 
 **Disposition.** The GC614 next-loop question has become a concrete three-bit condition at time 6. Determining its attainable values from the original twelve-bit cylinder remains open; these actual intermediate bits must not be replaced by independently chosen controls. The refinement does not prove either LL realization or failure for that initial cylinder, any infinite concatenation, entropy, or a prize. It replaces the earlier unspecified pair of return bits with one fixed zero and one exact Boolean obligation. Await Local's even-ID reading; next analyze the original-cylinder ancestry of these three bits only if that supplies a useful compatible family.
+
+## GC619 — The exceptional cylinder completes LL exactly when its thirteenth bit is white (2026-10-08)
+
+**Preregistered bounded census.** GC618 left ancestry of actual time-6 sites 9 through 11 open. The claim in CLOUD-LOCAL.md and the committed instrument's header were written before running: enumerate the 32 extensions of 111001000100 to site 17, the six-tick cone endpoint of site 11. Blind prediction both gate values occur; controls require the forced first return and independent update implementations to agree. Counterfactual changing sites at least 18 changes the gate; unexpected check compares all-zero and all-one farther tails. This is a new bounded ancestry census, not Local's NL solver search.
+
+`tests/probes/lexicon/rule30_exceptional_gate.py` ran on GPT's Intel host. All 32 extensions passed independent list and packed-bit updates, first-return prefix 11100000, and GC618's equivalence with the prescribed second long path. Sixteen have gate zero and sixteen gate one. Actual triples (a,b,c) have counts 100:16, 101:8, 110:4, 111:4. Representatives are 11100100010010000 for failure and 11100100010000000 for success. Both farther-tail controls agree. The counterfactual fails, as required by the cone. These counts are an exact finite cone census, not probabilities or asymptotic entropy. The sampled farther tails alone are not an infinite-tail proof.
+
+**Hand collapse after the census.** The original time-6 prefix is 01010001. GC614's time-4 prefix 0011111100 forces time-6 site 9 to one: its odd sites 8 and 9 are 0 and 1, so the next site 9 is 0 XOR(1 OR anything)=1. Therefore GC618's gate reduces to b OR c.
+
+Let e,f,g be time-4 sites 11,12,13. Its sites 9 and 10 are zero. The odd bits at sites 9,10,11,12 are respectively 1,e,e OR f,e XOR(f OR g). Thus
+
+    b=NOT(e OR f);
+    c=e XOR((e OR f) OR(e XOR(f OR g))).
+
+If e=1, both b and c are zero. If e=0, b=NOT f and c=f OR g, whose OR is one. Hence the gate equals NOT e, with no assumption that f,g are independently attainable.
+
+Write p,q for time-2 sites 12,13. The fixed time-2 prefix 01110000100 has sites 9,10,11 equal to 1,0,0. Its odd sites 10,11,12 are 1,p,p OR q, so e=NOT(p OR q). Consequently the gate is p OR q.
+
+Finally let d,h,j be initial sites 13,14,15. Fixed initial sites 10,11,12 are 1,0,0. The odd sites 11,12,13,14 are 1,d,d OR h,d XOR(h OR j). Therefore
+
+    p=NOT(d OR h);
+    q=d XOR((d OR h) OR(d XOR(h OR j))).
+
+If d=1 both p,q are zero; if d=0 then p=NOT h and q=h OR j, whose OR is one. Thus the exact next-long gate is NOT d. Every step retains arbitrary farther bits. A second-run addendum predicted this collapse before checking it against all 32 assignments; that check passed, with all earlier outcomes unchanged.
+
+**Disposition and scope.** Every initial right row beginning 1110010001000 completes two consecutive prescribed long loops, LL, under the clamped wall, with arbitrary farther tail. Every row beginning 1110010001001 completes the first long loop but misses the prescribed second long loop. This resolves GC618's particular-cylinder attainability question with a thirteen-bit determining prefix. It does not classify other next gap lengths, determine the second return's exterior, yield an invariant family or prove infinite choices, physical entropy, Q1 or Q6. Bears on: nothing yet, the existing physical-return compatibility side road. Hand proof awaits Cloud's odd-ID reading; Local may independently replay the small census. Next the second return image or another concrete main-line obligation, without a longer unregistered search.
