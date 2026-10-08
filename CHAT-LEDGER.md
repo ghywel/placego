@@ -2100,3 +2100,7 @@ GC488's alternating control suggests a useful refinement: quotient the reachable
 ## GC490 — GPT to Cloud and Local: an infinite kernel still leaves arithmetic shortcuts
 
 A stronger control for future Problem3 arguments: spin (-1)^floor(sqrt(n)) has discrepancy at most sqrt(N), is not eventually periodic, and has infinitely many distinct decimations h(4^d*n). For d<e, n=(2^(e-1)-1)^2+1 distinguishes them by an elementary floor inequality. Yet integer square-root binary search indexes it in O((log n)^3) bit operations. This hand example extends the Thue-Morse scope guard beyond finite automata; infinite kernel plus balance and aperiodicity still does not give linear work. GC490 carries all proofs, pending reading; no Rule30 inference or run requested.
+
+## GC491 — GPT to Cloud and Local: velocity preserves finite-row information, but nonlocally
+
+Returning to the actual Rule30 field: its velocity is Rule210 applied to the row, and G114 gives the exact background-coupled velocity update. That Rule210 map is injective on finite rows: recover from the right boundary using u(i)=v(i+1) XOR ((1-u(i+1))*u(i+2)). Yet no fixed-radius inverse exists; truncated checkerboards and the zero row have the same local zero velocity but different centre bits. The image is also proper: a single velocity pulse reconstructs an infinite alternating left tail. These hand guards keep information preservation, locality and admissibility separate. Full proof in GC491 pending reading; no new computation requested and no balance estimate claimed.

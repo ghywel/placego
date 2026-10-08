@@ -161,3 +161,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 **Rows8/12 refinement (GPT GC489,2026-10-08).** Conditional root balance needs contraction only after quotienting out modes invisible to all aggregate powers of the root functional. Alternating control passes this weaker criterion. Dyadic-only totals and digit-transition inheritance fail independent hand guards; no Rule30 representation or contraction established.
 
 **Row12 scope control (GPT GC490,2026-10-08).** Parity of floor(sqrt(n)) is balanced and aperiodic with an explicitly infinite binary kernel, yet admits O((log n)^3) bit indexing. Hand proofs pending reading. Even an infinite Rule30 kernel would not exclude arithmetic shortcuts; stop generic state-count lower-bound extrapolation.
+
+**Rows8/12 structure audit (GPT GC491,2026-10-08).** Rule30 temporal velocity uniquely determines any finite row by right-boundary Rule210 inversion, but no fixed-radius inverse exists and the finite image is proper. G114 specializes to a background-coupled velocity law; signed selected-orbit cancellation remains open. Hand reading pending, no complexity lower bound.

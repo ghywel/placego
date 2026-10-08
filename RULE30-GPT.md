@@ -12228,3 +12228,32 @@ The last inequality follows from d<=e-1 and 2^(e-1)<=2^e-2 for e>=2, with strict
 **Exact indexing cost.** Let b be the binary input length of n. Binary-search the integer interval from0 to2^ceil(b/2) for the largest x with x*x<=n; then return its parity. There are O(b) comparisons, each using schoolbook O(b^2) bit multiplication and O(b) comparison, hence O(b^3) bit operations and O(b) workspace suffice. The n0 case is immediate. Integer arithmetic gives exact floor(sqrt(n)); no floating-point rounding assumption. This upper bound is sublinear in n despite the infinite kernel, balance and aperiodicity.
 
 **Outcome and next.** All three predictions follow from the hand derivations, not measurements; the declared counterfactual fails. This extends GC481's Thue-Morse guard beyond finite-state indexers: even proving infinitely many Rule30 decimations would still leave arithmetic shortcuts unaddressed. It supplies no Rule30 shortcut. Retain the explicit family as a control for future lower-bound proposals and return to the selected orbit's actual structure, rather than collect further generic complexity obstructions.
+
+## GC491 — Finite-row velocity retains the row, through a nonlocal inverse (2026-10-08)
+
+**Bears on.** Problem2's signed non-flipping target and Problem3 representation cost. Return from generic complexity controls to Rule30's actual velocity field. The coupled law is a specialization of reviewed G114, and the reconstruction is elementary left-permutative inversion with a finite right boundary; no novelty or prize claim. Existing-record search found G97's Rule210 velocity identity and G114's general damage law, not this combined finite-row reconstruction scope statement. Independent reading pending. No experiment or Local job.
+
+**Checks chosen first.** Predict that the entire temporal velocity of a finite Rule30 row determines that row uniquely. The independent zero-row control must reconstruct zero. Counterfactual: a fixed-radius velocity window suffices to reconstruct its centre for every finite row, must fail on truncated checkerboards. Unexpected: not every finite binary velocity field has a finite-row preimage. These are hand checks, not a census.
+
+**Coupled law.** Write u_t(i) for Rule30, and v_t(i)=u_t(i) XOR u_(t+1)(i). Binary arithmetic gives
+
+    v_t(i)=u_t(i-1) XOR ((1-u_t(i))*u_t(i+1)).
+
+Thus v_t=G(u_t), where G is Rule210. Apply G114's exact difference law to the two consecutive Rule30 rows (u_t,u_(t+1)); they are both evolved by Rule30. At one site, suppressing t, write u_c,u_r and v_l,v_c,v_r for the indicated neighbours. Then
+
+    u_next = u_c XOR v_c,
+    v_next = v_l XOR ((1-u_r)*v_c) XOR ((1-u_c)*v_r) XOR (v_c*v_r).
+
+Equivalently v_next=F30(v) XOR (u_r*v_c) XOR (u_c*v_r). This is background-coupled, not autonomous Rule210 evolution. It supplies an exact two-layer representation; no signed-cancellation estimate follows from its existence.
+
+**Finite-row inversion.** For any finite row u, let v=G(u). Rearranging the Rule210 equation at site i+1 gives
+
+    u(i)=v(i+1) XOR ((1-u(i+1))*u(i+2)).
+
+Choose a right boundary beyond both supports, put the two rightmost u bits to0, and recur leftward. If u is nonzero with rightmost black site R, v has rightmost black site R+1: its input there is100, and all sites farther right have000. Therefore the boundary can be chosen from v itself. Two finite preimages of the same v agree from the right boundary by induction, proving injectivity. The zero field reconstructs zero and has no nonzero finite preimage. Reconstruction is a serial scan across the stated finite interval, an upper bound for this method only.
+
+**Unexpected proper-image guard.** Let v have its sole black cell at0. Any finite preimage would have rightmost black cell at-1. The recurrence gives u(-1)=1,u(-2)=0 and, for every subsequent site to the left, alternating1,0. This does not terminate. Hence this finite v is not in the image of finite rows. Injectivity does not justify treating all finite velocity fields as admissible states.
+
+**No bounded local inverse (hand counterexample).** Fix any proposed radius r. The infinite checkerboard with black even sites is fixed by Rule30: triples010 and101 preserve their centre values. Its velocity is therefore identically zero. Truncate that checkerboard to [-r-2,r+2], giving a finite row with u(0)=1. Every radius-one input determining v on [-r,r] still lies inside the checkerboard patch, so v is zero throughout that window. The all-zero finite row also has zero velocity there but u(0)=0. This refutes every uniform fixed-radius inverse, on actual finite-row images. It does not contradict global injectivity: the truncation boundaries give different velocity farther away. Nor does it rule out a faster nonlocal reconstruction algorithm.
+
+**What changes.** Velocity alone has not thrown away information on the finite-row domain; after full reconstruction it can be evolved by G composed with F30 composed with G inverse on the proper image of G. The image is forward invariant because Rule30 preserves finite support. But the inverse cannot be a fixed-radius local rule, and the coupled law retains the background explicitly. The selected singleton orbit lies in this domain at every finite time. Any balance proposal based on its velocity still needs signed orbit-conditioned cancellation; replacing the background by an autonomous Rule210 orbit remains invalid. Next inspect that coupled cancellation rather than infer randomness from invertibility or locality from information preservation.
