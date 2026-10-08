@@ -1,4 +1,4 @@
-# The state of the proof: Rule 30, 2026-10-07
+# The state of the proof: Rule 30, 2026-10-07 (section 4 updated 2026-10-08)
 
 *Written by Cloud on 2026-10-07 at the owner's request: "an accurate 'State of the proof' - which is not to say a
 proof exists - but where we currently 'stand'. How much closer are we to the proof than when we started. Can we
@@ -150,6 +150,37 @@ the interior chooses at most log2 6 bits per kick (Proposition 13, PROOFS.md ent
 Local). The statement conditions the old wheel duration and the new phase fit; it does not classify
 arbitrary column1 histories. It narrows what the missing statement must control. It does not supply it: "the cost side: a statement
 that the kicks must pay for the left half's conditions" is still open.
+
+### The frontier on 2026-10-08 (added by Cloud, 22:31 BST)
+
+The prize gap is unchanged: period 2 is still open, and the counting statement (Q1) has not moved. Here is what the
+day settled around it. Each item names its source, and each proof named here has a second reader.
+- **The sibling Rule 210 is settled for period 2.** No finite Rule 210 seed keeps the full 0101 clock (Proposition 19,
+  PROOFS.md entry 32, hand proof, second-read). It does not carry over to Rule 30 verbatim (GC479).
+- **Q6: the frontier, mapped exactly.** This is the owner's red-object idea (CL054), worked through as a ray argument.
+  - A finite left edge forces an edge event at every step of its frontier (GC585).
+  - That ray's pull on the cells that must stay white has the parity of the Fibonacci numbers, odd, odd, even
+    (GC586).
+  - The inside must pay that beat with ever older events (GC598), at exact binary age slots (GC600). It cannot do
+    it with a long streak beside the edge (GC597), but it can restart events for ever (GC599).
+  - Five fixed sources are silent at the frontier (SS and GC589), and the near-silent ones never harden (SO and
+    GC591), so silence alone cannot block the ray.
+  - The open step is joint: whether the actual clock lets the late, restarting events pay the beat at every depth.
+    The realizable white runs stay between 7 and 16 out to depth 102 (RR, RR2, replayed in RRX, RRP and ZR3), so no
+    counterexample appears where we can look.
+- **Edge events obey three local rules** (CL055, read in GC595): never adjacent straight down or down-left, and a
+  row of events runs over black cells and ends on one white.
+- **Row 6.1: the two readings of a kick, reconciled.** The phase reading and the charge reading of a kick differ by
+  14 times the sum of the odd gaps between the locks, mod 28 (G248 with GC582). This was replayed at all 211,000
+  recorded lock pairs. Entry 26's one-turn table needs 57 observations; with 56, one more class appears, which no
+  recorded kick uses (GC584, GC588, replayed independently).
+- **Q1:** the first right-paid ratio keeps a small bias out to j = 35 (ZR3, L316).
+- **Side questions, off the board by design** (CONSTELLATION.md section E). One asks whether column 1 next to the
+  wall carries positive information per symbol. Two neutral blocks, 100 and 10000, have actual returns (GC605 to
+  GC609). They do not concatenate freely: 11 of the 128 seven-block words are forbidden, with certificates (NL,
+  L323).
+- **Refuted and kept**, among others: hardening of near-silent sources by age 256 (SO), a further departure class
+  at 54 transitions (RO), and two slips in the short-return proofs, each caught by a second reader (GC608, GC609).
 
 ## 5. The rate of discovery, measured
 
