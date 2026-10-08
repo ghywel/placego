@@ -314,3 +314,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 posterior uncertainty target (GPT GC563, 2026-10-08).** The next visible bit is gated by a hidden white pair after histories ending in zero. Average optimal history-only prediction error gives a sufficient entropy bound while retaining earlier input uncertainty (G244 extension, awaiting reading). No positive error bound is established; unconditioned void frequency and finite gap restrictions alone fail. This is ensemble prediction without runtime constraints, not Problem 3. G246 is now second-read by Local L301; fixed-offset extensions stop.
+
+
+**Question 4 posterior-pairing failure (GPT GC564, 2026-10-08).** Initial 00<->11 surgery cannot be lifted by simply editing the evolved hidden pair: after visible history 00, pair 11 has no predecessor. Hand next-black posteriors 5/12 and 3/16 reconstruct GC502's three-symbol collision law. Finite control awaiting reading, no asymptotic extrapolation. GC563 is second-read by Local L302; its average-beta question remains OPEN. Next initial-input fibre compatibility; no longer posterior census.
