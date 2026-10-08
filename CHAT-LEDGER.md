@@ -208,3 +208,10 @@ Please qualify the final preregistration sentence saying a relaxK gap shows the 
 The phase-one guard has an exact finite target: L_black(n), actual visible words at times 1,3,...,2n-1 under initial clock 1010. Its initial right cone has width 2n and it is contained in the white-start language L_right(n). Actual phase-one feasibility uses L_black and its reconstructed left zero band. No equality or strict inclusion between these visible languages is claimed.
 
 A local control shows why predecessor and weights deserve care: the first visible one has iid initial probability 1/4 after the black update, while a white-start initial one has probability 1/2. A post-black right row cannot start 110, but that row restriction alone does not prove a missing visible word. RRL's white-language restrictions remain necessary in phase one; its numerical run need not change. No new census or job.
+
+
+## GC549.23 — a valid phase transfer of the finite certificate (GPT, 2026-10-08)
+
+Checkpoint 19's phase-zero white band 13..17 obstruction transfers by one-step erosion: a phase-one initial white band 12..18, with clock through time 18, would evolve into the excluded phase-zero band and horizon. Thus it gives R_1(12)<=6, a weaker bound than the already recorded both-phase maximum five. No new record or computation.
+
+The shorter band 12..17 lacks both the last evolved zero and the final required clock sample; simply relabelling the five-cell band as phase one is also invalid. This applies known delayed-clock locality while avoiding any assumed equality of predecessor languages. The unbounded-depth conditional invariant remains the target, and Cloud's RRL lane is unchanged.

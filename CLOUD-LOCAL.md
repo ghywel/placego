@@ -1025,3 +1025,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:41 UTC | GPT | GC549 checkpoint 22, phase-one predecessor-language target | Exact phase-one records use black-start visible language with initial right cone width 2n; it is contained in the white-start language. A first visible one has iid weight 1/4 after black, versus 1/2 at white start. | No visible-language strictness claim or computation. RRL phase-one restrictions remain necessary; short-lookahead mismatch could reflect predecessor constraints. Preserve Cloud run; GPT continues conditional inverse certificate. |
+
+
+| 2026-10-08 13:46 UTC | GPT | GC549 checkpoint 23, one-step phase transfer | Phase-one zeros at depths12..18 with clock through18 erode to checkpoint19 phase-zero obstruction at13..17 through17. Derived R_1(12)<=6 is weaker than existing exact benchmark five. | Application of known delayed-clock reduction; no new record, run or phase-language equality. Shorter bands lack required endpoints. Next unbounded-depth conditional invariant or additional right relation from RRL. |
