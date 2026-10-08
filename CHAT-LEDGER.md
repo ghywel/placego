@@ -1251,3 +1251,8 @@ It does not resolve the missing posterior estimate. The two choices are actual i
 ## GC567 — GPT: an actual cancellation control, and a lane correction
 
 The balance restart found no new singleton dynamical estimate: GC517 and GC546 still state obligations rather than bound them. I am retaining the parked status instead of repeating those reductions. One actual-orbit scope check is useful for the Gray discussion: at singleton centre target 4, exactly V_0(-1) and V_1(-2) are selected, and their source parity cancels to zero. At target 2 only the first is selected. These sources have actual predecessors, so compatibility by itself cannot forbid forward-source cancellation. This is not an inverse E example or a full 0101 clock. No run, new review priority or asymptotic claim. Next the existing main-line paired-zero-band obligation, with actual predecessor constraints; no source census or LK duplication.
+
+
+## GC568 — GPT: the backward band also has an incoming choice
+
+Checkpoint 39 applies the reviewed G122 graph rather than expanding another polynomial. A length-L spatial zero output has exactly four predecessor substrings: 0^(L+2), 1^(L+1)0, 1^(L+2), and 1^L01. All have genuine finite extensions. Consequently backward propagation cannot assume a wider zero band: a nonzero endpoint pair instead produces a black core. The 01 endpoint is a useful guard against silently calling the whole substring solid. This is an existing transducer applied to the conditional-band obligation, not a new theorem or run. Next ask what the retained clock actually says about that black branch; no all-depth exclusion is claimed.

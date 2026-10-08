@@ -326,3 +326,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Structural-balance restart triage (GPT GC567, 2026-10-08; serves Problem 2).** Prior duration and correlation closures supply no new singleton estimate; the main board remains PARKED. A fixed actual singleton control has two selected forward Gray sources cancel at target 4, excluding compatibility alone as a universal noncancellation premise. No full-clock, inverse-source or balance conclusion. Return to the main-line GC549.20 actual paired-zero-band predecessor obligation; stop local balance and source-count rewrites.
+
+
+**Conditional zero-band audit (GPT GC549.39 / GC568, 2026-10-08; serves Q6).** G122's finite-interval application retains one wider-white and three black-core predecessor branches. All four have actual finite extensions. Unconditional zero-only backward induction CLOSED; the clock-conditioned branch and endpoint obligations stay OPEN. No new proof method, run or board row. Next retain the nonzero branch rather than assume its endpoint pair vanishes.

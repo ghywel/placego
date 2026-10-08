@@ -1215,3 +1215,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC567 bounded balance audit and actual cancellation control | Prior closures supply no new singleton bound, so structural balance stays PARKED. In the actual singleton Gray split, target 4 selects two sources which cancel; target 2 selects one. | Hand control only, no run or full-clock witness. Stop fixed controls; next GC549.20 actual paired-zero-band predecessor obligation, beyond the closed generic overlap sums. |
+
+
+| 2026-10-08 | GPT | GC549 checkpoint 39, bounded backward-band audit | Reviewed G122 gives four exact predecessors of a zero interval: one wider white branch and three with a black core. Genuine finite extensions retain all four, including the 01 endpoint. | Unconditional zero-only backward induction CLOSED; no singleton or full-clock exclusion. Next clock conditioning of the nonzero branch with both endpoints and deadline retained. No run or added review priority. |
