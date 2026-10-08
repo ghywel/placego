@@ -9741,3 +9741,20 @@ Thus a common-period-four prefix without singleton drivers has whole-prefix slop
 **Hand controls, counterfactual and identified unexpected saving.** For a single uninterrupted ordinary q=4 block, GC594 gives adjusted cost at most -floor(m/3)/2+(m modulo 3)/2<=1. Its birth path has block debt at most two. The ordinary pair B=12,C=6 at arrival zero has delays 3,3 and debt one; D=7 supplies a compatible next word, so the full-line endpoint allowance cannot be deleted. With L=1 a zero driver followed by an all-black driver has fronts 0,0,2: the nonzero entrance clamp is real, refuting the counterfactual that ordinary drivers never pay a clamp. Nevertheless its two-edge global debt is negative. Unexpectedly counting the preceding zero's missing reset delay absorbs all block entrances in the global period-four bound, improving the crude sum of two per-block allowances. These are hand reset controls, not rooted occurrences; no computation ran.
 
 *GC595 duplicate disposition.* G247 nearest 25,G162,W246 full readings and summaries are retained. GC572 and GC573 already prove the birth normalization and clamp charge; this extension combines them with GC594's new compatibility bound, without reopening unsigned-charge or named-window refinements. All statements await reading in this combined scope.
+
+*Three adjacency rules for edge events (Cloud, 2026-10-08 20:47 BST; chat CL055; for GPT's reading; G240).* Write
+y_m for column(-m) of the wall form (y_0 the clock, y_(-1) column 1) and E_k(t) = y_(k-2)(t) AND NOT y_(k-1)(t), the
+Sieve's dot at depth k. Each rule uses only Rule 30's update at a position <= 0, y_m(t+1) = y_(m+1)(t) XOR
+(y_m(t) OR y_(m-1)(t)), which the sideways definition of the left half guarantees for every m >= 0.
+(A) E_k(t) = 1 forces y_(k-1)(t) = 0, so E_(k+1)(t) = y_(k-1)(t) AND NOT y_k(t) = 0. Never straight down.
+(B) If E_(k+1)(t-1) = 1, then y_(k-1)(t-1) = 1 and y_k(t-1) = 0, so y_(k-1)(t) = 0 XOR (1 OR y_(k-2)(t-1)) = 1 and
+E_k(t) = 0. Never down-left (a black cell with a white left neighbour stays black).
+(C) If E_k(t) = 1, then y_(k-2)(t+1) = 0 XOR (1 OR y_(k-3)(t)) = 1 and y_(k-1)(t+1) = y_k(t) XOR 1, so
+E_k(t+1) = y_k(t). A row of n events is n - 1 dots over black cells closed by one dot over a white cell.
+Corollary. The red set R(k, t) = {(j, t + i): i a binary subset of k - j} has the vertical edge i = 0 and the slanted
+edge i = k - j, consecutive cells of which are pairs of types A and B. So neither edge ever holds two adjacent
+events: at most ceil(k / 2) of its k cells. This strengthens CL054's proved half (no edge is ever full). Both edge
+cells carry Pascal coefficient 1, so every event on them counts in the parity. With GC592 (down-right: one more
+event costs two more white cells), the four nearest directions have exact local laws. Checked at every cell of 400
+actual right halves to depth 120 in `rule30_cloud_event_coherence.py` (EC-C1 PASS). Not a bound on the interior's
+parity supply.

@@ -40,6 +40,21 @@ UNEXPECTED CHECK (not yet measured): two rows down, P(E_(k+2)(t) | E_k(t)) is ab
   Confidence 0.55.
 Counterfactual: if two rows down is near 1/4, the stacked look of the ASCII picture is the wheel lock or the eye, and
   the sharpness the owner sees comes from rules A to C alone.
+
+OUTCOME, 2026-10-08 (by 20:47 BST; seed 8080, 400 halves, 4 s): EC-C1 and EC-C2 PASS. Rules A, B and C and GC592's
+  r = 1 case hold at every cell; random photons break A and B 569,337 and 569,449 times, so the counters can fail.
+  Event rates: Rule 30 0.2592, random photons 0.2593. Continuation, Rule 30 | random photons: row 0.5375 | 0.2596,
+  down-right 0.2418 | 0.2590, straight down 0 | 0.2592, down-left 0 | 0.2592, two down 0.2897 | 0.2595. EC-P1,
+  EC-P2 and EC-P3 HELD. The unexpected check was REFUTED: two rows down is 0.29, above a coin's 1/4 and random
+  photons' 0.26, but not above 0.30. So the stacking is weak, and the counterfactual mostly holds: the sharp lines
+  come from rules A to C.
+  Not predicted: row runs of events are close to geometric (P(longer | at least n) = 0.52 to 0.62 for n = 1 .. 6),
+  then fall off a cliff after length 8 (0.063). Post-hoc, the cliff is not the wheel lock: it appears both in the 32
+  halves that sit on the wheel for t = 100 .. 211 and in the other 368. Runs of length 8 or more concentrate at
+  depths 3, 34, 65 and 96 (7097, 2355, 1239, 480). Depth 3 is explained by the record's identity E3 = 1 - c (G240,
+  CL048): E_3(t) is NOT column 1 at the even time at or after t (checked at every cell, post-hoc), so a row run at
+  depth 3 is twice a white run of column 1's even-time samples. The longest such run in this sample is 4, hence 8.
+  The spacing 31 between the other depths is unexplained.
 """
 import random
 import sys
