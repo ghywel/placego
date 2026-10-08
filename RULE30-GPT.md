@@ -12411,3 +12411,34 @@ The source's finite power iteration still provides an approximation, not an exac
 **Independent hand control.** At width 1, write the current bit c and the two boundary inputs u,u'. The two updates give c'=c OR u and c''=1 XOR (c' OR u'). If c=1 then c''=0. If c=0 then either next visible value is possible. Thus visible 11 is forbidden, and every infinite word without 11 is realized by selecting boundary inputs for its consecutive transitions. Its two-state adjacency matrix is [[1,1],[1,0]], whose Perron root is (1+sqrt(5))/2. This checks the phase, output timing and edge multiplicity independently of the subset construction. The constant-zero continuation also demonstrates that accepted prefixes need not become dead ends.
 
 **Outcome and next.** For the unconstrained-initial-row 0101 controlled-layer model, the compact-language bridge is complete as a hand argument pending second reading. It does not establish positive or zero limiting entropy, certify every implementation detail, or settle either finite-support boundary. Next seek an analytic cross-width inequality or a uniform lower-language construction; further digits alone would not settle the question.
+
+## GC500 — A finite backward cone gives an explicit entropy-language diagonal (2026-10-08)
+
+**Bears on.** Portfolio question 4, GC498/GC499, constellation rows 5/6. Elementary finite-propagation refinement of the compact argument, hand reading pending. Checked prior GC483 finite-cone truncation, G129 fixed-support compactness and G130 finite-prefix scope. No novelty claim, numerical run or new Local job. GC499 startup checks remain current.
+
+**Predictions before the hand block.** Length-n visible words stabilize by controlled-layer width 2n-1. A finite initial right tail should suffice to realize each such word when the wall is externally clamped. Counterfactual: these horizon-dependent finite tails supply one finite-tail realization of every entire infinite trace, is an invalid quantifier inference. Unexpected check: finite-right-tail traces are dense in the unrestricted clamped-wall language, despite lacking a common support bound. Independent controls below use the first two visible outputs directly.
+
+**Explicit stabilization.** Let L_w(n) be GC499's allowed length-n visible words, sampled at times 0,2,...,2n-2. A radius-one update makes the output at site 1 and time t depend only on initial right sites through 1+t and the intervening clamped wall values. Thus all these observations depend only on initial right sites 1 through 2n-1. For any w>=2n-1, the free input at site w+1 cannot reach an observed site before the last sample. The two extra updates performed after the last visible filtering do not remove any rows, because updates are total.
+
+Take a width-w realization and copy its initial right sites through 2n-1 into an infinite right half, setting every farther initial cell to zero. Evolve it with the same externally clamped wall. Induction on the backward cones preserves the entire visible word. Conversely every infinite right-half realization restricts to a permitted width-w controlled realization. Therefore
+
+    L_w(n)=L_infinity(n) for every w>=2n-1.
+
+This is a sufficient width bound, not an assertion that smaller widths always differ. It strengthens GC498's unspecified eventual stabilization only for this particular controlled-layer model. It does not control the convergence rate of h(X_w) as w increases, because computing a fixed-width entropy takes a separate arbitrarily long word limit.
+
+**An exact finite-count target.** Define C_n as the number of distinct length-n visible outputs produced by the 2^(2n-1) initial right words of length 2n-1 with zero initial tail, keeping column 0 externally clamped. The stabilization argument and GC499 give
+
+    C_n=a_infinity(n)=a_(2n-1)(n),
+    h_infinity=inf(n>=1) log2(C_n)/n.
+
+Each C_n is computable by finite enumeration, but this supplies no efficient algorithm or proposed large run. The number of possible initial words is an upper bound on the enumeration, not a lower bound on distinct outputs. For integer k>=1, h_infinity<1/k has a finite witness C_n^k<2^n for some n. Conversely h_infinity>=1/k requires C_n^k>=2^n for every n. Zero entropy is equivalent to having a finite witness for every k; positive entropy is equivalent to one k satisfying the lower inequality for all n. These are exact integer formulations of the missing uniform estimate, not a proof of either outcome. A finite set of positive counts cannot discharge the latter universal obligation.
+
+**Independent hand controls and endpoint guard.** C_1=2, from the arbitrary first initial bit. For two samples write initial sites 1,2,3 as a,b,c. The first update gives site 1 value a OR b and site 2 value a XOR (b OR c). The next wall value is 1, hence
+
+    visible(1)=1 XOR ((a OR b) OR (a XOR (b OR c))).
+
+If a=1 the second visible bit is 0. If a=0 it is 1 exactly when b=c=0. Thus C_2=3, with words 00,01,10, agreeing independently with GC499's no-11 language. Initial triples 000 and 001 have the same first two sites but give 01 and 00, respectively. Site 3 can matter at this horizon; this does not establish a minimal width for language stabilization, since free boundary inputs at smaller widths can already realize these words.
+
+**Unexpected density and retained support failure.** For any unrestricted clamped-wall trace and any n, its prefix is realized by a right seed supported within 2n-1. Consequently the set of traces from finite initial right rows is dense in X_infinity in the prefix topology. The finite row chosen can change with n. Density does not say this set is closed or that one finite seed realizes a prescribed infinite trace. Independent sequence-space control: eventually-zero sequences realize every finite binary word and are dense in the full binary shift, but do not realize the all-ones infinite sequence. This illustrates the quantifier failure without asserting such a counterexample inside Rule 30. The externally clamped wall is also essential: these finite right rows are not claimed to extend to finite global Rule 30 seeds with that wall.
+
+**Next.** Seek a proved upper family C_n<=2^(epsilon_n*n), epsilon_n tending to zero, or a uniform exponential lower count. Any finite-count instrument should retain exact output deduplication and the clamped-wall convention. No entropy value, general indexing lower bound or finite-support prize result is established here.
