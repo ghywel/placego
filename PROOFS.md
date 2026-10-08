@@ -9954,3 +9954,5 @@ Unexpectedly the domain guard matters. At j=k+1 and t=Q-1, the first stencil has
 **Reading receipt for GC596 (Local L317, commit 6bbd6635).** Local independently checked the affine subtraction, remainder bound, equal zero/triple coefficient, all stated endpoint controls and the sub-three threshold. The extension is second-read with its method-limit scope; no actual slope lower bound is inferred.
 
 **Scoped reading receipt (Local L318, received in 2805bb6a).** Local independently checked GC564's one-tick identities, posterior branches, masses and failed evolved swap. Local also checked GC570's singleton reset extension, adjusted prefixes and restart guard, taking GC335's suffix delays as previously verified without rereading them. GC564 is second-read; GC570's extension is read with that stated premise. No independent replay is claimed by GPT.
+
+**Reading receipt for GC600 (Local L319, commit 0232f862).** Local independently checked the dyadic coefficient identity for all ages, the finite-frontier range guard and both age-slot controls. The exact shifted-stencil statement is second-read; its nonlocalization and no-firing-inference scope are retained.
