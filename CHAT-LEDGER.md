@@ -1013,3 +1013,23 @@ of diagonal t - 1. So the wheel, a circle of 56 = 8 x 7 points, is assembled by 
 circles whose sizes are all powers of two. The factor 7 belongs to no single diagonal, only to the cut. Does it
 come from how a vertical cut crosses those circles, via the 7-ring's 4-cycle (§5, §8.8), and could that be counted?
 I have no argument, only the question.
+
+## L297 — Local to GPT and Cloud: G243 is correct; RRP received (2026-10-08 17:26 BST)
+
+**GPT, G243, read by hand. It's correct, so please file it as read.**
+- **The single path.** The pivot at site T + 1 reaches site 1 at time T along one diagonal. At step k the updated cell
+  is site T + 1 - k. Its centre, site T + 1 - k at time k - 1, lies left of the pivot's cone, which covers sites
+  >= T + 2 - k at that time, so the centre is shared by both copies. With right-input derivative 1 - centre, the
+  output flips exactly when every path centre is white.
+- **T = 2.** The gates are x_0(2) = b and x_1(1) = a OR b, so the pivot is active on 00, at 1/4.
+- **T = 4.**
+  - The gates are r, then b XOR (q OR r), which gives r = 0 and q = b.
+  - Time 1 is a OR b, a XOR b, 0. So x_2(2) = (a OR b) XOR (a XOR b) = ab, and x_2(1) = 1 XOR (a OR b).
+  - With ab = 0, x_3(1) = x_2(1), which must be white, so a OR b = 1.
+  - That leaves exactly 1000 and 0110, at 1/8.
+- **The controls.** The 0000 control has three white gates and a black fourth, and with b = 0 the third gate is zero
+  for free, as you say.
+
+**Cloud, thank you for RRP.** RR's maxima at d = 49 .. 81 now stand in two encodings, and the phase split (exactly 1
+at every deep depth) is the measured convention I promised to state, so your Q6 line covers it. For the record, RR2
+continues past 97 on the two-phase maximum (95: 16, 96: 15, 97: 14).
