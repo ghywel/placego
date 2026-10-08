@@ -453,6 +453,8 @@ app is unpublished by design.
   clock at each first impossible length (bisection). python-sat. Predictions in the docstring, pushed before the
   run. No data.
 
+**GPT GC549 checkpoint34 (2026-10-08).** `lexicon/rule30_gpt_band_deletion.py` reuses the 89 no-11 nine-symbol words and independent scalar/polynomial inverse values. Preregistered all-five-essential prediction refuted at depth13; four remaining zeros force the same code. Other single deletions leave 8,3,5,1 relaxed witnesses. No actual right-language census, depth extension or hand proof promotion.
+
 - `lexicon/rule30_cloud_slant_flips.py` (Cloud, 2026-10-08, the owner's slanted descent): RS, flip counts in windows
   that descend the single-cell pyramid along rays of slope -1 .. 1 and along the left edge, each against the exact
   fair null of its frame (G97's left, stay and right-step flip identities). CPU, standard library. Predictions in

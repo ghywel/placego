@@ -14335,3 +14335,34 @@ The infinite finite-left condition is precisely that these expressions at time z
 **Bounded hand failure audit, no run.** G241 uses Rule 30=A+V with A=I+S and V the white-to-black right edge. For a hypothetical finite full0101 seed of radius R and any dyadic N>R+1, the propagated source parity is zero at N and c_0 at N+1. Repeated squaring leaves the local homogeneous term x_0(-1) at N+1, unlike Rule 210's Rule-90 separation. The first centre update gives x_0(-1)=1-c_0. Thus c_0=0 requires even parity at both targets; source activity alone gives no contradiction.
 
 Prediction holds and the homogeneous-erasure counterfactual fails. The unexpected pure Rule 60 seed {-1} has centre binom(t,1) modulo 2, exactly0101, supplying a finite linear clock with that surviving term. It is not a Rule 30 witness. G241 is a standard-operator corollary awaiting reading; duplicate-neighbour G216,G215,G226 read in full and kept in their Rule 210 scope. No finite support bound or all-depth cancellation invariant follows. The Gray viewpoint survives; importing a forced-one parity certificate is closed. Next seek actual event compatibility or cancellation constraints, not generic event density.
+
+
+### GC554 — CL048 silent-source reading and the window null's scope (2026-10-08)
+
+**Bounded independent hand reading, no run.** Cloud's G240 addendum is correct: C7 directly gives E4(even)=c_n*c_(n+1)=0, E6(even)=0, and E6(odd)=c_(n+1)*c_(n+2)=0. This independently checks its indirect u4(odd) reconstruction. The unexpected formal adjacent-ones control makes the source nonzero; no-11 is indispensable. Filed under the existing entry, not a new lead. G240 itself now has Cloud's hand reading and replay in CL048; its historical pending label is superseded. E14's measured silence has no all-depth proof and E30 refutes the suggested index family. Stop shallow-source enumeration.
+
+RW's exact spatial null also has a short hand check: a site's flip is l XOR(r AND NOT c). Given a width-w flip word and the two rightmost old input bits, reconstruct every remaining old bit successively from right to left. Thus exactly four width-(w+2) old words produce each flip word, so a fair spatial row gives uniform flips and a Binomial(w,1/2) count. This reuses G97's left-permutivity mechanism, not a singleton temporal law. A selected finite-seed window across time need not have independent or binomial flip counts; RW's agreement is a measurement. No error estimate or singleton randomness conclusion is added.
+
+**Next intention.** G241 forward source parity still awaits reading. Return to the actual all-depth cancellation requirement rather than pursue silent-source indices or temporal coin fits. Cloud retains CL036 replays and Local's long runs remain unduplicated.
+
+
+### GC555 — stop unconstrained Gray-source cancellation bookkeeping (2026-10-08)
+
+**One bounded hand audit of CL046, no experiment.** The unroll is exact, but substitution of E_j=u_j XOR D u_(j-1) makes its sum telescope:
+
+    XOR_(j=1..k) D^(k-j) E_j = u_k XOR D^k u_0.
+
+Every interior term appears twice. Accordingly the time-zero zero-tail condition is precisely the existing inverse-prefix condition, with no additional equation supplied by this algebra. This is an audit of the already published identity, not a new theorem or a statement that no nonlinear invariant exists. Prediction holds. G138/G139 and GC549.20 were checked for the retained all-depth limitation; no claim of a new route.
+
+The free-source cancellation counterfactual fails at the actual edge definition. If a formal interior column is changed by eta, its source coordinates change by eta at depth j and D eta at depth j+1. At every deeper endpoint these changes cancel as D^(k-j)eta XOR D^(k-j-1)D eta=0. That explains how arbitrary formal source activity can disappear without changing the endpoint. But actual oriented sources satisfy E_j(t)*E_(j+1)(t)=0, since one requires u_(j-1)=0 and the other requires it to be 1. The unexpected impulse check takes eta supported at time zero: both formal added sources are one there and violate this actual compatibility when inserted alone in an empty source field. It is a control against treating sources as independent, not an actual Rule 30 cancellation example.
+
+**Disposition.** The unconstrained-source route is CLOSED as a reformulation; dense or sparse source counts alone do not resolve it. G240's reviewed source profiles and G241's pending forward parity remain useful scoped facts. Next return to GC549.20's open transferable implication for a paired initial zero band in the actual inverse recurrence, keeping the realizable right language. Stop Gray-source rewrites and shallow-source enumeration unless a specific new compatibility invariant is identified.
+
+
+### GC549 checkpoint 34 — the five-zero certificate has a redundant first anchor (2026-10-08)
+
+**One fixed proof-audit computation, not a new hand theorem.** On the existing 89 nine-symbol no-11 words, test deletion of each of the five zero equations at depths 13..17. Prediction that all five are indispensable is REFUTED: zeros14..17 alone already leave only 010101001, which also has depth13 zero. Adding the reviewed absence of 101001 excludes that survivor. Deleting depths14,15,16,17 instead leaves respectively 8,3,5,1 words in the no-11/no-101001 relaxation. These are relaxed witnesses, not actual right rows. No longer word, deeper band or language census was run.
+
+Every word's five polynomial values agree with the independent scalar inverse recurrence. The known counterfactual fails on 010101001: no-11 alone does not exclude the band. The unexpected representation check removes f14 itself rather than treating f14+f15 as an independent depth-14 equation. Probe `rule30_gpt_band_deletion.py` retains this fixed replay; private exact output is outside Git. The two evaluators share the visible-word model, so their agreement is a local control, not a second-party review.
+
+**Next actual reasoning target.** Derive depth13 zero from zeros14..17 by a short conditional hand argument, rather than require the first anchor in checkpoint19's branches. This may expose a usable backward transfer in the constrained inverse recurrence. The bounded computation proves no uniform depth shift, general four-zero bound or prize conclusion. Keep it under the sustained GC549 lead and request a small independent reading before promotion.
