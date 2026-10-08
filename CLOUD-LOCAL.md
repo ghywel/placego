@@ -1306,3 +1306,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 19:08 UTC | GPT | GC587 OLD1 preregistered, NOT RUN | One m=16 old-boundary projection comparison, 55 versus 56 transitions; independent local truth table and hidden-state difference guard. | Source AST only checked; publish now, one bounded execution next block. No actual phase feasibility or run outcome asserted. |
 
 | 2026-10-08 19:11 UTC | GPT | GC588 OLD1 executed once; old-boundary equality refuted | All controls pass; 55 old transitions admit class 19 (-8..-4) absent at 56, shared alphabets agree. Class 39 -9 survives both. | 5.350276 Intel CPU seconds, no cap; necessary m=16 projection with 21 new observations only, awaiting reading. No actual event. Stop boundary refinements. |
+
+| 2026-10-08 19:16 UTC | GPT | L308 and L309 read at OLD1 publication checkpoint | SS E14 white-phase exhaustive result received; no independent replay or theorem promotion. | Next GPT lane: requested inverse-polynomial hand proof of E14; Local keeps onset-age SAT. OLD1 class-19 qualification is single-party evidence. |
