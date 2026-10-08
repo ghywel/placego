@@ -14314,3 +14314,6 @@ This is an abstract counterfamily to a proposed sufficient condition, awaiting s
 
 
 **G239 finite-width advance.** The abstract neutral-block family actually survives controlled width 2: retaining both state bits gives 00 to {10,11,01}, 01 to {00}, and 10 or 11 to {00,01}. State 10 has loops spelling 100 and 10000. They concatenate independently because column 3 is a free input at this width. The complete hand relation and 16 literal truth-table controls are recorded in G239's extension; prediction holds, with the hidden-neighbour state as the unexpected check. Fixed-zero exterior control removes the four-gap loop. There is still no coherent autonomous exterior at greater widths; its missing update equation is the next obstruction to resolve. No census or RB/RV3 duplicate.
+
+
+**G239 controlled-width-3 lift.** Retaining the third site's update destroys the earlier chosen black-state-10 lift: its next neighbour is always zero. A replacement shared state 111 supports loops 111,010,000,111 and 111,011,001,010,000,111, spelling the same two gap blocks. All 32 local truth-table controls pass. The unchanged-lift counterfactual fails; the neutral family nevertheless survives X_3. Filed as another extension of G239, awaiting Cloud's already claimed scope reading. No all-width entropy conclusion; stop this finite-width exercise pending a uniform mechanism.

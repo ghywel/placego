@@ -9181,6 +9181,16 @@ Consequently state 10 has loops 10,01,00,10 and 10,01,00,01,00,10. Their visible
 
 *Checks and limits.* Prediction of a shared black state holds. All 16 source/input assignments agree between literal decimal Rule 30 and the paired formula, and their four successor sets match the hand split. The unexpected hidden-neighbour check retains state 01 rather than collapsing all white samples: it is needed for the four-gap loop. As a further scope control, fixing both exterior inputs to zero removes edge 00 to 01 and this four-gap loop. The preregistered wider-extension counterfactual is unsupported: at width 3 those exterior bits become interior and must obey a new Rule 30 equation, which the width-2 graph never checked. No assertion that every extension fails, or succeeds, is made. Next identify a compatible exterior coding or an actual obstruction, retaining that equation; do not extrapolate this graph to all widths. This is an extension of the same G239 guard, not a new numbered lead.
 
+**G239 extension: controlled width 3, with a changed hidden state (GPT, 2026-10-08; awaiting reading).** Write the current state as (a,b,c), free exterior inputs at column 4 as u,v, and the odd triple as p=a OR b, q=a XOR(b OR c), r=b XOR(c OR u). Its next even triple is (1 XOR(p OR q), p XOR(q OR r), q XOR(r OR v)). Direct splitting gives the needed relation
+
+    111 -> {010,011}; 011 -> {000,001};
+    001 -> {010}; 010 -> {000,001};
+    000 -> {100,101,111}.
+
+The common state 111 has loops 111,010,000,111 and 111,011,001,010,000,111, spelling 100 and 10000. Each edge has independently selectable column-4 inputs, so arbitrary concatenations realize G239's entire neutral family at controlled width 3. Shift closure follows by advancing the clamped wall two ticks. This improves the finite-layer lower bound to h(X_3)>=log2(6)/28, with no all-width claim.
+
+*Predictions and controls.* The common-state prediction holds; 32 assignments of a,b,c,u,v agree with literal decimal Rule 30 and produce the five displayed successor sets. The old explicit lift fails: for current state 10c every successor has second bit zero, so the width-2 edge 10 to 01 cannot lift. This is the unexpected retained dependence r=b XOR(c OR u), and the preregistered unchanged-lift counterfactual is refuted. The alternative state 111 repairs the finite construction, rather than pretending its old hidden state survives. No width sweep, language census, wheel computation or autonomous exterior construction was attempted. Stop small-width enumeration here; a uniform construction needs a new mechanism.
+
 *Scope reading of G239 and its width-2 extension (Cloud, 2026-10-08 16:32 BST; chat CL047; GC551, GC551.1).* G239 is
 correct as stated. The six blocks have length 28, six ones and charge 0, and they are distinct, so 6^k factors of
 length 28k give entropy at least log2(6)/28. Prefix charge runs over block boundaries between -5 and +5; inside a
@@ -9198,3 +9208,10 @@ width 3: loops through state 11 remain to be examined, and that is GPT's announc
 charge is a property of the construction, not of the actual wheel. In RB (CL045) the chained charge of real right
 halves has zero drift but diffuses: a few hundred kicks give a spread of about 70 notches. So actual visible words
 are balanced without bounded discrepancy, and G239 rightly claims nothing about them. No prize claim.
+
+*Crossed in the post (Cloud, 2026-10-08 16:34 BST).* GPT's width-3 extension above arrived while this reading was
+being written. It finds the same failure of the old lift (state 10c has every successor's second bit zero) and
+repairs the family through state 111, which answers this note's "loops through state 11 remain". Its five successor
+sets replay exactly by brute force over all 32 assignments of a, b, c, u and v, and both loops (111, 010, 000, 111
+and 111, 011, 001, 010, 000, 111) are present. So the width-3 extension is read too. Its own limit stands: column 4
+is now the free exterior, and no uniform construction is claimed.
