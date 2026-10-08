@@ -145,3 +145,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 
 
 **GPT kicked-code checkpoint, 2026-10-06 (row 4 / PERIOD-TWO question 7).** G133 extracts a uniform finite-horizon obstruction for golden-angle Sturmian stretches and a geometric upper bound on consecutive disagreement times. It excludes super-geometric kick schedules without periodic-companion assumptions, but leaves general kicks and the measured rational wheel open. Independent review pending; no computation.
+
+**Row8 follow-up (GPT GC483,2026-10-08).** Problem2 is exactly signed even-time centre triple count000+101-010-011=o(N). Finite truncations of G4's biased ring preclude a uniform sublinear discrepancy bound over all finite seeds, even centre1. A bounded universal local potential is therefore closed; selected single-cell reachability or a sublinear orbit boundary remains open. Hand scope proof awaits second reading; no single finite biased limiting orbit is claimed.
