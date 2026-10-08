@@ -15709,3 +15709,38 @@ Now suppose a proved or exhaustively certified necessary left-only ceiling gives
 **Controls and unexpected endpoint check.** At T=1,j>=1, A(j,1)=2^j, so the formula returns2^(w-2), the unfiltered either-phase count. At j=0, A(0,1)=1 and it returns the same count for w>=2. Independently take j=1,T=2: the centre update is 1 XOR (centre OR right), so alternation requires right<=centre. Its free (centre,right) prefixes are00,10,11, giving A=3. At w=4 (R=2 outside the cone) N=3; at w=5 it is6. The unexpected boundary case w=3 has R=1 INSIDE the cone and fixed right=1, leaving only centre=1, hence N=1. Applying the extension identity one cell too early would lose that endpoint restriction.
 
 **Disposition and next.** Finite left-only certificates give a sufficient causal saturation threshold for each covered j. They do not yield an all-j linear ceiling, and causal saturation alone says nothing about its growth with j. GC637's missing quantitative rate remains OPEN. Local reading requested; no computation, new deadline or prize claim.
+
+
+**GC639 second reading.** Local L348 at e484e794 verifies the cone threshold and endpoint example by hand and reports 130 exact width-doubling controls passing. L349 at952746f8 reports DL2 controls passing and a five-width plateau at j16 rising from24 to26 at w27. This independently illustrates the finite-plateau guard; GPT did not replay DL2. Local stops hull enumeration; no extension requested.
+
+## GC640 — Black-time tests retain nonlinear depth dependence (2026-10-08)
+
+**Scope and prediction.** Return to a quantitative left-only mechanism after the deadline scope audits. For an alternating clamped wall, section8.69's white-stretch latch test is vacuous: each white stretch has length1. Its necessary condition is that the nearest-left cell is1 at each black wall time. Audit a possible simplification of the two-tick left map under those tests. Predict shallow complement relations do not make subsequent tests linear. Counterfactual a linear coarse map follows from those first relations. This revisits the nonlinear inverse obstruction already recorded in GC549, not a new clock-exclusion theorem; hand proof only.
+
+At a black wall time let a_i be the cell at depth i, with a_0=1; at the intervening time the clamped wall is0. The left update is
+
+    a_i' = a_(i+1) XOR (a_i OR a_(i-1)).
+
+The current black test is a_1=1. Put a_2=u. Then a_1'=NOT u, a_2'=NOT a_3, and the next black test a_1''=1 is equivalent to a_3=NOT u. With d=a_4, this gives a_3'=NOT d and a_2''=d. Directly imposing a_3''=NOT a_2'' (the test needed to pass the following black update) gives a_5=NOT u. Thus passing tests at the current and next two black times restricts the depth1..5 prefix to
+
+    (1,u,NOT u,d,NOT u).
+
+Let e=a_6 and f=a_7. Under this prefix the two-tick new depth2 bit is u_new=d and the new depth4 bit is
+
+    d_new = e XOR d XOR u.
+
+For the next required depth5 relation a_5''=NOT u_new, the deeper bit f must satisfy
+
+    f = NOT d XOR (e OR NOT u)
+        XOR ((e XOR (NOT u OR d)) OR (u AND d)).
+
+Equivalently,
+
+    u=0: f = NOT d XOR e;
+    u=1: f = NOT(d AND e).
+
+The u=1 branch contains a genuine product. In that branch the required f values for (d,e)=00,01,10,11 are1,1,1,0; their XOR is1, whereas any affine Boolean function has four-corner XOR0. Thus the first complement tests do not reduce the next test to an affine function of the remaining state. No deeper finite-state closure or lifetime contraction follows from the displayed coarse map.
+
+**Independent controls and unexpected check.** For u=d=e=0 and f=1, the initial prefix is1010101. Its one-tick depth1..6 prefix is101010; the second tick has depth2=0,depth3=1,depth4=0,depth5=1, meeting the required relations. For u=1,d=0 the formula requires f=1 for BOTH e values. Direct substitution gives a_5'=e, a_4'=0 and a_6'=1 XOR e, hence a_5''=1 independently of e. The unexpected comparison is u=0,d=0, where f=1 XOR e instead: changing u changes which deeper bit can be ignored. Neither control supplies an infinite compatible left half or right realization.
+
+**Failure retained and next.** The proposed affine black-time renormalization fails already at this next test; stop this simplification rather than enumerate higher inverse expressions. Finite-left lifetime still requires a quantitative constraint on actual selected states, not merely black-time complement pairs. GC637's uniform linear deadline remains unproved. Local reading requested; no experiment, new board row or prize candidate.

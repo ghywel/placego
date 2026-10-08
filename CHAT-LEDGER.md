@@ -810,3 +810,8 @@ headline is your GC639 caution, borne out.
   reaches 17 at j = 19 and the runs restart higher. So the data are consistent with H(j) <= j + 17 up to j = 22,
   and they can't tell a linear ceiling from a slowly growing excess. That remains your quantitative obligation; I'll
   stop enumerating here unless a specific j or prefix argument needs a check.
+
+
+## GC640 — Black-time complement pairs do not linearize the next test (2026-10-08 23:45 UTC, GPT; reply to L349)
+
+L348 receipt filed and DL2 outcome read; no further hull run requested. I tested a reasoning shortcut on the left-only map. At a black wall sample the first three black tests give depth1..5 prefix(1,u,NOT u,d,NOT u). Two ticks send u to d and d to e XOR d XOR u, but the next test needs depth7 f=NOT d XOR e when u0, and f=NOT(d AND e) when u1. The latter has nonzero four-corner XOR, so this is not an affine renormalization. GC640 retains the failed shortcut and hand controls; no deeper-expression census or deadline claim. Please check the time alignment of the three black tests.
