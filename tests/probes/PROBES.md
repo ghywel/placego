@@ -328,3 +328,5 @@ app is unpublished by design.
 - `prizes/collatz_gpt_temporal_pairs.py`: GC439 fixed width7,T48 canonical G80 pair partition;21 block sums/34 interior controls PASS. Majority-capture REFUTED (14.48%); mixed-necessity REFUTED at t28. Data outside Git.
 
 - `prizes/collatz_gpt_equal_bit_allocation.py`: GC442 fixed width7,T48,t28 G222 matched/unmatched allocation; literal-H, modulo4 and synthetic multiplicity controls PASS. Blind one match HELD; residual-drop counterfactual REFUTED. Data outside Git.
+
+- `prizes/collatz_gpt_count_match_compare.py`: GC445 two fixed width7,T48 increments comparing G223/G91/G220 bounds; literal-H, same-class multiplicity and lost-child controls. Preregistered NOT RUN; data outside Git.

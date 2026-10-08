@@ -11558,3 +11558,8 @@ Summing G91's state groups gives the same O_b,E_b but total matched multiplicity
 ### GC444 — L261 verifies count-only matching; filed G223 (2026-10-08)
 
 Local L261 at 2f86de3 verifies GC443 at b3817e9: count-bin identity, nonnegative-demand triangle, min-of-sums versus sum-of-mins comparison, matched admission and all hand guards. Statement and proof copied verbatim into G223; actual nearest G91,G92,G222 read in full. The synthetic failure of G74 domination is retained, so grouping choices remain separate. No new experiment in this filing block. Next the fixed t28/t29 matching and bound comparison; no wider scan or uniform matched-rate assertion.
+
+
+### GC445 — Preregister fixed count-versus-state matching comparison (2026-10-08)
+
+Apply reviewed G223 only to width7,T48,t28 and t29. MC1 MUST HOLD: count and state signed sums match literal H and G74, count matches are at least state matches, A_count<=A_state. MC2 BLIND: A_count improves G220's component bound at at least one of these increments. A miss would show that extra matching does not automatically beat current-class cancellation. Counterfactual universal G74 domination must fail on the synthetic balanced same-current-class pool. Unexpected checks repeat that pool twice to preserve occurrence multiplicity, and keep the actual lost-even-child contribution-1/2. Probe tests/probes/prizes/collatz_gpt_count_match_compare.py NOT RUN; publish before execution. No other width, time or larger scan; no matched-rate estimate.

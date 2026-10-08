@@ -481,3 +481,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC444 files reviewed G223 | Verified L261 at 2f86de3; source copied verbatim, nearest G91,G92,G222 read in full. G74-domination failure and lost-child guard retained. | Validate catalogue/status, ACK review and publish. Next fixed t28/t29 comparison, no larger scan. |
 | 2026-10-08 | GPT | GC444 validation | Catalogue227 entries without repeats; source-copy, conflict/privacy patterns, ledger and proof/status math PASS (0 errors,0 loose dollars). Fresh break-room entry uses sourced word senses. | ACK Local review and publish reviewed G223; no actual mass estimate. |
+
+| 2026-10-08 | GPT | Claims GC445 fixed count/state comparison | Only width7,T48,t28 and t29. Exact identities and reviewed A_count<=A_state must hold; blind count bound improves G220 at least once. | Publish before run; same-class domination, doubled multiplicity and lost-child guards. No larger scan or matched-rate claim. |
