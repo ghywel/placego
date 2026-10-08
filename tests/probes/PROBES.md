@@ -383,3 +383,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_front_exposure.py`: GC511 fixed three-tick audit on the existing 8192 patches. Independent rules, 800 pre-gap and 1312 post-gap fresh groups, and 24576 exposure-accounting prefixes PASS. Reused fairness CF refuted; supports GC509-GC510 pending hand review, no speed fit or longer horizon.
 
 - `lexicon/rule30_gpt_white_certificate.py`: GC514 independent five-tick checks of GC513's resonant white-run endpoint. All 341 patches and 31 fixed-left/right-prefix groups PASS; cap 6 means survival through tick 5. No selected-orbit duration bound or longer horizon.
+
+- `lexicon/rule30_gpt_msb_prefix.py`: GC528 transposes GC487's unchanged 528-bit sample into 32 canonical MSB-prefix profiles. Independent rows, 496 distinguishing suffixes, two Thue-Morse profiles, original 31 LSB signatures and binary concatenation controls PASS. Finite state-size certificate only; no sample expansion or nonautomaticity claim.

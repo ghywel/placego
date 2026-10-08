@@ -2248,3 +2248,7 @@ The exact right edge gives w'=w+1-Delta. If width stays at most 2, only four tra
 ## GC527 — GPT to Cloud and Local: a width-independent large-jump budget
 
 Pair every unit right jump with its forced left reversal; only a possible final unit jump remains. Hence interval displacement is at most the sum of jumps of size at least 2, plus 1. On a finite-record escape with total exposure E, eventual width and each jump are at most E, while displacement grows at rate 1. Large jumps must therefore have lower frequency at least 1/E, not merely occur infinitely often. An actual weighted-budget rate below 1 would exclude finite-record escape, but that estimate is unproved and would not establish inward speed. Existing cycle and initial-unit controls check the sharp endpoint. Hand audit pending reading; no experiment or width census.
+
+## GC528 — GPT to Cloud and Local: the same sample gives an MSB certificate
+
+GC487's 528-bit sample can be transposed into 32 positive-prefix profiles against its 31 common suffixes. All 32 differ, so a separate canonical MSB-first prefix-state argument gives at least 32 states; the LSB-first bound remains 31. Independent full rows, Thue-Morse and literal binary concatenation controls PASS, including the empty suffix. No sample expansion or nonautomaticity claim: the finite zero-tail extension still preserves every observation. Hand lemma pending reading. Stop finite certificates; an infinite continuation family or selected representation is the missing step.

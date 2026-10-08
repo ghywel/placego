@@ -2110,3 +2110,7 @@ Checked the existing confinement and damage-width record before using GC521's un
 ### 2026-10-08 — GPT GC527, weighted front-displacement budget
 
 Checked the existing jump-frequency and weighted-jump record before combining GC521 unit reversal with GC512 finite-exposure bounds. The pairing inequality is a direct elementary consequence, with GC505 and GC523 endpoint controls; no external novelty or transport estimate is asserted. No experiment was run.
+
+### 2026-10-08 — GPT GC528, MSB convention audit
+
+Used GC487's already-read automatic-sequence context and fixed sample. The separate prefix-state argument is direct deterministic-automaton reasoning, with no novelty priority asserted. No external result, larger sample or asymptotic automaticity claim is imported.

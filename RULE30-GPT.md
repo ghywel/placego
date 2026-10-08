@@ -13160,3 +13160,21 @@ This strengthens GC521's necessary infinite-large-jump condition to a positive l
 **Independent endpoint controls.** GC523's cycle has J(0,2k)=2k=L_(2k), showing equality in the main budget term. GC505's initial unit right step gives L_1=1 with J(0,1)=0, so the endpoint allowance cannot be removed. Following its forced left step gives L_2=0 and cancellation exactly. The all-left history has J=0 and negative displacement, consistent with the one-sided bound. GC507's unbounded ambient jumps explain why a universal replacement of weighted mass by a fixed multiple of jump count would require a width or size hypothesis; iid reachability is not asserted.
 
 **Outcome and next.** The actual return law gives a width-independent displacement budget and a quantitative necessary condition for finite-record escape. The missing work is probabilistic control of weighted large jumps and their intervening state, not another scalar closure or bounded-width census. These hand inequalities await independent reading; general recurrence and transport speed remain OPEN.
+
+## GC528 — The existing trace sample certifies 32 MSB-first states (2026-10-08)
+
+**Lane and scope.** The probabilistic weighted-jump estimate remains missing. Switch to a bounded Problem 3 model audit of GC487's unchanged sample: prefixes n=1..32, suffixes (d,r) with d=0..4 and 0<=r<2^d, maximum trace index 527. Predict all 32 transposed prefix profiles differ. Counterfactual this proves nonautomaticity remains false. Unexpected check: d=0 means empty suffix, not a zero digit. No larger trace, kernel census or asymptotic fit.
+
+**Separate MSB-state lemma.** Let a deterministic finite automaton with output read canonical binary inputs from most significant to least significant digit and return the selected trace bit. After reading the canonical digits of a positive prefix n it occupies a state q_n. Appending the d-bit suffix for r, padded to length d, gives canonical input 2^d*n+r. Equal prefix states must therefore have equal outputs for every common suffix, including the empty suffix. Distinct profiles
+
+    P_n=(a(2^d*n+r)) over the 31 fixed suffixes
+
+force distinct q_n. This does not reinterpret GC487's LSB states; it proves a separate convention-correct lower bound from rows of the same sample matrix.
+
+**Fixed outcome.** Probe rule30_gpt_msb_prefix.py recomputes the existing 528 rows with independent decimal-set and packed XOR/OR rules, agreeing throughout. It verifies all canonical concatenation identities, including the empty suffix. All 32 Rule 30 prefix profiles are distinct, with 496 pairwise differing-suffix witnesses retained outside git. Thue-Morse has exactly two profiles; GC487's original column signatures still number 31. Controls and blind prediction PASS. The concatenation guard was added explicitly and the same scope rerun; no extra indices were introduced.
+
+Hence any exact canonical MSB-first DFAO for the singleton trace needs at least 32 states. GC487's independent LSB-first bound remains 31. The inequalities concern two different reading conventions, not a computational time lower bound.
+
+**Counterfactual retained.** The sequence agreeing with these bits through index 527 and zero thereafter preserves every profile but is automatic, by a finite canonical-input trie. Thus the finite certificate cannot prove an infinite kernel or exclude all finite automata. It also says nothing about arithmetic memory, approximation or general sublinear indexing algorithms. Hand lemma pending independent reading; measured sample identities are exact finite controls.
+
+**Outcome and next.** The existing sample now has a direct bound for the usual MSB convention as well as the LSB convention. Stop finite certificate expansion. A useful next step must supply an analytic infinite family of distinguishable continuations or a proved selected-orbit representation, otherwise move to another main-line lead.
