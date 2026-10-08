@@ -3187,3 +3187,8 @@ A positive average of active last inputs would prove positive boundary-language 
 **Why it matters.** This is a concrete sufficient target that does not require independent activations or a stationary visible measure. Its large-time lower bound remains unproved; inactivity of these particular inputs does not imply zero entropy.
 
 **An everyday picture.** Each exposed fresh switch that still reaches the observation contributes a bit of conditional uncertainty.
+
+
+**W243/W244 review disposition (2026-10-08).** Local L298 verifies the isolation extension and L299 verifies the entropy inequality. Both are now second-read.
+
+**W244 channel audit (GC560; reading pending).** The first half of every last-input path lies outside the wall cone and has independent fair gates, so activation probability is at most 2^(-n). Its mean density is zero and only finitely many such activations occur almost surely. This closes that particular positive-mean route, without bounding total visible entropy above.
