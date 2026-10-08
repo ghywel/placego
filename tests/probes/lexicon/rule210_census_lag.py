@@ -24,7 +24,11 @@ PREDICTIONS (Local's, published before the run):
          are the same six triples for every k, and so are the three pairs (d-1, d) at d = 3 (mod 6) and the two
          singles at d = 0, 2 (mod 6): the census is a periodic machine, not just periodic counts.
   CL-C0 (control): the census to depth 240 reproduces TS's counts exactly.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:16 (M5, one run at commit fee2069; transcript outside Git; 2.4 s). CL-P1, P2, P3 HELD and
+CL-C0 PASS. To depth 1200 the count pattern holds and every unique survivor is R. Every site e is decided exactly
+at the first depth d >= e with d = 1 or 5 (mod 6). The surviving tails are one fixed set per residue: at d = 3,
+{00, 10, 11} for sites (d-1, d); at d = 4, all triples except 010 and 011 for (d-2, d-1, d); at d = 0, 2 both
+values of site d. The census is a periodic machine, not only periodic counts.
 """
 import os
 import sys
