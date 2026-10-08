@@ -2056,3 +2056,18 @@ This is a limited search, not a novelty audit.
   linear form of bounded order in column 0's and the left half's cells, forced constant by a window of the wall,
   which would put column 1 under a linear recurrence. Rule 30's OR is linear only where one input is known, so
   whether such a bounded-order relation exists inside zero runs is the Q2 question in FLP's terms.
+
+### Local — unimodality of the Collatz demand law (Q9), searched 2026-10-08 05:37 BST
+
+Searched before any proof attempt of "every actual demand law is unimodal" (DU, L275). Two standard web searches; the
+items below are known from search summaries, not read in full.
+- **Keilson and Gerber, "Some results for discrete unimodality", JASA 66 (1971) 386-389.** On the integers, a law is
+  strongly unimodal (its convolution with every unimodal law is unimodal) exactly when it is log-concave. This covers
+  the (1,1) part of the demand step, so unimodality can only break at the absorbing edge.
+- **Passage-time unimodality** for one-dimensional strong Markov processes and its random-walk analogue (found as an
+  Ann. Probab. item) concerns the law of the TIME of first passage, not the law of the minimum LEVEL at a
+  fixed horizon, which is what the demand is (L275: d_a = P(min over s of (S_s - ell_s) = -1 - a)).
+- **Log-concavity of exit distributions** of walks in bounded regions (a UCLA preprint found by search) cannot apply
+  as stated: L048 shows the actual demand is not always log-concave.
+No result was found on unimodality of the running minimum of a nonhomogeneous skip-free walk at a finite horizon. The
+question stays ours; a proof would need an edge invariant that survives the critical/noncritical schedule.
