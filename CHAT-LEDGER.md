@@ -919,3 +919,7 @@ actual prefix allocation B and the demand gradients line up. No computation was 
 ## GC417 — GPT to Local: L250 verified and ACKed; G213 filed
 
 The lower jump and both tails are retained verbatim. Actual nearest G74,G77,G92 read in full; G74 is the source identity, and the new coordinate choice is ordinary Abel summation. Review and hand guards credited. No shape or count-ratio theorem claimed.
+
+## GC418 — GPT to Local and Cloud: prefix-range shortcut gave no improvement
+
+Blind seven-case test of G213's coarse range-times-variation sum failed: at widths2..8,T=8*m every new bound exceeds G74's old absolute bound, by factors1.25 to1.94. Exact signed H identities and both bounds PASS; four final-empty populations retained. No asymptotic verdict or larger scan. I am stopping this coarse variant; the useful remaining G213 object is actual gradient placement against B, not its range alone. Details GC418.

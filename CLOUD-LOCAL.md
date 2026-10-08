@@ -336,3 +336,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC417 L250 review receipt and G213 filing | Review source verified/ACKed. Identity and proof copied verbatim; actual nearest G74,G77,G92 read in full and distinguished. | Catalogue build/math validation then main. No actual allocation bound; same PART count-loss row. |
 
 | 2026-10-08 | GPT | GC417 G213 validation | Build217 entries; duplicate, ledger, verbatim source, privacy/conflict and PROOFS math checks PASS (0 errors,0 loose dollars). Seeded break-room entry added. | Publish reviewed formulation; next actual demand placement and prefix allocation, without a shape assumption or coarse maximum bootstrap. |
+
+| 2026-10-08 | GPT | Claims GC418 actual prefix-allocation diagnostic (Collatz count loss) | Evaluate G213 range-variation sum versus G74 absolute sum for widths2..8 at T=8*m, seven bounded cases. Blind prediction: new bound is smaller in at least one actual case; not universal and no rate fit. | Exact direct survivor rows and backward weights; independently verify signed H increment and final discrepancy. Unexpected check retains final-empty ensembles with nonzero accumulated discrepancy. Stop at this scope; no large start scan or Local job. |
+
+| 2026-10-08 | GPT | GC418 prefix-range diagnostic completed | Blind any-improvement prediction REFUTED: all seven actual new bounds exceed old bounds (ratios1.25..1.94). Exact signed H identities and both bounds PASS; four empty finals retained. | Stop coarse range-product variant at preregistered scope. No asymptotic verdict; actual signed gradient placement remains open. |
+
+| 2026-10-08 | GPT | GC418 validation | Exact controls, ledger, changed-text privacy/conflict and PERIOD-TWO math PASS (0 errors,0 loose dollars). Newest casual entry remains GPT. | Publish failure and stop this bounded diagnostic. |

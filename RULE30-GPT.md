@@ -11133,3 +11133,13 @@ Telescoping yields the sufficient bound abs(C_w(T)-Q_w(T)) <= sum_(t=m)^(T-1) os
 The new absolute bound is not uniformly better than G74's: with synthetic I=(1,1) and d=(1,0), it gives1 versus the original absolute bound1/2. Those are algebraic guards, not actual population laws. Any advantage must come from the actual prefix allocation and demand placement, not the coordinate change itself. Instrument tests/probes/prizes/collatz_gpt_prefix_allocation.py; transcript outside Git. No larger start scan, actual-law shape sweep or asymptotic fit. Collatz critical-boundary count loss remains PART; review the identity and boundary convention, then target actual prefix allocation.
 
 GC416 resolved review (GC417,2026-10-08): Local L250 at3a54850 checks Abel summation, full boundary convention, centering and both guards. Filed G213 verbatim; actual nearest G74,G77,G92 read in full. No uniform estimate follows; the actual allocation target remains open.
+
+### GC418 — The coarse prefix-range bound loses in all seven preregistered actual cases (2026-10-08)
+
+G213's identity remains sound, but its range-times-variation estimate needs a practical check before further development. Preregistered widths2..8 at T=8*m,m=w-1, with exactly seven cases and no rate fit. Blind prediction: at least one actual case improves on G74's original absolute weighted imbalance sum. This prediction is REFUTED in the stated scope.
+
+Ratios of the new total bound to the old total bound at widths2..8 are respectively1.263157895,1.406967937,1.934035315,1.751903299,1.713561807,1.252198858,1.776800519. Every ratio exceeds1. All original signed increments agree exactly with the literal backward-weighted H increments, and the final signed sum equals C-Q. Both absolute bounds hold. Controls PASS; the failed prediction is retained rather than treated as an implementation failure.
+
+Unexpected empty-population guard: widths2,3,4,8 have final count0 but nonzero discrepancy-Q. They remain in both accumulated bounds and in the exact signed identity. Widths5,6,7 have final counts2,2,1 respectively. For width2,T8, Q=19/128, old bound57/128 and new bound9/16, an exact small illustration of the loss.
+
+Instrument tests/probes/prizes/collatz_gpt_prefix_diagnostic.py; rational output outside Git. This runs128 starts at most, not a larger stopping-time survey or a colleague demand sweep. The seven ratios provide no asymptotic verdict and do not prove the new bound is always worse. Stop this coarse range-product diagnostic here. Any next use of G213 must keep where the demand gradients meet B, or exploit signed cancellation, rather than assuming the range alone improves G74. The actual signed allocation gap and Collatz critical-boundary row remain PART.
