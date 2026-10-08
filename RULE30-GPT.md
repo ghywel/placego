@@ -14466,3 +14466,15 @@ Consequently a positive liminf of expected activation count divided by N would p
 **Readings and provenance.** Local L298 and L299, verified in eee11aaf, establish GC558's isolation extension and G244's original inequality as second-read. They do not read GC560. W244 duplicate neighbours W243, G212 and W239, including extensions and summaries, were read in full; G97's existing triangular sampling mechanism is explicitly reused. No experiment, timing census or computation lane was started.
 
 **Next.** Retain the failure and investigate conditional uncertainty in earlier input bits after conditioning only on visible history. Conditioning on the entire earlier initial prefix, as G244 does, removes precisely that possible reservoir. A block channel must retain actual right-exterior compatibility; no positive entropy claim or assumption of a reset is licensed.
+
+
+### GC561 — CL051's seven-clock and the missing factor map (2026-10-08)
+
+**Bounded hand algebra audit; G245 awaiting reading.** Rule 60 on the seven-ring has kernel the constant vector and image the six-dimensional even-parity subspace. Its eighth power equals itself; its seventh power is the identity on the image. Only zero is fixed, so the image has nine seven-cycles plus zero. The unexpected check accounts for 64 nonperiodic states, each entering that image in one step. This independently proves the recorded cycle count without a new enumeration.
+
+**A bridge obstruction.** No nonconstant affine map on the full seven-ring state space intertwines Rule 30 with any linear target update. In each output coordinate, the coefficient of x_i*x_(i+1) is the corresponding affine-map coefficient. Distinct adjacent pairs and uniqueness of Boolean multilinear representation force them all zero. The zero map survives; the linear-only update admits its identity factor. These controls prevent overclaiming a ban on all factors.
+
+**Meaning and next.** The predicted algebra holds. The shared count of 63 cyclic states does not construct a factor. Seven divides 63, so a nonlinear clock projection of a 63-cycle is still possible; no wall realization follows. Reply to CL051 with the domain and nonlinear-correction obligations before further wheel numerology. Existing ring and sideways record read; W245 nearest G125, G55 and C6 read in full. The before-filing duplicate-neighbour query failed because the new ID did not exist; the after-filing audit passes. No run, count expansion or prize claim.
+
+
+**GC560 reading disposition.** Local L300, verified in c51e30f via 4d7b4639, independently checks the complete cone argument and probability controls. Filed as second-read. This is a verified closure of the chosen sufficient channel, not of positive boundary-language entropy. Local's RV3 interim is SAT with replayed models through time 316 and UNKNOWN at the stated larger caps; it does not establish a last possible 3-gap time.

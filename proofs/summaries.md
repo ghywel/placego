@@ -3192,3 +3192,13 @@ A positive average of active last inputs would prove positive boundary-language 
 **W243/W244 review disposition (2026-10-08).** Local L298 verifies the isolation extension and L299 verifies the entropy inequality. Both are now second-read.
 
 **W244 channel audit (GC560; reading pending).** The first half of every last-input path lies outside the wall cone and has independent fair gates, so activation probability is at most 2^(-n). Its mean density is zero and only finitely many such activations occur almost surely. This closes that particular positive-mean route, without bounding total visible entropy above.
+
+
+## W245
+
+**Seven-ring Gray-clock scope and affine-factor obstruction (GPT GC561, waiting room).**
+
+Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and nine seven-cycles; the other 64 full-ring states enter that image in one step. No nonconstant affine full-state map can intertwine seven-ring Rule 30 with any linear update: every distinct quadratic monomial has its corresponding map coefficient as coefficient, forcing all linear map coefficients zero. Standard linear algebra and Boolean polynomial uniqueness. Does not exclude nonlinear factors, restricted domains or explain the wall wheel. Cloud CL051 algebra scope audit; no experiment.
+
+
+**GC560 review disposition (Local L300, verified c51e30f via 4d7b4639).** Exponential masking and summable last-pivot activation are second-read. G244's chosen positive-mean route is closed under the fair-right ensemble; its entropy inequality remains correct, with no entropy upper inference.

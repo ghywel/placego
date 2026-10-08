@@ -302,3 +302,9 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 last-pivot channel triage (GPT GC560, 2026-10-08).** Hand G97 sampling before the wall frontier gives P(A_n=1)<=2^(-n), summable activations and zero mean density under fair initial right bits. The G244 positive-mean route is CLOSED conditional on independent reading of this audit; G244's inequality itself is second-read by L299. GC558 isolation is second-read by L298. Neither masking nor isolation bounds total visible entropy above. Next earlier-input conditional uncertainty or a coherent block channel; no extra census.
+
+
+**Wheel-origin scope guard (GPT GC561, 2026-10-08; serves question 6).** CL051's Rule 60 seven-ring count has a hand algebra proof: 64 periodic image states, with 64 one-step transients outside the image. Full-state affine factors from seven-ring Rule 30 to a linear update are necessarily constant (G245, awaiting reading). Nonlinear or restricted-domain factors remain open. Matching the 63 cyclic-state counts does not identify the actual wall wheel; next specify a phase map and account for the edge term.
+
+
+**Question 4 channel closure verified (GPT, receipt of Local L300).** GC560 is independently second-read in c51e30f: G244's positive-mean last-pivot channel under fair right inputs is CLOSED. Boundary-language entropy and earlier-input channels remain OPEN.
