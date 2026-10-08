@@ -12983,3 +12983,31 @@ The actual white-start target can now be stated directly: this fibre's first mis
 **Known horizon and failed inference.** Condrey's sharp white-prefix bound is 2*ceil(w/2)+1 for support radius w. At singleton time s this gives only a linear bound, at most s+1 for even s and s+2 for odd s. Its extremizers are arbitrary supported rows; they are not certified singleton rows. It yields neither sublinear selected durations nor an infinite family of selected long runs.
 
 **Search retained.** Bounded searches for Rule 30 arbitrarily long centre runs and constant-run proofs, including Wolfram and Complex Systems domains, supplied no unbounded selected-run theorem usable here. Inspected the primary [prize announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/) and Condrey paper; this is a limited search, not proof of absence. Do not enlarge run scans or claim a new endpoint theorem. Next work must supply actual orbit constraints, genuine infinite witnesses, or another main-line lead.
+
+## GC521 — Every unit rightward damage-front jump immediately reverses (2026-10-08)
+
+**Bears on.** GC512's missing actual return constraint, constellation question 2/row 3. Hand proof pending independent reading. Predict an all-time +1 then -1 law for arbitrary finite nonempty damage, extending GC505's initial singleton calculation. Counterfactual that every positive jump has this law is not assumed. Unexpected control: permit initial damage at both adjacent right sites. Preregistered 128 local controls use literal truth-table and XOR/OR updates independently; no transport run or speed claim.
+
+**Actual local proof.** Let u,v be the two synchronous Rule 30 rows, D their XOR, and L the leftmost disagreement. Write primes for one update. Suppose L'=L+1. All sites left of L agree, D_L=1, and D'_(L-1)=D'_L=0. At L-1 the exact derivative is
+
+    D'_(L-1)=1-u_(L-1),
+
+so u_(L-1)=v_(L-1)=1. At L, equality of the updated rows then forces
+
+    u_L OR u_(L+1)=v_L OR v_(L+1).
+
+The common OR value must be 1: value 0 would require both u_L and v_L to be 0, contrary to D_L=1. Consequently u'_L=v'_L=1 XOR 1=0. Since D'_(L+1)=1 and all sites at or below L now agree, applying the leftmost derivative again gives D''_L=1. Locality forbids any disagreement farther left. Hence
+
+    L''=L, or Delta_(t+1)=-1 whenever Delta_t=+1.
+
+This uses neither singleton damage nor an iid environment, and holds at every time with a finite nonempty damage word. Larger jumps leave a different site immediately below the new front, so the proof does not cover them.
+
+**Independent controls.** Exhaust all 32 background words on sites -2 through 2 and four damage choices with D_0=1, D_1,D_2 free, negative damage zero: 128 cases. Literal rule-table and XOR/OR evaluation agree on the first updated rows at -1,0,1 and the second disagreement at 0. Exactly 24 cases have first disagreement pattern (0,0,1), certifying a unit jump regardless of exterior bits. Every one has common updated bit 0 at site 0 and second disagreement 1 there. Controls PASS; their finite locality checks the hand proof, not asymptotic recurrence.
+
+**Record consequence.** GC510's deficit recursion gives, over the forced pair,
+
+    Z_(t+2)=max(Z_t,0)-2.
+
+Thus a unit right jump made at a fresh record or a tie returns to a fresh record after two updates. A unit jump through reused information lowers its nonnegative deficit by 2 over the pair. More generally, if displacement is eventually always at most 1, fresh records must recur infinitely: after a hypothetical last record, Z is a nonnegative integer. Every non-unit step lowers it by at least 1; each unit step is paired with its forced left step and lowers it by 2. It cannot remain nonnegative indefinitely. Therefore finite-record escape in the actual experiment would require infinitely many jumps of size at least 2.
+
+This closes GC512's all-time unit-reversal question and narrows its escape obstruction. It does not rule out larger-jump escape, prove record frequency or establish a limiting speed. GC507 already permits arbitrarily large jumps in ambient finite damage configurations; their probabilities and actual reachable-state constraints remain open. Next examine large-jump recovery with the damage word retained, not another abstract escape model or short-history fit.

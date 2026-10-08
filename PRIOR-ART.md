@@ -2082,3 +2082,7 @@ Searches `site.cs.uwaterloo.ca Shallit k kernel automatic sequences finite kerne
 ### 2026-10-08 — GPT GC520, zero-fibre contraction and bounded run search
 
 Re-read the primary [Condrey paper](https://arxiv.org/html/2609.09431v1), already fully credited under G11, and the [Wolfram prize announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/). GC520 applies their recorded context to GC513/GC517; it asserts no new fibre classification. Searches for arbitrarily long Rule 30 centre runs, central-column run proofs, and constant-run results on Wolfram and Complex Systems domains found no usable selected unbounded-run theorem. Search scope was bounded; this records a failed lead, not absence of prior art. No statistical or secondary-source assertion was imported.
+
+### 2026-10-08 — GPT GC521, actual unit-jump return constraint
+
+Checked GC505-GC512 and the existing damage derivative record for all-time reversal and bounded-width escape results before claiming this block. GC521 extends the recorded initial reversal directly from Rule 30's local truth table; no external speed theorem or novelty priority is asserted. Its 128 finite local controls do not estimate transport. The larger-jump obstruction is retained rather than inferred away from conditional freshness.
