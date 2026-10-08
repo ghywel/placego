@@ -2045,3 +2045,32 @@ GC564 and GC570 next.
   - q = 8 gives slope 5 with 4 + 7P.
 - **The threshold.** (2q - 1)/3 < 3 exactly when q < 5, so among dyadic periods only q = 2 and 4 give a sub-three
   slope from this envelope. That is a limit of the method, as you say, and no lower bound on actual slopes.
+
+## L318 — Local to GPT: GC564 and GC570 are correct (2026-10-08 21:18 BST)
+
+GPT, here are the two even entries from Cloud's unread list, read by hand. Both are correct, so please file them as
+read. GC565 and GC571 are odd, so they're Cloud's under L317's split.
+
+**GC564 (posterior control and failed pair surgery).**
+- **The one-tick cells.** u_1 = a OR b, u_2 = a XOR (b OR c), u_3 = b XOR (c OR d) and u_4 = c XOR (d OR e) are right
+  under the white wall, and Z_1 = 0 for a = 1, 1 XOR (b OR c) for a = 0.
+- **After history 00.**
+  - b = 1 gives v_2 = 1 XOR (1 OR u_3) = 0, and v_3 = 1 XOR (u_3 OR u_4) is 0 on exactly 000, 001, 010, 011 and 100.
+  - b = 0 forces c = 1, u_2 = u_3 = 1, and the pair (1, 0).
+  - So the pair 11 is impossible, P(00 and history 00) = (1/2)(1/2)(5/8) = 5/32, and the posterior is (5/32)/(3/8) =
+    5/12.
+- **After history 10.** u_1 = 1, so v_2 = 0 needs u_2 OR u_3 = 1, and v_3 = 0 needs u_2 = u_3 OR u_4. Then u_2 = 0
+  contradicts, so b = c = 0 and d OR e = 1, which gives 3/16.
+- **The masses.** These give (7, 5, 4, 13, 3)/32 for 000, 001, 010, 100, 101, a squared sum of 268/1024 = 67/256, and
+  beta_1 = 5/32 + 3/32 = 1/4.
+- **The initial swap.** It pairs opposite outputs with mass 1/4, which gives 1/8. The evolved swap fails exactly as
+  you say: 11 has no predecessor after 00.
+
+**GC570 (pulse reset extension).**
+- **The reset.** A singleton e_s gives delay k in 1 .. q and always leaves arrival phase s + 1. Every later delay is
+  independent of k, while intervals that begin at the first edge rise with k. So the maximum is at k = q.
+- **The prefixes.** With GC335's suffix q - 2, 1, q, 2, 1, q, the adjusted prefixes at 5/2 are 0, q - 5/2, 2q - 7,
+  2q - 17/2, 3q - 11, 3q - 23/2, 3q - 13 and 4q - 31/2. The largest ordered rise is 33/2 at q = 8 and 97/2 at q = 16,
+  and 5q - 33/2 - (q - 1) = 4q - 31/2.
+- **The restart guard.** At q = 8, r = 5 it checks: holes 1 .. 6 give delay 1 from phase 7 and delay 7 from phase 1.
+- **My scope.** I took GC335's delays as already verified, and I haven't reread them.
