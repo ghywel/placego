@@ -14913,3 +14913,38 @@ Moving the input anchor from x to x+A changes at most 2*abs(A) sites per time sl
 **Failed independence and directional guard.** For S={(0,-1),(0,0),(0,1),(1,0)}, each initial triple has exactly one permitted bottom bit. Each of the eight permitted four-bit patterns has frequency 1/8 and the other eight have frequency zero, not 1/16 for all sixteen. For the right-moving pair S={(0,0),(1,1)}, write its inputs c,r,z. The second bit is c XOR (r OR z); its pair probabilities in order 00,01,10,11 are 1/8,3/8,3/8,1/8. Thus the local equilibrium has direction-dependent temporal correlations; G97's 3/4 right-step flip law supplies an independent control. The all-zero seed, excluded from the portfolio, has only zero patches and fails the premise.
 
 **Question-design outcome.** The headline can be understood as: does every nonempty finite seed create the same fair-row local spacetime law in a deterministic core? Horizontal normality already asks exactly that, so a second separate prize for its fixed-patch formulation would duplicate the first. Its payoff is a whole family of local statistics with explicit deterministic correlations, rather than just a fair colour count. No fixed-line balance, irreducibility, quantitative convergence rate or universal finite-seed law is proved. Stop equivalent reformulations; the next useful input is a seed-dependent discrepancy estimate or a genuine exceptional seed mechanism. Local's and Cloud's preference for portfolio question 4 remains recorded; this audit does not redirect their lanes.
+
+## GC603 — Startup extinction changes the boundary language, but not its entropy (2026-10-08)
+
+**Scope and prior record.** A bounded question 4 audit prompted by Local L307's RV3 branches and the portfolio votes in GC497. GC498's nested compact-language argument and GC499's actual controlled-layer semantics were reread. GC500 distinguishes finite-prefix realization from a common finite support. This is a standard temporal-image application of those results, not a new scored theorem, numerical run or novelty claim. The actual entropy value stays open. RV3's reported white-branch death is received evidence; its other branch remains SAT through 352 and UNKNOWN at larger caps, not extinct.
+
+**Prediction and counterfactual.** For a nonempty compact one-sided binary shift space X with sigma(X) contained in X, predict that dropping any fixed number of startup symbols leaves entropy unchanged, and that the intersection of all such temporal images has the same entropy. Counterfactual: extinction of a startup word alone implies a strict entropy decrease. Unexpected check: taking temporal images and the nested controlled-width limit in either order gives the same surviving trace class. No experiment; independent word-count controls below.
+
+**Fixed-age counting.** Write X_N=sigma^N(X), and a_Z(n) for the length-n prefix count of a forward shift-invariant compact set Z. For each n,N,
+
+    a_(X_N)(n)<=a_X(n)<=2^N*a_(X_N)(n-N), for n>N.
+
+The first inequality uses X_N contained in X. For the second, a prefix in X has at most 2^N choices of its startup part, and its remaining n-N symbols form a prefix in X_N. Taking normalized logarithms as n tends to infinity proves h(X_N)=h(X). The denominator n-N has the same asymptotic scale as n. This is exponential word growth, not equality of the word languages or their probabilities.
+
+The sets X_N are nested, nonempty and compact; each is forward shift-invariant. Therefore GC498 applies to Y=intersection_(N>=0) X_N and gives
+
+    h(Y)=inf_N h(X_N)=h(X).
+
+In particular all entropy is retained by the trace class with arbitrarily old admissible pasts. Every finite word missing from Y is absent from some X_N: intersect the nested compact subsets of X_N having that prefix. If all were nonempty the word would occur in Y. The exclusion age depends on the word; no common finite age for the whole language follows.
+
+**The identified width-order check.** Let X_w be GC499's controlled-width trace spaces and X_infinity their nested intersection. For each fixed N,
+
+    sigma^N(X_infinity)=intersection_w sigma^N(X_w).
+
+To prove the nontrivial inclusion, fix y in every right-hand image. Its sets of preimages {z in X_w:sigma^N z=y} are nonempty nested compact sets; a common z lies in X_infinity. Thus
+
+    Y_infinity=intersection_N sigma^N(X_infinity)
+              =intersection_w intersection_N sigma^N(X_w).
+
+If Y_w denotes the inner temporal intersection, GC498 gives h(Y_infinity)=inf_w h(Y_w)=inf_w h(X_w)=h(X_infinity). Uniformly old trace pruning may therefore be applied before or after the exact width limit without changing the question 4 entropy. This concerns the actual closed languages, not replacing them by certified upper matrices or measured survivor frequencies.
+
+**Independent countercontrol.** Let Z be the no-11 binary shift, with a_Z(n)=F_(n+2) and h(Z)=log2(phi). Let X consist of all traces r z with an arbitrary two-bit prefix r and z in Z. It is compact and forward shift-invariant: dropping one symbol leaves a new two-bit prefix followed by a shift of z. Its second temporal image is exactly Z. For n>=2, a_X(n)=4*F_n, so h(X)=h(Z)>0. Yet 11 is present in X and absent after dropping two symbols. A startup exclusion is a genuine language loss with no entropy loss. The zero-entropy control X={1000...,0000...} loses its symbol 1 after one shift and retains entropy zero. The full binary shift is unchanged at every age and has entropy one.
+
+**Actual reading and disposition.** RV3's finite-age extinction of window 10000 is a spatial-state statement, not automatically the extinction of a particular visible word. An additional projection implication is needed to turn that state exclusion into a visible-language exclusion. Even if supplied, exclusion after a fixed age does not by itself lower h(X_infinity); the surviving language must have a proved subexponential count for a zero-entropy result. Conversely a positive lower construction can be sought in Y_infinity without separately paying arbitrary startup prefixes. Compactness does not retain finite initial right support, finite initial left support or a selected fair-input measure. Nor does Y mean that every individual trace is recurrent: arbitrary old pasts and recurrent future visits differ. No 3-gap death, positive entropy or prize proof is inferred.
+
+Stop transient-count-to-entropy shortcuts. The remaining useful target is a coherent surviving lower-language construction or an actual upper count on the temporal core, with the unresolved 10110 branch retained. This audit does not duplicate RV3 or the wheel computation.
