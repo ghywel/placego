@@ -13283,3 +13283,29 @@ The fair iid measure is H-invariant by G97 and shift invariance. Ergodicity of H
 For M=1, h=1 and one zero below the singleton already gives span 3; the longer stated cylinder is a sufficient uniform witness. For M=2, h=1 and every initial span at least 1 exceeds 2 after the forced left advance. GC523's bounded escape template contains a black bit immediately below the singleton on its zero-step phase, so it fails the zero-window premise; the witness does not contradict that actual deterministic escape. These local controls and the explicit cone endpoints are independent of the unproved recurrence premise.
 
 **Outcome and next.** This supplies a damage-independent finite witness for escape from every bounded span, reducing one possible recurrence approach to zero-cylinder visits along a specified critical ray. A bounded directional-dynamics search found no usable theorem in inspected material; absence is not claimed. Next audit this critical-ray visit premise or derive a different reachable-state return mechanism. No speed run, width census, ergodicity assertion or prize conclusion.
+
+## GC534 — The critical ray is a parity cocycle over its own right tail (2026-10-08)
+
+**Bounded audit and retained failure.** The follow-up search for a critical-ray ergodicity theorem supplied no usable result. Ordinary Rule 30 mixing does not settle GC533's map H=shift composed with F. A proposed fresh-left-pivot proof also stalls: H^t(x)_0=F^t(x)_t has initial cone [0,2t], so its leftmost XOR pivot is always X_0, not a newly revealed negative bit. One-time fair marginals do not restart that pivot. This is a failure of that proof route, not a nonergodicity theorem.
+
+**Prediction and unexpected control.** Predict an exact two-state phase extension after splitting site 0 from its right tail. Counterfactual this representation by itself supplies ergodicity is unsupported. Unexpected check: the first critical-ray update already correlates with the initial boundary bit, despite both marginals being fair. Hand formulas only, no experiment or search expansion.
+
+**Exact right-half factor.** Write z=x_0 and Y=(x_1,x_2,...). Let G be H restricted to this autonomous right tail, so G(Y)_j=Y_j XOR (Y_(j+1) OR Y_(j+2)), with indices j>=1. Put q(Y)=Y_1 OR Y_2. The right-half evolution is exactly
+
+    (z,Y) -> (z XOR q(Y), G(Y)).
+
+After t updates, its boundary bit is z XOR Q_t(Y), where Q_t is the parity of q(Y),q(GY),...,q(G^(t-1)Y). Under the iid product law z is independent fair, so each boundary marginal is fair regardless of the parity law. Yet at t=1,
+
+    E[(-1)^z * (-1)^(z XOR q(Y))]=E[(-1)^q(Y)]=-1/2,
+
+since q is zero with probability 1/4. This exact control refutes temporal independence; it does not refute ergodicity or decay at large times.
+
+**A specific invariant-phase obstruction.** Suppose a measurable function phi on the right tail takes values in {-1,+1} and satisfies
+
+    phi(GY)=(-1)^q(Y) * phi(Y) almost surely.
+
+Then K(z,Y)=(-1)^z*phi(Y) is unchanged by the right-half map: both factors acquire (-1)^q and cancel. K takes each sign with probability 1/2, because z is independent fair. Such a phi would therefore give a nonconstant invariant function and refute ergodicity of H already on this factor. Existence of phi is not proved. Its absence alone would also be insufficient unless ergodicity of the autonomous base were justified separately.
+
+The base is another copy of the same one-sided rule. Assuming its ergodicity as a fresh premise merely relocates the unresolved problem. The equation is a concrete phase-obstruction question, not an independent theorem that resolves the critical ray. A constant phi fails because q is not zero almost surely. This is an independent immediate control on the proposed obstruction.
+
+**Outcome and next.** The critical-ray visit route now has two explicit obstacles: no fresh left pivot, and a possible measurable invariant parity phase over the right tail. No usable directional theorem, invariant phase or cylinder-visit proof was obtained in this bounded block. Retain that failure and stop generic mixing transfer. Next an actual conditional confinement-escape mechanism, or a carefully justified phase-obstruction analysis; no numerical mixing fit can settle the measurable equation or the selected prize trace.
