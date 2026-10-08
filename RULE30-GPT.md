@@ -13011,3 +13011,23 @@ This uses neither singleton damage nor an iid environment, and holds at every ti
 Thus a unit right jump made at a fresh record or a tie returns to a fresh record after two updates. A unit jump through reused information lowers its nonnegative deficit by 2 over the pair. More generally, if displacement is eventually always at most 1, fresh records must recur infinitely: after a hypothetical last record, Z is a nonnegative integer. Every non-unit step lowers it by at least 1; each unit step is paired with its forced left step and lowers it by 2. It cannot remain nonnegative indefinitely. Therefore finite-record escape in the actual experiment would require infinitely many jumps of size at least 2.
 
 This closes GC512's all-time unit-reversal question and narrows its escape obstruction. It does not rule out larger-jump escape, prove record frequency or establish a limiting speed. GC507 already permits arbitrarily large jumps in ambient finite damage configurations; their probabilities and actual reachable-state constraints remain open. Next examine large-jump recovery with the damage word retained, not another abstract escape model or short-history fit.
+
+## GC522 — Two-site jumps block immediate left return (2026-10-08)
+
+**Scope and prediction.** Actual local damage-front audit after GC521; pending independent reading. Predict every right jump of at least 2 leaves common updated bits 0,1 at the old front and the next site. Thus an exact two-site jump cannot immediately move left. Counterfactual all positive jumps have GC521's forced reversal should fail. Unexpected check: for jumps larger than 2, these bits are not immediately below the new front. No speed or iid reachability claim. Preregistered 512 local controls, no transport scan.
+
+**Proof.** Set old front L=0 by translation; D_0=1 and D_i=0 for i<0. A jump at least 2 heals sites -1,0,1. GC521's first two healed equations give u_-1=v_-1=1 and both centre OR values equal to 1, so u'_0=v'_0=0. Healing site 1 gives
+
+    (u_1 OR u_2) XOR (v_1 OR v_2)=D_0=1.
+
+If the first OR is 0, then u_1=0, and the earlier centre OR forces u_0=1. If the first OR is 1, the second OR is 0, so v_1=0, the earlier centre OR forces v_0=1, and D_0=1 forces u_0=0. In either case
+
+    u'_1=u_0 XOR (u_1 OR u_2)=1.
+
+Site 1 has healed, so v'_1=1 also. This proves the common prefix 0,1. For an exact jump 2, the new front is 2 and its common left neighbor is 1. The leftmost derivative gives D''_1=1-u'_1=0; locality forbids disagreement below 1. Therefore the following displacement is at least 0. This is a deterministic prohibition of immediate left return, the opposite of the unit-jump law.
+
+**Independent controls and concrete failure.** Exhaust 64 background words on -2 through 3 and eight damage words with D_0=1, D_1,D_2,D_3 arbitrary and negative damage zero. Literal decimal-rule-table and XOR/OR updates agree on the four first outputs and the second disagreement at site 1. Of 512 cases, 32 heal sites -1,0,1; all have common prefix 0,1. Sixteen have the first disagreement at 2; all have second disagreement 0 at site 1. Controls PASS.
+
+GC507's N=1 finite pair u black at {-1,0}, v black at {-1,1} gives a hand counterexample to the all-positive reversal claim: after a jump 2 the common background is {-2,-1,1} and damage is {2}. At the next update damage is {2,3}, so the next displacement is 0. It is an ambient finite-pair example, not a claimed iid single-flip history.
+
+**Outcome and next.** Larger-jump recovery cannot be inferred by extending unit reversal. Exact two-site jumps actively block the immediate left move, while larger jumps preserve only a prefix far behind their new front. GC508's long compensating bout concerns its separate finite family, not all jumps. Quantitative recovery needs the intervening common background and surviving damage. Stop further small-jump enumeration; next a genuine multi-step recovery argument retaining that state, or another main-line lead. No record-frequency or speed conclusion follows.

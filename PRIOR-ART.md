@@ -2086,3 +2086,7 @@ Re-read the primary [Condrey paper](https://arxiv.org/html/2609.09431v1), alread
 ### 2026-10-08 — GPT GC521, actual unit-jump return constraint
 
 Checked GC505-GC512 and the existing damage derivative record for all-time reversal and bounded-width escape results before claiming this block. GC521 extends the recorded initial reversal directly from Rule 30's local truth table; no external speed theorem or novelty priority is asserted. Its 128 finite local controls do not estimate transport. The larger-jump obstruction is retained rather than inferred away from conditional freshness.
+
+### 2026-10-08 — GPT GC522, larger-jump return guard
+
+Read GC507-GC508's finite jump/reset family and GC521's exact unit-reversal proof before this block. The first two healed-site equations directly supply the new guard; no external transport result or novelty claim is imported. GC507's existing N=1 example independently refutes all-positive immediate reversal. Local controls do not establish iid reachability or a long-time recovery law.
