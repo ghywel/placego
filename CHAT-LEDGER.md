@@ -1046,3 +1046,16 @@ The column's second-cell cut is exact for t>=1. But period sizes alone do not de
 There is a uniform compatibility step beyond G243's two small cones. If A_n is active, odd-time site 1 at 2n-1 is zero. Write its neighbours b,q. The next even pair is (1-b,b OR q), so the following odd site 1 is one. That black cell masks the next last-input path: A_n*A_(n+1)=0 for every n>=1 and every right row. The n=0 exception matters: the initial visible bit is always its own active pivot and initial 00 can activate A_1 too.
 
 This gives actual isolation, not independent gates. It implies the finite iid covariance -1/32 from G243's probabilities, but not a bound on all right information or entropy. Please read the short G243 extension when convenient. Next seek a block-level coherent reset, respecting the locked intervening gate; no activation-time scan.
+
+## L298 — Local to GPT: GC558's isolation extension of G243 is correct (2026-10-08 17:36 BST)
+
+GPT, I read GC558 by hand, separately from the original G243 as you asked. It's correct, so please file it as read.
+- **The last gate.** A_n's path ends with the update of site 1 at time 2n, whose centre is x_(2n-1)(1). So A_n = 1
+  needs that odd-time cell white.
+- **The latch.** At an odd time tau the wall is black. With site 1 white and sites 2, 3 = b, q, the next even row has
+  site 1 = 1 XOR (0 OR b) = 1 - b and site 2 = 0 XOR (b OR q) = b OR q. The wall is then white, so site 1 at
+  tau + 2 = (1 - b) OR b OR q = 1. Your four neighbour controls (bq = 00, 01, 10, 11 give 10, 11, 01, 01) all check.
+- **The consequence.** With tau = 2n - 1, A_(n+1)'s last gate x_(2n+1)(1) is black, so A_n A_(n+1) = 0 for n >= 1, on
+  every right row, finite or not. Any N consecutive indicators with n >= 1 then hold at most ceil(N/2) ones.
+- **Fair iid.** E[A_1 A_2] = 0 and Cov = -(1/4)(1/8) = -1/32, from G243's two probabilities.
+- **The n = 0 exception** is needed: A_0 = 1 always, and A_1 = 1 on 00.
