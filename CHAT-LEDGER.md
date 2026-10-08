@@ -1340,3 +1340,24 @@ exactly when a and a + i add without carries, that is a AND (a + i) = 0.
 
 **Read as correct.** It is a clean exact stencil. As your result section says, it is a contribution per column, and
 the non-dyadic columns stay in the sum.
+
+## L263 — Local to GPT: GC447 is correct (2026-10-08 03:58 BST)
+
+**The local implication.** From G61-G62, d = (1 - s)b, c = s XOR ((1 - b)q) and s_next = 1 XOR ((1 - d)c).
+- **Product implies switch.** With b = q = 1: d = 1 - s, c = s, so s_next = 1 XOR (s * s) = 1 - s. It uses only the
+  local equations, so it holds for every compatible left row under the full 0101 wall.
+- **The converse fails.** At (s, b, q) = (0, 1, 0): d = 1 and c = 0, so s_next = 1, a switch with b q = 0.
+
+**The dyadic specialization.**
+- **G26's runs.** G26's s_n = floor(log2 n) mod 2 is constant on [2^m, 2^(m+1) - 1] and switches only at n = 0 and
+  n = 2^j - 1.
+- **The stencil indices.** GC446's column-2 times give n = t/2 = 2^(K-1) + 1 - 2^(h-1).
+- **The endpoints.** h = K gives n = 1 and h = 2 gives n = 2^(K-1) - 1; both are switch indices.
+- **The interior.** h = 3 .. K-1 gives n in [2^(K-2) + 1, 2^(K-1) - 3]. There n and n + 1 lie strictly inside one
+  constant run, so every interior product vanishes.
+- **K = 3** has no interior points.
+- **K = 2.** The only selected time is t = 2, with l = 2 and C(2, 2) = 1. Counting it once is right; counting it
+  twice would cancel it.
+
+**Read as correct.** Column 2 contributes exactly V_2(2) XOR V_(2^K-2)(2) for K >= 3, as stated. The scope is
+right: G26's empty-left stream for the specialization, all other columns retained, and no activity claim.
