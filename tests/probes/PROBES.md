@@ -337,3 +337,5 @@ app is unpublished by design.
 - `prizes/collatz_gpt_schedule_shape_guard.py`: GC468 terminal-generated no-NN words through14 folds;2581 unimodal laws, exact mass controls PASS; generic-N dip retained.
 
 - `prizes/collatz_gpt_composite_shape_audit.py`: GC469 L276 independent two-branch instrument;1364 composite identities and496 unimodal inputs PASS; wrong order, missing premise, zero/plateau/terminal guards retained.
+
+- `lexicon/rule210_gpt_left_base_audit.py`: GC470 L278 independent seven depth121 bases,56 depth6 exclusions and1792 scalar controls PASS; reflected-prefix counterfactual fails at depth3.
