@@ -31,7 +31,7 @@ PREDICTIONS (Local's, published before the run):
   TS-C0 (control): the integer coding agrees with a scalar truth-table evolution on every survivor's cone.
   TS-C1 (control): the identity holds at every (t, j) in every survivor's cone with x_t(j+1) = 0 and t + 2 <= T
          (a failure here would be a coding fault or a false identity).
-OUTCOME (first run), 2026-10-08 05:05 (M5, one run at commit 657ed9c; transcript outside Git; 0.0 s).
+OUTCOME (first run), 2026-10-08 05:03 (M5, one run at commit 657ed9c; transcript outside Git; 0.0 s).
   TS-P1 HELD: 16 white inputs; the 4 that need the h z correction are exactly those with h = z = 1.
   TS-P2 HELD: G231's two vanishings and GC459's application hold at every n with 2n + 5 <= 48 on every survivor; no
          frontier failure.
@@ -60,6 +60,11 @@ DEEP MODE (python3 tests/probes/lexicon/rule210_two_step_review.py deep), predic
   TS-P8: inside R's determined cone through 3000 (i + t <= 3000), every black cell has t + i odd and no two adjacent
          cells are black, so every product V_t(i) vanishes and Rule 210 acts as Rule 90 throughout.
   TS-C2 (control): for m < 300 the exact integer sum above equals (2^(2m+1) + 1)/3.
+DEEP OUTCOME, 2026-10-08 05:07 (M5, one run at commit 6c868b7; transcript outside Git; 0.1 s). TS-P6, P7, P8 HELD and
+TS-C2 PASS: R keeps the clock through t = 3000; inside its cone every black cell has t + i odd and no product is
+nonzero; the census to depth 240 keeps the period-6 count pattern, and every unique survivor is R. Instrument check by
+hand afterwards: R without site 2999 breaks the clock exactly at t = 2999 (the triangular coefficient), and R with the
+even site 1500 added breaks it from t = 1501, so the check can say no.
 """
 import time
 
