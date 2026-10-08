@@ -137,7 +137,7 @@ arguments for single trajectories. §7 turns that into questions.
 
 ## 6. Leads and their status
 
-**The status board** (updated 2026-10-06 23:46 BST; the time is from the shell). Every lead in this file, in RULE30-PRIZE.md and
+**The status board** (updated 2026-10-08 21:04 BST; the time is from the shell). Every lead in this file, in RULE30-PRIZE.md and
 in the mathematics table of CLOUD-LOCAL.md has one row here. When a lead moves, its row here and the tag at its
 item change in the same commit. Nothing is deleted: a finished item keeps its text, and its title is struck
 through.
@@ -507,3 +507,26 @@ signs.
 **Q6 diagonal-source contraction (GPT, 2026-10-08; GC592, awaiting reading).** A streak of r+1 frontier-diagonal events is exactly one initial black followed outward by 2r+1 whites. A separate one-ray streak census is CLOSED as a new mechanism: it repackages existing realizable white-run records. Joint clock and multiple-ray possibilities remain open; Q6 remains PART.
 
 **Q7 near-extreme waiting constraint (GPT, 2026-10-08; GC594, G247 extension second-read by Local L311).** On an uninterrupted common-period path, consecutive delays a+b>q and b<q force the third delay one. Ordinary nonsingleton triples cost at most 2q-1. GC595 transfers this through conservative births and gives common-period-four prefix debt T(M)-(5/2)M<=1+(5/2)P, P the singleton-driver count (awaiting reading). Local L312 checked GC595 conditionally on the still-unread GC572/GC573 birth premises. GC596 gives the affine extension but its certified slope (2q-1)/3 is already five at q8 (awaiting reading), so larger periods, selected frequency and the global waiting budget remain open; Q7 stays PART.
+
+**Q6 ray-coverage route, where it stands (Cloud, 2026-10-08 21:04 BST; chat CL054 to CL058; Q6 remains PART).** The
+owner's red-object postulate (CL054) became GPT's ray target. A finite left edge with deepest initial black L forces
+the event E_(L+t+2)(t) = 1 at every t (GC585), so a source that is silent where that ray passes forbids that L.
+- **Read now.** GC585, GC586 and GC590 to GC592 have their second reading (Cloud, CL057), as have the E14 identity
+  (GC589, Local L310) and CL055's adjacency rules (GPT, GC595).
+- **Fixed silences.** To depth 31 these are E1 black, E2, E4 white, E6 and E14 white (SS, Local L309). They cover
+  only L <= 4 and the even L <= 12.
+- **No hardening.** The six near-silent candidates fire at every age to 256 (SO, Local L310). By GC591 they can never
+  intercept, since every arrival comes by age j - 3.
+- **One diagonal streak** is exactly an initial black followed by white cells (GC592), so it is the zero-tail
+  question again.
+- **Adjacency rules.** Events never touch straight down or down-left, so no red-set edge is more than half full
+  (CL055). They do not bound the interior's parity.
+- **What is left.** Interception needs unbounded thresholds j - A - 2 in both parity classes (GC590). That means
+  deep sources or joint constraints with the clock. The alternative is a clock-dependent reason why the interior
+  cannot pay GC586's 110 signature.
+
+**Row 6.1, G248 read (Cloud, 2026-10-08 21:04 BST; chat CL056; 6.1 remains PART).** The phase and charge readings of
+a kick differ by 14 times the sum of the complete visible zero gaps between the two locks, mod 28 (G248 with
+GC582). It was read by hand and replayed at every consecutive RB lock pair, 139,972 and 71,016 of them
+(`rule30_cloud_review_g248.py`). The one odd pair is RB's single 1-gap at t = 71. It says nothing about which gaps
+are admissible, or about the integer lift.

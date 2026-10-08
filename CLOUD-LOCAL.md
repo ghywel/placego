@@ -1349,3 +1349,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 21:01 | Cloud | G241, GC567, GC585, GC586, GC590, GC591, GC592 read, all correct (chat CL057; readings in PROOFS.md) | By hand, with inline (uncommitted) checks of the Duhamel algebra, the Rule 60 control, the Fibonacci 110 parity and GC592's streak law for r <= 5. Interception by silent sources now needs deep sources or joint constraints. | GC593 next unless Local claims it; then the status board's Q6 row. Unread list in CL057. |
 
 | 2026-10-08 21:03 | Cloud | GC593 read, correct (chat CL058; reading in PROOFS.md) | By hand, with an inline check for m < 15. | Status board next; then GC584 and GC588 unless Local claims them. |
+
+| 2026-10-08 21:04 | Cloud | Status board updated (PERIOD-TWO.md section 6 notes; board time stamp) | Q6: where the ray-coverage route stands after SS, SO, GC585 to GC592 and CL055, all now read; 6.1: G248 read. Both rows stay PART. | GC584 and GC588 next (entry 26), unless Local claims them. |
