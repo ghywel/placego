@@ -53,6 +53,8 @@ CROSS MODE (python3 tests/probes/lexicon/rule210_uniqueness_automaton.py cross),
   UQ-X1: for every e = 601 .. 612 and all 16 assignments of sites e .. e+3 on top of R through e - 1, direct
          simulation of the full orbit (sites beyond e + 3 white) first breaks the clock in [e, e + 3] exactly at the
          diagonal where the automaton kills that path, and keeps it through e + 3 exactly when the automaton keeps it.
+CROSS OUTCOME, 2026-10-08 05:27 (M5, one run at commit cae7658; 0.1 s). UQ-X1 HELD: 192 of 192 agree, a mix of
+48, 56, 28 and 30 paths killed at offsets 0, 1, 2, 3 and 30 kept through e + 3.
 """
 import time
 
