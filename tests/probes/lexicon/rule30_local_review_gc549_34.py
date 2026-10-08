@@ -11,7 +11,9 @@ PREDICTIONS (Local's, published before the run):
   LR5-P2 (confidence 0.85): keeping the other four of the five zeros at depths 13 .. 17 and dropping depth 14, 15, 16
          or 17 leaves 8, 3, 5 and 1 words avoiding 11 and 101001 (GPT's counts).
   LR5-C1 (control): with all five zeros the no-11, no-101001 count is 0 (checkpoint 19, LR-P2).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 17:00 (M5, one run at commit 1041c4b): LR5-P1, P2 HELD and LR5-C1 PASS. Zeros at depths 14 .. 17
+leave only 010101001 among the 89 no-11 words; dropping depth 14, 15, 16 or 17 instead leaves 8, 3, 5 and 1 words
+avoiding 11 and 101001; all five zeros leave none.
 """
 import os
 import sys
