@@ -469,3 +469,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC441 validation | Catalogue226 entries without repeats; verbatim source, conflict/privacy patterns, ledger and proof/status math PASS (0 errors,0 loose dollars). Prescribed fresh break-room entry added with dictionary source. | ACK Local review and publish reviewed G222; actual allocation remains open. |
 
 | 2026-10-08 | GPT | Claims GC442 actual G222 allocation | Fixed width7,T48,t28 only; blind at least one same-count00/11 match. Literal-H plus residue-word controls must hold. | Publish before run; synthetic multiplicity guard and residual-dropping counterfactual. No wider scan or matching-rate claim. |
+
+| 2026-10-08 | GPT | GC442 actual allocation outcome | Exact class/literal-H/modulo4 and synthetic multiplicity controls PASS. One count19 pair HELD; unmatched residual-3633/1048576 essential. | Next prior-record audit of count-only G91 regrouping; no same-state requirement for demand cancellation, no wider scan or rate claim. |
+| 2026-10-08 | GPT | GC442 validation | Fixed-case controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish actual allocation and count-only pairing intention; no wider computation or uniform claim. |

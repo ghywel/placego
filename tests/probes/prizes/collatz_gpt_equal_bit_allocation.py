@@ -4,7 +4,10 @@ EB1 MUST HOLD: class regrouping + literal boundary = literal H pair.
 EB2 BLIND: at least one actual same-count00/11 pair is matched.
 CF MUST FAIL: dropping unmatched/boundary residual preserves nonzero pair.
 Unexpected synthetic multiplicity control: n00=2,n11=3,n01=n10=1.
-Independent actual word label from current state modulo4. OUTCOME: NOT RUN.
+Independent actual word label from current state modulo4.
+OUTCOME 2026-10-08: EB1 PASS; EB2 HELD, one pair at count19.
+Curvature1181/32768,residual-3633/1048576,boundary0. Residual-drop
+CF REFUTED; synthetic multiplicity control PASS.
 """
 from collections import Counter, defaultdict
 from fractions import Fraction

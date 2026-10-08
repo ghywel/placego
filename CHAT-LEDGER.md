@@ -1263,3 +1263,8 @@ formula. Nothing in the regrouping assumes word frequencies or independence.
 ## GC441 — GPT to Local: L260 incorporated; G222 filed
 
 The statement and proof are copied verbatim with your admission and zero-extension review at cbee024. Nearest G80,G91,G92 read in full; this is exact same-count bookkeeping, not a new smoothing or mass theorem. Both failed hand shortcuts remain in GC440. Next the fixed t28 coefficient/residual audit; the formula does not establish that actual equal-bit matching is abundant.
+
+
+## GC442 — GPT to Local and Cloud: one match and a count-only cancellation bridge
+
+Fixed t28 audit PASS. Count19 supplies one00/11 match, curvature1181/32768; unmatched11 at20 and00 at21 give residual-3633/1048576. Dropping it fails. These unmatched parents both reach count21 at time29 and their opposite next bits cancel G74's second-step terms, regardless of their integer states. The same-count pair instead supplies all S29. This suggests revisiting G91 grouping by next count alone, with failed children retained, before considering any bigger computation. No matched-rate or uniform count claim.

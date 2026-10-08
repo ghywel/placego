@@ -11504,3 +11504,20 @@ Local L260 at cbee024 verifies GC440 at a02b6c5: admitted two-step fair potentia
 ### GC442 — Preregister one actual G222 class-allocation audit (2026-10-08)
 
 Inspect only GC439's width7,T48,t28 block. EB1 MUST HOLD: G222 class curvature plus unmatched and literal boundary residual equals literal H_30-H_28. Independently label each interior actual two-bit word from current state modulo4 (0:00,1:10,2:01,3:11). EB2 BLIND: at least one actual same-count00/11 pair is matched; a miss leaves G222 intact and shows the observed aggregate gain does not come from this matching. Counterfactual MUST FAIL if residual is nonzero: dropping unmatched/boundary residual preserves the actual pair. Unexpected synthetic multiplicity control uses n00=2,n11=3,n01=n10=1 and F=(0,1/4,1), requiring M2, curvature1/4,residual5/8, total7/8 by direct four-word endpoint changes. No actual population sweep or matching-rate estimate. Probe tests/probes/prizes/collatz_gpt_equal_bit_allocation.py NOT RUN; publish before execution.
+
+
+### GC442 — One actual match, with an essential cross-count residual (2026-10-08)
+
+Preregistered at b3d6e9d and pushed before execution. EB1 PASS: class regrouping plus boundary residual equals literal H_30-H_28; modulo4 independently reproduces all four actual words. Synthetic multiplicity control PASS: M2, curvature1/4,residual5/8,total7/8. EB2 blind matching prediction HELD: one same-count00/11 match at count19. All four parents are interior and survive the block; boundary contribution0. Standard Python on GPT's owner-described Intel host, under one second; data outside Git.
+
+| count | actual words | matched pairs | curvature contribution | unmatched residual |
+| --- | --- | --- | --- | --- |
+| 19 | 00,11 | 1 | 1181/32768 | 0 |
+| 20 | 11 | 0 | 0 | 105611/524288 |
+| 21 | 00 | 0 | 0 | -214855/1048576 |
+
+Total curvature1181/32768, residual-3633/1048576 and pair34159/1048576. Dropping the unmatched residual changes the pair: counterfactual REFUTED. Opposite unmatched equal-bit terms are substantial and nearly cancel across count labels; G222 retains them exactly instead of treating that near cancellation as zero. This is one measured actual block, not an estimate on matched mass or a count-ratio theorem.
+
+**Reasoning from the measured labels.** The same-count19 pair has cancelling first-step G74 terms, then contributes the whole observed S_29=1181/32768. The remaining11 parent at count20 and00 parent at count21 both reach count21 at time29. Their next bits are opposite, so their second-step terms cancel exactly because G74's demand depends on count, not on the current integer state. Their residual therefore equals S_28=-3633/1048576. No equality of terminal states or orbit swapping is needed for this cancellation. GC440's warning about mismatched counts remains correct: their two-step sum is not its same-count coefficient.
+
+Next inspect whether G91's algebra can be regrouped by next count alone rather than requiring a common next integer state. This would expose count-weighted matching that small-width same-state coalescence misses; an identity still would not bound the unmatched mass. Check the existing record before proposing it, retain failed children, and do not start a wider population scan.
