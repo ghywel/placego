@@ -9862,3 +9862,20 @@ argument is right: the singleton's two leftmost sites are black at every t >= 1,
 inline check (not committed) confirmed the supports, the centre prefix and the nonoccurrence at time 3m for m < 15.
 The disposition is GPT's and stays as scoped: the coarse-memory route is closed for finite seeds, and the
 singleton-specific reachable-state estimate is open.
+
+**G240 finite-age compensation filter (GPT, 2026-10-08; GC598, awaiting reading).** Retain GC585-GC586's hypothetical full wall with finite left edge L. Let I(k) be the parity of interior sources (j<L+t+2) with coefficients binom(k-j,t) modulo two, j>=1. For k>=L+2, it must equal F_(k-L-1) modulo two. Fix A>=0 and split I=I_old XOR I_late at source ages t<=A and t>A. Put Q equal to the least power of two strictly greater than A, and K0=max(L+2,L+A+1).
+
+There are finitely many old interior sources, since j<=L+t+1<=L+A+1. For k>=K0 all their coefficient indices k-j are nonnegative. Lucas's binary coefficient formula shows binom(n+Q,t)=binom(n,t) modulo two for every t<Q and n>=0: adding Q preserves the binary positions below Q, the only positions used by t. Therefore I_old(k+Q)=I_old(k), and
+
+    I_late(k) XOR I_late(k+Q)
+      = F_(k-L-1) XOR F_(k+Q-L-1) modulo two,  k>=K0.
+
+Q is coprime to three, so the right side is nonzero in exactly two of every three consecutive target depths. This is a parity statement about the late sources selected by the symmetric difference of two stencils; it is not a two-thirds density claim about individual source events.
+
+**Finite-age closure and hand controls.** No finite-age interior source set can pay the full required signature. In particular among the three targets K0,K0+Q,K0+2Q, the old contribution is constant while the required Fibonacci parities have two ones and one zero, so at least one target requires a nonzero late contribution. Its stencil then contains an interior event with age greater than A. As A is arbitrary, compensation must use unbounded source ages. At A=0,Q=1 the old coefficients are constants, while the required three parities are 1,1,0 in cyclic order. At A=1,Q=2, t=0 gives constant coefficients and t=1 gives n modulo two, unchanged after two. These are independent coefficient controls, not a computation.
+
+**Counterfactual, unexpected check and scope.** Finitely many interrupted ray fragments do not suffice: their maximum age would make I_late identically zero, contradicting the displayed difference. Unexpectedly a three-target test suffices at each age cutoff, with no source independence or density estimate. Infinitely many intermittent fragments remain possible in this argument, and G240 already gives unbounded near-wall E3 activity. The new statement filters the necessary contributing parity; it does not turn activity into uncancelled contribution or prove a prize obstruction. GC555's unroll equivalence is retained: this is an age-cutoff consequence of the same identity, not an extra dynamical invariant. Stop the finite-fragment shortcut; the open question is nonlinear compatibility of the late symmetric-difference parities.
+
+**Independent activity-versus-contribution control.** A formal array with E3(t)=1 at every age and every other source zero has unbounded activity. For target k>=3 its total selected parity is sum_(t=0..k-3) binom(k-3,t), namely 2^(k-3) modulo two. This is zero at every k>=4. Thus unbounded source ages do not suffice even at the level of the unroll; the displayed late-parity obligations must be paid. This isolated array is not asserted to be a full actual clock history. No near-wall source independence is assumed.
+
+*GC598 duplicate disposition.* G240 nearest C7,W236,G108 full readings are retained. GC586 provides the required period-three signature, and Lucas supplies a standard dyadic coefficient identity. No new scored entry or experiment; GC597's separation cap alone is not assumed to limit the number of fragments.
