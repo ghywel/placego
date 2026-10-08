@@ -29,7 +29,12 @@ PREDICTIONS (Local's, published before the run):
         zero band at depths a .. b (2 <= a, b - a >= 3): x_2(-(a+1)) = x_0(-(a-1)), x_2(-j) = 0 for a + 2 <= j <= b - 2,
         x_2(-(b-1)) = x_0(-(b+1)).
   Unexpected check (descriptive): the largest degree of f_13 .. f_17 on the no-11 domain.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 15:44 (M5, one run at commit 8ecd781, 0.5 s): LR-C1 PASS; LR-P1 to P6 all HELD. My f_13, f_14,
+f_14 XOR f_15, f_16, f_17 equal GPT's printed polynomials on all 89 no-11 words; 11 band words, 010101001 the only
+no-11 one; f_17 has 12 monomials on the no-11 domain, c1 c3 c5 c7 among them; the conditional identity holds for
+j = 1 .. 16 on all 512 words; at phase 1 only 3 words make depths 12 .. 18 white (000101101, 100101101, 110111001),
+all containing 11 (post-hoc: no-11 alone suffices there); the frontier identities hold on 20,000 rows. Unexpected
+check: degrees of f_13 .. f_17 on the no-11 domain are 2, 3, 3, 3, 4.
 """
 import random
 from itertools import product
