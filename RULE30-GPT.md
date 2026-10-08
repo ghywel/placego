@@ -12896,3 +12896,45 @@ GC494's paired-run duration requirement is equivalent to this individual-start v
 **Independent controls and failed shortcut.** An alternating trace with unit runs has all durations bounded and satisfies the normalized duration requirement; equal doubling pairs have zero signed pair-end discrepancy but fail the duration requirement, as GC494 already checks. These are sequence controls, not Rule 30 realizations. For an actual finite-row scope control, take black sites {-m,m+1}, m>=2, with a white centre. GC496 gives white duration exactly m despite the centre and site -1 both being white initially, with no black checkerboard starting at either inspected site. Thus no bound obtained solely by inspecting those checkerboard starts at the white-start instant controls the waiting time for first arrival. The family is not asserted to be reachable at singleton run starts or to refute a stronger all-time estimate.
 
 **Outcome and next.** The selected-orbit duration half now has a precise three-part geometric formulation: black match, white empty-gap delay, and post-arrival match. The uniform edge strip and iid ensemble law prove none of these near-centre selected-time estimates. A useful next claim must bound at least one of these exact quantities on the actual singleton orbit or couple them to signed run-length cancellation. Stop further reformulations and fixed controls until such a dynamical input is found; otherwise change to another open main-line reasoning lead.
+
+## GC518 — Root-visible spectral contraction is also necessary for finite-kernel balance (2026-10-08)
+
+**Bears on.** GC488-GC489's conditional Problems 2/3 bridge. Bounded hand linear-algebra audit, independent reading pending; no actual Rule 30 representation, numerical spectral fit or experiment. Predict a necessary-and-sufficient balance criterion within the proved finite closed family. Unexpected check: GC489's dyadic-only countersequence itself has a four-state closed kernel. Counterfactual origin dyadic totals suffice remains false. These are standard finite-representation tools, with no novelty claim.
+
+**Setting and claim.** Retain GC489's finite decimation family, child-sum matrix A, reachable output span W, selected-coordinate functional ell and invisible subspace U={w:ell(A^k w)=0 for all k>=0}. Let Abar act on V=W/U. Then
+
+    selected signed prefix sum S_g(N)=o(N)
+    if and only if spectral radius of Abar is strictly below 2.
+
+The sufficient direction is GC489's all-prefix bound. The necessity below uses every fixed shifted dyadic block, not merely blocks starting at the origin. The representation must be genuinely closed at every index; merging finite signatures is not a hypothesis substitute.
+
+**Shifted blocks from prefix balance.** Iterating A b(n)=b(2n)+b(2n+1) gives
+
+    A^k b(n)=sum over 0<=r<2^k of b(2^k*n+r).
+
+Therefore ell(A^k b(n))=S_g((n+1)2^k)-S_g(n2^k). If S_g(N)=o(N), division by 2^k tends to zero for every fixed n, including n=0. Every w in W is a finite linear combination of reachable b(n), so
+
+    ell(A^k w)/2^k tends to zero for every w in W.
+
+This conclusion extends to the complexification by splitting real and imaginary parts.
+
+**Visible peripheral modes contradict that limit.** A has nonnegative entries and each row sums to 2, so its spectral radius is at most 2. Restriction to W and passage to its invariant quotient introduce no additional eigenvalues. If Abar had an eigenvalue lambda with absolute value 2, take a nonzero complex eigenvector v. Its root functional ellbar(v) cannot vanish: if it did, all ellbar(Abar^k v) would vanish, so any lift would belong to U and v would be zero. For a lift w,
+
+    ell(A^k w)/2^k=(lambda/2)^k ellbar(v),
+
+whose absolute value is a positive constant. This contradicts the shifted-block limit. Thus every eigenvalue of Abar has absolute value below 2. Conversely this spectral condition supplies a power bound with some 1<rho<2 in finite dimension, and GC489 proves all-prefix sublinear discrepancy. No Jordan or peripheral-mode estimate is assumed from data.
+
+**Independent controls.** Thue-Morse and the alternating root have zero quotient operator as audited in GC488-GC489, and their sums are bounded. Constant spin has Abar=2 and discrepancy N. These check both sides and the removal of root-invisible biased modes.
+
+For GC489's countersequence h, take h(0)=1,h(1)=-1; for n>=2 its sign is +1 when its first two binary digits are 10 and -1 when they are 11. Let H=h. Define G,J,K to agree with h at n>=2, with their output pairs at n=0,1 respectively (1,1),(-1,-1),(-1,1); H's pair is (1,-1). Direct leading-digit and exceptional-index checks give the closed transitions:
+
+| State | Even child | Odd child | Output at 0 |
+| --- | --- | --- | --- |
+| H | G | J | 1 |
+| G | G | H | 1 |
+| J | K | J | -1 |
+| K | K | H | -1 |
+
+Every state equals +1 at index 2, so b(2) is the all-ones vector. It lies in W, has eigenvalue 2 under A, and is root-visible. Equivalently, the shifted block [2*2^k,3*2^k) consists entirely of +1 and has sum 2^k. Thus the criterion rejects balance even though the origin dyadic totals S_h(2^k)=0 for k>=1. The finite kernel still supplies a logarithmic digit indexer, showing again that cheap indexing alone need not give Problem 2. This is an explicit arithmetic sequence, not a Rule 30 trace.
+
+**Outcome and next.** Within a proved finite closed representation, the balance test is now exact: remove invisible modes and check whether any modulus-2 mode remains. Origin dyadic totals alone miss reachable shifted blocks. For Rule 30 the representation itself remains unproved, so this does not resolve either prize. A next useful representation claim must establish infinite child identities or a justified nonfinite analogue; do not enlarge the finite signature census or fit its eigenvalues.
