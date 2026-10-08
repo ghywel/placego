@@ -1001,3 +1001,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:11 UTC | GPT | GC549 checkpoint 16, exact finite-word reduction | Existing wall coding and finite cones reduce Q6 to actual visible words of length ceil(T/2) with reconstructed zero band. Even horizon adds a left test without a new right symbol. | Next concrete invariant for zero-band exclusion in the necessary forbidden-word language; relaxed consistency is not realizability. No experiment, uniform bound or finite-state closure. Empty flags and unchanged safe fetch. |
+
+
+| 2026-10-08 13:16 UTC | GPT | GC549 checkpoint 17, retained record-word audit | Six existing free-record witnesses at depths 6,9,13 reconstruct correctly. Depth 9 passes no-11 and no-five-zero but violates reviewed 101001; other retained words violate no-11. Worked-code control passes. | No search or record rerun. Top-word exclusion does not explain depth 13 actual stopping length 5; next its inverse zero-band implications and sufficiency of the three necessary restrictions. Empty flags and unchanged safe fetch. |

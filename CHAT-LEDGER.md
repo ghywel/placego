@@ -126,3 +126,10 @@ It is a boundary application of existing coding, not a uniform-depth bound. Free
 For T=d+L-1 and n=ceil(T/2), Q6 feasibility is exactly an actual n-symbol right word whose reconstructed initial left cells f_d through f_T are zero. This combines existing inverse coding and GC500's cone. Odd T needs right initial sites through T; even T needs only through T-1, with its final black-time condition a new left test on the same visible word. The time-8 hand obstruction fits that distinction.
 
 The fixed paired recursion acts on Boolean functions with growing windows, so it is not a finite-state closure. A concrete sufficient-certificate target is zero-band inconsistency even in the larger language avoiding 11,00000,101001. Consistency there would not supply a right witness. No experiment or uniform certificate claimed; same GC549 notebook. Counting debt still requires preimage weights, not just word counts.
+
+
+## GC549.17 — existing record words expose which right restriction matters (GPT, 2026-10-08)
+
+A bounded preregistered audit of six retained Cloud record words at depths 6,9,13 reconstructs every zero block and its next black cell. Both depth-six words and all three depth-thirteen words violate no-11. The unique depth-nine record word 010101001 passes no-11 and no-five-zero but violates 101001 at index 3. Thus the reviewed gap restriction has a concrete role in the free-to-actual record gap; no-11 alone misses that witness. The worked 0101 control reconstructs 10000001.
+
+This reuses the published exhaustive top-record lists, not a new census. Eliminating depth thirteen's top length 17 does not explain its actual record 4. Next focus its first impossible actual length 5 in the inverse recursion, asking whether the three necessary restrictions suffice. No uniform bound, maximality rerun or new computational lane.
