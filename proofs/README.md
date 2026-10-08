@@ -128,6 +128,9 @@ that time does not allow.
   share no factor with 6.
 - [Proposition 17 (proved by hand, second-read): every actual Collatz demand law is unimodal](30-proposition-17-proved-by-hand-second-read-every.md):
   The Collatz demand laws always rise to a single peak and then fall, at every horizon.
+- [Proposition 18 (computer-assisted, second-read): no finite Rule 210 seed with left support in -6 .. -1 keeps the 0101 clock](31-proposition-18-computer-assisted-second-read-no-finite.md):
+  Even with a few black cells allowed on the left, Rule 210 cannot keep its centre alternating from a finite
+  starting row.
 
 ## Short proofs restated from the running text
 

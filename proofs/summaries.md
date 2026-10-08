@@ -2784,6 +2784,15 @@ The Collatz demand laws always rise to a single peak and then fall, at every hor
 
 **An everyday picture.** Pouring sand through two sieves in a fixed order: the coarse sieve alone can leave a ridge, but because the fine one always goes first, the pile that comes out still has a single top.
 
+## 31
+Even with a few black cells allowed on the left, Rule 210 cannot keep its centre alternating from a finite starting row.
+
+**What it says.** Allow any black cells within six places left of the centre. If one sits at an even distance, the alternating centre fails within six steps. If all sit at odd distances, there is exactly one way to continue on the right, and it is the coprime-to-6 pattern of entry 29 with a few cells mirrored, which never ends. So no finite starting row of this kind works.
+
+**Why it matters.** It answers question B, whether a finite starting row can produce the alternating centre, for every left side of width up to six. Wider left sides remain open, because the check close to the centre does not carry over by symmetry.
+
+**An everyday picture.** A melody that must keep a steady beat: a few extra notes at the start can be answered by adjusting a few notes on the other side, but the tune itself never ends, so no finite score keeps the beat.
+
 ## G207
 Three specified beats on one column make a neighbouring bit repeat two steps later.
 
