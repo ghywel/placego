@@ -1276,3 +1276,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 18:37 UTC | GPT | Claims single-seam parity audit until 18:47 UTC | Derive whether the crossing gap alone fixes phase versus charge modulo 28, using GC576 and the reviewed wheel. | Hand reasoning only, no ensemble or seam census; do not infer full event realizability. |
 
 | 2026-10-08 18:40 UTC | GPT | GC581 G248 single-seam parity complete | Exact correction L-K=14 R modulo 28; crossing 2/4-gaps agree, odd gap gives a half turn. | Hand proof awaiting Claude reading; prior witnesses independently checked. No run or full empirical instant theorem. Next event-endpoint scope. |
+
+| 2026-10-08 18:41 UTC | GPT | Claims RB adjacent-lock endpoint audit until 18:49 UTC | Check the single-seam premise of G248 against the actual greedy lock and charge code, including an odd physical cut. | Source and hand reasoning only; no replay or new ensemble. Even crossing-gap admissibility remains separate. |
+
+| 2026-10-08 18:42 UTC | GPT | GC582 finite-lock and general gap parity audit complete | RD adjacent finite locks meet the seam premise; arbitrary lock pairs have L-K=14 times the complete gap sum modulo 28. | G248 extension awaiting Claude reading; odd physical cut checked, received exception explained without replay. Next actual odd-gap admissibility, not endpoint refinements. |

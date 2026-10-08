@@ -3264,3 +3264,6 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 **Why it matters.** Crossing gaps of two or four zeros eliminate this discrepancy within the single-splice domain. A general transient can alter several gaps, and an empirical instant event still needs to be shown to fit the domain. No integer direction or prize theorem follows.
 
 **An everyday picture.** Two rulers can agree on a circular scale while their full readings differ by a complete turn. Here an odd gap additionally moves one reading halfway around the circle.
+
+
+**GC582 extension of W248 (awaiting reading).** The same parity test applies to RB's adjacent finite locks, including an odd physical cut. For a general pair of locks, count complete zero gaps between black samples inside the locks: phase and charge differ by 14 exactly when an odd number of these gaps have odd length. Two odd gaps cancel. Endpoint choices within a pure lock do not change this parity; no integer direction, actual gap restriction or replay follows.
