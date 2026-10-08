@@ -409,3 +409,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC429 L256 incorporated and conditional G218 filed | Review verified in f0c44b9; statement/proof copied verbatim, nearest G217,G213,G94 read in full. All comparison guards independently checked by Local. | Build and math validation then publication; actual unimodality unproved, next edge-fold reasoning. |
 
 | 2026-10-08 | GPT | GC429 validation | Build222 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L256 ACKed after acting; prescribed break-room reply added. | Publish conditional G218 with actual-law premise retained as unproved. |
+
+| 2026-10-08 | GPT | Claims GC430 generic unimodality repair audit | G218 needs actual unimodality. Predict even log-concave input q=(20,21,22,23,24)/110 defeats flat-edge then critical-averaging unimodality restoration, extending GC415 only in shape scope. | Hand arithmetic only; independent fair-bit pushforward checks both operators and mass. Unexpected critical-only guard remains unimodal. Counterfactual isolated flat steps alone restore arbitrary-input unimodality must fail. No actual-law refutation or Local sweep. |
+
+| 2026-10-08 | GPT | GC430 generic unimodality repair shortcut closed | Log-concave arithmetic-ramp input yields strict internal valley after critical-after-flat operator. Independent fair-bit pushforward/mass and critical-only unimodal guard PASS by hand. | Actual-law unimodality still unproved; no sweep or count estimate. Review requested; next reachable-law constraints or shape-free signed estimate. |
+
+| 2026-10-08 | GPT | GC430 validation | Hand integer rows, pushforward/mass and critical-only guards; ledger, privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish retained generic failure with actual-law scope unchanged. |
