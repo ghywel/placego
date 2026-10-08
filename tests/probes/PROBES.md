@@ -410,3 +410,10 @@ app is unpublished by design.
   the actual language up to length 10; the actual right half). Also the exact visible language to length 10,
   and (`--gap`) a gap witness with its shortest absent factor found by SAT. python-sat. Predictions in the
   docstring, pushed before each run. No data.
+
+- `lexicon/rule30_gpt_entry_image.py`: GC549 checkpoint 28, exact two-step sixteen-state predecessor image; 32 independent literal controls and a shortest missing spatial tail, no visible-word census or SAT.
+
+- `lexicon/rule30_cloud_wheel_drift.py` (Cloud, 2026-10-08, CL043, the owner's 17/56 question): RD, the
+  wheel's long-run rotation by exact kick bookkeeping (integers only). Forward and backward kicks cancel to 0.2%;
+  the rotation is 17/56 to within about 1e-5. Predictions in the docstring, pushed before the run. CPU, standard
+  library. No data.

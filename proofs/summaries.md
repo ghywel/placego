@@ -3077,3 +3077,14 @@ The critical-ray bit cannot become constant under a fair initial row, except on 
 **Why it matters.** This proves the single-bit baseline without critical-ray ergodicity. Simultaneous longer zero windows and damage escape remain open.
 
 **An everyday picture.** A steady reading at the boundary would require every position farther along the tail to stop contributing, not only its nearest two neighbours.
+
+
+## W236
+
+The row after a history-bearing four-gap entry retains a restriction three sites beyond its familiar prefix.
+
+**What it says.** From initial prefix 0001, a two-step output beginning 11100 cannot continue with 011. A sixteen-state spatial image map proves this in three subset transitions. Second reading pending.
+
+**Why it matters.** A canonical five-site prefix does not erase the incoming history. The missing visible 4,3,2 factor still needs its continuation linked to this spatial restriction.
+
+**An everyday picture.** Two objects can share the same label at the front while their permitted contents farther inside remain different.
