@@ -23,7 +23,14 @@ PREDICTIONS (Local's, published before the run):
   D1 (descriptive): the same two numbers at window 200 .. 399, to see whether the ensemble is still settling.
 Counterfactual: if infinite rows rarely lock, the fresh randomness arriving from the right keeps the wall region
 unlocked, the wheel is a property of finite right halves, and GC563's beta need not tend to zero.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 18:07 (M5, one run at commit 0981b01, 2.3 s): LK-C1 PASS (finite rows on the wheel 0.932 of the
+window). LK-P1 HELD: infinite fair rows are on the wheel 0.953 of t = 1000 .. 1999 (D1: already 0.941 at 200 .. 399).
+LK-P2 REFUTED: pooled 8-block entropy 0.390 bits per symbol, but the test was ill-chosen, since pooling over the
+wheel's 28 visible phases measures phase variety, not unpredictability. Post-hoc and exploratory (400 fresh infinite
+rows, visible symbols at even t = 1000 .. 1998): the conditional entropy H_(k+1) - H_k of the next symbol given the
+last k is 0.67, 0.61, 0.147, 0.132, 0.116, 0.099, 0.099, 0.084, 0.083, 0.082, 0.080 bits at k = 1, 2, 4, 8, 12, 16,
+20, 24, 28, 32, 40, still drifting down slowly; the distinct k-blocks number 18, 32, 56, 101, 171 at k = 8, 16, 24,
+32, 40.
 """
 import math
 import os
