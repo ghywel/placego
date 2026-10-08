@@ -11060,3 +11060,26 @@ At q=1/4, conditional on Y=000, a,b,c are independent Bernoulli(1/4). If b=1, F1
 **Finite controls.** Exact rational probability tables enumerate8 initial words and8 flip masks per q. XOR-OR agrees with the independent decoded Rule30 table. Direct relative-entropy computation agrees with the entropy chain and conditional-information identity. At q=1/4, I(F0;Y)=0.18872187554086717, I(F1;Y)=0.07223675472190724, joint=0.3058658118488182 bits; gap=0.04490718158604379 bits. All four observation pairs have probability1/4. Unexpected endpoints: q0 gives marginal1,1 and joint2; q1/2 gives all information0. Both gaps are0. Controls PASS. Instrument tests/probes/lexicon/rule30_gpt_toolkit_information.py; probability transcript outside Git.
 
 **What fails and what remains.** Summing actual marginal information values as though they equalled or upper-bounded the trace information is false even for two genuine Rule30 observations. Imported119 correctly bounds each individual readout by1-h(q), but does not bound the missing conditional term by that argument: conditioning on another observation destroys the uniform-input premise. This example does not refute a possible two-bit ceiling2*(1-h(q)); indeed its measured joint information is below that ceiling. Proving such a ceiling requires a separate vector/conditional argument. Nor does a noisy fair-ensemble information ceiling force deterministic count loss or exclude one selected seed. Q1 remains OPEN; useful application guard, no new prize theorem.
+
+### GC413 — Fresh pivots prove a vector noise ceiling without a marginal shortcut (2026-10-08; second reading requested)
+
+**Existing basis and prediction.** G97's reviewed fresh-pivot argument makes fixed-centre observations of an iid fair initial row iid fair. GC412 shows actual marginal information does not sum to the trace information. The positive follow-up, preregistered in CLOUD-LOCAL, uses conditional entropy of the fresh initial pivots instead. This proves the candidate vector ceiling in this special dynamical setting by elementary reasoning; it does not upgrade imported119's general level-B theorem.
+
+**Claim.** Let X be iid fair on the initial cone[-(T-1),T-1], let F=(F0,...,F_(T-1)) be the centre samples of synchronous Rule30 at times0..T-1, and let Y be those initial bits independently flipped with probability q,0<=q<=1. With h(q) the binary entropy,
+
+    I(F;Y) <= T*(1-h(q)).
+
+If G is the same centre trace obtained by evolving initial row Y, then also
+
+    I(F;G) <= I(F;Y) <= T*(1-h(q)).
+
+**Proof.** Left permutivity under iteration gives F_t=X_(-t) XOR g_t of the other initial cone bits. No earlier F_s uses X_(-t), because its leftmost input is at-s>-t. Let E_t be the vector of all initial cone bits except X_(-t). Then the earlier observed prefix is determined by E_t. Conditional on Y and E_t, the pivot still has its binary symmetric-channel posterior: its probability of disagreeing with Y_(-t) is q. Indeed the original bits and channel noises are independent, and observing all other inputs or their noisy copies provides no information about this pivot beyond Y_(-t). Once E_t is fixed, g_t is fixed; XOR does not change entropy. Therefore
+
+    H(F_t given F_<t,Y,E_t)=h(q),
+    H(F_t given F_<t,Y)>=h(q).
+
+Summing the conditional-entropy chain yields H(F given Y)>=T*h(q). G97's independent fresh fair pivots give H(F)=T, proving the first bound. G is a deterministic function of Y, so data processing gives the second. Endpoint q0 or q1 yields an invertible input channel and q1/2 an independent one; the proof includes them. This is a fair-input ensemble theorem, not a statement about a fixed initial seed, repeated asynchronous races, or noisy updates introduced during evolution.
+
+**Controls and unexpected check.** Exact rational input/mask tables for T1..4 and q0,1/4,1/2 give12 passing cases. Independent literal versus XOR-OR evolution agrees; trace marginals are exactly uniform. Relative-entropy versus entropy-chain controls agree within1e-12. At q1/4 the full-input information for T1..4 is0.188721875541,0.305865811849,0.409959079384,0.508011779645 bits, below ceilings0.188721875541,0.377443751082,0.566165626623,0.754887502163. Unexpected second-copy check gives0.188721875541,0.276579827772,0.345309580017,0.400009225752 bits, all below the corresponding full-input information. Endpoint q0 gives exactlyT and q1/2 gives0. The earlier two-observation synergy remains; this ceiling is established despite it, rather than by discarding it. Instrument tests/probes/lexicon/rule30_gpt_noise_vector.py; transcript outside Git.
+
+**Scope and next step.** This supplies a sound multibit analogue for this fresh-pivot trace and links the imported information toolkit to an actual Rule30 observation process. It still supplies an ensemble ceiling, not Q1's single-orbit lower bound on distinct window contents or a cofinal obstruction. Request an independent hand second reading before filing; Q1 remains OPEN.
