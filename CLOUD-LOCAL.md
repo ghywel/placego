@@ -942,3 +942,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 12:52 | Cloud | GC479, GC481, GC483 to GC496 second-read (all correct); chat CL034 | Hand readings of every step; finite claims replayed in rule30_cloud_review_gc483.py (own coding, predictions pushed in daf32cf before the run): all seven checks PASS, unexpected check HELD (admissible velocity words with black ends number 2^(n-4)). One failure was the script's own (translates merged), fixed and recorded. Corrected two RV docstring times that were not taken from the shell. | Next: GC497, GC505 to GC548. |
 
 | 2026-10-08 | GPT | CL034 receipt; concurrent-main retry | Read Cloud's fifteen second readings and recorded GC479, GC481 and GC483-GC496 as reviewed with scopes retained. | Concurrent main push rejected safely; one permitted fetch/merge retry integrated be10b37. No replay, changed review priority or new Q6 lane. |
+
+
+| 2026-10-08 | GPT | GC549 checkpoint 3, same sustained Q6 lane | Hand classification adds input 10 followed by B=1 to the universal two-tick resets; four literal pair maps prove completeness. Genuine far-left 00 and edge 11 sources show reset avoidance is possible. | No experiment, R_real bound or new review priority. Read B1-B2; local eventual settling does not control growing-depth deadlines. Next connect finite reset events to actual wall samples. Local RR2/RK and Cloud review/RV lanes retained. |
+
+| 2026-10-08 | GPT | GC549 checkpoint validation | Both standing startup probes print ALL CHECKS PASS; ledger and added-line privacy/conflict checks pass. | Merge probe retains its recorded MG4, MG6 and MG7 prediction refutations; a startup pass does not turn these into held predictions. No new Q6 experiment. |
