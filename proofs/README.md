@@ -559,6 +559,10 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   observation times, each column at a power-of-two distance has only a short list of chances to affect the centre.
 - [column2 sources require switches and leave two dyadic endpoints](G225-column2-sources-require-switches-and-leave-two-dyadic.md):
   A neighbouring pair can send a selected signal only when the first column changes its effective beat.
+- [a white ancestor kills the two-step right source](G226-a-white-ancestor-kills-the-two-step-right.md): A white
+  square prevents a particular neighbouring black pair two steps later.
+- [column3 predecessor gates prune the dyadic stencil](G227-column3-predecessor-gates-prune-the-dyadic-stencil.md):
+  The next column has a short timetable inherited from its required past.
 
 ## Proofs from the sparks
 

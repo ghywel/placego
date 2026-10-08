@@ -2945,3 +2945,21 @@ A neighbouring pair can send a selected signal only when the first column change
 **Why it matters.** Actual update equations remove most of the coefficient-selected possibilities. Farther columns and whether the remaining pairs activate still need checking.
 
 **An everyday picture.** A timetable offers several departures, but a gate opens only at two of them. Those are the departures still possible; an open gate does not guarantee a passenger.
+
+## G226
+A white square prevents a particular neighbouring black pair two steps later.
+
+**What it says.** In Rule210, a white square forces the pair two places to its right, two ticks later, to contain at least one white square. Under the alternating wall this removes later even-time sources in column2.
+
+**Why it matters.** A pattern can obey forward equations yet have no allowed past. This checks that missing obligation and removes a previously apparent source possibility.
+
+**An everyday picture.** A ticket may let someone enter the departure gate, but the required connection never arrived. Checking the journey before the gate can rule out what the gate alone permits.
+
+## G227
+The next column has a short timetable inherited from its required past.
+
+**What it says.** Under the specified empty-left alternating wall, column3 can contribute at an early time and, on alternate doubling scales, one later time. Its other candidate times are blocked by predecessor conditions.
+
+**Why it matters.** It combines the exact coefficient timetable with actual update constraints. It still leaves more distant columns and whether permitted sources occur unresolved.
+
+**An everyday picture.** A connecting train can run only after its feeder arrives. Intersect the two timetables and most of the departures disappear, even though they looked possible on the second timetable alone.

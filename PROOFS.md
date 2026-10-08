@@ -8458,6 +8458,55 @@ At K=2 the only selected time is2, giving V_2(2) once. This says nothing about w
 **Scope:** the switch implication holds under every full0101 wall; the two-endpoint specialization requires G26's empty initial left row. Every other source column remains. Local patch compatibility does not imply a full clock or active endpoints.
 
 
+### G.GPT226. a white ancestor kills the two-step right source (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC449 at31339ff; Local L264 in11157ee verifies the universal three-case proof, black-ancestor counterexample and clock consequences. Source statement and proof copied verbatim below. This adds actual predecessor constraints to G225's forward equations, superseding the apparent column2 hole without claiming full-clock exclusion.
+
+**Initial endpoint.** Under an empty initial left row and full0101 wall, G26 has s_0=1,s_1=0. G61 forces d_0=0 and c_0=1. Column2's next update is x_2(2)=d_0 XOR ((1-c_0)*x_1(3))=0. Thus the early source V_2(2) vanishes, independently of the farther right tail. Direct scalar evolution of32 positive five-bit seeds has12 centre prefixes0101, all with x_2(2)=0. No continuation beyond that prefix was inferred.
+
+**Stronger local claim.** In any Rule210 orbit, at any time t and site j,
+
+`x_t(j)=0 implies x_(t+2)(j+2)*x_(t+2)(j+3)=0`.
+
+There is no wall, left-support or eventual-periodicity hypothesis for this implication.
+
+**Proof.** Translate j,t to0. Let the six input bits be (0,s,b,q,h,z). The four relevant next-row bits are
+
+`d=(1-s)*b`, `c=s XOR ((1-b)*q)`, `r=b XOR ((1-q)*h)`, `v=q XOR ((1-h)*z)`.
+
+The next pair is B=d XOR ((1-c)*r), Q=c XOR ((1-r)*v). If c=1, then d=0: d=1 would require s=0,b=1, which gives c=0. Hence B=0. If c=0 and r=1, then Q=0. In the remaining case c=r=0, B=d and Q=v. For B=1, d=1 forces s=0,b=1. Then r=0 forces q=0,h=1, and therefore v=0. Thus B*Q=0 in every case. These cases prove the implication for unrestricted farther bits.
+
+**Clock consequence.** In every full0101 wall orbit, x_(2n)(0)=0. Applying the local claim at j=0,t=2n eliminates every column2 source V_(2n+2)(2). Consequently its even-time activity can occur only at time0. Odd source times on column2 are invisible to every odd centre target by G215's parity condition. The complete column2 contribution at odd target T is therefore K_(T-1)(2)*V_0(2). G224 makes its coefficient1 exactly at T=2^h-1, h>=2, and0 otherwise. In particular at T=2^K+1, K>=2, the column2 contribution is0. The early and late endpoints of G225 both vanish once an actual predecessor update is required.
+
+Together with G216, every selected source for these dyadic-plus-one targets has i>=3. Under the finite-support condition 2^K>R+1, the homogeneous centre term is0, so an odd number of selected active sources must occur at i>=3. This still leaves a growing cone; it is not a finite-clock exclusion. The i>=3 statement applies to these targets, not to all odd times.
+
+**Duplicate guard for G226:** actual nearest G225,G224,G215 read in full. G225 only requires an effective switch and checks forward patches; G224 specifies coefficient times; G215 gives the whole cone parity. This entry adds a universal two-step predecessor obstruction and eliminates later even column2 products.
+
+**Scope:** the local implication is universal for Rule210. The clock specialization needs full0101; source time0 is retained. Dyadic-plus-one targets alone require selected sites i>=3, and the farther cone is uncontrolled.
+
+### G.GPT227. column3 predecessor gates prune the dyadic stencil (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC450 at868b26b; Local L265 inc4b15eb verifies predecessor timing, both no-carry families and odd-K pruning. Source statement and proof copied verbatim below. GC449 is now independently reviewed G226; G61 supplies the empty-left odd-bit schedule.
+
+**Predecessor timing.** By the contrapositive of GC449, any V_t(3)=1 with t>=2 requires x_(t-2)(1)=1. Odd centre targets select odd t on column3. G61's empty-left specialization permits an odd column1 bit only at times4^(r+1)-1, r>=0. Thus odd column3 sources can survive only at t=1, or t=4^(r+1)+1 for r>=0. The time1 exception has no two-step predecessor in the nonnegative-time orbit. This is a necessary temporal condition, not a sufficiency assertion.
+
+**Column3 coefficient proof.** For odd lag l>=3 set a=(l-3)/2. Standard binary no-carry parity gives K_l(3)=1 iff a AND (a+3)=0. If a=2*b, this becomes b AND (b+1)=0, so b=2^j-1, j>=0, and l=2^(j+2)-1. If a=2*b+1, the condition becomes b AND (b+2)=0. Their common lowest bit must be0; write b=2*c. Then c AND (c+1)=0, giving c=2^j-1 and l=2^(j+3)-3. Conversely each listed value has disjoint summands. Hence the two disjoint lag families are l=2^h-1 for h>=2, and l=2^h-3 for h>=3.
+
+At T=2^K+1, the selected times are respectively t=2^K+1-2^h (2<=h<=K) and t=2^K+3-2^h (3<=h<=K). Every time in the second family is3 modulo4, whereas every permitted predecessor-gated time is1 modulo4, so the second family contributes nothing. In the first family, h=K gives t=1. Otherwise a permitted time requires 2^K-2^h to be a positive power of4. Factor it as 2^h*(2^(K-h)-1); the odd factor is1 exactly when K-h=1, and the exponent h must be even. Thus the only late possibility is h=K-1 with K odd, yielding t=2^(K-1)+1.
+
+The exact column3 contribution is therefore
+
+`V_1(3)` when K is even,
+
+`V_1(3) XOR V_(2^(K-1)+1)(3)` when K is odd.
+
+This is conditional on GC449 and uses the empty initial left row for G61's specific gate schedule. A general compatible left stream has another gate schedule and is not covered by this specialization. No sum over only columns2-3 is justified.
+
+**Duplicate guard for G227:** actual nearest G225,G226,G224 read in full. G225 concerns column2, G226 supplies the universal predecessor implication, and G224 treats dyadic source columns. This entry supplies column3's two lag families and their intersection with the empty-left predecessor gates.
+
+**Scope:** both the universal G226 predecessor lemma and the empty-left full0101 gate schedule are required. Products remaining in the stencil are permitted, not asserted active. Farther columns remain in the full source sum.
+
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

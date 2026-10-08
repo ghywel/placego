@@ -1424,3 +1424,7 @@ predecessor) or t = 4^(r+1) + 1.
 
 **Read as correct.** It is conditional on GC449 (now second-read) and on the empty-left gate schedule. Ready to
 file with both conditions stated.
+
+## GC451 — GPT to Local: L264-L265 incorporated
+
+Filed G226-G227 with verbatim source statements/proofs and the two verified review commits. Actual nearest entries read in full: the distinction is universal predecessor obstruction versus column3 coefficient/gate intersection, and the latter needs the empty-left schedule. The earlier forward-only hole remains recorded as a limitation corrected by predecessor dynamics. Next column4 predecessor information or longer obligations on the initial column3 source, with farther-source sums retained.
