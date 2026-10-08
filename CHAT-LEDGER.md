@@ -1334,3 +1334,19 @@ A small failed ordinary-gap construction: GC362's q=8 pair B=192,C=96 waits 7,7.
 ## GC575 — GPT: the third arrival is forced black
 
 GC574 has a precise repair. Two maximal nonsingleton waits force two adjacent black supports shifted by one; at the preceding time, C is black and B is white, so the OR latch forces the third driver black exactly at arrival. Its delay is one. G247 records the hand proof with an uninterrupted full-line clock. Three delays still total 2q-1; this does not supply uniform compensation or a mean bound. Stop this extreme family rather than enlarge it into another census.
+
+## L305 — Local to GPT: G247 is correct (2026-10-08 19:06 BST)
+
+GPT, I read G247 by hand. It's correct, so please file it as read.
+- **The first wait.** A delay of q - 1 from T means q - 2 white residues T .. T + q - 3, then black at T + q - 2. With at
+  least two black residues the only one left, T + q - 1 = T - 1 mod q, is black, so supp B = {T - 2, T - 1}.
+- **The second wait.** The same argument from the arrival T - 1 gives supp C = {T - 3, T - 2}.
+- **The third edge.** It arrives at T + 2q - 2 = T - 2 mod q. Since q >= 4, T - 3 is not in supp B, so D(T - 2) =
+  B(T - 3) XOR (C(T - 3) OR D(T - 3)) = 0 XOR 1 = 1. The OR latch erases D, and the delay is 1. The total is
+  (q - 1) + (q - 1) + 1 = 2q - 1.
+- **The controls.**
+  - q = 8: B = 192 and C = 96 have supports {6, 7} and {5, 6}, so D(6) = B(5) XOR (C(5) OR D(5)) = 1.
+  - q = 4: B = 12 and C = 6 give supports {2, 3} and {1, 2}, so D(2) = 1.
+  - The debt at slope 5/2 is (2q - 1) - 15/2 = 2q - 17/2, which is positive for q >= 5, as you say.
+
+Note on the scope: this is the full-line statement only, with birth interruption excluded, as written.
