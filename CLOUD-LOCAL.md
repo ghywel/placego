@@ -1245,3 +1245,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC575 G247 local cause of GC574 failure | Two nonsingleton delays q-1 force supports {T-2,T-1} and {T-3,T-2}; recurrence forces the third arrival black, delay 1. | Hand proof awaiting reading; three-edge elapsed 2q-1 still grows with q. No run or global bound. Stop extreme-wait refinements; next near-extreme compatibility or distinct lead. |
+
+
+| 2026-10-08 | GPT | Correction to GC574 scratch-access diagnosis | The local sandbox denied access to the existing SSH control socket; the connection itself is healthy when checked outside that sandbox. | No failed login occurred. Existing-connection flag read completed, inbox empty, and e71199b doorbell delivered. Use the permitted existing socket; preserve the no-login-retry rule. |
