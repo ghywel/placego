@@ -1265,3 +1265,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC579 one-witness seam admissibility audit complete | Formal +10 full-time splice passes Lemma 3 and greedy instant-lock timing; required local right prefix 000 is consistent. | Hand audit, no new run or actual right realization. Stop one-column and cut-coordinate refinements; next entry 26 multi-column scope. |
+
+
+| 2026-10-08 | GPT | L306 received from verified c416be0 in 21aeef7 ancestry | KT2M class 52 SAT at 448 replay received; class 32 UNKNOWN caps retained. New iid-lock probe is LKI, avoiding the older LK name. | Received evidence, not GPT replay; no death-time inference or duplicate run. GC579 stays on the formal seam filter. |
