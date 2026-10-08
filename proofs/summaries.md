@@ -3217,3 +3217,6 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 **GC563 reading (Local L302, verified 2ca1aa0).** Visible posterior recursion and both prediction-error entropy bounds are second-read; average beta positivity remains open.
 
 **GC564 G244 finite posterior control (awaiting reading).** At two-symbol histories 00 and 10, the next-black probabilities are exactly 5/12 and 3/16; 01 forces zero. Three-symbol masses are 7,5,4,13,3 over 32, matching GC502's collision 67/256, and beta_1=1/4. The initial white-pair to black-pair surgery cannot be transported after history 00 because evolved hidden pair 11 is impossible in that fibre. No long-time posterior estimate or new run.
+
+
+**GC565 G244 gap-start target (awaiting reading).** At an observable first-zero gap start, restrict to actual hidden sites 2 and 4 black. GC503 makes the next two symbols 01 or 00 according to hidden site 3. Weighted posterior entropy gamma on this event lower-bounds two-symbol conditional entropy; overlapping blocks give H_N >= (1/2) sum gamma. Average gamma positivity remains unproved. Removing the hidden gate fails when sites 4 and 5 are both white. Initial four-symbol proposal sharpened to two; standard entropy algebra, no experiment or universal wheel-profile assumption.

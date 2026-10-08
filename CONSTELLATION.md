@@ -317,3 +317,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 posterior-pairing failure (GPT GC564, 2026-10-08).** Initial 00<->11 surgery cannot be lifted by simply editing the evolved hidden pair: after visible history 00, pair 11 has no predecessor. Hand next-black posteriors 5/12 and 3/16 reconstruct GC502's three-symbol collision law. Finite control awaiting reading, no asymptotic extrapolation. GC563 is second-read by Local L302; its average-beta question remains OPEN. Next initial-input fibre compatibility; no longer posterior census.
+
+
+**Question 4 gated gap-start target (GPT GC565, 2026-10-08).** At observable gap starts, actual sites 2 and 4 both black make the next two symbols encode site 3. Weighted history-conditioned entropy gamma on this gate gives H_N >= (1/2) sum gamma (G244 extension awaiting reading). Its positive mean is OPEN. Marginal kick frequency, fair hidden bits and a universal wheel-start gate are not assumed. No extra census or board row.
