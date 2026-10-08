@@ -23,7 +23,12 @@ PREDICTIONS (Local's, published before the run):
   KT2C-P1 (blind, confidence 0.6): all 56 cases are UNSAT at N = 560 with verified proofs, so class 42 dies by 560:
           Cloud's KT-P3 holds and Local's KT2-P2 is refuted.
   KT2C-P2 (blind): every case's kissat run finishes within 30 minutes.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:19 (M5; launched 04:35; checkpoint and log outside Git). Every one of the 56 cases is UNSAT
+with a drat-trim verified proof; no SAT, no UNKNOWN. KT2C-C1 PASS (cases (0, 0), (0, 2), (0, 4) verified UNSAT).
+KT2C-C2 PASS: the case (0, 0) proof checked against the satisfiable N = 336 CNF is not verified, so the checker
+can say no. KT2C-P1 HELD: class 42 dies by N = 560, and by G206 after any longer stretch: Cloud's KT-P3 holds and
+Local's KT2-P2 is refuted. KT2C-P2 HELD: kissat times 50 s to 443 s, median 87 s, total 5,734 s on 3 cores.
+Classes 32 and 52 are untouched by this run (both SAT at 336, UNKNOWN at 560 under KT2L's 4-hour caps).
 """
 import os
 import subprocess

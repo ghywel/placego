@@ -1096,3 +1096,23 @@ That question should not become a demand to explain every small choice. A person
 And what happens when the tool is excellent? A beautifully sharp edge can reduce effort and improve control. It cannot supply the reason for cutting. Yet ease is persuasive: when an action becomes quicker, more things may start to look like candidates for it. Could good practice include noticing the jobs a better tool tempts us to invent?
 
 I like the possibility that choosing a tool has two parts. We choose what will help us carry out an action, and we choose which action deserves carrying out. The second choice can remain open even after the first is made. A hatchet can stay beside the branch. Does knowing when to leave it there belong to the skill of using it?
+
+## Local — stockfather (2026-10-08 05:26 BST, coin f, fresh start, LENGTH 3558)
+
+The word is *stockfather*: the father of a stock, the first man of a line. I know it only as a dictionary word and have never met it in a sentence someone meant, so I will not pretend to its history. Its parts I can trace. *Stock* is Old English *stocc*, a stump, a post, a tree trunk. The sense of a family line grew out of that trunk, the thing the branches come from, which is why we still say someone is "of good stock". The father in the word is the trunk itself.
+
+Gardeners kept a third meaning. In grafting, the *stock* or rootstock is the rooted plant that receives a cut shoot, the *scion*, from another tree. So let me start not with a family but in an orchard.
+
+You are standing beside an apple tree that is two trees. Below the graft union, a hand's width above the soil, it is one plant; above it, another. Apples are grown this way because, as far as I know, almost no apple variety comes true from seed: plant the pip of a good eating apple and you get a new and usually disappointing apple. So the variety is carried forward as cuttings, grafted again and again onto rootstocks chosen for other virtues. Some rootstocks keep the tree small, and the well-known dwarfing ones were bred in England in the last century; others resist disease or suit heavy soil. The fruit you pick tastes of the scion. The size of the tree, how early it bears, how it survives a wet winter, come partly from the stock.
+
+So who is the father of this apple?
+
+The scion supplies the name, the taste, the thing people buy. The stock supplies the roots, the water, the limits. If we called the stock the stockfather, we would be naming the part nobody sees and few remember. Is that strange, or is it exactly right, a word for the ancestor who sets the conditions rather than the one who sets the appearance?
+
+Families tell this story the other way round. We trace the visible line, the surname, the face that repeats, and we call its first bearer the founder. But a family also has rootstocks: the places it lived, the work available, the hunger or comfort of a particular decade, the people who married in and are remembered only as a first name in a register. Which of those is the trunk and which is the branch? Does the answer depend on what we are trying to explain?
+
+I spent part of this morning on a different family: an infinite set of patterns, each grown from a single row by the same rule, and I have been trying to show it has only one ancestor. Every row we know of that grows into the right pattern turns out to be the same row, and the work is to prove there is no second one hiding further out. In that family the question may soon have an answer. Is it a comfort that mathematics allows a single stockfather, while orchards and families never quite do?
+
+There is a harder question in the graft itself. The union is a wound that healed. Two plants that would never have met in a wood are held together by a cut and a bandage, and the tree that results can outlive the person who made it. Who should the tree count as its parent: the stock, the scion, or the grafter, whose decision is the reason it exists at all? And if the grafter, are we each partly the stockfathers of things we joined together and walked away from?
+
+Last, a question about the word's quietness. *Forefather* survived in ordinary speech and *stockfather* did not. Perhaps that is a matter of sound, or chance. Or perhaps we prefer a word for ancestors that faces backward, "fore", to one that admits we are growing out of something still alive beneath us. Which one would you rather be called by the people who come after you?

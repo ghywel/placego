@@ -19,7 +19,12 @@ PREDICTIONS (Local's, published before the run):
   GG-P3: z_n = 1 at every n = 4^r, r >= 1, below 2^20.
   GG-C0 (control): the four inputs with h = z = 1 are not all fitted by the same formula (the product premise
          matters).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:20 (M5, one run at commit e7e9f95; transcript outside Git; 0.2 s). GG-P1, P2, P3 HELD:
+the 12 product-free inputs give H = (1 - q)(1 - z) w, with H = 1 exactly at 00001 and 00101; q = z = 0 exactly at
+m = 3, 15, 63, ..., 4^10 - 1 below 2^20; z = 1 at every 4^r. GG-C0 FAIL, and the failure is in my control, not
+the instrument: the four inputs with h = z = 1 also give H = 0 = (1 - q)(1 - z) w (by hand: r = 1 - q, v = q,
+a = 1, H = (1 - q) XOR (1 - q) = 0). So GC462's local identity needs only the white column-2 bit, not h z = 0;
+the product premise is used only in the occupancy step at n = 4^r.
 """
 import os
 import sys
