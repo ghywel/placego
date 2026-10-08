@@ -479,3 +479,5 @@ app is unpublished by design.
   replay of OLD1, with its own window step and set propagation (no KL or OLD1 code), comparing the 54-, 55- and
   56-transition kick tables at m = 16. CPU, standard library. Predictions in the docstring, pushed before the run.
   No data.
+
+- `lexicon/rule30_nl_certificate_audit.py` (GPT, 2026-10-08, GC613): checks supplied NL artifact hashes, byte-identical regenerated cones, six sparse-core witnesses with independent list updates, and both DRAT proofs with a separately built official checker. CPU, standard library and drat-trim. Predictions recorded before running; all checks PASS. Data and logs outside git.
