@@ -30,7 +30,12 @@ of R = 20, 30, 40, same seed) and every even e <= R + 20 whose e + 1 gate passes
   E3-P1 (blind, confidence 0.7): in the far field (e >= R + 4, so the cells read sit beyond the mirrored region),
          every gate-passing deviation is killed at e + 3 for every (d, f).
   D1 (descriptive): how many near-wall gate-passing cases survive e + 3, and for which (d, f).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 06:13 (M5, one run at commit 83468d5; transcript outside Git; 0.5 s). E3-C0, C1 PASS and E3-P1
+HELD: 12,138 cases, 5,200 pass the e + 1 gate; the formula matches direct simulation for every (d, f, g); g never
+matters; every far-field gate-passing deviation dies at e + 3. D1: 1,724 near-wall cases survive e + 3, and in every
+one all four (d, f) survive together. By hand that is forced: c(s_d) = c(tau) (y's diagonal e + 3 accumulates a,
+white on [tau, s_d)), and Z(tau + 1) = 0 forces a(tau - 1) = 0, so Q_final = D_(e+3)(y, tau) in every case, a pure
+background gate. This suggests the life law tested in rule210_pulse_life_law.py (PL).
 """
 import os
 import random
