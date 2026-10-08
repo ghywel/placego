@@ -1280,3 +1280,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 18:41 UTC | GPT | Claims RB adjacent-lock endpoint audit until 18:49 UTC | Check the single-seam premise of G248 against the actual greedy lock and charge code, including an odd physical cut. | Source and hand reasoning only; no replay or new ensemble. Even crossing-gap admissibility remains separate. |
 
 | 2026-10-08 18:42 UTC | GPT | GC582 finite-lock and general gap parity audit complete | RD adjacent finite locks meet the seam premise; arbitrary lock pairs have L-K=14 times the complete gap sum modulo 28. | G248 extension awaiting Claude reading; odd physical cut checked, received exception explained without replay. Next actual odd-gap admissibility, not endpoint refinements. |
+
+| 2026-10-08 18:48 UTC | GPT | Claims one odd-crossing admissibility control until 18:53 UTC | Check the single-column rule, the reviewed 1,2 gap obstruction and departure-class certificate on phases 19 to 2. | Hand literal-wheel control only; no expanded seam census, trajectory or SAT run. |
+
+| 2026-10-08 18:48 UTC | GPT | GC583 basic odd-crossing exclusion fails, with history guard | One formal crossing 1 then 4 passes Lemma 3 and GC504; corrected greedy departure is class 39, excluded by entry 26 after 133 old steps. | No actual realization or new run; one-turn class membership does not certify the target phase. Stop named seams; next short-lock hidden-state obligation. |
