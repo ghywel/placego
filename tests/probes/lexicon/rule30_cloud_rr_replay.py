@@ -33,6 +33,17 @@ PREDICTION (Cloud's, pushed before the first run):
           d onward). Confidence 0.5.
 Counterfactual: if the earliest needed sample is at time d - 2 or later, the run is ended by the clock samples near
   its own entry alone, which would point to a local synchronization mechanism of the kind GC549 is looking for.
+
+OUTCOME, 2026-10-08 (by 13:07 BST; 76 s on one core, CaDiCaL):
+  RRX-C1 PASS (ZR2 at d = 3 .. 19, 2 s) and RRX-C2 PASS: R_real = 15, 11, 7, 8, 8, 8 at d = 21 .. 41 reproduce in this
+  independent encoding, SAT with a simulated model at R_real(d) and UNSAT at R_real(d) + 1 in both phases.
+  RRX-P1 HELD. The earliest clock sample in each deletion-minimal core (d, phase 0 / phase 1):
+      d = 21: 5 / 6   d = 25: 4 / 6   d = 29: 4 / 6   d = 33: 5 / 5   d = 37: 6 / 7   d = 41: 6 / 7
+  and every core contains nearly all samples from there to T (21 to 42 of them; only a few are dropped, e.g. 35 at
+  d = 21). Because deletion goes earliest first, that earliest sample e is exactly the latest start t0 for which the
+  samples t0 .. T alone still forbid the longer run: with the clock imposed only from e + 1 onward, a white run of
+  R_real(d) + 1 at depth d becomes possible. So e stays at 4 to 7 while d doubles. Ending a realizable run needs the
+  clock's whole history from its first few beats, not only the beats when the run's cells reach the centre.
 """
 import sys
 import time

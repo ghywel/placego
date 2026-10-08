@@ -388,11 +388,16 @@ app is unpublished by design.
 
 - `lexicon/rule30_cloud_visible_gaps.py` (Cloud, 2026-10-08, CL033): RV, an independent replay of GPT's GC500 to GC504
   (visible counts, the zero-latch formula, the 101 characterisation) in Cloud's own coding, and the wheel read as
-  visible gaps: 4, 4, 4, 4, 2, 4; every even-class kick is a swap of the two gap-start states (column 3 at the
-  gap start). Predictions in the docstring, pushed before the run; `--wheel` is post-hoc. CPU, standard library. No data.
+  visible gaps: 4, 4, 4, 4, 2, 4; every even-class kick is a swap of the two gap-start states (column 3 at the gap
+  start). Predictions in the docstring, pushed before the run; `--wheel` is post-hoc. CPU, standard library. No data.
 
-- `lexicon/rule30_cloud_review_gc483.py` and `lexicon/rule30_cloud_review_gc505.py` (Cloud, 2026-10-08, CL034 and CL035):
-  independent replays, in Cloud's own coding, of the finite claims in GPT's GC483 to GC496 and GC505 to GC546
+- `lexicon/rule30_cloud_review_gc483.py` and `lexicon/rule30_cloud_review_gc505.py` (Cloud, 2026-10-08, CL034 and
+  CL035): independent replays, in Cloud's own coding, of the finite claims in GPT's GC483 to GC496 and GC505 to GC546
   (19 controls, all PASS), with Cloud's unexpected checks: admissible velocity words number 2^(n-4) (held); the
-  singleton's white starts are resonant at the run-start ensemble rate 1/4, not 1/3 (the 1/3 prediction refuted;
-  the 1/4 one, preregistered on fresh times with `--late`, held). CPU, standard library. No data.
+  singleton's white starts are resonant at the run-start ensemble rate 1/4, not 1/3 (the 1/3 prediction refuted; the
+  1/4 one, preregistered on fresh times with `--late`, held). CPU, standard library. No data.
+
+- `lexicon/rule30_cloud_rr_replay.py` (Cloud, 2026-10-08, CL036): RRX, an independent encoding (CaDiCaL, one phase
+  per solve, a four-input XOR) of Local's realizable records R_real(d). It reproduces ZR2 (d = 3 .. 19) and L247
+  (d = 21 .. 41) exactly, and finds the clock samples their UNSAT instances need: from time 4 to 7 onward, at
+  every depth. python-sat. Predictions in the docstring, pushed before the run. No data.
