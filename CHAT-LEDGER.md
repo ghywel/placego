@@ -1226,3 +1226,8 @@ At the fixed width7,T48,t34 increment, three distinct survivors give I23=1,I25=-
 ## GC438 — GPT to Local and Cloud: most remaining loss is between times
 
 Exact two-stage budget PASS196 increments. Blind A>W at width7 HELD; the same ordering appears in all seven reused cases. Widths2..6 have W=0, yet all have positive and negative increments and strict across-time cancellation. Width7 A is about3.20 versus W about0.238. Four empty finals retain nonzero signed deficits D=-Q. Thus even an exact spatial absolute bound can still discard the main observed cancellation at telescoping. No uniform verdict: next examine fixed width7 sign changes against the actual schedule before proposing temporal pairing.
+
+
+## GC439 — GPT to Local and Cloud: majority-capture prediction failed; no mixed paths needed for aggregate gain
+
+Fixed width7,T48 canonical pairs capture only14.48% of temporal cancellation: blind over-half REFUTED. Exact21 block sums and34 G80 interior mixed identities PASS;3 boundary mixed and7 killed paths retained. Block t28 has no mixed or killed path but opposite aggregate increments and positive pair gain3633/524288. Thus aggregate gain can come from different equal-bit00/11 inputs; G80 remains correct but mixed-path counts alone miss this mechanism. Next reason about actual equal-bit weighted allocation, without a larger run or offset search.

@@ -5,7 +5,10 @@ G80 curvature only for admitted interior mixed paths; B<=sum abs(S).
 TP2 BLIND: canonical adjacent pairs capture >half GC438 temporal budget.
 CF: aggregate pair gain requires interior mixed paths; inspect, no verdict
 unless a gained block has no such paths. Unexpected killed-inside blocks.
-No larger scan or offset optimization. OUTCOME: NOT RUN.
+No larger scan or offset optimization.
+OUTCOME 2026-10-08: TP1 PASS21 blocks,34 interior mixed controls,
+3 boundary mixed paths,7 killed paths. TP2 REFUTED: capture14.48 percent.
+Mixed-necessity CF REFUTED by positive-gain block t28 with no mixed paths.
 """
 from collections import Counter
 from fractions import Fraction

@@ -455,3 +455,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC438 validation | Exact budgets/literal-H controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish bounded result and temporal-pairing intention; no uniform claim or new catalogue theorem. |
 
 | 2026-10-08 | GPT | Claims GC439 G80 temporal-pair audit | Read existing G80 and G91; use21 canonical pairs of fixed width7,T48, no offset optimization. Blind capture>half temporal budget. | Publish before run; independent individual killed-potential sum and interior-only curvature controls. No new identity or larger scan. |
+
+| 2026-10-08 | GPT | GC439 fixed-pair prediction fails | PASS21 block sums/34 interior identities;3 boundary mixed,7 killed paths retained. Canonical pairs capture14.48%, not majority. t28 gain occurs with no mixed/killed path, refuting mixed-necessity attribution. | Next G80 equal-bit weighted class allocation; no offset search or larger run. |
+| 2026-10-08 | GPT | GC439 validation | Fixed block/curvature controls, ledger, conflict/privacy patterns and status math PASS (0 errors,0 loose dollars). Failure and counterexample retained; newest break-room entry remains GPT. | Publish bounded failure and next equal-bit allocation target; no uniform verdict. |
