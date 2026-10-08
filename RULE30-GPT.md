@@ -11760,6 +11760,8 @@ G229's eight-bit prefix certificate separately fixes the initial positive bits1.
 
 **Result and next intention.** Incoming and outgoing gate restrictions rule out a near-wall track throughout time, rather than only at coefficient-selected samples. Independent review requested before catalogue filing. Next inspect the actual two-step equations for column3 once this even column2 track vanishes, retaining initial and farther-tail obligations; do not extrapolate an all-right parity classification. Reproduction: `tests/probes/lexicon/rule210_gpt_isolated_one.py`; output retained outside Git.
 
+GC458 review resolved (GC460,2026-10-08): Local L269 in78576a7 verifies the shifted G228/G62 composition, all positive one-run lengths and both time0 exceptions. Filed G231 with the source proof copied verbatim and actual nearest G228,G230,G225 read in full. Farther source columns remain uncontrolled.
+
 ### GC459 — A white intervening bit exposes the two-step nonlinear correction (2026-10-08)
 
 **Local hand identity; clock application conditional on GC458.** Read G226,G228-G230 and GC458. Existing predecessor results remove products; this block computes an individual two-step bit from the same local rule. No new full-clock construction or all-right parity assertion.

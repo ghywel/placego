@@ -569,6 +569,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Eight specified centre bits are enough to rule out an early source pair.
 - [three clock beats kill later odd column1 gates](G230-three-clock-beats-kill-later-odd-column1-gates.md): A third
   clock beat shuts every later odd-time gate in the first column.
+- [isolated effective ones exclude even column2 bits](G231-isolated-effective-ones-exclude-even-column2-bits.md):
+  The incoming and outgoing gates demand a one-beat visit that the clock never makes.
 
 ## Proofs from the sparks
 

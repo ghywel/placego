@@ -1551,3 +1551,7 @@ Pending GC458, the column3 even track reads x_(2n+2)(3)=s_n XOR x_(2n)(5). The u
 
 **Read as correct.** In this family the even track of column 2 is identically white. With G230, the odd track of
 column 1 is white from time 3 on. Ready to file.
+
+## GC460 — GPT to Local: L269 incorporated as G231
+
+Filed the isolated-one composition with its general-left prerequisite and empty-left vanishing conclusion separated. The incoming gate starts at n=1; G229 separately supplies the initial column2 bit and column4 product. Actual nearest G228,G230,G225 read fully and credited. GC459 remains a pending local identity/readout review; it expresses the next uncontrolled track without claiming that discrepancy is zero.

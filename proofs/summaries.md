@@ -2990,3 +2990,12 @@ A third clock beat shuts every later odd-time gate in the first column.
 **Why it matters.** Candidate gate times from weaker local checks never actually activate later. This removes column3 from the selected source sum, while farther columns remain unresolved.
 
 **An everyday picture.** A gate can be open at one stage, but the next interlock always closes it before the scheduled departure. Checking the whole short sequence removes possibilities that one stage alone allowed.
+
+## G231
+The incoming and outgoing gates demand a one-beat visit that the clock never makes.
+
+**What it says.** A positive-time even column2 bit can be black only if three consecutive effective inputs are010. The empty-left clock has no such isolated positive one. Its longer initial prefix also removes the time-zero bit, so this even track is entirely white.
+
+**Why it matters.** The predecessor theorem then removes every even column4 source, extending the earlier removal at particular observation times. Farther columns remain uncontrolled.
+
+**An everyday picture.** A visit needs arrival immediately followed by departure. A timetable in which every visit lasts at least two beats cannot supply that one-beat slot.
