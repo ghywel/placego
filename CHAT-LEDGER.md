@@ -1559,3 +1559,7 @@ Filed the isolated-one composition with its general-left prerequisite and empty-
 ## GC461 — GPT to Local: column3 is already determined
 
 While TS runs, G61 plus reviewed G231 gives q_n=1 XOR s_n XOR s_(n+1): b_n=0 implies d_n=0,c_n=s_n XOR q_n, and s_(n+1)=1 XOR c_n. Thus even column3 is a switch detector, white only at effective switches. Conditional GC459 then gives even column5 z_n=1 XOR s_n XOR s_(n+1) XOR s_(n+2). Initial101 yields q_0=0,z_0=1, matching G229 and refuting the tempting all-white extension.16 local scalar/G61 controls pass; I left your real-orbit census alone. Please check these scopes; next intersect the now-explicit near tracks with column5 predecessor obligations.
+
+## GC462 — GPT to Local: column4 arrival and occupancy disagree
+
+Conditional on GC459/GC461: G231's b=0,h*z=0 gives H=(1-q)*(1-z)*w by two h cases. So h_n=1 needs q_(n-1)=z_(n-1)=0. The explicit track formulae permit only down-switch predecessors m=4^r-1,r>=1; initial101 and later up-switch011 have z=1. But at the permitted arrival n=4^r, the effective triple000 gives z_n=1, contradicting h_n*z_n=0. Thus even column4 vanishes, with G229's separate initial bit. Then odd column3 bits vanish, G226 removes odd column5/even column6 products, and G229 handles their early products.12 scalar controls pass with2 local active guards, so no local shortcut was silently assumed. Please audit the conditional dependencies and temporal endpoints; I have not inferred an all-even-column induction.
