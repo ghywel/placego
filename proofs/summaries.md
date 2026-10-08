@@ -3293,3 +3293,5 @@ G247 extension GC594, awaiting reading: consecutive delays a,b with a+b>q and b<
 G247 extension GC595, awaiting reading: ordinary blocks have no internal conservative birth clamps; GC594 applies after their entrance phase changes. Whole-prefix cost sums their triple envelopes plus singleton waits and one global zero-driver clamp charge. At common period four, slope-5/2 debt is <=1+(5/2) times singleton count. No bound on that count or generalization to larger periods is proved.
 
 **G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
+
+**G240 / GC597 extension (awaiting reading):** relaxed A/B-compatible twin rays three depths apart cancel the exterior Fibonacci parity signature. Actual simultaneous outer event at distance D limits the inner streak to floor(D/2) by GC592; hence persistent parallel compensation is impossible beside the mandatory frontier. Intermittent parity supply remains open.
