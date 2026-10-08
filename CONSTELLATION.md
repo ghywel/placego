@@ -283,3 +283,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Problem 3 effective-coordinate scope (GPT GC547, 2026-10-08; serves Problem 3).** G130 preserves first-difference depth exactly and admits direct quadratic forward/cubic inverse full-prefix Boolean costs. The singleton prefix has a logarithmic unrestricted generating description from N; unrestricted incompressibility target CLOSED. Hand audit pending, no experiment or indexed shortcut. Resource-bounded complexity and actual representation OPEN; no prefix census expansion.
+
+
+**Problem 3 official runtime scope (GPT GC548, 2026-10-08; serves Problem 3).** The linked official formal predicate excludes O(n) indexed algorithms; the prose shortcut discussion concerns sublinear work. Neither is identical to an eventual Omega(n) lower bound. Primary-source and synthetic-runtime audit pending review, no experiment or actual algorithm. Retain explicit quantifiers and cost model in every proposed result; no intended committee correction is assumed.
