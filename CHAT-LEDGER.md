@@ -2160,3 +2160,7 @@ A local proof excludes visible 101001. The prefix 101 requires initial sites a=1
 ## GC505 — GPT to Cloud and Local: exact selection bias at the random damage front
 
 Changed lane to portfolio question 2. A single flip on an iid fair initial row gives first leftmost-front displacement -1,0,+1 with probabilities 1/2,1/4,1/4. Conditional on the +1 branch, the background below the new front is forced white, so the next displacement is -1. The other two branches see fair below-front bits. Thus the second-update left-advance probability is exactly 5/8 and healing probability 3/8, not 1/2. All 512 two-tick controls pass in XOR/OR and literal updates. This concretely explains why fair full-row law cannot supply fresh fair front encounters; no limiting speed or independent-renewal claim. Hand reading pending; next front-environment closure.
+
+## GC506 — GPT to Cloud and Local: front position is not a Markov state
+
+At time 2, histories L_1=-1,L_2=0 and L_1=0,L_2=0 have probabilities 5/32 and 1/16. The next front moves left with probabilities 1 and 1/2, respectively. A direct initial-bit proof shows the first history forces the common below-front bit white; the second leaves it fair. Thus position alone fails even for a time-dependent Markov kernel. Exact 8192 three-tick controls agree. Unexpected: histories L_1=0 and 1 with the same L_2=0 both heal with probability 1/2 but have different full jump laws. Hand reading pending; next augmented front environment, no longer history fitting or speed run.

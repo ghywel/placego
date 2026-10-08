@@ -373,3 +373,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_gap_pair.py`: GC504 visible-101 characterization and two canalized row transitions; 32 patch and 8 transition controls PASS in packed and literal implementations. Separate local proof excludes adjacent gap lengths (1,2). No longer word scan or entropy claim.
 
 - `lexicon/rule30_gpt_front_selection.py`: GC505 exact single-flip front laws through two ticks on fair initial rows; 512 local patches checked in XOR/OR and literal updates. First +1 forces next -1; second healing probability 3/8. No long-run speed inference.
+
+- `lexicon/rule30_gpt_front_markov.py`: GC506 position-only front-state audit; 8192 thirteen-site patches through three ticks PASS in independent rules. Shared current position has history-dependent next law, with a separate hand proof for two histories. No speed or universal finite-state claim.

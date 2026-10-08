@@ -12573,3 +12573,35 @@ The second-update healing probability is 3/8, versus 1/2 on the first update. Th
 **Independent finite controls and scope.** Probe `rule30_gpt_front_selection.py` checks 512 nine-site patches in two independent update implementations through both ticks, all PASS. First displacement counts are 256,128,128. Conditional second left-advance counts are 128 of 256,64 of 128,128 of 128 in the three respective branches; total 320 of 512. The fresh-fair-front CF is REFUTED. Site values outside the patch cannot affect disagreement through two ticks: damage lies in [-2,2], whose backward cones lie in [-4,4]. This supplies exact iid probabilities, not a finite-background approximation to a long-run speed.
 
 **Outcome and next.** Full-row fairness does not give a fresh fair bit at a random damage front. The invariant-law or regeneration obligation in portfolio question 2 is concrete: track the background as selected by surviving damage, and retain the distribution of entire jumps. The first-step value -1/4 happens to be close to the empirical velocity, but substituting it for the limit is unjustified. Next seek a justified front-environment state or prove a restricted renewal lemma; do not rerun a speed fit or import independent healing events.
+
+## GC506 — Front position alone is not a Markov state (2026-10-08)
+
+**Bears on.** GC505 and portfolio question 2, constellation row 3. Exact finite-cone closure audit followed by a hand obstruction, independent reading pending. This rejects a specific position-only model, not all finite augmented states or an invariant front-environment law. No speed run, novelty claim or horizon escalation.
+
+**Preregistered block.** Test whether, at the fixed time 2, histories sharing L_2=0 have the same third-step law. Blind prediction: different first-step positions change that law. Compare all 8192 initial thirteen-site patches and their site-0 flips through exactly three ticks using independent XOR/OR and literal decimal updates. Counterfactual fresh-fair front encounters retains GC505's failure. Unexpected: compare full jump distributions even when their healing probabilities coincide.
+
+**Two positive-probability histories.** Write the initial fair row bits as u_i. The GC505 first-step difference indicators are 1-u_(-1),1-u_1,1 at sites -1,0,1. Let A be the event L_1=-1,L_2=0, and B the event L_1=0,L_2=0. Direct derivative algebra gives
+
+    A: u_(-1)=0, u_(-3) XOR u_(-2)=1,
+       and [u_1=1 or (u_1=0,u_(-2)=1,u_2=1)];
+    B: u_(-1)=1, u_1=0, u_(-2)=0, u_2=1.
+
+Here the derivative is the exact local XOR difference under the stated neighbouring damage bits. For A, the XOR condition says that the common site -2 is black after the first tick, so the front cannot advance left on tick 2. If u_1=1, the next difference at -1 cancels and the difference at 0 is 1. If u_1=0, those two differences are respectively 1-u_(-2) and u_2, yielding the remaining conditions. For B, the common site -1 after tick 1 is 1-u_(-2); keeping the front at 0 requires u_(-2)=0, and its next difference at 0 is u_2. These prove the displayed events without conditioning on an unobserved right jump.
+
+Under A, the common site -1 after tick 2 is white. Its value is
+
+    1 XOR ((u_(-2) XOR u_0) OR (u_0 OR u_1)).
+
+If u_1=1 the OR is 1; if u_1=0, A forces u_(-2)=1, so the OR is again 1. Thus P(L_3=-1 given A)=1. Under B, that common site's value is u_(-3): its left input after tick 1 is 1-u_(-3), and its centre input is 1. Bit u_(-3) is independent and fair conditional on B. Hence P(L_3=-1 given B)=1/2. The event probabilities are P(A)=5/32 and P(B)=1/16, both positive.
+
+The current position and current time agree on A and B, while the next-position laws disagree. Consequently the process (L_t) under this iid single-flip experiment is not an order-one Markov process, even if its proposed transition kernel is allowed to depend on time. This is a finite-history obstruction, not just nonstationarity of a one-step marginal.
+
+**Independent exact controls.** Probe `rule30_gpt_front_markov.py` passes all 8192 patch histories in both update implementations. The first-step and second left-advance controls reproduce GC505 exactly. Among histories with L_2=0, the counts for L_1=-1,0,1 are 1280,512,2048. Their third-step position laws are respectively
+
+    L_1=-1: {-1:1};
+    L_1=0:  {-1:1/2, 0:1/2};
+    L_1=1:  {-1:1/2, 0:3/16, 1:7/32, 2:3/64, 3:3/64}.
+
+The first two agree with the independent hand proof. Unexpected: the last two histories have equal healing probability 1/2 but different full jump laws. Healing probability alone therefore does not close the transport calculation. The last law is an exact exhaustive finite-cone computation, without a separate symbolic branch proof. Damage through tick 3 lies in [-3,3], and all its backward cones lie in [-6,6], so the uniform patch counts are exact iid-history probabilities. Blind prediction HELD; CF REFUTED. No asymptotic velocity or unbounded memory claim follows.
+
+**Outcome and next.** Position-only front closure is closed. A useful state must retain information about the common background and the surviving damage near the front, or a justified regeneration boundary. Next formulate that augmented state and its exact transition; do not increase the short-history horizon to fit an unsupported low-order chain. A negative result for every finite-state description would require a separate argument, and is not claimed.
