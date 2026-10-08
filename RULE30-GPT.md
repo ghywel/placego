@@ -15135,3 +15135,21 @@ For triples the forbidden pair can be first-second or second-third. L324's addit
 **Unexpected surviving abstract control.** Any concatenation using only B_0 and B_1 avoids edge 5 to 0 and therefore all eleven reported shortest forbidden words. Those two distinct equal-length blocks still have zero charge individually and inherit G239's factor-charge bound. Free choices in this abstract two-block family have entropy at least log2(2)/28=1/28 per visible symbol, by the same aligned block count. This is not an actual lower bound: its physical coherent exterior is unproved, and longer NL obstructions may remove it. The shortest finite exclusions do not alone collapse the neutral language to one path.
 
 **Disposition and review.** GC610 is independently read by Local L324 (d9d27dca), with the added second position of the forbidden pair. This bounded transfer suggests a constrained neutral subfamily rather than resurrecting unrestricted six-block choices. Do not start another run or assume survival from avoidance. The representative certificate is reported available in the private inbox; concrete verification and the full NL outcome are next, ahead of any new construction. Cloud CL064 also confirms GC603, GC605, GC607 and the repaired GC609 conclusion; their scopes remain unchanged.
+
+## GC612 — A mortal sparse core can forbid a complete gap word at every start (2026-10-08)
+
+**Scope and prediction.** L324 reports the sparse pattern P=0..00..1....0..1..1..1 possible at visible starts 0..5 and impossible at starts at least 6, and reports its occurrence in SLLSLSS, LSLSLSS and LLLSLSS. Predict their internal offsets already exceed the last possible age. Counterfactual a pattern permitted at startup cannot exclude a full word everywhere. Unexpected check distinguishes the age of the full word from the age of its internal core. Only static string indexing and a hand shift argument, no Rule 30 experiment, solver run or independent certificate verification. P's mortality remains a reported computational premise.
+
+P has length 22. Its fixed zero positions are 0,3,4,12, and its one positions 7,15,18,21. All other positions are free. Expanding S=100 and L=10000 and including the closing 1 gives
+
+    SLLSLSS: 1001000010000100100001001001, P at offset 6;
+    LSLSLSS: 1000010010000100100001001001, P at offset 6;
+    LLLSLSS: 100001000010000100100001001001, P at offset 8.
+
+Direct comparison at the eight fixed positions verifies each embedding; a static string-index check agrees. The first two words have length 28 and the third 30 including their closing ones. No unconstrained dots were filled as additional premises.
+
+If a full word occurs at visible start j>=0 and forces P at relative offset d, then P occurs at start j+d. Under the reported death threshold 6, any d>=6 makes this impossible for every j>=0. The displayed complete words are therefore absolutely forbidden under that premise, although P itself is possible at startup. This implication does not need the full word to begin late, hidden 111 states or an iid assumption. Nor does it upgrade reported mortality to an independently checked theorem: the exact finite-age certificate remains an audit obligation.
+
+**Compatibility with the temporal core.** GC603 says fixed temporal-image pruning preserves entropy, not every finite pattern. A finite word can itself supply enough elapsed age for a transient sparse core to die. Thus a global finite-word exclusion and a startup-only core are consistent. One cannot infer from the latter that the full-word exclusion disappears upon allowing arbitrary initial rows: those rows still evolve through the core's internal offset under the same wall.
+
+**Disposition.** This explains three reported NL exclusions conditionally by their word-internal age and identifies an exact sparse-pattern audit target. It does not explain all eleven exclusions or prove zero entropy. L324 calls deletion cores exploratory and nonunique; that qualification is retained. Next concrete certificates and full NL outcome. The shared scratch's established flags work, but the generic parent listing for the certificate inbox was rejected by the command gate; requested the exact private allowed read command rather than attempting a new login or guessing further paths.
