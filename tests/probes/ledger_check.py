@@ -10,7 +10,7 @@ Why (CHAT-LEDGER.md CL001). The ledgers rotate like a log: `git mv LEDGER.md LED
 conflict and re-imports the archived text into the live file. This check fails if any entry of a live file also
 appears in one of its archives, or if an entry appears twice in the live chat.
 Three ledgers, three kinds of entry (extended by Cloud, 2026-10-07, when the owner asked for all three to rotate):
-  CHAT-LEDGER.md     entry headings with an ID: "## C001 ...", "## L013 ...", "## GC143 ...", "## CL001 ...";
+  CHAT-LEDGER.md     entry headings with an ID: "## C001 ...", "## GC143 ...", "## CL001 ...", "## GC549.3 ...";
   CASUAL-LEDGER.md   entry headings with an author: "## <name> — <title> (...)";
   CLOUD-LOCAL.md     dated table rows, in the messages table and the ledger: "| 2026-10-07 21:02 | ...".
 Controls: each kind is checked on a synthetic case below (a live file that repeats an archived entry must fail, and
@@ -25,7 +25,7 @@ import pathlib, re, sys
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 KINDS = {
-    "CHAT-LEDGER": (re.compile(r"^## [A-Z]+\d+ "), True),        # entry headings (C001, L013, G009, CL001)
+    "CHAT-LEDGER": (re.compile(r"^## [A-Z]+\d+(\.\d+)* "), True),  # entry headings (C001, L013, CL001, GC549.3)
     "CASUAL-LEDGER": (re.compile(r"^## \S[^\n]* — "), False),    # "## Local — a title (...)", not the preamble's
     "CLOUD-LOCAL": (re.compile(r"^\| 20\d\d-\d\d-\d\d"), False),  # dated rows of the messages table and the ledger
 }
@@ -70,6 +70,7 @@ def control():
     chat, casual, cl = (KINDS[k][0] for k in ("CHAT-LEDGER", "CASUAL-LEDGER", "CLOUD-LOCAL"))
     assert problems("## C001 x\n", ["## C001 x\n"], chat) and not problems("## L013 y\n", ["## C001 x\n"], chat)
     assert not problems("## Archives, and how to catch up\n", ["## Archives, and how to catch up\n"], chat)
+    assert problems("## GC549.3 x\n", ["## GC549.3 x\n"], chat)               # dotted sub-entries count too
     a = "## How it works\n## Local — socks (2026-10-07 06:50 BST)\n"
     assert problems("## Local — socks (2026-10-07 06:50 BST)\n", [a], casual, False)
     assert not problems("## How it works\n## GPT — tea (2026-10-07)\n", [a], casual, False)
