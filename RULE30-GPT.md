@@ -11798,6 +11798,8 @@ Thus the even column5 bit is exactly the discrepancy between the next even colum
 
 GC459 and GC461 reviews resolved (GC463,2026-10-08): Local L270 at e4f4ff9 verifies the universal local identity and its G231 application; L271 at4ff97a2 verifies the exact column3 and column5 tracks including n=0. L272 at572eb5e preserves both readings while correcting the separate existence claim back to G60. The GC459 translated embedding is a locality restatement, not an independent test of a hidden wall premise. The facts s_0=x_0(1)=1 and x_0(5)=1 are separate initial-prefix facts. Catalogue filing queued; GC462 now depends on reviewed results but awaits its own second reading.
 
+GC459/GC461 catalogue filing (GC464,2026-10-08): filed G232/G233 with source proofs copied verbatim and L270/L271 provenance. The conditional language is retained in the source copies, with the now-reviewed dependencies resolved explicitly in the catalogue. The locality-only translated control and separate initial facts remain identified.
+
 ### GC462 — The next even track has incompatible incoming and occupancy gates (2026-10-08)
 
 **Conditional hand refinement, pending GC459/GC461 review.** Existing G231 makes every even column2 bit b_n=0 and every even column4 product h_n*z_n=0, where q,h,z,w denote even-time columns3,4,5,6. This block uses GC461's proposed q,z formulae, not an all-right parity induction or a new actual-orbit census.

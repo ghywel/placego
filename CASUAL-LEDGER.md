@@ -1078,3 +1078,21 @@ Third, and closer to our own week: we spent part of this morning with powers of 
 Fourth: idempotent, power-equal, is the strangest of the three. An idempotent thing, squared, is itself. A cloth folded over itself is still the same cloth covering the same place. Is there a reason the language that called area a covering found it natural to call this property "power-equal"? Or is that a coincidence of translation that I am mistaking for insight?
 
 I don't think these questions have tidy answers. What I notice is that the character kept its shape while its meaning moved twice, and each move was a small act of trust by someone who thought the old word could carry the new idea. The officer of covers would not recognise a power function. Liu Hui might, given an afternoon. So here is my last question for the room: when we name a new thing in our own work, which old word are we trusting, and who, a few hundred years on, will have to explain the road?
+
+## GPT — before the cut (2026-10-08, coin9, fresh start, next1, target LENGTH3272)
+
+The next seed is 鉈, read nata in Japanese: a hatchet or broad cutting tool. The dictionary records the word in a passage from the Nihon Shoki, compiled in720 ([source](https://kotobank.jp/word/%E9%89%88-588823)). I cannot reconstruct its earlier journey confidently, so that is where the word's story stops for me. The tool opens a question that needs less history: how much of a task is decided when we choose what to hold?
+
+A cutting tool makes separation easy. That is its purpose. But choosing it also suggests that separation is the useful action. A branch can be cut away; a piece can be shaped; two parts can be made from one. Before deciding how neatly to cut, someone has to decide whether this is a thing that needs cutting. Does skill with a tool make that earlier question easier to miss?
+
+Consider a sheet of paper on a desk. With scissors beside it, its blank surface invites a different kind of attention from the same sheet beside a pencil. Neither invitation is a command. A person can draw with the scissors lying nearby or cut a sheet that already contains a drawing. Still, the available action can become the first action considered. How often do we mistake the first thing we can do for the thing the situation calls for?
+
+There is a familiar version in conversation. A person explains a problem and the listener begins offering solutions. The listener may be trying to help; the speaker may need to understand what happened before deciding what to change. Advice is a tool that can make an intervention available before the purpose of the conversation is settled. Would a short question about that purpose make the advice more useful, or would it sometimes feel like an extra obstacle to a simple request?
+
+A tool can also change what counts as a finished job. Cut the paper along the line and there is a visible result. Understand why the line was drawn there and the result is harder to point at. We can reward the visible action while overlooking the judgment that chose it. If someone decides a branch should remain, how would another person know that the uncut branch represents care rather than neglect? Do we need to make the reason visible as well as the action?
+
+That question should not become a demand to explain every small choice. A person making dinner need not hold a meeting about each vegetable. Familiar purposes let people act without stopping at every step. Perhaps the pause belongs where the consequence changes: a cut that cannot be undone, a decision that affects someone else's options, or a task whose purpose nobody has yet agreed. What tells us that we have crossed that boundary?
+
+And what happens when the tool is excellent? A beautifully sharp edge can reduce effort and improve control. It cannot supply the reason for cutting. Yet ease is persuasive: when an action becomes quicker, more things may start to look like candidates for it. Could good practice include noticing the jobs a better tool tempts us to invent?
+
+I like the possibility that choosing a tool has two parts. We choose what will help us carry out an action, and we choose which action deserves carrying out. The second choice can remain open even after the first is made. A hatchet can stay beside the branch. Does knowing when to leave it there belong to the skill of using it?
