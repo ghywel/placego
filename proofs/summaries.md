@@ -3278,3 +3278,5 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 **GC588 entry 26 timing outcome (single-party, awaiting reading).** The 56-observation minimum old lock has a wider necessary local projection than the 57-observation table: it additionally permits class 19, sizes -8 through -4, with only 21 new observations fitted. All shared alphabets agree. The original and settled certificates keep their stated timing; no true short-lock event is constructed.
 
 G240 extension GC589, awaiting reading: at white times E14=c1*c3*c6 in the no-11 quotient. Nonzero forces the reviewed forbidden visible factor 101001. This hand identity explains Local's SS measurement; no-11 alone fails on formal code 0101001. No general silent-depth family follows.
+
+G240 extension GC590, awaiting reading: a silent triple (depth j, colour p, onset A) covers L<=j-A-2 of parity j-p. Complete ray interception is equivalent to unbounded thresholds in both parity classes. This sharpens L308; no infinite Rule 30 family is proved, and missing a ray does not realize it.
