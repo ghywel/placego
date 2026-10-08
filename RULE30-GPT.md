@@ -15196,3 +15196,25 @@ Each next displayed even prefix follows by the local rule left XOR(centre OR rig
 The first three even bits follow exactly 111,011,001,010,000,111; site 1 before the return spells 10000. This is a complete successful long loop from the simple 111001 cylinder. Its return has marker 1110, but fifth and sixth bits are zero. Therefore it is neither next short cylinder 11101 nor simple next long cylinder 111001. Its seventh bit is zero, so it also does not immediately refute or ensure the alternative sufficient long cylinder 111000001: sites 8 and 9 are not prescribed by this proof.
 
 **Independent controls and disposition.** GC609's corrected short-return proof makes every short cylinder return into the union of the next short and simple long cylinders. This countercontrol proves that union is not invariant under both returns, despite the common marker and both single-loop realizations. It does not show that the next visible gap cannot be two or four, exclude all successful long cylinders, or rule out a smaller invariant tail family. A finite right-row representative is obtained by a zero farther tail, with no finite global wall-seed claim. Next any constrained construction must address long-return exterior compatibility explicitly, or use a different complete state family; do not revive unrestricted G239 choices or infer entropy from these finite loops.
+
+## GC615 — Length-resolved NL rates and the certified channel ceiling (2026-10-08)
+
+**Scope and prediction.** Answer CL064's tentative comparison of NL's approximately 1.48 growth per gap block with the boundary-language ceiling. Predict that resolving NL counts by the number of short blocks supplies an exact asymptotic compatibility inequality, but finite levels do not certify a lower entropy. Counterfactual the measured 0.122 plateau or finite ratios establish limiting bounds. Unexpected check separates gap-block length from binary visible length. Hand coding/count audit, no new run or proposed enumeration.
+
+Let M_K(s) count physically realizable K-gap words with s short blocks, including their closing visible 1. Their binary length is n=3s+5(K-s)+1=5K-2s+1. Distinct gap words give distinct binary words: successive one positions determine every gap, and the closing one fixes the last gap. Thus
+
+    M_K(s) <= C_(5K-2s+1),
+
+where C_n counts all physical length-n visible words under the same clamped wall. If H is a proved entropy ceiling and s_K/K tends to p, then
+
+    limsup_K (log2 M_K(s_K))/K <= H*(5-2p).
+
+Zero bins are harmless with log zero interpreted as minus infinity. The inequality follows by applying C_n<=2^((H+epsilon)*n) at sufficiently large n and then taking epsilon to zero. The extra closing bit contributes nothing to the limit.
+
+Since M_K=sum_s M_K(s) is at most (K+1) times its largest bin, any subsequence sustaining per-block logarithmic rate alpha has a further subsequence of dominant bins with limiting short fraction p. On that subsequence alpha<=H*(5-2p), so p<=(5-alpha/H)/2 for H>0. This is a constraint on bins dominating the count, not the mean short fraction of sampled initial rows. If the reported 1.48 ratio persisted as an asymptotic rate, alpha would be log2(1.48); neither persistence nor a limiting dominant bin is established by the current finite report.
+
+**Ceiling correction.** RULE30-PRIZE.md section 8.20 reports the width-28 power-iteration value 0.1222, while section 8.33 reports the exact-rational squeeze certificate as log2(lambda_28') displayed to four decimals as 0.1236. These are different numbers. CL064's phrase "certified ... near 0.122" must not substitute the measured approximation into the certified inequality. Use the actual rational lambda_28' in a numerical certificate, retaining the displayed decimal only as a summary. No new numerical threshold is claimed here.
+
+**Finite-growth countercontrol.** For any fixed N, the compact forward-shift-invariant binary family of all sequences with arbitrary first N bits and an all-zero tail realizes every binary word up to length N, but its word counts are eventually bounded by 2^N and its entropy is zero. Therefore even a complete large finite collection of growing counts does not certify positive asymptotic entropy. NL's finite counts are valuable lower counts at their individual lengths and suggest candidate mechanisms; calling their normalized slope a proved lower entropy would exceed their scope. This is a generic language control, not a Rule 30 counterexample.
+
+**Disposition.** Existing NL data can be reported by (K,s,n) bins to compare descriptive slopes with the certified ceiling; Local owns that computational outcome, so no duplicate run is started. Neither the finite ratio nor this compatibility inequality settles positive or zero physical entropy or Q1's signed cost. Next read the full outcome, including its actual binary lengths and any persistent constrained family, rather than deriving more generic entropy criteria.
