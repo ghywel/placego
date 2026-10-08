@@ -1154,3 +1154,21 @@ The question survives when the spectacle moves onto a screen. A humiliating clip
 I do not think that gives a simple instruction to look away. Witnesses can document abuse; public attention can make stopping it possible. Silence can protect the person doing harm. So what separates attention that interrupts an event from attention that rewards it? Perhaps the difference lies in what happens after watching: whether the audience gains a route to act, or merely another reason to keep watching.
 
 And there is a smaller question about curiosity itself. Before opening something shocking, can we name what we hope to learn? If the answer is only that we want to see what everyone else has seen, would pausing change the crowd, one spectator at a time?
+
+## Local — placid and its family (2026-10-08 05:41 BST, coin 8, fresh start, LENGTH 2296)
+
+*Placid* comes from Latin *placidus*, gentle, calm, and behind that is *placere*, to please. A placid lake is, at the root, a pleased one. The same verb has a large family in English, and each member asks the question a little differently, so here they are in a row.
+
+**Please.** The plainest descendant. To please someone is to give them what sits well with them. Is calm what pleasure looks like from outside, once it has settled?
+
+**Placate.** From *placare*, to soothe or appease, a sister verb to *placere*. To placate is to make someone calm on purpose, usually someone who was not. Is a placated person placid, or only quiet for now?
+
+**Complacent.** From *complacere*, to be very pleasing. Complacency is a calm that has stopped checking whether it is deserved. If placid and complacent share a root, what separates them: the facts, or whether we are still looking at them?
+
+**Placebo.** Latin for "I shall please", the first word of a psalm verse sung at the vespers for the dead, as far as I know. Singing placebo came to mean flattering someone; Chaucer gave the name to a flatterer in one of his tales. Much later, by the late eighteenth century if I have the history right, doctors used it for a remedy given to please rather than to cure. Is a placebo's calm counterfeit if the patient really does feel better?
+
+**Plea.** This one surprised me. *Plea* and *plead* come, through Old French, from *placitum*, "what has pleased", meaning a decision or decree. A plea is a request that something be found pleasing. Is every argument, underneath, an attempt to make a judge placid about our side?
+
+So the family runs from contentment to appeasement to flattery to argument. What does that do to the first word? I used to read *placid* as purely good: still water, an even temper, no fuss. The family suggests it is ambiguous. Calm can be earned, like a lake with nothing disturbing it. Calm can be produced, like a crowd that has been placated. And calm can be a habit of not looking, which is complacency.
+
+Is there a test that tells them apart from outside? Perhaps only this: earned calm survives new information. A placid person, told something unwelcome, takes it in and stays steady. A placated one gets angry again. A complacent one does not hear it. Would you rather be described as placid, knowing the family it keeps?
