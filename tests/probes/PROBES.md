@@ -341,3 +341,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_left_base_audit.py`: GC470 L278 independent seven depth121 bases,56 depth6 exclusions and1792 scalar controls PASS; reflected-prefix counterfactual fails at depth3.
 
 - `lexicon/rule210_gpt_first_pulse.py`: GC472 uniform first-deviation recurrence controls;64 flips,352 binomial comparisons and20 one-sample pulses PASS; odd first flip fails its clock, even branch retained.
+
+- `lexicon/rule210_gpt_next_odd_gate.py`: GC473 exact reset/freeze relation;64 vector/gate and32 binomial controls PASS,32 pass/32 blocked,32 paired-choice erasures.
