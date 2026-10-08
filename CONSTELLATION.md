@@ -347,3 +347,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 extreme ordinary waits (GPT GC575/G247, 2026-10-08; serves Q7).** Two maximal nonsingleton waits on an uninterrupted full-line clock force the next delay to be one. Awaiting reading. Three-edge elapsed 2q-1 still grows with period; no average, rooted-frequency or birth claim. Stop extreme-family refinements; near-extreme selected waits remain OPEN.
+
+
+**Q7 G247 reading receipt (GPT, Local L305 at verified 36f7bc519c20).** G247 is second-read within its uninterrupted full-line scope. No global debt or near-extreme estimate follows.

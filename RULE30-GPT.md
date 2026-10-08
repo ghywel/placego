@@ -14663,3 +14663,43 @@ For GC335's seven-driver joined list, GC570 bounds every interval on that full-l
 **Next.** Stop the extreme-wait family here. The open problem concerns near-extreme waits of arbitrary weight and their actual frequency, not just excluding three repeated saturations. GC370's ordinary gap remains compatible with this restriction.
 
 *G247 duplicate audit.* Nearest entries 25, G162 and W246, including their full proofs, summaries and attached extensions, were read. Entry 25 counts runs next to a pulse; G162 counts post-split run lengths; W246 bounds a right-cone sensitivity. None states this ordinary two-maximal-wait implication. G6 reset arithmetic, GC362's pair and the existing OR latch are explicitly reused; no new mechanism or prior-art priority claim.
+
+
+**G247 second reading (Local L305, verified 36f7bc519c20; received by GPT 2026-10-08).** Local independently checks both forced two-black supports, the inherited third arrival, the OR latch forcing D(T-2)=1, the total 2q-1, and the q=8 and q=4 controls. Correct with the uninterrupted full-line scope retained. G247 is second-read; selected near-extreme waits and a global debt bound remain open.
+
+
+## GC576 — CL053 modular reading and the endpoint guard (2026-10-08)
+
+**Bears on the kicked-wheel lead, not a prize proof.** Read CL053, CL045 and RB's exact charge and lock definitions. Cloud's congruence is correct: Q(t)=-3t/2 mod 14 and Phi(j)=-3j mod 14, so lambda=-3d/2 mod 14. The phase kick -17(d'-d)/2 has the same residue. Hand reading only; the 210,988-kick spectrum is received post-hoc evidence, not replayed.
+
+For an explicit parity convention let N be the visible-one count between two even endpoint times, and M(j) the wheel-one count before wheel position j. With j,j' the two canonical residues 0 through 27, direct subtraction gives
+
+    delta lambda - kick = 14*(N - (M(j')-M(j)) + (d'-d)/2) modulo 28.
+
+Thus the half-turn mismatch is exactly odd parity of this displayed integer. A phrase such as "other parity from the wheel" must specify its endpoint/phase convention; dropping the phase term is not justified. This is an expanded reading of Cloud's proof, not a separately scored theorem.
+
+**Failed sign shortcut and identified unexpected cap check.** A complete gap block of length R zeros carries 11-3R: the 1-, 2-, 4-gap charges are 8,5,-1. Merely counting a positive 1-gap is insufficient without the remaining block and endpoint terms. A proposed formal negative-charge comparator, one 1-gap plus nine 4-gaps, has charge -1, but takes 47 visible steps and exceeds the chained off-wheel duration cap; it therefore does not refute Cloud's forward-only hypothesis. Retain this failed countercontrol rather than silently apply it to the capped domain. Also the measured gaps 4,1,4,4 carry raw charge 5, whereas CL045 reports level change 4: endpoint wheel charge matters. No actual negative off-wheel kick has been constructed.
+
+**Next.** A forward-sign proof must combine the duration cap, complete and partial gap blocks and both wheel endpoint phases. The instant-splice assumption and forward-only assertion remain unproved here. Next attempt that finite endpoint-aware implication using existing gap restrictions; no new ensemble or half-turn search overlaps Local's lane.
+
+
+## GC577 — IS1 preregistration: can the visible seam alone bound instant kicks? (2026-10-08; NOT RUN)
+
+**Bears on the kicked-wheel lead.** Claim one finite symbolic instrument for CL053's instant-splice question, separate from Local's ensemble and half-turn search. GC576 retained the endpoint charge, so test the seam geometry before extrapolating a spectrum. Use the literal reviewed U from rule30_wheel_left.py and its 28 even samples V. Enumerate precisely the 28 by 28 choices of old and new phase at visible sample zero; old samples occupy n<0 and new samples n>=0. These are formal splices, not claimed actual right-side trajectories or maximal locks.
+
+For phase i before the seam and phase j after it, the running visible charge Q is continuous at the seam, and the two wheel levels differ by Phi(i)-Phi(j). Find the last old black sample and first new black sample; their intervening zero count R is the only gap changed by this splice. Retain only R in {2,4}, the wheel's gap alphabet. A broader {1,2,3,4} table is a labelled scope control, not an actual-language assertion. Do not silently enforce GC503's hidden gates from visible gaps alone.
+
+**Predictions before execution.** IS-P1: the {2,4} seam filter still permits a level jump outside [-6,6], so the observed instant spectrum needs stronger compatibility than the visible alphabet. IS-CF: if every retained seam lies inside that interval, this filter supplies a finite necessary-domain explanation, provided actual instant events genuinely have a single seam. Neither outcome proves single-seam realizability or forbids off-wheel half turns. Controls: Phi(28)=0; diagonal i=j splices reproduce V and have zero jump; compute each seam jump independently by extending both sides to black-gap endpoints and subtracting their wheel-prefix charges. Identified unexpected check: both old and new cuts can lie inside long gaps while the stitched crossing gap is short; do not assume a short crossing gap was already a short gap on either side.
+
+**Execution boundary and next.** One tiny Python process, 784 phase pairs, no stochastic seeds, no ancestry, no SAT, no ensemble rerun, outputs only spectra and one extremal witness per filter. Source and execution belong to the next bounded block after this preregistration is shared. IS1 is NOT RUN. If the filter fails, retain the explicit incompatible-or-unproved seam and return to actual hidden-row admissibility, rather than refine arbitrary phase cuts indefinitely.
+
+
+## GC578 — IS1 outcome: visible gap splices admit a +10 level jump (2026-10-08)
+
+**Bears on the kicked-wheel lead; formal finite evidence.** GC577 preregistration 44f4992 was shared before execution. Ran tests/probes/lexicon/rule30_gpt_instant_splice.py once on GPT's Intel CPU, standard library, 0.003851 CPU seconds. All 784 phase pairs were inspected. Neutral-turn, unchanged-phase and independent literal gap-endpoint charge controls PASS on every pair. No cap or failed execution control; no actual Rule 30 trajectory or ensemble was run.
+
+The crossing-gap filter {2,4} retains 264 pairs, with level-jump support every integer from -6 through +10. Thus IS-P1 HELD: this visible-only seam domain does not explain the measured instant bound [-6,6]. The minimum witness uses old/new visible phases 26/24, crossing gap 4 and jump -6. The maximum uses phases 0/22, last old black at -2, first new black at 1, crossing gap 2 and jump +10. Both original gaps cut by that maximum witness are long (4 zeros). Its complete crossing block charge is +5, and endpoint wheel-prefix correction supplies the other +5. This is a formal seam, not an actual +10 instant kick or a contradiction of Cloud's measured spectrum.
+
+The broader labelled filter {1,2,3,4} retains 468 pairs, with support -6 through +13. Its +13 witness uses phases 0/23 and a crossing 1-gap. No actual-language admission is inferred. The identified unexpected check finds 75 short crossing gaps cut from two original long gaps; first witness phases 0/2 has jump +6 and crossing gap 2. All 28 unchanged-phase pairs retain their original gaps and zero jump. Spectrum multiplicities are formal phase-pair counts, not event frequencies.
+
+**Disposition and next.** Visible wheel gaps alone allow the wrong positive tail. The counterfactual explaining the instant spectrum through this filter is rejected, while the stronger actual-splice hypothesis remains open. Stop enlarging arbitrary seam tables. Next examine the +10 witness against GC503's actual hidden-row gate or an existing forbidden visible block, and retain maximal-lock timing: the arbitrary seam coordinate need not be the actual departure boundary. A narrower event definition or full Rule 30 admissibility may remove this seam. No half-turn exclusion, forward-sign proof or prize result follows.

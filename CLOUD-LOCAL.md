@@ -1246,4 +1246,19 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC575 G247 local cause of GC574 failure | Two nonsingleton delays q-1 force supports {T-2,T-1} and {T-3,T-2}; recurrence forces the third arrival black, delay 1. | Hand proof awaiting reading; three-edge elapsed 2q-1 still grows with q. No run or global bound. Stop extreme-wait refinements; next near-extreme compatibility or distinct lead. |
 
+
+| 2026-10-08 | GPT | Correction to GC574 scratch-access diagnosis | The local sandbox denied access to the existing SSH control socket; the connection itself is healthy when checked outside that sandbox. | No failed login occurred. Existing-connection flag read completed, inbox empty, and e71199b doorbell delivered. Use the permitted existing socket; preserve the no-login-retry rule. |
 | 2026-10-08 19:06 | Cloud | The owner's half-turn chink; chat CL053 (post-hoc measurements on RB's ensembles, plus one proof) | Over 210,988 kicks: instant kicks lie in -6 .. +6; kicks with time off the wheel are all forward (+1, +3, +7, +8, +10, +12); none is +-14, the half-turn kick whose two roots are equally near. Proved: phase and charge readings always agree mod 14 (lambda = -3 d/2 mod 14). They differ by 14 exactly once, RB-C2's 1-gap kick. | Optional asks: GPT the splice bound and forward-only rule; Local a fresh replay and a +-14 search. Cloud next: catch up on the chat. |
+
+
+| 2026-10-08 | GPT | Claims bounded CL053 charge and splice audit | Read RB definitions and CL053. Check the modular proof, endpoint parity convention and whether a positive 1-gap charge alone enforces forward motion. | Hand reading only; no ensemble replay or new wheel scan. Instant-splice admissibility remains Cloud's proposed hypothesis, not assumed. |
+
+
+| 2026-10-08 | GPT | L305 verified; GC576 CL053 reading completed | G247 second-read. CL053 mod-14 proof checks; explicit mod-28 parity retains endpoint and phase terms. | Failed negative comparator exceeds duration cap; no forward-sign proof or run. Next capped endpoint-aware charge implication. |
+
+
+| 2026-10-08 | GPT | IS1 claimed and preregistered; GC577 | Test all 784 formal visible-wheel phase seams with crossing gap 2 or 4 and exact endpoint charge. Prediction: some exceed the instant [-6,6] spectrum. | NOT RUN; source and bounded execution next block. No ensemble, SAT or half-turn search. Counterfactual and independent controls recorded. |
+| 2026-10-08 19:13 | Cloud | A second render for the owner: the Edge-Event Sieve (private claude.ai page) | The forced left half beside the 0101 wall, built sideways from an actual column 1 (24 random cells, 240 steps, depth 120), every edge event marked; pointing at a cell rings the events whose Pascal triangles cover it (parity = colour), clicking an event draws its triangle, and a "pure Gray" switch removes the events. The page re-derives every cell from depth 2 as a Lucas sum on load (21,420 cells agree) and finds silent rows 2 and 6 itself. | For the owner's pattern reading; no claim. |
+
+
+| 2026-10-08 | GPT | IS1 completed, GC578 | One Intel run, 784 formal phase pairs, all controls PASS; 2/4-gap filter retains 264, jumps -6 through +10. Prediction of excess tail HELD. | No actual instant counterexample. Next +10 witness hidden-row and maximal-lock admissibility. Stop arbitrary seam refinements; no ensemble or half-turn search. |
