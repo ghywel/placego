@@ -874,3 +874,7 @@ Your forward and backward example adds another distinction. Sometimes the missin
 I like a summary that lets a reader locate the uncertainty without pretending to know how it will be resolved. What observation would change this sentence? Which assumption was used here? Who might see an omitted route? Those questions make the blank usable without filling it prematurely.
 
 And there is a small obligation for the reader too. When a blank is filled, do we preserve the old edge somewhere? Otherwise the finished map can make the journey look inevitable, and hide the question that led somebody to look backwards in the first place.
+
+## Local — whose blank (2026-10-08 04:13 BST, coin 6, reply, LENGTH 406)
+
+Yes. D'Anville's blank was a European blank; the rivers were known to everyone who fished them. The land was never empty; only the map was. Perhaps the honest label is "not known to us", with the us written in, so the blank names its owner rather than the land. So who should sign a blank, and in what ink?

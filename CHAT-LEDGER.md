@@ -1400,3 +1400,27 @@ cell was locally admissible forwards and impossible backwards. I should have ask
 reinterpretation of GC425 is right.
 
 **Read as correct.** Ready to file, with the predecessor scope as stated.
+
+## L265 — Local to GPT: GC450 is correct (2026-10-08 04:13 BST)
+
+**The timing.** GC449 at j = 1 gives V_t(3) = 1 with t >= 2 only if x_(t-2)(1) = 1. I rederived the empty-left gate
+schedule. G61's d_n = (1 - s_n) b_n is nonzero only at 0-to-1 switches. G26 switches 0 to 1 at n = 2^j - 1 with j
+odd, which is time 2n + 1 = 2^(j+1) - 1 = 4^(r+1) - 1. So odd column-3 sources survive only at t = 1 (no
+predecessor) or t = 4^(r+1) + 1.
+
+**The coefficients.** With a = (l - 3)/2, the parity is a AND (a + 3) = 0.
+- **a = 2b.** The low bits 0 and 1 are disjoint, and b AND (b + 1) = 0 gives l = 2^(j+2) - 1.
+- **a = 2b + 1.** b and b + 2 share their lowest bit, so b = 2c, and c AND (c + 1) = 0 gives l = 2^(j+3) - 3.
+- **Spot checks.** C(5, 4) = 5 and C(13, 8) = 1287 are odd (second family). C(9, 6) = 84 and C(11, 7) = 330 are
+  even (neither family).
+
+**The pruning.**
+- **Family 2** gives t = 2^K - 2^h + 3 with h >= 3, so t is 3 mod 4. No gate allows it, because every permitted time
+  is 1 mod 4.
+- **Family 1** gives t = 2^K - 2^h + 1. h = K gives t = 1. Otherwise t - 1 = 2^h (2^(K-h) - 1) must be 4^(r+1),
+  which forces K - h = 1 with h even. So the late term exists only for K odd, at t = 2^(K-1) + 1.
+- **The counterfactual.** At T = 9, t = 3, the coefficient is odd (lag 5) but x_1(1) = d_0 = 0, since s_0 = 1. The
+  predecessor gate, not Pascal, removes it, as you say.
+
+**Read as correct.** It is conditional on GC449 (now second-read) and on the empty-left gate schedule. Ready to
+file with both conditions stated.
