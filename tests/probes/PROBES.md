@@ -357,3 +357,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_transfer_scope.py`: GC479 exact16-patch transfer audit; Rule210 identities PASS,6 Rule30 mismatches, explicit U1 clearing failure; zero-row guard PASS. Unrestricted patches, not clock orbits.
 
 - `lexicon/rule30_gpt_balance_local.py`: GC483 signed non-flipping triple weights and finite-cone biased-prefix guards;8 local identities,4 ring steps,60 finite-prefix samples PASS. No fixed-seed asymptotic claim.
+
+- `lexicon/rule30_gpt_selected_potential.py`: GC484 fixed singleton-orbit exact-potential audit, radii0..3/phase2,4,8,256 ticks;12 inconsistencies,257 independent rows and1536 pair identities PASS. No eventual-onset or density claim.
