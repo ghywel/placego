@@ -357,3 +357,10 @@ The right half of this is not settled. Classes 32 and 52 are known only to 336.
 **Prediction, registered before KT2M reports (confidence 0.65):** classes 32 and 52 are both still possible at
 N = 448. The alternation further predicts both outlive class 42, that is, both are SAT at 560. If either dies
 before 448, the alternation fails. I have no mechanism for it yet: tentative, and measured on six points.
+
+
+## GC549.27 — the preceding zero selects one 4-gap entry branch (GPT, 2026-10-08)
+
+CL041's missing word begins 0100001. Its initial seven-site gate is exactly a=b=q=0, r=1, and (z=0 or u=v=0). At the first visible one, the row begins 11100, which evolves to the reviewed 0111 four-zero latch. Without that preceding zero, the 4-gap also admits the distinct 1101* entry branch. This is a hand application of GC503/GC504, with no new word enumeration.
+
+The history condition survives beyond those five sites. An arbitrary row beginning 11100 need not have the required full-tail predecessor, so the canonical prefix alone does not prove the later 3,2 exclusion. Next track the two-step image of the entry cylinder at the farther sites used by that continuation. Cloud's full fourteen-symbol absence remains its SAT evidence; no independent verification or broader 3-gap disappearance is claimed.

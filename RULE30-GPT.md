@@ -14174,3 +14174,27 @@ Under the iid fair initial right-tail measure, G preserves the measure by the al
 **Independent deterministic controls.** A nonempty finite right tail never reaches all zero: its rightmost occupied site has zero farther neighbours and its bit stays one under G. Its boundary ray consequently cannot become constant. With no right tail, z is constant; the singleton's rightmost ray has precisely this form and remains black. An infinite all-ones right tail reaches all zero in one update, so nonemptiness alone is insufficient; the finite-tail qualification is essential. These are literal update checks and preserve the probability-zero exception in the fair-law statement.
 
 **Failure retained and next mechanism.** Recurrence of individual zeros is weaker than the simultaneous zero windows needed by GC533 for escape from every bounded damage span. Two binary coordinates can alternate oppositely forever, each visiting zero but never jointly zero; that is a logical control, not a claimed typical Rule 30 orbit. Nor does the argument decide the predictable infinite-healing tables of GC541. It supplies the first-width baseline without assuming critical-ray ergodicity. Next seek a deterministic characterization of eventually avoiding a longer zero cylinder and show its trapping set is null under the invariant fair law; do not extrapolate single-bit recurrence to that missing result.
+
+
+### GC549 checkpoint 27 — local entry gate for the history-bearing 4-gap (2026-10-08)
+
+**Bounded hand block on CL041's explicit separator.** Return from GC550 to the claimed missing factor 01000010001001. First isolate its leading 0100001, without a longer-word census. Prediction: the preceding visible zero selects the 11100 branch of the existing 4-gap trigger. Counterfactual: that five-site prefix alone proves the full missing factor. Its farther evolved-row constraints have not been eliminated. Unexpected check: seven initial sites suffice to decide this seven-symbol prefix, rather than its generic thirteen-site cone. No experiment or independent replay of Cloud's SAT absence certificate.
+
+At a white start write the first seven right sites as a,b,q,r,z,u,v. For a visible prefix 01, GC503's duration-one case forces a=b=q=0. After two ticks, the first three sites are 1,r,r OR z. If this row begins the visible word 100001, its next row must start a four-zero latch. The two-step formulas of GC504 imply its current first five sites A,B,Q,R,Z satisfy
+
+    A=1, B=1,
+    either Q=0,R=1, or Q=1,R=Z=0.
+
+To verify, the next row's required second and third bits are both one. Put beta=1 XOR (B OR Q), eta=B XOR (Q OR R), theta=Q XOR (R OR Z). Those requirements give beta=eta=0 and theta=1. Hence B=1, Q OR R=1 and Q XOR (R OR Z)=1, exactly the two displayed branches. In either branch the next row's fourth bit is one, so GC503 gives four zeros and their following one, with no farther-tail premise. This is a direct application of the reviewed latch formula.
+
+For the row arising from the preceding 01, B=r and Q=r OR z. B=1 therefore forces r=1 and Q=1: only the second branch survives. Its current first five sites must be 11100. Its fourth bit is automatically zero from the initial a=b=q=0,r=1. Its fifth bit is
+
+    1 XOR ((1 XOR (z OR u)) OR (z XOR (u OR v))).
+
+It vanishes exactly when z=0 or u=v=0. Thus the complete seven-symbol prefix 0100001 occurs exactly on initial sites
+
+    a=b=q=0, r=1, and (z=0 or u=v=0),
+
+with arbitrary farther right sites. Sufficiency follows through the reviewed 11100 -> 0111 transition and the exact four-zero latch, not merely from matching the first two symbols.
+
+**Controls and remaining obligation.** Initial prefix 0001000 satisfies the condition and uses GC504's already checked 00010 -> 11100 transition. The earlier unconstrained 4-gap word 100001 also permits the branch 1101*, as well as 11100; the preceding zero removes the former. No new literal run is made. The 11100 cylinder has unconstrained farther sites when viewed in isolation, whereas an actual row reached from the preceding 01 has an entire right-tail predecessor condition. The local gate does not prove that every 11100 row is such an evolved row, or that it cannot subsequently produce the 3,2 gaps. Keep the full-factor absence as Cloud's SAT result awaiting independent proof. Next track the exact two-step image of the seven-site entry cylinder at the farther sites used by that 3,2 continuation, rather than assume a five-site reset erased its history.
