@@ -15266,3 +15266,23 @@ For a=1, the first two updates force prefix 01111110 at time 2, independently of
 In particular v OR w=1 for every r,s. A row beginning 0100vw has odd first five bits 111 followed by v and (v OR w). Its next first four bits are therefore 000 followed by NOT(v OR w). Time 8 begins 0000. From that prefix the time-10 second bit is zero: the odd first three bits are all zero, and the two-tick second output is their first bit XOR the OR of the other two. Thus no farther tail repairs the prescribed return to 111. This excludes a=1 without enumerating tails or treating r,s as independent inputs.
 
 **Result and limits.** Within the seven-bit cylinder 1110000, successful completion of the prescribed next long loop is equivalent to the additional suffix 01, giving exactly the known sufficient nine-bit cylinder 111000001. The proof classifies that next long path, not the next visible gap of every other length, all long-return entry states, or the full return image. GC614 does not determine its returned sites 8 and 9, so whether that particular earlier long cylinder can feed this gate remains open. A narrower coherent tail family still needs joint exterior compatibility; this finite gate supplies no entropy lower bound. Await Cloud's odd-ID reading; next address those two returned bits if useful, without duplicating Local's NL run.
+
+## GC618 — One omitted shield fixes the eighth return bit and reduces the next-long obligation (2026-10-08)
+
+**Scope and controls.** Refine GC614 and GC617 on the actual cylinder 111001000100 under the externally clamped wall. Predict returned site 8 is forced zero. Counterfactual every omitted return bit is free to depend on the farther tail. Unexpected check extends the published prefix by one shielded bit. Hand Boolean audit only; no experiment or literature leap. Bears on: nothing yet, the existing physical-return compatibility side road.
+
+GC614 fixes time-6 prefix 01010001. Its odd first eight bits are 11011011. The last two bits are black, so the time-8 eighth bit is 1 XOR(1 OR anything)=0. Therefore time 8 starts 00010010, strengthening the previously displayed seven-bit prefix. At time 8 the odd sixth, seventh and eighth bits are respectively 1,1,NOT w, where w is time-8 site 9. The odd ninth bit is w OR z, with z its site 10. Thus the time-10 eighth output is
+
+    1 XOR((NOT w) OR(w OR z))=0.
+
+The actual return consequently starts 11100000, for every farther initial tail. This is an additional forced zero, not an extra assumption. By GC617 the next prescribed long loop now completes exactly when returned site 9 is one.
+
+**Exact intermediate gate.** Let a,b,c,d be the actual time-6 bits at sites 9,10,11,12. No independence is assumed. Write U=NOT(a OR b), V=a XOR(b OR c), W=b XOR(c OR d). These are that pair's odd bits at sites 9,10,11; its odd bits at sites 7,8 are both one. The time-8 bits at sites 9 and 10 are w=NOT(U OR V) and z=U XOR(V OR W). If h is its site 11, the time-10 ninth bit is (NOT w) XOR((w OR z) OR(w XOR(z OR h))). Hence it is one when w=1, and otherwise equals NOT(z OR h).
+
+There are four cases in (a,b). For 11, U=V=0, so w=1 and the output is one. For 10, U=0 and V=NOT c: c=1 gives w=1; c=0 gives w=0,z=1 and output zero. For 01, U=0,V=1, so w=0,z=1 and output zero. For 00, U=1,V=c,W=c OR d. If c=1 then w=0,z=0, and h=V XOR(W OR the next odd bit)=0, giving output one. If c=0 then z=NOT d; d=0 gives z=1, while d=1 gives h=1, so output zero in either case. No farther odd bit affects these conclusions.
+
+Thus returned site 9, and equivalently completion of the next prescribed long loop, is exactly
+
+    (a AND b) OR(c AND(a OR NOT b)).
+
+**Disposition.** The GC614 next-loop question has become a concrete three-bit condition at time 6. Determining its attainable values from the original twelve-bit cylinder remains open; these actual intermediate bits must not be replaced by independently chosen controls. The refinement does not prove either LL realization or failure for that initial cylinder, any infinite concatenation, entropy, or a prize. It replaces the earlier unspecified pair of return bits with one fixed zero and one exact Boolean obligation. Await Local's even-ID reading; next analyze the original-cylinder ancestry of these three bits only if that supplies a useful compatible family.
