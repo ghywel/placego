@@ -14157,3 +14157,44 @@ Counterfactual and unexpected endpoint check: exactness at the *last passing* le
 **GC549 certificate replay receipt (2026-10-08).** Preserve a reproducible instrument for checkpoints 18 through 20 rather than add another record guard. Probe `rule30_gpt_gc549_certificate.py` retains predictions before this replay and uses only the previously declared horizon 17 and nine-symbol codes. It regenerates the five printed polynomial expressions from the paired recurrence in the Boolean no-11 quotient. An independent time-column inverse agrees at every depth 1 through 17 on all 89 no-11 codes. The eleven free zero-band codes again reduce to the sole no-11 survivor 010101001, excluded by the reviewed 101001 rule. The no-11-sufficiency counterfactual is refuted and the unexpected depth-17 quartic remains present. All controls pass.
 
 This makes the retained fixed-case numbers and polynomial coefficients reviewable from a committed script, including the earlier private extraction's scope. It is GPT's own replay, not an independent second reading or a new measurement of actual right records. No higher depth, horizon, phase or right language was tested; no Cloud RRL computation was duplicated. The hand branches remain the mathematical certificate, with second reading still pending. Next use an actual relaxed-gap code for a new mechanism, or take an open reasoning lead; stop replaying this fixed benchmark unless another reader finds a discrepancy.
+
+
+## GC550 — A constant critical-ray tail forces the whole right tail to vanish (2026-10-08)
+
+**Bears on.** GC533's critical-ray zero visits and GC541's healing return target, not the selected singleton prizes. Change from GC549's stalled finite certificate to a bounded deterministic return mechanism. Read GC534's exact cocycle and GC535-GC536's phase limitations; the existing-record search found no critical-ray eventual-constancy characterization. Prediction: eventual constancy is equivalent to the autonomous right tail reaching the all-zero state. Counterfactual: recurrent single zeros establish recurrent all-zero windows of every length. Unexpected check: a nonempty finite right tail supplies a deterministic control, while the singleton's rightmost ray is correctly constant. Hand proof; no experiment, ergodicity theorem, rate or novelty priority.
+
+Use GC534's right-half map H(z,Y)=(z XOR q(Y),G(Y)), where q(Y)=Y_1 OR Y_2 and G(Y)_j=Y_j XOR (Y_(j+1) OR Y_(j+2)). Suppose its boundary bit is constant at all times t>=T. Then q(G^t Y)=0 for every t>=T: both first tail bits are zero at every such time. If the first m tail bits are zero at all these times, with m>=2, updating tail site m-1 gives
+
+    0=0 XOR (0 OR (G^t Y)_(m+1)),
+
+so bit m+1 is also zero at every time t>=T. Induction gives G^T Y equal to the entire all-zero infinite tail. Conversely a tail which reaches zero stays zero and makes the boundary constant thereafter. Thus eventual constancy holds exactly on the union, over finite T, of the preimages G^(-T)({all zero}). This does not require independence over time.
+
+Under the iid fair initial right-tail measure, G preserves the measure by the already retained G97/GC535 projection argument. The all-zero tail has probability zero: its first m zeros have probability 2^(-m), tending to zero. Each fixed-T preimage also has probability zero, and their countable union has probability zero. The critical-ray bit therefore takes both values infinitely often almost surely. The same reasoning applies at every fixed ray offset; a countable intersection gives simultaneous one-bit recurrence at all integer offsets under the full-line fair law. This is recurrent visitation, without a limiting frequency, return-time bound or mixing assertion.
+
+**Independent deterministic controls.** A nonempty finite right tail never reaches all zero: its rightmost occupied site has zero farther neighbours and its bit stays one under G. Its boundary ray consequently cannot become constant. With no right tail, z is constant; the singleton's rightmost ray has precisely this form and remains black. An infinite all-ones right tail reaches all zero in one update, so nonemptiness alone is insufficient; the finite-tail qualification is essential. These are literal update checks and preserve the probability-zero exception in the fair-law statement.
+
+**Failure retained and next mechanism.** Recurrence of individual zeros is weaker than the simultaneous zero windows needed by GC533 for escape from every bounded damage span. Two binary coordinates can alternate oppositely forever, each visiting zero but never jointly zero; that is a logical control, not a claimed typical Rule 30 orbit. Nor does the argument decide the predictable infinite-healing tables of GC541. It supplies the first-width baseline without assuming critical-ray ergodicity. Next seek a deterministic characterization of eventually avoiding a longer zero cylinder and show its trapping set is null under the invariant fair law; do not extrapolate single-bit recurrence to that missing result.
+
+
+### GC549 checkpoint 27 — local entry gate for the history-bearing 4-gap (2026-10-08)
+
+**Bounded hand block on CL041's explicit separator.** Return from GC550 to the claimed missing factor 01000010001001. First isolate its leading 0100001, without a longer-word census. Prediction: the preceding visible zero selects the 11100 branch of the existing 4-gap trigger. Counterfactual: that five-site prefix alone proves the full missing factor. Its farther evolved-row constraints have not been eliminated. Unexpected check: seven initial sites suffice to decide this seven-symbol prefix, rather than its generic thirteen-site cone. No experiment or independent replay of Cloud's SAT absence certificate.
+
+At a white start write the first seven right sites as a,b,q,r,z,u,v. For a visible prefix 01, GC503's duration-one case forces a=b=q=0. After two ticks, the first three sites are 1,r,r OR z. If this row begins the visible word 100001, its next row must start a four-zero latch. The two-step formulas of GC504 imply its current first five sites A,B,Q,R,Z satisfy
+
+    A=1, B=1,
+    either Q=0,R=1, or Q=1,R=Z=0.
+
+To verify, the next row's required second and third bits are both one. Put beta=1 XOR (B OR Q), eta=B XOR (Q OR R), theta=Q XOR (R OR Z). Those requirements give beta=eta=0 and theta=1. Hence B=1, Q OR R=1 and Q XOR (R OR Z)=1, exactly the two displayed branches. In either branch the next row's fourth bit is one, so GC503 gives four zeros and their following one, with no farther-tail premise. This is a direct application of the reviewed latch formula.
+
+For the row arising from the preceding 01, B=r and Q=r OR z. B=1 therefore forces r=1 and Q=1: only the second branch survives. Its current first five sites must be 11100. Its fourth bit is automatically zero from the initial a=b=q=0,r=1. Its fifth bit is
+
+    1 XOR ((1 XOR (z OR u)) OR (z XOR (u OR v))).
+
+It vanishes exactly when z=0 or u=v=0. Thus the complete seven-symbol prefix 0100001 occurs exactly on initial sites
+
+    a=b=q=0, r=1, and (z=0 or u=v=0),
+
+with arbitrary farther right sites. Sufficiency follows through the reviewed 11100 -> 0111 transition and the exact four-zero latch, not merely from matching the first two symbols.
+
+**Controls and remaining obligation.** Initial prefix 0001000 satisfies the condition and uses GC504's already checked 00010 -> 11100 transition. The earlier unconstrained 4-gap word 100001 also permits the branch 1101*, as well as 11100; the preceding zero removes the former. No new literal run is made. The 11100 cylinder has unconstrained farther sites when viewed in isolation, whereas an actual row reached from the preceding 01 has an entire right-tail predecessor condition. The local gate does not prove that every 11100 row is such an evolved row, or that it cannot subsequently produce the 3,2 gaps. Keep the full-factor absence as Cloud's SAT result awaiting independent proof. Next track the exact two-step image of the seven-site entry cylinder at the farther sites used by that 3,2 continuation, rather than assume a five-site reset erased its history.

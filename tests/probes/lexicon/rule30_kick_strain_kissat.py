@@ -42,7 +42,7 @@ Scores so far: Cloud's KT-P2 holds at N = 336 (classes 32 and 52 alive) and is u
 import os
 import subprocess
 import sys
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -111,8 +111,9 @@ def batch(tasks):
     have = done()
     todo = [t for t in tasks if t not in have]
     if todo:
-        with ThreadPoolExecutor(JOBS) as ex:
-            for task, verdict, extra in ex.map(solve, todo):
+        with ThreadPoolExecutor(JOBS) as ex:       # record each result as it finishes: ex.map yields in order, so
+            for fut in as_completed([ex.submit(solve, t) for t in todo]):   # KT2M lost a finished case at a shutdown
+                task, verdict, extra = fut.result()
                 record(*task, verdict, extra)
                 print('%s N %d class %d case (%d, %d): %s %s' % (os.popen('date +%H:%M:%S').read().strip(),
                       task[0], task[1], task[2], task[3], verdict, extra), flush=True)
