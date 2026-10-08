@@ -23,7 +23,11 @@ PREDICTIONS (Local's, published before the run):
          P_(k-1)(E) a_0(t), with a_0 the wall (t mod 2) and a_1 column 1 read from the orbit.
   SW-C0 (control): GPT's counterfactual guard, the formula for q without the s_(n+1) term, fails at some n on R.
   SW-C1 (control): a scalar truth-table evolution agrees with the integer coding on R's cone through t = 200.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 05:11 (M5, one run at commit 20c9cb5; transcript outside Git; 1.2 s). SW-P1, P2, P3, P4 HELD
+and SW-C0, C1 PASS: GC461's column-3 and column-5 formulas hold on R through 3000, with s from the orbit and from G26's
+closed form; the track law holds on all 173,401 checked cells for k = 2 .. 60; q without the s_(n+1) term fails.
+Instrument check by hand afterwards: P_5 = E^4 + E^2 + 1 perturbed by E or by E^3 misses on 109 and 110 cells of R's
+column 5 through t = 388, the true P_5 on none.
 """
 import os
 import sys
