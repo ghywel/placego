@@ -39,6 +39,17 @@ PREDICTION (Cloud's, pushed before the first run; the block's unexpected check):
   tests whether the selected orbit looks like the ensemble in these two numbers, which would be evidence, not proof.
 Counterfactual: a resonance fraction far from 1/3 would say the singleton's run starts are spatially atypical, which
   would make the resonant-tail target of GC517 more (or less) prominent there than the ensemble suggests.
+
+OUTCOME, 2026-10-08 (by 12:59 BST; 17 s): every control R505 to R542 PASS (R524: 3,210 corridor cases; R545: 7,037
+  transitions; R520: 19,998 rows, 6,661 ties; no mismatch anywhere). PREDICTION: mean white length 2.068, HELD; the
+  resonant fraction is 0.2561 over 976 white starts, REFUTED. The reference value was wrong, not the orbit: GC515's 1/3
+  conditions on a white centre at a fixed time, not on a run start. Post-hoc, so not a test: at a white start the
+  preceding row u has u_0 = u_-1 = 1, and GC545-GC546 give p = ell, q = r + 1 + z. Under the fair ensemble ell >= 1
+  has P(ell = k) = 2^-k, r >= 0 has P(r = j) = 2^-(j+1), z is fair, so P(q = 1) = 1/4, P(q = k) = 3 * 2^-(k+1) for
+  k >= 2, and P(p = q) = (1/2)(1/4) + sum over k >= 2 of 3 * 2^-(2k+1) = 1/8 + 1/8 = 1/4.
+PREDICTION 2 (Cloud's, written after the first run and pushed before this second run; --late): on fresh singleton
+  times, white starts s in 4001 .. 20000, the resonant fraction lies within 0.03 of 1/4 and the mean white length
+  within 0.1 of 2. Confidence 0.75 and 0.8. A miss would say the singleton's run starts are spatially atypical.
 """
 import random
 from collections import Counter
@@ -289,6 +300,34 @@ def prediction():
           "HELD" if abs(mean - 2) <= 0.15 else "REFUTED")
 
 
-if __name__ == "__main__":
+def late(lo=4001, hi=20000):
+    """PREDICTION 2: integer rows (bit k is site k - t), white starts in [lo, hi]."""
+    row, c, starts, res = 1, [], [], 0
+    for t in range(hi + 60):
+        cbit = row >> t & 1
+        c.append(cbit)
+        if lo <= t <= hi and cbit == 0 and c[t - 1] == 1:
+            starts.append(t)
+            left = row & ((1 << t) - 1)
+            right = row >> (t + 1)
+            p = t - (left.bit_length() - 1) if left else None
+            q = (right & -right).bit_length() if right else None
+            res += p == q
+        row = ((row << 2) ^ ((row << 1) | row)) & ((1 << (2 * t + 3)) - 1)
+    lengths = []
+    for s in starts:
+        k = s
+        while c[k] == 0:
+            k += 1
+        lengths.append(k - s)
+    frac, mean = res / len(starts), sum(lengths) / len(lengths)
+    print(f"PREDICTION 2: {len(starts)} white starts in {lo} .. {hi}; resonant fraction {frac:.4f}",
+          "HELD" if abs(frac - 0.25) <= 0.03 else "REFUTED", f"; mean white length {mean:.4f}",
+          "HELD" if abs(mean - 2) <= 0.1 else "REFUTED")
+
+
+if __name__ == "__main__" and "--late" in __import__("sys").argv:
+    late()
+elif __name__ == "__main__":
     rng = random.Random(505)
     r505(); r506_511_521(); r507(); r523(); r524(rng); r529(); r544(); r545(rng); r520(rng); r542(); prediction()
