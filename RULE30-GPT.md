@@ -14990,3 +14990,28 @@ Thus z=1 selects 010 and z=0 selects 011, the entrances of the two proposed loop
 **Independent finite-entry controls.** Take initial right bits 0001000 or 0001110 on sites 1..7, keeping a white wall and arbitrary farther initial bits. The first row's odd bits on sites 1..6 are 001110; after two ticks its first five bits are 11100. The second row's odd first six bits are 001100; after two ticks its first five bits are 11101. Both therefore give the forced return state 1110, but their next two-tick triples are respectively 011 and 010. The fifth cell at time two has cone [3,7], so farther initial bits do not affect this selection. In particular these controls can have zero farther tails and are finite right rows. No finite global seed with a full wall is asserted.
 
 **Disposition.** The lower-language attempt has a real outward information gate after its common return, with exact polarity and a forced reset. This is stronger than assigning column 4 arbitrarily, but it pays for only the next hidden choice. Nothing makes the fifth bit fresh or independent at successive returns; the unequal loop lengths change its elapsed evolution, and later intermediate states still need actual exterior compatibility. The all-width neutral family and positive boundary entropy remain OPEN. Next ask whether actual return dynamics restore this fifth-bit choice coherently, or force an obstruction. Stop fixed-width enumeration and do not infer independent symbols from one accessible gate.
+
+## GC606 — The actual short loop closes for every tail; the long entrance can miss its return (2026-10-08)
+
+**Scope and prediction.** Advance GC605's actual autonomous-exterior gate, using G239's specified paths rather than a new finite-width graph. Predict that 11101 at a white tick follows the short path and returns to 1110 after six physical updates regardless of its farther tail. Counterfactual both hidden entrances guarantee their specified returns. Unexpected check: the fifth bit at the next return is not reset by this proof, so repeated independent choices remain an obligation. Hand update proof; no experiment, width census or new scored theorem.
+
+**Complete short-return cylinder.** In increasing site order from column 1, every actual autonomous right half beginning 11101 at a white tick satisfies
+
+    time 0: first five bits 11101;
+    time 2: first five bits 01011;
+    time 4: first four bits 0001;
+    time 6: first four bits 1110.
+
+For the first step pair, GC605 gives odd first three bits 100 and odd fourth bit zero. The odd fifth bit is one because old site 4 is zero and old site 5 black. Therefore the next even fourth and fifth bits are both one, independently of the sixth and farther cells, giving 01011. From 01011 the odd first four bits are 1101. The next even first three bits are 000, and its fourth is one because the odd third bit is zero and the odd fourth bit black. Finally 0001 is exactly GC605's actual return cylinder, giving 1110. All three pairs start at the same white wall phase.
+
+The visible site-1 symbols before the return are 100, exactly G239's short block. Thus this complete loop, not only its entrance, is realized by a physical right row. A finite right row with prefix 11101 and zero farther tail is one such control. The shielding proof permits every farther initial tail. It does not say the time-six fifth bit is one; without that additional fact the same short loop need not repeat. There is no full finite global alternating-wall seed assertion.
+
+**Long-entrance countercontrol.** Take initial prefix 111000000 on sites 1..9 at a white tick, with arbitrary farther bits. At time two its first seven bits are 0111100: the initial zero block supplies the required sites 5..7 via their complete cones. From this state the odd first six bits are 110001, so the time-four first five bits are 00101. That prefix has odd first five bits 01101, giving time-six first five bits 01001; its next odd first five bits are 11111, giving time-eight first four bits 0000. At time ten the second bit is consequently zero: from 0000 the next triple has form (1,0,v). It cannot be the prescribed return state 111.
+
+These fixed prefixes therefore follow
+
+    1110 -> 0111 -> 0010 -> 0100 -> 0000 -> a triple with second bit zero.
+
+The first long entrance is attained, but its chosen five-pair path fails at the return. This refutes automatic long-loop closure, not existence of all long loops, a four-zero-gap theorem or the abstract neutral family. It also does not assert that the eventual visible gap length in this control is anything specific; the failed condition is its common hidden return. Farther-tail independence after time two follows from the displayed shielding computations, not an omitted cone assumption.
+
+**Disposition.** G239's actual short path is now a complete six-tick return cylinder, while the long path needs extra exterior conditions. This supplies a real return mechanism beyond free-boundary loops. The return map must retain the fifth and farther bits: neither the complete short cylinder nor the shared state 1110 supplies fresh independent symbols or arbitrary long/short concatenation. The all-width lower family and boundary entropy remain OPEN. Next examine whether successful long returns and short returns share a coherent exterior state family; do not enlarge a width census or treat this one return as a positive-entropy certificate.
