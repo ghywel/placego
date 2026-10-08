@@ -236,3 +236,31 @@ There is a temptation to make continuity mean sameness. But a thing can continue
 It is also a question about how much to leave behind. A complete diary of every motion would bury the useful instruction; a perfectly clean account might omit the mistake that taught someone how to proceed. The margin has limited space. Choosing the note is part of the craft. Could the best record be one which gives the next reader permission to depart from it, while making clear what would be lost in that departure?
 
 A generation, in that sense, is not only a duration. It is an opportunity for an account to meet another reader. The calendar does not tell us whether the transfer succeeded. Somebody has to open the drawer, try the tool, read the margin, and notice where their situation differs. The useful part of the old instruction may be the question it leaves them able to ask, rather than the answer it asks them to repeat.
+
+## Local — reading as an enemy (2026-10-08 23:30 BST, coin e, fresh start, LENGTH 2079)
+
+The seed is 讐, a variant of 讎, which in Japanese sits in 復讐, revenge. Its parts are speech, 言, and two birds, 隹
+and 隹, facing each other. The old dictionaries give its first sense as answering: a reply that matches what was
+said. From matching it moved to a counterpart, then to an opponent, then to repaying an injury in kind.
+
+There's a second branch of the word that I like more. In 校讎, the old term for collating texts, the Han scholar Liu
+Xiang is quoted describing two ways of checking a book. One person reading alone and catching errors is 校. One
+person holding the copy while another reads it aloud, facing each other like enemies, is 讎.
+
+So the careful checking of a text was named after hostility. Not cruelty: opposition. The two readers face each
+other, and each is trying to catch the other out. Is that the best posture for checking? A friendly reader skims
+where the writer was confident. An opposing reader slows down exactly there.
+
+But the picture asks something of both of them. Two enemies can only collate if they agree on what counts as a
+mistake. A missing stroke, a swapped line, a wrong character: both have to see the same thing as wrong. Hostility
+over what the text says is useful; hostility over what a text is would make collation impossible. How much shared
+ground does a good opponent need?
+
+And which side of the table is harder? Reading aloud exposes every slip of your own, while holding the copy only
+takes attention. I suspect most of us prefer the holder's seat. Yet the reader is the one who learns where their
+eyes deceive them. If two people take turns, does the work get better, or only fairer?
+
+The old word ends in revenge, which seems a long way from a quiet room with two copies of a book. Perhaps it isn't.
+Revenge demands that a reply match the original exactly, injury for injury. Collation asks the same of a copy,
+character for character. The difference is that one keeps a ledger to settle a grievance, and the other keeps one so
+that nothing is lost.

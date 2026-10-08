@@ -46,6 +46,31 @@ Counterfactual: an UNSAT in mode A at small K is an actual obstruction to free r
 hand mechanism to explain; failures only in mode B mean the choices repeat but not through one shared state 111.
 Either way a finite K says nothing about all lengths: full realization to K = 16 is evidence for, not a proof of,
 positive entropy; no uniform construction follows from it.
+OUTCOME, 2026-10-08 23:29 BST (M5; run from 22:01 at commit f6e873d1; stopped 22:24 to 23:03 when the external
+disk dropped, then resumed from its byte-identical checkpoint on the internal disk; about 65 min of compute; 19,910
+SAT replays, 128 DRAT proofs):
+  NL-C1 PASS (6,003 cylinder rows, 0 failures; GC606's guard holds). NL-C2 PASS (200 encoder checks, both answers).
+  NL-C3 PASS (19,910 SAT models replay; 128 proofs drat-trim VERIFIED; all 4,957 A4 retests UNSAT, as the shift
+  argument requires).
+  NL-P1 REFUTED: free repetition fails from K = 7. Realizable mode-A counts for K = 1 .. 16: 2, 4, 8, 16, 32, 64, 117,
+  192, 296, 439, 648, 961, 1424, 2078, 3009, 4335. Of the 4,957 UNSAT words tried, 382 are minimal (every aligned
+  proper factor realizable): 11, 26, 28, 34, 25, 30, 27, 42, 67, 92 at K = 7 .. 16, still rising.
+  NL-P2 REFUTED: with state 111 at every visible 1, LLSLSS fails already at K = 6; mode B keeps 97 to 98 per cent of
+  mode A's words (2,014 of 2,078 at K = 14).
+  NL-P3 REFUTED: 49 of the 216 three-block G239 words are absent. 12 contain B5 B0 (LLLLLSS; GC610, GC611), 36
+  contain an eight-block forbidden word and 1 a fourteen-block one; 167 are realized.
+  NL-P4 REFUTED: 14 of the 32 late words are absent at time 128. 7 are absent at every start; 7 (LLLLSLLS, LLLSLLSS,
+  LLLSSLLL, LLSLLSLL, LLSSLSLL, SLLLSLLS, SSLSSLLL) are realizable at time 0 but dead by time 128, whole-word
+  mortality of the kind GC603 allows. Slowest late call 41 s.
+  D1, binned as GC615 asks (binary length n = 5K - 2s + 1 for s short blocks). The mean short fraction falls from 0.50
+  (K <= 6) to 0.39 (K = 16), and the dominant bin from s/K = 0.5 to 0.31: the realizable words drift towards long
+  blocks. The dominant bin's per-block rate falls from 0.72 to 0.60 bits, against its certified ceiling
+  H(5 - 2p) = 0.54 (H = 0.1236, RULE30-PRIZE.md section 8.33). By binary length (complete to n = 49), the slope of
+  log2 N(n) per symbol falls 0.194 (n = 20 .. 35), 0.134 (30 .. 49), 0.127 (40 .. 49): towards the certified 0.1236,
+  from above. Finite slopes certify nothing (GC615's countercontrol).
+  Exploratory, after the run: deletion cores of the 11 shortest words are mostly mortal patterns aged past their
+  death by the word's own prefix (L324, L325, GC612); the 11 words and 9 cores have two-solver DRAT certificates,
+  re-verified by GPT (GC613).
 """
 import os
 import random
