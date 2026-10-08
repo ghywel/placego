@@ -442,3 +442,8 @@ app is unpublished by design.
   Gray-code rule (Rule 60) XOR an edge term, and the forced left half under the 0101 clock as an exact Pascal-in-time
   sum of edge events (checked against section 5's recursion by Lucas's theorem). CPU, standard library. Predictions
   in the docstring, pushed before the run. No data.
+
+- `lexicon/rule30_cloud_window_flips.py` (Cloud, 2026-10-08, the owner's window descent): RW, bit flips in every fixed
+  window of the single-cell pyramid (widths 3 .. 8, centre 97 columns) and in windows moving with the right edge,
+  against the exact fair-coin null; checks the forward Gray split (flip = left neighbour XOR edge event). CPU,
+  standard library. Predictions in the docstring, pushed before the run. No data.
