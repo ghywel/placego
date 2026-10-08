@@ -13493,3 +13493,35 @@ In particular d<3/2 would suffice for a positive lower inward rate, but would no
 **Independent endpoint controls and limits.** GC538's conditional all-K=0 case has d=1 and g=3/2, giving v=1/2. Its all-K=1 case has d=3/2 and g=2, giving v=1/3. These are conditional controls, not actual event probabilities. GC523's finite-record escape fails the infinite-record premise, so its outward speed cannot be inserted into the ratio. A large jump near the end of a short completed excursion cannot leave a linear deficit: the two-site-per-update recovery bound is the independent guard missing from a naive endpoint-only ratio.
 
 **Outcome and next.** An iid renewal assumption is unnecessary if these two actual Cesaro averages can be justified. The open probabilistic work is now explicit: prove recurrent records, finite limiting mean duration, and limiting mean record gain from the full conditioned state. No such inputs, transport value or prize result are supplied. Stop accounting refinements; next an actual return-duration estimate or a justified induced-state law.
+
+## GC541 — Healing return is a predictable deterministic excursion (2026-10-08)
+
+**Scope and prediction.** Advance GC540's actual return-duration target using the exposure scheme itself. Predict that each fresh pivot chooses between two return outcomes specified by the pre-pivot state, because reused ticks reveal no new initial bits. Counterfactual this makes successive excursions iid or decides infinite return in finite computation is unsupported. Unexpected check: an infinite return-time predicate can be measurable before the pivot without being finitely decidable. Hand proof conditional on GC509, pending joint review; no experiment, return-tail estimate or novelty claim.
+
+**Why no hidden bits enter the excursion.** At a fresh tick t, reveal the intervening bits through J_t+1. Force the remaining pivot to the unique value that makes the common below-front background black, namely the healed branch. Both copies' initial bits at that negative pivot are changed together, preserving their original single flip at site 0. The initial tail from J_t upward is then entirely specified. After this update the exposure boundary is B=J_t.
+
+At every following reused tick, its cone endpoint J_s>=B. GC509's exact damage calculation therefore uses only the already specified initial tail and known damage history, and the boundary stays B. The next front and whether it creates a new record are determined from those bits. Iterate until the first fresh tick is detected, or indefinitely if none is detected. Unrevealed bits below B cannot affect any of these damage transitions before that return.
+
+Consequently the healing branch has a return duration H_t in {1,2,...} union {infinity}, determined by the exposed pre-pivot information. Each finite-time no-return event is a function of that information; their countable intersection gives a measurable infinite-return predicate. This is not a finite decision procedure for that predicate. If return occurs, its span gain rho_t is 1 or 2 and is determined by the same branch simulation.
+
+**Exact induced choice, not regeneration.** The actual fair fresh pivot selects, conditionally in equal proportions,
+
+    (duration, span gain)=(1,2), or (H_t,rho_t),
+
+where the second gain is defined only when H_t is finite. The first outcome is the left branch, which immediately creates a new record. If H_t is finite, the conditional mean duration is (1+H_t)/2 and its variance is (H_t-1)^2/4. Its conditional mean span gain is (2+rho_t)/2. If H_t is infinite, the conditional duration mean is infinite in the extended sense. All of these are state-dependent quantities; no iid rewards, integrability or convergence of their averages is supplied.
+
+GC537-GC538 give H=1 for K=0 and H=2 for K=1. For K>=1, healing initially reduces span by K-1, and return must exceed its old record by at least one. The maximum two-site span growth gives H>=1+ceil(K/2). GC522 improves the K=2 case to H>=3, because its next update cannot move the front left. These are lower duration bounds, not upper recovery estimates.
+
+**An exact recurrence obstruction identity.** Let C_t be the event that time t is fresh and its predictable healing table has H_t=infinity. The event is measured before revealing that pivot. Time t is the last fresh tick exactly when C_t occurs and the pivot chooses healing: its other choice returns immediately. Thus
+
+    P(time t is the last fresh tick)=P(C_t)/2.
+
+There is always a first fresh tick at time 0. The last-fresh events are disjoint, so countable additivity yields
+
+    P(finitely many fresh ticks)=(1/2)*sum_(t>=0) P(C_t).
+
+In particular the sum is at most 2. Almost-sure recurrence is equivalent to these infinite-healing tables having zero encounter probability at every deterministic t. This is a precise alternative target, not a proof that those probabilities vanish. It avoids conditioning pivot fairness on actual future escape: the deterministic counterfactual table is specified first.
+
+**Independent controls and limits.** K=0 and K=1 reproduce the actual one- and two-update return blocks, including the forced unit reversal. GC523's last fresh tick at time 1 has a healed K=2 branch with no future records, so its deterministic finite-background table has H=infinity. That background requires an infinite zero half-row and is iid null; it supplies no positive P(C_t). The other fair-pivot branch would return in one update. These controls retain the actual transition and measure distinctions.
+
+**Outcome and next.** The genuine missing input is now a property of predictable healing tables: exclude infinite excursions almost surely for recurrence, then control their durations and induced states for GC540's averages. No upper duration bound, zero-probability proof or speed theorem is established. Stop further accounting; next a full-state restriction on the deterministic healed excursion or a different open main-line lead.
