@@ -19,7 +19,12 @@ PREDICTIONS (Local's, published before the run):
          b AND (q OR r) (sites 2, 3, 4 as b, q, r), where site 1 two steps later is the next visible symbol's row.
   LR3-P3 (confidence 0.6): for 001000 the time-18 prefix is not constant over completions (GPT's unknown is genuine
          dependence, not lost cancellation). Descriptive: the distinct time-18 sites 1 .. 3 and their counts.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-08 16:02 (M5, one run at commit 57dd481, 0.5 s): LR3-C1 PASS; LR3-P1 and P2 HELD (all 2^14 completions
+of each closed cylinder show 0010100, 010010, 00000, 100 at times 12 .. 18; b_next = b AND (q OR r) on every row).
+LR3-P3 REFUTED: for 001000 all 16,384 completions also give time-18 prefix 100, so GPT's unknown was a lost
+cancellation, not dependence, and the fourth cylinder closes like the other three. Post-hoc, exact constant prefixes
+on that branch: 0000100 (time 8), 101100 (10), 00101 (12), 01001 (14), 00000 (16), 100 (18); by hand, site 6 at time
+10 is 1 XOR (1 OR *) = 0 from the time-8 prefix, where the ternary run had an unknown.
 """
 import os
 import random

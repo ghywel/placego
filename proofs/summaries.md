@@ -3088,3 +3088,14 @@ The row after a history-bearing four-gap entry retains a restriction three sites
 **Why it matters.** A canonical five-site prefix does not erase the incoming history. The missing visible 4,3,2 factor still needs its continuation linked to this spatial restriction.
 
 **An everyday picture.** Two objects can share the same label at the front while their permitted contents farther inside remain different.
+
+
+## W237
+
+Six initial sites force a later black reading whose neighbour rules out a two-zero gap.
+
+**What it says.** Starting with 000010 beside the alternating wall forces five successive local transitions. The final black site has a white neighbour, so its next gap contains one or three zeros.
+
+**Why it matters.** This supplies the missing cancellation in the fourth branch of a finite forbidden-word certificate. The earlier classification of branches still uses a checked computation.
+
+**An everyday picture.** Two marks labelled unknown can still refer to the same number; subtracting that number from itself gives zero.
