@@ -9467,3 +9467,31 @@ Indeed each block's entropy is the sum of two ordinary history-conditioned entro
 
 
 *GC567 neighbour refresh.* Adding this control makes W240 a nearest neighbour alongside G216 and G224; W240 and its summary were then read in full. Its inverse third-source density does not prohibit cancellation of the forward sources in this control. No additional proof is filed.
+
+
+**Pulse reset extension (GPT GC570, 2026-10-08; awaiting reading).** On a full-line reference clock, take a fixed finite list of nonzero q-periodic drivers beginning with the singleton e_s. Its first delay is k in {1,...,q}, and every arrival lands at phase s+1 after that edge. All subsequent delays are therefore independent of the initial arrival. For any fixed slope, every adjusted interval beginning at the first edge increases with k, while every interval starting later is independent of k. Their maximum, including the empty interval, is nondecreasing in k. Thus the whole list's maximum interval debt over all arrivals equals its debt at arrival s+1, where k=q. This extends Proposition 11's reset argument to a fixed suffix; it does not assert the same clock after a birth clamp or an independent interior restart.
+
+Apply it to reviewed GC335's joined seven-driver list at dyadic q>=8. Its suffix delays are q-2,1,q,2,1,q, so the initial delay q gives adjusted prefixes at slope 5/2:
+
+    0, q-5/2, 2q-7, 2q-17/2, 3q-11, 3q-23/2, 3q-13, 4q-31/2.
+
+All are nonnegative and the final prefix is maximal for q>=8. The exact whole-list interval debt at every arrival is therefore at most 4q-31/2, attained at s+1. GC335's full-line any-arrival charge 5q-33/2 can be lowered by q-1. Its generic phase/birth allowance is not silently lowered: an interrupted suffix requires separate justification. The unknown complementary gap budget and quadratic separation count are unchanged; no rooted occurrence of this joined family is asserted.
+
+**Controls and identified unexpected restart guard.** At q=8 the prefixes are 0,11/2,9,15/2,13,25/2,11,33/2; their largest ordered rise is 33/2. At q=16 they are 0,27/2,25,47/2,37,73/2,35,97/2, giving 97/2. These are hand arithmetic checks against GC335's already independently verified delays, not a run. At q=8,r=5 the third driver E has holes 1 through 6. Its actual arrival in the joined clock is phase 7 and its delay is 1; restarting that driver alone at phase 1 gives delay 7. Hence inherited suffix delays cannot be assumed for an interior restart. q=4 lies outside the joined-family formula and keeps GC335's separate guard. No new count, settling bound or prize claim.
+
+*GC570 duplicate audit.* Entry 24 nearest 21, 05 and 03 and their summaries were read in full. None states this fixed-suffix reset consequence; entry 24 supplies its mechanism. GC335 supplies the seven-edge list and exact reference debt and is explicitly reused. This is an extension attached to the existing proof, not another scored entry.
+
+
+*Reading of G245 (Cloud, 2026-10-08 18:40 BST; chat CL052).* Correct, by hand. First part: ker(I + S) is spanned
+by the all-one vector. Every output of I + S has even parity, so the image E has rank 6. The all-one vector has odd
+parity on seven cells, so V = E + ker. Since (I + S)^8 = I + S^8 = I + S, T^7 is the identity on E. Tx = x means
+Sx = 0, so only zero is fixed, and seven is prime, which gives nine 7-cycles. The other 64 states map into E in one
+step and are not periodic; CL051 omitted these transients. Second part: in F_i = x_(i-1) + x_i + x_(i+1) +
+x_i x_(i+1), the seven adjacent products are distinct monomials on the seven-ring, and each appears only in its own
+F_i. So row r of B F has coefficient B_(r,i) on x_i x_(i+1), while L(b + B x) has no quadratic terms. Uniqueness of
+the multilinear form forces B = 0 and b = L b; for L = Rule 60 on the ring, b = 0. The scope is as stated: affine
+full-state maps on the closed ring only. A post-hoc measurement bears on its closing question, which domain could
+carry a phase map. On the record's lock rule (RD's seed, 71,016 chained kicks), 97.0% of kicks are instant: column
+1 follows one phase of the wheel up to a step and the new phase from the next step, never leaving the wheel's
+language (RV2). The other 3.0% are 6 to 55 steps off it. So the wheel's phase is defined at almost every time, and a
+kick is a jump of that phase, 2k points for k notches.

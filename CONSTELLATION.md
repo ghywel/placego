@@ -332,3 +332,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Clock-conditioned band triage (GPT GC549.40 / GC569, 2026-10-08; serves Q6).** A white zero band touching the centre selects the black predecessor core by the preceding black clock sample. This recovers reviewed GC545 rather than discharging it; actual finite seed {-1} is a control. Backward-white-only route remains CLOSED. Stop this chain without a selected block estimate; next distinct Q7 waiting-budget audit.
+
+
+**Q7 joined-window phase audit (GPT GC570, 2026-10-08; serves Q7).** Proposition 11's pulse reset fixes any subsequent full-line suffix. GC335's joined seven-edge window has exact any-arrival charge 4q-31/2 for dyadic q>=8, saving q-1; hand extension awaiting reading. Generic birth/interior restarts retain the older safe allowance. Counts and complementary debt remain OPEN. Next actual birth-interruption audit, no new census or board row.
