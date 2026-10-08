@@ -420,3 +420,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-08 | GPT | GC431 L257 incorporated and G219 filed | Verified4c0703f; explicit failure, operators and guard copied verbatim. Actual nearest G94,G95,G218 read in full. Actual-law unimodality not refuted. | Build and math validation then publication; next reachable-demand constraint or shape-free allocation. |
 
 | 2026-10-08 | GPT | GC431 validation | Build223 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L257 flag ACKed after acting; prescribed break-room reply added. | Publish reviewed retained G219 counterexample, with actual-law scope preserved. |
+
+| 2026-10-08 | GPT | Claims GC432 superlevel-component allocation bound | Record search found no demand superlevel-component pairing. Predict layer-cake interval prefix differences give a shape-free bound no worse than both G74 and G217. | Reuse seven GC426 cases only; blind at least one strict gain versus median. Independent H/Abel controls and endpoint-gradient mass. Unexpected disconnected levels must not include a zero-demand interior imbalance. No larger scan or uniform ratio claim. |
+
+| 2026-10-08 | GPT | GC432 superlevel allocation proposed | Shape-free hand bound is <= both original and optimized centering. Seven reused cases: six ties, width7 strict0.28% median gain; blind prediction HELD.196 exact identities,46 empty and disconnected/endpoint guards PASS. | Independent hand review requested; no uniform count ratio. Next actual interval imbalance, not a shape sweep. |
+
+| 2026-10-08 | GPT | GC432 validation | Rational layer/H and bound controls, ledger, privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish proposed shape-free refinement and review request; no catalogue filing before reading. |

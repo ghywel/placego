@@ -11321,3 +11321,29 @@ Bq is not unimodal because its first downward step is followed by an increase. T
 
 
 GC430 review resolved (GC431,2026-10-08): Local L257 in 4c0703f verifies the exact counterexample, both operators, mass and critical-only guard. Filed the example and verification verbatim as G219; no actual-law unimodality verdict.
+
+
+### GC432 — Superlevel components give a shape-free bound below both previous absolute bounds (2026-10-08)
+
+**Proposed hand theorem and preregistered bounded controls; review pending.** G219 blocks a generic shape induction. Retain actual placement without requiring unimodality: decompose each nonnegative finite demand d into its superlevel components. Existing-record search for layer-cake, superlevel and demand-component pairing found no matching statement. This is elementary finite layer decomposition applied to G213, not a novelty claim about integration or transport.
+
+Let I_a be finitely supported signed class imbalances, B_a=sum_(b<=a) I_b, and d_a>=0 finitely supported. Write its distinct positive heights as0=h_0<h_1<...<h_n. For each j, let C_j be the maximal integer intervals[l,r] on which d_a>=h_j. Define
+
+    E=(1/2)*sum_(j=1)^n (h_j-h_(j-1))*sum_([l,r] in C_j) abs(B_r-B_(l-1)).
+
+Then the exact signed increment S and both comparisons are
+
+    S=(1/2)*sum_a I_a*d_a
+      =(1/2)*sum_j (h_j-h_(j-1))*sum_([l,r] in C_j) (B_r-B_(l-1)),
+    abs(S)<=E<= (1/2)*sum_a abs(I_a)*d_a,
+    E<= (1/2)*min_c sum_a abs(B_a-c)*abs(d_a-d_(a+1)).
+
+**Proof.** The finite identity d_a=sum_j(h_j-h_(j-1))*1_(d_a>=h_j) gives the signed equality after summing I over each interval. Taking absolute values after each interval sum proves abs(S)<=E. Bounding each abs(sum_(a=l)^r I_a) by sum_(a=l)^r abs(I_a), then exchanging the finite sums, proves the comparison with G74's original bound. For any c, abs(B_r-B_(l-1))<=abs(B_r-c)+abs(B_(l-1)-c). At a boundary between a and a+1, the total height weight of component endpoints is exactly abs(d_a-d_(a+1)), including both outer zero tails. Therefore summing the endpoint inequality proves E is no larger than G217's objective for every c, hence its minimum. Zero demand gives E=S=0. No shape assumption or sign restriction on I is used.
+
+Thus summing E over time gives a sufficient discrepancy bound no worse than either previous absolute bound, even when actual demand shape is unresolved. This does not prove a uniform count ratio: actual interval imbalance still needs control. Signed cancellation across separate components or times is discarded.
+
+**Preregistered measurement.** Reused exactly GC426's seven widths2..8 at T=8*(w-1). Blind prediction: at least one total strictly improves optimized centering. HELD only at width7: layer total18531908863613/4398046511104 versus median18583985342077/4398046511104, ratio0.9971977766, an improvement about0.28%. All other six cases tie their median totals. These are small measurements, not asymptotic estimates. All196 signed layer identities agree with independent literal H increments; all46 empty-parent cases are retained. Both bound comparisons and endpoint-height mass=TV(d) PASS exactly. Final signed sums equal C-Q. No larger scan or Local job.
+
+**Unexpected disconnected-level guard.** For I=(1,10,-1),d=(1,0,1), the two level components are singleton sites0 and2. Signed increment0, E=1 and original bound1; optimized centering is10. Merging the components into their enclosing interval incorrectly includes the zero-demand middle imbalance and predicts signed increment5. This REFUTES the preregistered connected-hull shortcut for the exact identity. It is a synthetic algebraic guard, not an actual population law.
+
+Instrument tests/probes/prizes/collatz_gpt_superlevel_allocation.py; rational output outside Git. Next target actual cumulative imbalance across demand-level intervals or cancellation across their signed contributions, instead of seeking unimodality solely to order the old bounds. G218 remains valid conditionally; the new comparison has no such premise. Critical-boundary count loss remains PART; hand review requested.
