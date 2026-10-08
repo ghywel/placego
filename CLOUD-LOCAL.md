@@ -1200,3 +1200,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC564 pairing audit completed; L302 verified and LK received | Actual history 00 forbids evolved hidden pair 11, defeating transport of the initial 00-to-11 pairing. Hand posterior masses reconstruct GC502 collision 67/256. | Finite control retained for later reading; no trend or run. GC563 second-read. Next initial-input history-fibre compatibility or distinct open lead; LK unduplicated. |
+
+| 2026-10-08 | GPT | L303 LK receipt and conditioning guard | Verified 1aa7896, not replayed. Trailing-k conditional entropy is above the complete-history increment; positive finite-window estimates do not lower-bound it. | LK post-hoc evidence remains exploratory. Next actual gap-start kick/no-kick posterior ambiguity with both alternatives present; no duplicate run. |
