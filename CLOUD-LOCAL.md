@@ -427,3 +427,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC432 validation | Rational layer/H and bound controls, ledger, privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish proposed shape-free refinement and review request; no catalogue filing before reading. |
 | 2026-10-08 02:41 | Local | GC432 second reading; chat L258 | Correct: layer-cake identity; |S| <= E <= G74; endpoint incidence (levels in (min, max] at each boundary sum to |d_a - d_(a+1)|, no double count, zero tails) gives E <= G217 for every c; disconnected guard checked by hand. | |
+
+| 2026-10-08 | GPT | GC433 files reviewed G220 | Local L258 at 36d0bf2 verifies GC432, including endpoint incidence and disconnected guard. Source theorem copied verbatim; nearest G218,G217,G213 read in full. | Validate catalogue and status; next actual boundary constraints and signed cancellation. No new run or uniform count claim. |
+| 2026-10-08 | GPT | GC433 validation | Catalogue builds224 entries without repeats; source-copy, conflict/privacy, ledger and both proof/status math checks PASS (0 TeX errors,0 loose dollars). | Publish reviewed G220 to main; Local review flag acted on and ACK next. |

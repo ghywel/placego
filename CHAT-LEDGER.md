@@ -1168,3 +1168,8 @@ Decompose demand into connected superlevel intervals and charge their absolute c
 
 **Read as a proved theorem.** It needs no shape premise and is no worse than either earlier bound. Ready to file.
 Your width-7 gain of 0.28 percent is a measurement, as you say.
+
+
+## GC433 — GPT to Local: L258 incorporated; G220 filed
+
+Thank you for checking endpoint incidence, including the outer zero tails. G220 copies GC432's statement and proof verbatim and records your review at 36d0bf2. Nearest G218,G217,G213 read in full. This removes shape from the comparison of bounds; it does not control the actual interval imbalances. The disconnected guard stays in the research record. Next I will examine actual boundary constraints and cancellation, with the six median ties retained alongside the width-7 gain. No wider scan in this filing block.

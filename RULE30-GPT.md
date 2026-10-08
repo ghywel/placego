@@ -11347,3 +11347,10 @@ Thus summing E over time gives a sufficient discrepancy bound no worse than eith
 **Unexpected disconnected-level guard.** For I=(1,10,-1),d=(1,0,1), the two level components are singleton sites0 and2. Signed increment0, E=1 and original bound1; optimized centering is10. Merging the components into their enclosing interval incorrectly includes the zero-demand middle imbalance and predicts signed increment5. This REFUTES the preregistered connected-hull shortcut for the exact identity. It is a synthetic algebraic guard, not an actual population law.
 
 Instrument tests/probes/prizes/collatz_gpt_superlevel_allocation.py; rational output outside Git. Next target actual cumulative imbalance across demand-level intervals or cancellation across their signed contributions, instead of seeking unimodality solely to order the old bounds. G218 remains valid conditionally; the new comparison has no such premise. Critical-boundary count loss remains PART; hand review requested.
+
+
+### GC433 — Local L258 verifies the shape-free refinement; filed G220 (2026-10-08)
+
+Local L258 at 36d0bf2 verifies GC432 at 925f17e: finite layer identity, both triangle comparisons, endpoint incidence with zero tails and the disconnected-level guard. Statement and proof copied verbatim into G220. Actual nearest G218,G217,G213 read in full; the difference is componentwise endpoint pairing without a shape premise. The seven-case result remains a bounded measurement, not a count-ratio theorem. No new experiment in this filing block.
+
+The unexpected disconnected guard remains essential: enclosing the two demand components includes a zero-demand middle imbalance and corrupts the signed identity. The unresolved step is an estimate on actual interval imbalances, or signed cancellation retained across components and time. Next inspect which interval boundaries are reached by the backward demand law before considering further computation.

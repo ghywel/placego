@@ -545,6 +545,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Unimodal demand makes weighted centering no worse than the earlier absolute allocation bound.
 - [critical averaging does not repair generic edge-fold unimodality](G219-critical-averaging-does-not-repair-generic-edge-fold.md):
   A critical averaging step need not restore unimodality after an edge fold.
+- [superlevel components bound allocation without a shape premise](G220-superlevel-components-bound-allocation-without-a-shape-premise.md):
+  Demand superlevel intervals give an allocation bound no worse than both earlier absolute bounds, without assuming
+  demand shape.
 
 ## Proofs from the sparks
 

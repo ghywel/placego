@@ -2887,3 +2887,13 @@ A critical averaging step need not restore unimodality after an edge fold.
 **Why it matters.** Isolated flat steps cannot justify arbitrary-input shape induction. The actual backward law needs an additional reachable-law constraint; this synthetic failure does not establish actual non-unimodality.
 
 **An everyday picture.** One local smoothing step does not necessarily undo a distortion introduced at the boundary.
+
+
+## G220
+Demand superlevel intervals give an allocation bound no worse than both earlier absolute bounds, without assuming demand shape.
+
+**What it says.** Split each demand level into its connected intervals, sum the signed imbalance inside each, then take absolute values. The resulting bound is at most the original weighted absolute sum and at most optimized centering.
+
+**Why it matters.** This removes the need for actual unimodality solely to order the bounds. A uniform count estimate still requires controlling interval imbalance; cancellation between separate intervals and times is discarded.
+
+**An everyday picture.** Group contributions only where the demand level connects them. Empty gaps should not make unrelated contributions into one interval.
