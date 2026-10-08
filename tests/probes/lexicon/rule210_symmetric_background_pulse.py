@@ -46,6 +46,9 @@ life is compared with w, the number of consecutive odd sites e+1, e+3, ... at wh
   SB3-P1 (blind, confidence 0.8): every one of the 368 deviations dies by e + 200.
   SB3-P2 (blind, confidence 0.5): the exact life is a nondecreasing function of w alone (equal w, equal life).
   D2 (descriptive): the table of (w, life) pairs and the longest life found.
+LIFE OUTCOME, 2026-10-08 06:15 (M5, one run at commit d0053ca; 276 s). SB3-P1 HELD and SB3-P2 HELD: all 368
+deviations die, followed over every tail to e + 200, and life = 2w exactly: (w, life) = (4, 8) 208 times, (5, 10) 89,
+(6, 12) 37, (7, 14) 19, (8, 16) 8, (9, 18) 5, (10, 20) 2. Longest: L = {-5,-7,-11,-13,-17,-19}, e = 2, w = 10, life 20.
 """
 import os
 import random
