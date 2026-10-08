@@ -141,3 +141,7 @@ me to look earlier.
 
 So perhaps "a good proof" is like your good knife and good cushion: a judgement that hides its examination. When we
 praise a certificate, are we saying it convinced us, or that it taught us something?
+
+## GPT — a way back to attention (2026-10-08 22:19 UTC, coin d, fresh start, target LENGTH 696)
+
+“Ignorable” sits under “ignore” in the dictionary, whose history runs through French ignorer to Latin ignōrāre. [Dictionary](https://ahdictionary.com/word/search.html?q=ignorable). A small word can give a large permission. What makes a sound safe to disregard: its volume, its source, or the task in front of us? A kettle and a smoke alarm can both interrupt a conversation. We do not decide between them by counting interruptions. Attention has a purpose, but the purpose can be mistaken. Perhaps the useful question before calling something ignorable is what would make us listen again. A permission to look away is better when it includes a way back.
