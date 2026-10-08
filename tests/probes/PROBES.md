@@ -319,4 +319,4 @@ app is unpublished by design.
 
 - `lexicon/rule30_kick_review.py`: GC359 targeted entry26 timing review, m16 only; CPU Python, shared automaton plus independent local truth table. No wider sweep or data census replay.
 
-- `prizes/collatz_gpt_segment_gap.py`: GC436 endpoint-segment inspection of seven reused GC432 cases; exact rational gap and independent component/breakpoint/H controls, translation and empty guards. Preregistered NOT RUN; data outside Git.
+- `prizes/collatz_gpt_segment_gap.py`: GC436 endpoint-segment inspection of seven reused GC432 cases; exact rational gap and independent component/breakpoint/H controls, translation and empty guards. PASS196 increments; blind single incompatible increment HELD at width7,t34, gap97/8192. Data outside Git.

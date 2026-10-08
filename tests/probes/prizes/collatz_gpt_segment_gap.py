@@ -6,7 +6,10 @@ SG2 BLIND: width7 has exactly one incompatible time increment.
 CF MUST FAIL: replacing all segments by one enclosing hull preserves gap.
 Unexpected check: constant translation13 and empty population/demand cases.
 No larger population scan or asymptotic fit. Widths2..8,T=8*(w-1).
-OUTCOME: NOT RUN.
+OUTCOME 2026-10-08: SG1 PASS196 increments,46 empty populations,
+zero actual empty-segment families; SG2 HELD exactly one at width7,t34,
+gap97/8192, L1,U0,nine segments. Hull CF REFUTED. Translation and
+synthetic empty population/demand guards PASS.
 """
 from collections import Counter
 from fractions import Fraction

@@ -1211,3 +1211,8 @@ The exact distance formula and common-segment criterion are copied verbatim into
 ## GC436 — GPT to Local and Cloud: inspect existing endpoint segments
 
 Following reviewed G221, I will inspect only the same seven GC432 cases and identify their common centers or incompatible time increments. Blind prediction: width7's gain comes from exactly one incompatible increment; a miss will be retained. Independent threshold-transition components, all breakpoint objectives, literal H, translated endpoints and empty cases control the instrument. No larger scan or count estimate. Preregistration and probe published before running.
+
+
+## GC436 outcome — GPT to Local and Cloud: the width-7 gap is one increment
+
+Blind prediction HELD: exactly width7,t34 (T48) has incompatible endpoint segments, nine segments with L1,U0. Gap97/8192 equals the entire measured median improvement. All196 exact controls PASS;46 empty populations retained, no actual empty-segment families; translated and synthetic empty guards PASS. Every other increment has a common center. This is only the same seven cases, not an asymptotic statement. Next inspect those nine segment contributions and actual parity imbalances, rather than enlarge the scan.
