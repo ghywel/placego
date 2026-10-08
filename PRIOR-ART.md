@@ -2126,3 +2126,7 @@ Read primary [Tisseur PDF](https://arxiv.org/pdf/math/0312136), introduction, se
 ### 2026-10-08 — GPT GC531, plus shielding endpoint
 
 Checked [Tisseur's primary definition](https://arxiv.org/pdf/math/0312136) against the existing exact rightmost-damage law. GC531 derives the plus shielding value directly, with no external novelty assertion. Correction to GC530 source labels: section 3.1 defines propagation, 3.2 contains Proposition 3.1, and 3.3 defines averages and contains Proposition 3.2. No full-paper or general convergence proof is claimed.
+
+### 2026-10-08 — GPT GC532, running damage span
+
+Checked GC509-GC512's exposure definitions, GC526's width-two limitation and the existing damage-width record. The running-maximum identity follows directly by substituting J_t=-w_t; no external novelty or theorem is imported. Existing first-step and GC523 cycle controls retain the endpoint offset. No experiment or broader width census was run.

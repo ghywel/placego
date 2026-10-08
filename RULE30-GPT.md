@@ -13230,3 +13230,28 @@ Its integral against the fair iid measure is exactly n. The normalized integral 
 **Controls, correction and limits.** The XOR right-edge identity supplies the lower witness for arbitrary backgrounds; the causal radius supplies the upper guarantee. The n=1 endpoint requires flipping -1 and observing site 0, consistent with GC505's unconditional rightmost damage bit. Source section labels in GC530 were imprecise: propagation definitions are in 3.1, Proposition 3.1 in 3.2, and average definitions plus Proposition 3.2 in 3.3. The targeted reading scope and results are unchanged; this correction is retained explicitly.
 
 The plus quantities track influence moving right, the already deterministic edge of our single-flip pair. The difficult left edge and its inward speed are not determined by them. Stop plus-exponent elaboration; actual minus-front state, record recurrence and weighted-jump estimates remain OPEN.
+
+## GC532 — Fresh exposure is exactly a record of damage span (2026-10-08)
+
+**Scope and prediction.** Return to the actual single-flip pair, using GC509's specified exposure procedure and the exact rightmost disagreement R_t=t. Predict its fresh ticks are exactly strict records of the span of the disagreement set. Counterfactual unbounded span guarantees positive inward speed is unsupported; a rate estimate is still missing. Unexpected check: exposure after N updates records spans before update N, not the span at time N. Hand deduction, no experiment, novelty or prize claim; pending independent reading.
+
+**Exact geometric meaning.** Write w_t=t-L_t+1 for damage span, including any undamaged holes between its endpoints. GC509 defines J_t=L_t-1-t and B_N=min(0,J_0,...,J_(N-1)). Thus J_t=-w_t and the number of exposed negative initial sites satisfies
+
+    E_0=0;
+    E_N=max(w_0,...,w_(N-1)) for N>=1.
+
+Freshness J_t<B_t is exactly w_t>E_t. Since w_0=1, each fresh tick is a strict new span record. The front cannot move left more than one site per update, so w_(t+1)<=w_t+2. Each increase of the running maximum has size 1 or 2 (the first has size 1). Therefore GC510's F_N, the number of fresh ticks before N, obeys
+
+    F_N<=E_N<=2*F_N.
+
+Consequently infinitely many fresh ticks are equivalent, pathwise, to unbounded damage span. Finitely many fresh ticks are equivalent to a uniformly bounded span over all times, and hence to eventual bounded span, since every finite prefix has finite span. This supplies the converse missing from GC512's finite-exposure implication. It uses no iid assumption or fresh-bit fairness, only the stated exposure scheme and right-edge identity.
+
+**What a speed would force.** If L_N/N converges to -v, then w_N/N converges to a=1+v>=0. A sequence with nonnegative terms and ratio tending to a has its prefix maximum divided by N tending to a too: finitely many early terms vanish after division, and later terms lie between (a-epsilon)t and (a+epsilon)t. The lower bound uses t=N-1. This includes a=0. Hence
+
+    E_N/N -> 1+v.
+
+Combining with the pathwise bounds gives liminf F_N/N >= (1+v)/2 and limsup F_N/N <= 1+v, with the latter capped at 1. These are necessary conditional bounds, not existence of a speed or a record density. They quantify why unbounded span alone falls short: it need not supply any positive normalized maximum.
+
+**Independent controls and endpoint guard.** At N=1, only w_0 enters, so E_1=1 regardless of the next front. For first-step displacements -1,0,+1, the spans w_1 are 3,2,1 and E_2 is respectively 3,2,1, matching GC509's directly revealed endpoints. GC523's actual escape cycle has spans 1,2,1,2,..., so E_N=2 from N=2 onward, with exactly its two fresh records. These controls check the offset and bounded-span equivalence independently of an asymptotic assumption. No new finite enumeration was run.
+
+**Outcome and next.** The recurrence target is now geometric: prove the actual iid single-flip damage span unbounded almost surely. GC526 excludes eventual span at most 2, but does not exclude arbitrary finite bounds. A bounded-span classification or uniform probabilistic escape-from-confinement argument would serve that target; a width census or scalar closure does not prove it. Positive inward speed still needs stronger growth and convergence control. Stop bookkeeping reformulation and seek a mechanism forcing new span records.
