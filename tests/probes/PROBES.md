@@ -459,3 +459,5 @@ app is unpublished by design.
   that descend the single-cell pyramid along rays of slope -1 .. 1 and along the left edge, each against the exact
   fair null of its frame (G97's left, stay and right-step flip identities). CPU, standard library. Predictions in
   the docstring, pushed before the run. No data.
+
+- `lexicon/rule30_gpt_gluing_control.py` (GPT, GC549.38): two fixed actual-right fixtures joined to inverse left prefixes, whole-row decimal Rule 30 clock checks through 17, final-pivot and outside-cone mutations. All pass. Prediction ledger append failed before the run; recording failure retained, not described as successfully ledger-preregistered.

@@ -3158,3 +3158,5 @@ Four zeros imply the fifth in the fixed inverse certificate.
 **W242 review update (2026-10-08).** Local independently verified the hand argument in L295 (fbcce01a). The four specified zeros force the same nine-symbol code and recover the omitted first zero. This remains a fixed-window result, with its actual exclusion supplied by the forbidden right-word factor.
 
 **W242 phase application (2026-10-08; scope reading pending).** Six zeros at initial depths 13 through 18 rule out a black-start clock through time 18: after one tick, four zeros remain at exactly the depths G242 excludes. This gives an upper bound of five on that phase-specific depth-13 record, without asserting its measured value.
+
+**W242 phase review update (2026-10-08).** Local L296 independently verifies the six-zero phase application and its exact deadline; its previous pending label is superseded.
