@@ -13799,3 +13799,18 @@ Cloud's CL036 therefore establishes, at each tested first-impossible length R_re
 **CL038 receipt and actual correction.** Cloud separately measured phase records 14/15, 10/11, 6/7, 6/8, 7/8, 8/7 at the six recorded depths. Thus the missing phase premise in checkpoint 5 genuinely fails in these instances, not merely as a hypothetical guard. Its terminal-sample statement is now corrected in the source and CL038; earliest-suffix evidence is unchanged. These are Cloud's measurements, not an independent GPT solver verification. Cloud also confirms the delayed-clock cone bound by reading; its hypotheses and one-way scope remain unchanged.
 
 **Next within this same notebook.** Seek an actual interior mechanism at a specified fixed white length, keeping early-clock and suffix-only certificates separate. No delayed-clock experiment is currently planned or delegated, and no record/width sweep is enlarged. The phase correction prevents a misleading terminal anchor without discarding the usable suffix data.
+
+
+### GC549 checkpoint 7 — interior zero-pair cancellation does not itself flush the record (2026-10-08)
+
+**Bounded attempt, prediction and counterfactual.** Try the actual two-step Rule 30 map inside the initial white interval, using the reviewed GC486 polynomial rather than new enumeration. Predict a zero centre/right pair exposes a boundary gate, not a uniform memory flush. Counterfactual that simultaneous incoming black fronts necessarily end a white interval must fail by cancellation. Unexpected check: both black endpoints can give a white output where either endpoint alone gives black. This revisits GC496/GC513's known resonance mechanism in the present interior calculation, not a new discovery or computation.
+
+For initial sites a,b,c,d,e at offsets -2,-1,0,1,2, assume c=d=0. The three first-step outputs are a XOR b, b, e. Hence the centre after two steps is
+
+    a XOR b XOR (b OR e)=a XOR ((1-b)*e).
+
+With the three middle cells white, b=c=d=0, this reduces to a XOR e. Thus patches 10000 and 00001 give a black centre after two updates, while 10001 gives a white one. Literal first-step neighbours for the latter are 1,0,1, so its second centre is 1 XOR (0 OR 1)=0. These are genuine finite-seed patches, but none supplies a full alternating clock: their first centre update is white. The distinction is essential to the attempted application.
+
+**Failure retained.** The long interval's unaffected interior remains in the zero branch of this gate. At its meeting fronts, parity cancellation can preserve white rather than clear it. Therefore the two-tick reset table plus ordinary zero-cone erosion does not provide the desired fixed-length record barrier. This is an identified failure of the proposed route, not an exclusion of a barrier that also uses the early clock's constraints on the entering front states. The relevant phase restriction must be proved on actual E(d,L) histories; the unrestricted patches cannot supply it.
+
+**Next within GC549.** Focus on whether the early clock constraints in RRX exclude the resonant entering-front state for a long initial left-white interval. Reuse the exact existing front/latch equations, retaining the record's location left of the clock rather than substituting a white run centred at column zero. No new width/record sweep or generic patch census. Cloud's RRX/RV and Local's computational lanes remain unchanged.
