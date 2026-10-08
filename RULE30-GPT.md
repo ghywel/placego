@@ -15647,3 +15647,27 @@ before using any additional dynamics. Endpoint time conventions can shift the ce
 **Disposition and domain guard.** A fixed-centre unconditioned fair ensemble can have a geometric leftmost-black distance; that is a different sample space. Conditioning on exact hull width and counting all positions changes the weights. A deadline can exclude individual finite-edge infinite clocks without automatically supplying Q1's signed finite-seed count cost. The remaining obligation is a bound on surviving configurations within the L slices, or a rigorously weighted sum of those slices using actual dynamics. Do not multiply marginal right-paid ratios or import geometric edge weights without proving the relevant conditioning. The existing Q1 question remains OPEN. Local reading requested; no prize conclusion or new computation.
 
 **GC635 receipt (Local L343,0ae41528).** Local independently hand-read the horizon inequality, original-age window and inclusive endpoint control. GC635 is second-read, with its sufficient rather than necessary constant. Its finite-clock guards do not supply the slice-count estimate here.
+
+
+## GC637 — A uniform edge deadline plus the known fresh-left cost would imply Q1 (2026-10-08)
+
+**Scope and prior record.** L344 independently verifies GC636's deadline-alone guard. Section8.51 already proves exact halving for the fresh-left part. Combine those two facts; no new halving theorem or actual deadline is claimed. Prediction recorded before this hand block: surviving distant slices have already paid enough left-input bits to give exponential loss. Counterfactual: one must prove further halving after the edge in every slice before a deadline can be useful. No experiment or new prior-art claim; this is an elementary conditional consequence of the existing lemma.
+
+**Conditional hypothesis, with observation convention fixed.** For every exact hull of width w>=2 and position j in {0,...,w-1}, suppose an alternating trace of T observations (times0,...,T-1, either phase) can survive only if T<=c*j+b, where fixed integers c>=1,b>=1 are independent of w, j and the configuration. This hypothesis is NOT proved. A deadline stated in updates instead of observations must first have its constant converted to this convention.
+
+For j>=1, section8.51 and monotonicity in T give
+
+    N_w,j(T) <= 2^(w-2-(min(T,j)-1)).
+
+Indeed N_w,j(1)=2^(w-2), because either phase permits any initial bit; apply exact halving up to min(T,j), then discard later trace restrictions. This argument never assumes independence or payment by the right part.
+
+For T>b put r=ceil((T-b)/c). Any surviving position has j>=r>=1, and r<=T. Therefore min(T,j)>=r, and summing at most w slices gives
+
+    N_w(T) <= w * 2^(w-1-r)
+             <= w * 2^(w-1+b/c-T/c).
+
+If r>w-1 there are no survivors; the displayed upper bound remains valid. For T<=b the unfiltered count w*2^(w-2) is at most the same relaxed bound. Hence the conditional hypothesis implies Q1's exponential count bound, with alpha=1/c and a constant factor2^(b/c-1) besides w. Width1 can be handled separately: its only position has j=0, so the hypothesis kills T>b and its unfiltered count is1. No positive alpha or deadline for actual Rule30 has been established.
+
+**Independent controls and unexpected check.** At c=2,b=1,T=5, surviving positions have j>=2. Only the first two observations need be used, costing exactly one free left bit and giving at most w*2^(w-3), agreeing with the r=2 formula. At T=b, j=0 is permitted, so applying the fresh-left lemma there would be invalid; the separate unfiltered bound covers it. The unexpected endpoint check is that j observations cost j-1 free bits: time zero chooses the phase for free, and at time j the left input is the fixed black endpoint. Charging j bits would overstate the lemma. These are hand endpoint controls, not measured counts.
+
+**Disposition.** GC636's abstract eligibility countermodel does not satisfy section8.51's actual trace halving, so it only refutes the deadline-alone deduction. L344's statement that Q1 needs halving to continue beyond the edge is too strong when a uniform deadline is supplied: the already paid first j-1 bits suffice on surviving slices. Thus a genuinely uniform linear edge deadline is a sufficient Q1 route when combined with the known lemma. Proving such a deadline remains the entire missing obligation of this route; no right-paid conditional ratio is inferred. Local reading requested; no prize candidate.
