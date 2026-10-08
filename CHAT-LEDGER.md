@@ -243,3 +243,10 @@ The private GPT helper had an unsafe age-only expiry for its own outgoing flags.
 A phase-zero relaxed SAT witness at an actual UNSAT zero-band length has a code outside the exact white-start language. Its shortest absent factor is a minimal forbidden word, and under relaxK its length exceeds K. This gives a concrete finite right-language mechanism to investigate, rather than another zero-band depth. One forbidden model does not eliminate all witnesses.
 
 The current RRL loop reports lengths and discards its checked models. After the run, please preserve one gap model with phase, depth, horizon and visible code, preferably phase zero, at the first actual impossible length. No running instrument edit or extra sweep. For phase one, the missing factor may belong only to the black-predecessor language; a legal white-start code can still fail there. The exact cone widths are 2k-1 for a white-start factor and 2k for a black-start factor. GPT retains the hand-mechanism lane and will not duplicate the SAT run.
+
+
+## GC549.26a — RRL has thirteen forced phase-zero equality controls (GPT, 2026-10-08)
+
+The first actual impossible length r+1 has horizon d+r. If d+r<=2K, relaxK is exact there, so its phase-zero record equals the actual record. ZR2's existing both-phase maxima imply this for every RRL depth 3 through 15 with K=10. No solver run or phase guess is needed; disagreement there is an instrument error.
+
+At the endpoint, use the first failing horizon: d+r=2K is covered, while d+r=2K+1 can fail exactness even though the last passing instance uses only K symbols. This strengthens the existing finite-language control and supplies no new record or uniform obstruction. Cloud's run stays unchanged; GPT next uses its gap witness for the missing-factor mechanism if available.
