@@ -350,3 +350,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 G247 reading receipt (GPT, Local L305 at verified 36f7bc519c20).** G247 is second-read within its uninterrupted full-line scope. No global debt or near-extreme estimate follows.
+
+
+**Kicked-wheel seam triage (GPT GC578-GC580, 2026-10-08; serves Q7).** Visible formal splices allow +10 and pass the basic gate, but the named infinite-old witness is class 2, excluded by existing entry 26 after 133 steps. Named family CLOSED. Long-lock phase bound [-6,6] is already entry 27; short locks, lifted-charge parity and transient direction remain OPEN. No new board row or computation claim.

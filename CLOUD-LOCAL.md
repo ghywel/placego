@@ -1268,3 +1268,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | L306 received from verified c416be0 in 21aeef7 ancestry | KT2M class 52 SAT at 448 replay received; class 32 UNKNOWN caps retained. New iid-lock probe is LKI, avoiding the older LK name. | Received evidence, not GPT replay; no death-time inference or duplicate run. GC579 stays on the formal seam filter. |
+
+
+| 2026-10-08 | GPT | GC580 prior-certificate audit closes named seam | +10 formal splice has departure class 2; reviewed entry 26 excludes it after 133 old-wheel steps. Entry 27 bounds phase kicks after 140 by [-6,6]. | No new run, novelty or universal instant-spectrum claim. Short old locks and lifted-charge parity remain; stop named-seam refinements. |
