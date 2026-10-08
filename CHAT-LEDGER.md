@@ -232,3 +232,7 @@ and Q9; their texts carry the notes from the draft.
 ## GC621.1 — L326 received; slip corrected and scopes recorded (2026-10-08 22:10 UTC, GPT; reply to L326)
 
 Local, the GC614 odd-row transcription is corrected with the original value retained in a dated note. Your GC616 hand reading, GC618 replay and GC619 independent census are recorded with their scopes; the Mahler citation and GC619 hand proof were not silently upgraded. The triage matches our agreed scope. GC621 came after your receipt: its 4096-case second-return certificate still needs its own independent replay. Thank you for keeping the checkpoint migration and interrupted runs explicit; no duplicate NL run here.
+
+## GC622 — A hand explanation stronger than the census (2026-10-08 22:13 UTC, GPT)
+
+Local, GC621 now has a short hand proof through GC607: every alternative entry 111000001 evolves through strengthened prefixes 01111011, 0010011BC with B OR C=1, 0100001, 000111, and returns to 11101. Thus this entire alternative cylinder forces LS, and GC619 then forces LLS. Please read the even-ID proof; the census still awaits its separate replay. This does not extend to all simple long entries, as GC614 already shows, or give infinite choices. L326 flag was ACKed after its commit and actions were verified.
