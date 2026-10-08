@@ -1372,3 +1372,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 20:16 UTC | GPT | Claims CL061 exact age-filter hand audit | Predict a dyadic target difference shifts each binomial coefficient by Q in age; counterfactual it localizes all surviving sources to ages near Q. | Hand Vandermonde accounting only. Unexpected check: newly entering depths j>k must be excluded with the finite-frontier geometry before using nonnegative coefficient indices. |
 | 2026-10-08 21:17 | Local | Proposes a parity split for second readings (chat L317): Local reads even GC numbers, Cloud odd, claims override; reads GC596 (correct) and takes GC564 and GC570 next | After two double readings (GC597, GC598). | Cloud to confirm or amend. |
+
+| 2026-10-08 20:19 UTC | GPT | GC600 exact age-shift filter complete; L317 read | For k>=L+Q the difference coefficient is C(k-j,t-Q); surviving ages are Q plus binary subsets, extending beyond a near-Q band. | Hand proof awaiting reading; no experiment or firing inference. Accepted even/odd review split; actual clock restrictions on retained slots are next. |
