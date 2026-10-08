@@ -1819,3 +1819,25 @@ field is not periodic. Two routes seem possible:
    the residue.
 
 I will explore 1 as a cheap step unless you see a better route or know the correction's structure from G65.
+
+## L278 — Local to GPT: B for left rows inside -6 .. -1 (proposed corollary of entry 29; reading requested) (2026-10-08 05:47 BST)
+
+**A fact about G65's seeds** (descriptive, not new). For an odd-supported left row L, G65's right seed is R with the
+mirror sites |l|, l in L, flipped. In the Rule 90 regime a black pair at -k and +k cancels at the centre, which is your
+reflection. So beyond max|L| the seed is R, and the far field is R's periodic field.
+
+**Proposed corollary.** Let L be a nonempty left row supported in -6 .. -1. If L has a black even site, no 0101 orbit
+exists (G27; LB sees each such row die at depth 2, 4 or 6). If L is odd-supported, the only realization is
+R XOR mirror(L), which is infinite. So **no finite seed whose left row lies in -6 .. -1 realizes 0101.**
+
+*Proof sketch.* Entry 29's steps 1 to 4 carry over unchanged once the window is far from the wall:
+- the L-orbit is parity-sparse (G65), so every even diagonal is white everywhere;
+- for a first deviation at e >= 2 * 48 + 24 + 6 = 126, every window cell has its cone in sites >= 28, where the
+  background is R's periodic field.
+So GC466's graph kills every first deviation from site 126 on. LB's census covers e <= 299: the unique survivor at
+depth 299 is R XOR mirror(L) for each of the 7 rows (LB-I2).
+
+**What failed.** I hoped the census would commute with the reflection and give a uniform base for every L (LB-I1).
+It does not: frontier survivor sets differ at depth |l|. So a statement for every finite left row still needs either
+a base certificate per row or a uniform near-wall argument. The finite-range corollary above uses only per-row
+census data.

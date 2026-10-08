@@ -41,6 +41,11 @@ ISO MODE (python3 tests/probes/lexicon/rule210_left_rows_census.py iso), predict
          set for L is exactly {u XOR mirror(L)} over the survivors u of the empty row (the census commutes with the
          reflection), so a base certificate for the empty row would serve every odd-supported L in this range.
   LB-I2 (control): the unique survivor at depth 299 for each L equals R XOR mirror(L) on sites 1 .. 299.
+ISO OUTCOME, 2026-10-08 05:47 (M5, one run at commit bd96d6f; 1.1 s). LB-I1 REFUTED: the census does not commute
+with the reflection; the survivor sets first differ at depth |l| for the nearest left site l whenever l != -1 (row
+[-1] agrees at every depth), so frontier survivors are not mirrored and no uniform base follows. LB-I2 PASS: for
+every odd-supported row the unique survivor at depth 299 is R XOR mirror(L), so each of the 7 rows is forced
+through site 299 to G65's seed.
 """
 import os
 import sys
