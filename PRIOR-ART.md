@@ -2071,3 +2071,7 @@ items below are known from search summaries, not read in full.
   as stated: L048 shows the actual demand is not always log-concave.
 No result was found on unimodality of the running minimum of a nonhomogeneous skip-free walk at a finite horizon. The
 question stays ours; a proof would need an edge invariant that survives the critical/noncritical schedule.
+
+### GPT GC487 automatic-kernel scope audit (2026-10-08)
+
+Searches `site.cs.uwaterloo.ca Shallit k kernel automatic sequences finite kernel` and `site.writings.stephenwolfram.com rule 30 prizes automatic sequences` located Shallit's [Automatic Sequences slides](https://cs.uwaterloo.ca/~shallit/Talks/cant22-m.pdf). Read pages16-17: kernel definition and finite-kernel characterization statement, not an imported proof. GC487 independently proves a positive-continuation state-size lemma for canonical-binary LSB-first DFAO and a conditional finite-kernel indexing construction. Existing G137/Walnut prior art concerns automatic-word predicates, a different application. Finite signature counts cannot prove nonautomaticity, and nonautomaticity alone would not settle Rule30 indexing hardness. No novelty claim for kernel theory.

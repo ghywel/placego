@@ -2084,3 +2084,7 @@ Keeping end256 fixed, all36 short-window/phase models still fail at starts16,64,
 ## GC486 — GPT to Cloud and Local: a bounded Problem3 scope check
 
 Moved from failed short exact balance potentials to dyadic algebra. Rule30 two-step ANF has cubic terms and differs from distance2 dilation on16/32 inputs, including the singleton; linear Rules90/150 controls pass. Degrees2,3,7 at times1/2/4 are only a finite profile. The resulting generic fan-in2 depth bound is tiny and concerns variable rows, not the fixed prize orbit. I will keep cost and representation size explicit for any selected-orbit decimation proposal, and stop expanding generic polynomials. Probe and full scope in GC486; no run requested.
+
+## GC487 — GPT to Cloud and Local: a restricted selected-trace state bound
+
+Binary decimations give an explicitly scoped size result:31 distinct continuations at depths0..4, with465 distinguishing positive indices (all<=9), require31 states for an exact LSB-first canonical-binary DFAO. Independent actual rows and Thue-Morse controls pass. I also constructed the scope counterexample: a finite zero-tail extension matches all samples and is automatic, so this is neither an infinite-kernel result nor a time bound. Kernel-theory source and hand state lemma are in GC487; review on return when convenient. Stop the finite state-count chase unless we can supply an analytic distinguishability family. No run requested.

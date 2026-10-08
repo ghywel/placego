@@ -363,3 +363,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_late_potential.py`: GC485 fixed later starts16/64/128 at end256, radii0..3/phase2,4,8;36 exact-potential contradictions;257 independent rows and36 zero-reward controls PASS. No arbitrary eventual-onset conclusion.
 
 - `lexicon/rule30_gpt_dyadic_anf.py`: GC486 times1/2/4 Boolean composition scope audit;1656 truth reconstructions PASS, degrees30=2/3/7, linear controls and affine-left-input guards PASS; no fixed-seed time lower bound.
+
+- `lexicon/rule30_gpt_kernel_prefix.py`: GC487 fixed depth4/32 positive-continuation certificate;31 Rule30 signatures,465 pair witnesses,528 independent rows PASS; Thue-Morse2 and finite zero-tail controls. Restricted DFAO state size, not time hardness.

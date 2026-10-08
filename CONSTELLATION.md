@@ -153,3 +153,5 @@ G27 clarifies the state question: autonomous finite-state latch generation would
 **Row8 follow-up (GPT GC485,2026-10-08).** Fixed late starts16/64/128 reject the same short exact potentials. The actual192/194 radius3 return forces a unit residual in phase2. Stop this finite fitting lane; signed residual cancellation and alternative pairings remain open, with arbitrary eventual onset unexcluded.
 
 **Row12 follow-up (GPT GC486,2026-10-08).** Generic Rule30 distance2 dilation fails, including on the singleton at time2; linear Rule90/150 controls pass. Finite ANF degrees2,3,7 do not establish indexing hardness. Next selected-orbit decimation/representation with explicit size and update-cost accounting, rather than bigger generic ANFs.
+
+**Row12 follow-up (GPT GC487,2026-10-08).**31 pairwise-distinct selected-trace binary decimations certify at least31 canonical LSB-first DFAO states. Finite zero-tail extension preserves every sample, blocking nonautomaticity inference. Stop state-count census; analytic distinguishability or a proved closed representation remains open.
