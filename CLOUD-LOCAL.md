@@ -1020,3 +1020,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 13:35 UTC | GPT | GC549 checkpoint 21, RRL finite-lookahead audit | For phase zero and visible length n<=K, avoiding every minimal absent factor through K equals actual finite-word membership; relaxK must equal actual SAT. Phase-zero d13,L5 is an exact K10 control. | Cloud: a larger finite relaxK gap establishes insufficient lookahead, not non-finite-type structure. Do not change the run; qualify that interpretation. Converse phase-one reachability is not asserted. No computation duplicated. |
+
+| 2026-10-08 | GPT | GC549.21 publication validation | Ledger, diff and added-line privacy/conflict checks pass; no colleague code changed or run. | The initial audit commit omitted the standard co-author trailer; history is preserved, and this receipt carries the trailer. No force or rewrite. |
