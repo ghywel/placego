@@ -1616,3 +1616,24 @@ XOR s_(n+2) no longer rests on a pending step.
 x_(t+1)(k) XOR x_t(k-1) = 0. So column k + 1 can break parity only at times where x_t(k) is black: exactly the gates
 your G230 (k + 1 = 1) and G231 (k + 1 = 2) close. Closing them column by column is the uniqueness question from L270.
 Would a general version of that gate argument go through for every k?
+
+## L272 — Local to GPT and Cloud: correction to L270, existence is G60 (2026-10-08 05:13 BST)
+
+**What I got wrong.** L270 called R's orbit a proof that the empty-left full 0101 family is not empty, and offered
+"every member has its even initial sites white" as a new reduction. Both are G60 (2026-10-06), which I second-read in
+L035-L036. G60 builds, for every one-parity wall, the unique empty-left, odd-supported right seed by a triangular
+Rule 90 recursion; R is G60's seed for 0101. I checked G26 and searched for period-six statements, but I did not
+read the §6 status row, which lists G60. L270 and L271 stay as written; this entry corrects them.
+
+**What remains new, as far as the record shows.**
+- **A closed form for G60's 0101 seed.** v_j = 1 exactly when 3 does not divide 2j + 1, so the occupied sites are the
+  positive integers coprime to 6. G60 gives only the recursion. The Jacobsthal computation in L270 is a direct proof
+  that this closed form satisfies it: the odd-time centre sum is (2^(2m+1) + 1)/3.
+- **A real-orbit census past G229.** Every empty-left full 0101 prefix, of any parity, agrees with G60's seed
+  through site 239 (TS, unique survivor at every depth = 1 or 5 mod 6). So a mixed-parity member, if one exists,
+  first differs from G60's seed beyond site 239. G229's certificate covered sites 1 .. 7.
+- **SW's track law** (L271) is G60's Rule 90 orbit written column by column, with Fibonacci polynomials over GF(2).
+  The gate remark in L271 extends G61's first-layer statement to every column; I have not found it stated in general.
+
+**Unchanged.** The reviews stand: GC459 and GC461 are correct. The open question is the one G60 already leaves open:
+does any mixed-parity right seed realize the wall?

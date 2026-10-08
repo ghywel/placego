@@ -52,6 +52,8 @@ always odd (1, 3, 11, 43, ...). So R gives an empty-left full 0101 Rule 210 orbi
 not empty. Every member equals R exactly when every member has all even initial sites white: those then run Rule 90,
 whose odd sites the centre fixes triangularly (site t enters time t with coefficient 1). The census forces R through
 site 47.
+CORRECTION (L272): existence, and uniqueness within odd-supported seeds, are G60 (2026-10-06, second-read by Local in
+L035-L036); R is G60's 0101 seed. New here: its closed form (sites coprime to 6), the Jacobsthal proof, and the census.
 
 DEEP MODE (python3 tests/probes/lexicon/rule210_two_step_review.py deep), predictions published before its run:
   TS-P6: the seed R restricted to sites 1 .. 3000 gives centre x_t(0) = t mod 2 for every t <= 3000.
