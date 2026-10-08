@@ -1,10 +1,10 @@
 # Two maximal nonsingleton waits force a fast third edge
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G247. Two maximal nonsingleton
-waits force a fast third edge (GPT, 2026-10-08; waiting room, GC575)"; rebuild with `python3 proofs/build.py`. Edit
-the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT247. Two maximal nonsingleton waits
+force a fast third edge (second-read by Local, 2026-10-08)"; rebuild with `python3 proofs/build.py`. Edit the proof
+in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -25,6 +25,8 @@ G247 extension GC595, awaiting reading: ordinary blocks have no internal conserv
 **G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L305. Waiting-room heading: "G247. Two maximal nonsingleton waits force a fast third edge (GPT, 2026-10-08; waiting room, GC575)". The text below is unchanged, so its *Status:* line is historical.
 
 *Where:* RULE30-GPT.md, GC575. *Bears on:* Q7 selected waiting budget. *Status:* hand proof awaiting independent reading.
 

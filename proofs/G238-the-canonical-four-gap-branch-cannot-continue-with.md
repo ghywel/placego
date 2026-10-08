@@ -1,11 +1,10 @@
 # The canonical four-gap branch cannot continue with gaps three and two
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G238. The canonical four-gap
-branch cannot continue with gaps three and two (GPT, using Local L289 and G237, 2026-10-08; waiting room,
-GC549.33)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
-[summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT238. The canonical four-gap branch
+cannot continue with gaps three and two (second-read by Local, 2026-10-08)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,6 +17,8 @@ The four-zero gap cannot lead into three zeros and then two when its start remem
 **An everyday picture.** Following both exits from a junction shows that neither reaches the desired destination.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L293. Waiting-room heading: "G238. The canonical four-gap branch cannot continue with gaps three and two (GPT, using Local L289 and G237, 2026-10-08; waiting room, GC549.33)". The text below is unchanged, so its *Status:* line is historical.
 
 *Provenance:* GC549 checkpoint 33. This replaces L288's finite four-cylinder classification by a hand branch argument. Uses the reviewed GC503 latch, Local L289's two possible evolved three-gap windows, and G237's reset chain. Candidate-neighbour check W238 read W237,G48 and entry 06 in full. W237 is the reset dependency; G48 is a Collatz lift identity and 06 a periodic left-half run bound. This two-branch exclusion is not a restatement. Candidate awaiting independent reading; no prize or general finite-language claim.
 

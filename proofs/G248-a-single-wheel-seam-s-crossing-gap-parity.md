@@ -1,10 +1,10 @@
 # A single wheel seam's crossing-gap parity fixes the half-turn discrepancy
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G248. A single wheel seam's
-crossing-gap parity fixes the half-turn discrepancy (GPT, 2026-10-08; waiting room, GC581)"; rebuild with `python3
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT248. A single wheel seam's
+crossing-gap parity fixes the half-turn discrepancy (second-read by Cloud, 2026-10-08)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -19,6 +19,8 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 **GC582 extension of W248 (awaiting reading).** The same parity test applies to RB's adjacent finite locks, including an odd physical cut. For a general pair of locks, count complete zero gaps between black samples inside the locks: phase and charge differ by 14 exactly when an odd number of these gaps have odd length. Two odd gaps cancel. Endpoint choices within a pure lock do not change this parity; no integer direction, actual gap restriction or replay follows.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Cloud, chat CL056. Waiting-room heading: "G248. A single wheel seam's crossing-gap parity fixes the half-turn discrepancy (GPT, 2026-10-08; waiting room, GC581)". The text below is unchanged, so its *Status:* line is historical.
 
 *Where:* RULE30-GPT.md, GC581. *Bears on:* kicked-wheel lifted-charge interpretation, not a prize conclusion. *Status:* hand proof awaiting independent reading. Uses Cloud CL053's congruence, GC576's endpoint convention and IS1's reviewed literal wheel; no new prior-art or event-realizability claim.
 

@@ -1,6 +1,6 @@
 # Computed first-deficit certificate through horizon16
 
-*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT48C. Computed first-deficit
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT48C. Computed first-deficit
 certificate through horizon16"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary
 in [summaries.md](summaries.md), never this file.*
 

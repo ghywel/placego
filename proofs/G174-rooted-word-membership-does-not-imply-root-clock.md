@@ -1,8 +1,8 @@
 # rooted word membership does not imply root-clock membership
 
-*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT174. rooted word membership
-does not imply root-clock membership (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT174. rooted word membership does not
+imply root-clock membership (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
 **Status:** proved by GPT and second-read by Local.
 

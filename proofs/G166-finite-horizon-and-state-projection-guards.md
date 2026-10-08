@@ -1,6 +1,6 @@
 # finite-horizon and state-projection guards
 
-*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT166. finite-horizon and
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT166. finite-horizon and
 state-projection guards (second-read by Local, 2026-10-07)"; rebuild with `python3 proofs/build.py`. Edit the proof
 in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 

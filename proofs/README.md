@@ -193,7 +193,7 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Dubickas's theorem (external; the record's W2)](F2-dubickas-s-theorem-external-the-record-s-w2.md): A Collatz
   number that ran off to infinity would have to change its step pattern endlessly: it could not loop or repeat.
 
-## GPT's proofs, second-read by Local
+## GPT's proofs, second-read
 
 - [Fixed-endpoint survival conditioning](G39-fixed-endpoint-survival-conditioning.md): Insisting that a Collatz step
   pattern "survives" at every step can raise any probability by at most a factor of its length.
@@ -585,6 +585,32 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   two-step readout has one precisely identified nonlinear correction.
 - [even column3 detects effective switches](G233-even-column3-detects-effective-switches.md): The third column marks
   the switches of the prescribed effective stream.
+- [The history-bearing four-gap entry excludes a spatial 011 tail](G236-the-history-bearing-four-gap-entry-excludes-a.md):
+  The row after a history-bearing four-gap entry retains a restriction three sites beyond its familiar prefix.
+- [A six-site reset forces a later black sample with a white neighbour](G237-a-six-site-reset-forces-a-later-black.md):
+  Six initial sites force a later black reading whose neighbour rules out a two-zero gap.
+- [The canonical four-gap branch cannot continue with gaps three and two](G238-the-canonical-four-gap-branch-cannot-continue-with.md):
+  The four-zero gap cannot lead into three zeros and then two when its start remembers a previous zero.
+- [Neutral gap blocks do not force zero entropy](G239-neutral-gap-blocks-do-not-force-zero-entropy.md): Perfectly
+  balanced blocks can still carry choices.
+- [The third sideways edge source is already dense by the no-11 gate](G240-the-third-sideways-edge-source-is-already-dense.md):
+  The third edge-source depth is active at least half the time.
+- [The forward Gray certificate retains a boundary bit at late dyadic times](G241-the-forward-gray-certificate-retains-a-boundary-bit.md):
+  A finite Gray-rule clock leaves a boundary term in the source certificate.
+- [Four consecutive zeros recover the missing depth-thirteen anchor](G242-four-consecutive-zeros-recover-the-missing-depth-thirteen.md):
+  Four zeros imply the fifth in the fixed inverse certificate.
+- [The wall's last right-cone pivot has correlated gates already at time four](G243-the-wall-s-last-right-cone-pivot-has.md):
+  A new right-edge bit can be masked by correlated gates beside the wall.
+- [Positive mean last-pivot activity suffices for positive wall-language entropy](G244-positive-mean-last-pivot-activity-suffices-for-positive.md):
+  A positive average of active last inputs would prove positive boundary-language entropy.
+- [The seven-ring Gray clock has transients and admits no nonconstant affine full-state Rule 30 factor](G245-the-seven-ring-gray-clock-has-transients-and.md):
+  On a ring of seven cells the Gray-code rule is a pure clock, and no straight relabelling turns Rule 30 into it.
+- [The second-last right-cone input is also eventually masked almost surely](G246-the-second-last-right-cone-input-is-also.md):
+  The second-last input that could still change the wall's visible bit almost surely stops mattering.
+- [Two maximal nonsingleton waits force a fast third edge](G247-two-maximal-nonsingleton-waits-force-a-fast-third.md):
+  Two longest possible waits for rows with more than one black cell force the following wait to be short.
+- [A single wheel seam's crossing-gap parity fixes the half-turn discrepancy](G248-a-single-wheel-seam-s-crossing-gap-parity.md):
+  The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.
 
 ## Proofs from the sparks
 
@@ -625,29 +651,3 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 - [Critical-ray eventual constancy is zero-tail absorption](W235-critical-ray-eventual-constancy-is-zero-tail-absorption.md):
   The critical-ray bit cannot become constant under a fair initial row, except on a null set.
-- [The history-bearing four-gap entry excludes a spatial 011 tail](W236-the-history-bearing-four-gap-entry-excludes-a.md):
-  The row after a history-bearing four-gap entry retains a restriction three sites beyond its familiar prefix.
-- [A six-site reset forces a later black sample with a white neighbour](W237-a-six-site-reset-forces-a-later-black.md):
-  Six initial sites force a later black reading whose neighbour rules out a two-zero gap.
-- [The canonical four-gap branch cannot continue with gaps three and two](W238-the-canonical-four-gap-branch-cannot-continue-with.md):
-  The four-zero gap cannot lead into three zeros and then two when its start remembers a previous zero.
-- [Neutral gap blocks do not force zero entropy](W239-neutral-gap-blocks-do-not-force-zero-entropy.md): Perfectly
-  balanced blocks can still carry choices.
-- [The third sideways edge source is already dense by the no-11 gate](W240-the-third-sideways-edge-source-is-already-dense.md):
-  The third edge-source depth is active at least half the time.
-- [The forward Gray certificate retains a boundary bit at late dyadic times](W241-the-forward-gray-certificate-retains-a-boundary-bit.md):
-  A finite Gray-rule clock leaves a boundary term in the source certificate.
-- [Four consecutive zeros recover the missing depth-thirteen anchor](W242-four-consecutive-zeros-recover-the-missing-depth-thirteen.md):
-  Four zeros imply the fifth in the fixed inverse certificate.
-- [The wall's last right-cone pivot has correlated gates already at time four](W243-the-wall-s-last-right-cone-pivot-has.md):
-  A new right-edge bit can be masked by correlated gates beside the wall.
-- [Positive mean last-pivot activity suffices for positive wall-language entropy](W244-positive-mean-last-pivot-activity-suffices-for-positive.md):
-  A positive average of active last inputs would prove positive boundary-language entropy.
-- [The seven-ring Gray clock has transients and admits no nonconstant affine full-state Rule 30 factor](W245-the-seven-ring-gray-clock-has-transients-and.md):
-  On a ring of seven cells the Gray-code rule is a pure clock, and no straight relabelling turns Rule 30 into it.
-- [The second-last right-cone input is also eventually masked almost surely](W246-the-second-last-right-cone-input-is-also.md):
-  The second-last input that could still change the wall's visible bit almost surely stops mattering.
-- [Two maximal nonsingleton waits force a fast third edge](W247-two-maximal-nonsingleton-waits-force-a-fast-third.md):
-  Two longest possible waits for rows with more than one black cell force the following wait to be short.
-- [A single wheel seam's crossing-gap parity fixes the half-turn discrepancy](W248-a-single-wheel-seam-s-crossing-gap-parity.md):
-  The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.

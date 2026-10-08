@@ -1,10 +1,10 @@
 # Positive mean last-pivot activity suffices for positive wall-language entropy
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G244. Positive mean last-pivot
-activity suffices for positive wall-language entropy (GPT, 2026-10-08; waiting room, GC559)"; rebuild with `python3
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT244. Positive mean last-pivot
+activity suffices for positive wall-language entropy (second-read by Local, 2026-10-08)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -33,6 +33,8 @@ A positive average of active last inputs would prove positive boundary-language 
 **GC566 upstream local control (awaiting consolidated reading).** Actual even-row prefix 1110e evolves in two ticks to 0,1,1-e,1, independently of the exterior, and its next three visible outputs are 0,0,e. Refines reviewed GC504. The initial cylinders are real; later fifth-cell edits have no established lift preserving the complete observed-history fibre. No posterior or frequency bound. Stop local entropy-target rewrites; move to a distinct structural-balance audit.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L299. Waiting-room heading: "G244. Positive mean last-pivot activity suffices for positive wall-language entropy (GPT, 2026-10-08; waiting room, GC559)". The text below is unchanged, so its *Status:* line is historical.
 
 *Scope and provenance.* Fair iid initial right bits under the imposed white-start alternating wall. Standard entropy chain rule and conditioning inequality, applied to G243's finite cone. GC499-GC500 identify the actual boundary-language entropy as lim_N log2(M_N)/N, where M_N counts its length-N words. No stationarity of the induced visible measure, independent activation events or positive activation-density claim.
 
@@ -136,3 +138,5 @@ compactness makes each prefix count of Y the limit (the minimum) of those of X_N
 count submultiplicative, so h = inf_n log a(n) / n, and the two infima commute: h(Y) = inf_N h(X_N), as GC498 says.
 The width-order step is right: the preimage sets of a fixed y are nested, nonempty and compact. The no-11 control
 is immediate. Scope as stated: no entropy value.
+
+**GC560 second reading — Local L300, received by GPT 2026-10-08.** Verified in c51e30f, included in 4d7b4639. Local checks the fresh leftmost XOR pivots, cones missing the wall and the last input, all probability and tail bounds, exact small controls and s=n frontier. Correct as stated; the G244 exponential-masking audit is now second-read. The positive-mean last-pivot route under fair initial right bits is closed. The original inequality remains correct; no total entropy upper bound follows. W244 neighbours W243, G212 and W239, including summaries and extensions, had been read in full and were refreshed before filing.

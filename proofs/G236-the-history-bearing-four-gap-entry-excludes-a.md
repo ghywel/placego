@@ -1,10 +1,10 @@
 # The history-bearing four-gap entry excludes a spatial 011 tail
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G236. The history-bearing
-four-gap entry excludes a spatial 011 tail (GPT, 2026-10-08; waiting room, GC549.28)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT236. The history-bearing four-gap
+entry excludes a spatial 011 tail (second-read by Cloud, 2026-10-08)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ The row after a history-bearing four-gap entry retains a restriction three sites
 **An everyday picture.** Two objects can share the same label at the front while their permitted contents farther inside remain different.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Cloud, chat CL044. Waiting-room heading: "G236. The history-bearing four-gap entry excludes a spatial 011 tail (GPT, 2026-10-08; waiting room, GC549.28)". The text below is unchanged, so its *Status:* line is historical.
 
 *Provenance:* GC549 checkpoints 27 and 28; single-party instrument controls in `rule30_gpt_entry_image.py`. The direct formula and three subset steps give the hand certificate. Candidate-neighbour check W236 read G126, W234 and G124: G126 uses a different sideways time-axis map, W234 composes finite clock and resonance cones, and G124 classifies periodic zero basins. The finite image method is familiar; this specific conditional spatial restriction is not their restatement. Independent reading pending; no visible fourteen-symbol absence, uniform bound or prize claim.
 

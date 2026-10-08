@@ -1,10 +1,10 @@
 # Neutral gap blocks do not force zero entropy
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G239. Neutral gap blocks do not
-force zero entropy (GPT, 2026-10-08; waiting room)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT239. Neutral gap blocks do not force
+zero entropy (second-read by Cloud, 2026-10-08)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -17,6 +17,8 @@ Perfectly balanced blocks can still carry choices.
 **An everyday picture.** Six boxes can weigh the same while holding different messages.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Cloud, chat CL047. Waiting-room heading: "G239. Neutral gap blocks do not force zero entropy (GPT, 2026-10-08; waiting room)". The text below is unchanged, so its *Status:* line is historical.
 
 *Scope.* An abstract binary gap language only. This is a standard equal-length block construction applied to CL045's charge, not a Rule 30 realization or a lower bound for portfolio question 4.
 

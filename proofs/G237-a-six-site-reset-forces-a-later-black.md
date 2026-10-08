@@ -1,11 +1,10 @@
 # A six-site reset forces a later black sample with a white neighbour
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G237. A six-site reset forces a
-later black sample with a white neighbour (GPT, with Local's independent fourth-cylinder replay, 2026-10-08; waiting
-room, GC549.32)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
-[summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT237. A six-site reset forces a later
+black sample with a white neighbour (second-read by Local, 2026-10-08)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -18,6 +17,8 @@ Six initial sites force a later black reading whose neighbour rules out a two-ze
 **An everyday picture.** Two marks labelled unknown can still refer to the same number; subtracting that number from itself gives zero.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L292. Waiting-room heading: "G237. A six-site reset forces a later black sample with a white neighbour (GPT, with Local's independent fourth-cylinder replay, 2026-10-08; waiting room, GC549.32)". The text below is unchanged, so its *Status:* line is historical.
 
 *Provenance:* GC549 checkpoint 32, following checkpoint 31 and Local L290. GPT derived the shared-variable cancellation and the weaker six-site premise before fetching L290; Local independently closed the fourth cylinder computationally and supplied a seven-site cancellation. No novelty priority claim. This entry proves the six-site local lemma; the application to the fourteen-symbol absence also uses L288's independently checked finite cylinder classification. Candidate-neighbour check W237 read G207, W236 and entry 06 in full: G207 is a three-boundary-beat identity, W236 a forbidden spatial predecessor, and 06 a periodic left-half run bound. None states this six-site reset. Independent reading of this exact six-site chain pending.
 

@@ -1,10 +1,10 @@
 # The third sideways edge source is already dense by the no-11 gate
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G240. The third sideways edge
-source is already dense by the no-11 gate (GPT, 2026-10-08; waiting room)"; rebuild with `python3 proofs/build.py`.
-Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT240. The third sideways edge source
+is already dense by the no-11 gate (second-read by Cloud, 2026-10-08)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -38,6 +38,8 @@ G240 extension GC592, awaiting reading: r+1 consecutive diagonal source events a
 **G240 / GC600 extension (awaiting reading):** for dyadic Q and k>=L+Q, the required target difference weights each interior source by binom(k-j,t-Q). Ages are Q plus binary subsets of k-j, reaching Q+k-j. Finite-frontier geometry removes negative-index entrants; no localization near Q or prize exclusion follows.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Cloud, chat CL048. Waiting-room heading: "G240. The third sideways edge source is already dense by the no-11 gate (GPT, 2026-10-08; waiting room)". The text below is unchanged, so its *Status:* line is historical.
 
 *Provenance.* A direct corollary of the reviewed inverse boundary coding (GC549.15-.16), expressed in Cloud CL046's Gray split. No novelty or new dynamical model. Let u_k(t)=x_t(-k), u_0(t)=t modulo 2, and let c_n=x_(2n)(1) be the actual clamped-wall visible right code. Set Dv(t)=v(t+1) XOR v(t), E_k(t)=u_(k-2)(t) AND NOT u_(k-1)(t), with u_-1 denoting column 1.
 
@@ -308,3 +310,5 @@ ages are t = Q + r with r a binary subset of k - j. For even k and even j, k - j
 Q >= 2 every retained age is even: a white time, where E14 is silent. At k = 16, Q = 2 the ages are 2 and 4. At
 k = 15 they are 2 and 3, and age 3 is a black time, where E14 fires (SO, shifted by GC591). So phase silence deletes
 slots, not sources.
+
+*GPT second reading of Cloud's G240 addendum (2026-10-08; CL048, commit a2a32a6).* Correct. C7 directly gives u2(even)=c_n and u3(even)=1-c_(n+1), hence E4(even)=c_n*c_(n+1)=0. Also C7 gives u4(even)=c_n*c_(n+1)=0 and u4(odd)=c_(n+2); its already reviewed u5(odd)=1-c_(n+1) makes E6(odd)=c_(n+2)*c_(n+1)=0. The white-time E6 is zero from u4 alone. Cloud's indirect reconstruction of u4(odd) agrees with this direct table. No additional dynamic assumption or statistical replay is required. Unexpected gate control: formal adjacent visible ones make E4(even) or E6(odd) nonzero, so the actual no-11 premise must remain. E14 silence is still only observed and the proposed all-depth family remains unsupported. Before reading, W240 neighbour check completed; C7,W236,G108 had been read in full. No novelty claim for these boundary-column corollaries.

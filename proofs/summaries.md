@@ -3097,7 +3097,7 @@ The critical-ray bit cannot become constant under a fair initial row, except on 
 **An everyday picture.** A steady reading at the boundary would require every position farther along the tail to stop contributing, not only its nearest two neighbours.
 
 
-## W236
+## G236
 
 The row after a history-bearing four-gap entry retains a restriction three sites beyond its familiar prefix.
 
@@ -3108,7 +3108,7 @@ The row after a history-bearing four-gap entry retains a restriction three sites
 **An everyday picture.** Two objects can share the same label at the front while their permitted contents farther inside remain different.
 
 
-## W237
+## G237
 
 Six initial sites force a later black reading whose neighbour rules out a two-zero gap.
 
@@ -3119,7 +3119,7 @@ Six initial sites force a later black reading whose neighbour rules out a two-ze
 **An everyday picture.** Two marks labelled unknown can still refer to the same number; subtracting that number from itself gives zero.
 
 
-## W238
+## G238
 
 The four-zero gap cannot lead into three zeros and then two when its start remembers a previous zero.
 
@@ -3130,7 +3130,7 @@ The four-zero gap cannot lead into three zeros and then two when its start remem
 **An everyday picture.** Following both exits from a junction shows that neither reaches the desired destination.
 
 
-## W239
+## G239
 
 Perfectly balanced blocks can still carry choices.
 
@@ -3141,7 +3141,7 @@ Perfectly balanced blocks can still carry choices.
 **An everyday picture.** Six boxes can weigh the same while holding different messages.
 
 
-## W240
+## G240
 
 The third edge-source depth is active at least half the time.
 
@@ -3173,7 +3173,7 @@ G240 extension GC592, awaiting reading: r+1 consecutive diagonal source events a
 **G240 / GC600 extension (awaiting reading):** for dyadic Q and k>=L+Q, the required target difference weights each interior source by binom(k-j,t-Q). Ages are Q plus binary subsets of k-j, reaching Q+k-j. Finite-frontier geometry removes negative-index entrants; no localization near Q or prize exclusion follows.
 
 
-## W241
+## G241
 
 A finite Gray-rule clock leaves a boundary term in the source certificate.
 
@@ -3186,7 +3186,7 @@ A finite Gray-rule clock leaves a boundary term in the source certificate.
 **GC567 G241 scope control (awaiting reading).** Two selected forward Gray sources cancel at target 4 in the actual singleton Rule 30 orbit; one contributes at target 2. Realizability alone does not forbid source-parity cancellation. This finite control is outside G241's full-clock hypothesis and is separate from inverse sideways sources. No balance or asymptotic claim.
 
 
-## W242
+## G242
 
 Four zeros imply the fifth in the fixed inverse certificate.
 
@@ -3203,7 +3203,7 @@ Four zeros imply the fifth in the fixed inverse certificate.
 **W242 phase review update (2026-10-08).** Local L296 independently verifies the six-zero phase application and its exact deadline; its previous pending label is superseded.
 
 
-## W243
+## G243
 
 A new right-edge bit can be masked by correlated gates beside the wall.
 
@@ -3219,7 +3219,7 @@ A new right-edge bit can be masked by correlated gates beside the wall.
 **W243 reading update (2026-10-08).** Local L297 verifies the original time-2/time-4 statement and its controls. The GC558 all-time isolation extension remains pending; the original statement is second-read.
 
 
-## W244
+## G244
 
 A positive average of active last inputs would prove positive boundary-language entropy.
 
@@ -3246,7 +3246,7 @@ A positive average of active last inputs would prove positive boundary-language 
 **GC566 upstream local control (awaiting consolidated reading).** Actual even-row prefix 1110e evolves in two ticks to 0,1,1-e,1, independently of the exterior, and its next three visible outputs are 0,0,e. Refines reviewed GC504. The initial cylinders are real; later fifth-cell edits have no established lift preserving the complete observed-history fibre. No posterior or frequency bound. Stop local entropy-target rewrites; move to a distinct structural-balance audit.
 
 
-## W245
+## G245
 
 On a ring of seven cells the Gray-code rule is a pure clock, and no straight relabelling turns Rule 30 into it.
 
@@ -3263,7 +3263,7 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 **G245 reading receipt (GPT, Cloud CL052 at c5c1e1d).** Cloud independently verifies the rank-six Gray image, nine seven-cycles, one-step transients and full-state affine-factor coefficient argument. G245 is second-read with its original closed-ring scope. Kick/phase measurements accompanying the reading are separate post-hoc evidence, not an affine-factor construction.
 
 
-## W246
+## G246
 
 The second-last input that could still change the wall's visible bit almost surely stops mattering.
 
@@ -3278,7 +3278,7 @@ The second-last input that could still change the wall's visible bit almost sure
 **G246 reading receipt (Local L301, verified 764ed53 via 8743fe979).** One-stay recurrence, fresh cones and summable second-last sensitivity bound independently hand-read as correct.
 
 
-## W247
+## G247
 
 Two longest possible waits for rows with more than one black cell force the following wait to be short.
 
@@ -3297,7 +3297,7 @@ G247 extension GC595, awaiting reading: ordinary blocks have no internal conserv
 **G247 / GC596 extension (awaiting reading):** conservative common-q prefixes satisfy T-gamma M<=2(q-1-gamma)+(3q-2-3gamma)P for (2q-1)/3<=gamma<=q-1. Zero separators cancel at the same threshold as triples. This envelope yields sub-three only for dyadic q=2,4; it is no dynamical lower bound.
 
 
-## W248
+## G248
 
 The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.
 

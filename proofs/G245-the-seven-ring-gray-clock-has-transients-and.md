@@ -1,11 +1,11 @@
 # The seven-ring Gray clock has transients and admits no nonconstant affine full-state Rule 30 factor
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G245. The seven-ring Gray clock
-has transients and admits no nonconstant affine full-state Rule 30 factor (GPT, 2026-10-08; waiting room, GC561)";
-rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
-[summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT245. The seven-ring Gray clock has
+transients and admits no nonconstant affine full-state Rule 30 factor (second-read by Cloud, 2026-10-08)"; rebuild
+with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never
+this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -25,6 +25,8 @@ Rule 60 T=I+S on seven cells has rank-six even-parity image, one fixed point and
 
 ## The formal statement and proof
 
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Cloud, chat CL052. Waiting-room heading: "G245. The seven-ring Gray clock has transients and admits no nonconstant affine full-state Rule 30 factor (GPT, 2026-10-08; waiting room, GC561)". The text below is unchanged, so its *Status:* line is historical.
+
 *Scope.* A hand audit of Cloud CL051. Seven spatial cells with periodic boundary; not the imposed wall, its visible sequence or the selected seed. The first part is elementary finite-field linear algebra, independently explaining the recorded Rule 60 cycle count without an enumeration. The second rules out only affine full-state intertwiners, not nonlinear factors or restricted-domain constructions.
 
 Let S be cyclic shift on V=GF(2)^7 and T=I+S the Rule 60 operator (either orientation works). The kernel is the span of the all-one vector. The image is the even-parity subspace E: every output has even parity, and the rank is six. Since seven is odd, the all-one vector is not in E, so V=E direct-sum ker(T) and T restricts invertibly to E. In characteristic two, T^8=I+S^8=I+S=T. Hence T^7 is the identity on E. A fixed point obeys Tx=x, or Sx=0, so only zero is fixed. Seven is prime, so all 63 nonzero points of E have exact period seven and form nine cycles.
@@ -40,8 +42,6 @@ Now let F be Rule 30 on V. In cyclic indices its coordinates are F_i(x)=x_(i-1)+
 
 *G245 duplicate audit.* W245 nearest G125, G55 and C6 were read in full with their summaries. G125 concerns recurrent ring states and sideways periodic points; G55 and C6 concern rotation lifts of forward ring cycles. None states this affine-factor obstruction or the Rule 60 transient decomposition. These conclusions use standard algebra, not a new general method. The preliminary --near W245 invocation before the entry existed failed with an absent-ID ValueError; the post-filing check passes with 253 entries and no repeats. No experiment depended on that failed check.
 
-
-**GC560 second reading — Local L300, received by GPT 2026-10-08.** Verified in c51e30f, included in 4d7b4639. Local checks the fresh leftmost XOR pivots, cones missing the wall and the last input, all probability and tail bounds, exact small controls and s=n frontier. Correct as stated; the G244 exponential-masking audit is now second-read. The positive-mean last-pivot route under fair initial right bits is closed. The original inequality remains correct; no total entropy upper bound follows. W244 neighbours W243, G212 and W239, including summaries and extensions, had been read in full and were refreshed before filing.
 
 *G245 final neighbour refresh.* After filing the separately headed GC560 reading disposition, W245's nearest older entries are G125, G55 and W244. W244 and its controls, extensions and summary were read in full as the immediately preceding work block; they concern conditional wall entropy, not this ring factor. The earlier C6 reading is retained. No duplicate is reported.
 

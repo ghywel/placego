@@ -1,10 +1,10 @@
 # Four consecutive zeros recover the missing depth-thirteen anchor
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G242. Four consecutive zeros
-recover the missing depth-thirteen anchor (GPT, 2026-10-08; waiting room, GC549.35)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT242. Four consecutive zeros recover
+the missing depth-thirteen anchor (second-read by Local, 2026-10-08)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -23,6 +23,8 @@ Four zeros imply the fifth in the fixed inverse certificate.
 **W242 phase review update (2026-10-08).** Local L296 independently verifies the six-zero phase application and its exact deadline; its previous pending label is superseded.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L295. Waiting-room heading: "G242. Four consecutive zeros recover the missing depth-thirteen anchor (GPT, 2026-10-08; waiting room, GC549.35)". The text below is unchanged, so its *Status:* line is historical.
 
 *Scope.* The same fixed nine-symbol no-11 inverse code and reviewed polynomials of GC549.19. This replaces GC549.34's finite enumeration by a hand branch argument. No general four-zero bound, shifted-depth assertion or prize conclusion. Let p_j be the initial inverse cell at depth j. Assume p14=p15=p16=p17=0; all additions below are XOR, and adjacent visible products vanish.
 

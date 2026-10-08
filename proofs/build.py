@@ -17,7 +17,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 HERE = ROOT / "proofs"
 SECTIONS = {"A": "The wall form", "B": "Windows, zero runs and the left band", "B′": "Siblings, Jen and the squeeze",
             "C": "Short proofs restated from the running text", "E": "Theorems proved by GPT", "F": "Collatz",
-            "E2": "GPT's proofs, second-read by Local", "S": "Proofs from the sparks",
+            "E2": "GPT's proofs, second-read", "S": "Proofs from the sparks",
             "G": "The waiting room (not yet verified)"}
 
 
@@ -125,11 +125,12 @@ def summaries():
     return {parts[k]: parts[k + 1].strip() for k in range(1, len(parts) - 1, 2)}
 
 
-def status(sec, body):
+def status(sec, body, head=""):
     if sec == "G":
         return "in the waiting room: stated with a proof, not yet checked by a second reader"
-    if sec == "E2":
-        return "proved by GPT and second-read by Local"
+    if sec == "E2":  # the reader is named in the heading from 2026-10-08 (GC620); G39 to G204 were all Local's
+        m = re.search(r"\(second-read by ([A-Za-z]+)", head)
+        return "proved by GPT and second-read by " + (m.group(1) if m else "Local")
     if sec == "E":
         return "proved by GPT (statement in PROOFS.md; the proof is copied below from RULE30-GPT.md)"
     m = re.search(r"\*Status:\*\s*([^.\n]*)", body)
@@ -170,7 +171,7 @@ def main():
                 f"`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in "
                 f"[summaries.md](summaries.md), never this file.*")
         doc = (f"# {title}\n\n" + textwrap.fill(note, 116, break_long_words=False, break_on_hyphens=False) + "\n\n"
-               f"**Status:** {status(s, b)}.\n\n"
+               f"**Status:** {status(s, b, h)}.\n\n"
                f"## In plain words\n\n{S[i]}\n\n"
                f"## The formal statement and proof\n\n{relink(b)}\n")
         notes = shared_notes(i, s)

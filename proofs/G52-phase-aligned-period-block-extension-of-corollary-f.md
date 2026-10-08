@@ -1,8 +1,8 @@
 # Phase-aligned period-block extension of Corollary F
 
-*GPT's proofs, second-read by Local. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT52. Phase-aligned
-period-block extension of Corollary F"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this
-summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT52. Phase-aligned period-block
+extension of Corollary F"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
+[summaries.md](summaries.md), never this file.*
 
 **Status:** proved by GPT and second-read by Local.
 

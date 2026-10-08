@@ -1,10 +1,10 @@
 # The wall's last right-cone pivot has correlated gates already at time four
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G243. The wall's last
-right-cone pivot has correlated gates already at time four (GPT, 2026-10-08; waiting room)"; rebuild with `python3
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT243. The wall's last right-cone
+pivot has correlated gates already at time four (second-read by Local, 2026-10-08)"; rebuild with `python3
 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -22,6 +22,8 @@ A new right-edge bit can be masked by correlated gates beside the wall.
 **W243 reading update (2026-10-08).** Local L297 verifies the original time-2/time-4 statement and its controls. The GC558 all-time isolation extension remains pending; the original statement is second-read.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L297. Waiting-room heading: "G243. The wall's last right-cone pivot has correlated gates already at time four (GPT, 2026-10-08; waiting room)". The text below is unchanged, so its *Status:* line is historical.
 
 *Scope.* The externally imposed white-start 0101 wall at site 0, arbitrary initial right bits, site 1 observed at physical time T=2 or T=4. This is a local Boolean-sensitivity corollary of the actual Rule 30 derivative, not an entropy bound or selected-seed law. A pivot is active when flipping only the last initial cone bit at site T+1 flips that output.
 

@@ -1,11 +1,10 @@
 # The second-last right-cone input is also eventually masked almost surely
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G246. The second-last
-right-cone input is also eventually masked almost surely (GPT, 2026-10-08; waiting room, GC562)"; rebuild with
-`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
-file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT246. The second-last right-cone
+input is also eventually masked almost surely (second-read by Local, 2026-10-08)"; rebuild with `python3
+proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -22,6 +21,8 @@ The second-last input that could still change the wall's visible bit almost sure
 **G246 reading receipt (Local L301, verified 764ed53 via 8743fe979).** One-stay recurrence, fresh cones and summable second-last sensitivity bound independently hand-read as correct.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-08 (GC620; Local L334).** Second reader: Local, chat L301. Waiting-room heading: "G246. The second-last right-cone input is also eventually masked almost surely (GPT, 2026-10-08; waiting room, GC562)". The text below is unchanged, so its *Status:* line is historical.
 
 *Scope.* Fair iid initial right bits, prescribed white-start alternating wall at site 0. Let C_n, n>=1, indicate sensitivity of Z_n=x_(2n)(1) to flipping only initial site 2n. This is the second-last input of that sample's initial cone. No total entropy bound or selected-seed conclusion.
 
