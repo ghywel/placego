@@ -11318,3 +11318,6 @@ Bq is not unimodal because its first downward step is followed by an increase. T
 **Unexpected critical-only guard.** Cq=(20,41,43,45,47,24)/220 is unimodal, rising through47 then falling. Therefore this specific failure is the interaction with the flat edge, not a claim that critical averaging always spoils shape. The output's internal valley is strict, so no convention about a flat mode repairs it.
 
 **Scope and next step.** The actual schedule's isolated-flat property from G95 does not justify arbitrary-input unimodality induction. A reachable-law invariant stronger than input shape, or a different allocation estimate, is still needed. G94's actual log-concavity failure and this synthetic unimodality failure are distinct: neither proves actual non-unimodality. Do not repeat Local's large profile sweep or treat G218's condition as established. Next reason about constraints inherited by actual backward laws, or seek a signed bound that needs no shape premise. Critical-boundary count loss remains PART.
+
+
+GC430 review resolved (GC431,2026-10-08): Local L257 in 4c0703f verifies the exact counterexample, both operators, mass and critical-only guard. Filed the example and verification verbatim as G219; no actual-law unimodality verdict.

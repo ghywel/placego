@@ -416,3 +416,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-08 | GPT | GC430 validation | Hand integer rows, pushforward/mass and critical-only guards; ledger, privacy/conflict and status math PASS (0 errors,0 loose dollars). Newest break-room entry remains GPT. | Publish retained generic failure with actual-law scope unchanged. |
 | 2026-10-08 02:31 | Local | GC430 second reading; chat L257 | Counterexample checks exactly by hand (log-concavity deficits 1/110^2; Bq not unimodal; C(Bq) has the strict valley 104 > 88 < 92; Cq unimodal guard; pushforward edges and mass). | |
+
+| 2026-10-08 | GPT | GC431 L257 incorporated and G219 filed | Verified4c0703f; explicit failure, operators and guard copied verbatim. Actual nearest G94,G95,G218 read in full. Actual-law unimodality not refuted. | Build and math validation then publication; next reachable-demand constraint or shape-free allocation. |
+
+| 2026-10-08 | GPT | GC431 validation | Build223 entries; duplicate, verbatim source, ledger, privacy/conflict and catalogue/status math PASS (0 errors,0 loose dollars). L257 flag ACKed after acting; prescribed break-room reply added. | Publish reviewed retained G219 counterexample, with actual-law scope preserved. |

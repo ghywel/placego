@@ -2877,3 +2877,13 @@ Unimodal demand makes weighted centering no worse than the earlier absolute allo
 **Why it matters.** It provides a shape condition under which the new bound is guaranteed to improve or tie. Actual demand unimodality is unproved; a separated-spike demand defeats general domination. The terminal single-spike layer ties exactly.
 
 **An everyday picture.** With one hill in the weights, choosing a reference at its summit accounts for both slopes. Multiple hills need another argument.
+
+
+## G219
+A critical averaging step need not restore unimodality after an edge fold.
+
+**What it says.** An explicitly log-concave five-atom input develops a strict internal valley after the flat-edge and critical operators. A critical step alone preserves this example's unimodality.
+
+**Why it matters.** Isolated flat steps cannot justify arbitrary-input shape induction. The actual backward law needs an additional reachable-law constraint; this synthetic failure does not establish actual non-unimodality.
+
+**An everyday picture.** One local smoothing step does not necessarily undo a distortion introduced at the boundary.

@@ -543,6 +543,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Demand-weighted centering improves the earlier global range bound on cumulative parity allocation.
 - [unimodal demand orders the optimized allocation bound](G218-unimodal-demand-orders-the-optimized-allocation-bound.md):
   Unimodal demand makes weighted centering no worse than the earlier absolute allocation bound.
+- [critical averaging does not repair generic edge-fold unimodality](G219-critical-averaging-does-not-repair-generic-edge-fold.md):
+  A critical averaging step need not restore unimodality after an edge fold.
 
 ## Proofs from the sparks
 

@@ -8292,6 +8292,30 @@ using the zero right tail. Add, divide by2 and then minimize. The point a=k cont
 
 **Duplicate guard for G218:** actual nearest G217,G213,G94 read in full. G217 defines optimized centering and G213 the Abel identity. G218 supplies a conditional comparison with the original absolute bound by unimodal gradient signs; G94 concerns the absorbing log-concavity edge and does not establish actual unimodality.
 
+### G.GPT219. critical averaging does not repair generic edge-fold unimodality (second-read by Local, 2026-10-08)
+
+**Where:** RULE30-GPT.md GC430 at4f5ad02; explicit counterexample, operator verification and guard copied verbatim below. Local L257 in 4c0703f checks all integer rows, input log-concavity, strict output valley, pushforward edges and mass. This refutes generic shape restoration, not actual Collatz demand unimodality or the count conjecture.
+
+Let q=(20,21,22,23,24)/110 with zero tails. It is a probability law, increasing to its terminal mode; its three interior log-concavity deficits are exactly1/110^2 and endpoint inequalities are automatic. Write B for the flat relative-demand operator and C for the critical operator:
+
+    (Bq)_0=q_0+q_1/2; (Bq)_j=(q_j+q_(j+1))/2 for j>=1,
+    (Cq)_0=q_0/2; (Cq)_j=(q_(j-1)+q_j)/2 for j>=1.
+
+Direct integer arithmetic gives
+
+    Bq=(61,43,45,47,24)/220,
+    C(Bq)=(61,104,88,92,71,24)/440.
+
+Bq is not unimodal because its first downward step is followed by an increase. The critical-after-flat output also is not unimodal:104>88<92 is a strict internal valley. Thus the preregistered counterfactual of generic two-step restoration is REFUTED even with a log-concave input and only one flat operator. This does not assert that q occurs under the actual Collatz threshold schedule.
+
+**Independent operator and mass control.** Let J have law q and b be an independent fair bit. Flat demand is max(0,J-b): only J=0 and the b=1 part of J=1 collect at0, giving B's edge formula; every positive atom receives half each from its current and next index. Critical demand is J+1-b, which is already nonnegative: this gives C's formula directly, including its new final atom. Applying these two pushforwards reproduces the stated integer rows. Their numerator sums are220 and440; no mass is lost at the boundary. These are symbolic two-branch checks, not numerical samples or a computational run.
+
+**Unexpected critical-only guard.** Cq=(20,41,43,45,47,24)/220 is unimodal, rising through47 then falling. Therefore this specific failure is the interaction with the flat edge, not a claim that critical averaging always spoils shape. The output's internal valley is strict, so no convention about a flat mode repairs it.
+
+**Scope:** G95's isolated-flat schedule does not justify induction from arbitrary log-concave inputs. Whether this input law is reachable under the actual schedule is not asserted; G218's actual-law shape premise remains open.
+
+**Duplicate guard for G219:** actual nearest G94,G95,G218 read in full. G94 isolates log-concavity at the absorbing edge, G95 proves the schedule has isolated flats, and G218 conditionally orders allocation bounds under unimodality. G219 supplies a strict non-unimodal critical-after-flat output from log-concave input; it neither restates the log-concavity guard nor refutes actual-law unimodality.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

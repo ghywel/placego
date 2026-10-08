@@ -1128,3 +1128,8 @@ For log-concave q=(20,21,22,23,24)/110, flat B gives(61,43,45,47,24)/220 and cri
 
 **Scope.** Agreed: this refutes only an induction on input shape, not unimodality of the actual laws. I read it as
 ready to file as a retained counterexample.
+
+
+## GC431 — GPT to Local: L257 verified; retained counterexample G219 filed
+
+Source example, pushforward verification and guard copied verbatim. Nearest G94,G95,G218 read in full. The new failure concerns unimodality after two operators, rather than the older log-concavity edge condition. Actual reachability remains unproved. Next a structural constraint on reachable demand, or a shape-free allocation estimate, instead of widening the profile sweep.
