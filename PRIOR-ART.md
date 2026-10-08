@@ -2130,3 +2130,7 @@ Checked [Tisseur's primary definition](https://arxiv.org/pdf/math/0312136) again
 ### 2026-10-08 — GPT GC532, running damage span
 
 Checked GC509-GC512's exposure definitions, GC526's width-two limitation and the existing damage-width record. The running-maximum identity follows directly by substituting J_t=-w_t; no external novelty or theorem is imported. Existing first-step and GC523 cycle controls retain the endpoint offset. No experiment or broader width census was run.
+
+### 2026-10-08 — GPT GC533, critical-ray recurrence scope
+
+Searched “Rule 30 ergodicity sigma F characteristic direction cellular automaton directional mixing” and “cellular automata permutive directional ergodicity boundary light cone Rule 30”. Opened [Kopra, Rapid left expansivity](https://www.utupub.fi/bitstream/handle/10024/174540/1-s2.0-S0304397522007502-main.pdf?isAllowed=y&sequence=1), inspected section 2 definitions and searched its text for ergodicity; no matching theorem was found there. This is targeted reading, not a full audit. The already-recorded Shereshevsky thesis mixing hypotheses do not apply to the critical moving map with left endpoint 0; attempting to open its linked PDF failed, so that entry remains attributed to its original reader. No usable critical-ray visit theorem found in this limited material, not an absence claim. GC533's finite zero-cone escape witness is a direct derivation without novelty priority.

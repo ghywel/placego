@@ -13255,3 +13255,31 @@ Combining with the pathwise bounds gives liminf F_N/N >= (1+v)/2 and limsup F_N/
 **Independent controls and endpoint guard.** At N=1, only w_0 enters, so E_1=1 regardless of the next front. For first-step displacements -1,0,+1, the spans w_1 are 3,2,1 and E_2 is respectively 3,2,1, matching GC509's directly revealed endpoints. GC523's actual escape cycle has spans 1,2,1,2,..., so E_N=2 from N=2 onward, with exactly its two fresh records. These controls check the offset and bounded-span equivalence independently of an asymptotic assumption. No new finite enumeration was run.
 
 **Outcome and next.** The recurrence target is now geometric: prove the actual iid single-flip damage span unbounded almost surely. GC526 excludes eventual span at most 2, but does not exclude arbitrary finite bounds. A bounded-span classification or uniform probabilistic escape-from-confinement argument would serve that target; a width census or scalar closure does not prove it. Positive inward speed still needs stronger growth and convergence control. Stop bookkeeping reformulation and seek a mechanism forcing new span records.
+
+## GC533 — Recurring zero windows on the right ray would force unbounded span (2026-10-08)
+
+**Scope and predictions.** Seek an actual escape-from-confinement mechanism serving GC532, retaining arbitrary damage holes and the deterministic rightmost site t. Predict a background zero window along that edge forces any span bound M to fail shortly. Counterfactual ordinary fixed-frame mixing implies recurrence on the moving right ray is unsupported. Unexpected check: the relevant moving map has its permutive input at coordinate 0, not at a negative coordinate. Hand finite-cone proof, no experiment; conditional recurrence implication pending reading, with its dynamical premise OPEN.
+
+**Uniform escape witness.** Fix integer M>=1 and h=ceil(M/2). At time t suppose the actual span w_t<=M and the first background is zero at every site from t-2M through t. Then L_t lies between t-M+1 and t. During each of the next h updates, the leftmost damage advances left exactly one site. Indeed, assuming the first k such advances, its below-front common bit is at coordinate L_t-k-1 and time t+k. Its backward cone in the row at time t is
+
+    [L_t-2k-1, L_t-1], for 0<=k<h.
+
+This lies inside [t-2M,t]: the lower endpoint is at least t-M-2k, which is at least t-2M for these k. A wholly zero initial cone produces a zero output. GC505's exact left-edge derivative then forces the next advance. The right edge still advances right at every update, so
+
+    w_(t+h)=w_t+2h>M.
+
+The argument is uniform in the damage word and outside background, and requires no independence from the selected front. It also works for a bounded span interval starting at an arbitrary time.
+
+**A precise sufficient dynamical premise.** Define b_i(t)=u_(t+i)(t) and H=shift composed with Rule 30, where shift(x)_i=x_(i+1). Then b(t)=H^t u(0), with
+
+    H(b)_i=b_i XOR (b_(i+1) OR b_(i+2)).
+
+For each M, let C_M be the zero cylinder on coordinates -2M through 0. If the actual iid background's H orbit visits every C_M infinitely often almost surely, then no eventual finite span bound can persist: pick a visit after that bound begins and apply the uniform witness. Countably many M suffice. GC532 then gives infinitely many fresh ticks almost surely. This implication establishes neither that visit premise nor a transport rate.
+
+The fair iid measure is H-invariant by G97 and shift invariance. Ergodicity of H would be a sufficient stronger premise: Birkhoff gives visit frequency equal to the positive cylinder measure 2^(-(2M+1)). Invariance alone does not give visits to every positive-measure cylinder on almost every orbit; it only supports recurrence for points already in that cylinder. This prevents silently using Poincare recurrence to fill the gap.
+
+**Critical-direction guard and independent controls.** The existing PRIOR-ART mixing entry attributes a theorem requiring a negative leftmost neighbourhood coordinate. Ordinary Rule 30 has endpoint -1; H has endpoint 0. That hypothesis is lost exactly on the right light-cone ray. The old entry also records a nonergodic permutive example with neighbourhood [0,2], so permutativity at 0 alone cannot be substituted for the missing premise. The linked thesis could not be opened in this block; its claim remains attributed to the earlier reader, not newly verified here.
+
+For M=1, h=1 and one zero below the singleton already gives span 3; the longer stated cylinder is a sufficient uniform witness. For M=2, h=1 and every initial span at least 1 exceeds 2 after the forced left advance. GC523's bounded escape template contains a black bit immediately below the singleton on its zero-step phase, so it fails the zero-window premise; the witness does not contradict that actual deterministic escape. These local controls and the explicit cone endpoints are independent of the unproved recurrence premise.
+
+**Outcome and next.** This supplies a damage-independent finite witness for escape from every bounded span, reducing one possible recurrence approach to zero-cylinder visits along a specified critical ray. A bounded directional-dynamics search found no usable theorem in inspected material; absence is not claimed. Next audit this critical-ray visit premise or derive a different reachable-state return mechanism. No speed run, width census, ergodicity assertion or prize conclusion.
