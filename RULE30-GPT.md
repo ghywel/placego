@@ -13859,3 +13859,22 @@ With these choices, x_3(-1)=1 and x_3(0)=1, making x_4(0)=0 regardless of r_4. A
 The numbers of distinct admissible right prefixes through times 1,2,3,4,5 are therefore 2,2,1,2,4. Dividing by the available 2^t right prefixes gives fractions 1,1/2,1/8,1/8,1/8. The last two conditions are genuinely free in this actual cone, even though their corresponding left pivots are prescribed white. Zero-padding gives finite seeds for every listed prefix. This is a length-four witness at depth two, not a maximal record calculation.
 
 **Failure and next within GC549.** Per-step contraction fails in the intended geometry, as the existing CJ1 evidence already indicated. A free step can arise from constraints imposed earlier, rather than from independently choosing a fresh compensating bit. The remaining target is a uniform bound on accumulated free stretches or an amortized loss across actual realizable prefixes, with internal zero pivots retained. This example proves neither such bound nor a uniform R_real bound. Reuse the existing section 8.52 target rather than opening a separate gate route; Local's record computation and Cloud's independent replay stay unchanged.
+
+
+### GC549 checkpoint 11 — the first delayed payment in the hand cone (2026-10-08)
+
+**Prediction and counterfactual before extending checkpoint 10.** Extend the prescribed initial zero interval to -2 through -7 and inspect only times 6 and 7 by hand. Predict the next black-to-white condition is free but the following white-to-black condition spends earlier right choices. Counterfactual: freedom through time 5 means each admissible right prefix can continue with arbitrary new right bits. Independent control is the left-neighbour backward chain, separate from the right OR calculation. Unexpected check: surviving time-7 pairs need not select exactly one value of the newest right bit. No computation or new record sweep.
+
+Retain initial centre zero, x_0(-1)=1 and r_1=r_2=r_3=0. The zero left interval gives x_2(-4)=0, x_3(-3)=1, x_4(-2)=0, x_5(-1)=1. Since x_5(0)=1, time 6 is white independently of the right side. Extending the chain one site left gives x_2(-5)=0, x_3(-4)=1, x_4(-3)=0, x_5(-2)=1, x_6(-1)=0. Thus the required black centre at time 7 is precisely the requirement x_6(1)=1.
+
+Write A=r_4, B=r_5, C=r_6, D=r_7. The literal right update gives x_3(2)=1-(A OR B). If A=1, x_3(3)=0; if A=0, x_3(3)=B OR C. Consequently x_4(2)=A, x_5(1)=A, and x_5(2)=A OR x_4(3). Hence
+
+    x_6(1)=1 XOR (A OR x_4(3)).
+
+For this to be one, A must be zero. In that branch B=1 makes x_4(3)=1, so B must also be zero. With A=B=0, x_2(5)=C OR D, x_3(4)=C OR D and x_4(3)=1 XOR (C OR D). Therefore time 7 passes exactly when
+
+    r_4=r_5=0 and (r_6 OR r_7)=1.
+
+The right-prefix counts through times 1 to 7 are 2,2,1,2,4,8,3, with normalized fractions 1,1/2,1/8,1/8,1/8,1/8,3/128. Equivalently, in a single fixed right hull through site 7, there are 16 candidates after time 3, the same 16 after each of times 4,5,6, and three after time 7. That last condition removes 13 of 16 survivors in a lump. This fixed-hull count is the directly comparable convention in section 8.52; raw expanding-prefix counts would misleadingly call each free condition a doubling.
+
+**Controls and outcome.** The condition accepts (r_6,r_7)=(0,1),(1,0),(1,1) and rejects (0,0). In particular when r_6=1 both choices of the newest bit pass, whereas when r_6=0 just r_7=1 passes. A single fresh-bit pairing cannot explain the three survivors. Prescribing -6 and -7 does not alter earlier samples, by their light cones. The block exhibits three free steps followed by delayed contraction in a genuine record cone; it does not measure a maximal record, prove a uniform free-stretch bound, or transfer section 8.52's finite-width evidence to all depths. Next seek a state statistic that accounts for this reuse of older right bits, within the existing amortized-debt target.

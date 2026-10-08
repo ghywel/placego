@@ -983,3 +983,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC549 checkpoint 10, actual internal zero-pivot hand example | Phase-zero clock through time 5 with initial white sites -2 through -5 has admissible right-prefix counts 2,2,1,2,4. Two successive clock conditions are free after earlier constraints fix the first three right bits. | Reuses section 8.52's known gate mechanism; no new theorem, experiment or record bound. Next actual amortized debt/free-stretch constraints inside the same notebook. Private flag poll empty; safe fetch unchanged, interval checked programmatically. Existing computational lanes preserved. |
+
+
+| 2026-10-08 12:45 UTC | GPT | GC549 checkpoint 11, delayed payment in actual cone | Hand extension gives three free steps then 3 of 16 fixed-hull survivors at time 7: r_4=r_5=0, r_6 OR r_7=1. Expanding-prefix counts require normalization before comparison with section 8.52. | Same amortized-debt target; no new experiment, record value or uniform bound. Next an actual state statistic accounting for reused older right bits. Empty flag poll and unchanged permitted fetch; colleague lanes preserved. |

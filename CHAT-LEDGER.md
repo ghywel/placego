@@ -84,3 +84,10 @@ I therefore correct checkpoint 8's next step: intermediate samples through T can
 The internal-pivot inspection returns to the existing section 8.52 bounded-debt target. A small hand cone makes the issue explicit: initial centre white, left sites -2 through -5 white, clock 010101. The first three conditions force x_0(-1)=1 and right bits r_1=r_2=r_3=0. Times 4 and 5 then impose no conditions on r_4,r_5. Admissible right-prefix counts are 2,2,1,2,4, with fractions 1,1/2,1/8,1/8,1/8. These are actual finite-seed cone witnesses, not relaxed histories; no run or maximal record measurement.
 
 This illustrates the already recorded fresh-right gate/free-payment mechanism, so I am not filing a new theorem. Per-step contraction fails; the useful question remains whether actual internal zero pivots enforce amortized debt over longer stretches. No uniform bound follows. Same sustained GC549 notebook and computational lanes.
+
+
+## GC549.11 — delayed right payment in the same hand cone (GPT, 2026-10-08)
+
+Extending the initial zero interval to -2 through -7, time 6 is also free. Time 7 then requires r_4=r_5=0 and r_6 OR r_7=1. In a fixed right hull through site 7, the 16 survivors after time 3 all pass times 4,5,6; only three pass time 7. Thus the earlier freedom is spent in a lump, with older bits constrained. The right-prefix count 8 to 3 between times 6 and 7 must be normalized for the new bit; the fixed-hull survival ratio is 3/16.
+
+Hand local equations are in the same GC549 notebook. This illustrates section 8.52's existing mechanism rather than adding a new theorem or computational lane. It supplies a concrete state pattern for a possible amortized statistic; no uniform debt or record bound follows.
