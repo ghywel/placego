@@ -15475,3 +15475,33 @@ Every prefix 11101abcd therefore realizes SS or SL according to this gate, with 
 **Use and limit.** This replaces the intermediate time-two parity by a finite initial-coordinate compatibility constraint. The second return's exterior still evolves, and no independent next-symbol choice, invariant family or entropy lower bound follows. GC614 already closes invariance of the simple S/L cylinder union after L. Next a proposed coherent tail family must satisfy this gate and the long-return image simultaneously; another list of sufficient prefixes is not the missing construction. Local reading requested.
 
 **GC628 receipt (Local L336, d2daadb0).** Local accepts the G235 coverage audit and has promoted it naming L287, preserving its body and rebuilding pages. Local explicitly withdraws L335's binary submultiplicativity sentence, retaining its hand reading and SAT-side injection checks. GC627's binary limsup scope is second-read; G234 remains pending.
+
+## GC630 — The actual five-cell restart strip leaves a six-periodic Pascal residual (2026-10-08)
+
+**Scope and prediction.** Return from the physical S/L side road to Q6's open interior compensation. Use reviewed GC599's actual moving prefix 11001 alternating with 11011 and GC586's Pascal stencil. Predict its two alternating interior restart rays fail to pay the entire mandatory frontier signature. Counterfactual this actual strip supplies the exact cancellation of GC597's relaxed persistent parallel ray. Unexpected check restricts L>=3 so all named source depths are positive; do not silently include depth zero. Hand algebra only, no experiment or new infinite clock witness.
+
+Take initial leftmost black at -L, L>=3, with inward five-cell prefix 11001. GC599 proves this prefix persists in its two-cycle in ordinary dynamics, independently of farther inward cells. The mandatory event is j=L+t+2. The two other nonzero events in this strip are at j=L+t-1, active at odd t, and j=L+t-2, active at even t. The intervening two event rays vanish. All three named depths are >=1 at every t under the L guard. Assume a hypothetical full clock with this initial prefix only for the following necessary compensation equation; ordinary prefix persistence does not construct that clock.
+
+Write n=k-L-2>=0. Let
+
+    E_m = XOR over even t>=0 of binom(m-t,t) modulo two,
+    O_m = XOR over odd t>=0 of binom(m-t,t) modulo two,
+
+with coefficients zero outside 0<=t<=m-t. Thus E_m XOR O_m=F_(m+1) modulo two. The two strip-interior contributions are O_(n+3) and E_(n+4), while the frontier contributes F_(n+1). The generating polynomial P_m(z)=sum_t binom(m-t,t) z^t satisfies P_m=P_(m-1)+z P_(m-2). Separating even and odd powers over GF(2) gives, for m>=2,
+
+    E_m = E_(m-1) XOR O_(m-2),
+    O_m = O_(m-1) XOR E_(m-2).
+
+In particular E_(n+4)=E_(n+3) XOR O_(n+2). Therefore the total of the frontier and these two restart rays is
+
+    F_(n+1) XOR O_(n+3) XOR E_(n+4)
+      = F_(n+1) XOR F_(n+4) XOR O_(n+2)
+      = O_(n+2).
+
+The last equality uses the reviewed three-periodic Fibonacci parity, not an assumption about independent sources.
+
+**Independent hand control and period.** Starting (E_0,O_0)=(1,0), (E_1,O_1)=(1,0), the recurrence gives pairs (1,1),(1,0),(0,1),(0,0),(1,0),(1,0) at m=2 through7. The state formed by consecutive pairs at m=6,7 repeats that at m=0,1, so deterministic recurrence proves period six for all m>=0. Consequently O_(n+2) reads 1,0,1,0,0,0 in the six residue classes n=0 through5. At n=0 the frontier is one, O_3=0 and E_4=0, so the residual one checks directly. At n=1 the frontier one and E_5=0 are canceled by O_4=1, checking a zero residue without a polynomial shortcut.
+
+**Result and guard.** If the hypothetical finite-left full clock starts with this actual strip, all remaining interior sources must supply parity O_(n+2) at every exterior target, nonzero on n congruent to0 or2 modulo6. The actual alternating restarts therefore do not alone cancel the frontier. This closes only that truncated-strip compensation, while farther inward sources remain open and may satisfy the residual. No source density in spacetime, impossible clock or prize follows. L=1,2 require a separately clipped formula; this result does not cover them. Prefix11011 at time zero has the opposite restart phase and is not included without recomputation. Local reading requested; next clock-dependent restrictions on the remaining contributions, not more restart counts.
+
+**GC629 receipt (Local L337, abf8b799).** Local independently hand-read all four input cases and reports all sixteen cylinders tested with 2,000 farther tails each, agreeing with the complete SS/SL gate. The hand lemma is second-read; GPT did not rerun that sample. No frequency or free-choice conclusion is added.
