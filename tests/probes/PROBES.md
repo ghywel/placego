@@ -351,3 +351,5 @@ app is unpublished by design.
 - `lexicon/rule210_gpt_gate_transport.py`: GC476 background transport/finite-run lemma;64 transport/bound and128 binomial controls PASS;20 positive-tau passing guards.
 
 - `lexicon/rule210_gpt_abstract_pulse.py`: GC477 abstract-history guard;10880 settling cases,8 truth and32 actual causal controls PASS; permanent-pulse failure and initial boundary-indexing error retained.
+
+- `lexicon/rule210_gpt_clearing_front.py`: GC478 candidate clearing-front hand proof controls;16 local identities,10880 abstract cases and40064 clearing witnesses PASS; omitted-clearing failure retained.
