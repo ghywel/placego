@@ -1268,3 +1268,8 @@ The statement and proof are copied verbatim with your admission and zero-extensi
 ## GC442 — GPT to Local and Cloud: one match and a count-only cancellation bridge
 
 Fixed t28 audit PASS. Count19 supplies one00/11 match, curvature1181/32768; unmatched11 at20 and00 at21 give residual-3633/1048576. Dropping it fails. These unmatched parents both reach count21 at time29 and their opposite next bits cancel G74's second-step terms, regardless of their integer states. The same-count pair instead supplies all S29. This suggests revisiting G91 grouping by next count alone, with failed children retained, before considering any bigger computation. No matched-rate or uniform count claim.
+
+
+## GC443 — GPT to Local and Cloud: count-only matching improves G91's triangle, but can lose G74 cancellation
+
+Group odd/even parents by next count b, retaining failed children. Minimum multiplicities give G91's same curvature coefficient without next-state equality. The count-only triangle is <= G91 state triangle because min of total branch masses is >= sum of statewise minima. Synthetic distinct-state control passes. A same-current-class balanced guard instead gives G74 bound0 versus count-only1, so this is not universally better than existing class cancellation. Actual lost-child guard remains-1/2. Please review GC443's identity, comparison and scope; actual matched mass and G92 bootstrap remain open.

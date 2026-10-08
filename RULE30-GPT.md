@@ -11521,3 +11521,35 @@ Total curvature1181/32768, residual-3633/1048576 and pair34159/1048576. Dropping
 **Reasoning from the measured labels.** The same-count19 pair has cancelling first-step G74 terms, then contributes the whole observed S_29=1181/32768. The remaining11 parent at count20 and00 parent at count21 both reach count21 at time29. Their next bits are opposite, so their second-step terms cancel exactly because G74's demand depends on count, not on the current integer state. Their residual therefore equals S_28=-3633/1048576. No equality of terminal states or orbit swapping is needed for this cancellation. GC440's warning about mismatched counts remains correct: their two-step sum is not its same-count coefficient.
 
 Next inspect whether G91's algebra can be regrouped by next count alone rather than requiring a common next integer state. This would expose count-weighted matching that small-width same-state coalescence misses; an identity still would not bound the unmatched mass. Check the existing record before proposing it, retain failed children, and do not start a wider population scan.
+
+
+### GC443 — Next-count matching refines G91 without state coalescence (2026-10-08)
+
+**Predicted hand refinement.** G91 and GC442 suggest grouping by next odd count alone, since G74's demand is independent of the integer state. Predict the same adjacent-demand curvature identity and an absolute bound no worse than G91's state-matched triangle. Existing-record search found no such count-only matching. This is elementary regrouping and finite multiplicity matching, not a general novelty claim or an actual matched-mass estimate. No experiment in this block.
+
+At fixed t,T, keep all admitted parent occurrences with multiplicity, including children that will fail admission. Write d_a=f_(t+1)(a+1)-f_(t+1)(a)>=0. Let O_b count odd parents with current count b-1 and E_b count even parents with current count b, and let M_b=min(O_b,E_b). Then
+
+    S_t=(1/2)*sum_b [M_b*(d_(b-1)-d_b)
+        +(O_b-M_b)*d_(b-1)-(E_b-M_b)*d_b].
+
+The matched coefficient is exactly G91's adjacent-demand difference, but matched occurrences need not have the same next integer state. Its triangle bound is
+
+    A_count=(1/2)*sum_b [M_b*abs(d_(b-1)-d_b)
+        +(O_b-M_b)*d_(b-1)+(E_b-M_b)*d_b].
+
+Let A_state be G91's triangle bound retaining its separate (next state y,next count b) groups. Then abs(S_t)<=A_count<=A_state. No comparison with G74's already class-cancelled absolute bound is asserted.
+
+**Proof.** Every odd parent supplies d_(b-1)/2, every even parent -d_b/2. Subtract M_b from both multiplicities and collect terms, then apply the triangle inequality. For nonnegative u,v and O,E with M=min(O,E), the group's unscaled triangle expression is
+
+    M*abs(u-v)+(O-M)*u+(E-M)*v
+      = O*u+E*v-2*M*min(u,v).
+
+Summing G91's state groups gives the same O_b,E_b but total matched multiplicity sum_y min(O_(y,b),E_(y,b))<=min(sum_y O_(y,b),sum_y E_(y,b))=M_b. Hence count-only matching subtracts at least as much nonnegative mass and A_count<=A_state. Any matched child is count-admitted: its odd parent was admitted and adding one odd step clears the next threshold. No integer-state coalescence or independently realized swapped orbit is needed. Unmatched failed even children remain in E_b; their removal corrupts S_t.
+
+**Independent hand control.** A synthetic admitted pool at time3 contains odd state3 at count2 and even state4 at count3. Their next states5 and2 differ, but next counts both equal3. With synthetic demand d_2=d_3=1/2, the literal contributions+1/4,-1/4 cancel. Count matching gives M_3=1,A_count=0; state matching gives no pair and A_state=1/2. These are labeled admitted parent occurrences, not a claim that one actual dyadic start ensemble realizes the pool or demand law.
+
+**Retained domination counterfactual.** In a synthetic pool with one odd and one even parent at the same current count a, let d_a=1 and all other demand atoms0. G74's class imbalance I_a=0, so its original absolute bound is0. The parents belong to different next-count bins a+1 and a, with no match; A_count=1 although S_t=0. Thus count-only matching is not universally better than G74 class cancellation or G220. Different grouping choices retain different cancellations. No actual-population refutation follows.
+
+**Unexpected failed-child guard.** G91's actual width2,T4,t3 parent at state4,count2 has an even child failing count admission. Here d_2=1, E_2=1 and no odd partner: the count-only identity gives S_t=-1/2. Dropping that child would give0, exactly the existing lost-child failure. The new regrouping does not license removal of unadmitted images.
+
+**Limit and next intention.** This expands available matching compared with literal coalescence, but leaves actual count-matched mass and unmatched signed residual uncontrolled. G92's coarse maximum-curvature/count bootstrap is not repaired by an identity alone. Next compare these two match multiplicities in the fixed width7 t28/t29 witness, keeping G74/G220 grouping as separate options. No wider run or count-ratio conclusion. Independent hand review requested; do not file before review.
