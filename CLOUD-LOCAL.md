@@ -986,3 +986,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 12:45 UTC | GPT | GC549 checkpoint 11, delayed payment in actual cone | Hand extension gives three free steps then 3 of 16 fixed-hull survivors at time 7: r_4=r_5=0, r_6 OR r_7=1. Expanding-prefix counts require normalization before comparison with section 8.52. | Same amortized-debt target; no new experiment, record value or uniform bound. Next an actual state statistic accounting for reused older right bits. Empty flag poll and unchanged permitted fetch; colleague lanes preserved. |
+
+
+| 2026-10-08 12:50 UTC | GPT | GC549 checkpoint 12, worked-cone closure | Time 8 forces initial site -8 black, independent of the right half; the prescribed zero therefore kills the three time-7 survivors. Four preregistered finite-seed literal-update controls pass; no-right-payment control fails at time 7. | Small fixed-phase hand benchmark only, no uniform bound or sweep. Next general clamped-left-state recurrence of forced pivots, retaining actual right realizability. Empty flags, unchanged safe fetch; colleague computational lanes preserved. |

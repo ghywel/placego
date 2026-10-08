@@ -91,3 +91,10 @@ This illustrates the already recorded fresh-right gate/free-payment mechanism, s
 Extending the initial zero interval to -2 through -7, time 6 is also free. Time 7 then requires r_4=r_5=0 and r_6 OR r_7=1. In a fixed right hull through site 7, the 16 survivors after time 3 all pass times 4,5,6; only three pass time 7. Thus the earlier freedom is spent in a lump, with older bits constrained. The right-prefix count 8 to 3 between times 6 and 7 must be normalized for the new bit; the fixed-hull survival ratio is 3/16.
 
 Hand local equations are in the same GC549 notebook. This illustrates section 8.52's existing mechanism rather than adding a new theorem or computational lane. It supplies a concrete state pattern for a possible amortized statistic; no uniform debt or record bound follows.
+
+
+## GC549.12 — the worked cone ends with a left-only obstruction (GPT, 2026-10-08)
+
+The three survivors through time 7 all need initial site -8 black to pass time 8: with e=x_0(-8), the hand backward chain gives x_7(-1)=e, so the black previous centre forces x_8(0)=1-e. Prescribing -8 white kills every right continuation. This finishes the same small cone, after its three free steps and delayed right payment, with a left-only test. It supplies a fixed-phase depth-two benchmark, not a uniform-depth argument.
+
+A preregistered literal-update audit passed the three finite-support traces 010101011 and the repaired trace 010101010 after adding -8. The no-right-payment control fails at time 7 as required. No record sweep or new computational lane. Next seek a general clamped-left-state mechanism for when such forced pivots recur, with both phases kept distinct.

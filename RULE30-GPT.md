@@ -13878,3 +13878,20 @@ For this to be one, A must be zero. In that branch B=1 makes x_4(3)=1, so B must
 The right-prefix counts through times 1 to 7 are 2,2,1,2,4,8,3, with normalized fractions 1,1/2,1/8,1/8,1/8,1/8,3/128. Equivalently, in a single fixed right hull through site 7, there are 16 candidates after time 3, the same 16 after each of times 4,5,6, and three after time 7. That last condition removes 13 of 16 survivors in a lump. This fixed-hull count is the directly comparable convention in section 8.52; raw expanding-prefix counts would misleadingly call each free condition a doubling.
 
 **Controls and outcome.** The condition accepts (r_6,r_7)=(0,1),(1,0),(1,1) and rejects (0,0). In particular when r_6=1 both choices of the newest bit pass, whereas when r_6=0 just r_7=1 passes. A single fresh-bit pairing cannot explain the three survivors. Prescribing -6 and -7 does not alter earlier samples, by their light cones. The block exhibits three free steps followed by delayed contraction in a genuine record cone; it does not measure a maximal record, prove a uniform free-stretch bound, or transfer section 8.52's finite-width evidence to all depths. Next seek a state statistic that accounts for this reuse of older right bits, within the existing amortized-debt target.
+
+
+### GC549 checkpoint 12 — terminating the hand cone by a left-only condition (2026-10-08)
+
+**Prediction before the final hand step and independent control.** For the three time-7 survivors of checkpoint 11, extending the zero interval to site -8 should force time 8 black, contradicting the required white clock bit. Counterfactual: the time-7 right choices can compensate for this extra initial zero. Unexpected check: freeing just site -8 should repair that next condition without changing the prior clock. This closes only the small worked cone, not the uniform-depth problem. Planned independent literal-update controls, prior to running them: finite supports {-1,6}, {-1,7}, {-1,6,7} each have trace 010101011 through time 8; adding -8 to {-1,6} gives 010101010. Support {-1} must fail at time 7 with a white bit. This is a tiny proof-audit replay, not a new record sweep or colleague run.
+
+Under the time-7 clock and initial zeros -2 through -7, write e=x_0(-8). The successive left cells obey
+
+    x_1(-7)=e, x_2(-6)=e, x_3(-5)=e,
+    x_4(-4)=1-e, x_5(-3)=1-e, x_6(-2)=e, x_7(-1)=e.
+
+The masking neighbours in this backward chain are respectively the already established zero or black pairs of checkpoints 10 and 11. Since x_7(0)=1, the clock requires x_8(0)=e XOR 1=0, forcing e=1 independently of every right bit. Site -8 is outside the earlier clock cone and its prescribed zero first matters now. Thus no phase-zero witness can have initial zeros -2 through -8 and clock through time 8. The three time-7 survivors give witnesses with zeros -2 through -7, so the fixed-phase depth-two record is six. This is a hand reconstruction of a small local obstruction, not a new uniform bound or phase-maximal RR measurement.
+
+
+**Independent replay outcome.** A literal sparse-row XOR/OR update over sites -18 through 18, for eight steps, passed all four preregistered traces exactly. The no-right-payment control {-1} gives 010101001 and fails the required black bit at time 7. The replay uses a radius exceeding every tested centre cone; it is an independent check of the hand equations, not an enumeration of all configurations. No data or new probe file is committed.
+
+**Next and limitation.** This finishes the worked example: three free conditions, one delayed right-side restriction, then a right-independent forced black initial pivot. Its closure explains the small cone through actual left/right interactions. The useful next question is whether analogous forced pivots can be controlled at arbitrary depth using the clamped left-state recursion; a universal spacing bound is still missing. Do not extrapolate this single depth or start a larger computational census.
