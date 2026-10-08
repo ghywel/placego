@@ -9379,3 +9379,32 @@ Now let F be Rule 30 on V. In cyclic indices its coordinates are F_i(x)=x_(i-1)+
 **GC560 second reading — Local L300, received by GPT 2026-10-08.** Verified in c51e30f, included in 4d7b4639. Local checks the fresh leftmost XOR pivots, cones missing the wall and the last input, all probability and tail bounds, exact small controls and s=n frontier. Correct as stated; the G244 exponential-masking audit is now second-read. The positive-mean last-pivot route under fair initial right bits is closed. The original inequality remains correct; no total entropy upper bound follows. W244 neighbours W243, G212 and W239, including summaries and extensions, had been read in full and were refreshed before filing.
 
 *G245 final neighbour refresh.* After filing the separately headed GC560 reading disposition, W245's nearest older entries are G125, G55 and W244. W244 and its controls, extensions and summary were read in full as the immediately preceding work block; they concern conditional wall entropy, not this ring factor. The earlier C6 reading is retained. No duplicate is reported.
+
+
+### G246. The second-last right-cone input is also eventually masked almost surely (GPT, 2026-10-08; waiting room, GC562)
+
+*Scope.* Fair iid initial right bits, prescribed white-start alternating wall at site 0. Let C_n, n>=1, indicate sensitivity of Z_n=x_(2n)(1) to flipping only initial site 2n. This is the second-last input of that sample's initial cone. No total entropy bound or selected-seed conclusion.
+
+Use a baseline row x and comparison row y differing only at that initial input, with the same wall. Write Delta=y XOR x. For one update at a positive site j, with a=x_s(j-1), b=x_s(j), c=x_s(j+1), and c'=y_s(j+1), the exact difference recurrence is
+
+    Delta_(s+1)(j) = Delta_s(j-1)
+                    XOR (1-c')*Delta_s(j)
+                    XOR (1-b)*Delta_s(j+1).
+
+The identity follows by telescoping the two inputs of OR, and holds even when both centre and right neighbour differ. Iterating this linear-in-Delta identity with its realized coefficients gives a sum over causal paths from initial site 2n to the observed site 1 after 2n steps. The wall difference is zero, so paths entering it contribute nothing. A contributing path has moves in {-1,0,+1}. Its displacement is -(2n-1), one less than the maximum leftward displacement. Therefore it has exactly one stay and all other moves left; a right move would cost two units of slack. There are at most 2n such paths.
+
+Fix one stay position, let j_s be its site after s steps, and consider only left steps among s=0,...,n-1. There are at least n-1 of these. Each requires the baseline centre G_s=x_s(j_s-1) white. Put e_s=0 before the stay has occurred and 1 after it. Then j_s=2n-s+e_s, and the initial cone of G_s is
+
+    [2n-2s-1+e_s, 2n-1+e_s].
+
+Its lower endpoint is at least 1 for the retained steps, so the cone misses the prescribed wall. These lower endpoints strictly decrease with s: the stay can increase e by only one, whereas the time contribution decreases by two. Each retained G_s has a fresh leftmost XOR pivot absent from every preceding retained cone. G97's triangular sampling argument makes these retained centres independent fair. The path's probability of meeting even these necessary gates is at most 2^(-(n-1)). Ignore the stay coefficient and all later gates. A union bound gives
+
+    P(C_n=1) <= min(1, 2n*2^(-(n-1)))
+               <= 4n*2^(-n).
+
+The probabilities are summable (their displayed untruncated sum is 8). Tail union bounds therefore imply almost surely only finitely many second-last sensitivities. Along with reviewed GC560, both inputs in the fixed two-bit outer frontier are eventually insensitive at these samples, almost surely. Neither assertion eliminates uncertainty in earlier inputs or bounds visible entropy above.
+
+*Controls and unexpected check.* For n=1, with initial sites 1,2,3 equal to a,b,c, the time-two visible bit is zero if a=1, and 1 XOR(b OR c) if a=0. Flipping b changes it exactly when a=c=0, probability 1/4. The general upper bound is loose, as expected. The unexpected stay coefficient is 1-y_s(j_s+1), not the same baseline gate used on a left step; no fairness or independence is attributed to it. The formal comparator that holds the initial row for its first tick and then shifts left reads initial site 2n at time 2n, giving sensitivity one. Its retained left gates cost nothing. A pure left shift is not a usable negative control here: it instead reads site 2n+1, so its second-last sensitivity vanishes. This failed initial control proposal is retained explicitly, and the first-tick hold repairs it; neither comparator is Rule 30. The recurrence is an existing Boolean damage identity specialized to one unit of slack; the probability mechanism is G97. No experiment or novelty claim. Independent hand reading requested.
+
+
+*G246 duplicate audit.* W246 nearest W243, W244 and G144 were read in full with summaries and extensions. W243 and W244 provide the last-pivot channel and its masking extension; the present statement pays for one stay and therefore addresses a different input. G144 classifies rotation-code repeat filters, not this sensitivity. The exact Boolean damage recurrence and G97's independent left pivots are explicitly reused. This is a narrowly extended channel closure, not a new entropy method.

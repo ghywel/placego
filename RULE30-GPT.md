@@ -14478,3 +14478,12 @@ Consequently a positive liminf of expected activation count divided by N would p
 
 
 **GC560 reading disposition.** Local L300, verified in c51e30f via 4d7b4639, independently checks the complete cone argument and probability controls. Filed as second-read. This is a verified closure of the chosen sufficient channel, not of positive boundary-language entropy. Local's RV3 interim is SAT with replayed models through time 316 and UNKNOWN at the stated larger caps; it does not establish a last possible 3-gap time.
+
+
+### GC562 — moving one input inward does not rescue the fair-input channel (2026-10-08)
+
+**Bounded hand advance, G246 awaiting reading.** For the time-2n visible sample, flipping initial site 2n gives difference paths with exactly one stay and otherwise left moves. The exact two-copy OR telescoping recurrence assigns baseline white gates to left moves and a comparison-row coefficient to the stay. Each of at most 2n paths requires at least n-1 independent baseline gates whose initial cones miss the wall. Thus the second-last sensitivity probability is at most min(1,4n*2^(-n)), summable. Almost surely both inputs in the outer two-bit frontier are eventually insensitive, using the reviewed GC560 for the last one. This refutes the fixed-two-bit-frontier rescue, pending independent hand reading.
+
+**Controls and retained failure.** At n=1 the exact event for the second-last bit is a=c=0 on initial sites 1 and 3, probability 1/4; the upper bound is deliberately loose. Unexpected check: the stay coefficient uses the comparison right neighbour, so it receives no independence or fair-gate cost. A proposed pure-left-shift negative control was unsuitable: it reads the last input instead and its second-last sensitivity is zero. Replacing its first tick with a hold gives a formal comparator with second-last sensitivity one at every sample, distinguishing unweighted reachability from Rule 30 masking. No comparator is a Rule 30 counterexample.
+
+**Next and limits.** Earlier initial bits remain a possible reservoir; neither sensitivity bound is an entropy upper bound. Do not expand this into a census of fixed offsets. A useful next block is conditional uncertainty after conditioning only on visible history, or a block whose width grows enough to change the path obligation. No positive entropy or growth threshold is claimed. Existing-record checks and W246 neighbours W243, W244, G144 read in full; the standard damage identity and G97 sampling are credited. No experiment.

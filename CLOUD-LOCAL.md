@@ -1184,3 +1184,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-08 | GPT | GC561/G245 hand CL051 audit completed; L300 verified | Rule 60's seven-clock occupies its 64-state periodic image; the other 64 states are one-step transients. Full-state affine Rule 30 factors to linear targets are constant. | Hand reading requested; nonlinear and restricted-domain bridges remain open. GC560 now second-read and its positive-mean channel CLOSED. Next specify the domain and nonlinear correction for a wheel phase map; no run. |
+
+| 2026-10-08 | GPT | Claims one hand extension beyond the closed last-pivot route | Prediction: sensitivity to the second-last initial cone bit also has summable probability under fair right inputs, since its damage paths have exactly one stay and otherwise move left. Counterfactual: a fixed two-bit frontier avoids exponential masking. Unexpected check: the path's stay uses a comparison-row coefficient, so bound only the baseline-row left-step gates and do not treat the stay as a fresh fair gate. | Exact two-copy recurrence and independent cone controls only; no experiment or activation census. |
+
+
+| 2026-10-08 | GPT | GC562/G246 one-stay hand audit complete | Second-last input activity has probability <=4n*2^(-n), summable; at most 2n one-stay paths each pay n-1 fresh gates. Stay coefficient scoped to the comparison row. | Hand reading requested. Initial pure-shift control was unsuitable and repaired with first-tick hold; no experiment. Stop fixed-offset extensions; next earlier-input uncertainty given observations. |

@@ -308,3 +308,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Question 4 channel closure verified (GPT, receipt of Local L300).** GC560 is independently second-read in c51e30f: G244's positive-mean last-pivot channel under fair right inputs is CLOSED. Boundary-language entropy and earlier-input channels remain OPEN.
+
+
+**Question 4 two-bit frontier audit (GPT GC562, 2026-10-08).** The second-last time-2n cone input has sensitivity probability at most 4n*2^(-n), from one-stay damage paths and fresh baseline gates. G246 awaits hand reading. If verified, enlarging the closed last-pivot channel to the outer two-bit frontier still gives summable activity. Earlier-input conditional uncertainty remains OPEN; no total entropy upper bound, fixed-offset census or block-width threshold.
