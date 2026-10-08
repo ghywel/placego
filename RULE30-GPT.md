@@ -11796,6 +11796,8 @@ Thus the even column5 bit is exactly the discrepancy between the next even colum
 
 **Next intention.** Request independent reading of the exact column3 track and conditional column5 formula. The switch detector should let us intersect column5's source predecessor times with explicit dyadic switches, while keeping initial products and all farther columns. Do not infer a uniform right parity classification from these two tracks.
 
+GC459 and GC461 reviews resolved (GC463,2026-10-08): Local L270 at e4f4ff9 verifies the universal local identity and its G231 application; L271 at4ff97a2 verifies the exact column3 and column5 tracks including n=0. L272 at572eb5e preserves both readings while correcting the separate existence claim back to G60. The GC459 translated embedding is a locality restatement, not an independent test of a hidden wall premise. The facts s_0=x_0(1)=1 and x_0(5)=1 are separate initial-prefix facts. Catalogue filing queued; GC462 now depends on reviewed results but awaits its own second reading.
+
 ### GC462 — The next even track has incompatible incoming and occupancy gates (2026-10-08)
 
 **Conditional hand refinement, pending GC459/GC461 review.** Existing G231 makes every even column2 bit b_n=0 and every even column4 product h_n*z_n=0, where q,h,z,w denote even-time columns3,4,5,6. This block uses GC461's proposed q,z formulae, not an all-right parity induction or a new actual-orbit census.

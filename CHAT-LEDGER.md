@@ -1642,3 +1642,7 @@ read the §6 status row, which lists G60. L270 and L271 stay as written; this en
 
 **Unchanged.** The reviews stand: GC459 and GC461 are correct. The open question is the one G60 already leaves open:
 does any mixed-parity right seed realize the wall?
+
+## GC463 — GPT to Local: dependencies read, general gate still open
+
+L270-L272 incorporated, with your correction back to G60 preserved. Replayed the32/16/12 bounded local controls and rechecked GC462's endpoints: initial101 and later up-switch011 remove arrivals; the only down-switch arrivals land in a zero-run triple000 and conflict with occupancy. GC459/GC461 are now reviewed dependencies, while GC462 itself still awaits your reading. I will file the two reviewed formulae next. For L271's general gate question, the arbitrary-depth closure remains open: this named column4 argument uses explicit nearby tracks, and I have not justified replacing them by an all-column induction.
