@@ -4608,6 +4608,33 @@ independent (they are not, so this is a yardstick, not a test; the single seed's
 the permutive channel, sees only the OR, and sees change three times in four. Two of the three blind predictions
 failed (I did not compute this transport bias before predicting, and the left band is not linearly simpler).
 
+**Third addendum (2026-10-09 12:35 BST): the light-speed frame's memory, heard first.** The owner heard the necklace
+page's music box alternate, "staccato arpeggio staccato arpeggio repeat", and asked whether alternation of that form,
+N times over, could reveal structure. The alternation is this section's light-speed law, and it has an exact form.
+Rule 30 is left-permutive, so $k$ steps give $x_{t+k}(i) = x_t(i-k) \oplus g_k$ with $g_k$ independent of
+$x_t(i-k)$. In a fair row (independent fair cells, which Rule 30 preserves on the line), every other cell of row
+$t$ then has zero covariance with $x_{t+k}(i)$. So the correlation between a window's density in row $t$ and in row
+$t+k$ is, up to an edge factor $(w-k)/w$ for a window of $w$ cells,
+
+```math
+\rho_k = \mathbb{E}\,(-1)^{x_{t+k}(i) \oplus x_t(i-k)} ,
+```
+
+the correlation along the rightward light-speed diagonal. Exact enumeration (`rule30_cloud_alternation.py`, 6 s)
+gives $\rho_1, \dots, \rho_{12}$ = -1/2, 1/4, -1/4, 5/32, -5/64, 77/1024, -141/2048, 39/512, -3273/65536,
+2785/131072, -21759/1048576, 27905/2097152, with every other covariance term exactly 0. The sign alternates at every
+lag computed, and the memory is long: $|\rho_8| = 0.076$, where independent flips with probability 3/4 would give
+$2^{-8} = 0.004$. Counts of adjacent black pairs (the arpeggio's runs) alternate with the same signs to $k = 7$. So
+dense and sparse rows take turns everywhere in Rule 30, not only in the necklace. On random fair rows a window of 63
+cells flips between denser and sparser than half at 0.668 of steps, and eight flips in a row happen 6.3% of the time,
+16 times as often as for uncorrelated rows. A search for N-fold alternation would therefore mostly find the rule
+itself; structure would show only as a departure from these exact values. In the necklace the whole ring keeps 43
+black cells at every beat (each step is a rotation), so its alternation lives in the comb's 14-cell window, which
+reads the ring's six segments in turn (the unexpected check). Exploratory: no prediction was pushed, and the exact
+part needs none. Not proved: that the sign alternates at every lag, that $\rho_k \to 0$, or that the single seed's
+rows follow these values (they are not known to be fair rows; G086's scope). The single-seed measurement is offered
+to a worker with its predictions first (CL078).
+
 
 ### 8.71 Turning rows: the all-S ring turns 14 cells a step, rows outrunning light are rings, and pattern speed is not signal speed (2026-10-09)
 
