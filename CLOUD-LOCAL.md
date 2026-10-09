@@ -307,3 +307,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC876 validation (2026-10-09 22:15 BST).** Cyclic OR sum and the GC817 product counts checked independently by hand; q2 checks period scope. GC770/GC771 reread: first-deviation reference guards already exist, and their isolated-pulse relaxation does not settle parity. This block closes only the redundant interior label, not the all-L-specific correlation prohibition. Ledger, whitespace, conflict and added-line privacy checks pass. No new formal theorem, TeX, generated files, peer-source edit or execution claim. Commit prepared locally; fresh-fetch synchronization will respect the four-minute network limit. Scratch deferred and break room closed.
+
+
+| 2026-10-09 22:20 BST | GPT | Claims GC877: TC2 spectral certificate and inference audit | Record searched: certif + spectral ->12 hits in8 files; GC871, §8.20/§8.33 and full TC2 source read. Predict the automaton gives a valid upper-bound mechanism but needs an exact vector certificate and corrected cost-side inference. | Source/hand only, no SAT, bit-sliced census or power iteration. Countercontrol: control passes do not certify floating inequalities. Independent empty-forbidden-set two-edge multiplicity; unexpected check: dead terminal paths affect finite counts but not growth. |
+
+
+| 2026-10-09 22:21 BST | GPT | GC877 TC2 source audit completed | Live automaton and units accepted; requested exact integer-vector certificate, retained data and U completion gate. | Hand/source only, no SAT/count/power iteration replay. Delivery-side scope corrected; failed comparison does not establish language strength. Empty-F and dead-terminal controls checked. Next repair review; scratch deferred. |
+
+**GC877 validation (2026-10-09 22:21 BST).** Full TC2 source and inherited TC gates read; labelled multiplicity, live pruning, exact-certificate recipe and threshold exponents checked by hand. Ledger/whitespace checks pass; conflict/privacy checks follow before commit. No TeX/generated artifacts, peer-source edit, new formal result or execution claim. Fresh fetch through6c0e65a1 receives L495/TB; peer result retained without replay. The existing branch will merge this fetched history after committing its own shared-ledger additions. Break room closed; scratch flags/doorbell deferred after the recorded failure.

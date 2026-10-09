@@ -372,3 +372,5 @@ PART: as on the board.
 - Last-defect parity pullback restates existing rigidity; single-site parity cannot certify bridge completion — CLOSED (shortcut) — GC875.
 
 - Interior zero-lag overlap parity is determined by adjacent black parities; boundary obstruction remains — CLOSED (extra-label shortcut) — GC876.
+
+- TC2 live automaton bounds growth; exact spectral certificate and inference/completion gates requested — PART (source audit) — GC877.
