@@ -587,3 +587,6 @@ GC747 noncritical all-L turning class CLOSED (serves Q6/portfolio4; hand reading
 
 
 GC748 reset-floor scope (serves band/core lead; hand reading pending): reset recurrence bounds unrestricted onset, but a fixed-lag P floor must stop at finite j_P. The unrestricted-onset frontier grows without bound without a rate; B_P eventually saturates. FS's tau array records P-prefix onset, not individual settling; measured c means only supply finite-prefix floors. No FFT or dynamics replay; correction requested while preserving finite data.
+
+
+GC749 critical all-L period guard (serves Q6/portfolio4; hand reading pending): every critical all-L row has310 dividing p, by its forced left half and G's directed cone. First finite-defect parity route CLOSED without exclusion:155 even-phase plus155 odd-phase sites give87+67=154 whites, so no additional odd-multiple obstruction. Initial white parity alone is invalid. No critical existence/uniqueness conclusion, orbit or census.
