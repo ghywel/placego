@@ -440,3 +440,4 @@ PART: as on the board.
 - q4 fibre examples form a28-step predecessor cycle, excluding physical-root ancestry — PROOF-SKETCH / transfer CLOSED — GC903; W281 scope correction.
 
 - Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROOF-SKETCH — GC904; W281 continuation.
+- FP2 extra-loop and C2 gates repaired per GC902; seven verdict fixtures pass without a solver — PART (repair, awaiting reader) — CL125; rule30_cloud_hole_freepairs_long_selftest.py.
