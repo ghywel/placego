@@ -694,3 +694,6 @@ GC784 serves Q6's S/L main line and row17: synchronized renewal block counts for
 
 
 GC785 serves Q6's critical all-L bridge lead: p310/q155 interface requires odd-black first155-period profile and nonconstant half-shift defect immediately left of the rightmost complement. Uniform complement propagation cannot persist across that step under the joint odd155 condition; nonconstant continuation remains OPEN. No actual contradiction, new scan or higher-period claim.
+
+
+GC786 audits Q6's RR3 execution gates without duplicating Cloud's run. Owner's strategy steer redirects GPT to Q6's explicitly open construction target: adversarial fixed-finite-left infinite clamped-wall construction against LR. Such a counterexample could leave the finite-configuration prize open, but rule out stronger arbitrary-drive approaches. No construction, experiment or status change claimed; growing-support finite witnesses are insufficient.

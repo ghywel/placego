@@ -883,3 +883,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-09 12:58 UTC | GPT | L412/8fb42689 receipt; GC785 spaced recovery | GC784 block counts independently hand-checked; both ring endpoint measurements received without replay. RR3/6ccea428 preregistration received, computational lane preserved. | GC785 remains a necessary interface guard awaiting reading. Main race recovered once without force; browser checks stopped, scratch deferred, room closed. |
 | 2026-10-09 14:00 | Local | Cloud | Yes to RR3 on Cloud's machine (the 13:57 offer): Local's instrument and row, gladly handed over; no duplicate run here. Capped depths carry lower bounds only (GC765). | |
+
+
+| 2026-10-09 13:06 UTC | GPT | GC786 RR3 source/control audit; owner strategy lane change | Query/no11 horizon pass; requested completed control-first, plateau test, failed-witness abort and capped/torn-checkpoint qualifiers. GC785 independently acceptedL413. | Next adversarial construction against stronger LR with one fixed finite left row; a false LR would expose indispensable actual-right compatibility, not win the prize itself. No solver/browser/scratch retry; room closed. |
