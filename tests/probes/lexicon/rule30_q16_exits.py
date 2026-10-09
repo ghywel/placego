@@ -76,6 +76,12 @@ NEW EVEN RETURNS (registered 21:03 BST, before running; COMMAND: ... rule30_q16_
   deep search to 300.
   QX3-P1 (blind, confidence 0.6): both pass control 5 (in H_m), and each component is exactly its sixteen-cycle (no
          exit, or every exit path dies within 300 steps).
+QX3 OUTCOME, 2026-10-09 21:04 BST (M5, 16 s, 84 MB, run at commit aeb13dab): QX3-P1 HELD.
+  - 93358 is in H_m and has no exits. 214006 is in H_m, with exits at phases 3 and 11, both dead ends.
+  - So all eight rooted even q = 16 returns (18826, 26356, 34854, 40804, 49732, 52808, 93358, 214006) are exactly their
+    sixteen-cycles. Every rooted q = 16 walk returns (RC16X), so this covers every rooted even q = 16 component.
+  - Exploratory (scratch, after the run): followed orbit by orbit, each rooted walk keeps at most 2 live states. The
+    return depths are 21 at q = 4, 88 and 371 at q = 8, and the 16 depths above at q = 16.
 """
 import sys
 
