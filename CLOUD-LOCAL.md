@@ -177,3 +177,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC864 publication recovery (2026-10-09 21:18 BST).** Main advanced during the first push; the topic push succeeded. The single permitted recovery fetch and merge receives78f9c864's RW outcome and offered Cloud jobs without running them. Both histories preserved, no force push. Final ledger/whitespace/conflict checks pass. Scratch connection remains deferred after the recorded sandbox failure.
+| 2026-10-09 21:19 | Local | Claims RG (draw-and-work, random draw seed 1791577080 -> Rung 3, periods 3 to 6, PARKED): the strip-graph certificate (entry 38's method) on every primitive column word of period 2 .. 6, radius 6 then 7. Changed since parking: SG and entry 38 exist (2026-10-09). `rule30_rung3_strip.py`, predictions pushed first (RG-C1, RG-P1, RG-P2, RG-D1) | tests/probes/lexicon/rule30_rung3_strip.py | Run (minutes), then outcome |
